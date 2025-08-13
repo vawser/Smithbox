@@ -1,0 +1,228 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_ShootSeCategory",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし",
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Handgun"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Rifle"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Cannon"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Machinegun"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Assault Rifle"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gatling"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Shotgun"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Hand Grenade"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bazooka"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Grenade Cannon"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "BombS"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "BombM"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "BombL"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Missile"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Rocket"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Pulse Handgun"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Pulse Rifle"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Pulse Cannon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Pulse Machinegun"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Pulse Shotgun"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Pulse Bomb: Small"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Pulse Bomb: Medium"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Pulse Bomb: Large"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Laser Rifle"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "High Laser Rifle"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Laser Sniper Rifle"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Laser Machinegun"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Plasma Rifle"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Plasma Cannon"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Plasma Bomb: Small"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Plasma Bomb: Medium"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Plasma Bomb: Large"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Melee"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Special Weapon"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "item -- アイテム"
+      ]
+    }
+  ]
+}

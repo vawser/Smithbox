@@ -1,0 +1,491 @@
+{
+  "Name": "eventparam_m10_23_00_00",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Duel begins"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Fallen Trees"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Rogue launch of the corridor of immortality in board destruction or view"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Log-up starts with door opening or approaching"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "Opening the door to start rogue"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "tortureman start_first body on a pile"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "tortureman start_second body on a pile"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "tortureman start on the pile_third body"
+      ]
+    },
+    {
+      "ID": 1730,
+      "Entries": [
+        "tortureman start on the pile_fourth body"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Chariots iron bars and lever_state reproduction"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Chariots Destruction Judgment"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Chariots Immortalise Disarmed"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "The entrance side becomes bright when the wooden board is broken."
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "The door side becomes bright when the wooden board is broken."
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Large light judgment that becomes bright when the wooden board is broken"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Working bridge"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Shortcut Iron Bar_Cave Route"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Enemy generation_1 at the time of skeleton aristocracy death"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Enemy generation_1 at the time of skeleton aristocracy death"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Enemy generation_1 at the time of skeleton aristocracy death"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "skeleton aristocracy_cane_large explosion action"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Boss War_ Skeleton Aristocracy"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Chair 1_Navi mesh change where skeleton nobles sit"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Chair 2_Navi mesh change where skeleton nobles sit"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "3_Navi mesh change chair where skeleton aristocracy sits"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Boss Fight_Silver Chariots"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Boss Fight_Silver Chariots_Poly Play"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Key door_bonfire room"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Switching the Rotating Door-Related Flags of Madura"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Front_1"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Front_2"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Front_3"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Front_4"
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Front_5"
+      ]
+    },
+    {
+      "ID": 12500,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Oku_1"
+      ]
+    },
+    {
+      "ID": 12510,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Oku_2"
+      ]
+    },
+    {
+      "ID": 12520,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Oku_3"
+      ]
+    },
+    {
+      "ID": 12530,
+      "Entries": [
+        "Skeleton Immortality Management_Cave Oku_4"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Front_1"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Front_2"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Front_3"
+      ]
+    },
+    {
+      "ID": 13500,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Oku_1"
+      ]
+    },
+    {
+      "ID": 13510,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Oku_2"
+      ]
+    },
+    {
+      "ID": 13520,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Oku_3"
+      ]
+    },
+    {
+      "ID": 13530,
+      "Entries": [
+        "Skeleton Immortality Management_Prison Oku_4"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Torture Lift_Initialization"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "torture lift_ up and running"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Torture Lift_ Character Action Judgment"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Hidden door (2) On lift _Navi mesh change"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Hidden door (2) Lift under_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Hunting Forest - Valley Working Bridge in the Reservoir"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Switching the flag for destruction of hunting forest MAP"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Duel Request_1"
+      ]
+    },
+    {
+      "ID": 70010,
+      "Entries": [
+        "Duel Request_2"
+      ]
+    },
+    {
+      "ID": 70020,
+      "Entries": [
+        "Duel Request_3"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play ing spark 01_starting point"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Regenerate distoll fire 02_under the pillars of the suspension bridge"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Play ing seed fire 03_in the locked door torch"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "after the breeding fire 04_ death penalty place boss"
+      ]
+    },
+    {
+      "ID": 111230,
+      "Entries": [
+        "NPC: Wandering Warrior"
+      ]
+    },
+    {
+      "ID": 111231,
+      "Entries": [
+        "NPC: Wandering Warrior: Specter"
+      ]
+    },
+    {
+      "ID": 111232,
+      "Entries": [
+        "OBJ: Wandering Warrior: Tomb"
+      ]
+    },
+    {
+      "ID": 111233,
+      "Entries": [
+        "OBJ: Wandering Warrior: Key Guide"
+      ]
+    },
+    {
+      "ID": 111234,
+      "Entries": [
+        "OBJ: Wandering Warrior: Death Verdict"
+      ]
+    },
+    {
+      "ID": 111420,
+      "Entries": [
+        "NPC: Dark Art Shop"
+      ]
+    },
+    {
+      "ID": 111421,
+      "Entries": [
+        "NPC: Dark Man: Ghost"
+      ]
+    },
+    {
+      "ID": 111422,
+      "Entries": [
+        "OBJ: Dark Man: Tomb"
+      ]
+    },
+    {
+      "ID": 111423,
+      "Entries": [
+        "OBJ: Dark Man: Key Guide"
+      ]
+    },
+    {
+      "ID": 111470,
+      "Entries": [
+        "NPC: Black Phantom Shop"
+      ]
+    },
+    {
+      "ID": 111471,
+      "Entries": [
+        "NPC: Black Phantom Shop: Ghost"
+      ]
+    },
+    {
+      "ID": 111472,
+      "Entries": [
+        "OBJ: Black Phantom Shop: Tomb"
+      ]
+    },
+    {
+      "ID": 111473,
+      "Entries": [
+        "OBJ: Black Phantom Shop: Key Guide"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118210,
+      "Entries": [
+        "NPC for Multi: Reaper (Female): Black Phantom Appearance"
+      ]
+    },
+    {
+      "ID": 120020,
+      "Entries": [
+        "Trophies: Pledge sought for blood"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

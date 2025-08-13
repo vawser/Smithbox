@@ -1,0 +1,2399 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Retrieve lost runes"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Touch bloodstain"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Ride"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Touch red summon sign"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Check your summon sign"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Read message"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Check your message"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Read message"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Pillage corpse"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Pillage remains"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Pillage remains"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "Pillage remains"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4253,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4270,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4280,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Search treasure chest"
+      ]
+    },
+    {
+      "ID": 4350,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "OK"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Climb"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Descend"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Touch grace"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Rest at site of grace"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Rest at table of lost grace"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "Rest at table of lost grace"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6221,
+      "Entries": [
+        "Hand over Deathroot"
+      ]
+    },
+    {
+      "ID": 6222,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "Touch Hyetta"
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6240,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Use smithing table"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Accept primal glintstone"
+      ]
+    },
+    {
+      "ID": 6291,
+      "Entries": [
+        "Accept primal glintstone"
+      ]
+    },
+    {
+      "ID": 6292,
+      "Entries": [
+        "Transplant primal glintstone"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Touch Fractured Marika"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6321,
+      "Entries": [
+        "Touch the Two Fingers"
+      ]
+    },
+    {
+      "ID": 6330,
+      "Entries": [
+        "Be held"
+      ]
+    },
+    {
+      "ID": 6331,
+      "Entries": [
+        "Touch Fia"
+      ]
+    },
+    {
+      "ID": 6332,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "Summon Latenna"
+      ]
+    },
+    {
+      "ID": 6350,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6360,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6361,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Atone"
+      ]
+    },
+    {
+      "ID": 6380,
+      "Entries": [
+        "Use dressing table"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Speak the truth about Radagon"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Administer draught"
+      ]
+    },
+    {
+      "ID": 6411,
+      "Entries": [
+        "Administer draught"
+      ]
+    },
+    {
+      "ID": 6412,
+      "Entries": [
+        "Administer draught"
+      ]
+    },
+    {
+      "ID": 6413,
+      "Entries": [
+        "Where did the body go?"
+      ]
+    },
+    {
+      "ID": 6414,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "Examine remains"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "Receive mending rune"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "Receive mending rune"
+      ]
+    },
+    {
+      "ID": 6460,
+      "Entries": [
+        "Receive mending rune"
+      ]
+    },
+    {
+      "ID": 6470,
+      "Entries": [
+        "Offer finger"
+      ]
+    },
+    {
+      "ID": 6471,
+      "Entries": [
+        "Dye cloth with maiden's blood"
+      ]
+    },
+    {
+      "ID": 6472,
+      "Entries": [
+        "Dye cloth with maiden's blood"
+      ]
+    },
+    {
+      "ID": 6480,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Touch bloodstain"
+      ]
+    },
+    {
+      "ID": 6519,
+      "Entries": [
+        "Return Unalloyed Gold Needle"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6533,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6534,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6540,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Examine altar"
+      ]
+    },
+    {
+      "ID": 6590,
+      "Entries": [
+        "Examine grave"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6613,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Close"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Close"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7811,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7812,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7813,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7814,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7815,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7816,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7817,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7818,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7819,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7820,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7821,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7822,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7823,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7824,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7825,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7826,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7827,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7828,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7850,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7860,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7861,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7862,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7863,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7864,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7865,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7866,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7867,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7868,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7869,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7870,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7871,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7872,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7873,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7874,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7875,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7876,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7877,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 7878,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8302,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "Push lever"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "Invade White Mask Varré's world"
+      ]
+    },
+    {
+      "ID": 9052,
+      "Entries": [
+        "Invade Old Knight Istvan's world"
+      ]
+    },
+    {
+      "ID": 9053,
+      "Entries": [
+        "Invade Rileigh the Idle's world"
+      ]
+    },
+    {
+      "ID": 9054,
+      "Entries": [
+        "Invade Juno Hoslow Knight of Blood's world"
+      ]
+    },
+    {
+      "ID": 9055,
+      "Entries": [
+        "Invade Vargram the Raging Wolf's world"
+      ]
+    },
+    {
+      "ID": 9056,
+      "Entries": [
+        "Invade Great Horned Tragoth's world"
+      ]
+    },
+    {
+      "ID": 9057,
+      "Entries": [
+        "Be summoned to assist Yura Hunter of Bloody Fingers"
+      ]
+    },
+    {
+      "ID": 9058,
+      "Entries": [
+        "Be summoned to assist Sorceress Sellen"
+      ]
+    },
+    {
+      "ID": 9059,
+      "Entries": [
+        "Be summoned to challenge Sorceress Sellen"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Be summoned to assist Millicent"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Be summoned to challenge Millicent"
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Touch cooperative sign"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Touch invasion sign"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9081,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9082,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9083,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9084,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9085,
+      "Entries": [
+        "Restore the power of the Great Rune"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Touch"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9190,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Kick ladder"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "Stargaze"
+      ]
+    },
+    {
+      "ID": 9250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9260,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9270,
+      "Entries": [
+        "Use Birdseye Telescope"
+      ]
+    },
+    {
+      "ID": 9280,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9290,
+      "Entries": [
+        "Return to entrance"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Touch wall of thorns"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Touch golden light"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9506,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9519,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        "Light flame"
+      ]
+    },
+    {
+      "ID": 9521,
+      "Entries": [
+        "Touch phantom"
+      ]
+    },
+    {
+      "ID": 9522,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9523,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9524,
+      "Entries": [
+        "Light flame"
+      ]
+    },
+    {
+      "ID": 9525,
+      "Entries": [
+        "Touch horned remains"
+      ]
+    },
+    {
+      "ID": 9526,
+      "Entries": [
+        "Go back"
+      ]
+    },
+    {
+      "ID": 9527,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9528,
+      "Entries": [
+        "Light flame"
+      ]
+    },
+    {
+      "ID": 9529,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9530,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 9531,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9532,
+      "Entries": [
+        "Pillage corpse"
+      ]
+    },
+    {
+      "ID": 9533,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9540,
+      "Entries": [
+        "Summon Castellan Jerren"
+      ]
+    },
+    {
+      "ID": 9541,
+      "Entries": [
+        "Summon Blaidd the Half-Wolf"
+      ]
+    },
+    {
+      "ID": 9542,
+      "Entries": [
+        "Summon Alexander Warrior Jar"
+      ]
+    },
+    {
+      "ID": 9543,
+      "Entries": [
+        "Summon Great Horned Tragoth"
+      ]
+    },
+    {
+      "ID": 9544,
+      "Entries": [
+        "Summon Okina"
+      ]
+    },
+    {
+      "ID": 9545,
+      "Entries": [
+        "Summon Finger Maiden Therolina"
+      ]
+    },
+    {
+      "ID": 9546,
+      "Entries": [
+        "Summon Lionel the Lionhearted"
+      ]
+    },
+    {
+      "ID": 9547,
+      "Entries": [
+        "Summon Patches"
+      ]
+    },
+    {
+      "ID": 9550,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "Become the Elden Lord"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "Summon Ranni"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "Become the Lord of Frenzied Flame"
+      ]
+    },
+    {
+      "ID": 9630,
+      "Entries": [
+        "Wear ring"
+      ]
+    },
+    {
+      "ID": 9640,
+      "Entries": [
+        "Open door"
+      ]
+    },
+    {
+      "ID": 9650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Hoist medallion"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Hoist secret medallion"
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        "Rest in coffin"
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        "Rest in coffin"
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        "Examine pedestal"
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        "Remove inverted statue"
+      ]
+    },
+    {
+      "ID": 9730,
+      "Entries": [
+        "Open door"
+      ]
+    },
+    {
+      "ID": 9740,
+      "Entries": [
+        "Lie down"
+      ]
+    },
+    {
+      "ID": 9750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9980,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Traverse the mist"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Traverse the mist"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Traverse the mist"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34280,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99992,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 206010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 206020,
+      "Entries": [
+        "Touch cross"
+      ]
+    },
+    {
+      "ID": 206021,
+      "Entries": [
+        "Touch cross"
+      ]
+    },
+    {
+      "ID": 206022,
+      "Entries": [
+        "Touch cross"
+      ]
+    },
+    {
+      "ID": 206023,
+      "Entries": [
+        "Touch cross"
+      ]
+    },
+    {
+      "ID": 206030,
+      "Entries": [
+        "Examine puppet"
+      ]
+    },
+    {
+      "ID": 206040,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 206050,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 206060,
+      "Entries": [
+        "Examine altar"
+      ]
+    },
+    {
+      "ID": 207800,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207810,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207811,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207812,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207813,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207814,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207815,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207816,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207817,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207818,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207819,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207820,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207821,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207822,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207823,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207824,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207825,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207826,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207827,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207828,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207829,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207830,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207831,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207832,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207833,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207834,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207835,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207836,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207837,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207838,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207839,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207840,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207841,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207842,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207843,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207844,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207850,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207860,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207861,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207862,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207863,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207864,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207865,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207866,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207867,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207868,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207869,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207870,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207871,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207872,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207873,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207874,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207875,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207876,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207877,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207878,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207879,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207880,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207881,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207882,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207883,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207884,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207885,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207886,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207887,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207888,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207889,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207890,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207891,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207892,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207893,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 207894,
+      "Entries": [
+        "Acquire materials"
+      ]
+    },
+    {
+      "ID": 208310,
+      "Entries": [
+        "Pull lever"
+      ]
+    },
+    {
+      "ID": 208405,
+      "Entries": [
+        "Push lever"
+      ]
+    },
+    {
+      "ID": 208700,
+      "Entries": [
+        "Sound hanging bell"
+      ]
+    },
+    {
+      "ID": 208701,
+      "Entries": [
+        "Sound hanging bell"
+      ]
+    },
+    {
+      "ID": 208702,
+      "Entries": [
+        "Sound hanging bell"
+      ]
+    },
+    {
+      "ID": 208710,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 209051,
+      "Entries": [
+        "Be summoned to assist Needle Knight Leda"
+      ]
+    },
+    {
+      "ID": 209052,
+      "Entries": [
+        "Be summoned to assist Sir Ansbach"
+      ]
+    },
+    {
+      "ID": 209053,
+      "Entries": [
+        "Be summoned to assist Needle Knight Leda"
+      ]
+    },
+    {
+      "ID": 209054,
+      "Entries": [
+        "Be summoned to assist Hornsent"
+      ]
+    },
+    {
+      "ID": 209055,
+      "Entries": [
+        "Be summoned to challenge Needle Knight Leda and her allies"
+      ]
+    },
+    {
+      "ID": 209060,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209200,
+      "Entries": [
+        "Examine altar"
+      ]
+    },
+    {
+      "ID": 209210,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 209500,
+      "Entries": [
+        "Touch withered arm"
+      ]
+    },
+    {
+      "ID": 209502,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 209504,
+      "Entries": [
+        "Examine seal"
+      ]
+    },
+    {
+      "ID": 209512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 209520,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209522,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209523,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 209524,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 209525,
+      "Entries": [
+        "Examine altar"
+      ]
+    },
+    {
+      "ID": 209526,
+      "Entries": [
+        "Examine altar"
+      ]
+    },
+    {
+      "ID": 209529,
+      "Entries": [
+        "Examine monument"
+      ]
+    },
+    {
+      "ID": 209530,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209531,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209532,
+      "Entries": [
+        "Touch gold summon sign"
+      ]
+    },
+    {
+      "ID": 209600,
+      "Entries": [
+        "Touch memory"
+      ]
+    },
+    {
+      "ID": 209610,
+      "Entries": [
+        "Examine sealing tree"
+      ]
+    },
+    {
+      "ID": 209620,
+      "Entries": [
+        "Rest in coffin"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Traverse the mist"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "Name": "SoundIDSpatialSetting",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "footsteps -- 足音"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "landing sound -- 着地音"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "scraping sound -- 擦過音"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "brake sound -- ブレーキ音"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "driving sound -- 駆動音"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Own weapon (test) -- 自機武器（テスト）"
+      ]
+    }
+  ]
+}

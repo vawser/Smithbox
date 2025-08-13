@@ -1,0 +1,149 @@
+{
+  "Name": "EquipParamGenerator",
+  "Entries": [
+    {
+      "ID": 65000000,
+      "Entries": [
+        "AG-J-098 JOSO"
+      ]
+    },
+    {
+      "ID": 65010400,
+      "Entries": [
+        "AG-E-013 YABA"
+      ]
+    },
+    {
+      "ID": 65040200,
+      "Entries": [
+        "AG-T-005 HOKUSHI"
+      ]
+    },
+    {
+      "ID": 65010000,
+      "Entries": [
+        "DF-GN-02 LING-TAI"
+      ]
+    },
+    {
+      "ID": 65010100,
+      "Entries": [
+        "DF-GN-06 MING-TANG"
+      ]
+    },
+    {
+      "ID": 65040000,
+      "Entries": [
+        "DF-GN-08 SAN-TAI"
+      ]
+    },
+    {
+      "ID": 65010200,
+      "Entries": [
+        "VP-20S"
+      ]
+    },
+    {
+      "ID": 65010300,
+      "Entries": [
+        "VP-20C"
+      ]
+    },
+    {
+      "ID": 65040100,
+      "Entries": [
+        "VP-20D"
+      ]
+    },
+    {
+      "ID": 65020000,
+      "Entries": [
+        "VE-20A"
+      ]
+    },
+    {
+      "ID": 65020100,
+      "Entries": [
+        "VE-20B"
+      ]
+    },
+    {
+      "ID": 65040300,
+      "Entries": [
+        "VE-20C"
+      ]
+    },
+    {
+      "ID": 65030000,
+      "Entries": [
+        "IA-C01G: AORTA"
+      ]
+    },
+    {
+      "ID": 65030100,
+      "Entries": [
+        "IB-C03G: NGI 000"
+      ]
+    },
+    {
+      "ID": 65900000,
+      "Entries": [
+        "AG-J-098 JOSO (Escape Mission)"
+      ]
+    },
+    {
+      "ID": 65900100,
+      "Entries": [
+        "AG-J-098 JOSO [Inherited]"
+      ]
+    },
+    {
+      "ID": 65900200,
+      "Entries": [
+        "VP-20S [Inherited]"
+      ]
+    },
+    {
+      "ID": 65900300,
+      "Entries": [
+        "VP-20C [Inherited]"
+      ]
+    },
+    {
+      "ID": 65900400,
+      "Entries": [
+        "DF-GN-06 MING-TANG [Inherited]"
+      ]
+    },
+    {
+      "ID": 65900500,
+      "Entries": [
+        "DF-GN-06 MING-TANG [Inherited]"
+      ]
+    },
+    {
+      "ID": 65900600,
+      "Entries": [
+        "DF-GN-06 MING-TANG [Inherited]"
+      ]
+    },
+    {
+      "ID": 65901000,
+      "Entries": [
+        "AG-J-098 JOSO (Escape Mission)"
+      ]
+    },
+    {
+      "ID": 65901100,
+      "Entries": [
+        "AG-J-098 JOSO [Inherited]"
+      ]
+    },
+    {
+      "ID": 65902000,
+      "Entries": [
+        "IB-C03G: NGI 000 [NPC]"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "Name": "eventlocation_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Togetge_Navimesh Change_01"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Togetge_Navimesh Change_02"
+      ]
+    },
+    {
+      "ID": 103300,
+      "Entries": [
+        "For backlead safety [void]"
+      ]
+    },
+    {
+      "ID": 103301,
+      "Entries": [
+        "For backlead safety [Gerdra]"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Boss: Giant rat battle start judgment"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Boss: Giant Rat_ Launch Point"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Bug key A_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Bug key B_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Bug key C_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Bug key D_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Bug key F_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Bug key G_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Bug key H_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Bug key I_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Dwarf Statue I Launch Area"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Bug key J_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Insect key to-traffic closure_Navimesh change"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Dwarf Statue M Launch Area"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Launch disk N start area"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Dwarf Statue O Launch Area"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Dwarf Statue P Launch Area"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Bug key Q_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Bug key R_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Dwarf Statue S Launch Area"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "Dwarf Statue T Launch Area"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "Launch disk U start area 1"
+      ]
+    },
+    {
+      "ID": 2301000,
+      "Entries": [
+        "Launch disk U start area 2"
+      ]
+    },
+    {
+      "ID": 2302000,
+      "Entries": [
+        "Launch disk U start area 3"
+      ]
+    },
+    {
+      "ID": 2303000,
+      "Entries": [
+        "Launch disk U start area 4"
+      ]
+    },
+    {
+      "ID": 2304000,
+      "Entries": [
+        "Launch disk U start area 5"
+      ]
+    },
+    {
+      "ID": 2401000,
+      "Entries": [
+        "Bug key V_ navi mesh change"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "【NPC for Multi: The Magician(Male)】Black Spirit Appearance Area"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Main route_ Heavy dwarf launch at the back"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Thorn Switch Heavy Dwarf Launch Area"
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        "Thorn Switch Heavy Dwarf Navi 1_Move Target"
+      ]
+    },
+    {
+      "ID": 52000301,
+      "Entries": [
+        "Thorn Switch Heavy Dwarf Navigation 2_ For Change of Direction"
+      ]
+    },
+    {
+      "ID": 52000302,
+      "Entries": [
+        "Thorn Switch Heavy Dwarf Navigation 3_Standby Point"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "Area where heavy dwarves will follow if the PC is shortcuted by a jump"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "Heavy dwarf road block point in front of the goal white door"
+      ]
+    },
+    {
+      "ID": 54000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54000100,
+      "Entries": [
+        "【Return area】In front of the entrance of the rat area"
+      ]
+    },
+    {
+      "ID": 54000101,
+      "Entries": [
+        "【Return area】Rat area entrance"
+      ]
+    },
+    {
+      "ID": 54000102,
+      "Entries": [
+        "【Return area】No access to entrance"
+      ]
+    },
+    {
+      "ID": 54000103,
+      "Entries": [
+        "【Return area】Gerdra side exit"
+      ]
+    },
+    {
+      "ID": 54000104,
+      "Entries": [
+        "【Return area】Gerdra side exit"
+      ]
+    },
+    {
+      "ID": 54000105,
+      "Entries": [
+        "【Return area】Before the boss"
+      ]
+    }
+  ]
+}

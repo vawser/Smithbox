@@ -1,0 +1,17 @@
+{
+  "Name": "UnlockParam_Archive_Terms",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Test archive_garage acquisition_log -- テスト用アーカイブ_ガレージ入手_ログ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Test archive_garage acquisition_terms -- テスト用アーカイブ_ガレージ入手_用語"
+      ]
+    }
+  ]
+}

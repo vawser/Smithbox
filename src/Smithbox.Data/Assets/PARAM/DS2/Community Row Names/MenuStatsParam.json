@@ -1,0 +1,599 @@
+{
+  "Name": "MenuStatsParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Level 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Level 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Level 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Level 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Level 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Level 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Level 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Level 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Level 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Level 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Level 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Level 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Level 13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Level 14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Level 15"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Level 16"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Level 17"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Level 18"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Level 19"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Level 20"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Level 21"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Level 22"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Level 23"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Level 24"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Level 25"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Level 26"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Level 27"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Level 28"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Level 29"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Level 30"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Level 31"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Level 32"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Level 33"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Level 34"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Level 35"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Level 36"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Level 37"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Level 38"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Level 39"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Level 40"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Level 41"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Level 42"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Level 43"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Level 44"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Level 45"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Level 46"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Level 47"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Level 48"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Level 49"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Level 50"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Level 51"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Level 52"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Level 53"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Level 54"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Level 55"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Level 56"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Level 57"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Level 58"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Level 59"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Level 60"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Level 61"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Level 62"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Level 63"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Level 64"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Level 65"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Level 66"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Level 67"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Level 68"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Level 69"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Level 70"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Level 71"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Level 72"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Level 73"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Level 74"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Level 75"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Level 76"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Level 77"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Level 78"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Level 79"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Level 80"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Level 81"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Level 82"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Level 83"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Level 84"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Level 85"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Level 86"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Level 87"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Level 88"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Level 89"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Level 90"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Level 91"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Level 92"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Level 93"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Level 94"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Level 95"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Level 96"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Level 97"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Level 98"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Level 99"
+      ]
+    }
+  ]
+}

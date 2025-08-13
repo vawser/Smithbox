@@ -1,0 +1,593 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "anime confirmation camera -- アニメ確認カメラ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Animation confirmation camera (for tanks) -- アニメ確認カメラ（タンク用）"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Anime confirmation camera (for tanks_sticky) -- アニメ確認カメラ（タンク用_べた付き）"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Tsuruoka test -- 鶴岡テスト"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Default value backup -- デフォ値バックアップ"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Jaga defeat camera test 1-1 -- ジャガ撃破カメラテスト1-1"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Jaga defeat camera test 1-2 -- ジャガ撃破カメラテスト1-2"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Jaga defeat camera test 1-3 -- ジャガ撃破カメラテスト1-3"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Jaga defeat camera test 2-1 -- ジャガ撃破カメラテスト2-1"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Jaga defeat camera test 2-2 -- ジャガ撃破カメラテスト2-2"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Jaga defeat camera test 2-3 -- ジャガ撃破カメラテスト2-3"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Jaga defeat camera test 3-1 -- ジャガ撃破カメラテスト3-1"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Jaga defeat camera test 3-2 -- ジャガ撃破カメラテスト3-2"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Jaga defeat camera test 3-3 -- ジャガ撃破カメラテスト3-3"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Catapult event mock test -- カタパルトイベントモックテスト"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Default value (locked) 2 -- デフォルト値（ロック中）2"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "For necklace keeper test -- 首飾りの番人テスト用"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "[FNR] For Pharaon camera check -- 【FNR】ファラオンカメラチェック用"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Grenade cannon check -- グレネードキャノンチェック用"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "[FNR] For next generation camera check -- 【FNR】次世代カメラチェック用"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[FNR] Assault Boost 2 legs -- 【FNR】アサルトブースト2脚"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[FNR] Assault boost left and right avoidance 2 legs -- 【FNR】アサルトブースト左右回避2脚"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "[FNR] 2 kick legs -- 【FNR】キック2脚"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "[FNR] 2 jumping tables -- 【FNR】ジャンプ台2脚"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "[FNR] 2 legs for using Cannon -- 【FNR】キャノン使用時用2脚"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "[FNR] Mining ship camera -- 【FNR】採掘艦用カメラ"
+      ]
+    },
+    {
+      "ID": 70010,
+      "Entries": [
+        "[FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ"
+      ]
+    },
+    {
+      "ID": 93200,
+      "Entries": [
+        "[FNR] Avalanche charging camera -- 【FNR】アバランチ 突進中カメラ"
+      ]
+    },
+    {
+      "ID": 94250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 96050,
+      "Entries": [
+        "[FNR] For Pharaon camera check -- 【FNR】ファラオンカメラチェック用"
+      ]
+    },
+    {
+      "ID": 96051,
+      "Entries": [
+        "[FNR] For Pharaon camera check_VS version -- 【FNR】ファラオンカメラチェック用_VS版"
+      ]
+    },
+    {
+      "ID": 96100,
+      "Entries": [
+        "[FNR] Sea spider camera -- 【FNR】ウミグモカメラ"
+      ]
+    },
+    {
+      "ID": 96400,
+      "Entries": [
+        "[FNR] Mining ship camera check_VS version -- 【FNR】採掘艦カメラチェック用_VS版"
+      ]
+    },
+    {
+      "ID": 96420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 98135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 99900,
+      "Entries": [
+        "Direction death camera close -- 演出死亡 カメラ 寄り"
+      ]
+    },
+    {
+      "ID": 99901,
+      "Entries": [
+        "Directed death camera away -- 演出死亡 カメラ 離れ"
+      ]
+    },
+    {
+      "ID": 99902,
+      "Entries": [
+        "Direction death camera away from behind -- 演出死亡 カメラ 離れ後寄り"
+      ]
+    },
+    {
+      "ID": 99910,
+      "Entries": [
+        "Production death camera close-up *For next generation -- 演出死亡 カメラ 寄り\u3000※次世代用"
+      ]
+    },
+    {
+      "ID": 99920,
+      "Entries": [
+        "Production death camera away *for sandworms -- 演出死亡 カメラ 離れ\u3000※サンドワーム用"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "[FNR] Assault boost reverse leg -- 【FNR】アサルトブースト逆脚"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance reverse leg -- 【FNR】アサルトブースト左右回避逆脚"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "[FNR] Kick reverse leg -- 【FNR】キック逆脚"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "[FNR] Jump table reverse joint -- 【FNR】ジャンプ台逆関節"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "[FNR] Reverse joint for using cannon -- 【FNR】キャノン使用時用逆関節"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用"
+      ]
+    },
+    {
+      "ID": 142000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ"
+      ]
+    },
+    {
+      "ID": 170000,
+      "Entries": [
+        "[FNR] Mining ship camera -- 【FNR】採掘艦用カメラ"
+      ]
+    },
+    {
+      "ID": 170010,
+      "Entries": [
+        "[FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ"
+      ]
+    },
+    {
+      "ID": 194250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 196420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 198135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "[FNR] Assault Boost Tank -- 【FNR】アサルトブーストタンク"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance tank -- 【FNR】アサルトブースト左右回避タンク"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "[FNR] Kick Tank -- 【FNR】キックタンク"
+      ]
+    },
+    {
+      "ID": 230200,
+      "Entries": [
+        "[FNR] Jump platform tank -- 【FNR】ジャンプ台タンク"
+      ]
+    },
+    {
+      "ID": 235000,
+      "Entries": [
+        "[FNR] Tank for use with cannon -- 【FNR】キャノン使用時用タンク"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 241000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用"
+      ]
+    },
+    {
+      "ID": 242000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "[FNR] Mining ship camera -- 【FNR】採掘艦用カメラ"
+      ]
+    },
+    {
+      "ID": 270010,
+      "Entries": [
+        "[FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ"
+      ]
+    },
+    {
+      "ID": 294250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 296420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 298135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Default value -- デフォルト値"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Default value (locked) -- デフォルト値（ロック中）"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "[FNR] 4 legs of Assault Boost -- 【FNR】アサルトブースト4脚"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "[FNR] Assault boost left/right avoidance 4 legs -- 【FNR】アサルトブースト左右回避4脚"
+      ]
+    },
+    {
+      "ID": 330100,
+      "Entries": [
+        "[FNR] 4 kick legs -- 【FNR】キック4脚"
+      ]
+    },
+    {
+      "ID": 330200,
+      "Entries": [
+        "[FNR] Jumping platform 4 customers -- 【FNR】ジャンプ台4客"
+      ]
+    },
+    {
+      "ID": 335000,
+      "Entries": [
+        "[FNR] 4 legs for use with Cannon -- 【FNR】キャノン使用時用４脚"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "[FNR] For right arm irradiation beam -- 【FNR】右腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 340100,
+      "Entries": [
+        "[FNR] For left arm irradiation beam -- 【FNR】左腕照射ビーム用"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "[FNR] Coral Blade for heavy attack -- 【FNR】コーラルブレード強攻撃用"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "[FNR] Lance lock prevention camera -- 【FNR】ランスロック荒ぶり防止カメラ"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "[FNR] Mining ship camera -- 【FNR】採掘艦用カメラ"
+      ]
+    },
+    {
+      "ID": 370010,
+      "Entries": [
+        "[FNR] Dora bombardment camera -- 【FNR】ドーラ砲撃用カメラ"
+      ]
+    },
+    {
+      "ID": 394250,
+      "Entries": [
+        "[FNR] Orbit Seed Lock Camera -- 【FNR】オービットシード\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 396420,
+      "Entries": [
+        "[FNR] Mining ship feature lock camera -- 【FNR】採掘艦目玉\u3000ロックカメラ"
+      ]
+    },
+    {
+      "ID": 398135,
+      "Entries": [
+        "[FNR] Miyatake Strong Enemy Lock Camera -- 【FNR】宮武強敵\u3000ロックカメラ"
+      ]
+    }
+  ]
+}

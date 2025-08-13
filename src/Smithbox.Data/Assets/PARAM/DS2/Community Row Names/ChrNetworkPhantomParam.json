@@ -1,0 +1,185 @@
+{
+  "Name": "ChrNetworkPhantomParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Host"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "White Phantom"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Shade"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Sunbro"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Unknown"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Blue Sentinel Summon"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Blue Sentinel Invader"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Red Phantom Summon"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Red Phantom Invader"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "BoB Summon"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "BoB Invader"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Dragon Spirit"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Abyssal Spirit"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Blue Sentinel Arena Spirit"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "BoB Arena Spirit"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

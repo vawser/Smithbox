@@ -1,0 +1,617 @@
+{
+  "Name": "mapobjectinstanceparam_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 10330500,
+      "Entries": [
+        "【Ladder】To Pledge 2F"
+      ]
+    },
+    {
+      "ID": 10330600,
+      "Entries": [
+        "【White Door】_Boss Entrance"
+      ]
+    },
+    {
+      "ID": 10330601,
+      "Entries": [
+        "【White Door】_Boss Exit"
+      ]
+    },
+    {
+      "ID": 10330640,
+      "Entries": [
+        "【White Door】_Pledge Goal White Door"
+      ]
+    },
+    {
+      "ID": 10330641,
+      "Entries": [
+        "【White Door】_Pledge Start White Door"
+      ]
+    },
+    {
+      "ID": 10330651,
+      "Entries": [
+        "【Bonfire】02_In front of the pledge area"
+      ]
+    },
+    {
+      "ID": 10330660,
+      "Entries": [
+        "【Bonfire】03_Boss Front"
+      ]
+    },
+    {
+      "ID": 10330700,
+      "Entries": [
+        "【Light stand】The place where the stairs went up _2F no light"
+      ]
+    },
+    {
+      "ID": 10330701,
+      "Entries": [
+        "[Light stand] no light _ immediately left as it enters the pledge area"
+      ]
+    },
+    {
+      "ID": 10330704,
+      "Entries": [
+        "【Light stand】Light_The middle of the main route"
+      ]
+    },
+    {
+      "ID": 10330705,
+      "Entries": [
+        "[Light stand] can be seen from the starting point of the light"
+      ]
+    },
+    {
+      "ID": 10330706,
+      "Entries": [
+        "【Light stand】Light_Water field beside the main route"
+      ]
+    },
+    {
+      "ID": 10330710,
+      "Entries": [
+        "【Light stand】No light_wall hanging"
+      ]
+    },
+    {
+      "ID": 10331000,
+      "Entries": [
+        "Wall switch for thorn wall"
+      ]
+    },
+    {
+      "ID": 10331015,
+      "Entries": [
+        "【Insect Key】04_"
+      ]
+    },
+    {
+      "ID": 10331020,
+      "Entries": [
+        "【Insect Key】05_"
+      ]
+    },
+    {
+      "ID": 10331025,
+      "Entries": [
+        "【Insect Key】06_"
+      ]
+    },
+    {
+      "ID": 10331055,
+      "Entries": [
+        "【Insect Key】12_"
+      ]
+    },
+    {
+      "ID": 10331085,
+      "Entries": [
+        "【Insect Key】18_"
+      ]
+    },
+    {
+      "ID": 10331090,
+      "Entries": [
+        "【Insect Key】19_"
+      ]
+    },
+    {
+      "ID": 10331095,
+      "Entries": [
+        "【Insect Key】20_"
+      ]
+    },
+    {
+      "ID": 10331100,
+      "Entries": [
+        "【Insect Key】21_"
+      ]
+    },
+    {
+      "ID": 10331105,
+      "Entries": [
+        "【Insect Key】22_"
+      ]
+    },
+    {
+      "ID": 10331110,
+      "Entries": [
+        "【Insect Key】23_"
+      ]
+    },
+    {
+      "ID": 10331130,
+      "Entries": [
+        "【Insect Key】27_"
+      ]
+    },
+    {
+      "ID": 10331140,
+      "Entries": [
+        "【Insect Key】29_"
+      ]
+    },
+    {
+      "ID": 10331145,
+      "Entries": [
+        "【Insect Key】30_"
+      ]
+    },
+    {
+      "ID": 10331150,
+      "Entries": [
+        "【Insect Key】31_"
+      ]
+    },
+    {
+      "ID": 10331160,
+      "Entries": [
+        "【Insect Key】33_"
+      ]
+    },
+    {
+      "ID": 10331300,
+      "Entries": [
+        "【Insect Key(Floor)】01_"
+      ]
+    },
+    {
+      "ID": 10331310,
+      "Entries": [
+        "【Insect Key(Floor)】03_"
+      ]
+    },
+    {
+      "ID": 10331315,
+      "Entries": [
+        "【Insect Key(Floor)】04_"
+      ]
+    },
+    {
+      "ID": 10331320,
+      "Entries": [
+        "【Insect Key(Floor)】05_"
+      ]
+    },
+    {
+      "ID": 10331325,
+      "Entries": [
+        "【Insect Key(Floor)】06_"
+      ]
+    },
+    {
+      "ID": 10331330,
+      "Entries": [
+        "【Insect Key(Floor)】07_"
+      ]
+    },
+    {
+      "ID": 10331335,
+      "Entries": [
+        "【Insect Key(Floor)】08_"
+      ]
+    },
+    {
+      "ID": 10331340,
+      "Entries": [
+        "【Insect Key(Floor)】09_"
+      ]
+    },
+    {
+      "ID": 10331345,
+      "Entries": [
+        "【Insect Key(Floor】10_"
+      ]
+    },
+    {
+      "ID": 10332100,
+      "Entries": [
+        "【Trap】Wide Blade 1_"
+      ]
+    },
+    {
+      "ID": 10332105,
+      "Entries": [
+        "【Trap】Wide Blade 2_"
+      ]
+    },
+    {
+      "ID": 10332110,
+      "Entries": [
+        "【Trap】Wide Blade 3_"
+      ]
+    },
+    {
+      "ID": 10332115,
+      "Entries": [
+        "【Trap】Wide Blade 4_"
+      ]
+    },
+    {
+      "ID": 10332120,
+      "Entries": [
+        "【Trap】Wide Blade 5_"
+      ]
+    },
+    {
+      "ID": 10332125,
+      "Entries": [
+        "【Trap】Wide Blade 6_"
+      ]
+    },
+    {
+      "ID": 10332300,
+      "Entries": [
+        "[Trap] the dwarf stone statue _2F passed through the gate and crossed the bridge on the right"
+      ]
+    },
+    {
+      "ID": 10332305,
+      "Entries": [
+        "【Trap】The second statue from the torch _2F dwarf stone statue"
+      ]
+    },
+    {
+      "ID": 10332310,
+      "Entries": [
+        "【Trap】The first statue from the torch _2F dwarf stone statue"
+      ]
+    },
+    {
+      "ID": 10332315,
+      "Entries": [
+        "【Trap】Dwarf stone statue _2F bridge to the white door"
+      ]
+    },
+    {
+      "ID": 10332320,
+      "Entries": [
+        "【Trap】In front of the statue man door of the end of the dwarf stone image _2F"
+      ]
+    },
+    {
+      "ID": 10332325,
+      "Entries": [
+        "【Trap】Dwarf Stone Statue_Insect Key In Small Room"
+      ]
+    },
+    {
+      "ID": 10332500,
+      "Entries": [
+        "Cage_For Heavy Dwarf 01_"
+      ]
+    },
+    {
+      "ID": 10332505,
+      "Entries": [
+        "Cage_For Heavy Dwarf 02_"
+      ]
+    },
+    {
+      "ID": 10332510,
+      "Entries": [
+        "Cage_For Heavy Dwarf 03_"
+      ]
+    },
+    {
+      "ID": 10332515,
+      "Entries": [
+        "Cage_For Heavy Dwarf 04_"
+      ]
+    },
+    {
+      "ID": 10332520,
+      "Entries": [
+        "Cage_For Heavy Dwarf 05_"
+      ]
+    },
+    {
+      "ID": 10332525,
+      "Entries": [
+        "Cage_For Heavy Dwarf 06_"
+      ]
+    },
+    {
+      "ID": 10332570,
+      "Entries": [
+        "Cage_For Dwarf Statue_01"
+      ]
+    },
+    {
+      "ID": 10332600,
+      "Entries": [
+        "Strong enemy cage left_statue_01"
+      ]
+    },
+    {
+      "ID": 10332601,
+      "Entries": [
+        "Strong enemy cage right_statue_01"
+      ]
+    },
+    {
+      "ID": 10332602,
+      "Entries": [
+        "Under the strong enemy cage_01 for the statueman"
+      ]
+    },
+    {
+      "ID": 10332620,
+      "Entries": [
+        "Strong enemy cage left_statue_03"
+      ]
+    },
+    {
+      "ID": 10332621,
+      "Entries": [
+        "Strong enemy cage right_statueman_03"
+      ]
+    },
+    {
+      "ID": 10332622,
+      "Entries": [
+        "Under the strong enemy cage_03 for the statueman"
+      ]
+    },
+    {
+      "ID": 10332800,
+      "Entries": [
+        "Hidden Ways_01"
+      ]
+    },
+    {
+      "ID": 10332805,
+      "Entries": [
+        "Hidden Ways_02"
+      ]
+    },
+    {
+      "ID": 10332810,
+      "Entries": [
+        "Hidden Ways_03"
+      ]
+    },
+    {
+      "ID": 10333000,
+      "Entries": [
+        "Start the wall that blocks the road"
+      ]
+    },
+    {
+      "ID": 10333005,
+      "Entries": [
+        "Thorn wall_back"
+      ]
+    },
+    {
+      "ID": 10333010,
+      "Entries": [
+        "Thorn wall_ front"
+      ]
+    },
+    {
+      "ID": 10333900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] dwarf image"
+      ]
+    },
+    {
+      "ID": 10333901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] dwarf image"
+      ]
+    },
+    {
+      "ID": 10333902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] dwarf image"
+      ]
+    },
+    {
+      "ID": 10333903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] dwarf image"
+      ]
+    },
+    {
+      "ID": 10333904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Faros lampstand"
+      ]
+    },
+    {
+      "ID": 10333911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Faros lampstand"
+      ]
+    },
+    {
+      "ID": 10333912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Faros lampstand"
+      ]
+    },
+    {
+      "ID": 10333913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Faros lampstand"
+      ]
+    },
+    {
+      "ID": 10333914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【Door road of Faros】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10333921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【Door road of Faros】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10333922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【Door road of Faros】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10333923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【Door road of Faros】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10333924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10333925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10334000,
+      "Entries": [
+        "【NPC】Tomb_King of Mice"
+      ]
+    },
+    {
+      "ID": 10334100,
+      "Entries": [
+        "【NPC】Tomb_Dwarf"
+      ]
+    },
+    {
+      "ID": 10335000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10335010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10335020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10335030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10335040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10336000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10336080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

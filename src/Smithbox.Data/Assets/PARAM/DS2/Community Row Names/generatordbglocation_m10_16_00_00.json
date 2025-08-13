@@ -1,0 +1,779 @@
+{
+  "Name": "generatordbglocation_m10_16_00_00",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "[Female Knight] Npc -- 【女騎士】NPC"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[Female Knight] NPC (Ghost) -- 【女騎士】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "【Bell Mori Sancho】 Npc -- 【鐘守サンチョ】NPC"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "【Bell Mori Sancho】 NPC (Ghost) -- 【鐘守サンチョ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "[Spell Mania] Npc -- 【スペルマニア】NPC"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "[Spell Mania] NPC (Ghost) -- 【スペルマニア】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "[Spell Mania] NPC (after resurrection) -- 【スペルマニア】NPC（復活後）"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "【EX Blacksmith】 Npc -- 【EX鍛冶屋】NPC"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "【EX Blacksmith】 NPC (Ghost) -- 【EX鍛冶屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "【EX Blacksmith】 NPC: After moving -- 【EX鍛冶屋】NPC：移動後"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "【Black Spirit】NPC for Multi: Spearman (Male) -- 【黒霊】マルチ用NPC：槍兵（男）"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "【Pledge Black Spirit】Bell Guard -- 【誓約黒霊】鐘守"
+      ]
+    },
+    {
+      "ID": 546,
+      "Entries": [
+        "[White Spirit] Female Knight -- 【白霊】女騎士"
+      ]
+    },
+    {
+      "ID": 547,
+      "Entries": [
+        "【White Spirit】NPC for Multi: Sage (Female) -- 【白霊】マルチ用NPC：賢者（女）"
+      ]
+    },
+    {
+      "ID": 845,
+      "Entries": [
+        "【BOSS】Warrior A in the Mirror During the Audience -- 【BOSS】謁見の間_鏡の中の戦士Ａ"
+      ]
+    },
+    {
+      "ID": 846,
+      "Entries": [
+        "【BOSS】Warrior B in the Mirror During the Audience -- 【BOSS】謁見の間_鏡の中の戦士Ｂ"
+      ]
+    },
+    {
+      "ID": 847,
+      "Entries": [
+        "【BOSS】Warrior C in the Mirror During the Audience -- 【BOSS】謁見の間_鏡の中の戦士Ｃ"
+      ]
+    },
+    {
+      "ID": 848,
+      "Entries": [
+        "BOSS: Dungeon_ Forgotten Sinner -- 【BOSS】地下牢_忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Around the ladder of the outer wall_wandering] 【Rare Drop】Wandering Knight (Dead): Head C: Assault Spear -- 【外壁の梯子付近_徘徊】【レアドロップ】彷徨える騎士（亡者）：頭部C：突撃槍"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【On the broken scaffold】 Prison man (dead) -- 【壊れる足場の上】獄吏（亡者）"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[Under the broken scaffold] wild dog -- 【壊れる足場の下】野犬1"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[Under the broken scaffold] wild dog 2 -- 【壊れる足場の下】野犬2"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Barrel stairs front _Jinroyal Chi] wild dog -- 【樽階段手前_仁王立ち】野犬"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Hiding behind the wall of a tree] kingdom soldier warrior: two-handed sword -- 【木の壁裏に隠れている】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【Corner of Well Plaza】Wild Dog -- 【井戸広場の隅】野犬"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "【Well Plaza】Wild Dog -- 【井戸広場】野犬"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "【Well Plaza】Wild Dog -- 【井戸広場】野犬"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "【Well Plaza】Wild Dog -- 【井戸広場】野犬"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Flame barrel room _ attack from the blind spot] kingdom soldier warrior: two-handed sword -- 【火炎樽部屋_死角から攻撃】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[Flame barrel room _ on the high ground] kingdom warrior: crossbow -- 【火炎樽部屋_高台の上】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Sub-storage room _ enter left] kingdom soldier warrior: two-handed sword -- 【サブ物置部屋_入って左】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[Sub storage room_ ladder front _ right] kingdom soldier warrior: two-handed sword -- 【サブ物置部屋_梯子前_右】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        "[Main confluence passage _ running from the back] wild dog : Soul Black -- 【メイン合流通路_奥から走ってくる】野犬：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[South outer wall _ shot from the jumping point] wild dog -- 【南の外壁_飛び降り地点から挟み撃ち】野犬"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Jumping Building 2F] Kingdom Soldier Warrior: Two-Handed Sword 1 -- 【飛び降り建物2F】王国兵戦士：両手剣1"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[Jumping Building 2F] Kingdom Soldier Warrior: Two-Handed Sword 2 -- 【飛び降り建物2F】王国兵戦士：両手剣2"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[2nd week treasure corpse protection] kingdom soldier warrior: two-handed sword -- 【2週目宝死体守り】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Outer wall of the south _ scaffolding collapsed narrowly] prison man (deceased) -- 【南の外壁_狭く崩れた足場】獄吏（亡者）"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Wandering in front of the building of the outer wall of the west] prison man -- 【西の外壁_離れの建物前を徘徊】獄吏（亡者）"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "【In front of the ladder 1F_ the building of the distance】Wild dog -- 【離れの建物1F_梯子前】野犬"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "【Out building1F_ in front of the exit】 Wild dog -- 【離れの建物1F_出口前】野犬"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "【Apart building1F_ room center】 Wild dog -- 【離れの建物1F_部屋中央】野犬"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "[Apart building2F_ room sniper] kingdom soldier warrior: crossbow -- 【離れの建物2F_部屋狙撃】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Dining room front ] prison explosion] undead citizen: explosion: trap after boss -- 【食堂前_牢屋爆発】アンデッド市民：爆発：ボス後トラップ"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[After the boss _ Hidden Room] Undead Citizen: Normal: All Fours -- 【中ボス後_隠し部屋】アンデッド市民：ノーマル：四つんばい"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[For chasing from the end of the wall in front of the spiral stair tower] prison man (dead) spell -- 【螺旋階段塔前の城壁_城壁端から追撃用】獄吏（亡者）スペル"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "【Jump on the roof】 Prison man -- 【屋根上ジャンプ気づかせない】獄吏（亡者）スペル"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Room at the end of the spiral stairs] undead citizen: normal: sit down -- 【螺旋階段先の部屋】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "[Second lap of the room at the end of the spiral staircase] undead citizen: Petrified: Sit -- 【螺旋階段先の部屋2周目】アンデッド市民：石化：座り"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[2-heavy iron grating back] undead citizen: normal: sitting -- 【2重鉄格子奥】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 2811,
+      "Entries": [
+        "[2-heavy iron grating back] undead citizen: normal: normal standing -- 【2重鉄格子奥】アンデッド市民：ノーマル：通常立ち"
+      ]
+    },
+    {
+      "ID": 2812,
+      "Entries": [
+        "【2-heavy iron lattice back】Undead citizen: Petrified: Sit -- 【2重鉄格子奥】アンデッド市民：石化：座り"
+      ]
+    },
+    {
+      "ID": 2830,
+      "Entries": [
+        "[King's Tower 1F Matryoshka] Undead Citizen: Normal: Matryoshka Prison Captured 1 -- 【王の塔1Fマトリョーシカ】アンデッド市民：ノーマル：マトリョーシカ牢捕らわれ1"
+      ]
+    },
+    {
+      "ID": 2831,
+      "Entries": [
+        "[King's Tower 1F Matryoshka] Undead Citizen: Normal: Matryoshka Prison 2 -- 【王の塔1Fマトリョーシカ】アンデッド市民：ノーマル：マトリョーシカ牢捕らわれ2"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "【Opening Point Outer Wall Round】Prison Man (Deceased) Seoul Black -- 【開始地点外壁２周目】獄吏（亡者）：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "【Straight route】 【Wild Dog】 -- 【直線ルート】【野犬】"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "【Straight route】 【Wild Dog】 -- 【直線ルート】【野犬】"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "[Detour route prison] undead citizen : normal : chain -- 【迂回ルート牢屋】アンデッド市民：ノーマル：鎖に繋がれ"
+      ]
+    },
+    {
+      "ID": 5301,
+      "Entries": [
+        "[Detour route prison] undead citizen: normal: sit down -- 【迂回ルート牢屋】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "[On the detour route ladder] Kingdom Warrior: Crossbow -- 【迂回ルート梯子の上】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "[Outer wall in front of the aisle] wild dog -- 【通路手前の外壁】野犬"
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        "[Outer wall in front of the aisle] wild dog -- 【通路手前の外壁】野犬"
+      ]
+    },
+    {
+      "ID": 5420,
+      "Entries": [
+        "[Collapsed building] prison man (deceased) spell -- 【崩れた建物２周目】獄吏（亡者）スペル1"
+      ]
+    },
+    {
+      "ID": 5421,
+      "Entries": [
+        "[Collapsed building] prison man (deceased) spell 2 -- 【崩れた建物２周目】獄吏（亡者）スペル2"
+      ]
+    },
+    {
+      "ID": 5430,
+      "Entries": [
+        "【Insect Key Room(2)】 【Wild Dog】 -- 【虫鍵部屋②】【野犬】"
+      ]
+    },
+    {
+      "ID": 5442,
+      "Entries": [
+        "[Warrior boss door front in the mirror] kingdom soldier warrior: two-handed sword 1 -- 【鏡の中の戦士ボス扉前】王国兵戦士：両手剣1"
+      ]
+    },
+    {
+      "ID": 5443,
+      "Entries": [
+        "[Warrior boss door front in the mirror] kingdom soldier warrior: two-handed sword 2 -- 【鏡の中の戦士ボス扉前】王国兵戦士：両手剣2"
+      ]
+    },
+    {
+      "ID": 5444,
+      "Entries": [
+        "[Warrior boss door front in the mirror] kingdom soldier warrior: two-handed sword 3 -- 【鏡の中の戦士ボス扉前】王国兵戦士：両手剣3"
+      ]
+    },
+    {
+      "ID": 5445,
+      "Entries": [
+        "[Warrior boss door front in the mirror] kingdom soldier warrior: two-handed sword 4 -- 【鏡の中の戦士ボス扉前】王国兵戦士：両手剣4"
+      ]
+    },
+    {
+      "ID": 5446,
+      "Entries": [
+        "[Warrior boss door front in the mirror] kingdom soldier warrior: two-handed sword 5 -- 【鏡の中の戦士ボス扉前】王国兵戦士：両手剣5"
+      ]
+    },
+    {
+      "ID": 5447,
+      "Entries": [
+        "[Warrior boss door front in the mirror _ after the iron bar] kingdom soldier warrior: two-handed sword 1 -- 【鏡の中の戦士ボス扉前_鉄格子後】王国兵戦士：両手剣1"
+      ]
+    },
+    {
+      "ID": 5448,
+      "Entries": [
+        "[Warrior boss door front in the mirror _ after the iron bar] kingdom soldier warrior: two-handed sword 2 -- 【鏡の中の戦士ボス扉前_鉄格子後】王国兵戦士：両手剣2"
+      ]
+    },
+    {
+      "ID": 5461,
+      "Entries": [
+        "[King's Tower1F_ Fall Surprise] Undead Citizen: Normal: All fours -- 【王の塔１Ｆ_落下奇襲】アンデッド市民：ノーマル：四つんばい"
+      ]
+    },
+    {
+      "ID": 5470,
+      "Entries": [
+        "[King's Tower 2F] Undead Citizen: Normal: Sit -- 【王の塔２Ｆ】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 5471,
+      "Entries": [
+        "[King's Tower 2F] Undead Citizen: Normal: Sit -- 【王の塔２Ｆ】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 5481,
+      "Entries": [
+        "[King's Tower 3F] Undead Citizen: Normal: Sit -- 【王の塔３Ｆ】アンデッド市民：ノーマル：座り"
+      ]
+    },
+    {
+      "ID": 5482,
+      "Entries": [
+        "[King's Tower 3F] Undead Citizen: Normal: Normal Standing -- 【王の塔３Ｆ】アンデッド市民：ノーマル：通常立ち"
+      ]
+    },
+    {
+      "ID": 5483,
+      "Entries": [
+        "[King's Tower 3F] Undead Citizen: Petrified: Sit -- 【王の塔３Ｆ】アンデッド市民：石化：座り"
+      ]
+    },
+    {
+      "ID": 5484,
+      "Entries": [
+        "[King's Tower 3F] Undead Citizen: Petrified: All fours -- 【王の塔３Ｆ】アンデッド市民：石化：四つんばい"
+      ]
+    },
+    {
+      "ID": 5485,
+      "Entries": [
+        "[King's Tower 3F] Undead Citizen: Petrified: Normal Standing -- 【王の塔３Ｆ】アンデッド市民：石化：通常立ち"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "[Tower of sinners terrace] Kingdom Warrior: Crossbow 1 -- 【罪人の塔テラス】王国兵戦士：クロスボウ1"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "[Tower of sinners terrace] Kingdom Warrior: Crossbow 2 -- 【罪人の塔テラス】王国兵戦士：クロスボウ2"
+      ]
+    },
+    {
+      "ID": 5511,
+      "Entries": [
+        "[Tower of sinners terrace] Kingdom Warrior: Crossbow 3 -- 【罪人の塔テラス】王国兵戦士：クロスボウ3"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "[Bridge to the Tower of Sinners_ Chasing] Kingdom Warrior: Two-Handed Sword 1 -- 【罪人の塔への橋_追いかけ】王国兵戦士：両手剣1"
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        "[Tower lift of sinners] Kingdom Soldier Warrior: Crossbow 1 -- 【罪人の塔昇降機】王国兵戦士：クロスボウ1"
+      ]
+    },
+    {
+      "ID": 5531,
+      "Entries": [
+        "[Tower lift of sinners] Kingdom Soldier Warrior: Crossbow 2 -- 【罪人の塔昇降機】王国兵戦士：クロスボウ2"
+      ]
+    },
+    {
+      "ID": 5532,
+      "Entries": [
+        "[Tower lift of sinners] Kingdom Soldier Warrior: Crossbow 3 -- 【罪人の塔昇降機】王国兵戦士：クロスボウ3"
+      ]
+    },
+    {
+      "ID": 5534,
+      "Entries": [
+        "[Tower lift of sinners] Kingdom Soldier Warrior: Crossbow 5 -- 【罪人の塔昇降機】王国兵戦士：クロスボウ5"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "[In the cage coming up from the well] undead citizen: normal: normal standing 1 -- 【井戸から上がってくる檻の中にいる】アンデッド市民：ノーマル：通常立ち1"
+      ]
+    },
+    {
+      "ID": 5601,
+      "Entries": [
+        "[In the cage coming up from the well] undead citizen: normal: normal standing 2 -- 【井戸から上がってくる檻の中にいる】アンデッド市民：ノーマル：通常立ち2"
+      ]
+    },
+    {
+      "ID": 5602,
+      "Entries": [
+        "[In the cage coming up from the well] undead citizen: normal: normal standing 3 -- 【井戸から上がってくる檻の中にいる】アンデッド市民：ノーマル：通常立ち3"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Dungeon _1F_ Right Third Dungeon] Undead Citizen: Normal: Tower of Sinners: Normal Standing -- 【地下牢_1F_右3番目の牢】アンデッド市民：ノーマル：罪人の塔：通常立ち"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Dungeon _1F_ Right 4th Dungeon] Undead Citizen: Normal: Tower of Sinners: Normal Standing -- 【地下牢_1F_右4番目の牢】アンデッド市民：ノーマル：罪人の塔：通常立ち"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "[Dungeon _1F_ left third prison] undead citizen: normal: tower of sinners: normal standing -- 【地下牢_1F_左3番目の牢】アンデッド市民：ノーマル：罪人の塔：通常立ち"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "[Dungeon _1F_ left 4th prison] undead citizen: normal: tower of sinners: sit -- 【地下牢_1F_左4番目の牢】アンデッド市民：ノーマル：罪人の塔：座り"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "[Dungeon _2 explosion at left route corner] undead citizen: explosion: Seoul Black -- 【地下牢_2週目左ルート角で爆発】アンデッド市民：爆発：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Dungeon 1F stairs front] undead citizen: normal: tower of sinners: chain -- 【地下牢1F階段前】アンデッド市民：ノーマル：罪人の塔：鎖に繋がれ"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "[Dungeon _2F passage _right】 Undead Citizen: Normal: Tower of Sinners: Sit -- 【地下牢_2Fの通路_右】アンデッド市民：ノーマル：罪人の塔：座り"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "[Passage of the dungeon _2F_left】 Undead Citizen: Normal: Tower of sinners: Sit -- 【地下牢_2Fの通路_左】アンデッド市民：ノーマル：罪人の塔：座り"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "【Dungeon Large Cage】Strengthened Immortals 1 -- 【地下牢大檻】強化不死人1"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "【Dungeon Large Cage】Strengthened Immortals 2 -- 【地下牢大檻】強化不死人2"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "【Dungeon Large Cage】Strengthened Immortals 3 -- 【地下牢大檻】強化不死人3"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "[Sinner boss room left lap] prison man (deceased) Soul Black -- 【罪人ボス部屋左2周目】獄吏（亡者）：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[Sinner boss room right round] prison man (deceased) Soul Black -- 【罪人ボス部屋右2周目】獄吏（亡者）：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6503,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6504,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6505,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6506,
+      "Entries": [
+        "[Ladder below the gargoil post-war] wild dog -- 【ガーゴイル戦後の梯子下】野犬"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "[Tower after gargoil post-war _2 laps] wild dog: Soul Black -- 【ガーゴイル戦後の塔_2周目】野犬：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "[Tower after gargoil post-war _2 laps] wild dog: Soul Black -- 【ガーゴイル戦後の塔_2周目】野犬：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "【Bell Guard Area】Bell Guard: Zako 1 -- 【鐘守エリア】鐘守：ザコ1"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "【Bell Guard Area】Zako 2 -- 【鐘守エリア】鐘守：ザコ2"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "【Bell Guard Area】Zako 3 -- 【鐘守エリア】鐘守：ザコ3"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "【Bell Guard Area】Bell Guard: Zako 4 -- 【鐘守エリア】鐘守：ザコ4"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "【Under The Bell Guard Area】Zako 1 -- 【鐘守エリア下】鐘守：ザコ1"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "【Under The Bell Guard Area】Zako 2 -- 【鐘守エリア下】鐘守：ザコ2"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "【Bell Guard Area Lower Hole Floor】Bell Guard: Zako 1 -- 【鐘守エリア下穴フロア】鐘守：ザコ1"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "【Gargoyle】01 -- 【ガーゴイル】01"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "【Gargoyle】02 -- 【ガーゴイル】02"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "【Gargoyle】03 -- 【ガーゴイル】03"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "【Gargoyle】04 -- 【ガーゴイル】04"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "【Gargoyle】05 -- 【ガーゴイル】05"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[Gargoil] for directing -- 【ガーゴイル】演出用"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[Sinner of the sorcerer] -- 【呪術師の罪人１】2周目"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "[Sinner of the sorcerer] -- 【呪術師の罪人２】2周目"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "[South outer wall _ top of the stairs _ kicking the flame barrel] prison man (deceased) -- 【南の外壁_階段の上_火炎樽を蹴る】獄吏（亡者）"
+      ]
+    }
+  ]
+}

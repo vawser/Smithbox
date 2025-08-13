@@ -1,0 +1,209 @@
+{
+  "Name": "generatorregistparam_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 10500000,
+      "Entries": [
+        "[REG:10500000] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "[REG:10501000] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 10501002,
+      "Entries": [
+        "[REG:10501002] Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "[REG:11500000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "[REG:13100000] Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 13702200,
+      "Entries": [
+        "[REG:13702200] Prowling Magus"
+      ]
+    },
+    {
+      "ID": 14700100,
+      "Entries": [
+        "[REG:14700100] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 15300200,
+      "Entries": [
+        "[REG:15300200] Syan Knight"
+      ]
+    },
+    {
+      "ID": 15301200,
+      "Entries": [
+        "[REG:15301200] Syan Knight"
+      ]
+    },
+    {
+      "ID": 15500000,
+      "Entries": [
+        "[REG:15500000] Amana Aberration"
+      ]
+    },
+    {
+      "ID": 20400200,
+      "Entries": [
+        "[REG:20400200] Poison Moth"
+      ]
+    },
+    {
+      "ID": 20510200,
+      "Entries": [
+        "[REG:20510200] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 20510201,
+      "Entries": [
+        "[REG:20510201] Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[REG:21000000] Basilisk"
+      ]
+    },
+    {
+      "ID": 21000010,
+      "Entries": [
+        "[REG:21000010] Basilisk"
+      ]
+    },
+    {
+      "ID": 22000200,
+      "Entries": [
+        "[REG:22000200] Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "[REG:30000100] Ogre"
+      ]
+    },
+    {
+      "ID": 30401000,
+      "Entries": [
+        "[REG:30401000] Injured Milfanito"
+      ]
+    },
+    {
+      "ID": 33004900,
+      "Entries": [
+        "[REG:33004900] Old Knight"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "[REG:50900000] Leydia Witch"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "[REG:60200000] Demon of Song"
+      ]
+    },
+    {
+      "ID": 61150000,
+      "Entries": [
+        "[REG:61150000] Dragonrider"
+      ]
+    },
+    {
+      "ID": 69500200,
+      "Entries": [
+        "[REG:69500200] Forlorn"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 76000000,
+      "Entries": [
+        "[REG:76000000] Milfanito"
+      ]
+    },
+    {
+      "ID": 76000100,
+      "Entries": [
+        "[REG:76000100] Milfanito"
+      ]
+    },
+    {
+      "ID": 76010000,
+      "Entries": [
+        "[REG:76010000] Milfanito"
+      ]
+    },
+    {
+      "ID": 76010100,
+      "Entries": [
+        "[REG:76010100] Milfanito"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "[REG:81000000] Felicia the Brave"
+      ]
+    },
+    {
+      "ID": 82200300,
+      "Entries": [
+        "[REG:82200300] Peculiar Kindalur"
+      ]
+    },
+    {
+      "ID": 83300000,
+      "Entries": [
+        "[REG:83300000] Butcher Phantom"
+      ]
+    },
+    {
+      "ID": 88800000,
+      "Entries": [
+        "[REG:88800000] Pyromancer"
+      ]
+    },
+    {
+      "ID": 89000000,
+      "Entries": [
+        "[REG:89000000] Drakeblood Knight"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[REG:90000000] Lone Hunter Schmidt"
+      ]
+    }
+  ]
+}

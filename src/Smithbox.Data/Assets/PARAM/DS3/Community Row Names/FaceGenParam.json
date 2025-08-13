@@ -1,0 +1,887 @@
+{
+  "Name": "FaceGenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Testdata"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Men _ Prototype 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Men _ Prototype 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Men _ Prototype 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Men _ Prototype 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Men _ Prototype 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Men _ Prototype 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Men _ Prototype 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Men _ Prototype 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Men _ Prototype 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Men _ Prototype 10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Men _ Prototype 11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Men _ Prototype 12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Men _ Prototype 13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Men _ Prototype 14"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Women _ Prototype 1"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Women _ Prototype 2"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "4th End Edition Warrior _ Man"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "4th End Edition Knight _ Man"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "4-End Edition Witch _ Woman"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "4th end version of a sorcerer _ Man"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "E3 Solar Knights _ Man"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Default Face Test _01"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Default Face Test _02"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Default Face Test _03"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Default Face Test _04"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Default Face Test _05"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Default Face Test _06"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Default Face Test _07"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Default Face Test _08"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Default Face Test _09"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Default Face Test _10"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Default Face Test _11"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Default Face Test _12"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Default Face Test _13"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Default Face Test _14"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Default Face Test _15"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Default Face Test _16"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Default Face Test _17"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Default Face Test _18"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Default Face Test _19"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Default Face Test _20"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Default Face Test _21"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Default Face Test _22"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Default Face Test _23"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Default Face Test _24"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Default Face Test _25"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Default Face Test _26"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Default Face Test _27"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Default Face Test _28"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Default Face Test _29"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Default Face Test _30"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Default Face Test _31"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Default Face Test _32"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Default Face Test _33"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Default Face Test _34"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Default Face Test _35"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Default Face Test _36"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Default Face Test _37"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Default Face Test _38"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Default Face Test _39"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Default Face Test _40"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Default Face Test _41"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Default Face Test _42"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Default Face Test _43"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Default Face Test _44"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Default Face Test _45"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Default Face Test _46"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Default Face Test _47"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Default Face Test _48"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Default Face Test _49"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Default Face Test _50"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "The Gray saint"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Base Face (Male) - Commoner"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Base Face (Male) - Northern Warrior"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Base Face (Male) - Astora Noble"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Base Face (Male) - Dragon Academy Student"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Base Face (Male) - Carim Novice"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Base Face (Male) - Catarina Merrymaker"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Base Face (Male) - Serpentine Traveler"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Base Face (Male) - Great Swamp Outcast"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Base Face (Male) - Londor Shadow of Death"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Base Face (Male) - Irithyllian"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Base Face (Female) - Commoner"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Base Face (Female) - Northern Warrior"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Base Face (Female) - Astora Noble"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Base Face (Female) - Dragon Academy Student"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Base Face (Female) - Carim Novice"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Base Face (Female) - Catarina Merrymaker"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Base Face (Female) - Serpentine Traveler"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Base Face (Female) - Great Swamp Outcast"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Base Face (Female) - Londor Shadow of Death"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Base Face (Female) - Irithyllian"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Knight of the Sun"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Knight of the Sun (Sun Worm ver.)"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Knight of the Sun (dead)"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Knight of the Dark Moon"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Knight OST"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Knight male Tiger (hostile)"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "\"Big Hat\" Logarn"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "\"Big Hat\" Logarn (dead)"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Logarn Disciple"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Logarn Disciple (dead)"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "A ruined princess"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "The Gray saint"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "White Saint"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "White Saint (Dead)"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Saint Knight A"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Saint Knight B"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Saint Knight B (dead)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Saint Knight C"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Saint Knight C (dead)"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "The Sorcerer of the Vase"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "The Sorcerer of the Vase (dead)"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Wandering Chaos"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Healing Hands"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Blacksmith Heinrich Rickert"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "A broken-hearted merchant"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Trickster"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Broken Heart Warrior"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "Heart-Broken Warrior (dead)"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Onion Knight"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Onion Knight's Daughter"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Knight Lek held"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Bandits"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Graveyard Cowards Patch"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Dragon Priest"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Black Knights"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Belka Knight"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Witch Malose"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Ninja"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "One companion of the funnel"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "The companion of the Funnel 2"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Swamp Woman (NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Temple Knight (NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Thorn Knight (NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Yellow Robe (NPC Multi)"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "NPC (Havel)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Ojo 1 NPC (Ricard)"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Crystal Knight"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "Bandit a Gatekeeper"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "Bandit B Warrior"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "Bandit C Archer"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "Bandit D Magic (Attack)"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "Bandit e Magic (recovery)"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "Bandit F Covert"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Phantom (no Face)"
+      ]
+    }
+  ]
+}

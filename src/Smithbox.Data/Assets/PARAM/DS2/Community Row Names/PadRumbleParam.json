@@ -1,0 +1,389 @@
+{
+  "Name": "PadRumbleParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Test -- テスト"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Player Test -- プレイヤーテスト"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "Vibration-PC-Minis -- 振動-PC-極小"
+      ]
+    },
+    {
+      "ID": 1010001,
+      "Entries": [
+        "Vibration-PC-Small -- 振動-PC-小"
+      ]
+    },
+    {
+      "ID": 1010002,
+      "Entries": [
+        "Vibration -PC-Inside -- 振動-PC-中"
+      ]
+    },
+    {
+      "ID": 1010003,
+      "Entries": [
+        "Vibration-PC-Large -- 振動-PC-大"
+      ]
+    },
+    {
+      "ID": 1010004,
+      "Entries": [
+        "Vibration-PC-Oversized -- 振動-PC-特大"
+      ]
+    },
+    {
+      "ID": 1020005,
+      "Entries": [
+        "Vibration - Minimal damage -- 振動-ダメージ極小"
+      ]
+    },
+    {
+      "ID": 1020010,
+      "Entries": [
+        "Vibration - Small damage -- 振動-ダメージ小"
+      ]
+    },
+    {
+      "ID": 1020020,
+      "Entries": [
+        "Vibration - Large damage -- 振動-ダメージ大"
+      ]
+    },
+    {
+      "ID": 1020030,
+      "Entries": [
+        "Vibration - Damage Extra Large -- 振動-ダメージ特大"
+      ]
+    },
+    {
+      "ID": 1020040,
+      "Entries": [
+        "Vibration - Damage Blowing Off -- 振動-ダメージ吹き飛ばし"
+      ]
+    },
+    {
+      "ID": 1020050,
+      "Entries": [
+        "Vibration - Damage Breath -- 振動-ダメージブレス"
+      ]
+    },
+    {
+      "ID": 1020055,
+      "Entries": [
+        "Vibration - Damage Breath - Loop -- 振動-ダメージブレス-ループ"
+      ]
+    },
+    {
+      "ID": 1020060,
+      "Entries": [
+        "Vibration - Damage Fall -- 振動-ダメージ転倒"
+      ]
+    },
+    {
+      "ID": 1020070,
+      "Entries": [
+        "Vibration - Damage Fall -- 振動-ダメージ落下"
+      ]
+    },
+    {
+      "ID": 1020080,
+      "Entries": [
+        "Vibration - Damage Fall Fall -- 振動-ダメージ落下転倒"
+      ]
+    },
+    {
+      "ID": 1020090,
+      "Entries": [
+        "Vibration - Damage rope fall -- 振動-ダメージロープ落下"
+      ]
+    },
+    {
+      "ID": 1020100,
+      "Entries": [
+        "Vibration - Damage Parity Break -- 振動-ダメージパリィブレイク"
+      ]
+    },
+    {
+      "ID": 1020110,
+      "Entries": [
+        "Vibration - Damage Grab -- 振動-ダメージつかみ"
+      ]
+    },
+    {
+      "ID": 1020120,
+      "Entries": [
+        "Vibration - Damage collapse -- 振動-ダメージ崩れ落ち"
+      ]
+    },
+    {
+      "ID": 1020125,
+      "Entries": [
+        "Vibration - Damage Collapse - Kneeling -- 振動-ダメージ崩れ落ち-膝つき"
+      ]
+    },
+    {
+      "ID": 1020126,
+      "Entries": [
+        "Vibration - Damage Collapse - Fall -- 振動-ダメージ崩れ落ち-倒れ込み"
+      ]
+    },
+    {
+      "ID": 1021010,
+      "Entries": [
+        "Vibration - Death - Normal -- 振動-死亡-通常"
+      ]
+    },
+    {
+      "ID": 1021015,
+      "Entries": [
+        "Vibration - death - normal - falling -- 振動-死亡-通常-倒れ込み"
+      ]
+    },
+    {
+      "ID": 1021020,
+      "Entries": [
+        "Vibration - Death - Special -- 振動-死亡-特殊"
+      ]
+    },
+    {
+      "ID": 1021025,
+      "Entries": [
+        "Vibration - Death - Special - Falling -- 振動-死亡-特殊-倒れ込み"
+      ]
+    },
+    {
+      "ID": 1021030,
+      "Entries": [
+        "Vibration - Death - Breath -- 振動-死亡-ブレス"
+      ]
+    },
+    {
+      "ID": 1021035,
+      "Entries": [
+        "Vibration - Death - Breath - Loop -- 振動-死亡-ブレス-ループ"
+      ]
+    },
+    {
+      "ID": 1021040,
+      "Entries": [
+        "Vibration - Death - Poison -- 振動-死亡-毒"
+      ]
+    },
+    {
+      "ID": 1021050,
+      "Entries": [
+        "Vibration - Death - Curse Death -- 振動-死亡-呪死"
+      ]
+    },
+    {
+      "ID": 1021060,
+      "Entries": [
+        "Vibration - Death - Low Air Landing -- 振動-死亡-低空着地"
+      ]
+    },
+    {
+      "ID": 1021065,
+      "Entries": [
+        "Vibration - Death - Low Air Landing - Falling -- 振動-死亡-低空着地-倒れ込み"
+      ]
+    },
+    {
+      "ID": 1021070,
+      "Entries": [
+        "Vibration - Death - Headshot -- 振動-死亡-ヘッドショット"
+      ]
+    },
+    {
+      "ID": 1021075,
+      "Entries": [
+        "Vibration - Death - Headshot - Fall -- 振動-死亡-ヘッドショット-倒れ込み"
+      ]
+    },
+    {
+      "ID": 1021080,
+      "Entries": [
+        "Vibration - Death - Blown Away -- 振動-死亡-吹き飛び"
+      ]
+    },
+    {
+      "ID": 1022010,
+      "Entries": [
+        "Vibration - Guard - Weapon (Small) - Small -- 振動-ガード-武器（小）-小"
+      ]
+    },
+    {
+      "ID": 1022020,
+      "Entries": [
+        "Vibration - Guard - Weapon (Small) - Large -- 振動-ガード-武器（小）-大"
+      ]
+    },
+    {
+      "ID": 1022030,
+      "Entries": [
+        "Vibration - Guard - Weapon (Medium) - Small -- 振動-ガード-武器（中）-小"
+      ]
+    },
+    {
+      "ID": 1022040,
+      "Entries": [
+        "Vibration - Guard - Weapon (Medium) - Large -- 振動-ガード-武器（中）-大"
+      ]
+    },
+    {
+      "ID": 1022050,
+      "Entries": [
+        "Vibration - Guard - Weapon (Large) - Small -- 振動-ガード-武器（大）-小"
+      ]
+    },
+    {
+      "ID": 1022060,
+      "Entries": [
+        "Vibration - Guard - Weapon (Large) - Large -- 振動-ガード-武器（大）-大"
+      ]
+    },
+    {
+      "ID": 1030010,
+      "Entries": [
+        "Vibration - Roll - Lightweight Rolling -- 振動-ロール-軽量ローリング"
+      ]
+    },
+    {
+      "ID": 1030020,
+      "Entries": [
+        "Vibration - Roll - Weight Rolling -- 振動-ロール-重量ローリング"
+      ]
+    },
+    {
+      "ID": 1030030,
+      "Entries": [
+        "Vibration - Roll - Failure Rolling -- 振動-ロール-失敗ローリング"
+      ]
+    },
+    {
+      "ID": 1040010,
+      "Entries": [
+        "Vibration -Toss-Backstub -- 振動-投げ-バックスタブ"
+      ]
+    },
+    {
+      "ID": 1041010,
+      "Entries": [
+        "Vibration - Toss - Paribreak Stub -- 振動-投げ-パリィブレイクスタブ"
+      ]
+    },
+    {
+      "ID": 1042010,
+      "Entries": [
+        "Vibration -Throw-Guard Break Stub -- 振動-投げ-ガードブレイクスタブ"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Vibration Test 1 -- 振動テスト１"
+      ]
+    },
+    {
+      "ID": 11010000,
+      "Entries": [
+        "Vibration-ENE-Minimum -- 振動-ENE-極小"
+      ]
+    },
+    {
+      "ID": 11010001,
+      "Entries": [
+        "Vibration-ENE-Small -- 振動-ENE-小"
+      ]
+    },
+    {
+      "ID": 11010002,
+      "Entries": [
+        "Vibration-ENE-Medium -- 振動-ENE-中"
+      ]
+    },
+    {
+      "ID": 11010003,
+      "Entries": [
+        "Vibration-ENE-Large -- 振動-ENE-大"
+      ]
+    },
+    {
+      "ID": 11010004,
+      "Entries": [
+        "Vibration-ENE-Oversized -- 振動-ENE-特大"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Vibration Test 1 -- 振動テスト１"
+      ]
+    },
+    {
+      "ID": 21010000,
+      "Entries": [
+        "Vibration - Directing - Very Small -- 振動-演出-極小"
+      ]
+    },
+    {
+      "ID": 21010001,
+      "Entries": [
+        "Vibration - Directing - Small -- 振動-演出-小"
+      ]
+    },
+    {
+      "ID": 21010002,
+      "Entries": [
+        "Vibration - Directing - Medium -- 振動-演出-中"
+      ]
+    },
+    {
+      "ID": 21010003,
+      "Entries": [
+        "Vibration - Directing - Large -- 振動-演出-大"
+      ]
+    },
+    {
+      "ID": 21010004,
+      "Entries": [
+        "Vibration - Directing - Oversized -- 振動-演出-特大"
+      ]
+    },
+    {
+      "ID": 22010000,
+      "Entries": [
+        "Vibration - Directing - Multiplayer Generation -- 振動-演出-マルチプレイ発生"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Vibration Test 1 -- 振動テスト１"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "Vibration Test 1 -- 振動テスト１"
+      ]
+    }
+  ]
+}

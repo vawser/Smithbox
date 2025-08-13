@@ -1,0 +1,341 @@
+{
+  "Name": "generatorparam_m10_04_00_00",
+  "Entries": [
+    {
+      "ID": 45,
+      "Entries": [
+        "[GEN:45] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[GEN:46] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[GEN:47] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[GEN:60] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "[GEN:85] Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "[GEN:86] Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[GEN:100] Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[GEN:101] Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[GEN:105] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[GEN:106] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[GEN:107] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[GEN:108] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[GEN:110] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[GEN:111] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "[GEN:115] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "[GEN:116] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "[GEN:120] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[GEN:121] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "[GEN:122] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "[GEN:135] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "[GEN:136] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[GEN:150] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[GEN:151] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[GEN:152] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[GEN:205] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "[GEN:207] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "[GEN:260] Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "[GEN:261] Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "[GEN:270] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[GEN:400] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[GEN:401] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[GEN:402] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[GEN:405] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[GEN:410] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "[GEN:413] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "[GEN:414] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "[GEN:415] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Small Boar"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[GEN:1001] Small Boar"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[GEN:1002] Small Boar"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[GEN:1010] Undead Boar"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[GEN:1011] Undead Boar"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[GEN:1020] Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Skeleton"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[GEN:1101] Skeleton"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[GEN:1102] Skeleton"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[GEN:1103] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "[GEN:1104] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "[GEN:1105] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "[GEN:1106] Skeleton"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "[GEN:1107] Skeleton"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Mimic"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[GEN:3101] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "[GEN:3230] Greatsword Foreigner Phantom"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Foreign Wanderer Phantom"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Voice Marker"
+      ]
+    }
+  ]
+}

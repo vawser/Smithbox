@@ -1,0 +1,697 @@
+{
+  "Name": "ThrustersParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "NPC default"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 29999999,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "Ascent & QB thruster (left shoulder)",
+        "Ascent & QB thruster (right shoulder)",
+        "Hovering thruster (left booster)",
+        "Hovering thruster (right booster)",
+        "Hovering thruster (above left shoulder)",
+        "Hovering thruster (above right shoulder)",
+        "Left leg sub thruster",
+        "Right leg sub thruster",
+        "Left leg shin sub thruster hovering",
+        "Right leg shin sub thruster hovering",
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "main thruster"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "QB front thruster",
+        "QB left thruster",
+        "QB right thruster",
+        "ascent thruster",
+        "lift fan"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "QB left thruster",
+        "QB right thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster",
+        "Ace parts thruster"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "Sub thruster right front dual use",
+        "Sub thruster right rear dual use",
+        "Sub thruster right",
+        "Sub thruster right",
+        "Sub thruster left front dual use",
+        "Sub thruster left rear dual use",
+        "Sub thruster left",
+        "Sub thruster left",
+        "Thruster after QB",
+        "Thruster after QB",
+        "Thruster right offset after QB",
+        "Thruster right offset after QB",
+        "Offset on thruster after QB",
+        "Offset on thruster after QB",
+        "QB right thruster",
+        "QB left thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "Thruster right offset after QB",
+        "Thruster right offset after QB",
+        "Offset on thruster after QB",
+        "Offset on thruster after QB"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "Sub thruster right front dual use",
+        "Sub thruster right rear dual use",
+        "Sub thruster right",
+        "Sub thruster right",
+        "Sub thruster left front dual use",
+        "Sub thruster left rear dual use",
+        "Sub thruster left",
+        "Sub thruster left",
+        "Thruster after QB",
+        "Thruster after QB",
+        "QB right thruster",
+        "QB left thruster",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "Sub thruster right front dual use",
+        "Sub thruster right rear dual use",
+        "Sub thruster right",
+        "Sub thruster right",
+        "Sub thruster left front dual use",
+        "Sub thruster left rear dual use",
+        "Sub thruster left",
+        "Sub thruster left",
+        "Thruster after QB",
+        "Thruster after QB",
+        "QB right thruster",
+        "QB left thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "Additional main central thruster",
+        "Additional main right thruster",
+        "Additional main left thruster",
+        "Additional right wing main thruster",
+        "Additional left wing main thruster",
+        "Additional right wing sub-thruster",
+        "Additional left wing sub-thruster",
+        "Additional right wing side thruster",
+        "Additional left wing side thruster",
+        "Additional right wing elevation thruster",
+        "Additional left wing elevation thruster",
+        "Additional right hovering thruster",
+        "Additional left hovering thruster"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "Main thruster_left_back wing",
+        "Main thruster_right_back wing",
+        "QB left_left_shoulder",
+        "QB right_right_shoulder",
+        "QB front left_front left_belly",
+        "QB back left_left back_belly",
+        "QB front right_right front_belly",
+        "QB back right_right back_belly",
+        "Climb thruster_left_sole",
+        "Climb thruster_right_sole"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "right sub thruster",
+        "left sub thruster",
+        "rear QB",
+        "rear QB",
+        "Former QB",
+        "Former QB",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "before sub",
+        "after sub",
+        "sub left",
+        "sub right"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Main/sub/QB combined front right",
+        "Main/sub/QB combined front left",
+        "Main/sub/QB combined rear right",
+        "Main/sub/QB combined rear left"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "main thruster"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "Sub thruster left front",
+        "Sub thruster right front",
+        "Sub thruster left rear",
+        "Sub thruster right rear",
+        "ascent thruster",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "humanoid 1",
+        "humanoid 2",
+        "humanoid 3",
+        "humanoid 4",
+        "Inside left foot 1",
+        "inside left foot 2",
+        "inside left foot 3",
+        "inside left foot 4",
+        "Inside right foot 1",
+        "inside right foot 2",
+        "inside right foot 3",
+        "inside right foot 4",
+        "Left foot outside 1",
+        "Left foot outside 2",
+        "left foot outside 3",
+        "left foot outside 4",
+        "Right foot outside 1",
+        "Right foot outside 2",
+        "Right foot outside 3",
+        "outside right foot 4",
+        "Bottom left 1",
+        "Bottom left 2",
+        "Bottom left 3",
+        "Bottom left 4",
+        "Bottom right 1",
+        "Bottom right 2",
+        "Bottom right 3",
+        "Bottom right 4",
+        "Bottom rear 1",
+        "Bottom rear 2",
+        "bottom rear 3",
+        "Bottom rear 4"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "OW backwards",
+        "OW backwards",
+        "Ring frame rear side",
+        "Ring frame left front side",
+        "ring frame left side",
+        "ring frame left side",
+        "Ring frame left rear side",
+        "OW left side",
+        "OW left side",
+        "Front left side of center frame",
+        "Front left side of center frame",
+        "Ring frame right front side",
+        "ring frame right side",
+        "ring frame right side",
+        "Ring frame right rear side",
+        "OW right side",
+        "OW right side",
+        "Front right side of center frame",
+        "Front right side of center frame",
+        "OW directly behind"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "Ring frame rear side",
+        "Ring frame left front side",
+        "ring frame left side",
+        "ring frame left side",
+        "Ring frame left rear side",
+        "Ring frame right front side",
+        "ring frame right side",
+        "ring frame right side",
+        "Ring frame right rear side",
+        "Front left side of center frame",
+        "Front right side of center frame",
+        "OW upper back",
+        "OW upper back",
+        "OW backwards",
+        "OW backwards",
+        "OW backwards",
+        "OW backwards",
+        "OW left rear",
+        "OW backwards",
+        "OW right rear",
+        "OW left side",
+        "OW right side",
+        "OW left tip",
+        "OW right tip",
+        "OW main",
+        "OW main"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "For front sub thruster",
+        "For front sub thruster",
+        "Sub thruster left",
+        "Sub thruster left",
+        "Sub thruster right",
+        "Sub thruster right"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "Arm armament right 1",
+        "Arm armament right 2",
+        "Arm armed left 1",
+        "Arm armed left 2",
+        "Shoulder weapon right 1",
+        "Shoulder weapon right 2",
+        "Shoulder weapon left 1",
+        "Shoulder weapon left 2",
+        "right foot 1",
+        "right foot 2",
+        "right foot 3",
+        "right foot 4",
+        "left foot 1",
+        "left foot 2",
+        "left foot 3",
+        "left foot 4",
+        "main thruster",
+        "main thruster",
+        "Under left backpack",
+        "Under the right backpack",
+        "For front sub thruster",
+        "For after sub thruster",
+        "Sub thruster left",
+        "Sub thruster right",
+        "For front QB (right leg stabilizer)",
+        "For front QB (left leg stabilizer)",
+        "For after QB (right leg stabilizer)",
+        "For after QB (left leg stabilizer)",
+        "QB left",
+        "For QB right",
+        "ascent thruster",
+        "Cannon transformer arm armament right 1",
+        "Cannon transformer arm armed right 2",
+        "Cannon transformer arm armed left 1",
+        "Cannon transformer arm armed left 2",
+        "Turret deformed shoulder armament right 1",
+        "Turret deformed shoulder armament right 2",
+        "Turret deformed shoulder armament left 1",
+        "Turret deformed shoulder armament left 2"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "right foot 1",
+        "right foot 2",
+        "right foot 3",
+        "right foot 4",
+        "left foot 1",
+        "left foot 2",
+        "left foot 3",
+        "left foot 4",
+        "main thruster",
+        "main thruster",
+        "For front sub thruster",
+        "For after sub thruster",
+        "Sub thruster left",
+        "Sub thruster right",
+        "For front QB (right leg stabilizer)",
+        "For front QB (left leg stabilizer)",
+        "For after QB (right leg stabilizer)",
+        "For after QB (left leg stabilizer)",
+        "QB left",
+        "For QB right",
+        "ascent thruster",
+        "Cannon transformer arm armament right 1",
+        "Cannon transformer arm armed right 2",
+        "Cannon transformer arm armed left 1",
+        "Cannon transformer arm armed left 2",
+        "Turret deformed shoulder armament right 1",
+        "Turret deformed shoulder armament right 2",
+        "Turret deformed shoulder armament left 1",
+        "Turret deformed shoulder armament left 2",
+        "Shoulder additional weapon right",
+        "Shoulder additional weapon left"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For front sub thruster",
+        "For front sub thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "For after sub thruster",
+        "For front QB (right leg stabilizer)",
+        "For front QB (left leg stabilizer)",
+        "For QB right",
+        "QB left",
+        "For after QB (right leg stabilizer)",
+        "For after QB (left leg stabilizer)"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "For front sub thruster",
+        "For front sub thruster",
+        "Sub thruster left",
+        "Sub thruster right",
+        "Sub thruster for left ascending (unique)",
+        "Sub thruster for right rise (unique)",
+        "Sub thruster left lower stage",
+        "Sub thruster right lower stage",
+        "for ascent thrusters",
+        "for ascent thrusters",
+        "For overdo boost"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "for ascent thrusters"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "For QB/sub front",
+        "For QB/sub front",
+        "For QB/sub front",
+        "For QB/sub front"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "For main thruster front",
+        "For front sub thruster",
+        "For front sub thruster"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "ascent thruster",
+        "For front sub thruster",
+        "For front sub thruster",
+        "For front sub thruster",
+        "For front sub thruster"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For main thruster",
+        "For front sub thruster",
+        "For after sub thruster",
+        "Sub thruster left",
+        "Sub thruster right",
+        "ascent thruster"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "Bottom thruster left front A",
+        "Bottom thruster left front B",
+        "Bottom thruster left rear A",
+        "Bottom thruster left rear B",
+        "Bottom thruster right front A",
+        "Bottom thruster right front B",
+        "Bottom thruster right rear A",
+        "Bottom thruster right rear B"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "Leg F root thruster",
+        "Leg F intermediate thruster",
+        "Leg F intermediate thruster",
+        "Leg F ankle thruster",
+        "Leg F tip left thruster",
+        "Leg F tip right thruster",
+        "Leg E root thruster",
+        "Leg E intermediate thruster",
+        "Leg E intermediate thruster",
+        "Leg E ankle thruster",
+        "Leg E tip left thruster",
+        "Leg E tip right thruster",
+        "Leg D root thruster",
+        "Leg D intermediate thruster",
+        "Leg D intermediate thruster",
+        "leg D ankle thruster",
+        "Leg D end left thruster",
+        "Leg D end right thruster",
+        "Leg C root thruster",
+        "Leg C intermediate thruster",
+        "Leg C intermediate thruster",
+        "Leg C ankle thruster",
+        "Leg C end left thruster",
+        "Leg C tip right thruster",
+        "Leg B root thruster",
+        "Leg B intermediate thruster",
+        "Leg B intermediate thruster",
+        "Leg B ankle thruster",
+        "Leg B end left thruster",
+        "Leg B tip right thruster",
+        "Leg A root thruster",
+        "Leg A intermediate thruster",
+        "Leg A intermediate thruster",
+        "Leg A ankle thruster",
+        "Leg A left thruster",
+        "Leg A tip right thruster"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "Leg F root thruster",
+        "Leg F ankle thruster",
+        "Leg F tip left thruster",
+        "Leg F tip right thruster",
+        "Leg E root thruster",
+        "Leg E ankle thruster",
+        "Leg E tip left thruster",
+        "Leg E tip right thruster",
+        "Leg D root thruster",
+        "leg D ankle thruster",
+        "Leg D end left thruster",
+        "Leg D end right thruster",
+        "Leg C root thruster",
+        "Leg C ankle thruster",
+        "Leg C end left thruster",
+        "Leg C tip right thruster",
+        "Leg B root thruster",
+        "Leg B ankle thruster",
+        "Leg B end left thruster",
+        "Leg B tip right thruster",
+        "Leg A root thruster",
+        "Leg A ankle thruster",
+        "Leg A left thruster",
+        "Leg A tip right thruster"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "For front sub thruster",
+        "Sub thruster left front dual use",
+        "Sub thruster left",
+        "Sub thruster right front dual use",
+        "Sub thruster right",
+        "Unique for airborne use"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "main thruster",
+        "For front sub thruster",
+        "For front sub thruster",
+        "For after sub thruster",
+        "For after sub thruster"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "Main thruster (large back)",
+        "For left leg elevation (main)",
+        "For left leg elevation (sub)",
+        "For raising the right leg (main)",
+        "For right foot elevation (sub)",
+        "left shin",
+        "right shin",
+        "Right shin 1 (BB)",
+        "Right shin 2 (BB)",
+        "Right shin 3 (BB)",
+        "Right shin 4 (BB)",
+        "Left shin 1 (BB)",
+        "Left shin 2 (BB)",
+        "Left shin 3 (BB)",
+        "Left shin 4 (BB)",
+        "Left side (BB)",
+        "Right side (BB)",
+        "Left side (SB)",
+        "Right side (SB)",
+        "Left shoulder (tip)",
+        "Left shoulder (diagonally below)",
+        "Right shoulder (tip)",
+        "Right shoulder (diagonally below)"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "Main thruster (large back)",
+        "left palm",
+        "right palm",
+        "Left side (SB)",
+        "Right side (SB)",
+        "Left shoulder (tip)",
+        "Left shoulder (diagonally below)",
+        "Right shoulder (tip)",
+        "Right shoulder (diagonally below)"
+      ]
+    }
+  ]
+}

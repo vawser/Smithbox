@@ -1,0 +1,125 @@
+{
+  "Name": "SortieStartingPoint",
+  "Entries": [
+    {
+      "ID": 10423600,
+      "Entries": [
+        "Far Southwest from Northwest"
+      ]
+    },
+    {
+      "ID": 10423601,
+      "Entries": [
+        "Far Southwest from South"
+      ]
+    },
+    {
+      "ID": 10423800,
+      "Entries": [
+        "Stormhill South of Gate from Northwest"
+      ]
+    },
+    {
+      "ID": 10423801,
+      "Entries": [
+        "Stormhill South of Gate from South"
+      ]
+    },
+    {
+      "ID": 10423803,
+      "Entries": [
+        "West of Warmaster's Shack from West"
+      ]
+    },
+    {
+      "ID": 10423805,
+      "Entries": [
+        "West of Warmaster's Shack from South"
+      ]
+    },
+    {
+      "ID": 10423900,
+      "Entries": [
+        "Above Stormhill Tunnel Entrance from Northwest"
+      ]
+    },
+    {
+      "ID": 10423902,
+      "Entries": [
+        "Above Stormhill Tunnel Entrance from East"
+      ]
+    },
+    {
+      "ID": 10423911,
+      "Entries": [
+        "Above Stormhill Tunnel Entrance from West"
+      ]
+    },
+    {
+      "ID": 10443700,
+      "Entries": [
+        "Southeast of Lake from South"
+      ]
+    },
+    {
+      "ID": 10443701,
+      "Entries": [
+        "Southeast of Lake from Southwest"
+      ]
+    },
+    {
+      "ID": 10443703,
+      "Entries": [
+        "East of Cavalry Bridge from Southeast"
+      ]
+    },
+    {
+      "ID": 10443704,
+      "Entries": [
+        "East of Cavalry Bridge from North"
+      ]
+    },
+    {
+      "ID": 10443705,
+      "Entries": [
+        "East of Cavalry Bridge from West"
+      ]
+    },
+    {
+      "ID": 10443711,
+      "Entries": [
+        "Southeast of Lake from East"
+      ]
+    },
+    {
+      "ID": 10443900,
+      "Entries": [
+        "Northeast of Saintsbridge from Northwest"
+      ]
+    },
+    {
+      "ID": 10443902,
+      "Entries": [
+        "Northeast of Saintsbridge from Northeast"
+      ]
+    },
+    {
+      "ID": 10453600,
+      "Entries": [
+        "Minor Erdtree from Northeast"
+      ]
+    },
+    {
+      "ID": 10453801,
+      "Entries": [
+        "Below Summonwater Hawk from Southeast"
+      ]
+    },
+    {
+      "ID": 10453900,
+      "Entries": [
+        "Below Summonwater Hawk from West"
+      ]
+    }
+  ]
+}

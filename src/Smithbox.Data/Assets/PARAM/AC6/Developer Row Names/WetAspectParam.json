@@ -1,0 +1,125 @@
+{
+  "Name": "WetAspectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "water wet -- 水濡れ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poison wet -- 毒濡れ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "mud stains -- 泥汚れ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "frozen -- 凍結"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "oily -- 油濡れ"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "For hostile guests -- 敵対ゲスト用"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "iron body -- 鉄の体"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Cutscene] Blood soaked -- 【カットシーン】血濡れ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Cutscene] Tar -- 【カットシーン】タール"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Cutscene] Preliminary 2 -- 【カットシーン】予備2"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "【Vacant】 -- 【空き】"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "For adhesion confirmation -- 付着確認用"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "mercury -- 水銀"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "plague wet -- 疫病濡れ"
+      ]
+    }
+  ]
+}

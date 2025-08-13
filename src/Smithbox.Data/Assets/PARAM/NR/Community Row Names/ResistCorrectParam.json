@@ -1,0 +1,311 @@
+{
+  "Name": "ResistCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Humanoid: All"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Enemy: Poison"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Enemy: Scarlet Rot"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Enemy: Hemorrhage"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Enemy: Deathblight"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Enemy: Frostbite"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Enemy: Sleep"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Enemy: Madness"
+      ]
+    }
+  ]
+}

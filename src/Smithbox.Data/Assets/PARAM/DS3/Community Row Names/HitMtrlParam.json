@@ -1,0 +1,305 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cobblestone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Soil"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grassland"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Fire"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Trees"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Swamp"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Nest"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Flesh"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sand"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Roof Tiles"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Cloth"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Fallen leaves"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Bell"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (Puddle)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (ankle level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (shallow)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison Swamp (deep)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison Swamp (knee)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Poison Swamp (about puddle)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Water (waist or more)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Carpet"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Without"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Toxic"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "God Grave Net"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Toxic"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Toxic - Weak Slow"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Toxic - Strong Slow"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Unk - Strong Slow"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Unk"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "No Fall Damage"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "No Fall Damage - Poison"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "No Fall Damage"
+      ]
+    }
+  ]
+}

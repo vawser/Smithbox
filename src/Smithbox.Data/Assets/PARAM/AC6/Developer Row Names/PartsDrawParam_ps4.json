@@ -1,0 +1,912 @@
+{
+  "Name": "PartsDrawParam_ps4",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default settings -- デフォルト設定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 main -- L0メイン"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 main -- L1メイン"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "No LOD -- LODしない"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "testparm"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "vignette test -- ヴィネットテスト"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "AC_PC"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "AC_NPC"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "illusion -- 幻影"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For characters, small size (~20m) -- キャラ用 小型(～20m)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Medium size for characters (~40m) -- キャラ用 中型(～40ｍ)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Large size for characters (~100m) -- キャラ用 大型(～100m)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Extra large for characters (~200m) -- キャラ用 特大(～200m)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For characters, extra large ~ 500m) -- キャラ用 超特大～500ｍ)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For characters extra large or larger (1000m~) -- キャラ用 超特大以上(1000m～)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "c4210_for illusions -- c4210_幻影用"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "For characters (Ice Worm) -- キャラ用(アイスワーム）"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "For characters (landing ship) -- キャラ用(揚陸艦）"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Does not switch to LOD model for character -- キャラ用 LODモデルに切り替わらない"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For wild animals, small (1.5m or less) -- 野生動物用 小型(1.5m以下)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "For wild animals, medium size (3m or less) -- 野生動物用 中型(3m以下)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "For wild animals, large (less than 6m) -- 野生動物用 大型(6m以下)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Extra large for wild animals (12m or less) -- 野生動物用 特大(12m以下)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "For wild animals, huge (less than 25m) -- 野生動物用 巨大(25m以下)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Fortress for wild animals (less than 50m) -- 野生動物用 要塞(50m以下)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Does not switch to wildlife LOD model -- 野生動物用 LODモデルに切り替わらない"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "FNR asset 201m~ (does not switch to low texture) -- FNR アセット\u3000201m～(lowテクスチャに切り替わらない)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "FNR Asset 1001m~ (For models using base texture only) -- FNR アセット\u30001001m～(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "FNR Asset\u3000501m～1000m(For models using base texture only) -- FNR アセット\u3000501m～1000m(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "FNR asset 201m to 500m (only for models using base texture) -- FNR アセット\u3000201m～500m(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "FNR asset extra large 101-200m (only for models using base texture) -- FNR アセット超特大 101～200ｍ(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "FNR asset extra large 61-100m (only for models using base texture) -- FNR アセット特大 61～100 ｍ(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "FNR asset size 31-60m (only for models using base texture) -- FNR アセット大 31～60ｍ(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "FNR asset 11-30m (only for models using base texture) -- FNR アセット中 11～30ｍ(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "FNR asset small ~10m (only for models using base texture) -- FNR アセット小 ～10ｍ(ベーステクスチャ使用モデル専用)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "FNR\u30001500m～"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "m03\u30001001m～1500"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "m03\u3000501m～1000"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~ -- FNR アセット超特大以上\u3000201m～"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "FNR Asset Super Large 101-200m -- FNR アセット超特大 101～200ｍ"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "FNR Asset Extra Large 61-100m -- FNR アセット特大 61～100 ｍ"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "FNR Asset Large 31-60m -- FNR アセット大 31～60ｍ"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "FNR asset middle 11-30m -- FNR アセット中 11～30ｍ"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "FNR Asset Small ~10m -- FNR アセット小 ～10ｍ"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Does not switch to low texture -- lowテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Does not switch to LOD model Does not switch to low texture -- LODモデルに切り替わらない lowテクスチャに切り替わらない"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 only (reflection scene default) -- L2のみ（反射シーンデフォルト）"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Does not switch to LOD model (for polyplay) -- LODモデルに切り替わらない(ポリ劇用)"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "For wood only -- 木専用"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Vignette for Imposter -- ヴィネット\u3000インポスター用"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "FNR c9420 missile battery provisional support -- FNR\u3000ｃ9420ミサイル砲台\u3000暫定対応"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "FNR micro target test -- FNR\u3000極小目標用\u3000テスト"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "FNR large target test -- FNR\u3000大目標用\u3000テスト"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "FNR Emphasis Asset 500m -- FNR\u3000強調用アセット\u3000500ｍ"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "FNR Emphasis Asset 4000m -- FNR\u3000強調用アセット\u30004000ｍ"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "FNR Emphasis Asset Entire Map -- FNR\u3000強調用アセット\u3000マップ全域"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "FNR\u3000FP version for strong enemies -- FNR\u3000FP版 強敵用"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Includes up to SLOD_L2 for 20m or less -- 20m以下用SLOD_L2まで含める"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Includes up to SLOD_L2 for building size -- ビルサイズ用SLOD_L2まで含める"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Temporary A-layer line -- A層線路暫定用"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Huge map asset without SLOD_Includes up to L2 -- 巨大マップ・アセットSLOD無し_L2まで含める"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Includes huge asset SLOD_L2 -- 巨大アセットSLOD_L2まで含める"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Huge asset for distant view SLOD_Reverse LOD processing -- 遠景用巨大アセットSLOD_逆LOD処理"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "A-layer supporting pillar L2 distance setting provisional -- A層支える柱\u3000L2距離設定\u3000暫定用"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "FNR Proto Giant Boss Test -- FNR\u3000プロト巨大ボス用テスト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "m60 temporary LOD test -- m60\u3000一時LODテスト"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "401～700m"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "No TexLOD -- TexLOD無"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "1~10m -- 1～10m"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "11～30m"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "31～60m"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "61～100m"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "101～200m"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "201～400m"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "401～700m"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "701～1100m"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "1101～1600m"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "1601～2500m"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "2501～5000m"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "5001～10000m"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "10000～20000m"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "31～60m"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "61～100m"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "101～200m"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "201～400m"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "101-400 Small for mountain natural terrain only -- 101～400\u3000山岳自然地形専用\u3000小"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "401-700m For mountain natural terrain only Medium -- 401～700m\u3000山岳自然地形専用\u3000中"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "701-1100m For mountain natural terrain only Large (farthest view) -- 701～1100m\u3000\u3000山岳自然地形専用\u3000大（最遠景）"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "50-100m Small for mountain buildings (L1 proxy using shadow L1) -- 50～100ｍ\u3000 山岳ビル用\u3000小（影L1利用L1プロキシ）"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "101-200m Large for mountain buildings (L1 proxy using shadow L1) (does not disappear) -- 101～200ｍ\u3000 山岳ビル用\u3000大（影L1利用L1プロキシ）（消えない）"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "VOB2 Nomaru asset only (L1 proxy using shadow L0) -- VOB2ノ丸アセット専用（影Ｌ0利用Ｌ1プロキシ）"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "10-50m Mountain L1 proxy extremely small (L1 proxy using shadow L1) -- 10～50ｍ\u3000 山岳Ｌ１プロキシ\u3000極小（影L1利用L1プロキシ）"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Mountain SLOD (no LOD, low texture switching) -- 山岳ＳＬＯＤ\u3000（ＬＯＤなし\u3000ローテクスチャ切り替え）"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "FNR Asset extra large or larger 1101m to 1600m Proxy model included -- FNR アセット超特大以上\u30001101m～1600m\u3000   プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "FNR Asset extra large or larger 701m to 1100m Proxy model included -- FNR アセット超特大以上\u3000701m～1100m\u3000   プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "FNR Asset extra large or larger 401m to 700m Proxy model included -- FNR アセット超特大以上\u3000401m～700m\u3000   プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~ Proxy model included -- FNR アセット超特大以上\u3000201m～\u3000   プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "FNR Asset Extra Large 101-200m Proxy model included -- FNR アセット超特大 101～200ｍ\u3000     プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "FNR Asset Extra Large 61-100m Proxy model included -- FNR アセット特大 61～100 ｍ\u3000 プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "FNR Asset size 31-60m including proxy model -- FNR アセット大 31～60ｍ  プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "FNR asset 11-30m including proxy model -- FNR アセット中 11～30ｍ  プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "FNR small asset ~10m including proxy model -- FNR アセット小 ～10ｍ  プロキシーモデル込み"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Archive AC remains only -- アーカイブＡＣ残骸専用"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "For forced HiActive while playing the floating giant wall anime. -- 浮上巨大壁のアニメ再生中強制HiActive用"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "FNR for small fry enemy characters -- FNR\u3000雑魚敵キャラ用"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "FNR huge asset for anime -- FNR 巨大アセットアニメ用"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "For celestial sphere -- 天球用"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "For the inner parts after the celestial sphere_A -- 天球の次に内側のパーツ用_A"
+      ]
+    },
+    {
+      "ID": 858,
+      "Entries": [
+        "For parts outside the celestial sphere_A -- 天球より外側のパーツ用_A"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "For inner parts treated as celestial sphere_01_A -- 天球扱いの内側のパーツ用_01_A"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "For inner parts treated as celestial sphere_02_B -- 天球扱いの内側のパーツ用_02_B"
+      ]
+    },
+    {
+      "ID": 870,
+      "Entries": [
+        "For distant view parts (clouds, etc.) -- 遠景用パーツ用(雲など）"
+      ]
+    },
+    {
+      "ID": 880,
+      "Entries": [
+        "VR1"
+      ]
+    },
+    {
+      "ID": 881,
+      "Entries": [
+        "VR2"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "For shadow model -- 影モデル用"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~ (texture LOD distance priority) -- FNR アセット超特大以上\u3000201m～(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "FNR asset extra large 101-200m (texture LOD distance priority) -- FNR アセット超特大 101～200ｍ(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "FNR asset extra large 61-100 m (texture LOD distance priority) -- FNR アセット特大 61～100 ｍ(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "FNR large asset 31-60m (texture LOD distance priority) -- FNR アセット大 31～60ｍ(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "FNR asset 11-30m (texture LOD distance priority) -- FNR アセット中 11～30ｍ(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 5055,
+      "Entries": [
+        "FNR small asset ~10m (texture LOD distance priority) -- FNR アセット小 ～10ｍ(テクスチャLOD距離優先）"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "No LOD (CS only) -- LODしない(CS専用)"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "No LOD_Reflection (CS_C end only) -- LODしない_映り込む(CS_Cエンド専用)"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "LOD_For super huge assets (CS only) -- LODする_超巨大アセット用(CS専用)"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "No LOD_New B layer level 1 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル1(生きていたレスター専用)"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "No LOD_New B layer level 2 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル2(生きていたレスター専用)"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "No LOD_New B layer level 3 for CS (only for Lester who was alive) -- LODしない_CS用新B層レベル3(生きていたレスター専用)"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "No LOD_Drops the shadow of a point light source (for exclusive sorties) -- LODしない_点光源のシャドウを落とす(専用出撃用)"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "No LOD_Do not receive shadows from point light sources (for exclusive sorties) -- LODしない_点光源のシャドウを受けない(専用出撃用)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "For rough model testing (LOD processing disabled for all except shadows) -- ラフモデルテスト用（LOD処理を影以外全無効）"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Includes up to LodMap1 for PG test -- PGテスト用 LodMap1まで含める"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "For ModelViewer (no LOD) -- ModelViewer用(LODしない)"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Includes LodMap2 for PG test -- PGテスト用 LodMap2まで含める"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "For curse dummy objects. It uses TexLOD to generate damage. -- 呪いダミーオブジェ用。ダメージの発生にTexLODを利用している。"
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "For LOD operation test, including up to L6 -- LOD動作テスト用\u3000L6まで含める"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,851 @@
+{
+  "Name": "MessageBoxParam",
+  "Entries": [
+    {
+      "ID": 1011,
+      "Entries": [
+        "Are you sure you want to revert all settings to the defaults?"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Cannot sortie until game is fully installed."
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "Failed to connect to <?gameServer?>."
+      ]
+    },
+    {
+      "ID": 1134,
+      "Entries": [
+        "Connecting to <?gameServer?>..."
+      ]
+    },
+    {
+      "ID": 1138,
+      "Entries": [
+        "Data that cannot be used has been detected. Affected paint, decals, and AC name settings will be replaced with defaults."
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4193,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Overwrite with the copied color?"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Discard edits?"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "An edit lock is in place for this data. In order to proceed, the edit lock must be removed, which will revert paint, decals, and AC name to the defaults. Remove edit lock?"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "Stop spectating and return to Versus Room? (This will cancel the current match because you are the host.)"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "Stop spectating and return to Versus Room?"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Reset settings?"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 202010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 205550,
+      "Entries": [
+        "Changing parts will remove any affected decals. Proceed?"
+      ]
+    },
+    {
+      "ID": 206100,
+      "Entries": [
+        "Overwrite [<?assembleDataName?>]? Paint, decals and AC name will be overwritten with the defaults, as the current AC assembly is locked."
+      ]
+    },
+    {
+      "ID": 206200,
+      "Entries": [
+        "Paint, decals and AC name will be overwritten with the defaults, as the current AC assembly is locked. Proceed?"
+      ]
+    },
+    {
+      "ID": 210550,
+      "Entries": [
+        "Overwrite with current color set?"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Delete all applied images?"
+      ]
+    },
+    {
+      "ID": 211010,
+      "Entries": [
+        "Mirror applied images to the opposite arm?"
+      ]
+    },
+    {
+      "ID": 211200,
+      "Entries": [
+        "Discard edits?"
+      ]
+    },
+    {
+      "ID": 213100,
+      "Entries": [
+        "Discard edits?"
+      ]
+    },
+    {
+      "ID": 213101,
+      "Entries": [
+        "Delete layer?"
+      ]
+    },
+    {
+      "ID": 213110,
+      "Entries": [
+        "Save your edits?"
+      ]
+    },
+    {
+      "ID": 213111,
+      "Entries": [
+        "Discard edits?"
+      ]
+    },
+    {
+      "ID": 213300,
+      "Entries": [
+        "If you have edited this group by resizing it, ungrouping may disrupt the layout. Proceed?"
+      ]
+    },
+    {
+      "ID": 250504,
+      "Entries": [
+        "Cannot sortie due to EN shortfall."
+      ]
+    },
+    {
+      "ID": 250505,
+      "Entries": [
+        "Cannot sortie due to excess load."
+      ]
+    },
+    {
+      "ID": 280500,
+      "Entries": [
+        "Saving current assembly to <?gameServer?>..."
+      ]
+    },
+    {
+      "ID": 281001,
+      "Entries": [
+        "Search for opponents failed."
+      ]
+    },
+    {
+      "ID": 281011,
+      "Entries": [
+        "Failed to create Versus Room."
+      ]
+    },
+    {
+      "ID": 281021,
+      "Entries": [
+        "No Versus Room found."
+      ]
+    },
+    {
+      "ID": 281030,
+      "Entries": [
+        "Leave Versus Room?"
+      ]
+    },
+    {
+      "ID": 281105,
+      "Entries": [
+        "Leaving room..."
+      ]
+    },
+    {
+      "ID": 281106,
+      "Entries": [
+        "Failed to leave Versus Room."
+      ]
+    },
+    {
+      "ID": 281107,
+      "Entries": [
+        "Failed to configure teams. Please try again."
+      ]
+    },
+    {
+      "ID": 281210,
+      "Entries": [
+        "Creating Versus Room..."
+      ]
+    },
+    {
+      "ID": 281261,
+      "Entries": [
+        "Changing rule settings..."
+      ]
+    },
+    {
+      "ID": 281262,
+      "Entries": [
+        "Failed to change rule settings."
+      ]
+    },
+    {
+      "ID": 281310,
+      "Entries": [
+        "Versus Room search in progress..."
+      ]
+    },
+    {
+      "ID": 281311,
+      "Entries": [
+        "Versus Room search failed."
+      ]
+    },
+    {
+      "ID": 281410,
+      "Entries": [
+        "Joining Versus Room..."
+      ]
+    },
+    {
+      "ID": 281411,
+      "Entries": [
+        "Failed to join Versus Room."
+      ]
+    },
+    {
+      "ID": 281752,
+      "Entries": [
+        "Failed to kick <?onlineId?>."
+      ]
+    },
+    {
+      "ID": 281753,
+      "Entries": [
+        "Kicking <?onlineId?>..."
+      ]
+    },
+    {
+      "ID": 281785,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 281790,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 281812,
+      "Entries": [
+        "Report failed."
+      ]
+    },
+    {
+      "ID": 281813,
+      "Entries": [
+        "Reporting..."
+      ]
+    },
+    {
+      "ID": 281900,
+      "Entries": [
+        "Versus Room was disbanded."
+      ]
+    },
+    {
+      "ID": 281950,
+      "Entries": [
+        "Repeated illegal cessations of multiplayer sessions were detected. Multiplayer functions disabled for a certain duration."
+      ]
+    },
+    {
+      "ID": 281955,
+      "Entries": [
+        "Versus Room is full. Unable to join."
+      ]
+    },
+    {
+      "ID": 282000,
+      "Entries": [
+        "Failed to join Versus Room."
+      ]
+    },
+    {
+      "ID": 284000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 284001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 284010,
+      "Entries": [
+        "Acquiring detailed information..."
+      ]
+    },
+    {
+      "ID": 284011,
+      "Entries": [
+        "Failed to acquire detailed information."
+      ]
+    },
+    {
+      "ID": 286002,
+      "Entries": [
+        "Failed to upload AC data [<?assembleDataName?>]."
+      ]
+    },
+    {
+      "ID": 286005,
+      "Entries": [
+        "Uploading AC data..."
+      ]
+    },
+    {
+      "ID": 286102,
+      "Entries": [
+        "Failed to delete selected AC data (Share ID: <?ugcId?>) from the server."
+      ]
+    },
+    {
+      "ID": 286105,
+      "Entries": [
+        "Deleting AC data from the <?gameServer?>."
+      ]
+    },
+    {
+      "ID": 286205,
+      "Entries": [
+        "Searching for AC data..."
+      ]
+    },
+    {
+      "ID": 286500,
+      "Entries": [
+        "Retrieving AC data from the <?gameServer?>..."
+      ]
+    },
+    {
+      "ID": 286501,
+      "Entries": [
+        "Failed to retrieve AC data."
+      ]
+    },
+    {
+      "ID": 287002,
+      "Entries": [
+        "Failed to upload image data."
+      ]
+    },
+    {
+      "ID": 287005,
+      "Entries": [
+        "Uploading image data..."
+      ]
+    },
+    {
+      "ID": 287102,
+      "Entries": [
+        "Failed to delete image data for Share ID: <?ugcId?>."
+      ]
+    },
+    {
+      "ID": 287105,
+      "Entries": [
+        "Deleting image data from the <?gameServer?>..."
+      ]
+    },
+    {
+      "ID": 287205,
+      "Entries": [
+        "Searching for image data..."
+      ]
+    },
+    {
+      "ID": 287500,
+      "Entries": [
+        "Retrieving image data from the <?gameServer?>..."
+      ]
+    },
+    {
+      "ID": 287501,
+      "Entries": [
+        "Failed to retrieve image data."
+      ]
+    },
+    {
+      "ID": 401102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401171,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401183,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401184,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401752,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401753,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 402070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 404120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 416010,
+      "Entries": [
+        "No control assignment configured for <?selectPreset?>. Finish assigning controls or select a preset."
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "DLC parts have been deactivated."
+      ]
+    },
+    {
+      "ID": 710010,
+      "Entries": [
+        "DLC emblems have been deactivated."
+      ]
+    },
+    {
+      "ID": 710020,
+      "Entries": [
+        "DLC AC data has been deactivated."
+      ]
+    },
+    {
+      "ID": 710030,
+      "Entries": [
+        "Change in DLC ownership status has altered AC assembly."
+      ]
+    }
+  ]
+}

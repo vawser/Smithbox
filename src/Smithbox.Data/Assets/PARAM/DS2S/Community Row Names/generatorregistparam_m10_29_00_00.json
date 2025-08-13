@@ -1,0 +1,65 @@
+{
+  "Name": "generatorregistparam_m10_29_00_00",
+  "Entries": [
+    {
+      "ID": 10000000,
+      "Entries": [
+        "[REG:10000000] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "[REG:10000010] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "[REG:10000020] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 13400000,
+      "Entries": [
+        "[REG:13400000] Gyrm"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[REG:21000000] Basilisk"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "[REG:74300000] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74300001,
+      "Entries": [
+        "[REG:74300001] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "[REG:76300000] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76300001,
+      "Entries": [
+        "[REG:76300001] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76300002,
+      "Entries": [
+        "[REG:76300002] Rosabeth of Melfia"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4277 @@
+{
+  "Name": "AtkParam_Pc",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "wall slam damage"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[System] Attack magnification for menu display"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Bipod] Contact damage determination for enemies_walking/running"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "[Bipod] Enemy contact damage determination_Ground boost"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Quick boost"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Large QB"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_brake"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_jump"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "[Bipod] Enemy contact damage determination_Falling"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Flight boost"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_landing"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Biped Legs: Assault Boost Crash"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Stagger"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[Bipod] Contact damage judgment for enemy_Stagger (while being blown away)"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Biped Legs: Kick"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 729,
+      "Entries": [
+        "Reverse Joint Legs: Assault Boost Crash"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "Reverse Joint Legs: Kick"
+      ]
+    },
+    {
+      "ID": 736,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "[Quadruped] Contact damage determination for enemies_walking/running"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "[Quadruped] Enemy contact damage determination_Ground boost"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Quick boost"
+      ]
+    },
+    {
+      "ID": 743,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Large QB"
+      ]
+    },
+    {
+      "ID": 744,
+      "Entries": [
+        "[Quadruped] Enemy contact damage determination_Brake"
+      ]
+    },
+    {
+      "ID": 745,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Jump"
+      ]
+    },
+    {
+      "ID": 746,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemy_Falling"
+      ]
+    },
+    {
+      "ID": 747,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Flight boost"
+      ]
+    },
+    {
+      "ID": 748,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemy_landing"
+      ]
+    },
+    {
+      "ID": 749,
+      "Entries": [
+        "Tetrapod Legs: Assault Boost Crash"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Stagger"
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Stagger (while being blown away)"
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        "Tetrapod Legs: Kick"
+      ]
+    },
+    {
+      "ID": 754,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 755,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 756,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_walking/running"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Ground boost"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Quick boost"
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Large QB"
+      ]
+    },
+    {
+      "ID": 764,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_brake"
+      ]
+    },
+    {
+      "ID": 765,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Jump"
+      ]
+    },
+    {
+      "ID": 766,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Falling"
+      ]
+    },
+    {
+      "ID": 767,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Flight boost"
+      ]
+    },
+    {
+      "ID": 768,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_landing"
+      ]
+    },
+    {
+      "ID": 769,
+      "Entries": [
+        "Tank Legs: Assault Boost Crash"
+      ]
+    },
+    {
+      "ID": 770,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Stagger"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Stagger (while being blown away)"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "Tank Legs: Kick"
+      ]
+    },
+    {
+      "ID": 773,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Kick boost push aside"
+      ]
+    },
+    {
+      "ID": 774,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 775,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 776,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "[TEST] For determining rising boost activation EN consumption"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "[TEST] For determining continuous EN consumption during rising boost"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Proto] Right hand B_Attack 2"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Proto] Right hand B_Attack 3"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Proto] Right hand B_Attack 4"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[Proto] Right hand B_Attack 5"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Proto] Right hand B_dash attack"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Proto] Right hand B_Attack from guard"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Proto] Right hand B_ Rifle throwing grip"
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        "[Proto] Right hand B_Blade throwing grab"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[FNR] Blade_Slash attack ①"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[FNR] Blade_Slash attack ②"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[FNR] Blade_Charged attack"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[FNR] Blade_Front thrust"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[FNR] Blade_Left movement attack"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[FNR] Blade_Right movement attack"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "[FNR] Blade_Cut up"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[FNR] Blade_Rotating Slash"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Proto] Weapon transformation attack (A⇒B)"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Proto] Weapon transformation attack (B⇒A)"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Proto] Shield Charge"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_Piercing"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_1st shot"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_2nd shot"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_3rd shot"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "[Proto] Throwing attack (both hands)"
+      ]
+    },
+    {
+      "ID": 1790,
+      "Entries": [
+        "[Proto] SA break throw attack_1st stage"
+      ]
+    },
+    {
+      "ID": 1791,
+      "Entries": [
+        "[Proto] SA break throw attack_2nd stage"
+      ]
+    },
+    {
+      "ID": 1792,
+      "Entries": [
+        "[Proto] Stealth throwing attack_1st stage"
+      ]
+    },
+    {
+      "ID": 1793,
+      "Entries": [
+        "[Proto] Stealth throwing attack_2nd stage"
+      ]
+    },
+    {
+      "ID": 1795,
+      "Entries": [
+        "[Proto] Rifle throwing attack 2"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Proto] Tank_QB attack"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[Proto] Tank_QB Stomp"
+      ]
+    },
+    {
+      "ID": 1990,
+      "Entries": [
+        "[Proto] Weapon transformation shooting"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Proto] Assault Rifle"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Proto] Silencer Rifle"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Proto] Guided bullet rifle"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Proto] Rifle"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Proto] Shotgun"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Proto] Machine gun"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Proto] Bazooka"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[Proto] Bazooka_Burning test"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Proto] Handgun"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Proto] Suna"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[Proto] Canon"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[Proto] Cannon (explosion)"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Proto] Laser"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[Proto]Railgun"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "[Proto] Railgun (bullet after charging)"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Proto] Combined Weapon_Railgun"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[Proto] Laser Whip"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "[Proto] Laser whip (equipment location: left hand 1)"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[Proto] Chain Hammer ①"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "[Proto] Chain Hammer ②"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Proto] EN Shield_Assault Armor"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Proto] Vertical missile"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[Proto] Vertical missile (explosion)"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Proto] 2-stage launch missile"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[Proto] 2-stage launch missile (explosion)"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Proto] Short-range missile"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[Proto] Short-range missile (explosion)"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[Proto] Point-specific missile"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "[Proto] Point-specific missile (explosion)"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "[Proto] AI missile"
+      ]
+    },
+    {
+      "ID": 3141,
+      "Entries": [
+        "[Proto] AI missile (explosion)"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[Proto] Orbit Cannon Missile"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "[Proto] Orbit Cannon Missile (launch bullet)"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[Proto] Surface control missile"
+      ]
+    },
+    {
+      "ID": 3161,
+      "Entries": [
+        "[Proto] Surface control missile (explosion)"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Proto] Stealth Shield_Guard Break Self-Inflicted Attack"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "[Proto] Rezarai (high laser after charging)"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "[Proto] Rezarai (shotgun after charging)"
+      ]
+    },
+    {
+      "ID": 5920,
+      "Entries": [
+        "[Proto] Rezarai (plasma gun after charging)"
+      ]
+    },
+    {
+      "ID": 5921,
+      "Entries": [
+        "[Proto] Reza Rai (Plasma gun_explosion after charging)"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Proto] Core special function_Assault armor_Explosive body"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Proto] Core special function_Assault armor_Shockwave"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Guard time_PA damage (tentative)"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Proto] Barrier for own aircraft"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "[Proto] RECON"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "[Proto] RECON (ground adsorption)"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "[Proto] Smoke grenade_bullet"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "[Proto] Smoke Grenade_Smoke"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "[Proto] Flare"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "[Test] Rifle"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "[Test] Chain Hammer ①"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "[Test] Aerial_Blade attack 1"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "[Test] Aerial_Blade attack 2"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "[Test] Blade charge attack"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "[Item Test] Throwing Orbit"
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        "Ground effect judgment [map]"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        "Ground effect judgment [own machine]"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "[Proto] Enemy missile test"
+      ]
+    },
+    {
+      "ID": 1111090,
+      "Entries": [
+        "[Proto] Barrier"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Blade_Light attack ①"
+      ]
+    },
+    {
+      "ID": 3000010,
+      "Entries": [
+        "Blade_Light attack ②"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "Blade_Strong attack"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Laser whip_light attack ①"
+      ]
+    },
+    {
+      "ID": 3100010,
+      "Entries": [
+        "Laser whip_light attack ②"
+      ]
+    },
+    {
+      "ID": 3100020,
+      "Entries": [
+        "Laser whip_light attack ③"
+      ]
+    },
+    {
+      "ID": 3100100,
+      "Entries": [
+        "Laser whip_strong attack"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Chain Hammer_Light Attack ①"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Chain hammer_light attack ②"
+      ]
+    },
+    {
+      "ID": 3200100,
+      "Entries": [
+        "Chain hammer_strong attack"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "Pile_Light attack ①"
+      ]
+    },
+    {
+      "ID": 3300100,
+      "Entries": [
+        "Pile_Strong attack ①-1"
+      ]
+    },
+    {
+      "ID": 3300101,
+      "Entries": [
+        "Pile_Strong attack ①-2"
+      ]
+    },
+    {
+      "ID": 3310000,
+      "Entries": [
+        "Explosive pile_light attack ①"
+      ]
+    },
+    {
+      "ID": 3310100,
+      "Entries": [
+        "Explosive pile_strong attack ①-1"
+      ]
+    },
+    {
+      "ID": 3310101,
+      "Entries": [
+        "Explosive pile_strong attack ①-2"
+      ]
+    },
+    {
+      "ID": 3310102,
+      "Entries": [
+        "Explosive pile_strong attack ①-3"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "PA Breaker_Weak Attack①"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "PA Breaker_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "PA Breaker_Weak Attack③"
+      ]
+    },
+    {
+      "ID": 3400030,
+      "Entries": [
+        "PA Breaker_Weak Attack④"
+      ]
+    },
+    {
+      "ID": 3400040,
+      "Entries": [
+        "PA Breaker_Weak Attack⑤"
+      ]
+    },
+    {
+      "ID": 3400100,
+      "Entries": [
+        "PA Breaker_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 3400110,
+      "Entries": [
+        "PA Breaker_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 3400120,
+      "Entries": [
+        "PA Breaker_Strong attack ③"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Plasma broadsword_light attack ①"
+      ]
+    },
+    {
+      "ID": 3500010,
+      "Entries": [
+        "Plasma broadsword_weak attack ②"
+      ]
+    },
+    {
+      "ID": 3500020,
+      "Entries": [
+        "Plasma broadsword_weak attack③"
+      ]
+    },
+    {
+      "ID": 3500100,
+      "Entries": [
+        "Plasma broadsword_strong attack"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Beam naginata_light attack ①"
+      ]
+    },
+    {
+      "ID": 3600010,
+      "Entries": [
+        "Beam naginata_light attack ②"
+      ]
+    },
+    {
+      "ID": 3600020,
+      "Entries": [
+        "Beam naginata_light attack ③"
+      ]
+    },
+    {
+      "ID": 3600030,
+      "Entries": [
+        "Beam naginata_light attack ④"
+      ]
+    },
+    {
+      "ID": 3600100,
+      "Entries": [
+        "Beam naginata_strong attack ①"
+      ]
+    },
+    {
+      "ID": 3600110,
+      "Entries": [
+        "Beam naginata_strong attack ②"
+      ]
+    },
+    {
+      "ID": 3600120,
+      "Entries": [
+        "Beam Naginata_Strong attack ③"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Light continuous thrust rapier_light attack ①"
+      ]
+    },
+    {
+      "ID": 3700010,
+      "Entries": [
+        "Light continuous thrust rapier_light attack ②"
+      ]
+    },
+    {
+      "ID": 3700020,
+      "Entries": [
+        "Light continuous thrust rapier_weak attack ③"
+      ]
+    },
+    {
+      "ID": 3700100,
+      "Entries": [
+        "Light continuous thrust rapier_strong attack"
+      ]
+    },
+    {
+      "ID": 3800000,
+      "Entries": [
+        "Laser Lance_Rushing"
+      ]
+    },
+    {
+      "ID": 3800010,
+      "Entries": [
+        "Laser Lance_Rush finish, interruption derivative"
+      ]
+    },
+    {
+      "ID": 3800020,
+      "Entries": [
+        "Laser Lance_Light Attack ③"
+      ]
+    },
+    {
+      "ID": 3800100,
+      "Entries": [
+        "Laser Lance_Strong attack"
+      ]
+    },
+    {
+      "ID": 3900000,
+      "Entries": [
+        "Chainsaw_pushing loop"
+      ]
+    },
+    {
+      "ID": 3900010,
+      "Entries": [
+        "Chainsaw_cut through"
+      ]
+    },
+    {
+      "ID": 3900020,
+      "Entries": [
+        "Chainsaw_Light attack ③"
+      ]
+    },
+    {
+      "ID": 3900100,
+      "Entries": [
+        "Chainsaw_Strong attack"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "Dagger_Light attack①"
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        "Dagger_Light attack ②"
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        "Dagger_Light attack③"
+      ]
+    },
+    {
+      "ID": 4000030,
+      "Entries": [
+        "Dagger_light attack_interruption derivative"
+      ]
+    },
+    {
+      "ID": 4000100,
+      "Entries": [
+        "Dagger_Strong attack①"
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        "Electromagnetic baton_light attack ①"
+      ]
+    },
+    {
+      "ID": 4100010,
+      "Entries": [
+        "Electromagnetic baton_light attack ②"
+      ]
+    },
+    {
+      "ID": 4100020,
+      "Entries": [
+        "Electromagnetic baton_light attack ③"
+      ]
+    },
+    {
+      "ID": 4100030,
+      "Entries": [
+        "Electromagnetic baton_light attack ④"
+      ]
+    },
+    {
+      "ID": 4100040,
+      "Entries": [
+        "Electromagnetic baton_light attack⑤"
+      ]
+    },
+    {
+      "ID": 4100100,
+      "Entries": [
+        "Electromagnetic baton_strong attack ①"
+      ]
+    },
+    {
+      "ID": 4100110,
+      "Entries": [
+        "Electromagnetic baton_strong attack ②"
+      ]
+    },
+    {
+      "ID": 4100120,
+      "Entries": [
+        "Electromagnetic baton_strong attack③"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "rifle"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "assault rifle"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "gatling gun"
+      ]
+    },
+    {
+      "ID": 5040000,
+      "Entries": [
+        "bazooka"
+      ]
+    },
+    {
+      "ID": 5040010,
+      "Entries": [
+        "Bazooka (explosion)"
+      ]
+    },
+    {
+      "ID": 5050000,
+      "Entries": [
+        "shotgun"
+      ]
+    },
+    {
+      "ID": 5060000,
+      "Entries": [
+        "hand missile"
+      ]
+    },
+    {
+      "ID": 5070000,
+      "Entries": [
+        "hand rocket"
+      ]
+    },
+    {
+      "ID": 5070010,
+      "Entries": [
+        "Hand rocket (explosion)"
+      ]
+    },
+    {
+      "ID": 5080000,
+      "Entries": [
+        "grenade rifle"
+      ]
+    },
+    {
+      "ID": 5080010,
+      "Entries": [
+        "Grenade rifle (explosive)"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "laser rifle"
+      ]
+    },
+    {
+      "ID": 5090100,
+      "Entries": [
+        "Laser rifle (charge)"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "plasma rifle"
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        "Plasma rifle (explosion)"
+      ]
+    },
+    {
+      "ID": 5110000,
+      "Entries": [
+        "hand gun"
+      ]
+    },
+    {
+      "ID": 5120000,
+      "Entries": [
+        "large caliber hand gun"
+      ]
+    },
+    {
+      "ID": 5130000,
+      "Entries": [
+        "vibrating pulse rifle"
+      ]
+    },
+    {
+      "ID": 5140000,
+      "Entries": [
+        "flamethrower"
+      ]
+    },
+    {
+      "ID": 5140001,
+      "Entries": [
+        "Flamethrower (spread)"
+      ]
+    },
+    {
+      "ID": 5150000,
+      "Entries": [
+        "irradiation laser"
+      ]
+    },
+    {
+      "ID": 5160000,
+      "Entries": [
+        "bolt action rifle"
+      ]
+    },
+    {
+      "ID": 5170000,
+      "Entries": [
+        "3 point burst rifle"
+      ]
+    },
+    {
+      "ID": 5180000,
+      "Entries": [
+        "[test] Semi-auto rifle (with charge shot)"
+      ]
+    },
+    {
+      "ID": 5180100,
+      "Entries": [
+        "[Test] Semi-auto rifle (with charge shot)_After charging: 3 point burst"
+      ]
+    },
+    {
+      "ID": 5600000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Parent bullet"
+      ]
+    },
+    {
+      "ID": 5600001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Subbullet"
+      ]
+    },
+    {
+      "ID": 5600002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Ball explosion"
+      ]
+    },
+    {
+      "ID": 5601000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_double splitting missile (right shoulder)_parent bullet"
+      ]
+    },
+    {
+      "ID": 5601001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (right shoulder)_Subbullet"
+      ]
+    },
+    {
+      "ID": 5601002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Dual fission missile (right shoulder)_Ball explosion"
+      ]
+    },
+    {
+      "ID": 5602000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Parent bullet"
+      ]
+    },
+    {
+      "ID": 5602001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon _ Split missile (left shoulder) _ Sub-bullet"
+      ]
+    },
+    {
+      "ID": 5602002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Ball explosion"
+      ]
+    },
+    {
+      "ID": 5603000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_double splitting missile (left shoulder)_parent bullet"
+      ]
+    },
+    {
+      "ID": 5603001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Subbullet"
+      ]
+    },
+    {
+      "ID": 5603002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Ball explosion"
+      ]
+    },
+    {
+      "ID": 5900000,
+      "Entries": [
+        "[Test] Linear Rifle_3x critical when staggered"
+      ]
+    },
+    {
+      "ID": 5900100,
+      "Entries": [
+        "[Test] Linear rifle_Critical rate x3 when staggered_Charge shooting"
+      ]
+    },
+    {
+      "ID": 5910000,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 5910010,
+      "Entries": [
+        "[Test] PA Breaker_3x critical when staggered_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 5910100,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 5910110,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 6010000,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6010001,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand①_Machine gun_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6011005,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6011006,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand②_Bazooka_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6015000,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6015001,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ①_Machine gun_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6016005,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6016006,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ②_Bazooka_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6020000,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6020001,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand①_Machine gun_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6021005,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6021006,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand②_Bazooka_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6025000,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Left hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6025001,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Left hand①_Machine gun_Precision shooting"
+      ]
+    },
+    {
+      "ID": 6026005,
+      "Entries": [
+        "Weapon arm_shoulder joint: left hand ②_bazooka"
+      ]
+    },
+    {
+      "ID": 6026006,
+      "Entries": [
+        "Weapon arm_shoulder joint: left hand ②_bazooka_precision shooting"
+      ]
+    },
+    {
+      "ID": 7900000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_1)"
+      ]
+    },
+    {
+      "ID": 7901000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_2)"
+      ]
+    },
+    {
+      "ID": 7902000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_3)"
+      ]
+    },
+    {
+      "ID": 7903000,
+      "Entries": [
+        "[test] Handgun for damage performance confirmation (DL_4)"
+      ]
+    },
+    {
+      "ID": 7904000,
+      "Entries": [
+        "[test] Handgun for damage performance confirmation (DL_5)"
+      ]
+    },
+    {
+      "ID": 7905000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_6)"
+      ]
+    },
+    {
+      "ID": 7910000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Machine gun (DL1: stage addition)"
+      ]
+    },
+    {
+      "ID": 7911000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Pulse gun (DL1: stage addition)"
+      ]
+    },
+    {
+      "ID": 7912000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Handgun (DL1: 100% addition)"
+      ]
+    },
+    {
+      "ID": 7913000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (DL1: 100% addition)"
+      ]
+    },
+    {
+      "ID": 7913005,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (explosion) (DL1: 100% addition)"
+      ]
+    },
+    {
+      "ID": 7914000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle (DL2: Stop hit)"
+      ]
+    },
+    {
+      "ID": 7914100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7915000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7915100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle_Charge shooting (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7916000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Bazooka (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7917000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shotgun (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7918000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Grenade rifle (DL4: Great stagger)"
+      ]
+    },
+    {
+      "ID": 7918005,
+      "Entries": [
+        "[test] For checking damage performance (impact value)_Grenade rifle (explosion) (DL4: Great stagger)"
+      ]
+    },
+    {
+      "ID": 7919000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shoulder bazooka (DL5: blown away)"
+      ]
+    },
+    {
+      "ID": 7924000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Semi-auto rifle (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7924100,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7925000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Laser Rifle (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7925100,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Laser rifle_Charge shooting (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7926000,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Bazooka (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7927000,
+      "Entries": [
+        "[test] For checking damage performance (DL Direct)_Shotgun (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7928000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Grenade Rifle (DL4: Great Stagger)"
+      ]
+    },
+    {
+      "ID": 7928005,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Grenade rifle (explosion) (DL4: Great stagger)"
+      ]
+    },
+    {
+      "ID": 7929000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Shoulder Bazooka (DL5: Blow-off)"
+      ]
+    },
+    {
+      "ID": 7930000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 60"
+      ]
+    },
+    {
+      "ID": 7930100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 90_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7931000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 120"
+      ]
+    },
+    {
+      "ID": 7931100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 150_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7932000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 180"
+      ]
+    },
+    {
+      "ID": 7932100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 210_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7933000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7933010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7933100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7933110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7934000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7934010,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7934100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7934110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7935000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7935010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7935100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7935110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7940000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 60"
+      ]
+    },
+    {
+      "ID": 7940100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL4)_Power: 90_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7941000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 120"
+      ]
+    },
+    {
+      "ID": 7941100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 150_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7942000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 180"
+      ]
+    },
+    {
+      "ID": 7942100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 210_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7943000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7943010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7943100,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7943110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7944000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7944010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7944100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7944110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7945000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7945010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7945100,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7945110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7950000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 60"
+      ]
+    },
+    {
+      "ID": 7950100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 90_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7951000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 120"
+      ]
+    },
+    {
+      "ID": 7951100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 150_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7952000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 180"
+      ]
+    },
+    {
+      "ID": 7952100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 210_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7953000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7953010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7953100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7953110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7954000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7954010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7954100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7954110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7955000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ①"
+      ]
+    },
+    {
+      "ID": 7955010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ②"
+      ]
+    },
+    {
+      "ID": 7955100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ①"
+      ]
+    },
+    {
+      "ID": 7955110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ②"
+      ]
+    },
+    {
+      "ID": 7960000,
+      "Entries": [
+        "[Test] Weapon for status abnormality confirmation_Flame"
+      ]
+    },
+    {
+      "ID": 7961000,
+      "Entries": [
+        "[test] Weapon for checking abnormal status_stun"
+      ]
+    },
+    {
+      "ID": 7962000,
+      "Entries": [
+        "[Test] Weapon for checking abnormal status_Plasma"
+      ]
+    },
+    {
+      "ID": 7963000,
+      "Entries": [
+        "[Test] Weapon for checking abnormal status_depleted uranium poison"
+      ]
+    },
+    {
+      "ID": 7970000,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Weak Attack ①"
+      ]
+    },
+    {
+      "ID": 7970010,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Weak Attack ②"
+      ]
+    },
+    {
+      "ID": 7970100,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Strong Attack ①"
+      ]
+    },
+    {
+      "ID": 7970110,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Strong Attack ②"
+      ]
+    },
+    {
+      "ID": 7970800,
+      "Entries": [
+        "[Stagger test] PA breaker_body hit"
+      ]
+    },
+    {
+      "ID": 7980000,
+      "Entries": [
+        "[test] For checking stagger_step addition"
+      ]
+    },
+    {
+      "ID": 7980009,
+      "Entries": [
+        "[test] For checking stagger_step addition (dummy)"
+      ]
+    },
+    {
+      "ID": 7981000,
+      "Entries": [
+        "[test] For checking stagger_100% addition"
+      ]
+    },
+    {
+      "ID": 7981009,
+      "Entries": [
+        "[test] 100% addition for stagger confirmation (dummy)"
+      ]
+    },
+    {
+      "ID": 7982000,
+      "Entries": [
+        "[Test] For checking stagger_Stop being hit"
+      ]
+    },
+    {
+      "ID": 7982009,
+      "Entries": [
+        "[Test] For checking stagger_Bullet stop (dummy)"
+      ]
+    },
+    {
+      "ID": 7983000,
+      "Entries": [
+        "[test] For checking wobbling_Small wobbling"
+      ]
+    },
+    {
+      "ID": 7983009,
+      "Entries": [
+        "[Test] For checking stagger_Small stagger (dummy)"
+      ]
+    },
+    {
+      "ID": 7983100,
+      "Entries": [
+        "[test] For stagger confirmation_Stagger small_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7984000,
+      "Entries": [
+        "[test] For checking stagger_large stagger"
+      ]
+    },
+    {
+      "ID": 7984009,
+      "Entries": [
+        "[test] For checking stagger_large stagger (dummy)"
+      ]
+    },
+    {
+      "ID": 7984100,
+      "Entries": [
+        "[Test] For stagger confirmation_Large stagger_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7985000,
+      "Entries": [
+        "[test] For checking stagger_blown away"
+      ]
+    },
+    {
+      "ID": 7985009,
+      "Entries": [
+        "[test] For checking stagger_blown away (dummy)"
+      ]
+    },
+    {
+      "ID": 7985100,
+      "Entries": [
+        "[Test] For stagger confirmation_Blowback_Charge shooting"
+      ]
+    },
+    {
+      "ID": 7986000,
+      "Entries": [
+        "[test] For stagger confirmation_forced blowback"
+      ]
+    },
+    {
+      "ID": 7986009,
+      "Entries": [
+        "[test] For stagger confirmation_forced blowback (dummy)"
+      ]
+    },
+    {
+      "ID": 7986100,
+      "Entries": [
+        "[Test] For stagger confirmation_Forced blowback_Charge shooting"
+      ]
+    },
+    {
+      "ID": 90800000,
+      "Entries": [
+        "Nakanishi test_single shot rifle"
+      ]
+    },
+    {
+      "ID": 90800010,
+      "Entries": [
+        "Nakanishi test_bazooka"
+      ]
+    },
+    {
+      "ID": 90800020,
+      "Entries": [
+        "Nakanishi Test_Railgun"
+      ]
+    },
+    {
+      "ID": 90800021,
+      "Entries": [
+        "Nakanishi test_Railgun (bullet after charging)"
+      ]
+    },
+    {
+      "ID": 90800040,
+      "Entries": [
+        "Nakanishi test_short-range missile"
+      ]
+    },
+    {
+      "ID": 90801000,
+      "Entries": [
+        "Nakanishi test_air_blade attack 1"
+      ]
+    },
+    {
+      "ID": 90801100,
+      "Entries": [
+        "Nakanishi test_air_blade attack 2"
+      ]
+    },
+    {
+      "ID": 90801500,
+      "Entries": [
+        "Nakanishi test_blade charge attack"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "BURST RIFLE - MA-J-200 RANSETSU-RF"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "BURST RIFLE - MA-J-200 RANSETSU-RF (Charged)"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "LINEAR RIFLE - LR-036 CURTIS"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "LINEAR RIFLE - LR-036 CURTIS (Charged)"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "LINEAR RIFLE - LR-037 HARRIS"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "LINEAR RIFLE - LR-037 HARRIS (Charged)"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "BURST ASSAULT RIFLE - MA-J-201 RANSETSU-AR"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "ASSAULT RIFLE - RF-024 TURNER"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "ASSAULT RIFLE - RF-025 SCUDDER"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "BURST MACHINE GUN - MA-E-210 ETSUJIN"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "MACHINE GUN - MG-014 LUDLOW"
+      ]
+    },
+    {
+      "ID": 10220000,
+      "Entries": [
+        "MACHINE GUN - DF-MG-02 CHANG-CHEN"
+      ]
+    },
+    {
+      "ID": 10230000,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "GATLING GUN - DF-GA-08 HU-BEN"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "BAZOOKA - LITTLE GEM"
+      ]
+    },
+    {
+      "ID": 10400005,
+      "Entries": [
+        "BAZOOKA - LITTLE GEM (Blast)"
+      ]
+    },
+    {
+      "ID": 10410000,
+      "Entries": [
+        "BAZOOKA - MAJESTIC"
+      ]
+    },
+    {
+      "ID": 10410005,
+      "Entries": [
+        "BAZOOKA - MAJESTIC (Blast)"
+      ]
+    },
+    {
+      "ID": 10420000,
+      "Entries": [
+        "BAZOOKA - DF-BA-06 XUAN-GE"
+      ]
+    },
+    {
+      "ID": 10420005,
+      "Entries": [
+        "BAZOOKA - DF-BA-06 XUAN-GE (Blast)"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "SHOTGUN - WR-0777 SWEET SIXTEEN"
+      ]
+    },
+    {
+      "ID": 10510000,
+      "Entries": [
+        "SHOTGUN - SG-026 HALDEMAN"
+      ]
+    },
+    {
+      "ID": 10520000,
+      "Entries": [
+        "SHOTGUN - SG-027 ZIMMERMAN"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "GRENADE LAUNCHER - DF-GR-07 GOU-CHEN"
+      ]
+    },
+    {
+      "ID": 10600005,
+      "Entries": [
+        "GRENADE LAUNCHER - DF-GR-07 GOU-CHEN (Blast)"
+      ]
+    },
+    {
+      "ID": 10610000,
+      "Entries": [
+        "GRENADE LAUNCHER - DIZZY"
+      ]
+    },
+    {
+      "ID": 10610005,
+      "Entries": [
+        "GRENADE LAUNCHER - DIZZY (Blast)"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "NEEDLE GUN - EL-PW-00 VIENTO"
+      ]
+    },
+    {
+      "ID": 10700005,
+      "Entries": [
+        "NEEDLE GUN - EL-PW-00 VIENTO"
+      ]
+    },
+    {
+      "ID": 10710000,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU"
+      ]
+    },
+    {
+      "ID": 10720000,
+      "Entries": [
+        "HANDGUN - HG-003 COQUILLETT"
+      ]
+    },
+    {
+      "ID": 10730000,
+      "Entries": [
+        "HANDGUN - HG-004 DUCKETT"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU"
+      ]
+    },
+    {
+      "ID": 10800001,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU (Blast)"
+      ]
+    },
+    {
+      "ID": 10800100,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU (Charged)"
+      ]
+    },
+    {
+      "ID": 10810000,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 10810005,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 10810006,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 10810090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10810100,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI (Charged)"
+      ]
+    },
+    {
+      "ID": 10810190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10820000,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST"
+      ]
+    },
+    {
+      "ID": 10820005,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Blast)"
+      ]
+    },
+    {
+      "ID": 10820100,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Charged)"
+      ]
+    },
+    {
+      "ID": 10820105,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 10900000,
+      "Entries": [
+        "MISSILE LAUNCHER - HML-G2/P19MLT-04"
+      ]
+    },
+    {
+      "ID": 10900005,
+      "Entries": [
+        "MISSILE LAUNCHER - HML-G2/P19MLT-04"
+      ]
+    },
+    {
+      "ID": 10910000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - HML-G3/P08SPL-06"
+      ]
+    },
+    {
+      "ID": 10910005,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - HML-G3/P08SPL-06"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "GRENADE LAUNCHER - IRIDIUM"
+      ]
+    },
+    {
+      "ID": 11000005,
+      "Entries": [
+        "GRENADE LAUNCHER - IRIDIUM (Blast)"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "LASER HANDGUN - VP-66LH"
+      ]
+    },
+    {
+      "ID": 11100100,
+      "Entries": [
+        "LASER HANDGUN - VP-66LH (Charged)"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "LASER RIFLE - VP-66LR"
+      ]
+    },
+    {
+      "ID": 11110100,
+      "Entries": [
+        "LASER RIFLE - VP-66LR (Charged)"
+      ]
+    },
+    {
+      "ID": 11111000,
+      "Entries": [
+        "Laser rifle_standard type (dummy for menu display)"
+      ]
+    },
+    {
+      "ID": 11111100,
+      "Entries": [
+        "Laser rifle_Standard type_Charge shooting (dummy for menu display)"
+      ]
+    },
+    {
+      "ID": 11120000,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011"
+      ]
+    },
+    {
+      "ID": 11120005,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Blast)"
+      ]
+    },
+    {
+      "ID": 11120100,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Charged)"
+      ]
+    },
+    {
+      "ID": 11120105,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11120110,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Full Charged)"
+      ]
+    },
+    {
+      "ID": 11120120,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011 (Full Charged)"
+      ]
+    },
+    {
+      "ID": 11130000,
+      "Entries": [
+        "LASER RIFLE - VE-66LRA"
+      ]
+    },
+    {
+      "ID": 11130100,
+      "Entries": [
+        "LASER RIFLE - VE-66LRA (Charged)"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR"
+      ]
+    },
+    {
+      "ID": 11200005,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Blast)"
+      ]
+    },
+    {
+      "ID": 11200100,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Charged)"
+      ]
+    },
+    {
+      "ID": 11200105,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11210000,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV"
+      ]
+    },
+    {
+      "ID": 11210005,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Blast)"
+      ]
+    },
+    {
+      "ID": 11210100,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Charged)"
+      ]
+    },
+    {
+      "ID": 11210110,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Full Charged)"
+      ]
+    },
+    {
+      "ID": 11210111,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Full Charged) (Unk)"
+      ]
+    },
+    {
+      "ID": 11210115,
+      "Entries": [
+        "MULTI ENERGY RIFLE - 44-142 KRSV (Full Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "PULSE GUN - HI-16: GU-Q1"
+      ]
+    },
+    {
+      "ID": 11310000,
+      "Entries": [
+        "PULSE GUN - HI-18: GU-A2"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "LASER RIFLE - VE-66LRB"
+      ]
+    },
+    {
+      "ID": 11400100,
+      "Entries": [
+        "LASER RIFLE - VE-66LRB (Charged)"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E (Charged)"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS"
+      ]
+    },
+    {
+      "ID": 11510100,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS (Charged)"
+      ]
+    },
+    {
+      "ID": 11510105,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11520000,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA"
+      ]
+    },
+    {
+      "ID": 11520005,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Blast)"
+      ]
+    },
+    {
+      "ID": 11520100,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11520105,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11530000,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT"
+      ]
+    },
+    {
+      "ID": 11530005,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT (Blast)"
+      ]
+    },
+    {
+      "ID": 11530100,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 11530105,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "FLAMETHROWER - WB-0000 BAD COOK"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 11700005,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Blast)"
+      ]
+    },
+    {
+      "ID": 11700006,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA (Blast)"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "STUN GUN - VP-66EG"
+      ]
+    },
+    {
+      "ID": 11800001,
+      "Entries": [
+        "STUN GUN - VP-66EG (Attach)"
+      ]
+    },
+    {
+      "ID": 11800005,
+      "Entries": [
+        "STUN GUN - VP-66EG (Interval)"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF"
+      ]
+    },
+    {
+      "ID": 11900005,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "MACHINE GUN - MG-014 LUDLOW (Escape Mission Variant)"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke_body)"
+      ]
+    },
+    {
+      "ID": 12200001,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke_smoke)"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "For enemy damage animation confirmation_DL2 addition (right hand)"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "For checking enemy damage animation_DL3 Small stagger (left hand)"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "For object destruction confirmation_obj attack power 510"
+      ]
+    },
+    {
+      "ID": 12510000,
+      "Entries": [
+        "For object destruction confirmation_obj attack power 410"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000005,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000100,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000105,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Laser blade_light attack ①"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "Laser blade_light attack ②"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "Laser blade_strong attack"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101"
+      ]
+    },
+    {
+      "ID": 20010010,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Unk)"
+      ]
+    },
+    {
+      "ID": 20010100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20020010,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20020100,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT (Charged)"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C01W7: ML-REDSHIFT (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20030010,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C01W7: ML-REDSHIFT (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20030100,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20100010,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20100100,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 20100110,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Unk)"
+      ]
+    },
+    {
+      "ID": 20100200,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Unk)"
+      ]
+    },
+    {
+      "ID": 20100300,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Unk)"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB"
+      ]
+    },
+    {
+      "ID": 20200100,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged 1)"
+      ]
+    },
+    {
+      "ID": 20200110,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged 2)"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Attack 1- Charge Rush)"
+      ]
+    },
+    {
+      "ID": 20300010,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20300020,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Unk)"
+      ]
+    },
+    {
+      "ID": 20300030,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Unk)"
+      ]
+    },
+    {
+      "ID": 20300100,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 20300110,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Unk)"
+      ]
+    },
+    {
+      "ID": 20300120,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Unk)"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20400010,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20400020,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Attack 3)"
+      ]
+    },
+    {
+      "ID": 20400100,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged Late)"
+      ]
+    },
+    {
+      "ID": 20400101,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged Early)"
+      ]
+    },
+    {
+      "ID": 20400200,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Unk)"
+      ]
+    },
+    {
+      "ID": 20400300,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Unk)"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "LASER LANCE - VE-67LLA"
+      ]
+    },
+    {
+      "ID": 20500100,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged 1)"
+      ]
+    },
+    {
+      "ID": 20500101,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged 2)"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20600010,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Hold)"
+      ]
+    },
+    {
+      "ID": 20600100,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged)"
+      ]
+    },
+    {
+      "ID": 20600101,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged Finisher)"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20700001,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Attack 2)"
+      ]
+    },
+    {
+      "ID": 20700009,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (String)"
+      ]
+    },
+    {
+      "ID": 20700010,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Hold)"
+      ]
+    },
+    {
+      "ID": 20700100,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged)"
+      ]
+    },
+    {
+      "ID": 20700101,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged Bullet)"
+      ]
+    },
+    {
+      "ID": 20700102,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 20700109,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged String)"
+      ]
+    },
+    {
+      "ID": 20700900,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (During Swing)"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD"
+      ]
+    },
+    {
+      "ID": 20800100,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged Major)"
+      ]
+    },
+    {
+      "ID": 20800101,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged Minor)"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 1)"
+      ]
+    },
+    {
+      "ID": 20900010,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 2-1)"
+      ]
+    },
+    {
+      "ID": 20900011,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 2-2)"
+      ]
+    },
+    {
+      "ID": 20900020,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 3-1)"
+      ]
+    },
+    {
+      "ID": 20900021,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 3-2)"
+      ]
+    },
+    {
+      "ID": 20900022,
+      "Entries": [
+        "STUN BATON - VP-67EB (Attack 3-3)"
+      ]
+    },
+    {
+      "ID": 20900100,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 20900110,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged Bullet)"
+      ]
+    },
+    {
+      "ID": 20900111,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged Attach)"
+      ]
+    },
+    {
+      "ID": 20900115,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000005,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Blast)"
+      ]
+    },
+    {
+      "ID": 21000100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 21000105,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM"
+      ]
+    },
+    {
+      "ID": 30000005,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Blast)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM"
+      ]
+    },
+    {
+      "ID": 30010005,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM (Blast)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM"
+      ]
+    },
+    {
+      "ID": 30020005,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Blast)"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02"
+      ]
+    },
+    {
+      "ID": 30100005,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02 (Blast)"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01"
+      ]
+    },
+    {
+      "ID": 30110005,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01 (Blast)"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06"
+      ]
+    },
+    {
+      "ID": 30200005,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Blast)"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04"
+      ]
+    },
+    {
+      "ID": 30210005,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Blast)"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10"
+      ]
+    },
+    {
+      "ID": 30220005,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Blast)"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006"
+      ]
+    },
+    {
+      "ID": 30300005,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Blast)"
+      ]
+    },
+    {
+      "ID": 30300600,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Charged)"
+      ]
+    },
+    {
+      "ID": 30300601,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Charged Offshooter)"
+      ]
+    },
+    {
+      "ID": 30300602,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Charged)"
+      ]
+    },
+    {
+      "ID": 30300605,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 30300606,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Charged Offshoot)"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Ascending)"
+      ]
+    },
+    {
+      "ID": 30400001,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Descending)"
+      ]
+    },
+    {
+      "ID": 30400005,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Blast)"
+      ]
+    },
+    {
+      "ID": 30410000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Ascending)"
+      ]
+    },
+    {
+      "ID": 30410001,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Descending)"
+      ]
+    },
+    {
+      "ID": 30410005,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Blast)"
+      ]
+    },
+    {
+      "ID": 30420000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Ascending)"
+      ]
+    },
+    {
+      "ID": 30420001,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Descending)"
+      ]
+    },
+    {
+      "ID": 30420005,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Blast)"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Main)"
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Trail)"
+      ]
+    },
+    {
+      "ID": 30500005,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Blast)"
+      ]
+    },
+    {
+      "ID": 30500010,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Unk)"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "Large missile_extra large exposed one"
+      ]
+    },
+    {
+      "ID": 30600005,
+      "Entries": [
+        "Large missile_extra large exposed one (explosion)"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP"
+      ]
+    },
+    {
+      "ID": 30700005,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Blast)"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03"
+      ]
+    },
+    {
+      "ID": 30800001,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Active)"
+      ]
+    },
+    {
+      "ID": 30800005,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Blast)"
+      ]
+    },
+    {
+      "ID": 30810000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03"
+      ]
+    },
+    {
+      "ID": 30810001,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Active)"
+      ]
+    },
+    {
+      "ID": 30810005,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Blast)"
+      ]
+    },
+    {
+      "ID": 30820000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02"
+      ]
+    },
+    {
+      "ID": 30820001,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Active)"
+      ]
+    },
+    {
+      "ID": 30820005,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Blast)"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12"
+      ]
+    },
+    {
+      "ID": 30900005,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12 (Blast)"
+      ]
+    },
+    {
+      "ID": 30910000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08"
+      ]
+    },
+    {
+      "ID": 30910005,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08 (Blast)"
+      ]
+    },
+    {
+      "ID": 30920000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16"
+      ]
+    },
+    {
+      "ID": 30920005,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16 (Blast)"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS"
+      ]
+    },
+    {
+      "ID": 31000005,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS (Blast)"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO"
+      ]
+    },
+    {
+      "ID": 31100005,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO (Blast)"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Container Moving)"
+      ]
+    },
+    {
+      "ID": 31200001,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Container Firing)"
+      ]
+    },
+    {
+      "ID": 31200002,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Missiles)"
+      ]
+    },
+    {
+      "ID": 31200005,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Container Blast)"
+      ]
+    },
+    {
+      "ID": 31200006,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Missile Blast)"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY"
+      ]
+    },
+    {
+      "ID": 31300001,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Final Fire)"
+      ]
+    },
+    {
+      "ID": 31300002,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 31300005,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Blast)"
+      ]
+    },
+    {
+      "ID": 31300006,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Cluster Missile Blast)"
+      ]
+    },
+    {
+      "ID": 31410000,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD"
+      ]
+    },
+    {
+      "ID": 31410001,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD"
+      ]
+    },
+    {
+      "ID": 31410010,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Laser)"
+      ]
+    },
+    {
+      "ID": 31410100,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Charged)"
+      ]
+    },
+    {
+      "ID": 31410101,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Charged)"
+      ]
+    },
+    {
+      "ID": 31410102,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Charged)"
+      ]
+    },
+    {
+      "ID": 31410110,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Charged Laser)"
+      ]
+    },
+    {
+      "ID": 31510000,
+      "Entries": [
+        "LASER TURRET - VP-60LT"
+      ]
+    },
+    {
+      "ID": 31510010,
+      "Entries": [
+        "LASER TURRET - VP-60LT (Laser)"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY"
+      ]
+    },
+    {
+      "ID": 32000005,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY (Blast)"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT"
+      ]
+    },
+    {
+      "ID": 32100005,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT (Blast)"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA"
+      ]
+    },
+    {
+      "ID": 32200100,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Charged)"
+      ]
+    },
+    {
+      "ID": 32200200,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Unk)"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E"
+      ]
+    },
+    {
+      "ID": 32300005,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Blast)"
+      ]
+    },
+    {
+      "ID": 32300100,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Charged)"
+      ]
+    },
+    {
+      "ID": 32300105,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "LASER CANNON - VP-60LCS"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Charged)"
+      ]
+    },
+    {
+      "ID": 32510000,
+      "Entries": [
+        "LASER CANNON - VE-60LCB"
+      ]
+    },
+    {
+      "ID": 32510100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB"
+      ]
+    },
+    {
+      "ID": 32510101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Charged)"
+      ]
+    },
+    {
+      "ID": 32600105,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Charged Blast)"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA"
+      ]
+    },
+    {
+      "ID": 32700001,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Attach)"
+      ]
+    },
+    {
+      "ID": 32700005,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Blast)"
+      ]
+    },
+    {
+      "ID": 32700500,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Alt)"
+      ]
+    },
+    {
+      "ID": 32700501,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Attach) (Alt)"
+      ]
+    },
+    {
+      "ID": 32700505,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Blast) (Alt)"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY"
+      ]
+    },
+    {
+      "ID": 33010000,
+      "Entries": [
+        "LASER ORBIT - 45-091 ORBT"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D"
+      ]
+    },
+    {
+      "ID": 33100001,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Shield)"
+      ]
+    },
+    {
+      "ID": 33100005,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Blast)"
+      ]
+    },
+    {
+      "ID": 33100006,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Blast Interval)"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33410000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Pulse)"
+      ]
+    },
+    {
+      "ID": 70000001,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Pulse)"
+      ]
+    },
+    {
+      "ID": 70000010,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Pulse)"
+      ]
+    },
+    {
+      "ID": 70000011,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Pulse)"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Coral)"
+      ]
+    },
+    {
+      "ID": 70000101,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Coral)"
+      ]
+    },
+    {
+      "ID": 70000110,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Coral)"
+      ]
+    },
+    {
+      "ID": 70000111,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR (Coral)"
+      ]
+    },
+    {
+      "ID": 70100009,
+      "Entries": [
+        "EXPANSION - PULSE ARMOR"
+      ]
+    },
+    {
+      "ID": 70200000,
+      "Entries": [
+        "EXPANSION - PULSE PROTECTION"
+      ]
+    },
+    {
+      "ID": 70200009,
+      "Entries": [
+        "EXPANSION - PULSE PROTECTION"
+      ]
+    },
+    {
+      "ID": 70300009,
+      "Entries": [
+        "EXPANSION - TERMINAL ARMOR"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "Fists (Right)"
+      ]
+    },
+    {
+      "ID": 80000010,
+      "Entries": [
+        "Fists (Left)"
+      ]
+    },
+    {
+      "ID": 91200100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91200105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91210100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91210105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91500100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91510100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91520100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 92100800,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test 1"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "stone pillar"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Royal Castle 1_ Phalanx (Body)"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Royal Castle 2_King's Shield"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Ojo 3_King's sword"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Royal Castle 4_King Lendl"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Old Fort 1_Judge"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Old Fort 2_Warrior of the Storm"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Old Fort 3_Storm Beast"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Prison Castle 1_Kamisama"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Prison Castle 2_Chimera"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Prison Castle 3_Summon NPC"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Unclean 1_ Leech Demon"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Unclean 2_Fly hunting"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Impure 3_Saint Libra"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Tunnel 1_Big spider"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Tunnel 2_Flame monster"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Tunnel 3_Dragon Demon (Tunnel)"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Tutorial_Fat Daemon"
+      ]
+    }
+  ]
+}

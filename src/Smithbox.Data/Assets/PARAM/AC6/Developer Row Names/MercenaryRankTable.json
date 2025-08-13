@@ -1,0 +1,101 @@
+{
+  "Name": "MercenaryRankTable",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Rank_0 -- ランク_0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Rank_1 -- ランク_1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Rank_2 -- ランク_2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Rank_3 -- ランク_3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Rank_4 -- ランク_4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Rank_5 -- ランク_5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Rank_6 -- ランク_6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Rank_7 -- ランク_7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Rank_8 -- ランク_8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Rank_9 -- ランク_9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Rank_10 -- ランク_10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Rank_11 -- ランク_11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Rank_12 -- ランク_12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Rank_13 -- ランク_13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Rank_14 -- ランク_14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Rank_15 -- ランク_15"
+      ]
+    }
+  ]
+}

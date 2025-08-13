@@ -1,0 +1,389 @@
+{
+  "Name": "HitEffectSfxConceptParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "sand"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ice"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "cloth"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "electricity"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "concrete"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "glass"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "vegetation"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle level)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water (waist and above)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "underwater"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Swamp (puddle level)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Swamp (about ankle length)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Swamp (below the knee)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Swamp (waist above)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Heavy oil (about ankle size)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Heavy oil (below the knee)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Coral water surface (about ankle level)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Coral water surface (below the knees)"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Test: Steam generation on hit"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "stealth fog"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "acceleration floor"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PA barrier"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "shield iron"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "shield heavy iron"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "shield energy"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "body iron"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "body heavy iron"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "body meat"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Shield energy_initial guard"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Shield Coral_Initial Guard"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "PA_enemy large_white_shot ripple"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "generator_normal"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "generator_coral"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "PA_Enemy extra large_Coral_Ripples hit"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "shield coral"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Missing number"
+      ]
+    }
+  ]
+}

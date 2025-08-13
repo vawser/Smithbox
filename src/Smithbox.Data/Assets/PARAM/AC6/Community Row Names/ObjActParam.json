@@ -1,0 +1,335 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "need"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "treasure chest"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "treasure chest"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "m93_01_door_candle room"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "m93_01_door_candle room"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "m96_00 Door Concept Map_Entrance"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "m96_00 Door Concept Map_Cathedral Entrance"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "m96_00 Door Concept Map_Long View Entrance"
+      ]
+    },
+    {
+      "ID": 475,
+      "Entries": [
+        "m20_01_Door_Orphanage 2F_Small"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "test_door test"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "test_door test"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "m30_00_door_mausoleum shortcut"
+      ]
+    },
+    {
+      "ID": 300310,
+      "Entries": [
+        "m30_00_door_castle wall shortcut"
+      ]
+    },
+    {
+      "ID": 300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut"
+      ]
+    },
+    {
+      "ID": 300312,
+      "Entries": [
+        "m30_00_door_mausoleum shortcut"
+      ]
+    },
+    {
+      "ID": 300320,
+      "Entries": [
+        "m30_01_door_old garden building"
+      ]
+    },
+    {
+      "ID": 300371,
+      "Entries": [
+        "m30_00_door_mausoleum exit door"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "m30_00_lever_mausoleum front elevator"
+      ]
+    },
+    {
+      "ID": 300510,
+      "Entries": [
+        "m30_00_lever_castle wall elevator"
+      ]
+    },
+    {
+      "ID": 304873,
+      "Entries": [
+        "m30_01_Lever_Large elevator"
+      ]
+    },
+    {
+      "ID": 302420,
+      "Entries": [
+        "m30_02_lever_archive elevator"
+      ]
+    },
+    {
+      "ID": 314027,
+      "Entries": [
+        "m31_00_door_in front of boss room"
+      ]
+    },
+    {
+      "ID": 324012,
+      "Entries": [
+        "m32_00 lever_big bell"
+      ]
+    },
+    {
+      "ID": 324051,
+      "Entries": [
+        "m32_00 lever_bridge elevator"
+      ]
+    },
+    {
+      "ID": 331312,
+      "Entries": [
+        "m33_00 Lever Poison Swamp Forest Elevator"
+      ]
+    },
+    {
+      "ID": 331321,
+      "Entries": [
+        "m33_00 Double door in front of boss"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "m35_00 lever_elevator"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "m35_00 Large door_Both sides of the cathedral"
+      ]
+    },
+    {
+      "ID": 350021,
+      "Entries": [
+        "m35_00 Lever_Shutter"
+      ]
+    },
+    {
+      "ID": 350206,
+      "Entries": [
+        "m35_00 Big door_Cathedral main gate"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "m35_00 double door"
+      ]
+    },
+    {
+      "ID": 360320,
+      "Entries": [
+        "m36_00 Double door in front of middle boss"
+      ]
+    },
+    {
+      "ID": 360330,
+      "Entries": [
+        "m36_00 Double door shotoka"
+      ]
+    },
+    {
+      "ID": 370301,
+      "Entries": [
+        "m37_00_door_Landmark church square"
+      ]
+    },
+    {
+      "ID": 370502,
+      "Entries": [
+        "m37_00_lever"
+      ]
+    },
+    {
+      "ID": 390301,
+      "Entries": [
+        "m39_00 Shotka door"
+      ]
+    },
+    {
+      "ID": 394051,
+      "Entries": [
+        "m39_00_Dungeon Shotka Elevator"
+      ]
+    },
+    {
+      "ID": 394027,
+      "Entries": [
+        "m39_00_Underground prison door"
+      ]
+    },
+    {
+      "ID": 394028,
+      "Entries": [
+        "m39_01_dungeon shotka door"
+      ]
+    },
+    {
+      "ID": 400340,
+      "Entries": [
+        "m40_00_Last boss room door"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 1300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut 1"
+      ]
+    },
+    {
+      "ID": 2300311,
+      "Entries": [
+        "m30_00_door_castle wall shortcut 2"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "GR_Test_General purpose door (double door)"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "GR_Test_Door with key (double door)"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "GR_Test_Inner key door"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "GR_For testing_General purpose door (single opening)"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "GR_Test_Door with key (single opening)"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "GR_For testing_Inner key door (single opening)"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation A"
+      ]
+    },
+    {
+      "ID": 90014,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation B"
+      ]
+    },
+    {
+      "ID": 90015,
+      "Entries": [
+        "GR_For testing_Playable operation confirmation B"
+      ]
+    },
+    {
+      "ID": 90016,
+      "Entries": [
+        "GR_For testing_For hanging event response"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "FNR_Test_Door (temporary model)"
+      ]
+    },
+    {
+      "ID": 990001,
+      "Entries": [
+        "FNR_Test_Door (temporary model)"
+      ]
+    }
+  ]
+}

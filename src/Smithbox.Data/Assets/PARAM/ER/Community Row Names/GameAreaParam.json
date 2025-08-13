@@ -1,0 +1,1301 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9999992,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "[Stormveil Castle] Godrick the Grafted"
+      ]
+    },
+    {
+      "ID": 10000850,
+      "Entries": [
+        "[Stormveil Castle] Margit the Fell Omen"
+      ]
+    },
+    {
+      "ID": 10010800,
+      "Entries": [
+        "[Chapel of Anticipation] Grafted Scion"
+      ]
+    },
+    {
+      "ID": 11000800,
+      "Entries": [
+        "[Leyndell- Royal Capital] Morgott- the Omen King"
+      ]
+    },
+    {
+      "ID": 11000850,
+      "Entries": [
+        "[Leyndell- Royal Capital] Godfrey- First Elden Lord"
+      ]
+    },
+    {
+      "ID": 11050800,
+      "Entries": [
+        "[Leyndell Ashen Capital] Hoarah Loux"
+      ]
+    },
+    {
+      "ID": 11050850,
+      "Entries": [
+        "[Leyndell Ashen Capital] Sir Gideon Ofnir"
+      ]
+    },
+    {
+      "ID": 12010800,
+      "Entries": [
+        "[Ainsel River] Dragonkin Soldier of Nokstella"
+      ]
+    },
+    {
+      "ID": 12010850,
+      "Entries": [
+        "[Ainsel River] Dragonkin Soldier (Lake of Rot)"
+      ]
+    },
+    {
+      "ID": 12020800,
+      "Entries": [
+        "[Siofra River] Valiant Gargoyles"
+      ]
+    },
+    {
+      "ID": 12020830,
+      "Entries": [
+        "[Siofra River] Dragonkin Soldier of Nokron"
+      ]
+    },
+    {
+      "ID": 12020850,
+      "Entries": [
+        "[Siofra River] Mimic Tear"
+      ]
+    },
+    {
+      "ID": 12030390,
+      "Entries": [
+        "[Deeproot Depths] Crucible Knight"
+      ]
+    },
+    {
+      "ID": 12030800,
+      "Entries": [
+        "[Deeproot Depths] Fia's Champion"
+      ]
+    },
+    {
+      "ID": 12030850,
+      "Entries": [
+        "[Deeproot Depths] Lichdragon Fortissax"
+      ]
+    },
+    {
+      "ID": 12040800,
+      "Entries": [
+        "[Ainsel River] Astel Naturalborn of the Void"
+      ]
+    },
+    {
+      "ID": 12050800,
+      "Entries": [
+        "[Mohgwyn Palace] Mohg Lord of Blood"
+      ]
+    },
+    {
+      "ID": 12080800,
+      "Entries": [
+        "[Siofra River] Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 12090800,
+      "Entries": [
+        "[Nokron Eternal City] Regal Ancestor Spirit"
+      ]
+    },
+    {
+      "ID": 13000800,
+      "Entries": [
+        "[Crumbling Farum Azula] Maliketh- the Black Blade"
+      ]
+    },
+    {
+      "ID": 13000830,
+      "Entries": [
+        "[Crumbling Farum Azula] Dragonlord Placidusax"
+      ]
+    },
+    {
+      "ID": 13000850,
+      "Entries": [
+        "[Crumbling Farum Azula] Godskin Duo"
+      ]
+    },
+    {
+      "ID": 14000800,
+      "Entries": [
+        "[Academy of Raya Lucaria] Rennala Queen of the Full Moon"
+      ]
+    },
+    {
+      "ID": 14000850,
+      "Entries": [
+        "[Academy of Raya Lucaria] Red Wolf of Radagon"
+      ]
+    },
+    {
+      "ID": 15000800,
+      "Entries": [
+        "[Miquella's Haligtree] Malenia Blade of Miquella"
+      ]
+    },
+    {
+      "ID": 15000850,
+      "Entries": [
+        "[Miquella's Haligtree] Loretta Knight of the Haligtree"
+      ]
+    },
+    {
+      "ID": 16000800,
+      "Entries": [
+        "[Volcano Manor] Rykard Lord of Blasphemy"
+      ]
+    },
+    {
+      "ID": 16000850,
+      "Entries": [
+        "[Volcano Manor] Godskin Noble"
+      ]
+    },
+    {
+      "ID": 16000860,
+      "Entries": [
+        "[Volcano Manor] Abductor Virgins"
+      ]
+    },
+    {
+      "ID": 18000800,
+      "Entries": [
+        "[Stranded Graveyard] Crucible Illusion"
+      ]
+    },
+    {
+      "ID": 18000850,
+      "Entries": [
+        "[Stranded Graveyard] Soldier of Godrick"
+      ]
+    },
+    {
+      "ID": 19000800,
+      "Entries": [
+        "[Stone Platform] Elden Beast"
+      ]
+    },
+    {
+      "ID": 20000800,
+      "Entries": [
+        "[Belurat, Tower Settlement] Divine Beast Dancing Lion"
+      ]
+    },
+    {
+      "ID": 20010800,
+      "Entries": [
+        "[Enir-Ilim] Promised Consort Radahn"
+      ]
+    },
+    {
+      "ID": 20010850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000850,
+      "Entries": [
+        "[Shadow Keep] Golden Hippopotamus"
+      ]
+    },
+    {
+      "ID": 21010800,
+      "Entries": [
+        "[Specimen Storehouse] Messmer the Impaler"
+      ]
+    },
+    {
+      "ID": 22000800,
+      "Entries": [
+        "[Stone Coffin Fissure] Putrescent Knight"
+      ]
+    },
+    {
+      "ID": 25000800,
+      "Entries": [
+        "[Finger Birthing Grounds] Metyr, Mother of Fingers"
+      ]
+    },
+    {
+      "ID": 28000800,
+      "Entries": [
+        "[Midra's Manse] Midra, Lord of Frenzied Flame"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "[Tombsward Catacombs] Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 30010800,
+      "Entries": [
+        "[Impaler's Catacombs] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 30020800,
+      "Entries": [
+        "[Stormfoot Catacombs] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 30030800,
+      "Entries": [
+        "[Road's End Catacombs] Spirit-Caller Snail"
+      ]
+    },
+    {
+      "ID": 30040800,
+      "Entries": [
+        "[Murkwater Catacombs] Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 30050800,
+      "Entries": [
+        "[Black Knife Catacombs] Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 30050850,
+      "Entries": [
+        "[Black Knife Catacombs] Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 30060800,
+      "Entries": [
+        "[Cliffbottom Catacombs] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 30070800,
+      "Entries": [
+        "[Wyndham Catacombs] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 30080800,
+      "Entries": [
+        "[Sainted Hero's Grave] Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 30090800,
+      "Entries": [
+        "[Gelmir Hero's Grave] Red Wolf of the Champion"
+      ]
+    },
+    {
+      "ID": 30100800,
+      "Entries": [
+        "[Auriza Hero's Grave] Crucible Knight Ordovis"
+      ]
+    },
+    {
+      "ID": 30100801,
+      "Entries": [
+        "[Auriza Hero's Grave] Crucible Knight"
+      ]
+    },
+    {
+      "ID": 30110800,
+      "Entries": [
+        "[Deathtouched Catacombs] Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 30120800,
+      "Entries": [
+        "[Unsightly Catacombs] Perfumer Tricia"
+      ]
+    },
+    {
+      "ID": 30120801,
+      "Entries": [
+        "[Unsightly Catacombs] Misbegotten Warrior"
+      ]
+    },
+    {
+      "ID": 30130800,
+      "Entries": [
+        "[Auriza Side Tomb] Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 30140800,
+      "Entries": [
+        "[Minor Erdtree Catacombs] Erdtree Burial Watchdog"
+      ]
+    },
+    {
+      "ID": 30150800,
+      "Entries": [
+        "[Caelid Catacombs] Cemetery Shade"
+      ]
+    },
+    {
+      "ID": 30160800,
+      "Entries": [
+        "[War-Dead Catacombs] Putrid Tree Spirit"
+      ]
+    },
+    {
+      "ID": 30170800,
+      "Entries": [
+        "[Giant-Conquering Hero's Grave] Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 30180800,
+      "Entries": [
+        "[Giants' Mountaintop Catacombs] Ulcerated Tree Sprit"
+      ]
+    },
+    {
+      "ID": 30190800,
+      "Entries": [
+        "[Consecrated Snowfield Catacombs] Putrid Grave Warden Duelist"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "[Hidden Path to the Haligtree] Stray Mimic Tear"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "[Murkwater Cave] Patches"
+      ]
+    },
+    {
+      "ID": 31010800,
+      "Entries": [
+        "[Earthbore Cave] Runebear"
+      ]
+    },
+    {
+      "ID": 31020800,
+      "Entries": [
+        "[Tombsward Cave] Miranda the Blighted Bloom"
+      ]
+    },
+    {
+      "ID": 31030800,
+      "Entries": [
+        "[Groveside Cave] Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 31040800,
+      "Entries": [
+        "[Stillwater Cave] Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 31050800,
+      "Entries": [
+        "[Lakeside Crystal Cave] Bloodhound Knight"
+      ]
+    },
+    {
+      "ID": 31060800,
+      "Entries": [
+        "[Academy Crystal Cave] Crystalians"
+      ]
+    },
+    {
+      "ID": 31070800,
+      "Entries": [
+        "[Seethewater Cave] Kindred of Rot"
+      ]
+    },
+    {
+      "ID": 31090800,
+      "Entries": [
+        "[Volcano Cave] Demi-Human Queen Margot"
+      ]
+    },
+    {
+      "ID": 31100800,
+      "Entries": [
+        "[Dragonbarrow Cave] Beastman of Farum Azula"
+      ]
+    },
+    {
+      "ID": 31110800,
+      "Entries": [
+        "[Sellia Hideaway] Crystalians"
+      ]
+    },
+    {
+      "ID": 31120800,
+      "Entries": [
+        "[Cave of the Forlorn] Misbegotten Crusader"
+      ]
+    },
+    {
+      "ID": 31150800,
+      "Entries": [
+        "[Coastal Cave] Demi-Human Chief"
+      ]
+    },
+    {
+      "ID": 31170800,
+      "Entries": [
+        "[Highroad Cave] Guardian Golem"
+      ]
+    },
+    {
+      "ID": 31180800,
+      "Entries": [
+        "[Perfumer's Grotto] Omenkiller"
+      ]
+    },
+    {
+      "ID": 31190800,
+      "Entries": [
+        "[Sage's Cave] Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 31190850,
+      "Entries": [
+        "[Sage's Cave] Necromancer Garris"
+      ]
+    },
+    {
+      "ID": 31200800,
+      "Entries": [
+        "[Abandoned Cave] Cleanrot Knight"
+      ]
+    },
+    {
+      "ID": 31210800,
+      "Entries": [
+        "[Gaol Cave] Frenzied Duelist"
+      ]
+    },
+    {
+      "ID": 31220800,
+      "Entries": [
+        "[Spiritcaller's Cave] Spirit-Caller Snail"
+      ]
+    },
+    {
+      "ID": 32000800,
+      "Entries": [
+        "[Morne Tunnel] Scaly Misbegotten"
+      ]
+    },
+    {
+      "ID": 32010800,
+      "Entries": [
+        "[Limgrave Tunnels] Stonedigger Troll"
+      ]
+    },
+    {
+      "ID": 32020800,
+      "Entries": [
+        "[Raya Lucaria Crystal Tunnel] Crystalian (Ringblade)"
+      ]
+    },
+    {
+      "ID": 32040800,
+      "Entries": [
+        "[Old Altus Tunnel] Stonedigger Troll"
+      ]
+    },
+    {
+      "ID": 32050800,
+      "Entries": [
+        "[Altus Tunnel] Crystalian (Ringblade)"
+      ]
+    },
+    {
+      "ID": 32050801,
+      "Entries": [
+        "[Altus Tunnel] Crystalian (Spear)"
+      ]
+    },
+    {
+      "ID": 32070800,
+      "Entries": [
+        "[Gael Tunnel] Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 32080800,
+      "Entries": [
+        "[Sellia Crystal Tunnel] Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 32110800,
+      "Entries": [
+        "[Yelough Anix Tunnel] Astel- Stars of Darkness"
+      ]
+    },
+    {
+      "ID": 34120800,
+      "Entries": [
+        "[Divine Tower of West Altus] Onyx Lord"
+      ]
+    },
+    {
+      "ID": 34130800,
+      "Entries": [
+        "[Divine Tower of Caelid] Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 34140850,
+      "Entries": [
+        "[Divine Tower of East Altus] Fell Twins"
+      ]
+    },
+    {
+      "ID": 35000800,
+      "Entries": [
+        "[Subterranean Shunning-Grounds] Mohg The Omen"
+      ]
+    },
+    {
+      "ID": 35000850,
+      "Entries": [
+        "[Subterranean Shunning-Grounds] Esgar Priest of Blood"
+      ]
+    },
+    {
+      "ID": 39200800,
+      "Entries": [
+        "[Ruin-Strewn Precipice] Magma Wyrm Makar"
+      ]
+    },
+    {
+      "ID": 40000800,
+      "Entries": [
+        "[Fog Rift Catacombs] Death Knight"
+      ]
+    },
+    {
+      "ID": 40010800,
+      "Entries": [
+        "[Scorpion River Catacombs] Death Knight"
+      ]
+    },
+    {
+      "ID": 41000800,
+      "Entries": [
+        "[Belurat Gaol] Demi-Human Swordmaster Onze"
+      ]
+    },
+    {
+      "ID": 41010800,
+      "Entries": [
+        "[Bonny Gaol] Curseblade Labirith"
+      ]
+    },
+    {
+      "ID": 41020800,
+      "Entries": [
+        "[Lamenter's Gaol] Lamenter"
+      ]
+    },
+    {
+      "ID": 43000800,
+      "Entries": [
+        "[Rivermouth Cave] Chief Bloodfiend"
+      ]
+    },
+    {
+      "ID": 43010800,
+      "Entries": [
+        "[Dragon's Pit] Ancient Dragon-man"
+      ]
+    },
+    {
+      "ID": 1033420800,
+      "Entries": [
+        "[Liurnia - Moonlight Altar] Alecto Black Knife Ringleader"
+      ]
+    },
+    {
+      "ID": 1033430800,
+      "Entries": [
+        "[Liurnia - Minor Erdtree] Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 1033450800,
+      "Entries": [
+        "[Liurnia - Cuckoo's Evergaol] Bols Carian Knight"
+      ]
+    },
+    {
+      "ID": 1034420800,
+      "Entries": [
+        "[Liurnia - Moonfolk Ruins] Glintstone Dragon Adula"
+      ]
+    },
+    {
+      "ID": 1034450800,
+      "Entries": [
+        "[Liurnia - Meeting Place] Glintstone Dragon Smarag"
+      ]
+    },
+    {
+      "ID": 1034480800,
+      "Entries": [
+        "[Liurnia - Kingsrealm Ruins] Royal Revenant"
+      ]
+    },
+    {
+      "ID": 1034500800,
+      "Entries": [
+        "[Liurnia - Ranni's Rise] Glintstone Dragon Adula"
+      ]
+    },
+    {
+      "ID": 1035420800,
+      "Entries": [
+        "[Liurnia - Albinauric Village] Omenkiller"
+      ]
+    },
+    {
+      "ID": 1035500800,
+      "Entries": [
+        "[Liurnia - Caria Manor] Loretta, Royal Knight"
+      ]
+    },
+    {
+      "ID": 1035530800,
+      "Entries": [
+        "[Mt. Gelmir - Seethewater Terminus] Magma Wyrm"
+      ]
+    },
+    {
+      "ID": 1036450340,
+      "Entries": [
+        "[Liurnia - Gate Town Northwest] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1036480340,
+      "Entries": [
+        "[Bellum Highway - East Raya Lucaria Gate] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1036500800,
+      "Entries": [
+        "[Liurnia - Royal Grave Evergaol] Onyx Lord"
+      ]
+    },
+    {
+      "ID": 1036540800,
+      "Entries": [
+        "[Mt. Gelmir - Ninth Mt. Gelmir Campsite] Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 1037420340,
+      "Entries": [
+        "[Liurnia - Laskyar Ruins] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1037460800,
+      "Entries": [
+        "[Liurnia - Church of Vows] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1037510800,
+      "Entries": [
+        "[Altus Plateau - Abandoned Coffin] Ancient Dragon Lansseax"
+      ]
+    },
+    {
+      "ID": 1037530800,
+      "Entries": [
+        "[Mt. Gelmir - Primeval Sorcerer Azur] Demi-Human Queen Maggie"
+      ]
+    },
+    {
+      "ID": 1037540810,
+      "Entries": [
+        "[Mt. Gelmir - Minor Erdtree] Ulcerated Tree Spirit"
+      ]
+    },
+    {
+      "ID": 1038410800,
+      "Entries": [
+        "[Liurnia - Malefactor's Evergaol] Adan, Thief of Fire"
+      ]
+    },
+    {
+      "ID": 1038480800,
+      "Entries": [
+        "[Bellum Highway - Minor Erdtree] Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 1038510800,
+      "Entries": [
+        "[Altus Plateau - Erdtree-Gazing Hill- Lux Ruins] Demi-Human Queen"
+      ]
+    },
+    {
+      "ID": 1038520340,
+      "Entries": [
+        "[Altus Plateau - Wyndham Ruins] Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 1039430340,
+      "Entries": [
+        "[Liurnia - Liurnia Highway Far North] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1039440800,
+      "Entries": [
+        "[Liurnia - Divine Tower of Liurnia Entrance] Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 1039500800,
+      "Entries": [
+        "[Altus Plateau - Golden Lineage Evergaol] Godrick the Reskinned"
+      ]
+    },
+    {
+      "ID": 1039510800,
+      "Entries": [
+        "[Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1039540800,
+      "Entries": [
+        "[Altus Plateau - Shaded Castle] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1040520800,
+      "Entries": [
+        "[Altus Plateau - Sainted Hero's Grave Entrance] Black Knife Assassin"
+      ]
+    },
+    {
+      "ID": 1040530800,
+      "Entries": [
+        "[Altus Plateau - Writheblood Ruins] Sanguine Noble"
+      ]
+    },
+    {
+      "ID": 1041500800,
+      "Entries": [
+        "[Altus Plateau - South of Tree Sentinel Duo] Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 1041510800,
+      "Entries": [
+        "[Altus Plateau - Tree Sentinel Duo] Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 1041520800,
+      "Entries": [
+        "[Altus Plateau - Altus Tunnel Entrance] Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 1041530800,
+      "Entries": [
+        "[Altus Plateau - Minor Erdtree] Wormface"
+      ]
+    },
+    {
+      "ID": 1042330800,
+      "Entries": [
+        "[Weeping Peninsula - Weeping Evergaol] Ancient Hero of Zamor"
+      ]
+    },
+    {
+      "ID": 1042360800,
+      "Entries": [
+        "[Limgrave - Church of Elleh] Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 1042370800,
+      "Entries": [
+        "[Limgrave - Stormhill Evergaol] Crucible Knight"
+      ]
+    },
+    {
+      "ID": 1042380800,
+      "Entries": [
+        "[Stormhill - Stormgate] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1042380850,
+      "Entries": [
+        "[Stormhill - Warmaster's Shack] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1042550800,
+      "Entries": [
+        "[Altus Plateau - Windmill Heights] Godskin Apostle"
+      ]
+    },
+    {
+      "ID": 1043300800,
+      "Entries": [
+        "[Weeping Peninsula - Morne Moangrave] Leonine Misbegotten"
+      ]
+    },
+    {
+      "ID": 1043330800,
+      "Entries": [
+        "[Weeping Peninsula - Minor Erdtree] Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 1043360800,
+      "Entries": [
+        "[Limgrave - Agheel Lake] Flying Dragon Agheel"
+      ]
+    },
+    {
+      "ID": 1043370340,
+      "Entries": [
+        "[Limgrave - Agheel Lake North] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1043530800,
+      "Entries": [
+        "[Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1044320340,
+      "Entries": [
+        "[Weeping Peninsula - Castle Morne Approach North] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1044320342,
+      "Entries": [
+        "[Weeping Peninsula - Castle Morne Approach North] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1044350800,
+      "Entries": [
+        "[Limgrave - Forlorn Hound Evergaol] Bloodhound Knight Darriwil"
+      ]
+    },
+    {
+      "ID": 1044360800,
+      "Entries": [
+        "[Limgrave - Waypoint Ruins] Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 1044530800,
+      "Entries": [
+        "[Capital Outskirts - Hermit Merchant's Shack] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1045390800,
+      "Entries": [
+        "[Limgrave - Summonwater Village] Tibia Mariner"
+      ]
+    },
+    {
+      "ID": 1045520800,
+      "Entries": [
+        "[Capital Outskirts - Capital Rampart] Draconic Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 1047400800,
+      "Entries": [
+        "[Caelid - Minor Erdtree] Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 1048370800,
+      "Entries": [
+        "[Caelid - Caelid Highway South] Decaying Ekzykes"
+      ]
+    },
+    {
+      "ID": 1048400800,
+      "Entries": [
+        "[Caelid - Dragonbarrow West] Mad Pumpkin Head"
+      ]
+    },
+    {
+      "ID": 1048410800,
+      "Entries": [
+        "[Greyoll's Dragonbarrow - Isolated Merchant's Shack] Bell Bearing Hunter"
+      ]
+    },
+    {
+      "ID": 1048510800,
+      "Entries": [
+        "[Mountaintops of the Giants - Forbidden Lands Midway] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1048570800,
+      "Entries": [
+        "[Consecrated Snowfield - Ordina, Liturgical Town] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1049370800,
+      "Entries": [
+        "[Caelid - Southern Aeonia Swamp Bank] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1049370850,
+      "Entries": [
+        "[Caelid - Southern Aeonia Swamp Bank] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1049380800,
+      "Entries": [
+        "[Caelid - East Aeonia Swamp] Commander O'Neil"
+      ]
+    },
+    {
+      "ID": 1049390800,
+      "Entries": [
+        "[Caelid - West Sellia] Nox Swordress & Nok Monk"
+      ]
+    },
+    {
+      "ID": 1049390850,
+      "Entries": [
+        "[Caelid - West Sellia] Battlenage"
+      ]
+    },
+    {
+      "ID": 1049520800,
+      "Entries": [
+        "[Mountaintops of the Giants - Before Grand Lift of Rold] Black Blade Kindred"
+      ]
+    },
+    {
+      "ID": 1050560800,
+      "Entries": [
+        "[Mountaintops of the Giants - Consecrated Snowfield] Great Wyrm Theodorix"
+      ]
+    },
+    {
+      "ID": 1050570800,
+      "Entries": [
+        "[Mountaintops of the Giants - West of Castle Sol] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 1050570850,
+      "Entries": [
+        "[Mountaintops of the Giants - North of Minor Erdtree] Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 1051360800,
+      "Entries": [
+        "[Caelid - Redmane Castle] Crucible Knight"
+      ]
+    },
+    {
+      "ID": 1051400800,
+      "Entries": [
+        "[Greyoll's Dragonbarrow - Minor Erdtree] Putrid Avatar"
+      ]
+    },
+    {
+      "ID": 1051430800,
+      "Entries": [
+        "[Greyoll's Dragonbarrow - Bestial Sanctum] Black Blade Kindred"
+      ]
+    },
+    {
+      "ID": 1051570800,
+      "Entries": [
+        "[Mountaintops of the Giants - Castle Sol] Commander Niall"
+      ]
+    },
+    {
+      "ID": 1052380800,
+      "Entries": [
+        "[Southeast Caelid] Starscourge Radahn"
+      ]
+    },
+    {
+      "ID": 1052410800,
+      "Entries": [
+        "[Greyoll's Dragonbarrow - Southeast Farum Greatbridge] Flying Dragon Greyll"
+      ]
+    },
+    {
+      "ID": 1052410850,
+      "Entries": [
+        "[Greyoll's Dragonbarrow - Lenne's Rise] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 1052520800,
+      "Entries": [
+        "[Southeast Mountaintops] Fire Giant"
+      ]
+    },
+    {
+      "ID": 1052560800,
+      "Entries": [
+        "[Mountaintops of the Giants - Minor Erdtree] Erdtree Avatar"
+      ]
+    },
+    {
+      "ID": 1053560800,
+      "Entries": [
+        "[Mountaintops of the Giants - Lord Contender's Evergaol] Roundtable Knight Vyke"
+      ]
+    },
+    {
+      "ID": 1054560800,
+      "Entries": [
+        "[Northeast Mountaintops] Borealis the Freezing Fog"
+      ]
+    },
+    {
+      "ID": 1248550800,
+      "Entries": [
+        "[Southwest Mountaintops] Night's Cavalry"
+      ]
+    },
+    {
+      "ID": 2044450800,
+      "Entries": [
+        "[Ancient Ruins of Rauh] Romina, Saint of the Bud"
+      ]
+    },
+    {
+      "ID": 2044470800,
+      "Entries": [
+        "[Ancient Ruins of Rauh] Rugalea the Great Red Bear"
+      ]
+    },
+    {
+      "ID": 2045440800,
+      "Entries": [
+        "[Gravesite Plain] Ghostflame Dragon"
+      ]
+    },
+    {
+      "ID": 2046380800,
+      "Entries": [
+        "[Cerulean Coast] Dancer of Ranah"
+      ]
+    },
+    {
+      "ID": 2046400800,
+      "Entries": [
+        "[Cerulean Coast] Demi-Human Queen Marigga"
+      ]
+    },
+    {
+      "ID": 2046410800,
+      "Entries": [
+        "[Gravesite Plain] Knight of the Solitary Gaol"
+      ]
+    },
+    {
+      "ID": 2046450800,
+      "Entries": [
+        "[Gravesite Plain] Red Bear"
+      ]
+    },
+    {
+      "ID": 2046460800,
+      "Entries": [
+        "[Gravesite Plain] Divine Beast Dancing Lion"
+      ]
+    },
+    {
+      "ID": 2047390800,
+      "Entries": [
+        "[Cerulean Coast] Death Rite Bird"
+      ]
+    },
+    {
+      "ID": 2047450800,
+      "Entries": [
+        "[Scadu Altus] Black Knight Garrew"
+      ]
+    },
+    {
+      "ID": 2048380850,
+      "Entries": [
+        "[Cerulean Coast] Ghostflame Dragon"
+      ]
+    },
+    {
+      "ID": 2048440800,
+      "Entries": [
+        "[Gravesite Plain] Rellana, Twin Moon Knight"
+      ]
+    },
+    {
+      "ID": 2049410800,
+      "Entries": [
+        "[Jagged Peak] Jagged Peak Drake (Solo)"
+      ]
+    },
+    {
+      "ID": 2049430800,
+      "Entries": [
+        "[Moorth Highway] Ghostflame Dragon"
+      ]
+    },
+    {
+      "ID": 2049430850,
+      "Entries": [
+        "[Scadu Altus] Black Knight Edredd"
+      ]
+    },
+    {
+      "ID": 2049450800,
+      "Entries": [
+        "[Scadu Altus] Ralva the Great Red Bear"
+      ]
+    },
+    {
+      "ID": 2049480800,
+      "Entries": [
+        "[Scadu Altus] Commander Gaius"
+      ]
+    },
+    {
+      "ID": 2050470800,
+      "Entries": [
+        "[Hinterland] Tree Sentinel - Torch"
+      ]
+    },
+    {
+      "ID": 2050480800,
+      "Entries": [
+        "[Scaduview] Scadutree Avatar"
+      ]
+    },
+    {
+      "ID": 2050480860,
+      "Entries": [
+        "[Hinterland] Tree Sentinel"
+      ]
+    },
+    {
+      "ID": 2051440800,
+      "Entries": [
+        "[Scadu Altus] Rakshasa"
+      ]
+    },
+    {
+      "ID": 2051450720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2052400800,
+      "Entries": [
+        "[Jagged Peak] Jagged Peak Drake (Duo)"
+      ]
+    },
+    {
+      "ID": 2052430800,
+      "Entries": [
+        "[Abyssal Woods] Jori, the Elder Inquisitor"
+      ]
+    },
+    {
+      "ID": 2052480800,
+      "Entries": [
+        "[Finger Ruins] Fallingstar Beast"
+      ]
+    },
+    {
+      "ID": 2054390800,
+      "Entries": [
+        "[Jagged Peak] Bayle the Dread"
+      ]
+    },
+    {
+      "ID": 2054390850,
+      "Entries": [
+        "[Jagged Peak] Ancient Dragon Senessax"
+      ]
+    }
+  ]
+}

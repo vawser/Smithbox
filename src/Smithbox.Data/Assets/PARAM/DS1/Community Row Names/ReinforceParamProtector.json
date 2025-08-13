@@ -1,0 +1,107 @@
+{
+  "Name": "ReinforceParamProtector",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Armor - Normal +0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Armor - Normal +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Armor - Normal +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Armor - Normal +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Armor - Normal +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Armor - Normal +5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Armor - Normal +6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Armor - Normal +7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Armor - Normal +8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Armor - Normal +9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Armor - Normal +10"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Armor - Unique +0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Armor - Unique +1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Armor - Unique +2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Armor - Unique +3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Armor - Unique +4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Armor - Unique +5"
+      ]
+    }
+  ]
+}

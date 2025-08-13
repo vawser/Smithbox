@@ -1,0 +1,497 @@
+{
+  "Name": "ResultEventParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "The King of The Rat -- 鼠の王灰霊"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "White Spirit -- 白霊"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Small White Spirit -- 小白霊"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Golden Spirit -- 金霊"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Small Gold Spirit -- 小金霊"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 399,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Retaliation Blue Spirit -- 報復青霊"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Black Spirit (Sign) -- 黒霊（サイン）"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Black Spirit (Intruding) -- 黒霊（乱入）"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Red Spirit (Sign) -- 赤霊（サイン）"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Red Spirit (Intruding) -- 赤霊（乱入）"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Bell Guard Ashes -- 鐘守灰霊"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "The King of The Rat -- 鼠の王灰霊"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Dragon Spirit -- 竜霊"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Mirror Knight Spirit -- ミラーナイト霊"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Deep Spirit -- 深淵霊"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 499,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "White Spirit -- 白霊"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Small White Spirit -- 小白霊"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Golden Spirit -- 金霊"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Small Gold Spirit -- 小金霊"
+      ]
+    },
+    {
+      "ID": 599,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "White Spirit -- 白霊"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Small White Spirit -- 小白霊"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Golden Spirit -- 金霊"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Small Gold Spirit -- 小金霊"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Relief Blue Spirit -- 救援青霊"
+      ]
+    },
+    {
+      "ID": 699,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "White Spirit -- 白霊"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Small White Spirit -- 小白霊"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Golden Spirit -- 金霊"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Small Gold Spirit -- 小金霊"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Relief Blue Spirit -- 救援青霊"
+      ]
+    },
+    {
+      "ID": 799,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 899,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1099,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1199,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Relief Blue Spirit -- 救援青霊"
+      ]
+    },
+    {
+      "ID": 1299,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "Bell Guard Ashes -- 鐘守灰霊"
+      ]
+    },
+    {
+      "ID": 1399,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1699,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1715,
+      "Entries": [
+        "Deep Spirit -- 深淵霊"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 1814,
+      "Entries": [
+        "Mirror Knight Spirit -- ミラーナイト霊"
+      ]
+    },
+    {
+      "ID": 1899,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 1916,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 1917,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Deep Spirit -- 深淵霊"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        "Deep Spirit -- 深淵霊"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Host -- ホスト"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "Relief Blue Spirit -- 救援青霊"
+      ]
+    },
+    {
+      "ID": 2499,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 2508,
+      "Entries": [
+        "Black Spirit (Intruding) -- 黒霊（乱入）"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Red Spirit (Intruding) -- 赤霊（乱入）"
+      ]
+    },
+    {
+      "ID": 2599,
+      "Entries": [
+        "General purpose of the spirit body -- 霊体汎用"
+      ]
+    },
+    {
+      "ID": 2616,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 2617,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 2716,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 2717,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    },
+    {
+      "ID": 2816,
+      "Entries": [
+        "Duel Blue Spirit -- 決闘青霊"
+      ]
+    },
+    {
+      "ID": 2817,
+      "Entries": [
+        "Duel Red Spirit -- 決闘赤霊"
+      ]
+    }
+  ]
+}

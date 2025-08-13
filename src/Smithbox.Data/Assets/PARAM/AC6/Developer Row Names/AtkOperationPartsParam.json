@@ -1,0 +1,569 @@
+{
+  "Name": "AtkOperationPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Completely independent -- 完全独立"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "whole body -- 全身"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "lower body -- 下半身"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "upper body -- 上半身"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Shield-tickable attack -- 盾チク可能攻撃"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "guard -- ガード"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "shoulder -- 肩"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "quick boost -- クイックブースト"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[Main unit] Death_Cancel only -- 【本体】死亡_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[Main unit] Event animation_Cancel only -- 【本体】イベントアニメ_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Body] Damage_cancel only -- 【本体】ダメージ_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Body] Guard damage_cancel only -- 【本体】ガードダメージ_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Main unit] Move_Cancel only -- 【本体】移動_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Main Unit] Quick Boost_Cancel only -- 【本体】クイックブースト_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Main unit] Jump_Cancel only -- 【本体】ジャンプ_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "[Main unit] Landing_cancel only -- 【本体】着地_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "[Main body] Thud landing_cancel only -- 【本体】ドッスン着地_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "[Body] Reposition the guard_Cancel only -- 【本体】ガード構え直し_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "[Main unit] Start sliding on slope_Cancel only -- 【本体】斜面滑り開始_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "[Right hand] Recoil small fire -- 【右手】反動小射撃"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Left hand] Recoil small fire -- 【左手】反動小射撃"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[Right hand] Shooting during recoil -- 【右手】反動中射撃"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[Left hand] Shooting during recoil -- 【左手】反動中射撃"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[Right hand] Large recoil shot -- 【右手】反動大射撃"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[Left hand] Large recoil shot -- 【左手】反動大射撃"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[Right hand] Charging -- 【右手】チャージ中"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[Left hand] Charging -- 【左手】チャージ中"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[Right hand] Reload -- 【右手】リロード"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[Left hand] Reload -- 【左手】リロード"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[Right hand] Switch weapons -- 【右手】武器切り替え"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Left hand] Switch weapons -- 【左手】武器切り替え"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Right hand] Purge -- 【右手】パージ"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Left hand] Purge -- 【左手】パージ"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[Right shoulder] Small recoil shot -- 【右肩】反動小射撃"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[Left shoulder] Recoil small fire -- 【左肩】反動小射撃"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "[Right shoulder] Shooting during recoil -- 【右肩】反動中射撃"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "[Left shoulder] Shooting during recoil -- 【左肩】反動中射撃"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "[Right shoulder] Large recoil shot -- 【右肩】反動大射撃"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "[Left shoulder] Large recoil shot -- 【左肩】反動大射撃"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "[Attack] Guard -- 【攻撃】ガード"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[Fighting] Fighting attack -- 【格闘】格闘攻撃"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[Fighting] Fighting Charge -- 【格闘】格闘チャージ"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[Fighting] Charging -- 【格闘】チャージ中"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[Special] Assault Boost -- 【特殊】アサルトブースト"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[Right shoulder] Charging -- 【右肩】チャージ中"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "[Left shoulder] Charging -- 【左肩】チャージ中"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[Right hand] Upper body recoil large shot -- 【右手】上半身反動大射撃"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[Left hand] Upper body recoil large shot -- 【左手】上半身反動大射撃"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "[Both shoulders] Start shooting during recoil_Cancel only -- 【両肩】反動中射撃開始_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "[Both shoulders] Start large recoil fire_Cancel only -- 【両肩】反動大射撃開始_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[Right shoulder] Shoulder weapon simultaneous shooting_one half -- 【右肩】肩武器同時射撃_片割れ"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "[Left shoulder] Shoulder weapon simultaneous shooting_one half -- 【左肩】肩武器同時射撃_片割れ"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "[Right hand] Multi-lock in progress -- 【右手】マルチロック中"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "[Left hand] Multi-lock in progress -- 【左手】マルチロック中"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "[Right shoulder] During multi-lock -- 【右肩】マルチロック中"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "[Left shoulder] During multi-lock -- 【左肩】マルチロック中"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[Right shoulder] Minimal recoil shooting -- 【右肩】反動極小射撃"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[Left shoulder] Minimal recoil shooting -- 【左肩】反動極小射撃"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "[Right hand] Minimal recoil shooting -- 【右手】反動極小射撃"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "[Left hand] Minimal recoil shooting -- 【左手】反動極小射撃"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Attack] Omnidirectional Guard -- 【攻撃】全方位ガード"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[Right hand] Quick turn before attack -- 【右手】攻撃前クイックターン"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[Left hand] Quick turn before attack -- 【左手】攻撃前クイックターン"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "[Right shoulder] Quick turn before attack -- 【右肩】攻撃前クイックターン"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "[Left shoulder] Quick turn before attack -- 【左肩】攻撃前クイックターン"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[Right shoulder] Exceed Orbit -- 【右肩】イクシードオービット"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[Left shoulder] Exceed Orbit -- 【左肩】イクシードオービット"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "[Right hand] Shoulder weapon interference avoidance_Condition reference only -- 【右手】肩武器干渉回避_条件参照のみ"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "[Left hand] Shoulder weapon interference avoidance_Condition reference only -- 【左手】肩武器干渉回避_条件参照のみ"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "[Attack] Release guard -- 【攻撃】ガード解除"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Right shoulder] Shooting during recoil_after cancellation -- 【右肩】反動中射撃_キャンセル後"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[Left shoulder] Shooting during recoil_after cancellation -- 【左肩】反動中射撃_キャンセル後"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[Main unit] Assault boost_cancel only -- 【本体】アサルトブースト_キャンセルのみする"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[Right hand] Waiting for cancellation of Asabu -- 【右手】アサブキャンセル待ち"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[Left hand] Waiting for Asabu cancellation -- 【左手】アサブキャンセル待ち"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[Right shoulder] Asabu waiting for cancellation -- 【右肩】アサブキャンセル待ち"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[Left shoulder] Asabu waiting for cancellation -- 【左肩】アサブキャンセル待ち"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "[Right hand] Upper body recoil large fire (blade type)"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "[Left hand] Upper body recoil large fire (blade type)"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "[Both hands] Start large recoil fire - cancel only"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy base_completely independent -- 敵ベース_完全独立"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Enemy base_whole body -- 敵ベース_全身"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Enemy base_lower body -- 敵ベース_下半身"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Enemy base_upper body -- 敵ベース_上半身"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Enemy base_shield tick possible attack -- 敵ベース_盾チク可能攻撃"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "enemy base_guard -- 敵ベース_ガード"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "enemy base_shoulder -- 敵ベース_肩"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Enemy base_quick boost -- 敵ベース_クイックブースト"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Enemy base_guard damage -- 敵ベース_ガードダメージ"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Enemy base_special attack part 01 -- 敵ベース_特殊攻撃部位01"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Enemy base_special attack part 02 -- 敵ベース_特殊攻撃部位02"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Enemy base_special attack part 03 -- 敵ベース_特殊攻撃部位03"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Enemy base_Quick boost [Left arm duration] -- 敵ベース_クイックブースト【左腕持続】"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Enemy base_quick boost [right arm duration] -- 敵ベース_クイックブースト【右腕持続】"
+      ]
+    }
+  ]
+}

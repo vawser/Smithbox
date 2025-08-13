@@ -1,0 +1,95 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 600000,
+      "Entries": [
+        "Open test bonfire 01"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Open test bonfire 02"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Open test bonfire 03"
+      ]
+    },
+    {
+      "ID": 600003,
+      "Entries": [
+        "Scanning Tower Bonfire 01"
+      ]
+    },
+    {
+      "ID": 600004,
+      "Entries": [
+        "m60 initial position bonfire"
+      ]
+    },
+    {
+      "ID": 600005,
+      "Entries": [
+        "Fast Travel Mission 2A"
+      ]
+    },
+    {
+      "ID": 600006,
+      "Entries": [
+        "Fast Travel Mission 2B"
+      ]
+    },
+    {
+      "ID": 600007,
+      "Entries": [
+        "Fast travel mission 3"
+      ]
+    },
+    {
+      "ID": 600008,
+      "Entries": [
+        "Fast Travel Bonus 1"
+      ]
+    },
+    {
+      "ID": 600009,
+      "Entries": [
+        "Fast Travel Bonus 2"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Fast Travel Vanguard Base"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "Fast Travel Before M1"
+      ]
+    },
+    {
+      "ID": 600012,
+      "Entries": [
+        "Fast travel after M2"
+      ]
+    },
+    {
+      "ID": 600100,
+      "Entries": [
+        "Snow mountain bonfire 01"
+      ]
+    },
+    {
+      "ID": 600101,
+      "Entries": [
+        "Snow mountain bonfire 02"
+      ]
+    }
+  ]
+}

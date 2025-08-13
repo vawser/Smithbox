@@ -1,0 +1,365 @@
+{
+  "Name": "NpcPlayerSkinParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "Forlorn"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "Forlorn"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 7330,
+      "Entries": [
+        "Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 7610,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 7630,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 7840,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Pilgrim Bellclaire"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "Felicia the Brave"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "Melinda the Butcher"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Vorgel the Sinner"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "Merciless Roenna"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "Peculiar Kindalur"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "Dragonfang Villard"
+      ]
+    },
+    {
+      "ID": 8240,
+      "Entries": [
+        "Aslatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "Dingy Cleric Phantom"
+      ]
+    },
+    {
+      "ID": 8311,
+      "Entries": [
+        "Faraam Knight Phantom"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "Underworld Deadeye"
+      ]
+    },
+    {
+      "ID": 8321,
+      "Entries": [
+        "Pretender to the Xanthous Throne"
+      ]
+    },
+    {
+      "ID": 8322,
+      "Entries": [
+        "Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 8323,
+      "Entries": [
+        "Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 8324,
+      "Entries": [
+        "Tenebrous Rogue"
+      ]
+    },
+    {
+      "ID": 8325,
+      "Entries": [
+        "The Ghost of Princes Past"
+      ]
+    },
+    {
+      "ID": 8326,
+      "Entries": [
+        "A Chip Off the Ol Rock"
+      ]
+    },
+    {
+      "ID": 8327,
+      "Entries": [
+        "Shadowveil Assasin"
+      ]
+    },
+    {
+      "ID": 8330,
+      "Entries": [
+        "Peculiar Kindalur Phantom"
+      ]
+    },
+    {
+      "ID": 8340,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8341,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8350,
+      "Entries": [
+        "Black Dragon Knight"
+      ]
+    },
+    {
+      "ID": 8351,
+      "Entries": [
+        "Black Dragon Knight"
+      ]
+    },
+    {
+      "ID": 8352,
+      "Entries": [
+        "Black Dragon Knight"
+      ]
+    },
+    {
+      "ID": 8360,
+      "Entries": [
+        "Mad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 8361,
+      "Entries": [
+        "Greatsword Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8362,
+      "Entries": [
+        "Dual Avelyn Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 8363,
+      "Entries": [
+        "Bell Keeper Mage Phantom"
+      ]
+    },
+    {
+      "ID": 8364,
+      "Entries": [
+        "Ironclad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 8370,
+      "Entries": [
+        "Foreign Wanderer Phantom"
+      ]
+    },
+    {
+      "ID": 8371,
+      "Entries": [
+        "Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 8372,
+      "Entries": [
+        "Greatsword Foreigner Phantom"
+      ]
+    },
+    {
+      "ID": 8373,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8380,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8381,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "Unknown Phantom"
+      ]
+    }
+  ]
+}

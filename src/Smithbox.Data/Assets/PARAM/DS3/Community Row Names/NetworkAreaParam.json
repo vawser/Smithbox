@@ -1,0 +1,149 @@
+{
+  "Name": "NetworkAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (delete not allowed)"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Lothric Castle"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Undead Settlement"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Road of Sacrifices / Farron Keep"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Grand Archives"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Catacombs of Carthus / Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Irithyll Dungeon"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Cemetery of Ash / Untended Graves"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Flameless Shrine"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Ariandel"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Arena - Grand Roof"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Arena - Kiln of Flame"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Dreg Heap"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "The Ringed City"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Filianore's Rest"
+      ]
+    },
+    {
+      "ID": 530000,
+      "Entries": [
+        "Arena - Dragon Ruins"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "Arena - Round Plaza"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Multi-Play Test map"
+      ]
+    },
+    {
+      "ID": 991000,
+      "Entries": [
+        "Old multi-play test map"
+      ]
+    }
+  ]
+}

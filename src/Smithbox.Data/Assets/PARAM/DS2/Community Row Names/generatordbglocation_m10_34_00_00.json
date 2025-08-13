@@ -1,0 +1,281 @@
+{
+  "Name": "generatordbglocation_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 285,
+      "Entries": [
+        "【NPC】King of Mice -- 【NPC】ねずみの王"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "【NPC】The King of Mice -- 【NPC】ねずみの王（亡霊）"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "[Passage 2F_ Black Spirit] NPC for multi: transparent armor -- 【通路２F_黒霊】マルチ用NPC：透明鎧"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "【BOSS】Dog Mouse: Color (2) -- 【BOSS】犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Down the aisle immediately after the start __ laugh] [Amazing dead: sword] _1 -- 【スタート直後の通路__笑う】【すごい亡者：剣】_1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Down the aisle __ wall beating immediately after the start] [Amazing Dead: Sword] _2 -- 【スタート直後の通路__壁叩く】【すごい亡者：剣】_2"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Prowl the left hand side toward the circular saloon] 【Dog Mouse】 -- 【円形広間_向かって左手側をうろつく】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[Lattice battle in the circular saloon] 【Dog Rat】_1 -- 【円形広間の格子_戦闘】【犬ネズミ】_1"
+      ]
+    },
+    {
+      "ID": 1155,
+      "Entries": [
+        "[Lattice battle in the circular saloon] 【Dog Rat】_2 -- 【円形広間の格子_戦闘】【犬ネズミ】_2"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[Lattice_combat on the side of the lamp stand] 【Dog Mouse】 -- 【灯火台脇の格子_戦闘】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1251,
+      "Entries": [
+        "[Aisle 1F left hand _ laugh] [Amazing dead: sword] -- 【通路1F左手_笑う】【すごい亡者：剣】"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Upper and lower hole _ lower hole _ battle] 【Dog Mouse】 -- 【上下穴_下穴_戦闘】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[Upper hole _ upper hole _ battle] 【Dog Rat】_1 -- 【上下穴_上穴_戦闘】【犬ネズミ】_1"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "[Upper and lower hole _ lower hole _ battle] 【Dog Rat】_2 -- 【上下穴_下穴_戦闘】【犬ネズミ】_2"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Under the spiral staircase _ right hand hole _ battle] 【Dog Mouse】 -- 【螺旋階段の下_右手の穴_戦闘】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Hole in the middle under the spiral staircase_ battle] 【Dog Mouse】 -- 【螺旋階段の下_中央の穴_戦闘】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Under the spiral staircase _ hole in the left hand _ battle] 【Dog Mouse】 -- 【螺旋階段の下_左手の穴_戦闘】【犬ネズミ】"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Dead End Room_ Battle] 【Dog Rat】_1 -- 【行き止まり部屋_戦闘】【犬ネズミ】_1"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[Dead End Room_ Battle] 【Dog Rat】_2 -- 【行き止まり部屋_戦闘】【犬ネズミ】_2"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "[Dead End Room_ Battle] 【Dog Rat】_3 -- 【行き止まり部屋_戦闘】【犬ネズミ】_3"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Battle coming out of the ceiling] 【Dog Rat】_1 -- 【天井から出てくる_戦闘】【犬ネズミ】_1"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[Battle coming out of the ceiling] 【Dog Rat】_2 -- 【天井から出てくる_戦闘】【犬ネズミ】_2"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "[Battle coming out of the ceiling] 【Dog Rat】_3 -- 【天井から出てくる_戦闘】【犬ネズミ】_3"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "[Battle coming out of the ceiling] 【Dog Rat】_4 -- 【天井から出てくる_戦闘】【犬ネズミ】_4"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "[Battle coming out of the ceiling] 【Dog Rat】_5 -- 【天井から出てくる_戦闘】【犬ネズミ】_5"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_1 -- 【最下層の水たまり_戦闘】【アンデット市民】_1"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_2 -- 【最下層の水たまり_戦闘】【アンデット市民】_2"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_3 -- 【最下層の水たまり_戦闘】【アンデット市民】_3"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_5 -- 【最下層の水たまり_戦闘】【アンデット市民】_5"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_6 -- 【最下層の水たまり_戦闘】【アンデット市民】_6"
+      ]
+    },
+    {
+      "ID": 1907,
+      "Entries": [
+        "[Puddle _ battle of the lowest layer] 【Andet Citizen】_8 -- 【最下層の水たまり_戦闘】【アンデット市民】_8"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "[Suspension bridge at the bottom layer] 【Ishimori】 -- 【最下層の吊り橋】【石守】"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Saint's Tomb: Abandoned Saint -- 聖人墓所：捨てられた聖女"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Saint's Tomb: Knight of the Saint -- 聖人墓所：聖女の騎士"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_1 -- 【ボス部屋_お供】犬ネズミ_1"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_2 -- 【ボス部屋_お供】犬ネズミ_2"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_3 -- 【ボス部屋_お供】犬ネズミ_3"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_4 -- 【ボス部屋_お供】犬ネズミ_4"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_5 -- 【ボス部屋_お供】犬ネズミ_5"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_6 -- 【ボス部屋_お供】犬ネズミ_6"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_7 -- 【ボス部屋_お供】犬ネズミ_7"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_8 -- 【ボス部屋_お供】犬ネズミ_8"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_9 -- 【ボス部屋_お供】犬ネズミ_9"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_10 -- 【ボス部屋_お供】犬ネズミ_10"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_11 -- 【ボス部屋_お供】犬ネズミ_11"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "【Boss Room_Accompanying】Dog Rat_12 -- 【ボス部屋_お供】犬ネズミ_12"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,743 @@
+{
+  "Name": "eventlocation_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intrusion Point 1-10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Intrusion Point 1-11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Intrusion Point 1-12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Intrusion Point 1-13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Intrusion Point 1-14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Intrusion Point 1-15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Intrusion Point 1-16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Intrusion Point 1-17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Intrusion Point 1-18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Intrusion Point 1-19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Intrusion Point 1-20"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Intrusion Point 1-21"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Intrusion Point 1-22"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Intrusion Point 1-23"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice blood character】Hidden door 1"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice blood character】Hidden door 2"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 1"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "【Blood character prohibited】Boss ship"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        "[Blood character prohibition] wall to destroy the dark secret"
+      ]
+    },
+    {
+      "ID": 45040,
+      "Entries": [
+        "[Blood character prohibition] wall that the dark secret destroys 2"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Ship movement by bell_Navimesh change"
+      ]
+    },
+    {
+      "ID": 101800,
+      "Entries": [
+        "Backlead Safety Points [Heide]"
+      ]
+    },
+    {
+      "ID": 101801,
+      "Entries": [
+        "Backlead Safety Points [Oblivion]"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Bright area_1 from the start of the map"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Bright area_2 from the start of the map"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "Bright area_3 from the start of the map"
+      ]
+    },
+    {
+      "ID": 300003,
+      "Entries": [
+        "Bright area from the start of the map_4"
+      ]
+    },
+    {
+      "ID": 300004,
+      "Entries": [
+        "Bright area_5 from the start of the map"
+      ]
+    },
+    {
+      "ID": 300005,
+      "Entries": [
+        "Bright area from the start of the map_6"
+      ]
+    },
+    {
+      "ID": 300006,
+      "Entries": [
+        "Bright area from the start of the map_7"
+      ]
+    },
+    {
+      "ID": 300007,
+      "Entries": [
+        "Bright area from the start of the map_8"
+      ]
+    },
+    {
+      "ID": 300008,
+      "Entries": [
+        "Bright area from the start of the map_9"
+      ]
+    },
+    {
+      "ID": 300009,
+      "Entries": [
+        "Bright area from the start of the map_10"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Bright area from the start of the map_11"
+      ]
+    },
+    {
+      "ID": 300011,
+      "Entries": [
+        "Bright area from the start of the map_12"
+      ]
+    },
+    {
+      "ID": 300013,
+      "Entries": [
+        "Bright area from the start of the map_14"
+      ]
+    },
+    {
+      "ID": 300014,
+      "Entries": [
+        "Bright area from the start of the map_15"
+      ]
+    },
+    {
+      "ID": 400005,
+      "Entries": [
+        "Area where the insect key shines_6"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Boss warfare_water level rise start area"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Boss: Two-sided warrior: Snake head battle start judgment"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "1_ Brightness change area that becomes brighter when you break a wooden board"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "2_ Brightness change area that becomes brighter when you break a wooden board"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "3_ Brightness change area that becomes brighter when you break a wooden board"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Navi mesh change of the iron fence opened with the lever"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Three-story house_ enemy launch event area"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Dark secret destroyed the wall 1_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 1201000,
+      "Entries": [
+        "Dark secret wall destruction 2_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Navi mesh changes for destructable walls"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Moonlight_Switching Point_1 on the ship"
+      ]
+    },
+    {
+      "ID": 1900001,
+      "Entries": [
+        "Moonlight_Switching Point_2 on the ship"
+      ]
+    },
+    {
+      "ID": 1900002,
+      "Entries": [
+        "Moonlight_Switching Point_3 on the ship"
+      ]
+    },
+    {
+      "ID": 1900003,
+      "Entries": [
+        "Moonlight_Switching Point_4 on the ship"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Navi mesh change due to scaffold destruction"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "enemy of the house rising area one"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Enemy of the House Rising Area 2"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "Area 3 where the enemy of the house rises"
+      ]
+    },
+    {
+      "ID": 50000005,
+      "Entries": [
+        "Flame vase vase throwing start"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Wild dog wandering travel ing route"
+      ]
+    },
+    {
+      "ID": 50000011,
+      "Entries": [
+        "Stray Dog Moving Route 2"
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Start area_1 in front of the lamp stand"
+      ]
+    },
+    {
+      "ID": 50000110,
+      "Entries": [
+        "Enemy launch area in front of the lamp stand_2"
+      ]
+    },
+    {
+      "ID": 50000111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "_ Bow sailor start around the well"
+      ]
+    },
+    {
+      "ID": 50000201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000210,
+      "Entries": [
+        "Enemy surprise area of bar 2F"
+      ]
+    },
+    {
+      "ID": 50000220,
+      "Entries": [
+        "Bar 2F_ Archer Saein Launch Area_2"
+      ]
+    },
+    {
+      "ID": 50000230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Long-distance bow lower soldiers start shooting"
+      ]
+    },
+    {
+      "ID": 50000400,
+      "Entries": [
+        "Jumping from the _2F the nest of the hideout in the darkness"
+      ]
+    },
+    {
+      "ID": 50000410,
+      "Entries": [
+        "Pier in front of boss ship_ Erdo sailors and submerged soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000500,
+      "Entries": [
+        "Early enemy withdrawal area"
+      ]
+    },
+    {
+      "ID": 50000505,
+      "Entries": [
+        "Enemy return area under the long stairs 1"
+      ]
+    },
+    {
+      "ID": 50000506,
+      "Entries": [
+        "Enemy return area under the long stairs 2"
+      ]
+    },
+    {
+      "ID": 50000510,
+      "Entries": [
+        "Enemy return area on the long stairs"
+      ]
+    },
+    {
+      "ID": 50000515,
+      "Entries": [
+        "Entrance below enemy feedback area in stairs house"
+      ]
+    },
+    {
+      "ID": 50000516,
+      "Entries": [
+        "entrance on the enemy feedback area _ in the stairs house"
+      ]
+    },
+    {
+      "ID": 50000520,
+      "Entries": [
+        "Enemy return area of the top cliff"
+      ]
+    },
+    {
+      "ID": 50000525,
+      "Entries": [
+        "Enemy return area of the bell house"
+      ]
+    },
+    {
+      "ID": 50000530,
+      "Entries": [
+        "Enemy return area of The Light Stand Square"
+      ]
+    },
+    {
+      "ID": 50000535,
+      "Entries": [
+        "Enemy retreat area of the boss ship long distance"
+      ]
+    },
+    {
+      "ID": 50000536,
+      "Entries": [
+        "Enemy retreat of boss ship proximity"
+      ]
+    },
+    {
+      "ID": 50000600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "Sailor launch area on the roof"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "The one which lurks in the dark escape point 3"
+      ]
+    },
+    {
+      "ID": 52000400,
+      "Entries": [
+        "What lurks in the darkness escapepoint 2"
+      ]
+    },
+    {
+      "ID": 52000410,
+      "Entries": [
+        "What lurks in the darkness escapes point 4"
+      ]
+    },
+    {
+      "ID": 52000420,
+      "Entries": [
+        "What lurks in the darkness escapes point 5"
+      ]
+    },
+    {
+      "ID": 52000500,
+      "Entries": [
+        "The one which lurks in the dark escape point 1"
+      ]
+    },
+    {
+      "ID": 52000600,
+      "Entries": [
+        "Boss Ship_Sailor Moving Point 01"
+      ]
+    },
+    {
+      "ID": 52000601,
+      "Entries": [
+        "Boss Ship_Sailor Moving Point 02"
+      ]
+    },
+    {
+      "ID": 52000602,
+      "Entries": [
+        "Boss Ship_Red Spirit Moving Point"
+      ]
+    },
+    {
+      "ID": 52000603,
+      "Entries": [
+        "Boss Ship_Sailor Moving Point 03"
+      ]
+    },
+    {
+      "ID": 52000610,
+      "Entries": [
+        "Boss Ship_Archer Saeed Moving Point 01"
+      ]
+    },
+    {
+      "ID": 52000611,
+      "Entries": [
+        "Boss Ship_Archer Saeed Moving Point 02"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "Light stand 1_Darkness_Battle area after fleeing"
+      ]
+    },
+    {
+      "ID": 53000200,
+      "Entries": [
+        "Wall destruction room_darkness_fighting area after fleeing"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "Battle area after the ship lever destination house_dark secret_ fled"
+      ]
+    },
+    {
+      "ID": 53000350,
+      "Entries": [
+        "Drink small outdoor_dark secret_combat area after fleeing"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "Battle area after the boss ship front_darkness secret_escaped"
+      ]
+    },
+    {
+      "ID": 53000500,
+      "Entries": [
+        "Ship lever destination house _ falling attack area"
+      ]
+    },
+    {
+      "ID": 53000600,
+      "Entries": [
+        "Navigation point for round-trip stairs on the second floor of the bar"
+      ]
+    },
+    {
+      "ID": 54000100,
+      "Entries": [
+        "【Logic Feedback Area】Erdo Water Ming-go Feedback Area"
+      ]
+    },
+    {
+      "ID": 54000101,
+      "Entries": [
+        "【Logic Feedback Area】Start point limit point"
+      ]
+    },
+    {
+      "ID": 54000200,
+      "Entries": [
+        "【Logic Area】Female Swordsman Induction Start"
+      ]
+    },
+    {
+      "ID": 54000300,
+      "Entries": [
+        "【Navi Point】Female Swordsman Induction Destination"
+      ]
+    },
+    {
+      "ID": 54000301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "Test_Bright Area_1"
+      ]
+    }
+  ]
+}

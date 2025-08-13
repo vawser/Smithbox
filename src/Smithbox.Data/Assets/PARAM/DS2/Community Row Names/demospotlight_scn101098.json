@@ -1,0 +1,53 @@
+{
+  "Name": "demospotlight_scn101098",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "I'm not using it."
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Key light _c5130"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Phil light _c5130"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Backlight _c5130"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "spot X rotation inspection _c7000"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Key light _c7000"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Phil light _c7000"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Backlight _c7000"
+      ]
+    }
+  ]
+}

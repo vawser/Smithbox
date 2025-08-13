@@ -1,0 +1,203 @@
+{
+  "Name": "DamageWindCateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Disabled -- 無効"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Disabled-Medium-Attack-Generic -- 無効-中-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "General-purpose-mini-attack-general-purpose -- 汎用-極小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "General-purpose-small-attack-general-purpose -- 汎用-小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "General-purpose-medium-attack-general-purpose -- 汎用-中-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 14100000,
+      "Entries": [
+        "General-purpose-large-attack-general-purpose -- 汎用-大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "General-purpose-oversized-attack-general-purpose -- 汎用-特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 16100000,
+      "Entries": [
+        "General-purpose - Oversized - Attack - General -- 汎用-特特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "PC-Mini-Attack-General -- PC-極小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 22100000,
+      "Entries": [
+        "PC-Small-Attack-General -- PC-小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 23100000,
+      "Entries": [
+        "PC-Medium-Attack-General -- PC-中-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 24100000,
+      "Entries": [
+        "PC-Large-Attack-General -- PC-大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 25100000,
+      "Entries": [
+        "PC-Oversized-Attack-General -- PC-特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 26100000,
+      "Entries": [
+        "PC-Oversized-Attack-General -- PC-特特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Enemy - Minimal - Attack - General Purpose -- エネミー-極小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "Enemy - Minimum - Ground Vibration - General Purpose -- エネミー-極小-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Enemy - Small - Attack - General -- エネミー-小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Enemy- Small- Ground Vibration - General Purpose -- エネミー-小-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Enemy - Medium - Attack - General -- エネミー-中-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Enemy - Medium - Ground Vibration - General Purpose -- エネミー-中-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Enemy - Big - Attack - General -- エネミー-大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 34200000,
+      "Entries": [
+        "Enemy - Large - Ground Vibration - General Purpose -- エネミー-大-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "Enemy - Oversized - Attack - General -- エネミー-特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 35200000,
+      "Entries": [
+        "Enemy - Oversized - Ground Vibration - General Purpose -- エネミー-特大-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 36100000,
+      "Entries": [
+        "Enemy - Extra Large - Attack - General -- エネミー-特特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 36200000,
+      "Entries": [
+        "Enemy - Extra Large - Ground Vibration - General Purpose -- エネミー-特特大-地面振動-汎用"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "Objects - Small - Attack - General Purpose -- オブジェ-極小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "Objects - Small - Attack - General Purpose -- オブジェ-小-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 43100000,
+      "Entries": [
+        "Objects - Medium - Attack - General Purpose -- オブジェ-中-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 44100000,
+      "Entries": [
+        "Objects - Large - Attack - General Purpose -- オブジェ-大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 45100000,
+      "Entries": [
+        "Objects - Oversized - Attack - General Purpose -- オブジェ-特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 46100000,
+      "Entries": [
+        "Objects - Oversized - Attack - General -- オブジェ-特特大-攻撃-汎用"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "Test -- テスト"
+      ]
+    }
+  ]
+}

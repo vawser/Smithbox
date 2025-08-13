@@ -1,0 +1,791 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[Test] Blood paste"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[Test] Burn marks"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[Test] Cube Test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bloody front Enemy - map"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Blood splatter left enemy - map"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Bloody Right Enemy - map"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Death Hematemesis Map"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Blood front character"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Blood paste left character"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Blood paste right character"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Blood throwing character"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Blood Parry Throw Enemy -PC"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Blood Parry Throw Enemy -PC"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Blood stain front map"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Blood stain left map"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Blood stain right map"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Blood Throwing Map"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Blood Parry Throw PC- map"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Blood Parry Throw PC- map"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Blood Parry Throw PC- map"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 359,
+      "Entries": [
+        "Bloody Parishioner Map"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Bloody Parishioner _ face 1 Character - map"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Bloody Parishioner _ face 2 Character - map"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Bloody Parishioner _ Right arm character - map"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "Bloody Parishioner _ Left Arm Character -map"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "Bloody Parishioner _ Right knee character - map"
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        "Bloody Parishioner _ Left knee character - map"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Covered in oil"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Cracks"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 543,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 544,
+      "Entries": [
+        "Crack Proximity 2 Attack"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Burn marks Medium"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Scorch marks Enemy -PC Medium"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Small burn marks"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Scorch marks Enemy -PC small"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "POM test"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Child of the Blood Moon (Right Arm) PC- map"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Child of the Blood Moon (left arm) PC- map"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Child of the Bloody Moon (right) 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Child of the Bloody Moon (right 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Child of the Blood Moon (rear 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Child of the Blood Moon (rear 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Child of the Bloody Moon (left) 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Child of the Blood Moon (left) 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Child of the Bloody Moon (Right Foot 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Child of the Bloody Moon (Left leg 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Child of the Blood Moon (Head 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "Child of the Blood Moon (Front Destruction 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Child of the Blood Moon (Front Destruction 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Child of the Blood Moon (Right Destroy 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "Child of the Blood Moon (Right Destroy 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "Child of the Blood Moon (Left Destroy 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Child of the Blood Moon (Left Destroy 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Child of the Blood Moon (Head Destroyed) PC- map"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "The failed evil god (destruction of the pillars) 0) PC- map"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "The failed evil god (destruction of the pillars) 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "The failed evil god (destruction of the pillars) 2 ) PC- map"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "The Evil God of Failure (Right Destruction 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "The Evil God of Failure (Right Destruction 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "The Evil God of Failure (Right Destruction 2 ) PC- map"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "The Evil God of Failure (Left Destruction 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 918,
+      "Entries": [
+        "The Evil God of Failure (Left Destruction 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 919,
+      "Entries": [
+        "The Evil God of Failure (Left Destruction 2 ) PC- map"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "The failed evil god (head destroyed) 0 ) PC- map"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "The failed evil god (head destroyed) 1 ) PC- map"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "The failed evil god (head destroyed) 2) PC- map"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Parry Throw _ Torso 1_ Blood Map"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Parry Throw _ Torso 2_ Blood Map"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Parry Throw _ Torso 3_ Blood Map"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Parry Throw _ Torso 4_ Blood Character"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Parry Throw _ face 1_ Blood Character - map"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Back Throw ( 1002 (Flip version) Map"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Parry Throw _ Torso 1_ Mucus Map"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Parry Throw _ Torso 2_ Mucus Map"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Parry Throw _ Torso 3_ Mucus Map"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Parry Throw _ Torso 4_ Mucus character"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Parry Throw _ face 1_ Mucus character - map"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Back Throw ( 1012 (Flip version) Map"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Licking blood (small) _ Blood bag rupture _ abovePC- map"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Licking blood (small) _ Blood bag rupture _ under PC- map"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Licking blood (medium) _ Blood bag rupture _ above PC- map"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Licking blood (medium) _ Blood bag rupture _ under PC- map"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Licking blood (large) _ Blood bag rupture _ above PC- map"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Licking blood (large) _ Blood bag rupture _ under PC- map"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Blood licking (extra large) _ Blood bag rupture _ above PC- map"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Blood licking (extra large) _ Blood bag rupture _ under PC- map"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "City of Sacrifice _ Blood splash boiling upward character"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "City of Sacrifice _ Blood splash boiling downwards Character map"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "City of Sacrifice _ Blood splash boiling downwards ( large ) map"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Evil God _Arm Pulling Character"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Evil God _Arm Pulling Character"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Woman Hunter _ Heat Up (center) _ map"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Woman Hunter _ Heat Up (Front) _ map"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Woman Hunter _ Heat Up (Left) _ map"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Woman Hunter _ Heat Up (After) _ map"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Woman Hunter _ Heat Up (Right) _ map"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Woman Hunter _ Attack (front) _ map"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "test"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "Name": "eventparam_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Insect key] for lantern lighting"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Insect key start] lantern lighting"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "During the Mirror Night"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "There's an enemy trapped in ori."
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "The Nest of the Dragon Guarding the Elevator"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "On elevator lever"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Lower elevator lever"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Elevator_Connection replacement"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Connection _Connection flag OFF"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Auger_Petrified Stop_Key Guide"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Auger_Petrified Stop_Appearance Setting"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Auger_Petrification Stop_Navigation Switching"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Mirror Night Mirror_1"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Mirror Night Mirror_4"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Mirror Night Mirror_5"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Boss: Wyvern_ Combat"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Bone Dragon Death Treatment"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Wall Destruction Auger Launch_1"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Wall Destruction Auger Launch_2"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Enemy generation_1 when cart destroyed"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Enemy generation_2 when cart destroyed"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Enemy generation_3 when cart destroyed"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Gimmick door in the middle of the map"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Gimmick door initialization in the middle of the map"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Enemy display switching at the gimmick door"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Enemy display switching_initialization"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "A Sealed Man"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "The key door to be opened in \"The Key to Anne Deal\""
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Wall one seen in the door"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Wall 2 seen in the door"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Wall navigation switching to destroy the induced auger"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "The start conditions of the auger in the cage on the passage"
+      ]
+    },
+    {
+      "ID": 18010,
+      "Entries": [
+        "The start conditions of the strengthened immortals in the cage on the passage"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Disable damage"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Wall and door navigation switching to destroy the induced auger"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "The door is destroyed when the wall is destroyed."
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "The door is destroyed when the wall is destroyed._2"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "the enemy behind the painting starts one"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "The enemy behind the painting launches 2"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "The enemy behind the painting launches 3"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Navi mesh change of the king's door"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Reproduction Seed Fire 01_Entrance Building"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Play The Seed Fire 02_ Stairs Hidden Door Room to The Basement"
+      ]
+    },
+    {
+      "ID": 111270,
+      "Entries": [
+        "NPC: Female Knight (House of Andy' )"
+      ]
+    },
+    {
+      "ID": 111271,
+      "Entries": [
+        "NPC: Female Knight (House of Andy's): Ghost"
+      ]
+    },
+    {
+      "ID": 111272,
+      "Entries": [
+        "OBJ: Female Knight (House of Andy's): Tomb"
+      ]
+    },
+    {
+      "ID": 111273,
+      "Entries": [
+        "OBJ: The Knight of The Woman (House of Andy's): Key Guide"
+      ]
+    },
+    {
+      "ID": 111274,
+      "Entries": [
+        "OBJ: Female Knight (House of Andy's): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111276,
+      "Entries": [
+        "OBJ: Female Knight (House of Andy's): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111430,
+      "Entries": [
+        "NPC: The Enclosed Man"
+      ]
+    },
+    {
+      "ID": 111431,
+      "Entries": [
+        "NPC: The Enclosed Man: The Ghost"
+      ]
+    },
+    {
+      "ID": 111432,
+      "Entries": [
+        "OBJ: Enclosed Man: Tomb"
+      ]
+    },
+    {
+      "ID": 111433,
+      "Entries": [
+        "OBJ: The Enclosed Man: Key Guide"
+      ]
+    },
+    {
+      "ID": 111435,
+      "Entries": [
+        "OBJ: The Enclosed Man: The Appearance of the Black Phantom"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118210,
+      "Entries": [
+        "NPC for Multi: Reaper (Female): Black Phantom Appearance"
+      ]
+    },
+    {
+      "ID": 120130,
+      "Entries": [
+        "Trophy: Akertilla (House of Andy' )"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4007300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

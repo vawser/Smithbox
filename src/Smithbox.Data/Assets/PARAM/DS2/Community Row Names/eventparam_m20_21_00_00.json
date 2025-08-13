@@ -1,0 +1,641 @@
+{
+  "Name": "eventparam_m20_21_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "The key door opened by the \"key of the corridor\""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Lever door between soldiers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: Magical Opening"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: Magic Warp"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: The Opening of the Magic"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Lift s-Amana altar"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Elevator lever message display_on"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Elevator lever message display_bottom"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Elevator_Initialization"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Elevator_Connection replacement"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Forced death _PC connection"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Connection _Connection flag OFF"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Golem Door 01"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Golem Door 02"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Golem Door 03"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Golem Door 04"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Golem Door 05"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Golem Door 06"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Golem right at the main gate"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "Golem at the main gate_ left"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "The main gate of the golem"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Boss: Heavy Cavalry: Soldiers Only 2 Fights_ Combat"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Boss: Heavy Cavalry: Soldiers Only 2 Body War _ Light Switching"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Boss: Mirror Night_ Combat"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "King's Door"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Statue of a dragon spitting acid"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Statue of an acid-spitting dragon_2"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Statue of an acid-spitting dragon_3"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Statue of an acid-spitting dragon_4"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Boss: Queen Knight A&C⇒ Queen_ Battle"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Boss: Queen's Knight A&C_ Defeat"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Boss: Queen's Armor Form_ Poly Play"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "In front of the elevator"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "on the elevator_corridor front_lever message_"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "elevator_corridor front_lever message_bottom"
+      ]
+    },
+    {
+      "ID": 13030,
+      "Entries": [
+        "Golem start for elevator"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "White door management during the fire succession"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "End Roll"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Retry point setting after the queen is destroyed"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Golem (turn on the light) that sucks soul and moves_1"
+      ]
+    },
+    {
+      "ID": 19010,
+      "Entries": [
+        "Golem (turn on the light) 2 that sucks soul and moves"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Statue Night's Neck Fall_1"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Statue Night's Neck Fall_2"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Statue Night's Neck Fall_3"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "Statue Night's Neck Fall_4"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "The Key Man"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Bay Grant Deletion Judgment_Left"
+      ]
+    },
+    {
+      "ID": 22010,
+      "Entries": [
+        "Bay Grant Deletion Judgment_Right"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "In front of the king's door to the species fire 01_Rasbos of the play"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "After the breeding fire 02_ boss heavy cavalry"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Play Ing Spark 03_Inside the Hidden Door"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy_ Mirror Knight"
+      ]
+    },
+    {
+      "ID": 111015,
+      "Entries": [
+        "OBJ: Durahan: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "NPC: The Shrine Maiden of the Dragon (In King's Castle)"
+      ]
+    },
+    {
+      "ID": 111051,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden (Before Clearing)"
+      ]
+    },
+    {
+      "ID": 111052,
+      "Entries": [
+        "OBJ: The Shrine Maiden of the Dragon (Inside The King's Castle): Permission to Appear"
+      ]
+    },
+    {
+      "ID": 111053,
+      "Entries": [
+        "OBJ: Dragon Shrine Maiden (Before Clearing): Permission to Appear"
+      ]
+    },
+    {
+      "ID": 111054,
+      "Entries": [
+        "OBJ: The Shrine Maiden of the Dragon (Inside The King's Castle): Elimination Judgment"
+      ]
+    },
+    {
+      "ID": 111055,
+      "Entries": [
+        "OBJ: Dragon Shrine Maiden (Before Clearing): Erase Judgment"
+      ]
+    },
+    {
+      "ID": 111080,
+      "Entries": [
+        "NPC: Queen"
+      ]
+    },
+    {
+      "ID": 111082,
+      "Entries": [
+        "OBJ: Queen: Elimination Judgment"
+      ]
+    },
+    {
+      "ID": 111140,
+      "Entries": [
+        "NPC: The Spirit of the Prime Minister"
+      ]
+    },
+    {
+      "ID": 111180,
+      "Entries": [
+        "NPC: Pilgrims in the Abyss (Shadow Forest)"
+      ]
+    },
+    {
+      "ID": 111181,
+      "Entries": [
+        "NPC: Pilgrims in the Abyss (Shadow Forest): Ghosts"
+      ]
+    },
+    {
+      "ID": 111182,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111183,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111184,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111185,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111240,
+      "Entries": [
+        "NPC: Tsukiko Ya (Drangreig)"
+      ]
+    },
+    {
+      "ID": 111241,
+      "Entries": [
+        "NPC: Moonlight Old Man (Drungray)"
+      ]
+    },
+    {
+      "ID": 111242,
+      "Entries": [
+        "OBJ: Moonlight Old (Drangreig): Tomb"
+      ]
+    },
+    {
+      "ID": 111243,
+      "Entries": [
+        "OBJ: Moonlight Man (Drangreig): Key Guide"
+      ]
+    },
+    {
+      "ID": 111244,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Drangreig): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111245,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Drangreig): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111246,
+      "Entries": [
+        "OBJ: Moonlight Man (Drangreig): Before Russ: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111247,
+      "Entries": [
+        "OBJ: Moonlight Man (Drangreig): Before Russ: White Phantom"
+      ]
+    },
+    {
+      "ID": 111248,
+      "Entries": [
+        "OBJ: Moonlight Old Man (Drangreig): Before the Queen: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111249,
+      "Entries": [
+        "OBJ: Moonlight Old Man (Drangreig): Before the Queen: White Phantom"
+      ]
+    },
+    {
+      "ID": 111320,
+      "Entries": [
+        "NPC: The Girl In Captivity"
+      ]
+    },
+    {
+      "ID": 111321,
+      "Entries": [
+        "NPC: The Girl in Captivity: The Ghost"
+      ]
+    },
+    {
+      "ID": 111322,
+      "Entries": [
+        "OBJ: The Girl in Captivity: The Tomb"
+      ]
+    },
+    {
+      "ID": 111323,
+      "Entries": [
+        "OBJ: The Girl in Captivity: The Key Guide"
+      ]
+    },
+    {
+      "ID": 111325,
+      "Entries": [
+        "NPC: The Girl in Captivity: The Last Song"
+      ]
+    },
+    {
+      "ID": 111326,
+      "Entries": [
+        "NPC: The Girl in Captivity: The Last Song: Stop Judgment"
+      ]
+    },
+    {
+      "ID": 111435,
+      "Entries": [
+        "OBJ: The Enclosed Man: The Appearance of the Black Phantom"
+      ]
+    },
+    {
+      "ID": 111800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118140,
+      "Entries": [
+        "NPC for Multi: Flesh-breaking (Female): Black Phantom Appearance"
+      ]
+    },
+    {
+      "ID": 120080,
+      "Entries": [
+        "Trophy: The Pledge of Deep Darkness"
+      ]
+    },
+    {
+      "ID": 120110,
+      "Entries": [
+        "Trophy: The Great Sword of Moonlight"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

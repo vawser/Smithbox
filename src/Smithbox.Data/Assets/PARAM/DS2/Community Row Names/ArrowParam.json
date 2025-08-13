@@ -1,0 +1,257 @@
+{
+  "Name": "ArrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60760000,
+      "Entries": [
+        "Wood Arrow"
+      ]
+    },
+    {
+      "ID": 60770000,
+      "Entries": [
+        "Iron Arrow"
+      ]
+    },
+    {
+      "ID": 60780000,
+      "Entries": [
+        "Magic Arrow"
+      ]
+    },
+    {
+      "ID": 60790000,
+      "Entries": [
+        "Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 60800000,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 60810000,
+      "Entries": [
+        "Dark Arrow"
+      ]
+    },
+    {
+      "ID": 60820000,
+      "Entries": [
+        "Poison Arrow"
+      ]
+    },
+    {
+      "ID": 60830000,
+      "Entries": [
+        "Lacerating Arrow"
+      ]
+    },
+    {
+      "ID": 60850000,
+      "Entries": [
+        "Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 60870000,
+      "Entries": [
+        "Lightning Greatarrow"
+      ]
+    },
+    {
+      "ID": 60880000,
+      "Entries": [
+        "Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 60910000,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 60920000,
+      "Entries": [
+        "Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 60930000,
+      "Entries": [
+        "Magic Bolt"
+      ]
+    },
+    {
+      "ID": 60940000,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 60950000,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 60960000,
+      "Entries": [
+        "Dark Bolt"
+      ]
+    },
+    {
+      "ID": 190100010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100030,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100040,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100050,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100060,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100070,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100080,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100090,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100110,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100120,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100130,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100140,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100150,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100160,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100170,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100175,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100180,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100190,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100210,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 190100215,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

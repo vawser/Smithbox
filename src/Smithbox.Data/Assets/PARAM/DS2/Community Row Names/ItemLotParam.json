@@ -1,0 +1,1553 @@
+{
+  "Name": "ItemLotParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Test -- テスト"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Host Time - 'Strong' Pledge Success Rewards -- ホスト時-「強者」誓約成功報酬"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Host Time - \"King of The Mouse\" Pledge Success Reward -- ホスト時-「ねずみの王」誓約成功報酬"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Host Time - Dragon Spirit Repelling Reward -- ホスト時-竜霊撃退報酬"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Host Time - Deep Abyss Spirit Repelling Reward -- ホスト時-深淵霊撃退報酬"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Host Time - Golden Spirit Success Return Reward -- ホスト時-金霊成功帰還報酬"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "White Spirit Sat- White Spirit: Successful Return (Time Limit Expires) -- 白霊時-白霊：成功帰還（制限時間満了）"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "White Spirit S. Golden Spirit: Successful Return (Time Limit Expires) -- 白霊時-金霊：成功帰還（制限時間満了）"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Korei-Korei: Successful Return (Time Limit Expires) -- 小霊時-小霊：成功帰還（制限時間満了）"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Korei-Kokin Spirit: Successful Return (Time Limit Expires) -- 小霊時-小金霊：成功帰還（制限時間満了）"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Relief Blue Spirit - Successful Return (Host Passes Boss White Door) -- 救援青霊時-成功帰還（ホストがボス白扉通過）"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Relief Blue Spirit - Successful Return (Host passes through goal white door) -- 救援青霊時-成功帰還（ホストがゴール白扉通過）"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Relief Blue Spirit - Dark Spirit: Successful Return (Dark Spirit dies) -- 救援青霊時-闇霊：成功帰還（闇霊が死亡）"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Relief Blue Spirit - Red Spirit: Successful Return (Dark Spirit dies) -- 救援青霊時-赤霊：成功帰還（闇霊が死亡）"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Retaliation At The Blue Spirit - Successful Return (Host Death) -- 報復青霊時-成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "The Time of the Dark Spirits - The Dark Spirit: A Successful Return (Host Death) -- 闇霊時-闇霊：成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "The Time of the Dark Spirit - The Red Spirit: A Successful Return (Host Death) -- 闇霊時-赤霊：成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "The Time of the Dark Spirits - The Dark Spirit: A Successful Return (Relief Blue Spirit Death) -- 闇霊時-闇霊：成功帰還（救援青霊死亡）"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "The Time of the Dark Spirit - Red Spirit: Successful Return (Relief Blue Spirit Death) -- 闇霊時-赤霊：成功帰還（救援青霊死亡）"
+      ]
+    },
+    {
+      "ID": 10180,
+      "Entries": [
+        "Bell Guard Ash Spirit - Successful Return (Host Death) -- 鐘守灰霊時-成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "The King of The Mouse At The Ashes - Successful Return (Through the Goal Ash Door) -- ねずみの王灰霊時-成功帰還（ゴール灰扉通過）"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "The King of Mice At The Ashes - Successful Return (Host Death) -- ねずみの王灰霊時-成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Dragon Spirit Time - Successful Return (Host Death) -- 竜霊時-成功帰還（ホスト死亡）"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "Abyss Remembrance Time - Successful Return (Defeat the Host with Its Own Attack) -- 深淵霊時-成功帰還（ホストを自身の攻撃で撃破）"
+      ]
+    },
+    {
+      "ID": 10230,
+      "Entries": [
+        "Duel Blue Spirit Time - Duel Victory Return -- 決闘青霊時-決闘勝利帰還"
+      ]
+    },
+    {
+      "ID": 10240,
+      "Entries": [
+        "Duel Dark Spirit Son - Duel Victory Return -- 決闘闇霊時-決闘勝利帰還"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Two-Handed Sword: Soul Black -- 王国兵士（亡者）：両手剣：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Hunting Forest: Skeleton Aristocracy -- 狩猟の森：スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Anne Deal's House: Wyvern -- アン・ディールの館：ワイバーン"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "The Door way of Faros: The King of Rats -- ファロスの扉道：ネズミの王"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Lower Waterway: Dog Rat: Color (2) -- 下水路：犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Hidden Port: Double-Sided Warrior: Snake Head -- 隠れ港：両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Iron Castle: Demon Knight -- 熔鉄城：デーモンナイト"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "The Decaying Forest of Giants: The New Giant Senior Soldier (Deceased) -- 朽ちた巨人の森：新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "King's Castle D'Angheig: Heavy Cavalry -- 王城ドラングレイグ：重騎馬兵"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Memories of giants: New Giant Senior Soldiers -- 巨人の記憶：新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Decaying Giant Forest: Bay Grant -- 朽ちた巨人の森：ベイグラント"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Prison of Oblivion: Warrior in the Mirror -- 忘却の牢城：鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Throwaway Hole: Butcher -- 捨て穴：ブッチャー"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne 1 of the Fire: Queen Knight A -- 火継ぎの玉座１：王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Tomb of Immortality: Queen Knight B -- 不死廟：王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Valley of The Reservoir: Javaza Hat -- 溜まりの谷：ジャバザハット"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Valley of The Reservoir: Naga -- 溜まりの谷：ナーガ"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Forest of Shadows: Manscorpion ♀ -- 虚ろの影の森：マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "King's Castle D'Angheig: Mirror Knight -- 王城ドラングレイグ：ミラーナイト"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Old Dark Hole: Agaduran Stand -- 古き闇の穴：アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 514500,
+      "Entries": [
+        "Tomb of Immortality: King (Modern) -- 不死廟：王（現代）"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "The Nest of The Guardian Dragon: The Old Dragon -- 守り竜の巣：古の龍"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Altar of Amana: The Beautiful Voice Frog -- アマナの祭壇：美声カエル"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Queen of The Spider -- 輝石街ジェルドラ：蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Molten Iron Castle: Molten Iron Daemon -- 熔鉄城：熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Heide Great Fire Tower: Heavy Cavalry: Soldiers Only -- ハイデ大火塔：重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Hunting Forest: Silver Chariot -- 狩猟の森：シルバーチャリオット"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Heide Great Fire Tower: Ornstein -- ハイデ大火塔：オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Prison of Oblivion: Forgotten Sinners -- 忘却の牢城：忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Throne 2 of the Fire: The Queen's Armor -- 火継ぎの玉座２：王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "Yorozu Babaa -- よろずババア"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Black Phantom Shop -- 黒ファントム屋"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Multiplayer NPC Black Spirit -- マルチプレイNPC黒霊"
+      ]
+    },
+    {
+      "ID": 1307000,
+      "Entries": [
+        "Durahan - Transfer of Equipment -- デュラハン-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1307100,
+      "Entries": [
+        "Durahan (neckless) -? -- デュラハン（首なし）-？"
+      ]
+    },
+    {
+      "ID": 1502000,
+      "Entries": [
+        "Manscorpion (man) - ♀ destroyer - Petrified release item -- マンスコーピオン（男）-♀撃破-石化解除アイテム"
+      ]
+    },
+    {
+      "ID": 1502010,
+      "Entries": [
+        "Manscorpion (Man) - Transfer of equipment -- マンスコーピオン（男）-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1506000,
+      "Entries": [
+        "Tomb Amulet - Transfer of Equipment -- 墓守-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1514000,
+      "Entries": [
+        "Old King-? -- 年老いた王-？"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Shrine Maiden - First Conversation - Est Bottle -- 巫女-初回会話-エスト瓶"
+      ]
+    },
+    {
+      "ID": 1701000,
+      "Entries": [
+        "Shrine Maiden (Child) - Conversation - Estintia's Wings -- 巫女（子供）-会話-エスティンティアの羽"
+      ]
+    },
+    {
+      "ID": 1702000,
+      "Entries": [
+        "The Queen -- 王妃-？"
+      ]
+    },
+    {
+      "ID": 1704000,
+      "Entries": [
+        "Ladder Shop - Equipment Transfer -- 梯子屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1705000,
+      "Entries": [
+        "Retired Fire Protection Woman 1- Transfer of Equipment -- 退役の火防女１-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1705100,
+      "Entries": [
+        "Retired Fire Protection Woman 2-? -- 退役の火防女２-？"
+      ]
+    },
+    {
+      "ID": 1705300,
+      "Entries": [
+        "Retired Fire Protection Woman 3-? -- 退役の火防女３-？"
+      ]
+    },
+    {
+      "ID": 1721000,
+      "Entries": [
+        "Prime Minister's Spirit - Transfer of Equipment -- 宰相の霊-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1723000,
+      "Entries": [
+        "Fire Protection Woman's Housekeeper - Transfer of Equipment -- 火防女の家政婦-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1724000,
+      "Entries": [
+        "Captain of the Kingdom - Transfer of Equipment -- 王国隊長-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1725000,
+      "Entries": [
+        "Pilgrims in the Abyss - Transfer of Equipment -- 深淵の巡礼者-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1726000,
+      "Entries": [
+        "Dwarf - Transfer of equipment -- ドワーフ-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1729000,
+      "Entries": [
+        "Loyal Dog-? -- 忠犬-？"
+      ]
+    },
+    {
+      "ID": 1741000,
+      "Entries": [
+        "Heartbroken Blue Warrior - Transfer of Equipment -- 心折れた青教戦士-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1742000,
+      "Entries": [
+        "Avenger Warrior - Thank You - Patch House Key -- 仇討ちの戦士-加勢お礼-パッチの家の鍵"
+      ]
+    },
+    {
+      "ID": 1742010,
+      "Entries": [
+        "Avenger Warrior - Transfer of Equipment -- 仇討ちの戦士-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1743000,
+      "Entries": [
+        "Tsukiko Ya - Transfer of Equipment -- 月光爺-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1744000,
+      "Entries": [
+        "Patch - Thanks for the patch - patch house key -- パッチ-加勢お礼-パッチの家の鍵"
+      ]
+    },
+    {
+      "ID": 1744010,
+      "Entries": [
+        "Patch - Transfer of equipment -- パッチ-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1744020,
+      "Entries": [
+        "Patch - Giant Forest Conversation - White Sign Wax Stone -- パッチ-巨人の森会話-白サインろう石"
+      ]
+    },
+    {
+      "ID": 1751000,
+      "Entries": [
+        "Atlas - Giant's Forest Conversation - A House Key -- 地図書き-巨人の森会話-A家鍵"
+      ]
+    },
+    {
+      "ID": 1751010,
+      "Entries": [
+        "Atlas: Transfer of equipment -- 地図書き：装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1752000,
+      "Entries": [
+        "Female Knight - Transfer of Equipment -- 女騎士-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1752010,
+      "Entries": [
+        "Female Knight - Encounter 2nd - Human Statue -- 女騎士-遭遇２回目-人間の像"
+      ]
+    },
+    {
+      "ID": 1752020,
+      "Entries": [
+        "Female Knight - Encounter 3rd - Iron Protection Ring +1 -- 女騎士-遭遇３回目-鉄の加護の指輪＋１"
+      ]
+    },
+    {
+      "ID": 1753000,
+      "Entries": [
+        "Bell Guard - Transfer of Equipment -- 鐘守-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1753010,
+      "Entries": [
+        "Bell Guard-? -- 鐘守-？"
+      ]
+    },
+    {
+      "ID": 1753020,
+      "Entries": [
+        "Bell Guard - Pledge Ring -- 鐘守-誓約指輪"
+      ]
+    },
+    {
+      "ID": 1754000,
+      "Entries": [
+        "Yorozu Babaa - Equipment Transfer -- よろずババア-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1756000,
+      "Entries": [
+        "King of Mice - Pledge Ring -- ねずみの王-誓約指輪"
+      ]
+    },
+    {
+      "ID": 1757000,
+      "Entries": [
+        "Three Sisters A-Event 1 -- 三姉妹Ａ-イベント１"
+      ]
+    },
+    {
+      "ID": 1758000,
+      "Entries": [
+        "Three Sisters B-Event 1 -- 三姉妹Ｂ-イベント１"
+      ]
+    },
+    {
+      "ID": 1759000,
+      "Entries": [
+        "Three Sisters C-Event 1 -- 三姉妹Ｃ-イベント１"
+      ]
+    },
+    {
+      "ID": 1760000,
+      "Entries": [
+        "Girl 1- Transfer of equipment -- 吟遊詩人の少女１-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1760010,
+      "Entries": [
+        "The Girl of the Bard 1 - In Conversation - Tsurusasmall -- 吟遊詩人の少女１-会話中-つるすべ小"
+      ]
+    },
+    {
+      "ID": 1760020,
+      "Entries": [
+        "1- Rescue of the girl in captivity - The blessing of the goddess -- 吟遊詩人の少女１-虜囚の少女救出-女神の祝福"
+      ]
+    },
+    {
+      "ID": 1760100,
+      "Entries": [
+        "Girl 2-Equipment Transfer -- 吟遊詩人の少女２-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1760110,
+      "Entries": [
+        "The Girl of the Bard 2- In Conversation - Vine -- 吟遊詩人の少女２-会話中-つるすべ石"
+      ]
+    },
+    {
+      "ID": 1760120,
+      "Entries": [
+        "The Girl of The Bard 2 - Rescue of the Girl in Captivity - The Spark of The Magic -- 吟遊詩人の少女２-虜囚の少女救出-呪術の火種"
+      ]
+    },
+    {
+      "ID": 1760200,
+      "Entries": [
+        "Captive Girl - In Conversation - Tsurusei Small -- 虜囚の少女-会話中-つるすべ小"
+      ]
+    },
+    {
+      "ID": 1761000,
+      "Entries": [
+        "Armor shop - equipment transfer -- 防具屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1762000,
+      "Entries": [
+        "Material shop - equipment transfer -- 素材屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1763000,
+      "Entries": [
+        "Sorcerer - Thank you for the rescue - the power to lower -- 呪術屋-救出時お礼-引下げ理力"
+      ]
+    },
+    {
+      "ID": 1764000,
+      "Entries": [
+        "Blacksmith - Transfer of equipment -- 鍛冶屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1764300,
+      "Entries": [
+        "EX Blacksmith - Transfer of Equipment -- ＥＸ鍛冶屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1766000,
+      "Entries": [
+        "Sorcerer - Transfer of equipment -- 魔術屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1768000,
+      "Entries": [
+        "Spell Mania - Transfer of Equipment -- スペルマニア-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1769000,
+      "Entries": [
+        "Miracle Man - Transfer of Equipment -- 奇跡の人-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1770000,
+      "Entries": [
+        "Dark Art Shop - Transfer of Equipment -- 闇術屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1771000,
+      "Entries": [
+        "Sealed Man - Transfer of Equipment -- 封印された人-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1771010,
+      "Entries": [
+        "Sealed Man - First (Ladder) - All The Ring of The Devil -- 封印された人-１人目（梯子屋）-全ての退魔の指輪"
+      ]
+    },
+    {
+      "ID": 1771020,
+      "Entries": [
+        "Sealed Person - Second Person (Map) - Reduction Power -- 封印された人-２人目（地図書き）-引下げ理力"
+      ]
+    },
+    {
+      "ID": 1771030,
+      "Entries": [
+        "Sealed Man - Third (Spell Mania) - The Sun of Chaos -- 封印された人-３人目（スペルマニア）-混沌の太陽"
+      ]
+    },
+    {
+      "ID": 1771040,
+      "Entries": [
+        "Sealed Person - 4th (Shrine Maiden) - Magical Opening -- 封印された人-４人目（巫女）-魔力開放"
+      ]
+    },
+    {
+      "ID": 1772000,
+      "Entries": [
+        "Curiosity shop - Transfer of equipment -- 珍品屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1776000,
+      "Entries": [
+        "Top Weapons Store-? -- 上位武器屋-？"
+      ]
+    },
+    {
+      "ID": 1777000,
+      "Entries": [
+        "Cat-? -- 猫-？"
+      ]
+    },
+    {
+      "ID": 1783040,
+      "Entries": [
+        "Black Phantom Shop - Equipment Transfer -- 黒ファントム屋-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1784000,
+      "Entries": [
+        "The Martial Law of The Escape - Transfer of Equipment -- 免罪の教戒師-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1785040,
+      "Entries": [
+        "Guardian Knight - Transfer of Equipment -- 守護の騎士-装備品譲渡"
+      ]
+    },
+    {
+      "ID": 1786000,
+      "Entries": [
+        "Glitter Girl-? -- キラキラ娘-？"
+      ]
+    },
+    {
+      "ID": 1787000,
+      "Entries": [
+        "Old Dragon - Chaos of the Dragon -- 古龍-龍の混沌"
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        "Pledge - Blue Religion - First Pledge - Pledge Ring -- 誓約-青教-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2001011,
+      "Entries": [
+        "Pledge - Blue Religion - Level 1 Reward-? -- 誓約-青教-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2001012,
+      "Entries": [
+        "Pledge - Blue Religion - Level 2 Rewards-? -- 誓約-青教-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2001013,
+      "Entries": [
+        "Pledge - Blue Religion - Level 3 Rewards- ? -- 誓約-青教-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2002000,
+      "Entries": [
+        "Pledge - Guardian of Blue - First Pledge - Pledge Ring -- 誓約-青の守護者-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2002011,
+      "Entries": [
+        "Pledge - Blue Guardian - Level 1 Reward- ? -- 誓約-青の守護者-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2002012,
+      "Entries": [
+        "Pledge - Blue Guardian - Level 2 Rewards- ? -- 誓約-青の守護者-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2002013,
+      "Entries": [
+        "Pledge - Blue Guardian - Level 3 Rewards- ? -- 誓約-青の守護者-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2003000,
+      "Entries": [
+        "Pledge - Blood Dark Spirit - First Pledge - Pledge Ring -- 誓約-血の闇霊-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2003011,
+      "Entries": [
+        "Pledge - Blood Dark Spirit - Level 1 Reward-? -- 誓約-血の闇霊-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2003012,
+      "Entries": [
+        "Pledge - Blood Dark Spirit - Level 2 Reward-? -- 誓約-血の闇霊-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2003013,
+      "Entries": [
+        "Pledge - Blood Dark Spirit - Level 3 Reward- ? -- 誓約-血の闇霊-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2004000,
+      "Entries": [
+        "Pledge - Bell Guard - First Pledge - Pledge Ring -- 誓約-鐘守-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2004011,
+      "Entries": [
+        "Pledge - Bell Guard - Level 1 Reward- ? -- 誓約-鐘守-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2004012,
+      "Entries": [
+        "Pledge - Bell Guard - Level 2 Rewards- ? -- 誓約-鐘守-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2004013,
+      "Entries": [
+        "Pledge - Bell Guard - Level 3 Rewards- ? -- 誓約-鐘守-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2005000,
+      "Entries": [
+        "Pledge - Mouse - First Pledge - Pledge Ring -- 誓約-ねずみ-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2005011,
+      "Entries": [
+        "Pledge - Mouse - Level 1 Reward - ? -- 誓約-ねずみ-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2005012,
+      "Entries": [
+        "Pledge - Mouse - Level 2 Reward - ? -- 誓約-ねずみ-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2005013,
+      "Entries": [
+        "Pledge - Mouse - Level 3 Reward - ? -- 誓約-ねずみ-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2006000,
+      "Entries": [
+        "Pledge - Abyss - First Pledge - Pledge Ring -- 誓約-深淵-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2006011,
+      "Entries": [
+        "Pledge - Abyss - Level 1 Reward - ? -- 誓約-深淵-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2006012,
+      "Entries": [
+        "Pledge - Abyss - Level 2 Rewards - ? -- 誓約-深淵-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2006013,
+      "Entries": [
+        "Pledge - Abyss - Level 3 Rewards- ? -- 誓約-深淵-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2007000,
+      "Entries": [
+        "Pledge - Sun - First Pledge - Pledge Ring -- 誓約-太陽-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2007011,
+      "Entries": [
+        "Pledge - Sun - Level 1 Reward - ? -- 誓約-太陽-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2007012,
+      "Entries": [
+        "Pledge - Sun - Level 2 Rewards- ? -- 誓約-太陽-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2007013,
+      "Entries": [
+        "Pledge - Sun - Level 3 Rewards- ? -- 誓約-太陽-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2008000,
+      "Entries": [
+        "Pledge - Koryu - First Pledge - Pledge Ring -- 誓約-古竜-初回誓約時-誓約指輪"
+      ]
+    },
+    {
+      "ID": 2008011,
+      "Entries": [
+        "Pledge - Koryu - Level 1 Reward - ? -- 誓約-古竜-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2008012,
+      "Entries": [
+        "Pledge - Koryu - Level 2 Reward - ? -- 誓約-古竜-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2008013,
+      "Entries": [
+        "Pledge - Koryu - Level 3 Reward - ? -- 誓約-古竜-レベル３報酬-？"
+      ]
+    },
+    {
+      "ID": 2009000,
+      "Entries": [
+        "Pledge - Strongman - First Pledge - Strong Man Roster -- 誓約-強者-初回誓約時-強者名簿"
+      ]
+    },
+    {
+      "ID": 2009011,
+      "Entries": [
+        "Pledge - Strong - Level 1 Reward - ? -- 誓約-強者-レベル１報酬-？"
+      ]
+    },
+    {
+      "ID": 2009012,
+      "Entries": [
+        "Pledge - Strong - Level 2 Reward - ? -- 誓約-強者-レベル２報酬-？"
+      ]
+    },
+    {
+      "ID": 2009013,
+      "Entries": [
+        "Pledge - Strongman - Level 3 Reward - Pledge Ring -- 誓約-強者-レベル３報酬-誓約指輪"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "The Book of Pointing -- 「指差し」の書"
+      ]
+    },
+    {
+      "ID": 3002000,
+      "Entries": [
+        "The Book of \"Come On\" -- 「かかって来い」の書"
+      ]
+    },
+    {
+      "ID": 3003000,
+      "Entries": [
+        "The Book of Polite Rei -- 「丁寧な一礼」の書"
+      ]
+    },
+    {
+      "ID": 3004000,
+      "Entries": [
+        "The Book of One Bow -- 「一礼」の書"
+      ]
+    },
+    {
+      "ID": 3005000,
+      "Entries": [
+        "The Book of Welcome -- 「歓迎」の書"
+      ]
+    },
+    {
+      "ID": 3006000,
+      "Entries": [
+        "The Book of The War -- 「開戦礼」の書"
+      ]
+    },
+    {
+      "ID": 3007000,
+      "Entries": [
+        "The Book of Waving -- 「手を振る」の書"
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "The Book of Guts Pose -- 「ガッツポーズ」の書"
+      ]
+    },
+    {
+      "ID": 3009000,
+      "Entries": [
+        "The Book of Joy -- 「歓喜」の書"
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "The Book of \"Yutakebi\" -- 「雄たけび」の書"
+      ]
+    },
+    {
+      "ID": 3011000,
+      "Entries": [
+        "The Book of Shoulder Familiarity -- 「肩慣らし」の書"
+      ]
+    },
+    {
+      "ID": 3012000,
+      "Entries": [
+        "The Book of Aioi -- 「エイエイオー」の書"
+      ]
+    },
+    {
+      "ID": 3013000,
+      "Entries": [
+        "The Book of Understanding -- 「了解」の書"
+      ]
+    },
+    {
+      "ID": 3014000,
+      "Entries": [
+        "The Book of Denial -- 「否定」の書"
+      ]
+    },
+    {
+      "ID": 3015000,
+      "Entries": [
+        "The Book of \"Leave to You\" -- 「任せろ」の書"
+      ]
+    },
+    {
+      "ID": 3016000,
+      "Entries": [
+        "The Book of The Begging of Life -- 「命乞い」の書"
+      ]
+    },
+    {
+      "ID": 3017000,
+      "Entries": [
+        "The Book of \"DoshitaZa\" -- 「土下座」の書"
+      ]
+    },
+    {
+      "ID": 3018000,
+      "Entries": [
+        "The Book of \"Beheading\" -- 「首斬り」の書"
+      ]
+    },
+    {
+      "ID": 3019000,
+      "Entries": [
+        "The Book of Provocation -- 「挑発」の書"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "The Book of Making fun of -- 「馬鹿にする」の書"
+      ]
+    },
+    {
+      "ID": 3021000,
+      "Entries": [
+        "The Book of The Sun Praise -- 「太陽賛美」の書"
+      ]
+    },
+    {
+      "ID": 110025000,
+      "Entries": [
+        "Treasure Chest_Torchi -- 宝箱_松明"
+      ]
+    },
+    {
+      "ID": 110145500,
+      "Entries": [
+        "Treasure Corpse Bug Key -- 宝死体_虫の鍵"
+      ]
+    },
+    {
+      "ID": 110155500,
+      "Entries": [
+        "The Key to The Treasure Corpse_ Anne Deal -- 宝死体_アン・ディールの鍵"
+      ]
+    },
+    {
+      "ID": 110165500,
+      "Entries": [
+        "The Key to the Treasure Corpse -- 宝死体_牢の鍵"
+      ]
+    },
+    {
+      "ID": 110195500,
+      "Entries": [
+        "Treasure Corpse_ Fire Key -- 宝死体_火の鍵"
+      ]
+    },
+    {
+      "ID": 110235820,
+      "Entries": [
+        "Treasure Corpse_ Keys to Immortal Solitary Confinement -- 宝死体_不死独房の鍵"
+      ]
+    },
+    {
+      "ID": 120215005,
+      "Entries": [
+        "The key to the treasure chest corridor (tentative) -- 宝箱_回廊の鍵（仮）"
+      ]
+    },
+    {
+      "ID": 120245495,
+      "Entries": [
+        "Iron Treasure Chest_ King's Ring -- 鉄宝箱_王の指輪"
+      ]
+    },
+    {
+      "ID": 120635500,
+      "Entries": [
+        "【Treasure Corpse】\u3000E3 can be seen from the starting point -- 【宝死体】\u3000E3スタート地点からギリギリ見える"
+      ]
+    },
+    {
+      "ID": 199995001,
+      "Entries": [
+        "Debug -OBJ-Treasure 01 -- デバッグ用-OBJ-宝箱０１"
+      ]
+    },
+    {
+      "ID": 199995002,
+      "Entries": [
+        "Debug -OBJ-Treasure 02 -- デバッグ用-OBJ-宝箱０２"
+      ]
+    },
+    {
+      "ID": 199995003,
+      "Entries": [
+        "Debug -OBJ-Treasure 03 -- デバッグ用-OBJ-宝箱０３"
+      ]
+    },
+    {
+      "ID": 199995004,
+      "Entries": [
+        "Debug -OBJ-Treasure 04 -- デバッグ用-OBJ-宝箱０４"
+      ]
+    },
+    {
+      "ID": 199995005,
+      "Entries": [
+        "Debug -OBJ-Treasure 05 -- デバッグ用-OBJ-宝箱０５"
+      ]
+    },
+    {
+      "ID": 199995006,
+      "Entries": [
+        "Debug -OBJ-Treasure 06 -- デバッグ用-OBJ-宝箱０６"
+      ]
+    },
+    {
+      "ID": 199995007,
+      "Entries": [
+        "Debug -OBJ-Treasure 07 -- デバッグ用-OBJ-宝箱０７"
+      ]
+    },
+    {
+      "ID": 199995008,
+      "Entries": [
+        "Debug -OBJ-Treasure 08 -- デバッグ用-OBJ-宝箱０８"
+      ]
+    },
+    {
+      "ID": 199995009,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 09 -- デバッグ用-OBJ-宝箱０９"
+      ]
+    },
+    {
+      "ID": 199995010,
+      "Entries": [
+        "Debug -OBJ-Treasure 10 -- デバッグ用-OBJ-宝箱１０"
+      ]
+    },
+    {
+      "ID": 199995011,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 11 -- デバッグ用-OBJ-宝箱１１"
+      ]
+    },
+    {
+      "ID": 199995012,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 12 -- デバッグ用-OBJ-宝箱１２"
+      ]
+    },
+    {
+      "ID": 199995013,
+      "Entries": [
+        "Debug -OBJ-Treasure 13 -- デバッグ用-OBJ-宝箱１３"
+      ]
+    },
+    {
+      "ID": 199995014,
+      "Entries": [
+        "Debug -OBJ-Treasure 14 -- デバッグ用-OBJ-宝箱１４"
+      ]
+    },
+    {
+      "ID": 199995015,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 15 -- デバッグ用-OBJ-宝箱１５"
+      ]
+    },
+    {
+      "ID": 199995016,
+      "Entries": [
+        "Debug -OBJ-Treasure 16 -- デバッグ用-OBJ-宝箱１６"
+      ]
+    },
+    {
+      "ID": 199995017,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 17 -- デバッグ用-OBJ-宝箱１７"
+      ]
+    },
+    {
+      "ID": 199995018,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 18 -- デバッグ用-OBJ-宝箱１８"
+      ]
+    },
+    {
+      "ID": 199995019,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 19 -- デバッグ用-OBJ-宝箱１９"
+      ]
+    },
+    {
+      "ID": 199995020,
+      "Entries": [
+        "Debug -OBJ-Treasure Chest 20 -- デバッグ用-OBJ-宝箱２０"
+      ]
+    },
+    {
+      "ID": 199995501,
+      "Entries": [
+        "For Debugging -OBJ-Treasure Corpse 01 -- デバッグ用-OBJ-宝死体０１"
+      ]
+    },
+    {
+      "ID": 199995502,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 02 -- デバッグ用-OBJ-宝死体０２"
+      ]
+    },
+    {
+      "ID": 199995503,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 03 -- デバッグ用-OBJ-宝死体０３"
+      ]
+    },
+    {
+      "ID": 199995504,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 04 -- デバッグ用-OBJ-宝死体０４"
+      ]
+    },
+    {
+      "ID": 199995505,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 05 -- デバッグ用-OBJ-宝死体０５"
+      ]
+    },
+    {
+      "ID": 199995506,
+      "Entries": [
+        "For debugging-OBJ-Treasure Corpse 06 -- デバッグ用-OBJ-宝死体０６"
+      ]
+    },
+    {
+      "ID": 199995507,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 07 -- デバッグ用-OBJ-宝死体０７"
+      ]
+    },
+    {
+      "ID": 199995508,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 08 -- デバッグ用-OBJ-宝死体０８"
+      ]
+    },
+    {
+      "ID": 199995509,
+      "Entries": [
+        "For Debugging-OBJ-Treasure Corpse 09 -- デバッグ用-OBJ-宝死体０９"
+      ]
+    },
+    {
+      "ID": 199995510,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 10 -- デバッグ用-OBJ-宝死体１０"
+      ]
+    },
+    {
+      "ID": 199995511,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 11 -- デバッグ用-OBJ-宝死体１１"
+      ]
+    },
+    {
+      "ID": 199995512,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 12 -- デバッグ用-OBJ-宝死体１２"
+      ]
+    },
+    {
+      "ID": 199995513,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 13 -- デバッグ用-OBJ-宝死体１３"
+      ]
+    },
+    {
+      "ID": 199995514,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 14 -- デバッグ用-OBJ-宝死体１４"
+      ]
+    },
+    {
+      "ID": 199995515,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 15 -- デバッグ用-OBJ-宝死体１５"
+      ]
+    },
+    {
+      "ID": 199995516,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 16 -- デバッグ用-OBJ-宝死体１６"
+      ]
+    },
+    {
+      "ID": 199995517,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 17 -- デバッグ用-OBJ-宝死体１７"
+      ]
+    },
+    {
+      "ID": 199995518,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 18 -- デバッグ用-OBJ-宝死体１８"
+      ]
+    },
+    {
+      "ID": 199995519,
+      "Entries": [
+        "For debugging -OBJ-Treasure Corpse 19 -- デバッグ用-OBJ-宝死体１９"
+      ]
+    },
+    {
+      "ID": 199995520,
+      "Entries": [
+        "For debugging-OBJ-Treasure Corpse 20 -- デバッグ用-OBJ-宝死体２０"
+      ]
+    },
+    {
+      "ID": 199996001,
+      "Entries": [
+        "For debugging -OBJ-Treasure Direct Positioning 01 -- デバッグ用-OBJ-宝直置き０１"
+      ]
+    },
+    {
+      "ID": 199996002,
+      "Entries": [
+        "For debugging-OBJ-treasure-positioning 02 -- デバッグ用-OBJ-宝直置き０２"
+      ]
+    },
+    {
+      "ID": 199996003,
+      "Entries": [
+        "For debugging-OBJ-treasure-positioning 03 -- デバッグ用-OBJ-宝直置き０３"
+      ]
+    },
+    {
+      "ID": 199996004,
+      "Entries": [
+        "For debugging-OBJ-treasure-positioning 04 -- デバッグ用-OBJ-宝直置き０４"
+      ]
+    },
+    {
+      "ID": 199996005,
+      "Entries": [
+        "For debugging -OBJ-Treasure Direct Positioning 05 -- デバッグ用-OBJ-宝直置き０５"
+      ]
+    },
+    {
+      "ID": 199996006,
+      "Entries": [
+        "For debugging -OBJ-Treasure Direct Positioning 06 -- デバッグ用-OBJ-宝直置き０６"
+      ]
+    },
+    {
+      "ID": 199996007,
+      "Entries": [
+        "For debugging -OBJ-Treasure Direct Positioning 07 -- デバッグ用-OBJ-宝直置き０７"
+      ]
+    },
+    {
+      "ID": 199996008,
+      "Entries": [
+        "For debugging -OBJ-Treasure Direct Positioning 08 -- デバッグ用-OBJ-宝直置き０８"
+      ]
+    },
+    {
+      "ID": 199996009,
+      "Entries": [
+        "For debugging-OBJ-treasure-positioning 09 -- デバッグ用-OBJ-宝直置き０９"
+      ]
+    },
+    {
+      "ID": 199996010,
+      "Entries": [
+        "Debugging -OBJ-Treasure 10 -- デバッグ用-OBJ-宝直置き１０"
+      ]
+    },
+    {
+      "ID": 199996011,
+      "Entries": [
+        "Debugging -OBJ-Treasure 11 -- デバッグ用-OBJ-宝直置き１１"
+      ]
+    },
+    {
+      "ID": 199996012,
+      "Entries": [
+        "Debugging -OBJ-Treasure 12 -- デバッグ用-OBJ-宝直置き１２"
+      ]
+    },
+    {
+      "ID": 199996013,
+      "Entries": [
+        "Debugging -OBJ-Treasure 13 -- デバッグ用-OBJ-宝直置き１３"
+      ]
+    },
+    {
+      "ID": 199996014,
+      "Entries": [
+        "Debugging -OBJ-Treasure 14 -- デバッグ用-OBJ-宝直置き１４"
+      ]
+    },
+    {
+      "ID": 199996015,
+      "Entries": [
+        "Debugging -OBJ-Treasure 15 -- デバッグ用-OBJ-宝直置き１５"
+      ]
+    },
+    {
+      "ID": 199996016,
+      "Entries": [
+        "Debugging -OBJ-Treasure 16 -- デバッグ用-OBJ-宝直置き１６"
+      ]
+    },
+    {
+      "ID": 199996017,
+      "Entries": [
+        "Debugging -OBJ-Treasure 17 -- デバッグ用-OBJ-宝直置き１７"
+      ]
+    },
+    {
+      "ID": 199996018,
+      "Entries": [
+        "Debugging -OBJ-Treasure-18 -- デバッグ用-OBJ-宝直置き１８"
+      ]
+    },
+    {
+      "ID": 199996019,
+      "Entries": [
+        "Debugging -OBJ-Treasure 19 -- デバッグ用-OBJ-宝直置き１９"
+      ]
+    },
+    {
+      "ID": 199996020,
+      "Entries": [
+        "Debugging -OBJ-Treasure 20 -- デバッグ用-OBJ-宝直置き２０"
+      ]
+    }
+  ]
+}

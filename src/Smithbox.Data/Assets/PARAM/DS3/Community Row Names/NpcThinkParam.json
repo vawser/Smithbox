@@ -1,0 +1,4499 @@
+{
+  "Name": "NpcThinkParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For not doing anything"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Atarisawari data (copy and paste recommended)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Logic for animation check near"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Logic for animation check Far"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Ishizaki Test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Automatic patrol (default)"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "For automatic patrol (running)"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Automatic patrol (walking)"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Automatic patrol (super dash)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Collective Patrol dummy leader"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "For funnels"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "City Map Sniper Platoon target dummy character"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "For NPC Logic Testing"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "NPC Sub-goal Test 00 Combat"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "NPC Sub-goal Test 01 walking and Running"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "NPC Sub-goal Test 02 Quick Turn/left/right movement"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "NPC Sub-goal Test 03 Retreat/Step"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "NPC Test 00 Test"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Slave Knight Gael - White Phantom - Ariandel"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "Slave Knight Gael - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 21005,
+      "Entries": [
+        "Slave Knight Gael - White Phantom - Dreg Heap"
+      ]
+    },
+    {
+      "ID": 21006,
+      "Entries": [
+        "Slave Knight Gael - Illusion"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Sir Vilhelm - Ariandel"
+      ]
+    },
+    {
+      "ID": 21140,
+      "Entries": [
+        "Sir Vilhelm - Ariandel"
+      ]
+    },
+    {
+      "ID": 21200,
+      "Entries": [
+        "Livid Pyromancer Dunnel - Ariandel"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "Amnesiac Lapp - Dreg Heap"
+      ]
+    },
+    {
+      "ID": 21420,
+      "Entries": [
+        "Amnesiac Lapp - White Phantom - Dreg Heap"
+      ]
+    },
+    {
+      "ID": 21421,
+      "Entries": [
+        "Amnesiac Lapp - White Phantom"
+      ]
+    },
+    {
+      "ID": 21440,
+      "Entries": [
+        "Amnesiac Lapp - Red Phantom"
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        "Shira, Knight of Filianore"
+      ]
+    },
+    {
+      "ID": 21520,
+      "Entries": [
+        "Shira, Knight of Filianore - White Phantom"
+      ]
+    },
+    {
+      "ID": 21540,
+      "Entries": [
+        "Shira, Knight of Filianore"
+      ]
+    },
+    {
+      "ID": 21640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21700,
+      "Entries": [
+        "Painting Guardian"
+      ]
+    },
+    {
+      "ID": 21800,
+      "Entries": [
+        "Halflight"
+      ]
+    },
+    {
+      "ID": 21940,
+      "Entries": [
+        "Desert Pyromancer Zoey - Dreg Heap"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Amnesiac Lapp"
+      ]
+    },
+    {
+      "ID": 22140,
+      "Entries": [
+        "Silver Knight Ledo - Red Phantom"
+      ]
+    },
+    {
+      "ID": 22240,
+      "Entries": [
+        "Alva, Seeker of the Spurned - Red Phantom"
+      ]
+    },
+    {
+      "ID": 22241,
+      "Entries": [
+        "Alva, Seeker of the Spurned - Red Phantom"
+      ]
+    },
+    {
+      "ID": 22340,
+      "Entries": [
+        "Eygon of Carim - Red Phantom"
+      ]
+    },
+    {
+      "ID": 24700,
+      "Entries": [
+        "Butcher - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 24800,
+      "Entries": [
+        "Greirat of the Undead Settlement"
+      ]
+    },
+    {
+      "ID": 24801,
+      "Entries": [
+        "Greirat of the Undead Settlement - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 24802,
+      "Entries": [
+        "Greirat of the Undead Settlement - Irithyll"
+      ]
+    },
+    {
+      "ID": 24803,
+      "Entries": [
+        "Greirat of the Undead Settlement - Grand Archives"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "Yuria of Londor - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25020,
+      "Entries": [
+        "Yuria of Londor - White Phantom - Kiln of the First Flame"
+      ]
+    },
+    {
+      "ID": 25100,
+      "Entries": [
+        "Hawkwood the Deserter - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25101,
+      "Entries": [
+        "Hawkwood the Deserter - Farron Keep"
+      ]
+    },
+    {
+      "ID": 25120,
+      "Entries": [
+        "Hawkwood the Deserter - White Phantom"
+      ]
+    },
+    {
+      "ID": 25121,
+      "Entries": [
+        "Hawkwood the Deserter - White Phantom - Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 25200,
+      "Entries": [
+        "Sirris of the Sunless Realms - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25201,
+      "Entries": [
+        "Sirris of the Sunless Realms - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 25202,
+      "Entries": [
+        "Sirris of the Sunless Realms - Irithyll"
+      ]
+    },
+    {
+      "ID": 25203,
+      "Entries": [
+        "Sirris of the Sunless Realms - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 25204,
+      "Entries": [
+        "Sirris of the Sunless Realms - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25220,
+      "Entries": [
+        "Sirris of the Sunless Realms - White Phantom - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 25221,
+      "Entries": [
+        "Sirris of the Sunless Realms - White Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 25222,
+      "Entries": [
+        "Sirris of the Sunless Realms - White Phantom - Lothric Castle"
+      ]
+    },
+    {
+      "ID": 25223,
+      "Entries": [
+        "Sirris of the Sunless Realms - White Phantom - Grand Archives"
+      ]
+    },
+    {
+      "ID": 25300,
+      "Entries": [
+        "Ringfinger Leonhard - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25301,
+      "Entries": [
+        "Ringfinger Leonhard - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 25302,
+      "Entries": [
+        "Ringfinger Leonhard - Irithyll"
+      ]
+    },
+    {
+      "ID": 25400,
+      "Entries": [
+        "Orbeck of Vinheim - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 25401,
+      "Entries": [
+        "Orbeck of Vinheim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25402,
+      "Entries": [
+        "Orbeck of Vinheim - Grand Archives"
+      ]
+    },
+    {
+      "ID": 25420,
+      "Entries": [
+        "Orbeck of Vinheim - White Phantom - Grand Archives"
+      ]
+    },
+    {
+      "ID": 25500,
+      "Entries": [
+        "Cornyx of the Great Swamp - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 25501,
+      "Entries": [
+        "Cornyx of the Great Swamp - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25600,
+      "Entries": [
+        "Karla - Irithyll Dungeon"
+      ]
+    },
+    {
+      "ID": 25601,
+      "Entries": [
+        "Karla - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25700,
+      "Entries": [
+        "Irina of Carim - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 25701,
+      "Entries": [
+        "Irina of Carim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25702,
+      "Entries": [
+        "Irina of Carim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25703,
+      "Entries": [
+        "Irina of Carim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25800,
+      "Entries": [
+        "Eygon of Carim - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 25801,
+      "Entries": [
+        "Eygon of Carim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25802,
+      "Entries": [
+        "Eygon of Carim - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 25820,
+      "Entries": [
+        "Eygon of Carim - White Phantom - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 25821,
+      "Entries": [
+        "Eygon of Carim - White Phantom - Lothric Castle"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "Anri of Astora - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 26001,
+      "Entries": [
+        "Anri of Astora - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 26002,
+      "Entries": [
+        "Anri of Astora - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 26003,
+      "Entries": [
+        "Anri of Astora - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 26004,
+      "Entries": [
+        "Anri of Astora - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 26005,
+      "Entries": [
+        "Anri of Astora - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 26006,
+      "Entries": [
+        "Anri of Astora - Irithyll"
+      ]
+    },
+    {
+      "ID": 26007,
+      "Entries": [
+        "Anri of Astora - Irithyll"
+      ]
+    },
+    {
+      "ID": 26008,
+      "Entries": [
+        "Anri of Astora - Irithyll"
+      ]
+    },
+    {
+      "ID": 26009,
+      "Entries": [
+        "Anri of Astora - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 26020,
+      "Entries": [
+        "Anri of Astora - White Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 26021,
+      "Entries": [
+        "Anri of Astora - White Phantom - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 26100,
+      "Entries": [
+        "Unbreakable Patches - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 26101,
+      "Entries": [
+        "Unbreakable Patches - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 26102,
+      "Entries": [
+        "Unbreakable Patches - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 26103,
+      "Entries": [
+        "Unbreakable Patches - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 26104,
+      "Entries": [
+        "Unbreakable Patches - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 26200,
+      "Entries": [
+        "Siegward of Catarina - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 26201,
+      "Entries": [
+        "Siegward of Catarina - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 26202,
+      "Entries": [
+        "Siegward of Catarina - Irithyll"
+      ]
+    },
+    {
+      "ID": 26203,
+      "Entries": [
+        "Siegward of Catarina - Profaned Capital"
+      ]
+    },
+    {
+      "ID": 26204,
+      "Entries": [
+        "Siegward of Catarina - Profaned Capital"
+      ]
+    },
+    {
+      "ID": 26300,
+      "Entries": [
+        "Horace the Hushed - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 26301,
+      "Entries": [
+        "Horace the Hushed - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 26302,
+      "Entries": [
+        "Horace the Hushed - Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 26320,
+      "Entries": [
+        "Horace the Hushed - White Phantom - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 27300,
+      "Entries": [
+        "Sword Master - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 27320,
+      "Entries": [
+        "Sword Master - White Phantom"
+      ]
+    },
+    {
+      "ID": 27321,
+      "Entries": [
+        "Sword Master - Phantom - Untended Graves"
+      ]
+    },
+    {
+      "ID": 27420,
+      "Entries": [
+        "Yellowfinger Heysel - Red Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 27440,
+      "Entries": [
+        "Yellowfinger Heysel - Red Phantom - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 27441,
+      "Entries": [
+        "Yellowfinger Heysel - Red Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 27500,
+      "Entries": [
+        "Black Hand Gotthard - Grand Archives"
+      ]
+    },
+    {
+      "ID": 27520,
+      "Entries": [
+        "Black Hand Gotthard - White Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 27521,
+      "Entries": [
+        "Black Hand Gotthard - White Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 27600,
+      "Entries": [
+        "Great Swamp Cuculus"
+      ]
+    },
+    {
+      "ID": 27620,
+      "Entries": [
+        "Great Swamp Cuculus - White Phantom - Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 27700,
+      "Entries": [
+        "Holy Knight Hodrick - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 27701,
+      "Entries": [
+        "Holy Knight Hodrick - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 27720,
+      "Entries": [
+        "Holy Knight Hodrick - Mad Phantom - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 27740,
+      "Entries": [
+        "Holy Knight Hodrick - Mad Phantom - Undead Settlement"
+      ]
+    },
+    {
+      "ID": 27800,
+      "Entries": [
+        "Londor Pale Shade"
+      ]
+    },
+    {
+      "ID": 27820,
+      "Entries": [
+        "Londor Pale Shade - White Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 27821,
+      "Entries": [
+        "Londor Pale Shade - White Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 27822,
+      "Entries": [
+        "Londor Pale Shade - White Phantom - Kiln of the First Flame"
+      ]
+    },
+    {
+      "ID": 27890,
+      "Entries": [
+        "Londor Pale Shade - Red Phantom - Farron Keep"
+      ]
+    },
+    {
+      "ID": 27891,
+      "Entries": [
+        "Londor Pale Shade - Red Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 27900,
+      "Entries": [
+        "Lion Knight Albert - Grand Archives"
+      ]
+    },
+    {
+      "ID": 27920,
+      "Entries": [
+        "Lion Knight Albert - White Phantom"
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "Daughter of Crystal Kriemhild - Grand Archives"
+      ]
+    },
+    {
+      "ID": 28040,
+      "Entries": [
+        "Daughter of Crystal Kriemhild - Red Phantom - Untended Graves"
+      ]
+    },
+    {
+      "ID": 28100,
+      "Entries": [
+        "Exile Watchdog - Exile Greatsword - Farron Keep"
+      ]
+    },
+    {
+      "ID": 28200,
+      "Entries": [
+        "Exile Watchdog - Great Club - Farron Keep"
+      ]
+    },
+    {
+      "ID": 28300,
+      "Entries": [
+        "Unkindled Brigand - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 28400,
+      "Entries": [
+        "Unkindled Thief - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 28600,
+      "Entries": [
+        "Court Sorcerer - Profaned Capital"
+      ]
+    },
+    {
+      "ID": 28700,
+      "Entries": [
+        "Havel the Rock - Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 28701,
+      "Entries": [
+        "Havel the Rock"
+      ]
+    },
+    {
+      "ID": 28800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28900,
+      "Entries": [
+        "Unkindled Ricard"
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "Drang Knight - Hammers - Irithyll"
+      ]
+    },
+    {
+      "ID": 29100,
+      "Entries": [
+        "Drang Knight - Spears - Irithyll"
+      ]
+    },
+    {
+      "ID": 29200,
+      "Entries": [
+        "Knight Slayer Tsorig - Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 29220,
+      "Entries": [
+        "Knight Slayer Tsorig - White Phantom - Smouldering Lake"
+      ]
+    },
+    {
+      "ID": 29240,
+      "Entries": [
+        "Knight Slayer Tsorig - Red Phantom - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 29241,
+      "Entries": [
+        "Knight Slayer Tsorig - Red Phantom"
+      ]
+    },
+    {
+      "ID": 29340,
+      "Entries": [
+        "Creighton the Wanderer - Red Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 29341,
+      "Entries": [
+        "Creighton the Wanderer - Red Phantom - Irithyll"
+      ]
+    },
+    {
+      "ID": 29440,
+      "Entries": [
+        "Alva, Seeker of the Spurned - Red Phantom - Irithyll Dungeon"
+      ]
+    },
+    {
+      "ID": 29540,
+      "Entries": [
+        "Longfinger Kirk - Red Phantom - Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 90390,
+      "Entries": [
+        "Dungeon Objects (for bullet owners)"
+      ]
+    },
+    {
+      "ID": 93800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Skeleton - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107001,
+      "Entries": [
+        "Skeleton - Scimitar - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107002,
+      "Entries": [
+        "Skeleton - Falchion - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107003,
+      "Entries": [
+        "Skeleton - Bow - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107004,
+      "Entries": [
+        "Skeleton - Running - Scimitar - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107005,
+      "Entries": [
+        "Skeleton - Running - Falchion - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107006,
+      "Entries": [
+        "Skeleton - Firebomb - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 107021,
+      "Entries": [
+        "Skeleton - Scimitar"
+      ]
+    },
+    {
+      "ID": 107022,
+      "Entries": [
+        "Skeleton - Falchion"
+      ]
+    },
+    {
+      "ID": 107023,
+      "Entries": [
+        "Skeleton - Bow"
+      ]
+    },
+    {
+      "ID": 107024,
+      "Entries": [
+        "Skeleton - Running - Scimitar"
+      ]
+    },
+    {
+      "ID": 107025,
+      "Entries": [
+        "Skeleton - Running - Falchion"
+      ]
+    },
+    {
+      "ID": 107026,
+      "Entries": [
+        "Skeleton - Firebomb"
+      ]
+    },
+    {
+      "ID": 107027,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107028,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107029,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107033,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107081,
+      "Entries": [
+        "Skeleton - Scimitar - Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 107082,
+      "Entries": [
+        "Skeleton - Torch - Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 107090,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107091,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107092,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107093,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107094,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107095,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107096,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 107126,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "Pus of Man"
+      ]
+    },
+    {
+      "ID": 109010,
+      "Entries": [
+        "Pus of Man"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Hollow Soldier - Straight Sword"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110004,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110005,
+      "Entries": [
+        "Hollow Soldier - Straight Sword"
+      ]
+    },
+    {
+      "ID": 110006,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110007,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110008,
+      "Entries": [
+        "Hollow Soldier - Straight Sword - Firebomb"
+      ]
+    },
+    {
+      "ID": 110009,
+      "Entries": [
+        "Hollow Soldier - Straight Sword"
+      ]
+    },
+    {
+      "ID": 110010,
+      "Entries": [
+        "Hollow Soldier - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 110020,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110022,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110023,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110024,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110025,
+      "Entries": [
+        "Hollow Soldier - Crossbow"
+      ]
+    },
+    {
+      "ID": 110030,
+      "Entries": [
+        "Hollow Soldier - Lantern"
+      ]
+    },
+    {
+      "ID": 110050,
+      "Entries": [
+        "Hollow Soldier - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 110051,
+      "Entries": [
+        "Hollow Soldier - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 110053,
+      "Entries": [
+        "Hollow Soldier - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 110054,
+      "Entries": [
+        "Hollow Soldier - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 110060,
+      "Entries": [
+        "Hollow Soldier - Dagger"
+      ]
+    },
+    {
+      "ID": 110061,
+      "Entries": [
+        "Hollow Soldier - Dagger"
+      ]
+    },
+    {
+      "ID": 110062,
+      "Entries": [
+        "Hollow Soldier - Dagger"
+      ]
+    },
+    {
+      "ID": 110063,
+      "Entries": [
+        "Hollow Soldier - Dagger"
+      ]
+    },
+    {
+      "ID": 110070,
+      "Entries": [
+        "Hollow Soldier - Combat State -> Think ID"
+      ]
+    },
+    {
+      "ID": 110080,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110085,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110090,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110091,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110093,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110094,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110098,
+      "Entries": [
+        "Hollow Assassin"
+      ]
+    },
+    {
+      "ID": 110100,
+      "Entries": [
+        "Hollow Soldier - Sword - Lothric Castle"
+      ]
+    },
+    {
+      "ID": 110105,
+      "Entries": [
+        "Hollow Soldier - Sword - Lothric Castle"
+      ]
+    },
+    {
+      "ID": 110500,
+      "Entries": [
+        "Large Hollow Soldier - Greataxe"
+      ]
+    },
+    {
+      "ID": 110501,
+      "Entries": [
+        "Large Hollow Soldier - Greataxe - Low Visibility"
+      ]
+    },
+    {
+      "ID": 110510,
+      "Entries": [
+        "Large Hollow Soldier - Halberd"
+      ]
+    },
+    {
+      "ID": 110511,
+      "Entries": [
+        "Large Hollow Soldier - Halberd - Low Visibility"
+      ]
+    },
+    {
+      "ID": 110520,
+      "Entries": [
+        "Large Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 110580,
+      "Entries": [
+        "Large Hollow Soldier - Greataxe"
+      ]
+    },
+    {
+      "ID": 110590,
+      "Entries": [
+        "Large Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Dark Knight Straight Sword + Shield"
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        "Dark Knight Straight Sword + shield (olfactory parameters for events)"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "Dark Knight Straight Sword + shield for Avatar"
+      ]
+    },
+    {
+      "ID": 111098,
+      "Entries": [
+        "For the Dark Knight Test (Nakano)"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Dead Knight (Sword shield)"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Rotten Slug"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Rotten Slug"
+      ]
+    },
+    {
+      "ID": 113200,
+      "Entries": [
+        "Rotten Slug"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Dead Shi Mace + Large Shield"
+      ]
+    },
+    {
+      "ID": 115010,
+      "Entries": [
+        "Dead Shi both hand held hammer"
+      ]
+    },
+    {
+      "ID": 115020,
+      "Entries": [
+        "Dead Shi Ice-ax"
+      ]
+    },
+    {
+      "ID": 115030,
+      "Entries": [
+        "Dead Shi Mace + Miracle"
+      ]
+    },
+    {
+      "ID": 115040,
+      "Entries": [
+        "Dead Shi Long Distance miracle"
+      ]
+    },
+    {
+      "ID": 115070,
+      "Entries": [
+        "Narrow visual range for dead Shi circuit"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Carthus Swordsman - Sword"
+      ]
+    },
+    {
+      "ID": 117001,
+      "Entries": [
+        "Carthus Swordsman - Sword"
+      ]
+    },
+    {
+      "ID": 117010,
+      "Entries": [
+        "Carthus Swordsman - Greatsword"
+      ]
+    },
+    {
+      "ID": 117030,
+      "Entries": [
+        "Carthus Swordsman - Bow"
+      ]
+    },
+    {
+      "ID": 117040,
+      "Entries": [
+        "Carthus Swordsman"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Carthus Swordsman - Shotel"
+      ]
+    },
+    {
+      "ID": 118010,
+      "Entries": [
+        "Carthus Swordsman - Shotel"
+      ]
+    },
+    {
+      "ID": 118020,
+      "Entries": [
+        "Carthus Swordsman"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119001,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119002,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119005,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119010,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119011,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119012,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119020,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119021,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 119050,
+      "Entries": [
+        "Cathedral Knight"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Hollow Slave - Axe - Blowpipe"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "Hollow Slave - Axe - Blowpipe"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "Hollow Slave - Axe - Blowpipe"
+      ]
+    },
+    {
+      "ID": 120003,
+      "Entries": [
+        "Hollow Slave - Axe - Firebomb"
+      ]
+    },
+    {
+      "ID": 120004,
+      "Entries": [
+        "Hollow Slave - Axe - Firebomb"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "Hollow Slave - Axe - Firebomb"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "Hollow Slave - Axe - Firebomb"
+      ]
+    },
+    {
+      "ID": 120009,
+      "Entries": [
+        "Hollow Slave - Axe - Firebomb"
+      ]
+    },
+    {
+      "ID": 120010,
+      "Entries": [
+        "Hollow Slave - Axe - Blowpipe"
+      ]
+    },
+    {
+      "ID": 120020,
+      "Entries": [
+        "Hollow Slave - Flamberge"
+      ]
+    },
+    {
+      "ID": 120050,
+      "Entries": [
+        "Hollow Slave - Flamberge"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Ghru - Spear"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "Ghru - Spear"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Ghru - Curved Sword"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "Ghru - Dagger"
+      ]
+    },
+    {
+      "ID": 121021,
+      "Entries": [
+        "Ghru - Dagger"
+      ]
+    },
+    {
+      "ID": 121022,
+      "Entries": [
+        "Ghru - Dagger"
+      ]
+    },
+    {
+      "ID": 121023,
+      "Entries": [
+        "Ghru - Dagger"
+      ]
+    },
+    {
+      "ID": 121030,
+      "Entries": [
+        "Mad Ghru"
+      ]
+    },
+    {
+      "ID": 121040,
+      "Entries": [
+        "Mad Ghru"
+      ]
+    },
+    {
+      "ID": 121049,
+      "Entries": [
+        "Mad Ghru"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122010,
+      "Entries": [
+        "Infested Corpse - Chest"
+      ]
+    },
+    {
+      "ID": 122020,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122030,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122040,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122050,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122060,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 122070,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123001,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123002,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123003,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123004,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123005,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123010,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123051,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123097,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123098,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 123099,
+      "Entries": [
+        "Cathedral Evangelist"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124001,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124002,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124003,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124004,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124005,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124006,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124009,
+      "Entries": [
+        "Peasant Hollow - Axe"
+      ]
+    },
+    {
+      "ID": 124010,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124011,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124012,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124013,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124014,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124019,
+      "Entries": [
+        "Peasant Hollow - Lantern"
+      ]
+    },
+    {
+      "ID": 124020,
+      "Entries": [
+        "Peasant Hollow - Sickle"
+      ]
+    },
+    {
+      "ID": 124021,
+      "Entries": [
+        "Peasant Hollow - Sickle"
+      ]
+    },
+    {
+      "ID": 124029,
+      "Entries": [
+        "Peasant Hollow - Sickle"
+      ]
+    },
+    {
+      "ID": 124030,
+      "Entries": [
+        "Peasant Hollow - Mallet"
+      ]
+    },
+    {
+      "ID": 124039,
+      "Entries": [
+        "Peasant Hollow - Mallet"
+      ]
+    },
+    {
+      "ID": 124040,
+      "Entries": [
+        "Peasant Hollow - Hoe"
+      ]
+    },
+    {
+      "ID": 124041,
+      "Entries": [
+        "Peasant Hollow - Hoe"
+      ]
+    },
+    {
+      "ID": 124049,
+      "Entries": [
+        "Peasant Hollow - Hoe"
+      ]
+    },
+    {
+      "ID": 124050,
+      "Entries": [
+        "Peasant Hollow"
+      ]
+    },
+    {
+      "ID": 125000,
+      "Entries": [
+        "Cathedral Grave Warden"
+      ]
+    },
+    {
+      "ID": 125001,
+      "Entries": [
+        "Cathedral Grave Warden"
+      ]
+    },
+    {
+      "ID": 125002,
+      "Entries": [
+        "Cathedral Grave Warden"
+      ]
+    },
+    {
+      "ID": 125099,
+      "Entries": [
+        "Cathedral Grave Warden"
+      ]
+    },
+    {
+      "ID": 126000,
+      "Entries": [
+        "Hollow Manservant"
+      ]
+    },
+    {
+      "ID": 126001,
+      "Entries": [
+        "Hollow Manservant"
+      ]
+    },
+    {
+      "ID": 126002,
+      "Entries": [
+        "Hollow Manservant"
+      ]
+    },
+    {
+      "ID": 126090,
+      "Entries": [
+        "Hollow Manservant - Saw"
+      ]
+    },
+    {
+      "ID": 126091,
+      "Entries": [
+        "Hollow Manservant - Low Visibility"
+      ]
+    },
+    {
+      "ID": 128000,
+      "Entries": [
+        "Lothric Knight - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 128010,
+      "Entries": [
+        "Lothric Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 128020,
+      "Entries": [
+        "Lothric Knight - Greatsword"
+      ]
+    },
+    {
+      "ID": 128030,
+      "Entries": [
+        "Lothric Knight - Crossbow"
+      ]
+    },
+    {
+      "ID": 128100,
+      "Entries": [
+        "Lothric Knight - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 128110,
+      "Entries": [
+        "Lothric Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 128120,
+      "Entries": [
+        "Lothric Knight - Greatsword"
+      ]
+    },
+    {
+      "ID": 128200,
+      "Entries": [
+        "Lothric Knight - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 128210,
+      "Entries": [
+        "Lothric Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 128220,
+      "Entries": [
+        "Lothric Knight - Greatsword"
+      ]
+    },
+    {
+      "ID": 128300,
+      "Entries": [
+        "Lothric Knight - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 128310,
+      "Entries": [
+        "Lothric Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 128311,
+      "Entries": [
+        "Lothric Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "Winged Knight - Halberd"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "Winged Knight - Twinaxes"
+      ]
+    },
+    {
+      "ID": 129020,
+      "Entries": [
+        "Winged Knight - Halberd - Grand Archives"
+      ]
+    },
+    {
+      "ID": 129030,
+      "Entries": [
+        "Winged Knight - Twinaxes - Grand Archives"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Black Knight - Sword"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "Black Knight - Greatsword"
+      ]
+    },
+    {
+      "ID": 130020,
+      "Entries": [
+        "Black Knight - Greataxe"
+      ]
+    },
+    {
+      "ID": 130030,
+      "Entries": [
+        "Black Knight - Halberd"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "Black Knight - Sword"
+      ]
+    },
+    {
+      "ID": 130110,
+      "Entries": [
+        "Black Knight - Greatsword"
+      ]
+    },
+    {
+      "ID": 130120,
+      "Entries": [
+        "Black Knight - Greataxe"
+      ]
+    },
+    {
+      "ID": 130130,
+      "Entries": [
+        "Black Knight - Halberd"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Boreal Outrider Knight"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 132010,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 132050,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 132051,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 132052,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 132200,
+      "Entries": [
+        "Crystal Sage"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "The Keeper of the Forest: Long axe"
+      ]
+    },
+    {
+      "ID": 133010,
+      "Entries": [
+        "The Keeper of the Forest: the Great Sword"
+      ]
+    },
+    {
+      "ID": 133098,
+      "Entries": [
+        "Forest keeper: Long axe for bug test"
+      ]
+    },
+    {
+      "ID": 133099,
+      "Entries": [
+        "The Keeper of the Forest: the Great Sword test"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Archive Scholar"
+      ]
+    },
+    {
+      "ID": 134010,
+      "Entries": [
+        "Archive Scholar"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135005,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135006,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135010,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135020,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135021,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 135030,
+      "Entries": [
+        "Irithyllian Slave"
+      ]
+    },
+    {
+      "ID": 136000,
+      "Entries": [
+        "Lycanthrope"
+      ]
+    },
+    {
+      "ID": 136001,
+      "Entries": [
+        "Lycanthrope"
+      ]
+    },
+    {
+      "ID": 137000,
+      "Entries": [
+        "Lycanthrope Hunter"
+      ]
+    },
+    {
+      "ID": 137090,
+      "Entries": [
+        "Lycanthrope Hunter"
+      ]
+    },
+    {
+      "ID": 138000,
+      "Entries": [
+        "Serpent-man Summoner"
+      ]
+    },
+    {
+      "ID": 138001,
+      "Entries": [
+        "Serpent-man Summoner"
+      ]
+    },
+    {
+      "ID": 138010,
+      "Entries": [
+        "Serpent-man Summoner"
+      ]
+    },
+    {
+      "ID": 138200,
+      "Entries": [
+        "Serpent-man Summoner"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Serpent-man - Dagger"
+      ]
+    },
+    {
+      "ID": 139010,
+      "Entries": [
+        "Serpent-man - Hatchet"
+      ]
+    },
+    {
+      "ID": 139020,
+      "Entries": [
+        "Serpent-man - Axe"
+      ]
+    },
+    {
+      "ID": 139030,
+      "Entries": [
+        "Serpent-man - Double-bit Axe"
+      ]
+    },
+    {
+      "ID": 139100,
+      "Entries": [
+        "Giant Serpent-man - Chainaxe"
+      ]
+    },
+    {
+      "ID": 139110,
+      "Entries": [
+        "Giant Serpent-man - Greataxe"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Fire Keeper"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Silver Knight - Sword and Shield"
+      ]
+    },
+    {
+      "ID": 141010,
+      "Entries": [
+        "Silver Knight - Spear and Shield"
+      ]
+    },
+    {
+      "ID": 141020,
+      "Entries": [
+        "Silver Knight - Greatbow -> Sword and Shield"
+      ]
+    },
+    {
+      "ID": 141021,
+      "Entries": [
+        "Silver Knight - Greatbow -> Sword and Shield"
+      ]
+    },
+    {
+      "ID": 141030,
+      "Entries": [
+        "Silver Knight - Greatbow -> Spear and Shield"
+      ]
+    },
+    {
+      "ID": 143010,
+      "Entries": [
+        "Undead Cleric 1"
+      ]
+    },
+    {
+      "ID": 143030,
+      "Entries": [
+        "Undead Cleric 2"
+      ]
+    },
+    {
+      "ID": 143031,
+      "Entries": [
+        "Undead Cleric 2"
+      ]
+    },
+    {
+      "ID": 143040,
+      "Entries": [
+        "Undead Cleric 3"
+      ]
+    },
+    {
+      "ID": 143041,
+      "Entries": [
+        "Undead Cleric 3"
+      ]
+    },
+    {
+      "ID": 143061,
+      "Entries": [
+        "Undead Cleric 4"
+      ]
+    },
+    {
+      "ID": 144000,
+      "Entries": [
+        "Devout of the Deep 1"
+      ]
+    },
+    {
+      "ID": 144001,
+      "Entries": [
+        "Devout of the Deep 1"
+      ]
+    },
+    {
+      "ID": 144010,
+      "Entries": [
+        "Devout of the Deep 2"
+      ]
+    },
+    {
+      "ID": 144020,
+      "Entries": [
+        "Devout of the Deep 3"
+      ]
+    },
+    {
+      "ID": 144030,
+      "Entries": [
+        "Devout of the Deep 4"
+      ]
+    },
+    {
+      "ID": 144031,
+      "Entries": [
+        "Devout of the Deep 4"
+      ]
+    },
+    {
+      "ID": 144035,
+      "Entries": [
+        "Devout of the Deep 4"
+      ]
+    },
+    {
+      "ID": 144040,
+      "Entries": [
+        "Devout of the Deep 5"
+      ]
+    },
+    {
+      "ID": 144041,
+      "Entries": [
+        "Devout of the Deep 5"
+      ]
+    },
+    {
+      "ID": 144050,
+      "Entries": [
+        "Devout of the Deep 6"
+      ]
+    },
+    {
+      "ID": 144060,
+      "Entries": [
+        "Devout of the Deep 7"
+      ]
+    },
+    {
+      "ID": 144061,
+      "Entries": [
+        "Devout of the Deep 7"
+      ]
+    },
+    {
+      "ID": 144070,
+      "Entries": [
+        "Lothric Priest"
+      ]
+    },
+    {
+      "ID": 144071,
+      "Entries": [
+        "Lothric Priest"
+      ]
+    },
+    {
+      "ID": 144072,
+      "Entries": [
+        "Lothric Priest"
+      ]
+    },
+    {
+      "ID": 146000,
+      "Entries": [
+        "Painting Protection (phantom)"
+      ]
+    },
+    {
+      "ID": 147000,
+      "Entries": [
+        "Bonewheel Skeleton"
+      ]
+    },
+    {
+      "ID": 147010,
+      "Entries": [
+        "Bonewheel Skeleton"
+      ]
+    },
+    {
+      "ID": 148000,
+      "Entries": [
+        "Irithyll Knight - Regular - Ghost"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "Irithyll Knight - Dancer - Ghost"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Eclipse Wolf"
+      ]
+    },
+    {
+      "ID": 200096,
+      "Entries": [
+        "Eclipse Wolf: Kayukawa test"
+      ]
+    },
+    {
+      "ID": 200097,
+      "Entries": [
+        "Eclipse Wolf (heat up): Yoshida test"
+      ]
+    },
+    {
+      "ID": 200098,
+      "Entries": [
+        "Eclipse Wolf: Yoshida Test"
+      ]
+    },
+    {
+      "ID": 200099,
+      "Entries": [
+        "Eclipse Wolf: Kayukawa test"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Undead Dog"
+      ]
+    },
+    {
+      "ID": 202050,
+      "Entries": [
+        "Undead Dog"
+      ]
+    },
+    {
+      "ID": 202099,
+      "Entries": [
+        "Undead Dog"
+      ]
+    },
+    {
+      "ID": 202100,
+      "Entries": [
+        "Small Undead Dog (Undead Settlement)"
+      ]
+    },
+    {
+      "ID": 202101,
+      "Entries": [
+        "Small Undead Dog"
+      ]
+    },
+    {
+      "ID": 202102,
+      "Entries": [
+        "Small Undead Dog"
+      ]
+    },
+    {
+      "ID": 202103,
+      "Entries": [
+        "Small Undead Dog"
+      ]
+    },
+    {
+      "ID": 202200,
+      "Entries": [
+        "Undead Dog (Irithyll)"
+      ]
+    },
+    {
+      "ID": 202201,
+      "Entries": [
+        "Undead Dog (Irithyll)"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Pontiff Knight - Curved Sword"
+      ]
+    },
+    {
+      "ID": 203005,
+      "Entries": [
+        "Pontiff Knight - Curved Sword"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "Pontiff Knight - Scythe"
+      ]
+    },
+    {
+      "ID": 203099,
+      "Entries": [
+        "Pontiff Knight"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Monstrosity of Sin"
+      ]
+    },
+    {
+      "ID": 204050,
+      "Entries": [
+        "Monstrosity of Sin"
+      ]
+    },
+    {
+      "ID": 204099,
+      "Entries": [
+        "Monstrosity of Sin"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 206010,
+      "Entries": [
+        "Infested Corpse"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "Wretch (Unarmed)"
+      ]
+    },
+    {
+      "ID": 207010,
+      "Entries": [
+        "Wretch (Spear)"
+      ]
+    },
+    {
+      "ID": 207011,
+      "Entries": [
+        "Wretch (Spear)"
+      ]
+    },
+    {
+      "ID": 207020,
+      "Entries": [
+        "Wretch (Dagger)"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "Undead Dog - Pregnant"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Oceiros, the Consumed King"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Sewer Centipede"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Sewer Centipede"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Hound-rat"
+      ]
+    },
+    {
+      "ID": 211098,
+      "Entries": [
+        "Hound-rat"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Mimic"
+      ]
+    },
+    {
+      "ID": 212010,
+      "Entries": [
+        "Mimic - Exorcist"
+      ]
+    },
+    {
+      "ID": 212100,
+      "Entries": [
+        "Mimic"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Writhing Rotten Flesh"
+      ]
+    },
+    {
+      "ID": 213090,
+      "Entries": [
+        "Writhing Rotten Flesh"
+      ]
+    },
+    {
+      "ID": 213200,
+      "Entries": [
+        "Smouldering Rotten Flesh"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 214001,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 215000,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 215005,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 215010,
+      "Entries": [
+        "Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 215020,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 215025,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Yoel of Londor"
+      ]
+    },
+    {
+      "ID": 216010,
+      "Entries": [
+        "Londor Pilgrim"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Grub"
+      ]
+    },
+    {
+      "ID": 218001,
+      "Entries": [
+        "Grub"
+      ]
+    },
+    {
+      "ID": 218010,
+      "Entries": [
+        "Grub (Witch)"
+      ]
+    },
+    {
+      "ID": 218100,
+      "Entries": [
+        "Grub"
+      ]
+    },
+    {
+      "ID": 218110,
+      "Entries": [
+        "Grub (Witch)"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "Gargoyle (Hammer)"
+      ]
+    },
+    {
+      "ID": 219010,
+      "Entries": [
+        "Gargoyle (Spear)"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Carthus Sandworm"
+      ]
+    },
+    {
+      "ID": 220010,
+      "Entries": [
+        "Carthus Sandworm"
+      ]
+    },
+    {
+      "ID": 220100,
+      "Entries": [
+        "Carthus Sandworm"
+      ]
+    },
+    {
+      "ID": 221000,
+      "Entries": [
+        "Corvian (Dagger) - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 221001,
+      "Entries": [
+        "Corvian (Scythe) - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 221002,
+      "Entries": [
+        "Corvian (Storyteller's Staff) - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 221010,
+      "Entries": [
+        "Corvian (Dagger) - Untended Graves"
+      ]
+    },
+    {
+      "ID": 221011,
+      "Entries": [
+        "Corvian (Scythe) - Untended Graves"
+      ]
+    },
+    {
+      "ID": 221012,
+      "Entries": [
+        "Corvian (Storyteller's Staff) - Untended Graves"
+      ]
+    },
+    {
+      "ID": 221020,
+      "Entries": [
+        "Corvian (Dagger) - Irithyll"
+      ]
+    },
+    {
+      "ID": 221021,
+      "Entries": [
+        "Corvian (Scythe) - Irithyll"
+      ]
+    },
+    {
+      "ID": 221022,
+      "Entries": [
+        "Corvian (Storyteller's Staff) - Irithyll"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Jailer"
+      ]
+    },
+    {
+      "ID": 223005,
+      "Entries": [
+        "Jailer"
+      ]
+    },
+    {
+      "ID": 223006,
+      "Entries": [
+        "Jailer"
+      ]
+    },
+    {
+      "ID": 223010,
+      "Entries": [
+        "Jailer Handmaid"
+      ]
+    },
+    {
+      "ID": 223020,
+      "Entries": [
+        "Jailer Handmaid"
+      ]
+    },
+    {
+      "ID": 224000,
+      "Entries": [
+        "Vordt of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 224100,
+      "Entries": [
+        "Vordt of the Boreal Valley (Heatup)"
+      ]
+    },
+    {
+      "ID": 225000,
+      "Entries": [
+        "Sulyvahn's Beast"
+      ]
+    },
+    {
+      "ID": 225010,
+      "Entries": [
+        "Sulyvahn's Beast"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Ballista"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 227001,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 227002,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 227003,
+      "Entries": [
+        "Giant Crab"
+      ]
+    },
+    {
+      "ID": 227100,
+      "Entries": [
+        "Lesser Crab"
+      ]
+    },
+    {
+      "ID": 227101,
+      "Entries": [
+        "Lesser Crab"
+      ]
+    },
+    {
+      "ID": 228000,
+      "Entries": [
+        "Giant Rat"
+      ]
+    },
+    {
+      "ID": 229000,
+      "Entries": [
+        "Irithyll Dog"
+      ]
+    },
+    {
+      "ID": 229100,
+      "Entries": [
+        "Irithyll Dog"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302101,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302102,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302110,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302197,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302198,
+      "Entries": [
+        "Giant Slave"
+      ]
+    },
+    {
+      "ID": 302199,
+      "Entries": [
+        "Giant Slave (Cathedral of the Deep)"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Abyss Watcher"
+      ]
+    },
+    {
+      "ID": 304005,
+      "Entries": [
+        "Abyss Watcher"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Abyss Watcher"
+      ]
+    },
+    {
+      "ID": 304090,
+      "Entries": [
+        "Abyss Watcher - Test"
+      ]
+    },
+    {
+      "ID": 304098,
+      "Entries": [
+        "Abyss Watcher - Test"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Old Demon King"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Demon"
+      ]
+    },
+    {
+      "ID": 306099,
+      "Entries": [
+        "Demon - Test"
+      ]
+    },
+    {
+      "ID": 306100,
+      "Entries": [
+        "Demon (Undead Settlement)"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Demon Cleric"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Demon Cleric"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Pilgrim Butterfly"
+      ]
+    },
+    {
+      "ID": 308001,
+      "Entries": [
+        "Pilgrim Butterfly"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Caged Hollow"
+      ]
+    },
+    {
+      "ID": 309010,
+      "Entries": [
+        "Caged Hollow"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Ravenous Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 310050,
+      "Entries": [
+        "Ravenous Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Deep Acursed"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Elder Ghru"
+      ]
+    },
+    {
+      "ID": 312001,
+      "Entries": [
+        "Elder Ghru"
+      ]
+    },
+    {
+      "ID": 312020,
+      "Entries": [
+        "Elder Ghru"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 314010,
+      "Entries": [
+        "Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 314020,
+      "Entries": [
+        "Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 314100,
+      "Entries": [
+        "Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 316010,
+      "Entries": [
+        "Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Darkwraith"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Poisonhorn Bug"
+      ]
+    },
+    {
+      "ID": 322000,
+      "Entries": [
+        "Rock Lizard"
+      ]
+    },
+    {
+      "ID": 322001,
+      "Entries": [
+        "Rock Lizard"
+      ]
+    },
+    {
+      "ID": 322002,
+      "Entries": [
+        "Rock Lizard"
+      ]
+    },
+    {
+      "ID": 323000,
+      "Entries": [
+        "Demon Statue"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "High Priestess Emma"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Nameless King"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Demon Prince"
+      ]
+    },
+    {
+      "ID": 502090,
+      "Entries": [
+        "Demon Prince"
+      ]
+    },
+    {
+      "ID": 502100,
+      "Entries": [
+        "Demon Prince (Orb)"
+      ]
+    },
+    {
+      "ID": 502200,
+      "Entries": [
+        "Demon Prince (Orb)"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "King of the Storm"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Corrupted Gundyr"
+      ]
+    },
+    {
+      "ID": 511080,
+      "Entries": [
+        "Iudex Gundyr (Throwing)"
+      ]
+    },
+    {
+      "ID": 511090,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 511091,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 511098,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 511099,
+      "Entries": [
+        "Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 511100,
+      "Entries": [
+        "Champion Gundyr"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Iudex Gundyr (Pus of Man)"
+      ]
+    },
+    {
+      "ID": 512092,
+      "Entries": [
+        "Iudex Gundyr (Pus of Man)"
+      ]
+    },
+    {
+      "ID": 512099,
+      "Entries": [
+        "Iudex Gundyr (Pus of Man) - Test"
+      ]
+    },
+    {
+      "ID": 514000,
+      "Entries": [
+        "Pontiff Sulyvahn"
+      ]
+    },
+    {
+      "ID": 514010,
+      "Entries": [
+        "Pontiff Sulyvahn - Spirit Clone"
+      ]
+    },
+    {
+      "ID": 514099,
+      "Entries": [
+        "Pontiff Sulyvahn - Test"
+      ]
+    },
+    {
+      "ID": 515000,
+      "Entries": [
+        "Aldrich, Devourer of Gods"
+      ]
+    },
+    {
+      "ID": 516000,
+      "Entries": [
+        "High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 518000,
+      "Entries": [
+        "Curse-rotted Greatwood"
+      ]
+    },
+    {
+      "ID": 518001,
+      "Entries": [
+        "Curse-rotted Greatwood (Heatup) - Test"
+      ]
+    },
+    {
+      "ID": 518002,
+      "Entries": [
+        "Curse-rotted Greatwood - Test"
+      ]
+    },
+    {
+      "ID": 519000,
+      "Entries": [
+        "King of the disused city"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Stray Demon"
+      ]
+    },
+    {
+      "ID": 520001,
+      "Entries": [
+        "Stray Demon (Heatup)"
+      ]
+    },
+    {
+      "ID": 520002,
+      "Entries": [
+        "Stray Demon"
+      ]
+    },
+    {
+      "ID": 522000,
+      "Entries": [
+        "Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 522099,
+      "Entries": [
+        "Deacons of the Deep - Test"
+      ]
+    },
+    {
+      "ID": 522100,
+      "Entries": [
+        "Fat Deacon"
+      ]
+    },
+    {
+      "ID": 522101,
+      "Entries": [
+        "Fat Deacon (Boss)"
+      ]
+    },
+    {
+      "ID": 522110,
+      "Entries": [
+        "Fat Deacon"
+      ]
+    },
+    {
+      "ID": 522200,
+      "Entries": [
+        "Tall Deacon"
+      ]
+    },
+    {
+      "ID": 522210,
+      "Entries": [
+        "Tall Deacon"
+      ]
+    },
+    {
+      "ID": 522300,
+      "Entries": [
+        "Deacon"
+      ]
+    },
+    {
+      "ID": 522310,
+      "Entries": [
+        "Deacon"
+      ]
+    },
+    {
+      "ID": 522500,
+      "Entries": [
+        "Fat Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 522510,
+      "Entries": [
+        "Fat Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 522600,
+      "Entries": [
+        "Tall Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 522610,
+      "Entries": [
+        "Tall Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 522700,
+      "Entries": [
+        "Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 522710,
+      "Entries": [
+        "Deacon (Irithyll)"
+      ]
+    },
+    {
+      "ID": 523000,
+      "Entries": [
+        "Mother Dragon"
+      ]
+    },
+    {
+      "ID": 524000,
+      "Entries": [
+        "Irithyll Fire Witch"
+      ]
+    },
+    {
+      "ID": 525000,
+      "Entries": [
+        "Lorian, Elder Prince"
+      ]
+    },
+    {
+      "ID": 525001,
+      "Entries": [
+        "Lorian, Elder Prince (Heatup)"
+      ]
+    },
+    {
+      "ID": 525100,
+      "Entries": [
+        "Lothric, Younger Prince"
+      ]
+    },
+    {
+      "ID": 525200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 526000,
+      "Entries": [
+        "Yhorm the Giant"
+      ]
+    },
+    {
+      "ID": 527000,
+      "Entries": [
+        "Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 528000,
+      "Entries": [
+        "Soul of Cinder"
+      ]
+    },
+    {
+      "ID": 528100,
+      "Entries": [
+        "Soul of Cinder (Heatup)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Farron Follower 1"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Farron Follower 1"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Farron Follower 1"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Farron Follower 2"
+      ]
+    },
+    {
+      "ID": 600011,
+      "Entries": [
+        "Farron Follower 2"
+      ]
+    },
+    {
+      "ID": 600012,
+      "Entries": [
+        "Farron Follower 2"
+      ]
+    },
+    {
+      "ID": 600020,
+      "Entries": [
+        "Farron Follower 3"
+      ]
+    },
+    {
+      "ID": 600021,
+      "Entries": [
+        "Farron Follower 3"
+      ]
+    },
+    {
+      "ID": 600022,
+      "Entries": [
+        "Farron Follower 3"
+      ]
+    },
+    {
+      "ID": 600030,
+      "Entries": [
+        "Farron Follower 4"
+      ]
+    },
+    {
+      "ID": 600031,
+      "Entries": [
+        "Farron Follower 4"
+      ]
+    },
+    {
+      "ID": 600032,
+      "Entries": [
+        "Farron Follower 4"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Father Ariandel"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Sister Friede"
+      ]
+    },
+    {
+      "ID": 602001,
+      "Entries": [
+        "Sister Friede (Heatup)"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Greatwolf"
+      ]
+    },
+    {
+      "ID": 603001,
+      "Entries": [
+        "Greatwolf"
+      ]
+    },
+    {
+      "ID": 603002,
+      "Entries": [
+        "Greatwolf"
+      ]
+    },
+    {
+      "ID": 603004,
+      "Entries": [
+        "Greatwolf"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 604010,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 604020,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 604040,
+      "Entries": [
+        "Wolf"
+      ]
+    },
+    {
+      "ID": 605000,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605010,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605020,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605030,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605031,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605032,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 605040,
+      "Entries": [
+        "Skittish Wolf"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "Tree Woman"
+      ]
+    },
+    {
+      "ID": 606001,
+      "Entries": [
+        "Tree Woman"
+      ]
+    },
+    {
+      "ID": 606002,
+      "Entries": [
+        "Tree Woman"
+      ]
+    },
+    {
+      "ID": 606010,
+      "Entries": [
+        "Tree Woman"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Corvian Knight"
+      ]
+    },
+    {
+      "ID": 607001,
+      "Entries": [
+        "Corvian Knight"
+      ]
+    },
+    {
+      "ID": 607002,
+      "Entries": [
+        "Corvian Knight"
+      ]
+    },
+    {
+      "ID": 607010,
+      "Entries": [
+        "Corvian Knight"
+      ]
+    },
+    {
+      "ID": 607012,
+      "Entries": [
+        "Corvian Knight"
+      ]
+    },
+    {
+      "ID": 608000,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608001,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608002,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608003,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608005,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608006,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608010,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608011,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608015,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608020,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608100,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608101,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608102,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 608105,
+      "Entries": [
+        "Corvian Villager"
+      ]
+    },
+    {
+      "ID": 609000,
+      "Entries": [
+        "Giant Fly"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Millwood Knight 1"
+      ]
+    },
+    {
+      "ID": 610010,
+      "Entries": [
+        "Millwood Knight 2"
+      ]
+    },
+    {
+      "ID": 610011,
+      "Entries": [
+        "Millwood Knight 2"
+      ]
+    },
+    {
+      "ID": 610020,
+      "Entries": [
+        "Millwood Knight 3"
+      ]
+    },
+    {
+      "ID": 610021,
+      "Entries": [
+        "Millwood Knight 3"
+      ]
+    },
+    {
+      "ID": 610030,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 610031,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 610032,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 610033,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 610034,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 610035,
+      "Entries": [
+        "Millwood Knight 4"
+      ]
+    },
+    {
+      "ID": 613000,
+      "Entries": [
+        "Great Crab"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Slave Knight Gael"
+      ]
+    },
+    {
+      "ID": 620100,
+      "Entries": [
+        "Slave Knight Gael (Heatup)"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Darkeater Midir (Bridge)"
+      ]
+    },
+    {
+      "ID": 621010,
+      "Entries": [
+        "Darkeater Midir (Bridge)"
+      ]
+    },
+    {
+      "ID": 621100,
+      "Entries": [
+        "Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 623000,
+      "Entries": [
+        "Murkman"
+      ]
+    },
+    {
+      "ID": 623001,
+      "Entries": [
+        "Murkman"
+      ]
+    },
+    {
+      "ID": 623002,
+      "Entries": [
+        "Murkman"
+      ]
+    },
+    {
+      "ID": 623003,
+      "Entries": [
+        "Murkman"
+      ]
+    },
+    {
+      "ID": 623004,
+      "Entries": [
+        "Murkman"
+      ]
+    },
+    {
+      "ID": 623100,
+      "Entries": [
+        "Crawling Murkman"
+      ]
+    },
+    {
+      "ID": 623101,
+      "Entries": [
+        "Crawling Murkman"
+      ]
+    },
+    {
+      "ID": 623104,
+      "Entries": [
+        "Crawling Murkman"
+      ]
+    },
+    {
+      "ID": 623200,
+      "Entries": [
+        "Murkman Spirit"
+      ]
+    },
+    {
+      "ID": 624000,
+      "Entries": [
+        "Pilgrim Pulpa"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Pilgrim Angel"
+      ]
+    },
+    {
+      "ID": 625001,
+      "Entries": [
+        "Pilgrim Angel"
+      ]
+    },
+    {
+      "ID": 625002,
+      "Entries": [
+        "Pilgrim Angel"
+      ]
+    },
+    {
+      "ID": 625003,
+      "Entries": [
+        "Pilgrim Angel"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626001,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626002,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626005,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626010,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626015,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626020,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 626021,
+      "Entries": [
+        "Ringed Knight"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Hollow Vagabond"
+      ]
+    },
+    {
+      "ID": 627001,
+      "Entries": [
+        "Hollow Vagabond"
+      ]
+    },
+    {
+      "ID": 627002,
+      "Entries": [
+        "Hollow Vagabond"
+      ]
+    },
+    {
+      "ID": 628000,
+      "Entries": [
+        "Judicator"
+      ]
+    },
+    {
+      "ID": 628010,
+      "Entries": [
+        "Judicator"
+      ]
+    },
+    {
+      "ID": 628020,
+      "Entries": [
+        "Judicator"
+      ]
+    },
+    {
+      "ID": 628090,
+      "Entries": [
+        "Judicator"
+      ]
+    },
+    {
+      "ID": 628100,
+      "Entries": [
+        "Judicator"
+      ]
+    },
+    {
+      "ID": 629000,
+      "Entries": [
+        "Hollow Cleric"
+      ]
+    },
+    {
+      "ID": 629001,
+      "Entries": [
+        "Hollow Cleric"
+      ]
+    },
+    {
+      "ID": 629002,
+      "Entries": [
+        "Hollow Cleric"
+      ]
+    },
+    {
+      "ID": 629003,
+      "Entries": [
+        "Hollow Cleric"
+      ]
+    },
+    {
+      "ID": 629004,
+      "Entries": [
+        "Hollow Cleric"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Mad Pilgrim"
+      ]
+    },
+    {
+      "ID": 632000,
+      "Entries": [
+        "Harald Knight"
+      ]
+    },
+    {
+      "ID": 632001,
+      "Entries": [
+        "Harald Knight"
+      ]
+    },
+    {
+      "ID": 632002,
+      "Entries": [
+        "Harald Knight"
+      ]
+    },
+    {
+      "ID": 632010,
+      "Entries": [
+        "Harald Knight"
+      ]
+    },
+    {
+      "ID": 633000,
+      "Entries": [
+        "Big Locust"
+      ]
+    },
+    {
+      "ID": 633001,
+      "Entries": [
+        "Big Locust"
+      ]
+    },
+    {
+      "ID": 633002,
+      "Entries": [
+        "Big Locust"
+      ]
+    },
+    {
+      "ID": 633010,
+      "Entries": [
+        "Big Locust"
+      ]
+    },
+    {
+      "ID": 633100,
+      "Entries": [
+        "Small Locust"
+      ]
+    },
+    {
+      "ID": 633101,
+      "Entries": [
+        "Small Locust"
+      ]
+    },
+    {
+      "ID": 633110,
+      "Entries": [
+        "Small Locust"
+      ]
+    },
+    {
+      "ID": 633111,
+      "Entries": [
+        "Small Locust"
+      ]
+    },
+    {
+      "ID": 633112,
+      "Entries": [
+        "Small Locust"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "■ ■ ■ ■ ■ For products up here ■ ■ ■ ■. ■."
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Hiras Test"
+      ]
+    },
+    {
+      "ID": 901100,
+      "Entries": [
+        "Yoshihi Test"
+      ]
+    },
+    {
+      "ID": 901200,
+      "Entries": [
+        "Tsuruy Test"
+      ]
+    },
+    {
+      "ID": 901300,
+      "Entries": [
+        "Move sub-goal Test 1 walking and running"
+      ]
+    },
+    {
+      "ID": 901301,
+      "Entries": [
+        "Move sub-goal Test 2 Quick turn/left/right movement"
+      ]
+    },
+    {
+      "ID": 901302,
+      "Entries": [
+        "Move sub-goal Test 3 Retreat Step"
+      ]
+    },
+    {
+      "ID": 901400,
+      "Entries": [
+        "Masut Test"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "Yoshihi damage Check"
+      ]
+    },
+    {
+      "ID": 902100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 999305,
+      "Entries": [
+        "- FDP Proto-wolf (weakening)"
+      ]
+    },
+    {
+      "ID": 999410,
+      "Entries": [
+        "- FDP Dead _ for covert confirmation"
+      ]
+    },
+    {
+      "ID": 999901,
+      "Entries": [
+        "Team AI Reader test"
+      ]
+    },
+    {
+      "ID": 999910,
+      "Entries": [
+        "For sound Confirmation"
+      ]
+    },
+    {
+      "ID": 999990,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

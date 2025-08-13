@@ -1,0 +1,3053 @@
+{
+  "Name": "MenuPropertySpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "----"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "----- ↓For items from here -----"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Name"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Part Info"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Common items] Unchiku"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Sort ID"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "\"Acquistion\""
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "\"Default\""
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Corporation ID"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Equipment Menu Manage Category"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Common items] Number of possessions"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Common items] Number of possessions_maximum value"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "[Common items] Number of warehouse possessions"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "[Common items] Number of warehouse possession_maximum value"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Purchase Total"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Sell Price"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "EN Load"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Category"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "EN Output"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Tools] Consumption type during use"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "WEAPON - Damage Type (Type)"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "WEAPON - Firing Type (Weapon Type)"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "WEAPON - Reload Type"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "WEAPON - Additional Effect"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "WEAPON - Weapon Properties (Unused)"
+      ]
+    },
+    {
+      "ID": 1970,
+      "Entries": [
+        "WEAPON - Chg. Attack Power"
+      ]
+    },
+    {
+      "ID": 1971,
+      "Entries": [
+        "WEAPON - Chg. Impact"
+      ]
+    },
+    {
+      "ID": 1972,
+      "Entries": [
+        "WEAPON - Chg. Accum. Impact"
+      ]
+    },
+    {
+      "ID": 1973,
+      "Entries": [
+        "WEAPON - Chg. Attack Power"
+      ]
+    },
+    {
+      "ID": 1974,
+      "Entries": [
+        "\"Chg. Impact\" (Not actually?)"
+      ]
+    },
+    {
+      "ID": 1975,
+      "Entries": [
+        "\"Chg. Accum. Impact\" (Not actually?)"
+      ]
+    },
+    {
+      "ID": 1976,
+      "Entries": [
+        "\"Chg. Attack Power\" (Not actually?)"
+      ]
+    },
+    {
+      "ID": 1977,
+      "Entries": [
+        "\"Chg. Impact\" (Not actually?)"
+      ]
+    },
+    {
+      "ID": 1978,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging (grandson bullet)"
+      ]
+    },
+    {
+      "ID": 1979,
+      "Entries": [
+        "[Weapon] Second attack performance after charging (grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1980,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging (grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1981,
+      "Entries": [
+        "[Weapon] Second stage of shock accumulation performance after charging (grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1982,
+      "Entries": [
+        "[Weapon] Attack performance after charging (great-grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1983,
+      "Entries": [
+        "[Weapon] Impact performance after charging (great-grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1984,
+      "Entries": [
+        "[Weapon] Impact accumulation performance after charging (great-grand bullet)"
+      ]
+    },
+    {
+      "ID": 1985,
+      "Entries": [
+        "[Weapon] Second attack performance after charging (great-grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1986,
+      "Entries": [
+        "[Weapon] Second stage impact performance after charging (great-grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1987,
+      "Entries": [
+        "[Weapon] Second stage of shock accumulation performance after charging (great-grandchild bullet)"
+      ]
+    },
+    {
+      "ID": 1990,
+      "Entries": [
+        "WEAPON - (Charged) Direct Hit Adjustment (Unused)"
+      ]
+    },
+    {
+      "ID": 1991,
+      "Entries": [
+        "WEAPON - (Charged) PA Interference (Actual internal number) (Unused)"
+      ]
+    },
+    {
+      "ID": 1992,
+      "Entries": [
+        "WEAPON - Chg. Blast Radius"
+      ]
+    },
+    {
+      "ID": 1993,
+      "Entries": [
+        "WEAPON - (Charged) \"Range Limit\" (Charged Effective Range) (Unused)"
+      ]
+    },
+    {
+      "ID": 1994,
+      "Entries": [
+        "WEAPON - \"Charged Bullet Life\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "WEAPON - Total Rounds"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "WEAPON - Magazine Rounds"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "WEAPON - EquipParamWeapon \"UnkFloat0x2B0\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "WEAPON - \"Damage Mitigation\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "WEAPON - EquipParamWeapon \"UnkFloat0x2B4\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "WEAPON - (40520) (Unused)"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "WEAPON - \"(40540)\" Damage Type (Unused)"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "WEAPON - Unknown Value (Affected by AtkParam?)"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "WEAPON - Impact"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "WEAPON - Accumulative Impact"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "WEAPON - Rapid Fire"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "WEAPON - Reload Time"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "WEAPON - PA Interference"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "WEAPON - AtkParam \"Unk0x224\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "WEAPON - Chg. EN Load"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "WEAPON - Reload Type"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "WEAPON - Direct Hit Adjustment"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "WEAPON - Chg. Attack Power"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "WEAPON - Chg. Impact"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "WEAPON - Charge Time"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "WEAPON - Cooling"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "WEAPON - Blast Radius"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "WEAPON - Range Limit (Unused)"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "WEAPON - Ammunition Cost"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "WEAPON - Impact (Secondary Hit - Add 5 to AtkParam) (Unused)"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "WEAPON - Impact (Secondary Component Hit?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "WEAPON - Accumulative Impact (Secondary Hit - Add 5 to AtkParam) (Unused)"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "WEAPON - Accumulative Impact (Secondary Component Hit?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "WEAPON - Blast Radius (Immediate Child's Value) (Unused)"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "WEAPON - Blast Radius (Child 2's Value?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "WEAPON - \"Direct Hit Adjustment\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "WEAPON - \"Direct Hit Adjustment\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "WEAPON - \"Direct Hit Adjustment\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "WEAPON - Chg. Accum. Impact"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        "WEAPON - \"Full Chg. Attack Power\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        "WEAPON - \"Full Chg. Impact\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2037,
+      "Entries": [
+        "WEAPON - \"Full Chg. Accum. Impact\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2038,
+      "Entries": [
+        "WEAPON - Full Chg. Time (Base Charge + Level 2 Charge Time) (Unused)"
+      ]
+    },
+    {
+      "ID": 2039,
+      "Entries": [
+        "WEAPON - Chg. Ammo Consumption"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "WEAPON - \"Full Chg. Ammo Consump.\"(Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "WEAPON - ATK Heat Buildup"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "WEAPON - Chg. Heat Buildup"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "WEAPON - \"Full Chg. Heat Buildup\" (Is it actually?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "WEAPON - \"Overheated Cooling\" (Cooling When Fully Overheated) (Unused)"
+      ]
+    },
+    {
+      "ID": 2045,
+      "Entries": [
+        "WEAPON - PA Interference (Actual internal value) (Unused)"
+      ]
+    },
+    {
+      "ID": 2046,
+      "Entries": [
+        "WEAPON - \"Blast Duration\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2047,
+      "Entries": [
+        "WEAPON - \"Chg. Heat Buildup\" (Ammo Consumption of Base Shot) (Unused)"
+      ]
+    },
+    {
+      "ID": 2048,
+      "Entries": [
+        "MELEE WEAPON - Consecutive Hits"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "WEAPON - Unknown"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "SHIELD - Deployment Range"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "SHIELD - Damage Mitigation"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        "SHIELD - Impact Dampening"
+      ]
+    },
+    {
+      "ID": 2063,
+      "Entries": [
+        "SHIELD - IG Damage Mitigation"
+      ]
+    },
+    {
+      "ID": 2064,
+      "Entries": [
+        "SHIELD - IG Duration"
+      ]
+    },
+    {
+      "ID": 2065,
+      "Entries": [
+        "EXPANSION - \"Resilience\" (Unused)"
+      ]
+    },
+    {
+      "ID": 2066,
+      "Entries": [
+        "SHIELD - Cooling"
+      ]
+    },
+    {
+      "ID": 2067,
+      "Entries": [
+        "EXPANSION - \"Cooldown Time\" (Time Until Expansion can be used again) (Unused)"
+      ]
+    },
+    {
+      "ID": 2068,
+      "Entries": [
+        "SHIELD - Dply. Heat Buildup"
+      ]
+    },
+    {
+      "ID": 2069,
+      "Entries": [
+        "SHIELD - IG Impact Dampening"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "SHIELD - Idle Damage Mitigation (Simple ver- captioned as regular)"
+      ]
+    },
+    {
+      "ID": 2071,
+      "Entries": [
+        "SHIELD - Idle Impact Mitigation (Simple ver- captioned as regular)"
+      ]
+    },
+    {
+      "ID": 2072,
+      "Entries": [
+        "Shield - Damage Mitigation (Simple ver- captioned as idle)"
+      ]
+    },
+    {
+      "ID": 2073,
+      "Entries": [
+        "SHIELD - Impact Mitigation (Simple ver- captioned as idle)"
+      ]
+    },
+    {
+      "ID": 2074,
+      "Entries": [
+        "SHIELD - Idle Time"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "WEAPON - Attack Power"
+      ]
+    },
+    {
+      "ID": 2091,
+      "Entries": [
+        "WEAPON - Attack Power (Unused)"
+      ]
+    },
+    {
+      "ID": 2092,
+      "Entries": [
+        "WEAPON - Impact (Unused)"
+      ]
+    },
+    {
+      "ID": 2093,
+      "Entries": [
+        "WEAPON - Accumulative Impact (Unused)"
+      ]
+    },
+    {
+      "ID": 2094,
+      "Entries": [
+        "WEAPON - Attack Power (Component?) (Unused)"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "WEAPON - Unknown (Unused)"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "MELEE WEAPON - Chg. Attack Power (Component) (Unused)"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "MELEE WEAPON - Direct Hit Adjustment (Unused)"
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        "MELEE WEAPON - Chg. Impact (Component) (Unused)"
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        "MELEE WEAPON - Chg. Accum. Impact (Component) (Unused)"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "MELEE WEAPON - Chg. PA Interference (Component- Actual Value) (Unused)"
+      ]
+    },
+    {
+      "ID": 2115,
+      "Entries": [
+        "WEAPON - \"Chg. Ammo Consumption\" (Unknown) (Unused)"
+      ]
+    },
+    {
+      "ID": 2116,
+      "Entries": [
+        "MELEE WEAPON - Chg. Heat Buildup (Unused)"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "EXPANSION - Number of Uses (Unused)"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "UNKNOWN - Impact (Unused)"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "EXPANSION (ASSAULT ARMOR) - Effect Range"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "UNKNOWN - Blast Radius (Unused)"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "EXPANSION - Resilience"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "EXPANSION - Duration"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "UNKNOWN - Direct Hit Adjustment  (Unused)"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "UNKNOWN - Accumulative Impact (Unused)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "FRAME - AP"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "FRAME - \"Unk0x1A4\" (Unused)"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "FRAME - \"Unk0x1A8\" (Unused)"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Nothing?"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "AC - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "AC - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "AC - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "AC - Attitude Stability"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "HEAD - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "HEAD - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 3052,
+      "Entries": [
+        "HEAD - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "CORE - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "CORE - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        "CORE - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "ARMS - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "ARMS - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 3072,
+      "Entries": [
+        "ARMS - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "LEGS - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "LEGS - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 3082,
+      "Entries": [
+        "LEGS - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "HEAD - Attitude Stability"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "HEAD - System Recovery"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "HEAD - \"Unk0x2C8\" (Unused)"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "HEAD - Scan Angle (Unused)"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "HEAD - Scan Distance"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "HEAD - Scan Effect Duration"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "HEAD - Scan Standby Time"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "CORE - Booster Efficiency Adj."
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "CORE - Attitude Stability"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "CORE - Generator Output Adj."
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "CORE - Generator Supply Adj."
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "ARMS - Arm Load Limit"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "ARMS - Recoil Control"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "ARMS - Firearm Specialization"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "ARMS - Melee Specialization"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "LEGS - UNK (Load Limit?)"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "LEGS - Attitude Stability"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "LEGS - Load Limit"
+      ]
+    },
+    {
+      "ID": 3403,
+      "Entries": [
+        "LEGS - Braking (Unused)"
+      ]
+    },
+    {
+      "ID": 3404,
+      "Entries": [
+        "LEGS - Walking Speed (Unused)"
+      ]
+    },
+    {
+      "ID": 3405,
+      "Entries": [
+        "LEGS - Jump Distance"
+      ]
+    },
+    {
+      "ID": 3406,
+      "Entries": [
+        "LEGS - Jump Height"
+      ]
+    },
+    {
+      "ID": 3450,
+      "Entries": [
+        "TANK LEGS - Travel Speed"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "TANK LEGS - High Speed Perf."
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "GENERATOR - EN Capacity"
+      ]
+    },
+    {
+      "ID": 3502,
+      "Entries": [
+        "GENERATOR - EN Recharge"
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        "GENERATOR - Supply Recovery"
+      ]
+    },
+    {
+      "ID": 3504,
+      "Entries": [
+        "GENERATOR - Post-Recovery EN Supply"
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        "GENERATOR - Energy Firearm Spec."
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "FCS - Missile Lock Correction"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "FCS - Lock-on Distance (Unused)"
+      ]
+    },
+    {
+      "ID": 3602,
+      "Entries": [
+        "FCS - Lock-on Precision (Unused)"
+      ]
+    },
+    {
+      "ID": 3603,
+      "Entries": [
+        "FCS - Multi Lock-Correction"
+      ]
+    },
+    {
+      "ID": 3604,
+      "Entries": [
+        "FCS - Close-Range Assist"
+      ]
+    },
+    {
+      "ID": 3605,
+      "Entries": [
+        "FCS - Medium-Range Assist"
+      ]
+    },
+    {
+      "ID": 3606,
+      "Entries": [
+        "FCS - Long-Range Assist"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "BOOSTER - Thrust"
+      ]
+    },
+    {
+      "ID": 3701,
+      "Entries": [
+        "BOOSTER - Upward Thrust"
+      ]
+    },
+    {
+      "ID": 3702,
+      "Entries": [
+        "BOOSTER - Upward EN Consumption"
+      ]
+    },
+    {
+      "ID": 3703,
+      "Entries": [
+        "BOOSTER - QB Thrust"
+      ]
+    },
+    {
+      "ID": 3704,
+      "Entries": [
+        "BOOSTER - QB Jet Duration"
+      ]
+    },
+    {
+      "ID": 3705,
+      "Entries": [
+        "BOOSTER - QB EN Consumption"
+      ]
+    },
+    {
+      "ID": 3706,
+      "Entries": [
+        "BOOSTER - QB Reload Time"
+      ]
+    },
+    {
+      "ID": 3707,
+      "Entries": [
+        "BOOSTER - AB Thrust"
+      ]
+    },
+    {
+      "ID": 3708,
+      "Entries": [
+        "BOOSTER - AB EN Consumption"
+      ]
+    },
+    {
+      "ID": 3709,
+      "Entries": [
+        "BOOSTER - QB Reload Ideal Weight"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "BOOSTER - Melee Attack Thrust"
+      ]
+    },
+    {
+      "ID": 3711,
+      "Entries": [
+        "BOOSTER - Melee Atk. EN Consumption"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "WEAPON - \"Projectile Speed\" (Unused)"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "WEAPON - \"Max Projectile Speed\" (Unused)"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "WEAPON - Unknown (Unused)"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "WEAPON - BulletParam Missile Related? (Unused)"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "WEAPON - \"Shots Fired\" (Amount of bullets shot at once) (Unused)"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "WEAPON - \"Burst Fire Amount\" (Amount of bullets shot in a burst) (Unused)"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "WEAPON - Rapid Fire (Displayed internal value) (Unused)"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "WEAPON - BulletParam \"UnkFloat0x2F0\" (Displayed value is adjusted) (Unused)"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "WEAPON - Max. Lock Count"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "WEAPON - Recoil"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "WEAPON - Ideal Range"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "WEAPON - Effective Range"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "WEAPON - Unknown (Unused)"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "WEAPON - Guidance"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "WEAPON - \"Max Projectile Speed\" (Unused)"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "WEAPON - BulletParam \"UnkFloat0x2F0\" (Displayed value is internal) (Unused)"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "WEAPON - Homing Lock Time"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "WEAPON - Guidance (Child Bullet) (Unused)"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "WEAPON - Guidance (Great Grandchild Bullet) (Unused)"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "WEAPON - (Charged) Effective Range (Unused)"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19900,
+      "Entries": [
+        "[For PG] Number of possessions for sorting (warehouse/inventory number of possessions automatically determined)"
+      ]
+    },
+    {
+      "ID": 19998,
+      "Entries": [
+        "----- ↑For items up to this point -----"
+      ]
+    },
+    {
+      "ID": 19999,
+      "Entries": [
+        "----- ↓For player status from here -----"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "PILOT NAME"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "COAM (Current Amount)"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "[PC Basics] Gender"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "AC Specs - Total Load"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "AC Specs - Load Limit"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "AC Specs - Total Weight"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "[PC] Live bullet defense"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "[PC] EN defense"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "AC Specs - Boost Speed"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "AC Specs - Total EN Load"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "AC Specs - EN Output"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "AC Specs - AP"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "AC Specs - Current Load"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "AC Specs - Current EN Load"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "AC Specs - Current Arms Load"
+      ]
+    },
+    {
+      "ID": 20050,
+      "Entries": [
+        "AC Specs - Total Weight"
+      ]
+    },
+    {
+      "ID": 20051,
+      "Entries": [
+        "AC Specs - AP"
+      ]
+    },
+    {
+      "ID": 20052,
+      "Entries": [
+        "AC Specs - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 20053,
+      "Entries": [
+        "AC Specs - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 20054,
+      "Entries": [
+        "AC Specs - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 20055,
+      "Entries": [
+        "AC Specs - Attitude Stability"
+      ]
+    },
+    {
+      "ID": 20056,
+      "Entries": [
+        "AC Specs - Attitude Recovery"
+      ]
+    },
+    {
+      "ID": 20057,
+      "Entries": [
+        "AC Specs - Target Tracking"
+      ]
+    },
+    {
+      "ID": 20058,
+      "Entries": [
+        "AC Specs - EN Capacity"
+      ]
+    },
+    {
+      "ID": 20059,
+      "Entries": [
+        "AC Specs - EN Supply Efficiency"
+      ]
+    },
+    {
+      "ID": 20060,
+      "Entries": [
+        "AC Specs - Boost Speed"
+      ]
+    },
+    {
+      "ID": 20061,
+      "Entries": [
+        "AC Specs - Total Attack Power (Unused)"
+      ]
+    },
+    {
+      "ID": 20062,
+      "Entries": [
+        "AC Specs - Repair Costs (Unused)"
+      ]
+    },
+    {
+      "ID": 20063,
+      "Entries": [
+        "AC Specs - QB EN Consumption"
+      ]
+    },
+    {
+      "ID": 20064,
+      "Entries": [
+        "AC Specs - Total Arms Load"
+      ]
+    },
+    {
+      "ID": 20065,
+      "Entries": [
+        "AC Specs - Arms Load Limit"
+      ]
+    },
+    {
+      "ID": 20066,
+      "Entries": [
+        "AC Specs - QB Speed"
+      ]
+    },
+    {
+      "ID": 20067,
+      "Entries": [
+        "AC Specs - QB Reload Time"
+      ]
+    },
+    {
+      "ID": 20068,
+      "Entries": [
+        "AC Specs - Defensive Performance"
+      ]
+    },
+    {
+      "ID": 20069,
+      "Entries": [
+        "AC Specs - EN Recharge Delay"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "AC NAME"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "HUNTER CLASS"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "ARENA RANK"
+      ]
+    },
+    {
+      "ID": 20150,
+      "Entries": [
+        "PILOT NAME"
+      ]
+    },
+    {
+      "ID": 20190,
+      "Entries": [
+        "[PC] Number of weapon parts owned"
+      ]
+    },
+    {
+      "ID": 20191,
+      "Entries": [
+        "[PC] Number of frame parts owned"
+      ]
+    },
+    {
+      "ID": 20192,
+      "Entries": [
+        "[PC] Number of interior parts owned"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "OST Chips (Current Amount)"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "[PC] Owned arena points"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "R-ARM UNIT"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "L-ARM UNIT"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "R-BACK UNIT"
+      ]
+    },
+    {
+      "ID": 21003,
+      "Entries": [
+        "L-BACK UNIT"
+      ]
+    },
+    {
+      "ID": 21004,
+      "Entries": [
+        "HEAD"
+      ]
+    },
+    {
+      "ID": 21005,
+      "Entries": [
+        "CORE"
+      ]
+    },
+    {
+      "ID": 21006,
+      "Entries": [
+        "ARMS"
+      ]
+    },
+    {
+      "ID": 21007,
+      "Entries": [
+        "LEGS"
+      ]
+    },
+    {
+      "ID": 21008,
+      "Entries": [
+        "BOOSTER"
+      ]
+    },
+    {
+      "ID": 21009,
+      "Entries": [
+        "FCS"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "GENERATOR"
+      ]
+    },
+    {
+      "ID": 21011,
+      "Entries": [
+        "EXPANSION"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "AC NAME"
+      ]
+    },
+    {
+      "ID": 29900,
+      "Entries": [
+        "WARNING - EN Shortfall"
+      ]
+    },
+    {
+      "ID": 29901,
+      "Entries": [
+        "WARNING - Overburdened"
+      ]
+    },
+    {
+      "ID": 29902,
+      "Entries": [
+        "WARNING - Arms Overburdened"
+      ]
+    },
+    {
+      "ID": 29903,
+      "Entries": [
+        "WARNING - Unknown"
+      ]
+    },
+    {
+      "ID": 29999,
+      "Entries": [
+        "↑This is for player status"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Image] Creation date and time"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "[Image] Creator"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "[Image] UgcID"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[Image] Number of pieces used"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "----- ↓For decal settings from here -----"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "[Decal] Base position: X"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "[Decal] Base position: Y"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "[Decal] Base position: Z"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "[Decal] Base angle: X"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "[Decal] Base angle: Y"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "[Decal] Pasting direction correction: X"
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        "[Decal] Pasting direction correction: Y"
+      ]
+    },
+    {
+      "ID": 40008,
+      "Entries": [
+        "[Decal] Image angle: Z"
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        "[Decal] Image position: X"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "[Decal] Image position: Y"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "[Decal] Image size: X"
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "[Decal] Image size: Y"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "[Decal] Image reversal: left and right"
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        "[Decal] Target for pasting"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "[Decal] Pasting limit distance"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "[Decal] Number of images used"
+      ]
+    },
+    {
+      "ID": 40199,
+      "Entries": [
+        "-----↑This is for decal setting -----"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "----- ↓For OS enhancement from here -----"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "OS TUNING - Kinetic Weapons - Fire Control Tuning"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "OS TUNING - Explosive Weapons - Fuse Control Tuning"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "OS TUNING - Energy Weapons - Output Control Tuning"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "OS TUNING - Melee Weapons - Drive Control Tuning"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "OS TUNING - Direct Hit Modifer - Damage Tuning"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "OS TUNING - ACS - Dynamic Deflecting Control Tuning"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "OS TUNING - Repair Kits - Optimization"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "OS TUNING - Access Speed - Optimization"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "OS TUNING - Weight Control"
+      ]
+    },
+    {
+      "ID": 50401,
+      "Entries": [
+        "OS TUNING - Boost Kick"
+      ]
+    },
+    {
+      "ID": 50402,
+      "Entries": [
+        "OS TUNING - Weapon Bay"
+      ]
+    },
+    {
+      "ID": 50403,
+      "Entries": [
+        "OS TUNING - Manual Aiming"
+      ]
+    },
+    {
+      "ID": 50404,
+      "Entries": [
+        "OS TUNING - Quick Turn"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "OS TUNING - Assault Armor"
+      ]
+    },
+    {
+      "ID": 50501,
+      "Entries": [
+        "OS TUNING - Pulse Armor"
+      ]
+    },
+    {
+      "ID": 50502,
+      "Entries": [
+        "OS TUNING - Pulse Protection"
+      ]
+    },
+    {
+      "ID": 50503,
+      "Entries": [
+        "OS TUNING - Terminal Armor"
+      ]
+    },
+    {
+      "ID": 50999,
+      "Entries": [
+        "-----↑So far for OS enhancement -----"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "----- ↓For automatic assembly from here -----"
+      ]
+    },
+    {
+      "ID": 59001,
+      "Entries": [
+        "[Automatic assembly] Leg type"
+      ]
+    },
+    {
+      "ID": 59002,
+      "Entries": [
+        "[Auto Ascension] Ascension tendency"
+      ]
+    },
+    {
+      "ID": 59050,
+      "Entries": [
+        "[Auto assemble] Excess load"
+      ]
+    },
+    {
+      "ID": 59051,
+      "Entries": [
+        "[Auto Assemble] Surplus EN"
+      ]
+    },
+    {
+      "ID": 59999,
+      "Entries": [
+        "-----↑For automatic assembly so far -----"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "----- ↓For name plate from here -----"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "[Name plate] frame"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "[Name plate] Back plate"
+      ]
+    },
+    {
+      "ID": 60003,
+      "Entries": [
+        "[Name plate] Background"
+      ]
+    },
+    {
+      "ID": 60004,
+      "Entries": [
+        "[Name plate] Color: Pilot name"
+      ]
+    },
+    {
+      "ID": 60005,
+      "Entries": [
+        "[Name plate] Color: Aircraft name"
+      ]
+    },
+    {
+      "ID": 60006,
+      "Entries": [
+        "[Name plate] Color: Online ID"
+      ]
+    },
+    {
+      "ID": 60050,
+      "Entries": [
+        "Purchase Total"
+      ]
+    },
+    {
+      "ID": 60999,
+      "Entries": [
+        "-----↑This is for name plate -----"
+      ]
+    },
+    {
+      "ID": 79000,
+      "Entries": [
+        "----- ↓For arena from here -----"
+      ]
+    },
+    {
+      "ID": 79001,
+      "Entries": [
+        "RANK"
+      ]
+    },
+    {
+      "ID": 79002,
+      "Entries": [
+        "SUBJECT NAME"
+      ]
+    },
+    {
+      "ID": 79003,
+      "Entries": [
+        "AC NAME"
+      ]
+    },
+    {
+      "ID": 79004,
+      "Entries": [
+        "NOTES"
+      ]
+    },
+    {
+      "ID": 79005,
+      "Entries": [
+        "COAM"
+      ]
+    },
+    {
+      "ID": 79006,
+      "Entries": [
+        "OST CHIPS"
+      ]
+    },
+    {
+      "ID": 79007,
+      "Entries": [
+        "SUBJECT NAME"
+      ]
+    },
+    {
+      "ID": 79008,
+      "Entries": [
+        "AC NAME"
+      ]
+    },
+    {
+      "ID": 79900,
+      "Entries": [
+        "TIME"
+      ]
+    },
+    {
+      "ID": 79901,
+      "Entries": [
+        "REWARD"
+      ]
+    },
+    {
+      "ID": 79999,
+      "Entries": [
+        "-----↑For Arena so far -----"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "----- ↓For mission results from here -----"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Base Pay"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "[Result] Income: Obtained items"
+      ]
+    },
+    {
+      "ID": 80003,
+      "Entries": [
+        "Bonus Pay"
+      ]
+    },
+    {
+      "ID": 80004,
+      "Entries": [
+        "Penalties"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "[Result] Income: Special addition 0"
+      ]
+    },
+    {
+      "ID": 80011,
+      "Entries": [
+        "[Result] Income: Special addition 1"
+      ]
+    },
+    {
+      "ID": 80012,
+      "Entries": [
+        "[Result] Income: Special addition 2"
+      ]
+    },
+    {
+      "ID": 80013,
+      "Entries": [
+        "[Result] Income: Special addition 3"
+      ]
+    },
+    {
+      "ID": 80014,
+      "Entries": [
+        "[Result] Income: Special addition 4"
+      ]
+    },
+    {
+      "ID": 80019,
+      "Entries": [
+        "Paid In"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "Repair Costs"
+      ]
+    },
+    {
+      "ID": 80021,
+      "Entries": [
+        "Ammunition Costs"
+      ]
+    },
+    {
+      "ID": 80030,
+      "Entries": [
+        "[Result] Cost: Special deduction 0"
+      ]
+    },
+    {
+      "ID": 80031,
+      "Entries": [
+        "[Result] Cost: Special subtraction 1"
+      ]
+    },
+    {
+      "ID": 80032,
+      "Entries": [
+        "[Result] Cost: Special subtraction 2"
+      ]
+    },
+    {
+      "ID": 80033,
+      "Entries": [
+        "[Result] Cost: Special subtraction 3"
+      ]
+    },
+    {
+      "ID": 80034,
+      "Entries": [
+        "[Result] Cost: Special subtraction 4"
+      ]
+    },
+    {
+      "ID": 80039,
+      "Entries": [
+        "Expenses"
+      ]
+    },
+    {
+      "ID": 80040,
+      "Entries": [
+        "[Result] Corporate contribution level 0"
+      ]
+    },
+    {
+      "ID": 80041,
+      "Entries": [
+        "[Result] Corporate contribution level 1"
+      ]
+    },
+    {
+      "ID": 80042,
+      "Entries": [
+        "[Result] Corporate contribution level 2"
+      ]
+    },
+    {
+      "ID": 80043,
+      "Entries": [
+        "[Result] Corporate contribution level 3"
+      ]
+    },
+    {
+      "ID": 80044,
+      "Entries": [
+        "[Result] Corporate contribution level 4"
+      ]
+    },
+    {
+      "ID": 80050,
+      "Entries": [
+        "[Result] Experience points gained"
+      ]
+    },
+    {
+      "ID": 80090,
+      "Entries": [
+        "Income"
+      ]
+    },
+    {
+      "ID": 80999,
+      "Entries": [
+        "↑For mission results so far"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Maintain Target Assist"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "[Game options] Controller vibration"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Boost Control"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "Assault Boost Control"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "Core Expansion Control"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "Automatically Purge Weapon"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "Camera Y-Axis"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "Camera X-Axis"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "Reset Camera Y-Axis"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "Camera Speed"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "Display Subtitles"
+      ]
+    },
+    {
+      "ID": 90022,
+      "Entries": [
+        "[Display options] HUD color (button)"
+      ]
+    },
+    {
+      "ID": 90023,
+      "Entries": [
+        "[Display options] HUD layout (button)"
+      ]
+    },
+    {
+      "ID": 90024,
+      "Entries": [
+        "HDR"
+      ]
+    },
+    {
+      "ID": 90025,
+      "Entries": [
+        "Adjust Brightness"
+      ]
+    },
+    {
+      "ID": 90026,
+      "Entries": [
+        "Adjust Image Quality"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "Music Volume"
+      ]
+    },
+    {
+      "ID": 90031,
+      "Entries": [
+        "Sound Effect Volume"
+      ]
+    },
+    {
+      "ID": 90032,
+      "Entries": [
+        "Voice Volume"
+      ]
+    },
+    {
+      "ID": 90033,
+      "Entries": [
+        "Master Volume"
+      ]
+    },
+    {
+      "ID": 90040,
+      "Entries": [
+        "Adjust Brightness"
+      ]
+    },
+    {
+      "ID": 90050,
+      "Entries": [
+        "Adjust Brightness"
+      ]
+    },
+    {
+      "ID": 90051,
+      "Entries": [
+        "Maximum Brightness"
+      ]
+    },
+    {
+      "ID": 90052,
+      "Entries": [
+        "Adjust Saturation"
+      ]
+    },
+    {
+      "ID": 90090,
+      "Entries": [
+        "Control Assignments"
+      ]
+    },
+    {
+      "ID": 90091,
+      "Entries": [
+        "Control Assignments (Detailed)"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "Device for On-Screen Prompts"
+      ]
+    },
+    {
+      "ID": 90101,
+      "Entries": [
+        "Mouse Sensitivity"
+      ]
+    },
+    {
+      "ID": 90102,
+      "Entries": [
+        "Mouse X-Axis"
+      ]
+    },
+    {
+      "ID": 90103,
+      "Entries": [
+        "Mouse Y-Axis"
+      ]
+    },
+    {
+      "ID": 90104,
+      "Entries": [
+        "Key Bindings"
+      ]
+    },
+    {
+      "ID": 90130,
+      "Entries": [
+        "Matchmaking Region"
+      ]
+    },
+    {
+      "ID": 90131,
+      "Entries": [
+        "Voice Chat"
+      ]
+    },
+    {
+      "ID": 90132,
+      "Entries": [
+        "Display Player Names"
+      ]
+    },
+    {
+      "ID": 90133,
+      "Entries": [
+        "Launch Setting"
+      ]
+    },
+    {
+      "ID": 90134,
+      "Entries": [
+        "Data Usage Agreement"
+      ]
+    },
+    {
+      "ID": 90135,
+      "Entries": [
+        "Software Usage Agreement"
+      ]
+    },
+    {
+      "ID": 90136,
+      "Entries": [
+        "Privacy Policy"
+      ]
+    },
+    {
+      "ID": 90150,
+      "Entries": [
+        "Text"
+      ]
+    },
+    {
+      "ID": 90151,
+      "Entries": [
+        "Voice"
+      ]
+    },
+    {
+      "ID": 90200,
+      "Entries": [
+        "Screen Mode"
+      ]
+    },
+    {
+      "ID": 90201,
+      "Entries": [
+        "Resolution"
+      ]
+    },
+    {
+      "ID": 90202,
+      "Entries": [
+        "Auto-Detect Best Rendering Settings"
+      ]
+    },
+    {
+      "ID": 90203,
+      "Entries": [
+        "Quality Settings"
+      ]
+    },
+    {
+      "ID": 90204,
+      "Entries": [
+        "Quality Settings (Detailed)"
+      ]
+    },
+    {
+      "ID": 90205,
+      "Entries": [
+        "Perfomance Settings"
+      ]
+    },
+    {
+      "ID": 90206,
+      "Entries": [
+        "Ray Tracing"
+      ]
+    },
+    {
+      "ID": 90207,
+      "Entries": [
+        "Limit Frame Rate"
+      ]
+    },
+    {
+      "ID": 90208,
+      "Entries": [
+        "V-Sync"
+      ]
+    },
+    {
+      "ID": 90210,
+      "Entries": [
+        "Texture Quality"
+      ]
+    },
+    {
+      "ID": 90211,
+      "Entries": [
+        "Antialiasing"
+      ]
+    },
+    {
+      "ID": 90212,
+      "Entries": [
+        "SSAO"
+      ]
+    },
+    {
+      "ID": 90213,
+      "Entries": [
+        "Depth of Field"
+      ]
+    },
+    {
+      "ID": 90214,
+      "Entries": [
+        "Motion Blur"
+      ]
+    },
+    {
+      "ID": 90215,
+      "Entries": [
+        "Shadow Quality"
+      ]
+    },
+    {
+      "ID": 90216,
+      "Entries": [
+        "Lighting Quality"
+      ]
+    },
+    {
+      "ID": 90217,
+      "Entries": [
+        "Effects Quality"
+      ]
+    },
+    {
+      "ID": 90218,
+      "Entries": [
+        "Volumetric Fog Quality"
+      ]
+    },
+    {
+      "ID": 90219,
+      "Entries": [
+        "Reflection Quality"
+      ]
+    },
+    {
+      "ID": 90220,
+      "Entries": [
+        "Water Surface Quality"
+      ]
+    },
+    {
+      "ID": 90221,
+      "Entries": [
+        "Shader Quality"
+      ]
+    },
+    {
+      "ID": 90222,
+      "Entries": [
+        "Ray Tracing Quality"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "DAMAGE CONTROL"
+      ]
+    },
+    {
+      "ID": 92001,
+      "Entries": [
+        "CORE EXPANSIONS"
+      ]
+    },
+    {
+      "ID": 92002,
+      "Entries": [
+        "SYSTEM UNLOCKS"
+      ]
+    },
+    {
+      "ID": 92003,
+      "Entries": [
+        "[Tuning] EN attack output"
+      ]
+    },
+    {
+      "ID": 92004,
+      "Entries": [
+        "ALL"
+      ]
+    },
+    {
+      "ID": 92005,
+      "Entries": [
+        "[Tuning] EN capacity"
+      ]
+    },
+    {
+      "ID": 92006,
+      "Entries": [
+        "[Tuning] Stealth suitable"
+      ]
+    },
+    {
+      "ID": 92007,
+      "Entries": [
+        "[Tuning] Loading"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Aperture Angle"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Tilt"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "[Photo mode] Proximity strength"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "[Photo mode] Distance intensity"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Focal Length"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "f-Number"
+      ]
+    },
+    {
+      "ID": 100006,
+      "Entries": [
+        "[Photo mode] Aperture value"
+      ]
+    },
+    {
+      "ID": 100007,
+      "Entries": [
+        "Exposure"
+      ]
+    },
+    {
+      "ID": 100008,
+      "Entries": [
+        "Hue"
+      ]
+    },
+    {
+      "ID": 100009,
+      "Entries": [
+        "Brightness"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Saturation"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Contrast"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "[Photo mode] Color scale R"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "[Photo mode] Color scale G"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "[Photo mode] Color scale B"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "R"
+      ]
+    },
+    {
+      "ID": 100016,
+      "Entries": [
+        "G"
+      ]
+    },
+    {
+      "ID": 100017,
+      "Entries": [
+        "B"
+      ]
+    },
+    {
+      "ID": 100018,
+      "Entries": [
+        "[Photo mode] Luminous level"
+      ]
+    },
+    {
+      "ID": 100019,
+      "Entries": [
+        "Smoothness"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Intensity"
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "Camera Blur ON/OFF"
+      ]
+    },
+    {
+      "ID": 100022,
+      "Entries": [
+        "Camera Blur Intensity"
+      ]
+    },
+    {
+      "ID": 100023,
+      "Entries": [
+        "Camera Blur Range"
+      ]
+    },
+    {
+      "ID": 100024,
+      "Entries": [
+        "Horizontal Camera Blur"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Vertical Camera Blur"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "Camera Blur Depth"
+      ]
+    },
+    {
+      "ID": 100027,
+      "Entries": [
+        "Brightness"
+      ]
+    },
+    {
+      "ID": 100028,
+      "Entries": [
+        "Threshold"
+      ]
+    },
+    {
+      "ID": 100029,
+      "Entries": [
+        "Saturation"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Smoothness"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Craft"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "AI"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Capacity"
+      ]
+    },
+    {
+      "ID": 120001,
+      "Entries": [
+        "Match Format"
+      ]
+    },
+    {
+      "ID": 120002,
+      "Entries": [
+        "Time Limit"
+      ]
+    },
+    {
+      "ID": 120003,
+      "Entries": [
+        "Map"
+      ]
+    },
+    {
+      "ID": 120004,
+      "Entries": [
+        "Member Rotation"
+      ]
+    },
+    {
+      "ID": 120005,
+      "Entries": [
+        "Access"
+      ]
+    },
+    {
+      "ID": 120006,
+      "Entries": [
+        "Keywords"
+      ]
+    },
+    {
+      "ID": 120090,
+      "Entries": [
+        "Create"
+      ]
+    },
+    {
+      "ID": 120091,
+      "Entries": [
+        "Search"
+      ]
+    },
+    {
+      "ID": 120092,
+      "Entries": [
+        "Change"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "[Room search results] Host ID/Keyword"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "[Room search results] Current number of people in the room"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Match Mode"
+      ]
+    },
+    {
+      "ID": 180001,
+      "Entries": [
+        "Match Rules"
+      ]
+    },
+    {
+      "ID": 180002,
+      "Entries": [
+        "Match Date/Time"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Item to Report"
+      ]
+    },
+    {
+      "ID": 190001,
+      "Entries": [
+        "Reason for Report"
+      ]
+    },
+    {
+      "ID": 190002,
+      "Entries": [
+        "[Notification] Reason 2"
+      ]
+    },
+    {
+      "ID": 190003,
+      "Entries": [
+        "[Notification] Reason 3"
+      ]
+    },
+    {
+      "ID": 190010,
+      "Entries": [
+        "Report"
+      ]
+    }
+  ]
+}

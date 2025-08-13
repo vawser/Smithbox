@@ -1,0 +1,41 @@
+{
+  "Name": "ItemLotTicketParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Cheap -- ﾁｰﾌﾟ"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Normal -- ﾉｰﾏﾙ"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "High -- ﾊｲ"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Rare -- ﾚｱ"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "S Rare -- Sﾚｱ"
+      ]
+    }
+  ]
+}

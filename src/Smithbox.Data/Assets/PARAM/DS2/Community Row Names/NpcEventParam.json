@@ -1,0 +1,443 @@
+{
+  "Name": "NpcEventParam",
+  "Entries": [
+    {
+      "ID": 30700000,
+      "Entries": [
+        "Head of Vengarl (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 30700001,
+      "Entries": [
+        "Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Manscorpion Tark (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 50200001,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Grave Warden Agdayne (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 50600001,
+      "Entries": [
+        "Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70400000,
+      "Entries": [
+        "Laddersmith Gilligan (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 70400001,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70401000,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70401001,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70401002,
+      "Entries": [
+        "Laddersmith Gilligan (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 70401003,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70500000,
+      "Entries": [
+        "Strowen"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "Chancellor Wellager (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 72110001,
+      "Entries": [
+        "Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "Captain Drummond (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 72400001,
+      "Entries": [
+        "Captain Drummond"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 72500001,
+      "Entries": [
+        "Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "Mirror Knight Servant 1 [Unused]"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "Mirror Knight Servant 2 [Unused]"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "Crestfallen Saulden (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 74100001,
+      "Entries": [
+        "Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "Creighton the Wanderer (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 74200001,
+      "Entries": [
+        "Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "Benhart of Jugo (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 74300001,
+      "Entries": [
+        "Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 75400000,
+      "Entries": [
+        "Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 75600000,
+      "Entries": [
+        "The Rat King"
+      ]
+    },
+    {
+      "ID": 75700000,
+      "Entries": [
+        "Nadalia, Bride of Ash [Unused]"
+      ]
+    },
+    {
+      "ID": 75800000,
+      "Entries": [
+        "Alsanna, Silent Oracle [Unused]"
+      ]
+    },
+    {
+      "ID": 75900000,
+      "Entries": [
+        "Elana, Queen of Ruin [Unused]"
+      ]
+    },
+    {
+      "ID": 76100000,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76100001,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76100002,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76300001,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76400000,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76430000,
+      "Entries": [
+        "Steady Hand McDuff"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76800000,
+      "Entries": [
+        "Straid of Olaphis (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 76800001,
+      "Entries": [
+        "Straid of Olaphis"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 76900001,
+      "Entries": [
+        "Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77101000,
+      "Entries": [
+        "Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77200000,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 77200001,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 77600000,
+      "Entries": [
+        "Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 77600001,
+      "Entries": [
+        "Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 77700000,
+      "Entries": [
+        "Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "Titchy Gren"
+      ]
+    },
+    {
+      "ID": 78400000,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "Blue Sentinel Targray (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 78500001,
+      "Entries": [
+        "Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 78600000,
+      "Entries": [
+        "Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 78601000,
+      "Entries": [
+        "Victor's Stone"
+      ]
+    },
+    {
+      "ID": 78602000,
+      "Entries": [
+        "Altar of Sunlight (Learn Gesture)"
+      ]
+    },
+    {
+      "ID": 78602001,
+      "Entries": [
+        "Altar of Sunlight"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "Masterless Glencour"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 81200000,
+      "Entries": [
+        "Pilgrim Bellclaire"
+      ]
+    },
+    {
+      "ID": 81300000,
+      "Entries": [
+        "Felicia the Brave"
+      ]
+    },
+    {
+      "ID": 81400000,
+      "Entries": [
+        "Melinda the Butcher"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "Vorgel the Sinner"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "Merciless Roenna"
+      ]
+    },
+    {
+      "ID": 82200000,
+      "Entries": [
+        "Peculiar Kindalur"
+      ]
+    },
+    {
+      "ID": 82300000,
+      "Entries": [
+        "Dragonfang Villard"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

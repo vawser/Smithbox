@@ -1,0 +1,2179 @@
+{
+  "Name": "AssetModelSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3100001,
+      "Entries": [
+        "Antenna facility"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "giant mining machine"
+      ]
+    },
+    {
+      "ID": 13160000,
+      "Entries": [
+        "searchlight"
+      ]
+    },
+    {
+      "ID": 13161000,
+      "Entries": [
+        "searchlight"
+      ]
+    },
+    {
+      "ID": 13161001,
+      "Entries": [
+        "Searchlight (lightweight)"
+      ]
+    },
+    {
+      "ID": 13310000,
+      "Entries": [
+        "AEG013_310 Power generation facility"
+      ]
+    },
+    {
+      "ID": 13318000,
+      "Entries": [
+        "AEG013_318 Power generation facility"
+      ]
+    },
+    {
+      "ID": 13411000,
+      "Entries": [
+        "Parabolic facility"
+      ]
+    },
+    {
+      "ID": 13513000,
+      "Entries": [
+        "wall gate"
+      ]
+    },
+    {
+      "ID": 13540000,
+      "Entries": [
+        "MT wreckage"
+      ]
+    },
+    {
+      "ID": 16010000,
+      "Entries": [
+        "AEG016_010 AC debris raising smoke"
+      ]
+    },
+    {
+      "ID": 22140000,
+      "Entries": [
+        "Light_for wide range"
+      ]
+    },
+    {
+      "ID": 22140001,
+      "Entries": [
+        "Light_for wide range (lightweight)"
+      ]
+    },
+    {
+      "ID": 22141000,
+      "Entries": [
+        "Light_1 light"
+      ]
+    },
+    {
+      "ID": 22141001,
+      "Entries": [
+        "Light_1 light (lightweight)"
+      ]
+    },
+    {
+      "ID": 22142000,
+      "Entries": [
+        "Search light_enemy search light"
+      ]
+    },
+    {
+      "ID": 22142001,
+      "Entries": [
+        "Searchlight_Small light"
+      ]
+    },
+    {
+      "ID": 22142002,
+      "Entries": [
+        "Searchlight_Indoor use_With light source"
+      ]
+    },
+    {
+      "ID": 22143000,
+      "Entries": [
+        "hydro power cube"
+      ]
+    },
+    {
+      "ID": 22144000,
+      "Entries": [
+        "mounted light"
+      ]
+    },
+    {
+      "ID": 22144001,
+      "Entries": [
+        "Installed light (no light source)"
+      ]
+    },
+    {
+      "ID": 22144002,
+      "Entries": [
+        "Installed light (lightweight)"
+      ]
+    },
+    {
+      "ID": 22146000,
+      "Entries": [
+        "Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 22146001,
+      "Entries": [
+        "Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 22146002,
+      "Entries": [
+        "Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 22150000,
+      "Entries": [
+        "Light_for wide range (snow)"
+      ]
+    },
+    {
+      "ID": 22150001,
+      "Entries": [
+        "Light_for wide range (snow) (lightweight)"
+      ]
+    },
+    {
+      "ID": 22151000,
+      "Entries": [
+        "Light_1 light (snow)"
+      ]
+    },
+    {
+      "ID": 22151001,
+      "Entries": [
+        "Light_1 light (snow) (lightweight)"
+      ]
+    },
+    {
+      "ID": 22152000,
+      "Entries": [
+        "Searchlight (snow)"
+      ]
+    },
+    {
+      "ID": 22152001,
+      "Entries": [
+        "Searchlight (snow)_Small light"
+      ]
+    },
+    {
+      "ID": 22153000,
+      "Entries": [
+        "Hydro power cube (snow)"
+      ]
+    },
+    {
+      "ID": 22154000,
+      "Entries": [
+        "Installed light (snow)"
+      ]
+    },
+    {
+      "ID": 22154001,
+      "Entries": [
+        "Installed light (snow) (no light source)"
+      ]
+    },
+    {
+      "ID": 22154002,
+      "Entries": [
+        "Installed light (snow) (lightweight)"
+      ]
+    },
+    {
+      "ID": 23102000,
+      "Entries": [
+        "Factory equipment_Watchtower 3"
+      ]
+    },
+    {
+      "ID": 23110000,
+      "Entries": [
+        "Factory equipment_watchtower 1 snow"
+      ]
+    },
+    {
+      "ID": 23110001,
+      "Entries": [
+        "Factory equipment_Watchtower 1 snow (light)"
+      ]
+    },
+    {
+      "ID": 23112000,
+      "Entries": [
+        "Factory equipment_watchtower 3 snow"
+      ]
+    },
+    {
+      "ID": 23120000,
+      "Entries": [
+        "small truss antenna"
+      ]
+    },
+    {
+      "ID": 23120001,
+      "Entries": [
+        "small truss antenna"
+      ]
+    },
+    {
+      "ID": 23130000,
+      "Entries": [
+        "truss antenna koyuki"
+      ]
+    },
+    {
+      "ID": 23650000,
+      "Entries": [
+        "heliport"
+      ]
+    },
+    {
+      "ID": 23660000,
+      "Entries": [
+        "helipad with snow"
+      ]
+    },
+    {
+      "ID": 23661000,
+      "Entries": [
+        "With helipad hatch for missions"
+      ]
+    },
+    {
+      "ID": 27640000,
+      "Entries": [
+        "Heavy oil splash"
+      ]
+    },
+    {
+      "ID": 32212000,
+      "Entries": [
+        "Sortie production assets (contact destruction)"
+      ]
+    },
+    {
+      "ID": 32270000,
+      "Entries": [
+        "Lift (tilt)"
+      ]
+    },
+    {
+      "ID": 33321000,
+      "Entries": [
+        "PP (control rod)"
+      ]
+    },
+    {
+      "ID": 33322000,
+      "Entries": [
+        "PP (nuclear reactor)"
+      ]
+    },
+    {
+      "ID": 33323000,
+      "Entries": [
+        "PP (control rod_after destruction)"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        "Landing ship (after crash)"
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "Chimney (high)"
+      ]
+    },
+    {
+      "ID": 33510000,
+      "Entries": [
+        "Chimney (middle)"
+      ]
+    },
+    {
+      "ID": 33520000,
+      "Entries": [
+        "chimney (low)"
+      ]
+    },
+    {
+      "ID": 33530000,
+      "Entries": [
+        "Chimney (thick)"
+      ]
+    },
+    {
+      "ID": 33640000,
+      "Entries": [
+        "gantry crane"
+      ]
+    },
+    {
+      "ID": 33770000,
+      "Entries": [
+        "Wind power generation (middle_windmill)"
+      ]
+    },
+    {
+      "ID": 33820000,
+      "Entries": [
+        "Ice field mining area_elevator"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Power equipment (second generator)"
+      ]
+    },
+    {
+      "ID": 34101000,
+      "Entries": [
+        "1st generator (core connection)"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "1st generator (base)"
+      ]
+    },
+    {
+      "ID": 34121000,
+      "Entries": [
+        "1st generator (cable)"
+      ]
+    },
+    {
+      "ID": 34150000,
+      "Entries": [
+        "Power equipment (1st generator)"
+      ]
+    },
+    {
+      "ID": 34201000,
+      "Entries": [
+        "Reinforced pile (broken)"
+      ]
+    },
+    {
+      "ID": 34202000,
+      "Entries": [
+        "Reinforced pile (broken)"
+      ]
+    },
+    {
+      "ID": 34203000,
+      "Entries": [
+        "Reinforced pile (broken)"
+      ]
+    },
+    {
+      "ID": 34236000,
+      "Entries": [
+        "Elevator code (destruction_back)"
+      ]
+    },
+    {
+      "ID": 34281000,
+      "Entries": [
+        "Protective pillar (low)"
+      ]
+    },
+    {
+      "ID": 34284000,
+      "Entries": [
+        "Protective pillar lighting (with light source)"
+      ]
+    },
+    {
+      "ID": 34288000,
+      "Entries": [
+        "Protective pillar lighting (high_damaged)"
+      ]
+    },
+    {
+      "ID": 34521000,
+      "Entries": [
+        "Lighting (District 2_Damaged)"
+      ]
+    },
+    {
+      "ID": 34522000,
+      "Entries": [
+        "Lighting_With light source (Second District)"
+      ]
+    },
+    {
+      "ID": 34048000,
+      "Entries": [
+        "Swamp_table"
+      ]
+    },
+    {
+      "ID": 34049000,
+      "Entries": [
+        "Swamp_back"
+      ]
+    },
+    {
+      "ID": 34581000,
+      "Entries": [
+        "Daimon_back"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "Cable (broken)"
+      ]
+    },
+    {
+      "ID": 35560000,
+      "Entries": [
+        "Landing ship wreckage_front 1"
+      ]
+    },
+    {
+      "ID": 35570000,
+      "Entries": [
+        "Landing ship wreckage_middle 1"
+      ]
+    },
+    {
+      "ID": 35580000,
+      "Entries": [
+        "Landing ship wreckage_back 1"
+      ]
+    },
+    {
+      "ID": 35593000,
+      "Entries": [
+        "For landing ship back missions_for distant views)"
+      ]
+    },
+    {
+      "ID": 39110000,
+      "Entries": [
+        "Melange tank (stationary)"
+      ]
+    },
+    {
+      "ID": 39470000,
+      "Entries": [
+        "Lighting (downward)"
+      ]
+    },
+    {
+      "ID": 39471000,
+      "Entries": [
+        "Lighting (upward)"
+      ]
+    },
+    {
+      "ID": 39473000,
+      "Entries": [
+        "Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 39473001,
+      "Entries": [
+        "Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 39474000,
+      "Entries": [
+        "Hanging lighting (white light_flashing)"
+      ]
+    },
+    {
+      "ID": 39474001,
+      "Entries": [
+        "Hanging lighting (white light_flashing)"
+      ]
+    },
+    {
+      "ID": 39475000,
+      "Entries": [
+        "Lighting (for humans)"
+      ]
+    },
+    {
+      "ID": 39585000,
+      "Entries": [
+        "Cable (broken)"
+      ]
+    },
+    {
+      "ID": 39586000,
+      "Entries": [
+        "Cable (broken)"
+      ]
+    },
+    {
+      "ID": 39587000,
+      "Entries": [
+        "Cable (broken)"
+      ]
+    },
+    {
+      "ID": 39588000,
+      "Entries": [
+        "Cable (broken)"
+      ]
+    },
+    {
+      "ID": 39980000,
+      "Entries": [
+        "For effect placement (ground blizzard)"
+      ]
+    },
+    {
+      "ID": 39981000,
+      "Entries": [
+        "For effect placement (smoke)"
+      ]
+    },
+    {
+      "ID": 39982000,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed)"
+      ]
+    },
+    {
+      "ID": 39982001,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed)"
+      ]
+    },
+    {
+      "ID": 39982002,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed)"
+      ]
+    },
+    {
+      "ID": 39982003,
+      "Entries": [
+        "For effect placement (after the barrier is destroyed)"
+      ]
+    },
+    {
+      "ID": 39983000,
+      "Entries": [
+        "For effect placement (decontamination flame)"
+      ]
+    },
+    {
+      "ID": 39983001,
+      "Entries": [
+        "For effect placement (decontamination flame)"
+      ]
+    },
+    {
+      "ID": 39983002,
+      "Entries": [
+        "For effect placement (decontamination flame)"
+      ]
+    },
+    {
+      "ID": 39984000,
+      "Entries": [
+        "For effect placement (barrier sparks)"
+      ]
+    },
+    {
+      "ID": 39989000,
+      "Entries": [
+        "For effect placement (white smoke)"
+      ]
+    },
+    {
+      "ID": 53001000,
+      "Entries": [
+        "Lakeside base_building_1"
+      ]
+    },
+    {
+      "ID": 53002000,
+      "Entries": [
+        "Lakeside base_building_2"
+      ]
+    },
+    {
+      "ID": 53070000,
+      "Entries": [
+        "Lakeside Twin Towers"
+      ]
+    },
+    {
+      "ID": 53071000,
+      "Entries": [
+        "In front of the lakeside twin tower foundation"
+      ]
+    },
+    {
+      "ID": 53072000,
+      "Entries": [
+        "Lakeside twin tower foundation rear"
+      ]
+    },
+    {
+      "ID": 53201000,
+      "Entries": [
+        "Lakeside large facility"
+      ]
+    },
+    {
+      "ID": 53100000,
+      "Entries": [
+        "Lakeside base_Boss area watchtower"
+      ]
+    },
+    {
+      "ID": 53701000,
+      "Entries": [
+        "Lakeside boss area building"
+      ]
+    },
+    {
+      "ID": 53701001,
+      "Entries": [
+        "Lakeside boss area building"
+      ]
+    },
+    {
+      "ID": 53900000,
+      "Entries": [
+        "Search light_enemy search light"
+      ]
+    },
+    {
+      "ID": 53900001,
+      "Entries": [
+        "Searchlight_Enemy search light lightweight"
+      ]
+    },
+    {
+      "ID": 53919000,
+      "Entries": [
+        "Lakeside battery light"
+      ]
+    },
+    {
+      "ID": 53905000,
+      "Entries": [
+        "Lakeside data center bottom"
+      ]
+    },
+    {
+      "ID": 54418000,
+      "Entries": [
+        "Lakeside boss area building"
+      ]
+    },
+    {
+      "ID": 54700000,
+      "Entries": [
+        "Lakeside Boss Area Flaming Asset"
+      ]
+    },
+    {
+      "ID": 62000000,
+      "Entries": [
+        "Lighting tower A"
+      ]
+    },
+    {
+      "ID": 62001000,
+      "Entries": [
+        "Lighting tower B"
+      ]
+    },
+    {
+      "ID": 62001001,
+      "Entries": [
+        "Lighting tower B (lightweight)"
+      ]
+    },
+    {
+      "ID": 62004000,
+      "Entries": [
+        "ceiling lighting"
+      ]
+    },
+    {
+      "ID": 62320000,
+      "Entries": [
+        "crane"
+      ]
+    },
+    {
+      "ID": 62323000,
+      "Entries": [
+        "Wincher crane balance"
+      ]
+    },
+    {
+      "ID": 62800000,
+      "Entries": [
+        "[VOB] Smoke dummy poly"
+      ]
+    },
+    {
+      "ID": 63225000,
+      "Entries": [
+        "VOB insertion port"
+      ]
+    },
+    {
+      "ID": 65630000,
+      "Entries": [
+        "c3020 communist MT_original form_remains"
+      ]
+    },
+    {
+      "ID": 65631000,
+      "Entries": [
+        "c3400 quadruped MT_original form_remains"
+      ]
+    },
+    {
+      "ID": 65632000,
+      "Entries": [
+        "c3020 Communist MT_Scattered_No snow"
+      ]
+    },
+    {
+      "ID": 65632001,
+      "Entries": [
+        "c3021 Communist MT_Scattered_No snow"
+      ]
+    },
+    {
+      "ID": 65500000,
+      "Entries": [
+        "[Snowy Mountain] Large helicopter wreckage"
+      ]
+    },
+    {
+      "ID": 65513000,
+      "Entries": [
+        "[Snowy Mountain] Large helicopter wreckage (non-destructive)_Normal"
+      ]
+    },
+    {
+      "ID": 65600000,
+      "Entries": [
+        "[Snowy Mountain] Jagano remains (non-destructive)"
+      ]
+    },
+    {
+      "ID": 65610000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65611000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65650000,
+      "Entries": [
+        "Wreckage_c3050 regular army MT_original form"
+      ]
+    },
+    {
+      "ID": 65651000,
+      "Entries": [
+        "Wreckage_c3050 Regular Army MT_Scattered"
+      ]
+    },
+    {
+      "ID": 65660000,
+      "Entries": [
+        "Wreckage_c3250 regular army AC_original form"
+      ]
+    },
+    {
+      "ID": 65661000,
+      "Entries": [
+        "Wreckage_c3250 Regular Army AC_Scattered"
+      ]
+    },
+    {
+      "ID": 65800000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 65801000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 65802000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke)"
+      ]
+    },
+    {
+      "ID": 65802001,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke)"
+      ]
+    },
+    {
+      "ID": 65802002,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipori (for building smoke)"
+      ]
+    },
+    {
+      "ID": 65803000,
+      "Entries": [
+        "[Snowy Mountain] Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 65810000,
+      "Entries": [
+        "[Snowy Mountain] Damipoly for flowing smoke"
+      ]
+    },
+    {
+      "ID": 66201000,
+      "Entries": [
+        "[VOB] Melange water surface smoke"
+      ]
+    },
+    {
+      "ID": 100009000,
+      "Entries": [
+        "A tier station"
+      ]
+    },
+    {
+      "ID": 100811000,
+      "Entries": [
+        "Light source for A layer orange"
+      ]
+    },
+    {
+      "ID": 100812000,
+      "Entries": [
+        "Light source for A layer white"
+      ]
+    },
+    {
+      "ID": 100810000,
+      "Entries": [
+        "catapult aerial point light"
+      ]
+    },
+    {
+      "ID": 100900000,
+      "Entries": [
+        "Communist MT wreckage"
+      ]
+    },
+    {
+      "ID": 101050001,
+      "Entries": [
+        "8 consecutive lighting_short_no light source"
+      ]
+    },
+    {
+      "ID": 101050002,
+      "Entries": [
+        "8 consecutive lighting_short_with light source"
+      ]
+    },
+    {
+      "ID": 101050003,
+      "Entries": [
+        "8 consecutive lighting_long_no light source"
+      ]
+    },
+    {
+      "ID": 101050004,
+      "Entries": [
+        "8 consecutive lighting_long_with light source"
+      ]
+    },
+    {
+      "ID": 101051001,
+      "Entries": [
+        "Ceiling lighting (yellow)_no light source"
+      ]
+    },
+    {
+      "ID": 101051002,
+      "Entries": [
+        "Ceiling lighting (yellow)_with light source"
+      ]
+    },
+    {
+      "ID": 101052001,
+      "Entries": [
+        "Ceiling lighting (small)_no light source"
+      ]
+    },
+    {
+      "ID": 101052002,
+      "Entries": [
+        "Ceiling lighting (small)_with light source"
+      ]
+    },
+    {
+      "ID": 101053000,
+      "Entries": [
+        "Side lighting (white)"
+      ]
+    },
+    {
+      "ID": 101053001,
+      "Entries": [
+        "Side lighting (white)"
+      ]
+    },
+    {
+      "ID": 101053002,
+      "Entries": [
+        "Side lighting (white)"
+      ]
+    },
+    {
+      "ID": 101054000,
+      "Entries": [
+        "red light"
+      ]
+    },
+    {
+      "ID": 101055000,
+      "Entries": [
+        "Lighting (downward)"
+      ]
+    },
+    {
+      "ID": 101056000,
+      "Entries": [
+        "Lighting (upward)"
+      ]
+    },
+    {
+      "ID": 101057000,
+      "Entries": [
+        "Side lighting (yellow)"
+      ]
+    },
+    {
+      "ID": 101058000,
+      "Entries": [
+        "Ceiling lighting (small_flashing)"
+      ]
+    },
+    {
+      "ID": 101090000,
+      "Entries": [
+        "Shielding asset (red light)"
+      ]
+    },
+    {
+      "ID": 101100000,
+      "Entries": [
+        "Melange tank (hanging)"
+      ]
+    },
+    {
+      "ID": 101110000,
+      "Entries": [
+        "Melange tank (stationary)"
+      ]
+    },
+    {
+      "ID": 101112000,
+      "Entries": [
+        "Big bridge_small crane"
+      ]
+    },
+    {
+      "ID": 101113000,
+      "Entries": [
+        "Exhaust port (BB)"
+      ]
+    },
+    {
+      "ID": 101113001,
+      "Entries": [
+        "Exhaust port (tutorial)"
+      ]
+    },
+    {
+      "ID": 101210000,
+      "Entries": [
+        "Railroad bulletin board"
+      ]
+    },
+    {
+      "ID": 101260000,
+      "Entries": [
+        "street light"
+      ]
+    },
+    {
+      "ID": 101261000,
+      "Entries": [
+        "Street light_pillar side"
+      ]
+    },
+    {
+      "ID": 101142000,
+      "Entries": [
+        "On the continental shell_Electric warhead for injection"
+      ]
+    },
+    {
+      "ID": 101440000,
+      "Entries": [
+        "Transmission (placed)"
+      ]
+    },
+    {
+      "ID": 101441000,
+      "Entries": [
+        "Transmission (position_gear)"
+      ]
+    },
+    {
+      "ID": 101909000,
+      "Entries": [
+        "Distant view_after destroying the mining ship"
+      ]
+    },
+    {
+      "ID": 102340000,
+      "Entries": [
+        "Heavy oil splash"
+      ]
+    },
+    {
+      "ID": 109980009,
+      "Entries": [
+        "Ceiling collapse rubble"
+      ]
+    },
+    {
+      "ID": 109981000,
+      "Entries": [
+        "plume"
+      ]
+    },
+    {
+      "ID": 109981001,
+      "Entries": [
+        "plume"
+      ]
+    },
+    {
+      "ID": 109982000,
+      "Entries": [
+        "spark"
+      ]
+    },
+    {
+      "ID": 109988000,
+      "Entries": [
+        "collapse"
+      ]
+    },
+    {
+      "ID": 109989000,
+      "Entries": [
+        "collapse"
+      ]
+    },
+    {
+      "ID": 120095000,
+      "Entries": [
+        "A layer tutorial_exit lighting"
+      ]
+    },
+    {
+      "ID": 120106000,
+      "Entries": [
+        "Crane (red light)"
+      ]
+    },
+    {
+      "ID": 120109000,
+      "Entries": [
+        "spotlight"
+      ]
+    },
+    {
+      "ID": 120153001,
+      "Entries": [
+        "Ceiling lighting (minimum)_no light source",
+        "Ceiling lighting (minimum_weak)"
+      ]
+    },
+    {
+      "ID": 120153002,
+      "Entries": [
+        "Ceiling lighting (minimum)_with light source"
+      ]
+    },
+    {
+      "ID": 120154000,
+      "Entries": [
+        "Ceiling lighting (white_long)_no light source"
+      ]
+    },
+    {
+      "ID": 120154001,
+      "Entries": [
+        "Ceiling lighting (white)_no light source"
+      ]
+    },
+    {
+      "ID": 120154002,
+      "Entries": [
+        "Ceiling lighting (white)_with light source"
+      ]
+    },
+    {
+      "ID": 120155000,
+      "Entries": [
+        "stage lighting"
+      ]
+    },
+    {
+      "ID": 101240000,
+      "Entries": [
+        "Side tank (red light)"
+      ]
+    },
+    {
+      "ID": 120262000,
+      "Entries": [
+        "smoke after landing"
+      ]
+    },
+    {
+      "ID": 120268000,
+      "Entries": [
+        "tank hanging device"
+      ]
+    },
+    {
+      "ID": 120298000,
+      "Entries": [
+        "chimney smoke"
+      ]
+    },
+    {
+      "ID": 120298001,
+      "Entries": [
+        "Chimney (red light)"
+      ]
+    },
+    {
+      "ID": 120303000,
+      "Entries": [
+        "Damaged cable earth leakage"
+      ]
+    },
+    {
+      "ID": 120329000,
+      "Entries": [
+        "A layer__point light source"
+      ]
+    },
+    {
+      "ID": 120487000,
+      "Entries": [
+        "Overhang"
+      ]
+    },
+    {
+      "ID": 120682000,
+      "Entries": [
+        "mining crane"
+      ]
+    },
+    {
+      "ID": 120618000,
+      "Entries": [
+        "Aisle (long)"
+      ]
+    },
+    {
+      "ID": 120807000,
+      "Entries": [
+        "up in flames"
+      ]
+    },
+    {
+      "ID": 120847000,
+      "Entries": [
+        "blast furnace"
+      ]
+    },
+    {
+      "ID": 120961000,
+      "Entries": [
+        "Elevator door red light"
+      ]
+    },
+    {
+      "ID": 120962000,
+      "Entries": [
+        "Passage in front of elevator lighting"
+      ]
+    },
+    {
+      "ID": 120963001,
+      "Entries": [
+        "Elevator lighting_no light source"
+      ]
+    },
+    {
+      "ID": 120963002,
+      "Entries": [
+        "Elevator lighting_with light source"
+      ]
+    },
+    {
+      "ID": 120969000,
+      "Entries": [
+        "Ground floor with continental shell elevator switch"
+      ]
+    },
+    {
+      "ID": 120960000,
+      "Entries": [
+        "Wall with continental shell elevator switch"
+      ]
+    },
+    {
+      "ID": 200004000,
+      "Entries": [
+        "wall breakwater large"
+      ]
+    },
+    {
+      "ID": 200055000,
+      "Entries": [
+        "city ​​facility large antenna"
+      ]
+    },
+    {
+      "ID": 200063000,
+      "Entries": [
+        "bridge"
+      ]
+    },
+    {
+      "ID": 200070000,
+      "Entries": [
+        "Facility parts small"
+      ]
+    },
+    {
+      "ID": 200071000,
+      "Entries": [
+        "Facility parts small with antenna"
+      ]
+    },
+    {
+      "ID": 200071001,
+      "Entries": [
+        "Facility parts small with antenna"
+      ]
+    },
+    {
+      "ID": 200120000,
+      "Entries": [
+        "Antenna small A"
+      ]
+    },
+    {
+      "ID": 200500000,
+      "Entries": [
+        "orbital elevator"
+      ]
+    },
+    {
+      "ID": 203402000,
+      "Entries": [
+        "Power supply facility_damage"
+      ]
+    },
+    {
+      "ID": 204512000,
+      "Entries": [
+        "Half-destructed power equipment"
+      ]
+    },
+    {
+      "ID": 204521000,
+      "Entries": [
+        "rotating water device"
+      ]
+    },
+    {
+      "ID": 223010000,
+      "Entries": [
+        "[B tier] Sailor building (column building)"
+      ]
+    },
+    {
+      "ID": 223425000,
+      "Entries": [
+        "Dome floor for invasion lower level destruction A"
+      ]
+    },
+    {
+      "ID": 223426000,
+      "Entries": [
+        "Dome floor for invasion upper level destruction A"
+      ]
+    },
+    {
+      "ID": 223800000,
+      "Entries": [
+        "[B layer] Spotlight 1st grade"
+      ]
+    },
+    {
+      "ID": 223801000,
+      "Entries": [
+        "[B layer] Spotlight 2nd grade"
+      ]
+    },
+    {
+      "ID": 224900000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation"
+      ]
+    },
+    {
+      "ID": 224901000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation"
+      ]
+    },
+    {
+      "ID": 224902000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation"
+      ]
+    },
+    {
+      "ID": 233110000,
+      "Entries": [
+        "[B layer] General purpose_Construction scaffolding_35m"
+      ]
+    },
+    {
+      "ID": 233115000,
+      "Entries": [
+        "[B layer] General purpose_Construction scaffolding_20m"
+      ]
+    },
+    {
+      "ID": 233980000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation"
+      ]
+    },
+    {
+      "ID": 234970000,
+      "Entries": [
+        "c3600 construction machine spider_normal debris"
+      ]
+    },
+    {
+      "ID": 234971000,
+      "Entries": [
+        "c3600 construction machine spider_scattering type"
+      ]
+    },
+    {
+      "ID": 234980000,
+      "Entries": [
+        "c4150 special attack MT_normal wreckage"
+      ]
+    },
+    {
+      "ID": 234981000,
+      "Entries": [
+        "c4150 special attack MT_scattering type"
+      ]
+    },
+    {
+      "ID": 300270000,
+      "Entries": [
+        "C layer communication device"
+      ]
+    },
+    {
+      "ID": 300271000,
+      "Entries": [
+        "C layer communication device"
+      ]
+    },
+    {
+      "ID": 410170000,
+      "Entries": [
+        "[D layer] EV_red light"
+      ]
+    },
+    {
+      "ID": 410208000,
+      "Entries": [
+        "[D layer] Passage_Truss"
+      ]
+    },
+    {
+      "ID": 410312000,
+      "Entries": [
+        "[D layer] Crane"
+      ]
+    },
+    {
+      "ID": 410361000,
+      "Entries": [
+        "[D layer] Under the floor_white smoke"
+      ]
+    },
+    {
+      "ID": 410381000,
+      "Entries": [
+        "[D layer] Living weapon ceiling"
+      ]
+    },
+    {
+      "ID": 410386000,
+      "Entries": [
+        "[D layer] Biological weapon ceiling_code"
+      ]
+    },
+    {
+      "ID": 410420000,
+      "Entries": [
+        "[D layer] EV_red light"
+      ]
+    },
+    {
+      "ID": 410450000,
+      "Entries": [
+        "[D layer] Power plant_furnace"
+      ]
+    },
+    {
+      "ID": 410470000,
+      "Entries": [
+        "[D layer] Vertical hole_Beam upward + 100m column"
+      ]
+    },
+    {
+      "ID": 410471000,
+      "Entries": [
+        "[D layer] Vertical hole_beam downward + 100m column"
+      ]
+    },
+    {
+      "ID": 410474000,
+      "Entries": [
+        "[D layer] Vertical hole_small room + 100m wall"
+      ]
+    },
+    {
+      "ID": 410551000,
+      "Entries": [
+        "[D layer] Piping"
+      ]
+    },
+    {
+      "ID": 410602000,
+      "Entries": [
+        "[D layer] Overhead crane"
+      ]
+    },
+    {
+      "ID": 410776000,
+      "Entries": [
+        "[D layer] Vertical hole_Beam upward + 100m column"
+      ]
+    },
+    {
+      "ID": 410776001,
+      "Entries": [
+        "[D layer] Vertical hole_beam downward + 100m column"
+      ]
+    },
+    {
+      "ID": 410777000,
+      "Entries": [
+        "[D layer] Vertical hole_small room + 100m wall"
+      ]
+    },
+    {
+      "ID": 410861000,
+      "Entries": [
+        "[D layer] Destruction target"
+      ]
+    },
+    {
+      "ID": 410862000,
+      "Entries": [
+        "[D layer] Destruction target"
+      ]
+    },
+    {
+      "ID": 410920000,
+      "Entries": [
+        "[D layer] General purpose_Construction scaffolding_35m"
+      ]
+    },
+    {
+      "ID": 410921000,
+      "Entries": [
+        "[D layer] General purpose_Construction scaffolding_20m"
+      ]
+    },
+    {
+      "ID": 410930000,
+      "Entries": [
+        "[D layer] Light_for wide range"
+      ]
+    },
+    {
+      "ID": 410931000,
+      "Entries": [
+        "[D layer] Light_1 light"
+      ]
+    },
+    {
+      "ID": 410933000,
+      "Entries": [
+        "[D layer] Lighting (red light_large)"
+      ]
+    },
+    {
+      "ID": 410932001,
+      "Entries": [
+        "[D layer] 8 consecutive lighting_no light source"
+      ]
+    },
+    {
+      "ID": 410932002,
+      "Entries": [
+        "[D layer] 8 consecutive lighting_with light source"
+      ]
+    },
+    {
+      "ID": 410934000,
+      "Entries": [
+        "[D layer] Searchlight"
+      ]
+    },
+    {
+      "ID": 410937000,
+      "Entries": [
+        "[D layer] Lighting"
+      ]
+    },
+    {
+      "ID": 411574000,
+      "Entries": [
+        "[Geo] Large pipe"
+      ]
+    },
+    {
+      "ID": 411581000,
+      "Entries": [
+        "[Geo] Pipe passage T-junction"
+      ]
+    },
+    {
+      "ID": 411582000,
+      "Entries": [
+        "[Geo] Pipe passage"
+      ]
+    },
+    {
+      "ID": 500240000,
+      "Entries": [
+        "bucket wheel excavator"
+      ]
+    },
+    {
+      "ID": 500411001,
+      "Entries": [
+        "Mining ship 1st car A"
+      ]
+    },
+    {
+      "ID": 500412001,
+      "Entries": [
+        "Mining ship 1st car B"
+      ]
+    },
+    {
+      "ID": 500420001,
+      "Entries": [
+        "3rd mining ship"
+      ]
+    },
+    {
+      "ID": 500421001,
+      "Entries": [
+        "2nd mining ship"
+      ]
+    },
+    {
+      "ID": 500631000,
+      "Entries": [
+        "Large ground wall light"
+      ]
+    },
+    {
+      "ID": 500632000,
+      "Entries": [
+        "Ground surface large wall door light"
+      ]
+    },
+    {
+      "ID": 500633000,
+      "Entries": [
+        "Large ground wall elevator light"
+      ]
+    },
+    {
+      "ID": 501800000,
+      "Entries": [
+        "blizzard"
+      ]
+    },
+    {
+      "ID": 501801000,
+      "Entries": [
+        "smoke"
+      ]
+    },
+    {
+      "ID": 501810000,
+      "Entries": [
+        "Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 501811000,
+      "Entries": [
+        "Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 501812000,
+      "Entries": [
+        "Flaming Damipoly (for building smoke)"
+      ]
+    },
+    {
+      "ID": 501812001,
+      "Entries": [
+        "Flaming Damipoly (for building smoke)"
+      ]
+    },
+    {
+      "ID": 501812002,
+      "Entries": [
+        "Flaming Damipoly (for building smoke)"
+      ]
+    },
+    {
+      "ID": 501813000,
+      "Entries": [
+        "Flaming Damipoli"
+      ]
+    },
+    {
+      "ID": 506830000,
+      "Entries": [
+        "Wreckage_c3000 security MT_original form"
+      ]
+    },
+    {
+      "ID": 506831000,
+      "Entries": [
+        "Wreckage_c3000 Security MT_Scattered"
+      ]
+    },
+    {
+      "ID": 506840000,
+      "Entries": [
+        "Wreckage_c3020 communist MT_original form"
+      ]
+    },
+    {
+      "ID": 506841000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Scattered"
+      ]
+    },
+    {
+      "ID": 506845000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Original form_No snow"
+      ]
+    },
+    {
+      "ID": 506846000,
+      "Entries": [
+        "Wreckage_c3020 Communist MT_Scattered_No snow"
+      ]
+    },
+    {
+      "ID": 506850000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_original form"
+      ]
+    },
+    {
+      "ID": 506851000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_scattered"
+      ]
+    },
+    {
+      "ID": 506855000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_original form_no snow"
+      ]
+    },
+    {
+      "ID": 506856000,
+      "Entries": [
+        "Wreckage_c3400 quadruped MT_scattered_no snow"
+      ]
+    },
+    {
+      "ID": 506880000,
+      "Entries": [
+        "Wreckage_Armed helicopter_Original form"
+      ]
+    },
+    {
+      "ID": 506890000,
+      "Entries": [
+        "Wreckage_Combat vehicle_Original form"
+      ]
+    },
+    {
+      "ID": 506690000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 506699000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 511020000,
+      "Entries": [
+        "AEG511_020 Management facility light"
+      ]
+    },
+    {
+      "ID": 840250000,
+      "Entries": [
+        "recon assets"
+      ]
+    },
+    {
+      "ID": 860011000,
+      "Entries": [
+        "Planets with coral resonance"
+      ]
+    },
+    {
+      "ID": 860013000,
+      "Entries": [
+        "Planets with strong coral resonance"
+      ]
+    },
+    {
+      "ID": 980104000,
+      "Entries": [
+        "container"
+      ]
+    },
+    {
+      "ID": 986010000,
+      "Entries": [
+        "Planning light source test D layer (orange)"
+      ]
+    },
+    {
+      "ID": 986010001,
+      "Entries": [
+        "Planning light source test D layer (blue)"
+      ]
+    },
+    {
+      "ID": 986010002,
+      "Entries": [
+        "Planning light source test D layer (red)"
+      ]
+    },
+    {
+      "ID": 986010003,
+      "Entries": [
+        "Planning light source test D layer A (white)"
+      ]
+    },
+    {
+      "ID": 995020000,
+      "Entries": [
+        "Ground supply facility"
+      ]
+    },
+    {
+      "ID": 995801000,
+      "Entries": [
+        "A layer floating island"
+      ]
+    },
+    {
+      "ID": 995810000,
+      "Entries": [
+        "B layer connection"
+      ]
+    },
+    {
+      "ID": 995811000,
+      "Entries": [
+        "B layer connection elevator"
+      ]
+    },
+    {
+      "ID": 997995000,
+      "Entries": [
+        "light bulb barrier"
+      ]
+    },
+    {
+      "ID": 998351000,
+      "Entries": [
+        "Lakeside temporary boss area"
+      ]
+    },
+    {
+      "ID": 998600000,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 999278000,
+      "Entries": [
+        "scaffolding test"
+      ]
+    },
+    {
+      "ID": 999523000,
+      "Entries": [
+        "[Medium] Target object"
+      ]
+    },
+    {
+      "ID": 999530000,
+      "Entries": [
+        "B tier giant gun pedestal"
+      ]
+    },
+    {
+      "ID": 999530001,
+      "Entries": [
+        "B tier giant gun pedestal"
+      ]
+    },
+    {
+      "ID": 999580000,
+      "Entries": [
+        "watat test"
+      ]
+    },
+    {
+      "ID": 999600000,
+      "Entries": [
+        "192204sfx for placement"
+      ]
+    },
+    {
+      "ID": 999640000,
+      "Entries": [
+        "building smoke test"
+      ]
+    },
+    {
+      "ID": 999710000,
+      "Entries": [
+        "Cliff_Building_Ironwall",
+        "Cliff_Building_Ironwall"
+      ]
+    },
+    {
+      "ID": 999712000,
+      "Entries": [
+        "Cliff_Building_Small"
+      ]
+    },
+    {
+      "ID": 999713000,
+      "Entries": [
+        "Cliff_Building_Factory"
+      ]
+    },
+    {
+      "ID": 999713001,
+      "Entries": [
+        "Cliff_Building_Factory"
+      ]
+    },
+    {
+      "ID": 999714000,
+      "Entries": [
+        "Cliff_Building_Bridge_Steel frame_Three steps"
+      ]
+    },
+    {
+      "ID": 999715000,
+      "Entries": [
+        "Cliff_Architecture_Bridge"
+      ]
+    },
+    {
+      "ID": 999715001,
+      "Entries": [
+        "Cliff_Architecture_Bridge"
+      ]
+    },
+    {
+      "ID": 999716000,
+      "Entries": [
+        "Cliff_Building_Bridge_Steel frame"
+      ]
+    },
+    {
+      "ID": 999717000,
+      "Entries": [
+        "Cliff_Crane_A"
+      ]
+    },
+    {
+      "ID": 999717001,
+      "Entries": [
+        "Cliff_Crane_A"
+      ]
+    },
+    {
+      "ID": 999722000,
+      "Entries": [
+        "Cliff_Building_Steel elevator"
+      ]
+    },
+    {
+      "ID": 999723000,
+      "Entries": [
+        "Cliff_Crane_B"
+      ]
+    },
+    {
+      "ID": 999723001,
+      "Entries": [
+        "Cliff_Crane_B"
+      ]
+    },
+    {
+      "ID": 999724000,
+      "Entries": [
+        "Cliff_Building_Small_A"
+      ]
+    },
+    {
+      "ID": 999725000,
+      "Entries": [
+        "Cliff_Building_Scaffolding"
+      ]
+    },
+    {
+      "ID": 999728000,
+      "Entries": [
+        "Cliff_Building_Bridge pillar"
+      ]
+    },
+    {
+      "ID": 999730000,
+      "Entries": [
+        "small lookout tower"
+      ]
+    },
+    {
+      "ID": 999754000,
+      "Entries": [
+        "storage tank"
+      ]
+    },
+    {
+      "ID": 999760000,
+      "Entries": [
+        "Cliff_Crane_C"
+      ]
+    },
+    {
+      "ID": 999771000,
+      "Entries": [
+        "Light_for wide range"
+      ]
+    },
+    {
+      "ID": 999772000,
+      "Entries": [
+        "Light_1 light"
+      ]
+    },
+    {
+      "ID": 999778000,
+      "Entries": [
+        "Light_vertical red light"
+      ]
+    },
+    {
+      "ID": 999781000,
+      "Entries": [
+        "bridge_damaged"
+      ]
+    },
+    {
+      "ID": 999782000,
+      "Entries": [
+        "bridge"
+      ]
+    },
+    {
+      "ID": 999783000,
+      "Entries": [
+        "work scaffolding"
+      ]
+    },
+    {
+      "ID": 999784000,
+      "Entries": [
+        "work scaffolding"
+      ]
+    },
+    {
+      "ID": 999784001,
+      "Entries": [
+        "work scaffolding"
+      ]
+    },
+    {
+      "ID": 999795000,
+      "Entries": [
+        "ground supply pod"
+      ]
+    },
+    {
+      "ID": 999796000,
+      "Entries": [
+        "repair facility"
+      ]
+    },
+    {
+      "ID": 999797000,
+      "Entries": [
+        "floating scaffolding"
+      ]
+    },
+    {
+      "ID": 999825000,
+      "Entries": [
+        "elevator"
+      ]
+    },
+    {
+      "ID": 999830000,
+      "Entries": [
+        "Assets for spotlight"
+      ]
+    },
+    {
+      "ID": 999831000,
+      "Entries": [
+        "flashing light assets"
+      ]
+    },
+    {
+      "ID": 999833000,
+      "Entries": [
+        "[B layer] Dummy assets for sfx generation"
+      ]
+    }
+  ]
+}

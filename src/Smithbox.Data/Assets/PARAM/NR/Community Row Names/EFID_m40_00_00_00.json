@@ -1,0 +1,246 @@
+{
+  "Name": "EFID_m40_00_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 40000050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 40000500,
+      "Entries": [
+        "Mage's Tower unlocked",
+        "Mage's Tower unlocked"
+      ]
+    },
+    {
+      "ID": 40000501,
+      "Entries": [
+        "Phantom appeared"
+      ]
+    },
+    {
+      "ID": 40000502,
+      "Entries": [
+        "Phantom destroyed"
+      ]
+    },
+    {
+      "ID": 40000580,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000581,
+      "Entries": [
+        "B_Imp statue pretend_already appeared"
+      ]
+    },
+    {
+      "ID": 40000582,
+      "Entries": [
+        "C_Non-green tree_Already appeared"
+      ]
+    },
+    {
+      "ID": 40000583,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000584,
+      "Entries": [
+        "E_Side building_Already appeared"
+      ]
+    },
+    {
+      "ID": 40000585,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000586,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000587,
+      "Entries": [
+        "H_Fleeing grass_Already appeared"
+      ]
+    },
+    {
+      "ID": 40000588,
+      "Entries": [
+        "I_Disappearing torch_Already appeared"
+      ]
+    },
+    {
+      "ID": 40000589,
+      "Entries": [
+        "J_Disappearing wall_Already appeared"
+      ]
+    },
+    {
+      "ID": 40000590,
+      "Entries": [
+        "A_Pretending crest_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000591,
+      "Entries": [
+        "B_Pretending imp statue_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000592,
+      "Entries": [
+        "C_Non-green tree_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000593,
+      "Entries": [
+        "D_Water reflection_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000594,
+      "Entries": [
+        "E_Side building_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000595,
+      "Entries": [
+        "F_Swaying bush_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000596,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000597,
+      "Entries": [
+        "H_Fleeing grass_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000598,
+      "Entries": [
+        "I_Disappearing torch_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000599,
+      "Entries": [
+        "J_Disappearing wall_Destroyed"
+      ]
+    },
+    {
+      "ID": 40000700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 40000800,
+      "Entries": [
+        "Boss flag (Do not reset)"
+      ]
+    },
+    {
+      "ID": 40000900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 40001200,
+      "Entries": [
+        "Character flag (Do not reset)"
+      ]
+    },
+    {
+      "ID": 40001500,
+      "Entries": [
+        "Object flag (Do not reset)"
+      ]
+    },
+    {
+      "ID": 40002100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 40002200,
+      "Entries": [
+        "Character flag (Reset)"
+      ]
+    },
+    {
+      "ID": 40002500,
+      "Entries": [
+        "Object flag (Reset)"
+      ]
+    },
+    {
+      "ID": 40002700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 40002800,
+      "Entries": [
+        "Boss flag (Reset)"
+      ]
+    },
+    {
+      "ID": 40002900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 40008500,
+      "Entries": [
+        "Object act flag"
+      ]
+    }
+  ]
+}

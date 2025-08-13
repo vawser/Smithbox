@@ -1,0 +1,143 @@
+{
+  "Name": "EquipParamBooster",
+  "Entries": [
+    {
+      "ID": 60000000,
+      "Entries": [
+        "BST-G2/P04"
+      ]
+    },
+    {
+      "ID": 60010000,
+      "Entries": [
+        "BC-0600 12345"
+      ]
+    },
+    {
+      "ID": 60020000,
+      "Entries": [
+        "ALULA/21E"
+      ]
+    },
+    {
+      "ID": 60030000,
+      "Entries": [
+        "FLUEGEL/21Z"
+      ]
+    },
+    {
+      "ID": 60040000,
+      "Entries": [
+        "BUERZEL/21D"
+      ]
+    },
+    {
+      "ID": 60050000,
+      "Entries": [
+        "BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 60060000,
+      "Entries": [
+        "BC-0200 GRIDWALKER"
+      ]
+    },
+    {
+      "ID": 60070000,
+      "Entries": [
+        "IB-C03B: NGI 001"
+      ]
+    },
+    {
+      "ID": 60070100,
+      "Entries": [
+        "IA-C01B: GILLS"
+      ]
+    },
+    {
+      "ID": 60070200,
+      "Entries": [
+        "AB-J-137 KIKAKU"
+      ]
+    },
+    {
+      "ID": 60070300,
+      "Entries": [
+        "BC-0400 MULE"
+      ]
+    },
+    {
+      "ID": 60070400,
+      "Entries": [
+        "BST-G1/P10"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "AB-J-137 KIKAKU (Escape Mission Variant)"
+      ]
+    },
+    {
+      "ID": 60900100,
+      "Entries": [
+        "BST-G1/P10 [Inherited]"
+      ]
+    },
+    {
+      "ID": 60900200,
+      "Entries": [
+        "BST-G1/P10 [Inherited]"
+      ]
+    },
+    {
+      "ID": 60900300,
+      "Entries": [
+        "ALULA/21E [Inherited]"
+      ]
+    },
+    {
+      "ID": 60900400,
+      "Entries": [
+        "BC-0600 12345 [Inherited]"
+      ]
+    },
+    {
+      "ID": 60900500,
+      "Entries": [
+        "BST-G2/P04 [Inherited]"
+      ]
+    },
+    {
+      "ID": 60901000,
+      "Entries": [
+        "AB-J-137 KIKAKU (Escape) [Inherited]"
+      ]
+    },
+    {
+      "ID": 60901100,
+      "Entries": [
+        "BST-G1/P10 [Inherited]"
+      ]
+    },
+    {
+      "ID": 63300000,
+      "Entries": [
+        "TANK BUILT-IN - LG-022T BORNEMISSZA"
+      ]
+    },
+    {
+      "ID": 63340000,
+      "Entries": [
+        "TANK BUILT-IN - VE-42B"
+      ]
+    },
+    {
+      "ID": 63360000,
+      "Entries": [
+        "TANK BUILT-IN - EL-TL-11 FORTALEZA"
+      ]
+    }
+  ]
+}

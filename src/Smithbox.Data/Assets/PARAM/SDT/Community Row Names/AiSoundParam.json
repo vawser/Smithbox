@@ -1,0 +1,545 @@
+{
+  "Name": "AiSoundParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (do not edit) -- デフォルト（編集しない）"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Walking -- 歩き"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Running -- 走り"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "dash -- ダッシュ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "rolling -- ローリング"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Landing -- 着地"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Covert walking -- 隠密歩き"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Covert running -- 隠密走り"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Object destruction -- オブジェクト破壊"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "While walking -- 歩行中"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Walking _ crouching -- 歩行中_しゃがみ"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Walking _ with wall -- 歩行中_壁張り付き"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Walking _ hanging -- 歩行中_ぶら下がり"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Walking _ on the water -- 歩行中_水上"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Walking_underwater -- 歩行中_水中"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Running -- 走行中"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Running_ crouching -- 走行中_しゃがみ"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Running_with wall -- 走行中_壁張り付き"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Driving _ hanging -- 走行中_ぶら下がり"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Running _ on the water -- 走行中_水上"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Running_underwater -- 走行中_水中"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "During the dash -- ダッシュ中"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "During the dash _ on the water -- ダッシュ中_水上"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Dashing_underwater -- ダッシュ中_水中"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Step -- ステップ"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Wire injection -- ワイヤー射出"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Jump -- ジャンプ"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Jump_water -- ジャンプ_水上"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Landing -- 着地"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "Water landing -- 着水"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "Wall jump -- 壁ジャンプ"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Wall jump landing (preliminary movement) -- 壁ジャンプ着地（予備動作）"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Attack sound_small -- 攻撃音_小"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Attack sound_medium -- 攻撃音_中"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack sound_loud -- 攻撃音_大"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Attack sound_extra large -- 攻撃音_特大"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Attack hit sound_small -- 攻撃ヒット音_小"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Attack hit sound_medium -- 攻撃ヒット音_中"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Attack hit sound_loud -- 攻撃ヒット音_大"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Attack hit sound_extra large -- 攻撃ヒット音_特大"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Attack hit sound_Stealth shinobi -- 攻撃ヒット音_ステルス忍殺"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Attack hit sound_Swashbuckler Shinobi -- 攻撃ヒット音_剣戟忍殺"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Map admission sound -- マップ入場音"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Item_Ceramic piece_Sound when hit -- アイテム_陶片_当たったときの音"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "Item_Ceramic piece_Sound heard by the hit target -- アイテム_陶片_当たった対象が聞く音"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Get up sound -- 起きろ音"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Companion Ring: Small -- 仲間呼び音：小"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Companion Ringing: Handmaiden Aunt Test -- 仲間呼び音：侍女おばテスト"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Fellow ringing tone: Aunt Samurai (at the time of death) -- 仲間呼び音：侍女おば（死亡時）"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Companion ringing tone: dog _ barking first time -- 仲間呼び音：イヌ_吠える1回目"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Companion ringing tone: dog _ barking second time -- 仲間呼び音：イヌ_吠える2回目"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Companion ringing tone: Centipede small _ roasted ball -- 仲間呼び音：ムカデ小_焙烙玉"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Fellow ringing tone: Chigo monkey _ Saying monkey -- 仲間呼び音：稚児猿_言う猿"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "NTC_ played -- NTC_弾かれ"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "NTC_damage -- NTC_ダメージ"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "NTC_ death -- NTC_死亡"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "NTC_Death_Shinobi -- NTC_死亡_忍殺され"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "NTC_ attack -- NTC_攻撃"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "[GC version provisional] NTC_Keep out from PC during battle -- 【GC版暫定】NTC_戦闘時PCから出し続ける"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Fellow Call: Dead Soldier Lantern -- 仲間呼び：亡者兵士ランタン"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Prosthetic hand ninja _ firecracker -- 義手忍具_爆竹"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Prosthetic hand ninja _ transformation _ decoy -- 義手忍具_変わり身_デコイ"
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Prosthetic hand Ninja _ Enemy turning _ Sound that only you can hear -- 義手忍具_敵回し_自分にだけ聞こえる音"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Prosthetic hand ninja _ finger whistle _ no lock -- 義手忍具_指笛_ノーロック"
+      ]
+    },
+    {
+      "ID": 7910,
+      "Entries": [
+        "Prosthetic hand ninja _ finger whistle _ lock-on -- 義手忍具_指笛_ロックオン"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Companion call test: Blue -- 仲間呼びテスト：ブルー"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Bullet hit -- 弾丸当たり"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Per wall -- 壁当たり"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Soul coin -- ソウルコイン"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Hallucination -- 幻聴"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "alarm -- アラーム"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "NTC_normal sound_test -- NTC_通常音_テスト"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "NTC_Important Sound_Test -- NTC_重要音_テスト"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Enemy general purpose_pseudo platoon AI sound -- 敵汎用_擬似小隊AI音"
+      ]
+    },
+    {
+      "ID": 2000010,
+      "Entries": [
+        "Enemy general purpose_shooting hit -- 敵汎用_射撃ヒット"
+      ]
+    },
+    {
+      "ID": 2000020,
+      "Entries": [
+        "Enemy general purpose_attack hit -- 敵汎用_攻撃ヒット"
+      ]
+    },
+    {
+      "ID": 2000025,
+      "Entries": [
+        "Enemy general purpose_attack occurrence -- 敵汎用_攻撃発生"
+      ]
+    },
+    {
+      "ID": 2000100,
+      "Entries": [
+        "Enemy general purpose_surrounding reaction -- 敵汎用_取り巻きリアクション"
+      ]
+    },
+    {
+      "ID": 2000200,
+      "Entries": [
+        "Enemy general purpose_revival detection -- 敵汎用_復活感知"
+      ]
+    },
+    {
+      "ID": 2103000,
+      "Entries": [
+        "Centipede small _ roasted ball -- ムカデ小_焙烙玉"
+      ]
+    },
+    {
+      "ID": 2111000,
+      "Entries": [
+        "Handmaiden Aunt_Scream -- 侍女おば_悲鳴"
+      ]
+    },
+    {
+      "ID": 2112000,
+      "Entries": [
+        "Lookout _ Gong -- 見張り番_銅鑼"
+      ]
+    },
+    {
+      "ID": 2122000,
+      "Entries": [
+        "Temple foundation Zako_ allies lure -- 寺基礎ザコ_味方おびき寄せ"
+      ]
+    },
+    {
+      "ID": 2155000,
+      "Entries": [
+        "Bandit_Torches_Lucking allies -- 野盗_松明_味方おびき寄せ"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Object destruction sound minimal -- オブジェクト破壊音極小"
+      ]
+    },
+    {
+      "ID": 5000010,
+      "Entries": [
+        "Object destruction sound small -- オブジェクト破壊音小"
+      ]
+    },
+    {
+      "ID": 5000020,
+      "Entries": [
+        "Object destruction sound -- オブジェクト破壊音中"
+      ]
+    },
+    {
+      "ID": 5000030,
+      "Entries": [
+        "Object destruction sound -- オブジェクト破壊音大"
+      ]
+    },
+    {
+      "ID": 5000040,
+      "Entries": [
+        "Object destruction sound maximum -- オブジェクト破壊音極大"
+      ]
+    }
+  ]
+}

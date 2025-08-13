@@ -1,0 +1,155 @@
+{
+  "Name": "MapAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't erase it -- 消さないで"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "m00_10_00_00 (heli garage) -- m00_10_00_00（ヘリガレージ)"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "m00_90_00_00(AC test map) -- m00_90_00_00(ACテスト用マップ）"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "m03_20_00_00(Ice field_Street mine) -- m03_20_00_00(氷原_露店採掘場)"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "m03_30_00_00(Ice field_Fuel base) -- m03_30_00_00(氷原_燃料基地)"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "m03_40_00_00(Ice field_mine shaft/Imperial base) -- m03_40_00_00(氷原_坑道・帝国基地)"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "m03_60_00_00(Ice field_mine shaft/ice field) -- m03_60_00_00(氷原_坑道・大氷原)"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "m10_00_00_00(A layer_tutorial A layer) -- m10_00_00_00(A層_チュートリアルA層)"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "m10_01_00_00(A layer_Tutorial A layer_CS) -- m10_01_00_00(A層_チュートリアルA層_CS用)"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "m10_10_00_00(A layer_Big Bridge A layer) -- m10_10_00_00(A層_ビックブリッジA層)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "m10_20_00_00(A layer_collapse A layer) -- m10_20_00_00(A層_崩壊A層)"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "m20_00_00_00(New B layer_Top layer) -- m20_00_00_00(新B層_最上層)"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "m20_00_00_00(New B layer_Top layer)_For CS -- m20_00_00_00(新B層_最上層)_CS用"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "m20_20_00_00(New B layer_straight city) -- m20_20_00_00(新B層_ストレート市街)"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "m20_30_00_00(New B tier_Trench City) -- m20_30_00_00(新B層_塹壕都市)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "m30_00_00_00(Space) -- m30_00_00_00(宇宙)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "m35_00_00_00(C end) -- m35_00_00_00(Cエンド)"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "m41_00_00_00(D layer_large cavity and furnace) -- m41_00_00_00(D層_大空洞と炉)"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "m41_10_00_00(D layer_Geofront) -- m41_10_00_00(D層_ジオフロント)"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "m50_00_00_00(Snowy mountains_Mountains) -- m50_00_00_00(雪山_山岳)"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "m50_10_00_00(Snowy mountain_multiple dam) -- m50_10_00_00(雪山_多重ダム)"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "m50_30_00_00 (Snowy mountain_in front of the wall) -- m50_30_00_00（雪山_壁前)"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "m50_40_00_00 (Snowy mountain_Lakeside) -- m50_40_00_00（雪山_湖畔)"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "m50_50_00_00 (Snowy mountain_VOB) -- m50_50_00_00（雪山_VOB)"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "m50_60_00_00 (Snowy Mountain_Black Desert) -- m50_60_00_00（雪山_黒砂漠)"
+      ]
+    }
+  ]
+}

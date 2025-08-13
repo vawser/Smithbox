@@ -1,0 +1,1721 @@
+{
+  "Name": "EnemyAttackParam",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "Goblin -- ゴブリン（生者）"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Goblin: Sword -- ゴブリン（生者）：剣"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Goblin (Live): Sling -- ゴブリン（生者）：スリング"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Cobold -- コボルト"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Kingdom Soldier (Dead): Spear: Medium Shield -- 王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Sword -- 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "Kingdom Soldier (Dead): Two-Handed Axe -- 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Stabbing Sword: Medium Shield -- 王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "Kingdom Soldier (Dead): Bow -- 王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 102050,
+      "Entries": [
+        "Kingdom Soldier (Deceased): Bare Hands: Two-Handed Sword -- 王国兵士（亡者）：素手：両手剣"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Kingdom Soldier (Alive): Spear: Medium Shield -- 王国兵士（生者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 102110,
+      "Entries": [
+        "Kingdom Soldier (Living): Two-Handed Sword: Bow -- 王国兵士（生者）：両手剣：弓"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Lower-class soldier (dead): bare hands -- 下級兵士（亡者）：素手"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "Lower Soldier (Dead): Dagger -- 下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 103020,
+      "Entries": [
+        "Lower Soldier (Deceased): One-handed sword: Small shield -- 下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 103030,
+      "Entries": [
+        "Lower Soldier (Dead): One-handed axe -- 下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 103040,
+      "Entries": [
+        "Lower soldier (dead): bow of both hands -- 下級兵士（亡者）：両手弓"
+      ]
+    },
+    {
+      "ID": 103100,
+      "Entries": [
+        "Lower Soldier (Raw): Dagger -- 下級兵士（生者）：短剣"
+      ]
+    },
+    {
+      "ID": 103110,
+      "Entries": [
+        "Lower Soldier (Raw): One-handed sword -- 下級兵士（生者）：片手剣"
+      ]
+    },
+    {
+      "ID": 103120,
+      "Entries": [
+        "Lower Soldier (Live): One-handed axe -- 下級兵士（生者）：片手斧"
+      ]
+    },
+    {
+      "ID": 103130,
+      "Entries": [
+        "Lower soldier (raw): Bow -- 下級兵士（生者）：弓"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "Fairy Shrine Maiden: Bare Hands -- 妖精の巫女：素手"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "Fairy Shrine Maiden: Cane -- 妖精の巫女：杖"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_No Mask -- ダークプリースト（亡者）：色①_仮面無し"
+      ]
+    },
+    {
+      "ID": 106010,
+      "Entries": [
+        "Dark Priest (Deceased): Color (1)_No Mask: Shield -- ダークプリースト（亡者）：色①_仮面無し：盾"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Parasite Spider (Parasitic) -- パラサイトスパイダー（寄生）"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "Rogue (deceased): Dagger x 2 -- ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "Rogue (deceased): One hand mallet × 2 -- ローグ（亡者）：片手槌×２"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "Rogue (deceased): Two bows x 2 -- ローグ（亡者）：両手弓×２"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Sailor (deceased): One-handed sword; -- 水兵（亡者）：片手剣；小盾"
+      ]
+    },
+    {
+      "ID": 113010,
+      "Entries": [
+        "Sailor (dead): Song sword × 2 -- 水兵（亡者）：曲剣×２"
+      ]
+    },
+    {
+      "ID": 113020,
+      "Entries": [
+        "Sailor (deceased): Bow of both hands -- 水兵（亡者）：両手弓"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Dead: Traveler's Clothing ♂: Bare Hands -- 亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 115010,
+      "Entries": [
+        "Dead: Traveler's Clothes ♂: Dagger -- 亡者：旅人の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Statue: Pawn: Spear: Shield -- スタチュー：ポーン：槍：盾"
+      ]
+    },
+    {
+      "ID": 117010,
+      "Entries": [
+        "Statue: Pawn: Spear -- スタチュー：ポーン：槍"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Dark Wizard (Dead) -- ダークウィザード（亡者）"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Lion Black Mage (Born) -- 獅子黒魔道士（生者）"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Bare Hands -- 巨人下級兵士（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Two-Handed Club -- 巨人下級兵士（巨人）：両手棍棒"
+      ]
+    },
+    {
+      "ID": 121020,
+      "Entries": [
+        "Giant Lower Soldier Poison (Giant): Bare Hands -- 巨人下級兵士 毒（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 121030,
+      "Entries": [
+        "Giant Lower Soldier Fire (Giant): Bare Hands -- 巨人下級兵士 火（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Bernice Knight: Two-Handed Sword -- バーニスの騎士：両手剣"
+      ]
+    },
+    {
+      "ID": 122010,
+      "Entries": [
+        "Bernice Knight: Assault Spear -- バーニスの騎士：突撃槍"
+      ]
+    },
+    {
+      "ID": 122020,
+      "Entries": [
+        "Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌"
+      ]
+    },
+    {
+      "ID": 122030,
+      "Entries": [
+        "Bernice Knight: Crossbow -- バーニスの騎士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 122130,
+      "Entries": [
+        "Bernice Knight: One Hand Mallet -- バーニスの騎士：片手槌"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Deformed shadow (raw): 2 swords -- 異形の影（生者）：２刀爪"
+      ]
+    },
+    {
+      "ID": 123010,
+      "Entries": [
+        "Deformed Shadow (Born): Dagger: Stabbing Sword -- 異形の影（生者）：短剣：刺突剣"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Assassin (Live): 2 Swordsnails -- 暗殺者（生者）：２刀爪"
+      ]
+    },
+    {
+      "ID": 124010,
+      "Entries": [
+        "Assassin (Born): Dagger -- 暗殺者（生者）：短剣"
+      ]
+    },
+    {
+      "ID": 124020,
+      "Entries": [
+        "Assassin (Live Man): Song Sword -- 暗殺者（生者）：曲剣"
+      ]
+    },
+    {
+      "ID": 124030,
+      "Entries": [
+        "Assassin (Live Man): Bow -- 暗殺者（生者）：弓"
+      ]
+    },
+    {
+      "ID": 125000,
+      "Entries": [
+        "Undead Citizen: Color (1) -- アンデッド市民：色①"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "Dead Workers (Dead): Bare Hands -- 死者の労働者（亡者）：素手"
+      ]
+    },
+    {
+      "ID": 127010,
+      "Entries": [
+        "Dead Workers (Dead): Torch -- 死者の労働者（亡者）：松明"
+      ]
+    },
+    {
+      "ID": 127020,
+      "Entries": [
+        "Dead Workers (Dead): Broken Straight Sword -- 死者の労働者（亡者）：折れた直剣"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "The Keeper of the Forest: Bare Hands: Cane -- 森の番人：素手：杖"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "Keeper of the Forest: Cane: Cane -- 森の番人：杖：杖"
+      ]
+    },
+    {
+      "ID": 129020,
+      "Entries": [
+        "Keeper of the Forest: Bell: Cane -- 森の番人：ベル：杖"
+      ]
+    },
+    {
+      "ID": 129030,
+      "Entries": [
+        "Keeper of the Forest: Bare Hands: Bell -- 森の番人：素手：ベル"
+      ]
+    },
+    {
+      "ID": 129040,
+      "Entries": [
+        "Keeper of the Forest: Cane: Bell -- 森の番人：杖：ベル"
+      ]
+    },
+    {
+      "ID": 129050,
+      "Entries": [
+        "Keeper of the Forest: Bell: Bell -- 森の番人：ベル：ベル"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Cleric: War -- クレリック：戦鎚"
+      ]
+    },
+    {
+      "ID": 131010,
+      "Entries": [
+        "Cleric: Bell -- クレリック：ベル"
+      ]
+    },
+    {
+      "ID": 131020,
+      "Entries": [
+        "Cleric: Cane -- クレリック：杖"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Skeleton: 2 swords -- スケルトン：２刀流"
+      ]
+    },
+    {
+      "ID": 132010,
+      "Entries": [
+        "Skeleton: One-handed bent sword -- スケルトン：片手曲剣"
+      ]
+    },
+    {
+      "ID": 132020,
+      "Entries": [
+        "Skeleton: One-handed stabbing -- スケルトン：片手刺突"
+      ]
+    },
+    {
+      "ID": 132030,
+      "Entries": [
+        "Skeleton: Bow -- スケルトン：弓"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Wheel Skeleton: Bare Hands -- 車輪スケルトン：素手"
+      ]
+    },
+    {
+      "ID": 133010,
+      "Entries": [
+        "Wheel Skeleton: Curved Sword -- 車輪スケルトン：曲剣"
+      ]
+    },
+    {
+      "ID": 133020,
+      "Entries": [
+        "Wheel Skeleton: The Great Sword -- 車輪スケルトン：大曲剣"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Dwarf -- ドワーフ"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Heavy Dwarf: Two-handed axe x 2 -- 重ドワーフ：両手斧×２"
+      ]
+    },
+    {
+      "ID": 135010,
+      "Entries": [
+        "Heavy Dwarf: Mallet -- 重ドワーフ：両手槌"
+      ]
+    },
+    {
+      "ID": 135020,
+      "Entries": [
+        "Heavy Dwarf: Bow -- 重ドワーフ：弓"
+      ]
+    },
+    {
+      "ID": 136000,
+      "Entries": [
+        "Dark Reith (dead): Two-handed sword:: One hand -- ダークレイス(亡者)：両手大剣:：片手持ち"
+      ]
+    },
+    {
+      "ID": 136010,
+      "Entries": [
+        "Dark Reith (dead): Two-handed sword:: With both hands -- ダークレイス(亡者)：両手大剣:：両手持ち"
+      ]
+    },
+    {
+      "ID": 136020,
+      "Entries": [
+        "Dark Reith (Dead): Bow -- ダークレイス(亡者)：弓"
+      ]
+    },
+    {
+      "ID": 137000,
+      "Entries": [
+        "Necromancer (Immortal): Bare Hands -- ネクロマンサー（イモータル）：素手"
+      ]
+    },
+    {
+      "ID": 137010,
+      "Entries": [
+        "Necromancer (Immortal): Shield: Wand -- ネクロマンサー（イモータル）：盾：杖"
+      ]
+    },
+    {
+      "ID": 137020,
+      "Entries": [
+        "Necromancer (Immortal): Cane -- ネクロマンサー（イモータル）：杖"
+      ]
+    },
+    {
+      "ID": 138000,
+      "Entries": [
+        "Tortureman: Torture Instruments -- 拷問人：拷問器具"
+      ]
+    },
+    {
+      "ID": 138010,
+      "Entries": [
+        "Tortureman: Whip -- 拷問人：鞭"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Man-made Immortal: Sickle -- 人造不死人：鎌"
+      ]
+    },
+    {
+      "ID": 139010,
+      "Entries": [
+        "Man-made Immortal: Bare Hands -- 人造不死人：素手"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Belka's Crow -- ベルカの鴉人"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Strengthened Immortals -- 強化不死人"
+      ]
+    },
+    {
+      "ID": 146000,
+      "Entries": [
+        "Dead: ♂ the clothes of the wealthy: Dagger -- 亡者：富裕層の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 146010,
+      "Entries": [
+        "Dead: ♂ the Clothes of the Wealthy: Stabbing Sword -- 亡者：富裕層の服♂：刺突剣"
+      ]
+    },
+    {
+      "ID": 146020,
+      "Entries": [
+        "Deceased: ♂ the Clothes of the Wealthy: Daggers & Torches -- 亡者：富裕層の服♂：短剣＆松明"
+      ]
+    },
+    {
+      "ID": 147000,
+      "Entries": [
+        "Deceased: Sick ♂ -- 亡者：病人の服♂"
+      ]
+    },
+    {
+      "ID": 148000,
+      "Entries": [
+        "Dead: Farmer's Clothes ♂: Mallet -- 亡者：農民の服♂：両手槌"
+      ]
+    },
+    {
+      "ID": 148020,
+      "Entries": [
+        "Dead: Farmer's Clothing ♂: Two-Handed Sickle -- 亡者：農民の服♂：両手鎌"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "Deceased: Steelworker -- 亡者：製鉄所員"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Statue: Night -- スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Royal Warrior: Two-Handed Battle Hammer -- 王国兵重戦士：両手戦槌"
+      ]
+    },
+    {
+      "ID": 151110,
+      "Entries": [
+        "Royal Warrior: One Hand Club -- 王国兵重戦士：片手棍棒"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Kingdom Soldier Warrior: Two-Handed Sword -- 王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 152010,
+      "Entries": [
+        "Kingdom Warrior: Crossbow -- 王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Royal Guard: Axe Spear -- 王国兵護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 153010,
+      "Entries": [
+        "Royal Guard: Oversized Sword -- 王国兵護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Aristocracy: Axe Spear -- スケルトン貴族：斧槍"
+      ]
+    },
+    {
+      "ID": 154010,
+      "Entries": [
+        "Skeleton Aristocracy: Sickle -- スケルトン貴族：鎌"
+      ]
+    },
+    {
+      "ID": 154020,
+      "Entries": [
+        "Skeleton Aristocracy: Cane -- スケルトン貴族：杖"
+      ]
+    },
+    {
+      "ID": 155000,
+      "Entries": [
+        "Lizard Man -- トカゲ人"
+      ]
+    },
+    {
+      "ID": 156000,
+      "Entries": [
+        "Helmet Skeleton: Curved Sword ×2 -- 兜スケルトン：曲剣×２"
+      ]
+    },
+    {
+      "ID": 156010,
+      "Entries": [
+        "Helmet Skeleton: Curved Sword & Shield -- 兜スケルトン：曲剣＆盾"
+      ]
+    },
+    {
+      "ID": 156020,
+      "Entries": [
+        "Helmet Skeleton: Stabbing Sword -- 兜スケルトン：刺突剣"
+      ]
+    },
+    {
+      "ID": 156030,
+      "Entries": [
+        "Helmet Skeleton: Two-Handed Bow -- 兜スケルトン：両手弓"
+      ]
+    },
+    {
+      "ID": 157000,
+      "Entries": [
+        "Armor Skeleton: Curved Sword x 2 -- 鎧スケルトン：曲剣×２"
+      ]
+    },
+    {
+      "ID": 157010,
+      "Entries": [
+        "Armor Skeleton: Song Sword & Shield -- 鎧スケルトン：曲剣＆盾"
+      ]
+    },
+    {
+      "ID": 157020,
+      "Entries": [
+        "Armor Skeleton: Stabbing Sword -- 鎧スケルトン：刺突剣"
+      ]
+    },
+    {
+      "ID": 157030,
+      "Entries": [
+        "Armor Skeleton: Two-Handed Bow -- 鎧スケルトン：両手弓"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Slave Beast -- 奴隷獣"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Slave Beast: Piglet -- 奴隷獣：子豚"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Slave Beast (Wild) -- 奴隷獣（野生）"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Parasite Spider -- パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Great Moss -- グレートモス"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Poison hornworm: Poison -- 毒角虫：毒"
+      ]
+    },
+    {
+      "ID": 205100,
+      "Entries": [
+        "Poison hornworm: acid -- 毒角虫：酸"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Needle maggots -- 針ウジ虫"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Hunting Dogs -- 狩猟犬"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Basilisk -- バジリスク"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Wyvern -- ワイバーン"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Stone Defense -- 石守"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Fang Beast -- 牙獣"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Door possessed -- 扉憑き"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "A hermit in the dark -- 闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Humanity (enemy) -- 人間性（敵）"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Giant poison hornworm -- 巨大毒角虫"
+      ]
+    },
+    {
+      "ID": 222100,
+      "Entries": [
+        "Giant Basil risk -- 巨大バジリスク"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Dead Rat -- 死体あさりネズミ"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "The King of Rats -- ネズミの王"
+      ]
+    },
+    {
+      "ID": 224000,
+      "Entries": [
+        "Coal tar -- コールタール"
+      ]
+    },
+    {
+      "ID": 225000,
+      "Entries": [
+        "Light Worm -- 光虫"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Dog Rat -- 犬ネズミ"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Dog Mouse: Color (2) -- 犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "Stray dog -- 野犬"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Auger -- オーガ（生者）"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Wandering Knight -- 彷徨える騎士（亡者）"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed sickle -- 獄吏（亡者）：色①：両手鎌"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two-handed long axe -- 獄吏（亡者）：色①：両手長斧"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "Prison man (deceased): Color (1): Two hands war mallet -- 獄吏（亡者）：色①：両手戦槌"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Double-sided warrior: snake head -- 両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Banshee (Deceased) -- バンシー（亡者）"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Damon Knight (Dead) -- デーモンナイト（亡者）"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "Damon Knight (Dead): The Oversized Sword of Fire -- デーモンナイト（亡者）：炎の特大剣"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Demon Armor (Dead): Sword -- デーモン鎧（亡者）：刀"
+      ]
+    },
+    {
+      "ID": 306010,
+      "Entries": [
+        "Damon Armor (Dead): Bow -- デーモン鎧（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Durahan (deceased) -- デュラハン（亡者）"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Durahan (Raw) -- デュラハン（生者）"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Lion Warrior -- 獅子戦士"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Giant Senior Soldier (Giant): Bare Hands -- 巨人上級兵士（巨人）：素手"
+      ]
+    },
+    {
+      "ID": 309010,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2-Sword Style: One-Handed Club: Log -- 巨人上級兵士（巨人）：２刀流：片手棍棒：丸太"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "New Giant Senior Soldier (Deceased) -- 新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "New Giant Senior Soldier (Live) -- 新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Cavalry: Cavalry Soldiers -- 騎人兵：騎乗兵士"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Sickle -- イモータル上級兵士（イモータル）：鎌"
+      ]
+    },
+    {
+      "ID": 312010,
+      "Entries": [
+        "Immortal Senior Soldier (Immortal): Spear -- イモータル上級兵士（イモータル）：槍"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Falcon Warrior: Naoken -- 鷹匠戦士：直剣"
+      ]
+    },
+    {
+      "ID": 313010,
+      "Entries": [
+        "Falcon Warrior: Sashimi -- 鷹匠戦士：刺剣"
+      ]
+    },
+    {
+      "ID": 313030,
+      "Entries": [
+        "Falcon Warrior: Bow -- 鷹匠戦士：弓"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Elephant Man (Dead): Spear Axe -- 象人（亡者）：槍斧"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Elephant (Born) -- 象人（生者）"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "Captured Magician (Raw) -- 捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Dragon Professor -- 龍の教授"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Bay Grant A -- ベイグラントA"
+      ]
+    },
+    {
+      "ID": 319000,
+      "Entries": [
+        "Damon Armor (Dead): Mass Production Type: Sword -- デーモン鎧（亡者）：量産型：刀"
+      ]
+    },
+    {
+      "ID": 319010,
+      "Entries": [
+        "Damon Armor (Dead): Mass Production Type: Bow -- デーモン鎧（亡者）：量産型：弓"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Mimic -- ミミック"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Gargoyle -- ガーゴイル"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Warrior in the Mirror -- 鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Butcher -- ブッチャー"
+      ]
+    },
+    {
+      "ID": 327000,
+      "Entries": [
+        "Bone Dragon -- 骨ドラゴン"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Ancient Warriors -- 古代の戦士"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Damon Heavy Soldier -- デーモン重兵士"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Queen Knight A -- 王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Queen Knight B -- 王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Queen Knight C -- 王妃の騎士C"
+      ]
+    },
+    {
+      "ID": 337000,
+      "Entries": [
+        "Amazing Dead: Bare Hands -- すごい亡者：素手"
+      ]
+    },
+    {
+      "ID": 337010,
+      "Entries": [
+        "Amazing Dead: Torchi -- すごい亡者：松明"
+      ]
+    },
+    {
+      "ID": 337020,
+      "Entries": [
+        "Amazing Dead: Sword -- すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Javazahat -- ジャバザハット"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Naga -- ナーガ"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Manscorpion ♂ -- マンスコーピオン♂"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Manscorpion ♀ -- マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Mirror Night -- ミラーナイト"
+      ]
+    },
+    {
+      "ID": 505000,
+      "Entries": [
+        "The Beast -- 恐獣"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Agaduran Stand -- アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 506500,
+      "Entries": [
+        "Agaduran -- アガドゥラン"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "Rich -- リッチ"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "Wraith -- レイス"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Dark Bishop (Immortal): Masked -- ダークビショップ（イモータル）：仮面有り"
+      ]
+    },
+    {
+      "ID": 509100,
+      "Entries": [
+        "Dark Bishop (Anger Mode) -- ダークビショップ(怒りモード)"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Phantom Knight -- ファントムナイト（霊体）"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Phantom Mage (Spirit) -- ファントムメイジ（霊体）"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "King Van Clad (past) -- ヴァンクラッド王（過去）"
+      ]
+    },
+    {
+      "ID": 514000,
+      "Entries": [
+        "King Van Clad (modern) for cut scene -- ヴァンクラッド王（現代）＿カットシーン用"
+      ]
+    },
+    {
+      "ID": 514500,
+      "Entries": [
+        "Van Clad King (modern) for in-game -- ヴァンクラッド王（現代）＿インゲーム用"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Old King -- 年老いた王"
+      ]
+    },
+    {
+      "ID": 515000,
+      "Entries": [
+        "Dark Bishop (Immortal): No Mask -- ダークビショップ（イモータル）：仮面なし"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Old Dragon -- 古の龍"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Salamander -- サラマンダー"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Beautiful Voice Frog -- 美声カエル"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Spider Queen -- 蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "Spider Queen (Cliff) -- 蜘蛛の女王（崖）"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Spider Queen: Left -- 蜘蛛の女王：左"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "Yadkari Castle -- ヤドカリ城"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Molten iron daemon -- 熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 608000,
+      "Entries": [
+        "Corrosive insects (outer shell) -- 腐食虫（外殻）"
+      ]
+    },
+    {
+      "ID": 609000,
+      "Entries": [
+        "Leader of the Giants SS -- 巨人族親衛隊長"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Heavy Cavalry: Heavy Knight (Raw) -- 重騎馬兵：重騎士（生者）"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only -- 重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 611010,
+      "Entries": [
+        "Heavy Cavalry: Soldiers Only: Bow -- 重騎馬兵：兵士のみ：弓"
+      ]
+    },
+    {
+      "ID": 613000,
+      "Entries": [
+        "The God tree of the brain trunk -- 脳幹の神木"
+      ]
+    },
+    {
+      "ID": 614000,
+      "Entries": [
+        "Two-headed Wyvern -- 双頭のワイバーン"
+      ]
+    },
+    {
+      "ID": 615000,
+      "Entries": [
+        "Leviathan -- リヴァイアサン"
+      ]
+    },
+    {
+      "ID": 616000,
+      "Entries": [
+        "King Van Clad (after deformation) -- ヴァンクラッド王（変形後）"
+      ]
+    },
+    {
+      "ID": 617000,
+      "Entries": [
+        "Silver Chariot: Body -- シルバーチャリオット：本体"
+      ]
+    },
+    {
+      "ID": 618000,
+      "Entries": [
+        "Silver Chariot: Executioner (Dead) -- シルバーチャリオット：処刑人（亡者）"
+      ]
+    },
+    {
+      "ID": 619000,
+      "Entries": [
+        "Silver Chariot: Horse (Dead) -- シルバーチャリオット：馬（亡者）"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Silver Chariots: Horses Only -- シルバーチャリオット：馬のみ"
+      ]
+    },
+    {
+      "ID": 619110,
+      "Entries": [
+        "Silver Chariots: Coalescence -- シルバーチャリオット：合体"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Bodhidharma -- 達磨"
+      ]
+    },
+    {
+      "ID": 622000,
+      "Entries": [
+        "Corrosive insects (main body) -- 腐食虫（本体）"
+      ]
+    },
+    {
+      "ID": 623000,
+      "Entries": [
+        "Corrosive insects (children) -- 腐食虫（子）"
+      ]
+    },
+    {
+      "ID": 624000,
+      "Entries": [
+        "Giant King *Death -- 巨人王\u3000※没"
+      ]
+    },
+    {
+      "ID": 624500,
+      "Entries": [
+        "Giant King -- 巨人王"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Ornstein -- オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Forgotten Sinner -- 忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Queen's armor -- 王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Dragon Shrine Maiden (for In-Game) -- 龍の巫女(インゲーム用)"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Dragon Shrine Maiden (Child) -- 龍の巫女（子供）"
+      ]
+    },
+    {
+      "ID": 704500,
+      "Entries": [
+        "ladder shop -- 梯子屋"
+      ]
+    },
+    {
+      "ID": 721100,
+      "Entries": [
+        "The Spirit of the Prime Minister -- 宰相の霊"
+      ]
+    },
+    {
+      "ID": 724000,
+      "Entries": [
+        "Captain of the Kingdom -- 王国隊長"
+      ]
+    },
+    {
+      "ID": 725000,
+      "Entries": [
+        "Pilgrims in the Abyss -- 深淵の巡礼者"
+      ]
+    },
+    {
+      "ID": 726000,
+      "Entries": [
+        "Dwarf Gabalance  -- ドワーフ・ガバランス "
+      ]
+    },
+    {
+      "ID": 729000,
+      "Entries": [
+        "Loyal Dog -- 忠犬"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "I 1_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕１_特大剣"
+      ]
+    },
+    {
+      "ID": 730010,
+      "Entries": [
+        "I under the mirror night 1_two-handed long axe -- ミラーナイトの下僕１_両手長斧"
+      ]
+    },
+    {
+      "ID": 730020,
+      "Entries": [
+        "I 1_One Hand Sword Under Mirror Night -- ミラーナイトの下僕１_片手剣"
+      ]
+    },
+    {
+      "ID": 731000,
+      "Entries": [
+        "I 2_ Oversized Sword Under Mirror Night -- ミラーナイトの下僕２_特大剣"
+      ]
+    },
+    {
+      "ID": 731010,
+      "Entries": [
+        "I 2_Two-Handed Axe Under Mirror Night -- ミラーナイトの下僕２_両手長斧"
+      ]
+    },
+    {
+      "ID": 731020,
+      "Entries": [
+        "I 2_One Hand Sword Under Mirror Night -- ミラーナイトの下僕２_片手剣"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Wandering Warrior -- 放浪の戦士"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Tsukiko Grandfather -- 月光爺"
+      ]
+    },
+    {
+      "ID": 744000,
+      "Entries": [
+        "Patch -- パッチ"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Atlas -- 地図書き"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "Sea Solar (City of Spiders) -- 海ソラール（蜘蛛の街）"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Sancho: One-handed axe -- サンチョ：片手斧"
+      ]
+    },
+    {
+      "ID": 753010,
+      "Entries": [
+        "Sancho: Two-handed bow -- サンチョ：両手弓"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "The Princess of Captivity -- 囚われの姫"
+      ]
+    },
+    {
+      "ID": 755000,
+      "Entries": [
+        "Stalker Warrior -- ストーカー戦士"
+      ]
+    },
+    {
+      "ID": 755010,
+      "Entries": [
+        "Stalker Warrior_ With Both Hands -- ストーカー戦士_両手持ち"
+      ]
+    },
+    {
+      "ID": 755020,
+      "Entries": [
+        "Stalker Warrior_2 Sword -- ストーカー戦士_２刀"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "The Girl of the Bard -- 吟遊詩人の少女"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "The Girl In Captivity -- 虜囚の少女"
+      ]
+    },
+    {
+      "ID": 760300,
+      "Entries": [
+        "Banshee Bluff 2 -- バンシーのブラフ２"
+      ]
+    },
+    {
+      "ID": 760400,
+      "Entries": [
+        "Banshee Bluff 3 -- バンシーのブラフ３"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "Armor shop: Madura (hyundai) -- 防具屋：マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 761010,
+      "Entries": [
+        "Armor shop: Fairy's side -- 防具屋：妖精のほとり"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Material shop -- 素材屋"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "Sorcerer -- 呪術屋"
+      ]
+    },
+    {
+      "ID": 763010,
+      "Entries": [
+        "Bookstore (Spider Town) -- 本屋（蜘蛛の街）"
+      ]
+    },
+    {
+      "ID": 764000,
+      "Entries": [
+        "blacksmith -- 鍛冶屋"
+      ]
+    },
+    {
+      "ID": 764300,
+      "Entries": [
+        "Armor Blacksmith 1: Madura (Modern) -- 防具鍛冶屋１:マデューラ（現代）"
+      ]
+    },
+    {
+      "ID": 764310,
+      "Entries": [
+        "Armor Blacksmith 1: Castle in ruins -- 防具鍛冶屋１:廃墟の城"
+      ]
+    },
+    {
+      "ID": 765000,
+      "Entries": [
+        "a tool shop -- 道具屋"
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        "A magician -- 魔術屋"
+      ]
+    },
+    {
+      "ID": 766010,
+      "Entries": [
+        "Spell shop 1&4 (Fort of Resistance: Modern) -- スペル屋１＆４（抵抗の砦：現代）"
+      ]
+    },
+    {
+      "ID": 767000,
+      "Entries": [
+        "Spell Shop 2 & 3 (Hyundai) -- スペル屋２＆３（現代）"
+      ]
+    },
+    {
+      "ID": 768000,
+      "Entries": [
+        "Spell Mania -- スペルマニア"
+      ]
+    },
+    {
+      "ID": 769000,
+      "Entries": [
+        "Miracle Man Leash -- 奇跡の人リーシュ"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Dark Art Shop -- 闇術屋"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "A Sealed Man -- 封じられた人"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "a curiosity shop -- 珍品屋"
+      ]
+    },
+    {
+      "ID": 774000,
+      "Entries": [
+        "Middle Arms Shop 2 -- 中位武器屋２"
+      ]
+    },
+    {
+      "ID": 777000,
+      "Entries": [
+        "Cat -- 猫"
+      ]
+    },
+    {
+      "ID": 778000,
+      "Entries": [
+        "Yorozuya (Modern) -- よろず屋（現代）"
+      ]
+    },
+    {
+      "ID": 780000,
+      "Entries": [
+        "Material shop (modern) -- 素材屋（現代）"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Black Phantom Shop -- 黒ファントム屋"
+      ]
+    },
+    {
+      "ID": 785000,
+      "Entries": [
+        "Guardian Knight -- 守護の騎士"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "General-purpose NPC -- 汎用NPC"
+      ]
+    }
+  ]
+}

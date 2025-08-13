@@ -1,0 +1,191 @@
+{
+  "Name": "generatorregistparam_m10_02_00_00",
+  "Entries": [
+    {
+      "ID": 10000060,
+      "Entries": [
+        "[REG:10000060] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "[REG:10100000] Kobold"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "[REG:11500000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500001,
+      "Entries": [
+        "[REG:11500001] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500006,
+      "Entries": [
+        "[REG:11500006] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "[REG:11500100] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[REG:21000000] Basilisk"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[REG:30000000] Ogre"
+      ]
+    },
+    {
+      "ID": 30000001,
+      "Entries": [
+        "[REG:30000001] Ogre"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "[REG:31300000] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31300001,
+      "Entries": [
+        "[REG:31300001] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        "[REG:31800000] The Pursuer"
+      ]
+    },
+    {
+      "ID": 70500000,
+      "Entries": [
+        "[REG:70500000] Strowen"
+      ]
+    },
+    {
+      "ID": 70500001,
+      "Entries": [
+        "[REG:70500001] Strowen"
+      ]
+    },
+    {
+      "ID": 70500002,
+      "Entries": [
+        "[REG:70500002] Strowen"
+      ]
+    },
+    {
+      "ID": 70510000,
+      "Entries": [
+        "[REG:70510000] Griant"
+      ]
+    },
+    {
+      "ID": 70510001,
+      "Entries": [
+        "[REG:70510001] Griant"
+      ]
+    },
+    {
+      "ID": 70510002,
+      "Entries": [
+        "[REG:70510002] Griant"
+      ]
+    },
+    {
+      "ID": 70530000,
+      "Entries": [
+        "[REG:70530000] Morrel"
+      ]
+    },
+    {
+      "ID": 70530001,
+      "Entries": [
+        "[REG:70530001] Morrel"
+      ]
+    },
+    {
+      "ID": 70530002,
+      "Entries": [
+        "[REG:70530002] Morrel"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "[REG:72300000] Milibeth"
+      ]
+    },
+    {
+      "ID": 72300001,
+      "Entries": [
+        "[REG:72300001] Milibeth"
+      ]
+    },
+    {
+      "ID": 72300002,
+      "Entries": [
+        "[REG:72300002] Milibeth"
+      ]
+    },
+    {
+      "ID": 78600000,
+      "Entries": [
+        "[REG:78600000] Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 80500000,
+      "Entries": [
+        "[REG:80500000] Player Character - Start Sequence"
+      ]
+    },
+    {
+      "ID": 83700000,
+      "Entries": [
+        "[REG:83700000] Foreign Wanderer Phantom"
+      ]
+    },
+    {
+      "ID": 83710001,
+      "Entries": [
+        "[REG:83710001] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 83720000,
+      "Entries": [
+        "[REG:83720000] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 83720100,
+      "Entries": [
+        "[REG:83720100] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[REG:90000000] Bastard Sword Foreigner Phantom"
+      ]
+    }
+  ]
+}

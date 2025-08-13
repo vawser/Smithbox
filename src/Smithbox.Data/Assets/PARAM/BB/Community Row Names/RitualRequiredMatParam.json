@@ -1,0 +1,605 @@
+{
+  "Name": "RitualRequiredMatParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Fixed Grail [Level 1 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Fixed Grail [Level 2 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Fixed Grail [Level 2 】 B : Remote tomb"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Fixed Grail [Level 3 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Fixed Grail [Level 3 】 B : Remote tomb"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Fixed Grail [Level 4 】 A : Tumer _ curse"
+      ]
+    },
+    {
+      "ID": 429,
+      "Entries": [
+        "Fixed Grail [Level 4 】 C : Laurent"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Fixed Grail [Level 5 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 529,
+      "Entries": [
+        "Fixed Grail [Level 5 】 C : Laurent"
+      ]
+    },
+    {
+      "ID": 539,
+      "Entries": [
+        "Fixed Grail [Level 5 】 D ：Is"
+      ]
+    },
+    {
+      "ID": 629,
+      "Entries": [
+        "Fixed Grail [Level 6 】 C : Laurent"
+      ]
+    },
+    {
+      "ID": 639,
+      "Entries": [
+        "Fixed Grail [Level 6 】 D ：Is"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Fixed Grail [Level8 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 1809,
+      "Entries": [
+        "Fixed Grail [Level 8 】 A : Tumer _ Additional Materials"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Automatically generated chalice [Level 1 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】 A :Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】 B : Remote tomb"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】 B : Remote Tomb: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 A :Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 A : Tumer: Special strong enemy"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 A : Tumer _ Multi"
+      ]
+    },
+    {
+      "ID": 30240,
+      "Entries": [
+        "Automatically generated chalice [Level3 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 B : Remote tomb"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 B : Remote Tomb: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 B : Remote Tomb: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 31200,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 B : Remote tomb _ Multi"
+      ]
+    },
+    {
+      "ID": 31240,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 B : Remote tomb _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 A : Tumer _ curse"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 A : Tumer _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 40120,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 A : Tumer _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 40170,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 A : Tumer _Curse: Curse"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 C : Laurent"
+      ]
+    },
+    {
+      "ID": 42010,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 C : Roland: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 42020,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 C : Laurent: Special strong enemy"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A : Tumer"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A :Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A : Tumer: Special strong enemy"
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A :Thumel:Curse"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A : Tumer _ Multi"
+      ]
+    },
+    {
+      "ID": 50240,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Laurent"
+      ]
+    },
+    {
+      "ID": 52010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Roland: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 52020,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Laurent: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 52070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Laurent: Curse"
+      ]
+    },
+    {
+      "ID": 52200,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Laurent _ Multi"
+      ]
+    },
+    {
+      "ID": 52240,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 C : Laurent _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 D ：Is"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 D :Izu: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 53020,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 D :Izu: Special strong enemy"
+      ]
+    },
+    {
+      "ID": 53070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 D :Izu:Curse"
+      ]
+    },
+    {
+      "ID": 53200,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 D ：Is _ Multi"
+      ]
+    },
+    {
+      "ID": 53240,
+      "Entries": [
+        "Automatically generated chalice [Level5 】 D ：Is _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 A : Tumer _ curse"
+      ]
+    },
+    {
+      "ID": 60110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 60120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 60170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 A : Tumer _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 62100,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 C : Laurent _ curse"
+      ]
+    },
+    {
+      "ID": 62110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 62120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 62170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 C : Laurent _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 63100,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 D ：Is _ curse"
+      ]
+    },
+    {
+      "ID": 63110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 63120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 63170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 D ：Is _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ curse"
+      ]
+    },
+    {
+      "ID": 70110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 70120,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 70170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70200,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Multi"
+      ]
+    },
+    {
+      "ID": 70240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 70300,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 70310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 70320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 70370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 A : Tumer _ Terrible Curse: Terrible Curse"
+      ]
+    },
+    {
+      "ID": 72100,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ curse"
+      ]
+    },
+    {
+      "ID": 72110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 72120,
+      "Entries": [
+        "Automatically generated chalice [Level7 】 C : Laurent _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 72170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 72200,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Multi"
+      ]
+    },
+    {
+      "ID": 72240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 72300,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 72310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 72320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 72370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent _ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 72380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 C : Laurent_ Terrible Curse: Terrible Curse"
+      ]
+    },
+    {
+      "ID": 73100,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ curse"
+      ]
+    },
+    {
+      "ID": 73110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 73120,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 73170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 73200,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Multi"
+      ]
+    },
+    {
+      "ID": 73240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 73300,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 73310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 73320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is_ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 73370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 73380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 D ：Is _ Terrible Curse: Terrible Curse"
+      ]
+    }
+  ]
+}

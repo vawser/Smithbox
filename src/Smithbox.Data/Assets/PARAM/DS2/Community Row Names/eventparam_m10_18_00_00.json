@@ -1,0 +1,341 @@
+{
+  "Name": "eventparam_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Ship movement by bell"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Lever ringing the bell"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Drawing switching of OBJ on board"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Insect key] for the start of the lamp stand"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Bright areas from start time"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Lighting linked to insect keys"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Rising water level in boss battle"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Boss: Double-sided warrior: Snake head_ combat"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "When the wooden board is broken, it becomes bright (after the insect key is lit)"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "When the wooden board is broken, it becomes bright (after the insect key is lit) _2"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "When the wooden board is broken, it becomes bright (after the insect key is lit) _3"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Iron fence rising on the strap lever_"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Connection flag ON"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Open the door or close to launch the enemy"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Darkness Destroys the Wall 1"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Darkness Destroys the Wall 2"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "The door is destroyed at the time of the wall destruction one run, too."
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "The door is destroyed when the wall destruction 2 run is executed, too."
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Oil Pot_01"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "The ship leaves the port by the compass."
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Navi mesh changes for destructable walls"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "moonlight on the ship"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Navi mesh change due to scaffold destruction"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Regeneration Spark 01_Inlet Cave"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "NPC: Dwarf (Hidden Port)"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "NPC: Dwarf (Hidden Port): Ghost"
+      ]
+    },
+    {
+      "ID": 111202,
+      "Entries": [
+        "OBJ: Dwarf (Hidden Port): Tomb"
+      ]
+    },
+    {
+      "ID": 111203,
+      "Entries": [
+        "OBJ: Dwarf (Hidden Port): Key Guide"
+      ]
+    },
+    {
+      "ID": 111204,
+      "Entries": [
+        "OBJ: Dwarf (Hidden Port): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111270,
+      "Entries": [
+        "NPC: Female Knight (Hidden Port)"
+      ]
+    },
+    {
+      "ID": 111271,
+      "Entries": [
+        "NPC: Female Knight (Hidden Port): Ghost"
+      ]
+    },
+    {
+      "ID": 111272,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): Tomb"
+      ]
+    },
+    {
+      "ID": 111273,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): Key Guide"
+      ]
+    },
+    {
+      "ID": 111274,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111275,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111276,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111277,
+      "Entries": [
+        "OBJ: Female Knight (Hidden Port): White Phantom"
+      ]
+    },
+    {
+      "ID": 111390,
+      "Entries": [
+        "NPC: Sorcerer (Hidden Port)"
+      ]
+    },
+    {
+      "ID": 111391,
+      "Entries": [
+        "NPC: Sorcerer (Hidden Port): Ghost"
+      ]
+    },
+    {
+      "ID": 111392,
+      "Entries": [
+        "OBJ: Sorcerer (Hidden Port): Tomb"
+      ]
+    },
+    {
+      "ID": 111393,
+      "Entries": [
+        "OBJ: Sorcerer (Hidden Port): Key Guide"
+      ]
+    },
+    {
+      "ID": 111394,
+      "Entries": [
+        "OBJ: Sorcerer (Hidden Port): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111395,
+      "Entries": [
+        "OBJ: Sorcerer (Hidden Port): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120130,
+      "Entries": [
+        "Trophy: Akertilla (Hidden Port)"
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

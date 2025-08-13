@@ -1,0 +1,77 @@
+{
+  "Name": "NpcTransformParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "EC-0804 SMART CLEANER - Grid 086"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "IA-13: SEA SPIDER - Ocean Crossing"
+      ]
+    },
+    {
+      "ID": 610001,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 740001,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 740002,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 930001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 930002,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

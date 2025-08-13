@@ -1,0 +1,1181 @@
+{
+  "Name": "NpcThinkParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "for doing nothing"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Hirai Test Knight"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Hirai Test Knight 2"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "NPC player test"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Homecoming Test General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Homecoming Test General Soldier_Sword (Flame)"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Homecoming Test General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Homecoming Test Knight_Sword"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Fat Demon Tutorial"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "Fat Demon main story"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "slave soldier _ sword"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Slave soldier _ sword (exclusive)"
+      ]
+    },
+    {
+      "ID": 200003,
+      "Entries": [
+        "slave trader"
+      ]
+    },
+    {
+      "ID": 200004,
+      "Entries": [
+        "Slave Soldier_Sword (I like Chew Guard)"
+      ]
+    },
+    {
+      "ID": 200005,
+      "Entries": [
+        "Slave Soldier_Sword (Tutorial/Weak)"
+      ]
+    },
+    {
+      "ID": 200006,
+      "Entries": [
+        "Slave soldier _ sword (dedicated guard, no sound response)"
+      ]
+    },
+    {
+      "ID": 200007,
+      "Entries": [
+        "Slave soldier _ sword (prince siege)"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "General Soldier_Sword (Tutorial)"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "General Soldier_Bow (Tutorial)"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "General soldier _ sword (flame)"
+      ]
+    },
+    {
+      "ID": 200020,
+      "Entries": [
+        "Knight_Sword (Tutorial)"
+      ]
+    },
+    {
+      "ID": 200021,
+      "Entries": [
+        "Knight_Sword (Tutorial/Exclusive)"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "General soldier _ sword"
+      ]
+    },
+    {
+      "ID": 201001,
+      "Entries": [
+        "General soldier _ sword (flame)"
+      ]
+    },
+    {
+      "ID": 201002,
+      "Entries": [
+        "General Soldier_Bow (Fixed)"
+      ]
+    },
+    {
+      "ID": 201003,
+      "Entries": [
+        "General Soldier _ Bow"
+      ]
+    },
+    {
+      "ID": 201004,
+      "Entries": [
+        "General Soldier _ Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201005,
+      "Entries": [
+        "General soldier _ sword (flame / sound no reaction)"
+      ]
+    },
+    {
+      "ID": 201006,
+      "Entries": [
+        "General Soldier _ Spear"
+      ]
+    },
+    {
+      "ID": 201007,
+      "Entries": [
+        "General soldier _ Ax"
+      ]
+    },
+    {
+      "ID": 201008,
+      "Entries": [
+        "General Soldier_Halvard"
+      ]
+    },
+    {
+      "ID": 201009,
+      "Entries": [
+        "General Soldier _ Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "General soldier _ Ax (dedicated)"
+      ]
+    },
+    {
+      "ID": 201011,
+      "Entries": [
+        "General Soldier_Halvard (Exclusive)"
+      ]
+    },
+    {
+      "ID": 201012,
+      "Entries": [
+        "General Soldier_Bow (Fixed/Standing Only)"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "knight _ sword"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "Knight _ Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202002,
+      "Entries": [
+        "Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 202003,
+      "Entries": [
+        "Knight _ Spear"
+      ]
+    },
+    {
+      "ID": 202004,
+      "Entries": [
+        "Knight_Claymore (Exclusive)"
+      ]
+    },
+    {
+      "ID": 202005,
+      "Entries": [
+        "Knight_Spear (Exclusive)"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "assassin"
+      ]
+    },
+    {
+      "ID": 207000,
+      "Entries": [
+        "captive"
+      ]
+    },
+    {
+      "ID": 207001,
+      "Entries": [
+        "Prisoner (Kamisama believer)"
+      ]
+    },
+    {
+      "ID": 207002,
+      "Entries": [
+        "Captive (prison castle 2)"
+      ]
+    },
+    {
+      "ID": 207003,
+      "Entries": [
+        "Prisoner (stab sword, spear)"
+      ]
+    },
+    {
+      "ID": 207004,
+      "Entries": [
+        "Prisoner (Sword/Poison)"
+      ]
+    },
+    {
+      "ID": 207500,
+      "Entries": [
+        "Captive Ball (Prison Castle 1)"
+      ]
+    },
+    {
+      "ID": 207501,
+      "Entries": [
+        "Captive Ball (Prison Castle 2)"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "jailer"
+      ]
+    },
+    {
+      "ID": 208001,
+      "Entries": [
+        "Jailer (no response)"
+      ]
+    },
+    {
+      "ID": 208002,
+      "Entries": [
+        "Jailer (club) Tunnel I don't see the area"
+      ]
+    },
+    {
+      "ID": 208003,
+      "Entries": [
+        "Jailer (club) Tunnel View area 2165"
+      ]
+    },
+    {
+      "ID": 208004,
+      "Entries": [
+        "Jailer (club) Tunnel View area 2166"
+      ]
+    },
+    {
+      "ID": 208005,
+      "Entries": [
+        "Jailer (club) Tunnel View area 2167"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "former aristocratic lady"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "corrupt human"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Corrupted Human (Spear)"
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        "Corruption Human (Sorcerer)"
+      ]
+    },
+    {
+      "ID": 210004,
+      "Entries": [
+        "Corrupted Human Unclean 2"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "Corrupted Human Impure 3"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "big rot human"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Scale miner (ice ax)"
+      ]
+    },
+    {
+      "ID": 211001,
+      "Entries": [
+        "Scale Miner (Bag)"
+      ]
+    },
+    {
+      "ID": 211002,
+      "Entries": [
+        "Scale miner (stiletto)"
+      ]
+    },
+    {
+      "ID": 211003,
+      "Entries": [
+        "Scale miner (great sword)"
+      ]
+    },
+    {
+      "ID": 211004,
+      "Entries": [
+        "Scale Miner (Prisoner Henchman)"
+      ]
+    },
+    {
+      "ID": 211006,
+      "Entries": [
+        "Scale Miner (Hammer)"
+      ]
+    },
+    {
+      "ID": 211007,
+      "Entries": [
+        "Scale miner (bare hands)"
+      ]
+    },
+    {
+      "ID": 211008,
+      "Entries": [
+        "Scale miner (attack pickaxe)"
+      ]
+    },
+    {
+      "ID": 211009,
+      "Entries": [
+        "Scale Miner (Rock Throwing Bare Hands)"
+      ]
+    },
+    {
+      "ID": 211010,
+      "Entries": [
+        "Scale Miner (Rock Throwing Bare Hands Part 2)"
+      ]
+    },
+    {
+      "ID": 211011,
+      "Entries": [
+        "Scale Miner (Rock Throwing Bare Hands Part 3)"
+      ]
+    },
+    {
+      "ID": 211012,
+      "Entries": [
+        "Scale Miner (Rock Throwing Bare Hands 4)"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Kagehito"
+      ]
+    },
+    {
+      "ID": 212001,
+      "Entries": [
+        "Kagehito (strong light)"
+      ]
+    },
+    {
+      "ID": 212002,
+      "Entries": [
+        "Kagehito (exclusive)"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Kagejo (Area A 2460)"
+      ]
+    },
+    {
+      "ID": 213001,
+      "Entries": [
+        "Kagejo (Area B 2461)"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "military dog"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Military dog modification for tunnels"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "hawk"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Chimera"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Gargoyle (Sword) Prison See no realm"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Gargoyle (Bow)"
+      ]
+    },
+    {
+      "ID": 305094,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2265"
+      ]
+    },
+    {
+      "ID": 305095,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2264"
+      ]
+    },
+    {
+      "ID": 305096,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2263"
+      ]
+    },
+    {
+      "ID": 305097,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2262"
+      ]
+    },
+    {
+      "ID": 305098,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2261"
+      ]
+    },
+    {
+      "ID": 305099,
+      "Entries": [
+        "Gargoyle (Sword) Prison See realm 2260"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "plague rat"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "large slug"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Large slug (light)"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "cloudy jellyfish"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "large mosquito"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "rock earthworm"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Rock worm (lava shower)"
+      ]
+    },
+    {
+      "ID": 310002,
+      "Entries": [
+        "Rock earthworm (non-throwing Ver.)"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "crystal lizard"
+      ]
+    },
+    {
+      "ID": 311001,
+      "Entries": [
+        "Crystal lizard (for event)"
+      ]
+    },
+    {
+      "ID": 311010,
+      "Entries": [
+        "Crystal lizard (general purpose)"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "magma gecko"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Large bear beetle"
+      ]
+    },
+    {
+      "ID": 313001,
+      "Entries": [
+        "Okutamushi (for events)"
+      ]
+    },
+    {
+      "ID": 313002,
+      "Entries": [
+        "Large bear (for maze)"
+      ]
+    },
+    {
+      "ID": 313004,
+      "Entries": [
+        "feather tardigrade"
+      ]
+    },
+    {
+      "ID": 313006,
+      "Entries": [
+        "Feather tardigrade (for specific positions)"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "big blood tick"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "unsuccessful"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Wizard (Exclusive)"
+      ]
+    },
+    {
+      "ID": 401001,
+      "Entries": [
+        "Wizard (exclusively slow to react)"
+      ]
+    },
+    {
+      "ID": 402003,
+      "Entries": [
+        "gold skeleton"
+      ]
+    },
+    {
+      "ID": 402004,
+      "Entries": [
+        "Gold Skeleton (Exclusive)"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "White skeleton _ sword"
+      ]
+    },
+    {
+      "ID": 402101,
+      "Entries": [
+        "White skeleton _ bow"
+      ]
+    },
+    {
+      "ID": 402102,
+      "Entries": [
+        "White skeleton _ sword (narrow)"
+      ]
+    },
+    {
+      "ID": 402103,
+      "Entries": [
+        "White Skeleton _ Sword (Exclusive)"
+      ]
+    },
+    {
+      "ID": 402104,
+      "Entries": [
+        "White skeleton _ bow (fixed)"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Black skeleton _ dual wielding"
+      ]
+    },
+    {
+      "ID": 402201,
+      "Entries": [
+        "Black Skeleton _ Dual Sword Style (Exclusive)"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "octopus man"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "flame monster"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Phalanx (Chibi)"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Phalanx (Chibi) For strays"
+      ]
+    },
+    {
+      "ID": 500100,
+      "Entries": [
+        "Phalanx (body)"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "king's shield"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "King's sword"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "storm beast"
+      ]
+    },
+    {
+      "ID": 503100,
+      "Entries": [
+        "Child Ai Boss Battle"
+      ]
+    },
+    {
+      "ID": 503101,
+      "Entries": [
+        "Baby ray single use"
+      ]
+    },
+    {
+      "ID": 503102,
+      "Entries": [
+        "Baby ray single use (high-rise)"
+      ]
+    },
+    {
+      "ID": 503103,
+      "Entries": [
+        "Child ray single use (middle layer)"
+      ]
+    },
+    {
+      "ID": 503104,
+      "Entries": [
+        "Child ray single use (low-rise)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "referee"
+      ]
+    },
+    {
+      "ID": 506000,
+      "Entries": [
+        "Kami-sama"
+      ]
+    },
+    {
+      "ID": 506001,
+      "Entries": [
+        "fake god"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "chimera ball"
+      ]
+    },
+    {
+      "ID": 507100,
+      "Entries": [
+        "chimera ball"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "Flies"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Leech Demon"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "big spider"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "ore spirit"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Flying dragon"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "Hiryu's descendant"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "storm warrior"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Saint Libra"
+      ]
+    },
+    {
+      "ID": 604100,
+      "Entries": [
+        "impure"
+      ]
+    },
+    {
+      "ID": 605000,
+      "Entries": [
+        "Dragon Demon (Tutorial)"
+      ]
+    },
+    {
+      "ID": 605001,
+      "Entries": [
+        "Dragon Demon (Mine Tunnel)"
+      ]
+    },
+    {
+      "ID": 708000,
+      "Entries": [
+        "important person"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "beggar"
+      ]
+    },
+    {
+      "ID": 711000,
+      "Entries": [
+        "beggar (female)"
+      ]
+    },
+    {
+      "ID": 713000,
+      "Entries": [
+        "blacksmith (pit)"
+      ]
+    },
+    {
+      "ID": 713100,
+      "Entries": [
+        "blacksmith (stone pillar)"
+      ]
+    },
+    {
+      "ID": 715000,
+      "Entries": [
+        "heroine"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "King Lendl"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "Ojo 4 Three Musketeers A"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "Ojo 4 Three Musketeers B"
+      ]
+    },
+    {
+      "ID": 803000,
+      "Entries": [
+        "Ojo 4 Three Musketeers C"
+      ]
+    },
+    {
+      "ID": 804000,
+      "Entries": [
+        "Old Fort 2 Uru-sama Confined Warrior"
+      ]
+    },
+    {
+      "ID": 805000,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 807000,
+      "Entries": [
+        "Prince Lendl"
+      ]
+    },
+    {
+      "ID": 807001,
+      "Entries": [
+        "Prince Lendl (Black Ghost)"
+      ]
+    },
+    {
+      "ID": 808000,
+      "Entries": [
+        "Björngurm"
+      ]
+    },
+    {
+      "ID": 808001,
+      "Entries": [
+        "Björn Grum (for fighting flying dragons)"
+      ]
+    },
+    {
+      "ID": 809000,
+      "Entries": [
+        "patch"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "Patch (Old Fort)"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Prisoner of Water Prison (Blige)"
+      ]
+    },
+    {
+      "ID": 814000,
+      "Entries": [
+        "Urbain"
+      ]
+    },
+    {
+      "ID": 815000,
+      "Entries": [
+        "half hand"
+      ]
+    },
+    {
+      "ID": 816000,
+      "Entries": [
+        "Gargold Run"
+      ]
+    },
+    {
+      "ID": 817000,
+      "Entries": [
+        "Sage Logan"
+      ]
+    },
+    {
+      "ID": 818000,
+      "Entries": [
+        "Yurt, Lord of Silence"
+      ]
+    },
+    {
+      "ID": 819000,
+      "Entries": [
+        "Lord Villaidel in Black"
+      ]
+    },
+    {
+      "ID": 819002,
+      "Entries": [
+        "Lord Villaidel in Black, Black"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "princess knight selenium"
+      ]
+    },
+    {
+      "ID": 820002,
+      "Entries": [
+        "Princess Knight Selene Black"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "witch"
+      ]
+    },
+    {
+      "ID": 822000,
+      "Entries": [
+        "old king doran"
+      ]
+    },
+    {
+      "ID": 823000,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 824000,
+      "Entries": [
+        "Believers of God Part 1"
+      ]
+    },
+    {
+      "ID": 825000,
+      "Entries": [
+        "Believers of God Part 2"
+      ]
+    },
+    {
+      "ID": 826000,
+      "Entries": [
+        "Believers of God Part 3"
+      ]
+    },
+    {
+      "ID": 828000,
+      "Entries": [
+        "Savvy"
+      ]
+    },
+    {
+      "ID": 829000,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 830000,
+      "Entries": [
+        "Master Satsuki"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 832000,
+      "Entries": [
+        "Miralda the Condemned"
+      ]
+    },
+    {
+      "ID": 832002,
+      "Entries": [
+        "Condemned Miralda Black"
+      ]
+    },
+    {
+      "ID": 833000,
+      "Entries": [
+        "Prison Castle 3 Older Summoning NPC"
+      ]
+    },
+    {
+      "ID": 834000,
+      "Entries": [
+        "Tunnel 2 Barbarian Warrior Black"
+      ]
+    },
+    {
+      "ID": 835000,
+      "Entries": [
+        "For tutorial wandering ghost"
+      ]
+    },
+    {
+      "ID": 836000,
+      "Entries": [
+        "Prison Castle 1 Warrior in front of the church Black"
+      ]
+    },
+    {
+      "ID": 837000,
+      "Entries": [
+        "unholy 1 black ghost"
+      ]
+    }
+  ]
+}

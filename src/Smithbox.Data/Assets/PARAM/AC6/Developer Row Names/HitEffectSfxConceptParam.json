@@ -1,0 +1,389 @@
+{
+  "Name": "HitEffectSfxConceptParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "stone -- 石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood -- 木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "electricity -- 電気"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "concrete -- コンクリ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "glass -- ガラス"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "vegetation -- 植生"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle) -- 水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle level) -- 水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee) -- 水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water (waist and above) -- 水（腰以上）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "underwater -- 水底"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Swamp (puddle level) -- 沼（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Swamp (about ankle length) -- 沼（足首程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Swamp (below the knee) -- 沼（膝下）"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Swamp (waist above) -- 沼（腰以上）"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Heavy oil (about ankle size) -- 重油（足首程度）"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Heavy oil (below the knee) -- 重油（膝下）"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Coral water surface (about ankle level) -- コーラル水面（足首程度）"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Coral water surface (below the knees) -- コーラル水面（膝下）"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Test: Steam generation on hit -- テスト：ヒット時蒸気発生"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "stealth fog -- ステルス霧"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "acceleration floor -- 加速床"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PA barrier -- PAバリア"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "shield iron -- 盾鉄"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "shield heavy iron -- 盾重鉄"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "shield energy -- 盾エネルギー"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "body iron -- 身体鉄"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "body heavy iron -- 身体重鉄"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "body meat -- 身体肉"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Shield energy_initial guard -- 盾エネルギー_イニシャルガード"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Shield Coral_Initial Guard -- 盾コーラル_イニシャルガード"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "PA_enemy large_white_shot ripple -- PA_敵大_白_被弾波紋"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "generator_normal -- ジェネレーター_通常"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "generator_coral -- ジェネレーター_コーラル"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "PA_Enemy extra large_Coral_Ripples hit -- PA_敵特大_コーラル_被弾波紋"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "shield coral -- 盾コーラル"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    }
+  ]
+}

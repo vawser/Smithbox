@@ -1,0 +1,551 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Dummy"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Dagger - Piercing"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Dagger - Throwing"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Axe - Throwing"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Hammer"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Hammer - Piercing"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Great Hammer"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Spear - Throwing"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Halberd - Puncture"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Rod-like compound"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Catalysts"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Claws"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Bows"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Greatbows"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Shield"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Friede's Great Scythe"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Crow Quills"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Sellsword"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Onikiri and Ubadach"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        "Drang Twinspears"
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1046,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1047,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1048,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1049,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

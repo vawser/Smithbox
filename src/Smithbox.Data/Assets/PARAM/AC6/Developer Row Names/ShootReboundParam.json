@@ -1,0 +1,311 @@
+{
+  "Name": "ShootReboundParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Machine gun shooting_right -- マシンガン射撃_右"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Machine gun shooting_left -- マシンガン射撃_左"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Rifle shooting_right -- ライフル射撃_右"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Rifle shooting_left -- ライフル射撃_左"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Hand gun_right -- ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Handgun_Left -- ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "rifle_right -- ライフル_右"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "rifle_left -- ライフル_左"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Assault rifle_right -- アサルトライフル_右"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Assault rifle_left -- アサルトライフル_左"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "machine gun_right -- マシンガン_右"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Machine gun_left -- マシンガン_左"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Gatling gun_right -- ガトリングガン_右"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Gatling gun_left -- ガトリングガン_左"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Bazooka_right -- バズーカ_右"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Bazooka_left -- バズーカ_左"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "shotgun_right -- ショットガン_右"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "shotgun_left -- ショットガン_左"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Grenade rifle_right -- グレネードライフル_右"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "Grenade rifle_left -- グレネードライフル_左"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Hand gun_right -- ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 2071,
+      "Entries": [
+        "Handgun_Left -- ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Large caliber handgun_right -- 大口径ハンドガン_右"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "Large caliber handgun_left -- 大口径ハンドガン_左"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Hand missile (burst)_right -- ハンドミサイル（バースト）_右"
+      ]
+    },
+    {
+      "ID": 2091,
+      "Entries": [
+        "Hand missile (burst)_left -- ハンドミサイル（バースト）_左"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Hand missile (single shot)_right -- ハンドミサイル（単発）_右"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Hand missile (single shot)_left -- ハンドミサイル（単発）_左"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Laser rifle_right -- レーザーライフル_右"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Laser rifle_left -- レーザーライフル_左"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Plasma rifle_right -- プラズマライフル_右"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "Plasma rifle_left -- プラズマライフル_左"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Vibration pulse gun_right -- 振動パルスガン_右"
+      ]
+    },
+    {
+      "ID": 2131,
+      "Entries": [
+        "Vibration pulse gun_left -- 振動パルスガン_左"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Flame radiation_right -- 火炎放射_右"
+      ]
+    },
+    {
+      "ID": 2141,
+      "Entries": [
+        "Flame radiation_left -- 火炎放射_左"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Laser shotgun_right -- レーザーショットガン_右"
+      ]
+    },
+    {
+      "ID": 2151,
+      "Entries": [
+        "Laser shotgun_left -- レーザーショットガン_左"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Burst rifle (normal 3-point burst)_right -- バーストライフル（通常３点バースト）_右"
+      ]
+    },
+    {
+      "ID": 2161,
+      "Entries": [
+        "Burst rifle (normal 3-point burst)_left -- バーストライフル（通常３点バースト）_左"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Linear rifle (charge burst)_right -- リニアライフル（チャージバースト）_右"
+      ]
+    },
+    {
+      "ID": 2171,
+      "Entries": [
+        "Linear rifle (charge burst)_left -- リニアライフル（チャージバースト）_左"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Laser rifle (charge burst)_right -- レーザーライフル（チャージバースト）_右"
+      ]
+    },
+    {
+      "ID": 2181,
+      "Entries": [
+        "Laser rifle (charge burst)_left -- レーザーライフル（チャージバースト）_左"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Laser shotgun_right -- レーザーショットガン_右"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "laser shotgun)_left -- レーザーショットガン）_左"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Laser rifle (melange)_right -- レーザーライフル（メランジ）_右"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Laser rifle (melange)_left -- レーザーライフル（メランジ）_左"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Shotgun (WP1510)_Right -- ショットガン（WP1510）_右"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Shotgun (WP1510)_Left -- ショットガン（WP1510）_左"
+      ]
+    }
+  ]
+}

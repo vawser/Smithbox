@@ -1,0 +1,119 @@
+{
+  "Name": "FootEffectWaterSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Water - Small -- 水-小"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Water - Medium -- 水-中"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Water - Large -- 水-大"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Acid - Small -- 酸-小"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Acid - medium -- 酸-中"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Acid - Large -- 酸-大"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Swamp-Small -- 沼-小"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Swamp - Medium -- 沼-中"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Numa-Dai -- 沼-大"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Poison Swamp - Small -- 毒沼-小"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Poison Marsh - Medium -- 毒沼-中"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Poison Marsh - Large -- 毒沼-大"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Oil (coal tar) - small -- 油（コールタール）-小"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Oil (coal tar) - medium -- 油（コールタール）-中"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Oil (coal tar) - Large -- 油（コールタール）-大"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

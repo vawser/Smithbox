@@ -1,0 +1,6539 @@
+{
+  "Name": "BulletParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1960010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1970010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1990000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1990010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5220442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10066106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10066116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10067606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10067616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10069606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10071106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10072106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10073206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10073706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20024100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20024200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20024300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20024400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20030820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20033900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20033901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20033902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20034052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20039901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20040710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20040810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20040910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20041010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20070900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20070901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20070920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071513,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071514,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071515,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071517,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071518,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071519,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20071901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20072000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20072001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20080900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20080901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20080920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20081401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20083900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20084900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20085901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20086000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20086001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088705,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088821,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088919,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20088921,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20089112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20090001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20090100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20090101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20123000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20123001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20123002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20123005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20229000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20230920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20231000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20231001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20231020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20232730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20233530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21013011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22013011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23013011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31030000,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31040000,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31050000,
+      "Entries": [
+        "Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31050010,
+      "Entries": [
+        "Homing Soul Arrow [Child]"
+      ]
+    },
+    {
+      "ID": 31060000,
+      "Entries": [
+        "Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31060010,
+      "Entries": [
+        "Heavy Homing Soul Arrow [Child]"
+      ]
+    },
+    {
+      "ID": 31070000,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070010,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070011,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070012,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070013,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070014,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070015,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070016,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070017,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070018,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070019,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070020,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070021,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070022,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070023,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070024,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31070060,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31080000,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080010,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080011,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080012,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080013,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080014,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080015,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080016,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080017,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080018,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080019,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080020,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080021,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080022,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080023,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080024,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31080060,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 31110000,
+      "Entries": [
+        "Shockwave"
+      ]
+    },
+    {
+      "ID": 31110010,
+      "Entries": [
+        "Shockwave [Child]"
+      ]
+    },
+    {
+      "ID": 31120000,
+      "Entries": [
+        "Soul Spear Barrage"
+      ]
+    },
+    {
+      "ID": 31130000,
+      "Entries": [
+        "Soul Shower"
+      ]
+    },
+    {
+      "ID": 31130001,
+      "Entries": [
+        "Soul Shower [Child]"
+      ]
+    },
+    {
+      "ID": 31130010,
+      "Entries": [
+        "Soul Shower [Child]"
+      ]
+    },
+    {
+      "ID": 31140000,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 31140010,
+      "Entries": [
+        "Soul Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 31140020,
+      "Entries": [
+        "Soul Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 31150000,
+      "Entries": [
+        "Soul Vortex"
+      ]
+    },
+    {
+      "ID": 31150010,
+      "Entries": [
+        "Soul Vortex [Child]"
+      ]
+    },
+    {
+      "ID": 31151000,
+      "Entries": [
+        "Soul Vortex"
+      ]
+    },
+    {
+      "ID": 31151010,
+      "Entries": [
+        "Soul Vortex [Child]"
+      ]
+    },
+    {
+      "ID": 31160000,
+      "Entries": [
+        "Soul Bolt"
+      ]
+    },
+    {
+      "ID": 31160001,
+      "Entries": [
+        "Soul Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 31160002,
+      "Entries": [
+        "Soul Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 31160010,
+      "Entries": [
+        "Soul Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 31160011,
+      "Entries": [
+        "Soul Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 31170000,
+      "Entries": [
+        "Soul Geyser"
+      ]
+    },
+    {
+      "ID": 31170001,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31170002,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31170010,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31170011,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31170012,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31170013,
+      "Entries": [
+        "Soul Geyser [Child]"
+      ]
+    },
+    {
+      "ID": 31180000,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31180001,
+      "Entries": [
+        "Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31181000,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31181001,
+      "Entries": [
+        "Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31190000,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31190001,
+      "Entries": [
+        "Great Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31191000,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31191001,
+      "Entries": [
+        "Great Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31200001,
+      "Entries": [
+        "Crystal Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31201000,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31201001,
+      "Entries": [
+        "Crystal Magic Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31210000,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 31210001,
+      "Entries": [
+        "Strong Magic Shield [Child]"
+      ]
+    },
+    {
+      "ID": 31211000,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 31211001,
+      "Entries": [
+        "Strong Magic Shield [Child]"
+      ]
+    },
+    {
+      "ID": 31220000,
+      "Entries": [
+        "Yearn"
+      ]
+    },
+    {
+      "ID": 31220001,
+      "Entries": [
+        "Yearn [Child]"
+      ]
+    },
+    {
+      "ID": 31220010,
+      "Entries": [
+        "Yearn [Child]"
+      ]
+    },
+    {
+      "ID": 31230000,
+      "Entries": [
+        "Hush"
+      ]
+    },
+    {
+      "ID": 31240000,
+      "Entries": [
+        "Fall Control"
+      ]
+    },
+    {
+      "ID": 31250000,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 31250001,
+      "Entries": [
+        "Hidden Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31250002,
+      "Entries": [
+        "Hidden Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31251000,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 31251001,
+      "Entries": [
+        "Hidden Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31251002,
+      "Entries": [
+        "Hidden Weapon [Child]"
+      ]
+    },
+    {
+      "ID": 31260000,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 31270000,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 31270001,
+      "Entries": [
+        "Cast Light [Child]"
+      ]
+    },
+    {
+      "ID": 31280000,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 31280010,
+      "Entries": [
+        "Chameleon [Child]"
+      ]
+    },
+    {
+      "ID": 31290000,
+      "Entries": [
+        "Unleash Magic"
+      ]
+    },
+    {
+      "ID": 31290001,
+      "Entries": [
+        "Unleash Magic [Child]"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "Soul Flash"
+      ]
+    },
+    {
+      "ID": 31300010,
+      "Entries": [
+        "Soul Flash [Child]"
+      ]
+    },
+    {
+      "ID": 31300020,
+      "Entries": [
+        "Soul Flash [Child]"
+      ]
+    },
+    {
+      "ID": 31310000,
+      "Entries": [
+        "Focus Souls"
+      ]
+    },
+    {
+      "ID": 31310001,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310002,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310003,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310010,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310011,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310012,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310013,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310014,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310020,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310021,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310022,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310023,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310024,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310030,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310031,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310032,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310033,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310034,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310040,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310041,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310042,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310043,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 31310044,
+      "Entries": [
+        "Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32010010,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32010011,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32010012,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32010013,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32010014,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32020010,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32020011,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32020012,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32020013,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32020014,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32030000,
+      "Entries": [
+        "Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 32030001,
+      "Entries": [
+        "Great Heal Excerpt [Child]"
+      ]
+    },
+    {
+      "ID": 32040000,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32040010,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32040011,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32040012,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32040013,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32040014,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32050000,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32050010,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32050011,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32050012,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32050013,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32050014,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32060000,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 32060001,
+      "Entries": [
+        "Replenishment [Child]"
+      ]
+    },
+    {
+      "ID": 32070000,
+      "Entries": [
+        "Resplendent Life"
+      ]
+    },
+    {
+      "ID": 32070001,
+      "Entries": [
+        "Resplendent Life [Child]"
+      ]
+    },
+    {
+      "ID": 32080000,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32080010,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32080011,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32080012,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32080013,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32080014,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        "Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 32090001,
+      "Entries": [
+        "Caressing Prayer [Child]"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 32100001,
+      "Entries": [
+        "Force [Child]"
+      ]
+    },
+    {
+      "ID": 32110000,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 32110001,
+      "Entries": [
+        "Wrath of the Gods [Child]"
+      ]
+    },
+    {
+      "ID": 32120000,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 32120010,
+      "Entries": [
+        "Emit Force [Child]"
+      ]
+    },
+    {
+      "ID": 32130000,
+      "Entries": [
+        "Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 32130001,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32130010,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32130020,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32130021,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32130030,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32130031,
+      "Entries": [
+        "Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 32140000,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 32140010,
+      "Entries": [
+        "Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32140020,
+      "Entries": [
+        "Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32140021,
+      "Entries": [
+        "Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32140030,
+      "Entries": [
+        "Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32140031,
+      "Entries": [
+        "Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32150000,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 32150010,
+      "Entries": [
+        "Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32150020,
+      "Entries": [
+        "Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32150021,
+      "Entries": [
+        "Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32150030,
+      "Entries": [
+        "Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32150031,
+      "Entries": [
+        "Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32160000,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 32160010,
+      "Entries": [
+        "Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32160020,
+      "Entries": [
+        "Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32160021,
+      "Entries": [
+        "Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32160030,
+      "Entries": [
+        "Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32160031,
+      "Entries": [
+        "Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32170000,
+      "Entries": [
+        "Soul Appease"
+      ]
+    },
+    {
+      "ID": 32170010,
+      "Entries": [
+        "Soul Appease [Child]"
+      ]
+    },
+    {
+      "ID": 32170011,
+      "Entries": [
+        "Soul Appease [Child]"
+      ]
+    },
+    {
+      "ID": 32180000,
+      "Entries": [
+        "Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 32180001,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180002,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180010,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180011,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180015,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180020,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180021,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180030,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32180031,
+      "Entries": [
+        "Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 32190000,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32190010,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32190011,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32190012,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32190013,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32190014,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32200001,
+      "Entries": [
+        "Great Magic Barrier [Child]"
+      ]
+    },
+    {
+      "ID": 32210000,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 32220000,
+      "Entries": [
+        "Guidance"
+      ]
+    },
+    {
+      "ID": 32220001,
+      "Entries": [
+        "Guidance [Child]"
+      ]
+    },
+    {
+      "ID": 32230000,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32230010,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32230011,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32230012,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32230013,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32230014,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32240000,
+      "Entries": [
+        "Unveil"
+      ]
+    },
+    {
+      "ID": 32250000,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 32250001,
+      "Entries": [
+        "Perseverance [Child]"
+      ]
+    },
+    {
+      "ID": 32260000,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 32261000,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        "Denial"
+      ]
+    },
+    {
+      "ID": 32300001,
+      "Entries": [
+        "Denial [Child]"
+      ]
+    },
+    {
+      "ID": 32300005,
+      "Entries": [
+        "Denial [Child]"
+      ]
+    },
+    {
+      "ID": 32300010,
+      "Entries": [
+        "Denial [Child]"
+      ]
+    },
+    {
+      "ID": 32310000,
+      "Entries": [
+        "Splintering Lightning Spear"
+      ]
+    },
+    {
+      "ID": 32310001,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310002,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310003,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310004,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310005,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310006,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310007,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310008,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310009,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310010,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310011,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310020,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310021,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310040,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310041,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310042,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310050,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310051,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310060,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 32310061,
+      "Entries": [
+        "Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 33010000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 33010001,
+      "Entries": [
+        "Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33010010,
+      "Entries": [
+        "Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33020000,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 33020001,
+      "Entries": [
+        "Fire Orb [Child]"
+      ]
+    },
+    {
+      "ID": 33020010,
+      "Entries": [
+        "Fire Orb [Child]"
+      ]
+    },
+    {
+      "ID": 33030000,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 33030001,
+      "Entries": [
+        "Great Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33030010,
+      "Entries": [
+        "Great Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33040000,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 33040001,
+      "Entries": [
+        "Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33040002,
+      "Entries": [
+        "Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33040020,
+      "Entries": [
+        "Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33040021,
+      "Entries": [
+        "Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 33050000,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 33050001,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050002,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050003,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050004,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050010,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050011,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050020,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050021,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050030,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050031,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33050040,
+      "Entries": [
+        "Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 33060000,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 33060001,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060002,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060003,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060004,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060010,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060011,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060020,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060021,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060030,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060031,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33060040,
+      "Entries": [
+        "Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 33070000,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 33070001,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070002,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070003,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070004,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070010,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070011,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070020,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070021,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070030,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070031,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070040,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33070050,
+      "Entries": [
+        "Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 33080000,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 33080010,
+      "Entries": [
+        "Combustion [Child]"
+      ]
+    },
+    {
+      "ID": 33090000,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 33090010,
+      "Entries": [
+        "Great Combustion [Child]"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 33100001,
+      "Entries": [
+        "Fire Whip [Child]"
+      ]
+    },
+    {
+      "ID": 33100010,
+      "Entries": [
+        "Fire Whip [Child]"
+      ]
+    },
+    {
+      "ID": 33110000,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 33110010,
+      "Entries": [
+        "Poison Mist [Child]"
+      ]
+    },
+    {
+      "ID": 33110011,
+      "Entries": [
+        "Poison Mist [Child]"
+      ]
+    },
+    {
+      "ID": 33120000,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 33120010,
+      "Entries": [
+        "Toxic Mist [Child]"
+      ]
+    },
+    {
+      "ID": 33120011,
+      "Entries": [
+        "Toxic Mist [Child]"
+      ]
+    },
+    {
+      "ID": 33130000,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 33130010,
+      "Entries": [
+        "Acid Surge [Child]"
+      ]
+    },
+    {
+      "ID": 33130011,
+      "Entries": [
+        "Acid Surge [Child]"
+      ]
+    },
+    {
+      "ID": 33140000,
+      "Entries": [
+        "Lingering Flame"
+      ]
+    },
+    {
+      "ID": 33140001,
+      "Entries": [
+        "Lingering Flame [Child]"
+      ]
+    },
+    {
+      "ID": 33140010,
+      "Entries": [
+        "Lingering Flame [Child]"
+      ]
+    },
+    {
+      "ID": 33140011,
+      "Entries": [
+        "Lingering Flame [Child]"
+      ]
+    },
+    {
+      "ID": 33150000,
+      "Entries": [
+        "Flame Swathe"
+      ]
+    },
+    {
+      "ID": 33150001,
+      "Entries": [
+        "Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 33150010,
+      "Entries": [
+        "Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 33150011,
+      "Entries": [
+        "Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 33160000,
+      "Entries": [
+        "Forbidden Sun"
+      ]
+    },
+    {
+      "ID": 33160001,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33160002,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33160020,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33160021,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33160022,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33160023,
+      "Entries": [
+        "Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 33170000,
+      "Entries": [
+        "Flame Weapon"
+      ]
+    },
+    {
+      "ID": 33171000,
+      "Entries": [
+        "Flame Weapon"
+      ]
+    },
+    {
+      "ID": 33180000,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 33180010,
+      "Entries": [
+        "Flash Sweat [Child]"
+      ]
+    },
+    {
+      "ID": 33190000,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 33190010,
+      "Entries": [
+        "Iron Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Warmth"
+      ]
+    },
+    {
+      "ID": 33210000,
+      "Entries": [
+        "Immolation"
+      ]
+    },
+    {
+      "ID": 33210005,
+      "Entries": [
+        "Immolation [Child]"
+      ]
+    },
+    {
+      "ID": 33210020,
+      "Entries": [
+        "Immolation [Child]"
+      ]
+    },
+    {
+      "ID": 33210021,
+      "Entries": [
+        "Immolation [Child]"
+      ]
+    },
+    {
+      "ID": 33210022,
+      "Entries": [
+        "Immolation [Child]"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "Fire Snake"
+      ]
+    },
+    {
+      "ID": 33300001,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300010,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300020,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300021,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300030,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300031,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300040,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300041,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300050,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300051,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300060,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300061,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300070,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300071,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300080,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300081,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33300090,
+      "Entries": [
+        "Fire Snake [Child]"
+      ]
+    },
+    {
+      "ID": 33310000,
+      "Entries": [
+        "Dance of Fire"
+      ]
+    },
+    {
+      "ID": 33310010,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33310020,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33310030,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33310031,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33311000,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33311010,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33311020,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33311030,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33311031,
+      "Entries": [
+        "Dance of Fire [Child]"
+      ]
+    },
+    {
+      "ID": 33320000,
+      "Entries": [
+        "Outcry"
+      ]
+    },
+    {
+      "ID": 33320001,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320002,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320003,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320004,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320005,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320010,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320011,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320020,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320021,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320030,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320031,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320040,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320050,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 33320051,
+      "Entries": [
+        "Outcry [Child]"
+      ]
+    },
+    {
+      "ID": 34010000,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 34020000,
+      "Entries": [
+        "Dark Hail"
+      ]
+    },
+    {
+      "ID": 34020001,
+      "Entries": [
+        "Dark Hail [Child]"
+      ]
+    },
+    {
+      "ID": 34030000,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 34030010,
+      "Entries": [
+        "Dark Fog [Child]"
+      ]
+    },
+    {
+      "ID": 34030011,
+      "Entries": [
+        "Dark Fog [Child]"
+      ]
+    },
+    {
+      "ID": 34040000,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040010,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040011,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040012,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040013,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040014,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040015,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040016,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040017,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040018,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040019,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040020,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040021,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040022,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040023,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040024,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34040060,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34050000,
+      "Entries": [
+        "Dead Again"
+      ]
+    },
+    {
+      "ID": 34050001,
+      "Entries": [
+        "Dead Again [Child]"
+      ]
+    },
+    {
+      "ID": 34050010,
+      "Entries": [
+        "Dead Again [Child]"
+      ]
+    },
+    {
+      "ID": 34050011,
+      "Entries": [
+        "Dead Again [Child]"
+      ]
+    },
+    {
+      "ID": 34050012,
+      "Entries": [
+        "Dead Again [Child]"
+      ]
+    },
+    {
+      "ID": 34060000,
+      "Entries": [
+        "Dark Weapon"
+      ]
+    },
+    {
+      "ID": 34061000,
+      "Entries": [
+        "Dark Weapon"
+      ]
+    },
+    {
+      "ID": 34070000,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34070010,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34070011,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34070012,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34070013,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34070014,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34080000,
+      "Entries": [
+        "Repel"
+      ]
+    },
+    {
+      "ID": 34090000,
+      "Entries": [
+        "Twisted Barricade"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Numbness"
+      ]
+    },
+    {
+      "ID": 34100010,
+      "Entries": [
+        "Numbness [Child]"
+      ]
+    },
+    {
+      "ID": 34300000,
+      "Entries": [
+        "Dark Greatsword"
+      ]
+    },
+    {
+      "ID": 34300010,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34300020,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34300021,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34300022,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34300030,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34300031,
+      "Entries": [
+        "Dark Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 34310000,
+      "Entries": [
+        "Recollection"
+      ]
+    },
+    {
+      "ID": 34310010,
+      "Entries": [
+        "Recollection [Child]"
+      ]
+    },
+    {
+      "ID": 34310011,
+      "Entries": [
+        "Recollection [Child]"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "Scraps of Life"
+      ]
+    },
+    {
+      "ID": 35010001,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010002,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010011,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010012,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010020,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010021,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010030,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010031,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010040,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35010050,
+      "Entries": [
+        "Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "Darkstorm"
+      ]
+    },
+    {
+      "ID": 35020010,
+      "Entries": [
+        "Darkstorm [Child]"
+      ]
+    },
+    {
+      "ID": 35020011,
+      "Entries": [
+        "Darkstorm [Child]"
+      ]
+    },
+    {
+      "ID": 35020012,
+      "Entries": [
+        "Darkstorm [Child]"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35030001,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35030002,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35030003,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35030004,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040001,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040002,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040003,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040004,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35050001,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35050002,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35050003,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35050004,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35060000,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35060001,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35060002,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35060003,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35060004,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35060010,
+      "Entries": [
+        "Resonant Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 35060011,
+      "Entries": [
+        "Resonant Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 35060012,
+      "Entries": [
+        "Resonant Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 35060013,
+      "Entries": [
+        "Resonant Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 35060014,
+      "Entries": [
+        "Resonant Flesh [Child]"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35070001,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35070002,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35070003,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35070004,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071000,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071001,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071002,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071003,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071004,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35071010,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 35080001,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080002,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080010,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080011,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080012,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080020,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080021,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080022,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080030,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080031,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080032,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080040,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080041,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35080042,
+      "Entries": [
+        "Lifedrain Patch [Child]"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35090010,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35090011,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35090012,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35090013,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35090014,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35300010,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35300011,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35300012,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35300013,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35300014,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "Dark Dance"
+      ]
+    },
+    {
+      "ID": 35310010,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310011,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310020,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310021,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310031,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310032,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310033,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310034,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310035,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310041,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310042,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310043,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310044,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310045,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310100,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310110,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310120,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310121,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310200,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310210,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310220,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310221,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310300,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310310,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310320,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310321,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310400,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310410,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310420,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 35310421,
+      "Entries": [
+        "Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 40480000,
+      "Entries": [
+        "Old Sun Ring"
+      ]
+    },
+    {
+      "ID": 40480010,
+      "Entries": [
+        "Old Sun Ring [Child]"
+      ]
+    },
+    {
+      "ID": 40530000,
+      "Entries": [
+        "Ring of Thorns"
+      ]
+    },
+    {
+      "ID": 40530010,
+      "Entries": [
+        "Ring of Thorns [Child]"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Moon Butterfly Set"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Crown of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 51010001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51010002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60405000,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60405001,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60405010,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60405011,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60405020,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60405030,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 60406000,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 60406001,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 60406010,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 60406011,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 60430000,
+      "Entries": [
+        "Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 60470000,
+      "Entries": [
+        "Hello Carving"
+      ]
+    },
+    {
+      "ID": 60480000,
+      "Entries": [
+        "Thank You Carving"
+      ]
+    },
+    {
+      "ID": 60490000,
+      "Entries": [
+        "I'm Sorry Carving"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "Very Good! Carving"
+      ]
+    },
+    {
+      "ID": 60530000,
+      "Entries": [
+        "Alluring Skull"
+      ]
+    },
+    {
+      "ID": 60530010,
+      "Entries": [
+        "Alluring Skull [Child]"
+      ]
+    },
+    {
+      "ID": 60531000,
+      "Entries": [
+        "Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 60531010,
+      "Entries": [
+        "Lloyd's Talisman [Child]"
+      ]
+    },
+    {
+      "ID": 60540000,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 60550000,
+      "Entries": [
+        "Witching Urn"
+      ]
+    },
+    {
+      "ID": 60550010,
+      "Entries": [
+        "Witching Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60550011,
+      "Entries": [
+        "Witching Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60560000,
+      "Entries": [
+        "Lightning Urn"
+      ]
+    },
+    {
+      "ID": 60560010,
+      "Entries": [
+        "Lightning Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60560011,
+      "Entries": [
+        "Lightning Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60570000,
+      "Entries": [
+        "Firebomb"
+      ]
+    },
+    {
+      "ID": 60570010,
+      "Entries": [
+        "Firebomb [Child]"
+      ]
+    },
+    {
+      "ID": 60570011,
+      "Entries": [
+        "Firebomb [Child]"
+      ]
+    },
+    {
+      "ID": 60575000,
+      "Entries": [
+        "Black Firebomb"
+      ]
+    },
+    {
+      "ID": 60575010,
+      "Entries": [
+        "Black Firebomb [Child]"
+      ]
+    },
+    {
+      "ID": 60575011,
+      "Entries": [
+        "Black Firebomb [Child]"
+      ]
+    },
+    {
+      "ID": 60580000,
+      "Entries": [
+        "Hexing Urn"
+      ]
+    },
+    {
+      "ID": 60580010,
+      "Entries": [
+        "Hexing Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60580011,
+      "Entries": [
+        "Hexing Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60590000,
+      "Entries": [
+        "Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 60595000,
+      "Entries": [
+        "Dung Pie"
+      ]
+    },
+    {
+      "ID": 60595010,
+      "Entries": [
+        "Dung Pie [Child]"
+      ]
+    },
+    {
+      "ID": 60600000,
+      "Entries": [
+        "Lacerating Knife"
+      ]
+    },
+    {
+      "ID": 60610000,
+      "Entries": [
+        "Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 60610010,
+      "Entries": [
+        "Corrosive Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60610011,
+      "Entries": [
+        "Corrosive Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60620000,
+      "Entries": [
+        "Holy Water Urn"
+      ]
+    },
+    {
+      "ID": 60620010,
+      "Entries": [
+        "Holy Water Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60620011,
+      "Entries": [
+        "Holy Water Urn [Child]"
+      ]
+    },
+    {
+      "ID": 60760020,
+      "Entries": [
+        "Wood Arrow"
+      ]
+    },
+    {
+      "ID": 60770020,
+      "Entries": [
+        "Iron Arrow"
+      ]
+    },
+    {
+      "ID": 60780020,
+      "Entries": [
+        "Magic Arrow"
+      ]
+    },
+    {
+      "ID": 60790020,
+      "Entries": [
+        "Lightning Arrow"
+      ]
+    },
+    {
+      "ID": 60800020,
+      "Entries": [
+        "Fire Arrow"
+      ]
+    },
+    {
+      "ID": 60810020,
+      "Entries": [
+        "Dark Arrow"
+      ]
+    },
+    {
+      "ID": 60820020,
+      "Entries": [
+        "Poison Arrow"
+      ]
+    },
+    {
+      "ID": 60830020,
+      "Entries": [
+        "Lacerating Arrow"
+      ]
+    },
+    {
+      "ID": 60850020,
+      "Entries": [
+        "Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 60870020,
+      "Entries": [
+        "Lightning Greatarrow"
+      ]
+    },
+    {
+      "ID": 60880020,
+      "Entries": [
+        "Fire Greatarrow"
+      ]
+    },
+    {
+      "ID": 60900020,
+      "Entries": [
+        "Destructive Greatarrow"
+      ]
+    },
+    {
+      "ID": 60910000,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 60910020,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 60910040,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 60910060,
+      "Entries": [
+        "Wood Bolt"
+      ]
+    },
+    {
+      "ID": 60920000,
+      "Entries": [
+        "Iron Bolt"
+      ]
+    },
+    {
+      "ID": 60920020,
+      "Entries": [
+        "Iron Bolt"
+      ]
+    },
+    {
+      "ID": 60920040,
+      "Entries": [
+        "Iron Bolt"
+      ]
+    },
+    {
+      "ID": 60920060,
+      "Entries": [
+        "Iron Bolt"
+      ]
+    },
+    {
+      "ID": 60930000,
+      "Entries": [
+        "Magic Bolt"
+      ]
+    },
+    {
+      "ID": 60930020,
+      "Entries": [
+        "Magic Bolt"
+      ]
+    },
+    {
+      "ID": 60930040,
+      "Entries": [
+        "Magic Bolt"
+      ]
+    },
+    {
+      "ID": 60930060,
+      "Entries": [
+        "Magic Bolt"
+      ]
+    },
+    {
+      "ID": 60940000,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 60940020,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 60940040,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 60940060,
+      "Entries": [
+        "Lightning Bolt"
+      ]
+    },
+    {
+      "ID": 60950000,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 60950020,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 60950040,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 60950060,
+      "Entries": [
+        "Fire Bolt"
+      ]
+    },
+    {
+      "ID": 60960000,
+      "Entries": [
+        "Dark Bolt"
+      ]
+    },
+    {
+      "ID": 60960020,
+      "Entries": [
+        "Dark Bolt"
+      ]
+    },
+    {
+      "ID": 60960040,
+      "Entries": [
+        "Dark Bolt"
+      ]
+    },
+    {
+      "ID": 60960060,
+      "Entries": [
+        "Dark Bolt"
+      ]
+    },
+    {
+      "ID": 71010000,
+      "Entries": [
+        "[NPC] Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71020000,
+      "Entries": [
+        "[NPC] Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71030000,
+      "Entries": [
+        "[NPC] Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71040000,
+      "Entries": [
+        "[NPC] Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71050000,
+      "Entries": [
+        "[NPC] Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71050010,
+      "Entries": [
+        "[NPC] Homing Soul Arrow [Child]"
+      ]
+    },
+    {
+      "ID": 71060000,
+      "Entries": [
+        "[NPC] Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71060010,
+      "Entries": [
+        "[NPC] Heavy Homing Soul Arrow [Child]"
+      ]
+    },
+    {
+      "ID": 71090000,
+      "Entries": [
+        "[NPC] Soul Spear"
+      ]
+    },
+    {
+      "ID": 71100000,
+      "Entries": [
+        "[NPC] Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 71140000,
+      "Entries": [
+        "[NPC] Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 71140010,
+      "Entries": [
+        "[NPC] Soul Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 71140020,
+      "Entries": [
+        "[NPC] Soul Greatsword [Child]"
+      ]
+    },
+    {
+      "ID": 71150000,
+      "Entries": [
+        "[NPC] Soul Vortex"
+      ]
+    },
+    {
+      "ID": 71150010,
+      "Entries": [
+        "[NPC] Soul Vortex [Child]"
+      ]
+    },
+    {
+      "ID": 71151000,
+      "Entries": [
+        "[NPC] Soul Vortex"
+      ]
+    },
+    {
+      "ID": 71151010,
+      "Entries": [
+        "[NPC] Soul Vortex [Child]"
+      ]
+    },
+    {
+      "ID": 71270000,
+      "Entries": [
+        "[NPC] Cast Light"
+      ]
+    },
+    {
+      "ID": 71270001,
+      "Entries": [
+        "[NPC] Cast Light [Child]"
+      ]
+    },
+    {
+      "ID": 71300000,
+      "Entries": [
+        "[NPC] Soul Flash"
+      ]
+    },
+    {
+      "ID": 71300010,
+      "Entries": [
+        "[NPC] Soul Flash [Child]"
+      ]
+    },
+    {
+      "ID": 71300020,
+      "Entries": [
+        "[NPC] Soul Flash [Child]"
+      ]
+    },
+    {
+      "ID": 71310000,
+      "Entries": [
+        "[NPC] Focus Souls"
+      ]
+    },
+    {
+      "ID": 71310001,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310002,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310003,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310010,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310011,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310012,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310013,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310014,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310020,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310021,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310022,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310023,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310024,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310030,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310031,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310032,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310033,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310034,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310040,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310041,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310042,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310043,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 71310044,
+      "Entries": [
+        "[NPC] Focus Souls [Child]"
+      ]
+    },
+    {
+      "ID": 72010000,
+      "Entries": [
+        "[NPC] Heal"
+      ]
+    },
+    {
+      "ID": 72020000,
+      "Entries": [
+        "[NPC] Med Heal"
+      ]
+    },
+    {
+      "ID": 72030000,
+      "Entries": [
+        "[NPC] Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 72040000,
+      "Entries": [
+        "[NPC] Great Heal"
+      ]
+    },
+    {
+      "ID": 72050000,
+      "Entries": [
+        "[NPC] Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 72060000,
+      "Entries": [
+        "[NPC] Replenishment"
+      ]
+    },
+    {
+      "ID": 72060001,
+      "Entries": [
+        "[NPC] Replenishment [Child]"
+      ]
+    },
+    {
+      "ID": 72070000,
+      "Entries": [
+        "[NPC] Resplendent Life"
+      ]
+    },
+    {
+      "ID": 72070001,
+      "Entries": [
+        "[NPC] Resplendent Life [Child]"
+      ]
+    },
+    {
+      "ID": 72080000,
+      "Entries": [
+        "[NPC] Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 72090000,
+      "Entries": [
+        "[NPC] Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 72090001,
+      "Entries": [
+        "[NPC] Caressing Prayer [Child]"
+      ]
+    },
+    {
+      "ID": 72100000,
+      "Entries": [
+        "[NPC] Force"
+      ]
+    },
+    {
+      "ID": 72100001,
+      "Entries": [
+        "[NPC] Force [Child]"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "[NPC] Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 72110001,
+      "Entries": [
+        "[NPC] Wrath of the Gods [Child]"
+      ]
+    },
+    {
+      "ID": 72120000,
+      "Entries": [
+        "[NPC] Emit Force"
+      ]
+    },
+    {
+      "ID": 72120010,
+      "Entries": [
+        "[NPC] Emit Force [Child]"
+      ]
+    },
+    {
+      "ID": 72130000,
+      "Entries": [
+        "[NPC] Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 72130001,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72130010,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72130020,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72130021,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72130030,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72130031,
+      "Entries": [
+        "[NPC] Heavenly Thunder [Child]"
+      ]
+    },
+    {
+      "ID": 72140000,
+      "Entries": [
+        "[NPC] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 72140010,
+      "Entries": [
+        "[NPC] Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72140020,
+      "Entries": [
+        "[NPC] Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72140021,
+      "Entries": [
+        "[NPC] Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72140030,
+      "Entries": [
+        "[NPC] Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72140031,
+      "Entries": [
+        "[NPC] Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72150000,
+      "Entries": [
+        "[NPC] Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 72150010,
+      "Entries": [
+        "[NPC] Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72150020,
+      "Entries": [
+        "[NPC] Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72150021,
+      "Entries": [
+        "[NPC] Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72150030,
+      "Entries": [
+        "[NPC] Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72150031,
+      "Entries": [
+        "[NPC] Great Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72160000,
+      "Entries": [
+        "[NPC] Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 72160010,
+      "Entries": [
+        "[NPC] Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72160020,
+      "Entries": [
+        "[NPC] Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72160021,
+      "Entries": [
+        "[NPC] Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72160030,
+      "Entries": [
+        "[NPC] Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72160031,
+      "Entries": [
+        "[NPC] Sunlight Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72170000,
+      "Entries": [
+        "[NPC] Soul Appease"
+      ]
+    },
+    {
+      "ID": 72170010,
+      "Entries": [
+        "[NPC] Soul Appease [Child]"
+      ]
+    },
+    {
+      "ID": 72170011,
+      "Entries": [
+        "[NPC] Soul Appease [Child]"
+      ]
+    },
+    {
+      "ID": 72180000,
+      "Entries": [
+        "[NPC] Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 72180001,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180002,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180010,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180015,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180020,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180021,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180030,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72180031,
+      "Entries": [
+        "[NPC] Blinding Bolt [Child]"
+      ]
+    },
+    {
+      "ID": 72190000,
+      "Entries": [
+        "[NPC] Magic Barrier"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "[NPC] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 72200001,
+      "Entries": [
+        "[NPC] Great Magic Barrier [Child]"
+      ]
+    },
+    {
+      "ID": 72210000,
+      "Entries": [
+        "[NPC] Homeward"
+      ]
+    },
+    {
+      "ID": 72220000,
+      "Entries": [
+        "[NPC] Guidance"
+      ]
+    },
+    {
+      "ID": 72220001,
+      "Entries": [
+        "[NPC] Guidance [Child]"
+      ]
+    },
+    {
+      "ID": 72230000,
+      "Entries": [
+        "[NPC] Sacred Oath"
+      ]
+    },
+    {
+      "ID": 72230010,
+      "Entries": [
+        "[NPC] Sacred Oath"
+      ]
+    },
+    {
+      "ID": 72230011,
+      "Entries": [
+        "[NPC] Sacred Oath"
+      ]
+    },
+    {
+      "ID": 72240000,
+      "Entries": [
+        "[NPC] Unveil"
+      ]
+    },
+    {
+      "ID": 72250000,
+      "Entries": [
+        "[NPC] Perseverance"
+      ]
+    },
+    {
+      "ID": 72250001,
+      "Entries": [
+        "[NPC] Perseverance [Child]"
+      ]
+    },
+    {
+      "ID": 72260000,
+      "Entries": [
+        "[NPC] Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 72261000,
+      "Entries": [
+        "[NPC] Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 72310000,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear"
+      ]
+    },
+    {
+      "ID": 72310001,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310002,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310003,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310004,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310005,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310006,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310007,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310008,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310009,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310010,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310011,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310020,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310021,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310040,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310041,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310042,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310050,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310051,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310060,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 72310061,
+      "Entries": [
+        "[NPC] Splintering Lightning Spear [Child]"
+      ]
+    },
+    {
+      "ID": 73020000,
+      "Entries": [
+        "[NPC] Fire Orb"
+      ]
+    },
+    {
+      "ID": 73020001,
+      "Entries": [
+        "[NPC] Fire Orb [Child]"
+      ]
+    },
+    {
+      "ID": 73020010,
+      "Entries": [
+        "[NPC] Fire Orb [Child]"
+      ]
+    },
+    {
+      "ID": 73030000,
+      "Entries": [
+        "[NPC] Great Fireball"
+      ]
+    },
+    {
+      "ID": 73030001,
+      "Entries": [
+        "[NPC] Great Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73030010,
+      "Entries": [
+        "[NPC] Great Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73040000,
+      "Entries": [
+        "[NPC] Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 73040001,
+      "Entries": [
+        "[NPC] Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73040002,
+      "Entries": [
+        "[NPC] Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73040020,
+      "Entries": [
+        "[NPC] Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73040021,
+      "Entries": [
+        "[NPC] Great Chaos Fireball [Child]"
+      ]
+    },
+    {
+      "ID": 73050000,
+      "Entries": [
+        "[NPC] Firestorm"
+      ]
+    },
+    {
+      "ID": 73050001,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050002,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050010,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050011,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050020,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050021,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050030,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050031,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73050040,
+      "Entries": [
+        "[NPC] Firestorm [Child]"
+      ]
+    },
+    {
+      "ID": 73060000,
+      "Entries": [
+        "[NPC] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 73060001,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060002,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060010,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060011,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060020,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060021,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060030,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060031,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73060040,
+      "Entries": [
+        "[NPC] Fire Tempest [Child]"
+      ]
+    },
+    {
+      "ID": 73070000,
+      "Entries": [
+        "[NPC] Chaos Storm"
+      ]
+    },
+    {
+      "ID": 73070001,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070002,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070010,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070011,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070020,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070021,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070030,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070031,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070040,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73070050,
+      "Entries": [
+        "[NPC] Chaos Storm [Child]"
+      ]
+    },
+    {
+      "ID": 73090000,
+      "Entries": [
+        "[NPC] Great Combustion"
+      ]
+    },
+    {
+      "ID": 73090010,
+      "Entries": [
+        "[NPC] Great Combustion [Child]"
+      ]
+    },
+    {
+      "ID": 73150000,
+      "Entries": [
+        "[NPC] Flame Swathe"
+      ]
+    },
+    {
+      "ID": 73150001,
+      "Entries": [
+        "[NPC] Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 73150010,
+      "Entries": [
+        "[NPC] Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 73150011,
+      "Entries": [
+        "[NPC] Flame Swathe [Child]"
+      ]
+    },
+    {
+      "ID": 73160000,
+      "Entries": [
+        "[NPC] Forbidden Sun"
+      ]
+    },
+    {
+      "ID": 73160001,
+      "Entries": [
+        "[NPC] Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 73160002,
+      "Entries": [
+        "[NPC] Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 73160020,
+      "Entries": [
+        "[NPC] Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 73160021,
+      "Entries": [
+        "[NPC] Forbidden Sun [Child]"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "[NPC] Dark Orb"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "[NPC] Dark Hail"
+      ]
+    },
+    {
+      "ID": 74020001,
+      "Entries": [
+        "[NPC] Dark Hail [Child]"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "[NPC] Scraps of Life"
+      ]
+    },
+    {
+      "ID": 75010001,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010002,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010011,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010012,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010020,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010021,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010030,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010031,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010040,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75010050,
+      "Entries": [
+        "[NPC] Scraps of Life [Child]"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "[NPC] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75030001,
+      "Entries": [
+        "[NPC] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75030002,
+      "Entries": [
+        "[NPC] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75030003,
+      "Entries": [
+        "[NPC] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75030004,
+      "Entries": [
+        "[NPC] Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75310000,
+      "Entries": [
+        "[NPC] Dark Dance"
+      ]
+    },
+    {
+      "ID": 75310010,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310011,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310020,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310021,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310031,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310032,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310033,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310034,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310035,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310041,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310042,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310043,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310044,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    },
+    {
+      "ID": 75310045,
+      "Entries": [
+        "[NPC] Dark Dance [Child]"
+      ]
+    }
+  ]
+}

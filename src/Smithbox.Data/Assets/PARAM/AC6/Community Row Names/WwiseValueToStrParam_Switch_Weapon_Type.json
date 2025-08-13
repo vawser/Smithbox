@@ -1,0 +1,89 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_Weapon_Type",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Shield"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Rifle"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Shotgun"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Machine Gun"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Bazooka"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Hand Gun"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Sniper"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Cannon"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Missile"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Bayonet"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Laser Rifle"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Laser Cannon"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "Item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8803 @@
+{
+  "Name": "ItemLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test_param0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Knight Test_Recovery Medicine x1 [Confirmed] Weapon Material"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "simulator test"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "old fort prisoner"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Enemy NPC in Old Fort 1"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "For wandering ghosts in Mine 1"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "blacksmith"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Ojo 4 Three Musketeers A 1"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Ojo 4 Three Musketeers B 1"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Ojo 4 Three Musketeers C 1"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Urbain"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Urbain 2nd"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Urbain 3rd"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Urbain 4th"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Patches (common to old forts and tunnels)"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Prince Lendl, Black"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Lendl Prince Black 2nd piece"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Prince Lendl 1st"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Björngurm"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Björn Grum 2nd piece"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Björn Grum Third piece"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Björn Grum 4th piece"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Björn Grum 5th piece"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Björn Grum 6th piece"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "half hand"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "patch (pit)"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Gargold Run"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Gargold Run 2nd"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Gargold Run 3rd"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Gargold Run 4th"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Gargold Run 5th"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Sage Logan"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Sage Logan 2nd"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Sage Logan 3rd"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Sage Logan 4th"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Sage Logan 5th"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Sage Logan 6th"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Yurt, Lord of Silence"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Lord of Silence, Yurt 2nd"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Lord of Silence, Yurt 3rd"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Lord of Silence, Yurt 4th"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Lord of Silence, Yurt 5th"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Lord of Silence, Yurt 6th"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Lord Villaidel in Black"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "princess knight selenium"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Princess Knight Selene 2"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Princess Knight Selenium 3"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "princess knight selenium 4"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "princess knight selenium 5"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "witch"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Witch 2nd"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Witch third"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "Witch 4th"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Witch 5th"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "old king doran"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Old King Doran 2nd"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Old King Doran 3rd"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "Old King Doran 4th"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Old King Doran 5th"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Believers of God Part 1"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Believers of God Part 2"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Believers of God Part 3"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Follower of God Part 3 2nd"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Believers of God Part 4"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Savvy"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Knowledgeable 2nd"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Master Satsuki 1"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Master Satsuki 2"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Master Satsuki 3"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "Master Satsuki 4"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "Master Satsuki 5"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Master Satsuki 6"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Mephistopheles 2nd piece"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "Mephistopheles 3rd"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Mephistopheles 4th"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Mephistopheles 5th"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Miralda the Condemned"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Condemned Miralda 2nd"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "Condemned Miralda 3rd"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "Condemned Miralda 4th"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "Condemned Miralda 5th"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Villaidel Black 1"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Villaidel Black 2"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Selenium Black 1"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Selenium Black 2"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Miralda Black 1"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Miralda Black 2"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Half hand black 1"
+      ]
+    },
+    {
+      "ID": 441,
+      "Entries": [
+        "Half hand black 2"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Master Satsuki Black 1"
+      ]
+    },
+    {
+      "ID": 451,
+      "Entries": [
+        "Master Satsuki Black 2"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Gold Run Black 1"
+      ]
+    },
+    {
+      "ID": 461,
+      "Entries": [
+        "Gold Run Black 2"
+      ]
+    },
+    {
+      "ID": 462,
+      "Entries": [
+        "Gold Run Black 3"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "Prison castle 1 NPC in front of the church 1"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "Prison castle 1 NPC in front of the church 2"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "Prison castle 1 NPC in front of the church 3"
+      ]
+    },
+    {
+      "ID": 990,
+      "Entries": [
+        "Uru-sama trapped NPC 1"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        "Uru-sama trapped NPC 2"
+      ]
+    },
+    {
+      "ID": 992,
+      "Entries": [
+        "Uru-sama trapped NPC 3"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Tunnel 2 Black Man 1"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Tunnel 2 Black Man 2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Tunnel 2 Black Man 3"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Tunnel 2 Black/Female 1"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Tunnel 2 Black/Female 2"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Tunnel 2 Black/Female 3"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Unholy 2 Black Ghost 1"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "unholy 2 black ghost 2"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "unholy 2 black ghost 3"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "blacksmith baldwin"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "blacksmith edward"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "0 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "1 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "2 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "3 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "4 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "5 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "6 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "7 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "8 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "9 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "10 for rarity search test"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Castle 1 event item 00"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "King Lendl DS"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Castle 1 Event Item 02"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "One-of-a-kind prison guard (behind the main gate)"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Royal castle 1 The sword stuck in the mausoleum"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "mausoleum key"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "One-point jailer (fights with Biyo)"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "One-point Prisoner (archer commander)"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Phalanx DS"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "King's Shield DS"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "King's Sword DS"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "phalanx boss treasure"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "King's Shield Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "King's Sword Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "King Lendor's Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "Wyvern Long DS"
+      ]
+    },
+    {
+      "ID": 10118,
+      "Entries": [
+        "Familiar Flying Dragon DS"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 00"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 10126,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 10127,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 10128,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 08"
+      ]
+    },
+    {
+      "ID": 10129,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 09"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 10"
+      ]
+    },
+    {
+      "ID": 10131,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 11"
+      ]
+    },
+    {
+      "ID": 10132,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12"
+      ]
+    },
+    {
+      "ID": 10133,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 13"
+      ]
+    },
+    {
+      "ID": 10134,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 14"
+      ]
+    },
+    {
+      "ID": 10135,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 15"
+      ]
+    },
+    {
+      "ID": 10136,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 16"
+      ]
+    },
+    {
+      "ID": 10137,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 17"
+      ]
+    },
+    {
+      "ID": 10138,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 18"
+      ]
+    },
+    {
+      "ID": 10139,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 19"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 20"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 21"
+      ]
+    },
+    {
+      "ID": 10142,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 22"
+      ]
+    },
+    {
+      "ID": 10143,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 23"
+      ]
+    },
+    {
+      "ID": 10144,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 24"
+      ]
+    },
+    {
+      "ID": 10145,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 25"
+      ]
+    },
+    {
+      "ID": 10146,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 26"
+      ]
+    },
+    {
+      "ID": 10147,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 27"
+      ]
+    },
+    {
+      "ID": 10148,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 28"
+      ]
+    },
+    {
+      "ID": 10149,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 29"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "One point jailer Part 3-1"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "One point jailer Part 3-2"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "One point jailer Part 3-3"
+      ]
+    },
+    {
+      "ID": 10153,
+      "Entries": [
+        "One point jailer Part 3-4"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 30"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 31"
+      ]
+    },
+    {
+      "ID": 10156,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 32"
+      ]
+    },
+    {
+      "ID": 10157,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 33"
+      ]
+    },
+    {
+      "ID": 10158,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 34"
+      ]
+    },
+    {
+      "ID": 10159,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 35"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 36"
+      ]
+    },
+    {
+      "ID": 10161,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 37"
+      ]
+    },
+    {
+      "ID": 10162,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 38"
+      ]
+    },
+    {
+      "ID": 10163,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 39"
+      ]
+    },
+    {
+      "ID": 10164,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 36-2"
+      ]
+    },
+    {
+      "ID": 10165,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 36-3"
+      ]
+    },
+    {
+      "ID": 10166,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 36-4"
+      ]
+    },
+    {
+      "ID": 10167,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 36-5"
+      ]
+    },
+    {
+      "ID": 10168,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 08-2"
+      ]
+    },
+    {
+      "ID": 10169,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 14-2"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "Phalanx item 1"
+      ]
+    },
+    {
+      "ID": 10171,
+      "Entries": [
+        "Phalanx item 2"
+      ]
+    },
+    {
+      "ID": 10172,
+      "Entries": [
+        "Phalanx item 3"
+      ]
+    },
+    {
+      "ID": 10173,
+      "Entries": [
+        "Phalanx Item 4"
+      ]
+    },
+    {
+      "ID": 10174,
+      "Entries": [
+        "King's Shield Item 1"
+      ]
+    },
+    {
+      "ID": 10175,
+      "Entries": [
+        "King's Shield Item 2"
+      ]
+    },
+    {
+      "ID": 10176,
+      "Entries": [
+        "King's Shield Item 3"
+      ]
+    },
+    {
+      "ID": 10177,
+      "Entries": [
+        "King's Shield Item 4"
+      ]
+    },
+    {
+      "ID": 10178,
+      "Entries": [
+        "King's sword item 1"
+      ]
+    },
+    {
+      "ID": 10179,
+      "Entries": [
+        "King's sword item 2"
+      ]
+    },
+    {
+      "ID": 10180,
+      "Entries": [
+        "King's sword item 3"
+      ]
+    },
+    {
+      "ID": 10181,
+      "Entries": [
+        "King's sword item 4"
+      ]
+    },
+    {
+      "ID": 10182,
+      "Entries": [
+        "Item for King Lendl 1"
+      ]
+    },
+    {
+      "ID": 10183,
+      "Entries": [
+        "Item for King Lendl 2"
+      ]
+    },
+    {
+      "ID": 10184,
+      "Entries": [
+        "Item for King Lendl 3"
+      ]
+    },
+    {
+      "ID": 10185,
+      "Entries": [
+        "Item for King Lendl 4"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "Prince Lendl will give it to you (Castle 4)"
+      ]
+    },
+    {
+      "ID": 10191,
+      "Entries": [
+        "Prince Lendl will give it to you (Castle 3)"
+      ]
+    },
+    {
+      "ID": 10192,
+      "Entries": [
+        "Prince Lendl will give it to you (Castle 2)"
+      ]
+    },
+    {
+      "ID": 10193,
+      "Entries": [
+        "Prince Lendl will give it to you (Castle 1)"
+      ]
+    },
+    {
+      "ID": 10194,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 16-2"
+      ]
+    },
+    {
+      "ID": 10195,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 19-2"
+      ]
+    },
+    {
+      "ID": 10196,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 19-3"
+      ]
+    },
+    {
+      "ID": 10197,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 22-2"
+      ]
+    },
+    {
+      "ID": 10198,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 24-2"
+      ]
+    },
+    {
+      "ID": 10199,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 25-2"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "Ancient Fort 1 Treasure Corpse Item 00"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "Old Fort 1 Event Item 01"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "Ancient Fort 1 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "Ancient Fort 1 Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "Old Fort 3 Stormbringer"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "Old Fort 2 event item 1"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "Old Fort Item Exchange 2"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "Old Fort Item Exchange 3"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "Old Fort Item Exchange 4"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "Old Fort Item Exchange 5"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "Old Fort Item Exchange 6"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "Old Fort Item Exchange 7"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "Old Fort Item Exchange 8"
+      ]
+    },
+    {
+      "ID": 10226,
+      "Entries": [
+        "Old Fort Item Exchange 9"
+      ]
+    },
+    {
+      "ID": 10227,
+      "Entries": [
+        "Old Fort Item Exchange 10"
+      ]
+    },
+    {
+      "ID": 10228,
+      "Entries": [
+        "Old Fort Item Exchange 11"
+      ]
+    },
+    {
+      "ID": 10230,
+      "Entries": [
+        "Referee's DS"
+      ]
+    },
+    {
+      "ID": 10231,
+      "Entries": [
+        "Storm Warrior DS"
+      ]
+    },
+    {
+      "ID": 10232,
+      "Entries": [
+        "Storm Beast DS"
+      ]
+    },
+    {
+      "ID": 10233,
+      "Entries": [
+        "Old Fort Urbain Event Item"
+      ]
+    },
+    {
+      "ID": 10234,
+      "Entries": [
+        "Old Fortress Satsuki Event Item"
+      ]
+    },
+    {
+      "ID": 10235,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 10236,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 10237,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 10238,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 10239,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 20"
+      ]
+    },
+    {
+      "ID": 10240,
+      "Entries": [
+        "Judge's Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10241,
+      "Entries": [
+        "Storm Warrior Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        "Storm Beast Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 22"
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 10246,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 24"
+      ]
+    },
+    {
+      "ID": 10247,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 25"
+      ]
+    },
+    {
+      "ID": 10248,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 26"
+      ]
+    },
+    {
+      "ID": 10249,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 27"
+      ]
+    },
+    {
+      "ID": 10250,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10251,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10252,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10253,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10254,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10255,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10256,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10257,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10258,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse QWC1"
+      ]
+    },
+    {
+      "ID": 10259,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse QWC2"
+      ]
+    },
+    {
+      "ID": 10260,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 10261,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 10262,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 10263,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 10264,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 10265,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 10266,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 10267,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 10268,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 10269,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 10270,
+      "Entries": [
+        "Referee Item 1"
+      ]
+    },
+    {
+      "ID": 10271,
+      "Entries": [
+        "Referee item 2"
+      ]
+    },
+    {
+      "ID": 10272,
+      "Entries": [
+        "Referee item 3"
+      ]
+    },
+    {
+      "ID": 10273,
+      "Entries": [
+        "Referee Item 4"
+      ]
+    },
+    {
+      "ID": 10274,
+      "Entries": [
+        "Storm Warrior Item 1"
+      ]
+    },
+    {
+      "ID": 10275,
+      "Entries": [
+        "Storm Warrior Item 2"
+      ]
+    },
+    {
+      "ID": 10276,
+      "Entries": [
+        "Storm Warrior Item 3"
+      ]
+    },
+    {
+      "ID": 10277,
+      "Entries": [
+        "Storm Warrior Item 4"
+      ]
+    },
+    {
+      "ID": 10278,
+      "Entries": [
+        "Storm Beast Item 1"
+      ]
+    },
+    {
+      "ID": 10279,
+      "Entries": [
+        "Storm Beast Item 2"
+      ]
+    },
+    {
+      "ID": 10280,
+      "Entries": [
+        "Storm Beast Item 3"
+      ]
+    },
+    {
+      "ID": 10281,
+      "Entries": [
+        "Storm Beast Item 4"
+      ]
+    },
+    {
+      "ID": 10282,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 10283,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 10284,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 10285,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 10286,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 10287,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 10288,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 10289,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 10290,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 10291,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 20"
+      ]
+    },
+    {
+      "ID": 10292,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 10293,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 22"
+      ]
+    },
+    {
+      "ID": 10294,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 10295,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 24"
+      ]
+    },
+    {
+      "ID": 10296,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 25"
+      ]
+    },
+    {
+      "ID": 10297,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 26"
+      ]
+    },
+    {
+      "ID": 10298,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 27"
+      ]
+    },
+    {
+      "ID": 10299,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 28"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Tutorial 1 Treasure corpse 1"
+      ]
+    },
+    {
+      "ID": 10301,
+      "Entries": [
+        "Tutorial 1 Treasure corpse 1-2"
+      ]
+    },
+    {
+      "ID": 10302,
+      "Entries": [
+        "Tutorial 1 Treasure Corpse 2"
+      ]
+    },
+    {
+      "ID": 10303,
+      "Entries": [
+        "Tutorial 1 Treasure Corpse 3"
+      ]
+    },
+    {
+      "ID": 10330,
+      "Entries": [
+        "Tutorial 2 Treasure corpse 1"
+      ]
+    },
+    {
+      "ID": 10331,
+      "Entries": [
+        "Tutorial 2 Treasure Corpse 2"
+      ]
+    },
+    {
+      "ID": 10332,
+      "Entries": [
+        "Tutorial 2 Treasure Corpse 3"
+      ]
+    },
+    {
+      "ID": 10360,
+      "Entries": [
+        "Tutorial 3 Treasure corpse 1"
+      ]
+    },
+    {
+      "ID": 10361,
+      "Entries": [
+        "Tutorial 3 Treasure corpse 2"
+      ]
+    },
+    {
+      "ID": 10362,
+      "Entries": [
+        "Tutorial 3 Treasure Corpse 3"
+      ]
+    },
+    {
+      "ID": 10363,
+      "Entries": [
+        "Tutorial 3 Treasure Corpse 4"
+      ]
+    },
+    {
+      "ID": 10364,
+      "Entries": [
+        "Tutorial 3 Treasure corpse 5"
+      ]
+    },
+    {
+      "ID": 10365,
+      "Entries": [
+        "Tutorial 3 Treasure corpse 6"
+      ]
+    },
+    {
+      "ID": 10366,
+      "Entries": [
+        "Tutorial 3 Treasure corpse 7"
+      ]
+    },
+    {
+      "ID": 10367,
+      "Entries": [
+        "Tutorial 3 Treasure Corpse 8"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 10401,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 10402,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 10403,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 10405,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 10406,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 10407,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 10408,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 10409,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 10410,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 10411,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 10412,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 08"
+      ]
+    },
+    {
+      "ID": 10413,
+      "Entries": [
+        "Impure 1 Falling Treasure Corpse 09"
+      ]
+    },
+    {
+      "ID": 10414,
+      "Entries": [
+        "1 Unholy Falling Treasure Corpse 10"
+      ]
+    },
+    {
+      "ID": 10415,
+      "Entries": [
+        "Impure 1 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10416,
+      "Entries": [
+        "Impure 1 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10417,
+      "Entries": [
+        "Impure 1 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10418,
+      "Entries": [
+        "Impure 1 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10419,
+      "Entries": [
+        "Istarel"
+      ]
+    },
+    {
+      "ID": 10420,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 10421,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 10422,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 10423,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 10424,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 10425,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 10426,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 10427,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 10428,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 10429,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 10430,
+      "Entries": [
+        "Moonlight"
+      ]
+    },
+    {
+      "ID": 10431,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 10432,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 10433,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 10434,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 10435,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 10436,
+      "Entries": [
+        "1 Unholy Treasure Corpse Item 20"
+      ]
+    },
+    {
+      "ID": 10437,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 10438,
+      "Entries": [
+        "Impure 1 Treasure Corpse Item 08-2"
+      ]
+    },
+    {
+      "ID": 10440,
+      "Entries": [
+        "Impure 2 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10441,
+      "Entries": [
+        "Impure 2 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10442,
+      "Entries": [
+        "Impure 2 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10443,
+      "Entries": [
+        "Impure 2 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10450,
+      "Entries": [
+        "Hiru Demon's DS"
+      ]
+    },
+    {
+      "ID": 10451,
+      "Entries": [
+        "Fly Takari DS"
+      ]
+    },
+    {
+      "ID": 10452,
+      "Entries": [
+        "Libra DS"
+      ]
+    },
+    {
+      "ID": 10454,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 21-2"
+      ]
+    },
+    {
+      "ID": 10455,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 21-2"
+      ]
+    },
+    {
+      "ID": 10456,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 10-2"
+      ]
+    },
+    {
+      "ID": 10457,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 10-3"
+      ]
+    },
+    {
+      "ID": 10458,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 10-4"
+      ]
+    },
+    {
+      "ID": 10459,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 19-2"
+      ]
+    },
+    {
+      "ID": 10460,
+      "Entries": [
+        "Leech Demon Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10461,
+      "Entries": [
+        "Flycatcher Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10462,
+      "Entries": [
+        "Libra's Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10470,
+      "Entries": [
+        "Leech Demon Item 1"
+      ]
+    },
+    {
+      "ID": 10471,
+      "Entries": [
+        "Leech Demon Item 2"
+      ]
+    },
+    {
+      "ID": 10472,
+      "Entries": [
+        "Leech Demon Item 3"
+      ]
+    },
+    {
+      "ID": 10473,
+      "Entries": [
+        "Leech Demon Item 4"
+      ]
+    },
+    {
+      "ID": 10474,
+      "Entries": [
+        "Fly catching item 1"
+      ]
+    },
+    {
+      "ID": 10475,
+      "Entries": [
+        "Fly catching item 2"
+      ]
+    },
+    {
+      "ID": 10476,
+      "Entries": [
+        "Fly catching item 3"
+      ]
+    },
+    {
+      "ID": 10477,
+      "Entries": [
+        "Item for fly trap 4"
+      ]
+    },
+    {
+      "ID": 10478,
+      "Entries": [
+        "Item 1 for Libra"
+      ]
+    },
+    {
+      "ID": 10479,
+      "Entries": [
+        "Item 2 for Libra"
+      ]
+    },
+    {
+      "ID": 10480,
+      "Entries": [
+        "Item 3 for Libra"
+      ]
+    },
+    {
+      "ID": 10481,
+      "Entries": [
+        "Item 4 for Libra"
+      ]
+    },
+    {
+      "ID": 10490,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 20-2"
+      ]
+    },
+    {
+      "ID": 10491,
+      "Entries": [
+        "Unholy 1 Treasure Corpse Item 21-4"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "Prison Castle 1 Event Item 01"
+      ]
+    },
+    {
+      "ID": 10501,
+      "Entries": [
+        "Prison Castle 1 Event Item 02"
+      ]
+    },
+    {
+      "ID": 10502,
+      "Entries": [
+        "Prison Castle 1 Event Item 03"
+      ]
+    },
+    {
+      "ID": 10503,
+      "Entries": [
+        "Prison Castle 1 Event Item 04"
+      ]
+    },
+    {
+      "ID": 10504,
+      "Entries": [
+        "Prison Castle 1 Event Item 05"
+      ]
+    },
+    {
+      "ID": 10505,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 10506,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 10507,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 10508,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 10509,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 10510,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 53"
+      ]
+    },
+    {
+      "ID": 10511,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 54"
+      ]
+    },
+    {
+      "ID": 10512,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 55"
+      ]
+    },
+    {
+      "ID": 10513,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 56"
+      ]
+    },
+    {
+      "ID": 10514,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 10515,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 10516,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 10517,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 10518,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 10519,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse QWC1-1 2nd piece"
+      ]
+    },
+    {
+      "ID": 10520,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 10521,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 10522,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 10523,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 10524,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 10525,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 10526,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 10527,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 10528,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 10529,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 10530,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10531,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10532,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10533,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10535,
+      "Entries": [
+        "Prison Castle 3 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10536,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 57"
+      ]
+    },
+    {
+      "ID": 10537,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 10538,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 22"
+      ]
+    },
+    {
+      "ID": 10539,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 10540,
+      "Entries": [
+        "Prison 1 for puppeteers"
+      ]
+    },
+    {
+      "ID": 10541,
+      "Entries": [
+        "Villaidel gives"
+      ]
+    },
+    {
+      "ID": 10542,
+      "Entries": [
+        "Villaidel corpse"
+      ]
+    },
+    {
+      "ID": 10543,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 10544,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 24"
+      ]
+    },
+    {
+      "ID": 10545,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 25"
+      ]
+    },
+    {
+      "ID": 10546,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 26"
+      ]
+    },
+    {
+      "ID": 10547,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 27"
+      ]
+    },
+    {
+      "ID": 10548,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 28"
+      ]
+    },
+    {
+      "ID": 10549,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 10550,
+      "Entries": [
+        "Kamisama DS"
+      ]
+    },
+    {
+      "ID": 10551,
+      "Entries": [
+        "Chimera DS"
+      ]
+    },
+    {
+      "ID": 10552,
+      "Entries": [
+        "Old Man in Yellow DS"
+      ]
+    },
+    {
+      "ID": 10553,
+      "Entries": [
+        "Prison Castle 1 Event Item 06"
+      ]
+    },
+    {
+      "ID": 10554,
+      "Entries": [
+        "Prison Castle 2 Event Item 07"
+      ]
+    },
+    {
+      "ID": 10555,
+      "Entries": [
+        "Prison Castle 1 Event Item 08"
+      ]
+    },
+    {
+      "ID": 10556,
+      "Entries": [
+        "Prison Castle 1 Event Item 09"
+      ]
+    },
+    {
+      "ID": 10557,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 30"
+      ]
+    },
+    {
+      "ID": 10558,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 31"
+      ]
+    },
+    {
+      "ID": 10559,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 32"
+      ]
+    },
+    {
+      "ID": 10560,
+      "Entries": [
+        "God's Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10561,
+      "Entries": [
+        "Chimera Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10562,
+      "Entries": [
+        "Old Man in Yellow Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10563,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 33"
+      ]
+    },
+    {
+      "ID": 10564,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 34"
+      ]
+    },
+    {
+      "ID": 10565,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 35"
+      ]
+    },
+    {
+      "ID": 10566,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 36"
+      ]
+    },
+    {
+      "ID": 10567,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 37"
+      ]
+    },
+    {
+      "ID": 10568,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 38"
+      ]
+    },
+    {
+      "ID": 10569,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 39"
+      ]
+    },
+    {
+      "ID": 10570,
+      "Entries": [
+        "Goddess Item 1"
+      ]
+    },
+    {
+      "ID": 10571,
+      "Entries": [
+        "Goddess Item 2"
+      ]
+    },
+    {
+      "ID": 10572,
+      "Entries": [
+        "Goddess Item 3"
+      ]
+    },
+    {
+      "ID": 10573,
+      "Entries": [
+        "Goddess Item 4"
+      ]
+    },
+    {
+      "ID": 10574,
+      "Entries": [
+        "Chimera Item 1"
+      ]
+    },
+    {
+      "ID": 10575,
+      "Entries": [
+        "Chimera item 2"
+      ]
+    },
+    {
+      "ID": 10576,
+      "Entries": [
+        "Item 3 for Chimera"
+      ]
+    },
+    {
+      "ID": 10577,
+      "Entries": [
+        "Item 4 for Chimera"
+      ]
+    },
+    {
+      "ID": 10578,
+      "Entries": [
+        "Old Man in Yellow Item 1"
+      ]
+    },
+    {
+      "ID": 10579,
+      "Entries": [
+        "Old Man in Yellow Item 2"
+      ]
+    },
+    {
+      "ID": 10580,
+      "Entries": [
+        "Old Man in Yellow Item 3"
+      ]
+    },
+    {
+      "ID": 10581,
+      "Entries": [
+        "Old Man in Yellow Item 4"
+      ]
+    },
+    {
+      "ID": 10582,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 40"
+      ]
+    },
+    {
+      "ID": 10583,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 41"
+      ]
+    },
+    {
+      "ID": 10584,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 42"
+      ]
+    },
+    {
+      "ID": 10585,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 43"
+      ]
+    },
+    {
+      "ID": 10586,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 44"
+      ]
+    },
+    {
+      "ID": 10587,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 45"
+      ]
+    },
+    {
+      "ID": 10589,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 46"
+      ]
+    },
+    {
+      "ID": 10590,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 47"
+      ]
+    },
+    {
+      "ID": 10591,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 48"
+      ]
+    },
+    {
+      "ID": 10592,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 49"
+      ]
+    },
+    {
+      "ID": 10593,
+      "Entries": [
+        "Prison Castle 1 Event Item 09"
+      ]
+    },
+    {
+      "ID": 10594,
+      "Entries": [
+        "Prison Castle 2 Event Item 10"
+      ]
+    },
+    {
+      "ID": 10595,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 50"
+      ]
+    },
+    {
+      "ID": 10596,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 51"
+      ]
+    },
+    {
+      "ID": 10597,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 52"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "Tunnel 2 special treasure corpse of old specifications"
+      ]
+    },
+    {
+      "ID": 10601,
+      "Entries": [
+        "Treasure Corpse Item 01 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10602,
+      "Entries": [
+        "Treasure Corpse Item 02 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10603,
+      "Entries": [
+        "Treasure Corpse Item 03 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10604,
+      "Entries": [
+        "Treasure Corpse Item 04 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10605,
+      "Entries": [
+        "Treasure Corpse Item 05 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10606,
+      "Entries": [
+        "Treasure Corpse Item 06 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10607,
+      "Entries": [
+        "Treasure Corpse Item 07 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10608,
+      "Entries": [
+        "Treasure Corpse Item 08 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10609,
+      "Entries": [
+        "Treasure Corpse Item 09 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10610,
+      "Entries": [
+        "Treasure Corpse Item 10 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10611,
+      "Entries": [
+        "Treasure Corpse Item 11 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10612,
+      "Entries": [
+        "Treasure Corpse Item 12 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10613,
+      "Entries": [
+        "Treasure Corpse Item 13 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10614,
+      "Entries": [
+        "Treasure Corpse Item 14 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10615,
+      "Entries": [
+        "Treasure Corpse Item 15 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10616,
+      "Entries": [
+        "Treasure Corpse Item 16 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10617,
+      "Entries": [
+        "Treasure Corpse Item 17 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10618,
+      "Entries": [
+        "Treasure Corpse Item 18 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10619,
+      "Entries": [
+        "Treasure Corpse Item 19 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10620,
+      "Entries": [
+        "Event Item 1 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10621,
+      "Entries": [
+        "Treasure Corpse Item 20 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10622,
+      "Entries": [
+        "Treasure Corpse Item 21 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10623,
+      "Entries": [
+        "Treasure Corpse Item 22 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10624,
+      "Entries": [
+        "Treasure Corpse Item 23 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10625,
+      "Entries": [
+        "Event Item 2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10626,
+      "Entries": [
+        "Event Item 3 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10627,
+      "Entries": [
+        "Event Item 4 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10628,
+      "Entries": [
+        "Treasure Corpse Item 24 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10629,
+      "Entries": [
+        "Treasure Corpse Item 25 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10630,
+      "Entries": [
+        "Large Spider DS"
+      ]
+    },
+    {
+      "ID": 10631,
+      "Entries": [
+        "Flame Monster DS"
+      ]
+    },
+    {
+      "ID": 10632,
+      "Entries": [
+        "Dragon Demon DS"
+      ]
+    },
+    {
+      "ID": 10633,
+      "Entries": [
+        "Treasure Corpse Item 26 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10634,
+      "Entries": [
+        "Treasure Corpse Item 27 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10635,
+      "Entries": [
+        "Treasure Corpse Item 28 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10636,
+      "Entries": [
+        "Treasure Corpse Item 01 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10637,
+      "Entries": [
+        "Treasure Corpse Item 02 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10638,
+      "Entries": [
+        "Treasure Corpse Item 03 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10639,
+      "Entries": [
+        "Treasure Corpse Item 04 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10640,
+      "Entries": [
+        "Big Spider Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10641,
+      "Entries": [
+        "Flame Monster Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10642,
+      "Entries": [
+        "Dragon Demon Boss Treasure"
+      ]
+    },
+    {
+      "ID": 10643,
+      "Entries": [
+        "Treasure Corpse Item 05 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10644,
+      "Entries": [
+        "Treasure Corpse Item 06 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10645,
+      "Entries": [
+        "Treasure Corpse Item 07 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10646,
+      "Entries": [
+        "Treasure Corpse Item 08 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10647,
+      "Entries": [
+        "Mine 2 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 10648,
+      "Entries": [
+        "Treasure Corpse Item 10 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10649,
+      "Entries": [
+        "Treasure Corpse Item 11 for Mine 2 (Patch Trap)"
+      ]
+    },
+    {
+      "ID": 10650,
+      "Entries": [
+        "Tunnel 1 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10651,
+      "Entries": [
+        "Tunnel 1 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10652,
+      "Entries": [
+        "Tunnel 1 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10653,
+      "Entries": [
+        "Tunnel 1 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10654,
+      "Entries": [
+        "Tunnel 2 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 10655,
+      "Entries": [
+        "Tunnel 2 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 10656,
+      "Entries": [
+        "Tunnel 2 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 10657,
+      "Entries": [
+        "Tunnel 2 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 10658,
+      "Entries": [
+        "Tunnel 3 Treasure Corpse QWC1"
+      ]
+    },
+    {
+      "ID": 10659,
+      "Entries": [
+        "Tunnel 3 Treasure Corpse QWC2"
+      ]
+    },
+    {
+      "ID": 10660,
+      "Entries": [
+        "Tunnel 3 Treasure Corpse QWC1"
+      ]
+    },
+    {
+      "ID": 10661,
+      "Entries": [
+        "Treasure Corpse Item 12 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10662,
+      "Entries": [
+        "Treasure Corpse Item 13 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10663,
+      "Entries": [
+        "Treasure Corpse Item 14 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10664,
+      "Entries": [
+        "Treasure Corpse Item 15 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10665,
+      "Entries": [
+        "Treasure Corpse Item 16 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10666,
+      "Entries": [
+        "Treasure Corpse Item 17 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10667,
+      "Entries": [
+        "Treasure Corpse Item 18 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10668,
+      "Entries": [
+        "Treasure Corpse Item 19 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10669,
+      "Entries": [
+        "Treasure Corpse Item 20 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10670,
+      "Entries": [
+        "Big spider item 1"
+      ]
+    },
+    {
+      "ID": 10671,
+      "Entries": [
+        "Big spider item 2"
+      ]
+    },
+    {
+      "ID": 10672,
+      "Entries": [
+        "Big spider item 3"
+      ]
+    },
+    {
+      "ID": 10673,
+      "Entries": [
+        "Big spider item 4"
+      ]
+    },
+    {
+      "ID": 10674,
+      "Entries": [
+        "Flame Phantom Item 1"
+      ]
+    },
+    {
+      "ID": 10675,
+      "Entries": [
+        "Flame Phantom Item 2"
+      ]
+    },
+    {
+      "ID": 10676,
+      "Entries": [
+        "Flame Phantom Item 3"
+      ]
+    },
+    {
+      "ID": 10677,
+      "Entries": [
+        "Flame Phantom Item 4"
+      ]
+    },
+    {
+      "ID": 10678,
+      "Entries": [
+        "Dragon Demon Item 1"
+      ]
+    },
+    {
+      "ID": 10679,
+      "Entries": [
+        "Dragon Demon Item 2"
+      ]
+    },
+    {
+      "ID": 10680,
+      "Entries": [
+        "Dragon Demon Item 3"
+      ]
+    },
+    {
+      "ID": 10681,
+      "Entries": [
+        "Dragon Demon Item 4"
+      ]
+    },
+    {
+      "ID": 10682,
+      "Entries": [
+        "Treasure Corpse Item 21 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10683,
+      "Entries": [
+        "Treasure Corpse Item 22 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10684,
+      "Entries": [
+        "Treasure Corpse Item 23 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10685,
+      "Entries": [
+        "Treasure Corpse Item 24 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10686,
+      "Entries": [
+        "Treasure Corpse Item 25 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10687,
+      "Entries": [
+        "Treasure Corpse Item 26 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10688,
+      "Entries": [
+        "Treasure Corpse Item 27 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10689,
+      "Entries": [
+        "Treasure Corpse Item 28 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10690,
+      "Entries": [
+        "Treasure Corpse Item 29 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10691,
+      "Entries": [
+        "Treasure Corpse Item 30 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10692,
+      "Entries": [
+        "Treasure Corpse Item 01 for Tunnel 3"
+      ]
+    },
+    {
+      "ID": 10693,
+      "Entries": [
+        "Treasure Corpse Item 02 for Tunnel 3"
+      ]
+    },
+    {
+      "ID": 10694,
+      "Entries": [
+        "Treasure Corpse Item 03 for Tunnel 3"
+      ]
+    },
+    {
+      "ID": 10695,
+      "Entries": [
+        "Treasure Corpse Item 04 for Tunnel 3"
+      ]
+    },
+    {
+      "ID": 10696,
+      "Entries": [
+        "Treasure Corpse Item 14-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10697,
+      "Entries": [
+        "Treasure Corpse Item 14-3 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 10698,
+      "Entries": [
+        "Treasure Corpse Item 26-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "Event item for Thomas"
+      ]
+    },
+    {
+      "ID": 10710,
+      "Entries": [
+        "Mephisto event item 5"
+      ]
+    },
+    {
+      "ID": 10711,
+      "Entries": [
+        "Mephisto event item 4"
+      ]
+    },
+    {
+      "ID": 10712,
+      "Entries": [
+        "Mephisto event item 2"
+      ]
+    },
+    {
+      "ID": 10713,
+      "Entries": [
+        "Mephisto event item 6"
+      ]
+    },
+    {
+      "ID": 10714,
+      "Entries": [
+        "Mephisto event item 1"
+      ]
+    },
+    {
+      "ID": 10715,
+      "Entries": [
+        "Event item for Mephisto"
+      ]
+    },
+    {
+      "ID": 10716,
+      "Entries": [
+        "Mephisto event item 3"
+      ]
+    },
+    {
+      "ID": 10730,
+      "Entries": [
+        "stabbing sword"
+      ]
+    },
+    {
+      "ID": 10731,
+      "Entries": [
+        "for last boss"
+      ]
+    },
+    {
+      "ID": 10740,
+      "Entries": [
+        "VIP event item"
+      ]
+    },
+    {
+      "ID": 10741,
+      "Entries": [
+        "VIP event item"
+      ]
+    },
+    {
+      "ID": 10750,
+      "Entries": [
+        "Event item for Selenium"
+      ]
+    },
+    {
+      "ID": 10751,
+      "Entries": [
+        "Event item for Selenium"
+      ]
+    },
+    {
+      "ID": 10760,
+      "Entries": [
+        "Follower of God 3 Gives"
+      ]
+    },
+    {
+      "ID": 10761,
+      "Entries": [
+        "God's follower 3 will give you the second"
+      ]
+    },
+    {
+      "ID": 10800,
+      "Entries": [
+        "Fat Demon DS"
+      ]
+    },
+    {
+      "ID": 10810,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 10811,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 10812,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 10813,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 10814,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 10815,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 10816,
+      "Entries": [
+        "Stone Pillar Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 10850,
+      "Entries": [
+        "Items given by the heroine"
+      ]
+    },
+    {
+      "ID": 10860,
+      "Entries": [
+        "Obtained at the start of the first week of the game"
+      ]
+    },
+    {
+      "ID": 10870,
+      "Entries": [
+        "Fat Demon Item 1"
+      ]
+    },
+    {
+      "ID": 10871,
+      "Entries": [
+        "fat demon item 2"
+      ]
+    },
+    {
+      "ID": 10872,
+      "Entries": [
+        "fat demon item 3"
+      ]
+    },
+    {
+      "ID": 10873,
+      "Entries": [
+        "fat demon item 4"
+      ]
+    },
+    {
+      "ID": 10900,
+      "Entries": [
+        "Fire Keeper's Demon's Soul"
+      ]
+    },
+    {
+      "ID": 10901,
+      "Entries": [
+        "Demon's Soul of the Beast"
+      ]
+    },
+    {
+      "ID": 10902,
+      "Entries": [
+        "red eye stone"
+      ]
+    },
+    {
+      "ID": 10950,
+      "Entries": [
+        "Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 10951,
+      "Entries": [
+        "Ore Spirit Item 1"
+      ]
+    },
+    {
+      "ID": 10970,
+      "Entries": [
+        "Last boss item 1"
+      ]
+    },
+    {
+      "ID": 10971,
+      "Entries": [
+        "Last boss item 2"
+      ]
+    },
+    {
+      "ID": 10972,
+      "Entries": [
+        "Last boss item 3"
+      ]
+    },
+    {
+      "ID": 10973,
+      "Entries": [
+        "Last boss item 4"
+      ]
+    },
+    {
+      "ID": 10974,
+      "Entries": [
+        "Ore spirit item 1"
+      ]
+    },
+    {
+      "ID": 10975,
+      "Entries": [
+        "Ore spirit item 2"
+      ]
+    },
+    {
+      "ID": 10976,
+      "Entries": [
+        "Ore spirit item 3"
+      ]
+    },
+    {
+      "ID": 10977,
+      "Entries": [
+        "Ore Spirit Item 4"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Proof of Gold Run"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 1 (hanged)"
+      ]
+    },
+    {
+      "ID": 15001,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 15002,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 15003,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 15004,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 15005,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 15006,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 15007,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 15008,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 08"
+      ]
+    },
+    {
+      "ID": 15009,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 09"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 10"
+      ]
+    },
+    {
+      "ID": 15011,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 11"
+      ]
+    },
+    {
+      "ID": 15012,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 12"
+      ]
+    },
+    {
+      "ID": 15013,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 13"
+      ]
+    },
+    {
+      "ID": 15014,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 14"
+      ]
+    },
+    {
+      "ID": 15015,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 15"
+      ]
+    },
+    {
+      "ID": 15016,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 16"
+      ]
+    },
+    {
+      "ID": 15017,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 17"
+      ]
+    },
+    {
+      "ID": 15018,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 18"
+      ]
+    },
+    {
+      "ID": 15019,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 19"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 20"
+      ]
+    },
+    {
+      "ID": 15021,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 21"
+      ]
+    },
+    {
+      "ID": 15022,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 22"
+      ]
+    },
+    {
+      "ID": 15023,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 23"
+      ]
+    },
+    {
+      "ID": 15024,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 24"
+      ]
+    },
+    {
+      "ID": 15025,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 25"
+      ]
+    },
+    {
+      "ID": 15026,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 26"
+      ]
+    },
+    {
+      "ID": 15027,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 27"
+      ]
+    },
+    {
+      "ID": 15028,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 28"
+      ]
+    },
+    {
+      "ID": 15029,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 05-2"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 13-2"
+      ]
+    },
+    {
+      "ID": 15031,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 11-3"
+      ]
+    },
+    {
+      "ID": 15032,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 17-2"
+      ]
+    },
+    {
+      "ID": 15033,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 18-2"
+      ]
+    },
+    {
+      "ID": 15034,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 20-2"
+      ]
+    },
+    {
+      "ID": 15041,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 15042,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 15043,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 15044,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 15045,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 15046,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 15047,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 15048,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 08"
+      ]
+    },
+    {
+      "ID": 15049,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 09"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 10"
+      ]
+    },
+    {
+      "ID": 15051,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 11"
+      ]
+    },
+    {
+      "ID": 15052,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 12"
+      ]
+    },
+    {
+      "ID": 15053,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 13"
+      ]
+    },
+    {
+      "ID": 15054,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 14"
+      ]
+    },
+    {
+      "ID": 15055,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 15"
+      ]
+    },
+    {
+      "ID": 15056,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 16"
+      ]
+    },
+    {
+      "ID": 15057,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 17"
+      ]
+    },
+    {
+      "ID": 15058,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 18"
+      ]
+    },
+    {
+      "ID": 15059,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 19"
+      ]
+    },
+    {
+      "ID": 15060,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 20"
+      ]
+    },
+    {
+      "ID": 15061,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 21"
+      ]
+    },
+    {
+      "ID": 15062,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 22"
+      ]
+    },
+    {
+      "ID": 15063,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 23"
+      ]
+    },
+    {
+      "ID": 15064,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 24"
+      ]
+    },
+    {
+      "ID": 15065,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 25"
+      ]
+    },
+    {
+      "ID": 15066,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 26"
+      ]
+    },
+    {
+      "ID": 15067,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 27"
+      ]
+    },
+    {
+      "ID": 15068,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 28"
+      ]
+    },
+    {
+      "ID": 15069,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 29"
+      ]
+    },
+    {
+      "ID": 15070,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 30"
+      ]
+    },
+    {
+      "ID": 15071,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 08-2"
+      ]
+    },
+    {
+      "ID": 15072,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 08-3"
+      ]
+    },
+    {
+      "ID": 15073,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 08-4"
+      ]
+    },
+    {
+      "ID": 15074,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 14-2"
+      ]
+    },
+    {
+      "ID": 15075,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 17-2"
+      ]
+    },
+    {
+      "ID": 15076,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 19-2"
+      ]
+    },
+    {
+      "ID": 15077,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 20-2"
+      ]
+    },
+    {
+      "ID": 15078,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 23-2"
+      ]
+    },
+    {
+      "ID": 15079,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 27-2"
+      ]
+    },
+    {
+      "ID": 15081,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 01"
+      ]
+    },
+    {
+      "ID": 15082,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 02"
+      ]
+    },
+    {
+      "ID": 15083,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 03"
+      ]
+    },
+    {
+      "ID": 15084,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 04"
+      ]
+    },
+    {
+      "ID": 15085,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 05"
+      ]
+    },
+    {
+      "ID": 15086,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 06"
+      ]
+    },
+    {
+      "ID": 15087,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 07"
+      ]
+    },
+    {
+      "ID": 15088,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 08"
+      ]
+    },
+    {
+      "ID": 15089,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 09"
+      ]
+    },
+    {
+      "ID": 15090,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 10"
+      ]
+    },
+    {
+      "ID": 15091,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 11"
+      ]
+    },
+    {
+      "ID": 15092,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 12"
+      ]
+    },
+    {
+      "ID": 15093,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 13"
+      ]
+    },
+    {
+      "ID": 15094,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 14"
+      ]
+    },
+    {
+      "ID": 15095,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 15"
+      ]
+    },
+    {
+      "ID": 15096,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 16"
+      ]
+    },
+    {
+      "ID": 15097,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 17"
+      ]
+    },
+    {
+      "ID": 15098,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 09-2"
+      ]
+    },
+    {
+      "ID": 15099,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse 17-2"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 15101,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 15102,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 15103,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 15200,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 15201,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 15202,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 15203,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 15300,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 15301,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 15302,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 15303,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 15400,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse QWC1-1"
+      ]
+    },
+    {
+      "ID": 15401,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse QWC1-2"
+      ]
+    },
+    {
+      "ID": 15402,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse QWC2-1"
+      ]
+    },
+    {
+      "ID": 15403,
+      "Entries": [
+        "Royal Castle 4 Treasure Corpse QWC2-2"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-1"
+      ]
+    },
+    {
+      "ID": 15501,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-2"
+      ]
+    },
+    {
+      "ID": 15502,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-3"
+      ]
+    },
+    {
+      "ID": 15503,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-4"
+      ]
+    },
+    {
+      "ID": 15521,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 28-2"
+      ]
+    },
+    {
+      "ID": 15522,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 28-3"
+      ]
+    },
+    {
+      "ID": 15523,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 28-4"
+      ]
+    },
+    {
+      "ID": 15524,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 33-2"
+      ]
+    },
+    {
+      "ID": 15525,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 34-2"
+      ]
+    },
+    {
+      "ID": 15526,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 38-2"
+      ]
+    },
+    {
+      "ID": 15527,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 40"
+      ]
+    },
+    {
+      "ID": 15528,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 41"
+      ]
+    },
+    {
+      "ID": 15529,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 42"
+      ]
+    },
+    {
+      "ID": 15530,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-2"
+      ]
+    },
+    {
+      "ID": 15531,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 14-3"
+      ]
+    },
+    {
+      "ID": 15532,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 19-4"
+      ]
+    },
+    {
+      "ID": 15533,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 19-5"
+      ]
+    },
+    {
+      "ID": 15534,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 20-2"
+      ]
+    },
+    {
+      "ID": 15535,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 29-2"
+      ]
+    },
+    {
+      "ID": 15536,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 41-2"
+      ]
+    },
+    {
+      "ID": 15537,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-3"
+      ]
+    },
+    {
+      "ID": 15538,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 12-4"
+      ]
+    },
+    {
+      "ID": 15539,
+      "Entries": [
+        "Royal Castle 1 Treasure Corpse 43"
+      ]
+    },
+    {
+      "ID": 15600,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 2-1"
+      ]
+    },
+    {
+      "ID": 15601,
+      "Entries": [
+        "Royal Castle 2 Treasure Corpse 2-1"
+      ]
+    },
+    {
+      "ID": 15700,
+      "Entries": [
+        "Royal castle 1 for treasure show"
+      ]
+    },
+    {
+      "ID": 15701,
+      "Entries": [
+        "Royal Castle 3 Treasure Corpse 31"
+      ]
+    },
+    {
+      "ID": 15702,
+      "Entries": [
+        "Royal castle for treasure corpses"
+      ]
+    },
+    {
+      "ID": 16200,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 16201,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 16202,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 16203,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 16204,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 16205,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 16206,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 04-2"
+      ]
+    },
+    {
+      "ID": 16207,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 06-2"
+      ]
+    },
+    {
+      "ID": 16208,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 12-2"
+      ]
+    },
+    {
+      "ID": 16209,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 12-3"
+      ]
+    },
+    {
+      "ID": 16210,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 13-2"
+      ]
+    },
+    {
+      "ID": 16211,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 16-2"
+      ]
+    },
+    {
+      "ID": 16212,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 16-3"
+      ]
+    },
+    {
+      "ID": 16213,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 16-4"
+      ]
+    },
+    {
+      "ID": 16214,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 25-2"
+      ]
+    },
+    {
+      "ID": 16215,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 06-2"
+      ]
+    },
+    {
+      "ID": 16216,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 13-2"
+      ]
+    },
+    {
+      "ID": 16217,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 14-2"
+      ]
+    },
+    {
+      "ID": 16218,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 28-2"
+      ]
+    },
+    {
+      "ID": 16219,
+      "Entries": [
+        "Old Fortress 2 Treasure Corpse Item 28-3"
+      ]
+    },
+    {
+      "ID": 16220,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 03-2"
+      ]
+    },
+    {
+      "ID": 16221,
+      "Entries": [
+        "Old Fort 3 Treasure Corpse Item 04-2"
+      ]
+    },
+    {
+      "ID": 16230,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 28"
+      ]
+    },
+    {
+      "ID": 16231,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 16232,
+      "Entries": [
+        "Ancient Fort 1 Treasure Corpse Item 30"
+      ]
+    },
+    {
+      "ID": 16233,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 16234,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 30"
+      ]
+    },
+    {
+      "ID": 16235,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 31"
+      ]
+    },
+    {
+      "ID": 16236,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 32"
+      ]
+    },
+    {
+      "ID": 16237,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 31"
+      ]
+    },
+    {
+      "ID": 16238,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 09-2"
+      ]
+    },
+    {
+      "ID": 16239,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 29-2"
+      ]
+    },
+    {
+      "ID": 16240,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 29-3"
+      ]
+    },
+    {
+      "ID": 16241,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 29-4"
+      ]
+    },
+    {
+      "ID": 16242,
+      "Entries": [
+        "Old Fort 2 Treasure Corpse Item 23-2"
+      ]
+    },
+    {
+      "ID": 16243,
+      "Entries": [
+        "Old Fort 1 Treasure Corpse Item 32"
+      ]
+    },
+    {
+      "ID": 16244,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 16245,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 16290,
+      "Entries": [
+        "Patch delivery item"
+      ]
+    },
+    {
+      "ID": 16400,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 16401,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 16402,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 16403,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 16404,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 16405,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 16406,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 16407,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 16408,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 16409,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 16410,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 16411,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 16456,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 16457,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 16412,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 16413,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 16414,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 16415,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 16416,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 16417,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 16418,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 16419,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 20"
+      ]
+    },
+    {
+      "ID": 16420,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 16421,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 22"
+      ]
+    },
+    {
+      "ID": 16422,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 16423,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 24"
+      ]
+    },
+    {
+      "ID": 16424,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 25"
+      ]
+    },
+    {
+      "ID": 16425,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 26"
+      ]
+    },
+    {
+      "ID": 16426,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 27"
+      ]
+    },
+    {
+      "ID": 16427,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 28"
+      ]
+    },
+    {
+      "ID": 16428,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 16429,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 30"
+      ]
+    },
+    {
+      "ID": 16430,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 31"
+      ]
+    },
+    {
+      "ID": 16431,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 32"
+      ]
+    },
+    {
+      "ID": 16432,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 33"
+      ]
+    },
+    {
+      "ID": 16433,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 34"
+      ]
+    },
+    {
+      "ID": 16434,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 35"
+      ]
+    },
+    {
+      "ID": 16435,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 36"
+      ]
+    },
+    {
+      "ID": 16436,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 37"
+      ]
+    },
+    {
+      "ID": 16437,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 38"
+      ]
+    },
+    {
+      "ID": 16438,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 39"
+      ]
+    },
+    {
+      "ID": 16439,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 40"
+      ]
+    },
+    {
+      "ID": 16440,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 41"
+      ]
+    },
+    {
+      "ID": 16441,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 42"
+      ]
+    },
+    {
+      "ID": 16442,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 43"
+      ]
+    },
+    {
+      "ID": 16443,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 44"
+      ]
+    },
+    {
+      "ID": 16444,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 45"
+      ]
+    },
+    {
+      "ID": 16445,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 46"
+      ]
+    },
+    {
+      "ID": 16446,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 47"
+      ]
+    },
+    {
+      "ID": 16447,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 48"
+      ]
+    },
+    {
+      "ID": 16448,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 49"
+      ]
+    },
+    {
+      "ID": 16449,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 50"
+      ]
+    },
+    {
+      "ID": 16450,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 51"
+      ]
+    },
+    {
+      "ID": 16451,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 52"
+      ]
+    },
+    {
+      "ID": 16452,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 02-2"
+      ]
+    },
+    {
+      "ID": 16453,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 02-3"
+      ]
+    },
+    {
+      "ID": 16454,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 02-4"
+      ]
+    },
+    {
+      "ID": 16455,
+      "Entries": [
+        "Impure 2 Treasure Corpse Item 05-2"
+      ]
+    },
+    {
+      "ID": 16458,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 23-2"
+      ]
+    },
+    {
+      "ID": 16459,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 29-2"
+      ]
+    },
+    {
+      "ID": 16460,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 33-2"
+      ]
+    },
+    {
+      "ID": 16461,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 39-2"
+      ]
+    },
+    {
+      "ID": 16462,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 48"
+      ]
+    },
+    {
+      "ID": 16463,
+      "Entries": [
+        "Unholy 2 Treasure Corpse Item 49"
+      ]
+    },
+    {
+      "ID": 16470,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 16471,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 16472,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 16473,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 16474,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 16475,
+      "Entries": [
+        "Impure 3 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 16500,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 16501,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 02"
+      ]
+    },
+    {
+      "ID": 16502,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 03"
+      ]
+    },
+    {
+      "ID": 16503,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 04"
+      ]
+    },
+    {
+      "ID": 16504,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 05"
+      ]
+    },
+    {
+      "ID": 16505,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 06"
+      ]
+    },
+    {
+      "ID": 16506,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 07"
+      ]
+    },
+    {
+      "ID": 16507,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 08"
+      ]
+    },
+    {
+      "ID": 16508,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 09"
+      ]
+    },
+    {
+      "ID": 16509,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 10"
+      ]
+    },
+    {
+      "ID": 16510,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 11"
+      ]
+    },
+    {
+      "ID": 16511,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 12"
+      ]
+    },
+    {
+      "ID": 16512,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 13"
+      ]
+    },
+    {
+      "ID": 16513,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 14"
+      ]
+    },
+    {
+      "ID": 16514,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 15"
+      ]
+    },
+    {
+      "ID": 16515,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 16"
+      ]
+    },
+    {
+      "ID": 16516,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 17"
+      ]
+    },
+    {
+      "ID": 16517,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 18"
+      ]
+    },
+    {
+      "ID": 16518,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 19"
+      ]
+    },
+    {
+      "ID": 16519,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 20"
+      ]
+    },
+    {
+      "ID": 16520,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 21"
+      ]
+    },
+    {
+      "ID": 16521,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 22"
+      ]
+    },
+    {
+      "ID": 16522,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 23"
+      ]
+    },
+    {
+      "ID": 16523,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 24"
+      ]
+    },
+    {
+      "ID": 16524,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 25"
+      ]
+    },
+    {
+      "ID": 16525,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 26"
+      ]
+    },
+    {
+      "ID": 16526,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 27"
+      ]
+    },
+    {
+      "ID": 16527,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 28"
+      ]
+    },
+    {
+      "ID": 16528,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 29"
+      ]
+    },
+    {
+      "ID": 16529,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 30"
+      ]
+    },
+    {
+      "ID": 16530,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 31"
+      ]
+    },
+    {
+      "ID": 16531,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 32"
+      ]
+    },
+    {
+      "ID": 16532,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 33"
+      ]
+    },
+    {
+      "ID": 16533,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 34"
+      ]
+    },
+    {
+      "ID": 16534,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 35"
+      ]
+    },
+    {
+      "ID": 16535,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 36"
+      ]
+    },
+    {
+      "ID": 16536,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 37"
+      ]
+    },
+    {
+      "ID": 16537,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 38"
+      ]
+    },
+    {
+      "ID": 16538,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 39"
+      ]
+    },
+    {
+      "ID": 16539,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 40"
+      ]
+    },
+    {
+      "ID": 16540,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 41"
+      ]
+    },
+    {
+      "ID": 16541,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 42"
+      ]
+    },
+    {
+      "ID": 16542,
+      "Entries": [
+        "Prison Castle 3 Treasure Corpse Item 01"
+      ]
+    },
+    {
+      "ID": 16543,
+      "Entries": [
+        "Prison Castle 3 Treasure Corpse Item 01-2"
+      ]
+    },
+    {
+      "ID": 16544,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 02-2"
+      ]
+    },
+    {
+      "ID": 16545,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 02-3"
+      ]
+    },
+    {
+      "ID": 16546,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 02-4"
+      ]
+    },
+    {
+      "ID": 16547,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 14-2"
+      ]
+    },
+    {
+      "ID": 16548,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 14-3"
+      ]
+    },
+    {
+      "ID": 16549,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 14-4"
+      ]
+    },
+    {
+      "ID": 16550,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 14-5"
+      ]
+    },
+    {
+      "ID": 16551,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 27-2"
+      ]
+    },
+    {
+      "ID": 16552,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 43-5"
+      ]
+    },
+    {
+      "ID": 16553,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 20-2"
+      ]
+    },
+    {
+      "ID": 16554,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 22-2"
+      ]
+    },
+    {
+      "ID": 16555,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 23-2"
+      ]
+    },
+    {
+      "ID": 16556,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 25-2"
+      ]
+    },
+    {
+      "ID": 16557,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 25-3"
+      ]
+    },
+    {
+      "ID": 16558,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 40-2"
+      ]
+    },
+    {
+      "ID": 16559,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 40-3"
+      ]
+    },
+    {
+      "ID": 16560,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 40-4"
+      ]
+    },
+    {
+      "ID": 16561,
+      "Entries": [
+        "Prison 1 Treasure Corpse Item 43-2"
+      ]
+    },
+    {
+      "ID": 16562,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 43-3"
+      ]
+    },
+    {
+      "ID": 16563,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 03-2"
+      ]
+    },
+    {
+      "ID": 16564,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 11-2"
+      ]
+    },
+    {
+      "ID": 16565,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 13-2"
+      ]
+    },
+    {
+      "ID": 16566,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 17-2"
+      ]
+    },
+    {
+      "ID": 16567,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 20-2"
+      ]
+    },
+    {
+      "ID": 16568,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 23-2"
+      ]
+    },
+    {
+      "ID": 16569,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 34-2"
+      ]
+    },
+    {
+      "ID": 16570,
+      "Entries": [
+        "Prison Castle 2 Treasure Corpse Item 42-2"
+      ]
+    },
+    {
+      "ID": 16571,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 07-3"
+      ]
+    },
+    {
+      "ID": 16572,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 07-4"
+      ]
+    },
+    {
+      "ID": 16573,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 21-2"
+      ]
+    },
+    {
+      "ID": 16574,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 22-3"
+      ]
+    },
+    {
+      "ID": 16575,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 22-4"
+      ]
+    },
+    {
+      "ID": 16576,
+      "Entries": [
+        "Prison Castle 1 Treasure Corpse Item 43-4"
+      ]
+    },
+    {
+      "ID": 16580,
+      "Entries": [
+        "For giving to Logan"
+      ]
+    },
+    {
+      "ID": 16581,
+      "Entries": [
+        "For giving to Prison Castle 3 Black Ghost"
+      ]
+    },
+    {
+      "ID": 16590,
+      "Entries": [
+        "Villaidel corpse"
+      ]
+    },
+    {
+      "ID": 16591,
+      "Entries": [
+        "Villaidel corpse 2nd"
+      ]
+    },
+    {
+      "ID": 16600,
+      "Entries": [
+        "Treasure Corpse Item 12-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16601,
+      "Entries": [
+        "Treasure Corpse Item 06-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16602,
+      "Entries": [
+        "Treasure Corpse Item 06-3 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16603,
+      "Entries": [
+        "Treasure Corpse Item 07-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16604,
+      "Entries": [
+        "Treasure Corpse Item 09-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16605,
+      "Entries": [
+        "Treasure Corpse Item 11-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16606,
+      "Entries": [
+        "Treasure Corpse Item 14-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16607,
+      "Entries": [
+        "Treasure Corpse Item 16-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16608,
+      "Entries": [
+        "Treasure Corpse Item 17-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16609,
+      "Entries": [
+        "Treasure Corpse Item 18-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16610,
+      "Entries": [
+        "Treasure Corpse Item 22-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16611,
+      "Entries": [
+        "Treasure Corpse Item 28-2 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16612,
+      "Entries": [
+        "Treasure Corpse Item 28-3 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16613,
+      "Entries": [
+        "Treasure Corpse Item 01-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16614,
+      "Entries": [
+        "Treasure Corpse Item 03-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16615,
+      "Entries": [
+        "Treasure Corpse Item 04-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16616,
+      "Entries": [
+        "Treasure Corpse Item 06-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16617,
+      "Entries": [
+        "Treasure Corpse Item 07-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16618,
+      "Entries": [
+        "Treasure Corpse Item 07-3 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16619,
+      "Entries": [
+        "Treasure Corpse Item 07-4 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16620,
+      "Entries": [
+        "Treasure Corpse Item 08-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16621,
+      "Entries": [
+        "Treasure Corpse Item 13-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16622,
+      "Entries": [
+        "Treasure Corpse Item 15-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16623,
+      "Entries": [
+        "Treasure Corpse Item 15-3 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16624,
+      "Entries": [
+        "Treasure Corpse Item 18-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16625,
+      "Entries": [
+        "Treasure Corpse Item 19-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16626,
+      "Entries": [
+        "Treasure Corpse Item 23-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16627,
+      "Entries": [
+        "Treasure Corpse Item 24-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16628,
+      "Entries": [
+        "Treasure Corpse Item 28-2 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16629,
+      "Entries": [
+        "Treasure Corpse Item 02-2 for Tunnel 3"
+      ]
+    },
+    {
+      "ID": 16640,
+      "Entries": [
+        "1 for half hand event"
+      ]
+    },
+    {
+      "ID": 16641,
+      "Entries": [
+        "2 for half hand event"
+      ]
+    },
+    {
+      "ID": 16650,
+      "Entries": [
+        "Treasure Corpse Item 29 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16651,
+      "Entries": [
+        "Treasure Corpse Item 30 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16652,
+      "Entries": [
+        "do not use"
+      ]
+    },
+    {
+      "ID": 16653,
+      "Entries": [
+        "Treasure Corpse Item 31 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16654,
+      "Entries": [
+        "Treasure Corpse Item 32 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16655,
+      "Entries": [
+        "Treasure Corpse Item 33 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16656,
+      "Entries": [
+        "Treasure Corpse Item 34 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16657,
+      "Entries": [
+        "do not use"
+      ]
+    },
+    {
+      "ID": 16658,
+      "Entries": [
+        "Treasure Corpse Item 36 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16659,
+      "Entries": [
+        "Treasure Corpse Item 37 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16660,
+      "Entries": [
+        "Treasure Corpse Item 38 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16661,
+      "Entries": [
+        "Treasure Corpse Item 31 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16662,
+      "Entries": [
+        "Treasure Corpse Item 32 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16663,
+      "Entries": [
+        "Treasure Corpse Item 33 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16664,
+      "Entries": [
+        "Treasure Corpse Item 34 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16665,
+      "Entries": [
+        "Treasure Corpse Item 35 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16666,
+      "Entries": [
+        "Treasure Corpse Item 36 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16667,
+      "Entries": [
+        "Treasure Corpse Item 37 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16668,
+      "Entries": [
+        "Treasure Corpse Item 38 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16669,
+      "Entries": [
+        "Treasure Corpse Item 39 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16670,
+      "Entries": [
+        "Treasure Corpse Item 40 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16671,
+      "Entries": [
+        "Treasure Corpse Item 41 for Tunnel 2"
+      ]
+    },
+    {
+      "ID": 16672,
+      "Entries": [
+        "Treasure Corpse Item 39 for Tunnel 1"
+      ]
+    },
+    {
+      "ID": 16673,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16674,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16675,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16676,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16677,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16678,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16679,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16680,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16681,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16682,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16683,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16684,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16685,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16686,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16687,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16688,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 16689,
+      "Entries": [
+        "Reserve for Mine Treasure Corpse"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Hawk Musume Exchange Part 1"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Hawk Musume Exchange Part 2"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Hawk Musume Exchange Part 3"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Hawk Musume Exchange Part 4"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "Hawk Musume Exchange Part 5"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "Hawk Musume Exchange Part 6"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "Hawk Musume Exchange Part 7"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "Hawk Musume Exchange Part 8"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "Hawk Musume Exchange Part 9"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "Hawk Musume Exchange Part 10"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Hawk Musume Exchange Part 11"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "Hawk Musume Exchange Part 12"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "Hawk Musume Exchange Part 13"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Hawk Musume Exchange Part 14"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "Hawk Musume Exchange Part 15"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "Hawk Musume Exchange Part 16"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "Hawk Musume Exchange Part 17"
+      ]
+    },
+    {
+      "ID": 20017,
+      "Entries": [
+        "Hawk Musume Exchange Part 18"
+      ]
+    },
+    {
+      "ID": 20018,
+      "Entries": [
+        "Hawk Musume Exchange Part 19"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Stone Pillar 1 Failure 1"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Stone Pillar 1 Failure 2"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 210005,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 210006,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 210010,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 210011,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 210020,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 210021,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 210030,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 210031,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 210040,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 210041,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 210045,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Ax"
+      ]
+    },
+    {
+      "ID": 210046,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Ax"
+      ]
+    },
+    {
+      "ID": 210050,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 210051,
+      "Entries": [
+        "Royal Castle 1 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 210060,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 210061,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 210065,
+      "Entries": [
+        "Royal Castle 1 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 210066,
+      "Entries": [
+        "Royal Castle 1 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 210070,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 210071,
+      "Entries": [
+        "Royal Castle 1 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 210075,
+      "Entries": [
+        "Royal Castle 1 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 210076,
+      "Entries": [
+        "Royal Castle 1 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 210080,
+      "Entries": [
+        "Royal Castle 1 Phalanx (Chibi Stray)"
+      ]
+    },
+    {
+      "ID": 210081,
+      "Entries": [
+        "Royal Castle 1 Phalanx (Chibi Stray)"
+      ]
+    },
+    {
+      "ID": 210085,
+      "Entries": [
+        "Royal Castle 1 Phalanx (Chibi Combined)"
+      ]
+    },
+    {
+      "ID": 210086,
+      "Entries": [
+        "Royal Castle 1 Phalanx (Chibi Combined)"
+      ]
+    },
+    {
+      "ID": 210090,
+      "Entries": [
+        "Royal Castle 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 210091,
+      "Entries": [
+        "Royal Castle 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 210092,
+      "Entries": [
+        "Royal Castle 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 220010,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 220011,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 220020,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 220021,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 220025,
+      "Entries": [
+        "Royal Castle 2 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 220026,
+      "Entries": [
+        "Royal Castle 2 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 220030,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 220031,
+      "Entries": [
+        "Royal Castle 2 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 220040,
+      "Entries": [
+        "Ojo 2 military dog"
+      ]
+    },
+    {
+      "ID": 220045,
+      "Entries": [
+        "Royal Castle 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 220046,
+      "Entries": [
+        "Royal Castle 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 220050,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 220051,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 220055,
+      "Entries": [
+        "Royal Castle 2 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 220056,
+      "Entries": [
+        "Ojo 2 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 220060,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 220061,
+      "Entries": [
+        "Royal Castle 2 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 220065,
+      "Entries": [
+        "Ojo 2 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 220066,
+      "Entries": [
+        "Ojo 2 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 220070,
+      "Entries": [
+        "Royal Castle 2 Phalanx (Chibi)"
+      ]
+    },
+    {
+      "ID": 220071,
+      "Entries": [
+        "Royal Castle 2 Phalanx (Chibi)"
+      ]
+    },
+    {
+      "ID": 220080,
+      "Entries": [
+        "Royal Castle 2 Jailer"
+      ]
+    },
+    {
+      "ID": 220081,
+      "Entries": [
+        "Royal Castle 2 Jailer"
+      ]
+    },
+    {
+      "ID": 220090,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 220091,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 220100,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 220101,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier_Flame Sword"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 230001,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 230011,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 230020,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 230021,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 230025,
+      "Entries": [
+        "Royal Castle 3 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 230026,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Ax"
+      ]
+    },
+    {
+      "ID": 230030,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 230031,
+      "Entries": [
+        "Royal Castle 3 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 230040,
+      "Entries": [
+        "Ojo 3 military dog"
+      ]
+    },
+    {
+      "ID": 230050,
+      "Entries": [
+        "Royal Castle 3 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 230051,
+      "Entries": [
+        "Royal Castle 3 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 230055,
+      "Entries": [
+        "Ojo 3 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 230056,
+      "Entries": [
+        "Ojo 3 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 230060,
+      "Entries": [
+        "Ojo 3 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 230061,
+      "Entries": [
+        "Ojo 3 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 230065,
+      "Entries": [
+        "Ojo 3 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 230066,
+      "Entries": [
+        "Ojo 3 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 230070,
+      "Entries": [
+        "Ojo 3 Assassin"
+      ]
+    },
+    {
+      "ID": 230071,
+      "Entries": [
+        "Ojo 3 Assassin"
+      ]
+    },
+    {
+      "ID": 230072,
+      "Entries": [
+        "Ojo 3 Assassin"
+      ]
+    },
+    {
+      "ID": 230080,
+      "Entries": [
+        "Oujou 3 Assassin Black"
+      ]
+    },
+    {
+      "ID": 230081,
+      "Entries": [
+        "Oujou 3 Assassin Black"
+      ]
+    },
+    {
+      "ID": 230090,
+      "Entries": [
+        "Royal Castle 3 Jailer"
+      ]
+    },
+    {
+      "ID": 230091,
+      "Entries": [
+        "Royal Castle 3 Jailer"
+      ]
+    },
+    {
+      "ID": 230095,
+      "Entries": [
+        "Royal Castle 3 Jailer Black"
+      ]
+    },
+    {
+      "ID": 230096,
+      "Entries": [
+        "Royal Castle 3 Jailer Black"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "Royal Castle 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 230101,
+      "Entries": [
+        "Royal Castle 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 230110,
+      "Entries": [
+        "Royal Castle 3 Knight_Spear"
+      ]
+    },
+    {
+      "ID": 230111,
+      "Entries": [
+        "Royal Castle 3 Knight_Spear"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 240001,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 240010,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 240011,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 240020,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 240021,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Spear"
+      ]
+    },
+    {
+      "ID": 240025,
+      "Entries": [
+        "Royal Castle 4 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 240026,
+      "Entries": [
+        "Royal Castle 4 General Soldier Ax"
+      ]
+    },
+    {
+      "ID": 240030,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 240031,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Halberd"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 240101,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Sword/Black"
+      ]
+    },
+    {
+      "ID": 240110,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow Black"
+      ]
+    },
+    {
+      "ID": 240111,
+      "Entries": [
+        "Royal Castle 4 General Soldier_Bow Black"
+      ]
+    },
+    {
+      "ID": 240040,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 240041,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword"
+      ]
+    },
+    {
+      "ID": 240045,
+      "Entries": [
+        "Royal Castle 4 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 240046,
+      "Entries": [
+        "Royal Castle 4 Knight_Claymore"
+      ]
+    },
+    {
+      "ID": 240050,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 240051,
+      "Entries": [
+        "Royal Castle 4 Knight_Sword/Black"
+      ]
+    },
+    {
+      "ID": 240055,
+      "Entries": [
+        "Royal Castle 4 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 240056,
+      "Entries": [
+        "Royal Castle 4 Knight_Claymore Black"
+      ]
+    },
+    {
+      "ID": 240060,
+      "Entries": [
+        "Ojo 4 Phalanx (Chibi) Black"
+      ]
+    },
+    {
+      "ID": 240061,
+      "Entries": [
+        "Ojo 4 Phalanx (Chibi) Black"
+      ]
+    },
+    {
+      "ID": 240070,
+      "Entries": [
+        "Royal Castle 4 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 240071,
+      "Entries": [
+        "Royal Castle 4 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 240080,
+      "Entries": [
+        "Ojo 4 Assassin"
+      ]
+    },
+    {
+      "ID": 240081,
+      "Entries": [
+        "Ojo 4 Assassin"
+      ]
+    },
+    {
+      "ID": 240082,
+      "Entries": [
+        "Ojo 4 Assassin"
+      ]
+    },
+    {
+      "ID": 240090,
+      "Entries": [
+        "Royal Castle 4 Jailer"
+      ]
+    },
+    {
+      "ID": 240091,
+      "Entries": [
+        "Royal Castle 4 Jailer"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 310005,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword/Black"
+      ]
+    },
+    {
+      "ID": 310006,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Sword/Black"
+      ]
+    },
+    {
+      "ID": 310010,
+      "Entries": [
+        "Old fort 1 white skeleton _ bow"
+      ]
+    },
+    {
+      "ID": 310011,
+      "Entries": [
+        "Old fort 1 white skeleton _ bow"
+      ]
+    },
+    {
+      "ID": 310015,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Bow/Black"
+      ]
+    },
+    {
+      "ID": 310016,
+      "Entries": [
+        "Old Fort 1 White Skeleton_Bow/Black"
+      ]
+    },
+    {
+      "ID": 310020,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton"
+      ]
+    },
+    {
+      "ID": 310021,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton"
+      ]
+    },
+    {
+      "ID": 310022,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton"
+      ]
+    },
+    {
+      "ID": 310025,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 310026,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 310027,
+      "Entries": [
+        "Old Fort 1 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 310030,
+      "Entries": [
+        "Old Fort 1 Hawk"
+      ]
+    },
+    {
+      "ID": 310050,
+      "Entries": [
+        "Old Fort 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 310051,
+      "Entries": [
+        "Old Fort 1 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 310060,
+      "Entries": [
+        "Old fort 1 black skeleton _ dual wielding"
+      ]
+    },
+    {
+      "ID": 310061,
+      "Entries": [
+        "Old Fort 1 Black Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 310062,
+      "Entries": [
+        "Old fort 1 black skeleton _ dual wielding"
+      ]
+    },
+    {
+      "ID": 310070,
+      "Entries": [
+        "Old fort 1 child stingray"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Old Fort 2 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 320001,
+      "Entries": [
+        "Old Fort 2 White Skeleton_Sword"
+      ]
+    },
+    {
+      "ID": 320010,
+      "Entries": [
+        "Old Fort 2 White Skeleton _ Bow"
+      ]
+    },
+    {
+      "ID": 320011,
+      "Entries": [
+        "Old Fort 2 White Skeleton _ Bow"
+      ]
+    },
+    {
+      "ID": 320020,
+      "Entries": [
+        "Old Fort 2 Gold Skull"
+      ]
+    },
+    {
+      "ID": 320021,
+      "Entries": [
+        "Old Fort 2 Gold Skull"
+      ]
+    },
+    {
+      "ID": 320022,
+      "Entries": [
+        "Old Fort 2 Gold Skull"
+      ]
+    },
+    {
+      "ID": 320025,
+      "Entries": [
+        "Old Fort 2 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 320026,
+      "Entries": [
+        "Old Fort 2 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 320027,
+      "Entries": [
+        "Old Fort 2 Gold Skeleton Black"
+      ]
+    },
+    {
+      "ID": 320030,
+      "Entries": [
+        "Old Fort 2 Hawk"
+      ]
+    },
+    {
+      "ID": 320050,
+      "Entries": [
+        "Old Fort 2 Kagejo"
+      ]
+    },
+    {
+      "ID": 320051,
+      "Entries": [
+        "Old Fort 2 Kagejo"
+      ]
+    },
+    {
+      "ID": 320052,
+      "Entries": [
+        "Old Fort 2 Kagejo"
+      ]
+    },
+    {
+      "ID": 320055,
+      "Entries": [
+        "Old Fort 2 Kagejo Black"
+      ]
+    },
+    {
+      "ID": 320056,
+      "Entries": [
+        "Old Fort 2 Kagejo Black"
+      ]
+    },
+    {
+      "ID": 320057,
+      "Entries": [
+        "Old Fort 2 Kagejo Black"
+      ]
+    },
+    {
+      "ID": 320070,
+      "Entries": [
+        "Old Fort 2 Wizard"
+      ]
+    },
+    {
+      "ID": 320071,
+      "Entries": [
+        "Old Fort 2 Wizard"
+      ]
+    },
+    {
+      "ID": 320090,
+      "Entries": [
+        "Old Fort 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 320091,
+      "Entries": [
+        "Old Fort 2 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Old Fort 2 Large Slug (Light)"
+      ]
+    },
+    {
+      "ID": 320101,
+      "Entries": [
+        "Old Fort 2 Large Slug (Light)"
+      ]
+    },
+    {
+      "ID": 320110,
+      "Entries": [
+        "Old Fort 2 Son Ray"
+      ]
+    },
+    {
+      "ID": 320120,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 320121,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 320122,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword"
+      ]
+    },
+    {
+      "ID": 320125,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword Black"
+      ]
+    },
+    {
+      "ID": 320126,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword Black"
+      ]
+    },
+    {
+      "ID": 320127,
+      "Entries": [
+        "Old Fort 2 Black Skeleton_Dual Sword Black"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Old Fort 3 Son Ei"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Old Fort 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 330011,
+      "Entries": [
+        "Old Fort 3 Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Prison 1 Prisoner 1"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "Prison 1 Prisoner 2"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Prison castle 1 Prisoner believer 1"
+      ]
+    },
+    {
+      "ID": 400011,
+      "Entries": [
+        "Prison Castle 1 Prisoner Believers 2"
+      ]
+    },
+    {
+      "ID": 400020,
+      "Entries": [
+        "Prison Castle 1 Octopus Man 1"
+      ]
+    },
+    {
+      "ID": 400021,
+      "Entries": [
+        "Prison Castle 1 Octopus Man 2"
+      ]
+    },
+    {
+      "ID": 400030,
+      "Entries": [
+        "Prison 1 Octopus man (fixed)"
+      ]
+    },
+    {
+      "ID": 400031,
+      "Entries": [
+        "Prison 1 Octopus man (fixed) 2nd"
+      ]
+    },
+    {
+      "ID": 400032,
+      "Entries": [
+        "Prison 1 Octopus man (fixed) 3rd"
+      ]
+    },
+    {
+      "ID": 400033,
+      "Entries": [
+        "Prison 1 Octopus man (fixed) 4th"
+      ]
+    },
+    {
+      "ID": 400034,
+      "Entries": [
+        "Prison 1 Octopus man (fixed) 5th"
+      ]
+    },
+    {
+      "ID": 400040,
+      "Entries": [
+        "Prison Castle 1 Jewel Lizard 1"
+      ]
+    },
+    {
+      "ID": 400041,
+      "Entries": [
+        "Prison Castle 1 Jewel Lizard 2"
+      ]
+    },
+    {
+      "ID": 400050,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Black 1"
+      ]
+    },
+    {
+      "ID": 400051,
+      "Entries": [
+        "Prison Castle 1 Octopus Man Black 2"
+      ]
+    },
+    {
+      "ID": 400060,
+      "Entries": [
+        "Prison Castle 1 Puppeteer"
+      ]
+    },
+    {
+      "ID": 400070,
+      "Entries": [
+        "Prison castle 1 Prisoner (stabbing sword) 1"
+      ]
+    },
+    {
+      "ID": 400071,
+      "Entries": [
+        "Prison castle 1 Prisoner (stabbing sword) 2"
+      ]
+    },
+    {
+      "ID": 400080,
+      "Entries": [
+        "Prison 1 prisoner (spear)"
+      ]
+    },
+    {
+      "ID": 400090,
+      "Entries": [
+        "Prison Castle 1 Prisoner's ball"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Prison castle 2 Gargoyle (sword) 1"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "Prison castle 2 Gargoyle (sword) 2"
+      ]
+    },
+    {
+      "ID": 410010,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Bow) 1"
+      ]
+    },
+    {
+      "ID": 410011,
+      "Entries": [
+        "Prison Castle 2 Gargoyle (Bow) 2"
+      ]
+    },
+    {
+      "ID": 410020,
+      "Entries": [
+        "Prison Castle 2 Centipede 1"
+      ]
+    },
+    {
+      "ID": 410030,
+      "Entries": [
+        "Prison Castle 2 Jewel Lizard 1"
+      ]
+    },
+    {
+      "ID": 410031,
+      "Entries": [
+        "Prison Castle 2 Jewel Lizard 2"
+      ]
+    },
+    {
+      "ID": 410040,
+      "Entries": [
+        "Prison 2 Prisoner 1"
+      ]
+    },
+    {
+      "ID": 410041,
+      "Entries": [
+        "Prison Castle 2 Prisoner 2"
+      ]
+    },
+    {
+      "ID": 410050,
+      "Entries": [
+        "Prison Castle 2 Gargoyle Black (sword) 1"
+      ]
+    },
+    {
+      "ID": 410051,
+      "Entries": [
+        "Prison Castle 2 Gargoyle Black (sword) 2"
+      ]
+    },
+    {
+      "ID": 410060,
+      "Entries": [
+        "Prison Castle 2 Prisoner's Ball"
+      ]
+    },
+    {
+      "ID": 410070,
+      "Entries": [
+        "Prison Castle 2 Octopus Man Black 1"
+      ]
+    },
+    {
+      "ID": 410071,
+      "Entries": [
+        "Prison Castle 2 Octopus Man Black 2"
+      ]
+    },
+    {
+      "ID": 410080,
+      "Entries": [
+        "Prison 2 Centipede (small)"
+      ]
+    },
+    {
+      "ID": 410090,
+      "Entries": [
+        "Prison Castle 2 Centipede Black"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Prison Castle 3 Jewel Lizard 1"
+      ]
+    },
+    {
+      "ID": 420001,
+      "Entries": [
+        "Prison Castle 3 Jewel Lizard 2"
+      ]
+    },
+    {
+      "ID": 420010,
+      "Entries": [
+        "Prison Castle 3 Centipede (small)"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Unclean 1 Corrupted Human (hammer) 1"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Hammer) 2"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "Unclean 1 Corrupted Human (hammer) 3"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Spear) 1"
+      ]
+    },
+    {
+      "ID": 500011,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Spear) 2"
+      ]
+    },
+    {
+      "ID": 500012,
+      "Entries": [
+        "Unclean 1 Corrupted Human (Spear) 3"
+      ]
+    },
+    {
+      "ID": 500020,
+      "Entries": [
+        "Impure 1 Rat 1"
+      ]
+    },
+    {
+      "ID": 500030,
+      "Entries": [
+        "Impure 1 Blood mite 1"
+      ]
+    },
+    {
+      "ID": 500040,
+      "Entries": [
+        "Impure 1 Gem Lizard 1"
+      ]
+    },
+    {
+      "ID": 500041,
+      "Entries": [
+        "Impure 1 Gem Lizard 2"
+      ]
+    },
+    {
+      "ID": 500050,
+      "Entries": [
+        "Impure 1 Corrupted Human Black (hammer) 1"
+      ]
+    },
+    {
+      "ID": 500051,
+      "Entries": [
+        "Unclean 1 Corrupted Human Black (hammer) 2"
+      ]
+    },
+    {
+      "ID": 500052,
+      "Entries": [
+        "Unclean 1 Corrupted Human Black (hammer) 3"
+      ]
+    },
+    {
+      "ID": 500060,
+      "Entries": [
+        "Impure 1 Corrupted Human Black (Spear) 1"
+      ]
+    },
+    {
+      "ID": 500061,
+      "Entries": [
+        "Unclean 1 Corrupted Human Black (Spear) 2"
+      ]
+    },
+    {
+      "ID": 500062,
+      "Entries": [
+        "Unclean 1 Corrupted Human Black (Spear) 3"
+      ]
+    },
+    {
+      "ID": 500070,
+      "Entries": [
+        "Impure 1 Great Corrupt 1"
+      ]
+    },
+    {
+      "ID": 500071,
+      "Entries": [
+        "Impure 1 Great Corrupt 2"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Unclean 2 Corrupted Human (hammer) 1"
+      ]
+    },
+    {
+      "ID": 510001,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Hammer) 2"
+      ]
+    },
+    {
+      "ID": 510002,
+      "Entries": [
+        "Unclean 2 Corrupted Human (hammer) 3"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Spear) 1"
+      ]
+    },
+    {
+      "ID": 510011,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Spear) 2"
+      ]
+    },
+    {
+      "ID": 510012,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Spear) 3"
+      ]
+    },
+    {
+      "ID": 510020,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Fixed)"
+      ]
+    },
+    {
+      "ID": 510021,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Fixed) 2nd"
+      ]
+    },
+    {
+      "ID": 510022,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Fixed) 3rd"
+      ]
+    },
+    {
+      "ID": 510023,
+      "Entries": [
+        "Unclean 2 Corrupted Human (Fixed) 4th"
+      ]
+    },
+    {
+      "ID": 510030,
+      "Entries": [
+        "Impure 2 Jellyfish 1"
+      ]
+    },
+    {
+      "ID": 510031,
+      "Entries": [
+        "Impure 2 Jellyfish 2"
+      ]
+    },
+    {
+      "ID": 510032,
+      "Entries": [
+        "Impure 2 Jellyfish 3"
+      ]
+    },
+    {
+      "ID": 510040,
+      "Entries": [
+        "Impure 2 Slug 1"
+      ]
+    },
+    {
+      "ID": 510041,
+      "Entries": [
+        "Impure 2 Slug 2"
+      ]
+    },
+    {
+      "ID": 510050,
+      "Entries": [
+        "Impure 2 slug (fixed)"
+      ]
+    },
+    {
+      "ID": 510051,
+      "Entries": [
+        "Unclean 2 slug (fixed) 2nd"
+      ]
+    },
+    {
+      "ID": 510052,
+      "Entries": [
+        "Unclean 2 slug (fixed) 3rd"
+      ]
+    },
+    {
+      "ID": 510053,
+      "Entries": [
+        "Unclean 2 slug (fixed) 4th"
+      ]
+    },
+    {
+      "ID": 510054,
+      "Entries": [
+        "Unclean 2 slug (fixed) 5th"
+      ]
+    },
+    {
+      "ID": 510060,
+      "Entries": [
+        "Unclean 2 Large Mosquito 1"
+      ]
+    },
+    {
+      "ID": 510070,
+      "Entries": [
+        "Impure 2 Jewel Lizard 1"
+      ]
+    },
+    {
+      "ID": 510071,
+      "Entries": [
+        "Impure 2 Jewel Lizard 2"
+      ]
+    },
+    {
+      "ID": 510080,
+      "Entries": [
+        "Unclean 2 Corrupted Human Black (hammer) 1"
+      ]
+    },
+    {
+      "ID": 510081,
+      "Entries": [
+        "Impure 2 Corrupted Human Black (hammer) 2"
+      ]
+    },
+    {
+      "ID": 510082,
+      "Entries": [
+        "Unclean 2 Corrupted Human Black (hammer) 3"
+      ]
+    },
+    {
+      "ID": 510090,
+      "Entries": [
+        "Unclean 2 Corrupted Human Black (Spear) 1"
+      ]
+    },
+    {
+      "ID": 510091,
+      "Entries": [
+        "Unclean 2 Corrupted Human Black (Spear) 2"
+      ]
+    },
+    {
+      "ID": 510092,
+      "Entries": [
+        "Unclean 2 Corrupted Human Black (Spear) 3"
+      ]
+    },
+    {
+      "ID": 510100,
+      "Entries": [
+        "Unclean 2 Corrupt (Sorcerer) 1"
+      ]
+    },
+    {
+      "ID": 510101,
+      "Entries": [
+        "Unclean 2 Corrupt (Sorcerer) 2"
+      ]
+    },
+    {
+      "ID": 510110,
+      "Entries": [
+        "Unclean 2 Corrupt (Hammer/Poison) 1"
+      ]
+    },
+    {
+      "ID": 510111,
+      "Entries": [
+        "Unclean 2 Corrupt (Hammer/Poison) 2"
+      ]
+    },
+    {
+      "ID": 510120,
+      "Entries": [
+        "Impure 2 Great Corrupt 1"
+      ]
+    },
+    {
+      "ID": 510121,
+      "Entries": [
+        "Unclean 2 Great Corrupt 2"
+      ]
+    },
+    {
+      "ID": 510130,
+      "Entries": [
+        "Impure 2 Large Corrupt Black 1"
+      ]
+    },
+    {
+      "ID": 510131,
+      "Entries": [
+        "Unclean 2 Great Corrupt Black 2"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Impure 3 Corrupted Human (hammer) 1"
+      ]
+    },
+    {
+      "ID": 520001,
+      "Entries": [
+        "Impure 3 Corrupted Human (hammer) 2"
+      ]
+    },
+    {
+      "ID": 520002,
+      "Entries": [
+        "Unclean 3 Corrupted Human (hammer) 3"
+      ]
+    },
+    {
+      "ID": 520010,
+      "Entries": [
+        "Unclean 3 Corrupted Human (Spear) 1"
+      ]
+    },
+    {
+      "ID": 520011,
+      "Entries": [
+        "Unclean 3 Corrupted Human (Spear) 2"
+      ]
+    },
+    {
+      "ID": 520012,
+      "Entries": [
+        "Unclean 3 Corrupted Human (Spear) 3"
+      ]
+    },
+    {
+      "ID": 520030,
+      "Entries": [
+        "Impure 3 Jewel Lizard 1"
+      ]
+    },
+    {
+      "ID": 520031,
+      "Entries": [
+        "Impure 3 Jewel Lizard 2"
+      ]
+    },
+    {
+      "ID": 520040,
+      "Entries": [
+        "Unclean 3 Unclean"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) 1"
+      ]
+    },
+    {
+      "ID": 610001,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) 2"
+      ]
+    },
+    {
+      "ID": 610002,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) 3"
+      ]
+    },
+    {
+      "ID": 610003,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) 4"
+      ]
+    },
+    {
+      "ID": 610010,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1"
+      ]
+    },
+    {
+      "ID": 610011,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2"
+      ]
+    },
+    {
+      "ID": 610012,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3"
+      ]
+    },
+    {
+      "ID": 610013,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 4"
+      ]
+    },
+    {
+      "ID": 610020,
+      "Entries": [
+        "Tunnel 1 Scale miner (dagger) 1"
+      ]
+    },
+    {
+      "ID": 610021,
+      "Entries": [
+        "Tunnel 1 Scale miner (dagger) 2"
+      ]
+    },
+    {
+      "ID": 610022,
+      "Entries": [
+        "Tunnel 1 Scale miner (dagger) 3"
+      ]
+    },
+    {
+      "ID": 610030,
+      "Entries": [
+        "Tunnel 1 Scale miner (long sword) 1"
+      ]
+    },
+    {
+      "ID": 610031,
+      "Entries": [
+        "Tunnel 1 Scale miner (long sword) 2"
+      ]
+    },
+    {
+      "ID": 610032,
+      "Entries": [
+        "Tunnel 1 Scale miner (long sword) 3"
+      ]
+    },
+    {
+      "ID": 610040,
+      "Entries": [
+        "Mine 1 Military dog 1"
+      ]
+    },
+    {
+      "ID": 610041,
+      "Entries": [
+        "Tunnel 1 military dog black"
+      ]
+    },
+    {
+      "ID": 610050,
+      "Entries": [
+        "Tunnel 1 Jailer 1"
+      ]
+    },
+    {
+      "ID": 610051,
+      "Entries": [
+        "Tunnel 1 Jailer 2"
+      ]
+    },
+    {
+      "ID": 610052,
+      "Entries": [
+        "Tunnel 1 Jailer 3"
+      ]
+    },
+    {
+      "ID": 610053,
+      "Entries": [
+        "Tunnel 1 Crystal lizard 1"
+      ]
+    },
+    {
+      "ID": 610054,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard 2"
+      ]
+    },
+    {
+      "ID": 610055,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard 3"
+      ]
+    },
+    {
+      "ID": 610056,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard 4"
+      ]
+    },
+    {
+      "ID": 610057,
+      "Entries": [
+        "Tunnel 1 Crystal Lizard 5"
+      ]
+    },
+    {
+      "ID": 610060,
+      "Entries": [
+        "Tunnel 1 Scale miner (bare hands) 1"
+      ]
+    },
+    {
+      "ID": 610061,
+      "Entries": [
+        "Tunnel 1 Scale miner (bare hands) 2"
+      ]
+    },
+    {
+      "ID": 610062,
+      "Entries": [
+        "Tunnel 1 Scale miner (bare hands) 3"
+      ]
+    },
+    {
+      "ID": 610063,
+      "Entries": [
+        "Tunnel 1 Scale miner (bare hands) 4"
+      ]
+    },
+    {
+      "ID": 610070,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Hammer) 1"
+      ]
+    },
+    {
+      "ID": 610071,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Hammer) 2"
+      ]
+    },
+    {
+      "ID": 610072,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Hammer) 3"
+      ]
+    },
+    {
+      "ID": 610073,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Hammer) 4"
+      ]
+    },
+    {
+      "ID": 610080,
+      "Entries": [
+        "Tunnel 1 Prisoner Black 1"
+      ]
+    },
+    {
+      "ID": 610081,
+      "Entries": [
+        "Tunnel 1 Prisoner Black 2"
+      ]
+    },
+    {
+      "ID": 610082,
+      "Entries": [
+        "Tunnel 1 Prisoner Black 3"
+      ]
+    },
+    {
+      "ID": 610090,
+      "Entries": [
+        "Tunnel 1 Magma gecko"
+      ]
+    },
+    {
+      "ID": 610100,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) Black 1"
+      ]
+    },
+    {
+      "ID": 610101,
+      "Entries": [
+        "Tunnel 1 Scale Miner (Pickle) Black 2"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Pickle) 1"
+      ]
+    },
+    {
+      "ID": 620001,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Pickle) 2"
+      ]
+    },
+    {
+      "ID": 620002,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Pickle) 3"
+      ]
+    },
+    {
+      "ID": 620003,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Pickle) 4"
+      ]
+    },
+    {
+      "ID": 620004,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Pickle) 5"
+      ]
+    },
+    {
+      "ID": 620010,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 1"
+      ]
+    },
+    {
+      "ID": 620011,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 2"
+      ]
+    },
+    {
+      "ID": 620012,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 3"
+      ]
+    },
+    {
+      "ID": 620013,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 4"
+      ]
+    },
+    {
+      "ID": 620020,
+      "Entries": [
+        "Tunnel 2 Military dog 1"
+      ]
+    },
+    {
+      "ID": 620021,
+      "Entries": [
+        "Tunnel 2 Military dog 2"
+      ]
+    },
+    {
+      "ID": 620030,
+      "Entries": [
+        "Tunnel 2 Large tardigrade 1"
+      ]
+    },
+    {
+      "ID": 620031,
+      "Entries": [
+        "Tunnel 2 Large tardigrade 2"
+      ]
+    },
+    {
+      "ID": 620040,
+      "Entries": [
+        "Tunnel 2 Rock worm 1"
+      ]
+    },
+    {
+      "ID": 620041,
+      "Entries": [
+        "Tunnel 2 Rock Earthworm Black"
+      ]
+    },
+    {
+      "ID": 620050,
+      "Entries": [
+        "Tunnel 2 Crystal lizard 1"
+      ]
+    },
+    {
+      "ID": 620051,
+      "Entries": [
+        "Tunnel 2 Crystal Lizard 2"
+      ]
+    },
+    {
+      "ID": 620052,
+      "Entries": [
+        "Tunnel 2 Crystal Lizard 3"
+      ]
+    },
+    {
+      "ID": 620053,
+      "Entries": [
+        "Tunnel 2 Crystal Lizard 4"
+      ]
+    },
+    {
+      "ID": 620054,
+      "Entries": [
+        "Tunnel 2 Crystal Lizard 5"
+      ]
+    },
+    {
+      "ID": 620060,
+      "Entries": [
+        "Tunnel 2 Scale miner (bare hands) 1"
+      ]
+    },
+    {
+      "ID": 620061,
+      "Entries": [
+        "Tunnel 2 Scale miner (bare hands) 2"
+      ]
+    },
+    {
+      "ID": 620062,
+      "Entries": [
+        "Tunnel 2 Scale miner (bare hands) 3"
+      ]
+    },
+    {
+      "ID": 620063,
+      "Entries": [
+        "Tunnel 2 Scale miner (bare hands) 4"
+      ]
+    },
+    {
+      "ID": 620070,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Hammer) 1"
+      ]
+    },
+    {
+      "ID": 620071,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Hammer) 2"
+      ]
+    },
+    {
+      "ID": 620072,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Hammer) 3"
+      ]
+    },
+    {
+      "ID": 620073,
+      "Entries": [
+        "Tunnel 2 Scale Miner (Hammer) 4"
+      ]
+    },
+    {
+      "ID": 620080,
+      "Entries": [
+        "Tunnel 2 medium tardigrade"
+      ]
+    },
+    {
+      "ID": 620090,
+      "Entries": [
+        "Tunnel 2 Winged tardigrade"
+      ]
+    },
+    {
+      "ID": 620100,
+      "Entries": [
+        "Tunnel 2 Small water bear"
+      ]
+    },
+    {
+      "ID": 620110,
+      "Entries": [
+        "Tunnel 2 Small tardigrade black"
+      ]
+    },
+    {
+      "ID": 630050,
+      "Entries": [
+        "Tunnel 3 Crystal lizard 1"
+      ]
+    },
+    {
+      "ID": 630051,
+      "Entries": [
+        "Tunnel 3 Crystal lizard 2"
+      ]
+    },
+    {
+      "ID": 630052,
+      "Entries": [
+        "Tunnel 3 Crystal Lizard 3"
+      ]
+    },
+    {
+      "ID": 630053,
+      "Entries": [
+        "Tunnel 3 Crystal Lizard 4"
+      ]
+    },
+    {
+      "ID": 630054,
+      "Entries": [
+        "Tunnel 3 Crystal Lizard 5"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "1 for tutorial"
+      ]
+    },
+    {
+      "ID": 810001,
+      "Entries": [
+        "for tutorial 2"
+      ]
+    },
+    {
+      "ID": 810002,
+      "Entries": [
+        "3 for tutorial"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-1"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-2"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-3"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-4"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-5"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 1-6"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-1"
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-2"
+      ]
+    },
+    {
+      "ID": 900008,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-3"
+      ]
+    },
+    {
+      "ID": 900009,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-4"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-5"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 2-6"
+      ]
+    },
+    {
+      "ID": 900012,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 3-1"
+      ]
+    },
+    {
+      "ID": 900013,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3-2"
+      ]
+    },
+    {
+      "ID": 900014,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3-3"
+      ]
+    },
+    {
+      "ID": 900015,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 3-4"
+      ]
+    },
+    {
+      "ID": 900016,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3-5"
+      ]
+    },
+    {
+      "ID": 900017,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 3-6"
+      ]
+    },
+    {
+      "ID": 900018,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 4-1"
+      ]
+    },
+    {
+      "ID": 900019,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 4-2"
+      ]
+    },
+    {
+      "ID": 900020,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 4-3"
+      ]
+    },
+    {
+      "ID": 900021,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 4-4"
+      ]
+    },
+    {
+      "ID": 900022,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 4-5"
+      ]
+    },
+    {
+      "ID": 900023,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 4-6"
+      ]
+    },
+    {
+      "ID": 900024,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 5-1"
+      ]
+    },
+    {
+      "ID": 900025,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 5-2"
+      ]
+    },
+    {
+      "ID": 900026,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 5-3"
+      ]
+    },
+    {
+      "ID": 900027,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 5-4"
+      ]
+    },
+    {
+      "ID": 900028,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 5-5"
+      ]
+    },
+    {
+      "ID": 900029,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 5-6"
+      ]
+    },
+    {
+      "ID": 900030,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 6-1"
+      ]
+    },
+    {
+      "ID": 900031,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 6-2"
+      ]
+    },
+    {
+      "ID": 900032,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 6-3"
+      ]
+    },
+    {
+      "ID": 900033,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 6-4"
+      ]
+    },
+    {
+      "ID": 900034,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 6-5"
+      ]
+    },
+    {
+      "ID": 900035,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 6-6"
+      ]
+    },
+    {
+      "ID": 900036,
+      "Entries": [
+        "Tunnel 1 Scale miner (bag) 7-1"
+      ]
+    },
+    {
+      "ID": 900037,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 7-2"
+      ]
+    },
+    {
+      "ID": 900038,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 7-3"
+      ]
+    },
+    {
+      "ID": 900039,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 7-4"
+      ]
+    },
+    {
+      "ID": 900040,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 7-5"
+      ]
+    },
+    {
+      "ID": 900041,
+      "Entries": [
+        "Mine 1 Scale miner (bag) 7-6"
+      ]
+    },
+    {
+      "ID": 900042,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 1"
+      ]
+    },
+    {
+      "ID": 900043,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 2"
+      ]
+    },
+    {
+      "ID": 900044,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 3"
+      ]
+    },
+    {
+      "ID": 900045,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 4"
+      ]
+    },
+    {
+      "ID": 900046,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 5"
+      ]
+    },
+    {
+      "ID": 900047,
+      "Entries": [
+        "Tunnel 2 Scale miner (bag) 6"
+      ]
+    }
+  ]
+}

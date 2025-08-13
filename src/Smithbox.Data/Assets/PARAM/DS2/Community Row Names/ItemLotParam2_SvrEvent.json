@@ -1,0 +1,197 @@
+{
+  "Name": "ItemLotParam2_SvrEvent",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Company of Champions] Awestone"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Rat King] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "[Dragon Remnants] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "[Pilgrims of Dark] Bonfire Ascetic- Human Effigy"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "[Blue Sentinels] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "[Heirs of the Sun] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "[Rat King] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 11080,
+      "Entries": [
+        "[Rat King] Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 11090,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "[Blue Sentinels] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 11120,
+      "Entries": [
+        "[Blue Sentinels] Token of Fidelity"
+      ]
+    },
+    {
+      "ID": 11130,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 11140,
+      "Entries": [
+        "[Brotherhood of Blood] Token of Spite"
+      ]
+    },
+    {
+      "ID": 11150,
+      "Entries": [
+        "[Brotherhood of Blood] Token of Spite"
+      ]
+    },
+    {
+      "ID": 11160,
+      "Entries": [
+        "[Brotherhood of Blood] Token of Spite"
+      ]
+    },
+    {
+      "ID": 11170,
+      "Entries": [
+        "[Brotherhood of Blood] Token of Spite"
+      ]
+    },
+    {
+      "ID": 11180,
+      "Entries": [
+        "[Bell Keeper] Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 11190,
+      "Entries": [
+        "[Rat King] Pharros' Lockstone- Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 11200,
+      "Entries": [
+        "[Rat King] Pharros' Lockstone- Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 11210,
+      "Entries": [
+        "[Dragon Remnants] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 11220,
+      "Entries": [
+        "[Pilgrims of Dark] Bonfire Ascetic- Human Effigy"
+      ]
+    },
+    {
+      "ID": 11230,
+      "Entries": [
+        "[Blue Sentinels] Cracked Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 11240,
+      "Entries": [
+        "[Blue Sentinels] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 11250,
+      "Entries": [
+        "[Pilgrims of Dark] Human Effigy"
+      ]
+    },
+    {
+      "ID": 11260,
+      "Entries": [
+        "[Pilgrims of Dark] Human Effigy"
+      ]
+    },
+    {
+      "ID": 11270,
+      "Entries": [
+        "[Pilgrims of Dark] Human Effigy"
+      ]
+    },
+    {
+      "ID": 11280,
+      "Entries": [
+        "[Bell Keeper] Titanite Chunk- Titanite Slab- Twinkling Titanite- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 10045500,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 90000001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

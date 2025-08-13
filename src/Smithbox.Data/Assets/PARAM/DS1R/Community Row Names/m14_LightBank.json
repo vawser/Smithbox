@@ -1,0 +1,395 @@
+{
+  "Name": "m14_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0キャラ沼"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0キャラ外側"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0影待"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0影待 ライト"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0クラーグ"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B1爛れ上部"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B1廃都"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B1廃都内部"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "遠景"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0基本(キャラ）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "イザリス（キャラ）"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "イザリス"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "光"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "溶岩"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1下層遺跡"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1爛れ下部"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1遠景"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B1天球"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "溶岩遠景"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B0天球"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "14-1エレベータ"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B0影街OBJ"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B0地下水路OBJ"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B1キャラ溶岩"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1キャラ暗所"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B1キャラ遺跡"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1キャラ廃都"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1封印のやり"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B0白くべたつくなにか"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PolyG-scn140000_ｸﾗｸﾞｽﾊﾟｲﾀﾞｰ"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PolyG-scn140000_MapAll"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PolyG-scn140000_ｸﾗｸﾞｽﾊﾟｲﾀﾞｰLast女体"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "PolyG-scn140000_ｸﾗｸﾞｽﾊﾟｲﾀﾞｰ頭部カット"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-scn140015- c2860"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn140015-基本 c2860"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn140110-MAP-Normal"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-140120-c5200-明"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-140120-c5200-普"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-140120-o4451-明"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-140120-o4451-普"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn140100"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn140100"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn140100"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "0200_0006"
+      ]
+    }
+  ]
+}

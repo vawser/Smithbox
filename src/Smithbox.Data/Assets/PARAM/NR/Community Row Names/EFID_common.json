@@ -1,0 +1,6754 @@
+{
+  "Name": "EFID_common",
+  "Entries": [
+    {
+      "ID": 20,
+      "Entries": [
+        "game clear flag"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "game clear flag"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "game clear flag"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "game clear flag"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "game clear flag"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Events completed at the start of the game"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Test layer entry flag"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "game start",
+        "game start"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Tutorial cleared"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "First sortie"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "1 time annihilation"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "2 times wiped out"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "First time cleared"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Day 3: Defeat the Night Boss (2 events)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Day 3: Defeat 3 night bosses"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Day 3: Defeat 4 night bosses"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Nameless Ban Flag"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "saw the ending"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Chaos Match Release Flag"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Rare terrain unlocked: Volcano"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Rare terrain unlocked: Snowy mountains"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Rare Terrain Unlocked: Corruption"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Rare Terrain Unlocked: Noclone"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Three Days Mode: Defeat Cerberus"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Three-day mode: Defeat the dragon Tyranno"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Three-day mode: Defeat the Intelligent Bug"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Three-day table mode: Defeat abstract enemies"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Three Days Mode: Defeat Baphomet"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Three Days Mode: Defeat the Centaur"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Three-day mode: Defeat the Mist Dragon"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Night Boss: Reservation"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Night Boss: Reservation"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Night Boss: Reservation"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Three-day mode: Defeat Nameless"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Campaign: Defeat Cerberus"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Campaign: Defeat the Dragon Tyranno"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Campaign: Defeat the Intelligent Bug"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Campaign: Defeat Abstract Enemy"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Campaign: Defeat Baphomet"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Campaign: Defeat the Centaur"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Campaign: Defeat the Mist Dragon"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "host flag",
+        "host flag"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "host flag"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Multiplayer in progress"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Single play"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Host is on a legacy map"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Flag to set when player is on a legacy map"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Flag to set when host is on a legacy map"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Flag to set when player is on a legacy map"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "ClF: End flow management flag"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Allow display of hidden mode unlock tutorial flag"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "Allow hidden mode unlock tutorial confirmed flag"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "Saw CS on first clear flag"
+      ]
+    },
+    {
+      "ID": 951,
+      "Entries": [
+        "Saw ending flag"
+      ]
+    },
+    {
+      "ID": 952,
+      "Entries": [
+        "Saw hidden match unlock CS flag"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "Saw normal ending flag"
+      ]
+    },
+    {
+      "ID": 961,
+      "Entries": [
+        "Saw Pursuer ending flag"
+      ]
+    },
+    {
+      "ID": 962,
+      "Entries": [
+        "Saw Sage ending flag"
+      ]
+    },
+    {
+      "ID": 963,
+      "Entries": [
+        "Saw Iron Eye ending flag"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "ClF: Common event ID"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Starting title"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Starting title (test version)"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Starting move map test"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Flag for PlayGo"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Stop time progress: Shrinking"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Stop time progress: Appearance"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Switching hero animation during CS 00"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Switching hero animation during CS 01"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Switching hero animation during CS 02"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Switching hero animation during CS 03"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Switching hero animation during CS 04"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "Switching hero animation during CS 05"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "Switching hero animation during CS 06"
+      ]
+    },
+    {
+      "ID": 2307,
+      "Entries": [
+        "Switching hero animation during CS 07"
+      ]
+    },
+    {
+      "ID": 2308,
+      "Entries": [
+        "Switching hero animations during CS 08"
+      ]
+    },
+    {
+      "ID": 2309,
+      "Entries": [
+        "Switching hero animations during CS 09"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "Switching hero animations during CS 10"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Switching hero animations during CS 11"
+      ]
+    },
+    {
+      "ID": 2312,
+      "Entries": [
+        "Switching hero animations during CS 12"
+      ]
+    },
+    {
+      "ID": 2313,
+      "Entries": [
+        "Switching hero animations during CS 13"
+      ]
+    },
+    {
+      "ID": 2314,
+      "Entries": [
+        "Switching hero animations during CS 14"
+      ]
+    },
+    {
+      "ID": 2315,
+      "Entries": [
+        "Switching hero animations during CS 15"
+      ]
+    },
+    {
+      "ID": 2316,
+      "Entries": [
+        "Switching hero animations during CS 16"
+      ]
+    },
+    {
+      "ID": 2317,
+      "Entries": [
+        "Switching hero animations during CS 17"
+      ]
+    },
+    {
+      "ID": 2318,
+      "Entries": [
+        "Switching hero animations during CS 18"
+      ]
+    },
+    {
+      "ID": 2319,
+      "Entries": [
+        "Switching hero animations during CS 19"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "Switching hero animations during CS 20"
+      ]
+    },
+    {
+      "ID": 2321,
+      "Entries": [
+        "Switching hero animations during CS 21"
+      ]
+    },
+    {
+      "ID": 2322,
+      "Entries": [
+        "Switching hero animations during CS 22"
+      ]
+    },
+    {
+      "ID": 2323,
+      "Entries": [
+        "Switching hero animations during CS 23"
+      ]
+    },
+    {
+      "ID": 2324,
+      "Entries": [
+        "Switching hero animations during CS 24"
+      ]
+    },
+    {
+      "ID": 2325,
+      "Entries": [
+        "Switching hero animations during CS 25"
+      ]
+    },
+    {
+      "ID": 2326,
+      "Entries": [
+        "Switching hero animations during CS 26"
+      ]
+    },
+    {
+      "ID": 2327,
+      "Entries": [
+        "Switching hero animations during CS 27"
+      ]
+    },
+    {
+      "ID": 2328,
+      "Entries": [
+        "Switching hero animations during CS 28"
+      ]
+    },
+    {
+      "ID": 2329,
+      "Entries": [
+        "Switching hero animations during CS 29"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Boss HP gauge 0 in use"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Boss HP gauge 1 in use"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "[TUT] First battle with Margit"
+      ]
+    },
+    {
+      "ID": 5901,
+      "Entries": [
+        "[TUT] Defeated Margit"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Flag to always be OFF"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Flag to always be ON"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Replay tutorial"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "During tutorial"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Tutorial victory flag"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Tutorial_Avenger mode"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Tutorial_Lobby explanation displayed"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "First time entering lobby"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Ending"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Hero unlock flag_Tracker"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Hero Unlock Flag_Lady"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Hero Unlock Flag_Destroyer"
+      ]
+    },
+    {
+      "ID": 6033,
+      "Entries": [
+        "Hero Unlock Flag_Enforcer"
+      ]
+    },
+    {
+      "ID": 6034,
+      "Entries": [
+        "Hero Unlock Flag_Wise"
+      ]
+    },
+    {
+      "ID": 6035,
+      "Entries": [
+        "Hero Unlock Flag_Iron Eye"
+      ]
+    },
+    {
+      "ID": 6036,
+      "Entries": [
+        "Hero Unlock Flag_Guardian"
+      ]
+    },
+    {
+      "ID": 6037,
+      "Entries": [
+        "Hero Unlock Flag_Avenger"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Hero Unlock Trophy Control Flag_Avenger"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Hero Unlock Trophy Control Flag_Iron Eye"
+      ]
+    },
+    {
+      "ID": 6042,
+      "Entries": [
+        "Hero Unlock Trophy Control Flag_Tracker"
+      ]
+    },
+    {
+      "ID": 6045,
+      "Entries": [
+        "Hero Unlock Pedestal Control Flag_Lady"
+      ]
+    },
+    {
+      "ID": 6046,
+      "Entries": [
+        "Hero Unlock Pedestal Control Flag_Avenger"
+      ]
+    },
+    {
+      "ID": 6048,
+      "Entries": [
+        "Shop Unlock Flag_Special Pedestal 3"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Skin Unlock"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "Skin Unlock Control Flag_Lady Skins in General"
+      ]
+    },
+    {
+      "ID": 6052,
+      "Entries": [
+        "Skin Unlock Control Flag_Necro Skins in General"
+      ]
+    },
+    {
+      "ID": 6055,
+      "Entries": [
+        "Skin Unlock Control Flag_Lady Previous Skins"
+      ]
+    },
+    {
+      "ID": 6056,
+      "Entries": [
+        "Skin Unlock Control Flag_Necro Previous Skins"
+      ]
+    },
+    {
+      "ID": 6057,
+      "Entries": [
+        "Skin Unlock Control Flag_Other Character Previous Skins"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Special currency related functions unlocked"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "During fever: Volcano"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "During fever: Snowy mountain"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "During fever: Corruption"
+      ]
+    },
+    {
+      "ID": 6073,
+      "Entries": [
+        "During fever: Noklone"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Number of fever counts"
+      ]
+    },
+    {
+      "ID": 6085,
+      "Entries": [
+        "Number of cooldowns consumed"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Last session: Volcano"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Last session: Snowy mountain"
+      ]
+    },
+    {
+      "ID": 6092,
+      "Entries": [
+        "Last session: Corruption"
+      ]
+    },
+    {
+      "ID": 6093,
+      "Entries": [
+        "Last session: Noklone"
+      ]
+    },
+    {
+      "ID": 6095,
+      "Entries": [
+        "Last session: Normal terrain"
+      ]
+    },
+    {
+      "ID": 6098,
+      "Entries": [
+        "Last session: Rare terrain occurs by lottery"
+      ]
+    },
+    {
+      "ID": 6099,
+      "Entries": [
+        "Last session: Rare terrain occurs by propagation"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Trophy 00"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Trophy 01"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Trophy 02"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "Trophy 03"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "Trophy 04"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "Trophy 05"
+      ]
+    },
+    {
+      "ID": 6106,
+      "Entries": [
+        "Trophy 06"
+      ]
+    },
+    {
+      "ID": 6107,
+      "Entries": [
+        "Trophy 07"
+      ]
+    },
+    {
+      "ID": 6108,
+      "Entries": [
+        "Trophy 08"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "Trophy 09"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Trophy 10"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "Trophy 11"
+      ]
+    },
+    {
+      "ID": 6112,
+      "Entries": [
+        "Trophy 12"
+      ]
+    },
+    {
+      "ID": 6113,
+      "Entries": [
+        "Trophy 13"
+      ]
+    },
+    {
+      "ID": 6114,
+      "Entries": [
+        "Trophy 14"
+      ]
+    },
+    {
+      "ID": 6115,
+      "Entries": [
+        "Trophy 15"
+      ]
+    },
+    {
+      "ID": 6116,
+      "Entries": [
+        "Trophy 16"
+      ]
+    },
+    {
+      "ID": 6117,
+      "Entries": [
+        "Trophy 17"
+      ]
+    },
+    {
+      "ID": 6118,
+      "Entries": [
+        "Trophy 18"
+      ]
+    },
+    {
+      "ID": 6119,
+      "Entries": [
+        "Trophy 19"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Trophy 20"
+      ]
+    },
+    {
+      "ID": 6121,
+      "Entries": [
+        "Trophy 21"
+      ]
+    },
+    {
+      "ID": 6122,
+      "Entries": [
+        "Trophy 22"
+      ]
+    },
+    {
+      "ID": 6123,
+      "Entries": [
+        "Trophy 23"
+      ]
+    },
+    {
+      "ID": 6124,
+      "Entries": [
+        "Trophy 24"
+      ]
+    },
+    {
+      "ID": 6125,
+      "Entries": [
+        "Trophy 25"
+      ]
+    },
+    {
+      "ID": 6126,
+      "Entries": [
+        "Trophy 26"
+      ]
+    },
+    {
+      "ID": 6127,
+      "Entries": [
+        "Trophy 27"
+      ]
+    },
+    {
+      "ID": 6128,
+      "Entries": [
+        "Trophy 28"
+      ]
+    },
+    {
+      "ID": 6129,
+      "Entries": [
+        "Trophy 29"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Trophy 30"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Trophy 31"
+      ]
+    },
+    {
+      "ID": 6132,
+      "Entries": [
+        "Trophy 32"
+      ]
+    },
+    {
+      "ID": 6133,
+      "Entries": [
+        "Trophy 33"
+      ]
+    },
+    {
+      "ID": 6134,
+      "Entries": [
+        "Trophy 34"
+      ]
+    },
+    {
+      "ID": 6135,
+      "Entries": [
+        "Trophy 35"
+      ]
+    },
+    {
+      "ID": 6136,
+      "Entries": [
+        "Trophy 36"
+      ]
+    },
+    {
+      "ID": 6137,
+      "Entries": [
+        "Trophy 37"
+      ]
+    },
+    {
+      "ID": 6138,
+      "Entries": [
+        "Trophy 38"
+      ]
+    },
+    {
+      "ID": 6139,
+      "Entries": [
+        "Trophy 39"
+      ]
+    },
+    {
+      "ID": 6140,
+      "Entries": [
+        "Trophy 40"
+      ]
+    },
+    {
+      "ID": 6141,
+      "Entries": [
+        "Trophy 41"
+      ]
+    },
+    {
+      "ID": 6142,
+      "Entries": [
+        "Trophy 42"
+      ]
+    },
+    {
+      "ID": 6143,
+      "Entries": [
+        "Trophy 43"
+      ]
+    },
+    {
+      "ID": 6144,
+      "Entries": [
+        "Trophy 44"
+      ]
+    },
+    {
+      "ID": 6145,
+      "Entries": [
+        "Trophy 45"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Activity 00_Start"
+      ]
+    },
+    {
+      "ID": 6181,
+      "Entries": [
+        "Activity 01_Start"
+      ]
+    },
+    {
+      "ID": 6182,
+      "Entries": [
+        "Activity 02_Start"
+      ]
+    },
+    {
+      "ID": 6183,
+      "Entries": [
+        "Activity 03_Start"
+      ]
+    },
+    {
+      "ID": 6190,
+      "Entries": [
+        "Activity 00_Finish"
+      ]
+    },
+    {
+      "ID": 6191,
+      "Entries": [
+        "Activity 01_Finish"
+      ]
+    },
+    {
+      "ID": 6192,
+      "Entries": [
+        "Activity 02_Finish"
+      ]
+    },
+    {
+      "ID": 6193,
+      "Entries": [
+        "Activity 03_Finish"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Trophy_Hero_Clear_01"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "Trophy_Hero_Clear_02"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "Trophy_Hero_Clear_03"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "Trophy_Hero_Clear_04"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "Trophy_Hero_Clear_05"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "Trophy_Hero_Clear_06"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "Trophy_Hero_Clear_07"
+      ]
+    },
+    {
+      "ID": 6207,
+      "Entries": [
+        "Trophy_Hero_Clear_08"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "For trophies_Rare terrain cleared_Snowy mountain"
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        "For trophies_Rare terrain cleared_Volcano"
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        "For trophies_Rare terrain cleared_Corrupted"
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        "For trophies_Rare terrain cleared_Noclone"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "For displaying the thread end encyclopedia"
+      ]
+    },
+    {
+      "ID": 6950,
+      "Entries": [
+        "DLC0 unlock flag",
+        "DLC0 unlock flag"
+      ]
+    },
+    {
+      "ID": 6951,
+      "Entries": [
+        "Pre-order: DLC1 unlock flag"
+      ]
+    },
+    {
+      "ID": 6952,
+      "Entries": [
+        "Pre-order: DLC2 unlock flag"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "PC multiplayer clear: DLC0 propagation"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Game clear flag"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Game over flag"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "You are alive flag_PL1"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "You are alive flag_PL2"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "You are alive flag_PL3"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "One-time revival ticket owned_PL1"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "One-time revival ticket owned_PL2"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "One-time revival ticket owned_PL3"
+      ]
+    },
+    {
+      "ID": 7015,
+      "Entries": [
+        "Mission player_PL1"
+      ]
+    },
+    {
+      "ID": 7016,
+      "Entries": [
+        "Mission player_PL2"
+      ]
+    },
+    {
+      "ID": 7017,
+      "Entries": [
+        "Mission player_PL3"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Day 1 started flag"
+      ]
+    },
+    {
+      "ID": 7501,
+      "Entries": [
+        "Day 1 preliminary battle started flag"
+      ]
+    },
+    {
+      "ID": 7502,
+      "Entries": [
+        "Day 1 night boss defeated flag"
+      ]
+    },
+    {
+      "ID": 7503,
+      "Entries": [
+        "Day 1 interval started flag"
+      ]
+    },
+    {
+      "ID": 7504,
+      "Entries": [
+        "Day 1 night boss battle started flag"
+      ]
+    },
+    {
+      "ID": 7505,
+      "Entries": [
+        "Day 2 has started"
+      ]
+    },
+    {
+      "ID": 7506,
+      "Entries": [
+        "Day 2 preliminary battle has started"
+      ]
+    },
+    {
+      "ID": 7507,
+      "Entries": [
+        "Day 2 night boss has been defeated"
+      ]
+    },
+    {
+      "ID": 7508,
+      "Entries": [
+        "Day 2 interval has started"
+      ]
+    },
+    {
+      "ID": 7509,
+      "Entries": [
+        "Day 2 night boss battle has started"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Day 3 has started"
+      ]
+    },
+    {
+      "ID": 7511,
+      "Entries": [
+        "Day 3 night boss battle has started"
+      ]
+    },
+    {
+      "ID": 7512,
+      "Entries": [
+        "Day 3 night boss has been defeated"
+      ]
+    },
+    {
+      "ID": 7513,
+      "Entries": [
+        "Day 3 night boss HP 0 flag"
+      ]
+    },
+    {
+      "ID": 7514,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 7515,
+      "Entries": [
+        "Flag that only appears at night"
+      ]
+    },
+    {
+      "ID": 7516,
+      "Entries": [
+        "Game over confirmed flag"
+      ]
+    },
+    {
+      "ID": 7517,
+      "Entries": [
+        "Day 2 high-rank F boss map has been revealed"
+      ]
+    },
+    {
+      "ID": 7518,
+      "Entries": [
+        "Night bosses are appearing continuously"
+      ]
+    },
+    {
+      "ID": 7519,
+      "Entries": [
+        "Flag that shows all annihilation"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "1st day interval SFX played flag"
+      ]
+    },
+    {
+      "ID": 7522,
+      "Entries": [
+        "Last boss area manual warp enabled flag"
+      ]
+    },
+    {
+      "ID": 7523,
+      "Entries": [
+        "Last boss area manual warp completed flag"
+      ]
+    },
+    {
+      "ID": 7525,
+      "Entries": [
+        "All bonfires disabled flag"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "Multi-doping weakening prohibited"
+      ]
+    },
+    {
+      "ID": 7535,
+      "Entries": [
+        "3rd day night boss_Cerberus"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Catastrophe flag: start"
+      ]
+    },
+    {
+      "ID": 7601,
+      "Entries": [
+        "Snow mountain rare terrain flag"
+      ]
+    },
+    {
+      "ID": 7602,
+      "Entries": [
+        "Volcano rare terrain flag"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "Corrupted rare terrain flag"
+      ]
+    },
+    {
+      "ID": 7604,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 7605,
+      "Entries": [
+        "Noclone rare terrain flag"
+      ]
+    },
+    {
+      "ID": 7649,
+      "Entries": [
+        "Catastrophe flag: end"
+      ]
+    },
+    {
+      "ID": 7650,
+      "Entries": [
+        "Final reduction day1 4236"
+      ]
+    },
+    {
+      "ID": 7651,
+      "Entries": [
+        "Final reduction day1 4238"
+      ]
+    },
+    {
+      "ID": 7652,
+      "Entries": [
+        "Final reduction day1 4239: Reservation"
+      ]
+    },
+    {
+      "ID": 7653,
+      "Entries": [
+        "Final reduction day1 4336①"
+      ]
+    },
+    {
+      "ID": 7654,
+      "Entries": [
+        "Final reduction day1 4336②"
+      ]
+    },
+    {
+      "ID": 7655,
+      "Entries": [
+        "Final reduction day1 4337"
+      ]
+    },
+    {
+      "ID": 7656,
+      "Entries": [
+        "Final reduction day1 4338"
+      ]
+    },
+    {
+      "ID": 7657,
+      "Entries": [
+        "Final reduction day1 4437"
+      ]
+    },
+    {
+      "ID": 7658,
+      "Entries": [
+        "Final reduction day1 4439"
+      ]
+    },
+    {
+      "ID": 7659,
+      "Entries": [
+        "Final reduction day1 4536"
+      ]
+    },
+    {
+      "ID": 7660,
+      "Entries": [
+        "Final reduction day1 4537"
+      ]
+    },
+    {
+      "ID": 7661,
+      "Entries": [
+        "Final reduction day1 4539"
+      ]
+    },
+    {
+      "ID": 7662,
+      "Entries": [
+        "Final reduction day1: m60_43_39_20"
+      ]
+    },
+    {
+      "ID": 7663,
+      "Entries": [
+        "Final reduction day1: Reservation"
+      ]
+    },
+    {
+      "ID": 7664,
+      "Entries": [
+        "Final reduction day1: Reservation"
+      ]
+    },
+    {
+      "ID": 7665,
+      "Entries": [
+        "Final reduction day1: Reservation"
+      ]
+    },
+    {
+      "ID": 7666,
+      "Entries": [
+        "Final reduction day1: Reservation"
+      ]
+    },
+    {
+      "ID": 7667,
+      "Entries": [
+        "Final reduction day1: Reservation"
+      ]
+    },
+    {
+      "ID": 7668,
+      "Entries": [
+        "Final reduction day1: m60_44_36_30"
+      ]
+    },
+    {
+      "ID": 7669,
+      "Entries": [
+        "Final reduction day1: m60_45_37_30"
+      ]
+    },
+    {
+      "ID": 7670,
+      "Entries": [
+        "Final reduction day1: m60_43_38_10"
+      ]
+    },
+    {
+      "ID": 7671,
+      "Entries": [
+        "Final reduction day1: m60_44_37_50"
+      ]
+    },
+    {
+      "ID": 7672,
+      "Entries": [
+        "Final reduction day1: m60_43_37_50"
+      ]
+    },
+    {
+      "ID": 7673,
+      "Entries": [
+        "Final reduction day1: Reserved"
+      ]
+    },
+    {
+      "ID": 7674,
+      "Entries": [
+        "Final reduction day1: Reserved"
+      ]
+    },
+    {
+      "ID": 7675,
+      "Entries": [
+        "Final reduction day2 4236"
+      ]
+    },
+    {
+      "ID": 7676,
+      "Entries": [
+        "Final reduction day2 4238"
+      ]
+    },
+    {
+      "ID": 7677,
+      "Entries": [
+        "Final reduction day2 4239: Reserved"
+      ]
+    },
+    {
+      "ID": 7678,
+      "Entries": [
+        "Final reduction day2 4336①"
+      ]
+    },
+    {
+      "ID": 7679,
+      "Entries": [
+        "Final reduction day2 4336②"
+      ]
+    },
+    {
+      "ID": 7680,
+      "Entries": [
+        "Final reduction day2 4337"
+      ]
+    },
+    {
+      "ID": 7681,
+      "Entries": [
+        "Final reduction day2 4338"
+      ]
+    },
+    {
+      "ID": 7682,
+      "Entries": [
+        "Final reduction day2 4437"
+      ]
+    },
+    {
+      "ID": 7683,
+      "Entries": [
+        "Final reduction day2 4439"
+      ]
+    },
+    {
+      "ID": 7684,
+      "Entries": [
+        "Final reduction day2 4536"
+      ]
+    },
+    {
+      "ID": 7685,
+      "Entries": [
+        "Final reduction day2 4537"
+      ]
+    },
+    {
+      "ID": 7686,
+      "Entries": [
+        "Final reduction day2 4539"
+      ]
+    },
+    {
+      "ID": 7687,
+      "Entries": [
+        "Final reduction day2: m60_43_39_20"
+      ]
+    },
+    {
+      "ID": 7688,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7689,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7690,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7691,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7692,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7693,
+      "Entries": [
+        "Final reduction day2: m60_44_36_30"
+      ]
+    },
+    {
+      "ID": 7694,
+      "Entries": [
+        "Final reduction day2: m60_45_37_30"
+      ]
+    },
+    {
+      "ID": 7695,
+      "Entries": [
+        "Final reduction day2: m60_43_38_10"
+      ]
+    },
+    {
+      "ID": 7696,
+      "Entries": [
+        "Final reduction day2: m60_44_37_50"
+      ]
+    },
+    {
+      "ID": 7697,
+      "Entries": [
+        "Final reduction day2: m60_43_37_50"
+      ]
+    },
+    {
+      "ID": 7698,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7699,
+      "Entries": [
+        "Final reduction day2: reserved"
+      ]
+    },
+    {
+      "ID": 7700,
+      "Entries": [
+        "Day 1 Sudden Event_Night Boss Appears Continuously"
+      ]
+    },
+    {
+      "ID": 7701,
+      "Entries": [
+        "Day 1 Sudden Event_Meteorite Event"
+      ]
+    },
+    {
+      "ID": 7702,
+      "Entries": [
+        "Day 1 Sudden Event_Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 7703,
+      "Entries": [
+        "Day 1 Sudden Event_Weakened Prison"
+      ]
+    },
+    {
+      "ID": 7704,
+      "Entries": [
+        "Day 1 Sudden Event_Mass Enemy Spawn"
+      ]
+    },
+    {
+      "ID": 7705,
+      "Entries": [
+        "Day 1 Sudden Event_Night Boss Interference"
+      ]
+    },
+    {
+      "ID": 7706,
+      "Entries": [
+        "Day 1 Sudden Event_Difficult Magician's Tower"
+      ]
+    },
+    {
+      "ID": 7707,
+      "Entries": [
+        "Day 1 Sudden Event_Mad Zone"
+      ]
+    },
+    {
+      "ID": 7708,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7709,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7710,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7711,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7712,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7713,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7714,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7715,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7716,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7717,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7718,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7719,
+      "Entries": [
+        "Day 1 Sudden Event_"
+      ]
+    },
+    {
+      "ID": 7720,
+      "Entries": [
+        "Day 2 Sudden Event_Night Boss Appears Continuously"
+      ]
+    },
+    {
+      "ID": 7721,
+      "Entries": [
+        "Day 2 Sudden Event_Meteorite Event"
+      ]
+    },
+    {
+      "ID": 7722,
+      "Entries": [
+        "Day 2 Sudden Event_Walking Mausoleum"
+      ]
+    },
+    {
+      "ID": 7723,
+      "Entries": [
+        "Day 2 Sudden Event_Weakened Seal"
+      ]
+    },
+    {
+      "ID": 7724,
+      "Entries": [
+        "Day 2 Sudden Event_Mass Enemy Appearance"
+      ]
+    },
+    {
+      "ID": 7725,
+      "Entries": [
+        "2nd day sudden event_Night boss interference"
+      ]
+    },
+    {
+      "ID": 7726,
+      "Entries": [
+        "2nd day sudden event_Difficult magician's tower"
+      ]
+    },
+    {
+      "ID": 7727,
+      "Entries": [
+        "2nd day sudden event_Madness area"
+      ]
+    },
+    {
+      "ID": 7728,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7729,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7730,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7731,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7732,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7733,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7734,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7735,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7736,
+      "Entries": [
+        "2nd day sudden event_"
+      ]
+    },
+    {
+      "ID": 7737,
+      "Entries": [
+        "2nd day unexpected event_"
+      ]
+    },
+    {
+      "ID": 7738,
+      "Entries": [
+        "2nd day unexpected event_"
+      ]
+    },
+    {
+      "ID": 7739,
+      "Entries": [
+        "2nd day unexpected event_"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Buried treasure chest group 00_appearance flag"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Buried treasure chest group 01_appearance flag"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Buried treasure chest group 02_appearance flag"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Buried treasure chest group 03_appearance flag"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Buried treasure chest group 04_appearance flag"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Buried treasure chest group 05_appearance flag"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "Buried treasure chest group 06_appearance flag"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "Buried treasure chest group 07_appearance flag"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "Buried treasure chest group 08_appearance flag"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "Buried Treasure Chest Group 09_Appearance Flag"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Buried Treasure Chest Group 10_Appearance Flag"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "Buried Treasure Chest Group 11_Appearance Flag"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "Buried Treasure Chest Group 12_Appearance Flag"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "Buried Treasure Chest Group 13_Appearance Flag"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "Antiques Flag_ Magician Tower Climb 01"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "Antiques Flag_ Magician Tower Climb 02"
+      ]
+    },
+    {
+      "ID": 8016,
+      "Entries": [
+        "Antiques Flag_ Magician Tower Climb 03"
+      ]
+    },
+    {
+      "ID": 8017,
+      "Entries": [
+        "Antiques Flag_ Magician Tower Climb 04"
+      ]
+    },
+    {
+      "ID": 8018,
+      "Entries": [
+        "Unused_Antiques flag_Defeat the prison"
+      ]
+    },
+    {
+      "ID": 8019,
+      "Entries": [
+        "Unused_Antiques flag_Defeat the dark spirit"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Clear the sudden event 00_Consecutive night bosses"
+      ]
+    },
+    {
+      "ID": 8021,
+      "Entries": [
+        "Clear the sudden event 01_Meteorite event"
+      ]
+    },
+    {
+      "ID": 8022,
+      "Entries": [
+        "Clear the sudden event 02_Walking mausoleum"
+      ]
+    },
+    {
+      "ID": 8023,
+      "Entries": [
+        "Clear the sudden event 03_Weakened prison"
+      ]
+    },
+    {
+      "ID": 8024,
+      "Entries": [
+        "Clear the sudden event 04_Massive enemy spawn"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "Clear the sudden event 05_Night boss interference"
+      ]
+    },
+    {
+      "ID": 8026,
+      "Entries": [
+        "Clear the sudden event 06_Difficult magician's tower"
+      ]
+    },
+    {
+      "ID": 8027,
+      "Entries": [
+        "Clear the sudden event 07_Mad zone"
+      ]
+    },
+    {
+      "ID": 8028,
+      "Entries": [
+        "Clear the sudden event 08_"
+      ]
+    },
+    {
+      "ID": 8029,
+      "Entries": [
+        "Clear the sudden event 09_"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Cleared 10th sudden event_"
+      ]
+    },
+    {
+      "ID": 8031,
+      "Entries": [
+        "Cleared 11th sudden event_"
+      ]
+    },
+    {
+      "ID": 8032,
+      "Entries": [
+        "Cleared 12th sudden event_"
+      ]
+    },
+    {
+      "ID": 8033,
+      "Entries": [
+        "Cleared 13th sudden event_"
+      ]
+    },
+    {
+      "ID": 8034,
+      "Entries": [
+        "Cleared 14th sudden event_"
+      ]
+    },
+    {
+      "ID": 8035,
+      "Entries": [
+        "Consecutive night boss appearances have occurred"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Meteorite event occurrence permitted"
+      ]
+    },
+    {
+      "ID": 8041,
+      "Entries": [
+        "1st meteorite event drop location lottery completed"
+      ]
+    },
+    {
+      "ID": 8042,
+      "Entries": [
+        "Meteorite event drop location lottery completed"
+      ]
+    },
+    {
+      "ID": 8043,
+      "Entries": [
+        "Meteorite event has fallen"
+      ]
+    },
+    {
+      "ID": 8044,
+      "Entries": [
+        "Meteorite event boss has appeared"
+      ]
+    },
+    {
+      "ID": 8045,
+      "Entries": [
+        "Walking Mausoleum Appearance Permission"
+      ]
+    },
+    {
+      "ID": 8046,
+      "Entries": [
+        "1st Walking Mausoleum Appearance Location Lottery Completed"
+      ]
+    },
+    {
+      "ID": 8047,
+      "Entries": [
+        "Walking Mausoleum Appearance Location Lottery Completed"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "Weakened Prison Found"
+      ]
+    },
+    {
+      "ID": 8055,
+      "Entries": [
+        "Enemy Mass Spawning Permission"
+      ]
+    },
+    {
+      "ID": 8056,
+      "Entries": [
+        "Enemy Mass Spawning Reservation Completed"
+      ]
+    },
+    {
+      "ID": 8057,
+      "Entries": [
+        "Enemy Mass Spawning Already Occurred"
+      ]
+    },
+    {
+      "ID": 8058,
+      "Entries": [
+        "Enemy Mass Spawning_Network Share Lottery_Win"
+      ]
+    },
+    {
+      "ID": 8059,
+      "Entries": [
+        "Enemy Mass Spawning_Network Share Lottery_Loser"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "Night Boss Interference Permission"
+      ]
+    },
+    {
+      "ID": 8061,
+      "Entries": [
+        "Night Boss Interference Occurred"
+      ]
+    },
+    {
+      "ID": 8062,
+      "Entries": [
+        "Night Boss Interference Finished"
+      ]
+    },
+    {
+      "ID": 8065,
+      "Entries": [
+        "Difficult Mage Tower_Reservation"
+      ]
+    },
+    {
+      "ID": 8069,
+      "Entries": [
+        "Mad Zone_Drop Completed"
+      ]
+    },
+    {
+      "ID": 8070,
+      "Entries": [
+        "Mad Zone_Mad Sun Appears *Unused"
+      ]
+    },
+    {
+      "ID": 8071,
+      "Entries": [
+        "Mad Zone_Started"
+      ]
+    },
+    {
+      "ID": 8072,
+      "Entries": [
+        "Mad Zone_All Enemies Killed"
+      ]
+    },
+    {
+      "ID": 8073,
+      "Entries": [
+        "Mad Zone_Outside Shrinking Circle"
+      ]
+    },
+    {
+      "ID": 8074,
+      "Entries": [
+        "Mad Zone_Drops Allowed"
+      ]
+    },
+    {
+      "ID": 8075,
+      "Entries": [
+        "Night Boss Block_Margit"
+      ]
+    },
+    {
+      "ID": 8076,
+      "Entries": [
+        "Night Boss Block_Abstract Enemy"
+      ]
+    },
+    {
+      "ID": 8077,
+      "Entries": [
+        "Night Boss Block_Night Cerberus"
+      ]
+    },
+    {
+      "ID": 8078,
+      "Entries": [
+        "Night Boss Block_Intelligent Bug"
+      ]
+    },
+    {
+      "ID": 8079,
+      "Entries": [
+        "Night Boss Block_Baphomet"
+      ]
+    },
+    {
+      "ID": 8080,
+      "Entries": [
+        "Night Boss Block_Reserved"
+      ]
+    },
+    {
+      "ID": 8081,
+      "Entries": [
+        "Night Boss Block_Reserved"
+      ]
+    },
+    {
+      "ID": 8082,
+      "Entries": [
+        "Night Boss Block_Reserved"
+      ]
+    },
+    {
+      "ID": 8083,
+      "Entries": [
+        "Night Boss Block_Reserved"
+      ]
+    },
+    {
+      "ID": 8084,
+      "Entries": [
+        "Night Boss Block_Reserved"
+      ]
+    },
+    {
+      "ID": 8085,
+      "Entries": [
+        "Night boss interference Margit_PC1 target"
+      ]
+    },
+    {
+      "ID": 8086,
+      "Entries": [
+        "Night boss interference Margit_PC2 target"
+      ]
+    },
+    {
+      "ID": 8087,
+      "Entries": [
+        "Night boss interference Margit_PC3 target"
+      ]
+    },
+    {
+      "ID": 8088,
+      "Entries": [
+        "Night boss interference Margit_1st location selection completed"
+      ]
+    },
+    {
+      "ID": 8089,
+      "Entries": [
+        "Night boss interference Margit_2nd location selection completed"
+      ]
+    },
+    {
+      "ID": 8090,
+      "Entries": [
+        "Night boss interference abstract enemy_timer ON"
+      ]
+    },
+    {
+      "ID": 8091,
+      "Entries": [
+        "Night boss interference abstract enemy_time expired"
+      ]
+    },
+    {
+      "ID": 8092,
+      "Entries": [
+        "Night boss interference abstract enemy_1st location lottery completed"
+      ]
+    },
+    {
+      "ID": 8093,
+      "Entries": [
+        "Night boss interference abstract enemy_2nd location lottery completed"
+      ]
+    },
+    {
+      "ID": 8094,
+      "Entries": [
+        "Night boss interference abstract enemy_3rd location lottery completed"
+      ]
+    },
+    {
+      "ID": 8095,
+      "Entries": [
+        "Night boss interference Margit_Target dead"
+      ]
+    },
+    {
+      "ID": 8096,
+      "Entries": [
+        "Night boss interference Margit_Start conversation played"
+      ]
+    },
+    {
+      "ID": 8097,
+      "Entries": [
+        "Night boss interference Margit_Warp appearance suppressed"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Night boss interference intelligent bug_1st location lottery completed"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "Night boss interference Baphomet_Already hostile"
+      ]
+    },
+    {
+      "ID": 8106,
+      "Entries": [
+        "Night boss interference Baphomet_All curses removed"
+      ]
+    },
+    {
+      "ID": 8107,
+      "Entries": [
+        "Night boss interference Baphomet_Boss gauge hidden flag"
+      ]
+    },
+    {
+      "ID": 8108,
+      "Entries": [
+        "Night boss interference Baphomet_1st location lottery completed"
+      ]
+    },
+    {
+      "ID": 8109,
+      "Entries": [
+        "Night boss interference Baphomet_2nd location lottery completed"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "Night boss interference Baphomet_Disappeared after clearing"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "Buried Treasure Chest 00_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8121,
+      "Entries": [
+        "Buried Treasure Chest 01_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8122,
+      "Entries": [
+        "Buried Treasure Chest 02_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8123,
+      "Entries": [
+        "Buried Treasure Chest 03_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8124,
+      "Entries": [
+        "Buried Treasure Chest 04_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8125,
+      "Entries": [
+        "Buried Treasure Chest 05_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8126,
+      "Entries": [
+        "Buried Treasure Chest 06_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8127,
+      "Entries": [
+        "Buried Treasure Chest 07_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8128,
+      "Entries": [
+        "Buried Treasure Chest 08_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8129,
+      "Entries": [
+        "Buried Treasure Chest 09_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "Buried Treasure Chest 10_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8131,
+      "Entries": [
+        "Buried Treasure Chest 11_Map Point Open"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "Magician Tower Opening Count"
+      ]
+    },
+    {
+      "ID": 8145,
+      "Entries": [
+        "Dungeon Defeat Count"
+      ]
+    },
+    {
+      "ID": 8150,
+      "Entries": [
+        "*Unused Boss Defeat Count"
+      ]
+    },
+    {
+      "ID": 8155,
+      "Entries": [
+        "Dark Spirit Defeat Count"
+      ]
+    },
+    {
+      "ID": 8185,
+      "Entries": [
+        "Snow Mountain Cleared"
+      ]
+    },
+    {
+      "ID": 8190,
+      "Entries": [
+        "Volcano Eruption Authorized"
+      ]
+    },
+    {
+      "ID": 8191,
+      "Entries": [
+        "Volcano Eruption Completed"
+      ]
+    },
+    {
+      "ID": 8192,
+      "Entries": [
+        "Volcano Eruption Day 1, Second Half"
+      ]
+    },
+    {
+      "ID": 8193,
+      "Entries": [
+        "Volcano Eruption Day 2, First Half"
+      ]
+    },
+    {
+      "ID": 8194,
+      "Entries": [
+        "Volcano Eruption Day 2, Second Half"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Weakened Prison_Shrine00_m60_42_39_00"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Weakened Prison_Shrine01_m60_42_37_00"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Weakened Prison_Shrine02_m60_42_37_00"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Weakened Prison_Shrine03_m60_44_38_00"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "Weakened Prison Transformation_Shrine04_m60_44_36_00"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "Weakened Prison_Shrine05_m60_45_38_00"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "Weakened Prison_Shrine06_Unused"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "Weakened Prison_Shrine07_Unused"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "Weakened Prison_Shrine08_Unused"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "Weakened Prison_Shrine09_Unused"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "00 Common Mission 1_Cleared"
+      ]
+    },
+    {
+      "ID": 8305,
+      "Entries": [
+        "00 Common Mission 2_Cleared"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "00 Common Mission 3_Cleared"
+      ]
+    },
+    {
+      "ID": 8315,
+      "Entries": [
+        "00 Common Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "00 Common Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8325,
+      "Entries": [
+        "01 Pursuer Mission 1_Grindstone Collection_All Cleared"
+      ]
+    },
+    {
+      "ID": 8326,
+      "Entries": [
+        "01 Pursuer Mission 1_Grindstone Collection_Started"
+      ]
+    },
+    {
+      "ID": 8327,
+      "Entries": [
+        "01 Pursuer Mission 1_Grindstone Collection_Defeated"
+      ]
+    },
+    {
+      "ID": 8330,
+      "Entries": [
+        "01 Pursuer Mission 2_Silver Drops_All Cleared"
+      ]
+    },
+    {
+      "ID": 8331,
+      "Entries": [
+        "01 Pursuer Mission 2_Silver Drop_Started"
+      ]
+    },
+    {
+      "ID": 8332,
+      "Entries": [
+        "01 Pursuer Mission 2_Silver Drop_Defeated"
+      ]
+    },
+    {
+      "ID": 8335,
+      "Entries": [
+        "01 Pursuer Mission 3_Cleared"
+      ]
+    },
+    {
+      "ID": 8340,
+      "Entries": [
+        "01 Pursuer Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8345,
+      "Entries": [
+        "01 Pursuer Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8350,
+      "Entries": [
+        "02 Guardian Mission 1_Corrupted Pilgrim_Cleared"
+      ]
+    },
+    {
+      "ID": 8351,
+      "Entries": [
+        "02 Guardian Mission 1_Corrupted Pilgrim_Started"
+      ]
+    },
+    {
+      "ID": 8355,
+      "Entries": [
+        "02 Guardian Mission 2_Golem Defeat_Cleared"
+      ]
+    },
+    {
+      "ID": 8356,
+      "Entries": [
+        "02 Guardian Mission 2_Golem Defeat_Started"
+      ]
+    },
+    {
+      "ID": 8357,
+      "Entries": [
+        "02 Guardian Mission 2_Golem Defeat_Defeated"
+      ]
+    },
+    {
+      "ID": 8360,
+      "Entries": [
+        "02 Guardian Mission 3_All cleared"
+      ]
+    },
+    {
+      "ID": 8361,
+      "Entries": [
+        "02 Guardian Mission 3_Baphomet Trade_Defeated"
+      ]
+    },
+    {
+      "ID": 8365,
+      "Entries": [
+        "02 Guardian Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8370,
+      "Entries": [
+        "02 Guardian Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8375,
+      "Entries": [
+        "03 Iron Eye Mission 1_Eliminate the Sick_Cleared"
+      ]
+    },
+    {
+      "ID": 8380,
+      "Entries": [
+        "03 Iron Eye Mission 2_Defeat the Sinner_Cleared"
+      ]
+    },
+    {
+      "ID": 8385,
+      "Entries": [
+        "03 Iron Eye Mission 3_Defeat the Centaur_Cleared"
+      ]
+    },
+    {
+      "ID": 8390,
+      "Entries": [
+        "03 Iron Eye Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8395,
+      "Entries": [
+        "03 Iron Eye Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "04 Lady Mission 1_Flower Collection_Cleared"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "04 Lady Mission 1_Flower Collection_Started"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "04 Lady Mission 2_Cleared"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "04 Lady Mission 3_Finding the whereabouts_Cleared"
+      ]
+    },
+    {
+      "ID": 8411,
+      "Entries": [
+        "04 Lady Mission 3_Finding the whereabouts_Started"
+      ]
+    },
+    {
+      "ID": 8412,
+      "Entries": [
+        "04 Lady Mission 3_Finding the whereabouts_Defeat"
+      ]
+    },
+    {
+      "ID": 8415,
+      "Entries": [
+        "04 Lady Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "04 Lady Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8425,
+      "Entries": [
+        "05 Scoundrel Mission 1_Cleared"
+      ]
+    },
+    {
+      "ID": 8430,
+      "Entries": [
+        "05 Scoundrel Mission 2_Cleared"
+      ]
+    },
+    {
+      "ID": 8435,
+      "Entries": [
+        "05 Scoundrel Mission 3_Before the Hazama Cup Final_Cleared"
+      ]
+    },
+    {
+      "ID": 8440,
+      "Entries": [
+        "05 Scoundrel Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8445,
+      "Entries": [
+        "05 Scoundrel Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8450,
+      "Entries": [
+        "06 Avenger Mission 1_Defeat the servant at night_Cleared"
+      ]
+    },
+    {
+      "ID": 8455,
+      "Entries": [
+        "※Unused 06 Avenger Mission 2_Cleared"
+      ]
+    },
+    {
+      "ID": 8460,
+      "Entries": [
+        "06 Avenger Mission 3_Cleared"
+      ]
+    },
+    {
+      "ID": 8465,
+      "Entries": [
+        "06 Avenger Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8470,
+      "Entries": [
+        "06 Avenger Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8475,
+      "Entries": [
+        "07 Hermit Mission 1_All Cleared"
+      ]
+    },
+    {
+      "ID": 8476,
+      "Entries": [
+        "07 Hermit Mission 1_Started"
+      ]
+    },
+    {
+      "ID": 8477,
+      "Entries": [
+        "07 Hermit Mission 1_Defeated"
+      ]
+    },
+    {
+      "ID": 8480,
+      "Entries": [
+        "*Unused 07 Hermit Mission 2_Cleared"
+      ]
+    },
+    {
+      "ID": 8485,
+      "Entries": [
+        "07 Hermit Mission 3_Cleared"
+      ]
+    },
+    {
+      "ID": 8490,
+      "Entries": [
+        "07 Hermit Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8495,
+      "Entries": [
+        "07 Hermit Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "*Unused 08 Enforcer Mission 1_Cleared"
+      ]
+    },
+    {
+      "ID": 8505,
+      "Entries": [
+        "08 Enforcer Mission 2_All cleared"
+      ]
+    },
+    {
+      "ID": 8506,
+      "Entries": [
+        "08 Enforcer Mission 2_Started"
+      ]
+    },
+    {
+      "ID": 8507,
+      "Entries": [
+        "08 Enforcer Mission 2_Defeated"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "08 Enforcer Mission 3_All cleared"
+      ]
+    },
+    {
+      "ID": 8511,
+      "Entries": [
+        "08 Enforcer Mission 3_Started"
+      ]
+    },
+    {
+      "ID": 8512,
+      "Entries": [
+        "08 Enforcer Mission 3_Defeated"
+      ]
+    },
+    {
+      "ID": 8515,
+      "Entries": [
+        "08 Enforcer Mission 4_Cleared"
+      ]
+    },
+    {
+      "ID": 8520,
+      "Entries": [
+        "08 Enforcer Mission 5_Cleared"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "Event ID: Map Point Management_Bird Movement Icon"
+      ]
+    },
+    {
+      "ID": 8810,
+      "Entries": [
+        "Event ID: Map Point Management_Bird Movement Icon Exception"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "[1 day try] Night boss interference Margit_Allowed to occur"
+      ]
+    },
+    {
+      "ID": 8901,
+      "Entries": [
+        "[1 day try] Night boss interference Margit_Already occurred"
+      ]
+    },
+    {
+      "ID": 8902,
+      "Entries": [
+        "[1 day try] Night boss interference Margit_Finished"
+      ]
+    },
+    {
+      "ID": 8903,
+      "Entries": [
+        "[1 day try] Night boss interference Margit_Cleared"
+      ]
+    },
+    {
+      "ID": 8904,
+      "Entries": [
+        "[1 day try] Night boss interference Margit_Allowed to occur"
+      ]
+    },
+    {
+      "ID": 8910,
+      "Entries": [
+        "[1 day try] Night boss interference abstract enemy_Allowed to occur"
+      ]
+    },
+    {
+      "ID": 8911,
+      "Entries": [
+        "[1 day try] Night boss interference abstract enemy_Already occurred"
+      ]
+    },
+    {
+      "ID": 8912,
+      "Entries": [
+        "[1 day try] Night boss interference abstract enemy_Finished"
+      ]
+    },
+    {
+      "ID": 8913,
+      "Entries": [
+        "[1 day try] Night boss interference abstract enemy_Cleared"
+      ]
+    },
+    {
+      "ID": 8914,
+      "Entries": [
+        "[1 day try] Night boss interference abstract enemy_Allowed to occur"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Viewed the sortie cut scene"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "80"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Deployment phase, bird moving"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Sudden event timer_Own timer completed"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "Boss battle death prohibition flag"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "Rejoin near death entry flag"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "Death text performance stop flag"
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        "BGM control flag: For cutscenes"
+      ]
+    },
+    {
+      "ID": 9025,
+      "Entries": [
+        "Inside hotspot area"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Mausoleum weapon duplication menu used"
+      ]
+    },
+    {
+      "ID": 9035,
+      "Entries": [
+        "Inside madness area"
+      ]
+    },
+    {
+      "ID": 9036,
+      "Entries": [
+        "In madness area, own PC is attacking"
+      ]
+    },
+    {
+      "ID": 9037,
+      "Entries": [
+        "Inside madness area, Gparam area"
+      ]
+    },
+    {
+      "ID": 9038,
+      "Entries": [
+        "Frenzy Zone Rune Acquired"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Request to determine number of ests possessed"
+      ]
+    },
+    {
+      "ID": 9041,
+      "Entries": [
+        "Count number of ests possessed"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "Night boss defeat est increase day 1"
+      ]
+    },
+    {
+      "ID": 9051,
+      "Entries": [
+        "Night boss defeat est increase day 2"
+      ]
+    },
+    {
+      "ID": 9052,
+      "Entries": [
+        "Warped to Tower of God"
+      ]
+    },
+    {
+      "ID": 9055,
+      "Entries": [
+        "Night boss obstruction abstract enemy_within area"
+      ]
+    },
+    {
+      "ID": 9056,
+      "Entries": [
+        "Night boss obstruction_permanent debuff confirmed"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Night boss obstruction Margite_gauge start with BGM"
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Night boss obstruction Margite_gauge end with BGM"
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        "Night boss obstruction Margite_gauge start without BGM"
+      ]
+    },
+    {
+      "ID": 9063,
+      "Entries": [
+        "Night boss obstruction Margite_gauge end without BGM"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Boss antiques confirmed lottery_Cerberus"
+      ]
+    },
+    {
+      "ID": 9071,
+      "Entries": [
+        "Boss antiques confirmed lottery_Dragon Tyranno"
+      ]
+    },
+    {
+      "ID": 9072,
+      "Entries": [
+        "Boss antiques confirmed lottery_Intelligent insect"
+      ]
+    },
+    {
+      "ID": 9073,
+      "Entries": [
+        "Boss antiques confirmed lottery_Abstract enemy"
+      ]
+    },
+    {
+      "ID": 9074,
+      "Entries": [
+        "Boss antiques confirmed lottery_Baphomet"
+      ]
+    },
+    {
+      "ID": 9075,
+      "Entries": [
+        "Boss antiques confirmed lottery_Centaur"
+      ]
+    },
+    {
+      "ID": 9076,
+      "Entries": [
+        "Boss antiques confirmed lottery_Mist dragon"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "Boss antiques confirmed lottery_Nameless"
+      ]
+    },
+    {
+      "ID": 9089,
+      "Entries": [
+        "Antiques lottery_Campaign session"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "Antiques lottery_Cerberus session"
+      ]
+    },
+    {
+      "ID": 9091,
+      "Entries": [
+        "Antiques lottery_Dragon Tyranno session"
+      ]
+    },
+    {
+      "ID": 9092,
+      "Entries": [
+        "Antiques lottery_Intelligent insect session"
+      ]
+    },
+    {
+      "ID": 9093,
+      "Entries": [
+        "Antiques lottery_Abstract enemy session"
+      ]
+    },
+    {
+      "ID": 9094,
+      "Entries": [
+        "Baphomet Session for Antiques Raffle"
+      ]
+    },
+    {
+      "ID": 9095,
+      "Entries": [
+        "Centaur Session for Antiques Raffle"
+      ]
+    },
+    {
+      "ID": 9096,
+      "Entries": [
+        "Mist Dragon Session for Antiques Raffle"
+      ]
+    },
+    {
+      "ID": 9097,
+      "Entries": [
+        "Nameless Session for Antiques Raffle"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Buried Treasure Chest 00",
+        "Buried Treasure Chest 00"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Buried Treasure Chest 01"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Buried Treasure Chest 02"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Buried Treasure Chest 03"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Buried Treasure Chest 04"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Buried Treasure Chest 05"
+      ]
+    },
+    {
+      "ID": 9106,
+      "Entries": [
+        "Buried Treasure Chest 06"
+      ]
+    },
+    {
+      "ID": 9107,
+      "Entries": [
+        "Buried Treasure Chest 07"
+      ]
+    },
+    {
+      "ID": 9108,
+      "Entries": [
+        "Buried Treasure Chest 08"
+      ]
+    },
+    {
+      "ID": 9109,
+      "Entries": [
+        "Buried Treasure Chest 09"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Buried Treasure Chest 10"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "Buried Treasure Chest 11"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Mage Tower Special Effect Count"
+      ]
+    },
+    {
+      "ID": 9125,
+      "Entries": [
+        "Dungeon Defeat Special Effect Count"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Night Boss Interference Margit Defeat Special Effect Count"
+      ]
+    },
+    {
+      "ID": 9135,
+      "Entries": [
+        "Dark Spirit Defeat Special Effect Count"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Guardian 0201 Spot 300 Occurrence Location"
+      ]
+    },
+    {
+      "ID": 9141,
+      "Entries": [
+        "Guardian 0201 Spot 301 Occurrence Location"
+      ]
+    },
+    {
+      "ID": 9142,
+      "Entries": [
+        "Guardian 0201 Spot 302 Occurrence Location"
+      ]
+    },
+    {
+      "ID": 9143,
+      "Entries": [
+        "Guardian 0201 Spot 303 Occurrence Location"
+      ]
+    },
+    {
+      "ID": 9144,
+      "Entries": [
+        "Guardian 0201 Spot 304 Location"
+      ]
+    },
+    {
+      "ID": 9145,
+      "Entries": [
+        "Guardian 0201 Spot 305 Location"
+      ]
+    },
+    {
+      "ID": 9146,
+      "Entries": [
+        "Guardian 0201 Spot 306 Location"
+      ]
+    },
+    {
+      "ID": 9147,
+      "Entries": [
+        "Guardian 0201 Spot 307 Location"
+      ]
+    },
+    {
+      "ID": 9148,
+      "Entries": [
+        "Guardian 0201 Spot 308 Location"
+      ]
+    },
+    {
+      "ID": 9149,
+      "Entries": [
+        "Guardian 0201 Spot 309 Location"
+      ]
+    },
+    {
+      "ID": 9150,
+      "Entries": [
+        "Guardian 0201 Spot 310 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9151,
+      "Entries": [
+        "Guardian 0201 Spot 311 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9152,
+      "Entries": [
+        "Guardian 0201 Spot 312 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9153,
+      "Entries": [
+        "Guardian 0201 Spot 313 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9154,
+      "Entries": [
+        "Guardian 0201 Spot 314 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9155,
+      "Entries": [
+        "Guardian 0201 Spot 315 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9156,
+      "Entries": [
+        "Guardian 0201 Spot 316 Occurrence location"
+      ]
+    },
+    {
+      "ID": 9157,
+      "Entries": [
+        "Guardian 0201 Spot 317 Location"
+      ]
+    },
+    {
+      "ID": 9158,
+      "Entries": [
+        "Guardian 0201 Spot 318 Location"
+      ]
+    },
+    {
+      "ID": 9159,
+      "Entries": [
+        "Guardian 0201 Spot 319 Location"
+      ]
+    },
+    {
+      "ID": 9160,
+      "Entries": [
+        "Guardian 0201 Spot 300 Clear"
+      ]
+    },
+    {
+      "ID": 9161,
+      "Entries": [
+        "Guardian 0201 Spot 301 Clear"
+      ]
+    },
+    {
+      "ID": 9162,
+      "Entries": [
+        "Guardian 0201 Spot 302 Clear"
+      ]
+    },
+    {
+      "ID": 9163,
+      "Entries": [
+        "Guardian 0201 Spot 303 Clear"
+      ]
+    },
+    {
+      "ID": 9164,
+      "Entries": [
+        "Guardian 0201 Spot 304 Clear A"
+      ]
+    },
+    {
+      "ID": 9165,
+      "Entries": [
+        "Guardian 0201 Spot 305 Clear"
+      ]
+    },
+    {
+      "ID": 9166,
+      "Entries": [
+        "Guardian 0201 Spot 306 Clear"
+      ]
+    },
+    {
+      "ID": 9167,
+      "Entries": [
+        "Guardian 0201 Spot 307 Clear"
+      ]
+    },
+    {
+      "ID": 9168,
+      "Entries": [
+        "Guardian 0201 Spot 308 Clear"
+      ]
+    },
+    {
+      "ID": 9169,
+      "Entries": [
+        "Guardian 0201 Spot 309 Clear"
+      ]
+    },
+    {
+      "ID": 9170,
+      "Entries": [
+        "Guardian 0201 Spot 310 Clear"
+      ]
+    },
+    {
+      "ID": 9171,
+      "Entries": [
+        "Guardian 0201 Spot 311 Clear"
+      ]
+    },
+    {
+      "ID": 9172,
+      "Entries": [
+        "Guardian 0201 Spot 312 Clear"
+      ]
+    },
+    {
+      "ID": 9173,
+      "Entries": [
+        "Guardian 0201 Spot 313 Clear"
+      ]
+    },
+    {
+      "ID": 9174,
+      "Entries": [
+        "Guardian 0201 Spot 314 Clear"
+      ]
+    },
+    {
+      "ID": 9175,
+      "Entries": [
+        "Guardian 0201 Spot 315 Clear"
+      ]
+    },
+    {
+      "ID": 9176,
+      "Entries": [
+        "Guardian 0201 Spot 316 Clear"
+      ]
+    },
+    {
+      "ID": 9177,
+      "Entries": [
+        "Guardian 0201 Spot 317 Clear"
+      ]
+    },
+    {
+      "ID": 9178,
+      "Entries": [
+        "Guardian 0201 Spot 318 Clear"
+      ]
+    },
+    {
+      "ID": 9179,
+      "Entries": [
+        "Guardian 0201 Spot 319 Clear"
+      ]
+    },
+    {
+      "ID": 9191,
+      "Entries": [
+        "Permanent buff acquisition permission Possible: Noclone Area"
+      ]
+    },
+    {
+      "ID": 9192,
+      "Entries": [
+        "Permanent Buff Acquisition Permitted: Rotten Area"
+      ]
+    },
+    {
+      "ID": 9193,
+      "Entries": [
+        "Permanent Buff Acquisition Permitted: Snowy Mountain Area"
+      ]
+    },
+    {
+      "ID": 9194,
+      "Entries": [
+        "Legendary Smithing Table: Used Flag"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "02 Guardian Mission 3_Baphomet Trading_Personally Cleared"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "02 Guardian Mission 3_Baphomet Trading_Available for Trading"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "02 Guardian Mission 3_Baphomet Trading_Trading Executed"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "101_Grindstone Collection_PC Mine"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "*Unused 06 Avenger Mission 2_Puddle Purification_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "101_Grindstone Collection_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9207,
+      "Entries": [
+        "102_Silver Drops_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9208,
+      "Entries": [
+        "202_Golem_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9209,
+      "Entries": [
+        "302_Defeat the Sinner_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "*Unused 07 Hermit Mission 2_Night Boss Interference Strategy_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        "303_Defeat the Centaur_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9212,
+      "Entries": [
+        "401_Flower Collection_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9213,
+      "Entries": [
+        "403_Weathervane Grave_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9214,
+      "Entries": [
+        "601_Boss Weapon Capture_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9215,
+      "Entries": [
+        "*Unused 08 Enforcer Mission 1_Golden Seed_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9216,
+      "Entries": [
+        "701_Defeat night enemies_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9217,
+      "Entries": [
+        "802_Collect golden buds_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9218,
+      "Entries": [
+        "803_Collect flowers_Completed by individual"
+      ]
+    },
+    {
+      "ID": 9219,
+      "Entries": [
+        "401_Collect flowers_Collect prohibited"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "803_Collect flowers_Collect prohibited"
+      ]
+    },
+    {
+      "ID": 9221,
+      "Entries": [
+        "06 Avenger Mission 2_Activated at 4437 locations"
+      ]
+    },
+    {
+      "ID": 9222,
+      "Entries": [
+        "06 Avenger Mission 2_Activated at 4336 locations"
+      ]
+    },
+    {
+      "ID": 9223,
+      "Entries": [
+        "06 Avenger Mission 2_Activated at 4237 locations"
+      ]
+    },
+    {
+      "ID": 9224,
+      "Entries": [
+        "06 Avenger Mission 2_Activated at 4338 locations"
+      ]
+    },
+    {
+      "ID": 9225,
+      "Entries": [
+        "06 Avenger Mission 2_Activated at 4439 locations"
+      ]
+    },
+    {
+      "ID": 9226,
+      "Entries": [
+        "06 Avenger Mission 2_4539 locations started"
+      ]
+    },
+    {
+      "ID": 9227,
+      "Entries": [
+        "06 Avenger Mission 2_4537 locations started"
+      ]
+    },
+    {
+      "ID": 9228,
+      "Entries": [
+        "06 Avenger Mission 2_4536 locations started"
+      ]
+    },
+    {
+      "ID": 9229,
+      "Entries": [
+        "06 Avenger Mission 2_4437② locations started"
+      ]
+    },
+    {
+      "ID": 9231,
+      "Entries": [
+        "06 Avenger Mission 2_4437 locations cleared"
+      ]
+    },
+    {
+      "ID": 9232,
+      "Entries": [
+        "06 Avenger Mission 2_4336 locations cleared"
+      ]
+    },
+    {
+      "ID": 9233,
+      "Entries": [
+        "06 Avenger Mission 2_4237 locations cleared"
+      ]
+    },
+    {
+      "ID": 9234,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4338 places"
+      ]
+    },
+    {
+      "ID": 9235,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4439 places"
+      ]
+    },
+    {
+      "ID": 9236,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4539 places"
+      ]
+    },
+    {
+      "ID": 9237,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4537 places"
+      ]
+    },
+    {
+      "ID": 9238,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4536 places"
+      ]
+    },
+    {
+      "ID": 9239,
+      "Entries": [
+        "06 Avenger Mission 2_Clear 4437② places"
+      ]
+    },
+    {
+      "ID": 9241,
+      "Entries": [
+        "06 Avenger Mission 2_Ultimate 4437 places"
+      ]
+    },
+    {
+      "ID": 9242,
+      "Entries": [
+        "06 Avenger Mission 2_4336 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9243,
+      "Entries": [
+        "06 Avenger Mission 2_4237 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9244,
+      "Entries": [
+        "06 Avenger Mission 2_4338 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9245,
+      "Entries": [
+        "06 Avenger Mission 2_4439 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9246,
+      "Entries": [
+        "06 Avenger Mission 2_4539 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9247,
+      "Entries": [
+        "06 Avenger Mission 2_4537 Locations Ult"
+      ]
+    },
+    {
+      "ID": 9248,
+      "Entries": [
+        "0 6 Avenger Mission 2_4536 Location Ult"
+      ]
+    },
+    {
+      "ID": 9249,
+      "Entries": [
+        "06 Avenger Mission 2_4437② Location Ult"
+      ]
+    },
+    {
+      "ID": 9251,
+      "Entries": [
+        "0801 Enforcer_Start Location 01"
+      ]
+    },
+    {
+      "ID": 9252,
+      "Entries": [
+        "0801 Enforcer_Start Location 02"
+      ]
+    },
+    {
+      "ID": 9253,
+      "Entries": [
+        "0801 Enforcer_Start Location 03"
+      ]
+    },
+    {
+      "ID": 9254,
+      "Entries": [
+        "0801 Enforcer_Start Location 04"
+      ]
+    },
+    {
+      "ID": 9255,
+      "Entries": [
+        "0801 Enforcer_Start Location 05"
+      ]
+    },
+    {
+      "ID": 9256,
+      "Entries": [
+        "0801 Enforcer_Start Location 06"
+      ]
+    },
+    {
+      "ID": 9257,
+      "Entries": [
+        "0801Executor_Startup_Location_01"
+      ]
+    },
+    {
+      "ID": 9258,
+      "Entries": [
+        "0801Executor_Startup_Location_02"
+      ]
+    },
+    {
+      "ID": 9259,
+      "Entries": [
+        "0801Executor_Startup_Location_03"
+      ]
+    },
+    {
+      "ID": 9261,
+      "Entries": [
+        "0801Executor_Startup_Location_01_Clear"
+      ]
+    },
+    {
+      "ID": 9262,
+      "Entries": [
+        "0801Executor_Startup_Location_02_Clear"
+      ]
+    },
+    {
+      "ID": 9263,
+      "Entries": [
+        "0801Executor_Startup_Location_03_Clear"
+      ]
+    },
+    {
+      "ID": 9264,
+      "Entries": [
+        "0801Executor_Startup_Location_04_Clear"
+      ]
+    },
+    {
+      "ID": 9265,
+      "Entries": [
+        "0801Executor_Startup_Location_05_Clear"
+      ]
+    },
+    {
+      "ID": 9266,
+      "Entries": [
+        "0801Executor Pilgrim_Activation point 06_Clear"
+      ]
+    },
+    {
+      "ID": 9267,
+      "Entries": [
+        "0801 Executor_Backup activation point 01_Clear"
+      ]
+    },
+    {
+      "ID": 9268,
+      "Entries": [
+        "0801 Executor_Backup activation point 02_Clear"
+      ]
+    },
+    {
+      "ID": 9269,
+      "Entries": [
+        "0801 Executor_Backup activation point 03_Clear"
+      ]
+    },
+    {
+      "ID": 9271,
+      "Entries": [
+        "Guardian 0203_Spot 710"
+      ]
+    },
+    {
+      "ID": 9272,
+      "Entries": [
+        "Guardian 0203_Spot 711"
+      ]
+    },
+    {
+      "ID": 9273,
+      "Entries": [
+        "Guardian 0203_Spot 712"
+      ]
+    },
+    {
+      "ID": 9274,
+      "Entries": [
+        "Guardian 0203_Spot 713"
+      ]
+    },
+    {
+      "ID": 9275,
+      "Entries": [
+        "Guardian 0203_Spot 714"
+      ]
+    },
+    {
+      "ID": 9276,
+      "Entries": [
+        "Guardian 0203_Spot 715"
+      ]
+    },
+    {
+      "ID": 9277,
+      "Entries": [
+        "Guardian 0203_Spot 716"
+      ]
+    },
+    {
+      "ID": 9278,
+      "Entries": [
+        "Guardian 0203_Spot 717"
+      ]
+    },
+    {
+      "ID": 9279,
+      "Entries": [
+        "Guardian 0203_Spot 718"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Trophy 00: NIGHTREIGN"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "Trophy 01: The Hidden Round Table"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Trophy 02: The Night Kings"
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        "Trophy 03: Night Begins"
+      ]
+    },
+    {
+      "ID": 9304,
+      "Entries": [
+        "Trophy 04: The Lady, Joins the Battle"
+      ]
+    },
+    {
+      "ID": 9305,
+      "Entries": [
+        "Trophy 05: The Avenger, Joins the Battle"
+      ]
+    },
+    {
+      "ID": 9306,
+      "Entries": [
+        "Trophy 06: Dawn"
+      ]
+    },
+    {
+      "ID": 9307,
+      "Entries": [
+        "Trophy 07: The Three-Headed Beast"
+      ]
+    },
+    {
+      "ID": 9308,
+      "Entries": [
+        "Trophy 08: The Clawing Jaws"
+      ]
+    },
+    {
+      "ID": 9309,
+      "Entries": [
+        "Trophy 09: Intellect Bug"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        "Trophy 10: Signs"
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        "Trophy 11: Tuning Fiend"
+      ]
+    },
+    {
+      "ID": 9312,
+      "Entries": [
+        "Trophy 12: Dark Hunter"
+      ]
+    },
+    {
+      "ID": 9313,
+      "Entries": [
+        "Trophy 13: Mist Rift"
+      ]
+    },
+    {
+      "ID": 9314,
+      "Entries": [
+        "Trophy 14: Night Shaper"
+      ]
+    },
+    {
+      "ID": 9315,
+      "Entries": [
+        "Trophy 15: All About the Night King"
+      ]
+    },
+    {
+      "ID": 9316,
+      "Entries": [
+        "Trophy 16: Relic"
+      ]
+    },
+    {
+      "ID": 9317,
+      "Entries": [
+        "Trophy 17: Dressing Table"
+      ]
+    },
+    {
+      "ID": 9318,
+      "Entries": [
+        "Trophy 18: Offering"
+      ]
+    },
+    {
+      "ID": 9319,
+      "Entries": [
+        "Trophy 19: Legendary Weapon"
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        "Trophy 20: Mountain Ridge"
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        "Trophy 21: Crater"
+      ]
+    },
+    {
+      "ID": 9322,
+      "Entries": [
+        "Trophy 22: Rotten Forest"
+      ]
+    },
+    {
+      "ID": 9323,
+      "Entries": [
+        "Trophy 23: Nocrateo, Hidden City"
+      ]
+    },
+    {
+      "ID": 9324,
+      "Entries": [
+        "Trophy 24: Catacombs"
+      ]
+    },
+    {
+      "ID": 9325,
+      "Entries": [
+        "Trophy 25: Collected Offerings"
+      ]
+    },
+    {
+      "ID": 9326,
+      "Entries": [
+        "Trophy 26: Hero's Path"
+      ]
+    },
+    {
+      "ID": 9327,
+      "Entries": [
+        "Trophy 27: Highest Level"
+      ]
+    },
+    {
+      "ID": 9328,
+      "Entries": [
+        "Trophy 28: Filled Chalice Flask"
+      ]
+    },
+    {
+      "ID": 9329,
+      "Entries": [
+        "Trophy 29: Latent Power"
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        "Trophy 30: Ancient Prison"
+      ]
+    },
+    {
+      "ID": 9331,
+      "Entries": [
+        "Trophy 31: Ready"
+      ]
+    },
+    {
+      "ID": 9332,
+      "Entries": [
+        "Trophy 32: Cursed Demon"
+      ]
+    },
+    {
+      "ID": 9333,
+      "Entries": [
+        "Trophy 33: Locust Plague"
+      ]
+    },
+    {
+      "ID": 9334,
+      "Entries": [
+        "Trophy 34: Typhoon"
+      ]
+    },
+    {
+      "ID": 9335,
+      "Entries": [
+        "Trophy 35: Judgment"
+      ]
+    },
+    {
+      "ID": 9336,
+      "Entries": [
+        "Trophy 36: Hunter of the Night King"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "GrF: Recipe Unlock Flag"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Tutorial Global Flag 00"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "Tutorial Global Flag 01"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "Tutorial Global Flag 02"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "Tutorial Global Flag 03"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "[TUT] Event: Movement/Camera"
+      ]
+    },
+    {
+      "ID": 9815,
+      "Entries": [
+        "[TUT] Event: Use of Holy Grail Flask"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "[TUT] Event: Attack"
+      ]
+    },
+    {
+      "ID": 9825,
+      "Entries": [
+        "[TUT] Event: Lock Switch"
+      ]
+    },
+    {
+      "ID": 9830,
+      "Entries": [
+        "[TUT] Event: Jump/Wall Climb"
+      ]
+    },
+    {
+      "ID": 9835,
+      "Entries": [
+        "[TUT] Event: Guard"
+      ]
+    },
+    {
+      "ID": 9840,
+      "Entries": [
+        "[TUT] Event: Evade"
+      ]
+    },
+    {
+      "ID": 9845,
+      "Entries": [
+        "[TUT] Event: Dash"
+      ]
+    },
+    {
+      "ID": 9850,
+      "Entries": [
+        "[TUT] Event: Sprint"
+      ]
+    },
+    {
+      "ID": 9855,
+      "Entries": [
+        "[TUT] Event: Wall Jump (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9856,
+      "Entries": [
+        "[TUT] Event: Wall Jump"
+      ]
+    },
+    {
+      "ID": 9860,
+      "Entries": [
+        "[TUT] Event: Use of Item"
+      ]
+    },
+    {
+      "ID": 9865,
+      "Entries": [
+        "[TUT] Event: Weapon Switch"
+      ]
+    },
+    {
+      "ID": 9870,
+      "Entries": [
+        "[TUT] Event: Arts"
+      ]
+    },
+    {
+      "ID": 9875,
+      "Entries": [
+        "[TUT] Event: Weapon Switch & Arts (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9880,
+      "Entries": [
+        "[TUT] Event: Skills"
+      ]
+    },
+    {
+      "ID": 9885,
+      "Entries": [
+        "[TUT] Event: Skills (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9890,
+      "Entries": [
+        "[TUT] Event: Near Death/Rescue"
+      ]
+    },
+    {
+      "ID": 9895,
+      "Entries": [
+        "[TUT] Event: Near Death/Rescue (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "[TUT] Event: Respawn"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "[TUT] Event: Ult"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "[TUT] Event: Ult (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "[TUT] Event: Near Death"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "[TUT] Event: Blessing"
+      ]
+    },
+    {
+      "ID": 9925,
+      "Entries": [
+        "[TUT] Event: Map"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "[TUT] Event: Map (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9935,
+      "Entries": [
+        "[TUT] Event: Shrinking Circle Damage"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "[TUT] Event: Extra Effects and Rarity"
+      ]
+    },
+    {
+      "ID": 9945,
+      "Entries": [
+        "[TUT] Event: Extra Effects and Rarity (Follow Notification)"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "Parasite Poison 00"
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        "Parasite Poison 01"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        "Parasite Poison 02"
+      ]
+    },
+    {
+      "ID": 9993,
+      "Entries": [
+        "Debug Flag 03"
+      ]
+    },
+    {
+      "ID": 9994,
+      "Entries": [
+        "Debug Flag 04"
+      ]
+    },
+    {
+      "ID": 9995,
+      "Entries": [
+        "Debug Flag 05"
+      ]
+    },
+    {
+      "ID": 9996,
+      "Entries": [
+        "Debug Flag 06"
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "Debug Flag 07"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "Debug Flag 08"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Debug Flag 09"
+      ]
+    },
+    {
+      "ID": 60010,
+      "Entries": [
+        "Antique Pedestal Unlocked: Balanced Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60020,
+      "Entries": [
+        "Antique Pedestal Unlocked: Balanced Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60030,
+      "Entries": [
+        "Antique Pedestal Unlocked: Balanced Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60040,
+      "Entries": [
+        "Antique Pedestal Unlocked: Balanced Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60060,
+      "Entries": [
+        "Antique Pedestal Unlocked: Tank Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60070,
+      "Entries": [
+        "Antique Pedestal Unlocked: Tank Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60080,
+      "Entries": [
+        "Antique Pedestal Unlocked: Tank Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60090,
+      "Entries": [
+        "Antique Pedestal Unlocked: Tank Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60110,
+      "Entries": [
+        "Antique Pedestal Unlocked: Shooter Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60120,
+      "Entries": [
+        "Antique Pedestal Unlocked: Shooter Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60130,
+      "Entries": [
+        "Antique Pedestal Unlocked: Shooter Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60140,
+      "Entries": [
+        "Antique Pedestal Unlocked: Shooter Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60160,
+      "Entries": [
+        "Antique Pedestal Unlocked: Speed ​​Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60170,
+      "Entries": [
+        "Antique Antique Pedestal Unlocked: Speed ​​Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60180,
+      "Entries": [
+        "Antique Pedestal Unlocked: Speed ​​Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60190,
+      "Entries": [
+        "Antique Pedestal Unlocked: Speed ​​Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60210,
+      "Entries": [
+        "Antique Pedestal Unlocked: Power Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60220,
+      "Entries": [
+        "Antique Pedestal Unlocked: Power Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60230,
+      "Entries": [
+        "Antique Pedestal Unlocked: Power Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60240,
+      "Entries": [
+        "Antique Pedestal Unlocked: Power Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60260,
+      "Entries": [
+        "Antique Pedestal Unlocked: Necromancer Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60270,
+      "Entries": [
+        "Antique Pedestal Unlocked: Necromancer Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60280,
+      "Entries": [
+        "Antique Pedestal Unlocked: Necromancer Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60290,
+      "Entries": [
+        "Antique Pedestal Unlocked: Necromancer Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60310,
+      "Entries": [
+        "Antique Pedestal Unlocked: Magic Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60320,
+      "Entries": [
+        "Antique Pedestal Unlocked: Magic Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60330,
+      "Entries": [
+        "Antique Pedestal Unlocked: Magic Pedestal Magic Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60340,
+      "Entries": [
+        "Antique Pedestal Unlocked: Magic Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60360,
+      "Entries": [
+        "Antique Pedestal Unlocked: Technical Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60370,
+      "Entries": [
+        "Antique Pedestal Unlocked: Technical Pedestal 3"
+      ]
+    },
+    {
+      "ID": 60380,
+      "Entries": [
+        "Antique Pedestal Unlocked: Technical Pedestal 4"
+      ]
+    },
+    {
+      "ID": 60390,
+      "Entries": [
+        "Antique Pedestal Unlocked: Technical Pedestal 5"
+      ]
+    },
+    {
+      "ID": 60400,
+      "Entries": [
+        "Antique Pedestal Unlocked: Special Pedestal 1"
+      ]
+    },
+    {
+      "ID": 60410,
+      "Entries": [
+        "Antique Pedestal Unlocked: Special Pedestal 2"
+      ]
+    },
+    {
+      "ID": 60420,
+      "Entries": [
+        "Antique pedestal unlocked: Special pedestal 3"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "DLC0_Pre-order bonus main body gesture acquired"
+      ]
+    },
+    {
+      "ID": 61001,
+      "Entries": [
+        "DLC0_Pre-order bonus propagation gesture acquired"
+      ]
+    },
+    {
+      "ID": 66000,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 01",
+        "Inventory management_Fixed antiques_Lineup 01"
+      ]
+    },
+    {
+      "ID": 66010,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 02"
+      ]
+    },
+    {
+      "ID": 66020,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 03"
+      ]
+    },
+    {
+      "ID": 66030,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 04"
+      ]
+    },
+    {
+      "ID": 66040,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 05"
+      ]
+    },
+    {
+      "ID": 66050,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 06"
+      ]
+    },
+    {
+      "ID": 66060,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 07"
+      ]
+    },
+    {
+      "ID": 66070,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 08"
+      ]
+    },
+    {
+      "ID": 66080,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 09"
+      ]
+    },
+    {
+      "ID": 66090,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 10"
+      ]
+    },
+    {
+      "ID": 66100,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 11"
+      ]
+    },
+    {
+      "ID": 66110,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 12"
+      ]
+    },
+    {
+      "ID": 66120,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 13"
+      ]
+    },
+    {
+      "ID": 66130,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 14"
+      ]
+    },
+    {
+      "ID": 66140,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 15"
+      ]
+    },
+    {
+      "ID": 66150,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 16"
+      ]
+    },
+    {
+      "ID": 66160,
+      "Entries": [
+        "Inventory Management_Fixed Antiques_Lineup 17"
+      ]
+    },
+    {
+      "ID": 66170,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 18"
+      ]
+    },
+    {
+      "ID": 66180,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 19"
+      ]
+    },
+    {
+      "ID": 66190,
+      "Entries": [
+        "Inventory management_Fixed antiques_Lineup 20"
+      ]
+    },
+    {
+      "ID": 66300,
+      "Entries": [
+        "Boss antiques β: Cerberus"
+      ]
+    },
+    {
+      "ID": 66310,
+      "Entries": [
+        "Boss antiques β: Dragon Tyranno"
+      ]
+    },
+    {
+      "ID": 66320,
+      "Entries": [
+        "Boss antiques β: Intelligent insects"
+      ]
+    },
+    {
+      "ID": 66330,
+      "Entries": [
+        "Boss antiques β: Abstract enemies"
+      ]
+    },
+    {
+      "ID": 66340,
+      "Entries": [
+        "Boss Antique β: Baphomet"
+      ]
+    },
+    {
+      "ID": 66350,
+      "Entries": [
+        "Boss Antique β: Centaur"
+      ]
+    },
+    {
+      "ID": 66360,
+      "Entries": [
+        "Boss Antique β: Mist Dragon"
+      ]
+    },
+    {
+      "ID": 66370,
+      "Entries": [
+        "Boss Antique β: Nameless"
+      ]
+    },
+    {
+      "ID": 67000,
+      "Entries": [
+        "Inventory Management_Appraised Antiques_Lineup 01"
+      ]
+    },
+    {
+      "ID": 67010,
+      "Entries": [
+        "Inventory Management_Appraised Antiques_Lineup 02"
+      ]
+    },
+    {
+      "ID": 67020,
+      "Entries": [
+        "Inventory Management_Appraised Antiques_Lineup 03"
+      ]
+    },
+    {
+      "ID": 67030,
+      "Entries": [
+        "Inventory Management_Appraised Antiques_Lineup 04"
+      ]
+    },
+    {
+      "ID": 67040,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 05"
+      ]
+    },
+    {
+      "ID": 67050,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 06"
+      ]
+    },
+    {
+      "ID": 67060,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 07"
+      ]
+    },
+    {
+      "ID": 67070,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 08"
+      ]
+    },
+    {
+      "ID": 67080,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 09"
+      ]
+    },
+    {
+      "ID": 67090,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 10"
+      ]
+    },
+    {
+      "ID": 67100,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 11"
+      ]
+    },
+    {
+      "ID": 67110,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 12"
+      ]
+    },
+    {
+      "ID": 67120,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 13"
+      ]
+    },
+    {
+      "ID": 67130,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 14"
+      ]
+    },
+    {
+      "ID": 67140,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 15"
+      ]
+    },
+    {
+      "ID": 67150,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 16"
+      ]
+    },
+    {
+      "ID": 67160,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 17"
+      ]
+    },
+    {
+      "ID": 67170,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 18"
+      ]
+    },
+    {
+      "ID": 67180,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 19"
+      ]
+    },
+    {
+      "ID": 67190,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 20"
+      ]
+    },
+    {
+      "ID": 67200,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 21"
+      ]
+    },
+    {
+      "ID": 67210,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 22"
+      ]
+    },
+    {
+      "ID": 67220,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 23"
+      ]
+    },
+    {
+      "ID": 67230,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 24"
+      ]
+    },
+    {
+      "ID": 67240,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 25"
+      ]
+    },
+    {
+      "ID": 67250,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 26"
+      ]
+    },
+    {
+      "ID": 67260,
+      "Entries": [
+        "Inventory management_Appraised antiques_Lineup 27"
+      ]
+    },
+    {
+      "ID": 67270,
+      "Entries": [
+        "Inventory_Appraised_Antiques_Lineup_28"
+      ]
+    },
+    {
+      "ID": 67600,
+      "Entries": [
+        "Inventory_Gesture: Polite/Noble Bow"
+      ]
+    },
+    {
+      "ID": 67610,
+      "Entries": [
+        "Inventory_Gesture: Woman's Bow"
+      ]
+    },
+    {
+      "ID": 67620,
+      "Entries": [
+        "Inventory_Gesture: War Bow"
+      ]
+    },
+    {
+      "ID": 67630,
+      "Entries": [
+        "Inventory_Gesture: Kneeling Bow"
+      ]
+    },
+    {
+      "ID": 67640,
+      "Entries": [
+        "Inventory_Gesture: Welcome"
+      ]
+    },
+    {
+      "ID": 67650,
+      "Entries": [
+        "Inventory_Gesture: Guh!"
+      ]
+    },
+    {
+      "ID": 67660,
+      "Entries": [
+        "Inventory_Gesture: Woman's Polite Bow"
+      ]
+    },
+    {
+      "ID": 67670,
+      "Entries": [
+        "Inventory_Gesture: It's not time to panic yet"
+      ]
+    },
+    {
+      "ID": 67680,
+      "Entries": [
+        "Inventory_Gesture: Prostration"
+      ]
+    },
+    {
+      "ID": 67690,
+      "Entries": [
+        "Inventory_Gesture: Begging for life"
+      ]
+    },
+    {
+      "ID": 67700,
+      "Entries": [
+        "Inventory_Gesture: Oh"
+      ]
+    },
+    {
+      "ID": 67710,
+      "Entries": [
+        "Inventory_Gesture: Swear by the sword 2"
+      ]
+    },
+    {
+      "ID": 67720,
+      "Entries": [
+        "Inventory_Gesture: Beating chest"
+      ]
+    },
+    {
+      "ID": 67730,
+      "Entries": [
+        "Inventory_Gesture: Spinning around in joy (for women)"
+      ]
+    },
+    {
+      "ID": 67740,
+      "Entries": [
+        "Inventory_Gesture: I've got an idea!"
+      ]
+    },
+    {
+      "ID": 67750,
+      "Entries": [
+        "Inventory_Gesture: Slumping"
+      ]
+    },
+    {
+      "ID": 67760,
+      "Entries": [
+        "Inventory_Gesture: Sit on a patch"
+      ]
+    },
+    {
+      "ID": 67770,
+      "Entries": [
+        "Inventory_Gesture: Cross-legged"
+      ]
+    },
+    {
+      "ID": 67780,
+      "Entries": [
+        "Inventory_Gesture: Sitting on one knee"
+      ]
+    },
+    {
+      "ID": 67790,
+      "Entries": [
+        "Inventory_Gesture: Woman sitting"
+      ]
+    },
+    {
+      "ID": 67800,
+      "Entries": [
+        "Inventory_Gesture: Cross-legged sleep"
+      ]
+    },
+    {
+      "ID": 67810,
+      "Entries": [
+        "Inventory_Gesture: Sleep"
+      ]
+    },
+    {
+      "ID": 67820,
+      "Entries": [
+        "Inventory_Gesture: Playing dead"
+      ]
+    },
+    {
+      "ID": 67830,
+      "Entries": [
+        "Inventory_Gesture: Standing in a yurt"
+      ]
+    },
+    {
+      "ID": 67840,
+      "Entries": [
+        "Inventory_Gesture: Pray"
+      ]
+    },
+    {
+      "ID": 67850,
+      "Entries": [
+        "Inventory_Gesture: Pray 2"
+      ]
+    },
+    {
+      "ID": 67860,
+      "Entries": [
+        "Inventory_Gesture: Special religion 1"
+      ]
+    },
+    {
+      "ID": 67870,
+      "Entries": [
+        "Inventory_Gesture: Raise both hands and hold"
+      ]
+    },
+    {
+      "ID": 67880,
+      "Entries": [
+        "Inventory_Gesture: Golden Rule T pose"
+      ]
+    },
+    {
+      "ID": 67890,
+      "Entries": [
+        "Inventory_Gesture: Golden Rule inverted T pose"
+      ]
+    },
+    {
+      "ID": 67900,
+      "Entries": [
+        "Inventory_Gesture: Golden Rule T-pose"
+      ]
+    },
+    {
+      "ID": 67910,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"Hello\""
+      ]
+    },
+    {
+      "ID": 67920,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"Thank you\""
+      ]
+    },
+    {
+      "ID": 67930,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"I'm sorry\""
+      ]
+    },
+    {
+      "ID": 67940,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"Amazing\""
+      ]
+    },
+    {
+      "ID": 67950,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"Help me\""
+      ]
+    },
+    {
+      "ID": 67960,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"I love you. You are my sunshine\""
+      ]
+    },
+    {
+      "ID": 67970,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice \"Now, let's get started\""
+      ]
+    },
+    {
+      "ID": 67980,
+      "Entries": [
+        "Inventory_Gesture: Farewell Voice_Mother's Voice Item"
+      ]
+    },
+    {
+      "ID": 68000,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68010,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68020,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68030,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68040,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68050,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68060,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68070,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68080,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68090,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68100,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68110,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68120,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68130,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68140,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68150,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68160,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68170,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68180,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68190,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68200,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68210,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68220,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68230,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68240,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68250,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68260,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68270,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68280,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68290,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68300,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68310,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68320,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68330,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68340,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68350,
+      "Entries": [
+        "Inventory_management_skin"
+      ]
+    },
+    {
+      "ID": 68500,
+      "Entries": [
+        "Inventory_Avenger_Unlocked Antiques"
+      ]
+    },
+    {
+      "ID": 68510,
+      "Entries": [
+        "Inventory_Ghost_Shop_Lineup00"
+      ]
+    },
+    {
+      "ID": 68520,
+      "Entries": [
+        "Inventory_Ghost_Shop_Lineup01"
+      ]
+    },
+    {
+      "ID": 68530,
+      "Entries": [
+        "Inventory_Ghost_Shop_Lineup02"
+      ]
+    },
+    {
+      "ID": 69000,
+      "Entries": [
+        "[TUT]Event:Camera"
+      ]
+    },
+    {
+      "ID": 69010,
+      "Entries": [
+        "[TUT]Event:Item Use"
+      ]
+    },
+    {
+      "ID": 69020,
+      "Entries": [
+        "[TUT]Event:Bonfire"
+      ]
+    },
+    {
+      "ID": 69030,
+      "Entries": [
+        "[TUT]Event: Lock"
+      ]
+    },
+    {
+      "ID": 69040,
+      "Entries": [
+        "[TUT]Event: Basic Attack (Weak)"
+      ]
+    },
+    {
+      "ID": 69050,
+      "Entries": [
+        "[TUT]Event: Basic Attack (Strong)"
+      ]
+    },
+    {
+      "ID": 69060,
+      "Entries": [
+        "[TUT]Event: Magic"
+      ]
+    },
+    {
+      "ID": 69070,
+      "Entries": [
+        "[TUT]Event: Rolling"
+      ]
+    },
+    {
+      "ID": 69080,
+      "Entries": [
+        "[TUT]Event: Jump"
+      ]
+    },
+    {
+      "ID": 69090,
+      "Entries": [
+        "[TUT]Event: Dash"
+      ]
+    },
+    {
+      "ID": 69100,
+      "Entries": [
+        "[TUT]Event: Weapon Switch"
+      ]
+    },
+    {
+      "ID": 69110,
+      "Entries": [
+        "[TUT]Event: Lock Switch"
+      ]
+    },
+    {
+      "ID": 69120,
+      "Entries": [
+        "[TUT]Event: Guard"
+      ]
+    },
+    {
+      "ID": 69130,
+      "Entries": [
+        "[TUT]Event: Bow Usage"
+      ]
+    },
+    {
+      "ID": 69140,
+      "Entries": [
+        "[TUT]Event: Crouch"
+      ]
+    },
+    {
+      "ID": 69150,
+      "Entries": [
+        "[TUT]Event: Fatal Blow"
+      ]
+    },
+    {
+      "ID": 69160,
+      "Entries": [
+        "[TUT]Event: Jump Attack/Charge/Guard Counter"
+      ]
+    },
+    {
+      "ID": 69200,
+      "Entries": [
+        "[TUT]Event: Night Rain"
+      ]
+    },
+    {
+      "ID": 69210,
+      "Entries": [
+        "[TUT]Event: Additional Effects and Rarity"
+      ]
+    },
+    {
+      "ID": 69990,
+      "Entries": [
+        "A flag that is set when you enter the lobby from MOVEMAP_TEST or the title screen. If you play multiplayer with this set, the game start event will run."
+      ]
+    },
+    {
+      "ID": 69991,
+      "Entries": [
+        "A flag that is set in debug mode to automatically set the game start event."
+      ]
+    },
+    {
+      "ID": 69992,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 69993,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 69994,
+      "Entries": [
+        "Missing number"
+      ]
+    },
+    {
+      "ID": 69995,
+      "Entries": [
+        "A flag that skips the game start event or interval event that stops the game time when set."
+      ]
+    },
+    {
+      "ID": 72000,
+      "Entries": [
+        "Map point parameter flag"
+      ]
+    },
+    {
+      "ID": 72100,
+      "Entries": [
+        "Flag for retiring from battle on scenario-only maps"
+      ]
+    },
+    {
+      "ID": 72110,
+      "Entries": [
+        "Flag for forced termination of cutscenes"
+      ]
+    },
+    {
+      "ID": 72200,
+      "Entries": [
+        "Map icon operation flag for TUT"
+      ]
+    },
+    {
+      "ID": 72201,
+      "Entries": [
+        "Map icon operation flag for TUT"
+      ]
+    },
+    {
+      "ID": 72250,
+      "Entries": [
+        "Bird movement map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72251,
+      "Entries": [
+        "Bird movement map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72252,
+      "Entries": [
+        "Bird movement map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72253,
+      "Entries": [
+        "Bird movement map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72255,
+      "Entries": [
+        "Bird movement map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72560,
+      "Entries": [
+        "Tunnel map icon operation flag"
+      ]
+    },
+    {
+      "ID": 72561,
+      "Entries": [
+        "Tunnel map icon operation flag_corruption"
+      ]
+    },
+    {
+      "ID": 77000,
+      "Entries": [
+        "In-game_sync for conversation"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Shop lineup management flag 00"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Shop lineup management flag 01"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Shop lineup management flag 02"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "Shop lineup management flag 03"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "Shop lineup management flag 04"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "Shop lineup management flag 05"
+      ]
+    },
+    {
+      "ID": 90006,
+      "Entries": [
+        "Shop lineup management flag 06"
+      ]
+    },
+    {
+      "ID": 90007,
+      "Entries": [
+        "Shop lineup management flag 07"
+      ]
+    },
+    {
+      "ID": 90008,
+      "Entries": [
+        "Shop lineup management flag 08"
+      ]
+    },
+    {
+      "ID": 90009,
+      "Entries": [
+        "Shop lineup management flag 09"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "Shop lineup management flag 10"
+      ]
+    },
+    {
+      "ID": 90011,
+      "Entries": [
+        "Shop lineup management flag 11"
+      ]
+    },
+    {
+      "ID": 90012,
+      "Entries": [
+        "Shop lineup management flag 12"
+      ]
+    },
+    {
+      "ID": 90013,
+      "Entries": [
+        "Shop lineup management flag 13"
+      ]
+    },
+    {
+      "ID": 90014,
+      "Entries": [
+        "Shop lineup management flag 14"
+      ]
+    },
+    {
+      "ID": 90015,
+      "Entries": [
+        "Shop lineup management flag 15"
+      ]
+    },
+    {
+      "ID": 90016,
+      "Entries": [
+        "Shop lineup management flag 16"
+      ]
+    },
+    {
+      "ID": 90017,
+      "Entries": [
+        "Shop lineup management flag 17"
+      ]
+    },
+    {
+      "ID": 90018,
+      "Entries": [
+        "Shop lineup management flag 18"
+      ]
+    },
+    {
+      "ID": 90019,
+      "Entries": [
+        "Shop lineup management flag 19"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "Shop lineup management flag 20"
+      ]
+    },
+    {
+      "ID": 90021,
+      "Entries": [
+        "Shop lineup management flag 21"
+      ]
+    },
+    {
+      "ID": 90022,
+      "Entries": [
+        "Shop lineup management flag 22"
+      ]
+    },
+    {
+      "ID": 90023,
+      "Entries": [
+        "Shop lineup management flag 23"
+      ]
+    },
+    {
+      "ID": 90024,
+      "Entries": [
+        "Shop lineup management flag 24"
+      ]
+    },
+    {
+      "ID": 90025,
+      "Entries": [
+        "Shop lineup management flag 25"
+      ]
+    },
+    {
+      "ID": 90026,
+      "Entries": [
+        "Shop lineup management flag 26"
+      ]
+    },
+    {
+      "ID": 90027,
+      "Entries": [
+        "Shop lineup management flag 27"
+      ]
+    },
+    {
+      "ID": 90028,
+      "Entries": [
+        "Shop lineup management flag 28"
+      ]
+    },
+    {
+      "ID": 90029,
+      "Entries": [
+        "Shop lineup management flag 29"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "Shop lineup management flag 30"
+      ]
+    },
+    {
+      "ID": 90031,
+      "Entries": [
+        "Shop lineup management flag 31"
+      ]
+    },
+    {
+      "ID": 90032,
+      "Entries": [
+        "Shop lineup management flag 32"
+      ]
+    },
+    {
+      "ID": 90033,
+      "Entries": [
+        "Shop lineup management flag 33"
+      ]
+    },
+    {
+      "ID": 90034,
+      "Entries": [
+        "Shop lineup management flag 34"
+      ]
+    },
+    {
+      "ID": 90035,
+      "Entries": [
+        "Shop lineup management flag 35"
+      ]
+    },
+    {
+      "ID": 90036,
+      "Entries": [
+        "Shop lineup management flag 36"
+      ]
+    },
+    {
+      "ID": 90037,
+      "Entries": [
+        "Shop lineup management flag 37"
+      ]
+    },
+    {
+      "ID": 90038,
+      "Entries": [
+        "Shop lineup management flag 38"
+      ]
+    },
+    {
+      "ID": 90039,
+      "Entries": [
+        "Shop lineup management flag 39"
+      ]
+    },
+    {
+      "ID": 90040,
+      "Entries": [
+        "Shop lineup management flag 40"
+      ]
+    },
+    {
+      "ID": 90041,
+      "Entries": [
+        "Shop lineup management flag 41"
+      ]
+    },
+    {
+      "ID": 90042,
+      "Entries": [
+        "Shop lineup management flag 42"
+      ]
+    },
+    {
+      "ID": 90043,
+      "Entries": [
+        "Shop lineup management flag 43"
+      ]
+    },
+    {
+      "ID": 90044,
+      "Entries": [
+        "Shop lineup management flag 44"
+      ]
+    },
+    {
+      "ID": 90045,
+      "Entries": [
+        "Shop lineup management flag 45"
+      ]
+    },
+    {
+      "ID": 90046,
+      "Entries": [
+        "Shop lineup management flag 46"
+      ]
+    },
+    {
+      "ID": 90047,
+      "Entries": [
+        "Shop lineup management flag 47"
+      ]
+    },
+    {
+      "ID": 90048,
+      "Entries": [
+        "Shop lineup management flag 48"
+      ]
+    },
+    {
+      "ID": 90049,
+      "Entries": [
+        "Shop lineup management flag 49"
+      ]
+    },
+    {
+      "ID": 90050,
+      "Entries": [
+        "Shop lineup management flag 50"
+      ]
+    },
+    {
+      "ID": 90051,
+      "Entries": [
+        "Shop lineup management flag 51"
+      ]
+    },
+    {
+      "ID": 90052,
+      "Entries": [
+        "Shop lineup management flag 52"
+      ]
+    },
+    {
+      "ID": 90053,
+      "Entries": [
+        "Shop lineup management flag 53"
+      ]
+    },
+    {
+      "ID": 90054,
+      "Entries": [
+        "Shop lineup management flag 54"
+      ]
+    },
+    {
+      "ID": 90055,
+      "Entries": [
+        "Shop lineup management flag 55"
+      ]
+    },
+    {
+      "ID": 90056,
+      "Entries": [
+        "Shop lineup management flag 56"
+      ]
+    },
+    {
+      "ID": 90057,
+      "Entries": [
+        "Shop lineup management flag 57"
+      ]
+    },
+    {
+      "ID": 90058,
+      "Entries": [
+        "Shop lineup management flag 58"
+      ]
+    },
+    {
+      "ID": 90059,
+      "Entries": [
+        "Shop lineup management flag 59"
+      ]
+    },
+    {
+      "ID": 90060,
+      "Entries": [
+        "Shop lineup management flag 60"
+      ]
+    },
+    {
+      "ID": 90061,
+      "Entries": [
+        "Shop lineup management flag 61"
+      ]
+    },
+    {
+      "ID": 90062,
+      "Entries": [
+        "Shop lineup management flag 62"
+      ]
+    },
+    {
+      "ID": 90063,
+      "Entries": [
+        "Shop lineup management flag 63"
+      ]
+    },
+    {
+      "ID": 90064,
+      "Entries": [
+        "Shop lineup management flag 64"
+      ]
+    },
+    {
+      "ID": 90065,
+      "Entries": [
+        "Shop lineup management flag 65"
+      ]
+    },
+    {
+      "ID": 90066,
+      "Entries": [
+        "Shop lineup management flag 66"
+      ]
+    },
+    {
+      "ID": 90067,
+      "Entries": [
+        "Shop lineup management flag 67"
+      ]
+    },
+    {
+      "ID": 90068,
+      "Entries": [
+        "Shop lineup management flag 68"
+      ]
+    },
+    {
+      "ID": 90069,
+      "Entries": [
+        "Shop lineup management flag 69"
+      ]
+    },
+    {
+      "ID": 90070,
+      "Entries": [
+        "Shop lineup management flag 70"
+      ]
+    },
+    {
+      "ID": 90071,
+      "Entries": [
+        "Shop lineup management flag 71"
+      ]
+    },
+    {
+      "ID": 90072,
+      "Entries": [
+        "Shop lineup management flag 72"
+      ]
+    },
+    {
+      "ID": 90073,
+      "Entries": [
+        "Shop lineup management flag 73"
+      ]
+    },
+    {
+      "ID": 90074,
+      "Entries": [
+        "Shop lineup management flag 74"
+      ]
+    },
+    {
+      "ID": 90075,
+      "Entries": [
+        "Shop lineup management flag 75"
+      ]
+    },
+    {
+      "ID": 90076,
+      "Entries": [
+        "Shop lineup management flag 76"
+      ]
+    },
+    {
+      "ID": 90077,
+      "Entries": [
+        "Shop lineup management flag 77"
+      ]
+    },
+    {
+      "ID": 90078,
+      "Entries": [
+        "Shop lineup management flag 78"
+      ]
+    },
+    {
+      "ID": 90079,
+      "Entries": [
+        "Shop lineup management flag 79"
+      ]
+    },
+    {
+      "ID": 90080,
+      "Entries": [
+        "Shop lineup management flag 80"
+      ]
+    },
+    {
+      "ID": 90081,
+      "Entries": [
+        "Shop lineup management flag 81"
+      ]
+    },
+    {
+      "ID": 90082,
+      "Entries": [
+        "Shop lineup management flag 82"
+      ]
+    },
+    {
+      "ID": 90083,
+      "Entries": [
+        "Shop lineup management flag 83"
+      ]
+    },
+    {
+      "ID": 90084,
+      "Entries": [
+        "Shop lineup management flag 84"
+      ]
+    },
+    {
+      "ID": 90085,
+      "Entries": [
+        "Shop lineup management flag 85"
+      ]
+    },
+    {
+      "ID": 90086,
+      "Entries": [
+        "Shop lineup management flag 86"
+      ]
+    },
+    {
+      "ID": 90087,
+      "Entries": [
+        "Shop lineup management flag 87"
+      ]
+    },
+    {
+      "ID": 90088,
+      "Entries": [
+        "Shop lineup management flag 88"
+      ]
+    },
+    {
+      "ID": 90089,
+      "Entries": [
+        "Shop lineup management flag 89"
+      ]
+    },
+    {
+      "ID": 90090,
+      "Entries": [
+        "Shop lineup management flag 90"
+      ]
+    },
+    {
+      "ID": 90091,
+      "Entries": [
+        "Shop lineup management flag 91"
+      ]
+    },
+    {
+      "ID": 90092,
+      "Entries": [
+        "Shop lineup management flag 92"
+      ]
+    },
+    {
+      "ID": 90093,
+      "Entries": [
+        "Shop lineup management flag 93"
+      ]
+    },
+    {
+      "ID": 90094,
+      "Entries": [
+        "Shop lineup management flag 94"
+      ]
+    },
+    {
+      "ID": 90095,
+      "Entries": [
+        "Shop lineup management flag 95"
+      ]
+    },
+    {
+      "ID": 90096,
+      "Entries": [
+        "Shop lineup management flag 96"
+      ]
+    },
+    {
+      "ID": 90097,
+      "Entries": [
+        "Shop lineup management flag 97"
+      ]
+    },
+    {
+      "ID": 90098,
+      "Entries": [
+        "Shop lineup management flag 98"
+      ]
+    },
+    {
+      "ID": 90099,
+      "Entries": [
+        "Shop lineup management flag 99"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "Shop lineup inventory management flag"
+      ]
+    },
+    {
+      "ID": 96000,
+      "Entries": [
+        "Map point parameter flag_asynchronous"
+      ]
+    },
+    {
+      "ID": 97000,
+      "Entries": [
+        "In-game conversation flag_asynchronous"
+      ]
+    },
+    {
+      "ID": 99970,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99971,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99972,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99973,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99974,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99975,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99976,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99977,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99978,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    },
+    {
+      "ID": 99979,
+      "Entries": [
+        "Ice Wyvern"
+      ]
+    }
+  ]
+}

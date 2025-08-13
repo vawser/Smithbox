@@ -1,0 +1,23 @@
+{
+  "Name": "GarageCutsceneParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Number 0 is a MapUid for starting a resident conversation, so it cannot be used in the garage."
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "helicopter garage"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "D tier garage"
+      ]
+    }
+  ]
+}

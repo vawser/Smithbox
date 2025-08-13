@@ -1,0 +1,525 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "[Decal] ALL / MAIN / SUB",
+        "[Decal] ALL / MAIN / SUB",
+        "[Decal] ALL / MAIN / SUB"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Auto Assemble] None / BIPEDAL / REVERSE JOINT / TETRAPOD / TANK",
+        "[Auto Assemble] None / BIPEDAL / REVERSE JOINT / TETRAPOD / TANK",
+        "[Auto Assemble] None / BIPEDAL / REVERSE JOINT / TETRAPOD / TANK",
+        "[Auto Assemble] None / BIPEDAL / REVERSE JOINT / TETRAPOD / TANK",
+        "[Auto Assemble] None / BIPEDAL / REVERSE JOINT / TETRAPOD / TANK"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Auto Assemble] None ",
+        "[Auto Assemble] None ",
+        "[Auto Assemble] None ",
+        "[Auto Assemble] None ",
+        "[Auto Assemble] None "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)",
+        "[Language] Default / Japanese / English / French / Spanish / Italian / Dutch / Korean / Traditional Chinese / Simplified Chinese / Polish / Russian / Portuguese (Brasil) / Spanish (Americian)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English",
+        "[Language] Region Based / Japanese / English"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "[Gender] ",
+        "[Gender] "
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Option] ON / OFF",
+        "[Option] ON / OFF"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[Option] Normal / Inverted",
+        "[Option] Normal / Inverted"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3",
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3",
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3",
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3",
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3",
+        "[Option] TYPE A / TYPE B / TYPE C / Custom 1 / Custom 2 / Custom 3"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "[HUD Display] Always Hide / Always Show / Automatic",
+        "[HUD Display] Always Hide / Always Show / Automatic",
+        "[HUD Display] Always Hide / Always Show / Automatic"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "[Boost Operation] TYPE B / TYPE C / TYP ED / TYPE A",
+        "[Boost Operation] TYPE B / TYPE C / TYP ED / TYPE A",
+        "[Boost Operation] TYPE B / TYPE C / TYP ED / TYPE A",
+        "[Boost Operation] TYPE B / TYPE C / TYP ED / TYPE A"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "[Assault Boost Operation] TYPE A / TYPE B",
+        "[Assault Boost Operation] TYPE A / TYPE B"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "[Limiter Release Operation] TYPE A / TYPE B",
+        "[Limiter Release Operation] TYPE A / TYPE B"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "[Input Device] Controller / Keyboard and Mouse",
+        "[Input Device] Controller / Keyboard and Mouse"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "[Screen Mode] Windowed / Fullscreen / Borderless Window",
+        "[Screen Mode] Windowed / Fullscreen / Borderless Window",
+        "[Screen Mode] Windowed / Fullscreen / Borderless Window"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "[HUD layout] ",
+        "[HUD layout] ",
+        "[HUD layout] ",
+        "[HUD layout] "
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "[Option] Enable / Disable",
+        "[Option] Enable / Disable"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "[Option] Agree/Disagree",
+        "[Option] Agree/Disagree"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia",
+        "[Match Region] Global / Japan / North American (West) / North American (East) / South America / Oceania / Africa, Europe, Middle East / Asia"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "[Player Name] PILOT NAME / ?",
+        "[Player Name] PILOT NAME / ?"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "[Launch Settings] Online / Offline",
+        "[Launch Settings] Online / Offline"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "[Ray Tracing] OFF / ON",
+        "[Ray Tracing] OFF / ON"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "[FPS Limit] 30 / 60 / 90 / 120",
+        "[FPS Limit] 30 / 60 / 90 / 120",
+        "[FPS Limit] 30 / 60 / 90 / 120",
+        "[FPS Limit] 30 / 60 / 90 / 120"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Grass Quality] Low / Medium / High / Maximum / Custom",
+        "[Grass Quality] Low / Medium / High / Maximum / Custom",
+        "[Grass Quality] Low / Medium / High / Maximum / Custom",
+        "[Grass Quality] Low / Medium / High / Maximum / Custom",
+        "[Grass Quality] Low / Medium / High / Maximum / Custom"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Grass Quality] OFF / Low / Medium / High / Maximum",
+        "[Grass Quality] OFF / Low / Medium / High / Maximum",
+        "[Grass Quality] OFF / Low / Medium / High / Maximum",
+        "[Grass Quality] OFF / Low / Medium / High / Maximum",
+        "[Grass Quality] OFF / Low / Medium / High / Maximum"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Graphical Quality] OFF / Low / Medium / High",
+        "[Graphical Quality] OFF / Low / Medium / High",
+        "[Graphical Quality] OFF / Low / Medium / High",
+        "[Graphical Quality] OFF / Low / Medium / High"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Grass Quality] OFF / Medium / High / Maximum",
+        "[Grass Quality] OFF / Medium / High / Maximum",
+        "[Grass Quality] OFF / Medium / High / Maximum",
+        "[Grass Quality] OFF / Medium / High / Maximum"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "[Grass Quality] Low / Medium / High / Maximum",
+        "[Grass Quality] Low / Medium / High / Maximum",
+        "[Grass Quality] Low / Medium / High / Maximum",
+        "[Grass Quality] Low / Medium / High / Maximum"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "[Grass Quality] Low / Medium / High",
+        "[Grass Quality] Low / Medium / High",
+        "[Grass Quality] Low / Medium / High"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "[Anti-Alias Quality] OFF / Low / High",
+        "[Anti-Alias Quality] OFF / Low / High",
+        "[Anti-Alias Quality] OFF / Low / High"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "[Reflection Quality] Low / High / Maximum",
+        "[Reflection Quality] Low / High / Maximum",
+        "[Reflection Quality] Low / High / Maximum"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "[Water Quality] Low / High",
+        "[Water Quality] Low / High"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "[Perfomance Target] Quality / Performance",
+        "[Perfomance Target] Quality / Performance"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Photo Mode: Blur Type] ",
+        "[Photo Mode: Blur Type] ",
+        "[Photo Mode: Blur Type] "
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] ",
+        "[Quick Chat] "
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players",
+        "[Room Settings: Number] ALL / 2 players / 3 players / 4 players / 5 players / 6 players / 7 players / 8 players / 9 players"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "[Room Settings: Rules] ALL / Single / Team",
+        "[Room Settings: Rules] ALL / Single / Team",
+        "[Room Settings: Rules] ALL / Single / Team"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes ",
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes ",
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes ",
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes ",
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes ",
+        "[Room Settings: Time Limit] ALL / 2 minutes / 3 minutes / 5 minutes / 7 minutes / 10 minutes "
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]",
+        "[Room Settings: Map]"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "[Room Settings: Team Participation Method] All / Locked / Losers Rotate / Winners Rotate / ?",
+        "[Room Settings: Team Participation Method] All / Locked / Losers Rotate / Winners Rotate / ?",
+        "[Room Settings: Team Participation Method] All / Locked / Losers Rotate / Winners Rotate / ?",
+        "[Room Settings: Team Participation Method] All / Locked / Losers Rotate / Winners Rotate / ?",
+        "[Room Settings: Team Participation Method] All / Locked / Losers Rotate / Winners Rotate / ?"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "[Room Settings: Publication Mode] Open / Private",
+        "[Room Settings: Publication Mode] Open / Private"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "[Online Arena: Battle Mode] RANKED MATCH: SINGLE / RANKED MATCH: TEAM / CUSTOM MATCH",
+        "[Online Arena: Battle Mode] RANKED MATCH: SINGLE / RANKED MATCH: TEAM / CUSTOM MATCH",
+        "[Online Arena: Battle Mode] RANKED MATCH: SINGLE / RANKED MATCH: TEAM / CUSTOM MATCH"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "[Notification: Category] Please select / Emblem / AC / User name, etc. / Style of play",
+        "[Notification: Category] Please select / Emblem / AC / User name, etc. / Style of play",
+        "[Notification: Category] Please select / Emblem / AC / User name, etc. / Style of play",
+        "[Notification: Category] Please select / Emblem / AC / User name, etc. / Style of play",
+        "[Notification: Category] Please select / Emblem / AC / User name, etc. / Style of play"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] ",
+        "[Report: Reason] "
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "[Notification] Please select the reason",
+        "[Notification] No reason",
+        "[Report] Reason: Cheating",
+        "[Report] Reason: Abuse of defect",
+        "[Report] Reason: Match abandoned",
+        "[Report] Reason for neglecting the game",
+        "[Report] Reason: Hate speech",
+        "[Report] Reason: Offensive remarks",
+        "[Report] Reason: Stalking",
+        "[Report] Reason: Threat"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "[Notification] Please select the reason",
+        "[Notification] No reason",
+        "[Report] Reason: Discriminatory expressions",
+        "[Report] Reason: Obscene expression",
+        "[Report] Reason: Commercial advertising purpose",
+        "[Report] Reason Personal information",
+        "[Report] Reason: Slander",
+        "[Report] Reason: Violating the rights of others",
+        ""
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "[Parameter Display: Size] S / M / L / XL",
+        "[Parameter Display: Size] S / M / L / XL",
+        "[Parameter Display: Size] S / M / L / XL",
+        "[Parameter Display: Size] S / M / L / XL"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "[Parameter display] Size《S》/M/L/XL",
+        "[Parameter display] Size S/《M》/L/XL",
+        "[Parameter display] Size S/M/《L》/XL",
+        "[Parameter display] Size S/M/L/《XL》"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "[Parameter Display: Shooting Type] Semi-Auto / Burst / Full-Auto / Charge",
+        "[Parameter Display: Shooting Type] Semi-Auto / Burst / Full-Auto / Charge",
+        "[Parameter Display: Shooting Type] Semi-Auto / Burst / Full-Auto / Charge",
+        "[Parameter Display: Shooting Type] Semi-Auto / Burst / Full-Auto / Charge"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "[AC Test: Enemy Pattern] Bipedal MTs + Drones / Tetrapod MT / Trainer AC / None",
+        "[AC Test: Enemy Pattern] Bipedal MTs + Drones / Tetrapod MT / Trainer AC / None",
+        "[AC Test: Enemy Pattern] Bipedal MTs + Drones / Tetrapod MT / Trainer AC / None",
+        "[AC Test: Enemy Pattern] Bipedal MTs + Drones / Tetrapod MT / Trainer AC / None"
+      ]
+    }
+  ]
+}

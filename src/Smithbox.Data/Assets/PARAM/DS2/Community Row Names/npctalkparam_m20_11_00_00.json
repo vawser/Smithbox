@@ -1,0 +1,377 @@
+{
+  "Name": "npctalkparam_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 76000000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 76000010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 76000110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000200,
+      "Entries": [
+        "Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 76000210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000300,
+      "Entries": [
+        "Talking To: Part 4"
+      ]
+    },
+    {
+      "ID": 76000310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000400,
+      "Entries": [
+        "Talking To: Part 5"
+      ]
+    },
+    {
+      "ID": 76000410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000500,
+      "Entries": [
+        "Item transfer"
+      ]
+    },
+    {
+      "ID": 76000510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000600,
+      "Entries": [
+        "Captive Girl: Rescue Achieved"
+      ]
+    },
+    {
+      "ID": 76000610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76000620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76006000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 76006010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76009000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 76009100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 76009200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 76009300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 76009400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76009410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76009420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76009500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 76009600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 76010000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 76010010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 76010110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010200,
+      "Entries": [
+        "Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 76010210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010300,
+      "Entries": [
+        "Talking To: Part 4"
+      ]
+    },
+    {
+      "ID": 76010310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010400,
+      "Entries": [
+        "Item transfer"
+      ]
+    },
+    {
+      "ID": 76010410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010500,
+      "Entries": [
+        "Captive Girl: Rescue Achieved"
+      ]
+    },
+    {
+      "ID": 76010510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76010520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76016000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 76016010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76019000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 76019100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 76019200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 76019300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 76019400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76019410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76019420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76019500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 76019600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "Name": "ReinforceParamProtector",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "usually"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal + 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal + 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal + 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal + 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal + 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal + 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal + 7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal + 8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal + 9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal + 10"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "special"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Special + 1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Special + 2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Special + 3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Special + 4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Special + 5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "Name": "ToughnessParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Enemies - Generic"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Generic: 1.0 x "
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Versatile: 1.5 x "
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Generic: 2.0 X "
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "General Purpose: 2.5 x "
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Generic: 3.0 x "
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Attack: one hand: weak "
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Attack: one hand: weak: Minimum warranty "
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Attack: one hand: Strong "
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Attack: one hand: strong: Minimum security "
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Attack: one hand: Strong Max Infuser "
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Attack: one hand: Strong max Infuser: Minimum security "
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

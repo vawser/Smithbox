@@ -1,0 +1,1685 @@
+{
+  "Name": "FeTextEffectParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "[Basic notification] Mission start -- 【基本通知】ミッション開始"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Basic notification] Mission successful -- 【基本通知】ミッション成功"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Basic notification] Mission failed -- 【基本通知】ミッション失敗"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Basic notification] Mission update -- 【基本通知】ミッション更新"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Basic notification] Training starts -- 【基本通知】トレーニング開始"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[Basic notification] Training success -- 【基本通知】トレーニング成功"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[Basic notification] Training failure -- 【基本通知】トレーニング失敗"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[Basic notification] Training update -- 【基本通知】トレーニング更新"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Basic notification] Defeat the enemy (success conditions are met) -- 【基本通知】敵撃破(成功条件を満たす)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Basic notification] Defeat multiple enemies (success conditions are met) -- 【基本通知】複数敵撃破(成功条件を満たす)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Basic notification] Facility destruction (success conditions are met) -- 【基本通知】施設破壊(成功条件を満たす)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[Basic notification] Destroy multiple facilities (success conditions are met) -- 【基本通知】複数施設破壊(成功条件を満たす)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[Basic notification] Player killed by defeat -- 【基本通知】プレイヤー撃破死亡"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[Basic notification] Player dies from falling -- 【基本通知】プレイヤー落下死亡"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[Basic notification] Player time up -- 【基本通知】プレイヤータイムアップ"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Basic notification] Defeat the middle boss -- 【基本通知】中ボスを撃破"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[Basic notification] Defeat medium target -- 【基本通知】中ターゲットを撃破"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[Basic notification] Defeated in interpersonal battle (3 on 3) -- 【基本通知】対人戦（3 on 3）で撃破された"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "[Basic notice] Return from fall -- 【基本通知】落下復帰"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "[Basic notification] Supply completed -- 【基本通知】補給完了"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[Basic notification] Arena, interpersonal/falling death -- 【基本通知】アリーナ、対人/落下死亡"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Basic Notice] Arena, Round 1 -- 【基本通知】アリーナ、ラウンド1"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[Basic Notice] Arena, Round 2 -- 【基本通知】アリーナ、ラウンド2"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[Basic Notice] Arena, Round 3 -- 【基本通知】アリーナ、ラウンド3"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 1 -- 【基本通知】アリーナ、ラウンド1 開始時"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 2 -- 【基本通知】アリーナ、ラウンド2 開始時"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 3 -- 【基本通知】アリーナ、ラウンド3 開始時"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[Basic notification] Arena, 3on3 at the start of the match -- 【基本通知】アリーナ、3on3\u3000対戦開始時"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "[Basic notification] Responsibility -- 【基本通知】リスポン"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "[Basic notification] 3on3 upon respawn -- 【基本通知】3on3\u3000リスポン時"
+      ]
+    },
+    {
+      "ID": 20103000,
+      "Entries": [
+        "[Goal display] Prologue Aim for the catapult -- 【目標表示】\u3000プロローグ\u3000カタパルトを目指す"
+      ]
+    },
+    {
+      "ID": 20103010,
+      "Entries": [
+        "[Objective Display] Prologue Eliminate the armed forces in the new industrial area -- 【目標表示】\u3000プロローグ\u3000工業新地の武装勢力を排除する"
+      ]
+    },
+    {
+      "ID": 20103020,
+      "Entries": [
+        "[Objective display] Prologue: Destroy the enemy captured aircraft -- 【目標表示】\u3000プロローグ\u3000敵鹵獲機を撃破する"
+      ]
+    },
+    {
+      "ID": 20103030,
+      "Entries": [
+        "[Target display] Prologue: Assault the transport unit -- 【目標表示】\u3000プロローグ\u3000輸送部隊を襲撃する"
+      ]
+    },
+    {
+      "ID": 20103040,
+      "Entries": [
+        "[Objective display] Prologue: Destroy the enemy aircraft -- 【目標表示】\u3000プロローグ\u3000敵機を撃破する"
+      ]
+    },
+    {
+      "ID": 20103900,
+      "Entries": [
+        "[Goal Display] Obtain Prologue License -- 【目標表示】\u3000プロローグ\u3000ライセンスを手に入れる"
+      ]
+    },
+    {
+      "ID": 20103910,
+      "Entries": [
+        "[Target display] Investigate the wreckage -- 【目標表示】\u3000残骸を調査する"
+      ]
+    },
+    {
+      "ID": 20103920,
+      "Entries": [
+        "[Goal display] Prologue Defeat Pharaon. -- 【目標表示】\u3000プロローグ\u3000ファラオンを倒す。"
+      ]
+    },
+    {
+      "ID": 20103930,
+      "Entries": [
+        "[Target display] Investigate the wreckage_second time -- 【目標表示】\u3000残骸を調査する_二回目"
+      ]
+    },
+    {
+      "ID": 20103940,
+      "Entries": [
+        "[Goal Display] Obtain Prologue License -- 【目標表示】\u3000プロローグ\u3000ライセンスを手に入れる"
+      ]
+    },
+    {
+      "ID": 20103950,
+      "Entries": [
+        "[Target Display] Prologue Head to Pharaon location -- 【目標表示】\u3000プロローグ\u3000ファラオン場所へ向かう"
+      ]
+    },
+    {
+      "ID": 20103960,
+      "Entries": [
+        "[Goal Display] Prologue: Destroy the enemy -- 【目標表示】\u3000プロローグ\u3000敵を殲滅する"
+      ]
+    },
+    {
+      "ID": 20103970,
+      "Entries": [
+        "[Goal display] Prologue Aim for the catapult -- 【目標表示】\u3000プロローグ\u3000カタパルトを目指す"
+      ]
+    },
+    {
+      "ID": 20203010,
+      "Entries": [
+        "Destroy all substation facilities -- 変電施設を全て破壊する"
+      ]
+    },
+    {
+      "ID": 20203030,
+      "Entries": [
+        "Defeat Bayram AC -- ベイラムACを撃破する"
+      ]
+    },
+    {
+      "ID": 20203040,
+      "Entries": [
+        "Destroy remaining substation facilities -- 残る変電施設を破壊する"
+      ]
+    },
+    {
+      "ID": 20303010,
+      "Entries": [
+        "Eliminate Gatling turrets and quadruped MTs -- ガトリング砲台および四脚MTを排除する"
+      ]
+    },
+    {
+      "ID": 20303020,
+      "Entries": [
+        "Proceed inside the \"wall\" and reach the rooftop -- 「壁」の内部を進み、屋上に到達する"
+      ]
+    },
+    {
+      "ID": 20303030,
+      "Entries": [
+        "Destroy a heavy mobile artillery battery -- 重装機動砲台を撃破する"
+      ]
+    },
+    {
+      "ID": 20503000,
+      "Entries": [
+        "Eliminate the SG troops in the 1st section -- 第1区画のSG部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 20503010,
+      "Entries": [
+        "Eliminate the SG troops in the 2nd section -- 第2区画のSG部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 20503020,
+      "Entries": [
+        "Eliminate the SG troops in the 3rd section -- 第3区画のSG部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 20503030,
+      "Entries": [
+        "Destroy the sensing valve -- センシングバルブを破壊する"
+      ]
+    },
+    {
+      "ID": 20503040,
+      "Entries": [
+        "Destroy an unknown aircraft -- 不明機体を撃破する"
+      ]
+    },
+    {
+      "ID": 20503050,
+      "Entries": [
+        "Destroy the sensing valve -- センシングバルブを破壊する"
+      ]
+    },
+    {
+      "ID": 20503060,
+      "Entries": [
+        "Destroy an unknown aircraft -- 不明機体を撃破する"
+      ]
+    },
+    {
+      "ID": 20603000,
+      "Entries": [
+        "Enter the factory and investigate the interior. -- 工廠に入り、内部を調査する"
+      ]
+    },
+    {
+      "ID": 20603010,
+      "Entries": [
+        "destroy an attacker -- 襲撃機を撃破する"
+      ]
+    },
+    {
+      "ID": 20803000,
+      "Entries": [
+        "approach the mining ship -- 採掘艦に接近する"
+      ]
+    },
+    {
+      "ID": 20803005,
+      "Entries": [
+        "Destroy the legs of the mining ship -- 採掘艦の脚部を破壊する"
+      ]
+    },
+    {
+      "ID": 20803010,
+      "Entries": [
+        "Destroy the sub generator -- サブジェネレータを破壊"
+      ]
+    },
+    {
+      "ID": 20803020,
+      "Entries": [
+        "destroy the eyeball -- アイボールを破壊"
+      ]
+    },
+    {
+      "ID": 20803030,
+      "Entries": [
+        "leave the deck -- 甲板から離脱する"
+      ]
+    },
+    {
+      "ID": 21003000,
+      "Entries": [
+        "Collect as much junk as possible -- なるべく多くの廃品を回収する"
+      ]
+    },
+    {
+      "ID": 21003010,
+      "Entries": [
+        "Recovered parts 0 pieces -- 回収済パーツ\u30000個"
+      ]
+    },
+    {
+      "ID": 21003011,
+      "Entries": [
+        "Collected parts 1 piece -- 回収済パーツ\u30001個"
+      ]
+    },
+    {
+      "ID": 21003012,
+      "Entries": [
+        "Collected parts 2 pieces -- 回収済パーツ\u30002個"
+      ]
+    },
+    {
+      "ID": 21003013,
+      "Entries": [
+        "Collected parts 3 pieces -- 回収済パーツ\u30003個"
+      ]
+    },
+    {
+      "ID": 21003014,
+      "Entries": [
+        "Collected parts 4 pieces -- 回収済パーツ\u30004個"
+      ]
+    },
+    {
+      "ID": 21003015,
+      "Entries": [
+        "Collected parts 5 pieces -- 回収済パーツ\u30005個"
+      ]
+    },
+    {
+      "ID": 21003016,
+      "Entries": [
+        "6 recovered parts -- 回収済パーツ\u30006個"
+      ]
+    },
+    {
+      "ID": 21003017,
+      "Entries": [
+        "7 recovered parts -- 回収済パーツ\u30007個"
+      ]
+    },
+    {
+      "ID": 21003018,
+      "Entries": [
+        "8 recovered parts -- 回収済パーツ\u30008個"
+      ]
+    },
+    {
+      "ID": 21203000,
+      "Entries": [
+        "Aim for the top -- 上層を目指す"
+      ]
+    },
+    {
+      "ID": 21203010,
+      "Entries": [
+        "annihilate MT -- MTを殲滅する"
+      ]
+    },
+    {
+      "ID": 21203020,
+      "Entries": [
+        "Destroy the unmanned heavy machine that appears -- 現れた無人重機を撃破する"
+      ]
+    },
+    {
+      "ID": 21203030,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 21203040,
+      "Entries": [
+        "Aim for the top -- 上層を目指す"
+      ]
+    },
+    {
+      "ID": 21403000,
+      "Entries": [
+        "Escort a transport helicopter heading to rescue prisoners -- 捕虜救出に向かう輸送ヘリを護衛する"
+      ]
+    },
+    {
+      "ID": 21403010,
+      "Entries": [
+        "Escort the transport helicopter until it leaves the operational area -- 作戦領域離脱まで輸送ヘリを護衛する"
+      ]
+    },
+    {
+      "ID": 21403030,
+      "Entries": [
+        "G2 Nile/Defeat Bayram MT unit -- G2 ナイル / ベイラムMT部隊を撃破する"
+      ]
+    },
+    {
+      "ID": 21703520,
+      "Entries": [
+        "TGT approach 1 -- TGT接近１"
+      ]
+    },
+    {
+      "ID": 21703530,
+      "Entries": [
+        "TGT approach 2 -- TGT接近２"
+      ]
+    },
+    {
+      "ID": 21703540,
+      "Entries": [
+        "branch -- 分岐"
+      ]
+    },
+    {
+      "ID": 21703550,
+      "Entries": [
+        "eliminate the assassin -- 刺客を始末する"
+      ]
+    },
+    {
+      "ID": 21803000,
+      "Entries": [
+        "Aim for the rooftop -- 屋上を目指す"
+      ]
+    },
+    {
+      "ID": 21803010,
+      "Entries": [
+        "Destroy the unmanned weapon that appears -- 現れた無人兵器を撃破する"
+      ]
+    },
+    {
+      "ID": 21803020,
+      "Entries": [
+        "board the container -- コンテナに乗り込む"
+      ]
+    },
+    {
+      "ID": 21803030,
+      "Entries": [
+        "I went to the palace -- しゅうへんのじりつへいきたおす"
+      ]
+    },
+    {
+      "ID": 22003000,
+      "Entries": [
+        "Eliminate enemies in the facility -- 施設内の敵を殲滅する"
+      ]
+    },
+    {
+      "ID": 22003010,
+      "Entries": [
+        "destroy the enemy -- 敵を殲滅する"
+      ]
+    },
+    {
+      "ID": 22003020,
+      "Entries": [
+        "Special mission aircraft Cataphract / Defeat Ekdromoi -- 特務機体 カタフラクト / エクドロモイを撃破する"
+      ]
+    },
+    {
+      "ID": 22103000,
+      "Entries": [
+        "Defeat many transport helicopters -- 輸送ヘリを多く倒す"
+      ]
+    },
+    {
+      "ID": 22203000,
+      "Entries": [
+        "eliminate enemy forces -- 敵勢力を排除する"
+      ]
+    },
+    {
+      "ID": 22203010,
+      "Entries": [
+        "Defend large ballistic missiles -- 大型弾道ミサイルを防衛する"
+      ]
+    },
+    {
+      "ID": 22303000,
+      "Entries": [
+        "destroy the hacking device -- ハッキング装置を破壊する"
+      ]
+    },
+    {
+      "ID": 22303010,
+      "Entries": [
+        "Recovered parts: 0 -- 回収済パーツ\u3000０個"
+      ]
+    },
+    {
+      "ID": 22303020,
+      "Entries": [
+        "Collected parts 1 piece -- 回収済パーツ\u3000１個"
+      ]
+    },
+    {
+      "ID": 22303030,
+      "Entries": [
+        "2 recovered parts -- 回収済パーツ\u3000２個"
+      ]
+    },
+    {
+      "ID": 22303040,
+      "Entries": [
+        "3 recovered parts -- 回収済パーツ\u3000３個"
+      ]
+    },
+    {
+      "ID": 22303050,
+      "Entries": [
+        "4 recovered parts -- 回収済パーツ\u3000４個"
+      ]
+    },
+    {
+      "ID": 22303060,
+      "Entries": [
+        "Collected parts 5 pieces -- 回収済パーツ\u3000５個"
+      ]
+    },
+    {
+      "ID": 22303070,
+      "Entries": [
+        "6 recovered parts -- 回収済パーツ\u3000６個"
+      ]
+    },
+    {
+      "ID": 22303080,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 22303090,
+      "Entries": [
+        "destroy enemy aircraft -- 敵性機体を殲滅する"
+      ]
+    },
+    {
+      "ID": 22303100,
+      "Entries": [
+        "Destruction target remaining -- 破壊目標\u3000残り"
+      ]
+    },
+    {
+      "ID": 22303110,
+      "Entries": [
+        "Head to the data delivery location -- データの受け渡し場所へ向かう"
+      ]
+    },
+    {
+      "ID": 22403000,
+      "Entries": [
+        "Independent Mercenary King/Defeat Chartreuse -- 独立傭兵 キング / シャルトルーズを撃破する"
+      ]
+    },
+    {
+      "ID": 22403010,
+      "Entries": [
+        "Defeat the independent mercenary Ravens. -- 独立傭兵 レイヴンたちを撃破する"
+      ]
+    },
+    {
+      "ID": 22503000,
+      "Entries": [
+        "Mission begins -- ミッション開始"
+      ]
+    },
+    {
+      "ID": 22503010,
+      "Entries": [
+        "Old world MT appears -- 旧世界MT登場"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "Find the source of the signal -- 信号の発生源を調べる"
+      ]
+    },
+    {
+      "ID": 30003010,
+      "Entries": [
+        "blank -- 空白"
+      ]
+    },
+    {
+      "ID": 30003020,
+      "Entries": [
+        "destroy the transmitter -- 発信機を破壊する"
+      ]
+    },
+    {
+      "ID": 30103000,
+      "Entries": [
+        "Hack a power generation facility -- 発電施設をハッキングする"
+      ]
+    },
+    {
+      "ID": 30103100,
+      "Entries": [
+        "destroy the reinforcements -- 増援部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 30113000,
+      "Entries": [
+        "steal data -- データを奪取する"
+      ]
+    },
+    {
+      "ID": 30113020,
+      "Entries": [
+        "Prevent the transfer of observation data -- 観測データの受け渡しを阻止する"
+      ]
+    },
+    {
+      "ID": 30113100,
+      "Entries": [
+        "Destroying an amphibious assault ship -- 強襲揚陸艦の撃破"
+      ]
+    },
+    {
+      "ID": 30303000,
+      "Entries": [
+        "Destruction of fuel plant -- 燃料プラントの破壊"
+      ]
+    },
+    {
+      "ID": 30303100,
+      "Entries": [
+        "Defeat the enemy MT unit -- 敵MT部隊の撃破"
+      ]
+    },
+    {
+      "ID": 30433000,
+      "Entries": [
+        "Destroy an amphibious assault ship -- 強襲揚陸艦を破壊する"
+      ]
+    },
+    {
+      "ID": 30433010,
+      "Entries": [
+        "replenish ammunition -- 弾薬を補充する"
+      ]
+    },
+    {
+      "ID": 30433020,
+      "Entries": [
+        "Defeat enemy reinforcements -- 敵増援を撃破する"
+      ]
+    },
+    {
+      "ID": 30433030,
+      "Entries": [
+        "Boss battle -- ボス戦"
+      ]
+    },
+    {
+      "ID": 30433040,
+      "Entries": [
+        "Approach the ice worm signal -- アイスワームの信号に接近する"
+      ]
+    },
+    {
+      "ID": 32303000,
+      "Entries": [
+        "C Weapon: Defeat the Ice Worm -- C兵器 アイスワームを撃破する"
+      ]
+    },
+    {
+      "ID": 133203010,
+      "Entries": [
+        "control one's surroundings -- 周囲を制圧する"
+      ]
+    },
+    {
+      "ID": 133203020,
+      "Entries": [
+        "go to destination -- 目的地に向かう"
+      ]
+    },
+    {
+      "ID": 34103000,
+      "Entries": [
+        "collect supplies -- 物資を回収する"
+      ]
+    },
+    {
+      "ID": 34103010,
+      "Entries": [
+        "escape the mine shaft -- 坑道を脱出する"
+      ]
+    },
+    {
+      "ID": 34103020,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 34203000,
+      "Entries": [
+        "Investigate the machinery at the bottom of the mine shaft -- 坑道最奥の機械を調査する"
+      ]
+    },
+    {
+      "ID": 34203010,
+      "Entries": [
+        "escape from the mine -- 坑道から脱出する"
+      ]
+    },
+    {
+      "ID": 34303000,
+      "Entries": [
+        "\"Destroy the enemy aircraft\" -- 敵機体を撃破」する"
+      ]
+    },
+    {
+      "ID": 35003000,
+      "Entries": [
+        "Collect data logs -- データログを収集する"
+      ]
+    },
+    {
+      "ID": 40003000,
+      "Entries": [
+        "go deep -- 深部へ向かう"
+      ]
+    },
+    {
+      "ID": 40003100,
+      "Entries": [
+        "stop defense mechanism -- 防衛機構を停止する"
+      ]
+    },
+    {
+      "ID": 40003200,
+      "Entries": [
+        "Going deep 2 -- 深部へ向かう2"
+      ]
+    },
+    {
+      "ID": 40103000,
+      "Entries": [
+        "Depth 2: Reach the bottom -- 深度2：最奥に到達する"
+      ]
+    },
+    {
+      "ID": 40103010,
+      "Entries": [
+        "Depth 2: Reach the bottom -- 深度2：最奥に到達する"
+      ]
+    },
+    {
+      "ID": 40103100,
+      "Entries": [
+        "Destroy an unmanned defense weapon -- 無人防衛兵器を撃破する"
+      ]
+    },
+    {
+      "ID": 40103110,
+      "Entries": [
+        "Destroy an unmanned defense weapon -- 無人防衛兵器を撃破する"
+      ]
+    },
+    {
+      "ID": 40103120,
+      "Entries": [
+        "Destroy an unmanned defense weapon -- 無人防衛兵器を撃破する"
+      ]
+    },
+    {
+      "ID": 40203000,
+      "Entries": [
+        "Infiltrate the inside of a giant blast furnace -- 巨大高炉の内部に侵入する"
+      ]
+    },
+    {
+      "ID": 40203010,
+      "Entries": [
+        "Destroy the pressure chamber -- 変圧チャンバーを破壊する"
+      ]
+    },
+    {
+      "ID": 40203100,
+      "Entries": [
+        "Escape from inside the blast furnace -- 高炉内部から脱出する"
+      ]
+    },
+    {
+      "ID": 40203110,
+      "Entries": [
+        "Defeat Unmanned Defense AC Mayfly -- 無人防衛AC\u3000メイフライを撃破する"
+      ]
+    },
+    {
+      "ID": 40213000,
+      "Entries": [
+        "Reach the depths of unexplored territory -- 未踏領域の最奥に到達する"
+      ]
+    },
+    {
+      "ID": 40213100,
+      "Entries": [
+        "Defeat the after image -- アフターイメージを撃破する"
+      ]
+    },
+    {
+      "ID": 40213200,
+      "Entries": [
+        "move on -- 先へ進む"
+      ]
+    },
+    {
+      "ID": 40213300,
+      "Entries": [
+        "Defeat Rusty and Flat -- ラスティとフラットを倒す"
+      ]
+    },
+    {
+      "ID": 40303000,
+      "Entries": [
+        "Eliminate the AC unit of Corporate Entente -- 企業協商のAC部隊を排除する"
+      ]
+    },
+    {
+      "ID": 40303010,
+      "Entries": [
+        "Aiming for a melange accumulation point -- メランジ集積地点を目指す"
+      ]
+    },
+    {
+      "ID": 40303020,
+      "Entries": [
+        "Search for melange -- メランジを探す"
+      ]
+    },
+    {
+      "ID": 40303100,
+      "Entries": [
+        "Destroy an unknown aircraft -- 不明機体を撃破する"
+      ]
+    },
+    {
+      "ID": 40303200,
+      "Entries": [
+        "Eliminate Vesper 2 Snail -- ヴェスパー2 スネイルを排除する"
+      ]
+    },
+    {
+      "ID": 40303300,
+      "Entries": [
+        "Defeat Snail and Iguazu -- スネイルおよびイグアスを撃破する"
+      ]
+    },
+    {
+      "ID": 40303400,
+      "Entries": [
+        "listen/ignore -- 話を聞く/無視する"
+      ]
+    },
+    {
+      "ID": 41003000,
+      "Entries": [
+        "Break through the railroad -- レイルロードを突破する"
+      ]
+    },
+    {
+      "ID": 41003010,
+      "Entries": [
+        "Break through the railroad -- レイルロードを突破する"
+      ]
+    },
+    {
+      "ID": 41003020,
+      "Entries": [
+        "defeat red -- レッドを倒す"
+      ]
+    },
+    {
+      "ID": 41003100,
+      "Entries": [
+        "destroy the enemy -- 敵を殲滅する"
+      ]
+    },
+    {
+      "ID": 41103000,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 42003000,
+      "Entries": [
+        "reach the specified coordinates -- 指定された座標に到達する"
+      ]
+    },
+    {
+      "ID": 42003010,
+      "Entries": [
+        "destroy the enemy -- 敵を殲滅する"
+      ]
+    },
+    {
+      "ID": 42003020,
+      "Entries": [
+        "Head to the escape point -- 脱出地点に向かう"
+      ]
+    },
+    {
+      "ID": 50103000,
+      "Entries": [
+        "Defend the control tower -- コントロールタワーを防衛する"
+      ]
+    },
+    {
+      "ID": 50203000,
+      "Entries": [
+        "Eliminate the ace machine of corporate cooperation -- 企業協商のエース機を排除する"
+      ]
+    },
+    {
+      "ID": 50203010,
+      "Entries": [
+        "Go to the rescue of friendly forces -- 友軍の救援に向かう"
+      ]
+    },
+    {
+      "ID": 50203020,
+      "Entries": [
+        "Vesper 1 defeats Freud -- ヴェスパー1、フロイトを撃破する"
+      ]
+    },
+    {
+      "ID": 50303000,
+      "Entries": [
+        "Destroy the generator and bather drum -- ジェネレーター及びバサードラムを破壊する"
+      ]
+    },
+    {
+      "ID": 50303010,
+      "Entries": [
+        "Infiltrate the trench city -- 塹壕都市へ侵入する"
+      ]
+    },
+    {
+      "ID": 50303020,
+      "Entries": [
+        "Fight together with Ash to remove obstacles -- アッシュと共闘し障害を取り除く"
+      ]
+    },
+    {
+      "ID": 50303030,
+      "Entries": [
+        "Defeat an unknown enemy -- 正体不明の敵を撃破する"
+      ]
+    },
+    {
+      "ID": 50303040,
+      "Entries": [
+        "Update to destroy generators and bather drums -- ジェネレーター及びバサードラムを破壊する\u3000アップデート"
+      ]
+    },
+    {
+      "ID": 50303050,
+      "Entries": [
+        "go to the deepest end -- 最深端に出る"
+      ]
+    },
+    {
+      "ID": 50403000,
+      "Entries": [
+        "Intercept the main fleet of the Corporate Entente -- 企業協商の主力艦隊を迎撃する"
+      ]
+    },
+    {
+      "ID": 50403010,
+      "Entries": [
+        "Eliminate the main fleet in the forward sector -- 前方宙域の主力艦隊を排除する"
+      ]
+    },
+    {
+      "ID": 50403020,
+      "Entries": [
+        "Defeat Ash -- アッシュを撃破する"
+      ]
+    },
+    {
+      "ID": 50503010,
+      "Entries": [
+        "Eliminate Cinder Kara -- シンダー・カーラを排除する"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Stop ECM fog control device -- ECMフォグ制御装置を停止する"
+      ]
+    },
+    {
+      "ID": 51003010,
+      "Entries": [
+        "Examine the wreckage of the research drone -- 調査ドローンの残骸を調べる"
+      ]
+    },
+    {
+      "ID": 51003020,
+      "Entries": [
+        "Destroy a large armed helicopter -- 大型武装ヘリを撃破"
+      ]
+    },
+    {
+      "ID": 51003030,
+      "Entries": [
+        "Defeat enemy AC -- 敵ACを撃破"
+      ]
+    },
+    {
+      "ID": 51003040,
+      "Entries": [
+        "Stop ECM fog control device -- ECMフォグ制御装置を停止する"
+      ]
+    },
+    {
+      "ID": 51003050,
+      "Entries": [
+        "intercept enemy aircraft -- 敵性機体を迎撃する"
+      ]
+    },
+    {
+      "ID": 51103000,
+      "Entries": [
+        "destroy all targets -- 全ての目標を破壊する"
+      ]
+    },
+    {
+      "ID": 51103010,
+      "Entries": [
+        "Destroy the control room objective -- 管理室の目標を破壊する"
+      ]
+    },
+    {
+      "ID": 51103020,
+      "Entries": [
+        "Reach Xylem central control room -- ザイレム中央管理室へ到達する"
+      ]
+    },
+    {
+      "ID": 60003000,
+      "Entries": [
+        "Defeat Win -- ウィンを撃破する"
+      ]
+    },
+    {
+      "ID": 60103000,
+      "Entries": [
+        "destroy the ramjet engine -- ラムジェットエンジンを破壊する"
+      ]
+    },
+    {
+      "ID": 60103010,
+      "Entries": [
+        "Defeat Leicester -- レスターを撃破する"
+      ]
+    },
+    {
+      "ID": 60203000,
+      "Entries": [
+        "Defeat Yuria -- ユーリアを撃破する"
+      ]
+    },
+    {
+      "ID": 79003000,
+      "Entries": [
+        "Destroy a resource transport helicopter -- 資源輸送用ヘリを撃破する"
+      ]
+    },
+    {
+      "ID": 79103000,
+      "Entries": [
+        "annihilate the enemy -- 敵全滅させる"
+      ]
+    },
+    {
+      "ID": 79203000,
+      "Entries": [
+        "Infiltrate the occupied base -- 占拠拠点に侵入する"
+      ]
+    },
+    {
+      "ID": 79203010,
+      "Entries": [
+        "Destroy the MT troops -- MT部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 79303000,
+      "Entries": [
+        "Intercept the Bayram MT unit -- ベイラムMT部隊を迎撃する"
+      ]
+    },
+    {
+      "ID": 79303010,
+      "Entries": [
+        "Defeat G1 Michigan -- G1 ミシガンを撃破する"
+      ]
+    },
+    {
+      "ID": 79403000,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 79503000,
+      "Entries": [
+        "Defeat the unidentified AC -- 正体不明ACを撃破する"
+      ]
+    },
+    {
+      "ID": 79603000,
+      "Entries": [
+        "Destroy the other Dozer MTs -- ドーザー他派MTを殲滅する"
+      ]
+    },
+    {
+      "ID": 79703000,
+      "Entries": [
+        "destroy the turret -- 砲台を殲滅する"
+      ]
+    },
+    {
+      "ID": 79803000,
+      "Entries": [
+        "Destroy enemy AC -- 敵ACを撃破する"
+      ]
+    },
+    {
+      "ID": 79903000,
+      "Entries": [
+        "Destroy the planetary blockade organization enforcement force -- 惑星封鎖機構執行部隊を殲滅する"
+      ]
+    },
+    {
+      "ID": 90015000,
+      "Entries": [
+        "\"License Certification\" -- 「ライセンス認証」"
+      ]
+    },
+    {
+      "ID": 90015001,
+      "Entries": [
+        "2nd round of “License Certification” -- 「ライセンス認証」2周目"
+      ]
+    },
+    {
+      "ID": 90015002,
+      "Entries": [
+        "“License Certification” C not achieved after 2nd round -- 「ライセンス認証」2周目以降C未達"
+      ]
+    },
+    {
+      "ID": 90015003,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015004,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015005,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015006,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015007,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015008,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015009,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015010,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015011,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 90015012,
+      "Entries": [
+        "Not used -- 使用していない"
+      ]
+    },
+    {
+      "ID": 91000000,
+      "Entries": [
+        "Voicemail_Walter -- ボイスメール_ウォルター"
+      ]
+    },
+    {
+      "ID": 91000010,
+      "Entries": [
+        "Voicemail_All Mind -- ボイスメール_オールマインド"
+      ]
+    },
+    {
+      "ID": 91000020,
+      "Entries": [
+        "Voicemail_Rusty -- ボイスメール_ラスティ"
+      ]
+    },
+    {
+      "ID": 91000030,
+      "Entries": [
+        "voicemail_air -- ボイスメール_エア"
+      ]
+    },
+    {
+      "ID": 91000040,
+      "Entries": [
+        "Voicemail_Carla -- ボイスメール_カーラ"
+      ]
+    },
+    {
+      "ID": 91000050,
+      "Entries": [
+        "Voicemail_Iguazu -- ボイスメール_イグアス"
+      ]
+    },
+    {
+      "ID": 91000060,
+      "Entries": [
+        "Voicemail_COM -- ボイスメール_COM"
+      ]
+    },
+    {
+      "ID": 91000070,
+      "Entries": [
+        "Voicemail_Pater -- ボイスメール_ペイター"
+      ]
+    },
+    {
+      "ID": 91000080,
+      "Entries": [
+        "Voicemail_Red -- ボイスメール_レッド"
+      ]
+    },
+    {
+      "ID": 91000090,
+      "Entries": [
+        "Voicemail_Rubicon -- ボイスメール_ルビコン"
+      ]
+    },
+    {
+      "ID": 91000100,
+      "Entries": [
+        "Voicemail_Chati -- ボイスメール_チャティ"
+      ]
+    },
+    {
+      "ID": 91000110,
+      "Entries": [
+        "Voicemail_Kate -- ボイスメール_ケイト"
+      ]
+    },
+    {
+      "ID": 91000200,
+      "Entries": [
+        "Whiskey_Michigan -- ひそひそ_ミシガン"
+      ]
+    },
+    {
+      "ID": 91000210,
+      "Entries": [
+        "Hiso Hiso_Snail -- ひそひそ_スネイル"
+      ]
+    },
+    {
+      "ID": 91000220,
+      "Entries": [
+        "whisper_kara -- ひそひそ_カーラ"
+      ]
+    },
+    {
+      "ID": 110003021,
+      "Entries": [
+        "Battle begins -- 対戦開始"
+      ]
+    },
+    {
+      "ID": 110003022,
+      "Entries": [
+        "success -- 成功"
+      ]
+    },
+    {
+      "ID": 110003023,
+      "Entries": [
+        "failure -- 失敗"
+      ]
+    },
+    {
+      "ID": 210001000,
+      "Entries": [
+        "3VS3 rules_Start of battle -- 3VS3ルール_対戦開始"
+      ]
+    },
+    {
+      "ID": 260001000,
+      "Entries": [
+        "1VS1 rules_Start of battle -- 1VS1ルール_対戦開始"
+      ]
+    },
+    {
+      "ID": 260001001,
+      "Entries": [
+        "1VS1 rule_1st round start -- 1VS1ルール_1ラウンド目開始"
+      ]
+    },
+    {
+      "ID": 260001002,
+      "Entries": [
+        "1VS1 rule_2nd round starts -- 1VS1ルール_2ラウンド目開始"
+      ]
+    },
+    {
+      "ID": 260001003,
+      "Entries": [
+        "1VS1 rule_Start of 3rd round -- 1VS1ルール_3ラウンド目開始"
+      ]
+    },
+    {
+      "ID": 260001021,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round -- 1VS1ルール_1ラウンド目開始前"
+      ]
+    },
+    {
+      "ID": 260001022,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round -- 1VS1ルール_1ラウンド目開始前"
+      ]
+    },
+    {
+      "ID": 260001023,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round -- 1VS1ルール_1ラウンド目開始前"
+      ]
+    },
+    {
+      "ID": 260001050,
+      "Entries": [
+        "3VS3 rules_Start of battle -- 3VS3ルール_対戦開始"
+      ]
+    },
+    {
+      "ID": 260001055,
+      "Entries": [
+        "3VS3 rules_before the battle starts -- 3VS3ルール_対戦開始前"
+      ]
+    },
+    {
+      "ID": 260001100,
+      "Entries": [
+        "Defeat the enemy 1on1 -- 1on1で敵撃破"
+      ]
+    },
+    {
+      "ID": 260001105,
+      "Entries": [
+        "Defeat the enemy in 3on3 -- 3on3で敵撃破"
+      ]
+    },
+    {
+      "ID": 260001200,
+      "Entries": [
+        "Player defeated and killed -- プレイヤー撃破死亡"
+      ]
+    },
+    {
+      "ID": 260001205,
+      "Entries": [
+        "Player falls to death -- プレイヤー落下死亡"
+      ]
+    },
+    {
+      "ID": 260001210,
+      "Entries": [
+        "Player defeated and killed 3on3 -- プレイヤー撃破死亡 3on3"
+      ]
+    },
+    {
+      "ID": 260001215,
+      "Entries": [
+        "Player falls to death 3on3 -- プレイヤー落下死亡 3on3"
+      ]
+    },
+    {
+      "ID": 260002000,
+      "Entries": [
+        "1VS1 rule_total result draw -- 1VS1ルール_トータル結果引き分け"
+      ]
+    },
+    {
+      "ID": 260002001,
+      "Entries": [
+        "1VS1 rule_1st round draw -- 1VS1ルール_1ラウンド目引き分け"
+      ]
+    },
+    {
+      "ID": 260002100,
+      "Entries": [
+        "1VS1 rule_total result victory -- 1VS1ルール_トータル結果勝利"
+      ]
+    },
+    {
+      "ID": 260002101,
+      "Entries": [
+        "1VS1 rule_1st round victory -- 1VS1ルール_1ラウンド目勝利"
+      ]
+    },
+    {
+      "ID": 260002102,
+      "Entries": [
+        "1VS1 rule_2nd round victory -- 1VS1ルール_2ラウンド目勝利"
+      ]
+    },
+    {
+      "ID": 260002110,
+      "Entries": [
+        "1VS1 rules_Total result A victory_For spectators -- 1VS1ルール_トータル結果A勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002111,
+      "Entries": [
+        "1VS1 rule_1st round A victory_for spectators -- 1VS1ルール_1ラウンド目A勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002112,
+      "Entries": [
+        "1VS1 rule_2nd round A victory_for spectators -- 1VS1ルール_2ラウンド目A勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002120,
+      "Entries": [
+        "1VS1 rule_Total result B victory_For spectators -- 1VS1ルール_トータル結果B勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002121,
+      "Entries": [
+        "1VS1 rule_1st round B victory_for spectators -- 1VS1ルール_1ラウンド目B勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002122,
+      "Entries": [
+        "1VS1 rule_2nd round B victory_for spectators -- 1VS1ルール_2ラウンド目B勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260002200,
+      "Entries": [
+        "1VS1 rule_total result defeat -- 1VS1ルール_トータル結果敗北"
+      ]
+    },
+    {
+      "ID": 260002201,
+      "Entries": [
+        "1VS1 rule_1st round defeat -- 1VS1ルール_1ラウンド目敗北"
+      ]
+    },
+    {
+      "ID": 260002202,
+      "Entries": [
+        "1VS1 rule_2nd round defeat -- 1VS1ルール_2ラウンド目敗北"
+      ]
+    },
+    {
+      "ID": 260003000,
+      "Entries": [
+        "time up -- タイムアップ"
+      ]
+    },
+    {
+      "ID": 260003010,
+      "Entries": [
+        "3VS3 time UP -- 3VS3タイムUP"
+      ]
+    },
+    {
+      "ID": 260004000,
+      "Entries": [
+        "3VS3 rules_respawn -- 3VS3ルール_リスポーン"
+      ]
+    },
+    {
+      "ID": 260005000,
+      "Entries": [
+        "3VS3 rules_total result draw -- 3VS3ルール_トータル結果引き分け"
+      ]
+    },
+    {
+      "ID": 260005100,
+      "Entries": [
+        "3VS3 rules_total result victory -- 3VS3ルール_トータル結果勝利"
+      ]
+    },
+    {
+      "ID": 260005110,
+      "Entries": [
+        "3VS3 rules_Total result A victory_For spectators -- 3VS3ルール_トータル結果A勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260005120,
+      "Entries": [
+        "3VS3 rules_Total result B victory_For spectators -- 3VS3ルール_トータル結果B勝利_観戦者用"
+      ]
+    },
+    {
+      "ID": 260005200,
+      "Entries": [
+        "3VS3 rule_total result defeat -- 3VS3ルール_トータル結果敗北"
+      ]
+    },
+    {
+      "ID": 260009000,
+      "Entries": [
+        "Arena pre-fight performance -- アリーナ対戦前演出"
+      ]
+    },
+    {
+      "ID": 260009900,
+      "Entries": [
+        "1VS1 rule pre-match production A -- 1VS1ルール 対戦前演出 A"
+      ]
+    },
+    {
+      "ID": 260009901,
+      "Entries": [
+        "1VS1 rule pre-match production B -- 1VS1ルール 対戦前演出 B"
+      ]
+    },
+    {
+      "ID": 260009902,
+      "Entries": [
+        "3VS3 rule pre-match production A -- 3VS3ルール 対戦前演出 A"
+      ]
+    },
+    {
+      "ID": 260009903,
+      "Entries": [
+        "3VS3 rule pre-competition production B -- 3VS3ルール 対戦前演出 B"
+      ]
+    }
+  ]
+}

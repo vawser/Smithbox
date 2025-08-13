@@ -1,0 +1,227 @@
+{
+  "Name": "SkeletonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Move -- 動かない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "NPC Common Neck -- NPC共通 首"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "NPC Common Body 1 -- NPC共通 胴1"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "NPC Common Body 2 -- NPC共通 胴2"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Heroine -- ヒロイン"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Vips -- 要人"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Blacksmith Edo -- 鍛冶屋江戸"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Slave soldier -- 奴隷兵士"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Ex-noble lady -- 元貴族婦人"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Puppet use -- 人形使い"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Beggar Woman -- 乞食女"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Baldwin -- ボールドウィン"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Beggar Man -- 乞食男"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Hounds -- 猟犬_"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Hounds -- 猟犬_"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Mucademon right foot -- ムカデーモン右足"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Mucademon left Foot -- ムカデーモン左足"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Gargoyle Right Foot -- ガーゴイル右足"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Gargoyle left Foot -- ガーゴイル左足"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Iron Golem Right Foot -- アイアンゴーレム右足"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Iron Golem left Foot -- アイアンゴーレム左足"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Iron Golem Right Hand -- アイアンゴーレム右手"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Hammer Demon left Foot -- ハンマーデーモン左足"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Hammer Daemon Right foot -- ハンマーデーモン右足"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "クラグ足①"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "クラグ足②"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "クラグ足③"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "クラグ足④"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Thaiwand Foot ⑤ -- クラグ足⑤"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Thaiwand Foot ⑥ -- クラグ足⑥"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Thaiwand Foot ⑦ -- クラグ足⑦"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Thaiwand Foot ⑧ -- クラグ足⑧"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Thaiwand Foot ⑨ -- クラグ足⑨"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Thaiwand Foot ⑩ -- クラグ足⑩"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Thaiwand Foot ⑪ -- クラグ足⑪"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Thaiwand Foot ⑫ -- クラグ足⑫"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Thaiwand Foot ⑬ -- クラグ足⑬"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Name": "hitgroupparam_m10_25_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Group 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For tar OBJ (1)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For tar OBJ(2)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For dark ⇒ bright"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Giant senior soldier generation number judgment area"
+      ]
+    }
+  ]
+}

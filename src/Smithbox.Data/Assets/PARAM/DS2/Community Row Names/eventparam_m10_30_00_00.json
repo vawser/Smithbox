@@ -1,0 +1,59 @@
+{
+  "Name": "eventparam_m10_30_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Lifts to Hidden Ports"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "On elevator lever"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Lower elevator lever"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Elevator_Initialization"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Elevator_Connection replacement"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Regeneration Spark 01_Heide Great Fire Tower_Boss Heavy Equestrian After Lighthouse"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

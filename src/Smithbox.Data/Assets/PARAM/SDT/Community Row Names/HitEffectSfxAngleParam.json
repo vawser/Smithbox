@@ -1,0 +1,59 @@
+{
+  "Name": "HitEffectSfxAngleParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None (do not edit) -- 無し（編集しない）"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Blood (living) -- 血(生者)"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Blood (dead) -- 血(亡者)"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Meat under armor -- 鎧の下の肉"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Poisonous meat -- 毒肉"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "White meat -- 白肉"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Phantom (effective attack) -- 幻影（攻撃有効)"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Jasuga shock wave (directivity) -- ジャスガ\u3000衝撃波（指向性）"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Guard shock wave (directivity) -- ガード\u3000衝撃波（指向性）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "UnlockParam_Archive_Terms",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Test archive_garage acquisition_log"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Test archive_garage acquisition_terms"
+      ]
+    }
+  ]
+}

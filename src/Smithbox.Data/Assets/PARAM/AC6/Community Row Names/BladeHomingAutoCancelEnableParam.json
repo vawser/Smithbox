@@ -1,0 +1,233 @@
+{
+  "Name": "BladeHomingAutoCancelEnableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1254010,
+      "Entries": [
+        "Light attack first hit interruption judgment"
+      ]
+    },
+    {
+      "ID": 1254100,
+      "Entries": [
+        "Heavy attack first hit interruption judgment"
+      ]
+    },
+    {
+      "ID": 1210000,
+      "Entries": [
+        "Assault boost interruption determination"
+      ]
+    },
+    {
+      "ID": 125000100,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (1)"
+      ]
+    },
+    {
+      "ID": 125000200,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (2)"
+      ]
+    },
+    {
+      "ID": 125001100,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 125100100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (1)"
+      ]
+    },
+    {
+      "ID": 125101100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 125200100,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (1)"
+      ]
+    },
+    {
+      "ID": 125200200,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (2)"
+      ]
+    },
+    {
+      "ID": 125201100,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged)"
+      ]
+    },
+    {
+      "ID": 125300100,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (1)"
+      ]
+    },
+    {
+      "ID": 125301100,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged)"
+      ]
+    },
+    {
+      "ID": 125400100,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (1)"
+      ]
+    },
+    {
+      "ID": 125400200,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (2)"
+      ]
+    },
+    {
+      "ID": 125401100,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 125500100,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (1)"
+      ]
+    },
+    {
+      "ID": 125501100,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 125600100,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (1)"
+      ]
+    },
+    {
+      "ID": 125600200,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (2)"
+      ]
+    },
+    {
+      "ID": 125601100,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 125700100,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (1)"
+      ]
+    },
+    {
+      "ID": 125700200,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (2)"
+      ]
+    },
+    {
+      "ID": 125700300,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (3)"
+      ]
+    },
+    {
+      "ID": 125701100,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged)"
+      ]
+    },
+    {
+      "ID": 125800100,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (1)"
+      ]
+    },
+    {
+      "ID": 125801100,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged)"
+      ]
+    },
+    {
+      "ID": 125900100,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (1)"
+      ]
+    },
+    {
+      "ID": 125900200,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (2)"
+      ]
+    },
+    {
+      "ID": 125901100,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged)"
+      ]
+    },
+    {
+      "ID": 126000100,
+      "Entries": [
+        "STUN BATON - VP-67EB (1)"
+      ]
+    },
+    {
+      "ID": 126000200,
+      "Entries": [
+        "STUN BATON - VP-67EB (2)"
+      ]
+    },
+    {
+      "ID": 126000300,
+      "Entries": [
+        "STUN BATON - VP-67EB (3)"
+      ]
+    },
+    {
+      "ID": 126001100,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 126100100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (1)"
+      ]
+    },
+    {
+      "ID": 126101100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 126200100,
+      "Entries": [
+        "Fist"
+      ]
+    }
+  ]
+}

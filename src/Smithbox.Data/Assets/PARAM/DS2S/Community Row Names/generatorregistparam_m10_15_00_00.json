@@ -1,0 +1,227 @@
+{
+  "Name": "generatorregistparam_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 10100000,
+      "Entries": [
+        "[REG:10100000] Kobold"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "[REG:11500000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 13701000,
+      "Entries": [
+        "[REG:13701000] Prowling Magus"
+      ]
+    },
+    {
+      "ID": 13900000,
+      "Entries": [
+        "[REG:13900000] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 14100000,
+      "Entries": [
+        "[REG:14100000] Undead Aberration"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "[REG:15300000] Syan Knight"
+      ]
+    },
+    {
+      "ID": 20400200,
+      "Entries": [
+        "[REG:20400200] Poison Moth"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "[REG:20900000] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 21000010,
+      "Entries": [
+        "[REG:21000010] Basilisk"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "[REG:21200000] Guardian Dragon [Boss]"
+      ]
+    },
+    {
+      "ID": 21310000,
+      "Entries": [
+        "[REG:21310000] Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "[REG:22000000] Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 22200000,
+      "Entries": [
+        "[REG:22200000] Giant Basilisk"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[REG:30000000] Ogre"
+      ]
+    },
+    {
+      "ID": 30000001,
+      "Entries": [
+        "[REG:30000001] Ogre"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "[REG:30000050] Ogre"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "[REG:31700000] Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 32100010,
+      "Entries": [
+        "[REG:32100010] Mimic"
+      ]
+    },
+    {
+      "ID": 32100011,
+      "Entries": [
+        "[REG:32100011] Mimic"
+      ]
+    },
+    {
+      "ID": 32100012,
+      "Entries": [
+        "[REG:32100012] Mimic"
+      ]
+    },
+    {
+      "ID": 32401000,
+      "Entries": [
+        "[REG:32401000] Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "[REG:32700000] Dragon Skeleton"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 69400001,
+      "Entries": [
+        "[REG:69400001] Forlorn"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "[REG:70000000] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "[REG:73000000] Phantom"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "[REG:73100000] Phantom"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "[REG:75200000] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200001,
+      "Entries": [
+        "[REG:75200001] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "[REG:77100000] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77100001,
+      "Entries": [
+        "[REG:77100001] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77100002,
+      "Entries": [
+        "[REG:77100002] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 82400000,
+      "Entries": [
+        "[REG:82400000] Aslatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 85000000,
+      "Entries": [
+        "[REG:85000000] Painting Guardian Phantom"
+      ]
+    },
+    {
+      "ID": 86600000,
+      "Entries": [
+        "[REG:86600000] Sellsword Luet"
+      ]
+    }
+  ]
+}

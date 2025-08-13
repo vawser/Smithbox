@@ -1,0 +1,1583 @@
+{
+  "Name": "eventlocation_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intrusion Point 1-10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Intrusion Point 1-11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Intrusion Point 1-12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Intrusion Point 1-13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Intrusion Point 1-14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Intrusion Point 1-15"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Intrusion Point 2-9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Intrusion Point 2-10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Intrusion Point 2-11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Intrusion Point 2-12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Intrusion Point 2-13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Intrusion Point 2-14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Intrusion Point 2-15"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Intrusion Point 2-16"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Intrusion Point 2-17"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Intrusion Point 2-18"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Intrusion Point 2-19"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Intrusion Point 2-20"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Intrusion Point 2-21"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Intrusion Point 2-22"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Intrusion Point 2-23"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Intrusion Point 2-24"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Intrusion Point 2-25"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "Intrusion Point 2-26"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "Intrusion Point 2-27"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "Intrusion Point 2-28"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice blood character】Hidden door 2"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 2_02"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "【Advice blood character】Hidden door 3"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2_02"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Blood character prohibited] hidden door 3"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Drawbridge_Navi Change Point"
+      ]
+    },
+    {
+      "ID": 202400,
+      "Entries": [
+        "For backlead safety"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Boss: Queen's Knight B Battle Start Judgment"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Boss: Queen's KnightB_ Post-Poly Play Starting Point"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 1"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 2"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "Navimesh change 3 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 413000,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 4"
+      ]
+    },
+    {
+      "ID": 414000,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 5"
+      ]
+    },
+    {
+      "ID": 415000,
+      "Entries": [
+        "Navimesh change 6 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 416000,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 7"
+      ]
+    },
+    {
+      "ID": 417000,
+      "Entries": [
+        "Navimesh change 8 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "Boss battle judgment area with king"
+      ]
+    },
+    {
+      "ID": 802001,
+      "Entries": [
+        "Boss war with king_ end judgment area"
+      ]
+    },
+    {
+      "ID": 802010,
+      "Entries": [
+        "King_Boss Battle Start Point"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 1301000,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "【Black Spirit】Appearance Area"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "【NPC】Torch warning area"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "【NPC】Torch ing hostile area"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "【Return area】Matsumei deceased"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Traveling Worker Seuping Area"
+      ]
+    },
+    {
+      "ID": 50000680,
+      "Entries": [
+        "Black Spirit Launch Area"
+      ]
+    },
+    {
+      "ID": 50000681,
+      "Entries": [
+        "Dark Spirit Saeed Area"
+      ]
+    },
+    {
+      "ID": 50000900,
+      "Entries": [
+        "[Todo escort] deep pursuit prohibited area"
+      ]
+    },
+    {
+      "ID": 50000901,
+      "Entries": [
+        "Head Kingdom Escorts_ Melee Logic Area"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "[Logic entry stop] for preventing intrusion of characters who are not on block 1"
+      ]
+    },
+    {
+      "ID": 50001001,
+      "Entries": [
+        "【Logic Area】Phantom Night Narrow Judgment"
+      ]
+    },
+    {
+      "ID": 50001005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001010,
+      "Entries": [
+        "【Diversion】 Agadulan - Immortal return area"
+      ]
+    },
+    {
+      "ID": 50001011,
+      "Entries": [
+        "stairs room dakubisho start editless after all"
+      ]
+    },
+    {
+      "ID": 50001012,
+      "Entries": [
+        "Tomb Guard & Immortal Return Area (entrance side)"
+      ]
+    },
+    {
+      "ID": 50001020,
+      "Entries": [
+        "[Kingdom escort sdeep pursuit prohibited area] for protection"
+      ]
+    },
+    {
+      "ID": 50001030,
+      "Entries": [
+        "Kingdom Escort Sehomed Return Area"
+      ]
+    },
+    {
+      "ID": 50001040,
+      "Entries": [
+        "Start of the deceased under the step"
+      ]
+    },
+    {
+      "ID": 50001050,
+      "Entries": [
+        "High ground dead start area"
+      ]
+    },
+    {
+      "ID": 50001060,
+      "Entries": [
+        "Phantom Nato feedback area of the stair room"
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "New"
+      ]
+    },
+    {
+      "ID": 50002050,
+      "Entries": [
+        "Lap 1 Phantom Night Return Area 01"
+      ]
+    },
+    {
+      "ID": 50002051,
+      "Entries": [
+        "1st Phantom Night Return Area 02 & Used in Dark Spirits"
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        "[Logic entry prohibition] for preventing character escape that is not on block 1"
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "[Boss ex-escort] do not follow to the king"
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        "White door front guard chase start area"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Worker Patrol Navi Point 1"
+      ]
+    },
+    {
+      "ID": 51000001,
+      "Entries": [
+        "Worker Patrol Navi Point 2"
+      ]
+    },
+    {
+      "ID": 51000002,
+      "Entries": [
+        "Worker Patrol Navi Point 3"
+      ]
+    },
+    {
+      "ID": 51000003,
+      "Entries": [
+        "Worker Patrol Navi Point 4"
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        "Tomb warp point 1 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001001,
+      "Entries": [
+        "Tomb warp point 2 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001002,
+      "Entries": [
+        "Tomb warp point 3 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001003,
+      "Entries": [
+        "Tomb warp point 4 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001004,
+      "Entries": [
+        "Tomb warp point 5 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001005,
+      "Entries": [
+        "Tomb warp point 6 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001006,
+      "Entries": [
+        "Tomb warp point 7 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001007,
+      "Entries": [
+        "Tomb warp point 8 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001008,
+      "Entries": [
+        "Tomb warp point 9 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001009,
+      "Entries": [
+        "Tomb warp point 10 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001010,
+      "Entries": [
+        "Tomb warp point 11 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001011,
+      "Entries": [
+        "Tomb warp point 12 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001012,
+      "Entries": [
+        "Tomb warp point 13 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001013,
+      "Entries": [
+        "Tomb warp point 14 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001014,
+      "Entries": [
+        "Tomb warp point 15 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001015,
+      "Entries": [
+        "Tomb warp point 16 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001016,
+      "Entries": [
+        "Tomb warp point 17 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001017,
+      "Entries": [
+        "Tomb warp point 18 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001018,
+      "Entries": [
+        "Tomb warp point 19 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001019,
+      "Entries": [
+        "Tomb warp point 20 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001020,
+      "Entries": [
+        "Tomb warp point 21 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001021,
+      "Entries": [
+        "Tomb warp point 22 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001022,
+      "Entries": [
+        "Tomb warp point 23 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001023,
+      "Entries": [
+        "Tomb warp point 24 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001024,
+      "Entries": [
+        "Tomb warp point 25 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001025,
+      "Entries": [
+        "Tomb warp point 26 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001026,
+      "Entries": [
+        "Tomb warp point 27 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001027,
+      "Entries": [
+        "Tomb warp point 28 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001028,
+      "Entries": [
+        "Tomb warp point 29 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001029,
+      "Entries": [
+        "Tomb warp point 30 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001030,
+      "Entries": [
+        "Tomb warp point 31 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001031,
+      "Entries": [
+        "Tomb warp point 32 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001032,
+      "Entries": [
+        "Tomb warp point 33 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001033,
+      "Entries": [
+        "Tomb warp point 34 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001034,
+      "Entries": [
+        "Tomb warp point 35 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001035,
+      "Entries": [
+        "Tomb warp point 36 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001036,
+      "Entries": [
+        "Tomb warp point 37 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001037,
+      "Entries": [
+        "Tomb warp point 38 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001038,
+      "Entries": [
+        "Tomb warp point 39 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001039,
+      "Entries": [
+        "Tomb warp point 40 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001040,
+      "Entries": [
+        "Tomb warp point 41 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001041,
+      "Entries": [
+        "Tomb warp point 42 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51001042,
+      "Entries": [
+        "Tomb warp point 43 in the first half of the map"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "Phantom Mage Launch Area 1"
+      ]
+    },
+    {
+      "ID": 51002010,
+      "Entries": [
+        "Phantom Mage Launch Area 2"
+      ]
+    },
+    {
+      "ID": 51002020,
+      "Entries": [
+        "Phantom Mage Launch Area 3"
+      ]
+    },
+    {
+      "ID": 51002030,
+      "Entries": [
+        "Phantom Mage Launch Area 4"
+      ]
+    },
+    {
+      "ID": 51002040,
+      "Entries": [
+        "Phantom Mage Launch Area 5"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "workers start area one of the dead"
+      ]
+    },
+    {
+      "ID": 51003005,
+      "Entries": [
+        "one for activating the workers of the dead"
+      ]
+    },
+    {
+      "ID": 51003010,
+      "Entries": [
+        "dead workers start area 2_1"
+      ]
+    },
+    {
+      "ID": 51003015,
+      "Entries": [
+        "2_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003020,
+      "Entries": [
+        "Dead Workers Launch Area 2_2"
+      ]
+    },
+    {
+      "ID": 51003025,
+      "Entries": [
+        "2_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003030,
+      "Entries": [
+        "dead workers start area 3_1"
+      ]
+    },
+    {
+      "ID": 51003035,
+      "Entries": [
+        "3_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003040,
+      "Entries": [
+        "Dead Workers Launch Area 3_2"
+      ]
+    },
+    {
+      "ID": 51003045,
+      "Entries": [
+        "3_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003050,
+      "Entries": [
+        "Dead Workers Launch Area 3_3"
+      ]
+    },
+    {
+      "ID": 51003055,
+      "Entries": [
+        "3_3 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003060,
+      "Entries": [
+        "Dead Workers Launch Area 4"
+      ]
+    },
+    {
+      "ID": 51003065,
+      "Entries": [
+        "4 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003070,
+      "Entries": [
+        "dead workers start area 5_1"
+      ]
+    },
+    {
+      "ID": 51003075,
+      "Entries": [
+        "5_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003080,
+      "Entries": [
+        "Dead Workers Launch Area 5_2"
+      ]
+    },
+    {
+      "ID": 51003085,
+      "Entries": [
+        "5_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003090,
+      "Entries": [
+        "Dead Workers Launch Area 5_3"
+      ]
+    },
+    {
+      "ID": 51003095,
+      "Entries": [
+        "5_3 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003100,
+      "Entries": [
+        "Dead Workers Launch Area 6"
+      ]
+    },
+    {
+      "ID": 51003105,
+      "Entries": [
+        "6 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51003120,
+      "Entries": [
+        "Dead Workers Launch"
+      ]
+    },
+    {
+      "ID": 51003200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003425,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003900,
+      "Entries": [
+        "Grave area_Worker warpable range"
+      ]
+    },
+    {
+      "ID": 51004000,
+      "Entries": [
+        "Phantom Mage Launch Area 10"
+      ]
+    },
+    {
+      "ID": 51004010,
+      "Entries": [
+        "Phantom Mage Launch Area 11"
+      ]
+    },
+    {
+      "ID": 51004020,
+      "Entries": [
+        "Phantom Mage Launch Area 12"
+      ]
+    },
+    {
+      "ID": 51004030,
+      "Entries": [
+        "Phantom Mage Launch Area 13"
+      ]
+    },
+    {
+      "ID": 51004040,
+      "Entries": [
+        "Phantom Mage Launch Area 14"
+      ]
+    },
+    {
+      "ID": 51005000,
+      "Entries": [
+        "dead workers start area 10_1"
+      ]
+    },
+    {
+      "ID": 51005005,
+      "Entries": [
+        "10_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005010,
+      "Entries": [
+        "Dead Workers Launch Area 10_2"
+      ]
+    },
+    {
+      "ID": 51005015,
+      "Entries": [
+        "10_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005020,
+      "Entries": [
+        "dead workers start area 11_1"
+      ]
+    },
+    {
+      "ID": 51005025,
+      "Entries": [
+        "11_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005030,
+      "Entries": [
+        "Dead Workers Launch Area 11_2"
+      ]
+    },
+    {
+      "ID": 51005035,
+      "Entries": [
+        "11_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005040,
+      "Entries": [
+        "dead workers start area 12_1"
+      ]
+    },
+    {
+      "ID": 51005045,
+      "Entries": [
+        "12_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005050,
+      "Entries": [
+        "Dead Workers Launch Area 12_2"
+      ]
+    },
+    {
+      "ID": 51005055,
+      "Entries": [
+        "12_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005060,
+      "Entries": [
+        "dead workers start area 13_1"
+      ]
+    },
+    {
+      "ID": 51005065,
+      "Entries": [
+        "13_1 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005070,
+      "Entries": [
+        "Dead Workers Launch Area 13_2"
+      ]
+    },
+    {
+      "ID": 51005075,
+      "Entries": [
+        "13_2 for activating dead workers"
+      ]
+    },
+    {
+      "ID": 51005900,
+      "Entries": [
+        "Bell area_ Dead workers warpable range"
+      ]
+    },
+    {
+      "ID": 51006000,
+      "Entries": [
+        "Bell If Area Warp Point 1"
+      ]
+    },
+    {
+      "ID": 51006001,
+      "Entries": [
+        "Bell Area Warp Point 2"
+      ]
+    },
+    {
+      "ID": 51006002,
+      "Entries": [
+        "Bell Area Warp Point 3"
+      ]
+    },
+    {
+      "ID": 51006003,
+      "Entries": [
+        "Bell Area Warp Point 4"
+      ]
+    },
+    {
+      "ID": 51006004,
+      "Entries": [
+        "Bell Area Warp Point 5"
+      ]
+    },
+    {
+      "ID": 51006005,
+      "Entries": [
+        "Bell Area Warp Point 6"
+      ]
+    },
+    {
+      "ID": 51006006,
+      "Entries": [
+        "Bell If Area Warp Point 7"
+      ]
+    },
+    {
+      "ID": 51006007,
+      "Entries": [
+        "Bell If Area Warp Point 8"
+      ]
+    },
+    {
+      "ID": 51006008,
+      "Entries": [
+        "Bell If Area Warp Point 9"
+      ]
+    },
+    {
+      "ID": 51006009,
+      "Entries": [
+        "Bell Area Warp Point 10"
+      ]
+    },
+    {
+      "ID": 51006010,
+      "Entries": [
+        "Bell If Area Warp Point 11"
+      ]
+    },
+    {
+      "ID": 51006011,
+      "Entries": [
+        "Bell If Area Warp Point 12"
+      ]
+    },
+    {
+      "ID": 51006012,
+      "Entries": [
+        "Bell If Area Warp Point 13"
+      ]
+    },
+    {
+      "ID": 51006013,
+      "Entries": [
+        "Bell If Area Warp Point 14"
+      ]
+    },
+    {
+      "ID": 51006014,
+      "Entries": [
+        "Bell If Area Warp Point 15"
+      ]
+    },
+    {
+      "ID": 51006015,
+      "Entries": [
+        "Bell If Area Warp Point 16"
+      ]
+    },
+    {
+      "ID": 51006016,
+      "Entries": [
+        "Bell If Area Warp Point 17"
+      ]
+    },
+    {
+      "ID": 51006017,
+      "Entries": [
+        "Bell If Area Warp Point 18"
+      ]
+    },
+    {
+      "ID": 51006018,
+      "Entries": [
+        "Bell If Area Warp Point 19"
+      ]
+    },
+    {
+      "ID": 51006019,
+      "Entries": [
+        "Bell If Area Warp Point 20"
+      ]
+    },
+    {
+      "ID": 51006020,
+      "Entries": [
+        "Bell If Area Warp Point 21"
+      ]
+    },
+    {
+      "ID": 51006021,
+      "Entries": [
+        "Bell If Area Warp Point 22"
+      ]
+    },
+    {
+      "ID": 51006022,
+      "Entries": [
+        "Bell If Area Warp Point 23"
+      ]
+    },
+    {
+      "ID": 51007000,
+      "Entries": [
+        "Bell If Navi Point_Bell 1 Front"
+      ]
+    },
+    {
+      "ID": 51007001,
+      "Entries": [
+        "Bell If Navi Point_Bell 2 Front"
+      ]
+    },
+    {
+      "ID": 51007002,
+      "Entries": [
+        "Bell If Navi Point_Bell 3 Front"
+      ]
+    },
+    {
+      "ID": 51007003,
+      "Entries": [
+        "Bell If Navi Point_Bell 4 Front"
+      ]
+    },
+    {
+      "ID": 51007004,
+      "Entries": [
+        "Bell ringing navi point_aisle back bell front"
+      ]
+    },
+    {
+      "ID": 51007500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51008000,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 1"
+      ]
+    },
+    {
+      "ID": 51008001,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 2"
+      ]
+    },
+    {
+      "ID": 51008002,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 3"
+      ]
+    },
+    {
+      "ID": 51008003,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 4"
+      ]
+    },
+    {
+      "ID": 51008004,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 5"
+      ]
+    },
+    {
+      "ID": 51008005,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 6"
+      ]
+    },
+    {
+      "ID": 51008006,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 7"
+      ]
+    },
+    {
+      "ID": 51008007,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 8"
+      ]
+    },
+    {
+      "ID": 51008008,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 9"
+      ]
+    },
+    {
+      "ID": 51008009,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 101"
+      ]
+    },
+    {
+      "ID": 51008010,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 102"
+      ]
+    },
+    {
+      "ID": 51008011,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 103"
+      ]
+    },
+    {
+      "ID": 51008012,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 104"
+      ]
+    },
+    {
+      "ID": 51008013,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 105"
+      ]
+    },
+    {
+      "ID": 51008014,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 106"
+      ]
+    },
+    {
+      "ID": 51008015,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 107"
+      ]
+    },
+    {
+      "ID": 51008016,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 108"
+      ]
+    },
+    {
+      "ID": 51008017,
+      "Entries": [
+        "Phantom Mage Boss Front Summon position 109"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "Before boss_Phantom Meji operation"
+      ]
+    },
+    {
+      "ID": 51009001,
+      "Entries": [
+        "Before boss_Phantom Meji operation"
+      ]
+    },
+    {
+      "ID": 51009002,
+      "Entries": [
+        "Boss front _phantom me working"
+      ]
+    },
+    {
+      "ID": 51009003,
+      "Entries": [
+        "Before boss_Phantom Mage"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000101,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

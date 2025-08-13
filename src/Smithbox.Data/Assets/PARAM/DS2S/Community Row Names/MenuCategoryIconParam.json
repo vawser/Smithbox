@@ -1,0 +1,221 @@
+{
+  "Name": "MenuCategoryIconParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dagger -- 短剣"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Direct sword -- 直剣"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Two-handed sword -- 両手剣"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Curved Sword -- 曲剣"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Oversized Sword -- 特大剣"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Double-edged sword -- 双刃剣"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Swords -- 刺剣"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Axe -- 斧"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Hammer -- 槌"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Spear -- 槍"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Fist -- 拳"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Whip -- 鞭"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Shooting -- 射撃"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Catalyst -- 触媒"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Shield -- 盾"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Helmet -- 兜"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Armor -- 鎧"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Kote -- 小手"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Toeto -- 具足"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Ring -- 指輪"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Arrows & Bolts -- 矢＆ボルト"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "【Prohibited use and output required】Arrow -- 【使用禁止・出力必須】矢"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "【Prohibited use and output required】 Bolt -- 【使用禁止・出力必須】ボルト"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Active -- アクティブ"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Passive -- パッシブ"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Source -- ソース"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Spelling -- スペル"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Gesture -- ジェスチャー"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Shop Weapons -- ショップ武器"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Shop Armor -- ショップ防具"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Shop Ring -- ショップ指輪"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Shop Arrow -- ショップ矢"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Shop Items -- ショップアイテム"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Shop Spell -- ショップスペル"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Warehouse -- 倉庫"
+      ]
+    }
+  ]
+}

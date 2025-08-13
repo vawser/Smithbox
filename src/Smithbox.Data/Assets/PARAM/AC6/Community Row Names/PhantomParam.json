@@ -1,0 +1,401 @@
+{
+  "Name": "PhantomParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Kojiro Phantom"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "white phantom"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "blue phantom 0"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "blue phantom 1"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "blue phantom 2"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "blue phantom 3"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Kogane Phantom"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "gold phantom"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "red phantom 0"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "red phantom 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "red phantom 2"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "red phantom 3"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "black phantom"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Dragon Spirit Phantom"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "abyss phantom"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "servant phantom"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal Phantom"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Bonfire Phantom"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "grave spirit phantom"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Weapon enchantment_Physical enhancement"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Weapon enchantment_Magic enhancement"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Weapon enchantment_Lightning reinforcement"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Weapon enchantment_flame reinforcement"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Weapon enchantment_dark reinforcement"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Weapon enchantment_poison enhancement"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Weapon enchantment_bleeding enhancement"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Weapon enchantment_weapon destruction enhancement"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Weapon enchantment_curse enhancement"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Phantom Spirit (tentative name)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Weapon Enchantment_Magic Enhancement (Large)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Ghost knight_ghost state"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Tiger translucent"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Tiger completely transparent"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Tiger normal"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Black tiger normal"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shield enchantment_physical enhancement"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shield enchantment_magic power enhancement"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Shield enchantment_lightning reinforcement"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Shield enchantment_flame reinforcement"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shield enchantment_dark reinforcement"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Shield enchantment_poison reinforcement"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Shield enchantment_bleeding enhancement"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Shield enchantment_shield destruction enhancement"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Shield enchantment_curse reinforcement"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "red fan"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "white fan"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "wandering phantom"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "bloodstain illusion"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Kojiro Phantom-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "White Phantom - Remaining time - Medium"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Kogane Phantom-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Gold Phantom - Remaining time - Medium"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Red Phantom 0-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Red Phantom 1-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Red Phantom 2-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Red Phantom 3-Remaining time-Medium"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Black Phantom-Remaining Time-Medium"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Kojiro Phantom-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "White Phantom-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Kogane Phantom-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Gold Phantom-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Red Phantom 0-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Red Phantom 1-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Red Phantom 2-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Red Phantom 3-Remaining time-Small"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Black Phantom-Remaining time-Small"
+      ]
+    }
+  ]
+}

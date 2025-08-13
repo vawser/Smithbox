@@ -1,0 +1,311 @@
+{
+  "Name": "GrassTypeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Test grass 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test grass 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Test grass 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Test grass 4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Test grass 5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Test grass 6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Wintery Tree"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Destroyed Wintery Tree (Tree Stump)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Destroyed Wintery Tree (No Tree Stump)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Wintery Tree"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Green Shrub"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Autumnal Tree"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Wintry Bare Shrub"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Sandstone Rocks with Shrubs (Large)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Sandstone Rocks with Shrubs (Small)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Sandstone Rock Fragments"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Sandstone Rock Fragments (Bunched)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Wintery Trees and Undergrowth"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Wintery Shrub Undergrowth"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Wintery Tree"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Mixed flowers (yellow)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "vine plant"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Grass 7 lawn creation_polygon cut version"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Gray Rocks (Six + Scattered)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Gray Rocks (Two + Scattered)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Gray Rocks (Two + Bunched)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Gray Rocks (Six + Scattered)"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Gray Rocks (Two + Scattered)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Gray Rocks (Two + Bunched)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Streetlamp (Futuristic) + Road"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Solar Panel on Pillar"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Streetlamp (Futuristic)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Streetlamp (Futuristic)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "B layer_outdoor unit_small A"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Wall (Six Sections)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Wall (Two Sections)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Streetlamp (Curved Top)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Damanged Streetlamp (Curved Top)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Streetlamp (Twin Cross)"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Damanged Streetlamp (Twin Cross)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Gray Rocks (Scattered)"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Gray Rocks (Two + Scattered)"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Gray Rocks (Two + Bunched)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Gray Rocks (One + Bunched)"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Gray Pebbles (Scattered)"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Gray Pebbles (Scattered)"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Gray Pebbles (Scattered)"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Damanged Steelwork"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Gray Rocks (Scattered)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Gray Rocks (Two + Bunched)"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Blank (used to place Dummy Polygon ID 800)"
+      ]
+    }
+  ]
+}

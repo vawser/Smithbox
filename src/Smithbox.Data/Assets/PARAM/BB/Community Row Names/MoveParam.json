@@ -1,0 +1,323 @@
+{
+  "Name": "MoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Lightweight"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Lightweight+"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Medium"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Medium+"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Overweight"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Ultralightweight"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Mimicry_Lightweight"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Mimicry_Lightweight+"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Mimicry_Medium"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Mimicry_Medium+"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Mimicry_Weight"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Mimicry_Overweight"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Mimicry_Ultralightweight"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Underwater (Deep)_Lightweight"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Underwater (Deep)_Lightweight+"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater (Deep)_Medium"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater (Deep)_Medium+"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Underwater (Deep)_Weight"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Underwater (Deep)_Overweight"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Underwater (Deep)_Ultralightweight"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "【SP】Guard alert_Lightweight"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【SP】Guard alert_Lightweight+"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "【SP】Guard alert_Medium"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "【SP】Guard Super alert_medium weight+"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[SP] Guard alert_weight"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[SP] Guard alert_overweight"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[SP] Guard alert_ultralight"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy basic- during combat"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Bird standard"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Guard"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Dog"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dragon demon"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy basic- non-combat"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Scaled miner- during combat"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Scaled miner- non-combat (bag)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Scaled miner- non-combat (pickle)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Giant spider- peering"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Gargoyle test"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon demon (tunnel)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "For storm beast"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Storm beast (baby ray)- waiting for a splat"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Scaled miner- non-combat (baby ray)"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Octopus head During combat"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gargoyle in the air (for 3050)"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gargoyle on the ground (for 3050)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Shadow girl - for disappearing"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "For blood mites only"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Parrying"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[DLC] Basic enemy - During combat (no running/turning animation version)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Basic enemy - During combat [Boss walking on two legs]"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "4-legged type for PG"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "4-legged type for PG with turning adjustment version"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "Name": "generatorregistparam_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 13400000,
+      "Entries": [
+        "[REG:13400000] Gyrm"
+      ]
+    },
+    {
+      "ID": 13400001,
+      "Entries": [
+        "[REG:13400001] Gyrm"
+      ]
+    },
+    {
+      "ID": 13400002,
+      "Entries": [
+        "[REG:13400002] Gyrm"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "[REG:13500000] Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13501000,
+      "Entries": [
+        "[REG:13501000] Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13503000,
+      "Entries": [
+        "[REG:13503000] Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13504000,
+      "Entries": [
+        "[REG:13504000] Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "[REG:22300000] Mongrel Rat"
+      ]
+    },
+    {
+      "ID": 22300010,
+      "Entries": [
+        "[REG:22300010] Mongrel Rat"
+      ]
+    },
+    {
+      "ID": 22350000,
+      "Entries": [
+        "[REG:22350000] Royal Rat Authority [Boss]"
+      ]
+    },
+    {
+      "ID": 22620000,
+      "Entries": [
+        "[REG:22620000] Corpse Rat (Rat King)"
+      ]
+    },
+    {
+      "ID": 22620001,
+      "Entries": [
+        "[REG:22620001] Corpse Rat (Rat King)"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "[REG:31400000] Hollow Primal Knight"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "[REG:72600000] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 72600001,
+      "Entries": [
+        "[REG:72600001] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "[REG:85300000] Bowman Guthry"
+      ]
+    }
+  ]
+}

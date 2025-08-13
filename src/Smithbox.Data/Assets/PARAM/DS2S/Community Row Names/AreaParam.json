@@ -1,0 +1,239 @@
+{
+  "Name": "AreaParam",
+  "Entries": [
+    {
+      "ID": 9910,
+      "Entries": [
+        "Light and dark Lv. 0 -- 明暗Ｌｖ．０"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "Light and dark Lv. 1 -- 明暗Ｌｖ．１"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "Light and dark Lv. 2 -- 明暗Ｌｖ．２"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "Light and dark Lv. 3 -- 明暗Ｌｖ．３"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "Light and dark Lv. 4 -- 明暗Ｌｖ．４"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "Things Betwixt"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "Majula"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "Brightstone Cove Tseldora"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "The Lost Bastille/Belfry Luna/Sinner's Rise"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "Harvest Valley/Earthen Peak"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "No-man's Wharf"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "Iron Keep/Belfry Sol"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10230000,
+      "Entries": [
+        "Huntsman's Copse/Undead Purgatory"
+      ]
+    },
+    {
+      "ID": 10250000,
+      "Entries": [
+        "The Gutter/Black Gulch"
+      ]
+    },
+    {
+      "ID": 10270000,
+      "Entries": [
+        "Dragon Aerie/Dragon Shrine"
+      ]
+    },
+    {
+      "ID": 10290000,
+      "Entries": [
+        "Path to Shaded Woods"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Path to Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "Heide's Tower of Flame/Cathedral of Blue"
+      ]
+    },
+    {
+      "ID": 10320000,
+      "Entries": [
+        "Shaded Woods/Shrine of Winter"
+      ]
+    },
+    {
+      "ID": 10330000,
+      "Entries": [
+        "Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 10340000,
+      "Entries": [
+        "Grave of Saints"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Memory of Jeigh/Memory of Orro/Memory of Vammar"
+      ]
+    },
+    {
+      "ID": 20110000,
+      "Entries": [
+        "Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 20210000,
+      "Entries": [
+        "Drangleic Castle/Throne of Want"
+      ]
+    },
+    {
+      "ID": 20240000,
+      "Entries": [
+        "Undead Crypt"
+      ]
+    },
+    {
+      "ID": 20260000,
+      "Entries": [
+        "Dragon Memories"
+      ]
+    },
+    {
+      "ID": 20620000,
+      "Entries": [
+        "E3 Fort of resistance (modern) -- E3抵抗の砦（現代）"
+      ]
+    },
+    {
+      "ID": 20630000,
+      "Entries": [
+        "E3 Iwamine Castle (past) -- E3岩峰城（過去）"
+      ]
+    },
+    {
+      "ID": 40030000,
+      "Entries": [
+        "Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 50350000,
+      "Entries": [
+        "Shulva- Sanctum City/Dragon's Sanctum/Dragon's Rest/Cave of the Dead"
+      ]
+    },
+    {
+      "ID": 50360000,
+      "Entries": [
+        "Brume Tower/Iron Passage/Memory of the Old Iron King"
+      ]
+    },
+    {
+      "ID": 50370000,
+      "Entries": [
+        "Frozen Eleum Loyce/Grand Cathedral/The Old Chaos/Frigid Outskirts"
+      ]
+    },
+    {
+      "ID": 50380000,
+      "Entries": [
+        "Memory of the King"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "Ninja Test Map -- 忍者テストマップ"
+      ]
+    },
+    {
+      "ID": 99805004,
+      "Entries": [
+        "Map for logic testing -- ロジックテスト用マップ"
+      ]
+    },
+    {
+      "ID": 99970000,
+      "Entries": [
+        "Shimizu Test Map -- 清水テストマップ"
+      ]
+    }
+  ]
+}

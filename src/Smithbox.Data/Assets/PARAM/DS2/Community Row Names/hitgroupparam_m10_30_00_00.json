@@ -1,0 +1,23 @@
+{
+  "Name": "hitgroupparam_m10_30_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "On the map for elevator connection reading"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Under the map for elevator connection reading"
+      ]
+    }
+  ]
+}

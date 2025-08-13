@@ -1,0 +1,11033 @@
+{
+  "Name": "EquipParamWeapon",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Universal catalyst [for debugging]"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Universal catalyst [for menu dummies]"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "dagger"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Dagger +1"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Dagger +2"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Dagger +3"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Dagger +4"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Dagger +5"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Dagger +6"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Dagger +7"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Dagger +8"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Dagger +9"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Dagger +10"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "fine dagger +1"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "fine dagger +2"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "fine dagger +3"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "fine dagger +4"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "fine dagger +5"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Mercury Dagger +1"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Mercury Dagger +2"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Mercury Dagger +3"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Mercury Dagger +4"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "Mercury Dagger +5"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "sharp dagger +1"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "sharp dagger +2"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "sharp dagger +3"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "sharp dagger +4"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "sharp dagger +5"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "Deadly Dagger +1"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "Deadly Dagger +2"
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        "Deadly Dagger +3"
+      ]
+    },
+    {
+      "ID": 10044,
+      "Entries": [
+        "Deadly Dagger +4"
+      ]
+    },
+    {
+      "ID": 10045,
+      "Entries": [
+        "Deadly Dagger +5"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "Missing Moon Dagger +1"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "Missing Moon Dagger +2"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "Missing Moon Dagger +3"
+      ]
+    },
+    {
+      "ID": 10054,
+      "Entries": [
+        "Missing Moon Dagger +4"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "Missing Moon Dagger +5"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "paring dagger"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Parrying Dagger +2"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Parrying Dagger +3"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Parrying Dagger +4"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Parrying Dagger +5"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Parrying Dagger +6"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Parrying Dagger +7"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Parrying Dagger +8"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Parrying Dagger +9"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Parrying Dagger +10"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "Fine Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "Fine paring dagger +2"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "Fine paring dagger +3"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "Fine paring dagger +4"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "Fine paring dagger +5"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "Mercury Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "Mercury Parrying Dagger +2"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "Mercury Parrying Dagger +3"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "Mercury Parrying Dagger +4"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "Mercury Parrying Dagger +5"
+      ]
+    },
+    {
+      "ID": 10131,
+      "Entries": [
+        "Deadly Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10132,
+      "Entries": [
+        "Deadly Parrying Dagger +2"
+      ]
+    },
+    {
+      "ID": 10133,
+      "Entries": [
+        "Deadly Parrying Dagger +3"
+      ]
+    },
+    {
+      "ID": 10134,
+      "Entries": [
+        "Deadly Parrying Dagger +4"
+      ]
+    },
+    {
+      "ID": 10135,
+      "Entries": [
+        "Deadly Parrying Dagger +5"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "Sharp Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10142,
+      "Entries": [
+        "Sharp Parrying Dagger +2"
+      ]
+    },
+    {
+      "ID": 10143,
+      "Entries": [
+        "Sharp Parrying Dagger +3"
+      ]
+    },
+    {
+      "ID": 10144,
+      "Entries": [
+        "Sharp Parrying Dagger +4"
+      ]
+    },
+    {
+      "ID": 10145,
+      "Entries": [
+        "Sharp Parrying Dagger +5"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "Missing Moon Parrying Dagger +1"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "Missing Moon Parrying Dagger +2"
+      ]
+    },
+    {
+      "ID": 10153,
+      "Entries": [
+        "Missing Moon Parrying Dagger +3"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "Missing Moon Parrying Dagger +4"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "Missing Moon Parrying Dagger +5"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "mail breaker"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "Mail Breaker +1"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Mail Breaker +2"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Mail Breaker +3"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "Mail Breaker +4"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "Mail Breaker +5"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "Mail Breaker +6"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "Mail breaker +7"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "Mail breaker +8"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "Mail Breaker +9"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Mail Breaker +10"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "fine mail breaker +1"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "fine mail breaker +2"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "fine mail breaker +3"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "fine mail breaker +4"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "fine mail breaker +5"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "Mercury Mail Breaker +1"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "Mercury Mail Breaker +2"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "Mercury Mail Breaker +3"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "Mercury Mail Breaker +4"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "Mercury Mail Breaker +5"
+      ]
+    },
+    {
+      "ID": 10231,
+      "Entries": [
+        "Deadly Mail Breaker +1"
+      ]
+    },
+    {
+      "ID": 10232,
+      "Entries": [
+        "Deadly Mail Breaker +2"
+      ]
+    },
+    {
+      "ID": 10233,
+      "Entries": [
+        "Deadly Mail Breaker +3"
+      ]
+    },
+    {
+      "ID": 10234,
+      "Entries": [
+        "Deadly Mail Breaker +4"
+      ]
+    },
+    {
+      "ID": 10235,
+      "Entries": [
+        "Deadly Mail Breaker +5"
+      ]
+    },
+    {
+      "ID": 10241,
+      "Entries": [
+        "sharp mail breaker +1"
+      ]
+    },
+    {
+      "ID": 10242,
+      "Entries": [
+        "sharp mail breaker +2"
+      ]
+    },
+    {
+      "ID": 10243,
+      "Entries": [
+        "sharp mail breaker +3"
+      ]
+    },
+    {
+      "ID": 10244,
+      "Entries": [
+        "sharp mail breaker +4"
+      ]
+    },
+    {
+      "ID": 10245,
+      "Entries": [
+        "sharp mail breaker +5"
+      ]
+    },
+    {
+      "ID": 10251,
+      "Entries": [
+        "Missing Mail Breaker +1"
+      ]
+    },
+    {
+      "ID": 10252,
+      "Entries": [
+        "Missing Mail Breaker +2"
+      ]
+    },
+    {
+      "ID": 10253,
+      "Entries": [
+        "Missing Mail Breaker +3"
+      ]
+    },
+    {
+      "ID": 10254,
+      "Entries": [
+        "Missing Mail Breaker +4"
+      ]
+    },
+    {
+      "ID": 10255,
+      "Entries": [
+        "Missing Mail Breaker +5"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "baby nails"
+      ]
+    },
+    {
+      "ID": 10401,
+      "Entries": [
+        "\"Baby Claw\" +1"
+      ]
+    },
+    {
+      "ID": 10402,
+      "Entries": [
+        "\"Baby Claw\" +2"
+      ]
+    },
+    {
+      "ID": 10403,
+      "Entries": [
+        "\"Baby Claw\" +3"
+      ]
+    },
+    {
+      "ID": 10404,
+      "Entries": [
+        "\"Baby Claw\" +4"
+      ]
+    },
+    {
+      "ID": 10405,
+      "Entries": [
+        "\"Baby Claw\" +5"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "misericorde"
+      ]
+    },
+    {
+      "ID": 10501,
+      "Entries": [
+        "Misericorde +1"
+      ]
+    },
+    {
+      "ID": 10502,
+      "Entries": [
+        "Misericorde +2"
+      ]
+    },
+    {
+      "ID": 10503,
+      "Entries": [
+        "Misericorde +3"
+      ]
+    },
+    {
+      "ID": 10504,
+      "Entries": [
+        "Misericorde +4"
+      ]
+    },
+    {
+      "ID": 10505,
+      "Entries": [
+        "Misericorde +5"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "chris knife"
+      ]
+    },
+    {
+      "ID": 10601,
+      "Entries": [
+        "Kris Knife +1"
+      ]
+    },
+    {
+      "ID": 10602,
+      "Entries": [
+        "Kris knife +2"
+      ]
+    },
+    {
+      "ID": 10603,
+      "Entries": [
+        "Kris Knife +3"
+      ]
+    },
+    {
+      "ID": 10604,
+      "Entries": [
+        "Kris Knife +4"
+      ]
+    },
+    {
+      "ID": 10605,
+      "Entries": [
+        "Kris knife +5"
+      ]
+    },
+    {
+      "ID": 10700,
+      "Entries": [
+        "stealth dagger"
+      ]
+    },
+    {
+      "ID": 10701,
+      "Entries": [
+        "stealth dagger +1"
+      ]
+    },
+    {
+      "ID": 10702,
+      "Entries": [
+        "stealth dagger +2"
+      ]
+    },
+    {
+      "ID": 10703,
+      "Entries": [
+        "Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10704,
+      "Entries": [
+        "Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10705,
+      "Entries": [
+        "Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 10706,
+      "Entries": [
+        "stealth dagger +6"
+      ]
+    },
+    {
+      "ID": 10707,
+      "Entries": [
+        "stealth dagger +7"
+      ]
+    },
+    {
+      "ID": 10708,
+      "Entries": [
+        "Stealth Dagger +8"
+      ]
+    },
+    {
+      "ID": 10709,
+      "Entries": [
+        "Stealth Dagger +9"
+      ]
+    },
+    {
+      "ID": 10710,
+      "Entries": [
+        "Stealth Dagger +10"
+      ]
+    },
+    {
+      "ID": 10711,
+      "Entries": [
+        "Sharp Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10712,
+      "Entries": [
+        "Sharp Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10713,
+      "Entries": [
+        "Sharp Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10714,
+      "Entries": [
+        "Sharp Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10715,
+      "Entries": [
+        "Sharp Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 10721,
+      "Entries": [
+        "Rift Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10722,
+      "Entries": [
+        "Rift Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10723,
+      "Entries": [
+        "Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10731,
+      "Entries": [
+        "Missing Moon Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10732,
+      "Entries": [
+        "Missing Moon Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10733,
+      "Entries": [
+        "Missing Moon Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10734,
+      "Entries": [
+        "Missing Moon Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10735,
+      "Entries": [
+        "Missing Moon Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 10741,
+      "Entries": [
+        "Fine Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10742,
+      "Entries": [
+        "Fine Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10743,
+      "Entries": [
+        "Superior Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10744,
+      "Entries": [
+        "Fine Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10745,
+      "Entries": [
+        "Superior Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 10751,
+      "Entries": [
+        "Mercury Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10752,
+      "Entries": [
+        "Mercury Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10753,
+      "Entries": [
+        "Mercury Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10754,
+      "Entries": [
+        "Mercury Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10755,
+      "Entries": [
+        "Mercury Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 10761,
+      "Entries": [
+        "Deadly Stealth Dagger +1"
+      ]
+    },
+    {
+      "ID": 10762,
+      "Entries": [
+        "Deadly Stealth Dagger +2"
+      ]
+    },
+    {
+      "ID": 10763,
+      "Entries": [
+        "Deadly Stealth Dagger +3"
+      ]
+    },
+    {
+      "ID": 10764,
+      "Entries": [
+        "Deadly Stealth Dagger +4"
+      ]
+    },
+    {
+      "ID": 10765,
+      "Entries": [
+        "Deadly Stealth Dagger +5"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "prowling dagger"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Short Sword"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "short sword +1"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "short sword +2"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "short sword +3"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "short sword +4"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "short sword +5"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "short sword +6"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "short sword +7"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "short sword +8"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "short sword +9"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Short sword +10"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "Fine Shortsword +1"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "Fine Shortsword +2"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "Fine Shortsword +3"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "Fine Shortsword +4"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "Fine Shortsword +5"
+      ]
+    },
+    {
+      "ID": 20021,
+      "Entries": [
+        "Dragon Shortsword +1"
+      ]
+    },
+    {
+      "ID": 20022,
+      "Entries": [
+        "Dragon Shortsword +2"
+      ]
+    },
+    {
+      "ID": 20023,
+      "Entries": [
+        "Dragon Shortsword +3"
+      ]
+    },
+    {
+      "ID": 20024,
+      "Entries": [
+        "Dragon Shortsword +4"
+      ]
+    },
+    {
+      "ID": 20025,
+      "Entries": [
+        "Dragon short sword +5"
+      ]
+    },
+    {
+      "ID": 20031,
+      "Entries": [
+        "Moon Shortsword +1"
+      ]
+    },
+    {
+      "ID": 20032,
+      "Entries": [
+        "Moon Shortsword +2"
+      ]
+    },
+    {
+      "ID": 20033,
+      "Entries": [
+        "Moon Shortsword +3"
+      ]
+    },
+    {
+      "ID": 20034,
+      "Entries": [
+        "Moon Shortsword +4"
+      ]
+    },
+    {
+      "ID": 20035,
+      "Entries": [
+        "Moon Shortsword +5"
+      ]
+    },
+    {
+      "ID": 20041,
+      "Entries": [
+        "Smashing short sword +1"
+      ]
+    },
+    {
+      "ID": 20042,
+      "Entries": [
+        "Smashing short sword +2"
+      ]
+    },
+    {
+      "ID": 20043,
+      "Entries": [
+        "Smashing short sword +3"
+      ]
+    },
+    {
+      "ID": 20044,
+      "Entries": [
+        "Smashing short sword +4"
+      ]
+    },
+    {
+      "ID": 20045,
+      "Entries": [
+        "Smashing short sword +5"
+      ]
+    },
+    {
+      "ID": 20051,
+      "Entries": [
+        "Blessed Shortsword +1"
+      ]
+    },
+    {
+      "ID": 20052,
+      "Entries": [
+        "Blessed Shortsword +2"
+      ]
+    },
+    {
+      "ID": 20053,
+      "Entries": [
+        "Blessed Shortsword +3"
+      ]
+    },
+    {
+      "ID": 20054,
+      "Entries": [
+        "Blessed Shortsword +4"
+      ]
+    },
+    {
+      "ID": 20055,
+      "Entries": [
+        "Blessed Shortsword +5"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "broadsword"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        "Broadsword +2"
+      ]
+    },
+    {
+      "ID": 20103,
+      "Entries": [
+        "Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20104,
+      "Entries": [
+        "Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20105,
+      "Entries": [
+        "Broadsword +5"
+      ]
+    },
+    {
+      "ID": 20106,
+      "Entries": [
+        "Broadsword +6"
+      ]
+    },
+    {
+      "ID": 20107,
+      "Entries": [
+        "Broadsword +7"
+      ]
+    },
+    {
+      "ID": 20108,
+      "Entries": [
+        "Broadsword +8"
+      ]
+    },
+    {
+      "ID": 20109,
+      "Entries": [
+        "Broadsword +9"
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        "Broadsword +10"
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "sharp broadsword +1"
+      ]
+    },
+    {
+      "ID": 20112,
+      "Entries": [
+        "sharp broadsword +2"
+      ]
+    },
+    {
+      "ID": 20113,
+      "Entries": [
+        "Sharp Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20114,
+      "Entries": [
+        "sharp broadsword +4"
+      ]
+    },
+    {
+      "ID": 20115,
+      "Entries": [
+        "sharp broadsword +5"
+      ]
+    },
+    {
+      "ID": 20121,
+      "Entries": [
+        "Rifting Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20122,
+      "Entries": [
+        "Rifting Broadsword +2"
+      ]
+    },
+    {
+      "ID": 20123,
+      "Entries": [
+        "Rupture Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20124,
+      "Entries": [
+        "Rupture Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20125,
+      "Entries": [
+        "Rupture Broadsword +5"
+      ]
+    },
+    {
+      "ID": 20131,
+      "Entries": [
+        "Missing Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20132,
+      "Entries": [
+        "Missing Broadsword +2"
+      ]
+    },
+    {
+      "ID": 20133,
+      "Entries": [
+        "Missing Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20134,
+      "Entries": [
+        "Missing Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20135,
+      "Entries": [
+        "Missing Broadsword +5"
+      ]
+    },
+    {
+      "ID": 20141,
+      "Entries": [
+        "Fine Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20142,
+      "Entries": [
+        "Fine broadsword +2"
+      ]
+    },
+    {
+      "ID": 20143,
+      "Entries": [
+        "Fine Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20144,
+      "Entries": [
+        "Fine Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20145,
+      "Entries": [
+        "Fine broadsword +5"
+      ]
+    },
+    {
+      "ID": 20151,
+      "Entries": [
+        "Mercury Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20152,
+      "Entries": [
+        "Mercury Broadsword +2"
+      ]
+    },
+    {
+      "ID": 20153,
+      "Entries": [
+        "Mercury Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20154,
+      "Entries": [
+        "Mercury Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20155,
+      "Entries": [
+        "Mercury Broadsword +5"
+      ]
+    },
+    {
+      "ID": 20161,
+      "Entries": [
+        "Lunar Broadsword +1"
+      ]
+    },
+    {
+      "ID": 20162,
+      "Entries": [
+        "Lunar Broadsword +2"
+      ]
+    },
+    {
+      "ID": 20163,
+      "Entries": [
+        "Lunar Broadsword +3"
+      ]
+    },
+    {
+      "ID": 20164,
+      "Entries": [
+        "Lunar Broadsword +4"
+      ]
+    },
+    {
+      "ID": 20165,
+      "Entries": [
+        "Lunar Broadsword +5"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Long sword"
+      ]
+    },
+    {
+      "ID": 20201,
+      "Entries": [
+        "Longsword +1"
+      ]
+    },
+    {
+      "ID": 20202,
+      "Entries": [
+        "Longsword +2"
+      ]
+    },
+    {
+      "ID": 20203,
+      "Entries": [
+        "Longsword +3"
+      ]
+    },
+    {
+      "ID": 20204,
+      "Entries": [
+        "Longsword +4"
+      ]
+    },
+    {
+      "ID": 20205,
+      "Entries": [
+        "Longsword +5"
+      ]
+    },
+    {
+      "ID": 20206,
+      "Entries": [
+        "Longsword +6"
+      ]
+    },
+    {
+      "ID": 20207,
+      "Entries": [
+        "Longsword +7"
+      ]
+    },
+    {
+      "ID": 20208,
+      "Entries": [
+        "Longsword +8"
+      ]
+    },
+    {
+      "ID": 20209,
+      "Entries": [
+        "Longsword +9"
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        "Longsword +10"
+      ]
+    },
+    {
+      "ID": 20211,
+      "Entries": [
+        "Fine Longsword +1"
+      ]
+    },
+    {
+      "ID": 20212,
+      "Entries": [
+        "Fine Longsword +2"
+      ]
+    },
+    {
+      "ID": 20213,
+      "Entries": [
+        "Fine Longsword +3"
+      ]
+    },
+    {
+      "ID": 20214,
+      "Entries": [
+        "Fine Longsword +4"
+      ]
+    },
+    {
+      "ID": 20215,
+      "Entries": [
+        "Fine longsword +5"
+      ]
+    },
+    {
+      "ID": 20221,
+      "Entries": [
+        "Dragon Longsword +1"
+      ]
+    },
+    {
+      "ID": 20222,
+      "Entries": [
+        "Dragon longsword +2"
+      ]
+    },
+    {
+      "ID": 20223,
+      "Entries": [
+        "Dragon longsword +3"
+      ]
+    },
+    {
+      "ID": 20224,
+      "Entries": [
+        "Dragon longsword +4"
+      ]
+    },
+    {
+      "ID": 20225,
+      "Entries": [
+        "Dragon longsword +5"
+      ]
+    },
+    {
+      "ID": 20231,
+      "Entries": [
+        "Lunar Longsword +1"
+      ]
+    },
+    {
+      "ID": 20232,
+      "Entries": [
+        "Lunar Longsword +2"
+      ]
+    },
+    {
+      "ID": 20233,
+      "Entries": [
+        "Lunar Longsword +3"
+      ]
+    },
+    {
+      "ID": 20234,
+      "Entries": [
+        "Lunar Longsword +4"
+      ]
+    },
+    {
+      "ID": 20235,
+      "Entries": [
+        "Lunar Longsword +5"
+      ]
+    },
+    {
+      "ID": 20241,
+      "Entries": [
+        "Smashing Longsword +1"
+      ]
+    },
+    {
+      "ID": 20242,
+      "Entries": [
+        "Smashing Longsword +2"
+      ]
+    },
+    {
+      "ID": 20243,
+      "Entries": [
+        "Smashing Longsword +3"
+      ]
+    },
+    {
+      "ID": 20244,
+      "Entries": [
+        "Crushing Longsword +4"
+      ]
+    },
+    {
+      "ID": 20245,
+      "Entries": [
+        "Smashing Longsword +5"
+      ]
+    },
+    {
+      "ID": 20251,
+      "Entries": [
+        "Blessed Longsword +1"
+      ]
+    },
+    {
+      "ID": 20252,
+      "Entries": [
+        "Blessed Longsword +2"
+      ]
+    },
+    {
+      "ID": 20253,
+      "Entries": [
+        "Blessed Longsword +3"
+      ]
+    },
+    {
+      "ID": 20254,
+      "Entries": [
+        "Blessed Longsword +4"
+      ]
+    },
+    {
+      "ID": 20255,
+      "Entries": [
+        "Blessed Longsword +5"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "Flamberge"
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        "Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        "Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20304,
+      "Entries": [
+        "Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20305,
+      "Entries": [
+        "Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20306,
+      "Entries": [
+        "Flamberge +6"
+      ]
+    },
+    {
+      "ID": 20307,
+      "Entries": [
+        "Flamberge +7"
+      ]
+    },
+    {
+      "ID": 20308,
+      "Entries": [
+        "Flamberge +8"
+      ]
+    },
+    {
+      "ID": 20309,
+      "Entries": [
+        "Flamberge +9"
+      ]
+    },
+    {
+      "ID": 20310,
+      "Entries": [
+        "Flamberge +10"
+      ]
+    },
+    {
+      "ID": 20311,
+      "Entries": [
+        "Sharp Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20312,
+      "Entries": [
+        "Sharp Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20313,
+      "Entries": [
+        "Sharp Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20314,
+      "Entries": [
+        "Sharp Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20315,
+      "Entries": [
+        "Sharp Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20321,
+      "Entries": [
+        "Fracture Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20322,
+      "Entries": [
+        "Fracture Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20323,
+      "Entries": [
+        "Fractured Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20324,
+      "Entries": [
+        "Fracture Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20325,
+      "Entries": [
+        "Fracture Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20331,
+      "Entries": [
+        "Missing Moon Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20332,
+      "Entries": [
+        "Missing Moon Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20333,
+      "Entries": [
+        "Missing Moon Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20334,
+      "Entries": [
+        "Missing Moon Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20335,
+      "Entries": [
+        "Missing Moon Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20341,
+      "Entries": [
+        "Fine Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20342,
+      "Entries": [
+        "Fine Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20343,
+      "Entries": [
+        "Fine Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20344,
+      "Entries": [
+        "Fine Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20345,
+      "Entries": [
+        "Fine Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20351,
+      "Entries": [
+        "Mercury Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20352,
+      "Entries": [
+        "Mercury Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20353,
+      "Entries": [
+        "Mercury Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20354,
+      "Entries": [
+        "Mercury Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20355,
+      "Entries": [
+        "Mercury Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20361,
+      "Entries": [
+        "Lunar Flamberge +1"
+      ]
+    },
+    {
+      "ID": 20362,
+      "Entries": [
+        "Lunar Flamberge +2"
+      ]
+    },
+    {
+      "ID": 20363,
+      "Entries": [
+        "Lunar Flamberge +3"
+      ]
+    },
+    {
+      "ID": 20364,
+      "Entries": [
+        "Lunar Flamberge +4"
+      ]
+    },
+    {
+      "ID": 20365,
+      "Entries": [
+        "Lunar Flamberge +5"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "Bastard Sword"
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        "Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20402,
+      "Entries": [
+        "Bastard Sword +2"
+      ]
+    },
+    {
+      "ID": 20403,
+      "Entries": [
+        "Bastard Sword +3"
+      ]
+    },
+    {
+      "ID": 20404,
+      "Entries": [
+        "Bastard Sword +4"
+      ]
+    },
+    {
+      "ID": 20405,
+      "Entries": [
+        "Bastard Sword +5"
+      ]
+    },
+    {
+      "ID": 20406,
+      "Entries": [
+        "Bastard Sword +6"
+      ]
+    },
+    {
+      "ID": 20407,
+      "Entries": [
+        "Bastard Sword +7"
+      ]
+    },
+    {
+      "ID": 20408,
+      "Entries": [
+        "Bastard Sword +8"
+      ]
+    },
+    {
+      "ID": 20409,
+      "Entries": [
+        "Bastard Sword +9"
+      ]
+    },
+    {
+      "ID": 20410,
+      "Entries": [
+        "Bastard Sword +10"
+      ]
+    },
+    {
+      "ID": 20411,
+      "Entries": [
+        "Fine Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20412,
+      "Entries": [
+        "Fine Bastard Sword +2"
+      ]
+    },
+    {
+      "ID": 20413,
+      "Entries": [
+        "Fine Bastard Sword +3"
+      ]
+    },
+    {
+      "ID": 20414,
+      "Entries": [
+        "Fine Bastard Sword +4"
+      ]
+    },
+    {
+      "ID": 20415,
+      "Entries": [
+        "Fine Bastard Sword +5"
+      ]
+    },
+    {
+      "ID": 20421,
+      "Entries": [
+        "Dragon Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20422,
+      "Entries": [
+        "Dragon Bastard Sword +2"
+      ]
+    },
+    {
+      "ID": 20423,
+      "Entries": [
+        "Dragon Bastard Sword +3"
+      ]
+    },
+    {
+      "ID": 20424,
+      "Entries": [
+        "Dragon Bastard Sword +4"
+      ]
+    },
+    {
+      "ID": 20425,
+      "Entries": [
+        "Dragon Bastard Sword +5"
+      ]
+    },
+    {
+      "ID": 20431,
+      "Entries": [
+        "Lunar Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20432,
+      "Entries": [
+        "Lunar Bastard Sword +2"
+      ]
+    },
+    {
+      "ID": 20433,
+      "Entries": [
+        "Lunar Bastard Sword +3"
+      ]
+    },
+    {
+      "ID": 20434,
+      "Entries": [
+        "Lunar Bastard Sword +4"
+      ]
+    },
+    {
+      "ID": 20435,
+      "Entries": [
+        "Lunar Bastard Sword +5"
+      ]
+    },
+    {
+      "ID": 20441,
+      "Entries": [
+        "Crushing Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20442,
+      "Entries": [
+        "Crushing bastard sword +2"
+      ]
+    },
+    {
+      "ID": 20443,
+      "Entries": [
+        "Crushing bastard sword +3"
+      ]
+    },
+    {
+      "ID": 20444,
+      "Entries": [
+        "Crushing bastard sword +4"
+      ]
+    },
+    {
+      "ID": 20445,
+      "Entries": [
+        "Crushing bastard sword +5"
+      ]
+    },
+    {
+      "ID": 20451,
+      "Entries": [
+        "Blessed Bastard Sword +1"
+      ]
+    },
+    {
+      "ID": 20452,
+      "Entries": [
+        "Blessed Bastard Sword +2"
+      ]
+    },
+    {
+      "ID": 20453,
+      "Entries": [
+        "Blessed Bastard Sword +3"
+      ]
+    },
+    {
+      "ID": 20454,
+      "Entries": [
+        "Blessed Bastard Sword +4"
+      ]
+    },
+    {
+      "ID": 20455,
+      "Entries": [
+        "Blessed Bastard Sword +5"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Claymore"
+      ]
+    },
+    {
+      "ID": 20501,
+      "Entries": [
+        "Claymore +1"
+      ]
+    },
+    {
+      "ID": 20502,
+      "Entries": [
+        "Claymore +2"
+      ]
+    },
+    {
+      "ID": 20503,
+      "Entries": [
+        "Claymore +3"
+      ]
+    },
+    {
+      "ID": 20504,
+      "Entries": [
+        "Claymore +4"
+      ]
+    },
+    {
+      "ID": 20505,
+      "Entries": [
+        "Claymore +5"
+      ]
+    },
+    {
+      "ID": 20506,
+      "Entries": [
+        "Claymore +6"
+      ]
+    },
+    {
+      "ID": 20507,
+      "Entries": [
+        "Claymore +7"
+      ]
+    },
+    {
+      "ID": 20508,
+      "Entries": [
+        "Claymore +8"
+      ]
+    },
+    {
+      "ID": 20509,
+      "Entries": [
+        "Claymore +9"
+      ]
+    },
+    {
+      "ID": 20510,
+      "Entries": [
+        "Claymore +10"
+      ]
+    },
+    {
+      "ID": 20511,
+      "Entries": [
+        "Fine Claymore +1"
+      ]
+    },
+    {
+      "ID": 20512,
+      "Entries": [
+        "Fine Claymore +2"
+      ]
+    },
+    {
+      "ID": 20513,
+      "Entries": [
+        "Fine Claymore +3"
+      ]
+    },
+    {
+      "ID": 20514,
+      "Entries": [
+        "Fine Claymore +4"
+      ]
+    },
+    {
+      "ID": 20515,
+      "Entries": [
+        "Fine Claymore +5"
+      ]
+    },
+    {
+      "ID": 20521,
+      "Entries": [
+        "Dragon Claymore +1"
+      ]
+    },
+    {
+      "ID": 20522,
+      "Entries": [
+        "Dragon Claymore +2"
+      ]
+    },
+    {
+      "ID": 20523,
+      "Entries": [
+        "Dragon Claymore +3"
+      ]
+    },
+    {
+      "ID": 20524,
+      "Entries": [
+        "Dragon Claymore +4"
+      ]
+    },
+    {
+      "ID": 20525,
+      "Entries": [
+        "Dragon Claymore +5"
+      ]
+    },
+    {
+      "ID": 20531,
+      "Entries": [
+        "Moon Claymore +1"
+      ]
+    },
+    {
+      "ID": 20532,
+      "Entries": [
+        "Moon Claymore +2"
+      ]
+    },
+    {
+      "ID": 20533,
+      "Entries": [
+        "Moon Claymore +3"
+      ]
+    },
+    {
+      "ID": 20534,
+      "Entries": [
+        "Moon Claymore +4"
+      ]
+    },
+    {
+      "ID": 20535,
+      "Entries": [
+        "Moon Claymore +5"
+      ]
+    },
+    {
+      "ID": 20541,
+      "Entries": [
+        "Smashing Claymore +1"
+      ]
+    },
+    {
+      "ID": 20542,
+      "Entries": [
+        "Crush Claymore +2"
+      ]
+    },
+    {
+      "ID": 20543,
+      "Entries": [
+        "Crush Claymore +3"
+      ]
+    },
+    {
+      "ID": 20544,
+      "Entries": [
+        "Crush Claymore +4"
+      ]
+    },
+    {
+      "ID": 20545,
+      "Entries": [
+        "Crush Claymore +5"
+      ]
+    },
+    {
+      "ID": 20551,
+      "Entries": [
+        "blessed claymore +1"
+      ]
+    },
+    {
+      "ID": 20552,
+      "Entries": [
+        "blessed claymore +2"
+      ]
+    },
+    {
+      "ID": 20553,
+      "Entries": [
+        "blessed claymore +3"
+      ]
+    },
+    {
+      "ID": 20554,
+      "Entries": [
+        "blessed claymore +4"
+      ]
+    },
+    {
+      "ID": 20555,
+      "Entries": [
+        "blessed claymore +5"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "great sword"
+      ]
+    },
+    {
+      "ID": 20601,
+      "Entries": [
+        "Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20602,
+      "Entries": [
+        "Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20603,
+      "Entries": [
+        "Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20604,
+      "Entries": [
+        "Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20605,
+      "Entries": [
+        "Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20606,
+      "Entries": [
+        "Greatsword +6"
+      ]
+    },
+    {
+      "ID": 20607,
+      "Entries": [
+        "Greatsword +7"
+      ]
+    },
+    {
+      "ID": 20608,
+      "Entries": [
+        "Greatsword +8"
+      ]
+    },
+    {
+      "ID": 20609,
+      "Entries": [
+        "Greatsword +9"
+      ]
+    },
+    {
+      "ID": 20610,
+      "Entries": [
+        "Greatsword +10"
+      ]
+    },
+    {
+      "ID": 20611,
+      "Entries": [
+        "Fine Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20612,
+      "Entries": [
+        "Fine Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20613,
+      "Entries": [
+        "Fine Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20614,
+      "Entries": [
+        "Fine Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20615,
+      "Entries": [
+        "Fine Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20621,
+      "Entries": [
+        "Dragon Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20622,
+      "Entries": [
+        "Dragon Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20623,
+      "Entries": [
+        "Dragon Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20624,
+      "Entries": [
+        "Dragon Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20625,
+      "Entries": [
+        "Dragon Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20631,
+      "Entries": [
+        "Lunar Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20632,
+      "Entries": [
+        "Lunar Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20633,
+      "Entries": [
+        "Lunar Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20634,
+      "Entries": [
+        "Lunar Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20635,
+      "Entries": [
+        "Lunar Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20641,
+      "Entries": [
+        "Crushing Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20642,
+      "Entries": [
+        "Crushing Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20643,
+      "Entries": [
+        "Crushing Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20644,
+      "Entries": [
+        "Crushing Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20645,
+      "Entries": [
+        "Crushing Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20651,
+      "Entries": [
+        "Blessed Greatsword +1"
+      ]
+    },
+    {
+      "ID": 20652,
+      "Entries": [
+        "Blessed Greatsword +2"
+      ]
+    },
+    {
+      "ID": 20653,
+      "Entries": [
+        "Blessed Greatsword +3"
+      ]
+    },
+    {
+      "ID": 20654,
+      "Entries": [
+        "Blessed Greatsword +4"
+      ]
+    },
+    {
+      "ID": 20655,
+      "Entries": [
+        "Blessed Greatsword +5"
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "keel crusher"
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        "Keel Smasher +1"
+      ]
+    },
+    {
+      "ID": 20702,
+      "Entries": [
+        "Keel Smasher +2"
+      ]
+    },
+    {
+      "ID": 20703,
+      "Entries": [
+        "Keel Smasher +3"
+      ]
+    },
+    {
+      "ID": 20704,
+      "Entries": [
+        "Keel Smasher +4"
+      ]
+    },
+    {
+      "ID": 20705,
+      "Entries": [
+        "Keel Smasher +5"
+      ]
+    },
+    {
+      "ID": 20800,
+      "Entries": [
+        "rune sword"
+      ]
+    },
+    {
+      "ID": 20801,
+      "Entries": [
+        "Rune Sword +1"
+      ]
+    },
+    {
+      "ID": 20802,
+      "Entries": [
+        "Rune Sword +2"
+      ]
+    },
+    {
+      "ID": 20803,
+      "Entries": [
+        "Runesword +3"
+      ]
+    },
+    {
+      "ID": 20804,
+      "Entries": [
+        "Rune Sword +4"
+      ]
+    },
+    {
+      "ID": 20805,
+      "Entries": [
+        "Rune Sword +5"
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "soul brand"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "demon brand"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21101,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21102,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21103,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21104,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21105,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21106,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21107,
+      "Entries": [
+        "Storm Bringer"
+      ]
+    },
+    {
+      "ID": 21300,
+      "Entries": [
+        "knight straight sword"
+      ]
+    },
+    {
+      "ID": 21301,
+      "Entries": [
+        "Knight straight sword +1"
+      ]
+    },
+    {
+      "ID": 21302,
+      "Entries": [
+        "Knight straight sword +2"
+      ]
+    },
+    {
+      "ID": 21303,
+      "Entries": [
+        "Knight straight sword +3"
+      ]
+    },
+    {
+      "ID": 21304,
+      "Entries": [
+        "Knight straight sword +4"
+      ]
+    },
+    {
+      "ID": 21305,
+      "Entries": [
+        "Knight straight sword +5"
+      ]
+    },
+    {
+      "ID": 21306,
+      "Entries": [
+        "Knight straight sword +6"
+      ]
+    },
+    {
+      "ID": 21307,
+      "Entries": [
+        "Knight straight sword +7"
+      ]
+    },
+    {
+      "ID": 21308,
+      "Entries": [
+        "Knight straight sword +8"
+      ]
+    },
+    {
+      "ID": 21309,
+      "Entries": [
+        "Knight straight sword +9"
+      ]
+    },
+    {
+      "ID": 21310,
+      "Entries": [
+        "Knight straight sword +10"
+      ]
+    },
+    {
+      "ID": 21311,
+      "Entries": [
+        "Fine Knight Straight Sword +1"
+      ]
+    },
+    {
+      "ID": 21312,
+      "Entries": [
+        "Fine Knight Straight Sword +2"
+      ]
+    },
+    {
+      "ID": 21313,
+      "Entries": [
+        "Fine Knight Straight Sword +3"
+      ]
+    },
+    {
+      "ID": 21314,
+      "Entries": [
+        "Fine Knight Straight Sword +4"
+      ]
+    },
+    {
+      "ID": 21315,
+      "Entries": [
+        "Fine Knight Straight Sword +5"
+      ]
+    },
+    {
+      "ID": 21321,
+      "Entries": [
+        "Dragon Knight Straight Sword +1"
+      ]
+    },
+    {
+      "ID": 21322,
+      "Entries": [
+        "Dragon Knight Straight Sword +2"
+      ]
+    },
+    {
+      "ID": 21323,
+      "Entries": [
+        "Dragon Knight Straight Sword +3"
+      ]
+    },
+    {
+      "ID": 21324,
+      "Entries": [
+        "Dragon Sword of Boletaria +4"
+      ]
+    },
+    {
+      "ID": 21325,
+      "Entries": [
+        "Dragon Sword of Boletaria +5"
+      ]
+    },
+    {
+      "ID": 21331,
+      "Entries": [
+        "Moon Knight Straight Sword +1"
+      ]
+    },
+    {
+      "ID": 21332,
+      "Entries": [
+        "Moon Knight Straight Sword +2"
+      ]
+    },
+    {
+      "ID": 21333,
+      "Entries": [
+        "Moon Knight Straight Sword +3"
+      ]
+    },
+    {
+      "ID": 21334,
+      "Entries": [
+        "Moon Knight Straight Sword +4"
+      ]
+    },
+    {
+      "ID": 21335,
+      "Entries": [
+        "Moon Knight Straight Sword +5"
+      ]
+    },
+    {
+      "ID": 21341,
+      "Entries": [
+        "Smashing Sword of Boletaria +1"
+      ]
+    },
+    {
+      "ID": 21342,
+      "Entries": [
+        "Smashing Sword of Boletaria +2"
+      ]
+    },
+    {
+      "ID": 21343,
+      "Entries": [
+        "Smashing Sword of Boletaria +3"
+      ]
+    },
+    {
+      "ID": 21344,
+      "Entries": [
+        "Smashing Sword of Boletaria +4"
+      ]
+    },
+    {
+      "ID": 21345,
+      "Entries": [
+        "Smashing Sword of Boletaria +5"
+      ]
+    },
+    {
+      "ID": 21351,
+      "Entries": [
+        "Blessed Sword of Boletaria +1"
+      ]
+    },
+    {
+      "ID": 21352,
+      "Entries": [
+        "Blessed Sword of Borletaria +2"
+      ]
+    },
+    {
+      "ID": 21353,
+      "Entries": [
+        "Blessed Sword of Boletaria +3"
+      ]
+    },
+    {
+      "ID": 21354,
+      "Entries": [
+        "Blessed Sword of Borletaria +4"
+      ]
+    },
+    {
+      "ID": 21355,
+      "Entries": [
+        "Blessed Sword of Borletaria +5"
+      ]
+    },
+    {
+      "ID": 21400,
+      "Entries": [
+        "broken straight sword"
+      ]
+    },
+    {
+      "ID": 21500,
+      "Entries": [
+        "Strengthen Lendl DS"
+      ]
+    },
+    {
+      "ID": 21501,
+      "Entries": [
+        "Strengthen Lendl DS"
+      ]
+    },
+    {
+      "ID": 21600,
+      "Entries": [
+        "moonlight sword"
+      ]
+    },
+    {
+      "ID": 21601,
+      "Entries": [
+        "Moonlight +1"
+      ]
+    },
+    {
+      "ID": 21602,
+      "Entries": [
+        "Moonlight +2"
+      ]
+    },
+    {
+      "ID": 21603,
+      "Entries": [
+        "Moonlight +3"
+      ]
+    },
+    {
+      "ID": 21604,
+      "Entries": [
+        "Moonlight +4"
+      ]
+    },
+    {
+      "ID": 21605,
+      "Entries": [
+        "Moonlight +5"
+      ]
+    },
+    {
+      "ID": 21699,
+      "Entries": [
+        "Moonlight for Gold Run"
+      ]
+    },
+    {
+      "ID": 21700,
+      "Entries": [
+        "Enhanced Libra DS"
+      ]
+    },
+    {
+      "ID": 21800,
+      "Entries": [
+        "Tsuranuki Sword"
+      ]
+    },
+    {
+      "ID": 21801,
+      "Entries": [
+        "Tsuranuki Sword +1"
+      ]
+    },
+    {
+      "ID": 21802,
+      "Entries": [
+        "Tsuranuki Sword +2"
+      ]
+    },
+    {
+      "ID": 21803,
+      "Entries": [
+        "Tsuranuki Sword +3"
+      ]
+    },
+    {
+      "ID": 21804,
+      "Entries": [
+        "Tsuranuki Sword +4"
+      ]
+    },
+    {
+      "ID": 21805,
+      "Entries": [
+        "Tsuranuki Sword +5"
+      ]
+    },
+    {
+      "ID": 21900,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 21901,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 21902,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 21903,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 21904,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 21905,
+      "Entries": [
+        "Groom Sword"
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "Wandering Straight Sword"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "rapier"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Rapier +1"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Rapier +2"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "Rapier +3"
+      ]
+    },
+    {
+      "ID": 30004,
+      "Entries": [
+        "Rapier +4"
+      ]
+    },
+    {
+      "ID": 30005,
+      "Entries": [
+        "Rapier +5"
+      ]
+    },
+    {
+      "ID": 30006,
+      "Entries": [
+        "Rapier +6"
+      ]
+    },
+    {
+      "ID": 30007,
+      "Entries": [
+        "Rapier +7"
+      ]
+    },
+    {
+      "ID": 30008,
+      "Entries": [
+        "Rapier +8"
+      ]
+    },
+    {
+      "ID": 30009,
+      "Entries": [
+        "Rapier +9"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Rapier +10"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "fine rapier +1"
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        "fine rapier +2"
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "Fine rapier +3"
+      ]
+    },
+    {
+      "ID": 30014,
+      "Entries": [
+        "fine rapier +4"
+      ]
+    },
+    {
+      "ID": 30015,
+      "Entries": [
+        "fine rapier +5"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "Mercury Rapier +1"
+      ]
+    },
+    {
+      "ID": 30022,
+      "Entries": [
+        "Mercury Rapier +2"
+      ]
+    },
+    {
+      "ID": 30023,
+      "Entries": [
+        "Mercury Rapier +3"
+      ]
+    },
+    {
+      "ID": 30024,
+      "Entries": [
+        "Mercury Rapier +4"
+      ]
+    },
+    {
+      "ID": 30025,
+      "Entries": [
+        "Mercury Rapier +5"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "Deadly Rapier +1"
+      ]
+    },
+    {
+      "ID": 30032,
+      "Entries": [
+        "Deadly Rapier +2"
+      ]
+    },
+    {
+      "ID": 30033,
+      "Entries": [
+        "Deadly Rapier +3"
+      ]
+    },
+    {
+      "ID": 30034,
+      "Entries": [
+        "Deadly Rapier +4"
+      ]
+    },
+    {
+      "ID": 30035,
+      "Entries": [
+        "Deadly Rapier +5"
+      ]
+    },
+    {
+      "ID": 30041,
+      "Entries": [
+        "sharp rapier +1"
+      ]
+    },
+    {
+      "ID": 30042,
+      "Entries": [
+        "sharp rapier +2"
+      ]
+    },
+    {
+      "ID": 30043,
+      "Entries": [
+        "sharp rapier +3"
+      ]
+    },
+    {
+      "ID": 30044,
+      "Entries": [
+        "sharp rapier +4"
+      ]
+    },
+    {
+      "ID": 30045,
+      "Entries": [
+        "sharp rapier +5"
+      ]
+    },
+    {
+      "ID": 30051,
+      "Entries": [
+        "Missing Moon Rapier +1"
+      ]
+    },
+    {
+      "ID": 30052,
+      "Entries": [
+        "Missing Moon Rapier +2"
+      ]
+    },
+    {
+      "ID": 30053,
+      "Entries": [
+        "Missing Moon Rapier +3"
+      ]
+    },
+    {
+      "ID": 30054,
+      "Entries": [
+        "Missing Moon Rapier +4"
+      ]
+    },
+    {
+      "ID": 30055,
+      "Entries": [
+        "Missing Moon Rapier +5"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "Estok"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "Estok +1"
+      ]
+    },
+    {
+      "ID": 30102,
+      "Entries": [
+        "Estok +2"
+      ]
+    },
+    {
+      "ID": 30103,
+      "Entries": [
+        "Estok +3"
+      ]
+    },
+    {
+      "ID": 30104,
+      "Entries": [
+        "Estok +4"
+      ]
+    },
+    {
+      "ID": 30105,
+      "Entries": [
+        "Estok +5"
+      ]
+    },
+    {
+      "ID": 30106,
+      "Entries": [
+        "Estok +6"
+      ]
+    },
+    {
+      "ID": 30107,
+      "Entries": [
+        "Estok +7"
+      ]
+    },
+    {
+      "ID": 30108,
+      "Entries": [
+        "Estok +8"
+      ]
+    },
+    {
+      "ID": 30109,
+      "Entries": [
+        "Estok +9"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Estok +10"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "Fine Estok +1"
+      ]
+    },
+    {
+      "ID": 30112,
+      "Entries": [
+        "Fine Estok +2"
+      ]
+    },
+    {
+      "ID": 30113,
+      "Entries": [
+        "Fine Estok +3"
+      ]
+    },
+    {
+      "ID": 30114,
+      "Entries": [
+        "Fine Estok +4"
+      ]
+    },
+    {
+      "ID": 30115,
+      "Entries": [
+        "Fine Estok +5"
+      ]
+    },
+    {
+      "ID": 30121,
+      "Entries": [
+        "Mercury Esstoc +1"
+      ]
+    },
+    {
+      "ID": 30122,
+      "Entries": [
+        "Mercury Estoc +2"
+      ]
+    },
+    {
+      "ID": 30123,
+      "Entries": [
+        "Mercury Estoc +3"
+      ]
+    },
+    {
+      "ID": 30124,
+      "Entries": [
+        "Mercury Estoc +4"
+      ]
+    },
+    {
+      "ID": 30125,
+      "Entries": [
+        "Mercury Estoc +5"
+      ]
+    },
+    {
+      "ID": 30131,
+      "Entries": [
+        "Fatal Estoc +1"
+      ]
+    },
+    {
+      "ID": 30132,
+      "Entries": [
+        "Fatal Estoc +2"
+      ]
+    },
+    {
+      "ID": 30133,
+      "Entries": [
+        "Fatal Estoc +3"
+      ]
+    },
+    {
+      "ID": 30134,
+      "Entries": [
+        "Fatal Estoc +4"
+      ]
+    },
+    {
+      "ID": 30135,
+      "Entries": [
+        "Fatal Estoc +5"
+      ]
+    },
+    {
+      "ID": 30141,
+      "Entries": [
+        "Sharp Estoc +1"
+      ]
+    },
+    {
+      "ID": 30142,
+      "Entries": [
+        "Sharp Estoc +2"
+      ]
+    },
+    {
+      "ID": 30143,
+      "Entries": [
+        "Sharp Estoc +3"
+      ]
+    },
+    {
+      "ID": 30144,
+      "Entries": [
+        "Sharp Estoc +4"
+      ]
+    },
+    {
+      "ID": 30145,
+      "Entries": [
+        "Sharp Estoc +5"
+      ]
+    },
+    {
+      "ID": 30151,
+      "Entries": [
+        "Missing Moon Estok +1"
+      ]
+    },
+    {
+      "ID": 30152,
+      "Entries": [
+        "Missing Moon Estok +2"
+      ]
+    },
+    {
+      "ID": 30153,
+      "Entries": [
+        "Estok of Missing Moon +3"
+      ]
+    },
+    {
+      "ID": 30154,
+      "Entries": [
+        "Missing Moon Estok +4"
+      ]
+    },
+    {
+      "ID": 30155,
+      "Entries": [
+        "Estok of Missing Moon +5"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "Epee Lapier"
+      ]
+    },
+    {
+      "ID": 30201,
+      "Entries": [
+        "Epee Lapier +1"
+      ]
+    },
+    {
+      "ID": 30202,
+      "Entries": [
+        "Epee Lapier +2"
+      ]
+    },
+    {
+      "ID": 30203,
+      "Entries": [
+        "Epee Lapier +3"
+      ]
+    },
+    {
+      "ID": 30204,
+      "Entries": [
+        "Epee Lapier +4"
+      ]
+    },
+    {
+      "ID": 30205,
+      "Entries": [
+        "Epee Lapier +5"
+      ]
+    },
+    {
+      "ID": 30300,
+      "Entries": [
+        "gargoyle sword"
+      ]
+    },
+    {
+      "ID": 30301,
+      "Entries": [
+        "Gargoyle sword +1"
+      ]
+    },
+    {
+      "ID": 30302,
+      "Entries": [
+        "Gargoyle sword +2"
+      ]
+    },
+    {
+      "ID": 30303,
+      "Entries": [
+        "Gargoyle sword +3"
+      ]
+    },
+    {
+      "ID": 30304,
+      "Entries": [
+        "Gargoyle sword +4"
+      ]
+    },
+    {
+      "ID": 30305,
+      "Entries": [
+        "Gargoyle sword +5"
+      ]
+    },
+    {
+      "ID": 30306,
+      "Entries": [
+        "Gargoyle sword +6"
+      ]
+    },
+    {
+      "ID": 30307,
+      "Entries": [
+        "Gargoyle sword +7"
+      ]
+    },
+    {
+      "ID": 30308,
+      "Entries": [
+        "Gargoyle sword +8"
+      ]
+    },
+    {
+      "ID": 30309,
+      "Entries": [
+        "Gargoyle sword +9"
+      ]
+    },
+    {
+      "ID": 30310,
+      "Entries": [
+        "Gargoyle sword +10"
+      ]
+    },
+    {
+      "ID": 30311,
+      "Entries": [
+        "Fine Gargoyle Piercing Sword +1"
+      ]
+    },
+    {
+      "ID": 30312,
+      "Entries": [
+        "Fine Gargoyle Piercing Sword +2"
+      ]
+    },
+    {
+      "ID": 30313,
+      "Entries": [
+        "High-quality gargoyle sword +3"
+      ]
+    },
+    {
+      "ID": 30314,
+      "Entries": [
+        "High-quality gargoyle sword +4"
+      ]
+    },
+    {
+      "ID": 30315,
+      "Entries": [
+        "High-quality gargoyle sword +5"
+      ]
+    },
+    {
+      "ID": 30321,
+      "Entries": [
+        "Mercury Gargoyle Sword +1"
+      ]
+    },
+    {
+      "ID": 30322,
+      "Entries": [
+        "Mercury Gargoyle Sword +2"
+      ]
+    },
+    {
+      "ID": 30323,
+      "Entries": [
+        "Mercury Gargoyle Sword +3"
+      ]
+    },
+    {
+      "ID": 30324,
+      "Entries": [
+        "Mercury Twisted Rapier +4"
+      ]
+    },
+    {
+      "ID": 30325,
+      "Entries": [
+        "Mercury Twisted Rapier +5"
+      ]
+    },
+    {
+      "ID": 30331,
+      "Entries": [
+        "Deadly Gargoyle Piercing Sword +1"
+      ]
+    },
+    {
+      "ID": 30332,
+      "Entries": [
+        "Deadly Gargoyle Sword +2"
+      ]
+    },
+    {
+      "ID": 30333,
+      "Entries": [
+        "Deadly Gargoyle Sword +3"
+      ]
+    },
+    {
+      "ID": 30334,
+      "Entries": [
+        "Deadly Twisted Rapier +4"
+      ]
+    },
+    {
+      "ID": 30335,
+      "Entries": [
+        "Deadly Twisted Rapier +5"
+      ]
+    },
+    {
+      "ID": 30341,
+      "Entries": [
+        "sharp twisted rapier +1"
+      ]
+    },
+    {
+      "ID": 30342,
+      "Entries": [
+        "sharp twisted rapier +2"
+      ]
+    },
+    {
+      "ID": 30343,
+      "Entries": [
+        "sharp twisted rapier +3"
+      ]
+    },
+    {
+      "ID": 30344,
+      "Entries": [
+        "sharp twisted rapier +4"
+      ]
+    },
+    {
+      "ID": 30345,
+      "Entries": [
+        "sharp twisted rapier +5"
+      ]
+    },
+    {
+      "ID": 30351,
+      "Entries": [
+        "Missing Moon Twisted Rapier +1"
+      ]
+    },
+    {
+      "ID": 30352,
+      "Entries": [
+        "Missing Moon Twisted Rapier +2"
+      ]
+    },
+    {
+      "ID": 30353,
+      "Entries": [
+        "Missing Moon Twisted Rapier +3"
+      ]
+    },
+    {
+      "ID": 30354,
+      "Entries": [
+        "Missing Moon Twisted Rapier +4"
+      ]
+    },
+    {
+      "ID": 30355,
+      "Entries": [
+        "Missing Moon Twisted Rapier +5"
+      ]
+    },
+    {
+      "ID": 30400,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30401,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30402,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30403,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30404,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30405,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30406,
+      "Entries": [
+        "Enhanced Chimera DS"
+      ]
+    },
+    {
+      "ID": 30407,
+      "Entries": [
+        "Needle of Endless Anguish"
+      ]
+    },
+    {
+      "ID": 39000,
+      "Entries": [
+        "Wandering Stabbing Sword"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Scimitar"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Scimitar +1"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Scimitar +2"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "Scimitar +3"
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        "Scimitar +4"
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "Scimitar +5"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        "Scimitar +6"
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        "Scimitar +7"
+      ]
+    },
+    {
+      "ID": 40008,
+      "Entries": [
+        "Scimitar +8"
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        "Scimitar +9"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "Scimitar +10"
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        "sharp scimitar +1"
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        "sharp scimitar +2"
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        "sharp scimitar +3"
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        "sharp scimitar +4"
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        "sharp scimitar +5"
+      ]
+    },
+    {
+      "ID": 40021,
+      "Entries": [
+        "Rift Scimitar +1"
+      ]
+    },
+    {
+      "ID": 40022,
+      "Entries": [
+        "Rift Scimitar +2"
+      ]
+    },
+    {
+      "ID": 40023,
+      "Entries": [
+        "Rift Scimitar +3"
+      ]
+    },
+    {
+      "ID": 40024,
+      "Entries": [
+        "Rift Scimitar +4"
+      ]
+    },
+    {
+      "ID": 40025,
+      "Entries": [
+        "Rift Scimitar +5"
+      ]
+    },
+    {
+      "ID": 40031,
+      "Entries": [
+        "Missing Moon Scimitar +1"
+      ]
+    },
+    {
+      "ID": 40032,
+      "Entries": [
+        "Missing Moon Scimitar +2"
+      ]
+    },
+    {
+      "ID": 40033,
+      "Entries": [
+        "Missing Moon Scimitar +3"
+      ]
+    },
+    {
+      "ID": 40034,
+      "Entries": [
+        "Missing Moon Scimitar +4"
+      ]
+    },
+    {
+      "ID": 40035,
+      "Entries": [
+        "Missing Moon Scimitar +5"
+      ]
+    },
+    {
+      "ID": 40041,
+      "Entries": [
+        "Fine Scimitar +1"
+      ]
+    },
+    {
+      "ID": 40042,
+      "Entries": [
+        "Fine Scimitar +2"
+      ]
+    },
+    {
+      "ID": 40043,
+      "Entries": [
+        "Fine Scimitar +3"
+      ]
+    },
+    {
+      "ID": 40044,
+      "Entries": [
+        "Fine Scimitar +4"
+      ]
+    },
+    {
+      "ID": 40045,
+      "Entries": [
+        "Fine Scimitar +5"
+      ]
+    },
+    {
+      "ID": 40051,
+      "Entries": [
+        "Mercury Scimitar +1"
+      ]
+    },
+    {
+      "ID": 40052,
+      "Entries": [
+        "Mercury Scimitar +2"
+      ]
+    },
+    {
+      "ID": 40053,
+      "Entries": [
+        "Mercury Scimitar +3"
+      ]
+    },
+    {
+      "ID": 40054,
+      "Entries": [
+        "Mercury Scimitar +4"
+      ]
+    },
+    {
+      "ID": 40055,
+      "Entries": [
+        "Mercury Scimitar +5"
+      ]
+    },
+    {
+      "ID": 40061,
+      "Entries": [
+        "Moon scimitar +1"
+      ]
+    },
+    {
+      "ID": 40062,
+      "Entries": [
+        "Moon scimitar +2"
+      ]
+    },
+    {
+      "ID": 40063,
+      "Entries": [
+        "Moon scimitar +3"
+      ]
+    },
+    {
+      "ID": 40064,
+      "Entries": [
+        "Moon scimitar +4"
+      ]
+    },
+    {
+      "ID": 40065,
+      "Entries": [
+        "Moon scimitar +5"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Kiriji"
+      ]
+    },
+    {
+      "ID": 40101,
+      "Entries": [
+        "Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40102,
+      "Entries": [
+        "Kiriji +2"
+      ]
+    },
+    {
+      "ID": 40103,
+      "Entries": [
+        "Kiriji +3"
+      ]
+    },
+    {
+      "ID": 40104,
+      "Entries": [
+        "Kiriji +4"
+      ]
+    },
+    {
+      "ID": 40105,
+      "Entries": [
+        "Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40106,
+      "Entries": [
+        "Kiriji +6"
+      ]
+    },
+    {
+      "ID": 40107,
+      "Entries": [
+        "Kiriji +7"
+      ]
+    },
+    {
+      "ID": 40108,
+      "Entries": [
+        "Kiriji +8"
+      ]
+    },
+    {
+      "ID": 40109,
+      "Entries": [
+        "Kiriji +9"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "Kiriji +10"
+      ]
+    },
+    {
+      "ID": 40111,
+      "Entries": [
+        "Sharp Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40112,
+      "Entries": [
+        "Sharp Kiriji +2"
+      ]
+    },
+    {
+      "ID": 40113,
+      "Entries": [
+        "Sharp Kiriji +3"
+      ]
+    },
+    {
+      "ID": 40114,
+      "Entries": [
+        "Sharp Kiriji +4"
+      ]
+    },
+    {
+      "ID": 40115,
+      "Entries": [
+        "Sharp Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40121,
+      "Entries": [
+        "Rip Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40122,
+      "Entries": [
+        "Rip Kiriji +2"
+      ]
+    },
+    {
+      "ID": 40123,
+      "Entries": [
+        "Rip Kiriji +3"
+      ]
+    },
+    {
+      "ID": 40124,
+      "Entries": [
+        "Ripped Kiriji +4"
+      ]
+    },
+    {
+      "ID": 40125,
+      "Entries": [
+        "Rip Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40131,
+      "Entries": [
+        "Missing Moon Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40132,
+      "Entries": [
+        "Missing Moon Kiriji +2"
+      ]
+    },
+    {
+      "ID": 40133,
+      "Entries": [
+        "Missing Moon Kiriji +3"
+      ]
+    },
+    {
+      "ID": 40134,
+      "Entries": [
+        "Missing Moon Kiriji +4"
+      ]
+    },
+    {
+      "ID": 40135,
+      "Entries": [
+        "Missing Moon Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40141,
+      "Entries": [
+        "Quality Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40142,
+      "Entries": [
+        "Quality kiriji +2"
+      ]
+    },
+    {
+      "ID": 40143,
+      "Entries": [
+        "Quality kiriji +3"
+      ]
+    },
+    {
+      "ID": 40144,
+      "Entries": [
+        "Quality kiriji +4"
+      ]
+    },
+    {
+      "ID": 40145,
+      "Entries": [
+        "Quality Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40151,
+      "Entries": [
+        "Mercury Kiriji +1"
+      ]
+    },
+    {
+      "ID": 40152,
+      "Entries": [
+        "Mercury Kiriji +2"
+      ]
+    },
+    {
+      "ID": 40153,
+      "Entries": [
+        "Mercury Kiriji +3"
+      ]
+    },
+    {
+      "ID": 40154,
+      "Entries": [
+        "Mercury Kiriji +4"
+      ]
+    },
+    {
+      "ID": 40155,
+      "Entries": [
+        "Mercury Kiriji +5"
+      ]
+    },
+    {
+      "ID": 40161,
+      "Entries": [
+        "Kiriji of the Moon +1"
+      ]
+    },
+    {
+      "ID": 40162,
+      "Entries": [
+        "Kiriji of the Moon +2"
+      ]
+    },
+    {
+      "ID": 40163,
+      "Entries": [
+        "Kiriji of the Moon +3"
+      ]
+    },
+    {
+      "ID": 40164,
+      "Entries": [
+        "Kiriji of the Moon +4"
+      ]
+    },
+    {
+      "ID": 40165,
+      "Entries": [
+        "Kiriji of the Moon +5"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "Shotel"
+      ]
+    },
+    {
+      "ID": 40201,
+      "Entries": [
+        "Shotel +1"
+      ]
+    },
+    {
+      "ID": 40202,
+      "Entries": [
+        "Shotel +2"
+      ]
+    },
+    {
+      "ID": 40203,
+      "Entries": [
+        "Shotel +3"
+      ]
+    },
+    {
+      "ID": 40204,
+      "Entries": [
+        "Shotel +4"
+      ]
+    },
+    {
+      "ID": 40205,
+      "Entries": [
+        "Shotel +5"
+      ]
+    },
+    {
+      "ID": 40206,
+      "Entries": [
+        "Shotel +6"
+      ]
+    },
+    {
+      "ID": 40207,
+      "Entries": [
+        "Shotel +7"
+      ]
+    },
+    {
+      "ID": 40208,
+      "Entries": [
+        "Shotel +8"
+      ]
+    },
+    {
+      "ID": 40209,
+      "Entries": [
+        "Shotel +9"
+      ]
+    },
+    {
+      "ID": 40210,
+      "Entries": [
+        "Shotel +10"
+      ]
+    },
+    {
+      "ID": 40211,
+      "Entries": [
+        "Sharp Shortel +1"
+      ]
+    },
+    {
+      "ID": 40212,
+      "Entries": [
+        "sharp shortel +2"
+      ]
+    },
+    {
+      "ID": 40213,
+      "Entries": [
+        "Sharp Shortel +3"
+      ]
+    },
+    {
+      "ID": 40214,
+      "Entries": [
+        "Sharp Shortel +4"
+      ]
+    },
+    {
+      "ID": 40215,
+      "Entries": [
+        "sharp shortel +5"
+      ]
+    },
+    {
+      "ID": 40221,
+      "Entries": [
+        "Rip Shotel +1"
+      ]
+    },
+    {
+      "ID": 40222,
+      "Entries": [
+        "Ripped Shotel +2"
+      ]
+    },
+    {
+      "ID": 40223,
+      "Entries": [
+        "Ripped Shotel +3"
+      ]
+    },
+    {
+      "ID": 40224,
+      "Entries": [
+        "Ripped Shotel +4"
+      ]
+    },
+    {
+      "ID": 40225,
+      "Entries": [
+        "Ripped Shortel +5"
+      ]
+    },
+    {
+      "ID": 40231,
+      "Entries": [
+        "Fine Shortel +1"
+      ]
+    },
+    {
+      "ID": 40232,
+      "Entries": [
+        "High-quality shortel +2"
+      ]
+    },
+    {
+      "ID": 40233,
+      "Entries": [
+        "High-quality shortel +3"
+      ]
+    },
+    {
+      "ID": 40234,
+      "Entries": [
+        "High-quality shortel +4"
+      ]
+    },
+    {
+      "ID": 40235,
+      "Entries": [
+        "High quality shortel +5"
+      ]
+    },
+    {
+      "ID": 40241,
+      "Entries": [
+        "Mercury Shotel +1"
+      ]
+    },
+    {
+      "ID": 40242,
+      "Entries": [
+        "Mercury Shotel +2"
+      ]
+    },
+    {
+      "ID": 40243,
+      "Entries": [
+        "Mercury Shotel +3"
+      ]
+    },
+    {
+      "ID": 40244,
+      "Entries": [
+        "Mercury Shotel +4"
+      ]
+    },
+    {
+      "ID": 40245,
+      "Entries": [
+        "Mercury Shotel +5"
+      ]
+    },
+    {
+      "ID": 40251,
+      "Entries": [
+        "Moon Shortel +1"
+      ]
+    },
+    {
+      "ID": 40252,
+      "Entries": [
+        "Moon Showtel +2"
+      ]
+    },
+    {
+      "ID": 40253,
+      "Entries": [
+        "Moon Showtel +3"
+      ]
+    },
+    {
+      "ID": 40254,
+      "Entries": [
+        "Moon Shortel +4"
+      ]
+    },
+    {
+      "ID": 40255,
+      "Entries": [
+        "Moon Shortel +5"
+      ]
+    },
+    {
+      "ID": 40261,
+      "Entries": [
+        "Missing Moon Showel +1"
+      ]
+    },
+    {
+      "ID": 40262,
+      "Entries": [
+        "Missing Moon Showtel +2"
+      ]
+    },
+    {
+      "ID": 40263,
+      "Entries": [
+        "Missing Moon Showtel +3"
+      ]
+    },
+    {
+      "ID": 40264,
+      "Entries": [
+        "Missing Moon Showtel +4"
+      ]
+    },
+    {
+      "ID": 40265,
+      "Entries": [
+        "Missing Moon Showtel +5"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "Falchion"
+      ]
+    },
+    {
+      "ID": 40301,
+      "Entries": [
+        "Falchion +1"
+      ]
+    },
+    {
+      "ID": 40302,
+      "Entries": [
+        "Falchion +2"
+      ]
+    },
+    {
+      "ID": 40303,
+      "Entries": [
+        "Falchion +3"
+      ]
+    },
+    {
+      "ID": 40304,
+      "Entries": [
+        "Falchion +4"
+      ]
+    },
+    {
+      "ID": 40305,
+      "Entries": [
+        "Falchion +5"
+      ]
+    },
+    {
+      "ID": 40306,
+      "Entries": [
+        "Falchion +6"
+      ]
+    },
+    {
+      "ID": 40307,
+      "Entries": [
+        "Falchion +7"
+      ]
+    },
+    {
+      "ID": 40308,
+      "Entries": [
+        "Falchion +8"
+      ]
+    },
+    {
+      "ID": 40309,
+      "Entries": [
+        "Falchion +9"
+      ]
+    },
+    {
+      "ID": 40310,
+      "Entries": [
+        "Falchion +10"
+      ]
+    },
+    {
+      "ID": 40311,
+      "Entries": [
+        "Sharp Falchion +1"
+      ]
+    },
+    {
+      "ID": 40312,
+      "Entries": [
+        "Sharp Falchion +2"
+      ]
+    },
+    {
+      "ID": 40313,
+      "Entries": [
+        "Sharp Falchion +3"
+      ]
+    },
+    {
+      "ID": 40314,
+      "Entries": [
+        "Sharp Falchion +4"
+      ]
+    },
+    {
+      "ID": 40315,
+      "Entries": [
+        "Sharp Falchion +5"
+      ]
+    },
+    {
+      "ID": 40321,
+      "Entries": [
+        "Rift Falchion +1"
+      ]
+    },
+    {
+      "ID": 40322,
+      "Entries": [
+        "Rift Falchion +2"
+      ]
+    },
+    {
+      "ID": 40323,
+      "Entries": [
+        "Rift Falchion +3"
+      ]
+    },
+    {
+      "ID": 40324,
+      "Entries": [
+        "Rift Falchion +4"
+      ]
+    },
+    {
+      "ID": 40325,
+      "Entries": [
+        "Rift Falchion +5"
+      ]
+    },
+    {
+      "ID": 40331,
+      "Entries": [
+        "Missing Moon Falchion +1"
+      ]
+    },
+    {
+      "ID": 40332,
+      "Entries": [
+        "Missing Moon Falchion +2"
+      ]
+    },
+    {
+      "ID": 40333,
+      "Entries": [
+        "Missing Moon Falchion +3"
+      ]
+    },
+    {
+      "ID": 40334,
+      "Entries": [
+        "Missing Moon Falchion +4"
+      ]
+    },
+    {
+      "ID": 40335,
+      "Entries": [
+        "Missing Moon Falchion +5"
+      ]
+    },
+    {
+      "ID": 40341,
+      "Entries": [
+        "Fine Falchion +1"
+      ]
+    },
+    {
+      "ID": 40342,
+      "Entries": [
+        "Fine Falchion +2"
+      ]
+    },
+    {
+      "ID": 40343,
+      "Entries": [
+        "Fine Falchion +3"
+      ]
+    },
+    {
+      "ID": 40344,
+      "Entries": [
+        "Fine Falchion +4"
+      ]
+    },
+    {
+      "ID": 40345,
+      "Entries": [
+        "Fine Falchion +5"
+      ]
+    },
+    {
+      "ID": 40351,
+      "Entries": [
+        "Mercury Falchion +1"
+      ]
+    },
+    {
+      "ID": 40352,
+      "Entries": [
+        "Mercury Falchion +2"
+      ]
+    },
+    {
+      "ID": 40353,
+      "Entries": [
+        "Mercury Falchion +3"
+      ]
+    },
+    {
+      "ID": 40354,
+      "Entries": [
+        "Mercury Falchion +4"
+      ]
+    },
+    {
+      "ID": 40355,
+      "Entries": [
+        "Mercury Falchion +5"
+      ]
+    },
+    {
+      "ID": 40361,
+      "Entries": [
+        "Lunar Falchion +1"
+      ]
+    },
+    {
+      "ID": 40362,
+      "Entries": [
+        "Moon Falchion +2"
+      ]
+    },
+    {
+      "ID": 40363,
+      "Entries": [
+        "Moon Falchion +3"
+      ]
+    },
+    {
+      "ID": 40364,
+      "Entries": [
+        "Lunar Falchion +4"
+      ]
+    },
+    {
+      "ID": 40365,
+      "Entries": [
+        "Moon Falchion +5"
+      ]
+    },
+    {
+      "ID": 40400,
+      "Entries": [
+        "Japanese sword"
+      ]
+    },
+    {
+      "ID": 40401,
+      "Entries": [
+        "Japanese sword +1"
+      ]
+    },
+    {
+      "ID": 40402,
+      "Entries": [
+        "Japanese sword +2"
+      ]
+    },
+    {
+      "ID": 40403,
+      "Entries": [
+        "Japanese sword +3"
+      ]
+    },
+    {
+      "ID": 40404,
+      "Entries": [
+        "Japanese sword +4"
+      ]
+    },
+    {
+      "ID": 40405,
+      "Entries": [
+        "Japanese sword +5"
+      ]
+    },
+    {
+      "ID": 40406,
+      "Entries": [
+        "Japanese sword +6"
+      ]
+    },
+    {
+      "ID": 40407,
+      "Entries": [
+        "Japanese sword +7"
+      ]
+    },
+    {
+      "ID": 40408,
+      "Entries": [
+        "Japanese sword +8"
+      ]
+    },
+    {
+      "ID": 40409,
+      "Entries": [
+        "Japanese sword +9"
+      ]
+    },
+    {
+      "ID": 40410,
+      "Entries": [
+        "Japanese sword +10"
+      ]
+    },
+    {
+      "ID": 40411,
+      "Entries": [
+        "Sharp Japanese sword +1"
+      ]
+    },
+    {
+      "ID": 40412,
+      "Entries": [
+        "Sharp Japanese sword +2"
+      ]
+    },
+    {
+      "ID": 40413,
+      "Entries": [
+        "Sharp Japanese sword +3"
+      ]
+    },
+    {
+      "ID": 40414,
+      "Entries": [
+        "Sharp Japanese Sword +4"
+      ]
+    },
+    {
+      "ID": 40415,
+      "Entries": [
+        "Sharp Japanese sword +5"
+      ]
+    },
+    {
+      "ID": 40421,
+      "Entries": [
+        "Ripped Japanese Sword +1"
+      ]
+    },
+    {
+      "ID": 40422,
+      "Entries": [
+        "Ripped Japanese Sword +2"
+      ]
+    },
+    {
+      "ID": 40423,
+      "Entries": [
+        "Ripped Japanese Sword +3"
+      ]
+    },
+    {
+      "ID": 40424,
+      "Entries": [
+        "Rift Uchikata +4"
+      ]
+    },
+    {
+      "ID": 40425,
+      "Entries": [
+        "Laceration Uchikata +5"
+      ]
+    },
+    {
+      "ID": 40431,
+      "Entries": [
+        "Missing Moon Japanese Sword +1"
+      ]
+    },
+    {
+      "ID": 40432,
+      "Entries": [
+        "Missing Moon Japanese Sword +2"
+      ]
+    },
+    {
+      "ID": 40433,
+      "Entries": [
+        "Missing Moon Japanese Sword +3"
+      ]
+    },
+    {
+      "ID": 40434,
+      "Entries": [
+        "Missing Moon Japanese Sword +4"
+      ]
+    },
+    {
+      "ID": 40435,
+      "Entries": [
+        "Missing Moon Japanese Sword +5"
+      ]
+    },
+    {
+      "ID": 40441,
+      "Entries": [
+        "fine sword +1"
+      ]
+    },
+    {
+      "ID": 40442,
+      "Entries": [
+        "fine sword +2"
+      ]
+    },
+    {
+      "ID": 40443,
+      "Entries": [
+        "Fine Uchikatana +3"
+      ]
+    },
+    {
+      "ID": 40444,
+      "Entries": [
+        "fine sword +4"
+      ]
+    },
+    {
+      "ID": 40445,
+      "Entries": [
+        "fine sword +5"
+      ]
+    },
+    {
+      "ID": 40451,
+      "Entries": [
+        "Mercury Uchikatana +1"
+      ]
+    },
+    {
+      "ID": 40452,
+      "Entries": [
+        "Mercury Uchikatana +2"
+      ]
+    },
+    {
+      "ID": 40453,
+      "Entries": [
+        "Mercury Uchikatana +3"
+      ]
+    },
+    {
+      "ID": 40454,
+      "Entries": [
+        "Mercury Uchikatana +4"
+      ]
+    },
+    {
+      "ID": 40455,
+      "Entries": [
+        "Mercury Uchikatana +5"
+      ]
+    },
+    {
+      "ID": 40461,
+      "Entries": [
+        "Moon sword +1"
+      ]
+    },
+    {
+      "ID": 40462,
+      "Entries": [
+        "Moon Uchikatana +2"
+      ]
+    },
+    {
+      "ID": 40463,
+      "Entries": [
+        "Moon Uchikatana +3"
+      ]
+    },
+    {
+      "ID": 40464,
+      "Entries": [
+        "Moon Uchikatana +4"
+      ]
+    },
+    {
+      "ID": 40465,
+      "Entries": [
+        "Moon Uchikatana +5"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "no pattern"
+      ]
+    },
+    {
+      "ID": 40501,
+      "Entries": [
+        "\"No handle\" +1"
+      ]
+    },
+    {
+      "ID": 40502,
+      "Entries": [
+        "\"No pattern\" +2"
+      ]
+    },
+    {
+      "ID": 40503,
+      "Entries": [
+        "\"No handle\" +3"
+      ]
+    },
+    {
+      "ID": 40504,
+      "Entries": [
+        "\"No handle\" +4"
+      ]
+    },
+    {
+      "ID": 40505,
+      "Entries": [
+        "\"No pattern\" +5"
+      ]
+    },
+    {
+      "ID": 40600,
+      "Entries": [
+        "BLIND"
+      ]
+    },
+    {
+      "ID": 40601,
+      "Entries": [
+        "blinds +1"
+      ]
+    },
+    {
+      "ID": 40602,
+      "Entries": [
+        "blind +2"
+      ]
+    },
+    {
+      "ID": 40603,
+      "Entries": [
+        "blind +3"
+      ]
+    },
+    {
+      "ID": 40604,
+      "Entries": [
+        "blind +4"
+      ]
+    },
+    {
+      "ID": 40605,
+      "Entries": [
+        "blind +5"
+      ]
+    },
+    {
+      "ID": 40700,
+      "Entries": [
+        "\"Makoto\""
+      ]
+    },
+    {
+      "ID": 40701,
+      "Entries": [
+        "“Sincerity” +1"
+      ]
+    },
+    {
+      "ID": 40702,
+      "Entries": [
+        "“Sincerity” +2"
+      ]
+    },
+    {
+      "ID": 40703,
+      "Entries": [
+        "“Makoto” +3"
+      ]
+    },
+    {
+      "ID": 40704,
+      "Entries": [
+        "“Makoto” +4"
+      ]
+    },
+    {
+      "ID": 40705,
+      "Entries": [
+        "“Makoto” +5"
+      ]
+    },
+    {
+      "ID": 40900,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40901,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40902,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40903,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40904,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40905,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40906,
+      "Entries": [
+        "Storm Warrior DS Enhancement"
+      ]
+    },
+    {
+      "ID": 40907,
+      "Entries": [
+        "Storm Seeker"
+      ]
+    },
+    {
+      "ID": 40908,
+      "Entries": [
+        "Storm Seeker"
+      ]
+    },
+    {
+      "ID": 49000,
+      "Entries": [
+        "prowling curved sword"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Battle Axe"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Battle Ax +1"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Battle Ax +2"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Battle Ax +3"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Battle Ax +4"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "Battle Ax +5"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "Battle Ax +6"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "Battle Ax +7"
+      ]
+    },
+    {
+      "ID": 50008,
+      "Entries": [
+        "Battle Ax +8"
+      ]
+    },
+    {
+      "ID": 50009,
+      "Entries": [
+        "Battle Ax +9"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Battle Ax +10"
+      ]
+    },
+    {
+      "ID": 50011,
+      "Entries": [
+        "Crushing Battleaxe +1"
+      ]
+    },
+    {
+      "ID": 50012,
+      "Entries": [
+        "Crushing Battle Ax +2"
+      ]
+    },
+    {
+      "ID": 50013,
+      "Entries": [
+        "Crushing Battle Ax +3"
+      ]
+    },
+    {
+      "ID": 50014,
+      "Entries": [
+        "Crushing Battle Ax +4"
+      ]
+    },
+    {
+      "ID": 50015,
+      "Entries": [
+        "Crushing battle ax +5"
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "Dragon battle ax +1"
+      ]
+    },
+    {
+      "ID": 50022,
+      "Entries": [
+        "Dragon battle ax +2"
+      ]
+    },
+    {
+      "ID": 50023,
+      "Entries": [
+        "Dragon battle ax +3"
+      ]
+    },
+    {
+      "ID": 50024,
+      "Entries": [
+        "Dragon battle ax +4"
+      ]
+    },
+    {
+      "ID": 50025,
+      "Entries": [
+        "Dragon battle ax +5"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "Moon Battle Ax +1"
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "Moon Battle Ax +2"
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "Moon Battle Ax +3"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Moon Battle Ax +4"
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        "Moon Battle Ax +5"
+      ]
+    },
+    {
+      "ID": 50041,
+      "Entries": [
+        "Fine Battle Ax +1"
+      ]
+    },
+    {
+      "ID": 50042,
+      "Entries": [
+        "Fine Battle Ax +2"
+      ]
+    },
+    {
+      "ID": 50043,
+      "Entries": [
+        "Fine Battle Ax +3"
+      ]
+    },
+    {
+      "ID": 50044,
+      "Entries": [
+        "Fine Battle Ax +4"
+      ]
+    },
+    {
+      "ID": 50045,
+      "Entries": [
+        "Fine Battle Ax +5"
+      ]
+    },
+    {
+      "ID": 50051,
+      "Entries": [
+        "Blessed Battleaxe +1"
+      ]
+    },
+    {
+      "ID": 50052,
+      "Entries": [
+        "Blessed Battleaxe +2"
+      ]
+    },
+    {
+      "ID": 50053,
+      "Entries": [
+        "Blessed Battleaxe +3"
+      ]
+    },
+    {
+      "ID": 50054,
+      "Entries": [
+        "Blessed Battleaxe +4"
+      ]
+    },
+    {
+      "ID": 50055,
+      "Entries": [
+        "Blessed Battleaxe +5"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Great Ax"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "Great Ax +1"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "Great Ax +2"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "Great Ax +3"
+      ]
+    },
+    {
+      "ID": 50204,
+      "Entries": [
+        "Great Ax +4"
+      ]
+    },
+    {
+      "ID": 50205,
+      "Entries": [
+        "Great Ax +5"
+      ]
+    },
+    {
+      "ID": 50206,
+      "Entries": [
+        "Great Ax +6"
+      ]
+    },
+    {
+      "ID": 50207,
+      "Entries": [
+        "Great Ax +7"
+      ]
+    },
+    {
+      "ID": 50208,
+      "Entries": [
+        "Great Ax +8"
+      ]
+    },
+    {
+      "ID": 50209,
+      "Entries": [
+        "Great Ax +9"
+      ]
+    },
+    {
+      "ID": 50210,
+      "Entries": [
+        "Great Ax +10"
+      ]
+    },
+    {
+      "ID": 50211,
+      "Entries": [
+        "Crushing Great Ax +1"
+      ]
+    },
+    {
+      "ID": 50212,
+      "Entries": [
+        "Crushing Great Ax +2"
+      ]
+    },
+    {
+      "ID": 50213,
+      "Entries": [
+        "Crushing Great Ax +3"
+      ]
+    },
+    {
+      "ID": 50214,
+      "Entries": [
+        "Crushing Great Ax +4"
+      ]
+    },
+    {
+      "ID": 50215,
+      "Entries": [
+        "Crushing Great Ax +5"
+      ]
+    },
+    {
+      "ID": 50221,
+      "Entries": [
+        "Dragon Great Ax +1"
+      ]
+    },
+    {
+      "ID": 50222,
+      "Entries": [
+        "Dragon Great Ax +2"
+      ]
+    },
+    {
+      "ID": 50223,
+      "Entries": [
+        "Dragon Great Ax +3"
+      ]
+    },
+    {
+      "ID": 50224,
+      "Entries": [
+        "Dragon Great Ax +4"
+      ]
+    },
+    {
+      "ID": 50225,
+      "Entries": [
+        "Dragon Great Ax +5"
+      ]
+    },
+    {
+      "ID": 50231,
+      "Entries": [
+        "Great Ax of the Moon +1"
+      ]
+    },
+    {
+      "ID": 50232,
+      "Entries": [
+        "Great Ax of the Moon +2"
+      ]
+    },
+    {
+      "ID": 50233,
+      "Entries": [
+        "Great Ax of the Moon +3"
+      ]
+    },
+    {
+      "ID": 50234,
+      "Entries": [
+        "Great Ax of the Moon +4"
+      ]
+    },
+    {
+      "ID": 50235,
+      "Entries": [
+        "Great Ax of the Moon +5"
+      ]
+    },
+    {
+      "ID": 50241,
+      "Entries": [
+        "Fine Great Ax +1"
+      ]
+    },
+    {
+      "ID": 50242,
+      "Entries": [
+        "Fine Great Ax +2"
+      ]
+    },
+    {
+      "ID": 50243,
+      "Entries": [
+        "Fine Great Ax +3"
+      ]
+    },
+    {
+      "ID": 50244,
+      "Entries": [
+        "Fine Great Ax +4"
+      ]
+    },
+    {
+      "ID": 50245,
+      "Entries": [
+        "Fine Great Ax +5"
+      ]
+    },
+    {
+      "ID": 50251,
+      "Entries": [
+        "Blessed Great Ax +1"
+      ]
+    },
+    {
+      "ID": 50252,
+      "Entries": [
+        "Blessed Great Ax +2"
+      ]
+    },
+    {
+      "ID": 50253,
+      "Entries": [
+        "Blessed Great Ax +3"
+      ]
+    },
+    {
+      "ID": 50254,
+      "Entries": [
+        "Blessed Great Ax +4"
+      ]
+    },
+    {
+      "ID": 50255,
+      "Entries": [
+        "Blessed Great Ax +5"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "Crescent Ax"
+      ]
+    },
+    {
+      "ID": 50301,
+      "Entries": [
+        "Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50302,
+      "Entries": [
+        "Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50303,
+      "Entries": [
+        "Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50304,
+      "Entries": [
+        "Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50305,
+      "Entries": [
+        "Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50306,
+      "Entries": [
+        "Crescent Ax +6"
+      ]
+    },
+    {
+      "ID": 50307,
+      "Entries": [
+        "Crescent Ax +7"
+      ]
+    },
+    {
+      "ID": 50308,
+      "Entries": [
+        "Crescent Ax +8"
+      ]
+    },
+    {
+      "ID": 50309,
+      "Entries": [
+        "Crescent Ax +9"
+      ]
+    },
+    {
+      "ID": 50310,
+      "Entries": [
+        "Crescent Ax +10"
+      ]
+    },
+    {
+      "ID": 50311,
+      "Entries": [
+        "Crushing Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50312,
+      "Entries": [
+        "Crushing Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50313,
+      "Entries": [
+        "Crushing Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50314,
+      "Entries": [
+        "Crushing Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50315,
+      "Entries": [
+        "Crushing Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50321,
+      "Entries": [
+        "Dragon Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50322,
+      "Entries": [
+        "Dragon Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50323,
+      "Entries": [
+        "Dragon Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50324,
+      "Entries": [
+        "Dragon Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50325,
+      "Entries": [
+        "Dragon Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50331,
+      "Entries": [
+        "Lunar Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50332,
+      "Entries": [
+        "Lunar Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50333,
+      "Entries": [
+        "Lunar Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50334,
+      "Entries": [
+        "Lunar Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50335,
+      "Entries": [
+        "Moon Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50341,
+      "Entries": [
+        "Fine Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50342,
+      "Entries": [
+        "Quality Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50343,
+      "Entries": [
+        "Quality Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50344,
+      "Entries": [
+        "Quality Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50345,
+      "Entries": [
+        "Quality Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50351,
+      "Entries": [
+        "Blessed Crescent Ax +1"
+      ]
+    },
+    {
+      "ID": 50352,
+      "Entries": [
+        "Blessed Crescent Ax +2"
+      ]
+    },
+    {
+      "ID": 50353,
+      "Entries": [
+        "Blessed Crescent Ax +3"
+      ]
+    },
+    {
+      "ID": 50354,
+      "Entries": [
+        "Blessed Crescent Ax +4"
+      ]
+    },
+    {
+      "ID": 50355,
+      "Entries": [
+        "Blessed Crescent Ax +5"
+      ]
+    },
+    {
+      "ID": 50400,
+      "Entries": [
+        "Guillotine Ax"
+      ]
+    },
+    {
+      "ID": 50401,
+      "Entries": [
+        "Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50402,
+      "Entries": [
+        "Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50403,
+      "Entries": [
+        "Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50404,
+      "Entries": [
+        "Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50405,
+      "Entries": [
+        "Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50406,
+      "Entries": [
+        "Guillotine Ax +6"
+      ]
+    },
+    {
+      "ID": 50407,
+      "Entries": [
+        "Guillotine Ax +7"
+      ]
+    },
+    {
+      "ID": 50408,
+      "Entries": [
+        "Guillotine Ax +8"
+      ]
+    },
+    {
+      "ID": 50409,
+      "Entries": [
+        "Guillotine Ax +9"
+      ]
+    },
+    {
+      "ID": 50410,
+      "Entries": [
+        "Guillotine Ax +10"
+      ]
+    },
+    {
+      "ID": 50411,
+      "Entries": [
+        "Smashing Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50412,
+      "Entries": [
+        "Smashing Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50413,
+      "Entries": [
+        "Smashing Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50414,
+      "Entries": [
+        "Smashing Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50415,
+      "Entries": [
+        "Smashing Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50421,
+      "Entries": [
+        "Dragon Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50422,
+      "Entries": [
+        "Dragon Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50423,
+      "Entries": [
+        "Dragon Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50424,
+      "Entries": [
+        "Dragon Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50425,
+      "Entries": [
+        "Dragon Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50431,
+      "Entries": [
+        "Lunar Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50432,
+      "Entries": [
+        "Lunar Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50433,
+      "Entries": [
+        "Lunar Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50434,
+      "Entries": [
+        "Lunar Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50435,
+      "Entries": [
+        "Moon Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50441,
+      "Entries": [
+        "Fine Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50442,
+      "Entries": [
+        "Fine Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50443,
+      "Entries": [
+        "Fine Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50444,
+      "Entries": [
+        "Fine Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50445,
+      "Entries": [
+        "Fine Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50451,
+      "Entries": [
+        "Blessed Guillotine Ax +1"
+      ]
+    },
+    {
+      "ID": 50452,
+      "Entries": [
+        "Blessed Guillotine Ax +2"
+      ]
+    },
+    {
+      "ID": 50453,
+      "Entries": [
+        "Blessed Guillotine Ax +3"
+      ]
+    },
+    {
+      "ID": 50454,
+      "Entries": [
+        "Blessed Guillotine Ax +4"
+      ]
+    },
+    {
+      "ID": 50455,
+      "Entries": [
+        "Blessed Guillotine Ax +5"
+      ]
+    },
+    {
+      "ID": 50500,
+      "Entries": [
+        "Fat Demon DS Enhancement"
+      ]
+    },
+    {
+      "ID": 50501,
+      "Entries": [
+        "Fat Demon DS Enhancement"
+      ]
+    },
+    {
+      "ID": 50502,
+      "Entries": [
+        "Fat Demon DS Enhancement"
+      ]
+    },
+    {
+      "ID": 50503,
+      "Entries": [
+        "Fat Demon DS Enhancement"
+      ]
+    },
+    {
+      "ID": 50504,
+      "Entries": [
+        "dozer ax"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "prowl ax"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "club"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "Crushing Club +1"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Crushing club +2"
+      ]
+    },
+    {
+      "ID": 60003,
+      "Entries": [
+        "Crushing Club +3"
+      ]
+    },
+    {
+      "ID": 60004,
+      "Entries": [
+        "Crushing Club +4"
+      ]
+    },
+    {
+      "ID": 60005,
+      "Entries": [
+        "Crushing Club +5"
+      ]
+    },
+    {
+      "ID": 60011,
+      "Entries": [
+        "blessed club +1"
+      ]
+    },
+    {
+      "ID": 60012,
+      "Entries": [
+        "blessed club +2"
+      ]
+    },
+    {
+      "ID": 60013,
+      "Entries": [
+        "blessed club +3"
+      ]
+    },
+    {
+      "ID": 60014,
+      "Entries": [
+        "blessed club +4"
+      ]
+    },
+    {
+      "ID": 60015,
+      "Entries": [
+        "blessed club +5"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "mace"
+      ]
+    },
+    {
+      "ID": 60101,
+      "Entries": [
+        "Crush Mace +1"
+      ]
+    },
+    {
+      "ID": 60102,
+      "Entries": [
+        "Crush Mace +2"
+      ]
+    },
+    {
+      "ID": 60103,
+      "Entries": [
+        "Crush Mace +3"
+      ]
+    },
+    {
+      "ID": 60104,
+      "Entries": [
+        "Crush Mace +4"
+      ]
+    },
+    {
+      "ID": 60105,
+      "Entries": [
+        "Crush Mace +5"
+      ]
+    },
+    {
+      "ID": 60111,
+      "Entries": [
+        "Blessed Mace +1"
+      ]
+    },
+    {
+      "ID": 60112,
+      "Entries": [
+        "blessed mace +2"
+      ]
+    },
+    {
+      "ID": 60113,
+      "Entries": [
+        "blessed mace +3"
+      ]
+    },
+    {
+      "ID": 60114,
+      "Entries": [
+        "blessed mace +4"
+      ]
+    },
+    {
+      "ID": 60115,
+      "Entries": [
+        "blessed mace +5"
+      ]
+    },
+    {
+      "ID": 60121,
+      "Entries": [
+        "Mace +1"
+      ]
+    },
+    {
+      "ID": 60122,
+      "Entries": [
+        "Mace +2"
+      ]
+    },
+    {
+      "ID": 60123,
+      "Entries": [
+        "Mace +3"
+      ]
+    },
+    {
+      "ID": 60124,
+      "Entries": [
+        "Mace +4"
+      ]
+    },
+    {
+      "ID": 60125,
+      "Entries": [
+        "Mace +5"
+      ]
+    },
+    {
+      "ID": 60126,
+      "Entries": [
+        "Mace +6"
+      ]
+    },
+    {
+      "ID": 60127,
+      "Entries": [
+        "Mace +7"
+      ]
+    },
+    {
+      "ID": 60128,
+      "Entries": [
+        "Mace +8"
+      ]
+    },
+    {
+      "ID": 60129,
+      "Entries": [
+        "Mace +9"
+      ]
+    },
+    {
+      "ID": 60130,
+      "Entries": [
+        "Mace +10"
+      ]
+    },
+    {
+      "ID": 60131,
+      "Entries": [
+        "fine mace +1"
+      ]
+    },
+    {
+      "ID": 60132,
+      "Entries": [
+        "fine mace +2"
+      ]
+    },
+    {
+      "ID": 60133,
+      "Entries": [
+        "fine mace +3"
+      ]
+    },
+    {
+      "ID": 60134,
+      "Entries": [
+        "fine mace +4"
+      ]
+    },
+    {
+      "ID": 60135,
+      "Entries": [
+        "fine mace +5"
+      ]
+    },
+    {
+      "ID": 60141,
+      "Entries": [
+        "Dragon Mace +1"
+      ]
+    },
+    {
+      "ID": 60142,
+      "Entries": [
+        "Dragon Mace +2"
+      ]
+    },
+    {
+      "ID": 60143,
+      "Entries": [
+        "Dragon Mace +3"
+      ]
+    },
+    {
+      "ID": 60144,
+      "Entries": [
+        "Dragon Mace +4"
+      ]
+    },
+    {
+      "ID": 60145,
+      "Entries": [
+        "Dragon Mace +5"
+      ]
+    },
+    {
+      "ID": 60151,
+      "Entries": [
+        "Moon Mace +1"
+      ]
+    },
+    {
+      "ID": 60152,
+      "Entries": [
+        "Moon Mace +2"
+      ]
+    },
+    {
+      "ID": 60153,
+      "Entries": [
+        "Moon Mace +3"
+      ]
+    },
+    {
+      "ID": 60154,
+      "Entries": [
+        "Moon Mace +4"
+      ]
+    },
+    {
+      "ID": 60155,
+      "Entries": [
+        "Moon Mace +5"
+      ]
+    },
+    {
+      "ID": 60200,
+      "Entries": [
+        "war pick"
+      ]
+    },
+    {
+      "ID": 60201,
+      "Entries": [
+        "War pick +1"
+      ]
+    },
+    {
+      "ID": 60202,
+      "Entries": [
+        "war pick +2"
+      ]
+    },
+    {
+      "ID": 60203,
+      "Entries": [
+        "war pick +3"
+      ]
+    },
+    {
+      "ID": 60204,
+      "Entries": [
+        "war pick +4"
+      ]
+    },
+    {
+      "ID": 60205,
+      "Entries": [
+        "War pick +5"
+      ]
+    },
+    {
+      "ID": 60206,
+      "Entries": [
+        "war pick +6"
+      ]
+    },
+    {
+      "ID": 60207,
+      "Entries": [
+        "War pick +7"
+      ]
+    },
+    {
+      "ID": 60208,
+      "Entries": [
+        "war pick +8"
+      ]
+    },
+    {
+      "ID": 60209,
+      "Entries": [
+        "War pick +9"
+      ]
+    },
+    {
+      "ID": 60210,
+      "Entries": [
+        "War pick +10"
+      ]
+    },
+    {
+      "ID": 60211,
+      "Entries": [
+        "Fine Warpick +1"
+      ]
+    },
+    {
+      "ID": 60212,
+      "Entries": [
+        "Fine war pick +2"
+      ]
+    },
+    {
+      "ID": 60213,
+      "Entries": [
+        "Fine war pick +3"
+      ]
+    },
+    {
+      "ID": 60214,
+      "Entries": [
+        "Fine war pick +4"
+      ]
+    },
+    {
+      "ID": 60215,
+      "Entries": [
+        "Fine war pick +5"
+      ]
+    },
+    {
+      "ID": 60221,
+      "Entries": [
+        "Mercury Warpick +1"
+      ]
+    },
+    {
+      "ID": 60222,
+      "Entries": [
+        "Mercury war pick +2"
+      ]
+    },
+    {
+      "ID": 60223,
+      "Entries": [
+        "Mercury war pick +3"
+      ]
+    },
+    {
+      "ID": 60224,
+      "Entries": [
+        "Mercury war pick +4"
+      ]
+    },
+    {
+      "ID": 60225,
+      "Entries": [
+        "Mercury war pick +5"
+      ]
+    },
+    {
+      "ID": 60231,
+      "Entries": [
+        "sharp warpick +1"
+      ]
+    },
+    {
+      "ID": 60232,
+      "Entries": [
+        "sharp war pick +2"
+      ]
+    },
+    {
+      "ID": 60233,
+      "Entries": [
+        "sharp war pick +3"
+      ]
+    },
+    {
+      "ID": 60234,
+      "Entries": [
+        "sharp war pick +4"
+      ]
+    },
+    {
+      "ID": 60235,
+      "Entries": [
+        "sharp war pick +5"
+      ]
+    },
+    {
+      "ID": 60241,
+      "Entries": [
+        "Rupture war pick +1"
+      ]
+    },
+    {
+      "ID": 60242,
+      "Entries": [
+        "Rupture war pick +2"
+      ]
+    },
+    {
+      "ID": 60243,
+      "Entries": [
+        "Rupture Warpick +3"
+      ]
+    },
+    {
+      "ID": 60244,
+      "Entries": [
+        "Rupture war pick +4"
+      ]
+    },
+    {
+      "ID": 60245,
+      "Entries": [
+        "Rupture war pick +5"
+      ]
+    },
+    {
+      "ID": 60251,
+      "Entries": [
+        "Moon Warpick +1"
+      ]
+    },
+    {
+      "ID": 60252,
+      "Entries": [
+        "Moon Warpick +2"
+      ]
+    },
+    {
+      "ID": 60253,
+      "Entries": [
+        "Moon Warpick +3"
+      ]
+    },
+    {
+      "ID": 60254,
+      "Entries": [
+        "Moon Warpick +4"
+      ]
+    },
+    {
+      "ID": 60255,
+      "Entries": [
+        "Moon Warpick +5"
+      ]
+    },
+    {
+      "ID": 60300,
+      "Entries": [
+        "Morning star"
+      ]
+    },
+    {
+      "ID": 60301,
+      "Entries": [
+        "Crush Morning Star +1"
+      ]
+    },
+    {
+      "ID": 60302,
+      "Entries": [
+        "Crush Morning Star +2"
+      ]
+    },
+    {
+      "ID": 60303,
+      "Entries": [
+        "Crush Morning Star +3"
+      ]
+    },
+    {
+      "ID": 60304,
+      "Entries": [
+        "Crush Morning Star +4"
+      ]
+    },
+    {
+      "ID": 60305,
+      "Entries": [
+        "Crush Morning Star +5"
+      ]
+    },
+    {
+      "ID": 60311,
+      "Entries": [
+        "blessed morning star +1"
+      ]
+    },
+    {
+      "ID": 60312,
+      "Entries": [
+        "blessed morning star +2"
+      ]
+    },
+    {
+      "ID": 60313,
+      "Entries": [
+        "blessed morning star +3"
+      ]
+    },
+    {
+      "ID": 60314,
+      "Entries": [
+        "blessed morning star +4"
+      ]
+    },
+    {
+      "ID": 60315,
+      "Entries": [
+        "blessed morning star +5"
+      ]
+    },
+    {
+      "ID": 60321,
+      "Entries": [
+        "Morning Star +1"
+      ]
+    },
+    {
+      "ID": 60322,
+      "Entries": [
+        "Morning Star +2"
+      ]
+    },
+    {
+      "ID": 60323,
+      "Entries": [
+        "Morning Star +3"
+      ]
+    },
+    {
+      "ID": 60324,
+      "Entries": [
+        "Morning Star +4"
+      ]
+    },
+    {
+      "ID": 60325,
+      "Entries": [
+        "Morning Star +5"
+      ]
+    },
+    {
+      "ID": 60326,
+      "Entries": [
+        "Morning Star +6"
+      ]
+    },
+    {
+      "ID": 60327,
+      "Entries": [
+        "Morning Star +7"
+      ]
+    },
+    {
+      "ID": 60328,
+      "Entries": [
+        "Morning Star +8"
+      ]
+    },
+    {
+      "ID": 60329,
+      "Entries": [
+        "Morning Star +9"
+      ]
+    },
+    {
+      "ID": 60330,
+      "Entries": [
+        "Morning Star +10"
+      ]
+    },
+    {
+      "ID": 60331,
+      "Entries": [
+        "Fine morning star +1"
+      ]
+    },
+    {
+      "ID": 60332,
+      "Entries": [
+        "Fine morning star +2"
+      ]
+    },
+    {
+      "ID": 60333,
+      "Entries": [
+        "Fine morning star +3"
+      ]
+    },
+    {
+      "ID": 60334,
+      "Entries": [
+        "Fine morning star +4"
+      ]
+    },
+    {
+      "ID": 60335,
+      "Entries": [
+        "Fine morning star +5"
+      ]
+    },
+    {
+      "ID": 60341,
+      "Entries": [
+        "Dragon morning star +1"
+      ]
+    },
+    {
+      "ID": 60342,
+      "Entries": [
+        "Dragon morning star +2"
+      ]
+    },
+    {
+      "ID": 60343,
+      "Entries": [
+        "Dragon morning star +3"
+      ]
+    },
+    {
+      "ID": 60344,
+      "Entries": [
+        "Dragon morning star +4"
+      ]
+    },
+    {
+      "ID": 60345,
+      "Entries": [
+        "Dragon morning star +5"
+      ]
+    },
+    {
+      "ID": 60351,
+      "Entries": [
+        "Moon Morning Star +1"
+      ]
+    },
+    {
+      "ID": 60352,
+      "Entries": [
+        "Moon Morning Star +2"
+      ]
+    },
+    {
+      "ID": 60353,
+      "Entries": [
+        "Moon Morning Star +3"
+      ]
+    },
+    {
+      "ID": 60354,
+      "Entries": [
+        "Moon Morning Star +4"
+      ]
+    },
+    {
+      "ID": 60355,
+      "Entries": [
+        "Moon Morning Star +5"
+      ]
+    },
+    {
+      "ID": 60400,
+      "Entries": [
+        "great club"
+      ]
+    },
+    {
+      "ID": 60401,
+      "Entries": [
+        "Crushing Great Crab +1"
+      ]
+    },
+    {
+      "ID": 60402,
+      "Entries": [
+        "Crushing Great Crab +2"
+      ]
+    },
+    {
+      "ID": 60403,
+      "Entries": [
+        "Crushing Great Crab +3"
+      ]
+    },
+    {
+      "ID": 60404,
+      "Entries": [
+        "Crushing Great Crab +4"
+      ]
+    },
+    {
+      "ID": 60405,
+      "Entries": [
+        "Crushing Great Crab +5"
+      ]
+    },
+    {
+      "ID": 60411,
+      "Entries": [
+        "Blessed Great Crab +1"
+      ]
+    },
+    {
+      "ID": 60412,
+      "Entries": [
+        "Blessed Great Crab +2"
+      ]
+    },
+    {
+      "ID": 60413,
+      "Entries": [
+        "Blessed Great Crab +3"
+      ]
+    },
+    {
+      "ID": 60414,
+      "Entries": [
+        "Blessed Great Crab +4"
+      ]
+    },
+    {
+      "ID": 60415,
+      "Entries": [
+        "Blessed Great Crab +5"
+      ]
+    },
+    {
+      "ID": 60500,
+      "Entries": [
+        "bramd"
+      ]
+    },
+    {
+      "ID": 60501,
+      "Entries": [
+        "Blumd +1"
+      ]
+    },
+    {
+      "ID": 60502,
+      "Entries": [
+        "Blumd +2"
+      ]
+    },
+    {
+      "ID": 60503,
+      "Entries": [
+        "Blumd +3"
+      ]
+    },
+    {
+      "ID": 60504,
+      "Entries": [
+        "Blumd +4"
+      ]
+    },
+    {
+      "ID": 60505,
+      "Entries": [
+        "Blumd +5"
+      ]
+    },
+    {
+      "ID": 60600,
+      "Entries": [
+        "pickaxe"
+      ]
+    },
+    {
+      "ID": 60601,
+      "Entries": [
+        "Pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60602,
+      "Entries": [
+        "pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60603,
+      "Entries": [
+        "Pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60604,
+      "Entries": [
+        "Pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60605,
+      "Entries": [
+        "Pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60606,
+      "Entries": [
+        "Pickaxe +6"
+      ]
+    },
+    {
+      "ID": 60607,
+      "Entries": [
+        "Pickaxe +7"
+      ]
+    },
+    {
+      "ID": 60608,
+      "Entries": [
+        "Pickaxe +8"
+      ]
+    },
+    {
+      "ID": 60609,
+      "Entries": [
+        "Pickaxe +9"
+      ]
+    },
+    {
+      "ID": 60610,
+      "Entries": [
+        "Pickaxe +10"
+      ]
+    },
+    {
+      "ID": 60611,
+      "Entries": [
+        "fine pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60612,
+      "Entries": [
+        "fine pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60613,
+      "Entries": [
+        "fine pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60614,
+      "Entries": [
+        "fine pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60615,
+      "Entries": [
+        "fine pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60621,
+      "Entries": [
+        "Mercury pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60622,
+      "Entries": [
+        "Mercury pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60623,
+      "Entries": [
+        "Mercury pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60624,
+      "Entries": [
+        "Mercury pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60625,
+      "Entries": [
+        "Mercury pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60631,
+      "Entries": [
+        "sharp pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60632,
+      "Entries": [
+        "sharp pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60633,
+      "Entries": [
+        "sharp pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60634,
+      "Entries": [
+        "sharp pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60635,
+      "Entries": [
+        "sharp pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60641,
+      "Entries": [
+        "Rift Pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60642,
+      "Entries": [
+        "Rift Pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60643,
+      "Entries": [
+        "Rift Pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60644,
+      "Entries": [
+        "Rift Pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60645,
+      "Entries": [
+        "Rift Pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60651,
+      "Entries": [
+        "Moon pickaxe +1"
+      ]
+    },
+    {
+      "ID": 60652,
+      "Entries": [
+        "moon pickaxe +2"
+      ]
+    },
+    {
+      "ID": 60653,
+      "Entries": [
+        "moon pickaxe +3"
+      ]
+    },
+    {
+      "ID": 60654,
+      "Entries": [
+        "moon pickaxe +4"
+      ]
+    },
+    {
+      "ID": 60655,
+      "Entries": [
+        "moon pickaxe +5"
+      ]
+    },
+    {
+      "ID": 60700,
+      "Entries": [
+        "Enhanced Referee DS"
+      ]
+    },
+    {
+      "ID": 60701,
+      "Entries": [
+        "Enhanced Referee DS"
+      ]
+    },
+    {
+      "ID": 60702,
+      "Entries": [
+        "Enhanced Referee DS"
+      ]
+    },
+    {
+      "ID": 60703,
+      "Entries": [
+        "Enhanced Referee DS"
+      ]
+    },
+    {
+      "ID": 60704,
+      "Entries": [
+        "Enhanced Referee DS"
+      ]
+    },
+    {
+      "ID": 60705,
+      "Entries": [
+        "meat cleaver"
+      ]
+    },
+    {
+      "ID": 60706,
+      "Entries": [
+        "meat cleaver"
+      ]
+    },
+    {
+      "ID": 60707,
+      "Entries": [
+        "meat cleaver"
+      ]
+    },
+    {
+      "ID": 69000,
+      "Entries": [
+        "Wandering Hammer"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "short spear"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "Short Spear +1"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Short Spear +2"
+      ]
+    },
+    {
+      "ID": 70003,
+      "Entries": [
+        "Short Spear +3"
+      ]
+    },
+    {
+      "ID": 70004,
+      "Entries": [
+        "Short Spear +4"
+      ]
+    },
+    {
+      "ID": 70005,
+      "Entries": [
+        "Short Spear +5"
+      ]
+    },
+    {
+      "ID": 70006,
+      "Entries": [
+        "Short Spear +6"
+      ]
+    },
+    {
+      "ID": 70007,
+      "Entries": [
+        "Short Spear +7"
+      ]
+    },
+    {
+      "ID": 70008,
+      "Entries": [
+        "Short Spear +8"
+      ]
+    },
+    {
+      "ID": 70009,
+      "Entries": [
+        "Short Spear +9"
+      ]
+    },
+    {
+      "ID": 70010,
+      "Entries": [
+        "Short Spear +10"
+      ]
+    },
+    {
+      "ID": 70011,
+      "Entries": [
+        "Fine Short Spear +1"
+      ]
+    },
+    {
+      "ID": 70012,
+      "Entries": [
+        "Fine Short Spear +2"
+      ]
+    },
+    {
+      "ID": 70013,
+      "Entries": [
+        "Fine Short Spear +3"
+      ]
+    },
+    {
+      "ID": 70014,
+      "Entries": [
+        "Fine short spear +4"
+      ]
+    },
+    {
+      "ID": 70015,
+      "Entries": [
+        "Fine Short Spear +5"
+      ]
+    },
+    {
+      "ID": 70021,
+      "Entries": [
+        "Mercury Short Spear +1"
+      ]
+    },
+    {
+      "ID": 70022,
+      "Entries": [
+        "Mercury Short Spear +2"
+      ]
+    },
+    {
+      "ID": 70023,
+      "Entries": [
+        "Mercury Short Spear +3"
+      ]
+    },
+    {
+      "ID": 70024,
+      "Entries": [
+        "Mercury Short Spear +4"
+      ]
+    },
+    {
+      "ID": 70025,
+      "Entries": [
+        "Mercury Short Spear +5"
+      ]
+    },
+    {
+      "ID": 70031,
+      "Entries": [
+        "sharp short spear +1"
+      ]
+    },
+    {
+      "ID": 70032,
+      "Entries": [
+        "sharp short spear +2"
+      ]
+    },
+    {
+      "ID": 70033,
+      "Entries": [
+        "Sharp short spear +3"
+      ]
+    },
+    {
+      "ID": 70034,
+      "Entries": [
+        "Sharp short spear +4"
+      ]
+    },
+    {
+      "ID": 70035,
+      "Entries": [
+        "sharp short spear +5"
+      ]
+    },
+    {
+      "ID": 70041,
+      "Entries": [
+        "Deadly Short Spear +1"
+      ]
+    },
+    {
+      "ID": 70042,
+      "Entries": [
+        "Deadly Short Spear +2"
+      ]
+    },
+    {
+      "ID": 70043,
+      "Entries": [
+        "Deadly Short Spear +3"
+      ]
+    },
+    {
+      "ID": 70044,
+      "Entries": [
+        "Deadly Short Spear +4"
+      ]
+    },
+    {
+      "ID": 70045,
+      "Entries": [
+        "Deadly Short Spear +5"
+      ]
+    },
+    {
+      "ID": 70051,
+      "Entries": [
+        "Moon Short Spear +1"
+      ]
+    },
+    {
+      "ID": 70052,
+      "Entries": [
+        "Moon Short Spear +2"
+      ]
+    },
+    {
+      "ID": 70053,
+      "Entries": [
+        "Moon Short Spear +3"
+      ]
+    },
+    {
+      "ID": 70054,
+      "Entries": [
+        "Moon Short Spear +4"
+      ]
+    },
+    {
+      "ID": 70055,
+      "Entries": [
+        "Moon Short Spear +5"
+      ]
+    },
+    {
+      "ID": 70100,
+      "Entries": [
+        "Winged Spear"
+      ]
+    },
+    {
+      "ID": 70101,
+      "Entries": [
+        "Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70102,
+      "Entries": [
+        "Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70103,
+      "Entries": [
+        "Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70104,
+      "Entries": [
+        "Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70105,
+      "Entries": [
+        "Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70106,
+      "Entries": [
+        "Winged Spear +6"
+      ]
+    },
+    {
+      "ID": 70107,
+      "Entries": [
+        "Winged Spear +7"
+      ]
+    },
+    {
+      "ID": 70108,
+      "Entries": [
+        "Winged Spear +8"
+      ]
+    },
+    {
+      "ID": 70109,
+      "Entries": [
+        "Winged Spear +9"
+      ]
+    },
+    {
+      "ID": 70110,
+      "Entries": [
+        "Winged Spear +10"
+      ]
+    },
+    {
+      "ID": 70111,
+      "Entries": [
+        "Fine Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70112,
+      "Entries": [
+        "Fine Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70113,
+      "Entries": [
+        "Fine Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70114,
+      "Entries": [
+        "Fine Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70115,
+      "Entries": [
+        "Fine Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70121,
+      "Entries": [
+        "Mercury Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70122,
+      "Entries": [
+        "Mercury Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70123,
+      "Entries": [
+        "Mercury Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70124,
+      "Entries": [
+        "Mercury Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70125,
+      "Entries": [
+        "Mercury Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70131,
+      "Entries": [
+        "Sharp Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70132,
+      "Entries": [
+        "Sharp Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70133,
+      "Entries": [
+        "Sharp Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70134,
+      "Entries": [
+        "Sharp Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70135,
+      "Entries": [
+        "Sharp Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70141,
+      "Entries": [
+        "Deadly Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70142,
+      "Entries": [
+        "Fatal Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70143,
+      "Entries": [
+        "Fatal Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70144,
+      "Entries": [
+        "Fatal Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70145,
+      "Entries": [
+        "Fatal Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70151,
+      "Entries": [
+        "Lunar Winged Spear +1"
+      ]
+    },
+    {
+      "ID": 70152,
+      "Entries": [
+        "Lunar Winged Spear +2"
+      ]
+    },
+    {
+      "ID": 70153,
+      "Entries": [
+        "Lunar Winged Spear +3"
+      ]
+    },
+    {
+      "ID": 70154,
+      "Entries": [
+        "Lunar Winged Spear +4"
+      ]
+    },
+    {
+      "ID": 70155,
+      "Entries": [
+        "Lunar Winged Spear +5"
+      ]
+    },
+    {
+      "ID": 70300,
+      "Entries": [
+        "Istarel"
+      ]
+    },
+    {
+      "ID": 70301,
+      "Entries": [
+        "Isterel +1"
+      ]
+    },
+    {
+      "ID": 70302,
+      "Entries": [
+        "Isterel +2"
+      ]
+    },
+    {
+      "ID": 70303,
+      "Entries": [
+        "Isterel +3"
+      ]
+    },
+    {
+      "ID": 70304,
+      "Entries": [
+        "Isterel +4"
+      ]
+    },
+    {
+      "ID": 70305,
+      "Entries": [
+        "Isterel +5"
+      ]
+    },
+    {
+      "ID": 70400,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 70401,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 70402,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 70403,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 70404,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 70405,
+      "Entries": [
+        "Enhanced Phalanx DS"
+      ]
+    },
+    {
+      "ID": 79000,
+      "Entries": [
+        "prowling spear"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "size"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "size +1"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "size +2"
+      ]
+    },
+    {
+      "ID": 80003,
+      "Entries": [
+        "size +3"
+      ]
+    },
+    {
+      "ID": 80004,
+      "Entries": [
+        "size +4"
+      ]
+    },
+    {
+      "ID": 80005,
+      "Entries": [
+        "size +5"
+      ]
+    },
+    {
+      "ID": 80006,
+      "Entries": [
+        "size +6"
+      ]
+    },
+    {
+      "ID": 80007,
+      "Entries": [
+        "size +7"
+      ]
+    },
+    {
+      "ID": 80008,
+      "Entries": [
+        "size +8"
+      ]
+    },
+    {
+      "ID": 80009,
+      "Entries": [
+        "size +9"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "size +10"
+      ]
+    },
+    {
+      "ID": 80011,
+      "Entries": [
+        "sharp size +1"
+      ]
+    },
+    {
+      "ID": 80012,
+      "Entries": [
+        "sharp size +2"
+      ]
+    },
+    {
+      "ID": 80013,
+      "Entries": [
+        "sharp size +3"
+      ]
+    },
+    {
+      "ID": 80014,
+      "Entries": [
+        "sharp size +4"
+      ]
+    },
+    {
+      "ID": 80015,
+      "Entries": [
+        "sharp size +5"
+      ]
+    },
+    {
+      "ID": 80021,
+      "Entries": [
+        "+1 laceration size"
+      ]
+    },
+    {
+      "ID": 80022,
+      "Entries": [
+        "+2 laceration size"
+      ]
+    },
+    {
+      "ID": 80023,
+      "Entries": [
+        "+3 laceration size"
+      ]
+    },
+    {
+      "ID": 80024,
+      "Entries": [
+        "+4 laceration size"
+      ]
+    },
+    {
+      "ID": 80025,
+      "Entries": [
+        "+5 laceration size"
+      ]
+    },
+    {
+      "ID": 80031,
+      "Entries": [
+        "Missing month size +1"
+      ]
+    },
+    {
+      "ID": 80032,
+      "Entries": [
+        "Missing month size +2"
+      ]
+    },
+    {
+      "ID": 80033,
+      "Entries": [
+        "missing month size +3"
+      ]
+    },
+    {
+      "ID": 80034,
+      "Entries": [
+        "missing month size +4"
+      ]
+    },
+    {
+      "ID": 80035,
+      "Entries": [
+        "missing month size +5"
+      ]
+    },
+    {
+      "ID": 80041,
+      "Entries": [
+        "fine size +1"
+      ]
+    },
+    {
+      "ID": 80042,
+      "Entries": [
+        "fine size +2"
+      ]
+    },
+    {
+      "ID": 80043,
+      "Entries": [
+        "fine size +3"
+      ]
+    },
+    {
+      "ID": 80044,
+      "Entries": [
+        "fine size +4"
+      ]
+    },
+    {
+      "ID": 80045,
+      "Entries": [
+        "fine size +5"
+      ]
+    },
+    {
+      "ID": 80051,
+      "Entries": [
+        "Mercury size +1"
+      ]
+    },
+    {
+      "ID": 80052,
+      "Entries": [
+        "Mercury size +2"
+      ]
+    },
+    {
+      "ID": 80053,
+      "Entries": [
+        "Mercury size +3"
+      ]
+    },
+    {
+      "ID": 80054,
+      "Entries": [
+        "Mercury size +4"
+      ]
+    },
+    {
+      "ID": 80055,
+      "Entries": [
+        "Mercury size +5"
+      ]
+    },
+    {
+      "ID": 80061,
+      "Entries": [
+        "moon size +1"
+      ]
+    },
+    {
+      "ID": 80062,
+      "Entries": [
+        "moon size +2"
+      ]
+    },
+    {
+      "ID": 80063,
+      "Entries": [
+        "moon size +3"
+      ]
+    },
+    {
+      "ID": 80064,
+      "Entries": [
+        "moon size +4"
+      ]
+    },
+    {
+      "ID": 80065,
+      "Entries": [
+        "moon size +5"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "lucerne hammer"
+      ]
+    },
+    {
+      "ID": 80101,
+      "Entries": [
+        "Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80102,
+      "Entries": [
+        "Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80103,
+      "Entries": [
+        "Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80104,
+      "Entries": [
+        "Lucerne Hammer +4"
+      ]
+    },
+    {
+      "ID": 80105,
+      "Entries": [
+        "Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80106,
+      "Entries": [
+        "Lucerne Hammer +6"
+      ]
+    },
+    {
+      "ID": 80107,
+      "Entries": [
+        "Lucerne Hammer +7"
+      ]
+    },
+    {
+      "ID": 80108,
+      "Entries": [
+        "Lucerne Hammer +8"
+      ]
+    },
+    {
+      "ID": 80109,
+      "Entries": [
+        "Lucerne Hammer +9"
+      ]
+    },
+    {
+      "ID": 80110,
+      "Entries": [
+        "Lucerne Hammer +10"
+      ]
+    },
+    {
+      "ID": 80111,
+      "Entries": [
+        "Fine Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80112,
+      "Entries": [
+        "fine lucerne hammer +2"
+      ]
+    },
+    {
+      "ID": 80113,
+      "Entries": [
+        "fine lucerne hammer +3"
+      ]
+    },
+    {
+      "ID": 80114,
+      "Entries": [
+        "fine lucerne hammer +4"
+      ]
+    },
+    {
+      "ID": 80115,
+      "Entries": [
+        "Fine Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80121,
+      "Entries": [
+        "Mercury Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80122,
+      "Entries": [
+        "Mercury Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80123,
+      "Entries": [
+        "Mercury Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80131,
+      "Entries": [
+        "Crushing Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80132,
+      "Entries": [
+        "Crushing Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80133,
+      "Entries": [
+        "Crushing Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80134,
+      "Entries": [
+        "Crushing Lucerne Hammer +4"
+      ]
+    },
+    {
+      "ID": 80135,
+      "Entries": [
+        "Crushing Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80141,
+      "Entries": [
+        "Dragon Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80142,
+      "Entries": [
+        "Dragon Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80143,
+      "Entries": [
+        "Dragon Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80144,
+      "Entries": [
+        "Dragon Lucerne Hammer +4"
+      ]
+    },
+    {
+      "ID": 80145,
+      "Entries": [
+        "Dragon Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80151,
+      "Entries": [
+        "Moon Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80152,
+      "Entries": [
+        "Moon Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80153,
+      "Entries": [
+        "Moon Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80154,
+      "Entries": [
+        "Moon Lucerne Hammer +4"
+      ]
+    },
+    {
+      "ID": 80155,
+      "Entries": [
+        "Moon Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80161,
+      "Entries": [
+        "Blessed Lucerne Hammer +1"
+      ]
+    },
+    {
+      "ID": 80162,
+      "Entries": [
+        "Blessed Lucerne Hammer +2"
+      ]
+    },
+    {
+      "ID": 80163,
+      "Entries": [
+        "Blessed Lucerne Hammer +3"
+      ]
+    },
+    {
+      "ID": 80164,
+      "Entries": [
+        "Blessed Lucerne Hammer +4"
+      ]
+    },
+    {
+      "ID": 80165,
+      "Entries": [
+        "Blessed Lucerne Hammer +5"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "halberd"
+      ]
+    },
+    {
+      "ID": 80201,
+      "Entries": [
+        "Halberd +1"
+      ]
+    },
+    {
+      "ID": 80202,
+      "Entries": [
+        "Halberd +2"
+      ]
+    },
+    {
+      "ID": 80203,
+      "Entries": [
+        "Halberd +3"
+      ]
+    },
+    {
+      "ID": 80204,
+      "Entries": [
+        "Halberd +4"
+      ]
+    },
+    {
+      "ID": 80205,
+      "Entries": [
+        "Halberd +5"
+      ]
+    },
+    {
+      "ID": 80206,
+      "Entries": [
+        "Halberd +6"
+      ]
+    },
+    {
+      "ID": 80207,
+      "Entries": [
+        "Halberd +7"
+      ]
+    },
+    {
+      "ID": 80208,
+      "Entries": [
+        "Halberd +8"
+      ]
+    },
+    {
+      "ID": 80209,
+      "Entries": [
+        "Halberd +9"
+      ]
+    },
+    {
+      "ID": 80210,
+      "Entries": [
+        "Halberd +10"
+      ]
+    },
+    {
+      "ID": 80211,
+      "Entries": [
+        "Fine Halberd +1"
+      ]
+    },
+    {
+      "ID": 80212,
+      "Entries": [
+        "Fine Halberd +2"
+      ]
+    },
+    {
+      "ID": 80213,
+      "Entries": [
+        "Fine Halberd +3"
+      ]
+    },
+    {
+      "ID": 80214,
+      "Entries": [
+        "Fine Halberd +4"
+      ]
+    },
+    {
+      "ID": 80215,
+      "Entries": [
+        "Fine Halberd +5"
+      ]
+    },
+    {
+      "ID": 80221,
+      "Entries": [
+        "Mercury Halberd +1"
+      ]
+    },
+    {
+      "ID": 80222,
+      "Entries": [
+        "Mercury Halberd +2"
+      ]
+    },
+    {
+      "ID": 80223,
+      "Entries": [
+        "Mercury Halberd +3"
+      ]
+    },
+    {
+      "ID": 80231,
+      "Entries": [
+        "Smashing Halberd +1"
+      ]
+    },
+    {
+      "ID": 80232,
+      "Entries": [
+        "Crush Halberd +2"
+      ]
+    },
+    {
+      "ID": 80233,
+      "Entries": [
+        "Crush Halberd +3"
+      ]
+    },
+    {
+      "ID": 80234,
+      "Entries": [
+        "Crush Halberd +4"
+      ]
+    },
+    {
+      "ID": 80235,
+      "Entries": [
+        "Crush Halberd +5"
+      ]
+    },
+    {
+      "ID": 80241,
+      "Entries": [
+        "Dragon Halberd +1"
+      ]
+    },
+    {
+      "ID": 80242,
+      "Entries": [
+        "Dragon Halberd +2"
+      ]
+    },
+    {
+      "ID": 80243,
+      "Entries": [
+        "Dragon Halberd +3"
+      ]
+    },
+    {
+      "ID": 80244,
+      "Entries": [
+        "Dragon Halberd +4"
+      ]
+    },
+    {
+      "ID": 80245,
+      "Entries": [
+        "Dragon Halberd +5"
+      ]
+    },
+    {
+      "ID": 80251,
+      "Entries": [
+        "Lunar Halberd +1"
+      ]
+    },
+    {
+      "ID": 80252,
+      "Entries": [
+        "Lunar Halberd +2"
+      ]
+    },
+    {
+      "ID": 80253,
+      "Entries": [
+        "Lunar Halberd +3"
+      ]
+    },
+    {
+      "ID": 80254,
+      "Entries": [
+        "Lunar Halberd +4"
+      ]
+    },
+    {
+      "ID": 80255,
+      "Entries": [
+        "Lunar Halberd +5"
+      ]
+    },
+    {
+      "ID": 80261,
+      "Entries": [
+        "Blessed Halberd +1"
+      ]
+    },
+    {
+      "ID": 80262,
+      "Entries": [
+        "Blessed Halberd +2"
+      ]
+    },
+    {
+      "ID": 80263,
+      "Entries": [
+        "Blessed Halberd +3"
+      ]
+    },
+    {
+      "ID": 80264,
+      "Entries": [
+        "Blessed Halberd +4"
+      ]
+    },
+    {
+      "ID": 80265,
+      "Entries": [
+        "Blessed Halberd +5"
+      ]
+    },
+    {
+      "ID": 80300,
+      "Entries": [
+        "phosphorescent pole"
+      ]
+    },
+    {
+      "ID": 80301,
+      "Entries": [
+        "Phosphorescent pole +1"
+      ]
+    },
+    {
+      "ID": 80302,
+      "Entries": [
+        "Phosphorescent pole +2"
+      ]
+    },
+    {
+      "ID": 80303,
+      "Entries": [
+        "Phosphorescent pole +3"
+      ]
+    },
+    {
+      "ID": 80304,
+      "Entries": [
+        "Phosphorescent pole +4"
+      ]
+    },
+    {
+      "ID": 80305,
+      "Entries": [
+        "Phosphorescent pole +5"
+      ]
+    },
+    {
+      "ID": 89000,
+      "Entries": [
+        "Wandering pole"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "wood wand"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "Crushing wood wand +1"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "Crushing wood wand +2"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "Crushing wood wand +3"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "Crushing wood wand +4"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "Crushing wood wand +5"
+      ]
+    },
+    {
+      "ID": 90100,
+      "Entries": [
+        "iron wand"
+      ]
+    },
+    {
+      "ID": 90101,
+      "Entries": [
+        "Crushing Iron Wand +1"
+      ]
+    },
+    {
+      "ID": 90102,
+      "Entries": [
+        "Crushing iron wand +2"
+      ]
+    },
+    {
+      "ID": 90103,
+      "Entries": [
+        "Crushing iron wand +3"
+      ]
+    },
+    {
+      "ID": 90104,
+      "Entries": [
+        "Crushing iron wand +4"
+      ]
+    },
+    {
+      "ID": 90105,
+      "Entries": [
+        "Crushing Iron Wand +5"
+      ]
+    },
+    {
+      "ID": 90200,
+      "Entries": [
+        "Huangi no Okina DS Enhancement"
+      ]
+    },
+    {
+      "ID": 90201,
+      "Entries": [
+        "Huangi no Okina DS Enhancement"
+      ]
+    },
+    {
+      "ID": 90400,
+      "Entries": [
+        "amulet of god"
+      ]
+    },
+    {
+      "ID": 90500,
+      "Entries": [
+        "Special Amulet ①"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        "wandering catalyst"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "iron knuckle"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Crushing Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Crushing Iron Knuckle +2"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Crushing Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Crushing Iron Knuckle +4"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "Crushing Iron Knuckle +5"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Blessed Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Blessed Iron Knuckle +2"
+      ]
+    },
+    {
+      "ID": 100013,
+      "Entries": [
+        "Blessed Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100014,
+      "Entries": [
+        "Blessed Iron Knuckle +4"
+      ]
+    },
+    {
+      "ID": 100015,
+      "Entries": [
+        "Blessed Iron Knuckle +5"
+      ]
+    },
+    {
+      "ID": 100021,
+      "Entries": [
+        "Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100022,
+      "Entries": [
+        "Iron knuckle +2"
+      ]
+    },
+    {
+      "ID": 100023,
+      "Entries": [
+        "Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100024,
+      "Entries": [
+        "Iron knuckle +4"
+      ]
+    },
+    {
+      "ID": 100025,
+      "Entries": [
+        "Iron knuckle +5"
+      ]
+    },
+    {
+      "ID": 100026,
+      "Entries": [
+        "Iron knuckle +6"
+      ]
+    },
+    {
+      "ID": 100027,
+      "Entries": [
+        "Iron knuckle +7"
+      ]
+    },
+    {
+      "ID": 100028,
+      "Entries": [
+        "Iron knuckle +8"
+      ]
+    },
+    {
+      "ID": 100029,
+      "Entries": [
+        "Iron Knuckle +9"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Iron Knuckle +10"
+      ]
+    },
+    {
+      "ID": 100031,
+      "Entries": [
+        "Fine Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100032,
+      "Entries": [
+        "Fine Iron Knuckle +2"
+      ]
+    },
+    {
+      "ID": 100033,
+      "Entries": [
+        "Fine Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100034,
+      "Entries": [
+        "Fine Iron Knuckle +4"
+      ]
+    },
+    {
+      "ID": 100035,
+      "Entries": [
+        "fine iron knuckle +5"
+      ]
+    },
+    {
+      "ID": 100041,
+      "Entries": [
+        "Dragon Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100042,
+      "Entries": [
+        "Dragon Iron Knuckle +2"
+      ]
+    },
+    {
+      "ID": 100043,
+      "Entries": [
+        "Dragon Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100044,
+      "Entries": [
+        "Dragon Iron Knuckle +4"
+      ]
+    },
+    {
+      "ID": 100045,
+      "Entries": [
+        "Dragon Iron Knuckle +5"
+      ]
+    },
+    {
+      "ID": 100051,
+      "Entries": [
+        "Moon Iron Knuckle +1"
+      ]
+    },
+    {
+      "ID": 100052,
+      "Entries": [
+        "Moon Iron Knuckle +2"
+      ]
+    },
+    {
+      "ID": 100053,
+      "Entries": [
+        "Moon Iron Knuckle +3"
+      ]
+    },
+    {
+      "ID": 100054,
+      "Entries": [
+        "Moon Iron Knuckle +4"
+      ]
+    },
+    {
+      "ID": 100055,
+      "Entries": [
+        "Moon Iron Knuckle +5"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Bug Nak"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "Bug nak +1"
+      ]
+    },
+    {
+      "ID": 100102,
+      "Entries": [
+        "Bug nak +2"
+      ]
+    },
+    {
+      "ID": 100103,
+      "Entries": [
+        "Bug nak +3"
+      ]
+    },
+    {
+      "ID": 100104,
+      "Entries": [
+        "Bug nak +4"
+      ]
+    },
+    {
+      "ID": 100105,
+      "Entries": [
+        "Bug nak +5"
+      ]
+    },
+    {
+      "ID": 100106,
+      "Entries": [
+        "Bug nak +6"
+      ]
+    },
+    {
+      "ID": 100107,
+      "Entries": [
+        "Bug nak +7"
+      ]
+    },
+    {
+      "ID": 100108,
+      "Entries": [
+        "Bug nak +8"
+      ]
+    },
+    {
+      "ID": 100109,
+      "Entries": [
+        "Bug Nak +9"
+      ]
+    },
+    {
+      "ID": 100110,
+      "Entries": [
+        "Bug Nak +10"
+      ]
+    },
+    {
+      "ID": 100111,
+      "Entries": [
+        "sharp bug nak +1"
+      ]
+    },
+    {
+      "ID": 100112,
+      "Entries": [
+        "sharp bug nak +2"
+      ]
+    },
+    {
+      "ID": 100113,
+      "Entries": [
+        "sharp bug nak +3"
+      ]
+    },
+    {
+      "ID": 100114,
+      "Entries": [
+        "sharp bug nak +4"
+      ]
+    },
+    {
+      "ID": 100115,
+      "Entries": [
+        "sharp bug nak +5"
+      ]
+    },
+    {
+      "ID": 100121,
+      "Entries": [
+        "Rift Bug Nak +1"
+      ]
+    },
+    {
+      "ID": 100122,
+      "Entries": [
+        "Rift Bug Nak +2"
+      ]
+    },
+    {
+      "ID": 100123,
+      "Entries": [
+        "Rift Bug Nak +3"
+      ]
+    },
+    {
+      "ID": 100124,
+      "Entries": [
+        "Rift Claw +4"
+      ]
+    },
+    {
+      "ID": 100125,
+      "Entries": [
+        "Rift Claw +5"
+      ]
+    },
+    {
+      "ID": 100131,
+      "Entries": [
+        "Missing Moon Bug Nak +1"
+      ]
+    },
+    {
+      "ID": 100132,
+      "Entries": [
+        "Missing Moon Bug Nak +2"
+      ]
+    },
+    {
+      "ID": 100133,
+      "Entries": [
+        "Missing Moon Bug Nac +3"
+      ]
+    },
+    {
+      "ID": 100134,
+      "Entries": [
+        "Missing Moon Bug Nac +4"
+      ]
+    },
+    {
+      "ID": 100135,
+      "Entries": [
+        "Missing Moon Bug Nak +5"
+      ]
+    },
+    {
+      "ID": 100141,
+      "Entries": [
+        "fine claw +1"
+      ]
+    },
+    {
+      "ID": 100142,
+      "Entries": [
+        "fine claw +2"
+      ]
+    },
+    {
+      "ID": 100143,
+      "Entries": [
+        "fine claw +3"
+      ]
+    },
+    {
+      "ID": 100144,
+      "Entries": [
+        "fine claw +4"
+      ]
+    },
+    {
+      "ID": 100145,
+      "Entries": [
+        "fine claw +5"
+      ]
+    },
+    {
+      "ID": 100151,
+      "Entries": [
+        "Mercury Claw +1"
+      ]
+    },
+    {
+      "ID": 100152,
+      "Entries": [
+        "Mercury Claw +2"
+      ]
+    },
+    {
+      "ID": 100153,
+      "Entries": [
+        "Mercury Claw +3"
+      ]
+    },
+    {
+      "ID": 100154,
+      "Entries": [
+        "Mercury Claw +4"
+      ]
+    },
+    {
+      "ID": 100155,
+      "Entries": [
+        "Mercury Claw +5"
+      ]
+    },
+    {
+      "ID": 100161,
+      "Entries": [
+        "Moon Claw +1"
+      ]
+    },
+    {
+      "ID": 100162,
+      "Entries": [
+        "Moon Claw +2"
+      ]
+    },
+    {
+      "ID": 100163,
+      "Entries": [
+        "Moon Claw +3"
+      ]
+    },
+    {
+      "ID": 100164,
+      "Entries": [
+        "Moon Claw +4"
+      ]
+    },
+    {
+      "ID": 100165,
+      "Entries": [
+        "Moon Claw +5"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "God hand"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "God hand +1"
+      ]
+    },
+    {
+      "ID": 100202,
+      "Entries": [
+        "God hand +2"
+      ]
+    },
+    {
+      "ID": 100203,
+      "Entries": [
+        "God hand +3"
+      ]
+    },
+    {
+      "ID": 100204,
+      "Entries": [
+        "God hand +4"
+      ]
+    },
+    {
+      "ID": 100205,
+      "Entries": [
+        "God hand +5"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "bare hands"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "Wandering Fist"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Short Bow"
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        "short bow +1"
+      ]
+    },
+    {
+      "ID": 130002,
+      "Entries": [
+        "short bow +2"
+      ]
+    },
+    {
+      "ID": 130003,
+      "Entries": [
+        "short bow +3"
+      ]
+    },
+    {
+      "ID": 130004,
+      "Entries": [
+        "short bow +4"
+      ]
+    },
+    {
+      "ID": 130005,
+      "Entries": [
+        "short bow +5"
+      ]
+    },
+    {
+      "ID": 130006,
+      "Entries": [
+        "short bow +6"
+      ]
+    },
+    {
+      "ID": 130007,
+      "Entries": [
+        "short bow +7"
+      ]
+    },
+    {
+      "ID": 130008,
+      "Entries": [
+        "short bow +8"
+      ]
+    },
+    {
+      "ID": 130009,
+      "Entries": [
+        "short bow +9"
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        "short bow +10"
+      ]
+    },
+    {
+      "ID": 130011,
+      "Entries": [
+        "Rigid Short Bow +1"
+      ]
+    },
+    {
+      "ID": 130012,
+      "Entries": [
+        "Rigid Short Bow +2"
+      ]
+    },
+    {
+      "ID": 130013,
+      "Entries": [
+        "Rigid Short Bow +3"
+      ]
+    },
+    {
+      "ID": 130014,
+      "Entries": [
+        "Rigid Short Bow +4"
+      ]
+    },
+    {
+      "ID": 130015,
+      "Entries": [
+        "Rigid short bow +5"
+      ]
+    },
+    {
+      "ID": 130021,
+      "Entries": [
+        "sticky shortbow +1"
+      ]
+    },
+    {
+      "ID": 130022,
+      "Entries": [
+        "sticky shortbow +2"
+      ]
+    },
+    {
+      "ID": 130023,
+      "Entries": [
+        "sticky shortbow +3"
+      ]
+    },
+    {
+      "ID": 130024,
+      "Entries": [
+        "sticky shortbow +4"
+      ]
+    },
+    {
+      "ID": 130025,
+      "Entries": [
+        "sticky short bow +5"
+      ]
+    },
+    {
+      "ID": 130031,
+      "Entries": [
+        "fine short bow +1"
+      ]
+    },
+    {
+      "ID": 130032,
+      "Entries": [
+        "fine short bow +2"
+      ]
+    },
+    {
+      "ID": 130033,
+      "Entries": [
+        "High quality short bow +3"
+      ]
+    },
+    {
+      "ID": 130034,
+      "Entries": [
+        "fine short bow +4"
+      ]
+    },
+    {
+      "ID": 130035,
+      "Entries": [
+        "Fine short bow +5"
+      ]
+    },
+    {
+      "ID": 130100,
+      "Entries": [
+        "composite bow"
+      ]
+    },
+    {
+      "ID": 130101,
+      "Entries": [
+        "composite bow +1"
+      ]
+    },
+    {
+      "ID": 130102,
+      "Entries": [
+        "composite bow +2"
+      ]
+    },
+    {
+      "ID": 130103,
+      "Entries": [
+        "composite bow +3"
+      ]
+    },
+    {
+      "ID": 130104,
+      "Entries": [
+        "composite bow +4"
+      ]
+    },
+    {
+      "ID": 130105,
+      "Entries": [
+        "Composite Bow +5"
+      ]
+    },
+    {
+      "ID": 130106,
+      "Entries": [
+        "composite bow +6"
+      ]
+    },
+    {
+      "ID": 130107,
+      "Entries": [
+        "Composite Bow +7"
+      ]
+    },
+    {
+      "ID": 130108,
+      "Entries": [
+        "Composite Bow +8"
+      ]
+    },
+    {
+      "ID": 130109,
+      "Entries": [
+        "Composite Bow +9"
+      ]
+    },
+    {
+      "ID": 130110,
+      "Entries": [
+        "Composite Bow +10"
+      ]
+    },
+    {
+      "ID": 130111,
+      "Entries": [
+        "rigid composite bow +1"
+      ]
+    },
+    {
+      "ID": 130112,
+      "Entries": [
+        "rigid composite bow +2"
+      ]
+    },
+    {
+      "ID": 130113,
+      "Entries": [
+        "rigid composite bow +3"
+      ]
+    },
+    {
+      "ID": 130114,
+      "Entries": [
+        "rigid composite bow +4"
+      ]
+    },
+    {
+      "ID": 130115,
+      "Entries": [
+        "rigid composite bow +5"
+      ]
+    },
+    {
+      "ID": 130121,
+      "Entries": [
+        "sticky composite bow +1"
+      ]
+    },
+    {
+      "ID": 130122,
+      "Entries": [
+        "sticky composite bow +2"
+      ]
+    },
+    {
+      "ID": 130123,
+      "Entries": [
+        "sticky composite bow +3"
+      ]
+    },
+    {
+      "ID": 130124,
+      "Entries": [
+        "sticky composite bow +4"
+      ]
+    },
+    {
+      "ID": 130125,
+      "Entries": [
+        "sticky composite bow +5"
+      ]
+    },
+    {
+      "ID": 130131,
+      "Entries": [
+        "fine composite bow +1"
+      ]
+    },
+    {
+      "ID": 130132,
+      "Entries": [
+        "fine composite bow +2"
+      ]
+    },
+    {
+      "ID": 130133,
+      "Entries": [
+        "fine composite bow +3"
+      ]
+    },
+    {
+      "ID": 130134,
+      "Entries": [
+        "fine composite bow +4"
+      ]
+    },
+    {
+      "ID": 130135,
+      "Entries": [
+        "fine composite bow +5"
+      ]
+    },
+    {
+      "ID": 130200,
+      "Entries": [
+        "longbow"
+      ]
+    },
+    {
+      "ID": 130201,
+      "Entries": [
+        "Longbow +1"
+      ]
+    },
+    {
+      "ID": 130202,
+      "Entries": [
+        "Longbow +2"
+      ]
+    },
+    {
+      "ID": 130203,
+      "Entries": [
+        "Longbow +3"
+      ]
+    },
+    {
+      "ID": 130204,
+      "Entries": [
+        "Longbow +4"
+      ]
+    },
+    {
+      "ID": 130205,
+      "Entries": [
+        "Longbow +5"
+      ]
+    },
+    {
+      "ID": 130206,
+      "Entries": [
+        "Longbow +6"
+      ]
+    },
+    {
+      "ID": 130207,
+      "Entries": [
+        "Longbow +7"
+      ]
+    },
+    {
+      "ID": 130208,
+      "Entries": [
+        "Longbow +8"
+      ]
+    },
+    {
+      "ID": 130209,
+      "Entries": [
+        "Longbow +9"
+      ]
+    },
+    {
+      "ID": 130210,
+      "Entries": [
+        "Longbow +10"
+      ]
+    },
+    {
+      "ID": 130211,
+      "Entries": [
+        "Rigid Longbow +1"
+      ]
+    },
+    {
+      "ID": 130212,
+      "Entries": [
+        "Rigid Longbow +2"
+      ]
+    },
+    {
+      "ID": 130213,
+      "Entries": [
+        "Rigid Longbow +3"
+      ]
+    },
+    {
+      "ID": 130214,
+      "Entries": [
+        "Rigid Longbow +4"
+      ]
+    },
+    {
+      "ID": 130215,
+      "Entries": [
+        "Rigid Longbow +5"
+      ]
+    },
+    {
+      "ID": 130221,
+      "Entries": [
+        "sticky longbow +1"
+      ]
+    },
+    {
+      "ID": 130222,
+      "Entries": [
+        "sticky longbow +2"
+      ]
+    },
+    {
+      "ID": 130223,
+      "Entries": [
+        "sticky longbow +3"
+      ]
+    },
+    {
+      "ID": 130224,
+      "Entries": [
+        "sticky longbow +4"
+      ]
+    },
+    {
+      "ID": 130225,
+      "Entries": [
+        "sticky longbow +5"
+      ]
+    },
+    {
+      "ID": 130231,
+      "Entries": [
+        "fine longbow +1"
+      ]
+    },
+    {
+      "ID": 130232,
+      "Entries": [
+        "fine longbow +2"
+      ]
+    },
+    {
+      "ID": 130233,
+      "Entries": [
+        "fine longbow +3"
+      ]
+    },
+    {
+      "ID": 130234,
+      "Entries": [
+        "fine longbow +4"
+      ]
+    },
+    {
+      "ID": 130235,
+      "Entries": [
+        "fine longbow +5"
+      ]
+    },
+    {
+      "ID": 130300,
+      "Entries": [
+        "composite longbow"
+      ]
+    },
+    {
+      "ID": 130301,
+      "Entries": [
+        "Composite longbow +1"
+      ]
+    },
+    {
+      "ID": 130302,
+      "Entries": [
+        "Composite longbow +2"
+      ]
+    },
+    {
+      "ID": 130303,
+      "Entries": [
+        "Composite longbow +3"
+      ]
+    },
+    {
+      "ID": 130304,
+      "Entries": [
+        "Composite longbow +4"
+      ]
+    },
+    {
+      "ID": 130305,
+      "Entries": [
+        "Composite longbow +5"
+      ]
+    },
+    {
+      "ID": 130306,
+      "Entries": [
+        "Composite longbow +6"
+      ]
+    },
+    {
+      "ID": 130307,
+      "Entries": [
+        "Composite longbow +7"
+      ]
+    },
+    {
+      "ID": 130308,
+      "Entries": [
+        "Composite longbow +8"
+      ]
+    },
+    {
+      "ID": 130309,
+      "Entries": [
+        "Composite longbow +9"
+      ]
+    },
+    {
+      "ID": 130310,
+      "Entries": [
+        "Composite longbow +10"
+      ]
+    },
+    {
+      "ID": 130311,
+      "Entries": [
+        "Rigid Composite Longbow +1"
+      ]
+    },
+    {
+      "ID": 130312,
+      "Entries": [
+        "Rigid Composite Longbow +2"
+      ]
+    },
+    {
+      "ID": 130313,
+      "Entries": [
+        "Rigid Composite Longbow +3"
+      ]
+    },
+    {
+      "ID": 130314,
+      "Entries": [
+        "Rigid Composite Longbow +4"
+      ]
+    },
+    {
+      "ID": 130315,
+      "Entries": [
+        "Rigid Composite Longbow +5"
+      ]
+    },
+    {
+      "ID": 130321,
+      "Entries": [
+        "sticky composite longbow +1"
+      ]
+    },
+    {
+      "ID": 130322,
+      "Entries": [
+        "sticky composite longbow +2"
+      ]
+    },
+    {
+      "ID": 130323,
+      "Entries": [
+        "sticky composite longbow +3"
+      ]
+    },
+    {
+      "ID": 130324,
+      "Entries": [
+        "sticky composite longbow +4"
+      ]
+    },
+    {
+      "ID": 130325,
+      "Entries": [
+        "sticky composite longbow +5"
+      ]
+    },
+    {
+      "ID": 130331,
+      "Entries": [
+        "fine composite longbow +1"
+      ]
+    },
+    {
+      "ID": 130332,
+      "Entries": [
+        "fine composite longbow +2"
+      ]
+    },
+    {
+      "ID": 130333,
+      "Entries": [
+        "fine composite longbow +3"
+      ]
+    },
+    {
+      "ID": 130334,
+      "Entries": [
+        "fine composite longbow +4"
+      ]
+    },
+    {
+      "ID": 130335,
+      "Entries": [
+        "fine composite longbow +5"
+      ]
+    },
+    {
+      "ID": 130400,
+      "Entries": [
+        "white bow"
+      ]
+    },
+    {
+      "ID": 130401,
+      "Entries": [
+        "white bow +1"
+      ]
+    },
+    {
+      "ID": 130402,
+      "Entries": [
+        "white bow +2"
+      ]
+    },
+    {
+      "ID": 130403,
+      "Entries": [
+        "white bow +3"
+      ]
+    },
+    {
+      "ID": 130404,
+      "Entries": [
+        "white bow +4"
+      ]
+    },
+    {
+      "ID": 130405,
+      "Entries": [
+        "white bow +5"
+      ]
+    },
+    {
+      "ID": 130500,
+      "Entries": [
+        "Great spider DS enhancement"
+      ]
+    },
+    {
+      "ID": 130501,
+      "Entries": [
+        "Great spider DS enhancement"
+      ]
+    },
+    {
+      "ID": 130502,
+      "Entries": [
+        "Great spider DS enhancement"
+      ]
+    },
+    {
+      "ID": 130503,
+      "Entries": [
+        "Great spider DS enhancement"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "prowling bow"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "light crossbow"
+      ]
+    },
+    {
+      "ID": 140100,
+      "Entries": [
+        "heavy crossbow"
+      ]
+    },
+    {
+      "ID": 140200,
+      "Entries": [
+        "gargoyle crossbow"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "prowling crossbow"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 150001,
+      "Entries": [
+        "Buckler +1"
+      ]
+    },
+    {
+      "ID": 150002,
+      "Entries": [
+        "Buckler +2"
+      ]
+    },
+    {
+      "ID": 150003,
+      "Entries": [
+        "Buckler +3"
+      ]
+    },
+    {
+      "ID": 150004,
+      "Entries": [
+        "Buckler +4"
+      ]
+    },
+    {
+      "ID": 150005,
+      "Entries": [
+        "Buckler +5"
+      ]
+    },
+    {
+      "ID": 150006,
+      "Entries": [
+        "Buckler +6"
+      ]
+    },
+    {
+      "ID": 150007,
+      "Entries": [
+        "Buckler +7"
+      ]
+    },
+    {
+      "ID": 150008,
+      "Entries": [
+        "Buckler +8"
+      ]
+    },
+    {
+      "ID": 150009,
+      "Entries": [
+        "Buckler +9"
+      ]
+    },
+    {
+      "ID": 150010,
+      "Entries": [
+        "Buckler +10"
+      ]
+    },
+    {
+      "ID": 150011,
+      "Entries": [
+        "Repel Buckler +1"
+      ]
+    },
+    {
+      "ID": 150012,
+      "Entries": [
+        "Repel Buckler +2"
+      ]
+    },
+    {
+      "ID": 150013,
+      "Entries": [
+        "Repel Buckler +3"
+      ]
+    },
+    {
+      "ID": 150014,
+      "Entries": [
+        "Repel Buckler +4"
+      ]
+    },
+    {
+      "ID": 150015,
+      "Entries": [
+        "Repel Buckler +5"
+      ]
+    },
+    {
+      "ID": 150021,
+      "Entries": [
+        "Devil Wall Buckler +1"
+      ]
+    },
+    {
+      "ID": 150022,
+      "Entries": [
+        "Devil Wall Buckler +2"
+      ]
+    },
+    {
+      "ID": 150023,
+      "Entries": [
+        "Devil Wall Buckler +3"
+      ]
+    },
+    {
+      "ID": 150024,
+      "Entries": [
+        "Devil Wall Buckler +4"
+      ]
+    },
+    {
+      "ID": 150025,
+      "Entries": [
+        "Devil Wall Buckler +5"
+      ]
+    },
+    {
+      "ID": 150100,
+      "Entries": [
+        "wood shield"
+      ]
+    },
+    {
+      "ID": 150200,
+      "Entries": [
+        "kite shield"
+      ]
+    },
+    {
+      "ID": 150201,
+      "Entries": [
+        "Kite Shield +1"
+      ]
+    },
+    {
+      "ID": 150202,
+      "Entries": [
+        "Kite Shield +2"
+      ]
+    },
+    {
+      "ID": 150203,
+      "Entries": [
+        "Kite Shield +3"
+      ]
+    },
+    {
+      "ID": 150204,
+      "Entries": [
+        "Kite Shield +4"
+      ]
+    },
+    {
+      "ID": 150205,
+      "Entries": [
+        "Kite Shield +5"
+      ]
+    },
+    {
+      "ID": 150206,
+      "Entries": [
+        "Kite Shield +6"
+      ]
+    },
+    {
+      "ID": 150207,
+      "Entries": [
+        "Kite Shield +7"
+      ]
+    },
+    {
+      "ID": 150208,
+      "Entries": [
+        "Kite Shield +8"
+      ]
+    },
+    {
+      "ID": 150209,
+      "Entries": [
+        "Kite Shield +9"
+      ]
+    },
+    {
+      "ID": 150210,
+      "Entries": [
+        "Kite Shield +10"
+      ]
+    },
+    {
+      "ID": 150211,
+      "Entries": [
+        "Repelling Kite Shield +1"
+      ]
+    },
+    {
+      "ID": 150212,
+      "Entries": [
+        "Repelling Kite Shield +2"
+      ]
+    },
+    {
+      "ID": 150213,
+      "Entries": [
+        "Repelling Kite Shield +3"
+      ]
+    },
+    {
+      "ID": 150214,
+      "Entries": [
+        "Repelling Kite Shield +4"
+      ]
+    },
+    {
+      "ID": 150215,
+      "Entries": [
+        "Repelling Kite Shield +5"
+      ]
+    },
+    {
+      "ID": 150221,
+      "Entries": [
+        "Devil's Kite Shield +1"
+      ]
+    },
+    {
+      "ID": 150222,
+      "Entries": [
+        "Devil's Kite Shield +2"
+      ]
+    },
+    {
+      "ID": 150223,
+      "Entries": [
+        "Devil's Kite Shield +3"
+      ]
+    },
+    {
+      "ID": 150224,
+      "Entries": [
+        "Devil's Kite Shield +4"
+      ]
+    },
+    {
+      "ID": 150225,
+      "Entries": [
+        "Devil's Kite Shield +5"
+      ]
+    },
+    {
+      "ID": 150300,
+      "Entries": [
+        "heater shield"
+      ]
+    },
+    {
+      "ID": 150301,
+      "Entries": [
+        "heater shield +1"
+      ]
+    },
+    {
+      "ID": 150302,
+      "Entries": [
+        "Heater shield +2"
+      ]
+    },
+    {
+      "ID": 150303,
+      "Entries": [
+        "Heater shield +3"
+      ]
+    },
+    {
+      "ID": 150304,
+      "Entries": [
+        "Heater shield +4"
+      ]
+    },
+    {
+      "ID": 150305,
+      "Entries": [
+        "Heater shield +5"
+      ]
+    },
+    {
+      "ID": 150306,
+      "Entries": [
+        "Heater shield +6"
+      ]
+    },
+    {
+      "ID": 150307,
+      "Entries": [
+        "Heater shield +7"
+      ]
+    },
+    {
+      "ID": 150308,
+      "Entries": [
+        "Heater shield +8"
+      ]
+    },
+    {
+      "ID": 150309,
+      "Entries": [
+        "Heater shield +9"
+      ]
+    },
+    {
+      "ID": 150310,
+      "Entries": [
+        "Heater shield +10"
+      ]
+    },
+    {
+      "ID": 150311,
+      "Entries": [
+        "Repel Heater Shield +1"
+      ]
+    },
+    {
+      "ID": 150312,
+      "Entries": [
+        "Repel Heater Shield +2"
+      ]
+    },
+    {
+      "ID": 150313,
+      "Entries": [
+        "Repel Heater Shield +3"
+      ]
+    },
+    {
+      "ID": 150314,
+      "Entries": [
+        "Repel Heater Shield +4"
+      ]
+    },
+    {
+      "ID": 150315,
+      "Entries": [
+        "Repel Heater Shield +5"
+      ]
+    },
+    {
+      "ID": 150321,
+      "Entries": [
+        "Evil Wall Heater Shield +1"
+      ]
+    },
+    {
+      "ID": 150322,
+      "Entries": [
+        "Evil Wall Heater Shield +2"
+      ]
+    },
+    {
+      "ID": 150323,
+      "Entries": [
+        "Evil Wall Heater Shield +3"
+      ]
+    },
+    {
+      "ID": 150324,
+      "Entries": [
+        "Evil Wall Heater Shield +4"
+      ]
+    },
+    {
+      "ID": 150325,
+      "Entries": [
+        "Magic Wall Heater Shield +5"
+      ]
+    },
+    {
+      "ID": 150400,
+      "Entries": [
+        "Pavese"
+      ]
+    },
+    {
+      "ID": 150401,
+      "Entries": [
+        "Pavese +1"
+      ]
+    },
+    {
+      "ID": 150402,
+      "Entries": [
+        "Pavese +2"
+      ]
+    },
+    {
+      "ID": 150403,
+      "Entries": [
+        "Pavese +3"
+      ]
+    },
+    {
+      "ID": 150404,
+      "Entries": [
+        "Pavese +4"
+      ]
+    },
+    {
+      "ID": 150405,
+      "Entries": [
+        "Pavese +5"
+      ]
+    },
+    {
+      "ID": 150411,
+      "Entries": [
+        "Repel Pavese +1"
+      ]
+    },
+    {
+      "ID": 150412,
+      "Entries": [
+        "Repel Pavese +2"
+      ]
+    },
+    {
+      "ID": 150413,
+      "Entries": [
+        "Repel Pavese +3"
+      ]
+    },
+    {
+      "ID": 150414,
+      "Entries": [
+        "Repel Pavese +4"
+      ]
+    },
+    {
+      "ID": 150415,
+      "Entries": [
+        "Repel Pavese +5"
+      ]
+    },
+    {
+      "ID": 150500,
+      "Entries": [
+        "spike shield"
+      ]
+    },
+    {
+      "ID": 150501,
+      "Entries": [
+        "Spike Shield +1"
+      ]
+    },
+    {
+      "ID": 150502,
+      "Entries": [
+        "Spike Shield +2"
+      ]
+    },
+    {
+      "ID": 150503,
+      "Entries": [
+        "Spike Shield +3"
+      ]
+    },
+    {
+      "ID": 150504,
+      "Entries": [
+        "Spike Shield +4"
+      ]
+    },
+    {
+      "ID": 150505,
+      "Entries": [
+        "Spike Shield +5"
+      ]
+    },
+    {
+      "ID": 150506,
+      "Entries": [
+        "Spike Shield +6"
+      ]
+    },
+    {
+      "ID": 150507,
+      "Entries": [
+        "Spike Shield +7"
+      ]
+    },
+    {
+      "ID": 150508,
+      "Entries": [
+        "Spike Shield +8"
+      ]
+    },
+    {
+      "ID": 150509,
+      "Entries": [
+        "Spike Shield +9"
+      ]
+    },
+    {
+      "ID": 150510,
+      "Entries": [
+        "Spike Shield +10"
+      ]
+    },
+    {
+      "ID": 150511,
+      "Entries": [
+        "Repelling Spike Shield +1"
+      ]
+    },
+    {
+      "ID": 150512,
+      "Entries": [
+        "Repelling Spike Shield +2"
+      ]
+    },
+    {
+      "ID": 150513,
+      "Entries": [
+        "Repelling Spike Shield +3"
+      ]
+    },
+    {
+      "ID": 150514,
+      "Entries": [
+        "Repelling Spike Shield +4"
+      ]
+    },
+    {
+      "ID": 150515,
+      "Entries": [
+        "Repelling Spike Shield +5"
+      ]
+    },
+    {
+      "ID": 150521,
+      "Entries": [
+        "sharp spike shield +1"
+      ]
+    },
+    {
+      "ID": 150522,
+      "Entries": [
+        "sharp spike shield +2"
+      ]
+    },
+    {
+      "ID": 150523,
+      "Entries": [
+        "Sharp Spike Shield +3"
+      ]
+    },
+    {
+      "ID": 150524,
+      "Entries": [
+        "sharp spike shield +4"
+      ]
+    },
+    {
+      "ID": 150525,
+      "Entries": [
+        "sharp spike shield +5"
+      ]
+    },
+    {
+      "ID": 150600,
+      "Entries": [
+        "tower shield"
+      ]
+    },
+    {
+      "ID": 150601,
+      "Entries": [
+        "tower shield +1"
+      ]
+    },
+    {
+      "ID": 150602,
+      "Entries": [
+        "tower shield +2"
+      ]
+    },
+    {
+      "ID": 150603,
+      "Entries": [
+        "tower shield +3"
+      ]
+    },
+    {
+      "ID": 150604,
+      "Entries": [
+        "tower shield +4"
+      ]
+    },
+    {
+      "ID": 150605,
+      "Entries": [
+        "tower shield +5"
+      ]
+    },
+    {
+      "ID": 150700,
+      "Entries": [
+        "breast shield"
+      ]
+    },
+    {
+      "ID": 150701,
+      "Entries": [
+        "Breast Shield +1"
+      ]
+    },
+    {
+      "ID": 150702,
+      "Entries": [
+        "Breast Shield +2"
+      ]
+    },
+    {
+      "ID": 150703,
+      "Entries": [
+        "Breast Shield +3"
+      ]
+    },
+    {
+      "ID": 150704,
+      "Entries": [
+        "Breast Shield +4"
+      ]
+    },
+    {
+      "ID": 150705,
+      "Entries": [
+        "Breast Shield +5"
+      ]
+    },
+    {
+      "ID": 150799,
+      "Entries": [
+        "Breast shield for gold run"
+      ]
+    },
+    {
+      "ID": 150800,
+      "Entries": [
+        "soldier's shield"
+      ]
+    },
+    {
+      "ID": 150801,
+      "Entries": [
+        "Soldier's Shield +1"
+      ]
+    },
+    {
+      "ID": 150802,
+      "Entries": [
+        "Soldier's Shield +2"
+      ]
+    },
+    {
+      "ID": 150803,
+      "Entries": [
+        "Soldier's Shield +3"
+      ]
+    },
+    {
+      "ID": 150804,
+      "Entries": [
+        "Soldier's Shield +4"
+      ]
+    },
+    {
+      "ID": 150805,
+      "Entries": [
+        "Soldier's Shield +5"
+      ]
+    },
+    {
+      "ID": 150806,
+      "Entries": [
+        "Soldier's Shield +6"
+      ]
+    },
+    {
+      "ID": 150807,
+      "Entries": [
+        "Soldier's Shield +7"
+      ]
+    },
+    {
+      "ID": 150808,
+      "Entries": [
+        "Soldier's Shield +8"
+      ]
+    },
+    {
+      "ID": 150809,
+      "Entries": [
+        "Soldier's Shield +9"
+      ]
+    },
+    {
+      "ID": 150810,
+      "Entries": [
+        "Soldier's Shield +10"
+      ]
+    },
+    {
+      "ID": 150821,
+      "Entries": [
+        "Evil Wall Soldier's Shield +1"
+      ]
+    },
+    {
+      "ID": 150822,
+      "Entries": [
+        "Evil Wall Soldier's Shield +2"
+      ]
+    },
+    {
+      "ID": 150823,
+      "Entries": [
+        "Evil Wall Soldier's Shield +3"
+      ]
+    },
+    {
+      "ID": 150824,
+      "Entries": [
+        "Evil Wall Soldier's Shield +4"
+      ]
+    },
+    {
+      "ID": 150825,
+      "Entries": [
+        "Evil Wall Soldier's Shield +5"
+      ]
+    },
+    {
+      "ID": 150900,
+      "Entries": [
+        "knight shield"
+      ]
+    },
+    {
+      "ID": 150901,
+      "Entries": [
+        "Knight's Shield +1"
+      ]
+    },
+    {
+      "ID": 150902,
+      "Entries": [
+        "knight shield +2"
+      ]
+    },
+    {
+      "ID": 150903,
+      "Entries": [
+        "Knight's Shield +3"
+      ]
+    },
+    {
+      "ID": 150904,
+      "Entries": [
+        "knight shield +4"
+      ]
+    },
+    {
+      "ID": 150905,
+      "Entries": [
+        "knight shield +5"
+      ]
+    },
+    {
+      "ID": 150906,
+      "Entries": [
+        "Shield of Boletaria +6"
+      ]
+    },
+    {
+      "ID": 150907,
+      "Entries": [
+        "Shield of Boletaria +7"
+      ]
+    },
+    {
+      "ID": 150908,
+      "Entries": [
+        "Shield of Boletaria +8"
+      ]
+    },
+    {
+      "ID": 150909,
+      "Entries": [
+        "Shield of Boletaria +9"
+      ]
+    },
+    {
+      "ID": 150910,
+      "Entries": [
+        "Shield of Boletaria +10"
+      ]
+    },
+    {
+      "ID": 150911,
+      "Entries": [
+        "Repel Knight's Shield +1"
+      ]
+    },
+    {
+      "ID": 150912,
+      "Entries": [
+        "Repel Knight's Shield +2"
+      ]
+    },
+    {
+      "ID": 150913,
+      "Entries": [
+        "Repel Knight's Shield +3"
+      ]
+    },
+    {
+      "ID": 150914,
+      "Entries": [
+        "Repel Knight's Shield +4"
+      ]
+    },
+    {
+      "ID": 150915,
+      "Entries": [
+        "Repel Knight's Shield +5"
+      ]
+    },
+    {
+      "ID": 150921,
+      "Entries": [
+        "Evil Wall Shield of Boletaria +1"
+      ]
+    },
+    {
+      "ID": 150922,
+      "Entries": [
+        "Evil Wall Shield of Boletaria +2"
+      ]
+    },
+    {
+      "ID": 150923,
+      "Entries": [
+        "Devil's Shield of Boletaria +3"
+      ]
+    },
+    {
+      "ID": 150924,
+      "Entries": [
+        "Magic Wall Shield of Boletaria +4"
+      ]
+    },
+    {
+      "ID": 150925,
+      "Entries": [
+        "Magic Wall Shield of Boletaria +5"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "slave soldier shield"
+      ]
+    },
+    {
+      "ID": 151100,
+      "Entries": [
+        "rune shield"
+      ]
+    },
+    {
+      "ID": 151101,
+      "Entries": [
+        "Rune Shield +1"
+      ]
+    },
+    {
+      "ID": 151102,
+      "Entries": [
+        "Rune Shield +2"
+      ]
+    },
+    {
+      "ID": 151103,
+      "Entries": [
+        "Rune Shield +3"
+      ]
+    },
+    {
+      "ID": 151104,
+      "Entries": [
+        "Rune Shield +4"
+      ]
+    },
+    {
+      "ID": 151105,
+      "Entries": [
+        "Rune Shield +5"
+      ]
+    },
+    {
+      "ID": 151200,
+      "Entries": [
+        "Shibome large shield"
+      ]
+    },
+    {
+      "ID": 151201,
+      "Entries": [
+        "Shiba-zome Great Shield +1"
+      ]
+    },
+    {
+      "ID": 151202,
+      "Entries": [
+        "Shibome Great Shield +2"
+      ]
+    },
+    {
+      "ID": 151203,
+      "Entries": [
+        "Shiba-zome Great Shield +3"
+      ]
+    },
+    {
+      "ID": 151204,
+      "Entries": [
+        "Shiba-zome Great Shield +4"
+      ]
+    },
+    {
+      "ID": 151205,
+      "Entries": [
+        "Shiba-zome Great Shield +5"
+      ]
+    },
+    {
+      "ID": 151300,
+      "Entries": [
+        "plate shield"
+      ]
+    },
+    {
+      "ID": 151301,
+      "Entries": [
+        "plate shield +1"
+      ]
+    },
+    {
+      "ID": 151302,
+      "Entries": [
+        "plate shield +2"
+      ]
+    },
+    {
+      "ID": 151303,
+      "Entries": [
+        "plate shield +3"
+      ]
+    },
+    {
+      "ID": 151304,
+      "Entries": [
+        "plate shield +4"
+      ]
+    },
+    {
+      "ID": 151305,
+      "Entries": [
+        "plate shield +5"
+      ]
+    },
+    {
+      "ID": 151306,
+      "Entries": [
+        "plate shield +6"
+      ]
+    },
+    {
+      "ID": 151307,
+      "Entries": [
+        "plate shield +7"
+      ]
+    },
+    {
+      "ID": 151308,
+      "Entries": [
+        "plate shield +8"
+      ]
+    },
+    {
+      "ID": 151309,
+      "Entries": [
+        "plate shield +9"
+      ]
+    },
+    {
+      "ID": 151310,
+      "Entries": [
+        "plate shield +10"
+      ]
+    },
+    {
+      "ID": 151321,
+      "Entries": [
+        "Evil Wall Plate Shield +1"
+      ]
+    },
+    {
+      "ID": 151322,
+      "Entries": [
+        "Evil Wall Plate Shield +2"
+      ]
+    },
+    {
+      "ID": 151323,
+      "Entries": [
+        "Evil Wall Plate Shield +3"
+      ]
+    },
+    {
+      "ID": 151324,
+      "Entries": [
+        "Evil Wall Plate Shield +4"
+      ]
+    },
+    {
+      "ID": 151325,
+      "Entries": [
+        "Evil Wall Plate Shield +5"
+      ]
+    },
+    {
+      "ID": 151400,
+      "Entries": [
+        "tower shield"
+      ]
+    },
+    {
+      "ID": 151401,
+      "Entries": [
+        "Tower Shield +1"
+      ]
+    },
+    {
+      "ID": 151402,
+      "Entries": [
+        "Tower shield +2"
+      ]
+    },
+    {
+      "ID": 151403,
+      "Entries": [
+        "Tower shield +3"
+      ]
+    },
+    {
+      "ID": 151404,
+      "Entries": [
+        "Tower shield +4"
+      ]
+    },
+    {
+      "ID": 151405,
+      "Entries": [
+        "Tower shield +5"
+      ]
+    },
+    {
+      "ID": 151406,
+      "Entries": [
+        "Tower shield +6"
+      ]
+    },
+    {
+      "ID": 151407,
+      "Entries": [
+        "Tower shield +7"
+      ]
+    },
+    {
+      "ID": 151408,
+      "Entries": [
+        "Tower shield +8"
+      ]
+    },
+    {
+      "ID": 151409,
+      "Entries": [
+        "Tower shield +9"
+      ]
+    },
+    {
+      "ID": 151410,
+      "Entries": [
+        "Tower shield +10"
+      ]
+    },
+    {
+      "ID": 151421,
+      "Entries": [
+        "Evil Wall Tower Shield +1"
+      ]
+    },
+    {
+      "ID": 151422,
+      "Entries": [
+        "Evil Wall Tower Shield +2"
+      ]
+    },
+    {
+      "ID": 151423,
+      "Entries": [
+        "Evil Wall Tower Shield +3"
+      ]
+    },
+    {
+      "ID": 151424,
+      "Entries": [
+        "Evil Wall Tower Shield +4"
+      ]
+    },
+    {
+      "ID": 151425,
+      "Entries": [
+        "Evil Wall Tower Shield +5"
+      ]
+    },
+    {
+      "ID": 151500,
+      "Entries": [
+        "leather shield"
+      ]
+    },
+    {
+      "ID": 159000,
+      "Entries": [
+        "Prowling Shield"
+      ]
+    },
+    {
+      "ID": 160000,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 160100,
+      "Entries": [
+        "high attack arrow"
+      ]
+    },
+    {
+      "ID": 160200,
+      "Entries": [
+        "long range arrow"
+      ]
+    },
+    {
+      "ID": 160400,
+      "Entries": [
+        "fire arrow"
+      ]
+    },
+    {
+      "ID": 160500,
+      "Entries": [
+        "poison arrow"
+      ]
+    },
+    {
+      "ID": 160600,
+      "Entries": [
+        "arrow"
+      ]
+    },
+    {
+      "ID": 160700,
+      "Entries": [
+        "special arrows"
+      ]
+    },
+    {
+      "ID": 160800,
+      "Entries": [
+        "cheap arrows"
+      ]
+    },
+    {
+      "ID": 169000,
+      "Entries": [
+        "Wandering Quiver"
+      ]
+    },
+    {
+      "ID": 170000,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 170100,
+      "Entries": [
+        "Heavy arrow with high attack power"
+      ]
+    },
+    {
+      "ID": 170200,
+      "Entries": [
+        "Dangerous thick arrow"
+      ]
+    },
+    {
+      "ID": 170300,
+      "Entries": [
+        "cheap heavy arrows"
+      ]
+    },
+    {
+      "ID": 179000,
+      "Entries": [
+        "prowling bolt"
+      ]
+    }
+  ]
+}

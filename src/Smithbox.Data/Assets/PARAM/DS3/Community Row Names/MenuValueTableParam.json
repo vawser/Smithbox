@@ -1,0 +1,401 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "Consumable"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Unlimited use"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "S"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "A"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "B"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "C"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "D"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "E"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "-"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "-"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Blade of the Darkmoon"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Warrior of Sunlight"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Mound-makers"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Spears of the Church"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Rosaria's Fingers"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Watchdogs of Farron"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Aldrich Faithful"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Way of Blue"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Blue Sentinels"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Straight Sword"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Curved Sword"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Katana"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Axe"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Hammer"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Great Hammer"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Pike"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Reaper"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Claw"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Greatbow"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Crossbow"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Staff"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Sacred Chime"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Small Shield"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Shield"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Greatshield"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Arrow"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Greatarrow"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Bolt"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Dagger (Paired)"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "Sword (Paired)"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Ultra Greatsword (Unique)"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Curved Sword (Paired)"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Katana (Paired)"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Axe (Paired)"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Hammer (Paired)"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Spear (Paired)"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Special Straight Sword"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Special Thrusting Sword"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Reaper"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Greatshield (Paired)"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Ultra Greatsword (Paired)"
+      ]
+    }
+  ]
+}

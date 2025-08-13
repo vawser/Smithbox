@@ -1,0 +1,17 @@
+{
+  "Name": "DamageOverWriteParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Production data -- 本番データ"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

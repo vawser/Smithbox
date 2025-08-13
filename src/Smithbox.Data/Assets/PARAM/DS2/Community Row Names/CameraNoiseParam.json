@@ -1,0 +1,335 @@
+{
+  "Name": "CameraNoiseParam",
+  "Entries": [
+    {
+      "ID": 10102000,
+      "Entries": [
+        "Base - Top- Top- Left- Left and Right - Small - Universal -- ベース-上下左右-小-普-汎用"
+      ]
+    },
+    {
+      "ID": 10202000,
+      "Entries": [
+        "Base - Top- Top- Left- Left and Right - Medium - Universal -- ベース-上下左右-中-普-汎用"
+      ]
+    },
+    {
+      "ID": 10302000,
+      "Entries": [
+        "Base - Top- Bottom- Left- Left and Right - Large - Universal -- ベース-上下左右-大-普-汎用"
+      ]
+    },
+    {
+      "ID": 10402000,
+      "Entries": [
+        "Base - Top- Top- Left and Right - Oversized - Universal -- ベース-上下左右-特大-普-汎用"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "Dragon Shi Matsuri No -- 龍のシ祭場-吊橋ゆれ"
+      ]
+    },
+    {
+      "ID": 20000110,
+      "Entries": [
+        "Ryunoshi Festival - Suspension Bridge - Wyburn Landing -- 龍のシ祭場-吊橋-ワイバーン着地"
+      ]
+    },
+    {
+      "ID": 20000111,
+      "Entries": [
+        "Ryunoshi Festival - Suspension Bridge - Wyburn Landing (Yoro) -- 龍のシ祭場-吊橋-ワイバーン着地（よろけ）"
+      ]
+    },
+    {
+      "ID": 20000120,
+      "Entries": [
+        "Dragon's Shi Matsuri - Suspension Bridge - Weiburn Takeoff -- 龍のシ祭場-吊橋-ワイバーン離陸"
+      ]
+    },
+    {
+      "ID": 20000130,
+      "Entries": [
+        "Dragon's Si Festival - Suspension Bridge - Wyburn Flight -- 龍のシ祭場-吊橋-ワイバーン飛行"
+      ]
+    },
+    {
+      "ID": 20001020,
+      "Entries": [
+        "Torture Grounds - Perimeter Passages - Chariots Run Over -- 拷問場-外周通路-チャリオッツ轢き殺し"
+      ]
+    },
+    {
+      "ID": 20002010,
+      "Entries": [
+        "Dragon Research Site - Square - Bone Dragon - Small Shake -- 龍の研究場-広場-骨ドラゴン-小ゆれ"
+      ]
+    },
+    {
+      "ID": 20002011,
+      "Entries": [
+        "Dragon Research Site - Square - Bone Dragon - Medium Shake -- 龍の研究場-広場-骨ドラゴン-中ゆれ"
+      ]
+    },
+    {
+      "ID": 20002012,
+      "Entries": [
+        "Dragon Research Site - Square - Bone Dragon - Great Shake -- 龍の研究場-広場-骨ドラゴン-大ゆれ"
+      ]
+    },
+    {
+      "ID": 20002013,
+      "Entries": [
+        "Dragon Research Site - Square - Bone Dragon - Biting -- 龍の研究場-広場-骨ドラゴン-噛み付き"
+      ]
+    },
+    {
+      "ID": 20002110,
+      "Entries": [
+        "Dragon's Research Center - Prison - Auger Door Banging - Koyu -- 龍の研究場-牢屋-オーガ扉叩き-小ゆれ"
+      ]
+    },
+    {
+      "ID": 20002111,
+      "Entries": [
+        "Dragon's Research Center - Prison - Auger Door Banging - Nakayu -- 龍の研究場-牢屋-オーガ扉叩き-中ゆれ"
+      ]
+    },
+    {
+      "ID": 20002112,
+      "Entries": [
+        "Dragon's Research Center - Prison - Auger Door Banging - Large Shake -- 龍の研究場-牢屋-オーガ扉叩き-大ゆれ"
+      ]
+    },
+    {
+      "ID": 20102000,
+      "Entries": [
+        "Base - Top- Top- Left- Left and Right - Small - Universal -- ベース-上下左右-小-普-汎用"
+      ]
+    },
+    {
+      "ID": 20202000,
+      "Entries": [
+        "Base - Top- Top- Left- Left and Right - Medium - Universal -- ベース-上下左右-中-普-汎用"
+      ]
+    },
+    {
+      "ID": 20302000,
+      "Entries": [
+        "Base - Top- Bottom- Left- Left and Right - Large - Universal -- ベース-上下左右-大-普-汎用"
+      ]
+    },
+    {
+      "ID": 20402000,
+      "Entries": [
+        "Base - Top- Top- Left and Right - Oversized - Universal -- ベース-上下左右-特大-普-汎用"
+      ]
+    },
+    {
+      "ID": 20502000,
+      "Entries": [
+        "Base - Top- Bottom- Left and Right - Extra Large - Universal -- ベース-上下左右-特特大-普-汎用"
+      ]
+    },
+    {
+      "ID": 31101000,
+      "Entries": [
+        "PC- Up- down- left- left- right- small- short- general purpose -- ＰＣ-上下左右-小-短-汎用"
+      ]
+    },
+    {
+      "ID": 31201000,
+      "Entries": [
+        "PC- Up- down- left- right- medium- short- general purpose -- ＰＣ-上下左右-中-短-汎用"
+      ]
+    },
+    {
+      "ID": 31301000,
+      "Entries": [
+        "PC- Up- down- left- left- right- large- short- general purpose -- ＰＣ-上下左右-大-短-汎用"
+      ]
+    },
+    {
+      "ID": 32101000,
+      "Entries": [
+        "PC-Vertical Shaking-Small-Short-General-Purpose -- ＰＣ-縦揺れ-小-短-汎用"
+      ]
+    },
+    {
+      "ID": 32201000,
+      "Entries": [
+        "PC-Vertical Shaking-Medium-Short-General-Purpose -- ＰＣ-縦揺れ-中-短-汎用"
+      ]
+    },
+    {
+      "ID": 32301000,
+      "Entries": [
+        "PC-Vertical Shaking-Large-Short-General-Purpose -- ＰＣ-縦揺れ-大-短-汎用"
+      ]
+    },
+    {
+      "ID": 33101000,
+      "Entries": [
+        "PC-Swaying-Small-Short-General-purpose -- ＰＣ-横揺れ-小-短-汎用"
+      ]
+    },
+    {
+      "ID": 33201000,
+      "Entries": [
+        "PC-Swaying-Medium-Short-General-purpose -- ＰＣ-横揺れ-中-短-汎用"
+      ]
+    },
+    {
+      "ID": 33301000,
+      "Entries": [
+        "PC-Swaying-Large-Short-General-Purpose -- ＰＣ-横揺れ-大-短-汎用"
+      ]
+    },
+    {
+      "ID": 38000700,
+      "Entries": [
+        "PC-Tossing-Medium-Dagger System -- ＰＣ-投げ-中型-短剣系"
+      ]
+    },
+    {
+      "ID": 38000710,
+      "Entries": [
+        "PC-Tossing- Medium-Tosed-Two-Handed Axe System -- ＰＣ-投げ-中型-両手斧系"
+      ]
+    },
+    {
+      "ID": 38000720,
+      "Entries": [
+        "PC-Tossing- Medium-Handed Oversized Sword System -- ＰＣ-投げ-中型-両手特大剣系"
+      ]
+    },
+    {
+      "ID": 38000800,
+      "Entries": [
+        "PC-Throwing-Large-Dagger System -- ＰＣ-投げ-大型-短剣系"
+      ]
+    },
+    {
+      "ID": 38000810,
+      "Entries": [
+        "PC-Tossing-Large-Handed-Two-Handed Axe System -- ＰＣ-投げ-大型-両手斧系"
+      ]
+    },
+    {
+      "ID": 38000820,
+      "Entries": [
+        "PC-Throwing-Large-Handed Oversized Sword System -- ＰＣ-投げ-大型-両手特大剣系"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "Enemy - Vertical Shaking - Minimum - Short - General Purpose -- エネミー-縦揺れ-極小-短-汎用"
+      ]
+    },
+    {
+      "ID": 41001010,
+      "Entries": [
+        "Enemy - Trampling - Minimum - Short - General Purpose -- エネミー-踏みつけ-極小-短-汎用"
+      ]
+    },
+    {
+      "ID": 41101000,
+      "Entries": [
+        "Enemy - Vertical Shaking - Small - Short - General Purpose -- エネミー-縦揺れ-小-短-汎用"
+      ]
+    },
+    {
+      "ID": 41101010,
+      "Entries": [
+        "Enemy - Trampling - Small - Short - General Purpose -- エネミー-踏みつけ-小-短-汎用"
+      ]
+    },
+    {
+      "ID": 41201000,
+      "Entries": [
+        "Enemy - Vertical Shaking - Medium - Short - General Purpose -- エネミー-縦揺れ-中-短-汎用"
+      ]
+    },
+    {
+      "ID": 41201010,
+      "Entries": [
+        "Enemy - Trampling - Medium - Short - General Purpose -- エネミー-踏みつけ-中-短-汎用"
+      ]
+    },
+    {
+      "ID": 41301000,
+      "Entries": [
+        "Enemy - Vertical Shaking - Large - Short - General Purpose -- エネミー-縦揺れ-大-短-汎用"
+      ]
+    },
+    {
+      "ID": 41301010,
+      "Entries": [
+        "Enemy - Trampling - Large - Short - General Purpose -- エネミー-踏みつけ-大-短-汎用"
+      ]
+    },
+    {
+      "ID": 41401000,
+      "Entries": [
+        "Enemy - Vertical Shaking - Oversized - Short - General Purpose -- エネミー-縦揺れ-特大-短-汎用"
+      ]
+    },
+    {
+      "ID": 41401010,
+      "Entries": [
+        "Enemy - Trampling - Oversized - Short - General Purpose -- エネミー-踏みつけ-特大-短-汎用"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "Test -- テスト"
+      ]
+    },
+    {
+      "ID": 100000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121000100,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

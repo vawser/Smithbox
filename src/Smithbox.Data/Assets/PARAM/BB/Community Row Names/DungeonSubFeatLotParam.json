@@ -1,0 +1,905 @@
+{
+  "Name": "DungeonSubFeatLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 1809,
+      "Entries": [
+        "Fixed Grail [Level 8 】Thumel _ Additional Materials"
+      ]
+    },
+    {
+      "ID": 9910030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9910035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9910050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9910060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 9920030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9920035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9920050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9920060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 21010,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】Remote Tomb: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 9921011,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Deserted Tomb"
+      ]
+    },
+    {
+      "ID": 9921030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9921035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9921050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9921060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 9930030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9930035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9930050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9930060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 30240,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 9930230,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9930235,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9930250,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9930260,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Remote Tomb: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Remote Tomb: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 9931011,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Deserted Tomb"
+      ]
+    },
+    {
+      "ID": 9931030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9931035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9931050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9931060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 31240,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 Remote Grave _Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 9931211,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Deserted Tomb"
+      ]
+    },
+    {
+      "ID": 9931230,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9931235,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9931250,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9931260,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Thumel _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 40120,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Thumel _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 40170,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Thumel _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 9940111,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Tomel"
+      ]
+    },
+    {
+      "ID": 9940130,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9940135,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9940150,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9940160,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 42010,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Roland: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 42020,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Roland: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 9942030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9942035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9942050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9942060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel: Curse"
+      ]
+    },
+    {
+      "ID": 9950011,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Tomel"
+      ]
+    },
+    {
+      "ID": 9950030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9950035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9950050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9950060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 50240,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 9950211,
+      "Entries": [
+        "Sub-feature candidate: Poison Dungeon: Tomel"
+      ]
+    },
+    {
+      "ID": 9950230,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9950235,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9950250,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9950260,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 52010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Roland: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 52020,
+      "Entries": [
+        "Automatically generated chalice [Level 5】Roland: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 52070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Roland: Curse"
+      ]
+    },
+    {
+      "ID": 9952030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9952035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9952050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9952060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 52240,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 Laurent _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 9952230,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9952235,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9952250,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9952260,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 53010,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Izu: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 53020,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Izu: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 53070,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Izu: Curse"
+      ]
+    },
+    {
+      "ID": 9953030,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9953035,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9953050,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9953060,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 9953015,
+      "Entries": [
+        "Sub-characteristic candidate: Holy Grail type correction 2"
+      ]
+    },
+    {
+      "ID": 53240,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Is _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 9953230,
+      "Entries": [
+        "Sub-characteristic candidates: Special characters"
+      ]
+    },
+    {
+      "ID": 9953235,
+      "Entries": [
+        "Sub-characteristic candidate: Unique item"
+      ]
+    },
+    {
+      "ID": 9953250,
+      "Entries": [
+        "Holy Grail Type Correction"
+      ]
+    },
+    {
+      "ID": 9953260,
+      "Entries": [
+        "Sub-feature candidates: 4F Open"
+      ]
+    },
+    {
+      "ID": 9953215,
+      "Entries": [
+        "Sub-characteristic candidate: Holy Grail type correction 2"
+      ]
+    },
+    {
+      "ID": 60110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Thumel _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 60120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Thumel _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 60170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Thumel _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 62110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 Laurent _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 62120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 Laurent _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 62170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 Laurent _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 63110,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Is _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 63120,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Is _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 63170,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Is _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 70120,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 70170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 70310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 70320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 70370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 70380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Terrible Curse: Terrible Curse"
+      ]
+    },
+    {
+      "ID": 72110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 72120,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 72170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 72240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 72310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 72320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 72370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent_ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 72380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Terrible Curse: Terrible Curse"
+      ]
+    },
+    {
+      "ID": 73110,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 73120,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 73170,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Curse: Curse"
+      ]
+    },
+    {
+      "ID": 73240,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Multiplayer: Hostile Multiplayer"
+      ]
+    },
+    {
+      "ID": 73310,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Terrible Curse: Enemy Strengthening"
+      ]
+    },
+    {
+      "ID": 73320,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Terrible Curse: Special Strong Enemy"
+      ]
+    },
+    {
+      "ID": 73370,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Terrible Curse: Curse"
+      ]
+    },
+    {
+      "ID": 73380,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Terrible Curse: Terrible Curse"
+      ]
+    },
+    {
+      "ID": 991000000,
+      "Entries": [
+        "Sub-feature candidate: Poison: Fixed only"
+      ]
+    },
+    {
+      "ID": 994500000,
+      "Entries": [
+        "Fixed dungeon: Unique dungeon"
+      ]
+    },
+    {
+      "ID": 995010110,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1011"
+      ]
+    },
+    {
+      "ID": 995010120,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1012"
+      ]
+    },
+    {
+      "ID": 995010130,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1013"
+      ]
+    },
+    {
+      "ID": 995010140,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1014"
+      ]
+    },
+    {
+      "ID": 995010220,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1022"
+      ]
+    },
+    {
+      "ID": 995010230,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1023"
+      ]
+    },
+    {
+      "ID": 995010340,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1034"
+      ]
+    },
+    {
+      "ID": 995010350,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1035"
+      ]
+    },
+    {
+      "ID": 995010450,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1045"
+      ]
+    },
+    {
+      "ID": 996000000,
+      "Entries": [
+        "Sub-feature candidates: 4F Open: Fixed only"
+      ]
+    },
+    {
+      "ID": 996100000,
+      "Entries": [
+        "Sub-feature candidates: 4F Open: Fixed Exclusive: Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 996200000,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1013 only"
+      ]
+    },
+    {
+      "ID": 997000000,
+      "Entries": [
+        "Sub-characteristic candidate: Curse: Fixed only"
+      ]
+    },
+    {
+      "ID": 997700000,
+      "Entries": [
+        "Dungeon Generation Level 2 Tomer"
+      ]
+    },
+    {
+      "ID": 997800000,
+      "Entries": [
+        "Fixed dungeon common"
+      ]
+    },
+    {
+      "ID": 998500000,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 1"
+      ]
+    },
+    {
+      "ID": 998600000,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 2"
+      ]
+    },
+    {
+      "ID": 998700000,
+      "Entries": [
+        "Fixed dungeon: Multi-grail3"
+      ]
+    },
+    {
+      "ID": 998800000,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 4"
+      ]
+    },
+    {
+      "ID": 998900000,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 5"
+      ]
+    }
+  ]
+}

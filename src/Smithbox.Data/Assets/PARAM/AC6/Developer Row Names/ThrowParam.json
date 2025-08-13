@@ -1,0 +1,771 @@
+{
+  "Name": "ThrowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[old] Rifle throwing PC → c9300_Ueda test machine -- 【old】ライフル投げ\u3000PC→c9300_上田テスト機"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[old] Blade throwing PC→c9300_Ueda test machine -- 【old】ブレード投げ\u3000PC→c9300_上田テスト機"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Trunk break PC→c8510_strong zako -- 体幹ブレイク\u3000PC→c8510_強ザコ"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[old] Blade throwing PC → c8510_strong zako -- 【old】ブレード投げ\u3000PC→c8510_強ザコ"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Trunk break PC→c8100_strong zako_whip -- 体幹ブレイク\u3000PC→c8100_強ザコ_ウィップ"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[old] Blade Throw PC → c8100_Strong Zako_Whip -- 【old】ブレード投げ\u3000PC→c8100_強ザコ_ウィップ"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[old] Rifle throwing PC → c8540_Formidable fat enemy -- 【old】ライフル投げ\u3000PC→c8540_強敵デブ"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Trunk break throw PC→c9320_trainer machine -- 体幹ブレイク投げ\u3000PC→c9320_練習機"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[old] Blade throwing PC → c9320_trainer machine -- 【old】ブレード投げ\u3000PC→c9320_練習機"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[old] Blade throwing PC → c8131 control prototype strong enemy -- 【old】ブレード投げ\u3000PC→c8131 制御試作強敵"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[old] Blade throwing PC → c8135 Miyatake strong enemy -- 【old】ブレード投げ\u3000PC→c8135 宮武強敵"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Trunk break throw PC→c8110_colorless MT -- 体幹ブレイク投げ\u3000PC→c8110_無色MT"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Stealth throw PC→c8110_colorless MT -- ステルス投げ\u3000\u3000PC→c8110_無色MT"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Trunk break throw PC→c9201_reverse joint -- 体幹ブレイク投げ\u3000PC→c9201_逆関節"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Stealth throw PC→c9201_reverse joint -- ステルス投げ\u3000\u3000PC→c9201_逆関節"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Trunk break throw PC→c3020_former communist MT -- 体幹ブレイク投げ\u3000PC→c3020_旧共産MT"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Test] Avalanche Throw Enemy → PC -- 【テスト】アバランチ 投げ 敵→PC"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "Stealth PC → Mercenary of the North -- ステルス\u3000PC→北の傭兵"
+      ]
+    },
+    {
+      "ID": 43000,
+      "Entries": [
+        "Stealth PC → Grave Revealer Nobleman -- ステルス\u3000PC→墓暴きの貴人"
+      ]
+    },
+    {
+      "ID": 60500,
+      "Entries": [
+        "Falling from a horse PC → Mercenary of the North -- 落馬\u3000PC→北の傭兵"
+      ]
+    },
+    {
+      "ID": 110400,
+      "Entries": [
+        "Back PC → deceased -- 背面\u3000PC→亡者"
+      ]
+    },
+    {
+      "ID": 110401,
+      "Entries": [
+        "Back PC → deceased -- 背面\u3000PC→亡者"
+      ]
+    },
+    {
+      "ID": 110402,
+      "Entries": [
+        "Back PC → deceased -- 背面\u3000PC→亡者"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Back PC → Skeleton -- 背面\u3000PC→スケルトン"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Back PC → Dead Soldier -- 背面\u3000PC→亡者兵士"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "Back PC → Dead Soldier (Large) -- 背面\u3000PC→亡者兵士（大）"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "Back PC → Dark Knight -- 背面\u3000PC→ダークナイト"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "Back PC → Dead Knight -- 背面\u3000PC→亡者騎士"
+      ]
+    },
+    {
+      "ID": 111500,
+      "Entries": [
+        "Back PC → Dead Monk -- 背面\u3000PC→亡者僧兵"
+      ]
+    },
+    {
+      "ID": 111800,
+      "Entries": [
+        "Back PC → Skeleton frontier -- 背面\u3000PC→スケルトン辺境"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Back PC → dwarf -- 背面\u3000PC→矮小人"
+      ]
+    },
+    {
+      "ID": 112100,
+      "Entries": [
+        "Back PC → Blue -- 背面\u3000PC→ブルー"
+      ]
+    },
+    {
+      "ID": 112200,
+      "Entries": [
+        "Back PC → Revival -- 背面\u3000PC→よみがえり"
+      ]
+    },
+    {
+      "ID": 112300,
+      "Entries": [
+        "Back PC → Poor people -- 背面\u3000PC→貧民亡者",
+        "Back PC → Poor people -- 背面\u3000PC→貧民亡者"
+      ]
+    },
+    {
+      "ID": 112500,
+      "Entries": [
+        "Back PC → Poor Elite -- 背面\u3000PC→貧民亡者エリート"
+      ]
+    },
+    {
+      "ID": 112800,
+      "Entries": [
+        "Back PC → New Castle Knight -- 背面\u3000PC→新王城騎士"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Back PC → Black Knight -- 背面\u3000PC→黒騎士"
+      ]
+    },
+    {
+      "ID": 113400,
+      "Entries": [
+        "Back PC → Wax Dead Man -- 背面\u3000PC→蝋の死人"
+      ]
+    },
+    {
+      "ID": 113600,
+      "Entries": [
+        "Back PC → Crucified A -- 背面\u3000PC→磔亡者A"
+      ]
+    },
+    {
+      "ID": 113700,
+      "Entries": [
+        "Back PC → Crucified B -- 背面\u3000PC→磔亡者B"
+      ]
+    },
+    {
+      "ID": 113900,
+      "Entries": [
+        "Back PC → Serpent Assassin -- 背面\u3000PC→蛇人の暗殺者"
+      ]
+    },
+    {
+      "ID": 120300,
+      "Entries": [
+        "Back PC → Sullivan's Grim Reaper -- 背面\u3000PC→サリヴァーンの死神"
+      ]
+    },
+    {
+      "ID": 121600,
+      "Entries": [
+        "Back side PC → Things that cause eclipse (small) -- 背面\u3000PC→蝕を呼ぶもの（小）"
+      ]
+    },
+    {
+      "ID": 140500,
+      "Entries": [
+        "Back PC → Mercenary of the North -- 背面\u3000PC→北の傭兵"
+      ]
+    },
+    {
+      "ID": 143000,
+      "Entries": [
+        "Back PC → Grave Revealing Nobleman -- 背面\u3000PC→墓暴きの貴人"
+      ]
+    },
+    {
+      "ID": 195010,
+      "Entries": [
+        "Back PC → Black Knight -- 背面\u3000PC→黒騎士"
+      ]
+    },
+    {
+      "ID": 195030,
+      "Entries": [
+        "Back PC → White Knight -- 背面\u3000PC→ホワイトナイト"
+      ]
+    },
+    {
+      "ID": 195040,
+      "Entries": [
+        "Back PC → Guardian of the painting -- 背面\u3000PC→絵画の守り人"
+      ]
+    },
+    {
+      "ID": 199900,
+      "Entries": [
+        "Back PC → Eclipse Vanguard 1 -- 背面\u3000PC→蝕の尖兵1"
+      ]
+    },
+    {
+      "ID": 199910,
+      "Entries": [
+        "Back PC → Eclipse Vanguard 2 -- 背面\u3000PC→蝕の尖兵2"
+      ]
+    },
+    {
+      "ID": 199920,
+      "Entries": [
+        "Back PC → Eclipse Vanguard 3 -- 背面\u3000PC→蝕の尖兵3"
+      ]
+    },
+    {
+      "ID": 199930,
+      "Entries": [
+        "Back PC → Eclipse Vanguard 4 -- 背面\u3000PC→蝕の尖兵4"
+      ]
+    },
+    {
+      "ID": 199980,
+      "Entries": [
+        "Back PC→Tango! -- 背面\u3000PC→Tango!"
+      ]
+    },
+    {
+      "ID": 210400,
+      "Entries": [
+        "Parry PC → Dead -- パリィ\u3000PC→亡者"
+      ]
+    },
+    {
+      "ID": 210701,
+      "Entries": [
+        "Parry PC → Skeleton -- パリィ\u3000PC→スケルトン"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "Parry PC → Dead Soldier -- パリィ\u3000PC→亡者兵士"
+      ]
+    },
+    {
+      "ID": 211050,
+      "Entries": [
+        "Parry PC → Dead Soldier (Large) -- パリィ\u3000PC→亡者兵士（大）"
+      ]
+    },
+    {
+      "ID": 211100,
+      "Entries": [
+        "Parry PC → Dark Knight -- パリィ\u3000PC→ダークナイト"
+      ]
+    },
+    {
+      "ID": 211200,
+      "Entries": [
+        "Parry PC → Dead Knight -- パリィ\u3000PC→亡者騎士"
+      ]
+    },
+    {
+      "ID": 211500,
+      "Entries": [
+        "Parry PC → Dead Monk Soldier -- パリィ\u3000PC→亡者僧兵"
+      ]
+    },
+    {
+      "ID": 211800,
+      "Entries": [
+        "Parry PC → Skeleton frontier -- パリィ\u3000PC→スケルトン辺境"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Parry PC → Dwarf -- パリィ\u3000PC→矮小人"
+      ]
+    },
+    {
+      "ID": 212100,
+      "Entries": [
+        "Parry PC → Blue -- パリィ\u3000PC→ブルー"
+      ]
+    },
+    {
+      "ID": 212300,
+      "Entries": [
+        "Parry PC→Destitute -- パリィ\u3000PC→貧民亡者",
+        "Parry PC→Destitute -- パリィ\u3000PC→貧民亡者"
+      ]
+    },
+    {
+      "ID": 212500,
+      "Entries": [
+        "Parry PC → Poor Elite -- パリィ\u3000PC→貧民亡者エリート"
+      ]
+    },
+    {
+      "ID": 212600,
+      "Entries": [
+        "Parry PC → Poor servant -- パリィ\u3000PC→貧民亡者下男"
+      ]
+    },
+    {
+      "ID": 212800,
+      "Entries": [
+        "Parry PC → New Castle Knight -- パリィ\u3000PC→新王城騎士"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Parry PC → Black Knight -- パリィ\u3000PC→黒騎士"
+      ]
+    },
+    {
+      "ID": 213900,
+      "Entries": [
+        "Parry PC → Serpent Assassin -- パリィ\u3000PC→蛇人の暗殺者"
+      ]
+    },
+    {
+      "ID": 221600,
+      "Entries": [
+        "Parry PC → The one who calls the eclipse (small) -- パリィ\u3000PC→蝕を呼ぶもの（小）"
+      ]
+    },
+    {
+      "ID": 220300,
+      "Entries": [
+        "Parry PC → Black Knight -- パリィ\u3000PC→黒騎士"
+      ]
+    },
+    {
+      "ID": 240500,
+      "Entries": [
+        "Parry PC → Mercenary of the North -- パリィ\u3000PC→北の傭兵"
+      ]
+    },
+    {
+      "ID": 243000,
+      "Entries": [
+        "Parry PC → Grave Revealer Nobleman -- パリィ\u3000PC→墓暴きの貴人"
+      ]
+    },
+    {
+      "ID": 295011,
+      "Entries": [
+        "Parry PC → Black Knight -- パリィ\u3000PC→黒騎士"
+      ]
+    },
+    {
+      "ID": 295031,
+      "Entries": [
+        "Parry PC → White Knight -- パリィ\u3000PC→ホワイトナイト"
+      ]
+    },
+    {
+      "ID": 295041,
+      "Entries": [
+        "Parry PC → Guardian of the Picture -- パリィ\u3000PC→絵の守り人"
+      ]
+    },
+    {
+      "ID": 299900,
+      "Entries": [
+        "Parry PC → Eclipse Vanguard 1 -- パリィ\u3000PC→蝕の尖兵1"
+      ]
+    },
+    {
+      "ID": 299910,
+      "Entries": [
+        "Parry PC → Eclipse Vanguard 2 -- パリィ\u3000PC→蝕の尖兵2"
+      ]
+    },
+    {
+      "ID": 299920,
+      "Entries": [
+        "Parry PC → Eclipse Vanguard 3 -- パリィ\u3000PC→蝕の尖兵3"
+      ]
+    },
+    {
+      "ID": 299930,
+      "Entries": [
+        "Parry PC → Eclipse Vanguard 4 -- パリィ\u3000PC→蝕の尖兵4"
+      ]
+    },
+    {
+      "ID": 299980,
+      "Entries": [
+        "Parry PC→Tango! -- パリィ\u3000PC→Tango!"
+      ]
+    },
+    {
+      "ID": 399900,
+      "Entries": [
+        "Back Throw Eclipse Vanguard → PC -- 背面投げ\u3000蝕の尖兵→PC"
+      ]
+    },
+    {
+      "ID": 399920,
+      "Entries": [
+        "Back Throw Eclipse Vanguard → PC -- 背面投げ\u3000蝕の尖兵→PC"
+      ]
+    },
+    {
+      "ID": 399930,
+      "Entries": [
+        "Back Throw Eclipse Vanguard → PC -- 背面投げ\u3000蝕の尖兵→PC"
+      ]
+    },
+    {
+      "ID": 413900,
+      "Entries": [
+        "Parry Serpent Assassin (Shotel) → PC Throw -- パリィ\u3000蛇人の暗殺者(ショーテル)→PC 投げ"
+      ]
+    },
+    {
+      "ID": 495010,
+      "Entries": [
+        "Parry Black Knight → PC -- パリィ\u3000黒騎士→PC"
+      ]
+    },
+    {
+      "ID": 499900,
+      "Entries": [
+        "Parry Eclipse Vanguard → PC -- パリィ\u3000蝕の尖兵→PC",
+        "Parry Eclipse Vanguard → PC -- パリィ\u3000蝕の尖兵→PC",
+        "Parry Eclipse Vanguard → PC -- パリィ\u3000蝕の尖兵→PC"
+      ]
+    },
+    {
+      "ID": 505000,
+      "Entries": [
+        "Wolf → PC Throw -- ウルフ→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 505001,
+      "Entries": [
+        "Chaser → PC Throw -- 追跡者→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 505002,
+      "Entries": [
+        "Chaser → PC Throw -- 追跡者→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 505110,
+      "Entries": [
+        "Gunda → PC throw -- グンダ→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 505111,
+      "Entries": [
+        "Gunda (snake spirit possession) → PC throw -- グンダ（蛇霊憑き）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 510900,
+      "Entries": [
+        "Dead Soldier: Gunda state → PC throw -- 亡者兵士:グンダ状態→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Dead Soldier: Dagger → PC Throw -- 亡者兵士:短剣→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 511310,
+      "Entries": [
+        "Eclipse slug → PC throw -- 蝕ナメクジ→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 511312,
+      "Entries": [
+        "Eclipse slug (dead dumpling) → PC throw -- 蝕ナメクジ（亡者団子）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Dwarf → PC Throw -- 矮小人→PC 投げ"
+      ]
+    },
+    {
+      "ID": 512100,
+      "Entries": [
+        "Blue → PC throw -- ブルー→PC 投げ"
+      ]
+    },
+    {
+      "ID": 512200,
+      "Entries": [
+        "Revival → PC Throw -- よみがえり→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 512300,
+      "Entries": [
+        "Missionary → PC throw -- 宣教師→PC 投げ"
+      ]
+    },
+    {
+      "ID": 512400,
+      "Entries": [
+        "Poor Man (double sword) → PC throw -- 貧民亡者（双小剣）→PC 投げ"
+      ]
+    },
+    {
+      "ID": 513200,
+      "Entries": [
+        "Crystal Elder → PC Throw -- 結晶の古老→PC 投げ"
+      ]
+    },
+    {
+      "ID": 513600,
+      "Entries": [
+        "Crucified A→PC Throw -- 磔亡者A→PC 投げ"
+      ]
+    },
+    {
+      "ID": 513910,
+      "Entries": [
+        "Serpent assassin (kusarigama) → PC throw -- 蛇人の暗殺者(鎖鎌)→PC 投げ"
+      ]
+    },
+    {
+      "ID": 520400,
+      "Entries": [
+        "Hungry Jack (small) → PC throw -- はらぺこジャック（小）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 520600,
+      "Entries": [
+        "Revival (main body) → PC throw -- よみがえり（本体）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 520800,
+      "Entries": [
+        "Dead Dog (Maggot Belly) → PC Throw -- 亡者犬（蛆腹）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "Floating things → PC throw -- 漂うもの→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 521001,
+      "Entries": [
+        "Drifting → PC Throwing variation -- 漂うもの→PC\u3000投げバリエーション"
+      ]
+    },
+    {
+      "ID": 521300,
+      "Entries": [
+        "Writhing carrion → PC Throw when falling -- 蠢く腐肉→PC\u3000落下時投げ"
+      ]
+    },
+    {
+      "ID": 521301,
+      "Entries": [
+        "Writhing carrion → PC collapse throw -- 蠢く腐肉→PC\u3000倒れこみ投げ"
+      ]
+    },
+    {
+      "ID": 522000,
+      "Entries": [
+        "Sandworm → PC Throw -- サンドワーム→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 522010,
+      "Entries": [
+        "Sandworm (parent) → PC throw -- サンドワーム（親）→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 522500,
+      "Entries": [
+        "Tindalos → PC throw -- ティンダロス→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 530200,
+      "Entries": [
+        "Golem → PC Exploration action -- ゴーレム→PC\u3000探りアクション"
+      ]
+    },
+    {
+      "ID": 530201,
+      "Entries": [
+        "Golem → PC Throw from searching -- ゴーレム→PC\u3000探りからの投げ"
+      ]
+    },
+    {
+      "ID": 530210,
+      "Entries": [
+        "Golem (large) → PC throw -- ゴーレム（大）→PC 投げ"
+      ]
+    },
+    {
+      "ID": 530400,
+      "Entries": [
+        "Observer → PC Throw -- 監視者→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 530800,
+      "Entries": [
+        "Eclipse Butterfly → PC Throw -- 蝕の蝶→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 550100,
+      "Entries": [
+        "Storm King → PC Throw -- 嵐の王→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 551400,
+      "Entries": [
+        "Old King of Eclipses → PC Throw -- 蝕の老王→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 551800,
+      "Entries": [
+        "Colossus → PC Throw -- 巨像→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 552700,
+      "Entries": [
+        "Chaser → PC Throw -- 追跡者→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 552701,
+      "Entries": [
+        "Chaser HU → PC throw -- 追跡者HU→PC\u3000投げ"
+      ]
+    },
+    {
+      "ID": 640500,
+      "Entries": [
+        "Fall Horse Throw: Mercenary of the North → PC -- 落馬投げ\u3000北の傭兵→PC"
+      ]
+    },
+    {
+      "ID": 941100,
+      "Entries": [
+        "Ajin Chibi → PC Throw -- 亜人チビ→PC\u3000投げ"
+      ]
+    }
+  ]
+}

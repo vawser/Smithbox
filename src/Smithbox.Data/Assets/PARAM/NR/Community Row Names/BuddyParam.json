@@ -1,0 +1,29 @@
+{
+  "Name": "BuddyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27000000,
+      "Entries": [
+        "Revenant: Depraved Perfumer (Helen)"
+      ]
+    },
+    {
+      "ID": 27100000,
+      "Entries": [
+        "Revenant: Mad Pumpkin Head (Frederick)"
+      ]
+    },
+    {
+      "ID": 27200000,
+      "Entries": [
+        "Revenant: Giant Skeleton Torso (Sebastian)"
+      ]
+    }
+  ]
+}

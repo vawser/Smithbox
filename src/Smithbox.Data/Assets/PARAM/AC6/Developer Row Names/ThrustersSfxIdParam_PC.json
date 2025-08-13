@@ -1,0 +1,137 @@
+{
+  "Name": "ThrustersSfxIdParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "General-purpose main booster (short) (small) -- 汎用メインブースター(短)（小）"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "General-purpose main booster (short) (medium) -- 汎用メインブースター(短)（中）"
+      ]
+    },
+    {
+      "ID": 410002,
+      "Entries": [
+        "General-purpose main booster (short) (large) -- 汎用メインブースター(短)（大）"
+      ]
+    },
+    {
+      "ID": 410003,
+      "Entries": [
+        "General purpose main booster (short) (extra large) -- 汎用メインブースター(短)（特大）"
+      ]
+    },
+    {
+      "ID": 410010,
+      "Entries": [
+        "General-purpose main booster (long) (small) -- 汎用メインブースター(長)（小）"
+      ]
+    },
+    {
+      "ID": 410011,
+      "Entries": [
+        "General-purpose main booster (long) (medium) -- 汎用メインブースター(長)（中）"
+      ]
+    },
+    {
+      "ID": 410012,
+      "Entries": [
+        "General-purpose main booster (long) (large) -- 汎用メインブースター(長)（大）"
+      ]
+    },
+    {
+      "ID": 410013,
+      "Entries": [
+        "General purpose main booster (long) (extra large) -- 汎用メインブースター(長)（特大）"
+      ]
+    },
+    {
+      "ID": 410021,
+      "Entries": [
+        "AC main booster idling -- ACメインブースターアイドリング"
+      ]
+    },
+    {
+      "ID": 410031,
+      "Entries": [
+        "ac main booster exhaust -- ACメインブースター排気"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "General purpose counter booster (small) -- 汎用カウンターブースター（小）"
+      ]
+    },
+    {
+      "ID": 430001,
+      "Entries": [
+        "General purpose counter booster (medium) -- 汎用カウンターブースター（中）"
+      ]
+    },
+    {
+      "ID": 430002,
+      "Entries": [
+        "General purpose counter booster (large) -- 汎用カウンターブースター（大）"
+      ]
+    },
+    {
+      "ID": 430011,
+      "Entries": [
+        "General purpose counter booster omnidirectional -- 汎用カウンターブースター\u3000無指向性"
+      ]
+    },
+    {
+      "ID": 440001,
+      "Entries": [
+        "Assault Boost (Start) -- アサルトブースト（開始）"
+      ]
+    },
+    {
+      "ID": 440011,
+      "Entries": [
+        "Assault Boost (Loop) -- アサルトブースト(ループ）"
+      ]
+    },
+    {
+      "ID": 440101,
+      "Entries": [
+        "Assault boost (end) -- アサルトブースト（終了）"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "General purpose quick boost (small) -- 汎用クイックブースト（小）"
+      ]
+    },
+    {
+      "ID": 450001,
+      "Entries": [
+        "General purpose quick boost (medium) -- 汎用クイックブースト（中）"
+      ]
+    },
+    {
+      "ID": 450002,
+      "Entries": [
+        "General purpose quick boost (large) -- 汎用クイックブースト（大）"
+      ]
+    },
+    {
+      "ID": 1003010,
+      "Entries": [
+        "Air Trail"
+      ]
+    }
+  ]
+}

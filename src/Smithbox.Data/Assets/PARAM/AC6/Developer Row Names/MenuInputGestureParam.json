@@ -1,0 +1,1025 @@
+{
+  "Name": "MenuInputGestureParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "help -- ヘルプ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "End of help -- ヘルプ終了"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Non-view mode: Model translation (up and down) -- 非ビューモード：モデル平行移動(上下)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Non-view mode: Model translation (left and right) -- 非ビューモード：モデル平行移動(左右)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Non-view mode: model scaling -- 非ビューモード：モデル拡縮"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Status display switching -- ステータス表示切替"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "sort -- ソート"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "previous tab -- 前のタブ"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Next tab -- 次のタブ"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Go to previous page -- 前のページへ移動"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Move to next page -- 次のページへ移動"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Start selecting all at once -- まとめて選択開始"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Deselect all -- まとめて選択解除"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "(collectively) selection -- (まとめて)選択"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Help video playback -- ヘルプ動画再生"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "ascending order -- 昇順"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "descending order -- 降順"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "close -- 閉じる"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Start view mode -- ビューモード起動"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Exit view mode -- ビューモード終了"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "View mode Model translation (up and down) -- ビューモード モデル平行移動(上下)"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "View mode Model translation (left and right) -- ビューモード モデル平行移動(左右)"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "View mode Model scaling -- ビューモード モデル拡縮"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Color picker: H -- カラーピッカー：H"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Color picker: S -- カラーピッカー：S"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Color picker: V -- カラーピッカー：V"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "remove equipment -- 装備を外す"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Change aircraft name -- 機体名の変更"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Attend AC test -- ACテストに出撃"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "automatic adjustment -- 自動調整"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Purchase (in bulk) -- 購入(まとめて)"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Sale (in bulk) -- 売却(まとめて)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Purchase (in bulk) -- 購入(まとめて)"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Try-on release -- 試着解除"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "peel off the image -- イメージを剥がす"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Applying the pilot emblem -- パイロットエンブレムの適用"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "remove pilot emblem -- パイロットエンブレムを外す"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Editing: Decal image selection -- 編集中：デカール画像選択"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Layer selection: context menu -- レイヤ選択：コンテキストメニュー"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Decal top: Arm: Reverse reproduction -- デカールトップ：腕：反転複製"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Editing: Stamp -- 編集中：スタンプ"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Editing: Invert image -- 編集中：イメージ反転"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Editing: Paste detailed settings -- 編集中：貼付詳細設定"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Decal display switching -- デカール表示切替"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Decal top: Delete all decals -- デカールトップ：デカール全削除"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Decal top: Decal deletion operation -- デカールトップ：デカール削除操作"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Multiple selection: start -- 複数選択：開始"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Multiple selection: selection -- 複数選択：選択"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Multiple selection: deselect -- 複数選択：選択解除"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Multiple selection: command list -- 複数選択：コマンドリスト"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Multiple selection: Exit -- 複数選択：終了"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Base point/position: Reset -- 基点/位置：リセット"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Base point/position: X -- 基点/位置：X"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Base point/position: Y -- 基点/位置：Y"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Image: Scale shift operation -- 画像：スケールシフト操作"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Image: Scale X -- 画像：スケールX"
+      ]
+    },
+    {
+      "ID": 1155,
+      "Entries": [
+        "Image: Scale Y -- 画像：スケールY"
+      ]
+    },
+    {
+      "ID": 1156,
+      "Entries": [
+        "Image: rotation -- 画像：回転"
+      ]
+    },
+    {
+      "ID": 1158,
+      "Entries": [
+        "Image: Scale reset -- 画像：スケールリセット"
+      ]
+    },
+    {
+      "ID": 1198,
+      "Entries": [
+        "Base point/rotation For resource placement key icon display -- 基点/回転 リソース配置キーアイコン表示用"
+      ]
+    },
+    {
+      "ID": 1199,
+      "Entries": [
+        "Base point/rotation For resource placement key icon display -- 基点/回転 リソース配置キーアイコン表示用"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Camouflage OFF -- カモフラージュOFF"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Camouflage ON -- カモフラージュON"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Color: copy -- カラー：コピー"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Color: Paste -- カラー：ペースト"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Color: Reset -- カラー：リセット"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Color: Register -- カラー：登録"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "image manipulation -- イメージ操作"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "Image creation screen → Management screen -- イメージ作成画面→管理画面"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "〃〃Additional operations -- 〃\u3000追加操作",
+        "〃〃Additional operations -- 〃\u3000追加操作"
+      ]
+    },
+    {
+      "ID": 1912,
+      "Entries": [
+        "Delete a shared image -- 共有済イメージの削除"
+      ]
+    },
+    {
+      "ID": 1913,
+      "Entries": [
+        "Management screen: Displaying shared information -- 管理画面：共有情報の表示"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Editing: context menu -- 編集中：コンテキストメニュー"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "previous tool -- 前のツール"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Next tool -- 次のツール"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Layer selection -- レイヤー選択"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Open display settings -- 表示設定を開く"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Close display settings -- 表示設定を閉じる"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Grid switching -- グリッド切替"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "move up"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "move down"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Single layer selection: Adjust -- 単一レイヤー選択：調整"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "piece delete -- ピース削除"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "command -- コマンド"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "piece duplication -- ピース複製"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Piece display switching -- ピース表示切替"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Piece Edit: Invert -- ピース編集：反転"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Piece editing: Scale reset -- ピース編集：スケールリセット"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Piece Edit: Scale X -- ピース編集：スケールX"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Piece editing: Scale Y -- ピース編集：スケールY"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Edit piece: Reset position -- ピース編集：位置リセット"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Piece Edit: Move X -- ピース編集：移動X"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Piece editing: Move Y -- ピース編集：移動Y"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Piece editing: Rotate -- ピース編集：回転"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Piece editing: Opacity -- ピース編集：不透明度"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Piece editing: Scale shift operation -- ピース編集：スケールシフト操作"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Multiple selection: start -- 複数選択：開始"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Multiple selection: selection -- 複数選択：選択"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Multiple selection: deselect -- 複数選択：選択解除"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "Multiple selection: command list -- 複数選択：コマンドリスト"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "Multiple selection: Exit -- 複数選択：終了"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Aircraft data screen → management screen -- 機体データ画面→管理画面"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "〃〃Additional operations -- 〃\u3000追加操作",
+        "〃〃Additional operations -- 〃\u3000追加操作"
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        "Deleting shared aircraft data -- 共有済機体データの削除"
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        "Management screen: Displaying shared information -- 管理画面：共有情報の表示"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Reinforcement reset -- 強化リセット"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Details: Attachment extraction -- 詳細：添付ファイル展開"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Details: Close -- 詳細：閉じる"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Details: Show next block -- 詳細：次のブロックを表示"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Details: Show next page -- 詳細：次のページを表示"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Details: Show previous page -- 詳細：前のページを表示"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Details: Close (for archive screen) -- 詳細：閉じる(アーカイブ画面用)"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Details: Close (for archive dialog) -- 詳細：閉じる(アーカイブダイアログ用)"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Details: Show next page -- 詳細：次のページを表示"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Details: Show previous page -- 詳細：前のページを表示"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Hardcore mode switch -- ハードコアモード切替"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "close -- 閉じる"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Detailed display -- 詳細表示"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Details: Close -- 詳細：閉じる",
+        "Details: Close -- 詳細：閉じる"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "chat -- チャット"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Member selection -- メンバ―選択"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Exit -- 退出"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Cancel ready -- 準備完了の取り消し"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Gamer card/profile -- ゲーマーカード/プロフィール"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Detailed display -- 詳細表示"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Forced ejection -- 強制退出"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Report -- 通報"
+      ]
+    },
+    {
+      "ID": 8503,
+      "Entries": [
+        "Gamer card/profile -- ゲーマーカード/プロフィール"
+      ]
+    },
+    {
+      "ID": 8504,
+      "Entries": [
+        "team change -- チーム変更"
+      ]
+    },
+    {
+      "ID": 8700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "End of results screen -- リザルト画面終了"
+      ]
+    },
+    {
+      "ID": 8801,
+      "Entries": [
+        "Match history: End of result screen -- 対戦履歴：リザルト画面終了"
+      ]
+    },
+    {
+      "ID": 8802,
+      "Entries": [
+        "Member selection -- メンバ―選択"
+      ]
+    },
+    {
+      "ID": 8803,
+      "Entries": [
+        "Spectator display -- 観戦者表示"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "close -- 閉じる"
+      ]
+    },
+    {
+      "ID": 8901,
+      "Entries": [
+        "Gamer card/profile -- ゲーマーカード/プロフィール"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Initialization -- 初期化"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "slider cancel -- スライダーキャンセル"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Slider value operation -- スライダー値操作"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Deallocate -- 割り当て解除"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Initialization -- 初期化"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Cancel assignment -- 割り当てキャンセル"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Go to previous category -- 前のカテゴリへ移動"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Move to next category -- 次のカテゴリへ移動"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Delete custom settings -- カスタム設定の削除"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "HUD: Position X -- HUD：位置X"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "HUD: Position Y -- HUD：位置Y"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "HUD: Scale X -- HUD：スケールX"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "HUD: Scale Y -- HUD：スケールY"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "HUD: Opacity -- HUD：不透明度"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Setting initialization -- 設定初期化"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "end -- 終了",
+        "end -- 終了"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Start photo mode -- フォトモード起動"
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        "UI display switching -- UI表示切替"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Save: Overwrite -- セーブ：上書き"
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        "Save: Create -- セーブ：作成"
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        "Save load: Delete -- セーブロード：削除"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "SYSTEM menu -- SYSTEMメニュー"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "SYSTEM menu: Back -- SYSTEMメニュー：戻る"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "Mercenary data details -- 傭兵データ詳細"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "Mercenary data details: Close -- 傭兵データ詳細：閉じる",
+        "Mercenary data details: Close -- 傭兵データ詳細：閉じる"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Modal type: Close -- モーダルタイプ：閉じる"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "close -- 閉じる",
+        "close -- 閉じる"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1505 @@
+{
+  "Name": "SmallBaseAndSpotAttachPoint",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Major Base - Gatefront"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Major Base - Groveside"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Major Base - Northwest Stormhill"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Major Base - South Lake"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Major Base - Alexander Spot"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Major Base - Northeast Stormhill"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Major Base - Waypoint Ruins"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Major Base - West Mistwood"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Major Base - Artist's Shack"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Major Base - Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Major Base - Summonwater Approach"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Major Base - South Mistwood"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Major Base - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Major Base - Northeast Mistwood"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Major Base - Summonwater"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Major Base - Stormhill North of Gate"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Starter Major Base - Groveside"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Starter Major Base - Gatefront"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Starter Major Base - Stormhill North of Gate"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Starter Major Base - Stormhill North of Gate Alt"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Starter Major Base - Waypoint Ruins"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Starter Major Base - Waypoint Ruins Alt"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Starter Major Base - Summonwater Approach"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Starter Major Base - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Starter Major Base - Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Castle - Castle"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Minor Base - Far Southwest"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Minor Base - Stormhill South of Gate"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Minor Base - West of Warmaster's Shack"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Minor Base - Lake"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Minor Base - Above Stormhill Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Minor Base - Southeast of Lake"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Minor Base - East of Cavalry Bridge"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Rotted Woods - Center West"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Minor Base - Northeast of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Minor Base - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Minor Base - Third Church"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Minor Base - Below Summonwater Hawk"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Rotted Woods - Southwest"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Rotted Woods - Northwest"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Rotted Woods - Far Northwest"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Rotted Woods - Center East"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Rotted Woods - Far Northeast"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Rotted Woods - Northeast"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Minor Base - Rotted Church"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Rotted Woods - Southeast"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Starter Minor Base - Far Southwest"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Starter Minor Base - Stormhill South of Gate"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Starter Minor Base - West of Warmaster's Shack"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Starter Minor Base - Above Stormhill Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Starter Minor Base - Southeast of Lake"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "Starter Minor Base - East of Cavalry Bridge"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Starter Minor Base - Northeast of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "Starter Minor Base - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Starter Minor Base - Below Summonwater Hawk"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Night Boss - Southwest Corner"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Night Boss - West Stormhill Graveyard"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Night Boss - South Lake"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Night Boss - Northwest Lake"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Night Boss - South of Castle"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Night Boss - Northwest of Castle"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Night Boss - Northeast of Lake"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Night Boss - East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Night Boss - Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Night Boss - Northeast Corner"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Night Boss - Southwest Mistwood"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Night Boss - Northwest Mistwood Pond"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Night Boss - Southeast Rotted Woods"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Night Boss - Northwest Rotted Woods"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Night Boss - Southeast Mountaintop"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "Night Boss - North of Crater"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "Night Boss - Northwest Corner"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Event - Gnoster, Southwest Corner"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "Event - Gnoster, West Stormhill Graveyard"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "Event - Gnoster, Southeast Lake"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "Event - Gnoster, Northwest Lake"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "Event - Gnoster, South of Castle"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "Event - Gnoster, Northwest of Castle"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "Event - Gnoster, Castle Front"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "Event - Gnoster, East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 528,
+      "Entries": [
+        "Event - Gnoster, Northeast Corner"
+      ]
+    },
+    {
+      "ID": 529,
+      "Entries": [
+        "Event - Gnoster, Southwest Mistwood"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Event - Gnoster, Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "Event - Gnoster, Northwest Rotted Woods"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "Event - Gnoster, Southeast Mountaintop"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "Event - Gnoster, North of Crater"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "Event - Gnoster, East of Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 536,
+      "Entries": [
+        "Event - Gnoster, Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Event - Morgott, Southwest Corner"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Event - Morgott, West Stormhill Graveyard"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Event - Morgott, Southeast Lake"
+      ]
+    },
+    {
+      "ID": 543,
+      "Entries": [
+        "Event - Morgott, Northwest Lake"
+      ]
+    },
+    {
+      "ID": 544,
+      "Entries": [
+        "Event - Morgott, South of Castle"
+      ]
+    },
+    {
+      "ID": 545,
+      "Entries": [
+        "Event - Morgott, Northwest of Castle"
+      ]
+    },
+    {
+      "ID": 546,
+      "Entries": [
+        "Event - Morgott, Castle Front"
+      ]
+    },
+    {
+      "ID": 547,
+      "Entries": [
+        "Event - Morgott, East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 548,
+      "Entries": [
+        "Event - Morgott, Northeast Corner"
+      ]
+    },
+    {
+      "ID": 549,
+      "Entries": [
+        "Event - Morgott, Southwest Mistwood"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Event - Morgott, Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 551,
+      "Entries": [
+        "Event - Morgott, Southeast Rotted Woods"
+      ]
+    },
+    {
+      "ID": 552,
+      "Entries": [
+        "Event - Morgott, Northwest Rotted Woods"
+      ]
+    },
+    {
+      "ID": 553,
+      "Entries": [
+        "Event - Morgott, Southeast Mountaintop"
+      ]
+    },
+    {
+      "ID": 554,
+      "Entries": [
+        "Event - Morgott, North of Crater"
+      ]
+    },
+    {
+      "ID": 555,
+      "Entries": [
+        "Event - Morgott, East of Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 556,
+      "Entries": [
+        "Event - Morgott, Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Event - Maris, Southwest Corner"
+      ]
+    },
+    {
+      "ID": 561,
+      "Entries": [
+        "Event - Maris, West Stormhill Graveyard"
+      ]
+    },
+    {
+      "ID": 562,
+      "Entries": [
+        "Event - Maris, Southeast Lake"
+      ]
+    },
+    {
+      "ID": 563,
+      "Entries": [
+        "Event - Maris, Northwest Lake"
+      ]
+    },
+    {
+      "ID": 564,
+      "Entries": [
+        "Event - Maris, South of Castle"
+      ]
+    },
+    {
+      "ID": 565,
+      "Entries": [
+        "Event - Maris, Northwest of Castle"
+      ]
+    },
+    {
+      "ID": 566,
+      "Entries": [
+        "Event - Maris, Castle Front"
+      ]
+    },
+    {
+      "ID": 567,
+      "Entries": [
+        "Event - Maris, East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 568,
+      "Entries": [
+        "Event - Maris, Northeast Corner"
+      ]
+    },
+    {
+      "ID": 569,
+      "Entries": [
+        "Event - Maris, Southwest Mistwood"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Event - Maris, Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 571,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 572,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 573,
+      "Entries": [
+        "Event - Maris, Southeast Mountaintop"
+      ]
+    },
+    {
+      "ID": 574,
+      "Entries": [
+        "Event - Maris, North of Crater"
+      ]
+    },
+    {
+      "ID": 575,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 576,
+      "Entries": [
+        "Event - Maris, East of Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 577,
+      "Entries": [
+        "Event - Maris, Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Event - Libra, Southwest Corner"
+      ]
+    },
+    {
+      "ID": 581,
+      "Entries": [
+        "Event - Libra, West Stormhill Graveyard"
+      ]
+    },
+    {
+      "ID": 582,
+      "Entries": [
+        "Event - Libra, Southeast Lake"
+      ]
+    },
+    {
+      "ID": 583,
+      "Entries": [
+        "Event - Libra, Northwest Lake"
+      ]
+    },
+    {
+      "ID": 584,
+      "Entries": [
+        "Event - Libra, South of Castle"
+      ]
+    },
+    {
+      "ID": 585,
+      "Entries": [
+        "Event - Libra, Northwest of Castle"
+      ]
+    },
+    {
+      "ID": 586,
+      "Entries": [
+        "Event - Libra, Castle Front"
+      ]
+    },
+    {
+      "ID": 587,
+      "Entries": [
+        "Event - Libra, East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 588,
+      "Entries": [
+        "Event - Libra, Northeast Corner"
+      ]
+    },
+    {
+      "ID": 589,
+      "Entries": [
+        "Event - Libra, Southwest Mistwood"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Event - Libra, Northwest Mistwood"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "Event - Libra, Southeast Rotted Woods"
+      ]
+    },
+    {
+      "ID": 592,
+      "Entries": [
+        "Event - Libra, Northwest Rotted Woods"
+      ]
+    },
+    {
+      "ID": 593,
+      "Entries": [
+        "Event - Libra, Southeast Mountaintop"
+      ]
+    },
+    {
+      "ID": 594,
+      "Entries": [
+        "Event - Libra, North of Crater"
+      ]
+    },
+    {
+      "ID": 595,
+      "Entries": [
+        "Event - Libra, East of Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 596,
+      "Entries": [
+        "Event - Libra, Noklateo Entrance"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 619,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 626,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 627,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 628,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 629,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 631,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 632,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 633,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 634,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 635,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 636,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 637,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 638,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 639,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 641,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 642,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 643,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 644,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 645,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 646,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 647,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 648,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 649,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 651,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 652,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 653,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 654,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 655,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 656,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 657,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 658,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 659,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 661,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 662,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Southwest Corner"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Northwest Corner"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, South of Castle"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Ruins North of Castle"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Southeast Lakeshore"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Castle Front"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, East of Saintsbridge"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "Event - Scale-Bearing Merchant, Northeast Corner"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 753,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 754,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 755,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 756,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 757,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 758,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 759,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

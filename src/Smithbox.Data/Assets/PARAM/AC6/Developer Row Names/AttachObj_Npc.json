@@ -1,0 +1,179 @@
+{
+  "Name": "AttachObj_Npc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy data -- ダミーデータ"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 Communist general purpose MT thruster -- c3020 共産汎用MT\u3000スラスター"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "c3020 Communist general purpose MT double machine gun -- c3020 共産汎用MT\u3000ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "c3050 regular army MT missile -- c3050 正規軍MT\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "c3050 Regular Army MT Upper Grellan -- c3050 正規軍MT\u3000上位グレラン"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "c3100 flight MT -- c3100 飛行MT"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "c3100 flight MT EN machine gun -- c3100 飛行MT\u3000ENマシンガン"
+      ]
+    },
+    {
+      "ID": 31002000,
+      "Entries": [
+        "c3100 flight MT EN shotgun -- c3100 飛行MT\u3000ENショットガン"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 assault type Bst -- c3150 突撃型Bst"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "c3200 Avalanche (Support A) -- c3200 アバランチ（サポートA）"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "c3200 Avalanche (Support A2) -- c3200 アバランチ（サポートA2）"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "c3250 regular army AC (heavy firepower) diffusion buzz -- c3250 正規軍AC（重火力）拡散バズ"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "c3250 regular army AC (heavy firepower) grenade -- c3250 正規軍AC（重火力）グレネード"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 regular army AC (enhanced heavy firepower) -- c3250 正規軍AC（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "c3250 regular army AC (base) -- c3250 正規軍AC（ベース）"
+      ]
+    },
+    {
+      "ID": 32600110,
+      "Entries": [
+        "c3260 missile pod -- c3260 ミサイルポッド"
+      ]
+    },
+    {
+      "ID": 32600120,
+      "Entries": [
+        "c3260 AI missile pod -- c3260 AIミサイルポッド"
+      ]
+    },
+    {
+      "ID": 32600130,
+      "Entries": [
+        "c3260 pulse cannon -- c3260 パルスキャノン"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "c3260 double gatling gun -- c3260 ダブルガトリングガン"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 quadruped MT normal -- c3400 四脚MT\u3000ノーマル"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "c3400 quadruped MT heavy equipment -- c3400 四脚MT\u3000重装"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "c3400 Quadruped MT Grenade -- c3400 四脚MT\u3000グレネード"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "c3400 quadruped MT sniper -- c3400 四脚MT\u3000スナイパー"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "c3600 construction machine spider double rocket -- c3600 建機クモ\u3000ダブルロケット"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "c4201 Next Generation Prototype AC (C-end) Old -- c4201 次世代プロトタイプAC（Cエンド）旧"
+      ]
+    },
+    {
+      "ID": 42010001,
+      "Entries": [
+        "c4201 Next generation prototype AC (C-end) shoulder -- c4201 次世代プロトタイプAC（Cエンド）肩"
+      ]
+    },
+    {
+      "ID": 42010002,
+      "Entries": [
+        "c4201 Next generation prototype AC (C-end) arm -- c4201 次世代プロトタイプAC（Cエンド）腕"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT Test Booster -- c8111 無色MT テストブースター"
+      ]
+    },
+    {
+      "ID": 81119000,
+      "Entries": [
+        "c8111 Colorless MT Test Booster -- c8111 無色MT テストブースター"
+      ]
+    }
+  ]
+}

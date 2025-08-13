@@ -1,0 +1,401 @@
+{
+  "Name": "PhantomParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Kojiro Phantom -- 小白ファントム"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "white phantom -- 白ファントム"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "blue phantom 0 -- 青ファントム0"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "blue phantom 1 -- 青ファントム1"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "blue phantom 2 -- 青ファントム2"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "blue phantom 3 -- 青ファントム3"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Kogane Phantom -- 小金ファントム"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "gold phantom -- 金ファントム"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "red phantom 0 -- 赤ファントム0"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "red phantom 1 -- 赤ファントム1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "red phantom 2 -- 赤ファントム2"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "red phantom 3 -- 赤ファントム3"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "black phantom -- 黒ファントム"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Dragon Spirit Phantom -- 竜霊ファントム"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "abyss phantom -- 深淵ファントム"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "servant phantom -- 下僕ファントム"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal Phantom -- 通常幻影ファントム"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Bonfire Phantom -- 篝火幻影ファントム"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "grave spirit phantom -- 墓霊ファントム"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Weapon enchantment_Physical enhancement -- 武器エンチャント_物理強化"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Weapon enchantment_Magic enhancement -- 武器エンチャント_魔力強化"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Weapon enchantment_Lightning reinforcement -- 武器エンチャント_雷強化"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Weapon enchantment_flame reinforcement -- 武器エンチャント_炎強化"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Weapon enchantment_dark reinforcement -- 武器エンチャント_闇強化"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Weapon enchantment_poison enhancement -- 武器エンチャント_毒強化"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Weapon enchantment_bleeding enhancement -- 武器エンチャント_出血強化"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Weapon enchantment_weapon destruction enhancement -- 武器エンチャント_武器破壊強化"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Weapon enchantment_curse enhancement -- 武器エンチャント_呪強化"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Phantom Spirit (tentative name) -- 幻影霊ファントム（仮称）"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Weapon Enchantment_Magic Enhancement (Large) -- 武器エンチャント_魔力強化（大）"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Ghost knight_ghost state -- 亡霊騎士_亡霊状態"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Tiger translucent -- トラ\u3000半透明"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Tiger completely transparent -- トラ\u3000完全に透明"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Tiger normal -- トラ\u3000通常"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Black tiger normal -- 黒トラ\u3000通常"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shield enchantment_physical enhancement -- 盾エンチャント_物理強化"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shield enchantment_magic power enhancement -- 盾エンチャント_魔力強化"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Shield enchantment_lightning reinforcement -- 盾エンチャント_雷強化"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Shield enchantment_flame reinforcement -- 盾エンチャント_炎強化"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shield enchantment_dark reinforcement -- 盾エンチャント_闇強化"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Shield enchantment_poison reinforcement -- 盾エンチャント_毒強化"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Shield enchantment_bleeding enhancement -- 盾エンチャント_出血強化"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Shield enchantment_shield destruction enhancement -- 盾エンチャント_盾破壊強化"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Shield enchantment_curse reinforcement -- 盾エンチャント_呪強化"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "red fan -- 赤ファン"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "white fan -- 白ファン"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "wandering phantom -- 徘徊幻影"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "bloodstain illusion -- 血痕幻影"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Kojiro Phantom-Remaining time-Medium -- 小白ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "White Phantom - Remaining time - Medium -- 白ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Kogane Phantom-Remaining time-Medium -- 小金ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Gold Phantom - Remaining time - Medium -- 金ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Red Phantom 0-Remaining time-Medium -- 赤ファントム0-残り時間-中"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Red Phantom 1-Remaining time-Medium -- 赤ファントム1-残り時間-中"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Red Phantom 2-Remaining time-Medium -- 赤ファントム2-残り時間-中"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Red Phantom 3-Remaining time-Medium -- 赤ファントム3-残り時間-中"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Black Phantom-Remaining Time-Medium -- 黒ファントム-残り時間-中"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Kojiro Phantom-Remaining time-Small -- 小白ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "White Phantom-Remaining time-Small -- 白ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Kogane Phantom-Remaining time-Small -- 小金ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Gold Phantom-Remaining time-Small -- 金ファントム-残り時間-小"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Red Phantom 0-Remaining time-Small -- 赤ファントム0-残り時間-小"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Red Phantom 1-Remaining time-Small -- 赤ファントム1-残り時間-小"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Red Phantom 2-Remaining time-Small -- 赤ファントム2-残り時間-小"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Red Phantom 3-Remaining time-Small -- 赤ファントム3-残り時間-小"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Black Phantom-Remaining time-Small -- 黒ファントム-残り時間-小"
+      ]
+    }
+  ]
+}

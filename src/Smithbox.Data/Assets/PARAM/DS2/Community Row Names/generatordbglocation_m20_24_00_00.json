@@ -1,0 +1,455 @@
+{
+  "Name": "generatordbglocation_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 205,
+      "Entries": [
+        "【Dragon Shrine Maiden】 Npc -- 【龍の巫女】NPC"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Old King Npc -- 【年老いた王】NPC"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Old King NPC (Ghost) -- 【年老いた王】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "【Tomb Amulet】 Npc -- 【墓守】NPC"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "【Tomb Amulet】 NPC (Tomb Guard) -- 【墓守】NPC（墓守）"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "[NPC Black Phantom] King's Castle DrangGreig: Dark Spirit 1 (Ghost) -- 【NPC黒ファントム】王城ドラングレイグ：闇霊１（亡霊）"
+      ]
+    },
+    {
+      "ID": 686,
+      "Entries": [
+        "【NPC White Phantom】Tomb Guard -- 【NPC白ファントム】墓守"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "BOSS: Queen Knight B -- 【BOSS】王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【Wandering with lights】The workers of the dead -- 【明かりを持って徘徊】死者の労働者（亡者）：松明を持って追尾"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "【Doto】Kingdom Escorts -- 【ど頭】王国護衛兵"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Dark Bishop -- 【入口すぐの広間】ダークビショップ"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Dark Bishop -- 【入口すぐの広間】ダークビショップ"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Dark Bishop -- 【入口すぐの広間】ダークビショップ"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "[Outside the outside of the entrance_long distance] Dark Priest (deceased): Color (1)_Mask -- 【入口すぐの広間奥_遠距離】ダークプリースト（亡者）：色①_仮面有り"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "【The opening of the saloon_ on the way】 dead workers -- 【入り口すぐの広間_道中】死者の労働者（亡者）"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "【The opening of the saloon_ on the way】 dead workers -- 【入り口すぐの広間_道中】死者の労働者（亡者）"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "【The opening of the saloon_ on the way】 dead workers -- 【入り口すぐの広間_道中】死者の労働者（亡者）"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "【The opening of the saloon_ on the way】 dead workers -- 【入り口すぐの広間_道中】死者の労働者（亡者）"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Opening of the entrance immediately in the saloon _way_2 lap stop] phantom night -- 【入り口すぐの広間_道中_２周目ストップ】ファントムナイト"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "[Opening of the entrance immediately in the saloon _way_2 lap stop] phantom night -- 【入り口すぐの広間_道中_２周目ストップ】ファントムナイト"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "【Tomb Guard Room】 Immortal Senior Soldier: Armor: Spear -- 【墓守部屋】\u3000イモータル上級兵士：鎧：槍"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "【Tomb Guard Room】 Immortal Senior Soldier: Armor: Spear -- 【墓守部屋】\u3000イモータル上級兵士：鎧：槍"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "【Tomb Guard Room】 Immortal Senior Soldier: Armor: Sickle -- 【墓守部屋】\u3000イモータル上級兵士：鎧：鎌"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[On the bridge] kingdom escort se -- 【橋の上】王国護衛兵\u3000攻め"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[On the bridge] kingdom escort guard -- 【橋の上】王国護衛兵\u3000守り"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Under the bridge: Dead workers falling side -- 【橋の下】死者の労働者_落下側"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Under the Bridge: Dead Workers -- 【橋の下】死者の労働者_中央"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[High ground of the course blocked 1 _ long distance] dead workers -- 【進路塞ぎ１の高台_遠距離】死者の労働者"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[Under the bridge _2 week generation] door possessed -- 【橋の下_2週目生成】扉憑き"
+      ]
+    },
+    {
+      "ID": 1231,
+      "Entries": [
+        "[Under the bridge _2 week generation] door possessed -- 【橋の下_2週目生成】扉憑き"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "【Small room in the tomb area】Dark Bishop -- 【墓エリアの小部屋】ダークビショップ"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【For Chara Events】 Dead Workers (Deceased) For Character Events_1 -- 【キャライベント用】 死者の労働者（亡者）：キャライベント用_1"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "【For Chara Event】 Dead Workers (Deceased) For Character Events_2 -- 【キャライベント用】 死者の労働者（亡者）：キャライベント用_2"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "【For Chara Events】 Dead Workers (Deceased) For Character Events_3 -- 【キャライベント用】 死者の労働者（亡者）：キャライベント用_3"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "【For Chara Events】 Dead Workers (Deceased) For Character Events_4 -- 【キャライベント用】 死者の労働者（亡者）：キャライベント用_4"
+      ]
+    },
+    {
+      "ID": 1440,
+      "Entries": [
+        "[For character events] Phantom Mage (spirit body) for character event_1 -- 【キャライベント用】 ファントムメイジ（霊体）：キャライベント用_1"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "[For character events] Phantom Mage (spirit body) for character event_2 -- 【キャライベント用】 ファントムメイジ（霊体）：キャライベント用_2"
+      ]
+    },
+    {
+      "ID": 1460,
+      "Entries": [
+        "[For character events] Phantom Mage (spirit body): For character events_3 -- 【キャライベント用】 ファントムメイジ（霊体）：キャライベント用_3"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "【For Chara Events】 Dead Workers (Deceased) For Character Events_5 -- 【キャライベント用】 死者の労働者（亡者）：キャライベント用_5"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[For character events] Phantom Mage (spirit body) for character event_4 -- 【キャライベント用】 ファントムメイジ（霊体）：キャライベント用_4"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "[For character events] Phantom Mage (spirit body): For character events_5 -- 【キャライベント用】 ファントムメイジ（霊体）：キャライベント用_5"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Long distance from high ground] Dark Bishop -- 【高台から遠距離】ダークビショップ"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[If you are looking for a hidden door is beaten] door possessed -- 【隠し扉探してたら殴られる】扉憑き"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[If you are looking for a hidden door is beaten] door possessed -- 【隠し扉探してたら殴られる】扉憑き"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "[Hidden door front] [η-mimic] -- 【隠し扉手前】ν-ミミック"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "【Hidden Room】Door Possession -- 【隠し部屋】扉憑き"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "【Hidden Room】Door Possession -- 【隠し部屋】扉憑き"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "【Long passage】Door possession 1 -- 【長通路】扉憑き１"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "【Long Passage】Door Haunting 2 -- 【長通路】扉憑き２"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "【Long Passage】Door Possession 3 -- 【長通路】扉憑き３"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Long passage _ back] Phantom Night -- 【長通路_奥】ファントムナイト"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "[Long passage _ back] Phantom Night -- 【長通路_奥】ファントムナイト"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "【For Character Events】 Phantom Mage (Spirit Body): For Bell Events_1 -- 【キャライベント用】 ファントムメイジ（霊体）：鐘イベント用_1"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "【For Character Events】 Phantom Mage (Spirit) _ 2 for Bell Events -- 【キャライベント用】 ファントムメイジ（霊体）：鐘イベント用_2"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "【For Character Events】 Phantom Mage (Spirit) For Bell Event_3 -- 【キャライベント用】 ファントムメイジ（霊体）：鐘イベント用_3"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "【For Character Events】 Phantom Mage (Spirit Body): For Bell Events_4 -- 【キャライベント用】 ファントムメイジ（霊体）：鐘イベント用_4"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "【For chara events】 Dead Workers (Deceased): For Bell Events_1 -- 【キャライベント用】 死者の労働者（亡者）：鐘イベント用_1"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "【For chara events】 Dead workers (deceased): For bell events_2 aisles -- 【キャライベント用】 死者の労働者（亡者）：鐘イベント用_2 通路用"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "【For chara events】 Dead Workers (Deceased): For Bell Events_3 -- 【キャライベント用】 死者の労働者（亡者）：鐘イベント用_3"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "【For chara events】 Dead Workers (Deceased): For Bell Events_4 -- 【キャライベント用】 死者の労働者（亡者）：鐘イベント用_4"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Bell area cul-de-sac] Phantom Mage -- 【鐘エリア袋小路】ファントムメイジ"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Course Block2] Phantom Night -- 【進路塞ぎ２】ファントムナイト"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "【Shortcut Drawbridge】Door possession -- 【ショートカット跳ね橋】扉憑き"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[Pillar hiding right] Phantom Mage 1 -- 【柱隠れ右】ファントムメイジ1"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "[Pillar hiding right] Phantom Mage 2 -- 【柱隠れ右】ファントムメイジ2"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[Pillar hiding left] Phantom Mage 1 -- 【柱隠れ左】ファントムメイジ1"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "[Pillar hiding left] Phantom Mage 2 -- 【柱隠れ左】ファントムメイジ2"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[Boss front area _ King's attendant] kingdom escort soldiers extra large sword -- 【ボス前エリア_王のお供】王国護衛兵\u3000特大剣"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "[Boss front area _ close the white door front] kingdom escort axe spear (defense type) -- 【ボス前エリア_白扉前を塞ぐ】王国護衛兵\u3000斧槍\u3000（防衛タイプ）"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "[Boss front area _ close the white door front] kingdom escort axe spear (defense type) -- 【ボス前エリア_白扉前を塞ぐ】王国護衛兵\u3000斧槍\u3000（防衛タイプ）"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "[Boss front area _ King's attendant] kingdom escort soldiers extra large sword -- 【ボス前エリア_王のお供】王国護衛兵\u3000特大剣"
+      ]
+    },
+    {
+      "ID": 3640,
+      "Entries": [
+        "[Boss front area _ King's attendant] kingdom escort soldiers extra large sword -- 【ボス前エリア_王のお供】王国護衛兵\u3000特大剣"
+      ]
+    },
+    {
+      "ID": 3650,
+      "Entries": [
+        "[Boss front area _ King's attendant: avant-garde platoon] kingdom escort soldier axe spear -- 【ボス前エリア_王のお供：前衛小隊】王国護衛兵\u3000斧槍"
+      ]
+    },
+    {
+      "ID": 3660,
+      "Entries": [
+        "[Boss front area _ King's attendant: avant-garde platoon] kingdom escort soldier axe spear -- 【ボス前エリア_王のお供：前衛小隊】王国護衛兵\u3000斧槍"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Boss front area_bell ringing] -- 【ボス前エリア_鐘鳴らし】"
+      ]
+    }
+  ]
+}

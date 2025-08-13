@@ -1,0 +1,659 @@
+{
+  "Name": "eventlocation_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 110,
+      "Entries": [
+        "Training_Waterway_01"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Training_Waterway_02"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Training_Solid Maze_01"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Training_Solid Maze_02"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Training_Stone Statue Passage_01"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Training_Stone Statue Passage_02"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 103100,
+      "Entries": [
+        "For backlead safety [Maduro]"
+      ]
+    },
+    {
+      "ID": 103101,
+      "Entries": [
+        "Backlead Safety [Port]"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Bounce bridge down _Navi mesh change"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Boss scaffold deformation 1_Navi change"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Boss scaffold deformation 2_navi change"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Boss: Heavy Cavalry: Fighters only determine the start of the battle"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Boss: Blood character ban area 1 of the heavy equestrian battle"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "Boss: Blood character ban area 2 of the heavy equestrian battle"
+      ]
+    },
+    {
+      "ID": 500003,
+      "Entries": [
+        "Boss: Blood character ban area 3 of the heavy equestrian battle"
+      ]
+    },
+    {
+      "ID": 500004,
+      "Entries": [
+        "Boss: Blood character ban area 4 of the heavy equestrian battle"
+      ]
+    },
+    {
+      "ID": 500005,
+      "Entries": [
+        "Boss: Blood character ban area 5 of the heavy equestrian battle"
+      ]
+    },
+    {
+      "ID": 500006,
+      "Entries": [
+        "Boss: Blood character ban area 6 for heavy equestrian warfare"
+      ]
+    },
+    {
+      "ID": 500007,
+      "Entries": [
+        "Boss: Heavy Cavalry Battle Blood Character Ban Area 7"
+      ]
+    },
+    {
+      "ID": 500008,
+      "Entries": [
+        "Boss: Blood character ban area 8 for heavy equestrian warfare"
+      ]
+    },
+    {
+      "ID": 500009,
+      "Entries": [
+        "Boss: Blood character ban area 9 for heavy equestrian warfare"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Boss: Blood character ban area 10 for heavy equestrian warfare"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Boss: Decision to start fighting with Ornstein"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Pillar 1_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Pillar 2_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Pillar 3_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Pillar 4_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 609000,
+      "Entries": [
+        "Pillar 9_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Pillars destroyed in The Orstein War 10_Navimesh Change"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Pillar11_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 612000,
+      "Entries": [
+        "Pillar12_Navimesh Change Destroyed in The Orstein War"
+      ]
+    },
+    {
+      "ID": 617000,
+      "Entries": [
+        "Chair 5_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 618000,
+      "Entries": [
+        "Chair 6_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 619000,
+      "Entries": [
+        "Chair 7_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Chair 8_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Chair 9_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 622000,
+      "Entries": [
+        "Chair 10_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Chair 15_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 628000,
+      "Entries": [
+        "Chair 16_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 629000,
+      "Entries": [
+        "Chair 17_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Chair 18_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 631000,
+      "Entries": [
+        "Chair 19_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 632000,
+      "Entries": [
+        "Chair 20_Navimesh change to be destroyed in The Orstein war"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Gimmick door _Navimesh change between Madura and Heide Great Fire Tower"
+      ]
+    },
+    {
+      "ID": 700001,
+      "Entries": [
+        "Madura - Heide Large Fire Tower - Gimmick Door _ Door Closing Judgment 1"
+      ]
+    },
+    {
+      "ID": 700002,
+      "Entries": [
+        "Madura - Heide Large Fire Tower - Gimmick Door _ Door Closing Judgment 2"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Lever_Boss War Scaffold expansion 1_Navimesh change to appear from the floor"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "Lever_Boss War Scaffold expansion 2_Navimesh change to appear from the floor"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "Lever_bounce bridge_navimesh change appearing from the floor"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Heavy Cavalry_ Logic Moving Area 1"
+      ]
+    },
+    {
+      "ID": 10000001,
+      "Entries": [
+        "Heavy Cavalry_Logic Moving Area 2"
+      ]
+    },
+    {
+      "ID": 10000002,
+      "Entries": [
+        "Heavy Cavalry_Logic Moving Area 3"
+      ]
+    },
+    {
+      "ID": 10000003,
+      "Entries": [
+        "Heavy Cavalry_Logic Moving Area 4"
+      ]
+    },
+    {
+      "ID": 10000004,
+      "Entries": [
+        "Heavy Cavalry_Logic Moving Area 5"
+      ]
+    },
+    {
+      "ID": 10000005,
+      "Entries": [
+        "Heavy Cavalry_ Logic Moving Area 6"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 01_Movable Area"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 02_Movable Area"
+      ]
+    },
+    {
+      "ID": 50001010,
+      "Entries": [
+        "Ancient Warrior Orbit Area 2"
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 03_Movable Area"
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 04_Movable Area"
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 05_Movable Area"
+      ]
+    },
+    {
+      "ID": 50004100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 06_Movable Area"
+      ]
+    },
+    {
+      "ID": 50006000,
+      "Entries": [
+        "[Logic Moving Area] Ancient Warrior 07_Movable Area"
+      ]
+    },
+    {
+      "ID": 50007000,
+      "Entries": [
+        "Branch crossroads Ornstein Root defense point"
+      ]
+    },
+    {
+      "ID": 50007100,
+      "Entries": [
+        "Minute Crossroads Ornstein Route Breakthrough Decision"
+      ]
+    },
+    {
+      "ID": 50008000,
+      "Entries": [
+        "Branch road heavy cavalry route defense point"
+      ]
+    },
+    {
+      "ID": 50008100,
+      "Entries": [
+        "Determination of breaking through the heavy cavalry route at the branch"
+      ]
+    },
+    {
+      "ID": 50008500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50008510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50009000,
+      "Entries": [
+        "Heavy cavalry side off-limits area"
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        "Ornstein's side is banned from entering the area."
+      ]
+    },
+    {
+      "ID": 50011000,
+      "Entries": [
+        "Ornstein Route 1 Defense Point"
+      ]
+    },
+    {
+      "ID": 50011100,
+      "Entries": [
+        "Ornstein Route 1 breakthrough judgment"
+      ]
+    },
+    {
+      "ID": 50012000,
+      "Entries": [
+        "For launching ancient warriors before the drawbridge"
+      ]
+    },
+    {
+      "ID": 50012001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50013000,
+      "Entries": [
+        "No entry near the map entrance"
+      ]
+    },
+    {
+      "ID": 50014000,
+      "Entries": [
+        "Prohibited zone prior to The Ornstein Room"
+      ]
+    },
+    {
+      "ID": 50015000,
+      "Entries": [
+        "Boss room entry prohibition area"
+      ]
+    },
+    {
+      "ID": 50016000,
+      "Entries": [
+        "Person return area in front of the boss"
+      ]
+    },
+    {
+      "ID": 50017000,
+      "Entries": [
+        "Boss Front Soul Black Launch Area"
+      ]
+    },
+    {
+      "ID": 50018000,
+      "Entries": [
+        "Ornstight For Soul Black Launch"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000301,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

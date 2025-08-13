@@ -1,0 +1,203 @@
+{
+  "Name": "LoadBalancerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "XboxOne"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win64"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "XboxOneX"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For PS4 movie playback"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For XboxOne movie playback"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For Win64 movie playback"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For PS4 battle"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "XboxOne Competitive"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "For Win64 matches"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "For XboxOneX battle"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PS5 image quality priority mode"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PS5 performance priority mode"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PS5 late training mode"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "PS5 Image quality priority mode for battle"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "PS5 performance priority mode for competition"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PS5 late training mode for competition"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "XSX image quality priority mode"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "XSX Performance Priority Mode"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "XSX late trading mode"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "XSX Image quality priority mode for competition"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "XSX performance priority mode for competition"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "XSX late training mode for competition"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "XSS image quality priority mode"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "XSS performance priority mode"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "XSS late trading mode"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "XSS image quality priority mode for competition"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "XSS performance priority mode for competition"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "XSS late trading mode"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For PS4 cutscene playback"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "For XboxOne cutscene playback"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "For Win64 cutscene playback"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "For XboxOneX cutscene playback"
+      ]
+    }
+  ]
+}

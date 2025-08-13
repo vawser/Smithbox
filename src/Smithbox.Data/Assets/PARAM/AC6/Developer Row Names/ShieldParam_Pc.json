@@ -1,0 +1,17 @@
+{
+  "Name": "ShieldParam_Pc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "test 2 -- テスト2"
+      ]
+    }
+  ]
+}

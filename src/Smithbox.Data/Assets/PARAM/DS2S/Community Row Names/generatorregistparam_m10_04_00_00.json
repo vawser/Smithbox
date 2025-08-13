@@ -1,0 +1,329 @@
+{
+  "Name": "generatorregistparam_m10_04_00_00",
+  "Entries": [
+    {
+      "ID": 13200000,
+      "Entries": [
+        "[REG:13200000] Skeleton"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "[REG:13200100] Skeleton"
+      ]
+    },
+    {
+      "ID": 13200200,
+      "Entries": [
+        "[REG:13200200] Skeleton"
+      ]
+    },
+    {
+      "ID": 13300000,
+      "Entries": [
+        "[REG:13300000] Skeleton"
+      ]
+    },
+    {
+      "ID": 15700000,
+      "Entries": [
+        "[REG:15700000] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 15700100,
+      "Entries": [
+        "[REG:15700100] Armored Skeleton"
+      ]
+    },
+    {
+      "ID": 20110000,
+      "Entries": [
+        "[REG:20110000] Small Boar"
+      ]
+    },
+    {
+      "ID": 20210000,
+      "Entries": [
+        "[REG:20210000] Undead Boar"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "[REG:21400000] Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 70050000,
+      "Entries": [
+        "[REG:70050000] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70050001,
+      "Entries": [
+        "[REG:70050001] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70050002,
+      "Entries": [
+        "[REG:70050002] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70050003,
+      "Entries": [
+        "[REG:70050003] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70050004,
+      "Entries": [
+        "[REG:70050004] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70050007,
+      "Entries": [
+        "[REG:70050007] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70450000,
+      "Entries": [
+        "[REG:70450000] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70450001,
+      "Entries": [
+        "[REG:70450001] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70451000,
+      "Entries": [
+        "[REG:70451000] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "[REG:74100000] Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 74100001,
+      "Entries": [
+        "[REG:74100001] Crestfallen Saulden"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "[REG:74300000] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "[REG:75100000] Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 75100001,
+      "Entries": [
+        "[REG:75100001] Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 75400000,
+      "Entries": [
+        "[REG:75400000] Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 75400001,
+      "Entries": [
+        "[REG:75400001] Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 76100000,
+      "Entries": [
+        "[REG:76100000] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76100001,
+      "Entries": [
+        "[REG:76100001] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76100002,
+      "Entries": [
+        "[REG:76100002] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76100003,
+      "Entries": [
+        "[REG:76100003] Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "[REG:76200000] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 76200001,
+      "Entries": [
+        "[REG:76200001] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "[REG:76300000] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76300001,
+      "Entries": [
+        "[REG:76300001] Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76400000,
+      "Entries": [
+        "[REG:76400000] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76400001,
+      "Entries": [
+        "[REG:76400001] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76400002,
+      "Entries": [
+        "[REG:76400002] Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "[REG:76600000] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76600001,
+      "Entries": [
+        "[REG:76600001] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "[REG:76900000] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 76900001,
+      "Entries": [
+        "[REG:76900001] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 76900002,
+      "Entries": [
+        "[REG:76900002] Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 77700000,
+      "Entries": [
+        "[REG:77700000] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700001,
+      "Entries": [
+        "[REG:77700001] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700002,
+      "Entries": [
+        "[REG:77700002] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700003,
+      "Entries": [
+        "[REG:77700003] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700004,
+      "Entries": [
+        "[REG:77700004] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700005,
+      "Entries": [
+        "[REG:77700005] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700006,
+      "Entries": [
+        "[REG:77700006] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77700007,
+      "Entries": [
+        "[REG:77700007] Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 78600000,
+      "Entries": [
+        "[REG:78600000] Victor's Stone"
+      ]
+    },
+    {
+      "ID": 83700000,
+      "Entries": [
+        "[REG:83700000] Foreign Wanderer Phantom"
+      ]
+    },
+    {
+      "ID": 83710001,
+      "Entries": [
+        "[REG:83710001] Foreign Wanderer"
+      ]
+    },
+    {
+      "ID": 83720000,
+      "Entries": [
+        "[REG:83720000] Greatsword Foreigner Phantom"
+      ]
+    }
+  ]
+}

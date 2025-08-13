@@ -1,0 +1,95 @@
+{
+  "Name": "WeaponStaminaCostParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Bad data (unused) -- 不正データ（未使用）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Basic set -- 基本セット"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Two-handed set -- 両手持ちセット"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "2HIT generation set -- ２HIT発生セット"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Bow and Arrow Set -- 弓矢セット"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Special strong attack set -- 特殊強攻撃セット"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Ricardo's Sting Sword -- リカールの刺剣"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Sanctum Crossbow/Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Curved Nil Greatsword"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Ivory King Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Sorcerer Twinblade"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Great Lances"
+      ]
+    }
+  ]
+}

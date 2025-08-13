@@ -1,0 +1,353 @@
+{
+  "Name": "generatordbglocation_m10_32_00_00",
+  "Entries": [
+    {
+      "ID": 40,
+      "Entries": [
+        "【NPC】Pilgrims in the Abyss -- 【NPC】深淵の巡礼者（生者）"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "【NPC】Pilgrims in the Abyss -- 【NPC】深淵の巡礼者（亡者）"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "【NPC】Wandering Warrior -- 【NPC】放浪の戦士"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "【NPC】Wandering Warrior (Ghost) -- 【NPC】放浪の戦士（亡霊）"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "【NPC】Durahan (neck) -- 【NPC】デュラハン（首）"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "【NPC】Durahan (neck) (ghost) -- 【NPC】デュラハン（首）(亡霊）"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "【NPC】Top Weapons Store -- 【NPC】上位武器屋"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "【NPC】Top Weapons Store (Ghost) -- 【NPC】上位武器屋（亡霊）"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "【NPC】Manscorpion ♂ -- 【NPC】マンスコーピオン♂"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "【NPC】Manscorpion ♂ -- 【NPC】マンスコーピオン♂（亡霊）"
+      ]
+    },
+    {
+      "ID": 626,
+      "Entries": [
+        "[White Spirit] Manscorpion ♂ -- 【白霊】マンスコーピオン♂"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "【BOSS】Manscorpion ♀ -- 【BOSS】マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "【Road to the Forest】Goblin: Sword -- 【森への道】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "【Road to the Forest】Goblin: Sword -- 【森への道】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Stone statue front: on the wall] goblin: sling -- 【石像顔前：壁の上】ゴブリン：スリング"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[Stone image face front : front _ do not come until you approach] goblin swords -- 【石像顔前：正面_近寄るまで突っ込んでは来ない】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Stone image face front : front _ do not come until you approach] goblin swords -- 【石像顔前：正面_近寄るまで突っ込んでは来ない】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[Stone statue front: on the wall] goblin: sling -- 【石像顔前：壁の上】ゴブリン：スリング"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "【Stone Statue Front:Right】Goblin: Sling -- 【石像前：右】ゴブリン：スリング"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Stone statue front: front _ battle] goblin: sword -- 【石像前：正面_戦闘】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[Stone statue front: back of the gate _ battle] goblins : bare hands -- 【石像前：門の裏_戦闘】ゴブリン：素手"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[Stone statue front: front _ battle] goblin: sword -- 【石像前：正面_戦闘】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Tower to The King's Castle: The Shadow of the Left Hand] Goblin: Bare Hands -- 【王城への塔：左手の陰】ゴブリン：素手"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Tower to The King's Castle: Front: Goblin: Sword -- 【王城への塔：正面】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Tower to The King's Castle: Front: Goblin: Sword -- 【王城への塔：正面】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "[Tower to The King's Castle: Jumping off the top of the side road] Goblin: Sword -- 【王城への塔：横道_上から飛び降り】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "[Tower to The King's Castle: Before the entrance_ through and chasing] Goblin: Sling -- 【王城への塔：入口前_スルーすると追いかけ】ゴブリン：スリング"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "[Tower to The King's Castle: Cliff-edge _ Battle] Goblin: Sword -- 【王城への塔：崖際_戦闘】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1252,
+      "Entries": [
+        "[Tower to The King's Castle: Side Road] Double-sided Warrior -- 【王城への塔：脇道】両面戦士"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[Tower to The King's Castle: Side Road _ Preventing Running] Goblin: Sword -- 【王城への塔：脇道_走り抜け防止】ゴブリン：剣"
+      ]
+    },
+    {
+      "ID": 1261,
+      "Entries": [
+        "[Tower to Wang Cheng: Wakido _2 nd week or later] Goblin: Soul Black -- 【王城への塔：脇道_2週目以降】ゴブリン：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Road to The King's Castle: Door Back _ Rare Drop] Wandering Knight -- 【王城への道：扉奥_レアドロップ】彷徨える騎士"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_1 -- 【迷いの森_人面樹の声に反応】幻影敵_1"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_2 -- 【迷いの森_人面樹の声に反応】幻影敵_2"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_3 -- 【迷いの森_人面樹の声に反応】幻影敵_3"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_4 -- 【迷いの森_人面樹の声に反応】幻影敵_4"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_7 -- 【迷いの森_人面樹の声に反応】幻影敵_7"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_8 -- 【迷いの森_人面樹の声に反応】幻影敵_8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "[Reaction to the voice of the forest of the stray_ human face tree] phantom enemy_10 -- 【迷いの森_人面樹の声に反応】幻影敵_10"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Forest of hesitation_Petrified] Lion Warrior_1 -- 【迷いの森_石化】獅子戦士_1"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "[Forest of hesitation_Petrified] Lion Warrior_2 -- 【迷いの森_石化】獅子戦士_2"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[Wide ruins at the end of the bridge ] under the madoshi _ Battle] lion warrior -- 【橋の先の広い遺跡：魔道士の下_戦闘】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[Large ruins at the end of the bridge: back room _ battle] lion warrior -- 【橋の先の広い遺跡：奥の部屋_戦闘】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "[Wide ruins at the end of the bridge: corner of the room _ battle] lion warrior -- 【橋の先の広い遺跡：部屋の角_戦闘】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "【In front of the wide ruins at the end of the bridge】Huge Basilisk -- 【橋の先の広い遺跡前】巨大バジリスク"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "[House ahead of the ruins of the bridge _ battle] lion warrior -- 【橋の遺跡先の家_戦闘】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "【Bridge Ruins: Scorpion Ruins Entrance】 Golden Lion Warrior -- 【橋の遺跡先：スコーピオン遺跡入り口】金獅子戦士"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "[Ruins of the bridge: pitfalls _ battle] Basilisk_1 -- 【橋の遺跡先：落とし穴_戦闘】バジリスク_1"
+      ]
+    },
+    {
+      "ID": 2231,
+      "Entries": [
+        "[Bridge ruins destination: pitfalls _ battle] Basilisk_2 -- 【橋の遺跡先：落とし穴_戦闘】バジリスク_2"
+      ]
+    },
+    {
+      "ID": 2234,
+      "Entries": [
+        "[Bridge ruins destination: pitfalls _ battle] Basilisk_5 -- 【橋の遺跡先：落とし穴_戦闘】バジリスク_5"
+      ]
+    },
+    {
+      "ID": 2235,
+      "Entries": [
+        "[Bridge ruins destination: pitfalls _ battle] Basilisk_6 -- 【橋の遺跡先：落とし穴_戦闘】バジリスク_6"
+      ]
+    },
+    {
+      "ID": 2260,
+      "Entries": [
+        "【Gate Ruins】Lion Warrior -- 【ゲート遺跡前】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2271,
+      "Entries": [
+        "[In front of the gate of the ruins] lion warrior -- 【遺跡のゲート前】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[House of the ruins subroute destination of the bridge] Basilisk -- 【橋の遺跡サブルート先の家】バジリスク"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "【Ruins_Petrified】Lion Warrior -- 【遺跡群_石化】獅子戦士"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "【Ruins】Ishimori -- 【遺跡群】石守"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Road to The House of Andy' ] Kobold -- 【アンディールの館への道：先読み込み】コボルト"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "[Road to The House of Andy' ] Mimick -- 【アンディールの館への道：先読み込み】ミミック"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "hitgroupparam_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Group 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[Insect key] the torch disappears with water"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Insect key] statue of poisoned rat"
+      ]
+    }
+  ]
+}

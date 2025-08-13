@@ -1,0 +1,1763 @@
+{
+  "Name": "MapGdRegionInfoParam",
+  "Entries": [
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Chapel of Anticipation"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Leyndell, Royal Capital"
+      ]
+    },
+    {
+      "ID": 11050000,
+      "Entries": [
+        "Leyndell, Ashen Capital"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11710000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 12030000,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 12040000,
+      "Entries": [
+        "Ainsel River - Boss"
+      ]
+    },
+    {
+      "ID": 12050000,
+      "Entries": [
+        "Mohgwyn Palace"
+      ]
+    },
+    {
+      "ID": 12060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12070000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12080000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Crumbling Farum Azula"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Academy of Raya Lucaria"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Miquella's Haligtree"
+      ]
+    },
+    {
+      "ID": 16000000,
+      "Entries": [
+        "Volcano Manor"
+      ]
+    },
+    {
+      "ID": 18000000,
+      "Entries": [
+        "Stranded Graveyard"
+      ]
+    },
+    {
+      "ID": 19000000,
+      "Entries": [
+        "Stone Platform"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Tombsward Catacombs"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Impaler's Catacombs"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Stormfoot Catacombs"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "Road's End Catacombs"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "Murkwater Catacombs"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "Black Knife Catacombs"
+      ]
+    },
+    {
+      "ID": 30060000,
+      "Entries": [
+        "Cliffbottom Catacombs"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "Wyndham Catacombs"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "Sainted Hero's Grave"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "Gelmir Hero's Grave"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Auriza Hero's Grave"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "Deathtouched Catacombs"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "Unsightly Catacombs"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "Auriza Side Tomb"
+      ]
+    },
+    {
+      "ID": 30140000,
+      "Entries": [
+        "Minor Erdtree Catacombs"
+      ]
+    },
+    {
+      "ID": 30150000,
+      "Entries": [
+        "Caelid Catacombs"
+      ]
+    },
+    {
+      "ID": 30160000,
+      "Entries": [
+        "War-Dead Catacombs"
+      ]
+    },
+    {
+      "ID": 30170000,
+      "Entries": [
+        "Giant-Conquering Hero's Grave"
+      ]
+    },
+    {
+      "ID": 30180000,
+      "Entries": [
+        "Giants' Mountaintop Catacombs"
+      ]
+    },
+    {
+      "ID": 30190000,
+      "Entries": [
+        "Consecrated Snowfield Catacombs"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "Earthbore Cave"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "Tombsward Cave"
+      ]
+    },
+    {
+      "ID": 31030000,
+      "Entries": [
+        "Groveside Cave"
+      ]
+    },
+    {
+      "ID": 31040000,
+      "Entries": [
+        "Stillwater Cave"
+      ]
+    },
+    {
+      "ID": 31050000,
+      "Entries": [
+        "Lakeside Crystal Cave"
+      ]
+    },
+    {
+      "ID": 31060000,
+      "Entries": [
+        "Academy Crystal Cave"
+      ]
+    },
+    {
+      "ID": 31070000,
+      "Entries": [
+        "Seethewater Cave"
+      ]
+    },
+    {
+      "ID": 31080000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "Volcano Cave"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Dragonbarrow Cave"
+      ]
+    },
+    {
+      "ID": 31110000,
+      "Entries": [
+        "Sellia Hideaway"
+      ]
+    },
+    {
+      "ID": 31120000,
+      "Entries": [
+        "Cave of the Forlorn"
+      ]
+    },
+    {
+      "ID": 31130000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31140000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31150000,
+      "Entries": [
+        "Coastal Cave"
+      ]
+    },
+    {
+      "ID": 31170000,
+      "Entries": [
+        "Highroad Cave"
+      ]
+    },
+    {
+      "ID": 31180000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31190000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31210000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31220000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Morne Tunnel"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Limgrave Tunnels"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "Raya Lucaria Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 32030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32040000,
+      "Entries": [
+        "Old Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 32050000,
+      "Entries": [
+        "Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 32060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32070000,
+      "Entries": [
+        "Gael Tunnel"
+      ]
+    },
+    {
+      "ID": 32080000,
+      "Entries": [
+        "Sellia Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32110000,
+      "Entries": [
+        "Yelough Anix Tunnel"
+      ]
+    },
+    {
+      "ID": 32120000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Divine Tower of Limgrave"
+      ]
+    },
+    {
+      "ID": 34110000,
+      "Entries": [
+        "Divine Tower of Liurnia"
+      ]
+    },
+    {
+      "ID": 34120000,
+      "Entries": [
+        "Divine Tower of West Altus"
+      ]
+    },
+    {
+      "ID": 34130000,
+      "Entries": [
+        "Divine Tower of Caelid"
+      ]
+    },
+    {
+      "ID": 34140000,
+      "Entries": [
+        "Divine Tower of East Altus"
+      ]
+    },
+    {
+      "ID": 34150000,
+      "Entries": [
+        "Isolated Divine Tower"
+      ]
+    },
+    {
+      "ID": 34160000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Subterranean Shunning-Grounds"
+      ]
+    },
+    {
+      "ID": 39200000,
+      "Entries": [
+        "Ruin-Strewn Precipice"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50523700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60081002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60081102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60081202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60091002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60091102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60182401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60191901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60192401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60202001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60202201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60232001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60241801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60241901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60242001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60251701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60251801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60251901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60252001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60252101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60252201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60261701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60261801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60261901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60262001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60262101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60262201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60345200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60345300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60345400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60345500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60355200,
+      "Entries": [
+        "Mt. Gelmir - Before Hermit Shack"
+      ]
+    },
+    {
+      "ID": 60355300,
+      "Entries": [
+        "Mt. Gelmir - Seethewater Terminus"
+      ]
+    },
+    {
+      "ID": 60355400,
+      "Entries": [
+        "Mt. Gelmir - Fort Laiedd"
+      ]
+    },
+    {
+      "ID": 60355500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60365000,
+      "Entries": [
+        "Liurnia of the Lakes - Behind Caria Manor, Royal Grave Evergaol, Part of Ravine"
+      ]
+    },
+    {
+      "ID": 60365100,
+      "Entries": [
+        "Altus Plateau - Perfumer's Ruins, Unsightly Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 60365200,
+      "Entries": [
+        "Mt. Gelmir - Craftsman's Shack, Hermit's Shack"
+      ]
+    },
+    {
+      "ID": 60365300,
+      "Entries": [
+        "Mt. Gelmir - Outside Volcano Manor"
+      ]
+    },
+    {
+      "ID": 60365400,
+      "Entries": [
+        "Mt. Gelmir - Ninth Mt. Gelmir Campsite, Road of Iniquity, Volcano Manor Entrance"
+      ]
+    },
+    {
+      "ID": 60365500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60375000,
+      "Entries": [
+        "Liurnia of the Lake - Northeast Ravine; Bellum Highway - West of Grand Lift of Dectus"
+      ]
+    },
+    {
+      "ID": 60375100,
+      "Entries": [
+        "Altus Plateau - Abandoned Coffin, Ruin-Strewn Precipice Exit"
+      ]
+    },
+    {
+      "ID": 60375200,
+      "Entries": [
+        "Mt. Gelmir - Seethewater River, Hermit Village, Wyndham Catacombs Entrance, Sage's Cave Entrance"
+      ]
+    },
+    {
+      "ID": 60375300,
+      "Entries": [
+        "Mt. Gelmir - Azur, Gelmir Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 60375400,
+      "Entries": [
+        "Mt. Gelmir - Minor Erdtree, Seethewater Cave Entrance"
+      ]
+    },
+    {
+      "ID": 60375500,
+      "Entries": [
+        "Mt. Gelmir - Volcano Cave Entrance"
+      ]
+    },
+    {
+      "ID": 60385000,
+      "Entries": [
+        "Liurnia of the Lakes - Ravine-Veiled Village; Bellum Highway - Grand Lift of Dectus; Altus Plateau - Altus Plateau; Ruin-Strewn Precipice Entrance"
+      ]
+    },
+    {
+      "ID": 60385100,
+      "Entries": [
+        "Altus Plateau - Erdtree-Gazing Hill, Lux Ruins"
+      ]
+    },
+    {
+      "ID": 60385200,
+      "Entries": [
+        "Altus Plateau - Wyndham Ruins, Wyndham Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 60385300,
+      "Entries": [
+        "Altus Plateau - Old Altus Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 60385400,
+      "Entries": [
+        "Mt. Gelmir - First Mt. Gelmir Campsite, Corpse-Stench Shack; Altus Plateau - West of Shaded Castle"
+      ]
+    },
+    {
+      "ID": 60385500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60395000,
+      "Entries": [
+        "Altus Plateau - Golden Lineage Evergaol"
+      ]
+    },
+    {
+      "ID": 60395100,
+      "Entries": [
+        "Altus Plateau - Altus Highway Junction"
+      ]
+    },
+    {
+      "ID": 60395200,
+      "Entries": [
+        "Altus Plateau - Second Church of Marika"
+      ]
+    },
+    {
+      "ID": 60395300,
+      "Entries": [
+        "Altus Plateau - Mirage Rise; Mt. Gelmir - Bridge of Iniquity"
+      ]
+    },
+    {
+      "ID": 60395400,
+      "Entries": [
+        "Altus Plateau - Shaded Castle"
+      ]
+    },
+    {
+      "ID": 60395500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60405000,
+      "Entries": [
+        "Altus Plateau - Southwest of Tree Sentinel Duo"
+      ]
+    },
+    {
+      "ID": 60405100,
+      "Entries": [
+        "Altus Plateau - West of Tree Sentinel Duo, Stormcaller Church"
+      ]
+    },
+    {
+      "ID": 60405200,
+      "Entries": [
+        "Altus Plateau - Forest-Spanning Greatbridge, St. Trina's Hideaway, Sainted Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 60405300,
+      "Entries": [
+        "Altus Plateau - Bower of Bounty, Writheblood Ruins"
+      ]
+    },
+    {
+      "ID": 60405400,
+      "Entries": [
+        "Altus Plateau - Road of Iniquity Side Path"
+      ]
+    },
+    {
+      "ID": 60405500,
+      "Entries": [
+        "Altus Plateau - West Windmill Pasture"
+      ]
+    },
+    {
+      "ID": 60414900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60415000,
+      "Entries": [
+        "Altus Plateau - South of Tree Sentinel Duo"
+      ]
+    },
+    {
+      "ID": 60415100,
+      "Entries": [
+        "Altus Plateau - Tree Sentinel Duo, Perfumer's Grotto Entrance"
+      ]
+    },
+    {
+      "ID": 60415200,
+      "Entries": [
+        "Altus Plateau - Rampartside Path, Altus Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 60415300,
+      "Entries": [
+        "Altus Plateau - Woodfolk Ruins, Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 60415400,
+      "Entries": [
+        "Altus Plateau - West Windmill Village"
+      ]
+    },
+    {
+      "ID": 60415500,
+      "Entries": [
+        "Altus Plateau - Village Windmill Pasture, East Windmill Pasture"
+      ]
+    },
+    {
+      "ID": 60424900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60425000,
+      "Entries": [
+        "Leyndell - South of Outer Wall Phantom Tree"
+      ]
+    },
+    {
+      "ID": 60425100,
+      "Entries": [
+        "Leyndell - Outer Wall Phantom Tree"
+      ]
+    },
+    {
+      "ID": 60425200,
+      "Entries": [
+        "Leyndell - Southwest Outer Wall Battleground"
+      ]
+    },
+    {
+      "ID": 60425300,
+      "Entries": [
+        "Leyndell - Northwest Outer Wall Battleground"
+      ]
+    },
+    {
+      "ID": 60425400,
+      "Entries": [
+        "Altus Plateau - East Windmill Village, Highway Lookout Tower"
+      ]
+    },
+    {
+      "ID": 60425500,
+      "Entries": [
+        "Altus Plateau - Windmill Heights"
+      ]
+    },
+    {
+      "ID": 60434900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60435000,
+      "Entries": [
+        "Leyndell - Minor Erdtree Church, Sealed Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 60435100,
+      "Entries": [
+        "Leyndell - East of Outer Wall Phantom Tree"
+      ]
+    },
+    {
+      "ID": 60435200,
+      "Entries": [
+        "Leyndell - Southeast Outer Wall Battleground"
+      ]
+    },
+    {
+      "ID": 60435300,
+      "Entries": [
+        "Leyndell - Northeast Outer Wall Battleground, Hermit Merchant's Shack"
+      ]
+    },
+    {
+      "ID": 60435400,
+      "Entries": [
+        "Altus Plateau - Cliffside Northeast of Outer Wall Battlefield"
+      ]
+    },
+    {
+      "ID": 60435500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60444900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60445000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60445100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60445200,
+      "Entries": [
+        "Leyndell - South of Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 60445300,
+      "Entries": [
+        "Leyndell - Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 60445400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60445500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60454900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60455000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60455100,
+      "Entries": [
+        "Leyndell - Auriza Hero's Grave Entrance"
+      ]
+    },
+    {
+      "ID": 60455200,
+      "Entries": [
+        "Leyndell - Capital Rampart, Auriza Side Tomb Entrance"
+      ]
+    },
+    {
+      "ID": 60455300,
+      "Entries": [
+        "Leyndell - Capital Rampart North Cliffside"
+      ]
+    },
+    {
+      "ID": 60455400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60455500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60464900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60465700,
+      "Entries": [
+        "Consecrated Snowfield - Far West Cliffside"
+      ]
+    },
+    {
+      "ID": 60465800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60473600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60473700,
+      "Entries": [
+        "Caelid - West of Caelid Highway South"
+      ]
+    },
+    {
+      "ID": 60473800,
+      "Entries": [
+        "Caelid - Fort Gael, Caelid Waypoint Ruins, Gaol Cave Entrance"
+      ]
+    },
+    {
+      "ID": 60473900,
+      "Entries": [
+        "Caelid - Fort Gael North"
+      ]
+    },
+    {
+      "ID": 60474200,
+      "Entries": [
+        "Caelid - North Great-Jar Area"
+      ]
+    },
+    {
+      "ID": 60474900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60475000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60475100,
+      "Entries": [
+        "Leyndell - Divine Tower of East Altus Entrance; Mountaintops of the Giants - Forbidden Lands Start"
+      ]
+    },
+    {
+      "ID": 60475400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60475500,
+      "Entries": [
+        "Consecrated Snowfield - Yelough Anix Ruins, Yelough Anix Tunnel Entrance"
+      ]
+    },
+    {
+      "ID": 60475600,
+      "Entries": [
+        "Consecrated Snowfield - North of Yelough Anix Ruins"
+      ]
+    },
+    {
+      "ID": 60475700,
+      "Entries": [
+        "Consecrated Snowfield - West of Ordina"
+      ]
+    },
+    {
+      "ID": 60475800,
+      "Entries": [
+        "Consecrated Snowfield - Apostate Derelict"
+      ]
+    },
+    {
+      "ID": 60485000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60485100,
+      "Entries": [
+        "Mountaintops of the Giants - Forbidden Lands Midway"
+      ]
+    },
+    {
+      "ID": 60485200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60485300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60485400,
+      "Entries": [
+        "Consecrated Snowfield - Southwest Foggy Area"
+      ]
+    },
+    {
+      "ID": 60485500,
+      "Entries": [
+        "Consecrated Snowfield - Northwest Foggy Area, East of Yelough Anix Ruins"
+      ]
+    },
+    {
+      "ID": 60485600,
+      "Entries": [
+        "Consecrated Snowfield - South of Ordina"
+      ]
+    },
+    {
+      "ID": 60485700,
+      "Entries": [
+        "Consecrated Snowfield - Ordina, Liturgical Town"
+      ]
+    },
+    {
+      "ID": 60485800,
+      "Entries": [
+        "Consecrated Snowfield - East of Apostate Derelict"
+      ]
+    },
+    {
+      "ID": 60495000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60495100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60495200,
+      "Entries": [
+        "Mountaintops of the Giants - Before Grand Lift of Rold"
+      ]
+    },
+    {
+      "ID": 60495300,
+      "Entries": [
+        "Mountaintops of the Giants - West Zamor Ruins, Grand Lift of Rold"
+      ]
+    },
+    {
+      "ID": 60495400,
+      "Entries": [
+        "Consecrated Snowfield - Hidden Path to the Haligtree, Southeast Foggy Area"
+      ]
+    },
+    {
+      "ID": 60495500,
+      "Entries": [
+        "Consecrated Snowfield - Northeast Foggy Area, Inner Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 60495600,
+      "Entries": [
+        "Consecrated Snowfield - Southeast of Ordina"
+      ]
+    },
+    {
+      "ID": 60495700,
+      "Entries": [
+        "Consecrated Snowfield - East of Ordina"
+      ]
+    },
+    {
+      "ID": 60495800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60505000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60505200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60505300,
+      "Entries": [
+        "Mountaintops of the Giants - East Zamor Ruins"
+      ]
+    },
+    {
+      "ID": 60505400,
+      "Entries": [
+        "Mountaintops of the Giants - North of Zamor Ruins"
+      ]
+    },
+    {
+      "ID": 60505500,
+      "Entries": [
+        "Consecrated Snowfield - Consecrated Snowfield Catacombs Entrance"
+      ]
+    },
+    {
+      "ID": 60505600,
+      "Entries": [
+        "Mountaintops of the Giants - Shack of the Lofty; Consecrated Snowfield - Minor Erdtree, Albinauric Rise, Cave of the Forlorn Entrance"
+      ]
+    },
+    {
+      "ID": 60505700,
+      "Entries": [
+        "Mountaintops of the Giants - West of Castle Sol; Consecrated Snowfield - North of Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 60505800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60515200,
+      "Entries": [
+        "Mountaintops of the Giants - Giants' Gravepost South Cliffside"
+      ]
+    },
+    {
+      "ID": 60515300,
+      "Entries": [
+        "Mountaintops of the Giants - Southwest Giants' Gravepost"
+      ]
+    },
+    {
+      "ID": 60515400,
+      "Entries": [
+        "Mountaintops of the Giants - Northwest Giants' Gravepost"
+      ]
+    },
+    {
+      "ID": 60515500,
+      "Entries": [
+        "Mountaintops of the Giants - Before Ancient Snow Valley Ruins"
+      ]
+    },
+    {
+      "ID": 60515600,
+      "Entries": [
+        "Mountaintops of the Giants - Ancient Snow Valley Ruins, Stargazers' Ruins"
+      ]
+    },
+    {
+      "ID": 60515700,
+      "Entries": [
+        "Mountaintops of the Giants - South Castle Sol, Snow Valley Ruins Overlook"
+      ]
+    },
+    {
+      "ID": 60515800,
+      "Entries": [
+        "Mountaintops of the Giants - North Castle Sol"
+      ]
+    },
+    {
+      "ID": 60523800,
+      "Entries": [
+        "Caelid - Central Radahn Arena"
+      ]
+    },
+    {
+      "ID": 60523900,
+      "Entries": [
+        "Caelid - North Radahn Arena"
+      ]
+    },
+    {
+      "ID": 60524000,
+      "Entries": [
+        "Caelid - Far North Radahn Arena"
+      ]
+    },
+    {
+      "ID": 60525200,
+      "Entries": [
+        "Mountaintops of the Giants - Southwest Fire Giant Arena"
+      ]
+    },
+    {
+      "ID": 60525300,
+      "Entries": [
+        "Mountaintops of the Giants - Northwest Fire Giant Arena, Foot of the Forge"
+      ]
+    },
+    {
+      "ID": 60525400,
+      "Entries": [
+        "Mountaintops of the Giants - Northeast Giants' Gravepost"
+      ]
+    },
+    {
+      "ID": 60525500,
+      "Entries": [
+        "Mountaintops of the Giants - Guardians' Garrison"
+      ]
+    },
+    {
+      "ID": 60525600,
+      "Entries": [
+        "Mountaintops of the Giants - Whiteridge Road, Minor Erdtree"
+      ]
+    },
+    {
+      "ID": 60525700,
+      "Entries": [
+        "Mountaintops of the Giants - Before Freezing Lake, Heretical Rise"
+      ]
+    },
+    {
+      "ID": 60525800,
+      "Entries": [
+        "Mountaintops of the Giants - Northwest of Freezing Lake, East of Castle Sol"
+      ]
+    },
+    {
+      "ID": 60533700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60533800,
+      "Entries": [
+        "Caelid - East Radahn Arena"
+      ]
+    },
+    {
+      "ID": 60533900,
+      "Entries": [
+        "Caelid - Northeast Radahn Arena"
+      ]
+    },
+    {
+      "ID": 60535200,
+      "Entries": [
+        "Mountaintops of the Giants - Southeast Fire Giant Arena"
+      ]
+    },
+    {
+      "ID": 60535300,
+      "Entries": [
+        "Mountaintops of the Giants - Northeast Fire Giant Arena"
+      ]
+    },
+    {
+      "ID": 60535400,
+      "Entries": [
+        "Mountaintops of the Giants - Giants' Gravepost Northeast Cliffside"
+      ]
+    },
+    {
+      "ID": 60535500,
+      "Entries": [
+        "Mountaintops of the Giants - West of First Church of Marika"
+      ]
+    },
+    {
+      "ID": 60535600,
+      "Entries": [
+        "Mountaintops of the Giants - Southwest Freezing Lake, Lord Contender's Evergaol, Spiritcaller's Cave Entrance"
+      ]
+    },
+    {
+      "ID": 60535700,
+      "Entries": [
+        "Mountaintops of the Giants - Northwest Freezing Lake"
+      ]
+    },
+    {
+      "ID": 60535800,
+      "Entries": [
+        "Mountaintops of the Giants - Freezing Lake North Cliffside"
+      ]
+    },
+    {
+      "ID": 60545200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60545300,
+      "Entries": [
+        "Mountaintops of the Giants - Forge of the Giants"
+      ]
+    },
+    {
+      "ID": 60545400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60545500,
+      "Entries": [
+        "Mountaintops of the Giants - First Church of Marika"
+      ]
+    },
+    {
+      "ID": 60545600,
+      "Entries": [
+        "Mountaintops of the Giants - Southeast Freezing Lake"
+      ]
+    },
+    {
+      "ID": 60545700,
+      "Entries": [
+        "Mountaintops of the Giants - Northeast Freezing Lake"
+      ]
+    },
+    {
+      "ID": 60545800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60555500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60555600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60555700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61110902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61120902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99999901,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

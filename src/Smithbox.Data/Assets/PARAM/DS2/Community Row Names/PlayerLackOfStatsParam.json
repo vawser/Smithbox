@@ -1,0 +1,179 @@
+{
+  "Name": "PlayerLackOfStatsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Decrease in attack power [%] -- 攻撃力 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stamina capture percentage decrease [%] -- スタミナ奪取量 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Durability reduction [%] -- 耐久削り値 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Loss rate [%] -- 気絶値 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Ability to receive Decrease [%] -- 受け能力 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Cut rate Decrease [%] -- カット率 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Decrease in stamina recovery when guarding [%] -- ガード時スタミナ回復量 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Attack anime speed Start part Decrease percentage [%] -- 攻撃アニメ速度 開始部 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Attack anime speed End portion Decrease percentage [%] -- 攻撃アニメ速度 終了部 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Guard Anime Speed Construction Part Decrease Percentage [%] -- ガードアニメ速度 構え部 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Spelling time increased [%] -- スペル詠唱時間 増加割合 [%]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Attack Consumption Stamina Increased [%] -- 攻撃消費スタミナ 増加割合 [%]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Weapon endurance wear and tear Increase [%] -- 武器耐久値消耗 増加割合 [%]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Attack Trajectory Blur Blend Rate [%] -- 攻撃軌跡ブレ ブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "After the attack- the blend rate [%] -- 攻撃後よれ ブレンド率 [%]"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Defense decrease [%] -- 防御力 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Resistance Reduction Rate [%] -- 抵抗力 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Resistance value decrease [%] -- 耐性値 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Avoidance invincible period decrease percentage [%] -- 回避無敵期間 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Avoidance Consumption Stamina Increase [%] -- 回避消費スタミナ 増加割合 [%]"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Rolling distance Decrease percentage [%] -- ローリング距離 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Stamina Out Rolling Distance Decrease Percentage [%] -- スタミナ切れローリング距離 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Step distance Decrease percentage [%] -- ステップ距離 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Stamina Cut Step Distance Decrease Percentage [%] -- スタミナ切れステップ距離 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Jump speed decrease percentage [%] -- ジャンプ速度 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Armor endurance wear and tear Increase rate [%] -- 防具耐久値消耗 増加割合 [%]"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Item use animation speed decrease percentage [%] -- アイテム使用アニメ速度 減少割合 [%]"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Toughness decreases when attacking [%] -- 攻撃時 強靭度 減少割合[%]"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Toughness Decrease -- 強靭度 減少割合"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1019 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: hard stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Sharp stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Minagishi"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Nibiishi"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Blade stone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Spider thread steel wire"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Mercury stone"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon stone"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Suction stone"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Pierre stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11:Moonlight stone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Moonstone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Faint stone"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic shield stone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16:DS"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For animation movement amount correction"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "The lower the equipment weight, the higher the attack power."
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "The heavier the equipment, the higher the attack power."
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Max HP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Max MP"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense power (soul level)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison resistance (soul level)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Plague resistance (soul level)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Bleeding resistance (soul level)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse resistance (soul level)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Cold resistance (soul level)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Poison resistance (stamina)"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Plague resistance (stamina)"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Bleeding resistance (endurance)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Curse resistance (luck)"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Cold resistance (vitality)"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Physical defense power (strength)"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Physical defense power (stamina)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Magic defense (faith)"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Fire defense (strength)"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Lightning defense (endurance)"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Dark defense power (faith)"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Drop rate (luck)"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Maximum number of recovery spots to replenish"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Shield status correction physical cut rate"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Shield status correction attribute cut rate"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Shield status correction resistance cut rate"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Shield status correction stamina cut rate"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Arts point maximum value (strength)"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Arts point maximum value (skill)"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Arts point maximum (magic)"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Arts point maximum (miracle)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "growth consumption soul"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "OS enhancement level required experience points"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Fall damage base value"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Fall damage weight percentage correction"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Fall damage vitality correction"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Falling damage skill correction"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "WEIGHT - Unknown"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Initial Speed"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Max Speed"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Walk Speed"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Grounded Boost Max Speed"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Inertia Change Ability"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Drift Speed"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "WEIGHT - Tank (FORTALEZA): Drift Traction"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "WEIGHT - Grounded Boost Speed"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "WEIGHT - Aerial Boost Speed"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "WEIGHT - Upwards Boost Max Speed (Boosting)"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "WEIGHT - Quick Boost Speed"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "WEIGHT - Quick Boost Initial Speed"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "WEIGHT - Upwards Boost Max Speed (Not Boosting)"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "WEIGHT - Assault Boost Initial Speed"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "WEIGHT - Assault Boost Max Speed"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "WEIGHT - Melee Boost Speed (Locked On)"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "WEIGHT - Melee Boost Speed"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "WEIGHT - Unknown"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "WEIGHT - Tank: Walk Initial Speed"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "WEIGHT - Tank: Walk Max Speed"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "WEIGHT - Tank: Walk Speed"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "WEIGHT - Tank: Grounded Boost Max Speed"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "WEIGHT - Tank: Inertia Change Ability"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "WEIGHT - Tank: Drift Speed"
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        "WEIGHT - Tank: Drift Traction"
+      ]
+    },
+    {
+      "ID": 278,
+      "Entries": [
+        "WEIGHT - Accumulative Attitude Recovery Drain Time"
+      ]
+    },
+    {
+      "ID": 279,
+      "Entries": [
+        "Total weight correction factor: Landing stiffness occurrence speed [km/h]"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "WEIGHT - Kick Damage Adjustment"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "WEIGHT - Unknown Weight Bonus"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "WEIGHT - Tetrapod: Hover Speed"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "WEIGHT - Tetrapod: Hover Velocity"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "BOOSTER - Quick + Boost Performance"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "BOOSTER - Upwards Performance"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "BOOSTER - Quickboost Duration"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "TETRAPOD - Quickboost Performance"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "Excess weight correction factor: Jump quick boost height reached [m]"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "TETRAPOD - Hover EN Consumption"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "TETRAPOD - Hover Speed"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "TETRAPOD - Hover Change Inertia"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Stability performance correction value"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "ANGLE OF MOVEMENT INTERTIA VS DIRECTION - Boost Mode Speed"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "ARM LOAD - Quick Boost Recovery Time"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "ARM LOAD - Quick Boost EN Cost"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "ARM LOAD - Quick Boost Duration"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "OVERWEIGHT LOAD - EN Load"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "OVERWEIGHT LOAD - EN Recovery Delay"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "OVERWEIGHT LOAD - EN Depleted Recovery Delay"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Residual impact value_Volatilization rate when EN decreases [point/s]"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Residual impact value_EN maximum volatilization rate [point/s]"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Residual impact value_Volatilization rate [point/s]"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Player EN recovery speed [EN value/sec]"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "bullet distance attenuation"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "ricochet distance"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Enemy search level accumulated value"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Enemy search level: Upper limit for each distance"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Search level: Attenuation value per distance (pt/sec)"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Enemy search level: Basic value when completely discovered"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "Enemy search level: Attenuation value when completely discovered (pt/sec)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Enemy search blur: Blur distance for each enemy search level (m)"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Enemy engagement level accumulated value (visual)"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "Enemy engagement level accumulated value (radar)"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "GENERATOR - EN Output"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "GENERATOR - EN Output"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "GENERATOR - EN Recharge Delay"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "GENERATOR - EN Post Recovery"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "FCS - Softlock Strength"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "WEIGHT - FCS - Armload Target Tracking"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "FCS - Hardlock Strength"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "FCS - White Lock Strength (0 is 100%)"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "lock grace time"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Lock maintenance time through walls"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Recoil - Recoil Parameter Multiplier"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "Recoil - Reduction Rate per Second"
+      ]
+    },
+    {
+      "ID": 852,
+      "Entries": [
+        "Recoil - Reduction Delay"
+      ]
+    },
+    {
+      "ID": 853,
+      "Entries": [
+        "Maximum prediction rate decrease due to attack recoil blur"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "Amount of prediction rate decrease due to attack recoil blur"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "Launch angle random number increase rate due to attack recoil blur"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "Launch angle random number initial value correction coefficient by arm recoil control"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Acquisition degree reduction amount"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Proximity appropriate angular velocity correction amount"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "Prediction rate addition amount (horizontal)"
+      ]
+    },
+    {
+      "ID": 951,
+      "Entries": [
+        "Prediction rate subtraction amount (horizontal)"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "Prediction rate addition amount (vertical)"
+      ]
+    },
+    {
+      "ID": 961,
+      "Entries": [
+        "Prediction rate subtraction amount (vertical)"
+      ]
+    },
+    {
+      "ID": 970,
+      "Entries": [
+        "FIREARM SPECIALIZATION - Target Tracing Multiplier"
+      ]
+    },
+    {
+      "ID": 971,
+      "Entries": [
+        "FIREARM SPECIALIZATION - Unknown Penalty"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "Reload time correction factor based on fighting aptitude"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "Charge time correction factor based on fighting aptitude"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "MELEE SPECIALIZATION - Melee Weapon Damage"
+      ]
+    },
+    {
+      "ID": 990,
+      "Entries": [
+        "Reload time correction factor based on EN weapon aptitude"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        "ENERGY FIREARM SPECIALIZATION - Weapon Charge Speed"
+      ]
+    },
+    {
+      "ID": 992,
+      "Entries": [
+        "ENERGY FIREARM SPECIALIZATION - Energy Weapon Damage"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Blast distance attenuation (00 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Blast distance attenuation (01 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Blast distance attenuation (for own aircraft 02)"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "DAMAGE TYPE - Plasma Scaling"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Blast distance attenuation (04 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Blast distance attenuation (05 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Blast distance attenuation (06 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Blast distance attenuation (07 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Blast distance attenuation (08 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Blast distance attenuation (09 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Blast distance attenuation (10 for own aircraft)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Blast distance attenuation (00 for enemy)"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Blast distance attenuation (01 for enemy)"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Blast distance attenuation (for enemy 02)"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Blast distance attenuation (for enemy 03)"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Blast distance attenuation (04 for enemy)"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Blast distance attenuation (05 for enemy)"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Blast distance attenuation (06 for enemy)"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Blast distance attenuation (07 for enemy)"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Blast distance attenuation (08 for enemy)"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Blast distance attenuation (09 for enemy)"
+      ]
+    }
+  ]
+}

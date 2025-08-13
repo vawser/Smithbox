@@ -1,0 +1,203 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Normal -- 通常"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Normal +1 -- 通常＋1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Normal +2 -- 通常＋2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Normal +3 -- 通常＋3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Normal +4 -- 通常＋4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Normal +5 -- 通常＋5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Normal +6 -- 通常＋6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Normal +7 -- 通常＋7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Normal +8 -- 通常＋8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Normal +9 -- 通常＋9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Normal +10 -- 通常＋10"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Normal +11 -- 通常＋11"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Normal +12 -- 通常＋12"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Deadly Sword_Rotating Sword -- 必殺剣_回転斬り"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Deadly Sword_Dive Sword -- 必殺剣_飛び込み斬り"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Special Sword_Dive Sword + 1_Slash Retreat Added -- 必殺剣_飛び込み斬り+1_斬り退がり追加"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Deadly Sword_Face -- 必殺剣_面打ち"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Special Sword_Face +102 4th step added -- 必殺剣_面打ち+1_2段目追加"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Deadly Sword_Iai -- 必殺剣_居合"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Special Sword_Iai + 1_Power UP -- 必殺剣_居合+1_威力UP"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Deadly Sword_Sword Holy Iai -- 必殺剣_剣聖居合"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Deadly Sword_Eight Jump Rush -- 必殺剣_八艘跳びラッシュ"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Special Sword_Eight Jump Rush + 1_ Increased Number of Stages -- 必殺剣_八艘跳びラッシュ+1_段数増加"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Deadly Sword_Immortal Sword -- 必殺剣_不死斬り"
+      ]
+    },
+    {
+      "ID": 1061,
+      "Entries": [
+        "Special Sword_Immortal Sword + 1_ Addition of Reservoir -- 必殺剣_不死斬り+1_溜め追加"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Deadly Sword_Kick Rush -- 必殺剣_蹴りラッシュ"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "Special Sword_Kick Rush + 1_Increase in the number of steps -- 必殺剣_蹴りラッシュ+1_段数増加"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Special Sword_Jiu-Jitsu Strike -- 必殺剣_体術連撃"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "Special Sword_Jiu-Jitsu Consecutive Attack + 1_ Yasushi Tetsuyama Added -- 必殺剣_体術連撃+1_鉄山靠追加"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Deadly Sword_Ninja Fang -- 必殺剣_忍者牙突"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "Special Sword_Ninja Fang + 1_Descent Rotation Slash added -- 必殺剣_忍者牙突+1_降下回転斬り追加"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Special Sword_New Technique -- 必殺剣_新技"
+      ]
+    }
+  ]
+}

@@ -18,7 +18,9 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace StudioCore.DebugNS;
@@ -324,85 +326,76 @@ public class DebugTools
     {
         var project = BaseEditor.ProjectManager.SelectedProject;
 
-        //ConvertRowNames("AC6", "Community Row Names.json");
-        //ConvertRowNames("AC6", "Developer Row Names.json");
+        ConvertToOldStyleRowNames("AC6", "Community Row Names");
+        ConvertToOldStyleRowNames("AC6", "Developer Row Names");
 
-        //ConvertRowNames("BB", "Community Row Names.json");
-        //ConvertRowNames("BB", "Developer Row Names.json");
+        ConvertToOldStyleRowNames("BB", "Community Row Names");
+        ConvertToOldStyleRowNames("BB", "Developer Row Names");
 
-        //ConvertRowNames("DES", "Community Row Names.json");
-        //ConvertRowNames("DS1", "Community Row Names.json");
-        //ConvertRowNames("DS1R", "Community Row Names.json");
-        //ConvertRowNames("DS2", "Community Row Names.json");
-        //ConvertRowNames("DS2S", "Community Row Names.json");
-        //ConvertRowNames("DS3", "Community Row Names.json");
-        //ConvertRowNames("SDT", "Community Row Names.json");
-        //ConvertRowNames("ER", "Community Row Names.json");
-        //ConvertRowNames("NR", "Community Row Names.json");
+        ConvertToOldStyleRowNames("DES", "Community Row Names");
+        ConvertToOldStyleRowNames("DS1", "Community Row Names");
+        ConvertToOldStyleRowNames("DS1R", "Community Row Names");
+        ConvertToOldStyleRowNames("DS2", "Community Row Names");
+        ConvertToOldStyleRowNames("DS2S", "Community Row Names");
+        ConvertToOldStyleRowNames("DS3", "Community Row Names");
+        ConvertToOldStyleRowNames("SDT", "Community Row Names");
+        ConvertToOldStyleRowNames("ER", "Community Row Names");
+        ConvertToOldStyleRowNames("NR", "Community Row Names");
     }
 
-    //public static void ConvertRowNames(string type, string group)
-    //{
-    //    var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox\bin\Debug";
+    public static void ConvertToOldStyleRowNames(string type, string group)
+    {
+        var outputDir = @"C:\Users\benja\Programming\C#\_temp";
 
-    //    var sourceFilepath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{type}";
-    //    sourceFilepath = Path.Combine(sourceFilepath, group);
+        var sourceFilepath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{type}";
+        sourceFilepath = Path.Combine(sourceFilepath, $"{group}.json");
 
-    //    RowNameStore store = null;
 
-    //    try
-    //    {
-    //        var filestring = File.ReadAllText(sourceFilepath);
-    //        var options = new JsonSerializerOptions();
-    //        store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+        RowNameStore store = null;
 
-    //        if (store == null)
-    //        {
-    //            throw new Exception($"JsonConvert returned null.");
-    //        }
-    //    }
-    //    catch (Exception e)
-    //    {
-    //    }
+        try
+        {
+            var filestring = File.ReadAllText(sourceFilepath);
 
-    //    if (store == null)
-    //        return;
+            store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
 
-    //    if (store.Params == null)
-    //        return;
+            if (store == null)
+            {
+                throw new Exception($"JsonConvert returned null.");
+            }
+        }
+        catch (Exception e)
+        {
+        }
 
-    //    var newRowStore = ConvertToNewFormat(store);
+        if (store == null)
+            return;
 
-    //    var writeFolder = Path.Combine(outputDir, type);
-    //    var writePath = Path.Combine(outputDir, type, group);
+        if (store.Params == null)
+            return;
 
-    //    if (!Directory.Exists(writeFolder))
-    //    {
-    //        Directory.CreateDirectory(writeFolder);
-    //    }
+        foreach(var param in store.Params)
+        {
+            var filename = $"{param.Name}.json";
 
-    //    var json = JsonSerializer.Serialize(newRowStore, SmithboxSerializerContext.Default.TempRowNameStore);
+            var writeFolder = Path.Combine(outputDir, type, group);
+            if(!Directory.Exists(writeFolder))
+            {
+                Directory.CreateDirectory(writeFolder);
+            }
 
-    //    File.WriteAllText(writePath, json);
-    //}
+            var writePath = Path.Combine(outputDir, type, group, filename);
 
-    //public static TempRowNameStore ConvertToNewFormat(RowNameStore original)
-    //{
-    //    var tempParams = original.Params.Select(param => new TempRowNameParamEntry
-    //    {
-    //        Name = param.Name,
-    //        Entries = param.Entries
-    //            .GroupBy(entry => entry.ID)
-    //            .Select(group => new TempRowNameIdEntry
-    //            {
-    //                ID = group.Key,
-    //                Entries = group.Select(e => e.Name).ToList()
-    //            }).ToList()
-    //    }).ToList();
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(param, typeof(RowNameParam), options);
 
-    //    return new TempRowNameStore
-    //    {
-    //        Params = tempParams
-    //    };
-    //}
+            File.WriteAllText(writePath, json);
+        }
+    }
+
 }

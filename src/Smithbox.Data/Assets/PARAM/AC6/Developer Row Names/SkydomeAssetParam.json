@@ -1,0 +1,287 @@
+{
+  "Name": "SkydomeAssetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't spoil it -- けさないで"
+      ]
+    },
+    {
+      "ID": 3300030,
+      "Entries": [
+        "Ice field_Fuel base_Evening (18:30) Midnight sun -- 氷原_燃料基地_夕(18:30)白夜"
+      ]
+    },
+    {
+      "ID": 3300040,
+      "Entries": [
+        "Ice field_Fuel base_Night ver1 -- 氷原_燃料基地_夜ver1"
+      ]
+    },
+    {
+      "ID": 3300060,
+      "Entries": [
+        "Ice field_Fuel base_Late night B(05:00) -- 氷原_燃料基地_深夜B(05:00)"
+      ]
+    },
+    {
+      "ID": 3400040,
+      "Entries": [
+        "Ice field_old spaceport_evening -- 氷原_旧宇宙港_夕夜"
+      ]
+    },
+    {
+      "ID": 3400050,
+      "Entries": [
+        "Ice Field_Old Spaceport_Night (Raven Battle) -- 氷原_旧宇宙港_夜(レイブン戦)"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Great ice field_morning -- 大氷原_朝"
+      ]
+    },
+    {
+      "ID": 3600060,
+      "Entries": [
+        "Great Ice Field_Late Night B -- 大氷原_深夜B"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "A layer_Tutorial CS -- A層_チュートリアルＣＳ用"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "A layer_Big Bridge_Morning -- A層_ビックブリッジ_朝"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "A layer_big bridge_daytime A -- A層_ビックブリッジ_昼A"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "A layer_Big Bridge_Daytime B -- A層_ビックブリッジ_昼B"
+      ]
+    },
+    {
+      "ID": 10100030,
+      "Entries": [
+        "A layer_Big Bridge evening -- A層_ビックブリッジ夕"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "A layer_Collapse_Morning -- A層_崩壊_朝"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Icefield_Fuel base_Temporary ID -- 氷原_燃料基地_仮ID"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "Icefield_Fuel base_Temporary ID -- 氷原_燃料基地_仮ID"
+      ]
+    },
+    {
+      "ID": 30000032,
+      "Entries": [
+        "Ice field_evening -- 氷原_夕方用"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "New B layer_Top layer_Morning -- 新B層_最上層_朝"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "New B layer_Top layer_Day A -- 新B層_最上層_昼A"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "New B layer_Straight city_Evening (atmospheric space) -- 新B層_ストレート市街_宵(大気圏)"
+      ]
+    },
+    {
+      "ID": 20200010,
+      "Entries": [
+        "New B layer_Straight city_Day A (invasion) -- 新B層_ストレート市街_昼A(侵攻)"
+      ]
+    },
+    {
+      "ID": 20200030,
+      "Entries": [
+        "New B-tier_Straight city_Night (reverse driving) -- 新B層_ストレート市街_夜(逆走)"
+      ]
+    },
+    {
+      "ID": 20200050,
+      "Entries": [
+        "New B layer_Straight city_Space (decisive battle) -- 新B層_ストレート市街_宇宙(決戦)"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "New B Tier_Trench City_Morning -- 新B層_塹壕都市_朝"
+      ]
+    },
+    {
+      "ID": 20300040,
+      "Entries": [
+        "New B Tier_Trench City_Night -- 新B層_塹壕都市_夜"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "D layer_Day A -- D層_昼A"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "Geofront_Day A -- ジオフロント_昼A"
+      ]
+    },
+    {
+      "ID": 41100040,
+      "Entries": [
+        "Geofront_Night -- ジオフロント_夜"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Snowy mountains_mountains_morning -- 雪山_山岳_朝"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Snowy mountains_mountains_daytime A -- 雪山_山岳_昼A"
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        "Snowy mountains_mountains_daytime B -- 雪山_山岳_昼B"
+      ]
+    },
+    {
+      "ID": 50000040,
+      "Entries": [
+        "Snowy mountains_mountains_night -- 雪山_山岳_夜"
+      ]
+    },
+    {
+      "ID": 50000060,
+      "Entries": [
+        "Snowy mountains_mountains_late night B -- 雪山_山岳_深夜B"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Snowy mountain_dam_morning -- 雪山_ダム_朝"
+      ]
+    },
+    {
+      "ID": 50100030,
+      "Entries": [
+        "Snowy mountain_dam_evening -- 雪山_ダム_夕"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "In front of the snowy mountain wall_morning -- 雪山壁前_朝"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "In front of the snowy mountain wall_daytime A -- 雪山壁前_昼A"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "In front of the snowy mountain wall_daytime B -- 雪山壁前_昼B"
+      ]
+    },
+    {
+      "ID": 50300040,
+      "Entries": [
+        "In front of the snowy mountain wall_night -- 雪山壁前_夜"
+      ]
+    },
+    {
+      "ID": 50300050,
+      "Entries": [
+        "In front of the snowy mountain wall_Late night A -- 雪山壁前_深夜A"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Snowy mountain lakeside town_morning (evening) -- 雪山湖畔の街_朝(宵）"
+      ]
+    },
+    {
+      "ID": 50400040,
+      "Entries": [
+        "Snowy mountain lakeside town_night -- 雪山湖畔の街_夜"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Snowy mountain_VOB_morning -- 雪山_VOB_朝"
+      ]
+    },
+    {
+      "ID": 50500040,
+      "Entries": [
+        "Snowy mountain_VOB_night -- 雪山_VOB_夜"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Snowy mountains_black sand dunes_morning -- 雪山_黒砂丘_朝"
+      ]
+    },
+    {
+      "ID": 50600040,
+      "Entries": [
+        "Snowy mountains_black sand dunes_night -- 雪山_黒砂丘_夜"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "C-end -- Cエンド"
+      ]
+    }
+  ]
+}

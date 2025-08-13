@@ -1,0 +1,107 @@
+{
+  "Name": "WetAspectParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Wet -- 水濡れ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Poisonous -- 毒濡れ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Oil wet -- 油濡れ"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Mud dirt -- 泥汚れ"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dust -- 砂埃"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "frozen -- 凍結"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Covered with wax -- 蝋まみれ"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "frostbite -- 凍傷"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Very poisonous wet -- 猛毒濡れ"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Iron body -- 鉄の体"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Wet underwater -- 水中濡れ"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

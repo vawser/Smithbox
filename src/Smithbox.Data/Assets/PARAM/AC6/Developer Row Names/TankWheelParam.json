@@ -1,0 +1,60 @@
+{
+  "Name": "TankWheelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後",
+        "left rear, rear -- 左後、後"
+      ]
+    }
+  ]
+}

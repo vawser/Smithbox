@@ -1,0 +1,53 @@
+{
+  "Name": "default_LightScatteringBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Model Viewerで使用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Face Makingで使用"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Blue Sky"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Deep Sea"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Moon Night"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

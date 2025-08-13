@@ -1,0 +1,389 @@
+{
+  "Name": "m17_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0屋外"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0牢"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0洞窟"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0シースの部屋への通路"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0シースの部屋"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0古書室"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0森"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B0屋内（図書館後半）"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B0屋内オブジェ"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0屋外_キャラ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0屋内_キャラ"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0牢_キャラ"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0洞窟_キャラ"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0シースの部屋の通路_キャラ"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B0シースの部屋_キャラ"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B0古書室のキャラ"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B0森_キャラ"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B0屋内（図書館後半）_キャラ"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B0屋内（図書館後半）オブジェ"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B0女神像"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B0洞窟の宝死体"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B0古書室の手前"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "characters_prison_start"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "characters_library_first"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Seath_chamber"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn170000-背景lst"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn170000-シース"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn170000-背景"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "Name": "PlayerWeatheringTexPresetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Weathered 1 - Silver Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Weathered 2 - Silver Scuffs - Medium"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Weathered 3 - Silver Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Weathered 4 - Silver Scuffs - Massive"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Weathered 5 - Bronze Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Weathered 6 - Bronze Scuffs - Medium"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Weathered 7 - Bronze Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Weathered 8 - Bronze Scuffs - Massive"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Weathered 9 - Black Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weathered 10 - Black Scuffs - Medium"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Weathered 11 - Black Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Weathered 12 - Black Scuffs - Massive"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Weathered 13 - Light Rust Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Weathered 14 - Light Rust Scuffs - Medium"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Weathered 15 - Light Rust Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Weathered 16 - Light Rust Scuffs - Giant"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Weathered 17 - Dark Rust Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Weathered 18 - Dark Rust Scuffs - Medium"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Weathered 19 - Dark Rust Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Weathered 20 - Dark Rust Scuffs - Giant"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Weathered 16 - Matte Rust Scuffs - Small"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Weathered 16 - Matte Rust Scuffs - Large"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Weathered 16 - Matte Rust Scuffs - Massive"
+      ]
+    }
+  ]
+}

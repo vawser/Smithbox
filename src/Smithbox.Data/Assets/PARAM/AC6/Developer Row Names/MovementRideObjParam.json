@@ -1,0 +1,23 @@
+{
+  "Name": "MovementRideObjParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Stiglo -- スティグロ"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "buggy -- バギー"
+      ]
+    }
+  ]
+}

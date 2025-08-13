@@ -1,0 +1,269 @@
+{
+  "Name": "generatorregistparam_m10_32_00_00",
+  "Entries": [
+    {
+      "ID": 10000000,
+      "Entries": [
+        "[REG:10000000] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000003,
+      "Entries": [
+        "[REG:10000003] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "[REG:10000010] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000013,
+      "Entries": [
+        "[REG:10000013] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "[REG:10000020] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000023,
+      "Entries": [
+        "[REG:10000023] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "[REG:10000030] Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "[REG:10100000] Kobold"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "[REG:15300000] Syan Knight"
+      ]
+    },
+    {
+      "ID": 15300100,
+      "Entries": [
+        "[REG:15300100] Syan Knight"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[REG:21000000] Basilisk"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[REG:30000000] Ogre"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "[REG:30700000] Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 30700001,
+      "Entries": [
+        "[REG:30700001] Head of Vengarl"
+      ]
+    },
+    {
+      "ID": 30701000,
+      "Entries": [
+        "[REG:30701000] Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "[REG:30800000] Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 30800001,
+      "Entries": [
+        "[REG:30800001] Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 30800010,
+      "Entries": [
+        "[REG:30800010] Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "[REG:31300000] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31300100,
+      "Entries": [
+        "[REG:31300100] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31300200,
+      "Entries": [
+        "[REG:31300200] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "[REG:50200000] Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 50200001,
+      "Entries": [
+        "[REG:50200001] Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 50200002,
+      "Entries": [
+        "[REG:50200002] Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "[REG:50300000] Scorpioness Najka [Boss]"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "[REG:72500000] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 72500001,
+      "Entries": [
+        "[REG:72500001] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 74205000,
+      "Entries": [
+        "[REG:74205000] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74205001,
+      "Entries": [
+        "[REG:74205001] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 77600000,
+      "Entries": [
+        "[REG:77600000] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 77600001,
+      "Entries": [
+        "[REG:77600001] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 83800000,
+      "Entries": [
+        "[REG:83800000] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 83800001,
+      "Entries": [
+        "[REG:83800001] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 83800010,
+      "Entries": [
+        "[REG:83800010] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 83810000,
+      "Entries": [
+        "[REG:83810000] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 83810001,
+      "Entries": [
+        "[REG:83810001] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 83810010,
+      "Entries": [
+        "[REG:83810010] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 88300000,
+      "Entries": [
+        "[REG:88300000] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 88310000,
+      "Entries": [
+        "[REG:88310000] Forest Guardian"
+      ]
+    },
+    {
+      "ID": 89300000,
+      "Entries": [
+        "[REG:89300000] Bradley of the Old Guard"
+      ]
+    }
+  ]
+}

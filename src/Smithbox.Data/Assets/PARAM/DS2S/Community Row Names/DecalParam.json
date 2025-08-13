@@ -1,0 +1,83 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Explosive tracks -- 爆発跡"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Splashes -- 水しぶき"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Poison splash -- 毒しぶき"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Oil splash -- 油しぶき"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Acid splash -- 酸飛沫"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Blood splash (not used) -- 血しぶき(未使用）"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Footprint (dust) _ Test -- 足跡(埃)_テスト"
+      ]
+    },
+    {
+      "ID": 900002,
+      "Entries": [
+        "Footprint (sand) _ Test -- 足跡(砂)_テスト"
+      ]
+    },
+    {
+      "ID": 900003,
+      "Entries": [
+        "Footprint (Water) _ Test -- 足跡(水)_テスト"
+      ]
+    },
+    {
+      "ID": 900004,
+      "Entries": [
+        "Footprint (poison) _ Test -- 足跡(毒)_テスト"
+      ]
+    },
+    {
+      "ID": 900005,
+      "Entries": [
+        "Footprint (Coal Tar) _ Test -- 足跡(コールタール)_テスト"
+      ]
+    },
+    {
+      "ID": 900006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900007,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

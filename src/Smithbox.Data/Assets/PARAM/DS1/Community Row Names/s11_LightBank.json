@@ -1,0 +1,185 @@
+{
+  "Name": "s11_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_Basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0_Indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0_Underground"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0_Suspension bridge"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0_Tree"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0_Tombstone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "No light map Building"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "No light map indoor"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B0_Character (dark)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0_Character (basic)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0_Character (shade)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0_Character (indoor)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B0_Character (underground)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B0_Character (boss)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B0_Character (Dragon Zombie)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

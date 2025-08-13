@@ -1,0 +1,335 @@
+{
+  "Name": "eventparam_m10_02_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Text Stone Monument_01"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Text Stone Monument_02"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Text Stone Monument_03"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Text Stone Monument_05"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Text Stone Monument_06"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Text Stone Monument_08"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Text Stone Monument_09"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Text Stone Monument_10"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Text Stone Monument_11"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Text Stone Monument_12"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Text Stone Monument_13"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Text Stone Monument_14"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Text Stone Monument_15"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Text Stone Monument_16"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Text Stone Monument_17"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Text Stone Monument_18"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Text Stone Monument_19"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Text Stone Monument_20"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Text Stone Monument_21"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Falling Tree 1"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Falling Tree 2"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "A coffin with a change of gender"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Coffin launch event"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Fire Protection Woman Housekeeper Tutorial Related"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "A drop of water falls from the waterfall and the torch disappears."
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "The reason of the line"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Drawing line reasons"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Fire Protection Woman's House Event"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "BGM control of fire-proof woman's house"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Regeneration Seed Fire 01_Fire Guard Woman's House"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy_ Lost Memories"
+      ]
+    },
+    {
+      "ID": 111100,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 1"
+      ]
+    },
+    {
+      "ID": 111101,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 1: Ghost"
+      ]
+    },
+    {
+      "ID": 111102,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 1: Tomb"
+      ]
+    },
+    {
+      "ID": 111103,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 1: Key Guide"
+      ]
+    },
+    {
+      "ID": 111110,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 2"
+      ]
+    },
+    {
+      "ID": 111111,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 2: Ghost"
+      ]
+    },
+    {
+      "ID": 111112,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 2: Tomb"
+      ]
+    },
+    {
+      "ID": 111113,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 2: Key Guide"
+      ]
+    },
+    {
+      "ID": 111120,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 3"
+      ]
+    },
+    {
+      "ID": 111121,
+      "Entries": [
+        "NPC: Retired Fire Protection Woman 3: Ghost"
+      ]
+    },
+    {
+      "ID": 111122,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 3: Tomb"
+      ]
+    },
+    {
+      "ID": 111123,
+      "Entries": [
+        "OBJ: Retired Fire Protection Woman 3: Key Guide"
+      ]
+    },
+    {
+      "ID": 111150,
+      "Entries": [
+        "NPC: Fire Protection Woman's Housekeeper"
+      ]
+    },
+    {
+      "ID": 111151,
+      "Entries": [
+        "NPC: Fire Protection Woman's Housekeeper: Specter"
+      ]
+    },
+    {
+      "ID": 111152,
+      "Entries": [
+        "OBJ: Fire Protection Woman's Housekeeper: Tomb"
+      ]
+    },
+    {
+      "ID": 111153,
+      "Entries": [
+        "OBJ: Fire Protection Woman's Housekeeper: Key Guide"
+      ]
+    },
+    {
+      "ID": 111500,
+      "Entries": [
+        "NPC: Glitter Girl"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

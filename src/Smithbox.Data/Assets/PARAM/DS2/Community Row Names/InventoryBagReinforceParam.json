@@ -1,0 +1,95 @@
+{
+  "Name": "InventoryBagReinforceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Enhanced Level 0 -- 強化レベル0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Enhanced Level 1 -- 強化レベル1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Enhanced Level 2 -- 強化レベル2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Enhanced Level 3 -- 強化レベル3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Enhanced Level 4 -- 強化レベル4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Enhanced Level 5 -- 強化レベル5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Enhanced Level 6 -- 強化レベル6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Enhanced Level 7 -- 強化レベル7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Enhanced Level 8 -- 強化レベル8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Enhanced Level 9 -- 強化レベル9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Enhanced Level 10 -- 強化レベル10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Enhanced Level 11 -- 強化レベル11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Enhanced Level 12 -- 強化レベル12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Enhanced Level 13 -- 強化レベル13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Enhanced Level 14 -- 強化レベル14"
+      ]
+    }
+  ]
+}

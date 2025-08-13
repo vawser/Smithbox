@@ -1,0 +1,803 @@
+{
+  "Name": "mapobjectinstanceparam_m10_23_00_00",
+  "Entries": [
+    {
+      "ID": 10230400,
+      "Entries": [
+        "【Key door】01_Cave, before cliff route branch"
+      ]
+    },
+    {
+      "ID": 10230410,
+      "Entries": [
+        "【One door】01_Corridor of Immortality"
+      ]
+    },
+    {
+      "ID": 10230600,
+      "Entries": [
+        "【White Door】01_Skeleton King"
+      ]
+    },
+    {
+      "ID": 10230605,
+      "Entries": [
+        "【White Door】02_Chariots"
+      ]
+    },
+    {
+      "ID": 10230610,
+      "Entries": [
+        "【White Door】03_After Chariots"
+      ]
+    },
+    {
+      "ID": 10230620,
+      "Entries": [
+        "[White door] 05_After the skeleton king"
+      ]
+    },
+    {
+      "ID": 10230625,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 10230650,
+      "Entries": [
+        "【Bonfire】01_Madura"
+      ]
+    },
+    {
+      "ID": 10230655,
+      "Entries": [
+        "【Bonfire】02_Under pier"
+      ]
+    },
+    {
+      "ID": 10230660,
+      "Entries": [
+        "【Bonfire】03"
+      ]
+    },
+    {
+      "ID": 10230665,
+      "Entries": [
+        "【Bonfire】04"
+      ]
+    },
+    {
+      "ID": 10230700,
+      "Entries": [
+        "【Light stand】Inside the corridor"
+      ]
+    },
+    {
+      "ID": 10230701,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10230702,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10230703,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10230704,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10230705,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10231200,
+      "Entries": [
+        "Shortcut Fallen Tree"
+      ]
+    },
+    {
+      "ID": 10231300,
+      "Entries": [
+        "【Hidden Door 2(Key Guide)], Corridor of Immortality"
+      ]
+    },
+    {
+      "ID": 10231310,
+      "Entries": [
+        "【Hidden Door】Mushroom Cave"
+      ]
+    },
+    {
+      "ID": 10231400,
+      "Entries": [
+        "Wooden board 01_Corridor of Immortality"
+      ]
+    },
+    {
+      "ID": 10231410,
+      "Entries": [
+        "Wooden board 02_Corridor of Immortality"
+      ]
+    },
+    {
+      "ID": 10231450,
+      "Entries": [
+        "【Lever】Hunting Forest - Valley of the Reservoir _ Hunting Side"
+      ]
+    },
+    {
+      "ID": 10231460,
+      "Entries": [
+        "Movable Bridge_Hunting Forest - Valley of The Reservoir"
+      ]
+    },
+    {
+      "ID": 10231500,
+      "Entries": [
+        "Moving Bridge"
+      ]
+    },
+    {
+      "ID": 10231510,
+      "Entries": [
+        "【Lever】Lever for operation bridge"
+      ]
+    },
+    {
+      "ID": 10231600,
+      "Entries": [
+        "Iron Bar_Cave Route"
+      ]
+    },
+    {
+      "ID": 10231610,
+      "Entries": [
+        "【Lever】Lever for iron bar_cave route"
+      ]
+    },
+    {
+      "ID": 10231700,
+      "Entries": [
+        "【Lift】Mushroom Cave Bottom - Corridor of Immortality_1"
+      ]
+    },
+    {
+      "ID": 10231701,
+      "Entries": [
+        "【Lift】Mushroom Cave Bottom- Corridor of Immortality_2"
+      ]
+    },
+    {
+      "ID": 10231750,
+      "Entries": [
+        "[Forest of hunting] Skeleton Aristocratic Throne A"
+      ]
+    },
+    {
+      "ID": 10231751,
+      "Entries": [
+        "[Forest of hunting] Skeleton Aristocratic Throne B"
+      ]
+    },
+    {
+      "ID": 10231752,
+      "Entries": [
+        "[Forest of hunting] Skeleton Aristocratic Throne B"
+      ]
+    },
+    {
+      "ID": 10231760,
+      "Entries": [
+        "Pledge stone statue_ left"
+      ]
+    },
+    {
+      "ID": 10231761,
+      "Entries": [
+        "Pledge Stone Statue _ Central"
+      ]
+    },
+    {
+      "ID": 10231762,
+      "Entries": [
+        "pledge stone statue_ right"
+      ]
+    },
+    {
+      "ID": 10231770,
+      "Entries": [
+        "Dark Art Shop_Chair"
+      ]
+    },
+    {
+      "ID": 10231800,
+      "Entries": [
+        "Three-dimensional topography of the iron fence_arena A_ arena"
+      ]
+    },
+    {
+      "ID": 10231801,
+      "Entries": [
+        "Three-dimensional topography of the iron fence_arena A_ arena"
+      ]
+    },
+    {
+      "ID": 10231802,
+      "Entries": [
+        "Iron fence of the arena_ Arena B_ a fighting ground"
+      ]
+    },
+    {
+      "ID": 10231803,
+      "Entries": [
+        "Iron fence of the arena_ Arena B_ a fighting ground"
+      ]
+    },
+    {
+      "ID": 10231804,
+      "Entries": [
+        "The iron fence of the arena_ suspension bridge C_ the arena"
+      ]
+    },
+    {
+      "ID": 10231805,
+      "Entries": [
+        "The iron fence of the arena_ suspension bridge C_ the arena"
+      ]
+    },
+    {
+      "ID": 10233800,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree B (Bimata tree type)"
+      ]
+    },
+    {
+      "ID": 10233801,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233802,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233803,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233804,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233805,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree D (Undulating Tree Type)"
+      ]
+    },
+    {
+      "ID": 10233806,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree D (Undulating Tree Type)"
+      ]
+    },
+    {
+      "ID": 10233807,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree D (Undulating Tree Type)"
+      ]
+    },
+    {
+      "ID": 10233808,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree E (leaf-like tree type)"
+      ]
+    },
+    {
+      "ID": 10233809,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree B (scale 135%)"
+      ]
+    },
+    {
+      "ID": 10233810,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree B (scale 135%)"
+      ]
+    },
+    {
+      "ID": 10233811,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (Conifer type)"
+      ]
+    },
+    {
+      "ID": 10233812,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (Conifer type)"
+      ]
+    },
+    {
+      "ID": 10233813,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (Conifer type)"
+      ]
+    },
+    {
+      "ID": 10233814,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233815,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233816,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree C (Undulation Type)"
+      ]
+    },
+    {
+      "ID": 10233817,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (scale 80%)"
+      ]
+    },
+    {
+      "ID": 10233818,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (scale 80%)"
+      ]
+    },
+    {
+      "ID": 10233819,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (scale 80%)"
+      ]
+    },
+    {
+      "ID": 10233820,
+      "Entries": [
+        "【Environment Map ID】 【Hunting Forest】Tree A (scale 80%)"
+      ]
+    },
+    {
+      "ID": 10233900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10233901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10233902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10233903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10233904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10233911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10233912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10233913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10233914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] torture lift"
+      ]
+    },
+    {
+      "ID": 10233921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] torture lift"
+      ]
+    },
+    {
+      "ID": 10233922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] torture lift"
+      ]
+    },
+    {
+      "ID": 10233923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] torture lift"
+      ]
+    },
+    {
+      "ID": 10233924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10233945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10234000,
+      "Entries": [
+        "【NPC】Tomb_Dark Art Shop"
+      ]
+    },
+    {
+      "ID": 10234100,
+      "Entries": [
+        "【NPC】Tomb_Black Phantom Shop"
+      ]
+    },
+    {
+      "ID": 10234200,
+      "Entries": [
+        "【NPC】Tomb_Wandering Warrior"
+      ]
+    },
+    {
+      "ID": 10234900,
+      "Entries": [
+        "Bar-opening iron bars for Chariots event"
+      ]
+    },
+    {
+      "ID": 10234910,
+      "Entries": [
+        "Floor lever sit-in for chariotz events"
+      ]
+    },
+    {
+      "ID": 10234920,
+      "Entries": [
+        "_Carriage sfor Chariots Event"
+      ]
+    },
+    {
+      "ID": 10234930,
+      "Entries": [
+        "Executioner for Chariots event"
+      ]
+    },
+    {
+      "ID": 10235010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10235020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10236000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236200,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236210,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236220,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236230,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236240,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236250,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236260,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236270,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10236280,
+      "Entries": [
+        "[Corpse] Empty"
+      ]
+    },
+    {
+      "ID": 10236290,
+      "Entries": [
+        "[Corpse] Empty"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4817 @@
+{
+  "Name": "CharaInitParam",
+  "Entries": [
+    {
+      "ID": 200,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Test AC Walter"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Test AC Carla"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 8950,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 8999,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Invalid Assembly Gun pile tank"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Invalid Assembly Gun pile tank"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9050,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9230,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9240,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9820,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9830,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9850,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9860,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9870,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9890,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9899,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9906,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9907,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9911,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9912,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9913,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9914,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9915,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9916,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9917,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9918,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9919,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9921,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9922,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9923,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9924,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9925,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9926,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9927,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9928,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9929,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9931,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9932,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9933,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9934,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9935,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9936,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9937,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9938,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9939,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9951,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9952,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9953,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9954,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9955,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9956,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9957,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9958,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9959,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9960,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9961,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9962,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9963,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9964,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9965,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9970,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9971,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9972,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9973,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9974,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9975,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9976,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9977,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9978,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9979,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9980,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9981,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9982,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9983,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9984,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9985,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9986,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9987,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9988,
+      "Entries": [
+        "Test AC Melander"
+      ]
+    },
+    {
+      "ID": 9989,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9993,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9994,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9995,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9996,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9997,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9998,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 7970000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 8000002,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 8000003,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 8000010,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000011,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000012,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000013,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000020,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 8000021,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 8000022,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 8000023,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 8000030,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 8000031,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 8000032,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 8000033,
+      "Entries": [
+        "Test AC Tank"
+      ]
+    },
+    {
+      "ID": 8000100,
+      "Entries": [
+        "Test AC Orange camo Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000101,
+      "Entries": [
+        "Test AC NERF colors Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000102,
+      "Entries": [
+        "Test AC NERF camo"
+      ]
+    },
+    {
+      "ID": 8000103,
+      "Entries": [
+        "Test AC Grey Orange Green"
+      ]
+    },
+    {
+      "ID": 8000200,
+      "Entries": [
+        "Test AC Green Brown Reverse Joint"
+      ]
+    },
+    {
+      "ID": 8000300,
+      "Entries": [
+        "Test AC White Tetrapod"
+      ]
+    },
+    {
+      "ID": 8000400,
+      "Entries": [
+        "Test AC Green Orange camo tank"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9970000,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9970100,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9970200,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 9900007,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9900008,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9900009,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9900010,
+      "Entries": [
+        "Invalid Assembly Gun pile"
+      ]
+    },
+    {
+      "ID": 9900011,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Test AC Tian-Qiang"
+      ]
+    },
+    {
+      "ID": 70000001,
+      "Entries": [
+        "Test AC VE"
+      ]
+    },
+    {
+      "ID": 70000010,
+      "Entries": [
+        "Test AC Nachtreiher"
+      ]
+    },
+    {
+      "ID": 70000011,
+      "Entries": [
+        "Test AC Basho"
+      ]
+    },
+    {
+      "ID": 70000020,
+      "Entries": [
+        "Test AC VP"
+      ]
+    },
+    {
+      "ID": 70000021,
+      "Entries": [
+        "Test AC Nachtreiher Ephemera"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 70000101,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 70000102,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 70000200,
+      "Entries": [
+        "Test AC Reverse Joint Light"
+      ]
+    },
+    {
+      "ID": 70000201,
+      "Entries": [
+        "Test AC Reverse Joint Medium"
+      ]
+    },
+    {
+      "ID": 70000202,
+      "Entries": [
+        "Test AC Reverse Joint Heavy"
+      ]
+    },
+    {
+      "ID": 70000300,
+      "Entries": [
+        "Test AC Tetrapod Light"
+      ]
+    },
+    {
+      "ID": 70000301,
+      "Entries": [
+        "Test AC Tetrapod Medium"
+      ]
+    },
+    {
+      "ID": 70000302,
+      "Entries": [
+        "Test AC Tetrapod Heavy"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "Test AC VP"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90000130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90000140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90000150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90000160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90000170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90000180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90001130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90001140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90001150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90001160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90001170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90001180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90002130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90002140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90002150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90002160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90002170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90002180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90003130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90003140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90003150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90003160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90003170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90003180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90004130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90004140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90004150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90004160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90004170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90004180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90005130,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90005140,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90005150,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 90005160,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 90005170,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 90005180,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90010000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 90010010,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 90020000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 99900100,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000001,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000002,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000003,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000004,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000101,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000400,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000402,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 40001100,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 40001200,
+      "Entries": [
+        "Test AC Reverse Joint"
+      ]
+    },
+    {
+      "ID": 45500000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 45500010,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 45500020,
+      "Entries": [
+        "Test AC Purple Green"
+      ]
+    },
+    {
+      "ID": 45500030,
+      "Entries": [
+        "Test AC Burgundy"
+      ]
+    },
+    {
+      "ID": 45500040,
+      "Entries": [
+        "Test AC Green"
+      ]
+    },
+    {
+      "ID": 45500050,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 45501000,
+      "Entries": [
+        "Test AC Orange tank"
+      ]
+    },
+    {
+      "ID": 46000000,
+      "Entries": [
+        "Test AC"
+      ]
+    },
+    {
+      "ID": 46000001,
+      "Entries": [
+        "Test AC Tetrapod"
+      ]
+    },
+    {
+      "ID": 49000000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 49000001,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 49000002,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "NIGHTFALL (Raven)"
+      ]
+    },
+    {
+      "ID": 10001010,
+      "Entries": [
+        "NIGHTFALL (Raven)"
+      ]
+    },
+    {
+      "ID": 10009000,
+      "Entries": [
+        "NIGHTFALL (Raven)"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "DEADSLED (Coldcall)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "ENTANGLE (Sulla)"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "MIND BETA (51-002 K/Kate Markson)"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "MIND GAMMA (51-003 K/ALLMIND)"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "SHINOBI (Rokumonsen)"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "STEEL HAZE (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "STEEL HAZE (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10501100,
+      "Entries": [
+        "STEEL HAZE (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10509000,
+      "Entries": [
+        "STEEL HAZE (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "STEEL HAZE ORTUS (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10609000,
+      "Entries": [
+        "STEEL HAZE ORTUS (V.IV Rusty)"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "OPEN FAITH (V.II Snail)"
+      ]
+    },
+    {
+      "ID": 10710000,
+      "Entries": [
+        "OPEN FAITH (V.II Snail - Ice Worm)"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "RECONFIG (V.V Hawkins)"
+      ]
+    },
+    {
+      "ID": 10900000,
+      "Entries": [
+        "DUAL NATURE (V.VIII Pater)"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "MILK TOOTH (\"Honest\" Brute)"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "INSTITUTE (51-015 GA)/EPHEMERA (Enforcement System)"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "FULL COURSE (\"Cinder\" Carla)"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "IB-C03: HAL 826 (51-201 W/Handler Walter)"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "IB-C03: HAL 826 (51-201 W/Handler Walter)"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "HEAD BRINGER (G5 Iguazu)"
+      ]
+    },
+    {
+      "ID": 11409000,
+      "Entries": [
+        "TENDERFOOT (G13 Raven)"
+      ]
+    },
+    {
+      "ID": 11410000,
+      "Entries": [
+        "HEAD BRINGER (G5 Iguazu - ALLMIND)"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "CANNON HEAD (G4 Volta)"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "LIGER TAIL (G1 Michigan)"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "BURN PICKAXE (Index Dunham)"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "YUE YU (Little Ziyi)"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "TSUBASA (Middle Flatwell)"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "LOCKSMITH (V.I Freud)"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "CIRCUS (\"Chatty\" Stick)"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "ALLMIND Helper (Back Weapons)"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "ALLMIND Helper (Arm Weapons)"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "ALLMIND Helper (Arm and Back Weapons)"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "ECHO (Ayre)"
+      ]
+    },
+    {
+      "ID": 12509000,
+      "Entries": [
+        "ECHO (Ayre)"
+      ]
+    },
+    {
+      "ID": 12600000,
+      "Entries": [
+        "TRAINER (51-011 AL) - Standard"
+      ]
+    },
+    {
+      "ID": 12600001,
+      "Entries": [
+        "TRAINER (51-011 AL) - Camera Disruption"
+      ]
+    },
+    {
+      "ID": 12600002,
+      "Entries": [
+        "TRAINER (51-011 AL) - Shock"
+      ]
+    },
+    {
+      "ID": 12600003,
+      "Entries": [
+        "TRAINER (51-011 AL) - ACS Failure"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "TESTER (Dafeng Student Pilot)"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "DEEP DOWN (G2 Nile)"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "LI LONG (G3 Wu Huahai)"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "HERMIT (G6 Red)"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "CORPORATION (51-013 BE)"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "GUIDANCE (V.VII Swinburne)"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "INFECTION (V.VI Maeterlinck)"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "BARREN FLOWER (V.III O'Keeffe)"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "CANDLE RING (Ring Freddie)"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "ASTGHIK (Thumb Dolmayan)"
+      ]
+    },
+    {
+      "ID": 20809000,
+      "Entries": [
+        "ASTGHIK (Thumb Dolmayan)"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "MAD STOMP (\"Invincible\" Rummy)"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "RUBICONIAN (51-014 BE)"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "BITTER PROMISE (Nosaac)"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "UMBER OX (Chartreuse)"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "ASTER CROWN (King)"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "MIND ALPHA (51-001 K)"
+      ]
+    },
+    {
+      "ID": 29000000,
+      "Entries": [
+        "Test AC White tank"
+      ]
+    },
+    {
+      "ID": 29000010,
+      "Entries": [
+        "Unnamed AC - G7 Hakra"
+      ]
+    },
+    {
+      "ID": 29000020,
+      "Entries": [
+        "Unnamed AC - Monkey Gordo"
+      ]
+    },
+    {
+      "ID": 29000030,
+      "Entries": [
+        "Unnamed AC - Thomas Kirk"
+      ]
+    },
+    {
+      "ID": 29000040,
+      "Entries": [
+        "Test AC Wrecker"
+      ]
+    },
+    {
+      "ID": 29000050,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Escape AC - JAILBREAK"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "Illegal Entry AC - LOADER 4"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Damaged LOADER 4"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Reverse Joint"
+      ]
+    },
+    {
+      "ID": 31000020,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Tetrapod"
+      ]
+    },
+    {
+      "ID": 31000030,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Biped (Arquebus)"
+      ]
+    },
+    {
+      "ID": 31000040,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Tank"
+      ]
+    },
+    {
+      "ID": 31000050,
+      "Entries": [
+        "Alea Iacta Est Ending AC - Biped (Heavy)"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Training AC - Beginner Training 1 (Biped- Balam)"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Training AC - Beginner Training 2 (Biped- Arquebus)"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Training AC - Intermediate Support 1 (Biped- Schneider)"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "Training AC - Intermediate Support 2 (Reverse Joint- RaD)"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Training AC - Intermediate Support 3 (Tetrapod- Balam)"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Training AC - Intermediate Support 4 (Tank- Balam)"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Training AC - Advanced Mercenary Certification"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "Test AC Melander"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "Test AC Loader"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "Test AC Jailbreak Basho"
+      ]
+    },
+    {
+      "ID": 909999999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 910000000,
+      "Entries": [
+        "Weapon Test AC Gou-Chen"
+      ]
+    },
+    {
+      "ID": 910000001,
+      "Entries": [
+        "Weapon Test AC Dizzy"
+      ]
+    },
+    {
+      "ID": 910000002,
+      "Entries": [
+        "Weapon Test AC Little Gem"
+      ]
+    },
+    {
+      "ID": 910000003,
+      "Entries": [
+        "Weapon Test AC Majestic"
+      ]
+    },
+    {
+      "ID": 910000004,
+      "Entries": [
+        "Weapon Test AC Xuan-Ge"
+      ]
+    },
+    {
+      "ID": 910000005,
+      "Entries": [
+        "Weapon Test AC Sweet Sixteen"
+      ]
+    },
+    {
+      "ID": 910000006,
+      "Entries": [
+        "Weapon Test AC Haldeman"
+      ]
+    },
+    {
+      "ID": 910000007,
+      "Entries": [
+        "Weapon Test AC Zimmerman"
+      ]
+    },
+    {
+      "ID": 910000008,
+      "Entries": [
+        "Weapon Test AC Ransetsu-RF"
+      ]
+    },
+    {
+      "ID": 910000009,
+      "Entries": [
+        "Weapon Test AC Curtis"
+      ]
+    },
+    {
+      "ID": 910000010,
+      "Entries": [
+        "Weapon Test AC Harris"
+      ]
+    },
+    {
+      "ID": 910000011,
+      "Entries": [
+        "Weapon Test AC Ransetsu-AR"
+      ]
+    },
+    {
+      "ID": 910000012,
+      "Entries": [
+        "Weapon Test AC Turner"
+      ]
+    },
+    {
+      "ID": 910000013,
+      "Entries": [
+        "Weapon Test AC Scudder"
+      ]
+    },
+    {
+      "ID": 910000014,
+      "Entries": [
+        "Weapon Test AC Etsujin"
+      ]
+    },
+    {
+      "ID": 910000015,
+      "Entries": [
+        "Weapon Test AC Ludlow"
+      ]
+    },
+    {
+      "ID": 910000016,
+      "Entries": [
+        "Weapon Test AC Chang-Chen"
+      ]
+    },
+    {
+      "ID": 910000017,
+      "Entries": [
+        "Weapon Test AC Hu-Ben"
+      ]
+    },
+    {
+      "ID": 910000018,
+      "Entries": [
+        "Weapon Test AC Viento"
+      ]
+    },
+    {
+      "ID": 910000019,
+      "Entries": [
+        "Weapon Test AC Sampu"
+      ]
+    },
+    {
+      "ID": 910000020,
+      "Entries": [
+        "Weapon Test AC Coquillett"
+      ]
+    },
+    {
+      "ID": 910000021,
+      "Entries": [
+        "Weapon Test AC Duckett"
+      ]
+    },
+    {
+      "ID": 910000022,
+      "Entries": [
+        "Weapon Test AC Kyoriku"
+      ]
+    },
+    {
+      "ID": 910000023,
+      "Entries": [
+        "Weapon Test AC Kyorai"
+      ]
+    },
+    {
+      "ID": 910000024,
+      "Entries": [
+        "Weapon Test AC Therapist"
+      ]
+    },
+    {
+      "ID": 910000025,
+      "Entries": [
+        "Weapon Test AC P19MLT-04"
+      ]
+    },
+    {
+      "ID": 910000026,
+      "Entries": [
+        "Weapon Test AC P08SPL-06"
+      ]
+    },
+    {
+      "ID": 910000027,
+      "Entries": [
+        "Weapon Test AC Iridium"
+      ]
+    },
+    {
+      "ID": 910000028,
+      "Entries": [
+        "Weapon Test AC KRSV"
+      ]
+    },
+    {
+      "ID": 910000029,
+      "Entries": [
+        "Weapon Test AC 760PR"
+      ]
+    },
+    {
+      "ID": 910000030,
+      "Entries": [
+        "Weapon Test AC 66LRB"
+      ]
+    },
+    {
+      "ID": 910000031,
+      "Entries": [
+        "Weapon Test AC Wuerger"
+      ]
+    },
+    {
+      "ID": 910000032,
+      "Entries": [
+        "Weapon Test AC 66LS"
+      ]
+    },
+    {
+      "ID": 910000033,
+      "Entries": [
+        "Weapon Test AC Nebula"
+      ]
+    },
+    {
+      "ID": 910000034,
+      "Entries": [
+        "Weapon Test AC 66LH"
+      ]
+    },
+    {
+      "ID": 910000035,
+      "Entries": [
+        "Weapon Test AC 66LR"
+      ]
+    },
+    {
+      "ID": 910000036,
+      "Entries": [
+        "Weapon Test AC WLT-011"
+      ]
+    },
+    {
+      "ID": 910000037,
+      "Entries": [
+        "Weapon Test AC 66LRA"
+      ]
+    },
+    {
+      "ID": 910000038,
+      "Entries": [
+        "Weapon Test AC GU-Q1"
+      ]
+    },
+    {
+      "ID": 910000039,
+      "Entries": [
+        "Weapon Test AC GU-A2"
+      ]
+    },
+    {
+      "ID": 910000040,
+      "Entries": [
+        "Weapon Test AC Bad Cook"
+      ]
+    },
+    {
+      "ID": 910000041,
+      "Entries": [
+        "Weapon Test AC JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 910000042,
+      "Entries": [
+        "Weapon Test AC 66-EG"
+      ]
+    },
+    {
+      "ID": 910000043,
+      "Entries": [
+        "Weapon Test AC Aperitif"
+      ]
+    },
+    {
+      "ID": 910000999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 910001000,
+      "Entries": [
+        "Weapon Test AC Ashmead"
+      ]
+    },
+    {
+      "ID": 910001001,
+      "Entries": [
+        "Weapon Test AC BU-TT/A"
+      ]
+    },
+    {
+      "ID": 910001002,
+      "Entries": [
+        "Weapon Test AC 770LB"
+      ]
+    },
+    {
+      "ID": 910001003,
+      "Entries": [
+        "Weapon Test AC WLT 101"
+      ]
+    },
+    {
+      "ID": 910001004,
+      "Entries": [
+        "Weapon Test AC 67LD"
+      ]
+    },
+    {
+      "ID": 910001005,
+      "Entries": [
+        "Weapon Test AC Moonlight"
+      ]
+    },
+    {
+      "ID": 910001006,
+      "Entries": [
+        "Weapon Test AC 774LS"
+      ]
+    },
+    {
+      "ID": 910001007,
+      "Entries": [
+        "Weapon Test AC Tai-Yang-Shou"
+      ]
+    },
+    {
+      "ID": 910001008,
+      "Entries": [
+        "Weapon Test AC 67LLA"
+      ]
+    },
+    {
+      "ID": 910001009,
+      "Entries": [
+        "Weapon Test AC 67EB"
+      ]
+    },
+    {
+      "ID": 910001010,
+      "Entries": [
+        "Weapon Test AC Double Trouble"
+      ]
+    },
+    {
+      "ID": 910001011,
+      "Entries": [
+        "Weapon Test AC HMMR"
+      ]
+    },
+    {
+      "ID": 910001999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 910002000,
+      "Entries": [
+        "Weapon Test AC Earshot"
+      ]
+    },
+    {
+      "ID": 910002001,
+      "Entries": [
+        "Weapon Test AC Morley"
+      ]
+    },
+    {
+      "ID": 910002002,
+      "Entries": [
+        "Weapon Test AC 703PM"
+      ]
+    },
+    {
+      "ID": 910002003,
+      "Entries": [
+        "Weapon Test AC 706PM"
+      ]
+    },
+    {
+      "ID": 910002004,
+      "Entries": [
+        "Weapon Test AC 70VPM"
+      ]
+    },
+    {
+      "ID": 910002005,
+      "Entries": [
+        "Weapon Test AC P05ACT-02"
+      ]
+    },
+    {
+      "ID": 910002006,
+      "Entries": [
+        "Weapon Test AC P04ACT-01"
+      ]
+    },
+    {
+      "ID": 910002007,
+      "Entries": [
+        "Weapon Test AC NGI 006"
+      ]
+    },
+    {
+      "ID": 910002008,
+      "Entries": [
+        "Weapon Test AC P07VTC-12"
+      ]
+    },
+    {
+      "ID": 910002009,
+      "Entries": [
+        "Weapon Test AC P03VTC-08"
+      ]
+    },
+    {
+      "ID": 910002010,
+      "Entries": [
+        "Weapon Test AC P01VTC-04"
+      ]
+    },
+    {
+      "ID": 910002011,
+      "Entries": [
+        "Weapon Test AC JVLN BETA"
+      ]
+    },
+    {
+      "ID": 910002012,
+      "Entries": [
+        "Weapon Test AC 30060000 Unused"
+      ]
+    },
+    {
+      "ID": 910002013,
+      "Entries": [
+        "Weapon Test AC Soup"
+      ]
+    },
+    {
+      "ID": 910002014,
+      "Entries": [
+        "Weapon Test AC P03MLT-06"
+      ]
+    },
+    {
+      "ID": 910002015,
+      "Entries": [
+        "Weapon Test AC P20MLT-04"
+      ]
+    },
+    {
+      "ID": 910002016,
+      "Entries": [
+        "Weapon Test AC P05MLT-10"
+      ]
+    },
+    {
+      "ID": 910002017,
+      "Entries": [
+        "Weapon Test AC P32DUO-03"
+      ]
+    },
+    {
+      "ID": 910002018,
+      "Entries": [
+        "Weapon Test AC P08DUO-03"
+      ]
+    },
+    {
+      "ID": 910002019,
+      "Entries": [
+        "Weapon Test AC P17SPL-16"
+      ]
+    },
+    {
+      "ID": 910002020,
+      "Entries": [
+        "Weapon Test AC P31DUO-02"
+      ]
+    },
+    {
+      "ID": 910002021,
+      "Entries": [
+        "Weapon Test AC P19SPL-12"
+      ]
+    },
+    {
+      "ID": 910002022,
+      "Entries": [
+        "Weapon Test AC P16SPL-08"
+      ]
+    },
+    {
+      "ID": 910002023,
+      "Entries": [
+        "Weapon Test AC P29CNT"
+      ]
+    },
+    {
+      "ID": 910002024,
+      "Entries": [
+        "Weapon Test AC Trueno"
+      ]
+    },
+    {
+      "ID": 910002025,
+      "Entries": [
+        "Weapon Test AC Delivery Boy"
+      ]
+    },
+    {
+      "ID": 910002026,
+      "Entries": [
+        "Weapon Test AC Songbirds"
+      ]
+    },
+    {
+      "ID": 910002027,
+      "Entries": [
+        "Weapon Test AC Fasan/60E"
+      ]
+    },
+    {
+      "ID": 910002028,
+      "Entries": [
+        "Weapon Test AC 60LCS"
+      ]
+    },
+    {
+      "ID": 910002029,
+      "Entries": [
+        "Weapon Test AC 60LCA"
+      ]
+    },
+    {
+      "ID": 910002030,
+      "Entries": [
+        "Weapon Test AC Kranich/60Z"
+      ]
+    },
+    {
+      "ID": 910002031,
+      "Entries": [
+        "Weapon Test AC 60LCD"
+      ]
+    },
+    {
+      "ID": 910002032,
+      "Entries": [
+        "Weapon Test AC 30350000 Unused"
+      ]
+    },
+    {
+      "ID": 910002033,
+      "Entries": [
+        "Weapon Test AC Aurora"
+      ]
+    },
+    {
+      "ID": 910002034,
+      "Entries": [
+        "Weapon Test AC 30350200 Unused"
+      ]
+    },
+    {
+      "ID": 910002035,
+      "Entries": [
+        "Weapon Test AC Huxley"
+      ]
+    },
+    {
+      "ID": 910002036,
+      "Entries": [
+        "Weapon Test AC Orbit"
+      ]
+    },
+    {
+      "ID": 910002037,
+      "Entries": [
+        "Weapon Test AC 700LD"
+      ]
+    },
+    {
+      "ID": 910002038,
+      "Entries": [
+        "Weapon Test AC 60LT"
+      ]
+    },
+    {
+      "ID": 910002039,
+      "Entries": [
+        "Weapon Test AC Eule/60D"
+      ]
+    },
+    {
+      "ID": 910002040,
+      "Entries": [
+        "Weapon Test AC 60SNA"
+      ]
+    },
+    {
+      "ID": 910002999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 910003000,
+      "Entries": [
+        "Weapon Test AC 61PB"
+      ]
+    },
+    {
+      "ID": 910003001,
+      "Entries": [
+        "Weapon Test AC SU-Q5"
+      ]
+    },
+    {
+      "ID": 910003002,
+      "Entries": [
+        "Weapon Test AC 61PS"
+      ]
+    },
+    {
+      "ID": 910003003,
+      "Entries": [
+        "Weapon Test AC SU-R8"
+      ]
+    },
+    {
+      "ID": 910003004,
+      "Entries": [
+        "Weapon Test AC SU-TT/C"
+      ]
+    },
+    {
+      "ID": 910003005,
+      "Entries": [
+        "Weapon Test AC NGI 028"
+      ]
+    },
+    {
+      "ID": 910003006,
+      "Entries": [
+        "Weapon Test AC 61PSA"
+      ]
+    },
+    {
+      "ID": 919999999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 920000000,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Gou-Chen"
+      ]
+    },
+    {
+      "ID": 920000001,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Dizzy"
+      ]
+    },
+    {
+      "ID": 920000002,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Little Gem"
+      ]
+    },
+    {
+      "ID": 920000003,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Majestic"
+      ]
+    },
+    {
+      "ID": 920000004,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Xuan-Ge"
+      ]
+    },
+    {
+      "ID": 920000005,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Sweet Sixteen"
+      ]
+    },
+    {
+      "ID": 920000006,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Haldeman"
+      ]
+    },
+    {
+      "ID": 920000007,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Zimmerman"
+      ]
+    },
+    {
+      "ID": 920000008,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Ransetsu-RF"
+      ]
+    },
+    {
+      "ID": 920000009,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Curtis"
+      ]
+    },
+    {
+      "ID": 920000010,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Harris"
+      ]
+    },
+    {
+      "ID": 920000011,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Ransetsu-AR"
+      ]
+    },
+    {
+      "ID": 920000012,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Turner"
+      ]
+    },
+    {
+      "ID": 920000013,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Scudder"
+      ]
+    },
+    {
+      "ID": 920000014,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Etsujin"
+      ]
+    },
+    {
+      "ID": 920000015,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Ludlow"
+      ]
+    },
+    {
+      "ID": 920000016,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Chang-Chen"
+      ]
+    },
+    {
+      "ID": 920000017,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Hu-Ben"
+      ]
+    },
+    {
+      "ID": 920000018,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Viento"
+      ]
+    },
+    {
+      "ID": 920000019,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Sampu"
+      ]
+    },
+    {
+      "ID": 920000020,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Coquillett"
+      ]
+    },
+    {
+      "ID": 920000021,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Duckett"
+      ]
+    },
+    {
+      "ID": 920000022,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Kyoriku"
+      ]
+    },
+    {
+      "ID": 920000023,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Kyorai"
+      ]
+    },
+    {
+      "ID": 920000024,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Therapist"
+      ]
+    },
+    {
+      "ID": 920000025,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P19MLT-04"
+      ]
+    },
+    {
+      "ID": 920000026,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P08SPL-06"
+      ]
+    },
+    {
+      "ID": 920000027,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Iridium"
+      ]
+    },
+    {
+      "ID": 920000028,
+      "Entries": [
+        "Weapon Test AC Reverse Joint KRSV"
+      ]
+    },
+    {
+      "ID": 920000029,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 760PR"
+      ]
+    },
+    {
+      "ID": 920000030,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66LRB"
+      ]
+    },
+    {
+      "ID": 920000031,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Wuerger"
+      ]
+    },
+    {
+      "ID": 920000032,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66LS"
+      ]
+    },
+    {
+      "ID": 920000033,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Nebula"
+      ]
+    },
+    {
+      "ID": 920000034,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66LH"
+      ]
+    },
+    {
+      "ID": 920000035,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66LR"
+      ]
+    },
+    {
+      "ID": 920000036,
+      "Entries": [
+        "Weapon Test AC Reverse Joint WLT-011"
+      ]
+    },
+    {
+      "ID": 920000037,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66LRA"
+      ]
+    },
+    {
+      "ID": 920000038,
+      "Entries": [
+        "Weapon Test AC Reverse Joint GU-Q1"
+      ]
+    },
+    {
+      "ID": 920000039,
+      "Entries": [
+        "Weapon Test AC Reverse Joint GU-A2"
+      ]
+    },
+    {
+      "ID": 920000040,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Bad Cook"
+      ]
+    },
+    {
+      "ID": 920000041,
+      "Entries": [
+        "Weapon Test AC Reverse Joint JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 920000042,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 66-EG"
+      ]
+    },
+    {
+      "ID": 920000043,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Aperitif"
+      ]
+    },
+    {
+      "ID": 920000999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 920001000,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Ashmead"
+      ]
+    },
+    {
+      "ID": 920001001,
+      "Entries": [
+        "Weapon Test AC Reverse Joint BU-TT/A"
+      ]
+    },
+    {
+      "ID": 920001002,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 770LB"
+      ]
+    },
+    {
+      "ID": 920001003,
+      "Entries": [
+        "Weapon Test AC Reverse Joint WLT 101"
+      ]
+    },
+    {
+      "ID": 920001004,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 67LD"
+      ]
+    },
+    {
+      "ID": 920001005,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Moonlight"
+      ]
+    },
+    {
+      "ID": 920001006,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 774LS"
+      ]
+    },
+    {
+      "ID": 920001007,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Tai-Yang-Shou"
+      ]
+    },
+    {
+      "ID": 920001008,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 67LLA"
+      ]
+    },
+    {
+      "ID": 920001009,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 67EB"
+      ]
+    },
+    {
+      "ID": 920001010,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Double Trouble"
+      ]
+    },
+    {
+      "ID": 920001011,
+      "Entries": [
+        "Weapon Test AC Reverse Joint HMMR"
+      ]
+    },
+    {
+      "ID": 920001999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 920002000,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Earshot"
+      ]
+    },
+    {
+      "ID": 920002001,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Morley"
+      ]
+    },
+    {
+      "ID": 920002002,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 703PM"
+      ]
+    },
+    {
+      "ID": 920002003,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 706PM"
+      ]
+    },
+    {
+      "ID": 920002004,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 70VPM"
+      ]
+    },
+    {
+      "ID": 920002005,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P05ACT-02"
+      ]
+    },
+    {
+      "ID": 920002006,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P04ACT-01"
+      ]
+    },
+    {
+      "ID": 920002007,
+      "Entries": [
+        "Weapon Test AC Reverse Joint NGI 006"
+      ]
+    },
+    {
+      "ID": 920002008,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P07VTC-12"
+      ]
+    },
+    {
+      "ID": 920002009,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P03VTC-08"
+      ]
+    },
+    {
+      "ID": 920002010,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P01VTC-04"
+      ]
+    },
+    {
+      "ID": 920002011,
+      "Entries": [
+        "Weapon Test AC Reverse Joint JVLN BETA"
+      ]
+    },
+    {
+      "ID": 920002012,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 30060000 Unused"
+      ]
+    },
+    {
+      "ID": 920002013,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Soup"
+      ]
+    },
+    {
+      "ID": 920002014,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P03MLT-06"
+      ]
+    },
+    {
+      "ID": 920002015,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P20MLT-04"
+      ]
+    },
+    {
+      "ID": 920002016,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P05MLT-10"
+      ]
+    },
+    {
+      "ID": 920002017,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P32DUO-03"
+      ]
+    },
+    {
+      "ID": 920002018,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P08DUO-03"
+      ]
+    },
+    {
+      "ID": 920002019,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P17SPL-16"
+      ]
+    },
+    {
+      "ID": 920002020,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P31DUO-02"
+      ]
+    },
+    {
+      "ID": 920002021,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P19SPL-12"
+      ]
+    },
+    {
+      "ID": 920002022,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P16SPL-08"
+      ]
+    },
+    {
+      "ID": 920002023,
+      "Entries": [
+        "Weapon Test AC Reverse Joint P29CNT"
+      ]
+    },
+    {
+      "ID": 920002024,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Trueno"
+      ]
+    },
+    {
+      "ID": 920002025,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Delivery Boy"
+      ]
+    },
+    {
+      "ID": 920002026,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Songbirds"
+      ]
+    },
+    {
+      "ID": 920002027,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Fasan/60E"
+      ]
+    },
+    {
+      "ID": 920002028,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 60LCS"
+      ]
+    },
+    {
+      "ID": 920002029,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 60LCA"
+      ]
+    },
+    {
+      "ID": 920002030,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Kranich/60Z"
+      ]
+    },
+    {
+      "ID": 920002031,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 60LCD"
+      ]
+    },
+    {
+      "ID": 920002032,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 30350000 Unused"
+      ]
+    },
+    {
+      "ID": 920002033,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Aurora"
+      ]
+    },
+    {
+      "ID": 920002034,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 30350200 Unused"
+      ]
+    },
+    {
+      "ID": 920002035,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Huxley"
+      ]
+    },
+    {
+      "ID": 920002036,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Orbit"
+      ]
+    },
+    {
+      "ID": 920002037,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 700LD"
+      ]
+    },
+    {
+      "ID": 920002038,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 60LT"
+      ]
+    },
+    {
+      "ID": 920002039,
+      "Entries": [
+        "Weapon Test AC Reverse Joint Eule/60D"
+      ]
+    },
+    {
+      "ID": 920002040,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 60SNA"
+      ]
+    },
+    {
+      "ID": 920002999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 920003000,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 61PB"
+      ]
+    },
+    {
+      "ID": 920003001,
+      "Entries": [
+        "Weapon Test AC Reverse Joint SU-Q5"
+      ]
+    },
+    {
+      "ID": 920003002,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 61PS"
+      ]
+    },
+    {
+      "ID": 920003003,
+      "Entries": [
+        "Weapon Test AC Reverse Joint SU-R8"
+      ]
+    },
+    {
+      "ID": 920003004,
+      "Entries": [
+        "Weapon Test AC Reverse Joint SU-TT/C"
+      ]
+    },
+    {
+      "ID": 920003005,
+      "Entries": [
+        "Weapon Test AC Reverse Joint NGI 028"
+      ]
+    },
+    {
+      "ID": 920003006,
+      "Entries": [
+        "Weapon Test AC Reverse Joint 61PSA"
+      ]
+    },
+    {
+      "ID": 929999999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 930000000,
+      "Entries": [
+        "Weapon Test AC Tetrapod Gou-Chen"
+      ]
+    },
+    {
+      "ID": 930000001,
+      "Entries": [
+        "Weapon Test AC Tetrapod Dizzy"
+      ]
+    },
+    {
+      "ID": 930000002,
+      "Entries": [
+        "Weapon Test AC Tetrapod Little Gem"
+      ]
+    },
+    {
+      "ID": 930000003,
+      "Entries": [
+        "Weapon Test AC Tetrapod Majestic"
+      ]
+    },
+    {
+      "ID": 930000004,
+      "Entries": [
+        "Weapon Test AC Tetrapod Xuan-Ge"
+      ]
+    },
+    {
+      "ID": 930000005,
+      "Entries": [
+        "Weapon Test AC Tetrapod Sweet Sixteen"
+      ]
+    },
+    {
+      "ID": 930000006,
+      "Entries": [
+        "Weapon Test AC Tetrapod Haldeman"
+      ]
+    },
+    {
+      "ID": 930000007,
+      "Entries": [
+        "Weapon Test AC Tetrapod Zimmerman"
+      ]
+    },
+    {
+      "ID": 930000008,
+      "Entries": [
+        "Weapon Test AC Tetrapod Ransetsu-RF"
+      ]
+    },
+    {
+      "ID": 930000009,
+      "Entries": [
+        "Weapon Test AC Tetrapod Curtis"
+      ]
+    },
+    {
+      "ID": 930000010,
+      "Entries": [
+        "Weapon Test AC Tetrapod Harris"
+      ]
+    },
+    {
+      "ID": 930000011,
+      "Entries": [
+        "Weapon Test AC Tetrapod Ransetsu-AR"
+      ]
+    },
+    {
+      "ID": 930000012,
+      "Entries": [
+        "Weapon Test AC Tetrapod Turner"
+      ]
+    },
+    {
+      "ID": 930000013,
+      "Entries": [
+        "Weapon Test AC Tetrapod Scudder"
+      ]
+    },
+    {
+      "ID": 930000014,
+      "Entries": [
+        "Weapon Test AC Tetrapod Etsujin"
+      ]
+    },
+    {
+      "ID": 930000015,
+      "Entries": [
+        "Weapon Test AC Tetrapod Ludlow"
+      ]
+    },
+    {
+      "ID": 930000016,
+      "Entries": [
+        "Weapon Test AC Tetrapod Chang-Chen"
+      ]
+    },
+    {
+      "ID": 930000017,
+      "Entries": [
+        "Weapon Test AC Tetrapod Hu-Ben"
+      ]
+    },
+    {
+      "ID": 930000018,
+      "Entries": [
+        "Weapon Test AC Tetrapod Viento"
+      ]
+    },
+    {
+      "ID": 930000019,
+      "Entries": [
+        "Weapon Test AC Tetrapod Sampu"
+      ]
+    },
+    {
+      "ID": 930000020,
+      "Entries": [
+        "Weapon Test AC Tetrapod Coquillett"
+      ]
+    },
+    {
+      "ID": 930000021,
+      "Entries": [
+        "Weapon Test AC Tetrapod Duckett"
+      ]
+    },
+    {
+      "ID": 930000022,
+      "Entries": [
+        "Weapon Test AC Tetrapod Kyoriku"
+      ]
+    },
+    {
+      "ID": 930000023,
+      "Entries": [
+        "Weapon Test AC Tetrapod Kyorai"
+      ]
+    },
+    {
+      "ID": 930000024,
+      "Entries": [
+        "Weapon Test AC Tetrapod Therapist"
+      ]
+    },
+    {
+      "ID": 930000025,
+      "Entries": [
+        "Weapon Test AC Tetrapod P19MLT-04"
+      ]
+    },
+    {
+      "ID": 930000026,
+      "Entries": [
+        "Weapon Test AC Tetrapod P08SPL-06"
+      ]
+    },
+    {
+      "ID": 930000027,
+      "Entries": [
+        "Weapon Test AC Tetrapod Iridium"
+      ]
+    },
+    {
+      "ID": 930000028,
+      "Entries": [
+        "Weapon Test AC Tetrapod KRSV"
+      ]
+    },
+    {
+      "ID": 930000029,
+      "Entries": [
+        "Weapon Test AC Tetrapod 760PR"
+      ]
+    },
+    {
+      "ID": 930000030,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66LRB"
+      ]
+    },
+    {
+      "ID": 930000031,
+      "Entries": [
+        "Weapon Test AC Tetrapod Wuerger"
+      ]
+    },
+    {
+      "ID": 930000032,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66LS"
+      ]
+    },
+    {
+      "ID": 930000033,
+      "Entries": [
+        "Weapon Test AC Tetrapod Nebula"
+      ]
+    },
+    {
+      "ID": 930000034,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66LH"
+      ]
+    },
+    {
+      "ID": 930000035,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66LR"
+      ]
+    },
+    {
+      "ID": 930000036,
+      "Entries": [
+        "Weapon Test AC Tetrapod WLT-011"
+      ]
+    },
+    {
+      "ID": 930000037,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66LRA"
+      ]
+    },
+    {
+      "ID": 930000038,
+      "Entries": [
+        "Weapon Test AC Tetrapod GU-Q1"
+      ]
+    },
+    {
+      "ID": 930000039,
+      "Entries": [
+        "Weapon Test AC Tetrapod GU-A2"
+      ]
+    },
+    {
+      "ID": 930000040,
+      "Entries": [
+        "Weapon Test AC Tetrapod Bad Cook"
+      ]
+    },
+    {
+      "ID": 930000041,
+      "Entries": [
+        "Weapon Test AC Tetrapod JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 930000042,
+      "Entries": [
+        "Weapon Test AC Tetrapod 66-EG"
+      ]
+    },
+    {
+      "ID": 930000043,
+      "Entries": [
+        "Weapon Test AC Tetrapod Aperitif"
+      ]
+    },
+    {
+      "ID": 930000999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 930001000,
+      "Entries": [
+        "Weapon Test AC Tetrapod Ashmead"
+      ]
+    },
+    {
+      "ID": 930001001,
+      "Entries": [
+        "Weapon Test AC Tetrapod BU-TT/A"
+      ]
+    },
+    {
+      "ID": 930001002,
+      "Entries": [
+        "Weapon Test AC Tetrapod 770LB"
+      ]
+    },
+    {
+      "ID": 930001003,
+      "Entries": [
+        "Weapon Test AC Tetrapod WLT 101"
+      ]
+    },
+    {
+      "ID": 930001004,
+      "Entries": [
+        "Weapon Test AC Tetrapod 67LD"
+      ]
+    },
+    {
+      "ID": 930001005,
+      "Entries": [
+        "Weapon Test AC Tetrapod Moonlight"
+      ]
+    },
+    {
+      "ID": 930001006,
+      "Entries": [
+        "Weapon Test AC Tetrapod 774LS"
+      ]
+    },
+    {
+      "ID": 930001007,
+      "Entries": [
+        "Weapon Test AC Tetrapod Tai-Yang-Shou"
+      ]
+    },
+    {
+      "ID": 930001008,
+      "Entries": [
+        "Weapon Test AC Tetrapod 67LLA"
+      ]
+    },
+    {
+      "ID": 930001009,
+      "Entries": [
+        "Weapon Test AC Tetrapod 67EB"
+      ]
+    },
+    {
+      "ID": 930001010,
+      "Entries": [
+        "Weapon Test AC Tetrapod Double Trouble"
+      ]
+    },
+    {
+      "ID": 930001011,
+      "Entries": [
+        "Weapon Test AC Tetrapod HMMR"
+      ]
+    },
+    {
+      "ID": 930001999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 930002000,
+      "Entries": [
+        "Weapon Test AC Tetrapod Earshot"
+      ]
+    },
+    {
+      "ID": 930002001,
+      "Entries": [
+        "Weapon Test AC Tetrapod Morley"
+      ]
+    },
+    {
+      "ID": 930002002,
+      "Entries": [
+        "Weapon Test AC Tetrapod 703PM"
+      ]
+    },
+    {
+      "ID": 930002003,
+      "Entries": [
+        "Weapon Test AC Tetrapod 706PM"
+      ]
+    },
+    {
+      "ID": 930002004,
+      "Entries": [
+        "Weapon Test AC Tetrapod 70VPM"
+      ]
+    },
+    {
+      "ID": 930002005,
+      "Entries": [
+        "Weapon Test AC Tetrapod P05ACT-02"
+      ]
+    },
+    {
+      "ID": 930002006,
+      "Entries": [
+        "Weapon Test AC Tetrapod P04ACT-01"
+      ]
+    },
+    {
+      "ID": 930002007,
+      "Entries": [
+        "Weapon Test AC Tetrapod NGI 006"
+      ]
+    },
+    {
+      "ID": 930002008,
+      "Entries": [
+        "Weapon Test AC Tetrapod P07VTC-12"
+      ]
+    },
+    {
+      "ID": 930002009,
+      "Entries": [
+        "Weapon Test AC Tetrapod P03VTC-08"
+      ]
+    },
+    {
+      "ID": 930002010,
+      "Entries": [
+        "Weapon Test AC Tetrapod P01VTC-04"
+      ]
+    },
+    {
+      "ID": 930002011,
+      "Entries": [
+        "Weapon Test AC Tetrapod JVLN BETA"
+      ]
+    },
+    {
+      "ID": 930002012,
+      "Entries": [
+        "Weapon Test AC Tetrapod 30060000 Unused"
+      ]
+    },
+    {
+      "ID": 930002013,
+      "Entries": [
+        "Weapon Test AC Tetrapod Soup"
+      ]
+    },
+    {
+      "ID": 930002014,
+      "Entries": [
+        "Weapon Test AC Tetrapod P03MLT-06"
+      ]
+    },
+    {
+      "ID": 930002015,
+      "Entries": [
+        "Weapon Test AC Tetrapod P20MLT-04"
+      ]
+    },
+    {
+      "ID": 930002016,
+      "Entries": [
+        "Weapon Test AC Tetrapod P05MLT-10"
+      ]
+    },
+    {
+      "ID": 930002017,
+      "Entries": [
+        "Weapon Test AC Tetrapod P32DUO-03"
+      ]
+    },
+    {
+      "ID": 930002018,
+      "Entries": [
+        "Weapon Test AC Tetrapod P08DUO-03"
+      ]
+    },
+    {
+      "ID": 930002019,
+      "Entries": [
+        "Weapon Test AC Tetrapod P17SPL-16"
+      ]
+    },
+    {
+      "ID": 930002020,
+      "Entries": [
+        "Weapon Test AC Tetrapod P31DUO-02"
+      ]
+    },
+    {
+      "ID": 930002021,
+      "Entries": [
+        "Weapon Test AC Tetrapod P19SPL-12"
+      ]
+    },
+    {
+      "ID": 930002022,
+      "Entries": [
+        "Weapon Test AC Tetrapod P16SPL-08"
+      ]
+    },
+    {
+      "ID": 930002023,
+      "Entries": [
+        "Weapon Test AC Tetrapod P29CNT"
+      ]
+    },
+    {
+      "ID": 930002024,
+      "Entries": [
+        "Weapon Test AC Tetrapod Trueno"
+      ]
+    },
+    {
+      "ID": 930002025,
+      "Entries": [
+        "Weapon Test AC Tetrapod Delivery Boy"
+      ]
+    },
+    {
+      "ID": 930002026,
+      "Entries": [
+        "Weapon Test AC Tetrapod Songbirds"
+      ]
+    },
+    {
+      "ID": 930002027,
+      "Entries": [
+        "Weapon Test AC Tetrapod Fasan/60E"
+      ]
+    },
+    {
+      "ID": 930002028,
+      "Entries": [
+        "Weapon Test AC Tetrapod 60LCS"
+      ]
+    },
+    {
+      "ID": 930002029,
+      "Entries": [
+        "Weapon Test AC Tetrapod 60LCA"
+      ]
+    },
+    {
+      "ID": 930002030,
+      "Entries": [
+        "Weapon Test AC Tetrapod Kranich/60Z"
+      ]
+    },
+    {
+      "ID": 930002031,
+      "Entries": [
+        "Weapon Test AC Tetrapod 60LCD"
+      ]
+    },
+    {
+      "ID": 930002032,
+      "Entries": [
+        "Weapon Test AC Tetrapod 30350000 Unused"
+      ]
+    },
+    {
+      "ID": 930002033,
+      "Entries": [
+        "Weapon Test AC Tetrapod Aurora"
+      ]
+    },
+    {
+      "ID": 930002034,
+      "Entries": [
+        "Weapon Test AC Tetrapod 30350200 Unused"
+      ]
+    },
+    {
+      "ID": 930002035,
+      "Entries": [
+        "Weapon Test AC Tetrapod Huxley"
+      ]
+    },
+    {
+      "ID": 930002036,
+      "Entries": [
+        "Weapon Test AC Tetrapod Orbit"
+      ]
+    },
+    {
+      "ID": 930002037,
+      "Entries": [
+        "Weapon Test AC Tetrapod 700LD"
+      ]
+    },
+    {
+      "ID": 930002038,
+      "Entries": [
+        "Weapon Test AC Tetrapod 60LT"
+      ]
+    },
+    {
+      "ID": 930002039,
+      "Entries": [
+        "Weapon Test AC Tetrapod Eule/60D"
+      ]
+    },
+    {
+      "ID": 930002040,
+      "Entries": [
+        "Weapon Test AC Tetrapod 60SNA"
+      ]
+    },
+    {
+      "ID": 930002999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 930003000,
+      "Entries": [
+        "Weapon Test AC Tetrapod 61PB"
+      ]
+    },
+    {
+      "ID": 930003001,
+      "Entries": [
+        "Weapon Test AC Tetrapod SU-Q5"
+      ]
+    },
+    {
+      "ID": 930003002,
+      "Entries": [
+        "Weapon Test AC Tetrapod 61PS"
+      ]
+    },
+    {
+      "ID": 930003003,
+      "Entries": [
+        "Weapon Test AC Tetrapod SU-R8"
+      ]
+    },
+    {
+      "ID": 930003004,
+      "Entries": [
+        "Weapon Test AC Tetrapod SU-TT/C"
+      ]
+    },
+    {
+      "ID": 930003005,
+      "Entries": [
+        "Weapon Test AC Tetrapod NGI 028"
+      ]
+    },
+    {
+      "ID": 930003006,
+      "Entries": [
+        "Weapon Test AC Tetrapod 61PSA"
+      ]
+    },
+    {
+      "ID": 939999999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 940000000,
+      "Entries": [
+        "Weapon Test AC Tank Gou-Chen"
+      ]
+    },
+    {
+      "ID": 940000001,
+      "Entries": [
+        "Weapon Test AC Tank Dizzy"
+      ]
+    },
+    {
+      "ID": 940000002,
+      "Entries": [
+        "Weapon Test AC Tank Little Gem"
+      ]
+    },
+    {
+      "ID": 940000003,
+      "Entries": [
+        "Weapon Test AC Tank Majestic"
+      ]
+    },
+    {
+      "ID": 940000004,
+      "Entries": [
+        "Weapon Test AC Tank Xuan-Ge"
+      ]
+    },
+    {
+      "ID": 940000005,
+      "Entries": [
+        "Weapon Test AC Tank Sweet Sixteen"
+      ]
+    },
+    {
+      "ID": 940000006,
+      "Entries": [
+        "Weapon Test AC Tank Haldeman"
+      ]
+    },
+    {
+      "ID": 940000007,
+      "Entries": [
+        "Weapon Test AC Tank Zimmerman"
+      ]
+    },
+    {
+      "ID": 940000008,
+      "Entries": [
+        "Weapon Test AC Tank Ransetsu-RF"
+      ]
+    },
+    {
+      "ID": 940000009,
+      "Entries": [
+        "Weapon Test AC Tank Curtis"
+      ]
+    },
+    {
+      "ID": 940000010,
+      "Entries": [
+        "Weapon Test AC Tank Harris"
+      ]
+    },
+    {
+      "ID": 940000011,
+      "Entries": [
+        "Weapon Test AC Tank Ransetsu-AR"
+      ]
+    },
+    {
+      "ID": 940000012,
+      "Entries": [
+        "Weapon Test AC Tank Turner"
+      ]
+    },
+    {
+      "ID": 940000013,
+      "Entries": [
+        "Weapon Test AC Tank Scudder"
+      ]
+    },
+    {
+      "ID": 940000014,
+      "Entries": [
+        "Weapon Test AC Tank Etsujin"
+      ]
+    },
+    {
+      "ID": 940000015,
+      "Entries": [
+        "Weapon Test AC Tank Ludlow"
+      ]
+    },
+    {
+      "ID": 940000016,
+      "Entries": [
+        "Weapon Test AC Tank Chang-Chen"
+      ]
+    },
+    {
+      "ID": 940000017,
+      "Entries": [
+        "Weapon Test AC Tank Hu-Ben"
+      ]
+    },
+    {
+      "ID": 940000018,
+      "Entries": [
+        "Weapon Test AC Tank Viento"
+      ]
+    },
+    {
+      "ID": 940000019,
+      "Entries": [
+        "Weapon Test AC Tank Sampu"
+      ]
+    },
+    {
+      "ID": 940000020,
+      "Entries": [
+        "Weapon Test AC Tank Coquillett"
+      ]
+    },
+    {
+      "ID": 940000021,
+      "Entries": [
+        "Weapon Test AC Tank Duckett"
+      ]
+    },
+    {
+      "ID": 940000022,
+      "Entries": [
+        "Weapon Test AC Tank Kyoriku"
+      ]
+    },
+    {
+      "ID": 940000023,
+      "Entries": [
+        "Weapon Test AC Tank Kyorai"
+      ]
+    },
+    {
+      "ID": 940000024,
+      "Entries": [
+        "Weapon Test AC Tank Therapist"
+      ]
+    },
+    {
+      "ID": 940000025,
+      "Entries": [
+        "Weapon Test AC Tank P19MLT-04"
+      ]
+    },
+    {
+      "ID": 940000026,
+      "Entries": [
+        "Weapon Test AC Tank P08SPL-06"
+      ]
+    },
+    {
+      "ID": 940000027,
+      "Entries": [
+        "Weapon Test AC Tank Iridium"
+      ]
+    },
+    {
+      "ID": 940000028,
+      "Entries": [
+        "Weapon Test AC Tank KRSV"
+      ]
+    },
+    {
+      "ID": 940000029,
+      "Entries": [
+        "Weapon Test AC Tank 760PR"
+      ]
+    },
+    {
+      "ID": 940000030,
+      "Entries": [
+        "Weapon Test AC Tank 66LRB"
+      ]
+    },
+    {
+      "ID": 940000031,
+      "Entries": [
+        "Weapon Test AC Tank Wuerger"
+      ]
+    },
+    {
+      "ID": 940000032,
+      "Entries": [
+        "Weapon Test AC Tank 66LS"
+      ]
+    },
+    {
+      "ID": 940000033,
+      "Entries": [
+        "Weapon Test AC Tank Nebula"
+      ]
+    },
+    {
+      "ID": 940000034,
+      "Entries": [
+        "Weapon Test AC Tank 66LH"
+      ]
+    },
+    {
+      "ID": 940000035,
+      "Entries": [
+        "Weapon Test AC Tank 66LR"
+      ]
+    },
+    {
+      "ID": 940000036,
+      "Entries": [
+        "Weapon Test AC Tank WLT-011"
+      ]
+    },
+    {
+      "ID": 940000037,
+      "Entries": [
+        "Weapon Test AC Tank 66LRA"
+      ]
+    },
+    {
+      "ID": 940000038,
+      "Entries": [
+        "Weapon Test AC Tank GU-Q1"
+      ]
+    },
+    {
+      "ID": 940000039,
+      "Entries": [
+        "Weapon Test AC Tank GU-A2"
+      ]
+    },
+    {
+      "ID": 940000040,
+      "Entries": [
+        "Weapon Test AC Tank Bad Cook"
+      ]
+    },
+    {
+      "ID": 940000041,
+      "Entries": [
+        "Weapon Test AC Tank JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 940000042,
+      "Entries": [
+        "Weapon Test AC Tank 66-EG"
+      ]
+    },
+    {
+      "ID": 940000043,
+      "Entries": [
+        "Weapon Test AC Tank Aperitif"
+      ]
+    },
+    {
+      "ID": 940000999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 940001000,
+      "Entries": [
+        "Weapon Test AC Tank Ashmead"
+      ]
+    },
+    {
+      "ID": 940001001,
+      "Entries": [
+        "Weapon Test AC Tank BU-TT/A"
+      ]
+    },
+    {
+      "ID": 940001002,
+      "Entries": [
+        "Weapon Test AC Tank 770LB"
+      ]
+    },
+    {
+      "ID": 940001003,
+      "Entries": [
+        "Weapon Test AC Tank WLT 101"
+      ]
+    },
+    {
+      "ID": 940001004,
+      "Entries": [
+        "Weapon Test AC Tank 67LD"
+      ]
+    },
+    {
+      "ID": 940001005,
+      "Entries": [
+        "Weapon Test AC Tank Moonlight"
+      ]
+    },
+    {
+      "ID": 940001006,
+      "Entries": [
+        "Weapon Test AC Tank 774LS"
+      ]
+    },
+    {
+      "ID": 940001007,
+      "Entries": [
+        "Weapon Test AC Tank Tai-Yang-Shou"
+      ]
+    },
+    {
+      "ID": 940001008,
+      "Entries": [
+        "Weapon Test AC Tank 67LLA"
+      ]
+    },
+    {
+      "ID": 940001009,
+      "Entries": [
+        "Weapon Test AC Tank 67EB"
+      ]
+    },
+    {
+      "ID": 940001010,
+      "Entries": [
+        "Weapon Test AC Tank Double Trouble"
+      ]
+    },
+    {
+      "ID": 940001011,
+      "Entries": [
+        "Weapon Test AC Tank HMMR"
+      ]
+    },
+    {
+      "ID": 940001999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 940002000,
+      "Entries": [
+        "Weapon Test AC Tank Earshot"
+      ]
+    },
+    {
+      "ID": 940002001,
+      "Entries": [
+        "Weapon Test AC Tank Morley"
+      ]
+    },
+    {
+      "ID": 940002002,
+      "Entries": [
+        "Weapon Test AC Tank 703PM"
+      ]
+    },
+    {
+      "ID": 940002003,
+      "Entries": [
+        "Weapon Test AC Tank 706PM"
+      ]
+    },
+    {
+      "ID": 940002004,
+      "Entries": [
+        "Weapon Test AC Tank 70VPM"
+      ]
+    },
+    {
+      "ID": 940002005,
+      "Entries": [
+        "Weapon Test AC Tank P05ACT-02"
+      ]
+    },
+    {
+      "ID": 940002006,
+      "Entries": [
+        "Weapon Test AC Tank P04ACT-01"
+      ]
+    },
+    {
+      "ID": 940002007,
+      "Entries": [
+        "Weapon Test AC Tank NGI 006"
+      ]
+    },
+    {
+      "ID": 940002008,
+      "Entries": [
+        "Weapon Test AC Tank P07VTC-12"
+      ]
+    },
+    {
+      "ID": 940002009,
+      "Entries": [
+        "Weapon Test AC Tank P03VTC-08"
+      ]
+    },
+    {
+      "ID": 940002010,
+      "Entries": [
+        "Weapon Test AC Tank P01VTC-04"
+      ]
+    },
+    {
+      "ID": 940002011,
+      "Entries": [
+        "Weapon Test AC Tank JVLN BETA"
+      ]
+    },
+    {
+      "ID": 940002012,
+      "Entries": [
+        "Weapon Test AC Tank 30060000 Unused"
+      ]
+    },
+    {
+      "ID": 940002013,
+      "Entries": [
+        "Weapon Test AC Tank Soup"
+      ]
+    },
+    {
+      "ID": 940002014,
+      "Entries": [
+        "Weapon Test AC Tank P03MLT-06"
+      ]
+    },
+    {
+      "ID": 940002015,
+      "Entries": [
+        "Weapon Test AC Tank P20MLT-04"
+      ]
+    },
+    {
+      "ID": 940002016,
+      "Entries": [
+        "Weapon Test AC Tank P05MLT-10"
+      ]
+    },
+    {
+      "ID": 940002017,
+      "Entries": [
+        "Weapon Test AC Tank P32DUO-03"
+      ]
+    },
+    {
+      "ID": 940002018,
+      "Entries": [
+        "Weapon Test AC Tank P08DUO-03"
+      ]
+    },
+    {
+      "ID": 940002019,
+      "Entries": [
+        "Weapon Test AC Tank P17SPL-16"
+      ]
+    },
+    {
+      "ID": 940002020,
+      "Entries": [
+        "Weapon Test AC Tank P31DUO-02"
+      ]
+    },
+    {
+      "ID": 940002021,
+      "Entries": [
+        "Weapon Test AC Tank P19SPL-12"
+      ]
+    },
+    {
+      "ID": 940002022,
+      "Entries": [
+        "Weapon Test AC Tank P16SPL-08"
+      ]
+    },
+    {
+      "ID": 940002023,
+      "Entries": [
+        "Weapon Test AC Tank P29CNT"
+      ]
+    },
+    {
+      "ID": 940002024,
+      "Entries": [
+        "Weapon Test AC Tank Trueno"
+      ]
+    },
+    {
+      "ID": 940002025,
+      "Entries": [
+        "Weapon Test AC Tank Delivery Boy"
+      ]
+    },
+    {
+      "ID": 940002026,
+      "Entries": [
+        "Weapon Test AC Tank Songbirds"
+      ]
+    },
+    {
+      "ID": 940002027,
+      "Entries": [
+        "Weapon Test AC Tank Fasan/60E"
+      ]
+    },
+    {
+      "ID": 940002028,
+      "Entries": [
+        "Weapon Test AC Tank 60LCS"
+      ]
+    },
+    {
+      "ID": 940002029,
+      "Entries": [
+        "Weapon Test AC Tank 60LCA"
+      ]
+    },
+    {
+      "ID": 940002030,
+      "Entries": [
+        "Weapon Test AC Tank Kranich/60Z"
+      ]
+    },
+    {
+      "ID": 940002031,
+      "Entries": [
+        "Weapon Test AC Tank 60LCD"
+      ]
+    },
+    {
+      "ID": 940002032,
+      "Entries": [
+        "Weapon Test AC Tank 30350000 Unused"
+      ]
+    },
+    {
+      "ID": 940002033,
+      "Entries": [
+        "Weapon Test AC Tank Aurora"
+      ]
+    },
+    {
+      "ID": 940002034,
+      "Entries": [
+        "Weapon Test AC Tank 30350200 Unused"
+      ]
+    },
+    {
+      "ID": 940002035,
+      "Entries": [
+        "Weapon Test AC Tank Huxley"
+      ]
+    },
+    {
+      "ID": 940002036,
+      "Entries": [
+        "Weapon Test AC Tank Orbit"
+      ]
+    },
+    {
+      "ID": 940002037,
+      "Entries": [
+        "Weapon Test AC Tank 700LD"
+      ]
+    },
+    {
+      "ID": 940002038,
+      "Entries": [
+        "Weapon Test AC Tank 60LT"
+      ]
+    },
+    {
+      "ID": 940002039,
+      "Entries": [
+        "Weapon Test AC Tank Eule/60D"
+      ]
+    },
+    {
+      "ID": 940002040,
+      "Entries": [
+        "Weapon Test AC Tank 60SNA"
+      ]
+    },
+    {
+      "ID": 940002999,
+      "Entries": [
+        "Invalid Assembly"
+      ]
+    },
+    {
+      "ID": 940003000,
+      "Entries": [
+        "Weapon Test AC Tank 61PB"
+      ]
+    },
+    {
+      "ID": 940003001,
+      "Entries": [
+        "Weapon Test AC Tank SU-Q5"
+      ]
+    },
+    {
+      "ID": 940003002,
+      "Entries": [
+        "Weapon Test AC Tank 61PS"
+      ]
+    },
+    {
+      "ID": 940003003,
+      "Entries": [
+        "Weapon Test AC Tank SU-R8"
+      ]
+    },
+    {
+      "ID": 940003004,
+      "Entries": [
+        "Weapon Test AC Tank SU-TT/C"
+      ]
+    },
+    {
+      "ID": 940003005,
+      "Entries": [
+        "Weapon Test AC Tank NGI 028"
+      ]
+    },
+    {
+      "ID": 940003006,
+      "Entries": [
+        "Weapon Test AC Tank 61PSA"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "Name": "MixcraftMagicParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Whirlwind of Flame [FFF]"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "Magic Kernel [MMM]"
+      ]
+    },
+    {
+      "ID": 80020,
+      "Entries": [
+        "Lightning Step [LLL]"
+      ]
+    },
+    {
+      "ID": 80030,
+      "Entries": [
+        "Divine Shield [HHH]"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Homing Wraith Flame [MMF]"
+      ]
+    },
+    {
+      "ID": 80101,
+      "Entries": [
+        "Homing Wraith Flame [MFF]"
+      ]
+    },
+    {
+      "ID": 80102,
+      "Entries": [
+        "Homing Wraith Flame [MFM]"
+      ]
+    },
+    {
+      "ID": 80103,
+      "Entries": [
+        "Homing Wraith Flame [FFM]"
+      ]
+    },
+    {
+      "ID": 80104,
+      "Entries": [
+        "Homing Wraith Flame [FMM]"
+      ]
+    },
+    {
+      "ID": 80105,
+      "Entries": [
+        "Homing Wraith Flame [FMF]"
+      ]
+    },
+    {
+      "ID": 80110,
+      "Entries": [
+        "Magic Blade [MML]"
+      ]
+    },
+    {
+      "ID": 80111,
+      "Entries": [
+        "Magic Blade [MLL]"
+      ]
+    },
+    {
+      "ID": 80112,
+      "Entries": [
+        "Magic Blade [MLM]"
+      ]
+    },
+    {
+      "ID": 80113,
+      "Entries": [
+        "Magic Blade [LLM]"
+      ]
+    },
+    {
+      "ID": 80114,
+      "Entries": [
+        "Magic Blade [LMM]"
+      ]
+    },
+    {
+      "ID": 80115,
+      "Entries": [
+        "Magic Blade [LML]"
+      ]
+    },
+    {
+      "ID": 80120,
+      "Entries": [
+        "Cerulean Veil [MMH]"
+      ]
+    },
+    {
+      "ID": 80121,
+      "Entries": [
+        "Cerulean Veil [MHH]"
+      ]
+    },
+    {
+      "ID": 80122,
+      "Entries": [
+        "Cerulean Veil [MHM]"
+      ]
+    },
+    {
+      "ID": 80123,
+      "Entries": [
+        "Cerulean Veil [HHM]"
+      ]
+    },
+    {
+      "ID": 80124,
+      "Entries": [
+        "Cerulean Veil [HMM]"
+      ]
+    },
+    {
+      "ID": 80125,
+      "Entries": [
+        "Cerulean Veil [HMH]"
+      ]
+    },
+    {
+      "ID": 80130,
+      "Entries": [
+        "Flamebolt [FFL]"
+      ]
+    },
+    {
+      "ID": 80131,
+      "Entries": [
+        "Flamebolt [FLL]"
+      ]
+    },
+    {
+      "ID": 80132,
+      "Entries": [
+        "Flamebolt [FLF]"
+      ]
+    },
+    {
+      "ID": 80133,
+      "Entries": [
+        "Flamebolt [LLF]"
+      ]
+    },
+    {
+      "ID": 80134,
+      "Entries": [
+        "Flamebolt [LFF]"
+      ]
+    },
+    {
+      "ID": 80135,
+      "Entries": [
+        "Flamebolt [LFL]"
+      ]
+    },
+    {
+      "ID": 80140,
+      "Entries": [
+        "Warming Torch [FFH]"
+      ]
+    },
+    {
+      "ID": 80141,
+      "Entries": [
+        "Warming Torch [FHH]"
+      ]
+    },
+    {
+      "ID": 80142,
+      "Entries": [
+        "Warming Torch [FHF]"
+      ]
+    },
+    {
+      "ID": 80143,
+      "Entries": [
+        "Warming Torch [HHF]"
+      ]
+    },
+    {
+      "ID": 80144,
+      "Entries": [
+        "Warming Torch [HFF]"
+      ]
+    },
+    {
+      "ID": 80145,
+      "Entries": [
+        "Warming Torch [HFH]"
+      ]
+    },
+    {
+      "ID": 80150,
+      "Entries": [
+        "Lightning Parry [LLH]"
+      ]
+    },
+    {
+      "ID": 80151,
+      "Entries": [
+        "Lightning Parry [LHH]"
+      ]
+    },
+    {
+      "ID": 80152,
+      "Entries": [
+        "Lightning Parry [LHL]"
+      ]
+    },
+    {
+      "ID": 80153,
+      "Entries": [
+        "Lightning Parry [HHL]"
+      ]
+    },
+    {
+      "ID": 80154,
+      "Entries": [
+        "Lightning Parry [HLL]"
+      ]
+    },
+    {
+      "ID": 80155,
+      "Entries": [
+        "Lightning Parry [HLH]"
+      ]
+    },
+    {
+      "ID": 80200,
+      "Entries": [
+        "Gravity Explosion [MFL]"
+      ]
+    },
+    {
+      "ID": 80201,
+      "Entries": [
+        "Gravity Explosion [MLF]"
+      ]
+    },
+    {
+      "ID": 80202,
+      "Entries": [
+        "Gravity Explosion [FML]"
+      ]
+    },
+    {
+      "ID": 80203,
+      "Entries": [
+        "Gravity Explosion [FLM]"
+      ]
+    },
+    {
+      "ID": 80204,
+      "Entries": [
+        "Gravity Explosion [LMF]"
+      ]
+    },
+    {
+      "ID": 80205,
+      "Entries": [
+        "Gravity Explosion [LFM]"
+      ]
+    },
+    {
+      "ID": 80210,
+      "Entries": [
+        "Elemental Breath [MFH]"
+      ]
+    },
+    {
+      "ID": 80211,
+      "Entries": [
+        "Elemental Breath [MHF]"
+      ]
+    },
+    {
+      "ID": 80212,
+      "Entries": [
+        "Elemental Breath [FMH]"
+      ]
+    },
+    {
+      "ID": 80213,
+      "Entries": [
+        "Elemental Breath [FHM]"
+      ]
+    },
+    {
+      "ID": 80214,
+      "Entries": [
+        "Elemental Breath [HMF]"
+      ]
+    },
+    {
+      "ID": 80215,
+      "Entries": [
+        "Elemental Breath [HFM]"
+      ]
+    },
+    {
+      "ID": 80220,
+      "Entries": [
+        "Ice Cacoon [MLH]"
+      ]
+    },
+    {
+      "ID": 80221,
+      "Entries": [
+        "Ice Cacoon [MHL]"
+      ]
+    },
+    {
+      "ID": 80222,
+      "Entries": [
+        "Ice Cacoon [LMH]"
+      ]
+    },
+    {
+      "ID": 80223,
+      "Entries": [
+        "Ice Cacoon [LHM]"
+      ]
+    },
+    {
+      "ID": 80224,
+      "Entries": [
+        "Ice Cacoon [HML]"
+      ]
+    },
+    {
+      "ID": 80225,
+      "Entries": [
+        "Ice Cacoon [HLM]"
+      ]
+    },
+    {
+      "ID": 80230,
+      "Entries": [
+        "Lightning Rod [FLH]"
+      ]
+    },
+    {
+      "ID": 80231,
+      "Entries": [
+        "Lightning Rod [FHL]"
+      ]
+    },
+    {
+      "ID": 80232,
+      "Entries": [
+        "Lightning Rod [LFH]"
+      ]
+    },
+    {
+      "ID": 80233,
+      "Entries": [
+        "Lightning Rod [LHF]"
+      ]
+    },
+    {
+      "ID": 80234,
+      "Entries": [
+        "Lightning Rod [HFL]"
+      ]
+    },
+    {
+      "ID": 80235,
+      "Entries": [
+        "Lightning Rod [HLF]"
+      ]
+    }
+  ]
+}

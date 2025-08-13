@@ -1,0 +1,227 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_DestroyedSeType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Bullet"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Explosion"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Blade"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "item -- アイテム"
+      ]
+    }
+  ]
+}

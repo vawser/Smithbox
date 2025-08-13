@@ -1,0 +1,173 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Basic +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Basic +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Basic +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Basic +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Basic +5"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[FNR] Replenishment bullet item (live bullet)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[FNR] Replenishment bullet item (EN)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[FNR] Beacon"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[FNR] Smoke grenade"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[FNR] Flare"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[FNR] Grenade"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "[FNR] Est bottle imitation test"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "[FNR] Grenade_Kira test_Cracker"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[FNR] Grenade_Kira test_Throwing drone"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "iron"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[FNR] +0 Unreinforced"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[FNR] +1"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[FNR] +2"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "[FNR] +3"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "[FNR] +4"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "[FNR] +5"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[FNR] +6"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[FNR] +7"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "[FNR] +8"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "[FNR] +9"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[FNR] +10"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[FNR test] Weapon synthesis"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,929 @@
+{
+  "Name": "mapobjectinstanceparam_m10_04_00_00",
+  "Entries": [
+    {
+      "ID": 10040400,
+      "Entries": [
+        "【Door】 Cat House Entrance"
+      ]
+    },
+    {
+      "ID": 10040410,
+      "Entries": [
+        "【Key door】 Elder's entrance"
+      ]
+    },
+    {
+      "ID": 10040420,
+      "Entries": [
+        "【Key door】 Iron bar door of the side road of the well"
+      ]
+    },
+    {
+      "ID": 10040450,
+      "Entries": [
+        "【Key door】 Blacksmith Entrance"
+      ]
+    },
+    {
+      "ID": 10040600,
+      "Entries": [
+        "[White door] multi-section wall 1"
+      ]
+    },
+    {
+      "ID": 10040605,
+      "Entries": [
+        "[White door] multi-section wall 2"
+      ]
+    },
+    {
+      "ID": 10040610,
+      "Entries": [
+        "[White door] multi-section wall 3"
+      ]
+    },
+    {
+      "ID": 10040615,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040625,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040635,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10040650,
+      "Entries": [
+        "【Bonfire】 Bonfire"
+      ]
+    },
+    {
+      "ID": 10040700,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10040701,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10041000,
+      "Entries": [
+        "Damipoli front for obelisk_key guide"
+      ]
+    },
+    {
+      "ID": 10041010,
+      "Entries": [
+        "Damipoli for obelisk key guide"
+      ]
+    },
+    {
+      "ID": 10041015,
+      "Entries": [
+        "[Lever] for moving the door to the giant forest _ Maduro side wall hole"
+      ]
+    },
+    {
+      "ID": 10041020,
+      "Entries": [
+        "[Lever] for moving the door to the giant forest _ giant side wall hole"
+      ]
+    },
+    {
+      "ID": 10041100,
+      "Entries": [
+        "Pledge: Stone Monument for the Strong"
+      ]
+    },
+    {
+      "ID": 10041300,
+      "Entries": [
+        "Ladder: Long ladder that the ladder shop places"
+      ]
+    },
+    {
+      "ID": 10041305,
+      "Entries": [
+        "Ladder: Ladder that the ladder place: Inside"
+      ]
+    },
+    {
+      "ID": 10041310,
+      "Entries": [
+        "Ladder: Short ladder"
+      ]
+    },
+    {
+      "ID": 10041315,
+      "Entries": [
+        "Ladder of the pit"
+      ]
+    },
+    {
+      "ID": 10041320,
+      "Entries": [
+        "Ladder in the building"
+      ]
+    },
+    {
+      "ID": 10041325,
+      "Entries": [
+        "Ladder: Long ladder that the ladder shop places"
+      ]
+    },
+    {
+      "ID": 10041330,
+      "Entries": [
+        "Ladder: Ladder that the ladder place: Inside"
+      ]
+    },
+    {
+      "ID": 10041335,
+      "Entries": [
+        "Ladder: Short ladder"
+      ]
+    },
+    {
+      "ID": 10042105,
+      "Entries": [
+        "【Madura】Well Event Strike Stone"
+      ]
+    },
+    {
+      "ID": 10042200,
+      "Entries": [
+        "Ladder_Rock"
+      ]
+    },
+    {
+      "ID": 10042210,
+      "Entries": [
+        "Shanalot_Rock"
+      ]
+    },
+    {
+      "ID": 10042220,
+      "Entries": [
+        "Material shop_rock"
+      ]
+    },
+    {
+      "ID": 10042230,
+      "Entries": [
+        "Cat_Pot"
+      ]
+    },
+    {
+      "ID": 10042231,
+      "Entries": [
+        "Cat_Chair"
+      ]
+    },
+    {
+      "ID": 10042232,
+      "Entries": [
+        "Cat_Straddle Wooden"
+      ]
+    },
+    {
+      "ID": 10042233,
+      "Entries": [
+        "Cat_Desk"
+      ]
+    },
+    {
+      "ID": 10043000,
+      "Entries": [
+        "Revolving door"
+      ]
+    },
+    {
+      "ID": 10043010,
+      "Entries": [
+        "Gimmick door to giant forest"
+      ]
+    },
+    {
+      "ID": 10043020,
+      "Entries": [
+        "For when the _NPC of the rotating door start gimmick dies"
+      ]
+    },
+    {
+      "ID": 10043600,
+      "Entries": [
+        "World Map"
+      ]
+    },
+    {
+      "ID": 10043610,
+      "Entries": [
+        "Flame 1 on the world map"
+      ]
+    },
+    {
+      "ID": 10043620,
+      "Entries": [
+        "Flame 2 on the world map"
+      ]
+    },
+    {
+      "ID": 10043630,
+      "Entries": [
+        "Flame 3 on the world map"
+      ]
+    },
+    {
+      "ID": 10043640,
+      "Entries": [
+        "Flame 4 on the world map"
+      ]
+    },
+    {
+      "ID": 10043650,
+      "Entries": [
+        "Flame 5 on the world map"
+      ]
+    },
+    {
+      "ID": 10043660,
+      "Entries": [
+        "Flame 6 on the world map"
+      ]
+    },
+    {
+      "ID": 10043670,
+      "Entries": [
+        "Flame 7 on the world map"
+      ]
+    },
+    {
+      "ID": 10043680,
+      "Entries": [
+        "Flame 8 on the world map"
+      ]
+    },
+    {
+      "ID": 10043700,
+      "Entries": [
+        "Scaffolding that breaks when you get on a large hole"
+      ]
+    },
+    {
+      "ID": 10043701,
+      "Entries": [
+        "The second scaffold ing broken when a big hole is ridden."
+      ]
+    },
+    {
+      "ID": 10043702,
+      "Entries": [
+        "Scaffolding that breaks when a big hole is on"
+      ]
+    },
+    {
+      "ID": 10043710,
+      "Entries": [
+        "Kokeshi near the hole in the lower waterway"
+      ]
+    },
+    {
+      "ID": 10043711,
+      "Entries": [
+        "Kokeshi near the hole in the lower waterway"
+      ]
+    },
+    {
+      "ID": 10043712,
+      "Entries": [
+        "Kokeshi near the hole in the lower waterway"
+      ]
+    },
+    {
+      "ID": 10043800,
+      "Entries": [
+        "【Environment Map ID】Cloth OBJ"
+      ]
+    },
+    {
+      "ID": 10043801,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043802,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043803,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043804,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043805,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043806,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043807,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Torch (wall-mounted Type A)"
+      ]
+    },
+    {
+      "ID": 10043808,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Cathedral (for distant views)"
+      ]
+    },
+    {
+      "ID": 10043809,
+      "Entries": [
+        "【Environment Map ID】 [General purpose] polygon for aerial control character"
+      ]
+    },
+    {
+      "ID": 10043810,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Rope"
+      ]
+    },
+    {
+      "ID": 10043811,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 1 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043812,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 1 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043813,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 1 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043814,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 1 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043815,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 2 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043816,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Tree 2 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043817,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Wooden scaffolding 1 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043818,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10043819,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10043820,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Wooden box"
+      ]
+    },
+    {
+      "ID": 10043821,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Wooden box"
+      ]
+    },
+    {
+      "ID": 10043822,
+      "Entries": [
+        "【Environment Map ID】 [General purpose] wooden box set 1"
+      ]
+    },
+    {
+      "ID": 10043823,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Blacksmith Tent"
+      ]
+    },
+    {
+      "ID": 10043824,
+      "Entries": [
+        "【Environment Map ID】 【Madura】General Tent A"
+      ]
+    },
+    {
+      "ID": 10043825,
+      "Entries": [
+        "【Environment Map ID】 [Maduro] pedestal part of the obelisk that Sodan sits"
+      ]
+    },
+    {
+      "ID": 10043826,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Huge Trees (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043827,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Wooden eaves (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043828,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Wooden Eaves 2 (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043829,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Huge Trees (for translucent)"
+      ]
+    },
+    {
+      "ID": 10043830,
+      "Entries": [
+        "【Environment Map ID】 【Madura】Connection Path (Arch Column)"
+      ]
+    },
+    {
+      "ID": 10043832,
+      "Entries": [
+        "【Environment Map ID】Cloth OBJ"
+      ]
+    },
+    {
+      "ID": 10043900,
+      "Entries": [
+        "【Mimetic OBJ】Barrel"
+      ]
+    },
+    {
+      "ID": 10043901,
+      "Entries": [
+        "【Mimetic OBJ】Barrel"
+      ]
+    },
+    {
+      "ID": 10043902,
+      "Entries": [
+        "【Mimetic OBJ】Barrel"
+      ]
+    },
+    {
+      "ID": 10043903,
+      "Entries": [
+        "【Mimetic OBJ】Barrel"
+      ]
+    },
+    {
+      "ID": 10043904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043910,
+      "Entries": [
+        "[Mimetic OBJ] wooden box"
+      ]
+    },
+    {
+      "ID": 10043911,
+      "Entries": [
+        "[Mimetic OBJ] wooden box"
+      ]
+    },
+    {
+      "ID": 10043912,
+      "Entries": [
+        "[Mimetic OBJ] wooden box"
+      ]
+    },
+    {
+      "ID": 10043913,
+      "Entries": [
+        "[Mimetic OBJ] wooden box"
+      ]
+    },
+    {
+      "ID": 10043914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043920,
+      "Entries": [
+        "【Mimetic OBJ】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10043921,
+      "Entries": [
+        "【Mimetic OBJ】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10043922,
+      "Entries": [
+        "【Mimetic OBJ】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10043923,
+      "Entries": [
+        "【Mimetic OBJ】Kokeshi"
+      ]
+    },
+    {
+      "ID": 10043924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10043945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10044000,
+      "Entries": [
+        "【NPC】Tomb_Ladder Shop"
+      ]
+    },
+    {
+      "ID": 10044050,
+      "Entries": [
+        "【NPC】Tomb_Miracle Man"
+      ]
+    },
+    {
+      "ID": 10044100,
+      "Entries": [
+        "【NPC】Tomb_Blue Warrior"
+      ]
+    },
+    {
+      "ID": 10044150,
+      "Entries": [
+        "【NPC】Tomb_Yorozu Babaa"
+      ]
+    },
+    {
+      "ID": 10044200,
+      "Entries": [
+        "【NPC】Tomb_Map"
+      ]
+    },
+    {
+      "ID": 10044250,
+      "Entries": [
+        "【NPC】Tomb_Armor Shop"
+      ]
+    },
+    {
+      "ID": 10044300,
+      "Entries": [
+        "【NPC】Tomb_Blacksmith"
+      ]
+    },
+    {
+      "ID": 10044350,
+      "Entries": [
+        "【NPC】Tomb_Material Shop"
+      ]
+    },
+    {
+      "ID": 10044400,
+      "Entries": [
+        "【NPC】Tomb_Sorcerer"
+      ]
+    },
+    {
+      "ID": 10044450,
+      "Entries": [
+        "【NPC】Tomb_Sorcerer"
+      ]
+    },
+    {
+      "ID": 10044500,
+      "Entries": [
+        "【NPC】Tomb_Dragon Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 10045000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045070,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045500,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10045510,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10046000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10046150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

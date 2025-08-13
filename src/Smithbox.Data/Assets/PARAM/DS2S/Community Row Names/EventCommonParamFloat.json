@@ -1,0 +1,89 @@
+{
+  "Name": "EventCommonParamFloat",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Warning window delete distance -- 警告ウィンドウ削除距離"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Wait time for key guide redisplay after closing the warning window -- 警告ウィンドウを閉じた後にキーガイド再表示までの待ち時間"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Possible audible distance of conversation -- 会話想定可聴距離"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Conversation auto-cancel distance -- 会話自動キャンセル距離"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Text display time without voice -- ボイスが無い場合のテキスト表示時間"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Default Conversation Key Guide Distance -- デフォルト会話キーガイド距離"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Time to wait for key guide redisplay in the case of successful success -- 正常終了した場合のキーガイド再表示までの待ち時間"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Event window cancellation distance -- イベントウィンドウキャンセル距離"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "The amount of time between the time the death is confirmed and the YOU_DIED -- 死亡が確定してからYOU_DIEDが表示されるまでの時間"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Event window cancellation time -- イベントウィンドウキャンセル時間"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Warning window cancellation time -- 警告ウィンドウキャンセル時間"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Conversation waiting time -- 会話開始待ち時間"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Scope of installation of petrified image -- 石化像設置範囲"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Message request available wait time -- メッセージ送りリクエスト受付可能待ち時間"
+      ]
+    }
+  ]
+}

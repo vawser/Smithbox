@@ -1,0 +1,275 @@
+{
+  "Name": "mapobjectinstanceparam_m10_29_00_00",
+  "Entries": [
+    {
+      "ID": 10290401,
+      "Entries": [
+        "[Door] empty side door of the gimmick room 1"
+      ]
+    },
+    {
+      "ID": 10290402,
+      "Entries": [
+        "[Door] the empty side door of the gimmick room 2"
+      ]
+    },
+    {
+      "ID": 10290403,
+      "Entries": [
+        "[Door] empty side door 3 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290404,
+      "Entries": [
+        "[Door] the empty side door of the gimmick room 4"
+      ]
+    },
+    {
+      "ID": 10290405,
+      "Entries": [
+        "[Door] the empty side door of the gimmick room 5"
+      ]
+    },
+    {
+      "ID": 10290406,
+      "Entries": [
+        "[Door] empty side door 6 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290407,
+      "Entries": [
+        "[Door] Madura side door 1 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290408,
+      "Entries": [
+        "[Door] Madura side door 2 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290409,
+      "Entries": [
+        "[Door] Madura side door 3 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290410,
+      "Entries": [
+        "[Door] Madura side door of the gimmick room 4"
+      ]
+    },
+    {
+      "ID": 10290411,
+      "Entries": [
+        "[Door] Madura side door 5 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290412,
+      "Entries": [
+        "[Door] Madura side door 6 of the gimmick room"
+      ]
+    },
+    {
+      "ID": 10290600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10290650,
+      "Entries": [
+        "【Bonfire】Gimmick Room"
+      ]
+    },
+    {
+      "ID": 10291000,
+      "Entries": [
+        "[Lever] for the gimmick door of the connection path _ empty side"
+      ]
+    },
+    {
+      "ID": 10291010,
+      "Entries": [
+        "[Lever] for the gimmick door of the connection path _ Madura side"
+      ]
+    },
+    {
+      "ID": 10291900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10291910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10292000,
+      "Entries": [
+        "Gimmick door of the connection road"
+      ]
+    },
+    {
+      "ID": 10292010,
+      "Entries": [
+        "Imaginary side gimmick door"
+      ]
+    },
+    {
+      "ID": 10292020,
+      "Entries": [
+        "Madura side gimmick door"
+      ]
+    },
+    {
+      "ID": 10293900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10293901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10293902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10293903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Vase"
+      ]
+    },
+    {
+      "ID": 10293904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10293905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10293910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10293911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10293912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10293913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10293914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10293915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10293920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10293921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10293922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10293923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 10293924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10293925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10294000,
+      "Entries": [
+        "【NPC】Tomb_Tsukimitsu Grandfather"
+      ]
+    },
+    {
+      "ID": 10294100,
+      "Entries": [
+        "【NPC】Tomb_Sorcerer"
+      ]
+    },
+    {
+      "ID": 10295000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10296000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10296010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10296020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "SfxModelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reserved area -- 予約領域"
+      ]
+    },
+    {
+      "ID": 83090,
+      "Entries": [
+        "WP_0230_Coral blade -- WP_0230_コーラルブレード"
+      ]
+    },
+    {
+      "ID": 83091,
+      "Entries": [
+        "test model -- テストモデル"
+      ]
+    },
+    {
+      "ID": 83100,
+      "Entries": [
+        "WP_2730_Coral Laser -- WP_2730_コーラルレーザー"
+      ]
+    }
+  ]
+}

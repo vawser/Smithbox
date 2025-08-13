@@ -1,0 +1,323 @@
+{
+  "Name": "eventparam_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Connection flag ON"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "The branch of the treasure corpse"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Boss: Beautiful Voice Frog Combat"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "The voice of the beautiful voice frog"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Beautiful Voice Frog Singing Voice_ Flag"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Lift to Immortal Mausoleum"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "On elevator lever"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Lower elevator lever"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Elevator_Initialization"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "The Altar of the Living"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "The Door of the Living"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "The Door of the Dead"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Ascension of Banshee"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "【Insect key】Hidden door (1) for start-up"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "【Insect Key】Hidden Door"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "【Insect Key】Hidden Door (1)_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Get King's Soul"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Light worm_cave_1 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Light worm_cave_2 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 14020,
+      "Entries": [
+        "Light worm_cave_3 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Light worm_square_1 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Light worm_square_2 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Light worm_square_3 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Light worm_square_4 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Light worm_square_5 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "Light worm_square_6 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 15060,
+      "Entries": [
+        "Light worm_square_7 reacting to enemy and PC approach"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Lizard extinction judgment_cave"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "Lizard extinction judgment_square"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Reproduction seed fire 01_ the upper layer of the entrance tower"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Regenerate disrepair of fire 02_collapsed building beside water grass"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Regeneration Seed Fire 03_Cave to Parent Tree"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Regeneration seed fire 04_the lower layer of the tower in front of the altar of the living"
+      ]
+    },
+    {
+      "ID": 111300,
+      "Entries": [
+        "NPC: Girl 1 of the Bard"
+      ]
+    },
+    {
+      "ID": 111301,
+      "Entries": [
+        "NPC: The Girl of the Bard 1: The Ghost"
+      ]
+    },
+    {
+      "ID": 111302,
+      "Entries": [
+        "OBJ: The Girl of the Bard 1: The Tomb"
+      ]
+    },
+    {
+      "ID": 111303,
+      "Entries": [
+        "OBJ: The Girl of the Bard 1: Key Guide"
+      ]
+    },
+    {
+      "ID": 111304,
+      "Entries": [
+        "OBJ: The Girl of the Bard 1: The Voice of The Song"
+      ]
+    },
+    {
+      "ID": 111310,
+      "Entries": [
+        "NPC: Girl 2 of the Bard"
+      ]
+    },
+    {
+      "ID": 111311,
+      "Entries": [
+        "NPC: The Girl of the Bard 2: The Ghost"
+      ]
+    },
+    {
+      "ID": 111312,
+      "Entries": [
+        "OBJ: The Girl of the Bard 2: Tomb"
+      ]
+    },
+    {
+      "ID": 111313,
+      "Entries": [
+        "OBJ: The Girl of the Bard 2: Key Guide"
+      ]
+    },
+    {
+      "ID": 111314,
+      "Entries": [
+        "OBJ: The Girl of the Bard 2: The Voice of The Song"
+      ]
+    },
+    {
+      "ID": 118130,
+      "Entries": [
+        "NPC for Multi: Lancer (Female): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 118131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118220,
+      "Entries": [
+        "NPC for Multi: The Magician (Male): Black Phantom Appearance"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

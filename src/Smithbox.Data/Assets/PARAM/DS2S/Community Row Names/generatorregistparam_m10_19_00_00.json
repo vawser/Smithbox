@@ -1,0 +1,215 @@
+{
+  "Name": "generatorregistparam_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 15100000,
+      "Entries": [
+        "[REG:15100000] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15100010,
+      "Entries": [
+        "[REG:15100010] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15100020,
+      "Entries": [
+        "[REG:15100020] Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "[REG:30500000] Smelter Demon [Boss]"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "[REG:30600000] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30600800,
+      "Entries": [
+        "[REG:30600800] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30600900,
+      "Entries": [
+        "[REG:30600900] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30601000,
+      "Entries": [
+        "[REG:30601000] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30601010,
+      "Entries": [
+        "[REG:30601010] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 31801000,
+      "Entries": [
+        "[REG:31801000] The Pursuer"
+      ]
+    },
+    {
+      "ID": 31900000,
+      "Entries": [
+        "[REG:31900000] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 31900900,
+      "Entries": [
+        "[REG:31900900] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 31901000,
+      "Entries": [
+        "[REG:31901000] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 60700000,
+      "Entries": [
+        "[REG:60700000] Old Iron King [Boss]"
+      ]
+    },
+    {
+      "ID": 69300000,
+      "Entries": [
+        "[REG:69300000] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 75200010,
+      "Entries": [
+        "[REG:75200010] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75300000,
+      "Entries": [
+        "[REG:75300000] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75300001,
+      "Entries": [
+        "[REG:75300001] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75300010,
+      "Entries": [
+        "[REG:75300010] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75300020,
+      "Entries": [
+        "[REG:75300020] Bell Keeper"
+      ]
+    },
+    {
+      "ID": 77200000,
+      "Entries": [
+        "[REG:77200000] Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 77200001,
+      "Entries": [
+        "[REG:77200001] Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 82900000,
+      "Entries": [
+        "[REG:82900000] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 83600000,
+      "Entries": [
+        "[REG:83600000] Mad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 83610000,
+      "Entries": [
+        "[REG:83610000] Greatsword Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 83620000,
+      "Entries": [
+        "[REG:83620000] Dual Avelyn Bell Keeper Phantom"
+      ]
+    },
+    {
+      "ID": 83630000,
+      "Entries": [
+        "[REG:83630000] Bell Keeper Mage Phantom"
+      ]
+    },
+    {
+      "ID": 83640000,
+      "Entries": [
+        "[REG:83640000] Ironclad Warrior Phantom"
+      ]
+    },
+    {
+      "ID": 87600000,
+      "Entries": [
+        "[REG:87600000] Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 89700000,
+      "Entries": [
+        "[REG:89700000] Fencer Sharron"
+      ]
+    },
+    {
+      "ID": 89750000,
+      "Entries": [
+        "[REG:89750000] Armorer Dennis"
+      ]
+    },
+    {
+      "ID": 89800000,
+      "Entries": [
+        "[REG:89800000] Oliver the Collector"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1277 @@
+{
+  "Name": "MaterialExParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Buddy composition effect -- バディ組成効果"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Character damage expression -- キャラのダメージ表現"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Damage emissive strength (lower this when Damage_Rate becomes 1) -- ダメージのエミッシブ強度(Damage_Rateが1になったらこっちを下げる)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Optical camouflage switching_transparent (0 is opaque, 1 is transparent) -- 光学迷彩切り替え_透過用(0が不透明,1が透明）"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Optical camouflage switching_for refraction (0 is no refraction, 1 is maximum refraction, appropriate is 0.01) -- 光学迷彩切り替え_屈折用（0が屈折無し, 1が最大屈折\u3000適正は0.01)"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Optical camouflage switching_no reflection (0 is normal shyness, -1 is no reflection) -- 光学迷彩切り替え_否反射(0が通常シャイネス,-1が無反射）"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Optical camouflage switching_non-mirror (0 is normal, -1 is non-mirror) -- 光学迷彩切り替え_否鏡面(0が通常,-1が無鏡面）"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Optical camouflage switching_Falloff (0 is normal, 1 is luminous) -- 光学迷彩切り替え_フォールオフ(0が通常\u30001が発光）"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Optical camouflage switching_Emissive (0 is normal, 1 is emissive) -- 光学迷彩切り替え_エミッシブ(0が通常\u30001が発光）"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Optical camouflage switching_Falloff strength (0 is normal, 1 is emitted) -- 光学迷彩切り替え_フォールオフ強度(0が通常\u30001が発光）"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "For AC parts_Caterpillar scroll_L -- ACパーツ用_キャタピラスクロール_L"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "For AC parts_Caterpillar scroll_R -- ACパーツ用_キャタピラスクロール_R"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "For AC parts_MAIN -- ACパーツ用_MAIN"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "For AC parts_SUB -- ACパーツ用_SUB"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "For AC parts_SUPPORT -- ACパーツ用_SUPPORT"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "For AC parts_OPTIONAL -- ACパーツ用_OPTIONAL"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "For AC parts_JOINT -- ACパーツ用_JOINT"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "For AC parts_DEVICE -- ACパーツ用_DEVICE"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "For AC parts_EYE -- ACパーツ用_EYE"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "AC parts_DEVICE strength change -- ACパーツ用_DEVICEの強度変更"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "For AC parts_camouflage ON/OFF -- ACパーツ用_カモフラージュON/OFF"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "For AC parts_camouflage texture scale -- ACパーツ用_カモフラージュテクスチャスケール"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "For AC parts_camouflage texture -- ACパーツ用_カモフラージュテクスチャ"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "AC parts_camouflage texture size change -- ACパーツ用_カモフラージュテクスチャのサイズ変更"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "shyness -- シャイネス"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "metalness -- メタルネス"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "For AC parts_1st layer material_Albedo -- ACパーツ用_1層目素材_アルベド"
+      ]
+    },
+    {
+      "ID": 931,
+      "Entries": [
+        "For AC parts_1st layer material_Metalness -- ACパーツ用_1層目素材_メタルネス"
+      ]
+    },
+    {
+      "ID": 932,
+      "Entries": [
+        "For AC parts_1st layer material_normal -- ACパーツ用_1層目素材_ノーマル"
+      ]
+    },
+    {
+      "ID": 940,
+      "Entries": [
+        "For AC parts_2nd layer material_Albedo -- ACパーツ用_2層目素材_アルベド"
+      ]
+    },
+    {
+      "ID": 941,
+      "Entries": [
+        "For AC parts_2nd layer material_Metalness -- ACパーツ用_2層目素材_メタルネス"
+      ]
+    },
+    {
+      "ID": 942,
+      "Entries": [
+        "For AC parts_2nd layer material_normal -- ACパーツ用_2層目素材_ノーマル"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "For AC parts_3rd layer material_Albedo -- ACパーツ用_3層目素材_アルベド"
+      ]
+    },
+    {
+      "ID": 951,
+      "Entries": [
+        "For AC parts_3rd layer material_Metalness -- ACパーツ用_3層目素材_メタルネス"
+      ]
+    },
+    {
+      "ID": 952,
+      "Entries": [
+        "For AC parts_3rd layer material_normal -- ACパーツ用_3層目素材_ノーマル"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "For AC parts_4th layer material_Albedo -- ACパーツ用_4層目素材_アルベド"
+      ]
+    },
+    {
+      "ID": 961,
+      "Entries": [
+        "For AC parts_4th layer material_Metalness -- ACパーツ用_4層目素材_メタルネス"
+      ]
+    },
+    {
+      "ID": 962,
+      "Entries": [
+        "For AC parts_4th layer material_Normal -- ACパーツ用_4層目素材_ノーマル"
+      ]
+    },
+    {
+      "ID": 970,
+      "Entries": [
+        "For AC parts_camouflage_MAIN -- ACパーツ用_カモフラージュ_MAIN"
+      ]
+    },
+    {
+      "ID": 971,
+      "Entries": [
+        "For AC parts_camouflage_SUB -- ACパーツ用_カモフラージュ_SUB"
+      ]
+    },
+    {
+      "ID": 972,
+      "Entries": [
+        "For AC parts_camouflage_SUPPORT -- ACパーツ用_カモフラージュ_SUPPORT"
+      ]
+    },
+    {
+      "ID": 973,
+      "Entries": [
+        "For AC parts_Camouflage_OPTIONAL -- ACパーツ用_カモフラージュ_OPTIONAL"
+      ]
+    },
+    {
+      "ID": 974,
+      "Entries": [
+        "For AC parts_camouflage_JOINT -- ACパーツ用_カモフラージュ_JOINT"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "For AC parts_Main color part shyness/metalness strength change -- ACパーツ用_Mainカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "For AC parts_Sub color part shineness/metalness strength change -- ACパーツ用_Subカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "For AC parts_Support color part shyness/metalness strength change -- ACパーツ用_Supportカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 983,
+      "Entries": [
+        "For AC parts_Optional color part shineness/metalness strength change -- ACパーツ用_Optionalカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 984,
+      "Entries": [
+        "For AC parts_Change the shyness and metalness strength of the joint color part -- ACパーツ用_Jointカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 985,
+      "Entries": [
+        "For AC parts_Changing the shyness and metalness strength of the 1st layer texture -- ACパーツ用_1層目テクスチャのシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 986,
+      "Entries": [
+        "For AC parts_Changing the shyness and metalness strength of the 3rd layer texture -- ACパーツ用_3層目テクスチャのシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 987,
+      "Entries": [
+        "For AC parts_4th layer texture shyness/metalness strength change -- ACパーツ用_4層目テクスチャのシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 990,
+      "Entries": [
+        "For AC parts_AC marking -- ACパーツ用_ACマーキング"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        "For AC parts_AC marking_Texture index offset -- ACパーツ用_ACマーキング_テクスチャインデックスオフセット"
+      ]
+    },
+    {
+      "ID": 995,
+      "Entries": [
+        "For AC parts_Parts cover strength (freezing, snow, sand, etc.) -- ACパーツ用_パーツカバー強度（氷結・雪・砂など）"
+      ]
+    },
+    {
+      "ID": 996,
+      "Entries": [
+        "For AC parts_Paint peeling strength -- ACパーツ用_塗装剥がれ強度"
+      ]
+    },
+    {
+      "ID": 997,
+      "Entries": [
+        "For AC parts_Rust strength -- ACパーツ用_錆強度"
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "For AC parts_Damage strength -- ACパーツ用_ダメージ強度"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "For cockpit monitor replacement -- コックピットモニター差し替え用"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "For emissive strength changes that are not affected by the color of AC parts (shields, etc.) -- ACパーツのカラーに影響されないエミッシブ強度変更用(シールドなど）"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "For emissive color change that is not affected by the color of AC parts -- ACパーツのカラーに影響されないエミッシブカラー変更用"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Unique Head Mono Eye 1 Color Tint -- ユニークヘッドモノアイ1のカラーTint"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Unique Head Mono Eye 2 Color Tint -- ユニークヘッドモノアイ2のカラーTint"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Unique Head Mono Eye 3 Color Tint -- ユニークヘッドモノアイ3のカラーTint"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Unique head emissive main master Int (main monoeye assumption) -- ユニークヘッドエミッシブのメインマスターInt(メインモノアイの想定)"
+      ]
+    },
+    {
+      "ID": 1126,
+      "Entries": [
+        "Unique Head Emissive Master Int -- ユニークヘッドエミッシブのマスターInt"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "For changing the transition strength of unique head glass -- ユニークヘッドガラスのトラジション強度変更用"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "For changing the transparency of unique head glass -- ユニークヘッドガラスの透明度変更用"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Main -- メニューでカラー変更した場合の明滅_Flickering_Main"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Sub -- メニューでカラー変更した場合の明滅_Flickering_Sub"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Support -- メニューでカラー変更した場合の明滅_Flickering_Support"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Optional -- メニューでカラー変更した場合の明滅_Flickering_Optional"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Joint -- メニューでカラー変更した場合の明滅_Flickering_Joint"
+      ]
+    },
+    {
+      "ID": 1155,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Device -- メニューでカラー変更した場合の明滅_Flickering_Device"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Scanline strength when performing recovery -- 回復実行時の走査線の強さ"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Display height of scan line when performing recovery (maximum value) -- 回復実行時の走査線の表示高さ(最大値）"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Display height of scan line when performing recovery (minimum value) -- 回復実行時の走査線の表示高さ(最小値）"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "UV scale of scan lines when performing recovery -- 回復実行時の走査線のUVスケール"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "UV scroll speed of scanlines when performing recovery -- 回復実行時の走査線のUVスクロール速度"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Scanline fade width when performing recovery -- 回復実行時の走査線のフェード幅"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "Scanline color when performing recovery -- 回復実行時の走査線のカラー"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "Texture replacement of scan lines when executing recovery -- 回復実行時の走査線のテクスチャ差し替え"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "For texture scrolling of personal weapons (ammo belt, etc.) -- 自機武器のテクスチャスクロール用（弾薬ベルトなど）"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "For threshold value when the laser blade gets stuck in the wall -- レーザーブレードの壁にめり込んだ際の閾値用"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Enemy BASE coloring changed -- 敵のBASEカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700001,
+      "Entries": [
+        "Enemy SUB coloring changed -- 敵のSUBカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700002,
+      "Entries": [
+        "Enemy SUPPORT coloring changed -- 敵のSUPPORTカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700003,
+      "Entries": [
+        "Enemy OPTIONAL coloring change -- 敵のOPTIONALカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700004,
+      "Entries": [
+        "Enemy JOINT coloring changed -- 敵のJOINTカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700005,
+      "Entries": [
+        "Enemy EYE coloring changed -- 敵のEYEカラーリング変更"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "Change the strength of enemy rust -- 敵の錆の強度変更"
+      ]
+    },
+    {
+      "ID": 700015,
+      "Entries": [
+        "Changed the range of staining the enemy's 1st floor -- 敵の1層目汚しの範囲変更"
+      ]
+    },
+    {
+      "ID": 700016,
+      "Entries": [
+        "Change the strength of enemy's 1st layer stain -- 敵の1層目汚しの強度変更"
+      ]
+    },
+    {
+      "ID": 700018,
+      "Entries": [
+        "Enemy's 3rd layer armor peeling_strength -- 敵の3層目装甲剥がれ_強度"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Change enemy device strength -- 敵のデバイス強度変更"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Emissive strength change for enemy AE_(strength only) -- 敵のAE対応のエミッシブ強度変更_(強度のみ）"
+      ]
+    },
+    {
+      "ID": 701001,
+      "Entries": [
+        "Albedo strength change for enemy AE_(strength only) -- 敵のAE対応のアルベド強度変更_(強度のみ）"
+      ]
+    },
+    {
+      "ID": 701010,
+      "Entries": [
+        "Emissive strength change for enemy AE_(color and strength) -- 敵のAE対応のエミッシブ強度変更_(カラーと強度）"
+      ]
+    },
+    {
+      "ID": 701020,
+      "Entries": [
+        "Emissive texture scrolling compatible with enemy AE -- 敵のAE対応のエミッシブテクスチャスクロール対応"
+      ]
+    },
+    {
+      "ID": 701100,
+      "Entries": [
+        "Emissive strength change for enemy AMSN_(strength only) -- 敵のAMSN対応のエミッシブ強度変更_(強度のみ）"
+      ]
+    },
+    {
+      "ID": 701110,
+      "Entries": [
+        "Emissive strength change for enemy AMSN_(color and strength) -- 敵のAMSN対応のエミッシブ強度変更_(カラーと強度）"
+      ]
+    },
+    {
+      "ID": 701120,
+      "Entries": [
+        "Supports emissive texture scrolling for enemy AMSN. -- 敵のAMSN対応のエミッシブテクスチャスクロール対応"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Change the shyness/metalness strength of the enemy's _Main color part -- 敵の_Mainカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 702010,
+      "Entries": [
+        "Change the shyness/metalness strength of the enemy's sub color part -- 敵の_Subカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 702020,
+      "Entries": [
+        "Change the strength of shyness and metalness of the enemy's _Support color part -- 敵の_Supportカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 702030,
+      "Entries": [
+        "Change the strength of the shyness and metalness of the enemy's _Optional color part -- 敵の_Optionalカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 702040,
+      "Entries": [
+        "Change the strength of the shyness and metalness of the enemy's _Joint color part -- 敵の_Jointカラー部分のシャイネス・メタルネス強度変更"
+      ]
+    },
+    {
+      "ID": 702100,
+      "Entries": [
+        "Enemy_detail blending enabled/disabled -- 敵の_ディテールブレンドの有効無効"
+      ]
+    },
+    {
+      "ID": 702110,
+      "Entries": [
+        "For changing the strength of enemy's dirt mask -- 敵の_ダートマスクの強度変更用"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Asset energy shield fade -- アセットのエネルギーシールドのフェード"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Heat rod blade emissive strength and transparency specification -- ヒートロッドの刃のエミッシブ強度と透明度指定"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Laser blade blade emissive strength and transparency specification -- レーザーブレードの刃のエミッシブ強度と透明度指定"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "General parameters for emissive strength adjustment of enemy weapons (AMSN shader) -- 敵武器のエミッシブ強度調整の汎用パラメータ(AMSNシェーダー)"
+      ]
+    },
+    {
+      "ID": 1005000,
+      "Entries": [
+        "Enemy energy shield general purpose -- 敵のエネルギーシールド汎用"
+      ]
+    },
+    {
+      "ID": 1005500,
+      "Entries": [
+        "For displaying the deployment of PA shield for special attack MT -- 特攻MT用PAシールドの展開表示用"
+      ]
+    },
+    {
+      "ID": 1005510,
+      "Entries": [
+        "For adjusting the translucent strength of PA shield for special attack MT -- 特攻MT用PAシールドの半透明強度調整用"
+      ]
+    },
+    {
+      "ID": 1006000,
+      "Entries": [
+        "Dither fade processing of enemy materials -- 敵用マテリアルのディザフェード処理"
+      ]
+    },
+    {
+      "ID": 1909999,
+      "Entries": [
+        "For AC booster internal lighting -- ACブースター内部発光用"
+      ]
+    },
+    {
+      "ID": 1919999,
+      "Entries": [
+        "AC parts emissive_test_SBS_9999 -- ACパーツエミッシブ用_テスト_SBS_9999"
+      ]
+    },
+    {
+      "ID": 4420000,
+      "Entries": [
+        "Changing the mask scale of c4200 tip emitting emissive -- c4200の先端発光エミッシブのマスクスケール変更"
+      ]
+    },
+    {
+      "ID": 4420010,
+      "Entries": [
+        "c4200 Phantom Omen Emissive Intensity Adjustment Color and Intensity -- c4200幻影予兆のエミッシブ強度調整カラーと強度"
+      ]
+    },
+    {
+      "ID": 4420020,
+      "Entries": [
+        "c4200 Phantom fade parameters -- c4200幻影のフェード用パラメータ"
+      ]
+    },
+    {
+      "ID": 4420030,
+      "Entries": [
+        "c4200 Phantom α fade parameters -- c4200幻影のαフェード用パラメータ"
+      ]
+    },
+    {
+      "ID": 6250000,
+      "Entries": [
+        "c6250_Ice worm damage expression strength -- c6250_アイスワームのダメージ表現強度"
+      ]
+    },
+    {
+      "ID": 6250010,
+      "Entries": [
+        "c6250_Ice worm damage expression_Emissive strength -- c6250_アイスワームのダメージ表現_エミッシブ強度"
+      ]
+    },
+    {
+      "ID": 5900000,
+      "Entries": [
+        "c5900 Stiglo_Monoeye -- c5900スティグロ_モノアイ"
+      ]
+    },
+    {
+      "ID": 5900010,
+      "Entries": [
+        "c5900 styglo_heatsink light -- c5900スティグロ_ヒートシンク光"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "For emissive strength adjustment of general-purpose items -- 汎用アイテムのエミッシブ強度調整用"
+      ]
+    },
+    {
+      "ID": 6000010,
+      "Entries": [
+        "For emissive color intensity adjustment of general purpose items -- 汎用アイテムのエミッシブカラー強度調整用"
+      ]
+    },
+    {
+      "ID": 7000100,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000110,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000111,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000112,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000113,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000114,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000211,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000212,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000213,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000214,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000215,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 7000310,
+      "Entries": [
+        "garage briefing board test -- ガレージブリーフィングボードテスト"
+      ]
+    },
+    {
+      "ID": 4100500,
+      "Entries": [
+        "D-layer mako furnace heating wire emissive strength -- D層魔晄炉の電熱線エミッシブ強度"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Emissive strength of G[Light]_Emissive_Glow in the garage -- ガレージ内のG[Light]_Emissive_Glowのエミッシブ強度"
+      ]
+    },
+    {
+      "ID": 700600,
+      "Entries": [
+        "Emissive strength of the PC monitor in the garage -- ガレージ内のPCモニターのエミッシブ強度"
+      ]
+    },
+    {
+      "ID": 7001000,
+      "Entries": [
+        "Emissive strength of G[Sub_monitor]_Emissive_Glow in the garage -- ガレージ内のG[Sub_monitor]_Emissive_Glowのエミッシブ強度"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "For map_for emissive strength adjustment -- マップ用_エミッシブ強度調整用"
+      ]
+    },
+    {
+      "ID": 8000010,
+      "Entries": [
+        "For maps_for emissive color adjustment -- マップ用_エミッシブカラー調整用"
+      ]
+    },
+    {
+      "ID": 8000015,
+      "Entries": [
+        "For map_Albedo intensity color adjustment -- マップ用_アルベド強度カラー調整用"
+      ]
+    },
+    {
+      "ID": 8000120,
+      "Entries": [
+        "For maps_For emissive color adjustment_For changing the color tint of M[Interior].snp -- マップ用_エミッシブカラー調整用_M[Interior].snpのカラーティント変更用"
+      ]
+    },
+    {
+      "ID": 8001000,
+      "Entries": [
+        "For map_melange water surface_for emissive strength adjustment -- マップ用_メランジ水面_エミッシブ強度調整用"
+      ]
+    },
+    {
+      "ID": 8001001,
+      "Entries": [
+        "For map_melange water surface_for emissive color adjustment -- マップ用_メランジ水面_エミッシブカラー調整用"
+      ]
+    },
+    {
+      "ID": 8001002,
+      "Entries": [
+        "For map_Melange water surface_For bubble color adjustment -- マップ用_メランジ水面_泡カラー調整用"
+      ]
+    },
+    {
+      "ID": 8001003,
+      "Entries": [
+        "For map_Melange water surface_For emissive strength/color change at HU_Near (for AEG411_901) -- マップ用_メランジ水面_HU時エミッシブ強度・カラー変更用_Near(AEG411_901用)"
+      ]
+    },
+    {
+      "ID": 8001004,
+      "Entries": [
+        "For map_Melange water surface_For emissive strength/color change at HU_Far (for AEG411_901) -- マップ用_メランジ水面_HU時エミッシブ強度・カラー変更用_Far(AEG411_901用)"
+      ]
+    },
+    {
+      "ID": 8001005,
+      "Entries": [
+        "For maps_Melange water surface_For Absorption adjustment -- マップ用_メランジ水面_Absorption調整用"
+      ]
+    },
+    {
+      "ID": 8001006,
+      "Entries": [
+        "For map_Melange water surface_Near_Far_Blend mask strength -- マップ用_メランジ水面_Near_Far_ブレンドマスク強度"
+      ]
+    },
+    {
+      "ID": 8001010,
+      "Entries": [
+        "For map_melange water surface_for height strength adjustment_max -- マップ用_メランジ水面_ハイト強度調整用_max"
+      ]
+    },
+    {
+      "ID": 8001011,
+      "Entries": [
+        "For map_Melange water surface_For height strength adjustment_min -- マップ用_メランジ水面_ハイト強度調整用_min"
+      ]
+    },
+    {
+      "ID": 8001012,
+      "Entries": [
+        "For maps_Melange water surface_For adjusting height strength_Near -- マップ用_メランジ水面_ハイト強度調整用_Near"
+      ]
+    },
+    {
+      "ID": 8001015,
+      "Entries": [
+        "For map_Melange water surface_For adjusting scroll speed -- マップ用_メランジ水面_スクロールスピード調整用"
+      ]
+    },
+    {
+      "ID": 8001020,
+      "Entries": [
+        "For maps_Melange water surface_For changing scroll speed from title -- マップ用_メランジ水面_スクロールスピードをタイトルから変更用"
+      ]
+    },
+    {
+      "ID": 8001050,
+      "Entries": [
+        "Effective_Range for map_PA shield deployment -- マップ用_PAシールド展開用のEffective_Range"
+      ]
+    },
+    {
+      "ID": 8001052,
+      "Entries": [
+        "Master strength of PA shield emissive for map -- マップ用_PAシールドエミッシブのマスター強度"
+      ]
+    },
+    {
+      "ID": 8001053,
+      "Entries": [
+        "For maps_PA shield emissive alpha mask strength -- マップ用_PAシールドエミッシブのαマスクの強度"
+      ]
+    },
+    {
+      "ID": 8001055,
+      "Entries": [
+        "Map_PA shield deployment color/strength change of [Transiton]_1 -- マップ用_PAシールド展開用の[Transiton]_1のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001056,
+      "Entries": [
+        "Map_PA shield deployment color/strength change of [Transiton]_2 -- マップ用_PAシールド展開用の[Transiton]_2のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001060,
+      "Entries": [
+        "For the map_For changing the window color of the B-tier tower (for cutscenes) -- マップ用_B層タワーの窓の色変更用（カットシーン向け）"
+      ]
+    },
+    {
+      "ID": 8001070,
+      "Entries": [
+        "For the map_For hacking representation of the B tier tower_Effective_Range -- マップ用_B層タワーのハッキング表現用_Effective_Range"
+      ]
+    },
+    {
+      "ID": 8001071,
+      "Entries": [
+        "Change color and intensity of [Transiton]_1 for map_B layer tower hacking expression -- マップ用_B層タワーのハッキング表現用_[Transiton]_1のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001072,
+      "Entries": [
+        "Change color and intensity of [Transiton]_2 for map_B layer tower hacking representation -- マップ用_B層タワーのハッキング表現用_[Transiton]_2のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001073,
+      "Entries": [
+        "For maps_For hacking representation of B tier tower_Transition strength master -- マップ用_B層タワーのハッキング表現用_トラジションの強度マスター"
+      ]
+    },
+    {
+      "ID": 8001074,
+      "Entries": [
+        "For maps_For hacking representation of B tier tower_Emissive base strength master -- マップ用_B層タワーのハッキング表現用_エミッシブベース強度マスター"
+      ]
+    },
+    {
+      "ID": 8001075,
+      "Entries": [
+        "For the map_For hacking expression of B tier tower_Effective_Range magnification change -- マップ用_B層タワーのハッキング表現用_Effective_Rangeの倍率変更"
+      ]
+    },
+    {
+      "ID": 8001080,
+      "Entries": [
+        "For maps_For hacking representation of B-tier tower_Base alpha strength -- マップ用_B層タワーのハッキング表現用_ベースのアルファ強度"
+      ]
+    },
+    {
+      "ID": 8001081,
+      "Entries": [
+        "For maps_For hacking representation of B-tier tower_Alpha processing for blackout -- マップ用_B層タワーのハッキング表現用_ブラックアウト用アルファ処理"
+      ]
+    },
+    {
+      "ID": 8001090,
+      "Entries": [
+        "For the map_For expressing the window hacking of the B-tier tower_Effective_Range -- マップ用_B層タワーの窓部分ハッキング表現用_Effective_Range"
+      ]
+    },
+    {
+      "ID": 8001091,
+      "Entries": [
+        "For the map_For expressing the window hacking of the B-tier tower_Effective_Range magnification change -- マップ用_B層タワーの窓部分ハッキング表現用_Effective_Rangeの倍率変更"
+      ]
+    },
+    {
+      "ID": 8001092,
+      "Entries": [
+        "For the map_For the hacking expression of the window part of the B-layer tower_[Transiton]_1 color/intensity change -- マップ用_B層タワーの窓部分ハッキング表現用_[Transiton]_1のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001093,
+      "Entries": [
+        "For the map_For expressing the hacking of the windows of the B-layer tower_[Transiton]_2 color and intensity changes -- マップ用_B層タワーの窓部分ハッキング表現用_[Transiton]_2のカラー・強度変更"
+      ]
+    },
+    {
+      "ID": 8001095,
+      "Entries": [
+        "For the map_For expressing the hacking of the windows of the B-tier tower_Changing the color of the windows -- マップ用_B層タワーの窓部分ハッキング表現用_窓のカラー変更"
+      ]
+    },
+    {
+      "ID": 8001200,
+      "Entries": [
+        "Fade model for map_AC test -- マップ用_ACテストのモデルをフェード表示"
+      ]
+    },
+    {
+      "ID": 8001300,
+      "Entries": [
+        "Pixel kill model for map_AC test -- マップ用_ACテストのモデルをピクセルキル"
+      ]
+    },
+    {
+      "ID": 8001310,
+      "Entries": [
+        "For maps_Pixel kill of AC test model_Model side support -- マップ用_ACテストのモデルをピクセルキル_モデル側対応"
+      ]
+    },
+    {
+      "ID": 8001400,
+      "Entries": [
+        "For map_For changing emissive strength of AC test_Tint -- マップ用_ACテストのエミッシブ強度変更用_Tint"
+      ]
+    },
+    {
+      "ID": 8001401,
+      "Entries": [
+        "For map_For changing emissive strength of AC test_Int -- マップ用_ACテストのエミッシブ強度変更用_Int"
+      ]
+    },
+    {
+      "ID": 8001500,
+      "Entries": [
+        "For map_AC test scroll addition emissive strength change_Tint -- マップ用_ACテストのスクロール加算エミッシブ強度変更用_Tint"
+      ]
+    },
+    {
+      "ID": 8001501,
+      "Entries": [
+        "For map_AC test scroll addition emissive strength change_Int -- マップ用_ACテストのスクロール加算エミッシブ強度変更用_Int"
+      ]
+    },
+    {
+      "ID": 8001510,
+      "Entries": [
+        "For map_AC test scroll albedo strength change_Tint -- マップ用_ACテストのスクロールアルベド強度変更用_Tint"
+      ]
+    },
+    {
+      "ID": 8001511,
+      "Entries": [
+        "For map_For changing scroll albedo intensity of AC test_Int -- マップ用_ACテストのスクロールアルベド強度変更用_Int"
+      ]
+    },
+    {
+      "ID": 8001550,
+      "Entries": [
+        "[Transiton]_3_Tint for map_AC test -- マップ用_ACテストの[Transiton]_3_Tint"
+      ]
+    },
+    {
+      "ID": 8001551,
+      "Entries": [
+        "[Transiton]_2_Tint for map_AC test -- マップ用_ACテストの[Transiton]_2_Tint"
+      ]
+    },
+    {
+      "ID": 8001552,
+      "Entries": [
+        "[Transiton]_1_Tint of AC test for map -- マップ用_ACテストの[Transiton]_1_Tint"
+      ]
+    },
+    {
+      "ID": 8001560,
+      "Entries": [
+        "Map_AC test [Transiton]_3_Noise strength -- マップ用_ACテストの[Transiton]_3_ノイズ強度"
+      ]
+    },
+    {
+      "ID": 8001565,
+      "Entries": [
+        "Map_AC test flow scrolling speed -- マップ用_ACテストのフロウスクロールスピード"
+      ]
+    },
+    {
+      "ID": 8003000,
+      "Entries": [
+        "For Map_Keeper's Laser Railgun Model SFX Emissive Strength -- マップ用_番人のレーザー・レールガンモデルSFXエミッシブ強度用"
+      ]
+    },
+    {
+      "ID": 8003001,
+      "Entries": [
+        "For map_Keeper's laser/railgun model SFX emissive strength_2nd -- マップ用_番人のレーザー・レールガンモデルSFXエミッシブ強度用_2つ目"
+      ]
+    },
+    {
+      "ID": 8006000,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere. -- 新B層が大気圏突入する際の炎エフェクト強度変更用"
+      ]
+    },
+    {
+      "ID": 8006001,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 1 -- 新B層が大気圏突入する際の炎エフェクト強度変更用_ベース1用"
+      ]
+    },
+    {
+      "ID": 8006002,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 2 -- 新B層が大気圏突入する際の炎エフェクト強度変更用_ベース2用"
+      ]
+    },
+    {
+      "ID": 8006010,
+      "Entries": [
+        "Initially disable the flame effect when the new B layer enters the atmosphere. -- 新B層が大気圏突入する際の炎エフェクトを初期無効にする"
+      ]
+    },
+    {
+      "ID": 8006020,
+      "Entries": [
+        "Master scroll speed of flame when new B layer enters the atmosphere -- 新B層が大気圏突入する炎のマスタースクロールスピード"
+      ]
+    },
+    {
+      "ID": 8006100,
+      "Entries": [
+        "Explosive α strength for CS Coral Explosive -- CSコーラル爆発用爆発α強度"
+      ]
+    },
+    {
+      "ID": 8006101,
+      "Entries": [
+        "CS Coral Explosive Explosive Mask Alpha For Strength Adjustment -- CSコーラル爆発用爆発のマスクアルファ強度調整用"
+      ]
+    },
+    {
+      "ID": 8006102,
+      "Entries": [
+        "CS Coral Explosive Explosive Emissive Overall Strength -- CSコーラル爆発用爆発のエミッシブ全体の強度"
+      ]
+    },
+    {
+      "ID": 8006110,
+      "Entries": [
+        "Adjusted the distortion strength of the explosion heightmap for CS Coral explosion. -- CSコーラル爆発用爆発のハイトマップの歪み強度を調整"
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "For emissive intensity adjustment of C[A]_Emissive_Glow -- C[A]_Emissive_Glowのエミッシブ強度調整用"
+      ]
+    },
+    {
+      "ID": 8700000,
+      "Entries": [
+        "Shader for the end when pasting part decals_For texture replacement -- パーツデカール貼り付け時の終端用のシェーダー_テクスチャ差し替え用"
+      ]
+    },
+    {
+      "ID": 9030000,
+      "Entries": [
+        "c9030 flying enemy -- c9030飛行敵"
+      ]
+    },
+    {
+      "ID": 9030010,
+      "Entries": [
+        "c9030 flying enemy -- c9030飛行敵"
+      ]
+    },
+    {
+      "ID": 9030020,
+      "Entries": [
+        "c9030 flying enemy -- c9030飛行敵"
+      ]
+    },
+    {
+      "ID": 9055000,
+      "Entries": [
+        "c5500_Bioweapon luminescence -- c5500_生体兵器の発光"
+      ]
+    },
+    {
+      "ID": 9055010,
+      "Entries": [
+        "c5500_Burning of biological weapon -- c5500_生体兵器の死亡焦げ"
+      ]
+    },
+    {
+      "ID": 9900000,
+      "Entries": [
+        "Map laser impact test combustion -- マップレーザー着弾テスト燃焼"
+      ]
+    }
+  ]
+}

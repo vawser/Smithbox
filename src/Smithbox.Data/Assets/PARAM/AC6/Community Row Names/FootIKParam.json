@@ -1,0 +1,413 @@
+{
+  "Name": "FootIKParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[c0000]1: Normal"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[c0000]2: Status 1"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "[c0001]1: Normal"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "[c0001] 2: When moving state 1 boost"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "[c0001] 3: Condition 2 slope slipping"
+      ]
+    },
+    {
+      "ID": 1000001,
+      "Entries": [
+        "[c0100]1: Normal"
+      ]
+    },
+    {
+      "ID": 1000002,
+      "Entries": [
+        "[c0100] 2: When moving state 1 boost"
+      ]
+    },
+    {
+      "ID": 1000003,
+      "Entries": [
+        "[c0100] 3: Condition 2 slope slipping"
+      ]
+    },
+    {
+      "ID": 2000001,
+      "Entries": [
+        "[c0200]1: Normal"
+      ]
+    },
+    {
+      "ID": 2000002,
+      "Entries": [
+        "[c0200] 2: When moving state 1 boost"
+      ]
+    },
+    {
+      "ID": 2000003,
+      "Entries": [
+        "[c0200] 3: Condition 2 slope slipping"
+      ]
+    },
+    {
+      "ID": 3000001,
+      "Entries": [
+        "[c0300]1: Normal"
+      ]
+    },
+    {
+      "ID": 3000002,
+      "Entries": [
+        "[c0300] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 30000001,
+      "Entries": [
+        "[c3000] 1: Normal"
+      ]
+    },
+    {
+      "ID": 30000002,
+      "Entries": [
+        "[c3000] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 30010001,
+      "Entries": [
+        "[c3001] 1: Normal"
+      ]
+    },
+    {
+      "ID": 30010002,
+      "Entries": [
+        "[c3001] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 30020001,
+      "Entries": [
+        "[c3002] 1: Normal"
+      ]
+    },
+    {
+      "ID": 30020002,
+      "Entries": [
+        "[c3002] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 30200001,
+      "Entries": [
+        "[c3020]1: Normal"
+      ]
+    },
+    {
+      "ID": 30200002,
+      "Entries": [
+        "[c3020]2: Status 1"
+      ]
+    },
+    {
+      "ID": 30500001,
+      "Entries": [
+        "[c3050]1: Normal"
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        "[c3050] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 31000001,
+      "Entries": [
+        "[c3100] 1: Normal"
+      ]
+    },
+    {
+      "ID": 31000002,
+      "Entries": [
+        "[c3100] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 32000001,
+      "Entries": [
+        "[c3200] 1: Normal"
+      ]
+    },
+    {
+      "ID": 32000002,
+      "Entries": [
+        "[c3200] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 32500001,
+      "Entries": [
+        "[c3250] 1: Normal"
+      ]
+    },
+    {
+      "ID": 32500002,
+      "Entries": [
+        "[c3250] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 32600001,
+      "Entries": [
+        "[c3260]1: Normal"
+      ]
+    },
+    {
+      "ID": 32600002,
+      "Entries": [
+        "[c3260] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 33000001,
+      "Entries": [
+        "[c3300] 1: Normal"
+      ]
+    },
+    {
+      "ID": 33000002,
+      "Entries": [
+        "[c3300] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "[c3400] 1: Normal"
+      ]
+    },
+    {
+      "ID": 34000002,
+      "Entries": [
+        "[c3400] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 35000001,
+      "Entries": [
+        "[c3500] 1: Normal"
+      ]
+    },
+    {
+      "ID": 35000002,
+      "Entries": [
+        "[c3500] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 36000001,
+      "Entries": [
+        "[c3600] 1: Normal"
+      ]
+    },
+    {
+      "ID": 36000002,
+      "Entries": [
+        "[c3600] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 37000001,
+      "Entries": [
+        "[c3600] 1: Normal"
+      ]
+    },
+    {
+      "ID": 37000002,
+      "Entries": [
+        "[c3600] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 40000001,
+      "Entries": [
+        "[c4000] 1: Normal"
+      ]
+    },
+    {
+      "ID": 40000002,
+      "Entries": [
+        "[c4000] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 41000001,
+      "Entries": [
+        "[c4100] 1: Normal"
+      ]
+    },
+    {
+      "ID": 41000002,
+      "Entries": [
+        "[c4100] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 41500001,
+      "Entries": [
+        "[c4150]1: Normal"
+      ]
+    },
+    {
+      "ID": 41500002,
+      "Entries": [
+        "[c4150] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 42000001,
+      "Entries": [
+        "[c4200] 1: Normal"
+      ]
+    },
+    {
+      "ID": 42000002,
+      "Entries": [
+        "[c4200] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 42010001,
+      "Entries": [
+        "[c4200] 1: Normal"
+      ]
+    },
+    {
+      "ID": 42010002,
+      "Entries": [
+        "[c4200] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 42500001,
+      "Entries": [
+        "[c4250]1: Normal"
+      ]
+    },
+    {
+      "ID": 42500002,
+      "Entries": [
+        "[c4250]2: Status 1"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "[c5000] 1: Normal"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "[c5000] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 50100001,
+      "Entries": [
+        "[c5010]1: Normal"
+      ]
+    },
+    {
+      "ID": 50100002,
+      "Entries": [
+        "[c5010] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 61000001,
+      "Entries": [
+        "[c6100] 1: Normal"
+      ]
+    },
+    {
+      "ID": 61000002,
+      "Entries": [
+        "[c6100] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 81310001,
+      "Entries": [
+        "[c8131] 1: Normal"
+      ]
+    },
+    {
+      "ID": 81310002,
+      "Entries": [
+        "[c8131] 2: Status 1"
+      ]
+    },
+    {
+      "ID": 81350001,
+      "Entries": [
+        "[c8135]1: Normal"
+      ]
+    },
+    {
+      "ID": 81350002,
+      "Entries": [
+        "[c8135]2: Status 1"
+      ]
+    },
+    {
+      "ID": 81450001,
+      "Entries": [
+        "[c8145]1: Normal"
+      ]
+    },
+    {
+      "ID": 81450002,
+      "Entries": [
+        "[c8145]2: Status 1"
+      ]
+    },
+    {
+      "ID": 93090001,
+      "Entries": [
+        "[c9309]1: Normal"
+      ]
+    },
+    {
+      "ID": 93090002,
+      "Entries": [
+        "[c9309]2: Status 1"
+      ]
+    }
+  ]
+}

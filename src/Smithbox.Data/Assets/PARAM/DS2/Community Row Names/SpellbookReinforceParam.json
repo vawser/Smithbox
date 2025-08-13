@@ -1,0 +1,101 @@
+{
+  "Name": "SpellbookReinforceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Unused. -- unused."
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Enhanced Level 1 -- 強化レベル１"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Enhanced Level 2 -- 強化レベル２"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Enhanced Level 3 -- 強化レベル３"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Enhanced Level 4 -- 強化レベル４"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Enhanced Level 5 -- 強化レベル５"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Enhanced Level 6 -- 強化レベル６"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Enhanced Level 7 -- 強化レベル７"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Enhanced Level 8 -- 強化レベル８"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Enhanced Level 9 -- 強化レベル９"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Enhanced Level 10 -- 強化レベル１０"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Enhanced Level 11 -- 強化レベル１１"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Enhanced Level 12 -- 強化レベル１２"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Enhanced Level 13 -- 強化レベル１３"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Enhanced Level 14 -- 強化レベル１４"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Enhanced Level 15 -- 強化レベル１５"
+      ]
+    }
+  ]
+}

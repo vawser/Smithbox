@@ -1,0 +1,1259 @@
+{
+  "Name": "mapobjectinstanceparam_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 10190400,
+      "Entries": [
+        "【One door】One door of iron"
+      ]
+    },
+    {
+      "ID": 10190401,
+      "Entries": [
+        "【One-way door】One-way door of iron"
+      ]
+    },
+    {
+      "ID": 10190402,
+      "Entries": [
+        "【One door】One door of iron"
+      ]
+    },
+    {
+      "ID": 10190403,
+      "Entries": [
+        "【One door】One door of iron"
+      ]
+    },
+    {
+      "ID": 10190410,
+      "Entries": [
+        "[Both doors] both doors of iron 01"
+      ]
+    },
+    {
+      "ID": 10190500,
+      "Entries": [
+        "【Ladder】In front of the bell guard goal"
+      ]
+    },
+    {
+      "ID": 10190501,
+      "Entries": [
+        "【Ladder】Inside the furnace"
+      ]
+    },
+    {
+      "ID": 10190502,
+      "Entries": [
+        "Ladder: The first way to the fountain of recovery"
+      ]
+    },
+    {
+      "ID": 10190503,
+      "Entries": [
+        "[Ladder] scaffolding up and down"
+      ]
+    },
+    {
+      "ID": 10190504,
+      "Entries": [
+        "[Ladder] the tip of a small furnace that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10190505,
+      "Entries": [
+        "Ladder: The second way to the fountain of recovery"
+      ]
+    },
+    {
+      "ID": 10190506,
+      "Entries": [
+        "【Ladder】Climb to the bell guard front bonfire"
+      ]
+    },
+    {
+      "ID": 10190507,
+      "Entries": [
+        "【Ladder】The back of the room with the furnace"
+      ]
+    },
+    {
+      "ID": 10190508,
+      "Entries": [
+        "【Ladder】Go out on the roof of the bell guard area"
+      ]
+    },
+    {
+      "ID": 10190509,
+      "Entries": [
+        "【Ladder】Before the stop lever of the fire-blowing image"
+      ]
+    },
+    {
+      "ID": 10190510,
+      "Entries": [
+        "【Ladder】The road to the bell guard area"
+      ]
+    },
+    {
+      "ID": 10190511,
+      "Entries": [
+        "[Ladder] next to the wall"
+      ]
+    },
+    {
+      "ID": 10190600,
+      "Entries": [
+        "【White door】Blast furnace boss entrance"
+      ]
+    },
+    {
+      "ID": 10190602,
+      "Entries": [
+        "【White door】Blast furnace boss exit_stairs"
+      ]
+    },
+    {
+      "ID": 10190604,
+      "Entries": [
+        "【White door】Blast furnace boss exit_before bonfire"
+      ]
+    },
+    {
+      "ID": 10190610,
+      "Entries": [
+        "【White Door】Entrance of boss outside the castle"
+      ]
+    },
+    {
+      "ID": 10190612,
+      "Entries": [
+        "【White Door】Boss Exit Outside The Castle"
+      ]
+    },
+    {
+      "ID": 10190630,
+      "Entries": [
+        "【White door】The end of the lifting lift"
+      ]
+    },
+    {
+      "ID": 10190640,
+      "Entries": [
+        "【White Door】Pledge Entrance"
+      ]
+    },
+    {
+      "ID": 10190641,
+      "Entries": [
+        "【White Door】Pledge Exit"
+      ]
+    },
+    {
+      "ID": 10190642,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 10190643,
+      "Entries": [
+        "【Black Door】Before the pledge map"
+      ]
+    },
+    {
+      "ID": 10190644,
+      "Entries": [
+        "【Black Door】Pledge Entrance"
+      ]
+    },
+    {
+      "ID": 10190650,
+      "Entries": [
+        "【Bonfire】01_After Boss 1"
+      ]
+    },
+    {
+      "ID": 10190655,
+      "Entries": [
+        "【Bonfire】02_Start Bridge Left"
+      ]
+    },
+    {
+      "ID": 10190660,
+      "Entries": [
+        "【Bonfire】03_Inside the Statue of a Cow"
+      ]
+    },
+    {
+      "ID": 10190665,
+      "Entries": [
+        "【Bonfire】04"
+      ]
+    },
+    {
+      "ID": 10190700,
+      "Entries": [
+        "[Volcano steel works] terminated bonfire"
+      ]
+    },
+    {
+      "ID": 10191000,
+      "Entries": [
+        "Floor Lever: Do not return_01"
+      ]
+    },
+    {
+      "ID": 10191002,
+      "Entries": [
+        "Floor Lever: Do not return_03"
+      ]
+    },
+    {
+      "ID": 10191010,
+      "Entries": [
+        "Floor Lever: Auto Back_01"
+      ]
+    },
+    {
+      "ID": 10191011,
+      "Entries": [
+        "Floor Lever: Automatic return_02 bell guard lever"
+      ]
+    },
+    {
+      "ID": 10191020,
+      "Entries": [
+        "Wall hole lever: front for guillotine door"
+      ]
+    },
+    {
+      "ID": 10191021,
+      "Entries": [
+        "Wall hole lever: back for guillotine door"
+      ]
+    },
+    {
+      "ID": 10191050,
+      "Entries": [
+        "【Floor switch】01_Molten iron kettle: Front"
+      ]
+    },
+    {
+      "ID": 10191051,
+      "Entries": [
+        "【Floor switch】02_Molten iron kettle: Central"
+      ]
+    },
+    {
+      "ID": 10191052,
+      "Entries": [
+        "【Floor switch】03_Molten iron kettle: Back"
+      ]
+    },
+    {
+      "ID": 10191053,
+      "Entries": [
+        "[Floor switch] 04_falling scaffolding: left back"
+      ]
+    },
+    {
+      "ID": 10191054,
+      "Entries": [
+        "[Floor switch] 05_falling scaffolding: right back"
+      ]
+    },
+    {
+      "ID": 10191055,
+      "Entries": [
+        "【Floor switch】06_Falling scaffolding: right hand front"
+      ]
+    },
+    {
+      "ID": 10191056,
+      "Entries": [
+        "[Floor switch] 07_falling scaffolding: left hand front"
+      ]
+    },
+    {
+      "ID": 10191100,
+      "Entries": [
+        "scaffolding moving up and down with lever"
+      ]
+    },
+    {
+      "ID": 10191110,
+      "Entries": [
+        "Operates with guillotine door_wall hole lever"
+      ]
+    },
+    {
+      "ID": 10191200,
+      "Entries": [
+        "Bell Guard Event_Bell 01"
+      ]
+    },
+    {
+      "ID": 10191210,
+      "Entries": [
+        "Bell Guard Event_Bell 02"
+      ]
+    },
+    {
+      "ID": 10191220,
+      "Entries": [
+        "Bell Guard Event_Bell 03"
+      ]
+    },
+    {
+      "ID": 10191230,
+      "Entries": [
+        "Bell Guard Event_Bell 04"
+      ]
+    },
+    {
+      "ID": 10191290,
+      "Entries": [
+        "The door which opens when the bell guard event_bell is ringed"
+      ]
+    },
+    {
+      "ID": 10191300,
+      "Entries": [
+        "a bridge that falls with a lever"
+      ]
+    },
+    {
+      "ID": 10191350,
+      "Entries": [
+        "Lever: Total stop of flame image"
+      ]
+    },
+    {
+      "ID": 10191400,
+      "Entries": [
+        "[Hidden Door 2 (Key Guide)], where you exit the pledge field"
+      ]
+    },
+    {
+      "ID": 10191404,
+      "Entries": [
+        "[Hidden door 2 (double-sided key guide)]right hand climbing the stairs to the right hand 2F entering the castle"
+      ]
+    },
+    {
+      "ID": 10191406,
+      "Entries": [
+        "[Hidden door 2 (double-sided key guide)]wall in the firing direction of the barista"
+      ]
+    },
+    {
+      "ID": 10191410,
+      "Entries": [
+        "[Hidden Door 1 (Insect Key)]: The Road to the Pledge Map"
+      ]
+    },
+    {
+      "ID": 10191500,
+      "Entries": [
+        "Insect Key 1_Hidden Door"
+      ]
+    },
+    {
+      "ID": 10191501,
+      "Entries": [
+        "Insect Key 2_Recovery Fountain 1"
+      ]
+    },
+    {
+      "ID": 10191502,
+      "Entries": [
+        "Insect Key 3_Recovery Fountain 2"
+      ]
+    },
+    {
+      "ID": 10191521,
+      "Entries": [
+        "Fountain of Recovery 1_Water"
+      ]
+    },
+    {
+      "ID": 10191522,
+      "Entries": [
+        "Spring 2_Water of Recovery"
+      ]
+    },
+    {
+      "ID": 10191550,
+      "Entries": [
+        "Furnace Valve"
+      ]
+    },
+    {
+      "ID": 10191600,
+      "Entries": [
+        "Damipoli for the flame coming out of the burning furnace door"
+      ]
+    },
+    {
+      "ID": 10191605,
+      "Entries": [
+        "Damipoli for the flame coming out of the burning furnace door"
+      ]
+    },
+    {
+      "ID": 10191610,
+      "Entries": [
+        "Burning Furnace_Shutter"
+      ]
+    },
+    {
+      "ID": 10191615,
+      "Entries": [
+        "Damipoli for the flame under the burning furnace shutter"
+      ]
+    },
+    {
+      "ID": 10191620,
+      "Entries": [
+        "Damipoli for the flame that climbed the scorching furnace ladder"
+      ]
+    },
+    {
+      "ID": 10191650,
+      "Entries": [
+        "Damipoli 1 for the firing of the flame of the two-way fire-blowing image of the upper and lower scaffolds"
+      ]
+    },
+    {
+      "ID": 10191651,
+      "Entries": [
+        "Damipoli 2 for the firing of the flame of the two-way fire-blowing image of the upper and lower scaffolds"
+      ]
+    },
+    {
+      "ID": 10191660,
+      "Entries": [
+        "As soon as we enter Damipoli_castle for the launch of a fire-blowing statue flame"
+      ]
+    },
+    {
+      "ID": 10191662,
+      "Entries": [
+        "Large statue of Damipoli switch scaffold for firing fire-blowing statue flame"
+      ]
+    },
+    {
+      "ID": 10191664,
+      "Entries": [
+        "Right of Damipoli switch scaffold 3 series for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191666,
+      "Entries": [
+        "Center of Damipoli switch scaffold 3 continuous image for firing fire-blowing statue flame"
+      ]
+    },
+    {
+      "ID": 10191668,
+      "Entries": [
+        "Left of Damipoli_Switch Scaffold 3 continuous image for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191670,
+      "Entries": [
+        "Inside the statue of Damipoli_cow for the firing of a fire-blown statue flame"
+      ]
+    },
+    {
+      "ID": 10191671,
+      "Entries": [
+        "Inside the statue of Damipoli_cow for the firing of a fire-blown statue flame"
+      ]
+    },
+    {
+      "ID": 10191672,
+      "Entries": [
+        "Inside the statue of Damipoli_cow for the firing of a fire-blown statue flame"
+      ]
+    },
+    {
+      "ID": 10191680,
+      "Entries": [
+        "6 series_1 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191681,
+      "Entries": [
+        "6 series_2 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191682,
+      "Entries": [
+        "6 series_3 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191683,
+      "Entries": [
+        "6 series_4 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191684,
+      "Entries": [
+        "6 series_5 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191685,
+      "Entries": [
+        "6 series_6 of Damipoli_Wire mesh room for fire-blowing statue flame launch"
+      ]
+    },
+    {
+      "ID": 10191700,
+      "Entries": [
+        "Molten iron kettle 01_Front"
+      ]
+    },
+    {
+      "ID": 10191701,
+      "Entries": [
+        "Molten iron kettle 02_center"
+      ]
+    },
+    {
+      "ID": 10191702,
+      "Entries": [
+        "Molten iron kettle 03_back"
+      ]
+    },
+    {
+      "ID": 10191710,
+      "Entries": [
+        "Flowing Molten Iron 01"
+      ]
+    },
+    {
+      "ID": 10191711,
+      "Entries": [
+        "Flowing Molten Iron 02"
+      ]
+    },
+    {
+      "ID": 10191712,
+      "Entries": [
+        "Flowing Molten Iron 03"
+      ]
+    },
+    {
+      "ID": 10191750,
+      "Entries": [
+        "Falling scaffolding 01_left hand"
+      ]
+    },
+    {
+      "ID": 10191751,
+      "Entries": [
+        "Falling scaffolding 02_right hand"
+      ]
+    },
+    {
+      "ID": 10191752,
+      "Entries": [
+        "Falling scaffolding 03_left back"
+      ]
+    },
+    {
+      "ID": 10191753,
+      "Entries": [
+        "Falling Scaffolding 04_Right Back"
+      ]
+    },
+    {
+      "ID": 10191800,
+      "Entries": [
+        "Small furnace_traveling direction right"
+      ]
+    },
+    {
+      "ID": 10191805,
+      "Entries": [
+        "Small furnace_traveling direction left"
+      ]
+    },
+    {
+      "ID": 10191810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191825,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10191911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192000,
+      "Entries": [
+        "barista fire arrow ver"
+      ]
+    },
+    {
+      "ID": 10192005,
+      "Entries": [
+        "Barista Fire Arrow ver_ Pledge Field"
+      ]
+    },
+    {
+      "ID": 10192050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192105,
+      "Entries": [
+        "Room on top of the water vase_fire-spout_ the water vase room 1 at the end of the hidden door"
+      ]
+    },
+    {
+      "ID": 10192115,
+      "Entries": [
+        "Room on top of the water vase_fire-spout_ the water vase room 3 ahead of the hidden door"
+      ]
+    },
+    {
+      "ID": 10192120,
+      "Entries": [
+        "Room on top of the water vase_fire-spout_ the water vase room 4 ahead of the hidden door"
+      ]
+    },
+    {
+      "ID": 10192125,
+      "Entries": [
+        "Room on top of the water vase_fire-spout_ the water vase room 5 ahead of the hidden door"
+      ]
+    },
+    {
+      "ID": 10192130,
+      "Entries": [
+        "Room on top of the water vase_fire-spout_ the water vase room 6 ahead of the hidden door"
+      ]
+    },
+    {
+      "ID": 10192135,
+      "Entries": [
+        "Water vase_ lever lift destination upper floor 1"
+      ]
+    },
+    {
+      "ID": 10192140,
+      "Entries": [
+        "Water vase_ lever lift destination upper floor 2"
+      ]
+    },
+    {
+      "ID": 10192145,
+      "Entries": [
+        "Water vase_ lever lift destination upper floor 3"
+      ]
+    },
+    {
+      "ID": 10192150,
+      "Entries": [
+        "Water vase_ lever lift destination upper floor 4"
+      ]
+    },
+    {
+      "ID": 10192155,
+      "Entries": [
+        "Water vase_ lever lift destination upper floor 5"
+      ]
+    },
+    {
+      "ID": 10192160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192175,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192180,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192185,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192195,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192200,
+      "Entries": [
+        "Damon Knight Stone Statue 1"
+      ]
+    },
+    {
+      "ID": 10192201,
+      "Entries": [
+        "Damon Knight Stone Statue 2"
+      ]
+    },
+    {
+      "ID": 10192300,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192301,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192302,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192303,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192304,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192305,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192306,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192307,
+      "Entries": [
+        "thorn wall_boss front"
+      ]
+    },
+    {
+      "ID": 10192400,
+      "Entries": [
+        "[Volcano steel works] can be destroyed spire (for boss lava zone placement)"
+      ]
+    },
+    {
+      "ID": 10192401,
+      "Entries": [
+        "[Volcano steel works] can be destroyed spire (for boss lava zone placement)"
+      ]
+    },
+    {
+      "ID": 10192500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10192600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193700,
+      "Entries": [
+        "【Environment Map ID】 [Molten castle] lava for cut scene"
+      ]
+    },
+    {
+      "ID": 10193800,
+      "Entries": [
+        "Dummy: Dummy OBJ for placement"
+      ]
+    },
+    {
+      "ID": 10193900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] water bottle"
+      ]
+    },
+    {
+      "ID": 10193901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] water bottle"
+      ]
+    },
+    {
+      "ID": 10193902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] water bottle"
+      ]
+    },
+    {
+      "ID": 10193903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] water bottle"
+      ]
+    },
+    {
+      "ID": 10193904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] statue blowing fire"
+      ]
+    },
+    {
+      "ID": 10193911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] statue blowing fire"
+      ]
+    },
+    {
+      "ID": 10193912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] statue blowing fire"
+      ]
+    },
+    {
+      "ID": 10193913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] statue blowing fire"
+      ]
+    },
+    {
+      "ID": 10193914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10193921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10193922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10193923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10193924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10193945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10194000,
+      "Entries": [
+        "【NPC】Tomb_Curiosity Shop"
+      ]
+    },
+    {
+      "ID": 10194100,
+      "Entries": [
+        "【NPC】Tomb_Bell Guard"
+      ]
+    },
+    {
+      "ID": 10194900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10194999,
+      "Entries": [
+        "Part of a broken bridge"
+      ]
+    },
+    {
+      "ID": 10195000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195090,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195100,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195110,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195120,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195130,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195140,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10195150,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10196000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196200,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196210,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10196220,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

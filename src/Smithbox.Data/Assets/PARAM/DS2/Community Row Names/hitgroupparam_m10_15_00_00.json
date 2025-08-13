@@ -1,0 +1,47 @@
+{
+  "Name": "hitgroupparam_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Group 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Group 2_ Gimmick Door - Aisle Side"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Group 2_ Lobby Side - Gimmick Door"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Group 2_ Gimmick Door Room"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "On the map for elevator connection reading"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Under the map for elevator connection reading"
+      ]
+    }
+  ]
+}

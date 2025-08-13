@@ -1,0 +1,65 @@
+{
+  "Name": "BladeHomingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Laser whip_Attack ①"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "Laser whip_attack ②"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Chain Hammer_Attack ①"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Chain Hammer_Attack ②"
+      ]
+    },
+    {
+      "ID": 80300000,
+      "Entries": [
+        "c8030 Pyle MT (Shotgun Pile"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "c8110 Colorless MT Blade"
+      ]
+    },
+    {
+      "ID": 81310600,
+      "Entries": [
+        "c8131 Control prototype formidable diving pile"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "c8200 wall bug"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "c8210 wall bug (large)"
+      ]
+    }
+  ]
+}

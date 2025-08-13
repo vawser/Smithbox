@@ -1,0 +1,29 @@
+{
+  "Name": "JigglerBehaviorWorldFixParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 43010001,
+      "Entries": [
+        "parallel to the ground -- 地面と平行"
+      ]
+    },
+    {
+      "ID": 43010002,
+      "Entries": [
+        "parallel to the ground -- 地面と平行"
+      ]
+    },
+    {
+      "ID": 43010003,
+      "Entries": [
+        "parallel to the ground -- 地面と平行"
+      ]
+    }
+  ]
+}

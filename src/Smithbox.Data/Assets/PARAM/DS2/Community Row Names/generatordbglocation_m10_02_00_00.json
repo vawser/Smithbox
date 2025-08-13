@@ -1,0 +1,287 @@
+{
+  "Name": "generatordbglocation_m10_02_00_00",
+  "Entries": [
+    {
+      "ID": 15,
+      "Entries": [
+        "【Housekeeper】 Npc -- 【家政婦】NPC"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "【Housekeeper】 NPC (Ghost) -- 【家政婦】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "【Housekeeper】 NPC_ Cut Scene -- 【家政婦】NPC_カットシーン"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "[Fire protection woman 1 of the retirement] Npc -- 【退役の火防女１】NPC"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[Fire protection woman 1 of the retirement] NPC (Ghost) -- 【退役の火防女１】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "[Fire protection woman 1 of the retirement] NPC_ Cut Scene -- 【退役の火防女１】NPC_カットシーン"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "[Fire protection woman 2 of the retirement] Npc -- 【退役の火防女２】NPC"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "[Fire protection woman 2 of the retirement] NPC (Ghost) -- 【退役の火防女２】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "[Fire protection woman 2 of the retirement] NPC_ Cut Scene -- 【退役の火防女２】NPC_カットシーン"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Fire protection woman 3 of the retirement] Npc -- 【退役の火防女３】NPC"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "[Fire protection woman 3 of the retirement] NPC (Ghost) -- 【退役の火防女３】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "[Fire protection woman 3 of the retirement] NPC_ Cut Scene -- 【退役の火防女３】NPC_カットシーン"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "[Glitter Daughter] Npc -- 【キラキラ娘】NPC"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 1 -- 【草ガサガサ】コボルト１"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 2 -- 【草ガサガサ】コボルト2"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 3 -- 【草ガサガサ】コボルト3"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 4 -- 【草ガサガサ】コボルト4"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 5 -- 【草ガサガサ】コボルト5"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "【Kusaga sagasa】Kobold 6 -- 【草ガサガサ】コボルト6"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "【Tutorial Strong Enemy】Auga -- 【チュートリアル強敵】オーガ"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "【Tutorial 1】The Dead: The Traveler's Clothes ♂: Bare Hands -- 【チュートリアル１】亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "【Tutorial 1】The Dead: The Traveler's Clothes ♂: Bare Hands -- 【チュートリアル１】亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "【Tutorial 1】The Dead: The Traveler's Clothes ♂: Bare Hands -- 【チュートリアル１】亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "【Tutorial 1】The Dead: The Traveler's Clothes ♂: Bare Hands -- 【チュートリアル１】亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "【Tutorial 1】 NPC: Gap Cave: Sniper -- 【チュートリアル１】NPC：隙間の洞：狙撃"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "【Tutorial 1】The Dead: The Traveler's Clothes ♂: Bare Hands -- 【チュートリアル１】亡者：旅人の服♂：素手"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "【Tutorial 1】 NPC: Gap Cave: Sniper -- 【チュートリアル１】NPC：隙間の洞：狙撃"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "【Tutorial 1】The Dead: Traveler's Clothing ♂: Dagger -- 【チュートリアル１】亡者：旅人の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "【Tutorial 2】The Dead: Traveler's Clothes ♂: Dagger -- 【チュートリアル２】亡者：旅人の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "【Tutorial 2】 NPC: Gap Sinus: Proximity -- 【チュートリアル２】NPC：隙間の洞：近接"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "【Tutorial 2】 NPC: Gap Sinus: Proximity -- 【チュートリアル２】NPC：隙間の洞：近接"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "【Tutorial 2】 NPC: Gap Sinus: Proximity -- 【チュートリアル２】NPC：隙間の洞：近接"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "【Tutorial 3】The Dead: The Traveler's Clothing ♂: Dagger -- 【チュートリアル３】亡者：旅人の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "【Tutorial 3】 NPC: Gap Cave: Sniper -- 【チュートリアル３】NPC：隙間の洞：狙撃"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "【Tutorial 3】The Dead: The Traveler's Clothing ♂: Dagger -- 【チュートリアル３】亡者：旅人の服♂：短剣"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "【Tutorial 3】 NPC: Gap Sinus: Shooting -- 【チュートリアル３】NPC：隙間の洞：射撃"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "【Tutorial_Sandy Beach】Auga 01 -- 【チュートリアル_砂浜】オーガ01"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "【Tutorial_Sandy Beach】Auga 02 -- 【チュートリアル_砂浜】オーガ02"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "【Opening Square of The Second Week】Takataku Warrior: Taka01 -- 【２週目開始広場】鷹匠戦士：鷹01"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "【Opening Square of The Second Week】Takataku Warrior: Taka02 -- 【２週目開始広場】鷹匠戦士：鷹02"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "【Opening Square of The Second Week】Takataku Warrior: Taka03 -- 【２週目開始広場】鷹匠戦士：鷹03"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Opening square of the second week] falcon warrior: bow -- 【２週目開始広場】鷹匠戦士：弓"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Second lap appearance _ jumping appearance] goblin son of a raw hand: Soul Black -- 【２周目出現_飛び降り登場】ゴブリン（生者）：素手：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Second lap appearance _ jumping appearance] goblin son of a raw hand: Soul Black -- 【２周目出現_飛び降り登場】ゴブリン（生者）：素手：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "[Second lap appearance _ battle] goblins (raw man) bare hands: Soul Black -- 【２周目出現_戦闘】ゴブリン（生者）：素手：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 8170,
+      "Entries": [
+        "[Red spirit_NPC appearance of the second lap] second lap hunting -- 【２周目出現_NPC赤霊】２周目狩り"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Character for cut scene] player -- 【カットシーン用キャラ】プレイヤー"
+      ]
+    }
+  ]
+}

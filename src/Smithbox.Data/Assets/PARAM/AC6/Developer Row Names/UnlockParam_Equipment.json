@@ -1,0 +1,149 @@
+{
+  "Name": "UnlockParam_Equipment",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Mercenary rank 1 reward -- 傭兵ランク１報酬"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Mercenary rank 2 reward -- 傭兵ランク２報酬"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Mercenary rank 3 reward -- 傭兵ランク３報酬"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Mercenary rank 4 reward -- 傭兵ランク４報酬"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Mercenary rank 5 reward -- 傭兵ランク５報酬"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Mercenary rank 6 reward -- 傭兵ランク６報酬"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Mercenary rank 7 reward -- 傭兵ランク７報酬"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Mercenary rank 8 reward -- 傭兵ランク８報酬"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Mercenary rank 9 reward -- 傭兵ランク９報酬"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Mercenary rank 10 reward -- 傭兵ランク１０報酬"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Mercenary rank 11 reward -- 傭兵ランク１１報酬"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Mercenary rank 12 reward -- 傭兵ランク１２報酬"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Mercenary rank 13 reward -- 傭兵ランク１３報酬"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Mercenary rank 14 reward -- 傭兵ランク１４報酬"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Mercenary rank 15 reward -- 傭兵ランク１５報酬"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "[Clear]Rail Road -- 【クリア】レイル・ロード"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "[Clear] Jailbreak -- 【クリア】脱獄"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "[Clear] Breaking through the atmosphere -- 【クリア】大気圏突破"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "[Clear] Battle B -- 【クリア】決戦B"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Clear] 01(S) -- 【クリア】01(S)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Clear] TEST-09 [γ3] -- 【クリア】TEST-09【γ3】"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Clear] TEST-R [δ1] -- 【クリア】TEST-R【δ1】"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[Clear] TEST-W [δ2] -- 【クリア】TEST-W【δ2】"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[Clear] TEST-A [δ3] -- 【クリア】TEST-A【δ3】"
+      ]
+    }
+  ]
+}

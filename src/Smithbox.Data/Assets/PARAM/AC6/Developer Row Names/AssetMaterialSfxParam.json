@@ -1,0 +1,264 @@
+{
+  "Name": "AssetMaterialSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "moon surface -- 月面"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "stone -- 石"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood -- 木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "electricity -- 電気"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "concrete -- コンクリ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "glass -- ガラス"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water (about a puddle) -- 水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water (about ankle level) -- 水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water (below the knee) -- 水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Water (waist and above) -- 水（腰以上）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "underwater -- 水底"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Swamp (puddle level) -- 沼（水溜まり程度）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Swamp (about ankle length) -- 沼（足首程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Swamp (below the knee) -- 沼（膝下）"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Missing number -- 欠番",
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Missing number -- 欠番"
+      ]
+    }
+  ]
+}

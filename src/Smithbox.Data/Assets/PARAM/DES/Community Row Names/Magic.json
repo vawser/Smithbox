@@ -1,0 +1,209 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "magic arrow"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "fire bolt"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Recovery of others"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "right hand weapon enchantment"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Cursed Enchantment"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "black ghosting"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "poison cloud"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "auditory hallucination"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "ignition"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "penetrating beam"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Funnel"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Hidden"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "protective membrane"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Advanced enchantment"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "water shield"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "death cloud"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "soul touch"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "corrosion cloud"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "perfect shield"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Meteor"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "self-centered explosion"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "anti magic"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Large recovery of HP"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "revive when dead"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "regenerate"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "resuscitation"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "status ailment recovery"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "ghost camouflage"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Gate"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "black ghost go away"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "HP recovery"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "detoxification"
+      ]
+    }
+  ]
+}

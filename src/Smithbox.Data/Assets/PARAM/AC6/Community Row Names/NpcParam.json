@@ -1,0 +1,7397 @@
+{
+  "Name": "NpcParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Should not be deleted *nakama may be set as a dress-up NPC"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Obvious data (copy and paste source recommended)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Ally NPC"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Platoon dummy leader (bipedal walking)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Platoon dummy leader does not move"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For automatic patrol (default)"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "For automatic patrol (running)"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "For automatic patrol (walking)"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "For automatic patrol (Super Dash)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Garage camera dummy character"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "garage helicopter"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "NIGHTFALL / 51-016 GA - Arena"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "NIGHTFALL / Raven - Defend the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 10001010,
+      "Entries": [
+        "NIGHTFALL / Raven - Defend the Dam Complex"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "DEADSLED / Coldcall - Arena"
+      ]
+    },
+    {
+      "ID": 10101000,
+      "Entries": [
+        "DEADSLED / Coldcall - Underground Exploration - Depth 2 (Alt)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "ENTANGLE / Sulla - Arena"
+      ]
+    },
+    {
+      "ID": 10201000,
+      "Entries": [
+        "ENTANGLE / Sulla - Attack the Watchpoint"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "MIND BETA / 51-002 K - Arena"
+      ]
+    },
+    {
+      "ID": 10300001,
+      "Entries": [
+        "MIND BETA / 51-002 K"
+      ]
+    },
+    {
+      "ID": 10301000,
+      "Entries": [
+        "TRANSCRIBER / Kate Markson - Obstruct the Mandatory Inspection"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "MIND GAMMA / 51-003 K - Arena"
+      ]
+    },
+    {
+      "ID": 10311000,
+      "Entries": [
+        "ALLMIND (MIND GAMMA) - Coral Release"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "SHINOBI / Rokumonsen - Arena"
+      ]
+    },
+    {
+      "ID": 10400001,
+      "Entries": [
+        "SHINOBI / Rokumonsen - Eliminate V.VII"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "STEEL HAZE / V.IV Rusty - Arena"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "STEEL HAZE / V.IV Rusty - Attack the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 10501010,
+      "Entries": [
+        "STEEL HAZE / V.IV Rusty - Operation Wallclimber"
+      ]
+    },
+    {
+      "ID": 10501100,
+      "Entries": [
+        "STEEL HAZE / V.IV Rusty - Unknown Territory Survey"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "STEEL HAZE ORTUS / 51-101 R - Arena"
+      ]
+    },
+    {
+      "ID": 10601000,
+      "Entries": [
+        "STEEL HAZE ORTUS / Rusty - Breach the Karman Line"
+      ]
+    },
+    {
+      "ID": 10601001,
+      "Entries": [
+        "STEEL HAZE ORTUS / Rusty - Destroy the Drive Block (Before Smart Cleaner)"
+      ]
+    },
+    {
+      "ID": 10601002,
+      "Entries": [
+        "STEEL HAZE ORTUS / Rusty - Destroy the Drive Block (Smart Cleaner)"
+      ]
+    },
+    {
+      "ID": 10609999,
+      "Entries": [
+        "STEEL HAZE ORTUS / Rusty"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "OPEN FAITH / V.II Snail - Arena"
+      ]
+    },
+    {
+      "ID": 10700001,
+      "Entries": [
+        "OPEN FAITH / V.II Snail"
+      ]
+    },
+    {
+      "ID": 10701000,
+      "Entries": [
+        "OPEN FAITH / V.II Snail"
+      ]
+    },
+    {
+      "ID": 10701001,
+      "Entries": [
+        "OPEN FAITH / V.II Snail - Reach the Coral Convergence (Alt)"
+      ]
+    },
+    {
+      "ID": 10710000,
+      "Entries": [
+        "OPEN FAITH / V.II Snail (Alt) - Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "RECONFIG / V.V Hawkins - Arena"
+      ]
+    },
+    {
+      "ID": 10801000,
+      "Entries": [
+        "RECONFIG / V.V Hawkins - Ambush the Vespers"
+      ]
+    },
+    {
+      "ID": 10900000,
+      "Entries": [
+        "DUAL NATURE / V.VIII Pater - Arena"
+      ]
+    },
+    {
+      "ID": 10901001,
+      "Entries": [
+        "DUAL NATURE / V.VIII Pater - Ambush the Vespers"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "MILK TOOTH / \"Honest\" Brute - Arena"
+      ]
+    },
+    {
+      "ID": 11001000,
+      "Entries": [
+        "MILK TOOTH / \"Honest\" Brute - Eliminate \"Honest\" Brute"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "INSTITUTE / 51-015 GA - Arena"
+      ]
+    },
+    {
+      "ID": 11101000,
+      "Entries": [
+        "IA-C01: EPHEMERA / Enforcement System - Underground Exploration - Depth 3"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "FULL COURSE / \"Cinder\" Carla - Arena"
+      ]
+    },
+    {
+      "ID": 11201000,
+      "Entries": [
+        "FULL COURSE / \"Cinder\" Carla - Eliminate \"Cinder\" Carla"
+      ]
+    },
+    {
+      "ID": 11201001,
+      "Entries": [
+        "FULL COURSE / \"Cinder\" Carla - Escape"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "IB-C03: HAL 826 / 51-201 W - Arena"
+      ]
+    },
+    {
+      "ID": 11300001,
+      "Entries": [
+        "IB-C03: HAL 826 / 51-201 W"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "IB-C03: HAL 826 / Handler Walter - Bring Down the Xylem"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu - Arena"
+      ]
+    },
+    {
+      "ID": 11401010,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu"
+      ]
+    },
+    {
+      "ID": 11401020,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu - Stop the Secret Data Breach"
+      ]
+    },
+    {
+      "ID": 11401030,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu - Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 11401040,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu - Attack the Dam Complex"
+      ]
+    },
+    {
+      "ID": 11410000,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu (ALLMIND) - Underground Exploration - Depth 2"
+      ]
+    },
+    {
+      "ID": 11411000,
+      "Entries": [
+        "HEAD BRINGER / G5 Iguazu (ALLMIND) - Reach the Coral Convergence (Alt)"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "CANNON HEAD / G4 Volta - Arena"
+      ]
+    },
+    {
+      "ID": 11501010,
+      "Entries": [
+        "CANNON HEAD / G4 Volta - Attack the Dam Complex"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "LIGER TAIL / G1 Michigan - Arena"
+      ]
+    },
+    {
+      "ID": 11601001,
+      "Entries": [
+        "LIGER TAIL / G1 Michigan - Intercept the Redguns"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "BURN PICKAXE / Index Dunham - Arena"
+      ]
+    },
+    {
+      "ID": 11701000,
+      "Entries": [
+        "BURN PICKAXE / Index Dunham - Attack the Dam Complex"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "YUE YU / Little Ziyi - Arena"
+      ]
+    },
+    {
+      "ID": 11801000,
+      "Entries": [
+        "YUE YU / Little Ziyi - Retrieve Combat Logs"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "TSUBASA / Middle Flatwell - Arena"
+      ]
+    },
+    {
+      "ID": 11901000,
+      "Entries": [
+        "TSUBASA / Middle Flatwell - Ambush the Vespers"
+      ]
+    },
+    {
+      "ID": 11901001,
+      "Entries": [
+        "TSUBASA / Middle Flatwell - Unknown Territory Survey (Alt)"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "LOCKSMITH / V.I Freud - Arena"
+      ]
+    },
+    {
+      "ID": 12001000,
+      "Entries": [
+        "LOCKSMITH / V.I Freud"
+      ]
+    },
+    {
+      "ID": 12001001,
+      "Entries": [
+        "LOCKSMITH / V.I Freud"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "CIRCUS / \"Chatty\" Stick - Arena"
+      ]
+    },
+    {
+      "ID": 12101000,
+      "Entries": [
+        "CIRCUS / \"Chatty\" Stick - Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 12101100,
+      "Entries": [
+        "CIRCUS / \"Chatty\" Stick - Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 12101101,
+      "Entries": [
+        "CIRCUS / \"Chatty\" Stick - Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 12101200,
+      "Entries": [
+        "CIRCUS / \"Chatty\" Stick - Eliminate \"Cinder\" Carla"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "ALLMIND Helper (Back Weapons) - Coral Release"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "ALLMIND Helper (Arm Weapons) - Coral Release"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "ALLMIND Helper (Arm and Back Weapons)"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "ECHO / Ayre - Arena"
+      ]
+    },
+    {
+      "ID": 12501000,
+      "Entries": [
+        "ECHO / Ayre - Coral Release"
+      ]
+    },
+    {
+      "ID": 12600000,
+      "Entries": [
+        "TRAINER / 51-011 AL - Arena"
+      ]
+    },
+    {
+      "ID": 12601000,
+      "Entries": [
+        "Trainer AC"
+      ]
+    },
+    {
+      "ID": 12601100,
+      "Entries": [
+        "Trainer AC - AC Test"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "TESTER / 51-012 AL - Arena"
+      ]
+    },
+    {
+      "ID": 12701000,
+      "Entries": [
+        "TESTER AC / Dafeng Student Pilot - Destroy the Tester AC"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "DEEP DOWN / G2 Nile - Arena"
+      ]
+    },
+    {
+      "ID": 20001000,
+      "Entries": [
+        "DEEP DOWN / G2 Nile - Prisoner Rescue"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "LI LONG / G3 Wu Huahai - Arena"
+      ]
+    },
+    {
+      "ID": 20101001,
+      "Entries": [
+        "LI LONG / G3 Wu Huahai - Reach the Coral Convergence"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "HERMIT / G6 Red - Arena"
+      ]
+    },
+    {
+      "ID": 20201000,
+      "Entries": [
+        "HERMIT / G6 Red - MIA"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "CORPORATION / 51-013 BE - Arena"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "GUIDANCE / V.VII Swinburne - Arena"
+      ]
+    },
+    {
+      "ID": 20401000,
+      "Entries": [
+        "GUIDANCE / V.VII Swinburne - Eliminate V.VII"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "INFECTION / V.VI Maeterlinck - Arena"
+      ]
+    },
+    {
+      "ID": 20501000,
+      "Entries": [
+        "INFECTION / V.VI Maeterlinck - Reach the Coral Convergence"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "BARREN FLOWER / V.III O'Keeffe - Arena"
+      ]
+    },
+    {
+      "ID": 20601000,
+      "Entries": [
+        "BARREN FLOWER / V.III O'Keeffe - Eliminate V.III"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "CANDLE RING / Ring Freddie - Arena"
+      ]
+    },
+    {
+      "ID": 20701000,
+      "Entries": [
+        "CANDLE RING / Ring Freddie - Eliminate the Enforcement Squads"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "ASTGHIK / Thumb Dolmayan - Arena"
+      ]
+    },
+    {
+      "ID": 20801000,
+      "Entries": [
+        "ASTGHIK / Thumb Dolmayan - Survey the Uninhabited Floating City (Alt)"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "MAD STOMP / \"Invincible\" Rummy - Arena"
+      ]
+    },
+    {
+      "ID": 20901000,
+      "Entries": [
+        "MAD STOMP / \"Invincible\" Rummy - Infiltrate Grid 086"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "RUBICONIAN / 51-014 BE - Arena"
+      ]
+    },
+    {
+      "ID": 21100000,
+      "Entries": [
+        "BITTER PROMISE / Nosaac - Arena"
+      ]
+    },
+    {
+      "ID": 21101000,
+      "Entries": [
+        "BITTER PROMISE / Nosaac"
+      ]
+    },
+    {
+      "ID": 21101001,
+      "Entries": [
+        "BITTER PROMISE / Nosaac"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "UMBER OX / Chartreuse - Arena"
+      ]
+    },
+    {
+      "ID": 21201000,
+      "Entries": [
+        "UMBER OX / Chartreuse - Defend the Dam Complex"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "ASTER CROWN / King - Arena"
+      ]
+    },
+    {
+      "ID": 21301000,
+      "Entries": [
+        "ASTER CROWN / King - Defend the Dam Complex"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "MIND ALPHA / 51-001 K - Arena"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30000099,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 30000199,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Missiles)"
+      ]
+    },
+    {
+      "ID": 30000201,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Missiles)"
+      ]
+    },
+    {
+      "ID": 30000299,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Missiles)"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "BAWS Guard MT (Walker) (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30000902,
+      "Entries": [
+        "BAWS Guard MT (Walker) (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30000903,
+      "Entries": [
+        "BAWS Guard MT (Walker) (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30000904,
+      "Entries": [
+        "BAWS Guard MT (Walker) (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30000905,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30001001,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30001002,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30001003,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30001004,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30001100,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 30004000,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30004001,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30004002,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 30004100,
+      "Entries": [
+        "BAWS Guard MT (Walker) (Missiles)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Junker Coyote \"Puncher\" MT (Walker) - Eliminate the Doser Faction"
+      ]
+    },
+    {
+      "ID": 30010950,
+      "Entries": [
+        "Junker Coyote \"Puncher\" MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30010951,
+      "Entries": [
+        "Junker Coyote \"Puncher\" MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Junker Coyote \"Kicker\" MT (Walker) - Eliminate the Doser Faction"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200001,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200090,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200099,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30200101,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30200199,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200201,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200202,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200299,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30200301,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30200399,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30200400,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30200401,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30200499,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200501,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200503,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200599,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30200601,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30200699,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30200700,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200799,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30200801,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30200810,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30200811,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30200820,
+      "Entries": [
+        "BAWS Bipedal MT (Shield Only)"
+      ]
+    },
+    {
+      "ID": 30200821,
+      "Entries": [
+        "BAWS Bipedal MT (Shield Only)"
+      ]
+    },
+    {
+      "ID": 30200830,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Camera)"
+      ]
+    },
+    {
+      "ID": 30200831,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Camera)"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200901,
+      "Entries": [
+        "BAWS Bipedal MT (Back Bazooka Only)"
+      ]
+    },
+    {
+      "ID": 30200902,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200903,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200904,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200915,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200950,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200951,
+      "Entries": [
+        "BAWS Bipedal MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30200991,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200992,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200993,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200994,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200995,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200996,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30200998,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201001,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201002,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201003,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201004,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201005,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201021,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201022,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201023,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201024,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201025,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201026,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201027,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201028,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30201100,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201101,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201102,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201103,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201104,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201105,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201106,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201107,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201108,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201109,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201111,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201112,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201113,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201114,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201115,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201120,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201121,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201122,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201123,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201124,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201125,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201126,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201127,
+      "Entries": [
+        "BAWS Bipedal MT (Dual Machine Guns)"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201201,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201202,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201203,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201204,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201205,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201206,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201207,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201208,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201209,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201210,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201212,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201301,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201303,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201304,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201305,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201311,
+      "Entries": [
+        "BAWS Bipedal MT (Shotgun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201400,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles) - AC Test"
+      ]
+    },
+    {
+      "ID": 30201402,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201403,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201404,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201406,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201407,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201408,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201409,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201410,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201411,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201412,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201413,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201414,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201415,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201416,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201417,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201418,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201419,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201420,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201421,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201422,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201423,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201424,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201425,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201426,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201427,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201428,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201429,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201430,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Missiles)"
+      ]
+    },
+    {
+      "ID": 30201500,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201501,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201502,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201503,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201504,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201505,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201506,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201507,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201508,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201509,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201510,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201511,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201512,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201513,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201514,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201515,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201516,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201517,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201518,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201519,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201600,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30201602,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30201603,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30201604,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Shield)"
+      ]
+    },
+    {
+      "ID": 30201700,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201701,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Bazooka)"
+      ]
+    },
+    {
+      "ID": 30201800,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201801,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201802,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201803,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Shield)"
+      ]
+    },
+    {
+      "ID": 30201810,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201812,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201813,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201814,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201815,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201816,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201817,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201818,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201819,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201820,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201822,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30201830,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Camera)"
+      ]
+    },
+    {
+      "ID": 30201831,
+      "Entries": [
+        "BAWS Bipedal MT (Rifle + Back Camera)"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 30202001,
+      "Entries": [
+        "BAWS Bipedal MT (Machine Gun + Back Bazooka)"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500001,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500003,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500004,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500005,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500006,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500007,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500008,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500009,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500010,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500099,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30500100,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500101,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500102,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500103,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500104,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500105,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500106,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500107,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500108,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500199,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30500200,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30500201,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30500299,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30500300,
+      "Entries": [
+        "PCA Subject Guard MT (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 30500399,
+      "Entries": [
+        "PCA Subject Guard MT (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 30500400,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500401,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500402,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500403,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500404,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500405,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500406,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500407,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500408,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500499,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30500900,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30500901,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30500902,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30500903,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30500950,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30500951,
+      "Entries": [
+        "PCA Subject Guard MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501001,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501002,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501003,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501004,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501005,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501006,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501007,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501008,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501009,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501010,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501011,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501012,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501013,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501015,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501016,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501017,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501018,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501019,
+      "Entries": [
+        "PCA Subject Guard MT (Laser + Missiles)"
+      ]
+    },
+    {
+      "ID": 30501100,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30501101,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30501102,
+      "Entries": [
+        "PCA Subject Guard MT (Stun Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 30501200,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30501201,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30501202,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30501204,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30501205,
+      "Entries": [
+        "PCA Subject Guard MT (Fire Blade)"
+      ]
+    },
+    {
+      "ID": 30501300,
+      "Entries": [
+        "PCA Subject Guard MT (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 30501301,
+      "Entries": [
+        "PCA Subject Guard MT (Flamethrower)"
+      ]
+    },
+    {
+      "ID": 30501400,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30501401,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30501405,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30501406,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 30501407,
+      "Entries": [
+        "PCA Subject Guard MT (Back Bazookas)"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Xylem Flying MT (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 31000001,
+      "Entries": [
+        "Xylem Flying MT (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 31000003,
+      "Entries": [
+        "Xylem Flying MT (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 31000100,
+      "Entries": [
+        "Xylem Flying MT (Laser Blades)"
+      ]
+    },
+    {
+      "ID": 31000103,
+      "Entries": [
+        "Xylem Flying MT (Laser Blades)"
+      ]
+    },
+    {
+      "ID": 31000600,
+      "Entries": [
+        "Xylem Flying MT (Laser Blades)"
+      ]
+    },
+    {
+      "ID": 31000900,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000901,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000902,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000903,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000904,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000905,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000906,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000910,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000950,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000951,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000955,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31000956,
+      "Entries": [
+        "Xylem Flying MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Xylem Flying MT (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 31001100,
+      "Entries": [
+        "Xylem Flying MT (Laser Blades)"
+      ]
+    },
+    {
+      "ID": 31001101,
+      "Entries": [
+        "Xylem Flying MT (Laser Blades)"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT - Operation Wallclimber"
+      ]
+    },
+    {
+      "ID": 31500900,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31501001,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "AAS03: EKDROMOI EP / PCA SP 2nd Lieutenant - Attack the Refueling base"
+      ]
+    },
+    {
+      "ID": 32000010,
+      "Entries": [
+        "AAS03: EKDROMOI EP"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "AAS03: EKDROMOI MG"
+      ]
+    },
+    {
+      "ID": 32000101,
+      "Entries": [
+        "AAS03: EKDROMOI \"SMG\""
+      ]
+    },
+    {
+      "ID": 32000110,
+      "Entries": [
+        "AAS03: EKDROMOI MG"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "AAS03: EKDROMOI PG / PCA SP Chief Sergeant 1st Cls - Attack the Refueling Base"
+      ]
+    },
+    {
+      "ID": 32000210,
+      "Entries": [
+        "AAS03: EKDROMOI PG"
+      ]
+    },
+    {
+      "ID": 32000900,
+      "Entries": [
+        "AAS03: EKDROMOI (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32000901,
+      "Entries": [
+        "AAS03: EKDROMOI (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32000902,
+      "Entries": [
+        "AAS03: EKDROMOI (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32000903,
+      "Entries": [
+        "AAS03: EKDROMOI (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32000950,
+      "Entries": [
+        "AAS03: EKDROMOI EP"
+      ]
+    },
+    {
+      "ID": 32000951,
+      "Entries": [
+        "AAS03: EKDROMOI EP"
+      ]
+    },
+    {
+      "ID": 32000953,
+      "Entries": [
+        "AAS03: EKDROMOI EP"
+      ]
+    },
+    {
+      "ID": 32000955,
+      "Entries": [
+        "AAS03: EKDROMOI PG"
+      ]
+    },
+    {
+      "ID": 32000956,
+      "Entries": [
+        "AAS03: EKDROMOI PG"
+      ]
+    },
+    {
+      "ID": 32001100,
+      "Entries": [
+        "AAS03: EKDROMOI MG / PCA SP Chief Sergeant 2nd Cls - Obstruct the Mandatory Inspection"
+      ]
+    },
+    {
+      "ID": 32001200,
+      "Entries": [
+        "AAS03: EKDROMOI PG / PCA SP Warrant Officer - Obstruct the Mandatory Inspection"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500001,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500099,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32500101,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32500102,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32500199,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32500401,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32500402,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32500499,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed)"
+      ]
+    },
+    {
+      "ID": 32500601,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed)"
+      ]
+    },
+    {
+      "ID": 32500699,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed)"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 32500701,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 32500799,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32500901,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32500902,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32500903,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32500910,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32500950,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500951,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500953,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32500998,
+      "Entries": [
+        "AA18: LIGHT CAVALRY"
+      ]
+    },
+    {
+      "ID": 32500999,
+      "Entries": [
+        "AA18: LIGHT CAVALRY"
+      ]
+    },
+    {
+      "ID": 32501000,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32501002,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32501003,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32501004,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32501010,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield)"
+      ]
+    },
+    {
+      "ID": 32501100,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32501101,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32501102,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32501103,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun) - Eliminate the Enforcement Squads"
+      ]
+    },
+    {
+      "ID": 32501104,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun) - Eliminate the Enforcement Squads"
+      ]
+    },
+    {
+      "ID": 32501105,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shield) / PCA Chief Sergeant 1st Cls - Prevent Corporate Salvage of New Tech"
+      ]
+    },
+    {
+      "ID": 32501106,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun) / PCA Chief Sergeant 2nd Cls - Prevent Corporate Salvage of New Tech"
+      ]
+    },
+    {
+      "ID": 32501110,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Shotgun)"
+      ]
+    },
+    {
+      "ID": 32501400,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501401,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501402,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501403,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501404,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper) - Survey the Uninhabited Floating City"
+      ]
+    },
+    {
+      "ID": 32501405,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501406,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501407,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501408,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501409,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501410,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501412,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501413,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501414,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501415,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501416,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501417,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501418,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Sniper)"
+      ]
+    },
+    {
+      "ID": 32501600,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed) - Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 32501601,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed) - Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 32501602,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed)"
+      ]
+    },
+    {
+      "ID": 32501603,
+      "Entries": [
+        "AA18: LIGHT CAVALRY (Heavily Armed) - MIA"
+      ]
+    },
+    {
+      "ID": 32501700,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 32501701,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM / PCA 1st Lieutenant - Attack the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 32501702,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM - Intercept the Corporate Forces (Combat Log)"
+      ]
+    },
+    {
+      "ID": 32501703,
+      "Entries": [
+        "AA18A: LIGHT CAVALRY HM / V.III Pater - MIA"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600090,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600091,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600099,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 32600190,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 32600199,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 32600390,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 32600399,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Plasma Gun)"
+      ]
+    },
+    {
+      "ID": 32600900,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (All Weapons)"
+      ]
+    },
+    {
+      "ID": 32600901,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600902,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600903,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600950,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600951,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32600953,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32601000,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun) / PCA Warrant Officer - Eliminate the Enforcement Squads"
+      ]
+    },
+    {
+      "ID": 32601001,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32601100,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Blade) / PCA Captain - Attack the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 32601101,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 32601102,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Laser Blade) / PCA 2nd Lieutenant - Prevent Corporate Salvage of New Tech"
+      ]
+    },
+    {
+      "ID": 32601300,
+      "Entries": [
+        "AA22: HEAVY CAVALRY (Plasma Gun) / Arquebus Main Squad Member - Intercept the Corporate Forces"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Ghost MT (Whip) - Grid 135 Cleanup/Investigate BAWS Arsenal No. 2/Survey the Uninhabited Floating City"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "Ghost MT (Pulse Armor) - Stop the Secret Data Breach"
+      ]
+    },
+    {
+      "ID": 33000200,
+      "Entries": [
+        "Ghost MT (Sniper) - Stop the Secret Data Breach/Regain Control of the Xylem"
+      ]
+    },
+    {
+      "ID": 33000900,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000901,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000902,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000903,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000950,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000951,
+      "Entries": [
+        "Ghost MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 33000953,
+      "Entries": [
+        "Ghost MT (Whip)"
+      ]
+    },
+    {
+      "ID": 33001100,
+      "Entries": [
+        "Ghost MT (Pulse Armor) - Investigate BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 33001200,
+      "Entries": [
+        "Ghost MT (Sniper) - Investigate BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 33001201,
+      "Entries": [
+        "Ghost MT (Sniper) - Investigate BAWS Arsenal No. 2 (Wall)"
+      ]
+    },
+    {
+      "ID": 33001202,
+      "Entries": [
+        "Ghost MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 33001300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Ghost MT?"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000010,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000011,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000020,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000099,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34000101,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34000110,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34000111,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34000199,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000201,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000210,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000211,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000290,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000299,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34000300,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34000301,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34000310,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34000311,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34000399,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34000900,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000901,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000902,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000903,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000910,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000950,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000951,
+      "Entries": [
+        "BAWS Tetrapod MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 34000953,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000991,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000992,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000993,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000994,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000995,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34000996,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001001,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001002,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001003,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001004,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001005,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001006,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 34001100,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001101,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001102,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001103,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001104,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001105,
+      "Entries": [
+        "BAWS Tetrapod MT (Chainguns)"
+      ]
+    },
+    {
+      "ID": 34001200,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001201,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001202,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001203,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001211,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001212,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001213,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34001300,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34001301,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34001302,
+      "Entries": [
+        "BAWS Tetrapod MT (Bomb Launcher)"
+      ]
+    },
+    {
+      "ID": 34001800,
+      "Entries": [
+        "BAWS Tetrapod MT (Machine Gun Only)"
+      ]
+    },
+    {
+      "ID": 34001801,
+      "Entries": [
+        "BAWS Tetrapod MT (Machine Gun Only) - AC Test"
+      ]
+    },
+    {
+      "ID": 34004000,
+      "Entries": [
+        "BAWS Tetrapod MT (Laser Blade)"
+      ]
+    },
+    {
+      "ID": 34004100,
+      "Entries": [
+        "BAWS Tetrapod MT (Shield)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35000001,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "Institute MT (Long Bazooka)"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "Institute MT (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 35000201,
+      "Entries": [
+        "Institute MT (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 35000900,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000901,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000902,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000903,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000950,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000951,
+      "Entries": [
+        "Institute MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 35000953,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35001000,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35001010,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35001011,
+      "Entries": [
+        "Institute MT (Bazooka) - Escort the Weaponized Mining Ship (Second Set - Right)"
+      ]
+    },
+    {
+      "ID": 35001012,
+      "Entries": [
+        "Institute MT (Bazooka) - Escort the Weaponized Mining Ship (Second Set - Left)"
+      ]
+    },
+    {
+      "ID": 35001013,
+      "Entries": [
+        "Institute MT (Bazooka)"
+      ]
+    },
+    {
+      "ID": 35001014,
+      "Entries": [
+        "Institute MT (Bazooka) - Escort the Weaponized Mining Ship (First Set - Left)"
+      ]
+    },
+    {
+      "ID": 35001015,
+      "Entries": [
+        "Institute MT (Bazooka) - Escort the Weaponized Mining Ship (First Set - Right)"
+      ]
+    },
+    {
+      "ID": 35001110,
+      "Entries": [
+        "Institute MT (Long Bazooka) - Reach the Coral Convergence"
+      ]
+    },
+    {
+      "ID": 35001200,
+      "Entries": [
+        "Institute MT (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 35001210,
+      "Entries": [
+        "Institute MT (Cluster Missiles) - Reach the Coral Convergence"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36000010,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36000100,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36000190,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36000200,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000290,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000291,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000292,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000293,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000300,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36000390,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36000391,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36000900,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000901,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000902,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000903,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000904,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36000950,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000951,
+      "Entries": [
+        "RaD Spider MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 36000953,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36001001,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001002,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001003,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001004,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001005,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001006,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001009,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001010,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001011,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001019,
+      "Entries": [
+        "RaD Spider MT (Buzzsaw)"
+      ]
+    },
+    {
+      "ID": 36001100,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001101,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001102,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001103,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001109,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001199,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001200,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001202,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001203,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001204,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001205,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001206,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001207,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001208,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001290,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001291,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001292,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001293,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001294,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001295,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001296,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001300,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36001301,
+      "Entries": [
+        "RaD Spider MT (Shield)"
+      ]
+    },
+    {
+      "ID": 36001302,
+      "Entries": [
+        "RaD Spider MT (SMG)"
+      ]
+    },
+    {
+      "ID": 36001303,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001304,
+      "Entries": [
+        "RaD Spider MT (Dual Guns)"
+      ]
+    },
+    {
+      "ID": 36001305,
+      "Entries": [
+        "RaD Spider MT (Shield) - Eliminate the Doser Faction"
+      ]
+    },
+    {
+      "ID": 36001306,
+      "Entries": [
+        "RaD Spider MT (Shield- No Missile)"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37000001,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37000099,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37000100,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37000101,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37000199,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37000200,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37000201,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37000210,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37000299,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Outside)"
+      ]
+    },
+    {
+      "ID": 37000390,
+      "Entries": [
+        "PCA Drone MT (Heavy)"
+      ]
+    },
+    {
+      "ID": 37000399,
+      "Entries": [
+        "PCA Drone MT (Heavy)"
+      ]
+    },
+    {
+      "ID": 37000900,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000901,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000902,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000903,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000913,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37000915,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37000950,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000951,
+      "Entries": [
+        "PCA Drone MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 37000953,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001001,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001002,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001003,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001004,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001005,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001006,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001010,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001011,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001020,
+      "Entries": [
+        "PCA Drone MT (Laser Rifle)"
+      ]
+    },
+    {
+      "ID": 37001100,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001101,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001102,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001103,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001104,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001120,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001121,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001130,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001140,
+      "Entries": [
+        "PCA Drone MT (Pulse Blade)"
+      ]
+    },
+    {
+      "ID": 37001200,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001201,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001202,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001203,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001210,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001211,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001212,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001213,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001220,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001230,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001240,
+      "Entries": [
+        "PCA Drone MT (Sniper)"
+      ]
+    },
+    {
+      "ID": 37001300,
+      "Entries": [
+        "PCA Drone MT (Heavy) - Reach the Coral Convergence (Near CEL 240)"
+      ]
+    },
+    {
+      "ID": 37001310,
+      "Entries": [
+        "PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Combat Log)"
+      ]
+    },
+    {
+      "ID": 37001330,
+      "Entries": [
+        "PCA Drone MT (Heavy) - Underground Exploration - Depth 3 (Inside)"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000101,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000102,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000900,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000901,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000902,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000903,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000950,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000951,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001100,
+      "Entries": [
+        "AAS02: CATAPHRACT / PCA SP Captain - Destroy the Special Forces Craft"
+      ]
+    },
+    {
+      "ID": 40001101,
+      "Entries": [
+        "AAS02: CATAPHRACT / PCA SP 1st Lieutenant - Obstruct the Mandatory Inspection"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "AAP07: BALTEUS (PCA) - Attack the Watchpoint"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "AAP07A: ARQUEBUS BALTEUS / V.II Snail - Destroy the Drive Block"
+      ]
+    },
+    {
+      "ID": 41000901,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000902,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000903,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000950,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000951,
+      "Entries": [
+        "AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000953,
+      "Entries": [
+        "AAP07: BALTEUS (PCA)"
+      ]
+    },
+    {
+      "ID": 41000960,
+      "Entries": [
+        "AAP07A: ARQUEBUS BALTEUS"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500010,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500100,
+      "Entries": [
+        "TOYBOX MT (Pulse Protection)"
+      ]
+    },
+    {
+      "ID": 41500101,
+      "Entries": [
+        "TOYBOX MT (Pulse Protection)"
+      ]
+    },
+    {
+      "ID": 41500200,
+      "Entries": [
+        "TOYBOX MT (Missile)"
+      ]
+    },
+    {
+      "ID": 41500500,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500501,
+      "Entries": [
+        "TOYBOX MT (Pulse Protection)"
+      ]
+    },
+    {
+      "ID": 41500502,
+      "Entries": [
+        "TOYBOX MT (Missile)"
+      ]
+    },
+    {
+      "ID": 41500900,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500901,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500902,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500903,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500950,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500951,
+      "Entries": [
+        "TOYBOX MT (All Weapons)"
+      ]
+    },
+    {
+      "ID": 41500953,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501001,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501002,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501003,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501004,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501005,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501010,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501011,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41501110,
+      "Entries": [
+        "TOYBOX MT (Pulse Protection)"
+      ]
+    },
+    {
+      "ID": 41501200,
+      "Entries": [
+        "TOYBOX MT (Missile)"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre - Shut Down the Closure Satellites"
+      ]
+    },
+    {
+      "ID": 42000050,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000901,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000902,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000903,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000950,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000951,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000953,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644) - Coral Release"
+      ]
+    },
+    {
+      "ID": 42010050,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre (Clone)"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500800,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500901,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500902,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500903,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500950,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500951,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42500953,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42600000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis) Drones"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun)"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "Helicopter Drone (Bomb)"
+      ]
+    },
+    {
+      "ID": 50000900,
+      "Entries": [
+        "Helicopter Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50000901,
+      "Entries": [
+        "Helicopter Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50000902,
+      "Entries": [
+        "Helicopter Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50000903,
+      "Entries": [
+        "Helicopter Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun)"
+      ]
+    },
+    {
+      "ID": 50001001,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun)"
+      ]
+    },
+    {
+      "ID": 50001002,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun)"
+      ]
+    },
+    {
+      "ID": 50001003,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun)"
+      ]
+    },
+    {
+      "ID": 50001200,
+      "Entries": [
+        "Helicopter Drone (Bomb)"
+      ]
+    },
+    {
+      "ID": 50001800,
+      "Entries": [
+        "Helicopter Drone (Gatling Gun) - AC Test"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Repair Drone (Repair Tool)"
+      ]
+    },
+    {
+      "ID": 50100001,
+      "Entries": [
+        "Repair Drone (Repair Tool)"
+      ]
+    },
+    {
+      "ID": 50100200,
+      "Entries": [
+        "Repair Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 50100201,
+      "Entries": [
+        "Repair Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 50100202,
+      "Entries": [
+        "Repair Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 50100300,
+      "Entries": [
+        "Repair Drone (Shock Emitter)"
+      ]
+    },
+    {
+      "ID": 50100301,
+      "Entries": [
+        "Repair Drone (Shock Emitter)"
+      ]
+    },
+    {
+      "ID": 50100302,
+      "Entries": [
+        "Repair Drone (Shock Emitter)"
+      ]
+    },
+    {
+      "ID": 50100303,
+      "Entries": [
+        "Repair Drone (Shock Emitter)"
+      ]
+    },
+    {
+      "ID": 50100900,
+      "Entries": [
+        "Repair Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50100901,
+      "Entries": [
+        "Repair Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50100902,
+      "Entries": [
+        "Repair Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50100903,
+      "Entries": [
+        "Repair Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 50101000,
+      "Entries": [
+        "Repair Drone (Repair Tool)"
+      ]
+    },
+    {
+      "ID": 50101200,
+      "Entries": [
+        "Repair Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 50101210,
+      "Entries": [
+        "Repair Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201000,
+      "Entries": [
+        "EC-0804 SMART CLEANER - Grid 086"
+      ]
+    },
+    {
+      "ID": 50201001,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50201002,
+      "Entries": [
+        "EC-0804 SMART CLEANER - Destroy the Drive Block"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000001,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000002,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000099,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000101,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000110,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000900,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000901,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000902,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000903,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51000990,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        "Transport Helicopter / RLF HELICOPTER - Prisoner Rescue"
+      ]
+    },
+    {
+      "ID": 51001001,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001002,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001003,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001004,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001021,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001031,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001040,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001041,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001101,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001102,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001110,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001111,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51001112,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "Transport Helicopter Gatling Gun"
+      ]
+    },
+    {
+      "ID": 51011000,
+      "Entries": [
+        "Transport Helicopter Gatling Gun"
+      ]
+    },
+    {
+      "ID": 51011001,
+      "Entries": [
+        "Transport Helicopter Gatling Gun"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200001,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200002,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200090,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200091,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200092,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51200100,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51200180,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51200190,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51200191,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51200200,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200280,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200281,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200290,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200291,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200292,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51200300,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51200380,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51200390,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51200391,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51200900,
+      "Entries": [
+        "Quadcopter Drone (All Weapons)"
+      ]
+    },
+    {
+      "ID": 51201000,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51201100,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51201101,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51201102,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51201103,
+      "Entries": [
+        "Quadcopter Drone (No Weapons)"
+      ]
+    },
+    {
+      "ID": 51201180,
+      "Entries": [
+        "Quadcopter Drone (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51201200,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51201280,
+      "Entries": [
+        "Quadcopter Drone (Pulse)"
+      ]
+    },
+    {
+      "ID": 51201300,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51201301,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51201302,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51201303,
+      "Entries": [
+        "Quadcopter Drone (Cluster Missiles)"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "Helicopter (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 51500001,
+      "Entries": [
+        "Helicopter (Kinetic Gun)"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "Helicopter (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51500201,
+      "Entries": [
+        "Helicopter (Laser Gun)"
+      ]
+    },
+    {
+      "ID": 51500900,
+      "Entries": [
+        "Helicopter (All Weapons)"
+      ]
+    },
+    {
+      "ID": 51500901,
+      "Entries": [
+        "Helicopter (All Weapons)"
+      ]
+    },
+    {
+      "ID": 51500902,
+      "Entries": [
+        "Helicopter (All Weapons)"
+      ]
+    },
+    {
+      "ID": 51500903,
+      "Entries": [
+        "Helicopter (All Weapons)"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Artillery Vehicle (Gun + Missiles)"
+      ]
+    },
+    {
+      "ID": 52000010,
+      "Entries": [
+        "Artillery Vehicle (Gun + Missiles)"
+      ]
+    },
+    {
+      "ID": 52000020,
+      "Entries": [
+        "Artillery Vehicle (Gun + Missiles)"
+      ]
+    },
+    {
+      "ID": 52000030,
+      "Entries": [
+        "Artillery Vehicle (Gun + Missiles)"
+      ]
+    },
+    {
+      "ID": 52000900,
+      "Entries": [
+        "Artillery Vehicle (All Weapons)"
+      ]
+    },
+    {
+      "ID": 52001309,
+      "Entries": [
+        "Artillery Vehicle (Machine Gun)"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "HELIANTHUS Wheel (Bonewheel)"
+      ]
+    },
+    {
+      "ID": 52501000,
+      "Entries": [
+        "HELIANTHUS Wheel (Bonewheel)"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000001,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000002,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000200,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000250,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000300,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000350,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000450,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000500,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000550,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000600,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000901,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000902,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53000903,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001001,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001002,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001003,
+      "Entries": [
+        "Ice Worm Drone - Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 53001004,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001005,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001006,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001007,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001008,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001009,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 53001600,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001000,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 55001900,
+      "Entries": [
+        "Coral Mealworm"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "AH12: HC HELICOPTER - Illegal Entry (Boss)"
+      ]
+    },
+    {
+      "ID": 60500011,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 60500100,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 60500101,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 60500900,
+      "Entries": [
+        "AH12: HC HELICOPTER (All Weapons)"
+      ]
+    },
+    {
+      "ID": 60501010,
+      "Entries": [
+        "AH12: HC HELICOPTER - Illegal Entry (Early Appearance)"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "AH12: HC HELICOPTER - Survey the Uninhabited Floating City"
+      ]
+    },
+    {
+      "ID": 60501101,
+      "Entries": [
+        "AH12: HC HELICOPTER - Survey the Uninhabited Floating City (Alt)"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "IA-13: SEA SPIDER - Ocean Crossing"
+      ]
+    },
+    {
+      "ID": 61000098,
+      "Entries": [
+        "IA-13: SEA SPIDER (ALLMIND) - Coral Release (Right)"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "IA-13: SEA SPIDER (ALLMIND) - Coral Release (Left)"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000990,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000991,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000992,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000993,
+      "Entries": [
+        "IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61010000,
+      "Entries": [
+        "IA-13: SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 61010099,
+      "Entries": [
+        "IA-13: SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500010,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62501000,
+      "Entries": [
+        "IA-02: ICE WORM - Destroy the Ice Worm"
+      ]
+    },
+    {
+      "ID": 62501001,
+      "Entries": [
+        "IA-02: ICE WORM - Attack the Old Spaceport"
+      ]
+    },
+    {
+      "ID": 63510000,
+      "Entries": [
+        "Unknown"
+      ]
+    },
+    {
+      "ID": 63520000,
+      "Entries": [
+        "Unknown"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 64001000,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "EB-0309 STRIDER (Eye)"
+      ]
+    },
+    {
+      "ID": 72221000,
+      "Entries": [
+        "RaD MAIN MISSILE - Heavy Missile Launch Support"
+      ]
+    },
+    {
+      "ID": 72221001,
+      "Entries": [
+        "RaD SUB-MISSILE (RIGHT) - Heavy Missile Launch Support"
+      ]
+    },
+    {
+      "ID": 72221002,
+      "Entries": [
+        "RaD SUB-MISSILE (LEFT) - Heavy Missile Launch Support"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72300100,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72301000,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72301100,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72302000,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72302100,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72303000,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72303100,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72305000,
+      "Entries": [
+        "Artillery - Shielded Cannon"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "Artillery - Cannon"
+      ]
+    },
+    {
+      "ID": 72401000,
+      "Entries": [
+        "Artillery - Cannon"
+      ]
+    },
+    {
+      "ID": 72402000,
+      "Entries": [
+        "Artillery - Cannon"
+      ]
+    },
+    {
+      "ID": 72403000,
+      "Entries": [
+        "Artillery - Cannon"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72500100,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72501000,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72501100,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72502000,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72502006,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72502007,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72502100,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72503000,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72503100,
+      "Entries": [
+        "Artillery - Four Gatling Guns"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "Artillery - Angled Missile Array"
+      ]
+    },
+    {
+      "ID": 72601000,
+      "Entries": [
+        "Artillery - Angled Missile Array"
+      ]
+    },
+    {
+      "ID": 72602000,
+      "Entries": [
+        "Artillery - Angled Missile Array"
+      ]
+    },
+    {
+      "ID": 72603000,
+      "Entries": [
+        "Artillery - Angled Missile Array"
+      ]
+    },
+    {
+      "ID": 72610000,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611000,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611010,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611020,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611030,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611040,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611050,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611100,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72611110,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72612000,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72613000,
+      "Entries": [
+        "Artillery - Vertical Missile Array"
+      ]
+    },
+    {
+      "ID": 72620000,
+      "Entries": [
+        "Artillery - Frontal Missile Array"
+      ]
+    },
+    {
+      "ID": 72621000,
+      "Entries": [
+        "Artillery - Frontal Missile Array"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72700100,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72701000,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72701001,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72702000,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72702100,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72703000,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 72800000,
+      "Entries": [
+        "Artillery - Laser Cannon"
+      ]
+    },
+    {
+      "ID": 72801000,
+      "Entries": [
+        "Artillery - Laser Cannon"
+      ]
+    },
+    {
+      "ID": 72900000,
+      "Entries": [
+        "Artillery - Watchpoint Delta"
+      ]
+    },
+    {
+      "ID": 72901000,
+      "Entries": [
+        "Artillery - Watchpoint Delta"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "Artillery - Pulse Gun"
+      ]
+    },
+    {
+      "ID": 73001000,
+      "Entries": [
+        "Artillery - Pulse Gun"
+      ]
+    },
+    {
+      "ID": 73002000,
+      "Entries": [
+        "Artillery - Pulse Gun"
+      ]
+    },
+    {
+      "ID": 73003000,
+      "Entries": [
+        "Artillery - Pulse Gun"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "Artillery - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 73101000,
+      "Entries": [
+        "Artillery - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 73101001,
+      "Entries": [
+        "Artillery - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "Artillery - Three-Barrelled Cannon"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000100,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000200,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000300,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000400,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000410,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000500,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000700,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000900,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000901,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000902,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000903,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000904,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000905,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000906,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000907,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000908,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000909,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001000,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001001,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001500,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001501,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001502,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001503,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001504,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001700,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74001701,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74010001,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74011000,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74011001,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74011002,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74011003,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74011100,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74012000,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74012001,
+      "Entries": [
+        "Warship Mount - Cannon"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021000,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021001,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021002,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021003,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021004,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021005,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74021100,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74022000,
+      "Entries": [
+        "Warship Mount - Turret"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "Warship Mount - Laser"
+      ]
+    },
+    {
+      "ID": 74031000,
+      "Entries": [
+        "Warship Mount - Laser"
+      ]
+    },
+    {
+      "ID": 74031001,
+      "Entries": [
+        "Warship Mount - Laser"
+      ]
+    },
+    {
+      "ID": 74031100,
+      "Entries": [
+        "Warship Mount - Laser"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100100,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100120,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100130,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100200,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100901,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100902,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100903,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74100990,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74101001,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 74101002,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350901,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350902,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350903,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350950,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350951,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81350953,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "AAP03: ENFORCER / Enforcement System (Defense Mode) - Underground Exploration - Depth 2"
+      ]
+    },
+    {
+      "ID": 85350000,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85350100,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85360000,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93210001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93240000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93250000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93260000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93270000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93500000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93500001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93500002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 93500003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        "Emplacement - Cannon (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94000010,
+      "Entries": [
+        "Emplacement - Cannon (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "Emplacement - Cannon (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94100000,
+      "Entries": [
+        "Emplacement - Railgun (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94110000,
+      "Entries": [
+        "Emplacement - Railgun (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94200000,
+      "Entries": [
+        "Emplacement - Missle Array (Placeholder)"
+      ]
+    },
+    {
+      "ID": 94310000,
+      "Entries": [
+        "Emplacement - Autocannon (Placeholder)"
+      ]
+    },
+    {
+      "ID": 99600000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99600001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99606250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800099,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99800100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801007,
+      "Entries": [
+        "XYLEM CONTROL TOWER / XYLEM SHIELD"
+      ]
+    },
+    {
+      "ID": 99801009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801043,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801044,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801046,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801047,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801048,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801049,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801053,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801054,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801056,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801057,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801058,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801059,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801061,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801063,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801064,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801065,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801066,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801067,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801068,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801069,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801071,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801072,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801073,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801074,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801081,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801082,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801084,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801091,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801092,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99801120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99910000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99970000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

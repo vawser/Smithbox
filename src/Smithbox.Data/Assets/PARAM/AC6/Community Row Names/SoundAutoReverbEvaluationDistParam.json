@@ -1,0 +1,41 @@
+{
+  "Name": "SoundAutoReverbEvaluationDistParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "AvgDistForOutdoor"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "AvgDistForWall"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "AvgDistMax"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "AvgDistMaxForIndoor"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "AvgDistMaxForUG"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "AvgDistForUGWall"
+      ]
+    }
+  ]
+}

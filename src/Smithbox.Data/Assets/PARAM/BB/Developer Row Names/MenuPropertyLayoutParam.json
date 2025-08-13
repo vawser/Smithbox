@@ -1,0 +1,2729 @@
+{
+  "Name": "MenuPropertyLayoutParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "インベントリ：【消耗品】リスト表示_0\u3000Param_0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Param_0_T"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Param_1"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "インベントリ：【消耗品】リスト表示_0_終端"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "インベントリ：【消耗品】通常表示_0\u3000NumberHeld"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "NumberHeldMAX"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Item_1_TP_Base"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Item_1_TP_Add"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Item_3_TP"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Item_5_T"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Item_6_Icon_1"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Item_6_Icon_2"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Item_6_Icon_3"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Item_6_Icon_4"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Item_7_T"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Item_8_Icon_1"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Item_8_Icon_2"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Item_8_Icon_3"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Item_8_Icon_4"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "インベントリ：【消耗品】通常表示_終端"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_0"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_5"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_6 ジェムの分子"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_6 ジェムの分母"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "インベントリ：【武器】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "インベントリ：【武器】通常表示_0 PhysicalATK"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "PhysicalATKAdd"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "BloodATK"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "BloodATKAdd"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "ArcaneATK"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "ArcaneATKAdd"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "FireATK"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "FireATKAdd"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "BoltATK"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "BoltATKAdd"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "QSBulletUse"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Durability"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "DurabilityMAX"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "SPATKLabel"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "SlowPoisonATK"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "RapidPoisonATK"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "BonusATKCosmos"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "BonusATKBeasts"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "AttrBonusLabel"
+      ]
+    },
+    {
+      "ID": 1219,
+      "Entries": [
+        "ABStrength"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "ABDexiterity"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "ABShot"
+      ]
+    },
+    {
+      "ID": 1222,
+      "Entries": [
+        "ABMagic"
+      ]
+    },
+    {
+      "ID": 1223,
+      "Entries": [
+        "AttrReqLabel"
+      ]
+    },
+    {
+      "ID": 1224,
+      "Entries": [
+        "ARStrength"
+      ]
+    },
+    {
+      "ID": 1225,
+      "Entries": [
+        "ARDexiterity"
+      ]
+    },
+    {
+      "ID": 1226,
+      "Entries": [
+        "ARShot"
+      ]
+    },
+    {
+      "ID": 1227,
+      "Entries": [
+        "ARMagic"
+      ]
+    },
+    {
+      "ID": 1228,
+      "Entries": [
+        "インベントリ：【武器】通常表示_0 END"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "インベントリ：【武器】詳細表示_0 PhysicalATK"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "PhysicalATKAdd"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "BluntATKAdd"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "ThrustATKAdd"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "BloodATK"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "BloodATKAdd"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "ArcaneATK"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "ArcaneATKAdd"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "FireATK"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "FireATKAdd"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "BoltATK"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "BoltATKAdd"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "QSBulletUse"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "Durability"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "DurabilityMAX"
+      ]
+    },
+    {
+      "ID": 1315,
+      "Entries": [
+        "SPATKLabel"
+      ]
+    },
+    {
+      "ID": 1316,
+      "Entries": [
+        "SlowPoisonATK"
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        "RapidPoisonATK"
+      ]
+    },
+    {
+      "ID": 1318,
+      "Entries": [
+        "BonusATKCosmos"
+      ]
+    },
+    {
+      "ID": 1319,
+      "Entries": [
+        "BonusATKBeasts"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "武器詳細\u3000右ペイン先頭 BloodGemLabel"
+      ]
+    },
+    {
+      "ID": 1321,
+      "Entries": [
+        "Effect1"
+      ]
+    },
+    {
+      "ID": 1322,
+      "Entries": [
+        "Effect2"
+      ]
+    },
+    {
+      "ID": 1323,
+      "Entries": [
+        "Effect3"
+      ]
+    },
+    {
+      "ID": 1324,
+      "Entries": [
+        "Effect4"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "Effect5"
+      ]
+    },
+    {
+      "ID": 1326,
+      "Entries": [
+        "Effect6"
+      ]
+    },
+    {
+      "ID": 1327,
+      "Entries": [
+        "Effect7"
+      ]
+    },
+    {
+      "ID": 1328,
+      "Entries": [
+        "Effect8"
+      ]
+    },
+    {
+      "ID": 1329,
+      "Entries": [
+        "Effect9"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "AttrBonusLabel"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "ABStrength"
+      ]
+    },
+    {
+      "ID": 1332,
+      "Entries": [
+        "ABDexiterity"
+      ]
+    },
+    {
+      "ID": 1333,
+      "Entries": [
+        "ABShot"
+      ]
+    },
+    {
+      "ID": 1334,
+      "Entries": [
+        "ABMagic"
+      ]
+    },
+    {
+      "ID": 1335,
+      "Entries": [
+        "AttrReqLabel"
+      ]
+    },
+    {
+      "ID": 1336,
+      "Entries": [
+        "ARStrength"
+      ]
+    },
+    {
+      "ID": 1337,
+      "Entries": [
+        "ARDexiterity"
+      ]
+    },
+    {
+      "ID": 1338,
+      "Entries": [
+        "ARShot"
+      ]
+    },
+    {
+      "ID": 1339,
+      "Entries": [
+        "ARMagic"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "インベントリ：【武器】詳細表示_終端"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_0"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_5"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_6"
+      ]
+    },
+    {
+      "ID": 2107,
+      "Entries": [
+        "インベントリ：【防具】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "インベントリ：【防具】通常表示_0 DamageCutLabel"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "PhysicalCut"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "BluntCut"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "ThrustCut"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "BloodCut"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "ArcaneCut"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "FireCut"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "BoltCut"
+      ]
+    },
+    {
+      "ID": 2208,
+      "Entries": [
+        "SlowPoisonRES"
+      ]
+    },
+    {
+      "ID": 2209,
+      "Entries": [
+        "RapidPoisonRES"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "FrenzyRES"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Beasthood"
+      ]
+    },
+    {
+      "ID": 2212,
+      "Entries": [
+        "インベントリ：【防具】通常表示_終端"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "インベントリ：【魔石】リスト表示_0 Param_0_Desc"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Param_0"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Param_1_L"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "インベントリ：【魔石】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "インベントリ：【魔石】通常表示_0 Item_0"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Item_0_TP"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Item_1_TP"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Item_3_T"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 3206,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        "インベントリ：【魔石】通常表示_終端"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "インベントリ：【ボディジェム】リスト表示_0"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "インベントリ：【ボディジェム】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "インベントリ：【ボディジェム】通常表示_0 Item_0"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Item_0_TP"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "Item_1_TP"
+      ]
+    },
+    {
+      "ID": 4203,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 4204,
+      "Entries": [
+        "Item_3_T"
+      ]
+    },
+    {
+      "ID": 4205,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 4206,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 4207,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 4208,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 4209,
+      "Entries": [
+        "インベントリ：【ボディジェム】通常表示_終端"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "インベントリ：【聖杯】リスト表示_0 Param_0"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Param_0_T"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "Param_1"
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        "インベントリ：【聖杯】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "インベントリ：【聖杯】通常表示_0 Item_0"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Item_0_TP_Base"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Item_0_TP_Add"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 5204,
+      "Entries": [
+        "Item_1_TP"
+      ]
+    },
+    {
+      "ID": 5205,
+      "Entries": [
+        "Item_1_TP_Base"
+      ]
+    },
+    {
+      "ID": 5206,
+      "Entries": [
+        "Item_1_TP_Add"
+      ]
+    },
+    {
+      "ID": 5207,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 5208,
+      "Entries": [
+        "Item_2_T"
+      ]
+    },
+    {
+      "ID": 5209,
+      "Entries": [
+        "Item_3_T"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Item_3_TP"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "Item_5_T"
+      ]
+    },
+    {
+      "ID": 5213,
+      "Entries": [
+        "Item_5_P"
+      ]
+    },
+    {
+      "ID": 5214,
+      "Entries": [
+        "Item_6_Icon_1"
+      ]
+    },
+    {
+      "ID": 5215,
+      "Entries": [
+        "Item_6_Icon_2"
+      ]
+    },
+    {
+      "ID": 5216,
+      "Entries": [
+        "Item_6_Icon_3"
+      ]
+    },
+    {
+      "ID": 5217,
+      "Entries": [
+        "Item_6_Icon_4"
+      ]
+    },
+    {
+      "ID": 5218,
+      "Entries": [
+        "Item_6_P"
+      ]
+    },
+    {
+      "ID": 5219,
+      "Entries": [
+        "Item_7_T"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Item_7_P"
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        "Item_8_P"
+      ]
+    },
+    {
+      "ID": 5222,
+      "Entries": [
+        "Item_8_Icon_1"
+      ]
+    },
+    {
+      "ID": 5223,
+      "Entries": [
+        "Item_8_Icon_2"
+      ]
+    },
+    {
+      "ID": 5224,
+      "Entries": [
+        "Item_8_Icon_3"
+      ]
+    },
+    {
+      "ID": 5225,
+      "Entries": [
+        "Item_8_Icon_4"
+      ]
+    },
+    {
+      "ID": 5226,
+      "Entries": [
+        "インベントリ：【聖杯】通常表示終端"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "インベントリ：【素材】リスト表示_0 Param_0"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Param_0_T"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Param_1"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "インベントリ：【素材】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "インベントリ：【素材】通常表示_0 NumberHeld"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "NumberHeldMAX"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "Stored"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "StoredMAX"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "Usage"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "QSBulletUse"
+      ]
+    },
+    {
+      "ID": 6206,
+      "Entries": [
+        "AttrBonusLabel"
+      ]
+    },
+    {
+      "ID": 6207,
+      "Entries": [
+        "ABStrength"
+      ]
+    },
+    {
+      "ID": 6208,
+      "Entries": [
+        "ABDexiterity"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "ABShot"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "ABMagic"
+      ]
+    },
+    {
+      "ID": 6211,
+      "Entries": [
+        "AttrReqLabel"
+      ]
+    },
+    {
+      "ID": 6212,
+      "Entries": [
+        "ARStrength"
+      ]
+    },
+    {
+      "ID": 6213,
+      "Entries": [
+        "ARDexiterity"
+      ]
+    },
+    {
+      "ID": 6214,
+      "Entries": [
+        "ARShot"
+      ]
+    },
+    {
+      "ID": 6215,
+      "Entries": [
+        "ARMagic"
+      ]
+    },
+    {
+      "ID": 6216,
+      "Entries": [
+        "インベントリ：【素材】通常表示終端"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "インベントリ：【貴重品】リスト表示_0 Param_0"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Param_0_T"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Param_1"
+      ]
+    },
+    {
+      "ID": 7103,
+      "Entries": [
+        "インベントリ：【貴重品】リスト表示_終端"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "インベントリ：【貴重品】通常表示_0 NumberHeld"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "NumberHeldMAX"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Stored"
+      ]
+    },
+    {
+      "ID": 7203,
+      "Entries": [
+        "StoredMAX"
+      ]
+    },
+    {
+      "ID": 7204,
+      "Entries": [
+        "Usage"
+      ]
+    },
+    {
+      "ID": 7205,
+      "Entries": [
+        "QSBulletUse"
+      ]
+    },
+    {
+      "ID": 7206,
+      "Entries": [
+        "AttrBonusLabel"
+      ]
+    },
+    {
+      "ID": 7207,
+      "Entries": [
+        "ABStrength"
+      ]
+    },
+    {
+      "ID": 7208,
+      "Entries": [
+        "ABDexiterity"
+      ]
+    },
+    {
+      "ID": 7209,
+      "Entries": [
+        "ABShot"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "ABMagic"
+      ]
+    },
+    {
+      "ID": 7211,
+      "Entries": [
+        "AttrReqLabel"
+      ]
+    },
+    {
+      "ID": 7212,
+      "Entries": [
+        "ARStrength"
+      ]
+    },
+    {
+      "ID": 7213,
+      "Entries": [
+        "ARDexiterity"
+      ]
+    },
+    {
+      "ID": 7214,
+      "Entries": [
+        "ARShot"
+      ]
+    },
+    {
+      "ID": 7215,
+      "Entries": [
+        "ARMagic"
+      ]
+    },
+    {
+      "ID": 7216,
+      "Entries": [
+        "インベントリ：【貴重品】通常表示終端"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "インベントリ：ＰＣステータス１ページ目_0"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Item_0_Base"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Item_0_Add"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Item_0_T"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Item_1_P"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Item_2_P"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Item_3"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Item_3_P"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Item_4"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "Item_6_T"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "Item_8"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "Item_8_Idt"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "Item_9"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Item_9_Idt"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Item_10"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Item_11"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Item_12"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Item_13"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "インベントリ：ＰＣステータス２ページ目_0"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Item_0_Base"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Item_0_Add"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Item_0_T"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Item_1_P"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Item_2_P"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Item_3"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Item_3_P"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "Item_4"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "Item_6_T"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "Item_8"
+      ]
+    },
+    {
+      "ID": 10118,
+      "Entries": [
+        "Item_8_Idt"
+      ]
+    },
+    {
+      "ID": 10119,
+      "Entries": [
+        "Item_9"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Item_9_Idt"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "Item_10"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "Item_11"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "Item_12"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "Item_13"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "インベントリ：ＰＣステータス２ページ目_終端"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "インベントリ：ＰＣステータス３ページ目\u3000Item_0_P"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "Item_0_Base"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "Item_0_Add"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "Item_0_T"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "Item_1_P"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "Item_2_P"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "Item_3"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "Item_3_P"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "Item_4"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "Item_4_P"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "Item_6_T"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "Item_8"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "Item_8_Idt"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "Item_9"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "Item_9_Idt"
+      ]
+    },
+    {
+      "ID": 10221,
+      "Entries": [
+        "Item_10"
+      ]
+    },
+    {
+      "ID": 10222,
+      "Entries": [
+        "Item_11"
+      ]
+    },
+    {
+      "ID": 10223,
+      "Entries": [
+        "Item_12"
+      ]
+    },
+    {
+      "ID": 10224,
+      "Entries": [
+        "Item_13"
+      ]
+    },
+    {
+      "ID": 10225,
+      "Entries": [
+        "インベントリ：ＰＣステータス３ページ目_終端"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "インベントリ：うんちく表示_開始"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "インベントリ：うんちく表示_終端"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "プレイヤーステータス：１ページ目_左ペイン_0 CharacterName"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Gender"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Level"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Soul"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "San"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "Vitality"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "Willpower"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "Strength"
+      ]
+    },
+    {
+      "ID": 20008,
+      "Entries": [
+        "Dexiterity"
+      ]
+    },
+    {
+      "ID": 20009,
+      "Entries": [
+        "Shot"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Magic"
+      ]
+    },
+    {
+      "ID": 20011,
+      "Entries": [
+        "１ページ目＿真ん中ペイン先頭 HP_Base"
+      ]
+    },
+    {
+      "ID": 20012,
+      "Entries": [
+        "HPMAX_Add"
+      ]
+    },
+    {
+      "ID": 20013,
+      "Entries": [
+        "SP"
+      ]
+    },
+    {
+      "ID": 20014,
+      "Entries": [
+        "Discovery"
+      ]
+    },
+    {
+      "ID": 20015,
+      "Entries": [
+        "R1ATK"
+      ]
+    },
+    {
+      "ID": 20016,
+      "Entries": [
+        "R2ATK"
+      ]
+    },
+    {
+      "ID": 20017,
+      "Entries": [
+        "L1ATK"
+      ]
+    },
+    {
+      "ID": 20018,
+      "Entries": [
+        "L2ATK"
+      ]
+    },
+    {
+      "ID": 20019,
+      "Entries": [
+        "DEF"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "SlowPoisonRES"
+      ]
+    },
+    {
+      "ID": 20021,
+      "Entries": [
+        "RapidPoisonRES"
+      ]
+    },
+    {
+      "ID": 20022,
+      "Entries": [
+        "FrenzyRES"
+      ]
+    },
+    {
+      "ID": 20023,
+      "Entries": [
+        "Beasthood"
+      ]
+    },
+    {
+      "ID": 20024,
+      "Entries": [
+        "１ページ目＿右ペイン先頭 CaryllLabel"
+      ]
+    },
+    {
+      "ID": 20025,
+      "Entries": [
+        "Effect1"
+      ]
+    },
+    {
+      "ID": 20026,
+      "Entries": [
+        "Effect2"
+      ]
+    },
+    {
+      "ID": 20027,
+      "Entries": [
+        "Effect3"
+      ]
+    },
+    {
+      "ID": 20028,
+      "Entries": [
+        "Effect4"
+      ]
+    },
+    {
+      "ID": 20029,
+      "Entries": [
+        "DamageCutLabel"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "PhysicalCut"
+      ]
+    },
+    {
+      "ID": 20031,
+      "Entries": [
+        "BluntCut"
+      ]
+    },
+    {
+      "ID": 20032,
+      "Entries": [
+        "ThrustCut"
+      ]
+    },
+    {
+      "ID": 20033,
+      "Entries": [
+        "BloodCut"
+      ]
+    },
+    {
+      "ID": 20034,
+      "Entries": [
+        "ArcaneCut"
+      ]
+    },
+    {
+      "ID": 20035,
+      "Entries": [
+        "FireCut"
+      ]
+    },
+    {
+      "ID": 20036,
+      "Entries": [
+        "BoltCut"
+      ]
+    },
+    {
+      "ID": 20037,
+      "Entries": [
+        "プレイヤーステータス：１ページ目_終端"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "プレイヤーステータス：2ページ目 CharacterName"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "Gender"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20111,
+      "Entries": [
+        "AgeBracket"
+      ]
+    },
+    {
+      "ID": 20112,
+      "Entries": [
+        "Origin"
+      ]
+    },
+    {
+      "ID": 20113,
+      "Entries": [
+        "プレイヤーステータス：2ページ目_終端"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "レベルアップ画面：プレイヤーステータス左_名前"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Item_0"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 30004,
+      "Entries": [
+        "Item_3"
+      ]
+    },
+    {
+      "ID": 30005,
+      "Entries": [
+        "Item_4"
+      ]
+    },
+    {
+      "ID": 30006,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 30007,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 30008,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 30009,
+      "Entries": [
+        "Item_8"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Item_9"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "レベルアップ画面：プレイヤーステータス左_終端"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "レベルアップ画面：プレイヤーステータス中央_0 Item_0"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "Item_1"
+      ]
+    },
+    {
+      "ID": 30102,
+      "Entries": [
+        "Item_2"
+      ]
+    },
+    {
+      "ID": 30103,
+      "Entries": [
+        "Item_3"
+      ]
+    },
+    {
+      "ID": 30104,
+      "Entries": [
+        "Item_4"
+      ]
+    },
+    {
+      "ID": 30105,
+      "Entries": [
+        "Item_5"
+      ]
+    },
+    {
+      "ID": 30106,
+      "Entries": [
+        "Item_6"
+      ]
+    },
+    {
+      "ID": 30107,
+      "Entries": [
+        "Item_7"
+      ]
+    },
+    {
+      "ID": 30108,
+      "Entries": [
+        "Item_8"
+      ]
+    },
+    {
+      "ID": 30109,
+      "Entries": [
+        "Item_9"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Item_10"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "Item_11"
+      ]
+    },
+    {
+      "ID": 30112,
+      "Entries": [
+        "レベルアップ画面：プレイヤーステータス右_0 R_Item_0_T"
+      ]
+    },
+    {
+      "ID": 30113,
+      "Entries": [
+        "R_Item_1_P"
+      ]
+    },
+    {
+      "ID": 30114,
+      "Entries": [
+        "R_Item_2_P"
+      ]
+    },
+    {
+      "ID": 30115,
+      "Entries": [
+        "R_Item_3_P"
+      ]
+    },
+    {
+      "ID": 30116,
+      "Entries": [
+        "R_Item_4_P"
+      ]
+    },
+    {
+      "ID": 30117,
+      "Entries": [
+        "R_Item_5_T"
+      ]
+    },
+    {
+      "ID": 30118,
+      "Entries": [
+        "R_Item_6"
+      ]
+    },
+    {
+      "ID": 30119,
+      "Entries": [
+        "R_Item_7_Idt"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "R_Item_8_Idt"
+      ]
+    },
+    {
+      "ID": 30121,
+      "Entries": [
+        "R_Item_9"
+      ]
+    },
+    {
+      "ID": 30122,
+      "Entries": [
+        "R_Item_10"
+      ]
+    },
+    {
+      "ID": 30123,
+      "Entries": [
+        "R_Item_11"
+      ]
+    },
+    {
+      "ID": 30124,
+      "Entries": [
+        "R_Item_12"
+      ]
+    },
+    {
+      "ID": 30125,
+      "Entries": [
+        "レベルアップ画面：プレイヤーステータス右_終端"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "レベルアップ：【武器】詳細表示_0 C_0_Base"
+      ]
+    },
+    {
+      "ID": 30201,
+      "Entries": [
+        "C_0_Add"
+      ]
+    },
+    {
+      "ID": 30202,
+      "Entries": [
+        "C_1_Base_DI"
+      ]
+    },
+    {
+      "ID": 30203,
+      "Entries": [
+        "C_1_Add"
+      ]
+    },
+    {
+      "ID": 30204,
+      "Entries": [
+        "C_2_Base_DI"
+      ]
+    },
+    {
+      "ID": 30205,
+      "Entries": [
+        "C_2_Add"
+      ]
+    },
+    {
+      "ID": 30206,
+      "Entries": [
+        "C_3_Base"
+      ]
+    },
+    {
+      "ID": 30207,
+      "Entries": [
+        "C_3_Add"
+      ]
+    },
+    {
+      "ID": 30208,
+      "Entries": [
+        "C_4_Base"
+      ]
+    },
+    {
+      "ID": 30209,
+      "Entries": [
+        "C_4_Add"
+      ]
+    },
+    {
+      "ID": 30210,
+      "Entries": [
+        "C_5_Base"
+      ]
+    },
+    {
+      "ID": 30211,
+      "Entries": [
+        "C_5_Add"
+      ]
+    },
+    {
+      "ID": 30212,
+      "Entries": [
+        "C_6_Base"
+      ]
+    },
+    {
+      "ID": 30213,
+      "Entries": [
+        "C_6_Add"
+      ]
+    },
+    {
+      "ID": 30214,
+      "Entries": [
+        "C_7"
+      ]
+    },
+    {
+      "ID": 30215,
+      "Entries": [
+        "C_8_Base"
+      ]
+    },
+    {
+      "ID": 30216,
+      "Entries": [
+        "C_8_Add"
+      ]
+    },
+    {
+      "ID": 30217,
+      "Entries": [
+        "C_9_T"
+      ]
+    },
+    {
+      "ID": 30218,
+      "Entries": [
+        "C_10_Icon_1"
+      ]
+    },
+    {
+      "ID": 30219,
+      "Entries": [
+        "C_10_Icon_2"
+      ]
+    },
+    {
+      "ID": 30220,
+      "Entries": [
+        "C_10_Icon_3"
+      ]
+    },
+    {
+      "ID": 30221,
+      "Entries": [
+        "C_10_Icon_4"
+      ]
+    },
+    {
+      "ID": 30222,
+      "Entries": [
+        "R_0_T"
+      ]
+    },
+    {
+      "ID": 30223,
+      "Entries": [
+        "R_1_P"
+      ]
+    },
+    {
+      "ID": 30224,
+      "Entries": [
+        "R_2_P"
+      ]
+    },
+    {
+      "ID": 30225,
+      "Entries": [
+        "R_3_P"
+      ]
+    },
+    {
+      "ID": 30226,
+      "Entries": [
+        "R_4_P"
+      ]
+    },
+    {
+      "ID": 30227,
+      "Entries": [
+        "R_5_P"
+      ]
+    },
+    {
+      "ID": 30228,
+      "Entries": [
+        "R_6_P"
+      ]
+    },
+    {
+      "ID": 30229,
+      "Entries": [
+        "R_7_P"
+      ]
+    },
+    {
+      "ID": 30230,
+      "Entries": [
+        "R_8_P"
+      ]
+    },
+    {
+      "ID": 30231,
+      "Entries": [
+        "R_9_P"
+      ]
+    },
+    {
+      "ID": 30232,
+      "Entries": [
+        "R_10_T"
+      ]
+    },
+    {
+      "ID": 30233,
+      "Entries": [
+        "R_11_Icon_1"
+      ]
+    },
+    {
+      "ID": 30234,
+      "Entries": [
+        "R_11_Icon_2"
+      ]
+    },
+    {
+      "ID": 30235,
+      "Entries": [
+        "R_11_Icon_3"
+      ]
+    },
+    {
+      "ID": 30236,
+      "Entries": [
+        "R_11_Icon_4"
+      ]
+    },
+    {
+      "ID": 30237,
+      "Entries": [
+        "R_12_T"
+      ]
+    },
+    {
+      "ID": 30238,
+      "Entries": [
+        "R_13_Icon_1"
+      ]
+    },
+    {
+      "ID": 30239,
+      "Entries": [
+        "R_13_Icon_2"
+      ]
+    },
+    {
+      "ID": 30240,
+      "Entries": [
+        "R_13_Icon_3"
+      ]
+    },
+    {
+      "ID": 30241,
+      "Entries": [
+        "R_13_Icon_4"
+      ]
+    },
+    {
+      "ID": 30242,
+      "Entries": [
+        "レベルアップ：【武器】詳細表示_終端"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "キャラメイクトップ：プレイヤーステータス Level"
+      ]
+    },
+    {
+      "ID": 31001,
+      "Entries": [
+        "Soul"
+      ]
+    },
+    {
+      "ID": 31002,
+      "Entries": [
+        "Vitality"
+      ]
+    },
+    {
+      "ID": 31003,
+      "Entries": [
+        "Willpower"
+      ]
+    },
+    {
+      "ID": 31004,
+      "Entries": [
+        "Strength"
+      ]
+    },
+    {
+      "ID": 31005,
+      "Entries": [
+        "Dexiterity"
+      ]
+    },
+    {
+      "ID": 31006,
+      "Entries": [
+        "Shot"
+      ]
+    },
+    {
+      "ID": 31007,
+      "Entries": [
+        "Magic"
+      ]
+    },
+    {
+      "ID": 31008,
+      "Entries": [
+        "CharacterName"
+      ]
+    },
+    {
+      "ID": 31009,
+      "Entries": [
+        "Gender"
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        "AgeBracket"
+      ]
+    },
+    {
+      "ID": 31011,
+      "Entries": [
+        "Origin"
+      ]
+    },
+    {
+      "ID": 31012,
+      "Entries": [
+        "Gift"
+      ]
+    },
+    {
+      "ID": 31013,
+      "Entries": [
+        "キャラメイクトップ：プレイヤーステータス終端"
+      ]
+    }
+  ]
+}

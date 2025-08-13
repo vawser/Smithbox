@@ -1,0 +1,335 @@
+{
+  "Name": "NetworkMsgParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Write a summoning sign with the password set -- 合言葉を設定した状態で召喚サインを書く"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Start of session establishment with host (host) -- ホストとのセッション確立開始（ホスト）"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Start of session establishment with host (new guest) -- ホストとのセッション確立開始（新規ゲスト）"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Start establishing session with host (existing guest) -- ホストとのセッション確立開始（既存ゲスト）"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Session established with host (new guest) -- ホストとのセッション確立完了（新規ゲスト）"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Searching for connection destination (intrusion destination) -- 接続先（侵入先）を検索中"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Session creation failed"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Failed to join session"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Host-New Guest"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Host-New Guest"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Host-New Guest"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Block list check NG"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Block list check NG"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Block list check NG"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "new guest dies"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "new guest dies"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "timeout"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "timeout"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "timeout"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "generic error"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "generic error"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "generic error"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Guest A was summoned"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Guest A met the success conditions"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Guest A met the success conditions"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Guest A met the success conditions"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Guest A met the success conditions"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Guest A met success condition 2"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Guest A died"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Guest A self-repatriated"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Guest A self-repatriated"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Guest A self-repatriated"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Guest A self-repatriated"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "The host repatriated Guest A."
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "The host repatriated Guest A."
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "The host repatriated Guest A."
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "host death"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "The host passes through the boss door"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "The host passes through the boss door"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "The host passes through the boss door"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "The host passes through the boss door"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "The host passes through the boss door"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Guest A leaves due to general error"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Guest A leaves due to general error"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Guest A leaves due to general error"
+      ]
+    }
+  ]
+}

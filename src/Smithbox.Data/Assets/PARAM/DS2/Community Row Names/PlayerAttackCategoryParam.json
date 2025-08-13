@@ -1,0 +1,53 @@
+{
+  "Name": "PlayerAttackCategoryParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Long-range attack -- 長距離大攻撃"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Slow back attack -- 遅い背面攻撃"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Slow attacks -- 遅い攻撃"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Ordinary back attack -- 普通の背面攻撃"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Ordinary attacks -- 普通の攻撃"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Fast back attack -- 速い背面攻撃"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Fast Attack -- 速い攻撃"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Proximity bare hands -- 近接素手"
+      ]
+    }
+  ]
+}

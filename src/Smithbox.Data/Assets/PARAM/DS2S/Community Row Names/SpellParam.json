@@ -1,0 +1,1319 @@
+{
+  "Name": "SpellParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 31010000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31020000,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31030000,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31040000,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31050000,
+      "Entries": [
+        "Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31060000,
+      "Entries": [
+        "Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 31070000,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 31080000,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 31090000,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 31110000,
+      "Entries": [
+        "Shockwave"
+      ]
+    },
+    {
+      "ID": 31120000,
+      "Entries": [
+        "Soul Spear Barrage"
+      ]
+    },
+    {
+      "ID": 31130000,
+      "Entries": [
+        "Soul Shower"
+      ]
+    },
+    {
+      "ID": 31140000,
+      "Entries": [
+        "Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 31150000,
+      "Entries": [
+        "Soul Vortex"
+      ]
+    },
+    {
+      "ID": 31160000,
+      "Entries": [
+        "Soul Bolt"
+      ]
+    },
+    {
+      "ID": 31170000,
+      "Entries": [
+        "Soul Geyser"
+      ]
+    },
+    {
+      "ID": 31180000,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31190000,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 31210000,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 31220000,
+      "Entries": [
+        "Yearn"
+      ]
+    },
+    {
+      "ID": 31230000,
+      "Entries": [
+        "Hush"
+      ]
+    },
+    {
+      "ID": 31240000,
+      "Entries": [
+        "Fall Control"
+      ]
+    },
+    {
+      "ID": 31250000,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 31260000,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 31270000,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 31280000,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 31290000,
+      "Entries": [
+        "Unleash Magic"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "Soul Flash"
+      ]
+    },
+    {
+      "ID": 31310000,
+      "Entries": [
+        "Focus Souls"
+      ]
+    },
+    {
+      "ID": 32010000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 32020000,
+      "Entries": [
+        "Med Heal"
+      ]
+    },
+    {
+      "ID": 32030000,
+      "Entries": [
+        "Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 32040000,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 32050000,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 32060000,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 32070000,
+      "Entries": [
+        "Resplendent Life"
+      ]
+    },
+    {
+      "ID": 32080000,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 32090000,
+      "Entries": [
+        "Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 32110000,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 32120000,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 32130000,
+      "Entries": [
+        "Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 32140000,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 32150000,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 32160000,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 32170000,
+      "Entries": [
+        "Soul Appease"
+      ]
+    },
+    {
+      "ID": 32180000,
+      "Entries": [
+        "Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 32190000,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 32210000,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 32220000,
+      "Entries": [
+        "Guidance"
+      ]
+    },
+    {
+      "ID": 32230000,
+      "Entries": [
+        "Sacred Oath"
+      ]
+    },
+    {
+      "ID": 32240000,
+      "Entries": [
+        "Unveil"
+      ]
+    },
+    {
+      "ID": 32250000,
+      "Entries": [
+        "Perseverance"
+      ]
+    },
+    {
+      "ID": 32260000,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        "Denial"
+      ]
+    },
+    {
+      "ID": 32310000,
+      "Entries": [
+        "Splintering Lightning Spear"
+      ]
+    },
+    {
+      "ID": 33010000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 33020000,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 33030000,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 33040000,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 33050000,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 33060000,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 33070000,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 33080000,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 33090000,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 33110000,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 33120000,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 33130000,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 33140000,
+      "Entries": [
+        "Lingering Flame"
+      ]
+    },
+    {
+      "ID": 33150000,
+      "Entries": [
+        "Flame Swathe"
+      ]
+    },
+    {
+      "ID": 33160000,
+      "Entries": [
+        "Forbidden Sun"
+      ]
+    },
+    {
+      "ID": 33170000,
+      "Entries": [
+        "Flame Weapon"
+      ]
+    },
+    {
+      "ID": 33180000,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 33190000,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Warmth"
+      ]
+    },
+    {
+      "ID": 33210000,
+      "Entries": [
+        "Immolation"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "Fire Snake"
+      ]
+    },
+    {
+      "ID": 33310000,
+      "Entries": [
+        "Dance of Fire"
+      ]
+    },
+    {
+      "ID": 33320000,
+      "Entries": [
+        "Outcry"
+      ]
+    },
+    {
+      "ID": 34010000,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 34020000,
+      "Entries": [
+        "Dark Hail"
+      ]
+    },
+    {
+      "ID": 34030000,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 34040000,
+      "Entries": [
+        "Affinity"
+      ]
+    },
+    {
+      "ID": 34050000,
+      "Entries": [
+        "Dead Again"
+      ]
+    },
+    {
+      "ID": 34060000,
+      "Entries": [
+        "Dark Weapon"
+      ]
+    },
+    {
+      "ID": 34070000,
+      "Entries": [
+        "Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 34080000,
+      "Entries": [
+        "Repel"
+      ]
+    },
+    {
+      "ID": 34090000,
+      "Entries": [
+        "Twisted Barricade"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Numbness"
+      ]
+    },
+    {
+      "ID": 34300000,
+      "Entries": [
+        "Dark Greatsword"
+      ]
+    },
+    {
+      "ID": 34310000,
+      "Entries": [
+        "Recollection"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "Scraps of Life"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "Darkstorm"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "Climax"
+      ]
+    },
+    {
+      "ID": 35060000,
+      "Entries": [
+        "Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "Profound Still"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "Dark Dance"
+      ]
+    },
+    {
+      "ID": 71010000,
+      "Entries": [
+        "NPC - Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71020000,
+      "Entries": [
+        "NPC - Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71030000,
+      "Entries": [
+        "NPC - Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71040000,
+      "Entries": [
+        "NPC - Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71050000,
+      "Entries": [
+        "NPC - Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71060000,
+      "Entries": [
+        "NPC - Heavy Homing Soul Arrow"
+      ]
+    },
+    {
+      "ID": 71090000,
+      "Entries": [
+        "NPC - Soul Spear"
+      ]
+    },
+    {
+      "ID": 71100000,
+      "Entries": [
+        "NPC - Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 71110000,
+      "Entries": [
+        "NPC - Shockwave"
+      ]
+    },
+    {
+      "ID": 71120000,
+      "Entries": [
+        "NPC - Soul Spear Barrage"
+      ]
+    },
+    {
+      "ID": 71130000,
+      "Entries": [
+        "NPC - Soul Shower"
+      ]
+    },
+    {
+      "ID": 71140000,
+      "Entries": [
+        "NPC - Soul Greatsword"
+      ]
+    },
+    {
+      "ID": 71150000,
+      "Entries": [
+        "NPC - Soul Vortex"
+      ]
+    },
+    {
+      "ID": 71160000,
+      "Entries": [
+        "NPC - Soul Bolt"
+      ]
+    },
+    {
+      "ID": 71170000,
+      "Entries": [
+        "NPC - Soul Geyser"
+      ]
+    },
+    {
+      "ID": 71180000,
+      "Entries": [
+        "NPC - Magic Weapon"
+      ]
+    },
+    {
+      "ID": 71190000,
+      "Entries": [
+        "NPC - Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 71200000,
+      "Entries": [
+        "NPC - Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 71210000,
+      "Entries": [
+        "NPC - Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 71220000,
+      "Entries": [
+        "NPC - Yearn"
+      ]
+    },
+    {
+      "ID": 71230000,
+      "Entries": [
+        "NPC - Hush"
+      ]
+    },
+    {
+      "ID": 71240000,
+      "Entries": [
+        "NPC - Fall Control"
+      ]
+    },
+    {
+      "ID": 71250000,
+      "Entries": [
+        "NPC - Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 71260000,
+      "Entries": [
+        "NPC - Repair"
+      ]
+    },
+    {
+      "ID": 71270000,
+      "Entries": [
+        "NPC - Cast Light"
+      ]
+    },
+    {
+      "ID": 71280000,
+      "Entries": [
+        "NPC - Chameleon"
+      ]
+    },
+    {
+      "ID": 71290000,
+      "Entries": [
+        "NPC - Unleash Magic"
+      ]
+    },
+    {
+      "ID": 71300000,
+      "Entries": [
+        "NPC - Soul Flash"
+      ]
+    },
+    {
+      "ID": 71310000,
+      "Entries": [
+        "NPC - Focus Souls"
+      ]
+    },
+    {
+      "ID": 72010000,
+      "Entries": [
+        "NPC - Heal"
+      ]
+    },
+    {
+      "ID": 72020000,
+      "Entries": [
+        "NPC - Med Heal"
+      ]
+    },
+    {
+      "ID": 72030000,
+      "Entries": [
+        "NPC - Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 72040000,
+      "Entries": [
+        "NPC - Great Heal"
+      ]
+    },
+    {
+      "ID": 72050000,
+      "Entries": [
+        "NPC - Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 72060000,
+      "Entries": [
+        "NPC - Replenishment"
+      ]
+    },
+    {
+      "ID": 72070000,
+      "Entries": [
+        "NPC - Resplendent Life"
+      ]
+    },
+    {
+      "ID": 72080000,
+      "Entries": [
+        "NPC - Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 72090000,
+      "Entries": [
+        "NPC - Caressing Prayer"
+      ]
+    },
+    {
+      "ID": 72100000,
+      "Entries": [
+        "NPC - Force"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "NPC - Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 72120000,
+      "Entries": [
+        "NPC - Emit Force"
+      ]
+    },
+    {
+      "ID": 72130000,
+      "Entries": [
+        "NPC - Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 72130001,
+      "Entries": [
+        "NPC - Heavenly Thunder"
+      ]
+    },
+    {
+      "ID": 72140000,
+      "Entries": [
+        "NPC - Lightning Spear"
+      ]
+    },
+    {
+      "ID": 72150000,
+      "Entries": [
+        "NPC - Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 72160000,
+      "Entries": [
+        "NPC - Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 72160001,
+      "Entries": [
+        "NPC - Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 72170000,
+      "Entries": [
+        "NPC - Soul Appease"
+      ]
+    },
+    {
+      "ID": 72180000,
+      "Entries": [
+        "NPC - Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 72180001,
+      "Entries": [
+        "NPC - Blinding Bolt"
+      ]
+    },
+    {
+      "ID": 72190000,
+      "Entries": [
+        "NPC - Magic Barrier"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "NPC - Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 72210000,
+      "Entries": [
+        "NPC - Homeward"
+      ]
+    },
+    {
+      "ID": 72220000,
+      "Entries": [
+        "NPC - Guidance"
+      ]
+    },
+    {
+      "ID": 72230000,
+      "Entries": [
+        "NPC - Sacred Oath"
+      ]
+    },
+    {
+      "ID": 72230010,
+      "Entries": [
+        "NPC - Sacred Oath"
+      ]
+    },
+    {
+      "ID": 72240000,
+      "Entries": [
+        "NPC - Unveil"
+      ]
+    },
+    {
+      "ID": 72250000,
+      "Entries": [
+        "NPC - Perseverance"
+      ]
+    },
+    {
+      "ID": 72260000,
+      "Entries": [
+        "NPC - Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "NPC - Denial"
+      ]
+    },
+    {
+      "ID": 72310000,
+      "Entries": [
+        "NPC - Splintering Lightning Spear"
+      ]
+    },
+    {
+      "ID": 73010000,
+      "Entries": [
+        "NPC - Fireball"
+      ]
+    },
+    {
+      "ID": 73020000,
+      "Entries": [
+        "NPC - Fire Orb"
+      ]
+    },
+    {
+      "ID": 73030000,
+      "Entries": [
+        "NPC - Great Fireball"
+      ]
+    },
+    {
+      "ID": 73040000,
+      "Entries": [
+        "NPC - Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 73050000,
+      "Entries": [
+        "NPC - Firestorm"
+      ]
+    },
+    {
+      "ID": 73060000,
+      "Entries": [
+        "NPC - Fire Tempest"
+      ]
+    },
+    {
+      "ID": 73070000,
+      "Entries": [
+        "NPC - Chaos Storm"
+      ]
+    },
+    {
+      "ID": 73080000,
+      "Entries": [
+        "NPC - Combustion"
+      ]
+    },
+    {
+      "ID": 73090000,
+      "Entries": [
+        "NPC - Great Combustion"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "NPC - Fire Whip"
+      ]
+    },
+    {
+      "ID": 73110000,
+      "Entries": [
+        "NPC -  Poison Mist"
+      ]
+    },
+    {
+      "ID": 73120000,
+      "Entries": [
+        "NPC - Toxic Mist"
+      ]
+    },
+    {
+      "ID": 73130000,
+      "Entries": [
+        "NPC - Acid Surge"
+      ]
+    },
+    {
+      "ID": 73140000,
+      "Entries": [
+        "NPC - Lingering Flame"
+      ]
+    },
+    {
+      "ID": 73150000,
+      "Entries": [
+        "NPC - Flame Swathe"
+      ]
+    },
+    {
+      "ID": 73150001,
+      "Entries": [
+        "NPC - Flame Swathe"
+      ]
+    },
+    {
+      "ID": 73160000,
+      "Entries": [
+        "NPC - Forbidden Sun"
+      ]
+    },
+    {
+      "ID": 73170000,
+      "Entries": [
+        "NPC - Flame Weapon"
+      ]
+    },
+    {
+      "ID": 73180000,
+      "Entries": [
+        "NPC - Flash Sweat"
+      ]
+    },
+    {
+      "ID": 73190000,
+      "Entries": [
+        "NPC - Iron Flesh"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "NPC - Warmth"
+      ]
+    },
+    {
+      "ID": 73210000,
+      "Entries": [
+        "NPC - Immolation"
+      ]
+    },
+    {
+      "ID": 73300000,
+      "Entries": [
+        "NPC - Fire Snake"
+      ]
+    },
+    {
+      "ID": 73310000,
+      "Entries": [
+        "NPC - Dance of Fire"
+      ]
+    },
+    {
+      "ID": 73320000,
+      "Entries": [
+        "NPC - Outcry"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "NPC - Dark Orb"
+      ]
+    },
+    {
+      "ID": 74010001,
+      "Entries": [
+        "NPC - Dark Orb"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "NPC - Dark Hail"
+      ]
+    },
+    {
+      "ID": 74020001,
+      "Entries": [
+        "NPC - Dark Hail"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "NPC - Dark Fog"
+      ]
+    },
+    {
+      "ID": 74040000,
+      "Entries": [
+        "NPC - Affinity"
+      ]
+    },
+    {
+      "ID": 74050000,
+      "Entries": [
+        "NPC - Dead Again"
+      ]
+    },
+    {
+      "ID": 74060000,
+      "Entries": [
+        "NPC - Dark Weapon"
+      ]
+    },
+    {
+      "ID": 74070000,
+      "Entries": [
+        "NPC - Whisper of Despair"
+      ]
+    },
+    {
+      "ID": 74080000,
+      "Entries": [
+        "NPC - Repel"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "NPC - Numbness"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "NPC - Dark Greatsword"
+      ]
+    },
+    {
+      "ID": 74310000,
+      "Entries": [
+        "NPC - Recollection"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "NPC - Scraps of Life"
+      ]
+    },
+    {
+      "ID": 75020000,
+      "Entries": [
+        "NPC - Darkstorm"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "NPC - Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75040000,
+      "Entries": [
+        "NPC - Great Resonant Soul"
+      ]
+    },
+    {
+      "ID": 75050000,
+      "Entries": [
+        "NPC - Climax"
+      ]
+    },
+    {
+      "ID": 75060000,
+      "Entries": [
+        "NPC - Resonant Flesh"
+      ]
+    },
+    {
+      "ID": 75070000,
+      "Entries": [
+        "NPC - Resonant Weapon"
+      ]
+    },
+    {
+      "ID": 75080000,
+      "Entries": [
+        "NPC - Lifedrain Patch"
+      ]
+    },
+    {
+      "ID": 75090000,
+      "Entries": [
+        "NPC - Profound Still"
+      ]
+    },
+    {
+      "ID": 75300000,
+      "Entries": [
+        "NPC - Promised Walk of Peace"
+      ]
+    },
+    {
+      "ID": 75310000,
+      "Entries": [
+        "NPC - Dark Dance"
+      ]
+    }
+  ]
+}

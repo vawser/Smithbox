@@ -1,0 +1,317 @@
+{
+  "Name": "generatordbglocation_m10_04_00_00",
+  "Entries": [
+    {
+      "ID": 45,
+      "Entries": [
+        "【Ladder Shop:Migration】 Npc -- 【梯子屋：移住】NPC"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "【Ladder Shop:Migration】 NPC (Ghost) -- 【梯子屋：移住】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "【Ladder Shop:Migration】 For NPC cut-in -- 【梯子屋：移住】NPCカット―ン用"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "【Tsukiko Grandfather】NPC -- 【月光爺】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "【Map writing】 Npc -- 【地図書き】NPC"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "【Map writing】 NPC (Ghost) -- 【地図書き】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Blue Warrior] Npc -- 【青教戦士】NPC"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Blue Warrior] NPC (Ghost) -- 【青教戦士】NPC(亡霊）"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "【Armor shop】 Npc -- 【防具屋】NPC"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "【Armor shop】 NPC (Ghost) -- 【防具屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "【Armor shop】 NPC (normal) -- 【防具屋】NPC（普通）"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "【Armor shop】 NPC (Bullish) -- 【防具屋】NPC（強気）"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "【Material shop: Migration】 Npc -- 【素材屋：移住】NPC"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "【Material shop: Migration】 NPC (Ghost) -- 【素材屋：移住】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "[Sorcerer] Npc -- 【呪術屋】NPC"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "[Sorcerer] NPC (Ghost) -- 【呪術屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "【Blacksmith】 Npc -- 【鍛冶屋】NPC"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "【Blacksmith】 NPC (Ghost) -- 【鍛冶屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "【Blacksmith】 NPC (after move) -- 【鍛冶屋】NPC(移動後）"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "【Sorcerer】 Npc -- 【魔術屋】NPC"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "【Sorcerer】 NPC (Ghost) -- 【魔術屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "【Miracle Shop】 Npc -- 【奇跡屋】NPC"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "【Miracle Shop】 NPC (Ghost) -- 【奇跡屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "【Miracle Shop】 NPC (PC infiltration) -- 【奇跡屋】NPC（PC浸入）"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "【Dragon Shrine Maiden】 Npc -- 【龍の巫女】NPC"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "【Dragon Shrine Maiden】 NPC (Ghost) -- 【龍の巫女】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "【Yorozu Babaa: Migration】 Npc -- 【よろずババア：移住】NPC"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "【Yorozu Babaa: Migration】 NPC (Ghost) -- 【よろずババア：移住】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "【Cat】Sitting -- 【猫】お座り"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "[Dragon Shrine Maiden] Standing 1: Looking at the Sky: 01 -- 【龍の巫女】立ち１：空を見ている：01"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "[Dragon Shrine Maiden] Iwaza 1: Poke the cheek with your hand: 02 -- 【龍の巫女】岩座り１：頬を手で突く：02"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "[Dragon Shrine Maiden] Iwasai 2: Extend ing both hands behind the back: 03 -- 【龍の巫女】岩座り２：両手を後ろに伸ばす：03"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "[Dragon Shrine Maiden] Standing 2: Kicking the Ground: 06 -- 【龍の巫女】立ち２：地面を蹴っている：06"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "【Cat】Box Sit -- 【猫】箱すわり"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "【Cat】Nail Togi -- 【猫】爪とぎ"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "【Cat】Chair -- 【猫】椅子"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "【Cat】Table -- 【猫】テーブル"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Slave Beast] Piglet -- 【奴隷獣】子豚"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Slave Beast] Piglet -- 【奴隷獣】子豚"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Slave Beast] Piglet -- 【奴隷獣】子豚"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "[Skeleton] increase the number of laps appeared -- 【スケルトン】周回出現数増加"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "【Tutorial 2】 NPC: Gap Sinus: Proximity -- 【チュートリアル２】NPC：隙間の洞：近接"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "【Tutorial 3】 NPC: Gap Sinus: Shooting -- 【チュートリアル３】NPC：隙間の洞：射撃"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "【Tutorial】Week 2 Hunting -- 【チュートリアル】２週目狩り"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Character for pledge] -- 【誓約用キャラ】"
+      ]
+    }
+  ]
+}

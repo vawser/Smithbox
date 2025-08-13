@@ -1,0 +1,29 @@
+{
+  "Name": "CutsceneGparamTimeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default data. Deletion prohibited. Used if no para"
+      ]
+    },
+    {
+      "ID": 95150000,
+      "Entries": [
+        "s95_15_0000 Cutscene test"
+      ]
+    },
+    {
+      "ID": 99000000,
+      "Entries": [
+        "s99_00_0000 Initial test cutscene"
+      ]
+    },
+    {
+      "ID": 99950010,
+      "Entries": [
+        "s99_95_0010_Nomura test cutscene"
+      ]
+    }
+  ]
+}

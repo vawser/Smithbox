@@ -1,0 +1,233 @@
+{
+  "Name": "DamageEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "General-purpose smoke -- 汎用煙"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Spark -- 火花"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Lighting -- 雷光"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Seoul -- ソウル"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Blood -- 血"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Fluid -- 体液"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Wood -- 木片"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Bone fragments -- 骨片"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Water splash -- 水飛沫"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Viscous splash -- 粘性飛沫"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Lava Splash -- 溶岩飛沫"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Magic Shock -- 魔力衝撃"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Dark Shock -- 闇衝撃"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Boss Petrified -- ボス石化"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Stone water -- 石水"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Stone Energy -- 石エネルギー"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Behind The Spirit -- 背後霊"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Poison Swamp -- 毒沼"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Oil -- 油"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Acid -- 酸"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Mud -- 泥"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Soil -- 土"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Sand -- 砂"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "General-purpose smoke (raw meat) -- 汎用煙（生者肉）"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Blood: Green -- 血：緑"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Blood: None -- 血：なし"
+      ]
+    }
+  ]
+}

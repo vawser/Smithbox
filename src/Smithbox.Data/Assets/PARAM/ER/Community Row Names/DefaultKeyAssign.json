@@ -1,0 +1,2243 @@
+{
+  "Name": "DefaultKeyAssign",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "DebugMenu：モード切替"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "DebugMenu：↑"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "DebugMenu：↓"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "DebugMenu：←"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "DebugMenu：→"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "DebugMenu：パラメータ初期化"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "DebugMenu：スケール10倍"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "DebugMenu：スケール100倍"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "DebugMenu：親操作"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "DebugMenu：決定"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "DebugMenu：戻る"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "DebugMenu：桁操作用減算"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "DebugMenu：ウィンドウを開く"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "DebugMenu：ウィンドウを閉じる"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "DebugMenu：次のウィドウを選択"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "DebugMenu：前のウィンドウを選択"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "DebugMenu：ウィンドウの移動"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "DebugMenu：ウィンドウを早く移動"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "DebugMenu：ウィンドウの拡大"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "DebugMenu：ウィンドウサイズ"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "DebugMenu：ログ出力"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "DebugMenu：ノード制御用"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "DebugMenu：サブウィンドウを開く"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "DebugMenu：サブウィンドウを閉じる"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "DebugMenu：値入力ウインドウを開く"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "DebugMenu：Devmenu の検索ウインドウを開く"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "DebugMenu：左スティックX"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "DebugMenu：左スティックY"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "DebugMenu：右スティックX"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "DebugMenu：右スティックY"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "DebugMenu：[GUI]次のウィドウを選択"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "DebugMenu：[GUI]前のウィンドウを選択"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "DebugMenu：[GUI]値を進める"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "DebugMenu：[GUI]値を戻す"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "DebugMenu：[GUI]マウス左"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "DebugMenu：[GUI]マウス右"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "DebugMenu：[GUI]マウス中"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "DebugMenu：[GUI]シフトキー"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "DebugMenu：[GUI]オルトキー"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "DebugMenu：[GUI]コントロールキー"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Pause：次のフレーム"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "DebugCam：10倍"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "DebugCam：100倍"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "DebugCam：前後移動"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "DebugCam：左右移動"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "DebugCam：上移動"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "DebugCam：下移動"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "DebugCam：左右回転"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "DebugCam：上下回転"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "DebugCam：ロール右回り"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "DebugCam：ロール左回り"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "DebugCam：マウス：右クリック"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "DebugCam：マウス：左クリック"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "DebugCam：マウス：ホイール回転"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Ingame：10倍"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Ingame：0.1倍"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Ingame：位置リセット"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Ingame：カメラリセット"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Ingame：カメラモード切替"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Ingame：1フレーム更新"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Ingame：スクリーンショット"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Ingame：ビューア終了L"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Ingame：ビューア終了R"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Ingame：Action変更"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Ingame：メニュー"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Ingame：地図メニュー"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Ingame：Action"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "Ingame：Action：トリガー"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Ingame：Action別ボタン版"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Ingame：Action別ボタン版：トリガー"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "Ingame：デバッグダッシュ"
+      ]
+    },
+    {
+      "ID": 3017,
+      "Entries": [
+        "Ingame：デバッグダッシュ2"
+      ]
+    },
+    {
+      "ID": 3018,
+      "Entries": [
+        "Ingame：デバッグダッシュ3"
+      ]
+    },
+    {
+      "ID": 3019,
+      "Entries": [
+        "Ingame：デバッグ上昇"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Ingame：デバッグ下降"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "Ingame：デバッグ当たり無効"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "Ingame：デバッグスーパーダッシュ"
+      ]
+    },
+    {
+      "ID": 3023,
+      "Entries": [
+        "Ingame：前後移動"
+      ]
+    },
+    {
+      "ID": 3024,
+      "Entries": [
+        "Ingame：左右移動"
+      ]
+    },
+    {
+      "ID": 3025,
+      "Entries": [
+        "Ingame：左右回転"
+      ]
+    },
+    {
+      "ID": 3026,
+      "Entries": [
+        "Ingame：上下回転"
+      ]
+    },
+    {
+      "ID": 3027,
+      "Entries": [
+        "Ingame：左右回転（マウス）"
+      ]
+    },
+    {
+      "ID": 3028,
+      "Entries": [
+        "Ingame：上下回転（マウス）"
+      ]
+    },
+    {
+      "ID": 3029,
+      "Entries": [
+        "Ingame：歩き移動"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Ingame：右手攻撃（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "Ingame：右手2攻撃（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3032,
+      "Entries": [
+        "Ingame：左手攻撃（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3033,
+      "Entries": [
+        "Ingame：左手2攻撃（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3034,
+      "Entries": [
+        "Ingame：特殊移動（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3035,
+      "Entries": [
+        "Ingame：旧武器持ち替え（片手←→両手）（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3036,
+      "Entries": [
+        "Ingame：武器持ち替え（片手←→両手）"
+      ]
+    },
+    {
+      "ID": 3037,
+      "Entries": [
+        "Ingame：構えスイッチ（右手前<-->左手前）（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3038,
+      "Entries": [
+        "Ingame：アイテム使用（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3039,
+      "Entries": [
+        "Ingame：右手武器変更（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Ingame：左手武器変更（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "Ingame：アイテム変更（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3042,
+      "Entries": [
+        "Ingame：特殊移動：トリガー"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Ingame：R3（デバッグ）（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3044,
+      "Entries": [
+        "Ingame：L3（デバッグ）（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3045,
+      "Entries": [
+        "Ingame：タッチパッド右（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3046,
+      "Entries": [
+        "Ingame：タッチパッド左（アクションリクエストでも使用）"
+      ]
+    },
+    {
+      "ID": 3047,
+      "Entries": [
+        "Ingame：ジャンプ"
+      ]
+    },
+    {
+      "ID": 3048,
+      "Entries": [
+        "Ingame：ジャンプ2"
+      ]
+    },
+    {
+      "ID": 3049,
+      "Entries": [
+        "Ingame：馬呼び"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Ingame：魔法R1"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "Ingame：魔法R2"
+      ]
+    },
+    {
+      "ID": 3052,
+      "Entries": [
+        "Ingame：魔法L1"
+      ]
+    },
+    {
+      "ID": 3053,
+      "Entries": [
+        "Ingame：魔法L2"
+      ]
+    },
+    {
+      "ID": 3054,
+      "Entries": [
+        "Ingame：精密射撃ズームイン"
+      ]
+    },
+    {
+      "ID": 3055,
+      "Entries": [
+        "Ingame：精密射撃ズームアウト"
+      ]
+    },
+    {
+      "ID": 3056,
+      "Entries": [
+        "Ingame：投げ抜け：○"
+      ]
+    },
+    {
+      "ID": 3057,
+      "Entries": [
+        "Ingame：投げ抜け：×"
+      ]
+    },
+    {
+      "ID": 3058,
+      "Entries": [
+        "Ingame：投げ抜け：□"
+      ]
+    },
+    {
+      "ID": 3059,
+      "Entries": [
+        "Ingame：投げ抜け：△"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Ingame：投げ抜け：L1"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "Ingame：投げ抜け：L2"
+      ]
+    },
+    {
+      "ID": 3062,
+      "Entries": [
+        "Ingame：投げ抜け：R1"
+      ]
+    },
+    {
+      "ID": 3063,
+      "Entries": [
+        "Ingame：投げ抜け：R2"
+      ]
+    },
+    {
+      "ID": 3064,
+      "Entries": [
+        "Ingame：投げ抜け：左スティックのレバガチャX"
+      ]
+    },
+    {
+      "ID": 3065,
+      "Entries": [
+        "Ingame：投げ抜け：左スティックのレバガチャY"
+      ]
+    },
+    {
+      "ID": 3066,
+      "Entries": [
+        "Ingame：敵デバッグ操作左↑"
+      ]
+    },
+    {
+      "ID": 3067,
+      "Entries": [
+        "Ingame：敵デバッグ操作左↓"
+      ]
+    },
+    {
+      "ID": 3068,
+      "Entries": [
+        "Ingame：敵デバッグ操作左←"
+      ]
+    },
+    {
+      "ID": 3069,
+      "Entries": [
+        "Ingame：敵デバッグ操作左→"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Ingame：敵デバッグ操作右↑"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "Ingame：敵デバッグ操作右↓"
+      ]
+    },
+    {
+      "ID": 3072,
+      "Entries": [
+        "Ingame：敵デバッグ操作右←"
+      ]
+    },
+    {
+      "ID": 3073,
+      "Entries": [
+        "Ingame：敵デバッグ操作右→"
+      ]
+    },
+    {
+      "ID": 3074,
+      "Entries": [
+        "Ingame：敵デバッグ操作L1"
+      ]
+    },
+    {
+      "ID": 3075,
+      "Entries": [
+        "Ingame：敵デバッグ操作R1"
+      ]
+    },
+    {
+      "ID": 3076,
+      "Entries": [
+        "Ingame：敵デバッグ操作L2"
+      ]
+    },
+    {
+      "ID": 3077,
+      "Entries": [
+        "Ingame：敵デバッグ操作R2"
+      ]
+    },
+    {
+      "ID": 3078,
+      "Entries": [
+        "Ingame：メニュー：決定"
+      ]
+    },
+    {
+      "ID": 3079,
+      "Entries": [
+        "Ingame：メニュー：キャンセル"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Ingame：ジェスチャ：前に突き出す"
+      ]
+    },
+    {
+      "ID": 3081,
+      "Entries": [
+        "Ingame：ジェスチャ：後ろに突き出す"
+      ]
+    },
+    {
+      "ID": 3082,
+      "Entries": [
+        "Ingame：ジェスチャ：左に突き出す"
+      ]
+    },
+    {
+      "ID": 3083,
+      "Entries": [
+        "Ingame：ジェスチャ：右に突き出す"
+      ]
+    },
+    {
+      "ID": 3084,
+      "Entries": [
+        "Ingame：ジェスチャ：上に突き出す"
+      ]
+    },
+    {
+      "ID": 3085,
+      "Entries": [
+        "Ingame：ジェスチャ：下に突き出す"
+      ]
+    },
+    {
+      "ID": 3086,
+      "Entries": [
+        "Ingame：ジェスチャ：右回転"
+      ]
+    },
+    {
+      "ID": 3087,
+      "Entries": [
+        "Ingame：ジェスチャ：左回転"
+      ]
+    },
+    {
+      "ID": 3088,
+      "Entries": [
+        "Ingame：ジェスチャ：前に傾ける"
+      ]
+    },
+    {
+      "ID": 3089,
+      "Entries": [
+        "Ingame：ジェスチャ：後ろに傾ける"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Ingame：ジェスチャ：左に傾ける"
+      ]
+    },
+    {
+      "ID": 3091,
+      "Entries": [
+        "Ingame：ジェスチャ：右に傾ける"
+      ]
+    },
+    {
+      "ID": 3092,
+      "Entries": [
+        "Ingame：ジェスチャ：上下シェイク"
+      ]
+    },
+    {
+      "ID": 3093,
+      "Entries": [
+        "Ingame：マウスデバッグ：右クリック"
+      ]
+    },
+    {
+      "ID": 3094,
+      "Entries": [
+        "Ingame：マウスデバッグ：左クリック"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "BootMenu：左↑：リピート"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "BootMenu：左↓：リピート"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "BootMenu：左←：リピート"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "BootMenu：左→：リピート"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "BootMenu：左↑：トリガー"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "BootMenu：左↓：トリガー"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "BootMenu：左←：トリガー"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "BootMenu：左→：トリガー"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "BootMenu：左↑：通常"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "BootMenu：左↓：通常"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "BootMenu：左←：通常"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "BootMenu：左→：通常"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "BootMenu：右↑：トリガー"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "BootMenu：右↓：トリガー"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "BootMenu：右←：トリガー"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "BootMenu：右→：トリガー"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "BootMenu：右↑：通常"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "BootMenu：右↓：通常"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "BootMenu：右←：通常"
+      ]
+    },
+    {
+      "ID": 4019,
+      "Entries": [
+        "BootMenu：右→：通常"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "BootMenu：L1：通常"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "BootMenu：R1：通常"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "BootMenu：L2：通常"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "BootMenu：R2：通常"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "BootMenu：L3：通常"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "BootMenu：R3：通常"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "BootMenu：L1：トリガー"
+      ]
+    },
+    {
+      "ID": 4027,
+      "Entries": [
+        "BootMenu：R1：トリガー"
+      ]
+    },
+    {
+      "ID": 4028,
+      "Entries": [
+        "BootMenu：L2：トリガー"
+      ]
+    },
+    {
+      "ID": 4029,
+      "Entries": [
+        "BootMenu：R2：トリガー"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "BootMenu：OK"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "BootMenu：NG"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "マップデカール：作成"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "マップデカール：アンドゥ"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "MenuViewer:ビューア終了"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "MenuViewer:ビューア終了"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "MenuViewer:10倍"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "MenuViewer:0.1倍"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "MenuViewer:モデル左回転"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "MenuViewer:モデル右回転"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "MenuViewer:次アニメインデックス"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "MenuViewer:前アニメインデックス"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "MenuViewer:次アニメインデックス：トリガー"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "MenuViewer:前アニメインデックス：トリガー"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "MenuViewer:アニメインデックスA倍速"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "MenuViewer:アニメインデックスB倍速"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "MenuViewer:原点注視"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "MenuViewer:位置リセット"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "MenuViewer:○ボタン"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "MenuViewer:×ボタン"
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        "MenuViewer:OKボタン（マウスのみ）"
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        "MenuViewer:○ボタン：トリガー"
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        "MenuViewer:×ボタン：トリガー"
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "MenuViewer:OKボタン（パッドのみ）"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "MenuViewer:OKボタン（キーボードのみ）"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "MenuViewer:OKボタン（マウスのみ）"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "MenuViewer:キャンセルボタン（パッドのみ）"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "MenuViewer:キャンセルボタン（マウスのみ）"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "MenuViewer:アニメ一時停止"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        "MenuViewer:モーション適用"
+      ]
+    },
+    {
+      "ID": 6026,
+      "Entries": [
+        "MenuViewer:次アニメフレーム"
+      ]
+    },
+    {
+      "ID": 6027,
+      "Entries": [
+        "MenuViewer:前アニメフレーム"
+      ]
+    },
+    {
+      "ID": 6028,
+      "Entries": [
+        "MenuViewer:リストタブ増加"
+      ]
+    },
+    {
+      "ID": 6029,
+      "Entries": [
+        "MenuViewer:リストタブ減少"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "MenuViewer:リストアイテム増加"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "MenuViewer:リストアイテム減少"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "MenuViewer:リストタブ増加：トリガー"
+      ]
+    },
+    {
+      "ID": 6033,
+      "Entries": [
+        "MenuViewer:リストタブ減少：トリガー"
+      ]
+    },
+    {
+      "ID": 6034,
+      "Entries": [
+        "MenuViewer:ストアイテム増加：トリガー"
+      ]
+    },
+    {
+      "ID": 6035,
+      "Entries": [
+        "MenuViewer:ストアイテム減少：トリガー"
+      ]
+    },
+    {
+      "ID": 6036,
+      "Entries": [
+        "MenuViewer:リストOK"
+      ]
+    },
+    {
+      "ID": 6037,
+      "Entries": [
+        "MenuViewer:リストNG"
+      ]
+    },
+    {
+      "ID": 6038,
+      "Entries": [
+        "MenuViewer:リストA倍速"
+      ]
+    },
+    {
+      "ID": 6039,
+      "Entries": [
+        "MenuViewer:リストB倍速"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "MenuViewer:左↑"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "MenuViewer:左↓"
+      ]
+    },
+    {
+      "ID": 6042,
+      "Entries": [
+        "MenuViewer:左←"
+      ]
+    },
+    {
+      "ID": 6043,
+      "Entries": [
+        "MenuViewer:左→"
+      ]
+    },
+    {
+      "ID": 6044,
+      "Entries": [
+        "MenuViewer:左↑：高速"
+      ]
+    },
+    {
+      "ID": 6045,
+      "Entries": [
+        "MenuViewer:左↓：高速"
+      ]
+    },
+    {
+      "ID": 6046,
+      "Entries": [
+        "MenuViewer:左↑：トリガー"
+      ]
+    },
+    {
+      "ID": 6047,
+      "Entries": [
+        "MenuViewer:左↓：トリガー"
+      ]
+    },
+    {
+      "ID": 6048,
+      "Entries": [
+        "MenuViewer:左←：トリガー"
+      ]
+    },
+    {
+      "ID": 6049,
+      "Entries": [
+        "MenuViewer:左→：トリガー"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "MenuViewer:右↑：リピート"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "MenuViewer:右↓：リピート"
+      ]
+    },
+    {
+      "ID": 6052,
+      "Entries": [
+        "MenuViewer:右←：リピート"
+      ]
+    },
+    {
+      "ID": 6053,
+      "Entries": [
+        "MenuViewer:右→：リピート"
+      ]
+    },
+    {
+      "ID": 6054,
+      "Entries": [
+        "MenuViewer:右↑：通常"
+      ]
+    },
+    {
+      "ID": 6055,
+      "Entries": [
+        "MenuViewer:右↓：通常"
+      ]
+    },
+    {
+      "ID": 6056,
+      "Entries": [
+        "MenuViewer:右←：通常"
+      ]
+    },
+    {
+      "ID": 6057,
+      "Entries": [
+        "MenuViewer:右→：通常"
+      ]
+    },
+    {
+      "ID": 6058,
+      "Entries": [
+        "MenuViewer:右↑：トリガー"
+      ]
+    },
+    {
+      "ID": 6059,
+      "Entries": [
+        "MenuViewer:右↓：トリガー"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "MenuViewer:右←：トリガー"
+      ]
+    },
+    {
+      "ID": 6061,
+      "Entries": [
+        "MenuViewer:右→：トリガー"
+      ]
+    },
+    {
+      "ID": 6062,
+      "Entries": [
+        "MenuViewer:L1"
+      ]
+    },
+    {
+      "ID": 6063,
+      "Entries": [
+        "MenuViewer:R1"
+      ]
+    },
+    {
+      "ID": 6064,
+      "Entries": [
+        "MenuViewer:L2"
+      ]
+    },
+    {
+      "ID": 6065,
+      "Entries": [
+        "MenuViewer:R2"
+      ]
+    },
+    {
+      "ID": 6066,
+      "Entries": [
+        "MenuViewer:L3"
+      ]
+    },
+    {
+      "ID": 6067,
+      "Entries": [
+        "MenuViewer:R3"
+      ]
+    },
+    {
+      "ID": 6068,
+      "Entries": [
+        "MenuViewer:L1：トリガー"
+      ]
+    },
+    {
+      "ID": 6069,
+      "Entries": [
+        "MenuViewer:R1：トリガー"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "MenuViewer:L2：トリガー"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "MenuViewer:R2：トリガー"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "MenuViewer:L3：トリガー"
+      ]
+    },
+    {
+      "ID": 6073,
+      "Entries": [
+        "MenuViewer:R3：トリガー"
+      ]
+    },
+    {
+      "ID": 6074,
+      "Entries": [
+        "MenuViewer:L1：リピート"
+      ]
+    },
+    {
+      "ID": 6075,
+      "Entries": [
+        "MenuViewer:R1：リピート"
+      ]
+    },
+    {
+      "ID": 6076,
+      "Entries": [
+        "MenuViewer:L2：リピート"
+      ]
+    },
+    {
+      "ID": 6077,
+      "Entries": [
+        "MenuViewer:R2：リピート"
+      ]
+    },
+    {
+      "ID": 6078,
+      "Entries": [
+        "MenuViewer:モデル前後移動"
+      ]
+    },
+    {
+      "ID": 6079,
+      "Entries": [
+        "MenuViewer:モデル左右移動"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "MenuViewer:モデル上移動"
+      ]
+    },
+    {
+      "ID": 6081,
+      "Entries": [
+        "MenuViewer:モデル下移動"
+      ]
+    },
+    {
+      "ID": 6082,
+      "Entries": [
+        "MenuViewer:モデル＆カメラ左右回転"
+      ]
+    },
+    {
+      "ID": 6083,
+      "Entries": [
+        "MenuViewer:モデル＆カメラ上下回転"
+      ]
+    },
+    {
+      "ID": 6084,
+      "Entries": [
+        "MenuViewer:タッチパッド押し込み"
+      ]
+    },
+    {
+      "ID": 6085,
+      "Entries": [
+        "MenuViewer:ジェスチャーメニュー起動"
+      ]
+    },
+    {
+      "ID": 6086,
+      "Entries": [
+        "MenuViewer:スタート"
+      ]
+    },
+    {
+      "ID": 6087,
+      "Entries": [
+        "MenuViewer:魔法左切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6088,
+      "Entries": [
+        "MenuViewer:魔法右切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6089,
+      "Entries": [
+        "MenuViewer:アイテム繰り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "MenuViewer:武器左切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "MenuViewer:武器右切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6092,
+      "Entries": [
+        "MenuViewer:魔法左切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6093,
+      "Entries": [
+        "MenuViewer:魔法右切り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6094,
+      "Entries": [
+        "MenuViewer:アイテム繰り替え：トリガー"
+      ]
+    },
+    {
+      "ID": 6095,
+      "Entries": [
+        "MenuViewer:キーボード：メニューオープン？"
+      ]
+    },
+    {
+      "ID": 6096,
+      "Entries": [
+        "MenuViewer:キーボード：スクロール上"
+      ]
+    },
+    {
+      "ID": 6097,
+      "Entries": [
+        "MenuViewer:キーボード：スクロール下"
+      ]
+    },
+    {
+      "ID": 6098,
+      "Entries": [
+        "MenuViewer:キーボード：カーソル移動上"
+      ]
+    },
+    {
+      "ID": 6099,
+      "Entries": [
+        "MenuViewer:キーボード：カーソル移動下"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "MenuViewer:キーボード：カーソル移動左"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "MenuViewer:キーボード：カーソル移動右"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "MenuViewer:地図カーソル移動（左右）"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "MenuViewer:地図カーソル移動（上下）"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "MenuViewer:タッチパッド左"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "MenuViewer:魔法スロットの選択位置リセット左"
+      ]
+    },
+    {
+      "ID": 6106,
+      "Entries": [
+        "MenuViewer:魔法スロットの選択位置リセット右"
+      ]
+    },
+    {
+      "ID": 6107,
+      "Entries": [
+        "MenuViewer:道具スロットの選択位置リセット"
+      ]
+    },
+    {
+      "ID": 6108,
+      "Entries": [
+        "MenuViewer:魔法スロットの選択位置リセット左：トリガー"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "MenuViewer:魔法スロットの選択位置リセット右：トリガー"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "MenuViewer:道具スロットの選択位置リセット：トリガー"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "MenuViewer：マウス右クリック"
+      ]
+    },
+    {
+      "ID": 6112,
+      "Entries": [
+        "MenuViewer：マウス左クリック"
+      ]
+    },
+    {
+      "ID": 6113,
+      "Entries": [
+        "MenuViewer：マウスホイール回転"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "ModelViewer:ビューア終了"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "ModelViewer:ビューア終了"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "ModelViewer:モデルを削除"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "ModelViewer:モデルを削除"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "ModelViewer:10倍"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "ModelViewer:0.1倍"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "ModelViewer:モデル左回転"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "ModelViewer:モデル右回転"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "ModelViewer:次アニメインデックス"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "ModelViewer:前アニメインデックス"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "ModelViewer:次アニメインデックス：トリガー"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "ModelViewer:前アニメインデックス：トリガー"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "ModelViewer:アニメインデックスA倍速"
+      ]
+    },
+    {
+      "ID": 7013,
+      "Entries": [
+        "ModelViewer:アニメインデックスB倍速"
+      ]
+    },
+    {
+      "ID": 7014,
+      "Entries": [
+        "ModelViewer:原点注視"
+      ]
+    },
+    {
+      "ID": 7015,
+      "Entries": [
+        "ModelViewer:位置リセット"
+      ]
+    },
+    {
+      "ID": 7016,
+      "Entries": [
+        "ModelViewer:○ボタン"
+      ]
+    },
+    {
+      "ID": 7017,
+      "Entries": [
+        "ModelViewer:×ボタン"
+      ]
+    },
+    {
+      "ID": 7018,
+      "Entries": [
+        "ModelViewer:アニメ一時停止"
+      ]
+    },
+    {
+      "ID": 7019,
+      "Entries": [
+        "ModelViewer:モーション適用"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "ModelViewer:次アニメフレーム"
+      ]
+    },
+    {
+      "ID": 7021,
+      "Entries": [
+        "ModelViewer:前アニメフレーム"
+      ]
+    },
+    {
+      "ID": 7022,
+      "Entries": [
+        "ModelViewer:リストタブ増加"
+      ]
+    },
+    {
+      "ID": 7023,
+      "Entries": [
+        "ModelViewer:リストタブ減少"
+      ]
+    },
+    {
+      "ID": 7024,
+      "Entries": [
+        "ModelViewer:リストアイテム増加"
+      ]
+    },
+    {
+      "ID": 7025,
+      "Entries": [
+        "ModelViewer:リストアイテム減少"
+      ]
+    },
+    {
+      "ID": 7026,
+      "Entries": [
+        "ModelViewer:リストタブ増加：トリガー"
+      ]
+    },
+    {
+      "ID": 7027,
+      "Entries": [
+        "ModelViewer:リストタブ減少：トリガー"
+      ]
+    },
+    {
+      "ID": 7028,
+      "Entries": [
+        "ModelViewer:ストアイテム増加：トリガー"
+      ]
+    },
+    {
+      "ID": 7029,
+      "Entries": [
+        "ModelViewer:ストアイテム減少：トリガー"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "ModelViewer:リストOK"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "ModelViewer:リストNG"
+      ]
+    },
+    {
+      "ID": 7032,
+      "Entries": [
+        "ModelViewer:リストA倍速"
+      ]
+    },
+    {
+      "ID": 7033,
+      "Entries": [
+        "ModelViewer:リストB倍速"
+      ]
+    },
+    {
+      "ID": 7034,
+      "Entries": [
+        "ModelViewer:アセットスキップ(上の桁)"
+      ]
+    },
+    {
+      "ID": 7035,
+      "Entries": [
+        "ModelViewer:アセットスキップ(下の桁)"
+      ]
+    },
+    {
+      "ID": 7036,
+      "Entries": [
+        "ModelViewer:アセットスキップ(10)"
+      ]
+    },
+    {
+      "ID": 7037,
+      "Entries": [
+        "ModelViewer:アセットスキップ(100)"
+      ]
+    },
+    {
+      "ID": 7038,
+      "Entries": [
+        "ModelViewer:左↑"
+      ]
+    },
+    {
+      "ID": 7039,
+      "Entries": [
+        "ModelViewer:左↓"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "ModelViewer:左←"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "ModelViewer:左→"
+      ]
+    },
+    {
+      "ID": 7042,
+      "Entries": [
+        "ModelViewer:左↑：トリガー"
+      ]
+    },
+    {
+      "ID": 7043,
+      "Entries": [
+        "ModelViewer:左↓：トリガー"
+      ]
+    },
+    {
+      "ID": 7044,
+      "Entries": [
+        "ModelViewer:左←：トリガー"
+      ]
+    },
+    {
+      "ID": 7045,
+      "Entries": [
+        "ModelViewer:左→：トリガー"
+      ]
+    },
+    {
+      "ID": 7046,
+      "Entries": [
+        "ModelViewer:右↑"
+      ]
+    },
+    {
+      "ID": 7047,
+      "Entries": [
+        "ModelViewer:右↓"
+      ]
+    },
+    {
+      "ID": 7048,
+      "Entries": [
+        "ModelViewer:右←"
+      ]
+    },
+    {
+      "ID": 7049,
+      "Entries": [
+        "ModelViewer:右→"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "ModelViewer:右↑"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "ModelViewer:右↓"
+      ]
+    },
+    {
+      "ID": 7052,
+      "Entries": [
+        "ModelViewer:右←"
+      ]
+    },
+    {
+      "ID": 7053,
+      "Entries": [
+        "ModelViewer:右→"
+      ]
+    },
+    {
+      "ID": 7054,
+      "Entries": [
+        "ModelViewer:右↑：トリガー"
+      ]
+    },
+    {
+      "ID": 7055,
+      "Entries": [
+        "ModelViewer:右↓：トリガー"
+      ]
+    },
+    {
+      "ID": 7056,
+      "Entries": [
+        "ModelViewer:右←：トリガー"
+      ]
+    },
+    {
+      "ID": 7057,
+      "Entries": [
+        "ModelViewer:右→：トリガー"
+      ]
+    },
+    {
+      "ID": 7058,
+      "Entries": [
+        "ModelViewer:L1"
+      ]
+    },
+    {
+      "ID": 7059,
+      "Entries": [
+        "ModelViewer:R1"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "ModelViewer:L2"
+      ]
+    },
+    {
+      "ID": 7061,
+      "Entries": [
+        "ModelViewer:R2"
+      ]
+    },
+    {
+      "ID": 7062,
+      "Entries": [
+        "ModelViewer:L3"
+      ]
+    },
+    {
+      "ID": 7063,
+      "Entries": [
+        "ModelViewer:R3"
+      ]
+    },
+    {
+      "ID": 7064,
+      "Entries": [
+        "ModelViewer:L1：トリガー"
+      ]
+    },
+    {
+      "ID": 7065,
+      "Entries": [
+        "ModelViewer:R1：トリガー"
+      ]
+    },
+    {
+      "ID": 7066,
+      "Entries": [
+        "ModelViewer:L2：トリガー"
+      ]
+    },
+    {
+      "ID": 7067,
+      "Entries": [
+        "ModelViewer:R2：トリガー"
+      ]
+    },
+    {
+      "ID": 7068,
+      "Entries": [
+        "ModelViewer:L3：トリガー"
+      ]
+    },
+    {
+      "ID": 7069,
+      "Entries": [
+        "ModelViewer:R3：トリガー"
+      ]
+    },
+    {
+      "ID": 7070,
+      "Entries": [
+        "ModelViewer:モデル前後移動"
+      ]
+    },
+    {
+      "ID": 7071,
+      "Entries": [
+        "ModelViewer:モデル左右移動"
+      ]
+    },
+    {
+      "ID": 7072,
+      "Entries": [
+        "ModelViewer:モデル上移動"
+      ]
+    },
+    {
+      "ID": 7073,
+      "Entries": [
+        "ModelViewer:モデル下移動"
+      ]
+    },
+    {
+      "ID": 7074,
+      "Entries": [
+        "ModelViewer:モデル＆カメラ左右回転"
+      ]
+    },
+    {
+      "ID": 7075,
+      "Entries": [
+        "ModelViewer:モデル＆カメラ上下回転"
+      ]
+    }
+  ]
+}

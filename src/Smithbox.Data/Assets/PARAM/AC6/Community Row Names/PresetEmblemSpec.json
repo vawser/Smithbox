@@ -1,0 +1,887 @@
+{
+  "Name": "PresetEmblemSpec",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Preset emblem: Lizard"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Preset emblem: Cat"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Preset emblem: Knight"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Preset emblem: Plant"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Preset emblem: Breakstar"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Preset emblem: Spider"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Preset emblem: Panther"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Preset emblem: Unicorn"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Preset emblem: Ammonite"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Preset emblem: shark fin"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Preset emblem: Pawn"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Preset emblem: Soldier"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Preset emblem: Grenade"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Preset emblem: Bullet"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Preset emblem: Sighting"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Preset decal data 1"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Preset decal data 2"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Preset decal data 3"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Preset decal data 4"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Preset decal data 5"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Preset decal data 6"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Preset decal data 7"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Preset decal data 8"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Preset decal data 9"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Preset decal data 10"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Preset decal data 11"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Preset decal data 12"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Preset decal data 13"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Preset decal data 14"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "Preset decal data 15"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "Preset decal data 16"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Preset decal data 17"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Preset decal data 18"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Preset decal data 19"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Preset decal data 20"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Preset decal data 21"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Preset decal data 22"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Preset decal data 23"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Preset decal data 24"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Preset decal data 25"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Preset decal data 26"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Preset decal data 27"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "Preset decal data 28"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "Preset decal data 29"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "Preset decal data 30"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Preset decal data 31"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Preset decal data 32"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Preset decal data 33"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Preset decal data 34"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Preset decal data 35"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "Preset decal data 36"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Preset decal data 37"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Preset decal data 38"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Preset decal data 39"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Preset decal data 40"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Preset decal data 41"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Preset decal data 42"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Preset decal data 43"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Preset decal data 44"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "Preset decal data 45"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "Preset decal data 46"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Preset decal data 47"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "red gun 13"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "G6 red"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "G5 Iguazu"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "G4 Volta"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "G3 Five Flower Sea"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "G2 Nile"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "G1 Michigan"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "V.VIII Pater"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "V.VII Swinburne"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "V.VI Maeterlinck"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "V.V Hawkins"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "V.IV Rusty"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "V.III O'Keeffe"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "V.II Snail"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "V.I Freud"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "index dunham"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "little ziyi"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "ring freddy"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "middle flat"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Sam Dolmayan"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Rokumonsen"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Rusty (late)"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Invincible Rummy"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "chatty stick"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "Honest Bluetooth"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Cinder Kara"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "walter"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "northark"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "Sulla"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "cold call"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "kate"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "chartreuse"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "king"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Default emblem: Broken Raven"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "Verification F: Independent Mercenary"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "gift of air"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Corporate emblem: Bayram"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Corporate emblem: Darfon"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Corporate emblem: Red gun"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Corporate emblem:Archibus"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Corporate emblem:Archibus ADD"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Corporate emblem: Schneider"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Corporate emblem:VAPL"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Corporate emblem: Vesper"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Corporate emblem: Furon"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Corporate emblem: Merinit"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Corporate emblem: Takigawa"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Corporate emblem: BAWS"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Corporate emblem: Elcano"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Corporate emblem: Rubiconist"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Corporate emblem: RaD"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Corporate emblem: Giken"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "corporate emblem;overshear"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Corporate emblem: All Mind"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Corporate emblem: Blockade organization"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Mind α"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Mind β"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "mind gamma"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "trainer"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "tester"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Verification C: Company"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Verification D: Rubiconian"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Verification E: Giken"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "simulator raven"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "simulator rusty"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "simulator walter"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "air"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Emblem \"High Mercenary\""
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Emblem \"Combat Skills Verification Program Completed\""
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Hunter Grade 15 All battle logs recovered"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Rubicon Omniscience All information logs collected"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Emblem \"Integration Program Completed\""
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "stargazer"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "perfect mercenary"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Number 7 (Reinforced Human Company B) Decal"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Number 5 decal"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Number 6 decal"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Early Ash Decal"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Number 4 decal"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Number 2 decal"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Number 1 Decal"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Number 3 decal"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Late Ash Decal"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "lester decal"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "lester decal"
+      ]
+    }
+  ]
+}

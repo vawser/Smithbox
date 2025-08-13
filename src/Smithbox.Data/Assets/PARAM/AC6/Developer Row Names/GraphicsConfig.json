@@ -1,0 +1,77 @@
+{
+  "Name": "GraphicsConfig",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Win Low"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win Middle"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Win High"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Win Ultra"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "PS4 Pro"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "PS5"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "XBoxOne"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "XBoxOneX"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "ScarlettS"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Scarlett"
+      ]
+    }
+  ]
+}

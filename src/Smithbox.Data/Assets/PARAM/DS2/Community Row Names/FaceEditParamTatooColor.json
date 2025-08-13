@@ -1,0 +1,65 @@
+{
+  "Name": "FaceEditParamTatooColor",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Tattoo Color Set 1 -- 刺青の色セット1"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Tattoo Color Set 2 -- 刺青の色セット2"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Tattoo Color Set 3 -- 刺青の色セット3"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Tattoo Color Set 4 -- 刺青の色セット4"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Tattoo Color Set 5 -- 刺青の色セット5"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Tattoo Color Set 6 -- 刺青の色セット6"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Tattoo Color Set 7 -- 刺青の色セット7"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Tattoo Color Set 8 -- 刺青の色セット8"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tattoo Color Set 9 -- 刺青の色セット9"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Tattoo Color Set 10 -- 刺青の色セット10"
+      ]
+    }
+  ]
+}

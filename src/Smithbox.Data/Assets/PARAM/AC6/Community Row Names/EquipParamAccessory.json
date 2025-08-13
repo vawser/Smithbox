@@ -1,0 +1,263 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Equipment weight increased"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Increases pinch attack power"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Ring of the Dark Moon God"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "thieves ring"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Increases stamina recovery"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Increases fire resistance"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Increased lightning resistance"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Magic resistance up"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "All resistance up 1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Increases bleeding resistance"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison resistance up"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "HP slight increase"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse resistance up"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "magic slot up"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Magic power up"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "MP bias"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Increases deadly attack power"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "master of the bow"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Physical defense power up"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "item drop up"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Get Soul Up"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "sound erasure"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "stone hat"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "rigid legs"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "revival"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "resurrection from curse"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "acrobatics"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "resonance"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "words of chaos"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "walking in darkness"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Lava walking"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Auxiliary magic extension"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "HP drain"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "curse of the strong"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Counter reinforcement"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Cherish your weapons"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "SA up"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Increases pinch defense power"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Miracle power increased"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Magic slot up B"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[DLC] Black Dragon Ring"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[GR] Sky ring"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "[GR] Evil spirit ring"
+      ]
+    }
+  ]
+}

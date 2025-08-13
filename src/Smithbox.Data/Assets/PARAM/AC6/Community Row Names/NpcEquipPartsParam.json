@@ -1,0 +1,827 @@
+{
+  "Name": "NpcEquipPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        "control prototype character"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "control prototype character"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "BAWS Guard MT Walker - Kinetic Gun"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "BAWS Guard MT Walker - Laser Gun"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "BAWS Guard MT Walker - Dual Missiles"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "BAWS Guard MT Walker - Dual Triple Barrel Guns"
+      ]
+    },
+    {
+      "ID": 30004000,
+      "Entries": [
+        "BAWS Guard MT Walker - Bazooka (Unfinished)"
+      ]
+    },
+    {
+      "ID": 30009000,
+      "Entries": [
+        "BAWS Guard MT Walker - All Weapons"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Junker Coyotes \"Puncher\" Walker - Dual Guns"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Junker Coyotes \"Kicker\" Walker - Dual Triple Barrel Guns"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "BAWS Bipedal MT - Rifle + Bomb Launcher"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "BAWS Bipedal MT - Dual Machine Guns"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "BAWS Bipedal MT - Machine Gun + Bazooka"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "BAWS Bipedal MT - Shotgun + Shield"
+      ]
+    },
+    {
+      "ID": 30200400,
+      "Entries": [
+        "BAWS Bipedal MT - Rifle + Back Missiles"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "BAWS Bipedal MT - Machine Gun + Back Bazooka"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "BAWS Bipedal MT - Rifle + Shield"
+      ]
+    },
+    {
+      "ID": 30200700,
+      "Entries": [
+        "BAWS Bipedal MT - Rifle + Bazooka"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "BAWS Bipedal MT - Machine Gun + Shield"
+      ]
+    },
+    {
+      "ID": 30200810,
+      "Entries": [
+        "BAWS Bipedal MT - Machine Gun Only"
+      ]
+    },
+    {
+      "ID": 30200820,
+      "Entries": [
+        "BAWS Bipedal MT - Shield Only"
+      ]
+    },
+    {
+      "ID": 30200830,
+      "Entries": [
+        "BAWS Bipedal MT - Rifle + Back Camera"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "BAWS Bipedal MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "BAWS Bipedal MT - Back Bazooka Only"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "PCA Subject Guard MT - Laser Gun + Back Missiles"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "PCA Subject Guard MT - Kinetic Gun + Stun Bomb Launcher"
+      ]
+    },
+    {
+      "ID": 30502000,
+      "Entries": [
+        "PCA Subject Guard MT - Kinetic Gun + Fire Blade"
+      ]
+    },
+    {
+      "ID": 30503000,
+      "Entries": [
+        "PCA Subject Guard MT - Flamethrower"
+      ]
+    },
+    {
+      "ID": 30504000,
+      "Entries": [
+        "PCA Subject Guard MT - Laser Gun + Back Bazookas"
+      ]
+    },
+    {
+      "ID": 30505000,
+      "Entries": [
+        "PCA Subject Guard MT - Sniper (Unfinished)"
+      ]
+    },
+    {
+      "ID": 30509900,
+      "Entries": [
+        "PCA Subject Guard MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Xylem Flying MT - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "Xylem Flying MT - Laser Blades"
+      ]
+    },
+    {
+      "ID": 31009900,
+      "Entries": [
+        "Xylem Flying MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "JUGGERNAUT - All Weapons"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "JUGGERNAUT - Boss"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "EKDROMOI - Laser Lance"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "EKDROMOI - Dual Tommy Guns"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "EKDROMOI - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "EKDROMOI - Dual SMGs (Unfinished)"
+      ]
+    },
+    {
+      "ID": 32000900,
+      "Entries": [
+        "EKDROMOI - All Weapons"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Shield"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Shotgun"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Bazooka"
+      ]
+    },
+    {
+      "ID": 32500300,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Machine Gun"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Sniper"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Heavily Armed"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - High Mobility"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - All Weapons"
+      ]
+    },
+    {
+      "ID": 32500999,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Rifle with Bazooka"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "HEAVY CAVALRY (HC) - All Weapons"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "HEAVY CAVALRY (HC) - Laser Gun"
+      ]
+    },
+    {
+      "ID": 32600200,
+      "Entries": [
+        "HEAVY CAVALRY (HC) - Laser Blade"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "HEAVY CAVALRY (HC) - Dual Heavy Guns"
+      ]
+    },
+    {
+      "ID": 32600400,
+      "Entries": [
+        "HEAVY CAVALRY (HC) - Plasma Gun"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Ghost MT - Whip"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "Ghost MT - Plasma Gun + Whip"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "Ghost MT - Laser Gun"
+      ]
+    },
+    {
+      "ID": 33009000,
+      "Entries": [
+        "Ghost MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT - Machine Gun + Shield"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "BAWS Tetrapod MT - Dual Chainguns"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "BAWS Tetrapod MT - Laser Blade"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "BAWS Tetrapod MT - Machine Gun + Bomb Launcher"
+      ]
+    },
+    {
+      "ID": 34008000,
+      "Entries": [
+        "BAWS Tetrapod MT - Machine Gun Only"
+      ]
+    },
+    {
+      "ID": 34009000,
+      "Entries": [
+        "BAWS Tetrapod MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Institute MT - Bazooka"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "Institute MT - Long Barrel Bazooka"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "Institute MT - Cluster Missiles"
+      ]
+    },
+    {
+      "ID": 35000300,
+      "Entries": [
+        "Institute MT - Cluster Missiles (Unfinished)"
+      ]
+    },
+    {
+      "ID": 35000900,
+      "Entries": [
+        "Institute MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "RaD Spider MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 36001000,
+      "Entries": [
+        "RaD Spider MT - Buzzsaw"
+      ]
+    },
+    {
+      "ID": 36002000,
+      "Entries": [
+        "RaD Spider MT - SMG"
+      ]
+    },
+    {
+      "ID": 36003000,
+      "Entries": [
+        "RaD Spider MT - Dual Guns"
+      ]
+    },
+    {
+      "ID": 36004000,
+      "Entries": [
+        "RaD Spider MT - Shield"
+      ]
+    },
+    {
+      "ID": 36004100,
+      "Entries": [
+        "RaD Spider MT - Shield No Huge Missile"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "PCA Drone MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        "PCA Drone MT - Laser Rifle"
+      ]
+    },
+    {
+      "ID": 37002000,
+      "Entries": [
+        "PCA Drone MT - Pulse Blade + Shield"
+      ]
+    },
+    {
+      "ID": 37003000,
+      "Entries": [
+        "PCA Drone MT - Sniper + Missiles"
+      ]
+    },
+    {
+      "ID": 37003100,
+      "Entries": [
+        "PCA Drone MT - Sniper Only"
+      ]
+    },
+    {
+      "ID": 37004000,
+      "Entries": [
+        "PCA Drone MT - Laser Rifle + Shield + Plasma Missiles"
+      ]
+    },
+    {
+      "ID": 37009900,
+      "Entries": [
+        "PCA Drone MT - Laser Rifle + Plasma Missiles"
+      ]
+    },
+    {
+      "ID": 37009901,
+      "Entries": [
+        "PCA Drone MT - Pulse Blade + Shield + Plasma Missiles"
+      ]
+    },
+    {
+      "ID": 37009999,
+      "Entries": [
+        "PCA Drone MT - All Weapons"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "CATAPHRACT - Boss"
+      ]
+    },
+    {
+      "ID": 40002000,
+      "Entries": [
+        "CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40003000,
+      "Entries": [
+        "CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40004000,
+      "Entries": [
+        "CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40009000,
+      "Entries": [
+        "CATAPHRACT - All Weapons"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "TOYBOX - Normal"
+      ]
+    },
+    {
+      "ID": 41501000,
+      "Entries": [
+        "TOYBOX - Pulse Protection"
+      ]
+    },
+    {
+      "ID": 41502000,
+      "Entries": [
+        "TOYBOX - Missile"
+      ]
+    },
+    {
+      "ID": 41509000,
+      "Entries": [
+        "TOYBOX - All Weapons"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "ALLMIND"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Drone - Gatling Gun"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Drone - Double Barrel Gun"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "Drone - Bomb"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Drone - Searchlight"
+      ]
+    },
+    {
+      "ID": 50000900,
+      "Entries": [
+        "Drone - All Weapons"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Repair Drone - Repair Tool"
+      ]
+    },
+    {
+      "ID": 50100100,
+      "Entries": [
+        "Repair Drone - Bazooka (Unfinished)"
+      ]
+    },
+    {
+      "ID": 50100200,
+      "Entries": [
+        "Repair Drone - Laser Gun"
+      ]
+    },
+    {
+      "ID": 50100300,
+      "Entries": [
+        "Repair Drone - Shock Emitter"
+      ]
+    },
+    {
+      "ID": 50100900,
+      "Entries": [
+        "Repair Drone - All Weapons"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "Quadcopter Drone - Nothing"
+      ]
+    },
+    {
+      "ID": 51200100,
+      "Entries": [
+        "Quadcopter Drone - Laser Gun"
+      ]
+    },
+    {
+      "ID": 51200200,
+      "Entries": [
+        "Quadcopter Drone - Cluster Missiles"
+      ]
+    },
+    {
+      "ID": 51200300,
+      "Entries": [
+        "Quadcopter Drone - Pulse"
+      ]
+    },
+    {
+      "ID": 51200900,
+      "Entries": [
+        "Quadcopter Drone - All Weapons"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "Helicopter - Kinetic Gun"
+      ]
+    },
+    {
+      "ID": 51500100,
+      "Entries": [
+        "Helicopter - Kinetic Gun + Dual 16-count Missiles"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "Helicopter - Laser Gun"
+      ]
+    },
+    {
+      "ID": 51500300,
+      "Entries": [
+        "Helicopter - Laser Gun + Dual 16-count Missiles"
+      ]
+    },
+    {
+      "ID": 51500900,
+      "Entries": [
+        "Helicopter - All Weapons"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Artillery Vehicle - Gun + Missiles"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "Artillery Vehicle - Machine Gun"
+      ]
+    },
+    {
+      "ID": 52002000,
+      "Entries": [
+        "Artillery Vehicle - Missiles"
+      ]
+    },
+    {
+      "ID": 52003000,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52009000,
+      "Entries": [
+        "Artillery Vehicle - All Weapons"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60501110,
+      "Entries": [
+        "PCA Heavy Combat Helicopter - Boss"
+      ]
+    },
+    {
+      "ID": 60509000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter - All Weapons"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 general purpose gun for laser sight"
+      ]
+    },
+    {
+      "ID": 72800000,
+      "Entries": [
+        "c7280 general purpose gun for laser sight"
+      ]
+    },
+    {
+      "ID": 72801000,
+      "Entries": [
+        "For underground facility recapture gun battery dummy, for laser sight"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 general purpose gun for laser sight"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "ENFORCER - Boss Mode"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "ENFORCER - Defense Mode"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "resource excavation ship"
+      ]
+    }
+  ]
+}

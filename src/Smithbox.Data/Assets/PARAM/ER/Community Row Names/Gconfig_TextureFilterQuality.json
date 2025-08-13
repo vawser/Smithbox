@@ -1,0 +1,35 @@
+{
+  "Name": "Gconfig_TextureFilterQuality",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Disable"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Low"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Middle"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "High"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Ultra"
+      ]
+    }
+  ]
+}

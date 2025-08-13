@@ -1,0 +1,77 @@
+{
+  "Name": "DamageEffectMapParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Meat -- 肉"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Leather -- 革"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Tree -- 木"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Stone -- 石"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Copper -- 銅"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Energy -- エネルギー"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Flame -- 炎"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Lightning -- 雷"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Darkness -- 闇"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Magic -- 魔力"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4277 @@
+{
+  "Name": "AtkParam_Pc",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "wall slam damage -- 壁叩きつけダメージ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[System] Attack magnification for menu display -- 【システム】メニュー表示用攻撃倍率"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "[Bipod] Contact damage determination for enemies_walking/running -- 【二脚】敵用接触ダメージ判定_歩行・走行"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "[Bipod] Enemy contact damage determination_Ground boost -- 【二脚】敵用接触ダメージ判定_地上ブースト"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Quick boost -- 【二脚】敵用接触ダメージ判定_クイックブースト"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Large QB -- 【二脚】敵用接触ダメージ判定_大ＱＢ"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_brake -- 【二脚】敵用接触ダメージ判定_ブレーキ"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_jump -- 【二脚】敵用接触ダメージ判定_ジャンプ"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "[Bipod] Enemy contact damage determination_Falling -- 【二脚】敵用接触ダメージ判定_落下"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Flight boost -- 【二脚】敵用接触ダメージ判定_飛行ブースト"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_landing -- 【二脚】敵用接触ダメージ判定_着地"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "[Bipod] Enemy contact damage determination_Assault boost -- 【二脚】敵用接触ダメージ判定_アサルトブースト"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_Stagger -- 【二脚】敵用接触ダメージ判定_よろけ"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[Bipod] Contact damage judgment for enemy_Stagger (while being blown away) -- 【二脚】敵用接触ダメージ判定_よろけ（吹っ飛び中）"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "[Bipod] Enemy contact damage judgment_kick -- 【二脚】敵用接触ダメージ判定_キック"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 729,
+      "Entries": [
+        "[Reverse joint] Enemy contact damage judgment_Assault boost -- 【逆関節】敵用接触ダメージ判定_アサルトブースト"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "[Reverse joint] Enemy contact damage judgment_kick -- 【逆関節】敵用接触ダメージ判定_キック"
+      ]
+    },
+    {
+      "ID": 736,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "[Quadruped] Contact damage determination for enemies_walking/running -- 【四脚】敵用接触ダメージ判定_歩行・走行"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "[Quadruped] Enemy contact damage determination_Ground boost -- 【四脚】敵用接触ダメージ判定_地上ブースト"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Quick boost -- 【四脚】敵用接触ダメージ判定_クイックブースト"
+      ]
+    },
+    {
+      "ID": 743,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Large QB -- 【四脚】敵用接触ダメージ判定_大ＱＢ"
+      ]
+    },
+    {
+      "ID": 744,
+      "Entries": [
+        "[Quadruped] Enemy contact damage determination_Brake -- 【四脚】敵用接触ダメージ判定_ブレーキ"
+      ]
+    },
+    {
+      "ID": 745,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Jump -- 【四脚】敵用接触ダメージ判定_ジャンプ"
+      ]
+    },
+    {
+      "ID": 746,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemy_Falling -- 【四脚】敵用接触ダメージ判定_落下"
+      ]
+    },
+    {
+      "ID": 747,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Flight boost -- 【四脚】敵用接触ダメージ判定_飛行ブースト"
+      ]
+    },
+    {
+      "ID": 748,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemy_landing -- 【四脚】敵用接触ダメージ判定_着地"
+      ]
+    },
+    {
+      "ID": 749,
+      "Entries": [
+        "[Quadruped] Enemy contact damage judgment_Assault boost -- 【四脚】敵用接触ダメージ判定_アサルトブースト"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Stagger -- 【四脚】敵用接触ダメージ判定_よろけ"
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Stagger (while being blown away) -- 【四脚】敵用接触ダメージ判定_よろけ（吹っ飛び中）"
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        "[Quadruped] Contact damage judgment for enemies_Kick -- 【四脚】敵用接触ダメージ判定_キック"
+      ]
+    },
+    {
+      "ID": 754,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 755,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 756,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_walking/running -- 【タンク】敵用接触ダメージ判定_歩行・走行"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Ground boost -- 【タンク】敵用接触ダメージ判定_地上ブースト"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Quick boost -- 【タンク】敵用接触ダメージ判定_クイックブースト"
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Large QB -- 【タンク】敵用接触ダメージ判定_大ＱＢ"
+      ]
+    },
+    {
+      "ID": 764,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_brake -- 【タンク】敵用接触ダメージ判定_ブレーキ"
+      ]
+    },
+    {
+      "ID": 765,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Jump -- 【タンク】敵用接触ダメージ判定_ジャンプ"
+      ]
+    },
+    {
+      "ID": 766,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Falling -- 【タンク】敵用接触ダメージ判定_落下"
+      ]
+    },
+    {
+      "ID": 767,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Flight boost -- 【タンク】敵用接触ダメージ判定_飛行ブースト"
+      ]
+    },
+    {
+      "ID": 768,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_landing -- 【タンク】敵用接触ダメージ判定_着地"
+      ]
+    },
+    {
+      "ID": 769,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Assault boost -- 【タンク】敵用接触ダメージ判定_アサルトブースト"
+      ]
+    },
+    {
+      "ID": 770,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Stagger -- 【タンク】敵用接触ダメージ判定_よろけ"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Stagger (while being blown away) -- 【タンク】敵用接触ダメージ判定_よろけ（吹っ飛び中）"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "[Tank] Enemy contact damage judgment_Kick -- 【タンク】敵用接触ダメージ判定_キック"
+      ]
+    },
+    {
+      "ID": 773,
+      "Entries": [
+        "[Tank] Enemy contact damage determination_Kick boost push aside -- 【タンク】敵用接触ダメージ判定_キック後押しのけ"
+      ]
+    },
+    {
+      "ID": 774,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 775,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 776,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "[TEST] For determining rising boost activation EN consumption -- 【TEST】上昇ブースト発動EN消費判定用"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "[TEST] For determining continuous EN consumption during rising boost -- 【TEST】上昇ブースト中継続EN消費判定用"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Proto] Right hand B_Attack 2 -- 【プロト】右手B_攻撃2"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Proto] Right hand B_Attack 3 -- 【プロト】右手B_攻撃3"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Proto] Right hand B_Attack 4 -- 【プロト】右手B_攻撃4"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[Proto] Right hand B_Attack 5 -- 【プロト】右手B_攻撃5"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Proto] Right hand B_dash attack -- 【プロト】右手B_ダッシュ攻撃"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Proto] Right hand B_Attack from guard -- 【プロト】右手B_ガードからの攻撃"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Proto] Right hand B_ Rifle throwing grip -- 【プロト】右手B_ライフル投げつかみ"
+      ]
+    },
+    {
+      "ID": 1075,
+      "Entries": [
+        "[Proto] Right hand B_Blade throwing grab -- 【プロト】右手B_ブレード投げつかみ"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[FNR] Blade_Slash attack ① -- 【FNR】ブレード_斬り攻撃①"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[FNR] Blade_Slash attack ② -- 【FNR】ブレード_斬り攻撃②"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[FNR] Blade_Charged attack -- 【FNR】ブレード_溜め攻撃"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[FNR] Blade_Front thrust -- 【FNR】ブレード_正面突き"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[FNR] Blade_Left movement attack -- 【FNR】ブレード_左移動攻撃"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[FNR] Blade_Right movement attack -- 【FNR】ブレード_右移動攻撃"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "[FNR] Blade_Cut up -- 【FNR】ブレード_斬り上げ"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[FNR] Blade_Rotating Slash -- 【FNR】ブレード_回転斬り"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Proto] Weapon transformation attack (A⇒B) -- 【プロト】武器変形攻撃（Ａ⇒Ｂ）"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Proto] Weapon transformation attack (B⇒A) -- 【プロト】武器変形攻撃（Ｂ⇒Ａ）"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Proto] Shield Charge -- 【プロト】シールドチャージ"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_Piercing -- 【プロト】投げ攻撃（片手）_突き刺し"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_1st shot -- 【プロト】投げ攻撃（片手）_1発目"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_2nd shot -- 【プロト】投げ攻撃（片手）_2発目"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "[Proto] Throwing attack (one hand)_3rd shot -- 【プロト】投げ攻撃（片手）_3発目"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "[Proto] Throwing attack (both hands) -- 【プロト】投げ攻撃（両手）"
+      ]
+    },
+    {
+      "ID": 1790,
+      "Entries": [
+        "[Proto] SA break throw attack_1st stage -- 【プロト】SAブレイク投げ攻撃_1段目"
+      ]
+    },
+    {
+      "ID": 1791,
+      "Entries": [
+        "[Proto] SA break throw attack_2nd stage -- 【プロト】SAブレイク投げ攻撃_2段目"
+      ]
+    },
+    {
+      "ID": 1792,
+      "Entries": [
+        "[Proto] Stealth throwing attack_1st stage -- 【プロト】ステルス投げ攻撃_1段目"
+      ]
+    },
+    {
+      "ID": 1793,
+      "Entries": [
+        "[Proto] Stealth throwing attack_2nd stage -- 【プロト】ステルス投げ攻撃_2段目"
+      ]
+    },
+    {
+      "ID": 1795,
+      "Entries": [
+        "[Proto] Rifle throwing attack 2 -- 【プロト】ライフル投げ攻撃2"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Proto] Tank_QB attack -- 【プロト】タンク_QBアタック"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[Proto] Tank_QB Stomp -- 【プロト】タンク_QBストンプ"
+      ]
+    },
+    {
+      "ID": 1990,
+      "Entries": [
+        "[Proto] Weapon transformation shooting -- 【プロト】武器変形射撃"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Proto] Assault Rifle -- 【プロト】アサルトライフル"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Proto] Silencer Rifle -- 【プロト】サイレンサーライフル"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Proto] Guided bullet rifle -- 【プロト】誘導弾ライフル"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Proto] Rifle -- 【プロト】ライフル"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Proto] Shotgun -- 【プロト】ショットガン"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Proto] Machine gun -- 【プロト】マシンガン"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Proto] Bazooka -- 【プロト】バズーカ"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[Proto] Bazooka_Burning test -- 【プロト】バズーカ_燃焼テスト"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Proto] Handgun -- 【プロト】ハンドガン"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Proto] Suna -- 【プロト】スナ"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[Proto] Canon -- 【プロト】キャノン"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[Proto] Cannon (explosion) -- 【プロト】キャノン（爆発）"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Proto] Laser -- 【プロト】レーザー"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[Proto]Railgun -- 【プロト】レールガン"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "[Proto] Railgun (bullet after charging) -- 【プロト】レールガン（チャージ後弾丸）"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Proto] Combined Weapon_Railgun -- 【プロト】合体武器_レールガン"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[Proto] Laser Whip -- 【プロト】レーザーウィップ"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "[Proto] Laser whip (equipment location: left hand 1) -- 【プロト】レーザーウィップ（装備個所：左手1）"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "[Proto] Chain Hammer ① -- 【プロト】チェインハンマー①"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "[Proto] Chain Hammer ② -- 【プロト】チェインハンマー②"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Proto] EN Shield_Assault Armor -- 【プロト】EN盾_アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Proto] Vertical missile -- 【プロト】垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[Proto] Vertical missile (explosion) -- 【プロト】垂直ミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Proto] 2-stage launch missile -- 【プロト】2段階発射ミサイル"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "[Proto] 2-stage launch missile (explosion) -- 【プロト】2段階発射ミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Proto] Short-range missile -- 【プロト】近距離型ミサイル"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[Proto] Short-range missile (explosion) -- 【プロト】近距離型ミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[Proto] Point-specific missile -- 【プロト】地点指定型ミサイル"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "[Proto] Point-specific missile (explosion) -- 【プロト】地点指定型ミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "[Proto] AI missile -- 【プロト】AIミサイル"
+      ]
+    },
+    {
+      "ID": 3141,
+      "Entries": [
+        "[Proto] AI missile (explosion) -- 【プロト】AIミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[Proto] Orbit Cannon Missile -- 【プロト】オービットキャノンミサイル"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "[Proto] Orbit Cannon Missile (launch bullet) -- 【プロト】オービットキャノンミサイル（発射弾丸）"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[Proto] Surface control missile -- 【プロト】面制圧型ミサイル"
+      ]
+    },
+    {
+      "ID": 3161,
+      "Entries": [
+        "[Proto] Surface control missile (explosion) -- 【プロト】面制圧型ミサイル（爆発）"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Proto] Stealth Shield_Guard Break Self-Inflicted Attack -- 【プロト】ステルス盾_ガードブレイク自傷攻撃"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "[Proto] Rezarai (high laser after charging) -- 【プロト】レザライ（チャージ後ハイレーザー）"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "[Proto] Rezarai (shotgun after charging) -- 【プロト】レザライ（チャージ後ショットガン）"
+      ]
+    },
+    {
+      "ID": 5920,
+      "Entries": [
+        "[Proto] Rezarai (plasma gun after charging) -- 【プロト】レザライ（チャージ後プラズマガン）"
+      ]
+    },
+    {
+      "ID": 5921,
+      "Entries": [
+        "[Proto] Reza Rai (Plasma gun_explosion after charging) -- 【プロト】レザライ（チャージ後プラズマガン_爆発）"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Proto] Core special function_Assault armor_Explosive body -- 【プロト】コア特殊機能_アサルトアーマー_爆発本体"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Proto] Core special function_Assault armor_Shockwave -- 【プロト】コア特殊機能_アサルトアーマー_衝撃波"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Guard time_PA damage (tentative) -- ガード時_PAダメージ（仮）"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Proto] Barrier for own aircraft -- 【プロト】自機用バリア"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "[Proto] RECON -- 【プロト】RECON"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "[Proto] RECON (ground adsorption) -- 【プロト】RECON（地面吸着）"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "[Proto] Smoke grenade_bullet -- 【プロト】スモークグレネード_弾丸"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "[Proto] Smoke Grenade_Smoke -- 【プロト】スモークグレネード_煙"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "[Proto] Flare -- 【プロト】フレア"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "[Test] Rifle -- 【テスト】ライフル"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "[Test] Chain Hammer ① -- 【テスト】チェインハンマー①"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "[Test] Aerial_Blade attack 1 -- 【テスト】空中_ブレード攻撃1"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "[Test] Aerial_Blade attack 2 -- 【テスト】空中_ブレード攻撃2"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "[Test] Blade charge attack -- 【テスト】ブレード溜め攻撃"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "[Item Test] Throwing Orbit -- 【アイテムテスト】投擲オービット"
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        "Ground effect judgment [map] -- グラウンドエフェクト判定【マップ】"
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        "Ground effect judgment [own machine] -- グラウンドエフェクト判定【自機】"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "[Proto] Enemy missile test -- 【プロト】敵ミサイルテスト"
+      ]
+    },
+    {
+      "ID": 1111090,
+      "Entries": [
+        "[Proto] Barrier -- 【プロト】バリア"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Blade_Light attack ① -- ブレード_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3000010,
+      "Entries": [
+        "Blade_Light attack ② -- ブレード_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "Blade_Strong attack -- ブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Laser whip_light attack ① -- レーザーウィップ_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3100010,
+      "Entries": [
+        "Laser whip_light attack ② -- レーザーウィップ_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3100020,
+      "Entries": [
+        "Laser whip_light attack ③ -- レーザーウィップ_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3100100,
+      "Entries": [
+        "Laser whip_strong attack -- レーザーウィップ_強攻撃"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Chain Hammer_Light Attack ① -- チェインハンマー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Chain hammer_light attack ② -- チェインハンマー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3200100,
+      "Entries": [
+        "Chain hammer_strong attack -- チェインハンマー_強攻撃"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "Pile_Light attack ① -- パイル_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3300100,
+      "Entries": [
+        "Pile_Strong attack ①-1 -- パイル_強攻撃①-1"
+      ]
+    },
+    {
+      "ID": 3300101,
+      "Entries": [
+        "Pile_Strong attack ①-2 -- パイル_強攻撃①-2"
+      ]
+    },
+    {
+      "ID": 3310000,
+      "Entries": [
+        "Explosive pile_light attack ① -- 爆裂パイル_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3310100,
+      "Entries": [
+        "Explosive pile_strong attack ①-1 -- 爆裂パイル_強攻撃①-1"
+      ]
+    },
+    {
+      "ID": 3310101,
+      "Entries": [
+        "Explosive pile_strong attack ①-2 -- 爆裂パイル_強攻撃①-2"
+      ]
+    },
+    {
+      "ID": 3310102,
+      "Entries": [
+        "Explosive pile_strong attack ①-3 -- 爆裂パイル_強攻撃①-3"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "PA Breaker_Weak Attack③ -- PAブレイカー_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3400030,
+      "Entries": [
+        "PA Breaker_Weak Attack④ -- PAブレイカー_弱攻撃④"
+      ]
+    },
+    {
+      "ID": 3400040,
+      "Entries": [
+        "PA Breaker_Weak Attack⑤ -- PAブレイカー_弱攻撃⑤"
+      ]
+    },
+    {
+      "ID": 3400100,
+      "Entries": [
+        "PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 3400110,
+      "Entries": [
+        "PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②"
+      ]
+    },
+    {
+      "ID": 3400120,
+      "Entries": [
+        "PA Breaker_Strong attack ③ -- PAブレイカー_強攻撃③"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Plasma broadsword_light attack ① -- プラズマブロードソード_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3500010,
+      "Entries": [
+        "Plasma broadsword_weak attack ② -- プラズマブロードソード_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3500020,
+      "Entries": [
+        "Plasma broadsword_weak attack③ -- プラズマブロードソード_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3500100,
+      "Entries": [
+        "Plasma broadsword_strong attack -- プラズマブロードソード_強攻撃"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Beam naginata_light attack ① -- ビーム薙刀_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3600010,
+      "Entries": [
+        "Beam naginata_light attack ② -- ビーム薙刀_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3600020,
+      "Entries": [
+        "Beam naginata_light attack ③ -- ビーム薙刀_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3600030,
+      "Entries": [
+        "Beam naginata_light attack ④ -- ビーム薙刀_弱攻撃④"
+      ]
+    },
+    {
+      "ID": 3600100,
+      "Entries": [
+        "Beam naginata_strong attack ① -- ビーム薙刀_強攻撃①"
+      ]
+    },
+    {
+      "ID": 3600110,
+      "Entries": [
+        "Beam naginata_strong attack ② -- ビーム薙刀_強攻撃②"
+      ]
+    },
+    {
+      "ID": 3600120,
+      "Entries": [
+        "Beam Naginata_Strong attack ③ -- ビーム薙刀_強攻撃③"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Light continuous thrust rapier_light attack ① -- 軽量連突きレイピア_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 3700010,
+      "Entries": [
+        "Light continuous thrust rapier_light attack ② -- 軽量連突きレイピア_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 3700020,
+      "Entries": [
+        "Light continuous thrust rapier_weak attack ③ -- 軽量連突きレイピア_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3700100,
+      "Entries": [
+        "Light continuous thrust rapier_strong attack -- 軽量連突きレイピア_強攻撃"
+      ]
+    },
+    {
+      "ID": 3800000,
+      "Entries": [
+        "Laser Lance_Rushing -- レーザーランス_突進中"
+      ]
+    },
+    {
+      "ID": 3800010,
+      "Entries": [
+        "Laser Lance_Rush finish, interruption derivative -- レーザーランス_突進フィニッシュ、中断派生"
+      ]
+    },
+    {
+      "ID": 3800020,
+      "Entries": [
+        "Laser Lance_Light Attack ③ -- レーザーランス_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3800100,
+      "Entries": [
+        "Laser Lance_Strong attack -- レーザーランス_強攻撃"
+      ]
+    },
+    {
+      "ID": 3900000,
+      "Entries": [
+        "Chainsaw_pushing loop -- チェーンソー_押し当てループ"
+      ]
+    },
+    {
+      "ID": 3900010,
+      "Entries": [
+        "Chainsaw_cut through -- チェーンソー_斬り抜け"
+      ]
+    },
+    {
+      "ID": 3900020,
+      "Entries": [
+        "Chainsaw_Light attack ③ -- チェーンソー_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 3900100,
+      "Entries": [
+        "Chainsaw_Strong attack -- チェーンソー_強攻撃"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        "Dagger_Light attack① -- ダガー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        "Dagger_Light attack ② -- ダガー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        "Dagger_Light attack③ -- ダガー_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 4000030,
+      "Entries": [
+        "Dagger_light attack_interruption derivative -- ダガー_弱攻撃_中断派生"
+      ]
+    },
+    {
+      "ID": 4000100,
+      "Entries": [
+        "Dagger_Strong attack① -- ダガー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        "Electromagnetic baton_light attack ① -- 電磁警棒_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 4100010,
+      "Entries": [
+        "Electromagnetic baton_light attack ② -- 電磁警棒_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 4100020,
+      "Entries": [
+        "Electromagnetic baton_light attack ③ -- 電磁警棒_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 4100030,
+      "Entries": [
+        "Electromagnetic baton_light attack ④ -- 電磁警棒_弱攻撃④"
+      ]
+    },
+    {
+      "ID": 4100040,
+      "Entries": [
+        "Electromagnetic baton_light attack⑤ -- 電磁警棒_弱攻撃⑤"
+      ]
+    },
+    {
+      "ID": 4100100,
+      "Entries": [
+        "Electromagnetic baton_strong attack ① -- 電磁警棒_強攻撃①"
+      ]
+    },
+    {
+      "ID": 4100110,
+      "Entries": [
+        "Electromagnetic baton_strong attack ② -- 電磁警棒_強攻撃②"
+      ]
+    },
+    {
+      "ID": 4100120,
+      "Entries": [
+        "Electromagnetic baton_strong attack③ -- 電磁警棒_強攻撃③"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "rifle -- ライフル"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "assault rifle -- アサルトライフル"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 5030000,
+      "Entries": [
+        "gatling gun -- ガトリングガン"
+      ]
+    },
+    {
+      "ID": 5040000,
+      "Entries": [
+        "bazooka -- バズーカ"
+      ]
+    },
+    {
+      "ID": 5040010,
+      "Entries": [
+        "Bazooka (explosion) -- バズーカ（爆発）"
+      ]
+    },
+    {
+      "ID": 5050000,
+      "Entries": [
+        "shotgun -- ショットガン"
+      ]
+    },
+    {
+      "ID": 5060000,
+      "Entries": [
+        "hand missile -- ハンドミサイル"
+      ]
+    },
+    {
+      "ID": 5070000,
+      "Entries": [
+        "hand rocket -- ハンドロケット"
+      ]
+    },
+    {
+      "ID": 5070010,
+      "Entries": [
+        "Hand rocket (explosion) -- ハンドロケット（爆発）"
+      ]
+    },
+    {
+      "ID": 5080000,
+      "Entries": [
+        "grenade rifle -- グレネードライフル"
+      ]
+    },
+    {
+      "ID": 5080010,
+      "Entries": [
+        "Grenade rifle (explosive) -- グレネードライフル（爆発）"
+      ]
+    },
+    {
+      "ID": 5090000,
+      "Entries": [
+        "laser rifle -- レーザーライフル"
+      ]
+    },
+    {
+      "ID": 5090100,
+      "Entries": [
+        "Laser rifle (charge) -- レーザーライフル（チャージ）"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "plasma rifle -- プラズマライフル"
+      ]
+    },
+    {
+      "ID": 5100010,
+      "Entries": [
+        "Plasma rifle (explosion) -- プラズマライフル（爆発）"
+      ]
+    },
+    {
+      "ID": 5110000,
+      "Entries": [
+        "hand gun -- ハンドガン"
+      ]
+    },
+    {
+      "ID": 5120000,
+      "Entries": [
+        "large caliber hand gun -- 大口径ハンドガン"
+      ]
+    },
+    {
+      "ID": 5130000,
+      "Entries": [
+        "vibrating pulse rifle -- 振動パルスライフル"
+      ]
+    },
+    {
+      "ID": 5140000,
+      "Entries": [
+        "flamethrower -- 火炎放射器"
+      ]
+    },
+    {
+      "ID": 5140001,
+      "Entries": [
+        "Flamethrower (spread) -- 火炎放射器（拡散）"
+      ]
+    },
+    {
+      "ID": 5150000,
+      "Entries": [
+        "irradiation laser -- 照射レーザー"
+      ]
+    },
+    {
+      "ID": 5160000,
+      "Entries": [
+        "bolt action rifle -- ボルトアクションライフル"
+      ]
+    },
+    {
+      "ID": 5170000,
+      "Entries": [
+        "3 point burst rifle -- 3点バーストライフル"
+      ]
+    },
+    {
+      "ID": 5180000,
+      "Entries": [
+        "[test] Semi-auto rifle (with charge shot) -- 【test】セミオートライフル（チャージショットあり）"
+      ]
+    },
+    {
+      "ID": 5180100,
+      "Entries": [
+        "[Test] Semi-auto rifle (with charge shot)_After charging: 3 point burst -- 【test】セミオートライフル（チャージショットあり）_チャージ後：3点バースト"
+      ]
+    },
+    {
+      "ID": 5600000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Parent bullet -- 【test】同時hit確認武器_分裂ミサイル（右肩）_親弾丸"
+      ]
+    },
+    {
+      "ID": 5600001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Subbullet -- 【test】同時hit確認武器_分裂ミサイル（右肩）_子弾丸"
+      ]
+    },
+    {
+      "ID": 5600002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (right shoulder)_Ball explosion -- 【test】同時hit確認武器_分裂ミサイル（右肩）_球爆発"
+      ]
+    },
+    {
+      "ID": 5601000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_double splitting missile (right shoulder)_parent bullet -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_親弾丸"
+      ]
+    },
+    {
+      "ID": 5601001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (right shoulder)_Subbullet -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_子弾丸"
+      ]
+    },
+    {
+      "ID": 5601002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Dual fission missile (right shoulder)_Ball explosion -- 【test】同時hit確認武器_2連分裂ミサイル（右肩）_球爆発"
+      ]
+    },
+    {
+      "ID": 5602000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Parent bullet -- 【test】同時hit確認武器_分裂ミサイル（左肩）_親弾丸"
+      ]
+    },
+    {
+      "ID": 5602001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon _ Split missile (left shoulder) _ Sub-bullet -- 【test】同時hit確認武器_分裂ミサイル（左肩）_子弾丸"
+      ]
+    },
+    {
+      "ID": 5602002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Splitting missile (left shoulder)_Ball explosion -- 【test】同時hit確認武器_分裂ミサイル（左肩）_球爆発"
+      ]
+    },
+    {
+      "ID": 5603000,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_double splitting missile (left shoulder)_parent bullet -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_親弾丸"
+      ]
+    },
+    {
+      "ID": 5603001,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Subbullet -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_子弾丸"
+      ]
+    },
+    {
+      "ID": 5603002,
+      "Entries": [
+        "[Test] Simultaneous hit confirmed weapon_Double splitting missile (left shoulder)_Ball explosion -- 【test】同時hit確認武器_2連分裂ミサイル（左肩）_球爆発"
+      ]
+    },
+    {
+      "ID": 5900000,
+      "Entries": [
+        "[Test] Linear Rifle_3x critical when staggered -- 【test】リニアライフル_よろけ時クリティカル3倍"
+      ]
+    },
+    {
+      "ID": 5900100,
+      "Entries": [
+        "[Test] Linear rifle_Critical rate x3 when staggered_Charge shooting -- 【test】リニアライフル_よろけ時クリティカル3倍_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 5910000,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Weak attack ① -- 【test】PAブレイカー_よろけ時クリティカル3倍_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 5910010,
+      "Entries": [
+        "[Test] PA Breaker_3x critical when staggered_Weak attack ② -- 【test】PAブレイカー_よろけ時クリティカル3倍_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 5910100,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Strong attack ① -- 【test】PAブレイカー_よろけ時クリティカル3倍_強攻撃①"
+      ]
+    },
+    {
+      "ID": 5910110,
+      "Entries": [
+        "[Test] PA Breaker_Critical x3 when staggered_Strong attack ② -- 【test】PAブレイカー_よろけ時クリティカル3倍_強攻撃②"
+      ]
+    },
+    {
+      "ID": 6010000,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand ①_Machine gun -- 武器腕_ロックマン式：右手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6010001,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand①_Machine gun_Precision shooting -- 武器腕_ロックマン式：右手①_マシンガン_精密射撃"
+      ]
+    },
+    {
+      "ID": 6011005,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand ②_Bazooka -- 武器腕_ロックマン式：右手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6011006,
+      "Entries": [
+        "Weapon arm_Rockman style: Right hand②_Bazooka_Precision shooting -- 武器腕_ロックマン式：右手②_バズーカ_精密射撃"
+      ]
+    },
+    {
+      "ID": 6015000,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ①_Machine gun -- 武器腕_ロックマン式：左手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6015001,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ①_Machine gun_Precision shooting -- 武器腕_ロックマン式：左手①_マシンガン_精密射撃"
+      ]
+    },
+    {
+      "ID": 6016005,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ②_Bazooka -- 武器腕_ロックマン式：左手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6016006,
+      "Entries": [
+        "Weapon arm_Rockman style: Left hand ②_Bazooka_Precision shooting -- 武器腕_ロックマン式：左手②_バズーカ_精密射撃"
+      ]
+    },
+    {
+      "ID": 6020000,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand①_Machine gun -- 武器腕_肩関節：右手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6020001,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand①_Machine gun_Precision shooting -- 武器腕_肩関節：右手①_マシンガン_精密射撃"
+      ]
+    },
+    {
+      "ID": 6021005,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand②_Bazooka -- 武器腕_肩関節：右手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6021006,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Right hand②_Bazooka_Precision shooting -- 武器腕_肩関節：右手②_バズーカ_精密射撃"
+      ]
+    },
+    {
+      "ID": 6025000,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Left hand ①_Machine gun -- 武器腕_肩関節：左手①_マシンガン"
+      ]
+    },
+    {
+      "ID": 6025001,
+      "Entries": [
+        "Weapon Arm_Shoulder joint: Left hand①_Machine gun_Precision shooting -- 武器腕_肩関節：左手①_マシンガン_精密射撃"
+      ]
+    },
+    {
+      "ID": 6026005,
+      "Entries": [
+        "Weapon arm_shoulder joint: left hand ②_bazooka -- 武器腕_肩関節：左手②_バズーカ"
+      ]
+    },
+    {
+      "ID": 6026006,
+      "Entries": [
+        "Weapon arm_shoulder joint: left hand ②_bazooka_precision shooting -- 武器腕_肩関節：左手②_バズーカ_精密射撃"
+      ]
+    },
+    {
+      "ID": 7900000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_1) -- 【test】ダメージ演技確認用ハンドガン（DL_1）"
+      ]
+    },
+    {
+      "ID": 7901000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_2) -- 【test】ダメージ演技確認用ハンドガン（DL_2）"
+      ]
+    },
+    {
+      "ID": 7902000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_3) -- 【test】ダメージ演技確認用ハンドガン（DL_3）"
+      ]
+    },
+    {
+      "ID": 7903000,
+      "Entries": [
+        "[test] Handgun for damage performance confirmation (DL_4) -- 【test】ダメージ演技確認用ハンドガン（DL_4）"
+      ]
+    },
+    {
+      "ID": 7904000,
+      "Entries": [
+        "[test] Handgun for damage performance confirmation (DL_5) -- 【test】ダメージ演技確認用ハンドガン（DL_5）"
+      ]
+    },
+    {
+      "ID": 7905000,
+      "Entries": [
+        "[test] Hand gun for damage performance confirmation (DL_6) -- 【test】ダメージ演技確認用ハンドガン（DL_6）"
+      ]
+    },
+    {
+      "ID": 7910000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Machine gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_マシンガン（DL1：段階加算）"
+      ]
+    },
+    {
+      "ID": 7911000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Pulse gun (DL1: stage addition) -- 【test】ダメージ演技確認用（衝撃値）_パルスガン（DL1：段階加算）"
+      ]
+    },
+    {
+      "ID": 7912000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Handgun (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_ハンドガン（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 7913000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_プラズマライフル（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 7913005,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (explosion) (DL1: 100% addition) -- 【test】ダメージ演技確認用（衝撃値）_プラズマライフル（爆発）（DL1：100%加算）"
+      ]
+    },
+    {
+      "ID": 7914000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle (DL2: Stop hit) -- 【test】ダメージ演技確認用（衝撃値）_セミオートライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7914100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_セミオートライフル_チャージ射撃（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7915000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_レーザーライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7915100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（衝撃値）_レーザーライフル_チャージ射撃（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7916000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Bazooka (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_バズーカ（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7917000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shotgun (DL3: Small stagger) -- 【test】ダメージ演技確認用（衝撃値）_ショットガン（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7918000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Grenade rifle (DL4: Great stagger) -- 【test】ダメージ演技確認用（衝撃値）_グレネードライフル（DL4：大よろけ）"
+      ]
+    },
+    {
+      "ID": 7918005,
+      "Entries": [
+        "[test] For checking damage performance (impact value)_Grenade rifle (explosion) (DL4: Great stagger) -- 【test】ダメージ演技確認用（衝撃値）_グレネードライフル（爆発）（DL4：大よろけ）"
+      ]
+    },
+    {
+      "ID": 7919000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shoulder bazooka (DL5: blown away) -- 【test】ダメージ演技確認用（衝撃値）_肩バズーカ（DL5：吹っ飛び）"
+      ]
+    },
+    {
+      "ID": 7924000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Semi-auto rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_セミオートライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7924100,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Semi-automatic rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_セミオートライフル_チャージ射撃（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7925000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Laser Rifle (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_レーザーライフル（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7925100,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Laser rifle_Charge shooting (DL2: Stop being hit) -- 【test】ダメージ演技確認用（DL直）_レーザーライフル_チャージ射撃（DL2：被弾ストップ）"
+      ]
+    },
+    {
+      "ID": 7926000,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Bazooka (DL3: Small stagger) -- 【test】ダメージ演技確認用（DL直）_バズーカ（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7927000,
+      "Entries": [
+        "[test] For checking damage performance (DL Direct)_Shotgun (DL3: Small stagger) -- 【test】ダメージ演技確認用（DL直）_ショットガン（DL3：小よろけ）"
+      ]
+    },
+    {
+      "ID": 7928000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Grenade Rifle (DL4: Great Stagger) -- 【test】ダメージ演技確認用（DL直）_グレネードライフル（DL4：大よろけ）"
+      ]
+    },
+    {
+      "ID": 7928005,
+      "Entries": [
+        "[Test] For checking damage performance (DL direct)_Grenade rifle (explosion) (DL4: Great stagger) -- 【test】ダメージ演技確認用（DL直）_グレネードライフル（爆発）（DL4：大よろけ）"
+      ]
+    },
+    {
+      "ID": 7929000,
+      "Entries": [
+        "[Test] For checking damage performance (DL Direct)_Shoulder Bazooka (DL5: Blow-off) -- 【test】ダメージ演技確認用（DL直）_肩バズーカ（DL5：吹っ飛び）"
+      ]
+    },
+    {
+      "ID": 7930000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 60 -- 【test】ノックバック確認用ライフル（DL3）_威力：60"
+      ]
+    },
+    {
+      "ID": 7930100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：90_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7931000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 120 -- 【test】ノックバック確認用ライフル（DL3）_威力：120"
+      ]
+    },
+    {
+      "ID": 7931100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：150_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7932000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL3)_Power: 180 -- 【test】ノックバック確認用ライフル（DL3）_威力：180"
+      ]
+    },
+    {
+      "ID": 7932100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL3)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL3）_威力：210_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7933000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：60_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7933010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：60_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7933100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：90_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7933110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：90_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7934000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：120_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7934010,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：120_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7934100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：150_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7934110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：150_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7935000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：180_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7935010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：180_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7935100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL3）_威力：210_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7935110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL3)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL3）_威力：210_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7940000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 60 -- 【test】ノックバック確認用ライフル（DL4）_威力：60"
+      ]
+    },
+    {
+      "ID": 7940100,
+      "Entries": [
+        "[Test] Knockback confirmation rifle (DL4)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：90_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7941000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 120 -- 【test】ノックバック確認用ライフル（DL4）_威力：120"
+      ]
+    },
+    {
+      "ID": 7941100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：150_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7942000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 180 -- 【test】ノックバック確認用ライフル（DL4）_威力：180"
+      ]
+    },
+    {
+      "ID": 7942100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL4)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL4）_威力：210_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7943000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：60_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7943010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：60_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7943100,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：90_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7943110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：90_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7944000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：120_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7944010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：120_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7944100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：150_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7944110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：150_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7945000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：180_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7945010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：180_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7945100,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL4）_威力：210_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7945110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL4)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL4）_威力：210_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7950000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 60 -- 【test】ノックバック確認用ライフル（DL5）_威力：60"
+      ]
+    },
+    {
+      "ID": 7950100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 90_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：90_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7951000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 120 -- 【test】ノックバック確認用ライフル（DL5）_威力：120"
+      ]
+    },
+    {
+      "ID": 7951100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 150_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：150_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7952000,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 180 -- 【test】ノックバック確認用ライフル（DL5）_威力：180"
+      ]
+    },
+    {
+      "ID": 7952100,
+      "Entries": [
+        "[test] Knockback confirmation rifle (DL5)_Power: 210_Charge shooting -- 【test】ノックバック確認用ライフル（DL5）_威力：210_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7953000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：60_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7953010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 60_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：60_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7953100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：90_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7953110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 90_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：90_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7954000,
+      "Entries": [
+        "[test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：120_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7954010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 120_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：120_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7954100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：150_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7954110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 150_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：150_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7955000,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：180_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7955010,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 180_Weak attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：180_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7955100,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ① -- 【test】ノックバック確認用ブレード（DL5）_威力：210_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7955110,
+      "Entries": [
+        "[Test] Knockback confirmation blade (DL5)_Power: 210_Strong attack ② -- 【test】ノックバック確認用ブレード（DL5）_威力：210_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7960000,
+      "Entries": [
+        "[Test] Weapon for status abnormality confirmation_Flame -- 【test】状態異常確認用武器_炎上"
+      ]
+    },
+    {
+      "ID": 7961000,
+      "Entries": [
+        "[test] Weapon for checking abnormal status_stun -- 【test】状態異常確認用武器_スタン"
+      ]
+    },
+    {
+      "ID": 7962000,
+      "Entries": [
+        "[Test] Weapon for checking abnormal status_Plasma -- 【test】状態異常確認用武器_プラズマ"
+      ]
+    },
+    {
+      "ID": 7963000,
+      "Entries": [
+        "[Test] Weapon for checking abnormal status_depleted uranium poison -- 【test】状態異常確認用武器_劣化ウラン毒"
+      ]
+    },
+    {
+      "ID": 7970000,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Weak Attack ① -- 【よろけテスト】PAブレイカー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 7970010,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Weak Attack ② -- 【よろけテスト】PAブレイカー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 7970100,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Strong Attack ① -- 【よろけテスト】PAブレイカー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 7970110,
+      "Entries": [
+        "[Stagger Test] PA Breaker_Strong Attack ② -- 【よろけテスト】PAブレイカー_強攻撃②"
+      ]
+    },
+    {
+      "ID": 7970800,
+      "Entries": [
+        "[Stagger test] PA breaker_body hit -- 【よろけテスト】PAブレイカー_体当たり"
+      ]
+    },
+    {
+      "ID": 7980000,
+      "Entries": [
+        "[test] For checking stagger_step addition -- 【test】よろけ確認用_段階加算"
+      ]
+    },
+    {
+      "ID": 7980009,
+      "Entries": [
+        "[test] For checking stagger_step addition (dummy) -- 【test】よろけ確認用_段階加算（ダミー）"
+      ]
+    },
+    {
+      "ID": 7981000,
+      "Entries": [
+        "[test] For checking stagger_100% addition -- 【test】よろけ確認用_100%加算"
+      ]
+    },
+    {
+      "ID": 7981009,
+      "Entries": [
+        "[test] 100% addition for stagger confirmation (dummy) -- 【test】よろけ確認用_100%加算（ダミー）"
+      ]
+    },
+    {
+      "ID": 7982000,
+      "Entries": [
+        "[Test] For checking stagger_Stop being hit -- 【test】よろけ確認用_被弾ストップ"
+      ]
+    },
+    {
+      "ID": 7982009,
+      "Entries": [
+        "[Test] For checking stagger_Bullet stop (dummy) -- 【test】よろけ確認用_被弾ストップ（ダミー）"
+      ]
+    },
+    {
+      "ID": 7983000,
+      "Entries": [
+        "[test] For checking wobbling_Small wobbling -- 【test】よろけ確認用_よろけ小"
+      ]
+    },
+    {
+      "ID": 7983009,
+      "Entries": [
+        "[Test] For checking stagger_Small stagger (dummy) -- 【test】よろけ確認用_よろけ小（ダミー）"
+      ]
+    },
+    {
+      "ID": 7983100,
+      "Entries": [
+        "[test] For stagger confirmation_Stagger small_Charge shooting -- 【test】よろけ確認用_よろけ小_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7984000,
+      "Entries": [
+        "[test] For checking stagger_large stagger -- 【test】よろけ確認用_よろけ大"
+      ]
+    },
+    {
+      "ID": 7984009,
+      "Entries": [
+        "[test] For checking stagger_large stagger (dummy) -- 【test】よろけ確認用_よろけ大（ダミー）"
+      ]
+    },
+    {
+      "ID": 7984100,
+      "Entries": [
+        "[Test] For stagger confirmation_Large stagger_Charge shooting -- 【test】よろけ確認用_よろけ大_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7985000,
+      "Entries": [
+        "[test] For checking stagger_blown away -- 【test】よろけ確認用_吹っ飛び"
+      ]
+    },
+    {
+      "ID": 7985009,
+      "Entries": [
+        "[test] For checking stagger_blown away (dummy) -- 【test】よろけ確認用_吹っ飛び（ダミー）"
+      ]
+    },
+    {
+      "ID": 7985100,
+      "Entries": [
+        "[Test] For stagger confirmation_Blowback_Charge shooting -- 【test】よろけ確認用_吹っ飛び_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 7986000,
+      "Entries": [
+        "[test] For stagger confirmation_forced blowback -- 【test】よろけ確認用_強制吹っ飛び"
+      ]
+    },
+    {
+      "ID": 7986009,
+      "Entries": [
+        "[test] For stagger confirmation_forced blowback (dummy) -- 【test】よろけ確認用_強制吹っ飛び（ダミー）"
+      ]
+    },
+    {
+      "ID": 7986100,
+      "Entries": [
+        "[Test] For stagger confirmation_Forced blowback_Charge shooting -- 【test】よろけ確認用_強制吹っ飛び_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 90800000,
+      "Entries": [
+        "Nakanishi test_single shot rifle -- 中西テスト_単発ライフル"
+      ]
+    },
+    {
+      "ID": 90800010,
+      "Entries": [
+        "Nakanishi test_bazooka -- 中西テスト_バズーカ"
+      ]
+    },
+    {
+      "ID": 90800020,
+      "Entries": [
+        "Nakanishi Test_Railgun -- 中西テスト_レールガン"
+      ]
+    },
+    {
+      "ID": 90800021,
+      "Entries": [
+        "Nakanishi test_Railgun (bullet after charging) -- 中西テスト_レールガン（チャージ後弾丸）"
+      ]
+    },
+    {
+      "ID": 90800040,
+      "Entries": [
+        "Nakanishi test_short-range missile -- 中西テスト_近距離型ミサイル"
+      ]
+    },
+    {
+      "ID": 90801000,
+      "Entries": [
+        "Nakanishi test_air_blade attack 1 -- 中西テスト_空中_ブレード攻撃1"
+      ]
+    },
+    {
+      "ID": 90801100,
+      "Entries": [
+        "Nakanishi test_air_blade attack 2 -- 中西テスト_空中_ブレード攻撃2"
+      ]
+    },
+    {
+      "ID": 90801500,
+      "Entries": [
+        "Nakanishi test_blade charge attack -- 中西テスト_ブレード溜め攻撃"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Semi-auto rifle_n-point burst -- セミオートライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Semi-auto rifle_n-point burst_charge shooting -- セミオートライフル_n点バースト_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Semi-auto rifle_standard type -- セミオートライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "Semi-automatic rifle_Standard type_Charge shooting -- セミオートライフル_標準タイプ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "Semi-auto rifle_ Bullet speed ≒ Emphasis on power -- セミオートライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "Semi-automatic rifle_Bullet speed ≒ Emphasis on power_Charge shooting -- セミオートライフル_弾速≒威力重視_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Assault rifle_n-point burst -- アサルトライフル_n点バースト"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "Assault rifle_standard type -- アサルトライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "Assault rifle_bullet speed ≒ emphasis on power -- アサルトライフル_弾速≒威力重視"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Machine gun_n point burst -- マシンガン_n点バースト"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "Machine gun_standard type -- マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10220000,
+      "Entries": [
+        "Machine gun_Focus on bullet collection performance -- マシンガン_集弾性能重視"
+      ]
+    },
+    {
+      "ID": 10230000,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Gatling gun_standard type -- ガトリングガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "Bazooka_light but low power -- バズーカ_軽めだが威力-低"
+      ]
+    },
+    {
+      "ID": 10400005,
+      "Entries": [
+        "Bazooka_light but low power blast -- バズーカ_軽めだが威力-低 爆風"
+      ]
+    },
+    {
+      "ID": 10410000,
+      "Entries": [
+        "Bazooka_Standard type -- バズーカ_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10410005,
+      "Entries": [
+        "Bazooka_Standard type blast -- バズーカ_標準タイプ 爆風"
+      ]
+    },
+    {
+      "ID": 10420000,
+      "Entries": [
+        "Bazooka_heavy but powerful -- バズーカ_重いが威力-大"
+      ]
+    },
+    {
+      "ID": 10420005,
+      "Entries": [
+        "Bazooka_heavy but powerful - large blast -- バズーカ_重いが威力-大 爆風"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Shotgun_Collection performance-Low Lucky 13 -- ショットガン_集弾性能-低\u3000ラッキー13"
+      ]
+    },
+    {
+      "ID": 10510000,
+      "Entries": [
+        "Shotgun_Standard type -- ショットガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10520000,
+      "Entries": [
+        "Shotgun_Collection performance-High -- ショットガン_集弾性能-高"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "Grenade rifle_standard type -- グレネードライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 10600005,
+      "Entries": [
+        "Grenade rifle_standard type (explosive) -- グレネードライフル_標準タイプ（爆発）"
+      ]
+    },
+    {
+      "ID": 10610000,
+      "Entries": [
+        "Grenade rifle_blast range-large -- グレネードライフル_爆発範囲-大"
+      ]
+    },
+    {
+      "ID": 10610005,
+      "Entries": [
+        "Grenade Rifle_Explosion Range-Large (Explosion) -- グレネードライフル_爆発範囲-大（爆発）"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "Handgun_Zero distance specialized pile driving -- ハンドガン_零距離特化 杭打ち"
+      ]
+    },
+    {
+      "ID": 10700005,
+      "Entries": [
+        "Handgun_Zero distance specialized pile driving No damage for SFX -- ハンドガン_零距離特化 杭打ち SFX用ダメージ無し"
+      ]
+    },
+    {
+      "ID": 10710000,
+      "Entries": [
+        "Handgun_Standard type 2 shots -- ハンドガン_標準タイプ 2連射"
+      ]
+    },
+    {
+      "ID": 10720000,
+      "Entries": [
+        "Handgun_One shot is heavy -- ハンドガン_一発が重い"
+      ]
+    },
+    {
+      "ID": 10730000,
+      "Entries": [
+        "Handgun_↑variation (silver edge) -- ハンドガン_↑のバリエーション（シルバーエッジ）"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "Throwing gun_2 shots (smoke_body) -- 投擲銃_2連射（スモーク_本体）"
+      ]
+    },
+    {
+      "ID": 10800001,
+      "Entries": [
+        "Throwing gun_2 shots (smoke_smoke) -- 投擲銃_2連射（スモーク_煙）"
+      ]
+    },
+    {
+      "ID": 10800100,
+      "Entries": [
+        "Throwing gun_2 shots (smoke_body) Charge -- 投擲銃_2連射（スモーク_本体）\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 10810000,
+      "Entries": [
+        "Throwing gun_standard type (napalm) -- 投擲銃_標準タイプ（ナパーム）"
+      ]
+    },
+    {
+      "ID": 10810005,
+      "Entries": [
+        "Throwing gun_standard type (napalm) (explosive) -- 投擲銃_標準タイプ（ナパーム）（爆発）"
+      ]
+    },
+    {
+      "ID": 10810006,
+      "Entries": [
+        "Throwing gun_Standard type (napalm) (flame continuous damage) -- 投擲銃_標準タイプ（ナパーム）（炎継続ダメージ）"
+      ]
+    },
+    {
+      "ID": 10810090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10810100,
+      "Entries": [
+        "Throwing gun_standard type (napalm) charge -- 投擲銃_標準タイプ（ナパーム）\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 10810190,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10820000,
+      "Entries": [
+        "Throwing gun_large number of magazine bullets (stun mine) -- 投擲銃_マガジン弾数多い（スタン機雷）"
+      ]
+    },
+    {
+      "ID": 10820005,
+      "Entries": [
+        "Throwing gun_large number of magazine bullets (stun mine) stun explosion -- 投擲銃_マガジン弾数多い（スタン機雷） スタン爆発"
+      ]
+    },
+    {
+      "ID": 10820100,
+      "Entries": [
+        "Throwing gun _ Large number of magazine bullets (stun mine) Charge -- 投擲銃_マガジン弾数多い（スタン機雷）\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 10820105,
+      "Entries": [
+        "Throwing gun _ Large number of magazine bullets (stun mine) Charge stun explosion -- 投擲銃_マガジン弾数多い（スタン機雷）\u3000チャージ スタン爆発"
+      ]
+    },
+    {
+      "ID": 10900000,
+      "Entries": [
+        "Hand missile_guided type -- ハンドミサイル_誘導タイプ"
+      ]
+    },
+    {
+      "ID": 10900005,
+      "Entries": [
+        "Hand missile_guided type (explosion) -- ハンドミサイル_誘導タイプ（爆発）"
+      ]
+    },
+    {
+      "ID": 10910000,
+      "Entries": [
+        "Hand missile ② -- ハンドミサイル②"
+      ]
+    },
+    {
+      "ID": 10910005,
+      "Entries": [
+        "Hand missile ② (explosion) -- ハンドミサイル②（爆発）"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Grenade rifle_lightweight -- グレネードライフル_軽量"
+      ]
+    },
+    {
+      "ID": 11000005,
+      "Entries": [
+        "Grenade rifle_lightweight (explosive) -- グレネードライフル_軽量（爆発）"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "Laser Rifle_CS: Laser Machine Gun -- レーザーライフル_CS：レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 11100100,
+      "Entries": [
+        "Laser Rifle_CS: Laser Machine Gun_Charge Shooting -- レーザーライフル_CS：レーザーマシンガン_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "Laser rifle_standard type -- レーザーライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11110100,
+      "Entries": [
+        "Laser rifle_standard type_charge shooting -- レーザーライフル_標準タイプ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11111000,
+      "Entries": [
+        "Laser rifle_standard type (dummy for menu display) -- レーザーライフル_標準タイプ（メニュー表示用ダミー）"
+      ]
+    },
+    {
+      "ID": 11111100,
+      "Entries": [
+        "Laser rifle_Standard type_Charge shooting (dummy for menu display) -- レーザーライフル_標準タイプ_チャージ射撃（メニュー表示用ダミー）"
+      ]
+    },
+    {
+      "ID": 11120000,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique -- ハイレーザーライフル_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 11120005,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique Blast -- ハイレーザーライフル_K・AI ユニーク 爆風"
+      ]
+    },
+    {
+      "ID": 11120100,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique_Single Charge Shooting -- ハイレーザーライフル_K・AI ユニーク_一段チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11120105,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique_Single Charge Shooting Blast -- ハイレーザーライフル_K・AI ユニーク_一段チャージ射撃 爆風"
+      ]
+    },
+    {
+      "ID": 11120110,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique_Two-stage charge shooting (melee attack) -- ハイレーザーライフル_K・AI ユニーク_二段チャージ射撃（格闘攻撃）"
+      ]
+    },
+    {
+      "ID": 11120120,
+      "Entries": [
+        "High Laser Rifle_K・AI Unique_Two-stage charge shooting (melee attack) Specifications for Decisive Battle B Leicester action -- ハイレーザーライフル_K・AI ユニーク_二段チャージ射撃（格闘攻撃） 決戦Bレスター用行動で仕様"
+      ]
+    },
+    {
+      "ID": 11130000,
+      "Entries": [
+        "Laser rifle_fast bullet speed, deep charge limit -- レーザーライフル_弾速が速い、チャージ限界が深い"
+      ]
+    },
+    {
+      "ID": 11130100,
+      "Entries": [
+        "Laser rifle_fast bullet speed, deep charge limit_charge shooting -- レーザーライフル_弾速が速い、チャージ限界が深い_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "Plasma rifle_standard type -- プラズマライフル_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11200005,
+      "Entries": [
+        "Plasma rifle_standard type (explosion) -- プラズマライフル_標準タイプ（爆発）"
+      ]
+    },
+    {
+      "ID": 11200100,
+      "Entries": [
+        "Plasma rifle_standard type_charge shooting -- プラズマライフル_標準タイプ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11200105,
+      "Entries": [
+        "Plasma rifle_Standard type_Charge shooting (explosion) -- プラズマライフル_標準タイプ_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 11210000,
+      "Entries": [
+        "High Laser Rifle_Karasawa Plasma -- ハイレーザーライフル_カラサワ プラズマ"
+      ]
+    },
+    {
+      "ID": 11210005,
+      "Entries": [
+        "High Laser Rifle_Karasawa Plasma Explosion -- ハイレーザーライフル_カラサワ プラズマ爆発"
+      ]
+    },
+    {
+      "ID": 11210100,
+      "Entries": [
+        "High Laser Rifle_Karasawa_Single Charge Shooting Laser -- ハイレーザーライフル_カラサワ_一段チャージ射撃 レーザー"
+      ]
+    },
+    {
+      "ID": 11210110,
+      "Entries": [
+        "High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ"
+      ]
+    },
+    {
+      "ID": 11210111,
+      "Entries": [
+        "High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma For plasma determination -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ プラズマ判定用"
+      ]
+    },
+    {
+      "ID": 11210115,
+      "Entries": [
+        "High Laser Rifle_Karasawa_Two-stage charge shooting Laser + Plasma Plasma explosion -- ハイレーザーライフル_カラサワ_二段チャージ射撃 レーザー+プラズマ プラズマ爆発"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Pulse gun _ High rate of fire performance -- パルスガン_連射性能高い"
+      ]
+    },
+    {
+      "ID": 11310000,
+      "Entries": [
+        "Pulse gun_standard type -- パルスガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "double laser rifle -- ダブルレーザーライフル"
+      ]
+    },
+    {
+      "ID": 11400100,
+      "Entries": [
+        "Double laser rifle_charge attack -- ダブルレーザーライフル_チャージ攻撃"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Laser shotgun_zero distance recommended -- レーザーショットガン_零距離推奨"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "Laser shotgun_zero distance recommended_charge shooting (melee attack) -- レーザーショットガン_零距離推奨_チャージ射撃（近接攻撃）"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "Laser shotgun_wide laterally -- レーザーショットガン_横に広い"
+      ]
+    },
+    {
+      "ID": 11510100,
+      "Entries": [
+        "Laser shotgun _ horizontally wide _ charge shooting -- レーザーショットガン_横に広い_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11510105,
+      "Entries": [
+        "Laser shotgun _ horizontally wide _ charge shooting (explosion -- レーザーショットガン_横に広い_チャージ射撃（爆発"
+      ]
+    },
+    {
+      "ID": 11520000,
+      "Entries": [
+        "Plasma rifle_M・AI unique -- プラズマライフル_M・AIユニーク"
+      ]
+    },
+    {
+      "ID": 11520005,
+      "Entries": [
+        "Plasma rifle_M・AI unique (explosion) -- プラズマライフル_M・AIユニーク（爆発）"
+      ]
+    },
+    {
+      "ID": 11520100,
+      "Entries": [
+        "Plasma rifle_M・AI unique_charge shooting -- プラズマライフル_M・AIユニーク_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11520105,
+      "Entries": [
+        "Plasma rifle_M・AI unique_Charge shooting (explosion) -- プラズマライフル_M・AIユニーク_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 11530000,
+      "Entries": [
+        "Plasma rifle_M・AI unique (red coral ver) -- プラズマライフル_M・AIユニーク（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 11530005,
+      "Entries": [
+        "Plasma rifle_M・AI unique (red coral ver) (explosion) -- プラズマライフル_M・AIユニーク（赤コーラルver）（爆発）"
+      ]
+    },
+    {
+      "ID": 11530100,
+      "Entries": [
+        "Plasma rifle_M・AI unique (red coral ver)_charge shooting -- プラズマライフル_M・AIユニーク（赤コーラルver）_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 11530105,
+      "Entries": [
+        "Plasma rifle_M・AI unique (red coral ver)_Charge shooting (explosion) -- プラズマライフル_M・AIユニーク（赤コーラルver）_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "flamethrower -- 火炎放射"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "Degraded uranium bazooka rifle -- 劣化ウランバズーカライフル"
+      ]
+    },
+    {
+      "ID": 11700005,
+      "Entries": [
+        "Degraded uranium bazooka rifle explosion -- 劣化ウランバズーカライフル 爆発"
+      ]
+    },
+    {
+      "ID": 11700006,
+      "Entries": [
+        "Degraded uran bazooka rifle consecutive explosions -- 劣化ウランバズーカライフル 連爆発"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "stun gun parent -- スタンガン\u3000親"
+      ]
+    },
+    {
+      "ID": 11800001,
+      "Entries": [
+        "stun gun child -- スタンガン\u3000子"
+      ]
+    },
+    {
+      "ID": 11800005,
+      "Entries": [
+        "Stun gun grandchild (explosion) -- スタンガン\u3000孫（爆発）"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "Stationary shooting weapons (multiple firing at the same time) -- 置き射撃武器（複数同時発射）"
+      ]
+    },
+    {
+      "ID": 11900005,
+      "Entries": [
+        "Stationary shooting weapon (multiple fires at the same time) (explosion) -- 置き射撃武器（複数同時発射）\u3000（爆発）"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Machine gun for jailbreak mission_Standard type -- 脱獄ミッション用マシンガン_標準タイプ"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke_body) -- 脱獄ミッション用投擲銃_2連射（スモーク_本体）"
+      ]
+    },
+    {
+      "ID": 12200001,
+      "Entries": [
+        "Throwing gun for jailbreak mission_2 shots (smoke_smoke) -- 脱獄ミッション用投擲銃_2連射（スモーク_煙）"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "For enemy damage animation confirmation_DL2 addition (right hand) -- 敵ダメージアニメ確認用_DL2加算（右手）"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "For checking enemy damage animation_DL3 Small stagger (left hand) -- 敵ダメージアニメ確認用_DL3小よろけ（左手）"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "For object destruction confirmation_obj attack power 510 -- オブジェクト破壊確認用_obj攻撃力510"
+      ]
+    },
+    {
+      "ID": 12510000,
+      "Entries": [
+        "For object destruction confirmation_obj attack power 410 -- オブジェクト破壊確認用_obj攻撃力410"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000005,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000100,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 13000105,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Laser blade_light attack ① -- レーザーブレード_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "Laser blade_light attack ② -- レーザーブレード_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "Laser blade_strong attack -- レーザーブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "Laser Blade_K・AI Unique_Weak Attack① -- レーザーブレード_K・AI ユニーク_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20010010,
+      "Entries": [
+        "Laser Blade_K・AI Unique_Weak attack ② -- レーザーブレード_K・AI ユニーク_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20010100,
+      "Entries": [
+        "Laser Blade_K・AI Unique_Strong attack -- レーザーブレード_K・AI ユニーク_強攻撃"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "Light Wave Blade__Weak Attack① -- 光波ブレード__弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20020010,
+      "Entries": [
+        "Light wave blade __ light attack ② -- 光波ブレード__弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20020100,
+      "Entries": [
+        "Light Wave Blade__Strong Attack① -- 光波ブレード__強攻撃①"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "Light Wave Blade__Weak Attack ① (Red Coral ver) -- 光波ブレード__弱攻撃①（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 20030010,
+      "Entries": [
+        "Light wave blade __ light attack ② (red coral ver) -- 光波ブレード__弱攻撃②（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 20030100,
+      "Entries": [
+        "Light Wave Blade __ Strong Attack ① (Red Coral ver) -- 光波ブレード__強攻撃①（赤コーラルver）"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20100010,
+      "Entries": [
+        "PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20100100,
+      "Entries": [
+        "PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20100110,
+      "Entries": [
+        "PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②"
+      ]
+    },
+    {
+      "ID": 20100200,
+      "Entries": [
+        "PA Breaker_QB weak attack ① -- PAブレイカー_QB弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20100300,
+      "Entries": [
+        "PA Breaker_QB Strong Attack ① -- PAブレイカー_QB強攻撃①"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "Plasma broadsword_light attack ① -- プラズマブロードソード_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20200100,
+      "Entries": [
+        "Plasma broadsword_strong attack ① -- プラズマブロードソード_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20200110,
+      "Entries": [
+        "Plasma broadsword_strong attack ② -- プラズマブロードソード_強攻撃②"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Beam naginata_light attack ① -- ビーム薙刀_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20300010,
+      "Entries": [
+        "Beam naginata_light attack ② -- ビーム薙刀_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20300020,
+      "Entries": [
+        "Beam naginata_light attack ③ -- ビーム薙刀_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 20300030,
+      "Entries": [
+        "Beam naginata_light attack ④ -- ビーム薙刀_弱攻撃④"
+      ]
+    },
+    {
+      "ID": 20300100,
+      "Entries": [
+        "Beam naginata_strong attack ① -- ビーム薙刀_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20300110,
+      "Entries": [
+        "Beam naginata_strong attack ② -- ビーム薙刀_強攻撃②"
+      ]
+    },
+    {
+      "ID": 20300120,
+      "Entries": [
+        "Beam Naginata_Strong attack ③ -- ビーム薙刀_強攻撃③"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Dagger_Light attack① -- ダガー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20400010,
+      "Entries": [
+        "Dagger_Light attack ② -- ダガー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20400020,
+      "Entries": [
+        "Dagger_Light attack③ -- ダガー_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 20400100,
+      "Entries": [
+        "Dagger_Strong attack① -- ダガー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20400101,
+      "Entries": [
+        "Dagger_Strong attack①_During step -- ダガー_強攻撃①_踏み込み中"
+      ]
+    },
+    {
+      "ID": 20400200,
+      "Entries": [
+        "Dagger_QB weak attack ① -- ダガー_QB弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20400300,
+      "Entries": [
+        "Dagger_QB strong attack ① -- ダガー_QB強攻撃①"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "Laser Lance_Weak Thrust -- レーザーランス_弱突き"
+      ]
+    },
+    {
+      "ID": 20500100,
+      "Entries": [
+        "Laser Lance_Rushing -- レーザーランス_突進中"
+      ]
+    },
+    {
+      "ID": 20500101,
+      "Entries": [
+        "Laser Lance_Rush Finish -- レーザーランス_突進フィニッシュ"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "Chainsaw_Light attack ① -- チェーンソー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20600010,
+      "Entries": [
+        "Chainsaw_Light attack ② -- チェーンソー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20600020,
+      "Entries": [
+        "Chainsaw_rotation loop -- チェーンソー_回転ループ"
+      ]
+    },
+    {
+      "ID": 20600100,
+      "Entries": [
+        "Chainsaw_Strong attack loop -- チェーンソー_強攻撃ループ"
+      ]
+    },
+    {
+      "ID": 20600101,
+      "Entries": [
+        "Chainsaw_Strong attack finish -- チェーンソー_強攻撃フィニッシュ"
+      ]
+    },
+    {
+      "ID": 20700000,
+      "Entries": [
+        "Electromagnetic hammer_light attack ① -- 電磁ハンマー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20700001,
+      "Entries": [
+        "Electromagnetic hammer_light attack ② -- 電磁ハンマー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 20700009,
+      "Entries": [
+        "Electromagnetic hammer_light attack①_hand -- 電磁ハンマー_弱攻撃①_手元"
+      ]
+    },
+    {
+      "ID": 20700010,
+      "Entries": [
+        "Electromagnetic hammer_Swinging loop -- 電磁ハンマー_振り回しループ"
+      ]
+    },
+    {
+      "ID": 20700100,
+      "Entries": [
+        "Electromagnetic hammer_strong attack ① -- 電磁ハンマー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20700101,
+      "Entries": [
+        "Electromagnetic hammer_Strong attack①_Plasma explosion (base bullet) -- 電磁ハンマー_強攻撃①_プラズマ爆発（親弾丸）"
+      ]
+    },
+    {
+      "ID": 20700102,
+      "Entries": [
+        "Electromagnetic hammer_Strong attack①_Plasma explosion (subbullet) -- 電磁ハンマー_強攻撃①_プラズマ爆発（子弾丸）"
+      ]
+    },
+    {
+      "ID": 20700109,
+      "Entries": [
+        "Electromagnetic hammer_Strong attack①_Hand -- 電磁ハンマー_強攻撃①_手元"
+      ]
+    },
+    {
+      "ID": 20700900,
+      "Entries": [
+        "Electromagnetic hammer_Bounce judgment -- 電磁ハンマー_弾かれ判定"
+      ]
+    },
+    {
+      "ID": 20800000,
+      "Entries": [
+        "Explosive pile_light attack ① -- 爆裂パイル_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20800100,
+      "Entries": [
+        "Explosive pile_strong attack ①-1 -- 爆裂パイル_強攻撃①-1"
+      ]
+    },
+    {
+      "ID": 20800101,
+      "Entries": [
+        "Explosive pile_strong attack ①-2 (small bread) -- 爆裂パイル_強攻撃①-2（小パン）"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "Electromagnetic baton_light attack ① -- 電磁警棒_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 20900010,
+      "Entries": [
+        "Electromagnetic baton_light attack ②-1 -- 電磁警棒_弱攻撃②-1"
+      ]
+    },
+    {
+      "ID": 20900011,
+      "Entries": [
+        "Electromagnetic baton_light attack ②-2 -- 電磁警棒_弱攻撃②-2"
+      ]
+    },
+    {
+      "ID": 20900020,
+      "Entries": [
+        "Electromagnetic baton_light attack ③-1 -- 電磁警棒_弱攻撃③-1"
+      ]
+    },
+    {
+      "ID": 20900021,
+      "Entries": [
+        "Electromagnetic baton_light attack ③-2 -- 電磁警棒_弱攻撃③-2"
+      ]
+    },
+    {
+      "ID": 20900022,
+      "Entries": [
+        "Electromagnetic baton_light attack ③-3 -- 電磁警棒_弱攻撃③-3"
+      ]
+    },
+    {
+      "ID": 20900100,
+      "Entries": [
+        "Electromagnetic baton_strong attack ① -- 電磁警棒_強攻撃①"
+      ]
+    },
+    {
+      "ID": 20900110,
+      "Entries": [
+        "Electromagnetic baton_Strong attack①_Pursuit -- 電磁警棒_強攻撃①_追撃"
+      ]
+    },
+    {
+      "ID": 20900111,
+      "Entries": [
+        "Electromagnetic baton_strong attack①_pursuit_piercing bullet -- 電磁警棒_強攻撃①_追撃_刺さる弾丸"
+      ]
+    },
+    {
+      "ID": 20900115,
+      "Entries": [
+        "Electromagnetic baton_Strong attack①_Pursuit_Explosion -- 電磁警棒_強攻撃①_追撃_爆発"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Proximity diffusion bullet_weak attack ① (main bullet) -- 近接拡散弾_弱攻撃①（親弾丸）"
+      ]
+    },
+    {
+      "ID": 21000005,
+      "Entries": [
+        "Proximity diffusion bullet_weak attack ① (child bullet) -- 近接拡散弾_弱攻撃①（子弾丸）"
+      ]
+    },
+    {
+      "ID": 21000100,
+      "Entries": [
+        "Proximity diffusion bullet_Strong attack ① (base bullet) -- 近接拡散弾_強攻撃①（親弾丸）"
+      ]
+    },
+    {
+      "ID": 21000105,
+      "Entries": [
+        "Proximity diffusion bullet_Strong attack ① (child bullet) -- 近接拡散弾_強攻撃①（子弾丸）"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Plasma missile_standard type 3 series -- プラズマミサイル_標準タイプ 3連"
+      ]
+    },
+    {
+      "ID": 30000005,
+      "Entries": [
+        "Plasma missile_standard type (explosion) 3 series -- プラズマミサイル_標準タイプ（爆発）\u30003連"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Plasma missile_spread diagonally and wrap -- プラズマミサイル_斜めに広がって包む"
+      ]
+    },
+    {
+      "ID": 30010005,
+      "Entries": [
+        "Plasma missile_spreads diagonally and wraps (explosion) -- プラズマミサイル_斜めに広がって包む（爆発）"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Plasma missile_standard type 6 units -- プラズマミサイル_標準タイプ\u30006連"
+      ]
+    },
+    {
+      "ID": 30020005,
+      "Entries": [
+        "Plasma missile_standard type (explosion) 6 rounds -- プラズマミサイル_標準タイプ（爆発）\u30006連"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "AI missile_multi-stage guidance 2 series -- AIミサイル_多段誘導\u30002連"
+      ]
+    },
+    {
+      "ID": 30100005,
+      "Entries": [
+        "AI missile_multi-stage guidance (explosion) -- AIミサイル_多段誘導（爆発）"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "AI missile_multi-stage guidance right -- AIミサイル_多段誘導\u3000右"
+      ]
+    },
+    {
+      "ID": 30110005,
+      "Entries": [
+        "AI missile_multi-stage guidance (explosion) -- AIミサイル_多段誘導（爆発）"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "6 twin missiles -- 連装ミサイル\u30006連"
+      ]
+    },
+    {
+      "ID": 30200005,
+      "Entries": [
+        "Twin missiles (explosion) 6 series -- 連装ミサイル（爆発）\u30006連"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "Twin missile 4 series -- 連装ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 30210005,
+      "Entries": [
+        "Twin missiles (explosion) 4 in a row -- 連装ミサイル（爆発）\u30004連"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "10 twin missiles -- 連装ミサイル\u300010連"
+      ]
+    },
+    {
+      "ID": 30220005,
+      "Entries": [
+        "Twin missiles (explosion) 10 in a row -- 連装ミサイル（爆発）\u300010連"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "Special plasma missile_K・AI unique -- 特殊プラズマミサイル_K・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 30300005,
+      "Entries": [
+        "Special plasma missile_K・AI unique (explosion) -- 特殊プラズマミサイル_K・AI ユニーク（爆発）"
+      ]
+    },
+    {
+      "ID": 30300600,
+      "Entries": [
+        "Special plasma missile_K・AI unique charge for menu display (cannot be deleted) -- 特殊プラズマミサイル_K・AI ユニーク\u3000チャージ\u3000メニュー表示用(削除不可)"
+      ]
+    },
+    {
+      "ID": 30300601,
+      "Entries": [
+        "Special plasma missile_K・AI unique charge no damage -- 特殊プラズマミサイル_K・AI ユニーク\u3000チャージ\u3000ダメージ無し"
+      ]
+    },
+    {
+      "ID": 30300602,
+      "Entries": [
+        "Special plasma missile_K・AI unique charge -- 特殊プラズマミサイル_K・AI ユニーク\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 30300605,
+      "Entries": [
+        "Special plasma missile_K・AI unique charge (explosion) -- 特殊プラズマミサイル_K・AI ユニーク\u3000チャージ（爆発）"
+      ]
+    },
+    {
+      "ID": 30300606,
+      "Entries": [
+        "Special Plasma Missile_K・AI Unique Charge Coral Homing Laser -- 特殊プラズマミサイル_K・AI ユニーク\u3000チャージ\u3000コーラルホーミングレーザー"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "Vertical missile 12 consecutive no damage -- 垂直ミサイル\u300012連\u3000ダメージ無し"
+      ]
+    },
+    {
+      "ID": 30400001,
+      "Entries": [
+        "Vertical missile 12 series -- 垂直ミサイル\u300012連"
+      ]
+    },
+    {
+      "ID": 30400005,
+      "Entries": [
+        "Vertical missile (explosion) 12 series -- 垂直ミサイル（爆発）\u300012連"
+      ]
+    },
+    {
+      "ID": 30410000,
+      "Entries": [
+        "Vertical missile 8 consecutive no damage -- 垂直ミサイル\u30008連\u3000ダメージ無し"
+      ]
+    },
+    {
+      "ID": 30410001,
+      "Entries": [
+        "Vertical missile 8 series -- 垂直ミサイル\u30008連"
+      ]
+    },
+    {
+      "ID": 30410005,
+      "Entries": [
+        "Vertical missile (explosion) 8 series -- 垂直ミサイル（爆発）\u30008連"
+      ]
+    },
+    {
+      "ID": 30420000,
+      "Entries": [
+        "Vertical missile 4 consecutive no damage -- 垂直ミサイル\u30004連\u3000ダメージ無し"
+      ]
+    },
+    {
+      "ID": 30420001,
+      "Entries": [
+        "Vertical missile 4 series -- 垂直ミサイル\u30004連"
+      ]
+    },
+    {
+      "ID": 30420005,
+      "Entries": [
+        "Vertical missile (explosion) 4 series -- 垂直ミサイル（爆発）\u30004連"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "Bakudo Explosive Missile Parent -- 爆導炸ミサイル 親"
+      ]
+    },
+    {
+      "ID": 30500002,
+      "Entries": [
+        "explosive missile child -- 爆導炸ミサイル 子"
+      ]
+    },
+    {
+      "ID": 30500005,
+      "Entries": [
+        "Explosion missile grandson (explosion) -- 爆導炸ミサイル 孫（爆発）"
+      ]
+    },
+    {
+      "ID": 30500010,
+      "Entries": [
+        "Explosive Missile Bullet Kill -- 爆導炸ミサイル 弾丸殺し"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "Large missile_extra large exposed one -- 大型ミサイル_特大むき出し一本"
+      ]
+    },
+    {
+      "ID": 30600005,
+      "Entries": [
+        "Large missile_extra large exposed one (explosion) -- 大型ミサイル_特大むき出し一本（爆発）"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "Raid Missile_M・AI Unique -- レイドミサイル_M・AI ユニーク"
+      ]
+    },
+    {
+      "ID": 30700005,
+      "Entries": [
+        "Raid Missile_M・AI Unique (Explosion) -- レイドミサイル_M・AI ユニーク（爆発）"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "Back missile_2Way 3 consecutive -- 背ミサイル_2Way\u30003連"
+      ]
+    },
+    {
+      "ID": 30800001,
+      "Entries": [
+        "Back missile_2Way triple guidance -- 背ミサイル_2Way\u30003連 誘導"
+      ]
+    },
+    {
+      "ID": 30800005,
+      "Entries": [
+        "Back missile_2Way (explosion) 3 consecutive -- 背ミサイル_2Way（爆発）\u30003連"
+      ]
+    },
+    {
+      "ID": 30810000,
+      "Entries": [
+        "Back missile_2way 3-way type -- 背ミサイル_2Way\u30003連中型"
+      ]
+    },
+    {
+      "ID": 30810001,
+      "Entries": [
+        "Back Missile_2Way 3-way type guidance -- 背ミサイル_2Way\u30003連中型 誘導"
+      ]
+    },
+    {
+      "ID": 30810005,
+      "Entries": [
+        "Back missile_2Way (explosion) 3-way type -- 背ミサイル_2Way（爆発）\u30003連中型"
+      ]
+    },
+    {
+      "ID": 30820000,
+      "Entries": [
+        "Back missile_2Way 2 series -- 背ミサイル_2Way\u30002連"
+      ]
+    },
+    {
+      "ID": 30820001,
+      "Entries": [
+        "Back missile_2Way 2 series guidance -- 背ミサイル_2Way\u30002連 誘導"
+      ]
+    },
+    {
+      "ID": 30820005,
+      "Entries": [
+        "Back missile_2Way (explosion) 2 consecutive -- 背ミサイル_2Way（爆発）\u30002連"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "Back missile_split missile 2 consecutive 6 splits -- 背ミサイル_分裂ミサイル\u30002連6分裂"
+      ]
+    },
+    {
+      "ID": 30900005,
+      "Entries": [
+        "Back missile_fission missile (explosion) 2 consecutive 6 fission -- 背ミサイル_分裂ミサイル（爆発）\u30002連6分裂"
+      ]
+    },
+    {
+      "ID": 30910000,
+      "Entries": [
+        "Back missile_fission missile single shot -- 背ミサイル_分裂ミサイル\u3000単発"
+      ]
+    },
+    {
+      "ID": 30910005,
+      "Entries": [
+        "Back missile_fission missile (explosion) single shot -- 背ミサイル_分裂ミサイル（爆発）\u3000単発"
+      ]
+    },
+    {
+      "ID": 30920000,
+      "Entries": [
+        "Back missile_split missile 2 series 12 splits -- 背ミサイル_分裂ミサイル\u30002連12分裂"
+      ]
+    },
+    {
+      "ID": 30920005,
+      "Entries": [
+        "Back missile_fission missile (explosion) 2 consecutive 12 fission -- 背ミサイル_分裂ミサイル（爆発）\u30002連12分裂"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Shoulder grenade_lightweight type -- 肩グレネード_軽量タイプ"
+      ]
+    },
+    {
+      "ID": 31000005,
+      "Entries": [
+        "Shoulder grenade_lightweight type (explosive) -- 肩グレネード_軽量タイプ（爆発）"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "needle missile -- ニードルミサイル"
+      ]
+    },
+    {
+      "ID": 31100005,
+      "Entries": [
+        "Needle Missile No damage for SFX -- ニードルミサイル SFX用ダメージ無し"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "container missile parent -- コンテナミサイル 親"
+      ]
+    },
+    {
+      "ID": 31200001,
+      "Entries": [
+        "container missile child -- コンテナミサイル 子"
+      ]
+    },
+    {
+      "ID": 31200002,
+      "Entries": [
+        "container missile grandchild -- コンテナミサイル 孫"
+      ]
+    },
+    {
+      "ID": 31200005,
+      "Entries": [
+        "Container missile child (explosion) -- コンテナミサイル\u3000子（爆発）"
+      ]
+    },
+    {
+      "ID": 31200006,
+      "Entries": [
+        "Container missile Mason (explosion) -- コンテナミサイル\u3000孫（爆発）"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "Cluster Missile Parent: The one that cannot transition to explosion. -- クラスターミサイル 親 爆発に遷移できないやつ"
+      ]
+    },
+    {
+      "ID": 31300001,
+      "Entries": [
+        "cluster missile parent -- クラスターミサイル 親"
+      ]
+    },
+    {
+      "ID": 31300002,
+      "Entries": [
+        "cluster missile child -- クラスターミサイル 子"
+      ]
+    },
+    {
+      "ID": 31300005,
+      "Entries": [
+        "Cluster missile parent (explosion) -- クラスターミサイル\u3000親（爆発）"
+      ]
+    },
+    {
+      "ID": 31300006,
+      "Entries": [
+        "Cluster missile child (explosion) -- クラスターミサイル\u3000子（爆発）"
+      ]
+    },
+    {
+      "ID": 31410000,
+      "Entries": [
+        "Single-shot funnel (3-point plasma burst) main body -- 単発式ファンネル（プラズマ3点バースト）\u3000本体"
+      ]
+    },
+    {
+      "ID": 31410001,
+      "Entries": [
+        "Single-shot funnel (3-point plasma burst) main body during free fall -- 単発式ファンネル（プラズマ3点バースト）\u3000本体 自由落下時"
+      ]
+    },
+    {
+      "ID": 31410010,
+      "Entries": [
+        "Single-shot funnel (3-point plasma burst) bullet -- 単発式ファンネル（プラズマ3点バースト）\u3000弾丸"
+      ]
+    },
+    {
+      "ID": 31410100,
+      "Entries": [
+        "Single-engine funnel (charge) main body 3 aircraft formation flight -- 単発式ファンネル（チャージ）\u3000本体 3機編隊飛行"
+      ]
+    },
+    {
+      "ID": 31410101,
+      "Entries": [
+        "Single-shot funnel (charge) main body after combination -- 単発式ファンネル（チャージ）\u3000本体 合体後"
+      ]
+    },
+    {
+      "ID": 31410102,
+      "Entries": [
+        "Single-shot funnel (charge) Main body After combining During free fall -- 単発式ファンネル（チャージ）\u3000本体 合体後 自由落下時"
+      ]
+    },
+    {
+      "ID": 31410110,
+      "Entries": [
+        "Single-shot funnel (charge) bullet -- 単発式ファンネル（チャージ）\u3000弾丸"
+      ]
+    },
+    {
+      "ID": 31510000,
+      "Entries": [
+        "Stationary shooting weapon (laser)_Body -- 置き射撃武器（レーザー）_本体"
+      ]
+    },
+    {
+      "ID": 31510010,
+      "Entries": [
+        "Stationary shooting weapon (laser)_Irradiation laser -- 置き射撃武器（レーザー）_照射レーザー"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "Shoulder bazooka_spread -- 肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 32000005,
+      "Entries": [
+        "Shoulder Bazooka_Spread Explosion -- 肩バズーカ_スプレッド 爆発"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large -- 肩グレネード_爆発範囲-特大"
+      ]
+    },
+    {
+      "ID": 32100005,
+      "Entries": [
+        "Shoulder grenade_explosion range-extra large (explosion) -- 肩グレネード_爆発範囲-特大（爆発）"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "Shoulder high laser cannon_W laser -- 肩ハイレーザーキャノン_Wレーザー"
+      ]
+    },
+    {
+      "ID": 32200100,
+      "Entries": [
+        "Shoulder High Laser Cannon_W Laser_Single Charge Shooting -- 肩ハイレーザーキャノン_Wレーザー_一段チャージ射撃"
+      ]
+    },
+    {
+      "ID": 32200200,
+      "Entries": [
+        "Shoulder high laser cannon_W laser_two-stage charge shooting -- 肩ハイレーザーキャノン_Wレーザー_二段チャージ射撃"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft -- 肩プラズマキャノン_レイレナ機体向け軽量特化"
+      ]
+    },
+    {
+      "ID": 32300005,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft (explosion) -- 肩プラズマキャノン_レイレナ機体向け軽量特化（爆発）"
+      ]
+    },
+    {
+      "ID": 32300100,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft_Charge firing -- 肩プラズマキャノン_レイレナ機体向け軽量特化_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 32300105,
+      "Entries": [
+        "Shoulder Plasma Cannon_Lightweight specialized for Rayrena aircraft_Charge firing (explosion) -- 肩プラズマキャノン_レイレナ機体向け軽量特化_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        "Shoulder pulse gun_Continuously fire for a long time -- 肩パルスガン_長時間継続して浴びせ続ける"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "Shoulder Laser Cannon_Can also be used by Mirage Power - Medium -- 肩レーザーキャノン_ミラージュでも扱える 威力-中"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "Shoulder Laser Cannon_Can also be used by Mirage Power - Medium_Charge shooting -- 肩レーザーキャノン_ミラージュでも扱える 威力-中_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 32510000,
+      "Entries": [
+        "LASER CANNON - VE-60LCB"
+      ]
+    },
+    {
+      "ID": 32510100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB"
+      ]
+    },
+    {
+      "ID": 32510101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "shoulder laser shotgun -- 肩レーザーショットガン"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "Shoulder laser shotgun_charge shooting -- 肩レーザーショットガン_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 32600105,
+      "Entries": [
+        "Shoulder laser shotgun_Charge shooting (explosion) -- 肩レーザーショットガン_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "stun needle launcher parent -- スタンニードルランチャー 親"
+      ]
+    },
+    {
+      "ID": 32700001,
+      "Entries": [
+        "Stun needle launcher child -- スタンニードルランチャー\u3000子"
+      ]
+    },
+    {
+      "ID": 32700005,
+      "Entries": [
+        "Stun needle launcher (explosion) -- スタンニードルランチャー（爆発）"
+      ]
+    },
+    {
+      "ID": 32700500,
+      "Entries": [
+        "Stun Needle Launcher_For Sandworm Battle Parent -- スタンニードルランチャー_サンドワーム戦用 親"
+      ]
+    },
+    {
+      "ID": 32700501,
+      "Entries": [
+        "Stun Needle Launcher_Sandworm Battle_Child -- スタンニードルランチャー_サンドワーム戦用_子"
+      ]
+    },
+    {
+      "ID": 32700505,
+      "Entries": [
+        "Stun Needle Launcher_For Sandworm Battle (Explosive) -- スタンニードルランチャー_サンドワーム戦用（爆発）"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Exceed Orbit (live bullet) -- イクシードオービット（実弾）"
+      ]
+    },
+    {
+      "ID": 33010000,
+      "Entries": [
+        "Exceed Orbit (EN) -- イクシードオービット（EN）"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "shooting PA -- 射撃PA"
+      ]
+    },
+    {
+      "ID": 33100001,
+      "Entries": [
+        "Shooting PA_PA activated -- 射撃PA_PA発動"
+      ]
+    },
+    {
+      "ID": 33100005,
+      "Entries": [
+        "Shooting PA_Explosion -- 射撃PA_爆発"
+      ]
+    },
+    {
+      "ID": 33100006,
+      "Entries": [
+        "Shooting PA_Explosion (for decal hit) -- 射撃PA_爆発（デカールhit用）"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Shoulder bazooka for jailbreak mission_spread -- 脱獄ミッション用肩バズーカ_スプレッド"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33410000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "Auxiliary booster_M・AI unique (shooting weapon ver) -- 補助ブースター_M・AI ユニーク（射撃武器ver）"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "For checking enemy damage_DL4 Great stagger (right shoulder) -- 敵ダメージ確認用_DL4大よろけ（右肩）"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Core special features_Assault armor_Explosive body -- コア特殊機能_アサルトアーマー_爆発本体"
+      ]
+    },
+    {
+      "ID": 70000001,
+      "Entries": [
+        "Core special features_Assault armor_Shockwave -- コア特殊機能_アサルトアーマー_衝撃波"
+      ]
+    },
+    {
+      "ID": 70000010,
+      "Entries": [
+        "Core special features_Assault Armor_Anti-PA -- コア特殊機能_アサルトアーマー_アンチPA"
+      ]
+    },
+    {
+      "ID": 70000011,
+      "Entries": [
+        "Core special features_Assault armor_Anti installation PA -- コア特殊機能_アサルトアーマー_アンチ設置PA"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "Core special features_Assault armor_Coral attribute_Explosive body -- コア特殊機能_アサルトアーマー_コーラル属性_爆発本体"
+      ]
+    },
+    {
+      "ID": 70000101,
+      "Entries": [
+        "Core special features_Assault armor_Coral attribute_Shockwave -- コア特殊機能_アサルトアーマー_コーラル属性_衝撃波"
+      ]
+    },
+    {
+      "ID": 70000110,
+      "Entries": [
+        "Core special features_Assault armor_Coral attribute_Anti-PA -- コア特殊機能_アサルトアーマー_コーラル属性_アンチPA"
+      ]
+    },
+    {
+      "ID": 70000111,
+      "Entries": [
+        "Core special features_Assault armor_Coral attribute_Anti installation PA -- コア特殊機能_アサルトアーマー_コーラル属性_アンチ設置PA"
+      ]
+    },
+    {
+      "ID": 70100009,
+      "Entries": [
+        "Core special features_Primal Armor_Shockwave -- コア特殊機能_プライマルアーマー_衝撃波"
+      ]
+    },
+    {
+      "ID": 70200000,
+      "Entries": [
+        "Core special features_installation PA -- コア特殊機能_設置PA"
+      ]
+    },
+    {
+      "ID": 70200009,
+      "Entries": [
+        "Core special features_Installed PA_Shock wave -- コア特殊機能_設置PA_衝撃波"
+      ]
+    },
+    {
+      "ID": 70300009,
+      "Entries": [
+        "Core special functions_Emergency PA_Shockwave -- コア特殊機能_緊急時PA_衝撃波"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "Bare-handed_Right-handed attack -- 素手_右手攻撃"
+      ]
+    },
+    {
+      "ID": 80000010,
+      "Entries": [
+        "Bare-handed_Left-handed attack -- 素手_左手攻撃"
+      ]
+    },
+    {
+      "ID": 91200100,
+      "Entries": [
+        "Plasma rifle_standard type_charge shooting -- プラズマライフル_標準タイプ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 91200105,
+      "Entries": [
+        "Plasma rifle_Standard type_Charge shooting (explosion) -- プラズマライフル_標準タイプ_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 91210100,
+      "Entries": [
+        "Plasma rifle_Large plasma diffusion Karasawa_Charge shooting -- プラズマライフル_プラズマ拡散大 カラサワ_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 91210105,
+      "Entries": [
+        "Plasma rifle_Large plasma diffusion Karasawa_Charge shooting (explosion) -- プラズマライフル_プラズマ拡散大 カラサワ_チャージ射撃（爆発）"
+      ]
+    },
+    {
+      "ID": 91500100,
+      "Entries": [
+        "Laser shotgun_zero distance recommended_charge shooting -- レーザーショットガン_零距離推奨_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 91510100,
+      "Entries": [
+        "Laser shotgun _ horizontally wide _ charge shooting -- レーザーショットガン_横に広い_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 91520100,
+      "Entries": [
+        "Laser shotgun_M・AI unique_charge shooting -- レーザーショットガン_M・AI ユニーク_チャージ射撃"
+      ]
+    },
+    {
+      "ID": 92100000,
+      "Entries": [
+        "PA Breaker_Weak Attack① -- PAブレイカー_弱攻撃①"
+      ]
+    },
+    {
+      "ID": 92100010,
+      "Entries": [
+        "PA Breaker_Weak attack ② -- PAブレイカー_弱攻撃②"
+      ]
+    },
+    {
+      "ID": 92100020,
+      "Entries": [
+        "PA Breaker_Weak Attack③ -- PAブレイカー_弱攻撃③"
+      ]
+    },
+    {
+      "ID": 92100030,
+      "Entries": [
+        "PA Breaker_Weak Attack④ -- PAブレイカー_弱攻撃④"
+      ]
+    },
+    {
+      "ID": 92100040,
+      "Entries": [
+        "PA Breaker_Weak Attack⑤ -- PAブレイカー_弱攻撃⑤"
+      ]
+    },
+    {
+      "ID": 92100100,
+      "Entries": [
+        "PA Breaker_Strong attack ① -- PAブレイカー_強攻撃①"
+      ]
+    },
+    {
+      "ID": 92100110,
+      "Entries": [
+        "PA Breaker_Strong attack ② -- PAブレイカー_強攻撃②"
+      ]
+    },
+    {
+      "ID": 92100120,
+      "Entries": [
+        "PA Breaker_Strong attack ③ -- PAブレイカー_強攻撃③"
+      ]
+    },
+    {
+      "ID": 92100800,
+      "Entries": [
+        "PA Breaker_Body hit -- PAブレイカー_体当たり"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: none"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: Hard Stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Sharp Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Minagi Stone"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Nibi Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Blade Stone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Spider Thread Steel Wire"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Mercury stone"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon Stone"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Suction stone"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Pith stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11: Moonlight Stone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Moonlight Stone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Glimmerstone"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic Shield Stone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16: D.S."
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "maximum HP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "maximum MP"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "poison"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Epidemic"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "bleeding"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse (Madness)"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Beastification"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Level Sync: HP"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Level Sync: Defense"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Level Sync: Slow Poison Resistance"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Level Sync: Poison Resistance"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Level Sync: Stamina"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Level Sync: Right-Hand Weapon Base"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Level Sync: Weapon Left Hand Base"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Level Sync: Left Hand Weapon: Cannon"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Level Sync: Left-Hand Weapon: Flamethrower"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Level Sync: Left Hand Weapon: Rosmarinus"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Level Sync: Throw"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Level Sync: Throwing Knife"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Level Sync: Molotov Cocktail"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Level Sync: Harbinger"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Level Sync: Little Tony"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Level Sync: Gloves"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Level Sync: Beyond"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Maximum number of refills for healing spots"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Growing Consumption Seoul"
+      ]
+    }
+  ]
+}

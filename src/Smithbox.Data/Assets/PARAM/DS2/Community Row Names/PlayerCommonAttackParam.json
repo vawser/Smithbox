@@ -1,0 +1,23 @@
+{
+  "Name": "PlayerCommonAttackParam",
+  "Entries": [
+    {
+      "ID": 2,
+      "Entries": [
+        "A great attack -- 大攻撃"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Medium Attack -- 中攻撃"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Small attack -- 小攻撃"
+      ]
+    }
+  ]
+}

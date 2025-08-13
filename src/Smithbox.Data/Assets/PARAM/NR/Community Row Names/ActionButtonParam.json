@@ -1,0 +1,1115 @@
+{
+  "Name": "ActionButtonParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Retrieve lost runes"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Acquire belongings"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Acquire belongings"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Acquire belongings of <?codenameIcon?>"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "View victor's record"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "View victor's record for <?codenameIcon?>"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4019,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4027,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4028,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4029,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4034,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4288,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 4289,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4290,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 4291,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 4292,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 4293,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4294,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4295,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4296,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4297,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4298,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4299,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 4301,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 4305,
+      "Entries": [
+        "Gain power"
+      ]
+    },
+    {
+      "ID": 4311,
+      "Entries": [
+        "Gain the power of the mountains"
+      ]
+    },
+    {
+      "ID": 4313,
+      "Entries": [
+        "Gain the power of the forest"
+      ]
+    },
+    {
+      "ID": 4315,
+      "Entries": [
+        "Gain the power of the city"
+      ]
+    },
+    {
+      "ID": 4351,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "OK"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Take armament"
+      ]
+    },
+    {
+      "ID": 4501,
+      "Entries": [
+        "Take staff"
+      ]
+    },
+    {
+      "ID": 4502,
+      "Entries": [
+        "Take sacred seal"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Level up"
+      ]
+    },
+    {
+      "ID": 6111,
+      "Entries": [
+        "Add charge to flask"
+      ]
+    },
+    {
+      "ID": 6112,
+      "Entries": [
+        "Already at highest level"
+      ]
+    },
+    {
+      "ID": 6113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6114,
+      "Entries": [
+        "Purchase"
+      ]
+    },
+    {
+      "ID": 6115,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6116,
+      "Entries": [
+        "Sit"
+      ]
+    },
+    {
+      "ID": 6117,
+      "Entries": [
+        "Talk"
+      ]
+    },
+    {
+      "ID": 6118,
+      "Entries": [
+        "Touch phantom"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Strengthen armament"
+      ]
+    },
+    {
+      "ID": 6251,
+      "Entries": [
+        "Strengthen armament"
+      ]
+    },
+    {
+      "ID": 6252,
+      "Entries": [
+        "Strengthen armament"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Gain effect of materials"
+      ]
+    },
+    {
+      "ID": 6750,
+      "Entries": [
+        "Touch Nightlord"
+      ]
+    },
+    {
+      "ID": 6751,
+      "Entries": [
+        "Lay hand upon infant"
+      ]
+    },
+    {
+      "ID": 6760,
+      "Entries": [
+        "Animate"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6850,
+      "Entries": [
+        "Search for whetstone"
+      ]
+    },
+    {
+      "ID": 6851,
+      "Entries": [
+        "Search for tear of silver"
+      ]
+    },
+    {
+      "ID": 6852,
+      "Entries": [
+        "Search for golden dew"
+      ]
+    },
+    {
+      "ID": 6853,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6854,
+      "Entries": [
+        "Search for blessed flowers"
+      ]
+    },
+    {
+      "ID": 6855,
+      "Entries": [
+        "Search for golden sprout"
+      ]
+    },
+    {
+      "ID": 6858,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6860,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "Commence expedition"
+      ]
+    },
+    {
+      "ID": 6901,
+      "Entries": [
+        "Change character"
+      ]
+    },
+    {
+      "ID": 6902,
+      "Entries": [
+        "Perform Relic Rites"
+      ]
+    },
+    {
+      "ID": 6903,
+      "Entries": [
+        "Open Visual Codex"
+      ]
+    },
+    {
+      "ID": 6904,
+      "Entries": [
+        "Open journal"
+      ]
+    },
+    {
+      "ID": 6905,
+      "Entries": [
+        "Change sparring equipment"
+      ]
+    },
+    {
+      "ID": 6906,
+      "Entries": [
+        "Replicate armament"
+      ]
+    },
+    {
+      "ID": 6907,
+      "Entries": [
+        "Change sparring settings"
+      ]
+    },
+    {
+      "ID": 6908,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6909,
+      "Entries": [
+        "Purchase"
+      ]
+    },
+    {
+      "ID": 6910,
+      "Entries": [
+        "Paint picture"
+      ]
+    },
+    {
+      "ID": 6911,
+      "Entries": [
+        "Conclude remembrance"
+      ]
+    },
+    {
+      "ID": 6912,
+      "Entries": [
+        "Touch phantom"
+      ]
+    },
+    {
+      "ID": 6913,
+      "Entries": [
+        "Examine sign"
+      ]
+    },
+    {
+      "ID": 6920,
+      "Entries": [
+        "Inspect Vestige of Night"
+      ]
+    },
+    {
+      "ID": 6921,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6922,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6925,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6930,
+      "Entries": [
+        "Hold up earring"
+      ]
+    },
+    {
+      "ID": 6940,
+      "Entries": [
+        "Hold up both earrings"
+      ]
+    },
+    {
+      "ID": 6941,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6942,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6943,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6944,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6945,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 6946,
+      "Entries": [
+        "Pick up item"
+      ]
+    },
+    {
+      "ID": 6947,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6948,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6949,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6951,
+      "Entries": [
+        "Pick up"
+      ]
+    },
+    {
+      "ID": 6952,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6953,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6960,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6961,
+      "Entries": [
+        "Bless iron coin"
+      ]
+    },
+    {
+      "ID": 6962,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6963,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 6964,
+      "Entries": [
+        "Read"
+      ]
+    },
+    {
+      "ID": 6970,
+      "Entries": [
+        "Touch monument"
+      ]
+    },
+    {
+      "ID": 6971,
+      "Entries": [
+        "Offer"
+      ]
+    },
+    {
+      "ID": 6980,
+      "Entries": [
+        "Sit"
+      ]
+    },
+    {
+      "ID": 6990,
+      "Entries": [
+        "Change garb"
+      ]
+    },
+    {
+      "ID": 6991,
+      "Entries": [
+        "Pass time"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Touch corpse"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        "Gain effect of materials"
+      ]
+    },
+    {
+      "ID": 7811,
+      "Entries": [
+        "Restore HP"
+      ]
+    },
+    {
+      "ID": 7812,
+      "Entries": [
+        "Heal ailments"
+      ]
+    },
+    {
+      "ID": 7813,
+      "Entries": [
+        "Summon foe-chasing vengeful spirits"
+      ]
+    },
+    {
+      "ID": 7814,
+      "Entries": [
+        "Restore FP"
+      ]
+    },
+    {
+      "ID": 7815,
+      "Entries": [
+        "Boost rune acquisition"
+      ]
+    },
+    {
+      "ID": 7816,
+      "Entries": [
+        "Boost damage negation"
+      ]
+    },
+    {
+      "ID": 7817,
+      "Entries": [
+        "Boost physical and fire damage"
+      ]
+    },
+    {
+      "ID": 7819,
+      "Entries": [
+        "Restore HP"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Loot items"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Examine"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Cure rot"
+      ]
+    },
+    {
+      "ID": 9231,
+      "Entries": [
+        "Open Evergaol"
+      ]
+    },
+    {
+      "ID": 9232,
+      "Entries": [
+        "Add charge to flask"
+      ]
+    },
+    {
+      "ID": 9291,
+      "Entries": [
+        "Travel into the Spirit Shelter"
+      ]
+    },
+    {
+      "ID": 9292,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 9350,
+      "Entries": [
+        "Take hold of Spectral Hawk"
+      ]
+    },
+    {
+      "ID": 9360,
+      "Entries": [
+        "Learn about locale"
+      ]
+    },
+    {
+      "ID": 9380,
+      "Entries": [
+        "Sit"
+      ]
+    },
+    {
+      "ID": 9390,
+      "Entries": [
+        "Open"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

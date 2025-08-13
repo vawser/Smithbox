@@ -1,0 +1,245 @@
+{
+  "Name": "generatorregistparam_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 10300000,
+      "Entries": [
+        "[REG:10300000] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10300010,
+      "Entries": [
+        "[REG:10300010] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10300034,
+      "Entries": [
+        "[REG:10300034] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10300041,
+      "Entries": [
+        "[REG:10300041] Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "[REG:11300000] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300003,
+      "Entries": [
+        "[REG:11300003] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300005,
+      "Entries": [
+        "[REG:11300005] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300010,
+      "Entries": [
+        "[REG:11300010] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300020,
+      "Entries": [
+        "[REG:11300020] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300022,
+      "Entries": [
+        "[REG:11300022] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300023,
+      "Entries": [
+        "[REG:11300023] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300024,
+      "Entries": [
+        "[REG:11300024] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300025,
+      "Entries": [
+        "[REG:11300025] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300026,
+      "Entries": [
+        "[REG:11300026] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300051,
+      "Entries": [
+        "[REG:11300051] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300100,
+      "Entries": [
+        "[REG:11300100] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300103,
+      "Entries": [
+        "[REG:11300103] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300105,
+      "Entries": [
+        "[REG:11300105] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300120,
+      "Entries": [
+        "[REG:11300120] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300122,
+      "Entries": [
+        "[REG:11300122] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11300123,
+      "Entries": [
+        "[REG:11300123] Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 12300200,
+      "Entries": [
+        "[REG:12300200] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 12302200,
+      "Entries": [
+        "[REG:12302200] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 12701100,
+      "Entries": [
+        "[REG:12701100] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "[REG:21700000] Dark Stalker"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "[REG:22700000] Stray Dog"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "[REG:30200000] Undead Jailer"
+      ]
+    },
+    {
+      "ID": 30330000,
+      "Entries": [
+        "[REG:30330000] Flexile Sentry [Boss]"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "[REG:72600000] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 72600001,
+      "Entries": [
+        "[REG:72600001] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "[REG:75200000] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200001,
+      "Entries": [
+        "[REG:75200001] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200002,
+      "Entries": [
+        "[REG:75200002] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "[REG:76600000] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76600001,
+      "Entries": [
+        "[REG:76600001] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "[REG:80000000] Bradley of the Old Guard"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "[REG:82000000] Aurous Knight Phantom"
+      ]
+    }
+  ]
+}

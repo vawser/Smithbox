@@ -1,0 +1,611 @@
+{
+  "Name": "mapobjectinstanceparam_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 20110415,
+      "Entries": [
+        "【Door】 General-purpose_wood single-door_light(old door)_Tower 1 middle layer"
+      ]
+    },
+    {
+      "ID": 20110435,
+      "Entries": [
+        "【One door】The front entrance of the girl's house"
+      ]
+    },
+    {
+      "ID": 20110440,
+      "Entries": [
+        "【One door】The back door of the girl's house"
+      ]
+    },
+    {
+      "ID": 20110450,
+      "Entries": [
+        "【One door】The back door of the house where there is no person"
+      ]
+    },
+    {
+      "ID": 20110455,
+      "Entries": [
+        "【One door】The front entrance of the house where there is no person"
+      ]
+    },
+    {
+      "ID": 20110460,
+      "Entries": [
+        "【One door】Boss's house entrance"
+      ]
+    },
+    {
+      "ID": 20110480,
+      "Entries": [
+        "【Both doors】 The wall of the house side of the door of the living person _ girl 2"
+      ]
+    },
+    {
+      "ID": 20110485,
+      "Entries": [
+        "【Both doors】 Tower in front of the door of the dead_boss room"
+      ]
+    },
+    {
+      "ID": 20110490,
+      "Entries": [
+        "【Both doors】In front of the immortal mausoleum elevator"
+      ]
+    },
+    {
+      "ID": 20110600,
+      "Entries": [
+        "【White Door】 Boss White Door_Entrance"
+      ]
+    },
+    {
+      "ID": 20110602,
+      "Entries": [
+        "【White Door】 Boss White Door_Exit"
+      ]
+    },
+    {
+      "ID": 20110605,
+      "Entries": [
+        "【White Door】 Scenario White Door (Medium) _01 Cave at the end of the house of 1 girl 1"
+      ]
+    },
+    {
+      "ID": 20110607,
+      "Entries": [
+        "【White Door】 Scenario White Door (Medium) _02 Cave beyond the house of 2 girls"
+      ]
+    },
+    {
+      "ID": 20110610,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 20110650,
+      "Entries": [
+        "【Bonfire】 Bonfire 01_Tower 1 Upper Layer"
+      ]
+    },
+    {
+      "ID": 20110655,
+      "Entries": [
+        "【Bonfire】 Bonfire 02_Memory Block Cave"
+      ]
+    },
+    {
+      "ID": 20110660,
+      "Entries": [
+        "【Bonfire】 Bonfire 03_Cave to Parent Tree"
+      ]
+    },
+    {
+      "ID": 20110670,
+      "Entries": [
+        "【Bonfire】 Bonfire 05_Boss Room Front Tower"
+      ]
+    },
+    {
+      "ID": 20110700,
+      "Entries": [
+        "【Light stand】The entrance of the cave between the blocks always lit_00_block"
+      ]
+    },
+    {
+      "ID": 20110702,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110704,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110706,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110708,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110710,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110712,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110714,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20110716,
+      "Entries": [
+        "[Light stand] always lit_"
+      ]
+    },
+    {
+      "ID": 20111200,
+      "Entries": [
+        "The Altar of the Living"
+      ]
+    },
+    {
+      "ID": 20111330,
+      "Entries": [
+        "A destroyable branch for corpse dropping six"
+      ]
+    },
+    {
+      "ID": 20111400,
+      "Entries": [
+        "Elevator Body_Immortal Mausoleum"
+      ]
+    },
+    {
+      "ID": 20111410,
+      "Entries": [
+        "On the elevator lever_Immortal Mausoleum"
+      ]
+    },
+    {
+      "ID": 20111420,
+      "Entries": [
+        "Elevating lever under_Immortal Mausoleum"
+      ]
+    },
+    {
+      "ID": 20111500,
+      "Entries": [
+        "【Insect Key】Insect Key_Floor"
+      ]
+    },
+    {
+      "ID": 20111510,
+      "Entries": [
+        "【Insect Key】Hidden Door"
+      ]
+    },
+    {
+      "ID": 20113800,
+      "Entries": [
+        "【Environmental Map ID】Scattered Skeletons"
+      ]
+    },
+    {
+      "ID": 20113900,
+      "Entries": [
+        "[Mimetic OBJ: Rare] Eringi"
+      ]
+    },
+    {
+      "ID": 20113901,
+      "Entries": [
+        "[Mimetic OBJ: Rare] Eringi"
+      ]
+    },
+    {
+      "ID": 20113902,
+      "Entries": [
+        "[Mimetic OBJ: Rare] Eringi"
+      ]
+    },
+    {
+      "ID": 20113903,
+      "Entries": [
+        "[Mimetic OBJ: Rare] Eringi"
+      ]
+    },
+    {
+      "ID": 20113904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20113905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20113910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Sloppy Vase"
+      ]
+    },
+    {
+      "ID": 20113911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Sloppy Vase"
+      ]
+    },
+    {
+      "ID": 20113912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Sloppy Vase"
+      ]
+    },
+    {
+      "ID": 20113913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Sloppy Vase"
+      ]
+    },
+    {
+      "ID": 20113914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20113915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20113920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 20113921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 20113922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 20113923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 20113924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20113925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20114000,
+      "Entries": [
+        "【NPC】Tomb_Girl of The Bard"
+      ]
+    },
+    {
+      "ID": 20114100,
+      "Entries": [
+        "【NPC】Tomb_Girl of The Bard 2"
+      ]
+    },
+    {
+      "ID": 20114606,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114607,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114608,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114609,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114610,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114611,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114612,
+      "Entries": [
+        "Light worm (multiple) blood pond"
+      ]
+    },
+    {
+      "ID": 20114728,
+      "Entries": [
+        "Light worms"
+      ]
+    },
+    {
+      "ID": 20114729,
+      "Entries": [
+        "Light worms"
+      ]
+    },
+    {
+      "ID": 20114730,
+      "Entries": [
+        "Light worms"
+      ]
+    },
+    {
+      "ID": 20115000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115070,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115080,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115090,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115100,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115110,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20115500,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20116000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116200,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116210,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20116220,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

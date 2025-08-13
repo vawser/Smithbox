@@ -1,0 +1,149 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Doesn't move"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok default value"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Gunda: evil spirit"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Gunda's Ragdoll Test 2"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Snake spirit: right arm"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Snake spirit: left arm"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Snake spirit: small foot"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Snake spirit: base of tail"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Snake Spirit: Tail tip"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Snake spirit: head"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Snake Spirit: Neck"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "King of the Dead: Crown"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "King of the Dead: Torso"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "King of the Dead: Right Arm"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "King of the dead: left arm"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "King of the Dead: Head"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Berserker Hallek: Head"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Berserker Hallek: Torso"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Berserker Hallek: Left arm"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Berserker Hallek: Right arm"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Berserker Hallek: Left shin"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "Berserker Hallek: Right shin"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "Berserker Halek: Right hand weapon"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "dummy"
+      ]
+    }
+  ]
+}

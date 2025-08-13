@@ -1,0 +1,389 @@
+{
+  "Name": "s10_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0_basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0_indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0_underground"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0_underground_wateway"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0_reservoir"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0_character_basic"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0_character_indoor"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0_character_underground"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B0_character_underground_waterway"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B0_character_reservoir"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1_basic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1_indoor"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1_shadow"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1_background_of_base"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1_background"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1 vol smoke"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B1_character_objects_indoor"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1_character_objects_shadow"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B1_character_church_roof"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2_basic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2_indoor"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B2_plant"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B2_abyss_entry"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B2_character_basic"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B2_character_indoor"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B2_character_shadow"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B2_flag_object"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B2_character_abyss_entrance"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "SFX_abyss_cutscene_for_water_from_watergate"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "SFX：m15_00_for_rotating_gimmick_cloud_of_dust"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "SFX：m13_00_for_pitfall_cloud_of_dust"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn100225"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn100100n"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn100100n"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-scn100100n"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-scn100110-<MAP>-cutAll"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn100110-<Chr>-cutAll"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn100000-<Chr>"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn100201_Pv2-Chr_Tarkus"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn100113_pv2_summons_MAP"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn100113_pv2_summon_character"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn100201_Pv2-ChrAll"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn100201_Pv2-MapAll"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn100201_Pv2-Chr_darkness"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "polyG-scn100220"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "polyG-scn100220_karas"
+      ]
+    }
+  ]
+}

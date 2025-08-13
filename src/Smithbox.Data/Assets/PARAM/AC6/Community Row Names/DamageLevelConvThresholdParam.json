@@ -1,0 +1,347 @@
+{
+  "Name": "DamageLevelConvThresholdParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "AC"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "BAWS Guard MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "Junker Coyotes \"Puncher\" MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "Junker Coyotes \"Kicker\" MT (Walker)"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30200101,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "EKDROMOI"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Shield"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Shotgun"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Sniper"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Heavily Armed"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - High Mobility"
+      ]
+    },
+    {
+      "ID": 32501400,
+      "Entries": [
+        "LIGHT CAVALRY (LC) - Sniper"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Ghost MT"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "Ghost MT - Pulse Armor"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "BALTEUS"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "ALLMIND (IB-07: SOL 644)"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Repair Drone"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "Helicopter"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Artillery Vehicle"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "HELIANTHUS Wheel (Bonewheel)"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "Suicide Squid Drone"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "PCA Heavy Combat Helicopter"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "ICE WORM"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "Warship Drone"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "ENFORCER"
+      ]
+    },
+    {
+      "ID": 93500004,
+      "Entries": [
+        "For blade addition confirmation"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "enemy basics"
+      ]
+    },
+    {
+      "ID": 99900010,
+      "Entries": [
+        "Enemy basics Recommended by Hagiya Enemies that move frequently"
+      ]
+    },
+    {
+      "ID": 99900020,
+      "Entries": [
+        "Enemy basics Recommended by Hagiya Enemies that don't move much"
+      ]
+    },
+    {
+      "ID": 99970000,
+      "Entries": [
+        "Kira for situation verification"
+      ]
+    },
+    {
+      "ID": 99970010,
+      "Entries": [
+        "Kira for situation verification"
+      ]
+    },
+    {
+      "ID": 99999998,
+      "Entries": [
+        "For medium stagger only"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "For large stagger only"
+      ]
+    }
+  ]
+}

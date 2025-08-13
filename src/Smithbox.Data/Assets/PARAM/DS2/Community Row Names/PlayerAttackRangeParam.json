@@ -1,0 +1,35 @@
+{
+  "Name": "PlayerAttackRangeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Super close range -- 超近距離"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Short -- 近距離"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Medium -- 中距離"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Long distance -- 遠距離"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Super long distance -- 超遠距離"
+      ]
+    }
+  ]
+}

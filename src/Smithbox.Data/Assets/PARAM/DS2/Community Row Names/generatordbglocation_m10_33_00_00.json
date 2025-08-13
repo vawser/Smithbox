@@ -1,0 +1,227 @@
+{
+  "Name": "generatordbglocation_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 245,
+      "Entries": [
+        "[Dwarf] Npc -- 【ドワーフ】NPC"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "[Dwarf] NPC (Ghost) -- 【ドワーフ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "[King of rats] Npc -- 【ネズミの王】NPC"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "[King of rats] NPC (Ghost) -- 【ネズミの王】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "【Black Spirit】NPC for Multi: Magician (Male) -- 【黒霊】マルチ用NPC：魔導士（男）"
+      ]
+    },
+    {
+      "ID": 852,
+      "Entries": [
+        "BOSS: King of Rats -- 【BOSS】ネズミの王"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Starting point square_stairway side] [Elephant man (deceased): Spear Axe] -- 【スタート地点広場_階段側】【象人（亡者）：槍斧】"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Main route bridge under the lamp stand] [Heavy dwarf: two hands mallet: head A] -- 【メインルート橋下灯火台前】【重ドワーフ：両手槌：頭部Ａ】"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Main route bridge under lamp stand side hole] [Dwarf] Agura -- 【メインルート橋下灯火台横穴】【ドワーフ】あぐら"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Starting Point Square] Mimic -- 【スタート地点広場】ミミック"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Main route light stand front _ axe throwing] [Heavy dwarf: two-handed axe: head A] -- 【メインルート灯火台前_斧投げ】【重ドワーフ：両手斧：頭部A】"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【In front of the main route waterfall】 【Ishimori】 -- 【メインルート滝の前】【石守】"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[The horizontal hole of the main route Mototaki] 【Dwarf】Fishing -- 【メインルート元滝の横穴】【ドワーフ】漁る"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[The main route end _ also comes to block the road] [Heavy dwarf: two hands mallet: head B] -- 【メインルート終端_もたついてると道を塞ぎに来る】【重ドワーフ：両手槌：頭部B】"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Pledge _1F Square immediately after the start] [Elephant man (deceased): Spear Axe] -- 【誓約_1F開始すぐの広場】【象人（亡者）：槍斧】"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "[Pledge_1F square immediately after the start of the war_ will join the battle before you know it] [Corpse assrat] -- 【誓約_1F開始すぐの広場_いつの間にか戦闘に加わってくる】【死体あさりネズミ】"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[Pledge _1F along the left wall] [Dwarf] insect key C -- 【誓約_1F左の壁沿い】【ドワーフ】虫鍵C"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Pledge_1F Two-series insect key wall on the left wall side] [Dwarf] insect key A -- 【誓約_1F左の壁側の二連虫鍵壁】【ドワーフ】虫鍵A"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[Pledge_1F Two-series insect key wall on the left wall side] [Corpse assing rat] insect key B -- 【誓約_1F左の壁側の二連虫鍵壁】【死体あさりネズミ】虫鍵B"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Pledge _1F Square immediately after the start] [Elephant] insect key D -- 【誓約_1F開始すぐの広場】【象人】虫鍵D"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Before the ladder _1F pledge] [Elephant man (deceased): Spear Axe] -- 【誓約_1F梯子前】【象人（亡者）：槍斧】"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Before the ladder _1F pledge] [Corpse hunting rat] coming into the battle of the elephant -- 【誓約_1F梯子前】【死体あさりネズミ】象人戦に乱入してくる１"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "[Before the ladder _1F pledge] [Corpse hunting rat] comes into the battle of the elephant -- 【誓約_1F梯子前】【死体あさりネズミ】象人戦に乱入してくる２"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Pledge _1F the back of the ladder 1] [Dwarf] insect key F -- 【誓約_1F梯子の奥１】【ドワーフ】虫鍵F"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Pledge _1F the back of the ladder 2] [Dwarf] insect key G -- 【誓約_1F梯子の奥２】【ドワーフ】虫鍵G"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Pledge _2F U-shaped passage 1] [Heavy dwarf: two hands mallet: head B] course blocking -- 【誓約_2FのU字通路１】【重ドワーフ：両手槌：頭部B】進路塞ぎ"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[Pledge _2F U-shaped passage 2] [Heavy dwarf scarus: both hands mallet : head A] also reacts to the course blocking jump -- 【誓約_2FのU字通路２】【重ドワーフ：両手槌：頭部A】進路塞ぎ＆ジャンプにも反応"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "[The end of the U-shaped passage of the pledge _2F] [Heavy dwarf: two hands mallet: head B] to start the thorn wall -- 【誓約_2FのU字通路の先】【重ドワーフ：両手槌：頭部B】トゲ壁を起動する"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Pledge _2F Before The Ordinary Torch [Heavy dwarf: two hands mallet: head A] -- 【誓約_2F常灯松明の前１】【重ドワーフ：両手槌：頭部A】"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[Pledge _2F Before The Ordinary Torch [Heavy Dwarf: Two-Handed Axe × 2: Head B] -- 【誓約_2F常灯松明の前１】【重ドワーフ：両手斧×２：頭部B】"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "【Pledge _2F Hidden Treasure Room】 [Dwarf] -- 【誓約_2F隠し宝部屋】【ドワーフ】"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Pledge _2F insect key door in front of the white door] [Elephant] insect key -- 【誓約_2F白扉手前の虫鍵扉】【象人】虫鍵V"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[Pledge _2F white door front] [Heavy dwarf: two hands mallet: head B] course blocking -- 【誓約_2F白扉手前】【重ドワーフ：両手槌：頭部B】進路塞ぎ"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Boss Escort 1] [Corpse assrat] -- 【ボス護衛１】【死体あさりネズミ】"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[Boss Escort 2] [Corpse assrat] -- 【ボス護衛２】【死体あさりネズミ】"
+      ]
+    },
+    {
+      "ID": 2820,
+      "Entries": [
+        "[Boss Escort 3] [Corpse assrat] -- 【ボス護衛３】【死体あさりネズミ】"
+      ]
+    },
+    {
+      "ID": 2830,
+      "Entries": [
+        "[Boss Escort 4] [Corpse assrat] -- 【ボス護衛４】【死体あさりネズミ】"
+      ]
+    }
+  ]
+}

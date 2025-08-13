@@ -1,0 +1,359 @@
+{
+  "Name": "AttackElementCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Firebomb"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Lightning Urn"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Twinkling Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Spear Fragment"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Standard"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Anri's Straight Sword"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Demon's Scar"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10010030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10041000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10061700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10062600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10062700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10063200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10063210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10063400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10071100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10071200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10081700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10081900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10091100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10091600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10091800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10091814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10091815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10092200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10101600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10110310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10131000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10131100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10131200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10141300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10160400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10160410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10160420,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

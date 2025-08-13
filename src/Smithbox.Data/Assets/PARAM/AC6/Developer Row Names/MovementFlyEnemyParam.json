@@ -1,0 +1,65 @@
+{
+  "Name": "MovementFlyEnemyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Stiglo -- スティグロ"
+      ]
+    },
+    {
+      "ID": 5930,
+      "Entries": [
+        "stealth battleship -- ステルス戦艦"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "flying enemy -- 飛行敵"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "Flying enemy (Nakanishi test) -- 飛行敵(中西テスト)"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "Flying enemy (swarm test) -- 飛行敵(群れテスト)"
+      ]
+    },
+    {
+      "ID": 9039,
+      "Entries": [
+        "Flying enemy (for dummy reader test) -- 飛行敵(ダミーリーダテスト用)"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "bomber -- 爆撃機"
+      ]
+    },
+    {
+      "ID": 850010,
+      "Entries": [
+        "bomber patrol -- 爆撃機 巡回用"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "Strong enemy (fat) -- 強敵（デブ）"
+      ]
+    }
+  ]
+}

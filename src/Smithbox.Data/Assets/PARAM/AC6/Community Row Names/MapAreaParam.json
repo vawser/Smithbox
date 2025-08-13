@@ -1,0 +1,155 @@
+{
+  "Name": "MapAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don't erase it"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "m00_10_00_00 (heli garage)"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "m00_90_00_00(AC test map)"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "m03_20_00_00(Ice field_Street mine)"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "m03_30_00_00(Ice field_Fuel base)"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "m03_40_00_00(Ice field_mine shaft/Imperial base)"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "m03_60_00_00(Ice field_mine shaft/ice field)"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "m10_00_00_00(A layer_tutorial A layer)"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "m10_01_00_00(A layer_Tutorial A layer_CS)"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "m10_10_00_00(A layer_Big Bridge A layer)"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "m10_20_00_00(A layer_collapse A layer)"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "m20_00_00_00(New B layer_Top layer)"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "m20_00_00_00(New B layer_Top layer)_For CS"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "m20_20_00_00(New B layer_straight city)"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "m20_30_00_00(New B tier_Trench City)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "m30_00_00_00(Space)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "m35_00_00_00(C end)"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "m41_00_00_00(D layer_large cavity and furnace)"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "m41_10_00_00(D layer_Geofront)"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "m50_00_00_00(Snowy mountains_Mountains)"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "m50_10_00_00(Snowy mountain_multiple dam)"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "m50_30_00_00 (Snowy mountain_in front of the wall)"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "m50_40_00_00 (Snowy mountain_Lakeside)"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "m50_50_00_00 (Snowy mountain_VOB)"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "m50_60_00_00 (Snowy Mountain_Black Desert)"
+      ]
+    }
+  ]
+}

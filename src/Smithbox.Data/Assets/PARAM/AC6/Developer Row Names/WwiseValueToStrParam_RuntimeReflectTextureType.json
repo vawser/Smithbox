@@ -1,0 +1,605 @@
+{
+  "Name": "WwiseValueToStrParam_RuntimeReflectTextureType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "January surface -- 01月面"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "02 stones -- 02石"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "03 Sat -- 03土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "04 wood -- 04木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "05 sand -- 05砂"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "06 ice -- 06氷"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "07 snow -- 07雪"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "08 cloth -- 08布"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "09 electricity -- 09電気"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10 concrete -- 10コンクリ"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11 iron -- 11鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12 glass -- 12ガラス"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13 missing numbers -- 13欠番"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14 missing numbers -- 14欠番"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15 missing numbers -- 15欠番"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16 missing numbers -- 16欠番"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "17 missing numbers -- 17欠番"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "18 missing numbers -- 18欠番"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "19 missing number -- 19欠番"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "20 water (about a puddle) -- 20水（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "21 water (around ankle) -- 21水（足首程度）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "22 water (below the knee) -- 22水（膝下）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "23 water (waist and above) -- 23水（腰以上）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "24 underwater -- 24水底"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "25 Swamp (Puddle size) -- 25沼（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "26 Swamp (around ankle) -- 26沼（足首程度）"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "27 Swamp (below the knee) -- 27沼（膝下）"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "28 Swamp (above waist) -- 28沼（腰以上）"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "29 missing number -- 29欠番"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "30 missing numbers -- 30欠番"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "31 missing number -- 31欠番"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "32 missing numbers -- 32欠番"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "33 missing numbers -- 33欠番"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "34 missing numbers -- 34欠番"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "35 missing numbers -- 35欠番"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "36 missing numbers -- 36欠番"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "37 missing numbers -- 37欠番"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "38 missing numbers -- 38欠番"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "39 missing number -- 39欠番"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "40 test: Steam generation on hit -- 40テスト：ヒット時蒸気発生"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "41 stealth fog -- 41ステルス霧"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "42 snow -- 42雪"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "43 acceleration floor -- 43加速床"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "44 missing number -- 44欠番"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "45 missing number -- 45欠番"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "46 missing numbers -- 46欠番"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "47 missing number -- 47欠番"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "48 missing numbers -- 48欠番"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "49 missing number -- 49欠番"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "50 missing numbers -- 50欠番"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "51 missing number -- 51欠番"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "52 missing numbers -- 52欠番"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "53 missing number -- 53欠番"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "54 missing number -- 54欠番"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "55 missing number -- 55欠番"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "56 missing numbers -- 56欠番"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "57 missing number -- 57欠番"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "58 missing number -- 58欠番"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "59 missing number -- 59欠番"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "60 missing numbers -- 60欠番"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "61 missing number -- 61欠番"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "62 missing numbers -- 62欠番"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "63 missing numbers -- 63欠番"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "64 missing numbers -- 64欠番"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "65 missing number -- 65欠番"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "66 missing numbers -- 66欠番"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "67 missing number -- 67欠番"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "68 missing numbers -- 68欠番"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "69 missing number -- 69欠番"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "70 missing numbers -- 70欠番"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "71 missing number -- 71欠番"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "72 missing numbers -- 72欠番"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "73 missing number -- 73欠番"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "74 missing number -- 74欠番"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "75 missing number -- 75欠番"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "76 missing numbers -- 76欠番"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "77 missing number -- 77欠番"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "78 missing number -- 78欠番"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "79 missing number -- 79欠番"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "80 missing numbers -- 80欠番"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "81 missing number -- 81欠番"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "82 missing number -- 82欠番"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "83 missing number -- 83欠番"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "84 missing number -- 84欠番"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "85 missing number -- 85欠番"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "86 missing number -- 86欠番"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "87 missing number -- 87欠番"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "88 missing number -- 88欠番"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "89 missing number -- 89欠番"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "90 missing numbers -- 90欠番"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "91 missing number -- 91欠番"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "92 missing number -- 92欠番"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "93 missing number -- 93欠番"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "94 missing number -- 94欠番"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "95 missing number -- 95欠番"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "96 missing number -- 96欠番"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "97 missing number -- 97欠番"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "98 missing number -- 98欠番"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "99 missing number -- 99欠番"
+      ]
+    }
+  ]
+}

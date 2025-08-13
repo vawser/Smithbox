@@ -1,0 +1,113 @@
+{
+  "Name": "PlayerStatusParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Class] Warrior"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Class] Knight"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "[Class] Bandit"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Class] Cleric"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "[Class] Sorcerer"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[Class] Explorer"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Class] Swordsman"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Class] Deprived"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Gift] Nothing"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "[Gift] Life Ring"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[Gift] Human Effigy"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "[Gift] Lifegem / Radiant Lifegem / Old Radiant Lifegem / Poison Moss"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "[Gift] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "[Gift] Seed of a Tree of Giants"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "[Gift] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "[Gift] Petrified Something"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

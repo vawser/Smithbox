@@ -1,0 +1,185 @@
+{
+  "Name": "GeneratorTypeSfxIdRplace_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "Directional explosion small"
+      ]
+    },
+    {
+      "ID": 5001001,
+      "Entries": [
+        "Directional explosion medium"
+      ]
+    },
+    {
+      "ID": 5001002,
+      "Entries": [
+        "Directional explosion large"
+      ]
+    },
+    {
+      "ID": 5001003,
+      "Entries": [
+        "Directional explosion extra large"
+      ]
+    },
+    {
+      "ID": 5001004,
+      "Entries": [
+        "Directional explosion extra large"
+      ]
+    },
+    {
+      "ID": 5001105,
+      "Entries": [
+        "Radiation explosion extremely small"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "Radiation explosion small"
+      ]
+    },
+    {
+      "ID": 5001101,
+      "Entries": [
+        "During radiation explosion"
+      ]
+    },
+    {
+      "ID": 5001102,
+      "Entries": [
+        "Radiation explosion large"
+      ]
+    },
+    {
+      "ID": 5001103,
+      "Entries": [
+        "Radiation explosion extra large"
+      ]
+    },
+    {
+      "ID": 5001104,
+      "Entries": [
+        "Radiation explosion extra large"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "Rising smoke/falling smoke small"
+      ]
+    },
+    {
+      "ID": 5001301,
+      "Entries": [
+        "Rising smoke/falling smoke medium"
+      ]
+    },
+    {
+      "ID": 5001302,
+      "Entries": [
+        "Rising smoke/falling smoke large"
+      ]
+    },
+    {
+      "ID": 5001303,
+      "Entries": [
+        "Rising smoke/falling smoke extra large"
+      ]
+    },
+    {
+      "ID": 5001304,
+      "Entries": [
+        "Rising smoke/falling smoke extra large"
+      ]
+    },
+    {
+      "ID": 990020,
+      "Entries": [
+        "Assault Armor Omen"
+      ]
+    },
+    {
+      "ID": 990021,
+      "Entries": [
+        "Assault armor main body"
+      ]
+    },
+    {
+      "ID": 990041,
+      "Entries": [
+        "emergency primal armor"
+      ]
+    },
+    {
+      "ID": 990050,
+      "Entries": [
+        "Primal Armor main body"
+      ]
+    },
+    {
+      "ID": 990051,
+      "Entries": [
+        "Primal Armor Omen"
+      ]
+    },
+    {
+      "ID": 990055,
+      "Entries": [
+        "Primal armor deployment"
+      ]
+    },
+    {
+      "ID": 990080,
+      "Entries": [
+        "TOYBOX MT / Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 990081,
+      "Entries": [
+        "TOYBOX MT / Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 990082,
+      "Entries": [
+        "TOYBOX MT / Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 990083,
+      "Entries": [
+        "TOYBOX MT / Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 990800,
+      "Entries": [
+        "Core back deployment gimmick spark"
+      ]
+    },
+    {
+      "ID": 7000120,
+      "Entries": [
+        "Small particles blown out from the main booster Normally"
+      ]
+    },
+    {
+      "ID": 7300053,
+      "Entries": [
+        "The blink of a boost that became a PC light point"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "Name": "generatorregistparam_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 12700100,
+      "Entries": [
+        "[REG:12700100] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700103,
+      "Entries": [
+        "[REG:12700103] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700105,
+      "Entries": [
+        "[REG:12700105] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700106,
+      "Entries": [
+        "[REG:12700106] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700107,
+      "Entries": [
+        "[REG:12700107] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700108,
+      "Entries": [
+        "[REG:12700108] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12700109,
+      "Entries": [
+        "[REG:12700109] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 12701100,
+      "Entries": [
+        "[REG:12701100] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "[REG:13200000] Skeleton"
+      ]
+    },
+    {
+      "ID": 13200001,
+      "Entries": [
+        "[REG:13200001] Skeleton"
+      ]
+    },
+    {
+      "ID": 15300300,
+      "Entries": [
+        "[REG:15300300] Syan Knight"
+      ]
+    },
+    {
+      "ID": 15301300,
+      "Entries": [
+        "[REG:15301300] Syan Knight"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 21600000,
+      "Entries": [
+        "[REG:21600000] Wall Ghost"
+      ]
+    },
+    {
+      "ID": 31200100,
+      "Entries": [
+        "[REG:31200100] Grave Warden"
+      ]
+    },
+    {
+      "ID": 31202100,
+      "Entries": [
+        "[REG:31202100] Grave Warden"
+      ]
+    },
+    {
+      "ID": 31203200,
+      "Entries": [
+        "[REG:31203200] Grave Warden"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "[REG:33300000] Velstadt [Boss]"
+      ]
+    },
+    {
+      "ID": 50650000,
+      "Entries": [
+        "[REG:50650000] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 50650100,
+      "Entries": [
+        "[REG:50650100] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 50650900,
+      "Entries": [
+        "[REG:50650900] Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "[REG:50900000] Leydia Witch"
+      ]
+    },
+    {
+      "ID": 51100001,
+      "Entries": [
+        "[REG:51100001] Imperious Knight"
+      ]
+    },
+    {
+      "ID": 51200003,
+      "Entries": [
+        "[REG:51200003] Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 51460000,
+      "Entries": [
+        "[REG:51460000] Vendrick [Boss]"
+      ]
+    },
+    {
+      "ID": 61150000,
+      "Entries": [
+        "[REG:61150000] Dragonrider"
+      ]
+    },
+    {
+      "ID": 69300000,
+      "Entries": [
+        "[REG:69300000] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 69600100,
+      "Entries": [
+        "[REG:69600100] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 70050300,
+      "Entries": [
+        "[REG:70050300] Emerald Herald"
+      ]
+    },
+    {
+      "ID": 84900100,
+      "Entries": [
+        "[REG:84900100] Nameless Usurper"
+      ]
+    },
+    {
+      "ID": 89150000,
+      "Entries": [
+        "[REG:89150000] Devotee Scarlett"
+      ]
+    },
+    {
+      "ID": 91000000,
+      "Entries": [
+        "[REG:91000000] Insolent Knight"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,461 @@
+{
+  "Name": "CameraExFollowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "In-Game Camera -- インゲームカメラ"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Kiishi-gai Gerdra: Zakobos -- 輝石街ジェルドラ：ザコボス戦"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Hunting Forest: Skeleton Aristocracy -- 狩猟の森：スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Anne Deal's House: Wyvern -- アン・ディールの館：ワイバーン"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "The Door way of Faros: The King of Rats -- ファロスの扉道：ネズミの王"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Lower Waterway: Dog Rat: Color (2) -- 下水路：犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Hidden Port: Double-Sided Warrior: Snake Head -- 隠れ港：両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Iron Castle: Demon Knight -- 熔鉄城：デーモンナイト"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "The Decaying Forest of Giants: The New Giant Senior Soldier (Deceased) -- 朽ちた巨人の森：新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "King's Castle D'Angheig: Heavy Cavalry -- 王城ドラングレイグ：重騎馬兵"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Memories of giants: New Giant Senior Soldiers -- 巨人の記憶：新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "Decaying Giant Forest: Bay Grant -- 朽ちた巨人の森：ベイグラント"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Prison of Oblivion: Gargoil -- 忘却の牢城：ガーゴイル"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Prison of Oblivion: Warrior in the Mirror -- 忘却の牢城：鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Throwaway Hole: Butcher -- 捨て穴：ブッチャー"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne 1 of the Fire: Queen Knight A -- 火継ぎの玉座１：王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Tomb of Immortality: Queen Knight B -- 不死廟：王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Valley of The Reservoir: Javaza Hat -- 溜まりの谷：ジャバザハット"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Valley of The Reservoir: Naga -- 溜まりの谷：ナーガ"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Forest of Shadows: Manscorpion ♀ -- 虚ろの影の森：マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "King's Castle D'Angheig: Mirror Knight -- 王城ドラングレイグ：ミラーナイト"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Old Dark Hole: Agaduran Stand -- 古き闇の穴：アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Tomb of Immortality: King -- 不死廟：王"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "The Nest of The Guardian Dragon: The Old Dragon -- 守り竜の巣：古の龍"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Altar of Amana: The Beautiful Voice Frog -- アマナの祭壇：美声カエル"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Queen of The Spider -- 輝石街ジェルドラ：蜘蛛の女王"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Molten Iron Castle: Molten Iron Daemon -- 熔鉄城：熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Heide Great Fire Tower: Heavy Cavalry: Soldiers Only -- ハイデ大火塔：重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Hunting Forest: Silver Chariot -- 狩猟の森：シルバーチャリオット"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Heide Great Fire Tower: Ornstein -- ハイデ大火塔：オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Prison of Oblivion: Forgotten Sinners -- 忘却の牢城：忘れられた罪人"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Throne 2 of the Fire: The Queen's Armor -- 火継ぎの玉座２：王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 679100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 691000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Modern - Gap Sinus - General Purpose -- 現代-隙間の洞-汎用"
+      ]
+    },
+    {
+      "ID": 1004000,
+      "Entries": [
+        "Hyundai - Madura - General Purpose -- 現代-マデューラ-汎用"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "Modern - Decaying Giant Forest - General Purpose -- 現代-朽ちた巨人の森-汎用"
+      ]
+    },
+    {
+      "ID": 1014000,
+      "Entries": [
+        "Hyundai - Kiseki-gai Gerdra - General Purpose -- 現代-輝石街ジェルドラ-汎用"
+      ]
+    },
+    {
+      "ID": 1015000,
+      "Entries": [
+        "Hyundai - Anne Deal's House - General -- 現代-アン・ディールの館-汎用"
+      ]
+    },
+    {
+      "ID": 1016000,
+      "Entries": [
+        "Modern - Prison of Oblivion - General -- 現代-忘却の牢城-汎用"
+      ]
+    },
+    {
+      "ID": 1017000,
+      "Entries": [
+        "Modern - Reservoir Valley - General Purpose -- 現代-溜りの谷-汎用"
+      ]
+    },
+    {
+      "ID": 1018000,
+      "Entries": [
+        "Hyundai - Hidden Port - General Purpose -- 現代-隠れ港-汎用"
+      ]
+    },
+    {
+      "ID": 1019000,
+      "Entries": [
+        "Hyundai - Melted Iron Castle - General Purpose -- 現代-溶鉄城-汎用"
+      ]
+    },
+    {
+      "ID": 1021000,
+      "Entries": [
+        "Hyundai - King's Castle Drangreig - General -- 現代-王城ドラングレイグ-汎用"
+      ]
+    },
+    {
+      "ID": 1023000,
+      "Entries": [
+        "Modern - Hunting Forest - General Purpose -- 現代-狩猟の森-汎用"
+      ]
+    },
+    {
+      "ID": 1025000,
+      "Entries": [
+        "Modern - Dumping Hole - General Purpose -- 現代-捨て穴-汎用"
+      ]
+    },
+    {
+      "ID": 1027000,
+      "Entries": [
+        "Modern - Guard Dragon's Nest - General Purpose -- 現代-守り竜の巣-汎用"
+      ]
+    },
+    {
+      "ID": 1028000,
+      "Entries": [
+        "Modern - Fire-succeeding Thrones - Generic -- 現代-火継ぎの玉座-汎用"
+      ]
+    },
+    {
+      "ID": 1029000,
+      "Entries": [
+        "Modern - Maduro imaginary shadow forest connection path - general purpose -- 現代-マデューラ虚ろの影の森接続路-汎用"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "Hyundai - Heide Great Fire Tower Hidden Port Connection Road - General Purpose -- 現代-ハイデ大火塔隠れ港接続路-汎用"
+      ]
+    },
+    {
+      "ID": 1031000,
+      "Entries": [
+        "Hyundai - Heide Great Fire Tower - General Purpose -- 現代-ハイデ大火塔-汎用"
+      ]
+    },
+    {
+      "ID": 1032000,
+      "Entries": [
+        "Modern - The Shadow Forest of The Void - General Purpose -- 現代-虚ろの影の森-汎用"
+      ]
+    },
+    {
+      "ID": 1032010,
+      "Entries": [
+        "Modern - The Shadow Forest of The Void - The Misty Forest -- 現代-虚ろの影の森-霧の森"
+      ]
+    },
+    {
+      "ID": 1033000,
+      "Entries": [
+        "Modern - Faros Door way - General purpose -- 現代-ファロスの扉道-汎用"
+      ]
+    },
+    {
+      "ID": 1034000,
+      "Entries": [
+        "Modern - Saint's Tomb - General Purpose -- 現代-聖人墓所-汎用"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Modern - The Memory of giants (past) - General -- 現代-巨人の記憶（過去）-汎用"
+      ]
+    },
+    {
+      "ID": 2011000,
+      "Entries": [
+        "Modern - Altar of Amana (Past) - General Purpose -- 現代-アマナの祭壇（過去）-汎用"
+      ]
+    },
+    {
+      "ID": 2021000,
+      "Entries": [
+        "Hyundai - King's Castle D'Angheig (past) - General -- 現代-王城ドラングレイグ（過去）-汎用"
+      ]
+    },
+    {
+      "ID": 2024000,
+      "Entries": [
+        "Modern-Immortal Mausoleum (Past) - General Purpose -- 現代-不死廟（過去）-汎用"
+      ]
+    },
+    {
+      "ID": 2026000,
+      "Entries": [
+        "Memories of The Old Dragon - General Purpose -- 古龍の記憶-汎用"
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        "Modern - Old Dark Hole - General Purpose -- 現代-古き闇の穴-汎用"
+      ]
+    },
+    {
+      "ID": 5035000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5036000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5037000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5037010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5038000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

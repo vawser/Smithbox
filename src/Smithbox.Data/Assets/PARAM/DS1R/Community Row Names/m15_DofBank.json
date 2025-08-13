@@ -1,0 +1,389 @@
+{
+  "Name": "m15_DofBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1基本"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1スタート地点"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1屋内用（DOF無し）"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "PolyG-scn150000"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "PolyG-scn150110 近"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn150121"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn150121"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn150120"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-scn150120"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn150140"
+      ]
+    }
+  ]
+}

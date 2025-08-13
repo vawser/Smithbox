@@ -1,0 +1,191 @@
+{
+  "Name": "NetworkAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "Things Betwixt"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "Majula"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Forest of Fallen Giants"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "Brightstone Cove"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "Aldia's Keep"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "Lost Bastille"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "Harvest Valley"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "No Man's Wharf"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "Iron Keep"
+      ]
+    },
+    {
+      "ID": 10230000,
+      "Entries": [
+        "Huntsman's Copse"
+      ]
+    },
+    {
+      "ID": 10250000,
+      "Entries": [
+        "The Gutter"
+      ]
+    },
+    {
+      "ID": 10270000,
+      "Entries": [
+        "Dragon Aerie"
+      ]
+    },
+    {
+      "ID": 10290000,
+      "Entries": [
+        "Path to Shaded Woods"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Unseen Path to Heide"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "Heide's Tower of Flame"
+      ]
+    },
+    {
+      "ID": 10320000,
+      "Entries": [
+        "Shaded Woods"
+      ]
+    },
+    {
+      "ID": 10330000,
+      "Entries": [
+        "Doors of Pharros"
+      ]
+    },
+    {
+      "ID": 10340000,
+      "Entries": [
+        "Grave of Saints"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Giant Memories"
+      ]
+    },
+    {
+      "ID": 20110000,
+      "Entries": [
+        "Shrine of Amana"
+      ]
+    },
+    {
+      "ID": 20210000,
+      "Entries": [
+        "Drangleic Castle"
+      ]
+    },
+    {
+      "ID": 20240000,
+      "Entries": [
+        "Undead Crypt"
+      ]
+    },
+    {
+      "ID": 20260000,
+      "Entries": [
+        "Dragon Memories"
+      ]
+    },
+    {
+      "ID": 20620000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20630000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30190100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40030000,
+      "Entries": [
+        "Dark Chasm of Old"
+      ]
+    },
+    {
+      "ID": 50350000,
+      "Entries": [
+        "Crown of the Shulva"
+      ]
+    },
+    {
+      "ID": 50360000,
+      "Entries": [
+        "Crown of the Iron King"
+      ]
+    },
+    {
+      "ID": 50370000,
+      "Entries": [
+        "Crown of the Ivory King"
+      ]
+    }
+  ]
+}

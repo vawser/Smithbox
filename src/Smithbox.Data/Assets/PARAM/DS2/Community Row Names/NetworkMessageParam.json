@@ -1,0 +1,365 @@
+{
+  "Name": "NetworkMessageParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1355 @@
+{
+  "Name": "EnemyCommonParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Kobold"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 102130,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 103100,
+      "Entries": [
+        "Drangleic Infantry"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Hollow Priest"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "Stone Soldier"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 118001,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Lion Clan Mage"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "Manikin"
+      ]
+    },
+    {
+      "ID": 125000,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 125010,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 127001,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 127010,
+      "Entries": [
+        "Captive Undead (Ivory King DLC)"
+      ]
+    },
+    {
+      "ID": 127011,
+      "Entries": [
+        "Captive Undead (Ivory King DLC)"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "Forest Spirit"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "Forest Spirit (Ivory King DLC)"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 134000,
+      "Entries": [
+        "Gyrm"
+      ]
+    },
+    {
+      "ID": 135000,
+      "Entries": [
+        "Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 137000,
+      "Entries": [
+        "Prowling Magus"
+      ]
+    },
+    {
+      "ID": 138000,
+      "Entries": [
+        "Torturer"
+      ]
+    },
+    {
+      "ID": 139000,
+      "Entries": [
+        "Artificial Undead"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Undead Aberration"
+      ]
+    },
+    {
+      "ID": 146000,
+      "Entries": [
+        "Lord Tseldora"
+      ]
+    },
+    {
+      "ID": 147000,
+      "Entries": [
+        "Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 148000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 149000,
+      "Entries": [
+        "Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Stone Knight"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Syan Knight"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 155000,
+      "Entries": [
+        "Amana Aberration"
+      ]
+    },
+    {
+      "ID": 156000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 157000,
+      "Entries": [
+        "Dual-wielding Skeleton"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "Small Boar"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Undead Boar"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Parasite Spider"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "Poison Moth"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Hunting Dog"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "Wall Ghost"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "Dark Stalker"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Giant Basilisk"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Mongrel Rat"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "Royal Rat Authority"
+      ]
+    },
+    {
+      "ID": 224000,
+      "Entries": [
+        "Darksucker"
+      ]
+    },
+    {
+      "ID": 225000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 226001,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 227000,
+      "Entries": [
+        "Stray Dog"
+      ]
+    },
+    {
+      "ID": 227010,
+      "Entries": [
+        "Stray Dog"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Ogre"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Heide Knight"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Undead Jailer"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 303310,
+      "Entries": [
+        "Flexile Sentry (Ivory King DLC)"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Alonne Captain"
+      ]
+    },
+    {
+      "ID": 306001,
+      "Entries": [
+        "Alonne Captain (Old Iron King DLC)"
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 307110,
+      "Entries": [
+        "Vengarl"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "Forgotten Giant"
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "Last Giant"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Grave Warden"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 314000,
+      "Entries": [
+        "Hollow Primal Knight"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Primal Knight"
+      ]
+    },
+    {
+      "ID": 316000,
+      "Entries": [
+        "Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 317000,
+      "Entries": [
+        "Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 319000,
+      "Entries": [
+        "Alonne Knight"
+      ]
+    },
+    {
+      "ID": 319001,
+      "Entries": [
+        "Alonne Knight (Old Iron King DLC)"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Mimic"
+      ]
+    },
+    {
+      "ID": 321010,
+      "Entries": [
+        "Mimic"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 327000,
+      "Entries": [
+        "Dragon Skeleton"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Throne Defender"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Velstadt"
+      ]
+    },
+    {
+      "ID": 334000,
+      "Entries": [
+        "Throne Watcher"
+      ]
+    },
+    {
+      "ID": 337000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Snowy Covetous Demon"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Mytha- the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 502001,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 502002,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 506200,
+      "Entries": [
+        "Darklurker (Clone)"
+      ]
+    },
+    {
+      "ID": 506500,
+      "Entries": [
+        "Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Leydia Witch"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Imperious Knight"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "Vendrick (hollow)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 601001,
+      "Entries": [
+        "Flame Lizard (Old Iron King DLC)"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Demon of Song"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 603100,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 608000,
+      "Entries": [
+        "Corrosive Ant"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 611001,
+      "Entries": [
+        "Dragonrider (Archer)"
+      ]
+    },
+    {
+      "ID": 611010,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 619110,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "Lost Sinner"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Iron Warrior"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 654000,
+      "Entries": [
+        "Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 656000,
+      "Entries": [
+        "Possessed Armor"
+      ]
+    },
+    {
+      "ID": 657000,
+      "Entries": [
+        "Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 658000,
+      "Entries": [
+        "Retainer"
+      ]
+    },
+    {
+      "ID": 659000,
+      "Entries": [
+        "Rampart Golem"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Crystal Golem"
+      ]
+    },
+    {
+      "ID": 661000,
+      "Entries": [
+        "Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 662000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 663000,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 663010,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 665000,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 666000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 670000,
+      "Entries": [
+        "Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 672000,
+      "Entries": [
+        "Corrosive Ant Queen"
+      ]
+    },
+    {
+      "ID": 674000,
+      "Entries": [
+        "Pagan Tree"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 677000,
+      "Entries": [
+        "Retainer Sorcerer"
+      ]
+    },
+    {
+      "ID": 678000,
+      "Entries": [
+        "Ice Golem"
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        "Aava- the King's Pet"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        "Sinh- the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 681001,
+      "Entries": [
+        "Sinh- the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Elana- Squalid Queen"
+      ]
+    },
+    {
+      "ID": 683000,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 684000,
+      "Entries": [
+        "Vendrick (NPC)"
+      ]
+    },
+    {
+      "ID": 685000,
+      "Entries": [
+        "Skeleton (Elana)"
+      ]
+    },
+    {
+      "ID": 686000,
+      "Entries": [
+        "Small Undead Boar (Elana)"
+      ]
+    },
+    {
+      "ID": 687000,
+      "Entries": [
+        "Velstadt (Elana)"
+      ]
+    },
+    {
+      "ID": 688000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        "Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Emerald Herald"
+      ]
+    },
+    {
+      "ID": 703600,
+      "Entries": [
+        "Nashandra (human)"
+      ]
+    },
+    {
+      "ID": 704500,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 705000,
+      "Entries": [
+        "Strowen"
+      ]
+    },
+    {
+      "ID": 721100,
+      "Entries": [
+        "Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Milibeth"
+      ]
+    },
+    {
+      "ID": 724000,
+      "Entries": [
+        "Captain Drummond"
+      ]
+    },
+    {
+      "ID": 725000,
+      "Entries": [
+        "Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 726000,
+      "Entries": [
+        "Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Looking Glass Phantom (Faraam)"
+      ]
+    },
+    {
+      "ID": 731000,
+      "Entries": [
+        "Looking Glass Phantom (Knight)"
+      ]
+    },
+    {
+      "ID": 742000,
+      "Entries": [
+        "Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 744000,
+      "Entries": [
+        "Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 752000,
+      "Entries": [
+        "Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 753000,
+      "Entries": [
+        "Bell Keeper"
+      ]
+    },
+    {
+      "ID": 754000,
+      "Entries": [
+        "Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 755000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 760000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 760200,
+      "Entries": [
+        "Imprisoned Milfanito"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 764000,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 768000,
+      "Entries": [
+        "Straid of Olaphis"
+      ]
+    },
+    {
+      "ID": 769000,
+      "Entries": [
+        "Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 770000,
+      "Entries": [
+        "Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 771000,
+      "Entries": [
+        "Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 776000,
+      "Entries": [
+        "Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 777000,
+      "Entries": [
+        "Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 783000,
+      "Entries": [
+        "Titchy Gren"
+      ]
+    },
+    {
+      "ID": 784000,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 785000,
+      "Entries": [
+        "Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 786000,
+      "Entries": [
+        "Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Player-based NPC"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "Player-based NPC"
+      ]
+    },
+    {
+      "ID": 800002,
+      "Entries": [
+        "Player-based NPC (DLC)"
+      ]
+    },
+    {
+      "ID": 800003,
+      "Entries": [
+        "Player-based NPC (DLC)"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "Pilgrim Bellclaire"
+      ]
+    }
+  ]
+}

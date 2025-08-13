@@ -1,0 +1,551 @@
+{
+  "Name": "BulletShotgunParam_NPC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test (it's okay to erase or overwrite)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test (it's okay to erase or overwrite)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Default shotgun"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "EN shotgun (spread)"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "EN shotgun (vertical)"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "shotgun (napalm)"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Shotgun (napalm) charge"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "pulse shotgun"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "stun machine electric"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "BAWS Bipedal MT"
+      ]
+    },
+    {
+      "ID": 32500310,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32504000,
+      "Entries": [
+        "PCA LIGHT CAVALRY (LC)"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600310,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600560,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600561,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600570,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32600571,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601200,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601201,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601202,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601400,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601410,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601500,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32601600,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608000,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608001,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608010,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608011,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608100,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608101,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608110,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32608111,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32609200,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32609300,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32609301,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32609310,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 32609311,
+      "Entries": [
+        "PCA HEAVY CAVALRY (HC)"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000001,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 34000101,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000001,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 35000011,
+      "Entries": [
+        "Institute MT"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "PCA SP CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000320,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 41000330,
+      "Entries": [
+        "PCA SP BALTEUS"
+      ]
+    },
+    {
+      "ID": 42000400,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000401,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000402,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000500,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000501,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42000502,
+      "Entries": [
+        "IB-07: SOL 644 / Ayre"
+      ]
+    },
+    {
+      "ID": 42503100,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505004,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505005,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505104,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505105,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505800,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42505810,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506300,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506301,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506302,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506303,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506306,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42506307,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508005,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508015,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508204,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508205,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508206,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508214,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508215,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508216,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508224,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508225,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508226,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508432,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508433,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 42508605,
+      "Entries": [
+        "IB-01: CEL 240 (Ibis)"
+      ]
+    },
+    {
+      "ID": 61010200,
+      "Entries": [
+        "SEA SPIDER (Turret)"
+      ]
+    },
+    {
+      "ID": 64201300,
+      "Entries": [
+        "STRIDER Eye"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "Artillery (Dual Plasma Cannon)"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900110,
+      "Entries": [
+        "NEPENTHES"
+      ]
+    }
+  ]
+}

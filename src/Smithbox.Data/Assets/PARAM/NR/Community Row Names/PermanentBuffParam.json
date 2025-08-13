@@ -1,0 +1,653 @@
+{
+  "Name": "PermanentBuffParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Power: Increased Maximum HP: 1"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "Power: Increased Maximum HP: 2"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Power: Increased Maximum FP: 1"
+      ]
+    },
+    {
+      "ID": 8010001,
+      "Entries": [
+        "Power: Increased Maximum FP: 2"
+      ]
+    },
+    {
+      "ID": 8010100,
+      "Entries": [
+        "Power: Reduced FP Consumption: 1"
+      ]
+    },
+    {
+      "ID": 8010101,
+      "Entries": [
+        "Power: Reduced FP Consumption: 2"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "Power: Increased Maximum Stamina: 1"
+      ]
+    },
+    {
+      "ID": 8020001,
+      "Entries": [
+        "Power: Increased Maximum Stamina: 2"
+      ]
+    },
+    {
+      "ID": 8020200,
+      "Entries": [
+        "Power: Increased Stamina Recovery: 1"
+      ]
+    },
+    {
+      "ID": 8020201,
+      "Entries": [
+        "Power: Increased Stamina Recovery: 2"
+      ]
+    },
+    {
+      "ID": 8100000,
+      "Entries": [
+        "Power: Improved Physical Attack Power: 1"
+      ]
+    },
+    {
+      "ID": 8100001,
+      "Entries": [
+        "Power: Improved Physical Attack Power: 2"
+      ]
+    },
+    {
+      "ID": 8100500,
+      "Entries": [
+        "Power: Improved Affinity Attack Power: 1"
+      ]
+    },
+    {
+      "ID": 8100501,
+      "Entries": [
+        "Power: Improved Affinity Attack Power: 2"
+      ]
+    },
+    {
+      "ID": 8120000,
+      "Entries": [
+        "Power: Improved Stance-Breaking: 1"
+      ]
+    },
+    {
+      "ID": 8120001,
+      "Entries": [
+        "Power: Improved Stance-Breaking: 2"
+      ]
+    },
+    {
+      "ID": 8200000,
+      "Entries": [
+        "Power: Improved Physical Damage Negation: 1"
+      ]
+    },
+    {
+      "ID": 8200001,
+      "Entries": [
+        "Power: Improved Physical Damage Negation: 2"
+      ]
+    },
+    {
+      "ID": 8200500,
+      "Entries": [
+        "Power: Improved Affinity Damage Negation: 1"
+      ]
+    },
+    {
+      "ID": 8200501,
+      "Entries": [
+        "Power: Improved Affinity Damage Negation: 2"
+      ]
+    },
+    {
+      "ID": 8210700,
+      "Entries": [
+        "Power: All Resistances Up: 1"
+      ]
+    },
+    {
+      "ID": 8210701,
+      "Entries": [
+        "Power: All Resistances Up: 2"
+      ]
+    },
+    {
+      "ID": 8230000,
+      "Entries": [
+        "Power: Improved Poise: 1"
+      ]
+    },
+    {
+      "ID": 8230001,
+      "Entries": [
+        "Power: Improved Poise: 2"
+      ]
+    },
+    {
+      "ID": 8330103,
+      "Entries": [
+        "Power: Improved Sorceries and Incantations: 1"
+      ]
+    },
+    {
+      "ID": 8330104,
+      "Entries": [
+        "Power: Improved Sorceries and Incantations: 2"
+      ]
+    },
+    {
+      "ID": 8330500,
+      "Entries": [
+        "Power: Increased Sorceries and Incantation Duration"
+      ]
+    },
+    {
+      "ID": 8330700,
+      "Entries": [
+        "Power: Dragonwound upon Dragon Communion"
+      ]
+    },
+    {
+      "ID": 8350400,
+      "Entries": [
+        "Power: Successful Parries Activate Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 8360000,
+      "Entries": [
+        "Power: Improved Ultimate Art Guage Charge Speed"
+      ]
+    },
+    {
+      "ID": 8370000,
+      "Entries": [
+        "Power: Character Skill Cooldown Reduction"
+      ]
+    },
+    {
+      "ID": 8410000,
+      "Entries": [
+        "Power: Improved Dodging"
+      ]
+    },
+    {
+      "ID": 8410100,
+      "Entries": [
+        "Power: Lightning upon Dodging"
+      ]
+    },
+    {
+      "ID": 8420100,
+      "Entries": [
+        "Power: Guard Counters Activate Holy Attacks"
+      ]
+    },
+    {
+      "ID": 8420200,
+      "Entries": [
+        "Power: Guard Counters Activate Summoning Attack"
+      ]
+    },
+    {
+      "ID": 8430000,
+      "Entries": [
+        "Power: Improved Thrusting Counterattack"
+      ]
+    },
+    {
+      "ID": 8440000,
+      "Entries": [
+        "Power: Improved Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 8440001,
+      "Entries": [
+        "Power: Improved Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 8440200,
+      "Entries": [
+        "Power: Gradual Restoration by Flask"
+      ]
+    },
+    {
+      "ID": 8450100,
+      "Entries": [
+        "Power: Ice Storm Surge Sprint"
+      ]
+    },
+    {
+      "ID": 8460200,
+      "Entries": [
+        "Power: Flame of Frenzy While Walking"
+      ]
+    },
+    {
+      "ID": 8460400,
+      "Entries": [
+        "Power: Violent Deluge of Star Rain While Walking"
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "Power: More Runes From Defeated Enemies"
+      ]
+    },
+    {
+      "ID": 8500100,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8500101,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8500102,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8530200,
+      "Entries": [
+        "Power: Periodical Giant Glintblades"
+      ]
+    },
+    {
+      "ID": 8600300,
+      "Entries": [
+        "Power: Sudden Enemy Death upon Attacks"
+      ]
+    },
+    {
+      "ID": 8610000,
+      "Entries": [
+        "Power: HP Restoration upon Successive Attacks"
+      ]
+    },
+    {
+      "ID": 8610100,
+      "Entries": [
+        "Power: FP Restoration upon Successive Attacks"
+      ]
+    },
+    {
+      "ID": 8640000,
+      "Entries": [
+        "Power: Critical Hit HP Restoration"
+      ]
+    },
+    {
+      "ID": 8640100,
+      "Entries": [
+        "Power: Critical Hit FP Restoration"
+      ]
+    },
+    {
+      "ID": 8642000,
+      "Entries": [
+        "Power: Damage Boosted after Critical Hit"
+      ]
+    },
+    {
+      "ID": 8650000,
+      "Entries": [
+        "Power: HP Recovery upon Successful Guard"
+      ]
+    },
+    {
+      "ID": 8650100,
+      "Entries": [
+        "Power: FP Recovery upon Successful Guard"
+      ]
+    },
+    {
+      "ID": 8660200,
+      "Entries": [
+        "Power: Inflict Blood Loss at Low HP"
+      ]
+    },
+    {
+      "ID": 8660300,
+      "Entries": [
+        "Power: Create Holy Ground at Low HP"
+      ]
+    },
+    {
+      "ID": 8700002,
+      "Entries": [
+        "Power: Poison Restores HP"
+      ]
+    },
+    {
+      "ID": 8710002,
+      "Entries": [
+        "Power: Blood Loss Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 8970000,
+      "Entries": [
+        "Power: Traces of Grace-Given Lord"
+      ]
+    },
+    {
+      "ID": 8970010,
+      "Entries": [
+        "Power: Integration of Intelligence"
+      ]
+    },
+    {
+      "ID": 8970020,
+      "Entries": [
+        "Power: Unifying Fate"
+      ]
+    },
+    {
+      "ID": 8970030,
+      "Entries": [
+        "Power: Demon's Plating"
+      ]
+    }
+  ]
+}

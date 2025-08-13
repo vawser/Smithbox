@@ -1,0 +1,257 @@
+{
+  "Name": "JigglerBehaviorTargetBoneRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 31400001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 43010000,
+      "Entries": [
+        "Percent rotation relative to thigh"
+      ]
+    },
+    {
+      "ID": 43010007,
+      "Entries": [
+        "Percent rotation relative to thigh"
+      ]
+    },
+    {
+      "ID": 44010000,
+      "Entries": [
+        "Percent rotation relative to thigh"
+      ]
+    },
+    {
+      "ID": 44010001,
+      "Entries": [
+        "Percent rotation relative to thigh"
+      ]
+    },
+    {
+      "ID": 37010000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 37010001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 37010002,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 37010003,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 46320000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 46320001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 46320002,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 46320003,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010002,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010003,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010004,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010005,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010006,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010007,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010008,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010009,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010010,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010011,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010012,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010013,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010014,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47010015,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 47510000,
+      "Entries": [
+        "test data"
+      ]
+    },
+    {
+      "ID": 48030000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48030001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48030002,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48030003,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48031000,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48031001,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48031002,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48031003,
+      "Entries": [
+        "percentage rotation"
+      ]
+    },
+    {
+      "ID": 48060003,
+      "Entries": [
+        "Rear armor test"
+      ]
+    },
+    {
+      "ID": 48060002,
+      "Entries": [
+        "Percent rotation relative to thigh"
+      ]
+    }
+  ]
+}

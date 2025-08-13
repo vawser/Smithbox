@@ -1,0 +1,353 @@
+{
+  "Name": "generatordbglocation_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "【NPC】Female Knight -- 【NPC】女騎士"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "【NPC】Female Knight (Ghost) -- 【NPC】女騎士（亡霊）"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "【NPC】Sorcerer -- 【NPC】魔術屋"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "【NPC】Sorcerer (Ghost) -- 【NPC】魔術屋（亡霊）"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "【NPC】Dwarf -- 【NPC】ドワーフ"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "【NPC】Dwarf -- 【NPC】ドワーフ（亡霊）"
+      ]
+    },
+    {
+      "ID": 566,
+      "Entries": [
+        "【NPC】Female Knight: White Spirit -- 【NPC】女騎士：白霊"
+      ]
+    },
+    {
+      "ID": 844,
+      "Entries": [
+        "BOSS: Double-sided warrior: Snake head -- 【BOSS】両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Sleeping in the tip of the start cave] lower-class soldier son of a dead man - one-handed axe -- 【スタート洞窟抜けた先で寝てる】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[First cabin _1F] lower-class soldier (dead) one-handed sword - small shield -- 【最初の小屋_1F】下級兵士（亡者）片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[First hut _1F] lower-class soldier (dead) one-handed axe -- 【最初の小屋_1F】下級兵士（亡者）片手斧"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[First hut 2F_ oil jar throwing] sailor (deceased) -- 【最初の小屋2F_油壷投げ】水兵（亡者）"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Main route pier _ sniper] [Lower soldier (dead)], bow -- 【メインルート桟橋_狙撃】【下級兵士（亡者）】弓"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[Main Route Pier_ Proximity] Sailor (Dead) Sword -- 【メインルート桟橋_近接】水兵（亡者）剣"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Surprise attack from the roof of the hut on the left side of the lamp stand 1] sailor (dead) one-handed sword -- 【灯火台１の左側の小屋_屋根上から奇襲】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "[Dark room near the light stand] the hideaway in the darkness -- 【灯火台１近くの暗い部屋】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Hut on the left side of the lamp stand 1 and enter] lower-level soldier (deceased): one-handed sword: shield -- 【灯火台１の左側の小屋_入ると奇襲】下級兵士（亡者）：片手剣：盾"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Hut on the left side of the lamp stand 1 and enter] lower-level soldier (deceased): one-handed sword: shield -- 【灯火台１の左側の小屋_入ると奇襲】下級兵士（亡者）：片手剣：盾"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Building on the left side of the top layer_stair ambush] 【Sailor(Dead)]Song Sword -- 【最上層左側の建物_階段待ち伏せ】【水兵（亡者）】曲剣"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[On the central stairs _ oil bottle throwing] sailor (dead) one-handed sword -- 【中央階段上_油瓶投げ】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "[Right on the central stairs] sailor (dead) bent sword x2 -- 【中央階段上の右】水兵（亡者）曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[Square to climb the central stairs _ in front of the door that does not open] sailor (deceased) -- 【中央階段を登った先の広場_開かない扉前】水兵（亡者）：曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Inside the building _ hut near the light stand] wild dog -- 【灯火台２近くの建物_小屋の中】野犬"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "【Well Plaza_Well-front】Wild Dog -- 【井戸広場_井戸前】野犬"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "【Well Plaza_Insect Key】Sailor (Dead) One-handed Sword -- 【井戸広場_虫鍵前】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[Bar building 1F_ sleeping at the desk] sailor (deceased) -- 【バーの建物１F_机で寝てる1】水兵（亡者）：曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 3620,
+      "Entries": [
+        "[Bar building 1F_ sleeping at the desk] sailor (deceased) -- 【バーの建物１F_机で寝てる1】水兵（亡者）：曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 3630,
+      "Entries": [
+        "[Bar building 1F_ sleeping at the desk] sailor (deceased) -- 【バーの建物１F_机で寝てる1】水兵（亡者）：曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Surprise attack from the back of the door and stairs 2F_ the building of the bar] sailor (deceased) curved sword -- 【バーの建物２F_扉や階段の裏から奇襲】水兵（亡者）曲剣"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[Sniper 2F_ bar building] sailor (dead) bow -- 【バーの建物２F_狙撃】水兵（亡者）弓"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[Sniping up and down 2F_ building of the bar] sailor (dead) bow -- 【バーの建物２F_上下を狙撃】水兵（亡者）弓"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Upper layer passage 1] the hideaway in the darkness -- 【最上層通路1】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[Upper layer passage_2] the hideaway in the darkness -- 【最上層通路_2】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[Upper layer passage_3] the hideaway in the darkness -- 【最上層通路_3】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Wall destruction room 1F back] hide away in the darkness -- 【壁破壊部屋1F奥】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[Wall destruction room 1F back _ door reaction wall destruction] hide away in the darkness -- 【壁破壊部屋1F奥_扉反応で壁破壊】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "[Wall destruction room 2F_ fall surprise] hide away in the darkness -- 【壁破壊部屋２F_落下奇襲】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        "[Break the wall 2F_ wall destruction room] hide away in the darkness -- 【壁破壊部屋２F_壁を壊させる】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[House to lever] sailor (dead) one-handed sword -- 【レバーへの家1F】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 4540,
+      "Entries": [
+        "【Home to lever】Sailor (dead) song sword x2 -- 【レバーへの家上】水兵（亡者）曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 4550,
+      "Entries": [
+        "【Boss Ship】 NPC Red Spirit -- 【ボス船】NPC赤霊"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[Hut 1 of the destination that fell from the ship lever] the hideaway in the darkness -- 【船レバーから落ちた先の小屋1】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[Hut 2 of the destination that fell from the ship lever] hide away in the darkness -- 【船レバーから落ちた先の小屋2】闇に隠れし者"
+      ]
+    },
+    {
+      "ID": 4720,
+      "Entries": [
+        "【3-story building 3F】Sailor (deceased) Bentays x2 -- 【３階建ての建物3F】水兵（亡者）曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "【Drinking House 1 near the pier】Sailor (dead) one-handed sword -- 【船着き場近くの飲んだくれハウス1】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 4810,
+      "Entries": [
+        "【Drinking House 2 near the pier】 Sailor (dead) one-handed sword -- 【船着き場近くの飲んだくれハウス2】水兵（亡者）片手剣"
+      ]
+    },
+    {
+      "ID": 4850,
+      "Entries": [
+        "[The back of the wall of the house where the boat arrives] -- 【船着き場近くの飲んだくれハウス_壁の奥】石守"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Room without roof] hideout in the darkness - run away to the room with a roof when the light is turned on with the insect key -- 【屋根なし部屋】闇に隠れし者：虫鍵で明かりを点けると屋根あり部屋へ逃げる"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "【Boss ship front】The one lurking in the darkness: in front of the pier toward the boss ship -- 【ボス船前】闇に潜むもの：ボス船に向かう桟橋の手前"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "[Boss Mae Pier_ Eldo] Sailor: Dead: One-handed sword -- 【ボス前桟橋_エルード】水兵：亡者：片手剣"
+      ]
+    },
+    {
+      "ID": 5041,
+      "Entries": [
+        "[Boss Mae Pier_ Eldo] Sailor: Dead: One-handed sword -- 【ボス前桟橋_エルード】水兵：亡者：片手剣"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "[Boss mae water field_ dive _start when the water enters] sailor: dead: curved sword x2 -- 【ボス前水場_潜り_水入ったら起動】水兵：亡者：曲剣ｘ2"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[Boss ship] sailor: Dead: Bow -- 【ボス船】水兵：亡者：弓"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[Boss ship] sailor: Dead: Bow -- 【ボス船】水兵：亡者：弓"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "【Boss Ship】Sailor: Dead: Curved Sword -- 【ボス船】水兵：亡者：曲剣"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "【Boss Ship】Sailor: Dead: One-handed sword -- 【ボス船】水兵：亡者：片手剣"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "[Boss ship] shadow of the deformed: 2nd week boss attendant 01 -- 【ボス船】異形の影：２週目ボスお供01"
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        "[Boss ship] shadow of the deformed: 2nd week boss attendant 02 -- 【ボス船】異形の影：２週目ボスお供02"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_BGMStatus",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "In Combat"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Heat Up 1"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Heat Up 2"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Heat Up 3"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Heat Up 4"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Heat Up 5"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

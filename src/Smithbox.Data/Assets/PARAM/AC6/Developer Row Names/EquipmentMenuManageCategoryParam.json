@@ -1,0 +1,665 @@
+{
+  "Name": "EquipmentMenuManageCategoryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Not set -- 未設定"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "melee weapon -- 近接武器"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Hand Weapons - Live Bullets -- 手武器 - 実弾系"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Hand Weapons - Missile Type -- 手武器 - ミサイル系"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Hand weapons - EN series -- 手武器 - EN系"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Hand Weapons - Special Type -- 手武器 - 特殊系"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "shield -- シールド"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Shoulder weapon - missile type -- 肩武器 - ミサイル系"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Shoulder weapon - live ammunition type -- 肩武器 - 実弾系"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Shoulder weapon - EN series -- 肩武器 - EN系"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Shoulder Weapon - Special Type -- 肩武器 - 特殊系"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "extension -- エクステンション"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "head parts -- 頭部パーツ"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "core parts -- コアパーツ"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "arm parts -- 腕部パーツ"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "weapon arm -- 武器腕"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "weapon shoulder -- 武器肩"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "melee weapon arm -- 近接武器腕"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Leg parts - bipod -- 脚部パーツ - 二脚"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Leg parts - Quadruple legs -- 脚部パーツ - 四脚"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "F.C.S. -- FCS"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "generator -- ジェネレータ"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "booster -- ブースタ"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Leg parts - tank -- 脚部パーツ - タンク"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Leg parts - reverse joints -- 脚部パーツ - 逆関節"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Hand \"Linear Rifle\" -- 手「リニアライフル」"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Hand \"Assault Rifle\" -- 手「アサルトライフル」"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Hand “Burst Assault Rifle” -- 手「バーストアサルトライフル」"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Hand \"Burst Rifle\" -- 手「バーストライフル」"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Hand \"machine gun\" -- 手「マシンガン」"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Hand \"Burst Machine Gun\" -- 手「バーストマシンガン」"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Hand “Gatling Gun” -- 手「ガトリングガン」"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "hand \"shotgun\" -- 手「ショットガン」"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Hand \"Needle Gun\" -- 手「ニードルガン」"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "hand \"hand gun\" -- 手「ハンドガン」"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Hand “Burst Handgun” -- 手「バーストハンドガン」"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "hand \"stun gun\" -- 手「スタンガン」"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Hand \"Grenade\" -- 手「グレネード」"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Hand \"bazooka\" -- 手「バズーカ」"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Hand “Explosive Bazooka” -- 手「炸裂バズーカ」"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Hand \"Hand Missile\" -- 手「ハンドミサイル」"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Hand “Spreading Hand Missile” -- 手「拡散ハンドミサイル」"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Hand “Siege Hand Missile” -- 手「包囲ハンドミサイル」"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Hand “Flame Thrower” -- 手「火炎放射」"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Hand \"Jamming Bomb Launcher\" -- 手「ジャミングボムランチャー」"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Hand \"Napalm launcher\" -- 手「ナパームランチャー」"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Hand \"Stunned Launcher\" -- 手「スタンネッドランチャー」"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Hand \"Pulse Gun\" -- 手「パルスガン」"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Hand \"laser rifle\" -- 手「レーザーライフル」"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Hand \"laser handgun\" -- 手「レーザーハンドガン」"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Hand “Laser Shotgun A” -- 手「レーザーショットガンA」"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Hand “Laser Shotgun B” -- 手「レーザーショットガンB」"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Hand \"Plasma Rifle\" -- 手「プラズマライフル」"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Hand “Coral Shooter (1st stage)” -- 手「コーラルシューター（1段）」"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Hand \"Coral Shooter\" -- 手「コーラルシューター」"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Hand \"Multi Energy Rifle\" -- 手「マルチエナジーライフル」"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Shoulder \"Plasma Missile\" -- 肩「プラズマミサイル」"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Shoulder \"Missile\" -- 肩「ミサイル」"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Shoulder \"Dual Missile\" -- 肩「デュアルミサイル」"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Shoulder \"Active Homing Missile\" -- 肩「アクティブホーミングミサイル」"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Shoulder \"splitting missile\" -- 肩「分裂ミサイル」"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Shoulder \"Coral Missile\" -- 肩「コーラルミサイル」"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Shoulder \"Container Missile\" -- 肩「コンテナミサイル」"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Shoulder \"Cluster Missile\" -- 肩「クラスターミサイル」"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Shoulder \"Vertical Missile\" -- 肩「垂直ミサイル」"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Shoulder \"Needle Missile\" -- 肩「ニードルミサイル」"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Shoulder \"Explosive Rope Missile\" -- 肩「爆導索ミサイル」"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Shoulder \"Siege Missile\" -- 肩「包囲ミサイル」"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Shoulder \"Grenade Cannon\" -- 肩「グレネードキャノン」"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Shoulder “Twin Grenade Cannon” -- 肩「連装グレネードキャノン」"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Shoulder \"Spread Cannon\" -- 肩「スプレッドキャノン」"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Shoulder \"Stun Needle Cannon\" -- 肩「スタンニードルキャノン」"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Shoulder \"Pulse Cannon\" -- 肩「パルスキャノン」"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Shoulder \"Laser Cannon\" -- 肩「レーザーキャノン」"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Shoulder \"Plasma Cannon\" -- 肩「プラズマキャノン」"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Shoulder \"Diffuse Laser Cannon\" -- 肩「拡散レーザーキャノン」"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Shoulder \"Light Wave Cannon\" -- 肩「光波キャノン」"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Shoulder \"Shield Rocket Cannon\" -- 肩「シールドロケットキャノン」"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Shoulder “Following Orbit Live Bullet” -- 肩「追従式オービット実弾」"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Shoulder “Following Orbit EN” -- 肩「追従式オービットEN」"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Shoulder “Placeable Orbit” -- 肩「配置型オービット」"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "Shoulder “Tracking Orbit” -- 肩「追尾型オービット」"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Left shoulder \"Pulse Shield\" -- 左肩「パルスシールド」"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Left shoulder \"pulse buckler\" -- 左肩「パルスバックラー」"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "Left shoulder \"Pulse Scutum\" -- 左肩「パルススクトゥム」"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "Left shoulder \"Coral Shield\" -- 左肩「コーラルシールド」"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Left hand \"Pulse Blade\" -- 左手「パルスブレード」"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "Left hand \"Laser Blade\" -- 左手「レーザーブレード」"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "Left hand \"Light Wave Blade\" -- 左手「光波ブレード」"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "Left hand \"Laser Naginata\" -- 左手「レーザーナギナタ」"
+      ]
+    },
+    {
+      "ID": 1540,
+      "Entries": [
+        "Left hand \"Laser Lance\" -- 左手「レーザーランス」"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "Left hand \"diffusion bullet\" -- 左手「拡散弾」"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "Left hand \"Chainsaw\" -- 左手「チェーンソー」"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "Left hand \"electromagnetic baton\" -- 左手「電磁警棒」"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "Left hand \"Pile Bunker\" -- 左手「パイルバンカー」"
+      ]
+    },
+    {
+      "ID": 1590,
+      "Entries": [
+        "Left hand \"Coral Blade\" -- 左手「コーラルブレード」"
+      ]
+    },
+    {
+      "ID": 1591,
+      "Entries": [
+        "Left hand \"Coral Blade (Light Wave)\" -- 左手「コーラルブレード(光波)」"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Left hand \"hammer\" -- 左手「ハンマー」"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "Left hand \"laser dagger\" -- 左手「レーザーダガー」"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Assault Armor (Limiter) -- アサルトアーマー（リミッター）"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Primal Armor (Limiter) -- プライマルアーマー（リミッター）"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Primal pillbox (limiter) -- プライマルトーチカ（リミッター）"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Emergency PA (limiter) -- 緊急PA（リミッター）"
+      ]
+    }
+  ]
+}

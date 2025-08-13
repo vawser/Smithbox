@@ -1,0 +1,497 @@
+{
+  "Name": "BonfireWarpParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cemetery of Ash - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Cemetery of Ash - Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Cemetery of Ash - Overgrown Sanctum"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Cemetery of Ash - Untended Graves"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Cemetery of Ash - Champion Gundyr"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "High Wall of Lothric - High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "High Wall of Lothric - High Wall of Lothric - Initial Warp"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "High Wall of Lothric - Knight's Rest"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "High Wall of Lothric - High Wall Jail"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "High Wall of Lothric - Abandoned Storeroom"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "High Wall of Lothric - Consumed King's Garden"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "High Wall of Lothric - High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "High Wall of Lothric - High Wall of Lothric"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Lothric Castle - Lothric Castle"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Lothric Castle - Grand Foyer"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Lothric Castle - Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Grand Archives - Grand Archives"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Grand Archives - Throne Ascent"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Undead Settlement - Foot of the High Wall"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Undead Settlement - Tower Basement"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Undead Settlement - Cliff Underside"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Undead Settlement - Dilapidated Bridge"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Undead Settlement - Pit of Hollows"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Archdragon Peak - Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Archdragon Peak - Dragon-Kin Mausoleum"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Archdragon Peak - Great Belfry"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Archdragon Peak - Nameless King"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Road of Sacrifices - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Road of Sacrifices - Halfway Fortress"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Road of Sacrifices - Crucifixion Woods"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Road of Sacrifices - Crystal Sage"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Farron Keep - Farron Keep"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Farron Keep - Unused <Keep Ruins>"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Farron Keep - Farron Keep Perimeter"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Farron Keep - Old Wolf of Farron"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Farron Keep - Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Cathedral of the Deep - Scribe's Retreat"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Cathedral of the Deep - Cleansing Chapel"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Cathedral of the Deep - Secluded Cloister"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Cathedral of the Deep - Rosaria's Bed Chamber"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Central Irithyll"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Church of Yorshka"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Distant Manor"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Lower Anor Londo"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Water Reserve"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Anor Londo"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Prison Tower"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Chamber of the Princess"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Catacombs of Carthus - Catacombs of Carthus"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Catacombs of Carthus - High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Catacombs of Carthus - Abandoned Tomb"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Smouldering Lake - Old King's Antechamber"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Smouldering Lake - Smouldering Lake <Demon Ruins>"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Smouldering Lake - Old Demon King"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Irithyll Dungeon - Irithyll Dungeon"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Profaned Capital - Profaned Capital"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Profaned Capital - Swamp of Sin"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Flameless Shrine - Flameless Shrine"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Flameless Shrine - Kiln of the First Flame"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Flameless Shrine - The First Flame"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Ariandel - Snowfield"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Ariandel - Rope Bridge Cave"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Ariandel - Corvian Settlement"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Ariandel - Snowy Mountain Pass"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Ariandel - Ariandel Chapel"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Ariandel - Sister Friede"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Ariandel - Depths of the Painting"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Ariandel - Champion's Gravetender"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Dreg Heap - The Dreg Heap"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Dreg Heap - Earthen Peak Ruins"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Dreg Heap - Within the Earthen Peak Ruins"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Dreg Heap - The Demon Prince"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "The Ringed City - Mausoleum Lookout"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "The Ringed City - Ringed Inner Wall"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "The Ringed City - Ringed City Streets"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "The Ringed City - Shared Grave"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "The Ringed City - Church of Filianore"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "The Ringed City - Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "The Ringed City - Filianore's Rest"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "The Ringed City - Slave Knight Gael"
+      ]
+    }
+  ]
+}

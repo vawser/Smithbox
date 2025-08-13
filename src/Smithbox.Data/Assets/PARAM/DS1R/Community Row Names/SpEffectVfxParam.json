@@ -1,0 +1,1392 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Flame",
+        "Flame"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "poison"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Hill"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Corrosion"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Plague"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bleeding"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Covert"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Gravity users"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Abnormal condition recovery [poison]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Recovery from abnormal condition [Plague]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Abnormal condition recovery [bleeding]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Abnormal condition recovery [universal]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Soul Steel"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Zoom"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "warp"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Demon's Soul"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Black Ghost Dissipation"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Strong Ghost"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "White Hope"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Black Hope"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Black ghosting"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Resuscitation"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Magical use prohibited"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Miracle motion extension"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Whetstone"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Asphyxial Resuscitation"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon Enhancement"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Defense Shield"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "thread covered"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[System] Ghost Param Change"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Bond"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Fly"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Fire Phantom _ Stage 1"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Fire Phantom _ Stage 2"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Fire Phantom _ Stage 3"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Fire Phantom _ Stage 4"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Hallucination"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Soul Coin"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Strong Defense Shield"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Fire Resistant Shield"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "HP recovery status"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Forced ghosting first stage"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Forced ghosting 2nd stage"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Forced Ghost Stage 3"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "pheromones"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Cat landing"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Pinch Attack Up"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Pinch defense up"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Regenerate"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Torchlight"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weak Regenerate"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Secret Weakness"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Tips Blood Character"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Hill Feet"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Yellow Cloth"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "point light source"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Blood character evaluation"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon Enhancement [Medium]"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Weapon Enhancement [Large]"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Fire Enhancement"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Flame Enhancement [Large]"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Magic Enhancement"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Chimera Enhancement"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Item Drop Compensation"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "MP regenerate"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Weak MP Regenerate"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Resurrection When Dead"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Poison Resistance UP"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Magic Power Up"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic Defense UP"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Bleeding Resistance UP"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Disease resistance UP"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Stamina Recovery UP"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Seoul acquisition UP"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Fire Resistance UP"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "King's Shield 1st Stage Left Foot"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "King's Shield 2nd Stage Left Foot"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "King's Shield 3 Level Left Foot"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "King's Shield Level 1 Right Foot"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "King's Shield 2nd Stage Right Foot"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "King's Shield 3rd Right Foot"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Referee Belly Bleeding"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Mimicry"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Makeover"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Gasman"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Detection"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Awaiting cooperation"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "cooperation"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Cooperation transmission"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Gravity"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Evil Eye"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Release status [waiting for cooperation]"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Effect Lv1"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Effect Lv2"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Effect Lv3"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Evil Eye Lv1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Evil Eye Lv2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "counter"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Eggplant standby"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "egg-planting"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Egg head standby"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Egg Head"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Ultralight Move"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Curse"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Petrification"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Curse Release"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Humanity Damage"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Damage animation change_SA only"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Damage animation change_Added"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Underwater behavior"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "weapon head"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "weapon barrel"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Weapon Hand"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Weapon Leg"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Sleep"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "mimic_mimicry"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Mimic _ Mimic Sleep"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "mimic_normal"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Mimic_Normal Sleep"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "fascination"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Get Blood Character"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Change"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Mimic_Normal Sleep"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "crystallization"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Resonance Lv0"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Resonance Lv1"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Resonance Lv2"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Resonance Lv3"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Resonance Lv4"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Specify action ID"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Enemy_Immortal"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Enemy_Suspension"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Holy Attributes"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Whole body whetstone"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Light Magic"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Request for Rescue"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "White Rescue"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Black Rescue"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Lightning Enhancement"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Enhance Poison"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Strengthening plague"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Unable to use Est"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "SA enhancement"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Endurance reduction disabled"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Enhancer"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Guard Enhancement"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Ring Revived When Dead"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Ring Resurrected When Cursed"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Warp B"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Warp C"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Warp D"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Warp E"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Warp A"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Abandonment of vow"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Full Body Makeover"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Precision reinforcement"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Resonance enhancement"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Retribution"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Causal Reward Explosion"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Sheath Invincible 1"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Sheath Invincible 2"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Sheath Invincible 3"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "Humanity Revival"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Soul Coin (Immortal)"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Soul Coin (Beast)"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Ally Enhancement Magic"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Curse Effect Lv1"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curse Effect Lv2"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Curse Effect Lv3"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Curse Effect Lv4"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "SOS visible"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Invisible Weapon"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "Nit effect"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "Flame Kick"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Grim Reaper"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Hope to Summon the Bandit of the Forest"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Forest Bandit Territory"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Request for Summoning the Brothers"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Royal Brother Territory"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Egg head_Second stage"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Life extension"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Magic Usage Up"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Dragon Newt Sign"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "Prize Money Sign"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "Counter Up"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Egg Dashi"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "HP drain"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Power of Madness"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "For magic ban effect"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Dragon Roar"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Magic Usage Down"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Guard Enhancement [Large]"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[DLC] Dark Enhancement"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Arena 1-on-1 [Small] Within Territory"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Arena 2 to 2 [Small] Territory"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Arena Arena Battle Royal [Small] Territory"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Arena 1: 1 [Small] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Arena 1 to 1 [Small] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Arena 2 to 2 [Small] Summon A1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Arena 2: 2 [Small] Summon A2"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Arena 2 to 2 [Small] Hope to Summon B1"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Arena 2: 2 [Small] Summoning Request B2"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request C"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request D"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Arena 1-on-1 [Large] Territory"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena 2 to 2 [Large] Territory"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Arena Battle Royale [Large] Inside Territory"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Arena 1: 1 [Large] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Arena 1: 1 [Large] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Arena 2 to 2 [Large] Summoning Request A1"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Arena 2 to 2 [Large] Summoning Request A2"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Arena 2 to 2 [Large] Summoning Request B1"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Arena 2-2 [Large] Summoning Request B2"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request C"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request D"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Do not use items in the arena"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Arena are dead"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Provisional first place in the arena"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Arena NoDead"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "1st place in the arena"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "Black Dragon Ring"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "Arena 10 or more wins"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "Arena 30 or more wins"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "50+ Arena"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Arena 100 or more wins"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "maximum number (selection prohibited)"
+      ]
+    }
+  ]
+}

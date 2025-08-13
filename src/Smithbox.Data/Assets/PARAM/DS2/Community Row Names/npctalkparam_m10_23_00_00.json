@@ -1,0 +1,863 @@
+{
+  "Name": "npctalkparam_m10_23_00_00",
+  "Entries": [
+    {
+      "ID": 74200000,
+      "Entries": [
+        "Talkto One"
+      ]
+    },
+    {
+      "ID": 74200010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200100,
+      "Entries": [
+        "Talk to 2"
+      ]
+    },
+    {
+      "ID": 74200110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200150,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200200,
+      "Entries": [
+        "Talk to 3"
+      ]
+    },
+    {
+      "ID": 74200210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200300,
+      "Entries": [
+        "Talkto 4"
+      ]
+    },
+    {
+      "ID": 74200310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74200320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74205000,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 74205010,
+      "Entries": [
+        "Resume dissinginating"
+      ]
+    },
+    {
+      "ID": 74205020,
+      "Entries": [
+        "Killing players"
+      ]
+    },
+    {
+      "ID": 74205030,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74205040,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74205050,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74205060,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 74205070,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 74206000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 74207000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 74207010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "Talkto OneStatus below or equal to"
+      ]
+    },
+    {
+      "ID": 77000010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000100,
+      "Entries": [
+        "Talk to 2Status below or equal to"
+      ]
+    },
+    {
+      "ID": 77000110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000200,
+      "Entries": [
+        "Talkto OneStatus is greater than or equal to"
+      ]
+    },
+    {
+      "ID": 77000210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000400,
+      "Entries": [
+        "Continuous"
+      ]
+    },
+    {
+      "ID": 77000500,
+      "Entries": [
+        "After"
+      ]
+    },
+    {
+      "ID": 77000600,
+      "Entries": [
+        "Menu \"Go Away\"I took advantage of"
+      ]
+    },
+    {
+      "ID": 77000610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000700,
+      "Entries": [
+        "Menu \"Go Away\"I didn't use it."
+      ]
+    },
+    {
+      "ID": 77000800,
+      "Entries": [
+        "I suddenly left."
+      ]
+    },
+    {
+      "ID": 77000900,
+      "Entries": [
+        "Menu \"Talking\" Topic 1"
+      ]
+    },
+    {
+      "ID": 77000910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77000930,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001000,
+      "Entries": [
+        "Menu \"Talking\" Topic 2"
+      ]
+    },
+    {
+      "ID": 77001010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001100,
+      "Entries": [
+        "Menu \"Talking\" Topic 3"
+      ]
+    },
+    {
+      "ID": 77001110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001200,
+      "Entries": [
+        "Menu \"Talking\" Topic 4"
+      ]
+    },
+    {
+      "ID": 77001210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77001230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77005000,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 77005010,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 77005020,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 77005030,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77005040,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77005050,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77005060,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 77005070,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 77006000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 77007000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 77007010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "First time, when you don't have a proof of good will(Repeat)"
+      ]
+    },
+    {
+      "ID": 78300010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 78300100,
+      "Entries": [
+        "First look"
+      ]
+    },
+    {
+      "ID": 78300110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300200,
+      "Entries": [
+        "After the second"
+      ]
+    },
+    {
+      "ID": 78300210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300300,
+      "Entries": [
+        "YES1"
+      ]
+    },
+    {
+      "ID": 78300310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 78300400,
+      "Entries": [
+        "YES2"
+      ]
+    },
+    {
+      "ID": 78300410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300500,
+      "Entries": [
+        "YES3."
+      ]
+    },
+    {
+      "ID": 78300510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300540,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300550,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300600,
+      "Entries": [
+        "No."
+      ]
+    },
+    {
+      "ID": 78300610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300700,
+      "Entries": [
+        "No or later"
+      ]
+    },
+    {
+      "ID": 78300800,
+      "Entries": [
+        "Pledge sworn"
+      ]
+    },
+    {
+      "ID": 78300810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300820,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300840,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300850,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78300900,
+      "Entries": [
+        "Talk to me after the pledge."
+      ]
+    },
+    {
+      "ID": 78300910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301000,
+      "Entries": [
+        "Menu Conversation_Part 1 (After Pledge)"
+      ]
+    },
+    {
+      "ID": 78301010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301100,
+      "Entries": [
+        "Menu Conversation_Part 2 (After Pledge)"
+      ]
+    },
+    {
+      "ID": 78301110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301200,
+      "Entries": [
+        "Pledge destroyed"
+      ]
+    },
+    {
+      "ID": 78301210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301300,
+      "Entries": [
+        "Since"
+      ]
+    },
+    {
+      "ID": 78301310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301400,
+      "Entries": [
+        "Pledge (since the second time)"
+      ]
+    },
+    {
+      "ID": 78301410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 78301500,
+      "Entries": [
+        "Leaving (did something)"
+      ]
+    },
+    {
+      "ID": 78301600,
+      "Entries": [
+        "Leaving (did nothing)"
+      ]
+    },
+    {
+      "ID": 78301700,
+      "Entries": [
+        "I suddenly left."
+      ]
+    },
+    {
+      "ID": 78301800,
+      "Entries": [
+        "Item transfer"
+      ]
+    },
+    {
+      "ID": 78301810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301900,
+      "Entries": [
+        "pledge rank up one"
+      ]
+    },
+    {
+      "ID": 78301910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78301920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302000,
+      "Entries": [
+        "Pledge Rank Up 2"
+      ]
+    },
+    {
+      "ID": 78302010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302100,
+      "Entries": [
+        "Pledge Rank Up 3 (MAX)"
+      ]
+    },
+    {
+      "ID": 78302110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78302200,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 78302210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 78309000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 78309100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 78309200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 78309300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 78309400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78309410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78309420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78309500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 78309600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

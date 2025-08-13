@@ -1,0 +1,119 @@
+{
+  "Name": "EquipParamFcs",
+  "Entries": [
+    {
+      "ID": 70000000,
+      "Entries": [
+        "FCS-G1/P01"
+      ]
+    },
+    {
+      "ID": 70010000,
+      "Entries": [
+        "FCS-G2/P05"
+      ]
+    },
+    {
+      "ID": 70010100,
+      "Entries": [
+        "FCS-G2/P10SLT"
+      ]
+    },
+    {
+      "ID": 70010200,
+      "Entries": [
+        "FCS-G2/P12SML"
+      ]
+    },
+    {
+      "ID": 70010300,
+      "Entries": [
+        "FC-006 ABBOT"
+      ]
+    },
+    {
+      "ID": 70010400,
+      "Entries": [
+        "FC-008 TALBOT"
+      ]
+    },
+    {
+      "ID": 70020000,
+      "Entries": [
+        "VE-21A"
+      ]
+    },
+    {
+      "ID": 70020100,
+      "Entries": [
+        "VE-21B"
+      ]
+    },
+    {
+      "ID": 70030000,
+      "Entries": [
+        "IA-C01F: OCELLUS"
+      ]
+    },
+    {
+      "ID": 70030100,
+      "Entries": [
+        "IB-C03F: WLT 001"
+      ]
+    },
+    {
+      "ID": 70900000,
+      "Entries": [
+        "FCS-G1/P01 (Escape Mission)"
+      ]
+    },
+    {
+      "ID": 70900100,
+      "Entries": [
+        "FCS-G1/P01 [Inherited]"
+      ]
+    },
+    {
+      "ID": 70900200,
+      "Entries": [
+        "FCS-G1/P01 [Inherited]"
+      ]
+    },
+    {
+      "ID": 70900300,
+      "Entries": [
+        "FC-006 ABBOT [Inherited]"
+      ]
+    },
+    {
+      "ID": 70900400,
+      "Entries": [
+        "FCS-G2/P05 [Inherited]"
+      ]
+    },
+    {
+      "ID": 70900500,
+      "Entries": [
+        "FCS-G2/P12SML [Inherited]"
+      ]
+    },
+    {
+      "ID": 70900600,
+      "Entries": [
+        "FCS-G2/P12SML [Inherited]"
+      ]
+    },
+    {
+      "ID": 70901000,
+      "Entries": [
+        "FCS-G1/P01 [Inherited from Escape Mission]"
+      ]
+    },
+    {
+      "ID": 70901100,
+      "Entries": [
+        "FCS-G1/P01 [Inherited]"
+      ]
+    }
+  ]
+}

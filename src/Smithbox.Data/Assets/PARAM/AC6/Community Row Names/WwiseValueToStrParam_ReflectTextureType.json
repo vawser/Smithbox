@@ -1,0 +1,36 @@
+{
+  "Name": "WwiseValueToStrParam_ReflectTextureType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "MoonSurface"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Concrete"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Iron"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Water"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Snow/Dirt",
+        "Snow/Dirt"
+      ]
+    }
+  ]
+}

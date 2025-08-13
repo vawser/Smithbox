@@ -1,0 +1,149 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: none"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: hard stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: sharp stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Minagi stone"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Nibi Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: blade stone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: spider thread steel wire"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Mercury stone"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon stone"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: sucking stone"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: medulla stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11: Moonstone"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Moonstone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Faint Stone"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic shield stone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16: DS"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Max HP"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Maximum MP"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Defense power"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "poison"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "epidemic"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "bleeding"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "growth consumption soul"
+      ]
+    }
+  ]
+}

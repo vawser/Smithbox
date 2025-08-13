@@ -1,0 +1,3113 @@
+{
+  "Name": "EnemyEquipWeaponParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 100201,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 306001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 306100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 306101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 903000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 906100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 906200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 910100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 911100,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 911101,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 911200,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 911201,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 911300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 912000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 912001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 914000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 914001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 915000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 916000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 917000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 933300,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 933400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10000001,
+      "Entries": [
+        "Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "Forest Grotesque"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Kobold"
+      ]
+    },
+    {
+      "ID": 10100001,
+      "Entries": [
+        "Kobold"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10201000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10202000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10203000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10204000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10205000,
+      "Entries": [
+        "Hollow Soldier"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10211001,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10211002,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10212002,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10213000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10214000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10215000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10300100,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10301000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10301100,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10302000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10302100,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10303000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10303100,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10304000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10304100,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10305000,
+      "Entries": [
+        "Hollow Infantry"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "Infantry"
+      ]
+    },
+    {
+      "ID": 10311000,
+      "Entries": [
+        "Infantry"
+      ]
+    },
+    {
+      "ID": 10312000,
+      "Entries": [
+        "Infantry"
+      ]
+    },
+    {
+      "ID": 10313000,
+      "Entries": [
+        "Infantry"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "Amana Shrine Maiden"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10601000,
+      "Entries": [
+        "Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10602000,
+      "Entries": [
+        "Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10603000,
+      "Entries": [
+        "Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10620000,
+      "Entries": [
+        "Dark Priestess"
+      ]
+    },
+    {
+      "ID": 10621000,
+      "Entries": [
+        "Dark Priestess"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 10700100,
+      "Entries": [
+        "Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10801000,
+      "Entries": [
+        "Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 10802000,
+      "Entries": [
+        "Hollow Rogue"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11302000,
+      "Entries": [
+        "Varangian Sailor"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500200,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500300,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11500400,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11501000,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11501100,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11501200,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11501300,
+      "Entries": [
+        "Undead Traveler"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "Stone Soldier"
+      ]
+    },
+    {
+      "ID": 11701000,
+      "Entries": [
+        "Stone Soldier"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 11810000,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 11811000,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 11820000,
+      "Entries": [
+        "Black Hollow Mage"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "Lion Clan Mage"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 12100100,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 12101001,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 12102002,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 12103003,
+      "Entries": [
+        "Giant"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12201000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12202000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12203000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 12301000,
+      "Entries": [
+        "Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "Manikin"
+      ]
+    },
+    {
+      "ID": 12401000,
+      "Entries": [
+        "Manikin"
+      ]
+    },
+    {
+      "ID": 12402000,
+      "Entries": [
+        "Manikin"
+      ]
+    },
+    {
+      "ID": 12403000,
+      "Entries": [
+        "Manikin"
+      ]
+    },
+    {
+      "ID": 12410000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12411000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12412000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12413000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12500100,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12500200,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12500300,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12500400,
+      "Entries": [
+        "Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 12701000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 12701100,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 12702000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 12900000,
+      "Entries": [
+        "Forest Spirit"
+      ]
+    },
+    {
+      "ID": 12901000,
+      "Entries": [
+        "Forest Spirit"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 13101000,
+      "Entries": [
+        "Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 13102000,
+      "Entries": [
+        "Lindelt Cleric"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13201000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13202000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13203000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13209000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13300000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13301000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13302000,
+      "Entries": [
+        "Skeleton"
+      ]
+    },
+    {
+      "ID": 13400000,
+      "Entries": [
+        "Gyrm"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13501000,
+      "Entries": [
+        "Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13502000,
+      "Entries": [
+        "Gyrm Warrior"
+      ]
+    },
+    {
+      "ID": 13600000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13601000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13602000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 13701000,
+      "Entries": [
+        "Prowling Magus"
+      ]
+    },
+    {
+      "ID": 13701001,
+      "Entries": [
+        "Prowling Magus"
+      ]
+    },
+    {
+      "ID": 13800000,
+      "Entries": [
+        "Torturer"
+      ]
+    },
+    {
+      "ID": 13801000,
+      "Entries": [
+        "Torturer"
+      ]
+    },
+    {
+      "ID": 13900000,
+      "Entries": [
+        "Artificial Undead"
+      ]
+    },
+    {
+      "ID": 13901000,
+      "Entries": [
+        "Artificial Undead"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 14100000,
+      "Entries": [
+        "Undead Aberration"
+      ]
+    },
+    {
+      "ID": 14600000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 14601000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 14602000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "Undead with Head Bandage"
+      ]
+    },
+    {
+      "ID": 14800000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14801000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14802000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14803000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14804000,
+      "Entries": [
+        "Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14900000,
+      "Entries": [
+        "Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Stone Knight"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15110000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15111000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15120000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15121000,
+      "Entries": [
+        "Ironclad Soldier"
+      ]
+    },
+    {
+      "ID": 15200000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 15201000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 15202000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 15203000,
+      "Entries": [
+        "Royal Soldier"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "Syan Knight"
+      ]
+    },
+    {
+      "ID": 15301000,
+      "Entries": [
+        "Syan Knight"
+      ]
+    },
+    {
+      "ID": 15400000,
+      "Entries": [
+        "Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15401000,
+      "Entries": [
+        "Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15402000,
+      "Entries": [
+        "Skeleton Lord"
+      ]
+    },
+    {
+      "ID": 15500000,
+      "Entries": [
+        "Amana Aberration"
+      ]
+    },
+    {
+      "ID": 15600000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15601000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15602000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15603000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 15700000,
+      "Entries": [
+        "Dual-wielding Skeleton"
+      ]
+    },
+    {
+      "ID": 15701000,
+      "Entries": [
+        "Dual-wielding Skeleton"
+      ]
+    },
+    {
+      "ID": 15702000,
+      "Entries": [
+        "Dual-wielding Skeleton"
+      ]
+    },
+    {
+      "ID": 15703000,
+      "Entries": [
+        "Dual-wielding Skeleton"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "Small Boar"
+      ]
+    },
+    {
+      "ID": 20110000,
+      "Entries": [
+        "Small Boar"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "Undead Boar"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300001,
+      "Entries": [
+        "Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "Poison Moth"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 20510000,
+      "Entries": [
+        "Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "Hunting Dog"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "Basilisk"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 21200010,
+      "Entries": [
+        "Guardian Dragon"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 21310000,
+      "Entries": [
+        "Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 21600000,
+      "Entries": [
+        "Wall Ghost"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "Dark Stalker"
+      ]
+    },
+    {
+      "ID": 21800000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 21900000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "Giant Acid Horn Beetle"
+      ]
+    },
+    {
+      "ID": 22200000,
+      "Entries": [
+        "Giant Basilisk"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "Mongrel Rat"
+      ]
+    },
+    {
+      "ID": 22350000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 22351000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 22400000,
+      "Entries": [
+        "Darksucker"
+      ]
+    },
+    {
+      "ID": 22500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22610000,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22620000,
+      "Entries": [
+        "Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "Stray Dog"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Ogre"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "Heide Knight"
+      ]
+    },
+    {
+      "ID": 30101000,
+      "Entries": [
+        "Heide Knight"
+      ]
+    },
+    {
+      "ID": 30102000,
+      "Entries": [
+        "Heide Knight"
+      ]
+    },
+    {
+      "ID": 30103000,
+      "Entries": [
+        "Heide Knight"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "Undead Jailer"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "Undead Jailer"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "Undead Jailer"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30211000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30212000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30330000,
+      "Entries": [
+        "Flexile Sentry"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30502000,
+      "Entries": [
+        "Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30520000,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30521000,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30522000,
+      "Entries": [
+        "Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30600100,
+      "Entries": [
+        "Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30601000,
+      "Entries": [
+        "Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 30701000,
+      "Entries": [
+        "Headless Vengarl"
+      ]
+    },
+    {
+      "ID": 30710000,
+      "Entries": [
+        "Vengarl"
+      ]
+    },
+    {
+      "ID": 30711000,
+      "Entries": [
+        "Vengarl"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 30810000,
+      "Entries": [
+        "Lion Clan Warrior"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "Forgotten Giant"
+      ]
+    },
+    {
+      "ID": 30960000,
+      "Entries": [
+        "Last Giant"
+      ]
+    },
+    {
+      "ID": 30961000,
+      "Entries": [
+        "Last Giant"
+      ]
+    },
+    {
+      "ID": 30970000,
+      "Entries": [
+        "Giant Lord"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "Grave Warden"
+      ]
+    },
+    {
+      "ID": 31201000,
+      "Entries": [
+        "Grave Warden"
+      ]
+    },
+    {
+      "ID": 31201001,
+      "Entries": [
+        "Grave Warden"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31301000,
+      "Entries": [
+        "Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31302000,
+      "Entries": [
+        "Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31303000,
+      "Entries": [
+        "Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "Hollow Primal Knight"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "Primal Knight"
+      ]
+    },
+    {
+      "ID": 31600000,
+      "Entries": [
+        "Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "Dragon Acolyte"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 31801000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 31802000,
+      "Entries": [
+        "The Pursuer"
+      ]
+    },
+    {
+      "ID": 31900000,
+      "Entries": [
+        "Alonne Knight"
+      ]
+    },
+    {
+      "ID": 31901000,
+      "Entries": [
+        "Alonne Knight"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "Mimic"
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        "Belfry Gargoyle"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "Ruin Sentinel"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "The Rotten"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "Dragon Skeleton"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 33003000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 33004000,
+      "Entries": [
+        "Old Knight"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 33101000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 33102000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 33103000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 33104000,
+      "Entries": [
+        "Drakekeeper"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "Throne Defender"
+      ]
+    },
+    {
+      "ID": 33201000,
+      "Entries": [
+        "Throne Defender"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "Velstadt"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        "Throne Watcher"
+      ]
+    },
+    {
+      "ID": 33700000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 33701000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702000,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702001,
+      "Entries": [
+        "Captive Undead"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Covetous Demon"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Mytha- the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Manscorpion Tark"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "Scorpioness Najka"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Looking Glass Knight"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50610000,
+      "Entries": [
+        "Darklurker"
+      ]
+    },
+    {
+      "ID": 50620000,
+      "Entries": [
+        "Darklurker (Clone)"
+      ]
+    },
+    {
+      "ID": 50650000,
+      "Entries": [
+        "Grave Warden Agdayne"
+      ]
+    },
+    {
+      "ID": 50700000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50800000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "Leydia Witch"
+      ]
+    },
+    {
+      "ID": 50910000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51100000,
+      "Entries": [
+        "Imperious Knight"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "Leydia Pyromancer"
+      ]
+    },
+    {
+      "ID": 51300000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51400000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51450000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 51460000,
+      "Entries": [
+        "Vendrick (hollow)"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 60002000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 60003000,
+      "Entries": [
+        "Ancient Dragon"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60100001,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60101000,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60102000,
+      "Entries": [
+        "Flame Lizard"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 60202000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 60300000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 60310000,
+      "Entries": [
+        "The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 60600000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60601000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60700000,
+      "Entries": [
+        "Old Iron King"
+      ]
+    },
+    {
+      "ID": 60800000,
+      "Entries": [
+        "Rotten Vermin"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60901000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 60910000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61100000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 61101000,
+      "Entries": [
+        "Dragonrider"
+      ]
+    },
+    {
+      "ID": 61300000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61400000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61600000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61700000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61800000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 61900000,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 61910000,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 61911000,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 61912000,
+      "Entries": [
+        "Executioner's Chariot"
+      ]
+    },
+    {
+      "ID": 62000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62200000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62400000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62450000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "Old Dragonslayer"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "Lost Sinner"
+      ]
+    },
+    {
+      "ID": 62700000,
+      "Entries": [
+        "Nashandra"
+      ]
+    },
+    {
+      "ID": 65000000,
+      "Entries": [
+        "Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001000,
+      "Entries": [
+        "Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65100000,
+      "Entries": [
+        "Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65300000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300010,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301010,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302010,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303000,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303010,
+      "Entries": [
+        "Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65400000,
+      "Entries": [
+        "Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 65400001,
+      "Entries": [
+        "Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 65600000,
+      "Entries": [
+        "Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600001,
+      "Entries": [
+        "Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65700000,
+      "Entries": [
+        "Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65800000,
+      "Entries": [
+        "Retainer"
+      ]
+    },
+    {
+      "ID": 65900000,
+      "Entries": [
+        "Rampart Golem"
+      ]
+    },
+    {
+      "ID": 66000000,
+      "Entries": [
+        "Crystal Golem"
+      ]
+    },
+    {
+      "ID": 66100000,
+      "Entries": [
+        "Frozen Reindeer"
+      ]
+    },
+    {
+      "ID": 66200000,
+      "Entries": [
+        "Rampart Hedgehog"
+      ]
+    },
+    {
+      "ID": 66300000,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 66301000,
+      "Entries": [
+        "Rampart Spearman"
+      ]
+    },
+    {
+      "ID": 66500000,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 66501000,
+      "Entries": [
+        "Sanctum Knight"
+      ]
+    },
+    {
+      "ID": 66600000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66601000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66602000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66603000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66604000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66605000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66606000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66607000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66608000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 66609000,
+      "Entries": [
+        "Sanctum Soldier"
+      ]
+    },
+    {
+      "ID": 67000000,
+      "Entries": [
+        "Sanctum Priestess"
+      ]
+    },
+    {
+      "ID": 67100000,
+      "Entries": [
+        "Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 67110000,
+      "Entries": [
+        "Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 67200000,
+      "Entries": [
+        "Rotten Vermin"
+      ]
+    },
+    {
+      "ID": 67400000,
+      "Entries": [
+        "Pagan Tree"
+      ]
+    },
+    {
+      "ID": 67500000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 67500001,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 67501000,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 67501001,
+      "Entries": [
+        "Fume Knight"
+      ]
+    },
+    {
+      "ID": 67700000,
+      "Entries": [
+        "Retainer Sorcerer"
+      ]
+    },
+    {
+      "ID": 67700010,
+      "Entries": [
+        "Retainer Sorcerer"
+      ]
+    },
+    {
+      "ID": 67800000,
+      "Entries": [
+        "Ice Golem"
+      ]
+    },
+    {
+      "ID": 67800001,
+      "Entries": [
+        "Ice Golem"
+      ]
+    },
+    {
+      "ID": 67900000,
+      "Entries": [
+        "Aava- the King's Pet"
+      ]
+    },
+    {
+      "ID": 67900100,
+      "Entries": [
+        "Aava- the King's Pet"
+      ]
+    },
+    {
+      "ID": 67900101,
+      "Entries": [
+        "Aava- the King's Pet"
+      ]
+    },
+    {
+      "ID": 68000000,
+      "Entries": [
+        "Sir Alonne"
+      ]
+    },
+    {
+      "ID": 68100000,
+      "Entries": [
+        "Sinh- the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 68200000,
+      "Entries": [
+        "Elana- Squalid Queen"
+      ]
+    },
+    {
+      "ID": 68300000,
+      "Entries": [
+        "Imperfect"
+      ]
+    },
+    {
+      "ID": 68800000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68801000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68802000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68803000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68804000,
+      "Entries": [
+        "Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68900000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68901000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68902000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 68903000,
+      "Entries": [
+        "Charred Loyce Knight"
+      ]
+    },
+    {
+      "ID": 69000000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69001000,
+      "Entries": [
+        "Burnt Ivory King"
+      ]
+    },
+    {
+      "ID": 69200000,
+      "Entries": [
+        "Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69201000,
+      "Entries": [
+        "Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69202000,
+      "Entries": [
+        "Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69203000,
+      "Entries": [
+        "Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 70050000,
+      "Entries": [
+        "Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70051000,
+      "Entries": [
+        "Emerald Herald"
+      ]
+    },
+    {
+      "ID": 70100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 70150000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 70200000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 70300000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 70360000,
+      "Entries": [
+        "Nashandra (human)"
+      ]
+    },
+    {
+      "ID": 70450000,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70451000,
+      "Entries": [
+        "Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 70500000,
+      "Entries": [
+        "Strowen"
+      ]
+    },
+    {
+      "ID": 70510000,
+      "Entries": [
+        "Morrel"
+      ]
+    },
+    {
+      "ID": 70530000,
+      "Entries": [
+        "Griant"
+      ]
+    },
+    {
+      "ID": 70550000,
+      "Entries": [
+        "Strowen"
+      ]
+    },
+    {
+      "ID": 72100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "Chancellor Wellager"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "Milibeth"
+      ]
+    },
+    {
+      "ID": 72301000,
+      "Entries": [
+        "Milibeth"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "Captain Drummond"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 72900000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "Looking Glass Phantom (Faraam)"
+      ]
+    },
+    {
+      "ID": 73001000,
+      "Entries": [
+        "Looking Glass Phantom (Faraam)"
+      ]
+    },
+    {
+      "ID": 73002000,
+      "Entries": [
+        "Looking Glass Phantom (Faraam)"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "Looking Glass Phantom (Knight)"
+      ]
+    },
+    {
+      "ID": 73101000,
+      "Entries": [
+        "Looking Glass Phantom (Knight)"
+      ]
+    },
+    {
+      "ID": 73102000,
+      "Entries": [
+        "Looking Glass Phantom (Knight)"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74201000,
+      "Entries": [
+        "Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74300100,
+      "Entries": [
+        "Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74301000,
+      "Entries": [
+        "Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74400000,
+      "Entries": [
+        "Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 74600000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "Cartographer Cale"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75300000,
+      "Entries": [
+        "Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75300001,
+      "Entries": [
+        "Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75301000,
+      "Entries": [
+        "Bell Keeper"
+      ]
+    },
+    {
+      "ID": 75400000,
+      "Entries": [
+        "Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 75400001,
+      "Entries": [
+        "Merchant Hag Melentia"
+      ]
+    },
+    {
+      "ID": 75500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 75501000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 75502000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 76000000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 76010000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 76020000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 76030000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 76040000,
+      "Entries": [
+        "Milfanito"
+      ]
+    },
+    {
+      "ID": 76100000,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76101000,
+      "Entries": [
+        "Maughlin the Armourer"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76301000,
+      "Entries": [
+        "Rosabeth of Melfia"
+      ]
+    },
+    {
+      "ID": 76400000,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76401000,
+      "Entries": [
+        "Blacksmith Lenigrast"
+      ]
+    },
+    {
+      "ID": 76430000,
+      "Entries": [
+        "Steady Hand McDuff"
+      ]
+    },
+    {
+      "ID": 76431000,
+      "Entries": [
+        "Steady Hand McDuff"
+      ]
+    },
+    {
+      "ID": 76500000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76601000,
+      "Entries": [
+        "Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 76700000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 76800000,
+      "Entries": [
+        "Straid of Olaphis"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "Licia of Lindeldt"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 77001000,
+      "Entries": [
+        "Felkin the Outcast"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77200000,
+      "Entries": [
+        "Magerold of Lanafir"
+      ]
+    },
+    {
+      "ID": 77400000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 77700000,
+      "Entries": [
+        "Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77701000,
+      "Entries": [
+        "Sweet Shalquoir"
+      ]
+    },
+    {
+      "ID": 77800000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 78000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "Titchy Gren"
+      ]
+    },
+    {
+      "ID": 78310000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 78400000,
+      "Entries": [
+        "Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 78501000,
+      "Entries": [
+        "Blue Sentinel Targray"
+      ]
+    },
+    {
+      "ID": 78600000,
+      "Entries": [
+        "Dyna & Tillo"
+      ]
+    },
+    {
+      "ID": 78700000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 80010000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 80030000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 90009400,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

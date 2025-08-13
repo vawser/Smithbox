@@ -1,0 +1,389 @@
+{
+  "Name": "m12_LightScatteringBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0基本"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B0天球"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0遠景"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1霊廟"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1霊廟室内"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B1ボスエリア（キャラ）"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1天球"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B1ボスエリア"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B1森前半"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1森前半（霊廟から出た）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B1天球(闘技場)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B1集落からボスエリア"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "遠景"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "天球"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "溶岩"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn120000_customS_pv"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn120000"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn120000_sideshot"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn120000"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "eventparam_m20_26_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Time limit for the memory of the old dragon"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Warp to Gerdra"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9149 @@
+{
+  "Name": "ItemLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "DEBUG"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "DEBUG"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "DEBUG"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Knight Solaire - Undead Burg] White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Siegmeyer of Catarina - Anor Londo] Tiny Being's Ring"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Siegmeyer of Catarina - Blighttown] Pierce Shield"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Unknown] Purging Stone"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "[Siegmeyer of Catarina - Blighttown] Pierce Shield"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Siegmeyer of Catarina - Lost Izalith] Speckled Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "[Siegmeyer of Catarina - Firelink] Emit Force"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "[Siegmeyer of Catarina - Lost Izalith] Speckled Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "[Given by Oscar] Undead Asylum F2 East Key"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "[Given by Oscar if Asylum Demon killed] Big Pilgrim's Key"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        "[Spoken to Oscar] Estus Flask"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Spoken to Gwynevere] Lordvessel"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Ingward - Have Lordvessel] Key to the Seal"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Laurentius - Rescued] Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "[Warrior of Sunlight - Rank 0] Lightning Spear"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "[Warrior of Sunlight - Rank 1] Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[Petrus of Thorolund - Gift after Talking] Copper Coin"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "[Knight Lautrec - Released] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "[Forest Hunter - 0 Kills] Cat Covenant Ring"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "[Forest Hunter - 1 Kills] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[Forest Hunter - 3 Kills] Ring of Fog"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "[Unknown] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Unknown] Humanity"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[Rhea of Thorolund - Killed Hollow Bodyguards] Replenishment"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[Gravelord Servant - Rank 0] Gravelord Sword"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "[Gravelord Servant - Rank 0] Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "[Gravelord Servant - Rank 1] Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "[Patches - Tomb of Giants] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "[Sieglinde of Catarina - Finished Quest] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[Path of the Dragon - Rank 0] Dragon Eye"
+      ]
+    },
+    {
+      "ID": 1261,
+      "Entries": [
+        "[Path of the Dragon - Rank 0] Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "[Path of the Dragon - Rank 2] Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "[Eingyi - Gained Trust] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "[Eingyi - Gained Trust, 11 INT] Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Quelaana - Killed Bed of Chaos] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[Chaos Servant - Rank 0] Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[Unknown] Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[Chaos Servant - Rank 2] Chaos Storm"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "[Unknown] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "[Princess's Guard - Joined] Ring of the Sun Princess"
+      ]
+    },
+    {
+      "ID": 1360,
+      "Entries": [
+        "[Blade of the Darkmoon - Rank 0] Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 1361,
+      "Entries": [
+        "[Blade of the Darkmoon - Rank 0] Darkmoon Blade Covenant Ring"
+      ]
+    },
+    {
+      "ID": 1370,
+      "Entries": [
+        "[Blade of the Darkmoon - Rank 1] Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 1371,
+      "Entries": [
+        "[Blade of the Darkmoon - Rank 1] Darkmoon Talisman"
+      ]
+    },
+    {
+      "ID": 1380,
+      "Entries": [
+        "[Darkwraiths - Rank 0] Dark Hand"
+      ]
+    },
+    {
+      "ID": 1390,
+      "Entries": [
+        "[Darkwraiths - Rank 1] Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Darkwraiths - Rank 2] Darksword"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "[Darkwraiths - Rank 2] Dark Mask"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "[Darkwraiths - Rank 2] Dark Armor"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "[Darkwraiths - Rank 2] Dark Gauntlets"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "[Darkwraiths - Rank 2] Dark Leggings"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Warriors of Sunlight - Trade Soul of Gwyn] Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[Shiva of the East] Black Eye Orb"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Ciaran - Trade Soul of Artorias] Dark Silver Tracer"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[Ciaran - Trade Soul of Artorias] Gold Tracer"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[Hawkeye Gough - Killed Kalameet] Gough's Greatbow"
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        "[Elizabeht - Killed Manus] Elizabeth's Mushroom"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Duke's Archives] Archive Tower Giant Cell Key"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Anastacia Remains] Dingy Hood"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[Anastacia Remains] Dingy Robe"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "[Anastacia Remains] Dingy Gloves"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "[Anastacia Remains] Blood-Stained Skirt"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "[Anastacia Remains] Black Eye Orb"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Knight Lautrec Killed] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "[Rhea of Thorolund Killed] Pendant"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Battle of Stoicism] Purple Coward's Crystal"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Gaping Dragon] Blighttown Key"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[Capra Demon] Key to Depths"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "[Priscilla] Soul of Priscilla"
+      ]
+    },
+    {
+      "ID": 2530,
+      "Entries": [
+        "[Moonlight Butterfly] Soul of the Moonlight Butterfly"
+      ]
+    },
+    {
+      "ID": 2540,
+      "Entries": [
+        "[Great Grey Wolf Sif] Covenant of Artorias"
+      ]
+    },
+    {
+      "ID": 2541,
+      "Entries": [
+        "[Great Grey Wolf Sif] Soul of Sif"
+      ]
+    },
+    {
+      "ID": 2550,
+      "Entries": [
+        "[Pinwheel] Rite of Kindling"
+      ]
+    },
+    {
+      "ID": 2560,
+      "Entries": [
+        "[Gravelord Nito] Lord Soul"
+      ]
+    },
+    {
+      "ID": 2570,
+      "Entries": [
+        "[Chaos Witch Quelaag] Soul of Quelaag"
+      ]
+    },
+    {
+      "ID": 2580,
+      "Entries": [
+        "[Bed of Chaos] Lord Soul"
+      ]
+    },
+    {
+      "ID": 2590,
+      "Entries": [
+        "[Iron Golem] Core of an Iron Golem"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[Dark Sun Gwyndolin] Soul of Gwyndolin"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[Dragonslayer Ornstein] Soul of Ornstein"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "[Smough] Soul of Smough"
+      ]
+    },
+    {
+      "ID": 2630,
+      "Entries": [
+        "[Four Kings] Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 2640,
+      "Entries": [
+        "[Seath the Scaleless]  Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "[Gwyn, Lord of Cinder] Soul of Gwyn, Lord of Cinder"
+      ]
+    },
+    {
+      "ID": 2660,
+      "Entries": [
+        "[Asylum Demon] Big Pilgrim's Key"
+      ]
+    },
+    {
+      "ID": 2661,
+      "Entries": [
+        "[Asylum Demon (First Encounter] Demon's Great Hammer"
+      ]
+    },
+    {
+      "ID": 2670,
+      "Entries": [
+        "[Firesage Demon] Orange Charred Ring"
+      ]
+    },
+    {
+      "ID": 2680,
+      "Entries": [
+        "[Sanctuary Guardian] Guardian Soul"
+      ]
+    },
+    {
+      "ID": 2690,
+      "Entries": [
+        "[Knight Artorias] Soul of Artorias"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Manus, Father of the Abyss] Soul of Manus"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[Kalameet] Calamity Ring"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Painted World] Chaos Blade"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[Painted World] Chaos Blade"
+      ]
+    },
+    {
+      "ID": 2820,
+      "Entries": [
+        "[Painted World] Chaos Blade"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Snuggly - Cracked Red Eye Orb] Purging Stone"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Snuggly - Bloodred Moss Clump] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Snuggly - Purple Moss Clump] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Snuggly - Blooming Purple Moss Clump] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Snuggly - Egg Vermifuge] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "[Snuggly - Dung Pie] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Snuggly - Humanity] Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[Snuggly - Prism Stone] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Snuggly - Sunlight Medal] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[Snuggly - Pendant] Souvenir of Reprisal"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Snuggly - Rubbish] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[Snuggly - Dried Finger] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "[Snuggly - Twin Humanities] Rare Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "[Snuggly - Pyromancy Flame] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "[Snuggly - Pyromancy Flame (Ascended)] Red Titanite Slab"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[Snuggly - Skull Lantern] Ring of Fog"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[Snuggly - Sunlight Maggot] Old Witch's Ring"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "[Snuggly - Xanthous Crown] Ring of Favor and Protection"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "[Snuggly - Sack] Demon's Great Hammer"
+      ]
+    },
+    {
+      "ID": 3190,
+      "Entries": [
+        "[Snuggly - Sun Princess Ring] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Snuggly - Soul of Manus] Pursuers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Firelink Relief Chest] Basement Key"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Firelink Relief Chest] Crest of Artorias"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[Firelink Relief Chest] Cage Key"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Firelink Relief Chest] Archive Tower Cell Key"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "[Firelink Relief Chest] Archive Tower Giant Door Key"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "[Firelink Relief Chest] Archive Tower Giant Cell Key"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "[Firelink Relief Chest] Blighttown Key"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "[Firelink Relief Chest] Key to New Londo Ruins"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "[Firelink Relief Chest] Annex Key"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Firelink Relief Chest] Dungeon Cell Key"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "[Firelink Relief Chest] Big Pilgrim's Key"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "[Firelink Relief Chest] Undead Asylum F2 East Key"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "[Firelink Relief Chest] Key to the Seal"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "[Firelink Relief Chest] Key to Depths"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "[Firelink Relief Chest] Lift Chamber Key"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "[Firelink Relief Chest] Undead Asylum F2 West Key"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "[Firelink Relief Chest] Mystery Key"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "[Firelink Relief Chest] Sewer Chamber Key"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Firelink Relief Chest] Watchtower Basement Key"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "[Firelink Relief Chest] Archive Prison Extra Key"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "[Firelink Relief Chest] Residence Key"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "[Firelink Relief Chest] Lord Soul"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "[Firelink Relief Chest] Lord Soul"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "[Firelink Relief Chest] Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "[Firelink Relief Chest] Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 4027,
+      "Entries": [
+        "[Firelink Relief Chest] Lordvessel"
+      ]
+    },
+    {
+      "ID": 4028,
+      "Entries": [
+        "[Firelink Relief Chest] Covenant of Artorias"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Firelink Relief Chest] Orange Charred Ring"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "[Firelink Relief Chest] White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "[Firelink Relief Chest] Red Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "[Firelink Relief Chest] Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 4034,
+      "Entries": [
+        "[Firelink Relief Chest] Black Separation Crystal"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "[Firelink Relief Chest] Orange Guidance Soapstone"
+      ]
+    },
+    {
+      "ID": 4036,
+      "Entries": [
+        "[Firelink Relief Chest] Book of the Guilty"
+      ]
+    },
+    {
+      "ID": 4037,
+      "Entries": [
+        "[Firelink Relief Chest] Servant Roster"
+      ]
+    },
+    {
+      "ID": 4038,
+      "Entries": [
+        "[Firelink Relief Chest] Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Firelink Relief Chest] Dragon Eye"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "[Firelink Relief Chest] Darksign"
+      ]
+    },
+    {
+      "ID": 4042,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask"
+      ]
+    },
+    {
+      "ID": 4043,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +1"
+      ]
+    },
+    {
+      "ID": 4044,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +2"
+      ]
+    },
+    {
+      "ID": 4045,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +3"
+      ]
+    },
+    {
+      "ID": 4046,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +4"
+      ]
+    },
+    {
+      "ID": 4047,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +5"
+      ]
+    },
+    {
+      "ID": 4048,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +6"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Firelink Relief Chest] Estus Flask +7"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "[Firelink Relief Chest] Peculiar Doll"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "[Firelink Relief Chest] Weapon Smithbox"
+      ]
+    },
+    {
+      "ID": 4053,
+      "Entries": [
+        "[Firelink Relief Chest] Armor Smithbox"
+      ]
+    },
+    {
+      "ID": 4054,
+      "Entries": [
+        "[Firelink Relief Chest] Repairbox"
+      ]
+    },
+    {
+      "ID": 4055,
+      "Entries": [
+        "[Firelink Relief Chest] Rite of Kindling"
+      ]
+    },
+    {
+      "ID": 4056,
+      "Entries": [
+        "[Firelink Relief Chest] Bottomless Box"
+      ]
+    },
+    {
+      "ID": 4057,
+      "Entries": [
+        "[Firelink Relief Chest] Darkmoon Blade Covenant Ring"
+      ]
+    },
+    {
+      "ID": 4058,
+      "Entries": [
+        "[Firelink Relief Chest] Cat Covenant Ring"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Firelink Relief Chest] Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        "[Firelink Relief Chest] Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 4062,
+      "Entries": [
+        "[Firelink Relief Chest] Large Ember"
+      ]
+    },
+    {
+      "ID": 4063,
+      "Entries": [
+        "[Firelink Relief Chest] Very Large Ember"
+      ]
+    },
+    {
+      "ID": 4064,
+      "Entries": [
+        "[Firelink Relief Chest] Crystal Ember"
+      ]
+    },
+    {
+      "ID": 4065,
+      "Entries": [
+        "[Firelink Relief Chest] Large Magic Ember"
+      ]
+    },
+    {
+      "ID": 4066,
+      "Entries": [
+        "[Firelink Relief Chest] Enchanted Ember"
+      ]
+    },
+    {
+      "ID": 4067,
+      "Entries": [
+        "[Firelink Relief Chest] Divine Ember"
+      ]
+    },
+    {
+      "ID": 4068,
+      "Entries": [
+        "[Firelink Relief Chest] Large Divine Ember"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "[Firelink Relief Chest] Dark Ember"
+      ]
+    },
+    {
+      "ID": 4071,
+      "Entries": [
+        "[Firelink Relief Chest] Large Flame Ember"
+      ]
+    },
+    {
+      "ID": 4072,
+      "Entries": [
+        "[Firelink Relief Chest] Chaos Flame Ember"
+      ]
+    },
+    {
+      "ID": 4073,
+      "Entries": [
+        "[Firelink Relief Chest] Master Key"
+      ]
+    },
+    {
+      "ID": 4074,
+      "Entries": [
+        "[Firelink Relief Chest] Crest Key"
+      ]
+    },
+    {
+      "ID": 4075,
+      "Entries": [
+        "[Firelink Relief Chest] Broken Pendant"
+      ]
+    },
+    {
+      "ID": 4076,
+      "Entries": [
+        "[Firelink Relief Chest] Purple Coward's Crystal"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Forest Hunter] Rewards"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Gravelord Servant] Eye of Death"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Blade of the Darkmoon] Souvenir of Reprisal"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "[Warrior of Sunlight] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "[Path of the Dragon] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Knight Solaire] Iron Helm"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Knight Solaire] Armor of the Sun"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Knight Solaire] Iron Bracelet"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Knight Solaire] Iron Leggings"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[Knight Solaire] Sunlight Straight Sword"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[Knight Solaire] Sunlight Shield"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "[Knight Solaire] Sunlight Talisman"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "[Knight Solaire] White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "[Knight Solaire] Humanity"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Lady of the Darkling] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[Oscar, Knight of Astora] Undead Asylum F2 East Key"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "[Oscar, Knight of Astora] Big Pilgrim's Key"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "[Oscar, Knight of Astora] Estus Flask - Drained"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "[Griggs of Vinheim] Hush"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "[Griggs of Vinheim] Slumbering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 6042,
+      "Entries": [
+        "[Griggs of Vinheim] Humanity"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "[Rhea of Thorolund] Ivory Talisman"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "[Rhea of Thorolund] Pendant"
+      ]
+    },
+    {
+      "ID": 6072,
+      "Entries": [
+        "[Rhea of Thorolund] Humanity"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "[Petrus of Thorolund] Ivory Talisman"
+      ]
+    },
+    {
+      "ID": 6081,
+      "Entries": [
+        "[Petrus of Thorolund] Humanity"
+      ]
+    },
+    {
+      "ID": 6160,
+      "Entries": [
+        "[Eingyi] Servant Roster"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "[Quelana of Izalith] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "[Ingward] Key to the Seal"
+      ]
+    },
+    {
+      "ID": 6181,
+      "Entries": [
+        "[Ingward] Humanity"
+      ]
+    },
+    {
+      "ID": 6190,
+      "Entries": [
+        "[Andre of Astora] Crest of Artorias"
+      ]
+    },
+    {
+      "ID": 6191,
+      "Entries": [
+        "[Andre of Astora] Humanity"
+      ]
+    },
+    {
+      "ID": 6230,
+      "Entries": [
+        "[Undead Merchant] Orange Guidance Soapstone"
+      ]
+    },
+    {
+      "ID": 6231,
+      "Entries": [
+        "[Undead Merchant] Residence Key"
+      ]
+    },
+    {
+      "ID": 6232,
+      "Entries": [
+        "[Undead Merchant] Humanity"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "[Siegmeyer of Catarina] Speckled Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 6281,
+      "Entries": [
+        "[Siegmeyer of Catarina] Humanity"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "[Knight Lautrec of Carim] Ring of Favor and Protection"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "[Knight Lautrec of Carim] Humanity"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "[Shiva of the East] Murakumo"
+      ]
+    },
+    {
+      "ID": 6311,
+      "Entries": [
+        "[Shiva of the East] Iron Round Shield"
+      ]
+    },
+    {
+      "ID": 6312,
+      "Entries": [
+        "[Shiva of the East] Humanity"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "[Patches] Crescent Axe"
+      ]
+    },
+    {
+      "ID": 6321,
+      "Entries": [
+        "[Patches] Humanity"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "[Oswald of Carim] Book of the Guilty"
+      ]
+    },
+    {
+      "ID": 6371,
+      "Entries": [
+        "[Oswald of Carim] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "[Shiva's Bodyguard] Dark Wood Grain Ring"
+      ]
+    },
+    {
+      "ID": 6421,
+      "Entries": [
+        "[Shiva's Bodyguard] Humanity"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "[Lautrec Bodyguard] Man-serpent Greatsword"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "[Maneater Mildred] Butcher Knife"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "[Maneater Mildred] Humanity"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "[Paladin Leeroy] Grant"
+      ]
+    },
+    {
+      "ID": 6551,
+      "Entries": [
+        "[Paladin Leeroy] Sanctus"
+      ]
+    },
+    {
+      "ID": 6552,
+      "Entries": [
+        "[Paladin Leeroy] Humanity"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "[Kirk, Knight of Thorns] Barbed Straight Sword"
+      ]
+    },
+    {
+      "ID": 6561,
+      "Entries": [
+        "[Kirk, Knight of Thorns] Spiked Shield"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "[Xanthous King, Jeremiah] Notched Whip"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "[Havel the Rock] Havel's Ring"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[Undead Prince Ricard] Ricard's Rapier"
+      ]
+    },
+    {
+      "ID": 6620,
+      "Entries": [
+        "[Daughter of Chaos] Izalith Catalyst"
+      ]
+    },
+    {
+      "ID": 6640,
+      "Entries": [
+        "[Darkmoon Knight] None"
+      ]
+    },
+    {
+      "ID": 6650,
+      "Entries": [
+        "[Darkmoon Knight] None"
+      ]
+    },
+    {
+      "ID": 6740,
+      "Entries": [
+        "[Lord's Blade Ciaran] Porcelain Mask"
+      ]
+    },
+    {
+      "ID": 6741,
+      "Entries": [
+        "[Lord's Blade Ciaran] Lord's Blade Robe"
+      ]
+    },
+    {
+      "ID": 6742,
+      "Entries": [
+        "[Lord's Blade Ciaran] Lord's Blade Gloves"
+      ]
+    },
+    {
+      "ID": 6743,
+      "Entries": [
+        "[Lord's Blade Ciaran] Lord's Blade Waistcloth"
+      ]
+    },
+    {
+      "ID": 6744,
+      "Entries": [
+        "[Lord's Blade Ciaran] Dark Silver Tracer"
+      ]
+    },
+    {
+      "ID": 6745,
+      "Entries": [
+        "[Lord's Blade Ciaran] Gold Tracer"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[Oscar, Knight of Astora - Dead] Crest Shield"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[Big Hat Logan - Dead] Big Hat"
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        "[Big Hat Logan - Dead] Tin Crystallization Ctlyst."
+      ]
+    },
+    {
+      "ID": 7032,
+      "Entries": [
+        "[Big Hat Logan - Dead] White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Forest Hunter - Hunter] Black Bow of Pharis"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[Forest Hunter - Hunter] Pharis's Hat"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[Forest Hunter - Hunter] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Twin Humanities"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "[Boss Kill] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Treasure Chest - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Enemy - Crunch Test"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Mimic - Test"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Vagrant - Set 1 - Level 1"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Vagrant - Set 1 - Level 2"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Vagrant - Set 1 - Level 3"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Vagrant - Set 2 - Level 1"
+      ]
+    },
+    {
+      "ID": 100110,
+      "Entries": [
+        "Vagrant - Set 2 - Level 2"
+      ]
+    },
+    {
+      "ID": 100120,
+      "Entries": [
+        "Vagrant - Set 2 - Level 3"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Vagrant - Set 3 - Level 1"
+      ]
+    },
+    {
+      "ID": 100210,
+      "Entries": [
+        "Vagrant - Set 3 - Level 2"
+      ]
+    },
+    {
+      "ID": 100220,
+      "Entries": [
+        "Vagrant - Set 3 - Level 3"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Vagrant - Set 4 - Level 1"
+      ]
+    },
+    {
+      "ID": 100310,
+      "Entries": [
+        "Vagrant - Set 4 - Level 2"
+      ]
+    },
+    {
+      "ID": 100320,
+      "Entries": [
+        "Vagrant - Set 4 - Level 3"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Vagrant - Set 5 - Level 1"
+      ]
+    },
+    {
+      "ID": 100410,
+      "Entries": [
+        "Vagrant - Set 5 - Level 2"
+      ]
+    },
+    {
+      "ID": 100420,
+      "Entries": [
+        "Vagrant - Set 5 - Level 3"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Vagrant - Set 6 - Level 1"
+      ]
+    },
+    {
+      "ID": 100510,
+      "Entries": [
+        "Vagrant - Set 6 - Level 2"
+      ]
+    },
+    {
+      "ID": 100520,
+      "Entries": [
+        "Vagrant - Set 6 - Level 3"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Vagrant - Set 7 - Level 1"
+      ]
+    },
+    {
+      "ID": 100610,
+      "Entries": [
+        "Vagrant - Set 7 - Level 2"
+      ]
+    },
+    {
+      "ID": 100620,
+      "Entries": [
+        "Vagrant - Set 7 - Level 3"
+      ]
+    },
+    {
+      "ID": 100700,
+      "Entries": [
+        "Vagrant - Set 8 - Level 1"
+      ]
+    },
+    {
+      "ID": 100710,
+      "Entries": [
+        "Vagrant - Set 8 - Level 2"
+      ]
+    },
+    {
+      "ID": 100720,
+      "Entries": [
+        "Vagrant - Set 8 - Level 3"
+      ]
+    },
+    {
+      "ID": 100800,
+      "Entries": [
+        "Vagrant - Set 9 - Level 1"
+      ]
+    },
+    {
+      "ID": 100810,
+      "Entries": [
+        "Vagrant - Set 9 - Level 2"
+      ]
+    },
+    {
+      "ID": 100820,
+      "Entries": [
+        "Vagrant - Set 9 - Level 3"
+      ]
+    },
+    {
+      "ID": 100900,
+      "Entries": [
+        "Vagrant - Set 10 - Level 1"
+      ]
+    },
+    {
+      "ID": 100910,
+      "Entries": [
+        "Vagrant - Set 10 - Level 2"
+      ]
+    },
+    {
+      "ID": 100920,
+      "Entries": [
+        "Vagrant - Set 10 - Level 3"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Vagrant - Set 11 - Level 1"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Vagrant - Set 11 - Level 2"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "Vagrant - Set 11 - Level 3"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Vagrant - Set 12 - Level 1"
+      ]
+    },
+    {
+      "ID": 101110,
+      "Entries": [
+        "Vagrant - Set 12 - Level 2"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "Vagrant - Set 12 - Level 3"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        "Vagrant - Set 13 - Level 1"
+      ]
+    },
+    {
+      "ID": 101210,
+      "Entries": [
+        "Vagrant - Set 13 - Level 2"
+      ]
+    },
+    {
+      "ID": 101220,
+      "Entries": [
+        "Vagrant - Set 13 - Level 3"
+      ]
+    },
+    {
+      "ID": 101300,
+      "Entries": [
+        "Vagrant - Set 14 - Level 1"
+      ]
+    },
+    {
+      "ID": 101310,
+      "Entries": [
+        "Vagrant - Set 14 - Level 2"
+      ]
+    },
+    {
+      "ID": 101320,
+      "Entries": [
+        "Vagrant - Set 14 - Level 3"
+      ]
+    },
+    {
+      "ID": 101400,
+      "Entries": [
+        "Vagrant - Set 15 - Level 1"
+      ]
+    },
+    {
+      "ID": 101410,
+      "Entries": [
+        "Vagrant - Set 15 - Level 2"
+      ]
+    },
+    {
+      "ID": 101420,
+      "Entries": [
+        "Vagrant - Set 15 - Level 3"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "[The Depths] Humanity"
+      ]
+    },
+    {
+      "ID": 1000010,
+      "Entries": [
+        "[The Depths] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000020,
+      "Entries": [
+        "[The Depths] Greataxe"
+      ]
+    },
+    {
+      "ID": 1000030,
+      "Entries": [
+        "[The Depths] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000040,
+      "Entries": [
+        "[The Depths] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000050,
+      "Entries": [
+        "[The Depths] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000090,
+      "Entries": [
+        "[The Depths] Spider Shield"
+      ]
+    },
+    {
+      "ID": 1000100,
+      "Entries": [
+        "[The Depths] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1000120,
+      "Entries": [
+        "[The Depths] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000140,
+      "Entries": [
+        "[The Depths] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000170,
+      "Entries": [
+        "[The Depths] Ring of the Evil Eye"
+      ]
+    },
+    {
+      "ID": 1000180,
+      "Entries": [
+        "[The Depths] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1000190,
+      "Entries": [
+        "[The Depths] Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 1000191,
+      "Entries": [
+        "[The Depths] Heavy Bolt"
+      ]
+    },
+    {
+      "ID": 1000210,
+      "Entries": [
+        "[The Depths] Standard Helm"
+      ]
+    },
+    {
+      "ID": 1000211,
+      "Entries": [
+        "[The Depths] Hard Leather Armor"
+      ]
+    },
+    {
+      "ID": 1000212,
+      "Entries": [
+        "[The Depths] Hard Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 1000213,
+      "Entries": [
+        "[The Depths] Hard Leather Boots"
+      ]
+    },
+    {
+      "ID": 1000240,
+      "Entries": [
+        "[The Depths] Sewer Chamber Key"
+      ]
+    },
+    {
+      "ID": 1000500,
+      "Entries": [
+        "[The Depths] Chest - Large Ember"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "[Undead Parish] Mystery Key"
+      ]
+    },
+    {
+      "ID": 1010020,
+      "Entries": [
+        "[Undead Parish] Mail Breaker"
+      ]
+    },
+    {
+      "ID": 1010040,
+      "Entries": [
+        "[Undead Parish] Humanity"
+      ]
+    },
+    {
+      "ID": 1010050,
+      "Entries": [
+        "[Undead Parish] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 1010070,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010080,
+      "Entries": [
+        "[Undead Parish] Rubbish"
+      ]
+    },
+    {
+      "ID": 1010090,
+      "Entries": [
+        "[Undead Parish] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 1010091,
+      "Entries": [
+        "[Undead Parish] Standard Bolt"
+      ]
+    },
+    {
+      "ID": 1010100,
+      "Entries": [
+        "[Undead Parish] Humanity"
+      ]
+    },
+    {
+      "ID": 1010120,
+      "Entries": [
+        "[Undead Parish] Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1010130,
+      "Entries": [
+        "[Undead Parish] Wooden Shield"
+      ]
+    },
+    {
+      "ID": 1010140,
+      "Entries": [
+        "[Undead Parish] Basement Key"
+      ]
+    },
+    {
+      "ID": 1010160,
+      "Entries": [
+        "[Undead Parish] Blue Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 1010210,
+      "Entries": [
+        "[Undead Parish] Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 1010220,
+      "Entries": [
+        "[Undead Parish] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1010260,
+      "Entries": [
+        "[Undead Parish] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 1010280,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010300,
+      "Entries": [
+        "[Undead Parish] Knight Shield"
+      ]
+    },
+    {
+      "ID": 1010370,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010380,
+      "Entries": [
+        "[Undead Parish] Thief Mask"
+      ]
+    },
+    {
+      "ID": 1010381,
+      "Entries": [
+        "[Undead Parish] Black Leather Armor"
+      ]
+    },
+    {
+      "ID": 1010382,
+      "Entries": [
+        "[Undead Parish] Black Leather Gloves"
+      ]
+    },
+    {
+      "ID": 1010383,
+      "Entries": [
+        "[Undead Parish] Black Leather Boots"
+      ]
+    },
+    {
+      "ID": 1010384,
+      "Entries": [
+        "[Undead Parish] Target Shield"
+      ]
+    },
+    {
+      "ID": 1010390,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010400,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010410,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010420,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010430,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010440,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010450,
+      "Entries": [
+        "[Undead Parish] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 1010460,
+      "Entries": [
+        "[Undead Parish] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 1010470,
+      "Entries": [
+        "[Undead Parish] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010480,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1010490,
+      "Entries": [
+        "[Undead Parish] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1010500,
+      "Entries": [
+        "[Undead Parish] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1010510,
+      "Entries": [
+        "[Undead Parish] Sorcerer Hat"
+      ]
+    },
+    {
+      "ID": 1010511,
+      "Entries": [
+        "[Undead Parish] Sorcerer Cloak"
+      ]
+    },
+    {
+      "ID": 1010512,
+      "Entries": [
+        "[Undead Parish] Sorcerer Gauntlets"
+      ]
+    },
+    {
+      "ID": 1010513,
+      "Entries": [
+        "[Undead Parish] Sorcerer Boots"
+      ]
+    },
+    {
+      "ID": 1010514,
+      "Entries": [
+        "[Undead Parish] Sorcerer's Catalyst"
+      ]
+    },
+    {
+      "ID": 1010520,
+      "Entries": [
+        "[Undead Parish] Halberd"
+      ]
+    },
+    {
+      "ID": 1020000,
+      "Entries": [
+        "[Firelink Shrine] Humanity"
+      ]
+    },
+    {
+      "ID": 1020010,
+      "Entries": [
+        "[Firelink Shrine] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020020,
+      "Entries": [
+        "[Firelink Shrine] Caduceus Round Shield"
+      ]
+    },
+    {
+      "ID": 1020030,
+      "Entries": [
+        "[Firelink Shrine] Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020040,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020050,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020060,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020070,
+      "Entries": [
+        "[Firelink Shrine] Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 1020090,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020110,
+      "Entries": [
+        "[Firelink Shrine] Firebomb"
+      ]
+    },
+    {
+      "ID": 1020120,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020130,
+      "Entries": [
+        "[Firelink Shrine] Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 1020140,
+      "Entries": [
+        "[Firelink Shrine] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1020150,
+      "Entries": [
+        "[Firelink Shrine] Zweihander"
+      ]
+    },
+    {
+      "ID": 1020160,
+      "Entries": [
+        "[Firelink Shrine] Winged Spear"
+      ]
+    },
+    {
+      "ID": 1020170,
+      "Entries": [
+        "[Firelink Shrine] Binoculars"
+      ]
+    },
+    {
+      "ID": 1020180,
+      "Entries": [
+        "[Firelink Shrine] Morning Star"
+      ]
+    },
+    {
+      "ID": 1020181,
+      "Entries": [
+        "[Firelink Shrine] Talisman"
+      ]
+    },
+    {
+      "ID": 1020190,
+      "Entries": [
+        "[Firelink Shrine] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 1020200,
+      "Entries": [
+        "[Firelink Shrine] Tiny Being's Ring"
+      ]
+    },
+    {
+      "ID": 1020210,
+      "Entries": [
+        "[Firelink Shrine] Undead Asylum F2 West Key"
+      ]
+    },
+    {
+      "ID": 1100010,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100020,
+      "Entries": [
+        "[Painted World] Dried Finger"
+      ]
+    },
+    {
+      "ID": 1100030,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100040,
+      "Entries": [
+        "[Painted World] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100060,
+      "Entries": [
+        "[Painted World] Mask of Velka"
+      ]
+    },
+    {
+      "ID": 1100061,
+      "Entries": [
+        "[Painted World] Black Cleric Robe"
+      ]
+    },
+    {
+      "ID": 1100062,
+      "Entries": [
+        "[Painted World] Black Manchette"
+      ]
+    },
+    {
+      "ID": 1100063,
+      "Entries": [
+        "[Painted World] Black Tights"
+      ]
+    },
+    {
+      "ID": 1100070,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100090,
+      "Entries": [
+        "[Painted World] Vow of Silence"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "[Painted World] Gold Coin"
+      ]
+    },
+    {
+      "ID": 1100120,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100130,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100140,
+      "Entries": [
+        "[Painted World] Annex Key"
+      ]
+    },
+    {
+      "ID": 1100150,
+      "Entries": [
+        "[Painted World] Xanthous Crown"
+      ]
+    },
+    {
+      "ID": 1100151,
+      "Entries": [
+        "[Painted World] Xanthous Overcoat"
+      ]
+    },
+    {
+      "ID": 1100152,
+      "Entries": [
+        "[Painted World] Xanthous Gloves"
+      ]
+    },
+    {
+      "ID": 1100153,
+      "Entries": [
+        "[Painted World] Xanthous Waistcloth"
+      ]
+    },
+    {
+      "ID": 1100160,
+      "Entries": [
+        "[Painted World] Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 1100170,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100190,
+      "Entries": [
+        "[Painted World] Acid Surge"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "[Painted World] Bloodshield"
+      ]
+    },
+    {
+      "ID": 1100210,
+      "Entries": [
+        "[Painted World] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100230,
+      "Entries": [
+        "[Painted World] Humanity"
+      ]
+    },
+    {
+      "ID": 1100240,
+      "Entries": [
+        "[Painted World] Humanity"
+      ]
+    },
+    {
+      "ID": 1100250,
+      "Entries": [
+        "[Painted World] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 1100260,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100280,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100290,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100300,
+      "Entries": [
+        "[Painted World] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100310,
+      "Entries": [
+        "[Painted World] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1100320,
+      "Entries": [
+        "[Painted World] Velka's Rapier"
+      ]
+    },
+    {
+      "ID": 1100330,
+      "Entries": [
+        "[Painted World] Red Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 1100340,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100350,
+      "Entries": [
+        "[Painted World] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1100370,
+      "Entries": [
+        "[Painted World] Dark Ember"
+      ]
+    },
+    {
+      "ID": 1100500,
+      "Entries": [
+        "[Painted World] Chest - Painting Guardian Hood"
+      ]
+    },
+    {
+      "ID": 1100501,
+      "Entries": [
+        "[Painted World] Chest - Painting Guardian Robe"
+      ]
+    },
+    {
+      "ID": 1100502,
+      "Entries": [
+        "[Painted World] Chest - Painting Guardian Gloves"
+      ]
+    },
+    {
+      "ID": 1100503,
+      "Entries": [
+        "[Painted World] Chest - Painting Guardian Waistcloth"
+      ]
+    },
+    {
+      "ID": 1200010,
+      "Entries": [
+        "[Darkroot Garden] Partizan"
+      ]
+    },
+    {
+      "ID": 1200020,
+      "Entries": [
+        "[Darkroot Garden] Leather Armor"
+      ]
+    },
+    {
+      "ID": 1200021,
+      "Entries": [
+        "[Darkroot Garden] Leather Gloves"
+      ]
+    },
+    {
+      "ID": 1200022,
+      "Entries": [
+        "[Darkroot Garden] Leather Boots"
+      ]
+    },
+    {
+      "ID": 1200023,
+      "Entries": [
+        "[Darkroot Garden] Longbow"
+      ]
+    },
+    {
+      "ID": 1200024,
+      "Entries": [
+        "[Darkroot Garden] Feather Arrow"
+      ]
+    },
+    {
+      "ID": 1200030,
+      "Entries": [
+        "[Darkroot Garden] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1200040,
+      "Entries": [
+        "[Darkroot Garden] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1200060,
+      "Entries": [
+        "[Darkroot Garden] Wolf Ring"
+      ]
+    },
+    {
+      "ID": 1200070,
+      "Entries": [
+        "[Darkroot Garden] Elite Knight Helm"
+      ]
+    },
+    {
+      "ID": 1200071,
+      "Entries": [
+        "[Darkroot Garden] Elite Knight Armor"
+      ]
+    },
+    {
+      "ID": 1200072,
+      "Entries": [
+        "[Darkroot Garden] Elite Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 1200073,
+      "Entries": [
+        "[Darkroot Garden] Elite Knight Leggings"
+      ]
+    },
+    {
+      "ID": 1200080,
+      "Entries": [
+        "[Darkroot Garden] Eastern Helm"
+      ]
+    },
+    {
+      "ID": 1200081,
+      "Entries": [
+        "[Darkroot Garden] Eastern Armor"
+      ]
+    },
+    {
+      "ID": 1200082,
+      "Entries": [
+        "[Darkroot Garden] Eastern Gauntlets"
+      ]
+    },
+    {
+      "ID": 1200083,
+      "Entries": [
+        "[Darkroot Garden] Eastern Leggings"
+      ]
+    },
+    {
+      "ID": 1200120,
+      "Entries": [
+        "[Darkroot Garden] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1200140,
+      "Entries": [
+        "[Darkroot Garden] Watchtower Basement Key"
+      ]
+    },
+    {
+      "ID": 1200141,
+      "Entries": [
+        "[Darkroot Garden] Divine Ember"
+      ]
+    },
+    {
+      "ID": 1200142,
+      "Entries": [
+        "[Darkroot Garden] Homeward Bone"
+      ]
+    },
+    {
+      "ID": 1200150,
+      "Entries": [
+        "[Darkroot Garden] Crown of Dusk"
+      ]
+    },
+    {
+      "ID": 1200151,
+      "Entries": [
+        "[Darkroot Garden] Antiquated Dress"
+      ]
+    },
+    {
+      "ID": 1200152,
+      "Entries": [
+        "[Darkroot Garden] Antiquated Gloves"
+      ]
+    },
+    {
+      "ID": 1200153,
+      "Entries": [
+        "[Darkroot Garden] Antiquated Skirt"
+      ]
+    },
+    {
+      "ID": 1200160,
+      "Entries": [
+        "[Darkroot Garden] Hornet Ring"
+      ]
+    },
+    {
+      "ID": 1200170,
+      "Entries": [
+        "[Darkroot Garden] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1200500,
+      "Entries": [
+        "[Darkroot Garden] Chest - Enchanted Ember"
+      ]
+    },
+    {
+      "ID": 1200510,
+      "Entries": [
+        "[Darkroot Garden] Chest - Stone Helm"
+      ]
+    },
+    {
+      "ID": 1200511,
+      "Entries": [
+        "[Darkroot Garden] Chest - Stone Armor"
+      ]
+    },
+    {
+      "ID": 1200512,
+      "Entries": [
+        "[Darkroot Garden] Chest - Stone Gauntlets"
+      ]
+    },
+    {
+      "ID": 1200513,
+      "Entries": [
+        "[Darkroot Garden] Chest - Stone Leggings"
+      ]
+    },
+    {
+      "ID": 1200180,
+      "Entries": [
+        "[Darkroot Garden] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1200190,
+      "Entries": [
+        "[Darkroot Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1200200,
+      "Entries": [
+        "[Darkroot Garden] Grass Crest Shield"
+      ]
+    },
+    {
+      "ID": 1200210,
+      "Entries": [
+        "[Darkroot Garden] Knight Helm"
+      ]
+    },
+    {
+      "ID": 1200211,
+      "Entries": [
+        "[Darkroot Garden] Knight Armor"
+      ]
+    },
+    {
+      "ID": 1200212,
+      "Entries": [
+        "[Darkroot Garden] Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 1200213,
+      "Entries": [
+        "[Darkroot Garden] Knight Leggings"
+      ]
+    },
+    {
+      "ID": 1210000,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210010,
+      "Entries": [
+        "[Royal Garden] Humanity"
+      ]
+    },
+    {
+      "ID": 1210020,
+      "Entries": [
+        "[Royal Garden] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1210030,
+      "Entries": [
+        "[Royal Garden] Gold Coin"
+      ]
+    },
+    {
+      "ID": 1210040,
+      "Entries": [
+        "[Royal Garden] Guardian Leggings"
+      ]
+    },
+    {
+      "ID": 1210050,
+      "Entries": [
+        "[Royal Garden] Guardian Armor"
+      ]
+    },
+    {
+      "ID": 1210060,
+      "Entries": [
+        "[Royal Garden] Elizabeth's Mushroom"
+      ]
+    },
+    {
+      "ID": 1210070,
+      "Entries": [
+        "[Royal Garden] Guardian Helm"
+      ]
+    },
+    {
+      "ID": 1210080,
+      "Entries": [
+        "[Royal Garden] Gough's Great Arrow"
+      ]
+    },
+    {
+      "ID": 1210090,
+      "Entries": [
+        "[Royal Garden] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1210100,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210110,
+      "Entries": [
+        "[Royal Garden] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1210120,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210130,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210140,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210150,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210160,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210170,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210180,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210190,
+      "Entries": [
+        "[Royal Garden] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1210200,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210210,
+      "Entries": [
+        "[Royal Garden] Rubbish"
+      ]
+    },
+    {
+      "ID": 1210220,
+      "Entries": [
+        "[Royal Garden] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1210230,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210240,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210250,
+      "Entries": [
+        "[Royal Garden] Gough's Great Arrow"
+      ]
+    },
+    {
+      "ID": 1210260,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210270,
+      "Entries": [
+        "[Royal Garden] Dark Bead"
+      ]
+    },
+    {
+      "ID": 1210280,
+      "Entries": [
+        "[Royal Garden] Black Flame"
+      ]
+    },
+    {
+      "ID": 1210290,
+      "Entries": [
+        "[Royal Garden] White Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1210300,
+      "Entries": [
+        "[Royal Garden] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1210310,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210320,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210330,
+      "Entries": [
+        "[Royal Garden] Humanity"
+      ]
+    },
+    {
+      "ID": 1210340,
+      "Entries": [
+        "[Royal Garden] Help me! Carving"
+      ]
+    },
+    {
+      "ID": 1210350,
+      "Entries": [
+        "[Royal Garden] Guardian Gauntlets"
+      ]
+    },
+    {
+      "ID": 1210360,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210370,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210380,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210390,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210400,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210410,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210420,
+      "Entries": [
+        "[Royal Garden] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210430,
+      "Entries": [
+        "[Royal Garden] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210440,
+      "Entries": [
+        "[Royal Garden] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1210450,
+      "Entries": [
+        "[Royal Garden] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1210460,
+      "Entries": [
+        "[Royal Garden] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1210470,
+      "Entries": [
+        "[Royal Garden] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1210500,
+      "Entries": [
+        "[Royal Garden] Chest - Blue Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1210510,
+      "Entries": [
+        "[Royal Garden] Chest - Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1210520,
+      "Entries": [
+        "[Royal Garden] Chest - Silver Pendant"
+      ]
+    },
+    {
+      "ID": 1210530,
+      "Entries": [
+        "[Royal Garden] Chest - Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1210540,
+      "Entries": [
+        "[Royal Garden] Chest - Dark Orb"
+      ]
+    },
+    {
+      "ID": 1210550,
+      "Entries": [
+        "[Royal Garden] Chest - Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1210560,
+      "Entries": [
+        "[Royal Garden] Chest - Crest Key"
+      ]
+    },
+    {
+      "ID": 1211000,
+      "Entries": [
+        "[Royal Garden] Dark Fog"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "[Catacombs] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1300010,
+      "Entries": [
+        "[Catacombs] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1300020,
+      "Entries": [
+        "[Catacombs] Darkmoon Seance Ring"
+      ]
+    },
+    {
+      "ID": 1300030,
+      "Entries": [
+        "[Catacombs] Eye of Death"
+      ]
+    },
+    {
+      "ID": 1300070,
+      "Entries": [
+        "[Catacombs] Lucerne"
+      ]
+    },
+    {
+      "ID": 1300100,
+      "Entries": [
+        "[Catacombs] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1300110,
+      "Entries": [
+        "[Catacombs] Great Scythe"
+      ]
+    },
+    {
+      "ID": 1300140,
+      "Entries": [
+        "[Catacombs] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1300150,
+      "Entries": [
+        "[Catacombs] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1300190,
+      "Entries": [
+        "[Catacombs] Priest's Hat"
+      ]
+    },
+    {
+      "ID": 1300191,
+      "Entries": [
+        "[Catacombs] Holy Robe"
+      ]
+    },
+    {
+      "ID": 1300192,
+      "Entries": [
+        "[Catacombs] Traveling Gloves"
+      ]
+    },
+    {
+      "ID": 1300193,
+      "Entries": [
+        "[Catacombs] Holy Trousers"
+      ]
+    },
+    {
+      "ID": 1300194,
+      "Entries": [
+        "[Catacombs] Mace"
+      ]
+    },
+    {
+      "ID": 1300210,
+      "Entries": [
+        "[Catacombs] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1300220,
+      "Entries": [
+        "[Catacombs] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1300230,
+      "Entries": [
+        "[Catacombs] Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 1300240,
+      "Entries": [
+        "[Catacombs] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1300250,
+      "Entries": [
+        "[Catacombs] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310000,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310010,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310020,
+      "Entries": [
+        "[Tomb of the Giants] Humanity"
+      ]
+    },
+    {
+      "ID": 1310030,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310040,
+      "Entries": [
+        "[Tomb of the Giants] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1310050,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310070,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310080,
+      "Entries": [
+        "[Tomb of the Giants] Eye of Death"
+      ]
+    },
+    {
+      "ID": 1310090,
+      "Entries": [
+        "[Tomb of the Giants] Skull Lantern"
+      ]
+    },
+    {
+      "ID": 1310100,
+      "Entries": [
+        "[Tomb of the Giants] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1310110,
+      "Entries": [
+        "[Tomb of the Giants] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1310120,
+      "Entries": [
+        "[Tomb of the Giants] Effigy Shield"
+      ]
+    },
+    {
+      "ID": 1310140,
+      "Entries": [
+        "[Tomb of the Giants] Covetous Silver Serpent Ring"
+      ]
+    },
+    {
+      "ID": 1310160,
+      "Entries": [
+        "[Tomb of the Giants] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1310180,
+      "Entries": [
+        "[Tomb of the Giants] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1310200,
+      "Entries": [
+        "[Tomb of the Giants] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1310220,
+      "Entries": [
+        "[Tomb of the Giants] White Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1310230,
+      "Entries": [
+        "[Tomb of the Giants] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1310240,
+      "Entries": [
+        "[Tomb of the Giants] Paladin Helm"
+      ]
+    },
+    {
+      "ID": 1310241,
+      "Entries": [
+        "[Tomb of the Giants] Paladin Armor"
+      ]
+    },
+    {
+      "ID": 1310242,
+      "Entries": [
+        "[Tomb of the Giants] Paladin Gauntlets"
+      ]
+    },
+    {
+      "ID": 1310243,
+      "Entries": [
+        "[Tomb of the Giants] Paladin Leggings"
+      ]
+    },
+    {
+      "ID": 1310290,
+      "Entries": [
+        "[Tomb of the Giants] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1310300,
+      "Entries": [
+        "[Tomb of the Giants] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1310500,
+      "Entries": [
+        "[Tomb of the Giants] Chest - Large Divine Ember"
+      ]
+    },
+    {
+      "ID": 1320000,
+      "Entries": [
+        "[Great Hollow] Plank Shield"
+      ]
+    },
+    {
+      "ID": 1320020,
+      "Entries": [
+        "[Great Hollow] Cloranthy Ring"
+      ]
+    },
+    {
+      "ID": 1320040,
+      "Entries": [
+        "[Great Hollow] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320050,
+      "Entries": [
+        "[Great Hollow] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1320060,
+      "Entries": [
+        "[Great Hollow] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320070,
+      "Entries": [
+        "[Great Hollow] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320080,
+      "Entries": [
+        "[Great Hollow] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320090,
+      "Entries": [
+        "[Great Hollow] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320100,
+      "Entries": [
+        "[Great Hollow] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320110,
+      "Entries": [
+        "[Great Hollow] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1320120,
+      "Entries": [
+        "[Great Hollow] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1320140,
+      "Entries": [
+        "[Great Hollow] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 1320150,
+      "Entries": [
+        "[Great Hollow] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 1320160,
+      "Entries": [
+        "[Great Hollow] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 1320170,
+      "Entries": [
+        "[Great Hollow] Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 1320180,
+      "Entries": [
+        "[Great Hollow] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1320190,
+      "Entries": [
+        "[Great Hollow] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1400020,
+      "Entries": [
+        "[Blighttown] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400040,
+      "Entries": [
+        "[Blighttown] Shadow Mask"
+      ]
+    },
+    {
+      "ID": 1400041,
+      "Entries": [
+        "[Blighttown] Shadow Garb"
+      ]
+    },
+    {
+      "ID": 1400042,
+      "Entries": [
+        "[Blighttown] Shadow Gauntlets"
+      ]
+    },
+    {
+      "ID": 1400043,
+      "Entries": [
+        "[Blighttown] Shadow Leggings"
+      ]
+    },
+    {
+      "ID": 1400050,
+      "Entries": [
+        "[Blighttown] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1400060,
+      "Entries": [
+        "[Blighttown] Humanity"
+      ]
+    },
+    {
+      "ID": 1400080,
+      "Entries": [
+        "[Blighttown] Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 1400090,
+      "Entries": [
+        "[Blighttown] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400100,
+      "Entries": [
+        "[Blighttown] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400130,
+      "Entries": [
+        "[Blighttown] Power Within"
+      ]
+    },
+    {
+      "ID": 1400140,
+      "Entries": [
+        "[Blighttown] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1400150,
+      "Entries": [
+        "[Blighttown] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400160,
+      "Entries": [
+        "[Blighttown] Eagle Shield"
+      ]
+    },
+    {
+      "ID": 1400180,
+      "Entries": [
+        "[Blighttown] Whip"
+      ]
+    },
+    {
+      "ID": 1400190,
+      "Entries": [
+        "[Blighttown] Mask of the Sealer"
+      ]
+    },
+    {
+      "ID": 1400191,
+      "Entries": [
+        "[Blighttown] Crimson Robe"
+      ]
+    },
+    {
+      "ID": 1400192,
+      "Entries": [
+        "[Blighttown] Crimson Gloves"
+      ]
+    },
+    {
+      "ID": 1400193,
+      "Entries": [
+        "[Blighttown] Crimson Waistcloth"
+      ]
+    },
+    {
+      "ID": 1400194,
+      "Entries": [
+        "[Blighttown] Tin Banishment Catalyst"
+      ]
+    },
+    {
+      "ID": 1400210,
+      "Entries": [
+        "[Blighttown] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400230,
+      "Entries": [
+        "[Blighttown] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1400250,
+      "Entries": [
+        "[Blighttown] Great Club"
+      ]
+    },
+    {
+      "ID": 1400260,
+      "Entries": [
+        "[Blighttown] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400270,
+      "Entries": [
+        "[Blighttown] Tattered Cloth Hood"
+      ]
+    },
+    {
+      "ID": 1400271,
+      "Entries": [
+        "[Blighttown] Tattered Cloth Robe"
+      ]
+    },
+    {
+      "ID": 1400272,
+      "Entries": [
+        "[Blighttown] Tattered Cloth Manchette"
+      ]
+    },
+    {
+      "ID": 1400273,
+      "Entries": [
+        "[Blighttown] Heavy Boots"
+      ]
+    },
+    {
+      "ID": 1400274,
+      "Entries": [
+        "[Blighttown] Poison Mist"
+      ]
+    },
+    {
+      "ID": 1400280,
+      "Entries": [
+        "[Blighttown] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400290,
+      "Entries": [
+        "[Blighttown] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1400300,
+      "Entries": [
+        "[Blighttown] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1400310,
+      "Entries": [
+        "[Blighttown] Wanderer Hood"
+      ]
+    },
+    {
+      "ID": 1400311,
+      "Entries": [
+        "[Blighttown] Wanderer Coat"
+      ]
+    },
+    {
+      "ID": 1400312,
+      "Entries": [
+        "[Blighttown] Wanderer Manchette"
+      ]
+    },
+    {
+      "ID": 1400313,
+      "Entries": [
+        "[Blighttown] Wanderer Boots"
+      ]
+    },
+    {
+      "ID": 1400314,
+      "Entries": [
+        "[Blighttown] Falchion"
+      ]
+    },
+    {
+      "ID": 1400320,
+      "Entries": [
+        "[Blighttown] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1400340,
+      "Entries": [
+        "[Blighttown] Iaito"
+      ]
+    },
+    {
+      "ID": 1400350,
+      "Entries": [
+        "[Blighttown] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 1400360,
+      "Entries": [
+        "[Blighttown] Server"
+      ]
+    },
+    {
+      "ID": 1400370,
+      "Entries": [
+        "[Blighttown] Helm of Thorns"
+      ]
+    },
+    {
+      "ID": 1400371,
+      "Entries": [
+        "[Blighttown] Armor of Thorns"
+      ]
+    },
+    {
+      "ID": 1400372,
+      "Entries": [
+        "[Blighttown] Gauntlets of Thorns"
+      ]
+    },
+    {
+      "ID": 1400373,
+      "Entries": [
+        "[Blighttown] Leggings of Thorns"
+      ]
+    },
+    {
+      "ID": 1400500,
+      "Entries": [
+        "[Blighttown] Chest - Key to New Londo Ruins"
+      ]
+    },
+    {
+      "ID": 1400510,
+      "Entries": [
+        "[Blighttown] Chest - Dragon Scale"
+      ]
+    },
+    {
+      "ID": 1400520,
+      "Entries": [
+        "[Blighttown] Chest - Remedy"
+      ]
+    },
+    {
+      "ID": 1410000,
+      "Entries": [
+        "[Demon Ruins] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1410010,
+      "Entries": [
+        "[Demon Ruins] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1410020,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410030,
+      "Entries": [
+        "[Demon Ruins] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1410050,
+      "Entries": [
+        "[Demon Ruins] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1410060,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1410080,
+      "Entries": [
+        "[Demon Ruins] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1410090,
+      "Entries": [
+        "[Demon Ruins] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1410100,
+      "Entries": [
+        "[Demon Ruins] Large Flame Ember"
+      ]
+    },
+    {
+      "ID": 1410140,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410160,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410180,
+      "Entries": [
+        "[Demon Ruins] Gold-Hemmed Black Hood"
+      ]
+    },
+    {
+      "ID": 1410181,
+      "Entries": [
+        "[Demon Ruins] Gold-Hemmed Black Cloak"
+      ]
+    },
+    {
+      "ID": 1410182,
+      "Entries": [
+        "[Demon Ruins] Gold-Hemmed Black Gloves"
+      ]
+    },
+    {
+      "ID": 1410183,
+      "Entries": [
+        "[Demon Ruins] Gold-Hemmed Black Skirt"
+      ]
+    },
+    {
+      "ID": 1410190,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410200,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410210,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410220,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410230,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410240,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410250,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410260,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410270,
+      "Entries": [
+        "[Demon Ruins] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1410280,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410290,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410300,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410310,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410320,
+      "Entries": [
+        "[Demon Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410330,
+      "Entries": [
+        "[Demon Ruins] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1410340,
+      "Entries": [
+        "[Demon Ruins] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1410350,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410360,
+      "Entries": [
+        "[Demon Ruins] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 1410370,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410380,
+      "Entries": [
+        "[Demon Ruins] Rare Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 1410390,
+      "Entries": [
+        "[Demon Ruins] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1410400,
+      "Entries": [
+        "[Demon Ruins] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1410410,
+      "Entries": [
+        "[Demon Ruins] Red Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1410500,
+      "Entries": [
+        "[Demon Ruins] Chest - Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 1410510,
+      "Entries": [
+        "[Demon Ruins] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1410520,
+      "Entries": [
+        "[Demon Ruins] Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 1410530,
+      "Entries": [
+        "[Demon Ruins] Chaos Flame Ember"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "[Sen's Fortress] Ring of Steel Protection"
+      ]
+    },
+    {
+      "ID": 1500010,
+      "Entries": [
+        "[Sen's Fortress] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1500020,
+      "Entries": [
+        "[Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1500030,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1500040,
+      "Entries": [
+        "[Sen's Fortress] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1500050,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1500060,
+      "Entries": [
+        "[Sen's Fortress] Black Sorcerer Hat"
+      ]
+    },
+    {
+      "ID": 1500061,
+      "Entries": [
+        "[Sen's Fortress] Black Sorcerer Cloak"
+      ]
+    },
+    {
+      "ID": 1500062,
+      "Entries": [
+        "[Sen's Fortress] Black Sorcerer Gauntlets"
+      ]
+    },
+    {
+      "ID": 1500063,
+      "Entries": [
+        "[Sen's Fortress] Black Sorcerer Boots"
+      ]
+    },
+    {
+      "ID": 1500064,
+      "Entries": [
+        "[Sen's Fortress] Hush"
+      ]
+    },
+    {
+      "ID": 1500070,
+      "Entries": [
+        "[Sen's Fortress] Covetous Gold Serpent Ring"
+      ]
+    },
+    {
+      "ID": 1500080,
+      "Entries": [
+        "[Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1500090,
+      "Entries": [
+        "[Sen's Fortress] Flame Stoneplate Ring"
+      ]
+    },
+    {
+      "ID": 1500100,
+      "Entries": [
+        "[Sen's Fortress] Rare Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 1500150,
+      "Entries": [
+        "[Sen's Fortress] Cage Key"
+      ]
+    },
+    {
+      "ID": 1500300,
+      "Entries": [
+        "[Sen's Fortress] Dingy Gloves"
+      ]
+    },
+    {
+      "ID": 1500310,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1500320,
+      "Entries": [
+        "[Sen's Fortress] Slumbering Dragoncrest Ring"
+      ]
+    },
+    {
+      "ID": 1500330,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1500350,
+      "Entries": [
+        "[Sen's Fortress] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1500360,
+      "Entries": [
+        "[Sen's Fortress] Scythe"
+      ]
+    },
+    {
+      "ID": 1500400,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1500410,
+      "Entries": [
+        "[Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1500420,
+      "Entries": [
+        "[Sen's Fortress] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1500430,
+      "Entries": [
+        "[Sen's Fortress] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1500440,
+      "Entries": [
+        "[Sen's Fortress] Sniper Crossbow"
+      ]
+    },
+    {
+      "ID": 1500441,
+      "Entries": [
+        "[Sen's Fortress] Sniper Bolt"
+      ]
+    },
+    {
+      "ID": 1510000,
+      "Entries": [
+        "[Anor Londo] Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 1510030,
+      "Entries": [
+        "[Anor Londo] Ring of the Sun's Firstborn"
+      ]
+    },
+    {
+      "ID": 1510040,
+      "Entries": [
+        "[Anor Londo] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1510050,
+      "Entries": [
+        "[Anor Londo] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1510060,
+      "Entries": [
+        "[Anor Londo] Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 1510061,
+      "Entries": [
+        "[Anor Londo] Dragonslayer Arrow"
+      ]
+    },
+    {
+      "ID": 1510070,
+      "Entries": [
+        "[Anor Londo] Black Iron Helm"
+      ]
+    },
+    {
+      "ID": 1510071,
+      "Entries": [
+        "[Anor Londo] Black Iron Armor"
+      ]
+    },
+    {
+      "ID": 1510072,
+      "Entries": [
+        "[Anor Londo] Black Iron Gauntlets"
+      ]
+    },
+    {
+      "ID": 1510073,
+      "Entries": [
+        "[Anor Londo] Black Iron Leggings"
+      ]
+    },
+    {
+      "ID": 1510074,
+      "Entries": [
+        "[Anor Londo] Greatsword"
+      ]
+    },
+    {
+      "ID": 1510075,
+      "Entries": [
+        "[Anor Londo] Black Iron Greatshield"
+      ]
+    },
+    {
+      "ID": 1510080,
+      "Entries": [
+        "[Anor Londo] Helm of Favor"
+      ]
+    },
+    {
+      "ID": 1510081,
+      "Entries": [
+        "[Anor Londo] Embraced Armor of Favor"
+      ]
+    },
+    {
+      "ID": 1510082,
+      "Entries": [
+        "[Anor Londo] Gauntlets of Favor"
+      ]
+    },
+    {
+      "ID": 1510083,
+      "Entries": [
+        "[Anor Londo] Leggings of Favor"
+      ]
+    },
+    {
+      "ID": 1510510,
+      "Entries": [
+        "[Anor Londo] Chest - Demon Titanite"
+      ]
+    },
+    {
+      "ID": 1510520,
+      "Entries": [
+        "[Anor Londo] Chest - Divine Blessing"
+      ]
+    },
+    {
+      "ID": 1510530,
+      "Entries": [
+        "[Anor Londo] Chest - Havel's Helm"
+      ]
+    },
+    {
+      "ID": 1510531,
+      "Entries": [
+        "[Anor Londo] Chest - Havel's Armor"
+      ]
+    },
+    {
+      "ID": 1510540,
+      "Entries": [
+        "[Anor Londo] Chest - Havel's Gauntlets"
+      ]
+    },
+    {
+      "ID": 1510541,
+      "Entries": [
+        "[Anor Londo] Chest - Havel's Leggings"
+      ]
+    },
+    {
+      "ID": 1510560,
+      "Entries": [
+        "[Anor Londo] Chest - Havel's Greatshield"
+      ]
+    },
+    {
+      "ID": 1510570,
+      "Entries": [
+        "[Anor Londo] Chest - Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 1510580,
+      "Entries": [
+        "[Anor Londo] Chest - Silver Knight Helm"
+      ]
+    },
+    {
+      "ID": 1510581,
+      "Entries": [
+        "[Anor Londo] Chest - Silver Knight Armor"
+      ]
+    },
+    {
+      "ID": 1510590,
+      "Entries": [
+        "[Anor Londo] Chest - Silver Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 1510591,
+      "Entries": [
+        "[Anor Londo] Chest - Silver Knight Leggings"
+      ]
+    },
+    {
+      "ID": 1510600,
+      "Entries": [
+        "[Anor Londo] Chest - Demon Titanite"
+      ]
+    },
+    {
+      "ID": 1510610,
+      "Entries": [
+        "[Anor Londo] Chest - Hawk Ring"
+      ]
+    },
+    {
+      "ID": 1510620,
+      "Entries": [
+        "[Anor Londo] Chest - Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 1510650,
+      "Entries": [
+        "[Anor Londo] Chest - None"
+      ]
+    },
+    {
+      "ID": 1510660,
+      "Entries": [
+        "[Anor Londo] Chest - Brass Helm"
+      ]
+    },
+    {
+      "ID": 1510661,
+      "Entries": [
+        "[Anor Londo] Chest - Brass Armor"
+      ]
+    },
+    {
+      "ID": 1510662,
+      "Entries": [
+        "[Anor Londo] Chest - Brass Gauntlets"
+      ]
+    },
+    {
+      "ID": 1510663,
+      "Entries": [
+        "[Anor Londo] Chest - Brass Leggings"
+      ]
+    },
+    {
+      "ID": 1510670,
+      "Entries": [
+        "[Anor Londo] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1510680,
+      "Entries": [
+        "[Anor Londo] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 1510690,
+      "Entries": [
+        "[Anor Londo] Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 1510700,
+      "Entries": [
+        "[Anor Londo] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "[New Londo Ruins] Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1600020,
+      "Entries": [
+        "[New Londo Ruins] Estoc"
+      ]
+    },
+    {
+      "ID": 1600030,
+      "Entries": [
+        "[New Londo Ruins] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 1600040,
+      "Entries": [
+        "[New Londo Ruins] Transient Curse"
+      ]
+    },
+    {
+      "ID": 1600060,
+      "Entries": [
+        "[New Londo Ruins] Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 1600070,
+      "Entries": [
+        "[New Londo Ruins] Transient Curse"
+      ]
+    },
+    {
+      "ID": 1600090,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1600100,
+      "Entries": [
+        "[New Londo Ruins] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1600110,
+      "Entries": [
+        "[New Londo Ruins] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600120,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1600130,
+      "Entries": [
+        "[New Londo Ruins] Rare Ring of Sacrifice"
+      ]
+    },
+    {
+      "ID": 1600140,
+      "Entries": [
+        "[New Londo Ruins] Cursebite Ring"
+      ]
+    },
+    {
+      "ID": 1600150,
+      "Entries": [
+        "[New Londo Ruins] Humanity"
+      ]
+    },
+    {
+      "ID": 1600160,
+      "Entries": [
+        "[New Londo Ruins] Composite Bow"
+      ]
+    },
+    {
+      "ID": 1600161,
+      "Entries": [
+        "[New Londo Ruins] Large Arrow"
+      ]
+    },
+    {
+      "ID": 1600170,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 1600180,
+      "Entries": [
+        "[New Londo Ruins] Astora's Straight Sword"
+      ]
+    },
+    {
+      "ID": 1600190,
+      "Entries": [
+        "[New Londo Ruins] Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600200,
+      "Entries": [
+        "[New Londo Ruins] Dragon Crest Shield"
+      ]
+    },
+    {
+      "ID": 1600210,
+      "Entries": [
+        "[New Londo Ruins] Humanity"
+      ]
+    },
+    {
+      "ID": 1600220,
+      "Entries": [
+        "[New Londo Ruins] Brigand Hood"
+      ]
+    },
+    {
+      "ID": 1600221,
+      "Entries": [
+        "[New Londo Ruins] Brigand Armor"
+      ]
+    },
+    {
+      "ID": 1600222,
+      "Entries": [
+        "[New Londo Ruins] Brigand Gauntlets"
+      ]
+    },
+    {
+      "ID": 1600223,
+      "Entries": [
+        "[New Londo Ruins] Brigand Trousers"
+      ]
+    },
+    {
+      "ID": 1600224,
+      "Entries": [
+        "[New Londo Ruins] Spider Shield"
+      ]
+    },
+    {
+      "ID": 1600250,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600260,
+      "Entries": [
+        "[New Londo Ruins] Humanity"
+      ]
+    },
+    {
+      "ID": 1600270,
+      "Entries": [
+        "[New Londo Ruins] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1600280,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600290,
+      "Entries": [
+        "[New Londo Ruins] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1600310,
+      "Entries": [
+        "[New Londo Ruins] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1600330,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600360,
+      "Entries": [
+        "[New Londo Ruins] Witch Hat"
+      ]
+    },
+    {
+      "ID": 1600361,
+      "Entries": [
+        "[New Londo Ruins] Witch Cloak"
+      ]
+    },
+    {
+      "ID": 1600362,
+      "Entries": [
+        "[New Londo Ruins] Witch Gloves"
+      ]
+    },
+    {
+      "ID": 1600363,
+      "Entries": [
+        "[New Londo Ruins] Witch Skirt"
+      ]
+    },
+    {
+      "ID": 1600364,
+      "Entries": [
+        "[New Londo Ruins] Beatrice's Catalyst"
+      ]
+    },
+    {
+      "ID": 1600370,
+      "Entries": [
+        "[New Londo Ruins] Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1600380,
+      "Entries": [
+        "[New Londo Ruins] Red Tearstone Ring"
+      ]
+    },
+    {
+      "ID": 1600500,
+      "Entries": [
+        "[New Londo Ruins] Chest - Very Large Ember"
+      ]
+    },
+    {
+      "ID": 1600510,
+      "Entries": [
+        "[New Londo Ruins] Chest - Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1600520,
+      "Entries": [
+        "[New Londo Ruins] Chest - Transient Curse"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "[Duke's Archives] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1700010,
+      "Entries": [
+        "[Duke's Archives] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1700020,
+      "Entries": [
+        "[Duke's Archives] Avelyn"
+      ]
+    },
+    {
+      "ID": 1700040,
+      "Entries": [
+        "[Duke's Archives] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 1700050,
+      "Entries": [
+        "[Duke's Archives] Prism Stone"
+      ]
+    },
+    {
+      "ID": 1700060,
+      "Entries": [
+        "[Duke's Archives] Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1700070,
+      "Entries": [
+        "[Duke's Archives] Maiden Hood"
+      ]
+    },
+    {
+      "ID": 1700071,
+      "Entries": [
+        "[Duke's Archives] Maiden Robe"
+      ]
+    },
+    {
+      "ID": 1700072,
+      "Entries": [
+        "[Duke's Archives] Maiden Gloves"
+      ]
+    },
+    {
+      "ID": 1700073,
+      "Entries": [
+        "[Duke's Archives] Maiden Skirt"
+      ]
+    },
+    {
+      "ID": 1700074,
+      "Entries": [
+        "[Duke's Archives] White Seance Ring"
+      ]
+    },
+    {
+      "ID": 1700080,
+      "Entries": [
+        "[Duke's Archives] Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 1700120,
+      "Entries": [
+        "[Duke's Archives] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1700150,
+      "Entries": [
+        "[Duke's Archives] Humanity"
+      ]
+    },
+    {
+      "ID": 1700160,
+      "Entries": [
+        "[Duke's Archives] Blue Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1700170,
+      "Entries": [
+        "[Duke's Archives] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1700180,
+      "Entries": [
+        "[Duke's Archives] Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 1700200,
+      "Entries": [
+        "[Duke's Archives] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 1700210,
+      "Entries": [
+        "[Duke's Archives] Archive Prison Extra Key"
+      ]
+    },
+    {
+      "ID": 1700510,
+      "Entries": [
+        "[Duke's Archives] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1700520,
+      "Entries": [
+        "[Duke's Archives] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1700530,
+      "Entries": [
+        "[Duke's Archives] Large Magic Ember"
+      ]
+    },
+    {
+      "ID": 1700540,
+      "Entries": [
+        "[Duke's Archives] Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 1700560,
+      "Entries": [
+        "[Duke's Archives] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1700580,
+      "Entries": [
+        "[Duke's Archives] Six-Eyed Helm of the Channelers"
+      ]
+    },
+    {
+      "ID": 1700581,
+      "Entries": [
+        "[Duke's Archives] Robe of the Channelers"
+      ]
+    },
+    {
+      "ID": 1700582,
+      "Entries": [
+        "[Duke's Archives] Gauntlets of the Channelers"
+      ]
+    },
+    {
+      "ID": 1700583,
+      "Entries": [
+        "[Duke's Archives] Waistcloth of the Channelers"
+      ]
+    },
+    {
+      "ID": 1700590,
+      "Entries": [
+        "[Duke's Archives] Archive Tower Giant Cell Key"
+      ]
+    },
+    {
+      "ID": 1700600,
+      "Entries": [
+        "[Duke's Archives] Crystal Ember"
+      ]
+    },
+    {
+      "ID": 1700630,
+      "Entries": [
+        "[Duke's Archives] Archive Tower Giant Door Key"
+      ]
+    },
+    {
+      "ID": 1700640,
+      "Entries": [
+        "[Duke's Archives] Sage Robe"
+      ]
+    },
+    {
+      "ID": 1700641,
+      "Entries": [
+        "[Duke's Archives] Traveling Gloves"
+      ]
+    },
+    {
+      "ID": 1700642,
+      "Entries": [
+        "[Duke's Archives] Traveling Boots"
+      ]
+    },
+    {
+      "ID": 1700643,
+      "Entries": [
+        "[Duke's Archives] Logan's Catalyst"
+      ]
+    },
+    {
+      "ID": 1700650,
+      "Entries": [
+        "[Duke's Archives] Crystalline Helm"
+      ]
+    },
+    {
+      "ID": 1700651,
+      "Entries": [
+        "[Duke's Archives] Crystalline Armor"
+      ]
+    },
+    {
+      "ID": 1700652,
+      "Entries": [
+        "[Duke's Archives] Crystalline Gauntlets"
+      ]
+    },
+    {
+      "ID": 1700653,
+      "Entries": [
+        "[Duke's Archives] Crystalline Leggings"
+      ]
+    },
+    {
+      "ID": 1800050,
+      "Entries": [
+        "[Kiln of the First Flame] Black Knight Helm"
+      ]
+    },
+    {
+      "ID": 1800051,
+      "Entries": [
+        "[Kiln of the First Flame] Black Knight Armor"
+      ]
+    },
+    {
+      "ID": 1800052,
+      "Entries": [
+        "[Kiln of the First Flame] Black Knight Gauntlets"
+      ]
+    },
+    {
+      "ID": 1800053,
+      "Entries": [
+        "[Kiln of the First Flame] Black Knight Leggings"
+      ]
+    },
+    {
+      "ID": 1810000,
+      "Entries": [
+        "[Northern Undead Asylum] Dungeon Cell Key"
+      ]
+    },
+    {
+      "ID": 1810060,
+      "Entries": [
+        "[Northern Undead Asylum] Rusted Iron Ring"
+      ]
+    },
+    {
+      "ID": 1810070,
+      "Entries": [
+        "[Northern Undead Asylum] Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 1810080,
+      "Entries": [
+        "[Northern Undead Asylum] Peculiar Doll"
+      ]
+    },
+    {
+      "ID": 1810100,
+      "Entries": [
+        "[Northern Undead Asylum] Longsword"
+      ]
+    },
+    {
+      "ID": 1810110,
+      "Entries": [
+        "[Northern Undead Asylum] Heater Shield"
+      ]
+    },
+    {
+      "ID": 1810120,
+      "Entries": [
+        "[Northern Undead Asylum] Broadsword"
+      ]
+    },
+    {
+      "ID": 1810130,
+      "Entries": [
+        "[Northern Undead Asylum] Tower Kite Shield"
+      ]
+    },
+    {
+      "ID": 1810140,
+      "Entries": [
+        "[Northern Undead Asylum] Scimitar"
+      ]
+    },
+    {
+      "ID": 1810150,
+      "Entries": [
+        "[Northern Undead Asylum] Leather Shield"
+      ]
+    },
+    {
+      "ID": 1810160,
+      "Entries": [
+        "[Northern Undead Asylum] Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 1810170,
+      "Entries": [
+        "[Northern Undead Asylum] Target Shield"
+      ]
+    },
+    {
+      "ID": 1810180,
+      "Entries": [
+        "[Northern Undead Asylum] Battle Axe"
+      ]
+    },
+    {
+      "ID": 1810190,
+      "Entries": [
+        "[Northern Undead Asylum] Spider Shield"
+      ]
+    },
+    {
+      "ID": 1810200,
+      "Entries": [
+        "[Northern Undead Asylum] Shortsword"
+      ]
+    },
+    {
+      "ID": 1810210,
+      "Entries": [
+        "[Northern Undead Asylum] Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 1810220,
+      "Entries": [
+        "[Northern Undead Asylum] Short Bow"
+      ]
+    },
+    {
+      "ID": 1810221,
+      "Entries": [
+        "[Northern Undead Asylum] Standard Arrow"
+      ]
+    },
+    {
+      "ID": 1810230,
+      "Entries": [
+        "[Northern Undead Asylum] Dagger"
+      ]
+    },
+    {
+      "ID": 1810240,
+      "Entries": [
+        "[Northern Undead Asylum] Small Leather Shield"
+      ]
+    },
+    {
+      "ID": 1810250,
+      "Entries": [
+        "[Northern Undead Asylum] Sorcerer's Catalyst"
+      ]
+    },
+    {
+      "ID": 1810260,
+      "Entries": [
+        "[Northern Undead Asylum] Hand Axe"
+      ]
+    },
+    {
+      "ID": 1810270,
+      "Entries": [
+        "[Northern Undead Asylum] Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 1810280,
+      "Entries": [
+        "[Northern Undead Asylum] Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 1810290,
+      "Entries": [
+        "[Northern Undead Asylum] Mace"
+      ]
+    },
+    {
+      "ID": 1810300,
+      "Entries": [
+        "[Northern Undead Asylum] East-West Shield"
+      ]
+    },
+    {
+      "ID": 1810310,
+      "Entries": [
+        "[Northern Undead Asylum] Canvas Talisman"
+      ]
+    },
+    {
+      "ID": 1810320,
+      "Entries": [
+        "[Northern Undead Asylum] Club"
+      ]
+    },
+    {
+      "ID": 1810330,
+      "Entries": [
+        "[Northern Undead Asylum] Plank Shield"
+      ]
+    },
+    {
+      "ID": 9990000,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990010,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990011,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990020,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990021,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990022,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990030,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990031,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990032,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990033,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990034,
+      "Entries": [
+        "Treasure Test"
+      ]
+    },
+    {
+      "ID": 9990100,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990110,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990500,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990510,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990520,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990530,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990540,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990550,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990560,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990570,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990580,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990590,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990600,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990610,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990620,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990630,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990640,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990650,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990660,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990670,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990680,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990690,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990700,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990710,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990720,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990730,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990740,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990750,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990760,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990770,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990780,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990790,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990800,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990810,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990820,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990830,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990840,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990850,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990860,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990870,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990880,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990890,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 9990900,
+      "Entries": [
+        "Tutorial Test"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "[Rat] Humanity"
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "[Small Rat] Humanity"
+      ]
+    },
+    {
+      "ID": 12010100,
+      "Entries": [
+        "[Small Rat - Undead Burg] Humanity"
+      ]
+    },
+    {
+      "ID": 12010200,
+      "Entries": [
+        "[Small Rat - The Depths] Humanity"
+      ]
+    },
+    {
+      "ID": 12010300,
+      "Entries": [
+        "[Small Rat - Painted World] Humanity"
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "[Giant Rat - The Depths] Humanity"
+      ]
+    },
+    {
+      "ID": 12030000,
+      "Entries": [
+        "[Plague Rat - Painted World] Humanity"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "[Infested Ghoul] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 20600100,
+      "Entries": [
+        "[Infested Ghoul (Spear)] Spear"
+      ]
+    },
+    {
+      "ID": 20600200,
+      "Entries": [
+        "[Infested Ghoul] Soul of a Lost Undead, Large Soul of a Lost Undead, Soul of a Nameless Soldier, Humanity"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "[Stray Demon - Asylum] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 22300010,
+      "Entries": [
+        "[Stray Demon - Demon Ruins] Demon's Catalyst"
+      ]
+    },
+    {
+      "ID": 22310000,
+      "Entries": [
+        "[Firesage Demon - Demon Ruins] Demon's Catalyst"
+      ]
+    },
+    {
+      "ID": 22400000,
+      "Entries": [
+        "[Capra Demon] Demon Great Machete"
+      ]
+    },
+    {
+      "ID": 22400100,
+      "Entries": [
+        "[Capra Demon - Demon Ruins] Demon Great Machete"
+      ]
+    },
+    {
+      "ID": 22500000,
+      "Entries": [
+        "[Taurus Demon - Undead Burg] Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 22500200,
+      "Entries": [
+        "[Taurus Demon - Demon Ruins] Demon's Greataxe"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "[Batwing Demon - Sen's Fortress] Demon's Spear"
+      ]
+    },
+    {
+      "ID": 22600100,
+      "Entries": [
+        "[Batwing Demon - Anor Londo] Demon's Spear"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "[Mushroom Parent - Darkroot Garden] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 22700100,
+      "Entries": [
+        "[Mushroom Parent - Great Hollow] None"
+      ]
+    },
+    {
+      "ID": 22800000,
+      "Entries": [
+        "[Mushroom Child - Darkroot Garden] Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 22800100,
+      "Entries": [
+        "[Mushroom Child - Great Hollow] None"
+      ]
+    },
+    {
+      "ID": 23000000,
+      "Entries": [
+        "[Prowling Demon - Catacombs] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000001,
+      "Entries": [
+        "[Prowling Demon - Catacombs] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23000100,
+      "Entries": [
+        "[Prowling Demon - Undead Parish] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000101,
+      "Entries": [
+        "[Prowling Demon - Undead Parish] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23000200,
+      "Entries": [
+        "[Prowling Demon - Sen's Fortress] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000201,
+      "Entries": [
+        "[Prowling Demon - Sen's Fortress] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23000300,
+      "Entries": [
+        "[Prowling Demon - Sen's Fortress] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000301,
+      "Entries": [
+        "[Prowling Demon - Sen's Fortress] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23000400,
+      "Entries": [
+        "[Prowling Demon - Anor Londo] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000401,
+      "Entries": [
+        "[Prowling Demon - Anor Londo] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23000500,
+      "Entries": [
+        "[Prowling Demon - Demon Ruins] Titanite Catch Pole"
+      ]
+    },
+    {
+      "ID": 23000501,
+      "Entries": [
+        "[Prowling Demon - Demon Ruins] Demon Titanite"
+      ]
+    },
+    {
+      "ID": 23100000,
+      "Entries": [
+        "[Crow Demon - Painted World] Souvenir of Reprisal"
+      ]
+    },
+    {
+      "ID": 23300000,
+      "Entries": [
+        "[Demonic Foliage - Darkroot Garden] Bloodred Moss Clump, Purple Moss Clump, Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 23300100,
+      "Entries": [
+        "[Demonic Foliage - Royal Garden] Bloodred Moss Clump, Purple Moss Clump, Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 23700000,
+      "Entries": [
+        "[Channeler - Undead Parish] Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 23700100,
+      "Entries": [
+        "[Channeler - Duke's Archives] Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 23700200,
+      "Entries": [
+        "[Channeler - Duke's Archives] Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 23800000,
+      "Entries": [
+        "[Stone Knight - Darkroot Garden] Stone Greatsword, Stone Greatshield"
+      ]
+    },
+    {
+      "ID": 23800100,
+      "Entries": [
+        "[Stone Knight - Royal Garden] Stone Greatsword, Stone Greatshield"
+      ]
+    },
+    {
+      "ID": 23900000,
+      "Entries": [
+        "[Darkwraith - New Londo Ruins] Titanite Chunk, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 23900001,
+      "Entries": [
+        "[Darkwraith - New Londo Ruins] Dark Hand"
+      ]
+    },
+    {
+      "ID": 23900220,
+      "Entries": [
+        "[Darkwraith - New Londo Ruins] Titanite Chunk, Titanite Slab"
+      ]
+    },
+    {
+      "ID": 24000000,
+      "Entries": [
+        "[Painting Guardian - Anor Londo] Painting Guardian Sword, Throwing Knife"
+      ]
+    },
+    {
+      "ID": 24100000,
+      "Entries": [
+        "[Silver Knight - Anor Londo] Silv. Knight Str. Sword, Silver Knight Shield"
+      ]
+    },
+    {
+      "ID": 24100300,
+      "Entries": [
+        "[Silver Knight (Spear) - Anor Londo] Silver Knight Spear, Silver Knight Shield"
+      ]
+    },
+    {
+      "ID": 24100400,
+      "Entries": [
+        "[Silver Knight (Bow) - Anor Londo] Dragonslayer Arrow"
+      ]
+    },
+    {
+      "ID": 24300000,
+      "Entries": [
+        "[Demonic Statue - Demon Ruins] None"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "[Hollow - Undead Burg] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "[Hollow - Undead Burg] None"
+      ]
+    },
+    {
+      "ID": 25000200,
+      "Entries": [
+        "[Hollow (Bow) - Undead Burg] Short Bow"
+      ]
+    },
+    {
+      "ID": 25000300,
+      "Entries": [
+        "[Hollow (Black Phantom) - Undead Burg] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25001000,
+      "Entries": [
+        "[Hollow - Painted World] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25001100,
+      "Entries": [
+        "[Hollow - Painted World] None"
+      ]
+    },
+    {
+      "ID": 25001200,
+      "Entries": [
+        "[Hollow (Bow) - Painted World] Short Bow"
+      ]
+    },
+    {
+      "ID": 25002000,
+      "Entries": [
+        "[Hollow - Painted World] None"
+      ]
+    },
+    {
+      "ID": 25002100,
+      "Entries": [
+        "[Hollow (Bow) - Painted World] Short Bow"
+      ]
+    },
+    {
+      "ID": 25002200,
+      "Entries": [
+        "[Hollow - Northern Undead Asylum] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25002300,
+      "Entries": [
+        "[Hollow - Painted World] None"
+      ]
+    },
+    {
+      "ID": 25002400,
+      "Entries": [
+        "[Hollow (Bow) - Painted World] Short Bow"
+      ]
+    },
+    {
+      "ID": 25002500,
+      "Entries": [
+        "[Hollow - Painted World] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25003000,
+      "Entries": [
+        "[Hollow - The Depths] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25003100,
+      "Entries": [
+        "[Hollow - The Depths] None"
+      ]
+    },
+    {
+      "ID": 25003200,
+      "Entries": [
+        "[Hollow (Black Phantom - The Depths] Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 25004000,
+      "Entries": [
+        "[Hollow - New Londo Ruins] None"
+      ]
+    },
+    {
+      "ID": 25100000,
+      "Entries": [
+        "[Undead Merchant - Firelink] None"
+      ]
+    },
+    {
+      "ID": 25100100,
+      "Entries": [
+        "[Undead Merchant - Undead Burg] Uchigatana"
+      ]
+    },
+    {
+      "ID": 25200000,
+      "Entries": [
+        "[Undead Assassin - Undead Burg] Bandit's Knife, Target Shield"
+      ]
+    },
+    {
+      "ID": 25200001,
+      "Entries": [
+        "[Undead Assassin - Undead Burg] Hollow Thief's Hood"
+      ]
+    },
+    {
+      "ID": 25200002,
+      "Entries": [
+        "[Undead Assassin - Undead Burg] Hollow Thief's Leather Armor"
+      ]
+    },
+    {
+      "ID": 25200003,
+      "Entries": [
+        "[Undead Assassin - Undead Burg] Hollow Thief's Tights"
+      ]
+    },
+    {
+      "ID": 25300200,
+      "Entries": [
+        "[Blowdart Hollow - Blighttown] Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 25300201,
+      "Entries": [
+        "[Blowdart Hollow - Blighttown] Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 25400000,
+      "Entries": [
+        "[Hollow Warrior - Firelink] Shortsword, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25400001,
+      "Entries": [
+        "[Hollow Warrior - Firelink] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25400002,
+      "Entries": [
+        "[Hollow Warrior - Firelink] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25400003,
+      "Entries": [
+        "[Hollow Warrior - Firelink] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25400100,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Firelink] Battle Axe, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25400101,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Firelink] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25400102,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Firelink] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25400103,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Firelink] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25400200,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Firelink] Firebomb"
+      ]
+    },
+    {
+      "ID": 25400201,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Firelink] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25400202,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Firelink] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25400203,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Firelink] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25401000,
+      "Entries": [
+        "[Hollow Warrior - Undead Burg] Shortsword, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25401001,
+      "Entries": [
+        "[Hollow Warrior - Undead Burg] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25401002,
+      "Entries": [
+        "[Hollow Warrior - Undead Burg] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25401003,
+      "Entries": [
+        "[Hollow Warrior - Undead Burg] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25401100,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Undead Burg] Battle Axe, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25401101,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Undead Burg] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25401102,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Undead Burg] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25401103,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Undead Burg] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25401200,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Undead Burg] Firebomb"
+      ]
+    },
+    {
+      "ID": 25401201,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Undead Burg] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25401202,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Undead Burg] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25401203,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Undead Burg] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25402000,
+      "Entries": [
+        "[Hollow Warrior - Painted World] Shortsword, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25402001,
+      "Entries": [
+        "[Hollow Warrior - Painted World] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25402002,
+      "Entries": [
+        "[Hollow Warrior - Painted World] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25402003,
+      "Entries": [
+        "[Hollow Warrior - Painted World] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25402100,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Painted World] Battle Axe, Cracked Round Shield"
+      ]
+    },
+    {
+      "ID": 25402101,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Painted World] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25402102,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Painted World] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25402103,
+      "Entries": [
+        "[Hollow Warrior (Axe) - Painted World] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25402200,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Painted World] Firebomb"
+      ]
+    },
+    {
+      "ID": 25402201,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Painted World] Hollow Warrior Helm"
+      ]
+    },
+    {
+      "ID": 25402202,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Painted World] Hollow Warrior Armor"
+      ]
+    },
+    {
+      "ID": 25402203,
+      "Entries": [
+        "[Hollow Warrior (Firebomb) - Painted World] Hollow Warrior Waistcloth"
+      ]
+    },
+    {
+      "ID": 25500000,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Undead Burg] Spear, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25500001,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Undead Burg] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25500002,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Undead Burg] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25500003,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Undead Burg] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25500004,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25500100,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Undead Burg] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25500101,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Undead Burg] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25500102,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Undead Burg] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25500103,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Undead Burg] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25500104,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25500200,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Undead Burg] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 25500201,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Undead Burg] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25500202,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Undead Burg] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25500203,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Undead Burg] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25500204,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25501000,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25501001,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25501002,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25501003,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25501004,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25502000,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Firelink] Spear, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25502001,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Firelink] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25502002,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Firelink] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25502003,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Firelink] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25502004,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Firelink] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25502100,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25502101,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25502102,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25502103,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25502104,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Firelink] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25502200,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Firelink] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 25502201,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Firelink] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25502202,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Firelink] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25502203,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Firelink] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25502204,
+      "Entries": [
+        "[Hollow Soldier (Crossbow) - Firelink] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25503000,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25503001,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25503002,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25503003,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25503004,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25503100,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25503101,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25503102,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25503103,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25503104,
+      "Entries": [
+        "[Hollow Soldier (Sword) - Asylum] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25503200,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Asylum] Longsword, Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 25503201,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Asylum] Hollow Soldier Helm"
+      ]
+    },
+    {
+      "ID": 25503202,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Asylum] Hollow Soldier Armor"
+      ]
+    },
+    {
+      "ID": 25503203,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Asylum] Hollow Soldier Waistcloth"
+      ]
+    },
+    {
+      "ID": 25503204,
+      "Entries": [
+        "[Hollow Soldier (Spear) - Asylum] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25600000,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Balder Side Sword, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25600001,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25600002,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25600003,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25600004,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25600005,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25600100,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 25600101,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25600102,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25600103,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25600104,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25600105,
+      "Entries": [
+        "[Balder Knight (Bow) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25600200,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Rapier, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25600201,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25600202,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25600203,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25600204,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25600205,
+      "Entries": [
+        "[Balder Knight (Rapier) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25600300,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Balder Side Sword, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25600301,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25600302,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25600303,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25600304,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25600305,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25600400,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Rapier, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25600401,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25600402,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25600403,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25600404,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25600405,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601000,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Balder Side Sword, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25601001,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25601002,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25601003,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25601004,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25601005,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601006,
+      "Entries": [
+        "[Balder Knight (Bow) - Sen's Fortress)] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601100,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Light Crossbow"
+      ]
+    },
+    {
+      "ID": 25601101,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25601102,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25601103,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25601104,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25601105,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601106,
+      "Entries": [
+        "[Balder Knight (Crossbow) - Sen's Fortress)] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601200,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Rapier, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25601201,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25601202,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25601203,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25601204,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25601205,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601206,
+      "Entries": [
+        "[Balder Knight (Rapier) - Sen's Fortress)] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601300,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Balder Side Sword, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25601301,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25601302,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25601303,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25601304,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25601305,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601306,
+      "Entries": [
+        "[Balder Knight (Sword - Black Phantom) - Sen's Fortress)] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601400,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Rapier, Balder Shield"
+      ]
+    },
+    {
+      "ID": 25601401,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Balder Helm"
+      ]
+    },
+    {
+      "ID": 25601402,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Balder Armor"
+      ]
+    },
+    {
+      "ID": 25601403,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Balder Gauntlets"
+      ]
+    },
+    {
+      "ID": 25601404,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Balder Leggings"
+      ]
+    },
+    {
+      "ID": 25601405,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25601406,
+      "Entries": [
+        "[Balder Knight (Rapier - Black Phantom) - Sen's Fortress)] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25700000,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25700001,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25700002,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25700003,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25700004,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25700005,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25700100,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25700101,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25700102,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25700103,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25700104,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25700105,
+      "Entries": [
+        "[Heavy Knight (Mace) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25700200,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25700201,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25700202,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25700203,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25700204,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25700205,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Undead Burg] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25701000,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25701001,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25701002,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25701003,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25701004,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25701005,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25701100,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25701101,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25701102,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25701103,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25701104,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25701105,
+      "Entries": [
+        "[Heavy Knight (Mace) - Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25701200,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25701201,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25701202,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25701203,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25701204,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25701205,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Sen's Fortress] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25702000,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25702001,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25702002,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25702003,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25702004,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25702005,
+      "Entries": [
+        "[Heavy Knight (Greatsword) - Painted World] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25702100,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25702101,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25702102,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25702103,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25702104,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25702105,
+      "Entries": [
+        "[Heavy Knight (Mace) - Painted World] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 25702200,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Greatsword, Greataxe, Tower Shield"
+      ]
+    },
+    {
+      "ID": 25702201,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Steel Helm"
+      ]
+    },
+    {
+      "ID": 25702202,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Steel Armor"
+      ]
+    },
+    {
+      "ID": 25702203,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Steel Gauntlets"
+      ]
+    },
+    {
+      "ID": 25702204,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Steel Leggings"
+      ]
+    },
+    {
+      "ID": 25702205,
+      "Entries": [
+        "[Heavy Knight (Greatsword - Black Phantom) - Painted World] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 26400000,
+      "Entries": [
+        "[Andre of Astora] Blacksmith Hammer"
+      ]
+    },
+    {
+      "ID": 26500000,
+      "Entries": [
+        "[Necromancer - Catacombs] Skull Lantern"
+      ]
+    },
+    {
+      "ID": 26600000,
+      "Entries": [
+        "[Butcher - The Depths] Sack"
+      ]
+    },
+    {
+      "ID": 26700000,
+      "Entries": [
+        "[Ghost (Male) - New Londo Ruins] Jagged Ghost Blade, Transient Curse"
+      ]
+    },
+    {
+      "ID": 26800000,
+      "Entries": [
+        "[Ghost (Female) - New Londo Ruins] Ghost Blade, Transient Curse"
+      ]
+    },
+    {
+      "ID": 26900000,
+      "Entries": [
+        "[Serpent Soldier - Sen's Fortress] Man-serpent Greatsword"
+      ]
+    },
+    {
+      "ID": 26900100,
+      "Entries": [
+        "[Serpent Soldier - Duke's Archives] Archive Tower Cell Key"
+      ]
+    },
+    {
+      "ID": 26900200,
+      "Entries": [
+        "[Serpent Soldier - Duke's Archives] Man-serpent Greatsword"
+      ]
+    },
+    {
+      "ID": 26900300,
+      "Entries": [
+        "[Serpent Soldier - Sen's Fortress] Man-serpent Greatsword"
+      ]
+    },
+    {
+      "ID": 27000000,
+      "Entries": [
+        "[Serpent Mage - Sen's Fortress] Flamberge"
+      ]
+    },
+    {
+      "ID": 27000100,
+      "Entries": [
+        "[Serpent Mage - Duke's Archives] Flamberge"
+      ]
+    },
+    {
+      "ID": 27100000,
+      "Entries": [
+        "[Crystal Golem - Duke's Archives] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27100100,
+      "Entries": [
+        "[Crystal Golem - Darkroot Garden] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27100200,
+      "Entries": [
+        "[Crystal Golem - Darkroot Garden] Broken Pendant"
+      ]
+    },
+    {
+      "ID": 27110000,
+      "Entries": [
+        "[Crystal Golem (Gold) - Darkroot Garden] None"
+      ]
+    },
+    {
+      "ID": 27110100,
+      "Entries": [
+        "[Crystal Golem (Gold) - Duke's Archives] None"
+      ]
+    },
+    {
+      "ID": 27300000,
+      "Entries": [
+        "[Priscilla] None"
+      ]
+    },
+    {
+      "ID": 27310000,
+      "Entries": [
+        "[Priscilla (Tail)] Priscilla's Dagger"
+      ]
+    },
+    {
+      "ID": 27800000,
+      "Entries": [
+        "[Mimic - Sen's Fortress] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27800001,
+      "Entries": [
+        "[Mimic - Sen's Fortress] Spear [Lightning]"
+      ]
+    },
+    {
+      "ID": 27801000,
+      "Entries": [
+        "[Mimic - Anor Londo] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27801001,
+      "Entries": [
+        "[Mimic - Anor Londo] Club [Occult]"
+      ]
+    },
+    {
+      "ID": 27801010,
+      "Entries": [
+        "[Mimic - Anor Londo] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27801011,
+      "Entries": [
+        "[Mimic - Anor Londo] Halberd [Crystal]"
+      ]
+    },
+    {
+      "ID": 27801020,
+      "Entries": [
+        "[Mimic - Anor Londo] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27801021,
+      "Entries": [
+        "[Mimic - Anor Londo] Silver Coin"
+      ]
+    },
+    {
+      "ID": 27801030,
+      "Entries": [
+        "[Mimic - Anor Londo] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27801031,
+      "Entries": [
+        "[Mimic - Anor Londo] Gold Coin"
+      ]
+    },
+    {
+      "ID": 27802000,
+      "Entries": [
+        "[Mimic - Duke's Archives] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27802001,
+      "Entries": [
+        "[Mimic - Duke's Archives] Falchion [Enchanted]"
+      ]
+    },
+    {
+      "ID": 27802010,
+      "Entries": [
+        "[Mimic - Duke's Archives] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27802011,
+      "Entries": [
+        "[Mimic - Duke's Archives] Knight Shield [Crystal]"
+      ]
+    },
+    {
+      "ID": 27803000,
+      "Entries": [
+        "[Mimic - Royal Garden] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27803001,
+      "Entries": [
+        "[Mimic - Royal Garden] Crest Key"
+      ]
+    },
+    {
+      "ID": 27803100,
+      "Entries": [
+        "[Mimic - Royal Garden] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 27803101,
+      "Entries": [
+        "[Mimic - Royal Garden] Very good! Carving"
+      ]
+    },
+    {
+      "ID": 27900000,
+      "Entries": [
+        "[Black Knight (Greatsword) - Undead Burg] Black Knight Sword, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27900001,
+      "Entries": [
+        "[Black Knight (Greatsword) - Undead Burg] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27900100,
+      "Entries": [
+        "[Black Knight (Ultra Greatsword) - Undead Burg] Black Knight Greatsword, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27900101,
+      "Entries": [
+        "[Black Knight (Ultra Greatsword) - Undead Burg] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27901000,
+      "Entries": [
+        "[Black Knight (Glaive) - Darkroot Garden] Black Knight Halberd, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27901001,
+      "Entries": [
+        "[Black Knight (Glaive) - Darkroot Garden] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27902000,
+      "Entries": [
+        "[Black Knight (Greataxe) - Catacombs] Black Knight Greataxe, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27902001,
+      "Entries": [
+        "[Black Knight (Greataxe) - Catacombs] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27903000,
+      "Entries": [
+        "[Black Knight (Glaive) - Catacombs] Black Knight Halberd, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27903001,
+      "Entries": [
+        "[Black Knight (Glaive) - Catacombs] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27905000,
+      "Entries": [
+        "[Black Knight (Greatsword) - Tomb of the Giants] Black Knight Sword, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27905001,
+      "Entries": [
+        "[Black Knight (Greatsword) - Tomb of the Giants] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27905100,
+      "Entries": [
+        "[Black Knight (Ultra Greatsword) - Tomb of the Giants] Black Knight Greatsword, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27905101,
+      "Entries": [
+        "[Black Knight (Ultra Greatsword) - Tomb of the Giants] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27905200,
+      "Entries": [
+        "[Black Knight (Greataxe) - Tomb of the Giants] Black Knight Greataxe, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27905201,
+      "Entries": [
+        "[Black Knight (Greataxe) - Tomb of the Giants] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27905300,
+      "Entries": [
+        "[Black Knight (Glaive) - Tomb of the Giants] Black Knight Halberd, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27905301,
+      "Entries": [
+        "[Black Knight (Glaive) - Tomb of the Giants] Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27907000,
+      "Entries": [
+        "[Black Knight (Greatsword) - Asylum] Black Knight Sword, Black Knight Shield"
+      ]
+    },
+    {
+      "ID": 27907001,
+      "Entries": [
+        "[Black Knight (Greatsword) - Asylum] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 27910000,
+      "Entries": [
+        "[Black Knight - Tomb of the Giants] None"
+      ]
+    },
+    {
+      "ID": 28000000,
+      "Entries": [
+        "[Crystal Hollow (Sword) - Duke's Archives] Crystal Straight Sword, Caduceus Kite Shield"
+      ]
+    },
+    {
+      "ID": 28000100,
+      "Entries": [
+        "[Crystal Hollow (Bow) - Duke's Archives] Longbow"
+      ]
+    },
+    {
+      "ID": 28100000,
+      "Entries": [
+        "[Infested Barbarian (Club) - Blighttown] Large Club"
+      ]
+    },
+    {
+      "ID": 28100001,
+      "Entries": [
+        "[Infested Barbarian (Club) - Blighttown] Dung Pie"
+      ]
+    },
+    {
+      "ID": 28110000,
+      "Entries": [
+        "[Infested Barbarian (Boulder) - Blighttown] Pickaxe"
+      ]
+    },
+    {
+      "ID": 28110001,
+      "Entries": [
+        "[Infested Barbarian (Boulder) - Blighttown] Dung Pie"
+      ]
+    },
+    {
+      "ID": 28200000,
+      "Entries": [
+        "[?] None"
+      ]
+    },
+    {
+      "ID": 28301000,
+      "Entries": [
+        "[Hollow Phalanx - Painted World] Spear"
+      ]
+    },
+    {
+      "ID": 28301001,
+      "Entries": [
+        "[Hollow Phalanx - Painted World] Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 28400000,
+      "Entries": [
+        "[Engorged Hollow (Torch) - Painted World] None"
+      ]
+    },
+    {
+      "ID": 28400100,
+      "Entries": [
+        "[Engorged Hollow (Fist) - Painted World] None"
+      ]
+    },
+    {
+      "ID": 28400200,
+      "Entries": [
+        "[Engorged Hollow (Special) - Painted World] Fire Surge"
+      ]
+    },
+    {
+      "ID": 28600000,
+      "Entries": [
+        "[Giant - Sen's Fortress] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 28600100,
+      "Entries": [
+        "[Giant - Anor Londo] Blacksmith Giant Hammer"
+      ]
+    },
+    {
+      "ID": 28600200,
+      "Entries": [
+        "[Giant - Sen's Fortress] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 28700000,
+      "Entries": [
+        "[Royal Sentinel - Anor Londo] Giant's Halberd, Giant Shield"
+      ]
+    },
+    {
+      "ID": 28700001,
+      "Entries": [
+        "[Royal Sentinel - Anor Londo] Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 28701000,
+      "Entries": [
+        "[Royal Sentinel - Anor Londo] Giant's Halberd, Giant Shield"
+      ]
+    },
+    {
+      "ID": 29000000,
+      "Entries": [
+        "[Skeleton (Sword) - Firelink] Scimitar, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29000100,
+      "Entries": [
+        "[Skeleton (Bow) - Firelink] Short Bow"
+      ]
+    },
+    {
+      "ID": 29000200,
+      "Entries": [
+        "[Skeleton (Falchion) - Firelink] Falchion, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29001000,
+      "Entries": [
+        "[Skeleton (Sword) - Catacombs] Scimitar, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29001100,
+      "Entries": [
+        "[Skeleton (Bow) - Catacombs] Short Bow"
+      ]
+    },
+    {
+      "ID": 29001200,
+      "Entries": [
+        "[Skeleton (Falchion) - Catacombs] Falchion, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29002000,
+      "Entries": [
+        "[Skeleton (Sword) - Catacombs] Scimitar, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29002100,
+      "Entries": [
+        "[Skeleton (Bow) - Catacombs] Short Bow"
+      ]
+    },
+    {
+      "ID": 29002200,
+      "Entries": [
+        "[Skeleton (Falchion) - Catacombs] Falchion, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29003000,
+      "Entries": [
+        "[Skeleton (Sword) - Tomb of the Giants] Scimitar, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29003100,
+      "Entries": [
+        "[Skeleton (Bow) - Tomb of the Giants] Short Bow"
+      ]
+    },
+    {
+      "ID": 29003200,
+      "Entries": [
+        "[Skeleton (Falchion) - Tomb of the Giants] Falchion, Red and White Round Shield"
+      ]
+    },
+    {
+      "ID": 29100000,
+      "Entries": [
+        "[Giant Skeleton - Firelink] Murakumo"
+      ]
+    },
+    {
+      "ID": 29100100,
+      "Entries": [
+        "[Giant Skeleton (Bow) - Catacombs] Longbow"
+      ]
+    },
+    {
+      "ID": 29100200,
+      "Entries": [
+        "[Giant Skeleton (Greatsword) - Catacombs] Murakumo"
+      ]
+    },
+    {
+      "ID": 29101000,
+      "Entries": [
+        "[Giant Skeleton (Bow) - Tomb of the Giants] Longbow"
+      ]
+    },
+    {
+      "ID": 29101100,
+      "Entries": [
+        "[Giant Skeleton (Greatsword) - Tomb of the Giants] Murakumo"
+      ]
+    },
+    {
+      "ID": 29101200,
+      "Entries": [
+        "[Giant Skeleton (Greatsword) - Tomb of the Giants] None"
+      ]
+    },
+    {
+      "ID": 29101300,
+      "Entries": [
+        "[Giant Skeleton (Bow) - Nito] Longbow"
+      ]
+    },
+    {
+      "ID": 29101400,
+      "Entries": [
+        "[Giant Skeleton (Greatsword) - Nito] Murakumo"
+      ]
+    },
+    {
+      "ID": 29200000,
+      "Entries": [
+        "[Vamos] Hammer of Vamos"
+      ]
+    },
+    {
+      "ID": 29200001,
+      "Entries": [
+        "[Vamos] Royal Helm"
+      ]
+    },
+    {
+      "ID": 29200200,
+      "Entries": [
+        "[Vamos] None"
+      ]
+    },
+    {
+      "ID": 29300000,
+      "Entries": [
+        "[Bonewheel Skeleton] Bonewheel Shield"
+      ]
+    },
+    {
+      "ID": 29300100,
+      "Entries": [
+        "[Bonewheel Skeleton] Bonewheel Shield"
+      ]
+    },
+    {
+      "ID": 29400000,
+      "Entries": [
+        "[Skeleton Baby - Tomb of the Giants] Humanity"
+      ]
+    },
+    {
+      "ID": 29500000,
+      "Entries": [
+        "[Skeleton Beast - Tomb of the Giants] None"
+      ]
+    },
+    {
+      "ID": 29600000,
+      "Entries": [
+        "[Bone Tower - Tomb of the Giants] White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "[Mosquito - Blighttown] None"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "[Slime] Large Titanite Shard, Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[Egg Carrier] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 32100100,
+      "Entries": [
+        "[Egg Carrier (Ally)] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "[Chaos Bug - Demon Ruins] None"
+      ]
+    },
+    {
+      "ID": 32300000,
+      "Entries": [
+        "[Moonlight Butterfly - Darkroot Garden] None"
+      ]
+    },
+    {
+      "ID": 32300100,
+      "Entries": [
+        "[Moonlight Butterfly - Duke's Archives] Blue Titanite Chunk, Blue Titanite Slab"
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        "[Chaos Eater - Demon Ruins] Red Titanite Chunk, White Titanite Chunk, Red Titanite Slab"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "[Maneater Clam - Duke's Archives] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 32500001,
+      "Entries": [
+        "[Maneater Clam - Duke's Archives] Purging Stone"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "[Maneater Clam - Great Hollow] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 32500101,
+      "Entries": [
+        "[Maneater Clam - Great Hollow] Purging Stone"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "[Basilisk - The Depths] Eye of Death"
+      ]
+    },
+    {
+      "ID": 32700100,
+      "Entries": [
+        "[Basilisk - Great Hollow] Eye of Death"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "[Crystal Lizard - Great Hollow] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33000001,
+      "Entries": [
+        "[Crystal Lizard - Great Hollow] Random Material"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "[Crystal Lizard - Duke's Archives] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33001001,
+      "Entries": [
+        "[Crystal Lizard - Duke's Archives] Random Material"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "[Crystal Lizard - Demon Ruins] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33002001,
+      "Entries": [
+        "[Crystal Lizard - Demon Ruins] Random Material"
+      ]
+    },
+    {
+      "ID": 33003000,
+      "Entries": [
+        "[Crystal Lizard - Catacombs] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33003001,
+      "Entries": [
+        "[Crystal Lizard - Catacombs] Random Material"
+      ]
+    },
+    {
+      "ID": 33004000,
+      "Entries": [
+        "[Crystal Lizard - Darkroot Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33004001,
+      "Entries": [
+        "[Crystal Lizard - Darkroot Garden] Random Material"
+      ]
+    },
+    {
+      "ID": 33005000,
+      "Entries": [
+        "[Crystal Lizard - Tomb of the Giants] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33005001,
+      "Entries": [
+        "[Crystal Lizard - Tomb of the Giants] Random Material"
+      ]
+    },
+    {
+      "ID": 33006000,
+      "Entries": [
+        "[Crystal Lizard - Undead Burg] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33006001,
+      "Entries": [
+        "[Crystal Lizard - Undead Burg] Random Material"
+      ]
+    },
+    {
+      "ID": 33007000,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33007001,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Random Material"
+      ]
+    },
+    {
+      "ID": 33007100,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33007101,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Random Material"
+      ]
+    },
+    {
+      "ID": 33007200,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33007201,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Random Material"
+      ]
+    },
+    {
+      "ID": 33007300,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 33007301,
+      "Entries": [
+        "[Crystal Lizard - Royal Garden] Random Material"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "[Pinwheel - Catacombs] Mask of the Father, Mask of the Mother, Mask of the Child"
+      ]
+    },
+    {
+      "ID": 33200100,
+      "Entries": [
+        "[Pinwheel (Fake) - Catacombs] None"
+      ]
+    },
+    {
+      "ID": 33200200,
+      "Entries": [
+        "[Pinwheel - Tomb of the Giants] Mask of the Father, Mask of the Mother, Mask of the Child"
+      ]
+    },
+    {
+      "ID": 33200201,
+      "Entries": [
+        "[Pinwheel - Tomb of the Giants] White Titanite Chunk, White Titanite Slab"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "[Pisaca - Duke's Archives] Humanity"
+      ]
+    },
+    {
+      "ID": 33300100,
+      "Entries": [
+        "[Pisaca (Passive) - Duke's Archives] Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 33300200,
+      "Entries": [
+        "[Pisaca (Passive) - Duke's Archives] Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        "[Undead Attack Dog - Undead Burg] None"
+      ]
+    },
+    {
+      "ID": 33400100,
+      "Entries": [
+        "[Undead Attack Dog - The Depths] None"
+      ]
+    },
+    {
+      "ID": 33400200,
+      "Entries": [
+        "[Undead Attack Dog - The Depths] None"
+      ]
+    },
+    {
+      "ID": 33410000,
+      "Entries": [
+        "[Flaming Attack Dog - Blighttown] None"
+      ]
+    },
+    {
+      "ID": 33500000,
+      "Entries": [
+        "[Walking Tree - Darkroot Garden] None"
+      ]
+    },
+    {
+      "ID": 33700000,
+      "Entries": [
+        "[Tree Lizard - Darkroot Garden] Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 33800000,
+      "Entries": [
+        "[Leech - Blighttown] Large Titanite Shard, Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 33900000,
+      "Entries": [
+        "[Burrower - Demon Ruins] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 33900001,
+      "Entries": [
+        "[Burrower - Demon Ruins] Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "[Cragspider - Blighttown] None"
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "[Frog-Ray - Darkroot Garden] Green Blossom"
+      ]
+    },
+    {
+      "ID": 34100100,
+      "Entries": [
+        "[Frog-Ray - Darkroot Garden] Green Blossom"
+      ]
+    },
+    {
+      "ID": 34200000,
+      "Entries": [
+        "[Undead Dragon - Painted World] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 34200200,
+      "Entries": [
+        "[Undead Dragon - Valley of Drakes] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 34210100,
+      "Entries": [
+        "[Undead Dragon - Demon Ruins] None"
+      ]
+    },
+    {
+      "ID": 34220000,
+      "Entries": [
+        "[Undead Dragon - Painted World] None"
+      ]
+    },
+    {
+      "ID": 34300000,
+      "Entries": [
+        "[Hellkite Drake - Undead Burg] None"
+      ]
+    },
+    {
+      "ID": 34310000,
+      "Entries": [
+        "[Hellkite Drake (Tail) - Undead Burg] Drake Sword"
+      ]
+    },
+    {
+      "ID": 34500000,
+      "Entries": [
+        "[Stone Dragon - Great Hollow] None"
+      ]
+    },
+    {
+      "ID": 34510000,
+      "Entries": [
+        "[Stone Dragon (Tail) - Great Hollow] Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 34600000,
+      "Entries": [
+        "[Armored Tusk - Undead Burg] Fang Boar Helm"
+      ]
+    },
+    {
+      "ID": 34610000,
+      "Entries": [
+        "[Armored Tusk - Duke's Archives] Fang Boar Helm"
+      ]
+    },
+    {
+      "ID": 34710000,
+      "Entries": [
+        "[Sanctuary Guardian - Royal Garden] None"
+      ]
+    },
+    {
+      "ID": 34720000,
+      "Entries": [
+        "[Sanctuary Guardian (Tail) - Royal Garden] Guardian Tail"
+      ]
+    },
+    {
+      "ID": 34720010,
+      "Entries": [
+        "[Sanctuary Guardian - Royal Garden] None"
+      ]
+    },
+    {
+      "ID": 34720020,
+      "Entries": [
+        "[Sanctuary Guardian (Tail) - Royal Garden] Guardian Tail"
+      ]
+    },
+    {
+      "ID": 34800000,
+      "Entries": [
+        "[Chaos Bug - Demon Ruins] Red Titanite Chunk, Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 34800100,
+      "Entries": [
+        "[Chaos Bug (Special) - Demon Ruins] Sunlight Maggot"
+      ]
+    },
+    {
+      "ID": 34900000,
+      "Entries": [
+        "[Vagrant] Good - Level 1"
+      ]
+    },
+    {
+      "ID": 34900100,
+      "Entries": [
+        "[Vagrant] Good - Level 2"
+      ]
+    },
+    {
+      "ID": 34900200,
+      "Entries": [
+        "[Vagrant] Good - Level 3"
+      ]
+    },
+    {
+      "ID": 34900300,
+      "Entries": [
+        "[Vagrant] Good - Level 4"
+      ]
+    },
+    {
+      "ID": 34900400,
+      "Entries": [
+        "[Vagrant] Good - Level 5"
+      ]
+    },
+    {
+      "ID": 34900500,
+      "Entries": [
+        "[Vagrant] Good - Level 6"
+      ]
+    },
+    {
+      "ID": 34900600,
+      "Entries": [
+        "[Vagrant] Good - Level 7"
+      ]
+    },
+    {
+      "ID": 34900700,
+      "Entries": [
+        "[Vagrant] Good - Level 8"
+      ]
+    },
+    {
+      "ID": 34900800,
+      "Entries": [
+        "[Vagrant] Good - Level 9"
+      ]
+    },
+    {
+      "ID": 34900900,
+      "Entries": [
+        "[Vagrant] Good - Level 10"
+      ]
+    },
+    {
+      "ID": 34901000,
+      "Entries": [
+        "[Vagrant] Good - Level 11"
+      ]
+    },
+    {
+      "ID": 34901100,
+      "Entries": [
+        "[Vagrant] Good - Level 12"
+      ]
+    },
+    {
+      "ID": 34901200,
+      "Entries": [
+        "[Vagrant] Good - Level 13"
+      ]
+    },
+    {
+      "ID": 34901300,
+      "Entries": [
+        "[Vagrant] Good - Level 14"
+      ]
+    },
+    {
+      "ID": 34901400,
+      "Entries": [
+        "[Vagrant] Good - Level 15"
+      ]
+    },
+    {
+      "ID": 34910000,
+      "Entries": [
+        "[Vagrant] Evil - Level 1"
+      ]
+    },
+    {
+      "ID": 34910100,
+      "Entries": [
+        "[Vagrant] Evil - Level 2"
+      ]
+    },
+    {
+      "ID": 34910200,
+      "Entries": [
+        "[Vagrant] Evil - Level 3"
+      ]
+    },
+    {
+      "ID": 34910300,
+      "Entries": [
+        "[Vagrant] Evil - Level 4"
+      ]
+    },
+    {
+      "ID": 34910400,
+      "Entries": [
+        "[Vagrant] Evil - Level 5"
+      ]
+    },
+    {
+      "ID": 34910500,
+      "Entries": [
+        "[Vagrant] Evil - Level 6"
+      ]
+    },
+    {
+      "ID": 34910600,
+      "Entries": [
+        "[Vagrant] Evil - Level 7"
+      ]
+    },
+    {
+      "ID": 34910700,
+      "Entries": [
+        "[Vagrant] Evil - Level 8"
+      ]
+    },
+    {
+      "ID": 34910800,
+      "Entries": [
+        "[Vagrant] Evil - Level 0"
+      ]
+    },
+    {
+      "ID": 34910900,
+      "Entries": [
+        "[Vagrant] Evil - Level 10"
+      ]
+    },
+    {
+      "ID": 34911000,
+      "Entries": [
+        "[Vagrant] Evil - Level 11"
+      ]
+    },
+    {
+      "ID": 34911100,
+      "Entries": [
+        "[Vagrant] Evil - Level 12"
+      ]
+    },
+    {
+      "ID": 34911200,
+      "Entries": [
+        "[Vagrant] Evil - Level 13"
+      ]
+    },
+    {
+      "ID": 34911300,
+      "Entries": [
+        "[Vagrant] Evil - Level 14"
+      ]
+    },
+    {
+      "ID": 34911400,
+      "Entries": [
+        "[Vagrant] Evil - Level 15"
+      ]
+    },
+    {
+      "ID": 34920000,
+      "Entries": [
+        "[Vagrant] Humanity - Level 1"
+      ]
+    },
+    {
+      "ID": 34920100,
+      "Entries": [
+        "[Vagrant] Humanity - Level 2"
+      ]
+    },
+    {
+      "ID": 34920200,
+      "Entries": [
+        "[Vagrant] Humanity - Level 3"
+      ]
+    },
+    {
+      "ID": 34920300,
+      "Entries": [
+        "[Vagrant] Humanity - Level 4"
+      ]
+    },
+    {
+      "ID": 34920400,
+      "Entries": [
+        "[Vagrant] Humanity - Level 5"
+      ]
+    },
+    {
+      "ID": 34920500,
+      "Entries": [
+        "[Vagrant] Humanity - Level 6"
+      ]
+    },
+    {
+      "ID": 34920600,
+      "Entries": [
+        "[Vagrant] Humanity - Level 7"
+      ]
+    },
+    {
+      "ID": 34920700,
+      "Entries": [
+        "[Vagrant] Humanity - Level 8"
+      ]
+    },
+    {
+      "ID": 34920800,
+      "Entries": [
+        "[Vagrant] Humanity - Level 9"
+      ]
+    },
+    {
+      "ID": 34920900,
+      "Entries": [
+        "[Vagrant] Humanity - Level 10"
+      ]
+    },
+    {
+      "ID": 34921000,
+      "Entries": [
+        "[Vagrant] Humanity - Level 11"
+      ]
+    },
+    {
+      "ID": 34921100,
+      "Entries": [
+        "[Vagrant] Humanity - Level 12"
+      ]
+    },
+    {
+      "ID": 34921200,
+      "Entries": [
+        "[Vagrant] Humanity - Level 13"
+      ]
+    },
+    {
+      "ID": 34921300,
+      "Entries": [
+        "[Vagrant] Humanity - Level 14"
+      ]
+    },
+    {
+      "ID": 34921400,
+      "Entries": [
+        "[Vagrant] Humanity - Level 15"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "[Mass Of Souls - New Londo Ruins] None"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "[Wisp - New Londo Ruins] None"
+      ]
+    },
+    {
+      "ID": 35010100,
+      "Entries": [
+        "[Wisp - Catacombs] None"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "[Giant Crow - Firelink] None"
+      ]
+    },
+    {
+      "ID": 35200200,
+      "Entries": [
+        "[Drake - Valley of Drakes] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 35200500,
+      "Entries": [
+        "[Drake (Flying) - Valley of Drakes] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "[Hydra - Great Hollow] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 35300100,
+      "Entries": [
+        "[Hydra - Darkroot Garden] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 35300101,
+      "Entries": [
+        "[Hydra - Darkroot Garden] Dusk Crown Ring"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "[Hydra (Neck) - Great Hollow] None"
+      ]
+    },
+    {
+      "ID": 35310100,
+      "Entries": [
+        "[Hydra (Neck) - Darkroot Garden] None"
+      ]
+    },
+    {
+      "ID": 40900000,
+      "Entries": [
+        "[Marvellous Chester] Snickering Top Hat"
+      ]
+    },
+    {
+      "ID": 40900001,
+      "Entries": [
+        "[Marvellous Chester] Chester's Long Coat"
+      ]
+    },
+    {
+      "ID": 40900002,
+      "Entries": [
+        "[Marvellous Chester] Chester's Gloves"
+      ]
+    },
+    {
+      "ID": 40900003,
+      "Entries": [
+        "[Marvellous Chester] Chester's Trousers"
+      ]
+    },
+    {
+      "ID": 40901000,
+      "Entries": [
+        "[Marvellous Chester (Red Phantom)] None"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "[Knight Artorias] None"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Helm"
+      ]
+    },
+    {
+      "ID": 41100001,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Armor"
+      ]
+    },
+    {
+      "ID": 41100002,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Gauntlets"
+      ]
+    },
+    {
+      "ID": 41100003,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Leggings"
+      ]
+    },
+    {
+      "ID": 41100004,
+      "Entries": [
+        "[Hawkeye Gough] Gough's Greatbow"
+      ]
+    },
+    {
+      "ID": 41200000,
+      "Entries": [
+        "[Stone Guardian - Royal Garden] Stone Greataxe"
+      ]
+    },
+    {
+      "ID": 41200001,
+      "Entries": [
+        "[Stone Guardian - Royal Garden] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 41300000,
+      "Entries": [
+        "[Scarecrow (Plow) - Royal Garden] Bloodred Moss Clump, Purple Moss Clump, Blooming Purple Moss Clump, Four-pronged Plow"
+      ]
+    },
+    {
+      "ID": 41301000,
+      "Entries": [
+        "[Scarecrow (Shears) - Royal Garden] Bloodred Moss Clump, Purple Moss Clump, Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 41400000,
+      "Entries": [
+        "[Elizabeth] Elizabeth's Mushroom"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "[Bloathead] Bloated Head"
+      ]
+    },
+    {
+      "ID": 41500001,
+      "Entries": [
+        "[Bloathead] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 41600000,
+      "Entries": [
+        "[Bloathead Sorcerer] Bloated Sorcerer Head, Oolacile Catalyst"
+      ]
+    },
+    {
+      "ID": 41600001,
+      "Entries": [
+        "[Bloathead Sorcerer] Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 41601000,
+      "Entries": [
+        "[Bloathead Sorcerer (Special)] I'm sorry Carving"
+      ]
+    },
+    {
+      "ID": 41700000,
+      "Entries": [
+        "[Humanity Phantom (Large)] Humanity, Twin Humanities"
+      ]
+    },
+    {
+      "ID": 41710000,
+      "Entries": [
+        "[Humanity Phantom (Medium)] Humanity, Twin Humanities"
+      ]
+    },
+    {
+      "ID": 41720000,
+      "Entries": [
+        "[Humanity Phantom (Small)] Humanity, Twin Humanities"
+      ]
+    },
+    {
+      "ID": 41800000,
+      "Entries": [
+        "[Chained Prisoner] Chain Helm"
+      ]
+    },
+    {
+      "ID": 41800001,
+      "Entries": [
+        "[Chained Prisoner] Chain Armor"
+      ]
+    },
+    {
+      "ID": 41800002,
+      "Entries": [
+        "[Chained Prisoner] Leather Gauntlets"
+      ]
+    },
+    {
+      "ID": 41800003,
+      "Entries": [
+        "[Chained Prisoner] Chain Leggings"
+      ]
+    },
+    {
+      "ID": 41900000,
+      "Entries": [
+        "[Undead Attack Dog] None"
+      ]
+    },
+    {
+      "ID": 45000000,
+      "Entries": [
+        "[Manus, Father of the Abyss] None"
+      ]
+    },
+    {
+      "ID": 45100000,
+      "Entries": [
+        "[Kalameet] None"
+      ]
+    },
+    {
+      "ID": 45110000,
+      "Entries": [
+        "[Kalameet (Tail)] Obsidian Greatsword"
+      ]
+    },
+    {
+      "ID": 45200000,
+      "Entries": [
+        "[Great Grey Wolf Sif - Royal Garden] Cleansing Greatshield"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "[Centipede Demon] None"
+      ]
+    },
+    {
+      "ID": 52010000,
+      "Entries": [
+        "[Centipede Demon (Arm)] None"
+      ]
+    },
+    {
+      "ID": 52020000,
+      "Entries": [
+        "[Centipede Demon (Tail)] None"
+      ]
+    },
+    {
+      "ID": 52100000,
+      "Entries": [
+        "[Great Grey Wolf Sif - Darkroot Garden] None"
+      ]
+    },
+    {
+      "ID": 52200000,
+      "Entries": [
+        "[Gravelord Nito] None"
+      ]
+    },
+    {
+      "ID": 52300000,
+      "Entries": [
+        "[Bed Of Chaos] None"
+      ]
+    },
+    {
+      "ID": 52400000,
+      "Entries": [
+        "[Parasitic Wall Hugger - Demon Ruins] None"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "[Ceaseless Discharge] None"
+      ]
+    },
+    {
+      "ID": 52600000,
+      "Entries": [
+        "[Gaping Dragon] None"
+      ]
+    },
+    {
+      "ID": 52610000,
+      "Entries": [
+        "[Gaping Dragon (Tail)] Dragon King Greataxe"
+      ]
+    },
+    {
+      "ID": 52710000,
+      "Entries": [
+        "[Dragonslayer Ornstein (Giant)] Leo Ring"
+      ]
+    },
+    {
+      "ID": 52800000,
+      "Entries": [
+        "[Chaos Witch Quelaag] None"
+      ]
+    },
+    {
+      "ID": 52900000,
+      "Entries": [
+        "[Seath the Scaleless] None"
+      ]
+    },
+    {
+      "ID": 52900100,
+      "Entries": [
+        "[Seath the Scaleless] None"
+      ]
+    },
+    {
+      "ID": 52910000,
+      "Entries": [
+        "[Seath the Scaleless (Tail)] Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 53100000,
+      "Entries": [
+        "[Gwynevere] None"
+      ]
+    },
+    {
+      "ID": 53300000,
+      "Entries": [
+        "[Kingseeker Frampt] None"
+      ]
+    },
+    {
+      "ID": 53300100,
+      "Entries": [
+        "[Darkstalker Kaathe] None"
+      ]
+    },
+    {
+      "ID": 53400000,
+      "Entries": [
+        "[The Fair Lady] Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 53500000,
+      "Entries": [
+        "[Gargoyle - Anor Londo] Gargoyle's Halberd"
+      ]
+    },
+    {
+      "ID": 53500001,
+      "Entries": [
+        "[Gargoyle - Anor Londo] Gargoyle's Shield"
+      ]
+    },
+    {
+      "ID": 53500002,
+      "Entries": [
+        "[Gargoyle - Anor Londo] Gargoyle Helm"
+      ]
+    },
+    {
+      "ID": 53500100,
+      "Entries": [
+        "[Gargoyle - Undead Burg] Gargoyle's Halberd"
+      ]
+    },
+    {
+      "ID": 53500101,
+      "Entries": [
+        "[Gargoyle - Undead Burg] Gargoyle Helm"
+      ]
+    },
+    {
+      "ID": 53510000,
+      "Entries": [
+        "[Gargoyle (Unused)] Gargoyle's Halberd, Gargoyle's Shield, Gargoyle Helm"
+      ]
+    },
+    {
+      "ID": 53520000,
+      "Entries": [
+        "[Gargoyle (Tail) - Undead Burg] Gargoyle Tail Axe"
+      ]
+    },
+    {
+      "ID": 53530000,
+      "Entries": [
+        "[Gargoyle (Tail) - Anor Londo] Gargoyle Tail Axe"
+      ]
+    },
+    {
+      "ID": 53600000,
+      "Entries": [
+        "[Great Feline] None"
+      ]
+    },
+    {
+      "ID": 53610000,
+      "Entries": [
+        "[Alvina] None"
+      ]
+    },
+    {
+      "ID": 53900000,
+      "Entries": [
+        "[Four Kings] None"
+      ]
+    },
+    {
+      "ID": 53900100,
+      "Entries": [
+        "[Four Kings (Individual)] None"
+      ]
+    },
+    {
+      "ID": 54000000,
+      "Entries": [
+        "[Bed of Chaos Arm] None"
+      ]
+    },
+    {
+      "ID": 54010000,
+      "Entries": [
+        "[Bed of Chaos Worm] None"
+      ]
+    }
+  ]
+}

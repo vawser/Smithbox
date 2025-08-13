@@ -1,0 +1,239 @@
+{
+  "Name": "generatordbglocation_m10_27_00_00",
+  "Entries": [
+    {
+      "ID": 205,
+      "Entries": [
+        "NPC: Sinalot -- NPC：シャナロット"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Enclosed Man: Black Spirit -- 封じられた人：黒霊"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "NPC for Multi: Koryu Swordsman (Male): Black Spirit -- マルチ用NPC：古龍剣士（男）：黒霊"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Dragon Knight: Black Spirit -- 竜騎士：黒霊"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Painting Guard (Man): Black Spirit -- 絵画守（男）：黒霊"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Painting Guard (Woman): Black Spirit -- 絵画守（女）：黒霊"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Durahan (White Spirit) -- デュラハン（白霊）"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "NPC for Multi: Flesh-breaking (Female): White Spirit -- マルチ用NPC：肉断ち（女）：白霊"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Koryu -- 古龍"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【Egg Area】Wyvern 01 -- 【卵エリア】ワイバーン01"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "【Egg Area】Wyvern 02 -- 【卵エリア】ワイバーン02"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Nest 2 sleeping] Wyvern -- 【巣2寝ている】ワイバーン"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【Near nest 1 egg】Ishimori_1 -- 【巣1卵付近】石守_1"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "【Nest 1】Andet Citizen_1 -- 【巣1つ目】アンデット市民_1"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "【Nest 1】Andet Citizen_2 -- 【巣1つ目】アンデット市民_2"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "【Nest 1st Entrance】Andet Citizen_3 -- 【巣1つ目入り口】アンデット市民_3"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "【Nest 2】Ishimori_1 -- 【巣2つ目】石守_1"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "【Nest】Andet Citizen_1 -- 【巣2つ目】アンデット市民_1"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【Nest 1 Cave】Ishimori_1 -- 【巣1洞窟】石守_1"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "【Nest 1 Hill】Ishimori_2 -- 【巣1高台】石守_2"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "【Nest 1 Near Wyburn】Ishimori_3 -- 【巣1ワイバーン付近】石守_3"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "【Nest 1 Near Wyburn】Ishimori_4 -- 【巣1ワイバーン付近】石守_4"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "【Nest 1 Near Wyburn】Ishimori_5 -- 【巣1ワイバーン付近】石守_5"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "【Nest Wyburn Side】Ishimori_1 -- 【巣ワイバーン横】石守_1"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "【Nest Wyburn Side】Ishimori_2 -- 【巣ワイバーン横】石守_2"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "【Nest Cliff】Stone Mori_1 -- 【巣崖】石守_1"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "【Nest Cliff】Stone Mori_2 -- 【巣崖】石守_2"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Stair landing next to the second bonfire _ battle] Demon heavy soldiers - two-handed sword -- 【2つ目の篝火横の階段踊り場_戦闘】デーモン重兵士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Second bonfire next to the stairs _ battle] Demon heavy soldiers: two-handed mallet -- 【2つ目の篝火横の階段先_戦闘】デーモン重兵士：両手槌"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Before the tunnel stairs _ Course blocked] Demon heavy soldier: two hands mallet -- 【トンネル階段前_進路塞ぎ】デーモン重兵士：両手槌"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[Before the tunnel stairs _ Course block] Demon heavy soldiers - both hands sword -- 【トンネル階段前_進路塞ぎ】デーモン重兵士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "[Hidden Route] Demon Heavy Soldier: One Hand Mallet -- 【隠しルート】デーモン重兵士：片手槌"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        "[Battle before the grand staircase] Demon heavy soldiers: oversized sword_1 -- 【大階段手前_戦闘】デーモン重兵士：特大剣_1"
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        "[Battle before the grand staircase] Demon heavy soldiers: oversized sword_2 -- 【大階段手前_戦闘】デーモン重兵士：特大剣_2"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[White door front _ combat] Demon heavy soldiers: one hand mallet _1 -- 【白扉前_戦闘】デーモン重兵士：片手槌_1"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "[White door front _ combat] Demon heavy soldiers: one hand mallet_2 -- 【白扉前_戦闘】デーモン重兵士：片手槌_2"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Treasure chest in front of the castle area_ bridge] Demon heavy soldiers -- 【城エリア_橋の上前の宝箱】デーモン重兵士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "【Castle Area_Hill】Dark Priest: Color (3) -- 【城エリア_高台】ダークプリースト：色③"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Hidden Route_ Random Appearance] [] [Mimic] -- 【隠しルート_ランダム出現】ν-ミミック"
+      ]
+    }
+  ]
+}

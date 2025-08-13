@@ -1,0 +1,29 @@
+{
+  "Name": "hitgroupparam_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Group 10"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Group 20"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Duel start judgment area"
+      ]
+    }
+  ]
+}

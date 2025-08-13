@@ -1,0 +1,341 @@
+{
+  "Name": "GestureParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Polite Bow"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "My Thanks"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Curtsy"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Reverential Bow"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "My Lord"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Warm Welcome"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Casual Greeting"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Strength!"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "As You Wish"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Point Forwards"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Point Upwards"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Point Downwards"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Beckon"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Wait!"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Calm Down!"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Nod In Thought"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Extreme Repentance"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Grovel For Mercy"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Rallying Cry"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Heartening Cry"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "By My Sword"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Hoslow's Oath"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Fire Spur Me"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Bravo!"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Jump for Joy"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Triumphant Delight"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Fancy Spin"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Finger Snap"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Dejection"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Patches' Crouch"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Crossed Legs"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Rest"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Sitting Sideways"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Dozing Cross-Legged"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Spread Out"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Balled Up"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "What Do You Want?"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Prayer"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Desperate Prayer"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Rapture"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Erudition"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Outer Order"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Inner Order"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Golden Order Totality"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Prattling Pate \"Hello\""
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Prattling Pate \"Thank you\""
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Prattling Pate \"Apologies\""
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Prattling Pate \"Wonderful\""
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Prattling Pate \"Please help\""
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Prattling Pate \"My beloved\""
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Prattling Pate \"Let's get to it\""
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Prattling Pate \"You're beautiful\""
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "It's Raining!"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "It's Raining!"
+      ]
+    }
+  ]
+}

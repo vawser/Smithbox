@@ -1,0 +1,317 @@
+{
+  "Name": "MoveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "lightweight -- 軽量"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Light weight + -- 軽量＋"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Medium weight -- 中量"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Medium weight + -- 中量＋"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "weight -- 重量"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Overweight -- 重量オーバー"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Super lightweight -- 超軽量"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Mimicry_lightweight -- 擬態_軽量"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Mimicry_lightweight + -- 擬態_軽量＋"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Mimicry_medium amount -- 擬態_中量"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Mimicry_medium amount + -- 擬態_中量＋"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Mimicry_weight -- 擬態_重量"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Mimicry_overweight -- 擬態_重量オーバー"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Mimicry_super lightweight -- 擬態_超軽量"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Underwater (deep) _ lightweight -- 水中（深）_軽量"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Underwater (deep) _lightweight + -- 水中（深）_軽量＋"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater (deep) _medium amount -- 水中（深）_中量"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater (deep) _medium amount + -- 水中（深）_中量＋"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Underwater (depth) _weight -- 水中（深）_重量"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Underwater (deep) _ overweight -- 水中（深）_重量オーバー"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Underwater (deep) _ ultra-lightweight -- 水中（深）_超軽量"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Iron body_lightweight -- 鉄の身体_軽量"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Iron body_lightweight + -- 鉄の身体_軽量＋"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Iron body_medium amount -- 鉄の身体_中量"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Iron body_medium amount + -- 鉄の身体_中量＋"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Iron body_weight -- 鉄の身体_重量"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Iron body_overweight -- 鉄の身体_重量オーバー"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Iron body_super lightweight -- 鉄の身体_超軽量"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Enemy basic battle -- 敵基本\u3000戦闘時"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Bird standard -- 鳥標準"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "guard -- ガード"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "dog -- 犬"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Dragon demon -- ドラゴンデーモン"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Enemy basic non-combat -- 敵基本\u3000非戦闘時"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Scale miner in battle -- ウロコ鉱夫\u3000戦闘時"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Scale miner Non-combat (bag) -- ウロコ鉱夫\u3000非戦闘時（袋）"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Scale miner Non-combat (pickle) -- ウロコ鉱夫\u3000非戦闘時（ピックル）"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Peep into the big spider -- 大蜘蛛\u3000のぞき込み"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Gargoyle test -- ガーゴイルテスト"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Dragon demon (mineway) -- ドラゴンデーモン（坑道）"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "For storm beasts -- 嵐の獣用"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Storm Beast (Child Ray) Waiting for Bichibichi -- 嵐の獣（子エイ）ビチビチ待機"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Scale miner Non-combat (bare hands) -- ウロコ鉱夫\u3000非戦闘時（素手）"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Octopus head in battle -- タコ頭 \u3000戦闘時"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Gargoyle aerial (for 3050) -- ガーゴイル空中（3050用）"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Gargoyle ground (for 3050) -- ガーゴイル地上（3050用）"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Kagejo_for disappearing -- 影女＿消える用"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "For blood mites only -- 血ダニ専用"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Parry aim -- パリィ狙い"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "[DLC] Enemy basic battle (version without running / turning animation) -- 【DLC】敵基本\u3000戦闘時（走行／旋回アニメなしバージョン）"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "4-legged type for PG -- PG用4足タイプ"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[FDP] Test_First time -- 【FDP】テスト_はじめてのろじっく"
+      ]
+    }
+  ]
+}

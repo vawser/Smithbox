@@ -1,0 +1,525 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "[Decal application target] SUB -- 【デカール貼付対象】SUB",
+        "[Decal application target] SUB -- 【デカール貼付対象】SUB",
+        "[Decal application target] SUB -- 【デカール貼付対象】SUB"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK",
+        "[Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK",
+        "[Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK",
+        "[Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK",
+        "[Automatic assembly: legs used] TANK -- 【自動アセン：使用脚部】TANK"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "#N/A",
+        "#N/A",
+        "#N/A",
+        "#N/A",
+        "#N/A"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語",
+        "[Text] Neutral Spanish -- 【テキスト】ニュートラル・スペイン語"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語",
+        "[Voice] Neutral Spanish -- 【ボイス】ニュートラル・スペイン語"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "[Gender] Female -- 【性別】女",
+        "[Gender] Female -- 【性別】女"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "[Option] OFF -- 【オプション】OFF",
+        "[Option] OFF -- 【オプション】OFF"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "[Option] Reverse -- 【オプション】リバース",
+        "[Option] Reverse -- 【オプション】リバース"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3",
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3",
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3",
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3",
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3",
+        "[Option] Button settings: Custom 3 -- 【オプション】ボタン設定：カスタム3"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "[Option] Automatic -- 【オプション】自動",
+        "[Option] Automatic -- 【オプション】自動",
+        "[Option] Automatic -- 【オプション】自動"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "[Option] FPS (QBON) -- 【オプション】FPS（QBON）",
+        "[Option] FPS (QBON) -- 【オプション】FPS（QBON）",
+        "[Option] FPS (QBON) -- 【オプション】FPS（QBON）",
+        "[Option] FPS (QBON) -- 【オプション】FPS（QBON）"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "[Option] Assault boost operation: TYPE B -- 【オプション】アサルトブースト操作：TYPE B",
+        "[Option] Assault boost operation: TYPE B -- 【オプション】アサルトブースト操作：TYPE B"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Assault boost + target fixation -- アサルトブースト＋ターゲット固定",
+        "Assault boost + target fixation -- アサルトブースト＋ターゲット固定"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "[Option] Operation guide: Keyboard/Mouse -- 【オプション】操作ガイド：キーボード・マウス",
+        "[Option] Operation guide: Keyboard/Mouse -- 【オプション】操作ガイド：キーボード・マウス"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "[Optional] Screen mode: borderless window -- 【オプション】スクリーンモード：ボーダーレスウィンドウ",
+        "[Optional] Screen mode: borderless window -- 【オプション】スクリーンモード：ボーダーレスウィンドウ",
+        "[Optional] Screen mode: borderless window -- 【オプション】スクリーンモード：ボーダーレスウィンドウ"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "[Option] HUD layout: Custom 3 -- 【オプション】HUDレイアウト：カスタム3",
+        "[Option] HUD layout: Custom 3 -- 【オプション】HUDレイアウト：カスタム3",
+        "[Option] HUD layout: Custom 3 -- 【オプション】HUDレイアウト：カスタム3",
+        "[Option] HUD layout: Custom 3 -- 【オプション】HUDレイアウト：カスタム3"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "[Option] Not used -- 【オプション】使用しない",
+        "[Option] Not used -- 【オプション】使用しない"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "[Optional] Do not agree -- 【オプション】同意しない",
+        "[Optional] Do not agree -- 【オプション】同意しない"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア",
+        "[Matching region] Asia -- 【マッチング地域】アジア"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "[Optional] Other player name online ID -- 【オプション】他プレイヤー名称表記\u3000オンライン ID",
+        "[Optional] Other player name online ID -- 【オプション】他プレイヤー名称表記\u3000オンライン ID"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "[Option] Title launch settings offline -- 【オプション】タイトル起動設定\u3000オフライン",
+        "[Option] Title launch settings offline -- 【オプション】タイトル起動設定\u3000オフライン"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "[Option] Ray tracing function ON -- 【オプション】レイトレーシング機能 ON",
+        "[Option] Ray tracing function ON -- 【オプション】レイトレーシング機能 ON"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "[Option] FPS limit 120 -- 【オプション】FPS制限 120",
+        "[Option] FPS limit 120 -- 【オプション】FPS制限 120",
+        "[Option] FPS limit 120 -- 【オプション】FPS制限 120",
+        "[Option] FPS limit 120 -- 【オプション】FPS制限 120"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》",
+        "[Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》",
+        "[Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》",
+        "[Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》",
+        "[Grass quality] Low/Medium/High/Highest/《Custom》 -- 【グラ品質】低/中/高/最高/《カスタム》"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》",
+        "[Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》",
+        "[Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》",
+        "[Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》",
+        "[Gura Quality] OFF/Low/Medium/High/《Best》 -- 【グラ品質】OFF/低/中/高/《最高》"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Grass Quality] OFF/Low/Medium/《High》 -- 【グラ品質】OFF/低/中/《高》",
+        "[Grass Quality] OFF/Low/Medium/《High》 -- 【グラ品質】OFF/低/中/《高》",
+        "[Grass Quality] OFF/Low/Medium/《High》 -- 【グラ品質】OFF/低/中/《高》",
+        "[Grass Quality] OFF/Low/Medium/《High》 -- 【グラ品質】OFF/低/中/《高》"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Grass Quality] OFF/Medium/High/《Best》 -- 【グラ品質】OFF/中/高/《最高》",
+        "[Grass Quality] OFF/Medium/High/《Best》 -- 【グラ品質】OFF/中/高/《最高》",
+        "[Grass Quality] OFF/Medium/High/《Best》 -- 【グラ品質】OFF/中/高/《最高》",
+        "[Grass Quality] OFF/Medium/High/《Best》 -- 【グラ品質】OFF/中/高/《最高》"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "[Grass quality] Low/Medium/High/《Best》 -- 【グラ品質】低/中/高/《最高》",
+        "[Grass quality] Low/Medium/High/《Best》 -- 【グラ品質】低/中/高/《最高》",
+        "[Grass quality] Low/Medium/High/《Best》 -- 【グラ品質】低/中/高/《最高》",
+        "[Grass quality] Low/Medium/High/《Best》 -- 【グラ品質】低/中/高/《最高》"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "[Grass Quality] Low/Medium/《High》 -- 【グラ品質】低/中/《高》",
+        "[Grass Quality] Low/Medium/《High》 -- 【グラ品質】低/中/《高》",
+        "[Grass Quality] Low/Medium/《High》 -- 【グラ品質】低/中/《高》"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "[Gura Quality] AA OFF/Low/《High》 -- 【グラ品質】AA\u3000OFF/低/《高》",
+        "[Gura Quality] AA OFF/Low/《High》 -- 【グラ品質】AA\u3000OFF/低/《高》",
+        "[Gura Quality] AA OFF/Low/《High》 -- 【グラ品質】AA\u3000OFF/低/《高》"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "[Gura Quality] Reflection Low/High/《Best》 -- 【グラ品質】反射\u3000低/高/《最高》",
+        "[Gura Quality] Reflection Low/High/《Best》 -- 【グラ品質】反射\u3000低/高/《最高》",
+        "[Gura Quality] Reflection Low/High/《Best》 -- 【グラ品質】反射\u3000低/高/《最高》"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "[Gra quality] Water surface low/《high》 -- 【グラ品質】水面\u3000低/《高》",
+        "[Gra quality] Water surface low/《high》 -- 【グラ品質】水面\u3000低/《高》"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "[Performance settings] Frame rate priority -- 【パフォーマンス設定】 フレームレート優先",
+        "[Performance settings] Frame rate priority -- 【パフォーマンス設定】 フレームレート優先"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "[Photo Mode: Blur Type] ",
+        "[Photo Mode: Blur Type] ",
+        "[Photo Mode: Blur Type] "
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK",
+        "[Standard text chat] OK -- 【定型文チャット】\u3000OK"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人",
+        "[Room settings] Number of people: 9 people -- 【ルーム設定】人数\u30009人"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "[Room Settings] Rules Team -- 【ルーム設定】ルール チーム",
+        "[Room Settings] Rules Team -- 【ルーム設定】ルール チーム",
+        "[Room Settings] Rules Team -- 【ルーム設定】ルール チーム"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分",
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分",
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分",
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分",
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分",
+        "[Room Settings] Time limit 10 minutes -- 【ルーム設定】制限時間 10分"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム",
+        "[Room Settings] Map Ocean City Xylem -- 【ルーム設定】マップ 洋上都市ザイレム"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "[Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代",
+        "[Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代",
+        "[Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代",
+        "[Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代",
+        "[Room Settings] Team participation method Winner change -- 【ルーム設定】チーム参加方式 勝者交代"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "[Room Settings] Public Format Private -- 【ルーム設定】公開形式 プライベート",
+        "[Room Settings] Public Format Private -- 【ルーム設定】公開形式 プライベート"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "[Competition mode] CUSTOM MATCH -- 【対戦モード】 CUSTOM MATCH",
+        "[Competition mode] CUSTOM MATCH -- 【対戦モード】 CUSTOM MATCH",
+        "[Competition mode] CUSTOM MATCH -- 【対戦モード】 CUSTOM MATCH"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "[Report] Category Play details -- 【通報】カテゴリ プレイ内容",
+        "[Report] Category Play details -- 【通報】カテゴリ プレイ内容",
+        "[Report] Category Play details -- 【通報】カテゴリ プレイ内容",
+        "[Report] Category Play details -- 【通報】カテゴリ プレイ内容",
+        "[Report] Category Play details -- 【通報】カテゴリ プレイ内容"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫",
+        "[Report] Reason: Threat -- 【通報】理由 脅迫"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する",
+        "[Report] Reason: Violating the rights of others -- 【通報】理由 他人の権利を侵害する"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "[Parameter display] Attribute KE/TE/CE/《SP》 -- 【パラメータ表示】属性\u3000KE/TE/CE/《SP》",
+        "[Parameter display] Attribute KE/TE/CE/《SP》 -- 【パラメータ表示】属性\u3000KE/TE/CE/《SP》",
+        "[Parameter display] Attribute KE/TE/CE/《SP》 -- 【パラメータ表示】属性\u3000KE/TE/CE/《SP》",
+        "[Parameter display] Attribute KE/TE/CE/《SP》 -- 【パラメータ表示】属性\u3000KE/TE/CE/《SP》"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "[Parameter display] Size S/M/L/《XL》 -- 【パラメータ表示】サイズ\u3000S/M/L/《XL》",
+        "[Parameter display] Size S/M/L/《XL》 -- 【パラメータ表示】サイズ\u3000S/M/L/《XL》",
+        "[Parameter display] Size S/M/L/《XL》 -- 【パラメータ表示】サイズ\u3000S/M/L/《XL》",
+        "[Parameter display] Size S/M/L/《XL》 -- 【パラメータ表示】サイズ\u3000S/M/L/《XL》"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "[Parameter display] Shooting type S/B/F/《T》 -- 【パラメータ表示】射撃タイプ\u3000S/B/F/《T》",
+        "[Parameter display] Shooting type S/B/F/《T》 -- 【パラメータ表示】射撃タイプ\u3000S/B/F/《T》",
+        "[Parameter display] Shooting type S/B/F/《T》 -- 【パラメータ表示】射撃タイプ\u3000S/B/F/《T》",
+        "[Parameter display] Shooting type S/B/F/《T》 -- 【パラメータ表示】射撃タイプ\u3000S/B/F/《T》"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "[AC test] No enemy pattern -- 【ACテスト】敵パターン なし",
+        "[AC test] No enemy pattern -- 【ACテスト】敵パターン なし",
+        "[AC test] No enemy pattern -- 【ACテスト】敵パターン なし",
+        "[AC test] No enemy pattern -- 【ACテスト】敵パターン なし"
+      ]
+    }
+  ]
+}

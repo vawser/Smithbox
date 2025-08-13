@@ -1,0 +1,1247 @@
+{
+  "Name": "generatorlocation_m50_36_00_00",
+  "Entries": [
+    {
+      "ID": 337,
+      "Entries": [
+        "[GEN:337] Voice Marker"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "[GEN:730] Quicksword Rachel"
+      ]
+    },
+    {
+      "ID": 731,
+      "Entries": [
+        "[GEN:731] Maldron the Assassin"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "[GEN:732] Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 735,
+      "Entries": [
+        "[GEN:735] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 736,
+      "Entries": [
+        "[GEN:736] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 737,
+      "Entries": [
+        "[GEN:737] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 738,
+      "Entries": [
+        "[GEN:738] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "[GEN:740] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "[GEN:741] Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "[GEN:742] Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 743,
+      "Entries": [
+        "[GEN:743] Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 744,
+      "Entries": [
+        "[GEN:744] Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 745,
+      "Entries": [
+        "[GEN:745] Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "[GEN:903] Fume Knight"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "[GEN:904] Sir Alonne"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "[GEN:905] Blue Smelter Demon"
+      ]
+    },
+    {
+      "ID": 977,
+      "Entries": [
+        "[GEN:977] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[GEN:1100] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[GEN:1101] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[GEN:1102] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "[GEN:1103] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[GEN:1200] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[GEN:1300] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[GEN:1301] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[GEN:1310] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[GEN:1330] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "[GEN:1331] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1332,
+      "Entries": [
+        "[GEN:1332] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[GEN:1500] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[GEN:1510] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[GEN:1601] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "[GEN:1602] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "[GEN:1603] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "[GEN:1604] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "[GEN:1605] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "[GEN:1710] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1711,
+      "Entries": [
+        "[GEN:1711] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "[GEN:1750] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[GEN:1800] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[GEN:1801] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "[GEN:1910] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "[GEN:1911] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[GEN:2101] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[GEN:2102] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "[GEN:2103] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "[GEN:2111] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "[GEN:2120] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "[GEN:2121] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2124,
+      "Entries": [
+        "[GEN:2124] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "[GEN:2130] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[GEN:2400] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "[GEN:2501] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[GEN:2510] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "[GEN:2511] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2512,
+      "Entries": [
+        "[GEN:2512] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[GEN:2601] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "[GEN:2602] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        "[GEN:2603] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "[GEN:2604] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[GEN:2700] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[GEN:2800] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "[GEN:2801] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2805,
+      "Entries": [
+        "[GEN:2805] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[GEN:2810] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2811,
+      "Entries": [
+        "[GEN:2811] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2820,
+      "Entries": [
+        "[GEN:2820] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2821,
+      "Entries": [
+        "[GEN:2821] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2822,
+      "Entries": [
+        "[GEN:2822] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2830,
+      "Entries": [
+        "[GEN:2830] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[GEN:2900] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "[GEN:2901] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "[GEN:2911] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2912,
+      "Entries": [
+        "[GEN:2912] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "[GEN:2920] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[GEN:3001] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[GEN:3002] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[GEN:3003] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[GEN:3004] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[GEN:3030] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 3031,
+      "Entries": [
+        "[GEN:3031] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[GEN:3040] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 3041,
+      "Entries": [
+        "[GEN:3041] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[GEN:3101] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "[GEN:4120] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        "[GEN:4121] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[GEN:4400] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[GEN:4401] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[GEN:4500] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 4600,
+      "Entries": [
+        "[GEN:4600] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 4601,
+      "Entries": [
+        "[GEN:4601] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 4610,
+      "Entries": [
+        "[GEN:4610] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4611,
+      "Entries": [
+        "[GEN:4611] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 4700,
+      "Entries": [
+        "[GEN:4700] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 4800,
+      "Entries": [
+        "[GEN:4800] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 4901,
+      "Entries": [
+        "[GEN:4901] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 4903,
+      "Entries": [
+        "[GEN:4903] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 4904,
+      "Entries": [
+        "[GEN:4904] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 4905,
+      "Entries": [
+        "[GEN:4905] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 4906,
+      "Entries": [
+        "[GEN:4906] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[GEN:5000] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[GEN:5001] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[GEN:5010] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "[GEN:5110] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5111,
+      "Entries": [
+        "[GEN:5111] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        "[GEN:5130] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[GEN:5201] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "[GEN:5203] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "[GEN:5210] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "[GEN:5211] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "[GEN:5220] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "[GEN:5230] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 5231,
+      "Entries": [
+        "[GEN:5231] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 5232,
+      "Entries": [
+        "[GEN:5232] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        "[GEN:5501] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5502,
+      "Entries": [
+        "[GEN:5502] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "[GEN:5600] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5601,
+      "Entries": [
+        "[GEN:5601] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5602,
+      "Entries": [
+        "[GEN:5602] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "[GEN:5610] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "[GEN:5700] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "[GEN:5800] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "[GEN:5801] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "[GEN:5900] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5901,
+      "Entries": [
+        "[GEN:5901] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 5950,
+      "Entries": [
+        "[GEN:5950] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[GEN:6000] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[GEN:6001] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[GEN:6002] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[GEN:6005] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "[GEN:6007] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "[GEN:6008] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "[GEN:6011] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[GEN:6020] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "[GEN:6030] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Prowlers"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[GEN:7001] Prowlers"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[GEN:7002] Prowlers"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[GEN:7003] Prowlers"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "[GEN:7004] Prowlers"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "[GEN:7100] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "[GEN:7500] Flame Lizard"
+      ]
+    },
+    {
+      "ID": 7502,
+      "Entries": [
+        "[GEN:7502] Flame Lizard"
+      ]
+    },
+    {
+      "ID": 7503,
+      "Entries": [
+        "[GEN:7503] Flame Lizard"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "[GEN:7510] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 7520,
+      "Entries": [
+        "[GEN:7520] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7530,
+      "Entries": [
+        "[GEN:7530] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7531,
+      "Entries": [
+        "[GEN:7531] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7532,
+      "Entries": [
+        "[GEN:7532] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7533,
+      "Entries": [
+        "[GEN:7533] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7535,
+      "Entries": [
+        "[GEN:7535] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "[GEN:7603] Flame Lizard"
+      ]
+    },
+    {
+      "ID": 7610,
+      "Entries": [
+        "[GEN:7610] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 7620,
+      "Entries": [
+        "[GEN:7620] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 7621,
+      "Entries": [
+        "[GEN:7621] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7622,
+      "Entries": [
+        "[GEN:7622] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7630,
+      "Entries": [
+        "[GEN:7630] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7631,
+      "Entries": [
+        "[GEN:7631] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7640,
+      "Entries": [
+        "[GEN:7640] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7641,
+      "Entries": [
+        "[GEN:7641] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 7651,
+      "Entries": [
+        "[GEN:7651] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[GEN:8001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "[GEN:8004] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "[GEN:8006] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "[GEN:8007] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[GEN:8020] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "[GEN:8103] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8108,
+      "Entries": [
+        "[GEN:8108] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8109,
+      "Entries": [
+        "[GEN:8109] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "[GEN:8201] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "[GEN:8210] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8211,
+      "Entries": [
+        "[GEN:8211] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8212,
+      "Entries": [
+        "[GEN:8212] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8213,
+      "Entries": [
+        "[GEN:8213] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "[GEN:8301] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 8311,
+      "Entries": [
+        "[GEN:8311] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8313,
+      "Entries": [
+        "[GEN:8313] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8314,
+      "Entries": [
+        "[GEN:8314] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "[GEN:8320] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "[GEN:8400] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 8414,
+      "Entries": [
+        "[GEN:8414] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[GEN:9000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[GEN:9010] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "[GEN:9020] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "[GEN:9030] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "[GEN:9040] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "[GEN:9060] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "[GEN:9070] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 9080,
+      "Entries": [
+        "[GEN:9080] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 9090,
+      "Entries": [
+        "[GEN:9090] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[GEN:9500] Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "[GEN:9501] Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "[GEN:9502] Evangelist Scion Waslo"
+      ]
+    }
+  ]
+}

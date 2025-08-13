@@ -1,0 +1,785 @@
+{
+  "Name": "generatordbglocation_m10_14_00_00",
+  "Entries": [
+    {
+      "ID": 55,
+      "Entries": [
+        "[Wandering Warrior] Npc -- 【放浪の戦士】NPC"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[Wandering Warrior] NPC (Ghost) -- 【放浪の戦士】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "[Wandering Warrior] NPC (patch death) -- 【放浪の戦士】NPC（パッチ死亡時）"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "[Wandering Warrior] NPC (ghost for patch death) -- 【放浪の戦士】NPC（パッチ死亡時用亡霊）"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "【Patch】 Npc -- 【パッチ】NPC"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "【Patch】 NPC (Ghost) -- 【パッチ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "[Top Weapons Store] Npc -- 【上位武器屋】NPC"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "[Top Weapons Store] NPC (Ghost) -- 【上位武器屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[The Teacher of The Sin] Npc -- 【免罪の教戒師】NPC"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[The Teacher of The Sin] NPC (Ghost) -- 【免罪の教戒師】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "【Before the Church】 The Black Spirit: A Man Who Was Sealed -- 【教会前：黒霊】封じられた人"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "【In the camp tent】 Tsukiko Grandfather -- 【キャンプ地テント内：白霊】月光爺"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "[Spider's Web Area: White Spirit] Leroy -- 【蜘蛛の巣エリア：白霊】リロイ"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "【Boss】Spider Queen: Coalescence -- 【ボス】蜘蛛の女王：合体"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Boss for the first appearance] spider queen: coalescence -- 【ボス1回目登場用】蜘蛛の女王：合体"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "[Hole falling room lower floor ceiling] parasite spider 1 ceiling fall surprise -- 【穴落下部屋下階天井】パラサイトスパイダー1天井落下奇襲"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "[Hole falling room upper floor ceiling] parasite spider 2 ceiling fall surprise -- 【穴落下部屋上階天井】パラサイトスパイダー2天井落下奇襲"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【The back of the falling stone passage】The deceased: Clothes of the farmer 1 -- 【落石通路奥】亡者：農民の服１"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "【Guard ing the door in front of the church】The deceased: the ♂ of the clothes of the peasants: Torch -- 【教会前の扉守り】亡者：農民の服♂：松明"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "【Guarding the Door in front of the Church】Deceased: Farmer's Clothes: Head 1: Tsurushi -- 【教会前の扉守り】亡者：農民の服：頭１：つるはし"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "【Starting Point Square】Deceased; -- 【スタート地点広場】亡者；農民の服つるはし1"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "【Starting Point Square】Deceased; -- 【スタート地点広場】亡者；農民の服つるはし2"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "【Starting Point Square】Deceased; -- 【スタート地点広場】亡者；農民の服鎌"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "【The Falling Stone Passage】 Dead; -- 【落石通路奥】亡者；農民の服鎌"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "【Refugee Camp Area】Slave Beasts (Live) 1 -- 【難民キャンプエリア】奴隷獣（生者）1"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "【Refugee Camp Area】Slave Beasts (Live) 2 -- 【難民キャンプエリア】奴隷獣（生者）2"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "【Refugee Camp Area】Slave Beast (Piglet) -- 【難民キャンプエリア】奴隷獣（子豚）"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "【Refugee camp area watchstand】Deceased: Farmer's clothes ♂: sickle of hands -- 【難民キャンプエリア見張り台】亡者：農民の服♂：両手鎌"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "[Refugee camp area digging] dead: peasant clothes ♂: head part 2: tsurushi _ hole digging -- 【難民キャンプエリア穴掘り】亡者：農民の服♂：頭パーツ２：つるはし_穴掘り"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "【Refugee camp area】Fang-a-ta-ta-ta-ta-ta-ta-ta-ta-ta -- 【難民キャンプエリア】牙獣2周目1"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "【Refugee camp area】Fang-a-ta-ta-ta-ta-ta-ta-ta-ta-ta -- 【難民キャンプエリア】牙獣2周目2"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Guard ing the door in front of the church] dead: farmer's clothes ♂: head parts 2-handed sickle -- 【教会前の扉守り】亡者：農民の服♂：頭パーツ２両手鎌"
+      ]
+    },
+    {
+      "ID": 1218,
+      "Entries": [
+        "【On the hole falling room】Dark Wizard (deceased): Color (3) Head B1 -- 【穴落下部屋上】ダークウィザード（亡者）：色③：頭部B1"
+      ]
+    },
+    {
+      "ID": 1219,
+      "Entries": [
+        "[Shortly after getting off the middle layer _ rope] Dark Wizard (deceased): Color (3): Head B -- 【中層_ロープを降りてすぐ】ダークウィザード（亡者）：色③：頭部B"
+      ]
+    },
+    {
+      "ID": 1221,
+      "Entries": [
+        "【On the hole falling room】Dark Wizard (deceased): Color (3) Head B2 -- 【穴落下部屋上】ダークウィザード（亡者）：色③：頭部B2"
+      ]
+    },
+    {
+      "ID": 1224,
+      "Entries": [
+        "[Bottom layer: Bar room back] parasite spider -- 【最下層：バー部屋奥】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 1226,
+      "Entries": [
+        "【Bottom: Bar Room】Parasite Spider -- 【最下層：バー部屋】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 1229,
+      "Entries": [
+        "【Middle-tier Treasure Room】Parasite Spider (Parasitic) -- 【中層宝部屋】パラサイトスパイダー（寄生）"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "【Balcony at the end of the stairs filled with sand】Ishimori -- 【砂で埋まった階段先バルコニー】石守"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 1 hole -- 【宝箱トラップ部屋2】パラサイトスパイダー1穴から出る"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 2 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー2穴から出る"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 3 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー3穴から出る"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 4 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー4穴から出る"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 5 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー5穴から出る"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 6 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー6穴から出る"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[Treasure chest trap room 2] out of the parasite spider 7 holes -- 【宝箱トラップ部屋2】パラサイトスパイダー7穴から出る"
+      ]
+    },
+    {
+      "ID": 1319,
+      "Entries": [
+        "[Hole falling room upper floor ceiling 2 laps] parasite spider 2 ceiling fall surprise soul black -- 【穴落下部屋上階天井2周目】パラサイトスパイダー2天井落下奇襲ソウルブラック"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[Hole falling room upper floor ceiling second lap] parasite spider 3 ceiling fall surprise soul black -- 【穴落下部屋上階天井2周目】パラサイトスパイダー3天井落下奇襲ソウルブラック"
+      ]
+    },
+    {
+      "ID": 1324,
+      "Entries": [
+        "[Spider's Web Area] Parasite Spider 1 Poison -- 【蜘蛛の巣エリア】パラサイトスパイダー1毒"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "[Spider's Web Area] Parasite Spider 2 Poison -- 【蜘蛛の巣エリア】パラサイトスパイダー2毒"
+      ]
+    },
+    {
+      "ID": 1326,
+      "Entries": [
+        "[Spider's Web Area] Parasite Spider 3 Poison -- 【蜘蛛の巣エリア】パラサイトスパイダー3毒"
+      ]
+    },
+    {
+      "ID": 1327,
+      "Entries": [
+        "[Spider's Web Area] Parasite Spider 4 Poison -- 【蜘蛛の巣エリア】パラサイトスパイダー4毒"
+      ]
+    },
+    {
+      "ID": 1329,
+      "Entries": [
+        "[Surprise from the other side of the dune] parasite spider 1 -- 【砂丘の向こうから奇襲】パラサイトスパイダー1"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[Surprise from the other side of the dune] parasite spider 2 -- 【砂丘の向こうから奇襲】パラサイトスパイダー2"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "[Surprise from the other side of the dunes] parasite spider 3 -- 【砂丘の向こうから奇襲】パラサイトスパイダー3"
+      ]
+    },
+    {
+      "ID": 1338,
+      "Entries": [
+        "[Spider's Web Area_ With The Backlining of the Nest] Parasite Spider 5 -- 【蜘蛛の巣エリア_巣の裏張り付き】パラサイトスパイダー5"
+      ]
+    },
+    {
+      "ID": 1347,
+      "Entries": [
+        "[Fall to the side of the ant hell _ before the second rope] parasite spider -- 【蟻地獄横への落下_2個目ロープ前】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 1348,
+      "Entries": [
+        "[Fall to the side of the ant hell _ after the second rope] parasite spider : poison -- 【蟻地獄横への落下_2個目ロープ後】パラサイトスパイダー：毒"
+      ]
+    },
+    {
+      "ID": 1349,
+      "Entries": [
+        "[On the Ant Hell Side Hut] Dark Wizard (Deceased) Color (3) Head B -- 【蟻地獄横小屋上】ダークウィザード（亡者）：色③：頭部B"
+      ]
+    },
+    {
+      "ID": 1352,
+      "Entries": [
+        "【Ant Hell Side】Basilisk- Eyeball Crushing 1 -- 【蟻地獄横】バジリスク：目玉潰れ1"
+      ]
+    },
+    {
+      "ID": 1360,
+      "Entries": [
+        "【Middle Rope Front】Ishimori -- 【中層ロープ手前下】石守"
+      ]
+    },
+    {
+      "ID": 1361,
+      "Entries": [
+        "[Ant Hell Side] Stone Mori Explosion -- 【蟻地獄横】石守爆発"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【Church_Hidden Door Front】Dark Priest (Deceased): Color (1) Soul Black -- 【教会_隠し扉先2周目】ダークプリースト（亡者）：色①：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "【Outside the Middle-Tier Treasure Room】Dark Wizard (Deceased) Color (3) Head B -- 【中層宝部屋外】ダークウィザード（亡者）：色③：頭部B"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Middle Layer Treasure Room] Parasite Spider Parasitic 1 Muse -- 【中層宝部屋】パラサイトスパイダー寄生1うつぶせ"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "【Middle-tier Treasure Room】Parasite Spider Parasitic 2-Mhave -- 【中層宝部屋】パラサイトスパイダー寄生2うつぶせ"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Bottom layer_ Church door jump] parasite spider parasitic 3 -- 【最下層_教会扉飛び降り】パラサイトスパイダー寄生3"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Bottom layer_ Church door jumping] parasite spider parasitic 4 -- 【最下層_教会扉飛び降り】パラサイトスパイダー寄生4"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "【Bottom layer】Parasite Spider Parasitic 5-med -- 【最下層】パラサイトスパイダー寄生5うつぶせ"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Road leading to the lowest layer _ spider building] invasion spirit soul black -- 【最下層_蜘蛛建物へ繋がる道】侵入霊ソウルブラック"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[Bottom layer_ The road leading to the spider building 2nd round] Dark Spirit Soul Black -- 【最下層_蜘蛛建物へ繋がる道2周目】闇霊ソウルブラック"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "【Church_Prayer】Dark Priest (Deceased) -- 【教会_祈り】ダークプリースト（亡者）"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "【Church_Prayer】Dark Priest (Deceased) -- 【教会_祈り】ダークプリースト（亡者）"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "【Church_Prayer】Deceased: The Clothes of the Sick -- 【教会_祈り】亡者：病人の服"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "【Church_Prayer】Deceased: The Clothes of the Sick -- 【教会_祈り】亡者：病人の服"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "【Church_Prayer】Deceased: The Clothes of the Sick -- 【教会_祈り】亡者：病人の服"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "【Church_Prayer】Dead Workers_01 -- 【教会_祈り】死者の労働者_01"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "【Church_Prayer】Dead Workers_02 -- 【教会_祈り】死者の労働者_02"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "【Church_Prayer】Dead Workers_03 -- 【教会_祈り】死者の労働者_03"
+      ]
+    },
+    {
+      "ID": 3023,
+      "Entries": [
+        "【Church_Prayer】Dead Workers_04 -- 【教会_祈り】死者の労働者_04"
+      ]
+    },
+    {
+      "ID": 3024,
+      "Entries": [
+        "【Church_Prayer】Dead Workers_05 -- 【教会_祈り】死者の労働者_05"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "【Church_Prayer】Necromancer -- 【教会_祈り】ネクロマンサー"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "【Boss Room】Parasite Spider_1 -- 【ボス部屋】パラサイトスパイダー_1"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "【Boss Room】Parasite Spider_2 -- 【ボス部屋】パラサイトスパイダー_2"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "【Boss Room】Parasite Spider_3 -- 【ボス部屋】パラサイトスパイダー_3"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "【Boss Room】Parasite Spider_4 -- 【ボス部屋】パラサイトスパイダー_4"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "【Boss Room】Parasite Spider_5 -- 【ボス部屋】パラサイトスパイダー_5"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "【Boss Room】Parasite Spider_6 -- 【ボス部屋】パラサイトスパイダー_6"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_1 -- 【ボス部屋_初期配置】パラサイトスパイダー_1"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_2 -- 【ボス部屋_初期配置】パラサイトスパイダー_2"
+      ]
+    },
+    {
+      "ID": 7012,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_3 -- 【ボス部屋_初期配置】パラサイトスパイダー_3"
+      ]
+    },
+    {
+      "ID": 7013,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_4 -- 【ボス部屋_初期配置】パラサイトスパイダー_4"
+      ]
+    },
+    {
+      "ID": 7014,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_5 -- 【ボス部屋_初期配置】パラサイトスパイダー_5"
+      ]
+    },
+    {
+      "ID": 7015,
+      "Entries": [
+        "[Boss room_Initial placement] parasite spider_6 -- 【ボス部屋_初期配置】パラサイトスパイダー_6"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "【Deep Stone Passage】Deceased: Farmer's Clothes ♂: Torch -- 【落石通路奥】亡者：農民の服♂：松明"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "【Deep Stone Passage】Dead: Farmer's Clothes: Head 2: Tsurushi -- 【落石通路奥】亡者：農民の服：頭２：つるはし"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "[NPC Chambara room bookshelf back] parasite spider -- 【NPCチャンバラ部屋の本棚奥】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8230,
+      "Entries": [
+        "【Bottom: Bar Room】 [Dark Wizard (deceased): Color (3): Head B] -- 【最下層：バー部屋】【ダークウィザード（亡者）：色③：頭部B】"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "[Bottom layer: open door- closed room] parasite spider -- 【最下層：扉開けっ放し部屋】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8301,
+      "Entries": [
+        "[Bottom layer: open door- closed room] Parasite Spider: Poison -- 【最下層：扉開けっ放し部屋】パラサイトスパイダー：毒"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "[Jumping in front of the bottom sand door_NPC Chamber back] Parasite Spider (parasitic) -- 【最下層砂扉前飛び降り_NPCチャンバラ部屋奥】パラサイトスパイダー（寄生）"
+      ]
+    },
+    {
+      "ID": 8322,
+      "Entries": [
+        "[Bottom layer sand door front jumping down _ crumbling stairs] parasite spider (parasitic) -- 【最下層砂扉前飛び降り_崩れ階段】パラサイトスパイダー（寄生）"
+      ]
+    },
+    {
+      "ID": 8323,
+      "Entries": [
+        "【Bottom layer_Sand door front_prowl】Basilisk: Eyeball Crushing 1 -- 【最下層_砂扉前_うろつき】バジリスク：目玉潰れ1"
+      ]
+    },
+    {
+      "ID": 8324,
+      "Entries": [
+        "[Bottom layer_ Sand door front _ prowl] Basilisk: Eyeball Crush2 -- 【最下層_砂扉前_うろつき】バジリスク：目玉潰れ2"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "[Worm key hole _ hanging] parasite spider -- 【虫の鍵のホール_垂れ下がり】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "[Worm key hole _ hanging] parasite spider -- 【虫の鍵のホール_垂れ下がり】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8406,
+      "Entries": [
+        "[Worm key hole _ hanging] parasite spider -- 【虫の鍵のホール_垂れ下がり】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "[Worm key hole _ hanging] parasite spider -- 【虫の鍵のホール_垂れ下がり】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8411,
+      "Entries": [
+        "[Worm key hole _ hanging] parasite spider -- 【虫の鍵のホール_垂れ下がり】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8420,
+      "Entries": [
+        "[Worm key hole _ hanging _ next to the key of the insect] parasite spider -- 【虫の鍵のホール_垂れ下がり_虫の鍵横】パラサイトスパイダー"
+      ]
+    },
+    {
+      "ID": 8430,
+      "Entries": [
+        "[Worm key hole _ door back] parasite spider (parasitic): poison -- 【虫の鍵のホール_扉奥】パラサイトスパイダー（寄生）：毒"
+      ]
+    },
+    {
+      "ID": 8450,
+      "Entries": [
+        "[Insect key room _ pseudo infinite spring] parasite spider 1 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー1"
+      ]
+    },
+    {
+      "ID": 8451,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 2 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー2"
+      ]
+    },
+    {
+      "ID": 8454,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 5 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー5"
+      ]
+    },
+    {
+      "ID": 8455,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 6 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー6"
+      ]
+    },
+    {
+      "ID": 8456,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 7 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー7"
+      ]
+    },
+    {
+      "ID": 8457,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 8 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー8"
+      ]
+    },
+    {
+      "ID": 8458,
+      "Entries": [
+        "[Insect key room_ pseudo infinite springing] parasite spider 9 -- 【虫の鍵部屋_疑似無限湧き】パラサイトスパイダー9"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[Spider's web area_ with the backlining of the nest] parasite spider 1 -- 【蜘蛛の巣エリア_巣の裏張り付き】パラサイトスパイダー1"
+      ]
+    },
+    {
+      "ID": 8510,
+      "Entries": [
+        "[Spider's Web Area_ With The Backing of the Nest] Parasite Spider 2 -- 【蜘蛛の巣エリア_巣の裏張り付き】パラサイトスパイダー2"
+      ]
+    },
+    {
+      "ID": 8512,
+      "Entries": [
+        "[Spider's Web Area_ With The Backlining of the Nest] Parasite Spider 3 -- 【蜘蛛の巣エリア_巣の裏張り付き】パラサイトスパイダー3"
+      ]
+    },
+    {
+      "ID": 8514,
+      "Entries": [
+        "[Spider's Web Area_ With The Backing of the Nest] Parasite Spider 4 -- 【蜘蛛の巣エリア_巣の裏張り付き】パラサイトスパイダー4"
+      ]
+    },
+    {
+      "ID": 8530,
+      "Entries": [
+        "[Spider's Web Area _ With Ceiling] Parasite Spider 1 -- 【蜘蛛の巣エリア_天井張り付き】パラサイトスパイダー1"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "[Spider's Web Area_ With Ceiling] Parasite Spider 2 -- 【蜘蛛の巣エリア_天井張り付き】パラサイトスパイダー2"
+      ]
+    },
+    {
+      "ID": 8550,
+      "Entries": [
+        "[Spider's Web Area_ With Ceiling] Parasite Spider 3 -- 【蜘蛛の巣エリア_天井張り付き】パラサイトスパイダー3"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "【Boss Post-Treasure Chest Room】Durahan -- 【ボス後宝箱部屋】デュラハン（亡者）：二刀流"
+      ]
+    },
+    {
+      "ID": 8912,
+      "Entries": [
+        "[Boss After Treasure Chest Room] Dead: The Clothes of the Wealthy ♂ Stabbing Sword 1 -- 【ボス後宝箱部屋】亡者：富裕層の服♂：刺突剣1"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "【Dummy】Patch Room -- 【ダミー】パッチ部屋"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "【Event Test_Iwagorogoro】Deceased: Farmer's Clothes -- 【イベントテスト_岩ゴロゴロ】亡者：農民の服"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "【Event Test_Iwagorogoro】Deceased: Farmer's Clothes -- 【イベントテスト_岩ゴロゴロ】亡者：農民の服"
+      ]
+    }
+  ]
+}

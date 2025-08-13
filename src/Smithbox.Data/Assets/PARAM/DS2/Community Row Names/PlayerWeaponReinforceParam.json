@@ -1,0 +1,23 @@
+{
+  "Name": "PlayerWeaponReinforceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

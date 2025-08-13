@@ -1,0 +1,23 @@
+{
+  "Name": "LockTargetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Ordinary -- 普通"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Short -- 短い"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Long -- 長い"
+      ]
+    }
+  ]
+}

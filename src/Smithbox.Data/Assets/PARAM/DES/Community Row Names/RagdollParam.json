@@ -1,0 +1,41 @@
+{
+  "Name": "RagdollParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "does not move"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Havok default value"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "centipede head"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "centipede tail"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "blood mite body"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "blood mite sac"
+      ]
+    }
+  ]
+}

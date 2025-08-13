@@ -1,0 +1,605 @@
+{
+  "Name": "FaceGenParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "testData"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "female default candidate"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "female default candidate"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "female default candidate"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "female default candidate"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "female default candidate"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "male default candidate"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "male default candidate"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "male default candidate"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "male default candidate"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "male default candidate"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "mercenary man"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Low-ranking soldier_male"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Junior Knight_Male"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Temple Knight_Male"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Shinto priest _ man"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Nobility _ man"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "hunter man"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "bandit_man"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Sorcerer_Male"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Wanderer _ man"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "mercenary_woman"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Junior soldier_woman"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Low-ranking knight_woman"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Temple Knight_Female"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Shinto priest _ woman"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "aristocrat woman"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "hunter _ woman"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "thief_woman"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "sorceress_woman"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "wanderer _ woman"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Prince of Ostrava"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Billor"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "witch yuria"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Miralda the Condemned"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Grave Robber Blige"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "wise man flake"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "hyena patch"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Yurt, Lord of Silence"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Saint Urbain"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Gal Vinland"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Wanderer Skillville"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Princess Knight Selene Vinland"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Lord Rydell in Black"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Old King Doran"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Master Satsuki"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Believers of God Part 1"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Believers of God Part 2"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Believers of God Part 3"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Believers of God Part 4"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Savvy"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "For NPC face creation, male 1"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "For NPC face creation Male 2"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "For NPC face creation, male 3"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "For NPC face creation, male 4"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "For NPC face creation, male 5"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "For NPC face creation, male 6"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "For NPC face creation Male 7"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "For NPC face creation, male 8"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "For creating NPC faces, male 9"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "For creating NPC faces, female 1"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "For NPC face creation, female 2"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "For NPC face creation, female 3"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "For NPC face creation, female 4"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "For NPC face creation, female 5"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "For NPC face creation, female 6"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "For creating NPC faces, female 7"
+      ]
+    },
+    {
+      "ID": 3017,
+      "Entries": [
+        "For NPC face creation, female 8"
+      ]
+    },
+    {
+      "ID": 3018,
+      "Entries": [
+        "For creating NPC faces, female 9"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Billor"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "flake"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "yurt"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Rydell"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "patch"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "follower of god 2"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "? ? ?"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "big bag thomas"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "Blige"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "selenium"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Urbain"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "broken heart warrior"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Magician Ito"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "Mephistopheles"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "Follower of God 3 Ito"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "Skillville"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "Prince of Ostrava"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "Miralda"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "follower of god 1"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "sorcerer"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Mephistopheles Yokoyama"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Urbain Luo"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Master Satsuki"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "selenium luo"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "follower of god 3"
+      ]
+    },
+    {
+      "ID": 3125,
+      "Entries": [
+        "old king doran"
+      ]
+    },
+    {
+      "ID": 3126,
+      "Entries": [
+        "Gal Vinland"
+      ]
+    }
+  ]
+}

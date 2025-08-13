@@ -1,0 +1,419 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: Hard Stone"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Sharp Stone"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Stone"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Blade Stone"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Spider yarn Steel wire"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Bleed"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Dragon Stone"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Breathed Stone"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Spinal Stone"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11: Mon Mitsuishi"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Tsukikage Stone"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Glimmer Stone"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Magic Shield Stone"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15: Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16: DS"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "VIG - HP Scaling"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "ATN - FP Scaling"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Soul Level - Defence"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Soul Level - Poison Resist"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Soul Level - Toxic Resist"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Soul Level - Bleed Resist"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Soul Level - Curse Resist"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Soul Level - Frost Resist"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "VIT - Poison Resist"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "VIT - Toxic Resist"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "END - Bleed Resist"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "LCK - Curse Resist"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "VIG - Frost Resist"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "STR - Physical Defence"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "VIT - Physical Defence"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "INT - Magical Defence"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "STR - Fire Defence"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "END - Lightning Defence"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "FTH - Dark Defence"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "LCK - Item Discovery"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Estus at Bonfire - Obsolete"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "DEX - Shield Absorption % (Physical Damage Guard)"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "DEX - Shield Attribute % (All Elemental Damage Guard)"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "DEX - Shield Status % (All Aux Build-up Guard)"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "STR - Shield Stamina % (Stability)"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "STR - Weapon Arts Point Max"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "DEX - Weapon Arts Point Max"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "INT - Weapon Arts Point Max"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "FTH - Weapon Arts Point Max"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Soul Level - Souls Required"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Base Fall Damage to % of max HP"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Equip Load % - Fall Damage Multiplier"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "VIT - Fall Damage Multiplier"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "DEX - Fall Damage Multiplier"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+{
+  "Name": "eventparam_m10_32_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Switching the gimmick door-related flags of the connection path"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Phantom Enemy Generation Management 1"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Phantom Enemy Generation Management 2"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Phantom Enemy Generation Management 3"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Phantom Enemy Generation Management 4"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Phantom Enemy Generation Management 5"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Phantom Enemy Generation Management 6"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Phantom Enemy Generation Management 7"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: Magical Opening"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: Magic Warp"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss: The Opening of the Magic"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Pitfalls_Large_Navimesh Switching"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Pitfalls_Small_Navimesh Switching"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Boss: Manscorpion ♀_Combat"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "NAVI MESH CHANGE 1 OF OBJ TO BE DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "NAVI MESH CHANGE 2 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "NAVI MESH CHANGE 3 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "NAVI MESH CHANGE 4 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "NAVI MESH CHANGE 5 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "NAVI MESH CHANGE 6 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "NAVI MESH CHANGE 7 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "NAVI MESH CHANGE 8 OF OBJ DESTROYED DURING MANSCORPION WAR"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Stone Pillars of Treasure Corpses_01"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "King's Door"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "White Door to The Castle"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 1_Key Guide"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 1_Appearance Setting"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 1_Navi Switching"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 2_Key Guide"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 2_Appearance Setting"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 2_Navi Switching"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 3_Key Guide"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 3_ Appearance Setting"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Lion Warrior_Petrified Stop 3_Navi Switching"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Earn items by destroying petrified characters"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Disable damage"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "The key door opened by the \"Key of the Beast\""
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play ing seed fire 01_minute crossroads building"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Play Ing Seed Fire 02_ Inside the Huge Bridge"
+      ]
+    },
+    {
+      "ID": 111010,
+      "Entries": [
+        "NPC: Durahan"
+      ]
+    },
+    {
+      "ID": 111011,
+      "Entries": [
+        "NPC: Durahan: Ghosts"
+      ]
+    },
+    {
+      "ID": 111012,
+      "Entries": [
+        "OBJ: Durahan: Tomb"
+      ]
+    },
+    {
+      "ID": 111013,
+      "Entries": [
+        "OBJ: Durahan: Key Guide"
+      ]
+    },
+    {
+      "ID": 111014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111180,
+      "Entries": [
+        "NPC: Pilgrims in the Abyss (Shadow Forest)"
+      ]
+    },
+    {
+      "ID": 111181,
+      "Entries": [
+        "NPC: Pilgrims in the Abyss (Shadow Forest): Ghosts"
+      ]
+    },
+    {
+      "ID": 111182,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111183,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111184,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111185,
+      "Entries": [
+        "OBJ: Pilgrims in the Abyss (Shadow Forest): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111230,
+      "Entries": [
+        "NPC: Wandering Warrior (Shadow Forest)"
+      ]
+    },
+    {
+      "ID": 111231,
+      "Entries": [
+        "NPC: Wandering Warrior (Shadow Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111232,
+      "Entries": [
+        "OBJ: Wandering Warrior (Shadow Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111233,
+      "Entries": [
+        "OBJ: Wandering Warrior (Shadow Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111234,
+      "Entries": [
+        "OBJ: Wandering Warrior (Shadow Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111235,
+      "Entries": [
+        "OBJ: Wandering Warrior (Shadow Forest): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111450,
+      "Entries": [
+        "NPC: Top Weapons Store (Shadow Forest)"
+      ]
+    },
+    {
+      "ID": 111451,
+      "Entries": [
+        "NPC: Top Weapons Store (Shadow Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111452,
+      "Entries": [
+        "OBJ: Top Weapons Store (Shadow Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111453,
+      "Entries": [
+        "OBJ: Top Weapons Store (Shadow Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111454,
+      "Entries": [
+        "OBJ: Top Weapons Store (Shadow Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111520,
+      "Entries": [
+        "NPC: Manscorpion ♂"
+      ]
+    },
+    {
+      "ID": 111521,
+      "Entries": [
+        "NPC: Manscorpion ♂: Specter"
+      ]
+    },
+    {
+      "ID": 111522,
+      "Entries": [
+        "OBJ: Manscorpion ♂: Tomb"
+      ]
+    },
+    {
+      "ID": 111523,
+      "Entries": [
+        "OBJ: Manscorpion ♂: Key Guide"
+      ]
+    },
+    {
+      "ID": 111524,
+      "Entries": [
+        "OBJ: Manscorpion ♂: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120080,
+      "Entries": [
+        "Trophy: The Pledge of Deep Darkness"
+      ]
+    },
+    {
+      "ID": 120160,
+      "Entries": [
+        "Trophy: The Neck To Think"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3001030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003160,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003270,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

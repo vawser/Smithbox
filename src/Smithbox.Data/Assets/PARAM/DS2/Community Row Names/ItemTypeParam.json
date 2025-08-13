@@ -1,0 +1,269 @@
+{
+  "Name": "ItemTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Weapon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Shield"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Armor"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Dragon Stone (Black Dragon Armor)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Ring"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Spell"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Quiver"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Lifegem Consumable"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Covenant Item/Reward"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Homeward Bone/Aged Feather"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Darksign"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Black Separation Crystal "
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Buff Consumable"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Cast Restoration Consumable"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Dried Root"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Poison Moss"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Water Consumable"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Divine Blessing"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Estus Flask"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Human Effigy"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Silky Stone"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Soul"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Dragon Stone (Untransformed)"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Weapon Resin/Ooze"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Repair Powder/Carving/Estus Flask Shard/Sublime Bone Dust/Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Prism Stone/Pharros' Lockstone/Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Soapstone"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Throwable Item (Knife/Effect)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Throwable Item (Bomb)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Arrow"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Greatarrow"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Bolt"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Reinforcement Material"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Petrified Something/Egg"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Soul Vessel"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Champion's Tablet"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Bone of Order"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Gesture"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Key Item"
+      ]
+    }
+  ]
+}

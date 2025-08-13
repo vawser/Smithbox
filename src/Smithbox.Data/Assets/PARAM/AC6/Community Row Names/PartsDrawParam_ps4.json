@@ -1,0 +1,912 @@
+{
+  "Name": "PartsDrawParam_ps4",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default settings"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 main"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 main"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "No LOD"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "testparm"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "vignette test"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "AC_PC"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "AC_NPC"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "illusion"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For characters, small size (~20m)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Medium size for characters (~40m)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Large size for characters (~100m)"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Extra large for characters (~200m)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "For characters, extra large ~ 500m)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "For characters extra large or larger (1000m~)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "c4210_for illusions"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "For characters (Ice Worm)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "For characters (landing ship)"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Does not switch to LOD model for character"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For wild animals, small (1.5m or less)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "For wild animals, medium size (3m or less)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "For wild animals, large (less than 6m)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Extra large for wild animals (12m or less)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "For wild animals, huge (less than 25m)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Fortress for wild animals (less than 50m)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Does not switch to wildlife LOD model"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "FNR asset 201m~ (does not switch to low texture)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "FNR Asset 1001m~ (For models using base texture only)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "FNR Asset\u3000501m～1000m(For models using base texture only)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "FNR asset 201m to 500m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "FNR asset extra large 101-200m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "FNR asset extra large 61-100m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "FNR asset size 31-60m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "FNR asset 11-30m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "FNR asset small ~10m (only for models using base texture)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "FNR Asset Super Large 101-200m"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "FNR Asset Extra Large 61-100m"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "FNR Asset Large 31-60m"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "FNR asset middle 11-30m"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "FNR Asset Small ~10m"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Does not switch to low texture"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Does not switch to LOD model Does not switch to low texture"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 only (reflection scene default)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Does not switch to LOD model (for polyplay)"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "For wood only"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Vignette for Imposter"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "FNR c9420 missile battery provisional support"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "FNR micro target test"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "FNR large target test"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "FNR Emphasis Asset 500m"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "FNR Emphasis Asset 4000m"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "FNR Emphasis Asset Entire Map"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "FNR\u3000FP version for strong enemies"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Includes up to SLOD_L2 for 20m or less"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Includes up to SLOD_L2 for building size"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Temporary A-layer line"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Huge map asset without SLOD_Includes up to L2"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Includes huge asset SLOD_L2"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Huge asset for distant view SLOD_Reverse LOD processing"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "A-layer supporting pillar L2 distance setting provisional"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "FNR Proto Giant Boss Test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "m60 temporary LOD test"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "No TexLOD"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "1~10m"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "101-400 Small for mountain natural terrain only"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "401-700m For mountain natural terrain only Medium"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "701-1100m For mountain natural terrain only Large (farthest view)"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "50-100m Small for mountain buildings (L1 proxy using shadow L1)"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "101-200m Large for mountain buildings (L1 proxy using shadow L1) (does not disappear)"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "VOB2 Nomaru asset only (L1 proxy using shadow L0)"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "10-50m Mountain L1 proxy extremely small (L1 proxy using shadow L1)"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Mountain SLOD (no LOD, low texture switching)"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "FNR Asset extra large or larger 1101m to 1600m Proxy model included"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "FNR Asset extra large or larger 701m to 1100m Proxy model included"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "FNR Asset extra large or larger 401m to 700m Proxy model included"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~ Proxy model included"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "FNR Asset Extra Large 101-200m Proxy model included"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "FNR Asset Extra Large 61-100m Proxy model included"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "FNR Asset size 31-60m including proxy model"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "FNR asset 11-30m including proxy model"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "FNR small asset ~10m including proxy model"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Archive AC remains only"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "For forced HiActive while playing the floating giant wall anime."
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "FNR for small fry enemy characters"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "FNR huge asset for anime"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "For celestial sphere"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "For the inner parts after the celestial sphere_A"
+      ]
+    },
+    {
+      "ID": 858,
+      "Entries": [
+        "For parts outside the celestial sphere_A"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "For inner parts treated as celestial sphere_01_A"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "For inner parts treated as celestial sphere_02_B"
+      ]
+    },
+    {
+      "ID": 870,
+      "Entries": [
+        "For distant view parts (clouds, etc.)"
+      ]
+    },
+    {
+      "ID": 880,
+      "Entries": [
+        "VR1"
+      ]
+    },
+    {
+      "ID": 881,
+      "Entries": [
+        "VR2"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "For shadow model"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "FNR Asset extra large or larger 201m~ (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "FNR asset extra large 101-200m (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "FNR asset extra large 61-100 m (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "FNR large asset 31-60m (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "FNR asset 11-30m (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 5055,
+      "Entries": [
+        "FNR small asset ~10m (texture LOD distance priority)"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "No LOD (CS only)"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "No LOD_Reflection (CS_C end only)"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "LOD_For super huge assets (CS only)"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "No LOD_New B layer level 1 for CS (only for Lester who was alive)"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "No LOD_New B layer level 2 for CS (only for Lester who was alive)"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "No LOD_New B layer level 3 for CS (only for Lester who was alive)"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "No LOD_Drops the shadow of a point light source (for exclusive sorties)"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "No LOD_Do not receive shadows from point light sources (for exclusive sorties)"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "For rough model testing (LOD processing disabled for all except shadows)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Includes up to LodMap1 for PG test"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "For ModelViewer (no LOD)"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Includes LodMap2 for PG test"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "For curse dummy objects. It uses TexLOD to generate damage."
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "For LOD operation test, including up to L6"
+      ]
+    }
+  ]
+}

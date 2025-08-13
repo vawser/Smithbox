@@ -1,0 +1,575 @@
+{
+  "Name": "PartsTokenParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test_Pla 1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test_Pla 2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Test_Pla 3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Test_Gold 1"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Test_Friday 2"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Test_Gold 3"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Test_Silver 1"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Test_Silver 2"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Test_Silver 3"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Test_Copper 1"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Test_Copper 2"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Test_Copper 3"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Combat Log - Destroy The Transport Helicopters - BAWS Tetrapod MT (Silver)"
+      ]
+    },
+    {
+      "ID": 798000,
+      "Entries": [
+        "Combat Log - Destroy The Tester AC - Dafeng Student Pilot"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "Combat Log - Attack The Dam Complex - Index Dunham (Burn Pickaxe) (Gold)"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Combat Log - Attack The Dam Complex - BAWS Tetrapod MT c3400_0000"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0023"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0025"
+      ]
+    },
+    {
+      "ID": 203040,
+      "Entries": [
+        "Combat Log - Operation Wallclimber - BAWS Bipedal MT c3020_0022"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Combat Log - Retrieve Combat Logs - Little Ziyi (Yue Yu)"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "(this is probably supposed to be Invincible Rummy MAD STOMP)"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - BAWS Tetrapod MT c3400_0010"
+      ]
+    },
+    {
+      "ID": 212010,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - BAWS Tetrapod MT c3400_0001"
+      ]
+    },
+    {
+      "ID": 212020,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - Nosaac (Bitter Promise)"
+      ]
+    },
+    {
+      "ID": 212025,
+      "Entries": [
+        "Combat Log - Attack The Watchpoint - Sulla (Entangle) AND Infiltrate Grid 086 - Invincible Rummy (MAD STOMP)"
+      ]
+    },
+    {
+      "ID": 212030,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0002"
+      ]
+    },
+    {
+      "ID": 212040,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0003"
+      ]
+    },
+    {
+      "ID": 212060,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - RaD TOYBOX c4150_0005"
+      ]
+    },
+    {
+      "ID": 212062,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - RaD Tetrapod MT c3600_0012"
+      ]
+    },
+    {
+      "ID": 212064,
+      "Entries": [
+        "Combat Log - Infiltrate Grid 086 - RaD Tetrapod MT c3600_0052"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0046"
+      ]
+    },
+    {
+      "ID": 218010,
+      "Entries": [
+        "Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0070"
+      ]
+    },
+    {
+      "ID": 218020,
+      "Entries": [
+        "Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0071"
+      ]
+    },
+    {
+      "ID": 218030,
+      "Entries": [
+        "Combat Log - Ocean Crossing - Tiny Laser Drone c5300_0072"
+      ]
+    },
+    {
+      "ID": 301110,
+      "Entries": [
+        "Combat Log - Steal The Survey Data - BAWS Tetrapod MT c3400_0003"
+      ]
+    },
+    {
+      "ID": 303010,
+      "Entries": [
+        "Combat Log - Attack The Refueling Base - Light Cavalry c3250_0003"
+      ]
+    },
+    {
+      "ID": 303015,
+      "Entries": [
+        "Combat Log - Attack The Refueling Base - Light Cavalry c3250_0004"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "Combat Log - Tunnel Sabotage - Light Cavalry c3250_0001"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "Combat Log - Eliminate V.VII - V.II Swinburne (Guidance)"
+      ]
+    },
+    {
+      "ID": 217010,
+      "Entries": [
+        "Combat Log - Eliminate V.VII - BAWS Tetrapod MT c3400_0004"
+      ]
+    },
+    {
+      "ID": 217020,
+      "Entries": [
+        "Combat Log - Eliminate V.VII - Rokumonsen (Shinobi)"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "Combat Log - Survey The Uninhabited Floating City - Xylem Wing Drone c3100_0006"
+      ]
+    },
+    {
+      "ID": 510500,
+      "Entries": [
+        "Combat Log - Survey The Uninhabited Floating City - Thumb Dolmayan (Astghik)"
+      ]
+    },
+    {
+      "ID": 799000,
+      "Entries": [
+        "Combat Log - Eliminate The Enforcement Squads - Ring Freddie (Candle Ring)"
+      ]
+    },
+    {
+      "ID": 304330,
+      "Entries": [
+        "Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0005"
+      ]
+    },
+    {
+      "ID": 304340,
+      "Entries": [
+        "Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0010"
+      ]
+    },
+    {
+      "ID": 304350,
+      "Entries": [
+        "Combat Log - Attack The Old Spaceport - Light Cavalry c3250_0011"
+      ]
+    },
+    {
+      "ID": 332010,
+      "Entries": [
+        "Combat Log - Eliminate \"Honest\" Brute - RaD TOYBOX c4150_0012"
+      ]
+    },
+    {
+      "ID": 332020,
+      "Entries": [
+        "Combat Log - Eliminate \"Honest\" Brute - RaD TOYBOX c4150_0010"
+      ]
+    },
+    {
+      "ID": 332030,
+      "Entries": [
+        "Combat Log - Eliminate \"Honest\" Brute - RaD TOYBOX c4150_0004"
+      ]
+    },
+    {
+      "ID": 332040,
+      "Entries": [
+        "Combat Log - Eliminate \"Honest\" Brute - BAWS Tetrapod MT c3400_0000"
+      ]
+    },
+    {
+      "ID": 332050,
+      "Entries": [
+        "Combat Log - Eliminate \"Honest\" Brute - \"Honest\" Brute (Milk Tooth) (Platinum)"
+      ]
+    },
+    {
+      "ID": 795000,
+      "Entries": [
+        "Combat Log - Defend The Old Spaceport - Raven (Nightfall)"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 2 - PCA Heavy MT c3700_0008"
+      ]
+    },
+    {
+      "ID": 401010,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 2 - PCA Heavy MT c3700_0009"
+      ]
+    },
+    {
+      "ID": 401020,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 2 - G5 Iguazu (Head Bringer)"
+      ]
+    },
+    {
+      "ID": 401500,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 2 - Coldcall (Deadsled)"
+      ]
+    },
+    {
+      "ID": 402010,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 3 - PCA Heavy MT c3700_0016"
+      ]
+    },
+    {
+      "ID": 402020,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 3 - PCA Heavy MT c3700_0009"
+      ]
+    },
+    {
+      "ID": 402030,
+      "Entries": [
+        "Combat Log - Underground Depth Exploration Depth 3 - IA-C01 Ephemera"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Combat Log - Ambush The Vespers - V.V Hawkins (Reconfig)"
+      ]
+    },
+    {
+      "ID": 411010,
+      "Entries": [
+        "Combat Log - Ambush The Vespers - V.VIII Pater (Dual Nature)"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Combat Log - Unknown Territory Survey - V.IV Rusty (Steel Haze)"
+      ]
+    },
+    {
+      "ID": 402610,
+      "Entries": [
+        "Combat Log - Unknown Territory Survey - Middle Flatwell (Tsubasa)"
+      ]
+    },
+    {
+      "ID": 403030,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0001"
+      ]
+    },
+    {
+      "ID": 403040,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0004"
+      ]
+    },
+    {
+      "ID": 403050,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0006"
+      ]
+    },
+    {
+      "ID": 403060,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0007"
+      ]
+    },
+    {
+      "ID": 403070,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0008"
+      ]
+    },
+    {
+      "ID": 403080,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0009"
+      ]
+    },
+    {
+      "ID": 403090,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0012"
+      ]
+    },
+    {
+      "ID": 403100,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0013"
+      ]
+    },
+    {
+      "ID": 403110,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Bonewheel c5250_0005"
+      ]
+    },
+    {
+      "ID": 403120,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Institute MT c3500_0000"
+      ]
+    },
+    {
+      "ID": 403130,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - Institute MT c3500_0001"
+      ]
+    },
+    {
+      "ID": 403140,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - G3 Wu Huahai (Li Long)"
+      ]
+    },
+    {
+      "ID": 403150,
+      "Entries": [
+        "Combat Log - Reach The Coral Convergence - V.VI Maeterlinck (Infection)"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Combat Log - Intercept The Corporate Forces - Light Cavalry c3250_0002"
+      ]
+    },
+    {
+      "ID": 502010,
+      "Entries": [
+        "Combat Log - Intercept The Corporate Forces - V.I Freud (Locksmith)"
+      ]
+    },
+    {
+      "ID": 202500,
+      "Entries": [
+        "Combat Log - Attack The Dam Complex - G4 Volta (Cannon Head)"
+      ]
+    },
+    {
+      "ID": 214000,
+      "Entries": [
+        "Combat Log - Prisoner Rescue - BAWS Tetrapod MT c3400_0000"
+      ]
+    },
+    {
+      "ID": 214020,
+      "Entries": [
+        "Combat Log - Prisoner Rescue - G2 Nile (Deep Down)"
+      ]
+    },
+    {
+      "ID": 224010,
+      "Entries": [
+        "Combat Log - Defend The Dam Complex - King (Aster Crown)"
+      ]
+    },
+    {
+      "ID": 224020,
+      "Entries": [
+        "Combat Log - Defend The Dam Complex - Chartreuse (Umber Ox)"
+      ]
+    },
+    {
+      "ID": 793000,
+      "Entries": [
+        "Combat Log - Intercept The Redguns - G1 Michigan (Liger Tail)"
+      ]
+    },
+    {
+      "ID": 505000,
+      "Entries": [
+        "Combat Log - Eliminate \"Cinder\" Carla - V.II Snail (Open Faith)"
+      ]
+    },
+    {
+      "ID": 505010,
+      "Entries": [
+        "Combat Log - Eliminate \"Cinder\" Carla - \"Cinder\" Carla (Full Course)"
+      ]
+    },
+    {
+      "ID": 505020,
+      "Entries": [
+        "Combat Log - Eliminate \"Cinder\" Carla - \"Chatty\" Stick (CIRCUS)"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Combat Log - Stop The Secret Data Breach - BAWS Tetrapod MT c3400_0001"
+      ]
+    },
+    {
+      "ID": 223010,
+      "Entries": [
+        "Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0010"
+      ]
+    },
+    {
+      "ID": 223020,
+      "Entries": [
+        "Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0011"
+      ]
+    },
+    {
+      "ID": 223030,
+      "Entries": [
+        "Combat Log - Stop The Secret Data Breach - RaD Tetrapod MT c3600_0012"
+      ]
+    },
+    {
+      "ID": 794000,
+      "Entries": [
+        "Combat Log - Eliminate V.VIII - V.VIII O'Keeffe (Barren Flower)"
+      ]
+    },
+    {
+      "ID": 410020,
+      "Entries": [
+        "Combat Log - MIA - G6 Red (Hermit)"
+      ]
+    }
+  ]
+}

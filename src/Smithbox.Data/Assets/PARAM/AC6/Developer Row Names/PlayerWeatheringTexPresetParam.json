@@ -1,0 +1,149 @@
+{
+  "Name": "PlayerWeatheringTexPresetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No deterioration -- 劣化無し"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Edge part peeling_A -- エッジ部分剥がれ_A"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Paint peeling_Small_A -- 塗装剥がれ_小_A"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Paint peeling_medium_A -- 塗装剥がれ_中_A"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Paint peeling_large_A -- 塗装剥がれ_大_A"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Edge part peeling_B -- エッジ部分剥がれ_B"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Paint peeling_Small_B -- 塗装剥がれ_小_B"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Paint peeling_medium_B -- 塗装剥がれ_中_B"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Paint peeling_large_B -- 塗装剥がれ_大_B"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Edge part peeling_C -- エッジ部分剥がれ_C"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Paint peeling_Small_C -- 塗装剥がれ_小_C"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Paint peeling_medium_C -- 塗装剥がれ_中_C"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Paint peeling_large_C -- 塗装剥がれ_大_C"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Rust_Minimal(A) -- 錆_極小(A)"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Rust_Small(A) -- 錆_小(A)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Rust_medium(A) -- 錆_中(A)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Rust_Large(A) -- 錆_大(A)"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Rust_Minimal(B) -- 錆_極小(B)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Rust_Small(B) -- 錆_小(B)"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Rust_medium(B) -- 錆_中(B)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Rust_Large(B) -- 錆_大(B)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Dirty_Small(A) -- 汚し_小(A)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Dirty_Medium(A) -- 汚し_中(A)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Dirty_Large(B) -- 汚し_大(B)"
+      ]
+    }
+  ]
+}

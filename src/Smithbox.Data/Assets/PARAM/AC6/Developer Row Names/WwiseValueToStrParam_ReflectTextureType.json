@@ -1,0 +1,36 @@
+{
+  "Name": "WwiseValueToStrParam_ReflectTextureType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "\"MoonSurface\" Moon surface -- 「MoonSurface」月面"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "\"Concrete\" stone -- 「Concrete」石"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "\"Iron\" iron -- 「Iron」鉄"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "\"Water\" water -- 「Water」水"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "\"Dirt\" mud -- 「Dirt」泥",
+        "\"Dirt\" mud -- 「Dirt」泥"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1277 @@
+{
+  "Name": "MaterialExParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Buddy composition effect"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Character damage expression"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Damage emissive strength (lower this when Damage_Rate becomes 1)"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Optical camouflage switching_transparent (0 is opaque, 1 is transparent)"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Optical camouflage switching_for refraction (0 is no refraction, 1 is maximum refraction, appropriate is 0.01)"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Optical camouflage switching_no reflection (0 is normal shyness, -1 is no reflection)"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Optical camouflage switching_non-mirror (0 is normal, -1 is non-mirror)"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Optical camouflage switching_Falloff (0 is normal, 1 is luminous)"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Optical camouflage switching_Emissive (0 is normal, 1 is emissive)"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Optical camouflage switching_Falloff strength (0 is normal, 1 is emitted)"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "For AC parts_Caterpillar scroll_L"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "For AC parts_Caterpillar scroll_R"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "For AC parts_MAIN"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "For AC parts_SUB"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "For AC parts_SUPPORT"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "For AC parts_OPTIONAL"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "For AC parts_JOINT"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "For AC parts_DEVICE"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "For AC parts_EYE"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "AC parts_DEVICE strength change"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "For AC parts_camouflage ON/OFF"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "For AC parts_camouflage texture scale"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "For AC parts_camouflage texture"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "AC parts_camouflage texture size change"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "shyness"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "metalness"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "For AC parts_1st layer material_Albedo"
+      ]
+    },
+    {
+      "ID": 931,
+      "Entries": [
+        "For AC parts_1st layer material_Metalness"
+      ]
+    },
+    {
+      "ID": 932,
+      "Entries": [
+        "For AC parts_1st layer material_normal"
+      ]
+    },
+    {
+      "ID": 940,
+      "Entries": [
+        "For AC parts_2nd layer material_Albedo"
+      ]
+    },
+    {
+      "ID": 941,
+      "Entries": [
+        "For AC parts_2nd layer material_Metalness"
+      ]
+    },
+    {
+      "ID": 942,
+      "Entries": [
+        "For AC parts_2nd layer material_normal"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "For AC parts_3rd layer material_Albedo"
+      ]
+    },
+    {
+      "ID": 951,
+      "Entries": [
+        "For AC parts_3rd layer material_Metalness"
+      ]
+    },
+    {
+      "ID": 952,
+      "Entries": [
+        "For AC parts_3rd layer material_normal"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "For AC parts_4th layer material_Albedo"
+      ]
+    },
+    {
+      "ID": 961,
+      "Entries": [
+        "For AC parts_4th layer material_Metalness"
+      ]
+    },
+    {
+      "ID": 962,
+      "Entries": [
+        "For AC parts_4th layer material_Normal"
+      ]
+    },
+    {
+      "ID": 970,
+      "Entries": [
+        "For AC parts_camouflage_MAIN"
+      ]
+    },
+    {
+      "ID": 971,
+      "Entries": [
+        "For AC parts_camouflage_SUB"
+      ]
+    },
+    {
+      "ID": 972,
+      "Entries": [
+        "For AC parts_camouflage_SUPPORT"
+      ]
+    },
+    {
+      "ID": 973,
+      "Entries": [
+        "For AC parts_Camouflage_OPTIONAL"
+      ]
+    },
+    {
+      "ID": 974,
+      "Entries": [
+        "For AC parts_camouflage_JOINT"
+      ]
+    },
+    {
+      "ID": 980,
+      "Entries": [
+        "For AC parts_Main color part shyness/metalness strength change"
+      ]
+    },
+    {
+      "ID": 981,
+      "Entries": [
+        "For AC parts_Sub color part shineness/metalness strength change"
+      ]
+    },
+    {
+      "ID": 982,
+      "Entries": [
+        "For AC parts_Support color part shyness/metalness strength change"
+      ]
+    },
+    {
+      "ID": 983,
+      "Entries": [
+        "For AC parts_Optional color part shineness/metalness strength change"
+      ]
+    },
+    {
+      "ID": 984,
+      "Entries": [
+        "For AC parts_Change the shyness and metalness strength of the joint color part"
+      ]
+    },
+    {
+      "ID": 985,
+      "Entries": [
+        "For AC parts_Changing the shyness and metalness strength of the 1st layer texture"
+      ]
+    },
+    {
+      "ID": 986,
+      "Entries": [
+        "For AC parts_Changing the shyness and metalness strength of the 3rd layer texture"
+      ]
+    },
+    {
+      "ID": 987,
+      "Entries": [
+        "For AC parts_4th layer texture shyness/metalness strength change"
+      ]
+    },
+    {
+      "ID": 990,
+      "Entries": [
+        "For AC parts_AC marking"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        "For AC parts_AC marking_Texture index offset"
+      ]
+    },
+    {
+      "ID": 995,
+      "Entries": [
+        "For AC parts_Parts cover strength (freezing, snow, sand, etc.)"
+      ]
+    },
+    {
+      "ID": 996,
+      "Entries": [
+        "For AC parts_Paint peeling strength"
+      ]
+    },
+    {
+      "ID": 997,
+      "Entries": [
+        "For AC parts_Rust strength"
+      ]
+    },
+    {
+      "ID": 998,
+      "Entries": [
+        "For AC parts_Damage strength"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "For cockpit monitor replacement"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "For emissive strength changes that are not affected by the color of AC parts (shields, etc.)"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "For emissive color change that is not affected by the color of AC parts"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Unique Head Mono Eye 1 Color Tint"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Unique Head Mono Eye 2 Color Tint"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Unique Head Mono Eye 3 Color Tint"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Unique head emissive main master Int (main monoeye assumption)"
+      ]
+    },
+    {
+      "ID": 1126,
+      "Entries": [
+        "Unique Head Emissive Master Int"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "For changing the transition strength of unique head glass"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "For changing the transparency of unique head glass"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Main"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Sub"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Support"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Optional"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Joint"
+      ]
+    },
+    {
+      "ID": 1155,
+      "Entries": [
+        "Flickering when changing color in menu_Flickering_Device"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Scanline strength when performing recovery"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Display height of scan line when performing recovery (maximum value)"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Display height of scan line when performing recovery (minimum value)"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "UV scale of scan lines when performing recovery"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "UV scroll speed of scanlines when performing recovery"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Scanline fade width when performing recovery"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "Scanline color when performing recovery"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "Texture replacement of scan lines when executing recovery"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "For texture scrolling of personal weapons (ammo belt, etc.)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "For threshold value when the laser blade gets stuck in the wall"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Color_Main"
+      ]
+    },
+    {
+      "ID": 700001,
+      "Entries": [
+        "Color_Sub"
+      ]
+    },
+    {
+      "ID": 700002,
+      "Entries": [
+        "Color_Support"
+      ]
+    },
+    {
+      "ID": 700003,
+      "Entries": [
+        "Color_Optional"
+      ]
+    },
+    {
+      "ID": 700004,
+      "Entries": [
+        "Color_Joint"
+      ]
+    },
+    {
+      "ID": 700005,
+      "Entries": [
+        "Color_Eye"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "Rust_Int"
+      ]
+    },
+    {
+      "ID": 700015,
+      "Entries": [
+        "Dirty_range_Int"
+      ]
+    },
+    {
+      "ID": 700016,
+      "Entries": [
+        "Dirty_Int"
+      ]
+    },
+    {
+      "ID": 700018,
+      "Entries": [
+        "Peeling_Int"
+      ]
+    },
+    {
+      "ID": 700100,
+      "Entries": [
+        "Change enemy device strength"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Emissive strength change for enemy AE_(strength only)"
+      ]
+    },
+    {
+      "ID": 701001,
+      "Entries": [
+        "Albedo strength change for enemy AE_(strength only)"
+      ]
+    },
+    {
+      "ID": 701010,
+      "Entries": [
+        "Enemy_A_Emissive_Tint"
+      ]
+    },
+    {
+      "ID": 701020,
+      "Entries": [
+        "Emissive texture scrolling compatible with enemy AE"
+      ]
+    },
+    {
+      "ID": 701100,
+      "Entries": [
+        "Emissive strength change for enemy AMSN_(strength only)"
+      ]
+    },
+    {
+      "ID": 701110,
+      "Entries": [
+        "Emissive strength change for enemy AMSN_(color and strength)"
+      ]
+    },
+    {
+      "ID": 701120,
+      "Entries": [
+        "Supports emissive texture scrolling for enemy AMSN."
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "Change the shyness/metalness strength of the enemy's _Main color part"
+      ]
+    },
+    {
+      "ID": 702010,
+      "Entries": [
+        "Change the shyness/metalness strength of the enemy's sub color part"
+      ]
+    },
+    {
+      "ID": 702020,
+      "Entries": [
+        "Change the strength of shyness and metalness of the enemy's _Support color part"
+      ]
+    },
+    {
+      "ID": 702030,
+      "Entries": [
+        "Change the strength of the shyness and metalness of the enemy's _Optional color part"
+      ]
+    },
+    {
+      "ID": 702040,
+      "Entries": [
+        "Change the strength of the shyness and metalness of the enemy's _Joint color part"
+      ]
+    },
+    {
+      "ID": 702100,
+      "Entries": [
+        "Enemy_detail blending enabled/disabled"
+      ]
+    },
+    {
+      "ID": 702110,
+      "Entries": [
+        "For changing the strength of enemy's dirt mask"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Asset energy shield fade"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Heat rod blade emissive strength and transparency specification"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Laser blade blade emissive strength and transparency specification"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "General parameters for emissive strength adjustment of enemy weapons (AMSN shader)"
+      ]
+    },
+    {
+      "ID": 1005000,
+      "Entries": [
+        "Enemy energy shield general purpose"
+      ]
+    },
+    {
+      "ID": 1005500,
+      "Entries": [
+        "For displaying the deployment of PA shield for special attack MT"
+      ]
+    },
+    {
+      "ID": 1005510,
+      "Entries": [
+        "For adjusting the translucent strength of PA shield for special attack MT"
+      ]
+    },
+    {
+      "ID": 1006000,
+      "Entries": [
+        "Dither fade processing of enemy materials"
+      ]
+    },
+    {
+      "ID": 1909999,
+      "Entries": [
+        "For AC booster internal lighting"
+      ]
+    },
+    {
+      "ID": 1919999,
+      "Entries": [
+        "AC parts emissive_test_SBS_9999"
+      ]
+    },
+    {
+      "ID": 4420000,
+      "Entries": [
+        "Changing the mask scale of c4200 tip emitting emissive"
+      ]
+    },
+    {
+      "ID": 4420010,
+      "Entries": [
+        "c4200 Phantom Omen Emissive Intensity Adjustment Color and Intensity"
+      ]
+    },
+    {
+      "ID": 4420020,
+      "Entries": [
+        "c4200 Phantom fade parameters"
+      ]
+    },
+    {
+      "ID": 4420030,
+      "Entries": [
+        "c4200 Phantom α fade parameters"
+      ]
+    },
+    {
+      "ID": 6250000,
+      "Entries": [
+        "c6250_Ice worm damage expression strength"
+      ]
+    },
+    {
+      "ID": 6250010,
+      "Entries": [
+        "c6250_Ice worm damage expression_Emissive strength"
+      ]
+    },
+    {
+      "ID": 5900000,
+      "Entries": [
+        "c5900 Stiglo_Monoeye"
+      ]
+    },
+    {
+      "ID": 5900010,
+      "Entries": [
+        "c5900 styglo_heatsink light"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "For emissive strength adjustment of general-purpose items"
+      ]
+    },
+    {
+      "ID": 6000010,
+      "Entries": [
+        "For emissive color intensity adjustment of general purpose items"
+      ]
+    },
+    {
+      "ID": 7000100,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000110,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000111,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000112,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000113,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000114,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000211,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000212,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000213,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000214,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000215,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 7000310,
+      "Entries": [
+        "garage briefing board test"
+      ]
+    },
+    {
+      "ID": 4100500,
+      "Entries": [
+        "D-layer mako furnace heating wire emissive strength"
+      ]
+    },
+    {
+      "ID": 700500,
+      "Entries": [
+        "Emissive strength of G[Light]_Emissive_Glow in the garage"
+      ]
+    },
+    {
+      "ID": 700600,
+      "Entries": [
+        "Emissive strength of the PC monitor in the garage"
+      ]
+    },
+    {
+      "ID": 7001000,
+      "Entries": [
+        "Emissive strength of G[Sub_monitor]_Emissive_Glow in the garage"
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "For map_for emissive strength adjustment"
+      ]
+    },
+    {
+      "ID": 8000010,
+      "Entries": [
+        "For maps_for emissive color adjustment"
+      ]
+    },
+    {
+      "ID": 8000015,
+      "Entries": [
+        "For map_Albedo intensity color adjustment"
+      ]
+    },
+    {
+      "ID": 8000120,
+      "Entries": [
+        "For maps_For emissive color adjustment_For changing the color tint of M[Interior].snp"
+      ]
+    },
+    {
+      "ID": 8001000,
+      "Entries": [
+        "For map_melange water surface_for emissive strength adjustment"
+      ]
+    },
+    {
+      "ID": 8001001,
+      "Entries": [
+        "For map_melange water surface_for emissive color adjustment"
+      ]
+    },
+    {
+      "ID": 8001002,
+      "Entries": [
+        "For map_Melange water surface_For bubble color adjustment"
+      ]
+    },
+    {
+      "ID": 8001003,
+      "Entries": [
+        "For map_Melange water surface_For emissive strength/color change at HU_Near (for AEG411_901)"
+      ]
+    },
+    {
+      "ID": 8001004,
+      "Entries": [
+        "For map_Melange water surface_For emissive strength/color change at HU_Far (for AEG411_901)"
+      ]
+    },
+    {
+      "ID": 8001005,
+      "Entries": [
+        "For maps_Melange water surface_For Absorption adjustment"
+      ]
+    },
+    {
+      "ID": 8001006,
+      "Entries": [
+        "For map_Melange water surface_Near_Far_Blend mask strength"
+      ]
+    },
+    {
+      "ID": 8001010,
+      "Entries": [
+        "For map_melange water surface_for height strength adjustment_max"
+      ]
+    },
+    {
+      "ID": 8001011,
+      "Entries": [
+        "For map_Melange water surface_For height strength adjustment_min"
+      ]
+    },
+    {
+      "ID": 8001012,
+      "Entries": [
+        "For maps_Melange water surface_For adjusting height strength_Near"
+      ]
+    },
+    {
+      "ID": 8001015,
+      "Entries": [
+        "For map_Melange water surface_For adjusting scroll speed"
+      ]
+    },
+    {
+      "ID": 8001020,
+      "Entries": [
+        "For maps_Melange water surface_For changing scroll speed from title"
+      ]
+    },
+    {
+      "ID": 8001050,
+      "Entries": [
+        "Effective_Range for map_PA shield deployment"
+      ]
+    },
+    {
+      "ID": 8001052,
+      "Entries": [
+        "Master strength of PA shield emissive for map"
+      ]
+    },
+    {
+      "ID": 8001053,
+      "Entries": [
+        "For maps_PA shield emissive alpha mask strength"
+      ]
+    },
+    {
+      "ID": 8001055,
+      "Entries": [
+        "Map_PA shield deployment color/strength change of [Transiton]_1"
+      ]
+    },
+    {
+      "ID": 8001056,
+      "Entries": [
+        "Map_PA shield deployment color/strength change of [Transiton]_2"
+      ]
+    },
+    {
+      "ID": 8001060,
+      "Entries": [
+        "For the map_For changing the window color of the B-tier tower (for cutscenes)"
+      ]
+    },
+    {
+      "ID": 8001070,
+      "Entries": [
+        "For the map_For hacking representation of the B tier tower_Effective_Range"
+      ]
+    },
+    {
+      "ID": 8001071,
+      "Entries": [
+        "Change color and intensity of [Transiton]_1 for map_B layer tower hacking expression"
+      ]
+    },
+    {
+      "ID": 8001072,
+      "Entries": [
+        "Change color and intensity of [Transiton]_2 for map_B layer tower hacking representation"
+      ]
+    },
+    {
+      "ID": 8001073,
+      "Entries": [
+        "For maps_For hacking representation of B tier tower_Transition strength master"
+      ]
+    },
+    {
+      "ID": 8001074,
+      "Entries": [
+        "For maps_For hacking representation of B tier tower_Emissive base strength master"
+      ]
+    },
+    {
+      "ID": 8001075,
+      "Entries": [
+        "For the map_For hacking expression of B tier tower_Effective_Range magnification change"
+      ]
+    },
+    {
+      "ID": 8001080,
+      "Entries": [
+        "For maps_For hacking representation of B-tier tower_Base alpha strength"
+      ]
+    },
+    {
+      "ID": 8001081,
+      "Entries": [
+        "For maps_For hacking representation of B-tier tower_Alpha processing for blackout"
+      ]
+    },
+    {
+      "ID": 8001090,
+      "Entries": [
+        "For the map_For expressing the window hacking of the B-tier tower_Effective_Range"
+      ]
+    },
+    {
+      "ID": 8001091,
+      "Entries": [
+        "For the map_For expressing the window hacking of the B-tier tower_Effective_Range magnification change"
+      ]
+    },
+    {
+      "ID": 8001092,
+      "Entries": [
+        "For the map_For the hacking expression of the window part of the B-layer tower_[Transiton]_1 color/intensity change"
+      ]
+    },
+    {
+      "ID": 8001093,
+      "Entries": [
+        "For the map_For expressing the hacking of the windows of the B-layer tower_[Transiton]_2 color and intensity changes"
+      ]
+    },
+    {
+      "ID": 8001095,
+      "Entries": [
+        "For the map_For expressing the hacking of the windows of the B-tier tower_Changing the color of the windows"
+      ]
+    },
+    {
+      "ID": 8001200,
+      "Entries": [
+        "Fade model for map_AC test"
+      ]
+    },
+    {
+      "ID": 8001300,
+      "Entries": [
+        "Pixel kill model for map_AC test"
+      ]
+    },
+    {
+      "ID": 8001310,
+      "Entries": [
+        "For maps_Pixel kill of AC test model_Model side support"
+      ]
+    },
+    {
+      "ID": 8001400,
+      "Entries": [
+        "For map_For changing emissive strength of AC test_Tint"
+      ]
+    },
+    {
+      "ID": 8001401,
+      "Entries": [
+        "For map_For changing emissive strength of AC test_Int"
+      ]
+    },
+    {
+      "ID": 8001500,
+      "Entries": [
+        "For map_AC test scroll addition emissive strength change_Tint"
+      ]
+    },
+    {
+      "ID": 8001501,
+      "Entries": [
+        "For map_AC test scroll addition emissive strength change_Int"
+      ]
+    },
+    {
+      "ID": 8001510,
+      "Entries": [
+        "For map_AC test scroll albedo strength change_Tint"
+      ]
+    },
+    {
+      "ID": 8001511,
+      "Entries": [
+        "For map_For changing scroll albedo intensity of AC test_Int"
+      ]
+    },
+    {
+      "ID": 8001550,
+      "Entries": [
+        "[Transiton]_3_Tint for map_AC test"
+      ]
+    },
+    {
+      "ID": 8001551,
+      "Entries": [
+        "[Transiton]_2_Tint for map_AC test"
+      ]
+    },
+    {
+      "ID": 8001552,
+      "Entries": [
+        "[Transiton]_1_Tint of AC test for map"
+      ]
+    },
+    {
+      "ID": 8001560,
+      "Entries": [
+        "Map_AC test [Transiton]_3_Noise strength"
+      ]
+    },
+    {
+      "ID": 8001565,
+      "Entries": [
+        "Map_AC test flow scrolling speed"
+      ]
+    },
+    {
+      "ID": 8003000,
+      "Entries": [
+        "For Map_Keeper's Laser Railgun Model SFX Emissive Strength"
+      ]
+    },
+    {
+      "ID": 8003001,
+      "Entries": [
+        "For map_Keeper's laser/railgun model SFX emissive strength_2nd"
+      ]
+    },
+    {
+      "ID": 8006000,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere."
+      ]
+    },
+    {
+      "ID": 8006001,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 1"
+      ]
+    },
+    {
+      "ID": 8006002,
+      "Entries": [
+        "For changing the strength of the flame effect when the new B layer enters the atmosphere_for base 2"
+      ]
+    },
+    {
+      "ID": 8006010,
+      "Entries": [
+        "Initially disable the flame effect when the new B layer enters the atmosphere."
+      ]
+    },
+    {
+      "ID": 8006020,
+      "Entries": [
+        "Master scroll speed of flame when new B layer enters the atmosphere"
+      ]
+    },
+    {
+      "ID": 8006100,
+      "Entries": [
+        "Explosive α strength for CS Coral Explosive"
+      ]
+    },
+    {
+      "ID": 8006101,
+      "Entries": [
+        "CS Coral Explosive Explosive Mask Alpha For Strength Adjustment"
+      ]
+    },
+    {
+      "ID": 8006102,
+      "Entries": [
+        "CS Coral Explosive Explosive Emissive Overall Strength"
+      ]
+    },
+    {
+      "ID": 8006110,
+      "Entries": [
+        "Adjusted the distortion strength of the explosion heightmap for CS Coral explosion."
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "For emissive intensity adjustment of C[A]_Emissive_Glow"
+      ]
+    },
+    {
+      "ID": 8700000,
+      "Entries": [
+        "Shader for the end when pasting part decals_For texture replacement"
+      ]
+    },
+    {
+      "ID": 9030000,
+      "Entries": [
+        "c9030 flying enemy"
+      ]
+    },
+    {
+      "ID": 9030010,
+      "Entries": [
+        "c9030 flying enemy"
+      ]
+    },
+    {
+      "ID": 9030020,
+      "Entries": [
+        "c9030 flying enemy"
+      ]
+    },
+    {
+      "ID": 9055000,
+      "Entries": [
+        "c5500_Bioweapon luminescence"
+      ]
+    },
+    {
+      "ID": 9055010,
+      "Entries": [
+        "c5500_Burning of biological weapon"
+      ]
+    },
+    {
+      "ID": 9900000,
+      "Entries": [
+        "Map laser impact test combustion"
+      ]
+    }
+  ]
+}

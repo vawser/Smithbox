@@ -1,0 +1,497 @@
+{
+  "Name": "HitEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Spark"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "General smoke"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Dust"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Soil"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Gravel"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Ash Smoke"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Dust"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Wood"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "A piece of stone"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bone fragments"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Crystal Pieces"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "A piece of grass"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Leaves"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Deciduous"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "God grave net Piece"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Splashes"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Mud Splash"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Poison Swamp Splash"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Oil"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "The front of the blood"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "On the Blood"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Under the blood"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Blood (Live) _ Left"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Blood (The Raw) _ Right"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Blood (dead) _ Front"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "On Blood (Dead) _"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Blood (Dead) _ under"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Blood (dead) _ Left"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Blood (dead) _ Right"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Blood (Dragon) _ Front"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "On Blood (Dragons) _"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Under Blood (Dragon)"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Blood (Dragon) left"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Blood (Dragon) _ Right"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Caries _ Front"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "On caries _"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Under Eclipse"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "Eclipse left"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Caries right"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Fluid"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Drool"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Maggots"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Wax"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Insect fluids"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Hair fragments"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Feathers"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Carrion pieces"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Ash Daemon"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Lava"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Spirits"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Ghost White"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Ghost Black"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Flame"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Lightning"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Seoul"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Caries map"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Fire Powder and Flame"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Eclipse hits (gas)"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Eclipse hits (liquid)"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Energy (Strong)"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Preliminary"
+      ]
+    },
+    {
+      "ID": 991,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

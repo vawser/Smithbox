@@ -1,0 +1,311 @@
+{
+  "Name": "eventparam_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Duel begins"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Down the drawbridge"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Boss war scaffolding expansion"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Boss: Heavy Cavalry: Soldiers Only_ Combat"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Boss: Ornstein_ Combat"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Destroyed pillars and chairs 1"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Destroyed Pillars and Chairs 2"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Destroyed Pillars and Chairs 3"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Destroyed Pillars and Chairs 4"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Destroyed Pillars and Chairs 9"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Destroyed Pillars and Chairs 10"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Pillars and chairs destroyed 11"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Pillars and chairs destroyed 12"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Destroyed pillars and chairs 17"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Pillars and chairs destroyed 18"
+      ]
+    },
+    {
+      "ID": 6190,
+      "Entries": [
+        "Pillars and chairs destroyed 19"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "20 pillars and chairs destroyed"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Destroyed Pillars and Chairs 21"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Destroyed Pillars and Chairs 22"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Destroyed Pillars and Chairs 27"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Destroyed pillars and chairs 28"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Destroyed Pillars and Chairs 29"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Pillars and chairs destroyed 30"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Pillars and chairs destroyed 31"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Pillars and chairs destroyed 32"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Madura - Heide Large Fire Tower Gimmick Door"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Lever_boss war scaffoldexpansion 1 that emerges from the floor"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Lever_Boss War Scaffoldexpansion 2 emerging from the floor"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Lever drawbridge appearing from the floor"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Switching the Rotating Door-Related Flags of Madura"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Connection flag OFF"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Duel Request_1"
+      ]
+    },
+    {
+      "ID": 70010,
+      "Entries": [
+        "Duel Request_2"
+      ]
+    },
+    {
+      "ID": 70020,
+      "Entries": [
+        "Duel Request_3"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play Spark 01_Boss Heavy Equestrian After Lighthouse"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "The rock next to the starting point of the breed ing fire 02_starting point of the reproduction"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Play Ing Spark 03_After BosonStein"
+      ]
+    },
+    {
+      "ID": 111410,
+      "Entries": [
+        "NPC: Miracle Man"
+      ]
+    },
+    {
+      "ID": 111411,
+      "Entries": [
+        "NPC: Miracle Man: Ghost"
+      ]
+    },
+    {
+      "ID": 111412,
+      "Entries": [
+        "OBJ: Miracle Man: Tomb"
+      ]
+    },
+    {
+      "ID": 111413,
+      "Entries": [
+        "OBJ: Miracle Man: Key Guide"
+      ]
+    },
+    {
+      "ID": 111414,
+      "Entries": [
+        "OBJ: Miracle Man: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111490,
+      "Entries": [
+        "NPC: Guardian Knight"
+      ]
+    },
+    {
+      "ID": 111491,
+      "Entries": [
+        "NPC: Guardian Knight: Ghost"
+      ]
+    },
+    {
+      "ID": 111492,
+      "Entries": [
+        "OBJ: Guardian Knight: Tomb"
+      ]
+    },
+    {
+      "ID": 111493,
+      "Entries": [
+        "OBJ: Guardian Knight: Key Guide"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        "NPC for Multi: Swordsman (Male): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120010,
+      "Entries": [
+        "Trophies: A Pledge of Protection"
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

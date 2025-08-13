@@ -1,0 +1,17 @@
+{
+  "Name": "ChrHitMaterialCheckParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy"
+      ]
+    },
+    {
+      "ID": 999,
+      "Entries": [
+        "[test] Acceleration floor judgment"
+      ]
+    }
+  ]
+}

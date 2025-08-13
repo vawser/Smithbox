@@ -1,0 +1,1979 @@
+{
+  "Name": "MapObjectInstanceTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Template -- テンプレート"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Other tests -- その他テスト"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Wooden Treasure Chest Test -- 木製宝箱テスト"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Metal Treasure Chest Test -- 金属製宝箱テスト"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Wall Prefabricated Test -- 壁プレハブテスト"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "No block test -- 無ブロックテスト"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Mini block test -- 極小ブロックテスト"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Small Block Test -- 小ブロックテスト"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Medium Block Test -- 中ブロックテスト"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Large Block Test -- 大ブロックテスト"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Oversized block test -- 特大ブロックテスト"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "\uF0FC Block test -- ∞ブロックテスト"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Wooden Barrel Test -- 木の樽テスト"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Head test of giant statue -- 【抵抗の砦】巨像の頭テスト"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Wooden Box Test -- 木の箱テスト"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "【Fort of resistance】Large door test of tackle destruction -- 【抵抗の砦】タックル破壊の大扉テスト"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Wooden Chair Test -- 木の椅子テスト"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Prefabricated test test -- プレハブテストテスト"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "[Fort of resistance] bridge test to be destroyed -- 【抵抗の砦】破壊される橋テスト"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Test that breaks when touched -- 触れたら壊れるテスト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "【Fort of resistance】Wooden scaffold test -- 【抵抗の砦】木組の足場テスト"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "【Fort of resistance】Stone pillar test -- 【抵抗の砦】石柱テスト"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Hanging accessory test -- 吊り下げられた小物テスト"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Unbreakable small items (general purpose) test -- 壊れない小物（汎用）テスト"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Wooden barrel test that does not move -- 移動しない木の樽テスト"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "【Fort of resistance】Broken barista test -- 【抵抗の砦】壊れたバリスタテスト"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Boss Stone Statue Test Test -- ボス石像テストテスト"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "【Test】Figurine GD Test -- 【テスト】置物ＧＤテスト"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "【Test】 [Response] broken in a single attack -- 【テスト】【GGD対応】一発の攻撃で壊れる"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "【Test】 【E3】Dragon's Research Institute: Giant Attributes -- 【テスト】【E3対応】龍の研究所：巨人属性"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "【Test】 [E3 correspondence] to be broken in a single attack -- 【テスト】【E3対応】一発の攻撃で壊れる：転がる"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "【Test】 【E3 correspondence】Broken by a single attack -- 【テスト】【E3対応】一発の攻撃で壊れる：置物"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "【Test】 [Response] broken in a single attack on the desk -- 【テスト】【GGD対応】一発の攻撃で壊れる：机上"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "【Tentative】Default value of \"destructible\" object -- 【仮】「破壊可能」なオブジェのデフォルト値"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "【Test】 [E3 correspondence] Statuenight neck -- 【テスト】【E3対応】スタチューナイト首"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "【Test】 【E3 correspondence】Statuenight Neck (Mr. Shimizu's provisional) -- 【テスト】【E3対応】スタチューナイト首（清水さん仮）"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "【Test】 【E3 correspondence】Statuenite stone statue -- 【テスト】【E3対応】スタチューナイト石像"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "【Test】Cart (hard) -- 【テスト】荷車（硬い）"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Bonfire_ Unbreakable -- 篝火_破壊不可"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "【Do not use】Bonfire_Can be destroyed -- 【使用しない】篝火_破壊可"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "White door_unbreakable -- 白扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Wooden Treasure Chest_Destroyable -- 木製宝箱_破壊可"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Iron Treasure Chest_Non-Destructive -- 鉄製宝箱_破壊不可"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "【Do not use】Wooden treasure chest_cannot be destroyed -- 【使用しない】木製宝箱_破壊不可"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Flame Treasure Chest Can Be Destroyed -- 炎上宝箱 破壊可能"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Treasure corpse_ non-destructive -- 宝死体_破壊不可"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Corpse_ Can't be destroyed -- 死体_破壊不可"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Item_Cannot be destroyed -- アイテム_破壊不可"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "【Do not use】Iron ladder_cannot be destroyed -- 【使用しない】鉄製梯子_破壊不可"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Rope_ Unbreakable -- ロープ_破壊不可"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Lever- valve- strap_non-destructive -- レバー・バルブ・つり革_破壊不可"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "【Unavailable】Wall lever_cannot be destroyed -- 【使用不可】壁レバー_破壊不可"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Switch_Non-destructive -- スイッチ_破壊不可"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "Ladder_Unbreakable -- 梯子_破壊不可"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "One door can be destroyed -- 片扉_破壊可"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "One door_non-destructive -- 片扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "One door_Non-destructive HP setting yes -- 片扉_破壊不可\u3000HP設定有"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "【Do not use】Iron single door_cannot be destroyed -- 【使用しない】鉄製片扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "【Do not use】Stone single door_cannot be destroyed -- 【使用しない】石製片扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Both doors cannot be destroyed -- 両扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Both doors can be destroyed -- 両扉_破壊可"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "【Do not use】Stone both doors_cannot be destroyed -- 【使用しない】石製両扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "【Do not use】Iron both doors_cannot be destroyed -- 【使用しない】鉄製両扉_破壊不可"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "【Do not use】Wooden stand plate_cannot be destroyed -- 【使用しない】木製立て板_破壊不可"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Light stand_Non-destructive -- 灯火台_破壊不可"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "【Do not use】Boss stone statue -- 【使用しない】ボス石像"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "【Do not use】Barista barrels -- 【使用しない】バリスタ樽"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "【Do not use】Hanging lantern -- 【使用しない】吊り下げランタン"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Memories of giants: The head of a giant statue -- 【巨人の記憶】巨像の頭"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "【Do not use】 [Fort of resistance] broken barista -- 【使用しない】【抵抗の砦】壊れたバリスタ"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "【Do not use】 [Fort of resistance] bridge broken by a fireball -- 【使用しない】【抵抗の砦】火球で壊れる橋"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "【Do not use】 【Fort of Resistance】Barricade -- 【使用しない】【抵抗の砦】バリケード"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "【Do not use】 The wall of the branch of the tree -- 【使用しない】【妖精のほとり】木の枝の壁"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "【Do not use】 Stone floor of boss room -- 【使用しない】【抵抗の砦】ボス部屋の石床"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "[Andir] Auga Destruction Wall -- 【アンディール】オーガ破壊壁"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "[Andir] Auga destruction both doors -- 【アンディール】オーガ破壊両扉"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "【General purpose】Wall broken by flame barrel -- 【汎用】火炎樽で壊れる壁"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "【General purpose】Sloppy Vase -- 【汎用】だらだら壺（通常）"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "【General purpose】Flame barrels (moving objects) -- 【汎用】火炎樽（動く物）"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "【General purpose】Flame barrels (things that do not move) -- 【汎用】火炎樽（動かない物）"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "【General purpose】Sloppy vase (only fall of emptiness) -- 【汎用】だらだら壺（虚ろの落下のみ）"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "【Do not use】Hidden doors (can be destroyed) -- 【使用しない】隠し扉（破壊可能）"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "【Do not use】Hidden doors (cannot be destroyed) -- 【使用しない】隠し扉（破壊不可）"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "[Prison prisoner's prison] static → dynamically changing OBJ -- 【牢客の牢城】静的→動的に変化するOBJ"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "【Do not use】 Decoy -- 【使用しない】デコイ"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "【Hunting Forest】Chariots Event_Carriages -- 【狩猟の森】チャリオッツイベント用_馬車"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "【Do not use】 Sloppy vase -- 【使用しない】だらだら壺"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "【Do not use】 【Valley of the reservoir】Boss war vase -- 【使用しない】【溜りの谷】ボス戦用壺"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "【Do not use】 [Great fire tower of Heide] pillar that only the boss can destroy -- 【使用しない】【ハイデの大火塔】ボスのみが破壊できる柱"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "【Do not use】 Forest of The Shadow of The Void: Human Face Tree -- 【使用しない】【虚ろの影の森】人面木"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Memories of giants: Boss destroys tower -- 【巨人の記憶】ボスが塔を破壊"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "【Do not use】 【Madura】Well Event Strike Stone -- 【使用しない】【マデューラ】井戸のイベント殴り用石"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "[Memory of giants] boss breaks ladder -- 【巨人の記憶】ボスが壊す梯子"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "The Iron Bar of the Boss's Room -- 【忘却の牢】ボス部屋の鉄格子"
+      ]
+    },
+    {
+      "ID": 491,
+      "Entries": [
+        "【Prison of Oblivion】Barrel Shelf -- 【忘却の牢城】樽棚"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[King's Castle Doran] Statuenite's Neck -- 【王城ドラン】スタチューナイトの首"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Pitfalls of The King's Castle Doran -- 【王城ドラン】落とし穴"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "[Gerald] well roof -- 【ジェラルド】井戸の屋根"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "[Gerald] lower desk -- 【ジェラルド】下層の机"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "【Forest of Emptiness】Ilarastone -- 【虚ろの森】つらら石"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "【Do not use】 【Forest of Hollow】 Dead Trees in the Boss Room (Small Tree) -- 【使用しない】【虚ろの森】ボス部屋の枯れ木（小さな木）"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "【Valley of the Reservoir】Jarbazahat Room Vase -- 【溜りの谷】ジャバザハット部屋の壺"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "[Volcano steel works] broken bridge -- 【火山の製鉄所】壊れる橋"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "【Kuzbottom】Jizo Stone-based OBJ -- 【クズ底】地蔵\u3000\u3000石系OBJ"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "[Nest of the Guard Dragon] Wyburn's Egg -- 【守り龍の巣】ワイバーンの卵"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 575,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Boss Site Destruction: Weight Minimum: Unbreakable -- ボス部位破壊：重量極小:破壊不可"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Boss Site Destruction: Weight Small: Unbreakable -- ボス部位破壊：重量小:破壊不可"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Boss Site Destruction: In Weight: Unbreakable -- ボス部位破壊：重量中：破壊不可"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Boss Site Destruction: Weight Large: Unbreakable -- ボス部位破壊：重量大:破壊不可"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Boss site destruction: weight oversized: not destructive -- ボス部位破壊：重量特大:破壊不可"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Boss site destruction: weight extra large: non-destructive -- ボス部位破壊：重量特特大:破壊不可"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【Do not use】General-purpose-barrel-no-wood -- 【使用しない】汎用-樽-無-木製"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "General-purpose-barrel-minimum-durable-minimum -- 汎用-樽-極小-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "General-purpose-barrel-small-endurance minimum -- 汎用-樽-小-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "General-purpose-barrel-medium-endurance minimum -- 汎用-樽-中-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "General-purpose-barrel-large-endurance minimum -- 汎用-樽-大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "General-purpose-barrel-oversized-durable minimum -- 汎用-樽-特大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "General-purpose-barrel-ultra-oversized-durable minimum -- 汎用-樽-超特大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "【Do not use】General-purpose barrels---wooden -- 【使用しない】汎用-樽-∞-木製"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "【Do not use】General-purpose-box-no-wood -- 【使用しない】汎用-箱-無-木製"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "General-purpose-box-mini--durable-minimum -- 汎用-箱-極小-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "General-purpose-box-small-endurance minimum -- 汎用-箱-小-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "General-purpose-box-medium-endurance-minimum -- 汎用-箱-中-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "General-purpose-box-large-endurance minimum -- 汎用-箱-大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "General-purpose-box-oversized-durable minimum -- 汎用-箱-特大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1056,
+      "Entries": [
+        "General-purpose-box-ultra-oversized-durable minimum -- 汎用-箱-超特大-耐久力極小"
+      ]
+    },
+    {
+      "ID": 1057,
+      "Entries": [
+        "【Do not use】General-purpose-box-box-wooden -- 【使用しない】汎用-箱-∞-木製"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【Do not use】General-purpose- longue - No- wooden -- 【使用しない】汎用-長椅子-無-木製"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "【Do not use】General-purpose-chaise longue-small-wood -- 【使用しない】汎用-長椅子-極小-木製"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "【Do not use】General-purpose- chaise longue - Small - wooden -- 【使用しない】汎用-長椅子-小-木製"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "【Do not use】General-purpose- chaiselong - medium - wooden -- 【使用しない】汎用-長椅子-中-木製"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "【Do not use】General-purpose- chaise longue - large wooden -- 【使用しない】汎用-長椅子-大-木製"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "【Do not use】General-purpose- chaise longue - Oversized - Wooden -- 【使用しない】汎用-長椅子-特大-木製"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "【Do not use】General-purpose chaise longue saine-super-oversized-wooden -- 【使用しない】汎用-長椅子-超特大-木製"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "【Do not use】General-purpose-chaise-chaise-wooden -- 【使用しない】汎用-長椅子-∞-木製"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "General -Contact Destruction-Figurines-Can Be Destroyed -- 汎用-接触破壊-置物-破壊可"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "General-purpose-contact destruction-floor-can-be-destroyable -- 汎用-接触破壊-床-破壊可"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - durable minimum - anything -- 【使用しない】汎用-重量無-耐久極小-なんでも"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-to-durable minimum-attack -- 【使用しない】汎用-重量無-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-to-durable minimum-special attack -- 【使用しない】汎用-重量無-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - durable small - anything -- 【使用しない】汎用-重量無-耐久小-なんでも"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-to-durable-small-normal attack -- 【使用しない】汎用-重量無-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-endurance-small-special attack -- 【使用しない】汎用-重量無-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - during endurance - anything -- 【使用しない】汎用-重量無-耐久中-なんでも"
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        "【Do not use】General-purpose - Weight-free - Durability - Normal attack -- 【使用しない】汎用-重量無-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        "【Do not use】General-purpose - Weight-free - Durable medium - Special attack -- 【使用しない】汎用-重量無-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - durable large - anything -- 【使用しない】汎用-重量無-耐久大-なんでも"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-endurance-large-normal attack -- 【使用しない】汎用-重量無-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-to-durable large-special attack -- 【使用しない】汎用-重量無-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - durable oversized - anything -- 【使用しない】汎用-重量無-耐久特大-なんでも"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free-endurance oversized-normal attack -- 【使用しない】汎用-重量無-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free- durable oversized special attack -- 【使用しない】汎用-重量無-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - durable special size - anything -- 【使用しない】汎用-重量無-耐久特特大-なんでも"
+      ]
+    },
+    {
+      "ID": 1216,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free- durable special size - normal attack -- 【使用しない】汎用-重量無-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1217,
+      "Entries": [
+        "【Do not use】General-purpose- weight-free- durable special-purpose special attack -- 【使用しない】汎用-重量無-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Minimum - Bow and Arrow Attack -- 汎用-重量極小-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1251,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Minimum - Normal Attack -- 汎用-重量極小-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1252,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Minimum - Special Attack -- 汎用-重量極小-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1253,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Small - Bow and Arrow Attack -- 汎用-重量極小-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1254,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Small - Normal Attack -- 汎用-重量極小-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1255,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Small - Special Attack -- 汎用-重量極小-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1256,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durability - Bow and Arrow Attack -- 汎用-重量極小-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1257,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durability - Normal Attack -- 汎用-重量極小-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1258,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durability - Special Attack -- 汎用-重量極小-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1259,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Large - Bow and Arrow Attack -- 汎用-重量極小-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Large - Normal Attack -- 汎用-重量極小-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1261,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Large - Special Attack -- 汎用-重量極小-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1262,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Bow and Arrow Attack -- 汎用-重量極小-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1263,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Normal Attack -- 汎用-重量極小-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1264,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Special Attack -- 汎用-重量極小-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1265,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Bow and Arrow Attack -- 汎用-重量極小-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1266,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Normal Attack -- 汎用-重量極小-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1267,
+      "Entries": [
+        "General-purpose - Weight Minimum - Durable Oversized - Special Attack -- 汎用-重量極小-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Minimum - Bow and Arrow Attack -- 汎用-重量小-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Minimum - Normal Attack -- 汎用-重量小-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Minimum - Special Attack -- 汎用-重量小-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Small - Bow and Arrow Attack -- 汎用-重量小-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "General -weight small-endurance-small-attack -- 汎用-重量小-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Small - Special Attack -- 汎用-重量小-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Medium - Bow and Arrow Attack -- 汎用-重量小-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "General-purpose - Weight Small - Durability - Normal Attack -- 汎用-重量小-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "General-purpose - Weight Small - Durability - Special Attack -- 汎用-重量小-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Large - Bow and Arrow Attack -- 汎用-重量小-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Large - Normal Attack -- 汎用-重量小-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Large - Special Attack -- 汎用-重量小-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Oversized - Bow and Arrow Attack -- 汎用-重量小-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Oversized - Normal Attack -- 汎用-重量小-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Oversized - Special Attack -- 汎用-重量小-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1315,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量小-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1316,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Oversized - Normal Attack -- 汎用-重量小-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        "General-purpose - Weight Small - Durable Extra Large - Special Attack -- 汎用-重量小-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Bow and Arrow Attack -- 汎用-重量中-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1351,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Normal Attack -- 汎用-重量中-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1352,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Special Attack -- 汎用-重量中-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1353,
+      "Entries": [
+        "General-purpose - Heavy - Durable Small - Bow and Arrow Attack -- 汎用-重量中-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1354,
+      "Entries": [
+        "General -weight-medium-endurance-small-attack -- 汎用-重量中-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1355,
+      "Entries": [
+        "General-purpose - Heavy - Durable Small - Special Attack -- 汎用-重量中-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1356,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Bow and Arrow Attack -- 汎用-重量中-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1357,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量中-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1358,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Special Attack -- 汎用-重量中-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1359,
+      "Entries": [
+        "General-purpose - Heavy - Durable Large - Bow and Arrow Attack -- 汎用-重量中-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1360,
+      "Entries": [
+        "General-purpose - Heavy - Durable Large - Normal Attack -- 汎用-重量中-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1361,
+      "Entries": [
+        "General-purpose - Heavy - Durable Large - Special Attack -- 汎用-重量中-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1362,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量中-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1363,
+      "Entries": [
+        "General -in-weight-endurance oversized-normal attacks -- 汎用-重量中-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1364,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量中-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1365,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量中-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1366,
+      "Entries": [
+        "General -in-weight-endurance oversized-normal attacks -- 汎用-重量中-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1367,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量中-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Bow and Arrow Attack -- 汎用-重量大-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Normal Attack -- 汎用-重量大-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "General-purpose - Heavy - Durable Minimum - Special Attack -- 汎用-重量大-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "General-purpose - Heavy - Durable Small - Bow and Arrow Attack -- 汎用-重量大-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "General-purpose - Heavy - Durable Small - Normal Attack -- 汎用-重量大-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "General-purpose - Heavy - Durable Small - Special Attack -- 汎用-重量大-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1406,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Bow and Arrow Attack -- 汎用-重量大-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1407,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量大-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1408,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Special Attack -- 汎用-重量大-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1409,
+      "Entries": [
+        "General-purpose - Heavy - Durable Large - Bow and Arrow Attack -- 汎用-重量大-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Normal Attack -- 汎用-重量大-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "General-purpose - Heavy - Durable - Special Attack -- 汎用-重量大-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1412,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Bow and Arrow Attack -- 汎用-重量大-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1413,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Normal Attack -- 汎用-重量大-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1414,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Special Attack -- 汎用-重量大-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1415,
+      "Entries": [
+        "General-purpose - Heavy - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量大-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1416,
+      "Entries": [
+        "General-purpose - Heavy - Durable Oversized - Normal Attack -- 汎用-重量大-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1417,
+      "Entries": [
+        "General-purpose - Heavy - Durable Extra Large - Special Attack -- 汎用-重量大-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Minimum - Bow and Arrow Attack -- 汎用-重量特大-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1451,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Minimum - Normal Attack -- 汎用-重量特大-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1452,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Minimum - Special Attack -- 汎用-重量特大-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1453,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Small - Bow and Arrow Attack -- 汎用-重量特大-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1454,
+      "Entries": [
+        "General -Weight Oversized - Durable Small - Normal Attack -- 汎用-重量特大-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1455,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Small - Special Attack -- 汎用-重量特大-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1456,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Medium - Bow and Arrow Attack -- 汎用-重量特大-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1457,
+      "Entries": [
+        "General -weight oversized-during-endurance-normal attacks -- 汎用-重量特大-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1458,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durability - Special Attack -- 汎用-重量特大-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1459,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Large - Bow and Arrow Attack -- 汎用-重量特大-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1460,
+      "Entries": [
+        "General -Weight Oversized- Durable Large - Normal Attack -- 汎用-重量特大-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1461,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Large - Special Attack -- 汎用-重量特大-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1462,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Oversized - Bow and Arrow Attack -- 汎用-重量特大-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1463,
+      "Entries": [
+        "General -Weight Oversized - Durable Oversized - Normal Attack -- 汎用-重量特大-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1464,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Oversized - Special Attack -- 汎用-重量特大-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1465,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量特大-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1466,
+      "Entries": [
+        "General -Weight Oversized - Durable Oversized - Normal Attack -- 汎用-重量特大-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1467,
+      "Entries": [
+        "General-purpose - Heavy Oversized - Durable Special Large - Special Attack -- 汎用-重量特大-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "General-purpose - Weight Ultra-Large - Durable Minimum - Bow and Arrow Attack -- 汎用-重量超特大-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "General-purpose - Weight Ultra-Large - Durable Minimum - Normal Attack -- 汎用-重量超特大-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "General-purpose - Weight Ultra-Large - Durable Minimum - Special Attack -- 汎用-重量超特大-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "General-purpose - Weight Super Oversized - Durable Small - Bow and Arrow Attack -- 汎用-重量超特大-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "General-purpose - Weight Ultra-Oversized - Durable Small - Normal Attack -- 汎用-重量超特大-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "General-purpose - Weight Ultra-Large - Durable Small - Special Attack -- 汎用-重量超特大-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Medium - Bow and Arrow Attack -- 汎用-重量超特大-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        "General-purpose - Weight Ultra-Oversized - Durability - Normal Attack -- 汎用-重量超特大-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1508,
+      "Entries": [
+        "General-purpose - Weight Ultra-Oversized - Durability - Special Attack -- 汎用-重量超特大-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1509,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Large - Bow and Arrow Attack -- 汎用-重量超特大-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Large - Normal Attack -- 汎用-重量超特大-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Large - Special Attack -- 汎用-重量超特大-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Oversized - Bow and Arrow Attack -- 汎用-重量超特大-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Oversized - Normal Attack -- 汎用-重量超特大-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Oversized - Special Attack -- 汎用-重量超特大-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1515,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Extra Large - Bow and Arrow Attack -- 汎用-重量超特大-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1516,
+      "Entries": [
+        "General-purpose - Weight Super-oversized - Durable oversized - Normal attack -- 汎用-重量超特大-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1517,
+      "Entries": [
+        "General-purpose - Weight Super-Oversized - Durable Special Large - Special Attack -- 汎用-重量超特大-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "【Plan to be deleted】General purpose - weight - durable minimum - anything -- 【削除予定】汎用-重量∞-耐久極小-なんでも"
+      ]
+    },
+    {
+      "ID": 1551,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -- durable minimum - normal attack -- 【削除予定】汎用-重量∞-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1552,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -- durable minimum - special attack -- 【削除予定】汎用-重量∞-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1553,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -- durable small- anything -- 【削除予定】汎用-重量∞-耐久小-なんでも"
+      ]
+    },
+    {
+      "ID": 1554,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -- durable small attack -- 【削除予定】汎用-重量∞-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1555,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -- durable small- special attack -- 【削除予定】汎用-重量∞-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1556,
+      "Entries": [
+        "【Plan to be deleted】General purpose - weight - during endurance - anything -- 【削除予定】汎用-重量∞-耐久中-なんでも"
+      ]
+    },
+    {
+      "ID": 1557,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -during-endurance - normal attack -- 【削除予定】汎用-重量∞-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1558,
+      "Entries": [
+        "【Plan to be deleted】General-purpose weight -endurance medium-special attack -- 【削除予定】汎用-重量∞-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1559,
+      "Entries": [
+        "General-purpose - Weight ≥ - Mass minimum - Giant only destroyed -- 汎用-重量∞-質量極小-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "General-purpose - Weight ≥ - Mass Small - Giant only destroyed -- 汎用-重量∞-質量小-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "General-purpose - Weight ≥ - In mass - only destruction of giants -- 汎用-重量∞-質量中-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1562,
+      "Entries": [
+        "General-purpose - Weight - Mass large (pillars) - only giant destruction -- 汎用-重量∞-質量大（柱とか）-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1563,
+      "Entries": [
+        "General-purpose - Weight ≥ - Mass oversized - only destruction of giants -- 汎用-重量∞-質量特大-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1564,
+      "Entries": [
+        "General-purpose - Weight - Mass extra large - Only giant destruction -- 汎用-重量∞-質量特特大-巨人だけ破壊"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "【Do not use】General purpose - weight-free - non-destructive -- 【使用しない】汎用-重量無-破壊不可"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "【Do not use】General purpose - weight minimum - unbreakable -- 【使用しない】汎用-重量極小-破壊不可"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "【Do not use】General purpose - weight small - non-destructive -- 【使用しない】汎用-重量小-破壊不可"
+      ]
+    },
+    {
+      "ID": 1603,
+      "Entries": [
+        "【Do not use】General purpose - in weight - non-destructive -- 【使用しない】汎用-重量中-破壊不可"
+      ]
+    },
+    {
+      "ID": 1604,
+      "Entries": [
+        "【Do not use】General purpose - weight large - non-destructive -- 【使用しない】汎用-重量大-破壊不可"
+      ]
+    },
+    {
+      "ID": 1605,
+      "Entries": [
+        "【Do not use】General purpose - weight extra large - non-destructive -- 【使用しない】汎用-重量特大-破壊不可"
+      ]
+    },
+    {
+      "ID": 1606,
+      "Entries": [
+        "【Do not use】General purpose - weight super-oversized - non-destructive -- 【使用しない】汎用-重量超特大-破壊不可"
+      ]
+    },
+    {
+      "ID": 1607,
+      "Entries": [
+        "General-purpose -Weight -Non-destructive -- 汎用-重量∞-破壊不可"
+      ]
+    },
+    {
+      "ID": 1608,
+      "Entries": [
+        "General-purpose -Weight -Non-destructive-HP setting -- 汎用-重量∞-破壊不可-HP設定あり"
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        "General-purpose -Weight ≥-Durable Minimum-Bow arrow attack -- 汎用-重量∞-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1651,
+      "Entries": [
+        "General-purpose -Weight -Durable Minimum - Normal Attack -- 汎用-重量∞-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1652,
+      "Entries": [
+        "General-purpose -Weight -Durable Minimum- Special Attack -- 汎用-重量∞-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1653,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable Small - Bow and Arrow Attack -- 汎用-重量∞-耐久小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1654,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable Small - Normal Attack -- 汎用-重量∞-耐久小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1655,
+      "Entries": [
+        "General-purpose -Weight -Durable Small-Special Attack -- 汎用-重量∞-耐久小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1656,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durability - Bow and Arrow Attack -- 汎用-重量∞-耐久中-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1657,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durability - Normal Attack -- 汎用-重量∞-耐久中-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1658,
+      "Entries": [
+        "General-purpose -Weight -Durability- Special Attack -- 汎用-重量∞-耐久中-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1659,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable Large - Bow and Arrow Attack -- 汎用-重量∞-耐久大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1660,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable Large - Normal Attack -- 汎用-重量∞-耐久大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1661,
+      "Entries": [
+        "General-purpose -Weight -Durable Large-Special Attack -- 汎用-重量∞-耐久大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1662,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable oversized - bow and arrow attack -- 汎用-重量∞-耐久特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1663,
+      "Entries": [
+        "General-purpose - Weight ≥ - Durable oversized - normal attack -- 汎用-重量∞-耐久特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1664,
+      "Entries": [
+        "General-purpose -Weight -Durable Oversized - Special Attack -- 汎用-重量∞-耐久特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1665,
+      "Entries": [
+        "General-purpose - Weight - Durable Oversized - Bow and Arrow Attack -- 汎用-重量∞-耐久特特大-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1666,
+      "Entries": [
+        "General-purpose - Weight - Durable oversized - Normal attack -- 汎用-重量∞-耐久特特大-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1667,
+      "Entries": [
+        "General-purpose -Weight -Durable Special-Sized - Special Attack -- 汎用-重量∞-耐久特特大-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "General-purpose - Weight - Avoidance - Durable Minimum - Bow and Arrow Attack -- 汎用-重量∞-回避-耐久極小-弓矢攻撃"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "General-purpose - Weight ≥ - Avoidance - Durable Minimum - Normal Attack -- 汎用-重量∞-回避-耐久極小-通常攻撃"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "General-purpose -Weight ≥-Avoidance-Durable Minimum-Special Attack -- 汎用-重量∞-回避-耐久極小-特殊攻撃"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "General-purpose-stone OBJ-weight minimum-durability minimum -- 汎用-石系OBJ-重量極小-耐久極小"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "General-purpose-stone OBJ-weight-small-to-durable minimum -- 汎用-石系OBJ-重量小-耐久極小"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "General-purpose-stone OBJ-in-weight-to-durable minimum -- 汎用-石系OBJ-重量中-耐久極小"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "General-purpose-stone OBJ-heavy-to-durable minimum -- 汎用-石系OBJ-重量大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "General-purpose-stone OBJ-heavy oversized-durable minimum -- 汎用-石系OBJ-重量特大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1805,
+      "Entries": [
+        "General-purpose-stone OBJ-weight oversized-durable minimum -- 汎用-石系OBJ-重量特特大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1806,
+      "Entries": [
+        "General-purpose-stone OBJ-weight ≥-durable minimum -- 汎用-石系OBJ-重量∞-耐久極小"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "General-purpose-stone OBJ-weight -durable oversized -- 汎用-石系OBJ-重量∞-耐久特大"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-minimum-endurance-minimum -- 汎用-壺系OBJ-回避ー重量極小-耐久極小"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-small-to-durable minimum -- 汎用-壺系OBJ-回避ー重量小-耐久極小"
+      ]
+    },
+    {
+      "ID": 1902,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-in-weight-to-durable minimum -- 汎用-壺系OBJ-回避ー重量中-耐久極小"
+      ]
+    },
+    {
+      "ID": 1903,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-heavy-to-durable minimum -- 汎用-壺系OBJ-回避ー重量大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1904,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-oversized-durable minimum -- 汎用-壺系OBJ-回避ー重量特大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-oversized-durable minimum -- 汎用-壺系OBJ-回避ー重量特特大-耐久極小"
+      ]
+    },
+    {
+      "ID": 1906,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-to-durable minimum -- 汎用-壺系OBJ-回避ー重量∞-耐久極小"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight-to-durability oversized -- 汎用-壺系OBJ-回避ー重量∞-耐久特大"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "General-purpose-vase-based OBJ-avoidance-weight -durable minimum -breaking by load -- 汎用-壺系OBJ-回避ー重量∞-耐久極小-荷重で壊れる"
+      ]
+    }
+  ]
+}

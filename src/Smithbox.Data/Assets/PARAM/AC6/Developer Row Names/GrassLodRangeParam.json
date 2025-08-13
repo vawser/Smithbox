@@ -1,0 +1,95 @@
+{
+  "Name": "GrassLodRangeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "general purpose grass -- 汎用草"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "grass LOD test -- 草LODテスト"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "FNR_General-purpose accessories -- FNR_汎用小物"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "For proto_LOD0 maximum -- プロト用_LOD0\u3000最大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Geofront_for street lights -- ジオフロント_街灯用"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "communist zone vegetation -- 共産圏植生"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "New B layer for streetlights -- 新B層 街灯用"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "New B layer for solar panels -- 新B層\u3000ソーラパネル用"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "fuel base_stone -- 燃料基地_石"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "black sand dune_stone -- 黒砂丘_石"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "mountains_pebbles -- 山岳_小石"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Mountains_Oishi -- 山岳_大石"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Mine shaft/Imperial base_pebbles -- 坑道・帝国基地_小石"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Mine shaft/Imperial base_Oishi -- 坑道・帝国基地_大石"
+      ]
+    }
+  ]
+}

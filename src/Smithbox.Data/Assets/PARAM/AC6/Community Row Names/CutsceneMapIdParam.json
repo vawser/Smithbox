@@ -1,0 +1,449 @@
+{
+  "Name": "CutsceneMapIdParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default data. Deletion prohibited. Used if no para"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Garage - AC Deploy to Mission"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Main System Combat Mode Active - Slow turn right of AC"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Main System Combat Mode Active - Slow turn front of AC"
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        "Main System Combat Mode Active - Slow turn left of AC"
+      ]
+    },
+    {
+      "ID": 200012,
+      "Entries": [
+        "Main System Combat Mode Active - Fast turn right of AC"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Multiplayer Intro - Unit Alpha"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Multiplayer Intro - Unit Beta"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Multiplayer Intro - Squad Alpha"
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        "Multiplayer Intro - Squad Beta"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Arena - Intro - Generic"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "Arena - Analysis Intro - 51-011 AL to 51-015 GA"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Arena - Intro - Rank D- B- S"
+      ]
+    },
+    {
+      "ID": 240100,
+      "Entries": [
+        "Arena - Intro - \"Invincible\" Rummy"
+      ]
+    },
+    {
+      "ID": 240200,
+      "Entries": [
+        "Arena - Intro - V.I Freud"
+      ]
+    },
+    {
+      "ID": 240300,
+      "Entries": [
+        "Arena - Analysis Intro - 51-001 K"
+      ]
+    },
+    {
+      "ID": 240400,
+      "Entries": [
+        "Arena - Intro - V.VII Swinburne - Middle Flatwell - Thumb Dolmayan - G1 Michigan"
+      ]
+    },
+    {
+      "ID": 240500,
+      "Entries": [
+        "Arena - Analysis Intro - Ayre"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Arena - Complete"
+      ]
+    },
+    {
+      "ID": 250010,
+      "Entries": [
+        "Arena - 51-016 GA - Complete"
+      ]
+    },
+    {
+      "ID": 250020,
+      "Entries": [
+        "Arena - Analysis Complete - Ayre"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Resupply Sherpa"
+      ]
+    },
+    {
+      "ID": 500010,
+      "Entries": [
+        "Resupply Sherpa"
+      ]
+    },
+    {
+      "ID": 3200010,
+      "Entries": [
+        "Steal The Survey Data - Mission Complete"
+      ]
+    },
+    {
+      "ID": 3300020,
+      "Entries": [
+        "Attack The Refuelling Base - PCA LCs Entrances"
+      ]
+    },
+    {
+      "ID": 3400010,
+      "Entries": [
+        "Attack The Old Spaceport - Mission Complete"
+      ]
+    },
+    {
+      "ID": 3400020,
+      "Entries": [
+        "Attack The Old Spaceport - PCA Officers and V.IV Rusty Entrances"
+      ]
+    },
+    {
+      "ID": 3400030,
+      "Entries": [
+        "Defend The Old Spaceport - Raven's Operator Entrance (\"Borrowed Wings\")"
+      ]
+    },
+    {
+      "ID": 3600040,
+      "Entries": [
+        "Destroy The Ice Worm - Mission Complete"
+      ]
+    },
+    {
+      "ID": 3600050,
+      "Entries": [
+        "Destroy The Ice Worm - Mission Start"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "Ocean Crossing - Mission Complete [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 10000015,
+      "Entries": [
+        "Illegal Entry - Scout for Mercenary License (Contaminated City)"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "Ocean Crossing - Mission Complete [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Ocean Crossing - Mission Complete [Alt?] [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Infiltrate Grid 086 - Mission Start"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Illegal Entry - Walter \"Wake The Dog Up\""
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Take The Uninhabited Floating City - Complete [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 20200000,
+      "Entries": [
+        "Bring Down The Xylem - Rusty Entrance"
+      ]
+    },
+    {
+      "ID": 20200010,
+      "Entries": [
+        "Bring Down The Xylem - Mission Start"
+      ]
+    },
+    {
+      "ID": 20200020,
+      "Entries": [
+        "Beach The Karman Line - Mission Start"
+      ]
+    },
+    {
+      "ID": 20200030,
+      "Entries": [
+        "Bring Down The Xylem - Mission Complete"
+      ]
+    },
+    {
+      "ID": 20200040,
+      "Entries": [
+        "Eliminate \"Cinder\" Carla - \"Cinder\" Carla Entrance"
+      ]
+    },
+    {
+      "ID": 20200050,
+      "Entries": [
+        "Bring Down The Xylem - Mission Complete"
+      ]
+    },
+    {
+      "ID": 20200060,
+      "Entries": [
+        "Intercept The Corporate Forces - V.I Freud Entrance"
+      ]
+    },
+    {
+      "ID": 20200070,
+      "Entries": [
+        "Ending - Ayre \"You took on my hopes and dreams\" [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "Destroy The Drive Block - Mission Start"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "Shut Down The Closure Satelites - Mission Start"
+      ]
+    },
+    {
+      "ID": 30000010,
+      "Entries": [
+        "Shut Down The Closure Satelites - Mission Complete [In Engine] - Fires Of Raven [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 30000020,
+      "Entries": [
+        "Coral Release - Mission Start"
+      ]
+    },
+    {
+      "ID": 30000030,
+      "Entries": [
+        "Coral Release - End [In Engine]- Alea Iacta Est Ending [Pre-rendered] "
+      ]
+    },
+    {
+      "ID": 30000040,
+      "Entries": [
+        "Coral Release - Ayre Entrance"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "Ending - Walter \"I Hope You Find Your True Potential\" [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "Underground Exploration - Depth 3 - Mission Complete"
+      ]
+    },
+    {
+      "ID": 41000010,
+      "Entries": [
+        "Unknown Territory Survey - V.IV Rusty Entrance"
+      ]
+    },
+    {
+      "ID": 41000020,
+      "Entries": [
+        "Unknown Territory Survey - V.IV Rusty Defeat"
+      ]
+    },
+    {
+      "ID": 41000030,
+      "Entries": [
+        "Underground Exploration - Depth 1 - Mission Start"
+      ]
+    },
+    {
+      "ID": 41000040,
+      "Entries": [
+        "Underground Exploration - Depth 2 - Enforcer Entrance"
+      ]
+    },
+    {
+      "ID": 41000050,
+      "Entries": [
+        "Unknown Territory Survey - Mission Complete"
+      ]
+    },
+    {
+      "ID": 41000060,
+      "Entries": [
+        "Unknown Territory Survey - Mission Complete - Longer?"
+      ]
+    },
+    {
+      "ID": 41000065,
+      "Entries": [
+        "Reach The Coral Convergence - Ayre \"Major Coral Response\""
+      ]
+    },
+    {
+      "ID": 41000070,
+      "Entries": [
+        "Unknown Territory Survey - V.IV Rusty Defeat \"Find Your Purpose\""
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "Reach The Coral Convergence - CEL 240 Entrance"
+      ]
+    },
+    {
+      "ID": 41100010,
+      "Entries": [
+        "Reach The Coral Convergence - Mission Complete"
+      ]
+    },
+    {
+      "ID": 41100020,
+      "Entries": [
+        "Escape - \"Cinder\" Carla Entrance"
+      ]
+    },
+    {
+      "ID": 41100030,
+      "Entries": [
+        "Reach The Coral Convergence - Mission Start (Ayre \"This Is My Home\")"
+      ]
+    },
+    {
+      "ID": 41100040,
+      "Entries": [
+        "Escape - Mission Start [Pre-rendered]"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Defend the Dam Complex - Raven's Operator Entrance"
+      ]
+    },
+    {
+      "ID": 50300010,
+      "Entries": [
+        "Operation Wallclimber - V.IV Rusty & Smart Cleaner Entrances"
+      ]
+    },
+    {
+      "ID": 50300020,
+      "Entries": [
+        "Eliminate V.VII - Rokumonsen Entrance"
+      ]
+    },
+    {
+      "ID": 50400010,
+      "Entries": [
+        "Attack the Watchpoint - Destroy Target Device [In Engine] - Ayre Contact [Pre-rendered] - Balteus Entrance [In Engine]"
+      ]
+    },
+    {
+      "ID": 50400020,
+      "Entries": [
+        "Attack the Watchpoint - Mission Complete"
+      ]
+    },
+    {
+      "ID": 50400030,
+      "Entries": [
+        "Attack the Watchpoint - Sulla Entrance"
+      ]
+    },
+    {
+      "ID": 50400040,
+      "Entries": [
+        "Attack the Watchpoint - Mission Start"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Obstruct the Mandatory Inspection - Kate Markson Entrance"
+      ]
+    }
+  ]
+}

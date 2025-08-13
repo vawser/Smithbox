@@ -1,0 +1,4499 @@
+{
+  "Name": "ItemLotParam2_Chr",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1020000,
+      "Entries": [
+        "[Unknown] Fading Soul"
+      ]
+    },
+    {
+      "ID": 1020100,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1020200,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1020300,
+      "Entries": [
+        "[Unknown] Petrified Something"
+      ]
+    },
+    {
+      "ID": 1040000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1040100,
+      "Entries": [
+        "[Unknown] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1040200,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1040300,
+      "Entries": [
+        "[Unknown] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1040400,
+      "Entries": [
+        "[Unknown] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1040500,
+      "Entries": [
+        "[Unknown] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "[Unknown] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "[Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield- Firebomb"
+      ]
+    },
+    {
+      "ID": 1100200,
+      "Entries": [
+        "[Unknown] Heide Knight Sword"
+      ]
+    },
+    {
+      "ID": 1100201,
+      "Entries": [
+        "[Unknown] Heide Knight Set- Heide Knight Sword"
+      ]
+    },
+    {
+      "ID": 1100500,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "[Unknown] Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1105000,
+      "Entries": [
+        "[Unknown] Hollow Infantry Set- Lifegem- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1105100,
+      "Entries": [
+        "[Unknown] Hollow Infantry Set- Bandit's Knife- Lifegem- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1105200,
+      "Entries": [
+        "[Unknown] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield- Lifegem- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1105300,
+      "Entries": [
+        "[Unknown] Hollow Infantry Set- Infantry Axe- Lifegem- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1105400,
+      "Entries": [
+        "[Unknown] Hollow Infantry Set- Bandit's Knife- Short Bow- Lifegem- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1106000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1107000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 1140000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1140100,
+      "Entries": [
+        "[Unknown] Smooth & Silky Stone- Green Blossom"
+      ]
+    },
+    {
+      "ID": 1140200,
+      "Entries": [
+        "[Unknown] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1140300,
+      "Entries": [
+        "[Unknown] Brightstone Key- Fragrant Branch of Yore- Dark Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 1140400,
+      "Entries": [
+        "[Unknown] Peasant Set- Small Smooth & Silky Stone- Flame Butterfly- Torch"
+      ]
+    },
+    {
+      "ID": 1140500,
+      "Entries": [
+        "[Unknown] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk- Torch"
+      ]
+    },
+    {
+      "ID": 1141000,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1141100,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 1141200,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1143000,
+      "Entries": [
+        "[Unknown] Staff of Wisdom- Dark Leggings"
+      ]
+    },
+    {
+      "ID": 1148000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "[Unknown] Dragon Acolyte Mask"
+      ]
+    },
+    {
+      "ID": 1151000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1153000,
+      "Entries": [
+        "[Unknown] Malformed Skull- Dark Mask"
+      ]
+    },
+    {
+      "ID": 1153100,
+      "Entries": [
+        "[Mimic - Aldia's Keep] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 1153200,
+      "Entries": [
+        "[Unknown] Black Witch's Staff"
+      ]
+    },
+    {
+      "ID": 1153300,
+      "Entries": [
+        "[Mimic - Aldia's Keep] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 1153400,
+      "Entries": [
+        "[Mimic - Aldia's Keep] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1153500,
+      "Entries": [
+        "[Unknown] Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1154000,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1154100,
+      "Entries": [
+        "[Unknown] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1154200,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1154300,
+      "Entries": [
+        "[Unknown] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 1154400,
+      "Entries": [
+        "[Unknown] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 1156000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1156100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1156200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1157000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1157100,
+      "Entries": [
+        "[Unknown] Elizabeth Mushroom- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1158000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1160000,
+      "Entries": [
+        "[Unknown] Wanderer Set"
+      ]
+    },
+    {
+      "ID": 1164000,
+      "Entries": [
+        "[Unknown] Rusted Coin- Bell Keeper Bow- Bell Keeper Shield"
+      ]
+    },
+    {
+      "ID": 1164100,
+      "Entries": [
+        "[Unknown] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1165000,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1165100,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1165200,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1165300,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1165400,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1166000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1166100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1166200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1168000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1171000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Palestone"
+      ]
+    },
+    {
+      "ID": 1171100,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Palestone"
+      ]
+    },
+    {
+      "ID": 1171200,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Palestone"
+      ]
+    },
+    {
+      "ID": 1173000,
+      "Entries": [
+        "[Unknown] Work Hook- Dark Gauntlets"
+      ]
+    },
+    {
+      "ID": 1178000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1181000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1186000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1190000,
+      "Entries": [
+        "[Unknown] Alonne Captain Set- Alonne Greatbow- Destructive Greatarrow- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 1190001,
+      "Entries": [
+        "[Unknown] Alonne Greatbow"
+      ]
+    },
+    {
+      "ID": 1190500,
+      "Entries": [
+        "[Unknown] Ring of Blades+1"
+      ]
+    },
+    {
+      "ID": 1191000,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Titanite Chunk- Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 1193000,
+      "Entries": [
+        "[Unknown] Thunder Quartz Ring+1"
+      ]
+    },
+    {
+      "ID": 1194100,
+      "Entries": [
+        "[Unknown] Rusted Coin- Flame Swathe- Fire Whip- Bell Keeper Bow- Bell Keeper Shield"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "[Unknown] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 1230001,
+      "Entries": [
+        "[Unknown] Heide Knight Set- Heide Greatlance"
+      ]
+    },
+    {
+      "ID": 1230200,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1230500,
+      "Entries": [
+        "[Unknown] Lifegem- Amber Herb- Repair Powder- Smooth & Silky Stone- Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 1231000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1236000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1238000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1238100,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1238200,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1238300,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1238400,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1250000,
+      "Entries": [
+        "[Unknown] Poison Moss- Firestorm"
+      ]
+    },
+    {
+      "ID": 1250500,
+      "Entries": [
+        "[Unknown] Heide Knight Iron Mask- Heide Lance"
+      ]
+    },
+    {
+      "ID": 1250501,
+      "Entries": [
+        "[Unknown] Heide Knight Iron Mask- Heide Knight Set- Heide Greatlance"
+      ]
+    },
+    {
+      "ID": 1253000,
+      "Entries": [
+        "[Unknown] Winged Spear- Dark Armor"
+      ]
+    },
+    {
+      "ID": 1256000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1256100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1256200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1256300,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1256400,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1270000,
+      "Entries": [
+        "[Unknown] Petrified Something- Twinkling Titanite- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 1270100,
+      "Entries": [
+        "[Unknown] Flame Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 1270200,
+      "Entries": [
+        "[Unknown] Fire Tempest"
+      ]
+    },
+    {
+      "ID": 1271000,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Titanite Chunk- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 1271100,
+      "Entries": [
+        "[Unknown] Titanite Shard- Twinkling Titanite- Faintstone"
+      ]
+    },
+    {
+      "ID": 1271200,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Twinkling Titanite- Palestone"
+      ]
+    },
+    {
+      "ID": 1271300,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Petrified Dragon Bone- Raw Stone"
+      ]
+    },
+    {
+      "ID": 1271400,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Petrified Dragon Bone- Old Mundane Stone"
+      ]
+    },
+    {
+      "ID": 1271500,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Twinkling Titanite- Darknight Stone"
+      ]
+    },
+    {
+      "ID": 1271600,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1271700,
+      "Entries": [
+        "[Unknown] Titanite Shard- Twinkling Titanite- Magic Stone"
+      ]
+    },
+    {
+      "ID": 1271800,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Titanite Chunk- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 1271900,
+      "Entries": [
+        "[Unknown] Twinkling Titanite- Boltstone- Palestone"
+      ]
+    },
+    {
+      "ID": 1272000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Large Titanite Shard- Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1310000,
+      "Entries": [
+        "[Unknown] Old Knight Set- Old Knight Greatsword- Old Knight's Shield- Cracked Blue Eye Orb- Palestone"
+      ]
+    },
+    {
+      "ID": 1310100,
+      "Entries": [
+        "[Unknown] Old Knight Set- Old Knight Ultra Greatsword- Cracked Blue Eye Orb- Palestone"
+      ]
+    },
+    {
+      "ID": 1310200,
+      "Entries": [
+        "[Unknown] Old Knight Set- Old Knight Pike- Old Knight Greatshield- Cracked Blue Eye Orb- Palestone"
+      ]
+    },
+    {
+      "ID": 1310300,
+      "Entries": [
+        "[Unknown] Old Knight Set- Old Knight Halberd- Cracked Blue Eye Orb- Palestone"
+      ]
+    },
+    {
+      "ID": 1310400,
+      "Entries": [
+        "[Unknown] Old Knight Set- Old Knight Hammer- Cracked Blue Eye Orb- Palestone"
+      ]
+    },
+    {
+      "ID": 1310500,
+      "Entries": [
+        "[Unknown] Sublime Bone Dust"
+      ]
+    },
+    {
+      "ID": 1311000,
+      "Entries": [
+        "[Unknown] Petrified Dragon Bone- Watchdragon Parma"
+      ]
+    },
+    {
+      "ID": 1320000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 1320100,
+      "Entries": [
+        "[Unknown] Warlock Mask"
+      ]
+    },
+    {
+      "ID": 1320200,
+      "Entries": [
+        "[Unknown] Lion Warrior Set- Lion Greataxe- Lion Clan Shield- Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 1320500,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 1321000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Titanite Chunk- Boltstone"
+      ]
+    },
+    {
+      "ID": 1328000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1328100,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1328200,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 1330000,
+      "Entries": [
+        "[Unknown] Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1330100,
+      "Entries": [
+        "[Unknown] Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1330200,
+      "Entries": [
+        "[Unknown] Gyrm Warrior Greathelm- Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1330300,
+      "Entries": [
+        "[Unknown] Gyrm Warrior Greathelm- Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1331000,
+      "Entries": [
+        "[Unknown] Large Titanite Shard- Raw Stone"
+      ]
+    },
+    {
+      "ID": 1333000,
+      "Entries": [
+        "[Unknown] Black Scorpion Stinger- Dark Leggings"
+      ]
+    },
+    {
+      "ID": 1336000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 1341000,
+      "Entries": [
+        "[Unknown] Titanite Shard- Titanite Shard- Darknight Stone"
+      ]
+    },
+    {
+      "ID": 2110000,
+      "Entries": [
+        "[Unknown] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 2115000,
+      "Entries": [
+        "[Unknown] Titanite Slab- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 2115100,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 2116000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2118000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 2118100,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 2118200,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 2210501,
+      "Entries": [
+        "[Unknown] Ring of Blades+2"
+      ]
+    },
+    {
+      "ID": 2210601,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 2210602,
+      "Entries": [
+        "[Unknown] Washing Pole- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 2210700,
+      "Entries": [
+        "[Unknown] Ruin Set"
+      ]
+    },
+    {
+      "ID": 2211000,
+      "Entries": [
+        "[Unknown] Titanite Chunk- Titanite Slab"
+      ]
+    },
+    {
+      "ID": 2213000,
+      "Entries": [
+        "[Unknown] Washing Pole- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 2213001,
+      "Entries": [
+        "[Unknown] Petrified Something- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 2214000,
+      "Entries": [
+        "[Unknown] Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 2214100,
+      "Entries": [
+        "[Unknown] Gower's Ring of Protection"
+      ]
+    },
+    {
+      "ID": 2216000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2216100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2216200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2240000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 2240001,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 2240100,
+      "Entries": [
+        "[Unknown] Fragrant Branch of Yore"
+      ]
+    },
+    {
+      "ID": 2240200,
+      "Entries": [
+        "[Unknown] Insolent Set- Shield of the Insolent- Simpleton's Spice- Skeptic's Spice- Twinkling Titanite- Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 2240500,
+      "Entries": [
+        "[Unknown] Titanite Slab- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 2246000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246300,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246400,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246500,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246600,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246700,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246800,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2246900,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2247000,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2247100,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2247200,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2247300,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2247400,
+      "Entries": [
+        "[Unknown] Human Effigy"
+      ]
+    },
+    {
+      "ID": 2248000,
+      "Entries": [
+        "[Unknown] Radiant Lifegem- Old Radiant Lifegem- Twilight Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030001,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030002,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030003,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030004,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030005,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030006,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 4030007,
+      "Entries": [
+        "[Unknown] Bonfire Ascetic"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5002000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5003000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5004000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5005000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5006000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5007000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5008000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5009000,
+      "Entries": [
+        "[Unknown] Lifegem"
+      ]
+    },
+    {
+      "ID": 5035000,
+      "Entries": [
+        "[Unknown] Twinkling Titanite- Faintstone"
+      ]
+    },
+    {
+      "ID": 5035100,
+      "Entries": [
+        "[Unknown] Titanite Slab- Firedrake Stone"
+      ]
+    },
+    {
+      "ID": 5035200,
+      "Entries": [
+        "[Unknown] Twinkling Titanite- Old Mundane Stone"
+      ]
+    },
+    {
+      "ID": 5035300,
+      "Entries": [
+        "[Unknown] Petrified Dragon Bone- Titanite Chunk- Raw Stone"
+      ]
+    },
+    {
+      "ID": 5036000,
+      "Entries": [
+        "[Unknown] Twinkling Titanite- Titanite Chunk- Titanite Slab"
+      ]
+    },
+    {
+      "ID": 5037100,
+      "Entries": [
+        "[Unknown] Catarina Armor"
+      ]
+    },
+    {
+      "ID": 5037200,
+      "Entries": [
+        "[Unknown] Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 5037300,
+      "Entries": [
+        "[Unknown] Dried Root- Retainer Robe"
+      ]
+    },
+    {
+      "ID": 5037400,
+      "Entries": [
+        "[Unknown] Dried Root- Retainer Robe"
+      ]
+    },
+    {
+      "ID": 5037500,
+      "Entries": [
+        "[Unknown] Torch"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "[Unknown] Awestone"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "[Forest Grotesque] Lifegem- Battle Axe- Spear- Caestus"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "[Forest Grotesque] Lifegem"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "[Forest Grotesque] Lifegem- Longsword- Broadsword- Estoc- Rapier- Falchion"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "[Forest Grotesque] Lifegem- Club- Mace- Wood Arrow"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "[Kobold] Shotel- Black Knight Greatsword- Crescent Axe- Black Knight Greataxe- Drakekeeper's Greataxe- Black Knight Halberd- Black Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 10100100,
+      "Entries": [
+        "[Kobold] Shotel- Black Knight Greatsword- Crescent Axe- Black Knight Greataxe- Drakekeeper's Greataxe- Black Knight Halberd- Black Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield- Lifegem- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10201000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Bastard Sword- Firebomb"
+      ]
+    },
+    {
+      "ID": 10202000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Halberd- Lifegem- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10203000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Estoc- Hollow Soldier Shield- Lifegem- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10204000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Bastard Sword- Long Bow- Wood Arrow"
+      ]
+    },
+    {
+      "ID": 10205000,
+      "Entries": [
+        "[Hollow Soldier] Hollow Soldier Set- Lifegem- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "[Royal Soldier] Royal Soldier Set- Winged Spear- Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10211000,
+      "Entries": [
+        "[Royal Soldier] Royal Soldier Set- Bastard Sword"
+      ]
+    },
+    {
+      "ID": 10213000,
+      "Entries": [
+        "[Royal Soldier] Royal Soldier Set"
+      ]
+    },
+    {
+      "ID": 10214000,
+      "Entries": [
+        "[Royal Soldier] Royal Soldier Set- Bastard Sword- Long Bow"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10300100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10301000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10301100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 10302000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10302100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10302200,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Foot Soldier Sword- Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10303000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10303100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10303200,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Infantry Axe- Throwing Knife"
+      ]
+    },
+    {
+      "ID": 10304000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Wood Arrow"
+      ]
+    },
+    {
+      "ID": 10304100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Wood Arrow"
+      ]
+    },
+    {
+      "ID": 10305000,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10305100,
+      "Entries": [
+        "[Hollow Infantry] Hollow Infantry Set- Bandit's Knife- Short Bow- Fire Arrow"
+      ]
+    },
+    {
+      "ID": 10310000,
+      "Entries": [
+        "[Infantry] Infantry Set- Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 10310100,
+      "Entries": [
+        "[Infantry] Infantry Set- Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 10311000,
+      "Entries": [
+        "[Infantry] Infantry Set- Foot Soldier Sword- Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10311100,
+      "Entries": [
+        "[Infantry] Infantry Set- Foot Soldier Sword- Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 10312000,
+      "Entries": [
+        "[Infantry] Infantry Set- Infantry Axe"
+      ]
+    },
+    {
+      "ID": 10312100,
+      "Entries": [
+        "[Infantry] Infantry Set- Infantry Axe"
+      ]
+    },
+    {
+      "ID": 10313000,
+      "Entries": [
+        "[Infantry] Infantry Set- Bandit's Knife- Short Bow"
+      ]
+    },
+    {
+      "ID": 10313100,
+      "Entries": [
+        "[Infantry] Infantry Set- Bandit's Knife- Short Bow"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "[Amana Shrine Maiden] Radiant Lifegem- Crimson Water- Dragon Charm- Holy Water Urn- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "[Amana Shrine Maiden] Staff of Amana- Radiant Lifegem- Crimson Water- Dragon Charm- Holy Water Urn- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "[Hollow Priest] White Priest Set- Cleric's Sacred Chime- Cleric's Small Shield- Twilight Herb- Human Effigy"
+      ]
+    },
+    {
+      "ID": 10620000,
+      "Entries": [
+        "[Dark Priestess] Priestess Set- Priest's Chime- Cleric's Parma- Silver Talisman"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "[Parasitized Undead] Human Effigy- Prism Stone- Tseldora Set- Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "[Hollow Rogue] Rogue Set- Broken Thief Sword- Thief Dagger- Throwing Knife- Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10801000,
+      "Entries": [
+        "[Hollow Rogue] Rogue Set- Club- Throwing Knife- Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 10802000,
+      "Entries": [
+        "[Hollow Rogue] Rogue Set- Short Bow- Broken Thief Sword- Thief Dagger- Poison Arrow- Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "[Varangian Sailor] Varangian Set- Varangian Sword- Varangian Shield- Iron Arrow"
+      ]
+    },
+    {
+      "ID": 11301000,
+      "Entries": [
+        "[Varangian Sailor] Varangian Set- Scimitar- Iron Arrow"
+      ]
+    },
+    {
+      "ID": 11302000,
+      "Entries": [
+        "[Varangian Sailor] Varangian Set- Sea Bow- Varangian Sword- Varangian Shield- Iron Arrow"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "[Undead Traveler] None"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "[Undead Traveler] None"
+      ]
+    },
+    {
+      "ID": 11501000,
+      "Entries": [
+        "[Undead Traveler] Dagger"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "[Stone Soldier] Stone Soldier Spear- Titanite Slab- Llewellyn Shield"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "[Black Hollow Mage] Black Hollow Mage Set- Lizard Staff- Amber Herb"
+      ]
+    },
+    {
+      "ID": 11800100,
+      "Entries": [
+        "[Black Hollow Mage] Black Hollow Mage Set- Lizard Staff- Amber Herb"
+      ]
+    },
+    {
+      "ID": 11820000,
+      "Entries": [
+        "[White Hollow Mage] White Hollow Mage Set- Bat Staff- Dark Troches- Rouge Water- Skeptic's Spice"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "[Lion Clan Mage] Lion Mage Set- Amber Herb- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "[Giant] None"
+      ]
+    },
+    {
+      "ID": 12101000,
+      "Entries": [
+        "[Giant] Giant Warrior Club"
+      ]
+    },
+    {
+      "ID": 12102000,
+      "Entries": [
+        "[Giant] None"
+      ]
+    },
+    {
+      "ID": 12103000,
+      "Entries": [
+        "[Giant] None"
+      ]
+    },
+    {
+      "ID": 12300000,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12300001,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12300100,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12300200,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12300300,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12301000,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12302000,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12303000,
+      "Entries": [
+        "[Suspicious Shadow] Shadow Set- Shadow Dagger- Malformed Claws"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "[Manikin] Manikin Set- Manikin Claws- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 12400100,
+      "Entries": [
+        "[Manikin] Manikin Set- Manikin Claws- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 12401000,
+      "Entries": [
+        "[Manikin] Manikin Set- Manikin Knife- Manikin Shield- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 12402000,
+      "Entries": [
+        "[Manikin] Manikin Set- Manikin Sabre- Manikin Shield- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 12403000,
+      "Entries": [
+        "[Manikin] Manikin Set- Manikin Knife- Short Bow- Poison Arrow- Iron Arrow"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "[Rupturing Hollow] Charcoal Pine Resin- Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 12500100,
+      "Entries": [
+        "[Rupturing Hollow] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 12500200,
+      "Entries": [
+        "[Rupturing Hollow] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 12501000,
+      "Entries": [
+        "[Rupturing Hollow] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 12502000,
+      "Entries": [
+        "[Rupturing Hollow] Gold Pine Resin- Dark Pine Resin"
+      ]
+    },
+    {
+      "ID": 12503000,
+      "Entries": [
+        "[Rupturing Hollow] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 12504000,
+      "Entries": [
+        "[Rupturing Hollow] Alluring Skull"
+      ]
+    },
+    {
+      "ID": 12504100,
+      "Entries": [
+        "[Rupturing Hollow] Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 12505000,
+      "Entries": [
+        "[Rupturing Hollow] None"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem"
+      ]
+    },
+    {
+      "ID": 12700100,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 12700200,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 12700300,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Red Leech Troches"
+      ]
+    },
+    {
+      "ID": 12700400,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 12700500,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 12701000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Torch- Lifegem"
+      ]
+    },
+    {
+      "ID": 12701100,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Torch"
+      ]
+    },
+    {
+      "ID": 12702000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 12900000,
+      "Entries": [
+        "[Forest Spirit] Witchtree Branch"
+      ]
+    },
+    {
+      "ID": 12901000,
+      "Entries": [
+        "[Forest Spirit] Witchtree Bellvine"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "[Lindelt Cleric] Archdrake Set- Archdrake Mace- Slumbering Dragon Shield- Old Radiant Lifegem- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 13101000,
+      "Entries": [
+        "[Lindelt Cleric] Archdrake Set- Archdrake Chime- Archdrake Shield- Old Radiant Lifegem- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 13102000,
+      "Entries": [
+        "[Lindelt Cleric] Archdrake Set- Archdrake Staff- Archdrake Shield- Old Radiant Lifegem- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "[Skeleton] Falchion- Titanite Shard- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "[Skeleton] Falchion- Alluring Skull- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13200600,
+      "Entries": [
+        "[Skeleton] Falchion- Alluring Skull- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13200700,
+      "Entries": [
+        "[Skeleton] Falchion- Titanite Shard- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13201000,
+      "Entries": [
+        "[Skeleton] Falchion- Foot Soldier Shield- Alluring Skull- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13201500,
+      "Entries": [
+        "[Skeleton] Falchion- Foot Soldier Shield- Alluring Skull- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13202000,
+      "Entries": [
+        "[Skeleton] Mail Breaker- Foot Soldier Shield- Alluring Skull- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13203000,
+      "Entries": [
+        "[Skeleton] Falchion- Foot Soldier Shield- Long Bow- Alluring Skull- Wood Arrow- Human Effigy"
+      ]
+    },
+    {
+      "ID": 13300000,
+      "Entries": [
+        "[Skeleton] None"
+      ]
+    },
+    {
+      "ID": 13301000,
+      "Entries": [
+        "[Skeleton] Falchion"
+      ]
+    },
+    {
+      "ID": 13302000,
+      "Entries": [
+        "[Skeleton] Murakumo"
+      ]
+    },
+    {
+      "ID": 13400000,
+      "Entries": [
+        "[Gyrm] Gyrm Set- Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Warrior Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13501000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Warrior Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13502000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Warrior Set- Gyrm Greataxe- Heavy Crossbow- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13503000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Set- Gyrm Greataxe- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13504000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Set- Gyrm Great Hammer- Gyrm Greatshield- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13505000,
+      "Entries": [
+        "[Gyrm Warrior] Gyrm Set- Gyrm Greataxe- Heavy Crossbow- Old Mundane Stone- Magic Stone- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 13701000,
+      "Entries": [
+        "[Dragon Acolyte] Warlock Mask- Cursed Bone Shield- Wilted Dusk Herb"
+      ]
+    },
+    {
+      "ID": 13800000,
+      "Entries": [
+        "[Torturer] Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 13801000,
+      "Entries": [
+        "[Torturer] Bloodied Whip- Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 13900000,
+      "Entries": [
+        "[Artificial Undead] Full Moon Sickle- Soul of a Nameless Soldier- Lifegem"
+      ]
+    },
+    {
+      "ID": 13900100,
+      "Entries": [
+        "[Artificial Undead] Full Moon Sickle- Dark Pine Resin- Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 13900200,
+      "Entries": [
+        "[Artificial Undead] Full Moon Sickle- Dark Pine Resin- Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 13901000,
+      "Entries": [
+        "[Artificial Undead] Soul of a Nameless Soldier- Lifegem"
+      ]
+    },
+    {
+      "ID": 14100000,
+      "Entries": [
+        "[Undead Aberration] Malformed Skull- Chaos Rapier- Chaos Shield"
+      ]
+    },
+    {
+      "ID": 14100100,
+      "Entries": [
+        "[Undead Aberration] Twinkling Titanite- Malformed Skull"
+      ]
+    },
+    {
+      "ID": 14600000,
+      "Entries": [
+        "[Headless Vengarl] Tseldora Set- Bandit's Knife- Silver Talisman"
+      ]
+    },
+    {
+      "ID": 14601000,
+      "Entries": [
+        "[Headless Vengarl] Tseldora Set- Estoc- Silver Talisman"
+      ]
+    },
+    {
+      "ID": 14602000,
+      "Entries": [
+        "[Headless Vengarl] Tseldora Set- Bandit's Knife- Silver Talisman"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "[Undead with Head Bandage] Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 14700100,
+      "Entries": [
+        "[Undead with Head Bandage] Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 14800000,
+      "Entries": [
+        "[Undead Peasant] Peasant Set- Small Smooth & Silky Stone- Flame Butterfly"
+      ]
+    },
+    {
+      "ID": 14801000,
+      "Entries": [
+        "[Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 14802000,
+      "Entries": [
+        "[Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 14803000,
+      "Entries": [
+        "[Undead Peasant] Peasant Set- Titanite Shard- Large Titanite Shard- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 14900000,
+      "Entries": [
+        "[Undead Steelworker] Titanite Shard- Old Mundane Stone- Small Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "[Stone Knight] Stone Twinblade- Stone Parma- Titanite Slab"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "[Ironclad Soldier] Ironclad Set- Firedrake Stone- Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 15120000,
+      "Entries": [
+        "[Ironclad Soldier] Old Ironclad Set- Human Effigy"
+      ]
+    },
+    {
+      "ID": 15120100,
+      "Entries": [
+        "[Ironclad Soldier] Old Ironclad Set- Human Effigy"
+      ]
+    },
+    {
+      "ID": 15121000,
+      "Entries": [
+        "[Ironclad Soldier] Old Ironclad Set- Human Effigy"
+      ]
+    },
+    {
+      "ID": 15200000,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword"
+      ]
+    },
+    {
+      "ID": 15200100,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword- Lifegem- Common Fruit"
+      ]
+    },
+    {
+      "ID": 15200101,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword- Radiant Lifegem- Common Fruit"
+      ]
+    },
+    {
+      "ID": 15201000,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 15201100,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow- Lifegem- Common Fruit"
+      ]
+    },
+    {
+      "ID": 15201101,
+      "Entries": [
+        "[Royal Soldier] Royal Swordsman Set- Royal Greatsword- Heavy Crossbow- Radiant Lifegem- Common Fruit"
+      ]
+    },
+    {
+      "ID": 15300000,
+      "Entries": [
+        "[Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15300100,
+      "Entries": [
+        "[Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15300200,
+      "Entries": [
+        "[Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15300300,
+      "Entries": [
+        "[Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15300900,
+      "Entries": [
+        "[Syan Knight] Syan Set- Syan's Halberd- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15301000,
+      "Entries": [
+        "[Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15301100,
+      "Entries": [
+        "[Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15301200,
+      "Entries": [
+        "[Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15301300,
+      "Entries": [
+        "[Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15301900,
+      "Entries": [
+        "[Syan Knight] Syan Set- Greatsword- Tower Shield- Green Blossom- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 15400000,
+      "Entries": [
+        "[Skeleton Lord] None"
+      ]
+    },
+    {
+      "ID": 15500000,
+      "Entries": [
+        "[Amana Aberration] Human Effigy- Red Leech Troches- Bleeding Serum- Bleed Stone- Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 15500100,
+      "Entries": [
+        "[Amana Aberration] Human Effigy- Red Leech Troches- Bleeding Serum- Bleed Stone- Smooth & Silky Stone"
+      ]
+    },
+    {
+      "ID": 15700000,
+      "Entries": [
+        "[Skeleton Lords - Skeleton] Falchion- Alluring Skull"
+      ]
+    },
+    {
+      "ID": 15701000,
+      "Entries": [
+        "[Skeleton Lords - Skeleton] Falchion- Foot Soldier Shield- Alluring Skull"
+      ]
+    },
+    {
+      "ID": 15702000,
+      "Entries": [
+        "[Skeleton Lords - Skeleton] Mail Breaker- Foot Soldier Shield- Alluring Skull"
+      ]
+    },
+    {
+      "ID": 15703000,
+      "Entries": [
+        "[Skeleton Lords - Skeleton] Falchion- Foot Soldier Shield- Long Bow- Alluring Skull- Wood Arrow"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "[Parasite Spider] Mail Breaker- Parrying Dagger- Ricard's Rapier- Mastodon Greatsword- Bandit Axe- Great Scythe- Zweihander"
+      ]
+    },
+    {
+      "ID": 20300001,
+      "Entries": [
+        "[Parasite Spider] Mail Breaker- Parrying Dagger- Ricard's Rapier- Mastodon Greatsword- Bandit Axe- Great Scythe- Zweihander"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[Poison Moth] Poison Moss"
+      ]
+    },
+    {
+      "ID": 20500000,
+      "Entries": [
+        "[Poison Horn Beetle] Lifegem- Green Blossom"
+      ]
+    },
+    {
+      "ID": 20500100,
+      "Entries": [
+        "[Poison Horn Beetle] Lifegem- Smooth & Silky Stone- Firestorm"
+      ]
+    },
+    {
+      "ID": 20510000,
+      "Entries": [
+        "[Acid Horn Beetle] None"
+      ]
+    },
+    {
+      "ID": 20510100,
+      "Entries": [
+        "[Acid Horn Beetle] None"
+      ]
+    },
+    {
+      "ID": 20510200,
+      "Entries": [
+        "[Acid Horn Beetle] Lifegem"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "[Razorback Nightcrawler] Poison Stone- Dead Again"
+      ]
+    },
+    {
+      "ID": 20600100,
+      "Entries": [
+        "[Razorback Nightcrawler] Puzzling Stone Sword- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 20600200,
+      "Entries": [
+        "[Razorback Nightcrawler] Puzzling Stone Sword- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "[Hunting Dog] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 20900100,
+      "Entries": [
+        "[Hunting Dog] None"
+      ]
+    },
+    {
+      "ID": 20900200,
+      "Entries": [
+        "[Hunting Dog] Aromatic Ooze"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 21000100,
+      "Entries": [
+        "[Basilisk] Human Effigy"
+      ]
+    },
+    {
+      "ID": 21000200,
+      "Entries": [
+        "[Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 21000300,
+      "Entries": [
+        "[Basilisk] Human Effigy"
+      ]
+    },
+    {
+      "ID": 21000400,
+      "Entries": [
+        "[Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 21000500,
+      "Entries": [
+        "[Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 21000600,
+      "Entries": [
+        "[Basilisk] Raw Stone- Faintstone- Boltstone- Firedrake Stone- Darknight Stone- Poison Stone- Bleed Stone"
+      ]
+    },
+    {
+      "ID": 21200000,
+      "Entries": [
+        "[Guardian Dragon] None"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[Crystal Lizard] None"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "[Giant Undead Boar] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 21600000,
+      "Entries": [
+        "[Wall Ghost] None"
+      ]
+    },
+    {
+      "ID": 21700000,
+      "Entries": [
+        "[Dark Stalker] Tattered Cloth Set- Radiant Lifegem- Longsword- Broadsword"
+      ]
+    },
+    {
+      "ID": 21700100,
+      "Entries": [
+        "[Dark Stalker] Judgment Set- Radiant Lifegem- Longsword- Broadsword"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "[Giant Acid Horn Beetle] None"
+      ]
+    },
+    {
+      "ID": 22000100,
+      "Entries": [
+        "[Giant Acid Horn Beetle] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 22000200,
+      "Entries": [
+        "[Giant Acid Horn Beetle] Corrosive Urn"
+      ]
+    },
+    {
+      "ID": 22200000,
+      "Entries": [
+        "[Giant Basilisk] Magic Stone- Dragon Sage Hood"
+      ]
+    },
+    {
+      "ID": 22200100,
+      "Entries": [
+        "[Giant Basilisk] Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 22200200,
+      "Entries": [
+        "[Giant Basilisk] Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 22300000,
+      "Entries": [
+        "[Mongrel Rat] Pharros' Lockstone- Old Radiant Lifegem- Rat Tail"
+      ]
+    },
+    {
+      "ID": 22400000,
+      "Entries": [
+        "[Darksucker] Large Titanite Shard- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "[Corpse Rat] Old Radiant Lifegem- Poison Moss- Repair Powder- Warmth- Rat Tail"
+      ]
+    },
+    {
+      "ID": 22610000,
+      "Entries": [
+        "[Corpse Rat] None"
+      ]
+    },
+    {
+      "ID": 22620000,
+      "Entries": [
+        "[Corpse Rat] Pharros' Lockstone"
+      ]
+    },
+    {
+      "ID": 22700000,
+      "Entries": [
+        "[Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy"
+      ]
+    },
+    {
+      "ID": 22700100,
+      "Entries": [
+        "[Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy"
+      ]
+    },
+    {
+      "ID": 22700200,
+      "Entries": [
+        "[Stray Dog] Soul of a Nameless Soldier- Soul of a Lost Undead- Human Effigy"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "[Ogre] Stone Ring"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "[Ogre] Common Fruit- Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "[Ogre] Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "[Heide Knight] Heide Lance"
+      ]
+    },
+    {
+      "ID": 30100001,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Lance- Heide Greatlance"
+      ]
+    },
+    {
+      "ID": 30100100,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Knight Sword"
+      ]
+    },
+    {
+      "ID": 30101000,
+      "Entries": [
+        "[Heide Knight] Heide Spear"
+      ]
+    },
+    {
+      "ID": 30101001,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Spear"
+      ]
+    },
+    {
+      "ID": 30101100,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Spear"
+      ]
+    },
+    {
+      "ID": 30102000,
+      "Entries": [
+        "[Heide Knight] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 30102001,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Lance"
+      ]
+    },
+    {
+      "ID": 30103000,
+      "Entries": [
+        "[Heide Knight] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 30103001,
+      "Entries": [
+        "[Heide Knight] Heide Knight Set- Heide Greatlance"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "[Undead Jailer] Great Machete- Twilight Herb- Lingering Flame"
+      ]
+    },
+    {
+      "ID": 30330000,
+      "Entries": [
+        "[Flexile Sentry] None"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "[Milfanito] None"
+      ]
+    },
+    {
+      "ID": 30401000,
+      "Entries": [
+        "[Milfanito] None"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "[Smelter Demon] None"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "[Smelter Demon] None"
+      ]
+    },
+    {
+      "ID": 30600000,
+      "Entries": [
+        "[Alonne Captain] Alonne Captain Set- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 30601000,
+      "Entries": [
+        "[Alonne Captain] Alonne Captain Set- Alonne Greatbow- Destructive Greatarrow- Monastery Charm"
+      ]
+    },
+    {
+      "ID": 30601100,
+      "Entries": [
+        "[Alonne Captain] Alonne Captain Set- Alonne Greatbow- Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "[Headless Vengarl] Vengarl's Armor- Vengarl's Gloves- Vengarl's Boots"
+      ]
+    },
+    {
+      "ID": 30710000,
+      "Entries": [
+        "[Vengarl] Vengarl's Set"
+      ]
+    },
+    {
+      "ID": 30711000,
+      "Entries": [
+        "[Vengarl] Vengarl's Helm"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "[Lion Clan Warrior] Lion Warrior Cape- Lion Warrior Cuffs- Lion Warrior Skirt- Lion Greataxe- Lion Clan Shield- Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 30810000,
+      "Entries": [
+        "[Lion Clan Warrior] Lion Warrior Set- Lion Greataxe- Triclops Snake Troches"
+      ]
+    },
+    {
+      "ID": 30900000,
+      "Entries": [
+        "[Forgotten Giant] None"
+      ]
+    },
+    {
+      "ID": 30900100,
+      "Entries": [
+        "[Forgotten Giant] None"
+      ]
+    },
+    {
+      "ID": 30960000,
+      "Entries": [
+        "[Last Giant] None"
+      ]
+    },
+    {
+      "ID": 30970000,
+      "Entries": [
+        "[Giant Lord] None"
+      ]
+    },
+    {
+      "ID": 31100000,
+      "Entries": [
+        "[Mounted Overseer] Smooth & Silky Stone- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31200000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Sickle- Repair Powder"
+      ]
+    },
+    {
+      "ID": 31201000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31201100,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31202000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Sickle- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31202100,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Sickle- Repair Powder"
+      ]
+    },
+    {
+      "ID": 31203000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31203100,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31203200,
+      "Entries": [
+        "[Grave Warden] Grave Warden Set- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31204000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Mask- Grave Warden Cuffs- Silverblack Sickle- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31205000,
+      "Entries": [
+        "[Grave Warden] Grave Warden Mask- Grave Warden Cuffs- Silverblack Spear- Silverblack Shield- Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31300100,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31300200,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31301000,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31301100,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31301200,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Rapier- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31302000,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Rapier- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31303000,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31303100,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31303200,
+      "Entries": [
+        "[Hollow Falconer] Falconer Set- Golden Falcon Shield- Short Bow- Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 31400000,
+      "Entries": [
+        "[Hollow Primal Knight] Rusted Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 31400100,
+      "Entries": [
+        "[Hollow Primal Knight] Rusted Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "[Primal Knight] Mastodon Set- Mastodon Halberd- Mastodon Greatshield- Old Mundane Stone"
+      ]
+    },
+    {
+      "ID": 31600000,
+      "Entries": [
+        "[Desert Sorceress] Desert Sorceress Set- Dragon Charm- Wilted Dusk Herb- Magic Stone- Lingering Dragoncrest Ring+1"
+      ]
+    },
+    {
+      "ID": 31600100,
+      "Entries": [
+        "[Desert Sorceress] Desert Sorceress Set- Dragon Charm- Wilted Dusk Herb- Magic Stone- Lingering Dragoncrest Ring+1"
+      ]
+    },
+    {
+      "ID": 31700000,
+      "Entries": [
+        "[Dragon Acolyte] Dragon Acolyte Set- Aldia Hammer- Bone Shield- Petrified Dragon Bone- Elizabeth Mushroom"
+      ]
+    },
+    {
+      "ID": 31800000,
+      "Entries": [
+        "[The Pursuer] None"
+      ]
+    },
+    {
+      "ID": 31801000,
+      "Entries": [
+        "[The Pursuer] None"
+      ]
+    },
+    {
+      "ID": 31900000,
+      "Entries": [
+        "[Alonne Knight] Alonne Knight Set- Blacksteel Katana"
+      ]
+    },
+    {
+      "ID": 31901000,
+      "Entries": [
+        "[Alonne Knight] Alonne Knight Set- Alonne Greatbow- Blacksteel Katana- Iron Greatarrow"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[Mimic] None"
+      ]
+    },
+    {
+      "ID": 32101000,
+      "Entries": [
+        "[Mimic] None"
+      ]
+    },
+    {
+      "ID": 32400000,
+      "Entries": [
+        "[Belfry Gargoyle] None"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "[Ruin Sentinel] None"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "[The Rotten] None"
+      ]
+    },
+    {
+      "ID": 32700000,
+      "Entries": [
+        "[Dragon Skeleton] None"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Greatsword- Old Knight's Shield- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Ultra Greatsword- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33001100,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Ultra Greatsword- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33003000,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33004000,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33004100,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33004200,
+      "Entries": [
+        "[Old Knight] Old Knight Set- Old Knight Hammer- Human Effigy- Amber Herb- Green Blossom"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "[Drakekeeper] Drakekeeper Set- Drakekeeper's Sword- Drakekeeper's Shield- Dragon Charm"
+      ]
+    },
+    {
+      "ID": 33101000,
+      "Entries": [
+        "[Drakekeeper] Drakekeeper Set- Drakekeeper's Ultra Greatsword- Dragon Charm"
+      ]
+    },
+    {
+      "ID": 33102000,
+      "Entries": [
+        "[Drakekeeper] Drakekeeper Set- Dragon Charm"
+      ]
+    },
+    {
+      "ID": 33103000,
+      "Entries": [
+        "[Drakekeeper] Drakekeeper Set- Drakekeeper's Great Hammer- Dragon Charm"
+      ]
+    },
+    {
+      "ID": 33104000,
+      "Entries": [
+        "[Drakekeeper] Drakekeeper Set- Drakekeeper's Warpick- Greatshield of Glory- Dragon Charm"
+      ]
+    },
+    {
+      "ID": 33200000,
+      "Entries": [
+        "[Throne Defender] None"
+      ]
+    },
+    {
+      "ID": 33300000,
+      "Entries": [
+        "[Velstadt] None"
+      ]
+    },
+    {
+      "ID": 33400000,
+      "Entries": [
+        "[Throne Watcher] None"
+      ]
+    },
+    {
+      "ID": 33700000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem"
+      ]
+    },
+    {
+      "ID": 33700100,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 33700200,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 33700300,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Simpleton's Spice- Homeward Bone"
+      ]
+    },
+    {
+      "ID": 33700400,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 33700500,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 33700600,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 33701000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Torch- Lifegem"
+      ]
+    },
+    {
+      "ID": 33701100,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Poison Throwing Knife- Torch"
+      ]
+    },
+    {
+      "ID": 33702000,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Lifegem"
+      ]
+    },
+    {
+      "ID": 33702100,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 33702200,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Simpleton's Spice- Homeward Bone"
+      ]
+    },
+    {
+      "ID": 33702300,
+      "Entries": [
+        "[Abandoned Hollow] Prisoner's Set- Broken Straight Sword- Small Blue Burr- Small Yellow Burr- Small Orange Burr- Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "[Covetous Demon] None"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "[Covetous Demon] Ivory Warrior Ring"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "[Mytha- the Baneful Queen] None"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "[Manscorpion Tark] Black Scorpion Stinger- Second Dragon Ring"
+      ]
+    },
+    {
+      "ID": 50300000,
+      "Entries": [
+        "[Scorpioness Najka] None"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "[Looking Glass Knight] None"
+      ]
+    },
+    {
+      "ID": 50610000,
+      "Entries": [
+        "[Darklurker] None"
+      ]
+    },
+    {
+      "ID": 50620000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 50650000,
+      "Entries": [
+        "[Grave Warden Agdayne] None"
+      ]
+    },
+    {
+      "ID": 50700000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 50800000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "[Leydia Witch] Leydia Black Set- Black Witch's Staff- Simpleton's Spice- Skeptic's Spice- Magic Stone- Dark Quartz Ring+2"
+      ]
+    },
+    {
+      "ID": 51100000,
+      "Entries": [
+        "[Imperious Knight] Imperious Set- Orma's Greatshield- Reeve's Greatshield"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "[Leydia Pyromancer] Leydia White Set- Blue Flame- Magic Shield- Faintstone- Darknight Stone"
+      ]
+    },
+    {
+      "ID": 51460000,
+      "Entries": [
+        "[Vendrick - Hollow] None"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "[Ancient Dragon] None"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "[Flame Lizard] Cracked Red Eye Orb- Fireball- Fire Orb- Great Fireball"
+      ]
+    },
+    {
+      "ID": 60101000,
+      "Entries": [
+        "[Flame Lizard] Cracked Red Eye Orb- Titanite Slab- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 60200000,
+      "Entries": [
+        "[Rampart Hedgehog] None"
+      ]
+    },
+    {
+      "ID": 60300000,
+      "Entries": [
+        "[The Duke's Dear Freja] None"
+      ]
+    },
+    {
+      "ID": 60310000,
+      "Entries": [
+        "[The Duke's Dear Freja] None"
+      ]
+    },
+    {
+      "ID": 60700000,
+      "Entries": [
+        "[Old Iron King] None"
+      ]
+    },
+    {
+      "ID": 60800000,
+      "Entries": [
+        "[Rotten Vermin] Poison Moss"
+      ]
+    },
+    {
+      "ID": 61100000,
+      "Entries": [
+        "[Dragonrider] None"
+      ]
+    },
+    {
+      "ID": 61911000,
+      "Entries": [
+        "[Executioner's Chariot] None"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "[Old Dragonslayer] None"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "[Lost Sinner] None"
+      ]
+    },
+    {
+      "ID": 62700000,
+      "Entries": [
+        "[Nashandra] Ring of Lords"
+      ]
+    },
+    {
+      "ID": 62800000,
+      "Entries": [
+        "[Royal Rat Authority] None"
+      ]
+    },
+    {
+      "ID": 65000000,
+      "Entries": [
+        "[Iron Warrior] Smelter Hammer- Firedrake Stone- Titanite Slab- Minotaur Helm"
+      ]
+    },
+    {
+      "ID": 65000100,
+      "Entries": [
+        "[Iron Warrior] Smelter Hammer- Firedrake Stone- Titanite Slab- Minotaur Helm"
+      ]
+    },
+    {
+      "ID": 65100000,
+      "Entries": [
+        "[Fume Sorcerer] Blue Dagger- Umbral Dagger- Fume Sorcerer Set"
+      ]
+    },
+    {
+      "ID": 65100100,
+      "Entries": [
+        "[Fume Sorcerer] Blue Dagger- Umbral Dagger- Fume Sorcerer Set"
+      ]
+    },
+    {
+      "ID": 65300000,
+      "Entries": [
+        "[Ashen Warrior] Battle Axe- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65300100,
+      "Entries": [
+        "[Ashen Warrior] Battle Axe- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65301000,
+      "Entries": [
+        "[Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65301100,
+      "Entries": [
+        "[Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65302000,
+      "Entries": [
+        "[Ashen Warrior] Halberd- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65302100,
+      "Entries": [
+        "[Ashen Warrior] Halberd- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65303000,
+      "Entries": [
+        "[Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65303100,
+      "Entries": [
+        "[Ashen Warrior] Ashen Warrior Sword- Charcoal Pine Resin- Small Orange Burr"
+      ]
+    },
+    {
+      "ID": 65400000,
+      "Entries": [
+        "[Ashen Crawler] Bonfire Ascetic- Wilted Dusk Herb- Dung Pie"
+      ]
+    },
+    {
+      "ID": 65600000,
+      "Entries": [
+        "[Possessed Armor] Possessed Armor Sword- Possessed Armor Greatbow- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 65600100,
+      "Entries": [
+        "[Possessed Armor] Possessed Armor Sword- Possessed Armor Greatbow- Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 65700000,
+      "Entries": [
+        "[Barrel Carrier] Human Effigy- Black Firebomb"
+      ]
+    },
+    {
+      "ID": 65900000,
+      "Entries": [
+        "[Rampart Golem] Rampart Golem Lance- Rampart Golem Shield- Rampart Golem Set"
+      ]
+    },
+    {
+      "ID": 65901000,
+      "Entries": [
+        "[Rampart Golem] Rampart Golem Lance- Rampart Golem Shield- Rampart Golem Set"
+      ]
+    },
+    {
+      "ID": 66000000,
+      "Entries": [
+        "[Crystal Golem] Wilted Dusk Herb- Old Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 66100000,
+      "Entries": [
+        "[Frozen Reindeer] Old Radiant Lifegem- Petrified Dragon Bone"
+      ]
+    },
+    {
+      "ID": 66101000,
+      "Entries": [
+        "[Frozen Reindeer] Old Radiant Lifegem- Petrified Dragon Bone- Bone Fist"
+      ]
+    },
+    {
+      "ID": 66200000,
+      "Entries": [
+        "[Rampart Hedgehog] Human Effigy"
+      ]
+    },
+    {
+      "ID": 66300000,
+      "Entries": [
+        "[Rampart Spearman] Ice Rapier- Radiant Lifegem- Amber Herb"
+      ]
+    },
+    {
+      "ID": 66301000,
+      "Entries": [
+        "[Rampart Spearman] Ice Rapier- Radiant Lifegem- Amber Herb"
+      ]
+    },
+    {
+      "ID": 66500000,
+      "Entries": [
+        "[Sanctum Knight] Sanctum Knight Set- Repair Powder"
+      ]
+    },
+    {
+      "ID": 66501000,
+      "Entries": [
+        "[Sanctum Knight] Sanctum Knight Set- Sanctum Crossbow- Sanctum Repeating Crossbow- Repair Powder"
+      ]
+    },
+    {
+      "ID": 66600000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Sanctum Mace- Poison Moss- Poison Stone"
+      ]
+    },
+    {
+      "ID": 66600100,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Mace- Dragon Charm- Poison Stone- Dried Root"
+      ]
+    },
+    {
+      "ID": 66601000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Poison Moss- Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 66602000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Poison Moss- Old Growth Balm"
+      ]
+    },
+    {
+      "ID": 66604000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Sanctum Mace- Dragon Charm- Poison Stone"
+      ]
+    },
+    {
+      "ID": 66604100,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Mace- Dragon Charm- Poison Stone- Dried Root"
+      ]
+    },
+    {
+      "ID": 66605000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Dragon Charm- Vine Balm"
+      ]
+    },
+    {
+      "ID": 66606000,
+      "Entries": [
+        "[Sanctum Soldier] Sanctum Soldier Gauntlet- Dragon Charm- Vine Balm"
+      ]
+    },
+    {
+      "ID": 67000000,
+      "Entries": [
+        "[Sanctum Priestess] Sanctum Priestess Tiara- Dragon Charm- Crimson Water"
+      ]
+    },
+    {
+      "ID": 67100000,
+      "Entries": [
+        "[Poison Statue Cluster] Human Effigy- Twinkling Titanite- Common Fruit"
+      ]
+    },
+    {
+      "ID": 67100100,
+      "Entries": [
+        "[Poison Statue Cluster] Human Effigy- Twinkling Titanite- Common Fruit"
+      ]
+    },
+    {
+      "ID": 67110000,
+      "Entries": [
+        "[Poison Statue Cluster] Human Effigy- Twinkling Titanite- Triclops Snake Troches- Promised Walk of Peace- Lightning Clutch Ring"
+      ]
+    },
+    {
+      "ID": 67110100,
+      "Entries": [
+        "[Poison Statue Cluster] Human Effigy- Twinkling Titanite- Triclops Snake Troches- Promised Walk of Peace- Lightning Clutch Ring"
+      ]
+    },
+    {
+      "ID": 67200000,
+      "Entries": [
+        "[Rotten Vermin] Blackweed Balm- Goldenfruit Balm"
+      ]
+    },
+    {
+      "ID": 67400000,
+      "Entries": [
+        "[Pagan Tree] Dried Root"
+      ]
+    },
+    {
+      "ID": 67500000,
+      "Entries": [
+        "[Fume Knight] None"
+      ]
+    },
+    {
+      "ID": 67700000,
+      "Entries": [
+        "[Retainer Sorcerer] Retainer's Short Sword- Retainer Robe"
+      ]
+    },
+    {
+      "ID": 67701000,
+      "Entries": [
+        "[Retainer Sorcerer] Retainer Staff- Retainer Robe"
+      ]
+    },
+    {
+      "ID": 67800000,
+      "Entries": [
+        "[Ice Golem] Human Effigy- Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 68000000,
+      "Entries": [
+        "[Sir Alonne] None"
+      ]
+    },
+    {
+      "ID": 68000100,
+      "Entries": [
+        "[Sir Alonne] Alonne's Set"
+      ]
+    },
+    {
+      "ID": 68100000,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon] None"
+      ]
+    },
+    {
+      "ID": 68100100,
+      "Entries": [
+        "[Sinh- the Slumbering Dragon] None"
+      ]
+    },
+    {
+      "ID": 68200000,
+      "Entries": [
+        "[Elana- Squalid Queen] None"
+      ]
+    },
+    {
+      "ID": 68300000,
+      "Entries": [
+        "[Imperfect] Petrified Dragon Bone- Titanite Slab- Dragon Scale"
+      ]
+    },
+    {
+      "ID": 68400000,
+      "Entries": [
+        "[Vendrick] None"
+      ]
+    },
+    {
+      "ID": 68800000,
+      "Entries": [
+        "[Loyce Knight] None"
+      ]
+    },
+    {
+      "ID": 68900000,
+      "Entries": [
+        "[Charred Loyce Knight] Charred Loyce Greatsword- Charred Loyce Set- Charred Loyce Shield- Loyce Soul"
+      ]
+    },
+    {
+      "ID": 68901000,
+      "Entries": [
+        "[Charred Loyce Knight] Charred Loyce Greatsword- Charred Loyce Set- Charred Loyce Shield- Loyce Soul"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[Unknown] Small Smooth & Silky Stone- Smooth & Silky Stone- Petrified Something"
+      ]
+    },
+    {
+      "ID": 70050000,
+      "Entries": [
+        "[Shanalotte] Aged Feather"
+      ]
+    },
+    {
+      "ID": 70150000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 70360000,
+      "Entries": [
+        "[Human Nashandra] None"
+      ]
+    },
+    {
+      "ID": 70450000,
+      "Entries": [
+        "[Laddersmith Gilligan] Melu Scimitar- Ladder Miniature"
+      ]
+    },
+    {
+      "ID": 70550000,
+      "Entries": [
+        "[Strowen] Human Effigy"
+      ]
+    },
+    {
+      "ID": 70560000,
+      "Entries": [
+        "[Morrel] None"
+      ]
+    },
+    {
+      "ID": 70580000,
+      "Entries": [
+        "[Griant] None"
+      ]
+    },
+    {
+      "ID": 72110000,
+      "Entries": [
+        "[Chancellor Wellager] None"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "[Milibeth] Human Effigy"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "[Captain Drummond] Drangleic Helm"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "[Darkdiver Grandahl] Dragon Chime"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "[Unknown] Gyrm Greataxe"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 73101000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 73300000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "[Unknown] Ring of Steel Protection"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "[Creighton the Wanderer] Creighton's Steel Mask"
+      ]
+    },
+    {
+      "ID": 74201000,
+      "Entries": [
+        "[Creighton the Wanderer] Creighton's Steel Mask"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "[Benhart of Jugo] Bluemoon Greatsword"
+      ]
+    },
+    {
+      "ID": 74400000,
+      "Entries": [
+        "[Mild Mannered Pate] Pate's Spear"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "[Cale the Cartographer] Cale's Helm"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "[Lucatiel of Mirrah] Lucatiel's Mask"
+      ]
+    },
+    {
+      "ID": 75300000,
+      "Entries": [
+        "[Bell Keeper] Rusted Coin"
+      ]
+    },
+    {
+      "ID": 75400000,
+      "Entries": [
+        "[Merchant Hag Melentia] Covetous Silver Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 75500000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 76000000,
+      "Entries": [
+        "[Milfanito] None"
+      ]
+    },
+    {
+      "ID": 76010000,
+      "Entries": [
+        "[Milfanito] None"
+      ]
+    },
+    {
+      "ID": 76020000,
+      "Entries": [
+        "[Milfanito] Ring of the Dead"
+      ]
+    },
+    {
+      "ID": 76100000,
+      "Entries": [
+        "[Maughlin the Armourer] Tseldora Set"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "[Stone Trader Chloanne] Palestone"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "[Rosabeth of Melfia] Fire Seed"
+      ]
+    },
+    {
+      "ID": 76400000,
+      "Entries": [
+        "[Blacksmith Lenigrast] Blacksmith's Hammer"
+      ]
+    },
+    {
+      "ID": 76401000,
+      "Entries": [
+        "[Blacksmith Lenigrast] Blacksmith's Hammer"
+      ]
+    },
+    {
+      "ID": 76430000,
+      "Entries": [
+        "[Steady Hand McDuff] Titanite Slab"
+      ]
+    },
+    {
+      "ID": 76600000,
+      "Entries": [
+        "[Carhillion of the Fold] Northern Ritual Band+1"
+      ]
+    },
+    {
+      "ID": 76800000,
+      "Entries": [
+        "[Straid of Olaphis] Black Hood"
+      ]
+    },
+    {
+      "ID": 76900000,
+      "Entries": [
+        "[Licia of Lindeldt] Idol's Chime"
+      ]
+    },
+    {
+      "ID": 77000000,
+      "Entries": [
+        "[Felkin the Outcast] Sunset Staff"
+      ]
+    },
+    {
+      "ID": 77001000,
+      "Entries": [
+        "[Felkin the Outcast] None"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "[Royal Sorcerer Navlaan] Chaos Hood"
+      ]
+    },
+    {
+      "ID": 77200000,
+      "Entries": [
+        "[Magerold of Lanafir] Covetous Gold Serpent Ring+1"
+      ]
+    },
+    {
+      "ID": 77600000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 77700000,
+      "Entries": [
+        "[Sweet Shalquoir] None"
+      ]
+    },
+    {
+      "ID": 78300000,
+      "Entries": [
+        "[Titchy Gren] Nahr Alma Hood"
+      ]
+    },
+    {
+      "ID": 78400000,
+      "Entries": [
+        "[Cromwell the Pardoner] Ring of Resistance"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "[Blue Sentinel Targray] Blue Knight's Halberd"
+      ]
+    },
+    {
+      "ID": 78501000,
+      "Entries": [
+        "[Blue Sentinel Targray] Blue Knight's Halberd"
+      ]
+    },
+    {
+      "ID": 78600000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "[Unknown] Hollow Soldier Set- Zweihander- Varangian Shield"
+      ]
+    },
+    {
+      "ID": 81000100,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81000200,
+      "Entries": [
+        "[Unknown] Hollow Soldier Set- Zweihander- Varangian Shield"
+      ]
+    },
+    {
+      "ID": 81000300,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81000400,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81200000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81200100,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81300000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81400000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 81400800,
+      "Entries": [
+        "[Unknown] Prisoner's Hood- Prisoner's Tatters- Prisoner's Gloves- Greataxe"
+      ]
+    },
+    {
+      "ID": 81400900,
+      "Entries": [
+        "[Unknown] Greataxe"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "[Unknown] Winged Spear"
+      ]
+    },
+    {
+      "ID": 82000100,
+      "Entries": [
+        "[Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 82000200,
+      "Entries": [
+        "[Unknown] Hollow Soldier Set- Winged Spear- Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "[Unknown] Warlock Mask- Priestess Robe- Priestess Gloves- Priestess Skirt- Cursed Bone Shield"
+      ]
+    },
+    {
+      "ID": 82100100,
+      "Entries": [
+        "[Unknown] Warlock Mask- Priestess Robe- Priestess Gloves- Priestess Skirt- Cursed Bone Shield"
+      ]
+    },
+    {
+      "ID": 82200000,
+      "Entries": [
+        "[Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 82200100,
+      "Entries": [
+        "[Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 82200200,
+      "Entries": [
+        "[Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 82200300,
+      "Entries": [
+        "[Unknown] Leydia Black Hood- Leydia Black Robe- Priestess Gloves- Priestess Skirt- Black Witch's Staff- Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 82300000,
+      "Entries": [
+        "[Unknown] Dragon Scale"
+      ]
+    },
+    {
+      "ID": 82400000,
+      "Entries": [
+        "[Unknown] Old Mirrah Greatsword"
+      ]
+    },
+    {
+      "ID": 82400001,
+      "Entries": [
+        "[Unknown] Old Mirrah Greatsword"
+      ]
+    },
+    {
+      "ID": 83100000,
+      "Entries": [
+        "[Unknown] Dingy Set"
+      ]
+    },
+    {
+      "ID": 83110000,
+      "Entries": [
+        "[Unknown] Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 83200000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83210000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83220000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83230000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83240000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83250000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83260000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83270000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83300000,
+      "Entries": [
+        "[Unknown] Tattered Cloth Set"
+      ]
+    },
+    {
+      "ID": 83400000,
+      "Entries": [
+        "[Unknown] Jester's Set"
+      ]
+    },
+    {
+      "ID": 83410000,
+      "Entries": [
+        "[Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield"
+      ]
+    },
+    {
+      "ID": 83500000,
+      "Entries": [
+        "[Unknown] Black Dragon Greataxe"
+      ]
+    },
+    {
+      "ID": 83505000,
+      "Entries": [
+        "[Unknown] Monastery Scimitar- Monastery- Set"
+      ]
+    },
+    {
+      "ID": 83510000,
+      "Entries": [
+        "[Unknown] Black Dragon Warpick- Black Dragon Shield"
+      ]
+    },
+    {
+      "ID": 83520000,
+      "Entries": [
+        "[Unknown] Black Dragon Sword- Black Dragon Shield"
+      ]
+    },
+    {
+      "ID": 83600000,
+      "Entries": [
+        "[Unknown] Mad Warrior Set- Berserker Blade"
+      ]
+    },
+    {
+      "ID": 83600001,
+      "Entries": [
+        "[Unknown] Mad Warrior Set- Berserker Blade"
+      ]
+    },
+    {
+      "ID": 83610000,
+      "Entries": [
+        "[Unknown] Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 83620000,
+      "Entries": [
+        "[Unknown] Black Witch Domino Mask"
+      ]
+    },
+    {
+      "ID": 83630000,
+      "Entries": [
+        "[Unknown] Black Witch Veil"
+      ]
+    },
+    {
+      "ID": 83640000,
+      "Entries": [
+        "[Unknown] Ironclad Helm- Ironclad Armor- Drakekeeper's Great Hammer"
+      ]
+    },
+    {
+      "ID": 83700000,
+      "Entries": [
+        "[Unknown] Imported Set- Shortsword- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 83700001,
+      "Entries": [
+        "[Unknown] Imported Set- Shortsword- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 83710000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83720000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83730000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 83800000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 83810000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 84000000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 84100000,
+      "Entries": [
+        "[Unknown] Wood Arrow"
+      ]
+    },
+    {
+      "ID": 84200000,
+      "Entries": [
+        "[Unknown] Syan's Set- Mastodon Greatsword- Mastodon Greatshield"
+      ]
+    },
+    {
+      "ID": 84300000,
+      "Entries": [
+        "[Unknown] Knight Set- Heide Knight Sword- Dagger"
+      ]
+    },
+    {
+      "ID": 84400000,
+      "Entries": [
+        "[Unknown] Catarina Set- Broadsword- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 84400001,
+      "Entries": [
+        "[Unknown] Catarina Set- Broadsword- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 84500000,
+      "Entries": [
+        "[Unknown] Falconer Set- Scimitar"
+      ]
+    },
+    {
+      "ID": 84600000,
+      "Entries": [
+        "[Unknown] Peasant Set"
+      ]
+    },
+    {
+      "ID": 84700000,
+      "Entries": [
+        "[Unknown] Token of Spite- Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 84710000,
+      "Entries": [
+        "[Unknown] Token of Fidelity- Cracked Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 84800000,
+      "Entries": [
+        "[Unknown] Leydia White Set- Imperious Leggings- Blue Flame"
+      ]
+    },
+    {
+      "ID": 84810000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 84900000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 84900001,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 84910000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 84920000,
+      "Entries": [
+        "[Unknown] Aurous Set- Shotel- Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 85000000,
+      "Entries": [
+        "[Unknown] Monastery Set- Monastery Scimitar"
+      ]
+    },
+    {
+      "ID": 85000001,
+      "Entries": [
+        "[Unknown] Monastery Set- Monastery Scimitar"
+      ]
+    },
+    {
+      "ID": 85100000,
+      "Entries": [
+        "[Unknown] Brigand Set- Full Moon Sickle"
+      ]
+    },
+    {
+      "ID": 85200000,
+      "Entries": [
+        "[Unknown] Greatsword- Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "[Unknown] Royal Swordsman Set- Avelyn"
+      ]
+    },
+    {
+      "ID": 85310000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 85320000,
+      "Entries": [
+        "[Unknown] Drakekeeper Set- Drakekeeper's Warpick"
+      ]
+    },
+    {
+      "ID": 85330000,
+      "Entries": [
+        "[Unknown] Elite Knight Set- Longsword"
+      ]
+    },
+    {
+      "ID": 85340000,
+      "Entries": [
+        "[Unknown] Durgo's Hat"
+      ]
+    },
+    {
+      "ID": 85340001,
+      "Entries": [
+        "[Unknown] Durgo's Hat"
+      ]
+    },
+    {
+      "ID": 85350000,
+      "Entries": [
+        "[Unknown] Syan's Set- Tower Shield"
+      ]
+    },
+    {
+      "ID": 85400000,
+      "Entries": [
+        "[Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield"
+      ]
+    },
+    {
+      "ID": 85400001,
+      "Entries": [
+        "[Unknown] Aurous Set- Stone Twinblade- Old Knight's Shield"
+      ]
+    },
+    {
+      "ID": 86200000,
+      "Entries": [
+        "[Unknown] Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 86300000,
+      "Entries": [
+        "[Unknown] Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 86400000,
+      "Entries": [
+        "[Unknown] Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 87110000,
+      "Entries": [
+        "[Unknown] Alva Set- Human Effigy"
+      ]
+    },
+    {
+      "ID": 87200000,
+      "Entries": [
+        "[Unknown] Black Hollow Mage Set- Caitha's Chime"
+      ]
+    },
+    {
+      "ID": 87300000,
+      "Entries": [
+        "[Unknown] Wanderer Set- Notched Whip- Crimson Parma"
+      ]
+    },
+    {
+      "ID": 87900000,
+      "Entries": [
+        "[Unknown] None"
+      ]
+    },
+    {
+      "ID": 88100000,
+      "Entries": [
+        "[Unknown] Mad Warrior Set- Berserker Blade"
+      ]
+    },
+    {
+      "ID": 88200000,
+      "Entries": [
+        "[Unknown] Mad Warrior Set- Berserker Blade"
+      ]
+    },
+    {
+      "ID": 88300000,
+      "Entries": [
+        "[Unknown] Knight Set- Divine Blessing"
+      ]
+    },
+    {
+      "ID": 88310000,
+      "Entries": [
+        "[Unknown] Elite Knight Set- Divine Blessing"
+      ]
+    },
+    {
+      "ID": 88320000,
+      "Entries": [
+        "[Unknown] Elite Knight Set- Divine Blessing"
+      ]
+    },
+    {
+      "ID": 88500000,
+      "Entries": [
+        "[Unknown] Faraam Set- Radiant Lifegem"
+      ]
+    },
+    {
+      "ID": 88510000,
+      "Entries": [
+        "[Unknown] Archdrake Helm- Twilight Herb"
+      ]
+    },
+    {
+      "ID": 88700000,
+      "Entries": [
+        "[Unknown] Black Witch Set"
+      ]
+    },
+    {
+      "ID": 89600000,
+      "Entries": [
+        "[Unknown] Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 89650000,
+      "Entries": [
+        "[Unknown] Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 89700000,
+      "Entries": [
+        "[Unknown] Sanctum Priestess Tiara"
+      ]
+    },
+    {
+      "ID": 89750000,
+      "Entries": [
+        "[Unknown] Clear Bluestone Ring+2"
+      ]
+    },
+    {
+      "ID": 89800000,
+      "Entries": [
+        "[Unknown] Minotaur Helm"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 99990001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    }
+  ]
+}

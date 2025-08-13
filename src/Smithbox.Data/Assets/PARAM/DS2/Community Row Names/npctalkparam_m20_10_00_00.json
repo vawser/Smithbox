@@ -1,0 +1,323 @@
+{
+  "Name": "npctalkparam_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 72400000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 72400010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 72400110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400200,
+      "Entries": [
+        "Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 72400210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400300,
+      "Entries": [
+        "Talking To: Part 4"
+      ]
+    },
+    {
+      "ID": 72400310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400340,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400350,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400400,
+      "Entries": [
+        "Talking To: Part 5"
+      ]
+    },
+    {
+      "ID": 72400410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400440,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72400500,
+      "Entries": [
+        "Talking To: Part 6"
+      ]
+    },
+    {
+      "ID": 72400510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72406000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 72406010,
+      "Entries": [
+        "↓ Clear giant memory C"
+      ]
+    },
+    {
+      "ID": 72409000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 72409100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 72409200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 72409300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 72409400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72409410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72409420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72409500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 72409600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 74303000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 74303010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74303020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74303100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 74303110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74303120,
+      "Entries": [
+        "↓ White phantom appearance possible"
+      ]
+    },
+    {
+      "ID": 74306000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 74306010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74309000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 74309100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 74309200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 74309300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 74309400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 74309600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

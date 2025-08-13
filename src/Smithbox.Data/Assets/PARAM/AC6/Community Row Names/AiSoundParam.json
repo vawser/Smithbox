@@ -1,0 +1,209 @@
+{
+  "Name": "AiSoundParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (do not edit)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "walking"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "running"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "boost move"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "QB"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "jump"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Boost increase"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Landing small"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Large landing"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "assault boost"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "wall kick"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "4 legs: hovering"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Tank: Drift"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "spare"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Attack hit sound_small"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Attack hit sound_medium"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack hit sound_Large"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Attack hit sound_extra large"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Attack hit sound_Big landing that lures you"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Attack hit sound_extremely small"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Attack occurrence sound_small"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Attack sound_medium"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Attack generation sound_Large"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Attack occurrence sound_stealth throw"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Attack occurrence sound_silencer"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Object destruction sound small"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Object destruction sound"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Object destruction sound loud"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "death sound"
+      ]
+    }
+  ]
+}

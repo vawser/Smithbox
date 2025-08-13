@@ -1,0 +1,233 @@
+{
+  "Name": "MenuValueTableParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Required Skills SABCDE"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Consumption Type"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Magic stone slot shape"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Body Gem Type"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Holy Grail Type"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "PC Damage reduction rate evaluation SABCDE"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Armor damage reduction rate evaluation SABCDE"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "null"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

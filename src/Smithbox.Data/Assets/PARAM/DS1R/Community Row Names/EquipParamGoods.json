@@ -1,0 +1,1541 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "White Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Red Sign Soapstone"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Black Separation Crystal"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Orange Guidance Soapstone"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Book of the Guilty"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Eye of Death"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Servant Roster"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Dragon Eye"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Black Eye Orb -"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Black Eye Orb -"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Darksign"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Purple Coward's Crystal"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Estus Flask"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Estus Flask - Drained"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Estus Flask +1"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Estus Flask +1 - Drained"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Estus Flask +2"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Estus Flask +2 - Drained"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Estus Flask +3"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Estus Flask +3 - Drained"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Estus Flask +4"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Estus Flask +4 - Drained"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Estus Flask +5"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Estus Flask +5 - Drained"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Estus Flask +6"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Estus Flask +6 - Drained"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Estus Flask +7"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Estus Flask +7 - Drained"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Silver Pendant"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Elizabeth's Mushroom"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Divine Blessing"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Green Blossom"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Bloodred Moss Clump"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Blooming Purple Moss Clump"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "Purging Stone"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Egg Vermifuge"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Repair Powder"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Throwing Knife"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "Poison Throwing Knife"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "Firebomb"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "Dung Pie"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "Alluring Skull"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "Lloyd's Talisman"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "Black Firebomb"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Charcoal Pine Resin"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Gold Pine Resin"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "Transient Curse"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "Rotten Pine Resin"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Homeward Bone"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Prism Stone"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Binoculars"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "Indictment"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "Souvenir of Reprisal"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "Sunlight Medal"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "Pendant"
+      ]
+    },
+    {
+      "ID": 377,
+      "Entries": [
+        "Dragon Head Stone"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "Dragon Torso Stone"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Rubbish"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Copper Coin"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "Silver Coin"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "Gold Coin"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Peculiar Doll"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "Dried Finger"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 396,
+      "Entries": [
+        "Fire Keeper Soul"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Large Soul of a Lost Undead"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Large Soul of a Nameless Soldier"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Large Soul of a Proud Knight"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Large Soul of a Brave Warrior"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Soul of a Hero"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Soul of a Great Hero"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Humanity"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Twin Humanities"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Hello Carving"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Thank you Carving"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Very good! Carving"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "I'm sorry Carving"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Help me! Carving"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Soul of Quelaag"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Soul of Sif"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Soul of Gwyn, Lord of Cinder"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Core of an Iron Golem"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Soul of Ornstein"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Soul of the Moonlight Butterfly"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "Soul of Smough"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "Soul of Priscilla"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "Soul of Gwyndolin"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "Guardian Soul"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Soul of Artorias"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "Soul of Manus"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Large Ember"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Very Large Ember"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Crystal Ember"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Large Magic Ember"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Enchanted Ember"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Divine Ember"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Large Divine Ember"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Dark Ember"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "Large Flame Ember"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "Chaos Flame Ember"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Large Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Green Titanite Shard"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Blue Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "White Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Red Titanite Chunk"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Blue Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "White Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Red Titanite Slab"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Dragon Scale"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Demon Titanite"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Twinkling Titanite"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Basement Key"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Crest of Artorias"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Cage Key"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Archive Tower Cell Key"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Archive Tower Giant Door Key"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Archive Tower Giant Cell Key"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Blighttown Key"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Key to New Londo Ruins"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Annex Key"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Dungeon Cell Key"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Big Pilgrim's Key"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Undead Asylum F2 East Key"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Key to the Seal"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Key to Depths"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Lift Chamber Key"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Undead Asylum F2 West Key"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Mystery Key"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Sewer Chamber Key"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Watchtower Basement Key"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Archive Prison Extra Key"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Residence Key"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Crest Key"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Master Key"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Unused] Blacksmith's favorite"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Lord Soul"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Lord Soul"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Bequeathed Lord Soul Shard"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "[Unused] Demon Fire 5"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Lordvessel"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "Broken Pendant"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Weapon Smithbox"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "Armor Smithbox"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "Repairbox"
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        "[Unused] Magic Equipment Menu Unlock"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "[Unused] Item sale menu unlock"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "[Unused] Warp menu unlock"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "[Unused] Level up menu unlock"
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        "Rite of Kindling"
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        "Bottomless Box"
+      ]
+    },
+    {
+      "ID": 2609,
+      "Entries": [
+        "[Unused] Extra menu unlock"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Great Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Great Heavy Soul Arrow"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Homing Soulmass"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Homing Crystal Soulmass"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Soul Spear"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Crystal Soul Spear"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Great Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Crystal Magic Weapon"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Strong Magic Shield"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Hidden Weapon"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Hidden Body"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Cast Light"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Hush"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Aural Decoy"
+      ]
+    },
+    {
+      "ID": 3530,
+      "Entries": [
+        "Repair"
+      ]
+    },
+    {
+      "ID": 3540,
+      "Entries": [
+        "Fall Control"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Chameleon"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "Resist Curse"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Remedy"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "White Dragon Breath"
+      ]
+    },
+    {
+      "ID": 3710,
+      "Entries": [
+        "Dark Orb"
+      ]
+    },
+    {
+      "ID": 3720,
+      "Entries": [
+        "Dark Bead"
+      ]
+    },
+    {
+      "ID": 3730,
+      "Entries": [
+        "Dark Fog"
+      ]
+    },
+    {
+      "ID": 3740,
+      "Entries": [
+        "Pursuers"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Fireball"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Fire Orb"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Great Fireball"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Firestorm"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Fire Tempest"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Fire Surge"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Fire Whip"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Combustion"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Great Combustion"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Poison Mist"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Toxic Mist"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Acid Surge"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "Iron Flesh"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "Flash Sweat"
+      ]
+    },
+    {
+      "ID": 4360,
+      "Entries": [
+        "Undead Rapport"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "Power Within"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Great Chaos Fireball"
+      ]
+    },
+    {
+      "ID": 4510,
+      "Entries": [
+        "Chaos Storm"
+      ]
+    },
+    {
+      "ID": 4520,
+      "Entries": [
+        "Chaos Fire Whip"
+      ]
+    },
+    {
+      "ID": 4530,
+      "Entries": [
+        "Black Flame"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Heal"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Great Heal"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Great Heal Excerpt"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Soothing Sunlight"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Replenishment"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Bountiful Sunlight"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Gravelord Sword Dance"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Gravelord Greatsword Dance"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Escape Death"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Homeward"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Force"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Wrath of the Gods"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Emit Force"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Seek Guidance"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "Great Lightning Spear"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "Sunlight Spear"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "Great Magic Barrier"
+      ]
+    },
+    {
+      "ID": 5700,
+      "Entries": [
+        "Karmic Justice"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Tranquil Walk of Peace"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "Vow of Silence"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Sunlight Blade"
+      ]
+    },
+    {
+      "ID": 5910,
+      "Entries": [
+        "Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Beckon"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Point forward"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Hurrah!"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Joy"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Shrug"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Praise the Sun"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Point up"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Point down"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Look skyward"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Well! What is it!"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Prostration"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Proper bow"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "Prayer"
+      ]
+    }
+  ]
+}

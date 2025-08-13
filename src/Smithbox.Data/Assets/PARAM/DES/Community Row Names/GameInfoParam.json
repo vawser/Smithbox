@@ -1,0 +1,107 @@
+{
+  "Name": "GameInfoParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Seoul"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "daemon"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "'Colorless' dense fog"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "galantaria"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "King Lendl"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Keystone"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Demon's Soul"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "ghost"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "soul sign"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "white ghost"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "black ghost"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Wedge Temple"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Royal Capital Galantaria"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Shrine of the Storm"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Tower of Anatolia"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "rotten valley"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Huangsein Tunnel"
+      ]
+    }
+  ]
+}

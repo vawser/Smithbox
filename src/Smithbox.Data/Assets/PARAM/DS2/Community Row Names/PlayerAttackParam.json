@@ -1,0 +1,209 @@
+{
+  "Name": "PlayerAttackParam",
+  "Entries": [
+    {
+      "ID": 61141,
+      "Entries": [
+        "Close, Speed, Left, 4 -- 近・速・左・4"
+      ]
+    },
+    {
+      "ID": 61151,
+      "Entries": [
+        "Close, Speed, Left, 5 -- 近・速・左・5"
+      ]
+    },
+    {
+      "ID": 61161,
+      "Entries": [
+        "Close, Speed, Left, 6 -- 近・速・左・6"
+      ]
+    },
+    {
+      "ID": 61241,
+      "Entries": [
+        "Near, Speed, Right, 4 -- 近・速・右・4"
+      ]
+    },
+    {
+      "ID": 61251,
+      "Entries": [
+        "Near, Speed, Right, 5 -- 近・速・右・5"
+      ]
+    },
+    {
+      "ID": 61261,
+      "Entries": [
+        "Near, Speed, Right, 6 -- 近・速・右・6"
+      ]
+    },
+    {
+      "ID": 62131,
+      "Entries": [
+        "Kin, Fu, Left, 3 -- 近・普・左・3"
+      ]
+    },
+    {
+      "ID": 62132,
+      "Entries": [
+        "Kin, Fu, Left, 3 -- 近・普・左・3"
+      ]
+    },
+    {
+      "ID": 62211,
+      "Entries": [
+        "Kin, Fu, Right, 1 -- 近・普・右・1"
+      ]
+    },
+    {
+      "ID": 62212,
+      "Entries": [
+        "Kin, Fu, Right, 1 -- 近・普・右・1"
+      ]
+    },
+    {
+      "ID": 63111,
+      "Entries": [
+        "Close, Late, Left, 1 -- 近・遅・左・1"
+      ]
+    },
+    {
+      "ID": 63112,
+      "Entries": [
+        "Close, Late, Left, 1 -- 近・遅・左・1"
+      ]
+    },
+    {
+      "ID": 63211,
+      "Entries": [
+        "Close, Late, Right, 1 -- 近・遅・右・1"
+      ]
+    },
+    {
+      "ID": 63212,
+      "Entries": [
+        "Close, Late, Right, 1 -- 近・遅・右・1"
+      ]
+    },
+    {
+      "ID": 64131,
+      "Entries": [
+        "Medium, Speed, Left, 3 -- 中・速・左・3"
+      ]
+    },
+    {
+      "ID": 64132,
+      "Entries": [
+        "Medium, Speed, Left, 3 -- 中・速・左・3"
+      ]
+    },
+    {
+      "ID": 64271,
+      "Entries": [
+        "Medium, Fast, Right, 7 -- 中・速・右・7"
+      ]
+    },
+    {
+      "ID": 64272,
+      "Entries": [
+        "Medium, Fast, Right, 7 -- 中・速・右・7"
+      ]
+    },
+    {
+      "ID": 65131,
+      "Entries": [
+        "Middle, Fu, Left, 3 -- 中・普・左・3"
+      ]
+    },
+    {
+      "ID": 65132,
+      "Entries": [
+        "Middle, Fu, Left, 3 -- 中・普・左・3"
+      ]
+    },
+    {
+      "ID": 65211,
+      "Entries": [
+        "Middle, Fu, Right, 1 -- 中・普・右・1"
+      ]
+    },
+    {
+      "ID": 65212,
+      "Entries": [
+        "Middle, Fu, Right, 1 -- 中・普・右・1"
+      ]
+    },
+    {
+      "ID": 66111,
+      "Entries": [
+        "Medium, Slow, Left, 1 -- 中・遅・左・1"
+      ]
+    },
+    {
+      "ID": 66112,
+      "Entries": [
+        "Medium, Slow, Left, 1 -- 中・遅・左・1"
+      ]
+    },
+    {
+      "ID": 66211,
+      "Entries": [
+        "Medium, Slow, Right, 1 -- 中・遅・右・1"
+      ]
+    },
+    {
+      "ID": 66212,
+      "Entries": [
+        "Medium, Slow, Right, 1 -- 中・遅・右・1"
+      ]
+    },
+    {
+      "ID": 68131,
+      "Entries": [
+        "Distance, Fu, Left, 3 -- 遠・普・左・3"
+      ]
+    },
+    {
+      "ID": 68132,
+      "Entries": [
+        "Distance, Fu, Left, 3 -- 遠・普・左・3"
+      ]
+    },
+    {
+      "ID": 68211,
+      "Entries": [
+        "Distance, Fu, Right, 1 -- 遠・普・右・1"
+      ]
+    },
+    {
+      "ID": 68212,
+      "Entries": [
+        "Distance, Fu, Right, 1 -- 遠・普・右・1"
+      ]
+    },
+    {
+      "ID": 69111,
+      "Entries": [
+        "Far, Late, Left, 1 -- 遠・遅・左・1"
+      ]
+    },
+    {
+      "ID": 69112,
+      "Entries": [
+        "Far, Late, Left, 1 -- 遠・遅・左・1"
+      ]
+    },
+    {
+      "ID": 69211,
+      "Entries": [
+        "Far, Slow, Right, 1 -- 遠・遅・右・1"
+      ]
+    },
+    {
+      "ID": 69212,
+      "Entries": [
+        "Far, Slow, Right, 1 -- 遠・遅・右・1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,809 @@
+{
+  "Name": "mapobjectinstanceparam_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 10150400,
+      "Entries": [
+        "[One door] the door that leads to the small room on the prison"
+      ]
+    },
+    {
+      "ID": 10150405,
+      "Entries": [
+        "[Key door] the key door to the laboratory"
+      ]
+    },
+    {
+      "ID": 10150410,
+      "Entries": [
+        "【One door】One door of the iron bar"
+      ]
+    },
+    {
+      "ID": 10150415,
+      "Entries": [
+        "【One door】 【General purpose】One iron door Heavy (castle, fort door) 1"
+      ]
+    },
+    {
+      "ID": 10150420,
+      "Entries": [
+        "【One door】 【General purpose】One iron door Heavy (castle, fort door) 2"
+      ]
+    },
+    {
+      "ID": 10150431,
+      "Entries": [
+        "【Both doors】 Bone Dragon Entrance"
+      ]
+    },
+    {
+      "ID": 10150432,
+      "Entries": [
+        "[Both doors] the door between the two augers"
+      ]
+    },
+    {
+      "ID": 10150433,
+      "Entries": [
+        "[Both doors] auger destruction door in front of the boss white door"
+      ]
+    },
+    {
+      "ID": 10150600,
+      "Entries": [
+        "【White Door】In front of the boss"
+      ]
+    },
+    {
+      "ID": 10150601,
+      "Entries": [
+        "【White Door】After Boss"
+      ]
+    },
+    {
+      "ID": 10150602,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 10150650,
+      "Entries": [
+        "In front of the building"
+      ]
+    },
+    {
+      "ID": 10150655,
+      "Entries": [
+        "【Bonfire】Basement Stairs Hidden Door Room"
+      ]
+    },
+    {
+      "ID": 10150700,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10150701,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10150702,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10150703,
+      "Entries": [
+        "Brazier"
+      ]
+    },
+    {
+      "ID": 10150710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10150711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10150712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10150713,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151001,
+      "Entries": [
+        "【Other】 The first organ destruction wall in the front of the insect key passage"
+      ]
+    },
+    {
+      "ID": 10151002,
+      "Entries": [
+        "【Other】 Oga destruction wall of the worm key passage side way"
+      ]
+    },
+    {
+      "ID": 10151012,
+      "Entries": [
+        "【Other】 Lantern_03 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151013,
+      "Entries": [
+        "【Other】 Lantern_04 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151014,
+      "Entries": [
+        "【Other】 Lantern_05 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151015,
+      "Entries": [
+        "【Other】 Lantern_06 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151016,
+      "Entries": [
+        "【Other】 Lantern_07 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151017,
+      "Entries": [
+        "【Other】 Lantern_08 lit with insect key"
+      ]
+    },
+    {
+      "ID": 10151020,
+      "Entries": [
+        "The wall leading to the small room on the prison"
+      ]
+    },
+    {
+      "ID": 10151025,
+      "Entries": [
+        "The auger destruction wall in front of the boss white door"
+      ]
+    },
+    {
+      "ID": 10151040,
+      "Entries": [
+        "【Other】 Cage destroyed by basilrisk in the"
+      ]
+    },
+    {
+      "ID": 10151041,
+      "Entries": [
+        "【Other】 Cage with giant poison horn insect in the"
+      ]
+    },
+    {
+      "ID": 10151050,
+      "Entries": [
+        "[Other] cart _ bone dragon destruction that has enemies in"
+      ]
+    },
+    {
+      "ID": 10151051,
+      "Entries": [
+        "[Other] as soon as you enter _MAP cart that has an enemy inside"
+      ]
+    },
+    {
+      "ID": 10151061,
+      "Entries": [
+        "【Other】 Cart with enemy inside (you can see inside)"
+      ]
+    },
+    {
+      "ID": 10151062,
+      "Entries": [
+        "【Other】 Cart with enemy inside (you can see inside)"
+      ]
+    },
+    {
+      "ID": 10151070,
+      "Entries": [
+        "【Other】 Suspended destruction cage in front of auger passage"
+      ]
+    },
+    {
+      "ID": 10151080,
+      "Entries": [
+        "【Other】 Ground destruction cage in the back of the auger passage"
+      ]
+    },
+    {
+      "ID": 10151090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151091,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151092,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151093,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151094,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10151200,
+      "Entries": [
+        "Paintings that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10151201,
+      "Entries": [
+        "Paintings that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10151202,
+      "Entries": [
+        "Paintings that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10151203,
+      "Entries": [
+        "Paintings that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10151204,
+      "Entries": [
+        "Paintings that can be destroyed"
+      ]
+    },
+    {
+      "ID": 10151600,
+      "Entries": [
+        "【Other】 Mirror Night Mirror_1"
+      ]
+    },
+    {
+      "ID": 10151605,
+      "Entries": [
+        "【Other】 Mirror Night Mirror_2"
+      ]
+    },
+    {
+      "ID": 10151610,
+      "Entries": [
+        "【Other】 Mirror Night Mirror_3"
+      ]
+    },
+    {
+      "ID": 10151615,
+      "Entries": [
+        "【Other】 Mirror Night Mirror_4"
+      ]
+    },
+    {
+      "ID": 10151620,
+      "Entries": [
+        "【Other】 Mirror Night Mirror_5"
+      ]
+    },
+    {
+      "ID": 10151700,
+      "Entries": [
+        "Hidden doors (no key guide) _ stairs to the basement"
+      ]
+    },
+    {
+      "ID": 10152000,
+      "Entries": [
+        "【Elevator】 -Nest of the guard dragon"
+      ]
+    },
+    {
+      "ID": 10152500,
+      "Entries": [
+        "【Lever】 Lifting lever_bottom"
+      ]
+    },
+    {
+      "ID": 10152505,
+      "Entries": [
+        "【Lever】 On elevator lever"
+      ]
+    },
+    {
+      "ID": 10152510,
+      "Entries": [
+        "【Lever】The mouth of the dragon statue"
+      ]
+    },
+    {
+      "ID": 10152515,
+      "Entries": [
+        "【Lever】Door in front of insect key_ huge cage side"
+      ]
+    },
+    {
+      "ID": 10152520,
+      "Entries": [
+        "【Lever】Door in front of insect key_insect key side"
+      ]
+    },
+    {
+      "ID": 10152525,
+      "Entries": [
+        "【Lever】 For NPC rescue"
+      ]
+    },
+    {
+      "ID": 10152530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10152700,
+      "Entries": [
+        "Door in front of insect key_ huge cage side"
+      ]
+    },
+    {
+      "ID": 10152705,
+      "Entries": [
+        "Door in front of insect key"
+      ]
+    },
+    {
+      "ID": 10152710,
+      "Entries": [
+        "Magic barriers for enclosed people"
+      ]
+    },
+    {
+      "ID": 10152800,
+      "Entries": [
+        "Togetge Wall"
+      ]
+    },
+    {
+      "ID": 10152801,
+      "Entries": [
+        "Togetge Wall"
+      ]
+    },
+    {
+      "ID": 10152802,
+      "Entries": [
+        "Togetge Wall"
+      ]
+    },
+    {
+      "ID": 10152803,
+      "Entries": [
+        "Togetge Wall"
+      ]
+    },
+    {
+      "ID": 10153000,
+      "Entries": [
+        "【Other】Wyburn Site OBJ"
+      ]
+    },
+    {
+      "ID": 10153100,
+      "Entries": [
+        "NPC Chair"
+      ]
+    },
+    {
+      "ID": 10153800,
+      "Entries": [
+        "【Environmental Map ID】Falling Picture (Ryu no Laboratory)"
+      ]
+    },
+    {
+      "ID": 10153801,
+      "Entries": [
+        "【Environmental Map ID】Falling Picture (Ryu no Laboratory)"
+      ]
+    },
+    {
+      "ID": 10153802,
+      "Entries": [
+        "【Environmental Map ID】Experimental Instrument Set"
+      ]
+    },
+    {
+      "ID": 10153803,
+      "Entries": [
+        "【Environmental Map ID】Wall Mount Candlestick B"
+      ]
+    },
+    {
+      "ID": 10153900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a pot of high-looking pottery"
+      ]
+    },
+    {
+      "ID": 10153901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a pot of high-looking pottery"
+      ]
+    },
+    {
+      "ID": 10153902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a pot of high-looking pottery"
+      ]
+    },
+    {
+      "ID": 10153903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a pot of high-looking pottery"
+      ]
+    },
+    {
+      "ID": 10153904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] round table"
+      ]
+    },
+    {
+      "ID": 10153911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] round table"
+      ]
+    },
+    {
+      "ID": 10153912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] round table"
+      ]
+    },
+    {
+      "ID": 10153913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] round table"
+      ]
+    },
+    {
+      "ID": 10153914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Painting"
+      ]
+    },
+    {
+      "ID": 10153921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Painting"
+      ]
+    },
+    {
+      "ID": 10153922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Painting"
+      ]
+    },
+    {
+      "ID": 10153923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Painting"
+      ]
+    },
+    {
+      "ID": 10153924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10153945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10154000,
+      "Entries": [
+        "【NPC】Tomb_Female Knight"
+      ]
+    },
+    {
+      "ID": 10154001,
+      "Entries": [
+        "【NPC】Tomb_Enclosed Man"
+      ]
+    },
+    {
+      "ID": 10154900,
+      "Entries": [
+        "Insect Keys"
+      ]
+    },
+    {
+      "ID": 10155000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10155010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10155020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10155030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10156000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10156200,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

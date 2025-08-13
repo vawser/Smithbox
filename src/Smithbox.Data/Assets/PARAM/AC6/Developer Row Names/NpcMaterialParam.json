@@ -1,0 +1,762 @@
+{
+  "Name": "NpcMaterialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- 無し"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆",
+        "Default_Archibus_Rust -- デフォルト_アーキバス_錆"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆",
+        "Default_Baylum_Rust -- デフォルト_ベイラム_錆"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆",
+        "Default_Ash People_Rust -- デフォルト_灰の民_錆"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆",
+        "Default_blocking mechanism_rust -- デフォルト_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆",
+        "Default_Corporate Federation_Rust -- デフォルト_企業連合_錆"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆",
+        "Default_Melange Drunker_Rust -- デフォルト_メランジドランカー_錆"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆",
+        "Default_Junker Coyotes_Rust -- デフォルト_ジャンカーコヨーテス_錆"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "Security MT_Battered_Rust 4 -- 警備MT_ボロボロ_錆用4",
+        "Security MT_Battered_Rust 4 -- 警備MT_ボロボロ_錆用4",
+        "Security MT_Battered_Rust 4 -- 警備MT_ボロボロ_錆用4",
+        "Security MT_Battered_Rust 4 -- 警備MT_ボロボロ_錆用4"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4",
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4",
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4",
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4",
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4",
+        "Communist MT_Archibus_Rust 4 -- 共産MT_アーキバス_錆用4"
+      ]
+    },
+    {
+      "ID": 30201010,
+      "Entries": [
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ",
+        "Communist MT_Archibus (Green Monoeye)_Monoeye -- 共産MT_アーキバス(緑モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4",
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4",
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4",
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4",
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4",
+        "Communist MT_Baylum_Rust 4 -- 共産MT_ベイラム_錆用4"
+      ]
+    },
+    {
+      "ID": 30202010,
+      "Entries": [
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ",
+        "Communist MT_Bayram (Green Monoeye)_Monoeye -- 共産MT_ベイラム(緑モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 30203000,
+      "Entries": [
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4",
+        "Communist MT_tattered_rust 4 -- 共産MT_ボロボロ_錆用4"
+      ]
+    },
+    {
+      "ID": 30203010,
+      "Entries": [
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Communist MT_Battered (Green Monoeye)_Monoeye -- 共産MT_ボロボロ(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 30206000,
+      "Entries": [
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4",
+        "Communist MT_Melange Drunker_Rust 4 -- 共産MT_メランジドランカー_錆用4"
+      ]
+    },
+    {
+      "ID": 30206010,
+      "Entries": [
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Communist MT_Melange Drunker (Green Monoeye)_Monoeye -- 共産MT_メランジドランカー(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 30207000,
+      "Entries": [
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4",
+        "Communist MT_Junker Coyotes_Rust 4 -- 共産MT_ジャンカーコヨーテス_錆用4"
+      ]
+    },
+    {
+      "ID": 30207010,
+      "Entries": [
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Communist MT_Junker Coyotes (Green Monoeye)_Monoeye -- 共産MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 30209998,
+      "Entries": [
+        "Rust test_nakama_rust -- 錆テスト_nakama_錆"
+      ]
+    },
+    {
+      "ID": 30209999,
+      "Entries": [
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆",
+        "Test_nakama_rust -- テスト_nakama_錆"
+      ]
+    },
+    {
+      "ID": 30504000,
+      "Entries": [
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆",
+        "Regular Army MT_Blockade Mechanism_Rust -- 正規軍MT_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 30505000,
+      "Entries": [
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆",
+        "Regular Army MT_Archibus_Rust -- 正規軍MT_アーキバス_錆"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "Flight MT_default (green monoeye)_monoeye -- 飛行MT_デフォルト(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 32004000,
+      "Entries": [
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆",
+        "Avalanche_lockdown mechanism_rust -- アバランチ_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 32504000,
+      "Entries": [
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆",
+        "Regular Army AC_Blockade Mechanism_Rust -- 正規軍AC_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 32505000,
+      "Entries": [
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆",
+        "Regular Army AC_Archibus_Rust -- 正規軍AC_アーキバス_錆"
+      ]
+    },
+    {
+      "ID": 32604000,
+      "Entries": [
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆",
+        "Regular Army AC Heavy Class_Block Mechanism_Rust -- 正規軍AC 重量級_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 32605000,
+      "Entries": [
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆",
+        "Regular Army AC Heavy Class_Archibus_Rust -- 正規軍AC 重量級_アーキバス_錆"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4",
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4",
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4",
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4",
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4",
+        "Quadruped MT_Archibus_Rust 4 -- 四脚MT_アーキバス_錆用4"
+      ]
+    },
+    {
+      "ID": 34001010,
+      "Entries": [
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Archibus (Green Monoeye)_Monoeye -- 四脚MT_アーキバス(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4",
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4",
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4",
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4",
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4",
+        "Quadruped MT_Baylum_Rust 4 -- 四脚MT_ベイラム_錆用4"
+      ]
+    },
+    {
+      "ID": 34002010,
+      "Entries": [
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Baylum (green monoeye)_Monoeye -- 四脚MT_ベイラム(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4",
+        "Quadruped MT_Battered_Rust 4 -- 四脚MT_ボロボロ_錆用4"
+      ]
+    },
+    {
+      "ID": 34003010,
+      "Entries": [
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Tattered (green mono-eye)_Mono-eye -- 四脚MT_ボロボロ(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 34006000,
+      "Entries": [
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4",
+        "Quadruped MT_Melange Drunker_For Rust 4 -- 四脚MT_メランジドランカー_錆用4"
+      ]
+    },
+    {
+      "ID": 34006010,
+      "Entries": [
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Melange Drunker (Green Monoeye)_Monoeye -- 四脚MT_メランジドランカー(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 34007000,
+      "Entries": [
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4",
+        "Quadruped MT_Junker Coyotes_Rust 4 -- 四脚MT_ジャンカーコヨーテス_錆用4"
+      ]
+    },
+    {
+      "ID": 34007010,
+      "Entries": [
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ",
+        "Quadruped MT_Junker Coyotes (Green Monoeye)_Monoeye -- 四脚MT_ジャンカーコヨーテス(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Old World MT_Default (Green Monoeye)_Monoeye -- 旧世界MT_デフォルト(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 36006000,
+      "Entries": [
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4",
+        "Construction Machinery Spider_Melange Drunker_For Rust 4 -- 建機クモ_メランジドランカー_錆用4"
+      ]
+    },
+    {
+      "ID": 36007000,
+      "Entries": [
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4",
+        "Construction Machinery Spider_Junker Coyotes_Rust 4 -- 建機クモ_ジャンカーコヨーテス_錆用4"
+      ]
+    },
+    {
+      "ID": 37000001,
+      "Entries": [
+        "Deleter_default right arm no emissive_right arm -- デリーター_デフォルトで右腕エミッシブ無し_右腕"
+      ]
+    },
+    {
+      "ID": 37000010,
+      "Entries": [
+        "Deleter_default(green monoeye)_monoeye -- デリーター_デフォルト(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 37000011,
+      "Entries": [
+        "Deleter_No right arm emissive by default (green monoeye)_Monoeye -- デリーター_デフォルトで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleter_No right arm emissive by default (green monoeye)_Monoeye -- デリーター_デフォルトで右腕エミッシブ無し(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 37003000,
+      "Entries": [
+        "Deleter_tattered_rust 4 -- デリーター_ボロボロ_錆用4",
+        "Deleter_tattered_rust 4 -- デリーター_ボロボロ_錆用4",
+        "Deleter_tattered_rust 4 -- デリーター_ボロボロ_錆用4",
+        "Deleter_tattered_rust 4 -- デリーター_ボロボロ_錆用4"
+      ]
+    },
+    {
+      "ID": 37003001,
+      "Entries": [
+        "Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕",
+        "Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕",
+        "Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕",
+        "Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕",
+        "Deleteer_Rough and no emissive right arm_Right arm -- デリーター_ボロボロで右腕エミッシブ無し_右腕"
+      ]
+    },
+    {
+      "ID": 37003010,
+      "Entries": [
+        "Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ",
+        "Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ",
+        "Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ",
+        "Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ",
+        "Deleteer_Battered(green monoeye)_Monoeye -- デリーター_ボロボロ(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 37003011,
+      "Entries": [
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ",
+        "Deleteter _ Tattered right arm without emissive (green mono-eye) _ Mono-eye -- デリーター_ボロボロで右腕エミッシブ無し(緑色モノアイ)_モノアイ"
+      ]
+    },
+    {
+      "ID": 40004000,
+      "Entries": [
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆",
+        "Adolf_Blocking Mechanism_Rust -- アードルフ_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 41004000,
+      "Entries": [
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆",
+        "Valkyria live ammunition_blockage mechanism_rust -- ヴァルキュリア実弾_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 41005000,
+      "Entries": [
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆",
+        "Valkyria EN_Corporate Federation_Rust -- ヴァルキュリアEN_企業連合_錆"
+      ]
+    },
+    {
+      "ID": 41506000,
+      "Entries": [
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4",
+        "Special Attack MT_Melange Drunker_Rust 4 -- 特攻MT_メランジドランカー_錆用4"
+      ]
+    },
+    {
+      "ID": 41507000,
+      "Entries": [
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4",
+        "Special attack MT_Junker Coyotes_Rust 4 -- 特攻MT_ジャンカーコヨーテス_錆用4"
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆",
+        "Unique Defo_Green_Archibus_Rust -- ユニークデフォ_緑_アーキバス_錆"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆",
+        "Unique Defo_Green_Baylum_Rust -- ユニークデフォ_緑_ベイラム_錆"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆",
+        "Escort target_Gray_Ash people_Rust -- 護衛対象_グレー_灰の民_錆"
+      ]
+    },
+    {
+      "ID": 60504000,
+      "Entries": [
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆",
+        "Pharaon_Blocking Mechanism_Rust -- ファラオン_封鎖機構_錆"
+      ]
+    },
+    {
+      "ID": 61009000,
+      "Entries": [
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4",
+        "Sea spider_C end 40_for rust 4 -- ウミグモ_Cエンド\u300040_錆用4"
+      ]
+    },
+    {
+      "ID": 72300100,
+      "Entries": [
+        "Grenade turret_snow difference_entire -- グレネード砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 72400100,
+      "Entries": [
+        "Bazooka Battery_Snow Difference_Overall -- バズーカ砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 72500100,
+      "Entries": [
+        "Gatling gun battery_snow difference_whole -- ガトリング砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 72600100,
+      "Entries": [
+        "Twin missile battery_Snow difference_Overall -- 連装ミサイル砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 72610100,
+      "Entries": [
+        "Vertical missile battery_snow difference_entire -- 垂直ミサイル砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 72700100,
+      "Entries": [
+        "Sniper battery_snow difference_entire -- スナイパー砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 73000100,
+      "Entries": [
+        "Speaker turret_snow difference_whole -- スピーカー砲台_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 74010100,
+      "Entries": [
+        "Landing ship main gun_Snow difference_Overall -- 揚陸艦主砲_雪差分_全体"
+      ]
+    },
+    {
+      "ID": 74020100,
+      "Entries": [
+        "Landing ship secondary gun_Snow difference_Overall -- 揚陸艦副砲_雪差分_全体"
+      ]
+    }
+  ]
+}

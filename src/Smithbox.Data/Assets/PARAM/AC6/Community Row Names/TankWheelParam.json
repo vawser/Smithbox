@@ -1,0 +1,60 @@
+{
+  "Name": "TankWheelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "front right, tip",
+        "Front left, tip",
+        "front right, front",
+        "front left, front",
+        "Front right, middle 2",
+        "Front left, middle 2",
+        "right front, back",
+        "left front, back",
+        "right rear, front",
+        "left rear, front",
+        "right rear, rear",
+        "left rear, rear"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "front right, tip",
+        "Front left, tip",
+        "front right, front",
+        "front left, front",
+        "Front right, middle 2",
+        "Front left, middle 2",
+        "right front, back",
+        "left front, back",
+        "right rear, front",
+        "left rear, front",
+        "right rear, rear",
+        "left rear, rear"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "front right, front",
+        "front left, front",
+        "front right, center",
+        "front left, middle",
+        "right front, back",
+        "left front, back",
+        "right rear, front",
+        "left rear, front",
+        "right rear, rear",
+        "left rear, rear"
+      ]
+    }
+  ]
+}

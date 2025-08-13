@@ -1,0 +1,41 @@
+{
+  "Name": "ReinforceSpecParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Enhanced specification test -- 強化仕様テスト"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Dagger -- 短剣"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Direct sword -- 直剣"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Two-handed sword -- 両手剣"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Two-handed oversized sword -- 両手特大剣"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Test Moonlight Sword -- テスト月光剣"
+      ]
+    }
+  ]
+}

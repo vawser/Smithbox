@@ -1,0 +1,113 @@
+{
+  "Name": "EFID_m46_26_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 46260000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 46260050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 46260100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 46260200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 46260500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 46260700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 46260800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 46260900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 46261200,
+      "Entries": [
+        "Character flag (do not reset) (Do not reset)"
+      ]
+    },
+    {
+      "ID": 46261500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 46262100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 46262200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 46262500,
+      "Entries": [
+        "Object flag (reset)"
+      ]
+    },
+    {
+      "ID": 46262700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 46262800,
+      "Entries": [
+        "Boss flag (reset)"
+      ]
+    },
+    {
+      "ID": 46262900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 46268500,
+      "Entries": [
+        "Object act flag"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "MovementRideObjParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Stiglo"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "buggy"
+      ]
+    }
+  ]
+}

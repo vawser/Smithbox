@@ -1,0 +1,83 @@
+{
+  "Name": "MapVolumeFogParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Forest in the Shadow of The Void 1 (Forest of The Stray) -- 虚ろの影の森1（迷いの森）"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Forest of Shadows of The Void (Tunnel to The Castle) -- 虚ろの影の森（王城へのトンネル）"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "The Shadow Forest of Emptiness (The Whole Forest of Strays) -- 虚ろの影の森（迷いの森全体）"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "House of Andy's (Acid Pool) -- アンディールの館（酸溜まり）"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Forest 2 in the Shadow of The Void -- 虚ろの影の森2（迷いの森）"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 999900,
+      "Entries": [
+        "Test map data -- テストマップデータ"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "Name": "WepAbsorpPosParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "WEAPON - Gun"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "WEAPON - Melee"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "WEAPON - Back"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "double shoulder weapon"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "WEAPON - Back Shield"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "WEAPON - Coral Shield"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "extensions"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "FNR weapon mount"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "FNR Shield"
+      ]
+    },
+    {
+      "ID": 90010,
+      "Entries": [
+        "FNR stealth cloak test"
+      ]
+    },
+    {
+      "ID": 90020,
+      "Entries": [
+        "FNR Right Shoulder_Combined Weapon"
+      ]
+    },
+    {
+      "ID": 90030,
+      "Entries": [
+        "FNR vehicle confirmation parts"
+      ]
+    }
+  ]
+}

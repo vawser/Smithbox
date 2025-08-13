@@ -1,0 +1,143 @@
+{
+  "Name": "generatorlocation_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 811,
+      "Entries": [
+        "[GEN:811] Darklurker"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Tenebrous Rogue"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[GEN:1002] Underworld Deadeye"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[GEN:1003] Tenebrous Rogue"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[GEN:1004] A Chip Off the Ol Rock"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[GEN:1005] Pretender to the Xanthous Throne (Male)"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[GEN:1006] Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[GEN:1007] Abyss Ironclad"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[GEN:1008] Pretender to the Xanthous Throne (Female)"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[GEN:1009] The Ghost of Princes Past"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[GEN:1012] Shadowveil Assasin"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[GEN:2000] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[GEN:2001] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[GEN:2002] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[GEN:2003] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[GEN:2004] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[GEN:2005] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[GEN:2006] Darklurker (Portal)"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[GEN:2100] Darklurker (Clone)"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[GEN:3100] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Forest Spirit"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[GEN:3210] Forest Spirit"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "Name": "mapobjectinstanceparam_m10_02_00_00",
+  "Entries": [
+    {
+      "ID": 10020400,
+      "Entries": [
+        "One Door 01"
+      ]
+    },
+    {
+      "ID": 10020405,
+      "Entries": [
+        "One Door 02"
+      ]
+    },
+    {
+      "ID": 10020410,
+      "Entries": [
+        "[Door] Wooden Door in Second Tutorial Area"
+      ]
+    },
+    {
+      "ID": 10020500,
+      "Entries": [
+        "[Ladder] lower ladder"
+      ]
+    },
+    {
+      "ID": 10020501,
+      "Entries": [
+        "Ladder: The road to the coffin"
+      ]
+    },
+    {
+      "ID": 10020502,
+      "Entries": [
+        "[Ladder] before the fall attack"
+      ]
+    },
+    {
+      "ID": 10020600,
+      "Entries": [
+        "[Fog Wall] First Tutorial Area"
+      ]
+    },
+    {
+      "ID": 10020605,
+      "Entries": [
+        "[Fog Wall] Passage to Nest"
+      ]
+    },
+    {
+      "ID": 10020610,
+      "Entries": [
+        "[Fog Wall] Back Passage to Ogre Area"
+      ]
+    },
+    {
+      "ID": 10020615,
+      "Entries": [
+        "[Fog Wall] Second Tutorial Area"
+      ]
+    },
+    {
+      "ID": 10020620,
+      "Entries": [
+        "[Fog Wall] Third Tutorial Area"
+      ]
+    },
+    {
+      "ID": 10020625,
+      "Entries": [
+        "[Fog Wall] Passage in Upper Second Area"
+      ]
+    },
+    {
+      "ID": 10020650,
+      "Entries": [
+        "[Bonfire] Fire Keepers' Dwelling"
+      ]
+    },
+    {
+      "ID": 10020700,
+      "Entries": [
+        "【Light stand】Tutorial started"
+      ]
+    },
+    {
+      "ID": 10020701,
+      "Entries": [
+        "【Light stand】In front of the goal stairs"
+      ]
+    },
+    {
+      "ID": 10020702,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020703,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020704,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020705,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020706,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020707,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020708,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020709,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020710,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020711,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020712,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020713,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020714,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020715,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020716,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020717,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10020718,
+      "Entries": [
+        "【Light stand】"
+      ]
+    },
+    {
+      "ID": 10021020,
+      "Entries": [
+        "【Fossil Forest】The bone that makes a sound when stepped on"
+      ]
+    },
+    {
+      "ID": 10021022,
+      "Entries": [
+        "【Fossil Forest】The bone that makes the sound when stepping on"
+      ]
+    },
+    {
+      "ID": 10021023,
+      "Entries": [
+        "【Fossil Forest】The bone that makes a sound when stepped on"
+      ]
+    },
+    {
+      "ID": 10021024,
+      "Entries": [
+        "【Fossil Forest】The bone that makes a sound when stepped on"
+      ]
+    },
+    {
+      "ID": 10021025,
+      "Entries": [
+        "【Fossil Forest】The bone that makes a sound when stepped on"
+      ]
+    },
+    {
+      "ID": 10021029,
+      "Entries": [
+        "【Fossil Forest】Bones that make sound when you step on"
+      ]
+    },
+    {
+      "ID": 10021101,
+      "Entries": [
+        "【Stone Monument】Explanation of the bonfire"
+      ]
+    },
+    {
+      "ID": 10021102,
+      "Entries": [
+        "【Stone Monument】Explanation of the lamp stand"
+      ]
+    },
+    {
+      "ID": 10021103,
+      "Entries": [
+        "【Stone Monument 3】R1: Attack"
+      ]
+    },
+    {
+      "ID": 10021105,
+      "Entries": [
+        "【Stone Monument 5】Target fixation and release"
+      ]
+    },
+    {
+      "ID": 10021106,
+      "Entries": [
+        "【Stone Monument】Dash"
+      ]
+    },
+    {
+      "ID": 10021108,
+      "Entries": [
+        "【Stone Monument】Backstab"
+      ]
+    },
+    {
+      "ID": 10021109,
+      "Entries": [
+        "【Stone Monument】Guard"
+      ]
+    },
+    {
+      "ID": 10021110,
+      "Entries": [
+        "【Stone Monument】-Weapon Switching"
+      ]
+    },
+    {
+      "ID": 10021111,
+      "Entries": [
+        "【Stone Monument】Back Step"
+      ]
+    },
+    {
+      "ID": 10021112,
+      "Entries": [
+        "[Stone monument 12] item use"
+      ]
+    },
+    {
+      "ID": 10021113,
+      "Entries": [
+        "【Stone Monument】Camera Operation"
+      ]
+    },
+    {
+      "ID": 10021114,
+      "Entries": [
+        "【Stone Monument】△Holding both hands of the left hand by long press"
+      ]
+    },
+    {
+      "ID": 10021115,
+      "Entries": [
+        "[Stone monument] △ with both hands of the right hand weapon in the push"
+      ]
+    },
+    {
+      "ID": 10021116,
+      "Entries": [
+        "【Stone Monument】Jump"
+      ]
+    },
+    {
+      "ID": 10021117,
+      "Entries": [
+        "[Stone monument] guard collapsed in R1"
+      ]
+    },
+    {
+      "ID": 10021118,
+      "Entries": [
+        "【Stone Monument】Pari"
+      ]
+    },
+    {
+      "ID": 10021119,
+      "Entries": [
+        "[Stone monument] fall attack"
+      ]
+    },
+    {
+      "ID": 10021120,
+      "Entries": [
+        "[Stone Monument] jump attack"
+      ]
+    },
+    {
+      "ID": 10021121,
+      "Entries": [
+        "【Stone Monument】Shortcut"
+      ]
+    },
+    {
+      "ID": 10021200,
+      "Entries": [
+        "Falling Tree 1"
+      ]
+    },
+    {
+      "ID": 10021210,
+      "Entries": [
+        "Falling Tree 2"
+      ]
+    },
+    {
+      "ID": 10021400,
+      "Entries": [
+        "Kanoke"
+      ]
+    },
+    {
+      "ID": 10021500,
+      "Entries": [
+        "Fire Guard Woman 1 Chair"
+      ]
+    },
+    {
+      "ID": 10021510,
+      "Entries": [
+        "Fire Guard Woman 2 Chair"
+      ]
+    },
+    {
+      "ID": 10021520,
+      "Entries": [
+        "Fire Guard Woman 3 Chair"
+      ]
+    },
+    {
+      "ID": 10023800,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand (stone)"
+      ]
+    },
+    {
+      "ID": 10023801,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand (stone)"
+      ]
+    },
+    {
+      "ID": 10023802,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand (stone)"
+      ]
+    },
+    {
+      "ID": 10023803,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand (stone)"
+      ]
+    },
+    {
+      "ID": 10023804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023810,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Stone plate"
+      ]
+    },
+    {
+      "ID": 10023811,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Stone plate"
+      ]
+    },
+    {
+      "ID": 10023812,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Stone plate"
+      ]
+    },
+    {
+      "ID": 10023813,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Stone plate"
+      ]
+    },
+    {
+      "ID": 10023814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023815,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023820,
+      "Entries": [
+        "[Mimetic OBJ: Normal] chair"
+      ]
+    },
+    {
+      "ID": 10023821,
+      "Entries": [
+        "[Mimetic OBJ: Normal] chair"
+      ]
+    },
+    {
+      "ID": 10023822,
+      "Entries": [
+        "[Mimetic OBJ: Normal] chair"
+      ]
+    },
+    {
+      "ID": 10023823,
+      "Entries": [
+        "[Mimetic OBJ: Normal] chair"
+      ]
+    },
+    {
+      "ID": 10023824,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023825,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023831,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023832,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023833,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023834,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023835,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023841,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023842,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023843,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023844,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023845,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023850,
+      "Entries": [
+        "【Environment Map ID】Aerial Control Polygon"
+      ]
+    },
+    {
+      "ID": 10023900,
+      "Entries": [
+        "【Gap Sinus】Humanity Model (Handy Type)"
+      ]
+    },
+    {
+      "ID": 10023910,
+      "Entries": [
+        "【Gap Sinus】Cup"
+      ]
+    },
+    {
+      "ID": 10023920,
+      "Entries": [
+        "【Gap Sinus】Tray"
+      ]
+    },
+    {
+      "ID": 10023930,
+      "Entries": [
+        "【Gap Cave】Chair"
+      ]
+    },
+    {
+      "ID": 10023940,
+      "Entries": [
+        "【Cave of Gap】Candle"
+      ]
+    },
+    {
+      "ID": 10023941,
+      "Entries": [
+        "【Cave of Gap】Candle"
+      ]
+    },
+    {
+      "ID": 10023942,
+      "Entries": [
+        "【Cave of Gap】Candle"
+      ]
+    },
+    {
+      "ID": 10023950,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023951,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023952,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023953,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023954,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023955,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023956,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023957,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023958,
+      "Entries": [
+        "【Cave of Gap】Candle (Wall)"
+      ]
+    },
+    {
+      "ID": 10023960,
+      "Entries": [
+        "【Gap Sinus】Curtain"
+      ]
+    },
+    {
+      "ID": 10024000,
+      "Entries": [
+        "【Fossil Forest】NPC Tomb Fire Guard Woman (1)"
+      ]
+    },
+    {
+      "ID": 10024100,
+      "Entries": [
+        "【Fossil Forest】NPC Tomb Fire Guard Woman (2)"
+      ]
+    },
+    {
+      "ID": 10024200,
+      "Entries": [
+        "【Fossil Forest】NPC Tomb Fire Guard Woman (3)"
+      ]
+    },
+    {
+      "ID": 10024300,
+      "Entries": [
+        "【Fossil Forest】NPC Tomb Housekeeper"
+      ]
+    },
+    {
+      "ID": 10025010,
+      "Entries": [
+        "[Chest] Fire Keeper House Upper Level"
+      ]
+    },
+    {
+      "ID": 10026000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10026100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10027000,
+      "Entries": [
+        "【Gap Sinus】For \"Line Science\" Item Display"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "InteractiveSmokeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 999999,
+      "Entries": [
+        "FNR test"
+      ]
+    }
+  ]
+}

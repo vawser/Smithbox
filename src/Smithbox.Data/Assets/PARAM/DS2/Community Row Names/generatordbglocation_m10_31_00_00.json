@@ -1,0 +1,149 @@
+{
+  "Name": "generatordbglocation_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 150,
+      "Entries": [
+        "Miracle Man Npc -- 【奇跡の人】NPC"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Miracle Man NPC (Ghost) -- 【奇跡の人】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "[Knight of protection] Npc -- 【守護の騎士】NPC"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "[Knight of protection] NPC (Ghost) -- 【守護の騎士】NPC(亡霊）"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "[Boss room front_ White Spirit] swordsman (man) -- 【ボス部屋前_白霊】剣士（男）"
+      ]
+    },
+    {
+      "ID": 842,
+      "Entries": [
+        "【Boss】Heavy Cavalry Soldiers: Soldiers Only -- 【ボス】重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 843,
+      "Entries": [
+        "【Boss】Ornstein -- 【ボス】オーンスタイン"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【Strong Enemy】 【On The Bonfire】Ancient Warriors- Two-Handed Sword -- 【強敵】【かがり火上】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【Strong Enemy】 【Branch Front】Ancient Warrior: Mallet: Blue Spirit -- 【強敵】【分岐手前】古代の戦士：両手槌：青霊"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "【Strong Enemy】 [Lever front for bosses] ancient warrior swords -- 【強敵】【ボス用レバー前】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "【Strong Enemy】 [Branch of the Division: Attack] Ancient Warriors: Oversized Sword -- 【強敵】【分岐路：遊撃】古代の戦士：特大剣"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "【Strong Enemy】 [Branch of the Division: Heavy Cavalry Route Protection] Ancient Warrior Swords -- 【強敵】【分岐路：重騎兵ルート守り】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "【Strong Enemy】 [Minute Crossroads: Ornstein Route Defense] Ancient Warriors: Two-Handed Sword & Medium Shield -- 【強敵】【分岐路：オーンスタインルート守り】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "【Strong Enemy】 【Branch End】Ancient Warriors: Oversized Sword: Blue Spirit: Week 2 -- 【強敵】【分岐路先】古代の戦士：特大剣：青霊：２週目"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "【Strong Enemy】 【Branch of the Division】Ancient Warriors: Two Hands Mallet: Soul Blue: Blue Spirit: Week 2 -- 【強敵】【分岐路】古代の戦士：両手槌：ソウルブルー：青霊：２週目"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "【Strong Enemy】 【Boss Room】Ancient Warrior: Oversized Sword -- 【強敵】【ボス部屋前】古代の戦士：特大剣"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "【Strong Enemy】 [Ornstein Route 1: Attack] Ancient Warrior: Oversized Sword -- 【強敵】【オーンスタインルート1：遊撃】古代の戦士：特大剣"
+      ]
+    },
+    {
+      "ID": 1071,
+      "Entries": [
+        "【Strong Enemy】 [Ornstein Route 1: Defense] Ancient Warriors: Two-Handed Sword & Medium Shield -- 【強敵】【オーンスタインルート1：守り】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "【Strong Enemy】 【Before the Drawbridge】Ancient WarriorS: Two-Handed Sword -- 【強敵】【跳ね橋前】古代の戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Ancient Warrior] [Before the drawbridge] Both hands mallet: Soul Blue: Blue Spirit: Week 2 -- 【古代の戦士】【跳ね橋前】両手槌：ソウルブルー：青霊：２週目"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "【Behind the Bridge】Temporary Black Spirit: Week 2 -- 【橋の後ろ】仮黒霊：２週目"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "【Building on lever square】Swordsman (male): Black Spirit: Week 2 1 -- 【レバー前広場上の建物】剣士（男）：黒霊：２週目1"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "【Building on lever square】Swordsman (male): Black Spirit: Week 2 -- 【レバー前広場上の建物】剣士（男）：黒霊：２週目2"
+      ]
+    },
+    {
+      "ID": 9112,
+      "Entries": [
+        "【Building front on lever square】Swordsman (man): Black Spirit: 2nd week -- 【レバー前広場上の建物手前】剣士（男）：黒霊：２週目"
+      ]
+    }
+  ]
+}

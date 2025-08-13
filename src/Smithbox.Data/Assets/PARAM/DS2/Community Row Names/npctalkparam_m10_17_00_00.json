@@ -1,0 +1,1403 @@
+{
+  "Name": "npctalkparam_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 70400000,
+      "Entries": [
+        "Talking To: Part 1: First Look"
+      ]
+    },
+    {
+      "ID": 70400010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 70400110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400150,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70400160,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 70400200,
+      "Entries": [
+        "Talking To: Part 2:YES"
+      ]
+    },
+    {
+      "ID": 70400300,
+      "Entries": [
+        "Talk to: Part 2:NO"
+      ]
+    },
+    {
+      "ID": 70400400,
+      "Entries": [
+        "Talking To: Part 2:YES: After the Poly Play"
+      ]
+    },
+    {
+      "ID": 70400500,
+      "Entries": [
+        "Talking To: After ladder: Single Loop"
+      ]
+    },
+    {
+      "ID": 70400600,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 70400700,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 70400800,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 70404500,
+      "Entries": [
+        "Talking To: Part 1: Revisited"
+      ]
+    },
+    {
+      "ID": 70404510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405000,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 70405020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405050,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405100,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405150,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405200,
+      "Entries": [
+        "Menu Conversation: Part 3"
+      ]
+    },
+    {
+      "ID": 70405210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405250,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405300,
+      "Entries": [
+        "Menu Conversation: Part 4"
+      ]
+    },
+    {
+      "ID": 70405310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70405400,
+      "Entries": [
+        "Menu Conversation: Part 5 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 70405410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70409000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 70409100,
+      "Entries": [
+        "In time of hostility"
+      ]
+    },
+    {
+      "ID": 70409200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 70409300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 70409400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70409410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70409420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70409500,
+      "Entries": [
+        "HP constant or less"
+      ]
+    },
+    {
+      "ID": 70409600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 72600010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72600020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72600030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72600040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72600060,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72600100,
+      "Entries": [
+        "Greetings: Continuous 1"
+      ]
+    },
+    {
+      "ID": 72600200,
+      "Entries": [
+        "Greetings: Continuous 2"
+      ]
+    },
+    {
+      "ID": 72600300,
+      "Entries": [
+        "Greetings: First time in a while 1"
+      ]
+    },
+    {
+      "ID": 72600400,
+      "Entries": [
+        "Greetings: It's been a while 2"
+      ]
+    },
+    {
+      "ID": 72600500,
+      "Entries": [
+        "Greetings: 3 after a long time"
+      ]
+    },
+    {
+      "ID": 72600600,
+      "Entries": [
+        "Greetings: 4 after a long time"
+      ]
+    },
+    {
+      "ID": 72600700,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 72600800,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 72600900,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 72605000,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 72605010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72605020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72605030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72606000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 72606001,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 72609000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 72609100,
+      "Entries": [
+        "In time of hostility"
+      ]
+    },
+    {
+      "ID": 72609200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 72609300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 72609400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72609410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72609420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 72609500,
+      "Entries": [
+        "HP constant or less"
+      ]
+    },
+    {
+      "ID": 72609600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 74400800,
+      "Entries": [
+        "Treasure Snot: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 74400810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74400830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74400900,
+      "Entries": [
+        "Treasure Acquisition: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 74400910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74400920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74401000,
+      "Entries": [
+        "Treasure Acquisition: Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 74401010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74401020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74401030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74401100,
+      "Entries": [
+        "Treasure Acquisition: Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 74406000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 74406010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74409000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 74409100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 74409200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 74409300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 74409400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74409410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74409420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74409500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 74409600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "Encounter 1st: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 75200010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200100,
+      "Entries": [
+        "Encounter 1st: Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 75200110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200150,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200160,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200170,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200300,
+      "Entries": [
+        "Encounter 1st: Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 75200310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200340,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200500,
+      "Entries": [
+        "Encounter 2nd: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 75200510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200600,
+      "Entries": [
+        "Encounter 2nd: Talkto: Part 2"
+      ]
+    },
+    {
+      "ID": 75200610,
+      "Entries": [
+        "↓ Item transfer"
+      ]
+    },
+    {
+      "ID": 75200620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200700,
+      "Entries": [
+        "Encounter 2nd: Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 75200710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200730,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200800,
+      "Entries": [
+        "Encounter 2nd: Talking To: Part 4"
+      ]
+    },
+    {
+      "ID": 75200810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200820,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200840,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200900,
+      "Entries": [
+        "Encounter Second Time: Talking To: Part 5"
+      ]
+    },
+    {
+      "ID": 75200910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200930,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200940,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200950,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75200960,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201000,
+      "Entries": [
+        "Encounter 2nd: Talk to: Part 5 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 75201010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201100,
+      "Entries": [
+        "Encounter 3rd: Talkto: Part 1"
+      ]
+    },
+    {
+      "ID": 75201110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201120,
+      "Entries": [
+        "↓ Item transfer"
+      ]
+    },
+    {
+      "ID": 75201200,
+      "Entries": [
+        "Encounter 3rd: Talkto: Part 2"
+      ]
+    },
+    {
+      "ID": 75201210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201300,
+      "Entries": [
+        "Encounter 3rd: Talkto: Part 3"
+      ]
+    },
+    {
+      "ID": 75201310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201340,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201350,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201400,
+      "Entries": [
+        "Encounter 3rd: Talk to: Part 4 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 75201410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201500,
+      "Entries": [
+        "Encounter 4th: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 75201510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201600,
+      "Entries": [
+        "Encounter 4th: Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 75201610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201700,
+      "Entries": [
+        "Encounter 4th: Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 75201710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201730,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201740,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201750,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201800,
+      "Entries": [
+        "Encounter 4th: Talkto: Part 4 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 75201810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201820,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201840,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75201850,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75206000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 75206010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75209000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 75209100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 75209200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 75209300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 75209400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 75209600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 76200000,
+      "Entries": [
+        "Talk to: First Time"
+      ]
+    },
+    {
+      "ID": 76200010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200050,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200060,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200070,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200080,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200090,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200100,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76200200,
+      "Entries": [
+        "Greetings: Continuous 1"
+      ]
+    },
+    {
+      "ID": 76200300,
+      "Entries": [
+        "Greetings: Continuous 2"
+      ]
+    },
+    {
+      "ID": 76200400,
+      "Entries": [
+        "Greetings: First time in a while 1"
+      ]
+    },
+    {
+      "ID": 76200500,
+      "Entries": [
+        "Greetings: It's been a while 2"
+      ]
+    },
+    {
+      "ID": 76200600,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 76200700,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 76200800,
+      "Entries": [
+        "Menu: Walk away: When you decide to move"
+      ]
+    },
+    {
+      "ID": 76200900,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 76205000,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 76205010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205100,
+      "Entries": [
+        "Menu Conversation: Part 2"
+      ]
+    },
+    {
+      "ID": 76205110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205200,
+      "Entries": [
+        "Menu Conversation: Part 3"
+      ]
+    },
+    {
+      "ID": 76205210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205300,
+      "Entries": [
+        "Menu Conversation: Part 4"
+      ]
+    },
+    {
+      "ID": 76205310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76205400,
+      "Entries": [
+        "Menu Conversation: Part 5"
+      ]
+    },
+    {
+      "ID": 76205410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76206000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 76206010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76209000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 76209100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 76209200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 76209300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 76209400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76209410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76209420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76209500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 76209600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

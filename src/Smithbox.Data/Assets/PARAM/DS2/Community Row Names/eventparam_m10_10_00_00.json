@@ -1,0 +1,491 @@
+{
+  "Name": "eventparam_m10_10_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "King's Door"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Interlocking elevator_initialization"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Interlocking elevator_operation"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Navi mesh change of the wall which breaks in the flame barrel"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "【Insect key】Hidden door (1) for start-up"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "【Insect Key】Hidden Door"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "【Insect Key】Hidden Door (1)_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "The key door opened with the key of fire"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "The key door opened by the King's Key"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "The key door opened by the King's Key (broken)"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "The Key Door opened by the King's Key"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "The Key door opened by \"King's Key\""
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Boss: Bay Grant_ Combat"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Boss: Bay Grant_ Poly Play"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Boss: Bay Grant_ Initial Placement Change"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Barista 1 destroyed in Bay Grant attack"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Barista 2 destroyed in Bay Grant attack"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Boss: New Giant Senior Soldier_ Dead_ Battle"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Boss: New Giant Senior Soldier_ Dead_ Poly Play"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Boss: New Giant Senior Soldier_ Dead_ Initial Placement Change"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Bay Grant Hawk Taxi"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "One-way door control that the enemy opens when attacked"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "One-way door_ open the enemy door open control when attacked"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Giant Nuts"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "The process of drawing giant nuts"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "The real message of the giant tree"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Navimesh attribute change of the destruction wall outer wall 1"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Navimesh attribute change of the destruction wall outer wall 2"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Change navimesh attributes of fracture wall walls"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Switch door closes"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Oiwa Rumbling"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "One-way door of the waterway"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "The flame that disappears when the Salamander is annihilated."
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Invalidation of ground fire damage in Salamander"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Bay Grant appeared in the hawk _ character"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Bay Grant appeared in hawks_ map"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Hide Hawk OBJ"
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "Bay Grant appeared in the hawk_ deletion judgment"
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "Bay Grant appeared in hawks_ rewards"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 37000,
+      "Entries": [
+        "Giant Memory Warp_Boss"
+      ]
+    },
+    {
+      "ID": 37010,
+      "Entries": [
+        "Giant Memory Warp_Mine"
+      ]
+    },
+    {
+      "ID": 37020,
+      "Entries": [
+        "Giant Memory Warp_Chandelier"
+      ]
+    },
+    {
+      "ID": 38000,
+      "Entries": [
+        "Events for Salamander Logic"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play Seed Fire 01_ Main Tower"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Regeneration Seed Fire 02_Ground Cracking Square"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Riverbank after connection with playing seed fire 04_Maduro"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy _ Last Giant"
+      ]
+    },
+    {
+      "ID": 111240,
+      "Entries": [
+        "NPC: Tsukiko Ya (Giant Forest)"
+      ]
+    },
+    {
+      "ID": 111241,
+      "Entries": [
+        "NPC: Tsukiko Ya (Giant Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111242,
+      "Entries": [
+        "OBJ: Tsukiko Ya (Giant Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111243,
+      "Entries": [
+        "OBJ: Tsukiko Ya (Giant Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111244,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Giant Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111245,
+      "Entries": [
+        "OBJ: Tsukiko Ya (Giant Forest): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111250,
+      "Entries": [
+        "NPC: Patch (Giant Forest)"
+      ]
+    },
+    {
+      "ID": 111251,
+      "Entries": [
+        "NPC: Patch (Giant Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111252,
+      "Entries": [
+        "OBJ: Patch (Giant Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111253,
+      "Entries": [
+        "OBJ: Patch (Giant Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111254,
+      "Entries": [
+        "OBJ: Patch (Giant Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111255,
+      "Entries": [
+        "OBJ: Patch (Giant Forest): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111256,
+      "Entries": [
+        "OBJ: Patch (Giant Forest): White Phantom"
+      ]
+    },
+    {
+      "ID": 111260,
+      "Entries": [
+        "NPC: Atlas (Giant Forest)"
+      ]
+    },
+    {
+      "ID": 111261,
+      "Entries": [
+        "NPC: Map (Giant Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111262,
+      "Entries": [
+        "OBJ: Map (Giant Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111263,
+      "Entries": [
+        "OBJ: Atlas (Giant Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111264,
+      "Entries": [
+        "OBJ: Map (Giant Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111290,
+      "Entries": [
+        "NPC: Yorozu Babaa (Giant Forest)"
+      ]
+    },
+    {
+      "ID": 111291,
+      "Entries": [
+        "NPC: Yorozu Babaa (Giant Forest): Ghost"
+      ]
+    },
+    {
+      "ID": 111292,
+      "Entries": [
+        "OBJ: Yorozu Babaa (Giant Forest): Tomb"
+      ]
+    },
+    {
+      "ID": 111293,
+      "Entries": [
+        "OBJ: Yorozu Babaa (Giant Forest): Key Guide"
+      ]
+    },
+    {
+      "ID": 111294,
+      "Entries": [
+        "OBJ: Yorozu Babaa (Giant Forest): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111435,
+      "Entries": [
+        "OBJ: Enclosed: Black Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 120110,
+      "Entries": [
+        "Trophy: The Great Sword of Moonlight (Giant Forest)"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

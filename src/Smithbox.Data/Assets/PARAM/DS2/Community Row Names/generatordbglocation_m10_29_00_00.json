@@ -1,0 +1,101 @@
+{
+  "Name": "generatordbglocation_m10_29_00_00",
+  "Entries": [
+    {
+      "ID": 60,
+      "Entries": [
+        "【Tsukiko Grandfather】NPC -- 【月光爺】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【Tsukiko Grandfather】NPC -- 【月光爺】ＮＰＣ(亡霊）"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "【Sorcerer's Shop】NPC -- 【呪術屋】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "【Sorcerer's Shop】NPC -- 【呪術屋】ＮＰＣ（亡霊）"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "【Sorcerer's Shop】NPC (after moving) -- 【呪術屋】ＮＰＣ（移動後）"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Basilisk] waiting in the back of the gimmick door -- 【バジリスク】ギミック扉奥で出待ち"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【Goblin】Bare hands in the room before thining -- 【ゴブリン：素手】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【Goblin: Sword】Before weding in the room -- 【ゴブリン：剣】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "【Goblin】Bare hands in the room before thining -- 【ゴブリン：素手】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【Goblin: Sword】 before weding in the room -- 【ゴブリン：剣】】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "【Goblin: Sword】Before weding in the room -- 【ゴブリン：剣】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "【Goblin】Bare hands in the room before thining -- 【ゴブリン：素手】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "【Goblin】Bare hands in the room before thining -- 【ゴブリン：素手】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "【Goblin: Sword】Before weding in the room -- 【ゴブリン：剣】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "【Goblin: Sword】Before weding in the room -- 【ゴブリン：剣】部屋の中_間引く前"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "【Goblin: Sling】 before weding in the room -- 【ゴブリン：スリング】】部屋の中_間引く前"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Name": "PluralSelectMenuParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Provisional 500 Seoul -- 仮\u3000500ソウル"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Provisional 1500 Seoul -- 仮\u30001500ソウル"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Provisional 15-000 Seoul -- 仮\u300015000ソウル"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "Name": "SmallbaseInvationNpcParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Night Assassin"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Night Fallen"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Night Hunter"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Night Thief"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Night Raider"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Night Idol"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Night Witch"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Night Executor"
+      ]
+    }
+  ]
+}

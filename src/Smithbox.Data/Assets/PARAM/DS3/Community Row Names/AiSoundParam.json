@@ -1,0 +1,317 @@
+{
+  "Name": "AiSoundParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (do not edit)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Walk"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Run"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Dash"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Rolling"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Landing"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "A covert walk"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Covert Run"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Object Destruction"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Walk"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Run"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Dash"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Rolling"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Minimal landing"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Small landing"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Normal landing"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Large Landing"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Small attack sound"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "During the attack sound"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Attack music"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Attack Sound Oversized"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Attack Sound Small"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "In the sound of an attack"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Attack music"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Attack sound small (normal sound)"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Object Destruction Sound Small"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Object Breaking Sound"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Object Destruction Music"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Wake Up Sound"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Buddy Call Sound: Medium"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Companions Call Sound: Small"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Anxious Sound One"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Companion: Dead Soldier lantern"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Mate call Test: Blue"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Per bullet"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Per wall"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Soul Coins"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Hallucinations"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Allure"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

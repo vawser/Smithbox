@@ -1,0 +1,389 @@
+{
+  "Name": "generatorregistparam_m10_25_00_00",
+  "Entries": [
+    {
+      "ID": 11500000,
+      "Entries": [
+        "[REG:11500000] Undead Traveler"
+      ]
+    },
+    {
+      "ID": 12501300,
+      "Entries": [
+        "[REG:12501300] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12501304,
+      "Entries": [
+        "[REG:12501304] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 12501600,
+      "Entries": [
+        "[REG:12501600] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 20500100,
+      "Entries": [
+        "[REG:20500100] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 20600000,
+      "Entries": [
+        "[REG:20600000] Razorback Nightcrawler"
+      ]
+    },
+    {
+      "ID": 20900200,
+      "Entries": [
+        "[REG:20900200] Hunting Dog"
+      ]
+    },
+    {
+      "ID": 22400000,
+      "Entries": [
+        "[REG:22400000] Darksucker"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "[REG:30100000] Heide Knight"
+      ]
+    },
+    {
+      "ID": 30900100,
+      "Entries": [
+        "[REG:30900100] Forgotten Giant"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "[REG:32600000] The Rotten [Boss]"
+      ]
+    },
+    {
+      "ID": 33700200,
+      "Entries": [
+        "[REG:33700200] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700203,
+      "Entries": [
+        "[REG:33700203] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700204,
+      "Entries": [
+        "[REG:33700204] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700207,
+      "Entries": [
+        "[REG:33700207] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700210,
+      "Entries": [
+        "[REG:33700210] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700211,
+      "Entries": [
+        "[REG:33700211] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700212,
+      "Entries": [
+        "[REG:33700212] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700213,
+      "Entries": [
+        "[REG:33700213] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700214,
+      "Entries": [
+        "[REG:33700214] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700215,
+      "Entries": [
+        "[REG:33700215] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700217,
+      "Entries": [
+        "[REG:33700217] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700220,
+      "Entries": [
+        "[REG:33700220] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700221,
+      "Entries": [
+        "[REG:33700221] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700222,
+      "Entries": [
+        "[REG:33700222] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700225,
+      "Entries": [
+        "[REG:33700225] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700226,
+      "Entries": [
+        "[REG:33700226] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700227,
+      "Entries": [
+        "[REG:33700227] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700228,
+      "Entries": [
+        "[REG:33700228] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33701101,
+      "Entries": [
+        "[REG:33701101] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33701102,
+      "Entries": [
+        "[REG:33701102] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33701105,
+      "Entries": [
+        "[REG:33701105] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33701110,
+      "Entries": [
+        "[REG:33701110] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702200,
+      "Entries": [
+        "[REG:33702200] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702201,
+      "Entries": [
+        "[REG:33702201] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702210,
+      "Entries": [
+        "[REG:33702210] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702211,
+      "Entries": [
+        "[REG:33702211] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702212,
+      "Entries": [
+        "[REG:33702212] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702213,
+      "Entries": [
+        "[REG:33702213] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702214,
+      "Entries": [
+        "[REG:33702214] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702217,
+      "Entries": [
+        "[REG:33702217] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702220,
+      "Entries": [
+        "[REG:33702220] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702221,
+      "Entries": [
+        "[REG:33702221] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33702222,
+      "Entries": [
+        "[REG:33702222] Captive Undead"
+      ]
+    },
+    {
+      "ID": 60800000,
+      "Entries": [
+        "[REG:60800000] Corrosive Ant Queen"
+      ]
+    },
+    {
+      "ID": 67100000,
+      "Entries": [
+        "[REG:67100000] Poison Statue Cluster"
+      ]
+    },
+    {
+      "ID": 67200000,
+      "Entries": [
+        "[REG:67200000] Corrosive Egg Insect"
+      ]
+    },
+    {
+      "ID": 69300000,
+      "Entries": [
+        "[REG:69300000] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69500000,
+      "Entries": [
+        "[REG:69500000] Forlorn"
+      ]
+    },
+    {
+      "ID": 69600000,
+      "Entries": [
+        "[REG:69600000] Invisible Hollow"
+      ]
+    },
+    {
+      "ID": 72500100,
+      "Entries": [
+        "[REG:72500100] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 72500200,
+      "Entries": [
+        "[REG:72500200] Darkdiver Grandahl"
+      ]
+    },
+    {
+      "ID": 75200100,
+      "Entries": [
+        "[REG:75200100] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200500,
+      "Entries": [
+        "[REG:75200500] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 75200600,
+      "Entries": [
+        "[REG:75200600] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 77100500,
+      "Entries": [
+        "[REG:77100500] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "[REG:81100000] Lone Hunter Schmidt"
+      ]
+    },
+    {
+      "ID": 81400900,
+      "Entries": [
+        "[REG:81400900] Melinda the Butcher"
+      ]
+    },
+    {
+      "ID": 82950000,
+      "Entries": [
+        "[REG:82950000] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 88700000,
+      "Entries": [
+        "[REG:88700000] Gutter Denizen"
+      ]
+    },
+    {
+      "ID": 89600000,
+      "Entries": [
+        "[REG:89600000] Woodland Child Victor"
+      ]
+    },
+    {
+      "ID": 89650000,
+      "Entries": [
+        "[REG:89650000] Woodland Child Gully"
+      ]
+    }
+  ]
+}

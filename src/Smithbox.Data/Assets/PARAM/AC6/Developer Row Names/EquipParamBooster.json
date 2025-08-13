@@ -1,0 +1,143 @@
+{
+  "Name": "EquipParamBooster",
+  "Entries": [
+    {
+      "ID": 60000000,
+      "Entries": [
+        "BS_A_1010 Bayrum Booster -- BS_A_1010 ベイラムブースター"
+      ]
+    },
+    {
+      "ID": 60010000,
+      "Entries": [
+        "BS_A_2010 Heavy Crest Booster -- BS_A_2010 重クレストブースター"
+      ]
+    },
+    {
+      "ID": 60020000,
+      "Entries": [
+        "BS_A_3010 Rayleonard Booster -- BS_A_3010 レイレナードブースター"
+      ]
+    },
+    {
+      "ID": 60030000,
+      "Entries": [
+        "BS_A_4010 Mirage Booster -- BS_A_4010 ミラージュブースター"
+      ]
+    },
+    {
+      "ID": 60040000,
+      "Entries": [
+        "BS_A_5010 Label Booster -- BS_A_5010 ラベールブースター"
+      ]
+    },
+    {
+      "ID": 60050000,
+      "Entries": [
+        "BS_A_6010 Iqbal Booster -- BS_A_6010 イクバールブースター"
+      ]
+    },
+    {
+      "ID": 60060000,
+      "Entries": [
+        "BS_A_7010 Cuba Booster -- BS_A_7010 キューバブースター"
+      ]
+    },
+    {
+      "ID": 60070000,
+      "Entries": [
+        "BS_A_8010 Kawamori Booster -- BS_A_8010 カワモリブースター"
+      ]
+    },
+    {
+      "ID": 60070100,
+      "Entries": [
+        "BS_A_8020 Miyatake Booster -- BS_A_8020 ミヤタケブースター"
+      ]
+    },
+    {
+      "ID": 60070200,
+      "Entries": [
+        "BS_A_8030 JUDO Booster -- BS_A_8030 JUDOブースター"
+      ]
+    },
+    {
+      "ID": 60070300,
+      "Entries": [
+        "BS_A_8040 ​​Troll Booster -- BS_A_8040 トロルブースター"
+      ]
+    },
+    {
+      "ID": 60070400,
+      "Entries": [
+        "BS_A_8050 R&D Booster -- BS_A_8050 R＆Dブースター"
+      ]
+    },
+    {
+      "ID": 60900000,
+      "Entries": [
+        "Event exclusive_Jailbreak mission booster -- イベント専用_脱獄ミッション用ブースター"
+      ]
+    },
+    {
+      "ID": 60900100,
+      "Entries": [
+        "Booster for tremo 01 -- トレモ01用ブースター"
+      ]
+    },
+    {
+      "ID": 60900200,
+      "Entries": [
+        "Booster for tremo 02 -- トレモ02用ブースター"
+      ]
+    },
+    {
+      "ID": 60900300,
+      "Entries": [
+        "Booster for tremo 03 -- トレモ03用ブースター"
+      ]
+    },
+    {
+      "ID": 60900400,
+      "Entries": [
+        "Booster for tremo 04 -- トレモ04用ブースター"
+      ]
+    },
+    {
+      "ID": 60900500,
+      "Entries": [
+        "Booster for tremo 05 -- トレモ05用ブースター"
+      ]
+    },
+    {
+      "ID": 60901000,
+      "Entries": [
+        "Event exclusive_Jailbreak mission booster -- イベント専用_脱獄ミッション用ブースター"
+      ]
+    },
+    {
+      "ID": 60901100,
+      "Entries": [
+        "Prologue booster -- プロローグ用ブースター"
+      ]
+    },
+    {
+      "ID": 63300000,
+      "Entries": [
+        "Tank leg_Baylum booster -- タンク脚部_ベイラムブースター"
+      ]
+    },
+    {
+      "ID": 63340000,
+      "Entries": [
+        "Tank leg_Label booster -- タンク脚部_ラベールブースター"
+      ]
+    },
+    {
+      "ID": 63360000,
+      "Entries": [
+        "Tank leg_Cuba booster -- タンク脚部_キューバブースター"
+      ]
+    }
+  ]
+}

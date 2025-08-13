@@ -1,0 +1,47 @@
+{
+  "Name": "generatormemoryparam_m10_10_00_00",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Block 1 -- ブロック1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Block 2 -- ブロック2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Block 3 -- ブロック3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Block 4 -- ブロック4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Block 5 -- ブロック5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Block 6 -- ブロック6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Block 7 -- ブロック7"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "Name": "HitEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Iron ⇒ General purpose landing -- 鉄⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Iron ⇒ Heavy iron (Same as general purpose 2017/02/22) -- 鉄⇒重鉄 (汎用と同じにしておく2017/02/22）"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Iron ⇒ Shield energy -- 鉄⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "EN (green) ⇒ General purpose landing -- EN(緑)⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "EN (green) ⇒ Heavy iron -- EN(緑)⇒重鉄"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "EN (green) ⇒ Shield energy -- EN(緑)⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Coral ⇒ General purpose landing -- コーラル⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Coral ⇒ Heavy iron -- コーラル⇒重鉄"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Coral ⇒ Shield energy -- コーラル⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "General purpose barrier landing -- 汎用バリア着弾"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Flame ⇒ General purpose landing -- 炎⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Stun ⇒ General purpose landing -- スタン⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Assault Armor ⇒ General purpose impact -- アサルトーアーマー⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Pulse ⇒ General purpose landing -- パルス⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Pulse ⇒ Heavy iron -- パルス⇒重鉄"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Pulse ⇒ Shield energy -- パルス⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Laser ⇒ General purpose landing -- レーザー⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Laser ⇒ Heavy iron -- レーザー⇒重鉄"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Laser ⇒ Shield energy -- レーザー⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Plasma ⇒ General purpose landing -- プラズマ⇒汎用着弾"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Plasma ⇒ Heavy iron -- プラズマ⇒重鉄"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Plasma ⇒ Shield energy -- プラズマ⇒盾エネルギー"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "smoke -- 煙"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "smoke & debris -- 煙＆がれき"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "piece of stone -- 石片"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "piece of wood -- 木片"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "electricity -- 電気"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "glass -- ガラス"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "water (shallow) -- 水（浅）"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "water (deep) -- 水（深）"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Swamp (shallow) -- 沼（浅）"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Swamp (deep) -- 沼（深）"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "meat -- 肉"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "rubber -- ラバー"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Iron ⇒ Asset PA -- 鉄製⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "Pulse ⇒ Asset PA -- パルス⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Laser ⇒ Asset PA -- レーザー⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Plasma ⇒ Asset PA -- プラズマ⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "EN Green ⇒ Asset PA -- EN緑⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Coral ⇒ Asset PA -- コーラル⇒アセットPA"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "General purpose ⇒ Shield energy_Initial guard -- 汎用⇒盾エネルギー_イニシャルガード"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "General purpose ⇒ Shield Coral_Initial Guard -- 汎用⇒盾コーラル_イニシャルガード"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "gene normal -- ジェネ通常"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "gene coral -- ジェネコーラル"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Reserve 11 -- 予備１１"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Iron ⇒ Shield Coral -- 鉄製 ⇒ 盾コーラル"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Pulse ⇒ Shield Coral -- パルス ⇒ 盾コーラル"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "EN Green ⇒ Shield Coral -- EN緑 ⇒ 盾コーラル"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Coral ⇒ Shield Coral -- コーラル ⇒ 盾コーラル"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Iron ⇒ PA_enemy large_white_hit ripple -- 鉄製 ⇒ PA_敵大_白_被弾波紋"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Pulse ⇒ PA_enemy extra large_white_hit ripple -- パルス ⇒ PA_敵特大_白_被弾波紋"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "EN Green ⇒ PA_enemy large_white_hit ripple -- EN緑 ⇒ PA_敵大_白_被弾波紋"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Coral ⇒ PA_enemy large_white_hit ripple -- コーラル ⇒ PA_敵大_白_被弾波紋"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Made of iron ⇒ PA_enemy extra large_coral_hit ripple -- 鉄製 ⇒ PA_敵特大_コーラル_被弾波紋"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Pulse ⇒ PA_enemy extra large_coral_hit ripple -- パルス ⇒ PA_敵特大_コーラル_被弾波紋"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "EN green ⇒ PA_enemy extra large_coral_hit ripple -- EN緑 ⇒ PA_敵特大_コーラル_被弾波紋"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Coral ⇒ PA_enemy extra large_coral_hit ripple -- コーラル ⇒ PA_敵特大_コーラル_被弾波紋"
+      ]
+    }
+  ]
+}

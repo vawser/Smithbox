@@ -1,0 +1,1619 @@
+{
+  "Name": "eventlocation_m10_10_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Intrusion Point 2-13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Intrusion Point 2-14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Intrusion Point 2-15"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Intrusion Point 3-5"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Intrusion Point 3-6"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Intrusion Point 4-1"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Intrusion Point 4-2"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Intrusion Point 4-3"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Intrusion Point 4-4"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Intrusion Point 4-5"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Intrusion Point 4-6"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Intrusion Point 4-7"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Intrusion Point 4-8"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Intrusion Point 4-9"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Intrusion Point 4-10"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Intrusion Point 4-11"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Intrusion Point 4-12"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Intrusion Point 4-13"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Intrusion Point 4-14"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Intrusion Point 4-15"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Intrusion Point 5-1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Intrusion Point 5-2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Intrusion Point 5-3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Intrusion Point 5-4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Intrusion Point 5-5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Intrusion Point 5-6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "Intrusion Point 5-7"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "Intrusion Point 5-8"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "Intrusion Point 5-9"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Intrusion Point 5-10"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Intrusion Point 5-11"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Intrusion Point 5-12"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "Intrusion Point 5-13"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Intrusion Point 5-14"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Intrusion Point 5-15"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "Intrusion Point 5-16"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "Intrusion Point 5-17"
+      ]
+    },
+    {
+      "ID": 5018,
+      "Entries": [
+        "Intrusion Point 5-18"
+      ]
+    },
+    {
+      "ID": 5019,
+      "Entries": [
+        "Intrusion Point 5-19"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Intrusion Point 5-20"
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        "Intrusion Point 5-21"
+      ]
+    },
+    {
+      "ID": 5022,
+      "Entries": [
+        "Intrusion Point 5-22"
+      ]
+    },
+    {
+      "ID": 5023,
+      "Entries": [
+        "Intrusion Point 5-23"
+      ]
+    },
+    {
+      "ID": 5024,
+      "Entries": [
+        "Intrusion Point 5-24"
+      ]
+    },
+    {
+      "ID": 5025,
+      "Entries": [
+        "Intrusion Point 5-25"
+      ]
+    },
+    {
+      "ID": 5026,
+      "Entries": [
+        "Intrusion Point 5-26"
+      ]
+    },
+    {
+      "ID": 5027,
+      "Entries": [
+        "Intrusion Point 5-27"
+      ]
+    },
+    {
+      "ID": 5028,
+      "Entries": [
+        "Intrusion Point 5-28"
+      ]
+    },
+    {
+      "ID": 5029,
+      "Entries": [
+        "Intrusion Point 5-29"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Intrusion Point 6-1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Intrusion Point 6-2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Intrusion Point 6-3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Intrusion Point 6-4"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Intrusion Point 7-1"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Intrusion Point 7-2"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Intrusion Point 7-3"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Intrusion Point 7-4"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Intrusion Point 7-5"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "Intrusion Point 7-6"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door_01"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door_02"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door_01"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door_02"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Blood character prohibited] wall broken in flame barrel"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        "【Blood character prohibition】Destruction wall_outer wall 1"
+      ]
+    },
+    {
+      "ID": 45040,
+      "Entries": [
+        "[Blood character prohibition] destruction wall _outer wall 2"
+      ]
+    },
+    {
+      "ID": 45050,
+      "Entries": [
+        "[Blood character prohibition] destruction wall _ inner wall"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "King's Door_Navimesh Change"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Backlead Safety Points"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "On interlocking lifting point"
+      ]
+    },
+    {
+      "ID": 201001,
+      "Entries": [
+        "Interlocking lifting machine_ below reference point"
+      ]
+    },
+    {
+      "ID": 201002,
+      "Entries": [
+        "Interlocking elevator _ Mirror point on"
+      ]
+    },
+    {
+      "ID": 201003,
+      "Entries": [
+        "Interlocking elevator_mirror point below"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Navi mesh change of the wall which breaks in the flame barrel"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 520000,
+      "Entries": [
+        "Change the key door (breaking) _Navimesh to be opened in \"King's Key\""
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Boss: Bay Grant battle start judgment"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Boss: Warp point after Bay Grant's poly play"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Bay Grant_ Rematch Start position"
+      ]
+    },
+    {
+      "ID": 605000,
+      "Entries": [
+        "Barista 1_Navimesh change destroyed by boss"
+      ]
+    },
+    {
+      "ID": 606000,
+      "Entries": [
+        "Barista 2_Navimesh change destroyed by boss"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Boss: New Giant Senior Soldier Battle Start Judgment"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Boss: Warp point after poly play of new giant senior soldier"
+      ]
+    },
+    {
+      "ID": 652000,
+      "Entries": [
+        "Boss: Early position at rematch of new Giant senior soldier"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "One-way door that the enemy opens when attacked"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Navi mesh change of the destruction wall outer wall 1"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Navi mesh change of the destruction wall outer wall wall 2"
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Navi mesh change of the inner wall of the destruction wall"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Switch_Iron grating drop area 1 where the door is closed"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "Switch_Iron grating drop area 2 where the door closes"
+      ]
+    },
+    {
+      "ID": 1100002,
+      "Entries": [
+        "Switch_Navimesh change where the door closes"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Oiwa Gorogoro Launch Area"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Waterway_One-way door"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Bay Grant appeared in the hawk_ generation start area"
+      ]
+    },
+    {
+      "ID": 1500001,
+      "Entries": [
+        "Bay Grant appeared in the hawk _ combat area"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Return point 1 from memory"
+      ]
+    },
+    {
+      "ID": 3701000,
+      "Entries": [
+        "Return point 2 from memory"
+      ]
+    },
+    {
+      "ID": 3702000,
+      "Entries": [
+        "Return point 3 from memory"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "【Black Spirit】Emerging Area 02"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Tomb next to the riverside_ mimetic soldiers start"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "arena_ lower-level soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000011,
+      "Entries": [
+        "Arena_ bow lower-level soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000015,
+      "Entries": [
+        "arena_stairlower soldier launch"
+      ]
+    },
+    {
+      "ID": 50000016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000020,
+      "Entries": [
+        "Exterior wall aisle _ small room enemy launch"
+      ]
+    },
+    {
+      "ID": 50000025,
+      "Entries": [
+        "Exterior Wall Aisle_ Small Room Enemy Launch 2"
+      ]
+    },
+    {
+      "ID": 50000030,
+      "Entries": [
+        "Exterior Wall Passage_Course Blocked Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000035,
+      "Entries": [
+        "Exterior Wall Passage _ Corner Waiting Soldiers Start"
+      ]
+    },
+    {
+      "ID": 50000040,
+      "Entries": [
+        "_ Hidden soldiers launch on the outer wall passage"
+      ]
+    },
+    {
+      "ID": 50000041,
+      "Entries": [
+        "On the outer wall passage"
+      ]
+    },
+    {
+      "ID": 50000050,
+      "Entries": [
+        "Wooden scaffolding second stage_ soldier start"
+      ]
+    },
+    {
+      "ID": 50000060,
+      "Entries": [
+        "Salamander cave on_ overhead surprise start"
+      ]
+    },
+    {
+      "ID": 50000070,
+      "Entries": [
+        "under wooden scaffolding _the innermost_ soldier starts"
+      ]
+    },
+    {
+      "ID": 50000080,
+      "Entries": [
+        "Exterior Wall Wooden Scaffolding Under_ Lower Soldier Reaction Area 01"
+      ]
+    },
+    {
+      "ID": 50000081,
+      "Entries": [
+        "Exterior Wall Wooden Scaffolding Under_ Lower Soldier Reaction Area 02"
+      ]
+    },
+    {
+      "ID": 50000082,
+      "Entries": [
+        "Exterior Wall Wooden Scaffolding Under_ Lower Soldier Reaction Area 03"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "The main tower under the waterway _dash surprise start"
+      ]
+    },
+    {
+      "ID": 50000110,
+      "Entries": [
+        "Waterway_ Mimetic Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000115,
+      "Entries": [
+        "Waterway Bridge Destination_ Mimetic Soldiers Launch"
+      ]
+    },
+    {
+      "ID": 50000120,
+      "Entries": [
+        "Submerged Square Entrance_ Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000130,
+      "Entries": [
+        "Submerged Square_Landing_Kingdom Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000140,
+      "Entries": [
+        "submerged square_landing_lower-level soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000150,
+      "Entries": [
+        "Hawk Bay Grant Appeared _ Logic Area"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "_Heavy soldier launch_1 on l-shaped aisle"
+      ]
+    },
+    {
+      "ID": 50000205,
+      "Entries": [
+        "L-shaped passage_heavy soldier start"
+      ]
+    },
+    {
+      "ID": 50000210,
+      "Entries": [
+        "Flame Barrel Square_ Heavy Soldiers Launch"
+      ]
+    },
+    {
+      "ID": 50000215,
+      "Entries": [
+        "barista room_ soldier start"
+      ]
+    },
+    {
+      "ID": 50000220,
+      "Entries": [
+        "King's Door Front _ Kingdom Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000225,
+      "Entries": [
+        "L-shaped aisle destination stairs side _ kingdom soldiers start"
+      ]
+    },
+    {
+      "ID": 50000230,
+      "Entries": [
+        "Launch the soldier on the sword of the giant"
+      ]
+    },
+    {
+      "ID": 50000240,
+      "Entries": [
+        "Giants under the sword _ mimetic soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000250,
+      "Entries": [
+        "Giant's Sword Under White Door In Front Of Kingdom Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000251,
+      "Entries": [
+        "Giant's Sword Under White Door Front _ Kingdom Soldier Launch 02"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "patch passage_enemy first wave action start_1"
+      ]
+    },
+    {
+      "ID": 50000310,
+      "Entries": [
+        "patch passage_enemy first wave action start_2"
+      ]
+    },
+    {
+      "ID": 50000320,
+      "Entries": [
+        "patch passage_ enemy second wave action start"
+      ]
+    },
+    {
+      "ID": 50000330,
+      "Entries": [
+        "Patch Area_ Hidden Soldiers Launch"
+      ]
+    },
+    {
+      "ID": 50000400,
+      "Entries": [
+        "Main Tower_Mimetic Soldier Launch"
+      ]
+    },
+    {
+      "ID": 50000500,
+      "Entries": [
+        "Dark passage _ mimetic soldiers start"
+      ]
+    },
+    {
+      "ID": 50000510,
+      "Entries": [
+        "dark passage _heavy soldier launch"
+      ]
+    },
+    {
+      "ID": 50000520,
+      "Entries": [
+        "Ground cracksquare building 1F_ lower-level soldiers launch"
+      ]
+    },
+    {
+      "ID": 50000530,
+      "Entries": [
+        "ground cracking square rooftop_lower-level soldier launch_1"
+      ]
+    },
+    {
+      "ID": 50000531,
+      "Entries": [
+        "Ground cracking square rooftop_lower-level soldier launch_2"
+      ]
+    },
+    {
+      "ID": 50000532,
+      "Entries": [
+        "Ground cracking square rooftop_lower-level soldiers start_3"
+      ]
+    },
+    {
+      "ID": 50000540,
+      "Entries": [
+        "Ground cracking square_ heavy soldiers start"
+      ]
+    },
+    {
+      "ID": 50000550,
+      "Entries": [
+        "Ground cracking square_ indoor archer supplant"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Arena_ Lower Soldier 1 For Navi 1"
+      ]
+    },
+    {
+      "ID": 52000001,
+      "Entries": [
+        "Arena_Lower Soldier 2 Navi 2"
+      ]
+    },
+    {
+      "ID": 52000010,
+      "Entries": [
+        "Arena_ Navi 1 for lower-level soldiers 2"
+      ]
+    },
+    {
+      "ID": 52000011,
+      "Entries": [
+        "Arena_Lower Soldier 1 Navi 2"
+      ]
+    },
+    {
+      "ID": 52000020,
+      "Entries": [
+        "Start kawara _ lower soldier 1 navi 1"
+      ]
+    },
+    {
+      "ID": 52000021,
+      "Entries": [
+        "Start kawara _ lower soldier 1 navi 2"
+      ]
+    },
+    {
+      "ID": 52000030,
+      "Entries": [
+        "Kawara _ Lower class 2 officer navigation 1 of the start"
+      ]
+    },
+    {
+      "ID": 52000031,
+      "Entries": [
+        "Start kawara _ lower soldier 2 navi 2"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "Exterior wall wooden scaffolding_1 for wandering uro"
+      ]
+    },
+    {
+      "ID": 52000101,
+      "Entries": [
+        "Exterior wall wooden scaffolding_2 for wandering uro"
+      ]
+    },
+    {
+      "ID": 52000102,
+      "Entries": [
+        "Exterior wall wooden scaffolding_for uro_3"
+      ]
+    },
+    {
+      "ID": 52000103,
+      "Entries": [
+        "Under exterior wall wooden scaffolding_for uro_4"
+      ]
+    },
+    {
+      "ID": 52000104,
+      "Entries": [
+        "Exterior wall wooden scaffolding_for uro_5"
+      ]
+    },
+    {
+      "ID": 52000105,
+      "Entries": [
+        "Exterior wall wooden scaffolding_for uro_6"
+      ]
+    },
+    {
+      "ID": 52000110,
+      "Entries": [
+        "Under exterior wall wooden scaffolding_Salamander Cave Falling Navi"
+      ]
+    },
+    {
+      "ID": 52000500,
+      "Entries": [
+        "Ground Cracking Square_ Kingdom Soldier Sniper Point"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "exterior wall passage _ lower soldier dash start"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "Flame Cave_Salamander Fixed Cannon Area"
+      ]
+    },
+    {
+      "ID": 53000101,
+      "Entries": [
+        "Flame Cave_Salamander Fixed Cannon Area"
+      ]
+    },
+    {
+      "ID": 53000150,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53000200,
+      "Entries": [
+        "barista room_realm for kingdom soldier chasing logic"
+      ]
+    },
+    {
+      "ID": 53000201,
+      "Entries": [
+        "_Realm room under the barista room _realm for realm soldier chasing logic"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "Flame Barrel Square_Narrow Road Battle Area"
+      ]
+    },
+    {
+      "ID": 53000500,
+      "Entries": [
+        "Ground Cracking Square_ Kingdom Soldier Sniper Range"
+      ]
+    },
+    {
+      "ID": 53000510,
+      "Entries": [
+        "Dark Passage_Kingdom Soldier Sniper Area"
+      ]
+    },
+    {
+      "ID": 56000700,
+      "Entries": [
+        "Salamander Cave_Salamander Return Area"
+      ]
+    },
+    {
+      "ID": 56000710,
+      "Entries": [
+        "Salamander Cave_Salamander Repatriation Area 2"
+      ]
+    },
+    {
+      "ID": 56001000,
+      "Entries": [
+        "[Feedback area] inside the outer passage"
+      ]
+    },
+    {
+      "ID": 56001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56001100,
+      "Entries": [
+        "【Return area】Flame barrel square ahead"
+      ]
+    },
+    {
+      "ID": 56001200,
+      "Entries": [
+        "【Return area】Barista Kingdom Soldiers"
+      ]
+    },
+    {
+      "ID": 56002000,
+      "Entries": [
+        "【Return area】Under the lift in front of the giant"
+      ]
+    },
+    {
+      "ID": 56003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56004001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57000000,
+      "Entries": [
+        "【Appearance area】Heavy soldiers for the second weekSB_ of the ground cracking square"
+      ]
+    },
+    {
+      "ID": 57000010,
+      "Entries": [
+        "【Appearance area】Catalina for the second week of the ground cracking square SB_"
+      ]
+    },
+    {
+      "ID": 70000020,
+      "Entries": [
+        "Central corridor corridor _ Position aimed after the standby release"
+      ]
+    },
+    {
+      "ID": 70002000,
+      "Entries": [
+        "Exterior wall wooden scaffolding_ goal point for escape"
+      ]
+    },
+    {
+      "ID": 70002700,
+      "Entries": [
+        "Main tower side road_ assault start"
+      ]
+    },
+    {
+      "ID": 70002710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70002810,
+      "Entries": [
+        "Main Tower Lower Waterway_Dash Surprise Target Point"
+      ]
+    },
+    {
+      "ID": 70003000,
+      "Entries": [
+        "Dark passage entrance _ enemy one action start"
+      ]
+    },
+    {
+      "ID": 70003500,
+      "Entries": [
+        "Dark setting area_1"
+      ]
+    },
+    {
+      "ID": 70003510,
+      "Entries": [
+        "Dark Setting Area_2"
+      ]
+    },
+    {
+      "ID": 70004510,
+      "Entries": [
+        "Grate gate exit_heavy soldier wall breaking position_1"
+      ]
+    },
+    {
+      "ID": 70004530,
+      "Entries": [
+        "Grate gate exit_heavy soldier wall breaking position_2"
+      ]
+    },
+    {
+      "ID": 70010000,
+      "Entries": [
+        "L-shaped passage_spearsoldier's straight start"
+      ]
+    },
+    {
+      "ID": 70013010,
+      "Entries": [
+        "Lever gate front _ bow soldier & flame bottle proximity switching range"
+      ]
+    },
+    {
+      "ID": 70013020,
+      "Entries": [
+        "Lever gate front_proximity start"
+      ]
+    },
+    {
+      "ID": 70017010,
+      "Entries": [
+        "Jumping target point on the giant sword inside the front center"
+      ]
+    },
+    {
+      "ID": 70017500,
+      "Entries": [
+        "Front left narrow stairs_ dash proximity start_1"
+      ]
+    },
+    {
+      "ID": 70017510,
+      "Entries": [
+        "Front left narrow stairs_dash proximity start_2"
+      ]
+    },
+    {
+      "ID": 70017520,
+      "Entries": [
+        "Front left narrow stairs _ flame bottle start"
+      ]
+    },
+    {
+      "ID": 70018000,
+      "Entries": [
+        "Front Center_Formation& Archer action begins"
+      ]
+    },
+    {
+      "ID": 70018030,
+      "Entries": [
+        "Front fall surprise_jumping target"
+      ]
+    },
+    {
+      "ID": 70020010,
+      "Entries": [
+        "Waterway_Dash Proximity Action Start_1"
+      ]
+    },
+    {
+      "ID": 70020020,
+      "Entries": [
+        "Waterway_Dash Proximity Action Start_2"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "No intrusion_ between maps"
+      ]
+    },
+    {
+      "ID": 80000201,
+      "Entries": [
+        "No intrusion_block 2→3"
+      ]
+    },
+    {
+      "ID": 80000300,
+      "Entries": [
+        "No intrusion_block 3→5"
+      ]
+    },
+    {
+      "ID": 80000301,
+      "Entries": [
+        "No intrusion_block 3→5"
+      ]
+    },
+    {
+      "ID": 80000302,
+      "Entries": [
+        "No Intrusion_Block 3→6"
+      ]
+    },
+    {
+      "ID": 80000400,
+      "Entries": [
+        "No intrusion_block 4→3"
+      ]
+    },
+    {
+      "ID": 80000500,
+      "Entries": [
+        "No intrusion_block 5→3"
+      ]
+    },
+    {
+      "ID": 80000501,
+      "Entries": [
+        "No intrusion_block 5→2"
+      ]
+    },
+    {
+      "ID": 80001003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81000301,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "Name": "MenuFilter",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value -- 無効値"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "loading -- ローディング"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Movie/cutscene -- ムービー/カットシーン"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Title screen -- タイトル画面"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "FE default -- FEデフォルト"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "menu default -- メニューデフォルト"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Effects in TAE -- TAEでのエフェクト"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Effects in TAE -- TAEでのエフェクト"
+      ]
+    },
+    {
+      "ID": 99510000,
+      "Entries": [
+        "[Test] Medium stagger RGB shifting noise 01 -- 【テスト】中よろけ\u3000RGBずらしノイズ 01"
+      ]
+    },
+    {
+      "ID": 99510001,
+      "Entries": [
+        "[Test] Medium stagger RGB shift noise 02 -- 【テスト】中よろけ\u3000RGBずらしノイズ 02"
+      ]
+    },
+    {
+      "ID": 99510002,
+      "Entries": [
+        "[Test] Medium stagger RGB shift noise 03 -- 【テスト】中よろけ\u3000RGBずらしノイズ 03"
+      ]
+    },
+    {
+      "ID": 99510099,
+      "Entries": [
+        "[Test] Medium stagger sandstorm noise -- 【テスト】中よろけ\u3000砂嵐ノイズ"
+      ]
+    },
+    {
+      "ID": 99520000,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 01 -- 【テスト】大よろけ\u3000RGBずらしノイズ 01"
+      ]
+    },
+    {
+      "ID": 99520001,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise 02 -- 【テスト】大よろけ\u3000RGBずらしノイズ 02"
+      ]
+    },
+    {
+      "ID": 99520002,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 03 -- 【テスト】大よろけ\u3000RGBずらしノイズ 03"
+      ]
+    },
+    {
+      "ID": 99520003,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise 04 -- 【テスト】大よろけ\u3000RGBずらしノイズ 04"
+      ]
+    },
+    {
+      "ID": 99520004,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 05 -- 【テスト】大よろけ\u3000RGBずらしノイズ 05"
+      ]
+    },
+    {
+      "ID": 99520005,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 06 -- 【テスト】大よろけ\u3000RGBずらしノイズ 06"
+      ]
+    },
+    {
+      "ID": 99520006,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 07 -- 【テスト】大よろけ\u3000RGBずらしノイズ 07"
+      ]
+    },
+    {
+      "ID": 99520007,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 08 -- 【テスト】大よろけ\u3000RGBずらしノイズ 08"
+      ]
+    },
+    {
+      "ID": 99520008,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 09 -- 【テスト】大よろけ\u3000RGBずらしノイズ 09"
+      ]
+    },
+    {
+      "ID": 99520009,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 10 -- 【テスト】大よろけ\u3000RGBずらしノイズ 10"
+      ]
+    },
+    {
+      "ID": 99520010,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 11 -- 【テスト】大よろけ\u3000RGBずらしノイズ 11"
+      ]
+    },
+    {
+      "ID": 99520011,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 12 -- 【テスト】大よろけ\u3000RGBずらしノイズ 12"
+      ]
+    },
+    {
+      "ID": 99520020,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise last -- 【テスト】大よろけ\u3000RGBずらしノイズ ラスト"
+      ]
+    },
+    {
+      "ID": 99520099,
+      "Entries": [
+        "[Test] Large stagger sandstorm noise -- 【テスト】大よろけ\u3000砂嵐ノイズ"
+      ]
+    },
+    {
+      "ID": 99540000,
+      "Entries": [
+        "[Test] Additive stagger RGB shift noise 01 -- 【テスト】加算よろけ\u3000RGBずらしノイズ 01"
+      ]
+    },
+    {
+      "ID": 99540099,
+      "Entries": [
+        "[Test] Additive stagger sandstorm noise -- 【テスト】加算よろけ\u3000砂嵐ノイズ"
+      ]
+    }
+  ]
+}

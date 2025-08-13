@@ -1,0 +1,119 @@
+{
+  "Name": "EFID_m60_42_36_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 1042360000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 1042360050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 1042360100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 1042360200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1042360210,
+      "Entries": [
+        "04 Lady Mission 1_Flower collection_Switch"
+      ]
+    },
+    {
+      "ID": 1042360400,
+      "Entries": [
+        "Character flag: Small exploration (do not reset)"
+      ]
+    },
+    {
+      "ID": 1042360500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1042360700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 1042360800,
+      "Entries": [
+        "Boss flag (do not reset) (Do not reset)"
+      ]
+    },
+    {
+      "ID": 1042360900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1042362100,
+      "Entries": [
+        "System flags"
+      ]
+    },
+    {
+      "ID": 1042362200,
+      "Entries": [
+        "Character flags (reset)"
+      ]
+    },
+    {
+      "ID": 1042362400,
+      "Entries": [
+        "Character flags: Small exploration (reset)"
+      ]
+    },
+    {
+      "ID": 1042362500,
+      "Entries": [
+        "Object flags (reset)"
+      ]
+    },
+    {
+      "ID": 1042362700,
+      "Entries": [
+        "Conversation flags"
+      ]
+    },
+    {
+      "ID": 1042362800,
+      "Entries": [
+        "Boss flags (reset)"
+      ]
+    },
+    {
+      "ID": 1042362900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1042368500,
+      "Entries": [
+        "Object action flags"
+      ]
+    }
+  ]
+}

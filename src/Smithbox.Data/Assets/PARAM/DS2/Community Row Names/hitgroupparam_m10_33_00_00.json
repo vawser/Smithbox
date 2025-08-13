@@ -1,0 +1,89 @@
+{
+  "Name": "hitgroupparam_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Group 1"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "1 for light switching events"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "2 for light switching events"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "3 for light switching events"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "4 for light switching events"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "5 for light switching events"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "6 for light switching events"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "7 for light switching events"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "8 for light switching events"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "9 for light switching events"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "10 for light switching events"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "11 for light switching events"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "12 for light switching events"
+      ]
+    }
+  ]
+}

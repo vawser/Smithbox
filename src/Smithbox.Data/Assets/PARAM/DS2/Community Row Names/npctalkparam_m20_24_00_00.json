@@ -1,0 +1,659 @@
+{
+  "Name": "npctalkparam_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Automatic outbreak conversation"
+      ]
+    },
+    {
+      "ID": 50600010,
+      "Entries": [
+        "Automatic conversation: with a light source"
+      ]
+    },
+    {
+      "ID": 50600020,
+      "Entries": [
+        "Auto-generated conversation: no light source"
+      ]
+    },
+    {
+      "ID": 50600030,
+      "Entries": [
+        "Auto-occurrence conversation: End"
+      ]
+    },
+    {
+      "ID": 50600100,
+      "Entries": [
+        "Light source hostility"
+      ]
+    },
+    {
+      "ID": 50600110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600200,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 50600210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600300,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 50600310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600400,
+      "Entries": [
+        "Talking To: Part 3"
+      ]
+    },
+    {
+      "ID": 50600410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600440,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600450,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600500,
+      "Entries": [
+        "Talking To: Part 4"
+      ]
+    },
+    {
+      "ID": 50600510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600600,
+      "Entries": [
+        "Talking To: Part 5"
+      ]
+    },
+    {
+      "ID": 50600610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600620,
+      "Entries": [
+        "↓ White phantom appearance possible"
+      ]
+    },
+    {
+      "ID": 50600700,
+      "Entries": [
+        "Talking to: Part 6 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 50600800,
+      "Entries": [
+        "I suddenly left."
+      ]
+    },
+    {
+      "ID": 50600810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50600900,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 50601000,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 50601100,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 50606000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 50606010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50606020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50606030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 50609000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 50609100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 50609200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 50609300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 50609400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 50609410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 50609420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 50609500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 50609600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 69200010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70002700,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 70002710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70002720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70002740,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70002750,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70002760,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70002800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70009000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 70009100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 70009200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 70009300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 70009400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 70009600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

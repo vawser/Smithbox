@@ -1,0 +1,1163 @@
+{
+  "Name": "ResidentFxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Try it"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "General purpose _ candle"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "General purpose _ Bonfire _ Point Light"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Gimmick lighting _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Gimmick lighting _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Gimmick lighting _ Cantera ( With light source )"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Gimmick lighting _ Point Light"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "m21_ fire"
+      ]
+    },
+    {
+      "ID": 21001,
+      "Entries": [
+        "m21_ lanthanum"
+      ]
+    },
+    {
+      "ID": 21002,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 21003,
+      "Entries": [
+        "m21_ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 21004,
+      "Entries": [
+        "m21_ Fireplace (with light source)"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 22001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 22002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 22003,
+      "Entries": [
+        "General purpose _ lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 22004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 22005,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 22006,
+      "Entries": [
+        "m22_ Lantern next to the window"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 23001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 23002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 23003,
+      "Entries": [
+        "m23_ lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 23004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 23005,
+      "Entries": [
+        "m23_ The sacred flame ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 23006,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 23007,
+      "Entries": [
+        "m24_Crucifixion Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 23008,
+      "Entries": [
+        "m23_ Gas lamp"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "m24_ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 24001,
+      "Entries": [
+        "m24_ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 24002,
+      "Entries": [
+        "m24_ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 24003,
+      "Entries": [
+        "m24_ Gas lamp ( No light source )"
+      ]
+    },
+    {
+      "ID": 24004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 24005,
+      "Entries": [
+        "m24_ Incense burner"
+      ]
+    },
+    {
+      "ID": 24006,
+      "Entries": [
+        "m24_ Orange gas lamp ( With light source )"
+      ]
+    },
+    {
+      "ID": 24007,
+      "Entries": [
+        "m24_ Manhole steam"
+      ]
+    },
+    {
+      "ID": 24008,
+      "Entries": [
+        "m24_Crucifixion Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 24009,
+      "Entries": [
+        "m24_ Gas lamp set light source"
+      ]
+    },
+    {
+      "ID": 24010,
+      "Entries": [
+        "m24_ Candle set light source"
+      ]
+    },
+    {
+      "ID": 24011,
+      "Entries": [
+        "m24_ Candles (for dark places without light sources)"
+      ]
+    },
+    {
+      "ID": 24012,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 24013,
+      "Entries": [
+        "m24_ Light leaking from the door (general resident)"
+      ]
+    },
+    {
+      "ID": 24014,
+      "Entries": [
+        "m24_ Lantern next to the window"
+      ]
+    },
+    {
+      "ID": 24900,
+      "Entries": [
+        "m24_ test"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 25001,
+      "Entries": [
+        "Old castle _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 25002,
+      "Entries": [
+        "Old castle _ candle _"
+      ]
+    },
+    {
+      "ID": 25003,
+      "Entries": [
+        "Old castle _ lanthanum ( No light source )"
+      ]
+    },
+    {
+      "ID": 25004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 25005,
+      "Entries": [
+        "m25_ Candlestick point light"
+      ]
+    },
+    {
+      "ID": 25006,
+      "Entries": [
+        "m25_ Chandelier point light source (small)"
+      ]
+    },
+    {
+      "ID": 25007,
+      "Entries": [
+        "m25_ Chandelier point light source (middle)"
+      ]
+    },
+    {
+      "ID": 25008,
+      "Entries": [
+        "m25_ Chandelier point light source (large)"
+      ]
+    },
+    {
+      "ID": 25009,
+      "Entries": [
+        "m25_Lantern set point light source (large)"
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 25011,
+      "Entries": [
+        "m25_o25450 (with light source)"
+      ]
+    },
+    {
+      "ID": 25012,
+      "Entries": [
+        "m25_o254501 (with light source)"
+      ]
+    },
+    {
+      "ID": 26000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 26001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 26002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 26003,
+      "Entries": [
+        "General purpose _ Lantern (with light source)"
+      ]
+    },
+    {
+      "ID": 26004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 26005,
+      "Entries": [
+        "Warp mirror always present"
+      ]
+    },
+    {
+      "ID": 26006,
+      "Entries": [
+        "m26 : Basket chandelier point light source"
+      ]
+    },
+    {
+      "ID": 26007,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "m27_ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 27001,
+      "Entries": [
+        "m27_ Lantern (with light source)"
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 27003,
+      "Entries": [
+        "m27_ Burning rabbit (with light source)"
+      ]
+    },
+    {
+      "ID": 27004,
+      "Entries": [
+        "m27_ Burning horse (with light source)"
+      ]
+    },
+    {
+      "ID": 27005,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 27006,
+      "Entries": [
+        "m27_ Lantern next to the window"
+      ]
+    },
+    {
+      "ID": 27010,
+      "Entries": [
+        "m27_ Lantern (with light source)"
+      ]
+    },
+    {
+      "ID": 28000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 28001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 28002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 28003,
+      "Entries": [
+        "m28 lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 28004,
+      "Entries": [
+        "m28 lanthanum ( No light source )"
+      ]
+    },
+    {
+      "ID": 28005,
+      "Entries": [
+        "m28 Chandelier point light source"
+      ]
+    },
+    {
+      "ID": 28006,
+      "Entries": [
+        "m28 Lantern set light source"
+      ]
+    },
+    {
+      "ID": 28007,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 28008,
+      "Entries": [
+        "Warp Obon always available"
+      ]
+    },
+    {
+      "ID": 28010,
+      "Entries": [
+        "m28 lanthanum ( No light source )"
+      ]
+    },
+    {
+      "ID": 28011,
+      "Entries": [
+        "m28 Lantern set light source"
+      ]
+    },
+    {
+      "ID": 28020,
+      "Entries": [
+        "m28 lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 29000,
+      "Entries": [
+        "m29_ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 29001,
+      "Entries": [
+        "m29_ Candle [White] (no light source)"
+      ]
+    },
+    {
+      "ID": 29002,
+      "Entries": [
+        "m29_ Candle [white] (with light source)"
+      ]
+    },
+    {
+      "ID": 29003,
+      "Entries": [
+        "m29_ Candle [White] (No light source flare)"
+      ]
+    },
+    {
+      "ID": 29004,
+      "Entries": [
+        "m29_ Candle [Yellow] (no light source)"
+      ]
+    },
+    {
+      "ID": 29005,
+      "Entries": [
+        "m29_ Candle [yellow] (with light source)"
+      ]
+    },
+    {
+      "ID": 29006,
+      "Entries": [
+        "m29_Candle [Yellow] (No light source flare)"
+      ]
+    },
+    {
+      "ID": 29007,
+      "Entries": [
+        "m29_ Candle [Red] (No light source)"
+      ]
+    },
+    {
+      "ID": 29008,
+      "Entries": [
+        "m29_ Candle [Red] (with light source)"
+      ]
+    },
+    {
+      "ID": 29009,
+      "Entries": [
+        "m29_ Candle [Red] (No light source flare)"
+      ]
+    },
+    {
+      "ID": 29010,
+      "Entries": [
+        "m29_ Lantern [Orange]"
+      ]
+    },
+    {
+      "ID": 29011,
+      "Entries": [
+        "m29_ Lantern [Yellow]"
+      ]
+    },
+    {
+      "ID": 29012,
+      "Entries": [
+        "m29_ Lantern [Red]"
+      ]
+    },
+    {
+      "ID": 29013,
+      "Entries": [
+        "m29_ Glowing Stone"
+      ]
+    },
+    {
+      "ID": 29014,
+      "Entries": [
+        "m29_ Candlestick point light ( small )"
+      ]
+    },
+    {
+      "ID": 29015,
+      "Entries": [
+        "m29_ Candlestick point light ( large )"
+      ]
+    },
+    {
+      "ID": 29016,
+      "Entries": [
+        "m29_ Chandelier point light source ( small )"
+      ]
+    },
+    {
+      "ID": 29017,
+      "Entries": [
+        "m29_ Chandelier point light source ( Medium )"
+      ]
+    },
+    {
+      "ID": 29018,
+      "Entries": [
+        "m29_ Chandelier point light source ( large )"
+      ]
+    },
+    {
+      "ID": 29019,
+      "Entries": [
+        "m29_ Light streaming in ( small )"
+      ]
+    },
+    {
+      "ID": 29020,
+      "Entries": [
+        "m29_ Light streaming in (middle)"
+      ]
+    },
+    {
+      "ID": 29021,
+      "Entries": [
+        "m29_ Light coming in (large)"
+      ]
+    },
+    {
+      "ID": 29022,
+      "Entries": [
+        "m29_ Light shines through blue and white ( small )"
+      ]
+    },
+    {
+      "ID": 29023,
+      "Entries": [
+        "m29_ Blue-white light (medium)"
+      ]
+    },
+    {
+      "ID": 29024,
+      "Entries": [
+        "m29_ Blue-white light (large)"
+      ]
+    },
+    {
+      "ID": 29025,
+      "Entries": [
+        "m29_ Blue environment point light source (1 x 1 )"
+      ]
+    },
+    {
+      "ID": 29026,
+      "Entries": [
+        "m29_ Blue environment point light source ( 2 x 2 )"
+      ]
+    },
+    {
+      "ID": 29027,
+      "Entries": [
+        "m29_ Blue environment point light source ( 3 x 3 )"
+      ]
+    },
+    {
+      "ID": 29028,
+      "Entries": [
+        "m29_ Blue environment point light source ( 5 x 5 )"
+      ]
+    },
+    {
+      "ID": 29029,
+      "Entries": [
+        "m29_ Blue environment point light source ( 7 x 7 )"
+      ]
+    },
+    {
+      "ID": 29030,
+      "Entries": [
+        "m29_ Orange environment point light source ( 1 x 1 )"
+      ]
+    },
+    {
+      "ID": 29031,
+      "Entries": [
+        "m29_ Orange environment point light source ( 2 x 2 )"
+      ]
+    },
+    {
+      "ID": 29032,
+      "Entries": [
+        "m29_ Orange environment point light source ( 3 x 3 )"
+      ]
+    },
+    {
+      "ID": 29033,
+      "Entries": [
+        "m29_ Orange environment point light source ( 5 x 5 )"
+      ]
+    },
+    {
+      "ID": 29034,
+      "Entries": [
+        "m29_ Orange environment point light source ( 7 x 7 )"
+      ]
+    },
+    {
+      "ID": 29035,
+      "Entries": [
+        "m29_ Red environment point light source ( 1 x 1 )"
+      ]
+    },
+    {
+      "ID": 29036,
+      "Entries": [
+        "m29_ Red environment point light source ( 2 x 2 )"
+      ]
+    },
+    {
+      "ID": 29037,
+      "Entries": [
+        "m29_ Red environment point light source ( 3 x 3 )"
+      ]
+    },
+    {
+      "ID": 29038,
+      "Entries": [
+        "m29_ Red environment point light source ( 5x 5 )"
+      ]
+    },
+    {
+      "ID": 29039,
+      "Entries": [
+        "m29_ Red environment point light source ( 7 x 7 )"
+      ]
+    },
+    {
+      "ID": 29040,
+      "Entries": [
+        "m29_ Strong Sandstorm (Small)"
+      ]
+    },
+    {
+      "ID": 29041,
+      "Entries": [
+        "m29_ Strong Sandstorm (Medium)"
+      ]
+    },
+    {
+      "ID": 29042,
+      "Entries": [
+        "m29_ Strong Sandstorm (Large)"
+      ]
+    },
+    {
+      "ID": 29043,
+      "Entries": [
+        "m29_ Flying Ashes ( 10 x 10 )"
+      ]
+    },
+    {
+      "ID": 29044,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 29045,
+      "Entries": [
+        "m29_ Incense burner smoke"
+      ]
+    },
+    {
+      "ID": 29046,
+      "Entries": [
+        "m29_ Sub-route dense fog 6m"
+      ]
+    },
+    {
+      "ID": 29047,
+      "Entries": [
+        "m29_ Sub-route dense fog 20m"
+      ]
+    },
+    {
+      "ID": 29048,
+      "Entries": [
+        "m29_ Sub-route dense fog 32m"
+      ]
+    },
+    {
+      "ID": 29049,
+      "Entries": [
+        "m29_ Wall of Light 1"
+      ]
+    },
+    {
+      "ID": 29050,
+      "Entries": [
+        "m29_ Wall of Light 2"
+      ]
+    },
+    {
+      "ID": 29051,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 29052,
+      "Entries": [
+        "m29_ Smoke from a bonfire (blue-white light source)"
+      ]
+    },
+    {
+      "ID": 29053,
+      "Entries": [
+        "m29_ Candlestick [White] (7 candles)"
+      ]
+    },
+    {
+      "ID": 29054,
+      "Entries": [
+        "m29_ General Statue [White] (5 candles)"
+      ]
+    },
+    {
+      "ID": 29055,
+      "Entries": [
+        "m29_ General purpose statue [yellow] (candle x5)"
+      ]
+    },
+    {
+      "ID": 29056,
+      "Entries": [
+        "m29_ Cosmic Strong (Small)"
+      ]
+    },
+    {
+      "ID": 29057,
+      "Entries": [
+        "m29_ Cosmic Strong (Medium)"
+      ]
+    },
+    {
+      "ID": 29058,
+      "Entries": [
+        "m29_ Cosmic Strong (Large)"
+      ]
+    },
+    {
+      "ID": 29059,
+      "Entries": [
+        "m29_ Standard Strong (Small)"
+      ]
+    },
+    {
+      "ID": 29060,
+      "Entries": [
+        "m29_ Standard Strong (Medium)"
+      ]
+    },
+    {
+      "ID": 29061,
+      "Entries": [
+        "m29_ Standard Strong (Large)"
+      ]
+    },
+    {
+      "ID": 29062,
+      "Entries": [
+        "m29_For Treasure Rarity Dungeon"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 32001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 32002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 32003,
+      "Entries": [
+        "General purpose _ lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 32004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 32005,
+      "Entries": [
+        "Invert _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 32006,
+      "Entries": [
+        "Invert _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 32007,
+      "Entries": [
+        "Invert _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 32008,
+      "Entries": [
+        "Chandelier point light source"
+      ]
+    },
+    {
+      "ID": 32009,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Multi-light wall"
+      ]
+    },
+    {
+      "ID": 33000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 33001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 33002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 33003,
+      "Entries": [
+        "General purpose _ lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 33004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 33005,
+      "Entries": [
+        "Moon Flower ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 33006,
+      "Entries": [
+        "Candle dish light source"
+      ]
+    },
+    {
+      "ID": 33007,
+      "Entries": [
+        "Orientation Test"
+      ]
+    },
+    {
+      "ID": 33008,
+      "Entries": [
+        "Patch Signpost"
+      ]
+    },
+    {
+      "ID": 34000,
+      "Entries": [
+        "m34_ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 34001,
+      "Entries": [
+        "m34_ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 34002,
+      "Entries": [
+        "m34_ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 34003,
+      "Entries": [
+        "m34_ Gas lamp ( No light source )"
+      ]
+    },
+    {
+      "ID": 34004,
+      "Entries": [
+        "General purpose _ Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 34005,
+      "Entries": [
+        "m34_ Incense burner"
+      ]
+    },
+    {
+      "ID": 34006,
+      "Entries": [
+        "m34_ Statue Gaslight ( With light source )"
+      ]
+    },
+    {
+      "ID": 34007,
+      "Entries": [
+        "m34_ Manhole steam"
+      ]
+    },
+    {
+      "ID": 34008,
+      "Entries": [
+        "m34_ Crucifixion Bonfire ( Light source shadow )"
+      ]
+    },
+    {
+      "ID": 34009,
+      "Entries": [
+        "m34_ Gas lamp set light source"
+      ]
+    },
+    {
+      "ID": 34010,
+      "Entries": [
+        "m34_ Candle set light source"
+      ]
+    },
+    {
+      "ID": 34011,
+      "Entries": [
+        "m34_ Candles (for dark places without light sources)"
+      ]
+    },
+    {
+      "ID": 35000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 35001,
+      "Entries": [
+        "General purpose _ Torch (with light source)"
+      ]
+    },
+    {
+      "ID": 35002,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 35003,
+      "Entries": [
+        "General purpose _ lanthanum ( With light source )"
+      ]
+    },
+    {
+      "ID": 35004,
+      "Entries": [
+        "General purpose _ Downstairs display light source"
+      ]
+    },
+    {
+      "ID": 36000,
+      "Entries": [
+        "General purpose _ Candle (no light source)"
+      ]
+    },
+    {
+      "ID": 36001,
+      "Entries": [
+        "General purpose _ Candle (with light source)"
+      ]
+    },
+    {
+      "ID": 36002,
+      "Entries": [
+        "Floating ball lighting (with light source)"
+      ]
+    },
+    {
+      "ID": 36003,
+      "Entries": [
+        "Ignition OBJ (with light source)"
+      ]
+    },
+    {
+      "ID": 36004,
+      "Entries": [
+        "Light source only: Candle slug"
+      ]
+    },
+    {
+      "ID": 36005,
+      "Entries": [
+        "Insect-infested corpse SE"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        "PG For research purposes"
+      ]
+    },
+    {
+      "ID": 99999,
+      "Entries": [
+        "null"
+      ]
+    }
+  ]
+}

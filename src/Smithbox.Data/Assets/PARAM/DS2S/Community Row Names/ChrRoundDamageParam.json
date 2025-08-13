@@ -1,0 +1,425 @@
+{
+  "Name": "ChrRoundDamageParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Lap strengthening table Lv1 -- 周回強化テーブル\u3000Lv1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Circumferential Strengthening Table Lv2 -- 周回強化テーブル\u3000Lv2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Circumferential Strengthening Table Lv3 -- 周回強化テーブル\u3000Lv3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Circumferential Strengthening Table Lv4 -- 周回強化テーブル\u3000Lv4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Circumferential Strengthening Table Lv5 -- 周回強化テーブル\u3000Lv5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Circumferential Strengthening Table Lv6 -- 周回強化テーブル\u3000Lv6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Circumferential Strengthening Table Lv7 -- 周回強化テーブル\u3000Lv7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Circumferential Strengthening Table Lv8 -- 周回強化テーブル\u3000Lv8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Circumferential Strengthening Table Lv9 -- 周回強化テーブル\u3000Lv9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Circumferential Strengthening Table Lv10 -- 周回強化テーブル\u3000Lv10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv1 -- 強敵-周回強化テーブル\u3000Lv1"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv2 -- 強敵-周回強化テーブル\u3000Lv2"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv3 -- 強敵-周回強化テーブル\u3000Lv3"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv4 -- 強敵-周回強化テーブル\u3000Lv4"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv5 -- 強敵-周回強化テーブル\u3000Lv5"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv6 -- 強敵-周回強化テーブル\u3000Lv6"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv7 -- 強敵-周回強化テーブル\u3000Lv7"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv8 -- 強敵-周回強化テーブル\u3000Lv8"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv9 -- 強敵-周回強化テーブル\u3000Lv9"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Strong Enemy - Circumferential Strengthening Table Lv10 -- 強敵-周回強化テーブル\u3000Lv10"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv1 -- NPC-周回強化テーブル\u3000Lv1"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv2 -- NPC-周回強化テーブル\u3000Lv2"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv3 -- NPC-周回強化テーブル\u3000Lv3"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv4 -- NPC-周回強化テーブル\u3000Lv4"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv5 -- NPC-周回強化テーブル\u3000Lv5"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv6 -- NPC-周回強化テーブル\u3000Lv6"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv7 -- NPC-周回強化テーブル\u3000Lv7"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv8 -- NPC-周回強化テーブル\u3000Lv8"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv9 -- NPC-周回強化テーブル\u3000Lv9"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "NPC-Lap Strengthening Table Lv10 -- NPC-周回強化テーブル\u3000Lv10"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv1 -- ボス-周回強化テーブル\u3000Lv1"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv2 -- ボス-周回強化テーブル\u3000Lv2"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv3 -- ボス-周回強化テーブル\u3000Lv3"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv4 -- ボス-周回強化テーブル\u3000Lv4"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv5 -- ボス-周回強化テーブル\u3000Lv5"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv6 -- ボス-周回強化テーブル\u3000Lv6"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv7 -- ボス-周回強化テーブル\u3000Lv7"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv8 -- ボス-周回強化テーブル\u3000Lv8"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv9 -- ボス-周回強化テーブル\u3000Lv9"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Boss - Lap Strengthening Table Lv10 -- ボス-周回強化テーブル\u3000Lv10"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Spare frame 31 -- 予備枠３１"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Spare frame 32 -- 予備枠３２"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Spare frame 33 -- 予備枠３３"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Spare frame 34 -- 予備枠３４"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Spare frame 35 -- 予備枠３５"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Spare frame 36 -- 予備枠３６"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Spare frame 37 -- 予備枠３７"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Spare frame 38 -- 予備枠３８"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Spare frame 39 -- 予備枠３９"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Spare frame 40 -- 予備枠４０"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Spare frame 41 -- 予備枠４１"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Spare frame 42 -- 予備枠４２"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Spare frame 43 -- 予備枠４３"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Spare frame 44 -- 予備枠４４"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Spare frame 45 -- 予備枠４５"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Spare frame 46 -- 予備枠４６"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Spare frame 47 -- 予備枠４７"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Spare frame 48 -- 予備枠４８"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Spare frame 49 -- 予備枠４９"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Spare frame 50 -- 予備枠５０"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Spare frame 51 -- 予備枠５１"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Spare frame 52 -- 予備枠５２"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Spare frame 53 -- 予備枠５３"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Spare frame 54 -- 予備枠５４"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Spare frame 55 -- 予備枠５５"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Spare frame 56 -- 予備枠５６"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Spare frame 57 -- 予備枠５７"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Spare frame 58 -- 予備枠５８"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Spare frame 59 -- 予備枠５９"
+      ]
+    }
+  ]
+}

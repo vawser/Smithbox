@@ -1,0 +1,1493 @@
+{
+  "Name": "DecalParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "metalness texture test"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Test for putting out on the ground when destroying assets"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Test for putting it on the ground when destroying an enemy"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "c4700 amphibious assault ship laser melting trace"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "s30_00_0000_Next generation proto AC appearance iron drag trace back"
+      ]
+    },
+    {
+      "ID": 630001,
+      "Entries": [
+        "s30_00_0000_Next generation proto AC appearance iron drag marks front"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "[Attack] Rifle_Bullet hole decal"
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        "[Attack] Machine gun_bullet hole decal"
+      ]
+    },
+    {
+      "ID": 800002,
+      "Entries": [
+        "[Attack] Bazooka_Bullet Hole Decal"
+      ]
+    },
+    {
+      "ID": 800003,
+      "Entries": [
+        "[Attack] Cannon_Bullet Hole Decal"
+      ]
+    },
+    {
+      "ID": 800004,
+      "Entries": [
+        "[Attack] Laser rifle_bullet hole decal"
+      ]
+    },
+    {
+      "ID": 800005,
+      "Entries": [
+        "[Attack] Laser Cannon_Bullet Hole Decal"
+      ]
+    },
+    {
+      "ID": 800006,
+      "Entries": [
+        "[Attack] Plasma Cannon_Bullet Hole Decal"
+      ]
+    },
+    {
+      "ID": 800007,
+      "Entries": [
+        "[Attack] Missile_Bullet hole decal"
+      ]
+    },
+    {
+      "ID": 800008,
+      "Entries": [
+        "[ENE] [Attack] Stiglo small laser hits"
+      ]
+    },
+    {
+      "ID": 800009,
+      "Entries": [
+        "[ENE] [Attack] Stiglo large laser impact"
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        "[ENE] [Attack] Stiglo diffusion laser impact (Reserve 9100020)"
+      ]
+    },
+    {
+      "ID": 300001501,
+      "Entries": [
+        "[Stone] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300001502,
+      "Entries": [
+        "[Stone] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300003001,
+      "Entries": [
+        "AC footprint [earth] trapezoid (medium)"
+      ]
+    },
+    {
+      "ID": 300003003,
+      "Entries": [
+        "AC footprint [earth] trapezoid (extra large)"
+      ]
+    },
+    {
+      "ID": 300003011,
+      "Entries": [
+        "AC footprint [earth] general purpose drag (medium)"
+      ]
+    },
+    {
+      "ID": 300003013,
+      "Entries": [
+        "AC footprint [earth] general purpose drag (extra large)"
+      ]
+    },
+    {
+      "ID": 300003021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300003111,
+      "Entries": [
+        "AC footprint [earth] nail shape (medium)"
+      ]
+    },
+    {
+      "ID": 300003201,
+      "Entries": [
+        "AC footprint [soil] crawler track (thin)"
+      ]
+    },
+    {
+      "ID": 300003211,
+      "Entries": [
+        "AC footprint [earth] track double (thin)"
+      ]
+    },
+    {
+      "ID": 300003221,
+      "Entries": [
+        "AC footprint [earth] track double (thick)"
+      ]
+    },
+    {
+      "ID": 300003501,
+      "Entries": [
+        "[Sat] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300003502,
+      "Entries": [
+        "[Sat] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300005001,
+      "Entries": [
+        "AC footprint [sand] trapezoid (medium)"
+      ]
+    },
+    {
+      "ID": 300005003,
+      "Entries": [
+        "AC footprint [sand] trapezoid (extra large)"
+      ]
+    },
+    {
+      "ID": 300005011,
+      "Entries": [
+        "AC footprint [sand] general purpose drag (medium)"
+      ]
+    },
+    {
+      "ID": 300005013,
+      "Entries": [
+        "AC footprint [sand] general purpose drag (extra large)"
+      ]
+    },
+    {
+      "ID": 300005021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300005111,
+      "Entries": [
+        "AC footprint [sand] nail shape (medium)"
+      ]
+    },
+    {
+      "ID": 300005201,
+      "Entries": [
+        "AC footprint [sand] crawler track (thin)"
+      ]
+    },
+    {
+      "ID": 300005211,
+      "Entries": [
+        "AC footprint [sand] Crawler track double (thin)"
+      ]
+    },
+    {
+      "ID": 300005221,
+      "Entries": [
+        "AC footprint [Sand] Crawler track double (thick)"
+      ]
+    },
+    {
+      "ID": 300005501,
+      "Entries": [
+        "[Sand] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300005502,
+      "Entries": [
+        "[Sand] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300006001,
+      "Entries": [
+        "AC footprint [ice] trapezoid (medium)"
+      ]
+    },
+    {
+      "ID": 300006003,
+      "Entries": [
+        "AC footprint [ice] trapezoid (extra large)"
+      ]
+    },
+    {
+      "ID": 300006011,
+      "Entries": [
+        "AC footprint [ice] general purpose drag (medium)"
+      ]
+    },
+    {
+      "ID": 300006013,
+      "Entries": [
+        "AC footprint [ice] general purpose drag (extra large)"
+      ]
+    },
+    {
+      "ID": 300006021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300006111,
+      "Entries": [
+        "AC footprint [Ice] Claw type (medium)"
+      ]
+    },
+    {
+      "ID": 300006201,
+      "Entries": [
+        "AC footprint [ice] track (medium)"
+      ]
+    },
+    {
+      "ID": 300006211,
+      "Entries": [
+        "AC footprint [ice] track double (thin)"
+      ]
+    },
+    {
+      "ID": 300006221,
+      "Entries": [
+        "AC footprint [Ice] Track double (thick)"
+      ]
+    },
+    {
+      "ID": 300006501,
+      "Entries": [
+        "[Ice] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300006502,
+      "Entries": [
+        "[Ice] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300007001,
+      "Entries": [
+        "AC footprint [snow] trapezoid (medium)"
+      ]
+    },
+    {
+      "ID": 300007003,
+      "Entries": [
+        "AC footprint [snow] trapezoid (extra large)"
+      ]
+    },
+    {
+      "ID": 300007011,
+      "Entries": [
+        "AC footprint [snow] general purpose drag (medium)"
+      ]
+    },
+    {
+      "ID": 300007013,
+      "Entries": [
+        "AC footprint [snow] general purpose drag (extra large)"
+      ]
+    },
+    {
+      "ID": 300007021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300007111,
+      "Entries": [
+        "AC footprint [snow] claw shape (medium)"
+      ]
+    },
+    {
+      "ID": 300007201,
+      "Entries": [
+        "AC footprint [snow] track (medium)"
+      ]
+    },
+    {
+      "ID": 300007211,
+      "Entries": [
+        "AC footprint [snow] track double (thin)"
+      ]
+    },
+    {
+      "ID": 300007221,
+      "Entries": [
+        "AC footprint [snow] track double (thick)"
+      ]
+    },
+    {
+      "ID": 300007501,
+      "Entries": [
+        "[Snow] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300007502,
+      "Entries": [
+        "[Snow] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300008501,
+      "Entries": [
+        "[Cloth] Death Explosion Medium"
+      ]
+    },
+    {
+      "ID": 300008502,
+      "Entries": [
+        "[Cloth] Death Explosion Large"
+      ]
+    },
+    {
+      "ID": 300010501,
+      "Entries": [
+        "[Concrete] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300010502,
+      "Entries": [
+        "[Concrete] Death explosion large"
+      ]
+    },
+    {
+      "ID": 300011501,
+      "Entries": [
+        "[Iron] Death explosion medium"
+      ]
+    },
+    {
+      "ID": 300011502,
+      "Entries": [
+        "[Iron] Death explosion large"
+      ]
+    },
+    {
+      "ID": 600100010,
+      "Entries": [
+        "Stone [P/DE shared] Live bullet hole, middle, front"
+      ]
+    },
+    {
+      "ID": 600100110,
+      "Entries": [
+        "Stone [Pe/De common use] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 600100200,
+      "Entries": [
+        "Stone [Pe/De common use] Explosion burn scar small front"
+      ]
+    },
+    {
+      "ID": 600100210,
+      "Entries": [
+        "Stone [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 600100220,
+      "Entries": [
+        "Stone [P/DE shared] Explosion scar large front"
+      ]
+    },
+    {
+      "ID": 600100230,
+      "Entries": [
+        "Stone [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600100240,
+      "Entries": [
+        "Stone [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600100310,
+      "Entries": [
+        "Stone [P/DE shared] Coral burnt remains, middle front"
+      ]
+    },
+    {
+      "ID": 600100320,
+      "Entries": [
+        "Stone [P/DE shared] Coral burnt remains Large Front"
+      ]
+    },
+    {
+      "ID": 600100330,
+      "Entries": [
+        "Stone [P/DE shared] Coral burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600100340,
+      "Entries": [
+        "Stone [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600100410,
+      "Entries": [
+        "Stone [Pe/De common use] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 600100430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600100510,
+      "Entries": [
+        "Stone [P/DE shared] Napalm bullet burn mark, middle, front"
+      ]
+    },
+    {
+      "ID": 600100600,
+      "Entries": [
+        "Stone [P/DE shared] Electric burn marks, small, front"
+      ]
+    },
+    {
+      "ID": 600100610,
+      "Entries": [
+        "Stone [P/DE shared] Electric burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 600100620,
+      "Entries": [
+        "Stone [P/DE shared] Electric burn marks large front"
+      ]
+    },
+    {
+      "ID": 600100630,
+      "Entries": [
+        "Stone [P/DE shared] Electric burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600100640,
+      "Entries": [
+        "Stone [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600100700,
+      "Entries": [
+        "Stone [Pe/De common use] Artificial coral burnt remains Small Front"
+      ]
+    },
+    {
+      "ID": 600300010,
+      "Entries": [
+        "Soil [P/DE shared] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 600300110,
+      "Entries": [
+        "Soil [Pe/De shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 600300200,
+      "Entries": [
+        "Soil [P/DE shared] Explosion burnout small front"
+      ]
+    },
+    {
+      "ID": 600300210,
+      "Entries": [
+        "Soil [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 600300220,
+      "Entries": [
+        "Earth [P/DE shared] Explosion burnt remains Large Front"
+      ]
+    },
+    {
+      "ID": 600300230,
+      "Entries": [
+        "Earth [P/DE shared] Explosion burnt remains Extra large Front"
+      ]
+    },
+    {
+      "ID": 600300240,
+      "Entries": [
+        "Soil [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600300310,
+      "Entries": [
+        "Soil [Pe/De shared] Coral burnt remains, middle front"
+      ]
+    },
+    {
+      "ID": 600300320,
+      "Entries": [
+        "Soil [P/DE shared] Coral burnt remains Large Front"
+      ]
+    },
+    {
+      "ID": 600300330,
+      "Entries": [
+        "Soil [P/DE shared] Coral burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600300340,
+      "Entries": [
+        "Soil [P/DE shared] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600300410,
+      "Entries": [
+        "Soil [P/DE shared] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 600300430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600300510,
+      "Entries": [
+        "Soil [Pe/De shared] Napalm bullet burn area, middle front"
+      ]
+    },
+    {
+      "ID": 600300600,
+      "Entries": [
+        "Soil [P/DE shared] Electric burn marks, small, front"
+      ]
+    },
+    {
+      "ID": 600300610,
+      "Entries": [
+        "Soil [P/DE shared] Electric burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 600300620,
+      "Entries": [
+        "Soil [P/DE shared] Electric burn marks Large front"
+      ]
+    },
+    {
+      "ID": 600300630,
+      "Entries": [
+        "Soil [P/DE shared] Electric burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600300640,
+      "Entries": [
+        "Soil [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600300700,
+      "Entries": [
+        "Soil [Pe/De shared] Artificial coral burnt remains Small Front"
+      ]
+    },
+    {
+      "ID": 600500010,
+      "Entries": [
+        "Sand [P/DE shared] Live bullet holes, middle, front"
+      ]
+    },
+    {
+      "ID": 600500110,
+      "Entries": [
+        "Sand [P/DE shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 600500200,
+      "Entries": [
+        "Sand [Shared with Pe/De] Explosion burnout small front"
+      ]
+    },
+    {
+      "ID": 600500210,
+      "Entries": [
+        "Sand [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 600500220,
+      "Entries": [
+        "Sand [Pe/De common use] Explosion burn scar large front"
+      ]
+    },
+    {
+      "ID": 600500230,
+      "Entries": [
+        "Sand [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600500240,
+      "Entries": [
+        "Sand [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600500310,
+      "Entries": [
+        "Sand [Shared with Pe/De] Coral burnt remains Middle front"
+      ]
+    },
+    {
+      "ID": 600500320,
+      "Entries": [
+        "Sand [P/DE shared] Coral burnt remains Large Front"
+      ]
+    },
+    {
+      "ID": 600500330,
+      "Entries": [
+        "Sand [Pe/De common use] Coral burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600500340,
+      "Entries": [
+        "Sand [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600500410,
+      "Entries": [
+        "Sand [P/DE shared] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 600500430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600500510,
+      "Entries": [
+        "Sand [Pe/De common use] Napalm bullet burn mark inside front"
+      ]
+    },
+    {
+      "ID": 600500600,
+      "Entries": [
+        "Sand [Shared with Pe/De] Electric burn marks Small Front"
+      ]
+    },
+    {
+      "ID": 600500610,
+      "Entries": [
+        "Sand [Shared with Pe/De] Electric burn marks Middle front"
+      ]
+    },
+    {
+      "ID": 600500620,
+      "Entries": [
+        "Sand [P/DE shared] Electric burn marks Large front"
+      ]
+    },
+    {
+      "ID": 600500630,
+      "Entries": [
+        "Sand [P/DE shared] Electric burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600500640,
+      "Entries": [
+        "Sand [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600500700,
+      "Entries": [
+        "Sand [P/DE shared] Artificial coral burnt remains Small Front"
+      ]
+    },
+    {
+      "ID": 600600010,
+      "Entries": [
+        "Ice [P/DE shared] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 600600110,
+      "Entries": [
+        "Ice [P/DE shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 600600200,
+      "Entries": [
+        "Ice [P/DE shared] Explosion scar small front"
+      ]
+    },
+    {
+      "ID": 600600210,
+      "Entries": [
+        "Ice [P/DE shared] Explosion burnout center front"
+      ]
+    },
+    {
+      "ID": 600600220,
+      "Entries": [
+        "Ice [P/DE shared] Explosion scar large front"
+      ]
+    },
+    {
+      "ID": 600600230,
+      "Entries": [
+        "Ice [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600600240,
+      "Entries": [
+        "Ice [P/DE shared] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600600310,
+      "Entries": [
+        "Ice [Shared with Pe/De] Coral Burnt Remains Middle Front"
+      ]
+    },
+    {
+      "ID": 600600320,
+      "Entries": [
+        "Ice [P/DE shared] Coral burnt remains Large Front"
+      ]
+    },
+    {
+      "ID": 600600330,
+      "Entries": [
+        "Ice [P/DE shared] Coral burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600600340,
+      "Entries": [
+        "Ice [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600600410,
+      "Entries": [
+        "Ice [P/DE shared] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 600600430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600600510,
+      "Entries": [
+        "Ice [P/DE shared] Napalm bullet burn mark, middle front"
+      ]
+    },
+    {
+      "ID": 600600600,
+      "Entries": [
+        "Ice [P/DE shared] Electric burn marks small front"
+      ]
+    },
+    {
+      "ID": 600600610,
+      "Entries": [
+        "Ice [Shared with Pe/De] Electric burn mark Middle front"
+      ]
+    },
+    {
+      "ID": 600600620,
+      "Entries": [
+        "Ice [P/DE shared] Electric burn marks large front"
+      ]
+    },
+    {
+      "ID": 600600630,
+      "Entries": [
+        "Ice [P/DE shared] Electric burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600600640,
+      "Entries": [
+        "Ice [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600600700,
+      "Entries": [
+        "Ice [P/DE shared] Artificial coral burnt scars Small front"
+      ]
+    },
+    {
+      "ID": 600700010,
+      "Entries": [
+        "Snow [P/DE shared] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 600700110,
+      "Entries": [
+        "Snow [P/DE shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 600700200,
+      "Entries": [
+        "Snow [P/DE shared] Explosion scar small front"
+      ]
+    },
+    {
+      "ID": 600700210,
+      "Entries": [
+        "Snow [P/DE shared] Explosion burnout center front"
+      ]
+    },
+    {
+      "ID": 600700220,
+      "Entries": [
+        "Snow [P/DE shared] Explosion scar large front"
+      ]
+    },
+    {
+      "ID": 600700230,
+      "Entries": [
+        "Snow [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600700240,
+      "Entries": [
+        "Snow [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600700310,
+      "Entries": [
+        "Snow [Shared with Pe/De] Coral Burnt Area Middle Front"
+      ]
+    },
+    {
+      "ID": 600700320,
+      "Entries": [
+        "Snow [P/DE shared] Coral burnt scars Large front"
+      ]
+    },
+    {
+      "ID": 600700330,
+      "Entries": [
+        "Snow [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600700340,
+      "Entries": [
+        "Snow [P/DE shared] Coral burnt scar Extra large Front"
+      ]
+    },
+    {
+      "ID": 600700410,
+      "Entries": [
+        "Snow [P/DE shared] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 600700430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600700510,
+      "Entries": [
+        "Snow [P/DE shared] Napalm bullet burn mark, middle front"
+      ]
+    },
+    {
+      "ID": 600700600,
+      "Entries": [
+        "Snow [P/DE shared] Electric burn marks small front"
+      ]
+    },
+    {
+      "ID": 600700610,
+      "Entries": [
+        "Snow [P/DE shared] Electric burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 600700620,
+      "Entries": [
+        "Snow [P/DE shared] Electric burn marks Large front"
+      ]
+    },
+    {
+      "ID": 600700630,
+      "Entries": [
+        "Snow [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600700640,
+      "Entries": [
+        "Snow [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600700700,
+      "Entries": [
+        "Snow [P/DE shared] Artificial coral burnt remains Small Front"
+      ]
+    },
+    {
+      "ID": 600800010,
+      "Entries": [
+        "Cloth [P/DE shared] Live bullet holes, middle, front"
+      ]
+    },
+    {
+      "ID": 600800110,
+      "Entries": [
+        "Cloth [P/DE common use] Laser melting Medium front"
+      ]
+    },
+    {
+      "ID": 600800200,
+      "Entries": [
+        "Cloth [Pe/De common use] Explosion scar small front"
+      ]
+    },
+    {
+      "ID": 600800210,
+      "Entries": [
+        "Cloth [Pe/De common use] Explosion burn marks, middle, front"
+      ]
+    },
+    {
+      "ID": 600800220,
+      "Entries": [
+        "Cloth [Pe/De common use] Explosion scar large front"
+      ]
+    },
+    {
+      "ID": 600800230,
+      "Entries": [
+        "Cloth [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600800240,
+      "Entries": [
+        "Cloth [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 600800310,
+      "Entries": [
+        "Cloth [Pe/De common use] Coral burn marks, middle, front"
+      ]
+    },
+    {
+      "ID": 600800320,
+      "Entries": [
+        "Cloth [Pe/De common use] Coral burn marks Large Front"
+      ]
+    },
+    {
+      "ID": 600800330,
+      "Entries": [
+        "Cloth [Pe/De common use] Coral burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600800340,
+      "Entries": [
+        "Cloth [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600800410,
+      "Entries": [
+        "Cloth [Pe/De common use] NE burn marks middle front"
+      ]
+    },
+    {
+      "ID": 600800430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 600800510,
+      "Entries": [
+        "Cloth [Pe/De common use] Napalm bullet burn marks, middle, front"
+      ]
+    },
+    {
+      "ID": 600800600,
+      "Entries": [
+        "Cloth [P/DE shared] Electric burn marks, small, front"
+      ]
+    },
+    {
+      "ID": 600800610,
+      "Entries": [
+        "Cloth [P/DE shared] Electric burn marks, middle, front"
+      ]
+    },
+    {
+      "ID": 600800620,
+      "Entries": [
+        "Cloth [P/DE shared] Electric burn marks large front"
+      ]
+    },
+    {
+      "ID": 600800630,
+      "Entries": [
+        "Cloth [P/DE shared] Electric burn marks Extra large Front"
+      ]
+    },
+    {
+      "ID": 600800640,
+      "Entries": [
+        "Cloth [P/DE common use] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 600800700,
+      "Entries": [
+        "Cloth [Pe/De common use] Artificial coral burn marks small front"
+      ]
+    },
+    {
+      "ID": 601000010,
+      "Entries": [
+        "Concrete [P/DE shared] Live bullet holes, middle front"
+      ]
+    },
+    {
+      "ID": 601000110,
+      "Entries": [
+        "Concrete [P/DE common use] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 601000200,
+      "Entries": [
+        "Concrete [P/DE shared] Explosion scar small front"
+      ]
+    },
+    {
+      "ID": 601000210,
+      "Entries": [
+        "Concrete [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 601000220,
+      "Entries": [
+        "Concrete [P/DE shared] Explosion burn scar large front"
+      ]
+    },
+    {
+      "ID": 601000230,
+      "Entries": [
+        "Concrete [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 601000240,
+      "Entries": [
+        "Concrete [Pe/De common use] Explosion burn scar extra large front"
+      ]
+    },
+    {
+      "ID": 601000310,
+      "Entries": [
+        "Concrete [P/DE shared] Coral burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 601000320,
+      "Entries": [
+        "Concrete [P/DE shared] Coral burn marks Large front"
+      ]
+    },
+    {
+      "ID": 601000330,
+      "Entries": [
+        "Concrete [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601000340,
+      "Entries": [
+        "Concrete [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601000410,
+      "Entries": [
+        "Concrete [P/DE shared] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 601000430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 601000510,
+      "Entries": [
+        "Concrete [P/DE shared] Napalm bullet burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 601000600,
+      "Entries": [
+        "Concrete [P/DE shared] Electric burn marks small front"
+      ]
+    },
+    {
+      "ID": 601000610,
+      "Entries": [
+        "Concrete [P/DE shared] Electric burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 601000620,
+      "Entries": [
+        "Concrete [P/DE shared] Electric burn marks large front"
+      ]
+    },
+    {
+      "ID": 601000630,
+      "Entries": [
+        "Concrete [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601000640,
+      "Entries": [
+        "Concrete [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601000700,
+      "Entries": [
+        "Concrete [P/DE shared] Artificial coral burnt scars Small front"
+      ]
+    },
+    {
+      "ID": 601100010,
+      "Entries": [
+        "Iron [Pe/De common use] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 601100110,
+      "Entries": [
+        "Iron [P/DE common use] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 601100200,
+      "Entries": [
+        "Iron [Pe/De common use] Explosion burn scar small front"
+      ]
+    },
+    {
+      "ID": 601100210,
+      "Entries": [
+        "Iron [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 601100220,
+      "Entries": [
+        "Iron [Pe/De common use] Explosion scar large front"
+      ]
+    },
+    {
+      "ID": 601100230,
+      "Entries": [
+        "Iron [Pe/De common use] Explosion burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601100240,
+      "Entries": [
+        "Iron [Pe/De common use] Explosion burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601100310,
+      "Entries": [
+        "Iron [Pe/De common use] Coral burnt remains Middle front"
+      ]
+    },
+    {
+      "ID": 601100320,
+      "Entries": [
+        "Iron [Pe/De common use] Coral burn marks Large front"
+      ]
+    },
+    {
+      "ID": 601100330,
+      "Entries": [
+        "Iron [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601100340,
+      "Entries": [
+        "Iron [Pe/De common use] Coral burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601100410,
+      "Entries": [
+        "Iron [Pe/De common use] NE burnt ruins middle front"
+      ]
+    },
+    {
+      "ID": 601100430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 601100510,
+      "Entries": [
+        "Iron [P/DE shared] Napalm bullet burn marks, middle, front"
+      ]
+    },
+    {
+      "ID": 601100600,
+      "Entries": [
+        "Iron [P/DE shared] Electric burn marks small front"
+      ]
+    },
+    {
+      "ID": 601100610,
+      "Entries": [
+        "Iron [P/DE shared] Electric burn marks, middle front"
+      ]
+    },
+    {
+      "ID": 601100620,
+      "Entries": [
+        "Iron [P/DE shared] Electric burn marks large front"
+      ]
+    },
+    {
+      "ID": 601100630,
+      "Entries": [
+        "Iron [P/DE shared] Electric burn marks Extra large front"
+      ]
+    },
+    {
+      "ID": 601100640,
+      "Entries": [
+        "Iron [P/DE shared] Electric burn marks extra large front"
+      ]
+    },
+    {
+      "ID": 601100700,
+      "Entries": [
+        "Iron [P/DE shared] Artificial coral burnt scars Small front"
+      ]
+    },
+    {
+      "ID": 610000010,
+      "Entries": [
+        "Shield iron [Pe/De common use] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 610000110,
+      "Entries": [
+        "Shield iron [P/DE common use] Laser melting medium front"
+      ]
+    },
+    {
+      "ID": 610000210,
+      "Entries": [
+        "Shield iron [Pe/De common use] Explosion burn mark, middle front"
+      ]
+    },
+    {
+      "ID": 610100010,
+      "Entries": [
+        "Heavy iron shield [P/DE shared] Live bullet hole, middle front"
+      ]
+    },
+    {
+      "ID": 610100110,
+      "Entries": [
+        "Shield heavy iron [P/DE shared] Laser melting medium front"
+      ]
+    },
+    {
+      "ID": 610100210,
+      "Entries": [
+        "Heavy iron shield [P/DE shared] Explosion burn mark, middle front"
+      ]
+    },
+    {
+      "ID": 610300010,
+      "Entries": [
+        "Body iron [P/DE shared] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 610300110,
+      "Entries": [
+        "Body iron [P/DE shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 610300210,
+      "Entries": [
+        "Body iron [P/DE shared] Explosion burn mark, middle front"
+      ]
+    },
+    {
+      "ID": 610400010,
+      "Entries": [
+        "Weight iron [P/DE shared] Live bullet hole, middle front"
+      ]
+    },
+    {
+      "ID": 610400110,
+      "Entries": [
+        "Weight iron [P/DE common use] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 610400210,
+      "Entries": [
+        "Weight iron [P/DE shared] Explosion burnt area, middle front"
+      ]
+    },
+    {
+      "ID": 610500010,
+      "Entries": [
+        "Body flesh [P/DE shared] Live bullet hole Medium front"
+      ]
+    },
+    {
+      "ID": 610500110,
+      "Entries": [
+        "Body flesh [P/DE shared] Laser melting Medium front"
+      ]
+    },
+    {
+      "ID": 610500210,
+      "Entries": [
+        "Body/Flesh [Shared by Pe/De] Explosion burn marks Medium Front"
+      ]
+    },
+    {
+      "ID": 610600010,
+      "Entries": [
+        "Body cloth [P/DE shared] Live bullet holes, middle front"
+      ]
+    },
+    {
+      "ID": 610600110,
+      "Entries": [
+        "Body cloth [P/DE shared] Laser melting middle front"
+      ]
+    },
+    {
+      "ID": 610600210,
+      "Entries": [
+        "Body cloth [P/DE shared] Explosion burn marks, middle, front"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "Name": "MenuParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reserved area -- 予約領域"
+      ]
+    }
+  ]
+}

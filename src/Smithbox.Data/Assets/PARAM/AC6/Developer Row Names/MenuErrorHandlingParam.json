@@ -1,0 +1,163 @@
+{
+  "Name": "MenuErrorHandlingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Prohibited from use -- 使用禁止"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Login -- ログイン"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Logout -- ログアウト"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Obtain announcement messages from management -- 運営からの告知メッセージ取得"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Matching ticket creation -- マッチングチケット作成"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Matching ticket_polling -- マッチングチケット_ポーリング"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Create a combat session -- 戦闘セッション作成"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Receive combat session -- 戦闘セッション受信"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Delete matching ticket -- マッチングチケット削除"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Create room -- ルーム作成"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "room update -- ルーム更新"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "room delete -- ルーム削除"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Get room list -- ルームリスト取得"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Pilot data registration and update -- パイロットデータ登録、更新"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Pilot data acquisition -- パイロットデータ取得",
+        "Pilot data acquisition -- パイロットデータ取得"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Ranking acquisition (rank designation) results -- ランキング取得(順位指定)結果"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Battle result notification -- 戦闘結果通知"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Battle start notification -- 戦闘開始通知"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Obtain rating -- レーティング取得"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Get results at the end of battle -- 戦闘終了時の結果取得"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "UGC registration (upload) -- UGC登録(アップロード)",
+        "UGC registration (upload) -- UGC登録(アップロード)"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Get UGC shared ID list -- UGC共有済IDリスト取得"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Obtain UGC content -- UGCコンテンツ取得"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "Delete UGC -- UGC削除"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "Obtain UGC status -- UGCステータス取得"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Report -- 通報"
+      ]
+    }
+  ]
+}

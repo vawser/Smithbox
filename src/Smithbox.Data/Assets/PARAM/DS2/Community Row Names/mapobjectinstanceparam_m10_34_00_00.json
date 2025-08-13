@@ -1,0 +1,485 @@
+{
+  "Name": "mapobjectinstanceparam_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 10340501,
+      "Entries": [
+        "[Ladder] the cut ladder of the lowest layer"
+      ]
+    },
+    {
+      "ID": 10340502,
+      "Entries": [
+        "【Ladder】The first treasure corpse route of the road to the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 10340503,
+      "Entries": [
+        "[Ladder] the third route of the road to the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 10340504,
+      "Entries": [
+        "[Ladder] the fourth route of the road to the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 10340505,
+      "Entries": [
+        "【Ladder】The treasure corpse route of the road to the scum bottom is in front of the second corpse"
+      ]
+    },
+    {
+      "ID": 10340506,
+      "Entries": [
+        "Ladder: The first route of the road to the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 10340507,
+      "Entries": [
+        "[Ladder] the second route of the road to the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 10340508,
+      "Entries": [
+        "[Ladder] the path of the road to the bottom of the scum ladder"
+      ]
+    },
+    {
+      "ID": 10340600,
+      "Entries": [
+        "【White Door】Pledge Goal"
+      ]
+    },
+    {
+      "ID": 10340605,
+      "Entries": [
+        "【White Door】In front of the boss"
+      ]
+    },
+    {
+      "ID": 10340610,
+      "Entries": [
+        "【White Door】After Boss"
+      ]
+    },
+    {
+      "ID": 10340615,
+      "Entries": [
+        "【White Door】Pledge Start"
+      ]
+    },
+    {
+      "ID": 10340620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10340650,
+      "Entries": [
+        "【Bonfire】01_In front of the boss"
+      ]
+    },
+    {
+      "ID": 10340655,
+      "Entries": [
+        "【Bonfire】02_Connection point from Maduro"
+      ]
+    },
+    {
+      "ID": 10340700,
+      "Entries": [
+        "[Light stand] always on_01"
+      ]
+    },
+    {
+      "ID": 10340701,
+      "Entries": [
+        "[Light stand] always on_02"
+      ]
+    },
+    {
+      "ID": 10341010,
+      "Entries": [
+        "[Insect key interlocking] drawbridge 1"
+      ]
+    },
+    {
+      "ID": 10341011,
+      "Entries": [
+        "[Insect key interlocking] drawbridge 2"
+      ]
+    },
+    {
+      "ID": 10341030,
+      "Entries": [
+        "【Insect key interlocking】Damipori for water dripping"
+      ]
+    },
+    {
+      "ID": 10341100,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat image_1_boss front"
+      ]
+    },
+    {
+      "ID": 10341110,
+      "Entries": [
+        "【Insect key linkage】Poison-spitting rat image_2_insect key front"
+      ]
+    },
+    {
+      "ID": 10341111,
+      "Entries": [
+        "【Insect key linkage】Poison marsh_2_insect key front"
+      ]
+    },
+    {
+      "ID": 10341120,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat image_3_left hand body"
+      ]
+    },
+    {
+      "ID": 10341121,
+      "Entries": [
+        "【Insect key linkage】Poison marsh_3_left hand"
+      ]
+    },
+    {
+      "ID": 10341130,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat image_4_left hand body"
+      ]
+    },
+    {
+      "ID": 10341131,
+      "Entries": [
+        "【Insect key linkage】Poison marsh_4_left hand"
+      ]
+    },
+    {
+      "ID": 10341140,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat image_5_left hand body"
+      ]
+    },
+    {
+      "ID": 10341141,
+      "Entries": [
+        "【Insect key linkage】Poison marsh_5_left hand"
+      ]
+    },
+    {
+      "ID": 10342000,
+      "Entries": [
+        "【Insect Key】Start of the boss front straight triple rat image_right"
+      ]
+    },
+    {
+      "ID": 10342001,
+      "Entries": [
+        "【Insect key】Water dripping"
+      ]
+    },
+    {
+      "ID": 10342002,
+      "Entries": [
+        "【Insect Key】Start of the boss front straight triple mouse image_center"
+      ]
+    },
+    {
+      "ID": 10342004,
+      "Entries": [
+        "【Insect Key】Start of the boss front straight triple mouse image_left"
+      ]
+    },
+    {
+      "ID": 10342100,
+      "Entries": [
+        "【Floor worm key】Drawbridge 1"
+      ]
+    },
+    {
+      "ID": 10342101,
+      "Entries": [
+        "[Floor insect key] light off"
+      ]
+    },
+    {
+      "ID": 10342102,
+      "Entries": [
+        "【Floor worm key】Drawbridge 2"
+      ]
+    },
+    {
+      "ID": 10342103,
+      "Entries": [
+        "[Floor worm key] rat image in front of the boss white door"
+      ]
+    },
+    {
+      "ID": 10342200,
+      "Entries": [
+        "From the left, 01, a lamp stand that disappears with a bug key"
+      ]
+    },
+    {
+      "ID": 10342205,
+      "Entries": [
+        "From the left, 02, the lamp stand that disappears with the insect key"
+      ]
+    },
+    {
+      "ID": 10342210,
+      "Entries": [
+        "From the left, 03, a lamp stand that disappears with a bug key"
+      ]
+    },
+    {
+      "ID": 10342215,
+      "Entries": [
+        "From the left, 04, a lamp stand that disappears with a bug key."
+      ]
+    },
+    {
+      "ID": 10342225,
+      "Entries": [
+        "From the left, 06, the lamp stand that disappears with the insect key"
+      ]
+    },
+    {
+      "ID": 10342230,
+      "Entries": [
+        "From left to right, the lamp stand that disappears with the insect key"
+      ]
+    },
+    {
+      "ID": 10342500,
+      "Entries": [
+        "Torch I'm SFX"
+      ]
+    },
+    {
+      "ID": 10342505,
+      "Entries": [
+        "Candle SFX"
+      ]
+    },
+    {
+      "ID": 10342510,
+      "Entries": [
+        "Candle SFX"
+      ]
+    },
+    {
+      "ID": 10343900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] rat image"
+      ]
+    },
+    {
+      "ID": 10343901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] rat image"
+      ]
+    },
+    {
+      "ID": 10343902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] rat image"
+      ]
+    },
+    {
+      "ID": 10343903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] rat image"
+      ]
+    },
+    {
+      "ID": 10343904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10343911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10343912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10343913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 10343914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a rat image of a fake"
+      ]
+    },
+    {
+      "ID": 10343921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a rat image of a fake"
+      ]
+    },
+    {
+      "ID": 10343922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a rat image of a fake"
+      ]
+    },
+    {
+      "ID": 10343923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] a rat image of a fake"
+      ]
+    },
+    {
+      "ID": 10343924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10343925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10344000,
+      "Entries": [
+        "【NPC】Tomb_King of Mice"
+      ]
+    },
+    {
+      "ID": 10345000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10345010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10345020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10346000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10346110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

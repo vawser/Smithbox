@@ -1,0 +1,167 @@
+{
+  "Name": "DualWieldingPermissionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Nito style Bare hands -- 二刀流 素手"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Two-sword fist -- 二刀流 拳"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Two-sword dagger -- 二刀流 短剣"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Two-sword sword swords -- 二刀流 刺剣"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Two-sword sword one-handed sword -- 二刀流 片手剣"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Two-edged double-edged sword -- 二刀流 双刃剣"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Two-sword style One-handed mallet -- 二刀流 片手槌"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Two-handed sword -- 二刀流 両手剣"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Two-sword sword one-handed axe -- 二刀流 片手斧"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Two-handed hand-to-hand mallet -- 二刀流 両手槌"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Two-handed sword- two-handed sword -- 二刀流 両手特大剣"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Two-handed two-handed axe -- 二刀流 両手斧"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Two-sword style two-handed sickle -- 二刀流 両手鎌"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Two-sword style two-handed long-handed axe -- 二刀流 両手長斧"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Two-sword spear -- 二刀流 槍"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Two-sword style assault spear -- 二刀流 突撃槍"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Nito style whip -- 二刀流 鞭"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Two-sword style one-handed bow -- 二刀流 片手ボウ"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Two-sword style continuous shooting one-handed bow -- 二刀流 連射片手ボウ"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Two-sword style one-handed wand -- 二刀流 片手杖"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Two-sword style one-handed bell -- 二刀流 片手ベル"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Two-sword style right shield -- 二刀流 右盾"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Two-sword style Left shield -- 二刀流 左盾"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Nito-style claw -- 二刀流 かぎ爪"
+      ]
+    }
+  ]
+}

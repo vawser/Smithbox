@@ -1,0 +1,389 @@
+{
+  "Name": "m10_PointLightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "松明"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0地下"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B0松明\u3000地下\u3000"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B0松明\u3000地下水路"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B0松明\u3000貯水池"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1プレイヤー屋外"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1プレイヤー屋内"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1プレイヤー日陰"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Domhall"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B1配置"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "customtorch1"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "customtorch2"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2拠点"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2エレベータ"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B2深淵入り口"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B0屋内"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "B0地下"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "B0地下水路"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "B0貯水池"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "B1プレイヤー屋外"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "B1プレイヤー屋内"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "B1プレイヤー日陰"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "B2拠点"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "B2深淵入り口"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "polyG-scn100203_PV3"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "polyG-scn100220_PV2"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "polyG-scn100220_PV2"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "polyG-scn100220_PV2"
+      ]
+    }
+  ]
+}

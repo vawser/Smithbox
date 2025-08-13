@@ -1,0 +1,503 @@
+{
+  "Name": "generatorregistparam_m10_14_00_00",
+  "Entries": [
+    {
+      "ID": 10600001,
+      "Entries": [
+        "[REG:10600001] Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10600010,
+      "Entries": [
+        "[REG:10600010] Hollow Priest"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "[REG:10700000] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 10700001,
+      "Entries": [
+        "[REG:10700001] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 10700100,
+      "Entries": [
+        "[REG:10700100] Parasitized Undead"
+      ]
+    },
+    {
+      "ID": 11820000,
+      "Entries": [
+        "[REG:11820000] White Hollow Mage"
+      ]
+    },
+    {
+      "ID": 12700000,
+      "Entries": [
+        "[REG:12700000] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "[REG:13700000] Prowling Magus"
+      ]
+    },
+    {
+      "ID": 14601000,
+      "Entries": [
+        "[REG:14601000] Lord Tseldora"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "[REG:14700000] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 14800000,
+      "Entries": [
+        "[REG:14800000] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800001,
+      "Entries": [
+        "[REG:14800001] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800010,
+      "Entries": [
+        "[REG:14800010] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800050,
+      "Entries": [
+        "[REG:14800050] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800100,
+      "Entries": [
+        "[REG:14800100] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800110,
+      "Entries": [
+        "[REG:14800110] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800120,
+      "Entries": [
+        "[REG:14800120] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800200,
+      "Entries": [
+        "[REG:14800200] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14800220,
+      "Entries": [
+        "[REG:14800220] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14801000,
+      "Entries": [
+        "[REG:14801000] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 14801100,
+      "Entries": [
+        "[REG:14801100] Undead Peasant"
+      ]
+    },
+    {
+      "ID": 20110000,
+      "Entries": [
+        "[REG:20110000] Small Boar"
+      ]
+    },
+    {
+      "ID": 20210000,
+      "Entries": [
+        "[REG:20210000] Undead Boar"
+      ]
+    },
+    {
+      "ID": 20300000,
+      "Entries": [
+        "[REG:20300000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300002,
+      "Entries": [
+        "[REG:20300002] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300010,
+      "Entries": [
+        "[REG:20300010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300011,
+      "Entries": [
+        "[REG:20300011] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300020,
+      "Entries": [
+        "[REG:20300020] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300021,
+      "Entries": [
+        "[REG:20300021] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300050,
+      "Entries": [
+        "[REG:20300050] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300051,
+      "Entries": [
+        "[REG:20300051] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300060,
+      "Entries": [
+        "[REG:20300060] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300070,
+      "Entries": [
+        "[REG:20300070] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300075,
+      "Entries": [
+        "[REG:20300075] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20300080,
+      "Entries": [
+        "[REG:20300080] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301000,
+      "Entries": [
+        "[REG:20301000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301010,
+      "Entries": [
+        "[REG:20301010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301020,
+      "Entries": [
+        "[REG:20301020] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301030,
+      "Entries": [
+        "[REG:20301030] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301040,
+      "Entries": [
+        "[REG:20301040] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301100,
+      "Entries": [
+        "[REG:20301100] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301110,
+      "Entries": [
+        "[REG:20301110] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301120,
+      "Entries": [
+        "[REG:20301120] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301130,
+      "Entries": [
+        "[REG:20301130] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20301140,
+      "Entries": [
+        "[REG:20301140] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302000,
+      "Entries": [
+        "[REG:20302000] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302010,
+      "Entries": [
+        "[REG:20302010] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302040,
+      "Entries": [
+        "[REG:20302040] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302502,
+      "Entries": [
+        "[REG:20302502] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302511,
+      "Entries": [
+        "[REG:20302511] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302520,
+      "Entries": [
+        "[REG:20302520] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302521,
+      "Entries": [
+        "[REG:20302521] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20302551,
+      "Entries": [
+        "[REG:20302551] Parasite Spider"
+      ]
+    },
+    {
+      "ID": 20400000,
+      "Entries": [
+        "[REG:20400000] Poison Moth"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "[REG:21000000] Basilisk"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 21310000,
+      "Entries": [
+        "[REG:21310000] Red Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "[REG:21400000] Giant Undead Boar"
+      ]
+    },
+    {
+      "ID": 31300000,
+      "Entries": [
+        "[REG:31300000] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31300010,
+      "Entries": [
+        "[REG:31300010] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 31300020,
+      "Entries": [
+        "[REG:31300020] Hollow Falconer"
+      ]
+    },
+    {
+      "ID": 32100000,
+      "Entries": [
+        "[REG:32100000] Mimic"
+      ]
+    },
+    {
+      "ID": 60300000,
+      "Entries": [
+        "[REG:60300000] The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 60301000,
+      "Entries": [
+        "[REG:60301000] The Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 69300000,
+      "Entries": [
+        "[REG:69300000] Aldia- Scholar of the First Sin"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "[REG:74200000] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74200001,
+      "Entries": [
+        "[REG:74200001] Creighton the Wanderer"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "[REG:74300000] Benhart of Jugo"
+      ]
+    },
+    {
+      "ID": 74400000,
+      "Entries": [
+        "[REG:74400000] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 74400001,
+      "Entries": [
+        "[REG:74400001] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "[REG:77100000] Royal Sorcerer Navlaan"
+      ]
+    },
+    {
+      "ID": 77600000,
+      "Entries": [
+        "[REG:77600000] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 77600001,
+      "Entries": [
+        "[REG:77600001] Weaponsmith Ornifex"
+      ]
+    },
+    {
+      "ID": 78400000,
+      "Entries": [
+        "[REG:78400000] Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 78400001,
+      "Entries": [
+        "[REG:78400001] Cromwell the Pardoner"
+      ]
+    },
+    {
+      "ID": 84600000,
+      "Entries": [
+        "[REG:84600000] Porcine Peasant Phantom"
+      ]
+    },
+    {
+      "ID": 84800000,
+      "Entries": [
+        "[REG:84800000] Dual Wielding Swordsman Phantom"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "[REG:85300000] Bowman Guthry"
+      ]
+    },
+    {
+      "ID": 85310000,
+      "Entries": [
+        "[REG:85310000] Ashen Knight Boyd"
+      ]
+    },
+    {
+      "ID": 85500000,
+      "Entries": [
+        "[REG:85500000] Mocking Voice (Creighton/Pate)"
+      ]
+    },
+    {
+      "ID": 89200000,
+      "Entries": [
+        "[REG:89200000] Manhunter O'Harrah"
+      ]
+    },
+    {
+      "ID": 89250000,
+      "Entries": [
+        "[REG:89250000] Bashful Ray"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "Name": "Magic",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "[ 1st Pub Version: Magic A_LV1 ~ 3"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[ 1st Pub Version: Magic B_LV1 ~ 2"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[ 1st Pub Version: Magic B_LV3"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Gun Test] Bullets"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Gun test] Hit list shared 3WAY Bullet"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Tentacle Summoning"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Space Summoning"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Reflect Wall"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Slippery"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Light"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Area Recovery"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "acceleration"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Ground-Crawling Magic"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Guided missile"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Friendly Fire"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Messenger Bomb"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Messenger Mimicry"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Pistol _ bullet"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Long gun _ bullet"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Large canister _ bullet"
+      ]
+    }
+  ]
+}

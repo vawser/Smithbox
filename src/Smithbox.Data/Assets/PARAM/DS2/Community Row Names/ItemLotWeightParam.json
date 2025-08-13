@@ -1,0 +1,17 @@
+{
+  "Name": "ItemLotWeightParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Even -- 均等"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Sure first. -- 必ず1番目"
+      ]
+    }
+  ]
+}

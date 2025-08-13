@@ -1,0 +1,47 @@
+{
+  "Name": "GarageCameraAnimParam",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "garage -- ガレージ"
+      ]
+    },
+    {
+      "ID": 100000100,
+      "Entries": [
+        "Garage_(Chapter 1/Chapter 2) -- ガレージ_(チャプター1・チャプター2）"
+      ]
+    },
+    {
+      "ID": 100000200,
+      "Entries": [
+        "Garage 2_(Chapter 3) -- ガレージ2_(チャプター3）"
+      ]
+    },
+    {
+      "ID": 100000300,
+      "Entries": [
+        "Garage 3_(Chapter 4) -- ガレージ3_(チャプター4）"
+      ]
+    },
+    {
+      "ID": 100000400,
+      "Entries": [
+        "Garage 4_(Chapter 5) -- ガレージ4_(チャプター5）"
+      ]
+    },
+    {
+      "ID": 100000500,
+      "Entries": [
+        "garage 5 -- ガレージ5"
+      ]
+    },
+    {
+      "ID": 100001000,
+      "Entries": [
+        "For conversation production -- 会話演出用"
+      ]
+    }
+  ]
+}

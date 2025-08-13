@@ -1,0 +1,497 @@
+{
+  "Name": "eventparam_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Torch fire ball firing_1"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Fireball Firing_2"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Torch fire ball firing_3"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Torch fire ball firing_4"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Torch fire ball firing_5"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Torch fire ball firing_6"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "Fireball Firing_7"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Torch fire ball firing_8"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Front fireball_fire control"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "front fireball firing_ usually"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Front Fireball Firing_Boss"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Fireball firing_ for stone statue head rumbling"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Navi mesh change by stone head destruction"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Swaying Cantera_1"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Swaying Cantera_2"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Swaying chandelier_for parents"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "01_Stairside for swaying chandelier _OBJ"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "02 for swaying chandelier _OBJ"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "03 for _OBJ swaying chandelier"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "04 for _OBJ swaying chandelier"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "05_Wooden bridge side for swaying chandelier _OBJ"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Giants destroy walls"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Wheel Crane_1"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Wheel Crane_2"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Boss: New Giant Senior Soldier (Live) _ Battle"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Oil Jar 1"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Oil Jar 3"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Oil Jar 4"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "Oil Jar 5"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Soul Acquisition with Barista 1"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Win Seoul with a Barista 2"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Soul Acquisition by Barista 3"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Soul Win with Barista 4"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Insect key] for trap start that the blade flies"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Insect key] trap blade flies"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "[Insect key] for hidden doors"
+      ]
+    },
+    {
+      "ID": 11110,
+      "Entries": [
+        "[Insect key] hidden door"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "time limit of the memory of the giant _ after the door of the king"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "time limit of the memory of the giant _ patch passage next to"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Time limit of giant memory _ Bay Grant"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "After the king's door returned from the corpse of a giant"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Next to the patch passage returned from the giant's corpse"
+      ]
+    },
+    {
+      "ID": 13020,
+      "Entries": [
+        "Returning from the giant's corpse_ Bay Grant"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Navi mesh change by fence destruction"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 1"
+      ]
+    },
+    {
+      "ID": 18010,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 2"
+      ]
+    },
+    {
+      "ID": 18020,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 3"
+      ]
+    },
+    {
+      "ID": 18030,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 4"
+      ]
+    },
+    {
+      "ID": 18040,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 5"
+      ]
+    },
+    {
+      "ID": 18050,
+      "Entries": [
+        "Navi mesh change by semi-destroyed barista destruction 6"
+      ]
+    },
+    {
+      "ID": 18060,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 7"
+      ]
+    },
+    {
+      "ID": 18070,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 8"
+      ]
+    },
+    {
+      "ID": 18080,
+      "Entries": [
+        "Navi mesh change 9 by semi-broken barista destruction"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Navi mesh change by barista destruction 1"
+      ]
+    },
+    {
+      "ID": 19010,
+      "Entries": [
+        "Navi mesh change by barista destruction 2"
+      ]
+    },
+    {
+      "ID": 19020,
+      "Entries": [
+        "Navi mesh change by barista destruction 3"
+      ]
+    },
+    {
+      "ID": 19030,
+      "Entries": [
+        "Navi mesh change by barista destruction 4"
+      ]
+    },
+    {
+      "ID": 19040,
+      "Entries": [
+        "Navi mesh change by barista destruction 5"
+      ]
+    },
+    {
+      "ID": 19050,
+      "Entries": [
+        "Navi mesh change by barista destruction 6"
+      ]
+    },
+    {
+      "ID": 19060,
+      "Entries": [
+        "Navi mesh change by barista destruction 7"
+      ]
+    },
+    {
+      "ID": 19070,
+      "Entries": [
+        "Navi mesh change by barista destruction 8"
+      ]
+    },
+    {
+      "ID": 19080,
+      "Entries": [
+        "Navi mesh change by barista destruction 9"
+      ]
+    },
+    {
+      "ID": 19090,
+      "Entries": [
+        "Navi mesh change by barista destruction 10_1"
+      ]
+    },
+    {
+      "ID": 19100,
+      "Entries": [
+        "Navi mesh change by barista destruction 10_2"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Disable damage"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "after the king's door of the forest of the decaying giant spark 01_ of the species of play"
+      ]
+    },
+    {
+      "ID": 111160,
+      "Entries": [
+        "NPC: Captain of the Kingdom"
+      ]
+    },
+    {
+      "ID": 111161,
+      "Entries": [
+        "NPC: Captain of the Kingdom: Ghost"
+      ]
+    },
+    {
+      "ID": 111162,
+      "Entries": [
+        "OBJ: Captain of the Kingdom: Tomb"
+      ]
+    },
+    {
+      "ID": 111163,
+      "Entries": [
+        "OBJ: Captain of the Kingdom: Key Guide"
+      ]
+    },
+    {
+      "ID": 111164,
+      "Entries": [
+        "OBJ: Captain of the Kingdom: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111240,
+      "Entries": [
+        "NPC: Tsukiko Ya (Memory of giants)"
+      ]
+    },
+    {
+      "ID": 111241,
+      "Entries": [
+        "NPC: Moonlight Old Man (Memory of giants): Ghosts"
+      ]
+    },
+    {
+      "ID": 111242,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Memory of giants): Tomb"
+      ]
+    },
+    {
+      "ID": 111243,
+      "Entries": [
+        "OBJ: Tsukiko Ya (Memory of giants): Key Guide"
+      ]
+    },
+    {
+      "ID": 111244,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Memory of giants): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111245,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Memory of giants): Appearance judgment"
+      ]
+    },
+    {
+      "ID": 111246,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Memory of giants): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111247,
+      "Entries": [
+        "OBJ: Tsukiko Grandfather (Memory of the Giant): White Phantom"
+      ]
+    },
+    {
+      "ID": 120110,
+      "Entries": [
+        "Trophy: The Great Sword of Moonlight"
+      ]
+    },
+    {
+      "ID": 120120,
+      "Entries": [
+        "Trophy: Guardian of the Fort"
+      ]
+    }
+  ]
+}

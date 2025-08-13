@@ -1,0 +1,719 @@
+{
+  "Name": "eventparam_m10_14_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Terminating_Boss HP Settings"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Outpost_ Queen's Generation Judgment"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Outpost_Time Limit Set"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Outpost _ Save and withdraw the Queen's HP"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Delete after outpost_ withdrawal"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Outpost_Boss HP Gauge Display"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Rock rumbling in the pile destruction"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Rock rumbling in pile destruction"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Boss: Spider Queen Fight"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Boss: Spider Queen_ Poly Play"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 1"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 2"
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 3"
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 4"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 5"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "Boss: Spider Queen_ Zako Spider Generation 6"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "The treasure chest appears when the switch is pulled."
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Sand Door"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Boss: Zako Boss_ Combat"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Insect Key Door"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Insect Key Door_3"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Warp to the memory of the old dragon"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Red Soul and Moya Display"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "The key door opened with \"Patch House Key\""
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Insect Key Door_ Spider Launch: Front"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "One door open from the beginning"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "The door opened with the wall lever_ left"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Door opening with wall lever_right"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse."
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse."
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse 3."
+      ]
+    },
+    {
+      "ID": 15030,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse 4."
+      ]
+    },
+    {
+      "ID": 15040,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse."
+      ]
+    },
+    {
+      "ID": 15050,
+      "Entries": [
+        "If you break the pot, you'll find a treasure corpse 6."
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Treasure corpse falls by the destruction of the yagura"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Navi mesh change by yagura destruction 1"
+      ]
+    },
+    {
+      "ID": 17010,
+      "Entries": [
+        "Navi mesh change by yagura destruction 2"
+      ]
+    },
+    {
+      "ID": 17020,
+      "Entries": [
+        "Navi mesh change 3 by yagura destruction"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "One-way door_large hole room"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Spider launches with alarm chest"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Terminating Bonfire_Shinseki"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Pig eats mushrooms 1"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "Pig eats mushrooms_pig2"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "Piglets eat mushrooms"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Piglet appearance in probability"
+      ]
+    },
+    {
+      "ID": 25000,
+      "Entries": [
+        "Interlocking destruction by scaffolding destruction"
+      ]
+    },
+    {
+      "ID": 25010,
+      "Entries": [
+        "Navi mesh change of scaffolding that breaks when riding"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play Seed Fire 01_Ant Hell Next Building"
+      ]
+    },
+    {
+      "ID": 80010,
+      "Entries": [
+        "Shop Lineup Expansion_ Spider Queen"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Play Seed Fire 02_Map Entrance Tent"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Reclaim edicave after fire 03_ church"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy_ Bright Stone Light"
+      ]
+    },
+    {
+      "ID": 111230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111232,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111233,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111234,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111235,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111246,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111247,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111253,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111254,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111255,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111256,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111332,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111435,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111453,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111454,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111483,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111484,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4013030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

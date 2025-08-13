@@ -1,0 +1,41 @@
+{
+  "Name": "TutorialCategoryParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "Basic Rules"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Expedition Region"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Basic Controls"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Tactical Controls"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Unique Character Controls"
+      ]
+    }
+  ]
+}

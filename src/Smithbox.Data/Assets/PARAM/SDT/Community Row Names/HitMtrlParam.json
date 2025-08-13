@@ -1,0 +1,311 @@
+{
+  "Name": "HitMtrlParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cobblestone -- 石畳"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "soil -- 土"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "wood -- 木材"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Grassland -- 草地"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "gravel -- 砂利"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "bamboo -- 竹"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Tree -- 樹木"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Straw (soft) -- 藁（柔）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Straw (hard) -- 藁（硬）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "iron -- 鉄"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "flesh and blood -- 血肉"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "sand -- 砂"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Bone -- 骨"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ash -- 灰"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "tile -- 瓦"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "cloth -- 布"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Dead leaves -- 枯葉"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "bell -- 鐘"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Water: Flat surface (about a puddle) -- 水：平面（水溜り程度）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Water: Plane (walkable) -- 水：平面（歩ける）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Water: Plane (dive) -- 水：平面（潜れる）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Swamp (no movement restrictions) -- 毒沼（移動制限なし）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Poison swamp (with movement restrictions) -- 毒沼（移動制限あり）"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "mud -- 泥"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "tatami -- 畳"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "None -- なし"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "snow -- 雪"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Bushes -- 茂み"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Wood_indoor -- 木材_屋内"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Autumn leaves -- 紅葉"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "ice -- 氷"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Water: Slope (walkable) -- 水：斜面（歩ける）"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Water: Slope (swimming) -- 水：斜面（泳げる）"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Water x grass (walkable) -- 水×草（歩ける）"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Water x grass (swimming) -- 水×草（泳げる）"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "cloud -- 雲"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Underwater soil -- 水中土"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Underwater stone -- 水中石"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Underwater tree -- 水中木"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "unused -- 未使用"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Miasma -- 瘴気"
+      ]
+    }
+  ]
+}

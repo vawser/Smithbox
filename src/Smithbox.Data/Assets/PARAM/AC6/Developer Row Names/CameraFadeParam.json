@@ -1,0 +1,149 @@
+{
+  "Name": "CameraFadeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "won't disappear -- 消えない"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Assets (higher than PC) -- アセット(PCより高い)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Assets (lower than PC) -- アセット(PCより低い)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Distant view (A layer_h001000) -- 遠景（A層_h001000）"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Distant view (A layer_h001200) -- 遠景（A層_h001200）"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Distant view (A layer_h001700) -- 遠景（A層_h001700）"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Distant view (A layer_h003000) -- 遠景（A層_h003000）"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Distant view (A layer_h004000) -- 遠景（A層_h004000）"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Distant view (A layer_h005000) -- 遠景（A層_h005000）"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Distant view (fuel base_second half) -- 遠景（燃料基地_後半）"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Distant view (mining facility) -- 遠景（採掘施設）"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Debris after destroying the landing ship_Fragments -- 揚陸艦撃破後残骸_破片"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Distant view (Imperial base) -- 遠景（帝国基地）"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Distant view (mountains_falling ship) -- 遠景（山岳_落下船）"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Distant view (mountains_buildings) -- 遠景（山岳_ビル）"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Distant view (dam building) -- 遠景（ダム_建屋）"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Distant view (in front of the wall_building) -- 遠景（壁前_ビル）"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "PC"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "NPC"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "ENE (same size as PC) -- ENE（PC同サイズ）"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "ENE (size larger than PC) -- ENE（PC以上のサイズ）"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "PC (for garage) -- PC(ガレージ用)"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "garage assets -- ガレージ用アセット"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Material value reference -- マテリアルの値参照"
+      ]
+    }
+  ]
+}

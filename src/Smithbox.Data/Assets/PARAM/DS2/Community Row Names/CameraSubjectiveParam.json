@@ -1,0 +1,53 @@
+{
+  "Name": "CameraSubjectiveParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy (not allowed) -- ダミー（使用禁止）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Bow: Precision Shooting Camera -- 弓：精密射撃カメラ"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Two-handed bow: Precision shooting camera -- 両手弓：精密射撃カメラ"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Crossbow: Precision Shooting Camera -- クロスボウ：精密射撃カメラ"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Spelling: Precision Shooting Camera -- スペル：精密射撃カメラ"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Binoculars: Precision Shooting Camera -- 双眼鏡：精密射撃カメラ"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Precision Shooting Camera_Backup -- 精密射撃カメラ_バックアップ"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

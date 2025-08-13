@@ -1,0 +1,5987 @@
+{
+  "Name": "EmblemPieceSpec",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "square -- 四角"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "square hollow -- 四角中抜き"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "circle -- 円"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Hollow out circle -- 円中抜き"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "triangle -- 三角"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Triangular hollow -- 三角中抜き"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "slope -- 斜面"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Slope hollow -- 斜面中抜き"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "pentagon -- 五角形"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "pentagon hollow -- 五角形中抜き"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "hexagon -- 六角形"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "hexagonal hollow -- 六角形中抜き"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "octagon -- 八角形"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Octagonal hollow -- 八角形中抜き"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "square rounded corners -- 四角角丸"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Square rounded corners -- 四角角丸中抜き"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "triangle rounded corner -- 三角角丸"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "triangular corner round hollow -- 三角角丸中抜き"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "star -- 星"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "star hollow -- 星中抜き"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "cross star -- 十字星"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "cross star hollow -- 十字星中抜き"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "semicircle -- 半円"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Half circle hollow -- 半円中抜き"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "trapezoid -- 台形"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "trapezoid hollow -- 台形中抜き"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "rhombus -- 菱形"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Diamond cutout -- 菱形中抜き"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "cross -- 十字"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "cross hollow -- 十字中抜き"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "tulip type -- チューリップ型"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "tulip shaped hollow -- チューリップ型中抜き"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Jagged A -- ギザギザA"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Jagged A hollow -- ギザギザA中抜き"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Jagged B -- ギザギザB"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Jagged B hollow -- ギザギザB中抜き"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "solar -- 太陽"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Sunlight -- 太陽中抜き"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "month -- 月"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Monthly withdrawal -- 月中抜き"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "spade -- スペード"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "heart -- ハート"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "club -- クラブ"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "diamond -- ダイヤ"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "note -- 音符"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "trapezoid rounded corners -- 台形角丸"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "Tear type B -- 涙型B"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Tear type A -- 涙型A"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Teardrop C -- 涙型C"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "fox -- 孤"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Kogaien only -- 孤外苑のみ"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "arc A -- 円弧A"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "arc B -- 円弧B"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "arc C -- 円弧C"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "arc D -- 円弧D"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "arc E -- 円弧E"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "background 1 -- 背景1"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "background 2 -- 背景2"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "background 3 -- 背景3"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "background 4 -- 背景4"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "background 5 -- 背景5"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "background 6 -- 背景6"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "background 7 -- 背景7"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "background 8 -- 背景8"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "background 9 -- 背景9"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "background 10 -- 背景10"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "background 11 -- 背景11"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "background 12 -- 背景12"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "background 13 -- 背景13"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "background 14 -- 背景14"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "background 15 -- 背景15"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "background 16 -- 背景16"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "background 17 -- 背景17"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "background 18 -- 背景18"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "background 19 -- 背景19"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "background 20 -- 背景20"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "background 21 -- 背景21"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "background 22 -- 背景22"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "background 23 -- 背景23"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "background 24 -- 背景24"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "cross symbol -- 十字シンボル"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "yin and yang -- 陰陽"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "radioactivity mark -- 放射能マーク"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "biohazard mark -- バイオハザードマーク"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "symbol_ball -- シンボル_ボール"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "background 25 -- 背景25"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "background 26 -- 背景26"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "background 27 -- 背景27"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "background 28 -- 背景28"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "pattern 1 -- パターン1"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "pattern 2 -- パターン2"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "pattern 3 -- パターン3"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "pattern 4 -- パターン4"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "pattern 5 -- パターン5"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "pattern 6 -- パターン6"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "pattern 7 -- パターン7"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "pattern 8 -- パターン8"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "pattern 9 -- パターン9"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "pattern 10 -- パターン10"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "pattern 11 -- パターン11"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "pattern 12 -- パターン12"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "pattern 13 -- パターン13"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "pattern 14 -- パターン14"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "pattern 15 -- パターン15"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "pattern 16 -- パターン16"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "pattern 17 -- パターン17"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "pattern 18 -- パターン18"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "pattern 19 -- パターン19"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "pattern 20 -- パターン20"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "pattern 21 -- パターン21"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "pattern 22 -- パターン22"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "pattern 23 -- パターン23"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "crown 1 -- 王冠1"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "crown 2 -- 王冠2"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "crown 3 -- 王冠3"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "crown 4 -- 王冠4"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "crown 5 -- 王冠5"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "crown 6 -- 王冠6"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "crown 7 -- 王冠7"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "crown of grass -- 草の冠"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Next to spartan helm -- スパルタヘルム横"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "In front of Spartan Helm -- スパルタヘルム前"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Night Helm A -- ナイトヘルムA"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Night Helm B -- ナイトヘルムB"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "viking helm -- ヴァイキングヘルム"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Japanese helmet -- 和兜"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "military helmet -- ミリタリーヘルメット"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "gauntlet -- ガントレット"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "knife -- ナイフ"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "sword -- ソード"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "curved sword -- 曲剣"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "trident -- トライデント"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "ax -- アックス"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "sickle -- カマ"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "hammer -- ハンマー"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "bow -- 弓"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "arrow -- 矢"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "crossbow -- クロスボウ"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "cannon -- 大砲"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "revolver -- リボルバー"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "rifle -- ライフル"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "bullet -- 弾丸"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "missile -- ミサイル"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "grenade -- グレネード"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "dock tag -- ドックタグ"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "parachute -- 落下傘"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Chess King -- チェス_キング"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Chess Queen -- チェス_クイーン"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Chess_Bishop -- チェス_ビショップ"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Chess Knight -- チェス_ナイト"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Chess_Rook -- チェス_ルーク"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "chess pawn -- チェス_ポーン"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "balance -- 天秤"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "hourglass -- 砂時計"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "Sake cup -- 盃"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "key -- 鍵"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "globe -- 地球儀"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "anchor -- アンカー"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "magnet -- 磁石"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "dice -- サイコロ"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "greek pillar -- ギリシャ柱"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "greek column 2 -- ギリシャ柱2"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "cat -- ネコ"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "chicken -- 鶏"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "bird of prey -- 猛禽"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "Crow -- カラス"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "bat -- コウモリ"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "cattle -- 牛"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "Stag -- 牡鹿"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "lizard -- トカゲ"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "snake -- 蛇"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "sea ​​turtle -- ウミガメ"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "shark -- サメ"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "whale -- クジラ"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "octopus -- タコ"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "crab -- カニ"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "Symbol_horseshoe crab -- シンボル_カブトガニ"
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        "Symbol_Ammonite -- シンボル_アンモナイト"
+      ]
+    },
+    {
+      "ID": 278,
+      "Entries": [
+        "Scorpion 1 -- サソリ１"
+      ]
+    },
+    {
+      "ID": 279,
+      "Entries": [
+        "symbol_scorpion -- シンボル_サソリ"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "spider -- クモ"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "butterfly -- 蝶"
+      ]
+    },
+    {
+      "ID": 282,
+      "Entries": [
+        "Hachi -- ハチ"
+      ]
+    },
+    {
+      "ID": 283,
+      "Entries": [
+        "praying mantis -- カマキリ"
+      ]
+    },
+    {
+      "ID": 284,
+      "Entries": [
+        "dragonfly -- トンボ"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "stegosaurus -- ステゴサウルス"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "T rex -- Tレックス"
+      ]
+    },
+    {
+      "ID": 287,
+      "Entries": [
+        "unicorn -- ユニコーン"
+      ]
+    },
+    {
+      "ID": 288,
+      "Entries": [
+        "dragon -- 龍"
+      ]
+    },
+    {
+      "ID": 289,
+      "Entries": [
+        "dragon -- ドラゴン"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "gryphon -- グリフォン"
+      ]
+    },
+    {
+      "ID": 291,
+      "Entries": [
+        "coat of arms -- 紋章"
+      ]
+    },
+    {
+      "ID": 292,
+      "Entries": [
+        "poseidon -- ポセイドン"
+      ]
+    },
+    {
+      "ID": 293,
+      "Entries": [
+        "seahorse -- シーホース"
+      ]
+    },
+    {
+      "ID": 294,
+      "Entries": [
+        "harpy -- ハーピー"
+      ]
+    },
+    {
+      "ID": 295,
+      "Entries": [
+        "gargoyle -- ガーゴイル"
+      ]
+    },
+    {
+      "ID": 296,
+      "Entries": [
+        "daemon -- デーモン"
+      ]
+    },
+    {
+      "ID": 297,
+      "Entries": [
+        "Valkyrie -- バルキリー"
+      ]
+    },
+    {
+      "ID": 298,
+      "Entries": [
+        "tiger head -- トラ頭"
+      ]
+    },
+    {
+      "ID": 299,
+      "Entries": [
+        "wolf head -- 狼頭"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "lion head -- ライオン頭"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "raptor head -- 猛禽頭"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "symbol_jaguar -- シンボル_ジャガー"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "symbol_snake -- シンボル_スネーク"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "saber tiger head -- サーベルタイガー頭"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "unicorn head -- ユニコーン頭"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "dragon head -- ドラゴン頭"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "skull front -- スカル正面"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Symbol_Skull A -- シンボル_スカルA"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Symbol_Skull B -- シンボル_スカルB"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "symbol_skull_bone -- シンボル_スカル_ボーン"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "crossbones -- クロスボーン"
+      ]
+    },
+    {
+      "ID": 312,
+      "Entries": [
+        "stag skull -- 牡鹿頭骨"
+      ]
+    },
+    {
+      "ID": 313,
+      "Entries": [
+        "symbol_curve_corner -- シンボル_曲がり_角"
+      ]
+    },
+    {
+      "ID": 314,
+      "Entries": [
+        "symbol_wing -- シンボル_ウイング"
+      ]
+    },
+    {
+      "ID": 315,
+      "Entries": [
+        "feather -- 羽"
+      ]
+    },
+    {
+      "ID": 316,
+      "Entries": [
+        "Symbol_Wing_Feather -- シンボル_ウイング_フェザー"
+      ]
+    },
+    {
+      "ID": 317,
+      "Entries": [
+        "Symbol_Cat's paw -- シンボル_猫の手"
+      ]
+    },
+    {
+      "ID": 318,
+      "Entries": [
+        "Symbol_paw -- シンボル_肉球"
+      ]
+    },
+    {
+      "ID": 319,
+      "Entries": [
+        "Symbol_Fish head -- シンボル_フィッシュヘッド"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Symbol_Fish body -- シンボル_フィッシュボディ"
+      ]
+    },
+    {
+      "ID": 321,
+      "Entries": [
+        "Symbol_Fishfin -- シンボル_フィッシュフィン"
+      ]
+    },
+    {
+      "ID": 322,
+      "Entries": [
+        "Symbol_Shark's dorsal fin -- シンボル_サメの背びれ"
+      ]
+    },
+    {
+      "ID": 323,
+      "Entries": [
+        "Symbol_Shark's tail fin -- シンボル_サメの尾びれ"
+      ]
+    },
+    {
+      "ID": 324,
+      "Entries": [
+        "Symbol_Thorn A -- シンボル_トゲA"
+      ]
+    },
+    {
+      "ID": 325,
+      "Entries": [
+        "Symbol_Thorn B -- シンボル_トゲB"
+      ]
+    },
+    {
+      "ID": 326,
+      "Entries": [
+        "Symbol_Thorn C -- シンボル_トゲC"
+      ]
+    },
+    {
+      "ID": 327,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 328,
+      "Entries": [
+        "thunder -- 雷"
+      ]
+    },
+    {
+      "ID": 329,
+      "Entries": [
+        "luminescence -- 発光"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "snowflake -- 雪の結晶"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "star destroyed -- 破壊される星"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "sun with face -- 顔付き太陽"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "moon with face -- 顔つき月"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "cloud 1 -- 雲１"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "cloud 2 -- 雲２"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "vortex -- 渦"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "tornado -- 竜巻"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "big wave -- 大波"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "wave -- 波"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Saturn -- 土星"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "planet -- 惑星"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "galaxy -- 銀河"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "hardwood -- 広葉樹"
+      ]
+    },
+    {
+      "ID": 344,
+      "Entries": [
+        "conifer -- 針葉樹"
+      ]
+    },
+    {
+      "ID": 345,
+      "Entries": [
+        "grass -- 草"
+      ]
+    },
+    {
+      "ID": 346,
+      "Entries": [
+        "Symbol_Rose stem -- シンボル_バラの茎"
+      ]
+    },
+    {
+      "ID": 347,
+      "Entries": [
+        "chrysanthemum -- 菊"
+      ]
+    },
+    {
+      "ID": 348,
+      "Entries": [
+        "rose -- バラ"
+      ]
+    },
+    {
+      "ID": 349,
+      "Entries": [
+        "symbol_rose -- シンボル_バラ"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "cherry blossoms -- 桜"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "hibiscus -- ハイビスカス"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "apple -- りんご"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "diamond -- ダイヤ"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "emerald -- エメラルド"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "crystal -- 水晶"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Arrow B -- 矢印B"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Arrow A -- 矢印A"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "arrow C -- 矢印C"
+      ]
+    },
+    {
+      "ID": 359,
+      "Entries": [
+        "barcode -- バーコード"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Mark_Danger tape -- マーク_危険テープ"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Mark_Danger Tape 2 -- マーク_危険テープ2"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "Mark_Panel A-1 -- マーク_パネルA-1"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Mark_Panel A-2 -- マーク_パネルA-2"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Mark_Panel B -- マーク_パネルB"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Mark_Panel C -- マーク_パネルC"
+      ]
+    },
+    {
+      "ID": 366,
+      "Entries": [
+        "mark_chip -- マーク_チップ"
+      ]
+    },
+    {
+      "ID": 367,
+      "Entries": [
+        "mark_rivet -- マーク_リベット"
+      ]
+    },
+    {
+      "ID": 368,
+      "Entries": [
+        "Mark_Bolt -- マーク_ボルト"
+      ]
+    },
+    {
+      "ID": 369,
+      "Entries": [
+        "mark_square -- マーク_四角"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Mark_Panel deformation line A -- マーク_パネル変形ラインA"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Mark_Panel deformation line B -- マーク_パネル変形ラインB"
+      ]
+    },
+    {
+      "ID": 372,
+      "Entries": [
+        "Mark_Deformation line C -- マーク_変形ラインC"
+      ]
+    },
+    {
+      "ID": 373,
+      "Entries": [
+        "Pattern_Distorted polygon A -- パターン_歪んだ多角形A"
+      ]
+    },
+    {
+      "ID": 374,
+      "Entries": [
+        "Pattern_Distorted polygon B -- パターン_歪んだ多角形B"
+      ]
+    },
+    {
+      "ID": 375,
+      "Entries": [
+        "Pattern_Distorted polygon C -- パターン_歪んだ多角形C"
+      ]
+    },
+    {
+      "ID": 376,
+      "Entries": [
+        "Mark_WARNING -- マーク_WARNING"
+      ]
+    },
+    {
+      "ID": 377,
+      "Entries": [
+        "Mark_DANGER -- マーク_DANGER"
+      ]
+    },
+    {
+      "ID": 378,
+      "Entries": [
+        "Mark_CAUTION -- マーク_CAUTION"
+      ]
+    },
+    {
+      "ID": 379,
+      "Entries": [
+        "Mark_HIGH VOLTAGE -- マーク_HIGH VOLTAGE"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Mark_KEEP CLEAR -- マーク_KEEP CLEAR"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Mark_NO_STEP -- マーク_NO_STEP"
+      ]
+    },
+    {
+      "ID": 382,
+      "Entries": [
+        "mark_MANUAL_OVERRIDE -- マーク_MANUAL_OVERRIDE"
+      ]
+    },
+    {
+      "ID": 383,
+      "Entries": [
+        "Mark_AC-AWS_SENSOR -- マーク_AC-AWS_SENSOR"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Mark_FC_PURGE_POINT -- マーク_FC_PURGE_POINT"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "mark_CORAL_INTEGRATED_SYSTEM -- マーク_CORAL_INTEGRATED_SYSTEM"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "Mark_HANDLE_WITH_CARE -- マーク_HANDLE_WITH_CARE"
+      ]
+    },
+    {
+      "ID": 387,
+      "Entries": [
+        "mark_DO_NOT_PUNCTURE_WELD -- マーク_DO_NOT_PUNCTURE_WELD"
+      ]
+    },
+    {
+      "ID": 388,
+      "Entries": [
+        "Mark_ELECTROMAGNETIC_COATING -- マーク_ELECTROMAGNETIC_COATING"
+      ]
+    },
+    {
+      "ID": 389,
+      "Entries": [
+        "Mark_SPALL_LINER_CHECK -- マーク_SPALL_LINER_CHECK"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Mark_INSTANT_CAPACITOR -- マーク_INSTANT_CAPACITOR"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "mark_SEALED_FOR_VACUUM -- マーク_SEALED_FOR_VACUUM"
+      ]
+    },
+    {
+      "ID": 392,
+      "Entries": [
+        "Mark_STABILIZED_MECHANICAL_LINKAGE -- マーク_STABILIZED_MECHANICAL_LINKAGE"
+      ]
+    },
+    {
+      "ID": 393,
+      "Entries": [
+        "mark_INTERNAL_POWER_SYSTEM -- マーク_INTERNAL_POWER_SYSTEM"
+      ]
+    },
+    {
+      "ID": 394,
+      "Entries": [
+        "Mark_V -- マーク_V"
+      ]
+    },
+    {
+      "ID": 395,
+      "Entries": [
+        "Mark_Y -- マーク_Y"
+      ]
+    },
+    {
+      "ID": 396,
+      "Entries": [
+        "Mark_Deformation line D -- マーク_変形ラインD"
+      ]
+    },
+    {
+      "ID": 397,
+      "Entries": [
+        "Mark_Deformation line E -- マーク_変形ラインE"
+      ]
+    },
+    {
+      "ID": 398,
+      "Entries": [
+        "Pattern_Wave A -- パターン_ウェーブA"
+      ]
+    },
+    {
+      "ID": 399,
+      "Entries": [
+        "Pattern_Wave B -- パターン_ウェーブB"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Pattern_Wave C -- パターン_ウェーブC"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Pattern_Wave D -- パターン_ウェーブD"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Pattern_Free transformation A -- パターン_自由変形A"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Pattern_Free transformation B -- パターン_自由変形B"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Pattern_Free transformation C -- パターン_自由変形C"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Pattern_Free transformation D -- パターン_自由変形D"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Pattern_Free transformation E -- パターン_自由変形E"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Pattern_Free transformation F -- パターン_自由変形F"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Pattern_Free transformation G -- パターン_自由変形G"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Pattern_Free transformation H -- パターン_自由変形H"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Pattern_Free transformation I -- パターン_自由変形I"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "Pattern_small distortion -- パターン_歪み小"
+      ]
+    },
+    {
+      "ID": 412,
+      "Entries": [
+        "Pattern_Large distortion -- パターン_歪み大"
+      ]
+    },
+    {
+      "ID": 413,
+      "Entries": [
+        "Pattern_Distorted N -- パターン_歪んだN"
+      ]
+    },
+    {
+      "ID": 414,
+      "Entries": [
+        "Pattern_Distorted O -- パターン_歪んだO"
+      ]
+    },
+    {
+      "ID": 415,
+      "Entries": [
+        "Pattern_camouflage 1 -- パターン_迷彩1"
+      ]
+    },
+    {
+      "ID": 416,
+      "Entries": [
+        "Pattern_Camouflage 2 -- パターン_迷彩2"
+      ]
+    },
+    {
+      "ID": 417,
+      "Entries": [
+        "fire pattern 3 -- ファイアパターン3"
+      ]
+    },
+    {
+      "ID": 418,
+      "Entries": [
+        "fire pattern 4 -- ファイアパターン4"
+      ]
+    },
+    {
+      "ID": 419,
+      "Entries": [
+        "fire pattern 1 -- ファイアパターン1"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "fire pattern 2 -- ファイアパターン2"
+      ]
+    },
+    {
+      "ID": 421,
+      "Entries": [
+        "fire pattern 5 -- ファイアパターン5"
+      ]
+    },
+    {
+      "ID": 422,
+      "Entries": [
+        "fire pattern 6 -- ファイアパターン6"
+      ]
+    },
+    {
+      "ID": 423,
+      "Entries": [
+        "fire pattern 7 -- ファイアパターン7"
+      ]
+    },
+    {
+      "ID": 424,
+      "Entries": [
+        "fire pattern 8 -- ファイアパターン8"
+      ]
+    },
+    {
+      "ID": 425,
+      "Entries": [
+        "Symbol_Paint eye A -- シンボル_ペイント目A"
+      ]
+    },
+    {
+      "ID": 426,
+      "Entries": [
+        "Symbol_Paint eye B -- シンボル_ペイント目B"
+      ]
+    },
+    {
+      "ID": 427,
+      "Entries": [
+        "Symbol_Shark top -- シンボル_シャーク上"
+      ]
+    },
+    {
+      "ID": 428,
+      "Entries": [
+        "symbol_shark -- シンボル_シャーク中"
+      ]
+    },
+    {
+      "ID": 429,
+      "Entries": [
+        "Symbol_Shark bottom -- シンボル_シャーク下"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Symbol_shark mouse front top -- シンボル_シャークマウス正面上"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Symbol_shark mouse front middle -- シンボル_シャークマウス正面中"
+      ]
+    },
+    {
+      "ID": 432,
+      "Entries": [
+        "Symbol_shark mouse front bottom -- シンボル_シャークマウス正面下"
+      ]
+    },
+    {
+      "ID": 433,
+      "Entries": [
+        "Symbol_Fang A -- シンボル_牙A"
+      ]
+    },
+    {
+      "ID": 434,
+      "Entries": [
+        "Symbol_Fang B -- シンボル_牙B"
+      ]
+    },
+    {
+      "ID": 435,
+      "Entries": [
+        "Symbol_Fang C -- シンボル_牙C"
+      ]
+    },
+    {
+      "ID": 436,
+      "Entries": [
+        "Symbol_Fang D -- シンボル_牙D"
+      ]
+    },
+    {
+      "ID": 437,
+      "Entries": [
+        "Symbol_Fang E -- シンボル_牙E"
+      ]
+    },
+    {
+      "ID": 438,
+      "Entries": [
+        "Symbol_Fang F -- シンボル_牙F"
+      ]
+    },
+    {
+      "ID": 439,
+      "Entries": [
+        "Symbol_Fang G -- シンボル_牙G"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "symbol_eyelashes -- シンボル_まつ毛"
+      ]
+    },
+    {
+      "ID": 441,
+      "Entries": [
+        "symbol_eyelid -- シンボル_まぶた"
+      ]
+    },
+    {
+      "ID": 442,
+      "Entries": [
+        "Symbol_Snake A -- シンボル_ヘビA"
+      ]
+    },
+    {
+      "ID": 443,
+      "Entries": [
+        "Symbol_Snake B -- シンボル_ヘビB"
+      ]
+    },
+    {
+      "ID": 444,
+      "Entries": [
+        "Symbol_Snake C -- シンボル_ヘビC"
+      ]
+    },
+    {
+      "ID": 445,
+      "Entries": [
+        "Symbol_Snake D -- シンボル_ヘビD"
+      ]
+    },
+    {
+      "ID": 446,
+      "Entries": [
+        "Symbol_Snake E -- シンボル_ヘビE"
+      ]
+    },
+    {
+      "ID": 447,
+      "Entries": [
+        "Symbol_Bullet hole A -- シンボル_弾痕A"
+      ]
+    },
+    {
+      "ID": 448,
+      "Entries": [
+        "Symbol_Bullet hole B -- シンボル_弾痕B"
+      ]
+    },
+    {
+      "ID": 449,
+      "Entries": [
+        "Symbol_Bullet hole C -- シンボル_弾痕C"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Pattern_Chain A -- パターン_チェーンA"
+      ]
+    },
+    {
+      "ID": 451,
+      "Entries": [
+        "Pattern_Chain B -- パターン_チェーンB"
+      ]
+    },
+    {
+      "ID": 452,
+      "Entries": [
+        "Pattern_Chain C -- パターン_チェーンC"
+      ]
+    },
+    {
+      "ID": 453,
+      "Entries": [
+        "Pattern_Chain D -- パターン_チェーンD"
+      ]
+    },
+    {
+      "ID": 454,
+      "Entries": [
+        "Pattern_Engraving A -- パターン_エングレービングA"
+      ]
+    },
+    {
+      "ID": 455,
+      "Entries": [
+        "Pattern_Engraving B -- パターン_エングレービングB"
+      ]
+    },
+    {
+      "ID": 456,
+      "Entries": [
+        "Pattern_Engraving C -- パターン_エングレービングC"
+      ]
+    },
+    {
+      "ID": 457,
+      "Entries": [
+        "Pattern_Engraving D -- パターン_エングレービングD"
+      ]
+    },
+    {
+      "ID": 458,
+      "Entries": [
+        "Pattern_Engraving E -- パターン_エングレービングE"
+      ]
+    },
+    {
+      "ID": 459,
+      "Entries": [
+        "Pattern_Engraving F -- パターン_エングレービングF"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Pattern_Tribal 1 -- パターン_トライバル1"
+      ]
+    },
+    {
+      "ID": 461,
+      "Entries": [
+        "Pattern_Tribal 2 -- パターン_トライバル2"
+      ]
+    },
+    {
+      "ID": 462,
+      "Entries": [
+        "Pattern_Tribal 3 -- パターン_トライバル3"
+      ]
+    },
+    {
+      "ID": 463,
+      "Entries": [
+        "Pattern_Tribal 4 -- パターン_トライバル4"
+      ]
+    },
+    {
+      "ID": 464,
+      "Entries": [
+        "Pattern_Tribal 5 -- パターン_トライバル5"
+      ]
+    },
+    {
+      "ID": 465,
+      "Entries": [
+        "Pattern_Tribal 6 -- パターン_トライバル6"
+      ]
+    },
+    {
+      "ID": 466,
+      "Entries": [
+        "Symbol_Ribbon twist A -- シンボル_リボンねじれA"
+      ]
+    },
+    {
+      "ID": 467,
+      "Entries": [
+        "Symbol_Ribbon twist B -- シンボル_リボンねじれB"
+      ]
+    },
+    {
+      "ID": 468,
+      "Entries": [
+        "Symbol_Ribbon twist C -- シンボル_リボンねじれC"
+      ]
+    },
+    {
+      "ID": 469,
+      "Entries": [
+        "Symbol_Ribbon twist D -- シンボル_リボンねじれD"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Symbol_ribbon knot -- シンボル_リボン結び目"
+      ]
+    },
+    {
+      "ID": 471,
+      "Entries": [
+        "paint 1 -- ペイント1"
+      ]
+    },
+    {
+      "ID": 472,
+      "Entries": [
+        "paint 2 -- ペイント2"
+      ]
+    },
+    {
+      "ID": 473,
+      "Entries": [
+        "paint 3 -- ペイント3"
+      ]
+    },
+    {
+      "ID": 474,
+      "Entries": [
+        "paint 4 -- ペイント4"
+      ]
+    },
+    {
+      "ID": 475,
+      "Entries": [
+        "paint 5 -- ペイント5"
+      ]
+    },
+    {
+      "ID": 476,
+      "Entries": [
+        "paint 6 -- ペイント6"
+      ]
+    },
+    {
+      "ID": 477,
+      "Entries": [
+        "paint 7 -- ペイント7"
+      ]
+    },
+    {
+      "ID": 478,
+      "Entries": [
+        "paint 8 -- ペイント8"
+      ]
+    },
+    {
+      "ID": 479,
+      "Entries": [
+        "paint 9 -- ペイント9"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "paint 10 -- ペイント10"
+      ]
+    },
+    {
+      "ID": 481,
+      "Entries": [
+        "paint 11 -- ペイント11"
+      ]
+    },
+    {
+      "ID": 482,
+      "Entries": [
+        "paint 12 -- ペイント12"
+      ]
+    },
+    {
+      "ID": 483,
+      "Entries": [
+        "paint 13 -- ペイント13"
+      ]
+    },
+    {
+      "ID": 484,
+      "Entries": [
+        "paint 14 -- ペイント14"
+      ]
+    },
+    {
+      "ID": 485,
+      "Entries": [
+        "paint 15 -- ペイント15"
+      ]
+    },
+    {
+      "ID": 486,
+      "Entries": [
+        "paint 16 -- ペイント16"
+      ]
+    },
+    {
+      "ID": 487,
+      "Entries": [
+        "paint 17 -- ペイント17"
+      ]
+    },
+    {
+      "ID": 488,
+      "Entries": [
+        "paint 18 -- ペイント18"
+      ]
+    },
+    {
+      "ID": 489,
+      "Entries": [
+        "paint 19 -- ペイント19"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "paint 20 -- ペイント20"
+      ]
+    },
+    {
+      "ID": 491,
+      "Entries": [
+        "paint 21 -- ペイント21"
+      ]
+    },
+    {
+      "ID": 492,
+      "Entries": [
+        "paint 22 -- ペイント22"
+      ]
+    },
+    {
+      "ID": 493,
+      "Entries": [
+        "paint 23 -- ペイント23"
+      ]
+    },
+    {
+      "ID": 494,
+      "Entries": [
+        "paint 24 -- ペイント24"
+      ]
+    },
+    {
+      "ID": 495,
+      "Entries": [
+        "paint 25 -- ペイント25"
+      ]
+    },
+    {
+      "ID": 496,
+      "Entries": [
+        "paint 26 -- ペイント26"
+      ]
+    },
+    {
+      "ID": 497,
+      "Entries": [
+        "paint 27 -- ペイント27"
+      ]
+    },
+    {
+      "ID": 498,
+      "Entries": [
+        "paint 28 -- ペイント28"
+      ]
+    },
+    {
+      "ID": 499,
+      "Entries": [
+        "paint 29 -- ペイント29"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "paint 30 -- ペイント30"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "paint 31 -- ペイント31"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "paint 32 -- ペイント32"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "paint 33 -- ペイント33"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "paint 34 -- ペイント34"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "paint 35 -- ペイント35"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "paint 36 -- ペイント36"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "paint 37 -- ペイント37"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "paint 38 -- ペイント38"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "paint 39 -- ペイント39"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "paint 40 -- ペイント40"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "paint 41 -- ペイント41"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "paint 42 -- ペイント42"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "paint 43 -- ペイント43"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "paint 44 -- ペイント44"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 516,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 517,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 518,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 519,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 521,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 522,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 523,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 524,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 525,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 527,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 528,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 529,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 536,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 537,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 538,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 539,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 543,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 544,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 545,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 546,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 547,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 548,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 549,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 551,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 552,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 553,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 554,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 555,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 556,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 557,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 558,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 559,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 561,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 562,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 563,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 564,
+      "Entries": [
+        "letters gothic uppercase -- 文字ゴシック大文字"
+      ]
+    },
+    {
+      "ID": 565,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 566,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 567,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 568,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 569,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 571,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 572,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 573,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 574,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 575,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 576,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 577,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 578,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 579,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 581,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 582,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 583,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 584,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 585,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 586,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 587,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 588,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 589,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 592,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 593,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 594,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 595,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 596,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 597,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 598,
+      "Entries": [
+        "letters gothic lowercase -- 文字ゴシック小文字"
+      ]
+    },
+    {
+      "ID": 599,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 612,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 613,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 614,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 615,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 616,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 617,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 618,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 619,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 621,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 622,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 623,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 624,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 625,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 626,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 627,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 628,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 629,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 631,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 632,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 633,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 634,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 635,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 636,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 637,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 638,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 639,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 641,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 642,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 643,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 644,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 645,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 646,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 647,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 648,
+      "Entries": [
+        "characters mincho capital letters -- 文字明朝大文字"
+      ]
+    },
+    {
+      "ID": 649,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 651,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 652,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 653,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 654,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 655,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 656,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 657,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 658,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 659,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 661,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 662,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 663,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 664,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 665,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 666,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 667,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 668,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 669,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 671,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 672,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 673,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 674,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 675,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 676,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 677,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 678,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 679,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 681,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 682,
+      "Entries": [
+        "characters mincho lowercase letters -- 文字明朝小文字"
+      ]
+    },
+    {
+      "ID": 683,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 684,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 685,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 686,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 687,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 688,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 689,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 691,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 692,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 693,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 694,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 695,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 696,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 697,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 698,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 699,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 706,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 707,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 708,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 709,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 712,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 713,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 714,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 715,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 716,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 717,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 718,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 719,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 721,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 722,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 723,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 724,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 725,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 726,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 727,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 728,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 729,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 731,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 732,
+      "Entries": [
+        "letters computer style uppercase letters -- 文字コンピュータ風大文字"
+      ]
+    },
+    {
+      "ID": 733,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 734,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 735,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 736,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 737,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 738,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 739,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 743,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 744,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 745,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 746,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 747,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 748,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 749,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 751,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 752,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 753,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 754,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 755,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 756,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 757,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 758,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 759,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 761,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 762,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 763,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 764,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 765,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 766,
+      "Entries": [
+        "letters computer style lowercase letters -- 文字コンピュータ風小文字"
+      ]
+    },
+    {
+      "ID": 767,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 768,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 769,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 770,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 771,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 772,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 773,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 774,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 775,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 776,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 777,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 778,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 779,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 780,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 781,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 782,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 783,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 784,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 785,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 786,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 787,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 788,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 789,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 790,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 791,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 792,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 793,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 794,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 795,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 796,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 797,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 798,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 799,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 812,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 813,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 814,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 815,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "character script style capital letters -- 文字スクリプト風大文字"
+      ]
+    },
+    {
+      "ID": 817,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 818,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 819,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 821,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 822,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 823,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 824,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 826,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 827,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 828,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 829,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 830,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 831,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 832,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 833,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 834,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 835,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 836,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 837,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 838,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 839,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 842,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 843,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 844,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 845,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 846,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 847,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 848,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 849,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "Letter script style lowercase letters -- 文字スクリプト風小文字"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 852,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 853,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 854,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 855,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 856,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 857,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 858,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 859,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 861,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 863,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 864,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 865,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 866,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 867,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 868,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 869,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 870,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 871,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 872,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 873,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 874,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 875,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 876,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 877,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 878,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 879,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 880,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 881,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 882,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 883,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 884,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 885,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 886,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 887,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 888,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 889,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 890,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 891,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 892,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 893,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 894,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 895,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 896,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 897,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 898,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 899,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "letters military style uppercase letters -- 文字ミリタリー風大文字"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 912,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 913,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 914,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 915,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 916,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 917,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 918,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 919,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 921,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 922,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 923,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 924,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 925,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 926,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 927,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 928,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 929,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 931,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 932,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 933,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 934,
+      "Entries": [
+        "letters military style lowercase letters -- 文字ミリタリー風小文字"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Gradation (for α replacement) 0 -- グラデーション(α差し替え用)\u30000"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Gradation (for α replacement) 1 -- グラデーション(α差し替え用)\u30001"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Gradation (for α replacement) 2 -- グラデーション(α差し替え用)\u30002"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Gradation (for α replacement) 3 -- グラデーション(α差し替え用)\u30003"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Gradation (for α replacement) 4 -- グラデーション(α差し替え用)\u30004"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Gradation (for α replacement) 5 -- グラデーション(α差し替え用)\u30005"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Gradation (for α replacement) 6 -- グラデーション(α差し替え用)\u30006"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Gradation (for α replacement) 7 -- グラデーション(α差し替え用)\u30007"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Gradation (for α replacement) 8 -- グラデーション(α差し替え用)\u30008"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Gradation (for α replacement) 9 -- グラデーション(α差し替え用)\u30009"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Gradation (for α replacement) 10 -- グラデーション(α差し替え用)\u300010"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "Gradation (for α replacement) 11 -- グラデーション(α差し替え用)\u300011"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "Gradation (for α replacement) 12 -- グラデーション(α差し替え用)\u300012"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Gradation (for α replacement) 13 -- グラデーション(α差し替え用)\u300013"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "Gradation (for α replacement) 14 -- グラデーション(α差し替え用)\u300014"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "Gradation (for α replacement) 15 -- グラデーション(α差し替え用)\u300015"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "Gradation (for α replacement) 16 -- グラデーション(α差し替え用)\u300016"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "Gradation (for α replacement) 17 -- グラデーション(α差し替え用)\u300017"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "Gradation (for α replacement) 18 -- グラデーション(α差し替え用)\u300018"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "Gradation (for α replacement) 19 -- グラデーション(α差し替え用)\u300019"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Gradation (for α replacement) 20 -- グラデーション(α差し替え用)\u300020"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Gradation (for α replacement) 21 -- グラデーション(α差し替え用)\u300021"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "Gradation (for α replacement) 22 -- グラデーション(α差し替え用)\u300022"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "Gradation (for α replacement) 23 -- グラデーション(α差し替え用)\u300023"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Gradation (for α replacement) 24 -- グラデーション(α差し替え用)\u300024"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "Gradation (for α replacement) 25 -- グラデーション(α差し替え用)\u300025"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "Gradation (for α replacement) 26 -- グラデーション(α差し替え用)\u300026"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "Gradation (for α replacement) 27 -- グラデーション(α差し替え用)\u300027"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "Gradation (for α replacement) 28 -- グラデーション(α差し替え用)\u300028"
+      ]
+    },
+    {
+      "ID": 10029,
+      "Entries": [
+        "Gradation (for α replacement) 29 -- グラデーション(α差し替え用)\u300029"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Gradation (for α replacement) 30 -- グラデーション(α差し替え用)\u300030"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "Gradation (for α replacement) 31 -- グラデーション(α差し替え用)\u300031"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "Gradation (for α replacement) 32 -- グラデーション(α差し替え用)\u300032"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "Gradation (for α replacement) 33 -- グラデーション(α差し替え用)\u300033"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "Gradation (for α replacement) 34 -- グラデーション(α差し替え用)\u300034"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "Gradation (for α replacement) 35 -- グラデーション(α差し替え用)\u300035"
+      ]
+    },
+    {
+      "ID": 10036,
+      "Entries": [
+        "Gradation (for α replacement) 36 -- グラデーション(α差し替え用)\u300036"
+      ]
+    },
+    {
+      "ID": 10037,
+      "Entries": [
+        "Gradation (for α replacement) 37 -- グラデーション(α差し替え用)\u300037"
+      ]
+    },
+    {
+      "ID": 10038,
+      "Entries": [
+        "Gradation (for α replacement) 38 -- グラデーション(α差し替え用)\u300038"
+      ]
+    },
+    {
+      "ID": 10039,
+      "Entries": [
+        "Gradation (for α replacement) 39 -- グラデーション(α差し替え用)\u300039"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Gradation (for α replacement) 40 -- グラデーション(α差し替え用)\u300040"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "Gradation (for α replacement) 41 -- グラデーション(α差し替え用)\u300041"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "Gradation (for α replacement) 42 -- グラデーション(α差し替え用)\u300042"
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        "Gradation (for α replacement) 43 -- グラデーション(α差し替え用)\u300043"
+      ]
+    },
+    {
+      "ID": 10044,
+      "Entries": [
+        "Gradation (for α replacement) 44 -- グラデーション(α差し替え用)\u300044"
+      ]
+    },
+    {
+      "ID": 10045,
+      "Entries": [
+        "Gradation (for α replacement) 45 -- グラデーション(α差し替え用)\u300045"
+      ]
+    },
+    {
+      "ID": 10046,
+      "Entries": [
+        "Gradation (for α replacement) 46 -- グラデーション(α差し替え用)\u300046"
+      ]
+    },
+    {
+      "ID": 10047,
+      "Entries": [
+        "Gradation (for α replacement) 47 -- グラデーション(α差し替え用)\u300047"
+      ]
+    },
+    {
+      "ID": 10048,
+      "Entries": [
+        "Gradation (for α replacement) 48 -- グラデーション(α差し替え用)\u300048"
+      ]
+    },
+    {
+      "ID": 10049,
+      "Entries": [
+        "Gradation (for α replacement) 49 -- グラデーション(α差し替え用)\u300049"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Gradation (for α replacement) 50 -- グラデーション(α差し替え用)\u300050"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "Gradation (for α replacement) 51 -- グラデーション(α差し替え用)\u300051"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "Gradation (for α replacement) 52 -- グラデーション(α差し替え用)\u300052"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "Gradation (for α replacement) 53 -- グラデーション(α差し替え用)\u300053"
+      ]
+    },
+    {
+      "ID": 10054,
+      "Entries": [
+        "Gradation (for α replacement) 54 -- グラデーション(α差し替え用)\u300054"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "Gradation (for α replacement) 55 -- グラデーション(α差し替え用)\u300055"
+      ]
+    },
+    {
+      "ID": 10056,
+      "Entries": [
+        "Gradation (for α replacement) 56 -- グラデーション(α差し替え用)\u300056"
+      ]
+    },
+    {
+      "ID": 10057,
+      "Entries": [
+        "Gradation (for α replacement) 57 -- グラデーション(α差し替え用)\u300057"
+      ]
+    },
+    {
+      "ID": 10058,
+      "Entries": [
+        "Gradation (for α replacement) 58 -- グラデーション(α差し替え用)\u300058"
+      ]
+    },
+    {
+      "ID": 10059,
+      "Entries": [
+        "Gradation (for α replacement) 59 -- グラデーション(α差し替え用)\u300059"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "Gradation (for α replacement) 60 -- グラデーション(α差し替え用)\u300060"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "Gradation (for α replacement) 61 -- グラデーション(α差し替え用)\u300061"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "Gradation (for α replacement) 62 -- グラデーション(α差し替え用)\u300062"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "Gradation (for α replacement) 63 -- グラデーション(α差し替え用)\u300063"
+      ]
+    },
+    {
+      "ID": 10064,
+      "Entries": [
+        "Gradation (for α replacement) 64 -- グラデーション(α差し替え用)\u300064"
+      ]
+    },
+    {
+      "ID": 10065,
+      "Entries": [
+        "Gradation (for α replacement) 65 -- グラデーション(α差し替え用)\u300065"
+      ]
+    },
+    {
+      "ID": 10066,
+      "Entries": [
+        "Gradation (for α replacement) 66 -- グラデーション(α差し替え用)\u300066"
+      ]
+    },
+    {
+      "ID": 10067,
+      "Entries": [
+        "Gradation (for α replacement) 67 -- グラデーション(α差し替え用)\u300067"
+      ]
+    },
+    {
+      "ID": 10068,
+      "Entries": [
+        "Gradation (for α replacement) 68 -- グラデーション(α差し替え用)\u300068"
+      ]
+    },
+    {
+      "ID": 10069,
+      "Entries": [
+        "Gradation (for α replacement) 69 -- グラデーション(α差し替え用)\u300069"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "Gradation (for α replacement) 70 -- グラデーション(α差し替え用)\u300070"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "Gradation (for α replacement) 71 -- グラデーション(α差し替え用)\u300071"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "Gradation (for α replacement) 72 -- グラデーション(α差し替え用)\u300072"
+      ]
+    },
+    {
+      "ID": 10073,
+      "Entries": [
+        "Gradation (for α replacement) 73 -- グラデーション(α差し替え用)\u300073"
+      ]
+    },
+    {
+      "ID": 10074,
+      "Entries": [
+        "Gradation (for α replacement) 74 -- グラデーション(α差し替え用)\u300074"
+      ]
+    },
+    {
+      "ID": 10075,
+      "Entries": [
+        "Gradation (for α replacement) 75 -- グラデーション(α差し替え用)\u300075"
+      ]
+    },
+    {
+      "ID": 10076,
+      "Entries": [
+        "Gradation (for α replacement) 76 -- グラデーション(α差し替え用)\u300076"
+      ]
+    },
+    {
+      "ID": 10077,
+      "Entries": [
+        "Gradation (for α replacement) 77 -- グラデーション(α差し替え用)\u300077"
+      ]
+    },
+    {
+      "ID": 10078,
+      "Entries": [
+        "Gradation (for α replacement) 78 -- グラデーション(α差し替え用)\u300078"
+      ]
+    },
+    {
+      "ID": 10079,
+      "Entries": [
+        "Gradation (for α replacement) 79 -- グラデーション(α差し替え用)\u300079"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "Gradation (for α replacement) 80 -- グラデーション(α差し替え用)\u300080"
+      ]
+    },
+    {
+      "ID": 10081,
+      "Entries": [
+        "Gradation (for α replacement) 81 -- グラデーション(α差し替え用)\u300081"
+      ]
+    },
+    {
+      "ID": 10082,
+      "Entries": [
+        "Gradation (for α replacement) 82 -- グラデーション(α差し替え用)\u300082"
+      ]
+    },
+    {
+      "ID": 10083,
+      "Entries": [
+        "Gradation (for α replacement) 83 -- グラデーション(α差し替え用)\u300083"
+      ]
+    },
+    {
+      "ID": 10084,
+      "Entries": [
+        "Gradation (for α replacement) 84 -- グラデーション(α差し替え用)\u300084"
+      ]
+    },
+    {
+      "ID": 10085,
+      "Entries": [
+        "Gradation (for α replacement) 85 -- グラデーション(α差し替え用)\u300085"
+      ]
+    },
+    {
+      "ID": 10086,
+      "Entries": [
+        "Gradation (for α replacement) 86 -- グラデーション(α差し替え用)\u300086"
+      ]
+    },
+    {
+      "ID": 10087,
+      "Entries": [
+        "Gradation (for α replacement) 87 -- グラデーション(α差し替え用)\u300087"
+      ]
+    },
+    {
+      "ID": 10088,
+      "Entries": [
+        "Gradation (for α replacement) 88 -- グラデーション(α差し替え用)\u300088"
+      ]
+    },
+    {
+      "ID": 10089,
+      "Entries": [
+        "Gradation (for α replacement) 89 -- グラデーション(α差し替え用)\u300089"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "Gradation (for α replacement) 90 -- グラデーション(α差し替え用)\u300090"
+      ]
+    },
+    {
+      "ID": 10091,
+      "Entries": [
+        "Gradation (for α replacement) 91 -- グラデーション(α差し替え用)\u300091"
+      ]
+    },
+    {
+      "ID": 10092,
+      "Entries": [
+        "Gradation (for α replacement) 92 -- グラデーション(α差し替え用)\u300092"
+      ]
+    },
+    {
+      "ID": 10093,
+      "Entries": [
+        "Gradation (for α replacement) 93 -- グラデーション(α差し替え用)\u300093"
+      ]
+    },
+    {
+      "ID": 10094,
+      "Entries": [
+        "Gradation (for α replacement) 94 -- グラデーション(α差し替え用)\u300094"
+      ]
+    },
+    {
+      "ID": 10095,
+      "Entries": [
+        "Gradation (for α replacement) 95 -- グラデーション(α差し替え用)\u300095"
+      ]
+    },
+    {
+      "ID": 10096,
+      "Entries": [
+        "Gradation (for α replacement) 96 -- グラデーション(α差し替え用)\u300096"
+      ]
+    },
+    {
+      "ID": 10097,
+      "Entries": [
+        "Gradation (for α replacement) 97 -- グラデーション(α差し替え用)\u300097"
+      ]
+    },
+    {
+      "ID": 10098,
+      "Entries": [
+        "Gradation (for α replacement) 98 -- グラデーション(α差し替え用)\u300098"
+      ]
+    },
+    {
+      "ID": 10099,
+      "Entries": [
+        "Gradation (for α replacement) 99 -- グラデーション(α差し替え用)\u300099"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Gradation (for α replacement) 100 -- グラデーション(α差し替え用)\u3000100"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Gradation (for α replacement) 101 -- グラデーション(α差し替え用)\u3000101"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Gradation (for α replacement) 102 -- グラデーション(α差し替え用)\u3000102"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "Gradation (for α replacement) 103 -- グラデーション(α差し替え用)\u3000103"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "Gradation (for α replacement) 104 -- グラデーション(α差し替え用)\u3000104"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "Gradation (for α replacement) 105 -- グラデーション(α差し替え用)\u3000105"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "Gradation (for α replacement) 106 -- グラデーション(α差し替え用)\u3000106"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "Gradation (for α replacement) 107 -- グラデーション(α差し替え用)\u3000107"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "Gradation (for α replacement) 108 -- グラデーション(α差し替え用)\u3000108"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "Gradation (for α replacement) 109 -- グラデーション(α差し替え用)\u3000109"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "Gradation (for α replacement) 110 -- グラデーション(α差し替え用)\u3000110"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "Gradation (for α replacement) 111 -- グラデーション(α差し替え用)\u3000111"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "Gradation (for α replacement) 112 -- グラデーション(α差し替え用)\u3000112"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "Gradation (for α replacement) 113 -- グラデーション(α差し替え用)\u3000113"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "Gradient (for α replacement) 114 -- グラデーション(α差し替え用)\u3000114"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "Gradation (for α replacement) 115 -- グラデーション(α差し替え用)\u3000115"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "Gradation (for α replacement) 116 -- グラデーション(α差し替え用)\u3000116"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "Gradation (for α replacement) 117 -- グラデーション(α差し替え用)\u3000117"
+      ]
+    },
+    {
+      "ID": 10118,
+      "Entries": [
+        "Gradation (for α replacement) 118 -- グラデーション(α差し替え用)\u3000118"
+      ]
+    },
+    {
+      "ID": 10119,
+      "Entries": [
+        "Gradation (for α replacement) 119 -- グラデーション(α差し替え用)\u3000119"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "Gradation (for α replacement) 120 -- グラデーション(α差し替え用)\u3000120"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "Gradation (for α replacement) 121 -- グラデーション(α差し替え用)\u3000121"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "Gradation (for α replacement) 122 -- グラデーション(α差し替え用)\u3000122"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "Gradation (for α replacement) 123 -- グラデーション(α差し替え用)\u3000123"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "Gradation (for α replacement) 124 -- グラデーション(α差し替え用)\u3000124"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "Gradation (for α replacement) 125 -- グラデーション(α差し替え用)\u3000125"
+      ]
+    },
+    {
+      "ID": 10126,
+      "Entries": [
+        "Gradation (for α replacement) 126 -- グラデーション(α差し替え用)\u3000126"
+      ]
+    },
+    {
+      "ID": 10127,
+      "Entries": [
+        "Gradation (for α replacement) 127 -- グラデーション(α差し替え用)\u3000127"
+      ]
+    },
+    {
+      "ID": 10128,
+      "Entries": [
+        "Gradation (for α replacement) 128 -- グラデーション(α差し替え用)\u3000128"
+      ]
+    },
+    {
+      "ID": 10129,
+      "Entries": [
+        "Gradation (for α replacement) 129 -- グラデーション(α差し替え用)\u3000129"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "Gradation (for α replacement) 130 -- グラデーション(α差し替え用)\u3000130"
+      ]
+    },
+    {
+      "ID": 10131,
+      "Entries": [
+        "Gradation (for α replacement) 131 -- グラデーション(α差し替え用)\u3000131"
+      ]
+    },
+    {
+      "ID": 10132,
+      "Entries": [
+        "Gradation (for α replacement) 132 -- グラデーション(α差し替え用)\u3000132"
+      ]
+    },
+    {
+      "ID": 10133,
+      "Entries": [
+        "Gradation (for α replacement) 133 -- グラデーション(α差し替え用)\u3000133"
+      ]
+    },
+    {
+      "ID": 10134,
+      "Entries": [
+        "Gradation (for α replacement) 134 -- グラデーション(α差し替え用)\u3000134"
+      ]
+    },
+    {
+      "ID": 10135,
+      "Entries": [
+        "Gradation (for α replacement) 135 -- グラデーション(α差し替え用)\u3000135"
+      ]
+    },
+    {
+      "ID": 10136,
+      "Entries": [
+        "Gradation (for α replacement) 136 -- グラデーション(α差し替え用)\u3000136"
+      ]
+    },
+    {
+      "ID": 10137,
+      "Entries": [
+        "Gradation (for α replacement) 137 -- グラデーション(α差し替え用)\u3000137"
+      ]
+    },
+    {
+      "ID": 10138,
+      "Entries": [
+        "Gradation (for α replacement) 138 -- グラデーション(α差し替え用)\u3000138"
+      ]
+    },
+    {
+      "ID": 10139,
+      "Entries": [
+        "Gradation (for α replacement) 139 -- グラデーション(α差し替え用)\u3000139"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "Gradation (for α replacement) 140 -- グラデーション(α差し替え用)\u3000140"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "Gradation (for α replacement) 141 -- グラデーション(α差し替え用)\u3000141"
+      ]
+    },
+    {
+      "ID": 10142,
+      "Entries": [
+        "Gradation (for α replacement) 142 -- グラデーション(α差し替え用)\u3000142"
+      ]
+    },
+    {
+      "ID": 10143,
+      "Entries": [
+        "Gradation (for α replacement) 143 -- グラデーション(α差し替え用)\u3000143"
+      ]
+    },
+    {
+      "ID": 10144,
+      "Entries": [
+        "Gradation (for α replacement) 144 -- グラデーション(α差し替え用)\u3000144"
+      ]
+    },
+    {
+      "ID": 10145,
+      "Entries": [
+        "Gradation (for α replacement) 145 -- グラデーション(α差し替え用)\u3000145"
+      ]
+    },
+    {
+      "ID": 10146,
+      "Entries": [
+        "Gradation (for α replacement) 146 -- グラデーション(α差し替え用)\u3000146"
+      ]
+    },
+    {
+      "ID": 10147,
+      "Entries": [
+        "Gradation (for α replacement) 147 -- グラデーション(α差し替え用)\u3000147"
+      ]
+    },
+    {
+      "ID": 10148,
+      "Entries": [
+        "Gradation (for α replacement) 148 -- グラデーション(α差し替え用)\u3000148"
+      ]
+    },
+    {
+      "ID": 10149,
+      "Entries": [
+        "Gradation (for α replacement) 149 -- グラデーション(α差し替え用)\u3000149"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "Gradation (for α replacement) 150 -- グラデーション(α差し替え用)\u3000150"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "Gradation (for α replacement) 151 -- グラデーション(α差し替え用)\u3000151"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "Gradation (for α replacement) 152 -- グラデーション(α差し替え用)\u3000152"
+      ]
+    },
+    {
+      "ID": 10153,
+      "Entries": [
+        "Gradation (for α replacement) 153 -- グラデーション(α差し替え用)\u3000153"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "Gradation (for α replacement) 154 -- グラデーション(α差し替え用)\u3000154"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "Gradation (for α replacement) 155 -- グラデーション(α差し替え用)\u3000155"
+      ]
+    },
+    {
+      "ID": 10156,
+      "Entries": [
+        "Gradation (for α replacement) 156 -- グラデーション(α差し替え用)\u3000156"
+      ]
+    },
+    {
+      "ID": 10157,
+      "Entries": [
+        "Gradient (for α replacement) 157 -- グラデーション(α差し替え用)\u3000157"
+      ]
+    },
+    {
+      "ID": 10158,
+      "Entries": [
+        "Gradation (for α replacement) 158 -- グラデーション(α差し替え用)\u3000158"
+      ]
+    },
+    {
+      "ID": 10159,
+      "Entries": [
+        "Gradation (for α replacement) 159 -- グラデーション(α差し替え用)\u3000159"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "Gradation (for α replacement) 160 -- グラデーション(α差し替え用)\u3000160"
+      ]
+    },
+    {
+      "ID": 10161,
+      "Entries": [
+        "Gradation (for α replacement) 161 -- グラデーション(α差し替え用)\u3000161"
+      ]
+    }
+  ]
+}

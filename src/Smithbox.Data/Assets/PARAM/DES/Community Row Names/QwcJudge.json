@@ -1,0 +1,443 @@
+{
+  "Name": "QwcJudge",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for test"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Enemies become stronger (LV1) ↑"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Enemies become stronger (LV2) ↑"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Enemies become stronger (LV3) ↑"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Enemies become weaker (LV1)↓"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Enemies become weaker (LV2)↓"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Enemies become weaker (LV3)↓"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Remove enemy area change"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Get more souls (LV1)↑"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Get more souls (LV2)↑"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Get more souls (LV3) ↑"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Less souls available (LV1) ↓"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Less souls available (LV2) ↓"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Less souls available (LV3) ↓"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Items dropped by enemies change."
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Gray ghost becomes stronger (LV1) ↑"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Gray ghost becomes stronger (LV2) ↑"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Gray Ghost becomes weaker (LV1)↓"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "Gray Ghost becomes weaker (LV2)↓"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "Cancel Gray Ghost area change"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Black Ghost becomes stronger (LV1) ↑"
+      ]
+    },
+    {
+      "ID": 1701,
+      "Entries": [
+        "Black Ghost becomes stronger (LV2) ↑"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "Cancel the area change of black ghost"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Multi white ghost becomes stronger (LV1) ↑"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "Multi white ghost becomes stronger (LV2) ↑"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "Cancels multiple white ghost area changes"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Additional treasure corpses appear (LV1)"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "Additional treasure corpses appear (LV2)"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Gray ghost becomes stronger (LV1)"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Gray Ghost becomes stronger (LV2)"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Gray Ghost becomes weaker (LV1)"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Gray Ghost becomes weaker (LV2)"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Unlock Gray Ghost's player transformation"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Black ghost becomes stronger (LV1)"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Black Ghost becomes stronger (LV2)"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Remove Black Ghost's player transformation"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Multi white ghost becomes stronger (LV1)"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Multi white ghost becomes stronger (LV2)"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Unlock multiple white ghost player transformations"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Saint Urbain grows cold"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "God's Followers Part 2 Becomes Cold"
+      ]
+    },
+    {
+      "ID": 10300,
+      "Entries": [
+        "Sage Logan becomes cold"
+      ]
+    },
+    {
+      "ID": 10400,
+      "Entries": [
+        "sorcerers get cold"
+      ]
+    },
+    {
+      "ID": 10500,
+      "Entries": [
+        "VIPs want to give rings"
+      ]
+    },
+    {
+      "ID": 10600,
+      "Entries": [
+        "I want Mephistopheles to appear"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Enemy black ghost appears"
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "Ore Spirit Appears"
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "Condemned Miralda's black ghost appears"
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "flying dragon is gone"
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "Condemned Miralda Appears"
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "prison door is open"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "Enemy black ghost appears"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Ore Spirit Appears"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "Master Satsuki's Black Ghost Appears"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "Master Satsuki Appears"
+      ]
+    },
+    {
+      "ID": 30140,
+      "Entries": [
+        "\"Makoto\" Treasure Corpse becomes available"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Enemy black ghost appears"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "Ore Spirit Appears"
+      ]
+    },
+    {
+      "ID": 40120,
+      "Entries": [
+        "Villaidel's Black Ghost Appears"
+      ]
+    },
+    {
+      "ID": 40130,
+      "Entries": [
+        "Rubble disappears"
+      ]
+    },
+    {
+      "ID": 40140,
+      "Entries": [
+        "Appearance of the key on the 2nd floor of the prison castle"
+      ]
+    },
+    {
+      "ID": 40150,
+      "Entries": [
+        "iron plate appearance"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Enemy black ghost appears"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "Ore Spirit Appears"
+      ]
+    },
+    {
+      "ID": 50120,
+      "Entries": [
+        "Selenium's Black Ghost Appears"
+      ]
+    },
+    {
+      "ID": 50130,
+      "Entries": [
+        "selenium appears"
+      ]
+    },
+    {
+      "ID": 50140,
+      "Entries": [
+        "Gold Run's Black Ghost Appears"
+      ]
+    },
+    {
+      "ID": 50150,
+      "Entries": [
+        "unclean ladder"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Enemy black ghost appears"
+      ]
+    },
+    {
+      "ID": 60110,
+      "Entries": [
+        "Ore Spirit Appears"
+      ]
+    },
+    {
+      "ID": 60120,
+      "Entries": [
+        "Wanderer Half-Handed Black Ghost Appears"
+      ]
+    },
+    {
+      "ID": 60130,
+      "Entries": [
+        "Introducing Drifter Halfhand"
+      ]
+    },
+    {
+      "ID": 60140,
+      "Entries": [
+        "You will be able to go to the fixed treasure dragon bone crusher location"
+      ]
+    }
+  ]
+}

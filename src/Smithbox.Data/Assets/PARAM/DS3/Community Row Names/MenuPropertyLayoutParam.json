@@ -1,0 +1,2903 @@
+{
+  "Name": "MenuPropertyLayoutParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "### Menu - Item View - ?"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Type of Item"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Num. Currently Held"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Num. in Storage"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "### Menu - Item View - ?"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Strength Scaling"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Dexterity Scaling"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intelligence Scaling"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Faith Scaling"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Item Effect"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Attribute Bonus"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "### Menu - Item View - ?"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Item Effect"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "### Menu - Item View - ?"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Item Effect"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "### Menu - Item View - ?"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Num. Currently Held"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Num. in Storage"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1506,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1507,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1508,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1509,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1512,
+      "Entries": [
+        "Item Effect"
+      ]
+    },
+    {
+      "ID": 1513,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1514,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "### Menu - Weapon View"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Top Grid: Weapon Category"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Top Grid: Damage Type"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Top Grid: Skill Type"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Top Grid: Skill FP Consumption - Light 391"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Top Grid: Skill FP Consumption - Heavy 391"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Top Grid:"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Top Grid:"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Top Grid: Weight"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Top Grid: Durability"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Top Grid:"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Column: Attack power - Physical"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Column: Attack power - Magic"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Column: Attack power - Fire"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Column: Attack power - Lightning"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Column: Attack power - Dark"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Column: Attack power - Critical"
+      ]
+    },
+    {
+      "ID": 2017,
+      "Entries": [
+        "Column: Attack power - Range"
+      ]
+    },
+    {
+      "ID": 2018,
+      "Entries": [
+        "Column: Attack power - Spell Buff"
+      ]
+    },
+    {
+      "ID": 2019,
+      "Entries": [
+        "Column: Attack power - Physical Value"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Column: Attack power - Magic Value"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Column: Attack power - Fire Value"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Column: Attack power - Lightning Value"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Column: Attack power - Dark Value"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Column: Attack power - Critical Value"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Column: Attack power - Range Value"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "Column: Attack power - Spell Buff Value"
+      ]
+    },
+    {
+      "ID": 2027,
+      "Entries": [
+        "Column: Guard absorption - Physical"
+      ]
+    },
+    {
+      "ID": 2028,
+      "Entries": [
+        "Column: Guard absorption - Magic"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "Column: Guard absorption - Fire"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Column: Guard absorption - Lightning"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "Column: Guard absorption - Dark"
+      ]
+    },
+    {
+      "ID": 2032,
+      "Entries": [
+        "Column: Guard absorption - Stability"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "Column: Guard absorption - UNUSED"
+      ]
+    },
+    {
+      "ID": 2034,
+      "Entries": [
+        "Column: Guard absorption - Physical ABS Value"
+      ]
+    },
+    {
+      "ID": 2035,
+      "Entries": [
+        "Column: Guard absorption - Magic ABS Value"
+      ]
+    },
+    {
+      "ID": 2036,
+      "Entries": [
+        "Column: Guard absorption - Fire ABS Value"
+      ]
+    },
+    {
+      "ID": 2037,
+      "Entries": [
+        "Column: Guard absorption - Lightning ABS Value"
+      ]
+    },
+    {
+      "ID": 2038,
+      "Entries": [
+        "Column: Guard absorption - Dark ABS Value"
+      ]
+    },
+    {
+      "ID": 2039,
+      "Entries": [
+        "Column: Guard absorption - Stability Value"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Column: Guard absorption - UNUSED Value"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "Row: Additional effects - Bleed"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "Row: Additional effects - Poison"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "Row: Additional effects - Frost"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "Row: Additional effects - Curse"
+      ]
+    },
+    {
+      "ID": 2045,
+      "Entries": [
+        "Row: Attribute Bonus - Strength Letter"
+      ]
+    },
+    {
+      "ID": 2046,
+      "Entries": [
+        "Row: Attribute Bonus - Dexterity Letter"
+      ]
+    },
+    {
+      "ID": 2047,
+      "Entries": [
+        "Row: Attribute Bonus - Intelligence Letter"
+      ]
+    },
+    {
+      "ID": 2048,
+      "Entries": [
+        "Row: Attribute Bonus - Faith Letter"
+      ]
+    },
+    {
+      "ID": 2049,
+      "Entries": [
+        "Row: Attribute requirement - Strength"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Row: Attribute requirement - Dexterity"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Row: Attribute requirement - Intelligence"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Row: Attribute requirement - Faith"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "Row: Attribute requirement - Strength (Bracketed)"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "Row: Attribute requirement - Dexterity (Bracketed)"
+      ]
+    },
+    {
+      "ID": 2055,
+      "Entries": [
+        "Row: Attribute requirement - Intelligence (Bracketed)"
+      ]
+    },
+    {
+      "ID": 2056,
+      "Entries": [
+        "Row: Attribute requirement - Faith (Bracketed)"
+      ]
+    },
+    {
+      "ID": 2057,
+      "Entries": [
+        "Attack Power"
+      ]
+    },
+    {
+      "ID": 2058,
+      "Entries": [
+        "Guard Absorption"
+      ]
+    },
+    {
+      "ID": 2059,
+      "Entries": [
+        "Detail Status: Weapon: Other: termination"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Attribute bonus"
+      ]
+    },
+    {
+      "ID": 2061,
+      "Entries": [
+        "Attribute requirement"
+      ]
+    },
+    {
+      "ID": 2062,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "### Menu - ?"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Weapon Category"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Damage Type"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Skill Type"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Skill FP Consumption - Light"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "Skill FP Consumption - Heavy"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2307,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2308,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 2309,
+      "Entries": [
+        "Durability"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 2312,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 2313,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 2314,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 2315,
+      "Entries": [
+        "Dark Damage"
+      ]
+    },
+    {
+      "ID": 2316,
+      "Entries": [
+        "Critical"
+      ]
+    },
+    {
+      "ID": 2317,
+      "Entries": [
+        "Range"
+      ]
+    },
+    {
+      "ID": 2318,
+      "Entries": [
+        "Spell Buff"
+      ]
+    },
+    {
+      "ID": 2319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2323,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2324,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2325,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2326,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2327,
+      "Entries": [
+        "Physical Absorption"
+      ]
+    },
+    {
+      "ID": 2328,
+      "Entries": [
+        "Magic Absorption"
+      ]
+    },
+    {
+      "ID": 2329,
+      "Entries": [
+        "Fire Absorption"
+      ]
+    },
+    {
+      "ID": 2330,
+      "Entries": [
+        "Lightning Absorption"
+      ]
+    },
+    {
+      "ID": 2331,
+      "Entries": [
+        "Dark Absorption"
+      ]
+    },
+    {
+      "ID": 2332,
+      "Entries": [
+        "Stability"
+      ]
+    },
+    {
+      "ID": 2333,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2334,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2335,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2336,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2337,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2338,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2339,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2341,
+      "Entries": [
+        "Bleed"
+      ]
+    },
+    {
+      "ID": 2342,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 2343,
+      "Entries": [
+        "Frost"
+      ]
+    },
+    {
+      "ID": 2344,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2345,
+      "Entries": [
+        "Strength Scaling"
+      ]
+    },
+    {
+      "ID": 2346,
+      "Entries": [
+        "Dexterity Scaling"
+      ]
+    },
+    {
+      "ID": 2347,
+      "Entries": [
+        "Intelligence Scaling"
+      ]
+    },
+    {
+      "ID": 2348,
+      "Entries": [
+        "Faith Scaling"
+      ]
+    },
+    {
+      "ID": 2349,
+      "Entries": [
+        "Strength Requirement"
+      ]
+    },
+    {
+      "ID": 2350,
+      "Entries": [
+        "Dexterity Requirement"
+      ]
+    },
+    {
+      "ID": 2351,
+      "Entries": [
+        "Intelligence Requirement"
+      ]
+    },
+    {
+      "ID": 2352,
+      "Entries": [
+        "Faith Requirement"
+      ]
+    },
+    {
+      "ID": 2353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2354,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2355,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2356,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2357,
+      "Entries": [
+        "Attack Power"
+      ]
+    },
+    {
+      "ID": 2358,
+      "Entries": [
+        "Guard Absorption"
+      ]
+    },
+    {
+      "ID": 2359,
+      "Entries": [
+        "Additional effects"
+      ]
+    },
+    {
+      "ID": 2360,
+      "Entries": [
+        "Attribute bonus"
+      ]
+    },
+    {
+      "ID": 2361,
+      "Entries": [
+        "Attribute requirement"
+      ]
+    },
+    {
+      "ID": 2362,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "### Menu - Armor"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Durability"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Physical Absorption"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Strike Absorption"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Slash Absorption"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Thrust Absorption"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Magic Absorption"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Fire Absorption"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Lightning Absorption"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Dark Absorption"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Bleed Resist"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Poison Resist"
+      ]
+    },
+    {
+      "ID": 4016,
+      "Entries": [
+        "Frost Resist"
+      ]
+    },
+    {
+      "ID": 4017,
+      "Entries": [
+        "Curse Resist"
+      ]
+    },
+    {
+      "ID": 4018,
+      "Entries": [
+        "Poise"
+      ]
+    },
+    {
+      "ID": 4019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4023,
+      "Entries": [
+        "### Menu - Armor - Resistances"
+      ]
+    },
+    {
+      "ID": 4024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "### Menu - Spells"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Spell Category"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Num. Held"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Num. in Storage"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "FP Consumption"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "Slots Used"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Minimum Intelligence"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Detail status: spelling: Terminating"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Minimum Faith"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Item Effect"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Attribute requirement"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "### Menu - Ammunition"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Weapon Category"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Damage Type"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Num. Held"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Num. in Storage"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Physical Damage"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Magic Damage"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Fire Damage"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Lightning Damage"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Dark Damage"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Critical"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6019,
+      "Entries": [
+        "Bleed"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Poison"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Frost"
+      ]
+    },
+    {
+      "ID": 6022,
+      "Entries": [
+        "Curse"
+      ]
+    },
+    {
+      "ID": 6023,
+      "Entries": [
+        "Attack power"
+      ]
+    },
+    {
+      "ID": 6024,
+      "Entries": [
+        "Additional effects"
+      ]
+    },
+    {
+      "ID": 6025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "### Menu - Player Status"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Hollowing"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Vigor"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Attunement"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Endurance"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Vitality"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Strength"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "Dexterity"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Intelligence"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Faith"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Luck"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "HP"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "FP"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "Stamina"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "Total Weight"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "Poise"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Item Discovery"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "Attunement Slots"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "Player Status: First page: End"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "### Menu - Player Status - Attack Power - Slot 1 - Right"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Attack Power - Slot 2 - Right"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "Attack Power - Slot 3 - Right"
+      ]
+    },
+    {
+      "ID": 11003,
+      "Entries": [
+        "Attack Power - Slot 1 - Left"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "Attack Power - Slot 2 - Left"
+      ]
+    },
+    {
+      "ID": 11005,
+      "Entries": [
+        "Attack Power - Slot 3 - Left"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "Defence - Physical"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "Defence - Strike"
+      ]
+    },
+    {
+      "ID": 11008,
+      "Entries": [
+        "Defence - Slash"
+      ]
+    },
+    {
+      "ID": 11009,
+      "Entries": [
+        "Defence - Thrust"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Defence - Magic"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "Defence - Fire"
+      ]
+    },
+    {
+      "ID": 11012,
+      "Entries": [
+        "Defence - Lightning"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "Defence - Dark"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "Resistance - Bleed"
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        "Resistance - Poison"
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        "Resistance - Frost"
+      ]
+    },
+    {
+      "ID": 11017,
+      "Entries": [
+        "Resistance - Curse"
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Attack power"
+      ]
+    },
+    {
+      "ID": 11031,
+      "Entries": [
+        "Defense"
+      ]
+    },
+    {
+      "ID": 11032,
+      "Entries": [
+        "Resistances"
+      ]
+    },
+    {
+      "ID": 11033,
+      "Entries": [
+        "Absorption"
+      ]
+    },
+    {
+      "ID": 11034,
+      "Entries": [
+        "Armor resistances"
+      ]
+    },
+    {
+      "ID": 11035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "### Menu - Player Status - Name"
+      ]
+    },
+    {
+      "ID": 15001,
+      "Entries": [
+        "Gender"
+      ]
+    },
+    {
+      "ID": 15002,
+      "Entries": [
+        "Age"
+      ]
+    },
+    {
+      "ID": 15003,
+      "Entries": [
+        "Class"
+      ]
+    },
+    {
+      "ID": 15004,
+      "Entries": [
+        "Gift"
+      ]
+    },
+    {
+      "ID": 15005,
+      "Entries": [
+        "Covenant"
+      ]
+    },
+    {
+      "ID": 15006,
+      "Entries": [
+        "Status: Second page: termination"
+      ]
+    },
+    {
+      "ID": 15500,
+      "Entries": [
+        "### Menu - Player Status - Covenant"
+      ]
+    },
+    {
+      "ID": 15501,
+      "Entries": [
+        "Soul Level"
+      ]
+    },
+    {
+      "ID": 15502,
+      "Entries": [
+        "Hollowing"
+      ]
+    },
+    {
+      "ID": 15503,
+      "Entries": [
+        "Souls"
+      ]
+    },
+    {
+      "ID": 15504,
+      "Entries": [
+        "Souls to Level"
+      ]
+    },
+    {
+      "ID": 15505,
+      "Entries": [
+        "Vigor"
+      ]
+    },
+    {
+      "ID": 15506,
+      "Entries": [
+        "Attunement"
+      ]
+    },
+    {
+      "ID": 15507,
+      "Entries": [
+        "Endurance"
+      ]
+    },
+    {
+      "ID": 15508,
+      "Entries": [
+        "Vitality"
+      ]
+    },
+    {
+      "ID": 15509,
+      "Entries": [
+        "Strength"
+      ]
+    },
+    {
+      "ID": 15510,
+      "Entries": [
+        "Dexterity"
+      ]
+    },
+    {
+      "ID": 15511,
+      "Entries": [
+        "Intelligence"
+      ]
+    },
+    {
+      "ID": 15512,
+      "Entries": [
+        "Faith"
+      ]
+    },
+    {
+      "ID": 15513,
+      "Entries": [
+        "Luck"
+      ]
+    },
+    {
+      "ID": 15514,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15515,
+      "Entries": [
+        "Attributes"
+      ]
+    },
+    {
+      "ID": 15516,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "### Menu - Player Status - HP"
+      ]
+    },
+    {
+      "ID": 16001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16002,
+      "Entries": [
+        "FP"
+      ]
+    },
+    {
+      "ID": 16003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16004,
+      "Entries": [
+        "Stamina"
+      ]
+    },
+    {
+      "ID": 16005,
+      "Entries": [
+        "Total Weight"
+      ]
+    },
+    {
+      "ID": 16006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16007,
+      "Entries": [
+        "Poise"
+      ]
+    },
+    {
+      "ID": 16008,
+      "Entries": [
+        "Item Discovery"
+      ]
+    },
+    {
+      "ID": 16009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16011,
+      "Entries": [
+        "Attack Power - Slot 1 - Right"
+      ]
+    },
+    {
+      "ID": 16012,
+      "Entries": [
+        "Attack Power - Slot 2 - Right"
+      ]
+    },
+    {
+      "ID": 16013,
+      "Entries": [
+        "Attack Power - Slot 3 - Right"
+      ]
+    },
+    {
+      "ID": 16014,
+      "Entries": [
+        "Attack Power - Slot 1 - Left"
+      ]
+    },
+    {
+      "ID": 16015,
+      "Entries": [
+        "Attack Power - Slot 2 - Left"
+      ]
+    },
+    {
+      "ID": 16016,
+      "Entries": [
+        "Attack Power - Slot 3 - Left"
+      ]
+    },
+    {
+      "ID": 16017,
+      "Entries": [
+        "Defence - Physical"
+      ]
+    },
+    {
+      "ID": 16018,
+      "Entries": [
+        "Defence - Strike"
+      ]
+    },
+    {
+      "ID": 16019,
+      "Entries": [
+        "Defence - Slash"
+      ]
+    },
+    {
+      "ID": 16020,
+      "Entries": [
+        "Defence - Thrust"
+      ]
+    },
+    {
+      "ID": 16021,
+      "Entries": [
+        "Defence - Magic"
+      ]
+    },
+    {
+      "ID": 16022,
+      "Entries": [
+        "Defence - Fire"
+      ]
+    },
+    {
+      "ID": 16023,
+      "Entries": [
+        "Defence - Lightning"
+      ]
+    },
+    {
+      "ID": 16024,
+      "Entries": [
+        "Defence - Dark"
+      ]
+    },
+    {
+      "ID": 16025,
+      "Entries": [
+        "Resistance - Bleed"
+      ]
+    },
+    {
+      "ID": 16026,
+      "Entries": [
+        "Resistance - Poison"
+      ]
+    },
+    {
+      "ID": 16027,
+      "Entries": [
+        "Resistance - Frost"
+      ]
+    },
+    {
+      "ID": 16028,
+      "Entries": [
+        "Resistance - Curse"
+      ]
+    },
+    {
+      "ID": 16029,
+      "Entries": [
+        "Attunement Slots"
+      ]
+    },
+    {
+      "ID": 16030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16038,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16039,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16042,
+      "Entries": [
+        "Base power"
+      ]
+    },
+    {
+      "ID": 16043,
+      "Entries": [
+        "Attack power"
+      ]
+    },
+    {
+      "ID": 16044,
+      "Entries": [
+        "Defense"
+      ]
+    },
+    {
+      "ID": 16045,
+      "Entries": [
+        "Resistances"
+      ]
+    },
+    {
+      "ID": 16046,
+      "Entries": [
+        "Absorption"
+      ]
+    },
+    {
+      "ID": 16047,
+      "Entries": [
+        "Armor resistances"
+      ]
+    },
+    {
+      "ID": 16048,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "### Menu - Inventory - Total Souls"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "### Menu - Shop - Total Souls"
+      ]
+    },
+    {
+      "ID": 20101,
+      "Entries": [
+        "Souls to Purchace"
+      ]
+    },
+    {
+      "ID": 20102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20200,
+      "Entries": [
+        "### Menu - Shop - Total Souls"
+      ]
+    },
+    {
+      "ID": 20201,
+      "Entries": [
+        "Souls from Sell"
+      ]
+    },
+    {
+      "ID": 20202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20300,
+      "Entries": [
+        "### Menu - Shop - Equip Load"
+      ]
+    },
+    {
+      "ID": 20301,
+      "Entries": [
+        "Total Weight"
+      ]
+    },
+    {
+      "ID": 20302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20400,
+      "Entries": [
+        "### Menu - Reinforcement - Total Souls"
+      ]
+    },
+    {
+      "ID": 20401,
+      "Entries": [
+        "Souls for Reinforcement"
+      ]
+    },
+    {
+      "ID": 20402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20500,
+      "Entries": [
+        "### Menu - Infusion - Total Souls"
+      ]
+    },
+    {
+      "ID": 20501,
+      "Entries": [
+        "Souls for Infusion"
+      ]
+    },
+    {
+      "ID": 20502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20600,
+      "Entries": [
+        "### Menu - Repair - Total Souls"
+      ]
+    },
+    {
+      "ID": 20601,
+      "Entries": [
+        "Souls for Repair"
+      ]
+    },
+    {
+      "ID": 20602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20700,
+      "Entries": [
+        "### Menu - Transposition - Total Souls"
+      ]
+    },
+    {
+      "ID": 20701,
+      "Entries": [
+        "Souls for Transposition"
+      ]
+    },
+    {
+      "ID": 20702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20900,
+      "Entries": [
+        "### Menu - Other"
+      ]
+    },
+    {
+      "ID": 20901,
+      "Entries": [
+        "Num. Held"
+      ]
+    },
+    {
+      "ID": 20902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "### Menu - Level Up"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30015,
+      "Entries": [
+        "Level Up left: End"
+      ]
+    },
+    {
+      "ID": 30016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Level Up Right"
+      ]
+    },
+    {
+      "ID": 31001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31031,
+      "Entries": [
+        "Level Up right: End"
+      ]
+    },
+    {
+      "ID": 31032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Character make top: Top"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40005,
+      "Entries": [
+        "Character make top: Bottom"
+      ]
+    },
+    {
+      "ID": 40006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40015,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

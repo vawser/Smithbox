@@ -1,0 +1,149 @@
+{
+  "Name": "EquipParamGenerator",
+  "Entries": [
+    {
+      "ID": 65000000,
+      "Entries": [
+        "8980_(combustion) 1st generation -- 8980_（燃焼）第1世代"
+      ]
+    },
+    {
+      "ID": 65010400,
+      "Entries": [
+        "8985_(combustion) 2nd generation C-1 -- 8985_（燃焼）第2世代C-1"
+      ]
+    },
+    {
+      "ID": 65040200,
+      "Entries": [
+        "8990_(combustion) 2nd generation C-2 -- 8990_（燃焼）第2世代C-2"
+      ]
+    },
+    {
+      "ID": 65010000,
+      "Entries": [
+        "8981_(combustion) 2nd generation A-1 -- 8981_（燃焼）第2世代A-1"
+      ]
+    },
+    {
+      "ID": 65010100,
+      "Entries": [
+        "8982_(combustion) 2nd generation A-2 -- 8982_（燃焼）第2世代A-2"
+      ]
+    },
+    {
+      "ID": 65040000,
+      "Entries": [
+        "8991_(combustion) 2nd generation A-3 -- 8991_（燃焼）第2世代A-3"
+      ]
+    },
+    {
+      "ID": 65010200,
+      "Entries": [
+        "8983_(EN) 2nd generation B-1 -- 8983_（EN）第2世代B-1"
+      ]
+    },
+    {
+      "ID": 65010300,
+      "Entries": [
+        "8984_(EN) 2nd generation B-2 -- 8984_（EN）第2世代B-2"
+      ]
+    },
+    {
+      "ID": 65040100,
+      "Entries": [
+        "8992_(EN) 2nd generation B-3 -- 8992_（EN）第2世代B-3"
+      ]
+    },
+    {
+      "ID": 65020000,
+      "Entries": [
+        "8986_(EN) 3rd generation 1 -- 8986_（EN）第3世代1"
+      ]
+    },
+    {
+      "ID": 65020100,
+      "Entries": [
+        "8987_(EN) 3rd generation 2 -- 8987_（EN）第3世代2"
+      ]
+    },
+    {
+      "ID": 65040300,
+      "Entries": [
+        "8993_(EN) 3rd generation 3 -- 8993_（EN）第3世代3"
+      ]
+    },
+    {
+      "ID": 65030000,
+      "Entries": [
+        "8988_(Mela) melange type 1 -- 8988_（メラ）メランジ系1"
+      ]
+    },
+    {
+      "ID": 65030100,
+      "Entries": [
+        "8989_(Mela) Melange type 2 -- 8989_（メラ）メランジ系2"
+      ]
+    },
+    {
+      "ID": 65900000,
+      "Entries": [
+        "Event exclusive_Jailbreak mission generator -- イベント専用_脱獄ミッション用ジェネレータ"
+      ]
+    },
+    {
+      "ID": 65900100,
+      "Entries": [
+        "Tremo generator 01 -- トレモ用ジェネレータ01"
+      ]
+    },
+    {
+      "ID": 65900200,
+      "Entries": [
+        "Tremo generator 02 -- トレモ用ジェネレータ02"
+      ]
+    },
+    {
+      "ID": 65900300,
+      "Entries": [
+        "Tremo generator 03 -- トレモ用ジェネレータ03"
+      ]
+    },
+    {
+      "ID": 65900400,
+      "Entries": [
+        "Tremo generator 04 -- トレモ用ジェネレータ04"
+      ]
+    },
+    {
+      "ID": 65900500,
+      "Entries": [
+        "Generator for tremo 05 -- トレモ用ジェネレータ05"
+      ]
+    },
+    {
+      "ID": 65900600,
+      "Entries": [
+        "Tremo generator 06 -- トレモ用ジェネレータ06"
+      ]
+    },
+    {
+      "ID": 65901000,
+      "Entries": [
+        "Event exclusive_Jailbreak mission generator -- イベント専用_脱獄ミッション用ジェネレータ"
+      ]
+    },
+    {
+      "ID": 65901100,
+      "Entries": [
+        "Generator for prologue -- プロローグ用ジェネレータ"
+      ]
+    },
+    {
+      "ID": 65902000,
+      "Entries": [
+        "Decisive Battle B Lester Generator -- 決戦B レスター用 ジェネレータ"
+      ]
+    }
+  ]
+}

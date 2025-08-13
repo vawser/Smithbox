@@ -1,0 +1,503 @@
+{
+  "Name": "SeMaterialConvertParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "January surface"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "02 stones"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "03 Sat"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "04 wood"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "05 sand"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "06 ice"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "07 snow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "08 cloth"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "09 electricity"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10 concrete"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11 iron"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12 glass"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13 missing numbers"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14 missing numbers"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "15 missing numbers"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "16 missing numbers"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "17 missing numbers"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "18 missing numbers"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "19 missing number"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "20 water (about a puddle)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "21 water (around ankle)"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "22 water (below the knee)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "23 water (waist and above)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "24 underwater"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "25 Swamp (Puddle size)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "26 Swamp (around ankle)"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "27 Swamp (below the knee)"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "28 Swamp (above waist)"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "29 missing number"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "30 missing numbers"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "31 missing number"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "32 missing numbers"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "33 missing numbers"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "34 missing numbers"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "35 missing numbers"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "36 missing numbers"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "37 missing numbers"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "38 missing numbers"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "39 missing number"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "40 missing numbers"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "41 missing number"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "42 missing numbers"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "43 missing number"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "44 missing number"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "45 missing number"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "46 missing numbers"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "47 missing number"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "48 missing numbers"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "49 missing number"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "50 shield iron"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "51 Shield Heavy Iron"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "52 shield energy"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "53 body iron"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "54 body heavy iron"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "55 body meat"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "56 body cloth"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "57 body rubber"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "58 missing number"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "59 missing number"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "60 missing numbers"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "61 missing number"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "62 missing numbers"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "63 missing numbers"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "64 missing numbers"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "65 missing number"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "66 missing numbers"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "67 missing number"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "68 missing numbers"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "69 missing number"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "70 missing numbers"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "71 missing number"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "72 missing numbers"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "73 missing number"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "74 missing number"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "75 missing number"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "76 missing numbers"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "77 missing number"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "78 missing number"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "79 missing number"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "80 missing numbers"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "81 missing number"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "82 missing number"
+      ]
+    }
+  ]
+}

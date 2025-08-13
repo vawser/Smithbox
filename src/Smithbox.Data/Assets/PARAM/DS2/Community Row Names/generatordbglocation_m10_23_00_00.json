@@ -1,0 +1,635 @@
+{
+  "Name": "generatordbglocation_m10_23_00_00",
+  "Entries": [
+    {
+      "ID": 55,
+      "Entries": [
+        "[In the torch with the key] [Wandering Warrior] (Born) -- 【鍵付きトーチカ内】【放浪の戦士】（生者）"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "[In the torch with the key] [Wandering Warrior] (deceased) -- 【鍵付きトーチカ内】【放浪の戦士】（亡者）"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "【Connection road exit】 【Dark Art Shop】 (Born) -- 【接続路出口】【闇術屋】（生者）"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "【Connection road exit】 【Dark Art Shop】 (deceased) -- 【接続路出口】【闇術屋】（亡者）"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "[Colosseum 2F_NPC] [Black Phantom Shop] (Raw) Pledge NPC -- 【コロッセオ２Ｆ_ＮＰＣ】【黒ファントム屋】（生者）誓約用NPC"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "[Colosseum 2F_NPC] [Black Phantom Shop] NPC for pledge -- 【コロッセオ２Ｆ_ＮＰＣ】【黒ファントム屋】（亡者）誓約用NPC"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "【Black Spirit】NPC for Multi: Reaper (Female) -- 【黒霊】マルチ用NPC：死神（女）"
+      ]
+    },
+    {
+      "ID": 816,
+      "Entries": [
+        "Silver Chariots: Coalescence -- シルバーチャリオット：合体"
+      ]
+    },
+    {
+      "ID": 839,
+      "Entries": [
+        "[Boss Room_Boss] [Skeleton aristocracy: cane] boss -- 【ボス部屋_ボス】【スケルトン貴族：杖】ボス"
+      ]
+    },
+    {
+      "ID": 840,
+      "Entries": [
+        "[Boss Room_Boss] [Skeleton aristocracy: sickle] boss -- 【ボス部屋_ボス】【スケルトン貴族：鎌】ボス"
+      ]
+    },
+    {
+      "ID": 841,
+      "Entries": [
+        "[Boss Room_Boss] [Skeleton aristocracy: axe spear] boss -- 【ボス部屋_ボス】【スケルトン貴族：斧槍】ボス"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Mushroom cave front right hand _ waiting until the attack] dead workers -- 【キノコ洞手前右手_攻撃受けるまで待機】死者の労働者"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[Mushroom cave exit left _ waiting until the attack] dead workers -- 【キノコ洞出口左_攻撃受けるまで待機】死者の労働者"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "[Mushroom cave entrance_ course block_ battle] great dead: sword -- 【キノコ洞入口_進路塞ぎ_戦闘】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "[Mushroom cave bottom _ combat] tortureman: torture device -- 【キノコ洞底_戦闘】拷問人：拷問器具"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "[Mushroom cave upper wall _ battle] Great Moss_1 -- 【キノコ洞窟上層壁面_戦闘】グレートモス_1"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "[Mushroom Cave Lower Wall _ Battle] Great Moss_2 -- 【キノコ洞窟下層壁面_戦闘】グレートモス_2"
+      ]
+    },
+    {
+      "ID": 1206,
+      "Entries": [
+        "[Mushroom Cave Lower Wall _ Battle] Great Moss_3 -- 【キノコ洞窟下層壁面_戦闘】グレートモス_3"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Corridor hiding hole _ battle] terrible dead: sword_1 -- 【回廊隠れ穴_戦闘】すごい亡者：剣_1"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Corridor hiding hole _ battle] terrible dead: sword_2 -- 【回廊隠れ穴_戦闘】すごい亡者：剣_2"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "【Corridor_Course Block】Great Dead: Sword -- 【回廊下_進路塞ぎ】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Corridor opposite_ battle] Rogue (dead): Bow -- 【回廊向かい側_戦闘】ローグ（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "[Corridor opposite _ Battle] Rogue (dead): Dagger × 2 -- 【回廊向かい側_戦闘】ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "[Attack when the corridor entrance left hand _PC opens the door] rogue (deceased) dagger × 2 -- 【回廊入口左手_ＰＣが扉を開けたら攻撃】ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "[Corridor entrance left hand _ battle] rogue (dead): dagger × 2 -- 【回廊入口左手_戦闘】ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Corridor rooftop _ coming up from the bottom one step] rogue (deceased) dagger × 2_1 -- 【回廊屋上_一段下から上ってくる】ローグ（亡者）：短剣×２_1"
+      ]
+    },
+    {
+      "ID": 2026,
+      "Entries": [
+        "【Corridor Rooftop_Combat】Rogue (Deceased): One Hand Mallet -- 【回廊屋上_戦闘】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 2029,
+      "Entries": [
+        "[Corridor rooftop _2 laps _Soul Black] man-made immortal -- 【回廊屋上_2周目_ソウルブラック】人造不死人"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Immediate attack when the _PC the back of the pier _ surprise is in sight] rogue (dead) one-handed mallet -- 【橋脚裏_奇襲_PCが視界に入ると即攻撃】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "【The place where i got off the pier】The terrible deceased -- 【橋脚を降りた先_進路塞ぎ】すごい亡者：松明"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Where you got off the pier_ wandering] great dead -- 【橋脚を降りた先_徘徊】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "【In front of the bridge of the forest_shade hiding】Rogue (deceased) -- 【森の橋手前_木陰隠れ】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 3025,
+      "Entries": [
+        "[Bridge left_ corpse mimicry] terrible dead: sword_1 -- 【橋先左_死体擬態】すごい亡者：剣_1"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Around The Bridge Torchka_Wandering], Man-made Immortal_1 -- 【橋先トーチカ周辺_徘徊】人造不死人_1"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "[Around The Bridge Torchka_Wandering], Man-made Immortal_2 -- 【橋先トーチカ周辺_徘徊】人造不死人_2"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "[Poison from the tree around the bridge torchka] Great Moss_1 -- 【橋先トーチカ周辺_木から毒】グレートモス_1"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "[Bridge tip left back _combat] man-made immortal_3 -- 【橋先左奥_戦闘】人造不死人_3"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "[Bridge left_ Waiting to receive attack _Agura] dead workers: bare hands_2 -- 【橋先左_攻撃受けるまで待機_あぐら】死者の労働者：素手_2"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "[Poison from the bridge left __ tree] Great Moss_1 -- 【橋先左__木から毒】グレートモス_1"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[Lever Torchka front _ battle] Rogue: Dagger × 2 -- 【レバートーチカ前_戦闘】ローグ：短剣×２"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "[Lever Torchka front _ battle] rogue: one hand mallet -- 【レバートーチカ前_戦闘】ローグ：片手槌"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "[Lever Torchka Front _ Battle] Rogue: Bow -- 【レバートーチカ前_戦闘】ローグ：弓"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Operation Bridge Right Hand _ Battle] Rogue: Bow -- 【稼働橋右手_戦闘】ローグ：弓"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Lever torch ka top _ surprise from the ceiling hole 1] [Rogue (deceased): Dagger x 2】 Crouching -- 【レバートーチカ上_天井穴から奇襲1】【ローグ（亡者）：短剣×２】しゃがみ"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Cave route entrance immediately _ resurrected until the wizard defeats] skeleton: one-handed sword_1 -- 【洞窟ルート入口すぐ_ウィザード倒すまで復活】スケルトン：片手曲剣_1"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "[Cave root entrance immediately _ resurrected until the wizard defeats] skeleton: stabbing sword_2 -- 【洞窟ルート入口すぐ_ウィザード倒すまで復活】スケルトン：刺突剣_2"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Around the cave route lamp stand _ resurrected until the wizard defeats] helmet skeleton: curved sword × 2_1 -- 【洞窟ルート灯火台周辺_ウィザード倒すまで復活】兜スケルトン：曲剣×２_1"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "[Around the cave route lamp stand _ resurrected until the wizard defeats] skeleton: bow_2 -- 【洞窟ルート灯火台周辺_ウィザード倒すまで復活】スケルトン：弓_2"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "[Around the cave route lamp stand _ resurrected until the wizard defeats] armor skeleton swords_2 -- 【洞窟ルート灯火台周辺_ウィザード倒すまで復活】鎧スケルトン：刺突剣_2"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Shadow of cave root pillar _ skeleton revived] Dark Wizard -- 【洞窟ルート柱の陰_スケルトンよみがえらせ】ダークウィザード"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Cave route back _ resurrected until the wizard defeat] armor skeleton swords & shields_1 -- 【洞窟ルート奥_ウィザード倒すまで復活】鎧スケルトン：曲剣＆盾_1"
+      ]
+    },
+    {
+      "ID": 4053,
+      "Entries": [
+        "[Cave route back _ resurrected until the wizard defeat] armor skeleton: curved sword × 2 -- 【洞窟ルート奥_ウィザード倒すまで復活】鎧スケルトン：曲剣×２"
+      ]
+    },
+    {
+      "ID": 4054,
+      "Entries": [
+        "[Cave root back _ resurrected until the wizard defeat] armor skeleton: bow -- 【洞窟ルート奥_ウィザード倒すまで復活】鎧スケルトン：弓"
+      ]
+    },
+    {
+      "ID": 4055,
+      "Entries": [
+        "[Cave route back _ resurrected until the wizard defeat] armor skeleton swords & shields_2 -- 【洞窟ルート奥_ウィザード倒すまで復活】鎧スケルトン：曲剣＆盾_2"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "[Cave route back _ skeleton revived] dark wizard -- 【洞窟ルート奥_スケルトンよみがえらせ】ダークウィザード"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Cliff route front _ battle] rogue (dead) two-handed bow -- 【崖ルート手前_戦闘】ローグ（亡者）：両手弓"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "[Blade dash from the shadow of the cliff route _ rock] rogue (deceased) dagger × 2 -- 【崖ルート手前_岩陰からブレードダッシュ】ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "[Cliff route front _ battle] rogue (dead): dagger × 2 -- 【崖ルート手前_戦闘】ローグ（亡者）：短剣×２"
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        "[Cliff route front _ battle] rogue (dead): one hand mallet -- 【崖ルート手前_戦闘】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "[In the cliff route _ battle] rogue (dead): one hand mallet -- 【崖ルート中_戦闘】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "[In the cliff route _ battle] rogue (dead): bow -- 【崖ルート中_戦闘】ローグ（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 4112,
+      "Entries": [
+        "【In the cliff route】Ishimori -- 【崖ルート中】石守"
+      ]
+    },
+    {
+      "ID": 4122,
+      "Entries": [
+        "[Cliff Route Back _Soul Black] Man-made Immortal -- 【崖ルート奥_ソウルブラック】人造不死人"
+      ]
+    },
+    {
+      "ID": 4125,
+      "Entries": [
+        "[Cliff Route Torchka_ Battle] Rogue (Deceased): Bow -- 【崖ルートトーチカ_戦闘】ローグ（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 4126,
+      "Entries": [
+        "[Cliff Route Torchka_ Battle] Rogue (dead): One hand mallet -- 【崖ルートトーチカ_戦闘】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "[Cliff Route Back- Battle] Rogue (Dead): Bow -- 【崖ルート奥上_戦闘】ローグ（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "[Cliff Route Sakaue _ Battle] Rogue (deceased): Dagger × 2_1 -- 【崖ルート坂上_戦闘】ローグ（亡者）：短剣×２_1"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "[Cliff Route Sakaue_ Battle] Rogue (deceased): One hand mallet -- 【崖ルート坂上_戦闘】ローグ（亡者）：片手槌"
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        "[Cliff Route Sakaue_ Battle] Rogue (deceased): Bow -- 【崖ルート坂上_戦闘】ローグ（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Bridge between routes _ pinching _ Soul Black] man-made immortal -- 【ルート間の橋_挟み撃ち_ソウルブラック】人造不死人"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Bridge to the prison _ round trip] torture detainees : torture equipment -- 【刑場への橋先_往復】拷問人：拷問器具"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Bridge to the prison] left hand _ battle] great dead person: sword -- 【刑場への橋先：左手_戦闘】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "[Bridge to the prison] right hand _ battle] great dead: sword -- 【刑場への橋先：右手_戦闘】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[First body of surprise falling from the top of the stick in front of the torture place] tortureman: torture device_1 -- 【拷問場手前_棒の上から落下奇襲１体目】拷問人：拷問器具_1"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "[3body surprise falling from the top of the stick in front of the torture site] tortureman: whip_2 -- 【拷問場手前_棒の上から落下奇襲３体目】拷問人：鞭_2"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "[Torture place front _ 2 bodies of surprise falling from the top of the stick] tortureman: whip_1 -- 【拷問場手前_棒の上から落下奇襲２体目】拷問人：鞭_1"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "[4th body of surprise falling from the top of the stick in front of the torture site] tortureman: torture device_2 -- 【拷問場手前_棒の上から落下奇襲４体目】拷問人：拷問器具_2"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "[First body of surprise falling from the top of the stick in front of the torture place] tortureman: torture device: Soul Black_1 -- 【拷問場手前_棒の上から落下奇襲１体目】拷問人：拷問器具：ソウルブラック_1"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "[3body surprise falling from the top of the stick in front of the torture site] tortureman: Whip: Soul Black_2 -- 【拷問場手前_棒の上から落下奇襲３体目】拷問人：鞭：ソウルブラック_2"
+      ]
+    },
+    {
+      "ID": 5016,
+      "Entries": [
+        "[2nd surprise body falling from the top of the stick in front of the torture site] tortureman: whip: Soul Black_1 -- 【拷問場手前_棒の上から落下奇襲２体目】拷問人：鞭：ソウルブラック_1"
+      ]
+    },
+    {
+      "ID": 5017,
+      "Entries": [
+        "[4th surprise body falling from the top of the stick in front of the torture site] tortureman: torture device: Soul Black_2 -- 【拷問場手前_棒の上から落下奇襲４体目】拷問人：拷問器具：ソウルブラック_2"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "[Road to the prison: before the treasure corpse _ battle] terrible dead: sword -- 【刑場への道：宝死体前_戦闘】すごい亡者：剣"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] wheel skeleton: bare hand_1 -- 【ボス部屋_貴族撃破時に生成】車輪スケルトン：素手_1"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] wheel skeleton: bare hand_2 -- 【ボス部屋_貴族撃破時に生成】車輪スケルトン：素手_2"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] wheel skeleton: bare hand_3 -- 【ボス部屋_貴族撃破時に生成】車輪スケルトン：素手_3"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] wheel skeleton: bare hand_4 -- 【ボス部屋_貴族撃破時に生成】車輪スケルトン：素手_4"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic defeat] armor skeleton: armor: crown: curved sword × 2 -- 【ボス部屋_貴族撃破時に生成】鎧スケルトン：鎧あり：王冠：曲剣×２"
+      ]
+    },
+    {
+      "ID": 5211,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] armor skeleton: armor yes: helmet: curved sword × 2 -- 【ボス部屋_貴族撃破時に生成】鎧スケルトン：鎧あり：兜：曲剣×２"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] armor skeleton: armor yes: helmet: curved sword × 2 -- 【ボス部屋_貴族撃破時に生成】鎧スケルトン：鎧あり：兜：曲剣×２"
+      ]
+    },
+    {
+      "ID": 5213,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic destruction] armor skeleton: armor yes: helmet: curved sword × 2 -- 【ボス部屋_貴族撃破時に生成】鎧スケルトン：鎧あり：兜：曲剣×２"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic defeat] skeleton: one-handed stabbing_1 -- 【ボス部屋_貴族撃破時に生成】スケルトン：片手刺突_1"
+      ]
+    },
+    {
+      "ID": 5221,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic defeat] skeleton: one-handed stabbing_2 -- 【ボス部屋_貴族撃破時に生成】スケルトン：片手刺突_2"
+      ]
+    },
+    {
+      "ID": 5222,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic defeat] skeleton: one-handed stabbing_3 -- 【ボス部屋_貴族撃破時に生成】スケルトン：片手刺突_3"
+      ]
+    },
+    {
+      "ID": 5223,
+      "Entries": [
+        "[Boss room _ generated at the time of aristocratic defeat] skeleton: one-handed stabbing_4 -- 【ボス部屋_貴族撃破時に生成】スケルトン：片手刺突_4"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Colosseum in front of _ Proximity _ Dash approach] skeleton: one-handed sword -- 【コロッセオ内手前_近接_ダッシュ接近】スケルトン：片手曲剣"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Colosseum in front of _ Proximity _ Dash approach] Skeleton: 2 swords -- 【コロッセオ内手前_近接_ダッシュ接近】スケルトン：２刀流"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Colosseum in front of _ Proximity _ Dash approach] skeleton: one-handed stabbing -- 【コロッセオ内手前_近接_ダッシュ接近】スケルトン：片手刺突"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Colosseum in front of _ proximity _ dash approach] helmet skeleton: curved sword × 2 -- 【コロッセオ内手前_近接_ダッシュ接近】兜スケルトン：曲剣×２"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[Colosseum Infront _ Proximity _ Dash Approach] Helmet Skeleton -- 【コロッセオ内手前_近接_ダッシュ接近】兜スケルトン：曲剣＆盾"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[Colosseum in front of _ Proximity _ Dash Approach] Helmet skeleton: stabbing sword -- 【コロッセオ内手前_近接_ダッシュ接近】兜スケルトン：刺突剣"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "[Colosseum in front _ long distance] helmet skeleton: two-handed bow -- 【コロッセオ内手前_遠距離】兜スケルトン：両手弓"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "[Near colosseum ore bar _long distance_skeleton resurrection chanting】 Dark Wizard -- 【コロッセオレバー付近_遠距離_スケルトン復活詠唱】ダークウィザード"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "[Colosseum in front of _ long distance _ skeleton resurrection chant] dark wizard -- 【コロッセオ内手前_遠距離_スケルトン復活詠唱】ダークウィザード"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Colosseum white door front _ battle _ red phantom] NPC: Swordsman (Man) -- 【コロッセオ白扉手前_戦闘_赤ファントム】NPC：剣士（男）"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[Colosseum front _ for poly play] skeleton -- 【コロッセオ手前_ポリ劇用】スケルトン"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "Name": "m13_LightBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0室内"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0室内外つなぎ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "B0屋上部強ディフューズ"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0ボス部屋"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B1室内"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "B1樹内"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "かまど"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "B2巨樹内"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "B2遠景"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "B2遠景溶岩"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B0屋外"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B0屋外強スペキュラ"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B0屋外地底"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "B2屋外上層"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "B1暗部"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "B0滝"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "B0水面"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "B2水面"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "B2外下層"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "B2座禅"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2天球"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2遠景霧"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "B1霧"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "B2天井霧"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "B2 樹内\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "B2 ドラゴン樹\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "B2\u3000地底\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "B1鍾乳洞"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "B1地底湖"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "B1地底湖水"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B1ボス"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B3屋内"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "B1鍾乳洞\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "B1ボス\u3000キャラ"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "B3キャラ（屋内）"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "B3キャラ（日陰）"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "B0キャラ\u3000ボス"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "B2切り替え1"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "B2切り替え2"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "sky_new"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "characters_from_id_5"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "PolyG-scn130100-<MAP_Obj>"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "PolyG-scn130100-<Chr>-faceup"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "PolyG-scn130100-lstA"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "PolyG-scn130100-lstB"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "PolyG-scn130000-1影描写用"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "PolyG-scn130000-2全景"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>-cutAll-通常(pv)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "PolyG-scn130000-<c3320>-下と上から"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "PolyG-scn130000-<c3320>-棺全景ショット"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "PolyG-scn130000-三人羽織.・強"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "PolyG-scn130000-三人羽織.ラストカット"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "PolyG-scn130000-<CHR_OBJ_MAP>-cutAll-通常(pv)"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "PolyG-"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "PolyG-scn130020,130021,130120,130121-c0000"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "PolyG-scn130010_MAP"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "PolyG-scn130010"
+      ]
+    }
+  ]
+}

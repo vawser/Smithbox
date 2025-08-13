@@ -1,0 +1,4751 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for testing"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "flame"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "poison"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "hill"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "corrosion"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "plague"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "bleeding"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hiding"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "gravity user"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Status abnormality recovery [poison]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Abnormal status recovery [plague]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Abnormal status recovery [bleeding]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Abnormal status recovery [all-purpose]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "soul steal"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "zoom"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "warp"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "demon's souls"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "black ghost exorcism"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "strong ghost"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "white hope"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "black hope"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "black ghosting"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "resuscitation"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Prohibition of using magic"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "miracle motion extension"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "whetstone"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Asphyxia resuscitation"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon enhancement"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "defensive shield"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Covered in thread"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[System] Ghost param change"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "money bondage"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Fly hunting"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[GR Proto] Freezing slime"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Flame Monster_Second Stage"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Flame monster_3rd stage"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Flame monster_4th stage"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "auditory hallucination"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "soul coin"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Strong defense shield"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "fire resistant shield"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "HP recovery state"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Forced Ghosting Stage 1"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Forced Ghosting Stage 2"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Forced Ghosting Stage 3"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "pheromones"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "cat landing"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Increases pinch attack power"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Increases pinch defense power"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "regenerate"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "torch"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weak regenerate"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "weak ghost camouflage"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "hide your weak appearance"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "tips blood letters"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "leech foot"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Yellow coat"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "point light source"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "blood letter evaluation"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon reinforcement [medium]"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Weapon enhancement [Large]"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "flame reinforcement"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Flame Enhancement [Large]"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Magic enhancement"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Chimera reinforcement"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Item drop correction"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "MP regenerate"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Weak MP regenerate"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "resurrection when dead"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Poison resistance UP"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Magic power UP"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic defense UP"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Bleeding resistance UP"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Epidemic resistance UP"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Stamina recovery UP"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Soul acquisition UP"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Fire resistance UP"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "King's Shield Level 1 Left Foot"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "King's Shield Level 2 Left Foot"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "King's Shield Level 3 Left Foot"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "King's Shield Level 1 Right Foot"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "King's Shield Stage 2 Right Leg"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "King's Shield Stage 3 Right Leg"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Referee abdominal bleeding"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "mimicry"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "[SP] Transformation"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Gasman"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "detection"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Waiting for cooperation"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "cooperation"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "cooperation sending"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "gravity"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "evil eye"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Status release [waiting for cooperation]"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Effect Lv1"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Effect Lv2"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Effect Lv3"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Evil eye Lv1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Evil eye Lv2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "counter"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Egg planting standby"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Egg planting"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "egg head standby"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "egg head"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "ultralight travel"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "curse"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "petrification"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "curse removed"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "human nature damage"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Damage animation change_SA time only"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Damage animation change_added"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Underwater behavior"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "weapon head"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "weapon body"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "weapon hand"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "weapon legs"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "sleep"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Mimic_mimicry"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Mimic_mimetic sleep"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Mimic_Normal"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Mimic_normal sleep"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Fascinating"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Blood letter acquisition"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Repulsion change"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Mimic_starts to sleep normally"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "crystallization"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Resonance Lv0"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Resonance Lv1"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Resonance Lv2"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Resonance Lv3"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Resonance Lv4"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Action ID specification"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "enemy_immortality"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Enemy_Asphyxia"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "holy attribute"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "whole body whetstone"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "light magic"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Relief request"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "white relief"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "black relief"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Lightning enhancement"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Poison enhancement"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Epidemic reinforcement"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Est cannot be used"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "SA reinforcement"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Durability reduction disabled"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Anti-spirit enhancement"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Guard reinforcement"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Ring usually revives when you die"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Ring revives when you die due to curse"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Warp B"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Warp C"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Warp D"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Warp E"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Warp A"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Abandonment of vows"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "[SP] Whole body transformation"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "precision reinforcement"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "resonance enhancement"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "cause and effect"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "cause and effect explosion"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "sheath invincible 1"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "sheath invincible 2"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "sheath invincible 3"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "revival of humanity"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Soul coin (immortal type)"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Soul coin (beast type)"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Ally strengthening magic"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Curse effect Lv1"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curse effect Lv2"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Curse effect Lv3"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Curse effect Lv4"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "SOS visible"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "invisible weapon"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "nit effect"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "flame kick"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Grim reaper"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Request to summon forest thieves"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Inside the Forest Thieves Territory"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Hope to summon the queen's younger brother"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "In the queen mother's younger brother's territory"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Egg head_second stage"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Life extension"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Increase number of magic uses"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "dragon newt sign"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "bounty head sign"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "counter up"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Egg soup"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "HP drain"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "power of madness"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "For magic ban effect"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "dragon roar"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Reduces number of magic uses"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Guard reinforcement [Large]"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[DLC] Dark reinforcement"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Arena 1v1 [Small] Inside the territory"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Inside the territory"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Arena Battle Royale [Small] Inside the territory"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Arena 1v1 [Small] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Arena 1v1 [Small] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request A1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request A2"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning Hope B1"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request B2"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request C"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Hope D"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Arena 1v1 [Large] Inside the territory"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena 2v2 [Large] Inside the territory"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Arena Battle Royale [Large] Inside the territory"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Arena 1v1 [Large] Summoning Hope A"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Arena 1v1 [Large] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope A1"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope A2"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope B1"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope B2"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request A"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request B"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Hope C"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Hope D"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Prohibited to use arena items Prohibited to use items"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "death in arena"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Tentative 1st place in the arena"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Arena NoDead"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Arena tie for 1st place"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "black dragon ring"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "10 or more wins in the arena"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "30 or more wins in the arena"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "50 wins or more in the arena"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "100 wins or more in the arena"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Blood material overwrite"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Blood material_blood"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Blood material_flame"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Blood material_little blood"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Layered magic A_LV1"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Layered magic A_LV2"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Layered magic A_LV3"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Layered magic B_LV1"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Layered magic B_LV2"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Layered magic B_LV3"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "covered in oil"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Fire Daruma"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "being possessed"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "darkness magic"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "Burnt corpse combustion level 1"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "Burnt corpse combustion level 2"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "Sound magnification change"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "Target down"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "eclipse"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Maggot"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Status abnormality recovery [Maggot]"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "bleeding condition"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Ceremony possible"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "quick match request"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Death while falling is disabled"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Visual range change"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "eclipse death"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Double chanting in progress"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "General Avatar Buff 1"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "General Avatar Buff 2"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "General Avatar Buff 3"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "General Avatar Buff 4"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "General Avatar Buff 5"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "nerve load noise"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Torch_flame effect"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Torch, effect when raised"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Fire weapon enhancement"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Regeneration double chant"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Recovery double chant"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "sun sword"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Eclipse_Attraction"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Eclipse_escape"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Abnormal status recovery [eclipse]"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "VOB equipment"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Poison (body-centered effect)"
+      ]
+    },
+    {
+      "ID": 40253,
+      "Entries": [
+        "Fire Daruma"
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "Eclipse (body-centered effect)"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Demon Priest_Magic Small"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Demon priest_curse"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Demon Priest_Magic Great"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Demon Priest_Flame Enchantment"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Demon Priest_"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Crystal Elder_Ally"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Wax Dead_Covered in wax"
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "Wax Dead Man_Head of Flame"
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "Firewood Demon_Head (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "Firewood Demon_Chest (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "Firewood Demon_Back (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "Firewood Demon_Weapon (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Firewood Demon HU_Head (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        "Firewood Demon HU_Chest (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        "Firewood Demon HU_Back (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        "Firewood Demon HU_Weapon (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        "New skeleton torch (resident SFX)"
+      ]
+    },
+    {
+      "ID": 50050,
+      "Entries": [
+        "Sullivan's Reaper_Sword Enchantment"
+      ]
+    },
+    {
+      "ID": 50051,
+      "Entries": [
+        "Sullivan's Grim Reaper_Sickle Enchantment"
+      ]
+    },
+    {
+      "ID": 50052,
+      "Entries": [
+        "Sullivan's Grim Reaper (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50053,
+      "Entries": [
+        "Sullivan's Grim Reaper_(Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50055,
+      "Entries": [
+        "Tindalos_Eyelight"
+      ]
+    },
+    {
+      "ID": 50058,
+      "Entries": [
+        "gargoyle torch"
+      ]
+    },
+    {
+      "ID": 50060,
+      "Entries": [
+        "King of the Dead: Miasma Pneumothorax Resident SFX"
+      ]
+    },
+    {
+      "ID": 50061,
+      "Entries": [
+        "King of the dead miasma"
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "Old King of Eclipse Eclipse Aura Resident SFX"
+      ]
+    },
+    {
+      "ID": 50071,
+      "Entries": [
+        "Old King of Eclipse Eclipse Aura Hu Resident SFX"
+      ]
+    },
+    {
+      "ID": 50072,
+      "Entries": [
+        "Old King of Eclipses Eclipse Feather Resident SFX"
+      ]
+    },
+    {
+      "ID": 50073,
+      "Entries": [
+        "Old King of Eclipses Eclipse Feather Resident SFX"
+      ]
+    },
+    {
+      "ID": 50074,
+      "Entries": [
+        "Old King of Eclipses Kaze Resident SFX"
+      ]
+    },
+    {
+      "ID": 50080,
+      "Entries": [
+        "Eclipse Butterfly Scale Powder Resident"
+      ]
+    },
+    {
+      "ID": 50090,
+      "Entries": [
+        "Ash Demon_Weapon Smoke (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50091,
+      "Entries": [
+        "Ash Demon_Full body smoke (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50092,
+      "Entries": [
+        "Ash Demon_Joint 1 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50093,
+      "Entries": [
+        "Ash Demon_Joint 2 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50094,
+      "Entries": [
+        "Ash Demon_Joint 3 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50095,
+      "Entries": [
+        "Ash Demon_Joint 4 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50096,
+      "Entries": [
+        "Ash Demon_Distortion 1 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50097,
+      "Entries": [
+        "Ash Demon_Distortion 2 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50098,
+      "Entries": [
+        "Ash Demon_Distortion 3 (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "c4300_Grave Revealer Torch SFX"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "c4300_Grave Revealing Nobleman Staff Cantera SFX"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "c4300_Grave Revealer Waist Cantera SFX"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "c4300_Grave Revealing Nobleman Shield"
+      ]
+    },
+    {
+      "ID": 50120,
+      "Entries": [
+        "c4020_Nazgul (Grandworm) Resident SFX"
+      ]
+    },
+    {
+      "ID": 50150,
+      "Entries": [
+        "New Castle Knight: Akame (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Dark Knight Beast_Head (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "Dark Night Beast_Torso (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "Dark Knight Beast_Left Arm (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "Dark Knight Beast_Right Arm (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50204,
+      "Entries": [
+        "Dark Night Beast_Right Leg (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50205,
+      "Entries": [
+        "Dark Night Beast_Left Foot (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50206,
+      "Entries": [
+        "Dark Knight Beast_Weapon (Resident SFX)"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (when it appears)"
+      ]
+    },
+    {
+      "ID": 50301,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (appearing → materialized)"
+      ]
+    },
+    {
+      "ID": 50302,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (entity → disappearing)"
+      ]
+    },
+    {
+      "ID": 50303,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (when destroyed)"
+      ]
+    },
+    {
+      "ID": 54050,
+      "Entries": [
+        "c4050_Warlord's Warrior_Warcry"
+      ]
+    },
+    {
+      "ID": 54100,
+      "Entries": [
+        "c41xx_gray demi-human_general purpose_red eyes"
+      ]
+    },
+    {
+      "ID": 54200,
+      "Entries": [
+        "[GR] For mowing item acquisition effect"
+      ]
+    },
+    {
+      "ID": 57000,
+      "Entries": [
+        "Buddy for pre-battle_hidden"
+      ]
+    },
+    {
+      "ID": 58000,
+      "Entries": [
+        "c7100_Buddy unique crazy cold air"
+      ]
+    },
+    {
+      "ID": 58001,
+      "Entries": [
+        "c7100_Buddy Unique Crazy Cold Air_Feet"
+      ]
+    },
+    {
+      "ID": 58100,
+      "Entries": [
+        "c7100_Buddy Unique Normal Cold Air"
+      ]
+    },
+    {
+      "ID": 58101,
+      "Entries": [
+        "c7100_Buddy Unique Normal Cold Air"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "flaming small"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "Under fire"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Large flame"
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        "flaming extra large"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Melange (weak/silver)"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Melange (strong/red)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Stan small"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Stun Medium"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "Stan big"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "Stan extra large"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "flaming small"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "Under fire"
+      ]
+    },
+    {
+      "ID": 7302,
+      "Entries": [
+        "Large flame"
+      ]
+    },
+    {
+      "ID": 7303,
+      "Entries": [
+        "flaming extra large"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Melange (weak/silver)"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Melange (strong/red)"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Stan small"
+      ]
+    },
+    {
+      "ID": 7601,
+      "Entries": [
+        "Stun Medium"
+      ]
+    },
+    {
+      "ID": 7602,
+      "Entries": [
+        "Stan big"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "Stan extra large"
+      ]
+    },
+    {
+      "ID": 12200,
+      "Entries": [
+        "WP_2200_EN shield_luminescence"
+      ]
+    },
+    {
+      "ID": 12300,
+      "Entries": [
+        "WP_2300_EN shield_luminescence"
+      ]
+    },
+    {
+      "ID": 12301,
+      "Entries": [
+        "WP_2300_EN shield_landing"
+      ]
+    },
+    {
+      "ID": 12310,
+      "Entries": [
+        "WP_2300_EN shield_luminescence_fade out"
+      ]
+    },
+    {
+      "ID": 12311,
+      "Entries": [
+        "WP_2300_EN shield_landing_fade out"
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "WP_2200_EN Shield_Stop"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Recovery system_loop ver"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Recovery system_one shot ver"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Recovery system_Spark_HEAD"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "Recovery system_Spark_CORE"
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        "Recovery system_Spark_ARMS"
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "Recovery system_Spark_LEGS"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "EN recovery enhancement item_loop ver"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[Your machine] Core special function_Blade reinforcement_Active"
+      ]
+    },
+    {
+      "ID": 49000,
+      "Entries": [
+        "[Test] Own machine: Core special function_Genki ball gauge increase bullet_landing"
+      ]
+    },
+    {
+      "ID": 49001,
+      "Entries": [
+        "[Test] Own machine: Core special function_Genki ball gauge increase bullet_Defeated"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "Stiglo_Monoeye strength increases"
+      ]
+    },
+    {
+      "ID": 59001,
+      "Entries": [
+        "Stiglo_Monoeye strength returns"
+      ]
+    },
+    {
+      "ID": 59002,
+      "Entries": [
+        "Stiglo_MonoEye lights out"
+      ]
+    },
+    {
+      "ID": 59010,
+      "Entries": [
+        "Stiglo_Heat sink combustion"
+      ]
+    },
+    {
+      "ID": 59011,
+      "Entries": [
+        "Stiglo_Heat Sink Back"
+      ]
+    },
+    {
+      "ID": 59020,
+      "Entries": [
+        "Stiglo_barrier front"
+      ]
+    },
+    {
+      "ID": 59021,
+      "Entries": [
+        "Stiglo_barrier bottom"
+      ]
+    },
+    {
+      "ID": 59022,
+      "Entries": [
+        "Stiglo_barrier left"
+      ]
+    },
+    {
+      "ID": 59023,
+      "Entries": [
+        "Stiglo_barrier right"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "c3300 Ghost hiding special effects"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "c3300 Special effects for removing ghost appearance"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "c3300 Ghost hidden special effects dark"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "Reverse joint dying SFX"
+      ]
+    },
+    {
+      "ID": 93000,
+      "Entries": [
+        "Collapse A layer enemy laser"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        "Laser impact combustion"
+      ]
+    },
+    {
+      "ID": 99001,
+      "Entries": [
+        "Laser impact combustion ends"
+      ]
+    },
+    {
+      "ID": 99010,
+      "Entries": [
+        "Start of stealth"
+      ]
+    },
+    {
+      "ID": 99011,
+      "Entries": [
+        "Cancel stealth activation"
+      ]
+    },
+    {
+      "ID": 99020,
+      "Entries": [
+        "Stealth fog airflow SFX1"
+      ]
+    },
+    {
+      "ID": 99021,
+      "Entries": [
+        "Stealth fog airflow SFX2"
+      ]
+    },
+    {
+      "ID": 99022,
+      "Entries": [
+        "Stealth fog airflow SFX3"
+      ]
+    },
+    {
+      "ID": 99023,
+      "Entries": [
+        "Stealth fog airflow SFX4"
+      ]
+    },
+    {
+      "ID": 99024,
+      "Entries": [
+        "Stealth fog airflow SFX4"
+      ]
+    },
+    {
+      "ID": 99030,
+      "Entries": [
+        "Additional SFX occurs during fog (machine gun)"
+      ]
+    },
+    {
+      "ID": 99040,
+      "Entries": [
+        "own aircraft spotlight"
+      ]
+    },
+    {
+      "ID": 99050,
+      "Entries": [
+        "Dummy effect on own aircraft"
+      ]
+    },
+    {
+      "ID": 99051,
+      "Entries": [
+        "explosion effect"
+      ]
+    },
+    {
+      "ID": 99060,
+      "Entries": [
+        "Own aircraft light SFX"
+      ]
+    },
+    {
+      "ID": 99100,
+      "Entries": [
+        "Reverse load effect"
+      ]
+    },
+    {
+      "ID": 99900,
+      "Entries": [
+        "Client rescue test"
+      ]
+    },
+    {
+      "ID": 99901,
+      "Entries": [
+        "Client Rescue Tess 2"
+      ]
+    },
+    {
+      "ID": 99902,
+      "Entries": [
+        "Client Rescue Tess 3"
+      ]
+    },
+    {
+      "ID": 99903,
+      "Entries": [
+        "Client Rescue Tess 4"
+      ]
+    },
+    {
+      "ID": 99904,
+      "Entries": [
+        "Client Rescue Tess 5"
+      ]
+    },
+    {
+      "ID": 99905,
+      "Entries": [
+        "Client Rescue Tess 6"
+      ]
+    },
+    {
+      "ID": 99910,
+      "Entries": [
+        "[Test] Poison fog"
+      ]
+    },
+    {
+      "ID": 99913,
+      "Entries": [
+        "[Test] Defeating Ice Worm for Railgun Landing"
+      ]
+    },
+    {
+      "ID": 99914,
+      "Entries": [
+        "[Test] Defeat Ice Worm Mob Temporary Searchlight"
+      ]
+    },
+    {
+      "ID": 99915,
+      "Entries": [
+        "[Test] Melange cloud breaking through the atmosphere"
+      ]
+    },
+    {
+      "ID": 99916,
+      "Entries": [
+        "[Test] Strike street reverse run bullet SFX"
+      ]
+    },
+    {
+      "ID": 99917,
+      "Entries": [
+        "[Test] Laser sight"
+      ]
+    },
+    {
+      "ID": 99918,
+      "Entries": [
+        "[Test] Mine Dot damage"
+      ]
+    },
+    {
+      "ID": 99920,
+      "Entries": [
+        "[Test] Visibility trial_Camera eye 00"
+      ]
+    },
+    {
+      "ID": 99921,
+      "Entries": [
+        "[Test] Visibility trial_Camera eye 01"
+      ]
+    },
+    {
+      "ID": 99922,
+      "Entries": [
+        "Camera eye_regular implementation_for wingman"
+      ]
+    },
+    {
+      "ID": 99990,
+      "Entries": [
+        "[Test] Chinese Communist Party MT Spotlight"
+      ]
+    },
+    {
+      "ID": 99991,
+      "Entries": [
+        "[Test] Right Communist MT Spotlight"
+      ]
+    },
+    {
+      "ID": 99992,
+      "Entries": [
+        "[Test] Left Communist MT Spotlight"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Juggernaut Damage Hit Back"
+      ]
+    },
+    {
+      "ID": 315001,
+      "Entries": [
+        "Juggernaut resident light"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "ICE WORM - NPC Part"
+      ]
+    },
+    {
+      "ID": 625001,
+      "Entries": [
+        "Sandworm Damage Hit Body_01"
+      ]
+    },
+    {
+      "ID": 625002,
+      "Entries": [
+        "Sandworm Damage Hit Body_02"
+      ]
+    },
+    {
+      "ID": 625003,
+      "Entries": [
+        "Sandworm Damage Hit Body_03"
+      ]
+    },
+    {
+      "ID": 625004,
+      "Entries": [
+        "Sandworm Damage Hit Body_04"
+      ]
+    },
+    {
+      "ID": 625005,
+      "Entries": [
+        "Sandworm Damage Hit Body_05"
+      ]
+    },
+    {
+      "ID": 625006,
+      "Entries": [
+        "Sandworm Damage Hit Body_06"
+      ]
+    },
+    {
+      "ID": 625007,
+      "Entries": [
+        "Sandworm Damage Hit Body_07"
+      ]
+    },
+    {
+      "ID": 625008,
+      "Entries": [
+        "Sandworm Damage Hit Body_08"
+      ]
+    },
+    {
+      "ID": 625009,
+      "Entries": [
+        "Sandworm Damage Hit Body_09"
+      ]
+    },
+    {
+      "ID": 625010,
+      "Entries": [
+        "Sandworm Damage Hit Body_10"
+      ]
+    },
+    {
+      "ID": 625011,
+      "Entries": [
+        "Sandworm Damage Hit Body_11"
+      ]
+    },
+    {
+      "ID": 625012,
+      "Entries": [
+        "Sandworm Damage Hit Body_12"
+      ]
+    },
+    {
+      "ID": 625013,
+      "Entries": [
+        "Sandworm Damage Hit Body_13"
+      ]
+    },
+    {
+      "ID": 625014,
+      "Entries": [
+        "Sandworm Damage Hit Body_14"
+      ]
+    },
+    {
+      "ID": 625015,
+      "Entries": [
+        "Sandworm damage hit body_15"
+      ]
+    },
+    {
+      "ID": 625016,
+      "Entries": [
+        "Sandworm Damage Hit Body_16"
+      ]
+    },
+    {
+      "ID": 625017,
+      "Entries": [
+        "Sandworm damage hit body_17"
+      ]
+    },
+    {
+      "ID": 625018,
+      "Entries": [
+        "Sandworm damage hit body_18"
+      ]
+    },
+    {
+      "ID": 625019,
+      "Entries": [
+        "Sandworm Damage Hit Body_19"
+      ]
+    },
+    {
+      "ID": 625020,
+      "Entries": [
+        "Sandworm damage hit body_20"
+      ]
+    },
+    {
+      "ID": 625021,
+      "Entries": [
+        "Sandworm Damage Hit Body_21"
+      ]
+    },
+    {
+      "ID": 625022,
+      "Entries": [
+        "Sandworm Damage Hit Body_22"
+      ]
+    },
+    {
+      "ID": 625023,
+      "Entries": [
+        "Sandworm Damage Hit Body_23"
+      ]
+    },
+    {
+      "ID": 625024,
+      "Entries": [
+        "Sandworm Damage Hit Body_24"
+      ]
+    },
+    {
+      "ID": 625025,
+      "Entries": [
+        "Sandworm damage hit body_25"
+      ]
+    },
+    {
+      "ID": 625026,
+      "Entries": [
+        "Sandworm damage hit body_26"
+      ]
+    },
+    {
+      "ID": 625027,
+      "Entries": [
+        "Sandworm Damage Hit Body_27"
+      ]
+    },
+    {
+      "ID": 625028,
+      "Entries": [
+        "Sandworm damage hit body_28"
+      ]
+    },
+    {
+      "ID": 625100,
+      "Entries": [
+        "Sandworm body spark after HU"
+      ]
+    },
+    {
+      "ID": 625110,
+      "Entries": [
+        "Sandworm Charge Spark after HU_801"
+      ]
+    },
+    {
+      "ID": 625111,
+      "Entries": [
+        "Sandworm Charge Spark after HU_802"
+      ]
+    },
+    {
+      "ID": 625112,
+      "Entries": [
+        "Sandworm Charge Spark after HU_803"
+      ]
+    },
+    {
+      "ID": 625200,
+      "Entries": [
+        "Sandworm Dora reception status_1"
+      ]
+    },
+    {
+      "ID": 625201,
+      "Entries": [
+        "Sandworm Dora reception status_2"
+      ]
+    },
+    {
+      "ID": 625202,
+      "Entries": [
+        "Sandworm Dora reception status_3"
+      ]
+    },
+    {
+      "ID": 625203,
+      "Entries": [
+        "Sandworm Dora reception status_4"
+      ]
+    },
+    {
+      "ID": 625210,
+      "Entries": [
+        "Sandworm secondary barrier is being deployed"
+      ]
+    },
+    {
+      "ID": 625300,
+      "Entries": [
+        "Sandworm underground moving marker"
+      ]
+    },
+    {
+      "ID": 813500,
+      "Entries": [
+        "Miyatake Strong Enemy, Pal Charged State"
+      ]
+    },
+    {
+      "ID": 813510,
+      "Entries": [
+        "Miyatake Strong Enemy HU_Body"
+      ]
+    },
+    {
+      "ID": 813511,
+      "Entries": [
+        "Miyatake Strong Enemy HU_Pile"
+      ]
+    },
+    {
+      "ID": 813512,
+      "Entries": [
+        "Miyatake Strong Enemy HU1_3"
+      ]
+    },
+    {
+      "ID": 813520,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_1"
+      ]
+    },
+    {
+      "ID": 813521,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_2"
+      ]
+    },
+    {
+      "ID": 813522,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_3"
+      ]
+    },
+    {
+      "ID": 814500,
+      "Entries": [
+        "Miyatake Strong Enemy_Bird Leg Charge"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "hidden test"
+      ]
+    },
+    {
+      "ID": 820001,
+      "Entries": [
+        "Toton test"
+      ]
+    },
+    {
+      "ID": 820010,
+      "Entries": [
+        "Dust smoke SFX test"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "c8510 Resident SFX"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "Radar resident SFX"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Mining ship weak point 1st right shoulder"
+      ]
+    },
+    {
+      "ID": 853001,
+      "Entries": [
+        "Mining ship weak point 1st left shoulder"
+      ]
+    },
+    {
+      "ID": 853002,
+      "Entries": [
+        "Mining ship weak point 1st right elbow"
+      ]
+    },
+    {
+      "ID": 853003,
+      "Entries": [
+        "Mining ship weak point 1st left elbow"
+      ]
+    },
+    {
+      "ID": 853010,
+      "Entries": [
+        "Mining ship weak point 2nd right shoulder"
+      ]
+    },
+    {
+      "ID": 853011,
+      "Entries": [
+        "Mining ship weak point 2nd left shoulder"
+      ]
+    },
+    {
+      "ID": 853012,
+      "Entries": [
+        "Mining ship weak point 2nd right elbow"
+      ]
+    },
+    {
+      "ID": 853013,
+      "Entries": [
+        "Mining ship weak point 2nd left elbow"
+      ]
+    },
+    {
+      "ID": 853020,
+      "Entries": [
+        "Mining ship weak point 3rd right shoulder"
+      ]
+    },
+    {
+      "ID": 853021,
+      "Entries": [
+        "Mining ship weak point 3rd left shoulder"
+      ]
+    },
+    {
+      "ID": 853022,
+      "Entries": [
+        "Mining ship weak point 3rd right elbow"
+      ]
+    },
+    {
+      "ID": 853023,
+      "Entries": [
+        "Mining ship weak point 3rd left elbow"
+      ]
+    },
+    {
+      "ID": 853070,
+      "Entries": [
+        "Mining ship Weak spot Highlight 1"
+      ]
+    },
+    {
+      "ID": 853071,
+      "Entries": [
+        "Mining ship Weak spot Eyeball 2"
+      ]
+    },
+    {
+      "ID": 853072,
+      "Entries": [
+        "Mining ship Weak spot Eyeball 3"
+      ]
+    },
+    {
+      "ID": 853080,
+      "Entries": [
+        "Mining ship weak point core 1"
+      ]
+    },
+    {
+      "ID": 853081,
+      "Entries": [
+        "Mining ship weak point core 2"
+      ]
+    },
+    {
+      "ID": 853082,
+      "Entries": [
+        "Mining ship weak point core 3"
+      ]
+    },
+    {
+      "ID": 853090,
+      "Entries": [
+        "Mining ship weak point connection part 1-2 right"
+      ]
+    },
+    {
+      "ID": 853091,
+      "Entries": [
+        "Mining ship weak point connection part 1-2 left"
+      ]
+    },
+    {
+      "ID": 853092,
+      "Entries": [
+        "Mining ship weak point connection part 2-3 right"
+      ]
+    },
+    {
+      "ID": 853093,
+      "Entries": [
+        "Mining ship weak point connection part 2-3 left"
+      ]
+    },
+    {
+      "ID": 853100,
+      "Entries": [
+        "Mining ship weak point hit 1st right shoulder"
+      ]
+    },
+    {
+      "ID": 853101,
+      "Entries": [
+        "Mining ship weak point hit 1st left shoulder"
+      ]
+    },
+    {
+      "ID": 853102,
+      "Entries": [
+        "Mining ship weak point hit 1st right elbow"
+      ]
+    },
+    {
+      "ID": 853103,
+      "Entries": [
+        "Mining ship weak point hit 1st left elbow"
+      ]
+    },
+    {
+      "ID": 853110,
+      "Entries": [
+        "Mining ship weak point hit 2nd right shoulder"
+      ]
+    },
+    {
+      "ID": 853111,
+      "Entries": [
+        "Mining ship weak point hit 2nd left shoulder"
+      ]
+    },
+    {
+      "ID": 853112,
+      "Entries": [
+        "Mining ship weak point hit 2nd right elbow"
+      ]
+    },
+    {
+      "ID": 853113,
+      "Entries": [
+        "Mining ship weak point hit 2nd left elbow"
+      ]
+    },
+    {
+      "ID": 853120,
+      "Entries": [
+        "Mining ship weak point hit 3rd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853121,
+      "Entries": [
+        "Mining ship weak point hit 3rd unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853122,
+      "Entries": [
+        "Mining ship weak point hit 3rd right elbow"
+      ]
+    },
+    {
+      "ID": 853123,
+      "Entries": [
+        "Mining ship weak point hit 3rd left elbow"
+      ]
+    },
+    {
+      "ID": 853170,
+      "Entries": [
+        "Mining ship weak point hit eyeball 1"
+      ]
+    },
+    {
+      "ID": 853171,
+      "Entries": [
+        "Mining ship weak point hit eyeball 2"
+      ]
+    },
+    {
+      "ID": 853172,
+      "Entries": [
+        "Mining ship weak point hit eyeball 3"
+      ]
+    },
+    {
+      "ID": 853180,
+      "Entries": [
+        "Mining ship weak point hit core 1"
+      ]
+    },
+    {
+      "ID": 853181,
+      "Entries": [
+        "Mining ship weak point hit core 2"
+      ]
+    },
+    {
+      "ID": 853182,
+      "Entries": [
+        "Mining ship weak point hit core 3"
+      ]
+    },
+    {
+      "ID": 853190,
+      "Entries": [
+        "Mining ship weak point hit connection part 1-2 right"
+      ]
+    },
+    {
+      "ID": 853191,
+      "Entries": [
+        "Mining ship weak point hit connection part 1-2 left"
+      ]
+    },
+    {
+      "ID": 853192,
+      "Entries": [
+        "Mining ship weak point hit connection part 2-3 right"
+      ]
+    },
+    {
+      "ID": 853193,
+      "Entries": [
+        "Mining ship weak point hit connection part 2-3 left"
+      ]
+    },
+    {
+      "ID": 853200,
+      "Entries": [
+        "Mining ship weak point destruction 1st unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853201,
+      "Entries": [
+        "Mining ship weak point destruction 1st unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853202,
+      "Entries": [
+        "Mining ship weak point destruction 1st right elbow"
+      ]
+    },
+    {
+      "ID": 853203,
+      "Entries": [
+        "Mining ship weak point destruction 1st left elbow"
+      ]
+    },
+    {
+      "ID": 853210,
+      "Entries": [
+        "Mining ship weak point destruction 2nd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853211,
+      "Entries": [
+        "Mining ship weak point destruction 2nd unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853212,
+      "Entries": [
+        "Mining ship weak point destruction 2nd right elbow"
+      ]
+    },
+    {
+      "ID": 853213,
+      "Entries": [
+        "Mining ship weak point destruction 2nd left elbow"
+      ]
+    },
+    {
+      "ID": 853220,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853221,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853222,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit right elbow"
+      ]
+    },
+    {
+      "ID": 853223,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit left elbow"
+      ]
+    },
+    {
+      "ID": 853270,
+      "Entries": [
+        "Mining ship weak point destruction highlight 1"
+      ]
+    },
+    {
+      "ID": 853271,
+      "Entries": [
+        "Mining ship weak point destruction eyeball 2"
+      ]
+    },
+    {
+      "ID": 853272,
+      "Entries": [
+        "Mining ship weak point destruction eyeball 3"
+      ]
+    },
+    {
+      "ID": 853280,
+      "Entries": [
+        "Mining ship weak point destruction core 1"
+      ]
+    },
+    {
+      "ID": 853281,
+      "Entries": [
+        "Mining ship weak point destruction core 2"
+      ]
+    },
+    {
+      "ID": 853282,
+      "Entries": [
+        "Mining ship weak point destruction core 3"
+      ]
+    },
+    {
+      "ID": 853290,
+      "Entries": [
+        "Mining ship weak point destruction connection part 1-2 right"
+      ]
+    },
+    {
+      "ID": 853291,
+      "Entries": [
+        "Mining ship weak point destruction connection part 1-2 left"
+      ]
+    },
+    {
+      "ID": 853292,
+      "Entries": [
+        "Mining ship weak point destruction connection part 2-3 right"
+      ]
+    },
+    {
+      "ID": 853293,
+      "Entries": [
+        "Mining ship weak point destruction connection part 2-3 left"
+      ]
+    },
+    {
+      "ID": 853300,
+      "Entries": [
+        "Mining ship floating eyeball 1st unit"
+      ]
+    },
+    {
+      "ID": 853301,
+      "Entries": [
+        "Mining ship floating eyeball 2nd unit"
+      ]
+    },
+    {
+      "ID": 853302,
+      "Entries": [
+        "Mining ship floating eyeball 3rd unit"
+      ]
+    },
+    {
+      "ID": 853400,
+      "Entries": [
+        "Mining ship weak point emphasis 1st right shoulder"
+      ]
+    },
+    {
+      "ID": 853401,
+      "Entries": [
+        "Mining ship weak point emphasis 1st left shoulder"
+      ]
+    },
+    {
+      "ID": 853402,
+      "Entries": [
+        "Mining ship weak point emphasis 1st right elbow"
+      ]
+    },
+    {
+      "ID": 853403,
+      "Entries": [
+        "Mining ship weak point emphasis 1st left elbow"
+      ]
+    },
+    {
+      "ID": 853410,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853411,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd left shoulder"
+      ]
+    },
+    {
+      "ID": 853412,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd right elbow"
+      ]
+    },
+    {
+      "ID": 853413,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd left elbow"
+      ]
+    },
+    {
+      "ID": 853420,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853421,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853422,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit right elbow"
+      ]
+    },
+    {
+      "ID": 853423,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd left elbow"
+      ]
+    },
+    {
+      "ID": 853500,
+      "Entries": [
+        "Mining ship production machine gun 1st right 1"
+      ]
+    },
+    {
+      "ID": 853501,
+      "Entries": [
+        "Mining ship production machine gun 1st right 2"
+      ]
+    },
+    {
+      "ID": 853502,
+      "Entries": [
+        "Mining ship production machine gun 1st right 3"
+      ]
+    },
+    {
+      "ID": 853503,
+      "Entries": [
+        "Mining ship production machine gun 1st right 4"
+      ]
+    },
+    {
+      "ID": 853504,
+      "Entries": [
+        "Mining ship production machine gun 1st right 5"
+      ]
+    },
+    {
+      "ID": 853505,
+      "Entries": [
+        "Mining ship production machine gun 1st right 6"
+      ]
+    },
+    {
+      "ID": 853506,
+      "Entries": [
+        "Mining ship production machine gun 1st right 7"
+      ]
+    },
+    {
+      "ID": 853507,
+      "Entries": [
+        "Mining ship production machine gun 1st right 8"
+      ]
+    },
+    {
+      "ID": 853590,
+      "Entries": [
+        "Mining ship performance machine gun for battery"
+      ]
+    },
+    {
+      "ID": 853600,
+      "Entries": [
+        "Mining ship drill weak point HIT"
+      ]
+    },
+    {
+      "ID": 853610,
+      "Entries": [
+        "Mining ship drill weak point HIT"
+      ]
+    },
+    {
+      "ID": 853700,
+      "Entries": [
+        "Mining ship part destruction smoke 1st unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853701,
+      "Entries": [
+        "Mining ship part destruction smoke 1st left shoulder"
+      ]
+    },
+    {
+      "ID": 853702,
+      "Entries": [
+        "Mining ship part destruction smoke 1st right elbow"
+      ]
+    },
+    {
+      "ID": 853703,
+      "Entries": [
+        "Mining ship Part destruction Smoke 1st left elbow"
+      ]
+    },
+    {
+      "ID": 853710,
+      "Entries": [
+        "Mining ship part destruction smoke 2nd right shoulder"
+      ]
+    },
+    {
+      "ID": 853711,
+      "Entries": [
+        "Mining ship part destruction smoke 2nd left shoulder"
+      ]
+    },
+    {
+      "ID": 853712,
+      "Entries": [
+        "Mining ship Part destruction Smoke 2nd right elbow"
+      ]
+    },
+    {
+      "ID": 853713,
+      "Entries": [
+        "Mining ship Part destruction Smoke 2nd left elbow"
+      ]
+    },
+    {
+      "ID": 853720,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit right shoulder"
+      ]
+    },
+    {
+      "ID": 853721,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit left shoulder"
+      ]
+    },
+    {
+      "ID": 853722,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit right elbow"
+      ]
+    },
+    {
+      "ID": 853723,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit left elbow"
+      ]
+    },
+    {
+      "ID": 903100,
+      "Entries": [
+        "c9031 Resident SFX"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "c9201 Resident SFX"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "c9400 Resident SFX"
+      ]
+    },
+    {
+      "ID": 941000,
+      "Entries": [
+        "c9410 Resident SFX"
+      ]
+    },
+    {
+      "ID": 942000,
+      "Entries": [
+        "c9420 Resident SFX"
+      ]
+    },
+    {
+      "ID": 2140000,
+      "Entries": [
+        "c5100_large transport helicopter_slightly damaged"
+      ]
+    },
+    {
+      "ID": 2140010,
+      "Entries": [
+        "c5100_large transport helicopter_medium damaged"
+      ]
+    },
+    {
+      "ID": 2170000,
+      "Entries": [
+        "Security MTSFX"
+      ]
+    },
+    {
+      "ID": 2170001,
+      "Entries": [
+        "4 leg light SFX"
+      ]
+    },
+    {
+      "ID": 2170002,
+      "Entries": [
+        "communist light sfx"
+      ]
+    },
+    {
+      "ID": 2170003,
+      "Entries": [
+        "communist light sfx"
+      ]
+    },
+    {
+      "ID": 2170004,
+      "Entries": [
+        "tank light sfx"
+      ]
+    },
+    {
+      "ID": 2170005,
+      "Entries": [
+        "combat heli light sfx"
+      ]
+    },
+    {
+      "ID": 2170006,
+      "Entries": [
+        "communist light sfx"
+      ]
+    },
+    {
+      "ID": 4200000,
+      "Entries": [
+        "communist light sfx"
+      ]
+    },
+    {
+      "ID": 4200001,
+      "Entries": [
+        "4 leg light SFX"
+      ]
+    },
+    {
+      "ID": 5040000,
+      "Entries": [
+        "[Test] Atmospheric breakthrough: resident SFX of own aircraft when in EN infinite state"
+      ]
+    },
+    {
+      "ID": 6010000,
+      "Entries": [
+        "In front of the camera effect for production"
+      ]
+    },
+    {
+      "ID": 9991000,
+      "Entries": [
+        "Special effects for markers 01 Moving target"
+      ]
+    },
+    {
+      "ID": 9991001,
+      "Entries": [
+        "Special effects for markers 02 Attention target"
+      ]
+    },
+    {
+      "ID": 9991002,
+      "Entries": [
+        "Special effects for markers 03 Defense target"
+      ]
+    },
+    {
+      "ID": 9991003,
+      "Entries": [
+        "Special effects for markers for events"
+      ]
+    },
+    {
+      "ID": 9991004,
+      "Entries": [
+        "Special effects for markers TGT"
+      ]
+    },
+    {
+      "ID": 9991005,
+      "Entries": [
+        "Special effects for markers, special standby"
+      ]
+    },
+    {
+      "ID": 9991006,
+      "Entries": [
+        "Special effects for markers 03 Attention target Lock-on dummy poly designation"
+      ]
+    },
+    {
+      "ID": 9991007,
+      "Entries": [
+        "Special effects for markers Check TGT"
+      ]
+    },
+    {
+      "ID": 9992000,
+      "Entries": [
+        "Screen effect for final effect_Blur"
+      ]
+    },
+    {
+      "ID": 9992001,
+      "Entries": [
+        "Screen effect for final effect_Blur"
+      ]
+    },
+    {
+      "ID": 9992002,
+      "Entries": [
+        "searchlight"
+      ]
+    },
+    {
+      "ID": 9992003,
+      "Entries": [
+        "Searchlight for combat helicopters"
+      ]
+    },
+    {
+      "ID": 10605040,
+      "Entries": [
+        "[Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab"
+      ]
+    },
+    {
+      "ID": 10605041,
+      "Entries": [
+        "[Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab"
+      ]
+    },
+    {
+      "ID": 31003200,
+      "Entries": [
+        "[Test] Visibility trial_Flight MT camera eye 01"
+      ]
+    },
+    {
+      "ID": 320010000,
+      "Entries": [
+        "c3200 resident SFX"
+      ]
+    },
+    {
+      "ID": 32509910,
+      "Entries": [
+        "c3250 camera eye"
+      ]
+    },
+    {
+      "ID": 32509920,
+      "Entries": [
+        "c3250 Camera eye_Token enemy use"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "c3300 Ghost hiding special effects"
+      ]
+    },
+    {
+      "ID": 330001,
+      "Entries": [
+        "c3300 Special effects for removing ghost appearance"
+      ]
+    },
+    {
+      "ID": 330002,
+      "Entries": [
+        "c3300 Ghost special standby concealment special effects"
+      ]
+    },
+    {
+      "ID": 330003,
+      "Entries": [
+        "c3300 Ghost forced hiding special effects"
+      ]
+    },
+    {
+      "ID": 33003100,
+      "Entries": [
+        "c3300 Ghost MT (PA) PA"
+      ]
+    },
+    {
+      "ID": 33003200,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 01"
+      ]
+    },
+    {
+      "ID": 33003210,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 02"
+      ]
+    },
+    {
+      "ID": 33003220,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 03"
+      ]
+    },
+    {
+      "ID": 33006000,
+      "Entries": [
+        "c3300 Always-on PA special effects 1"
+      ]
+    },
+    {
+      "ID": 33006001,
+      "Entries": [
+        "c3300 Always-on PA special effects 2"
+      ]
+    },
+    {
+      "ID": 340010000,
+      "Entries": [
+        "c3400 resident SFX"
+      ]
+    },
+    {
+      "ID": 35005000,
+      "Entries": [
+        "c3500 Self-playing SFX"
+      ]
+    },
+    {
+      "ID": 36002100,
+      "Entries": [
+        "c3600 heat sink"
+      ]
+    },
+    {
+      "ID": 37009400,
+      "Entries": [
+        "c3700 Deleter Tattered camera eye"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "ADF Damage Hit Weakness"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "ADF\u3000HU temporary"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss for live bullet HU"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss for ENHU"
+      ]
+    },
+    {
+      "ID": 41000500,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss resident ring frame thruster SFX for live ammunition"
+      ]
+    },
+    {
+      "ID": 41000501,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Resident Ring Frame Thruster SFX for EN"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss PA Crackling SFX"
+      ]
+    },
+    {
+      "ID": 41503100,
+      "Entries": [
+        "c4150 Special attack MT (PA) PA"
+      ]
+    },
+    {
+      "ID": 42000100,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2"
+      ]
+    },
+    {
+      "ID": 42000101,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2"
+      ]
+    },
+    {
+      "ID": 42000102,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2"
+      ]
+    },
+    {
+      "ID": 42000103,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2"
+      ]
+    },
+    {
+      "ID": 42000104,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2"
+      ]
+    },
+    {
+      "ID": 42006000,
+      "Entries": [
+        "c4200 Next Generation Proto AC PA Spark"
+      ]
+    },
+    {
+      "ID": 42102000,
+      "Entries": [
+        "c4210 Next generation ProtoAC special effects for hiding afterimage"
+      ]
+    },
+    {
+      "ID": 42103000,
+      "Entries": [
+        "c4210 Next Generation ProtoAC Special Effects for Afterimage Hidden Release"
+      ]
+    },
+    {
+      "ID": 425020000,
+      "Entries": [
+        "c4250 Orbit Seed After HU Melange Wing Left"
+      ]
+    },
+    {
+      "ID": 425020001,
+      "Entries": [
+        "c4250 Orbit Seed After HU Melange Wings Right"
+      ]
+    },
+    {
+      "ID": 500090000,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Rotor SFX"
+      ]
+    },
+    {
+      "ID": 501000000,
+      "Entries": [
+        "c5010 For attitude maintenance thruster"
+      ]
+    },
+    {
+      "ID": 501000100,
+      "Entries": [
+        "c5010 For expanded poison fog range version"
+      ]
+    },
+    {
+      "ID": 502000000,
+      "Entries": [
+        "c5020 Heavy guard mechanism main body furnace upper attack judgment SFX"
+      ]
+    },
+    {
+      "ID": 502010000,
+      "Entries": [
+        "c5020 Heavy guard mecha body furnace weak point hit SFX"
+      ]
+    },
+    {
+      "ID": 502010001,
+      "Entries": [
+        "c5020 Heavy guard mech upper body furnace weak point hit SFX"
+      ]
+    },
+    {
+      "ID": 502020000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Right Arm Spark"
+      ]
+    },
+    {
+      "ID": 502021000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Left Arm Spark"
+      ]
+    },
+    {
+      "ID": 502030000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Right Arm Aura"
+      ]
+    },
+    {
+      "ID": 502031000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Left Arm Aura"
+      ]
+    },
+    {
+      "ID": 502032000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Upper Body Furnace Aura"
+      ]
+    },
+    {
+      "ID": 502033000,
+      "Entries": [
+        "c5020 Heavy guard mechanism HU main body furnace upper aura"
+      ]
+    },
+    {
+      "ID": 510080000,
+      "Entries": [
+        "c5100 Large transport helicopter damage expression_1"
+      ]
+    },
+    {
+      "ID": 510081000,
+      "Entries": [
+        "c5100 Large transport helicopter damage expression_2"
+      ]
+    },
+    {
+      "ID": 510090000,
+      "Entries": [
+        "c5100 large transport helicopter rotor SFX clockwise rotation front"
+      ]
+    },
+    {
+      "ID": 512080000,
+      "Entries": [
+        "c5120 US Drone Rotor SFX"
+      ]
+    },
+    {
+      "ID": 512090000,
+      "Entries": [
+        "c5120 US drone searchlight"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "c5150 combat helicopter"
+      ]
+    },
+    {
+      "ID": 515090000,
+      "Entries": [
+        "c5150 combat helicopter rotor SFX"
+      ]
+    },
+    {
+      "ID": 515090001,
+      "Entries": [
+        "c5150 combat helicopter rotor SFX tail rotor"
+      ]
+    },
+    {
+      "ID": 55009900,
+      "Entries": [
+        "c5500 biological weapon charred after death"
+      ]
+    },
+    {
+      "ID": 605001000,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue"
+      ]
+    },
+    {
+      "ID": 605001001,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue_Strong"
+      ]
+    },
+    {
+      "ID": 605001002,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue_Strong_On the Road"
+      ]
+    },
+    {
+      "ID": 605001010,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Ocean City"
+      ]
+    },
+    {
+      "ID": 605001100,
+      "Entries": [
+        "c6050 Pharaon wing tip lights_red"
+      ]
+    },
+    {
+      "ID": 605001101,
+      "Entries": [
+        "c6050 Pharaon wingtip lights_blue"
+      ]
+    },
+    {
+      "ID": 605001102,
+      "Entries": [
+        "c6050 Pharaon wing tip lights_yellow"
+      ]
+    },
+    {
+      "ID": 605090000,
+      "Entries": [
+        "c6050 Pharaon Rotor SFX"
+      ]
+    },
+    {
+      "ID": 605090001,
+      "Entries": [
+        "c6050 Pharaon Rotor SFX left"
+      ]
+    },
+    {
+      "ID": 605010000,
+      "Entries": [
+        "c6050 Pharaon PA"
+      ]
+    },
+    {
+      "ID": 610010000,
+      "Entries": [
+        "c6100 resident SFX"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 Part destruction instant SFX"
+      ]
+    },
+    {
+      "ID": 64000001,
+      "Entries": [
+        "c6400 Part destruction SFX during standby transition"
+      ]
+    },
+    {
+      "ID": 64000005,
+      "Entries": [
+        "c6400 Part destruction AP remaining half"
+      ]
+    },
+    {
+      "ID": 64000100,
+      "Entries": [
+        "c6400 Part hit SFX"
+      ]
+    },
+    {
+      "ID": 64000200,
+      "Entries": [
+        "c6400 Part weakness expression SFX"
+      ]
+    },
+    {
+      "ID": 64009000,
+      "Entries": [
+        "c6400 sideways downloop SFX1"
+      ]
+    },
+    {
+      "ID": 64009001,
+      "Entries": [
+        "c6400 Sideways downloop SFX2"
+      ]
+    },
+    {
+      "ID": 64009002,
+      "Entries": [
+        "c6400 Sideways downloop SFX3"
+      ]
+    },
+    {
+      "ID": 64009003,
+      "Entries": [
+        "c6400 sideways downloop SFX4"
+      ]
+    },
+    {
+      "ID": 64009004,
+      "Entries": [
+        "c6400 sideways downloop SFX5"
+      ]
+    },
+    {
+      "ID": 64009005,
+      "Entries": [
+        "c6400 sideways downloop SFX6"
+      ]
+    },
+    {
+      "ID": 64009006,
+      "Entries": [
+        "c6400 sideways downloop SFX7"
+      ]
+    },
+    {
+      "ID": 64009007,
+      "Entries": [
+        "c6400 sideways downloop SFX8"
+      ]
+    },
+    {
+      "ID": 64200010,
+      "Entries": [
+        "c6420 Mining Ship Highlight Damage Hit Weakness"
+      ]
+    },
+    {
+      "ID": 731010000,
+      "Entries": [
+        "c7310 Prarai PA"
+      ]
+    },
+    {
+      "ID": 739040000,
+      "Entries": [
+        "c7390 D layer giant cannon anemone neck weak point hit SFX"
+      ]
+    },
+    {
+      "ID": 740000000,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 810"
+      ]
+    },
+    {
+      "ID": 740000001,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 811"
+      ]
+    },
+    {
+      "ID": 740000002,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 812"
+      ]
+    },
+    {
+      "ID": 740000010,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 813"
+      ]
+    },
+    {
+      "ID": 740000011,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 814"
+      ]
+    },
+    {
+      "ID": 740000012,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 815"
+      ]
+    },
+    {
+      "ID": 740000013,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 816"
+      ]
+    },
+    {
+      "ID": 740000020,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 817"
+      ]
+    },
+    {
+      "ID": 740000021,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 818"
+      ]
+    },
+    {
+      "ID": 740000022,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion Upon Death Rear 819"
+      ]
+    },
+    {
+      "ID": 801009900,
+      "Entries": [
+        "c8010 Resident SFX"
+      ]
+    },
+    {
+      "ID": 802009900,
+      "Entries": [
+        "c8020 Resident SFX"
+      ]
+    },
+    {
+      "ID": 803009900,
+      "Entries": [
+        "c8030 Resident SFX"
+      ]
+    },
+    {
+      "ID": 804001000,
+      "Entries": [
+        "c8040 Barrier"
+      ]
+    },
+    {
+      "ID": 804009900,
+      "Entries": [
+        "c8040 Resident SFX"
+      ]
+    },
+    {
+      "ID": 805009900,
+      "Entries": [
+        "c8050 resident SFX"
+      ]
+    },
+    {
+      "ID": 806009900,
+      "Entries": [
+        "c8060 Resident SFX"
+      ]
+    },
+    {
+      "ID": 807009900,
+      "Entries": [
+        "c8070 Resident SFX"
+      ]
+    },
+    {
+      "ID": 808009900,
+      "Entries": [
+        "c8080 Resident SFX"
+      ]
+    },
+    {
+      "ID": 809000000,
+      "Entries": [
+        "c8090 Resident SFX"
+      ]
+    },
+    {
+      "ID": 809009900,
+      "Entries": [
+        "c8090 Resident SFX"
+      ]
+    },
+    {
+      "ID": 810009900,
+      "Entries": [
+        "c8100 Resident SFX"
+      ]
+    },
+    {
+      "ID": 811009900,
+      "Entries": [
+        "c8110 Resident SFX"
+      ]
+    },
+    {
+      "ID": 812009900,
+      "Entries": [
+        "c8120 Resident SFX"
+      ]
+    },
+    {
+      "ID": 813009900,
+      "Entries": [
+        "c8130 Resident SFX"
+      ]
+    },
+    {
+      "ID": 814009900,
+      "Entries": [
+        "c8140 Resident SFX"
+      ]
+    },
+    {
+      "ID": 840009900,
+      "Entries": [
+        "c8400 resident SFX"
+      ]
+    },
+    {
+      "ID": 841009900,
+      "Entries": [
+        "c8410 Resident SFX"
+      ]
+    },
+    {
+      "ID": 842009900,
+      "Entries": [
+        "c8420 Resident SFX"
+      ]
+    },
+    {
+      "ID": 843009900,
+      "Entries": [
+        "c8430 Resident SFX"
+      ]
+    },
+    {
+      "ID": 844009900,
+      "Entries": [
+        "c8440 Resident SFX"
+      ]
+    },
+    {
+      "ID": 853501000,
+      "Entries": [
+        "Mining ship centerpiece shooting barrier"
+      ]
+    },
+    {
+      "ID": 853601100,
+      "Entries": [
+        "Mining Ship Drill Weaknesses"
+      ]
+    },
+    {
+      "ID": 853601110,
+      "Entries": [
+        "Mining ship drill weak point HIT"
+      ]
+    },
+    {
+      "ID": 853702010,
+      "Entries": [
+        "Mining ship knee cover damage part 1"
+      ]
+    },
+    {
+      "ID": 853702020,
+      "Entries": [
+        "Mining ship knee cover damage part 2"
+      ]
+    },
+    {
+      "ID": 853702030,
+      "Entries": [
+        "Mining ship knee cover damage part 3"
+      ]
+    },
+    {
+      "ID": 853702040,
+      "Entries": [
+        "Mining ship knee cover damage part 4"
+      ]
+    },
+    {
+      "ID": 853703010,
+      "Entries": [
+        "Mining ship knee cover black smoke part 1"
+      ]
+    },
+    {
+      "ID": 853703020,
+      "Entries": [
+        "Mining ship knee cover black smoke part 2"
+      ]
+    },
+    {
+      "ID": 853703030,
+      "Entries": [
+        "Mining ship knee cover black smoke part 3"
+      ]
+    },
+    {
+      "ID": 853703040,
+      "Entries": [
+        "Mining ship knee cover black smoke part 4"
+      ]
+    },
+    {
+      "ID": 853802010,
+      "Entries": [
+        "Mining ship fire control damage"
+      ]
+    },
+    {
+      "ID": 853803010,
+      "Entries": [
+        "Mining ship fire control black smoke"
+      ]
+    },
+    {
+      "ID": 854000010,
+      "Entries": [
+        "c8540_Strong enemy_Blade resident SFX_Development"
+      ]
+    },
+    {
+      "ID": 854000012,
+      "Entries": [
+        "c8540_Strong enemy_Resident SFX when limit is released_Deployment"
+      ]
+    },
+    {
+      "ID": 998000000,
+      "Entries": [
+        "c9980 Resident SFX for environmental effects Under the wall"
+      ]
+    },
+    {
+      "ID": 998000010,
+      "Entries": [
+        "c9980 Resident SFX for environmental effects Wall-mounted"
+      ]
+    },
+    {
+      "ID": 998000020,
+      "Entries": [
+        "c9980 Resident SFX B layer for environmental effects"
+      ]
+    },
+    {
+      "ID": 998000040,
+      "Entries": [
+        "FP version special effects in front of screen snowy mountain"
+      ]
+    },
+    {
+      "ID": 998000050,
+      "Entries": [
+        "FP version Special effects for screen front Grakyani"
+      ]
+    },
+    {
+      "ID": 998000060,
+      "Entries": [
+        "FP version Special effects in front of the screen Communist town"
+      ]
+    },
+    {
+      "ID": 998000070,
+      "Entries": [
+        "FP version Special effects for screen A layer"
+      ]
+    },
+    {
+      "ID": 998000100,
+      "Entries": [
+        "General-purpose emphasis SFX red"
+      ]
+    },
+    {
+      "ID": 998000110,
+      "Entries": [
+        "Persistent nerve load"
+      ]
+    },
+    {
+      "ID": 998000200,
+      "Entries": [
+        "Special effects for markers 01 Moving target"
+      ]
+    },
+    {
+      "ID": 998000201,
+      "Entries": [
+        "Special effects for markers 02 Attention target"
+      ]
+    },
+    {
+      "ID": 998000202,
+      "Entries": [
+        "Special effects for markers 03 Defense target"
+      ]
+    },
+    {
+      "ID": 998000203,
+      "Entries": [
+        "Special effects for markers for events"
+      ]
+    },
+    {
+      "ID": 998000204,
+      "Entries": [
+        "Special effects for markers TGT"
+      ]
+    },
+    {
+      "ID": 998000205,
+      "Entries": [
+        "Special effects for markers, special standby"
+      ]
+    },
+    {
+      "ID": 998000206,
+      "Entries": [
+        "Special effects for markers 03 Attention target Lock-on dummy poly designation"
+      ]
+    },
+    {
+      "ID": 998000210,
+      "Entries": [
+        "TGT01 for mining ships"
+      ]
+    },
+    {
+      "ID": 998000211,
+      "Entries": [
+        "TGT02 for mining ships"
+      ]
+    },
+    {
+      "ID": 998000212,
+      "Entries": [
+        "TGT03333333 for mining ships"
+      ]
+    },
+    {
+      "ID": 998000300,
+      "Entries": [
+        "Hacking SFX"
+      ]
+    },
+    {
+      "ID": 998000301,
+      "Entries": [
+        "Hacking SFX"
+      ]
+    },
+    {
+      "ID": 998000302,
+      "Entries": [
+        "Hacking SFX"
+      ]
+    },
+    {
+      "ID": 998000303,
+      "Entries": [
+        "Hacking completed SFX"
+      ]
+    },
+    {
+      "ID": 998000304,
+      "Entries": [
+        "Hacking completed SFX"
+      ]
+    },
+    {
+      "ID": 998000305,
+      "Entries": [
+        "Hacking completed SFX"
+      ]
+    },
+    {
+      "ID": 998000310,
+      "Entries": [
+        "Fabricated red light 1"
+      ]
+    },
+    {
+      "ID": 998000311,
+      "Entries": [
+        "Fabricated red light 2"
+      ]
+    },
+    {
+      "ID": 998000312,
+      "Entries": [
+        "Fabricated red light 3"
+      ]
+    },
+    {
+      "ID": 998000313,
+      "Entries": [
+        "Transport helicopter red light test 1"
+      ]
+    },
+    {
+      "ID": 998000314,
+      "Entries": [
+        "Transport helicopter red light test 2"
+      ]
+    },
+    {
+      "ID": 998000315,
+      "Entries": [
+        "Red light test for transport helicopter 3"
+      ]
+    },
+    {
+      "ID": 998000316,
+      "Entries": [
+        "Transport helicopter red light test 4"
+      ]
+    },
+    {
+      "ID": 998000317,
+      "Entries": [
+        "Test underground facility recapture bomb SFX"
+      ]
+    },
+    {
+      "ID": 998000318,
+      "Entries": [
+        "For testing, guard mechanism flashing"
+      ]
+    },
+    {
+      "ID": 998000320,
+      "Entries": [
+        "Spotlight for transport helicopter_310"
+      ]
+    },
+    {
+      "ID": 998000321,
+      "Entries": [
+        "Spotlight for transport helicopter_312"
+      ]
+    },
+    {
+      "ID": 998000322,
+      "Entries": [
+        "Spotlight for transport helicopter_314"
+      ]
+    },
+    {
+      "ID": 998000323,
+      "Entries": [
+        "Spotlight for transport helicopter_316"
+      ]
+    },
+    {
+      "ID": 998000400,
+      "Entries": [
+        "Screen effect for final effect_Blur"
+      ]
+    },
+    {
+      "ID": 998000401,
+      "Entries": [
+        "Screen effect for final effect_Blur"
+      ]
+    },
+    {
+      "ID": 998000500,
+      "Entries": [
+        "Hacking continuation distance SFX"
+      ]
+    },
+    {
+      "ID": 998000501,
+      "Entries": [
+        "Suppression area VFX"
+      ]
+    },
+    {
+      "ID": 998000600,
+      "Entries": [
+        "searchlight"
+      ]
+    },
+    {
+      "ID": 998000601,
+      "Entries": [
+        "Searchlight for combat helicopters"
+      ]
+    }
+  ]
+}

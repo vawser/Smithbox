@@ -1,0 +1,479 @@
+{
+  "Name": "LodParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default settings "
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "L0 Main "
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "L1 Main "
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Not LOD "
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Testparm "
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Small size "
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Medium size "
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Large size "
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Size Oversized "
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Don't switch to LOD models "
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Lake Beast "
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Not switch to low texture "
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Not switch to the low texture that does not switch to the LOD model "
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "L2 only (Reflection scene default) "
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Do not switch to LOD model (for poly play) "
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

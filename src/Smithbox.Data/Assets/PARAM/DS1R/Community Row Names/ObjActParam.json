@@ -1,0 +1,299 @@
+{
+  "Name": "ObjActParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "required"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Treasure Chest"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "test_door test"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "test_door test"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "test_door test"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "m10_01_ church gate lever"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "m10_01_ church bell lever"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "m10_01_Hammer tower door (top)"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "m10_01_General-purpose door_00 (Connect to castle 2)"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "m10_01_General-purpose door_00 (Church prison)"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "m10_01_General-purpose door_00 (Key house)"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "m10_01_General purpose door_01"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "m10_01_General purpose door_02"
+      ]
+    },
+    {
+      "ID": 1313,
+      "Entries": [
+        "m10_01_General purpose door_03"
+      ]
+    },
+    {
+      "ID": 1314,
+      "Entries": [
+        "m10_01_General-purpose door_04 (lower row)"
+      ]
+    },
+    {
+      "ID": 1315,
+      "Entries": [
+        "m10_00_General purpose door_05"
+      ]
+    },
+    {
+      "ID": 1317,
+      "Entries": [
+        "m10_01_General purpose door_07 (Confinement room)"
+      ]
+    },
+    {
+      "ID": 1318,
+      "Entries": [
+        "m10_01_General purpose door_08"
+      ]
+    },
+    {
+      "ID": 1465,
+      "Entries": [
+        "m10_02_Lift room door"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "m11_00_ General-purpose handle"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "m11_00_General-purpose door"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "??m12_01_ Door imprisoning Go"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "m13_00_Cemetery lever (push)"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "m13_00_Cemetery lever (pull)"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "m13_00_coffin (enter)"
+      ]
+    },
+    {
+      "ID": 3061,
+      "Entries": [
+        "m13_00_Casket (exit)"
+      ]
+    },
+    {
+      "ID": 4560,
+      "Entries": [
+        "m14_00_ Bell lever"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "m15_00_ Prison cell"
+      ]
+    },
+    {
+      "ID": 5720,
+      "Entries": [
+        "m15_01_ Indoor door"
+      ]
+    },
+    {
+      "ID": 5721,
+      "Entries": [
+        "m15_01_Indoor door (internal key)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "m16_00_Sluice lever"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "m16_00_ Abyss general purpose lever"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "m16_00_ Door of small Rondo archeological site"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "m17_00_ General purpose lever for crystal tower"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "m17_00_alarm lever"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "m17_00_ Prison door A"
+      ]
+    },
+    {
+      "ID": 8537,
+      "Entries": [
+        "m18_01_General-purpose door (2F front)"
+      ]
+    },
+    {
+      "ID": 8538,
+      "Entries": [
+        "m18_01_General-purpose door (inner key)"
+      ]
+    },
+    {
+      "ID": 8539,
+      "Entries": [
+        "m18_01_General-purpose door (2F back)"
+      ]
+    },
+    {
+      "ID": 8540,
+      "Entries": [
+        "m18_01_General-purpose door"
+      ]
+    },
+    {
+      "ID": 8541,
+      "Entries": [
+        "m18_01_Church door (large)"
+      ]
+    },
+    {
+      "ID": 8544,
+      "Entries": [
+        "m18_01_Church door (small)"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 11305,
+      "Entries": [
+        "m10_01_Hammer tower door (bottom)"
+      ]
+    },
+    {
+      "ID": 11312,
+      "Entries": [
+        "m10_01_General-purpose door (key)"
+      ]
+    },
+    {
+      "ID": 11315,
+      "Entries": [
+        "m10_00_General-purpose door (key)"
+      ]
+    },
+    {
+      "ID": 16010,
+      "Entries": [
+        "m16_00 Lock gate lever door"
+      ]
+    },
+    {
+      "ID": 17401,
+      "Entries": [
+        "m17_00_ Prison door B"
+      ]
+    },
+    {
+      "ID": 27401,
+      "Entries": [
+        "m17_00_ Dungeon"
+      ]
+    }
+  ]
+}

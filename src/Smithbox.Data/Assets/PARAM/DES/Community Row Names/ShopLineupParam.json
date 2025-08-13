@@ -1,0 +1,995 @@
+{
+  "Name": "ShopLineupParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Crescent Grass"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Crescent Grass"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Flaming Pot"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Oujou 2 Slave Soldier, Soldier Lothos"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Long Sword"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Ojo 1 slave soldier, club"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Shortspear"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Light Crossbow"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Wood Shield"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Private Shield"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Slave Shield"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Woodbolt"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Platehelm"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Ojo 1 Slave Soldier, Coat of Plate"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Royal Castle 1 Slave Soldier, Plate Gauntlet"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Ojo 1 slave soldier, plate leggings"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Oujou 2 Slave Soldier, Gougetsuso"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Royal Castle 2 Slave Soldier, Rosin"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Ojo 2 Slave Soldier, Broadsword"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Ojo 2 Slave Soldier, Claymore"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "Oujou 2 Slave Soldier, Boruto"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Royal castle 3 slave soldier, full moon grass"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Ojo 3 Slave Soldier, Throwing Knife"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Ojo 3 Slave Soldier, Sword of Boletaria"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Royal Castle 3 Slave Soldier, Crescent Ax"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Ojo 3 Slave Soldiers, Shield of Boletaria"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Royal Castle 3 Slave Soldier, Heavybolt"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Ojo 3 Slave Soldier, Shibazome Helmet"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Ojo 3 Slave Soldier, Shibazome Armor"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Royal Castle 3 Slave Soldier, Shibazome Gauntlets"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Royal castle 3 slave soldier, Shibazome foot armor"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Royal Castle 3 Slave Soldier, Shibome's Great Shield"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Crescent Grass"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Late Moon Grass"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Fresh Perfume"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Old Fort 1 Burglars, Remnants of Seoul"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Demon Tallow"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Thin Cloud Stone Fragment"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Fort 1 Grave Robber, Scimitar"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Fort 1 Grave Robber, Falchion"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Fort 1 Grave Robber, Shortbow"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Fort 1 Grave Robber, Longbow"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Leather Shield"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Old Fort 1 Digger, Arrow"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Old Fort 1 Digger, Wood Arrow"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Old Fort 1 Grave Robber, Leather Cap"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Old Fort 1 Digger, Leather Armor"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Fort 1 Grave Robber, Leather Greaves"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "Fort 1 Grave Robber, Leather Boots"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Old Fort 2 Grave Robber, Kunai"
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        "Old Fort 2 Grave Robber, Moonstone Fragment"
+      ]
+    },
+    {
+      "ID": 2052,
+      "Entries": [
+        "Old Fort 2 Digger, Flight Arrow"
+      ]
+    },
+    {
+      "ID": 2053,
+      "Entries": [
+        "Old Fort 2 Digger, Fire Arrow"
+      ]
+    },
+    {
+      "ID": 2054,
+      "Entries": [
+        "Old Fort 2 Grave Robber, Higashime Arrow"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Prison 1 noble lady, full moon grass"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Prison 1 Noble Lady, Fresh Perfume"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Prison 1 noble lady, old perfume"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Prison 1 noble lady, noble lotus"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Prison 1 Aristocratic wife, widow Lothos"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Prison 1 Aristocrat's Wife, Signpost Pyroxene"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Prison 1 noble lady, moonstone fragment"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Prison 1 noble lady, rapier"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Prison 1 noble lady, wood catalyst"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Prison 1 noble lady, Buckler"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Prison 1 noble lady, Black Bolt"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Prison 1 Noble Lady, Ring of Greed"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Impure 1 Beggar Woman, Aftermoon Grass"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Impure 1 Beggar Woman, Full Moon Grass"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Noble Lhotus"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Widow Lotus"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Impure 1 Beggar Woman, Black Pine Resin"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Impure 1 Beggar Woman, Mace"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Warpick"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Halberd"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Impure 1 Beggar Woman, Golden Talisman"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Impure 1 Beggar Woman, Rotten Arrow"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Impure 1 Beggar Woman, Chainhelm"
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        "Impure 1 Beggar Woman, Chainmail"
+      ]
+    },
+    {
+      "ID": 4012,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Chain Greaves"
+      ]
+    },
+    {
+      "ID": 4013,
+      "Entries": [
+        "Unholy 1 Beggar Woman, Hard Leather Boots"
+      ]
+    },
+    {
+      "ID": 4014,
+      "Entries": [
+        "Impure 1 Beggar Woman, Ephemeral Eye Stone"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Impure 2 Beggar Woman, Dark Moon Grass"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "Unholy 2 Beggar Woman, Glowing Stone Fragment"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "Impure 2 Beggar Woman, Mild's Helm"
+      ]
+    },
+    {
+      "ID": 4053,
+      "Entries": [
+        "Unholy 2 Beggar Woman, Mild's Scale Armor"
+      ]
+    },
+    {
+      "ID": 4054,
+      "Entries": [
+        "Unholy 2 Beggar Woman, Mild's Gauntlets"
+      ]
+    },
+    {
+      "ID": 4055,
+      "Entries": [
+        "Unholy 2 Beggar Woman, Mild's Gauntlets"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Tunnel 1 beggar, crescent grass"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Mine 1 Beggar, Ed's Grindstone"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Mine 1 Beggar, Hardstone Fragment"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Mine 1 Beggar, Sharp Stone Fragment"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Mine 1 beggar, pickaxe"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Mine 2 beggar, large piece of hardstone"
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        "Tunnel 2 Beggar, Large Sharp Stone Fragment"
+      ]
+    },
+    {
+      "ID": 5052,
+      "Entries": [
+        "Tunnel 2 Beggar, Minagi Stone Fragment"
+      ]
+    },
+    {
+      "ID": 5053,
+      "Entries": [
+        "Tunnel 2 Beggar, Dragon Stone Fragment"
+      ]
+    },
+    {
+      "ID": 5054,
+      "Entries": [
+        "Mine 2 Beggar, Iron Knuckle"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "patch, crescent"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "patch, postmoth"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "patch, full moon grass"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "patch, stale perfume"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Patch, Keystone Fragment"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "patch, heavy arrow"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "patch, heavy bolt"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "patch, fragrant ring"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "patch, demon tallow"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "patch, cat ring"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "patch, crescent"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "patch, white arrow"
+      ]
+    },
+    {
+      "ID": 6151,
+      "Entries": [
+        "patch, dark moon grass"
+      ]
+    },
+    {
+      "ID": 6153,
+      "Entries": [
+        "Patch, Ephemeral Eye Stone"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Magician, Magic Arrow"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Firebolt, sorcerer"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Sorcerer, Weapon Enchantment"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "sorcerer, auditory hallucinator"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "sorcerer, hidden"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "Sorcerer, Protective Shield"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "sorcerer, waterscreen"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Logan, Magic Arrow"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "Logan, Firebolt"
+      ]
+    },
+    {
+      "ID": 7052,
+      "Entries": [
+        "Logan, Weapon Enchantment"
+      ]
+    },
+    {
+      "ID": 7053,
+      "Entries": [
+        "Logan, auditory hallucination"
+      ]
+    },
+    {
+      "ID": 7054,
+      "Entries": [
+        "Logan, hidden"
+      ]
+    },
+    {
+      "ID": 7055,
+      "Entries": [
+        "Logan, Defense Membrane"
+      ]
+    },
+    {
+      "ID": 7056,
+      "Entries": [
+        "logan, water screen"
+      ]
+    },
+    {
+      "ID": 7057,
+      "Entries": [
+        "Logan, Poison Cloud"
+      ]
+    },
+    {
+      "ID": 7058,
+      "Entries": [
+        "Logan, Fireball"
+      ]
+    },
+    {
+      "ID": 7059,
+      "Entries": [
+        "Logan, penetrating beam"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "logan, funnel"
+      ]
+    },
+    {
+      "ID": 7061,
+      "Entries": [
+        "Logan, Advanced Weapon Enchantment"
+      ]
+    },
+    {
+      "ID": 7062,
+      "Entries": [
+        "Logan, Deathcloud"
+      ]
+    },
+    {
+      "ID": 7063,
+      "Entries": [
+        "logan, machine gun"
+      ]
+    },
+    {
+      "ID": 7064,
+      "Entries": [
+        "Logan, Corrosion Cloud"
+      ]
+    },
+    {
+      "ID": 7065,
+      "Entries": [
+        "Logan, Perfect Shield"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Yulia recovers from others"
+      ]
+    },
+    {
+      "ID": 7101,
+      "Entries": [
+        "Yuria, Cursed Enchantment"
+      ]
+    },
+    {
+      "ID": 7102,
+      "Entries": [
+        "Yuria becomes a black ghost"
+      ]
+    },
+    {
+      "ID": 7103,
+      "Entries": [
+        "Yuria, fire"
+      ]
+    },
+    {
+      "ID": 7104,
+      "Entries": [
+        "Yuria, Soul Steel"
+      ]
+    },
+    {
+      "ID": 7105,
+      "Entries": [
+        "Yuria and Meteor"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Follower of God, Ghost Camouflage"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "follower of god, gate"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Follower of God, HP Recovery"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Follower of God, Antidote"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "Urbain, Ghost Camouflage"
+      ]
+    },
+    {
+      "ID": 8051,
+      "Entries": [
+        "urbain, gate"
+      ]
+    },
+    {
+      "ID": 8052,
+      "Entries": [
+        "Urbain, HP recovery"
+      ]
+    },
+    {
+      "ID": 8053,
+      "Entries": [
+        "Urbain, detoxification"
+      ]
+    },
+    {
+      "ID": 8054,
+      "Entries": [
+        "Urbain, self-centered explosion"
+      ]
+    },
+    {
+      "ID": 8055,
+      "Entries": [
+        "Urbain, Anti-Magic"
+      ]
+    },
+    {
+      "ID": 8056,
+      "Entries": [
+        "Urbain recovers a lot of HP"
+      ]
+    },
+    {
+      "ID": 8057,
+      "Entries": [
+        "Urbain revives when dead"
+      ]
+    },
+    {
+      "ID": 8058,
+      "Entries": [
+        "Urbain, Regenerate"
+      ]
+    },
+    {
+      "ID": 8059,
+      "Entries": [
+        "Urbain, revive"
+      ]
+    },
+    {
+      "ID": 8060,
+      "Entries": [
+        "Urbain, status ailment recovery"
+      ]
+    },
+    {
+      "ID": 8061,
+      "Entries": [
+        "Urbain, black ghost retreat"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "baldwin, crescent grass"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Baldwin, Fresh Perfume"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Baldwin, Ed's Grindstone"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Baldwin, Dagger"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Baldwin, Shortsword"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Baldwin, Battleaxe"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "baldwin, heater shield"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Baldwin, Arrow"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Baldwin, Bolt"
+      ]
+    }
+  ]
+}

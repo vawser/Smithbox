@@ -1,0 +1,1301 @@
+{
+  "Name": "MovementEnemyTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "reverse joint"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Mining ship"
+      ]
+    },
+    {
+      "ID": 883000,
+      "Entries": [
+        "Bug (Flying type)"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "c1000 template"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "c1111 Dress-up NPC (wingman) Mike"
+      ]
+    },
+    {
+      "ID": 11120000,
+      "Entries": [
+        "c1112 Dress-up NPC (wingman) Daisy"
+      ]
+    },
+    {
+      "ID": 11130000,
+      "Entries": [
+        "c1113 Dress-up NPC (wingman) Boss"
+      ]
+    },
+    {
+      "ID": 11140000,
+      "Entries": [
+        "c1114 Dress-up NPC (wingman) Patrick"
+      ]
+    },
+    {
+      "ID": 11150000,
+      "Entries": [
+        "c1115 Dress-up NPC (wingman) Yoffe"
+      ]
+    },
+    {
+      "ID": 11160000,
+      "Entries": [
+        "c1116 Dress-up NPC (wingman) Estella"
+      ]
+    },
+    {
+      "ID": 11170000,
+      "Entries": [
+        "c1117 Dress-up NPC (wingman) Jonathan"
+      ]
+    },
+    {
+      "ID": 11180000,
+      "Entries": [
+        "c1118 Dress-up NPC (wingman) William"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "c1210 Dress-up NPC (enemy) Jotuel"
+      ]
+    },
+    {
+      "ID": 12140000,
+      "Entries": [
+        "c1214 Dress-up NPC (enemy) Patrick"
+      ]
+    },
+    {
+      "ID": 12150000,
+      "Entries": [
+        "c1215 Dress-up NPC (enemy) Yoffe"
+      ]
+    },
+    {
+      "ID": 12160000,
+      "Entries": [
+        "c1216 Dress-up NPC (enemy) Estella"
+      ]
+    },
+    {
+      "ID": 12170000,
+      "Entries": [
+        "c1217 Dress-up NPC (enemy) Jonathan"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "c1310 Dress-up NPC (Arena) Jotuel"
+      ]
+    },
+    {
+      "ID": 13110000,
+      "Entries": [
+        "c1311 Dress-up NPC (Arena) Mike"
+      ]
+    },
+    {
+      "ID": 13120000,
+      "Entries": [
+        "c1312 Dress-up NPC (Arena) Daisy"
+      ]
+    },
+    {
+      "ID": 13130000,
+      "Entries": [
+        "c1313 Dress-up NPC (Arena) Boss"
+      ]
+    },
+    {
+      "ID": 13140000,
+      "Entries": [
+        "c1314 Dress-up NPC (Arena) Patrick"
+      ]
+    },
+    {
+      "ID": 13150000,
+      "Entries": [
+        "c1315 Dress-up NPC (Arena) Yoffe"
+      ]
+    },
+    {
+      "ID": 13160000,
+      "Entries": [
+        "c1316 Dress-up NPC (Arena) Estella"
+      ]
+    },
+    {
+      "ID": 13170000,
+      "Entries": [
+        "c1317 Dress-up NPC (Arena) Jonathan"
+      ]
+    },
+    {
+      "ID": 13180000,
+      "Entries": [
+        "c1318 Dress-up NPC (Arena) William"
+      ]
+    },
+    {
+      "ID": 14010000,
+      "Entries": [
+        "c1401 Dress-up NPC (test) Bipod aircraft"
+      ]
+    },
+    {
+      "ID": 14020000,
+      "Entries": [
+        "c1402 Dress-up NPC (test) Reverse legged aircraft"
+      ]
+    },
+    {
+      "ID": 14030000,
+      "Entries": [
+        "c1403 Dress-up NPC (test) Quadruped aircraft"
+      ]
+    },
+    {
+      "ID": 14040000,
+      "Entries": [
+        "c1404 Dress-up NPC (test) Tank aircraft"
+      ]
+    },
+    {
+      "ID": 14050000,
+      "Entries": [
+        "c1405 Dress-up NPC (test) NPAC appearing in missile launch support"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "c1500 Dress-up NPC (enemy) Decisive Battle C Ace A"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 Security MT (Rifle)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "c3001 Security MT Enhancement A"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "c3002 Security MT Enhancement B"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 General purpose MT in former communist countries"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "c3050 Regular Army MT_Normal"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "c3100 flight MT"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 juggernaut"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "c3200 Avalanche (base)"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal)"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 Regular army AC (enhanced heavy firepower)"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "c3250 Regular Army AC (High Mobility)"
+      ]
+    },
+    {
+      "ID": 32509010,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Ultra-high speed type for attacking old spaceports [For testing]"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base)"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for charge cutting"
+      ]
+    },
+    {
+      "ID": 32600101,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for starting check slash"
+      ]
+    },
+    {
+      "ID": 32600102,
+      "Entries": [
+        "c3260 Regular army heavy AC (blade) for counter guard reception"
+      ]
+    },
+    {
+      "ID": 32600310,
+      "Entries": [
+        "c3260 Regular military heavy AC (cutting edge) for EN gripping inertia"
+      ]
+    },
+    {
+      "ID": 32609000,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) high speed type for missions [tentative]"
+      ]
+    },
+    {
+      "ID": 32609010,
+      "Entries": [
+        "c3260 Regular military heavy AC (base) ultra-high speed type for attacking old spaceports [for testing]"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "c3300 Ghost MT (Stelless)"
+      ]
+    },
+    {
+      "ID": 33100000,
+      "Entries": [
+        "c3310 Dummy Ghost MT"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 Quadruped MT"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "c3500 old world MT"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "c3600 construction machine spider"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 Deleteter"
+      ]
+    },
+    {
+      "ID": 37000100,
+      "Entries": [
+        "c3700 Deleteer Fighting"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "c3700 Deleteer Ace"
+      ]
+    },
+    {
+      "ID": 37009000,
+      "Entries": [
+        "c3700 Deleteer Geofront exclusive"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "c4000 ADF"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "c4150 special attack MT"
+      ]
+    },
+    {
+      "ID": 41500001,
+      "Entries": [
+        "c4150 special attack MT"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "c4200 next generation proto AC"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "c4210 Next generation proto AC_phantom"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "c4250 Orbit Seed"
+      ]
+    },
+    {
+      "ID": 42500010,
+      "Entries": [
+        "c4250 Orbit Seed Skate rotation"
+      ]
+    },
+    {
+      "ID": 42600000,
+      "Entries": [
+        "c4260 Orbit control"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "c5000 guard mechanism (aerial) machine gun type"
+      ]
+    },
+    {
+      "ID": 50000090,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Speed ​​Adjustment Test 1 Hayame"
+      ]
+    },
+    {
+      "ID": 50000091,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Speed ​​Adjustment Test 2 Slow"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "c5010 bug (work type A)"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "c5020 Heavy guard mechanism"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "c5100 large transport helicopter"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "c5100 Large transport helicopter_for missions"
+      ]
+    },
+    {
+      "ID": 51000011,
+      "Entries": [
+        "c5100 large transport helicopter for meeting organizations"
+      ]
+    },
+    {
+      "ID": 51000012,
+      "Entries": [
+        "c5100 Large transport helicopter Encounter with organization Reinforcement"
+      ]
+    },
+    {
+      "ID": 51000013,
+      "Entries": [
+        "c5100 large transport helicopter area escape support escort helicopter use"
+      ]
+    },
+    {
+      "ID": 51000014,
+      "Entries": [
+        "c5100 large transport helicopter encounter with organization ver2 for production"
+      ]
+    },
+    {
+      "ID": 51000015,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 2"
+      ]
+    },
+    {
+      "ID": 51000016,
+      "Entries": [
+        "c5100 Large transport helicopter Collapse A layer"
+      ]
+    },
+    {
+      "ID": 51000017,
+      "Entries": [
+        "c5100 large transport helicopter attack preparation stage production"
+      ]
+    },
+    {
+      "ID": 51000018,
+      "Entries": [
+        "c5100 large transport helicopter living area purge reinforcement use"
+      ]
+    },
+    {
+      "ID": 51000019,
+      "Entries": [
+        "c5100 large transport helicopter large missile launch support"
+      ]
+    },
+    {
+      "ID": 51000020,
+      "Entries": [
+        "c5100 Large transport helicopter New B levitation"
+      ]
+    },
+    {
+      "ID": 51000021,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 3"
+      ]
+    },
+    {
+      "ID": 51000022,
+      "Entries": [
+        "c5100 Large transport helicopter SBM ice field hole"
+      ]
+    },
+    {
+      "ID": 51000023,
+      "Entries": [
+        "c5100 large transport helicopter_over walls_for wingman"
+      ]
+    },
+    {
+      "ID": 51000024,
+      "Entries": [
+        "c5100 large transport helicopter fuel base mopping up escape 4"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "c5100 large transport helicopter_for testing"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "c5101 large transport helicopter machine gun"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "c5120 military US drone"
+      ]
+    },
+    {
+      "ID": 51201000,
+      "Entries": [
+        "c5120 military US drone new B levitation"
+      ]
+    },
+    {
+      "ID": 51201010,
+      "Entries": [
+        "c5120 military US drone for straight city production"
+      ]
+    },
+    {
+      "ID": 51201020,
+      "Entries": [
+        "c5120 military US drone area escape support for EN rifle"
+      ]
+    },
+    {
+      "ID": 51201030,
+      "Entries": [
+        "c5120 Military US Drone Fuel Base Sweeping for Palico"
+      ]
+    },
+    {
+      "ID": 51201040,
+      "Entries": [
+        "c5120 military US drone scavenging"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "c5150 combat helicopter"
+      ]
+    },
+    {
+      "ID": 51500010,
+      "Entries": [
+        "c5150 combat helicopter high speed for production"
+      ]
+    },
+    {
+      "ID": 51501000,
+      "Entries": [
+        "c5150 combat helicopter 3x speed for dummy"
+      ]
+    },
+    {
+      "ID": 51501010,
+      "Entries": [
+        "c5150 combat helicopter dummy new B floating"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "c5200 tank"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "c5250 Sunflower"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "c5300 suicide satellite"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "c5500 biological weapon"
+      ]
+    },
+    {
+      "ID": 55100000,
+      "Entries": [
+        "c5510 Biological Weapon (Large)"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "c6000 Necklace Keeper"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "c6010 barrier unit"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "c6050 Pharaon"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "c6100 sea spider"
+      ]
+    },
+    {
+      "ID": 61000099,
+      "Entries": [
+        "c6100 Sea spider C end"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "c6100 Sea spider C end charging"
+      ]
+    },
+    {
+      "ID": 61010000,
+      "Entries": [
+        "c6101 Sea spider secondary gun"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "c6250 Sandworm"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "c6260 Sandworm small"
+      ]
+    },
+    {
+      "ID": 63500000,
+      "Entries": [
+        "c6350 Dora"
+      ]
+    },
+    {
+      "ID": 63510000,
+      "Entries": [
+        "c6351 Dora secondary gun"
+      ]
+    },
+    {
+      "ID": 63520000,
+      "Entries": [
+        "c6352 Dora missile"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 mining ship"
+      ]
+    },
+    {
+      "ID": 64010000,
+      "Entries": [
+        "c6401 mining ship connection part weak point"
+      ]
+    },
+    {
+      "ID": 64020000,
+      "Entries": [
+        "c6402 mining ship wheel weakness"
+      ]
+    },
+    {
+      "ID": 64100000,
+      "Entries": [
+        "c6410 mining drill"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "c6420 mining ship eyeball"
+      ]
+    },
+    {
+      "ID": 72200000,
+      "Entries": [
+        "c7220 field missile (repeat type)"
+      ]
+    },
+    {
+      "ID": 72210000,
+      "Entries": [
+        "c7221 field missile (vertical type)"
+      ]
+    },
+    {
+      "ID": 72230000,
+      "Entries": [
+        "c7223 field missile (simultaneous launch type)"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "c7230 Ground Force Artillery Grenade (Large)"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "c7240 Ground Force Artillery Bazooka (Large)"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "c7250 Ground Force Artillery Gatling (Large)"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "c7260 Ground force artillery missile (large) twin"
+      ]
+    },
+    {
+      "ID": 72610000,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile (Large) Vertical"
+      ]
+    },
+    {
+      "ID": 72620000,
+      "Entries": [
+        "c7262 Ground Force Artillery Missile (Large) Horizontal"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 Ground Force Artillery Sniper (Large)"
+      ]
+    },
+    {
+      "ID": 72800000,
+      "Entries": [
+        "c7280 Ground Force Artillery EN Rifle"
+      ]
+    },
+    {
+      "ID": 72900000,
+      "Entries": [
+        "c7290 Old EN turret laser bazooka"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "c7300 speaker antenna turret pulse"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 State-of-the-art EN battery plasma rifle"
+      ]
+    },
+    {
+      "ID": 73200000,
+      "Entries": [
+        "c7320 state-of-the-art EN battery plasma missile"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "c7390 D-tier giant gun battery Anemone"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "c7400 amphibious assault ship"
+      ]
+    },
+    {
+      "ID": 74000010,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Mission For Old Spaceport Assault"
+      ]
+    },
+    {
+      "ID": 74000020,
+      "Entries": [
+        "c7400 amphibious assault ship mission for breaking through the atmosphere"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "c7401 amphibious assault ship main gun"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "c7402 Amphibious assault ship secondary gun"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "c7403 Amphibious Assault Ship Missile Cannon"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit"
+      ]
+    },
+    {
+      "ID": 74100100,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit"
+      ]
+    },
+    {
+      "ID": 74100110,
+      "Entries": [
+        "C7410 Amphibious Assault Ship Child Unit Encounter with the organization"
+      ]
+    },
+    {
+      "ID": 80100000,
+      "Entries": [
+        "c8010 High altitude snapper"
+      ]
+    },
+    {
+      "ID": 80200000,
+      "Entries": [
+        "c8020 Mortar MT"
+      ]
+    },
+    {
+      "ID": 80300000,
+      "Entries": [
+        "c8030 pile MT (shotgun)"
+      ]
+    },
+    {
+      "ID": 80400000,
+      "Entries": [
+        "c8040 Large drone (call for friends)"
+      ]
+    },
+    {
+      "ID": 80500000,
+      "Entries": [
+        "c8050 dropship"
+      ]
+    },
+    {
+      "ID": 80600000,
+      "Entries": [
+        "c8060 Gunship (Strong Zako)"
+      ]
+    },
+    {
+      "ID": 80900000,
+      "Entries": [
+        "c8090 fighter jet"
+      ]
+    },
+    {
+      "ID": 80900090,
+      "Entries": [
+        "c8090 fighter, mining ship, carrier-based aircraft"
+      ]
+    },
+    {
+      "ID": 80900800,
+      "Entries": [
+        "c8090 sea fighter"
+      ]
+    },
+    {
+      "ID": 80900900,
+      "Entries": [
+        "c8090 high speed version fighter"
+      ]
+    },
+    {
+      "ID": 81000000,
+      "Entries": [
+        "c8100 Shield Holder MT (Laser Whip"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "c8110 Colorless MT"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT for control confirmation"
+      ]
+    },
+    {
+      "ID": 81170000,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3"
+      ]
+    },
+    {
+      "ID": 81180000,
+      "Entries": [
+        "c8118 Colorless MT Copy Test 2"
+      ]
+    },
+    {
+      "ID": 81190000,
+      "Entries": [
+        "c8119 Colorless MT Copy Test"
+      ]
+    },
+    {
+      "ID": 81300000,
+      "Entries": [
+        "c8130 Strong enemy (humanoid)"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "c8131 Control prototype character"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "c8135 Official Miyatake strong enemy"
+      ]
+    },
+    {
+      "ID": 81400000,
+      "Entries": [
+        "c8140 Strong enemy (bird type)"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Toriashi"
+      ]
+    },
+    {
+      "ID": 81500000,
+      "Entries": [
+        "c8150 ground moving vehicle"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "c8200 Walla Walla Mushi"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "c8210 Walla Walla Insect (Large)"
+      ]
+    },
+    {
+      "ID": 82500000,
+      "Entries": [
+        "c8250 D layer huge elevator"
+      ]
+    },
+    {
+      "ID": 82510000,
+      "Entries": [
+        "c8251 Jump rope laser control character"
+      ]
+    },
+    {
+      "ID": 83000000,
+      "Entries": [
+        "c8300 sandworm"
+      ]
+    },
+    {
+      "ID": 84100000,
+      "Entries": [
+        "c8410 floating giant battleship"
+      ]
+    },
+    {
+      "ID": 84200000,
+      "Entries": [
+        "c8420 marine carrier"
+      ]
+    },
+    {
+      "ID": 84300000,
+      "Entries": [
+        "c8430 battleship (far"
+      ]
+    },
+    {
+      "ID": 84400000,
+      "Entries": [
+        "c8440 battleship (near)"
+      ]
+    },
+    {
+      "ID": 84500000,
+      "Entries": [
+        "c8450 Stiglo (sea)"
+      ]
+    },
+    {
+      "ID": 84600000,
+      "Entries": [
+        "c8460 sea worm"
+      ]
+    },
+    {
+      "ID": 85104000,
+      "Entries": [
+        "c8510 Strong Zako (bazooka for exit-san adjustment)"
+      ]
+    },
+    {
+      "ID": 85110000,
+      "Entries": [
+        "c8511 For practicing strong pressure"
+      ]
+    },
+    {
+      "ID": 90310000,
+      "Entries": [
+        "c9031 flying enemy"
+      ]
+    },
+    {
+      "ID": 90310090,
+      "Entries": [
+        "B-tier fighter jet substitute drone"
+      ]
+    },
+    {
+      "ID": 90310091,
+      "Entries": [
+        "B-tier bomber substitute drone"
+      ]
+    },
+    {
+      "ID": 92010000,
+      "Entries": [
+        "c9201 Reverse joint"
+      ]
+    },
+    {
+      "ID": 92030000,
+      "Entries": [
+        "c9203 Reverse joint damage Lv1 interval 2 seconds"
+      ]
+    },
+    {
+      "ID": 92040000,
+      "Entries": [
+        "c9204 Reverse joint damage Lv1 interval 0.1 seconds"
+      ]
+    },
+    {
+      "ID": 93070000,
+      "Entries": [
+        "c9307 Colorless pouring communist MT"
+      ]
+    },
+    {
+      "ID": 93080000,
+      "Entries": [
+        "c9308 Tank control verification"
+      ]
+    },
+    {
+      "ID": 93090000,
+      "Entries": [
+        "c9309 For quadruped control test"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        "c9321 Link test"
+      ]
+    },
+    {
+      "ID": 93220000,
+      "Entries": [
+        "c9322 Enomoto test"
+      ]
+    },
+    {
+      "ID": 93220010,
+      "Entries": [
+        "c9322 Enomoto test Vehicle escort test"
+      ]
+    },
+    {
+      "ID": 93220020,
+      "Entries": [
+        "c5300 Suicide satellite for destroying ice worms"
+      ]
+    },
+    {
+      "ID": 93230000,
+      "Entries": [
+        "c9323 Hagiyatest"
+      ]
+    },
+    {
+      "ID": 93300000,
+      "Entries": [
+        "c9330 For checking large ragdolls"
+      ]
+    },
+    {
+      "ID": 93400000,
+      "Entries": [
+        "c9340 Dress-up NPC test (enemy)"
+      ]
+    },
+    {
+      "ID": 93410000,
+      "Entries": [
+        "c9341 Dress-up NPC test (ally)"
+      ]
+    },
+    {
+      "ID": 93420000,
+      "Entries": [
+        "c9342 Dress-up NPC test (ally)"
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        "c9400 map team test bazooka turret small"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "c9401 Elevator side main turret"
+      ]
+    },
+    {
+      "ID": 94100000,
+      "Entries": [
+        "c9410 Elevator upper main turret"
+      ]
+    },
+    {
+      "ID": 94110000,
+      "Entries": [
+        "c9411 Map team test sniper battery large"
+      ]
+    },
+    {
+      "ID": 94200000,
+      "Entries": [
+        "c9420 Missile battery for adjustment"
+      ]
+    },
+    {
+      "ID": 94310000,
+      "Entries": [
+        "c9431 machine gun turret"
+      ]
+    },
+    {
+      "ID": 94320000,
+      "Entries": [
+        "c9432 machine gun battery predictive firing test_bullets"
+      ]
+    },
+    {
+      "ID": 94330000,
+      "Entries": [
+        "c9433 Machine gun battery predictive firing test_LookAt"
+      ]
+    },
+    {
+      "ID": 99600000,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB"
+      ]
+    },
+    {
+      "ID": 99800000,
+      "Entries": [
+        "c9980 Dummy character group route patrol"
+      ]
+    },
+    {
+      "ID": 99800060,
+      "Entries": [
+        "c9980 Dummy character for C-end platoon action"
+      ]
+    },
+    {
+      "ID": 99900000,
+      "Entries": [
+        "c9990 Insertion test *Weapon submission prohibited"
+      ]
+    },
+    {
+      "ID": 99991000,
+      "Entries": [
+        "*General-purpose type* For turrets, does not move"
+      ]
+    }
+  ]
+}

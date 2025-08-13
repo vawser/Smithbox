@@ -1,0 +1,89 @@
+{
+  "Name": "eventlocation_m10_29_00_00",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "Navi mesh change of gimmick door _ central door"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Navi mesh change of gimmick door _ Maduro side"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Navi mesh change of the gimmick door _ forest side of the shadow of the emptiness"
+      ]
+    },
+    {
+      "ID": 102900,
+      "Entries": [
+        "Backlead Safety Points [Maduro]"
+      ]
+    },
+    {
+      "ID": 102901,
+      "Entries": [
+        "Backlead Safety Points [Void]"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Navi mesh change of petrified stop_sorcerer"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Goblin Move Point 01"
+      ]
+    },
+    {
+      "ID": 52000010,
+      "Entries": [
+        "Goblin Move Point 02"
+      ]
+    },
+    {
+      "ID": 52000020,
+      "Entries": [
+        "Goblin Move Point 03"
+      ]
+    },
+    {
+      "ID": 52000030,
+      "Entries": [
+        "Goblin Move Point 04"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "Goblin Move Point 05"
+      ]
+    },
+    {
+      "ID": 52000110,
+      "Entries": [
+        "Goblin Move Point 06"
+      ]
+    },
+    {
+      "ID": 52000120,
+      "Entries": [
+        "Goblin Move Point 07"
+      ]
+    },
+    {
+      "ID": 52000130,
+      "Entries": [
+        "Goblin Move Point 08"
+      ]
+    }
+  ]
+}

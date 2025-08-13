@@ -1,0 +1,617 @@
+{
+  "Name": "PhantomParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "White (dull)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "White"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Blue Tint"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Blue Tint"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Blue Tint with Glow"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Orange/Blue"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Orange/Blue with Glow"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Cyan/Red"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Cyan/Red"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Cyan/Red with Glow"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Cyan"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "White/Grey"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Purple Tint"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Phantom - White"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Ghost (75%)"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "White Phantom (Ghost)"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Tomb Ghost (Deep Blue Tint)"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Magic Enhancement - Light Blue"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Magic Enhancement - Light Blue with Glow"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Lightning Enchancement - Yellow"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Lightning Enchancement - Orange"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Dark Enchancement - Purple"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Poison Enchancement - Yellow/Green"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Bleed Enchancement - Light Orange"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Enchancement - Dark Blue"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Enchancement - Dark Blue"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Enchancement - White"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Frost Enchancement - White/Light Blue"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "White"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Magic Enhancement - Dark Blue"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Grey (Ghost)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Grey/Black (Ghost)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Purple/Grey (Ghost)"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Embered"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Embered with Tint"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Blue (Ghost)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Invisible"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Bright White"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Black with White Tint"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Shield Enchantment _ Physical reinforcement"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Shield Enchantment _ Strengthening Magic"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Shield Enchantment _ Lightning strengthening"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Shield Enchantment _ Flame Enhancement"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Shield Enchantment _ Dark Reinforcement"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Shield Enchantment _ Strengthening Poison"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Shield Enchantment _ Bleeding strengthening"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Shield Enchantment _ Shield destruction reinforcement"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Shield Enchanted _ Curse Enhanced"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Shield Enchantment _ Chill"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Phantom - Red"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Phantom - White"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Phantom - White (Ghost)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Phantom - White/Red Tint"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Phantom - Yellow/White Tint"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Phantom - Yellow/Red Tint"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Phantom - Purple/White Tint"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Phantom - Purple/Red Tint"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Phantom - Cyan/White Tint"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Phantom - Cyan/Red Tint"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Phantom - Blue/White Tint"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Phantom - White/Blue Tint"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Phantom - Orange/Purple Tint"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Phantom - Green/Blue Tint"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Grey (Ghost)"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Normal (Ghost)"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "White (Ghost)"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Phantom - White"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Phantom - Red"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Phantom - Dark Blue"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Phantom - White/Blue Tint"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Phantom - White/Blue Tint"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Phantom - Orange"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Phantom - Red/Orange Tint"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Phantom - Purple"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Phantom - Purple"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Phantom - Red"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Phantom - Blue/Purple Tint with Glow"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Phantom - Light Blue/Red Tint"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Phantom - Light Orange"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Grey"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "White"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Koganeyu Phantom-time to rest-inside"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Gold Phantom-remaining time-in"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Red Phantom 0-remaining time-medium"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Red Phantom 1-time to rest-medium"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Red Phantom 2-time to rest-medium"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Red Phantom 3-remaining time-medium"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Black Phantom-time remaining-medium"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "小白 Phantom-Time remaining-small"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "White Phantom-Time left-small"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Koganeyu Phantom-Time remaining-small"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Gold Phantom-time remaining-small"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Red Phantom 0-time left-small"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Red Phantom 1-time left-small"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Red Phantom 2-time left-small"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Red Phantom 3-time left-small"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Black Phantom-Time left-small"
+      ]
+    }
+  ]
+}

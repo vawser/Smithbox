@@ -1,0 +1,809 @@
+{
+  "Name": "npctalkparam_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 70004200,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 70004210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004250,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004260,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 70004300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70009000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 70009100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 70009200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 70009300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 70009400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 70009500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 70009600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 75201900,
+      "Entries": [
+        "Talkto One"
+      ]
+    },
+    {
+      "ID": 75201910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75202000,
+      "Entries": [
+        "Talk to 2"
+      ]
+    },
+    {
+      "ID": 75202010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75202020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75202100,
+      "Entries": [
+        "Talk to 3"
+      ]
+    },
+    {
+      "ID": 75202110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75202120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75206000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 75206010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75209000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 75209100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 75209200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 75209300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 75209400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75209500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 75209600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 77100000,
+      "Entries": [
+        "Unsealed: The Living: Talking To 1"
+      ]
+    },
+    {
+      "ID": 77100010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100100,
+      "Entries": [
+        "Unsealed: The Living: Talking To 2"
+      ]
+    },
+    {
+      "ID": 77100110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100200,
+      "Entries": [
+        "Unsealed: Raw: Talkto 3 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 77100300,
+      "Entries": [
+        "Unsealed: The Living: After the Dead Conversation"
+      ]
+    },
+    {
+      "ID": 77100310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 77100320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 77100400,
+      "Entries": [
+        "Unsealed: The Dead: Talking To You 1"
+      ]
+    },
+    {
+      "ID": 77100420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100500,
+      "Entries": [
+        "Unsealed: The Dead: Talking To 2"
+      ]
+    },
+    {
+      "ID": 77100510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100540,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100550,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100560,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100800,
+      "Entries": [
+        "Unsealed: Deceased: First person request"
+      ]
+    },
+    {
+      "ID": 77100810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100840,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100850,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 77100900,
+      "Entries": [
+        "Unsealed: Deceased: First Person: YES"
+      ]
+    },
+    {
+      "ID": 77100910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77100930,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101000,
+      "Entries": [
+        "Unsealed: Deceased: 2nd Request: First Unfulfilled"
+      ]
+    },
+    {
+      "ID": 77101010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101100,
+      "Entries": [
+        "Unsealed: Deceased: First Person Request: NOUnsealed: Deceased: 2nd Request: 2nd Person Request: NOUnsealed: Deceased: 3rd Request: 3rd Request: NO"
+      ]
+    },
+    {
+      "ID": 77101110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101200,
+      "Entries": [
+        "Unsealed: Deceased: 2nd Request: First RequestUnsealed: Deceased: 3rd Request: 2nd Request AchievedUnsealed: Deceased: 4th Request: 3rd Request"
+      ]
+    },
+    {
+      "ID": 77101201,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101202,
+      "Entries": [
+        "↓Unsealed: The second person request ed.  Unsealed: Deceased: 3rd Request: 2nd Request Achieved"
+      ]
+    },
+    {
+      "ID": 77101250,
+      "Entries": [
+        "Unsealed: Deceased: 2nd Request: First RequestUnsealed: Deceased: 3rd Request: 2nd Request AchievedUnsealed: Deceased: 4th Request: 3rd Request"
+      ]
+    },
+    {
+      "ID": 77101251,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101252,
+      "Entries": [
+        "↓Unsealed: The fourth person requested the third person request was achieved."
+      ]
+    },
+    {
+      "ID": 77101300,
+      "Entries": [
+        "Unsealed: Deceased: 2nd Request: 2nd Person Request"
+      ]
+    },
+    {
+      "ID": 77101310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101330,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 77101400,
+      "Entries": [
+        "Unsealed: Deceased: 2nd Person Request: 2nd Person Request: YES"
+      ]
+    },
+    {
+      "ID": 77101410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101500,
+      "Entries": [
+        "Unsealed: Deceased: 3rd Request: 2nd Unachieved"
+      ]
+    },
+    {
+      "ID": 77101510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101600,
+      "Entries": [
+        "Unsealed: Deceased: 3rd Request: 3rd Person Request"
+      ]
+    },
+    {
+      "ID": 77101610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101640,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 77101700,
+      "Entries": [
+        "Unsealed: Deceased: 3rd Request: 3rd Request: YES"
+      ]
+    },
+    {
+      "ID": 77101710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77101800,
+      "Entries": [
+        "Unsealed: Deceased: 4th Request: 3rd Unachieved"
+      ]
+    },
+    {
+      "ID": 77101810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102000,
+      "Entries": [
+        "Unsealed: Deceased: 4th Request: 4th Request"
+      ]
+    },
+    {
+      "ID": 77102010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102050,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102060,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102070,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102100,
+      "Entries": [
+        "Unsealed: Deceased: 4th Request: 4th Request: NO"
+      ]
+    },
+    {
+      "ID": 77102110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102200,
+      "Entries": [
+        "Unsealed: Dead: Final Request: 4th Unachieved"
+      ]
+    },
+    {
+      "ID": 77102220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102300,
+      "Entries": [
+        "Unsealed: Dead: Final Request: 4th Achievement"
+      ]
+    },
+    {
+      "ID": 77102310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102320,
+      "Entries": [
+        "↓ White phantom appearance possible"
+      ]
+    },
+    {
+      "ID": 77102400,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 77102410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102500,
+      "Entries": [
+        "Menu Conversation: First ConversationTalkto OneAfter opening shop function"
+      ]
+    },
+    {
+      "ID": 77102510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102600,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 77102700,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 77102800,
+      "Entries": [
+        "Menu: Walk Away: Cancel"
+      ]
+    },
+    {
+      "ID": 77102900,
+      "Entries": [
+        "Seal: Dead: Talking To 1"
+      ]
+    },
+    {
+      "ID": 77102910,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102920,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77102930,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77103000,
+      "Entries": [
+        "Seal: Dead: Talkto 2 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 77103010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77103100,
+      "Entries": [
+        "Seal: Raw: Talking to 1 (Loop)"
+      ]
+    },
+    {
+      "ID": 77103110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77106000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 77106010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77109000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 77109100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 77109200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 77109300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 77109400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77109410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77109420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77109450,
+      "Entries": [
+        "attacked, i am a human being"
+      ]
+    },
+    {
+      "ID": 77109460,
+      "Entries": [
+        "attacked, i am a human being"
+      ]
+    },
+    {
+      "ID": 77109470,
+      "Entries": [
+        "attacked, i am a human being"
+      ]
+    },
+    {
+      "ID": 77109500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 77109600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

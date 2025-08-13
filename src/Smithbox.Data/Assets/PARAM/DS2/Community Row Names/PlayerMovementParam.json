@@ -1,0 +1,23 @@
+{
+  "Name": "PlayerMovementParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Template parameters -- テンプレートパラメータ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Body for equipment test -- 装備テスト用素体"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Body for new bone test -- 新ボーンテスト用素体"
+      ]
+    }
+  ]
+}

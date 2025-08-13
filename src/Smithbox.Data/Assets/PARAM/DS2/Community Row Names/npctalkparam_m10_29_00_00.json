@@ -1,0 +1,521 @@
+{
+  "Name": "npctalkparam_m10_29_00_00",
+  "Entries": [
+    {
+      "ID": 74300000,
+      "Entries": [
+        "Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 74300010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300100,
+      "Entries": [
+        "Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 74300110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300200,
+      "Entries": [
+        "Sorcerer Petrified"
+      ]
+    },
+    {
+      "ID": 74300210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300250,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300260,
+      "Entries": [
+        "↓ Permission to move & white phantom possible"
+      ]
+    },
+    {
+      "ID": 74300300,
+      "Entries": [
+        "Sorcerer Petrified: 2nd"
+      ]
+    },
+    {
+      "ID": 74300310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74300320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74306000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 74306010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74309000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 74309100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 74309200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 74309300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 74309400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74309500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 74309600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 76300000,
+      "Entries": [
+        "Talkto One"
+      ]
+    },
+    {
+      "ID": 76300010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300050,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300100,
+      "Entries": [
+        "Talk to 2"
+      ]
+    },
+    {
+      "ID": 76300110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300150,
+      "Entries": [
+        "Talking To 2 (Death)"
+      ]
+    },
+    {
+      "ID": 76300160,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300200,
+      "Entries": [
+        "Talk to 3"
+      ]
+    },
+    {
+      "ID": 76300210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300300,
+      "Entries": [
+        "Talkto 4"
+      ]
+    },
+    {
+      "ID": 76300310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300400,
+      "Entries": [
+        "Talk to 5"
+      ]
+    },
+    {
+      "ID": 76300410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300440,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300450,
+      "Entries": [
+        "↓Change of clothes menu development"
+      ]
+    },
+    {
+      "ID": 76300500,
+      "Entries": [
+        "The first time after the change of clothes is approved"
+      ]
+    },
+    {
+      "ID": 76300510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300600,
+      "Entries": [
+        "2 after the change of clothes is approved"
+      ]
+    },
+    {
+      "ID": 76300610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300630,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300640,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300700,
+      "Entries": [
+        "3 after the change of clothes is approved"
+      ]
+    },
+    {
+      "ID": 76300710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300730,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300740,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300750,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300800,
+      "Entries": [
+        "After the change of clothes: a single loop"
+      ]
+    },
+    {
+      "ID": 76300810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76300900,
+      "Entries": [
+        "Talking To: When Changing Clothes Is Not Approved: Loop"
+      ]
+    },
+    {
+      "ID": 76300910,
+      "Entries": [
+        "↓Change of clothes menu development"
+      ]
+    },
+    {
+      "ID": 76303100,
+      "Entries": [
+        "※Not used at the time of purchase "
+      ]
+    },
+    {
+      "ID": 76303200,
+      "Entries": [
+        "Non-purchase"
+      ]
+    },
+    {
+      "ID": 76303300,
+      "Entries": [
+        "I suddenly left."
+      ]
+    },
+    {
+      "ID": 76305000,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 76305010,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 76305020,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 76305030,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76305040,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76305050,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76305060,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 76305070,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 76306000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 76307000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 76307010,
+      "Entries": [
+        "↓"
+      ]
+    }
+  ]
+}

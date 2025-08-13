@@ -1,0 +1,317 @@
+{
+  "Name": "CameraExFollowImpactParam",
+  "Entries": [
+    {
+      "ID": 1301,
+      "Entries": [
+        "Backstab - Medium - Naoken - 1st Shot -- バックスタブ-中-直剣-１撃目"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Backstab - Medium - Naoken - 2st Shot -- バックスタブ-中-直剣-２撃目"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "Backstab - Medium - Dagger - 1st Shot -- バックスタブ-中-短剣-１撃目"
+      ]
+    },
+    {
+      "ID": 1312,
+      "Entries": [
+        "Backstab - Medium - Dagger - 2st Shot -- バックスタブ-中-短剣-２撃目"
+      ]
+    },
+    {
+      "ID": 1321,
+      "Entries": [
+        "Backstab - Medium - Two-Handed Axe - 1st Shot -- バックスタブ-中-両手斧-１撃目"
+      ]
+    },
+    {
+      "ID": 1322,
+      "Entries": [
+        "Backstab - Medium - Two-Handed Axe - 2st Shot -- バックスタブ-中-両手斧-２撃目"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "Backstab - Medium - Two-Handed Oversized Sword - 1st Shot -- バックスタブ-中-両手特大剣-１撃目"
+      ]
+    },
+    {
+      "ID": 1332,
+      "Entries": [
+        "Backstab - Medium - Two-Handed Oversized Sword - 2st Shot -- バックスタブ-中-両手特大剣-２撃目"
+      ]
+    },
+    {
+      "ID": 1341,
+      "Entries": [
+        "Backstab - Medium - Spear - 1 St -- バックスタブ-中-槍-１撃目"
+      ]
+    },
+    {
+      "ID": 1342,
+      "Entries": [
+        "Backstab - Medium - Spear - 2st Shot -- バックスタブ-中-槍-２撃目"
+      ]
+    },
+    {
+      "ID": 1351,
+      "Entries": [
+        "Backstab - Medium - Fist -1 Shot -- バックスタブ-中-拳-１撃目"
+      ]
+    },
+    {
+      "ID": 1352,
+      "Entries": [
+        "Backstab - Medium - Fist - 2st Shot -- バックスタブ-中-拳-２撃目"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Backstab - Large - Naoken - 1st Shot -- バックスタブ-大-直剣-１撃目"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Backstab - Large - Naoken - 2st Shot -- バックスタブ-大-直剣-２撃目"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "Backstab - Large - Dagger - 1St Shot -- バックスタブ-大-短剣-１撃目"
+      ]
+    },
+    {
+      "ID": 1412,
+      "Entries": [
+        "Backstab - Large - Dagger - 2st Shot -- バックスタブ-大-短剣-２撃目"
+      ]
+    },
+    {
+      "ID": 1441,
+      "Entries": [
+        "Backstab - Large - Spear - 1St -- バックスタブ-大-槍-１撃目"
+      ]
+    },
+    {
+      "ID": 1442,
+      "Entries": [
+        "Backstab - Large - Spear - 2st Shot -- バックスタブ-大-槍-２撃目"
+      ]
+    },
+    {
+      "ID": 1451,
+      "Entries": [
+        "Backstab - Large - Fist -1 St -- バックスタブ-大-拳-１撃目"
+      ]
+    },
+    {
+      "ID": 1452,
+      "Entries": [
+        "Backstab - Big - Fist - 2st Shot -- バックスタブ-大-拳-２撃目"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Paribreak Stub - Medium - Naoken - 1st Shot -- パリィブレイクスタブ-中-直剣-１撃目"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Paribreak Stub - Medium - Naoken - 2st Shot -- パリィブレイクスタブ-中-直剣-２撃目"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "Paribreak Stub - Medium - Dagger - 1st Shot -- パリィブレイクスタブ-中-短剣-１撃目"
+      ]
+    },
+    {
+      "ID": 2312,
+      "Entries": [
+        "Paribreak Stub - Medium - Dagger - 2st Shot -- パリィブレイクスタブ-中-短剣-２撃目"
+      ]
+    },
+    {
+      "ID": 2321,
+      "Entries": [
+        "Paribreak Stub - Medium - Two-Handed Axe - 1st Shot -- パリィブレイクスタブ-中-両手斧-１撃目"
+      ]
+    },
+    {
+      "ID": 2322,
+      "Entries": [
+        "Paribreak Stub - Medium - Two-Handed Axe - 2st Shot -- パリィブレイクスタブ-中-両手斧-２撃目"
+      ]
+    },
+    {
+      "ID": 2331,
+      "Entries": [
+        "Paribreak Stub - Medium - Two-Handed Oversized Sword - 1st Shot -- パリィブレイクスタブ-中-両手特大剣-１撃目"
+      ]
+    },
+    {
+      "ID": 2332,
+      "Entries": [
+        "Paribreak Stub - Medium - Two-Handed Oversized Sword - 2st Shot -- パリィブレイクスタブ-中-両手特大剣-２撃目"
+      ]
+    },
+    {
+      "ID": 2341,
+      "Entries": [
+        "Paribreak Stub - Medium - Spear - 1st Shot -- パリィブレイクスタブ-中-槍-１撃目"
+      ]
+    },
+    {
+      "ID": 2342,
+      "Entries": [
+        "Paribreak Stub - Medium - Spear - 2st Shot -- パリィブレイクスタブ-中-槍-２撃目"
+      ]
+    },
+    {
+      "ID": 2351,
+      "Entries": [
+        "Paribreak Stub - Medium - Fist - 1St Shot -- パリィブレイクスタブ-中-拳-１撃目"
+      ]
+    },
+    {
+      "ID": 2352,
+      "Entries": [
+        "Paribreak Stub - Medium - Fist - 2st Shot -- パリィブレイクスタブ-中-拳-２撃目"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "Guard Break Stub - Medium - Naoken - 1st Shot -- ガードブレイクスタブ-中-直剣-１撃目"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "Guard Break Stub - Medium - Naoken - 2rd Shot -- ガードブレイクスタブ-中-直剣-２撃目"
+      ]
+    },
+    {
+      "ID": 3311,
+      "Entries": [
+        "Guard Break Stub - Medium - Dagger - 1st Shot -- ガードブレイクスタブ-中-短剣-１撃目"
+      ]
+    },
+    {
+      "ID": 3312,
+      "Entries": [
+        "Guard Break Stub - Medium - Dagger - 2rd Shot -- ガードブレイクスタブ-中-短剣-２撃目"
+      ]
+    },
+    {
+      "ID": 3321,
+      "Entries": [
+        "Guard Break Stub - Medium - Two-Handed Axe - 1st Shot -- ガードブレイクスタブ-中-両手斧-１撃目"
+      ]
+    },
+    {
+      "ID": 3322,
+      "Entries": [
+        "Guard Break Stub - Medium - Two-Handed Axe - 2rd Shot -- ガードブレイクスタブ-中-両手斧-２撃目"
+      ]
+    },
+    {
+      "ID": 3331,
+      "Entries": [
+        "Guard Break Stub - Medium - Two-Handed Oversized Sword - 1st Shot -- ガードブレイクスタブ-中-両手特大剣-１撃目"
+      ]
+    },
+    {
+      "ID": 3332,
+      "Entries": [
+        "Guard Break Stub - Medium - Two-Handed Oversized Sword - 2rd Shot -- ガードブレイクスタブ-中-両手特大剣-２撃目"
+      ]
+    },
+    {
+      "ID": 3341,
+      "Entries": [
+        "Guard Break Stub - Medium - Spear - 1st Shot -- ガードブレイクスタブ-中-槍-１撃目"
+      ]
+    },
+    {
+      "ID": 3342,
+      "Entries": [
+        "Guard Break Stub - Medium - Spear - 2rd Shot -- ガードブレイクスタブ-中-槍-２撃目"
+      ]
+    },
+    {
+      "ID": 3351,
+      "Entries": [
+        "Guard Break Stub - Medium - Fist - 1st Shot -- ガードブレイクスタブ-中-拳-１撃目"
+      ]
+    },
+    {
+      "ID": 3352,
+      "Entries": [
+        "Guard Break Stub - Medium - Fist - 2st Shot -- ガードブレイクスタブ-中-拳-２撃目"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "Guard Break Stub - Large - Naoken - 1st Shot -- ガードブレイクスタブ-大-直剣-１撃目"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "Guard Break Stub - Large - Naoken - 2rd Shot -- ガードブレイクスタブ-大-直剣-２撃目"
+      ]
+    },
+    {
+      "ID": 3411,
+      "Entries": [
+        "Guard Break Stub - Large - Dagger - 1st Shot -- ガードブレイクスタブ-大-短剣-１撃目"
+      ]
+    },
+    {
+      "ID": 3412,
+      "Entries": [
+        "Guard Break Stub - Large - Dagger - 2rd Shot -- ガードブレイクスタブ-大-短剣-２撃目"
+      ]
+    },
+    {
+      "ID": 3441,
+      "Entries": [
+        "Guard Break Stub - Large - Spear - 1st Shot -- ガードブレイクスタブ-大-槍-１撃目"
+      ]
+    },
+    {
+      "ID": 3442,
+      "Entries": [
+        "Guard Break Stub - Large - Spear - 2rd Shot -- ガードブレイクスタブ-大-槍-２撃目"
+      ]
+    },
+    {
+      "ID": 3451,
+      "Entries": [
+        "Guard Break Stub - Large- Fist-1 Shot -- ガードブレイクスタブ-大-拳-１撃目"
+      ]
+    },
+    {
+      "ID": 3452,
+      "Entries": [
+        "Guard Break Stub - Large- Fist-2 Shooting -- ガードブレイクスタブ-大-拳-２撃目"
+      ]
+    }
+  ]
+}

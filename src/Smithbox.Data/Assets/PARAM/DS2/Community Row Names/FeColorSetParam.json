@@ -1,0 +1,131 @@
+{
+  "Name": "FeColorSetParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Basic color -- 基本色"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Used to change the color of gray characters -- グレー・文字の色変えに使用"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Title text -- タイトルテキスト"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Content (description text) -- 内容（説明テキスト）"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Sun Warrior -- 太陽の戦士"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Guardian Knight -- 守護の騎士"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "The Dark Spirit of Blood -- 血の闇霊"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "Seikyo -- 青教"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "The King of Rats -- ネズミの王"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "Bell Guard -- 鐘守"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "The Road to the Old Dragon -- 古竜への道"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "Strong -- 強者"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "Pilgrimage to the Abyss -- 深淵への巡礼"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Red -- 赤"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Blue -- 青"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "Name": "LockOnParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Lock-on -- ロックオン"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Base - Very Short -- ベース-極短"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Base - Short -- ベース-短"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Base - Medium -- ベース-中"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Base-Length -- ベース-長"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Base - Extreme Length -- ベース-極長"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Base value -- ベース値"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "Previous version -- 旧バージョン"
+      ]
+    },
+    {
+      "ID": 9910,
+      "Entries": [
+        "Light and dark Lv. 0 -- 明暗Ｌｖ．０"
+      ]
+    },
+    {
+      "ID": 9920,
+      "Entries": [
+        "Light and dark Lv. 1 -- 明暗Ｌｖ．１"
+      ]
+    },
+    {
+      "ID": 9930,
+      "Entries": [
+        "Light and dark Lv. 2 -- 明暗Ｌｖ．２"
+      ]
+    },
+    {
+      "ID": 9940,
+      "Entries": [
+        "Light and dark Lv. 3 -- 明暗Ｌｖ．３"
+      ]
+    },
+    {
+      "ID": 9950,
+      "Entries": [
+        "Light and dark Lv. 4 -- 明暗Ｌｖ．４"
+      ]
+    },
+    {
+      "ID": 9960,
+      "Entries": [
+        "For bosses -- ボス用"
+      ]
+    },
+    {
+      "ID": 9961,
+      "Entries": [
+        "For bosses - forgotten sinners - 0 lights -- ボス用-忘れられた罪人-ライト０個"
+      ]
+    },
+    {
+      "ID": 9962,
+      "Entries": [
+        "For bosses - forgotten sinners - one light -- ボス用-忘れられた罪人-ライト１個"
+      ]
+    },
+    {
+      "ID": 9963,
+      "Entries": [
+        "For Bosses - Old Dragon -- ボス用-古龍"
+      ]
+    },
+    {
+      "ID": 9964,
+      "Entries": [
+        "For Bosses - Wyvern -- ボス用-ワイバーン"
+      ]
+    },
+    {
+      "ID": 9965,
+      "Entries": [
+        "For bosses - super oversized -- ボス用-超特大"
+      ]
+    },
+    {
+      "ID": 9966,
+      "Entries": [
+        "For the Boss - Warrior in the Mirror -- ボス用-鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 9967,
+      "Entries": [
+        "For Bosses - Agaduran Stand -- ボス用-アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 9968,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "m10_14 Gerdra Zakos 1 -- m10_14\u3000ジェルドラ・ザコボス戦１"
+      ]
+    },
+    {
+      "ID": 154000,
+      "Entries": [
+        "m10_23 Skeleton Aristocracy -- m10_23\u3000スケルトン貴族"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "m10_15 Wyburn -- m10_15\u3000ワイバーン"
+      ]
+    },
+    {
+      "ID": 223500,
+      "Entries": [
+        "m10_33 Giant Rat -- m10_33\u3000巨大ネズミ"
+      ]
+    },
+    {
+      "ID": 226100,
+      "Entries": [
+        "m10_34 Dog Mouse: Color (2) -- m10_34\u3000犬ネズミ：色②"
+      ]
+    },
+    {
+      "ID": 303300,
+      "Entries": [
+        "m10_18 Double-sided warrior: Snake head -- m10_18\u3000両面戦士：ヘビ頭"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "m10_19 Daemon Knight -- m10_19\u3000デーモンナイト"
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 309600,
+      "Entries": [
+        "m10_10 New Giant Senior Soldier (Deceased) -- m10_10\u3000新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 309610,
+      "Entries": [
+        "m20_21 Heavy Cavalry: Soldiers Only 2 Bodies -- m20_21\u3000重騎馬兵：兵士のみ\u30002体戦"
+      ]
+    },
+    {
+      "ID": 309700,
+      "Entries": [
+        "m20_10 New Giant Senior Soldier (Live) -- m20_10\u3000新・巨人上級兵士（生者）"
+      ]
+    },
+    {
+      "ID": 318000,
+      "Entries": [
+        "m10_10 Bay grant -- m10_10\u3000ベイグラント"
+      ]
+    },
+    {
+      "ID": 324000,
+      "Entries": [
+        "m10_16 Against Gargoil -- m10_16\u3000ガーゴイル戦"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "m10_16 Warrior in the Mirror -- m10_16\u3000鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "m10_25 Butcher -- m10_25\u3000ブッチャー"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "m20_21 Queen Knight A -- m20_21\u3000王妃の騎士A"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "m20_24 Queen Knight B -- m20_24\u3000王妃の騎士B"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "m10_17 Javazahat -- m10_17\u3000ジャバザハット"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "m10_17- N. Sa. -- m10_17\u3000ナーガ"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "m10_32 Manscorpion ♀ -- m10_32\u3000マンスコーピオン♀"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "m20_21 Mirror Night -- m20_21\u3000ミラーナイト"
+      ]
+    },
+    {
+      "ID": 506100,
+      "Entries": [
+        "m40_03 Agaduran Stand -- m40_03\u3000アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 514600,
+      "Entries": [
+        "m20_24 The Old King -- m20_24\u3000年老いた王"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "m10_27 The Old Dragon -- m10_27\u3000古の龍"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "m20_11 Beautiful Frog -- m20_11\u3000美声カエル"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "m10_14 The Spider Queen- the same for the first half. -- m10_14\u3000蜘蛛の女王\u3000前半戦も同じ"
+      ]
+    },
+    {
+      "ID": 607000,
+      "Entries": [
+        "m10_19 Iron Daemon -- m10_19\u3000熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "m10_31 Heavy Cavalry: Soldiers Only -- m10_31\u3000重騎馬兵：兵士のみ"
+      ]
+    },
+    {
+      "ID": 619100,
+      "Entries": [
+        "m10_23 Silver Chariot -- m10_23\u3000シルバーチャリオット"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "m10_31 Ornstein -- m10_31\u3000オーンスタイン"
+      ]
+    },
+    {
+      "ID": 626000,
+      "Entries": [
+        "m10_16 Forgotten Sinners - 0 Lights -- m10_16\u3000忘れられた罪人-ライト０個"
+      ]
+    },
+    {
+      "ID": 626001,
+      "Entries": [
+        "m10_16 Forgotten Sinners - One Light -- m10_16\u3000忘れられた罪人-ライト１個"
+      ]
+    },
+    {
+      "ID": 626002,
+      "Entries": [
+        "m10_16 Forgotten Sinners - Two Lights -- m10_16\u3000忘れられた罪人-ライト２個"
+      ]
+    },
+    {
+      "ID": 627000,
+      "Entries": [
+        "m20_21 Queen's Armor -- m20_21\u3000王妃の鎧形態"
+      ]
+    },
+    {
+      "ID": 675000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 679000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 679100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 681000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 689000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 691000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 692000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 800010,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

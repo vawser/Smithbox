@@ -1,0 +1,605 @@
+{
+  "Name": "npctalkparam_m10_31_00_00",
+  "Entries": [
+    {
+      "ID": 76900000,
+      "Entries": [
+        "Talkto: First Time 1"
+      ]
+    },
+    {
+      "ID": 76900010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900100,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 76900110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900200,
+      "Entries": [
+        "Menu Conversation: Part 2"
+      ]
+    },
+    {
+      "ID": 76900210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900300,
+      "Entries": [
+        "Menu Conversation: Part 3"
+      ]
+    },
+    {
+      "ID": 76900310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900400,
+      "Entries": [
+        "Menu Conversation: Part 4"
+      ]
+    },
+    {
+      "ID": 76900410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76900430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76901100,
+      "Entries": [
+        "Talk to: First 2"
+      ]
+    },
+    {
+      "ID": 76901110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76901300,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 76901310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76901400,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 76901410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76901500,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 76906000,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 76906010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 76909000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 76909100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 76909200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 76909300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 76909400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76909410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76909420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 76909500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 76909600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 78500000,
+      "Entries": [
+        "If you don't have a proof of good will: First look"
+      ]
+    },
+    {
+      "ID": 78500010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500100,
+      "Entries": [
+        "If you don't have a proof of good will: Loop"
+      ]
+    },
+    {
+      "ID": 78500110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500200,
+      "Entries": [
+        "If you have a proof of good will: First look"
+      ]
+    },
+    {
+      "ID": 78500210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500250,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 78500300,
+      "Entries": [
+        "If you have a proof of good will: YES/NO Dialog:YES"
+      ]
+    },
+    {
+      "ID": 78500310,
+      "Entries": [
+        "↓Confirmation dialog for obtaining the pledge ring \"Mark of protection\""
+      ]
+    },
+    {
+      "ID": 78500320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500340,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500350,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500360,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500400,
+      "Entries": [
+        "If you have a proof of good will: YES/NO Dialog:NO: First Look"
+      ]
+    },
+    {
+      "ID": 78500410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500500,
+      "Entries": [
+        "If you have a proof of good intentions: First Look: YES/NO Dialog: NO Selection: First Look"
+      ]
+    },
+    {
+      "ID": 78500510,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 78500600,
+      "Entries": [
+        "If you have a proof of good intentions: AFTER NO SELECTION: YES/NO DIALOG: NO SELECTION"
+      ]
+    },
+    {
+      "ID": 78500700,
+      "Entries": [
+        "After the pledge contractNPC Menu Open"
+      ]
+    },
+    {
+      "ID": 78500800,
+      "Entries": [
+        "After the pledge was destroyed: First look"
+      ]
+    },
+    {
+      "ID": 78500810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78500900,
+      "Entries": [
+        "After the pledge is destroyed: loop"
+      ]
+    },
+    {
+      "ID": 78501000,
+      "Entries": [
+        "Leaving (did something)"
+      ]
+    },
+    {
+      "ID": 78501100,
+      "Entries": [
+        "Leaving (did nothing)"
+      ]
+    },
+    {
+      "ID": 78501200,
+      "Entries": [
+        "I suddenly left."
+      ]
+    },
+    {
+      "ID": 78505000,
+      "Entries": [
+        "NPC Menu Conversation_Part 1 (Pattern: 1⇒2⇒3 Loop)"
+      ]
+    },
+    {
+      "ID": 78505010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505100,
+      "Entries": [
+        "NPC Menu Conversation_Part 2"
+      ]
+    },
+    {
+      "ID": 78505110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505200,
+      "Entries": [
+        "NPC Menu Conversation_Part 3"
+      ]
+    },
+    {
+      "ID": 78505210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78505240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506000,
+      "Entries": [
+        "dedication conversation _ pledge up to rank one"
+      ]
+    },
+    {
+      "ID": 78506010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506100,
+      "Entries": [
+        "up to dedication conversation_ pledge rank 2"
+      ]
+    },
+    {
+      "ID": 78506110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506200,
+      "Entries": [
+        "dedication conversation _ pledge up to rank three"
+      ]
+    },
+    {
+      "ID": 78506210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78506300,
+      "Entries": [
+        "Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 78506310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78509000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 78509100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 78509200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 78509300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 78509400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78509410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78509420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78509500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 78509600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

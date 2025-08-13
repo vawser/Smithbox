@@ -1,0 +1,29 @@
+{
+  "Name": "AttachObj_Pc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy data -- ダミーデータ"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "extensions -- エクステ"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "auxiliary booster -- 補助ブースター"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "Test data ① -- テストデータ①"
+      ]
+    }
+  ]
+}

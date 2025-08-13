@@ -1,0 +1,77 @@
+{
+  "Name": "GamePresenceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Prohibited from use -- 使用禁止"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "garage -- ガレージ"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "In-game (single play) -- インゲーム(シングルプレイ)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "In-game (multiplayer) -- インゲーム(マルチプレイ)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Garage: Sortie flow -- ガレージ：出撃フロー"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Garage: Briefing -- ガレージ：ブリーフィング"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Mission: Endflow -- ミッション：エンドフロー"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "NPC Arena: End Flow -- NPCアリーナ：エンドフロー"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Move map: End flow -- ムーブマップ：終了フロー"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "photo mode -- フォトモード"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "time stop message box -- 時止めメッセージボックス"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Save confirmation context menu -- セーブ確認コンテキストメニュー"
+      ]
+    }
+  ]
+}

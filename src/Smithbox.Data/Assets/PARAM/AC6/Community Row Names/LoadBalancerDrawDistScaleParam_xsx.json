@@ -1,0 +1,137 @@
+{
+  "Name": "LoadBalancerDrawDistScaleParam_xsx",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "[LOD distance scale] Map/Obj small"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "[LOD Distance Scale] Map/Obj Medium"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "[LOD distance scale] Map/Obj large"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "[LOD distance scale] Map/Obj extra large"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "[LOD distance scale] Chr small"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "[LOD distance scale] Chr Medium"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "[LOD distance scale] Chr large"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "[LOD distance scale] Chr extra large"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "[LOD distance scale] Local player"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "[LOD distance scale] Remote player"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "[LOD distance scale] Illusion"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[Texture LOD distance scale] Map/Obj small"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Medium"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "[Texture LOD distance scale] Map/Obj large"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "[Texture LOD Distance Scale] Map/Obj Extra Large"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "[Texture LOD distance scale] Chr small"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Medium"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "[Texture LOD distance scale] Chr large"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "[Texture LOD Distance Scale] Chr Extra Large"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "[Texture LOD distance scale] Local player"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "[Texture LOD distance scale] Remote player"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "[Texture LOD Distance Scale] Illusion"
+      ]
+    }
+  ]
+}

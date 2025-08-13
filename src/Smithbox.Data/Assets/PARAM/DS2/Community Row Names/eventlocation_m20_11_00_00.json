@@ -1,0 +1,935 @@
+{
+  "Name": "eventlocation_m20_11_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intrusion Point 1-10"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Intrusion Point 1-11"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Intrusion Point 1-12"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Intrusion Point 1-13"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Intrusion Point 1-14"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Intrusion Point 1-15"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Intrusion Point 1-16"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Intrusion Point 1-17"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Intrusion Point 1-18"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Intrusion Point 1-19"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Intrusion Point 1-20"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Intrusion Point 2-9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Intrusion Point 2-10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Intrusion Point 2-11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Intrusion Point 2-12"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Intrusion Point 3-5"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Intrusion Point 3-6"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Intrusion Point 3-7"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Intrusion Point 3-8"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Intrusion Point 3-9"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Intrusion Point 4-1"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Intrusion Point 4-2"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Intrusion Point 4-3"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Intrusion Point 4-4"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Intrusion Point 4-5"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Intrusion Point 4-6"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Intrusion Point 4-7"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice blood character】Hidden door 3"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 3"
+      ]
+    },
+    {
+      "ID": 201100,
+      "Entries": [
+        "For backlead safety [King's Castle]"
+      ]
+    },
+    {
+      "ID": 201101,
+      "Entries": [
+        "For backlead safety [Immortal Mausoleum]"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Boss: Beautiful Voice Frog Battle Start Judgment"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Beautiful Voice Frog's Singing Voice_ Play"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Beautiful Voice Frog's Singing Voice_Play 2"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Beautiful Voice Frog Singing Voice_ Stop"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Beautiful Voice Frog Singing Voice_Stop 2"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Lifts -The Tomb of Immortality"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Lift-The Tomb of Immortality"
+      ]
+    },
+    {
+      "ID": 404000,
+      "Entries": [
+        "Elevator_Connection Replacement Point"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Change of the door_navimesh of the living person"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Change of the door of the dead_navimesh"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 6000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "【NPC for Multi: The Magician(Male)】Black Spirit Appearance Area"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "【NPC】Girl 1's singing voice begins"
+      ]
+    },
+    {
+      "ID": 20000001,
+      "Entries": [
+        "Girl (1) Singing Range 2"
+      ]
+    },
+    {
+      "ID": 20000010,
+      "Entries": [
+        "【NPC】Girl 1's singing voice stops"
+      ]
+    },
+    {
+      "ID": 20000020,
+      "Entries": [
+        "【NPC】Girl 1's singing voice resumes"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "【NPC】Girl 2's singing voice begins"
+      ]
+    },
+    {
+      "ID": 20000110,
+      "Entries": [
+        "【NPC】Girl 2's singing voice stops"
+      ]
+    },
+    {
+      "ID": 20000120,
+      "Entries": [
+        "【NPC】Girl 2's singing voice resumes"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Aisle to Tower 1 _ Banshee Launch"
+      ]
+    },
+    {
+      "ID": 50000010,
+      "Entries": [
+        "Start the lizard under tower 1"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "outside tower one_lizard start_1"
+      ]
+    },
+    {
+      "ID": 50000105,
+      "Entries": [
+        "Outside Tower 1_Lizard Launch_2"
+      ]
+    },
+    {
+      "ID": 50000106,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000110,
+      "Entries": [
+        "outside tower one_lizard start_3"
+      ]
+    },
+    {
+      "ID": 50000115,
+      "Entries": [
+        "Outside Tower 1_Lizard Launch_4"
+      ]
+    },
+    {
+      "ID": 50000120,
+      "Entries": [
+        "out of the house one_lizard start_1"
+      ]
+    },
+    {
+      "ID": 50000125,
+      "Entries": [
+        "out of the house one_lizard start_2"
+      ]
+    },
+    {
+      "ID": 50000130,
+      "Entries": [
+        "out of the house one_lizard start_3"
+      ]
+    },
+    {
+      "ID": 50000135,
+      "Entries": [
+        "out of the house one_lizard start_4"
+      ]
+    },
+    {
+      "ID": 50000140,
+      "Entries": [
+        "out of the house one_lizard start_5"
+      ]
+    },
+    {
+      "ID": 50000145,
+      "Entries": [
+        "out of the house one_lizard start_6"
+      ]
+    },
+    {
+      "ID": 50000150,
+      "Entries": [
+        "out of the house one_lizard start_7"
+      ]
+    },
+    {
+      "ID": 50000151,
+      "Entries": [
+        "start _cleric out of house one"
+      ]
+    },
+    {
+      "ID": 50000152,
+      "Entries": [
+        "Cleric Launch 2"
+      ]
+    },
+    {
+      "ID": 50000153,
+      "Entries": [
+        "Cleric Start 3"
+      ]
+    },
+    {
+      "ID": 50000155,
+      "Entries": [
+        "New"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Stooping Fire 2 Outside _ Lizard Launch"
+      ]
+    },
+    {
+      "ID": 50000310,
+      "Entries": [
+        "Blue Grass Area_Lizard Launch_1"
+      ]
+    },
+    {
+      "ID": 50000315,
+      "Entries": [
+        "Blue Grass Area_Lizard Launch_2"
+      ]
+    },
+    {
+      "ID": 50000320,
+      "Entries": [
+        "Blue Grass Area_Lizard Launch_3"
+      ]
+    },
+    {
+      "ID": 50000325,
+      "Entries": [
+        "Blue Grass Area_Lizard Launch_4"
+      ]
+    },
+    {
+      "ID": 50000330,
+      "Entries": [
+        "Blue Grass Area_Lizard Launch_5"
+      ]
+    },
+    {
+      "ID": 50000400,
+      "Entries": [
+        "Subroute 3_Lizard Launch"
+      ]
+    },
+    {
+      "ID": 50000600,
+      "Entries": [
+        "Red Fan Kojima_Lizard Launch_1"
+      ]
+    },
+    {
+      "ID": 50000700,
+      "Entries": [
+        "outside the house two_lizard start_1"
+      ]
+    },
+    {
+      "ID": 50000705,
+      "Entries": [
+        "outside house 2_lizard start_2"
+      ]
+    },
+    {
+      "ID": 50000710,
+      "Entries": [
+        "outside house 2_lizard start_3"
+      ]
+    },
+    {
+      "ID": 50000720,
+      "Entries": [
+        "outside house 2_lizard start_4"
+      ]
+    },
+    {
+      "ID": 50000730,
+      "Entries": [
+        "outside house 2_lizard start_5"
+      ]
+    },
+    {
+      "ID": 50000740,
+      "Entries": [
+        "outside house 2_lizard start_6"
+      ]
+    },
+    {
+      "ID": 50000750,
+      "Entries": [
+        "The Door of the Living_ Cleric Launch Area"
+      ]
+    },
+    {
+      "ID": 50000800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "I just want you to prepare for your return so that lizards don't kill girls."
+      ]
+    },
+    {
+      "ID": 51000020,
+      "Entries": [
+        "No lizards escape in the cave"
+      ]
+    },
+    {
+      "ID": 51000030,
+      "Entries": [
+        "No lizards escape in the cave"
+      ]
+    },
+    {
+      "ID": 51000040,
+      "Entries": [
+        "Kingdom Escort Sehomed Return Area"
+      ]
+    },
+    {
+      "ID": 51008540,
+      "Entries": [
+        "No cleric entry in front of the white door"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Navigation point 1 for the tower 1_2F_ banshee"
+      ]
+    },
+    {
+      "ID": 52000001,
+      "Entries": [
+        "Navi point 2 for the tower 1_2F_ banshee"
+      ]
+    },
+    {
+      "ID": 52000010,
+      "Entries": [
+        "Navigation point 1 for the tower 1_2F_ banshee"
+      ]
+    },
+    {
+      "ID": 52000011,
+      "Entries": [
+        "Navi point 2 for the tower 1_2F_ banshee"
+      ]
+    },
+    {
+      "ID": 52000020,
+      "Entries": [
+        "Navi point 1 for outside house 1_Banshee"
+      ]
+    },
+    {
+      "ID": 52000021,
+      "Entries": [
+        "Navi Point 2 for Outside House 1_Banshee"
+      ]
+    },
+    {
+      "ID": 52000030,
+      "Entries": [
+        "Navi point 1 for the altar_banshee"
+      ]
+    },
+    {
+      "ID": 52000031,
+      "Entries": [
+        "Navi Point 2 for Banshee on the altar"
+      ]
+    },
+    {
+      "ID": 52000040,
+      "Entries": [
+        "Navi Point 1 for Under altar_Banshee A"
+      ]
+    },
+    {
+      "ID": 52000041,
+      "Entries": [
+        "Navi Point 2 for Under altar_Banshee A"
+      ]
+    },
+    {
+      "ID": 52000050,
+      "Entries": [
+        "Navi Point 1 for Under altar_Banshee B"
+      ]
+    },
+    {
+      "ID": 52000051,
+      "Entries": [
+        "Navi Point 2 for Under altar_Banshee B"
+      ]
+    },
+    {
+      "ID": 52000060,
+      "Entries": [
+        "Navi point 1 for outside altar_banshee"
+      ]
+    },
+    {
+      "ID": 52000061,
+      "Entries": [
+        "Navi Point 2 for Outside Altar_Banshee"
+      ]
+    },
+    {
+      "ID": 52000070,
+      "Entries": [
+        "Start passage_Navi point for banshee 1"
+      ]
+    },
+    {
+      "ID": 52000071,
+      "Entries": [
+        "Start Passage_Navi Point 2 for Banshee"
+      ]
+    },
+    {
+      "ID": 52000080,
+      "Entries": [
+        "Navi Point 1 for Subroute 1_Banshee"
+      ]
+    },
+    {
+      "ID": 52000081,
+      "Entries": [
+        "Subroute 1_Banshee Navi Point 2"
+      ]
+    },
+    {
+      "ID": 52000090,
+      "Entries": [
+        "Subroute 1 Back_Banshee Navi Point 1"
+      ]
+    },
+    {
+      "ID": 52000091,
+      "Entries": [
+        "Subroute 1 Back_Banshee Navi Point 2"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "Navi point for the door of the living person_Banshee"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52001101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52002001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59000000,
+      "Entries": [
+        "White fan appearance point"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "[Tower (4) Goal] Wandering Knight"
+      ]
+    }
+  ]
+}

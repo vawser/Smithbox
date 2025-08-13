@@ -1,0 +1,773 @@
+{
+  "Name": "generatordbglocation_m10_10_00_00",
+  "Entries": [
+    {
+      "ID": 60,
+      "Entries": [
+        "【NPC Tsukiko-ya】 NPC Tsukiko Grandfather -- 【NPC月光爺】 NPC月光爺"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【NPC Tsukiko-ya】 NPC Tsukiko ya (Ghost) -- 【NPC月光爺】 NPC月光爺（亡霊）"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "【NPC Patch】 NPC Patch (Modern) -- 【NPCパッチ】 NPCパッチ(現代)"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "【NPC Patch】 NPC Patch (Modern) (Ghost) -- 【NPCパッチ】 NPCパッチ(現代)（亡霊）"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "【Map writing】 Npc -- 【地図書き】NPC"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "【Map writing】 NPC (Ghost) -- 【地図書き】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "【Yorozu Babaa】 Npc -- 【よろずババア】NPC"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "【Yorozu Babaa】 NPC (Ghost) -- 【よろずババア】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "[Black Spirit] Enclosed Man -- 【黒霊】封じられた人"
+      ]
+    },
+    {
+      "ID": 526,
+      "Entries": [
+        "【White Spirit】Patch -- 【白霊】パッチ"
+      ]
+    },
+    {
+      "ID": 853,
+      "Entries": [
+        "Bay Grand Bay Ground -- 【ベイグランド】 ベイグランド"
+      ]
+    },
+    {
+      "ID": 857,
+      "Entries": [
+        "【BOSS】 New Giant Senior Soldier (Deceased) -- 【BOSS】 新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Road of the riverside ♪ Look around] lower-level soldier (deceased): Dagger -- 【河原の道_見回しながらうろうろ】下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Road of the riverside ♪ Look around] lower-level soldier (deceased): Dagger -- 【河原の道_見回しながらうろうろ】下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1081,
+      "Entries": [
+        "[Kawarahashi_ Battle _ Beyond the Bridge] Lower Soldier (Deceased): Dagger -- 【河原橋_戦闘_橋の先】下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1082,
+      "Entries": [
+        "[Kawarahashi_ Battle _ Beyond the Bridge] Lower-level soldiers (dead) bare hands -- 【河原橋_戦闘_橋の先】下級兵士（亡者）：素手"
+      ]
+    },
+    {
+      "ID": 1083,
+      "Entries": [
+        "[Kawarahashi_ Battle _ Beyond the Bridge] Lower-class soldiers (deceased) one-handed sword : small shield -- 【河原橋_戦闘_橋の先】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1084,
+      "Entries": [
+        "[Kawarahashi_ Battle _ The Middle of the Slope] Lower-level soldier (deceased): Bow -- 【河原橋_戦闘_坂の途中】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 1085,
+      "Entries": [
+        "[Kawarahashi _ Item acquisition start _ face down] lower-level soldier (dead person) one-handed axe -- 【河原橋_アイテム取得で起動_うつ伏せ】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Kawarahashi _ Battle _ on the roof] kingdom soldier (deceased): bow -- 【河原橋_戦闘_屋根の上】王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Arena spiral stairs on the battle] lower-class soldier (dead) one-handed axe -- 【アリーナ螺旋階段上_戦闘】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "[Scaffolding on the arena _ combat] lower-level soldier (deceased): bow -- 【アリーナ上足場_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "[Arena spiral stairs on _ battle] lower-level soldier (dead) bare hands -- 【アリーナ螺旋階段上_戦闘】下級兵士（亡者）：素手"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "【Arena_Wandering】Lower Soldier (Deceased) One-Handed Axe -- 【アリーナ_徘徊】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "【Arena_Wandering】Lower-level soldier (deceased) dagger_1 -- 【アリーナ_徘徊】下級兵士（亡者）：短剣_1"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "[Arena_ Corpse Mimicry] Lower soldier (deceased): One-handed sword: Small shield -- 【アリーナ_死体擬態】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "[Arena_ Corpse Mimicry] Lower Soldier (Deceased): Dagger_2 -- 【アリーナ_死体擬態】下級兵士（亡者）：短剣_2"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "【Arena_Rare Drop Personnel】Wandering Knight (Dead): One-handed sword -- 【アリーナ_レアドロップ要員】彷徨える騎士（亡者）：片手剣"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "[Outer wall passage _corner_combat] lower-level soldier (deceased) one-handed sword : small shield -- 【外壁通路_角_戦闘】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1161,
+      "Entries": [
+        "[Outer Wall Passage_Small Room_Combat】Lower Soldier (Deceased): Dagger -- 【外壁通路_小部屋_戦闘】下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1162,
+      "Entries": [
+        "[Outer Wall Passage_Small Room_Combat】Lower Soldier (Deceased): One-handed axe -- 【外壁通路_小部屋_戦闘】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "[Outer Wall Passage _ Dash Attack] Kingdom Soldier (Deceased): Two-Handed Sword -- 【外壁通路_ダッシュ攻撃】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "[Upper _long distance on the stairs of the outer wall passage] lower-level soldier (deceased) flame vase -- 【外壁通路階段上_遠距離】下級兵士（亡者）：火炎壺"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "[Outer wall aisle stairs on the front] lower-level soldier (deceased) one-handed sword : small shield -- 【外壁通路階段上_正面】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "[On the stairs of the outer wall passage] right hand: lower-level soldier (deceased): Dagger -- 【外壁通路階段上_右手】下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1192,
+      "Entries": [
+        "[Rear hide on the stairs of the outer wall passage] lower-class soldier (deceased) one-handed axe -- 【外壁通路階段上後方_隠れ】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "[Outer Wall Wooden Scaffolding_ Proximity _ Rear] Lower Soldier (Deceased): Dagger -- 【外壁木製足場_近接_後方】 下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1261,
+      "Entries": [
+        "[Outer Wall Wooden Scaffolding_ Proximity _ Front] Lower Soldier (Deceased): One-handed axe -- 【外壁木製足場_近接_前方】 下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1266,
+      "Entries": [
+        "[Outer Wall Wooden Scaffolding _ Back _ Battle] Lower soldiers (deceased) one-handed sword -- 【外壁木製足場_奥の上_戦闘】 下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "[Outer wall wooden scaffolding under_ wandering proximity] lower-level soldier (deceased) dagger -- 【外壁木製足場下_徘徊近接】 下級兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 1271,
+      "Entries": [
+        "[Outer wall wooden scaffolding under_ wandering proximity] lower-level soldiers (deceased) bare hand_1 -- 【外壁木製足場下_徘徊近接】 下級兵士（亡者）：素手_1"
+      ]
+    },
+    {
+      "ID": 1272,
+      "Entries": [
+        "[Outer wall wooden scaffolding_ wandering proximity] lower-level soldiers (deceased) bare hands_2 -- 【外壁木製足場下_徘徊近接】 下級兵士（亡者）：素手_2"
+      ]
+    },
+    {
+      "ID": 1273,
+      "Entries": [
+        "[Outer wall wooden scaffolding under] battle】 lower-class soldier (deceased): one-handed axe -- 【外壁木製足場下_戦闘】 下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1274,
+      "Entries": [
+        "[Outer wall wooden scaffolding under_ wandering proximity] lower-class soldiers (deceased) one-handed sword - small shield -- 【外壁木製足場下_徘徊近接】 下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1275,
+      "Entries": [
+        "[Outer wall wooden scaffolding under_ corpse mimicry] lower-level soldier (deceased): dagger_2 -- 【外壁木製足場下_死体擬態】 下級兵士（亡者）：短剣_2"
+      ]
+    },
+    {
+      "ID": 1277,
+      "Entries": [
+        "[Exterior wall wooden scaffolding _ jumping into the salamander hole] lower-class soldier (deceased) one-handed sword : small shield -- 【外壁木製足場_サラマンダー穴へ飛び降り】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1278,
+      "Entries": [
+        "[Exterior wall wooden scaffolding _ jumping into the salamander hole] lower-class soldier (deceased) one-handed sword : small shield -- 【外壁木製足場_サラマンダー穴へ飛び降り】下級兵士（亡者）：片手剣：小盾"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "[Main tower side road _ proximity] kingdom soldier (deceased): two-handed long axe -- 【主塔脇道_近接】 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Main Tower 2F Key Room_ Sitting] Kingdom Soldier (Deceased): Two-Handed Sword -- 【主塔2F鍵部屋_座り】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "[Waterway_ Running assault] Kingdom soldier (deceased): two-handed long axe -- 【水路_走って強襲】 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "[Waterway_ Corpse Mimicry] Kingdom Soldier (deceased): Two-handed sword -- 【水路_死体擬態】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1411,
+      "Entries": [
+        "[Waterway_Bridge Tip_ Corpse Mimicry] Kingdom Soldier (Deceased): Two-handed sword -- 【水路_橋の先_死体擬態】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Light stand room _ wake up surprise] kingdom soldier (dead): two-handed sword -- 【灯火台部屋_起き上がり奇襲】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1641,
+      "Entries": [
+        "[Dark passage _ corpse mimicry] kingdom soldier (dead): two-handed long axe -- 【暗闇通路_死体擬態】 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 1650,
+      "Entries": [
+        "[Dark passage_Proximity] Kingdom heavy soldiers: color (1)_1 -- 【暗闇通路_近接】 王国重兵士：色①_1"
+      ]
+    },
+    {
+      "ID": 1651,
+      "Entries": [
+        "[Dark passage_Proximity] Kingdom heavy soldiers: color (1)_2 -- 【暗闇通路_近接】 王国重兵士：色①_2"
+      ]
+    },
+    {
+      "ID": 1660,
+      "Entries": [
+        "[Dark passage _ flame bottle] kingdom soldier (dead): two-handed sword -- 【暗闇通路_火炎瓶】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1680,
+      "Entries": [
+        "[Dark passage_long distance] Kingdom soldier (dead): spear, shield -- 【暗闇通路_遠距離】 王国兵士（亡者）：槍、盾"
+      ]
+    },
+    {
+      "ID": 1770,
+      "Entries": [
+        "【Ground cracking square building_combat】Lower-level soldiers (deceased): One-handed axe -- 【地割れ広場建物内_戦闘】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1771,
+      "Entries": [
+        "【Ground cracking square building_combat】Lower-level soldiers (deceased): Bow -- 【地割れ広場建物内_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 1772,
+      "Entries": [
+        "【Ground cracking square building】Kingdom heavy soldiers: Color (3) -- 【地割れ広場建物内】王国重兵士：色③"
+      ]
+    },
+    {
+      "ID": 1784,
+      "Entries": [
+        "【Ground cracking square rooftop】Kingdom heavy soldiers: Color (3) -- 【地割れ広場屋上】王国重兵士：色③"
+      ]
+    },
+    {
+      "ID": 1789,
+      "Entries": [
+        "【Ground cracking square rooftop】Kingdom heavy soldiers: Color (3) -- 【地割れ広場屋上】王国重兵士：色③"
+      ]
+    },
+    {
+      "ID": 1790,
+      "Entries": [
+        "[Corner of the building of the ground cracking square _ ambush] lower-level soldier (deceased) one-handed axe -- 【地割れ広場建物外の角_待ち伏せ】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[Building in front of the ground cracking square bonfire _ Seoul Black] Kingdom heavy soldiers: color (1) -- 【地割れ広場篝火手前の建物_ソウルブラック】王国重兵士：色①"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[Ground cracking back _ bow change] kingdom soldier (dead): two-handed sword -- 【地割れ奥_弓持ち替え】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 1820,
+      "Entries": [
+        "[Ground cracking fence front] kingdom heavy soldiers -- 【地割れ柵手前】王国重兵士"
+      ]
+    },
+    {
+      "ID": 1830,
+      "Entries": [
+        "[End of the ground cracking square] kingdom heavy soldiers -- 【地割れ広場終端】王国重兵士"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Submerged square _ fall appearance] lower-class soldier (dead) one-handed axe -- 【水没広場_落下登場】下級兵士（亡者）：片手斧"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "【Submerged Square_Combat】Lower-level soldiers (deceased): Bow -- 【水没広場_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "【Submerged Square_Combat】Lower-level soldiers (deceased): Bow -- 【水没広場_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "【Submerged Square_Combat】Lower-level soldiers (deceased): Bow -- 【水没広場_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2033,
+      "Entries": [
+        "【Submerged Square_Combat】Lower-level soldiers (deceased): Bow -- 【水没広場_戦闘】下級兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "【Submerged Square_Landing Tag】Kingdom Soldier (Deceased): Spear Shield -- 【水没広場_踊り場タッグ】王国兵士（亡者）：槍盾"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "[Submerged Square Cave _ Battle] lower-level soldier (deceased): bare hands -- 【水没広場洞窟_戦闘】下級兵士（亡者）：素手"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "【Submerged Plaza Ladder Front_Ambush】Kingdom Soldier (Deceased): Two-Handed Sword -- 【水没広場梯子前_待ち伏せ】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "[L-shaped passage_ barricade back] kingdom soldier (dead) two-handed sword -- 【L字通路_バリケード裏】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2231,
+      "Entries": [
+        "[L-shaped passage_ barricade back] kingdom soldier (dead) two-handed long axe -- 【L字通路_バリケード裏】 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 2235,
+      "Entries": [
+        "[L-shaped passage_ behind the barricade] kingdom soldier (dead): spear -- 【L字通路_バリケード後ろ】 王国兵士（亡者）：槍"
+      ]
+    },
+    {
+      "ID": 2236,
+      "Entries": [
+        "[L-shaped passage_ behind the barricade] kingdom soldier (dead): two-handed long axe -- 【L字通路_バリケード後ろ】 王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "[L-shaped passage _ flame bottle] kingdom soldier (dead): two-handed sword -- 【L字通路上_火炎瓶】 王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2255,
+      "Entries": [
+        "[L-shaped passage _ boss outpost] Bay Grant _ hawk appearance -- 【L字通路上_ボス前哨戦】ベイグラント_鷹出現"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Before the patch passage _ battle] kingdom soldier (dead): two-handed bow -- 【パッチ通路前_戦闘】 王国兵士（亡者）：両手弓"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "[Before the patch passage _ combat] lower-level soldier (dead person): one-handed sword -- 【パッチ通路前_戦闘】下級兵士（亡者）：片手剣"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[Before the patch passage _ combat] lower-level soldier (deceased): dagger -- 【パッチ通路前_戦闘】下級国兵士（亡者）：短剣"
+      ]
+    },
+    {
+      "ID": 2350,
+      "Entries": [
+        "[Side communication passage _patch trap] kingdom soldier (deceased): two-handed long axe: _dash proximity for patch passage -- 【側面連絡通路_パッチ罠】 王国兵士（亡者）：両手長斧：パッチ通路用_ダッシュ近接"
+      ]
+    },
+    {
+      "ID": 2351,
+      "Entries": [
+        "[Side communication passage _ patch trap] lower-level soldier (deceased): one-handed sword - small shield _ dash proximity for patch passage -- 【側面連絡通路_パッチ罠】 下級兵士（亡者）：片手剣：小盾：パッチ通路用_ダッシュ近接"
+      ]
+    },
+    {
+      "ID": 2352,
+      "Entries": [
+        "[Side communication passage _patch trap] lower-level soldier (deceased): bare hands _ dash proximity for patch passage -- 【側面連絡通路_パッチ罠】 下級兵士（亡者）：素手：パッチ通路用_ダッシュ近接"
+      ]
+    },
+    {
+      "ID": 2353,
+      "Entries": [
+        "[Side communication passage _ patch trap] lower-level soldiers (deceased) spear shield for patch passage -- 【側面連絡通路_パッチ罠】 下級兵士（亡者）：槍盾：パッチ通路用"
+      ]
+    },
+    {
+      "ID": 2354,
+      "Entries": [
+        "[Side communication passage _patch trap] lower-level soldier (deceased): dagger for patch passage -- 【側面連絡通路_パッチ罠】 下級兵士（亡者）：短剣：パッチ通路用"
+      ]
+    },
+    {
+      "ID": 2356,
+      "Entries": [
+        "[Side communication passage _ patch trap _ bow escort] lower-level soldier (deceased) one-handed axe for patch passage -- 【側面連絡通路_パッチ罠_弓護衛】 下級兵士（亡者）：片手斧：パッチ通路用"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "[Barista room_ barista use] kingdom soldier (dead): two-handed sword_2 -- 【バリスタ部屋_バリスタ使用】王国兵士（亡者）：両手剣_2"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "[Barista room_ barista use] kingdom soldier (deceased): two-handed sword_3 -- 【バリスタ部屋_バリスタ使用】王国兵士（亡者）：両手剣_3"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "[Barista room_ barista use] kingdom soldier (dead): two-handed sword_4 -- 【バリスタ部屋_バリスタ使用】王国兵士（亡者）：両手剣_4"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[Barista room _ right hand waiting] kingdom soldier (dead person) stabbing sword : medium shield -- 【バリスタ部屋_右手待ち受け】王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "[Alarm room_door open] kingdom soldier (deceased): two-handed long axe -- 【アラーム部屋_扉開け】王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "[Alarm room _ combat] kingdom soldier (deceased): spear: medium shield -- 【アラーム部屋_戦闘】王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 2522,
+      "Entries": [
+        "[Alarm room_ combat] kingdom soldier (dead): two-handed ax_2 -- 【アラーム部屋_戦闘】王国兵士（亡者）：両手長斧_2"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[Flame Barrel Square_ Course Blocked] Kingdom Heavy Soldiers: Color (1) -- 【火炎樽広場_進路塞ぎ】王国重兵士：色①"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[Flame Barrel Square _ Flame Bottle] Kingdom Soldier (deceased): Two-handed sword_1 -- 【火炎樽広場_火炎瓶】王国兵士（亡者）：両手剣_1"
+      ]
+    },
+    {
+      "ID": 2611,
+      "Entries": [
+        "[Flame Barrel Square _ Flame Bottle] Kingdom Soldier (deceased): Two-handed sword_2 -- 【火炎樽広場_火炎瓶】王国兵士（亡者）：両手剣_2"
+      ]
+    },
+    {
+      "ID": 2612,
+      "Entries": [
+        "[Flame Barrel Square_ Spear Shield] Kingdom Soldier (deceased): -- 【火炎樽広場_槍盾】王国兵士（亡者）："
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "[Giant tree 2 front _ corpse mimicry] kingdom soldier (dead): spear: medium shield_1 -- 【巨人の木2手前_死体擬態】王国兵士（亡者）：槍：中盾_1"
+      ]
+    },
+    {
+      "ID": 2651,
+      "Entries": [
+        "[Giant tree 2 front _ corpse mimicry] kingdom soldier (deceased): spear: medium shield_2 -- 【巨人の木2手前_死体擬態】王国兵士（亡者）：槍：中盾_2"
+      ]
+    },
+    {
+      "ID": 2680,
+      "Entries": [
+        "[Giant's Wooden Hand 2 Front _ Soul Black] Kingdom Heavy Soldiers: Color (1) -- 【巨人の木手2前_ソウルブラック】王国重兵士：色①"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Giant Sword _ Proximity] Kingdom soldier (deceased): Spear: Medium Shield -- 【巨人剣上_近接】王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "[Giant sword _ jump] kingdom soldier (dead): two-handed sword -- 【巨人剣上_飛び降り】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2711,
+      "Entries": [
+        "[Giant sword _ jump] kingdom soldier (dead person) stabbing sword: medium shield -- 【巨人剣上_飛び降り】王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 2712,
+      "Entries": [
+        "[Giant sword _ jump] kingdom soldier (dead): two-handed long axe -- 【巨人剣上_飛び降り】王国兵士（亡者）：両手長斧"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "[Giant sword front _ item pre-corpse mimicry] kingdom soldier (dead): stabbing sword: medium shield -- 【巨人剣手前_アイテム前死体擬態】王国兵士（亡者）：刺突剣：中盾"
+      ]
+    },
+    {
+      "ID": 2721,
+      "Entries": [
+        "[Giant sword front _ item pre-corpse mimicry] kingdom soldier (dead): two-handed sword -- 【巨人剣手前_アイテム前死体擬態】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2730,
+      "Entries": [
+        "[Giant sword front _ battle] kingdom soldier (dead): spear: medium shield -- 【巨人剣手前_戦闘】王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 2731,
+      "Entries": [
+        "[Giant sword front _ battle] kingdom soldier (dead): spear: medium shield -- 【巨人剣手前_戦闘】王国兵士（亡者）：槍：中盾"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[Room in front of the elevator _ Proximity] kingdom soldier (dead): two-handed sword -- 【昇降機手前の部屋_近接】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2820,
+      "Entries": [
+        "[Elevating machine under _ fixed turret] kingdom soldier (deceased): bow -- 【昇降機下_固定砲台】王国兵士（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 2830,
+      "Entries": [
+        "[Before the door under the elevator] kingdom soldier (dead): two-handed sword -- 【昇降機下扉前_近接】王国兵士（亡者）：両手剣"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "【Under waterway_Fixed turret】Salamander -- 【水路下_固定砲台】サラマンダー"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "【Under waterway_Fixed turret】Salamander -- 【水路下_固定砲台】サラマンダー"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "[Salamander Cave _ Battle] Salamander -- 【サラマンダー洞窟_戦闘】サラマンダー"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "[Salamander Cave_ Flame fire to cave] Salamander -- 【サラマンダー洞窟_火炎洞窟へ火炎放射】サラマンダー"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Room where the front sword was stuck_ Ishimori] Ishimori -- 【前線剣が刺さった部屋_石守】 石守"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[In front of the king's door _ Red Phantom _2 laps appeared] NPC_01 -- 【王の扉前_赤ファントム_2周目出現】NPC_01"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[In front of the king's door _ Red Phantom _2 laps appeared] NPC_02 -- 【王の扉前_赤ファントム_2周目出現】NPC_02"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[On patch area lattice _ Red Phantom] Npc -- 【パッチエリア格子の上_赤ファントム】NPC"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Bay Grand Route Stairs _ Proximity] Kingdom Soldiers: Two-Handed Sword -- 【ベイグランドルート階段_近接】王国兵士：両手剣"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Bay Grand Route Stairs _ Proximity] Kingdom Soldiers: Two-Handed Sword -- 【ベイグランドルート階段_近接】王国兵士：両手剣"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[Bay Grand Route Stairs _ Soul Black] Kingdom Soldier: Two-Handed Sword -- 【ベイグランドルート階段_ソウルブラック】王国兵士：両手剣"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "[Ground cracking square _ giant tree roof _Soul Black] Npc -- 【地割れ広場_巨人の木屋上_ソウルブラック】NPC"
+      ]
+    }
+  ]
+}

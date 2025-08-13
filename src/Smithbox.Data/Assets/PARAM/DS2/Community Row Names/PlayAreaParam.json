@@ -1,0 +1,587 @@
+{
+  "Name": "PlayAreaParam",
+  "Entries": [
+    {
+      "ID": 101010,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101020,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101030,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101040,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101050,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101060,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101070,
+      "Entries": [
+        "[Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 101410,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101420,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101430,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101440,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101450,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101460,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101470,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101480,
+      "Entries": [
+        "[Brightstone Cove]"
+      ]
+    },
+    {
+      "ID": 101510,
+      "Entries": [
+        "[Aldia's Keep]"
+      ]
+    },
+    {
+      "ID": 101520,
+      "Entries": [
+        "[Aldia's Keep]"
+      ]
+    },
+    {
+      "ID": 101610,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101620,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101630,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101640,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101650,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101660,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101670,
+      "Entries": [
+        "[Lost Bastille]"
+      ]
+    },
+    {
+      "ID": 101710,
+      "Entries": [
+        "[Harvest Valley]"
+      ]
+    },
+    {
+      "ID": 101720,
+      "Entries": [
+        "[Harvest Valley]"
+      ]
+    },
+    {
+      "ID": 101730,
+      "Entries": [
+        "[Harvest Valley]"
+      ]
+    },
+    {
+      "ID": 101810,
+      "Entries": [
+        "[No Man's Wharf]"
+      ]
+    },
+    {
+      "ID": 101910,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101920,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101930,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101940,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101950,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101960,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 101970,
+      "Entries": [
+        "[Iron Keep]"
+      ]
+    },
+    {
+      "ID": 102310,
+      "Entries": [
+        "[Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 102320,
+      "Entries": [
+        "[Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 102330,
+      "Entries": [
+        "[Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 102340,
+      "Entries": [
+        "[Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 102350,
+      "Entries": [
+        "[Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 102510,
+      "Entries": [
+        "[The Gutter]"
+      ]
+    },
+    {
+      "ID": 102520,
+      "Entries": [
+        "[The Gutter]"
+      ]
+    },
+    {
+      "ID": 102530,
+      "Entries": [
+        "[The Gutter]"
+      ]
+    },
+    {
+      "ID": 102710,
+      "Entries": [
+        "[Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 102720,
+      "Entries": [
+        "[Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 103110,
+      "Entries": [
+        "[Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 103120,
+      "Entries": [
+        "[Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 103130,
+      "Entries": [
+        "[Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 103140,
+      "Entries": [
+        "[Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 103210,
+      "Entries": [
+        "[Shaded Woods]"
+      ]
+    },
+    {
+      "ID": 103320,
+      "Entries": [
+        "[Shaded Woods]"
+      ]
+    },
+    {
+      "ID": 103410,
+      "Entries": [
+        "[Grave of Saints]"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "[Giant Memories]"
+      ]
+    },
+    {
+      "ID": 201110,
+      "Entries": [
+        "[Shrine of Amana]"
+      ]
+    },
+    {
+      "ID": 201120,
+      "Entries": [
+        "[Shrine of Amana]"
+      ]
+    },
+    {
+      "ID": 201130,
+      "Entries": [
+        "[Shrine of Amana]"
+      ]
+    },
+    {
+      "ID": 202110,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202120,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202130,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202140,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202150,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202160,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202170,
+      "Entries": [
+        "[Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 202410,
+      "Entries": [
+        "[Undead Crypt]"
+      ]
+    },
+    {
+      "ID": 202420,
+      "Entries": [
+        "[Undead Crypt]"
+      ]
+    },
+    {
+      "ID": 400310,
+      "Entries": [
+        "[Dark Chasm of Old]"
+      ]
+    },
+    {
+      "ID": 400320,
+      "Entries": [
+        "[Dark Chasm of Old]"
+      ]
+    },
+    {
+      "ID": 400330,
+      "Entries": [
+        "[Dark Chasm of Old]"
+      ]
+    },
+    {
+      "ID": 503510,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503520,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503530,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503540,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503550,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503560,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503570,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503580,
+      "Entries": [
+        "[Crown of the Shulva]"
+      ]
+    },
+    {
+      "ID": 503610,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503615,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503620,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503625,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503630,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503635,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503640,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503645,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503650,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503655,
+      "Entries": [
+        "[Crown of the Iron King]"
+      ]
+    },
+    {
+      "ID": 503710,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503720,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503730,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503740,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503750,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503760,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503770,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503780,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503790,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503795,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    },
+    {
+      "ID": 503796,
+      "Entries": [
+        "[Crown of the Ivory King]"
+      ]
+    }
+  ]
+}

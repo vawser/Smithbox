@@ -1,0 +1,641 @@
+{
+  "Name": "generatordbglocation_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 45,
+      "Entries": [
+        "【Ladder Shop】 Npc -- 【梯子屋】NPC"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "【Ladder Shop】 NPC (Ghost) -- 【梯子屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "【Ladder Shop】 NPC Cut Scene -- 【梯子屋】NPCカットシーン"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "【Patch】 Npc -- 【パッチ】NPC"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "【Patch】 NPC (Ghost) -- 【パッチ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[Female Knight] Npc -- 【女騎士】NPC"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[Female Knight] NPC (Ghost) -- 【女騎士】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "【Material Shop】 Npc -- 【素材屋】NPC"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "【Material Shop】 NPC (Ghost) -- 【素材屋】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "[Dwarf] Npc -- 【ドワーフ】NPC"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "[Dwarf] NPC (Ghost) -- 【ドワーフ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 556,
+      "Entries": [
+        "[Boss front _ White Spirit] King Castle Drangreig: Dark Spirit 2 (Clown) -- 【ボス前_白霊】王城ドラングレイグ：闇霊２（ピエロ）"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "【BOSS】Javaza Hat -- 【BOSS】ジャバザハット"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "【BOSS】Naga -- 【BOSS】ナーガ"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Road to Poison Square] Skeleton: 2 Swords style 1 -- 【毒広場への道2周目】スケルトン：２刀流1"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Road to Poison Square] Skeleton: 2 swords 2 -- 【毒広場への道2周目】スケルトン：２刀流2"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Narrow path where the windmill can be seen] cavalry soldiers: riding soldiers (live men) -- 【風車の見える細道】騎人兵：騎乗兵士（生者）"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Cross hole of poison square] skeleton: 2 swords -- 【毒広場の横穴】スケルトン：２刀流"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "【Poison Square】Skeleton: 2 Swords -- 【毒広場上】スケルトン：２刀流1"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "【Poison Square】Skeleton: 2 Swords -- 【毒広場上】スケルトン：２刀流2"
+      ]
+    },
+    {
+      "ID": 1901,
+      "Entries": [
+        "[Narrow path where the windmill can be seen] cavalry soldiers [ live soldiers ] _ high place attack -- 【風車の見える細道】騎人兵：騎乗兵士（生者）_高所攻撃"
+      ]
+    },
+    {
+      "ID": 1950,
+      "Entries": [
+        "【Pledge Area_Prowl】 【Man-made immortals(immortals)】Standard -- 【誓約エリア_うろつき】【人造不死人（不死人）】標準"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "【Kiita Plaza】Man-made Immortals (Immortals) 1 -- 【木板広場】人造不死人（不死人）1"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "【Wooden Board Square _2F From the left to the third] [Workerof the Dead] Nest of Love -- 【木板広場_2F左から3つ目】【死者の労働者】愛の巣"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "【Wooden Board Square _2F From the left to the third] [Workerof the Dead] Nest of Love -- 【木板広場_2F左から3つ目】【死者の労働者】愛の巣"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "[Wooden board square _2F from the left to the third] [Dead workers] walk in the area launch -- 【木板広場_2F左から3つ目の先】【死者の労働者】領域起動で歩いてくる"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[Kiita Plaza_Treasure Route_Destruction of Wooden Boards] [Cavalry soldiers: Cavalry soldiers (live men)] -- 【木板広場_宝ルート_木板破壊】【騎人兵：騎乗兵士（生者）】"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "[Kiita Plaza_Treasure Route_Wooden Board Destruction_2 laps] 【Man-made Immortals】Sickle_Soul Black -- 【木板広場_宝ルート_木板破壊_2周目】【人造不死人（不死人）】鎌_ソウルブラック"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "【Kiita Plaza_Treasure Route】Ishimori -- 【木板広場_宝ルート】石守"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "【Kiita Plaza】Man-made Immortals (Immortals) 2 -- 【木板広場】人造不死人（不死人）2"
+      ]
+    },
+    {
+      "ID": 2451,
+      "Entries": [
+        "【Kiita Plaza】Man-made Immortals (Immortals) 3 -- 【木板広場】人造不死人（不死人）3"
+      ]
+    },
+    {
+      "ID": 2453,
+      "Entries": [
+        "【Kiita Plaza】Man-made Immortals (Immortals) 5 -- 【木板広場】人造不死人（不死人）5"
+      ]
+    },
+    {
+      "ID": 2456,
+      "Entries": [
+        "【Kiita Plaza】The Immortal son of the Second Round Of Man-made Immortals (Immortal) Seoul Black -- 【木板広場】2周目人造不死人（不死人）ソウルブラック"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "【Bridge of Poison Marsh_The Back of The Bridge】 【Steel worksman】Both hands mallet -- 【毒沼の橋_橋の奥】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[Bridge of Poison Marsh _ The back of the bridge] 【Steel worksman】Both hands mallet -- 【毒沼の橋_橋の奥2周目】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Tower_Entrance and Sebo] 【Steel worksman】Both hands mallet -- 【塔_入口とおせんぼ】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Tower_The floor below the entrance] 【Steel worksman】Both hands mallet 1 -- 【塔_入口下の階】【製鉄所員】両手槌1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Tower_The floor below the entrance] 【Steel worksman】Both hands mallet 2 -- 【塔_入口下の階】【製鉄所員】両手槌2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Tower_ Entrance and The Second Lap] 【Steel worksman】Both hands mallet -- 【塔_入口とおせんぼ2周目】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Tower_Entrance a little ahead of landing] poison horn insect -- 【塔_入口少し先踊り場】毒角虫"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "[Tower_ Entrance a little ahead gap] poison horn insect: area range attack -- 【塔_入口少し先隙間】毒角虫：領域範囲攻撃"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "【Tower_Cross Room Entrance】Poison horn worm -- 【塔_十字部屋入り口】毒角虫"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Tower_Naka boss room front _avant-garde] 【Steel worksman】Both hands mallet -- 【塔_中ボス部屋前_前衛】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[Tower inside _ Boss room front _goe] 【Steel worksman】Both hands mallet -- 【塔中_ボス部屋前_後衛】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "[Tower_ Near the poison pot in front of the boss room] steel worksman: both hands mallet -- 【塔_中ボス部屋前の毒壺付近】製鉄所員：両手槌"
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "[Tower_ Medium boss room front small room] steel worksman: both hands mallet -- 【塔_中ボス部屋前小部屋】製鉄所員：両手槌"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "[Tower_ Medium boss room front small room] poison horn worm: poison 1 -- 【塔_中ボス部屋前小部屋】毒角虫：毒1"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        "[Tower_ Medium Boss Room Front Small Room] Poison Horn Worm: Poison 2 -- 【塔_中ボス部屋前小部屋】毒角虫：毒2"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Tower_ Medium Boss Room Front Small Room] Poison Horn Worm: Poison 3 -- 【塔_中ボス部屋前小部屋】毒角虫：毒3"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[Tower _ Medium Boss Room] Dead Workers -- 【塔_中ボス部屋】死者の労働者"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[Tower _ Medium Boss Room] Dead Workers -- 【塔_中ボス部屋】死者の労働者"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "[Tower _ Medium Boss Room] Dead Workers -- 【塔_中ボス部屋】死者の労働者"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "[Tower _ Medium Boss Room] Dead Workers -- 【塔_中ボス部屋】死者の労働者"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Tower_Front of the atrium bridge_position not visible in the torch] 【Steel worksman】Both hands mallet -- 【塔_吹き抜け橋の手前_松明で見えない位置】【製鉄所員】両手槌"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[Tower_Front of the atrium bridge_ noticed] [Assassin(Born)】Mask A: Dagger -- 【塔_吹き抜け橋の手前_気づかれる】【暗殺者（生者）】仮面A：短剣"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[Tower_Front of the atrium bridge_ noticed] [Assassin:Masked B: Dagger] -- 【塔_吹き抜け橋の手前_気づかれる】【暗殺者（生者）】仮面B：短剣"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[Tower_ Bridge of the Atrium] Immortal Advanced Soldier (Immortal): Spear: Armor -- 【塔_吹き抜けの橋_とおせんぼ】イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "[Tower_ Bridge of the Atrium] 2nd Round Immortal Advanced Soldier (Immortal): Spear: Armor -- 【塔_吹き抜けの橋_とおせんぼ】2周目イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[Broken bridge in the tower blowout] [Assassin (born)]Mask A: Bow -- 【塔_吹き抜けの壊れた橋_とおせんぼ】【暗殺者（生者）】仮面A：弓"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "[Broken bridge of the tower blowout] [Assassin (born)]Mask A: Bow -- 【塔_吹き抜けの壊れた橋】【暗殺者（生者）】仮面A：弓"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[Tower _ jumping sub-end point _ l-character surprise under stairs] [Assassin:Masked B: Dagger] -- 【塔_飛び降りサブ終着点_階段下L字奇襲】【暗殺者（生者）】仮面B：短剣"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[Tower_Stairwell Bridge Destination_ Ladder Jumping Off 1] 【Assassin】Mask B: Song sword -- 【塔_吹き抜け橋の先_梯子飛び降り１】【暗殺者（生者）】仮面B：曲剣"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[Tower_Stairwell Bridge Destination_ Ladder Jumping Off 2] 【Assassin】Mask B: Song sword -- 【塔_吹き抜け橋の先_梯子飛び降り２】【暗殺者（生者）】仮面B：曲剣"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Tower_Terrace climbed and closed the door] [Assassin:Masked B: Dagger] -- 【塔_テラス登って扉閉め】【暗殺者（生者）】仮面B：短剣"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Tower_ Terrace 3 front of the back of the stairs _ surprise fishing in the treasure chest] [Assassin(born)】Mask B: Dagger_Walled -- 【塔_テラス３前の階段裏_宝箱で釣って奇襲】【暗殺者（生者）】仮面B：短剣_壁張り付き"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Tower_Terrace 3 Left Hand_Combat] 【Assassin】Mask B: Song sword -- 【塔_テラス３左手_戦闘】【暗殺者（生者）】仮面B：曲剣"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[Rear passage _ bridge in front of the tower _ gear] captured magician (live man) -- 【塔_歯車前の通路_橋の後方】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "[Tower _ Behind the rotating floor _ battle] [Assassin (Born) ] [Assassin(Born)】Mask A: Dagger -- 【塔_回転床の後ろ_戦闘】【暗殺者（生者）】【暗殺者（生者）】仮面A：短剣"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[Tower_ Poison Room Front Balcony _ Battle 1] Captured Magician (Live Man) -- 【塔_毒部屋前バルコニー_戦闘１】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "[Tower_ Poison Room Front Balcony_ Battle 2] Captured Magician (Live Man) -- 【塔_毒部屋前バルコニー_戦闘２】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[Tower_ Poison Room Front Balcony _ Battle 3] Captured Magician (Live Man) -- 【塔_毒部屋前バルコニー_戦闘３】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Tower_ Poison Room Front Balcony] Immortal Advanced Soldier (Immortal): Spear: Armor -- 【塔_毒部屋前バルコニー】イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[Insect Key Room 1] Poison horn worm sei poison: area range attack -- 【虫鍵部屋１】毒角虫：毒：領域範囲攻撃"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "[Insect Key Room 1] Poison horn: Poison 1 -- 【虫鍵部屋１】毒角虫：毒1"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "[Insect Key Room 1] Poison Horn: Poison 2 -- 【虫鍵部屋１】毒角虫：毒2"
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        "[Insect Key Room 1] Poison horn: Poison 3 -- 【虫鍵部屋１】毒角虫：毒3"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[Boss room front stairs] Immortal Senior Soldier (Immortal): Spear: Robe 1 -- 【ボス部屋前階段】イモータル上級兵士（イモータル）：槍：ローブ1"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[Boss Room Front Stairs] Immortal Senior Soldier (Immortal): Spear: Robe 2 -- 【ボス部屋前階段】イモータル上級兵士（イモータル）：槍：ローブ2"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[Second lap of stairs in front of boss room] Immortal Advanced Soldier (Immortal): Spear: Robe -- 【ボス部屋前階段2周目】イモータル上級兵士（イモータル）：槍：ローブ"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[The narrow path where the windmill can be seen] worker wall don of the dead -- 【風車の見える細道】死者の労働者壁ドン"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "[The narrow path where the windmill can be seen] the worker agura of the dead -- 【風車の見える細道】死者の労働者あぐら"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[The narrow path where the windmill can be seen] workerof the dead -- 【風車の見える細道】死者の労働者"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[In front of the high ladder with the lever in the narrow path where the windmill can be seen] worker of the dead -- 【風車の見える細道_レバーのある高台梯子前】死者の労働者"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "[In front of the high ground lever with the fine road lever that the windmill can see] worker of the dead -- 【風車の見える細道_レバーのある高台レバー前】死者の労働者"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "【Near the rotating scaffold】Captured magician (live man) -- 【回転足場付近】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 7221,
+      "Entries": [
+        "[Rotating scaffold treasure chest side] captured magician (raw person) -- 【回転足場宝箱側】捕らわれた魔導士（生者）"
+      ]
+    },
+    {
+      "ID": 7222,
+      "Entries": [
+        "[Near the rotating scaffold] immortal advanced soldier (immortal): spear: armor -- 【回転足場付近】イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "[Under the rotating scaffold] 【Assassin's Creed】Mask A: Song Sword -- 【回転足場の下】【暗殺者（生者）】仮面A：曲剣"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "[T-shaped road with just a jar_ waiting] immortal senior soldier (immortal): spear: armor -- 【ただの壷があるT字路_待機】イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[Tower _Cross room_ Start when you go to the back] [Assassin (born)]Mask A:2 Swordnail -- 【塔_十字部屋_奥まで行ったら起動】【暗殺者（生者）】仮面A：2刀爪"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "【Tower_Cross Room】 [Assassin (born)]Mask B:2 Swordnail -- 【塔_十字部屋】【暗殺者（生者）】仮面B：2刀爪"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "【Tower_Cross Room】 [Assassin (Born) ] [Assassin (born)]Mask A:2 Swordnail -- 【塔_十字部屋】【暗殺者（生者）】【暗殺者（生者）】仮面A：2刀爪"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 1 -- 【毒ツボ部屋】毒角虫：毒1"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 2 -- 【毒ツボ部屋】毒角虫：毒2"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 3 -- 【毒ツボ部屋】毒角虫：毒3"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 4 -- 【毒ツボ部屋】毒角虫：毒4"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 5 -- 【毒ツボ部屋】毒角虫：毒5"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "【Poison pot room】Poison horn worm: Poison 6 -- 【毒ツボ部屋】毒角虫：毒6"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "【Poison pot room】Poison horn insect: Poison 7 -- 【毒ツボ部屋】毒角虫：毒7"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "【Poison Pot Room】Mimic -- 【毒ツボ部屋】ミミック"
+      ]
+    },
+    {
+      "ID": 8211,
+      "Entries": [
+        "[Poison pot room 2laps] Immortal Advanced Soldier (Immortal): Spear: Armor -- 【毒ツボ部屋2周目】イモータル上級兵士（イモータル）：槍：鎧"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "[Before the hidden bonfire] NPC Red Spirit -- 【隠し篝火前】NPC赤霊"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[Transparent character for pledge] -- 【誓約用透明キャラ】"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[Poison reservoir in front of the windmill] cavalry soldiers: riding soldiers (live men) -- 【風車前の毒溜まり】騎人兵：騎乗兵士（生者）"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "[Poison reservoir in front of the tower] cavalry soldiers : cavalry soldiers (live) 1 -- 【塔の前の毒溜まり】騎人兵：騎乗兵士（生者）1"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "[Poison reservoir in front of the tower] cavalry soldiers : cavalry soldiers (live) 2 -- 【塔の前の毒溜まり】騎人兵：騎乗兵士（生者）2"
+      ]
+    }
+  ]
+}

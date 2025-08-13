@@ -1,0 +1,1751 @@
+{
+  "Name": "ItemLotParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test_param0"
+      ]
+    },
+    {
+      "ID": 8900,
+      "Entries": [
+        "[FNR] Archive behavior test 00"
+      ]
+    },
+    {
+      "ID": 8910,
+      "Entries": [
+        "[FNR] Archive behavior test 01"
+      ]
+    },
+    {
+      "ID": 8920,
+      "Entries": [
+        "[FNR] Archive behavior test 02"
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        "[FNR] Eleventh End Item Recovery"
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        "[FNR] Eleventh End Item for Exploration Mission 01"
+      ]
+    },
+    {
+      "ID": 9530,
+      "Entries": [
+        "[FNR] Eleventh End Item for Exploration Mission 02"
+      ]
+    },
+    {
+      "ID": 9540,
+      "Entries": [
+        "[FNR] Eleventh End Item for Exploration Mission 03"
+      ]
+    },
+    {
+      "ID": 9550,
+      "Entries": [
+        "[FNR] Eleventh End Item for Exploration Mission 04"
+      ]
+    },
+    {
+      "ID": 9560,
+      "Entries": [
+        "[FNR] Eleventh End Item for Exploration Mission 05"
+      ]
+    },
+    {
+      "ID": 9980,
+      "Entries": [
+        "HEAD - IA-C01H: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 9985,
+      "Entries": [
+        "CORE - IA-C01C: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "ARMS - IA-C01A: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 2100703300,
+      "Entries": [
+        "CORE - IA-C01C: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 3] "
+      ]
+    },
+    {
+      "ID": 2100703310,
+      "Entries": [
+        "IA-C01F: OCELLUS [Mission: Watchpoint Alpha - Underground Exploration - Depth 3]"
+      ]
+    },
+    {
+      "ID": 2100803000,
+      "Entries": [
+        "Large exchange item"
+      ]
+    },
+    {
+      "ID": 2101003000,
+      "Entries": [
+        "CORAL SHIELD - IB-C03W4: NGI 028"
+      ]
+    },
+    {
+      "ID": 2101503900,
+      "Entries": [
+        "ID tag_Patrick"
+      ]
+    },
+    {
+      "ID": 2101503910,
+      "Entries": [
+        "ID tag_Yoffe"
+      ]
+    },
+    {
+      "ID": 2101503920,
+      "Entries": [
+        "ID tag_swing"
+      ]
+    },
+    {
+      "ID": 2102303000,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA (Right) "
+      ]
+    },
+    {
+      "ID": 2102403000,
+      "Entries": [
+        "Acquisition Test Weapon"
+      ]
+    },
+    {
+      "ID": 2102403010,
+      "Entries": [
+        "LEGS - LG-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 2102403020,
+      "Entries": [
+        "BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 2102403030,
+      "Entries": [
+        "AG-J-098 JOSO"
+      ]
+    },
+    {
+      "ID": 2102403040,
+      "Entries": [
+        "FCS-G1/P01"
+      ]
+    },
+    {
+      "ID": 2102403050,
+      "Entries": [
+        "acquisition test decoration"
+      ]
+    },
+    {
+      "ID": 2102403060,
+      "Entries": [
+        "Acquisition Test Archive"
+      ]
+    },
+    {
+      "ID": 2102403070,
+      "Entries": [
+        "Acquisition test Redemption items"
+      ]
+    },
+    {
+      "ID": 2102403080,
+      "Entries": [
+        "Acquisition test dummy image"
+      ]
+    },
+    {
+      "ID": 2102403100,
+      "Entries": [
+        "Crunchy acquisition test"
+      ]
+    },
+    {
+      "ID": 2102403200,
+      "Entries": [
+        "Simultaneous acquisition test A of multiple items"
+      ]
+    },
+    {
+      "ID": 2102403201,
+      "Entries": [
+        "Simultaneous acquisition test A of multiple items"
+      ]
+    },
+    {
+      "ID": 2102403202,
+      "Entries": [
+        "BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 2102603000,
+      "Entries": [
+        "Insider's memo"
+      ]
+    },
+    {
+      "ID": 2102603001,
+      "Entries": [
+        "security code"
+      ]
+    },
+    {
+      "ID": 2103503000,
+      "Entries": [
+        "Treasure that cannot be taken"
+      ]
+    },
+    {
+      "ID": 2103303000,
+      "Entries": [
+        "garbage scraps"
+      ]
+    },
+    {
+      "ID": 2103703000,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA (Right)"
+      ]
+    },
+    {
+      "ID": 2103703010,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT"
+      ]
+    },
+    {
+      "ID": 2103903000,
+      "Entries": [
+        "Large exchange item"
+      ]
+    },
+    {
+      "ID": 2104603000,
+      "Entries": [
+        "daisy's note"
+      ]
+    },
+    {
+      "ID": 2104603010,
+      "Entries": [
+        "Mike and Daisy Crypto Assets"
+      ]
+    },
+    {
+      "ID": 2104603020,
+      "Entries": [
+        "setA 1/2 Bandit Event｜Cashing in progress"
+      ]
+    },
+    {
+      "ID": 2104603021,
+      "Entries": [
+        "setA 2/2 Bandit Event｜Archive"
+      ]
+    },
+    {
+      "ID": 2104603030,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS [Mission: Grid 086 - Stop the Secret Data Breach] "
+      ]
+    },
+    {
+      "ID": 2104603040,
+      "Entries": [
+        "DENONATING BAZOOKA - 44-141 JVLN ALPHA (Right)"
+      ]
+    },
+    {
+      "ID": 2104603050,
+      "Entries": [
+        "BST-G2/P06SPD"
+      ]
+    },
+    {
+      "ID": 2104603060,
+      "Entries": [
+        "Treasure Wreck｜Strong 01"
+      ]
+    },
+    {
+      "ID": 2104603070,
+      "Entries": [
+        "Treasure Wreck｜Weak 01"
+      ]
+    },
+    {
+      "ID": 2104603080,
+      "Entries": [
+        "Treasure Wreck｜Weak 02"
+      ]
+    },
+    {
+      "ID": 2104603090,
+      "Entries": [
+        "Treasure Wreck｜Weak 03"
+      ]
+    },
+    {
+      "ID": 2104603100,
+      "Entries": [
+        "Treasure Wreck｜Weak 04"
+      ]
+    },
+    {
+      "ID": 2104603110,
+      "Entries": [
+        "Treasure Wreck｜Weak 05"
+      ]
+    },
+    {
+      "ID": 2104603120,
+      "Entries": [
+        "Treasure Wreck｜Weak 06"
+      ]
+    },
+    {
+      "ID": 2104603130,
+      "Entries": [
+        "Treasure Wreck｜Weak 07"
+      ]
+    },
+    {
+      "ID": 2104603140,
+      "Entries": [
+        "Treasure Wreck｜Weak 08"
+      ]
+    },
+    {
+      "ID": 2104603150,
+      "Entries": [
+        "Treasure Wreck｜Weak 09"
+      ]
+    },
+    {
+      "ID": 2104603160,
+      "Entries": [
+        "Treasure Wreckage｜Weak 10"
+      ]
+    },
+    {
+      "ID": 2104603170,
+      "Entries": [
+        "Treasure Wreck｜Naka 01"
+      ]
+    },
+    {
+      "ID": 2104603180,
+      "Entries": [
+        "Treasure Wreck｜Naka 02"
+      ]
+    },
+    {
+      "ID": 2104603190,
+      "Entries": [
+        "Treasure Wreck｜Naka 03"
+      ]
+    },
+    {
+      "ID": 2104603200,
+      "Entries": [
+        "Arbitrary return tutorial archive"
+      ]
+    },
+    {
+      "ID": 2104603210,
+      "Entries": [
+        "ID tag_Patrick (wall search)"
+      ]
+    },
+    {
+      "ID": 2104603220,
+      "Entries": [
+        "ID tag_Yoffe (wall search)"
+      ]
+    },
+    {
+      "ID": 2104603230,
+      "Entries": [
+        "Hint W bonus cash exchange items"
+      ]
+    },
+    {
+      "ID": 2104703100,
+      "Entries": [
+        "IA-CO1G: AORTA"
+      ]
+    },
+    {
+      "ID": 2105303000,
+      "Entries": [
+        "CORAL MISSLE LAUNCHER - IB-C03W3: NGI 006 (Right)"
+      ]
+    },
+    {
+      "ID": 2106103100,
+      "Entries": [
+        "LEGS - IA-CO1L: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 1] "
+      ]
+    },
+    {
+      "ID": 2106203100,
+      "Entries": [
+        "Treasure remains｜Cask room 1 lower floor"
+      ]
+    },
+    {
+      "ID": 2106203110,
+      "Entries": [
+        "ARMS - IA-CO1A: EPHEMERA [Mission: Watchpoint Alpha - Underground Exploration - Depth 2] "
+      ]
+    },
+    {
+      "ID": 2106203120,
+      "Entries": [
+        "Treasure remains | Crevasse Bridge"
+      ]
+    },
+    {
+      "ID": 2106203130,
+      "Entries": [
+        "Treasure remains｜Railway 2 Next to the lock door"
+      ]
+    },
+    {
+      "ID": 2106203140,
+      "Entries": [
+        "Treasure remains｜Crevasse, midway point towards heat exhaust vent"
+      ]
+    },
+    {
+      "ID": 2106203150,
+      "Entries": [
+        "Treasure Remains｜Cask Room 2 Lower Back"
+      ]
+    },
+    {
+      "ID": 2106203160,
+      "Entries": [
+        "IA-CO1B: GILLS [Mission: Watchpoint Alpha - Underground Exploration - Depth 2] "
+      ]
+    },
+    {
+      "ID": 2106203300,
+      "Entries": [
+        "Tag NPAC defeat reward"
+      ]
+    },
+    {
+      "ID": 2106303300,
+      "Entries": [
+        "Tag NPAC defeat reward"
+      ]
+    },
+    {
+      "ID": 2106303310,
+      "Entries": [
+        "HEAD - IA-CO1H: EPHEMERA [Mission: Watchpoint Alpha - Unknown Territory Survey] "
+      ]
+    },
+    {
+      "ID": 2106403000,
+      "Entries": [
+        "HEAD - HC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 2106403010,
+      "Entries": [
+        "CORE - CC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 2106403020,
+      "Entries": [
+        "ARMS - AC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 2106403030,
+      "Entries": [
+        "LEGS - 2C-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 2106403060,
+      "Entries": [
+        "For treasure remains"
+      ]
+    },
+    {
+      "ID": 2107203000,
+      "Entries": [
+        "BC-0600 12345"
+      ]
+    },
+    {
+      "ID": 2107203010,
+      "Entries": [
+        "FLAMETHROWER - WB-0000 BAD COOK (Right)"
+      ]
+    },
+    {
+      "ID": 2107203020,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE"
+      ]
+    },
+    {
+      "ID": 2109003300,
+      "Entries": [
+        "Tag NPAC defeat reward"
+      ]
+    },
+    {
+      "ID": 2109003310,
+      "Entries": [
+        "Tag NPAC defeat reward"
+      ]
+    },
+    {
+      "ID": 2140090000,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090010,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090020,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090030,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090040,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090050,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090060,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090070,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090080,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090090,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090100,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090110,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090120,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090130,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090140,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090150,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090160,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090170,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090180,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090190,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090200,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090210,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090220,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090230,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090240,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090250,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090260,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090270,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090280,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090290,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090300,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090310,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090320,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090330,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090340,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090350,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090360,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090370,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090380,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090390,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090400,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090410,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090420,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090430,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090440,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090450,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090460,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090470,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090480,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090490,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090500,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090510,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090520,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090530,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090540,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090550,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090560,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090570,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090580,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090590,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090600,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090610,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090620,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090630,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090640,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090650,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090660,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090670,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090680,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090690,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090700,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090710,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090720,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090730,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090740,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090750,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090760,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090770,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090780,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090790,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090800,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090810,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090820,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090830,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090840,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090850,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090860,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090870,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090880,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090890,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090900,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090910,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090920,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090930,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090940,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090950,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090960,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090970,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090980,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140090990,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091000,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091010,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091020,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091030,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091040,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091050,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091060,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091070,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091080,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091090,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091100,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091110,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091120,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091130,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091140,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091150,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091160,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091170,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091180,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091190,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091200,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091210,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091220,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091230,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091240,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091250,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091260,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091270,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091280,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091290,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091300,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091310,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091320,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091330,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091340,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091350,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091360,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091370,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091380,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091390,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091400,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091410,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091420,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091430,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091440,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091450,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091460,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091470,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091480,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091490,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    },
+    {
+      "ID": 2140091500,
+      "Entries": [
+        "License Code: Thomas Kirk"
+      ]
+    },
+    {
+      "ID": 2140091510,
+      "Entries": [
+        "License Code: Monkey Gordo"
+      ]
+    },
+    {
+      "ID": 2140091520,
+      "Entries": [
+        "License Code: G7 Hakra"
+      ]
+    },
+    {
+      "ID": 2140091525,
+      "Entries": [
+        "License Code: Raven"
+      ]
+    },
+    {
+      "ID": 2140091530,
+      "Entries": [
+        "System Log: One-Sided Engagement"
+      ]
+    },
+    {
+      "ID": 2140091540,
+      "Entries": [
+        "System Log: The Deserter"
+      ]
+    },
+    {
+      "ID": 2140091550,
+      "Entries": [
+        "Video Record: STEEL HAZE"
+      ]
+    },
+    {
+      "ID": 2140091560,
+      "Entries": [
+        "Video Record: BAWS Arsenal No. 2"
+      ]
+    },
+    {
+      "ID": 2140091570,
+      "Entries": [
+        "Comms Record: Rusty's Encoded Comms"
+      ]
+    },
+    {
+      "ID": 2140091580,
+      "Entries": [
+        "Text Data: The Well Dries"
+      ]
+    },
+    {
+      "ID": 2140091590,
+      "Entries": [
+        "Video Record: Communication Attempt"
+      ]
+    },
+    {
+      "ID": 2140091600,
+      "Entries": [
+        "Comms Record: Friendly Comms"
+      ]
+    },
+    {
+      "ID": 2140091610,
+      "Entries": [
+        "Observation Data: Coral Density Survey"
+      ]
+    },
+    {
+      "ID": 2140091620,
+      "Entries": [
+        "Observation Data: Terrain Survey"
+      ]
+    },
+    {
+      "ID": 2140091630,
+      "Entries": [
+        "Observation Data: Installations Survey"
+      ]
+    },
+    {
+      "ID": 2140091640,
+      "Entries": [
+        "Observation Data: Offshore Survey"
+      ]
+    },
+    {
+      "ID": 2140091650,
+      "Entries": [
+        "Video Record: Rubiconian Invective [Mission: The Wall - Eliminate the Enforcement Squads] "
+      ]
+    },
+    {
+      "ID": 2140091660,
+      "Entries": [
+        "Comms Record: Doser Ravings [Mission: Grid 086 - Infiltrate Grid 086] "
+      ]
+    },
+    {
+      "ID": 2140091670,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (1)"
+      ]
+    },
+    {
+      "ID": 2140091680,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (2)"
+      ]
+    },
+    {
+      "ID": 2140091690,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (3)"
+      ]
+    },
+    {
+      "ID": 2140091700,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (4)"
+      ]
+    },
+    {
+      "ID": 2140091710,
+      "Entries": [
+        "Text Data: Dolmayan's Writings (5)"
+      ]
+    },
+    {
+      "ID": 2140091720,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (1)"
+      ]
+    },
+    {
+      "ID": 2140091730,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (2)"
+      ]
+    },
+    {
+      "ID": 2140091740,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (3) [Mission: Grid 086 - Stop the Secret Data Breach] "
+      ]
+    },
+    {
+      "ID": 2140091750,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (4)"
+      ]
+    },
+    {
+      "ID": 2140091760,
+      "Entries": [
+        "Video Record: The Fires of Ibis"
+      ]
+    },
+    {
+      "ID": 2140091770,
+      "Entries": [
+        "Image Data: STV Sketch (3)"
+      ]
+    },
+    {
+      "ID": 2140091780,
+      "Entries": [
+        "Image Data: STV Sketch (4)"
+      ]
+    },
+    {
+      "ID": 2140091790,
+      "Entries": [
+        "Image Data: STV Sketch (1) [Mission: The Wall - Eliminate the Enforcement Squads] "
+      ]
+    },
+    {
+      "ID": 2140091800,
+      "Entries": [
+        "Image Data: STV Sketch (2)"
+      ]
+    },
+    {
+      "ID": 2140091810,
+      "Entries": [
+        "Image Data: STV Sketch (6)"
+      ]
+    },
+    {
+      "ID": 2140091820,
+      "Entries": [
+        "Image Data: STV Sketch (5)"
+      ]
+    },
+    {
+      "ID": 2140091830,
+      "Entries": [
+        "Image Data: STK Sketch"
+      ]
+    },
+    {
+      "ID": 2140091840,
+      "Entries": [
+        "Observation Data: The City of Xylem"
+      ]
+    },
+    {
+      "ID": 2140091850,
+      "Entries": [
+        "Video Record: G4's Last Words"
+      ]
+    },
+    {
+      "ID": 2140091860,
+      "Entries": [
+        "Text Data: The Re-education Center"
+      ]
+    },
+    {
+      "ID": 2140091870,
+      "Entries": [
+        "Unknown"
+      ]
+    },
+    {
+      "ID": 2140091880,
+      "Entries": [
+        "Video Record: Testing New Components"
+      ]
+    },
+    {
+      "ID": 2140091890,
+      "Entries": [
+        "Video Record: BAWS Guard's Last Words"
+      ]
+    },
+    {
+      "ID": 2140091900,
+      "Entries": [
+        "Video Record: The Collector's Last Words [Mission: Grid 086 - Infiltrate Grid 086] "
+      ]
+    },
+    {
+      "ID": 2140091910,
+      "Entries": [
+        "Comms Record: Message for Uncle"
+      ]
+    },
+    {
+      "ID": 2140091920,
+      "Entries": [
+        "Comms Record: Doser Chatter"
+      ]
+    },
+    {
+      "ID": 2140091930,
+      "Entries": [
+        "Comms Record: Coyote Chatter"
+      ]
+    },
+    {
+      "ID": 2140091940,
+      "Entries": [
+        "Comms Record: Independant Merc Comms"
+      ]
+    },
+    {
+      "ID": 2140091950,
+      "Entries": [
+        "Comms Record: Enforcement Squad Comms"
+      ]
+    },
+    {
+      "ID": 2140091960,
+      "Entries": [
+        "Observation Data: Wave Mutation Detected"
+      ]
+    },
+    {
+      "ID": 2140091970,
+      "Entries": [
+        "Observation Data: Blind Spots"
+      ]
+    },
+    {
+      "ID": 2140091980,
+      "Entries": [
+        "Observation Data: The Enforcement System"
+      ]
+    },
+    {
+      "ID": 2140091990,
+      "Entries": [
+        "Text Data: Professor Nagai's Log (5)"
+      ]
+    },
+    {
+      "ID": 2140092000,
+      "Entries": [
+        "[FNR] Archive_Mission placement"
+      ]
+    }
+  ]
+}

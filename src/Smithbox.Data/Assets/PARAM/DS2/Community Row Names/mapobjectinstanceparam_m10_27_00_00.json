@@ -1,0 +1,869 @@
+{
+  "Name": "mapobjectinstanceparam_m10_27_00_00",
+  "Entries": [
+    {
+      "ID": 10270400,
+      "Entries": [
+        "[Both doors] hidden route"
+      ]
+    },
+    {
+      "ID": 10270405,
+      "Entries": [
+        "[One door] down the passage to the front of the boss"
+      ]
+    },
+    {
+      "ID": 10270410,
+      "Entries": [
+        "【One door】On the passage to the front of the boss_"
+      ]
+    },
+    {
+      "ID": 10270500,
+      "Entries": [
+        "[Ladder] unloading ladder"
+      ]
+    },
+    {
+      "ID": 10270550,
+      "Entries": [
+        "【Rope】To the bonfire room"
+      ]
+    },
+    {
+      "ID": 10270551,
+      "Entries": [
+        "【Rope】Return from the bonfire room"
+      ]
+    },
+    {
+      "ID": 10270601,
+      "Entries": [
+        "【White Door】02 Boss"
+      ]
+    },
+    {
+      "ID": 10270602,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 10270650,
+      "Entries": [
+        "【Bonfire】01_The tip of the first bridge after the start"
+      ]
+    },
+    {
+      "ID": 10270655,
+      "Entries": [
+        "【Bonfire】02_Weiburn collapses at the end of the bridge"
+      ]
+    },
+    {
+      "ID": 10271000,
+      "Entries": [
+        "1_00 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271002,
+      "Entries": [
+        "1_02 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271005,
+      "Entries": [
+        "1_05 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271006,
+      "Entries": [
+        "1_06 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271008,
+      "Entries": [
+        "1_08 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271009,
+      "Entries": [
+        "1_09 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271010,
+      "Entries": [
+        "1_10 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271011,
+      "Entries": [
+        "1_11 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271012,
+      "Entries": [
+        "1_12 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271100,
+      "Entries": [
+        "2_00 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271101,
+      "Entries": [
+        "2_01 Crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271102,
+      "Entries": [
+        "2_02 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271103,
+      "Entries": [
+        "2_03 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271104,
+      "Entries": [
+        "2_04 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271105,
+      "Entries": [
+        "2_05 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271106,
+      "Entries": [
+        "2_06 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271107,
+      "Entries": [
+        "2_07 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271108,
+      "Entries": [
+        "2_08 crossing the Bridge"
+      ]
+    },
+    {
+      "ID": 10271109,
+      "Entries": [
+        "2_09 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271123,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271124,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271125,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271200,
+      "Entries": [
+        "Flying Wyburn_Bridgedrop"
+      ]
+    },
+    {
+      "ID": 10271210,
+      "Entries": [
+        "3 across the Bridge"
+      ]
+    },
+    {
+      "ID": 10271300,
+      "Entries": [
+        "Flying Wyburn_Turning 1_00"
+      ]
+    },
+    {
+      "ID": 10271301,
+      "Entries": [
+        "Flying Wyburn_Turning 1_01"
+      ]
+    },
+    {
+      "ID": 10271302,
+      "Entries": [
+        "Flying Wyburn_Turning 1_02"
+      ]
+    },
+    {
+      "ID": 10271303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10271800,
+      "Entries": [
+        "Broken Suspension Bridge"
+      ]
+    },
+    {
+      "ID": 10272000,
+      "Entries": [
+        "[Insect key] for hidden doors"
+      ]
+    },
+    {
+      "ID": 10272500,
+      "Entries": [
+        "Hidden door (insect key)"
+      ]
+    },
+    {
+      "ID": 10272600,
+      "Entries": [
+        "[Nest of the guard dragon] fossil of the egg of the dragon"
+      ]
+    },
+    {
+      "ID": 10272700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273000,
+      "Entries": [
+        "【Other】Wyburn 1-part OBJ"
+      ]
+    },
+    {
+      "ID": 10273001,
+      "Entries": [
+        "【Other】Wyburn 2-part OBJ"
+      ]
+    },
+    {
+      "ID": 10273002,
+      "Entries": [
+        "【Other】Wyburn 3-part OBJ"
+      ]
+    },
+    {
+      "ID": 10273100,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_0"
+      ]
+    },
+    {
+      "ID": 10273101,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_1"
+      ]
+    },
+    {
+      "ID": 10273102,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_2"
+      ]
+    },
+    {
+      "ID": 10273103,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_3"
+      ]
+    },
+    {
+      "ID": 10273104,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_4"
+      ]
+    },
+    {
+      "ID": 10273105,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_5"
+      ]
+    },
+    {
+      "ID": 10273106,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_6"
+      ]
+    },
+    {
+      "ID": 10273107,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_7"
+      ]
+    },
+    {
+      "ID": 10273108,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_8"
+      ]
+    },
+    {
+      "ID": 10273109,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_9"
+      ]
+    },
+    {
+      "ID": 10273110,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_10"
+      ]
+    },
+    {
+      "ID": 10273111,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_11"
+      ]
+    },
+    {
+      "ID": 10273112,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_12"
+      ]
+    },
+    {
+      "ID": 10273113,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_13"
+      ]
+    },
+    {
+      "ID": 10273114,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_14"
+      ]
+    },
+    {
+      "ID": 10273115,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_15"
+      ]
+    },
+    {
+      "ID": 10273116,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_16"
+      ]
+    },
+    {
+      "ID": 10273117,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn A_17"
+      ]
+    },
+    {
+      "ID": 10273118,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_18"
+      ]
+    },
+    {
+      "ID": 10273119,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_19"
+      ]
+    },
+    {
+      "ID": 10273120,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn A_20"
+      ]
+    },
+    {
+      "ID": 10273200,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_0"
+      ]
+    },
+    {
+      "ID": 10273201,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_1"
+      ]
+    },
+    {
+      "ID": 10273202,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_2"
+      ]
+    },
+    {
+      "ID": 10273203,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_3"
+      ]
+    },
+    {
+      "ID": 10273204,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_4"
+      ]
+    },
+    {
+      "ID": 10273205,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_5"
+      ]
+    },
+    {
+      "ID": 10273206,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_6"
+      ]
+    },
+    {
+      "ID": 10273207,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_7"
+      ]
+    },
+    {
+      "ID": 10273208,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_8"
+      ]
+    },
+    {
+      "ID": 10273209,
+      "Entries": [
+        "Wyburn Eggs_Wyburn B_9"
+      ]
+    },
+    {
+      "ID": 10273210,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn B_10"
+      ]
+    },
+    {
+      "ID": 10273211,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn B_11"
+      ]
+    },
+    {
+      "ID": 10273300,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_0"
+      ]
+    },
+    {
+      "ID": 10273301,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_1"
+      ]
+    },
+    {
+      "ID": 10273302,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_2"
+      ]
+    },
+    {
+      "ID": 10273303,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_3"
+      ]
+    },
+    {
+      "ID": 10273304,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_4"
+      ]
+    },
+    {
+      "ID": 10273305,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_5"
+      ]
+    },
+    {
+      "ID": 10273306,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_6"
+      ]
+    },
+    {
+      "ID": 10273307,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_7"
+      ]
+    },
+    {
+      "ID": 10273308,
+      "Entries": [
+        "Wyburn Eggs_For Wyburn B_8"
+      ]
+    },
+    {
+      "ID": 10273309,
+      "Entries": [
+        "Wyburn Eggs_Wyburn B_9"
+      ]
+    },
+    {
+      "ID": 10273310,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn B_10"
+      ]
+    },
+    {
+      "ID": 10273311,
+      "Entries": [
+        "Wyvern Eggs_For Wyburn B_11"
+      ]
+    },
+    {
+      "ID": 10273900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Wyburn egg"
+      ]
+    },
+    {
+      "ID": 10273901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Wyburn egg"
+      ]
+    },
+    {
+      "ID": 10273902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Wyburn egg"
+      ]
+    },
+    {
+      "ID": 10273903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] Wyburn egg"
+      ]
+    },
+    {
+      "ID": 10273904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10273911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10273912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10273913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 10273914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10273921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10273922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10273923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 10273924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10273925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10275000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10275070,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10276000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10276190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

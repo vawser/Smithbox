@@ -1,0 +1,827 @@
+{
+  "Name": "NpcEquipPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        "control prototype character -- 制御試作用キャラ"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "control prototype character -- 制御試作用キャラ"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 security MT (rifle) -- c3000 警備MT（ライフル）"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "c3000 security MT (EN rifle) -- c3000 警備MT（ENライフル）"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "c3000 security MT (missile) -- c3000 警備MT（ミサイル）"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "c3000 security MT (rocket) -- c3000 警備MT（ロケット）"
+      ]
+    },
+    {
+      "ID": 30004000,
+      "Entries": [
+        "c3000 Security MT (Enhanced) -- c3000 警備MT（強化）"
+      ]
+    },
+    {
+      "ID": 30009000,
+      "Entries": [
+        "c3000 Security MT (all equipment) -- c3000\u3000警備MT（全装備）"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "c3001 Security MT Enhancement A -- c3001 警備MT強化A"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "c3002 Security MT Enhancement B -- c3002 警備MT強化B"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "rifle throwing gun -- ライフル\u3000投擲銃"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "double machine gun -- ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "rocket launcher machine gun -- ロケットランチャー\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "shotgun shield -- ショットガン\u3000シールド"
+      ]
+    },
+    {
+      "ID": 30200400,
+      "Entries": [
+        "rifle missile -- ライフル\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "cannon machine gun -- キャノン\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "rifle shield -- ライフル\u3000シールド"
+      ]
+    },
+    {
+      "ID": 30200700,
+      "Entries": [
+        "rocket launcher rifle -- ロケットランチャー\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "machine gun shield -- マシンガン\u3000シールド"
+      ]
+    },
+    {
+      "ID": 30200810,
+      "Entries": [
+        "machine gun -- マシンガン"
+      ]
+    },
+    {
+      "ID": 30200820,
+      "Entries": [
+        "shield -- シールド"
+      ]
+    },
+    {
+      "ID": 30200830,
+      "Entries": [
+        "rifle camera -- ライフル\u3000カメラ"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "base -- ベース"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "c3020 General purpose MT for former communist countries (for damage reaction confirmation) -- c3020\u3000旧共産圏汎用MT(ダメージリアクション確認用）"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "c3050 Regular Army MT_Normal -- c3050 正規軍MT_ノーマル"
+      ]
+    },
+    {
+      "ID": 30501000,
+      "Entries": [
+        "c3050 Regular Army MT_Support -- c3050 正規軍MT_支援"
+      ]
+    },
+    {
+      "ID": 30502000,
+      "Entries": [
+        "c3050 Regular Army MT_Melee -- c3050 正規軍MT_近接"
+      ]
+    },
+    {
+      "ID": 30503000,
+      "Entries": [
+        "c3050 Regular Army MT_Flame -- c3050 正規軍MT_火炎"
+      ]
+    },
+    {
+      "ID": 30504000,
+      "Entries": [
+        "c3050 Regular Army MT_Bombing -- c3050 正規軍MT_爆撃"
+      ]
+    },
+    {
+      "ID": 30505000,
+      "Entries": [
+        "c3050 Regular Army MT_Sniper -- c3050 正規軍MT_狙撃"
+      ]
+    },
+    {
+      "ID": 30509900,
+      "Entries": [
+        "c3050 Regular Army MT_All Weapons -- c3050 正規軍MT_全兵装"
+      ]
+    },
+    {
+      "ID": 31000000,
+      "Entries": [
+        "c3100 flight MT medium distance -- c3100 飛行MT\u3000中距離"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "c3100 flight MT short distance -- c3100 飛行MT\u3000近距離"
+      ]
+    },
+    {
+      "ID": 31009900,
+      "Entries": [
+        "c3100 flight MT all weapons -- c3100 飛行MT\u3000全兵装"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 Jagano fully loaded -- c3150 ジャガノ\u3000全乗せ"
+      ]
+    },
+    {
+      "ID": 31501000,
+      "Entries": [
+        "c3150 Jagano assault type -- c3150 ジャガノ\u3000突撃型"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "c3150 Jagano defense type -- c3150 ジャガノ\u3000防衛型"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "c3200 Avalanche (Ace) -- c3200 アバランチ(エース)"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "c3200 Avalanche (Support A) -- c3200 アバランチ(サポートA)"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "c3200 Avalanche (Support B) -- c3200 アバランチ(サポートB)"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "c3200 Avalanche (Support A2) -- c3200 アバランチ(サポートA2)"
+      ]
+    },
+    {
+      "ID": 32000900,
+      "Entries": [
+        "c3200 avalanche (base) -- c3200 アバランチ(ベース)"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) -- c3250 正規軍AC（ノーマル）"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "c3250 regular army AC (heavy firepower) diffusion buzz -- c3250 正規軍AC（重火力）拡散バズ"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "c3250 regular army AC (heavy firepower) grenade -- c3250 正規軍AC（重火力）グレネード"
+      ]
+    },
+    {
+      "ID": 32500300,
+      "Entries": [
+        "c3250 Regular Army AC (Support) -- c3250 正規軍AC（支援）"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "c3250 Regular Army AC (Sniper) -- c3250 正規軍AC（狙撃）"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 regular army AC (enhanced heavy firepower) -- c3250 正規軍AC（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "c3250 regular army AC (high mobility) -- c3250 正規軍AC（高機動）"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "c3250 regular army AC (base) -- c3250 正規軍AC（ベース）"
+      ]
+    },
+    {
+      "ID": 32500999,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Combat Test -- c3250 正規軍AC（ノーマル） 戦闘テスト"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "c3260 regular army heavy AC (base) -- c3260 正規軍重AC（ベース）"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Normal) -- c3260 正規軍重AC（ノーマル）"
+      ]
+    },
+    {
+      "ID": 32600200,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Blade) -- c3260 正規軍重AC（ブレード）"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Support) -- c3260 正規軍重AC（支援）"
+      ]
+    },
+    {
+      "ID": 32600400,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Advanced) -- c3260 正規軍重AC（先進）"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "c3300 Ghost MT (Melee Orbit) -- c3300 ゴーストMT（近接オービット）"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "c3300 Ghost MT (PA) -- c3300 ゴーストMT（PA）"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "c3300 Ghost MT (Sniper Orbit) -- c3300 ゴーストMT（スナイパーオービット）"
+      ]
+    },
+    {
+      "ID": 33009000,
+      "Entries": [
+        "c3300 Ghost MT (fully equipped) -- c3300\u3000ゴーストMT（全装備）"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 Quadruped MT (normal) -- c3400 四脚MT（ノーマル）"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "c3400 quadruped MT (heavy) -- c3400 四脚MT（重装）"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "c3400 Quadruped MT (Sniper) -- c3400 四脚MT（スナイパー）"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "c3400 Quadruped MT (Grenade) -- c3400 四脚MT（グレネード）"
+      ]
+    },
+    {
+      "ID": 34008000,
+      "Entries": [
+        "c3400 quadruped MT (for tutorial) -- c3400 四脚MT（チュートリアル用）"
+      ]
+    },
+    {
+      "ID": 34009000,
+      "Entries": [
+        "c3400 quadruped MT (fully equipped) -- c3400 四脚MT（全装備）"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "c3500 old world MT gray -- c3500 旧世界MT グレ"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "c3500 old world MT poison gray -- c3500 旧世界MT 毒グレ"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "c3500 old world MT cluster -- c3500 旧世界MT クラスター"
+      ]
+    },
+    {
+      "ID": 35000300,
+      "Entries": [
+        "c3500 old world MT poison cluster -- c3500 旧世界MT 毒クラスター"
+      ]
+    },
+    {
+      "ID": 35000900,
+      "Entries": [
+        "c3500 old world MT base -- c3500 旧世界MT ベース"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "c3600 construction machine spider_all equipment -- c3600 建機クモ_全装備"
+      ]
+    },
+    {
+      "ID": 36001000,
+      "Entries": [
+        "c3600 Construction Machinery Spider_Proximity Type -- c3600 建機クモ_近接型"
+      ]
+    },
+    {
+      "ID": 36002000,
+      "Entries": [
+        "c3600 construction machinery spider_support type -- c3600 建機クモ_支援型"
+      ]
+    },
+    {
+      "ID": 36003000,
+      "Entries": [
+        "c3600 construction machine spider_sniper type -- c3600 建機クモ_狙撃型"
+      ]
+    },
+    {
+      "ID": 36004000,
+      "Entries": [
+        "c3600 construction machine spider_armored type -- c3600 建機クモ_装甲型"
+      ]
+    },
+    {
+      "ID": 36004100,
+      "Entries": [
+        "c3600 construction machine spider_armored type_varie -- c3600 建機クモ_装甲型_バリエ"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 deleter full loading test -- c3700 デリーター全のせテスト"
+      ]
+    },
+    {
+      "ID": 37001000,
+      "Entries": [
+        "c3700 deleter normal -- c3700 デリーター 通常"
+      ]
+    },
+    {
+      "ID": 37002000,
+      "Entries": [
+        "c3700 deleter fighting -- c3700 デリーター 格闘"
+      ]
+    },
+    {
+      "ID": 37003000,
+      "Entries": [
+        "c3700 deleter sniper -- c3700 デリーター 狙撃"
+      ]
+    },
+    {
+      "ID": 37003100,
+      "Entries": [
+        "c3700 deleter sniper no vertical missile -- c3700 デリーター 狙撃\u3000垂直ミサイル無し"
+      ]
+    },
+    {
+      "ID": 37004000,
+      "Entries": [
+        "c3700 Deleteer Ace Strong Enemy -- c3700 デリーター エース強敵"
+      ]
+    },
+    {
+      "ID": 37009900,
+      "Entries": [
+        "c3700 Deleter Strong Enemy Test Normal -- c3700 デリーター 強敵テスト\u3000通常"
+      ]
+    },
+    {
+      "ID": 37009901,
+      "Entries": [
+        "c3700 Deleteer Strong Enemy Test Blade -- c3700 デリーター 強敵テスト\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 37009999,
+      "Entries": [
+        "c3700 deleter para automatic input test -- c3700 デリーター\u3000パラ自動入力テスト"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "c4000 ADF (EN cannon type) -- c4000\u3000ADF(ENキャノンタイプ)"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "c4000 ADF (EN shotgun type) -- c4000\u3000ADF(ENショットガンタイプ)"
+      ]
+    },
+    {
+      "ID": 40002000,
+      "Entries": [
+        "c4000 ADF (sniper cannon type) -- c4000\u3000ADF(スナイパーキャノンタイプ)"
+      ]
+    },
+    {
+      "ID": 40003000,
+      "Entries": [
+        "c4000 ADF (bazooka type) -- c4000\u3000ADF(バズーカタイプ)"
+      ]
+    },
+    {
+      "ID": 40004000,
+      "Entries": [
+        "c4000 ADF (new model) -- c4000\u3000ADF(新型)"
+      ]
+    },
+    {
+      "ID": 40009000,
+      "Entries": [
+        "c4000 ADF (fully equipped) -- c4000\u3000ADF(全装備)"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "c4150 Special attack MT (normal) -- c4150\u3000特攻MT(ノーマル)"
+      ]
+    },
+    {
+      "ID": 41501000,
+      "Entries": [
+        "c4150 Special attack MT(PA) -- c4150\u3000特攻MT(PA)"
+      ]
+    },
+    {
+      "ID": 41502000,
+      "Entries": [
+        "c4150 special attack MT (large missile) -- c4150\u3000特攻MT(大型ミサイル)"
+      ]
+    },
+    {
+      "ID": 41509000,
+      "Entries": [
+        "c4150 Special attack MT (all equipment) -- c4150\u3000特攻MT(全装備)"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "c4201 Next Generation Prototype AC (C-end) -- c4201 次世代プロトタイプAC（Cエンド）"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "c5000 guard mecha (aerial) machine gun -- ｃ5000 ガードメカ(空中)機関銃"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Rocket -- ｃ5000 ガードメカ(空中)ロケット"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "c5000 guard mecha (air) self-destruction -- ｃ5000 ガードメカ(空中)自爆"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Enemy Search -- ｃ5000 ガードメカ(空中)索敵"
+      ]
+    },
+    {
+      "ID": 50000900,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Base -- ｃ5000 ガードメカ(空中)ベース"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "c5010 Bug_Work Type A -- c5010 バグ_作業タイプA"
+      ]
+    },
+    {
+      "ID": 50100100,
+      "Entries": [
+        "c5010 Bug_Work Type B -- c5010 バグ_作業タイプB"
+      ]
+    },
+    {
+      "ID": 50100200,
+      "Entries": [
+        "c5010 Bug_Security type -- c5010 バグ_警備タイプ"
+      ]
+    },
+    {
+      "ID": 50100300,
+      "Entries": [
+        "c5010 Bug_special type -- c5010 バグ_特殊タイプ"
+      ]
+    },
+    {
+      "ID": 50100900,
+      "Entries": [
+        "c5010 Bug_All equipment for testing -- c5010 バグ_テスト用全装備"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "c5120 military US drone for transportation -- ｃ5120 軍事用USドローン\u3000輸送用"
+      ]
+    },
+    {
+      "ID": 51200100,
+      "Entries": [
+        "c5120 military US drone laser -- ｃ5120 軍事用USドローン\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 51200200,
+      "Entries": [
+        "c5120 military US drone cluster missile -- ｃ5120 軍事用USドローン\u3000クラスターミサイル"
+      ]
+    },
+    {
+      "ID": 51200300,
+      "Entries": [
+        "c5120 Military US Drone Pulse PA -- ｃ5120 軍事用USドローン\u3000パルスPA"
+      ]
+    },
+    {
+      "ID": 51200900,
+      "Entries": [
+        "c5120 military US drone fully equipped -- ｃ5120 軍事用USドローン\u3000全装備"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "c5150 combat helicopter machine gun & missile -- ｃ5150 戦闘ヘリ\u3000機関銃&ミサイル"
+      ]
+    },
+    {
+      "ID": 51500100,
+      "Entries": [
+        "c5150 combat helicopter machine gun & napalm -- ｃ5150 戦闘ヘリ\u3000機関銃&ナパーム"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "c5150 combat helicopter EN machine gun & missile -- ｃ5150 戦闘ヘリ\u3000EN機関銃&ミサイル"
+      ]
+    },
+    {
+      "ID": 51500300,
+      "Entries": [
+        "c5150 combat helicopter EN machine gun & napalm -- ｃ5150 戦闘ヘリ\u3000EN機関銃&ナパーム"
+      ]
+    },
+    {
+      "ID": 51500900,
+      "Entries": [
+        "c5150 combat helicopter base -- ｃ5150 戦闘ヘリ\u3000ベース"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "c5200 combat vehicle live cannon -- c5200\u3000戦闘車輌\u3000実弾キャノン"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "c5200 combat vehicle machine gun -- c5200\u3000戦闘車輌\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 52002000,
+      "Entries": [
+        "c5200 combat vehicle missile -- c5200\u3000戦闘車輌\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 52003000,
+      "Entries": [
+        "c5200 combat vehicle laser -- c5200\u3000戦闘車輌\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 52009000,
+      "Entries": [
+        "c5200 combat vehicle fully equipped -- c5200\u3000戦闘車輌\u3000全装備"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "c6050 Pharaon Gatling type -- c6050 ファラオン\u3000ガトリングタイプ"
+      ]
+    },
+    {
+      "ID": 60501000,
+      "Entries": [
+        "c6050 Pharaon napalm type -- c6050 ファラオン\u3000ナパームタイプ"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "c6050 Pharaon Napalm_Missile type -- c6050 ファラオン\u3000ナパーム_ミサイルタイプ"
+      ]
+    },
+    {
+      "ID": 60501110,
+      "Entries": [
+        "c6050 Pharaon Napalm_Missile type_Light movable -- c6050 ファラオン\u3000ナパーム_ミサイルタイプ_ライト可動"
+      ]
+    },
+    {
+      "ID": 60509000,
+      "Entries": [
+        "c6050 Pharaon fully equipped type -- c6050 ファラオン\u3000全装備タイプ"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "c6100 sea spider -- c6100 ウミグモ"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 general purpose gun for laser sight -- c7270 砲台汎用\u3000レーザーサイト用"
+      ]
+    },
+    {
+      "ID": 72800000,
+      "Entries": [
+        "c7280 general purpose gun for laser sight -- c7280 砲台汎用\u3000レーザーサイト用"
+      ]
+    },
+    {
+      "ID": 72801000,
+      "Entries": [
+        "For underground facility recapture gun battery dummy, for laser sight -- 地下施設奪還砲台ダミー用\u3000レーザーサイト用"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 general purpose gun for laser sight -- c7310 砲台汎用\u3000レーザーサイト用"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "c8111 Colorless MT -- c8111 無色MT"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy -- c8135 宮武強敵"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "c8145 tank bird -- c8145 タンクバード"
+      ]
+    },
+    {
+      "ID": 85300000,
+      "Entries": [
+        "resource excavation ship -- 資源発掘艦"
+      ]
+    }
+  ]
+}

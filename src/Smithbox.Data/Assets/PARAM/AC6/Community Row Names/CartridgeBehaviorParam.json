@@ -1,0 +1,463 @@
+{
+  "Name": "CartridgeBehaviorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Rifle (standard)"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Shotgun (shotshell)"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Shotgun (hexagonal)"
+      ]
+    },
+    {
+      "ID": 100012,
+      "Entries": [
+        "Shotgun (multiple regular bullets)"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        "Gatling (rifle bullet)"
+      ]
+    },
+    {
+      "ID": 100040,
+      "Entries": [
+        "Handgun (standard)"
+      ]
+    },
+    {
+      "ID": 100041,
+      "Entries": [
+        "Handgun (large caliber)"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "grenade"
+      ]
+    },
+    {
+      "ID": 100051,
+      "Entries": [
+        "grenade wp_1310"
+      ]
+    },
+    {
+      "ID": 100060,
+      "Entries": [
+        "curved cannon"
+      ]
+    },
+    {
+      "ID": 101050,
+      "Entries": [
+        "Grenade_back weapon"
+      ]
+    },
+    {
+      "ID": 101090,
+      "Entries": [
+        "stun needle launcher"
+      ]
+    },
+    {
+      "ID": 101100,
+      "Entries": [
+        "Orbit_live bullets"
+      ]
+    },
+    {
+      "ID": 101200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 400003,
+      "Entries": [
+        "rifle"
+      ]
+    },
+    {
+      "ID": 400013,
+      "Entries": [
+        "shotgun"
+      ]
+    },
+    {
+      "ID": 400023,
+      "Entries": [
+        "Gatling (machine gun)"
+      ]
+    },
+    {
+      "ID": 400033,
+      "Entries": [
+        "bazooka"
+      ]
+    },
+    {
+      "ID": 400043,
+      "Entries": [
+        "hand gun"
+      ]
+    },
+    {
+      "ID": 400053,
+      "Entries": [
+        "sniper rifle"
+      ]
+    },
+    {
+      "ID": 400063,
+      "Entries": [
+        "canon"
+      ]
+    },
+    {
+      "ID": 400073,
+      "Entries": [
+        "deformed cannon"
+      ]
+    },
+    {
+      "ID": 6011002,
+      "Entries": [
+        "Semi-automatic rifle (small)"
+      ]
+    },
+    {
+      "ID": 6011102,
+      "Entries": [
+        "Semi-automatic rifle (medium)"
+      ]
+    },
+    {
+      "ID": 6011202,
+      "Entries": [
+        "Semi-automatic rifle (large)"
+      ]
+    },
+    {
+      "ID": 6012102,
+      "Entries": [
+        "assault rifle"
+      ]
+    },
+    {
+      "ID": 6013102,
+      "Entries": [
+        "hand gun"
+      ]
+    },
+    {
+      "ID": 6014002,
+      "Entries": [
+        "Machine gun (small)"
+      ]
+    },
+    {
+      "ID": 6014102,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 6014202,
+      "Entries": [
+        "Machine gun (large)"
+      ]
+    },
+    {
+      "ID": 6015102,
+      "Entries": [
+        "Gatling gun (medium)"
+      ]
+    },
+    {
+      "ID": 6015202,
+      "Entries": [
+        "Gatling gun (large)"
+      ]
+    },
+    {
+      "ID": 6021102,
+      "Entries": [
+        "Shotgun (medium)"
+      ]
+    },
+    {
+      "ID": 6021202,
+      "Entries": [
+        "Shotgun (large)"
+      ]
+    },
+    {
+      "ID": 6031102,
+      "Entries": [
+        "Grenade rifle (medium)"
+      ]
+    },
+    {
+      "ID": 6031202,
+      "Entries": [
+        "Grenade rifle (large)"
+      ]
+    },
+    {
+      "ID": 6041102,
+      "Entries": [
+        "bazooka"
+      ]
+    },
+    {
+      "ID": 6041202,
+      "Entries": [
+        "Bazooka (large)"
+      ]
+    },
+    {
+      "ID": 6042102,
+      "Entries": [
+        "diffusion bazooka"
+      ]
+    },
+    {
+      "ID": 6051102,
+      "Entries": [
+        "Throwing gun (high-explosive bullet)"
+      ]
+    },
+    {
+      "ID": 6081002,
+      "Entries": [
+        "Normal missile small (simultaneous launch system)"
+      ]
+    },
+    {
+      "ID": 6081102,
+      "Entries": [
+        "Normal missile medium (combined type)"
+      ]
+    },
+    {
+      "ID": 6081202,
+      "Entries": [
+        "Normal missile large (single-shot type)"
+      ]
+    },
+    {
+      "ID": 6082102,
+      "Entries": [
+        "vertical missile"
+      ]
+    },
+    {
+      "ID": 6083102,
+      "Entries": [
+        "plasma missile"
+      ]
+    },
+    {
+      "ID": 6084102,
+      "Entries": [
+        "depleted uranium missile"
+      ]
+    },
+    {
+      "ID": 6085102,
+      "Entries": [
+        "AI multi-stage guided missile"
+      ]
+    },
+    {
+      "ID": 6086102,
+      "Entries": [
+        "interceptor missile"
+      ]
+    },
+    {
+      "ID": 6087102,
+      "Entries": [
+        "fission missile"
+      ]
+    },
+    {
+      "ID": 6121102,
+      "Entries": [
+        "flare"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 security MT rifle"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT machine gun"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "c3020 former communist country general purpose MT rifle"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "c3020 Former communist country general purpose MT shotgun"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT double machine gun"
+      ]
+    },
+    {
+      "ID": 30500500,
+      "Entries": [
+        "c3050_grenade rifle"
+      ]
+    },
+    {
+      "ID": 32001300,
+      "Entries": [
+        "c3200 avalanche double machine gun"
+      ]
+    },
+    {
+      "ID": 32002100,
+      "Entries": [
+        "c3200 Avalanche Rifle (Ace)"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Rifle A"
+      ]
+    },
+    {
+      "ID": 32500001,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Rifle A for Full Burst"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "c3250 Regular Army AC (Heavy Firepower) Grenade"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 Regular Army AC (Support) Rifle B"
+      ]
+    },
+    {
+      "ID": 34000800,
+      "Entries": [
+        "c3400_sniper rifle"
+      ]
+    },
+    {
+      "ID": 34001200,
+      "Entries": [
+        "c3400_grenade rifle"
+      ]
+    },
+    {
+      "ID": 34001500,
+      "Entries": [
+        "c3400 shotgun"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 Deleteer Vulcan"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Gatling gun right hand"
+      ]
+    },
+    {
+      "ID": 41000210,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost A",
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost B",
+        "c4100 Humanoid heavyweight boss Gatling gun for charge/boost C"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand"
+      ]
+    },
+    {
+      "ID": 41000310,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Shotgun Left Hand Slide"
+      ]
+    },
+    {
+      "ID": 41000320,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand slide simultaneous firing"
+      ]
+    },
+    {
+      "ID": 41000330,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand fires all bullets"
+      ]
+    },
+    {
+      "ID": 41000340,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand all shots fired all loaded"
+      ]
+    },
+    {
+      "ID": 41001300,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Grenade Cannon"
+      ]
+    }
+  ]
+}

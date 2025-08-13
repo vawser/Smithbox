@@ -1,0 +1,491 @@
+{
+  "Name": "BulletShotgunParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test (it's okay to erase or overwrite)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test (it's okay to erase or overwrite)"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "pulse shotgun"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "SHOTGUN"
+      ]
+    },
+    {
+      "ID": 10810000,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI (Right)"
+      ]
+    },
+    {
+      "ID": 10810100,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI (Right) (Charged)"
+      ]
+    },
+    {
+      "ID": 10815000,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI (Left)"
+      ]
+    },
+    {
+      "ID": 10815100,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI (Left) (Charged)"
+      ]
+    },
+    {
+      "ID": 10820000,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Right)"
+      ]
+    },
+    {
+      "ID": 10820100,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Right) (Charged)"
+      ]
+    },
+    {
+      "ID": 10825000,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Left)"
+      ]
+    },
+    {
+      "ID": 10825100,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST (Left) (Charged)"
+      ]
+    },
+    {
+      "ID": 10910002,
+      "Entries": [
+        "split hand missile"
+      ]
+    },
+    {
+      "ID": 11200100,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR (Charged)"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS"
+      ]
+    },
+    {
+      "ID": 11510100,
+      "Entries": [
+        "Laser shotgun wide horizontal charge right"
+      ]
+    },
+    {
+      "ID": 11515000,
+      "Entries": [
+        "Laser shotgun wide left"
+      ]
+    },
+    {
+      "ID": 11515100,
+      "Entries": [
+        "Laser shotgun wide horizontal charge left"
+      ]
+    },
+    {
+      "ID": 11520100,
+      "Entries": [
+        "Plasma rifle_M・AI unique_charge shooting"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF (Right)"
+      ]
+    },
+    {
+      "ID": 11900005,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF (Left)"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 13000005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000001,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000002,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000003,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000004,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000005,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000006,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 21000100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 21000101,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 21000102,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 21000103,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 21000104,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Right)"
+      ]
+    },
+    {
+      "ID": 30005000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Left)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Right)"
+      ]
+    },
+    {
+      "ID": 30025000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Left)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM"
+      ]
+    },
+    {
+      "ID": 30010001,
+      "Entries": [
+        "Plasma missile spreads diagonally and guides towards the enemy"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Right)"
+      ]
+    },
+    {
+      "ID": 30200100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Left)"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Right)"
+      ]
+    },
+    {
+      "ID": 30210100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Left)"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Right)"
+      ]
+    },
+    {
+      "ID": 30220100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Left)"
+      ]
+    },
+    {
+      "ID": 30700000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Right)"
+      ]
+    },
+    {
+      "ID": 30700001,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Right)"
+      ]
+    },
+    {
+      "ID": 30700100,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Left)"
+      ]
+    },
+    {
+      "ID": 30700101,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Left)"
+      ]
+    },
+    {
+      "ID": 30800000,
+      "Entries": [
+        "2way missile Might be used in the official version"
+      ]
+    },
+    {
+      "ID": 30900001,
+      "Entries": [
+        "Fission missile 2 series 6 fission"
+      ]
+    },
+    {
+      "ID": 30910001,
+      "Entries": [
+        "fission missile single shot"
+      ]
+    },
+    {
+      "ID": 30920001,
+      "Entries": [
+        "Fission missile 2 series 12 fission"
+      ]
+    },
+    {
+      "ID": 31410000,
+      "Entries": [
+        "Laser drone 1 right guidance 1st time"
+      ]
+    },
+    {
+      "ID": 31410010,
+      "Entries": [
+        "Laser drone 1 right guidance 2nd time"
+      ]
+    },
+    {
+      "ID": 31410020,
+      "Entries": [
+        "Laser drone 1 right guidance 3rd time"
+      ]
+    },
+    {
+      "ID": 31410050,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Right)"
+      ]
+    },
+    {
+      "ID": 31410100,
+      "Entries": [
+        "Laser drone charge 1 right guidance 1st time"
+      ]
+    },
+    {
+      "ID": 31410110,
+      "Entries": [
+        "Laser drone charge 1 right guidance 2nd time"
+      ]
+    },
+    {
+      "ID": 31410120,
+      "Entries": [
+        "Laser drone charge 1 right guidance 3rd time"
+      ]
+    },
+    {
+      "ID": 31410150,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Right) (Charged)"
+      ]
+    },
+    {
+      "ID": 31415000,
+      "Entries": [
+        "Laser drone 1 left guidance 1st time"
+      ]
+    },
+    {
+      "ID": 31415010,
+      "Entries": [
+        "Laser drone 1 left guidance 2nd time"
+      ]
+    },
+    {
+      "ID": 31415020,
+      "Entries": [
+        "Laser drone 1 left 3rd guidance"
+      ]
+    },
+    {
+      "ID": 31415050,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Left)"
+      ]
+    },
+    {
+      "ID": 31415100,
+      "Entries": [
+        "Laser drone charge 1 left guidance 1st time"
+      ]
+    },
+    {
+      "ID": 31415110,
+      "Entries": [
+        "Laser drone charge 1 left guidance 2nd time"
+      ]
+    },
+    {
+      "ID": 31415120,
+      "Entries": [
+        "Laser drone charge 1 left guidance 3rd time"
+      ]
+    },
+    {
+      "ID": 31415150,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Left) (Charged)"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY"
+      ]
+    },
+    {
+      "ID": 32300100,
+      "Entries": [
+        "Shoulder Plasma Cannon Charge for Raylena"
+      ]
+    },
+    {
+      "ID": 32200000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Right)"
+      ]
+    },
+    {
+      "ID": 32200100,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Right) (Charged)"
+      ]
+    },
+    {
+      "ID": 32205000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Left)"
+      ]
+    },
+    {
+      "ID": 32205100,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Left) (Charged)"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD"
+      ]
+    },
+    {
+      "ID": 33500001,
+      "Entries": [
+        "Auxiliary Booster_M・AI Unique (shooting weapon ver) Child"
+      ]
+    }
+  ]
+}

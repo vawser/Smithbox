@@ -1,0 +1,65 @@
+{
+  "Name": "VowParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Heirs of the Sun"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Blue Sentinels"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Brotherhood of Blood"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Way of Blue"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Rat King"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Bell Keepers"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Dragon Remnants"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Company of Champions"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Pilgrims of Dark"
+      ]
+    }
+  ]
+}

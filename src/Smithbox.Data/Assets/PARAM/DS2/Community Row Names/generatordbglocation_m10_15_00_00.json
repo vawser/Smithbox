@@ -1,0 +1,227 @@
+{
+  "Name": "generatordbglocation_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 90,
+      "Entries": [
+        "[Female Knight] Npc -- 【女騎士】NPC"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[Female Knight] NPC (Ghost) -- 【女騎士】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Sealed Man -- 封印された人"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Sealed Man (Ghost) -- 封印された人（亡霊）"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Dragon Shrine Maiden (for reading) -- 龍の巫女（読み込み用）"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "[Black Spirit] Enclosed Man -- 【黒霊】封じられた人"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "【Black Spirit】NPC for Multi: The Elder Brother of a Female Swordsman -- 【黒霊】マルチ用NPC：女剣士の兄"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "【Black Spirit】Painting Defense (Male) -- 【黒霊】絵画守（男）"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "BOSS: Wyvern -- 【BOSS】ワイバーン"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【Outside of the Museum_】Cobold_3 -- 【館の外_】コボルト_3"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "【Outside of the Museum_】Cobold_4 -- 【館の外_】コボルト_4"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "【Outside of the Museum_】Cobold_5 -- 【館の外_】コボルト_5"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "【Outside of the Museum_】Cobold_1 -- 【館の外_】コボルト_1"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "【Outside of the Museum_】Cobold_2 -- 【館の外_】コボルト_2"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【In cart】Basilisk -- 【荷車の中】バジリスク"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Left_Trap during Mirror Night】 Stone Defense: Explosion -- 【ミラーナイトの間左_罠】石守：爆発"
+      ]
+    },
+    {
+      "ID": 1850,
+      "Entries": [
+        "[Hole 2F Petrified Stop Back _ Battle] [] [Mimick] -- 【ホール2F石化ストップ裏_戦闘】ν-ミミック"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "【Auga】Petrified Stop -- 【オーガ】石化ストップ"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Cage of the auger passage _ battle] strengthened immortals -- 【オーガ通路の檻_戦闘】強化不死人"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Cage of the auger passage _ battle] Auga -- 【オーガ通路の檻_戦闘】オーガ"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Convoy of auger aisle _ Battle] Basilisk -- 【オーガ通路の護送車_戦闘】バジリスク"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "[Convoy of auger aisle _ Battle] Basilisk -- 【オーガ通路の護送車_戦闘】バジリスク"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "[Back of the painting of the auger passage _ battle] dragon professor_2 -- 【オーガ通路の絵画裏_戦闘】龍の教授_2"
+      ]
+    },
+    {
+      "ID": 3802,
+      "Entries": [
+        "[Back of the painting of the auger passage _ battle] dragon professor_3 -- 【オーガ通路の絵画裏_戦闘】龍の教授_3"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "【Cage in cage room_combat】Giant poisonous horn: Acid -- 【檻部屋の檻_戦闘】巨大毒角虫：酸"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "【Cage room_dissecting】Professor of the dragon -- 【檻部屋_解剖中】龍の教授"
+      ]
+    },
+    {
+      "ID": 4061,
+      "Entries": [
+        "【Cage room_dissecting】Professor of the dragon -- 【檻部屋_解剖中】龍の教授"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Room on the prison _ dissecting] Professor of the dragon -- 【牢の上の部屋_解剖中】龍の教授"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Bone Dragon -- 骨ドラゴン"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Wall destruction _ first] Auga -- 【壁破壊_一枚目】オーガ"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Wall destruction _ second] Auga -- 【壁破壊_二枚目】オーガ"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "【Event Test】Mirror Night Under Me_1 -- 【イベントテスト】ミラーナイトの下僕_1"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "【Event Test】Mirror Night Under Me_2 -- 【イベントテスト】ミラーナイトの下僕_2"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "【Event Test】Mirror Night Under Me_5 -- 【イベントテスト】ミラーナイトの下僕_5"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "【Event Test_Huge Cage】Giant Basilrisk -- 【イベントテスト_巨大檻】巨大バジリスク"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "[Hunting dog] wandering in jail 1 -- 【狩猟犬】牢屋徘徊1"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "[Hunting dog] wandering in jail 2 -- 【狩猟犬】牢屋徘徊2"
+      ]
+    }
+  ]
+}

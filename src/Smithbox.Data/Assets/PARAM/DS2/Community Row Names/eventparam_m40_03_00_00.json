@@ -1,0 +1,125 @@
+{
+  "Name": "eventparam_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Elevator body"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "On elevator lever"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Under elevator lever"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Boss: Agaturan Stand_ Combat"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Agaduran Wormhole Generation"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Agaduran's Alter-Ego Death Treatment"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "warp the bottom of the warp by falling into the hole"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "The forest of the shadow of the warp _emptiness by falling into the hole"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Warp _King Castle Drangreig falling into a hole"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Warp in the hole (return from the boss's room)"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Light stand 1 in the abyss"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Light stand 2 in the abyss"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "The Light Stand of the Abyss 3"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "The drop of water falls and the torch disappears."
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "White door opening setting_scum bottom"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "The open setting of the white door_ Forest of the shadow of the emptiness"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "White Door Open Setting_Dranggreig"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Draw switching of Moya"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Pledge: The Pilgrimage of the Abyss_ Contribution up"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play ing seed fire 01_King's Castle D'Angheig_ underground abyss before pilgrims"
+      ]
+    }
+  ]
+}

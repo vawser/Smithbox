@@ -1,0 +1,395 @@
+{
+  "Name": "npctalkparam_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 75600000,
+      "Entries": [
+        "Talk to: First Time"
+      ]
+    },
+    {
+      "ID": 75600010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600100,
+      "Entries": [
+        "Talkto: First Time: Second Time"
+      ]
+    },
+    {
+      "ID": 75600110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600200,
+      "Entries": [
+        "Talk to: Possession of items"
+      ]
+    },
+    {
+      "ID": 75600210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600250,
+      "Entries": [
+        "↓ (YES/NO dialog)"
+      ]
+    },
+    {
+      "ID": 75600300,
+      "Entries": [
+        "Talk to: Item Possession: YES"
+      ]
+    },
+    {
+      "ID": 75600310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600320,
+      "Entries": [
+        "↓ Item transfer"
+      ]
+    },
+    {
+      "ID": 75600330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600340,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600350,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600360,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600370,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600400,
+      "Entries": [
+        "Talk to: Item Possession: NO"
+      ]
+    },
+    {
+      "ID": 75600410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600500,
+      "Entries": [
+        "Talk to: Item Possession: 2nd"
+      ]
+    },
+    {
+      "ID": 75600510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75600600,
+      "Entries": [
+        "Talk to: Item Possession: 2nd: NO"
+      ]
+    },
+    {
+      "ID": 75600700,
+      "Entries": [
+        "Pledge Conversation: First Time"
+      ]
+    },
+    {
+      "ID": 75601100,
+      "Entries": [
+        "Re-pledge conversation: the first time"
+      ]
+    },
+    {
+      "ID": 75601110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601120,
+      "Entries": [
+        "↓ (YES/NO dialog)"
+      ]
+    },
+    {
+      "ID": 75601200,
+      "Entries": [
+        "Re-pledge conversation: First time: NO"
+      ]
+    },
+    {
+      "ID": 75601300,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 75601400,
+      "Entries": [
+        "Menu: Walk Away: Non-purchaseRe-pledge conversation: First time: YES"
+      ]
+    },
+    {
+      "ID": 75601500,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 75601600,
+      "Entries": [
+        "Pledge Ranking 1"
+      ]
+    },
+    {
+      "ID": 75601610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601630,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601640,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601700,
+      "Entries": [
+        "Pledge Ranking 2"
+      ]
+    },
+    {
+      "ID": 75601710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601730,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601740,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601750,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601760,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601800,
+      "Entries": [
+        "Pledge Ranking 3"
+      ]
+    },
+    {
+      "ID": 75601810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75601820,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75605000,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 75605010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75605020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75605100,
+      "Entries": [
+        "Menu Conversation: Part 2"
+      ]
+    },
+    {
+      "ID": 75605110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75605200,
+      "Entries": [
+        "Menu Conversation: Part 3"
+      ]
+    },
+    {
+      "ID": 75605210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75605220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 75609000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 75609100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 75609200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 75609300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 75609400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75609410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75609420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 75609500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 75609600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

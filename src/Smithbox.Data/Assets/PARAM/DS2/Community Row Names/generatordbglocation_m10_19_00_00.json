@@ -1,0 +1,383 @@
+{
+  "Name": "generatordbglocation_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 95,
+      "Entries": [
+        "【NPC】Sancho -- 【NPC】サンチョ"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "【NPC】Sancho (Ghost) -- 【NPC】サンチョ（亡霊）"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "【NPC Curiosity】 NPC Mag Herald -- 【NPC珍品屋】 NPCマグヘラルド"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "【NPC Curiosity】 NPC Mag Herald (Ghost) -- 【NPC珍品屋】 NPCマグヘラルド（亡霊）"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "【Bell Guard Area】Sancho -- 【鐘守エリア：黒霊】サンチョ"
+      ]
+    },
+    {
+      "ID": 576,
+      "Entries": [
+        "[Before The Demon Knight: White Spirit] Female Knight -- 【デーモンナイト前：白霊】女騎士"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "【BOSS】 Damon Knight -- 【BOSS】 デーモンナイト"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "【BOSS】 Molten Iron Daemon -- 【BOSS】 熔鉄デーモン"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "[Door of the castle _ Proximity] Daemon armor (deceased): Mass production type: sword_1 -- 【城の扉前_近接】デーモン鎧（亡者）：量産型：刀_1"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "[Door of the castle _ Proximity] Daemon armor (deceased): Mass production type: sword_2 -- 【城の扉前_近接】デーモン鎧（亡者）：量産型：刀_2"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Fire-blowing cow detour stairs on the stairs _ Proximity] Daemon armor (deceased): Mass production type: sword -- 【火吹き牛迂回路階段上_近接】デーモン鎧（亡者）：量産型：刀"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "[Fire-blowing cow image _ door opening and start _ proximity] daemon armor (deceased): mass production type: sword_1 -- 【火吹き牛像_扉開けると起動_近接】デーモン鎧（亡者）：量産型：刀_1"
+      ]
+    },
+    {
+      "ID": 2016,
+      "Entries": [
+        "[Fire-blowing cow image _ door opening and start _ proximity] daemon armor (deceased): mass production type: sword_2 -- 【火吹き牛像_扉開けると起動_近接】デーモン鎧（亡者）：量産型：刀_2"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Passage in the back of the fire-blowing cow statue] [ ] Demon armor (deceased): mass production type: bow -- 【火吹き牛像奥の通路_射撃】デーモン鎧（亡者）：量産型：弓"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "[Exit of the passage exit in the back of the fire-blowing cow image] Daemon armor (deceased): mass production type: sword_1 -- 【火吹き牛像奥の通路出口_近接】デーモン鎧（亡者）：量産型：刀_1"
+      ]
+    },
+    {
+      "ID": 2031,
+      "Entries": [
+        "[Exit of the passage exit in the back of the fire-blowing cow image] Daemon armor (deceased): mass production type: sword_2 -- 【火吹き牛像奥の通路出口_近接】デーモン鎧（亡者）：量産型：刀_2"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[Fire-blowing cow statue soba 2nd round] Demon armor (deceased): Sword: Soul Black -- 【火吹き牛像そば2周目】デーモン鎧（亡者）：刀：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Molten iron furnace left _ stairs back _ proximity] daemon armor (deceased): mass production type: sword -- 【熔鉄炉左_階段裏_近接】デーモン鎧（亡者）：量産型：刀"
+      ]
+    },
+    {
+      "ID": 3025,
+      "Entries": [
+        "[Molten iron furnace left _ ladder front _ battle] daemon armor (dead): mass production type: sword -- 【熔鉄炉左_梯子前_戦闘】デーモン鎧（亡者）：量産型：刀"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Molten iron furnace left _ ladder on _ Sniper] Daemon armor (dead): bow: fire until approaching -- 【熔鉄炉左_梯子上_スナイパー】デーモン鎧（亡者）：弓：近づくまで射撃"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Molten iron furnace left _ aisle under _ proximity 2nd lap] daemon armor (deceased): sword: full body flame soul black -- 【熔鉄炉左_通路下_近接2周目】デーモン鎧（亡者）：刀：全身炎ソウルブラック"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "[Molten iron furnace central _ bridge top _ dash to the edge when you start] daemon armor (dead): mass production type: sword -- 【熔鉄炉中央_橋の上_起動したら端までダッシュ】デーモン鎧（亡者）：量産型：刀"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "[In the molten iron furnace _ ambush 2nd lap] daemon armor (deceased): mass production type: sword_1: Soul Black -- 【熔鉄炉内_待ち伏せ2周目】デーモン鎧（亡者）：量産型：刀_1：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 3071,
+      "Entries": [
+        "[In the molten iron furnace _ ambush 2nd lap] daemon armor (deceased): mass production type: sword_2: Soul Black -- 【熔鉄炉内_待ち伏せ2周目】デーモン鎧（亡者）：量産型：刀_2：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "[Shortcut Bridge_ Course Block] Daemon Armor (Deceased): Sword -- 【ショートカット橋_進路塞ぎ】デーモン鎧（亡者）：刀"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "[Right of molten iron furnace _ white door front] Daemon armor (deceased): bow -- 【熔鉄炉右_白扉前】デーモン鎧（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "[After the boss _ passage back] Demon armor (dead): sword -- 【ボス後_通路奥】デーモン鎧（亡者）：刀"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Inter-building passage _ scaffolding] kingdom heavy soldiers (1) bridge destruction -- 【棟間通路_足場崩し】王国重兵士①：橋壊し"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "[Approaching toward the _PC the aisle between the buildings (scaffolding)], the kingdom heavy soldiers -- 【棟間通路_PCに向かって接近（足場崩し）】王国重兵士①"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Molten iron jar passage _long distance] daemon armor (dead): bow -- 【熔鉄壷通路_遠距離】デーモン鎧（亡者）：弓"
+      ]
+    },
+    {
+      "ID": 4025,
+      "Entries": [
+        "[Lift floor _ Proximity] Kingdom Heavy Soldiers (1)1 -- 【リフト床_近接】王国重兵士①1"
+      ]
+    },
+    {
+      "ID": 4031,
+      "Entries": [
+        "【Lift Floor_Long Distance】Damon Armor (Deceased) Bow 1 -- 【リフト床_遠距離】デーモン鎧（亡者）：弓１"
+      ]
+    },
+    {
+      "ID": 4032,
+      "Entries": [
+        "[Lift floor _ long distance] Daemon armor (deceased): Mass production type bow 1 -- 【リフト床_遠距離】デーモン鎧（亡者）：量産型弓１"
+      ]
+    },
+    {
+      "ID": 4033,
+      "Entries": [
+        "[Lift floor _ long distance] Daemon armor (deceased): Bow 2 -- 【リフト床_遠距離】デーモン鎧（亡者）：弓２"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "[Lift floor ladder water jar near_ treasure chest mimetic] [mimic] iron -- 【リフト床梯子上水壷近く_宝箱擬態】ν-ミミック：鉄"
+      ]
+    },
+    {
+      "ID": 4036,
+      "Entries": [
+        "[Giant Molten Iron Jar Key Room Stairs 2nd Round] Demon Armor (Deceased): Sword: Soul Black -- 【巨大熔鉄壷虫鍵部屋階段2周目】デーモン鎧（亡者）：刀：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 4038,
+      "Entries": [
+        "[Lift floor _ Proximity] Kingdom Heavy Soldiers (1)2 -- 【リフト床_近接】王国重兵士①2"
+      ]
+    },
+    {
+      "ID": 4039,
+      "Entries": [
+        "[Stairs to the melting jar] Ishimori -- 【熔鉄壷への階段】石守"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Huge molten iron jar _ ambush] Daemon armor (deceased): Mass production type: sword_1 -- 【巨大熔鉄壷梁_待ち伏せ】デーモン鎧（亡者）：量産型：刀_1"
+      ]
+    },
+    {
+      "ID": 4041,
+      "Entries": [
+        "[Giant molten iron jar _ ambush 2nd lap] daemon armor (deceased): mass production type: sword: Soul Black -- 【巨大熔鉄壷梁_待ち伏せ2周目】デーモン鎧（亡者）：量産型：刀：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "[Giant Molten Iron Pot Rooftop _ Shooting] Demon Armor (Deceased): Bow: Shooting Until Approaching_1 -- 【巨大熔鉄壷屋上_射撃】デーモン鎧（亡者）：弓：近づくまで射撃_1"
+      ]
+    },
+    {
+      "ID": 4051,
+      "Entries": [
+        "[Giant Molten Iron Pot Rooftop _ Shooting] Demon Armor (Deceased): Bow: Shooting Until Approaching_2 -- 【巨大熔鉄壷屋上_射撃】デーモン鎧（亡者）：弓：近づくまで射撃_2"
+      ]
+    },
+    {
+      "ID": 4052,
+      "Entries": [
+        "[Giant Molten Iron Pot Rooftop _ Shooting] Demon Armor (Deceased): Bow: Shooting Until Approaching_3 -- 【巨大熔鉄壷屋上_射撃】デーモン鎧（亡者）：弓：近づくまで射撃_3"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[Passage to the boss room _ course blocking 1] kingdom heavy soldiers (1): narrow-room combat -- 【ボス部屋への通路_進路塞ぎ１】王国重兵士①：狭所戦闘"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Damon Night Boss Room] Bay Grant: Luggage Available -- 【デーモンナイトボス部屋】ベイグラント：荷物有り"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "[Near the Fountain of Recovery _ Sniper] Demon Armor (Dead): Bow: Shooting Until Approaching_3 -- 【回復の泉付近_スナイパー】デーモン鎧（亡者）：弓：近づくまで射撃_3"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "[3 white door of the fire-blowing cow _ ambush] kingdom heavy soldiers: color (1) -- 【3連火吹き牛の先白扉_待ち伏せ】王国重兵士：色①"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "[Passage to the boss room _ course block3] kingdom heavy soldiers: color (1): narrow-place combat -- 【ボス部屋への通路_進路塞ぎ３】王国重兵士：色①：狭所戦闘"
+      ]
+    },
+    {
+      "ID": 7006,
+      "Entries": [
+        "[Inside the cow image _ ladder guard] Ming-iron castle: light heavy soldier -- 【牛像内部_梯子守り】熔鉄城：軽快重兵士"
+      ]
+    },
+    {
+      "ID": 7007,
+      "Entries": [
+        "[Bell Guard Area_ For Pledge Relief] NPC Samurai Saucer -- 【鐘守エリア_誓約救済用】NPC侍ソーサラー"
+      ]
+    },
+    {
+      "ID": 7008,
+      "Entries": [
+        "[Treasure chest front of the scorching scaffolding _ proximity 2nd lap] Demon armor (deceased): Sword: Soul Black -- 【灼熱足場の宝箱前_近接2周目】デーモン鎧（亡者）：刀：ソウルブラック"
+      ]
+    },
+    {
+      "ID": 7009,
+      "Entries": [
+        "[Second lap attacked when you go to pick up items] [Damon Armor (Deceased): Mass Production: Sword: Soul Black] -- 【アイテム取りに行くと襲われる2周目】【デーモン鎧（亡者）：量産型：刀：ソウルブラック】"
+      ]
+    },
+    {
+      "ID": 7011,
+      "Entries": [
+        "[Toge room_ combat] kingdom heavy soldiers: color (1)1: narrow-room combat -- 【トゲ部屋_戦闘】王国重兵士：色①1：狭所戦闘"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Bell Guard Area_Combat] NPC Warrior (Male) Bell Guard 1: Oversized Sword & Great Shield -- 【鐘守エリア_戦闘】NPC戦士（男）鐘守１：特大剣＆大盾"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[Bell Guard Area_Combat] NPC Warrior (Man) _2 Bell Guard 2: Crossbow & Crossbow -- 【鐘守エリア_戦闘】NPC戦士（男）_2鐘守２：クロスボウ＆クロスボウ"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "[Bell Guard Area_Combat] NPC Warrior (Man) _4 Bell Guard 3: Wand & Spear -- 【鐘守エリア_戦闘】NPC戦士（男）_4鐘守３：杖＆槍"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "[Bell Guard Area_Combat] NPC Warrior (Man) _5 Bell Guard 1: Oversized Sword & Great Shield -- 【鐘守エリア_戦闘】NPC戦士（男）_5鐘守１：特大剣＆大盾"
+      ]
+    },
+    {
+      "ID": 8025,
+      "Entries": [
+        "[Bell Guard Area_ Battle Round] NPC Warrior (Man) _6 Bell Guard 2: Crossbow & Crossbow -- 【鐘守エリア_戦闘2周目】NPC戦士（男）_6鐘守２：クロスボウ＆クロスボウ"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[Bell Guard Area_ Battle] Bell Guard: Zako 1 -- 【鐘守エリア_戦闘】鐘守：ザコ1"
+      ]
+    },
+    {
+      "ID": 8110,
+      "Entries": [
+        "[Bell Guard Area_ Battle] Bell Guard: Zako 2 -- 【鐘守エリア_戦闘】鐘守：ザコ2"
+      ]
+    },
+    {
+      "ID": 8120,
+      "Entries": [
+        "[Bell Guard Area_ Battle] Bell Guard: Zako 3 -- 【鐘守エリア_戦闘】鐘守：ザコ3"
+      ]
+    },
+    {
+      "ID": 8130,
+      "Entries": [
+        "[Bell Guard Area_ Battle] Bell Guard: Zako 4 -- 【鐘守エリア_戦闘】鐘守：ザコ4"
+      ]
+    },
+    {
+      "ID": 8140,
+      "Entries": [
+        "[Bell Guard Area_ Battle] Bell Guard: Zako 5 -- 【鐘守エリア_戦闘】鐘守：ザコ5"
+      ]
+    }
+  ]
+}

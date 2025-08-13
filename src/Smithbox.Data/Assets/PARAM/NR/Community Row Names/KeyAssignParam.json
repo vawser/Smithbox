@@ -1,0 +1,437 @@
+{
+  "Name": "KeyAssignParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Main Menu"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Map"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Movement Control"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Move Forwards"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Move Backwards"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Move Left"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Move Right"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Surge Sprint"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Backstep, Dodge Roll, Dash"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Move Camera / Change Target (Up)"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Move Camera / Change Target (Down)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Move Camera / Change Target (Left)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Move Camera / Change Target (Right)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Reset Camera, Lock-On/Remove Target"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Use Item"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Switch Item"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Switch Right-Hand Armament"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Switch Left-Hand Armament"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Attack (RH & Two-Handed Armament)"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Strong Attack (RH & 2H Armament)"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Guard (LH Armament)"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Skill"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Use Flask"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Event Action (Examine, Open, etc.)"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Two-Hand RH Armament/Cancel"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Two-Hand LH Armament/Cancel"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "Ultimate Art"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Character Skill"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Display Location of Self/Item"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Use Item Immediately"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Toggle Item Order"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Cycle Contextual Action Button (Right)"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Cycle Contextual Action Button (Left)"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Zoom In Map"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Zoom Out Map"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Change Level: Up"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Change Level: Down"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Detailed View On/Off"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Switch Pin (Next)"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Switch Pin (Previous)"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "Show Position"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1049 @@
+{
+  "Name": "eventlocation_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Intrusion Point 3-5"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Intrusion Point 4-1"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Intrusion Point 4-2"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Intrusion Point 4-3"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Intrusion Point 4-4"
+      ]
+    },
+    {
+      "ID": 4005,
+      "Entries": [
+        "Intrusion Point 4-5"
+      ]
+    },
+    {
+      "ID": 4006,
+      "Entries": [
+        "Intrusion Point 4-6"
+      ]
+    },
+    {
+      "ID": 4007,
+      "Entries": [
+        "Intrusion Point 4-7"
+      ]
+    },
+    {
+      "ID": 4008,
+      "Entries": [
+        "Intrusion Point 4-8"
+      ]
+    },
+    {
+      "ID": 4009,
+      "Entries": [
+        "Intrusion Point 4-9"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Intrusion Point 5-1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Intrusion Point 5-2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Intrusion Point 5-3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Intrusion Point 5-4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Intrusion Point 5-5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Intrusion Point 5-6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "Intrusion Point 5-7"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Intrusion Point 6-1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Intrusion Point 6-2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Intrusion Point 6-3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Intrusion Point 6-4"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Intrusion Point 7-1"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Intrusion Point 7-2"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Intrusion Point 7-3"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Intrusion Point 7-4"
+      ]
+    },
+    {
+      "ID": 7005,
+      "Entries": [
+        "Intrusion Point 7-5"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice blood character】Hidden door 2"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 2_02"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "【Advice blood character】Hidden door 3"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2_02"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Blood character prohibited] hidden door 3"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Scaffold navigation switching area up and down_1"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Scaffold navigation switching area up and down_2"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Scaffold navigation switching area up and down_3"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "Scaffold navigation switching area up and down_4"
+      ]
+    },
+    {
+      "ID": 100004,
+      "Entries": [
+        "Scaffold navigation switching area up and down_5"
+      ]
+    },
+    {
+      "ID": 100005,
+      "Entries": [
+        "Scaffold navigation switching area up and down_6"
+      ]
+    },
+    {
+      "ID": 101900,
+      "Entries": [
+        "Backlead Safety Points"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "One door unlocking area of the bonfire room"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Bridge _Navimesh switching with lever_A"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Bridge_Navigation Mesh Switching with lever_B"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "The bridge _navi mesh switching to fall with the lever_C"
+      ]
+    },
+    {
+      "ID": 500003,
+      "Entries": [
+        "Bridge_Navimesh switching with lever_D"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Scorching Furnace_Damage Area_01"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "Scorching Furnace_Damage Area_02"
+      ]
+    },
+    {
+      "ID": 600020,
+      "Entries": [
+        "Navi mesh change in scorching furnace"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Boss: Demon Knight battle start judgment"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Navi mesh change of flame image"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Navigation change of the iron bar opened with the bell lever"
+      ]
+    },
+    {
+      "ID": 1102000,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Falling scaffolding_left back_navimesh switching"
+      ]
+    },
+    {
+      "ID": 1201000,
+      "Entries": [
+        "Falling scaffolding_right back_navimesh replacement"
+      ]
+    },
+    {
+      "ID": 1202000,
+      "Entries": [
+        "Falling scaffolding_right-hand_navimesh switching"
+      ]
+    },
+    {
+      "ID": 1203000,
+      "Entries": [
+        "Falling scaffolding_left hand_navimesh switching"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Boss: Molten iron daemon battle start determination"
+      ]
+    },
+    {
+      "ID": 1501000,
+      "Entries": [
+        "Boss: Starting point after the play against the Iron Demon"
+      ]
+    },
+    {
+      "ID": 1502000,
+      "Entries": [
+        "Boss: Placement position at the time of the iron daemon rematch"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Bridge_Navi change point destroyed by enemies"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Guillotine Door_Navimesh Switching"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 2301000,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Navi mesh change by barista destruction"
+      ]
+    },
+    {
+      "ID": 5200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "【Bell Guard】Black Spirit Appearance Area"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10002010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_01"
+      ]
+    },
+    {
+      "ID": 50001001,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_02"
+      ]
+    },
+    {
+      "ID": 50001002,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_03"
+      ]
+    },
+    {
+      "ID": 50001003,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_04"
+      ]
+    },
+    {
+      "ID": 50001004,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_05"
+      ]
+    },
+    {
+      "ID": 50001005,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_08"
+      ]
+    },
+    {
+      "ID": 50001006,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_09"
+      ]
+    },
+    {
+      "ID": 50001007,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_10"
+      ]
+    },
+    {
+      "ID": 50001008,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_11"
+      ]
+    },
+    {
+      "ID": 50001009,
+      "Entries": [
+        "【Navi Point】Molten Iron Daemon_13"
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "【Navi Point】Wandering Knight"
+      ]
+    },
+    {
+      "ID": 50002010,
+      "Entries": [
+        "[Navi point] daemon armor mass production type return point 1"
+      ]
+    },
+    {
+      "ID": 50002020,
+      "Entries": [
+        "[Navi point] daemon armor mass production type feedback point 2"
+      ]
+    },
+    {
+      "ID": 50002030,
+      "Entries": [
+        "【Navi point】Scaffold ing point to go up and down 1"
+      ]
+    },
+    {
+      "ID": 50002040,
+      "Entries": [
+        "[Navi point] scaffold return point to go up and down 2"
+      ]
+    },
+    {
+      "ID": 50002050,
+      "Entries": [
+        "【Navi Point】Bridge Destruction Personnel Movement Point"
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        "No entry area for other map connections"
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "Enemy entry ban area at the entrance"
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        "Enemy entry prohibited area of bell guard area"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Red Captain start area of the bridge in front of the castle"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "Red Captain Launch Area 2 of the bridge in front of the castle"
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        "Post-start bridge_mass production type start area 1"
+      ]
+    },
+    {
+      "ID": 51001001,
+      "Entries": [
+        "Post-start bridge_mass production type start area 1_2"
+      ]
+    },
+    {
+      "ID": 51001010,
+      "Entries": [
+        "Post-start bridge_mass production start area 2"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "Enemy launch area 1 before the fire-blown statue"
+      ]
+    },
+    {
+      "ID": 51002010,
+      "Entries": [
+        "Enemy launch area 2 before the fire-blown statue"
+      ]
+    },
+    {
+      "ID": 51002020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51002025,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51002100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51002700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Molten iron furnace left_Mass production type start"
+      ]
+    },
+    {
+      "ID": 51003010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51003020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51004000,
+      "Entries": [
+        "Start of the high ground archery on the left side of the molten railway road"
+      ]
+    },
+    {
+      "ID": 51005000,
+      "Entries": [
+        "Molten iron road left red captain generation area"
+      ]
+    },
+    {
+      "ID": 51006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51006500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51006510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51006550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51006559,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51006560,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51007000,
+      "Entries": [
+        "Shortcut_Mass production start"
+      ]
+    },
+    {
+      "ID": 51008000,
+      "Entries": [
+        "White door destination_ Captain start area 1"
+      ]
+    },
+    {
+      "ID": 51008010,
+      "Entries": [
+        "White Door Ahead_ Captain Launch Area 2"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "Steelworks begin to destroy scaffolds"
+      ]
+    },
+    {
+      "ID": 51009010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "In front of the molten iron pot stairs and the heavy soldier start area"
+      ]
+    },
+    {
+      "ID": 51010100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51011000,
+      "Entries": [
+        "Molten iron pot area_Mass production type start area"
+      ]
+    },
+    {
+      "ID": 51011500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51011600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51011700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51012000,
+      "Entries": [
+        "Red Squad Launch Area Protecting Damage Floor_ Treasure Chest"
+      ]
+    },
+    {
+      "ID": 51013000,
+      "Entries": [
+        "falling scaffolding destination _ heavy soldier launch area"
+      ]
+    },
+    {
+      "ID": 51014000,
+      "Entries": [
+        "Falling scaffolding destination _ white door front heavy soldier start area"
+      ]
+    },
+    {
+      "ID": 51015000,
+      "Entries": [
+        "Mass production start area 1 on beams"
+      ]
+    },
+    {
+      "ID": 51015010,
+      "Entries": [
+        "Mass production start area 2 on beams"
+      ]
+    },
+    {
+      "ID": 51015020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51016000,
+      "Entries": [
+        "Triple Soldier Launch Area"
+      ]
+    },
+    {
+      "ID": 51017000,
+      "Entries": [
+        "Giant Molten Iron Pot Roof_Bow Shooting Start"
+      ]
+    },
+    {
+      "ID": 51017010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51018000,
+      "Entries": [
+        "Barista Oku_Treasure chest defense mass production type start area"
+      ]
+    },
+    {
+      "ID": 51019000,
+      "Entries": [
+        "Furnace daemon armor start area"
+      ]
+    },
+    {
+      "ID": 51020000,
+      "Entries": [
+        "Giant Molten Iron Jar Beam 2th Round Soul Black Launch Area"
+      ]
+    },
+    {
+      "ID": 51021000,
+      "Entries": [
+        "Enemy launch area 3 before the fire-blowing elephant"
+      ]
+    },
+    {
+      "ID": 51022000,
+      "Entries": [
+        "Molten iron furnace left red captain start area"
+      ]
+    },
+    {
+      "ID": 51023000,
+      "Entries": [
+        "【Bay Grant】Emerging Area"
+      ]
+    },
+    {
+      "ID": 51023010,
+      "Entries": [
+        "【Bay Grant】Movable Area"
+      ]
+    },
+    {
+      "ID": 51024000,
+      "Entries": [
+        "For the return of the former kingdom of the boss"
+      ]
+    },
+    {
+      "ID": 51025000,
+      "Entries": [
+        "For the return of the White Spirit Knight"
+      ]
+    },
+    {
+      "ID": 58000000,
+      "Entries": [
+        "Closed heavy soldiers_ only down attack"
+      ]
+    },
+    {
+      "ID": 58001000,
+      "Entries": [
+        "closed heavy warrior_ swinging attack only _ back side"
+      ]
+    },
+    {
+      "ID": 58005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59000000,
+      "Entries": [
+        "Right towards the area_ bridge for the molten daemon warp"
+      ]
+    },
+    {
+      "ID": 59001000,
+      "Entries": [
+        "Left side towards area for molten daemon warp"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000101,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "Name": "EFID_m60_44_38_20",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 1044380000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 1044380050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 1044380100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 1044380200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1044380400,
+      "Entries": [
+        "Character flag: Small exploration (do not reset)"
+      ]
+    },
+    {
+      "ID": 1044380500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1044380700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 1044380800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 1044380900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1044382100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 1044382200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 1044382400,
+      "Entries": [
+        "Character flag: Small exploration (reset)"
+      ]
+    },
+    {
+      "ID": 1044382500,
+      "Entries": [
+        "Object flag (reset)"
+      ]
+    },
+    {
+      "ID": 1044382700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 1044382800,
+      "Entries": [
+        "Boss flag (reset)"
+      ]
+    },
+    {
+      "ID": 1044382900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 1044388500,
+      "Entries": [
+        "Object act flag"
+      ]
+    },
+    {
+      "ID": 1048204350,
+      "Entries": [
+        "For fixing respawn point: In front of Lava Mole"
+      ]
+    },
+    {
+      "ID": 1048204351,
+      "Entries": [
+        "For fixing respawn point: Gunmen passage"
+      ]
+    }
+  ]
+}

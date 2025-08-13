@@ -1,0 +1,299 @@
+{
+  "Name": "JigglerBehaviorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Light MT"
+      ]
+    },
+    {
+      "ID": 3020001,
+      "Entries": [
+        "Light MT"
+      ]
+    },
+    {
+      "ID": 3020002,
+      "Entries": [
+        "Light MT"
+      ]
+    },
+    {
+      "ID": 3020003,
+      "Entries": [
+        "Light MT"
+      ]
+    },
+    {
+      "ID": 3020004,
+      "Entries": [
+        "Light MT"
+      ]
+    },
+    {
+      "ID": 3050000,
+      "Entries": [
+        "PCA Subject Guard MT"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "Xylem Wing Drone"
+      ]
+    },
+    {
+      "ID": 3150000,
+      "Entries": [
+        "Juggernaut"
+      ]
+    },
+    {
+      "ID": 3150001,
+      "Entries": [
+        "Juggernaut"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Ekdromoi"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "BAWS Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "RaD Tetrapod MT"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "PCA Heavy MT"
+      ]
+    },
+    {
+      "ID": 3700001,
+      "Entries": [
+        "PCA Heavy MT"
+      ]
+    },
+    {
+      "ID": 5020000,
+      "Entries": [
+        "Smart Cleaner"
+      ]
+    },
+    {
+      "ID": 5020001,
+      "Entries": [
+        "Smart Cleaner"
+      ]
+    },
+    {
+      "ID": 5020002,
+      "Entries": [
+        "Smart Cleaner"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5100001,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5100002,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5100003,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5100004,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5100005,
+      "Entries": [
+        "Quadcopter"
+      ]
+    },
+    {
+      "ID": 5300000,
+      "Entries": [
+        "Tiny Laser Drone"
+      ]
+    },
+    {
+      "ID": 5300001,
+      "Entries": [
+        "Tiny Laser Drone"
+      ]
+    },
+    {
+      "ID": 5300002,
+      "Entries": [
+        "Tiny Laser Drone"
+      ]
+    },
+    {
+      "ID": 5300003,
+      "Entries": [
+        "Tiny Laser Drone"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "Mealworm"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Sea Spider"
+      ]
+    },
+    {
+      "ID": 6100001,
+      "Entries": [
+        "Sea Spider"
+      ]
+    },
+    {
+      "ID": 7390000,
+      "Entries": [
+        "Nepenthes"
+      ]
+    },
+    {
+      "ID": 8135000,
+      "Entries": [
+        "Enforcer"
+      ]
+    },
+    {
+      "ID": 8145000,
+      "Entries": [
+        "Enforcer (Flight Mode)"
+      ]
+    },
+    {
+      "ID": 8145001,
+      "Entries": [
+        "Enforcer (Flight Mode)"
+      ]
+    },
+    {
+      "ID": 21400000,
+      "Entries": [
+        "Shoulder weapon attachment for dummy poly"
+      ]
+    },
+    {
+      "ID": 44000000,
+      "Entries": [
+        "tank leg test"
+      ]
+    },
+    {
+      "ID": 9308000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59400000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21080000,
+      "Entries": [
+        "Hecatoncheir torso test"
+      ]
+    },
+    {
+      "ID": 21080001,
+      "Entries": [
+        "Hecatoncheir torso test"
+      ]
+    },
+    {
+      "ID": 21080002,
+      "Entries": [
+        "Hecatoncheir torso test"
+      ]
+    },
+    {
+      "ID": 21080003,
+      "Entries": [
+        "Hecatoncheir torso test"
+      ]
+    },
+    {
+      "ID": 29100000,
+      "Entries": [
+        "Biped torso test"
+      ]
+    },
+    {
+      "ID": 41510000,
+      "Entries": [
+        "bay rum tank"
+      ]
+    },
+    {
+      "ID": 47510000,
+      "Entries": [
+        "cuban tank"
+      ]
+    },
+    {
+      "ID": 47510001,
+      "Entries": [
+        "cuban tank"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "Name": "NightBossMenuParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Tricephalos"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Gaping Jaw"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Sentient Pest"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Augur"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Equilibrious Beast"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Darkdrift Knight"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Fissure in the Fog"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Night Aspect"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Tricephalos [Enhanced]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Gaping Jaw [Enhanced]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Sentient Pest [Enhanced]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Augur [Enhanced]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Equilibrious Beast [Enhanced]"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Darkdrift Knight [Enhanced]"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Fissure in the Fog [Enhanced]"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

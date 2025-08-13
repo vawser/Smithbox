@@ -1,0 +1,437 @@
+{
+  "Name": "LockCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default value"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For bullet source type \"Generated from the projectile's target\""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "SP Template"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "vs Base Elderly (Awakened) Normal"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "vs Base Elderly (Awakened) Close Range"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "vs Inheritor of Nightmares Normal"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "vs Inheritor of Nightmares Close Range"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "vs Eye Collector Normal"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "vs Eye Collector All Distance"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "vs Bloodthirsty Beast Normal"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "vs Bloodthirsty Beast All Distance"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "vs Storm Beast (Bone) Normal"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "vs Storm Beast (Bone) Close Range"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "vs Saint Beast Normal"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "vs Saint Beast All Distance"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "vs Rector Normal"
+      ]
+    },
+    {
+      "ID": 2411,
+      "Entries": [
+        "vs Rector Close range"
+      ]
+    },
+    {
+      "ID": 2415,
+      "Entries": [
+        "vs Father Gascoigne Normal"
+      ]
+    },
+    {
+      "ID": 2416,
+      "Entries": [
+        "vs Father Gascoigne Full Distance"
+      ]
+    },
+    {
+      "ID": 2420,
+      "Entries": [
+        "vs Messengers from the Moon Normal"
+      ]
+    },
+    {
+      "ID": 2421,
+      "Entries": [
+        "vs Messengers from the Moon Close Range"
+      ]
+    },
+    {
+      "ID": 2425,
+      "Entries": [
+        "vs Moon Child Normal"
+      ]
+    },
+    {
+      "ID": 2426,
+      "Entries": [
+        "vsChild of the Moon Meteor Magic Time"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "vs King of Reaper Normal"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "vs King's Reaper Great Magic Time"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "vs Nightmare Lord Normal"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "vs Lord of Nightmares"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "vs Lesser Demon (Death and Darkness) Normal"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "vs Lesser Demon (Death and Darkness)"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "vs Dark Brigade Normal"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "vs Dark Brigade All Distance"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "vs The Evil God of Failure Normal"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "vs Failed Evil God Close Range"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "vs Dungeon Boss Default"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "vs Dungeon Boss Default Close Range"
+      ]
+    },
+    {
+      "ID": 2902,
+      "Entries": [
+        "vs Dungeon Boss Normal Room B"
+      ]
+    },
+    {
+      "ID": 2903,
+      "Entries": [
+        "vs Dungeon Boss Normal Room B Close range"
+      ]
+    },
+    {
+      "ID": 2904,
+      "Entries": [
+        "vs Dungeon Boss Step Room A"
+      ]
+    },
+    {
+      "ID": 2905,
+      "Entries": [
+        "vs Dungeon Boss Step Room A Close range"
+      ]
+    },
+    {
+      "ID": 2906,
+      "Entries": [
+        "vs Dungeon Boss Thick Passage"
+      ]
+    },
+    {
+      "ID": 2907,
+      "Entries": [
+        "vs Dungeon boss wide passage close range"
+      ]
+    },
+    {
+      "ID": 2908,
+      "Entries": [
+        "vsDungeon boss: Middle/lower wide passage"
+      ]
+    },
+    {
+      "ID": 2909,
+      "Entries": [
+        "vs Dungeon boss: Middle/lower level wide passage close range"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "vs Dungeon Boss Round Room: Large"
+      ]
+    },
+    {
+      "ID": 2911,
+      "Entries": [
+        "vs Dungeon Boss Round Room: Large Close Range"
+      ]
+    },
+    {
+      "ID": 2912,
+      "Entries": [
+        "vs Dungeon Boss Round Room: Small"
+      ]
+    },
+    {
+      "ID": 2913,
+      "Entries": [
+        "vs Dungeon Boss Round Room: Small Close Range"
+      ]
+    },
+    {
+      "ID": 2914,
+      "Entries": [
+        "vs Dungeon Boss Boss Room 1"
+      ]
+    },
+    {
+      "ID": 2915,
+      "Entries": [
+        "vs Dungeon Boss Boss Room 1 Close range"
+      ]
+    },
+    {
+      "ID": 2916,
+      "Entries": [
+        "vs Dungeon Boss Circular Boss Room"
+      ]
+    },
+    {
+      "ID": 2917,
+      "Entries": [
+        "vs Dungeon boss Round boss room Close range"
+      ]
+    },
+    {
+      "ID": 2918,
+      "Entries": [
+        "vs Dungeon Boss Big Boss Room"
+      ]
+    },
+    {
+      "ID": 2919,
+      "Entries": [
+        "vs Dungeon Boss Big Boss Room Close Range"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "vs Idiot Spider Normal"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "vs Idiot Spider Full Distance"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "vs Evil God Normal"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "vs Evil God Close Range"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "vs Ludwig Beast Mode or Human mode long distance"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "vsLudwig Human mode close range"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "vs Female Hunter Normal"
+      ]
+    },
+    {
+      "ID": 3501,
+      "Entries": [
+        "vs Female Hunter Close Range"
+      ]
+    },
+    {
+      "ID": 3505,
+      "Entries": [
+        "vs patient B usually"
+      ]
+    },
+    {
+      "ID": 3506,
+      "Entries": [
+        "vs patient B Close range"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "vs Last Boss Normal"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "vs Last Boss in the air"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Dungeon Lower Passage"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Close-up camera"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Mid-range camera"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Long-distance camera"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Darkness Lock"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "[Protomap] Darkness"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "[Prototype map] A little wide"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "Name": "MailParam",
+  "Entries": [
+    {
+      "ID": 100100,
+      "Entries": [
+        "For testing basic functionality"
+      ]
+    },
+    {
+      "ID": 100200,
+      "Entries": [
+        "Testing attachments: weapons"
+      ]
+    },
+    {
+      "ID": 100300,
+      "Entries": [
+        "Attachment Test: Armor"
+      ]
+    },
+    {
+      "ID": 100400,
+      "Entries": [
+        "Attachment Test: FCS"
+      ]
+    },
+    {
+      "ID": 100500,
+      "Entries": [
+        "Testing attachments: generator"
+      ]
+    },
+    {
+      "ID": 100600,
+      "Entries": [
+        "Attachment Test: Booster"
+      ]
+    },
+    {
+      "ID": 1090000,
+      "Entries": [
+        "[Temporary for Chapter 1] VOB capture clear mail"
+      ]
+    },
+    {
+      "ID": 1090800,
+      "Entries": [
+        "[End of November] Email from Roco"
+      ]
+    },
+    {
+      "ID": 1091000,
+      "Entries": [
+        "[11th edition] Wall attack clear mail"
+      ]
+    },
+    {
+      "ID": 1091100,
+      "Entries": [
+        "[11th edition] Email for searching for belongings"
+      ]
+    },
+    {
+      "ID": 1091200,
+      "Entries": [
+        "[11th edition] Email from Daisy"
+      ]
+    },
+    {
+      "ID": 1092000,
+      "Entries": [
+        "[11th edition] Lipton Clear Mail"
+      ]
+    },
+    {
+      "ID": 1093000,
+      "Entries": [
+        "[11th edition] Sand ship destruction clear mail"
+      ]
+    },
+    {
+      "ID": 1093100,
+      "Entries": [
+        "[11th edition] Thank you email from Archibus"
+      ]
+    },
+    {
+      "ID": 1094000,
+      "Entries": [
+        "[11th edition] Dumb clear mail normal"
+      ]
+    },
+    {
+      "ID": 1094100,
+      "Entries": [
+        "[11th Edition] Dumb Clear Mail Betrayal"
+      ]
+    },
+    {
+      "ID": 1094200,
+      "Entries": [
+        "[11th edition] Dam reward mail normal"
+      ]
+    },
+    {
+      "ID": 1094300,
+      "Entries": [
+        "[11th edition] Dumb reward email betrayal"
+      ]
+    },
+    {
+      "ID": 1095000,
+      "Entries": [
+        "[11th edition] Prologue clear mail"
+      ]
+    },
+    {
+      "ID": 1096000,
+      "Entries": [
+        "[11th edition] Past garage mail"
+      ]
+    },
+    {
+      "ID": 99990000,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990001,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990002,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990003,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990004,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990005,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990006,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990007,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990008,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990009,
+      "Entries": [
+        "test email"
+      ]
+    },
+    {
+      "ID": 99990110,
+      "Entries": [
+        "Fuel base order email for α3"
+      ]
+    },
+    {
+      "ID": 99990111,
+      "Entries": [
+        "Mail for α3 after clearing the fuel base 1"
+      ]
+    },
+    {
+      "ID": 99990112,
+      "Entries": [
+        "Mail for α3 after clearing the fuel base 2"
+      ]
+    },
+    {
+      "ID": 99990210,
+      "Entries": [
+        "Dam destruction order email for α3"
+      ]
+    },
+    {
+      "ID": 99990211,
+      "Entries": [
+        "Mail for α3 after clearing dam destruction Dam destruction"
+      ]
+    },
+    {
+      "ID": 99990212,
+      "Entries": [
+        "Mail for α3 after clearing dam destruction Dam defense"
+      ]
+    },
+    {
+      "ID": 99991000,
+      "Entries": [
+        "[6th edition] G-01_Prologue clear mail"
+      ]
+    },
+    {
+      "ID": 99991001,
+      "Entries": [
+        "[6th edition] G-01_Free sortie mail"
+      ]
+    },
+    {
+      "ID": 99991002,
+      "Entries": [
+        "[6th edition] G-02_M02 sortie mail"
+      ]
+    },
+    {
+      "ID": 99991098,
+      "Entries": [
+        "[11th edition] Crossing the sea_Briefing email"
+      ]
+    },
+    {
+      "ID": 99991099,
+      "Entries": [
+        "[11th edition] VOB_Briefing email"
+      ]
+    },
+    {
+      "ID": 99991100,
+      "Entries": [
+        "[6th edition] G-01A_Briefing email"
+      ]
+    },
+    {
+      "ID": 99991101,
+      "Entries": [
+        "[11th edition] Character string_Briefing email"
+      ]
+    },
+    {
+      "ID": 99991102,
+      "Entries": [
+        "[11th Edition] Black Desert_Briefing Mail"
+      ]
+    },
+    {
+      "ID": 99991200,
+      "Entries": [
+        "[6th edition] G-F01_Briefing email"
+      ]
+    },
+    {
+      "ID": 99991300,
+      "Entries": [
+        "[End of 6th edition] Sidoboni completion email"
+      ]
+    }
+  ]
+}

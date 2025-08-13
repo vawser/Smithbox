@@ -1,0 +1,1643 @@
+{
+  "Name": "EquipParamProtector",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Skinhead"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "M Spot"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "short"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Slicked Back Long"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Tail"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Disheveled Long Hair"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Center Part"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Semi-long 7:3 parting"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Bob"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "skin"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Very Short"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Wavy Short"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Straight Short"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Straight Long"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "ponytail A"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "ponytail B"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Wave Long"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Chignon"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Braiding"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Wandering hairstyle"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Hunter _ head"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Immortal Pilgrim _ head"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "Immortal Pilgrim _ Torso"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Immortal Pilgrim _ arm"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Immortal Pilgrim _ leg"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Gravekeeper _ head"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        "Gravekeeper _ Torso"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Gravekeeper _ arm"
+      ]
+    },
+    {
+      "ID": 33000,
+      "Entries": [
+        "Gravekeeper _ leg"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Kin of the Flame of Destruction _ head"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "Kin of the Flame of Destruction _ Torso"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Kin of the Flame of Destruction _ arm"
+      ]
+    },
+    {
+      "ID": 43000,
+      "Entries": [
+        "Kin of the Flame of Destruction _ leg"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Advanced Hunter _ head"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Advanced Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Advanced Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 53000,
+      "Entries": [
+        "Advanced Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Junior Hunter _ head"
+      ]
+    },
+    {
+      "ID": 61000,
+      "Entries": [
+        "Junior Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 62000,
+      "Entries": [
+        "Junior Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 63000,
+      "Entries": [
+        "Junior Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Urban Hunter _ head"
+      ]
+    },
+    {
+      "ID": 71000,
+      "Entries": [
+        "Urban Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 72000,
+      "Entries": [
+        "Urban Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 73000,
+      "Entries": [
+        "Urban Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Vampire _ head"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Vampire _ Torso"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Vampire _ arm"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Vampire _ leg"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Vampire Princess _ head"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "Vampire Princess _ Torso"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Vampire Knight _ head"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "Vampire Knight _ Torso"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "Vampire Knight _ arm"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Vampire Knight _ leg"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Servant of the Church _ head"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "Servant of the Church _ Torso"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "Servant of the Church _ arm"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "Servant of the Church _ leg"
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Choir _ head"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Choir _ Torso"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "Choir _ arm"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "Choir _ leg"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Father Gascoigne _ head"
+      ]
+    },
+    {
+      "ID": 131000,
+      "Entries": [
+        "Father Gascoigne _ Torso"
+      ]
+    },
+    {
+      "ID": 132000,
+      "Entries": [
+        "Father Gascoigne _ arm"
+      ]
+    },
+    {
+      "ID": 133000,
+      "Entries": [
+        "Father Gascoigne _ leg"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "Church Hunter _ head"
+      ]
+    },
+    {
+      "ID": 141000,
+      "Entries": [
+        "Church Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 142000,
+      "Entries": [
+        "Church Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 143000,
+      "Entries": [
+        "Church Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 150000,
+      "Entries": [
+        "Bloodline Hunt _ head"
+      ]
+    },
+    {
+      "ID": 151000,
+      "Entries": [
+        "Bloodline Hunt _ Torso"
+      ]
+    },
+    {
+      "ID": 152000,
+      "Entries": [
+        "Bloodline Hunt _ arm"
+      ]
+    },
+    {
+      "ID": 153000,
+      "Entries": [
+        "Bloodline Hunt _ leg"
+      ]
+    },
+    {
+      "ID": 180000,
+      "Entries": [
+        "Jack the Ripper _ head"
+      ]
+    },
+    {
+      "ID": 181000,
+      "Entries": [
+        "Jack the Ripper_ Torso"
+      ]
+    },
+    {
+      "ID": 182000,
+      "Entries": [
+        "Jack the Ripper _ arm"
+      ]
+    },
+    {
+      "ID": 183000,
+      "Entries": [
+        "Jack the Ripper _ leg"
+      ]
+    },
+    {
+      "ID": 190000,
+      "Entries": [
+        "Lord of Nightmares _ head"
+      ]
+    },
+    {
+      "ID": 191000,
+      "Entries": [
+        "Lord of Nightmares _ Torso"
+      ]
+    },
+    {
+      "ID": 193000,
+      "Entries": [
+        "Lord of Nightmares _ leg"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Base Elderly _ head"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Base Elderly _ Torso"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Base Elderly _ leg"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "The mad cultist _ head"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "The mad cultist _ Torso"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "The mad cultist _ arm"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "The mad cultist _ leg"
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        "Doll Heroine _ head"
+      ]
+    },
+    {
+      "ID": 221000,
+      "Entries": [
+        "Doll Heroine _ Torso"
+      ]
+    },
+    {
+      "ID": 222000,
+      "Entries": [
+        "Doll Heroine _ arm"
+      ]
+    },
+    {
+      "ID": 223000,
+      "Entries": [
+        "Doll Heroine _ leg"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Starting Equipment _ head"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "Starting Equipment _ Torso"
+      ]
+    },
+    {
+      "ID": 232000,
+      "Entries": [
+        "Starting Equipment _ arm"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "Starting Equipment _ leg"
+      ]
+    },
+    {
+      "ID": 241000,
+      "Entries": [
+        "Covert _ Torso"
+      ]
+    },
+    {
+      "ID": 242000,
+      "Entries": [
+        "Covert _ arm"
+      ]
+    },
+    {
+      "ID": 243000,
+      "Entries": [
+        "Covert _ leg"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Old Castle Boss _ head"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "Federation _ head _Text difference"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "Immortal Pilgrim (without hood) _ head"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Old City Hunter _ head"
+      ]
+    },
+    {
+      "ID": 281000,
+      "Entries": [
+        "Old City Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "Servant of the Church ( white) _ head"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "Servant of the Church ( white) _ Torso"
+      ]
+    },
+    {
+      "ID": 293000,
+      "Entries": [
+        "Servant of the Church ( white) _ leg"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Nightmare Lord (without gown) _ Torso"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Prostitute _ Torso"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Prostitute _ leg"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Cranky old man _ head"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Cranky old man _ Torso"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Executioner _ head"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Executioner _ Torso"
+      ]
+    },
+    {
+      "ID": 332000,
+      "Entries": [
+        "Executioner _ arm"
+      ]
+    },
+    {
+      "ID": 333000,
+      "Entries": [
+        "Executioner _ leg"
+      ]
+    },
+    {
+      "ID": 340000,
+      "Entries": [
+        "Beggar Hunter _ head"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Beggar Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 342000,
+      "Entries": [
+        "Beggar Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 343000,
+      "Entries": [
+        "Beggar Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Dark Hunter (with cape) _ head"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Dark Hunter (with cape) _ Torso"
+      ]
+    },
+    {
+      "ID": 352000,
+      "Entries": [
+        "Dark Hunter (with cape) _ arm"
+      ]
+    },
+    {
+      "ID": 353000,
+      "Entries": [
+        "Dark Hunter (with cape) _ leg"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "Dark Hunter (without cape) _ head"
+      ]
+    },
+    {
+      "ID": 361000,
+      "Entries": [
+        "Dark Hunter (without cape) _ Torso"
+      ]
+    },
+    {
+      "ID": 363000,
+      "Entries": [
+        "Dark Hunter (without cape) _ leg"
+      ]
+    },
+    {
+      "ID": 370000,
+      "Entries": [
+        "Clock Tower Hunter _ head"
+      ]
+    },
+    {
+      "ID": 371000,
+      "Entries": [
+        "Clock Tower Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 372000,
+      "Entries": [
+        "Clock Tower Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 373000,
+      "Entries": [
+        "Clock Tower Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Federation _ head"
+      ]
+    },
+    {
+      "ID": 381000,
+      "Entries": [
+        "Federation _ Torso"
+      ]
+    },
+    {
+      "ID": 382000,
+      "Entries": [
+        "Federation _ arm"
+      ]
+    },
+    {
+      "ID": 383000,
+      "Entries": [
+        "Federation _ leg"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Mammoth Man _ head"
+      ]
+    },
+    {
+      "ID": 391000,
+      "Entries": [
+        "Mammoth Man _ Torso"
+      ]
+    },
+    {
+      "ID": 392000,
+      "Entries": [
+        "Mammoth Man _ arm"
+      ]
+    },
+    {
+      "ID": 393000,
+      "Entries": [
+        "Mammoth Man _ leg"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Japanese clothing _ head"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Japanese clothing _ Torso"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Japanese clothing _ arm"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Japanese clothing _ leg"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Beastification _ head"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Beastification _ Torso"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "Beastification _ arm"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Slug _ head"
+      ]
+    },
+    {
+      "ID": 421000,
+      "Entries": [
+        "Slug _ Torso"
+      ]
+    },
+    {
+      "ID": 422000,
+      "Entries": [
+        "Slug _ arm"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "Clock Tower Patient _ head"
+      ]
+    },
+    {
+      "ID": 440000,
+      "Entries": [
+        "Wandering Equipment _ Executioner _ head"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ head"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 453000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Wandering Equipment _ Clock Tower Hunter _ head"
+      ]
+    },
+    {
+      "ID": 461000,
+      "Entries": [
+        "Wandering Equipment _ Clock Tower Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Wandering Equipment _ Federation _ head"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "Wandering Equipment _ Federation _ Torso"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ head"
+      ]
+    },
+    {
+      "ID": 481000,
+      "Entries": [
+        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ Torso"
+      ]
+    },
+    {
+      "ID": 482000,
+      "Entries": [
+        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ arm"
+      ]
+    },
+    {
+      "ID": 483000,
+      "Entries": [
+        "[ NPC Exclusive] Bloodline Hunt (Blood Paste) _ leg"
+      ]
+    },
+    {
+      "ID": 490000,
+      "Entries": [
+        "[ NPCExclusive] Jack the Ripper (fake blood) _ head"
+      ]
+    },
+    {
+      "ID": 491000,
+      "Entries": [
+        "[ NPC Exclusive] Jack the Ripper (fake blood) _ Torso"
+      ]
+    },
+    {
+      "ID": 492000,
+      "Entries": [
+        "[ NPC Exclusive] Jack the Ripper (fake blood) _ arm"
+      ]
+    },
+    {
+      "ID": 493000,
+      "Entries": [
+        "[ NPC Exclusive] Jack the Ripper (fake blood) _ leg"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "[ NPC Exclusive] Church Servant (White) No Boots _ leg"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "[ NPC Exclusive】Prostitute (Pregnant) _ Torso"
+      ]
+    },
+    {
+      "ID": 521000,
+      "Entries": [
+        "[ NPC Exclusive: Lonely old woman _ Torso"
+      ]
+    },
+    {
+      "ID": 531000,
+      "Entries": [
+        "[ NPC Exclusive] Vampire Princess _ Torso"
+      ]
+    },
+    {
+      "ID": 541000,
+      "Entries": [
+        "[ NPC Exclusive] Church Servant (Blood Paste) _ Torso"
+      ]
+    },
+    {
+      "ID": 542000,
+      "Entries": [
+        "[ NPC Exclusive] Church Servant (Blood Paste) _ arm"
+      ]
+    },
+    {
+      "ID": 543000,
+      "Entries": [
+        "[ NPC Exclusive] Church Servant (Blood Paste) _ leg"
+      ]
+    },
+    {
+      "ID": 550000,
+      "Entries": [
+        "[ NPC Exclusive: Beggar Hunter (Blood Paste) _ head"
+      ]
+    },
+    {
+      "ID": 563000,
+      "Entries": [
+        "[ NPCExclusive: Crazy Cultist (Blood Paste) _ leg"
+      ]
+    },
+    {
+      "ID": 571000,
+      "Entries": [
+        "[ NPC Exclusive: Prostitute (after childbirth) _ Torso"
+      ]
+    },
+    {
+      "ID": 573000,
+      "Entries": [
+        "[ NPC Exclusive: Prostitute (after childbirth) _ leg"
+      ]
+    },
+    {
+      "ID": 581000,
+      "Entries": [
+        "[ NPC Exclusive】Servant of the Church ( white) _ Fake Female Doctor _ Torso"
+      ]
+    },
+    {
+      "ID": 582000,
+      "Entries": [
+        "[System] Before transformation into Fist Beast _ arm"
+      ]
+    },
+    {
+      "ID": 592000,
+      "Entries": [
+        "[System] After transforming into a fist beast _ arm"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Wandering Equipment _ Immortal Pilgrim _ head"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Wandering Equipment _ Immortal Pilgrim _ arm"
+      ]
+    },
+    {
+      "ID": 610000,
+      "Entries": [
+        "Wandering Equipment _ Gravekeeper _ head"
+      ]
+    },
+    {
+      "ID": 611000,
+      "Entries": [
+        "Wandering Equipment _ Gravekeeper _ Torso"
+      ]
+    },
+    {
+      "ID": 620000,
+      "Entries": [
+        "Wandering Equipment _ Kin of the Flame of Destruction _ head"
+      ]
+    },
+    {
+      "ID": 621000,
+      "Entries": [
+        "Wandering Equipment _ Kin of the Flame of Destruction _ Torso"
+      ]
+    },
+    {
+      "ID": 623000,
+      "Entries": [
+        "Wandering Equipment _ Kin of the Flame of Destruction _ leg"
+      ]
+    },
+    {
+      "ID": 630000,
+      "Entries": [
+        "Wandering Equipment _ Vampire _ head"
+      ]
+    },
+    {
+      "ID": 631000,
+      "Entries": [
+        "Wandering Equipment_ Vampire _ Torso"
+      ]
+    },
+    {
+      "ID": 633000,
+      "Entries": [
+        "Wandering Equipment _ Vampire _ leg"
+      ]
+    },
+    {
+      "ID": 641000,
+      "Entries": [
+        "Wandering Equipment _ Vampire Princess _ Torso"
+      ]
+    },
+    {
+      "ID": 650000,
+      "Entries": [
+        "Wandering Equipment _ Vampire Knight _ head"
+      ]
+    },
+    {
+      "ID": 651000,
+      "Entries": [
+        "Wandering Equipment _ Vampire Knight _ Torso"
+      ]
+    },
+    {
+      "ID": 653000,
+      "Entries": [
+        "Wandering Equipment _ Vampire Knight _ leg"
+      ]
+    },
+    {
+      "ID": 660000,
+      "Entries": [
+        "Wandering Equipment _ Choir _ head"
+      ]
+    },
+    {
+      "ID": 661000,
+      "Entries": [
+        "Wandering Equipment _ Choir _ Torso"
+      ]
+    },
+    {
+      "ID": 671000,
+      "Entries": [
+        "Wandering Equipment _ Church Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 680000,
+      "Entries": [
+        "Wandering Equipment _ Bloodline Hunt _ head"
+      ]
+    },
+    {
+      "ID": 682000,
+      "Entries": [
+        "Wandering Equipment _ Bloodline Hunt _ arm"
+      ]
+    },
+    {
+      "ID": 690000,
+      "Entries": [
+        "Wandering Equipment _ Executioner _ head"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ head"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 703000,
+      "Entries": [
+        "Wandering Equipment _ Beggar Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "Wandering Equipment _ Lord of Nightmares _ head"
+      ]
+    },
+    {
+      "ID": 712000,
+      "Entries": [
+        "Wandering Equipment _ Lord of Nightmares _ arm"
+      ]
+    },
+    {
+      "ID": 723000,
+      "Entries": [
+        "Wandering Equipment _ Base Elderly _ leg"
+      ]
+    },
+    {
+      "ID": 730000,
+      "Entries": [
+        "Wandering Equipment _ The mad cultist _ head"
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "Wandering Equipment_ The mad cultist _ arm"
+      ]
+    },
+    {
+      "ID": 740000,
+      "Entries": [
+        "Wandering Equipment _ Doll Heroine _ head"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "Wandering Equipment _ Doll Heroine _ Torso"
+      ]
+    },
+    {
+      "ID": 743000,
+      "Entries": [
+        "Wandering Equipment _ Doll Heroine _ leg"
+      ]
+    },
+    {
+      "ID": 750000,
+      "Entries": [
+        "Wandering Equipment _ Starting Equipment _ head"
+      ]
+    },
+    {
+      "ID": 751000,
+      "Entries": [
+        "Wandering Equipment _ Starting Equipment _ Torso"
+      ]
+    },
+    {
+      "ID": 762000,
+      "Entries": [
+        "Wandering Equipment _ Starting Equipment _ arm"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "Wandering Equipment _ Before transforming into Fist Beast _ arm"
+      ]
+    },
+    {
+      "ID": 782000,
+      "Entries": [
+        "Wandering Equipment _ After transforming into Fist Beast _ arm"
+      ]
+    },
+    {
+      "ID": 790000,
+      "Entries": [
+        "Wandering Equipment _ Old Castle Boss _ head"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Wandering Equipment _ Spider Cthulhu _ head"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "Wandering Equipment _ Prostitute _ Torso"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "Wandering Equipment _ Prostitute _ leg"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "Wandering Equipment _ Cranky old man _ head"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "Wandering Equipment _ Cranky old man _ Torso"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "[ NPCExclusive: Wandering Equipment _ Lonely old woman _ Torso"
+      ]
+    },
+    {
+      "ID": 840000,
+      "Entries": [
+        "Wandering Equipment _ Mammoth Man _ head"
+      ]
+    },
+    {
+      "ID": 841000,
+      "Entries": [
+        "Wandering Equipment _ Mammoth Man _ Torso"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "Wandering Equipment _ Japanese clothing _ Torso"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Japanese clothing _ leg"
+      ]
+    },
+    {
+      "ID": 860000,
+      "Entries": [
+        "Wandering Equipment _ Beastification _ head"
+      ]
+    },
+    {
+      "ID": 861000,
+      "Entries": [
+        "Wandering Equipment _ Beastification _ Torso"
+      ]
+    },
+    {
+      "ID": 862000,
+      "Entries": [
+        "Wandering Equipment _ Beastification _ arm"
+      ]
+    },
+    {
+      "ID": 870000,
+      "Entries": [
+        "Wandering Equipment _ Slug _ head"
+      ]
+    },
+    {
+      "ID": 872000,
+      "Entries": [
+        "Wandering Equipment _ Slug _ arm"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "Wandering Equipment _ Clock Tower Patient _ head"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "head"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Body"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "arm"
+      ]
+    },
+    {
+      "ID": 903000,
+      "Entries": [
+        "leg"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "Wandering Equipment _ Naked _ head"
+      ]
+    },
+    {
+      "ID": 911000,
+      "Entries": [
+        "Wandering Equipment _ Naked _ Torso"
+      ]
+    },
+    {
+      "ID": 912000,
+      "Entries": [
+        "Wandering Equipment _ Naked _ arm"
+      ]
+    },
+    {
+      "ID": 913000,
+      "Entries": [
+        "Wandering Equipment _ Naked _ leg"
+      ]
+    },
+    {
+      "ID": 920000,
+      "Entries": [
+        "Wandering Equipment _ Old City Hunter _ head"
+      ]
+    },
+    {
+      "ID": 921000,
+      "Entries": [
+        "Wandering Equipment_ Old City Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 930000,
+      "Entries": [
+        "Wandering Equipment _ Immortal Pilgrim (without hood) _ head"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "Wandering Equipment _ Gascoigne _ head"
+      ]
+    },
+    {
+      "ID": 950000,
+      "Entries": [
+        "Wandering Equipment _ Junior Hunter _ head"
+      ]
+    },
+    {
+      "ID": 951000,
+      "Entries": [
+        "Wandering Equipment _ Junior Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 952000,
+      "Entries": [
+        "Wandering Equipment _ Junior Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 961000,
+      "Entries": [
+        "Wandering Equipment _ Urban Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 970000,
+      "Entries": [
+        "Wandering Equipment _ Jack the Ripper _ head"
+      ]
+    },
+    {
+      "ID": 971000,
+      "Entries": [
+        "Wandering Equipment _ Jack the Ripper _ Torso"
+      ]
+    },
+    {
+      "ID": 980000,
+      "Entries": [
+        "Wandering Equipment _ Servant of the Church _ head"
+      ]
+    },
+    {
+      "ID": 981000,
+      "Entries": [
+        "Wandering Equipment _ Servant of the Church _ Torso"
+      ]
+    },
+    {
+      "ID": 982000,
+      "Entries": [
+        "Wandering Equipment _ Servant of the Church _ arm"
+      ]
+    },
+    {
+      "ID": 983000,
+      "Entries": [
+        "Wandering Equipment _ Servant of the Church _ leg"
+      ]
+    },
+    {
+      "ID": 990000,
+      "Entries": [
+        "Wandering Equipment _ Hunter _ head"
+      ]
+    },
+    {
+      "ID": 991000,
+      "Entries": [
+        "Wandering Equipment _ Hunter _Torso"
+      ]
+    },
+    {
+      "ID": 992000,
+      "Entries": [
+        "Wandering Equipment _ Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 993000,
+      "Entries": [
+        "Wandering Equipment _ Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "[ NPC Exclusive】Servant of the Church _ Torso _ Nun"
+      ]
+    },
+    {
+      "ID": 1003000,
+      "Entries": [
+        "[ NPC Exclusive】Servant of the Church _ leg _ Nun"
+      ]
+    },
+    {
+      "ID": 1011000,
+      "Entries": [
+        "[ NPC Exclusive: Prostitute _ Torso _ Prostitute"
+      ]
+    },
+    {
+      "ID": 1020000,
+      "Entries": [
+        "[ NPC 】Beggar Hunter _ head"
+      ]
+    },
+    {
+      "ID": 1021000,
+      "Entries": [
+        "[ NPC 】Beggar Hunter _ Torso"
+      ]
+    },
+    {
+      "ID": 1022000,
+      "Entries": [
+        "[ NPC 】Beggar Hunter _ arm"
+      ]
+    },
+    {
+      "ID": 1023000,
+      "Entries": [
+        "[ NPC 】Beggar Hunter _ leg"
+      ]
+    },
+    {
+      "ID": 1030000,
+      "Entries": [
+        "[ NPC 】Mammoth Man _ head"
+      ]
+    },
+    {
+      "ID": 1031000,
+      "Entries": [
+        "[ NPC 】Mammoth Man _ Torso"
+      ]
+    }
+  ]
+}

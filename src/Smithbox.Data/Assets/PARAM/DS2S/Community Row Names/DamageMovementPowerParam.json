@@ -1,0 +1,41 @@
+{
+  "Name": "DamageMovementPowerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No -- 無"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Minimal -- 極小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Small -- 小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "In -- 中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Large -- 大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Oversized -- 特大"
+      ]
+    }
+  ]
+}

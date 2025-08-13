@@ -1,0 +1,977 @@
+{
+  "Name": "WeatherParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (EMEVD weather enum 0)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Cloudless (EMEVD weather enum 5)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Flat Clouds (EMEVD weather enum 6)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Puffy Clouds (EMEVD weather enum 7)"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Rain (EMEVD weather enum 1)"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Rainy Clouds (EMEVD weather enum 8)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Windy Rain (EMEVD weather enum 3)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Windy Fog (EMEVD weather enum 9)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Snow (EMEVD weather enum 2)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Heavy Snow (EMEVD weather enum 10)"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Fog (EMEVD weather enum 4)"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Heavy Fog (EMEVD weather enum 11)"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Rainy Heavy Fog (EMEVD weather enum 15)"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Windy Puffy Clouds (EMEVD weather enum 12)"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Snowy Heavy Fog (EMEVD weather enum 16)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Scattered Rain (EMEVD weather enum 17)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Unk18 (EMEVD weather enum 18)"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "ThisDoesntExistInVanilla (EMEVD weather enum 19)"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "ThisDoesntExistInVanilla (EMEVD weather enum 20)"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "ThisDoesntExistInVanilla (EMEVD weather enum 21)"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "ThisDoesntExistInVanilla (EMEVD weather enum 22)"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "ThisDoesntExistInVanilla (EMEVD weather enum 23)"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4231,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5084,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5085,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5541,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5582,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6084,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7082,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7084,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7585,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7821,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7850,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7851,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 110521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 111060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 117111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 130060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 140001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 140020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 150040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200082,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200141,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 200182,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 280060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341151,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341251,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341351,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 341551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 392010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 392011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 392020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 392021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 392030,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

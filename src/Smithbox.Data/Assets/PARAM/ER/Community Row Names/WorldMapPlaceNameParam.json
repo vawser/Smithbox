@@ -1,0 +1,65 @@
+{
+  "Name": "WorldMapPlaceNameParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Limgrave"
+      ]
+    },
+    {
+      "ID": 8000400,
+      "Entries": [
+        "Liurnia"
+      ]
+    },
+    {
+      "ID": 8000800,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 8000900,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 8001200,
+      "Entries": [
+        "Mountaintops of the Giants"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 8010200,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 8010400,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "Realm of Shadow"
+      ]
+    }
+  ]
+}

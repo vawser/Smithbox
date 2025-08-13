@@ -1,0 +1,989 @@
+{
+  "Name": "mapobjectinstanceparam_m10_18_00_00",
+  "Entries": [
+    {
+      "ID": 10180400,
+      "Entries": [
+        "【One door】01_House on the top floor 1F"
+      ]
+    },
+    {
+      "ID": 10180401,
+      "Entries": [
+        "【One door】1-door house on the top floor"
+      ]
+    },
+    {
+      "ID": 10180402,
+      "Entries": [
+        "【One door】03_Three-story house 1F"
+      ]
+    },
+    {
+      "ID": 10180403,
+      "Entries": [
+        "【One door】The entrance of the house under the ship lever"
+      ]
+    },
+    {
+      "ID": 10180404,
+      "Entries": [
+        "【One door】The entrance of the house"
+      ]
+    },
+    {
+      "ID": 10180500,
+      "Entries": [
+        "Ladder on board"
+      ]
+    },
+    {
+      "ID": 10180600,
+      "Entries": [
+        "【White Door】Boss Entrance"
+      ]
+    },
+    {
+      "ID": 10180601,
+      "Entries": [
+        "【White Door】Boss Exit"
+      ]
+    },
+    {
+      "ID": 10180602,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 10180650,
+      "Entries": [
+        "【Bonfire】01 Starting Point"
+      ]
+    },
+    {
+      "ID": 10180700,
+      "Entries": [
+        "[Light stand] always on_01_stairs"
+      ]
+    },
+    {
+      "ID": 10180705,
+      "Entries": [
+        "[Light stand] always lit_02_The place where it went up the stairs"
+      ]
+    },
+    {
+      "ID": 10180710,
+      "Entries": [
+        "[Light stand] always lit _03 sub √"
+      ]
+    },
+    {
+      "ID": 10180715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180725,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180730,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180735,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180740,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180745,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180750,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180755,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180760,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180765,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180770,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180775,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10180780,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181002,
+      "Entries": [
+        "【Lever】Move the underground harbor ship"
+      ]
+    },
+    {
+      "ID": 10181014,
+      "Entries": [
+        "【Event light stand】05_Insect key sky"
+      ]
+    },
+    {
+      "ID": 10181020,
+      "Entries": [
+        "【Crumbling wall】1F of the house on the top floor"
+      ]
+    },
+    {
+      "ID": 10181021,
+      "Entries": [
+        "【Crumbling wall】1-1-house on the top floor"
+      ]
+    },
+    {
+      "ID": 10181022,
+      "Entries": [
+        "[Crumbling wall] the wall of the room to drink the sailor"
+      ]
+    },
+    {
+      "ID": 10181040,
+      "Entries": [
+        "【Hidden door (without key guide)]1F of the three-story building"
+      ]
+    },
+    {
+      "ID": 10181050,
+      "Entries": [
+        "【Insect key】Lighting start"
+      ]
+    },
+    {
+      "ID": 10181080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181200,
+      "Entries": [
+        "Wooden board (brightens when broken after the insect key is lit) _1"
+      ]
+    },
+    {
+      "ID": 10181201,
+      "Entries": [
+        "Wooden board (brightens when broken after the insect key is lit) _2"
+      ]
+    },
+    {
+      "ID": 10181202,
+      "Entries": [
+        "Wooden board (brightens when broken after the insect key is lit) _3"
+      ]
+    },
+    {
+      "ID": 10181230,
+      "Entries": [
+        "[Hidden port] part of the pier that collapses"
+      ]
+    },
+    {
+      "ID": 10181300,
+      "Entries": [
+        "Iron fence rising on the strap lever_"
+      ]
+    },
+    {
+      "ID": 10181301,
+      "Entries": [
+        "Iron fence rising up"
+      ]
+    },
+    {
+      "ID": 10181400,
+      "Entries": [
+        "Tar Vase 1"
+      ]
+    },
+    {
+      "ID": 10181405,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181415,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181450,
+      "Entries": [
+        "Scattered Tar 1"
+      ]
+    },
+    {
+      "ID": 10181455,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181465,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10181470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10182000,
+      "Entries": [
+        "Boss Ship"
+      ]
+    },
+    {
+      "ID": 10182001,
+      "Entries": [
+        "The bell that rings when the boss ship moves"
+      ]
+    },
+    {
+      "ID": 10182002,
+      "Entries": [
+        "Boss Ship Fence"
+      ]
+    },
+    {
+      "ID": 10182100,
+      "Entries": [
+        "Boss Ship Water"
+      ]
+    },
+    {
+      "ID": 10182200,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182201,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182202,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182203,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182204,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182205,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182206,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182207,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182208,
+      "Entries": [
+        "Boss Ship Sandbag"
+      ]
+    },
+    {
+      "ID": 10182300,
+      "Entries": [
+        "Compass_For cut scene transition"
+      ]
+    },
+    {
+      "ID": 10182500,
+      "Entries": [
+        "Parameters for hanging sailors association"
+      ]
+    },
+    {
+      "ID": 10182600,
+      "Entries": [
+        "the long desk where the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182601,
+      "Entries": [
+        "the chair in which the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182602,
+      "Entries": [
+        "the chair in which the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182610,
+      "Entries": [
+        "the long desk where the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182611,
+      "Entries": [
+        "the chair in which the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182620,
+      "Entries": [
+        "the long desk where the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10182621,
+      "Entries": [
+        "the chair in which the enemy is sleeping"
+      ]
+    },
+    {
+      "ID": 10183800,
+      "Entries": [
+        "【Environment Map ID】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183801,
+      "Entries": [
+        "【Environmental Map ID】Keg"
+      ]
+    },
+    {
+      "ID": 10183802,
+      "Entries": [
+        "【Environmental Map ID】Keg"
+      ]
+    },
+    {
+      "ID": 10183803,
+      "Entries": [
+        "【Environmental Map ID】Keg"
+      ]
+    },
+    {
+      "ID": 10183804,
+      "Entries": [
+        "【Environmental Map ID】Keg"
+      ]
+    },
+    {
+      "ID": 10183805,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183806,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183807,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183808,
+      "Entries": [
+        "【Environmental Map ID】Sandbag"
+      ]
+    },
+    {
+      "ID": 10183809,
+      "Entries": [
+        "【Environmental Map ID】Chair 5"
+      ]
+    },
+    {
+      "ID": 10183810,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183811,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183812,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183813,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183814,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183815,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183816,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183817,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183818,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183819,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Hanging lamp 1 (weak)"
+      ]
+    },
+    {
+      "ID": 10183821,
+      "Entries": [
+        "【Environment Map ID】 [Hidden Port] Boro cloth"
+      ]
+    },
+    {
+      "ID": 10183822,
+      "Entries": [
+        "【Environment Map ID】 [Hidden Port] Boro cloth"
+      ]
+    },
+    {
+      "ID": 10183823,
+      "Entries": [
+        "【Environmental Map ID】Keg"
+      ]
+    },
+    {
+      "ID": 10183824,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Barrel (with stand)"
+      ]
+    },
+    {
+      "ID": 10183825,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183826,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183827,
+      "Entries": [
+        "【Environmental Map ID】Wooden Box"
+      ]
+    },
+    {
+      "ID": 10183828,
+      "Entries": [
+        "【Environmental Map ID】Sandbag"
+      ]
+    },
+    {
+      "ID": 10183829,
+      "Entries": [
+        "【Environment Map ID】 【General purpose】Shelf"
+      ]
+    },
+    {
+      "ID": 10183830,
+      "Entries": [
+        "【Environment Map ID】 【Hidden Port】Desk"
+      ]
+    },
+    {
+      "ID": 10183900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barrel"
+      ]
+    },
+    {
+      "ID": 10183901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barrel"
+      ]
+    },
+    {
+      "ID": 10183902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barrel"
+      ]
+    },
+    {
+      "ID": 10183903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barrel"
+      ]
+    },
+    {
+      "ID": 10183904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] poison pot"
+      ]
+    },
+    {
+      "ID": 10183911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] poison pot"
+      ]
+    },
+    {
+      "ID": 10183912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] poison pot"
+      ]
+    },
+    {
+      "ID": 10183913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] poison pot"
+      ]
+    },
+    {
+      "ID": 10183914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] cupboard"
+      ]
+    },
+    {
+      "ID": 10183921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] cupboard"
+      ]
+    },
+    {
+      "ID": 10183922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] cupboard"
+      ]
+    },
+    {
+      "ID": 10183923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] cupboard"
+      ]
+    },
+    {
+      "ID": 10183924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10183945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10184000,
+      "Entries": [
+        "【NPC】Tomb_Female Knight"
+      ]
+    },
+    {
+      "ID": 10184100,
+      "Entries": [
+        "【NPC】Tomb_Sorcerer"
+      ]
+    },
+    {
+      "ID": 10184200,
+      "Entries": [
+        "【NPC】Tomb_Dwarf"
+      ]
+    },
+    {
+      "ID": 10184900,
+      "Entries": [
+        "Wall-mounted torch near the bell that calls the ship"
+      ]
+    },
+    {
+      "ID": 10185000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185070,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185080,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185100,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185110,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10185120,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10186000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10186170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "SubWindowCamParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default value"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Strong enemy camera"
+      ]
+    }
+  ]
+}

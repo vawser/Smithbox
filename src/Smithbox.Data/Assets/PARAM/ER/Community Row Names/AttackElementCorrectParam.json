@@ -1,0 +1,1109 @@
+{
+  "Name": "AttackElementCorrectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "Physical: STR + DEX + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Physical: STR + DEX + ARC | Magic: INT + ARC | Fire: FTH + ARC | Lightning: DEX + ARC | Holy: FTH + ARC"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Physical: STR + DEX + FTH | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 12005,
+      "Entries": [
+        "Physical: STR + DEX + FTH | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 12013,
+      "Entries": [
+        "Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Physical: STR + DEX + INT | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: INT"
+      ]
+    },
+    {
+      "ID": 20010,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 20020,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20030,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: INT + ARC"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: FTH"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: STR + FTH"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: FTH + ARC"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 42060,
+      "Entries": [
+        "Physical: FTH"
+      ]
+    },
+    {
+      "ID": 42070,
+      "Entries": [
+        "Physical: FTH"
+      ]
+    },
+    {
+      "ID": 42080,
+      "Entries": [
+        "Physical: FTH"
+      ]
+    },
+    {
+      "ID": 42300,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC"
+      ]
+    },
+    {
+      "ID": 42310,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC"
+      ]
+    },
+    {
+      "ID": 42311,
+      "Entries": [
+        "Physical/Magic/Fire/Lightning/Holy: STR + DEX + INT + FTH + ARC"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 10"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 20"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 30"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 40"
+      ]
+    },
+    {
+      "ID": 50005,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 50"
+      ]
+    },
+    {
+      "ID": 50006,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 60"
+      ]
+    },
+    {
+      "ID": 50007,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 70"
+      ]
+    },
+    {
+      "ID": 50008,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 80"
+      ]
+    },
+    {
+      "ID": 50009,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 90"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Correction Ratio 100"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 10"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 20"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 30"
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 40"
+      ]
+    },
+    {
+      "ID": 50105,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 50"
+      ]
+    },
+    {
+      "ID": 50106,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 60"
+      ]
+    },
+    {
+      "ID": 50107,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 70"
+      ]
+    },
+    {
+      "ID": 50108,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 80"
+      ]
+    },
+    {
+      "ID": 50109,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 90"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Replacement Correction 100"
+      ]
+    },
+    {
+      "ID": 51000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: STR + DEX | Fire: STR + DEX | Lightning: STR + DEX | Holy: STR + DEX | Replacement Correction 15"
+      ]
+    },
+    {
+      "ID": 51010,
+      "Entries": [
+        "Physical: STR | Magic: STR | Fire: STR | Lightning: STR | Holy: STR | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51020,
+      "Entries": [
+        "Physical: DEX | Magic: DEX | Fire: DEX | Lightning: DEX | Holy: DEX | Replacement Correction 15"
+      ]
+    },
+    {
+      "ID": 51030,
+      "Entries": [
+        "Physical: STR + DEX | Magic: STR + DEX | Fire: STR + DEX | Lightning: STR + DEX | Holy: STR + DEX | Replacement Correction 15"
+      ]
+    },
+    {
+      "ID": 51040,
+      "Entries": [
+        "Physical: STR | Magic: STR | Fire: STR | Lightning: STR | Holy: STR | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51050,
+      "Entries": [
+        "Physical: FTH | Magic: FTH | Fire: FTH | Lightning: FTH | Holy: FTH | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51060,
+      "Entries": [
+        "Physical: DEX | Magic: DEX | Fire: DEX | Lightning: DEX | Holy: DEX | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51070,
+      "Entries": [
+        "Physical: FTH | Magic: FTH | Fire: FTH | Lightning: FTH | Holy: FTH | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51080,
+      "Entries": [
+        "Physical: INT | Magic: INT | Fire: INT | Lightning: INT | Holy: INT | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51090,
+      "Entries": [
+        "Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51100,
+      "Entries": [
+        "Physical: DEX + INT | Magic: DEX + INT | Fire: DEX + INT | Lightning: DEX + INT | Holy: DEX + INT | Replacement Correction 15"
+      ]
+    },
+    {
+      "ID": 51110,
+      "Entries": [
+        "Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 51120,
+      "Entries": [
+        "Physical: ARC | Magic: ARC | Fire: ARC | Lightning: ARC | Holy: ARC | Replacement Correction 25"
+      ]
+    },
+    {
+      "ID": 52000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: ARC | Fire: STR + FTH | Lightning: FTH | Holy: FTH | Magic Replacement Correction 50"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200301,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200302,
+      "Entries": [
+        "Fire: FTH"
+      ]
+    },
+    {
+      "ID": 200320,
+      "Entries": [
+        "Lightning: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200321,
+      "Entries": [
+        "Lightning: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200330,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200340,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200350,
+      "Entries": [
+        "Holy: FTH"
+      ]
+    },
+    {
+      "ID": 200351,
+      "Entries": [
+        "Holy: FTH"
+      ]
+    },
+    {
+      "ID": 200360,
+      "Entries": [
+        "Magic: ARC"
+      ]
+    },
+    {
+      "ID": 200370,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200420,
+      "Entries": [
+        "Lightning: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200430,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200440,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200460,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 200470,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200480,
+      "Entries": [
+        "Magic: ARC"
+      ]
+    },
+    {
+      "ID": 200490,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200510,
+      "Entries": [
+        "Holy: FTH"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 200640,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 200650,
+      "Entries": [
+        "Magic: INT + FTH"
+      ]
+    },
+    {
+      "ID": 200660,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 200661,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 200670,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "Physical: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201710,
+      "Entries": [
+        "Physical: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201720,
+      "Entries": [
+        "Physical: STR + DEX + ARC"
+      ]
+    },
+    {
+      "ID": 201730,
+      "Entries": [
+        "Physical: STR + DEX + ARC"
+      ]
+    },
+    {
+      "ID": 201740,
+      "Entries": [
+        "Physical: STR + DEX + INT | Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 201750,
+      "Entries": [
+        "Physical: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201760,
+      "Entries": [
+        "Physical: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201830,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201831,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 201840,
+      "Entries": [
+        "Physical: STR + DEX + ARC"
+      ]
+    },
+    {
+      "ID": 201841,
+      "Entries": [
+        "Physical: STR + DEX + ARC"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 203011,
+      "Entries": [
+        "Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "Holy: FTH"
+      ]
+    },
+    {
+      "ID": 203030,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 203050,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 203051,
+      "Entries": [
+        "Magic: INT"
+      ]
+    },
+    {
+      "ID": 203060,
+      "Entries": [
+        "Physical: STR + INT | Magic: STR + INT"
+      ]
+    },
+    {
+      "ID": 203070,
+      "Entries": [
+        "Physical: STR + INT | Magic: STR + INT"
+      ]
+    },
+    {
+      "ID": 203080,
+      "Entries": [
+        "Magic: INT + FTH"
+      ]
+    },
+    {
+      "ID": 203510,
+      "Entries": [
+        "Fire: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 203580,
+      "Entries": [
+        "Physical: ARC"
+      ]
+    },
+    {
+      "ID": 203610,
+      "Entries": [
+        "Physical: STR + DEX + ARC"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10010020,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10010030,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: INT + FTH | Lightning: INT + FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10041000,
+      "Entries": [
+        "Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 10061700,
+      "Entries": [
+        "Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 10062600,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10062700,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10063200,
+      "Entries": [
+        "Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 10063210,
+      "Entries": [
+        "Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 10063400,
+      "Entries": [
+        "Fire: STR + DEX"
+      ]
+    },
+    {
+      "ID": 10071100,
+      "Entries": [
+        "Lightning: STR + DEX + FTH"
+      ]
+    },
+    {
+      "ID": 10071200,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10081700,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10081900,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10091100,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10091600,
+      "Entries": [
+        "Lightning: STR + DEX + FTH"
+      ]
+    },
+    {
+      "ID": 10091800,
+      "Entries": [
+        "Physical: STR + DEX + FTH | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10091814,
+      "Entries": [
+        "Physical: STR + DEX + FTH | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10091815,
+      "Entries": [
+        "Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10092200,
+      "Entries": [
+        "Lightning: STR + DEX + FTH"
+      ]
+    },
+    {
+      "ID": 10101600,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10110310,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10131000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT + ARC | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH + ARC"
+      ]
+    },
+    {
+      "ID": 10131100,
+      "Entries": [
+        "Physical: STR + DEX | Magic: FTH | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10131200,
+      "Entries": [
+        "Physical: STR + DEX | Magic: FTH | Fire: INT + FTH | Lightning: FTH | Holy: INT + FTH"
+      ]
+    },
+    {
+      "ID": 10141300,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 10160400,
+      "Entries": [
+        "Physical: STR + DEX | Magic: STR + DEX + INT"
+      ]
+    },
+    {
+      "ID": 10160410,
+      "Entries": [
+        "Physical: STR + DEX | Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 10160420,
+      "Entries": [
+        "Physical: STR + DEX | Magic: STR + DEX + INT | Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: STR + DEX + INT | Fire: STR + DEX + INT + FTH | Lightning: STR + DEX + FTH | Holy: STR + DEX + FTH"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "Physical: STR + DEX | Magic: DEX + INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010100,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010101,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH | Magic: INT | Fire: STR + FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010102,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010103,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5"
+      ]
+    },
+    {
+      "ID": 20010104,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5"
+      ]
+    },
+    {
+      "ID": 20010105,
+      "Entries": [
+        "Physical: STR + DEX + INT + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH | Replacement Correction 5"
+      ]
+    },
+    {
+      "ID": 20010200,
+      "Entries": [
+        "Physical: STR + DEX + ARC | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010300,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: FTH | Lightning: FTH | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010301,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: STR | Lightning: FTH | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010302,
+      "Entries": [
+        "Physical: STR + DEX + ARC | Magic: INT | Fire: FTH | Lightning: FTH | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010400,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: STR + DEX + INT + FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010500,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT | Fire: STR + FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010600,
+      "Entries": [
+        "Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010601,
+      "Entries": [
+        "Physical: STR + DEX + FTH + ARC | Magic: INT | Fire: STR | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20010700,
+      "Entries": [
+        "Physical: STR + DEX | Magic: INT + FTH | Fire: FTH | Lightning: DEX | Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20050000,
+      "Entries": [
+        "Holy: FTH"
+      ]
+    },
+    {
+      "ID": 20050010,
+      "Entries": [
+        "Magic: DEX"
+      ]
+    },
+    {
+      "ID": 20050020,
+      "Entries": [
+        "Lighning: ARC"
+      ]
+    },
+    {
+      "ID": 20200620,
+      "Entries": [
+        "Fire: STR + DEX + INT + FTH"
+      ]
+    },
+    {
+      "ID": 20200680,
+      "Entries": [
+        "Fire: STR + DEX + FTH"
+      ]
+    },
+    {
+      "ID": 20201700,
+      "Entries": [
+        "Physical: STR + INT + ARC | Magic: STR + INT + ARC"
+      ]
+    },
+    {
+      "ID": 20202031,
+      "Entries": [
+        "Physical: STR"
+      ]
+    },
+    {
+      "ID": 20203001,
+      "Entries": [
+        "Physical: INT + FTH + ARC"
+      ]
+    },
+    {
+      "ID": 20203190,
+      "Entries": [
+        "Fire: INT + FTH + ARC"
+      ]
+    }
+  ]
+}

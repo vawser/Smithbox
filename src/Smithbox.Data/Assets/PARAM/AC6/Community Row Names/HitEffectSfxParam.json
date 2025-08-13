@@ -1,0 +1,431 @@
+{
+  "Name": "HitEffectSfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Iron ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Iron ⇒ Heavy iron (Same as general purpose 2017/02/22)"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Iron ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "EN (green) ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "EN (green) ⇒ Heavy iron"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "EN (green) ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Coral ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Coral ⇒ Heavy iron"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Coral ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "General purpose barrier landing"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Flame ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Stun ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Assault Armor ⇒ General purpose impact"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Pulse ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Pulse ⇒ Heavy iron"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Pulse ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Laser ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Laser ⇒ Heavy iron"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Laser ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Plasma ⇒ General purpose landing"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Plasma ⇒ Heavy iron"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Plasma ⇒ Shield energy"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "reservation"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "smoke"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "smoke & debris"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "piece of stone"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "soil"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "piece of wood"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "sand"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "flame"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "ice"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "snow"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "electricity"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "glass"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "water (shallow)"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "water (deep)"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Swamp (shallow)"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Swamp (deep)"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "meat"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "cloth"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "rubber"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Iron ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 490,
+      "Entries": [
+        "Pulse ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Laser ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Plasma ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "EN Green ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Coral ⇒ Asset PA"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "General purpose ⇒ Shield energy_Initial guard"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "General purpose ⇒ Shield Coral_Initial Guard"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "gene normal"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "gene coral"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Reserve 11"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Iron ⇒ Shield Coral"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Pulse ⇒ Shield Coral"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "EN Green ⇒ Shield Coral"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Coral ⇒ Shield Coral"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Iron ⇒ PA_enemy large_white_hit ripple"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Pulse ⇒ PA_enemy extra large_white_hit ripple"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "EN Green ⇒ PA_enemy large_white_hit ripple"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Coral ⇒ PA_enemy large_white_hit ripple"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Made of iron ⇒ PA_enemy extra large_coral_hit ripple"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Pulse ⇒ PA_enemy extra large_coral_hit ripple"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "EN green ⇒ PA_enemy extra large_coral_hit ripple"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Coral ⇒ PA_enemy extra large_coral_hit ripple"
+      ]
+    }
+  ]
+}

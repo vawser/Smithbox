@@ -1,0 +1,53 @@
+{
+  "Name": "PartsBreakLotteryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "waist -- 腰"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "waist + left hand -- 腰＋左手"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "waist + right hand -- 腰＋右手"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "right hand only -- 右手のみ"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "left hand only -- 左手のみ"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "left and right hand random -- 左右手ランダム"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "test blade -- テストブレード"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "Name": "MissionSystemMsgCommonParam",
+  "Entries": [
+    {
+      "ID": 130,
+      "Entries": [
+        "AP at 30%."
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "AP at 50%."
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Left hand ammunition depleted."
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Left hand ammunition at 10%."
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Left hand ammunition at 30%."
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Left hand ammunition at 50%."
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Right hand ammunition depleted."
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Right hand ammunition at 10%."
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Right hand ammunition at 30%."
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Right hand ammunition at 50%."
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Left shoulder ammunition depleted."
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Left shoulder ammunition at 10%."
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Left shoulder ammunition at 30%."
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Left shoulder ammunition at 50%."
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Right shoulder ammunition depleted."
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Right shoulder ammunition at 10%."
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Right shoulder ammunition at 30%."
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Right shoulder ammunition at 50%."
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "No repair kits remaining."
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "One repair kits remaining."
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Two repair kits remaining."
+      ]
+    }
+  ]
+}

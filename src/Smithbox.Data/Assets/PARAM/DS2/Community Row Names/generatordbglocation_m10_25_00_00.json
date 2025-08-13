@@ -1,0 +1,863 @@
+{
+  "Name": "generatordbglocation_m10_25_00_00",
+  "Entries": [
+    {
+      "ID": 40,
+      "Entries": [
+        "Pilgrims in the Abyss (Born) NPC -- 【深淵の巡礼者】（生者）NPC"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Pilgrims in the Abyss (Ghost) NPC -- 【深淵の巡礼者】（亡霊）NPC"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[Female Knight] Npc -- 【女騎士】NPC"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[Female Knight] NPC (Ghost) -- 【女騎士】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "[Dwarf] Npc -- 【ドワーフ】NPC"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "[Dwarf] NPC (Ghost) -- 【ドワーフ】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "【Fishing Bridge 2-point cave side_tracker_black spirit】NPC for multi-, severing (female) -- 【つり橋2先の洞窟横_追跡者_黒霊】マルチ用NPC：肉断ち（女）"
+      ]
+    },
+    {
+      "ID": 591,
+      "Entries": [
+        "[Black Spirit] Enclosed Man -- 【黒霊】封じられた人"
+      ]
+    },
+    {
+      "ID": 596,
+      "Entries": [
+        "[White Spirit] Female Knight -- 【白霊】女騎士"
+      ]
+    },
+    {
+      "ID": 597,
+      "Entries": [
+        "【White Spirit】NPC for Multi: Archer (Male) -- 【白霊】マルチ用NPC：弓兵（男）"
+      ]
+    },
+    {
+      "ID": 851,
+      "Entries": [
+        "【Boss】Butcher -- 【ボス】ブッチャー"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Scaffolding one step down from the start] terrible dead; -- 【スタートから一段下の足場】すごい亡者；素手_松明反応"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "[Scaffolding_pitfalls below the bonfire 1 destination】 terrible dead; -- 【篝火1先の足場_落とし穴下】すごい亡者；素手_あぐら"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "[Scaffolding_pitfalls below the bonfire 1 destination】 terrible dead; -- 【篝火1先の足場_落とし穴下】すごい亡者；素手_あぐら"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[Scaffolding_ pitfalls below the bonfire 1 destination] terrible dead; bare hands_ crush -- 【篝火1先の足場_落とし穴下】すごい亡者；素手_うつぶせ"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "[Scaffolding_pitfalls below the bonfire 1 destination】 terrible dead; bare hands_3times agura -- 【篝火1先の足場_落とし穴下】すごい亡者；素手_３倍あぐら"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【In front of Nagagiri Bridge 1】Amazing Dead; Bare hands 9 -- 【長つり橋1の手前】すごい亡者；素手９"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "【In front of Nagagiri Bridge 1】Amazing Dead; Sword 10 -- 【長つり橋1の手前】すごい亡者；剣１０"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "[Front of long suspension bridge 1_ Back side of the wooden board] great dead; -- 【長つり橋1の手前_木板の裏側】すごい亡者；素手_うつぶせ"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "[Front of long suspension bridge 1_ Back side of the wooden board] great dead; bare hand_agura -- 【長つり橋1の手前_木板の裏側】すごい亡者；素手_あぐら"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[Front of long suspension bridge 1 _ back side of the wooden board] hunting dog -- 【長つり橋1の手前_木板の裏側】狩猟犬"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 1] Amazing Dead; Sword_Slow Agura -- 【篝火1へのループルート_足場1】すごい亡者；剣_遅いあぐら"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 1] Amazing Dead; Sword_Slow Agura -- 【篝火1へのループルート_足場1】すごい亡者；剣_遅いあぐら"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 1] Amazing Dead; Sword_Slow Agura -- 【篝火1へのループルート_足場1】すごい亡者；剣_遅いあぐら"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 2] amazing dead; bare-handed_slow agura -- 【篝火1へのループルート_足場2】すごい亡者；素手_遅いあぐら"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[Loop route to bonfire 1_ scaffold3] terrible dead; 3 x faster sword -- 【篝火1へのループルート_足場3】すごい亡者；３倍速い剣"
+      ]
+    },
+    {
+      "ID": 1323,
+      "Entries": [
+        "[Loop route to Bonfire 1_ Scaffold 3] Terrible dead; -- 【篝火1へのループルート_足場3】すごい亡者；松明"
+      ]
+    },
+    {
+      "ID": 1324,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1326,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1327,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1328,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1329,
+      "Entries": [
+        "[Loop route to Bonfire 1_Scaffold 3] Amazing Dead; Barehands_Erdo -- 【篝火1へのループルート_足場3】すごい亡者；素手_エルード"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[Loop route to Bonfire 1_ Before the bonfire] terrible dead; bare hands 2 -- 【篝火1へのループルート_篝火手前】すごい亡者；素手２"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "【Scaffolding in front of the kokeshi room】Terrible dead; -- 【コケシ部屋前の足場】すごい亡者；松明"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[Scaffolding in front of the kokeshi room] terrible dead; sword 17 -- 【コケシ部屋前の足場】すごい亡者；剣17"
+      ]
+    },
+    {
+      "ID": 1530,
+      "Entries": [
+        "[Trap Treasure Chest Room_2 Laps_Soul Black】 Undead Citizen -- 【トラップ宝箱部屋_2周目_ソウルブラック】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 1531,
+      "Entries": [
+        "[Trap Treasure Chest Room_2 Laps_Soul Black】 Undead Citizen -- 【トラップ宝箱部屋_2周目_ソウルブラック】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 1532,
+      "Entries": [
+        "[Trap Treasure Chest Room_2 Laps_Soul Black】 Undead Citizen -- 【トラップ宝箱部屋_2周目_ソウルブラック】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "[Return road from the cockeshi room route _1F] terrible dead; bare hands -- 【コケシ部屋ルートからの復帰路_1F】すごい亡者；素手"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "[Return road from the cockeshi room route _1F] terrible dead; bare hands -- 【コケシ部屋ルートからの復帰路_1F】すごい亡者；素手"
+      ]
+    },
+    {
+      "ID": 1562,
+      "Entries": [
+        "[Return road from the cockeshi room route _1F] hunting dog -- 【コケシ部屋ルートからの復帰路_1F】狩猟犬"
+      ]
+    },
+    {
+      "ID": 1570,
+      "Entries": [
+        "[Return road from the cockeshi room route _2F] terrible dead; bare hands -- 【コケシ部屋ルートからの復帰路_2F】すごい亡者；素手"
+      ]
+    },
+    {
+      "ID": 1571,
+      "Entries": [
+        "[Return road from the cockeshi room route _2F] terrible dead; bare hands -- 【コケシ部屋ルートからの復帰路_2F】すごい亡者；素手"
+      ]
+    },
+    {
+      "ID": 1580,
+      "Entries": [
+        "[Return road from the cockeshi room route _3F] terrible dead; bare hands -- 【コケシ部屋ルートからの復帰路_3F】すごい亡者；素手"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "[Fall from suspension bridge to the first] terrible dead -- 【つり橋２本目から１本目に落下】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "【Suspension Bridge】Undead Citizen -- 【つり橋1本目】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[☆ 2 laps ☆ suspension bridge 1st] hunting dog -- 【☆２周目☆つり橋１本目】狩猟犬"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "[Suspension bridge 1st back upper layer treasure chest] great deceased -- 【吊り橋1本目後上層宝箱】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "[Suspension bridge 1st back upper layer treasure chest] great deceased -- 【吊り橋1本目後上層宝箱】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "[After jumping off the suspension bridge] terrible dead -- 【吊り橋1本目後飛び降り後】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2041,
+      "Entries": [
+        "[After jumping off the suspension bridge] terrible dead -- 【吊り橋1本目後飛び降り後】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2042,
+      "Entries": [
+        "[After jumping off the suspension bridge] terrible dead -- 【吊り橋1本目後飛び降り後】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2043,
+      "Entries": [
+        "[After jumping off the suspension bridge] terrible dead -- 【吊り橋1本目後飛び降り後】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2044,
+      "Entries": [
+        "[After jumping off the suspension bridge after the first] terrible dead_Guerro -- 【吊り橋1本目後飛び降り後】\u3000すごい亡者_ゲロ"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "[Suspension bridge 1st word jumping zone _ Erdo 3 brothers front] great deceased -- 【つり橋１本目語飛び降りゾーン_エルード３兄弟手前】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "[Cliff under a long ladder] great dead _Eldo 3 brothers_eldest brother -- 【長いはしご下の崖】\u3000すごい亡者_エルード３兄弟_長兄"
+      ]
+    },
+    {
+      "ID": 2081,
+      "Entries": [
+        "[Cliff under a long ladder] great dead _Eldo 3 brothers_next brother -- 【長いはしご下の崖】\u3000すごい亡者_エルード３兄弟_次兄"
+      ]
+    },
+    {
+      "ID": 2082,
+      "Entries": [
+        "[Cliff under a long ladder] great dead _Erdo 3 brother_youngest brother -- 【長いはしご下の崖】\u3000すごい亡者_エルード３兄弟_末弟"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "[Under the long ladder _ ladder pinching troops] great dead -- 【長いはしごの下_はしご挟み撃ち部隊】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2091,
+      "Entries": [
+        "[Under the long ladder _ ladder pinching troops] great dead -- 【長いはしごの下_はしご挟み撃ち部隊】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[On the long ladder _ ladder pinching troops] great dead -- 【長いはしごの上_はしご挟み撃ち部隊】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[On the long ladder _ ladder pinching troops] great dead -- 【長いはしごの上_はしご挟み撃ち部隊】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[On the long ladder _ ladder pinching troops] great dead -- 【長いはしごの上_はしご挟み撃ち部隊】\u3000すごい亡者"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Next treasure chest on Yagura] undead citizen : poison -- 【やぐら上の宝箱横】アンデッド市民：毒"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Suspension bridge first destination ladder under] hunting dog -- 【つり橋１本目先のハシゴ下】狩猟犬"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "【Suspension Bridge】Great Dead; -- 【つり橋2手前】すごい亡者；松明"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "【Suspension Bridge】Undead Citizen -- 【つり橋2本目】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "【Suspension Bridge】Undead Citizen -- 【つり橋2本目】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "【Suspension Bridge】Undead Citizen -- 【つり橋2本目】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "【Suspension Bridge】Hunting Dog -- 【つり橋2本目】狩猟犬"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[☆ 2 laps ☆ fishing bridge 2nd crossed toko fell first] hunting dog -- 【☆２周目☆つり橋2本目渡った先落ちたトコ】狩猟犬"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "[☆ 2 laps ☆ fishing bridge 2nd crossed toko fell first] hunting dog -- 【☆２周目☆つり橋2本目渡った先落ちたトコ】狩猟犬"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "【Fishing Bridge 2-point cave】Amazing Dead; Sword_Agura -- 【つり橋2先の洞窟】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 2521,
+      "Entries": [
+        "【Fishing Bridge 2-point cave】Amazing dead; bare hands_Agura -- 【つり橋2先の洞窟】すごい亡者；素手_あぐら"
+      ]
+    },
+    {
+      "ID": 2522,
+      "Entries": [
+        "【Fishing Bridge 2-point cave】Amazing dead; bare hands_Agura -- 【つり橋2先の洞窟】すごい亡者；素手_あぐら"
+      ]
+    },
+    {
+      "ID": 2523,
+      "Entries": [
+        "【Fishing Bridge 2-point cave】Amazing Dead; Sword_Agura -- 【つり橋2先の洞窟】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "【Cave in front of ladder area】 Corrosive insect -- 【梯子エリア前の洞窟】\u3000腐食虫"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "【Cave in front of ladder area】 Poison-free hornworm -- 【梯子エリア前の洞窟】\u3000毒なし毒角虫"
+      ]
+    },
+    {
+      "ID": 2711,
+      "Entries": [
+        "【Cave in front of ladder area】 Poison-free hornworm -- 【梯子エリア前の洞窟】\u3000毒なし毒角虫"
+      ]
+    },
+    {
+      "ID": 2712,
+      "Entries": [
+        "【Cave in front of ladder area】 Poison-free hornworm -- 【梯子エリア前の洞窟】\u3000毒なし毒角虫"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "【Ladder area_above】Amazing dead; -- 【梯子エリア_上】すごい亡者；剣"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "【Ladder Area_Above】Amazing Dead; Sword_Agura -- 【梯子エリア_上】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "【Ladder Area_On】Amazing Dead; Bare hands 4_01 -- 【梯子エリア_上】すごい亡者；素手４_01"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "【Ladder area_above】Amazing dead; sword_3times -- 【梯子エリア_上】すごい亡者；剣_３倍"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "【Ladder Area_Above】Amazing Dead; Bare hands 4_03 (sword) -- 【梯子エリア_上】すごい亡者；素手４_03\u3000（剣）"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "【Ladder Area_Above】Amazing Dead; -- 【梯子エリア_上】すごい亡者；素手_うつ伏せゲロ"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "【Ladder Area_On】Hunting Dogs -- 【梯子エリア_上】狩猟犬"
+      ]
+    },
+    {
+      "ID": 3052,
+      "Entries": [
+        "【Ladder Area_On】Hunting Dogs -- 【梯子エリア_上】狩猟犬"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; -- 【梯子エリア_中】すごい亡者；剣"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; -- 【梯子エリア_中】すごい亡者；剣"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; Sword_Agura -- 【梯子エリア_中】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; Sword_Agura -- 【梯子エリア_中】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "【Ladder Area_Middle】Amazing Dead; Bare hands 20 -- 【梯子エリア_中】すごい亡者；素手20"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "【Ladder Area_Middle】Amazing Dead; Sword 22 -- 【梯子エリア_中】すごい亡者；剣22"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "【Ladder Area_Medium】Amazing Dead; Sword_Slow Agura -- 【梯子エリア_中】すごい亡者；剣_遅いあぐら"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; -- 【梯子エリア_中】すごい亡者；剣"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "【Ladder Area_Inside】Amazing Dead; -- 【梯子エリア_中】すごい亡者；剣"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "【Ladder Area_Below】Amazing Dead; Sword_Agura -- 【梯子エリア_下】すごい亡者；剣_あぐら"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "【Ladder area_below】Amazing dead; sword_3times -- 【梯子エリア_下】すごい亡者；剣_３倍"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "【Ladder area_below】Amazing dead; sword_3times -- 【梯子エリア_下】すごい亡者；剣_３倍"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "【Ladder area_below】Amazing dead; sword_3times -- 【梯子エリア_下】すごい亡者；剣_３倍"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3304,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3305,
+      "Entries": [
+        "[Generates when you break the pot under the ladder area] poison horn insect: poison -- 【梯子エリア下_壷を壊すと生成】毒角蟲：毒"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "[Ladder area_ Fall ing into fire after the destruction of the pot] undead citizen -- 【梯子エリア_壺破壊後篝火に落下】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[Ladder area_ Fall ing into fire after the destruction of the pot] undead citizen -- 【梯子エリア_壺破壊後篝火に落下】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[Ladder area_ Fall ing into fire after the destruction of the pot] undead citizen -- 【梯子エリア_壺破壊後篝火に落下】アンデッド市民"
+      ]
+    },
+    {
+      "ID": 3503,
+      "Entries": [
+        "[Ladder area _ side cliff production] amazing dead 3 crawling up from the cliff -- 【梯子エリア_脇の崖演出】すごい亡者：崖から這い上がる3"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "[Ladder area _ side cliff production] amazing dead 2 crawling up from the cliff -- 【梯子エリア_脇の崖演出】すごい亡者：崖から這い上がる2"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "【Cave area_On scaffolding to underground tunnel】Amazing dead; bare hands 24 -- 【洞窟エリア_地下トンネルへの足場上】すごい亡者；素手24"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "[Cave area_ on the scaffold to the underground tunnel] terrible dead; sword 27 -- 【洞窟エリア_地下トンネルへの足場上】すごい亡者；剣27"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "[Cave area_ on the scaffold to the underground tunnel] terrible dead; sword 28 -- 【洞窟エリア_地下トンネルへの足場上】すごい亡者；剣28"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "【Cave Area_Underground Tunnel】Amazing Dead; -- 【洞窟エリア_地下トンネル】すごい亡者；素手７"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "【Cave Area_Underground Tunnel】Amazing Dead; Sword 13 -- 【洞窟エリア_地下トンネル】すごい亡者；剣１３"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "【Cave Area_Underground Tunnel】Amazing Dead; Sword 14 -- 【洞窟エリア_地下トンネル】すごい亡者；剣１４"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "【Cave Area_Underground Tunnel】Amazing Dead; -- 【洞窟エリア_地下トンネル】すごい亡者；松明２"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "【Cave Area_Underground Tunnel】Needle Magine -- 【洞窟エリア_地下トンネル】針ウジ虫"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[Cave area_ tar reservoir next to] dead workers crawling up from the cliff 3 -- 【洞窟エリア_タール溜り横】死者の労働者：崖から這い上がる3"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "[Cave area_Underground tunnel exit_tar dive] coal tar_01 -- 【洞窟エリア_地下トンネル出口先_タール潜み】コールタール_01"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "[Cave area_Underground tunnel exit_tar dive] coal tar_02 -- 【洞窟エリア_地下トンネル出口先_タール潜み】コールタール_02"
+      ]
+    },
+    {
+      "ID": 4212,
+      "Entries": [
+        "[Cave area_Underground tunnel exit_tar dive] coal tar_03 -- 【洞窟エリア_地下トンネル出口先_タール潜み】コールタール_03"
+      ]
+    },
+    {
+      "ID": 4213,
+      "Entries": [
+        "[Cave area_Underground tunnel exit_tar dive] coal tar_04 -- 【洞窟エリア_地下トンネル出口先_タール潜み】コールタール_04"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Cave area_Underground tunnel exit】 Dead workers crawl ing from a cliff 1 -- 【洞窟エリア_地下トンネル出口先】死者の労働者：崖から這い上がる１"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "【Cave Area_Underground Tunnel Exit】Needle Magibug -- 【洞窟エリア_地下トンネル出口先】針ウジ虫"
+      ]
+    },
+    {
+      "ID": 4300,
+      "Entries": [
+        "[Cave area_ in front of the white door] dead workers crawling up from the cliff 2 -- 【洞窟エリア_白扉手前の広場前】死者の労働者：崖から這い上がる2"
+      ]
+    },
+    {
+      "ID": 4310,
+      "Entries": [
+        "[Cave area_ in front of the square in front of the white door] needle maggots -- 【洞窟エリア_白扉手前の広場前】針ウジ虫"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_05 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_05"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_06 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_06"
+      ]
+    },
+    {
+      "ID": 4402,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_07 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_07"
+      ]
+    },
+    {
+      "ID": 4403,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_08 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_08"
+      ]
+    },
+    {
+      "ID": 4404,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_09 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_09"
+      ]
+    },
+    {
+      "ID": 4405,
+      "Entries": [
+        "[Cave area_ White door front square _ tar lurk] coal tar_10 -- 【洞窟エリア_白扉手前の広場_タール潜み】コールタール_10"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[Cave area_ Tunnel to boss pre-bonfire] needle maginibug -- 【洞窟エリア_ボス前篝火へのトンネル】針ウジ虫"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Giant room] giant senior soldier -- 【巨人部屋】巨人上級兵士"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Giant room] giant senior soldier -- 【巨人部屋】巨人上級兵士"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Giant room __ appeared to have collaborators] giant senior soldier -- 【巨人部屋__協力者がいると出現】巨人上級兵士"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "[Giant room_ appeared to have collaborators _ Soul Black] giant senior soldiers -- 【巨人部屋_協力者がいると出現_ソウルブラック】巨人上級兵士"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[Boss After Treasure Room] Demon Heavy Soldier -- 【ボス後宝部屋】デーモン重兵士"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "[Boss After Treasure Room] Demon Heavy Soldier -- 【ボス後宝部屋】デーモン重兵士"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "Name": "WorldMapPieceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Limgrave West"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Weeping Peninsula"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Limgrave East"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Liurnia East"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Liurnia North"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Liurnia West"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Altus Plateau"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Leyndell Royal Capital"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Mt. Gelmir"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Caelid"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Dragonbarrow"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Mountaintops of the Giants West"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Mountaintops of the Giants East"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Consecrated Snowfield"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Starfall Crater"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Allow Map Display: Lands Between"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Lake of Rot"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Mohgwyn Palace"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Gravesite Plain"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Scadu Altus"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Southern Shore"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Rauh Ruins"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Abyss"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Allow Map Display: Shadow of the Erdtree"
+      ]
+    }
+  ]
+}

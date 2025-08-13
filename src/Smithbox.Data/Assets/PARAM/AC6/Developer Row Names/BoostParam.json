@@ -1,0 +1,17 @@
+{
+  "Name": "BoostParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "FNR test parameters -- FNR\u3000テスト用パラメータ"
+      ]
+    }
+  ]
+}

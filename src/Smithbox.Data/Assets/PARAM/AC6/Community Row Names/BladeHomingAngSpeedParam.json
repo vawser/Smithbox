@@ -1,0 +1,1062 @@
+{
+  "Name": "BladeHomingAngSpeedParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Fixed after attack"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "assault boost"
+      ]
+    },
+    {
+      "ID": 210100,
+      "Entries": [
+        "Assault boost left/right evasion"
+      ]
+    },
+    {
+      "ID": 210200,
+      "Entries": [
+        "Starting before Assault Boost"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Start rapid turn (light attack 1)"
+      ]
+    },
+    {
+      "ID": 250001,
+      "Entries": [
+        "Start rapid turn (light attack 2)"
+      ]
+    },
+    {
+      "ID": 250005,
+      "Entries": [
+        "Start rapid turn (light attack 2)"
+      ]
+    },
+    {
+      "ID": 250010,
+      "Entries": [
+        "Light wave blade light attack 1st stage homing"
+      ]
+    },
+    {
+      "ID": 250011,
+      "Entries": [
+        "Light Wave Blade Weak Attack Just before the 1st attack"
+      ]
+    },
+    {
+      "ID": 250020,
+      "Entries": [
+        "Light wave blade weak attack 2nd stage homing"
+      ]
+    },
+    {
+      "ID": 250021,
+      "Entries": [
+        "Light Wave Blade Weak Attack Immediately before the 2nd stage attack"
+      ]
+    },
+    {
+      "ID": 250100,
+      "Entries": [
+        "Light wave blade strong attack 1st stage homing"
+      ]
+    },
+    {
+      "ID": 250101,
+      "Entries": [
+        "Light wave blade strong attack Just before the first attack"
+      ]
+    },
+    {
+      "ID": 252010,
+      "Entries": [
+        "Chain Hammer_Weak attack 1st stage_Before attack_Rapid rotation"
+      ]
+    },
+    {
+      "ID": 252011,
+      "Entries": [
+        "Chain Hammer_Weak attack 1st stage_During attack_Slight rotation"
+      ]
+    },
+    {
+      "ID": 252012,
+      "Entries": [
+        "Chain Hammer_Light attack 1st stage_After attack_All angles fixed"
+      ]
+    },
+    {
+      "ID": 252020,
+      "Entries": [
+        "Chain Hammer_Weak attack 2nd stage_Before attack_Rapid rotation"
+      ]
+    },
+    {
+      "ID": 252021,
+      "Entries": [
+        "Chain Hammer_Weak attack 2nd stage_During attack_Slight rotation"
+      ]
+    },
+    {
+      "ID": 252022,
+      "Entries": [
+        "Chain Hammer_Light attack 2nd stage_After attack_All angles fixed"
+      ]
+    },
+    {
+      "ID": 254000,
+      "Entries": [
+        "Start rapid turn (light attack 1)"
+      ]
+    },
+    {
+      "ID": 254001,
+      "Entries": [
+        "Start rapid turn (light attack 2)"
+      ]
+    },
+    {
+      "ID": 254005,
+      "Entries": [
+        "Start rapid turn (strong attack)"
+      ]
+    },
+    {
+      "ID": 254010,
+      "Entries": [
+        "PA Breaker light attack 1st stage homing"
+      ]
+    },
+    {
+      "ID": 254011,
+      "Entries": [
+        "PA Breaker weak attack Just before the first attack"
+      ]
+    },
+    {
+      "ID": 254012,
+      "Entries": [
+        "PA Breaker weak attack 1st stage_After attack_All angles fixed"
+      ]
+    },
+    {
+      "ID": 254020,
+      "Entries": [
+        "PA Breaker weak attack 2nd stage homing"
+      ]
+    },
+    {
+      "ID": 254021,
+      "Entries": [
+        "PA Breaker weak attack Just before the second attack"
+      ]
+    },
+    {
+      "ID": 254022,
+      "Entries": [
+        "PA Breaker weak attack 2nd stage_After attack_All angles fixed"
+      ]
+    },
+    {
+      "ID": 254100,
+      "Entries": [
+        "PA Breaker strong attack 1st stage homing"
+      ]
+    },
+    {
+      "ID": 254101,
+      "Entries": [
+        "PA Breaker Heavy Attack Immediately before the 1st attack"
+      ]
+    },
+    {
+      "ID": 257000,
+      "Entries": [
+        "Start rapid turn (light attack 1)"
+      ]
+    },
+    {
+      "ID": 257001,
+      "Entries": [
+        "Start rapid turn (light attack 2)"
+      ]
+    },
+    {
+      "ID": 257005,
+      "Entries": [
+        "Start rapid turn (strong attack)"
+      ]
+    },
+    {
+      "ID": 257010,
+      "Entries": [
+        "PA Breaker light attack 1st stage homing"
+      ]
+    },
+    {
+      "ID": 257011,
+      "Entries": [
+        "PA Breaker weak attack Just before the first attack"
+      ]
+    },
+    {
+      "ID": 257020,
+      "Entries": [
+        "PA Breaker weak attack 2nd stage homing"
+      ]
+    },
+    {
+      "ID": 257021,
+      "Entries": [
+        "PA Breaker weak attack Just before the second attack"
+      ]
+    },
+    {
+      "ID": 257100,
+      "Entries": [
+        "PA Breaker strong attack 1st stage homing",
+        "PA Breaker Heavy Attack Immediately before the 1st attack"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (1)"
+      ]
+    },
+    {
+      "ID": 25000110,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (1)"
+      ]
+    },
+    {
+      "ID": 25000120,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (1)"
+      ]
+    },
+    {
+      "ID": 25000130,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (1)"
+      ]
+    },
+    {
+      "ID": 25000200,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (2)"
+      ]
+    },
+    {
+      "ID": 25000210,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (2)"
+      ]
+    },
+    {
+      "ID": 25000220,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (2)"
+      ]
+    },
+    {
+      "ID": 25000230,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (2)"
+      ]
+    },
+    {
+      "ID": 25001100,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 25001110,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 25001120,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 25001130,
+      "Entries": [
+        "IA-C01W2: MOONLIGHT / IA-C01W7: ML-REDSHIFT (Charged)"
+      ]
+    },
+    {
+      "ID": 25100100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (1)"
+      ]
+    },
+    {
+      "ID": 25100110,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (1)"
+      ]
+    },
+    {
+      "ID": 25100120,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (1)"
+      ]
+    },
+    {
+      "ID": 25100130,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (1)"
+      ]
+    },
+    {
+      "ID": 25101100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 25101110,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 25101120,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 25101125,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 25101130,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101 (Charged)"
+      ]
+    },
+    {
+      "ID": 25200100,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (1)"
+      ]
+    },
+    {
+      "ID": 25200110,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (1)"
+      ]
+    },
+    {
+      "ID": 25200130,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (1)"
+      ]
+    },
+    {
+      "ID": 25200200,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (2)"
+      ]
+    },
+    {
+      "ID": 25200210,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (2)"
+      ]
+    },
+    {
+      "ID": 25200230,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (2)"
+      ]
+    },
+    {
+      "ID": 25201100,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged)"
+      ]
+    },
+    {
+      "ID": 25201110,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged)"
+      ]
+    },
+    {
+      "ID": 25201130,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR (Charged)"
+      ]
+    },
+    {
+      "ID": 25300100,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (1)"
+      ]
+    },
+    {
+      "ID": 25300110,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (1)"
+      ]
+    },
+    {
+      "ID": 25300120,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (1)"
+      ]
+    },
+    {
+      "ID": 25300130,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (1)"
+      ]
+    },
+    {
+      "ID": 25301100,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged)"
+      ]
+    },
+    {
+      "ID": 25301110,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged)"
+      ]
+    },
+    {
+      "ID": 25301120,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged)"
+      ]
+    },
+    {
+      "ID": 25301130,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD (Charged)"
+      ]
+    },
+    {
+      "ID": 25400100,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (1)"
+      ]
+    },
+    {
+      "ID": 25400110,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (1)"
+      ]
+    },
+    {
+      "ID": 25400120,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (1)"
+      ]
+    },
+    {
+      "ID": 25400130,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (1)"
+      ]
+    },
+    {
+      "ID": 25400200,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (2)"
+      ]
+    },
+    {
+      "ID": 25400210,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (2)"
+      ]
+    },
+    {
+      "ID": 25400220,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (2)"
+      ]
+    },
+    {
+      "ID": 25400230,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (2)"
+      ]
+    },
+    {
+      "ID": 25401100,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 25401110,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 25401120,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 25401130,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A (Charged)"
+      ]
+    },
+    {
+      "ID": 25500100,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (1)"
+      ]
+    },
+    {
+      "ID": 25500110,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (1)"
+      ]
+    },
+    {
+      "ID": 25500120,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (1)"
+      ]
+    },
+    {
+      "ID": 25500130,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (1)"
+      ]
+    },
+    {
+      "ID": 25501100,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 25501110,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 25501120,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 25501130,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 25501140,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB (Charged)"
+      ]
+    },
+    {
+      "ID": 25600100,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (1)"
+      ]
+    },
+    {
+      "ID": 25600110,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (1)"
+      ]
+    },
+    {
+      "ID": 25600120,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (1)"
+      ]
+    },
+    {
+      "ID": 25600130,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (1)"
+      ]
+    },
+    {
+      "ID": 25600200,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (2)"
+      ]
+    },
+    {
+      "ID": 25600210,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (2)"
+      ]
+    },
+    {
+      "ID": 25600220,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (2)"
+      ]
+    },
+    {
+      "ID": 25600230,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (2)"
+      ]
+    },
+    {
+      "ID": 25601100,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 25601110,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 25601120,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 25601130,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS (Charged)"
+      ]
+    },
+    {
+      "ID": 25700100,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (1)"
+      ]
+    },
+    {
+      "ID": 25700110,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (1)"
+      ]
+    },
+    {
+      "ID": 25700120,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (1)"
+      ]
+    },
+    {
+      "ID": 25700130,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (1)"
+      ]
+    },
+    {
+      "ID": 25700200,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (2)"
+      ]
+    },
+    {
+      "ID": 25700210,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (2)"
+      ]
+    },
+    {
+      "ID": 25700220,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (2)"
+      ]
+    },
+    {
+      "ID": 25700230,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (2)"
+      ]
+    },
+    {
+      "ID": 25700300,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (3)"
+      ]
+    },
+    {
+      "ID": 25700310,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (3)"
+      ]
+    },
+    {
+      "ID": 25700320,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (3)"
+      ]
+    },
+    {
+      "ID": 25700330,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (3)"
+      ]
+    },
+    {
+      "ID": 25701100,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged)"
+      ]
+    },
+    {
+      "ID": 25701110,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged)"
+      ]
+    },
+    {
+      "ID": 25701120,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged)"
+      ]
+    },
+    {
+      "ID": 25701130,
+      "Entries": [
+        "LASER DAGGER - VP-67LD (Charged)"
+      ]
+    },
+    {
+      "ID": 25800100,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (1)"
+      ]
+    },
+    {
+      "ID": 25800110,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (1)"
+      ]
+    },
+    {
+      "ID": 25800120,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (1)"
+      ]
+    },
+    {
+      "ID": 25800130,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (1)"
+      ]
+    },
+    {
+      "ID": 25801100,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged)"
+      ]
+    },
+    {
+      "ID": 25801110,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged)"
+      ]
+    },
+    {
+      "ID": 25801120,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged)"
+      ]
+    },
+    {
+      "ID": 25801130,
+      "Entries": [
+        "LASER LANCE - VE-67LLA (Charged)"
+      ]
+    },
+    {
+      "ID": 25900100,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (1)"
+      ]
+    },
+    {
+      "ID": 25900110,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (1)"
+      ]
+    },
+    {
+      "ID": 25900120,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (1)"
+      ]
+    },
+    {
+      "ID": 25900130,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (1)"
+      ]
+    },
+    {
+      "ID": 25900200,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (2)"
+      ]
+    },
+    {
+      "ID": 25900210,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (2)"
+      ]
+    },
+    {
+      "ID": 25900220,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (2)"
+      ]
+    },
+    {
+      "ID": 25900230,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (2)"
+      ]
+    },
+    {
+      "ID": 25901100,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged)"
+      ]
+    },
+    {
+      "ID": 25901110,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged)"
+      ]
+    },
+    {
+      "ID": 25901120,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged)"
+      ]
+    },
+    {
+      "ID": 25901130,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged Finisher)"
+      ]
+    },
+    {
+      "ID": 25901140,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged Finisher)"
+      ]
+    },
+    {
+      "ID": 25901150,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE (Charged Finisher)"
+      ]
+    },
+    {
+      "ID": 26000100,
+      "Entries": [
+        "STUN BATON - VP-67EB (1)"
+      ]
+    },
+    {
+      "ID": 26000110,
+      "Entries": [
+        "STUN BATON - VP-67EB (1)"
+      ]
+    },
+    {
+      "ID": 26000120,
+      "Entries": [
+        "STUN BATON - VP-67EB (1)"
+      ]
+    },
+    {
+      "ID": 26000130,
+      "Entries": [
+        "STUN BATON - VP-67EB (1)"
+      ]
+    },
+    {
+      "ID": 26000200,
+      "Entries": [
+        "STUN BATON - VP-67EB (2)"
+      ]
+    },
+    {
+      "ID": 26000210,
+      "Entries": [
+        "STUN BATON - VP-67EB (2)"
+      ]
+    },
+    {
+      "ID": 26000220,
+      "Entries": [
+        "STUN BATON - VP-67EB (2)"
+      ]
+    },
+    {
+      "ID": 26000230,
+      "Entries": [
+        "STUN BATON - VP-67EB (2)"
+      ]
+    },
+    {
+      "ID": 26000300,
+      "Entries": [
+        "STUN BATON - VP-67EB (3)"
+      ]
+    },
+    {
+      "ID": 26000310,
+      "Entries": [
+        "STUN BATON - VP-67EB (3)"
+      ]
+    },
+    {
+      "ID": 26000320,
+      "Entries": [
+        "STUN BATON - VP-67EB (3)"
+      ]
+    },
+    {
+      "ID": 26000330,
+      "Entries": [
+        "STUN BATON - VP-67EB (3)"
+      ]
+    },
+    {
+      "ID": 26001100,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 26001110,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 26001120,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 26001130,
+      "Entries": [
+        "STUN BATON - VP-67EB (Charged)"
+      ]
+    },
+    {
+      "ID": 26100100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (1)"
+      ]
+    },
+    {
+      "ID": 26100110,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (1)"
+      ]
+    },
+    {
+      "ID": 26100120,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (1)"
+      ]
+    },
+    {
+      "ID": 26100130,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (1)"
+      ]
+    },
+    {
+      "ID": 26101100,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 26101110,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 26101120,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 26101130,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU (Charged)"
+      ]
+    },
+    {
+      "ID": 26200100,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 26200110,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 26200120,
+      "Entries": [
+        "Fist"
+      ]
+    },
+    {
+      "ID": 26200130,
+      "Entries": [
+        "Fist"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_Weapon_Type",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "No 00 -- 00なし"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "shield -- 盾(シールド)(shield)"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Rifle -- ライフル（Rifle）"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Shotgun -- ショットガン（Shotgun）"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Machine gun -- マシンガン（Machinegun）"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Bazooka -- バズーカ（Bazooka）"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Handgun -- ハンドガン（Handgun）"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Sniper -- スナ（Sniper）"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Cannon -- キャノン（Cannon）"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Missile -- ミサイル（Missile）"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Bayonet -- 銃剣（Bayonet）"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Laser Rifle -- レーザーライフル(LaserRifle)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Laser Cannon -- レーザーキャノン(LaserCannon)"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "item -- アイテム"
+      ]
+    }
+  ]
+}

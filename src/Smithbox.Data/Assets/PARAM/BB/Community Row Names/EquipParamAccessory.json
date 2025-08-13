@@ -1,0 +1,251 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "Increase equipment weight"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Increased attack power in a pinch"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Darkmoon God's Ring"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Thieves' Ring"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Stamina recovery up"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Increased fire resistance"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Increases lightning resistance"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Magic Resistance Up"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "All resistances up 1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Increased bleeding resistance"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Increases poison resistance"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "HP Slight increase"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Increased Curse Resistance"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Magic Slot Up"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Magic Power Up"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "MP Overemphasis"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Increases critical attack power"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Archery Master"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Physical defense up"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Item Drop Up"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Acquired Soul Up"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Sound Cancellation"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Pebble Hat"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Strong Legs"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "revival"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "Resurrection from the Curse"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Acrobatics"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Resonance"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Words of Chaos"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Dark Walker"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Lava Walker"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Auxiliary Magic Extension"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "HP drain"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Curse of the Strong"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Counter Enhancement"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Take care of your weapons"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "SA up"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "Increased defense in pinches"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Miracle Power Up"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "Magic Slot Up B"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "[ DLC 】Black Dragon Ring"
+      ]
+    }
+  ]
+}

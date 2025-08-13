@@ -1,0 +1,515 @@
+{
+  "Name": "eventparam_m10_33_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Togetge with a switch"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Boss: Giant Rat_ Combat"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "a cage of insect keysA_"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Insect key A_ insect key use"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "A cage of insect keysB_"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Insect key B_ insect key use"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "a cage of insect keys C_"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Insect key C_ insect key use"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "a cage of insect keysC1_ a strong enemy cage"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "a cage of insect keysC2_ a strong enemy cage"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "a cage of insect keysC3_ a strong enemy cage"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Insect key C1_ insect key use"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Insect key C2_ insect key use"
+      ]
+    },
+    {
+      "ID": 6120,
+      "Entries": [
+        "Insect key C3_ insect key use"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "a cage of insect keys F_"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Insect key F_ insect key use"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "a cage of insect keysG_"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Insect key G_ insect key use"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "A hidden way H_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Insect key H_ insect key use"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "a cage of insect keys I1_"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Dwarf statue I2_ cage of insect keys"
+      ]
+    },
+    {
+      "ID": 11100,
+      "Entries": [
+        "Insect key I1_ insect key use"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "A hidden way J_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 12100,
+      "Entries": [
+        "Insect key J_ insect key use"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "The cage of the insect key K_ closed to traffic."
+      ]
+    },
+    {
+      "ID": 13100,
+      "Entries": [
+        "Insect key K_ insect key use"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Dwarf statue M_ cage of insect keys"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "Insect key M_ insect key use"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "A bug key cage N_ a firing disc"
+      ]
+    },
+    {
+      "ID": 16100,
+      "Entries": [
+        "Insect key N_ insect key use"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "A dwarf statue O_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 17100,
+      "Entries": [
+        "Insect key O_ insect key use"
+      ]
+    },
+    {
+      "ID": 18000,
+      "Entries": [
+        "A dwarf statue P_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 18100,
+      "Entries": [
+        "Insect key P_ insect key use"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "a cage of insect keys Q_"
+      ]
+    },
+    {
+      "ID": 19100,
+      "Entries": [
+        "Insect key Q_ insect key use"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "A hidden way R_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 20100,
+      "Entries": [
+        "Insect key R_ insect key use"
+      ]
+    },
+    {
+      "ID": 21000,
+      "Entries": [
+        "A dwarf statue S_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 21100,
+      "Entries": [
+        "Insect key S_ insect key use"
+      ]
+    },
+    {
+      "ID": 22000,
+      "Entries": [
+        "Dwarf statue T_ cage of insect keys"
+      ]
+    },
+    {
+      "ID": 22100,
+      "Entries": [
+        "Insect key T_ insect key use"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "A worm-key cage U1_ a firing disc"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "A firing disk U2_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "A worm-key cage U3_ a firing disc"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "A worm-key cage U4_ a firing disc"
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        "A worm-key cage U5_ a firing disc"
+      ]
+    },
+    {
+      "ID": 23100,
+      "Entries": [
+        "Insect key U_ insect key use"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "a cage of insect keysV1_ a strong enemy cage"
+      ]
+    },
+    {
+      "ID": 24010,
+      "Entries": [
+        "a strong enemy cage V2_ a cage of insect keys"
+      ]
+    },
+    {
+      "ID": 24020,
+      "Entries": [
+        "A cage of insect keysV3_ a strong enemy cage"
+      ]
+    },
+    {
+      "ID": 24100,
+      "Entries": [
+        "Insect key V1_ insect key use"
+      ]
+    },
+    {
+      "ID": 24110,
+      "Entries": [
+        "Insect key V2_ insect key use"
+      ]
+    },
+    {
+      "ID": 24120,
+      "Entries": [
+        "Insect key V3_ insect key use"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Map light switching_overhead_1"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Light switching _NPC room for maps"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "Map light switching_rock skin"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "Map light switching_wall"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "Map light switching_stairs"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "Map light switching_boss pedestal"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "Map light switching_boss room entrance"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "Map light switching_overhead_2"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "Map light switching_overhead_3"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "Map light switching_overhead_4"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "Map light switching_overhead_5"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Map light switching_torch_1"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "Map Light Switching_Torch_2"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "Map Light Switching_Torch_3"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Before the pledge area of the start destination spark of the regeneration"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "play spark 02_ pledge area after boss room front"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "NPC: Dwarf (Valley of the Reservoir)"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "NPC: Dwarf (Valley of the Reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111202,
+      "Entries": [
+        "OBJ: Dwarf (Valley of The Reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111203,
+      "Entries": [
+        "OBJ: Dwarf (Valley of The Reservoir): Key Guide"
+      ]
+    },
+    {
+      "ID": 111204,
+      "Entries": [
+        "OBJ: Dwarf (Valley of the Reservoir): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111205,
+      "Entries": [
+        "OBJ: Dwarf (Valley of the Reservoir): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111510,
+      "Entries": [
+        "NPC: The King of Mice (The Door way of Faros)"
+      ]
+    },
+    {
+      "ID": 111511,
+      "Entries": [
+        "NPC: The King of Mice (The Door way of Faros): Ghost"
+      ]
+    },
+    {
+      "ID": 111512,
+      "Entries": [
+        "OBJ: King of mice (Door way of Faros): Tomb"
+      ]
+    },
+    {
+      "ID": 111513,
+      "Entries": [
+        "OBJ: The King of Mice (The Door way of Faros): Key Guide"
+      ]
+    },
+    {
+      "ID": 111514,
+      "Entries": [
+        "OBJ: The King of Mice (The Door way of Faros): Death"
+      ]
+    },
+    {
+      "ID": 118220,
+      "Entries": [
+        "NPC for Multi: The Magician (Male): Black Phantom Appearance: Offline"
+      ]
+    },
+    {
+      "ID": 120040,
+      "Entries": [
+        "Trophy: Mouse Pledge"
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

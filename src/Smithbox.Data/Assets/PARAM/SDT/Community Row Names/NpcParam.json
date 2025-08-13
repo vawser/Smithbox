@@ -1,0 +1,7679 @@
+{
+  "Name": "NpcParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Non-touch data (recommended by copy / paste) -- あたりさわりのないデータ（コピペ元推奨）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Treasure test 1 -- 宝テスト１"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Treasure test 2 -- 宝テスト２"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Treasure test 3 -- 宝テスト３"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For automatic patrol (default) -- 自動巡回用（デフォルト）"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "For automatic patrol (running) -- 自動巡回用（走り）"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "For automatic patrol (walking) -- 自動巡回用（歩き）"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "For automatic patrol (super dash) -- 自動巡回用（スーパーダッシュ）"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "Group patrol dummy leader -- 集団巡回ダミーリーダー"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "Group patrol dummy leader (for underwater) -- 集団巡回ダミーリーダー\u3000（水中用）"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "Dummy character for drop items -- ドロップアイテム用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10002000,
+      "Entries": [
+        "General-purpose dummy character for conversation -- 会話用汎用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10002010,
+      "Entries": [
+        "For conversation: Carp feeding: Bell dummy character -- 会話用：鯉の餌やり：鐘ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10002020,
+      "Entries": [
+        "For conversation: Dummy character for strengthening prosthetic hand ninja equipment when Tokugawa attacks -- 会話用：徳川襲来時義手忍具強化用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10002220,
+      "Entries": [
+        "For conversation: Chigo: Telepathic dummy character -- 会話用：稚児：念話ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10002280,
+      "Entries": [
+        "For conversation: Sick village priest: Dummy character for the door -- 会話用：病み村神主：扉用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10003000,
+      "Entries": [
+        "Dummy character for large snake visibility -- 大蛇視界用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10004000,
+      "Entries": [
+        "Okiryu Dummy Leader -- 翁竜ダミーリーダー"
+      ]
+    },
+    {
+      "ID": 10005000,
+      "Entries": [
+        "Sick Village Village Mayor&#39;s House Target Dummy Character -- 病み村\u3000村長の家\u3000ターゲット用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10006000,
+      "Entries": [
+        "Sword of the sickbed_Dummy character for bullet owners -- 病床の剣聖_弾丸オーナー用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10007000,
+      "Entries": [
+        "Gunpowder Box_Dummy Character for Bullet Owner -- 火薬箱_弾丸オーナー用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10008000,
+      "Entries": [
+        "Straw bundle _ Dummy character for burning trap -- 藁束_炎上トラップ用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "Dummy character for demon Buddha -- 鬼仏用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10010001,
+      "Entries": [
+        "Dummy character for the Great Demon Buddha -- 大鬼仏用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10010005,
+      "Entries": [
+        "Dummy character for Unkai Demon Buddha -- 雲海鬼仏用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10010010,
+      "Entries": [
+        "Dummy character for camera inside / outside judgment -- カメラ内外判定用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 10011000,
+      "Entries": [
+        "Mermaid Dragon Battle Tentacle Warp Position -- 人魚竜戦触手ワープ位置"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword -- 落武者\u3000城下\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10100001,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Stopper -- 落武者\u3000城下\u3000片手刀\u3000ストッパー"
+      ]
+    },
+    {
+      "ID": 10100002,
+      "Entries": [
+        "Ochimusha Castle One-handed sword One-handed death -- 落武者\u3000城下\u3000片手刀\u3000被一撃死"
+      ]
+    },
+    {
+      "ID": 10100003,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Stopper Fixed -- 落武者\u3000城下\u3000片手刀\u3000ストッパー\u3000固定"
+      ]
+    },
+    {
+      "ID": 10100004,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Indoor -- 落武者\u3000城下\u3000片手刀\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100005,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Strong -- 落武者\u3000城下\u3000片手刀\u3000強"
+      ]
+    },
+    {
+      "ID": 10100006,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Strong Indoor -- 落武者\u3000城下\u3000片手刀\u3000強\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100010,
+      "Entries": [
+        "Ochimusha Castle One-handed sword No drop -- 落武者\u3000城下\u3000片手刀\u3000ドロップなし"
+      ]
+    },
+    {
+      "ID": 10100020,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword Required Drop -- 落武者\u3000城下\u3000片手刀\u3000必須ドロップ"
+      ]
+    },
+    {
+      "ID": 10100030,
+      "Entries": [
+        "Ochimusha Castle One-handed sword Assisted by stone throwing -- 落武者\u3000城下\u3000片手刀\u3000石投げで援護"
+      ]
+    },
+    {
+      "ID": 10100080,
+      "Entries": [
+        "Ochimusha Castle One-handed Sword The voice of the end of the bridge [Conversation] -- 落武者\u3000城下\u3000片手刀\u3000橋にいる末期の声【会話】"
+      ]
+    },
+    {
+      "ID": 10100090,
+      "Entries": [
+        "Ochimusha Castle One-Handed Sword Tutorial Immortality -- 落武者\u3000城下\u3000片手刀\u3000チュートリアル不死"
+      ]
+    },
+    {
+      "ID": 10100100,
+      "Entries": [
+        "Ochimusha Castle Weak Eight Phases No Mino Varie 1 -- 落武者\u3000城下\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10100101,
+      "Entries": [
+        "Ochimusha Castle Weak Eight Phases No Mino Required Drop -- 落武者\u3000城下\u3000弱八相\u3000蓑なし\u3000必須ドロップ"
+      ]
+    },
+    {
+      "ID": 10100102,
+      "Entries": [
+        "Ochimusha Castle Weak Eight Phases No Mino Varie 2 -- 落武者\u3000城下\u3000弱八相\u3000蓑なし\u3000バリエ２"
+      ]
+    },
+    {
+      "ID": 10100110,
+      "Entries": [
+        "Ochimusha Castle Eight Phases Guard -- 落武者\u3000城下\u3000八相\u3000ガードする"
+      ]
+    },
+    {
+      "ID": 10100111,
+      "Entries": [
+        "Ochimusha Castle Eight Phases Guarded by Akaoni Assisted by throwing stones -- 落武者\u3000城下\u3000八相\u3000ガードする\u3000赤鬼付近\u3000石投げで援護"
+      ]
+    },
+    {
+      "ID": 10100200,
+      "Entries": [
+        "Ochimusha Castle Spear -- 落武者\u3000城下\u3000槍"
+      ]
+    },
+    {
+      "ID": 10100201,
+      "Entries": [
+        "Ochimusha Castle Spear Indoor -- 落武者\u3000城下\u3000槍\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100202,
+      "Entries": [
+        "Ochimusha Castle Spear Strong -- 落武者\u3000城下\u3000槍\u3000強"
+      ]
+    },
+    {
+      "ID": 10100203,
+      "Entries": [
+        "Ochimusha Castle Spear Strong Indoor -- 落武者\u3000城下\u3000槍\u3000強\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100300,
+      "Entries": [
+        "Ochimusha Castle Matchlock -- 落武者\u3000城下\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10100301,
+      "Entries": [
+        "Ochimusha Castle Matchlock Indoor -- 落武者\u3000城下\u3000火縄銃\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100302,
+      "Entries": [
+        "Ochimusha Castle Matchlock Strong -- 落武者\u3000城下\u3000火縄銃\u3000強"
+      ]
+    },
+    {
+      "ID": 10100303,
+      "Entries": [
+        "Ochimusha Castle Matchlock Strong Indoors -- 落武者\u3000城下\u3000火縄銃\u3000強\u3000屋内"
+      ]
+    },
+    {
+      "ID": 10100320,
+      "Entries": [
+        "Ochimusha Castle Matchlock Mandatory Drop -- 落武者\u3000城下\u3000火縄銃\u3000必須ドロップ"
+      ]
+    },
+    {
+      "ID": 10101000,
+      "Entries": [
+        "Ochimusha Honjo One-handed sword -- 落武者\u3000本城\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10101010,
+      "Entries": [
+        "Ochimusha Honjo One-handed sword (blown by a fire cow) -- 落武者\u3000本城\u3000片手刀\u3000（火牛にふっ飛ばされる）"
+      ]
+    },
+    {
+      "ID": 10101100,
+      "Entries": [
+        "Ochimusha Honjo Yaso -- 落武者\u3000本城\u3000八相"
+      ]
+    },
+    {
+      "ID": 10101110,
+      "Entries": [
+        "Ochimusha Honjo Yaso Guard -- 落武者\u3000本城\u3000八相\u3000ガードする"
+      ]
+    },
+    {
+      "ID": 10101120,
+      "Entries": [
+        "Ochimusha Honjo Weak Eight Phases No Mino Varie 1 -- 落武者\u3000本城\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10101200,
+      "Entries": [
+        "Ochimusha Honjo Spear -- 落武者\u3000本城\u3000槍"
+      ]
+    },
+    {
+      "ID": 10101210,
+      "Entries": [
+        "Ochimusha Honjo Spear (Blown off by a fire cow) -- 落武者\u3000本城\u3000槍\u3000（火牛にふっ飛ばされる）"
+      ]
+    },
+    {
+      "ID": 10101300,
+      "Entries": [
+        "Ochimusha Honjo Matchlock -- 落武者\u3000本城\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10102000,
+      "Entries": [
+        "Ochimusha Honjo_One-handed sword when the Ninja army invades -- 落武者\u3000本城_忍軍襲来時\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10102010,
+      "Entries": [
+        "Ochimusha Honjo_ Ninja army invasion One-handed sword (escape) -- 落武者\u3000本城_忍軍襲来時\u3000片手刀\u3000(逃走)"
+      ]
+    },
+    {
+      "ID": 10102011,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion One-handed Sword Red Demon Hostile -- 落武者\u3000本城_忍軍襲来時\u3000片手刀\u3000赤鬼敵対用"
+      ]
+    },
+    {
+      "ID": 10102012,
+      "Entries": [
+        "Ochimusha Honjo _ One-handed sword when the Ninja army invades (voice of the final stage) -- 落武者\u3000本城_忍軍襲来時\u3000片手刀\u3000（末期の声）"
+      ]
+    },
+    {
+      "ID": 10102013,
+      "Entries": [
+        "Ochimusha Honjo_ One-handed sword is killed when the Ninja army invades -- 落武者\u3000本城_忍軍襲来時\u3000片手刀\u3000殺される"
+      ]
+    },
+    {
+      "ID": 10102014,
+      "Entries": [
+        "Ochimusha Honjo_ Ninja army invasion One-handed sword (dying) -- 落武者\u3000本城_忍軍襲来時\u3000片手刀\u3000（死にかけ）"
+      ]
+    },
+    {
+      "ID": 10102100,
+      "Entries": [
+        "Ochimusha Honjo_ Eight phases when the Ninja army invades -- 落武者\u3000本城_忍軍襲来時\u3000八相"
+      ]
+    },
+    {
+      "ID": 10102110,
+      "Entries": [
+        "Ochimusha Honjo_ When the Ninja Army invades, guards eight phases -- 落武者\u3000本城_忍軍襲来時\u3000八相\u3000ガードする"
+      ]
+    },
+    {
+      "ID": 10102111,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Eight Phase Red Demon Hostile -- 落武者\u3000本城_忍軍襲来時\u3000八相\u3000赤鬼敵対用"
+      ]
+    },
+    {
+      "ID": 10102120,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Weak Eight Phases No Mino Barrier 1 -- 落武者\u3000本城_忍軍襲来時\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10102121,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Weak Eight Phases No Mino Barrier 1 Killed -- 落武者\u3000本城_忍軍襲来時\u3000弱八相\u3000蓑なし バリエ１\u3000殺される"
+      ]
+    },
+    {
+      "ID": 10102200,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Spear -- 落武者\u3000本城_忍軍襲来時\u3000槍"
+      ]
+    },
+    {
+      "ID": 10102210,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Spear (Escape) -- 落武者\u3000本城_忍軍襲来時\u3000槍 （逃走）"
+      ]
+    },
+    {
+      "ID": 10102220,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Spear (Dying) -- 落武者\u3000本城_忍軍襲来時\u3000槍 （死にかけ）"
+      ]
+    },
+    {
+      "ID": 10102230,
+      "Entries": [
+        "Ochimusha Honjo_ Spear is killed when the Ninja army invades -- 落武者\u3000本城_忍軍襲来時\u3000槍 殺される"
+      ]
+    },
+    {
+      "ID": 10102300,
+      "Entries": [
+        "Ochimusha Honjo_ Matchlock when the Ninja army invades -- 落武者\u3000本城_忍軍襲来時\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10102310,
+      "Entries": [
+        "Ochimusha Honjo_Ninja Army Invasion Matchlock Gun (Late Voice) -- 落武者\u3000本城_忍軍襲来時\u3000火縄銃 （末期の声）"
+      ]
+    },
+    {
+      "ID": 10102311,
+      "Entries": [
+        "Ochimusha Honjo_Ninja army invasion Matchlock gun (dying) -- 落武者\u3000本城_忍軍襲来時\u3000火縄銃 （死にかけ）"
+      ]
+    },
+    {
+      "ID": 10103000,
+      "Entries": [
+        "Ochimusha Honjo_One-handed sword when Tokugawa attacks -- 落武者\u3000本城_徳川襲来時\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10103010,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks One-handed sword (for being killed by Tokugawa) -- 落武者\u3000本城_徳川襲来時\u3000片手刀(徳川に殺される用)"
+      ]
+    },
+    {
+      "ID": 10103011,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks One-handed sword Combat state (for being killed by Tokugawa) -- 落武者\u3000本城_徳川襲来時\u3000片手刀\u3000戦闘状態\u3000(徳川に殺される用)"
+      ]
+    },
+    {
+      "ID": 10103012,
+      "Entries": [
+        "Ochimusha Honjo_Tokugawa invasion One-handed sword (voice of the end) -- 落武者\u3000本城_徳川襲来時\u3000片手刀 （末期の声)"
+      ]
+    },
+    {
+      "ID": 10103013,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks One-handed sword (dying) -- 落武者\u3000本城_徳川襲来時\u3000片手刀 (死にかけ)"
+      ]
+    },
+    {
+      "ID": 10103100,
+      "Entries": [
+        "Ochimusha Honjo_At the time of the Tokugawa invasion Eight phases -- 落武者\u3000本城_徳川襲来時\u3000八相"
+      ]
+    },
+    {
+      "ID": 10103110,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa invades Yaso (for being killed by Tokugawa) -- 落武者\u3000本城_徳川襲来時\u3000八相\u3000(徳川に殺される用)"
+      ]
+    },
+    {
+      "ID": 10103111,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa invades Eight-phase battle state (for being killed by Tokugawa) -- 落武者\u3000本城_徳川襲来時\u3000八相\u3000戦闘状態\u3000(徳川に殺される用)"
+      ]
+    },
+    {
+      "ID": 10103112,
+      "Entries": [
+        "Ochimusha Honjo_At the time of the Tokugawa invasion Eight phases (dying) -- 落武者\u3000本城_徳川襲来時\u3000八相\u3000(死にかけ)"
+      ]
+    },
+    {
+      "ID": 10103120,
+      "Entries": [
+        "Ochimusha Honjo_ When Tokugawa invades, guards eight phases -- 落武者\u3000本城_徳川襲来時\u3000八相\u3000ガードする"
+      ]
+    },
+    {
+      "ID": 10103130,
+      "Entries": [
+        "Ochimusha Honjo_At the time of the Tokugawa invasion -- 落武者\u3000本城_徳川襲来時\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10103200,
+      "Entries": [
+        "Ochimusha Honjo_Tokugawa invasion spear -- 落武者\u3000本城_徳川襲来時\u3000槍"
+      ]
+    },
+    {
+      "ID": 10103210,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks Spear (dying) -- 落武者\u3000本城_徳川襲来時\u3000槍\u3000（死にかけ）"
+      ]
+    },
+    {
+      "ID": 10103300,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks Matchlock gun -- 落武者\u3000本城_徳川襲来時\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10103310,
+      "Entries": [
+        "Ochimusha Honjo_At the time of the Tokugawa invasion Matchlock gun (voice of the end) -- 落武者\u3000本城_徳川襲来時\u3000火縄銃\u3000（末期の声）"
+      ]
+    },
+    {
+      "ID": 10103311,
+      "Entries": [
+        "Ochimusha Honjo_When Tokugawa attacks Matchlock gun (dying) -- 落武者\u3000本城_徳川襲来時\u3000火縄銃\u3000（死にかけ）"
+      ]
+    },
+    {
+      "ID": 10104000,
+      "Entries": [
+        "Ochimusha E3 Castle One-handed Sword -- 落武者\u3000E3城下\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10104001,
+      "Entries": [
+        "Ochimusha E3 Castle One-handed Sword For First Battle (High Trunk) -- 落武者\u3000E3城下\u3000片手刀 初回戦闘用（体幹高い）"
+      ]
+    },
+    {
+      "ID": 10104100,
+      "Entries": [
+        "Ochimusha E3 Castle Eight Phases -- 落武者\u3000E3城下\u3000八相"
+      ]
+    },
+    {
+      "ID": 10104110,
+      "Entries": [
+        "Ochimusha E3 Castle Eight Phases Guard -- 落武者\u3000E3城下\u3000八相\u3000ガードする"
+      ]
+    },
+    {
+      "ID": 10104200,
+      "Entries": [
+        "Ochimusha E3 Castle Spear -- 落武者\u3000E3城下\u3000槍"
+      ]
+    },
+    {
+      "ID": 10104300,
+      "Entries": [
+        "Ochimusha E3 Castle Matchlock -- 落武者\u3000E3城下\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10105000,
+      "Entries": [
+        "Ochimusha Hidden Prison_Tutorial Matchlock -- 落武者\u3000隠し牢_チュートリアル\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10105100,
+      "Entries": [
+        "Ochimusha Hidden Prison One-handed Sword -- 落武者\u3000隠し牢\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10105200,
+      "Entries": [
+        "Ochimusha Hidden Prison Eight Phases -- 落武者\u3000隠し牢\u3000八相"
+      ]
+    },
+    {
+      "ID": 10105210,
+      "Entries": [
+        "Ochimusha Hidden Prison Weak Eight Phases No Mino Barrier 1 -- 落武者\u3000隠し牢\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10105300,
+      "Entries": [
+        "Ochimusha Hidden Prison Spear -- 落武者\u3000隠し牢\u3000槍"
+      ]
+    },
+    {
+      "ID": 10105400,
+      "Entries": [
+        "Ochimusha Hidden Prison Matchlock -- 落武者\u3000隠し牢\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10106100,
+      "Entries": [
+        "Ochimusha Dungeon Weak Eight Phases No Mino Varie 1 -- 落武者\u3000地下牢\u3000弱八相\u3000蓑なし バリエ１"
+      ]
+    },
+    {
+      "ID": 10106200,
+      "Entries": [
+        "Ochimusha Dungeon Spear -- 落武者\u3000地下牢\u3000槍"
+      ]
+    },
+    {
+      "ID": 10106300,
+      "Entries": [
+        "Ochimusha Dungeon Matchlock -- 落武者\u3000地下牢\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10109000,
+      "Entries": [
+        "Ochimusha sample one-handed sword -- 落武者\u3000サンプル\u3000片手刀"
+      ]
+    },
+    {
+      "ID": 10109009,
+      "Entries": [
+        "Ochimusha sample for one-handed sword shape drop -- 落武者\u3000サンプル\u3000片手刀\u3000形代ドロップ用"
+      ]
+    },
+    {
+      "ID": 10109010,
+      "Entries": [
+        "Ochimusha sample One-handed sword corpse discovery test -- 落武者\u3000サンプル\u3000片手刀\u3000死体発見テスト"
+      ]
+    },
+    {
+      "ID": 10109080,
+      "Entries": [
+        "Ochimusha LookAt test [conversation] -- 落武者\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 10109099,
+      "Entries": [
+        "Ochimusha Sample One-handed Sword Item Acquisition / Resource Item Acquisition Test -- 落武者\u3000サンプル\u3000片手刀\u3000アイテム入手/リソースアイテム入手テスト"
+      ]
+    },
+    {
+      "ID": 10109100,
+      "Entries": [
+        "Ochimusha sample eight phases -- 落武者\u3000サンプル\u3000八相"
+      ]
+    },
+    {
+      "ID": 10109101,
+      "Entries": [
+        "Ochimusha sample eight phases always weakly played -- 落武者\u3000サンプル\u3000八相\u3000常に弱弾き"
+      ]
+    },
+    {
+      "ID": 10109102,
+      "Entries": [
+        "Ochimusha sample eight phases always strong -- 落武者\u3000サンプル\u3000八相\u3000常に強弾き"
+      ]
+    },
+    {
+      "ID": 10109200,
+      "Entries": [
+        "Ochimusha sample spear -- 落武者\u3000サンプル\u3000槍"
+      ]
+    },
+    {
+      "ID": 10109300,
+      "Entries": [
+        "Ochimusha sample matchlock -- 落武者\u3000サンプル\u3000火縄銃"
+      ]
+    },
+    {
+      "ID": 10109900,
+      "Entries": [
+        "Ochimusha sample flaming reaction test -- 落武者\u3000サンプル\u3000炎上リアクションテスト"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 1 -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔1"
+      ]
+    },
+    {
+      "ID": 10110001,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 2 -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔2"
+      ]
+    },
+    {
+      "ID": 10110002,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 3 -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔3"
+      ]
+    },
+    {
+      "ID": 10110003,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 4 -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔4"
+      ]
+    },
+    {
+      "ID": 10110010,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 3 First lateral movement -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔3\u3000初回横移動"
+      ]
+    },
+    {
+      "ID": 10110011,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison One-handed Sword Face 4 -- チュートリアル落武者\u3000隠し牢\u3000片手刀\u3000顔4"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison Yaso Face 1 -- チュートリアル落武者\u3000隠し牢\u3000八相\u3000顔1"
+      ]
+    },
+    {
+      "ID": 10110101,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison Yaso Face 2 -- チュートリアル落武者\u3000隠し牢\u3000八相\u3000顔2"
+      ]
+    },
+    {
+      "ID": 10110102,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison Yaso Face 3 -- チュートリアル落武者\u3000隠し牢\u3000八相\u3000顔3"
+      ]
+    },
+    {
+      "ID": 10110103,
+      "Entries": [
+        "Tutorial Ochimusha Hidden Prison Yaso Face 4 -- チュートリアル落武者\u3000隠し牢\u3000八相\u3000顔4"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Castle One-Handed Sword Tutorial Immortality -- 落武者(不死NPC)\u3000城下\u3000片手刀\u3000チュートリアル不死"
+      ]
+    },
+    {
+      "ID": 10120080,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Castle One-Handed Sword Tutorial Immortality [Conversation] -- 落武者(不死NPC)\u3000城下\u3000片手刀\u3000チュートリアル不死【会話】"
+      ]
+    },
+    {
+      "ID": 10120200,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Castle Spear Tutorial Immortality -- 落武者(不死NPC)\u3000城下\u3000槍\u3000チュートリアル不死"
+      ]
+    },
+    {
+      "ID": 10120300,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Castle Matchlock Tutorial Immortality -- 落武者(不死NPC)\u3000城下\u3000火縄銃\u3000チュートリアル不死"
+      ]
+    },
+    {
+      "ID": 10120500,
+      "Entries": [
+        "Ochimusha (Immortal NPC) For castle one-handed sword breaking &amp; playing shinobi -- 落武者(不死NPC)\u3000\u3000城下\u3000片手刀\u3000崩し&弾き忍殺用"
+      ]
+    },
+    {
+      "ID": 10129000,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Sample Castle One-Handed Sword Tutorial Immortality -- 落武者(不死NPC)\u3000サンプル\u3000城下\u3000片手刀\u3000チュートリアル不死"
+      ]
+    },
+    {
+      "ID": 10130000,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Bug Castle -- 落武者(不死NPC)の蟲\u3000城下"
+      ]
+    },
+    {
+      "ID": 10139000,
+      "Entries": [
+        "Ochimusha (Immortal NPC) Bug Castle -- 落武者(不死NPC)の蟲\u3000城下"
+      ]
+    },
+    {
+      "ID": 10200000,
+      "Entries": [
+        "Samurai General Castle -- 侍大将\u3000城下"
+      ]
+    },
+    {
+      "ID": 10200010,
+      "Entries": [
+        "Samurai General Castle with Haori -- 侍大将\u3000城下\u3000陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10201000,
+      "Entries": [
+        "Tutorial Samurai General Hidden Prison -- チュートリアル侍大将\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 10202000,
+      "Entries": [
+        "Samurai General Honjo Jinhaori -- 侍大将\u3000本城\u3000陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10202060,
+      "Entries": [
+        "Samurai General Honjo Internal Work -- 侍大将\u3000本城\u3000内勤"
+      ]
+    },
+    {
+      "ID": 10202070,
+      "Entries": [
+        "Samurai General Honjo Jinhaori None (for being killed by the lonely people) -- 侍大将\u3000本城\u3000陣羽織なし\u3000（孤影衆に殺される用）"
+      ]
+    },
+    {
+      "ID": 10203010,
+      "Entries": [
+        "Samurai General Honjo_At the time of the Tokugawa invasion No camp haori -- 侍大将\u3000本城_徳川襲来時\u3000陣羽織なし"
+      ]
+    },
+    {
+      "ID": 10204010,
+      "Entries": [
+        "Samurai General E3 Castle Jin Haori -- 侍大将\u3000E3城下\u3000陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10205000,
+      "Entries": [
+        "Samurai General Hidden Prison_When Tokugawa Invades No Jinhaori -- 侍大将\u3000隠し牢_徳川襲来時\u3000陣羽織なし"
+      ]
+    },
+    {
+      "ID": 10209000,
+      "Entries": [
+        "Samurai General Sample -- 侍大将\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10209010,
+      "Entries": [
+        "Samurai General Sample with Jinhaori -- 侍大将\u3000サンプル\u3000陣羽織あり"
+      ]
+    },
+    {
+      "ID": 10209020,
+      "Entries": [
+        "Tutorial Samurai General Sample Hidden Prison -- チュートリアル侍大将\u3000サンプル\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 10209800,
+      "Entries": [
+        "Samurai General Burning Reaction Test -- 侍大将\u3000炎上リアクションテスト"
+      ]
+    },
+    {
+      "ID": 10209900,
+      "Entries": [
+        "Samurai General Hit Stop Test_Do a little -- 侍大将\u3000ヒットストップテスト_少しする"
+      ]
+    },
+    {
+      "ID": 10209901,
+      "Entries": [
+        "Samurai General Hit Stop Test _ Do it properly -- 侍大将\u3000ヒットストップテスト_ちゃんとする"
+      ]
+    },
+    {
+      "ID": 10209990,
+      "Entries": [
+        "Samurai General for underwater test -- 侍大将\u3000水中テスト用"
+      ]
+    },
+    {
+      "ID": 10209999,
+      "Entries": [
+        "Samurai General For damage confirmation -- 侍大将\u3000ダメージ確認用"
+      ]
+    },
+    {
+      "ID": 10210000,
+      "Entries": [
+        "Samurai General Ashina Shitenno Hidden Prison _ Normal Tsukimi Tower -- 侍大将\u3000葦名四天王\u3000隠し牢_平常時\u3000月見櫓"
+      ]
+    },
+    {
+      "ID": 10211000,
+      "Entries": [
+        "Samurai General Ashina Shitenno Hidden Prison _ When Tokugawa Invades -- 侍大将\u3000葦名四天王\u3000隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 10219000,
+      "Entries": [
+        "Samurai General Ashina Four Tenno Sample -- 侍大将\u3000葦名四天王\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10219090,
+      "Entries": [
+        "Samurai General Ashina Four Tenno Sample Combat State Start -- 侍大将\u3000葦名四天王\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 10219900,
+      "Entries": [
+        "Samurai General Ashina Shitenno Sample Flame Reaction Test -- 侍大将\u3000葦名四天王\u3000サンプル\u3000炎上リアクションテスト"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "Centipede Kodera Close Quarters Battle -- ムカデ小\u3000寺\u3000近接戦闘"
+      ]
+    },
+    {
+      "ID": 10300001,
+      "Entries": [
+        "Centipede Kodera Horakutama -- ムカデ小\u3000寺\u3000ほうらく玉"
+      ]
+    },
+    {
+      "ID": 10301000,
+      "Entries": [
+        "Centipede Small Valley Close Quarters Battle -- ムカデ小\u3000渓谷\u3000近接戦闘"
+      ]
+    },
+    {
+      "ID": 10301001,
+      "Entries": [
+        "Centipede Small Valley Horakutama -- ムカデ小\u3000渓谷\u3000ほうらく玉"
+      ]
+    },
+    {
+      "ID": 10309000,
+      "Entries": [
+        "Centipede Small Sample Close Quarters Battle -- ムカデ小\u3000サンプル\u3000近接戦闘"
+      ]
+    },
+    {
+      "ID": 10309001,
+      "Entries": [
+        "Centipede small sample -- ムカデ小\u3000サンプル\u3000ほうらく玉"
+      ]
+    },
+    {
+      "ID": 10400000,
+      "Entries": [
+        "Centipede Temple -- ムカデ大\u3000寺"
+      ]
+    },
+    {
+      "ID": 10401000,
+      "Entries": [
+        "Centipede Canyon -- ムカデ大\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 10409000,
+      "Entries": [
+        "Centipede large sample -- ムカデ大\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 Samurai Residence -- 槍僧兵 見た目1\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10500001,
+      "Entries": [
+        "Spear Monk Soldier Appearance 2 Samurai Residence -- 槍僧兵 見た目2\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10500002,
+      "Entries": [
+        "Spear Monk Soldier Appearance 3 Samurai Residence -- 槍僧兵 見た目3\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10500010,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 Samurai Residence -- 槍僧兵 見た目1\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10500012,
+      "Entries": [
+        "Spear Monk Soldier Appearance 3 Samurai Residence -- 槍僧兵 見た目3\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10501000,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 Honjo -- 槍僧兵 見た目1\u3000本城"
+      ]
+    },
+    {
+      "ID": 10502000,
+      "Entries": [
+        "Spear Monk Appearance 1 E3 -- 槍僧兵 見た目1\u3000E3"
+      ]
+    },
+    {
+      "ID": 10503000,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 Honjo_Ninja Army Invasion -- 槍僧兵 見た目1\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 10504000,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 When Honjo_Tokugawa invades -- 槍僧兵 見た目1\u3000本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 10505000,
+      "Entries": [
+        "Spear Monk Soldier Appearance 1 Samurai Residence Truth -- 槍僧兵 見た目1\u3000武家屋敷真相"
+      ]
+    },
+    {
+      "ID": 10505002,
+      "Entries": [
+        "Spear Monk Soldier Appearance 3 Samurai Residence Truth -- 槍僧兵 見た目3\u3000武家屋敷真相"
+      ]
+    },
+    {
+      "ID": 10509000,
+      "Entries": [
+        "Spear Monk Sample 1 -- 槍僧兵 サンプル1"
+      ]
+    },
+    {
+      "ID": 10509001,
+      "Entries": [
+        "Spear Monk Sample 2 -- 槍僧兵 サンプル2"
+      ]
+    },
+    {
+      "ID": 10509002,
+      "Entries": [
+        "Spear Monk Sample 3 -- 槍僧兵 サンプル3"
+      ]
+    },
+    {
+      "ID": 10600000,
+      "Entries": [
+        "Rotating Spearman Temple -- 回転槍術師\u3000寺"
+      ]
+    },
+    {
+      "ID": 10600010,
+      "Entries": [
+        "Rotating Spearman Temple -- 回転槍術師\u3000寺"
+      ]
+    },
+    {
+      "ID": 10605000,
+      "Entries": [
+        "Rotating Spearman For Revenge Spirit -- 回転槍術師\u3000復讐霊用"
+      ]
+    },
+    {
+      "ID": 10609000,
+      "Entries": [
+        "Rotating Spearman Sample -- 回転槍術師\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10609001,
+      "Entries": [
+        "Rotating Spearman Sample Combat State Start -- 回転槍術師\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 10609002,
+      "Entries": [
+        "Rotating spearman sample Appearance variation difference -- 回転槍術師\u3000サンプル\u3000見た目バリエーション違い"
+      ]
+    },
+    {
+      "ID": 10609003,
+      "Entries": [
+        "Rotating Spearman Sample Running during patrol -- 回転槍術師\u3000サンプル\u3000巡回時に走行"
+      ]
+    },
+    {
+      "ID": 10700000,
+      "Entries": [
+        "Shura Samurai Samurai Residence -- 修羅侍\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 10701000,
+      "Entries": [
+        "Shura Samurai Castle Tokugawa Shura Samurai -- 修羅侍\u3000城下\u3000徳川修羅侍"
+      ]
+    },
+    {
+      "ID": 10702000,
+      "Entries": [
+        "Shura Samurai E3 Castle (based on samurai residence) -- 修羅侍\u3000E3城下（武家屋敷ベース）"
+      ]
+    },
+    {
+      "ID": 10703000,
+      "Entries": [
+        "Shura Samurai Sick Village -- 修羅侍\u3000病み村"
+      ]
+    },
+    {
+      "ID": 10704000,
+      "Entries": [
+        "Shura Samurai Samurai Residence_Truth Edition -- 修羅侍\u3000武家屋敷_真相編"
+      ]
+    },
+    {
+      "ID": 10709000,
+      "Entries": [
+        "Shura Samurai Sample -- 修羅侍\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10709090,
+      "Entries": [
+        "Shura Samurai Sample Combat State Start -- 修羅侍\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 10800000,
+      "Entries": [
+        "Seven-sided warrior dungeon -- 七面武者\u3000地下牢"
+      ]
+    },
+    {
+      "ID": 10801000,
+      "Entries": [
+        "Seven-sided warrior submerged city -- 七面武者\u3000水没都"
+      ]
+    },
+    {
+      "ID": 10802000,
+      "Entries": [
+        "Seven-sided warrior valley lower layer -- 七面武者\u3000渓谷下層"
+      ]
+    },
+    {
+      "ID": 10809000,
+      "Entries": [
+        "Seven-sided warrior sample -- 七面武者\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 10809001,
+      "Entries": [
+        "Seven-sided warrior_battle state start sample -- 七面武者_戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Gecko valley -- ヤモリ\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 11000010,
+      "Entries": [
+        "Gecko Valley No FE -- ヤモリ\u3000渓谷\u3000ＦＥ無し"
+      ]
+    },
+    {
+      "ID": 11001000,
+      "Entries": [
+        "Gecko dungeon -- ヤモリ\u3000地下牢"
+      ]
+    },
+    {
+      "ID": 11002000,
+      "Entries": [
+        "Gecko sick village -- ヤモリ\u3000病み村"
+      ]
+    },
+    {
+      "ID": 11003050,
+      "Entries": [
+        "White gecko submerged city -- 白ヤモリ\u3000水没都"
+      ]
+    },
+    {
+      "ID": 11003060,
+      "Entries": [
+        "White gecko submerged city without audiovisual -- 白ヤモリ\u3000水没都\u3000視聴覚なし"
+      ]
+    },
+    {
+      "ID": 11004000,
+      "Entries": [
+        "Gecko Castle -- ヤモリ\u3000城下"
+      ]
+    },
+    {
+      "ID": 11005000,
+      "Entries": [
+        "Gecko Temple -- ヤモリ\u3000寺"
+      ]
+    },
+    {
+      "ID": 11006000,
+      "Entries": [
+        "Gecko Hidden Prison -- ヤモリ\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 11006100,
+      "Entries": [
+        "Gecko Hidden Prison Do not vomit poison -- ヤモリ\u3000隠し牢\u3000毒を吐かない"
+      ]
+    },
+    {
+      "ID": 11007000,
+      "Entries": [
+        "Gecko main castle -- ヤモリ\u3000本城"
+      ]
+    },
+    {
+      "ID": 11007100,
+      "Entries": [
+        "Gecko Honjo Do not vomit poison -- ヤモリ\u3000本城\u3000毒を吐かない"
+      ]
+    },
+    {
+      "ID": 11007200,
+      "Entries": [
+        "Gecko Honjo When the Ninja army invades (does not hostile to the lonely people) -- ヤモリ\u3000本城\u3000忍軍襲来時（孤影衆と敵対しない）"
+      ]
+    },
+    {
+      "ID": 11009000,
+      "Entries": [
+        "Gecko sample -- ヤモリ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11009001,
+      "Entries": [
+        "Gecko sample first bite -- ヤモリ\u3000サンプル\u3000初回噛みつき"
+      ]
+    },
+    {
+      "ID": 11009002,
+      "Entries": [
+        "Gecko sample Does not spit poison during special standby -- ヤモリ\u3000サンプル\u3000特殊待機時に毒を吐かない"
+      ]
+    },
+    {
+      "ID": 11009003,
+      "Entries": [
+        "Gecko sample Always spit poison_ground type -- ヤモリ\u3000サンプル\u3000常に毒を吐く_地面タイプ"
+      ]
+    },
+    {
+      "ID": 11009050,
+      "Entries": [
+        "White gecko sample -- 白ヤモリ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11009090,
+      "Entries": [
+        "Gecko sample treasure carp test -- ヤモリ\u3000サンプル\u3000宝鯉テスト"
+      ]
+    },
+    {
+      "ID": 11009190,
+      "Entries": [
+        "Gecko sample treasure carp test (on the water) -- ヤモリ\u3000サンプル\u3000宝鯉テスト（水上）"
+      ]
+    },
+    {
+      "ID": 11100000,
+      "Entries": [
+        "Handmaiden Aunt Castle White Nun 1 -- 侍女おば\u3000城下\u3000白尼1"
+      ]
+    },
+    {
+      "ID": 11100001,
+      "Entries": [
+        "Handmaiden Aunt Castle White Nun 2 -- 侍女おば\u3000城下\u3000白尼2"
+      ]
+    },
+    {
+      "ID": 11100002,
+      "Entries": [
+        "Handmaiden Aunt Castle Purple 1 -- 侍女おば\u3000城下\u3000紫1"
+      ]
+    },
+    {
+      "ID": 11100003,
+      "Entries": [
+        "Handmaiden Aunt Castle Purple 2 -- 侍女おば\u3000城下\u3000紫2"
+      ]
+    },
+    {
+      "ID": 11101000,
+      "Entries": [
+        "Handmaiden Aunt Valley White Nun 1 -- 侍女おば\u3000渓谷\u3000白尼1"
+      ]
+    },
+    {
+      "ID": 11101100,
+      "Entries": [
+        "Handmaiden Aunt Samurai Residence White Nun 1 -- 侍女おば\u3000武家屋敷\u3000白尼1"
+      ]
+    },
+    {
+      "ID": 11101180,
+      "Entries": [
+        "Handmaiden Aunt Samurai Residence Suzubaa [Conversation] -- 侍女おば\u3000武家屋敷\u3000鈴ばばあ【会話】"
+      ]
+    },
+    {
+      "ID": 11105010,
+      "Entries": [
+        "Handmaiden Aunt Honjo Castle Tower 4F -- 侍女おば\u3000本城\u3000\u3000天守閣4F"
+      ]
+    },
+    {
+      "ID": 11105100,
+      "Entries": [
+        "Handmaiden Aunt Honjo Yayobioka Nun -- 侍女おば\u3000本城\u3000\u3000八百比丘尼"
+      ]
+    },
+    {
+      "ID": 11105180,
+      "Entries": [
+        "Handmaiden Aunt Honjo Yaohioka Nun [Conversation] -- 侍女おば\u3000本城\u3000\u3000八百比丘尼【会話】"
+      ]
+    },
+    {
+      "ID": 11106000,
+      "Entries": [
+        "Handmaiden Aunt E3 Castle White Nun 1 -- 侍女おば\u3000E3城下\u3000白尼1"
+      ]
+    },
+    {
+      "ID": 11109000,
+      "Entries": [
+        "Handmaiden Aunt White Nun 1 Sample 1 -- 侍女おば\u3000白尼1\u3000サンプル1"
+      ]
+    },
+    {
+      "ID": 11109001,
+      "Entries": [
+        "Handmaiden Aunt White Nun 2 Sample 2 -- 侍女おば\u3000白尼2\u3000サンプル2"
+      ]
+    },
+    {
+      "ID": 11109002,
+      "Entries": [
+        "Handmaiden Aunt Purple 1 Sample 3 -- 侍女おば\u3000紫1\u3000サンプル3"
+      ]
+    },
+    {
+      "ID": 11109003,
+      "Entries": [
+        "Handmaiden Aunt Purple 2 Sample 4 -- 侍女おば\u3000紫2\u3000サンプル4"
+      ]
+    },
+    {
+      "ID": 11109080,
+      "Entries": [
+        "Handmaiden Aunt LookAt Test [Conversation] -- 侍女おば\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "Handmaiden Aunt Valley -- 侍女おば\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 11119000,
+      "Entries": [
+        "Handmaiden Aunt Normal Sample 1 -- 侍女おば\u3000通常\u3000サンプル1"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "Lookout Castle Castle Mino -- 見張り番\u3000城下\u3000全身蓑"
+      ]
+    },
+    {
+      "ID": 11200001,
+      "Entries": [
+        "Lookout Castle Castle Body Mino -- 見張り番\u3000城下\u3000体蓑"
+      ]
+    },
+    {
+      "ID": 11200002,
+      "Entries": [
+        "Lookout guard Castle Mino -- 見張り番\u3000城下\u3000蓑なし"
+      ]
+    },
+    {
+      "ID": 11200010,
+      "Entries": [
+        "Lookout Castle Castle Visual distance enhancement Full body Mino -- 見張り番\u3000城下\u3000視覚距離強化\u3000全身蓑"
+      ]
+    },
+    {
+      "ID": 11201000,
+      "Entries": [
+        "Lookout Castle _ At the time of the Tokugawa invasion -- 見張り番\u3000城下_徳川襲来時\u3000蓑あり"
+      ]
+    },
+    {
+      "ID": 11201001,
+      "Entries": [
+        "Watchman Castle_When Tokugawa invades No Mino -- 見張り番\u3000城下_徳川襲来時\u3000蓑なし"
+      ]
+    },
+    {
+      "ID": 11202000,
+      "Entries": [
+        "Lookout Honjo Body Mino -- 見張り番\u3000本城\u3000体蓑"
+      ]
+    },
+    {
+      "ID": 11202010,
+      "Entries": [
+        "Watchman Honjo Body Mino Does not make an AI sound when hitting a bell -- 見張り番\u3000本城\u3000体蓑\u3000鐘を叩く時のAI音を出さない"
+      ]
+    },
+    {
+      "ID": 11203000,
+      "Entries": [
+        "Lookout E3 Castle Whole Body Mino -- 見張り番\u3000E3城下\u3000全身蓑"
+      ]
+    },
+    {
+      "ID": 11204000,
+      "Entries": [
+        "Lookout Hidden Prison Body Mino -- 見張り番\u3000隠し牢\u3000体蓑"
+      ]
+    },
+    {
+      "ID": 11209000,
+      "Entries": [
+        "Lookout sample Whole body Mino -- 見張り番\u3000サンプル\u3000全身蓑"
+      ]
+    },
+    {
+      "ID": 11209001,
+      "Entries": [
+        "Lookout sample body -- 見張り番\u3000サンプル\u3000体蓑"
+      ]
+    },
+    {
+      "ID": 11209002,
+      "Entries": [
+        "Lookout sample No Mino -- 見張り番\u3000サンプル\u3000蓑なし"
+      ]
+    },
+    {
+      "ID": 11209003,
+      "Entries": [
+        "Lookout sample There is a mino when the Tokugawa invades -- 見張り番\u3000サンプル\u3000徳川襲来時\u3000蓑あり"
+      ]
+    },
+    {
+      "ID": 11209004,
+      "Entries": [
+        "Lookout sample No mino when Tokugawa invades -- 見張り番\u3000サンプル\u3000徳川襲来時\u3000蓑なし"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Nanban Armor Temple -- 南蛮甲冑\u3000寺"
+      ]
+    },
+    {
+      "ID": 11309000,
+      "Entries": [
+        "Nanban armor sample -- 南蛮甲冑\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "Earthen wall soldier valley lower layer -- 土塀兵\u3000渓谷下層"
+      ]
+    },
+    {
+      "ID": 11400001,
+      "Entries": [
+        "Earthen wall soldiers Lower valley_First earthen wall soldiers -- 土塀兵\u3000渓谷下層_最初の土塀兵"
+      ]
+    },
+    {
+      "ID": 11409000,
+      "Entries": [
+        "Earthen wall soldier sample -- 土塀兵\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11409001,
+      "Entries": [
+        "Earthen wall soldier sample Step up situation -- 土塀兵\u3000サンプル\u3000段差上りシチュエーション"
+      ]
+    },
+    {
+      "ID": 11409002,
+      "Entries": [
+        "Earthen wall soldier sample sticking peeping situation -- 土塀兵\u3000サンプル\u3000張り付き覗き込みシチュエーション"
+      ]
+    },
+    {
+      "ID": 11409003,
+      "Entries": [
+        "Earth wall soldier sample in front of the treasure chest -- 土塀兵\u3000サンプル\u3000宝箱前"
+      ]
+    },
+    {
+      "ID": 11409090,
+      "Entries": [
+        "Earthen wall soldier sample Combat state start -- 土塀兵\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Dog castle -- イヌ\u3000城下"
+      ]
+    },
+    {
+      "ID": 11500100,
+      "Entries": [
+        "Dog Castle Combat Tutorial Real Drop Control -- イヌ\u3000城下\u3000戦闘チュートリリアル\u3000ドロップ制御"
+      ]
+    },
+    {
+      "ID": 11501000,
+      "Entries": [
+        "Dog hidden prison -- イヌ\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 11502000,
+      "Entries": [
+        "Ninja dog Honjo_When the Ninja army invades -- 忍犬\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 11502001,
+      "Entries": [
+        "Ninja dog Honjo_When the Ninja army invades (for reeds hostile) -- 忍犬\u3000本城_忍軍襲来時\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 11502100,
+      "Entries": [
+        "Ninja dog Honjo_When Tokugawa invades (for monkey hostility) (prevents earning) -- 忍犬\u3000本城_徳川襲来時\u3000（猿敵対用）（稼ぎ防止）"
+      ]
+    },
+    {
+      "ID": 11503000,
+      "Entries": [
+        "Ninja Dog Samurai Residence Truth Edition Summoning Hidden -- 忍犬\u3000武家屋敷真相編\u3000召喚用\u3000姿隠し"
+      ]
+    },
+    {
+      "ID": 11503001,
+      "Entries": [
+        "Ninja dog samurai residence truth edition (for reeds hostile) -- 忍犬\u3000武家屋敷真相編\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 11504000,
+      "Entries": [
+        "Dog samurai residence -- イヌ\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 11504100,
+      "Entries": [
+        "Dog samurai residence LOD invalid -- イヌ\u3000武家屋敷 LOD無効"
+      ]
+    },
+    {
+      "ID": 11505000,
+      "Entries": [
+        "Dog sick village hidden -- イヌ\u3000病み村\u3000姿隠し"
+      ]
+    },
+    {
+      "ID": 11505010,
+      "Entries": [
+        "Dog sick village usually -- イヌ\u3000病み村\u3000通常"
+      ]
+    },
+    {
+      "ID": 11506000,
+      "Entries": [
+        "Inu temple -- イヌ\u3000寺"
+      ]
+    },
+    {
+      "ID": 11507000,
+      "Entries": [
+        "Inu Honjo -- イヌ\u3000本城"
+      ]
+    },
+    {
+      "ID": 11507010,
+      "Entries": [
+        "Inu Honjo_Normal time Biting during the first action -- イヌ\u3000本城_平常時\u3000初回行動時噛みつき"
+      ]
+    },
+    {
+      "ID": 11507100,
+      "Entries": [
+        "Inu Honjo When the Ninja Army invades -- イヌ\u3000本城\u3000忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 11509000,
+      "Entries": [
+        "Dog sample -- イヌ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11509001,
+      "Entries": [
+        "Dog sample ninja dog -- イヌ\u3000サンプル\u3000忍犬"
+      ]
+    },
+    {
+      "ID": 11509002,
+      "Entries": [
+        "Dog sample illusion -- イヌ\u3000サンプル\u3000幻影"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "Innsmouth dog submerged city -- インスマス犬\u3000水没都"
+      ]
+    },
+    {
+      "ID": 11510001,
+      "Entries": [
+        "Innsmouth dog submerged city without magatama -- インスマス犬\u3000水没都\u3000勾玉なし"
+      ]
+    },
+    {
+      "ID": 11519000,
+      "Entries": [
+        "Innsmouth dog sample -- インスマス犬\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "Lower man mallet -- 下男\u3000木槌"
+      ]
+    },
+    {
+      "ID": 11800010,
+      "Entries": [
+        "Lower man mallet crying start -- 下男\u3000木槌\u3000泣き状態スタート"
+      ]
+    },
+    {
+      "ID": 11800100,
+      "Entries": [
+        "Younger man gold crushing stick -- 下男\u3000金砕棒"
+      ]
+    },
+    {
+      "ID": 11800110,
+      "Entries": [
+        "Younger man gold crushing stick crying start -- 下男\u3000金砕棒\u3000泣き状態スタート"
+      ]
+    },
+    {
+      "ID": 11801000,
+      "Entries": [
+        "Lower man mallet main castle -- 下男\u3000木槌\u3000本城"
+      ]
+    },
+    {
+      "ID": 11801100,
+      "Entries": [
+        "Lower man bell with string (armor) Honjo -- 下男\u3000紐付き鐘(鎧)\u3000本城"
+      ]
+    },
+    {
+      "ID": 11803000,
+      "Entries": [
+        "Lower man mallet temple -- 下男\u3000木槌\u3000寺"
+      ]
+    },
+    {
+      "ID": 11803100,
+      "Entries": [
+        "Younger man Kanabō Temple -- 下男\u3000金砕棒\u3000寺"
+      ]
+    },
+    {
+      "ID": 11803400,
+      "Entries": [
+        "Use weak special effects for the younger man Shield Temple EvE -- 下男\u3000盾\u3000寺 EvE用の弱体特殊効果使用"
+      ]
+    },
+    {
+      "ID": 11804000,
+      "Entries": [
+        "Lower man mallet hidden prison -- 下男\u3000木槌\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 11804100,
+      "Entries": [
+        "Younger man Kanabō Hidden prison -- 下男\u3000金砕棒\u3000隠し牢"
+      ]
+    },
+    {
+      "ID": 11804280,
+      "Entries": [
+        "Lower man tie bell Castle castle kidnapped lower man merging with a bandit [conversation] -- 下男\u3000紐付き鐘\u3000城下\u3000さらわれ下男\u3000物売り野盗と合流【会話】"
+      ]
+    },
+    {
+      "ID": 11804281,
+      "Entries": [
+        "Lower man tie bell Castle castle kidnapped lower man After Tokugawa invades [Conversation] -- 下男\u3000紐付き鐘\u3000城下\u3000さらわれ下男\u3000徳川襲来後【会話】"
+      ]
+    },
+    {
+      "ID": 11805000,
+      "Entries": [
+        "Lower man mallet samurai residence -- 下男\u3000木槌\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 11805010,
+      "Entries": [
+        "Lower man mallet crying start samurai residence -- 下男\u3000木槌\u3000泣き状態スタート\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 11805100,
+      "Entries": [
+        "Younger man Kanabō samurai residence -- 下男\u3000金砕棒\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 11805110,
+      "Entries": [
+        "Lower man gold crushing stick crying start samurai residence -- 下男\u3000金砕棒\u3000泣き状態スタート\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 11806010,
+      "Entries": [
+        "Lower man mallet crying start -- 下男\u3000木槌\u3000泣き状態スタート"
+      ]
+    },
+    {
+      "ID": 11806110,
+      "Entries": [
+        "Younger man Kanabō Honjo_Tokugawa &quot;Start crying at the time of attack -- 下男\u3000金砕棒\u3000本城_徳川「襲来時\u3000泣き状態スタート"
+      ]
+    },
+    {
+      "ID": 11807000,
+      "Entries": [
+        "Lower man mallet samurai residence _ truth -- 下男\u3000木槌\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11807010,
+      "Entries": [
+        "Lower man mallet crying start Samurai residence _ truth -- 下男\u3000木槌\u3000泣き状態スタート\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11807100,
+      "Entries": [
+        "Lower man Kanabō samurai residence _ truth -- 下男\u3000金砕棒\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11807101,
+      "Entries": [
+        "Lower man gold crushing stick (armor) Samurai residence _ truth -- 下男\u3000金砕棒（鎧）\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11807110,
+      "Entries": [
+        "Younger man Kanabō start crying Samurai residence _ truth -- 下男\u3000金砕棒\u3000泣き状態スタート\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11807400,
+      "Entries": [
+        "Lower man shield samurai residence _ truth -- 下男\u3000盾\u3000武家屋敷_真相"
+      ]
+    },
+    {
+      "ID": 11809000,
+      "Entries": [
+        "Lower man mallet sample -- 下男\u3000木槌\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809090,
+      "Entries": [
+        "Lower man mallet battle state start sample -- 下男\u3000木槌\u3000戦闘状態スタート サンプル"
+      ]
+    },
+    {
+      "ID": 11809099,
+      "Entries": [
+        "Lower man mallet item drop test (disappearance type) -- 下男\u3000木槌\u3000アイテムドロップテスト（消滅タイプ）"
+      ]
+    },
+    {
+      "ID": 11809100,
+      "Entries": [
+        "Younger man gold crusher sample -- 下男\u3000金砕棒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809190,
+      "Entries": [
+        "Lower man gold crusher battle state start sample -- 下男\u3000金砕棒\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809200,
+      "Entries": [
+        "Lower man tie bell (naked) sample -- 下男\u3000紐付き鐘(裸)\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809210,
+      "Entries": [
+        "Lower man tie bell (armor) sample -- 下男\u3000紐付き鐘(鎧)\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809290,
+      "Entries": [
+        "Lower man tie bell (naked) Combat state start sample -- 下男\u3000紐付き鐘(裸)\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11809400,
+      "Entries": [
+        "Lower man shield sample -- 下男\u3000盾\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11810000,
+      "Entries": [
+        "Younger zombie sick village mallet -- 下男ゾンビ\u3000病み村\u3000木槌"
+      ]
+    },
+    {
+      "ID": 11810100,
+      "Entries": [
+        "Younger Zombie Sick Village Kanabō -- 下男ゾンビ\u3000病み村\u3000金砕棒"
+      ]
+    },
+    {
+      "ID": 11810200,
+      "Entries": [
+        "Younger zombie sick village bell with tie -- 下男ゾンビ\u3000病み村\u3000紐付き鐘"
+      ]
+    },
+    {
+      "ID": 11810210,
+      "Entries": [
+        "Younger Zombie Sick Village Bell with String (Armor) -- 下男ゾンビ\u3000病み村\u3000紐付き鐘(鎧)"
+      ]
+    },
+    {
+      "ID": 11819000,
+      "Entries": [
+        "Younger zombie mallet sample -- 下男ゾンビ\u3000木槌\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11819090,
+      "Entries": [
+        "Younger zombie mallet combat state start sample -- 下男ゾンビ\u3000木槌\u3000戦闘状態スタート サンプル"
+      ]
+    },
+    {
+      "ID": 11819100,
+      "Entries": [
+        "Younger zombie gold crusher sample -- 下男ゾンビ\u3000金砕棒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11819190,
+      "Entries": [
+        "Younger Zombie Gold Crusher Combat State Start Sample -- 下男ゾンビ\u3000金砕棒\u3000戦闘状態スタート サンプル"
+      ]
+    },
+    {
+      "ID": 11819200,
+      "Entries": [
+        "Younger zombie tie bell sample -- 下男ゾンビ\u3000紐付き鐘\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11819290,
+      "Entries": [
+        "Younger zombie tie bell Combat state start sample -- 下男ゾンビ\u3000紐付き鐘\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 11900000,
+      "Entries": [
+        "Valley Enemy Valley Normal -- 谷敵\u3000渓谷\u3000通常"
+      ]
+    },
+    {
+      "ID": 11900001,
+      "Entries": [
+        "Valley Enemy Valley Usually drawn at any distance -- 谷敵\u3000渓谷\u3000通常 どんな距離でも描画される"
+      ]
+    },
+    {
+      "ID": 11900200,
+      "Entries": [
+        "Valley Enemy Valley Shotgun -- 谷敵\u3000渓谷\u3000散弾"
+      ]
+    },
+    {
+      "ID": 11900300,
+      "Entries": [
+        "Valley enemy valley lower cannon -- 谷敵\u3000渓谷下層\u3000大砲"
+      ]
+    },
+    {
+      "ID": 11900301,
+      "Entries": [
+        "Valley Enemy Valley Lower Cannon [Voice of the end] -- 谷敵\u3000渓谷下層\u3000大砲【末期の声】"
+      ]
+    },
+    {
+      "ID": 11901300,
+      "Entries": [
+        "Valley enemy castle cannon -- 谷敵\u3000城下\u3000大砲"
+      ]
+    },
+    {
+      "ID": 11902300,
+      "Entries": [
+        "Valley enemy Honjo cannon -- 谷敵\u3000本城\u3000大砲"
+      ]
+    },
+    {
+      "ID": 11905000,
+      "Entries": [
+        "Valley Enemy Revenge Spirit Normal -- 谷敵\u3000復讐霊\u3000通常"
+      ]
+    },
+    {
+      "ID": 11905200,
+      "Entries": [
+        "Valley Enemy Revenge Spirit Shotgun -- 谷敵\u3000復讐霊\u3000散弾"
+      ]
+    },
+    {
+      "ID": 11905300,
+      "Entries": [
+        "Valley Enemy Revenge Spirit Cannon -- 谷敵\u3000復讐霊\u3000大砲"
+      ]
+    },
+    {
+      "ID": 11909000,
+      "Entries": [
+        "Valley enemy sample normal -- 谷敵\u3000サンプル\u3000通常"
+      ]
+    },
+    {
+      "ID": 11909090,
+      "Entries": [
+        "Valley enemy sample Normal battle state start -- 谷敵\u3000サンプル\u3000通常\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 11909200,
+      "Entries": [
+        "Valley enemy sample shotgun -- 谷敵\u3000サンプル\u3000散弾"
+      ]
+    },
+    {
+      "ID": 11909290,
+      "Entries": [
+        "Valley Enemy Sample Shotgun Combat State Start -- 谷敵\u3000サンプル\u3000散弾\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 11909300,
+      "Entries": [
+        "Valley enemy sample cannon -- 谷敵\u3000サンプル\u3000大砲"
+      ]
+    },
+    {
+      "ID": 11909390,
+      "Entries": [
+        "Valley Enemy Sample Cannon Combat State Start -- 谷敵\u3000サンプル\u3000大砲\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 11910000,
+      "Entries": [
+        "Valley Enemy Valley Female Sniper -- 谷敵\u3000渓谷\u3000女スナイパー"
+      ]
+    },
+    {
+      "ID": 11911000,
+      "Entries": [
+        "Valley enemy Valley lower layer female sniper -- 谷敵\u3000渓谷下層\u3000女スナイパー"
+      ]
+    },
+    {
+      "ID": 11915000,
+      "Entries": [
+        "Valley Enemy Revenge Spirit Female Sniper -- 谷敵\u3000復讐霊\u3000女スナイパー"
+      ]
+    },
+    {
+      "ID": 11919000,
+      "Entries": [
+        "Valley enemy sample female sniper -- 谷敵\u3000サンプル\u3000女スナイパー"
+      ]
+    },
+    {
+      "ID": 11919090,
+      "Entries": [
+        "Valley Enemy Sample Female Sniper Combat State Start -- 谷敵\u3000サンプル\u3000女スナイパー\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Sokushinbutsu Temple -- 即身仏\u3000寺"
+      ]
+    },
+    {
+      "ID": 12009000,
+      "Entries": [
+        "Sokushinbutsu sample -- 即身仏\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12009090,
+      "Entries": [
+        "Sokushinbutsu sample battle state start -- 即身仏\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12100000,
+      "Entries": [
+        "Sokushinbutsu_Centipede Temple -- 即身仏_ムカデなし\u3000寺"
+      ]
+    },
+    {
+      "ID": 12100001,
+      "Entries": [
+        "Sokushinbutsu_No Centipede Temple FE No -- 即身仏_ムカデなし\u3000寺 FE無し"
+      ]
+    },
+    {
+      "ID": 12102080,
+      "Entries": [
+        "Sokushinbutsu_No centipede [Conversation] -- 即身仏_ムカデなし【会話】"
+      ]
+    },
+    {
+      "ID": 12109000,
+      "Entries": [
+        "Sokushinbutsu_No centipede sample -- 即身仏_ムカデなし\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12109090,
+      "Entries": [
+        "Sokushinbutsu_No centipede sample Combat state start -- 即身仏_ムカデなし\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12110000,
+      "Entries": [
+        "Cricket Temple -- コオロギ\u3000寺"
+      ]
+    },
+    {
+      "ID": 12110001,
+      "Entries": [
+        "Cricket Temple Do not attack -- コオロギ\u3000寺\u3000攻撃しない"
+      ]
+    },
+    {
+      "ID": 12111000,
+      "Entries": [
+        "Cricket dungeon -- コオロギ\u3000地下牢"
+      ]
+    },
+    {
+      "ID": 12111001,
+      "Entries": [
+        "Cricket Dungeon Do not attack -- コオロギ\u3000地下牢\u3000攻撃しない"
+      ]
+    },
+    {
+      "ID": 12118000,
+      "Entries": [
+        "Hallucinatory character _ cricket -- 幻覚キャラ_コオロギ"
+      ]
+    },
+    {
+      "ID": 12118090,
+      "Entries": [
+        "Hallucinatory character_cricket Combat state start -- 幻覚キャラ_コオロギ\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12119000,
+      "Entries": [
+        "Cricket sample -- コオロギ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12119090,
+      "Entries": [
+        "Cricket Combat State Start Sample -- コオロギ\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12200000,
+      "Entries": [
+        "Temple foundation Zako Temple fist Hoi only Kasaya -- 寺基礎ザコ\u3000寺\u3000拳\u3000\u3000\u3000法衣のみ袈裟無"
+      ]
+    },
+    {
+      "ID": 12200010,
+      "Entries": [
+        "Temple foundation Zako Temple fist Hoi only Kasaya (reading sutra during patrol) -- 寺基礎ザコ\u3000寺\u3000拳\u3000\u3000\u3000法衣のみ袈裟無（巡回時読経）"
+      ]
+    },
+    {
+      "ID": 12200020,
+      "Entries": [
+        "Temple foundation Zako Temple fist Hoi only licking Kasaya candy with the first hand -- 寺基礎ザコ\u3000寺\u3000拳\u3000\u3000\u3000法衣のみ袈裟無\u3000飴を初手で舐める"
+      ]
+    },
+    {
+      "ID": 12200080,
+      "Entries": [
+        "Temple Foundation Zako Temple Fist Shirtless Infinite Corridor Hint Character [Conversation] -- 寺基礎ザコ\u3000寺\u3000拳\u3000上半身裸\u3000無限回廊ヒントキャラ【会話】"
+      ]
+    },
+    {
+      "ID": 12200100,
+      "Entries": [
+        "Temple foundation Zako Temple stick art Kasaya (red) Yes -- 寺基礎ザコ\u3000寺\u3000棒術\u3000袈裟（赤）有"
+      ]
+    },
+    {
+      "ID": 12200110,
+      "Entries": [
+        "Temple foundation Zako Temple stick art Kasaya (red) Yes (reading sutra during patrol) -- 寺基礎ザコ\u3000寺\u3000棒術\u3000袈裟（赤）有\u3000（巡回時読経）"
+      ]
+    },
+    {
+      "ID": 12200111,
+      "Entries": [
+        "Temple foundation Zako Temple stick art Khakkhara alert (reading sutra during patrol) -- 寺基礎ザコ\u3000寺\u3000棒術\u3000錫杖アラート\u3000（巡回時読経）"
+      ]
+    },
+    {
+      "ID": 12200120,
+      "Entries": [
+        "Temple foundation Zako Temple stick art Kasaya (red) Yes Licking candy with the first hand -- 寺基礎ザコ\u3000寺\u3000棒術\u3000袈裟（赤）有\u3000初手で飴を舐める"
+      ]
+    },
+    {
+      "ID": 12200200,
+      "Entries": [
+        "Temple foundation Zako Temple magic Kasaya (purple) with hood -- 寺基礎ザコ\u3000寺\u3000魔法\u3000袈裟（紫）頭巾有"
+      ]
+    },
+    {
+      "ID": 12200210,
+      "Entries": [
+        "Temple foundation Zako Temple magic Kasaya (purple) with hood (patrol over time) -- 寺基礎ザコ\u3000寺\u3000魔法\u3000袈裟（紫）頭巾有（読経時巡回）"
+      ]
+    },
+    {
+      "ID": 12201180,
+      "Entries": [
+        "Temple Foundation Zako Dungeon Magical Immortality Experiment Medical Monk Kasaya (Purple) Kasaya [Conversation] -- 寺基礎ザコ\u3000地下牢\u3000魔法\u3000不死実験の医僧\u3000袈裟（紫）頭巾有【会話】"
+      ]
+    },
+    {
+      "ID": 12202080,
+      "Entries": [
+        "Temple foundation Zako Sick village fist Sick village priest Hoi only Kasaya [Conversation] -- 寺基礎ザコ\u3000病み村\u3000拳\u3000病み村神主\u3000\u3000法衣のみ袈裟無【会話】"
+      ]
+    },
+    {
+      "ID": 12202081,
+      "Entries": [
+        "Temple foundation Zako Sick village fist Kiri no Mori priest [conversation] -- 寺基礎ザコ\u3000病み村\u3000拳\u3000霧の森の住職【会話】"
+      ]
+    },
+    {
+      "ID": 12205000,
+      "Entries": [
+        "Temple foundation Zako Revenge spirit fist Hoi only Kasaya -- 寺基礎ザコ\u3000復讐霊\u3000拳\u3000\u3000\u3000法衣のみ袈裟無"
+      ]
+    },
+    {
+      "ID": 12205100,
+      "Entries": [
+        "Temple Foundation Zako Revenge Spirit Stick Art Kasaya (Red) Yes -- 寺基礎ザコ\u3000復讐霊\u3000棒術\u3000袈裟（赤）有"
+      ]
+    },
+    {
+      "ID": 12205200,
+      "Entries": [
+        "Temple Foundation Zako Revenge Spirit Magic Kasaya (Purple) With hood -- 寺基礎ザコ\u3000復讐霊\u3000魔法\u3000袈裟（紫）頭巾有"
+      ]
+    },
+    {
+      "ID": 12209000,
+      "Entries": [
+        "Temple Foundation Zako Fist Sample 1 -- 寺基礎ザコ\u3000拳\u3000サンプル1"
+      ]
+    },
+    {
+      "ID": 12209001,
+      "Entries": [
+        "Temple Foundation Zako Fist Sample 2 -- 寺基礎ザコ\u3000拳\u3000サンプル2"
+      ]
+    },
+    {
+      "ID": 12209002,
+      "Entries": [
+        "Temple foundation Zako magic sample -- 寺基礎ザコ\u3000魔法\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12209090,
+      "Entries": [
+        "Temple foundation Zako fist battle state start sample -- 寺基礎ザコ\u3000拳\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12209100,
+      "Entries": [
+        "Temple foundation Zako stick art sample -- 寺基礎ザコ\u3000棒術\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12209190,
+      "Entries": [
+        "Temple foundation Zako stick art battle state start sample -- 寺基礎ザコ\u3000棒術\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12400000,
+      "Entries": [
+        "Shamo chicken castle -- 軍鶏\u3000城下"
+      ]
+    },
+    {
+      "ID": 12400010,
+      "Entries": [
+        "Shamo chicken castle battle tutorial -- 軍鶏\u3000城下\u3000戦闘チュートリアル"
+      ]
+    },
+    {
+      "ID": 12401000,
+      "Entries": [
+        "Shamo chicken_sick village -- 軍鶏_病み村"
+      ]
+    },
+    {
+      "ID": 12401001,
+      "Entries": [
+        "Shamo chicken _ sick village _ first jump -- 軍鶏_病み村_初回飛び掛かり"
+      ]
+    },
+    {
+      "ID": 12402000,
+      "Entries": [
+        "Shamo chicken_samurai residence -- 軍鶏_武家屋敷"
+      ]
+    },
+    {
+      "ID": 12409000,
+      "Entries": [
+        "Shamo chicken sample -- 軍鶏\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12409090,
+      "Entries": [
+        "Shamo chicken sample battle state start -- 軍鶏\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12500000,
+      "Entries": [
+        "Monkey Valley bare hands -- 猿\u3000渓谷\u3000素手"
+      ]
+    },
+    {
+      "ID": 12500010,
+      "Entries": [
+        "Monkey Valley Bare Hand Snake Burrow Puppet -- 猿\u3000渓谷\u3000素手\u3000蛇の巣穴傀儡"
+      ]
+    },
+    {
+      "ID": 12500020,
+      "Entries": [
+        "Monkey Valley Bare hands No sanding No foot effect -- 猿\u3000渓谷\u3000素手\u3000砂かけしない\u3000フットエフェクト無し"
+      ]
+    },
+    {
+      "ID": 12500030,
+      "Entries": [
+        "Monkey Valley Bare Hand Poisoner -- 猿\u3000渓谷\u3000素手\u3000毒使い"
+      ]
+    },
+    {
+      "ID": 12500050,
+      "Entries": [
+        "Monkey Valley Bare Hands Lower Layer Appearance (Baldness) -- 猿\u3000渓谷\u3000素手\u3000下層の見た目（ハゲ）"
+      ]
+    },
+    {
+      "ID": 12500100,
+      "Entries": [
+        "Monkey Valley Shooting Normal Kasa -- 猿\u3000渓谷\u3000射撃\u3000通常\u3000笠"
+      ]
+    },
+    {
+      "ID": 12500110,
+      "Entries": [
+        "Monkey Valley Shooting Jump -- 猿\u3000渓谷\u3000射撃\u3000跳躍"
+      ]
+    },
+    {
+      "ID": 12500120,
+      "Entries": [
+        "Monkey Valley Shooting Sniper Kasa -- 猿\u3000渓谷\u3000射撃\u3000狙撃\u3000笠"
+      ]
+    },
+    {
+      "ID": 12500121,
+      "Entries": [
+        "Monkey Valley Shooting Sniper Kasa Foot Without SFX -- 猿\u3000渓谷\u3000射撃\u3000狙撃\u3000笠\u3000フットSFX無し"
+      ]
+    },
+    {
+      "ID": 12500130,
+      "Entries": [
+        "Monkey Valley Shooting Sniper Kasa Escape Shooting -- 猿\u3000渓谷\u3000射撃\u3000狙撃\u3000笠\u3000逃げ撃ち"
+      ]
+    },
+    {
+      "ID": 12500150,
+      "Entries": [
+        "Monkey Valley Shooting Jumping Lower Layer Appearance (Bald) -- 猿\u3000渓谷\u3000射撃\u3000跳躍\u3000下層の見た目（ハゲ）"
+      ]
+    },
+    {
+      "ID": 12500200,
+      "Entries": [
+        "Monkey Valley Sword Helmet -- 猿\u3000渓谷\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜"
+      ]
+    },
+    {
+      "ID": 12500201,
+      "Entries": [
+        "Monkey Valley Sword Helmet -- 猿\u3000渓谷\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜"
+      ]
+    },
+    {
+      "ID": 12500202,
+      "Entries": [
+        "Monkey Valley Sword Helmet No foot effect -- 猿\u3000渓谷\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜\u3000フットエフェクト無し"
+      ]
+    },
+    {
+      "ID": 12500250,
+      "Entries": [
+        "Monkey Valley Sword Helmet Lower layer appearance (baldness) -- 猿\u3000渓谷\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜\u3000下層の見た目（ハゲ）"
+      ]
+    },
+    {
+      "ID": 12500251,
+      "Entries": [
+        "Monkey Valley Sword Helmet Lower Layer Appearance (Bald) Poisoner -- 猿\u3000渓谷\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜\u3000下層の見た目（ハゲ）\u3000毒使い"
+      ]
+    },
+    {
+      "ID": 12500300,
+      "Entries": [
+        "Monkey Valley Two Swords -- 猿\u3000渓谷\u3000二刀"
+      ]
+    },
+    {
+      "ID": 12501000,
+      "Entries": [
+        "Monkey temple bare hands -- 猿\u3000寺\u3000\u3000 素手"
+      ]
+    },
+    {
+      "ID": 12501099,
+      "Entries": [
+        "Monkey Temple Demon Monkey (bare hands) A little stronger -- 猿\u3000寺\u3000\u3000鬼猿（素手）\u3000ちょっと強め"
+      ]
+    },
+    {
+      "ID": 12502000,
+      "Entries": [
+        "Monkey bare hand main castle -- 猿\u3000素手\u3000本城"
+      ]
+    },
+    {
+      "ID": 12503000,
+      "Entries": [
+        "Monkey bare hand Honjo_When Tokugawa invades -- 猿\u3000素手\u3000本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 12503100,
+      "Entries": [
+        "Monkey Honjo_Tokugawa Invasion Shooting Normal Kasa -- 猿\u3000本城_徳川襲来時\u3000射撃\u3000通常\u3000笠"
+      ]
+    },
+    {
+      "ID": 12503200,
+      "Entries": [
+        "Monkey Honjo_At the time of the Tokugawa invasion Sword helmet -- 猿\u3000本城_徳川襲来時\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜"
+      ]
+    },
+    {
+      "ID": 12503300,
+      "Entries": [
+        "Monkey Honjo_Tokugawa invasion Two swords -- 猿\u3000本城_徳川襲来時\u3000二刀"
+      ]
+    },
+    {
+      "ID": 12504000,
+      "Entries": [
+        "Monkey sick village bare hands -- 猿\u3000病み村\u3000素手"
+      ]
+    },
+    {
+      "ID": 12504100,
+      "Entries": [
+        "Monkey Sick Village Shooting Normal Kasa -- 猿\u3000病み村\u3000射撃\u3000通常\u3000笠"
+      ]
+    },
+    {
+      "ID": 12504120,
+      "Entries": [
+        "Monkey Sick Village Shooting Sniper Kasa -- 猿\u3000病み村\u3000射撃\u3000狙撃\u3000笠"
+      ]
+    },
+    {
+      "ID": 12504121,
+      "Entries": [
+        "Monkey Sick Village Shooting Sniper Kasa Fixed Battery -- 猿\u3000病み村\u3000射撃\u3000狙撃\u3000笠\u3000固定砲台"
+      ]
+    },
+    {
+      "ID": 12504200,
+      "Entries": [
+        "Monkey Sick Village Sword Helmet -- 猿\u3000病み村\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜"
+      ]
+    },
+    {
+      "ID": 12505000,
+      "Entries": [
+        "Apes Revenge Bare Hands -- 猿\u3000復讐霊\u3000素手"
+      ]
+    },
+    {
+      "ID": 12505100,
+      "Entries": [
+        "Apes Revenge Shooting Normal Kasa -- 猿\u3000復讐霊\u3000射撃\u3000通常\u3000笠"
+      ]
+    },
+    {
+      "ID": 12505200,
+      "Entries": [
+        "Monkey Revenge Spirit Sword Helmet -- 猿\u3000復讐霊\u3000刀\u3000\u3000\u3000\u3000\u3000\u3000 兜"
+      ]
+    },
+    {
+      "ID": 12505300,
+      "Entries": [
+        "Apes Revenge Two Swords -- 猿\u3000復讐霊\u3000二刀"
+      ]
+    },
+    {
+      "ID": 12509000,
+      "Entries": [
+        "Monkey bare hand brown hair sample -- 猿\u3000素手\u3000茶毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509001,
+      "Entries": [
+        "Monkey bare hand black hair sample -- 猿\u3000素手\u3000黒毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509060,
+      "Entries": [
+        "A sample that runs when the monkey bare hands patrol -- 猿\u3000素手\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509070,
+      "Entries": [
+        "Monkey Bare Hand Snake Burrow Puppet Test Sample -- 猿\u3000素手\u3000蛇の巣穴傀儡テスト\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509080,
+      "Entries": [
+        "Monkey bare hand jump control test sample -- 猿\u3000素手\u3000ジャンプ制御テスト\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509090,
+      "Entries": [
+        "Monkey bare hand sample battle state start -- 猿\u3000素手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12509100,
+      "Entries": [
+        "Monkey shooting normal Kasa brown hair sample -- 猿\u3000射撃\u3000通常\u3000笠\u3000茶毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509101,
+      "Entries": [
+        "Monkey shooting normal Kasa black hair sample -- 猿\u3000射撃\u3000通常\u3000笠\u3000黒毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509190,
+      "Entries": [
+        "Monkey shooting jumping sample combat state start -- 猿\u3000射撃\u3000跳躍\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12509200,
+      "Entries": [
+        "Monkey shooting sniper Kasa brown hair sample -- 猿\u3000射撃\u3000狙撃\u3000笠\u3000茶毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509201,
+      "Entries": [
+        "Monkey shooting sniper Kasa black hair sample -- 猿\u3000射撃\u3000狙撃\u3000笠\u3000黒毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509290,
+      "Entries": [
+        "Monkey shooting sniper sample combat state start -- 猿\u3000射撃\u3000狙撃\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12509300,
+      "Entries": [
+        "Monkey sword helmet brown hair sample -- 猿\u3000刀\u3000兜\u3000茶毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509301,
+      "Entries": [
+        "Monkey sword helmet black hair sample -- 猿\u3000刀\u3000兜\u3000黒毛\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509390,
+      "Entries": [
+        "Monkey sword sample battle state start -- 猿\u3000刀\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12509400,
+      "Entries": [
+        "Monkey dual wield sample -- 猿\u3000二刀\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509480,
+      "Entries": [
+        "Two monkey swords Sample running during patrol -- 猿\u3000二刀\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12509490,
+      "Entries": [
+        "Monkey dual wield sample battle state start -- 猿\u3000二刀\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 12600000,
+      "Entries": [
+        "Chigo monkey_monkey -- 稚児猿＿見猿"
+      ]
+    },
+    {
+      "ID": 12600010,
+      "Entries": [
+        "Chigo monkey_monkey -- 稚児猿＿聞猿"
+      ]
+    },
+    {
+      "ID": 12600020,
+      "Entries": [
+        "Chigo monkey _ saying monkey -- 稚児猿＿言う猿"
+      ]
+    },
+    {
+      "ID": 12600030,
+      "Entries": [
+        "Chigo monkey _ visible monkey -- 稚児猿＿見え猿"
+      ]
+    },
+    {
+      "ID": 12600050,
+      "Entries": [
+        "Chigo monkey boss HP display dummy character -- 稚児猿ボスＨＰ表示用ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 12609000,
+      "Entries": [
+        "Monkey Bare-handed Chigo Monkey_Monkey Sample -- 猿\u3000素手\u3000稚児猿＿見猿\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12609010,
+      "Entries": [
+        "Monkey Bare hand Chigo monkey _ Hearing monkey sample -- 猿\u3000素手\u3000稚児猿＿聞猿\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12609020,
+      "Entries": [
+        "Monkey Bare hand Chigo monkey _ Say monkey sample -- 猿\u3000素手\u3000稚児猿＿言う猿\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12609030,
+      "Entries": [
+        "Monkey bare hand chigo monkey _ visible monkey sample -- 猿\u3000素手\u3000稚児猿＿見え猿\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 12609040,
+      "Entries": [
+        "Monkey Bare Hands Chigo Monkey_Seeing Monkey Sample_For New Route -- 猿\u3000素手\u3000稚児猿＿見猿\u3000サンプル_新ルート用"
+      ]
+    },
+    {
+      "ID": 13000000,
+      "Entries": [
+        "Japanese style Innsmouth submerged city weak -- 和風インスマス\u3000水没都 弱"
+      ]
+    },
+    {
+      "ID": 13000001,
+      "Entries": [
+        "Japanese-style Innsmouth Submerged City Strong -- 和風インスマス\u3000水没都 強"
+      ]
+    },
+    {
+      "ID": 13000002,
+      "Entries": [
+        "Japanese-style Innsmouth Submerged City Weak [Conversation] -- 和風インスマス\u3000水没都 弱【会話】"
+      ]
+    },
+    {
+      "ID": 13001000,
+      "Entries": [
+        "Inside the Japanese-style Innsmouth Sick Village Temple -- 和風インスマス\u3000病み村\u3000寺内部"
+      ]
+    },
+    {
+      "ID": 13001080,
+      "Entries": [
+        "Japanese style Innsmouth Sick village Sick village priest _ After Innsmouth [Non-conversation] -- 和風インスマス\u3000病み村 病み村神主_インスマス後【非会話】"
+      ]
+    },
+    {
+      "ID": 13002080,
+      "Entries": [
+        "Scale shop clerk_Samurai residence [Conversation] -- 鱗ショップ店員_武家屋敷【会話】"
+      ]
+    },
+    {
+      "ID": 13002081,
+      "Entries": [
+        "Scale shop clerk_Shell state_Samurai residence [Conversation] -- 鱗ショップ店員_抜け殻状態_武家屋敷【会話】"
+      ]
+    },
+    {
+      "ID": 13003080,
+      "Entries": [
+        "Scale shop clerk_submerged city [conversation] -- 鱗ショップ店員_水没都【会話】"
+      ]
+    },
+    {
+      "ID": 13003081,
+      "Entries": [
+        "Scale shop clerk_Shell state_Submerged city [Conversation] -- 鱗ショップ店員_抜け殻状態_水没都【会話】"
+      ]
+    },
+    {
+      "ID": 13009000,
+      "Entries": [
+        "Japanese style Innsmouth sample weak -- 和風インスマス\u3000サンプル\u3000弱"
+      ]
+    },
+    {
+      "ID": 13009001,
+      "Entries": [
+        "Japanese style Innsmouth sample strong -- 和風インスマス\u3000サンプル\u3000強"
+      ]
+    },
+    {
+      "ID": 13009090,
+      "Entries": [
+        "Japanese style Innsmouth sample strong battle state start -- 和風インスマス\u3000サンプル\u3000強\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13009091,
+      "Entries": [
+        "Japanese style Innsmouth sample Strong rejuvenation start -- 和風インスマス\u3000サンプル\u3000強\u3000若返り状態スタート"
+      ]
+    },
+    {
+      "ID": 13100000,
+      "Entries": [
+        "Genpei warrior _ sword -- 源平武者_刀"
+      ]
+    },
+    {
+      "ID": 13100001,
+      "Entries": [
+        "Genpei Warrior_Sword_Run -- 源平武者_刀_走る"
+      ]
+    },
+    {
+      "ID": 13100002,
+      "Entries": [
+        "Genpei Samurai_Sword_Path Search If you fail, bow -- 源平武者_刀_パス検索失敗したら弓"
+      ]
+    },
+    {
+      "ID": 13100010,
+      "Entries": [
+        "Genpei Samurai_Sword: Thunder -- 源平武者_刀：雷"
+      ]
+    },
+    {
+      "ID": 13100100,
+      "Entries": [
+        "Genpei Samurai_Naginata -- 源平武者_薙刀"
+      ]
+    },
+    {
+      "ID": 13100110,
+      "Entries": [
+        "Genpei Samurai_Naginata: Thunder -- 源平武者_薙刀：雷"
+      ]
+    },
+    {
+      "ID": 13100200,
+      "Entries": [
+        "Genpei Warrior_Bow -- 源平武者_弓"
+      ]
+    },
+    {
+      "ID": 13100201,
+      "Entries": [
+        "Genpei Samurai_Bow: Sword Sub -- 源平武者_弓:刀サブ"
+      ]
+    },
+    {
+      "ID": 13100202,
+      "Entries": [
+        "Genpei Samurai_Bow: A type that always switches to a sword when the sword sub PC comes on the roof -- 源平武者_弓:刀サブ PCが屋根の上に来たら刀に必ず切り替えるタイプ"
+      ]
+    },
+    {
+      "ID": 13100300,
+      "Entries": [
+        "Genpei Samurai_Kemari -- 源平武者_蹴鞠"
+      ]
+    },
+    {
+      "ID": 13100310,
+      "Entries": [
+        "Genpei Samurai_Kemari: Thunder Sniper -- 源平武者_蹴鞠：雷スナイパー"
+      ]
+    },
+    {
+      "ID": 13100320,
+      "Entries": [
+        "Genpei Samurai_Kemari: Thunder -- 源平武者_蹴鞠：雷"
+      ]
+    },
+    {
+      "ID": 13109000,
+      "Entries": [
+        "Genpei samurai sword sample -- 源平武者\u3000刀\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109001,
+      "Entries": [
+        "Genpei Samurai Sword Strong Sample -- 源平武者\u3000刀\u3000 強\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109080,
+      "Entries": [
+        "Genpei Samurai Sword Sample running during patrol -- 源平武者\u3000刀\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109090,
+      "Entries": [
+        "Genpei Samurai Sword Sample Combat State Start -- 源平武者\u3000刀\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13109100,
+      "Entries": [
+        "Genpei Samurai Naginata Sample -- 源平武者\u3000薙刀\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109101,
+      "Entries": [
+        "Genpei Samurai Naginata Strong Sample -- 源平武者\u3000薙刀\u3000強\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109190,
+      "Entries": [
+        "Genpei Samurai Naginata Sample Combat State Start -- 源平武者\u3000薙刀\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13109200,
+      "Entries": [
+        "Genpei Samurai Bow Sample -- 源平武者\u3000弓\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109290,
+      "Entries": [
+        "Genpei Samurai Bow Sample Combat State Start -- 源平武者\u3000弓\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13109300,
+      "Entries": [
+        "Genpei Samurai Kemari Sample -- 源平武者\u3000蹴鞠\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109301,
+      "Entries": [
+        "Genpei Samurai Kemari Strong Sample -- 源平武者\u3000蹴鞠\u3000強\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109380,
+      "Entries": [
+        "Genpei Samurai Sample running during Kemari patrol -- 源平武者\u3000蹴鞠\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13109390,
+      "Entries": [
+        "Genpei Samurai Kemari Sample Combat State Start -- 源平武者\u3000蹴鞠\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13200000,
+      "Entries": [
+        "Treasure carp samurai residence -- 宝鯉\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 13200010,
+      "Entries": [
+        "Piranha treasure carp samurai residence -- ピラニア宝鯉\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 13200100,
+      "Entries": [
+        "Treasure carp samurai residence on the water -- 宝鯉\u3000武家屋敷\u3000水上"
+      ]
+    },
+    {
+      "ID": 13200110,
+      "Entries": [
+        "Piranha treasure carp samurai residence on the water -- ピラニア宝鯉\u3000武家屋敷\u3000水上"
+      ]
+    },
+    {
+      "ID": 13201000,
+      "Entries": [
+        "Treasure carp main castle -- 宝鯉\u3000本城"
+      ]
+    },
+    {
+      "ID": 13201001,
+      "Entries": [
+        "Treasure carp Honjo Uchibori -- 宝鯉\u3000本城\u3000内堀"
+      ]
+    },
+    {
+      "ID": 13201010,
+      "Entries": [
+        "Piranha treasure carp main castle -- ピラニア宝鯉\u3000本城"
+      ]
+    },
+    {
+      "ID": 13201100,
+      "Entries": [
+        "Treasure carp Honjo water -- 宝鯉\u3000本城\u3000水上"
+      ]
+    },
+    {
+      "ID": 13201110,
+      "Entries": [
+        "Piranha treasure carp Honjo water -- ピラニア宝鯉\u3000本城\u3000水上"
+      ]
+    },
+    {
+      "ID": 13202000,
+      "Entries": [
+        "Treasure carp valley -- 宝鯉\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 13202010,
+      "Entries": [
+        "Piranha Treasure Carp Valley -- ピラニア宝鯉\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 13202100,
+      "Entries": [
+        "Treasure carp valley water -- 宝鯉\u3000渓谷\u3000水上"
+      ]
+    },
+    {
+      "ID": 13202110,
+      "Entries": [
+        "Piranha treasure carp valley water -- ピラニア宝鯉\u3000渓谷\u3000水上"
+      ]
+    },
+    {
+      "ID": 13203000,
+      "Entries": [
+        "Treasure carp temple -- 宝鯉\u3000寺"
+      ]
+    },
+    {
+      "ID": 13203100,
+      "Entries": [
+        "Treasure carp temple water -- 宝鯉\u3000寺\u3000水上"
+      ]
+    },
+    {
+      "ID": 13204000,
+      "Entries": [
+        "Treasure carp illness village -- 宝鯉\u3000病み村"
+      ]
+    },
+    {
+      "ID": 13204010,
+      "Entries": [
+        "Piranha Treasure Carp Sick Village -- ピラニア宝鯉\u3000病み村"
+      ]
+    },
+    {
+      "ID": 13204100,
+      "Entries": [
+        "Treasure carp illness village water -- 宝鯉\u3000病み村\u3000水上"
+      ]
+    },
+    {
+      "ID": 13204110,
+      "Entries": [
+        "Piranha Treasure Carp Sick Village Water -- ピラニア宝鯉\u3000病み村\u3000水上"
+      ]
+    },
+    {
+      "ID": 13204200,
+      "Entries": [
+        "Special treasure carp illness village underwater -- 特別宝鯉\u3000病み村\u3000水中"
+      ]
+    },
+    {
+      "ID": 13205000,
+      "Entries": [
+        "Treasure carp submerged city -- 宝鯉\u3000水没都"
+      ]
+    },
+    {
+      "ID": 13205010,
+      "Entries": [
+        "Piranha treasure carp submerged city -- ピラニア宝鯉\u3000水没都"
+      ]
+    },
+    {
+      "ID": 13205100,
+      "Entries": [
+        "Treasure carp submerged city on the water -- 宝鯉\u3000水没都\u3000水上"
+      ]
+    },
+    {
+      "ID": 13205110,
+      "Entries": [
+        "Piranha treasure carp submerged city on the water -- ピラニア宝鯉\u3000水没都\u3000水上"
+      ]
+    },
+    {
+      "ID": 13206010,
+      "Entries": [
+        "Piranha treasure carp dungeon -- ピラニア宝鯉\u3000地下牢"
+      ]
+    },
+    {
+      "ID": 13206110,
+      "Entries": [
+        "Piranha treasure carp dungeon water -- ピラニア宝鯉\u3000地下牢\u3000水上"
+      ]
+    },
+    {
+      "ID": 13208000,
+      "Entries": [
+        "Treasure carp group patrol dummy leader underwater -- 宝鯉\u3000集団巡回ダミーリーダー\u3000水中"
+      ]
+    },
+    {
+      "ID": 13208100,
+      "Entries": [
+        "Treasure carp group patrol dummy leader water -- 宝鯉\u3000集団巡回ダミーリーダー\u3000水上"
+      ]
+    },
+    {
+      "ID": 13209000,
+      "Entries": [
+        "Treasure carp sample -- 宝鯉\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13209090,
+      "Entries": [
+        "Treasure carp sample battle state start -- 宝鯉\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13209100,
+      "Entries": [
+        "Treasure carp water sample -- 宝鯉\u3000水上\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13209190,
+      "Entries": [
+        "Treasure carp water sample battle state start -- 宝鯉\u3000水上\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13209200,
+      "Entries": [
+        "Treasure carp group patrol dummy leader underwater sample -- 宝鯉\u3000集団巡回ダミーリーダー\u3000水中\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13209300,
+      "Entries": [
+        "Treasure carp group patrol dummy leader water sample -- 宝鯉\u3000集団巡回ダミーリーダー\u3000水上\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13210000,
+      "Entries": [
+        "Scale shop clerk _ carp samurai residence -- 鱗ショップ店員_鯉化\u3000武家屋敷"
+      ]
+    },
+    {
+      "ID": 13211000,
+      "Entries": [
+        "Scale shop clerk_Carp submerged city -- 鱗ショップ店員_鯉化\u3000水没都"
+      ]
+    },
+    {
+      "ID": 13400000,
+      "Entries": [
+        "Underwater headless Honjo_Ninja army invasion -- 水中首なし\u3000本城_忍軍襲来"
+      ]
+    },
+    {
+      "ID": 13401000,
+      "Entries": [
+        "Underwater neckless submerged city -- 水中首なし\u3000水没都"
+      ]
+    },
+    {
+      "ID": 13401001,
+      "Entries": [
+        "Underwater neckless submerged city illusion -- 水中首なし\u3000水没都\u3000幻影"
+      ]
+    },
+    {
+      "ID": 13409000,
+      "Entries": [
+        "Underwater neckless sample -- 水中首なし\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13409090,
+      "Entries": [
+        "Underwater neckless sample Combat state start -- 水中首なし\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13500000,
+      "Entries": [
+        "Neckless castle -- 首なし\u3000城下"
+      ]
+    },
+    {
+      "ID": 13500100,
+      "Entries": [
+        "Neckless Castle E3 -- 首なし\u3000城下\u3000E3"
+      ]
+    },
+    {
+      "ID": 13501000,
+      "Entries": [
+        "Neckless valley -- 首なし\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 13502000,
+      "Entries": [
+        "Neckless sick village -- 首なし\u3000病み村"
+      ]
+    },
+    {
+      "ID": 13509000,
+      "Entries": [
+        "Neckless sample -- 首なし\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13509001,
+      "Entries": [
+        "Neckless sample for miasma confirmation -- 首なし\u3000サンプル\u3000瘴気確認用"
+      ]
+    },
+    {
+      "ID": 13509090,
+      "Entries": [
+        "Neckless sample Combat state start -- 首なし\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13600000,
+      "Entries": [
+        "Rappa Temple Normal Appearance 1 -- らっぱ\u3000寺\u3000通常\u3000\u3000\u3000\u3000見た目1"
+      ]
+    },
+    {
+      "ID": 13600001,
+      "Entries": [
+        "Rappa Temple Puppet Use a kite for ninja killing -- らっぱ\u3000寺\u3000傀儡忍殺で凧使う"
+      ]
+    },
+    {
+      "ID": 13600010,
+      "Entries": [
+        "Rappa Temple Ambush -- らっぱ\u3000寺\u3000待ち伏せ"
+      ]
+    },
+    {
+      "ID": 13600020,
+      "Entries": [
+        "Rappa Temple reeds skipping -- らっぱ\u3000寺\u3000葦飛ばし"
+      ]
+    },
+    {
+      "ID": 13600030,
+      "Entries": [
+        "Rappa Temple Reeds Flying_Shugendo -- らっぱ\u3000寺\u3000葦飛ばし_修験道"
+      ]
+    },
+    {
+      "ID": 13600040,
+      "Entries": [
+        "Rappa Temple Reeds Flying_Poison Type -- らっぱ\u3000寺\u3000葦飛ばし_毒タイプ"
+      ]
+    },
+    {
+      "ID": 13600100,
+      "Entries": [
+        "Rappa Kigasa Temple -- らっぱ\u3000木笠\u3000寺"
+      ]
+    },
+    {
+      "ID": 13601000,
+      "Entries": [
+        "Rappa Hidden Prison Normal Appearance 1 -- らっぱ\u3000隠し牢\u3000通常\u3000\u3000\u3000\u3000見た目1"
+      ]
+    },
+    {
+      "ID": 13601010,
+      "Entries": [
+        "Rappa Hidden Prison Ambush -- らっぱ\u3000隠し牢\u3000待ち伏せ"
+      ]
+    },
+    {
+      "ID": 13601020,
+      "Entries": [
+        "Rappa Hidden Prison_Tutorial Time Under the Bridge -- らっぱ\u3000隠し牢_チュートリアル時\u3000橋の下"
+      ]
+    },
+    {
+      "ID": 13601030,
+      "Entries": [
+        "Rappa Hidden Prison Reed-skipping type -- らっぱ\u3000隠し牢\u3000葦飛ばしタイプ"
+      ]
+    },
+    {
+      "ID": 13601040,
+      "Entries": [
+        "Rappa Hidden Prison Reeds Flying_Poison Type -- らっぱ\u3000隠し牢\u3000葦飛ばし_毒タイプ"
+      ]
+    },
+    {
+      "ID": 13601100,
+      "Entries": [
+        "Rappa Hidden Prison Kigasa -- らっぱ\u3000隠し牢\u3000木笠"
+      ]
+    },
+    {
+      "ID": 13602000,
+      "Entries": [
+        "Rappa Castle Normal Appearance 1 -- らっぱ\u3000城下\u3000通常\u3000\u3000\u3000\u3000見た目1"
+      ]
+    },
+    {
+      "ID": 13602010,
+      "Entries": [
+        "Rappa Castle Normal role -- らっぱ\u3000城下\u3000通常\u3000やられ役"
+      ]
+    },
+    {
+      "ID": 13604000,
+      "Entries": [
+        "Rappa Valley_Normal_Late Voice -- らっぱ\u3000渓谷_通常_末期の声"
+      ]
+    },
+    {
+      "ID": 13604080,
+      "Entries": [
+        "Rappa Valley_Normal_Late Voice [Conversation] -- らっぱ\u3000渓谷_通常_末期の声【会話】"
+      ]
+    },
+    {
+      "ID": 13605000,
+      "Entries": [
+        "Rappa Honjo Normal appearance 1 -- らっぱ\u3000本城\u3000通常\u3000\u3000\u3000\u3000見た目1"
+      ]
+    },
+    {
+      "ID": 13605010,
+      "Entries": [
+        "Rappa Honjo Reeds Flying_Poison Type -- らっぱ\u3000本城\u3000葦飛ばし_毒タイプ"
+      ]
+    },
+    {
+      "ID": 13605100,
+      "Entries": [
+        "Rappa Honjo Kigasa -- らっぱ\u3000本城\u3000木笠"
+      ]
+    },
+    {
+      "ID": 13609000,
+      "Entries": [
+        "Rappa Appearance 1 Sample -- らっぱ\u3000見た目1\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609001,
+      "Entries": [
+        "Rappa Appearance 2 Sample -- らっぱ\u3000見た目2\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609002,
+      "Entries": [
+        "Rappa Appearance 3 Samples -- らっぱ\u3000見た目3\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609003,
+      "Entries": [
+        "Rappa Appearance 4 Samples -- らっぱ\u3000見た目4\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609010,
+      "Entries": [
+        "Rappa Kigasa sample -- らっぱ\u3000木笠\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609080,
+      "Entries": [
+        "A sample that runs during a patrol -- らっぱ\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609081,
+      "Entries": [
+        "For Rappa LookAt test [conversation] -- らっぱ LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 13609090,
+      "Entries": [
+        "Rappa battle state start sample -- らっぱ\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609100,
+      "Entries": [
+        "Rappa_Ambush Sample -- らっぱ_待ち伏せ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13609190,
+      "Entries": [
+        "Rappa_Ambush Combat State Start Sample -- らっぱ_待ち伏せ\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13610000,
+      "Entries": [
+        "Tokugawa Rappa_Honjo -- 徳川らっぱ_本城"
+      ]
+    },
+    {
+      "ID": 13610010,
+      "Entries": [
+        "Tokugawa Rappa_Honjo_Reeds -- 徳川らっぱ_本城_葦飛ばし"
+      ]
+    },
+    {
+      "ID": 13610100,
+      "Entries": [
+        "Tokugawa Rappa_Honjo_When the Ninja Army invades -- 徳川らっぱ_本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 13610110,
+      "Entries": [
+        "Tokugawa Rappa_Honjo_Ashibashi_When the Ninja Army invades -- 徳川らっぱ_本城_葦飛ばし_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 13611000,
+      "Entries": [
+        "Tokugawa Rappa_Castle -- 徳川らっぱ_城下"
+      ]
+    },
+    {
+      "ID": 13619000,
+      "Entries": [
+        "Tokugawa Rappa sample -- 徳川らっぱ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 13700000,
+      "Entries": [
+        "Fire cow main castle -- 火牛\u3000本城"
+      ]
+    },
+    {
+      "ID": 13709000,
+      "Entries": [
+        "Fire cow sample -- 火牛 サンプル"
+      ]
+    },
+    {
+      "ID": 13709090,
+      "Entries": [
+        "Fire cow sample battle state start -- 火牛 サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 13800000,
+      "Entries": [
+        "Fire Cow Innsmouth Submerged City -- 火牛インスマウス\u3000水没都"
+      ]
+    },
+    {
+      "ID": 14000000,
+      "Entries": [
+        "Swordsman_Defense type Honjo -- 剣客_守りタイプ\u3000本城"
+      ]
+    },
+    {
+      "ID": 14000100,
+      "Entries": [
+        "Swordsman_attack type Honjo -- 剣客_攻めタイプ\u3000本城"
+      ]
+    },
+    {
+      "ID": 14000200,
+      "Entries": [
+        "Swordsman_Iai Honjo -- 剣客_居合\u3000本城"
+      ]
+    },
+    {
+      "ID": 14001000,
+      "Entries": [
+        "Swordsman_defensive type samurai residence (ally) -- 剣客_守りタイプ\u3000武家屋敷（味方）"
+      ]
+    },
+    {
+      "ID": 14001081,
+      "Entries": [
+        "Swordsman_Defense Type Samurai Residence Conversation For NPCs [Conversation] -- 剣客_守りタイプ\u3000武家屋敷 会話NPC用【会話】"
+      ]
+    },
+    {
+      "ID": 14001082,
+      "Entries": [
+        "Swordsman_bare hand samurai residence Suzuba&#39;s son [conversation] provisional -- 剣客_素手\u3000武家屋敷 鈴ばばあの息子【会話】仮"
+      ]
+    },
+    {
+      "ID": 14002009,
+      "Entries": [
+        "Swordsman_Normal Castle Conversation for NPCs -- 剣客_通常\u3000城下 会話NPC用"
+      ]
+    },
+    {
+      "ID": 14002080,
+      "Entries": [
+        "Swordsman_Normal Castle Suzuba&#39;s son [Conversation] -- 剣客_通常\u3000城下 鈴ばばあの息子【会話】"
+      ]
+    },
+    {
+      "ID": 14003080,
+      "Entries": [
+        "Swordsman_Defense Type Sick Village Conversation For NPCs [Conversation] -- 剣客_守りタイプ\u3000病み村 会話NPC用【会話】"
+      ]
+    },
+    {
+      "ID": 14004000,
+      "Entries": [
+        "Swordsman _ Defensive type Honjo _ Tokugawa invasion Grand staircase (Tokugawa kills) -- 剣客_守りタイプ\u3000本城_徳川襲来時\u3000大階段（徳川にやられる）"
+      ]
+    },
+    {
+      "ID": 14004100,
+      "Entries": [
+        "Swordsman_Attack type Honjo_Tokugawa invasion Grand staircase (Tokugawa kills) -- 剣客_攻めタイプ\u3000本城_徳川襲来時\u3000大階段（徳川にやられる）"
+      ]
+    },
+    {
+      "ID": 14004200,
+      "Entries": [
+        "Swordsman_Iai Honjo_Red eye when Tokugawa invades -- 剣客_居合\u3000本城_徳川襲来時\u3000赤目"
+      ]
+    },
+    {
+      "ID": 14005000,
+      "Entries": [
+        "Swordsman_Defense Type Revenge Spirit -- 剣客_守りタイプ\u3000復讐霊"
+      ]
+    },
+    {
+      "ID": 14005100,
+      "Entries": [
+        "Swordsman_Attack Type Revenge Spirit -- 剣客_攻めタイプ\u3000復讐霊"
+      ]
+    },
+    {
+      "ID": 14005200,
+      "Entries": [
+        "Swordsman_Iai Revenge Spirit -- 剣客_居合\u3000復讐霊"
+      ]
+    },
+    {
+      "ID": 14009000,
+      "Entries": [
+        "Swordsman defensive type sample -- 剣客\u3000守りタイプ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14009080,
+      "Entries": [
+        "Swordsman LookAt test [conversation] -- 剣客 LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 14009090,
+      "Entries": [
+        "Swordsman Defensive Type Sample Combat State Start -- 剣客\u3000守りタイプ\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 14009100,
+      "Entries": [
+        "Swordsman offensive type sample -- 剣客\u3000攻めタイプ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14009190,
+      "Entries": [
+        "Swordsman offensive type sample Combat state start -- 剣客\u3000攻めタイプ\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 14009200,
+      "Entries": [
+        "Swordsman Iai sample -- 剣客\u3000居合い\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14009290,
+      "Entries": [
+        "Swordsman Iai sample battle state start -- 剣客\u3000居合い\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 14009900,
+      "Entries": [
+        "Swordsman offensive type sample Burning reaction test -- 剣客\u3000攻めタイプ\u3000サンプル\u3000炎上リアクションテスト"
+      ]
+    },
+    {
+      "ID": 14009910,
+      "Entries": [
+        "Swordsman Iai sample Burning reaction test -- 剣客\u3000居合い\u3000サンプル\u3000炎上リアクションテスト"
+      ]
+    },
+    {
+      "ID": 14500000,
+      "Entries": [
+        "Nightjars Proximity Honjo -- 夜鷹衆\u3000近接\u3000本城"
+      ]
+    },
+    {
+      "ID": 14500001,
+      "Entries": [
+        "Nightjars Proximity Honjo Self-destruct -- 夜鷹衆\u3000近接\u3000本城\u3000自爆"
+      ]
+    },
+    {
+      "ID": 14500010,
+      "Entries": [
+        "Nightjars Proximity Honjo Black kite fall -- 夜鷹衆\u3000近接\u3000本城\u3000黒\u3000凧落下"
+      ]
+    },
+    {
+      "ID": 14500020,
+      "Entries": [
+        "Nightjars Proximity Honjo For calling friends -- 夜鷹衆\u3000近接\u3000本城\u3000仲間呼び用"
+      ]
+    },
+    {
+      "ID": 14500030,
+      "Entries": [
+        "Nightjars Proximity Honjo Black Flame Encha -- 夜鷹衆\u3000近接\u3000本城\u3000黒\u3000炎エンチャ"
+      ]
+    },
+    {
+      "ID": 14500040,
+      "Entries": [
+        "Nightjars Proximity Honjo White -- 夜鷹衆\u3000近接\u3000本城\u3000白"
+      ]
+    },
+    {
+      "ID": 14500100,
+      "Entries": [
+        "Nightjars Shuriken Honjo -- 夜鷹衆\u3000手裏剣\u3000本城"
+      ]
+    },
+    {
+      "ID": 14500110,
+      "Entries": [
+        "Nightjars Shuriken Honjo first appearance -- 夜鷹衆\u3000手裏剣\u3000本城\u3000初回登場"
+      ]
+    },
+    {
+      "ID": 14500120,
+      "Entries": [
+        "Nightjars Shuriken Honjo For calling friends -- 夜鷹衆\u3000手裏剣\u3000本城\u3000仲間呼び用"
+      ]
+    },
+    {
+      "ID": 14500130,
+      "Entries": [
+        "Nightjars Shuriken Honjo White -- 夜鷹衆\u3000手裏剣\u3000本城\u3000白"
+      ]
+    },
+    {
+      "ID": 14501000,
+      "Entries": [
+        "Nightjars Proximity Honjo_At the time of the Tokugawa invasion -- 夜鷹衆\u3000近接\u3000本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 14501010,
+      "Entries": [
+        "Nightjars Proximity Honjo_Tokugawa Invasion Black Flame Encha -- 夜鷹衆\u3000近接\u3000本城_徳川襲来時\u3000黒\u3000炎エンチャ"
+      ]
+    },
+    {
+      "ID": 14501020,
+      "Entries": [
+        "Nightjars Proximity Honjo_ Tokugawa invasion White red eyes -- 夜鷹衆\u3000近接\u3000本城_徳川襲来時\u3000白\u3000赤目"
+      ]
+    },
+    {
+      "ID": 14501030,
+      "Entries": [
+        "Nightjars Proximity Honjo_At the time of the Tokugawa invasion (voice of the end) -- 夜鷹衆\u3000近接\u3000本城_徳川襲来時(末期の声)"
+      ]
+    },
+    {
+      "ID": 14501100,
+      "Entries": [
+        "Nightjars Shuriken Honjo_At the time of the Tokugawa invasion -- 夜鷹衆\u3000手裏剣\u3000本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 14501110,
+      "Entries": [
+        "Nightjars Shuriken Honjo_ Tokugawa invasion White red eyes -- 夜鷹衆\u3000手裏剣\u3000本城_徳川襲来時 白\u3000赤目"
+      ]
+    },
+    {
+      "ID": 14502000,
+      "Entries": [
+        "Nightjars Proximity Samurai Residence Conversation NPC -- 夜鷹衆\u3000近接\u3000武家屋敷\u3000会話NPC用"
+      ]
+    },
+    {
+      "ID": 14502080,
+      "Entries": [
+        "Nightjars Proximity Samurai Residence Conversation For NPCs [Conversation] -- 夜鷹衆\u3000近接\u3000武家屋敷\u3000会話NPC用【会話】"
+      ]
+    },
+    {
+      "ID": 14503000,
+      "Entries": [
+        "Nightjars Proximity Valley -- 夜鷹衆\u3000近接\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 14503020,
+      "Entries": [
+        "Nightjars run when patrolling the nearby valley -- 夜鷹衆\u3000近接\u3000渓谷\u3000巡回時に走る"
+      ]
+    },
+    {
+      "ID": 14503050,
+      "Entries": [
+        "Nightjars Proximity Valley Normal Flame Encha -- 夜鷹衆\u3000近接\u3000渓谷\u3000通常\u3000炎エンチャ"
+      ]
+    },
+    {
+      "ID": 14503100,
+      "Entries": [
+        "Nightjars Shuriken Valley -- 夜鷹衆\u3000手裏剣\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 14504000,
+      "Entries": [
+        "Nightjars Proximity Temple -- 夜鷹衆\u3000近接\u3000寺"
+      ]
+    },
+    {
+      "ID": 14504010,
+      "Entries": [
+        "Nightjars Proximity Self-destruct Temple -- 夜鷹衆\u3000近接\u3000自爆\u3000寺"
+      ]
+    },
+    {
+      "ID": 14504020,
+      "Entries": [
+        "Nightjars A temple that runs during a close patrol -- 夜鷹衆\u3000近接\u3000巡回時に走る\u3000寺"
+      ]
+    },
+    {
+      "ID": 14504100,
+      "Entries": [
+        "Nightjars Shuriken Temple -- 夜鷹衆\u3000手裏剣\u3000寺"
+      ]
+    },
+    {
+      "ID": 14504110,
+      "Entries": [
+        "Nightjars Shuriken Explosion Temple -- 夜鷹衆\u3000手裏剣\u3000爆発\u3000寺"
+      ]
+    },
+    {
+      "ID": 14505000,
+      "Entries": [
+        "Nightjars Revenge Spirit Proximity -- 夜鷹衆\u3000復讐霊\u3000近接"
+      ]
+    },
+    {
+      "ID": 14505001,
+      "Entries": [
+        "Nightjars Revenge Spirit Proximity Self-Destruction -- 夜鷹衆\u3000復讐霊\u3000近接\u3000自爆"
+      ]
+    },
+    {
+      "ID": 14505010,
+      "Entries": [
+        "Nightjars Revenge Spirit Proximity Flame Encha -- 夜鷹衆\u3000復讐霊\u3000近接\u3000炎エンチャ"
+      ]
+    },
+    {
+      "ID": 14505100,
+      "Entries": [
+        "Nightjars Revenge Spirit Shuriken -- 夜鷹衆\u3000復讐霊\u3000手裏剣"
+      ]
+    },
+    {
+      "ID": 14506000,
+      "Entries": [
+        "Nightjars Proximity Honjo_When the Ninja Army invades -- 夜鷹衆\u3000近接\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 14506010,
+      "Entries": [
+        "Nightjars Proximity Honjo_Self-destruction when the Ninja army invades -- 夜鷹衆\u3000近接\u3000本城_忍軍襲来時\u3000自爆"
+      ]
+    },
+    {
+      "ID": 14506030,
+      "Entries": [
+        "Nightjars Proximity Honjo_Ninja Army Invasion Black Flame Encha -- 夜鷹衆\u3000近接\u3000本城_忍軍襲来時\u3000黒\u3000炎エンチャ"
+      ]
+    },
+    {
+      "ID": 14506100,
+      "Entries": [
+        "Nightjars Proximity Honjo_Voice of the end of the Ninja army invasion -- 夜鷹衆\u3000近接\u3000本城_忍軍襲来時\u3000末期の声"
+      ]
+    },
+    {
+      "ID": 14509000,
+      "Entries": [
+        "Nightjars Proximity Normal sample -- 夜鷹衆\u3000近接\u3000通常\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509001,
+      "Entries": [
+        "Nightjars Proximity Black Sample -- 夜鷹衆\u3000近接\u3000黒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509002,
+      "Entries": [
+        "Nightjars Proximity White Sample -- 夜鷹衆\u3000近接\u3000白\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509010,
+      "Entries": [
+        "Nightjars Proximity Normal Self-destruct sample -- 夜鷹衆\u3000近接\u3000通常\u3000自爆\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509011,
+      "Entries": [
+        "Nightjars Proximity Black Self-Destruct Sample -- 夜鷹衆\u3000近接\u3000黒\u3000自爆\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509012,
+      "Entries": [
+        "Nightjars Proximity White Self-Destruct Sample -- 夜鷹衆\u3000近接\u3000白\u3000自爆\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509020,
+      "Entries": [
+        "Nightjars A sample that runs during a close patrol -- 夜鷹衆\u3000近接\u3000巡回時に走る\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509030,
+      "Entries": [
+        "Nightjars Proximity Normal Flame Encha Sample -- 夜鷹衆\u3000近接\u3000通常\u3000炎エンチャ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509031,
+      "Entries": [
+        "Nightjars Proximity Black Flame Encha Sample -- 夜鷹衆\u3000近接\u3000黒\u3000炎エンチャ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509032,
+      "Entries": [
+        "Nightjars Proximity White Flame Encha Sample -- 夜鷹衆\u3000近接\u3000白\u3000炎エンチャ\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509040,
+      "Entries": [
+        "Nightjars Proximity Normal red-eye sample -- 夜鷹衆\u3000近接\u3000通常\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509041,
+      "Entries": [
+        "Nightjars Proximity Black Red Eye Sample -- 夜鷹衆\u3000近接\u3000黒\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509042,
+      "Entries": [
+        "Nightjars Proximity White Red Eye Sample -- 夜鷹衆\u3000近接\u3000白\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509080,
+      "Entries": [
+        "Nightjars LookAt test [conversation] -- 夜鷹衆\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 14509090,
+      "Entries": [
+        "Nightjars Proximity sample Combat state start -- 夜鷹衆\u3000近接\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 14509100,
+      "Entries": [
+        "Nightjars Shuriken Normal sample -- 夜鷹衆\u3000手裏剣\u3000通常\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509101,
+      "Entries": [
+        "Nightjars Shuriken Black Sample -- 夜鷹衆\u3000手裏剣\u3000黒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509102,
+      "Entries": [
+        "Nightjars Shuriken White Sample -- 夜鷹衆\u3000手裏剣\u3000白\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509110,
+      "Entries": [
+        "Nightjars Shuriken Normal Explosion Sample -- 夜鷹衆\u3000手裏剣\u3000通常\u3000爆発\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509111,
+      "Entries": [
+        "Nightjars Shuriken Black Explosion Sample -- 夜鷹衆\u3000手裏剣\u3000黒\u3000爆発\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509112,
+      "Entries": [
+        "Nightjars Shuriken White Explosion Sample -- 夜鷹衆\u3000手裏剣\u3000白\u3000爆発\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509140,
+      "Entries": [
+        "Nightjars Shuriken Normal red-eye sample -- 夜鷹衆\u3000手裏剣\u3000通常\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509141,
+      "Entries": [
+        "Nightjars Shuriken Black Red Eye Sample -- 夜鷹衆\u3000手裏剣\u3000黒\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509142,
+      "Entries": [
+        "Nightjars Shuriken White Red Eye Sample -- 夜鷹衆\u3000手裏剣\u3000白\u3000赤目\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14509190,
+      "Entries": [
+        "Nightjars Shuriken sample Combat state start -- 夜鷹衆\u3000手裏剣\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 14600000,
+      "Entries": [
+        "Nightjars (kites) Honjo -- 夜鷹衆(凧)\u3000本城"
+      ]
+    },
+    {
+      "ID": 14601000,
+      "Entries": [
+        "Nightjars (kites) temple -- 夜鷹衆(凧)\u3000寺"
+      ]
+    },
+    {
+      "ID": 14602000,
+      "Entries": [
+        "Nightjars (kites) valley -- 夜鷹衆(凧)\u3000渓谷"
+      ]
+    },
+    {
+      "ID": 14609000,
+      "Entries": [
+        "Nightjars (kites) Normal sample -- 夜鷹衆(凧)\u3000通常\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14609001,
+      "Entries": [
+        "Nightjar (kites) black sample -- 夜鷹衆(凧)\u3000黒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14609002,
+      "Entries": [
+        "Nightjars (kites) white sample -- 夜鷹衆(凧)\u3000白\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14700000,
+      "Entries": [
+        "Lonely people samurai residence normal -- 孤影衆\u3000武家屋敷\u3000通常"
+      ]
+    },
+    {
+      "ID": 14701000,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army invades -- 孤影衆\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 14701001,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army invades -- 孤影衆\u3000本城_忍軍襲来時\u3000毒手使い"
+      ]
+    },
+    {
+      "ID": 14701003,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army invades (for reeds hostile) -- 孤影衆\u3000本城_忍軍襲来時\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 14701004,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army invades Poisoner (for reeds hostile) -- 孤影衆\u3000本城_忍軍襲来時\u3000毒手使い\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 14701005,
+      "Entries": [
+        "Kokageshu Honjo_Ninja Army Invasion Poisonous Hands Medium Boss Attic -- 孤影衆\u3000本城_忍軍襲来時\u3000毒手使い\u3000中ボス\u3000屋根裏"
+      ]
+    },
+    {
+      "ID": 14701006,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army Invades Poisonous Hands-on Medium Boss White Snake Shrine -- 孤影衆\u3000本城_忍軍襲来時\u3000毒手使い\u3000中ボス\u3000白蛇神社"
+      ]
+    },
+    {
+      "ID": 14701007,
+      "Entries": [
+        "Kokageshu Honjo_When the Ninja Army invades -- 孤影衆\u3000本城_忍軍襲来時\u3000中ボスのお付き"
+      ]
+    },
+    {
+      "ID": 14702000,
+      "Entries": [
+        "Kokageshu Honjo_When the Tokugawa invades -- 孤影衆\u3000本城_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 14702001,
+      "Entries": [
+        "Kokageshu Honjo_When Tokugawa invades Poisonous hand -- 孤影衆\u3000本城_徳川襲来時\u3000毒手使い"
+      ]
+    },
+    {
+      "ID": 14702003,
+      "Entries": [
+        "When the lone shadows Honjo_Tokugawa invades (for reeds hostile) -- 孤影衆\u3000本城_徳川襲来時\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 14702004,
+      "Entries": [
+        "Kokageshu Honjo_When Tokugawa invades Poisonous hand (for reeds hostile) -- 孤影衆\u3000本城_徳川襲来時\u3000毒手使い\u3000（葦名勢敵対用）"
+      ]
+    },
+    {
+      "ID": 14703000,
+      "Entries": [
+        "Kokageshu Samurai Residence_Truth Edition Normal -- 孤影衆\u3000武家屋敷_真相編\u3000通常"
+      ]
+    },
+    {
+      "ID": 14703001,
+      "Entries": [
+        "Kokageshu Samurai Residence_Truth Edition Poisonous Handsman -- 孤影衆\u3000武家屋敷_真相編\u3000毒手使い"
+      ]
+    },
+    {
+      "ID": 14703002,
+      "Entries": [
+        "Kokageshu Samurai Residence_Truth Edition Normal Medium Boss -- 孤影衆\u3000武家屋敷_真相編\u3000通常\u3000中ボス"
+      ]
+    },
+    {
+      "ID": 14704000,
+      "Entries": [
+        "Lonely crowd hidden prison boss -- 孤影衆\u3000隠し牢\u3000中ボス"
+      ]
+    },
+    {
+      "ID": 14705100,
+      "Entries": [
+        "Sickness Village Poisonous Handsman -- 孤影衆\u3000病み村\u3000毒手使い"
+      ]
+    },
+    {
+      "ID": 14709000,
+      "Entries": [
+        "Lonely crowd sample -- 孤影衆\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 14709001,
+      "Entries": [
+        "Lonely people sample another varieties poison hand messenger -- 孤影衆\u3000サンプル\u3000別バリエ\u3000毒手使い"
+      ]
+    },
+    {
+      "ID": 14709080,
+      "Entries": [
+        "Run during the lonely test patrol -- 孤影衆\u3000テスト\u3000巡回時に走る"
+      ]
+    },
+    {
+      "ID": 14709081,
+      "Entries": [
+        "Lonely crowd test Jump off when locked on -- 孤影衆\u3000テスト\u3000ロックオンされたら飛び降りる"
+      ]
+    },
+    {
+      "ID": 14709090,
+      "Entries": [
+        "Lonely crowd sample Combat state start -- 孤影衆\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15000000,
+      "Entries": [
+        "Villager Zombie _ Bare Hand -- 村人ゾンビ_素手"
+      ]
+    },
+    {
+      "ID": 15000001,
+      "Entries": [
+        "Villager Zombie _ Bare Hand Appearance Varie 2 -- 村人ゾンビ_素手\u3000見た目バリエ2"
+      ]
+    },
+    {
+      "ID": 15000002,
+      "Entries": [
+        "Villager Zombie _ Bare Hand Appearance Varie 3 -- 村人ゾンビ_素手\u3000見た目バリエ3"
+      ]
+    },
+    {
+      "ID": 15000010,
+      "Entries": [
+        "Villager Zombie _ Bare Hand: I love stone throwing -- 村人ゾンビ_素手：石投げ大好き"
+      ]
+    },
+    {
+      "ID": 15000011,
+      "Entries": [
+        "Villager Zombie_Bare Hands: I Love Stone Throwing Appearance Varie -- 村人ゾンビ_素手：石投げ大好き\u3000見た目バリエ"
+      ]
+    },
+    {
+      "ID": 15000012,
+      "Entries": [
+        "Villager Zombie _ Bare Hand: I Love Mad Dumpling Throw Appearance Varie -- 村人ゾンビ_素手：発狂団子投げ大好き\u3000見た目バリエ"
+      ]
+    },
+    {
+      "ID": 15000013,
+      "Entries": [
+        "Villager Zombie_Bare Hands: Surrounding Behavior &amp; Mad Dumpling Throwing Appearance Varie -- 村人ゾンビ_素手：取り巻き行動＆発狂団子投げ\u3000見た目バリエ"
+      ]
+    },
+    {
+      "ID": 15000100,
+      "Entries": [
+        "Villager Zombie_Rake -- 村人ゾンビ_熊手"
+      ]
+    },
+    {
+      "ID": 15000101,
+      "Entries": [
+        "Villager Zombie_Rake Appearance Varie 2 -- 村人ゾンビ_熊手\u3000見た目バリエ2"
+      ]
+    },
+    {
+      "ID": 15000102,
+      "Entries": [
+        "Villager Zombie_Rake Appearance Varie 3 -- 村人ゾンビ_熊手\u3000見た目バリエ3"
+      ]
+    },
+    {
+      "ID": 15000200,
+      "Entries": [
+        "Villager Zombie_Knife -- 村人ゾンビ_包丁"
+      ]
+    },
+    {
+      "ID": 15000300,
+      "Entries": [
+        "Villager Zombie_Hoe -- 村人ゾンビ_鍬"
+      ]
+    },
+    {
+      "ID": 15000301,
+      "Entries": [
+        "Villager Zombie_Hoe Appearance Varie 2 -- 村人ゾンビ_鍬\u3000見た目バリエ2"
+      ]
+    },
+    {
+      "ID": 15000400,
+      "Entries": [
+        "Villager Zombie_Bamboo Spear -- 村人ゾンビ_竹槍"
+      ]
+    },
+    {
+      "ID": 15000401,
+      "Entries": [
+        "Villager Zombie_Bamboo Spear Appearance Varie 2 -- 村人ゾンビ_竹槍 見た目バリエ2"
+      ]
+    },
+    {
+      "ID": 15000500,
+      "Entries": [
+        "Villager Zombie_Weaving Machine -- 村人ゾンビ_機織り機"
+      ]
+    },
+    {
+      "ID": 15000600,
+      "Entries": [
+        "Villager Zombie _ Bare Hand _ Grab Restraint -- 村人ゾンビ_素手_掴み拘束役"
+      ]
+    },
+    {
+      "ID": 15002380,
+      "Entries": [
+        "Villager Zombie_Hoe Stable Resident B Castle [Conversation] -- 村人ゾンビ_鍬 馬小屋の住人B\u3000城下【会話】"
+      ]
+    },
+    {
+      "ID": 15002480,
+      "Entries": [
+        "Villager Zombie_Takeyari Stable Resident C Castle [Conversation] -- 村人ゾンビ_竹槍 馬小屋の住人C\u3000城下【会話】"
+      ]
+    },
+    {
+      "ID": 15002580,
+      "Entries": [
+        "Villager Zombie_Weaving Machine Stable Resident A Castle [Conversation] -- 村人ゾンビ_機織り機 馬小屋の住人A\u3000城下【会話】"
+      ]
+    },
+    {
+      "ID": 15003080,
+      "Entries": [
+        "Villager Zombie_Bare Hands Decent Villager Sick Village [Conversation] -- 村人ゾンビ_素手 まともな村人 病み村【会話】"
+      ]
+    },
+    {
+      "ID": 15005000,
+      "Entries": [
+        "Villager Zombie _ Revenge Spirit _ Bare Hand -- 村人ゾンビ_復讐霊_素手"
+      ]
+    },
+    {
+      "ID": 15005100,
+      "Entries": [
+        "Villager Zombie_Revenge Spirit_Rake -- 村人ゾンビ_復讐霊_熊手"
+      ]
+    },
+    {
+      "ID": 15005200,
+      "Entries": [
+        "Villager Zombie_Revenge Spirit_Knife -- 村人ゾンビ_復讐霊_包丁"
+      ]
+    },
+    {
+      "ID": 15005300,
+      "Entries": [
+        "Villager Zombie_Revenge Spirit_Hoe -- 村人ゾンビ_復讐霊_鍬"
+      ]
+    },
+    {
+      "ID": 15005400,
+      "Entries": [
+        "Villager Zombie_Revenge Spirit_Bamboo Spear -- 村人ゾンビ_復讐霊_竹槍"
+      ]
+    },
+    {
+      "ID": 15005500,
+      "Entries": [
+        "Villager Zombie_Revenge Spirit_Weaving Machine -- 村人ゾンビ_復讐霊_機織り機"
+      ]
+    },
+    {
+      "ID": 15005600,
+      "Entries": [
+        "Villager Zombie _ Revenge Spirit _ Bare Hand _ Grab Restraint -- 村人ゾンビ_復讐霊_素手_掴み拘束役"
+      ]
+    },
+    {
+      "ID": 15009000,
+      "Entries": [
+        "Villager Zombie_Bare Hand Sample -- 村人ゾンビ_素手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009001,
+      "Entries": [
+        "Villager Zombie _ Bare Hand Stone Throw Love Sample -- 村人ゾンビ_素手\u3000石投げ大好き\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009080,
+      "Entries": [
+        "Villager Zombie_Bare Hand LookAt Test [Conversation] -- 村人ゾンビ_素手 LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 15009090,
+      "Entries": [
+        "Villager Zombie _ Bare Hand Sample Combat State Start -- 村人ゾンビ_素手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009100,
+      "Entries": [
+        "Villager Zombie_Rake Sample -- 村人ゾンビ_熊手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009190,
+      "Entries": [
+        "Villager Zombie_Rake Sample Combat State Start -- 村人ゾンビ_熊手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009200,
+      "Entries": [
+        "Villager Zombie_Knife Sample -- 村人ゾンビ_包丁\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009290,
+      "Entries": [
+        "Villager Zombie_Knife Sample Combat State Start -- 村人ゾンビ_包丁\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009300,
+      "Entries": [
+        "Villager Zombie_Hoe Sample -- 村人ゾンビ_鍬\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009390,
+      "Entries": [
+        "Villager Zombie_Hoe Sample Combat State Start -- 村人ゾンビ_鍬\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009400,
+      "Entries": [
+        "Villager Zombie_Bamboo Spear Sample -- 村人ゾンビ_竹槍\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009490,
+      "Entries": [
+        "Villager Zombie_Bamboo Spear Sample Combat State Start -- 村人ゾンビ_竹槍\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009500,
+      "Entries": [
+        "Villager Zombie_Weaving Machine Sample -- 村人ゾンビ_機織り機\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009590,
+      "Entries": [
+        "Villager Zombie_Weaving Machine Sample Combat State Start -- 村人ゾンビ_機織り機\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15009600,
+      "Entries": [
+        "Villager Zombie_Prisoner Sample -- 村人ゾンビ_囚人\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15009690,
+      "Entries": [
+        "Villager Zombie_Prisoner Sample Combat State Start -- 村人ゾンビ_囚人\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15010000,
+      "Entries": [
+        "Villager Zombie (female) _ bare hands -- 村人ゾンビ（女）_素手"
+      ]
+    },
+    {
+      "ID": 15010010,
+      "Entries": [
+        "Villager Zombie (female) _ Bare Hand: I love stone throwing -- 村人ゾンビ（女）_素手：石投げ大好き"
+      ]
+    },
+    {
+      "ID": 15010100,
+      "Entries": [
+        "Villager Zombie (female) _ Rake -- 村人ゾンビ（女）_熊手"
+      ]
+    },
+    {
+      "ID": 15010200,
+      "Entries": [
+        "Villager Zombie (female) _ kitchen knife -- 村人ゾンビ（女）_包丁"
+      ]
+    },
+    {
+      "ID": 15010300,
+      "Entries": [
+        "Villager Zombie (female) _ Hoe -- 村人ゾンビ（女）_鍬"
+      ]
+    },
+    {
+      "ID": 15010400,
+      "Entries": [
+        "Villager Zombie (female) _ Bamboo Spear -- 村人ゾンビ（女）_竹槍"
+      ]
+    },
+    {
+      "ID": 15010500,
+      "Entries": [
+        "Villager Zombie (female) _ Weaving machine -- 村人ゾンビ（女）_機織り機"
+      ]
+    },
+    {
+      "ID": 15010600,
+      "Entries": [
+        "Villager Zombie (female) _bare hand_grabbing restraint -- 村人ゾンビ（女）_素手_掴み拘束役"
+      ]
+    },
+    {
+      "ID": 15019000,
+      "Entries": [
+        "Villager Zombie (Female) _ Bare Hand Sample -- 村人ゾンビ（女）_素手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019001,
+      "Entries": [
+        "Villager Zombie (female) _ Bare hand stone throwing love sample -- 村人ゾンビ（女）_素手\u3000石投げ大好き\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019090,
+      "Entries": [
+        "Villager Zombie (female) _ Bare Hand Sample Combat State Start -- 村人ゾンビ（女）_素手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15019100,
+      "Entries": [
+        "Villager Zombie (female) _ Rake sample -- 村人ゾンビ（女）_熊手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019190,
+      "Entries": [
+        "Villager Zombie (female) _ Rake sample Combat state start -- 村人ゾンビ（女）_熊手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15019200,
+      "Entries": [
+        "Villager Zombie (female) _ Kitchen knife sample -- 村人ゾンビ（女）_包丁\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019290,
+      "Entries": [
+        "Villager Zombie (female) _ Kitchen knife sample Combat state start -- 村人ゾンビ（女）_包丁\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15019300,
+      "Entries": [
+        "Villager Zombie (Female) _ Hoe Sample -- 村人ゾンビ（女）_鍬\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019390,
+      "Entries": [
+        "Villager Zombie (Female) _ Hoe Sample Combat State Start -- 村人ゾンビ（女）_鍬\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15019400,
+      "Entries": [
+        "Villager Zombie (Female) _ Bamboo Spear Sample -- 村人ゾンビ（女）_竹槍\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019490,
+      "Entries": [
+        "Villager Zombie (female) _ Bamboo spear sample Combat state start -- 村人ゾンビ（女）_竹槍\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15019500,
+      "Entries": [
+        "Villager Zombie (female) _ Weaving machine sample -- 村人ゾンビ（女）_機織り機\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15019590,
+      "Entries": [
+        "Villager Zombie (female) _ Weaving machine sample Combat state start -- 村人ゾンビ（女）_機織り機\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15100000,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bare hand -- 幻覚キャラ_村人ゾンビ_素手"
+      ]
+    },
+    {
+      "ID": 15100001,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bare hand I love stone throwing -- 幻覚キャラ_村人ゾンビ_素手\u3000石投げ大好き"
+      ]
+    },
+    {
+      "ID": 15100100,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ rake -- 幻覚キャラ_村人ゾンビ_熊手"
+      ]
+    },
+    {
+      "ID": 15100200,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ kitchen knife -- 幻覚キャラ_村人ゾンビ_包丁"
+      ]
+    },
+    {
+      "ID": 15100300,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ hoe -- 幻覚キャラ_村人ゾンビ_鍬"
+      ]
+    },
+    {
+      "ID": 15100400,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bamboo spear -- 幻覚キャラ_村人ゾンビ_竹槍"
+      ]
+    },
+    {
+      "ID": 15100500,
+      "Entries": [
+        "Hallucinatory character_villager zombie_weaving machine -- 幻覚キャラ_村人ゾンビ_機織り機"
+      ]
+    },
+    {
+      "ID": 15109000,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bare hand sample -- 幻覚キャラ_村人ゾンビ_素手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109001,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bare hand stone throwing love sample -- 幻覚キャラ_村人ゾンビ_素手\u3000石投げ大好き\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109090,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bare hand sample battle state start -- 幻覚キャラ_村人ゾンビ_素手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15109100,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ rake sample -- 幻覚キャラ_村人ゾンビ_熊手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109190,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ rake sample battle state start -- 幻覚キャラ_村人ゾンビ_熊手\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15109200,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ kitchen knife sample -- 幻覚キャラ_村人ゾンビ_包丁\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109290,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ kitchen knife sample battle state start -- 幻覚キャラ_村人ゾンビ_包丁\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15109300,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ hoe sample -- 幻覚キャラ_村人ゾンビ_鍬\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109390,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ hoe sample battle state start -- 幻覚キャラ_村人ゾンビ_鍬\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15109400,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bamboo spear sample -- 幻覚キャラ_村人ゾンビ_竹槍\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109490,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ bamboo spear sample battle state start -- 幻覚キャラ_村人ゾンビ_竹槍\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15109500,
+      "Entries": [
+        "Hallucinatory character_villager zombie_weaving machine sample -- 幻覚キャラ_村人ゾンビ_機織り機\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15109590,
+      "Entries": [
+        "Hallucinatory character _ villager zombie _ weaving machine sample battle state start -- 幻覚キャラ_村人ゾンビ_機織り機\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15200000,
+      "Entries": [
+        "Prisoner Zombie_Dungeon -- 囚人ゾンビ_地下牢"
+      ]
+    },
+    {
+      "ID": 15209000,
+      "Entries": [
+        "Prisoner Zombie_Dungeon Sample -- 囚人ゾンビ_地下牢\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15500000,
+      "Entries": [
+        "Bandit_Sword Base Design -- 野盗_刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500001,
+      "Entries": [
+        "Bandit_sword light clothing -- 野盗_刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500002,
+      "Entries": [
+        "Bandit_sword light gauntlet right side -- 野盗_刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500003,
+      "Entries": [
+        "Bandit_sword light armor -- 野盗_刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500050,
+      "Entries": [
+        "Bandit_Sword Base Design -- 野盗_納刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500051,
+      "Entries": [
+        "Bandit_Sword Lightly dressed -- 野盗_納刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500052,
+      "Entries": [
+        "Bandit_Sword Light Gauntlet Right side -- 野盗_納刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500053,
+      "Entries": [
+        "Bandit_Sword Light Armor -- 野盗_納刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500100,
+      "Entries": [
+        "Bandit_ax base design -- 野盗_斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500101,
+      "Entries": [
+        "Bandit_ax light clothing -- 野盗_斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500102,
+      "Entries": [
+        "Bandit_ax Light gauntlet right side -- 野盗_斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500103,
+      "Entries": [
+        "Bandit_ax light armor -- 野盗_斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500106,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong 1 -- 野盗_斧\u3000重装備両手籠手_強1"
+      ]
+    },
+    {
+      "ID": 15500107,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Gauntlet + Armor 2_Strong -- 野盗_斧\u3000重装備籠手＋鎧2_強"
+      ]
+    },
+    {
+      "ID": 15500110,
+      "Entries": [
+        "Bandit_Ax Base Design_First attack is dash cut -- 野盗_斧\u3000ベースデザイン_初回攻撃がダッシュ切り"
+      ]
+    },
+    {
+      "ID": 15500150,
+      "Entries": [
+        "Bandit_Ax Base Design -- 野盗_納斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500151,
+      "Entries": [
+        "Bandit_Ax Lightly dressed -- 野盗_納斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500152,
+      "Entries": [
+        "Bandit_Ax Light Gauntlet Right Side -- 野盗_納斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500153,
+      "Entries": [
+        "Bandit_Ax Light Armor -- 野盗_納斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500156,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_納斧\u3000重装備両手籠手_強"
+      ]
+    },
+    {
+      "ID": 15500157,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Gauntlet + Armor 2_Strong -- 野盗_納斧\u3000重装備籠手＋鎧2_強"
+      ]
+    },
+    {
+      "ID": 15500200,
+      "Entries": [
+        "Bandit_Torches Base Design -- 野盗_松明\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500201,
+      "Entries": [
+        "Bandit_Torches Light clothing -- 野盗_松明\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500202,
+      "Entries": [
+        "Bandit_Torches Right side of light gauntlet -- 野盗_松明\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500203,
+      "Entries": [
+        "Bandit_Torches Light Armor -- 野盗_松明\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500210,
+      "Entries": [
+        "Bandit_Torches Base Design_Do not use anime to call friends -- 野盗_松明\u3000ベースデザイン_仲間呼ぶアニメ使わない"
+      ]
+    },
+    {
+      "ID": 15500304,
+      "Entries": [
+        "Bandit_Shield Heavy Gauntlet + Armor 1 -- 野盗_盾\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15500305,
+      "Entries": [
+        "Bandit_Shield Heavy Gauntlet + Armor 2 -- 野盗_盾\u3000重装備籠手＋鎧2"
+      ]
+    },
+    {
+      "ID": 15500306,
+      "Entries": [
+        "Bandit_Shield Heavy Equipment Two-Handed Gauntlet -- 野盗_盾\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15500310,
+      "Entries": [
+        "Bandit_Shield Heavy equipment Two-handed gauntlet Stand by guard even during non-combat -- 野盗_盾\u3000重装備両手籠手\u3000非戦闘時もガード待機"
+      ]
+    },
+    {
+      "ID": 15500400,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Base Design -- 野盗_弓_火矢\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500401,
+      "Entries": [
+        "Bandit_bow_fire arrow light clothing -- 野盗_弓_火矢\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500402,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Gauntlet Right Side -- 野盗_弓_火矢\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500403,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Armor -- 野盗_弓_火矢\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500430,
+      "Entries": [
+        "General purpose that uses only bandits_bow_fire arrow bows -- 野盗_弓_火矢弓しか使わない\u3000汎用"
+      ]
+    },
+    {
+      "ID": 15500440,
+      "Entries": [
+        "Bandit_Bow_Escape to a specific point that uses only a fire arrow bow -- 野盗_弓_火矢弓しか使わない\u3000特定のポイントへ逃げる"
+      ]
+    },
+    {
+      "ID": 15500450,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Base Design -- 野盗_納弓_火矢\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500451,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light clothing -- 野盗_納弓_火矢\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500452,
+      "Entries": [
+        "Bandit _ Bow _ Fire arrow Light gauntlet right side -- 野盗_納弓_火矢\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500453,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Armor -- 野盗_納弓_火矢\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500500,
+      "Entries": [
+        "Bandit_Drunk_Sword Base Design -- 野盗_酔っ払い_納刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500501,
+      "Entries": [
+        "Bandit_Drunk_Sword Lightly dressed -- 野盗_酔っ払い_納刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500502,
+      "Entries": [
+        "Bandit_Drunk_Sword sword Light gauntlet right side -- 野盗_酔っ払い_納刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500503,
+      "Entries": [
+        "Bandit_Drunk_Sword Light Armor -- 野盗_酔っ払い_納刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500510,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Base Design -- 野盗_酔っ払い_瓢箪刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500511,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Lightly dressed -- 野盗_酔っ払い_瓢箪刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500512,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500513,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Light Armor -- 野盗_酔っ払い_瓢箪刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500600,
+      "Entries": [
+        "Bandit_Drunk_Ax Base Design -- 野盗_酔っ払い_納斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500601,
+      "Entries": [
+        "Bandit_Drunk_Ax Lightly dressed -- 野盗_酔っ払い_納斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500602,
+      "Entries": [
+        "Bandit_Drunk_Ax Lightly dressed Gauntlet right side -- 野盗_酔っ払い_納斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500603,
+      "Entries": [
+        "Bandit_Drunk_Ax Light Armor -- 野盗_酔っ払い_納斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15500610,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Base Design -- 野盗_酔っ払い_瓢箪斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15500611,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Lightly dressed -- 野盗_酔っ払い_瓢箪斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15500612,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15500613,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Light Armor -- 野盗_酔っ払い_瓢箪斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15501005,
+      "Entries": [
+        "Bandit_Sword_Sick Village_Hidden -- 野盗_刀_病み村_姿隠し"
+      ]
+    },
+    {
+      "ID": 15501006,
+      "Entries": [
+        "Bandit_Sword_Sick Village_Hidden First Action Fixed -- 野盗_刀_病み村_姿隠し\u3000初回行動固定"
+      ]
+    },
+    {
+      "ID": 15501007,
+      "Entries": [
+        "Bandit_Sword_Sick Village_Hidden For Directing No Audiovisual -- 野盗_刀_病み村_姿隠し\u3000演出用\u3000視聴覚なし"
+      ]
+    },
+    {
+      "ID": 15501105,
+      "Entries": [
+        "Bandit_Ax_Sick Village_Hidden -- 野盗_斧_病み村_姿隠し"
+      ]
+    },
+    {
+      "ID": 15501106,
+      "Entries": [
+        "Bandit_Ax_Sick Village_Hidden First Action Fixed -- 野盗_斧_病み村_姿隠し\u3000初回行動固定"
+      ]
+    },
+    {
+      "ID": 15501107,
+      "Entries": [
+        "Bandit_Ax_Sick Village_Hidden For Directing No Audiovisual -- 野盗_斧_病み村_姿隠し\u3000演出用\u3000視聴覚なし"
+      ]
+    },
+    {
+      "ID": 15501420,
+      "Entries": [
+        "Bandit_Bow_Normal Bow and Arrow_Sick Village_Hidden -- 野盗_弓_通常弓矢_病み村_姿隠し"
+      ]
+    },
+    {
+      "ID": 15504000,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Base Design -- 野盗_刀_E3城下\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15504001,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Light Clothing -- 野盗_刀_E3城下\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15504002,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Light Gauntlet Right Side -- 野盗_刀_E3城下\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15504003,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Light Armor -- 野盗_刀_E3城下\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15504004,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_刀_E3城下\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15504005,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_刀_E3城下\u3000重装備籠手＋鎧2"
+      ]
+    },
+    {
+      "ID": 15504006,
+      "Entries": [
+        "Bandit_Sword_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_刀_E3城下\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15504100,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Base Design -- 野盗_斧_E3城下\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15504101,
+      "Entries": [
+        "Bandit_ax_E3 Castle light clothing -- 野盗_斧_E3城下\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15504102,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Light Gauntlet Right Side -- 野盗_斧_E3城下\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15504103,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Light Armor -- 野盗_斧_E3城下\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15504104,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_斧_E3城下\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15504105,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_斧_E3城下\u3000重装備籠手＋鎧2"
+      ]
+    },
+    {
+      "ID": 15504106,
+      "Entries": [
+        "Bandit_Ax_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_斧_E3城下\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15504300,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Base Design -- 野盗_盾_E3城下\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15504301,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Light Clothing -- 野盗_盾_E3城下\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15504302,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Light Gauntlet Right Side -- 野盗_盾_E3城下\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15504303,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Light Armor -- 野盗_盾_E3城下\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15504304,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_盾_E3城下\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15504305,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Heavy Equipment Gauntlet + Armor 2 First Shield Bang Bang Ban -- 野盗_盾_E3城下\u3000重装備籠手＋鎧2\u3000初回盾バンバン禁止"
+      ]
+    },
+    {
+      "ID": 15504306,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_盾_E3城下\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15504307,
+      "Entries": [
+        "Bandit_Shield_E3 Castle Heavy Equipment Two-handed Gauntlet Stand by guard even during non-combat -- 野盗_盾_E3城下\u3000重装備両手籠手\u3000非戦闘時もガード待機"
+      ]
+    },
+    {
+      "ID": 15504400,
+      "Entries": [
+        "Bandit_Nayumi_E3 Castle -- 野盗_納弓_E3城下"
+      ]
+    },
+    {
+      "ID": 15504401,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Light Clothing -- 野盗_弓_E3城下\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15504402,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Light Gauntlet Right Side -- 野盗_弓_E3城下\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15504403,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Light Armor -- 野盗_弓_E3城下\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15504404,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Heavy Equipment Gauntlet + Armor 1 -- 野盗_弓_E3城下\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15504405,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Heavy Equipment Gauntlet + Armor 2 -- 野盗_弓_E3城下\u3000重装備籠手＋鎧2"
+      ]
+    },
+    {
+      "ID": 15504406,
+      "Entries": [
+        "Bandit_Bow_E3 Castle Heavy Equipment Two-Handed Gauntlet -- 野盗_弓_E3城下\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15504410,
+      "Entries": [
+        "Bandit_Bow Poison_E3 Castle -- 野盗_弓毒_E3城下"
+      ]
+    },
+    {
+      "ID": 15505000,
+      "Entries": [
+        "Bandit_Sword Base Design -- 野盗_刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505001,
+      "Entries": [
+        "Bandit_sword light clothing -- 野盗_刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505002,
+      "Entries": [
+        "Bandit_sword light gauntlet right side -- 野盗_刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505003,
+      "Entries": [
+        "Bandit_sword light armor -- 野盗_刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505050,
+      "Entries": [
+        "Bandit_Sword Base Design -- 野盗_納刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505051,
+      "Entries": [
+        "Bandit_Sword Lightly dressed -- 野盗_納刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505052,
+      "Entries": [
+        "Bandit_Sword Light Gauntlet Right side -- 野盗_納刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505053,
+      "Entries": [
+        "Bandit_Sword Light Armor -- 野盗_納刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505100,
+      "Entries": [
+        "Bandit_ax base design -- 野盗_斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505101,
+      "Entries": [
+        "Bandit_ax light clothing -- 野盗_斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505102,
+      "Entries": [
+        "Bandit_ax Light gauntlet right side -- 野盗_斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505103,
+      "Entries": [
+        "Bandit_ax light armor -- 野盗_斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505106,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_斧\u3000重装備両手籠手_強"
+      ]
+    },
+    {
+      "ID": 15505110,
+      "Entries": [
+        "Bandit_Ax Base Design_First attack is dash cut -- 野盗_斧\u3000ベースデザイン_初回攻撃がダッシュ切り"
+      ]
+    },
+    {
+      "ID": 15505150,
+      "Entries": [
+        "Bandit_Ax Base Design -- 野盗_納斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505151,
+      "Entries": [
+        "Bandit_Ax Lightly dressed -- 野盗_納斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505152,
+      "Entries": [
+        "Bandit_Ax Light Gauntlet Right Side -- 野盗_納斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505153,
+      "Entries": [
+        "Bandit_Ax Light Armor -- 野盗_納斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505156,
+      "Entries": [
+        "Bandit_Ax Heavy Equipment Two-Handed Gauntlet_Strong -- 野盗_納斧\u3000重装備両手籠手_強"
+      ]
+    },
+    {
+      "ID": 15505200,
+      "Entries": [
+        "Bandit_Torches Base Design -- 野盗_松明\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505201,
+      "Entries": [
+        "Bandit_Torches Light clothing -- 野盗_松明\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505202,
+      "Entries": [
+        "Bandit_Torches Right side of light gauntlet -- 野盗_松明\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505203,
+      "Entries": [
+        "Bandit_Torches Light Armor -- 野盗_松明\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505210,
+      "Entries": [
+        "Bandit_Torches Base Design_Do not use anime to call friends -- 野盗_松明\u3000ベースデザイン_仲間呼ぶアニメ使わない"
+      ]
+    },
+    {
+      "ID": 15505304,
+      "Entries": [
+        "Bandit_Shield Heavy Gauntlet + Armor 1 -- 野盗_盾\u3000重装備籠手＋鎧1"
+      ]
+    },
+    {
+      "ID": 15505305,
+      "Entries": [
+        "Bandit_Shield Heavy Gauntlet + Armor 2 -- 野盗_盾\u3000重装備籠手＋鎧2"
+      ]
+    },
+    {
+      "ID": 15505306,
+      "Entries": [
+        "Bandit_Shield Heavy Equipment Two-Handed Gauntlet -- 野盗_盾\u3000重装備両手籠手"
+      ]
+    },
+    {
+      "ID": 15505310,
+      "Entries": [
+        "Bandit_Shield Heavy equipment Two-handed gauntlet Stand by guard even during non-combat -- 野盗_盾\u3000重装備両手籠手\u3000非戦闘時もガード待機"
+      ]
+    },
+    {
+      "ID": 15505400,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Base Design -- 野盗_弓_火矢\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505401,
+      "Entries": [
+        "Bandit_bow_fire arrow light clothing -- 野盗_弓_火矢\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505402,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Gauntlet Right Side -- 野盗_弓_火矢\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505403,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Armor -- 野盗_弓_火矢\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505410,
+      "Entries": [
+        "Bandit_bow_poison arrow -- 野盗_弓_毒矢"
+      ]
+    },
+    {
+      "ID": 15505430,
+      "Entries": [
+        "General purpose that uses only bandits_bow_fire arrow bows -- 野盗_弓_火矢弓しか使わない\u3000汎用"
+      ]
+    },
+    {
+      "ID": 15505440,
+      "Entries": [
+        "Bandit_Bow_Escape to a specific point that uses only a fire arrow bow -- 野盗_弓_火矢弓しか使わない\u3000特定のポイントへ逃げる"
+      ]
+    },
+    {
+      "ID": 15505450,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Base Design -- 野盗_納弓_火矢\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505451,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light clothing -- 野盗_納弓_火矢\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505452,
+      "Entries": [
+        "Bandit _ Bow _ Fire arrow Light gauntlet right side -- 野盗_納弓_火矢\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505453,
+      "Entries": [
+        "Bandit_Bow_Fire Arrow Light Armor -- 野盗_納弓_火矢\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505500,
+      "Entries": [
+        "Bandit_Drunk_Sword Base Design -- 野盗_酔っ払い_納刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505501,
+      "Entries": [
+        "Bandit_Drunk_Sword Lightly dressed -- 野盗_酔っ払い_納刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505502,
+      "Entries": [
+        "Bandit_Drunk_Sword sword Light gauntlet right side -- 野盗_酔っ払い_納刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505503,
+      "Entries": [
+        "Bandit_Drunk_Sword Light Armor -- 野盗_酔っ払い_納刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505510,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Base Design -- 野盗_酔っ払い_瓢箪刀\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505511,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Lightly dressed -- 野盗_酔っ払い_瓢箪刀\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505512,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪刀\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505513,
+      "Entries": [
+        "Bandit_Drunk_Gourd Sword Light Armor -- 野盗_酔っ払い_瓢箪刀\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505600,
+      "Entries": [
+        "Bandit_Drunk_Ax Base Design -- 野盗_酔っ払い_納斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505601,
+      "Entries": [
+        "Bandit_Drunk_Ax Lightly dressed -- 野盗_酔っ払い_納斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505602,
+      "Entries": [
+        "Bandit_Drunk_Ax Lightly dressed Gauntlet right side -- 野盗_酔っ払い_納斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505603,
+      "Entries": [
+        "Bandit_Drunk_Ax Light Armor -- 野盗_酔っ払い_納斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15505610,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Base Design -- 野盗_酔っ払い_瓢箪斧\u3000ベースデザイン"
+      ]
+    },
+    {
+      "ID": 15505611,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Lightly dressed -- 野盗_酔っ払い_瓢箪斧\u3000軽装"
+      ]
+    },
+    {
+      "ID": 15505612,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Light Gauntlet Right Side -- 野盗_酔っ払い_瓢箪斧\u3000軽装籠手右側"
+      ]
+    },
+    {
+      "ID": 15505613,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Light Armor -- 野盗_酔っ払い_瓢箪斧\u3000軽装鎧"
+      ]
+    },
+    {
+      "ID": 15506000,
+      "Entries": [
+        "Bandit_Sword Temple -- 野盗_刀\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506100,
+      "Entries": [
+        "Bandit_Ax Temple -- 野盗_斧\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506110,
+      "Entries": [
+        "Bandit_Drunk_Gourd Ax Base Design Temple -- 野盗_酔っ払い_瓢箪斧\u3000ベースデザイン\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506200,
+      "Entries": [
+        "Bandit_Katana Torch Temple -- 野盗_刀松明\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506300,
+      "Entries": [
+        "Bandit_Sword Shield Temple -- 野盗_刀盾\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506400,
+      "Entries": [
+        "Bandit_Yumi Temple -- 野盗_弓\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506410,
+      "Entries": [
+        "Bandit_Yumi Poison Temple -- 野盗_弓毒\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506420,
+      "Entries": [
+        "Bandit_Bow_Normal Bow Temple -- 野盗_弓_通常弓\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506500,
+      "Entries": [
+        "Bandit_Sword Main Temple -- 野盗_刀メイン\u3000寺"
+      ]
+    },
+    {
+      "ID": 15506600,
+      "Entries": [
+        "Bandit_bow stance temple -- 野盗_弓構え\u3000寺"
+      ]
+    },
+    {
+      "ID": 15509000,
+      "Entries": [
+        "Bandit_sword sample -- 野盗_刀\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509080,
+      "Entries": [
+        "Bandit_Sword LookAt Test [Conversation] -- 野盗_刀\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 15509090,
+      "Entries": [
+        "Bandit_Sword Sample Combat State Start -- 野盗_刀\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15509100,
+      "Entries": [
+        "Bandit_ax sample -- 野盗_斧\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509190,
+      "Entries": [
+        "Bandit_Ax Sample Combat State Start -- 野盗_斧\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15509200,
+      "Entries": [
+        "Bandit_Sword Torch Sample -- 野盗_刀松明\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509290,
+      "Entries": [
+        "Bandit_Sword Torch Sample Combat State Start -- 野盗_刀松明\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15509300,
+      "Entries": [
+        "Bandit_Sword Shield Sample -- 野盗_刀盾\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509390,
+      "Entries": [
+        "Bandit_Sword Shield Combat State Start Sample -- 野盗_刀盾\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509391,
+      "Entries": [
+        "Bandit_Sword Shield Combat State Start Sample First Shield Bang Bang Ban -- 野盗_刀盾\u3000戦闘状態スタート\u3000サンプル\u3000初回盾バンバン禁止"
+      ]
+    },
+    {
+      "ID": 15509400,
+      "Entries": [
+        "Bandit_bow sample -- 野盗_弓\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509410,
+      "Entries": [
+        "Bandit_Bow Poison Sample -- 野盗_弓毒\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509420,
+      "Entries": [
+        "Bandit_Bow_Normal Bow Sample -- 野盗_弓_通常弓\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509490,
+      "Entries": [
+        "Bandit_Bow Combat State Start Sample -- 野盗_弓\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509500,
+      "Entries": [
+        "Bandit_sword main sample -- 野盗_刀メイン\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509590,
+      "Entries": [
+        "Bandit_Sword Main Sample Combat State Start -- 野盗_刀メイン\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 15509600,
+      "Entries": [
+        "Bandit_bow stance sample -- 野盗_弓構え\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 15509690,
+      "Entries": [
+        "Bandit_Bow stance Combat state start sample -- 野盗_弓構え\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17000000,
+      "Entries": [
+        "Tokugawa Samurai _ Uchigatana Two Swords + Incendiary Gun Honjo _ Tokugawa Invasion -- 徳川侍_打刀の二刀+焼夷銃\u3000本城_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17000010,
+      "Entries": [
+        "Samurai Tokugawa _ Two swords of Uchigatana + Incendiary gun Honjo _ Invasion of Tokugawa (hostile to the fallen warriors) -- 徳川侍_打刀の二刀+焼夷銃\u3000本城_徳川襲来\u3000(落武者敵対)"
+      ]
+    },
+    {
+      "ID": 17000011,
+      "Entries": [
+        "Tokugawa Samurai _ Uchigatana Two Swords + Incendiary Gun Honjo _ Tokugawa Invasion (For Earning Prevention) -- 徳川侍_打刀の二刀+焼夷銃\u3000本城_徳川襲来\u3000(稼ぎ防止用)"
+      ]
+    },
+    {
+      "ID": 17000020,
+      "Entries": [
+        "Tokugawa Samurai_Two swords (weak) Honjo_Tokugawa invasion (for Ochimusha hostility) -- 徳川侍_打刀の二刀（弱)\u3000本城_徳川襲来\u3000(落武者敵対用)"
+      ]
+    },
+    {
+      "ID": 17000021,
+      "Entries": [
+        "Tokugawa Samurai_Two swords (weak) Honjo_Tokugawa invasion (for earning prevention) -- 徳川侍_打刀の二刀（弱)\u3000本城_徳川襲来\u3000(稼ぎ防止用)"
+      ]
+    },
+    {
+      "ID": 17000100,
+      "Entries": [
+        "Samurai Tokugawa _ Two swords of Kodachi Honjo _ Invasion of Tokugawa -- 徳川侍_小太刀の二刀\u3000本城_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17000110,
+      "Entries": [
+        "Samurai Tokugawa _ Two swords of Kodachi Honjo _ Invasion of Tokugawa (Ochimusha hostility) -- 徳川侍_小太刀の二刀\u3000本城_徳川襲来\u3000(落武者敵対)"
+      ]
+    },
+    {
+      "ID": 17000200,
+      "Entries": [
+        "Tokugawa Samurai _ Flamethrower Honjo _ Tokugawa Invasion -- 徳川侍_火炎放射器\u3000本城_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17000210,
+      "Entries": [
+        "Samurai Tokugawa _ Flamethrower Honjo _ Invasion of Tokugawa -- 徳川侍_火炎放射器\u3000本城_徳川襲来\u3000(落武者敵対用)"
+      ]
+    },
+    {
+      "ID": 17000211,
+      "Entries": [
+        "Tokugawa Samurai_Flamthrower Honjo_Tokugawa Invasion (for earning prevention) -- 徳川侍_火炎放射器\u3000本城_徳川襲来\u3000(稼ぎ防止用)"
+      ]
+    },
+    {
+      "ID": 17000300,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion -- 徳川侍_焼夷銃\u3000本城_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17000310,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion (for Ochimusha Hostile) -- 徳川侍_焼夷銃\u3000本城_徳川襲来\u3000（落武者敵対用）"
+      ]
+    },
+    {
+      "ID": 17000311,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Honjo_Tokugawa Invasion (for earning prevention) -- 徳川侍_焼夷銃\u3000本城_徳川襲来\u3000（稼ぎ防止用）"
+      ]
+    },
+    {
+      "ID": 17001000,
+      "Entries": [
+        "Tokugawa Samurai _ Two swords of Uchigatana + Incendiary gun Castle _ Tokugawa invasion -- 徳川侍_打刀の二刀+焼夷銃\u3000城下_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17001010,
+      "Entries": [
+        "Samurai Tokugawa _ Two swords of Uchigatana + Incendiary gun Castle _ Invasion of Tokugawa (role of Buddhist demon) -- 徳川侍_打刀の二刀+焼夷銃\u3000城下_徳川襲来(仏師鬼やられ役)"
+      ]
+    },
+    {
+      "ID": 17001100,
+      "Entries": [
+        "Samurai Tokugawa_Two swords of Kodachi Castle_Invasion of Tokugawa -- 徳川侍_小太刀の二刀\u3000城下_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17001110,
+      "Entries": [
+        "Samurai Tokugawa_Two swords of Kodachi Castle_Invasion of Tokugawa -- 徳川侍_小太刀の二刀\u3000城下_徳川襲来(落武者敵対用)"
+      ]
+    },
+    {
+      "ID": 17001200,
+      "Entries": [
+        "Tokugawa Samurai_Flamthrower Castle_Tokugawa Invasion -- 徳川侍_火炎放射器\u3000城下_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17001210,
+      "Entries": [
+        "Samurai Tokugawa _ Flamethrower Castle _ Invasion of Tokugawa (role of Buddhist demon) -- 徳川侍_火炎放射器\u3000城下_徳川襲来(仏師鬼やられ役)"
+      ]
+    },
+    {
+      "ID": 17001300,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion -- 徳川侍_焼夷銃\u3000城下_徳川襲来"
+      ]
+    },
+    {
+      "ID": 17001310,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Gun -- 徳川侍_焼夷銃\u3000城下_徳川襲来(落武者敵対用) 初期装備_銃"
+      ]
+    },
+    {
+      "ID": 17001311,
+      "Entries": [
+        "Tokugawa Samurai _ Incendiary Gun Castle _ Tokugawa Invasion (for Ochimusha Hostile) Gun Only _ On the Tower -- 徳川侍_焼夷銃\u3000城下_徳川襲来(落武者敵対用) 銃のみ_櫓の上"
+      ]
+    },
+    {
+      "ID": 17001315,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Gun -- 徳川侍_焼夷銃\u3000城下_徳川襲来(落武者敵対用) 初期装備_銃"
+      ]
+    },
+    {
+      "ID": 17001350,
+      "Entries": [
+        "Tokugawa Samurai Castle_Tokugawa Invasion Initial Equipment_Sword -- 徳川侍\u3000城下_徳川襲来\u3000初期装備_刀"
+      ]
+    },
+    {
+      "ID": 17001360,
+      "Entries": [
+        "Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Sword -- 徳川侍\u3000城下_徳川襲来(落武者敵対用)\u3000初期装備_刀"
+      ]
+    },
+    {
+      "ID": 17001361,
+      "Entries": [
+        "Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Death in Fire -- 徳川侍\u3000城下_徳川襲来(落武者敵対用)\u3000炎上死亡"
+      ]
+    },
+    {
+      "ID": 17001362,
+      "Entries": [
+        "Tokugawa Samurai Castle_Tokugawa Invasion (Late Voice) Initial Equipment_Sword -- 徳川侍\u3000城下_徳川襲来（末期の声）初期装備_刀"
+      ]
+    },
+    {
+      "ID": 17001365,
+      "Entries": [
+        "Tokugawa Samurai Castle_Tokugawa Invasion (for Ochimusha Hostile) Initial Equipment_Sword -- 徳川侍\u3000城下_徳川襲来(落武者敵対用)\u3000初期装備_刀"
+      ]
+    },
+    {
+      "ID": 17002000,
+      "Entries": [
+        "Samurai Tokugawa_Two swords of Kodachi Honjo_Ninja army invasion -- 徳川侍_小太刀の二刀\u3000本城_忍軍襲来"
+      ]
+    },
+    {
+      "ID": 17002010,
+      "Entries": [
+        "Samurai Tokugawa _ Two swords of Kodachi Honjo _ Ninja army invasion (for hostile Ochimusha) -- 徳川侍_小太刀の二刀\u3000本城_忍軍襲来(落武者敵対用)"
+      ]
+    },
+    {
+      "ID": 17009000,
+      "Entries": [
+        "Tokugawa Samurai_Uchigatana dual wield + incendiary gun sample -- 徳川侍_打刀の二刀+焼夷銃\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009090,
+      "Entries": [
+        "Tokugawa Samurai_Two swords + incendiary gun Combat state start sample -- 徳川侍_打刀の二刀+焼夷銃\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009100,
+      "Entries": [
+        "Tokugawa Samurai_Small sword two-sword sample -- 徳川侍_小太刀の二刀\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009190,
+      "Entries": [
+        "Samurai Tokugawa_Two swords of Kodachi Combat state start sample -- 徳川侍_小太刀の二刀\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009200,
+      "Entries": [
+        "Tokugawa Samurai_flamethrower sample -- 徳川侍_火炎放射器\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009290,
+      "Entries": [
+        "Tokugawa Samurai_Flamthrower Combat State Start Sample -- 徳川侍_火炎放射器\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009300,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Sample Initial Equipment_Gun -- 徳川侍_焼夷銃\u3000サンプル\u3000初期装備_銃"
+      ]
+    },
+    {
+      "ID": 17009350,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Sample Initial Equipment_Sword -- 徳川侍_焼夷銃\u3000サンプル\u3000初期装備_刀"
+      ]
+    },
+    {
+      "ID": 17009351,
+      "Entries": [
+        "Tokugawa Samurai _ Incendiary Gun Castle _ Tokugawa Invasion Gun Only _ Tower Top Sample -- 徳川侍_焼夷銃\u3000城下_徳川襲来     銃のみ_櫓の上\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 17009390,
+      "Entries": [
+        "Tokugawa Samurai_Incendiary Gun Sample Combat State Start Initial Equipment_Gun -- 徳川侍_焼夷銃\u3000サンプル\u3000戦闘状態スタート\u3000初期装備_銃"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Hakai Monk Submerged City -- 破戒僧\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Haunting Monk Submerged City Bug State -- 破戒僧\u3000水没都\u3000蟲状態"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "Hakai Monk Sick Village -- 破戒僧\u3000病み村"
+      ]
+    },
+    {
+      "ID": 50008000,
+      "Entries": [
+        "Haunting Monk Submerged City E3 -- 破戒僧\u3000水没都\u3000E3"
+      ]
+    },
+    {
+      "ID": 50009000,
+      "Entries": [
+        "Haunting Monk Sample -- 破戒僧\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50009010,
+      "Entries": [
+        "Hakai Monk Sick Village Sample Appearance Variation 1 -- 破戒僧\u3000病み村\u3000サンプル\u3000見た目バリエーション1"
+      ]
+    },
+    {
+      "ID": 50009011,
+      "Entries": [
+        "Hakai Monk Sick Village Sample Appearance Variation 2 -- 破戒僧\u3000病み村\u3000サンプル\u3000見た目バリエーション2"
+      ]
+    },
+    {
+      "ID": 50009100,
+      "Entries": [
+        "Haunting Monk Sample Bug State -- 破戒僧\u3000サンプル\u3000蟲状態"
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        "Buddhist monk&#39;s bug submerged city -- 破戒僧の蟲\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50011000,
+      "Entries": [
+        "Buddhist monk&#39;s bug submerged city -- 破戒僧の蟲\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50050000,
+      "Entries": [
+        "The Phantom of the Haunting Monk Submerged City -- 破戒僧の幻影\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50058000,
+      "Entries": [
+        "Phantom of the Haunting Monk E3 -- 破戒僧の幻影\u3000E3"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "Valley Great Snake Protomap -- 渓谷の大蛇\u3000プロトマップ"
+      ]
+    },
+    {
+      "ID": 50101000,
+      "Entries": [
+        "The Great Serpent Castle in the Valley -- 渓谷の大蛇\u3000城下"
+      ]
+    },
+    {
+      "ID": 50102000,
+      "Entries": [
+        "Large snake in the valley Valley _ snake valley A -- 渓谷の大蛇\u3000渓谷_蛇谷A"
+      ]
+    },
+    {
+      "ID": 50102010,
+      "Entries": [
+        "Large snake in the valley Valley _ snake valley B -- 渓谷の大蛇\u3000渓谷_蛇谷B"
+      ]
+    },
+    {
+      "ID": 50103000,
+      "Entries": [
+        "Valley&#39;s Great Snake Valley_Snake&#39;s Nest A -- 渓谷の大蛇\u3000渓谷_蛇の巣穴A"
+      ]
+    },
+    {
+      "ID": 50103010,
+      "Entries": [
+        "Valley&#39;s Great Snake Valley_Snake&#39;s Nest B -- 渓谷の大蛇\u3000渓谷_蛇の巣穴B"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "Akaoni Honjo_When the Ninja Army invades -- 赤鬼\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "Akaoni Honjo_Ninja Army Invasion (Indiscriminate) -- 赤鬼\u3000本城_忍軍襲来時\u3000（無差別）"
+      ]
+    },
+    {
+      "ID": 50200100,
+      "Entries": [
+        "Akaoni Honjo_Ninja army invades both hands -- 赤鬼\u3000本城_忍軍襲来時\u3000両手"
+      ]
+    },
+    {
+      "ID": 50202000,
+      "Entries": [
+        "Akaoni Castle_VP (Red Eye) -- 赤鬼\u3000城下_VP（赤目）"
+      ]
+    },
+    {
+      "ID": 50203000,
+      "Entries": [
+        "Akaoni Castle_E3 -- 赤鬼\u3000城下_E3"
+      ]
+    },
+    {
+      "ID": 50204080,
+      "Entries": [
+        "Akaoni_Experimental Dungeon [Conversation] -- 赤鬼_実験体\u3000地下牢【会話】"
+      ]
+    },
+    {
+      "ID": 50205000,
+      "Entries": [
+        "Akaoni Castle_Tokugawa Invasion -- 赤鬼\u3000城下_徳川襲来"
+      ]
+    },
+    {
+      "ID": 50209000,
+      "Entries": [
+        "Red demon sample -- 赤鬼\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50209080,
+      "Entries": [
+        "Akaoni LookAt Test [Conversation] -- 赤鬼\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 50209090,
+      "Entries": [
+        "Red Demon Sample Combat State Start -- 赤鬼\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50209100,
+      "Entries": [
+        "Red Demon Sample Both Hands -- 赤鬼\u3000サンプル\u3000両手"
+      ]
+    },
+    {
+      "ID": 50209190,
+      "Entries": [
+        "Red Demon Sample Two-Handed Combat State Start -- 赤鬼\u3000サンプル\u3000両手\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50210000,
+      "Entries": [
+        "Giants Innsmouth Submerged City -- 巨人インスマス\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50210080,
+      "Entries": [
+        "Giants Innsmouth Submerged City [Conversation] -- 巨人インスマス\u3000水没都 【会話】"
+      ]
+    },
+    {
+      "ID": 50310000,
+      "Entries": [
+        "Straw doll bug_test map that grows from below -- 藁人形の蟲_下から生える\u3000テストマップ"
+      ]
+    },
+    {
+      "ID": 50310001,
+      "Entries": [
+        "Straw doll bug _ test map that grows from the side -- 藁人形の蟲_横から生える\u3000テストマップ"
+      ]
+    },
+    {
+      "ID": 50400000,
+      "Entries": [
+        "Straw doll (new model) -- 藁人形（新モデル）"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "Nishikigoi Submerged City -- 錦鯉\u3000水没都"
+      ]
+    },
+    {
+      "ID": 50500080,
+      "Entries": [
+        "Nishikigoi feeding [conversation] -- 錦鯉\u3000餌やり【会話】"
+      ]
+    },
+    {
+      "ID": 50501000,
+      "Entries": [
+        "Nishikigoi Valley poisoned corpse -- 錦鯉\u3000渓谷\u3000毒殺死体"
+      ]
+    },
+    {
+      "ID": 50509000,
+      "Entries": [
+        "Nishikigoi sample -- 錦鯉\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50509090,
+      "Entries": [
+        "Nishikigoi sample battle state start -- 錦鯉\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50600000,
+      "Entries": [
+        "Ninja Army Chief Honjo_When the Ninja Army attacks -- 忍軍の長\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 50600080,
+      "Entries": [
+        "Ninja Army Chief Honjo_When the Ninja Army invades [Conversation] -- 忍軍の長\u3000本城_忍軍襲来時【会話】"
+      ]
+    },
+    {
+      "ID": 50601000,
+      "Entries": [
+        "Ninja Chief Samurai Residence_NPC -- 忍軍の長\u3000武家屋敷_NPC"
+      ]
+    },
+    {
+      "ID": 50601010,
+      "Entries": [
+        "Ninja Army Chief Samurai Residence_Boss -- 忍軍の長\u3000武家屋敷_ボス"
+      ]
+    },
+    {
+      "ID": 50601080,
+      "Entries": [
+        "Ninja Army Chief Samurai Residence_Past_NPC [Conversation] -- 忍軍の長\u3000武家屋敷_過去_ＮＰＣ【会話】"
+      ]
+    },
+    {
+      "ID": 50609080,
+      "Entries": [
+        "Ninja Chief LookAt Test [Conversation] -- 忍軍の長\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 50609090,
+      "Entries": [
+        "Ninja Chief Sample Combat State Start -- 忍軍の長\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50609091,
+      "Entries": [
+        "Ninja Chief Sample Starts after heating up -- 忍軍の長\u3000サンプル\u3000ヒートアップ後スタート"
+      ]
+    },
+    {
+      "ID": 50610000,
+      "Entries": [
+        "For Ninja long cutscenes -- 忍軍の長\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 50630000,
+      "Entries": [
+        "Ninja Army Chief (Back) Samurai Residence_Boss -- 忍軍の長（裏）\u3000武家屋敷_ボス"
+      ]
+    },
+    {
+      "ID": 50700000,
+      "Entries": [
+        "Chief Owl Honjo_When the Ninja Army invades -- 長の梟\u3000本城_忍軍襲来時"
+      ]
+    },
+    {
+      "ID": 50709000,
+      "Entries": [
+        "Long Owl Sample Combat State Start -- 長の梟\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50709001,
+      "Entries": [
+        "Long owl sample non-combat state start -- 長の梟\u3000サンプル\u3000非戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50800000,
+      "Entries": [
+        "Cavalry warrior castle -- 騎馬武者\u3000城下"
+      ]
+    },
+    {
+      "ID": 50809000,
+      "Entries": [
+        "Cavalry warrior sample -- 騎馬武者\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50809001,
+      "Entries": [
+        "Cavalry Warrior Sample Stringed Spear -- 騎馬武者\u3000サンプル\u3000紐付き槍"
+      ]
+    },
+    {
+      "ID": 50809090,
+      "Entries": [
+        "Cavalry warrior sample battle state start -- 騎馬武者\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50809091,
+      "Entries": [
+        "Cavalry Warrior Sample Combat State Start Spear with String -- 騎馬武者\u3000サンプル\u3000戦闘状態スタート\u3000紐付き槍"
+      ]
+    },
+    {
+      "ID": 50900000,
+      "Entries": [
+        "Butterflies -- お蝶"
+      ]
+    },
+    {
+      "ID": 50900001,
+      "Entries": [
+        "After the butterfly HU -- お蝶\u3000HU後"
+      ]
+    },
+    {
+      "ID": 50909000,
+      "Entries": [
+        "Butterfly sample -- お蝶\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50909001,
+      "Entries": [
+        "Sample after butterfly HU -- お蝶\u3000HU後\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 50909080,
+      "Entries": [
+        "Butterfly LookAt test [conversation] -- お蝶 LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 50909090,
+      "Entries": [
+        "Butterfly sample battle state start -- お蝶\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 50909091,
+      "Entries": [
+        "After butterfly HU sample battle state start -- お蝶\u3000HU後\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Yasha Ape -- 夜叉猿"
+      ]
+    },
+    {
+      "ID": 51000010,
+      "Entries": [
+        "Yasha Ape_Bride -- 夜叉猿_嫁"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "Yasha Ape_Neckless -- 夜叉猿_首無し"
+      ]
+    },
+    {
+      "ID": 51009000,
+      "Entries": [
+        "Sample before Yasha Ape_HU -- 夜叉猿_HU前\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 51009001,
+      "Entries": [
+        "Sample after Yasha Ape_HU -- 夜叉猿_HU後\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 51009010,
+      "Entries": [
+        "Yasha Ape_Bride Sample -- 夜叉猿_嫁\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 51009090,
+      "Entries": [
+        "Yasha Ape_HU Previous sample Combat state start -- 夜叉猿_HU前\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 51009091,
+      "Entries": [
+        "Sample battle state start after Yasha Ape_HU -- 夜叉猿_HU後\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 51009095,
+      "Entries": [
+        "Yasha Ape_HU Previous sample SA damage multiplier invalid -- 夜叉猿_HU前\u3000サンプル\u3000SAダメージ倍率無効"
+      ]
+    },
+    {
+      "ID": 51009096,
+      "Entries": [
+        "After Yasha Ape_HU Sample SA damage multiplier invalid -- 夜叉猿_HU後\u3000サンプル\u3000SAダメージ倍率無効"
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Mermaid dragon -- 人魚竜"
+      ]
+    },
+    {
+      "ID": 52009000,
+      "Entries": [
+        "Mermaid dragon sample -- 人魚竜\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "Okiryu_shared body -- 翁竜_共有本体"
+      ]
+    },
+    {
+      "ID": 53000010,
+      "Entries": [
+        "Okiryu_Combatant -- 翁竜_戦闘員"
+      ]
+    },
+    {
+      "ID": 53000011,
+      "Entries": [
+        "Okiryu_Combatant (servant) -- 翁竜_戦闘員（従者）"
+      ]
+    },
+    {
+      "ID": 53000012,
+      "Entries": [
+        "Okiryu_Combatant Initial placement -- 翁竜_戦闘員\u3000初期配置"
+      ]
+    },
+    {
+      "ID": 53009000,
+      "Entries": [
+        "Old dragon sample -- 翁竜\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 53100000,
+      "Entries": [
+        "Tentacles -- 触手"
+      ]
+    },
+    {
+      "ID": 53100001,
+      "Entries": [
+        "Tentacle_Mermaid Dragon Battle -- 触手_人魚竜戦"
+      ]
+    },
+    {
+      "ID": 53100010,
+      "Entries": [
+        "Tentacle PC tracking -- 触手 PC追跡"
+      ]
+    },
+    {
+      "ID": 53100020,
+      "Entries": [
+        "Tentacles_Okina Dragon Battle_Ride -- 触手_翁竜戦_乗れる"
+      ]
+    },
+    {
+      "ID": 53100021,
+      "Entries": [
+        "Tentacles_Old Dragon Battle_Can&#39;t ride -- 触手_翁竜戦_乗れない"
+      ]
+    },
+    {
+      "ID": 53109000,
+      "Entries": [
+        "Tentacle sample -- 触手\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 53109001,
+      "Entries": [
+        "Tentacle_Mermaid Dragon Battle Sample -- 触手_人魚竜戦\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 53109010,
+      "Entries": [
+        "Tentacle sample PC tracking -- 触手\u3000サンプル\u3000PC追跡"
+      ]
+    },
+    {
+      "ID": 53200000,
+      "Entries": [
+        "Okiryu (Large) -- 翁竜（大）"
+      ]
+    },
+    {
+      "ID": 53209000,
+      "Entries": [
+        "Okiryu (Large) Sample -- 翁竜（大）\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 54000000,
+      "Entries": [
+        "Revived Kensei Hidden Prison _ Tokugawa Invasion -- 蘇った剣聖\u3000隠し牢_徳川襲来"
+      ]
+    },
+    {
+      "ID": 54000180,
+      "Entries": [
+        "Revived Kensei Sickbed Kensei Honjo [Conversation] -- 蘇った剣聖\u3000病床剣聖\u3000本城【会話】"
+      ]
+    },
+    {
+      "ID": 54009000,
+      "Entries": [
+        "Revived Kensei Sample -- 蘇った剣聖\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 54009001,
+      "Entries": [
+        "Sample after the resurrected Kensei HU -- 蘇った剣聖 HU後\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 54009080,
+      "Entries": [
+        "Revived Kensei LookAt Test [Conversation] -- 蘇った剣聖\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 54009090,
+      "Entries": [
+        "Revived Kensei Sample Combat State Start -- 蘇った剣聖\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 54009091,
+      "Entries": [
+        "After the resurrected Kensei HU sample battle state start -- 蘇った剣聖\u3000HU後\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 54009190,
+      "Entries": [
+        "Revived Kensei Sample Combat State Start (Spear Model Hidden) -- 蘇った剣聖\u3000サンプル\u3000戦闘状態スタート(槍モデル非表示)"
+      ]
+    },
+    {
+      "ID": 54030000,
+      "Entries": [
+        "Revived Kensei (back) Hidden prison _ Tokugawa invasion -- 蘇った剣聖（裏）\u3000隠し牢_徳川襲来"
+      ]
+    },
+    {
+      "ID": 54100000,
+      "Entries": [
+        "Sickbed Kensei_Honjo Conversation NPC -- 病床剣聖_本城\u3000会話NPC"
+      ]
+    },
+    {
+      "ID": 54300000,
+      "Entries": [
+        "Bed sword Holy Honjo -- 病床剣聖\u3000本城"
+      ]
+    },
+    {
+      "ID": 54300080,
+      "Entries": [
+        "Bed Kensei Honjo [Conversation] -- 病床剣聖\u3000本城【会話】"
+      ]
+    },
+    {
+      "ID": 54300180,
+      "Entries": [
+        "Bed sword Holy Honjo_When Tokugawa attacks_Death [Conversation] -- 病床剣聖\u3000本城_徳川襲来時_死亡【会話】"
+      ]
+    },
+    {
+      "ID": 54301080,
+      "Entries": [
+        "Skill old man (Kensei sickbed) Castle [Conversation] -- スキル爺（病床剣聖）\u3000城下【会話】"
+      ]
+    },
+    {
+      "ID": 54302080,
+      "Entries": [
+        "Skill old man (Kensei sickbed) Honjo [Conversation] -- スキル爺（病床剣聖）\u3000本城【会話】"
+      ]
+    },
+    {
+      "ID": 54309000,
+      "Entries": [
+        "Bed Kensei Sample -- 病床剣聖\u3000\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "Female player sick village -- 女奏者\u3000病み村"
+      ]
+    },
+    {
+      "ID": 70000900,
+      "Entries": [
+        "Female player conversation test -- 女奏者\u3000会話テスト"
+      ]
+    },
+    {
+      "ID": 70009000,
+      "Entries": [
+        "Female player sample -- 女奏者\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70009080,
+      "Entries": [
+        "Female player LookAt test [conversation] -- 女奏者\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 70009090,
+      "Entries": [
+        "Female player sample Combat state start -- 女奏者\u3000サンプル 戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 70100000,
+      "Entries": [
+        "Buddhist NPC Castle -- 仏師\u3000NPC\u3000城下"
+      ]
+    },
+    {
+      "ID": 70100080,
+      "Entries": [
+        "Buddhist NPC Castle [Conversation] -- 仏師\u3000NPC\u3000城下【会話】"
+      ]
+    },
+    {
+      "ID": 70109000,
+      "Entries": [
+        "Buddhist NPC sample -- 仏師\u3000NPC\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70109001,
+      "Entries": [
+        "Buddhist NPC sample standing -- 仏師\u3000NPC\u3000サンプル\u3000立ち状態"
+      ]
+    },
+    {
+      "ID": 70109080,
+      "Entries": [
+        "For Buddhist LookAt test [Conversation] -- 仏師\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 70110000,
+      "Entries": [
+        "Buddhist NPC for cutscenes -- 仏師\u3000NPC\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 70200000,
+      "Entries": [
+        "In front of the Buddhist priest (demon) HU -- 仏師（鬼）\u3000HU前"
+      ]
+    },
+    {
+      "ID": 70200001,
+      "Entries": [
+        "Buddhist priest (demon) HU1 Battle state start sample -- 仏師（鬼）\u3000HU1\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70200002,
+      "Entries": [
+        "Buddhist Master (Oni) HU2 Combat State Start Sample -- 仏師（鬼）\u3000HU2\u3000戦闘状態スタート\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70209000,
+      "Entries": [
+        "Buddhist master (demon) HU front sample -- 仏師（鬼）\u3000HU前\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70209001,
+      "Entries": [
+        "Buddhist priest (demon) HU1 sample -- 仏師（鬼）\u3000HU1\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70209002,
+      "Entries": [
+        "Buddhist priest (demon) HU2 sample -- 仏師（鬼）\u3000HU2\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 70209090,
+      "Entries": [
+        "Buddhist master (demon) HU front sample battle state start -- 仏師（鬼）\u3000HU前\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 70209091,
+      "Entries": [
+        "Buddhist priest (demon) HU1 sample Combat state start -- 仏師（鬼）\u3000HU1\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 70209092,
+      "Entries": [
+        "Buddhist priest (demon) HU2 sample Combat state start -- 仏師（鬼）\u3000HU2\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 70210000,
+      "Entries": [
+        "Dummy for demon Buddha -- 鬼仏用ダミー"
+      ]
+    },
+    {
+      "ID": 70219000,
+      "Entries": [
+        "Dummy sample for demon Buddha -- 鬼仏用ダミー サンプル"
+      ]
+    },
+    {
+      "ID": 71000000,
+      "Entries": [
+        "Rival Bowless Hidden Prison _ During Tutorial -- ライバル\u3000弓なし\u3000隠し牢_チュートリアル時"
+      ]
+    },
+    {
+      "ID": 71001000,
+      "Entries": [
+        "Rival Honjo -- ライバル\u3000本城"
+      ]
+    },
+    {
+      "ID": 71003080,
+      "Entries": [
+        "For phantom conversation without rival bow -- ライバル\u3000弓なし\u3000幻影会話用"
+      ]
+    },
+    {
+      "ID": 71009000,
+      "Entries": [
+        "Rival sample -- ライバル\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 71009080,
+      "Entries": [
+        "For rival LookAt test [conversation] -- ライバル\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 71009090,
+      "Entries": [
+        "Rival sample battle state start -- ライバル\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 71009100,
+      "Entries": [
+        "Rival sample without bow (for tutorial map) -- ライバル\u3000サンプル\u3000弓なし（チュートリアルマップ用）"
+      ]
+    },
+    {
+      "ID": 71010000,
+      "Entries": [
+        "For rival cutscenes -- ライバル\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 71013000,
+      "Entries": [
+        "Rival (back) Honjo -- ライバル（裏）\u3000本城"
+      ]
+    },
+    {
+      "ID": 71100000,
+      "Entries": [
+        "Rival_naked Honjo -- ライバル_裸\u3000本城"
+      ]
+    },
+    {
+      "ID": 71101000,
+      "Entries": [
+        "Rival _ Naked Hidden Prison _ When Tokugawa Invades -- ライバル_裸\u3000隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 71109000,
+      "Entries": [
+        "Rival_naked sample -- ライバル_裸\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 71109090,
+      "Entries": [
+        "Rival_naked sample Combat state start -- ライバル_裸\u3000サンプル\u3000戦闘状態スタート"
+      ]
+    },
+    {
+      "ID": 71110000,
+      "Entries": [
+        "Rival_Honjo for naked cutscenes -- ライバル_裸\u3000カットシーン用\u3000本城"
+      ]
+    },
+    {
+      "ID": 71111000,
+      "Entries": [
+        "Rival _ Naked cutscene hidden prison _ When Tokugawa invades -- ライバル_裸\u3000カットシーン用\u3000隠し牢_徳川襲来時"
+      ]
+    },
+    {
+      "ID": 72000000,
+      "Entries": [
+        "Prince Hidden Prison _ Tsukimi Tower -- 皇子\u3000隠し牢_月見櫓"
+      ]
+    },
+    {
+      "ID": 72000080,
+      "Entries": [
+        "Prince Hidden Prison _ Tsukimi Tower [Conversation] -- 皇子\u3000隠し牢_月見櫓 【会話】"
+      ]
+    },
+    {
+      "ID": 72000081,
+      "Entries": [
+        "Prince Hidden Prison _ Loophole [Conversation] -- 皇子\u3000隠し牢_抜け道 【会話】"
+      ]
+    },
+    {
+      "ID": 72000082,
+      "Entries": [
+        "Prince Hidden Prison_Susuki Field [Conversation] -- 皇子\u3000隠し牢_ススキ野原 【会話】"
+      ]
+    },
+    {
+      "ID": 72000083,
+      "Entries": [
+        "Prince Hidden Prison _ Tsukimi Tower [Phantom Conversation] -- 皇子\u3000隠し牢_月見櫓【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72000100,
+      "Entries": [
+        "Prince Hidden Prison_Hidden Road -- 皇子\u3000隠し牢_隠し道"
+      ]
+    },
+    {
+      "ID": 72000200,
+      "Entries": [
+        "Prince Hidden Prison_Susuki Field -- 皇子\u3000隠し牢_ススキ野原"
+      ]
+    },
+    {
+      "ID": 72001000,
+      "Entries": [
+        "Prince Honjo -- 皇子\u3000本城"
+      ]
+    },
+    {
+      "ID": 72001080,
+      "Entries": [
+        "Prince Honjo_Meditation Room [Conversation] -- 皇子\u3000本城_瞑想部屋【会話】"
+      ]
+    },
+    {
+      "ID": 72001081,
+      "Entries": [
+        "Prince Honjo_Tenshukaku [Conversation] -- 皇子\u3000本城_天守閣【会話】"
+      ]
+    },
+    {
+      "ID": 72001082,
+      "Entries": [
+        "Prince Honjo_Attic [Phantom Conversation] -- 皇子\u3000本城_屋根裏部屋【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72001083,
+      "Entries": [
+        "Prince Honjo_In front of the grand staircase [Phantom conversation] -- 皇子\u3000本城_大階段前【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72001084,
+      "Entries": [
+        "Prince Honjo_Side Road [Phantom Conversation] -- 皇子\u3000本城_脇道【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72001085,
+      "Entries": [
+        "Prince Honjo_Swordsman Area Entrance [Phantom Conversation] -- 皇子\u3000本城_剣客エリア入り口【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72002080,
+      "Entries": [
+        "Prince Castle_Stable [Phantom Conversation] -- 皇子\u3000城下_馬小屋【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72002081,
+      "Entries": [
+        "Prince Castle_Battlefield Ruins [Phantom Conversation] -- 皇子\u3000城下_戦場跡前【幻影会話】"
+      ]
+    },
+    {
+      "ID": 72008000,
+      "Entries": [
+        "Prince guided illusion_test -- 皇子\u3000誘導幻影_テスト"
+      ]
+    },
+    {
+      "ID": 72009000,
+      "Entries": [
+        "Prince sample -- 皇子\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 72009080,
+      "Entries": [
+        "For Prince LookAt test [conversation] -- 皇子\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 72010000,
+      "Entries": [
+        "For prince cutscenes -- 皇子\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 72100000,
+      "Entries": [
+        "Prince childhood -- 皇子\u3000幼少期"
+      ]
+    },
+    {
+      "ID": 73000000,
+      "Entries": [
+        "Chigo Temple -- 稚児\u3000寺"
+      ]
+    },
+    {
+      "ID": 73000080,
+      "Entries": [
+        "Chigo Temple [Conversation] -- 稚児\u3000寺【会話】"
+      ]
+    },
+    {
+      "ID": 73001080,
+      "Entries": [
+        "Chigo Infinite Corridor [Conversation] -- 稚児\u3000無限回廊【会話】"
+      ]
+    },
+    {
+      "ID": 73009000,
+      "Entries": [
+        "Chigo sample -- 稚児\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 73009080,
+      "Entries": [
+        "For Chigo LookAt Test [Conversation] -- 稚児\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 73010000,
+      "Entries": [
+        "Travel Chigo Temple for cutscenes -- 旅装稚児\u3000寺\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "For chigo temple cutscenes -- 稚児\u3000寺\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "Isei&#39;s daughter Honjo -- 医聖の娘\u3000本城"
+      ]
+    },
+    {
+      "ID": 74000010,
+      "Entries": [
+        "Daughter of Isei Honjo_Tenshukaku -- 医聖の娘\u3000本城_天守閣"
+      ]
+    },
+    {
+      "ID": 74000080,
+      "Entries": [
+        "Daughter of Isei Honjo_Meditation Room [Conversation] -- 医聖の娘\u3000本城_瞑想部屋【会話】"
+      ]
+    },
+    {
+      "ID": 74000081,
+      "Entries": [
+        "Daughter of Isei Honjo_Visit to the grave [Conversation] -- 医聖の娘\u3000本城_墓参り【会話】"
+      ]
+    },
+    {
+      "ID": 74000082,
+      "Entries": [
+        "Daughter of Isei Honjo_When Tokugawa invades [Conversation] -- 医聖の娘\u3000本城_徳川襲来時【会話】"
+      ]
+    },
+    {
+      "ID": 74000083,
+      "Entries": [
+        "Daughter of Isei Honjo_Separation of Kensei [Conversation] -- 医聖の娘\u3000本城_剣聖の離れ【会話】"
+      ]
+    },
+    {
+      "ID": 74000084,
+      "Entries": [
+        "Daughter of Isei Honjo_Attic [Phantom Conversation] -- 医聖の娘\u3000本城_屋根裏部屋【幻影会話】"
+      ]
+    },
+    {
+      "ID": 74000085,
+      "Entries": [
+        "Daughter of Isei Honjo_In front of the grand staircase [Phantom conversation] -- 医聖の娘\u3000本城_大階段前【幻影会話】"
+      ]
+    },
+    {
+      "ID": 74000180,
+      "Entries": [
+        "Daughter of Isei Castle _ Araji Temple [Conversation] -- 医聖の娘\u3000城下_荒れ寺【会話】"
+      ]
+    },
+    {
+      "ID": 74001080,
+      "Entries": [
+        "Daughter of Isei Castle_Stable [Phantom Conversation] -- 医聖の娘\u3000城下_馬小屋【幻影会話】"
+      ]
+    },
+    {
+      "ID": 74009000,
+      "Entries": [
+        "Medical Holy Daughter Sample -- 医聖の娘\u3000サンプル"
+      ]
+    },
+    {
+      "ID": 74009080,
+      "Entries": [
+        "Medical Holy Daughter LookAt Test [Conversation] -- 医聖の娘\u3000LookAtテスト用 【会話】"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "Isei&#39;s daughter for cutscenes -- 医聖の娘\u3000カットシーン用"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "Fascinated Samurai [Conversation] (Base c1020) -- 魅了された侍【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74100080,
+      "Entries": [
+        "Fascinated Samurai Hidden Prison [Conversation] (Base c1020) -- 魅了された侍\u3000隠し牢【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74100081,
+      "Entries": [
+        "Fascinated Samurai Hidden Prison_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍\u3000隠し牢_竜咳状態【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74101080,
+      "Entries": [
+        "Fascinated Samurai Dungeon [Conversation] (Base c1020) -- 魅了された侍\u3000地下牢【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74101081,
+      "Entries": [
+        "Fascinated Samurai Dungeon_Experimental Body [Conversation] (Base c1020) -- 魅了された侍\u3000地下牢_実験体【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74101082,
+      "Entries": [
+        "Fascinated Samurai Dungeon_Crucifixion [Conversation] (Base c1020) -- 魅了された侍\u3000地下牢_磔【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74101083,
+      "Entries": [
+        "Fascinated Samurai Dungeon_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍\u3000地下牢_竜咳状態【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74102080,
+      "Entries": [
+        "Fascinated Samurai Sick Village_Entrance [Conversation] (Base c1020) -- 魅了された侍\u3000病み村_入り口【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74102081,
+      "Entries": [
+        "Fascinated Samurai Sick Village_In front of the square [Conversation] (Base c1020) -- 魅了された侍\u3000病み村_広場前【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74102082,
+      "Entries": [
+        "Fascinated Samurai Sick Village_Entrance_Dragon Cough [Conversation] (Base c1020) -- 魅了された侍\u3000病み村_入り口_竜咳状態【会話】（ベースc1020）"
+      ]
+    },
+    {
+      "ID": 74200000,
+      "Entries": [
+        "Selling bandits [conversation] (base c1550) -- 物売り野盗【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74200080,
+      "Entries": [
+        "Soldier Bandit Castle [Conversation] (Base c1550) -- 物売り野盗 城下【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74200081,
+      "Entries": [
+        "Selling bandits Castle _ When Tokugawa invades _ Survival [Conversation] (Base c1550) -- 物売り野盗 城下_徳川襲来時_生存【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74200082,
+      "Entries": [
+        "Dealer Bandit Castle_Dragon Cough [Conversation] (Base c1550) -- 物売り野盗 城下_竜咳状態【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74201080,
+      "Entries": [
+        "Soldier Bandit Samurai Residence_Past [Conversation] (Base c1550) -- 物売り野盗 武家屋敷_過去【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74300000,
+      "Entries": [
+        "Araji shop clerk [conversation] (base c1550) -- 荒れ寺ショップ店員【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74300080,
+      "Entries": [
+        "Shop clerk Castle _ Cliff [Conversation] (Base c1120) -- ショップ店員\u3000城下_崖上【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74300081,
+      "Entries": [
+        "Shop clerk Castle _ Small castle tower [Conversation] (Base c1120) -- ショップ店員\u3000城下_小天守【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74300082,
+      "Entries": [
+        "Ara-ji Shop Clerk Castle_Ara-ji [Conversation] (Base c1550) -- 荒れ寺ショップ店員\u3000城下_荒れ寺【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74301080,
+      "Entries": [
+        "Shop clerk Valley [Conversation] (Base c1120) -- ショップ店員\u3000渓谷【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74302080,
+      "Entries": [
+        "Shop clerk Temple [Conversation] (Base c1120) -- ショップ店員\u3000寺【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74303080,
+      "Entries": [
+        "Shop clerk Dungeon [Conversation] (Base c1120) -- ショップ店員\u3000地下牢【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74305080,
+      "Entries": [
+        "Shop clerk Honjo [Conversation] (Base c1120) -- ショップ店員\u3000本城【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74305081,
+      "Entries": [
+        "Araji Shop Clerk Honjo_Araji [Conversation] (Base c1550) -- 荒れ寺ショップ店員\u3000本城_荒れ寺【会話】（ベースc1550）"
+      ]
+    },
+    {
+      "ID": 74306080,
+      "Entries": [
+        "Shop clerk Sick village [conversation] (base c1120) -- ショップ店員\u3000病み村【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 74400000,
+      "Entries": [
+        "Yaohioka Nun [Conversation] (Base c1110) -- 八百比丘尼【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74400080,
+      "Entries": [
+        "Yaohioka Nun Honjo [Conversation] (Base c1110) -- 八百比丘尼\u3000本城【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74401080,
+      "Entries": [
+        "Yayobioka Nun Valley_Upper [Conversation] (Base c1110) -- 八百比丘尼\u3000渓谷_上層【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74401081,
+      "Entries": [
+        "Yayobioka Nun Valley_Lower Level [Conversation] (Base c1110) -- 八百比丘尼\u3000渓谷_下層【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74402080,
+      "Entries": [
+        "Yayobioka Nanji Temple_Middle [Conversation] (Base c1110) -- 八百比丘尼\u3000寺_中腹【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74402081,
+      "Entries": [
+        "Yayobioka Nanji Temple_Main Hall [Conversation] (Base c1110) -- 八百比丘尼\u3000寺_本堂【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74403080,
+      "Entries": [
+        "Yaohioka Nun Dungeon_In front of the execution table [Conversation] (Base c1110) -- 八百比丘尼\u3000地下牢_処刑台前【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74500000,
+      "Entries": [
+        "Suzubaa [Conversation] (Base c1110) -- 鈴ばばあ【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74500080,
+      "Entries": [
+        "Suzubaa Castle [Conversation] (Base c1110) -- 鈴ばばあ\u3000城下【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74501080,
+      "Entries": [
+        "Suzubaa Samurai Residence [Conversation] (Base c1110) -- 鈴ばばあ\u3000武家屋敷【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 74600000,
+      "Entries": [
+        "Suzuba&#39;s son [conversation] (base c1400) -- 鈴ばばあの息子【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74600080,
+      "Entries": [
+        "Suzuba&#39;s son Castle [Conversation] (Base c1400) -- 鈴ばばあの息子\u3000城下【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74600081,
+      "Entries": [
+        "Suzuba Aunt&#39;s Son Castle_After the Aunt&#39;s Killing [Conversation] (Base c1400) -- 鈴ばばあの息子\u3000城下_おば殺害後【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74601080,
+      "Entries": [
+        "Suzuba&#39;s son Samurai residence [Conversation] (base c1400) -- 鈴ばばあの息子\u3000武家屋敷【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74700000,
+      "Entries": [
+        "The kidnapped young man [conversation] (base c1180) -- さらわれ下男【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74700080,
+      "Entries": [
+        "The kidnapped lower man temple [conversation] (base c1180) -- さらわれ下男\u3000寺【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74700081,
+      "Entries": [
+        "The kidnapped lower man temple_infinite corridor [conversation] (base c1180) -- さらわれ下男\u3000寺_無限回廊【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74701080,
+      "Entries": [
+        "The kidnapped young man _ joins the castle sales bandit [conversation] (base c1180) -- さらわれ下男_城下\u3000物売り野盗と合流【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74701081,
+      "Entries": [
+        "The kidnapped young man _ Castle Tokugawa invasion [Conversation] (base c1180) -- さらわれ下男_城下\u3000徳川襲来時\u3000【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74702080,
+      "Entries": [
+        "The kidnapped younger man_Dungeon Crucifixion [Conversation] (Base c1180) -- さらわれ下男_地下牢\u3000磔【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74702081,
+      "Entries": [
+        "The kidnapped young man _ dungeon experimental body [conversation] (base c1180) -- さらわれ下男_地下牢\u3000実験体【会話】（ベースc1180）"
+      ]
+    },
+    {
+      "ID": 74800000,
+      "Entries": [
+        "Sick village priest [conversation] (base c1400) -- 病み村神主【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74800080,
+      "Entries": [
+        "Sick Village Kannushi_Before Innsmouth [Conversation] (Base c1400) -- 病み村神主_インスマウス化前【会話】（ベースc1400）"
+      ]
+    },
+    {
+      "ID": 74900000,
+      "Entries": [
+        "Immortal Experiment Doctor [Conversation] (Base c1220) -- 不死実験の医僧【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900080,
+      "Entries": [
+        "Immortal Experiment Doctor_Dungeon [Conversation] (Base c1220) -- 不死実験の医僧_地下牢【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900081,
+      "Entries": [
+        "Immortal Experiment Doctor _ Dungeon Deformation [Conversation] (Base c1220) -- 不死実験の医僧_地下牢\u3000異形化【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900082,
+      "Entries": [
+        "Immortal Experiment Doctor_Outside the Dungeon [Conversation] (Base c1220) -- 不死実験の医僧_地下牢外【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900083,
+      "Entries": [
+        "Immortal Experiment Doctor_Dungeon_Dragon Cough [Conversation] (Base c1220) -- 不死実験の医僧_地下牢内_竜咳状態【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900084,
+      "Entries": [
+        "Immortal Experiment Doctor_Outside the Dungeon_Dragon Cough [Conversation] (Base c1220) -- 不死実験の医僧_地下牢外_竜咳状態【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 74900085,
+      "Entries": [
+        "Immortal Experiment Doctor _ Dungeon _ Not Hostile _ Inside the Prison [Conversation] (Base c1220) -- 不死実験の医僧_地下牢_敵対しない_牢屋内【会話】（ベースc1220）"
+      ]
+    },
+    {
+      "ID": 75000000,
+      "Entries": [
+        "A decent villager [conversation] (base c1500) -- まともな村人【会話】（ベースc1500）"
+      ]
+    },
+    {
+      "ID": 75000080,
+      "Entries": [
+        "Decent Villager_Sick Village [Conversation] (Base c1500) -- まともな村人_病み村【会話】（ベースc1500）"
+      ]
+    },
+    {
+      "ID": 75000081,
+      "Entries": [
+        "Decent Villager_Sick Village_Zombie [Conversation] (Base c1500) -- まともな村人_病み村_ゾンビ化【会話】（ベースc1500）"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "White Rappa [Conversation] (Base c1360) -- 白らっぱ【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75100080,
+      "Entries": [
+        "White Rappa Castle [Conversation] (Base c1360) -- 白らっぱ\u3000城下【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75100081,
+      "Entries": [
+        "White Rappa Castle_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ\u3000城下_竜咳状態【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75101080,
+      "Entries": [
+        "White Rappa Dungeon [Conversation] (Base c1360) -- 白らっぱ\u3000地下牢【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75101081,
+      "Entries": [
+        "White Rappa Dungeon_Experimental Body [Conversation] (Base c1360) -- 白らっぱ\u3000地下牢_実験体【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75102080,
+      "Entries": [
+        "White Rappa Temple_Before flying a kite [Conversation] (Base c1360) -- 白らっぱ\u3000寺_凧揚げ前【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75102081,
+      "Entries": [
+        "White Rappa Temple_Training Ground [Conversation] (Base c1360) -- 白らっぱ\u3000寺_修行場【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75102082,
+      "Entries": [
+        "White Rappa Temple_Before flying a kite_Dragon cough [Conversation] (Base c1360) -- 白らっぱ\u3000寺_凧揚げ前_竜咳状態【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75102083,
+      "Entries": [
+        "White Rappa Temple_Training Ground_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ\u3000寺_修行場_竜咳状態【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75103080,
+      "Entries": [
+        "White Rappa Honjo_Shop [Conversation] (Base c1360) -- 白らっぱ\u3000本城_ショップ【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75103081,
+      "Entries": [
+        "White Rappa Honjo_When Tokugawa attacks [Conversation] (Base c1360) -- 白らっぱ\u3000本城_徳川襲来時【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75103082,
+      "Entries": [
+        "White Rappa Honjo_Shop_Dragon Cough [Conversation] (Base c1360) -- 白らっぱ\u3000本城_ショップ_竜咳状態【会話】（ベースc1360）"
+      ]
+    },
+    {
+      "ID": 75200000,
+      "Entries": [
+        "Submerged Handmaiden Aunt [Conversation] (Base c1110) -- 水没侍女おば【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75200080,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister [Conversation] (Base c1110) -- 水没侍女おば_妹【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75200081,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister [Conversation] (Base c1110) -- 水没侍女おば_姉【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75200082,
+      "Entries": [
+        "Submerged Handmaiden Aunt_Sister_Gomiya [Conversation] (Base c1110) -- 水没侍女おば_姉_後宮【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75300000,
+      "Entries": [
+        "Aunt Shura Samurai [Conversation] (Base c1110) -- 修羅侍女おば【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75300080,
+      "Entries": [
+        "Shura Handmaiden Aunt_Ninja Army Invasion [Conversation] (Base c1110) -- 修羅侍女おば_忍軍襲来時【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75300081,
+      "Entries": [
+        "Aunt Shura Samurai_At the time of the Tokugawa invasion [Conversation] (Base c1110) -- 修羅侍女おば_徳川襲来時【会話】（ベースc1110）"
+      ]
+    },
+    {
+      "ID": 75400080,
+      "Entries": [
+        "Shop clerk Valley [Conversation] (Base c1120) -- ショップ店員\u3000渓谷【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 75500080,
+      "Entries": [
+        "Shop clerk Temple [Conversation] (Base c1120) -- ショップ店員\u3000寺【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 75600080,
+      "Entries": [
+        "Shop clerk Dungeon [Conversation] (Base c1120) -- ショップ店員\u3000地下牢【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 75800080,
+      "Entries": [
+        "Shop clerk Honjo [Conversation] (Base c1120) -- ショップ店員\u3000本城【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 75900080,
+      "Entries": [
+        "Shop clerk Sick village [conversation] (base c1120) -- ショップ店員\u3000病み村【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 76000080,
+      "Entries": [
+        "Shop clerk Castle _ Cliff [Conversation] (Base c1120) -- ショップ店員\u3000城下_崖上【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 76000081,
+      "Entries": [
+        "Shop clerk Castle _ Small castle tower [Conversation] (Base c1120) -- ショップ店員\u3000城下_小天守【会話】（ベースc1120）"
+      ]
+    },
+    {
+      "ID": 90109000,
+      "Entries": [
+        "For cross control verification -- クロス制御検証用"
+      ]
+    },
+    {
+      "ID": 95211000,
+      "Entries": [
+        "NTC Samurai General_Komiyama Test -- NTC 侍大将_小宮山テスト"
+      ]
+    },
+    {
+      "ID": 95221000,
+      "Entries": [
+        "NTC Samurai General_Tominaga Test -- NTC 侍大将_富永テスト"
+      ]
+    },
+    {
+      "ID": 95231000,
+      "Entries": [
+        "NTC Samurai General_Sasaki Test -- NTC 侍大将_佐々木テスト"
+      ]
+    },
+    {
+      "ID": 98000000,
+      "Entries": [
+        "Confirmation character _ Shinobi killing general purpose -- 確認キャラ_忍殺汎用"
+      ]
+    },
+    {
+      "ID": 98000001,
+      "Entries": [
+        "Confirmed character_stamina damage -- 確認キャラ_スタミナダメージ"
+      ]
+    },
+    {
+      "ID": 98200000,
+      "Entries": [
+        "Confirmation character _ Shinobi large -- 確認キャラ_忍殺大型"
+      ]
+    },
+    {
+      "ID": 98300000,
+      "Entries": [
+        "Confirmation character_Shinobi 4 pairs -- 確認キャラ_忍殺4足"
+      ]
+    },
+    {
+      "ID": 99999999,
+      "Entries": [
+        "Don&#39;t erase -- 消すべからず"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "Name": "KeyAssignDisplayParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Move operation"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Move before"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "After moving"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "move left"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "move right"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "boost"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "quick boost"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Jump / Climb"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "assault boost"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "camera operation"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera operation top"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera operation bottom"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Camera operation left"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Camera operation right"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "target assist"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "attack operation"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "left hand weapon"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "right hand weapon"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "left shoulder weapon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "right shoulder weapon"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "special operations"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "shift operation"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "repair kit"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "access"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "scan"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "weapon purge"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Choice left"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "choice right"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

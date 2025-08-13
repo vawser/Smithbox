@@ -1,0 +1,59 @@
+{
+  "Name": "EnemyShotSfxParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "General Purpose Bow: DamiPoly FROM ID2 -- 汎用弓：ダミポリID２から"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Demon Armor Bow -- デーモン鎧弓"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "General-purpose bow for lower-class soldiers (dead) -- 下級兵士（亡者）用汎用弓"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Fire arrows for lower-level soldiers (dead) -- 下級兵士（亡者）用火矢"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Est Bottle -- エスト瓶"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "General Purpose Bow: DamiPoly FROM ID200 -- 汎用弓：ダミポリID200から"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "General Purpose Bow: Rogue Skeleton (from Damipori ID201) -- 汎用弓：ローグ・スケルトン用（ダミポリID201から）"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "General Purpose Bow: DamiPoly from ID203 -- 汎用弓：ダミポリID203から"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "Name": "GameMapParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 21000000,
+      "Entries": [
+        "m21_00 Location: 0> Bright sky 1> For last"
+      ]
+    },
+    {
+      "ID": 21010000,
+      "Entries": [
+        "m21_01 Reality base: 0> Only the red moon"
+      ]
+    },
+    {
+      "ID": 22000000,
+      "Entries": [
+        "m22_00 Cemetery: 0> evening 1> night"
+      ]
+    },
+    {
+      "ID": 23000000,
+      "Entries": [
+        "m23_00 Ruins: 0> evening 1> night"
+      ]
+    },
+    {
+      "ID": 24000000,
+      "Entries": [
+        "m24_00 Saint A: 0> evening 1> night 3> Red Moon"
+      ]
+    },
+    {
+      "ID": 24010000,
+      "Entries": [
+        "m24_01 Saint B: 0> noon 1> evening 2> night 3> Red Moon"
+      ]
+    },
+    {
+      "ID": 24020000,
+      "Entries": [
+        "m24_02 Saint C: 0> Red Moon"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "m25_00 Old castle: 0> Night only"
+      ]
+    },
+    {
+      "ID": 26000000,
+      "Entries": [
+        "m26_00 Trap: 0> Night only ( exclusive )"
+      ]
+    },
+    {
+      "ID": 27000000,
+      "Entries": [
+        "m27_00 forest : 0> Night only"
+      ]
+    },
+    {
+      "ID": 28000000,
+      "Entries": [
+        "m28_00 Sacrifice: 0> evening 1> night 2>Red Moon"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "m32_00 University: 0> Night only"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "m33_00 hometown : 0> Night only (exclusive)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2711 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test data"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "test data 2"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "test data 3"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "test data 4"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Recovery of others"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Cursed Enchantment"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "black ghosting"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "poison cloud"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "ignition"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "penetrating beam"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Funnel"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Advanced enchantment"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "death cloud"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "soul touch"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "corrosion cloud"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "perfect shield"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Meteor"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "self-centered explosion"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "anti magic"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Large recovery of HP"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "revive when dead"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "regenerate"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "resuscitation"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "status ailment recovery"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "black ghost go away"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Hardstone_S_Level 1"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Hardstone_S_Level 2"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Hardstone_S_Level 3"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Hardstone_S_Level 4"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Hardstone_S_Level 5"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Hardstone_S_Level 6"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Hardstone_S_Level 7"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Hardstone_S_Level 8"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Hardstone_S_Level 9"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Hardstone_S_Level 10"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Hardstone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Hardstone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Hardstone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Hardstone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Hardstone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Hardstone_M-S_Level 6"
+      ]
+    },
+    {
+      "ID": 1106,
+      "Entries": [
+        "Hardstone_M-S_Level 7"
+      ]
+    },
+    {
+      "ID": 1107,
+      "Entries": [
+        "Hardstone_M-S_Level 8"
+      ]
+    },
+    {
+      "ID": 1108,
+      "Entries": [
+        "Hardstone_M-S_Level 9"
+      ]
+    },
+    {
+      "ID": 1109,
+      "Entries": [
+        "Hardstone_M-S_Level 10"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Hardstone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Hardstone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Hardstone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Hardstone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Hardstone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Hardstone_M-L_Level 6"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "Hardstone_M-L_Level 7"
+      ]
+    },
+    {
+      "ID": 2107,
+      "Entries": [
+        "Hardstone_M-L_Level 8"
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        "Hardstone_M-L_Level 9"
+      ]
+    },
+    {
+      "ID": 2109,
+      "Entries": [
+        "Hardstone_M-L_Level 10"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Hardstone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Hardstone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Hardstone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Hardstone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Hardstone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Hardstone_L_Level 6"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Hardstone_L_Level 7"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Hardstone_L_Level 8"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "Hardstone_L_Level 9"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "Hardstone_L_Level 10"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Hardstone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4101,
+      "Entries": [
+        "Hardstone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4102,
+      "Entries": [
+        "Hardstone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4103,
+      "Entries": [
+        "Hardstone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4104,
+      "Entries": [
+        "Hardstone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 4105,
+      "Entries": [
+        "Hardstone_XL_Level 6"
+      ]
+    },
+    {
+      "ID": 4106,
+      "Entries": [
+        "Hardstone_XL_Level 7"
+      ]
+    },
+    {
+      "ID": 4107,
+      "Entries": [
+        "Hardstone_XL_Level 8"
+      ]
+    },
+    {
+      "ID": 4108,
+      "Entries": [
+        "Hardstone_XL_Level 9"
+      ]
+    },
+    {
+      "ID": 4109,
+      "Entries": [
+        "Hardstone_XL_Level 10"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Minagi Stone_S_Level 1"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Minagi Stone_S_Level 2"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Minagi Stone_S_Level 3"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Minagi Stone_S_Level 4"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Minagi Stone_S_Level 5"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Minagi Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1111,
+      "Entries": [
+        "Minagi Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1112,
+      "Entries": [
+        "Minagi Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1113,
+      "Entries": [
+        "Minagi Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1114,
+      "Entries": [
+        "Minagi Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Minagi Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2111,
+      "Entries": [
+        "Minagi Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2112,
+      "Entries": [
+        "Minagi Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2113,
+      "Entries": [
+        "Minagi Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2114,
+      "Entries": [
+        "Minagi Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Minagi Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Minagi Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Minagi Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "Minagi Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "Minagi Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Minagi Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4111,
+      "Entries": [
+        "Minagi Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4112,
+      "Entries": [
+        "Minagi Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4113,
+      "Entries": [
+        "Minagi Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4114,
+      "Entries": [
+        "Minagi Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Mercury Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Mercury Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Mercury Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Mercury Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Mercury Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Mercury Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1121,
+      "Entries": [
+        "Mercury Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1122,
+      "Entries": [
+        "Mercury Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1123,
+      "Entries": [
+        "Mercury Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1124,
+      "Entries": [
+        "Mercury Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Mercury Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2121,
+      "Entries": [
+        "Mercury Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2122,
+      "Entries": [
+        "Mercury Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2123,
+      "Entries": [
+        "Mercury Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2124,
+      "Entries": [
+        "Mercury Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Mercury Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3121,
+      "Entries": [
+        "Mercury Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3122,
+      "Entries": [
+        "Mercury Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3123,
+      "Entries": [
+        "Mercury Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3124,
+      "Entries": [
+        "Mercury Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Mercury Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4121,
+      "Entries": [
+        "Mercury Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4122,
+      "Entries": [
+        "Mercury Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4123,
+      "Entries": [
+        "Mercury Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4124,
+      "Entries": [
+        "Mercury Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Medullite_Level 1"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Medullite_Level 2"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Medullite_Level 3"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Medullite_Level 4"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Medullite_Level 5"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Medullite_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1131,
+      "Entries": [
+        "Medullite_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1132,
+      "Entries": [
+        "Medullite_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1133,
+      "Entries": [
+        "Medullite_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1134,
+      "Entries": [
+        "Medullite_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Medullite_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2131,
+      "Entries": [
+        "Medullite_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2132,
+      "Entries": [
+        "Medullite_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2133,
+      "Entries": [
+        "Medullite_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2134,
+      "Entries": [
+        "Medullite_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Medullite_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3131,
+      "Entries": [
+        "Medullite_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3132,
+      "Entries": [
+        "Medullite_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3133,
+      "Entries": [
+        "Medullite_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3134,
+      "Entries": [
+        "Medullite_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "medulla _XL_level 1"
+      ]
+    },
+    {
+      "ID": 4131,
+      "Entries": [
+        "medulla _XL_level 2"
+      ]
+    },
+    {
+      "ID": 4132,
+      "Entries": [
+        "medulla _XL_level 3"
+      ]
+    },
+    {
+      "ID": 4133,
+      "Entries": [
+        "medulla _XL_level 4"
+      ]
+    },
+    {
+      "ID": 4134,
+      "Entries": [
+        "medulla _XL_level 5"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Dragon Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Dragon Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Dragon Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "Dragon Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Dragon Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Dragon Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1141,
+      "Entries": [
+        "Dragon Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1142,
+      "Entries": [
+        "Dragon Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1143,
+      "Entries": [
+        "Dragon Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1144,
+      "Entries": [
+        "Dragon Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Dragon Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2141,
+      "Entries": [
+        "Dragon Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2142,
+      "Entries": [
+        "Dragon Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2143,
+      "Entries": [
+        "Dragon Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2144,
+      "Entries": [
+        "Dragon Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3140,
+      "Entries": [
+        "Dragon Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3141,
+      "Entries": [
+        "Dragon Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3142,
+      "Entries": [
+        "Dragon Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3143,
+      "Entries": [
+        "Dragon Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3144,
+      "Entries": [
+        "Dragon Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Dragon Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4141,
+      "Entries": [
+        "Dragon Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4142,
+      "Entries": [
+        "Dragon Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4143,
+      "Entries": [
+        "Dragon Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4144,
+      "Entries": [
+        "Dragon Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Moonstone_Level 1"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Moonstone_Level 2"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Moonstone_Level 3"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Moonstone_Level 4"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Moonstone_Level 5"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Moonstone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1151,
+      "Entries": [
+        "Moonstone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1152,
+      "Entries": [
+        "Moonstone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1153,
+      "Entries": [
+        "Moonstone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1154,
+      "Entries": [
+        "Moonstone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Moonstone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2151,
+      "Entries": [
+        "Moonstone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2152,
+      "Entries": [
+        "Moonstone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2153,
+      "Entries": [
+        "Moonstone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2154,
+      "Entries": [
+        "Moonstone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "Moonstone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3151,
+      "Entries": [
+        "Moonstone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3152,
+      "Entries": [
+        "Moonstone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3153,
+      "Entries": [
+        "Moonstone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3154,
+      "Entries": [
+        "Moonstone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Moonstone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4151,
+      "Entries": [
+        "Moonstone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4152,
+      "Entries": [
+        "Moonstone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4153,
+      "Entries": [
+        "Moonstone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4154,
+      "Entries": [
+        "Moonstone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Sharp Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Sharp Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Sharp Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Sharp Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Sharp Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Sharp Stone_Level 6"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Sharp Stone_Level 7"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "Sharp Stone_Level 8"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "Sharp Stone_Level 9"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "Sharp Stone_Level 10"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Sharp Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1161,
+      "Entries": [
+        "Sharp Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1162,
+      "Entries": [
+        "Sharp Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1163,
+      "Entries": [
+        "Sharp Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1164,
+      "Entries": [
+        "Sharp Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 1165,
+      "Entries": [
+        "Sharp Stone_M-S_Level 6"
+      ]
+    },
+    {
+      "ID": 1166,
+      "Entries": [
+        "Sharp Stone_M-S_Level 7"
+      ]
+    },
+    {
+      "ID": 1167,
+      "Entries": [
+        "Sharp Stone_M-S_Level 8"
+      ]
+    },
+    {
+      "ID": 1168,
+      "Entries": [
+        "Sharp Stone_M-S_Level 9"
+      ]
+    },
+    {
+      "ID": 1169,
+      "Entries": [
+        "Sharp Stone_M-S_Level 10"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Sharp Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2161,
+      "Entries": [
+        "Sharp Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2162,
+      "Entries": [
+        "Sharp Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2163,
+      "Entries": [
+        "Sharp Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2164,
+      "Entries": [
+        "Sharp Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 2165,
+      "Entries": [
+        "Sharp Stone_M-L_Level 6"
+      ]
+    },
+    {
+      "ID": 2166,
+      "Entries": [
+        "Sharp Stone_M-L_Level 7"
+      ]
+    },
+    {
+      "ID": 2167,
+      "Entries": [
+        "Sharp Stone_M-L_Level 8"
+      ]
+    },
+    {
+      "ID": 2168,
+      "Entries": [
+        "Sharp Stone_M-L_Level 9"
+      ]
+    },
+    {
+      "ID": 2169,
+      "Entries": [
+        "Sharp Stone_M-L_Level 10"
+      ]
+    },
+    {
+      "ID": 3160,
+      "Entries": [
+        "Sharp Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3161,
+      "Entries": [
+        "Sharp Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3162,
+      "Entries": [
+        "Sharp Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3163,
+      "Entries": [
+        "Sharp Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3164,
+      "Entries": [
+        "Sharp Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 3165,
+      "Entries": [
+        "Sharp Stone_L_Level 6"
+      ]
+    },
+    {
+      "ID": 3166,
+      "Entries": [
+        "Sharp Stone_L_Level 7"
+      ]
+    },
+    {
+      "ID": 3167,
+      "Entries": [
+        "Sharp Stone_L_Level 8"
+      ]
+    },
+    {
+      "ID": 3168,
+      "Entries": [
+        "Sharp Stone_L_Level 9"
+      ]
+    },
+    {
+      "ID": 3169,
+      "Entries": [
+        "Sharp Stone_L_Level 10"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Sharp Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4161,
+      "Entries": [
+        "Sharp Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4162,
+      "Entries": [
+        "Sharp Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4163,
+      "Entries": [
+        "Sharp Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4164,
+      "Entries": [
+        "Sharp Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 4165,
+      "Entries": [
+        "Sharp Stone_XL_Level 6"
+      ]
+    },
+    {
+      "ID": 4166,
+      "Entries": [
+        "Sharp Stone_XL_Level 7"
+      ]
+    },
+    {
+      "ID": 4167,
+      "Entries": [
+        "Sharp Stone_XL_Level 8"
+      ]
+    },
+    {
+      "ID": 4168,
+      "Entries": [
+        "Sharp Stone_XL_Level 9"
+      ]
+    },
+    {
+      "ID": 4169,
+      "Entries": [
+        "Sharp Stone_XL_Level 10"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Bladestone_Level 1"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Bladestone_Level 2"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Bladestone_Level 3"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "Bladestone_Level 4"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "Bladestone_Level 5"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Bladestone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        "Bladestone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1172,
+      "Entries": [
+        "Bladestone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1173,
+      "Entries": [
+        "Bladestone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1174,
+      "Entries": [
+        "Bladestone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Bladestone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2171,
+      "Entries": [
+        "Bladestone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2172,
+      "Entries": [
+        "Bladestone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2173,
+      "Entries": [
+        "Bladestone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2174,
+      "Entries": [
+        "Bladestone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3170,
+      "Entries": [
+        "Bladestone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3171,
+      "Entries": [
+        "Bladestone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3172,
+      "Entries": [
+        "Bladestone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3173,
+      "Entries": [
+        "Bladestone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3174,
+      "Entries": [
+        "Bladestone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Bladestone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4171,
+      "Entries": [
+        "Bladestone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4172,
+      "Entries": [
+        "Bladestone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4173,
+      "Entries": [
+        "Bladestone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4174,
+      "Entries": [
+        "Bladestone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Sucking Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Sucking Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Sucking Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "Sucking Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "Sucking Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Sucking Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1181,
+      "Entries": [
+        "Sucking Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1182,
+      "Entries": [
+        "Sucking Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1183,
+      "Entries": [
+        "Sucking Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1184,
+      "Entries": [
+        "Sucking Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Sucking Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2181,
+      "Entries": [
+        "Sucking Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2182,
+      "Entries": [
+        "Sucking Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2183,
+      "Entries": [
+        "Sucking Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2184,
+      "Entries": [
+        "Sucking Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Sucking Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3181,
+      "Entries": [
+        "Sucking Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3182,
+      "Entries": [
+        "Sucking Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3183,
+      "Entries": [
+        "Sucking Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3184,
+      "Entries": [
+        "Sucking Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Sucking Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4181,
+      "Entries": [
+        "Sucking Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4182,
+      "Entries": [
+        "Sucking Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4183,
+      "Entries": [
+        "Sucking Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4184,
+      "Entries": [
+        "Sucking Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Moonstone_Level 1"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "Moonstone_Level 2"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Moonstone_Level 3"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Moonstone_Level 4"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Moonstone_Level 5"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Moonstone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "Moonstone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1192,
+      "Entries": [
+        "Moonstone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1193,
+      "Entries": [
+        "Moonstone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1194,
+      "Entries": [
+        "Moonstone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Moonstone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2191,
+      "Entries": [
+        "Moonstone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2192,
+      "Entries": [
+        "Moonstone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2193,
+      "Entries": [
+        "Moonstone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2194,
+      "Entries": [
+        "Moonstone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3190,
+      "Entries": [
+        "Moonstone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3191,
+      "Entries": [
+        "Moonstone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3192,
+      "Entries": [
+        "Moonstone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3193,
+      "Entries": [
+        "Moonstone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3194,
+      "Entries": [
+        "Moonstone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Moonstone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4191,
+      "Entries": [
+        "Moonstone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4192,
+      "Entries": [
+        "Moonstone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4193,
+      "Entries": [
+        "Moonstone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4194,
+      "Entries": [
+        "Moonstone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Nibi Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Nibi Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Nibi Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Nebi Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Nibi Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Bistone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Snake Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Bistone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Bistone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Snake Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Bistone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Bistone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Snake Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Bistone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Snake Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Nibi Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Nibi Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Bistone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Bistone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Nibi Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Bistone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "Bistone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4202,
+      "Entries": [
+        "Bistone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4203,
+      "Entries": [
+        "Bistone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4204,
+      "Entries": [
+        "Bistone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Glowstone_Level 1"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Glowstone_Level 2"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Glowstone_Level 3"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Glowstone_Level 4"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Glowstone_Level 5"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Glowstone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Glowstone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Glowstone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1213,
+      "Entries": [
+        "Glowstone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1214,
+      "Entries": [
+        "Glowstone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Glowstone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Glowstone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2212,
+      "Entries": [
+        "Glowstone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2213,
+      "Entries": [
+        "Glowstone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2214,
+      "Entries": [
+        "Glowstone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Glowstone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "Glowstone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3212,
+      "Entries": [
+        "Glowstone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3213,
+      "Entries": [
+        "Glowstone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3214,
+      "Entries": [
+        "Glowstone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Glowstone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4211,
+      "Entries": [
+        "Glowstone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4212,
+      "Entries": [
+        "Glowstone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4213,
+      "Entries": [
+        "Glowstone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4214,
+      "Entries": [
+        "Glowstone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Black Steel Wire_Level 1"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Black Steel Wire_Level 2"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Black Steel Wire_Level 3"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Black Steel Wire_Level 4"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Gold Steel Wire_Level 1"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Gold Steel Wire_Level 2"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Gold Steel Wire_Level 3"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Spider Thread Steel Wire_Level 1"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Spider Thread Steel Wire_Level 2"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Spider Thread Steel Wire_Level 3"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Spider Thread Steel Wire_Level 4"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Spider Thread Steel Wire_Level 5"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1241,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1242,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1243,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1244,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2241,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2242,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2243,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2244,
+      "Entries": [
+        "Spider Thread Steel Wirestone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3240,
+      "Entries": [
+        "Spider Thread Steel Wirestone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3241,
+      "Entries": [
+        "Spider Thread Steel Wirestone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3242,
+      "Entries": [
+        "Spider Thread Steel Wirestone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3243,
+      "Entries": [
+        "Spider Thread Steel Wirestone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3244,
+      "Entries": [
+        "Spider Thread Steel Wirestone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4240,
+      "Entries": [
+        "Spider Thread Steel Wirestone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4241,
+      "Entries": [
+        "Spider Thread Steel Wirestone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4242,
+      "Entries": [
+        "Spider Thread Steel Wirestone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4243,
+      "Entries": [
+        "Spider Thread Steel Wirestone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4244,
+      "Entries": [
+        "Spider Thread Steel Wirestone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Magic Shield Stone_Level 1"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Magic Shield Stone_Level 2"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "Magic Shield Stone_Level 3"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Magic Shield Stone_Level 4"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "Magic Shield Stone_Level 5"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Magic Shield Stone_M-S_Level 1"
+      ]
+    },
+    {
+      "ID": 1251,
+      "Entries": [
+        "Magic Shield Stone_M-S_Level 2"
+      ]
+    },
+    {
+      "ID": 1252,
+      "Entries": [
+        "Magic Shield Stone_M-S_Level 3"
+      ]
+    },
+    {
+      "ID": 1253,
+      "Entries": [
+        "Magic Shield Stone_M-S_Level 4"
+      ]
+    },
+    {
+      "ID": 1254,
+      "Entries": [
+        "Magic Shield Stone_M-S_Level 5"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "Magic Shield Stone_M-L_Level 1"
+      ]
+    },
+    {
+      "ID": 2251,
+      "Entries": [
+        "Magic Shield Stone_M-L_Level 2"
+      ]
+    },
+    {
+      "ID": 2252,
+      "Entries": [
+        "Magic Shield Stone_M-L_Level 3"
+      ]
+    },
+    {
+      "ID": 2253,
+      "Entries": [
+        "Magic Shield Stone_M-L_Level 4"
+      ]
+    },
+    {
+      "ID": 2254,
+      "Entries": [
+        "Magic Shield Stone_M-L_Level 5"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Magic Shield Stone_L_Level 1"
+      ]
+    },
+    {
+      "ID": 3251,
+      "Entries": [
+        "Magic Shield Stone_L_Level 2"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "Magic Shield Stone_L_Level 3"
+      ]
+    },
+    {
+      "ID": 3253,
+      "Entries": [
+        "Magic Shield Stone_L_Level 4"
+      ]
+    },
+    {
+      "ID": 3254,
+      "Entries": [
+        "Magic Shield Stone_L_Level 5"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "Magic Shield Stone_XL_Level 1"
+      ]
+    },
+    {
+      "ID": 4251,
+      "Entries": [
+        "Magic Shield Stone_XL_Level 2"
+      ]
+    },
+    {
+      "ID": 4252,
+      "Entries": [
+        "Magic Shield Stone_XL_Level 3"
+      ]
+    },
+    {
+      "ID": 4253,
+      "Entries": [
+        "Magic Shield Stone_XL_Level 4"
+      ]
+    },
+    {
+      "ID": 4254,
+      "Entries": [
+        "Magic Shield Stone_XL_Level 5"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "Maruishi_Level 1"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Maruishi_Level 2"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Maruishi_Level 3"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Lendl DS"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Lendl DS + Demon Brand"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Lendl DS + Soul Brand"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Phalanx DS"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Referee DS"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Storm Warrior DS"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Storm Beast DS"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Chimera DS"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Old Man in Yellow DS"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Libra DS"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Large Spider DS"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Fat Demon DS"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Ore Spirit DS"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "[Reinforcement reset item]"
+      ]
+    }
+  ]
+}

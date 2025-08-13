@@ -1,0 +1,2513 @@
+{
+  "Name": "AttackActionParam_PC",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "nothing"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "FNR right hand_rifle (weapon transformation test)"
+      ]
+    },
+    {
+      "ID": 291100,
+      "Entries": [
+        "FNR right hand_shotgun"
+      ]
+    },
+    {
+      "ID": 291200,
+      "Entries": [
+        "FNR right hand_machine gun"
+      ]
+    },
+    {
+      "ID": 291300,
+      "Entries": [
+        "FNR right hand_bazooka"
+      ]
+    },
+    {
+      "ID": 291400,
+      "Entries": [
+        "FNR Right Hand_Handgun"
+      ]
+    },
+    {
+      "ID": 291500,
+      "Entries": [
+        "FNR Right Hand_Railgun"
+      ]
+    },
+    {
+      "ID": 291600,
+      "Entries": [
+        "FNR Right hand_Cannon"
+      ]
+    },
+    {
+      "ID": 291700,
+      "Entries": [
+        "FNR right hand_laser rifle"
+      ]
+    },
+    {
+      "ID": 291800,
+      "Entries": [
+        "FNR right hand_rifle blade"
+      ]
+    },
+    {
+      "ID": 291900,
+      "Entries": [
+        "FNR right hand_rifle (weapon switching test)"
+      ]
+    },
+    {
+      "ID": 292000,
+      "Entries": [
+        "FNR right shoulder"
+      ]
+    },
+    {
+      "ID": 292100,
+      "Entries": [
+        "FNR Right Shoulder_Bayonet (Weapon Transformation Test)"
+      ]
+    },
+    {
+      "ID": 292800,
+      "Entries": [
+        "FNR Right Shoulder_Combined Weapon"
+      ]
+    },
+    {
+      "ID": 294800,
+      "Entries": [
+        "FNR right shoulder_combined weapon (test model)"
+      ]
+    },
+    {
+      "ID": 292900,
+      "Entries": [
+        "FNR right hand_blade (weapon switching test)"
+      ]
+    },
+    {
+      "ID": 292700,
+      "Entries": [
+        "FNR right hand_blade (weapon transformation test)"
+      ]
+    },
+    {
+      "ID": 292600,
+      "Entries": [
+        "FNR left hand_blade (weapon transformation test)"
+      ]
+    },
+    {
+      "ID": 299000,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_double hanger)"
+      ]
+    },
+    {
+      "ID": 299100,
+      "Entries": [
+        "FNR weapon mount parts (right shoulder_single hanger)"
+      ]
+    },
+    {
+      "ID": 299200,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_double hanger)"
+      ]
+    },
+    {
+      "ID": 299300,
+      "Entries": [
+        "FNR weapon mount parts (left shoulder_single hanger)"
+      ]
+    },
+    {
+      "ID": 293000,
+      "Entries": [
+        "FNR left shoulder"
+      ]
+    },
+    {
+      "ID": 293100,
+      "Entries": [
+        "FNR Left Shoulder_Gatling (Weapon Animation Test)"
+      ]
+    },
+    {
+      "ID": 293200,
+      "Entries": [
+        "FNR Left Shoulder_Cannon (Weapon Animation Test)"
+      ]
+    },
+    {
+      "ID": 293300,
+      "Entries": [
+        "FNR left shoulder_8 vertical missiles"
+      ]
+    },
+    {
+      "ID": 293500,
+      "Entries": [
+        "FNR left shoulder_short range missile"
+      ]
+    },
+    {
+      "ID": 293700,
+      "Entries": [
+        "FNR left shoulder_point-specific missile"
+      ]
+    },
+    {
+      "ID": 293800,
+      "Entries": [
+        "FNR left shoulder_AI missile"
+      ]
+    },
+    {
+      "ID": 293600,
+      "Entries": [
+        "FNR Left Shoulder_Gatling & Vertical Missile"
+      ]
+    },
+    {
+      "ID": 293400,
+      "Entries": [
+        "FNR left shoulder twin missile"
+      ]
+    },
+    {
+      "ID": 293900,
+      "Entries": [
+        "FNR left shoulder_2 stage launch missile"
+      ]
+    },
+    {
+      "ID": 1291000,
+      "Entries": [
+        "FNR Right hand_Rifle_After weapon switch"
+      ]
+    },
+    {
+      "ID": 1293100,
+      "Entries": [
+        "FNR left shoulder_Gatling_after weapon switching (weapon animation test)"
+      ]
+    },
+    {
+      "ID": 1293200,
+      "Entries": [
+        "FNR Left Shoulder_Cannon_After weapon switching (weapon animation test)"
+      ]
+    },
+    {
+      "ID": 2190000,
+      "Entries": [
+        "FNR Shield"
+      ]
+    },
+    {
+      "ID": 2191000,
+      "Entries": [
+        "For FNR shield destruction test"
+      ]
+    },
+    {
+      "ID": 2191500,
+      "Entries": [
+        "FNR shield gimmick test 01"
+      ]
+    },
+    {
+      "ID": 2191600,
+      "Entries": [
+        "FNR shield gimmick test 02"
+      ]
+    },
+    {
+      "ID": 2192000,
+      "Entries": [
+        "FNR Shield Temporary Troll"
+      ]
+    },
+    {
+      "ID": 2193000,
+      "Entries": [
+        "FNR Shield Laser Shield"
+      ]
+    },
+    {
+      "ID": 2193100,
+      "Entries": [
+        "FNR Shield Laser Shield"
+      ]
+    },
+    {
+      "ID": 2194000,
+      "Entries": [
+        "FNR Stealth Shield"
+      ]
+    },
+    {
+      "ID": 2195000,
+      "Entries": [
+        "FNR PA Shield"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "FNR aim mode (dummy parts)"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "FNR stealth cloak test (dummy parts)"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "FNR vehicle confirmation parts"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "[old] FNR Two-handed confirmation test"
+      ]
+    },
+    {
+      "ID": 3000100,
+      "Entries": [
+        "[old] FNR Laser SFX confirmation test"
+      ]
+    },
+    {
+      "ID": 3000200,
+      "Entries": [
+        "[old] [9 inside] FNR right hand_Rezasuna_SFX confirmation"
+      ]
+    },
+    {
+      "ID": 3000300,
+      "Entries": [
+        "[old] [9 inside] FNR right hand_Bazooka_for checking combustion settings"
+      ]
+    },
+    {
+      "ID": 3001000,
+      "Entries": [
+        "FNR\u3000Both shoulders_left cannon"
+      ]
+    },
+    {
+      "ID": 3001100,
+      "Entries": [
+        "FNR\u3000Both shoulders_Right cannon"
+      ]
+    },
+    {
+      "ID": 3001200,
+      "Entries": [
+        "FNR left shoulder_sniper cannon (L1: aim mode)"
+      ]
+    },
+    {
+      "ID": 3001600,
+      "Entries": [
+        "FNR Right Shoulder_Sniper Cannon (L1: Aim Mode)"
+      ]
+    },
+    {
+      "ID": 3001300,
+      "Entries": [
+        "FNR left shoulder_cannon (L1: reload)"
+      ]
+    },
+    {
+      "ID": 3001400,
+      "Entries": [
+        "FNR left shoulder_cannon"
+      ]
+    },
+    {
+      "ID": 3001500,
+      "Entries": [
+        "FNR Right Shoulder_Cannon"
+      ]
+    },
+    {
+      "ID": 3002200,
+      "Entries": [
+        "FNR Right hand_Rifle (L1: Aim mode)"
+      ]
+    },
+    {
+      "ID": 3002300,
+      "Entries": [
+        "FNR right hand_rifle (L1: reload)"
+      ]
+    },
+    {
+      "ID": 3002400,
+      "Entries": [
+        "FNR right hand_rifle (equipped with left shoulder cannon)"
+      ]
+    },
+    {
+      "ID": 3002500,
+      "Entries": [
+        "FNR right hand_rifle (equipped with right shoulder cannon)"
+      ]
+    },
+    {
+      "ID": 3003000,
+      "Entries": [
+        "FNR left hand_PA shield"
+      ]
+    },
+    {
+      "ID": 3003100,
+      "Entries": [
+        "FNR left hand_laser whip"
+      ]
+    },
+    {
+      "ID": 3003200,
+      "Entries": [
+        "FNR left hand_laser whip (equipment location: left hand 1)"
+      ]
+    },
+    {
+      "ID": 3004000,
+      "Entries": [
+        "FNR Right Hand_Handgun (One Hand: Quick Shot)"
+      ]
+    },
+    {
+      "ID": 3004100,
+      "Entries": [
+        "FNR left hand_blade (one hand: quick shot)"
+      ]
+    },
+    {
+      "ID": 3004200,
+      "Entries": [
+        "FNR right hand_hand gun (both hands: double trigger)"
+      ]
+    },
+    {
+      "ID": 3004300,
+      "Entries": [
+        "FNR left hand_handgun (both hands: double trigger)"
+      ]
+    },
+    {
+      "ID": 3005000,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: high laser)"
+      ]
+    },
+    {
+      "ID": 3005100,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: shotgun)"
+      ]
+    },
+    {
+      "ID": 3005200,
+      "Entries": [
+        "FNR right hand_laser rifle (after charging: plasma gun)"
+      ]
+    },
+    {
+      "ID": 3006000,
+      "Entries": [
+        "FNR left shoulder_orbit cannon"
+      ]
+    },
+    {
+      "ID": 3006100,
+      "Entries": [
+        "FNR\u3000Left shoulder_surface control missile"
+      ]
+    },
+    {
+      "ID": 3006200,
+      "Entries": [
+        "FNR left hand_chain hammer"
+      ]
+    },
+    {
+      "ID": 3006300,
+      "Entries": [
+        "FNR right hand_silencer rifle"
+      ]
+    },
+    {
+      "ID": 3007000,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (left dummy)"
+      ]
+    },
+    {
+      "ID": 3007100,
+      "Entries": [
+        "FNR left shoulder_proximity fuze missile"
+      ]
+    },
+    {
+      "ID": 3007200,
+      "Entries": [
+        "FNR left shoulder_plasma missile"
+      ]
+    },
+    {
+      "ID": 3007300,
+      "Entries": [
+        "FNR left shoulder_multi missile"
+      ]
+    },
+    {
+      "ID": 3007400,
+      "Entries": [
+        "FNR left shoulder_rocket"
+      ]
+    },
+    {
+      "ID": 3007900,
+      "Entries": [
+        "FNR\u3000Both shoulders_Vertical missile (right)"
+      ]
+    },
+    {
+      "ID": 3008000,
+      "Entries": [
+        "FNR right hand_hand missile"
+      ]
+    },
+    {
+      "ID": 3008100,
+      "Entries": [
+        "FNR Right hand_Hand rocket"
+      ]
+    },
+    {
+      "ID": 3008200,
+      "Entries": [
+        "FNR right hand_sniper rifle"
+      ]
+    },
+    {
+      "ID": 3008300,
+      "Entries": [
+        "FNR right hand_plasma rifle"
+      ]
+    },
+    {
+      "ID": 3008400,
+      "Entries": [
+        "FNR Right Hand_Guided Bullet Rifle"
+      ]
+    },
+    {
+      "ID": 3008500,
+      "Entries": [
+        "FNR right hand_pulse machine gun"
+      ]
+    },
+    {
+      "ID": 3009000,
+      "Entries": [
+        "FNR right shoulder_short range missile"
+      ]
+    },
+    {
+      "ID": 3009100,
+      "Entries": [
+        "FNR right shoulder_point-specific missile"
+      ]
+    },
+    {
+      "ID": 3009200,
+      "Entries": [
+        "FNR Right Shoulder_AI Missile"
+      ]
+    },
+    {
+      "ID": 3009300,
+      "Entries": [
+        "FNR Right Shoulder_Orbit Cannon"
+      ]
+    },
+    {
+      "ID": 3009400,
+      "Entries": [
+        "FNR right shoulder_surface control missile"
+      ]
+    },
+    {
+      "ID": 3009500,
+      "Entries": [
+        "FNR Right Shoulder_Proximity Fuze Missile"
+      ]
+    },
+    {
+      "ID": 3009600,
+      "Entries": [
+        "FNR Right Shoulder_Plasma Missile"
+      ]
+    },
+    {
+      "ID": 3009700,
+      "Entries": [
+        "FNR Right Shoulder_Multi Missile"
+      ]
+    },
+    {
+      "ID": 3009800,
+      "Entries": [
+        "FNR Right Shoulder_Rocket"
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "[old] FNR two-handed confirmation test (after switching weapons)"
+      ]
+    },
+    {
+      "ID": 3010100,
+      "Entries": [
+        "[old] FNR laser SFX confirmation test (after weapon switching)"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "FNR left hand_rifle"
+      ]
+    },
+    {
+      "ID": 3020100,
+      "Entries": [
+        "FNR left hand_bazooka"
+      ]
+    },
+    {
+      "ID": 3020200,
+      "Entries": [
+        "FNR left hand_sniper rifle"
+      ]
+    },
+    {
+      "ID": 3100000,
+      "Entries": [
+        "FNR Core Special Features_Assault Armor"
+      ]
+    },
+    {
+      "ID": 3100100,
+      "Entries": [
+        "FNR Core Special Features_Blade Strengthening"
+      ]
+    },
+    {
+      "ID": 3800000,
+      "Entries": [
+        "FNR right hand_rifle (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3800100,
+      "Entries": [
+        "FNR left hand_rifle (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3800200,
+      "Entries": [
+        "FNR left hand_bazooka (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3800300,
+      "Entries": [
+        "FNR left hand_railgun (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3800400,
+      "Entries": [
+        "FNR left hand_stealth shield (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3800500,
+      "Entries": [
+        "FNR left hand_blade (left and right weapon switching test)"
+      ]
+    },
+    {
+      "ID": 3900000,
+      "Entries": [
+        "FNR Right Hand Rifle +1 Kira Special"
+      ]
+    },
+    {
+      "ID": 3900100,
+      "Entries": [
+        "FNR Right Hand_Bazooka +1 Kira Special"
+      ]
+    },
+    {
+      "ID": 3900200,
+      "Entries": [
+        "FNR Right hand_Suna +1 Kira Special"
+      ]
+    },
+    {
+      "ID": 3901000,
+      "Entries": [
+        "FNR Right hand_Rifle +1 Enhancement difference"
+      ]
+    },
+    {
+      "ID": 3901100,
+      "Entries": [
+        "FNR Right hand_Bazooka +1 Enhancement difference"
+      ]
+    },
+    {
+      "ID": 3901200,
+      "Entries": [
+        "FNR Right hand_Suna +1 Enhancement difference"
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        "FNR left shoulder_short range missile (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4001100,
+      "Entries": [
+        "FNR right shoulder_short range missile (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4001200,
+      "Entries": [
+        "FNR left shoulder_rocket (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4001300,
+      "Entries": [
+        "FNR Right Shoulder_Rocket (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4001400,
+      "Entries": [
+        "FNR left shoulder_cannon (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4001500,
+      "Entries": [
+        "FNR right shoulder_cannon (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4005000,
+      "Entries": [
+        "FNR right hand_rifle (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4006000,
+      "Entries": [
+        "FNR left hand_plasma rifle (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4006100,
+      "Entries": [
+        "FNR left hand_pulse machine gun (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4007000,
+      "Entries": [
+        "FNR stealth shield (equipped with quadruped turret mode)"
+      ]
+    },
+    {
+      "ID": 4101200,
+      "Entries": [
+        "FNR Right hand_Rifle_Initial equipment"
+      ]
+    },
+    {
+      "ID": 4101300,
+      "Entries": [
+        "FNR left hand_chain hammer_initial equipment"
+      ]
+    },
+    {
+      "ID": 4101400,
+      "Entries": [
+        "FNR left hand_blade_initial equipment"
+      ]
+    },
+    {
+      "ID": 4102000,
+      "Entries": [
+        "FNR Right hand_Rifle_Weapon size confirmation"
+      ]
+    },
+    {
+      "ID": 4102100,
+      "Entries": [
+        "FNR Right hand_Bazooka_Weapon size confirmation"
+      ]
+    },
+    {
+      "ID": 4102200,
+      "Entries": [
+        "FNR Right hand_Snap_Weapon_Size confirmation"
+      ]
+    },
+    {
+      "ID": 4102300,
+      "Entries": [
+        "FNR right hand_machine gun_size confirmation"
+      ]
+    },
+    {
+      "ID": 4102400,
+      "Entries": [
+        "FNR Right hand_Handgun_Size confirmation"
+      ]
+    },
+    {
+      "ID": 4102500,
+      "Entries": [
+        "FNR Right hand_lower weapon_weapon size confirmation"
+      ]
+    },
+    {
+      "ID": 4102600,
+      "Entries": [
+        "FNR Left hand_lower weapon_weapon size confirmation"
+      ]
+    },
+    {
+      "ID": 4102700,
+      "Entries": [
+        "FNR left hand_pulse machine gun"
+      ]
+    },
+    {
+      "ID": 4102800,
+      "Entries": [
+        "FNR left hand_blade_initial equipment"
+      ]
+    },
+    {
+      "ID": 4102900,
+      "Entries": [
+        "FNR Right hand_Hand rocket"
+      ]
+    },
+    {
+      "ID": 4103000,
+      "Entries": [
+        "FNR right hand_machine gun"
+      ]
+    },
+    {
+      "ID": 4103100,
+      "Entries": [
+        "FNR Right hand_Gatling gun"
+      ]
+    },
+    {
+      "ID": 4103200,
+      "Entries": [
+        "FNR\u3000Right Hand_Flamethrower"
+      ]
+    },
+    {
+      "ID": 4103300,
+      "Entries": [
+        "FNR right hand_irradiation laser"
+      ]
+    },
+    {
+      "ID": 4103400,
+      "Entries": [
+        "FNR left hand pile"
+      ]
+    },
+    {
+      "ID": 4104000,
+      "Entries": [
+        "FNR left shoulder_Small missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104100,
+      "Entries": [
+        "FNR right shoulder_Small missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104200,
+      "Entries": [
+        "FNR left shoulder_medium missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104300,
+      "Entries": [
+        "FNR right shoulder_medium missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104400,
+      "Entries": [
+        "FNR left shoulder_Large missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104500,
+      "Entries": [
+        "FNR right shoulder_Large missile size confirmation"
+      ]
+    },
+    {
+      "ID": 4104700,
+      "Entries": [
+        "FNR Right Shoulder_Rocket"
+      ]
+    },
+    {
+      "ID": 4104800,
+      "Entries": [
+        "FNR left shoulder_rocket"
+      ]
+    },
+    {
+      "ID": 4104900,
+      "Entries": [
+        "FNR Right Shoulder_Cannon"
+      ]
+    },
+    {
+      "ID": 4105000,
+      "Entries": [
+        "FNR left shoulder_cannon"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "FNR Rifle"
+      ]
+    },
+    {
+      "ID": 5000100,
+      "Entries": [
+        "FNR assault rifle"
+      ]
+    },
+    {
+      "ID": 5000200,
+      "Entries": [
+        "FNR machine gun"
+      ]
+    },
+    {
+      "ID": 5000300,
+      "Entries": [
+        "FNR Gatling Gun"
+      ]
+    },
+    {
+      "ID": 5000400,
+      "Entries": [
+        "FNR Bazooka"
+      ]
+    },
+    {
+      "ID": 5000500,
+      "Entries": [
+        "FNR Shotgun"
+      ]
+    },
+    {
+      "ID": 5000600,
+      "Entries": [
+        "FNR hand missile"
+      ]
+    },
+    {
+      "ID": 5000700,
+      "Entries": [
+        "FNR hand rocket"
+      ]
+    },
+    {
+      "ID": 5000800,
+      "Entries": [
+        "FNR Grenade Rifle"
+      ]
+    },
+    {
+      "ID": 5000900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser)"
+      ]
+    },
+    {
+      "ID": 5001000,
+      "Entries": [
+        "FNR plasma rifle"
+      ]
+    },
+    {
+      "ID": 5001100,
+      "Entries": [
+        "FNR Handgun"
+      ]
+    },
+    {
+      "ID": 5001200,
+      "Entries": [
+        "FNR large caliber handgun"
+      ]
+    },
+    {
+      "ID": 5001300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle"
+      ]
+    },
+    {
+      "ID": 5001400,
+      "Entries": [
+        "FNR Flamethrower"
+      ]
+    },
+    {
+      "ID": 5001500,
+      "Entries": [
+        "FNR irradiation laser"
+      ]
+    },
+    {
+      "ID": 5001600,
+      "Entries": [
+        "FNR bolt action rifle"
+      ]
+    },
+    {
+      "ID": 5001700,
+      "Entries": [
+        "FNR 3-point burst rifle"
+      ]
+    },
+    {
+      "ID": 5001800,
+      "Entries": [
+        "[test] FNR semi-automatic rifle (with charge shot)"
+      ]
+    },
+    {
+      "ID": 5005000,
+      "Entries": [
+        "FNR left hand_blade"
+      ]
+    },
+    {
+      "ID": 5005100,
+      "Entries": [
+        "FNR left hand_laser whip"
+      ]
+    },
+    {
+      "ID": 5005200,
+      "Entries": [
+        "FNR left hand_chain hammer"
+      ]
+    },
+    {
+      "ID": 5005300,
+      "Entries": [
+        "FNR left hand pile"
+      ]
+    },
+    {
+      "ID": 5005400,
+      "Entries": [
+        "FNR left hand_beam naginata"
+      ]
+    },
+    {
+      "ID": 5005500,
+      "Entries": [
+        "FNR left hand_PA breaker"
+      ]
+    },
+    {
+      "ID": 5005600,
+      "Entries": [
+        "FNR left hand_plasma broadsword"
+      ]
+    },
+    {
+      "ID": 5005700,
+      "Entries": [
+        "FNR left hand_explosion pile"
+      ]
+    },
+    {
+      "ID": 5005800,
+      "Entries": [
+        "FNR left hand_lightweight continuous rapier"
+      ]
+    },
+    {
+      "ID": 5005900,
+      "Entries": [
+        "FNR left hand_laser lance"
+      ]
+    },
+    {
+      "ID": 5006000,
+      "Entries": [
+        "FNR left hand_chainsaw"
+      ]
+    },
+    {
+      "ID": 5006100,
+      "Entries": [
+        "FNR left hand_dagger"
+      ]
+    },
+    {
+      "ID": 5006200,
+      "Entries": [
+        "[test] FNR left hand_PA Breaker (strong attack finish version)"
+      ]
+    },
+    {
+      "ID": 5006400,
+      "Entries": [
+        "FNR left hand_electromagnetic baton"
+      ]
+    },
+    {
+      "ID": 5100000,
+      "Entries": [
+        "FNR Rifle (two-gun)"
+      ]
+    },
+    {
+      "ID": 5100100,
+      "Entries": [
+        "FNR Rifle (for curved shooting confirmation)"
+      ]
+    },
+    {
+      "ID": 5100200,
+      "Entries": [
+        "FNR Gatling Gun"
+      ]
+    },
+    {
+      "ID": 5100300,
+      "Entries": [
+        "FNR Handgun"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "FNR Rifle"
+      ]
+    },
+    {
+      "ID": 5500100,
+      "Entries": [
+        "FNR assault rifle"
+      ]
+    },
+    {
+      "ID": 5500200,
+      "Entries": [
+        "FNR machine gun"
+      ]
+    },
+    {
+      "ID": 5500300,
+      "Entries": [
+        "FNR Gatling Gun"
+      ]
+    },
+    {
+      "ID": 5500400,
+      "Entries": [
+        "FNR Bazooka"
+      ]
+    },
+    {
+      "ID": 5500500,
+      "Entries": [
+        "FNR Shotgun"
+      ]
+    },
+    {
+      "ID": 5500600,
+      "Entries": [
+        "FNR hand missile"
+      ]
+    },
+    {
+      "ID": 5500700,
+      "Entries": [
+        "FNR hand rocket"
+      ]
+    },
+    {
+      "ID": 5500800,
+      "Entries": [
+        "FNR Grenade Rifle"
+      ]
+    },
+    {
+      "ID": 5500900,
+      "Entries": [
+        "FNR laser rifle (after charging: high laser)"
+      ]
+    },
+    {
+      "ID": 5501000,
+      "Entries": [
+        "FNR plasma rifle"
+      ]
+    },
+    {
+      "ID": 5501100,
+      "Entries": [
+        "FNR Handgun"
+      ]
+    },
+    {
+      "ID": 5501200,
+      "Entries": [
+        "FNR large caliber handgun"
+      ]
+    },
+    {
+      "ID": 5501300,
+      "Entries": [
+        "FNR Vibration Pulse Rifle"
+      ]
+    },
+    {
+      "ID": 5501400,
+      "Entries": [
+        "FNR Flamethrower"
+      ]
+    },
+    {
+      "ID": 5501500,
+      "Entries": [
+        "FNR irradiation laser"
+      ]
+    },
+    {
+      "ID": 5501600,
+      "Entries": [
+        "FNR bolt action rifle"
+      ]
+    },
+    {
+      "ID": 5501700,
+      "Entries": [
+        "FNR 3-point burst rifle"
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Right hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6001100,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Right hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6001500,
+      "Entries": [
+        "FNR Weapon Arm_Rockman style: Left hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6001600,
+      "Entries": [
+        "FNR Weapon arm_Rockman style: Left hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6002000,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Right hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6002100,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Right hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 6002500,
+      "Entries": [
+        "FNR Weapon Arm_Shoulder joint: Left hand ①_Machine gun"
+      ]
+    },
+    {
+      "ID": 6002600,
+      "Entries": [
+        "FNR\u3000Weapon arm_Shoulder joint: Left hand ②_Bazooka"
+      ]
+    },
+    {
+      "ID": 7910000,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Machine gun (DL1: stage addition)"
+      ]
+    },
+    {
+      "ID": 7910100,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Pulse gun (DL1: stage addition)"
+      ]
+    },
+    {
+      "ID": 7910200,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Handgun (DL1: 100% addition)"
+      ]
+    },
+    {
+      "ID": 7910300,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Plasma rifle (DL1: 100% addition)"
+      ]
+    },
+    {
+      "ID": 7910400,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Semi-automatic rifle (DL2: Stop hit)"
+      ]
+    },
+    {
+      "ID": 7910500,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Laser rifle (DL2: Stop being hit)"
+      ]
+    },
+    {
+      "ID": 7910600,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Bazooka (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7910700,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shotgun (DL3: Small stagger)"
+      ]
+    },
+    {
+      "ID": 7910800,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Grenade rifle (DL4: Great stagger)"
+      ]
+    },
+    {
+      "ID": 7910900,
+      "Entries": [
+        "[Test] For checking damage performance (impact value)_Shoulder bazooka (DL5: blown away)"
+      ]
+    },
+    {
+      "ID": 9000000,
+      "Entries": [
+        "Joint dummy poly attach confirmation model"
+      ]
+    },
+    {
+      "ID": 9800000,
+      "Entries": [
+        "80_ Nakanishi test rifle"
+      ]
+    },
+    {
+      "ID": 9800100,
+      "Entries": [
+        "80_ Nakanishi test bazooka"
+      ]
+    },
+    {
+      "ID": 9800200,
+      "Entries": [
+        "80_ Nakanishi test rail gun"
+      ]
+    },
+    {
+      "ID": 9800300,
+      "Entries": [
+        "80_ Nakanishi test blade"
+      ]
+    },
+    {
+      "ID": 9800400,
+      "Entries": [
+        "80_ Nakanishi test missile"
+      ]
+    },
+    {
+      "ID": 9800500,
+      "Entries": [
+        "80_Nakanishi test shield"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "BURST RIFLE - MA-J-200 RANSETSU-RF"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "LINEAR RIFLE - LR-036 CURTIS"
+      ]
+    },
+    {
+      "ID": 10000200,
+      "Entries": [
+        "LINEAR RIFLE - LR-037 HARRIS"
+      ]
+    },
+    {
+      "ID": 10010000,
+      "Entries": [
+        "BURST ASSAULT RIFLE - MA-J-201 RANSETSU-AR"
+      ]
+    },
+    {
+      "ID": 10010100,
+      "Entries": [
+        "ASSAULT RIFLE - RF-024 TURNER"
+      ]
+    },
+    {
+      "ID": 10010200,
+      "Entries": [
+        "ASSAULT RIFLE - RF-025 SCUDDER"
+      ]
+    },
+    {
+      "ID": 10020000,
+      "Entries": [
+        "BURST MACHINE GUN - MA-E-210 ETSUJIN"
+      ]
+    },
+    {
+      "ID": 10020100,
+      "Entries": [
+        "MACHINE GUN - MG-014 LUDLOW"
+      ]
+    },
+    {
+      "ID": 10020200,
+      "Entries": [
+        "MACHINE GUN - DF-MG-02 CHANG-CHEN"
+      ]
+    },
+    {
+      "ID": 10020300,
+      "Entries": [
+        "HEAVY MACHINE GUN - WR-0555 ATTACHE"
+      ]
+    },
+    {
+      "ID": 10030000,
+      "Entries": [
+        "GATLING GUN - DF-GA-08 HU-BEN"
+      ]
+    },
+    {
+      "ID": 10040000,
+      "Entries": [
+        "BAZOOKA - LITTLE GEM"
+      ]
+    },
+    {
+      "ID": 10040100,
+      "Entries": [
+        "BAZOOKA - MAJESTIC"
+      ]
+    },
+    {
+      "ID": 10040200,
+      "Entries": [
+        "BAZOOKA - DF-BA-06 XUAN-GE"
+      ]
+    },
+    {
+      "ID": 10050000,
+      "Entries": [
+        "SHOTGUN - WR-0777 SWEET SIXTEEN"
+      ]
+    },
+    {
+      "ID": 10050100,
+      "Entries": [
+        "SHOTGUN - SG-026 HALDEMAN"
+      ]
+    },
+    {
+      "ID": 10050200,
+      "Entries": [
+        "SHOTGUN - SG-027 ZIMMERMAN"
+      ]
+    },
+    {
+      "ID": 10060000,
+      "Entries": [
+        "GRENADE LAUNCHER - DF-GR-07 GOU-CHEN"
+      ]
+    },
+    {
+      "ID": 10060100,
+      "Entries": [
+        "GRENADE LAUNCHER - DIZZY"
+      ]
+    },
+    {
+      "ID": 10070000,
+      "Entries": [
+        "NEEDLE GUN - EL-PW-00 VIENTO"
+      ]
+    },
+    {
+      "ID": 10070100,
+      "Entries": [
+        "BURST HANDGUN - MA-E-211 SAMPU"
+      ]
+    },
+    {
+      "ID": 10070200,
+      "Entries": [
+        "HANDGUN - HG-003 COQUILLETT"
+      ]
+    },
+    {
+      "ID": 10070300,
+      "Entries": [
+        "HANDGUN - HG-004 DUCKETT"
+      ]
+    },
+    {
+      "ID": 10070400,
+      "Entries": [
+        "Hand gun ⑤"
+      ]
+    },
+    {
+      "ID": 10070500,
+      "Entries": [
+        "Hand gun ⑥"
+      ]
+    },
+    {
+      "ID": 10070600,
+      "Entries": [
+        "Hand gun ⑦"
+      ]
+    },
+    {
+      "ID": 10080000,
+      "Entries": [
+        "JAMMING BOMB LAUNCHER - MA-T-223 KYORIKU"
+      ]
+    },
+    {
+      "ID": 10080100,
+      "Entries": [
+        "NAPALM BOMB LAUNCHER - MA-T-222 KYORAI"
+      ]
+    },
+    {
+      "ID": 10080200,
+      "Entries": [
+        "STUN BOMB LAUNCHER - WS-1200 THERAPIST"
+      ]
+    },
+    {
+      "ID": 10090000,
+      "Entries": [
+        "MISSILE LAUNCHER - HML-G2/P19MLT-04"
+      ]
+    },
+    {
+      "ID": 10090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - HML-G3/P08SPL-06"
+      ]
+    },
+    {
+      "ID": 10100000,
+      "Entries": [
+        "GRENADE LAUNCHER - IRIDIUM"
+      ]
+    },
+    {
+      "ID": 10110000,
+      "Entries": [
+        "LASER HANDGUN - VP-66LH"
+      ]
+    },
+    {
+      "ID": 10110100,
+      "Entries": [
+        "LASER RIFLE - VP-66LR"
+      ]
+    },
+    {
+      "ID": 10110200,
+      "Entries": [
+        "CORAL RIFLE - IB-C03W1: WLT 011"
+      ]
+    },
+    {
+      "ID": 10110300,
+      "Entries": [
+        "LASER RIFLE - VE-66LRA"
+      ]
+    },
+    {
+      "ID": 10120000,
+      "Entries": [
+        "PLASMA RIFLE - Vvc-760PR"
+      ]
+    },
+    {
+      "ID": 10120100,
+      "Entries": [
+        "MULTIE ENERGY RIFLE - 44-142 KRSV"
+      ]
+    },
+    {
+      "ID": 10130000,
+      "Entries": [
+        "PULSE GUN - HI-16: GU-Q1"
+      ]
+    },
+    {
+      "ID": 10130100,
+      "Entries": [
+        "PULSE GUN - H1-18: GU-A2"
+      ]
+    },
+    {
+      "ID": 10140000,
+      "Entries": [
+        "LASER RIFLE - VE-66LRB"
+      ]
+    },
+    {
+      "ID": 10150000,
+      "Entries": [
+        "LASER SHOTGUN - WUERGER/66E"
+      ]
+    },
+    {
+      "ID": 10150100,
+      "Entries": [
+        "LASER SHOTGUN - VP-66LS"
+      ]
+    },
+    {
+      "ID": 10150200,
+      "Entries": [
+        "PLASMA RIFLE - IA-C01W1: NEBULA"
+      ]
+    },
+    {
+      "ID": 10150300,
+      "Entries": [
+        "CORAL RIFLE - IA-C01W6: NB-REDSHIFT"
+      ]
+    },
+    {
+      "ID": 10160000,
+      "Entries": [
+        "FLAMETHROWER - WB-0000 BAD COOK"
+      ]
+    },
+    {
+      "ID": 10170000,
+      "Entries": [
+        "DETONATING BAZOOKA - 44-141 JVLN ALPHA"
+      ]
+    },
+    {
+      "ID": 10180000,
+      "Entries": [
+        "STUN GUN - VP-66EG"
+      ]
+    },
+    {
+      "ID": 10190000,
+      "Entries": [
+        "SIEGE MISSILE LAUNCHER - WS-5000 APERITIF"
+      ]
+    },
+    {
+      "ID": 10190100,
+      "Entries": [
+        "[test] Stationary shooting weapon (multiple consecutive fires)"
+      ]
+    },
+    {
+      "ID": 10300000,
+      "Entries": [
+        "PULSE MISSILE LAUNCHER - PFAU/66D"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "laser blade"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "CORAL OSCILLATOR - IB-C03W2: WLT 101"
+      ]
+    },
+    {
+      "ID": 20000200,
+      "Entries": [
+        "LIGHT WAVE BLADE - IA-C01W2: MOONLIGHT"
+      ]
+    },
+    {
+      "ID": 20000300,
+      "Entries": [
+        "CORAL OSCILLATOR - IA-C01W7: ML-REDSHIFT"
+      ]
+    },
+    {
+      "ID": 20010000,
+      "Entries": [
+        "PULSE BLADE - HI-32: BU-TT/A"
+      ]
+    },
+    {
+      "ID": 20020000,
+      "Entries": [
+        "LASER BLADE - Vvc-770LB"
+      ]
+    },
+    {
+      "ID": 20030000,
+      "Entries": [
+        "LASER SLICER - Vvc-774LS"
+      ]
+    },
+    {
+      "ID": 20040000,
+      "Entries": [
+        "LASER DAGGER - VP-67LD"
+      ]
+    },
+    {
+      "ID": 20050000,
+      "Entries": [
+        "LASER LANCE - VE-67LLA"
+      ]
+    },
+    {
+      "ID": 20060000,
+      "Entries": [
+        "CHAINSAW - WB-0010 DOUBLE TROUBLE"
+      ]
+    },
+    {
+      "ID": 20070000,
+      "Entries": [
+        "PLASMA THROWER - 44-143 HMMR"
+      ]
+    },
+    {
+      "ID": 20080000,
+      "Entries": [
+        "PILE BUNKER - PB-033M ASHMEAD"
+      ]
+    },
+    {
+      "ID": 20090000,
+      "Entries": [
+        "STUN BATON - VP-67EB"
+      ]
+    },
+    {
+      "ID": 20100000,
+      "Entries": [
+        "EXPLOSIVE THROWER - DF-ET-09 TAI-YANG-SHOU"
+      ]
+    },
+    {
+      "ID": 25000000,
+      "Entries": [
+        "PULSE BUCKLER - VP-61PB"
+      ]
+    },
+    {
+      "ID": 25000100,
+      "Entries": [
+        "PULSE SHIELD - SI-24: SU-Q5"
+      ]
+    },
+    {
+      "ID": 25000200,
+      "Entries": [
+        "PA Buckler_M・AI Unique"
+      ]
+    },
+    {
+      "ID": 25010000,
+      "Entries": [
+        "PULSE SHIELD - VP-61PS"
+      ]
+    },
+    {
+      "ID": 25010100,
+      "Entries": [
+        "PULSE SHIELD - SI-27: SU-R8"
+      ]
+    },
+    {
+      "ID": 25010200,
+      "Entries": [
+        "PULSE BUCKLER - SI-29: SU-TT/C"
+      ]
+    },
+    {
+      "ID": 25010300,
+      "Entries": [
+        "CORAL SHIELD - IB-C03W4: NGI 028"
+      ]
+    },
+    {
+      "ID": 25020000,
+      "Entries": [
+        "PULSE SCUTUM - VE-61PSA"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Right)"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM (Right)"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Right)"
+      ]
+    },
+    {
+      "ID": 30010000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02 (Right)"
+      ]
+    },
+    {
+      "ID": 30010100,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01 (Right)"
+      ]
+    },
+    {
+      "ID": 30020000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Right)"
+      ]
+    },
+    {
+      "ID": 30020100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Right)"
+      ]
+    },
+    {
+      "ID": 30020200,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Right)"
+      ]
+    },
+    {
+      "ID": 30030000,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Right)"
+      ]
+    },
+    {
+      "ID": 30040000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Right)"
+      ]
+    },
+    {
+      "ID": 30040100,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Right)"
+      ]
+    },
+    {
+      "ID": 30040200,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Right)"
+      ]
+    },
+    {
+      "ID": 30050000,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Right)"
+      ]
+    },
+    {
+      "ID": 30070000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Right)"
+      ]
+    },
+    {
+      "ID": 30080000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Right)"
+      ]
+    },
+    {
+      "ID": 30080100,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Right)"
+      ]
+    },
+    {
+      "ID": 30080200,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Right)"
+      ]
+    },
+    {
+      "ID": 30090000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12 (Right)"
+      ]
+    },
+    {
+      "ID": 30090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08 (Right)"
+      ]
+    },
+    {
+      "ID": 30090200,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16 (Right)"
+      ]
+    },
+    {
+      "ID": 30100000,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS (Right)"
+      ]
+    },
+    {
+      "ID": 30110000,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO (Right)"
+      ]
+    },
+    {
+      "ID": 30120000,
+      "Entries": [
+        "CONTAINER MISSILE LAUNCHER - BML-G1/P29CNT (Right)"
+      ]
+    },
+    {
+      "ID": 30130000,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Right)"
+      ]
+    },
+    {
+      "ID": 30140000,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst)"
+      ]
+    },
+    {
+      "ID": 30140100,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Right)"
+      ]
+    },
+    {
+      "ID": 30150000,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka)"
+      ]
+    },
+    {
+      "ID": 30150100,
+      "Entries": [
+        "LASER TURRET - VP-60LT (Right)"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY (Right)"
+      ]
+    },
+    {
+      "ID": 30210000,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT (Right)"
+      ]
+    },
+    {
+      "ID": 30220000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Right)"
+      ]
+    },
+    {
+      "ID": 30230000,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Right)"
+      ]
+    },
+    {
+      "ID": 30240000,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z (Right)"
+      ]
+    },
+    {
+      "ID": 30250000,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Right)"
+      ]
+    },
+    {
+      "ID": 30250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Right)"
+      ]
+    },
+    {
+      "ID": 30260000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Right)"
+      ]
+    },
+    {
+      "ID": 30270000,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Right)"
+      ]
+    },
+    {
+      "ID": 30300000,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Right)"
+      ]
+    },
+    {
+      "ID": 30300100,
+      "Entries": [
+        "LASER ORBIT - 45-091 ORBT (Right)"
+      ]
+    },
+    {
+      "ID": 30310000,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Right)"
+      ]
+    },
+    {
+      "ID": 30350000,
+      "Entries": [
+        "Auxiliary booster_EN silhouette"
+      ]
+    },
+    {
+      "ID": 30350100,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA (Right)"
+      ]
+    },
+    {
+      "ID": 30350200,
+      "Entries": [
+        "Auxiliary booster_live bullet silhouette"
+      ]
+    },
+    {
+      "ID": 30400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Right)"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-703PM (Left)"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-70VPM (Left)"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "PLASMA MISSILE LAUNCHER - Vvc-706PM (Left)"
+      ]
+    },
+    {
+      "ID": 35010000,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P05ACT-02 (Left)"
+      ]
+    },
+    {
+      "ID": 35010100,
+      "Entries": [
+        "ACTIVE HOMING MISSILE LAUNCHER - BML-G3/P04ACT-01 (Left)"
+      ]
+    },
+    {
+      "ID": 35020000,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P03MLT-06 (Left)"
+      ]
+    },
+    {
+      "ID": 35020100,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G1/P20MLT-04 (Left)"
+      ]
+    },
+    {
+      "ID": 35020200,
+      "Entries": [
+        "MISSILE LAUNCHER - BML-G2/P05MLT-10 (Left)"
+      ]
+    },
+    {
+      "ID": 35030000,
+      "Entries": [
+        "CORAL MISSILE LAUNCHER - IB-C03W3: NGI 006 (Left)"
+      ]
+    },
+    {
+      "ID": 35040000,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P07VTC-12 (Left)"
+      ]
+    },
+    {
+      "ID": 35040100,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P03VTC-08 (Left)"
+      ]
+    },
+    {
+      "ID": 35040200,
+      "Entries": [
+        "VERTICAL MISSILE LAUNCHER - BML-G1/P01VTC-04 (Left)"
+      ]
+    },
+    {
+      "ID": 35050000,
+      "Entries": [
+        "DETONATING MISSILE LAUNCHER - 45-091 JVLN BETA (Left)"
+      ]
+    },
+    {
+      "ID": 35070000,
+      "Entries": [
+        "SCATTER MISSILE LAUNCHER - WS-5001 SOUP (Left)"
+      ]
+    },
+    {
+      "ID": 35080000,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P32DUO-03 (Left)"
+      ]
+    },
+    {
+      "ID": 35080100,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G2/P08DUO-03 (Left)"
+      ]
+    },
+    {
+      "ID": 35080200,
+      "Entries": [
+        "DUAL MISSILE LAUNCHER - BML-G1/P31DUO-02 (Left)"
+      ]
+    },
+    {
+      "ID": 35090000,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P19SPL-12 (Left)"
+      ]
+    },
+    {
+      "ID": 35090100,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P16SPL-08 (Left)"
+      ]
+    },
+    {
+      "ID": 35090200,
+      "Entries": [
+        "SPLIT MISSILE LAUNCHER - BML-G2/P17SPL-16 (Left)"
+      ]
+    },
+    {
+      "ID": 35100000,
+      "Entries": [
+        "GRENADE CANNON - SONGBIRDS (Left)"
+      ]
+    },
+    {
+      "ID": 35110000,
+      "Entries": [
+        "NEEDLE MISSILE LAUNCHER - EL-PW-01 TRUENO (Left)"
+      ]
+    },
+    {
+      "ID": 35120000,
+      "Entries": [
+        "CONTAINER - BML-G1/P29CNT (Left)"
+      ]
+    },
+    {
+      "ID": 35130000,
+      "Entries": [
+        "CLUSTER MISSILE LAUNCHER - WR-0999 DELIVERY BOY (Left)"
+      ]
+    },
+    {
+      "ID": 35140000,
+      "Entries": [
+        "[test] Single-shot funnel (live bullet 3-point burst)"
+      ]
+    },
+    {
+      "ID": 35140100,
+      "Entries": [
+        "LASER DRONE - Vvc-700LD (Left)"
+      ]
+    },
+    {
+      "ID": 35150000,
+      "Entries": [
+        "[test] Stationary shooting weapon (live bullet bazooka)"
+      ]
+    },
+    {
+      "ID": 35150100,
+      "Entries": [
+        "LASER TURRET VP-60LT (Left)"
+      ]
+    },
+    {
+      "ID": 35200000,
+      "Entries": [
+        "SPREAD BAZOOKA - SB-033M MORLEY (Left)"
+      ]
+    },
+    {
+      "ID": 35210000,
+      "Entries": [
+        "GRENADE CANNON - EARSHOT (Left)"
+      ]
+    },
+    {
+      "ID": 35220000,
+      "Entries": [
+        "LASER CANNON - VE-60LCA (Left)"
+      ]
+    },
+    {
+      "ID": 35230000,
+      "Entries": [
+        "PLASMA CANNON - FASAN/60E (Left)"
+      ]
+    },
+    {
+      "ID": 35240000,
+      "Entries": [
+        "PULSE CANNON - KRANICH/60Z (Left)"
+      ]
+    },
+    {
+      "ID": 35250000,
+      "Entries": [
+        "LASER CANNON - VP-60LCS (Left)"
+      ]
+    },
+    {
+      "ID": 35250100,
+      "Entries": [
+        "LASER CANNON - VE-60LCB (Left)"
+      ]
+    },
+    {
+      "ID": 35260000,
+      "Entries": [
+        "DIFFUSE LASER CANNON - VP-60LCD (Left)"
+      ]
+    },
+    {
+      "ID": 35270000,
+      "Entries": [
+        "STUN NEEDLE LAUNCHER - VE-60SNA (Left)"
+      ]
+    },
+    {
+      "ID": 35300000,
+      "Entries": [
+        "BULLET ORBIT - BO-044 HUXLEY (Left)"
+      ]
+    },
+    {
+      "ID": 35300100,
+      "Entries": [
+        "LASER ORBIT - 45-091 ORBT (Left)"
+      ]
+    },
+    {
+      "ID": 35310000,
+      "Entries": [
+        "PULSE SHIELD LAUNCHER - EULE/60D (Left)"
+      ]
+    },
+    {
+      "ID": 35350100,
+      "Entries": [
+        "LIGHT WAVE CANNON - IA-C01W3: AURORA (Left)"
+      ]
+    },
+    {
+      "ID": 35400000,
+      "Entries": [
+        "GATLING CANNON - DF-GA-09 SHAO-WEI (Left)"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "Motion radar_standard type"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "Motion radar_high performance"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "Dynamic radar_Orbis"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "Wide area radar_low performance scavenging use"
+      ]
+    },
+    {
+      "ID": 75000000,
+      "Entries": [
+        "EXPANSION - ASSAULT ARMOR"
+      ]
+    },
+    {
+      "ID": 75010000,
+      "Entries": [
+        "EXPANSION - PULSE ARMOR"
+      ]
+    },
+    {
+      "ID": 75020000,
+      "Entries": [
+        "EXPANSION - PULSE PROTECTION"
+      ]
+    },
+    {
+      "ID": 75030000,
+      "Entries": [
+        "EXPANSION - TERMINAL ARMOR"
+      ]
+    },
+    {
+      "ID": 75100000,
+      "Entries": [
+        "CORE - BD-011 MELANDER"
+      ]
+    },
+    {
+      "ID": 75100100,
+      "Entries": [
+        "CORE - CS-5000 MAIN DISH"
+      ]
+    },
+    {
+      "ID": 75100200,
+      "Entries": [
+        "CORE - DF-BD-08 TIAN-QIANG"
+      ]
+    },
+    {
+      "ID": 75100300,
+      "Entries": [
+        "CORE - NACHTREIHER/40E"
+      ]
+    },
+    {
+      "ID": 75100400,
+      "Entries": [
+        "CORE - VP-40S"
+      ]
+    },
+    {
+      "ID": 75100500,
+      "Entries": [
+        "CORE - VE-40A"
+      ]
+    },
+    {
+      "ID": 75100600,
+      "Entries": [
+        "CORE - 07-061 MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 75100700,
+      "Entries": [
+        "CORE - EL-TC-10 FIRMEZA"
+      ]
+    },
+    {
+      "ID": 75100800,
+      "Entries": [
+        "CORE - AC-J-120 BASHO"
+      ]
+    },
+    {
+      "ID": 75100900,
+      "Entries": [
+        "CORE - CC-3000 WRECKER"
+      ]
+    },
+    {
+      "ID": 75101000,
+      "Entries": [
+        "CORE - CC-2000 ORBITER"
+      ]
+    },
+    {
+      "ID": 75101100,
+      "Entries": [
+        "CORE - IB-C03C: HAL 826"
+      ]
+    },
+    {
+      "ID": 75101200,
+      "Entries": [
+        "CORE - IA-C01C: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 75101300,
+      "Entries": [
+        "CORE - EL-PC-00 ALBA"
+      ]
+    },
+    {
+      "ID": 75101400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "HEAD - Scan"
+      ]
+    }
+  ]
+}

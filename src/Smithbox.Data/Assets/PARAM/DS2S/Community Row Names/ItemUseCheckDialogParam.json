@@ -1,0 +1,347 @@
+{
+  "Name": "ItemUseCheckDialogParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "UNKNOWN"
+      ]
+    },
+    {
+      "ID": 50920000,
+      "Entries": [
+        "Soul of a Giant"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "Crushed Eye Orb"
+      ]
+    },
+    {
+      "ID": 60350000,
+      "Entries": [
+        "Homeward Bone"
+      ]
+    },
+    {
+      "ID": 60355000,
+      "Entries": [
+        "Aged Feather"
+      ]
+    },
+    {
+      "ID": 60360000,
+      "Entries": [
+        "Darksign"
+      ]
+    },
+    {
+      "ID": 62000000,
+      "Entries": [
+        "Dried Fingers"
+      ]
+    },
+    {
+      "ID": 62020000,
+      "Entries": [
+        "Bone of Order"
+      ]
+    },
+    {
+      "ID": 62050000,
+      "Entries": [
+        "Cracked Blue Eye Orb"
+      ]
+    },
+    {
+      "ID": 62060000,
+      "Entries": [
+        "Cracked Red Eye Orb"
+      ]
+    },
+    {
+      "ID": 62160000,
+      "Entries": [
+        "Black Separation Crystal"
+      ]
+    },
+    {
+      "ID": 62170000,
+      "Entries": [
+        "Seed of a Tree of Giants"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "Soul of the Pursuer"
+      ]
+    },
+    {
+      "ID": 64010000,
+      "Entries": [
+        "Soul of the Last Giant"
+      ]
+    },
+    {
+      "ID": 64020000,
+      "Entries": [
+        "Dragonrider Soul"
+      ]
+    },
+    {
+      "ID": 64030000,
+      "Entries": [
+        "Old Dragonslayer Soul"
+      ]
+    },
+    {
+      "ID": 64040000,
+      "Entries": [
+        "Flexile Sentry Soul"
+      ]
+    },
+    {
+      "ID": 64050000,
+      "Entries": [
+        "Ruin Sentinel Soul"
+      ]
+    },
+    {
+      "ID": 64060000,
+      "Entries": [
+        "Soul of the Lost Sinner"
+      ]
+    },
+    {
+      "ID": 64070000,
+      "Entries": [
+        "Executioner's Chariot Soul"
+      ]
+    },
+    {
+      "ID": 64080000,
+      "Entries": [
+        "Skeleton Lord's Soul"
+      ]
+    },
+    {
+      "ID": 64090000,
+      "Entries": [
+        "Covetous Demon Soul"
+      ]
+    },
+    {
+      "ID": 64100000,
+      "Entries": [
+        "Mytha- the Baneful Queen Soul"
+      ]
+    },
+    {
+      "ID": 64110000,
+      "Entries": [
+        "Smelter Demon Soul"
+      ]
+    },
+    {
+      "ID": 64120000,
+      "Entries": [
+        "Old Iron King Soul"
+      ]
+    },
+    {
+      "ID": 64130000,
+      "Entries": [
+        "Royal Rat Vanguard Soul"
+      ]
+    },
+    {
+      "ID": 64140000,
+      "Entries": [
+        "Soul of the Rotten"
+      ]
+    },
+    {
+      "ID": 64150000,
+      "Entries": [
+        "Scorpioness Najka Soul"
+      ]
+    },
+    {
+      "ID": 64160000,
+      "Entries": [
+        "Royal Rat Authority Soul"
+      ]
+    },
+    {
+      "ID": 64170000,
+      "Entries": [
+        "Soul of the Duke's Dear Freja"
+      ]
+    },
+    {
+      "ID": 64180000,
+      "Entries": [
+        "Looking Glass Knight Soul"
+      ]
+    },
+    {
+      "ID": 64190000,
+      "Entries": [
+        "Demon of Song Soul"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "Soul of Velstadt"
+      ]
+    },
+    {
+      "ID": 64210000,
+      "Entries": [
+        "Soul of the King"
+      ]
+    },
+    {
+      "ID": 64220000,
+      "Entries": [
+        "Guardian Dragon Soul"
+      ]
+    },
+    {
+      "ID": 64230000,
+      "Entries": [
+        "Ancient Dragon Soul"
+      ]
+    },
+    {
+      "ID": 64240000,
+      "Entries": [
+        "Giant Lord Soul"
+      ]
+    },
+    {
+      "ID": 64250000,
+      "Entries": [
+        "Soul of Nashandra"
+      ]
+    },
+    {
+      "ID": 64260000,
+      "Entries": [
+        "Throne Defender Soul"
+      ]
+    },
+    {
+      "ID": 64270000,
+      "Entries": [
+        "Throne Watcher Soul"
+      ]
+    },
+    {
+      "ID": 64280000,
+      "Entries": [
+        "Darklurker Soul"
+      ]
+    },
+    {
+      "ID": 64290000,
+      "Entries": [
+        "Belfry Gargoyle Soul"
+      ]
+    },
+    {
+      "ID": 64300000,
+      "Entries": [
+        "Old Witch Soul"
+      ]
+    },
+    {
+      "ID": 64310000,
+      "Entries": [
+        "Old King Soul"
+      ]
+    },
+    {
+      "ID": 64320000,
+      "Entries": [
+        "Old Dead One Soul"
+      ]
+    },
+    {
+      "ID": 64330000,
+      "Entries": [
+        "Old Paledrake Soul"
+      ]
+    },
+    {
+      "ID": 64500000,
+      "Entries": [
+        "Soul of Sinh- the Slumbering Dragon"
+      ]
+    },
+    {
+      "ID": 64510000,
+      "Entries": [
+        "Soul of the Fume Knight"
+      ]
+    },
+    {
+      "ID": 64520000,
+      "Entries": [
+        "Soul of Aava- the King's Pet"
+      ]
+    },
+    {
+      "ID": 64530000,
+      "Entries": [
+        "Soul of Elana- Squalid Queen"
+      ]
+    },
+    {
+      "ID": 64540000,
+      "Entries": [
+        "Soul of Nadalia- Bride of Ash"
+      ]
+    },
+    {
+      "ID": 64550000,
+      "Entries": [
+        "Soul ofAlsanna- Silent Oracle"
+      ]
+    },
+    {
+      "ID": 64560000,
+      "Entries": [
+        "Soul of Sir Alonne"
+      ]
+    },
+    {
+      "ID": 64580000,
+      "Entries": [
+        "Soul of the Ivory King"
+      ]
+    },
+    {
+      "ID": 64590000,
+      "Entries": [
+        "Soul of Zallen- the King's Pet"
+      ]
+    },
+    {
+      "ID": 64600000,
+      "Entries": [
+        "Loyce Soul"
+      ]
+    },
+    {
+      "ID": 64610000,
+      "Entries": [
+        "Soul of Lud- the King's Pet"
+      ]
+    }
+  ]
+}

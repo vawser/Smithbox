@@ -1,0 +1,41 @@
+{
+  "Name": "HeroMenuCameraParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Guardian / Raider"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Wylder / Ironeye / Duchess / Recluse / Executor"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Revenant"
+      ]
+    }
+  ]
+}

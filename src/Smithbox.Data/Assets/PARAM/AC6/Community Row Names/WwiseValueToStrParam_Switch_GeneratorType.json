@@ -1,0 +1,23 @@
+{
+  "Name": "WwiseValueToStrParam_Switch_GeneratorType",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Energy"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Coral"
+      ]
+    }
+  ]
+}

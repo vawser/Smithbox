@@ -1,0 +1,161 @@
+{
+  "Name": "CalcCorrectGraph",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Weapons (Default)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Weapons (Int/Faith Infusions)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Logan's Catalyst"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Talisman"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Darkmoon Talisman"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Catalyst"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Non-stat scaling Spell Tools"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Ivory Talisman"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Max HP (Vitality Stat)"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Unused"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Natural Defence (Soul Level)"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Poison Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Toxic Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Bleed Resistance (Soul Level)"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Curse Resistance (Humanity Stat)"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Estus at Bonfire"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Level up cost"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,971 @@
+{
+  "Name": "mapobjectinstanceparam_m10_32_00_00",
+  "Entries": [
+    {
+      "ID": 10320400,
+      "Entries": [
+        "【Both doors】The King's Door"
+      ]
+    },
+    {
+      "ID": 10320405,
+      "Entries": [
+        "【Both doors】The door of the shrine is empty side"
+      ]
+    },
+    {
+      "ID": 10320406,
+      "Entries": [
+        "【Both doors】The door of the shrine King's Castle Doran side"
+      ]
+    },
+    {
+      "ID": 10320410,
+      "Entries": [
+        "【One door】NPC room in the back of Basilisk"
+      ]
+    },
+    {
+      "ID": 10320600,
+      "Entries": [
+        "【White Door】01_Boss White Door"
+      ]
+    },
+    {
+      "ID": 10320601,
+      "Entries": [
+        "【White Door】01_Boss White Door Exit"
+      ]
+    },
+    {
+      "ID": 10320603,
+      "Entries": [
+        "【Black Door】Towards Andy's"
+      ]
+    },
+    {
+      "ID": 10320651,
+      "Entries": [
+        "【Bonfire】02"
+      ]
+    },
+    {
+      "ID": 10320652,
+      "Entries": [
+        "【Bonfire】03"
+      ]
+    },
+    {
+      "ID": 10321200,
+      "Entries": [
+        "[Forest of the shadow of the emptiness] barrel that the top weapon shop is caught"
+      ]
+    },
+    {
+      "ID": 10321203,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321204,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321208,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321209,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321210,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321211,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321213,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321214,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321215,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321216,
+      "Entries": [
+        "【Forest of The Shadow of The Void】 Barrels"
+      ]
+    },
+    {
+      "ID": 10321217,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321218,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321219,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10321250,
+      "Entries": [
+        "The boss destroys the tree_ treasure corpse fall"
+      ]
+    },
+    {
+      "ID": 10321260,
+      "Entries": [
+        "Trees destroyed by the boss"
+      ]
+    },
+    {
+      "ID": 10321261,
+      "Entries": [
+        "Trees destroyed by the boss"
+      ]
+    },
+    {
+      "ID": 10321300,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321301,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321302,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321303,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321304,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321305,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321306,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321307,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321308,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321309,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321310,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321311,
+      "Entries": [
+        "Dead trees in the boss room"
+      ]
+    },
+    {
+      "ID": 10321500,
+      "Entries": [
+        "Pitfalls_ Large"
+      ]
+    },
+    {
+      "ID": 10321505,
+      "Entries": [
+        "Pitfalls_ Small"
+      ]
+    },
+    {
+      "ID": 10322100,
+      "Entries": [
+        "Manscorpion ♀ Tail 1"
+      ]
+    },
+    {
+      "ID": 10322101,
+      "Entries": [
+        "Manscorpion ♀ Tail 2"
+      ]
+    },
+    {
+      "ID": 10323000,
+      "Entries": [
+        "[Warp] Magic Team"
+      ]
+    },
+    {
+      "ID": 10323010,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323011,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323012,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323013,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323014,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323015,
+      "Entries": [
+        "Pillar of magic formation (lightweight OBJ)"
+      ]
+    },
+    {
+      "ID": 10323500,
+      "Entries": [
+        "【Environmental Map ID】Trees"
+      ]
+    },
+    {
+      "ID": 10323501,
+      "Entries": [
+        "【Environmental Map ID】Trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323502,
+      "Entries": [
+        "【Environmental Map ID】Trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323503,
+      "Entries": [
+        "【Environmental Map ID】Trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323504,
+      "Entries": [
+        "【Environmental Map ID】Trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323505,
+      "Entries": [
+        "【Environmental Map ID】Dead Trees"
+      ]
+    },
+    {
+      "ID": 10323506,
+      "Entries": [
+        "【Environmental Map ID】【Exception Preservation】【Forest of Beasts】"
+      ]
+    },
+    {
+      "ID": 10323507,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323508,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323520,
+      "Entries": [
+        "【Environment Map ID】 Forest of The Shadow of The Void: Dead Trees"
+      ]
+    },
+    {
+      "ID": 10323521,
+      "Entries": [
+        "【Environment Map ID】 【Forest of the Shadow of The Hollow】Ogi C"
+      ]
+    },
+    {
+      "ID": 10323522,
+      "Entries": [
+        "【Environment Map ID】 【Forest of the Shadow of The Hollow】Ogi C"
+      ]
+    },
+    {
+      "ID": 10323523,
+      "Entries": [
+        "【Environment Map ID】 【Forest of the Shadow of The Hollow】Ogi C"
+      ]
+    },
+    {
+      "ID": 10323524,
+      "Entries": [
+        "【Environment Map ID】 【Forest of the Shadow of The Hollow】Ogi C"
+      ]
+    },
+    {
+      "ID": 10323535,
+      "Entries": [
+        "【Environment Map ID】 【Forest of the Shadow of The Hollow】Ogi C"
+      ]
+    },
+    {
+      "ID": 10323536,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323537,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323538,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323539,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: Tree by cliff"
+      ]
+    },
+    {
+      "ID": 10323540,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323541,
+      "Entries": [
+        "【Environment Map ID】 Forest of the shadow of the emptiness: trees for the ground"
+      ]
+    },
+    {
+      "ID": 10323700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323703,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323704,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323705,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323706,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323707,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323708,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323709,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323713,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323813,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323903,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323912,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323913,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323921,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323922,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323923,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10323935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10324600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10325000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325080,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325100,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325110,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10325120,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 10326000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326160,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326170,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326180,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326190,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326200,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326210,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326220,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326230,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326240,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326250,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326260,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326270,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 10326280,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

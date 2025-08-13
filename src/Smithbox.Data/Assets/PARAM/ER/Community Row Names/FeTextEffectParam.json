@@ -1,0 +1,203 @@
+{
+  "Name": "FeTextEffectParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "DEMIGOD FELLED"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "LEGEND FELLED"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "GREAT ENEMY FELLED"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "ENEMY FELLED"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "YOU DIED"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "HOST VANQUISHED"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "BLOODY FINGER VANQUISHED"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "DUTY FULFILLED"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "LOST GRACE DISCOVERED"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "COMMENCE"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "VICTORY"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "STALEMATE"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "DEFEAT"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "MAP FOUND"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "GREAT RUNE RESTORED"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "GOD SLAIN"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "DUELIST VANQUISHED"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "RECUSANT VANQUISHED"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "INVADER VANQUISHED"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "FURLED FINGER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "FURLED FINGER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "DUELIST RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "DUELIST RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "BLOODY FINGER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "BLOODY FINGER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "RECUSANT RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "RECUSANT RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "HUNTER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "HUNTER RANK ADVANCED"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "YOU DIED"
+      ]
+    }
+  ]
+}

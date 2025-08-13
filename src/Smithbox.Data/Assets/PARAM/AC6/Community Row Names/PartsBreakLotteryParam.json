@@ -1,0 +1,53 @@
+{
+  "Name": "PartsBreakLotteryParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "waist"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "waist + left hand"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "waist + right hand"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "right hand only"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "left hand only"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "left and right hand random"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "test blade"
+      ]
+    }
+  ]
+}

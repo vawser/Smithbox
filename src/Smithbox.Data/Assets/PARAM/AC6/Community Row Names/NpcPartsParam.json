@@ -1,0 +1,665 @@
+{
+  "Name": "NpcPartsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "TEST"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 31500010,
+      "Entries": [
+        "HA-T-102 JUGGERNAUT"
+      ]
+    },
+    {
+      "ID": 36000010,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 36000020,
+      "Entries": [
+        "RaD Spider MT"
+      ]
+    },
+    {
+      "ID": 40000010,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000020,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 40000030,
+      "Entries": [
+        "AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 41500010,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 41500020,
+      "Entries": [
+        "TOYBOX MT"
+      ]
+    },
+    {
+      "ID": 50200010,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200020,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200030,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200040,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200050,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200060,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 50200080,
+      "Entries": [
+        "EC-0804 SMART CLEANER"
+      ]
+    },
+    {
+      "ID": 51200010,
+      "Entries": [
+        "Quadcopter Drone"
+      ]
+    },
+    {
+      "ID": 60500010,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 60500020,
+      "Entries": [
+        "AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500010,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500020,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500030,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500040,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500050,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500060,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500070,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500080,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500090,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500100,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500110,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500120,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500130,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500140,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500150,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500160,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500170,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500180,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500190,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500200,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500210,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500220,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500230,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500240,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500250,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500260,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500270,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500280,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 62500290,
+      "Entries": [
+        "IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 64000010,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 64200010,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 64200020,
+      "Entries": [
+        "EB-0309 STRIDER"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "Artillery - Autocannon"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900010,
+      "Entries": [
+        "AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 73900020,
+      "Entries": [
+        "AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000010,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000020,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000030,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000040,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000050,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 74000060,
+      "Entries": [
+        "AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 84200000,
+      "Entries": [
+        "c8420 marine carrier"
+      ]
+    },
+    {
+      "ID": 84300000,
+      "Entries": [
+        "c8430 battleship (far"
+      ]
+    },
+    {
+      "ID": 84400000,
+      "Entries": [
+        "c8440 battleship (near)"
+      ]
+    },
+    {
+      "ID": 85320110,
+      "Entries": [
+        "c8532 Mining ship 1st car right elbow"
+      ]
+    },
+    {
+      "ID": 85320111,
+      "Entries": [
+        "c8532 Mining ship 1st car left elbow"
+      ]
+    },
+    {
+      "ID": 85320120,
+      "Entries": [
+        "c8532 Mining ship 2nd car right elbow"
+      ]
+    },
+    {
+      "ID": 85320121,
+      "Entries": [
+        "c8532 Mining ship 2nd car left elbow"
+      ]
+    },
+    {
+      "ID": 85320130,
+      "Entries": [
+        "c8532 Mining ship 3rd car right elbow"
+      ]
+    },
+    {
+      "ID": 85320131,
+      "Entries": [
+        "c8532 Mining ship 3rd car left elbow"
+      ]
+    },
+    {
+      "ID": 85320210,
+      "Entries": [
+        "c8532 Mining ship connection part 1-2 right"
+      ]
+    },
+    {
+      "ID": 85320211,
+      "Entries": [
+        "c8532 Mining ship connection part 1-2 left"
+      ]
+    },
+    {
+      "ID": 85320220,
+      "Entries": [
+        "c8532 Mining ship connection part 2-3 right"
+      ]
+    },
+    {
+      "ID": 85320221,
+      "Entries": [
+        "c8532 Mining ship connection part 2-3 left"
+      ]
+    },
+    {
+      "ID": 85320310,
+      "Entries": [
+        "c8532 mining ship 1st car core"
+      ]
+    },
+    {
+      "ID": 85320320,
+      "Entries": [
+        "c8532 mining ship 2nd car core"
+      ]
+    },
+    {
+      "ID": 85320330,
+      "Entries": [
+        "c8532 mining ship 3rd car core"
+      ]
+    },
+    {
+      "ID": 85350010,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85350020,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85350030,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85350040,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85350050,
+      "Entries": [
+        "Strider Eye"
+      ]
+    },
+    {
+      "ID": 85360010,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360020,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360100,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360110,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360120,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360130,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360140,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360150,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360160,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360170,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360180,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360190,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360200,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85360210,
+      "Entries": [
+        "Strider Foot"
+      ]
+    },
+    {
+      "ID": 85370010,
+      "Entries": [
+        "c8536 Mining ship knee cover 1"
+      ]
+    },
+    {
+      "ID": 85370020,
+      "Entries": [
+        "c8536 Mining ship knee cover 2"
+      ]
+    },
+    {
+      "ID": 85370030,
+      "Entries": [
+        "c8536 Mining ship knee cover 3"
+      ]
+    },
+    {
+      "ID": 85370040,
+      "Entries": [
+        "c8536 Mining ship knee cover 4"
+      ]
+    },
+    {
+      "ID": 85380010,
+      "Entries": [
+        "c8536 mining ship fire control"
+      ]
+    },
+    {
+      "ID": 93000010,
+      "Entries": [
+        "c9300 Ueda test machine part 1"
+      ]
+    },
+    {
+      "ID": 93000020,
+      "Entries": [
+        "c9300 Ueda test machine part 2"
+      ]
+    },
+    {
+      "ID": 93000030,
+      "Entries": [
+        "c9300 Ueda test machine part 3"
+      ]
+    },
+    {
+      "ID": 93000040,
+      "Entries": [
+        "c9300 Ueda test machine part 4"
+      ]
+    }
+  ]
+}

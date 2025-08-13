@@ -1,0 +1,1091 @@
+{
+  "Name": "mapobjectinstanceparam_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 20100404,
+      "Entries": [
+        "【One door】"
+      ]
+    },
+    {
+      "ID": 20100407,
+      "Entries": [
+        "【One door】"
+      ]
+    },
+    {
+      "ID": 20100500,
+      "Entries": [
+        "【Ladder】Memories of Wasta: On the Roof"
+      ]
+    },
+    {
+      "ID": 20100501,
+      "Entries": [
+        "【Ladder】Memories of Wasta: To Building 2F"
+      ]
+    },
+    {
+      "ID": 20100502,
+      "Entries": [
+        "【Ladder】Low's Memory: To the High Ground along the Wall"
+      ]
+    },
+    {
+      "ID": 20100600,
+      "Entries": [
+        "【White Door】Boss Entrance"
+      ]
+    },
+    {
+      "ID": 20100601,
+      "Entries": [
+        "【White Door】Boss Exit"
+      ]
+    },
+    {
+      "ID": 20100700,
+      "Entries": [
+        "Alignment Object (Damipoli only)_01"
+      ]
+    },
+    {
+      "ID": 20101000,
+      "Entries": [
+        "Hanging lamp in the cave_01"
+      ]
+    },
+    {
+      "ID": 20101001,
+      "Entries": [
+        "Hanging lamp in the cave_02"
+      ]
+    },
+    {
+      "ID": 20101050,
+      "Entries": [
+        "Oishi statue whose head is destroyed"
+      ]
+    },
+    {
+      "ID": 20101100,
+      "Entries": [
+        "[Insect key] for trap start-up"
+      ]
+    },
+    {
+      "ID": 20101110,
+      "Entries": [
+        "【Insect Key】Hidden Door 1 (for SFX)"
+      ]
+    },
+    {
+      "ID": 20101200,
+      "Entries": [
+        "[Insect key _ trap] trap launch port"
+      ]
+    },
+    {
+      "ID": 20101210,
+      "Entries": [
+        "【Hidden door】No key guide"
+      ]
+    },
+    {
+      "ID": 20101220,
+      "Entries": [
+        "[Hidden Door] Sfx"
+      ]
+    },
+    {
+      "ID": 20101350,
+      "Entries": [
+        "Chandelier_01_Stairside↓"
+      ]
+    },
+    {
+      "ID": 20101351,
+      "Entries": [
+        "Chandelier_02"
+      ]
+    },
+    {
+      "ID": 20101352,
+      "Entries": [
+        "Chandelier_03"
+      ]
+    },
+    {
+      "ID": 20101354,
+      "Entries": [
+        "Chandelier_05"
+      ]
+    },
+    {
+      "ID": 20101356,
+      "Entries": [
+        "Chandelier_07_Wooden Bridge Side↑"
+      ]
+    },
+    {
+      "ID": 20102301,
+      "Entries": [
+        "Varistor_002_Opera"
+      ]
+    },
+    {
+      "ID": 20102302,
+      "Entries": [
+        "Varistor_003_Opera"
+      ]
+    },
+    {
+      "ID": 20102303,
+      "Entries": [
+        "Varistor_004_Opera"
+      ]
+    },
+    {
+      "ID": 20102306,
+      "Entries": [
+        "Varistor_007_Opera"
+      ]
+    },
+    {
+      "ID": 20102313,
+      "Entries": [
+        "Varistor_014_Opera"
+      ]
+    },
+    {
+      "ID": 20102314,
+      "Entries": [
+        "Varistor_015_Opera"
+      ]
+    },
+    {
+      "ID": 20102315,
+      "Entries": [
+        "Varistor_016_Opera"
+      ]
+    },
+    {
+      "ID": 20102317,
+      "Entries": [
+        "Varistor_018_Opera"
+      ]
+    },
+    {
+      "ID": 20102320,
+      "Entries": [
+        "Barista_"
+      ]
+    },
+    {
+      "ID": 20102321,
+      "Entries": [
+        "Barista_"
+      ]
+    },
+    {
+      "ID": 20102322,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 20102323,
+      "Entries": [
+        "Barista_"
+      ]
+    },
+    {
+      "ID": 20102324,
+      "Entries": [
+        "Barista_"
+      ]
+    },
+    {
+      "ID": 20102325,
+      "Entries": [
+        "Barista_"
+      ]
+    },
+    {
+      "ID": 20102326,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 20102327,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 20102328,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 20102329,
+      "Entries": [
+        "Barista"
+      ]
+    },
+    {
+      "ID": 20102330,
+      "Entries": [
+        "Barista_Crane descent destination hidden room"
+      ]
+    },
+    {
+      "ID": 20102350,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102351,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102352,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102353,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102354,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102355,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102356,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102357,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102358,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102359,
+      "Entries": [
+        "Semi-destroyed barista"
+      ]
+    },
+    {
+      "ID": 20102400,
+      "Entries": [
+        "Tar Vase 1"
+      ]
+    },
+    {
+      "ID": 20102402,
+      "Entries": [
+        "Tar Vase 3"
+      ]
+    },
+    {
+      "ID": 20102403,
+      "Entries": [
+        "Tar Vase 4"
+      ]
+    },
+    {
+      "ID": 20102404,
+      "Entries": [
+        "Tar Vase 5"
+      ]
+    },
+    {
+      "ID": 20102450,
+      "Entries": [
+        "Scattered Tar 1"
+      ]
+    },
+    {
+      "ID": 20102452,
+      "Entries": [
+        "Scattered Tar 3"
+      ]
+    },
+    {
+      "ID": 20102453,
+      "Entries": [
+        "Scattered Tar 4"
+      ]
+    },
+    {
+      "ID": 20102454,
+      "Entries": [
+        "Scattered Tar 5"
+      ]
+    },
+    {
+      "ID": 20102500,
+      "Entries": [
+        "Wooden fence that only giants can break_001"
+      ]
+    },
+    {
+      "ID": 20102501,
+      "Entries": [
+        "Wooden fence that only giants can break_002"
+      ]
+    },
+    {
+      "ID": 20102502,
+      "Entries": [
+        "Wooden fence that only giants can break_003"
+      ]
+    },
+    {
+      "ID": 20102503,
+      "Entries": [
+        "Wooden fence that only giants can break_004"
+      ]
+    },
+    {
+      "ID": 20102504,
+      "Entries": [
+        "Wooden fence that only giants can break_005"
+      ]
+    },
+    {
+      "ID": 20102550,
+      "Entries": [
+        "Pillars that only giants can break_001"
+      ]
+    },
+    {
+      "ID": 20102551,
+      "Entries": [
+        "Pillars that only giants can break_002"
+      ]
+    },
+    {
+      "ID": 20102552,
+      "Entries": [
+        "Pillars that only giants can break_003"
+      ]
+    },
+    {
+      "ID": 20102600,
+      "Entries": [
+        "Lantern_001"
+      ]
+    },
+    {
+      "ID": 20102700,
+      "Entries": [
+        "Wall_001 that only giants can break"
+      ]
+    },
+    {
+      "ID": 20103000,
+      "Entries": [
+        "Wheel Crane_1"
+      ]
+    },
+    {
+      "ID": 20103005,
+      "Entries": [
+        "Wheel Crane_2"
+      ]
+    },
+    {
+      "ID": 20103050,
+      "Entries": [
+        "Wheel Crane Fasteners_1"
+      ]
+    },
+    {
+      "ID": 20103055,
+      "Entries": [
+        "Wheel Crane Fasteners_2"
+      ]
+    },
+    {
+      "ID": 20103500,
+      "Entries": [
+        "Root last _A giant corpse for warp"
+      ]
+    },
+    {
+      "ID": 20103510,
+      "Entries": [
+        "Root last _B giant corpse for warp"
+      ]
+    },
+    {
+      "ID": 20103520,
+      "Entries": [
+        "Root last _C giant corpse for warp"
+      ]
+    },
+    {
+      "ID": 20103600,
+      "Entries": [
+        "Damipori for firing fireball_front_01"
+      ]
+    },
+    {
+      "ID": 20103601,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_02"
+      ]
+    },
+    {
+      "ID": 20103602,
+      "Entries": [
+        "Damipori for firing fireball_front_03"
+      ]
+    },
+    {
+      "ID": 20103603,
+      "Entries": [
+        "Damipori for firing fireball_front_04"
+      ]
+    },
+    {
+      "ID": 20103604,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_05"
+      ]
+    },
+    {
+      "ID": 20103605,
+      "Entries": [
+        "Damipori for firing fireball_front_06"
+      ]
+    },
+    {
+      "ID": 20103606,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_07"
+      ]
+    },
+    {
+      "ID": 20103607,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_08"
+      ]
+    },
+    {
+      "ID": 20103608,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_09"
+      ]
+    },
+    {
+      "ID": 20103609,
+      "Entries": [
+        "Damipoli for firing of fireballs_10"
+      ]
+    },
+    {
+      "ID": 20103610,
+      "Entries": [
+        "Damipori for firing fireball_front_11"
+      ]
+    },
+    {
+      "ID": 20103611,
+      "Entries": [
+        "Damipoli for firing of fireballs_12"
+      ]
+    },
+    {
+      "ID": 20103612,
+      "Entries": [
+        "Damipoli for firing of fireballs_13"
+      ]
+    },
+    {
+      "ID": 20103613,
+      "Entries": [
+        "Damipori for firing fireballs_14"
+      ]
+    },
+    {
+      "ID": 20103614,
+      "Entries": [
+        "Damipoli for firing of fireballs_15"
+      ]
+    },
+    {
+      "ID": 20103615,
+      "Entries": [
+        "Damipoli for firing of fireballs_16"
+      ]
+    },
+    {
+      "ID": 20103616,
+      "Entries": [
+        "Damipoli for firing of fireballs_17"
+      ]
+    },
+    {
+      "ID": 20103617,
+      "Entries": [
+        "Damipoli for firing of fireballs_18"
+      ]
+    },
+    {
+      "ID": 20103618,
+      "Entries": [
+        "Damipoli for firing of fireballs_front_19"
+      ]
+    },
+    {
+      "ID": 20103619,
+      "Entries": [
+        "Damipoli for firing of fireballs_Front_20"
+      ]
+    },
+    {
+      "ID": 20103640,
+      "Entries": [
+        "Damipori_Central for firing fireballs"
+      ]
+    },
+    {
+      "ID": 20103650,
+      "Entries": [
+        "Damipori for firing fireballs_back_01"
+      ]
+    },
+    {
+      "ID": 20103651,
+      "Entries": [
+        "Damipori for firing fireballs_Back_02"
+      ]
+    },
+    {
+      "ID": 20103652,
+      "Entries": [
+        "Damipori for firing fireballs_back_03"
+      ]
+    },
+    {
+      "ID": 20103653,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_04"
+      ]
+    },
+    {
+      "ID": 20103654,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_05"
+      ]
+    },
+    {
+      "ID": 20103655,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_06"
+      ]
+    },
+    {
+      "ID": 20103656,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_07"
+      ]
+    },
+    {
+      "ID": 20103657,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_08"
+      ]
+    },
+    {
+      "ID": 20103658,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_09"
+      ]
+    },
+    {
+      "ID": 20103659,
+      "Entries": [
+        "Damipoli for firing fireballs_Oku_10"
+      ]
+    },
+    {
+      "ID": 20103660,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_11"
+      ]
+    },
+    {
+      "ID": 20103661,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_12"
+      ]
+    },
+    {
+      "ID": 20103662,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_13"
+      ]
+    },
+    {
+      "ID": 20103663,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_14"
+      ]
+    },
+    {
+      "ID": 20103664,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_15"
+      ]
+    },
+    {
+      "ID": 20103665,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_16"
+      ]
+    },
+    {
+      "ID": 20103666,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_17"
+      ]
+    },
+    {
+      "ID": 20103667,
+      "Entries": [
+        "Damipori for firing fireballs_Oku_18"
+      ]
+    },
+    {
+      "ID": 20103668,
+      "Entries": [
+        "Damipoli for firing fireballs_Oku_19"
+      ]
+    },
+    {
+      "ID": 20103669,
+      "Entries": [
+        "Damipoli for firing fireball_oku_20"
+      ]
+    },
+    {
+      "ID": 20103670,
+      "Entries": [
+        "Damipori for firing fireballs_1"
+      ]
+    },
+    {
+      "ID": 20103671,
+      "Entries": [
+        "Damipori for firing fireball_overhang_2"
+      ]
+    },
+    {
+      "ID": 20103672,
+      "Entries": [
+        "Damipori for firing fireball_overhang_3"
+      ]
+    },
+    {
+      "ID": 20103673,
+      "Entries": [
+        "Damipori for firing fireball_4"
+      ]
+    },
+    {
+      "ID": 20103674,
+      "Entries": [
+        "Damipoli for firing fireballs_5"
+      ]
+    },
+    {
+      "ID": 20103675,
+      "Entries": [
+        "Damipoli for firing fireball_overhang_6"
+      ]
+    },
+    {
+      "ID": 20103680,
+      "Entries": [
+        "Damipori for the firing of fireballs for the head destruction of the rumbling"
+      ]
+    },
+    {
+      "ID": 20103700,
+      "Entries": [
+        "Damipori_01 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103701,
+      "Entries": [
+        "Damipoli_02 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103702,
+      "Entries": [
+        "Damipori_03 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103703,
+      "Entries": [
+        "Damipoli_04 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103704,
+      "Entries": [
+        "Damipoli_05 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103705,
+      "Entries": [
+        "Damipoli_06 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103706,
+      "Entries": [
+        "Damipoli_07 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103707,
+      "Entries": [
+        "Damipoli_08 for fireball firing"
+      ]
+    },
+    {
+      "ID": 20103800,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103801,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103803,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103804,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103806,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103808,
+      "Entries": [
+        "【Environment Map ID】 【Memory of giants】Fire damage OBJ"
+      ]
+    },
+    {
+      "ID": 20103809,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Kingdom soldier_General corpse 1"
+      ]
+    },
+    {
+      "ID": 20103810,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Kingdom soldier_General corpse 1"
+      ]
+    },
+    {
+      "ID": 20103811,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Kingdom soldier_General corpse 1"
+      ]
+    },
+    {
+      "ID": 20103812,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Kingdom soldier_General corpse 1"
+      ]
+    },
+    {
+      "ID": 20103813,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】National Flag (Large)"
+      ]
+    },
+    {
+      "ID": 20103814,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Barista barrels with arrows"
+      ]
+    },
+    {
+      "ID": 20103815,
+      "Entries": [
+        "【Environment Map ID】 【Fort of resistance】Barista barrels with arrows"
+      ]
+    },
+    {
+      "ID": 20103900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barista"
+      ]
+    },
+    {
+      "ID": 20103901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barista"
+      ]
+    },
+    {
+      "ID": 20103902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barista"
+      ]
+    },
+    {
+      "ID": 20103903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] barista"
+      ]
+    },
+    {
+      "ID": 20103904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103912,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103913,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20103915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20104000,
+      "Entries": [
+        "【NPC】Tomb_Captain of the Kingdom"
+      ]
+    },
+    {
+      "ID": 20104100,
+      "Entries": [
+        "【NPC】Tomb_Tsukimitsu Grandfather"
+      ]
+    },
+    {
+      "ID": 20105000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105030,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105040,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20105060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20106000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20106150,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

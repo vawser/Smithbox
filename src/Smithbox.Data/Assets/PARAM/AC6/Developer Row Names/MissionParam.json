@@ -1,0 +1,671 @@
+{
+  "Name": "MissionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value -- 無効値"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Prologue | Prologue -- プロローグ | Prologue"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "West Pines Dam Destroyed -- ダム破壊 | West Pines Dam Destroyed"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Dam Destroyed_ALT | ALT West Pines Dam Destroyed -- ダム破壊_ALT | ALT West Pines Dam Destroyed"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Crossing The Wall -- 壁越え | Crossing The Wall"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "String | Text Coordinates -- 文字列 | Text Coordinates"
+      ]
+    },
+    {
+      "ID": 2055,
+      "Entries": [
+        "String_ALT | ALT Text Coordinates -- 文字列_ALT | ALT Text Coordinates"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Survey Of Former VOB Arsenal | Survey Of Former VOB Arsenal -- 旧VOB工廠調査 | Survey Of Former VOB Arsenal"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Destruction Of Mining Vessel -- 採掘艦破壊 | Destruction Of Mining Vessel"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Scavenging | Scavenging -- スカベンジング | Scavenging"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Big Bridge | Big Bridge -- ビッグ・ブリッジ | Big Bridge"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "Leave Territory Cover | Leave Territory Cover -- 領域離脱援護 | Leave Territory Cover"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Search: In Front Of Wall | Search: In Front Of Wall -- 探索：壁前 | Search: In Front Of Wall"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Continental Shell | Continental Shell -- 大陸殻 | Continental Shell"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Intruder Removal -- 侵入者排除 | Intruder Removal"
+      ]
+    },
+    {
+      "ID": 2211,
+      "Entries": [
+        "Fuel Base Sweep_ver2 | Fuel Base Sweep -- 燃料基地掃討_ver2 | Fuel Base Sweep"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Large Missile Launch Support | Large Missile Launch Support -- 大型ミサイル発射支援 | Large Missile Launch Support"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Search: Level A Indoor -- A層屋内捜索 | Search: Level A Indoor"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "Multiple Dam Defense -- 多重ダム防衛 | Multiple Dam Defense"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "Old World MT Elimination | Old World MT Elimination -- 旧世界MT排除 | Old World MT Elimination"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Encounter With Organization_Ver2 | Encounter With Organization_Ver2 -- 組織との出会い_ver2 | Encounter With Organization_Ver2"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Explosion Of Fuel Depot | Explosion Of Fuel Depot -- 燃料基地爆破 | Explosion Of Fuel Depot"
+      ]
+    },
+    {
+      "ID": 3043,
+      "Entries": [
+        "Attack On Old Space Port | Attack On Old Space Port -- 旧宇宙港襲撃 | Attack On Old Space Port"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "Defeat Iceworm | Defeat Iceworm -- アイスワーム撃破 | Defeat Iceworm"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Collapsed Continental Shell -- 崩落した大陸殻 | Collapsed Continental Shell"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Tunnel Sabotage_Ver2 | Tunnel Sabotage -- 坑道破壊工作_Ver2 | Tunnel Sabotage"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Elimination Of Unknown Aircraft | Elimination Of Unknown Aircraft -- 不明機体排除 | Elimination Of Unknown Aircraft"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Tunnel Revisited -- 坑道再訪 | Tunnel Revisited"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Hole In The Ice Field -- 氷原の穴 | Hole In The Ice Field"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Rail Road | Rail Road -- レイル・ロード | Rail Road"
+      ]
+    },
+    {
+      "ID": 4015,
+      "Entries": [
+        "Rail Road_ALT | ALT Rail Road -- レイル・ロード_ALT | ALT Rail Road"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Large Cave And Furnace -- 大空洞と炉 | Large Cave And Furnace"
+      ]
+    },
+    {
+      "ID": 4021,
+      "Entries": [
+        "Biological Weapons -- 生体兵器 | Biological Weapons"
+      ]
+    },
+    {
+      "ID": 4026,
+      "Entries": [
+        "Biological Weapons_ALT | ALT Biological Weapons -- 生体兵器_ALT | ALT Biological Weapons"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Ruins | Ruins -- 廃墟 | Ruins"
+      ]
+    },
+    {
+      "ID": 4035,
+      "Entries": [
+        "Ruins_ALT | ALT Ruins -- 廃墟_ALT | ALT Ruins"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Railroad Reverse | Railroad Reverse -- レイルロード逆走 | Railroad Reverse"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "AC Battle At Power Plant | AC Battle At Power Plant -- 発電所でのAC戦 | AC Battle At Power Plant"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Jailbreak | Jailbreak -- 脱獄 | Jailbreak"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "New Level B Rises -- 浮上する新B層 | New Level B Rises"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Straight City Invasion | Straight City Invasion -- ストレート市街侵攻 | Straight City Invasion"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "People of New Level B -- 新B層の人々 | People of New Level B"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Breaking Through The Atmosphere | Breaking Through The Atmosphere -- 大気圏突破 | Breaking Through The Atmosphere"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Straight City Reverse Run | Straight City Reverse Run -- ストレート市街逆走 | Straight City Reverse Run"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "City On The Sea | City On The Sea -- 洋上の都市 | City On The Sea"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "City on the Sea_ALT | ALT City On The Sea -- 洋上の都市_ALT | ALT City On The Sea"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Recapture Of Underground Facilities | -- 地下施設奪還 | Recapture Of Underground Facilities"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Final Battle A -- 決戦A | Final Battle A"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Final Battle B -- 決戦B | Final Battle B"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Final Battle C -- 決戦C | Final Battle C"
+      ]
+    },
+    {
+      "ID": 7900,
+      "Entries": [
+        "Sub Mission: Helicopter Destruction | Sub Mission: Helicopter Destruction -- サブ・ミッション：輸送ヘリ撃破 | Sub Mission: Helicopter Destruction"
+      ]
+    },
+    {
+      "ID": 7910,
+      "Entries": [
+        "Sub Mission: Open-Cut Mining Site -- サブ・ミッション（露天採掘場） |  Sub Mission: Open-Cut Mining Site"
+      ]
+    },
+    {
+      "ID": 7920,
+      "Entries": [
+        "Sub Mission: Tutorial Level A -- サブ・ミッション（チュートリアルA層） |  Sub Mission: Tutorial Level A"
+      ]
+    },
+    {
+      "ID": 7930,
+      "Entries": [
+        "Sub Mission: Hole in the Ice Field -- サブ・ミッション（氷原の穴） |  Sub Mission: Hole in the Ice Field"
+      ]
+    },
+    {
+      "ID": 7940,
+      "Entries": [
+        "Sub Mission: Large Cave and Furnace -- サブ・ミッション（大空洞と炉） |  Sub Mission: Large Cave and Furnace"
+      ]
+    },
+    {
+      "ID": 7950,
+      "Entries": [
+        "Sub Mission: Imperial Base -- サブ・ミッション（帝国基地） |  Sub Mission: Imperial Base"
+      ]
+    },
+    {
+      "ID": 7960,
+      "Entries": [
+        "Sub Mission: Big Bridge | Sub Mission: Big Bridge -- サブ・ミッション（ビッグブリッジ） |  Sub Mission: Big Bridge"
+      ]
+    },
+    {
+      "ID": 7970,
+      "Entries": [
+        "Sub Mission: Battery Destruction | Sub Mission: Battery Destruction -- サブ・ミッション：砲台撃破 | Sub Mission: Battery Destruction"
+      ]
+    },
+    {
+      "ID": 7980,
+      "Entries": [
+        "Sub Mission: First AC Battle | Sub Mission: First AC Battle -- サブ・ミッション：初AC戦 | Sub Mission: First AC Battle"
+      ]
+    },
+    {
+      "ID": 7990,
+      "Entries": [
+        "Sub-mission: Destruction Behind the Wall -- サブ・ミッション：壁裏殲滅 | Destruction Behind the Wall"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Garage mission 01 -- ガレージ用ミッション01"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "AC test mission -- ACテスト用ミッション"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Training 1 | Training Mode 1 -- トレーニング1 | Training Mode 1"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "Training 2 | Training Mode 2 -- トレーニング2 | Training Mode 2"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "Training 3 | Training Mode 3 -- トレーニング3 | Training Mode 3"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "Training 4 | Training Mode 4 -- トレーニング4 | Training Mode 4"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "Training 5 | Training Mode 5 -- トレーニング5 | Training Mode 5"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "Training 6 | Training Mode 6 -- トレーニング6 | Training Mode 6"
+      ]
+    },
+    {
+      "ID": 9206,
+      "Entries": [
+        "Training 7 | Training Mode 7 -- トレーニング7 | Training Mode 7"
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        "Official online arena Lakeside town -- 正式版オンラインアリーナ\u3000湖畔の街"
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        "Official online arena Big Bridge -- 正式版オンラインアリーナ\u3000ビッグブリッジ"
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        "Official online arena Black Sand Dune -- 正式版オンラインアリーナ\u3000黒砂丘"
+      ]
+    },
+    {
+      "ID": 9303,
+      "Entries": [
+        "Official online arena Old spaceport -- 正式版オンラインアリーナ\u3000旧宇宙港"
+      ]
+    },
+    {
+      "ID": 9304,
+      "Entries": [
+        "Official online arena wall front -- 正式版オンラインアリーナ\u3000壁前"
+      ]
+    },
+    {
+      "ID": 9305,
+      "Entries": [
+        "Official online arena fuel base -- 正式版オンラインアリーナ\u3000燃料基地"
+      ]
+    },
+    {
+      "ID": 9306,
+      "Entries": [
+        "Official online arena - City on the Ocean -- 正式版オンラインアリーナ\u3000洋上の都市"
+      ]
+    },
+    {
+      "ID": 9307,
+      "Entries": [
+        "Official online arena Continental Shell -- 正式版オンラインアリーナ\u3000大陸殻"
+      ]
+    },
+    {
+      "ID": 9308,
+      "Entries": [
+        "Official online arena Collapse A tier -- 正式版オンラインアリーナ\u3000崩落A層"
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9313,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9314,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9315,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9316,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9317,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9318,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9319,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9331,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        "Official offline arena Lakeside town -- 正式版オフラインアリーナ\u3000湖畔の街"
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        "Official offline arena Big Bridge -- 正式版オフラインアリーナ\u3000ビッグブリッジ"
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        "Official offline arena Black Sand Dune -- 正式版オフラインアリーナ\u3000黒砂丘"
+      ]
+    },
+    {
+      "ID": 9403,
+      "Entries": [
+        "Official offline arena mountain -- 正式版オフラインアリーナ\u3000山岳"
+      ]
+    },
+    {
+      "ID": 9404,
+      "Entries": [
+        "Official offline arena wall front -- 正式版オフラインアリーナ\u3000壁前"
+      ]
+    },
+    {
+      "ID": 9405,
+      "Entries": [
+        "Official offline arena fuel base -- 正式版オフラインアリーナ\u3000燃料基地"
+      ]
+    },
+    {
+      "ID": 9406,
+      "Entries": [
+        "Official offline arena Continental Shell (Sea Spider Area) -- 正式版オフラインアリーナ\u3000大陸殻（ウミグモエリア）"
+      ]
+    },
+    {
+      "ID": 9407,
+      "Entries": [
+        "Official offline arena Icefield -- 正式版オフラインアリーナ\u3000大氷原"
+      ]
+    },
+    {
+      "ID": 9408,
+      "Entries": [
+        "Official offline arena AC test -- 正式版オフラインアリーナ\u3000ACテスト"
+      ]
+    },
+    {
+      "ID": 9409,
+      "Entries": [
+        "Official offline arena AC test (boss) -- 正式版オフラインアリーナ\u3000ACテスト（ボス）"
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        "Official offline arena AC test (last boss) -- 正式版オフラインアリーナ\u3000ACテスト（ラスボス）"
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        "Official offline arena AC test (abyss) -- 正式版オフラインアリーナ\u3000ACテスト（深淵）"
+      ]
+    },
+    {
+      "ID": 9412,
+      "Entries": [
+        "Official offline arena VOB Arsenal -- 正式版オフラインアリーナ\u3000VOB工廠"
+      ]
+    },
+    {
+      "ID": 9413,
+      "Entries": [
+        "Official offline arena collapse A layer -- 正式版オフラインアリーナ\u3000崩落A層"
+      ]
+    },
+    {
+      "ID": 9414,
+      "Entries": [
+        "Official offline arena Old spaceport -- 正式版オフラインアリーナ\u3000旧宇宙港"
+      ]
+    },
+    {
+      "ID": 9415,
+      "Entries": [
+        "Official offline arena Dam -- 正式版オフラインアリーナ\u3000ダム"
+      ]
+    },
+    {
+      "ID": 9416,
+      "Entries": [
+        "Official offline arena: City on the ocean -- 正式版オフラインアリーナ\u3000洋上の都市"
+      ]
+    },
+    {
+      "ID": 99990022,
+      "Entries": [
+        "For boss review_regular army heavy AC_cutting edge -- ボスレビュー用_正規軍重AC_最先端"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "Name": "MenuFilter",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "invalid value"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "loading"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Movie/cutscene"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Title screen"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "FE default"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "menu default"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Effects in TAE"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Effects in TAE"
+      ]
+    },
+    {
+      "ID": 99510000,
+      "Entries": [
+        "[Test] Medium stagger RGB shifting noise 01"
+      ]
+    },
+    {
+      "ID": 99510001,
+      "Entries": [
+        "[Test] Medium stagger RGB shift noise 02"
+      ]
+    },
+    {
+      "ID": 99510002,
+      "Entries": [
+        "[Test] Medium stagger RGB shift noise 03"
+      ]
+    },
+    {
+      "ID": 99510099,
+      "Entries": [
+        "[Test] Medium stagger sandstorm noise"
+      ]
+    },
+    {
+      "ID": 99520000,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 01"
+      ]
+    },
+    {
+      "ID": 99520001,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise 02"
+      ]
+    },
+    {
+      "ID": 99520002,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 03"
+      ]
+    },
+    {
+      "ID": 99520003,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise 04"
+      ]
+    },
+    {
+      "ID": 99520004,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 05"
+      ]
+    },
+    {
+      "ID": 99520005,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 06"
+      ]
+    },
+    {
+      "ID": 99520006,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 07"
+      ]
+    },
+    {
+      "ID": 99520007,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 08"
+      ]
+    },
+    {
+      "ID": 99520008,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 09"
+      ]
+    },
+    {
+      "ID": 99520009,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 10"
+      ]
+    },
+    {
+      "ID": 99520010,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 11"
+      ]
+    },
+    {
+      "ID": 99520011,
+      "Entries": [
+        "[Test] Large stagger RGB shift noise 12"
+      ]
+    },
+    {
+      "ID": 99520020,
+      "Entries": [
+        "[Test] Big stagger RGB shift noise last"
+      ]
+    },
+    {
+      "ID": 99520099,
+      "Entries": [
+        "[Test] Large stagger sandstorm noise"
+      ]
+    },
+    {
+      "ID": 99540000,
+      "Entries": [
+        "[Test] Additive stagger RGB shift noise 01"
+      ]
+    },
+    {
+      "ID": 99540099,
+      "Entries": [
+        "[Test] Additive stagger sandstorm noise"
+      ]
+    }
+  ]
+}

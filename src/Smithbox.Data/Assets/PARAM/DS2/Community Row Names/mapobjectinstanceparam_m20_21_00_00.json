@@ -1,0 +1,1001 @@
+{
+  "Name": "mapobjectinstanceparam_m20_21_00_00",
+  "Entries": [
+    {
+      "ID": 20210400,
+      "Entries": [
+        "【Both doors】Golem Door 01"
+      ]
+    },
+    {
+      "ID": 20210401,
+      "Entries": [
+        "【Both doors】Golem Door 02"
+      ]
+    },
+    {
+      "ID": 20210402,
+      "Entries": [
+        "【Both doors】Golem Door 03"
+      ]
+    },
+    {
+      "ID": 20210403,
+      "Entries": [
+        "【Both doors】Golem Door 04"
+      ]
+    },
+    {
+      "ID": 20210404,
+      "Entries": [
+        "【Both doors】Golem Door 05"
+      ]
+    },
+    {
+      "ID": 20210405,
+      "Entries": [
+        "【Both doors】Golem Door 06"
+      ]
+    },
+    {
+      "ID": 20210406,
+      "Entries": [
+        "【Both doors】The King's Door"
+      ]
+    },
+    {
+      "ID": 20210407,
+      "Entries": [
+        "【Both doors】The door that the golem opens"
+      ]
+    },
+    {
+      "ID": 20210408,
+      "Entries": [
+        "【Both doors】Entrance door"
+      ]
+    },
+    {
+      "ID": 20210410,
+      "Entries": [
+        "[One door] a door covered with a lattice between soldiers"
+      ]
+    },
+    {
+      "ID": 20210415,
+      "Entries": [
+        "【Both doors】The key door of the corridor"
+      ]
+    },
+    {
+      "ID": 20210420,
+      "Entries": [
+        "【Both doors】The door in front of the king's door"
+      ]
+    },
+    {
+      "ID": 20210421,
+      "Entries": [
+        "【Both doors】The door in front of the king's door"
+      ]
+    },
+    {
+      "ID": 20210422,
+      "Entries": [
+        "【Both doors】Door of the hall"
+      ]
+    },
+    {
+      "ID": 20210423,
+      "Entries": [
+        "[Both doors] the door on the elevator"
+      ]
+    },
+    {
+      "ID": 20210430,
+      "Entries": [
+        "【One door】The top floor door (one-way due to the step after the door)"
+      ]
+    },
+    {
+      "ID": 20210440,
+      "Entries": [
+        "【One door】One door of iron 2 double 1"
+      ]
+    },
+    {
+      "ID": 20210441,
+      "Entries": [
+        "【One door】One door of iron 2 double 2"
+      ]
+    },
+    {
+      "ID": 20210442,
+      "Entries": [
+        "【One door】One door of iron 2 double 3"
+      ]
+    },
+    {
+      "ID": 20210443,
+      "Entries": [
+        "【One door】One door of iron 2 double 4"
+      ]
+    },
+    {
+      "ID": 20210444,
+      "Entries": [
+        "【One door】One door of iron 2 double 5"
+      ]
+    },
+    {
+      "ID": 20210445,
+      "Entries": [
+        "【One door】One door of iron 2 double 6"
+      ]
+    },
+    {
+      "ID": 20210500,
+      "Entries": [
+        "【Ladder】 【King's Castle】Dedicated Ladder"
+      ]
+    },
+    {
+      "ID": 20210501,
+      "Entries": [
+        "Ladder to the basement"
+      ]
+    },
+    {
+      "ID": 20210601,
+      "Entries": [
+        "【White Door】02 Boss"
+      ]
+    },
+    {
+      "ID": 20210602,
+      "Entries": [
+        "【White Door】03 In Front of Boss"
+      ]
+    },
+    {
+      "ID": 20210605,
+      "Entries": [
+        "【White Door】After boss in 06"
+      ]
+    },
+    {
+      "ID": 20210606,
+      "Entries": [
+        "[White door] after the boss"
+      ]
+    },
+    {
+      "ID": 20210607,
+      "Entries": [
+        "【White Door】08 Rasbos Front"
+      ]
+    },
+    {
+      "ID": 20210608,
+      "Entries": [
+        "[Black door] map start point"
+      ]
+    },
+    {
+      "ID": 20210610,
+      "Entries": [
+        "【Black Door】Before the pitfalls to the underground"
+      ]
+    },
+    {
+      "ID": 20210650,
+      "Entries": [
+        "【Bonfire】01_In front of the king's door to Las Bos"
+      ]
+    },
+    {
+      "ID": 20210655,
+      "Entries": [
+        "【Bonfire】02_After the Boss Heavy Cavalry"
+      ]
+    },
+    {
+      "ID": 20210660,
+      "Entries": [
+        "【Bonfire】03_Inside the Hidden Door"
+      ]
+    },
+    {
+      "ID": 20210665,
+      "Entries": [
+        "【Bonfire】04_In front of pilgrims in the abyss of the underground"
+      ]
+    },
+    {
+      "ID": 20211000,
+      "Entries": [
+        "Statuenite's neck_1"
+      ]
+    },
+    {
+      "ID": 20211001,
+      "Entries": [
+        "Statuenite's neck_second body"
+      ]
+    },
+    {
+      "ID": 20211002,
+      "Entries": [
+        "Statuenite's neck_3"
+      ]
+    },
+    {
+      "ID": 20211003,
+      "Entries": [
+        "Statuenite's neck_4"
+      ]
+    },
+    {
+      "ID": 20211100,
+      "Entries": [
+        "Statue of a dragon spitting acid"
+      ]
+    },
+    {
+      "ID": 20211105,
+      "Entries": [
+        "Statue of a dragon spitting acid"
+      ]
+    },
+    {
+      "ID": 20211110,
+      "Entries": [
+        "Statue of a dragon spitting acid"
+      ]
+    },
+    {
+      "ID": 20211115,
+      "Entries": [
+        "Statue of a dragon spitting acid"
+      ]
+    },
+    {
+      "ID": 20211200,
+      "Entries": [
+        "Fall into the cave _NPC the back of the fall-through door"
+      ]
+    },
+    {
+      "ID": 20211300,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211301,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211302,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211303,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211304,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211305,
+      "Entries": [
+        "Mirror Knight's Breaking Pillar"
+      ]
+    },
+    {
+      "ID": 20211400,
+      "Entries": [
+        "High ground of heavy cavalry"
+      ]
+    },
+    {
+      "ID": 20211401,
+      "Entries": [
+        "High ground of heavy cavalry"
+      ]
+    },
+    {
+      "ID": 20211402,
+      "Entries": [
+        "High ground of heavy cavalry"
+      ]
+    },
+    {
+      "ID": 20211500,
+      "Entries": [
+        "【Lever】Elevator for connection (top)"
+      ]
+    },
+    {
+      "ID": 20211510,
+      "Entries": [
+        "【Lever】Elevator for connection (bottom)"
+      ]
+    },
+    {
+      "ID": 20211520,
+      "Entries": [
+        "【Lever】Open the grid door between soldiers"
+      ]
+    },
+    {
+      "ID": 20211530,
+      "Entries": [
+        "[Lever] lift to mirror night _ mirror night side"
+      ]
+    },
+    {
+      "ID": 20211540,
+      "Entries": [
+        "[Lever] on the elevator to mirror night"
+      ]
+    },
+    {
+      "ID": 20211600,
+      "Entries": [
+        "[Hidden Door (Key Guide)】"
+      ]
+    },
+    {
+      "ID": 20211700,
+      "Entries": [
+        "The Key Man"
+      ]
+    },
+    {
+      "ID": 20211800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20211810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20212000,
+      "Entries": [
+        "a grid covering the door between soldiers"
+      ]
+    },
+    {
+      "ID": 20212500,
+      "Entries": [
+        "Golem_right to open the door of the entrance"
+      ]
+    },
+    {
+      "ID": 20212505,
+      "Entries": [
+        "Golem_left opening the door of the entrance"
+      ]
+    },
+    {
+      "ID": 20212510,
+      "Entries": [
+        "golem room_light golem_right"
+      ]
+    },
+    {
+      "ID": 20212515,
+      "Entries": [
+        "Golem room_light-turned golem_left"
+      ]
+    },
+    {
+      "ID": 20212520,
+      "Entries": [
+        "Golem moving machine room lift"
+      ]
+    },
+    {
+      "ID": 20212600,
+      "Entries": [
+        "Lever moved by the right golem inthe entrance"
+      ]
+    },
+    {
+      "ID": 20212605,
+      "Entries": [
+        "Lever moved by the left golem inthe entrance"
+      ]
+    },
+    {
+      "ID": 20212620,
+      "Entries": [
+        "Lever moved by the golem in the machine room"
+      ]
+    },
+    {
+      "ID": 20212700,
+      "Entries": [
+        "Golem Lampstand_Left"
+      ]
+    },
+    {
+      "ID": 20212705,
+      "Entries": [
+        "Golem Lampstand_Right"
+      ]
+    },
+    {
+      "ID": 20213000,
+      "Entries": [
+        "[Warp] Magic Team"
+      ]
+    },
+    {
+      "ID": 20213100,
+      "Entries": [
+        "Connecting lifting machine"
+      ]
+    },
+    {
+      "ID": 20213110,
+      "Entries": [
+        "Lift to Mirror Night"
+      ]
+    },
+    {
+      "ID": 20213700,
+      "Entries": [
+        "【Environment Map ID】 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213701,
+      "Entries": [
+        "【Environment Map ID】 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213702,
+      "Entries": [
+        "【Environment Map ID】 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213703,
+      "Entries": [
+        "【Environment Map ID】 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213705,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213706,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213707,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213708,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213709,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213710,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213711,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213712,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213713,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213714,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213715,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213716,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213717,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213718,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213719,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213720,
+      "Entries": [
+        "【Environment Map ID】 【Iwamine Castle】Mirror"
+      ]
+    },
+    {
+      "ID": 20213721,
+      "Entries": [
+        "【Environment Map ID】 Dummy object for rain SFX generation 2"
+      ]
+    },
+    {
+      "ID": 20213800,
+      "Entries": [
+        "[Lightweight OBJ setting] 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213801,
+      "Entries": [
+        "[Lightweight OBJ setting] 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213802,
+      "Entries": [
+        "[Lightweight OBJ setting] 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213803,
+      "Entries": [
+        "[Lightweight OBJ setting] 【Wangcheng】Arch (single) _for camera transmission processing"
+      ]
+    },
+    {
+      "ID": 20213804,
+      "Entries": [
+        "[Lightweight OBJ setting] The Throne of the Queen"
+      ]
+    },
+    {
+      "ID": 20213900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] mirror"
+      ]
+    },
+    {
+      "ID": 20213901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] mirror"
+      ]
+    },
+    {
+      "ID": 20213902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] mirror"
+      ]
+    },
+    {
+      "ID": 20213903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] mirror"
+      ]
+    },
+    {
+      "ID": 20213904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 20213911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 20213912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 20213913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] wooden box"
+      ]
+    },
+    {
+      "ID": 20213914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 20213921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 20213922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 20213923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 20213924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213925,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213931,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213932,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213933,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213934,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213935,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213941,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213942,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213943,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213944,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20213945,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20214000,
+      "Entries": [
+        "【NPC】Tomb_Pilgrims in the Abyss"
+      ]
+    },
+    {
+      "ID": 20214200,
+      "Entries": [
+        "【NPC】Tomb_Tsukimitsu Grandfather"
+      ]
+    },
+    {
+      "ID": 20214300,
+      "Entries": [
+        "【NPC】Tomb_Captive Girl"
+      ]
+    },
+    {
+      "ID": 20215000,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215010,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215020,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215050,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215060,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215070,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215080,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215090,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215100,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215110,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215120,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215130,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215140,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215150,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215160,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20215170,
+      "Entries": [
+        "[Chest] Treasure"
+      ]
+    },
+    {
+      "ID": 20216000,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216010,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216020,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216030,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216040,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216050,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216060,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216070,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216080,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216090,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216100,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216110,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216120,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216130,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    },
+    {
+      "ID": 20216140,
+      "Entries": [
+        "[Corpse] Treasure"
+      ]
+    }
+  ]
+}

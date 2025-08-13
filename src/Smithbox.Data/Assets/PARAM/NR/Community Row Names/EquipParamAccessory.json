@@ -1,0 +1,815 @@
+{
+  "Name": "EquipParamAccessory",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Crimson Amber Medallion"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Cerulean Amber Medallion"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Viridian Amber Medallion"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Erdtree's Favor"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Silver Scarab"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Gold Scarab"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Green Turtle Talisman"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Stalwart Horn Charm"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Immunizing Horn Charm"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Clarifying Horn Charm"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Prince of Death's Pustule"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Mottled Necklace"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Bull-Goat's Talisman"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "Warrior Jar Shard"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "Millicent's Prosthesis"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Magic Scorpion Charm"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Lightning Scorpion Charm"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Fire Scorpion Charm"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Sacred Scorpion Charm"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Red-Feathered Branchsword"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Ritual Sword Talisman"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Spear Talisman"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Hammer Talisman"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Winged Sword Insignia"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Dagger Talisman"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Arrow's Reach Talisman"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "Twinblade Talisman"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "Axe Talisman"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "Arrow's Sting Talisman"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "Lord of Blood's Exultation"
+      ]
+    },
+    {
+      "ID": 2170,
+      "Entries": [
+        "Kindred of Rot's Exultation"
+      ]
+    },
+    {
+      "ID": 2180,
+      "Entries": [
+        "Claw Talisman"
+      ]
+    },
+    {
+      "ID": 2190,
+      "Entries": [
+        "Roar Medallion"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Curved Sword Talisman"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "Companion Jar"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "Perfumer's Talisman"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Graven-School Talisman"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Faithful's Canvas Talisman"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Old Lord's Talisman"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Radagon Icon"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Primal Glintstone Blade"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Godfrey Icon"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Dragoncrest Shield Talisman"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Spelldrake Talisman"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Flamedrake Talisman"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Boltdrake Talisman"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Haligdrake Talisman"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Pearldrake Talisman"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Crucible Feather Talisman"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Blue-Feathered Branchsword"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Ritual Shield Talisman"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Greatshield Talisman"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Crimson Seed Talisman"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Blessed Dew Talisman"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Taker's Cameo"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Godskin Swaddling Cloth"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "Assassin's Crimson Dagger"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "Assassin's Cerulean Dagger"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Carian Filigreed Crest"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Sacrificial Twig"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Ancestral Spirit's Horn"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Symbol of Avarice"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9112,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9121,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9122,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9211,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9221,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9222,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9302,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9311,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9312,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9321,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9322,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9422,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9511,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9512,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9521,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9522,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9611,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9612,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9622,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9722,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

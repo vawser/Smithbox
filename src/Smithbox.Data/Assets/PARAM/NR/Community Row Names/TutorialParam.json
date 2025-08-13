@@ -1,0 +1,701 @@
+{
+  "Name": "TutorialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Guide"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Team Expeditions"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Move"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Using the Sacred Flask"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Battle"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Battle"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Setting a Target"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Jump"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Guarding and Dodging"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "Dash"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "Surge Sprint"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "Wall Jump"
+      ]
+    },
+    {
+      "ID": 1095,
+      "Entries": [
+        "Wall Jump"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Using Items"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Wielding Armaments"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Skills"
+      ]
+    },
+    {
+      "ID": 1125,
+      "Entries": [
+        "Activating and Switching Skills"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Character Skills"
+      ]
+    },
+    {
+      "ID": 1135,
+      "Entries": [
+        "Character Skills"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "Rescuing from Near Death"
+      ]
+    },
+    {
+      "ID": 1145,
+      "Entries": [
+        "Rescuing from Near Death"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "Death and Revival"
+      ]
+    },
+    {
+      "ID": 1160,
+      "Entries": [
+        "Ultimate Arts"
+      ]
+    },
+    {
+      "ID": 1165,
+      "Entries": [
+        "Ultimate Arts"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "Near Death"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "Sites of Grace"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Using the Map"
+      ]
+    },
+    {
+      "ID": 1195,
+      "Entries": [
+        "Using the Map"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Night's Tide"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Rarity and Passive Effects"
+      ]
+    },
+    {
+      "ID": 1215,
+      "Entries": [
+        "Changing Equipment"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "Pins"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 1905,
+      "Entries": [
+        "Sparring Grounds"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1930,
+      "Entries": [
+        "Change Garb"
+      ]
+    },
+    {
+      "ID": 1940,
+      "Entries": [
+        "Relic Rites"
+      ]
+    },
+    {
+      "ID": 1950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1960,
+      "Entries": [
+        "New Character: The Duchess"
+      ]
+    },
+    {
+      "ID": 1970,
+      "Entries": [
+        "New Character: The Revenant"
+      ]
+    },
+    {
+      "ID": 1980,
+      "Entries": [
+        "When the Earth Shifts"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Partial Remembrances"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Realm of Remembrance"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Concluding Remembrances"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Personal Objectives"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "The World After Finishing the Game"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "Sovereign Sigil"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Helpful Hints"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "Guard Counters"
+      ]
+    },
+    {
+      "ID": 2570,
+      "Entries": [
+        "Sorceries and Incantations"
+      ]
+    },
+    {
+      "ID": 2571,
+      "Entries": [
+        "Sorceries and Incantations"
+      ]
+    },
+    {
+      "ID": 2580,
+      "Entries": [
+        "Bows"
+      ]
+    },
+    {
+      "ID": 2581,
+      "Entries": [
+        "Bows"
+      ]
+    },
+    {
+      "ID": 2590,
+      "Entries": [
+        "Nearby Item Shortcuts"
+      ]
+    },
+    {
+      "ID": 2591,
+      "Entries": [
+        "Using Items"
+      ]
+    },
+    {
+      "ID": 2595,
+      "Entries": [
+        "Wielding Armaments"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Stance-Breaking"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Status Ailments"
+      ]
+    },
+    {
+      "ID": 2620,
+      "Entries": [
+        "Attack Affinities"
+      ]
+    },
+    {
+      "ID": 2640,
+      "Entries": [
+        "HP"
+      ]
+    },
+    {
+      "ID": 2650,
+      "Entries": [
+        "Stamina"
+      ]
+    },
+    {
+      "ID": 2660,
+      "Entries": [
+        "FP"
+      ]
+    },
+    {
+      "ID": 2670,
+      "Entries": [
+        "Attributes"
+      ]
+    },
+    {
+      "ID": 2680,
+      "Entries": [
+        "Passive Abilities"
+      ]
+    },
+    {
+      "ID": 2681,
+      "Entries": [
+        "Character Skills"
+      ]
+    },
+    {
+      "ID": 2682,
+      "Entries": [
+        "Ultimate Arts"
+      ]
+    },
+    {
+      "ID": 2690,
+      "Entries": [
+        "Movement"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "The Camera"
+      ]
+    },
+    {
+      "ID": 2710,
+      "Entries": [
+        "Jumping"
+      ]
+    },
+    {
+      "ID": 2720,
+      "Entries": [
+        "The Sacred Flask"
+      ]
+    },
+    {
+      "ID": 2730,
+      "Entries": [
+        "Attacking"
+      ]
+    },
+    {
+      "ID": 2740,
+      "Entries": [
+        "Dodging"
+      ]
+    },
+    {
+      "ID": 2750,
+      "Entries": [
+        "Guarding"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Magic Cocktail: Single"
+      ]
+    },
+    {
+      "ID": 2903,
+      "Entries": [
+        "Magic Cocktail: Double 1"
+      ]
+    },
+    {
+      "ID": 2904,
+      "Entries": [
+        "Magic Cocktail: Double 2"
+      ]
+    },
+    {
+      "ID": 2907,
+      "Entries": [
+        "Magic Cocktail: Mixed"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Equipment Menu"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Status Menu"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Level Up Menu"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "Shops"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Strengthen Armament Menu"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Special Smithing Table"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Expeditions"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Character Selection"
+      ]
+    },
+    {
+      "ID": 3090,
+      "Entries": [
+        "Change Garb Menu"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Relic Rites Menu"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Visual Codex Menu"
+      ]
+    },
+    {
+      "ID": 3120,
+      "Entries": [
+        "Journal"
+      ]
+    },
+    {
+      "ID": 3130,
+      "Entries": [
+        "Small Jar Bazaar"
+      ]
+    },
+    {
+      "ID": 3180,
+      "Entries": [
+        "Map Menu"
+      ]
+    },
+    {
+      "ID": 3190,
+      "Entries": [
+        "Map: Key Locations [1]"
+      ]
+    },
+    {
+      "ID": 3191,
+      "Entries": [
+        "Map: Key Locations [2]"
+      ]
+    },
+    {
+      "ID": 3192,
+      "Entries": [
+        "Map: Key Locations [3]"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Map: Environmental Information"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Map: Other Information"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "Map: Finding Armaments and Items"
+      ]
+    },
+    {
+      "ID": 3220,
+      "Entries": [
+        "Sparring Equipment Menu"
+      ]
+    },
+    {
+      "ID": 3230,
+      "Entries": [
+        "Sparring Settings Menu"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "Armament Replication Menu"
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "Victor's Record Menu "
+      ]
+    },
+    {
+      "ID": 3270,
+      "Entries": [
+        "Gestures"
+      ]
+    },
+    {
+      "ID": 3280,
+      "Entries": [
+        "Runes and Murk"
+      ]
+    },
+    {
+      "ID": 3290,
+      "Entries": [
+        "Cataclysms"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "Item Pins"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Material Effects"
+      ]
+    },
+    {
+      "ID": 3320,
+      "Entries": [
+        "Ties to Other Worlds"
+      ]
+    },
+    {
+      "ID": 3340,
+      "Entries": [
+        "Map: Show Tunnel"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Using Pins"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Shifting Earth: Rotted Woods"
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Shifting Earth: Noklateo, the Shrouded City"
+      ]
+    },
+    {
+      "ID": 3420,
+      "Entries": [
+        "Shifting Earth: Mountaintop"
+      ]
+    },
+    {
+      "ID": 3430,
+      "Entries": [
+        "Shifting Earth: The Crater"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

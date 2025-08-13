@@ -1,0 +1,2789 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "usually -- 通常"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal +1 -- 通常＋1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal +2 -- 通常＋2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal +3 -- 通常＋3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal +4 -- 通常＋4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal +5 -- 通常＋5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal +6 -- 通常＋6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal +7 -- 通常＋7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal +8 -- 通常＋8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal +9 -- 通常＋9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal +10 -- 通常＋10"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "crystal -- 結晶"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "crystal +1 -- 結晶＋1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "crystal +2 -- 結晶＋2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "crystal +3 -- 結晶＋3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "crystal +4 -- 結晶＋4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "crystal +5 -- 結晶＋5"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "thunder -- 雷"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Lightning +1 -- 雷＋1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Lightning +2 -- 雷＋2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Lightning +3 -- 雷＋3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Lightning +4 -- 雷＋4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Lightning +5 -- 雷＋5"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "crude -- 粗製"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Crude +1 -- 粗製＋1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Crude +2 -- 粗製＋2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Crude +3 -- 粗製＋3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Crude +4 -- 粗製＋4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Crude +5 -- 粗製＋5"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Magic A -- 魔法A"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Magic A+1 -- 魔法A＋1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Magic A+2 -- 魔法A＋2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Magic A+3 -- 魔法A＋3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Magic A+4 -- 魔法A＋4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Magic A+5 -- 魔法A＋5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Magic A+6 -- 魔法A＋6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Magic A+7 -- 魔法A＋7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Magic A+8 -- 魔法A＋8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Magic A+9 -- 魔法A＋9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Magic A+10 -- 魔法A＋10"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Magic B -- 魔法B"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Magic B+1 -- 魔法B＋1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Magic B+2 -- 魔法B＋2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Magic B+3 -- 魔法B＋3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Magic B+4 -- 魔法B＋4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Magic B+5 -- 魔法B＋5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "sacred -- 神聖"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Holy +1 -- 神聖＋1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Holy +2 -- 神聖＋2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Holy +3 -- 神聖＋3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Holy +4 -- 神聖＋4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Holy +5 -- 神聖＋5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Holy +6 -- 神聖＋6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Holy +7 -- 神聖＋7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Holy +8 -- 神聖＋8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Holy +9 -- 神聖＋9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Holy +10 -- 神聖＋10"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "darkness -- 暗黒"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "darkness +1 -- 暗黒＋1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "darkness +2 -- 暗黒＋2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "darkness +3 -- 暗黒＋3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "darkness +4 -- 暗黒＋4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "darkness +5 -- 暗黒＋5"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "flame +1 -- 炎＋1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Flame +2 -- 炎＋2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Flame +3 -- 炎＋3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Flame +4 -- 炎＋4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Flame +5 -- 炎＋5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Flame +6 -- 炎＋6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Flame +7 -- 炎＋7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Flame +8 -- 炎＋8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Flame +9 -- 炎＋9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Flame +10 -- 炎＋10"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "flame of chaos -- 混沌の炎"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Chaos flame +1 -- 混沌の炎＋1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Chaos flame +2 -- 混沌の炎＋2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Chaos flame +3 -- 混沌の炎＋3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Chaos flame +4 -- 混沌の炎＋4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Chaos flame +5 -- 混沌の炎＋5"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "daemon -- デーモン"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Demon +1 -- デーモン＋1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Demon +2 -- デーモン＋2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Demon +3 -- デーモン＋3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Demon +4 -- デーモン＋4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Demon +5 -- デーモン＋5"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "dragon -- ドラゴン"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "dragon +1 -- ドラゴン＋1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "dragon +2 -- ドラゴン＋2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "dragon +3 -- ドラゴン＋3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Dragon +4 -- ドラゴン＋4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Dragon +5 -- ドラゴン＋5"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "special -- 特別"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "special +1 -- 特別＋1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "special +2 -- 特別＋2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "special +3 -- 特別＋3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "special +4 -- 特別＋4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "special +5 -- 特別＋5"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "[Shield] Special -- 【盾】特別"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "[Shield] Special +1 -- 【盾】特別＋1"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "[Shield] Special +2 -- 【盾】特別＋2"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "[Shield] Special +3 -- 【盾】特別＋3"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "[Shield] Special +4 -- 【盾】特別＋4"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "[Shield] Special +5 -- 【盾】特別＋5"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[Shield] Special -- 【盾】特別"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "[Shield] Special +1 -- 【盾】特別＋1"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "[Shield] Special +2 -- 【盾】特別＋2"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "[Shield] Special +3 -- 【盾】特別＋3"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "[Shield] Special +4 -- 【盾】特別＋4"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "[Shield] Special +5 -- 【盾】特別＋5"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "[Shield] Special -- 【盾】特別"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "[Shield] Special +1 -- 【盾】特別＋1"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "[Shield] Special +2 -- 【盾】特別＋2"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "[Shield] Special +3 -- 【盾】特別＋3"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "[Shield] Special +4 -- 【盾】特別＋4"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "[Shield] Special +5 -- 【盾】特別＋5"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "[Club only] Normal -- 【クラブ専用】通常"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "[Club only] Normal +1 -- 【クラブ専用】通常＋1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "[Club only] Normal +2 -- 【クラブ専用】通常＋2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "[Club only] Normal +3 -- 【クラブ専用】通常＋3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "[Club only] Normal +4 -- 【クラブ専用】通常＋4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "[Club only] Normal +5 -- 【クラブ専用】通常＋5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "[Club only] Normal +6 -- 【クラブ専用】通常＋6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "[Club only] Normal +7 -- 【クラブ専用】通常＋7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "[Club only] Normal +8 -- 【クラブ専用】通常＋8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "[Club only] Normal +9 -- 【クラブ専用】通常＋9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "[Club only] Normal +10 -- 【クラブ専用】通常＋10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "[Club only] Normal +11 -- 【クラブ専用】通常＋11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "[Club only] Normal +12 -- 【クラブ専用】通常＋12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "[Club only] Normal +13 -- 【クラブ専用】通常＋13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "[Club only] Normal +14 -- 【クラブ専用】通常＋14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "[Club only] Normal +15 -- 【クラブ専用】通常＋15"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Club only] Crystal -- 【クラブ専用】結晶"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[Club only] Crystal +1 -- 【クラブ専用】結晶＋1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[Club only] Crystal +2 -- 【クラブ専用】結晶＋2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "[Club only] Crystal +3 -- 【クラブ専用】結晶＋3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "[Club only] Crystal +4 -- 【クラブ専用】結晶＋4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "[Club only] Crystal +5 -- 【クラブ専用】結晶＋5"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Club only] Lightning -- 【クラブ専用】雷"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[Club only] Lightning +1 -- 【クラブ専用】雷＋1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "[Club only] Lightning +2 -- 【クラブ専用】雷＋2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "[Club only] Lightning +3 -- 【クラブ専用】雷＋3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "[Club only] Lightning +4 -- 【クラブ専用】雷＋4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "[Club only] Lightning +5 -- 【クラブ専用】雷＋5"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Club only] Crude -- 【クラブ専用】粗製"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "[Club only] Crude +1 -- 【クラブ専用】粗製＋1"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "[Club only] Crude +2 -- 【クラブ専用】粗製＋2"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "[Club only] Crude +3 -- 【クラブ専用】粗製＋3"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "[Club only] Crude +4 -- 【クラブ専用】粗製＋4"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "[Club only] Crude +5 -- 【クラブ専用】粗製＋5"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Club only] Magic A -- 【クラブ専用】魔法A"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[Club only] Magic A+1 -- 【クラブ専用】魔法A＋1"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "[Club only] Magic A+2 -- 【クラブ専用】魔法A＋2"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "[Club only] Magic A+3 -- 【クラブ専用】魔法A＋3"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "[Club only] Magic A+4 -- 【クラブ専用】魔法A＋4"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "[Club only] Magic A+5 -- 【クラブ専用】魔法A＋5"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "[Club only] Magic A+6 -- 【クラブ専用】魔法A＋6"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "[Club only] Magic A+7 -- 【クラブ専用】魔法A＋7"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "[Club only] Magic A+8 -- 【クラブ専用】魔法A＋8"
+      ]
+    },
+    {
+      "ID": 2409,
+      "Entries": [
+        "[Club only] Magic A+9 -- 【クラブ専用】魔法A＋9"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "[Club only] Magic A+10 -- 【クラブ専用】魔法A＋10"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[Club only] Magic B -- 【クラブ専用】魔法B"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "[Club only] Magic B+1 -- 【クラブ専用】魔法B＋1"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "[Club only] Magic B+2 -- 【クラブ専用】魔法B＋2"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "[Club only] Magic B+3 -- 【クラブ専用】魔法B＋3"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "[Club only] Magic B+4 -- 【クラブ専用】魔法B＋4"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "[Club only] Magic B+5 -- 【クラブ専用】魔法B＋5"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[Club only] Sacred -- 【クラブ専用】神聖"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[Club only] Holy +1 -- 【クラブ専用】神聖＋1"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "[Club only] Holy +2 -- 【クラブ専用】神聖＋2"
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        "[Club only] Holy +3 -- 【クラブ専用】神聖＋3"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "[Club only] Holy +4 -- 【クラブ専用】神聖＋4"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "[Club only] Holy +5 -- 【クラブ専用】神聖＋5"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "[Club only] Holy +6 -- 【クラブ専用】神聖＋6"
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        "[Club only] Holy +7 -- 【クラブ専用】神聖＋7"
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        "[Club only] Holy +8 -- 【クラブ専用】神聖＋8"
+      ]
+    },
+    {
+      "ID": 2609,
+      "Entries": [
+        "[Club only] Holy +9 -- 【クラブ専用】神聖＋9"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[Club only] Holy +10 -- 【クラブ専用】神聖＋10"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "[Club only] Darkness -- 【クラブ専用】暗黒"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "[Club only] Darkness +1 -- 【クラブ専用】暗黒＋1"
+      ]
+    },
+    {
+      "ID": 2702,
+      "Entries": [
+        "[Club only] Darkness +2 -- 【クラブ専用】暗黒＋2"
+      ]
+    },
+    {
+      "ID": 2703,
+      "Entries": [
+        "[Club only] Darkness +3 -- 【クラブ専用】暗黒＋3"
+      ]
+    },
+    {
+      "ID": 2704,
+      "Entries": [
+        "[Club only] Darkness +4 -- 【クラブ専用】暗黒＋4"
+      ]
+    },
+    {
+      "ID": 2705,
+      "Entries": [
+        "[Club only] Darkness +5 -- 【クラブ専用】暗黒＋5"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "[Club only] Flame -- 【クラブ専用】炎"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "[Club only] Flame +1 -- 【クラブ専用】炎＋1"
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        "[Club only] Flame +2 -- 【クラブ専用】炎＋2"
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        "[Club only] Flame +3 -- 【クラブ専用】炎＋3"
+      ]
+    },
+    {
+      "ID": 2804,
+      "Entries": [
+        "[Club only] Flame +4 -- 【クラブ専用】炎＋4"
+      ]
+    },
+    {
+      "ID": 2805,
+      "Entries": [
+        "[Club only] Flame +5 -- 【クラブ専用】炎＋5"
+      ]
+    },
+    {
+      "ID": 2806,
+      "Entries": [
+        "[Club only] Flame +6 -- 【クラブ専用】炎＋6"
+      ]
+    },
+    {
+      "ID": 2807,
+      "Entries": [
+        "[Club only] Flame +7 -- 【クラブ専用】炎＋7"
+      ]
+    },
+    {
+      "ID": 2808,
+      "Entries": [
+        "[Club only] Flame +8 -- 【クラブ専用】炎＋8"
+      ]
+    },
+    {
+      "ID": 2809,
+      "Entries": [
+        "[Club only] Flame +9 -- 【クラブ専用】炎＋9"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "[Club only] Flame +10 -- 【クラブ専用】炎＋10"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "[Club Only] Flame of Chaos -- 【クラブ専用】混沌の炎"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "[Club only] Flame of Chaos +1 -- 【クラブ専用】混沌の炎＋1"
+      ]
+    },
+    {
+      "ID": 2902,
+      "Entries": [
+        "[Club only] Flame of Chaos +2 -- 【クラブ専用】混沌の炎＋2"
+      ]
+    },
+    {
+      "ID": 2903,
+      "Entries": [
+        "[Club only] Flame of Chaos +3 -- 【クラブ専用】混沌の炎＋3"
+      ]
+    },
+    {
+      "ID": 2904,
+      "Entries": [
+        "[Club Only] Flame of Chaos +4 -- 【クラブ専用】混沌の炎＋4"
+      ]
+    },
+    {
+      "ID": 2905,
+      "Entries": [
+        "[Club Only] Flame of Chaos +5 -- 【クラブ専用】混沌の炎＋5"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Composite] Lightning -- 【コンポジット】雷"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "[Composite] Lightning +1 -- 【コンポジット】雷＋1"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "[Composite] Lightning +2 -- 【コンポジット】雷＋2"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "[Composite] Lightning +3 -- 【コンポジット】雷＋3"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "[Composite] Lightning +4 -- 【コンポジット】雷＋4"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "[Composite] Lightning +5 -- 【コンポジット】雷＋5"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[Composite] Flame -- 【コンポジット】炎"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "[Composite] Flame +1 -- 【コンポジット】炎＋1"
+      ]
+    },
+    {
+      "ID": 3802,
+      "Entries": [
+        "[Composite] Flame +2 -- 【コンポジット】炎＋2"
+      ]
+    },
+    {
+      "ID": 3803,
+      "Entries": [
+        "[Composite] Flame +3 -- 【コンポジット】炎＋3"
+      ]
+    },
+    {
+      "ID": 3804,
+      "Entries": [
+        "[Composite] Flame +4 -- 【コンポジット】炎＋4"
+      ]
+    },
+    {
+      "ID": 3805,
+      "Entries": [
+        "[Composite] Flame +5 -- 【コンポジット】炎＋5"
+      ]
+    },
+    {
+      "ID": 3806,
+      "Entries": [
+        "[Composite] Flame +6 -- 【コンポジット】炎＋6"
+      ]
+    },
+    {
+      "ID": 3807,
+      "Entries": [
+        "[Composite] Flame +7 -- 【コンポジット】炎＋7"
+      ]
+    },
+    {
+      "ID": 3808,
+      "Entries": [
+        "[Composite] Flame +8 -- 【コンポジット】炎＋8"
+      ]
+    },
+    {
+      "ID": 3809,
+      "Entries": [
+        "[Composite] Flame +9 -- 【コンポジット】炎＋9"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[Composite] Flame +10 -- 【コンポジット】炎＋10"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "[Composite] Chaos -- 【コンポジット】混沌"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "[Composite] Chaos +1 -- 【コンポジット】混沌＋1"
+      ]
+    },
+    {
+      "ID": 3902,
+      "Entries": [
+        "[Composite] Chaos +2 -- 【コンポジット】混沌＋2"
+      ]
+    },
+    {
+      "ID": 3903,
+      "Entries": [
+        "[Composite] Chaos +3 -- 【コンポジット】混沌＋3"
+      ]
+    },
+    {
+      "ID": 3904,
+      "Entries": [
+        "[Composite] Chaos +4 -- 【コンポジット】混沌＋4"
+      ]
+    },
+    {
+      "ID": 3905,
+      "Entries": [
+        "[Composite] Chaos +5 -- 【コンポジット】混沌＋5"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Shield] Normal -- 【盾】通常"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Shield] Normal +1 -- 【盾】通常＋1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "[Shield] Normal +2 -- 【盾】通常＋2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "[Shield] Normal +3 -- 【盾】通常＋3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[Shield] Normal +4 -- 【盾】通常＋4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "[Shield] Normal +5 -- 【盾】通常＋5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "[Shield] Normal +6 -- 【盾】通常＋6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "[Shield] Normal +7 -- 【盾】通常＋7"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "[Shield] Normal +8 -- 【盾】通常＋8"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "[Shield] Normal +9 -- 【盾】通常＋9"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "[Shield] Normal +10 -- 【盾】通常＋10"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "[Shield] Normal +11 -- 【盾】通常＋11"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "[Shield] Normal +12 -- 【盾】通常＋12"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "[Shield] Normal +13 -- 【盾】通常＋13"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "[Shield] Normal +14 -- 【盾】通常＋14"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "[Shield] Normal +15 -- 【盾】通常＋15"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "[Shield] Crystal -- 【盾】結晶"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "[Shield] Crystal +1 -- 【盾】結晶＋1"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "[Shield] Crystal +2 -- 【盾】結晶＋2"
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        "[Shield] Crystal +3 -- 【盾】結晶＋3"
+      ]
+    },
+    {
+      "ID": 5104,
+      "Entries": [
+        "[Shield] Crystal +4 -- 【盾】結晶＋4"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "[Shield] Crystal +5 -- 【盾】結晶＋5"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[Shield] Lightning -- 【盾】雷"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[Shield] Lightning +1 -- 【盾】雷＋1"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[Shield] Lightning +2 -- 【盾】雷＋2"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "[Shield] Lightning +3 -- 【盾】雷＋3"
+      ]
+    },
+    {
+      "ID": 5204,
+      "Entries": [
+        "[Shield] Lightning +4 -- 【盾】雷＋4"
+      ]
+    },
+    {
+      "ID": 5205,
+      "Entries": [
+        "[Shield] Lightning +5 -- 【盾】雷＋5"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "[Shield] Magic A -- 【盾】魔法A"
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        "[Shield] Magic A+1 -- 【盾】魔法A＋1"
+      ]
+    },
+    {
+      "ID": 5402,
+      "Entries": [
+        "[Shield] Magic A+2 -- 【盾】魔法A＋2"
+      ]
+    },
+    {
+      "ID": 5403,
+      "Entries": [
+        "[Shield] Magic A+3 -- 【盾】魔法A＋3"
+      ]
+    },
+    {
+      "ID": 5404,
+      "Entries": [
+        "[Shield] Magic A+4 -- 【盾】魔法A＋4"
+      ]
+    },
+    {
+      "ID": 5405,
+      "Entries": [
+        "[Shield] Magic A+5 -- 【盾】魔法A＋5"
+      ]
+    },
+    {
+      "ID": 5406,
+      "Entries": [
+        "[Shield] Magic A+6 -- 【盾】魔法A＋6"
+      ]
+    },
+    {
+      "ID": 5407,
+      "Entries": [
+        "[Shield] Magic A+7 -- 【盾】魔法A＋7"
+      ]
+    },
+    {
+      "ID": 5408,
+      "Entries": [
+        "[Shield] Magic A+8 -- 【盾】魔法A＋8"
+      ]
+    },
+    {
+      "ID": 5409,
+      "Entries": [
+        "[Shield] Magic A+9 -- 【盾】魔法A＋9"
+      ]
+    },
+    {
+      "ID": 5410,
+      "Entries": [
+        "[Shield] Magic A+10 -- 【盾】魔法A＋10"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "[Shield] Holy -- 【盾】神聖"
+      ]
+    },
+    {
+      "ID": 5601,
+      "Entries": [
+        "[Shield] Holy +1 -- 【盾】神聖＋1"
+      ]
+    },
+    {
+      "ID": 5602,
+      "Entries": [
+        "[Shield] Holy +2 -- 【盾】神聖＋2"
+      ]
+    },
+    {
+      "ID": 5603,
+      "Entries": [
+        "[Shield] Holy +3 -- 【盾】神聖＋3"
+      ]
+    },
+    {
+      "ID": 5604,
+      "Entries": [
+        "[Shield] Holy +4 -- 【盾】神聖＋4"
+      ]
+    },
+    {
+      "ID": 5605,
+      "Entries": [
+        "[Shield] Holy +5 -- 【盾】神聖＋5"
+      ]
+    },
+    {
+      "ID": 5606,
+      "Entries": [
+        "[Shield] Holy +6 -- 【盾】神聖＋6"
+      ]
+    },
+    {
+      "ID": 5607,
+      "Entries": [
+        "[Shield] Holy +7 -- 【盾】神聖＋7"
+      ]
+    },
+    {
+      "ID": 5608,
+      "Entries": [
+        "[Shield] Holy +8 -- 【盾】神聖＋8"
+      ]
+    },
+    {
+      "ID": 5609,
+      "Entries": [
+        "[Shield] Holy +9 -- 【盾】神聖＋9"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "[Shield] Holy +10 -- 【盾】神聖＋10"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "[Shield] Flame -- 【盾】炎"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "[Shield] Flame +1 -- 【盾】炎＋1"
+      ]
+    },
+    {
+      "ID": 5802,
+      "Entries": [
+        "[Shield] Flame +2 -- 【盾】炎＋2"
+      ]
+    },
+    {
+      "ID": 5803,
+      "Entries": [
+        "[Shield] Flame +3 -- 【盾】炎＋3"
+      ]
+    },
+    {
+      "ID": 5804,
+      "Entries": [
+        "[Shield] Flame +4 -- 【盾】炎＋4"
+      ]
+    },
+    {
+      "ID": 5805,
+      "Entries": [
+        "[Shield] Flame +5 -- 【盾】炎＋5"
+      ]
+    },
+    {
+      "ID": 5806,
+      "Entries": [
+        "[Shield] Flame +6 -- 【盾】炎＋6"
+      ]
+    },
+    {
+      "ID": 5807,
+      "Entries": [
+        "[Shield] Flame +7 -- 【盾】炎＋7"
+      ]
+    },
+    {
+      "ID": 5808,
+      "Entries": [
+        "[Shield] Flame +8 -- 【盾】炎＋8"
+      ]
+    },
+    {
+      "ID": 5809,
+      "Entries": [
+        "[Shield] Flame +9 -- 【盾】炎＋9"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "[Shield] Flame +10 -- 【盾】炎＋10"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Shield_growth+] Normal -- 【盾_伸び＋】通常"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "[Shield_Stretch+] Normal +1 -- 【盾_伸び＋】通常＋1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "[Shield_growth+] Normal +2 -- 【盾_伸び＋】通常＋2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "[Shield_growth+] Normal +3 -- 【盾_伸び＋】通常＋3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "[Shield_growth+] Normal +4 -- 【盾_伸び＋】通常＋4"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "[Shield_Stretch+] Normal +5 -- 【盾_伸び＋】通常＋5"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "[Shield_growth+] Normal +6 -- 【盾_伸び＋】通常＋6"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "[Shield_growth+] Normal +7 -- 【盾_伸び＋】通常＋7"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "[Shield_growth+] Normal +8 -- 【盾_伸び＋】通常＋8"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "[Shield_growth+] Normal +9 -- 【盾_伸び＋】通常＋9"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "[Shield_growth+] Normal +10 -- 【盾_伸び＋】通常＋10"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "[Shield_growth+] Normal +11 -- 【盾_伸び＋】通常＋11"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "[Shield_growth+] Normal +12 -- 【盾_伸び＋】通常＋12"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "[Shield_growth+] Normal +13 -- 【盾_伸び＋】通常＋13"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "[Shield_growth+] Normal +14 -- 【盾_伸び＋】通常＋14"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "[Shield_growth+] Normal +15 -- 【盾_伸び＋】通常＋15"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "[Shield_Stretch+] Crystal -- 【盾_伸び＋】結晶"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "[Shield_Stretch+] Crystal +1 -- 【盾_伸び＋】結晶＋1"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "[Shield_Stretch+] Crystal +2 -- 【盾_伸び＋】結晶＋2"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "[Shield_Stretch+] Crystal +3 -- 【盾_伸び＋】結晶＋3"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "[Shield_Stretch+] Crystal +4 -- 【盾_伸び＋】結晶＋4"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "[Shield_Stretch+] Crystal +5 -- 【盾_伸び＋】結晶＋5"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "[Shield_Stretch+] Lightning -- 【盾_伸び＋】雷"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +1 -- 【盾_伸び＋】雷＋1"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +2 -- 【盾_伸び＋】雷＋2"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +3 -- 【盾_伸び＋】雷＋3"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +4 -- 【盾_伸び＋】雷＋4"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +5 -- 【盾_伸び＋】雷＋5"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "[Shield_Stretch+] Magic A -- 【盾_伸び＋】魔法A"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+1 -- 【盾_伸び＋】魔法A＋1"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+2 -- 【盾_伸び＋】魔法A＋2"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+3 -- 【盾_伸び＋】魔法A＋3"
+      ]
+    },
+    {
+      "ID": 6404,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+4 -- 【盾_伸び＋】魔法A＋4"
+      ]
+    },
+    {
+      "ID": 6405,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+5 -- 【盾_伸び＋】魔法A＋5"
+      ]
+    },
+    {
+      "ID": 6406,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+6 -- 【盾_伸び＋】魔法A＋6"
+      ]
+    },
+    {
+      "ID": 6407,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+7 -- 【盾_伸び＋】魔法A＋7"
+      ]
+    },
+    {
+      "ID": 6408,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+8 -- 【盾_伸び＋】魔法A＋8"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+9 -- 【盾_伸び＋】魔法A＋9"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "[Shield_growth+] Magic A+10 -- 【盾_伸び＋】魔法A＋10"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "[Shield_Stretch+] Holy -- 【盾_伸び＋】神聖"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "[Shield_Stretch+] Holy +1 -- 【盾_伸び＋】神聖＋1"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "[Shield_Stretch+] Holy +2 -- 【盾_伸び＋】神聖＋2"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "[Shield_Stretch+] Holy +3 -- 【盾_伸び＋】神聖＋3"
+      ]
+    },
+    {
+      "ID": 6604,
+      "Entries": [
+        "[Shield_Stretch+] Holy +4 -- 【盾_伸び＋】神聖＋4"
+      ]
+    },
+    {
+      "ID": 6605,
+      "Entries": [
+        "[Shield_Stretch+] Holy +5 -- 【盾_伸び＋】神聖＋5"
+      ]
+    },
+    {
+      "ID": 6606,
+      "Entries": [
+        "[Shield_Stretch+] Holy +6 -- 【盾_伸び＋】神聖＋6"
+      ]
+    },
+    {
+      "ID": 6607,
+      "Entries": [
+        "[Shield_Stretch+] Holy +7 -- 【盾_伸び＋】神聖＋7"
+      ]
+    },
+    {
+      "ID": 6608,
+      "Entries": [
+        "[Shield_Stretch+] Holy +8 -- 【盾_伸び＋】神聖＋8"
+      ]
+    },
+    {
+      "ID": 6609,
+      "Entries": [
+        "[Shield_Stretch+] Holy +9 -- 【盾_伸び＋】神聖＋9"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "[Shield_Stretch+] Holy +10 -- 【盾_伸び＋】神聖＋10"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "[Shield_Stretch+] Flame -- 【盾_伸び＋】炎"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "[Shield_Stretch+] Flame +1 -- 【盾_伸び＋】炎＋1"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "[Shield_Stretch+] Flame +2 -- 【盾_伸び＋】炎＋2"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "[Shield_Stretch+] Flame +3 -- 【盾_伸び＋】炎＋3"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "[Shield_Stretch+] Flame +4 -- 【盾_伸び＋】炎＋4"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "[Shield_Stretch+] Flame +5 -- 【盾_伸び＋】炎＋5"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "[Shield_Stretch+] Flame +6 -- 【盾_伸び＋】炎＋6"
+      ]
+    },
+    {
+      "ID": 6807,
+      "Entries": [
+        "[Shield_Stretch+] Flame +7 -- 【盾_伸び＋】炎＋7"
+      ]
+    },
+    {
+      "ID": 6808,
+      "Entries": [
+        "[Shield_Stretch+] Flame +8 -- 【盾_伸び＋】炎＋8"
+      ]
+    },
+    {
+      "ID": 6809,
+      "Entries": [
+        "[Shield_Stretch+] Flame +9 -- 【盾_伸び＋】炎＋9"
+      ]
+    },
+    {
+      "ID": 6810,
+      "Entries": [
+        "[Shield_Stretch+] Flame +10 -- 【盾_伸び＋】炎＋10"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "[Shield_Stretch+] Lightning -- 【盾_伸び＋】雷"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +1 -- 【盾_伸び＋】雷＋1"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +2 -- 【盾_伸び＋】雷＋2"
+      ]
+    },
+    {
+      "ID": 7203,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +3 -- 【盾_伸び＋】雷＋3"
+      ]
+    },
+    {
+      "ID": 7204,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +4 -- 【盾_伸び＋】雷＋4"
+      ]
+    },
+    {
+      "ID": 7205,
+      "Entries": [
+        "[Shield_Stretch+] Lightning +5 -- 【盾_伸び＋】雷＋5"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "[Shield_Stretch+] Magic A -- 【盾_伸び＋】魔法A"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+1 -- 【盾_伸び＋】魔法A＋1"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+2 -- 【盾_伸び＋】魔法A＋2"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+3 -- 【盾_伸び＋】魔法A＋3"
+      ]
+    },
+    {
+      "ID": 7404,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+4 -- 【盾_伸び＋】魔法A＋4"
+      ]
+    },
+    {
+      "ID": 7405,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+5 -- 【盾_伸び＋】魔法A＋5"
+      ]
+    },
+    {
+      "ID": 7406,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+6 -- 【盾_伸び＋】魔法A＋6"
+      ]
+    },
+    {
+      "ID": 7407,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+7 -- 【盾_伸び＋】魔法A＋7"
+      ]
+    },
+    {
+      "ID": 7408,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+8 -- 【盾_伸び＋】魔法A＋8"
+      ]
+    },
+    {
+      "ID": 7409,
+      "Entries": [
+        "[Shield_Stretch+] Magic A+9 -- 【盾_伸び＋】魔法A＋9"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "[Shield_growth+] Magic A+10 -- 【盾_伸び＋】魔法A＋10"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "[Shield_Stretch+] Flame -- 【盾_伸び＋】炎"
+      ]
+    },
+    {
+      "ID": 7801,
+      "Entries": [
+        "[Shield_Stretch+] Flame +1 -- 【盾_伸び＋】炎＋1"
+      ]
+    },
+    {
+      "ID": 7802,
+      "Entries": [
+        "[Shield_Stretch+] Flame +2 -- 【盾_伸び＋】炎＋2"
+      ]
+    },
+    {
+      "ID": 7803,
+      "Entries": [
+        "[Shield_Stretch+] Flame +3 -- 【盾_伸び＋】炎＋3"
+      ]
+    },
+    {
+      "ID": 7804,
+      "Entries": [
+        "[Shield_Stretch+] Flame +4 -- 【盾_伸び＋】炎＋4"
+      ]
+    },
+    {
+      "ID": 7805,
+      "Entries": [
+        "[Shield_Stretch+] Flame +5 -- 【盾_伸び＋】炎＋5"
+      ]
+    },
+    {
+      "ID": 7806,
+      "Entries": [
+        "[Shield_Stretch+] Flame +6 -- 【盾_伸び＋】炎＋6"
+      ]
+    },
+    {
+      "ID": 7807,
+      "Entries": [
+        "[Shield_Stretch+] Flame +7 -- 【盾_伸び＋】炎＋7"
+      ]
+    },
+    {
+      "ID": 7808,
+      "Entries": [
+        "[Shield_Stretch+] Flame +8 -- 【盾_伸び＋】炎＋8"
+      ]
+    },
+    {
+      "ID": 7809,
+      "Entries": [
+        "[Shield_Stretch+] Flame +9 -- 【盾_伸び＋】炎＋9"
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        "[Shield_Stretch+] Flame +10 -- 【盾_伸び＋】炎＋10"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Crossbow] Normal -- 【弩】通常"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "[Crown] Normal +1 -- 【弩】通常＋1"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "[Crown] Normal +2 -- 【弩】通常＋2"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "[Crown] Normal +3 -- 【弩】通常＋3"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "[Crown] Normal +4 -- 【弩】通常＋4"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "[Crown] Normal +5 -- 【弩】通常＋5"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "[Crown] Normal +6 -- 【弩】通常＋6"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "[Crown] Normal +7 -- 【弩】通常＋7"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "[Crown] Normal +8 -- 【弩】通常＋8"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "[Crown] Normal +9 -- 【弩】通常＋9"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "[Crown] Normal +10 -- 【弩】通常＋10"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "[Crossbow] Normal +11 -- 【弩】通常＋11"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "[Crown] Normal +12 -- 【弩】通常＋12"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "[Crown] Normal +13 -- 【弩】通常＋13"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "[Crown] Normal +14 -- 【弩】通常＋14"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "[Crown] Normal +15 -- 【弩】通常＋15"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[Crossbow] Crystal -- 【弩】結晶"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "[Crossbow] Crystal +1 -- 【弩】結晶＋1"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "[Crossbow] Crystal +2 -- 【弩】結晶＋2"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "[Crossbow] Crystal +3 -- 【弩】結晶＋3"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "[Crossbow] Crystal +4 -- 【弩】結晶＋4"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "[Crossbow] Crystal +5 -- 【弩】結晶＋5"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "[Crossbow] Thunder -- 【弩】雷"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "[Crossbow] Lightning +1 -- 【弩】雷＋1"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "[Crossbow] Lightning +2 -- 【弩】雷＋2"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "[Crossbow] Lightning +3 -- 【弩】雷＋3"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "[Crossbow] Lightning +4 -- 【弩】雷＋4"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "[Crossbow] Lightning +5 -- 【弩】雷＋5"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "[Crossbow] Magic A -- 【弩】魔法A"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "[Crossbow] Magic A+1 -- 【弩】魔法A＋1"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "[Crossbow] Magic A+2 -- 【弩】魔法A＋2"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "[Crossbow] Magic A+3 -- 【弩】魔法A＋3"
+      ]
+    },
+    {
+      "ID": 8404,
+      "Entries": [
+        "[Crossbow] Magic A+4 -- 【弩】魔法A＋4"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "[Crossbow] Magic A+5 -- 【弩】魔法A＋5"
+      ]
+    },
+    {
+      "ID": 8406,
+      "Entries": [
+        "[Crossbow] Magic A+6 -- 【弩】魔法A＋6"
+      ]
+    },
+    {
+      "ID": 8407,
+      "Entries": [
+        "[Crossbow] Magic A+7 -- 【弩】魔法A＋7"
+      ]
+    },
+    {
+      "ID": 8408,
+      "Entries": [
+        "[Crossbow] Magic A+8 -- 【弩】魔法A＋8"
+      ]
+    },
+    {
+      "ID": 8409,
+      "Entries": [
+        "[Crossbow] Magic A+9 -- 【弩】魔法A＋9"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "[Crossbow] Magic A+10 -- 【弩】魔法A＋10"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "[crossbow] sacred -- 【弩】神聖"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "[Crown] Holy +1 -- 【弩】神聖＋1"
+      ]
+    },
+    {
+      "ID": 8602,
+      "Entries": [
+        "[Crossbow] Holy +2 -- 【弩】神聖＋2"
+      ]
+    },
+    {
+      "ID": 8603,
+      "Entries": [
+        "[Crossbow] Holy +3 -- 【弩】神聖＋3"
+      ]
+    },
+    {
+      "ID": 8604,
+      "Entries": [
+        "[Crossbow] Holy +4 -- 【弩】神聖＋4"
+      ]
+    },
+    {
+      "ID": 8605,
+      "Entries": [
+        "[Crossbow] Holy +5 -- 【弩】神聖＋5"
+      ]
+    },
+    {
+      "ID": 8606,
+      "Entries": [
+        "[Crossbow] Holy +6 -- 【弩】神聖＋6"
+      ]
+    },
+    {
+      "ID": 8607,
+      "Entries": [
+        "[Crossbow] Holy +7 -- 【弩】神聖＋7"
+      ]
+    },
+    {
+      "ID": 8608,
+      "Entries": [
+        "[Crossbow] Holy +8 -- 【弩】神聖＋8"
+      ]
+    },
+    {
+      "ID": 8609,
+      "Entries": [
+        "[Crossbow] Holy +9 -- 【弩】神聖＋9"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "[Crossbow] Holy +10 -- 【弩】神聖＋10"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "[crossbow] flame -- 【弩】炎"
+      ]
+    },
+    {
+      "ID": 8801,
+      "Entries": [
+        "[Crown] Flame +1 -- 【弩】炎＋1"
+      ]
+    },
+    {
+      "ID": 8802,
+      "Entries": [
+        "[Crown] Flame +2 -- 【弩】炎＋2"
+      ]
+    },
+    {
+      "ID": 8803,
+      "Entries": [
+        "[Crossbow] Flame +3 -- 【弩】炎＋3"
+      ]
+    },
+    {
+      "ID": 8804,
+      "Entries": [
+        "[Crown] Flame +4 -- 【弩】炎＋4"
+      ]
+    },
+    {
+      "ID": 8805,
+      "Entries": [
+        "[Crossbow] Flame +5 -- 【弩】炎＋5"
+      ]
+    },
+    {
+      "ID": 8806,
+      "Entries": [
+        "[Crown] Flame +6 -- 【弩】炎＋6"
+      ]
+    },
+    {
+      "ID": 8807,
+      "Entries": [
+        "[Crossbow] Flame +7 -- 【弩】炎＋7"
+      ]
+    },
+    {
+      "ID": 8808,
+      "Entries": [
+        "[Crown] Flame +8 -- 【弩】炎＋8"
+      ]
+    },
+    {
+      "ID": 8809,
+      "Entries": [
+        "[Crossbow] Flame +9 -- 【弩】炎＋9"
+      ]
+    },
+    {
+      "ID": 8810,
+      "Entries": [
+        "[Crossbow] Flame +10 -- 【弩】炎＋10"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "[Bow] Lightning -- 【弓】雷"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "[Bow] Lightning +1 -- 【弓】雷＋1"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "[Bow] Lightning +2 -- 【弓】雷＋2"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "[Bow] Lightning +3 -- 【弓】雷＋3"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "[Bow] Lightning +4 -- 【弓】雷＋4"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "[Bow] Lightning +5 -- 【弓】雷＋5"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "[Bow] Magic B -- 【弓】魔法B"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "[Bow] Magic B+1 -- 【弓】魔法B＋1"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "[Bow] Magic B+2 -- 【弓】魔法B＋2"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "[Bow] Magic B+3 -- 【弓】魔法B＋3"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "[Bow] Magic B+4 -- 【弓】魔法B＋4"
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        "[Bow] Magic B+5 -- 【弓】魔法B＋5"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "[Bow] Flame -- 【弓】炎"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "[Bow] Flame +1 -- 【弓】炎＋1"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "[Bow] Flame +2 -- 【弓】炎＋2"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "[Bow] Flame +3 -- 【弓】炎＋3"
+      ]
+    },
+    {
+      "ID": 9804,
+      "Entries": [
+        "[Bow] Flame +4 -- 【弓】炎＋4"
+      ]
+    },
+    {
+      "ID": 9805,
+      "Entries": [
+        "[Bow] Flame +5 -- 【弓】炎＋5"
+      ]
+    },
+    {
+      "ID": 9806,
+      "Entries": [
+        "[Bow] Flame +6 -- 【弓】炎＋6"
+      ]
+    },
+    {
+      "ID": 9807,
+      "Entries": [
+        "[Bow] Flame +7 -- 【弓】炎＋7"
+      ]
+    },
+    {
+      "ID": 9808,
+      "Entries": [
+        "[Bow] Flame +8 -- 【弓】炎＋8"
+      ]
+    },
+    {
+      "ID": 9809,
+      "Entries": [
+        "[Bow] Flame +9 -- 【弓】炎＋9"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "[Bow] Flame +10 -- 【弓】炎＋10"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "[Bow] Chaos -- 【弓】混沌"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "[Bow] Chaos +1 -- 【弓】混沌＋1"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "[Bow] Chaos +2 -- 【弓】混沌＋2"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "[Bow] Chaos +3 -- 【弓】混沌＋3"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "[Bow] Chaos +4 -- 【弓】混沌＋4"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "[Bow] Chaos +5 -- 【弓】混沌＋5"
+      ]
+    }
+  ]
+}

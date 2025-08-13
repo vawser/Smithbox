@@ -1,0 +1,203 @@
+{
+  "Name": "LoadBalancerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "PS4"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "XboxOne"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Win64"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "XboxOneX"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "For PS4 movie playback -- PS4 ムービー再生用"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "For XboxOne movie playback -- XboxOne ムービー再生用"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For Win64 movie playback -- Win64 ムービー再生用"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "For PS4 battle -- PS4 対戦用"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "XboxOne Competitive -- XboxOne 対戦用"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "For Win64 matches -- Win64 対戦用"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "For XboxOneX battle -- XboxOneX 対戦用"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "PS5 image quality priority mode -- PS5 画質優先モード"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "PS5 performance priority mode -- PS5 パフォーマンス優先モード"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "PS5 late training mode -- PS5 レイトレモード"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "PS5 Image quality priority mode for battle -- PS5 画質優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "PS5 performance priority mode for competition -- PS5 パフォーマンス優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "PS5 late training mode for competition -- PS5 レイトレモード 対戦用"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "XSX image quality priority mode -- XSX 画質優先モード"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "XSX Performance Priority Mode -- XSX パフォーマンス優先モード"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "XSX late trading mode -- XSX レイトレモード"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "XSX Image quality priority mode for competition -- XSX 画質優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "XSX performance priority mode for competition -- XSX パフォーマンス優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "XSX late training mode for competition -- XSX レイトレモード 対戦用"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "XSS image quality priority mode -- XSS 画質優先モード"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "XSS performance priority mode -- XSS パフォーマンス優先モード"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "XSS late trading mode -- XSS レイトレモード"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "XSS image quality priority mode for competition -- XSS 画質優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "XSS performance priority mode for competition -- XSS パフォーマンス優先モード 対戦用"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "XSS late trading mode -- XSS レイトレモード"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For PS4 cutscene playback -- PS4 カットシーン再生用"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "For XboxOne cutscene playback -- XboxOne カットシーン再生用"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "For Win64 cutscene playback -- Win64 カットシーン再生用"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "For XboxOneX cutscene playback -- XboxOneX カットシーン再生用"
+      ]
+    }
+  ]
+}

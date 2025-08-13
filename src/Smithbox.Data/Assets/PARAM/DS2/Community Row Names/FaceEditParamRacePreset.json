@@ -1,0 +1,71 @@
+{
+  "Name": "FaceEditParamRacePreset",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default -- デフォルト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Origin 1 White Base -- 出自1\u3000白人用ベース"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Origin 2 Black Base -- 出自2\u3000黒人用ベース"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Origin 3 Arab base -- 出自3\u3000アラブ系ベース"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Origin 4 Asian base -- 出自4 アジア系ベース"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "early face man -- 初期顔\u3000男"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Woman Out ing 1 White base -- 女 出自1\u3000白人用ベース"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Woman Out-of-2 Black Base -- 女 出自2\u3000黒人用ベース"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Woman Out of 3 Arab Base -- 女 出自3\u3000アラブ系ベース"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Woman Out of 4 Asian Base -- 女 出自4 アジア系ベース"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Early Face Woman -- 初期顔\u3000女"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "Name": "DungeonFeatureParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Main Features: Standard"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Main feature: Guardian"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Main Feature: Priest"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Main Feature: Madman"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Main features: Standard + Guardian"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Sub-feature: Poison enemies"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Sub-feature: Enemy strengthening"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Sub-feature: Enemy poisoning + magic stone correction: Tumer"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Sub-feature: (Poisons enemies) Magic stone correction only: Tumel"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Sub-feature: (Poisoning enemies) Magic stone correction only: Izu"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Sub-feature: Specially generated enemies"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Sub-features: NPC enemy"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Sub-feature: Strengthens surrounding enemies"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Sub-characteristic: Immortal and powerful enemy"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Sub-feature: Specially generated enemies & NPC enemy"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Sub-feature: Specially generated enemies & surrounding strengthened enemies"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "Sub-feature: Specially generated enemies & strong immortal enemies"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Sub-features: NPC Enemy & surrounding strengthened enemies"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Sub-features: NPC Enemy & Immortal Strong Opponent"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Sub-feature: Surrounding enemies with strengthened abilities & immortal enemies"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Sub-feature: Shop"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Sub-feature: Strong enemy that can kill allies"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Sub-feature: Rare Shop"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Sub-feature: Shop + strong friendly enemy"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Sub-feature: Rare shop + strong friendly enemies"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Sub-feature: Unique items"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Sub-feature: Unique item + magic stone correction 1012"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Sub-feature: Unique item + magic stone correction 1023"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Sub-feature: Unique item + magic stone correction 1034"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Sub-feature: Unique item + magic stone correction 1011"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Sub-feature: Multi-summon enemies"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Subfeature: Unique dungeon"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Holy Grail Type Correction: Magic Stone Correction 1011"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "Holy Grail Type Correction: Magic Stone Correction 1022"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Holy Grail Type Correction: Magic Stone Correction 1034"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Holy Grail Type Correction: Magic Stone Correction 1011"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Difficulty UP + Holy Grail type correction: Magic stone correction 1011"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Sub-features: 4F Open"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Sub-features: 4F Release + Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Sub-features: ( 4F Open) Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Sub-features: 4F Release + Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Sub-features: ( 4F Open) Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Sub-features: 4F Release + Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Sub-features: ( 4F Open) Magic Stone Correction 1013"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Sub-features:4F Release + Magic Stone Correction 1012"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Sub-features: ( 4F Open) Magic Stone Correction 1012"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Sub-features: HP Half Curse: Fixed"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Sub-features: HP1/4 curse"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Sub-features: HP1/8 curse"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Sub-features: HP Half-Curse: Generation"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Subfeature: Generated dungeon level 2 Thumel"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Sub-feature: Common to all fixed dungeons"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Sub-characteristics: No special characters"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Sub-feature: Shop"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Sub-feature: Strong enemy that can kill allies"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Sub-feature: Rare Shop"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Sub-feature: Shop + strong friendly enemy"
+      ]
+    },
+    {
+      "ID": 84,
+      "Entries": [
+        "Sub-feature: Rare shop + strong friendly enemies"
+      ]
+    },
+    {
+      "ID": 85,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 1"
+      ]
+    },
+    {
+      "ID": 86,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 2"
+      ]
+    },
+    {
+      "ID": 87,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 3"
+      ]
+    },
+    {
+      "ID": 88,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 4"
+      ]
+    },
+    {
+      "ID": 89,
+      "Entries": [
+        "Fixed dungeon: Multi-grail 5"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1011"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1012"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1013"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1014"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction1022"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1023"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1034"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1035"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "Sub-characteristic candidate: Magic stone correction 1045"
+      ]
+    }
+  ]
+}

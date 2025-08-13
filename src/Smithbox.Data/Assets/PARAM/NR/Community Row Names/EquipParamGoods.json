@@ -1,0 +1,2267 @@
+{
+  "Name": "EquipParamGoods",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Fire Pot"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Lightning Pot"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Fetid Pot"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Swarm Pot"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Holy Water Pot"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Freezing Pot"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Poison Pot"
+      ]
+    },
+    {
+      "ID": 390,
+      "Entries": [
+        "Alluring Pot"
+      ]
+    },
+    {
+      "ID": 391,
+      "Entries": [
+        "Beastlure Pot"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Volcano Pot"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Sleep Pot"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Rancor Pot"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Magic Pot"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Rot Pot"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Wending Grace"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "Boiled Crab"
+      ]
+    },
+    {
+      "ID": 830,
+      "Entries": [
+        "Boiled Prawn"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Neutralizing Boluses"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "Stanching Boluses"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "Thawfrost Boluses"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "Stimulating Boluses"
+      ]
+    },
+    {
+      "ID": 940,
+      "Entries": [
+        "Preserving Boluses"
+      ]
+    },
+    {
+      "ID": 950,
+      "Entries": [
+        "Rejuvenating Boluses"
+      ]
+    },
+    {
+      "ID": 960,
+      "Entries": [
+        "Clarifying Boluses"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Flask of Crimson Tears"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Flask of Crimson Tears"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Flask of Crimson Tears +1"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Flask of Crimson Tears +1"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Flask of Crimson Tears +2"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Flask of Crimson Tears +2"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Flask of Crimson Tears +3"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Flask of Crimson Tears +3"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Flask of Crimson Tears +4"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Flask of Crimson Tears +4"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Flask of Crimson Tears +5"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Flask of Crimson Tears +5"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Flask of Crimson Tears +6"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Flask of Crimson Tears +6"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Flask of Crimson Tears +7"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Flask of Crimson Tears +7"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Flask of Crimson Tears +8"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Flask of Crimson Tears +8"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Flask of Crimson Tears +9"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Flask of Crimson Tears +9"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Flask of Crimson Tears +10"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Flask of Crimson Tears +10"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Flask of Crimson Tears +11"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Flask of Crimson Tears +11"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Flask of Crimson Tears +12"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Flask of Crimson Tears +12"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Pickled Turtle Neck"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Silver-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Gold-Pickled Fowl Foot"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Exalted Flesh"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "Starlight Shards"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Fire Grease"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "Lightning Grease"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "Magic Grease"
+      ]
+    },
+    {
+      "ID": 1430,
+      "Entries": [
+        "Holy Grease"
+      ]
+    },
+    {
+      "ID": 1440,
+      "Entries": [
+        "Blood Grease"
+      ]
+    },
+    {
+      "ID": 1450,
+      "Entries": [
+        "Soporific Grease"
+      ]
+    },
+    {
+      "ID": 1460,
+      "Entries": [
+        "Poison Grease"
+      ]
+    },
+    {
+      "ID": 1470,
+      "Entries": [
+        "Freezing Grease"
+      ]
+    },
+    {
+      "ID": 1480,
+      "Entries": [
+        "Dragonwound Grease"
+      ]
+    },
+    {
+      "ID": 1490,
+      "Entries": [
+        "Rot Grease"
+      ]
+    },
+    {
+      "ID": 1690,
+      "Entries": [
+        "Shield Grease"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "Throwing Dagger"
+      ]
+    },
+    {
+      "ID": 1720,
+      "Entries": [
+        "Poisonbone Dart"
+      ]
+    },
+    {
+      "ID": 1730,
+      "Entries": [
+        "Kukri"
+      ]
+    },
+    {
+      "ID": 1740,
+      "Entries": [
+        "Crystal Dart"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "Fan Daggers"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Ancestral Infant's Head"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Omen Bairn"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Regal Omen Bairn"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Cuckoo Glintstone"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 3051,
+      "Entries": [
+        "Large Glintstone Scrap"
+      ]
+    },
+    {
+      "ID": 3060,
+      "Entries": [
+        "Gravity Stone Fan"
+      ]
+    },
+    {
+      "ID": 3070,
+      "Entries": [
+        "Gravity Stone Chunk"
+      ]
+    },
+    {
+      "ID": 3080,
+      "Entries": [
+        "Wraith Calling Bell"
+      ]
+    },
+    {
+      "ID": 3310,
+      "Entries": [
+        "Warming Stone"
+      ]
+    },
+    {
+      "ID": 3350,
+      "Entries": [
+        "Bewitching Branch"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Uplifting Aromatic"
+      ]
+    },
+    {
+      "ID": 3510,
+      "Entries": [
+        "Spark Aromatic"
+      ]
+    },
+    {
+      "ID": 3520,
+      "Entries": [
+        "Ironjar Aromatic"
+      ]
+    },
+    {
+      "ID": 3550,
+      "Entries": [
+        "Bloodboil Aromatic"
+      ]
+    },
+    {
+      "ID": 3580,
+      "Entries": [
+        "Poison Spraymist"
+      ]
+    },
+    {
+      "ID": 3610,
+      "Entries": [
+        "Acid Spraymist"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Stonesword Key"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Cord End"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Bow"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Polite Bow"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "My Thanks"
+      ]
+    },
+    {
+      "ID": 9003,
+      "Entries": [
+        "Curtsy"
+      ]
+    },
+    {
+      "ID": 9004,
+      "Entries": [
+        "Reverential Bow"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "My Lord"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Warm Welcome"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Wave"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Casual Greeting"
+      ]
+    },
+    {
+      "ID": 9009,
+      "Entries": [
+        "Strength!"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "As You Wish"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "Point Forwards"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "Point Upwards"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Point Downwards"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "Beckon"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "Wait!"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "Calm Down!"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "Nod In Thought"
+      ]
+    },
+    {
+      "ID": 9018,
+      "Entries": [
+        "Extreme Repentance"
+      ]
+    },
+    {
+      "ID": 9019,
+      "Entries": [
+        "Grovel For Mercy"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Rallying Cry"
+      ]
+    },
+    {
+      "ID": 9021,
+      "Entries": [
+        "Heartening Cry"
+      ]
+    },
+    {
+      "ID": 9022,
+      "Entries": [
+        "By My Sword"
+      ]
+    },
+    {
+      "ID": 9023,
+      "Entries": [
+        "Hoslow's Oath"
+      ]
+    },
+    {
+      "ID": 9024,
+      "Entries": [
+        "Fire Spur Me"
+      ]
+    },
+    {
+      "ID": 9026,
+      "Entries": [
+        "Bravo!"
+      ]
+    },
+    {
+      "ID": 9027,
+      "Entries": [
+        "Jump for Joy"
+      ]
+    },
+    {
+      "ID": 9028,
+      "Entries": [
+        "Triumphant Delight"
+      ]
+    },
+    {
+      "ID": 9029,
+      "Entries": [
+        "Fancy Spin"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Finger Snap"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "Dejection"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "Patches' Crouch"
+      ]
+    },
+    {
+      "ID": 9033,
+      "Entries": [
+        "Crossed Legs"
+      ]
+    },
+    {
+      "ID": 9034,
+      "Entries": [
+        "Rest"
+      ]
+    },
+    {
+      "ID": 9035,
+      "Entries": [
+        "Sitting Sideways"
+      ]
+    },
+    {
+      "ID": 9036,
+      "Entries": [
+        "Dozing Cross-Legged"
+      ]
+    },
+    {
+      "ID": 9037,
+      "Entries": [
+        "Spread Out"
+      ]
+    },
+    {
+      "ID": 9039,
+      "Entries": [
+        "Balled Up"
+      ]
+    },
+    {
+      "ID": 9040,
+      "Entries": [
+        "What Do You Want?"
+      ]
+    },
+    {
+      "ID": 9041,
+      "Entries": [
+        "Prayer"
+      ]
+    },
+    {
+      "ID": 9042,
+      "Entries": [
+        "Desperate Prayer"
+      ]
+    },
+    {
+      "ID": 9043,
+      "Entries": [
+        "Rapture"
+      ]
+    },
+    {
+      "ID": 9045,
+      "Entries": [
+        "Erudition"
+      ]
+    },
+    {
+      "ID": 9046,
+      "Entries": [
+        "Outer Order"
+      ]
+    },
+    {
+      "ID": 9047,
+      "Entries": [
+        "Inner Order"
+      ]
+    },
+    {
+      "ID": 9048,
+      "Entries": [
+        "Golden Order Totality"
+      ]
+    },
+    {
+      "ID": 9060,
+      "Entries": [
+        "Prattling Pate \"Hello\""
+      ]
+    },
+    {
+      "ID": 9061,
+      "Entries": [
+        "Prattling Pate \"Thank you\""
+      ]
+    },
+    {
+      "ID": 9062,
+      "Entries": [
+        "Prattling Pate \"Apologies\""
+      ]
+    },
+    {
+      "ID": 9063,
+      "Entries": [
+        "Prattling Pate \"Wonderful\""
+      ]
+    },
+    {
+      "ID": 9064,
+      "Entries": [
+        "Prattling Pate \"Please help\""
+      ]
+    },
+    {
+      "ID": 9065,
+      "Entries": [
+        "Prattling Pate \"My beloved\""
+      ]
+    },
+    {
+      "ID": 9066,
+      "Entries": [
+        "Prattling Pate \"Let's get to it\""
+      ]
+    },
+    {
+      "ID": 9067,
+      "Entries": [
+        "Prattling Pate \"You're beautiful\""
+      ]
+    },
+    {
+      "ID": 9070,
+      "Entries": [
+        "It's Raining!"
+      ]
+    },
+    {
+      "ID": 9600,
+      "Entries": [
+        "Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9601,
+      "Entries": [
+        "Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 9602,
+      "Entries": [
+        "Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 9603,
+      "Entries": [
+        "Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9604,
+      "Entries": [
+        "Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 9605,
+      "Entries": [
+        "Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 9606,
+      "Entries": [
+        "Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9607,
+      "Entries": [
+        "Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 9608,
+      "Entries": [
+        "Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 9609,
+      "Entries": [
+        "Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9610,
+      "Entries": [
+        "Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 9611,
+      "Entries": [
+        "Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 9612,
+      "Entries": [
+        "Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9613,
+      "Entries": [
+        "Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 9614,
+      "Entries": [
+        "Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 9615,
+      "Entries": [
+        "Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9616,
+      "Entries": [
+        "Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 9617,
+      "Entries": [
+        "Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 9618,
+      "Entries": [
+        "Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9619,
+      "Entries": [
+        "Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 9620,
+      "Entries": [
+        "Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 9621,
+      "Entries": [
+        "Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9622,
+      "Entries": [
+        "Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 9623,
+      "Entries": [
+        "Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 9650,
+      "Entries": [
+        "Sacred Erdtree Grail"
+      ]
+    },
+    {
+      "ID": 9651,
+      "Entries": [
+        "Spirit Shelter Grail"
+      ]
+    },
+    {
+      "ID": 9652,
+      "Entries": [
+        "Giant's Cradle Grail"
+      ]
+    },
+    {
+      "ID": 9700,
+      "Entries": [
+        "Soot-Covered Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9703,
+      "Entries": [
+        "Soot-Covered Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9706,
+      "Entries": [
+        "Soot-Covered Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9709,
+      "Entries": [
+        "Soot-Covered Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9712,
+      "Entries": [
+        "Soot-Covered Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9715,
+      "Entries": [
+        "Soot-Covered Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9718,
+      "Entries": [
+        "Soot-Covered Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9721,
+      "Entries": [
+        "Soot-Covered Executor's Urn"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Sealed Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "Sealed Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 9806,
+      "Entries": [
+        "Sealed Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 9809,
+      "Entries": [
+        "Sealed Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 9812,
+      "Entries": [
+        "Sealed Raider's Urn"
+      ]
+    },
+    {
+      "ID": 9815,
+      "Entries": [
+        "Sealed Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 9818,
+      "Entries": [
+        "Sealed Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 9821,
+      "Entries": [
+        "Sealed Executor's Urn"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "Small Pouch"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "Smithing Stone [1]"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "Smithing Stone [2]"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "Smithing Stone [3]"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Crimsonspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11001,
+      "Entries": [
+        "Greenspill Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11002,
+      "Entries": [
+        "Crimson Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11004,
+      "Entries": [
+        "Cerulean Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11006,
+      "Entries": [
+        "Speckled Hardtear"
+      ]
+    },
+    {
+      "ID": 11007,
+      "Entries": [
+        "Crimson Bubbletear"
+      ]
+    },
+    {
+      "ID": 11008,
+      "Entries": [
+        "Opaline Bubbletear"
+      ]
+    },
+    {
+      "ID": 11009,
+      "Entries": [
+        "Crimsonburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Greenburst Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11011,
+      "Entries": [
+        "Opaline Hardtear"
+      ]
+    },
+    {
+      "ID": 11013,
+      "Entries": [
+        "Thorny Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11014,
+      "Entries": [
+        "Spiked Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11015,
+      "Entries": [
+        "Windy Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11016,
+      "Entries": [
+        "Ruptured Crystal Tear"
+      ]
+    },
+    {
+      "ID": 11018,
+      "Entries": [
+        "Leaden Hardtear"
+      ]
+    },
+    {
+      "ID": 11019,
+      "Entries": [
+        "Twiggy Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Crimsonwhorl Bubbletear"
+      ]
+    },
+    {
+      "ID": 11025,
+      "Entries": [
+        "Cerulean Hidden Tear"
+      ]
+    },
+    {
+      "ID": 11026,
+      "Entries": [
+        "Stonebarb Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11028,
+      "Entries": [
+        "Flame-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11029,
+      "Entries": [
+        "Magic-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Lightning-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 11031,
+      "Entries": [
+        "Holy-Shrouding Cracked Tear"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Wylder: Base"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "Wylder: Dawn"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "Wylder: Darkness"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "Wylder: Remembrance"
+      ]
+    },
+    {
+      "ID": 40050,
+      "Entries": [
+        "Wylder: Abysswalker"
+      ]
+    },
+    {
+      "ID": 40060,
+      "Entries": [
+        "Wylder: Lion Knight"
+      ]
+    },
+    {
+      "ID": 40100,
+      "Entries": [
+        "Guardian: Base"
+      ]
+    },
+    {
+      "ID": 40110,
+      "Entries": [
+        "Guardian: Dawn"
+      ]
+    },
+    {
+      "ID": 40120,
+      "Entries": [
+        "Guardian: Darkness"
+      ]
+    },
+    {
+      "ID": 40130,
+      "Entries": [
+        "Guardian: Remembrance"
+      ]
+    },
+    {
+      "ID": 40150,
+      "Entries": [
+        "Guardian: Sunlight Knight"
+      ]
+    },
+    {
+      "ID": 40160,
+      "Entries": [
+        "Guardian: Wayfarer"
+      ]
+    },
+    {
+      "ID": 40200,
+      "Entries": [
+        "Ironeye: Base"
+      ]
+    },
+    {
+      "ID": 40210,
+      "Entries": [
+        "Ironeye: Dawn"
+      ]
+    },
+    {
+      "ID": 40220,
+      "Entries": [
+        "Ironeye: Darkness"
+      ]
+    },
+    {
+      "ID": 40230,
+      "Entries": [
+        "Ironeye: Remembrance"
+      ]
+    },
+    {
+      "ID": 40250,
+      "Entries": [
+        "Ironeye: Ringfinger"
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "Ironeye: Sellsword"
+      ]
+    },
+    {
+      "ID": 40300,
+      "Entries": [
+        "Duchess: Base"
+      ]
+    },
+    {
+      "ID": 40310,
+      "Entries": [
+        "Duchess: Dawn"
+      ]
+    },
+    {
+      "ID": 40320,
+      "Entries": [
+        "Duchess: Darkness"
+      ]
+    },
+    {
+      "ID": 40330,
+      "Entries": [
+        "Duchess: Remembrance"
+      ]
+    },
+    {
+      "ID": 40350,
+      "Entries": [
+        "Duchess: Black Leather"
+      ]
+    },
+    {
+      "ID": 40360,
+      "Entries": [
+        "Duchess: Wraith"
+      ]
+    },
+    {
+      "ID": 40400,
+      "Entries": [
+        "Raider: Base"
+      ]
+    },
+    {
+      "ID": 40410,
+      "Entries": [
+        "Raider: Dawn"
+      ]
+    },
+    {
+      "ID": 40420,
+      "Entries": [
+        "Raider: Darkness"
+      ]
+    },
+    {
+      "ID": 40430,
+      "Entries": [
+        "Raider: Remembrance"
+      ]
+    },
+    {
+      "ID": 40450,
+      "Entries": [
+        "Raider: Rock-like"
+      ]
+    },
+    {
+      "ID": 40460,
+      "Entries": [
+        "Raider: Catarina"
+      ]
+    },
+    {
+      "ID": 40500,
+      "Entries": [
+        "Revenant: Base"
+      ]
+    },
+    {
+      "ID": 40510,
+      "Entries": [
+        "Revenant: Dawn"
+      ]
+    },
+    {
+      "ID": 40520,
+      "Entries": [
+        "Revenant: Darkness"
+      ]
+    },
+    {
+      "ID": 40530,
+      "Entries": [
+        "Revenant: Remembrance"
+      ]
+    },
+    {
+      "ID": 40550,
+      "Entries": [
+        "Revenant: The Sister in the Painting"
+      ]
+    },
+    {
+      "ID": 40560,
+      "Entries": [
+        "Revenant: Dragon School"
+      ]
+    },
+    {
+      "ID": 40600,
+      "Entries": [
+        "Recluse: Base"
+      ]
+    },
+    {
+      "ID": 40610,
+      "Entries": [
+        "Recluse: Dawn"
+      ]
+    },
+    {
+      "ID": 40620,
+      "Entries": [
+        "Recluse: Darkness"
+      ]
+    },
+    {
+      "ID": 40630,
+      "Entries": [
+        "Recluse: Remembrance"
+      ]
+    },
+    {
+      "ID": 40650,
+      "Entries": [
+        "Recluse: Heretic Sorcerer"
+      ]
+    },
+    {
+      "ID": 40660,
+      "Entries": [
+        "Recluse: Emerald Fate"
+      ]
+    },
+    {
+      "ID": 40700,
+      "Entries": [
+        "Executor: Base"
+      ]
+    },
+    {
+      "ID": 40710,
+      "Entries": [
+        "Executor: Dawn"
+      ]
+    },
+    {
+      "ID": 40720,
+      "Entries": [
+        "Executor: Darkness"
+      ]
+    },
+    {
+      "ID": 40730,
+      "Entries": [
+        "Executor: Remembrance"
+      ]
+    },
+    {
+      "ID": 40750,
+      "Entries": [
+        "Executor: Thorns"
+      ]
+    },
+    {
+      "ID": 40760,
+      "Entries": [
+        "Executor: Sable Church"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45004,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45006,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45007,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45011,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45013,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45014,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45015,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45016,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45018,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45019,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45021,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45022,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45023,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45024,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45026,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45027,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45028,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45029,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45031,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45032,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45033,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45034,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45035,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45036,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 45037,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8000000,
+      "Entries": [
+        "Power: Increased Maximum HP: 1"
+      ]
+    },
+    {
+      "ID": 8000001,
+      "Entries": [
+        "Power: Increased Maximum HP: 2"
+      ]
+    },
+    {
+      "ID": 8010000,
+      "Entries": [
+        "Power: Increased Maximum FP: 1"
+      ]
+    },
+    {
+      "ID": 8010001,
+      "Entries": [
+        "Power: Increased Maximum FP: 2"
+      ]
+    },
+    {
+      "ID": 8010100,
+      "Entries": [
+        "Power: Reduced FP Consumption: 1"
+      ]
+    },
+    {
+      "ID": 8010101,
+      "Entries": [
+        "Power: Reduced FP Consumption: 2"
+      ]
+    },
+    {
+      "ID": 8020000,
+      "Entries": [
+        "Power: Increased Maximum Stamina: 1"
+      ]
+    },
+    {
+      "ID": 8020001,
+      "Entries": [
+        "Power: Increased Maximum Stamina: 2"
+      ]
+    },
+    {
+      "ID": 8020200,
+      "Entries": [
+        "Power: Increased Stamina Recovery: 1"
+      ]
+    },
+    {
+      "ID": 8020201,
+      "Entries": [
+        "Power: Increased Stamina Recovery: 2"
+      ]
+    },
+    {
+      "ID": 8100000,
+      "Entries": [
+        "Power: Improved Physical Attack Power: 1"
+      ]
+    },
+    {
+      "ID": 8100001,
+      "Entries": [
+        "Power: Improved Physical Attack Power: 2"
+      ]
+    },
+    {
+      "ID": 8100500,
+      "Entries": [
+        "Power: Improved Affinity Attack Power: 1"
+      ]
+    },
+    {
+      "ID": 8100501,
+      "Entries": [
+        "Power: Improved Affinity Attack Power: 2"
+      ]
+    },
+    {
+      "ID": 8120000,
+      "Entries": [
+        "Power: Improved Stance-Breaking: 1"
+      ]
+    },
+    {
+      "ID": 8120001,
+      "Entries": [
+        "Power: Improved Stance-Breaking: 2"
+      ]
+    },
+    {
+      "ID": 8200000,
+      "Entries": [
+        "Power: Improved Physical Damage Negation: 1"
+      ]
+    },
+    {
+      "ID": 8200001,
+      "Entries": [
+        "Power: Improved Physical Damage Negation: 2"
+      ]
+    },
+    {
+      "ID": 8200500,
+      "Entries": [
+        "Power: Improved Affinity Damage Negation: 1"
+      ]
+    },
+    {
+      "ID": 8200501,
+      "Entries": [
+        "Power: Improved Affinity Damage Negation: 2"
+      ]
+    },
+    {
+      "ID": 8210700,
+      "Entries": [
+        "Power: All Resistances Up: 1"
+      ]
+    },
+    {
+      "ID": 8210701,
+      "Entries": [
+        "Power: All Resistances Up: 2"
+      ]
+    },
+    {
+      "ID": 8230000,
+      "Entries": [
+        "Power: Improved Poise: 1"
+      ]
+    },
+    {
+      "ID": 8230001,
+      "Entries": [
+        "Power: Improved Poise: 2"
+      ]
+    },
+    {
+      "ID": 8330103,
+      "Entries": [
+        "Power: Improved Sorceries and Incantations: 1"
+      ]
+    },
+    {
+      "ID": 8330104,
+      "Entries": [
+        "Power: Improved Sorceries and Incantations: 2"
+      ]
+    },
+    {
+      "ID": 8330500,
+      "Entries": [
+        "Power: Increased Sorceries and Incantation Duration"
+      ]
+    },
+    {
+      "ID": 8330700,
+      "Entries": [
+        "Power: Dragonwound upon Dragon Communion"
+      ]
+    },
+    {
+      "ID": 8350400,
+      "Entries": [
+        "Power: Successful Parries Activate Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 8360000,
+      "Entries": [
+        "Power: Improved Ultimate Art Guage Charge Speed"
+      ]
+    },
+    {
+      "ID": 8370000,
+      "Entries": [
+        "Power: Character Skill Cooldown Reduction"
+      ]
+    },
+    {
+      "ID": 8410000,
+      "Entries": [
+        "Power: Improved Dodging"
+      ]
+    },
+    {
+      "ID": 8410100,
+      "Entries": [
+        "Power: Lightning upon Dodging"
+      ]
+    },
+    {
+      "ID": 8420100,
+      "Entries": [
+        "Power: Guard Counters Activate Holy Attacks"
+      ]
+    },
+    {
+      "ID": 8420200,
+      "Entries": [
+        "Power: Guard Counters Activate Summoning Attack"
+      ]
+    },
+    {
+      "ID": 8430000,
+      "Entries": [
+        "Power: Improved Thrusting Counterattack"
+      ]
+    },
+    {
+      "ID": 8440000,
+      "Entries": [
+        "Power: Improved Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 8440001,
+      "Entries": [
+        "Power: Improved Flask HP Restoration"
+      ]
+    },
+    {
+      "ID": 8440200,
+      "Entries": [
+        "Power: Gradual Restoration by Flask"
+      ]
+    },
+    {
+      "ID": 8450100,
+      "Entries": [
+        "Power: Ice Storm Surge Sprint"
+      ]
+    },
+    {
+      "ID": 8460200,
+      "Entries": [
+        "Power: Flame of Frenzy While Walking"
+      ]
+    },
+    {
+      "ID": 8460400,
+      "Entries": [
+        "Power: Violent Deluge of Star Rain While Walking"
+      ]
+    },
+    {
+      "ID": 8500000,
+      "Entries": [
+        "Power: More Runes From Defeated Enemies"
+      ]
+    },
+    {
+      "ID": 8500100,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8500101,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8500102,
+      "Entries": [
+        "Power: Rune of the Strong"
+      ]
+    },
+    {
+      "ID": 8530200,
+      "Entries": [
+        "Power: Periodical Giant Glintblades"
+      ]
+    },
+    {
+      "ID": 8600300,
+      "Entries": [
+        "Power: Sudden Enemy Death upon Attacks"
+      ]
+    },
+    {
+      "ID": 8610000,
+      "Entries": [
+        "Power: HP Restoration upon Successive Attacks"
+      ]
+    },
+    {
+      "ID": 8610100,
+      "Entries": [
+        "Power: FP Restoration upon Successive Attacks"
+      ]
+    },
+    {
+      "ID": 8640000,
+      "Entries": [
+        "Power: Critical Hit HP Restoration"
+      ]
+    },
+    {
+      "ID": 8640100,
+      "Entries": [
+        "Power: Critical Hit FP Restoration"
+      ]
+    },
+    {
+      "ID": 8642000,
+      "Entries": [
+        "Power: Damage Boosted after Critical Hit"
+      ]
+    },
+    {
+      "ID": 8650000,
+      "Entries": [
+        "Power: HP Recovery upon Successful Guard"
+      ]
+    },
+    {
+      "ID": 8650100,
+      "Entries": [
+        "Power: FP Recovery upon Successful Guard"
+      ]
+    },
+    {
+      "ID": 8660200,
+      "Entries": [
+        "Power: Inflict Blood Loss at Low HP"
+      ]
+    },
+    {
+      "ID": 8660300,
+      "Entries": [
+        "Power: Create Holy Ground at Low HP"
+      ]
+    },
+    {
+      "ID": 8700002,
+      "Entries": [
+        "Power: Poison Restores HP"
+      ]
+    },
+    {
+      "ID": 8710002,
+      "Entries": [
+        "Power: Blood Loss Increases Attack Power"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

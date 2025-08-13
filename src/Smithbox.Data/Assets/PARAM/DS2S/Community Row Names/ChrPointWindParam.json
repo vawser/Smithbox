@@ -1,0 +1,137 @@
+{
+  "Name": "ChrPointWindParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Very small - small -- 極小-小"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Very small - medium -- 極小-中"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "Very small - large -- 極小-大"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Small - Small -- 小-小"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Small to Medium -- 小-中"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Small - Large -- 小-大"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Medium - Small -- 中-小"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Medium to Medium -- 中-中"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "Medium-Large -- 中-大"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Large - Small -- 大-小"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Large-middle -- 大-中"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Large- Large -- 大-大"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Extra large - small -- 特大-小"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Oversized - Medium -- 特大-中"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Extra Large - Large -- 特大-大"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Extra large - small -- 特特大-小"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Extra large - medium -- 特特大-中"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Extra Large - Large -- 特特大-大"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Special size - Small -- 特特特大-小"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Special oversized - medium -- 特特特大-中"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "Special Oversized - Large -- 特特特大-大"
+      ]
+    }
+  ]
+}

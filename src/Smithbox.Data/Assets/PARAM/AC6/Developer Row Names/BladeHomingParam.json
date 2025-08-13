@@ -1,0 +1,65 @@
+{
+  "Name": "BladeHomingParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Laser whip_Attack ① -- レーザーウィップ_攻撃①"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "Laser whip_attack ② -- レーザーウィップ_攻撃②"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Chain Hammer_Attack ① -- チェインハンマー_攻撃①"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Chain Hammer_Attack ② -- チェインハンマー_攻撃②"
+      ]
+    },
+    {
+      "ID": 80300000,
+      "Entries": [
+        "c8030 Pyle MT (Shotgun Pile -- c8030\u3000パイルMT（ショットガン\u3000パイル"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "c8110 Colorless MT Blade -- c8110\u3000無色MT\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 81310600,
+      "Entries": [
+        "c8131 Control prototype formidable diving pile -- c8131\u3000制御用試作強敵\u3000飛び込みパイル"
+      ]
+    },
+    {
+      "ID": 82000000,
+      "Entries": [
+        "c8200 wall bug -- c8200\u3000ワラワラ虫"
+      ]
+    },
+    {
+      "ID": 82100000,
+      "Entries": [
+        "c8210 wall bug (large) -- c8210\u3000ワラワラ虫（大）"
+      ]
+    }
+  ]
+}

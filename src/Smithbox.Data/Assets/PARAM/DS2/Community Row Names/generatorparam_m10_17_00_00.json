@@ -1,0 +1,737 @@
+{
+  "Name": "generatorparam_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 45,
+      "Entries": [
+        "[GEN:45] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "[GEN:46] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "[GEN:47] Laddersmith Gilligan"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[GEN:65] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "[GEN:66] Mild Mannered Pate"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "[GEN:90] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "[GEN:91] Lucatiel of Mirrah"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "[GEN:195] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "[GEN:196] Stone Trader Chloanne"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "[GEN:245] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "[GEN:246] Lonesome Gavlan"
+      ]
+    },
+    {
+      "ID": 556,
+      "Entries": [
+        "[GEN:556] Jester Thomas"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "[GEN:600] Devotee Scarlett"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "[GEN:605] Bashful Ray"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "[GEN:800] Covetous Demon"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "[GEN:801] Mytha- the Baneful Queen"
+      ]
+    },
+    {
+      "ID": 935,
+      "Entries": [
+        "[GEN:935] Forlorn"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[GEN:1000] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[GEN:1001] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[GEN:1002] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[GEN:1011] Skeleton"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[GEN:1012] Skeleton"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "[GEN:1110] Skeleton"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "[GEN:1400] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[GEN:1600] Skeleton"
+      ]
+    },
+    {
+      "ID": 1601,
+      "Entries": [
+        "[GEN:1601] Skeleton"
+      ]
+    },
+    {
+      "ID": 1602,
+      "Entries": [
+        "[GEN:1602] Skeleton"
+      ]
+    },
+    {
+      "ID": 1700,
+      "Entries": [
+        "[GEN:1700] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "[GEN:1800] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "[GEN:1801] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "[GEN:1802] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 1810,
+      "Entries": [
+        "[GEN:1810] Skeleton"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[GEN:2201] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[GEN:2310] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2320,
+      "Entries": [
+        "[GEN:2320] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[GEN:2401] Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "[GEN:2402] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2450,
+      "Entries": [
+        "[GEN:2450] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2451,
+      "Entries": [
+        "[GEN:2451] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2453,
+      "Entries": [
+        "[GEN:2453] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2456,
+      "Entries": [
+        "[GEN:2456] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "[GEN:2500] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "[GEN:2503] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "[GEN:2510] Skeleton"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "[GEN:2600] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "[GEN:2601] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "[GEN:2610] Manikin"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[GEN:3000] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[GEN:3002] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[GEN:3003] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[GEN:3020] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3021,
+      "Entries": [
+        "[GEN:3021] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3022,
+      "Entries": [
+        "[GEN:3022] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[GEN:3200] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "[GEN:3202] Manikin"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "[GEN:3204] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "[GEN:3207] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "[GEN:3208] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        "[GEN:3209] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "[GEN:3250] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3252,
+      "Entries": [
+        "[GEN:3252] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3253,
+      "Entries": [
+        "[GEN:3253] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "[GEN:3300] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3301,
+      "Entries": [
+        "[GEN:3301] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3302,
+      "Entries": [
+        "[GEN:3302] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3303,
+      "Entries": [
+        "[GEN:3303] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 3401,
+      "Entries": [
+        "[GEN:3401] Manikin"
+      ]
+    },
+    {
+      "ID": 3402,
+      "Entries": [
+        "[GEN:3402] Undead Steelworker"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "[GEN:3500] Grave Warden"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "[GEN:3600] Manikin"
+      ]
+    },
+    {
+      "ID": 3601,
+      "Entries": [
+        "[GEN:3601] Manikin"
+      ]
+    },
+    {
+      "ID": 3602,
+      "Entries": [
+        "[GEN:3602] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "[GEN:3700] Manikin"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "[GEN:3800] Manikin"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "[GEN:3810] Manikin"
+      ]
+    },
+    {
+      "ID": 3850,
+      "Entries": [
+        "[GEN:3850] Grave Warden"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[GEN:4000] Manikin"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "[GEN:4100] Manikin"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "[GEN:4200] Manikin"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "[GEN:4250] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 4400,
+      "Entries": [
+        "[GEN:4400] Grave Warden"
+      ]
+    },
+    {
+      "ID": 4401,
+      "Entries": [
+        "[GEN:4401] Manikin"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "[GEN:4500] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 4602,
+      "Entries": [
+        "[GEN:4602] Manikin"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "[GEN:4900] Manikin"
+      ]
+    },
+    {
+      "ID": 4901,
+      "Entries": [
+        "[GEN:4901] Manikin"
+      ]
+    },
+    {
+      "ID": 4902,
+      "Entries": [
+        "[GEN:4902] Manikin"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "[GEN:5004] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "[GEN:5011] Suspicious Shadow"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "[GEN:5110] Manikin"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "[GEN:5200] Grave Warden"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "[GEN:5201] Grave Warden"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "[GEN:5202] Grave Warden"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "[GEN:5210] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 5212,
+      "Entries": [
+        "[GEN:5212] Undead Supplicant"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "[GEN:7000] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "[GEN:7020] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7023,
+      "Entries": [
+        "[GEN:7023] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7030,
+      "Entries": [
+        "[GEN:7030] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "[GEN:7040] Undead Laborer"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "[GEN:7220] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 7221,
+      "Entries": [
+        "[GEN:7221] Desert Sorceress"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "[GEN:7300] Manikin"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "[GEN:7310] Manikin"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "[GEN:7311] Manikin"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "[GEN:7400] Grave Warden"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "[GEN:8100] Artificial Undead"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "[GEN:8101] Manikin"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "[GEN:8102] Manikin"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "[GEN:8203] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "[GEN:8204] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "[GEN:8205] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8206,
+      "Entries": [
+        "[GEN:8206] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8207,
+      "Entries": [
+        "[GEN:8207] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8208,
+      "Entries": [
+        "[GEN:8208] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8209,
+      "Entries": [
+        "[GEN:8209] Poison Horn Beetle"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "[GEN:8210] Mimic"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "[GEN:9001] Voice Marker (Altar of Sunlight)"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "[GEN:9010] Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "[GEN:9012] Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "[GEN:9013] Mounted Overseer"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "[GEN:9100] Poison Moth"
+      ]
+    }
+  ]
+}

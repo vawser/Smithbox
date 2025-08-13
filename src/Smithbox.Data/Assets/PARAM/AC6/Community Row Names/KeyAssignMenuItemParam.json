@@ -1,0 +1,149 @@
+{
+  "Name": "KeyAssignMenuItemParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "move"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Before moving"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "After moving"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Move left"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Move right"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "boost"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "QB"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "jump"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "stealth"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "camera operation"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Camera operation/target change top"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Camera operation/target change bottom"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Camera operation/target change left"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Camera operation/target change right"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Camera reset/target fixation"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "attack action"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "Left arm weapon use"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "Right arm weapon use"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Use left back weapon"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Use right back weapon"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "shift operation"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "item use"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "action"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

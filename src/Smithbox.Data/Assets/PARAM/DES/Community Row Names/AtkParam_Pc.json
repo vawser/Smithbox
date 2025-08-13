@@ -1,0 +1,3497 @@
+{
+  "Name": "AtkParam_Pc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC_test1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "PC_test2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "PC_test3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "PC_test4_guard"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Dummy attack for keeping bullets out"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Common Attack [Falling]"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Common Attack [Landing]"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Common Attack [Dosun Landing]"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Common Attack [Tumble Landing]"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Common Attack [Rolling]"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Common Attack [Summon]"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Common Attack [Before Push]"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Common attack [small blow]"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Common Attack [Big Blowback]"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Common attack [after push]"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Common Attack [Throw]"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Common Attack [Strong Throw]"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "common_fall_test"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[System] Attack multiplier for menu display"
+      ]
+    },
+    {
+      "ID": 384,
+      "Entries": [
+        "Prison castle 3 boss funnel"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "magic arrow"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "fire bolt"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "fireball"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "ignition"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "penetrating beam"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "machine gun"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Meteor"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "self-centered explosion"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Funnel"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Throwing knife damage"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Damage for poison throwing knives"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Molotov damage"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Damage for African throwing knives"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "high attack arrow"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "long range arrow"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "precision arrow"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "fire arrow"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "poison arrow"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "arrow"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "special arrows"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "cheap arrows"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "normal arrow"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Heavy arrow with high attack power"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Dangerous thick arrow"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "cheap heavy arrows"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Royal Castle 2 Barista Arrow"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Dagger_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Dagger_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 200020,
+      "Entries": [
+        "Dagger_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 200100,
+      "Entries": [
+        "Dagger_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 200110,
+      "Entries": [
+        "Dagger_One hand charge 2"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Dagger_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 200210,
+      "Entries": [
+        "Dagger_Two-Handed Normal 2"
+      ]
+    },
+    {
+      "ID": 200220,
+      "Entries": [
+        "Dagger_Two-handed Normal 3"
+      ]
+    },
+    {
+      "ID": 200300,
+      "Entries": [
+        "Dagger_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 200310,
+      "Entries": [
+        "Dagger_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 200400,
+      "Entries": [
+        "Dagger_one-handed dash"
+      ]
+    },
+    {
+      "ID": 200500,
+      "Entries": [
+        "Dagger_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 200600,
+      "Entries": [
+        "Dagger_One hand step before"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Dagger_Both hands before step"
+      ]
+    },
+    {
+      "ID": 201400,
+      "Entries": [
+        "Dagger _ left hand"
+      ]
+    },
+    {
+      "ID": 201500,
+      "Entries": [
+        "Dagger_One hand close range"
+      ]
+    },
+    {
+      "ID": 201600,
+      "Entries": [
+        "Dagger_Two-handed close range"
+      ]
+    },
+    {
+      "ID": 201700,
+      "Entries": [
+        "dagger behind"
+      ]
+    },
+    {
+      "ID": 201800,
+      "Entries": [
+        "Dagger_after parry"
+      ]
+    },
+    {
+      "ID": 201900,
+      "Entries": [
+        "Dagger_Parry"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "Dagger_One hand guard"
+      ]
+    },
+    {
+      "ID": 205100,
+      "Entries": [
+        "Dagger_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 206000,
+      "Entries": [
+        "Dagger_Parry Guard"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "Straight sword_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "Straight sword_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 230020,
+      "Entries": [
+        "Straight sword_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 230100,
+      "Entries": [
+        "Straight sword _ one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 230110,
+      "Entries": [
+        "Straight sword_one hand charge 2"
+      ]
+    },
+    {
+      "ID": 230200,
+      "Entries": [
+        "Straight sword_Two hands Normal 1"
+      ]
+    },
+    {
+      "ID": 230210,
+      "Entries": [
+        "Straight sword_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 230220,
+      "Entries": [
+        "Straight sword_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 230300,
+      "Entries": [
+        "Straight sword_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 230310,
+      "Entries": [
+        "Straight sword_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 230400,
+      "Entries": [
+        "Straight sword_One-handed dash"
+      ]
+    },
+    {
+      "ID": 230500,
+      "Entries": [
+        "Straight sword_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 230600,
+      "Entries": [
+        "Straight sword_one hand step before"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "Straight Sword_Both Hands Before Step"
+      ]
+    },
+    {
+      "ID": 231400,
+      "Entries": [
+        "Straight sword_left hand"
+      ]
+    },
+    {
+      "ID": 231500,
+      "Entries": [
+        "Straight sword_one-handed close range"
+      ]
+    },
+    {
+      "ID": 231600,
+      "Entries": [
+        "Straight sword_Two-handed close range"
+      ]
+    },
+    {
+      "ID": 231700,
+      "Entries": [
+        "straight sword _ behind"
+      ]
+    },
+    {
+      "ID": 231800,
+      "Entries": [
+        "Straight sword_after parry"
+      ]
+    },
+    {
+      "ID": 231900,
+      "Entries": [
+        "Straight Sword_Parry"
+      ]
+    },
+    {
+      "ID": 235000,
+      "Entries": [
+        "Straight sword_one hand guard"
+      ]
+    },
+    {
+      "ID": 235100,
+      "Entries": [
+        "Straight sword_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 236000,
+      "Entries": [
+        "Straight Sword_Parry Guard"
+      ]
+    },
+    {
+      "ID": 230101,
+      "Entries": [
+        "Tsuranuki Sword_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 231701,
+      "Entries": [
+        "Tsuranuki sword_behind"
+      ]
+    },
+    {
+      "ID": 231801,
+      "Entries": [
+        "Tsuranuki Sword_After Parrying"
+      ]
+    },
+    {
+      "ID": 230002,
+      "Entries": [
+        "Broadsword_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 230012,
+      "Entries": [
+        "Broadsword_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 230022,
+      "Entries": [
+        "Broadsword_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 230102,
+      "Entries": [
+        "Broadsword_one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 230112,
+      "Entries": [
+        "Broadsword_one-hand charge 2"
+      ]
+    },
+    {
+      "ID": 230202,
+      "Entries": [
+        "Broadsword_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 230212,
+      "Entries": [
+        "Broadsword_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 230222,
+      "Entries": [
+        "Broadsword_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 230302,
+      "Entries": [
+        "Broadsword_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 230312,
+      "Entries": [
+        "Broadsword_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 230402,
+      "Entries": [
+        "Broadsword_one-handed dash"
+      ]
+    },
+    {
+      "ID": 230502,
+      "Entries": [
+        "Broadsword_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 230602,
+      "Entries": [
+        "Broadsword_Before one hand step"
+      ]
+    },
+    {
+      "ID": 231002,
+      "Entries": [
+        "Broadsword_Both hands before step"
+      ]
+    },
+    {
+      "ID": 231402,
+      "Entries": [
+        "Broadsword _ left hand"
+      ]
+    },
+    {
+      "ID": 231702,
+      "Entries": [
+        "broadsword behind"
+      ]
+    },
+    {
+      "ID": 231802,
+      "Entries": [
+        "Broadsword_after parry"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "Great sword_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 250010,
+      "Entries": [
+        "Great sword_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 250020,
+      "Entries": [
+        "Greatsword_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 250100,
+      "Entries": [
+        "Greatsword_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 250110,
+      "Entries": [
+        "Greatsword_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 250200,
+      "Entries": [
+        "Greatsword_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 250210,
+      "Entries": [
+        "Greatsword_Two-Handed Normal 2"
+      ]
+    },
+    {
+      "ID": 250220,
+      "Entries": [
+        "Greatsword_Two-handed Normal 3"
+      ]
+    },
+    {
+      "ID": 250300,
+      "Entries": [
+        "Greatsword_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 250310,
+      "Entries": [
+        "Greatsword_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 250400,
+      "Entries": [
+        "Greatsword_One-handed dash"
+      ]
+    },
+    {
+      "ID": 250500,
+      "Entries": [
+        "Greatsword_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 250600,
+      "Entries": [
+        "Greatsword_Before stepping with one hand"
+      ]
+    },
+    {
+      "ID": 251000,
+      "Entries": [
+        "Greatsword_Before both hands step"
+      ]
+    },
+    {
+      "ID": 251400,
+      "Entries": [
+        "Great sword_left hand"
+      ]
+    },
+    {
+      "ID": 251500,
+      "Entries": [
+        "Greatsword_One hand close range"
+      ]
+    },
+    {
+      "ID": 251600,
+      "Entries": [
+        "Greatsword_Two-handed close range"
+      ]
+    },
+    {
+      "ID": 251700,
+      "Entries": [
+        "Great sword _ behind"
+      ]
+    },
+    {
+      "ID": 251800,
+      "Entries": [
+        "Greatsword_after parry"
+      ]
+    },
+    {
+      "ID": 251900,
+      "Entries": [
+        "Great Sword_Parry"
+      ]
+    },
+    {
+      "ID": 255000,
+      "Entries": [
+        "Great Sword_One Hand Guard"
+      ]
+    },
+    {
+      "ID": 255100,
+      "Entries": [
+        "Greatsword_Two-Handed Guard"
+      ]
+    },
+    {
+      "ID": 256000,
+      "Entries": [
+        "Greatsword_Parry Guard"
+      ]
+    },
+    {
+      "ID": 250001,
+      "Entries": [
+        "Storm Bringer_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 250011,
+      "Entries": [
+        "Storm Bringer_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 250021,
+      "Entries": [
+        "Storm Bringer_One hand normal 3"
+      ]
+    },
+    {
+      "ID": 250201,
+      "Entries": [
+        "Storm Bringer_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 250211,
+      "Entries": [
+        "Stormbringer_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 250221,
+      "Entries": [
+        "Stormbringer_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 250601,
+      "Entries": [
+        "Storm Bringer_Before one hand step"
+      ]
+    },
+    {
+      "ID": 251001,
+      "Entries": [
+        "Storm Bringer_Both hands before step"
+      ]
+    },
+    {
+      "ID": 251401,
+      "Entries": [
+        "Stormbringer_left hand"
+      ]
+    },
+    {
+      "ID": 252001,
+      "Entries": [
+        "Stormbringer_Event only_One hand"
+      ]
+    },
+    {
+      "ID": 252101,
+      "Entries": [
+        "Stormbringer_event-only_both hands"
+      ]
+    },
+    {
+      "ID": 250002,
+      "Entries": [
+        "Flamberge_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 250012,
+      "Entries": [
+        "Flamberge_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 250022,
+      "Entries": [
+        "Flamberge_One hand normal 3"
+      ]
+    },
+    {
+      "ID": 250102,
+      "Entries": [
+        "Flamberge_one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 250112,
+      "Entries": [
+        "Flamberge_One hand charge 2"
+      ]
+    },
+    {
+      "ID": 250202,
+      "Entries": [
+        "Flamberge_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 250212,
+      "Entries": [
+        "Flamberge_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 250222,
+      "Entries": [
+        "Flamberge_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 250302,
+      "Entries": [
+        "Flamberge_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 250312,
+      "Entries": [
+        "Flamberge_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 250402,
+      "Entries": [
+        "Flamberge_One-handed dash"
+      ]
+    },
+    {
+      "ID": 250502,
+      "Entries": [
+        "Flamberge_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 250602,
+      "Entries": [
+        "Flamberge_One hand step before"
+      ]
+    },
+    {
+      "ID": 251002,
+      "Entries": [
+        "Flamberge_Both hands before step"
+      ]
+    },
+    {
+      "ID": 251402,
+      "Entries": [
+        "Flamberge_left hand"
+      ]
+    },
+    {
+      "ID": 251702,
+      "Entries": [
+        "Flamberge_behind"
+      ]
+    },
+    {
+      "ID": 251802,
+      "Entries": [
+        "Flamberge_after parry"
+      ]
+    },
+    {
+      "ID": 250003,
+      "Entries": [
+        "Moonlight_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 250013,
+      "Entries": [
+        "Moonlight_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 250023,
+      "Entries": [
+        "Moonlight_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 250103,
+      "Entries": [
+        "Moonlight_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 250113,
+      "Entries": [
+        "Moonlight_One hand charge 2"
+      ]
+    },
+    {
+      "ID": 250203,
+      "Entries": [
+        "Moonlight_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 250213,
+      "Entries": [
+        "Moonlight_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 250223,
+      "Entries": [
+        "Moonlight_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 250303,
+      "Entries": [
+        "Moonlight_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 250313,
+      "Entries": [
+        "Moonlight_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 250403,
+      "Entries": [
+        "Moonlight_One-handed dash"
+      ]
+    },
+    {
+      "ID": 250503,
+      "Entries": [
+        "Moonlight_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 250603,
+      "Entries": [
+        "Moonlight_Before one hand step"
+      ]
+    },
+    {
+      "ID": 251003,
+      "Entries": [
+        "Moonlight_Both hands before step"
+      ]
+    },
+    {
+      "ID": 251403,
+      "Entries": [
+        "Moonlight _ left hand"
+      ]
+    },
+    {
+      "ID": 251503,
+      "Entries": [
+        "Moonlight_One hand close range"
+      ]
+    },
+    {
+      "ID": 251603,
+      "Entries": [
+        "Moonlight_Both hands close range"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "Extra Large_One Hand Normal 1"
+      ]
+    },
+    {
+      "ID": 260001,
+      "Entries": [
+        "Extra Large_One Hand Normal 1_Range"
+      ]
+    },
+    {
+      "ID": 260010,
+      "Entries": [
+        "Extra Large_One Hand Normal 2"
+      ]
+    },
+    {
+      "ID": 260020,
+      "Entries": [
+        "Super large_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 260100,
+      "Entries": [
+        "Extra-large _ One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 260110,
+      "Entries": [
+        "Super large_1 hand charge 2"
+      ]
+    },
+    {
+      "ID": 260200,
+      "Entries": [
+        "Super Large_Two Hands Normal 1"
+      ]
+    },
+    {
+      "ID": 260210,
+      "Entries": [
+        "Extra Large_Two Hands Normal 2"
+      ]
+    },
+    {
+      "ID": 260220,
+      "Entries": [
+        "Super Large_Two Hands Normal 3"
+      ]
+    },
+    {
+      "ID": 260300,
+      "Entries": [
+        "Super large_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 260310,
+      "Entries": [
+        "Super large_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 260400,
+      "Entries": [
+        "Extra Large_One Hand Dash"
+      ]
+    },
+    {
+      "ID": 260500,
+      "Entries": [
+        "Super large _ two-handed dash"
+      ]
+    },
+    {
+      "ID": 260600,
+      "Entries": [
+        "Extra Large_One Hand Step Front"
+      ]
+    },
+    {
+      "ID": 261000,
+      "Entries": [
+        "Extra-large_both hands step front"
+      ]
+    },
+    {
+      "ID": 261400,
+      "Entries": [
+        "Extra Large_Left Hand"
+      ]
+    },
+    {
+      "ID": 261500,
+      "Entries": [
+        "Extra Large_One Hand Close Range"
+      ]
+    },
+    {
+      "ID": 261600,
+      "Entries": [
+        "Extra Large_Both Hands Close Range"
+      ]
+    },
+    {
+      "ID": 261700,
+      "Entries": [
+        "Super large _ behind"
+      ]
+    },
+    {
+      "ID": 261800,
+      "Entries": [
+        "Super large_after parry"
+      ]
+    },
+    {
+      "ID": 261900,
+      "Entries": [
+        "Super large _ Parry"
+      ]
+    },
+    {
+      "ID": 265000,
+      "Entries": [
+        "Extra Large_One Hand Guard"
+      ]
+    },
+    {
+      "ID": 265100,
+      "Entries": [
+        "Extra Large_Both Hands Guard"
+      ]
+    },
+    {
+      "ID": 266000,
+      "Entries": [
+        "Super large _ Parry guard"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "Stabbing sword_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 270010,
+      "Entries": [
+        "Stabbing sword_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 270020,
+      "Entries": [
+        "Stabbing sword_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 270100,
+      "Entries": [
+        "Stabbing sword _ one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 270110,
+      "Entries": [
+        "Stabbing sword_one-hand charge 2"
+      ]
+    },
+    {
+      "ID": 270200,
+      "Entries": [
+        "Stabbing sword_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 270210,
+      "Entries": [
+        "Stabbing Sword_Two Hands Normal 2"
+      ]
+    },
+    {
+      "ID": 270220,
+      "Entries": [
+        "Thabbing sword_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 270300,
+      "Entries": [
+        "Stabbing sword_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 270310,
+      "Entries": [
+        "Stabbing sword_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 270400,
+      "Entries": [
+        "Thabbing Sword_One-handed Dash"
+      ]
+    },
+    {
+      "ID": 270500,
+      "Entries": [
+        "Piercing Sword_Two-Handed Dash"
+      ]
+    },
+    {
+      "ID": 270600,
+      "Entries": [
+        "Stabbing sword_One hand step before"
+      ]
+    },
+    {
+      "ID": 271000,
+      "Entries": [
+        "Stabbing Sword_Both Hands Before Step"
+      ]
+    },
+    {
+      "ID": 271400,
+      "Entries": [
+        "Thabbing sword _ left hand"
+      ]
+    },
+    {
+      "ID": 271500,
+      "Entries": [
+        "Stabbing Sword_One Hand Close Range"
+      ]
+    },
+    {
+      "ID": 271600,
+      "Entries": [
+        "Stabbing sword_both hands close range"
+      ]
+    },
+    {
+      "ID": 271700,
+      "Entries": [
+        "stabbing sword _ behind"
+      ]
+    },
+    {
+      "ID": 271800,
+      "Entries": [
+        "Stabbing sword_after parry"
+      ]
+    },
+    {
+      "ID": 271900,
+      "Entries": [
+        "Piercing Sword_Parry"
+      ]
+    },
+    {
+      "ID": 272000,
+      "Entries": [
+        "Stabbing sword_ attack during guard"
+      ]
+    },
+    {
+      "ID": 275000,
+      "Entries": [
+        "Stabbing sword_one hand guard"
+      ]
+    },
+    {
+      "ID": 275100,
+      "Entries": [
+        "Stabbing sword_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 276000,
+      "Entries": [
+        "Piercing Sword_Parry Guard"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Curved sword_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 280010,
+      "Entries": [
+        "Curved Sword_One-Handed Normal 2"
+      ]
+    },
+    {
+      "ID": 280020,
+      "Entries": [
+        "Curved sword_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 280100,
+      "Entries": [
+        "Curved Sword_One-Hand Charge 1"
+      ]
+    },
+    {
+      "ID": 280110,
+      "Entries": [
+        "Curved sword_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 280200,
+      "Entries": [
+        "Curved Sword_Two-Handed Normal 1"
+      ]
+    },
+    {
+      "ID": 280210,
+      "Entries": [
+        "Curved sword_Two-handed normal 2"
+      ]
+    },
+    {
+      "ID": 280220,
+      "Entries": [
+        "Curved sword_Two-handed normal 3"
+      ]
+    },
+    {
+      "ID": 280300,
+      "Entries": [
+        "Curved sword_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 280310,
+      "Entries": [
+        "Curved sword_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 280400,
+      "Entries": [
+        "Curved Sword_One Hand Dash"
+      ]
+    },
+    {
+      "ID": 280500,
+      "Entries": [
+        "Curved sword_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 280600,
+      "Entries": [
+        "Curved Sword_One Hand Step Before"
+      ]
+    },
+    {
+      "ID": 281000,
+      "Entries": [
+        "Curved sword_before two-handed step"
+      ]
+    },
+    {
+      "ID": 281400,
+      "Entries": [
+        "curved sword_left hand"
+      ]
+    },
+    {
+      "ID": 281500,
+      "Entries": [
+        "Curved Sword_One Hand Close Range"
+      ]
+    },
+    {
+      "ID": 281600,
+      "Entries": [
+        "Curved sword_Two-handed close range"
+      ]
+    },
+    {
+      "ID": 281610,
+      "Entries": [
+        "Curved Sword_Short Range_Second Strike_Common"
+      ]
+    },
+    {
+      "ID": 281700,
+      "Entries": [
+        "curved sword_behind"
+      ]
+    },
+    {
+      "ID": 281800,
+      "Entries": [
+        "Curved sword_after parry"
+      ]
+    },
+    {
+      "ID": 281900,
+      "Entries": [
+        "Curved Sword_Parry"
+      ]
+    },
+    {
+      "ID": 285000,
+      "Entries": [
+        "Curved Sword_One Hand Guard"
+      ]
+    },
+    {
+      "ID": 285100,
+      "Entries": [
+        "Curved sword_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 286000,
+      "Entries": [
+        "Curved Sword_Parry Guard"
+      ]
+    },
+    {
+      "ID": 280001,
+      "Entries": [
+        "blind_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 280011,
+      "Entries": [
+        "blind_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 280021,
+      "Entries": [
+        "blind_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 280101,
+      "Entries": [
+        "Blind _ one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 280111,
+      "Entries": [
+        "Blind _ one-hand charge 2"
+      ]
+    },
+    {
+      "ID": 280201,
+      "Entries": [
+        "blind_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 280211,
+      "Entries": [
+        "blind_both hands normal 2"
+      ]
+    },
+    {
+      "ID": 280221,
+      "Entries": [
+        "blind_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 280301,
+      "Entries": [
+        "Blind_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 280311,
+      "Entries": [
+        "Blind_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 280401,
+      "Entries": [
+        "blind_one hand dash"
+      ]
+    },
+    {
+      "ID": 280501,
+      "Entries": [
+        "Blinds _ two-handed dash"
+      ]
+    },
+    {
+      "ID": 280601,
+      "Entries": [
+        "Blind_One hand step before"
+      ]
+    },
+    {
+      "ID": 281001,
+      "Entries": [
+        "Blinds_Both hands before step"
+      ]
+    },
+    {
+      "ID": 281401,
+      "Entries": [
+        "blinds _ left hand"
+      ]
+    },
+    {
+      "ID": 281501,
+      "Entries": [
+        "Blinds _ one-handed close range"
+      ]
+    },
+    {
+      "ID": 281601,
+      "Entries": [
+        "Blind_both hands close range"
+      ]
+    },
+    {
+      "ID": 281611,
+      "Entries": [
+        "Blind _ close range _ second shot _ common"
+      ]
+    },
+    {
+      "ID": 290000,
+      "Entries": [
+        "Katana_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 290010,
+      "Entries": [
+        "Katana_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 290020,
+      "Entries": [
+        "Katana_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 290100,
+      "Entries": [
+        "Katana _ One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 290110,
+      "Entries": [
+        "Katana _ One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 290200,
+      "Entries": [
+        "Katana_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 290210,
+      "Entries": [
+        "Katana_Two-Handed Normal 2"
+      ]
+    },
+    {
+      "ID": 290220,
+      "Entries": [
+        "Katana_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 290300,
+      "Entries": [
+        "Katana _ Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 290310,
+      "Entries": [
+        "Katana _ Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 290400,
+      "Entries": [
+        "Katana_one-handed dash"
+      ]
+    },
+    {
+      "ID": 290500,
+      "Entries": [
+        "Sword_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 290600,
+      "Entries": [
+        "Katana_One hand step before"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "Katana_Both hands before step"
+      ]
+    },
+    {
+      "ID": 291400,
+      "Entries": [
+        "sword _ left hand"
+      ]
+    },
+    {
+      "ID": 291500,
+      "Entries": [
+        "Katana_One hand close range"
+      ]
+    },
+    {
+      "ID": 291600,
+      "Entries": [
+        "Sword_Two-handed close range"
+      ]
+    },
+    {
+      "ID": 291700,
+      "Entries": [
+        "sword _ behind"
+      ]
+    },
+    {
+      "ID": 291800,
+      "Entries": [
+        "Sword_after parry"
+      ]
+    },
+    {
+      "ID": 291900,
+      "Entries": [
+        "Sword_Parry"
+      ]
+    },
+    {
+      "ID": 295000,
+      "Entries": [
+        "Sword_One hand guard"
+      ]
+    },
+    {
+      "ID": 295100,
+      "Entries": [
+        "Sword_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 296000,
+      "Entries": [
+        "Sword_Parry Guard"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Ax_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Ax_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "Ax_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        "Ax_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 300110,
+      "Entries": [
+        "Ax_One-Hand Charge 2"
+      ]
+    },
+    {
+      "ID": 300200,
+      "Entries": [
+        "Ax_Two hands Normal 1"
+      ]
+    },
+    {
+      "ID": 300210,
+      "Entries": [
+        "Ax_Two-Handed Normal 2"
+      ]
+    },
+    {
+      "ID": 300220,
+      "Entries": [
+        "Ax_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 300300,
+      "Entries": [
+        "Ax_Two-Handed Charge 1"
+      ]
+    },
+    {
+      "ID": 300310,
+      "Entries": [
+        "Ax_Two-Handed Charge 2"
+      ]
+    },
+    {
+      "ID": 300400,
+      "Entries": [
+        "Ax_One hand dash"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "Ax_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Ax_One hand step forward"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Ax_Both hands before step"
+      ]
+    },
+    {
+      "ID": 301400,
+      "Entries": [
+        "ax _ left hand"
+      ]
+    },
+    {
+      "ID": 301500,
+      "Entries": [
+        "Ax_One hand close range"
+      ]
+    },
+    {
+      "ID": 301600,
+      "Entries": [
+        "Ax_Two-Handed Close Range"
+      ]
+    },
+    {
+      "ID": 301700,
+      "Entries": [
+        "ax behind"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "ax_after parry"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "Ax_Parry"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Ax_One hand guard"
+      ]
+    },
+    {
+      "ID": 305100,
+      "Entries": [
+        "Ax_Two-Handed Guard"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Ax_Parry Guard"
+      ]
+    },
+    {
+      "ID": 320000,
+      "Entries": [
+        "Greataxe_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 320010,
+      "Entries": [
+        "Greataxe_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 320020,
+      "Entries": [
+        "Greataxe_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 320100,
+      "Entries": [
+        "Big Ax_One-Hand Charge 1"
+      ]
+    },
+    {
+      "ID": 320101,
+      "Entries": [
+        "Large Axe_One-Hand Charge 1_Periphery (Small)"
+      ]
+    },
+    {
+      "ID": 320110,
+      "Entries": [
+        "Greataxe_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 320200,
+      "Entries": [
+        "Greataxe_Two hands normal 1"
+      ]
+    },
+    {
+      "ID": 320210,
+      "Entries": [
+        "Large Ax_Two Hands Normal 2"
+      ]
+    },
+    {
+      "ID": 320220,
+      "Entries": [
+        "Large Ax_Two-Handed Normal 3"
+      ]
+    },
+    {
+      "ID": 320300,
+      "Entries": [
+        "Large Ax_Two-Handed Charge 1_Center"
+      ]
+    },
+    {
+      "ID": 320301,
+      "Entries": [
+        "Large Ax_Two-Handed Charge 1_Around"
+      ]
+    },
+    {
+      "ID": 320310,
+      "Entries": [
+        "Large Ax_Two-Handed Charge 2"
+      ]
+    },
+    {
+      "ID": 320400,
+      "Entries": [
+        "Greataxe_One-handed dash"
+      ]
+    },
+    {
+      "ID": 320500,
+      "Entries": [
+        "Greataxe_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 320600,
+      "Entries": [
+        "Greataxe_One hand step forward"
+      ]
+    },
+    {
+      "ID": 321000,
+      "Entries": [
+        "Large ax_both hands step forward"
+      ]
+    },
+    {
+      "ID": 321400,
+      "Entries": [
+        "Large ax _ left hand"
+      ]
+    },
+    {
+      "ID": 321500,
+      "Entries": [
+        "Large Ax_One Hand Close Range"
+      ]
+    },
+    {
+      "ID": 321600,
+      "Entries": [
+        "Large ax_both hands close range"
+      ]
+    },
+    {
+      "ID": 321700,
+      "Entries": [
+        "big ax _ behind"
+      ]
+    },
+    {
+      "ID": 321800,
+      "Entries": [
+        "Greataxe_after parry"
+      ]
+    },
+    {
+      "ID": 321900,
+      "Entries": [
+        "Great Axe_Parry"
+      ]
+    },
+    {
+      "ID": 325000,
+      "Entries": [
+        "Greataxe_One-handed guard"
+      ]
+    },
+    {
+      "ID": 325100,
+      "Entries": [
+        "Large Ax_Two-Handed Guard"
+      ]
+    },
+    {
+      "ID": 326000,
+      "Entries": [
+        "Great Ax_Parry Guard"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Hammer_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Hammer_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 330020,
+      "Entries": [
+        "Hammer_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 330100,
+      "Entries": [
+        "Hammer _ one-hand charge 1"
+      ]
+    },
+    {
+      "ID": 330110,
+      "Entries": [
+        "Hammer _ one-hand charge 2"
+      ]
+    },
+    {
+      "ID": 330200,
+      "Entries": [
+        "Hammer_Two hands Normal 1"
+      ]
+    },
+    {
+      "ID": 330210,
+      "Entries": [
+        "Hammer_Two hands Normal 2"
+      ]
+    },
+    {
+      "ID": 330220,
+      "Entries": [
+        "Hammer_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 330300,
+      "Entries": [
+        "Hammer_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 330310,
+      "Entries": [
+        "Hammer_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 330400,
+      "Entries": [
+        "Hammer_One hand dash"
+      ]
+    },
+    {
+      "ID": 330500,
+      "Entries": [
+        "Hammer_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 330600,
+      "Entries": [
+        "Hammer_One hand step before"
+      ]
+    },
+    {
+      "ID": 331000,
+      "Entries": [
+        "Hammer_Both hands before step"
+      ]
+    },
+    {
+      "ID": 331400,
+      "Entries": [
+        "Hammer _ left hand"
+      ]
+    },
+    {
+      "ID": 331500,
+      "Entries": [
+        "Hammer_One hand close range"
+      ]
+    },
+    {
+      "ID": 331600,
+      "Entries": [
+        "Hammer _ Both hands close range"
+      ]
+    },
+    {
+      "ID": 331700,
+      "Entries": [
+        "Mallet _ behind"
+      ]
+    },
+    {
+      "ID": 331800,
+      "Entries": [
+        "Mallet_after parry"
+      ]
+    },
+    {
+      "ID": 331900,
+      "Entries": [
+        "Hammer _ Parry"
+      ]
+    },
+    {
+      "ID": 335000,
+      "Entries": [
+        "Hammer_One hand guard"
+      ]
+    },
+    {
+      "ID": 335100,
+      "Entries": [
+        "Hammer_Two hands guard"
+      ]
+    },
+    {
+      "ID": 336000,
+      "Entries": [
+        "Hammer_Parry Guard"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Great mallet_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 350010,
+      "Entries": [
+        "Great mallet_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 350020,
+      "Entries": [
+        "Great mallet_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 350100,
+      "Entries": [
+        "Sledgehammer_One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 350101,
+      "Entries": [
+        "Otsuchi _ One-hand charge 1 _ Around (small)"
+      ]
+    },
+    {
+      "ID": 350110,
+      "Entries": [
+        "Sledgehammer_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 350200,
+      "Entries": [
+        "Great Hammer_Two Hands Normal 1"
+      ]
+    },
+    {
+      "ID": 350210,
+      "Entries": [
+        "Great Hammer_Two Hands Normal 2"
+      ]
+    },
+    {
+      "ID": 350220,
+      "Entries": [
+        "Great Hammer_Two Hands Normal 3"
+      ]
+    },
+    {
+      "ID": 350300,
+      "Entries": [
+        "Great mallet_Two-handed charge 1_Center"
+      ]
+    },
+    {
+      "ID": 350301,
+      "Entries": [
+        "Otsuchi _ Two-handed Charge 1 _ Around"
+      ]
+    },
+    {
+      "ID": 350310,
+      "Entries": [
+        "Sledgehammer _ Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 350400,
+      "Entries": [
+        "Sledgehammer_One-handed dash"
+      ]
+    },
+    {
+      "ID": 350500,
+      "Entries": [
+        "Sledgehammer_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 350600,
+      "Entries": [
+        "Hammer_One hand step forward"
+      ]
+    },
+    {
+      "ID": 351000,
+      "Entries": [
+        "Otsuchi_Both hands before step"
+      ]
+    },
+    {
+      "ID": 351400,
+      "Entries": [
+        "Sledgehammer _ left hand"
+      ]
+    },
+    {
+      "ID": 351500,
+      "Entries": [
+        "Sledgehammer_One hand close range"
+      ]
+    },
+    {
+      "ID": 351600,
+      "Entries": [
+        "Sledgehammer _ Both hands close range"
+      ]
+    },
+    {
+      "ID": 351700,
+      "Entries": [
+        "sledgehammer behind"
+      ]
+    },
+    {
+      "ID": 351800,
+      "Entries": [
+        "sledgehammer_after parry"
+      ]
+    },
+    {
+      "ID": 351900,
+      "Entries": [
+        "Sledgehammer _ Parry"
+      ]
+    },
+    {
+      "ID": 355000,
+      "Entries": [
+        "Sledgehammer_One hand guard"
+      ]
+    },
+    {
+      "ID": 355100,
+      "Entries": [
+        "Great mallet_both hands guard"
+      ]
+    },
+    {
+      "ID": 356000,
+      "Entries": [
+        "Hammer_Parry Guard"
+      ]
+    },
+    {
+      "ID": 360000,
+      "Entries": [
+        "Spear_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 360010,
+      "Entries": [
+        "Spear_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 360020,
+      "Entries": [
+        "Spear_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 360100,
+      "Entries": [
+        "Spear _ One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 360110,
+      "Entries": [
+        "Spear _ One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 360200,
+      "Entries": [
+        "Spear_Both normal 1"
+      ]
+    },
+    {
+      "ID": 360210,
+      "Entries": [
+        "Spear_Two hands Normal 2"
+      ]
+    },
+    {
+      "ID": 360220,
+      "Entries": [
+        "Spear_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 360300,
+      "Entries": [
+        "Spear _ Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 360310,
+      "Entries": [
+        "Spear _ Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 360400,
+      "Entries": [
+        "Spear_One-handed dash"
+      ]
+    },
+    {
+      "ID": 360500,
+      "Entries": [
+        "Spear_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 360600,
+      "Entries": [
+        "Spear_One hand step before"
+      ]
+    },
+    {
+      "ID": 361000,
+      "Entries": [
+        "Spear_Both hands before step"
+      ]
+    },
+    {
+      "ID": 361400,
+      "Entries": [
+        "spear _ left hand"
+      ]
+    },
+    {
+      "ID": 361500,
+      "Entries": [
+        "Spear_One hand close range"
+      ]
+    },
+    {
+      "ID": 361600,
+      "Entries": [
+        "Spear_Both hands close range"
+      ]
+    },
+    {
+      "ID": 361700,
+      "Entries": [
+        "spear _ behind"
+      ]
+    },
+    {
+      "ID": 361800,
+      "Entries": [
+        "Spear_after parry"
+      ]
+    },
+    {
+      "ID": 361900,
+      "Entries": [
+        "spear _ parry"
+      ]
+    },
+    {
+      "ID": 362000,
+      "Entries": [
+        "Spear_Medium guard attack"
+      ]
+    },
+    {
+      "ID": 365000,
+      "Entries": [
+        "Spear_One hand guard"
+      ]
+    },
+    {
+      "ID": 365100,
+      "Entries": [
+        "Spear_Two-Handed Guard"
+      ]
+    },
+    {
+      "ID": 366000,
+      "Entries": [
+        "Spear_Parry Guard"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Pole shape_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 380010,
+      "Entries": [
+        "Pole shape_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 380020,
+      "Entries": [
+        "Pole shape_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 380100,
+      "Entries": [
+        "Pole _ One-hand charge 1"
+      ]
+    },
+    {
+      "ID": 380110,
+      "Entries": [
+        "Pole _ One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 380200,
+      "Entries": [
+        "Pole shape_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 380210,
+      "Entries": [
+        "Pole _ Both hands normal 2"
+      ]
+    },
+    {
+      "ID": 380220,
+      "Entries": [
+        "Pole shape_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 380300,
+      "Entries": [
+        "Pole _ Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 380310,
+      "Entries": [
+        "Pole _ Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 380400,
+      "Entries": [
+        "Pole _ One-handed dash"
+      ]
+    },
+    {
+      "ID": 380500,
+      "Entries": [
+        "Rod-shaped _ two-handed dash"
+      ]
+    },
+    {
+      "ID": 380600,
+      "Entries": [
+        "Pole shape _ before one hand step"
+      ]
+    },
+    {
+      "ID": 381000,
+      "Entries": [
+        "Pole shape _ before both hands step"
+      ]
+    },
+    {
+      "ID": 381400,
+      "Entries": [
+        "Rod-shaped _ left hand"
+      ]
+    },
+    {
+      "ID": 381500,
+      "Entries": [
+        "Pole shape _ one-handed close range"
+      ]
+    },
+    {
+      "ID": 381600,
+      "Entries": [
+        "Pole shape _ Both hands close range"
+      ]
+    },
+    {
+      "ID": 381700,
+      "Entries": [
+        "Rod-shaped _ behind"
+      ]
+    },
+    {
+      "ID": 381800,
+      "Entries": [
+        "Rod-shaped _ after parry"
+      ]
+    },
+    {
+      "ID": 381900,
+      "Entries": [
+        "Rod-shaped _ Parry"
+      ]
+    },
+    {
+      "ID": 385000,
+      "Entries": [
+        "Rod-shaped _ one-handed guard"
+      ]
+    },
+    {
+      "ID": 385100,
+      "Entries": [
+        "Pole shape _ both hands guard"
+      ]
+    },
+    {
+      "ID": 386000,
+      "Entries": [
+        "Rod-shaped Parry Guard"
+      ]
+    },
+    {
+      "ID": 380001,
+      "Entries": [
+        "Size_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 380011,
+      "Entries": [
+        "Size_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 380021,
+      "Entries": [
+        "Size_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 380101,
+      "Entries": [
+        "Size_one hand charge 1"
+      ]
+    },
+    {
+      "ID": 380111,
+      "Entries": [
+        "Size_one hand charge 2"
+      ]
+    },
+    {
+      "ID": 380201,
+      "Entries": [
+        "Size_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 380211,
+      "Entries": [
+        "Size_both hands normal 2"
+      ]
+    },
+    {
+      "ID": 380221,
+      "Entries": [
+        "Size_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 380301,
+      "Entries": [
+        "Size_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 380311,
+      "Entries": [
+        "Size_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 380401,
+      "Entries": [
+        "Size_one hand dash"
+      ]
+    },
+    {
+      "ID": 380501,
+      "Entries": [
+        "Size_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 380601,
+      "Entries": [
+        "Size_One hand step before"
+      ]
+    },
+    {
+      "ID": 381001,
+      "Entries": [
+        "Size_Both hands before step"
+      ]
+    },
+    {
+      "ID": 381401,
+      "Entries": [
+        "size_left hand"
+      ]
+    },
+    {
+      "ID": 381701,
+      "Entries": [
+        "size_back"
+      ]
+    },
+    {
+      "ID": 381801,
+      "Entries": [
+        "size_after parry"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Catalyst_One hand Normal 1"
+      ]
+    },
+    {
+      "ID": 410010,
+      "Entries": [
+        "Catalyst_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 410020,
+      "Entries": [
+        "Catalyst_One hand normal 3"
+      ]
+    },
+    {
+      "ID": 410100,
+      "Entries": [
+        "Catalyst_1 hand charge"
+      ]
+    },
+    {
+      "ID": 410110,
+      "Entries": [
+        "Catalyst_One hand charge 2"
+      ]
+    },
+    {
+      "ID": 410410,
+      "Entries": [
+        "Catalyst_Two hands Normal 1"
+      ]
+    },
+    {
+      "ID": 410411,
+      "Entries": [
+        "Catalyst_Two hands normal 2"
+      ]
+    },
+    {
+      "ID": 410412,
+      "Entries": [
+        "Catalyst_Two hands normal 3"
+      ]
+    },
+    {
+      "ID": 410300,
+      "Entries": [
+        "Catalyst_Two hands charge 1"
+      ]
+    },
+    {
+      "ID": 410310,
+      "Entries": [
+        "Catalyst_Two hands charge 2"
+      ]
+    },
+    {
+      "ID": 410400,
+      "Entries": [
+        "Catalyst_One-handed dash"
+      ]
+    },
+    {
+      "ID": 410500,
+      "Entries": [
+        "Catalyst_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 410600,
+      "Entries": [
+        "Catalyst_One hand step before"
+      ]
+    },
+    {
+      "ID": 411000,
+      "Entries": [
+        "Catalyst_Both hands before step"
+      ]
+    },
+    {
+      "ID": 411400,
+      "Entries": [
+        "Catalyst_left hand"
+      ]
+    },
+    {
+      "ID": 411500,
+      "Entries": [
+        "Catalyst_One hand close range"
+      ]
+    },
+    {
+      "ID": 411600,
+      "Entries": [
+        "Catalyst_Both hands close range"
+      ]
+    },
+    {
+      "ID": 411700,
+      "Entries": [
+        "catalyst_behind"
+      ]
+    },
+    {
+      "ID": 411800,
+      "Entries": [
+        "Catalyst_after parry"
+      ]
+    },
+    {
+      "ID": 411900,
+      "Entries": [
+        "Catalyst_Parry"
+      ]
+    },
+    {
+      "ID": 415000,
+      "Entries": [
+        "Catalyst_One hand guard"
+      ]
+    },
+    {
+      "ID": 415100,
+      "Entries": [
+        "Catalyst_Both hands guard"
+      ]
+    },
+    {
+      "ID": 420000,
+      "Entries": [
+        "Fist_One hand normal 1"
+      ]
+    },
+    {
+      "ID": 420010,
+      "Entries": [
+        "Fist_One hand normal 2"
+      ]
+    },
+    {
+      "ID": 420020,
+      "Entries": [
+        "Fist_One hand normal 3"
+      ]
+    },
+    {
+      "ID": 420100,
+      "Entries": [
+        "Fist _ one hand charge 1"
+      ]
+    },
+    {
+      "ID": 420110,
+      "Entries": [
+        "Fist_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 420420,
+      "Entries": [
+        "fist_both hands normal"
+      ]
+    },
+    {
+      "ID": 420300,
+      "Entries": [
+        "Fist _ Both hands charge"
+      ]
+    },
+    {
+      "ID": 420400,
+      "Entries": [
+        "Fist_One hand dash"
+      ]
+    },
+    {
+      "ID": 420500,
+      "Entries": [
+        "Fist_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 420600,
+      "Entries": [
+        "Fist_One hand step before"
+      ]
+    },
+    {
+      "ID": 421000,
+      "Entries": [
+        "Fist_Both hands before step"
+      ]
+    },
+    {
+      "ID": 421400,
+      "Entries": [
+        "fist _ left hand"
+      ]
+    },
+    {
+      "ID": 421500,
+      "Entries": [
+        "Fist_One hand close range"
+      ]
+    },
+    {
+      "ID": 421600,
+      "Entries": [
+        "Fist_Both hands close range"
+      ]
+    },
+    {
+      "ID": 421700,
+      "Entries": [
+        "fist _ behind"
+      ]
+    },
+    {
+      "ID": 421800,
+      "Entries": [
+        "Fist_after parry"
+      ]
+    },
+    {
+      "ID": 421900,
+      "Entries": [
+        "fist _ parry"
+      ]
+    },
+    {
+      "ID": 425000,
+      "Entries": [
+        "Fist_One hand guard"
+      ]
+    },
+    {
+      "ID": 425100,
+      "Entries": [
+        "fist_both hands guard"
+      ]
+    },
+    {
+      "ID": 426000,
+      "Entries": [
+        "Fist_Parry Guard"
+      ]
+    },
+    {
+      "ID": 420101,
+      "Entries": [
+        "God hand_one hand charge 1"
+      ]
+    },
+    {
+      "ID": 420111,
+      "Entries": [
+        "God hand_1 hand charge 2"
+      ]
+    },
+    {
+      "ID": 420401,
+      "Entries": [
+        "God Hand_One hand dash"
+      ]
+    },
+    {
+      "ID": 421501,
+      "Entries": [
+        "God Hand_One Hand Close Range"
+      ]
+    },
+    {
+      "ID": 440000,
+      "Entries": [
+        "Bow_One hand normal"
+      ]
+    },
+    {
+      "ID": 440100,
+      "Entries": [
+        "Bow _ One-hand charge"
+      ]
+    },
+    {
+      "ID": 440200,
+      "Entries": [
+        "Bow_both hands normal"
+      ]
+    },
+    {
+      "ID": 440300,
+      "Entries": [
+        "Bow_Two-Handed Charge"
+      ]
+    },
+    {
+      "ID": 440400,
+      "Entries": [
+        "Bow_one-handed dash"
+      ]
+    },
+    {
+      "ID": 440500,
+      "Entries": [
+        "Bow_Two-handed dash"
+      ]
+    },
+    {
+      "ID": 440600,
+      "Entries": [
+        "Bow_One hand step before"
+      ]
+    },
+    {
+      "ID": 441000,
+      "Entries": [
+        "Bow_Both hands before step"
+      ]
+    },
+    {
+      "ID": 441400,
+      "Entries": [
+        "bow _ left hand"
+      ]
+    },
+    {
+      "ID": 441500,
+      "Entries": [
+        "Bow_One hand close range"
+      ]
+    },
+    {
+      "ID": 441600,
+      "Entries": [
+        "Bow_both hands close range"
+      ]
+    },
+    {
+      "ID": 441700,
+      "Entries": [
+        "bow _ behind"
+      ]
+    },
+    {
+      "ID": 441800,
+      "Entries": [
+        "bow_after parry"
+      ]
+    },
+    {
+      "ID": 441900,
+      "Entries": [
+        "bow _ parry"
+      ]
+    },
+    {
+      "ID": 445000,
+      "Entries": [
+        "Bow_One hand guard"
+      ]
+    },
+    {
+      "ID": 445100,
+      "Entries": [
+        "Bow_Two-Handed Guard"
+      ]
+    },
+    {
+      "ID": 446000,
+      "Entries": [
+        "Bow_Parry Guard"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Crossbow _ one-handed normal"
+      ]
+    },
+    {
+      "ID": 460100,
+      "Entries": [
+        "Crossbow _ one-hand charge"
+      ]
+    },
+    {
+      "ID": 460200,
+      "Entries": [
+        "Crossbow _ Both hands normal"
+      ]
+    },
+    {
+      "ID": 460300,
+      "Entries": [
+        "Crossbow _ Two-handed charge"
+      ]
+    },
+    {
+      "ID": 460400,
+      "Entries": [
+        "Crossbow _ one-handed dash"
+      ]
+    },
+    {
+      "ID": 460500,
+      "Entries": [
+        "Crossbow _ two-handed dash"
+      ]
+    },
+    {
+      "ID": 460600,
+      "Entries": [
+        "Crossbow _ Before one hand step"
+      ]
+    },
+    {
+      "ID": 461000,
+      "Entries": [
+        "Crossbow _ Both hands before step"
+      ]
+    },
+    {
+      "ID": 461400,
+      "Entries": [
+        "Crossbow _ left hand"
+      ]
+    },
+    {
+      "ID": 461500,
+      "Entries": [
+        "Crossbow _ One hand close range"
+      ]
+    },
+    {
+      "ID": 461600,
+      "Entries": [
+        "Crossbow _ Both hands close range"
+      ]
+    },
+    {
+      "ID": 461700,
+      "Entries": [
+        "crossbow behind"
+      ]
+    },
+    {
+      "ID": 461800,
+      "Entries": [
+        "Crossbow after parry"
+      ]
+    },
+    {
+      "ID": 461900,
+      "Entries": [
+        "crossbow _ parry"
+      ]
+    },
+    {
+      "ID": 465000,
+      "Entries": [
+        "Crossbow _ one-handed guard"
+      ]
+    },
+    {
+      "ID": 465100,
+      "Entries": [
+        "Crossbow _ Two-handed guard"
+      ]
+    },
+    {
+      "ID": 466000,
+      "Entries": [
+        "Crossbow_Parry Guard"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Large shield_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 470010,
+      "Entries": [
+        "Large shield_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 470020,
+      "Entries": [
+        "Large shield_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 470100,
+      "Entries": [
+        "Large shield_1 hand charge"
+      ]
+    },
+    {
+      "ID": 470110,
+      "Entries": [
+        "Large shield_one hand charge 2"
+      ]
+    },
+    {
+      "ID": 470200,
+      "Entries": [
+        "Large shield_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 470210,
+      "Entries": [
+        "Large shield_both hands normal 2"
+      ]
+    },
+    {
+      "ID": 470220,
+      "Entries": [
+        "Large shield_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 470300,
+      "Entries": [
+        "Large shield_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 470301,
+      "Entries": [
+        "Large shield_Two-handed charge 1_Range"
+      ]
+    },
+    {
+      "ID": 470310,
+      "Entries": [
+        "Large shield_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 470400,
+      "Entries": [
+        "Large shield_One-handed dash"
+      ]
+    },
+    {
+      "ID": 470500,
+      "Entries": [
+        "Large shield_two-handed dash"
+      ]
+    },
+    {
+      "ID": 470600,
+      "Entries": [
+        "Large shield_One hand step forward"
+      ]
+    },
+    {
+      "ID": 471000,
+      "Entries": [
+        "Large shield_both hands step forward"
+      ]
+    },
+    {
+      "ID": 471400,
+      "Entries": [
+        "Large shield_left hand"
+      ]
+    },
+    {
+      "ID": 471500,
+      "Entries": [
+        "Large shield_One-handed close range"
+      ]
+    },
+    {
+      "ID": 471600,
+      "Entries": [
+        "Large shield_both hands close range"
+      ]
+    },
+    {
+      "ID": 471700,
+      "Entries": [
+        "Large shield _ behind"
+      ]
+    },
+    {
+      "ID": 471800,
+      "Entries": [
+        "Large Shield_After Parrying"
+      ]
+    },
+    {
+      "ID": 471900,
+      "Entries": [
+        "Large Shield_Parry"
+      ]
+    },
+    {
+      "ID": 475000,
+      "Entries": [
+        "Large Shield_One Hand Guard"
+      ]
+    },
+    {
+      "ID": 475100,
+      "Entries": [
+        "Large shield_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 476000,
+      "Entries": [
+        "Large Shield_Parry Guard"
+      ]
+    },
+    {
+      "ID": 480000,
+      "Entries": [
+        "Small shield_one hand normal 1"
+      ]
+    },
+    {
+      "ID": 480010,
+      "Entries": [
+        "Small shield_one hand normal 2"
+      ]
+    },
+    {
+      "ID": 480020,
+      "Entries": [
+        "Small shield_one hand normal 3"
+      ]
+    },
+    {
+      "ID": 480100,
+      "Entries": [
+        "Small shield_one hand charge 1"
+      ]
+    },
+    {
+      "ID": 480110,
+      "Entries": [
+        "Small shield_One-hand charge 2"
+      ]
+    },
+    {
+      "ID": 480200,
+      "Entries": [
+        "Small shield_both hands normal 1"
+      ]
+    },
+    {
+      "ID": 480210,
+      "Entries": [
+        "Small shield_both hands normal 2"
+      ]
+    },
+    {
+      "ID": 480220,
+      "Entries": [
+        "Small shield_both hands normal 3"
+      ]
+    },
+    {
+      "ID": 480300,
+      "Entries": [
+        "Small shield_Two-handed charge 1"
+      ]
+    },
+    {
+      "ID": 480310,
+      "Entries": [
+        "Small shield_Two-handed charge 2"
+      ]
+    },
+    {
+      "ID": 480400,
+      "Entries": [
+        "Small shield_one-handed dash"
+      ]
+    },
+    {
+      "ID": 480500,
+      "Entries": [
+        "Small shield_two-handed dash"
+      ]
+    },
+    {
+      "ID": 480600,
+      "Entries": [
+        "Small shield_one hand step before"
+      ]
+    },
+    {
+      "ID": 481000,
+      "Entries": [
+        "Small shield_before both hands step"
+      ]
+    },
+    {
+      "ID": 481400,
+      "Entries": [
+        "Small shield_left hand"
+      ]
+    },
+    {
+      "ID": 481500,
+      "Entries": [
+        "Small shield_One-handed close range"
+      ]
+    },
+    {
+      "ID": 481600,
+      "Entries": [
+        "Small shield_both hands close range"
+      ]
+    },
+    {
+      "ID": 481700,
+      "Entries": [
+        "Small shield _ behind"
+      ]
+    },
+    {
+      "ID": 481800,
+      "Entries": [
+        "Small shield_after parry"
+      ]
+    },
+    {
+      "ID": 481900,
+      "Entries": [
+        "Small Shield_Parry"
+      ]
+    },
+    {
+      "ID": 485000,
+      "Entries": [
+        "Small Shield_One Hand Guard"
+      ]
+    },
+    {
+      "ID": 485100,
+      "Entries": [
+        "Small shield_Two-handed guard"
+      ]
+    },
+    {
+      "ID": 486000,
+      "Entries": [
+        "Small Shield_Parry Guard"
+      ]
+    }
+  ]
+}

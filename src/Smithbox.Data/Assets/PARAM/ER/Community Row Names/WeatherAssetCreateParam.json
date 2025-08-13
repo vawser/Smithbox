@@ -1,0 +1,53 @@
+{
+  "Name": "WeatherAssetCreateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Rainbow"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Rainbow"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Aurora Borealis (Blue-Green)"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Aurora Borealis (Blue-Green)"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

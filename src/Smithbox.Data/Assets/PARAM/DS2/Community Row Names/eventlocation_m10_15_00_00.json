@@ -1,0 +1,827 @@
+{
+  "Name": "eventlocation_m10_15_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Intrusion Point 2-9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Intrusion Point 2-10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Intrusion Point 2-11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Intrusion Point 2-12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Intrusion Point 2-13"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "[Event blood character] please stop"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "[Event blood character] turn back 00"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "[Event blood character] turn back 01"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "[Event blood character] turn back 02"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "[Event blood character] turn back 03"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "[Event blood character] turn back 04"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "[Event blood character] turn back 05"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "[Event blood character] turn back 06"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "[Event blood character] turn back 07"
+      ]
+    },
+    {
+      "ID": 31000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door_01"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door_01"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibition] enclosed person"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Blood character prohibited] wall destruction auger 1"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        "[Blood character prohibited] wall destruction auger 2"
+      ]
+    },
+    {
+      "ID": 45040,
+      "Entries": [
+        "[Blood character prohibition] wall to destroy the auger"
+      ]
+    },
+    {
+      "ID": 45050,
+      "Entries": [
+        "[Blood character prohibition] wall and door to destroy the auger"
+      ]
+    },
+    {
+      "ID": 45060,
+      "Entries": [
+        "[Blood character prohibited] cart 1"
+      ]
+    },
+    {
+      "ID": 45070,
+      "Entries": [
+        "[Blood character prohibited] cart 2"
+      ]
+    },
+    {
+      "ID": 45080,
+      "Entries": [
+        "[Blood character prohibited] cart 3"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Petrified image appearance point: Entrance: 01"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Petrified image appearance point: Entrance: 02"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Petrified image appearance point: Entrance: 03"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Petrified image appearance point: Entrance: 04"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Petrified image appearance point: Entrance: 05"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "Petrified image appearance point: Ori front:01"
+      ]
+    },
+    {
+      "ID": 50101,
+      "Entries": [
+        "Petrified image appearance point: Ori front:02"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "Petrified image appearance point: Ori front:03"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "Petrified image appearance point: Ori front:04"
+      ]
+    },
+    {
+      "ID": 50104,
+      "Entries": [
+        "Petrified image appearance point: Ori front:05"
+      ]
+    },
+    {
+      "ID": 50105,
+      "Entries": [
+        "Petrified image appearance point: Ori front:06"
+      ]
+    },
+    {
+      "ID": 50106,
+      "Entries": [
+        "Petrified image appearance point: Ori front:07"
+      ]
+    },
+    {
+      "ID": 50107,
+      "Entries": [
+        "Petrified image appearance point: Ori front:08"
+      ]
+    },
+    {
+      "ID": 50108,
+      "Entries": [
+        "Petrified image appearance point: Ori front:09"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Petrified image appearance point: corridor: 01"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "Petrified image appearance point: corridor: 02"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "Petrified image appearance point: corridor: 03"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "Petrified image appearance point: corridor: 04"
+      ]
+    },
+    {
+      "ID": 50204,
+      "Entries": [
+        "Petrified image appearance point: corridor: 05"
+      ]
+    },
+    {
+      "ID": 50205,
+      "Entries": [
+        "Petrified image appearance point: corridor: 06"
+      ]
+    },
+    {
+      "ID": 50206,
+      "Entries": [
+        "Petrified image appearance point: corridor: 07"
+      ]
+    },
+    {
+      "ID": 50207,
+      "Entries": [
+        "Petrified image appearance point: corridor: 08"
+      ]
+    },
+    {
+      "ID": 50208,
+      "Entries": [
+        "Petrified image appearance point: corridor: 09"
+      ]
+    },
+    {
+      "ID": 50209,
+      "Entries": [
+        "Petrified image appearance point: corridor: 10"
+      ]
+    },
+    {
+      "ID": 50210,
+      "Entries": [
+        "Petrified image appearance point: corridor: 11"
+      ]
+    },
+    {
+      "ID": 50211,
+      "Entries": [
+        "Petrified image appearance point: corridor: 12"
+      ]
+    },
+    {
+      "ID": 50212,
+      "Entries": [
+        "Petrified image appearance point: corridor: 13"
+      ]
+    },
+    {
+      "ID": 50213,
+      "Entries": [
+        "Petrified image appearance point: corridor: 14"
+      ]
+    },
+    {
+      "ID": 101500,
+      "Entries": [
+        "Backlead Safety Points [Void]"
+      ]
+    },
+    {
+      "ID": 101501,
+      "Entries": [
+        "Safety points for backlead [Protected Dragon]"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Event area during mirror night"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Giant Basilrisk Reaction Area_1"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Giant Basilrisk Reaction Area_2"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "Navi mesh change where enemies trapped in cages come out"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Lifter - The Nest of the Guard Dragon"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Lifting machine - on the nest of the guard dragon"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Elevator_Connection replacement point"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "Flag switching point for connection"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "Auger_Petrified Stop_Navimesh Change"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Mirror Night Mirror Operating Area 1"
+      ]
+    },
+    {
+      "ID": 601000,
+      "Entries": [
+        "Mirror Night Mirror Operating Area 2"
+      ]
+    },
+    {
+      "ID": 602000,
+      "Entries": [
+        "Mirror Night Mirror Operating Area 3"
+      ]
+    },
+    {
+      "ID": 603000,
+      "Entries": [
+        "Mirror Knight Mirror Launch Area 4"
+      ]
+    },
+    {
+      "ID": 604000,
+      "Entries": [
+        "Mirror Night Mirror Operating Area 5"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Boss: Battle start decision with Wyburn"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Bone Dragon Logic Operating Area"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Wall Destruction Auger Launch Area_01"
+      ]
+    },
+    {
+      "ID": 900001,
+      "Entries": [
+        "Wall Destruction Auger_Navi Switching Point_01"
+      ]
+    },
+    {
+      "ID": 900010,
+      "Entries": [
+        "Wall Destruction Auger Launch Area_02"
+      ]
+    },
+    {
+      "ID": 900011,
+      "Entries": [
+        "Wall Destruction Auger_Navi Switching Point_02"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Enemy generation 1_Navimesh change when cart destroyed"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Enemy generation 2_Navi mesh change when cart destroyed"
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Enemy generation 3_Navimesh change when cart destroyed"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Lobby side of the switching gimmick room _ Navi mesh change"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "Aisle side of the switching gimmick room _Navi mesh change"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Sealed Person_Navimesh Change"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Wall_Navimesh changes to destroy induced auger"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Ori 1_Navimesh change on passage destroyed by Auger"
+      ]
+    },
+    {
+      "ID": 1801000,
+      "Entries": [
+        "Ori 2_Navimesh change on passage sabotaged by Auger"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Change the broken wall and door_navimesh of the induced auger"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "King's Door_Navimesh Change"
+      ]
+    },
+    {
+      "ID": 6005020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6006020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "【NPC for Multi: God of Death (Female)]】 Black Spirit Appearance Area"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "[Enclosed person] black spirit appearance area"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Wyburn Jump Point 00"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Wyburn Jump Point 01"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "Wyburn Jump Point 02"
+      ]
+    },
+    {
+      "ID": 50000003,
+      "Entries": [
+        "Wyburn Jump Point 03"
+      ]
+    },
+    {
+      "ID": 50000004,
+      "Entries": [
+        "Wyburn Jump Point 04"
+      ]
+    },
+    {
+      "ID": 50000005,
+      "Entries": [
+        "Wyburn Jump Point 05"
+      ]
+    },
+    {
+      "ID": 50000006,
+      "Entries": [
+        "Wyburn Jump Point 06"
+      ]
+    },
+    {
+      "ID": 50000007,
+      "Entries": [
+        "Wyburn Jump Point 07"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "Wyburn No Flying Point"
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "Hunting dog prowl range"
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        "For starting hunting dogs when PC falls into jail"
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "Petrified Auger Moving Area"
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        "Hunting dog launch area under the stairs"
+      ]
+    },
+    {
+      "ID": 50006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000000,
+      "Entries": [
+        "Navi 1 for Cobold outside the museum"
+      ]
+    },
+    {
+      "ID": 52000001,
+      "Entries": [
+        "Navi 2 for Cobold outside the museum"
+      ]
+    },
+    {
+      "ID": 52000002,
+      "Entries": [
+        "Navi 3 for Cobold outside the museum"
+      ]
+    },
+    {
+      "ID": 52000030,
+      "Entries": [
+        "Cobold Navigation 1"
+      ]
+    },
+    {
+      "ID": 52000031,
+      "Entries": [
+        "Cobold Navigation 2"
+      ]
+    },
+    {
+      "ID": 52000032,
+      "Entries": [
+        "Cobold Navigation 3"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "【No logic intrusion】Enemy return area of the front yard"
+      ]
+    },
+    {
+      "ID": 52000101,
+      "Entries": [
+        "【No Logic Intrusion】Enemy Feeding Area in the Lobby"
+      ]
+    },
+    {
+      "ID": 52000102,
+      "Entries": [
+        "【No logic intrusion】Enemy feedback area in the corridor"
+      ]
+    },
+    {
+      "ID": 52000103,
+      "Entries": [
+        "【No logic intrusion】Enemy boss front feedback area of the corridor"
+      ]
+    },
+    {
+      "ID": 52000104,
+      "Entries": [
+        "【No logic intrusion】Enemy return area of the dungeon"
+      ]
+    },
+    {
+      "ID": 52000105,
+      "Entries": [
+        "【No logic intrusion】So that the enemy in front of the museum does not enter the building"
+      ]
+    },
+    {
+      "ID": 52000106,
+      "Entries": [
+        "[Logic invasion prohibition] elder brother range of the female swordsman"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "Petrified Auger Evacuation Point"
+      ]
+    }
+  ]
+}

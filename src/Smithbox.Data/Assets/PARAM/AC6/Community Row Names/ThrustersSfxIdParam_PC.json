@@ -1,0 +1,137 @@
+{
+  "Name": "ThrustersSfxIdParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "None"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Continuous Thrust - Small"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "Continuous Thrust - Booster"
+      ]
+    },
+    {
+      "ID": 410002,
+      "Entries": [
+        "Continuous Thrust - Large"
+      ]
+    },
+    {
+      "ID": 410003,
+      "Entries": [
+        "Continuous Thrust - Giant (Flowery Pattern)"
+      ]
+    },
+    {
+      "ID": 410010,
+      "Entries": [
+        "Continuous Thrust - Small, Long, Thin"
+      ]
+    },
+    {
+      "ID": 410011,
+      "Entries": [
+        "Continuous Thrust - Medium, Long, Thin"
+      ]
+    },
+    {
+      "ID": 410012,
+      "Entries": [
+        "Continuous Thrust - Large, Long, Thin"
+      ]
+    },
+    {
+      "ID": 410013,
+      "Entries": [
+        "Continuous Thrust - Giant, Long, Thin, Purple"
+      ]
+    },
+    {
+      "ID": 410021,
+      "Entries": [
+        "Continuous Thrust - Low Power"
+      ]
+    },
+    {
+      "ID": 410031,
+      "Entries": [
+        "Thrust End Smoke"
+      ]
+    },
+    {
+      "ID": 430000,
+      "Entries": [
+        "Brief Thrust - Medium"
+      ]
+    },
+    {
+      "ID": 430001,
+      "Entries": [
+        "Brief Thrust - Medium"
+      ]
+    },
+    {
+      "ID": 430002,
+      "Entries": [
+        "Brief Thrust - Giant"
+      ]
+    },
+    {
+      "ID": 430011,
+      "Entries": [
+        "Fast Turn Puff"
+      ]
+    },
+    {
+      "ID": 440001,
+      "Entries": [
+        "Assault Boost (Start)"
+      ]
+    },
+    {
+      "ID": 440011,
+      "Entries": [
+        "Assault Boost - Continuous Thrust"
+      ]
+    },
+    {
+      "ID": 440101,
+      "Entries": [
+        "Assault Boost - End"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Quick Boost"
+      ]
+    },
+    {
+      "ID": 450001,
+      "Entries": [
+        "Quick Boost - Large"
+      ]
+    },
+    {
+      "ID": 450002,
+      "Entries": [
+        "Quick Boost - Giant"
+      ]
+    },
+    {
+      "ID": 1003010,
+      "Entries": [
+        "Air Trail"
+      ]
+    }
+  ]
+}

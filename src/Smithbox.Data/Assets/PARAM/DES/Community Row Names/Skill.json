@@ -1,0 +1,149 @@
+{
+  "Name": "Skill",
+  "Entries": [
+    {
+      "ID": 100,
+      "Entries": [
+        "ring of might"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "ring of strength"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Sharp Rat's Ring"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "dull cornered mouse ring"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Fighter's Ring"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "fragrant ring"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Rejuvenator's Ring"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Ring of the Fire Resistant"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Ring of the Poison Resistant"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "magic sharp ring"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "magic dullness ring"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "magic ring"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Sincere Prayer Ring"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Ring of the Clingy"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "friend's ring"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Enemy Ring"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "thief's ring"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "grave robber's ring"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "cat ring"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "ring of the hated"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Ring of Greed"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Ronin's Ring"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Master's Ring"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "devotional prayer ring"
+      ]
+    }
+  ]
+}

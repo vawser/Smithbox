@@ -1,0 +1,9312 @@
+{
+  "Name": "NpcThinkParam",
+  "Entries": [
+    {
+      "ID": 250100,
+      "Entries": [
+        "SP Messenger from the Moon (tentacles only)",
+        "SP Messenger from the Moon (tentacles only)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "For doing nothing"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "For the sake of following me forever"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Innocent data (recommended source for copying and pasting)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "SP Guard confirmation logic"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "SP HavokBehavior For verification"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "SP crowd B (Brick) For action testing"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "SP crowd B (Brick) For framework testing"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "SP Hound _ Vigilance behavior test"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "SP Hound _ For attack goal bug verification"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Hirai Test Help your friends"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Hirai Test Ladders Lover NPC"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Coffin Thrower Special Skeleton (Large)"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Dead (male) companion call test"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Dead (female) companion summoning test"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Homing Test Immortal"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "Hirai Test Parry Skeleton"
+      ]
+    },
+    {
+      "ID": 512,
+      "Entries": [
+        "Hirai Test New Immortal (Heavy Warrior/Spear)"
+      ]
+    },
+    {
+      "ID": 513,
+      "Entries": [
+        "Hirai Test Guard Lover"
+      ]
+    },
+    {
+      "ID": 514,
+      "Entries": [
+        "Wyvern/Bird Control Test"
+      ]
+    },
+    {
+      "ID": 515,
+      "Entries": [
+        "Wyvern bird control test (2nd bird)"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "NPC Player Test"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "DS2Test For upstream testing 0"
+      ]
+    },
+    {
+      "ID": 531,
+      "Entries": [
+        "DS2Test For upstream testing 1"
+      ]
+    },
+    {
+      "ID": 532,
+      "Entries": [
+        "DS2Test For upstream testing 2"
+      ]
+    },
+    {
+      "ID": 533,
+      "Entries": [
+        "DS2Test For upstream testing 3"
+      ]
+    },
+    {
+      "ID": 534,
+      "Entries": [
+        "DS2Test For upstream testing 4"
+      ]
+    },
+    {
+      "ID": 535,
+      "Entries": [
+        "DS2Test For upstream testing 5"
+      ]
+    },
+    {
+      "ID": 536,
+      "Entries": [
+        "DS2Test For upstream testing 6"
+      ]
+    },
+    {
+      "ID": 537,
+      "Entries": [
+        "DS2Test For upstream testing 7"
+      ]
+    },
+    {
+      "ID": 538,
+      "Entries": [
+        "DS2Test For upstream testing 8"
+      ]
+    },
+    {
+      "ID": 539,
+      "Entries": [
+        "DS2Test For upstream testing 9"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Automatic patrol test Walking"
+      ]
+    },
+    {
+      "ID": 541,
+      "Entries": [
+        "Automatic patrol test run"
+      ]
+    },
+    {
+      "ID": 542,
+      "Entries": [
+        "Automated Patrol Test Super Dash"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "DS2 Testing Automated Testing Wandering ( Watanabe Management )"
+      ]
+    },
+    {
+      "ID": 551,
+      "Entries": [
+        "DS2 Testing Automatic test wandering reservation ( Watanabe Management )"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Homing Test Regular Soldier_Sword"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Homing Test Regular Soldier_Sword (Flame)"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Homing Test Regular Soldier_Bow"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Homing Test Knight_Sword"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Beggar for call-to-friend test"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Snake man for calling friends test A"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Beggar's room for testing calling friends"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Blind person in evacuation shelter"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "Female doctor at clinic"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Fake Female Doctor"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Cranky old man"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Lonely old woman"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Infected beggars"
+      ]
+    },
+    {
+      "ID": 6110,
+      "Entries": [
+        "Prostitute"
+      ]
+    },
+    {
+      "ID": 6140,
+      "Entries": [
+        "Captive Nun"
+      ]
+    },
+    {
+      "ID": 6150,
+      "Entries": [
+        "Kin Hunt (Wheel)"
+      ]
+    },
+    {
+      "ID": 6151,
+      "Entries": [
+        "Bloodline Hunt (Sword Hammer)"
+      ]
+    },
+    {
+      "ID": 6152,
+      "Entries": [
+        "Bloodline Hunt (Sword Hammer / Joint Struggle ver ) _ Saint B"
+      ]
+    },
+    {
+      "ID": 6153,
+      "Entries": [
+        "Bloodline Hunt (Sword Hammer / Joint Struggle ver ) _ ruins"
+      ]
+    },
+    {
+      "ID": 6160,
+      "Entries": [
+        "Avenger"
+      ]
+    },
+    {
+      "ID": 6161,
+      "Entries": [
+        "The Avenger (Dark Fall)"
+      ]
+    },
+    {
+      "ID": 6162,
+      "Entries": [
+        "Avenger (with Henrik)"
+      ]
+    },
+    {
+      "ID": 6163,
+      "Entries": [
+        "Avenger (Defeat Henrik and his allies)"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Spider man patch"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Whore's Baby"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Ruins Sniper"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "Old Hunter Dura (Co-op)"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Ruins Hunter"
+      ]
+    },
+    {
+      "ID": 6340,
+      "Entries": [
+        "Sacrificial NPC 1"
+      ]
+    },
+    {
+      "ID": 6350,
+      "Entries": [
+        "Sacrificial NPC 2"
+      ]
+    },
+    {
+      "ID": 6360,
+      "Entries": [
+        "Sacrificial NPC 3"
+      ]
+    },
+    {
+      "ID": 6380,
+      "Entries": [
+        "Trap Lord: Lord of Nightmares"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Hometown Invasion NPC1"
+      ]
+    },
+    {
+      "ID": 6395,
+      "Entries": [
+        "Hometown Invasion NPC2"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "For the Revenger event NPC1 (Henrik)"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Federation Hunter: Henrik"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "Federation Hunter: Henrik"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "For the Revenger event NPC2"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Sacrifice Connection NPC Proximity"
+      ]
+    },
+    {
+      "ID": 6430,
+      "Entries": [
+        "Sacrifice Connection NPC shooting"
+      ]
+    },
+    {
+      "ID": 6440,
+      "Entries": [
+        "Hometown Invasion Tutorial NPC"
+      ]
+    },
+    {
+      "ID": 6450,
+      "Entries": [
+        "University Choir NPC"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Head of the Federation _ Hostile"
+      ]
+    },
+    {
+      "ID": 6501,
+      "Entries": [
+        "Head of the Federation _ Joint Struggle vs Ludwig"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Head of the Federation _ Joint Struggle vs Parishioner Ω"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Secret Seeker _ Hostile"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Secret Seeker _ Joint Struggle"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "The Church Killer"
+      ]
+    },
+    {
+      "ID": 6525,
+      "Entries": [
+        "The Church Killer"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Federation Hunter: Japanese Clothing vs Pearl"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "Federation Hunter: Japanese Clothing vs Reborn"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Federation Hunter: Japanese Clothing vsDLC Ludwig"
+      ]
+    },
+    {
+      "ID": 6533,
+      "Entries": [
+        "Federation Hunter: Japanese Clothing vs patient B"
+      ]
+    },
+    {
+      "ID": 6540,
+      "Entries": [
+        "League Hunter: Executioner vsShadow of Yharnam"
+      ]
+    },
+    {
+      "ID": 6541,
+      "Entries": [
+        "League Hunter: Executioner vs Roma"
+      ]
+    },
+    {
+      "ID": 6542,
+      "Entries": [
+        "League Hunter: Executioner vs Ludwig"
+      ]
+    },
+    {
+      "ID": 6545,
+      "Entries": [
+        "League Hunter: Executioner _ Hostile"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Top Hunter vs Ebriatas"
+      ]
+    },
+    {
+      "ID": 6551,
+      "Entries": [
+        "Top Hunter vs Queen of Yharnam m29_53_90_01 3F"
+      ]
+    },
+    {
+      "ID": 6552,
+      "Entries": [
+        "Top Hunter vs Roma"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Clock Tower Doctor"
+      ]
+    },
+    {
+      "ID": 6561,
+      "Entries": [
+        "Clock Tower Doctor _ Head only"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Complete beast NPC"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Cathedral NPC1"
+      ]
+    },
+    {
+      "ID": 6585,
+      "Entries": [
+        "Cathedral NPC2"
+      ]
+    },
+    {
+      "ID": 6590,
+      "Entries": [
+        "Dungeon NPC (Joint Struggle)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Top Hat Hunter"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "Top Hat Hunter"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Dungeon hostility NPC"
+      ]
+    },
+    {
+      "ID": 6620,
+      "Entries": [
+        "lover NPC"
+      ]
+    },
+    {
+      "ID": 6621,
+      "Entries": [
+        "lover NPC After gimmick activation"
+      ]
+    },
+    {
+      "ID": 6630,
+      "Entries": [
+        "Guardian NPC"
+      ]
+    },
+    {
+      "ID": 6640,
+      "Entries": [
+        "Pilgrim"
+      ]
+    },
+    {
+      "ID": 6650,
+      "Entries": [
+        "Yahar'gul Gear vs Pearl"
+      ]
+    },
+    {
+      "ID": 6651,
+      "Entries": [
+        "Yahar'gul Gear vs Reborn"
+      ]
+    },
+    {
+      "ID": 6970,
+      "Entries": [
+        "[ SP 】 Gun IK For defect verification"
+      ]
+    },
+    {
+      "ID": 7040,
+      "Entries": [
+        "Dungeons NPC5_1"
+      ]
+    },
+    {
+      "ID": 7041,
+      "Entries": [
+        "Dungeons NPC5_1(Sword Hammer & Church Pistol) Joint Fight m29_10_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7042,
+      "Entries": [
+        "Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_20_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7043,
+      "Entries": [
+        "Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_30_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7044,
+      "Entries": [
+        "Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_30_90_01 4F"
+      ]
+    },
+    {
+      "ID": 7045,
+      "Entries": [
+        "Dungeons NPC5_2"
+      ]
+    },
+    {
+      "ID": 7046,
+      "Entries": [
+        "Dungeons NPC5_2 (Sword Great Sword & Sprayer) Joint Fight m29_53_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_40_90_01 2F"
+      ]
+    },
+    {
+      "ID": 7051,
+      "Entries": [
+        "Dungeons NPC5_1 (Sword Hammer & Church Pistol) Joint Fight m29_50_90_01 2F"
+      ]
+    },
+    {
+      "ID": 7060,
+      "Entries": [
+        "Dungeons NPC7"
+      ]
+    },
+    {
+      "ID": 7061,
+      "Entries": [
+        "Dungeons NPC7 (Fist Beast & Bare Hands) Joint Fight m29_42_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7062,
+      "Entries": [
+        "Dungeons NPC7 (Fist Beast & Bare Hands) Joint Fight m29_52_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7070,
+      "Entries": [
+        "Dungeons NPC8_1"
+      ]
+    },
+    {
+      "ID": 7075,
+      "Entries": [
+        "Dungeons NPC8_2"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "Dungeons NPC11"
+      ]
+    },
+    {
+      "ID": 7121,
+      "Entries": [
+        "Dungeons NPC11 (Joint Struggle)"
+      ]
+    },
+    {
+      "ID": 7150,
+      "Entries": [
+        "Dungeons NPC14"
+      ]
+    },
+    {
+      "ID": 7160,
+      "Entries": [
+        "Dungeons NPC15"
+      ]
+    },
+    {
+      "ID": 7161,
+      "Entries": [
+        "Dungeons NPC15 (Wheels & Cannons) Joint Struggle m29_40_90_01 2F"
+      ]
+    },
+    {
+      "ID": 7162,
+      "Entries": [
+        "Dungeons NPC15 (Wheels & Cannons) Joint Struggle m29_40_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7163,
+      "Entries": [
+        "Dungeons NPC15 (Wheels & Cannons) Joint Struggle m29_50_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Dungeons NPC (Saw whip) Joint struggle m29_42_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "Dungeons NPC (Saw whip) Joint struggle m29_52_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_30_90_013F"
+      ]
+    },
+    {
+      "ID": 7311,
+      "Entries": [
+        "Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_30_90_01 4F"
+      ]
+    },
+    {
+      "ID": 7312,
+      "Entries": [
+        "Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_40_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7313,
+      "Entries": [
+        "Dungeons NPC : Abnormal (multi-jointed) Joint Fight m29_50_90_01 3F"
+      ]
+    },
+    {
+      "ID": 7314,
+      "Entries": [
+        "Dungeons NPC Abnormal (multi-jointed) Joint Fight m29_53_90_01 3F"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "For funnel"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Ruins Hound"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "SP Proto Hound (Dark Side Only)"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "Ruins Hound Visual Angle 70 Edition"
+      ]
+    },
+    {
+      "ID": 100011,
+      "Entries": [
+        "Cathedral Quarter C Hound - Right after the chandelier falls (long visibility)"
+      ]
+    },
+    {
+      "ID": 100020,
+      "Entries": [
+        "Cathedral Quarter B Hound"
+      ]
+    },
+    {
+      "ID": 100050,
+      "Entries": [
+        "SP Prototype Hound for Old Castles"
+      ]
+    },
+    {
+      "ID": 100080,
+      "Entries": [
+        "Hound for dungeons"
+      ]
+    },
+    {
+      "ID": 100081,
+      "Entries": [
+        "Hound _ Slightly narrow battle range For dungeons"
+      ]
+    },
+    {
+      "ID": 100100,
+      "Entries": [
+        "Rotten Hound Sacrifice"
+      ]
+    },
+    {
+      "ID": 100340,
+      "Entries": [
+        "Cathedral Quarter D Hound"
+      ]
+    },
+    {
+      "ID": 100801,
+      "Entries": [
+        "Cathedral Quarter C Hound Chandelier Dropper"
+      ]
+    },
+    {
+      "ID": 101000,
+      "Entries": [
+        "SP Proto Priest"
+      ]
+    },
+    {
+      "ID": 101002,
+      "Entries": [
+        "SP Proto Priest ( Exclusively defensive 20m)"
+      ]
+    },
+    {
+      "ID": 101006,
+      "Entries": [
+        "SP Proto Priest Terrace Exclusive A"
+      ]
+    },
+    {
+      "ID": 101007,
+      "Entries": [
+        "SP Proto Priest Terrace Exclusive B"
+      ]
+    },
+    {
+      "ID": 101010,
+      "Entries": [
+        "Substitute Ruins Sniper Priest"
+      ]
+    },
+    {
+      "ID": 101011,
+      "Entries": [
+        "SP Ruins Priest (Visibility Distance 30m Edition)"
+      ]
+    },
+    {
+      "ID": 101070,
+      "Entries": [
+        "Cathedral Quarter _SPPriest Cathedral"
+      ]
+    },
+    {
+      "ID": 101075,
+      "Entries": [
+        "Priest _ For dungeons when enemies are weak"
+      ]
+    },
+    {
+      "ID": 101076,
+      "Entries": [
+        "Priest _ For passages For dungeons"
+      ]
+    },
+    {
+      "ID": 101077,
+      "Entries": [
+        "Priest _ For artillery For dungeons"
+      ]
+    },
+    {
+      "ID": 101080,
+      "Entries": [
+        "Priest Dungeon"
+      ]
+    },
+    {
+      "ID": 101085,
+      "Entries": [
+        "Priest _ Features: Strong enemy for dungeons"
+      ]
+    },
+    {
+      "ID": 101090,
+      "Entries": [
+        "Priest [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 101120,
+      "Entries": [
+        "Cathedral Quarter C Priest"
+      ]
+    },
+    {
+      "ID": 101600,
+      "Entries": [
+        "Trap Lord Priest"
+      ]
+    },
+    {
+      "ID": 101701,
+      "Entries": [
+        "Mori Artillery Priest 0"
+      ]
+    },
+    {
+      "ID": 102000,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102001,
+      "Entries": [
+        "SP Proto Crowd A (Defense-only 10m )"
+      ]
+    },
+    {
+      "ID": 102002,
+      "Entries": [
+        "SP Proto Crowd A (Event Movement)"
+      ]
+    },
+    {
+      "ID": 102003,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe ( Passive)"
+      ]
+    },
+    {
+      "ID": 102004,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe ( Narrow visibility )"
+      ]
+    },
+    {
+      "ID": 102005,
+      "Entries": [
+        "SP Proto Crowd A (Defense-only 10m darkness)"
+      ]
+    },
+    {
+      "ID": 102006,
+      "Entries": [
+        "SP Proto Crowd ATorch & Axe Terrace only"
+      ]
+    },
+    {
+      "ID": 102007,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102008,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102009,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe (No Vigilance Platoon Delay)"
+      ]
+    },
+    {
+      "ID": 102010,
+      "Entries": [
+        "SP Proto Crowd A Shields and Torches"
+      ]
+    },
+    {
+      "ID": 102011,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch (Defensive 10 m)"
+      ]
+    },
+    {
+      "ID": 102012,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch (Event Walk)"
+      ]
+    },
+    {
+      "ID": 102013,
+      "Entries": [
+        "SP Proto Crowd A Shields and Torches"
+      ]
+    },
+    {
+      "ID": 102016,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch Terrace Only"
+      ]
+    },
+    {
+      "ID": 102017,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch (event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102018,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch (short combat distance approach slowly)"
+      ]
+    },
+    {
+      "ID": 102019,
+      "Entries": [
+        "SP Proto Crowd A Shield & Torch (event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102020,
+      "Entries": [
+        "SP Proto Crowd A Poker & Shield"
+      ]
+    },
+    {
+      "ID": 102021,
+      "Entries": [
+        "SP Proto Crowd A Poker & Shield (Defensive) 10m )"
+      ]
+    },
+    {
+      "ID": 102022,
+      "Entries": [
+        "SP Proto Crowd A Poker & Shield (Event Walk)"
+      ]
+    },
+    {
+      "ID": 102023,
+      "Entries": [
+        "SP Proto Crowd APoker & Shield (short combat distance approach slowly)"
+      ]
+    },
+    {
+      "ID": 102024,
+      "Entries": [
+        "SP Proto Crowd A Poker & Shield (No Caution Event Walk)"
+      ]
+    },
+    {
+      "ID": 102030,
+      "Entries": [
+        "SP Proto Crowd A Weapon (sabre)"
+      ]
+    },
+    {
+      "ID": 102031,
+      "Entries": [
+        "SP Proto Crowd A Weapons (sabre) 10 m)"
+      ]
+    },
+    {
+      "ID": 102032,
+      "Entries": [
+        "SP Proto Crowd A Weapons (narrow field of view)"
+      ]
+    },
+    {
+      "ID": 102033,
+      "Entries": [
+        "SP Proto Crowd A Weapon (Sabre Event Walking)"
+      ]
+    },
+    {
+      "ID": 102036,
+      "Entries": [
+        "SP Proto Crowd A Weapon Sabre Terrace Exclusive"
+      ]
+    },
+    {
+      "ID": 102037,
+      "Entries": [
+        "SP Proto Crowd A Weapons (sabre short combat distance approach slowly)"
+      ]
+    },
+    {
+      "ID": 102038,
+      "Entries": [
+        "SP Proto Crowd A Weapon (Sabre event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102039,
+      "Entries": [
+        "SP Proto Crowd A Weapons (no sabre)"
+      ]
+    },
+    {
+      "ID": 102040,
+      "Entries": [
+        "SP Proto Crowd A Weapons (knives)"
+      ]
+    },
+    {
+      "ID": 102041,
+      "Entries": [
+        "SPProto Crowd A Weapons (Knife Only) 10 m)"
+      ]
+    },
+    {
+      "ID": 102042,
+      "Entries": [
+        "SP Proto Crowd A Weapon (Knife Event Walking)"
+      ]
+    },
+    {
+      "ID": 102043,
+      "Entries": [
+        "SP Proto Crowd A Weapons (Knife Only) 10 m Darkness)"
+      ]
+    },
+    {
+      "ID": 102046,
+      "Entries": [
+        "SP Proto Crowd A Weapon Knife Terrace only"
+      ]
+    },
+    {
+      "ID": 102047,
+      "Entries": [
+        "SP Proto Crowd A Weapons (knife short combat distance approach slowly)"
+      ]
+    },
+    {
+      "ID": 102048,
+      "Entries": [
+        "SP Proto Crowd A Weapon (knife event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102049,
+      "Entries": [
+        "SP Proto Crowd A Weapons (no knife precautions)"
+      ]
+    },
+    {
+      "ID": 102050,
+      "Entries": [
+        "SP Proto Crowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 102051,
+      "Entries": [
+        "SP Proto Crowd A Weapons (sickle defense 10 m)"
+      ]
+    },
+    {
+      "ID": 102052,
+      "Entries": [
+        "SP Proto Crowd A Weapons (Scythe Defense Event Walking)"
+      ]
+    },
+    {
+      "ID": 102053,
+      "Entries": [
+        "SP Proto Crowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 102056,
+      "Entries": [
+        "SP Proto Crowd A Weapon Scythe Terrace Exclusive"
+      ]
+    },
+    {
+      "ID": 102057,
+      "Entries": [
+        "SP Proto Crowd AWeapon (scythe combat distance short approach slowly)"
+      ]
+    },
+    {
+      "ID": 102058,
+      "Entries": [
+        "SP Proto Crowd A Weapon (scythe event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102059,
+      "Entries": [
+        "SP Proto Crowd A Weapon (scythe event walking no alert platoon delay)"
+      ]
+    },
+    {
+      "ID": 102060,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Hatchet)"
+      ]
+    },
+    {
+      "ID": 102061,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (no hatchet alert)"
+      ]
+    },
+    {
+      "ID": 102062,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Hatchet Only 10 m)"
+      ]
+    },
+    {
+      "ID": 102063,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Hatchet ) Event movement no alert"
+      ]
+    },
+    {
+      "ID": 102065,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Molotov Cocktail)"
+      ]
+    },
+    {
+      "ID": 102066,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (No Molotov cocktail alert)"
+      ]
+    },
+    {
+      "ID": 102067,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Defensive) 10 m)"
+      ]
+    },
+    {
+      "ID": 102068,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Oil Flask)"
+      ]
+    },
+    {
+      "ID": 102069,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (no oil bottle alert action)"
+      ]
+    },
+    {
+      "ID": 102070,
+      "Entries": [
+        "SP Proto Crowd A Long handles (hoe)"
+      ]
+    },
+    {
+      "ID": 102071,
+      "Entries": [
+        "SP Proto Crowd A Long weapon with both hands (hoe only) 10m )"
+      ]
+    },
+    {
+      "ID": 102072,
+      "Entries": [
+        "SP Proto Crowd A Long-handed (short combat range approach slowly)"
+      ]
+    },
+    {
+      "ID": 102073,
+      "Entries": [
+        "SP Proto Crowd A Long-handed (hoe event walking no vigilance)"
+      ]
+    },
+    {
+      "ID": 102074,
+      "Entries": [
+        "SP Proto Crowd A Long weapon with both hands (hoe no guard)"
+      ]
+    },
+    {
+      "ID": 102075,
+      "Entries": [
+        "SP Proto Crowd A Long two-handed (hoe event walking no vigilance platoon delay)"
+      ]
+    },
+    {
+      "ID": 102078,
+      "Entries": [
+        "Cathedral Quarter _SP crowd A Shield & Torch_Cannon"
+      ]
+    },
+    {
+      "ID": 102079,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd A Torch & Axe _ Approach on foot"
+      ]
+    },
+    {
+      "ID": 102080,
+      "Entries": [
+        "SP Proto Crowd A Throwing & Shield (Oil Bottle for Sniping)"
+      ]
+    },
+    {
+      "ID": 102081,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd AShield & Torch_Walking Closer"
+      ]
+    },
+    {
+      "ID": 102082,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd A Weapon (scythe event walking no alert)"
+      ]
+    },
+    {
+      "ID": 102083,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd A Approaching with both hands"
+      ]
+    },
+    {
+      "ID": 102084,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd A Weapons (Saber Cathedral)"
+      ]
+    },
+    {
+      "ID": 102090,
+      "Entries": [
+        "SP Proto Crowd A Torch & Axe _ cannon"
+      ]
+    },
+    {
+      "ID": 102091,
+      "Entries": [
+        "Cathedral Quarter A crowd A Leader: Do not approach"
+      ]
+    },
+    {
+      "ID": 102093,
+      "Entries": [
+        "Cathedral Quarter A crowd A Leader Vision 15m Edition"
+      ]
+    },
+    {
+      "ID": 102096,
+      "Entries": [
+        "Cathedral Quarter A crowd A Leader Weak Eyesight"
+      ]
+    },
+    {
+      "ID": 102099,
+      "Entries": [
+        "SP Proto Crowd A Common Do nothing"
+      ]
+    },
+    {
+      "ID": 102100,
+      "Entries": [
+        "Cemetery Street _ crowd A gun"
+      ]
+    },
+    {
+      "ID": 102200,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Torch & Axe Running"
+      ]
+    },
+    {
+      "ID": 102201,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Torch & Shield Vision: Usually comes running when heard."
+      ]
+    },
+    {
+      "ID": 102202,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102203,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Sabre Vision Usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102204,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Knife Vision Usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102205,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Scythe comes walking with sound"
+      ]
+    },
+    {
+      "ID": 102206,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Long handle"
+      ]
+    },
+    {
+      "ID": 102207,
+      "Entries": [
+        "Cathedral Ward [Test] SP crowd A Leader: Short field of vision"
+      ]
+    },
+    {
+      "ID": 102210,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Torch & Axe Platoon Delay Don't forget"
+      ]
+    },
+    {
+      "ID": 102211,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Torch & Shield Vision: Usually comes running when heard."
+      ]
+    },
+    {
+      "ID": 102212,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Poker & Shield Vision usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102213,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Sabre Vision Usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102214,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Knife Vision Usually comes running at sound."
+      ]
+    },
+    {
+      "ID": 102215,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Scythe: Wide view up and down _ Sudden attack from above coming running at the sound. 9m"
+      ]
+    },
+    {
+      "ID": 102216,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Long handle"
+      ]
+    },
+    {
+      "ID": 102217,
+      "Entries": [
+        "Cathedral Ward [Test] SP crowd A Leader: Short field of vision"
+      ]
+    },
+    {
+      "ID": 102221,
+      "Entries": [
+        "Cathedral Quarter _ crowd ATorch & Shield No Vision"
+      ]
+    },
+    {
+      "ID": 102224,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Knife No visibility"
+      ]
+    },
+    {
+      "ID": 102230,
+      "Entries": [
+        "Cathedral Square Crowds A saber _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 102231,
+      "Entries": [
+        "Cathedral Square Crowds A saber _ Sleeping"
+      ]
+    },
+    {
+      "ID": 102250,
+      "Entries": [
+        "Cathedral Quarter A crowd A Leader for Square"
+      ]
+    },
+    {
+      "ID": 102251,
+      "Entries": [
+        "Cathedral Quarter A crowd A Leader Square Snipe"
+      ]
+    },
+    {
+      "ID": 102299,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Sleeping Blind Hearing Cut 7m"
+      ]
+    },
+    {
+      "ID": 102400,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102401,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Torch & Axe for Surprise Attack"
+      ]
+    },
+    {
+      "ID": 102410,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Shields and Torches"
+      ]
+    },
+    {
+      "ID": 102411,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Shield & Torch: Short search distance"
+      ]
+    },
+    {
+      "ID": 102430,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Weapon (sabre)"
+      ]
+    },
+    {
+      "ID": 102431,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Square Snipe"
+      ]
+    },
+    {
+      "ID": 102440,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Weapons (knives)"
+      ]
+    },
+    {
+      "ID": 102450,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 102451,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Weapon (Scythe) Surprise Attack"
+      ]
+    },
+    {
+      "ID": 102470,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Long handles (hoe)"
+      ]
+    },
+    {
+      "ID": 102497,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Search"
+      ]
+    },
+    {
+      "ID": 102498,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Bare-handed only"
+      ]
+    },
+    {
+      "ID": 102499,
+      "Entries": [
+        "Cathedral Quarter _B crowd A Sleeping"
+      ]
+    },
+    {
+      "ID": 102500,
+      "Entries": [
+        "Cathedral Quarter C crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102501,
+      "Entries": [
+        "Cathedral Quarter C crowd A Torch & Axe ( For events )"
+      ]
+    },
+    {
+      "ID": 102510,
+      "Entries": [
+        "Cathedral Quarter C crowd A Shields and Torches"
+      ]
+    },
+    {
+      "ID": 102520,
+      "Entries": [
+        "Cathedral Quarter C crowd A Poker & Shield"
+      ]
+    },
+    {
+      "ID": 102530,
+      "Entries": [
+        "Cathedral Quarter C crowd A Weapon (sabre)"
+      ]
+    },
+    {
+      "ID": 102540,
+      "Entries": [
+        "Cathedral Quarter C crowd A Weapons (knives)"
+      ]
+    },
+    {
+      "ID": 102550,
+      "Entries": [
+        "Cathedral Quarter Ccrowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 102560,
+      "Entries": [
+        "Cathedral Quarter C crowd A Throwing & Shield (Hatchet)"
+      ]
+    },
+    {
+      "ID": 102570,
+      "Entries": [
+        "Cathedral Quarter C crowd A Long handles (hoe)"
+      ]
+    },
+    {
+      "ID": 102580,
+      "Entries": [
+        "Cathedral Quarter C crowd A gun"
+      ]
+    },
+    {
+      "ID": 102660,
+      "Entries": [
+        "University Crowd A gun"
+      ]
+    },
+    {
+      "ID": 102700,
+      "Entries": [
+        "Forest Crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 102701,
+      "Entries": [
+        "Forest Crowd A Torch & Axe ( Cannon Gunner)"
+      ]
+    },
+    {
+      "ID": 102710,
+      "Entries": [
+        "Forest Crowd A Shields and Torches"
+      ]
+    },
+    {
+      "ID": 102720,
+      "Entries": [
+        "Forest Crowd A Poker & Shield"
+      ]
+    },
+    {
+      "ID": 102730,
+      "Entries": [
+        "Forest Crowd A Weapon (sabre)"
+      ]
+    },
+    {
+      "ID": 102740,
+      "Entries": [
+        "Forest Crowd A Weapons (knives)"
+      ]
+    },
+    {
+      "ID": 102750,
+      "Entries": [
+        "Forest Crowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 102760,
+      "Entries": [
+        "Forest Crowd A Throwing & Shield (Hatchet)"
+      ]
+    },
+    {
+      "ID": 102761,
+      "Entries": [
+        "Forest Crowd A Throwing & Shield Oil Swamp Guardian"
+      ]
+    },
+    {
+      "ID": 102770,
+      "Entries": [
+        "Forest Crowd A Long handles (hoe)"
+      ]
+    },
+    {
+      "ID": 102780,
+      "Entries": [
+        "Forest Crowd A gun"
+      ]
+    },
+    {
+      "ID": 102781,
+      "Entries": [
+        "Forest Crowd A gun ( Narrow field of vision)"
+      ]
+    },
+    {
+      "ID": 102782,
+      "Entries": [
+        "Forest CrowdA Gun Visual Distance 50m Edition"
+      ]
+    },
+    {
+      "ID": 102790,
+      "Entries": [
+        "Forest Crowd A Leader does not approach"
+      ]
+    },
+    {
+      "ID": 102791,
+      "Entries": [
+        "Forest Crowd A gun ( Artillery )"
+      ]
+    },
+    {
+      "ID": 102798,
+      "Entries": [
+        "Forest Crowd A I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 102799,
+      "Entries": [
+        "Forest Crowd A Sleeping"
+      ]
+    },
+    {
+      "ID": 102800,
+      "Entries": [
+        "Sacrifice Street Crowd A Axe Torch"
+      ]
+    },
+    {
+      "ID": 102801,
+      "Entries": [
+        "Sacrifice Street Crowd A Axe Torch ( ObjAct Initiator)"
+      ]
+    },
+    {
+      "ID": 102830,
+      "Entries": [
+        "Sacrifice Street Crowd A saber"
+      ]
+    },
+    {
+      "ID": 102831,
+      "Entries": [
+        "Sacrifice Street Crowd A saber _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 102832,
+      "Entries": [
+        "Sacrifice Street Crowd A saber _ Sleeping"
+      ]
+    },
+    {
+      "ID": 102860,
+      "Entries": [
+        "Sacrifice Street Crowd A gun"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "SP Proto Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "SP Proto Crowd B Bricks 9.2m"
+      ]
+    },
+    {
+      "ID": 103006,
+      "Entries": [
+        "SP Proto Crowd B Brick Terrace only"
+      ]
+    },
+    {
+      "ID": 103007,
+      "Entries": [
+        "SP Proto Crowd B Bricks 15m Edition"
+      ]
+    },
+    {
+      "ID": 103010,
+      "Entries": [
+        "SPProto Crowd B Stone statue"
+      ]
+    },
+    {
+      "ID": 103011,
+      "Entries": [
+        "SP Proto Crowd B Stone Statue 9.2m"
+      ]
+    },
+    {
+      "ID": 103016,
+      "Entries": [
+        "SP Proto Crowd B Stone statue Terrace only"
+      ]
+    },
+    {
+      "ID": 103050,
+      "Entries": [
+        "SP Proto Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103051,
+      "Entries": [
+        "SP Proto Crowd B Bricks 9.2m"
+      ]
+    },
+    {
+      "ID": 103056,
+      "Entries": [
+        "SP Proto Crowd B Brick Terrace only"
+      ]
+    },
+    {
+      "ID": 103057,
+      "Entries": [
+        "SP Proto Crowd B Brick Event Move"
+      ]
+    },
+    {
+      "ID": 103060,
+      "Entries": [
+        "SPProto Crowd B Stone statue"
+      ]
+    },
+    {
+      "ID": 103061,
+      "Entries": [
+        "SP Proto Crowd B Stone Statue 9.2m"
+      ]
+    },
+    {
+      "ID": 103066,
+      "Entries": [
+        "SP Proto Crowd B Stone statue Terrace only"
+      ]
+    },
+    {
+      "ID": 103067,
+      "Entries": [
+        "SP Proto Crowd B Stone statue Event movement"
+      ]
+    },
+    {
+      "ID": 103070,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103071,
+      "Entries": [
+        "Cathedral Quarter _SP Proto Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103080,
+      "Entries": [
+        "SP Proto Crowd B Bricks 9.2m For dungeons"
+      ]
+    },
+    {
+      "ID": 103083,
+      "Entries": [
+        "SP Proto Crowd B Stone Statue 9.2m For dungeons"
+      ]
+    },
+    {
+      "ID": 103400,
+      "Entries": [
+        "Cathedral Quarter B crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103410,
+      "Entries": [
+        "Cathedral Quarter B crowd B Stone statue"
+      ]
+    },
+    {
+      "ID": 103499,
+      "Entries": [
+        "Cathedral Quarter B crowd B Sleeping"
+      ]
+    },
+    {
+      "ID": 103500,
+      "Entries": [
+        "Cathedral Quarter C crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103510,
+      "Entries": [
+        "Cathedral Quarter C crowd B Stone statue"
+      ]
+    },
+    {
+      "ID": 103599,
+      "Entries": [
+        "Cathedral Quarter C crowdB Sleeping"
+      ]
+    },
+    {
+      "ID": 103800,
+      "Entries": [
+        "Sacrifice Street Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 103900,
+      "Entries": [
+        "Sleeping crowd in the ruins B_ Sleeping"
+      ]
+    },
+    {
+      "ID": 103909,
+      "Entries": [
+        "Sleeping crowd in the dungeon B_ Sleeping"
+      ]
+    },
+    {
+      "ID": 103910,
+      "Entries": [
+        "Sleeping crowd in the ruins B_ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 103911,
+      "Entries": [
+        "Sleeping crowd in the ruins B_ I'm going to wake up _24m"
+      ]
+    },
+    {
+      "ID": 103918,
+      "Entries": [
+        "Sleeping crowd in the dungeon B_ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 103919,
+      "Entries": [
+        "Sleeping crowd in the dungeon B_ I'm going to wake up _24m"
+      ]
+    },
+    {
+      "ID": 103920,
+      "Entries": [
+        "Sleeping crowd in the ruins B_ Awake"
+      ]
+    },
+    {
+      "ID": 103921,
+      "Entries": [
+        "Sleeping crowd in the ruins B_ Awake _24m"
+      ]
+    },
+    {
+      "ID": 103928,
+      "Entries": [
+        "Sleeping crowd in the dungeon B_ Awake"
+      ]
+    },
+    {
+      "ID": 103929,
+      "Entries": [
+        "Sleeping crowd in the dungeon B_ Awake _24m"
+      ]
+    },
+    {
+      "ID": 103930,
+      "Entries": [
+        "Ruins Crowd B Brick"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "SP Proto Burned Corpse (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 104001,
+      "Entries": [
+        "SP Proto Burned Corpse (Bare Hands) Defensive 8m"
+      ]
+    },
+    {
+      "ID": 104002,
+      "Entries": [
+        "SPProto Burned Corpse (Bare Hands) For Possession Events"
+      ]
+    },
+    {
+      "ID": 104005,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Bare Hands) For Events"
+      ]
+    },
+    {
+      "ID": 104008,
+      "Entries": [
+        "SP Proto Burned corpse (bare hands) Run"
+      ]
+    },
+    {
+      "ID": 104009,
+      "Entries": [
+        "SP Proto Burned corpse (bare hands) Does not walk"
+      ]
+    },
+    {
+      "ID": 104010,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword)"
+      ]
+    },
+    {
+      "ID": 104011,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104012,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 104018,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword) Run"
+      ]
+    },
+    {
+      "ID": 104019,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword) Doesn't walk"
+      ]
+    },
+    {
+      "ID": 104020,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe)"
+      ]
+    },
+    {
+      "ID": 104021,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104022,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 104028,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe) Run"
+      ]
+    },
+    {
+      "ID": 104029,
+      "Entries": [
+        "SP Proto Burned corpse (axe) Does not walk"
+      ]
+    },
+    {
+      "ID": 104030,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Bow)"
+      ]
+    },
+    {
+      "ID": 104031,
+      "Entries": [
+        "SP Proto Burned Corpse (Bow) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104032,
+      "Entries": [
+        "SP Proto Burned Corpse (Bow) Easy to forget"
+      ]
+    },
+    {
+      "ID": 104033,
+      "Entries": [
+        "SPProto Burned Corpse (Bow) Defensive 15m Forgetful"
+      ]
+    },
+    {
+      "ID": 104034,
+      "Entries": [
+        "SP Proto Burned Corpse (Bow) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 104050,
+      "Entries": [
+        "SP Proto Burned Corpse (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 104051,
+      "Entries": [
+        "SP Proto Burned Corpse (Bare Hands) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104055,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Bare Hands) For Events"
+      ]
+    },
+    {
+      "ID": 104060,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword)"
+      ]
+    },
+    {
+      "ID": 104061,
+      "Entries": [
+        "SP Proto Burned Corpse (Sword) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104070,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe)"
+      ]
+    },
+    {
+      "ID": 104071,
+      "Entries": [
+        "SP Proto Burned Corpse (Axe) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104080,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Bow)"
+      ]
+    },
+    {
+      "ID": 104081,
+      "Entries": [
+        "SP Proto Burned Corpse (Bow) Defensive 15m"
+      ]
+    },
+    {
+      "ID": 104082,
+      "Entries": [
+        "SP Proto Burned Corpse (Bow) Easy to forget"
+      ]
+    },
+    {
+      "ID": 104083,
+      "Entries": [
+        "SPProto Burned Corpse (Bow) Defensive 15m Forgetful"
+      ]
+    },
+    {
+      "ID": 104100,
+      "Entries": [
+        "Ruins Burnt Corpse (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 104630,
+      "Entries": [
+        "Trap Lord Evil Eye _ Temporary (Burnt Corpse Bow)"
+      ]
+    },
+    {
+      "ID": 104800,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Bare Hands)"
+      ]
+    },
+    {
+      "ID": 104801,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Bare Hands) _ Exclusively defensive"
+      ]
+    },
+    {
+      "ID": 104802,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Bare Hands) _ Vision 25m"
+      ]
+    },
+    {
+      "ID": 104810,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Sword)"
+      ]
+    },
+    {
+      "ID": 104811,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Sword) Defence Only 15m"
+      ]
+    },
+    {
+      "ID": 104812,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Sword) Defence Only 10m"
+      ]
+    },
+    {
+      "ID": 104820,
+      "Entries": [
+        "Sacrificial Town Burned Corpse (Axe)"
+      ]
+    },
+    {
+      "ID": 104830,
+      "Entries": [
+        "Sacrificial City Burned Corpse (Bow)"
+      ]
+    },
+    {
+      "ID": 105000,
+      "Entries": [
+        "SP Wandering Widow"
+      ]
+    },
+    {
+      "ID": 105001,
+      "Entries": [
+        "SP Proto Wandering Widow Creation Dedication"
+      ]
+    },
+    {
+      "ID": 105002,
+      "Entries": [
+        "SP Wandering Widow"
+      ]
+    },
+    {
+      "ID": 105010,
+      "Entries": [
+        "SP Proto Wandering Widow New Logic"
+      ]
+    },
+    {
+      "ID": 105050,
+      "Entries": [
+        "SP Proto Wandering Widow _ The Demon Substitute of the Old Castle"
+      ]
+    },
+    {
+      "ID": 105080,
+      "Entries": [
+        "Wandering Widow for Dungeon"
+      ]
+    },
+    {
+      "ID": 105090,
+      "Entries": [
+        "Wandering Widow BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 105100,
+      "Entries": [
+        "Ruins: Wandering Widow"
+      ]
+    },
+    {
+      "ID": 105200,
+      "Entries": [
+        "Cathedral Ward B Wandering Widow"
+      ]
+    },
+    {
+      "ID": 105800,
+      "Entries": [
+        "Sacrificial Town Wandering Widow"
+      ]
+    },
+    {
+      "ID": 105801,
+      "Entries": [
+        "Sacrificial Town Wandering Widow _ Exclusively defensive"
+      ]
+    },
+    {
+      "ID": 105805,
+      "Entries": [
+        "Sacrificial Town Wandering Widow (Strong)"
+      ]
+    },
+    {
+      "ID": 105810,
+      "Entries": [
+        "Sacrificial Town Wandering Widow (Strong Boss Companion _ Shooter)"
+      ]
+    },
+    {
+      "ID": 105811,
+      "Entries": [
+        "Sacrificial Town Wandering Widow (Strong Boss Companion _ Support role)"
+      ]
+    },
+    {
+      "ID": 105900,
+      "Entries": [
+        "Common Wandering Widow (Intrusion PC Summon)"
+      ]
+    },
+    {
+      "ID": 105910,
+      "Entries": [
+        "Common Wandering Widow (Betrayal PC Summon)"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater"
+      ]
+    },
+    {
+      "ID": 106001,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater"
+      ]
+    },
+    {
+      "ID": 106002,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater (for events)"
+      ]
+    },
+    {
+      "ID": 106003,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater: Wide-angle Edition"
+      ]
+    },
+    {
+      "ID": 106004,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater"
+      ]
+    },
+    {
+      "ID": 106005,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater"
+      ]
+    },
+    {
+      "ID": 106010,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater Magic"
+      ]
+    },
+    {
+      "ID": 106011,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater Magic"
+      ]
+    },
+    {
+      "ID": 106020,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater Throw"
+      ]
+    },
+    {
+      "ID": 106021,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater Throw"
+      ]
+    },
+    {
+      "ID": 106022,
+      "Entries": [
+        "Cathedral Quarter C Brain Eater Throw"
+      ]
+    },
+    {
+      "ID": 106030,
+      "Entries": [
+        "Cathedral Quarter B Brain Eater"
+      ]
+    },
+    {
+      "ID": 106080,
+      "Entries": [
+        "Brain Eater for Dungeon"
+      ]
+    },
+    {
+      "ID": 106090,
+      "Entries": [
+        "Brain Eater Throw Dungeon"
+      ]
+    },
+    {
+      "ID": 106095,
+      "Entries": [
+        "Brain Eater Throw [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 106180,
+      "Entries": [
+        "Brain Eater for Dungeon"
+      ]
+    },
+    {
+      "ID": 106190,
+      "Entries": [
+        "Brain Eater Throw Dungeon"
+      ]
+    },
+    {
+      "ID": 106200,
+      "Entries": [
+        "University Brain Eater"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "SP Proto Screamer"
+      ]
+    },
+    {
+      "ID": 107001,
+      "Entries": [
+        "SP Proto Screamer Dull 10m"
+      ]
+    },
+    {
+      "ID": 107002,
+      "Entries": [
+        "SP Proto Screamer Super dull 5m"
+      ]
+    },
+    {
+      "ID": 108000,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword)"
+      ]
+    },
+    {
+      "ID": 108001,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Axe / Morning Star)"
+      ]
+    },
+    {
+      "ID": 108002,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Flame Pot)"
+      ]
+    },
+    {
+      "ID": 108003,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Both hands)"
+      ]
+    },
+    {
+      "ID": 108004,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Axe _ Two-handed / Morning Star _ Both hands)"
+      ]
+    },
+    {
+      "ID": 108005,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Warrior/Sword) For Events"
+      ]
+    },
+    {
+      "ID": 108006,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108007,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108008,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Two-handed) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108009,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Easy to forget"
+      ]
+    },
+    {
+      "ID": 108010,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Spear)"
+      ]
+    },
+    {
+      "ID": 108011,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Halberd)"
+      ]
+    },
+    {
+      "ID": 108012,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Spear) _ Both hands)"
+      ]
+    },
+    {
+      "ID": 108013,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior Halberd _ Both hands)"
+      ]
+    },
+    {
+      "ID": 108015,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Spear) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108017,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Spear) _ Two-handed) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108020,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Bowgun)"
+      ]
+    },
+    {
+      "ID": 108021,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Bowgun) Easy to forget"
+      ]
+    },
+    {
+      "ID": 108022,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Narrow-minded and forgetful"
+      ]
+    },
+    {
+      "ID": 108023,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Axe) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108024,
+      "Entries": [
+        "SPProto Burned Corpse (Warrior/Sword _ Oil bottle)"
+      ]
+    },
+    {
+      "ID": 108025,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Oil Pot) Defensive 10m"
+      ]
+    },
+    {
+      "ID": 108026,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Oil pot) Easy to forget"
+      ]
+    },
+    {
+      "ID": 108027,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Oil Pot) Narrow-minded and forgetful"
+      ]
+    },
+    {
+      "ID": 108028,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Sword _ Flame Pot) Not good at close combat"
+      ]
+    },
+    {
+      "ID": 108029,
+      "Entries": [
+        "SP Proto Burned Corpse (Warrior/Bowgun) Short combat distance"
+      ]
+    },
+    {
+      "ID": 108052,
+      "Entries": [
+        "SP Prototype Burnt Corpse (Warrior/Sword) Naruko Test Use"
+      ]
+    },
+    {
+      "ID": 108100,
+      "Entries": [
+        "Ruins Burned Corpse (Projectile)"
+      ]
+    },
+    {
+      "ID": 109000,
+      "Entries": [
+        "Ruins Beast"
+      ]
+    },
+    {
+      "ID": 109001,
+      "Entries": [
+        "Ruins Beasts Visibility Distance 10m Edition"
+      ]
+    },
+    {
+      "ID": 109002,
+      "Entries": [
+        "Ruins Beast Platoon Delay 4 ~ 6"
+      ]
+    },
+    {
+      "ID": 109003,
+      "Entries": [
+        "Ruins strange beast no vision"
+      ]
+    },
+    {
+      "ID": 109004,
+      "Entries": [
+        "Ruins Strange Beasts High Angle View"
+      ]
+    },
+    {
+      "ID": 109005,
+      "Entries": [
+        "Ruins Beast Platoon Delay 1 ~ 2"
+      ]
+    },
+    {
+      "ID": 109006,
+      "Entries": [
+        "Ruins Beast Platoon Delay 2 ~ 3"
+      ]
+    },
+    {
+      "ID": 109007,
+      "Entries": [
+        "Ruins Beast Platoon Delay 3 ~ 4"
+      ]
+    },
+    {
+      "ID": 109008,
+      "Entries": [
+        "Ruins Strange Beast Olfactory Type"
+      ]
+    },
+    {
+      "ID": 109009,
+      "Entries": [
+        "Ruins Strange Beasts Low Vision Low Angle of View"
+      ]
+    },
+    {
+      "ID": 109010,
+      "Entries": [
+        "Ruins Beast _ infection"
+      ]
+    },
+    {
+      "ID": 109011,
+      "Entries": [
+        "Ruins Beast _ Infection Platoon Delay"
+      ]
+    },
+    {
+      "ID": 109012,
+      "Entries": [
+        "Ruins Beast _ Infection High angle of view"
+      ]
+    },
+    {
+      "ID": 109013,
+      "Entries": [
+        "Ruins Beast _ Infection No vision"
+      ]
+    },
+    {
+      "ID": 109014,
+      "Entries": [
+        "Ruins Beast _ Infection Olfactory type"
+      ]
+    },
+    {
+      "ID": 109015,
+      "Entries": [
+        "Ruins Strange Beasts Low Vision Low Angle of View"
+      ]
+    },
+    {
+      "ID": 109020,
+      "Entries": [
+        "Cathedral Quarter B Strange Beast"
+      ]
+    },
+    {
+      "ID": 109080,
+      "Entries": [
+        "Strange Beasts for Dungeon"
+      ]
+    },
+    {
+      "ID": 109082,
+      "Entries": [
+        "Strange Beasts for Dungeon and Surprise Attacks"
+      ]
+    },
+    {
+      "ID": 109084,
+      "Entries": [
+        "Strange Beasts for dungeons and for pushing enemies"
+      ]
+    },
+    {
+      "ID": 109090,
+      "Entries": [
+        "Strange Beast _ Infection for dungeons"
+      ]
+    },
+    {
+      "ID": 109100,
+      "Entries": [
+        "Conversation Infected Beggar Aberrant Beast"
+      ]
+    },
+    {
+      "ID": 109900,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins_ Sleeping"
+      ]
+    },
+    {
+      "ID": 109910,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 109911,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ I'm going to wake up _13m"
+      ]
+    },
+    {
+      "ID": 109912,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ I'm going to wake up _17m"
+      ]
+    },
+    {
+      "ID": 109913,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ I'm going to wake up _24m"
+      ]
+    },
+    {
+      "ID": 109920,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ Awake"
+      ]
+    },
+    {
+      "ID": 109921,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ Awake _10m"
+      ]
+    },
+    {
+      "ID": 109922,
+      "Entries": [
+        "SP Strange Beast _ The sleeping guy in the ruins _ Awake _24m"
+      ]
+    },
+    {
+      "ID": 109950,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109951,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109952,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109953,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109954,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109955,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109956,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 109957,
+      "Entries": [
+        "Cathedral Quarter D Strange Beast Friendly Fire"
+      ]
+    },
+    {
+      "ID": 110000,
+      "Entries": [
+        "SP Sewer rat"
+      ]
+    },
+    {
+      "ID": 110001,
+      "Entries": [
+        "SP Sewer rat ( Passive )"
+      ]
+    },
+    {
+      "ID": 110002,
+      "Entries": [
+        "SPSewer rat Amblyopia"
+      ]
+    },
+    {
+      "ID": 110003,
+      "Entries": [
+        "Sewer rats - Corpse swarms ※For dungeons"
+      ]
+    },
+    {
+      "ID": 110080,
+      "Entries": [
+        "Sewer Rat for Dungeon"
+      ]
+    },
+    {
+      "ID": 110081,
+      "Entries": [
+        "Sewer rat for dungeons ※Hard of hearing"
+      ]
+    },
+    {
+      "ID": 110350,
+      "Entries": [
+        "Sewer Rat Clock Tower"
+      ]
+    },
+    {
+      "ID": 110351,
+      "Entries": [
+        "Sewer Rat Clock Tower ※Hard of hearing"
+      ]
+    },
+    {
+      "ID": 110352,
+      "Entries": [
+        "Sewer Rat Clock Tower Beam Passage Only"
+      ]
+    },
+    {
+      "ID": 111000,
+      "Entries": [
+        "SP Kin of Death and Darkness"
+      ]
+    },
+    {
+      "ID": 111010,
+      "Entries": [
+        "SP Kin of Death and Darkness _ Small fry"
+      ]
+    },
+    {
+      "ID": 111080,
+      "Entries": [
+        "Kin of Death and Darkness Dungeon"
+      ]
+    },
+    {
+      "ID": 111085,
+      "Entries": [
+        "Kin of Death and Darkness _ For dungeons"
+      ]
+    },
+    {
+      "ID": 111090,
+      "Entries": [
+        "Kin of Death and Darkness _ Generate Dungeon"
+      ]
+    },
+    {
+      "ID": 111091,
+      "Entries": [
+        "Kin of Death and Darkness _ Generate for close proximity AI For dungeons"
+      ]
+    },
+    {
+      "ID": 111095,
+      "Entries": [
+        "Kin of Death and Darkness _ Small fry _ Generate Dungeon"
+      ]
+    },
+    {
+      "ID": 111096,
+      "Entries": [
+        "Kin of Death and Darkness _ Small fry _ Generate for close proximity AI For dungeons"
+      ]
+    },
+    {
+      "ID": 111600,
+      "Entries": [
+        "Trap Lord: Kin of Death and Darkness"
+      ]
+    },
+    {
+      "ID": 111610,
+      "Entries": [
+        "Trap Lord: Kin of Death and Darkness Headless"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "SP Drowned Beast"
+      ]
+    },
+    {
+      "ID": 112071,
+      "Entries": [
+        "Forest Drowned Beast Curse Attack"
+      ]
+    },
+    {
+      "ID": 112080,
+      "Entries": [
+        "Drowned Beast for Dungeon"
+      ]
+    },
+    {
+      "ID": 112400,
+      "Entries": [
+        "Cathedral Quarter _ B. Drowned Beast"
+      ]
+    },
+    {
+      "ID": 112499,
+      "Entries": [
+        "Cathedral Quarter _ B: Drowned Beast Sleeping"
+      ]
+    },
+    {
+      "ID": 113000,
+      "Entries": [
+        "SP Demon Fanatic"
+      ]
+    },
+    {
+      "ID": 113001,
+      "Entries": [
+        "SP Demon Fanatic Sniper"
+      ]
+    },
+    {
+      "ID": 113002,
+      "Entries": [
+        "SP Demon Fanatics Broken Church"
+      ]
+    },
+    {
+      "ID": 113080,
+      "Entries": [
+        "Demon Fanatic for Dungeons"
+      ]
+    },
+    {
+      "ID": 114000,
+      "Entries": [
+        "SP Fanatic Beast"
+      ]
+    },
+    {
+      "ID": 114001,
+      "Entries": [
+        "SP Fanatic Beast Sniper"
+      ]
+    },
+    {
+      "ID": 114002,
+      "Entries": [
+        "SP Fanatic Beast Broken Church"
+      ]
+    },
+    {
+      "ID": 114003,
+      "Entries": [
+        "SP Fanatic Beast _ Old castle _ courtyard _ General purpose"
+      ]
+    },
+    {
+      "ID": 114004,
+      "Entries": [
+        "SP Fanatic Beast _ Old castle _ courtyard _ Surprise Attack"
+      ]
+    },
+    {
+      "ID": 114005,
+      "Entries": [
+        "SP Fanatic Beast (No Vigilance)"
+      ]
+    },
+    {
+      "ID": 114007,
+      "Entries": [
+        "Cathedral Quarter _SP Fanatic Beast _ Amblyopia"
+      ]
+    },
+    {
+      "ID": 114008,
+      "Entries": [
+        "Cathedral Quarter_SP Fanatic Beast _ Amblyopia _ Platoon Delay 2 Seconds ~ 5 Seconds"
+      ]
+    },
+    {
+      "ID": 114009,
+      "Entries": [
+        "Cathedral Quarter _SP Fanatic Beast _ Amblyopia _ Platoon Delay 5 Seconds ~ 8 Seconds"
+      ]
+    },
+    {
+      "ID": 114080,
+      "Entries": [
+        "Fanatic Beast for Dungeon"
+      ]
+    },
+    {
+      "ID": 114081,
+      "Entries": [
+        "Fanatic Beast for Dungeon Incense Burner for Surprise Attack"
+      ]
+    },
+    {
+      "ID": 114093,
+      "Entries": [
+        "Cemetery Town Fanatic Beast _ Platoon Delay 2.5 Seconds ~ 3.5 Seconds"
+      ]
+    },
+    {
+      "ID": 114094,
+      "Entries": [
+        "Cemetery Town Fanatic Beast _ Platoon Delay 4 Seconds ~ 5 Seconds"
+      ]
+    },
+    {
+      "ID": 114095,
+      "Entries": [
+        "Graveyard Fanatic Beast Visual 20m Edition ( (Ignore alert state)"
+      ]
+    },
+    {
+      "ID": 114096,
+      "Entries": [
+        "Graveyard Fanatic Beast Visual 20m Version Wide range of activities"
+      ]
+    },
+    {
+      "ID": 114097,
+      "Entries": [
+        "Graveyard Fanatic Beast Visual 0m Edition"
+      ]
+    },
+    {
+      "ID": 114098,
+      "Entries": [
+        "Graveyard Fanatic Beast Visual 20m Edition"
+      ]
+    },
+    {
+      "ID": 114099,
+      "Entries": [
+        "Graveyard Fanatic Beast Visual 15m Edition"
+      ]
+    },
+    {
+      "ID": 114800,
+      "Entries": [
+        "Sacrifice Town Fanatic Beast (No Vigilance)"
+      ]
+    },
+    {
+      "ID": 115000,
+      "Entries": [
+        "SP Slime _No shield no spear"
+      ]
+    },
+    {
+      "ID": 115010,
+      "Entries": [
+        "SP Slime _ With shield and without spear"
+      ]
+    },
+    {
+      "ID": 115020,
+      "Entries": [
+        "SP Slime _ No shield with spear"
+      ]
+    },
+    {
+      "ID": 115030,
+      "Entries": [
+        "SP Slime _ Shield and spear"
+      ]
+    },
+    {
+      "ID": 115080,
+      "Entries": [
+        "Slime _ No shield no spear for dungeons"
+      ]
+    },
+    {
+      "ID": 116000,
+      "Entries": [
+        "SP Demon Dog"
+      ]
+    },
+    {
+      "ID": 116001,
+      "Entries": [
+        "SP Demon Dog ( Vigilance )"
+      ]
+    },
+    {
+      "ID": 116070,
+      "Entries": [
+        "Mori Demon Dog"
+      ]
+    },
+    {
+      "ID": 116071,
+      "Entries": [
+        "Mori Demon Dog Sleeping"
+      ]
+    },
+    {
+      "ID": 116072,
+      "Entries": [
+        "Mori Demon Dog is about to wake up"
+      ]
+    },
+    {
+      "ID": 116080,
+      "Entries": [
+        "Demon Dog for Dungeon"
+      ]
+    },
+    {
+      "ID": 117000,
+      "Entries": [
+        "SP Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117001,
+      "Entries": [
+        "SP Carrion Bird for Vigilance"
+      ]
+    },
+    {
+      "ID": 117002,
+      "Entries": [
+        "SP Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117003,
+      "Entries": [
+        "SP Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117004,
+      "Entries": [
+        "SP Carrion Bird ( Walking approach )"
+      ]
+    },
+    {
+      "ID": 117005,
+      "Entries": [
+        "SP Carrion Bird Vision 5m Edition"
+      ]
+    },
+    {
+      "ID": 117006,
+      "Entries": [
+        "SP Carrion Bird ( For events )"
+      ]
+    },
+    {
+      "ID": 117007,
+      "Entries": [
+        "SP Carrion Bird Blind"
+      ]
+    },
+    {
+      "ID": 117100,
+      "Entries": [
+        "Ruins Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117300,
+      "Entries": [
+        "Cathedral Quarter A Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117350,
+      "Entries": [
+        "Forest Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117400,
+      "Entries": [
+        "Cathedral Ward B Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117401,
+      "Entries": [
+        "Cathedral Ward B: Carrion Bird Surprise Attack"
+      ]
+    },
+    {
+      "ID": 117450,
+      "Entries": [
+        "Cathedral Quarter CCarrion Bird"
+      ]
+    },
+    {
+      "ID": 117451,
+      "Entries": [
+        "Cathedral Quarter C Carrion Bird (Narrow Visibility)"
+      ]
+    },
+    {
+      "ID": 117600,
+      "Entries": [
+        "Trap Lord Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117800,
+      "Entries": [
+        "Sacrificial City Carrion Bird"
+      ]
+    },
+    {
+      "ID": 117900,
+      "Entries": [
+        "Cathedral Quarter D Carrion Bird"
+      ]
+    },
+    {
+      "ID": 118000,
+      "Entries": [
+        "SP Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118070,
+      "Entries": [
+        "SP Wandering Madness ( small ) For Cathedral Quarter"
+      ]
+    },
+    {
+      "ID": 118071,
+      "Entries": [
+        "SP Wandering Madness ( small ) For Cathedral Quarter AC For connection towers"
+      ]
+    },
+    {
+      "ID": 118080,
+      "Entries": [
+        "Wandering Madness ( small ) For dungeons"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        "Hometown Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118101,
+      "Entries": [
+        "Hometown Wandering Madness ( small ) Vision 10m Edition"
+      ]
+    },
+    {
+      "ID": 118200,
+      "Entries": [
+        "Cemetery Town Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118300,
+      "Entries": [
+        "Ruins: Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118500,
+      "Entries": [
+        "Old Castle: Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118600,
+      "Entries": [
+        "Trap Lord Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 118700,
+      "Entries": [
+        "SP Wandering Madness ( small ) For forest"
+      ]
+    },
+    {
+      "ID": 118800,
+      "Entries": [
+        "Clock Tower Wandering Madness ( small ) Vision 10m Edition"
+      ]
+    },
+    {
+      "ID": 118900,
+      "Entries": [
+        "Fishing Village Wandering Madness ( small )"
+      ]
+    },
+    {
+      "ID": 119000,
+      "Entries": [
+        "Hometown Wandering Madness ( Medium )"
+      ]
+    },
+    {
+      "ID": 119070,
+      "Entries": [
+        "SP Wandering Madness ( Medium ) Snake ball (child) (small) for substitute enemy"
+      ]
+    },
+    {
+      "ID": 119071,
+      "Entries": [
+        "SP Wandering Madness ( Medium ) Snake ball (child) (small) Substitute for enemies Wide field of vision"
+      ]
+    },
+    {
+      "ID": 119072,
+      "Entries": [
+        "SP Wandering Madness ( Medium ) Snake ball (baby) (small) Substitute for enemies No poison ball"
+      ]
+    },
+    {
+      "ID": 119073,
+      "Entries": [
+        "SP Wandering Madness ( Medium ) Snake ball (baby) (small) Substitute for enemies No poison ball Wide field of vision"
+      ]
+    },
+    {
+      "ID": 119080,
+      "Entries": [
+        "Wandering Madness ( Medium ) For dungeons"
+      ]
+    },
+    {
+      "ID": 121000,
+      "Entries": [
+        "Gravekeeper Scorpion Small Scissors"
+      ]
+    },
+    {
+      "ID": 121001,
+      "Entries": [
+        "Gravekeeper Scorpion Large Childless Claws"
+      ]
+    },
+    {
+      "ID": 121010,
+      "Entries": [
+        "Gravekeeper Scorpion with Small Scissors"
+      ]
+    },
+    {
+      "ID": 121011,
+      "Entries": [
+        "Gravekeeper Scorpion with Large Claws"
+      ]
+    },
+    {
+      "ID": 121080,
+      "Entries": [
+        "Gravekeeper Scorpion Small Childless Scissors for Dungeon"
+      ]
+    },
+    {
+      "ID": 121081,
+      "Entries": [
+        "Gravekeeper Scorpion Large Childless Claws for Dungeon"
+      ]
+    },
+    {
+      "ID": 121090,
+      "Entries": [
+        "Gravekeeper Scorpion Small Scissors with Baby for Dungeon"
+      ]
+    },
+    {
+      "ID": 121091,
+      "Entries": [
+        "Gravekeeper Scorpion Large Claws for Dungeon"
+      ]
+    },
+    {
+      "ID": 121200,
+      "Entries": [
+        "Gravekeeper Scorpion Child (single)"
+      ]
+    },
+    {
+      "ID": 122000,
+      "Entries": [
+        "SP Young fruit bat"
+      ]
+    },
+    {
+      "ID": 122008,
+      "Entries": [
+        "SP Young Flying Fox For Old Castles _ For standby"
+      ]
+    },
+    {
+      "ID": 122009,
+      "Entries": [
+        "SP Young Flying Fox For Old Castles _ Visual Response"
+      ]
+    },
+    {
+      "ID": 122080,
+      "Entries": [
+        "Young Flying Fox Dungeon"
+      ]
+    },
+    {
+      "ID": 122089,
+      "Entries": [
+        "Young fruit bat _ Visual Response for Dungeons"
+      ]
+    },
+    {
+      "ID": 123000,
+      "Entries": [
+        "SP Digging"
+      ]
+    },
+    {
+      "ID": 123070,
+      "Entries": [
+        "Forest Hole Digging"
+      ]
+    },
+    {
+      "ID": 123080,
+      "Entries": [
+        "Digging for dungeons"
+      ]
+    },
+    {
+      "ID": 123099,
+      "Entries": [
+        "SP Hole digging [setup test]"
+      ]
+    },
+    {
+      "ID": 124000,
+      "Entries": [
+        "SP Rabid dog alert"
+      ]
+    },
+    {
+      "ID": 124050,
+      "Entries": [
+        "SP No mad dog alert"
+      ]
+    },
+    {
+      "ID": 124080,
+      "Entries": [
+        "Mad Dog Alert Dungeon Use"
+      ]
+    },
+    {
+      "ID": 124081,
+      "Entries": [
+        "Mad Dog no alert for dungeons incense burner for surprise attacks"
+      ]
+    },
+    {
+      "ID": 124085,
+      "Entries": [
+        "Mad Dog No Caution Dungeon Use"
+      ]
+    },
+    {
+      "ID": 124090,
+      "Entries": [
+        "For generation Mad Dog Alert For dungeons"
+      ]
+    },
+    {
+      "ID": 124095,
+      "Entries": [
+        "For generation Mad Dog No alert For dungeon"
+      ]
+    },
+    {
+      "ID": 124300,
+      "Entries": [
+        "Cathedral Quarter _A Mad dog sleeping"
+      ]
+    },
+    {
+      "ID": 124301,
+      "Entries": [
+        "Cathedral Quarter _A Mad dog is about to wake up"
+      ]
+    },
+    {
+      "ID": 124302,
+      "Entries": [
+        "Cathedral Quarter _A No mad dog alert _ Has a sense of smell"
+      ]
+    },
+    {
+      "ID": 124303,
+      "Entries": [
+        "Cathedral Quarter _A Mad dog no warning connection to ruins"
+      ]
+    },
+    {
+      "ID": 124400,
+      "Entries": [
+        "Cathedral Quarter _B No mad dog alert"
+      ]
+    },
+    {
+      "ID": 124500,
+      "Entries": [
+        "Forest mad dog alert"
+      ]
+    },
+    {
+      "ID": 124550,
+      "Entries": [
+        "Forest Mad Dog Caution"
+      ]
+    },
+    {
+      "ID": 124551,
+      "Entries": [
+        "Forest Mad Dog No Alert Call for Companion Response Soldier"
+      ]
+    },
+    {
+      "ID": 124555,
+      "Entries": [
+        "Forest Mad Dog Caution _ Sense of smell: Murakami jumps out"
+      ]
+    },
+    {
+      "ID": 124590,
+      "Entries": [
+        "Forest Mad Dog No Vision"
+      ]
+    },
+    {
+      "ID": 124600,
+      "Entries": [
+        "Trap Lord Mad Dog No Caution"
+      ]
+    },
+    {
+      "ID": 124601,
+      "Entries": [
+        "Trap Lord Mad Dog No Alert Platoon Response Delay"
+      ]
+    },
+    {
+      "ID": 124602,
+      "Entries": [
+        "Trap Lord Mad Dog No Alert Platoon Response Delay Large"
+      ]
+    },
+    {
+      "ID": 124603,
+      "Entries": [
+        "Trap Lord Mad Dog Reduced search distance 01"
+      ]
+    },
+    {
+      "ID": 124604,
+      "Entries": [
+        "Trap Lord Mad Dog Reduced search distance02"
+      ]
+    },
+    {
+      "ID": 124800,
+      "Entries": [
+        "Sacrifice Mad Dog Burned Corpse"
+      ]
+    },
+    {
+      "ID": 124910,
+      "Entries": [
+        "Cathedral Quarter D No mad dog alert"
+      ]
+    },
+    {
+      "ID": 125000,
+      "Entries": [
+        "Mori Jatama (child) normal color"
+      ]
+    },
+    {
+      "ID": 125001,
+      "Entries": [
+        "Mori Snake Ball (Baby) Normal Color For Artillery Wide Visibility"
+      ]
+    },
+    {
+      "ID": 125002,
+      "Entries": [
+        "Mori Jatama (child) Normal color No path movement"
+      ]
+    },
+    {
+      "ID": 125003,
+      "Entries": [
+        "Mori Snake Ball (baby) Normal color For fishing"
+      ]
+    },
+    {
+      "ID": 125080,
+      "Entries": [
+        "Snake ball (baby) normal color for dungeons"
+      ]
+    },
+    {
+      "ID": 125081,
+      "Entries": [
+        "Snake ball (baby) Normal color Dungeon use Poison mist snake ball"
+      ]
+    },
+    {
+      "ID": 126000,
+      "Entries": [
+        "Mori Hebidama (baby) small normal color"
+      ]
+    },
+    {
+      "ID": 126001,
+      "Entries": [
+        "Mori Hebidama (baby) small normal color [ neck 2 Book thick ]"
+      ]
+    },
+    {
+      "ID": 126002,
+      "Entries": [
+        "Mori Hebidama (child) Small Normal color No path movement"
+      ]
+    },
+    {
+      "ID": 126003,
+      "Entries": [
+        "Mori Hebidama (baby) small normal color follow"
+      ]
+    },
+    {
+      "ID": 126080,
+      "Entries": [
+        "Snake ball (baby) small normal color for dungeons"
+      ]
+    },
+    {
+      "ID": 127000,
+      "Entries": [
+        "SP Vampire pig"
+      ]
+    },
+    {
+      "ID": 127080,
+      "Entries": [
+        "Vampire Pig for Dungeon"
+      ]
+    },
+    {
+      "ID": 127090,
+      "Entries": [
+        "Vampire pig 【 BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 127300,
+      "Entries": [
+        "Cathedral Quarter _A Vampire pig"
+      ]
+    },
+    {
+      "ID": 127400,
+      "Entries": [
+        "Cathedral Quarter_B Vampire pig"
+      ]
+    },
+    {
+      "ID": 127500,
+      "Entries": [
+        "Mori Vampire Pig (Quiet)"
+      ]
+    },
+    {
+      "ID": 127501,
+      "Entries": [
+        "Mori Vampire pig (gentle) Hearing loss"
+      ]
+    },
+    {
+      "ID": 127600,
+      "Entries": [
+        "Trap Lord Vampire Pig"
+      ]
+    },
+    {
+      "ID": 127800,
+      "Entries": [
+        "Sacrificial Town Vampire Pig"
+      ]
+    },
+    {
+      "ID": 129000,
+      "Entries": [
+        "Ruins Strange Beast (Female)"
+      ]
+    },
+    {
+      "ID": 129001,
+      "Entries": [
+        "Ruins Beast (female) Blind"
+      ]
+    },
+    {
+      "ID": 129002,
+      "Entries": [
+        "Ruins Abnormal Beast (Female) Strong Vision"
+      ]
+    },
+    {
+      "ID": 129003,
+      "Entries": [
+        "Ruins Strange Beast (Female) Hiding"
+      ]
+    },
+    {
+      "ID": 129010,
+      "Entries": [
+        "Ruins: A strange beast (female) waiting"
+      ]
+    },
+    {
+      "ID": 129050,
+      "Entries": [
+        "Ruins: Aberrant Beast (Female) Cathedral Ward D"
+      ]
+    },
+    {
+      "ID": 129080,
+      "Entries": [
+        "Strange Beast (female) for dungeons"
+      ]
+    },
+    {
+      "ID": 130000,
+      "Entries": [
+        "Trap Lord: Kin of Death and Darkness (Large)"
+      ]
+    },
+    {
+      "ID": 130080,
+      "Entries": [
+        "Death and Darkness Family (Large) for dungeons"
+      ]
+    },
+    {
+      "ID": 140000,
+      "Entries": [
+        "University Idiot Spider (child)"
+      ]
+    },
+    {
+      "ID": 140010,
+      "Entries": [
+        "University Idiot Spider (child) Boss's companion"
+      ]
+    },
+    {
+      "ID": 140080,
+      "Entries": [
+        "Idiot Spider (baby) for dungeons"
+      ]
+    },
+    {
+      "ID": 140085,
+      "Entries": [
+        "Idiot Spider (baby) For dungeons High jump attack frequency"
+      ]
+    },
+    {
+      "ID": 140090,
+      "Entries": [
+        "Idiot Spider (baby) Dungeon boss companion"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Cemetery Town Executioner"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Cemetery Town Executioner Visual 18m"
+      ]
+    },
+    {
+      "ID": 200070,
+      "Entries": [
+        "Cathedral Quarter _SP Executioner Cathedral Ward Smell Addition"
+      ]
+    },
+    {
+      "ID": 200071,
+      "Entries": [
+        "Cathedral Quarter _SP Executioner Cathedral Ward Smell Addition"
+      ]
+    },
+    {
+      "ID": 200072,
+      "Entries": [
+        "Cathedral Quarter _SP Executioner No vision or hearing"
+      ]
+    },
+    {
+      "ID": 200075,
+      "Entries": [
+        "Cathedral Quarter _B Executioner"
+      ]
+    },
+    {
+      "ID": 200076,
+      "Entries": [
+        "Cathedral Quarter _B Executioner Reduces visual distance"
+      ]
+    },
+    {
+      "ID": 200077,
+      "Entries": [
+        "Cathedral Quarter _B Executioner Search"
+      ]
+    },
+    {
+      "ID": 200080,
+      "Entries": [
+        "SP Executioner for Dungeon"
+      ]
+    },
+    {
+      "ID": 200081,
+      "Entries": [
+        "SP Executioner for Dungeon _ For granting super perception"
+      ]
+    },
+    {
+      "ID": 200090,
+      "Entries": [
+        "Cathedral District - Sacrifice District Executioner"
+      ]
+    },
+    {
+      "ID": 200200,
+      "Entries": [
+        "Mori Executioner"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "SP Grave Digger (Hook)"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "SP Grave Digger (Pickaxe)"
+      ]
+    },
+    {
+      "ID": 201020,
+      "Entries": [
+        "SP Grave Digger (Gun)"
+      ]
+    },
+    {
+      "ID": 201080,
+      "Entries": [
+        "Grave Digger (Hook) for Dungeon"
+      ]
+    },
+    {
+      "ID": 201081,
+      "Entries": [
+        "Grave Digger (Pickaxe) for Dungeon"
+      ]
+    },
+    {
+      "ID": 201082,
+      "Entries": [
+        "Grave Digger (Pickaxe) Dungeon Use Before You Know It"
+      ]
+    },
+    {
+      "ID": 201090,
+      "Entries": [
+        "Grave Digger (Gun) for Dungeon"
+      ]
+    },
+    {
+      "ID": 202000,
+      "Entries": [
+        "Sacrifice Town Kidnapper"
+      ]
+    },
+    {
+      "ID": 202001,
+      "Entries": [
+        "Sacrifice Town Kidnapper Visual Height Low"
+      ]
+    },
+    {
+      "ID": 202080,
+      "Entries": [
+        "Kidnapper for dungeons"
+      ]
+    },
+    {
+      "ID": 202082,
+      "Entries": [
+        "Kidnapper for surprise attacks for dungeons"
+      ]
+    },
+    {
+      "ID": 202084,
+      "Entries": [
+        "Kidnapper Push out enemies Dungeons"
+      ]
+    },
+    {
+      "ID": 203000,
+      "Entries": [
+        "SP Cathedral Knight (sword shield cloak)"
+      ]
+    },
+    {
+      "ID": 203001,
+      "Entries": [
+        "SP Cathedral Knight (sword shield cloak) 10m Exclusively defensive"
+      ]
+    },
+    {
+      "ID": 203010,
+      "Entries": [
+        "SP Cathedral Knight (Halberd Shield Cloak)"
+      ]
+    },
+    {
+      "ID": 203020,
+      "Entries": [
+        "SP Cathedral Knight (Halberd _ Both hands)"
+      ]
+    },
+    {
+      "ID": 203080,
+      "Entries": [
+        "SP Cathedral Knight (sword shield cloak) 10m Defensive Dungeon"
+      ]
+    },
+    {
+      "ID": 203081,
+      "Entries": [
+        "SP Cathedral Knight (Halberd Shield Cloak)"
+      ]
+    },
+    {
+      "ID": 203082,
+      "Entries": [
+        "SP Cathedral Knight (Halberd _ Both hands)"
+      ]
+    },
+    {
+      "ID": 203090,
+      "Entries": [
+        "SP Cathedral Knight (sword shield cloak)"
+      ]
+    },
+    {
+      "ID": 204000,
+      "Entries": [
+        "SP Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 204001,
+      "Entries": [
+        "SP Manipulated Mukuro Timer Death Type"
+      ]
+    },
+    {
+      "ID": 204080,
+      "Entries": [
+        "Manipulated Mukuro for Dungeon"
+      ]
+    },
+    {
+      "ID": 204600,
+      "Entries": [
+        "Trap Lord Manipulated Corpse"
+      ]
+    },
+    {
+      "ID": 204601,
+      "Entries": [
+        "Trap Lord Manipulated Corpse _ Visual Distance Shortened Version"
+      ]
+    },
+    {
+      "ID": 205000,
+      "Entries": [
+        "SP Crazy Demon"
+      ]
+    },
+    {
+      "ID": 205010,
+      "Entries": [
+        "Cemetery Town Crazy Evil Spirit Boss Companion"
+      ]
+    },
+    {
+      "ID": 205011,
+      "Entries": [
+        "Cemetery Town Crazy Evil Spirit SAN Value occurrence"
+      ]
+    },
+    {
+      "ID": 205020,
+      "Entries": [
+        "Ruins Crazy Demon SAN Value occurrence"
+      ]
+    },
+    {
+      "ID": 205030,
+      "Entries": [
+        "Hometown Crazy Demon SAN Value occurrence"
+      ]
+    },
+    {
+      "ID": 205050,
+      "Entries": [
+        "Old Castle Crazy Demon SAN Value occurrence"
+      ]
+    },
+    {
+      "ID": 205060,
+      "Entries": [
+        "Trap Lord: Crazy Demon SAN Value occurrence"
+      ]
+    },
+    {
+      "ID": 205070,
+      "Entries": [
+        "Forest Crazy Spirit"
+      ]
+    },
+    {
+      "ID": 205080,
+      "Entries": [
+        "Crazy Evil Spirit for Dungeon"
+      ]
+    },
+    {
+      "ID": 208000,
+      "Entries": [
+        "Hometown Moonlight Ghost with wand"
+      ]
+    },
+    {
+      "ID": 208010,
+      "Entries": [
+        "Hometown Moonlight Ghost Wandless"
+      ]
+    },
+    {
+      "ID": 208080,
+      "Entries": [
+        "Moonlight Ghost with Staff for Dungeon"
+      ]
+    },
+    {
+      "ID": 208090,
+      "Entries": [
+        "Moonlight Ghost Wandless Dungeon"
+      ]
+    },
+    {
+      "ID": 208100,
+      "Entries": [
+        "Cathedral Quarter B Moonlight Ghost wandless"
+      ]
+    },
+    {
+      "ID": 209000,
+      "Entries": [
+        "Ruins: Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 209010,
+      "Entries": [
+        "Saint D Bloodthirsty Beast"
+      ]
+    },
+    {
+      "ID": 209080,
+      "Entries": [
+        "Bloodthirsty Beast _ For use in dungeons"
+      ]
+    },
+    {
+      "ID": 209090,
+      "Entries": [
+        "Blood-thirsty beast BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        "Sacrifice Eye Collector"
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        "Sacrifice Eye Collector ( ObjAct Initiator)"
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        "Sacrifice Eye Collector (ambush personnel)"
+      ]
+    },
+    {
+      "ID": 210020,
+      "Entries": [
+        "Cemetery Street Eye Collector ( Boss For 1 Body size)"
+      ]
+    },
+    {
+      "ID": 210021,
+      "Entries": [
+        "Cemetery Street Eye Collector ( Boss For 2 Body size)"
+      ]
+    },
+    {
+      "ID": 210025,
+      "Entries": [
+        "SP Eye Collector for Old Castles"
+      ]
+    },
+    {
+      "ID": 210030,
+      "Entries": [
+        "Cathedral Quarter D Eye Collector"
+      ]
+    },
+    {
+      "ID": 210080,
+      "Entries": [
+        "SP Eye Collector for Dungeon"
+      ]
+    },
+    {
+      "ID": 210090,
+      "Entries": [
+        "Sacrifice Eye Collector for Dungeon"
+      ]
+    },
+    {
+      "ID": 210091,
+      "Entries": [
+        "Sacrifice Eye Collector Dungeon Incense Burner Surprise Attack"
+      ]
+    },
+    {
+      "ID": 211000,
+      "Entries": [
+        "University of Cthulhu the Spider"
+      ]
+    },
+    {
+      "ID": 211001,
+      "Entries": [
+        "SP Spider Cthulhu (Sonar)"
+      ]
+    },
+    {
+      "ID": 211002,
+      "Entries": [
+        "SP Spider Cthulhu (in combat)"
+      ]
+    },
+    {
+      "ID": 211005,
+      "Entries": [
+        "SP Spider Cthulhu (surprise attack)"
+      ]
+    },
+    {
+      "ID": 211006,
+      "Entries": [
+        "SP Spider Cthulhu (Defensive)"
+      ]
+    },
+    {
+      "ID": 211041,
+      "Entries": [
+        "Cathedral Quarter _B Spider Cthulhu"
+      ]
+    },
+    {
+      "ID": 211080,
+      "Entries": [
+        "Spider Cthulhu Dungeon"
+      ]
+    },
+    {
+      "ID": 212000,
+      "Entries": [
+        "Sacrifice Street Dark Brigade Sword"
+      ]
+    },
+    {
+      "ID": 212010,
+      "Entries": [
+        "Sacrificial City Dark Brigade Sword and Candle"
+      ]
+    },
+    {
+      "ID": 212020,
+      "Entries": [
+        "Sacrifice Town Dark Brigade Orb Hammer"
+      ]
+    },
+    {
+      "ID": 212030,
+      "Entries": [
+        "Sacrifice Town Dark Brigade Gun"
+      ]
+    },
+    {
+      "ID": 212080,
+      "Entries": [
+        "Dark Brigade Sword Dungeon"
+      ]
+    },
+    {
+      "ID": 212081,
+      "Entries": [
+        "Dark Brigade Sword and Candle for Dungeon"
+      ]
+    },
+    {
+      "ID": 212082,
+      "Entries": [
+        "Dark Brigade Orb Hammer Dungeon"
+      ]
+    },
+    {
+      "ID": 212083,
+      "Entries": [
+        "Dark Brigade Gun Dungeon"
+      ]
+    },
+    {
+      "ID": 212600,
+      "Entries": [
+        "Trap Lord Dark Brigade Sword"
+      ]
+    },
+    {
+      "ID": 212610,
+      "Entries": [
+        "Trap Lord Dark Brigade Sword and Candle"
+      ]
+    },
+    {
+      "ID": 212620,
+      "Entries": [
+        "Trap Lord Dark Brigade Orb Hammer"
+      ]
+    },
+    {
+      "ID": 212630,
+      "Entries": [
+        "Trap Lord Dark Brigade Gun"
+      ]
+    },
+    {
+      "ID": 212700,
+      "Entries": [
+        "Forest Boss Dark Brigade Sword A"
+      ]
+    },
+    {
+      "ID": 212710,
+      "Entries": [
+        "Forest Boss Dark Brigade Sword B"
+      ]
+    },
+    {
+      "ID": 212720,
+      "Entries": [
+        "Forest Boss Dark Brigade Sword/Candle"
+      ]
+    },
+    {
+      "ID": 213000,
+      "Entries": [
+        "Licking blood"
+      ]
+    },
+    {
+      "ID": 213010,
+      "Entries": [
+        "Licking blood big jumps prohibited"
+      ]
+    },
+    {
+      "ID": 213020,
+      "Entries": [
+        "Licking blood All jumps prohibited"
+      ]
+    },
+    {
+      "ID": 213030,
+      "Entries": [
+        "Blood licking (extra large blood bag)"
+      ]
+    },
+    {
+      "ID": 213050,
+      "Entries": [
+        "Blood Licking Cathedral Ward D"
+      ]
+    },
+    {
+      "ID": 213500,
+      "Entries": [
+        "Old Castle Blood Licking"
+      ]
+    },
+    {
+      "ID": 213510,
+      "Entries": [
+        "Old Castle Blood Licking No Big Jumps"
+      ]
+    },
+    {
+      "ID": 213520,
+      "Entries": [
+        "Old Castle Blood Licking All Jumps Prohibited"
+      ]
+    },
+    {
+      "ID": 213530,
+      "Entries": [
+        "Kojou Blood Licking (Extra Large Blood Bag)"
+      ]
+    },
+    {
+      "ID": 215000,
+      "Entries": [
+        "SP Old Castle Evil Spirit (Knife)"
+      ]
+    },
+    {
+      "ID": 215001,
+      "Entries": [
+        "SP Old Castle Evil Spirit (Knife) _PC When there was a blowgun special effect"
+      ]
+    },
+    {
+      "ID": 215010,
+      "Entries": [
+        "SP Old Castle Evil Spirit (Decapitated Head)"
+      ]
+    },
+    {
+      "ID": 215011,
+      "Entries": [
+        "SPOld Castle Evil Spirit (Decapitated Head) _PC When there was a blowgun special effect"
+      ]
+    },
+    {
+      "ID": 216000,
+      "Entries": [
+        "SP Kin of the Flame of Destruction"
+      ]
+    },
+    {
+      "ID": 216001,
+      "Entries": [
+        "SP Kin of the Flame of Destruction (without hat)"
+      ]
+    },
+    {
+      "ID": 216080,
+      "Entries": [
+        "Flame of Destruction Dungeon"
+      ]
+    },
+    {
+      "ID": 216081,
+      "Entries": [
+        "Flame of Destruction (without hat) for dungeons"
+      ]
+    },
+    {
+      "ID": 216090,
+      "Entries": [
+        "Kin of the Flame of Destruction BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 216091,
+      "Entries": [
+        "Kin of the Flame of Destruction (without hat) BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 216180,
+      "Entries": [
+        "Flame of Destruction Dungeon"
+      ]
+    },
+    {
+      "ID": 217000,
+      "Entries": [
+        "Messenger from the Forest Snake Swamp ( Snake head displayed )"
+      ]
+    },
+    {
+      "ID": 217001,
+      "Entries": [
+        "Messenger from the Forest Snake Swamp ( Head snake not shown )"
+      ]
+    },
+    {
+      "ID": 217002,
+      "Entries": [
+        "Messenger from the Forest Snake Swamp ( Snake head displayed )"
+      ]
+    },
+    {
+      "ID": 218000,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 218010,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin (Parasite)"
+      ]
+    },
+    {
+      "ID": 218020,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin ( 4 leg)"
+      ]
+    },
+    {
+      "ID": 218030,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin ( 4 Legs) (parasites)"
+      ]
+    },
+    {
+      "ID": 218080,
+      "Entries": [
+        "Silver Beast's Kin for Dungeon"
+      ]
+    },
+    {
+      "ID": 218081,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin (Parasite)"
+      ]
+    },
+    {
+      "ID": 218082,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin ( 4 leg)"
+      ]
+    },
+    {
+      "ID": 218083,
+      "Entries": [
+        "Sacrifice Silver Beast's Kin ( 4 Legs) (parasites)"
+      ]
+    },
+    {
+      "ID": 218085,
+      "Entries": [
+        "Silver Beast's Kin Special Standby Dungeon Use"
+      ]
+    },
+    {
+      "ID": 218090,
+      "Entries": [
+        "Silver Beast's Kin BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 218091,
+      "Entries": [
+        "Silver Beast's Kin (Parasite) BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 218092,
+      "Entries": [
+        "Silver Beast's Kin ( 4 leg)【 BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 218093,
+      "Entries": [
+        "Silver Beast's Kin ( 4 Legs) (Parasites) 【 BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 218180,
+      "Entries": [
+        "Silver Beast's Kin for Dungeon"
+      ]
+    },
+    {
+      "ID": 218181,
+      "Entries": [
+        "Silver Beast's Kin (Parasite) for Dungeons"
+      ]
+    },
+    {
+      "ID": 218300,
+      "Entries": [
+        "Hometown: Silver Beast Kin"
+      ]
+    },
+    {
+      "ID": 218301,
+      "Entries": [
+        "Hometown Silver Beast Family Exclusive Logic"
+      ]
+    },
+    {
+      "ID": 218310,
+      "Entries": [
+        "Hometown: Silver Beast's Kin (Parasite)"
+      ]
+    },
+    {
+      "ID": 218311,
+      "Entries": [
+        "Hometown Silver Beast Family (Parasite) Exclusive Logic"
+      ]
+    },
+    {
+      "ID": 218320,
+      "Entries": [
+        "Hometown: Silver Beast Kin ( 4 leg)"
+      ]
+    },
+    {
+      "ID": 218390,
+      "Entries": [
+        "Hometown Silver Beast Family Special Standby Common"
+      ]
+    },
+    {
+      "ID": 218600,
+      "Entries": [
+        "Trap Lord: Silver Beast's Kin"
+      ]
+    },
+    {
+      "ID": 218610,
+      "Entries": [
+        "Trap Lord: Silver Beast's Kin (Parasite)"
+      ]
+    },
+    {
+      "ID": 218620,
+      "Entries": [
+        "Trap Lord Silver Beast's Kin ( 4 leg)"
+      ]
+    },
+    {
+      "ID": 219000,
+      "Entries": [
+        "SP Parasites"
+      ]
+    },
+    {
+      "ID": 219080,
+      "Entries": [
+        "Parasites for dungeons"
+      ]
+    },
+    {
+      "ID": 219300,
+      "Entries": [
+        "Hometown Parasite"
+      ]
+    },
+    {
+      "ID": 219400,
+      "Entries": [
+        "forest / Saint B Connection Parasite"
+      ]
+    },
+    {
+      "ID": 219500,
+      "Entries": [
+        "Old Castle Parasite"
+      ]
+    },
+    {
+      "ID": 219600,
+      "Entries": [
+        "Trap Road Parasite"
+      ]
+    },
+    {
+      "ID": 225000,
+      "Entries": [
+        "Trap Lord Jailer A Sword only + Crossbow"
+      ]
+    },
+    {
+      "ID": 225010,
+      "Entries": [
+        "Trap Lord Jailer A Sword + Shield"
+      ]
+    },
+    {
+      "ID": 225020,
+      "Entries": [
+        "Trap Lord Jailer A Whip (Cat of Nine Tails)"
+      ]
+    },
+    {
+      "ID": 225030,
+      "Entries": [
+        "Trap Lord Jailer A Sword only"
+      ]
+    },
+    {
+      "ID": 225031,
+      "Entries": [
+        "Trap Lord Jailer A Sword only: Reduced visual range"
+      ]
+    },
+    {
+      "ID": 225040,
+      "Entries": [
+        "Trap Lord Jailer A Crossbow only"
+      ]
+    },
+    {
+      "ID": 225050,
+      "Entries": [
+        "Trap Lord Jailer A Bare hands (weak)"
+      ]
+    },
+    {
+      "ID": 225060,
+      "Entries": [
+        "SP Jailer A Sword only + crossbow for old castle rooms"
+      ]
+    },
+    {
+      "ID": 225061,
+      "Entries": [
+        "SP Jailer A Sword only + crossbow For old castle Library (long-distance sniping)"
+      ]
+    },
+    {
+      "ID": 225062,
+      "Entries": [
+        "SP Jailer A Sword only + crossbow For old castle Archives 1st floor (general purpose)"
+      ]
+    },
+    {
+      "ID": 225063,
+      "Entries": [
+        "SP Jailer A Sword only + crossbow For old castle Archives 2nd floor (general purpose)"
+      ]
+    },
+    {
+      "ID": 225064,
+      "Entries": [
+        "SPJailer A Sword only + crossbow for the old castle first floor of the library (drop)"
+      ]
+    },
+    {
+      "ID": 225065,
+      "Entries": [
+        "SP Jailer A Sword only for the old castle 2nd floor of the library (melee)"
+      ]
+    },
+    {
+      "ID": 225080,
+      "Entries": [
+        "SP Jailer A Sword only + crossbow for dungeons"
+      ]
+    },
+    {
+      "ID": 225082,
+      "Entries": [
+        "SP Jailer A Sword only + Crossbow For dungeons For surprise attacks"
+      ]
+    },
+    {
+      "ID": 225084,
+      "Entries": [
+        "SP Jailer A Sword only + Crossbow For dungeons For pushing enemies"
+      ]
+    },
+    {
+      "ID": 225090,
+      "Entries": [
+        "Substitute Dungeon A boss"
+      ]
+    },
+    {
+      "ID": 226000,
+      "Entries": [
+        "Trap Lord Jailer B Chain Whip"
+      ]
+    },
+    {
+      "ID": 226001,
+      "Entries": [
+        "Trap Lord Jailer B Chain Whip Opens the prison door"
+      ]
+    },
+    {
+      "ID": 226002,
+      "Entries": [
+        "Trap Lord Jailer B Chain Whip Visual Distance Reduction 1"
+      ]
+    },
+    {
+      "ID": 226003,
+      "Entries": [
+        "Trap Lord Jailer B Chain Whip Visual Distance Reduction 2"
+      ]
+    },
+    {
+      "ID": 226004,
+      "Entries": [
+        "Trap Lord Jailer B Chain Whip Visual Distance Reduction 3 For mid-boss room"
+      ]
+    },
+    {
+      "ID": 226010,
+      "Entries": [
+        "Trap Lord Jailer B Orb"
+      ]
+    },
+    {
+      "ID": 226011,
+      "Entries": [
+        "Trap Lord Jailer B Orb Visual Distance Reduction"
+      ]
+    },
+    {
+      "ID": 226080,
+      "Entries": [
+        "SP Jailer B Chain Whip for Dungeon"
+      ]
+    },
+    {
+      "ID": 226081,
+      "Entries": [
+        "SP Jailer B Orb for Dungeon"
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Spear"
+      ]
+    },
+    {
+      "ID": 230001,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Spear Old Castle Defensive 15m"
+      ]
+    },
+    {
+      "ID": 230010,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Orb"
+      ]
+    },
+    {
+      "ID": 230011,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Orb Old Castle Wall Sniper"
+      ]
+    },
+    {
+      "ID": 230020,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Shield"
+      ]
+    },
+    {
+      "ID": 230021,
+      "Entries": [
+        "SP King's Evil Spirit Lower King Sword and Shield Old Castle Defensive 10m"
+      ]
+    },
+    {
+      "ID": 230030,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Only"
+      ]
+    },
+    {
+      "ID": 230031,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Only Old Castle Wall General Purpose"
+      ]
+    },
+    {
+      "ID": 230032,
+      "Entries": [
+        "SP King's Evil Spirit Lesser King Sword Only Old Castle Library Only"
+      ]
+    },
+    {
+      "ID": 231000,
+      "Entries": [
+        "SP The King's Evil Spirit The King in Blue"
+      ]
+    },
+    {
+      "ID": 231060,
+      "Entries": [
+        "SPKing's Evil Spirit Blue King Old Castle Archives 2nd Floor"
+      ]
+    },
+    {
+      "ID": 232000,
+      "Entries": [
+        "SP King's Reaper"
+      ]
+    },
+    {
+      "ID": 232100,
+      "Entries": [
+        "SP King's Reaper Sword"
+      ]
+    },
+    {
+      "ID": 233000,
+      "Entries": [
+        "SP Servant of the King (Sword)"
+      ]
+    },
+    {
+      "ID": 233001,
+      "Entries": [
+        "SP Servant of the King (Sword) Old Castle _ Ramparts _ Wandering _ exclusive"
+      ]
+    },
+    {
+      "ID": 233002,
+      "Entries": [
+        "SP Servant of the King (Sword) Old Castle _ archive 2F_ General purpose"
+      ]
+    },
+    {
+      "ID": 233010,
+      "Entries": [
+        "SP King's Servant (Staff only)"
+      ]
+    },
+    {
+      "ID": 233011,
+      "Entries": [
+        "SP King's Servant (Staff only) Old Castle _ Cane punch only _ General purpose"
+      ]
+    },
+    {
+      "ID": 233012,
+      "Entries": [
+        "SP King's Servant (Staff only) Old Castle _ archive _ General purpose"
+      ]
+    },
+    {
+      "ID": 233013,
+      "Entries": [
+        "SP King's Servant (Staff only) Old Castle _ Ramparts _ For sniping"
+      ]
+    },
+    {
+      "ID": 233020,
+      "Entries": [
+        "SP King's servant (scepter + candlestick)"
+      ]
+    },
+    {
+      "ID": 233021,
+      "Entries": [
+        "SP King's Servant (Staff + Candlestick) Old Castle _ archive 2F_ For sniping"
+      ]
+    },
+    {
+      "ID": 233022,
+      "Entries": [
+        "SP King's Servant (Staff + Candlestick) Old Castle _ archive 1F_ For sniping"
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        "Hometown: Foundling Giant"
+      ]
+    },
+    {
+      "ID": 240010,
+      "Entries": [
+        "Hometown Foundling Titan Throwing Vision 40m"
+      ]
+    },
+    {
+      "ID": 240011,
+      "Entries": [
+        "Hometown Foundling Titan Throwing Vision 50m"
+      ]
+    },
+    {
+      "ID": 240098,
+      "Entries": [
+        "Hometown: Foundling Giant _ I'm going to wake up _13m"
+      ]
+    },
+    {
+      "ID": 240099,
+      "Entries": [
+        "Hometown: Foundling Giant _ Sleeping"
+      ]
+    },
+    {
+      "ID": 240600,
+      "Entries": [
+        "Trap Lord Foundling Giant"
+      ]
+    },
+    {
+      "ID": 240610,
+      "Entries": [
+        "Trap Lord Foundling Giant Throwing Vision 48m"
+      ]
+    },
+    {
+      "ID": 240611,
+      "Entries": [
+        "Trap Lord Foundling Giant Throwing Vision 40m"
+      ]
+    },
+    {
+      "ID": 240612,
+      "Entries": [
+        "Trap Lord Foundling Giant Throwing Vision 47m"
+      ]
+    },
+    {
+      "ID": 240613,
+      "Entries": [
+        "Trap Lord Foundling Giant Throwing Vision 60m"
+      ]
+    },
+    {
+      "ID": 240698,
+      "Entries": [
+        "Trap Lord Foundling Giant _ I'm going to wake up _13m"
+      ]
+    },
+    {
+      "ID": 240699,
+      "Entries": [
+        "Trap Lord Foundling Giant _ Sleeping"
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        "SP Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 250040,
+      "Entries": [
+        "Cathedral Quarter B Messenger from the Moon _ Original NPC"
+      ]
+    },
+    {
+      "ID": 250060,
+      "Entries": [
+        "Messenger from the Moon Cathedral C boss"
+      ]
+    },
+    {
+      "ID": 250061,
+      "Entries": [
+        "Messenger from the Moon Cathedral CBoss Battle"
+      ]
+    },
+    {
+      "ID": 250065,
+      "Entries": [
+        "Messenger from the Moon Cathedral C Normal enemies"
+      ]
+    },
+    {
+      "ID": 250070,
+      "Entries": [
+        "Mori: Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 250080,
+      "Entries": [
+        "Messenger from the Moon _ No tentacles (tentacles Lv0 (Fixed state) For dungeons"
+      ]
+    },
+    {
+      "ID": 250081,
+      "Entries": [
+        "Messenger from the Moon _ With tentacles (Tentacle Lv3 (Fixed state) For dungeons"
+      ]
+    },
+    {
+      "ID": 250090,
+      "Entries": [
+        "University Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 250170,
+      "Entries": [
+        "Mori Messenger from the Moon (tentacles only) Tentacle level specified directly"
+      ]
+    },
+    {
+      "ID": 250180,
+      "Entries": [
+        "Tentacles of the Messenger from the Moon (non-stretchable) for dungeons"
+      ]
+    },
+    {
+      "ID": 250190,
+      "Entries": [
+        "University Tentacles of the Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 250270,
+      "Entries": [
+        "forest / Saint B Connection: Messenger from the Moon"
+      ]
+    },
+    {
+      "ID": 251000,
+      "Entries": [
+        "SP Child of the Moon"
+      ]
+    },
+    {
+      "ID": 251001,
+      "Entries": [
+        "SP Moon Child (Special Standby)"
+      ]
+    },
+    {
+      "ID": 251090,
+      "Entries": [
+        "Child of the Moon BOSS 】 Dungeon"
+      ]
+    },
+    {
+      "ID": 251100,
+      "Entries": [
+        "SP Moon's Child Sacrificial City"
+      ]
+    },
+    {
+      "ID": 252000,
+      "Entries": [
+        "Cathedral Quarter C Moon Hatchery"
+      ]
+    },
+    {
+      "ID": 252001,
+      "Entries": [
+        "Cathedral Quarter CMoon larvae Path not moving"
+      ]
+    },
+    {
+      "ID": 252002,
+      "Entries": [
+        "Cathedral Quarter C Moon Hatchery PC ignore"
+      ]
+    },
+    {
+      "ID": 252024,
+      "Entries": [
+        "Cathedral Quarter _B Moon Hatchery"
+      ]
+    },
+    {
+      "ID": 252070,
+      "Entries": [
+        "SP Moon Hatcher Cathedral Ward Does not react to sound"
+      ]
+    },
+    {
+      "ID": 252080,
+      "Entries": [
+        "Moon Hatchery Dungeon"
+      ]
+    },
+    {
+      "ID": 252081,
+      "Entries": [
+        "Moon Hatchery Dungeon Madness"
+      ]
+    },
+    {
+      "ID": 252100,
+      "Entries": [
+        "Moon larvae for prostitutes"
+      ]
+    },
+    {
+      "ID": 253000,
+      "Entries": [
+        "Star Flower for Dungeon"
+      ]
+    },
+    {
+      "ID": 253010,
+      "Entries": [
+        "Star Flower ( Upper body ground ) For dungeons"
+      ]
+    },
+    {
+      "ID": 253020,
+      "Entries": [
+        "Star Flower ( Upper body ceiling ) For dungeons"
+      ]
+    },
+    {
+      "ID": 253200,
+      "Entries": [
+        "University of Hoshinohana"
+      ]
+    },
+    {
+      "ID": 253201,
+      "Entries": [
+        "University of Hoshinohana _ For use at the ossuary"
+      ]
+    },
+    {
+      "ID": 253210,
+      "Entries": [
+        "University Hoshi no Hana (only flowers are displayed)"
+      ]
+    },
+    {
+      "ID": 254000,
+      "Entries": [
+        "Hometown Creeping Thing (Small)"
+      ]
+    },
+    {
+      "ID": 255000,
+      "Entries": [
+        "Hometown Creeping Thing (Large) Close-range type"
+      ]
+    },
+    {
+      "ID": 255010,
+      "Entries": [
+        "Hometown Creeping Thing (Large) Long-range magic type"
+      ]
+    },
+    {
+      "ID": 256000,
+      "Entries": [
+        "Hometown Failed Messenger (Hozuki)"
+      ]
+    },
+    {
+      "ID": 256100,
+      "Entries": [
+        "Hometown - The Failed Messenger _ Dummy character for firing bullets"
+      ]
+    },
+    {
+      "ID": 256600,
+      "Entries": [
+        "Trap Lord: The Failed Messenger (Hozuki)"
+      ]
+    },
+    {
+      "ID": 256601,
+      "Entries": [
+        "Trap Lord Failed Messenger (Hozuki) Visual Distance Extension"
+      ]
+    },
+    {
+      "ID": 256610,
+      "Entries": [
+        "Trap Lord: The Failed Messenger _ Dummy character for firing bullets"
+      ]
+    },
+    {
+      "ID": 256699,
+      "Entries": [
+        "Trap Lord Failed Messenger (Hozuki) Evil Eye Substitute"
+      ]
+    },
+    {
+      "ID": 256900,
+      "Entries": [
+        "Fishing Village Failed Messenger (Hozuki)"
+      ]
+    },
+    {
+      "ID": 256901,
+      "Entries": [
+        "Fishing Village Failed Messenger (Hozuki) _PC When not in the culvert"
+      ]
+    },
+    {
+      "ID": 256910,
+      "Entries": [
+        "Fishing Village - The Failed Messenger _ Dummy character for firing bullets"
+      ]
+    },
+    {
+      "ID": 257000,
+      "Entries": [
+        "Messenger from the Moon (large)"
+      ]
+    },
+    {
+      "ID": 257010,
+      "Entries": [
+        "Messenger from the Moon (Large) Cathedral Ward C boss"
+      ]
+    },
+    {
+      "ID": 257090,
+      "Entries": [
+        "Messenger from the Moon (Large) Dungeon Boss"
+      ]
+    },
+    {
+      "ID": 257100,
+      "Entries": [
+        "Messenger from the Moon (Large) Tentacles"
+      ]
+    },
+    {
+      "ID": 260000,
+      "Entries": [
+        "Terrifying crowd (saw + torch)"
+      ]
+    },
+    {
+      "ID": 260001,
+      "Entries": [
+        "Cathedral Quarter A_ Terrifying crowd (saw + torch)"
+      ]
+    },
+    {
+      "ID": 260010,
+      "Entries": [
+        "Terrible crowd (fence)"
+      ]
+    },
+    {
+      "ID": 260011,
+      "Entries": [
+        "Cathedral Quarter A_ Terrible crowd (fence)"
+      ]
+    },
+    {
+      "ID": 260012,
+      "Entries": [
+        "Terrible crowd (fence) Super sense of smell"
+      ]
+    },
+    {
+      "ID": 260013,
+      "Entries": [
+        "Ruins Terrible crowd (fence) Visibility 25m Edition"
+      ]
+    },
+    {
+      "ID": 260020,
+      "Entries": [
+        "The fearsome crowd (hoe)"
+      ]
+    },
+    {
+      "ID": 260021,
+      "Entries": [
+        "Cathedral Quarter A_ The fearsome crowd (hoe)"
+      ]
+    },
+    {
+      "ID": 260081,
+      "Entries": [
+        "Terrible Crowd (Fence) for dungeons"
+      ]
+    },
+    {
+      "ID": 260100,
+      "Entries": [
+        "Cathedral Quarter C Terrifying crowd (saw + torch)"
+      ]
+    },
+    {
+      "ID": 260110,
+      "Entries": [
+        "Cathedral Quarter C Terrible crowd (fence)"
+      ]
+    },
+    {
+      "ID": 260120,
+      "Entries": [
+        "Cathedral Quarter C The fearsome crowd (hoe)"
+      ]
+    },
+    {
+      "ID": 260240,
+      "Entries": [
+        "Cathedral Quarter B Terrifying crowd (saw + torch)"
+      ]
+    },
+    {
+      "ID": 260241,
+      "Entries": [
+        "Cathedral Quarter B Terrible crowd (fence)"
+      ]
+    },
+    {
+      "ID": 260300,
+      "Entries": [
+        "Forest: Terrifying crowd (saw + torch)"
+      ]
+    },
+    {
+      "ID": 260301,
+      "Entries": [
+        "Forest Scary Crowd (Saw + Torch) Sound of Interest Settings"
+      ]
+    },
+    {
+      "ID": 260320,
+      "Entries": [
+        "Mori: The Terrible Crowd (Hoe)"
+      ]
+    },
+    {
+      "ID": 261000,
+      "Entries": [
+        "Cemetery Town Crowd Woman Scythe"
+      ]
+    },
+    {
+      "ID": 261001,
+      "Entries": [
+        "Cemetery Town Crowd Woman Scythe Back Throw"
+      ]
+    },
+    {
+      "ID": 261002,
+      "Entries": [
+        "Cemetery Town Crowd Woman Scythe Vigilance and Do Nothing"
+      ]
+    },
+    {
+      "ID": 261003,
+      "Entries": [
+        "Cemetery Town Crowd Woman Scythe Approaching with Caution"
+      ]
+    },
+    {
+      "ID": 261010,
+      "Entries": [
+        "Cemetery Street Crowd Woman Hatchet Torch"
+      ]
+    },
+    {
+      "ID": 261011,
+      "Entries": [
+        "Cemetery Street Crowd Woman Hatchet Torch Vision 14m"
+      ]
+    },
+    {
+      "ID": 261020,
+      "Entries": [
+        "Cemetery Town Crowd Woman Branding Iron"
+      ]
+    },
+    {
+      "ID": 261021,
+      "Entries": [
+        "Cemetery Town Crowd Woman Branding Iron Vision 15m Edition"
+      ]
+    },
+    {
+      "ID": 261022,
+      "Entries": [
+        "Cemetery town crowd woman branding iron caution nothing"
+      ]
+    },
+    {
+      "ID": 261030,
+      "Entries": [
+        "Cemetery Town Crowd Woman Hammer"
+      ]
+    },
+    {
+      "ID": 261032,
+      "Entries": [
+        "Graveyard Town Crowd Woman Hammer Vigilance and Do Nothing"
+      ]
+    },
+    {
+      "ID": 261040,
+      "Entries": [
+        "Cemetery Town Crowd Woman Hatchet Throwing"
+      ]
+    },
+    {
+      "ID": 261041,
+      "Entries": [
+        "Cemetery Town Crowd Woman Hatchet Throwing Visibility Distance 25m Edition"
+      ]
+    },
+    {
+      "ID": 261090,
+      "Entries": [
+        "Cemetery Town Crowd Woman Sleeping Generic"
+      ]
+    },
+    {
+      "ID": 261091,
+      "Entries": [
+        "Cemetery Town Crowd Woman Blind Deaf"
+      ]
+    },
+    {
+      "ID": 261800,
+      "Entries": [
+        "Sacrifice Crowd Woman Sickle"
+      ]
+    },
+    {
+      "ID": 261810,
+      "Entries": [
+        "Sacrifice Crowd Woman Hatchet Torch"
+      ]
+    },
+    {
+      "ID": 261811,
+      "Entries": [
+        "Sacrifice Crowd Woman Hatchet Torch Lookout"
+      ]
+    },
+    {
+      "ID": 261820,
+      "Entries": [
+        "Sacrifice crowd woman branding iron"
+      ]
+    },
+    {
+      "ID": 261830,
+      "Entries": [
+        "Sacrifice Crowd Woman Hammer"
+      ]
+    },
+    {
+      "ID": 261840,
+      "Entries": [
+        "Sacrifice Crowd Woman Hatchet Throwing"
+      ]
+    },
+    {
+      "ID": 262000,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262010,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchair) Short gun"
+      ]
+    },
+    {
+      "ID": 262011,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchair) Short gun Hawk's eye"
+      ]
+    },
+    {
+      "ID": 262020,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchair) Gatling"
+      ]
+    },
+    {
+      "ID": 262030,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchairs) Flame thrower"
+      ]
+    },
+    {
+      "ID": 262200,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262201,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchair) Rifle Eagle Eye"
+      ]
+    },
+    {
+      "ID": 262210,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchair) Short gun"
+      ]
+    },
+    {
+      "ID": 262220,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchair) Gatling"
+      ]
+    },
+    {
+      "ID": 262221,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchair) Gatling gun Long-range gun"
+      ]
+    },
+    {
+      "ID": 262230,
+      "Entries": [
+        "Cathedral Quarter _C Crowd (wheelchairs) Flame thrower"
+      ]
+    },
+    {
+      "ID": 262310,
+      "Entries": [
+        "Cemetery district crowd (wheelchair) short tube"
+      ]
+    },
+    {
+      "ID": 262400,
+      "Entries": [
+        "Cathedral Quarter _B Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262401,
+      "Entries": [
+        "Cathedral Quarter _A Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262410,
+      "Entries": [
+        "Cathedral Quarter _B Crowd (wheelchair) Short gun"
+      ]
+    },
+    {
+      "ID": 262425,
+      "Entries": [
+        "Cathedral Quarter _B Crowd (wheelchair) Gatling _ Fixed gun"
+      ]
+    },
+    {
+      "ID": 262800,
+      "Entries": [
+        "Sacrificial City Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262810,
+      "Entries": [
+        "Sacrificial Street Crowd (wheelchair) Short barrel"
+      ]
+    },
+    {
+      "ID": 262820,
+      "Entries": [
+        "Sacrificial City Crowd (wheelchair) Gatling"
+      ]
+    },
+    {
+      "ID": 262830,
+      "Entries": [
+        "Sacrificial City Crowd (wheelchair) Flame Thrower"
+      ]
+    },
+    {
+      "ID": 262850,
+      "Entries": [
+        "Cathedral District - Sacrifice District Crowd (wheelchair) Rifle"
+      ]
+    },
+    {
+      "ID": 262851,
+      "Entries": [
+        "Cathedral District - Sacrifice District Crowd (wheelchair) Rifle Eagle Eye"
+      ]
+    },
+    {
+      "ID": 262860,
+      "Entries": [
+        "Cathedral District - Sacrifice District Crowd (wheelchair) Short gun"
+      ]
+    },
+    {
+      "ID": 262861,
+      "Entries": [
+        "Cathedral District - Sacrifice District Crowd (wheelchair) Short Gun Hawk Eye"
+      ]
+    },
+    {
+      "ID": 262870,
+      "Entries": [
+        "Cathedral District - Sacrifice District Crowd (wheelchair) Gatling"
+      ]
+    },
+    {
+      "ID": 262880,
+      "Entries": [
+        "Cathedral Ward - Sacrifice Ward Crowd (wheelchair) Flame thrower"
+      ]
+    },
+    {
+      "ID": 262900,
+      "Entries": [
+        "Clock Tower Crowd (wheelchairs) Rifle"
+      ]
+    },
+    {
+      "ID": 262901,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Rifle Dungeon"
+      ]
+    },
+    {
+      "ID": 262910,
+      "Entries": [
+        "Clock Tower Crowd (wheelchairs) Short barrel"
+      ]
+    },
+    {
+      "ID": 262911,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Short gun For dungeon"
+      ]
+    },
+    {
+      "ID": 262912,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Short gun Dungeon After enemy is found"
+      ]
+    },
+    {
+      "ID": 262913,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Short gun False hearing"
+      ]
+    },
+    {
+      "ID": 262920,
+      "Entries": [
+        "Clock Tower Crowd (wheelchairs) Gatling"
+      ]
+    },
+    {
+      "ID": 262921,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Gatling gun Long-range gun"
+      ]
+    },
+    {
+      "ID": 262925,
+      "Entries": [
+        "Clock Tower Crowd (wheelchairs) Gatling _ Fixed gun"
+      ]
+    },
+    {
+      "ID": 262930,
+      "Entries": [
+        "Clock Tower Crowd (wheelchairs) Sprayer spray"
+      ]
+    },
+    {
+      "ID": 262931,
+      "Entries": [
+        "Clock Tower Crowd (wheelchair) Sprayer Insensitive"
+      ]
+    },
+    {
+      "ID": 263000,
+      "Entries": [
+        "Forest Crowd A (Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263001,
+      "Entries": [
+        "Forest Crowd A (Large) Torch & Axe Warlike"
+      ]
+    },
+    {
+      "ID": 263002,
+      "Entries": [
+        "Forest Crowd A (Large) Torch & Axe Call-to-Responder"
+      ]
+    },
+    {
+      "ID": 263010,
+      "Entries": [
+        "Forest Crowd A (Large) Shield & Torch"
+      ]
+    },
+    {
+      "ID": 263012,
+      "Entries": [
+        "Forest Crowd A (Large) Shield & Torch Call-and-Respond Soldier"
+      ]
+    },
+    {
+      "ID": 263020,
+      "Entries": [
+        "Forest Crowd A (Large) Poker & Shield"
+      ]
+    },
+    {
+      "ID": 263022,
+      "Entries": [
+        "Forest Crowd A (Large) Fire Poker & Shield Call-to-Responder"
+      ]
+    },
+    {
+      "ID": 263030,
+      "Entries": [
+        "Forest Crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263031,
+      "Entries": [
+        "Forest Crowd A (Large) Cannon Gunner"
+      ]
+    },
+    {
+      "ID": 263032,
+      "Entries": [
+        "Forest Crowd A (Large) Weapon (Sabre) Call-to-Responder"
+      ]
+    },
+    {
+      "ID": 263040,
+      "Entries": [
+        "Forest Crowd A(Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263042,
+      "Entries": [
+        "Forest Crowd A (Large) Weapon (Knife) Call-to-Respond Soldier"
+      ]
+    },
+    {
+      "ID": 263050,
+      "Entries": [
+        "Forest Crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263052,
+      "Entries": [
+        "Forest Crowd A (Large) Weapon (Scythe) Call-to-Responder"
+      ]
+    },
+    {
+      "ID": 263060,
+      "Entries": [
+        "Forest Crowd A (Large) Molotov cocktail throw"
+      ]
+    },
+    {
+      "ID": 263061,
+      "Entries": [
+        "Forest Crowd A (Large) Molotov Cocktail Thrower Oil Swamp Guardian"
+      ]
+    },
+    {
+      "ID": 263062,
+      "Entries": [
+        "Forest Crowd A (Large) Molotov cocktail thrower call-to-community responder"
+      ]
+    },
+    {
+      "ID": 263065,
+      "Entries": [
+        "Forest Crowd A (Large) Oil Pot Throw"
+      ]
+    },
+    {
+      "ID": 263066,
+      "Entries": [
+        "Forest Crowd A (Large) Oil Pot Throwing Cannon"
+      ]
+    },
+    {
+      "ID": 263070,
+      "Entries": [
+        "Forest Crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263072,
+      "Entries": [
+        "Forest Crowd A (Large) Long-handed two-handed (hoe) Call-to-community responder"
+      ]
+    },
+    {
+      "ID": 263080,
+      "Entries": [
+        "Forest Crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263081,
+      "Entries": [
+        "Forest Crowd A (Large) Gun Visual Distance 50m Edition"
+      ]
+    },
+    {
+      "ID": 263082,
+      "Entries": [
+        "Forest Crowd A (Large) Gun Companion Call Responder"
+      ]
+    },
+    {
+      "ID": 263090,
+      "Entries": [
+        "Forest Crowd A(Large) Bare hands"
+      ]
+    },
+    {
+      "ID": 263091,
+      "Entries": [
+        "Forest Crowd A (Large) Unarmed Decoy"
+      ]
+    },
+    {
+      "ID": 263092,
+      "Entries": [
+        "Forest Crowd A (Large) Unarmed Call-and-Respond Soldier"
+      ]
+    },
+    {
+      "ID": 263097,
+      "Entries": [
+        "Forest Crowd A (L) I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 263098,
+      "Entries": [
+        "Forest Crowd A (Large) Sleeping"
+      ]
+    },
+    {
+      "ID": 263099,
+      "Entries": [
+        "Forest Crowd A (Large) Common Do nothing"
+      ]
+    },
+    {
+      "ID": 263180,
+      "Entries": [
+        "Cemetery Street Crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263181,
+      "Entries": [
+        "Cemetery Street Crowd A (Large) Gun Sight 30m"
+      ]
+    },
+    {
+      "ID": 263200,
+      "Entries": [
+        "Cathedral Quarter _A crowd A Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263201,
+      "Entries": [
+        "Cathedral Quarter _A crowd A Torch & Axe OBJ Operation Logic"
+      ]
+    },
+    {
+      "ID": 263230,
+      "Entries": [
+        "Cathedral Quarter _A crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263240,
+      "Entries": [
+        "Cathedral Quarter _A crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263250,
+      "Entries": [
+        "Cathedral Quarter _A crowd A Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263251,
+      "Entries": [
+        "Cathedral Quarter A crowd A Sickle _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 263252,
+      "Entries": [
+        "Cathedral Quarter Acrowd A Sickle _ Sleeping"
+      ]
+    },
+    {
+      "ID": 263270,
+      "Entries": [
+        "Cathedral Quarter _A crowd A Long handles (hoe)"
+      ]
+    },
+    {
+      "ID": 263271,
+      "Entries": [
+        "Cathedral Quarter _A crowd A Long handles (hoe) OBJ Operation Logic"
+      ]
+    },
+    {
+      "ID": 263280,
+      "Entries": [
+        "Cathedral Quarter _A crowd A (Large) Gun _ Long Distance"
+      ]
+    },
+    {
+      "ID": 263300,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Torch & Axe Running"
+      ]
+    },
+    {
+      "ID": 263350,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Scythe comes walking with sound"
+      ]
+    },
+    {
+      "ID": 263370,
+      "Entries": [
+        "Cathedral Quarter _ crowd A Long handle"
+      ]
+    },
+    {
+      "ID": 263380,
+      "Entries": [
+        "Cemetery Street Crowd A (Large) Gun Sight 0m"
+      ]
+    },
+    {
+      "ID": 263381,
+      "Entries": [
+        "Cemetery Street Crowd A (Large) Gun Sight 30m"
+      ]
+    },
+    {
+      "ID": 263400,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263401,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Torch & Axe for surprise attacks"
+      ]
+    },
+    {
+      "ID": 263410,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Shield & Torch"
+      ]
+    },
+    {
+      "ID": 263411,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Shield & Torch Short search distance"
+      ]
+    },
+    {
+      "ID": 263430,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263431,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Gun _ Square"
+      ]
+    },
+    {
+      "ID": 263432,
+      "Entries": [
+        "Cathedral Quarter _B crowd A(Large) Gun _ Shipyard"
+      ]
+    },
+    {
+      "ID": 263440,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263441,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Weapon (Kitchen knife) Long distance home"
+      ]
+    },
+    {
+      "ID": 263450,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263451,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Weapon (Scythe) Surprise Attack"
+      ]
+    },
+    {
+      "ID": 263470,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263471,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Long object with both hands (hoe) Long distance home"
+      ]
+    },
+    {
+      "ID": 263496,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Sleeping (for gun holders)"
+      ]
+    },
+    {
+      "ID": 263497,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Search"
+      ]
+    },
+    {
+      "ID": 263498,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Bare-handed only"
+      ]
+    },
+    {
+      "ID": 263499,
+      "Entries": [
+        "Cathedral Quarter _B crowd A (Large) Sleeping"
+      ]
+    },
+    {
+      "ID": 263500,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263510,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Shield & Torch"
+      ]
+    },
+    {
+      "ID": 263520,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Poker & Shield"
+      ]
+    },
+    {
+      "ID": 263530,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263531,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Weapon (Sabre) Approach the source of the sound"
+      ]
+    },
+    {
+      "ID": 263540,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263550,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263551,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Weapon (Scythe) Approach the source of the sound"
+      ]
+    },
+    {
+      "ID": 263560,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Throwing & Shield"
+      ]
+    },
+    {
+      "ID": 263570,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263580,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263590,
+      "Entries": [
+        "Cathedral Quarter C crowd A (Large) Bare hands"
+      ]
+    },
+    {
+      "ID": 263600,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A(Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263610,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Shield & Torch"
+      ]
+    },
+    {
+      "ID": 263620,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Poker & Shield"
+      ]
+    },
+    {
+      "ID": 263630,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263640,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263650,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263660,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Throwing & Shield"
+      ]
+    },
+    {
+      "ID": 263670,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263680,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263690,
+      "Entries": [
+        "Cathedral Quarter C ~Sacrificial Street Crowd A (Large) Bare hands"
+      ]
+    },
+    {
+      "ID": 263700,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263701,
+      "Entries": [
+        "Cathedral Quarter D crowd A(Large) Weapon (Sabre) Delay"
+      ]
+    },
+    {
+      "ID": 263710,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263711,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Long Object with Two Hands (Hoe) Delay"
+      ]
+    },
+    {
+      "ID": 263720,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263730,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263731,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Knife) Delay"
+      ]
+    },
+    {
+      "ID": 263732,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263740,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263741,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Weapon (Scythe) Delay"
+      ]
+    },
+    {
+      "ID": 263750,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Timed explosive bottle throw"
+      ]
+    },
+    {
+      "ID": 263751,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Timed explosive bottle throw _ First Throw"
+      ]
+    },
+    {
+      "ID": 263755,
+      "Entries": [
+        "Cathedral Quarter D crowd A (Large) Timed explosive bottle throw _ Fixed gun"
+      ]
+    },
+    {
+      "ID": 263756,
+      "Entries": [
+        "Cathedral Quarter D crowd A(Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263757,
+      "Entries": [
+        "Cathedral Quarter D crowd A(Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263758,
+      "Entries": [
+        "Cathedral Quarter D crowd A(Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263800,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Torch & Axe"
+      ]
+    },
+    {
+      "ID": 263810,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Shield & Torch"
+      ]
+    },
+    {
+      "ID": 263830,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Sabre)"
+      ]
+    },
+    {
+      "ID": 263831,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Sabre) Exclusively for use in front of the elevator"
+      ]
+    },
+    {
+      "ID": 263835,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Gun"
+      ]
+    },
+    {
+      "ID": 263836,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Gun Sniper"
+      ]
+    },
+    {
+      "ID": 263840,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Knife)"
+      ]
+    },
+    {
+      "ID": 263850,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Scythe)"
+      ]
+    },
+    {
+      "ID": 263851,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Scythe) Surprise Attack"
+      ]
+    },
+    {
+      "ID": 263852,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Weapon (Scythe) For use in passageways only"
+      ]
+    },
+    {
+      "ID": 263860,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Throwing & Shield"
+      ]
+    },
+    {
+      "ID": 263870,
+      "Entries": [
+        "Sacrifice Crowd A (Large) Long handle with both hands (hoe)"
+      ]
+    },
+    {
+      "ID": 263890,
+      "Entries": [
+        "First Sacrifice Crowd A (Large) Bare hands"
+      ]
+    },
+    {
+      "ID": 263899,
+      "Entries": [
+        "First Sacrifice Crowd A (Large) Bare hands Sleeping"
+      ]
+    },
+    {
+      "ID": 263900,
+      "Entries": [
+        "Test Crowd A (large) _ cannon"
+      ]
+    },
+    {
+      "ID": 264000,
+      "Entries": [
+        "Cathedral Quarter A crowd B (Large) Brick"
+      ]
+    },
+    {
+      "ID": 264010,
+      "Entries": [
+        "Cathedral Quarter A crowd B (Large) Stone statue"
+      ]
+    },
+    {
+      "ID": 264100,
+      "Entries": [
+        "Cemetery Street Crowd B (Large) Brick"
+      ]
+    },
+    {
+      "ID": 264101,
+      "Entries": [
+        "Cemetery Street Crowd B (Large) Brick Vision 15m Edition"
+      ]
+    },
+    {
+      "ID": 264400,
+      "Entries": [
+        "Cathedral Quarter B crowd B (Large) Brick (Mantle)"
+      ]
+    },
+    {
+      "ID": 264401,
+      "Entries": [
+        "Cathedral Quarter B crowd B (Large) Brick"
+      ]
+    },
+    {
+      "ID": 264410,
+      "Entries": [
+        "Cathedral Quarter B crowd B (Large) Stone statue"
+      ]
+    },
+    {
+      "ID": 264499,
+      "Entries": [
+        "Cathedral Quarter B crowd B (Large) Sleeping"
+      ]
+    },
+    {
+      "ID": 264800,
+      "Entries": [
+        "Sacrifice Crowd B (Large) Brick"
+      ]
+    },
+    {
+      "ID": 264801,
+      "Entries": [
+        "Sacrifice Crowd B (Large) Brick Treasure Guardian"
+      ]
+    },
+    {
+      "ID": 264810,
+      "Entries": [
+        "Sacrifice Crowd B (Large) Stone statue"
+      ]
+    },
+    {
+      "ID": 264811,
+      "Entries": [
+        "Sacrifice Crowd B (Large) Stone statue jumping down"
+      ]
+    },
+    {
+      "ID": 264900,
+      "Entries": [
+        "Cathedral Quarter D crowd B(Large) Brick"
+      ]
+    },
+    {
+      "ID": 270000,
+      "Entries": [
+        "University Church Messenger (Staff only)"
+      ]
+    },
+    {
+      "ID": 270001,
+      "Entries": [
+        "University Church Messenger (Staff only) _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 270002,
+      "Entries": [
+        "University Church Messenger (Staff only) _ Sleeping"
+      ]
+    },
+    {
+      "ID": 270010,
+      "Entries": [
+        "University Church Messenger (Staff) - gun)"
+      ]
+    },
+    {
+      "ID": 270020,
+      "Entries": [
+        "University Church Messenger (Staff) - Sky Lantern)"
+      ]
+    },
+    {
+      "ID": 270030,
+      "Entries": [
+        "University Church Messenger (Staff) - Eye Lantern)"
+      ]
+    },
+    {
+      "ID": 270040,
+      "Entries": [
+        "University Apostle of the Church (Cross)"
+      ]
+    },
+    {
+      "ID": 270050,
+      "Entries": [
+        "University Church messenger (sickle)"
+      ]
+    },
+    {
+      "ID": 270060,
+      "Entries": [
+        "University Church Messenger (Staff) - Flame Thrower)"
+      ]
+    },
+    {
+      "ID": 270100,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff only)"
+      ]
+    },
+    {
+      "ID": 270101,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff only) _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 270102,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff only) _ Sleeping"
+      ]
+    },
+    {
+      "ID": 270103,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff only) _ cannon"
+      ]
+    },
+    {
+      "ID": 270104,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff only) For Backstreet Plaza"
+      ]
+    },
+    {
+      "ID": 270110,
+      "Entries": [
+        "Cathedral Quarter AChurch Messenger (Staff - gun)"
+      ]
+    },
+    {
+      "ID": 270111,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Gun) Sniper"
+      ]
+    },
+    {
+      "ID": 270112,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Gun) For back alley plazas"
+      ]
+    },
+    {
+      "ID": 270113,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Gun) Slightly wider field of view"
+      ]
+    },
+    {
+      "ID": 270120,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Sky Lantern)"
+      ]
+    },
+    {
+      "ID": 270121,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Sky lantern) For back alley plaza"
+      ]
+    },
+    {
+      "ID": 270122,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Sky Lantern)"
+      ]
+    },
+    {
+      "ID": 270130,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Eye Lantern)"
+      ]
+    },
+    {
+      "ID": 270140,
+      "Entries": [
+        "Cathedral Quarter A Messenger of the Church (Cross)"
+      ]
+    },
+    {
+      "ID": 270150,
+      "Entries": [
+        "Cathedral Quarter A Church messenger (sickle)"
+      ]
+    },
+    {
+      "ID": 270151,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Scythe) - Vision is a little wider"
+      ]
+    },
+    {
+      "ID": 270152,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Sickle) for Back Alley Plaza"
+      ]
+    },
+    {
+      "ID": 270160,
+      "Entries": [
+        "Cathedral Quarter A Church Messenger (Staff - Flame Thrower)"
+      ]
+    },
+    {
+      "ID": 270200,
+      "Entries": [
+        "Cathedral Quarter CChurch Messenger (Staff only)"
+      ]
+    },
+    {
+      "ID": 270220,
+      "Entries": [
+        "Cathedral Quarter C Church Messenger (Staff - Sky Lantern)"
+      ]
+    },
+    {
+      "ID": 270230,
+      "Entries": [
+        "Cathedral Quarter C Church Messenger (Staff - Eye Lantern)"
+      ]
+    },
+    {
+      "ID": 270250,
+      "Entries": [
+        "Cathedral Quarter C Church messenger (sickle)"
+      ]
+    },
+    {
+      "ID": 270350,
+      "Entries": [
+        "Clock Tower Church Messenger (Staff only)"
+      ]
+    },
+    {
+      "ID": 270351,
+      "Entries": [
+        "Clock Tower Church Messenger (Staff only) For the dungeon"
+      ]
+    },
+    {
+      "ID": 270352,
+      "Entries": [
+        "Clock Tower Church Messenger (Staff only) After discovering the dungeon"
+      ]
+    },
+    {
+      "ID": 270353,
+      "Entries": [
+        "Clock Tower Church Messenger (Staff only) Defensive"
+      ]
+    },
+    {
+      "ID": 271000,
+      "Entries": [
+        "SP Father Gascoigne"
+      ]
+    },
+    {
+      "ID": 271010,
+      "Entries": [
+        "SP Father Gascoigne (guest guest)"
+      ]
+    },
+    {
+      "ID": 271011,
+      "Entries": [
+        "SP Father Gascoigne (guest guest)"
+      ]
+    },
+    {
+      "ID": 271090,
+      "Entries": [
+        "SP Father Gascoigne Event"
+      ]
+    },
+    {
+      "ID": 272000,
+      "Entries": [
+        "SP Father Gascoigne (Beast)"
+      ]
+    },
+    {
+      "ID": 273000,
+      "Entries": [
+        "SP The Frankenstein of Medical Society _ ax"
+      ]
+    },
+    {
+      "ID": 273010,
+      "Entries": [
+        "SP The Frankenstein of Medical Society _ Flame Fist"
+      ]
+    },
+    {
+      "ID": 273020,
+      "Entries": [
+        "SP The Frankenstein of Medical Society _ Ball and Chain"
+      ]
+    },
+    {
+      "ID": 273100,
+      "Entries": [
+        "Cathedral Quarter AThe Frankenstein of Medical Society _ ax"
+      ]
+    },
+    {
+      "ID": 273102,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ ax _ For plazas"
+      ]
+    },
+    {
+      "ID": 273110,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ ax _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 273120,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ ax _ Sleeping"
+      ]
+    },
+    {
+      "ID": 273130,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ Iron ball"
+      ]
+    },
+    {
+      "ID": 273140,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ Iron ball _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 273150,
+      "Entries": [
+        "Cathedral Quarter A The Frankenstein of Medical Society _ Iron ball _ Sleeping"
+      ]
+    },
+    {
+      "ID": 273400,
+      "Entries": [
+        "forest / Saint B Connection of the Medical Church of Frankenstein _ fist"
+      ]
+    },
+    {
+      "ID": 273410,
+      "Entries": [
+        "forest / Saint B Connection of the Medical Church of Frankenstein _ fist _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 273420,
+      "Entries": [
+        "forest / Saint B Connection of the Medical Church of Frankenstein _ fist _ Sleeping"
+      ]
+    },
+    {
+      "ID": 274000,
+      "Entries": [
+        "SP University Student"
+      ]
+    },
+    {
+      "ID": 274001,
+      "Entries": [
+        "SP University students on special standby"
+      ]
+    },
+    {
+      "ID": 274010,
+      "Entries": [
+        "SP University Student (Bottle Carrier)"
+      ]
+    },
+    {
+      "ID": 274011,
+      "Entries": [
+        "SP University Student (Bottle Holder) Special Waiting"
+      ]
+    },
+    {
+      "ID": 280000,
+      "Entries": [
+        "Sacrifice Burned Corpse Variation (Poison) (Sword/Shield)"
+      ]
+    },
+    {
+      "ID": 280005,
+      "Entries": [
+        "SP Burnt Corpse Variation (Poison) (Sword/Shield) For group patrol testing"
+      ]
+    },
+    {
+      "ID": 280010,
+      "Entries": [
+        "Sacrifice Burned Corpse Variation (Poison) (Bow/Sword)"
+      ]
+    },
+    {
+      "ID": 280020,
+      "Entries": [
+        "Sacrifice Burned Corpse Variation (Poison) (Two-handed spear)"
+      ]
+    },
+    {
+      "ID": 281000,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ Sword and Shield"
+      ]
+    },
+    {
+      "ID": 281010,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ Sword and Bow"
+      ]
+    },
+    {
+      "ID": 281020,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ ax"
+      ]
+    },
+    {
+      "ID": 281021,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ ax _ Exclusively defensive"
+      ]
+    },
+    {
+      "ID": 281030,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ Two-handed sword"
+      ]
+    },
+    {
+      "ID": 281031,
+      "Entries": [
+        "Sacrifice Burned Corpse Warrior (Large) _ Two-handed sword _ Exclusively defensive"
+      ]
+    },
+    {
+      "ID": 281100,
+      "Entries": [
+        "Ruins Burnt Corpse (Axe)"
+      ]
+    },
+    {
+      "ID": 291000,
+      "Entries": [
+        "SP Skeleton King"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Dungeon Man (Priest)"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "Dungeon Man (Priest) _ Fixed gun"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "Dungeon Man (Priest) _ Fixed gun _ Visual Width 45 Degree"
+      ]
+    },
+    {
+      "ID": 300005,
+      "Entries": [
+        "Dungeon Man (Priest) For irregular attacks"
+      ]
+    },
+    {
+      "ID": 300010,
+      "Entries": [
+        "Dungeon Priest - Standing"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "Dungeon Man (Priest) _ Fighting type"
+      ]
+    },
+    {
+      "ID": 300500,
+      "Entries": [
+        "University Dungeon Person (Priest)"
+      ]
+    },
+    {
+      "ID": 300600,
+      "Entries": [
+        "Trap Lord Dungeon Person (Priest)"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Dungeon People (Slaves/Swords only)"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Dungeon People (Slaves/Swordsmen _ (Bare-handed throw)"
+      ]
+    },
+    {
+      "ID": 301002,
+      "Entries": [
+        "Dungeon Man (Slave/Sword Only) for Surprise Attacks"
+      ]
+    },
+    {
+      "ID": 301004,
+      "Entries": [
+        "Dungeon Man (Slaves/Swords only) for pushing enemies out"
+      ]
+    },
+    {
+      "ID": 301005,
+      "Entries": [
+        "Dungeon Person (Slave/Sword Only) Black Clothes/White Clothes"
+      ]
+    },
+    {
+      "ID": 301006,
+      "Entries": [
+        "Dungeon Person (Slave/Sword Only) Incense Burner for Surprise Attack"
+      ]
+    },
+    {
+      "ID": 301007,
+      "Entries": [
+        "Dungeon People (Slaves/Swordsmen _ Stealth Throwing Knife)"
+      ]
+    },
+    {
+      "ID": 301009,
+      "Entries": [
+        "Dungeon Man (Slave/Bare Hands) Apathy"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Dungeon Man (Slave/Machete only)"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Dungeon Man (Slave Hatchet _ (Bare-handed throw)"
+      ]
+    },
+    {
+      "ID": 301015,
+      "Entries": [
+        "Dungeon Man (Slave/For Surprise Attacks)"
+      ]
+    },
+    {
+      "ID": 301020,
+      "Entries": [
+        "Dungeon People (Slaves Lanterns _ sword)"
+      ]
+    },
+    {
+      "ID": 301030,
+      "Entries": [
+        "Dungeon People (Slaves Lanterns _ Hatchet)"
+      ]
+    },
+    {
+      "ID": 301040,
+      "Entries": [
+        "Dungeon Man (Slave Axe _ ax )"
+      ]
+    },
+    {
+      "ID": 301042,
+      "Entries": [
+        "Dungeon Man (Slave Axe _ ax ) For surprise attacks"
+      ]
+    },
+    {
+      "ID": 301044,
+      "Entries": [
+        "Dungeon Man (Slave Axe _ ax ) For pushing enemies"
+      ]
+    },
+    {
+      "ID": 301050,
+      "Entries": [
+        "Dungeon People (Slaves Pole Weapons )"
+      ]
+    },
+    {
+      "ID": 301060,
+      "Entries": [
+        "Dungeon People (Slaves and Black Suit Swordsmen only)"
+      ]
+    },
+    {
+      "ID": 301090,
+      "Entries": [
+        "SP Dungeon people (slaves/swords only) for adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301091,
+      "Entries": [
+        "SP Dungeon People (Slaves/Swordsmen_ Unarmed Throwing) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301092,
+      "Entries": [
+        "SP Dungeon people (slaves/machetes only) for adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301093,
+      "Entries": [
+        "SP Dungeon Man (Slave Hatchet _ Unarmed Throwing) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301094,
+      "Entries": [
+        "SP Dungeon People (Slaves Lanterns _ Sword) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301095,
+      "Entries": [
+        "SP Dungeon People (Slaves Lanterns _ Hatchet) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301096,
+      "Entries": [
+        "SP Dungeon Man (Slave Axe _ ax ) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301097,
+      "Entries": [
+        "SP Dungeon People (Slaves Pole Weapons ) For adjusting battle logic"
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        "Dungeon slave sleeping _ Sleeping"
+      ]
+    },
+    {
+      "ID": 301110,
+      "Entries": [
+        "Dungeon slave sleeping _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 301200,
+      "Entries": [
+        "Dungeon Man (Slave Hatchet / for cannons)"
+      ]
+    },
+    {
+      "ID": 301201,
+      "Entries": [
+        "Dungeon Man (Slave Hatchet / Cannon) Step room A For"
+      ]
+    },
+    {
+      "ID": 301510,
+      "Entries": [
+        "Cathedral Quarter BDungeon People (Slaves/Machete Only / for cannons)"
+      ]
+    },
+    {
+      "ID": 301610,
+      "Entries": [
+        "University Dungeon Man (Slave/Machete only)"
+      ]
+    },
+    {
+      "ID": 301630,
+      "Entries": [
+        "University Dungeon People (Slave Lantern _ Hatchet)"
+      ]
+    },
+    {
+      "ID": 301730,
+      "Entries": [
+        "Mori Dungeon People (Slave Hatchet _ (Bare-handed throw) _ Wide field of vision _ Uses a lot of long-distance attacks"
+      ]
+    },
+    {
+      "ID": 301731,
+      "Entries": [
+        "Mori Dungeon People (Slave Lantern _ Hatchet) Short visibility"
+      ]
+    },
+    {
+      "ID": 301732,
+      "Entries": [
+        "Mori Dungeon People (Slave Hatchet _ (Bare-handed throw) _ Wide field of vision _ Javelin"
+      ]
+    },
+    {
+      "ID": 301733,
+      "Entries": [
+        "Mori Dungeon People (Slave Hatchet _ (Bare-handed throw) _ Narrow visibility _ Javelin"
+      ]
+    },
+    {
+      "ID": 301740,
+      "Entries": [
+        "Forest Dungeon Man (Slave Axe _ ax ) Long visibility"
+      ]
+    },
+    {
+      "ID": 301800,
+      "Entries": [
+        "Dungeon people for generation (slaves and swords only)"
+      ]
+    },
+    {
+      "ID": 301801,
+      "Entries": [
+        "Dungeon Man (Slave Sword) _ (Bare-handed throw)"
+      ]
+    },
+    {
+      "ID": 301802,
+      "Entries": [
+        "For generating Dungeon people (slaves sword only) for surprise attacks"
+      ]
+    },
+    {
+      "ID": 301804,
+      "Entries": [
+        "For generating dungeon people (slaves and swords only) for pushing enemies"
+      ]
+    },
+    {
+      "ID": 301810,
+      "Entries": [
+        "For generating Dungeon Man (Slave Hatchet only)"
+      ]
+    },
+    {
+      "ID": 301811,
+      "Entries": [
+        "Dungeon Man (Slave Hatchet) _ (Bare-handed throw)"
+      ]
+    },
+    {
+      "ID": 301815,
+      "Entries": [
+        "For generating Dungeon people (for slaves and surprise attacks)"
+      ]
+    },
+    {
+      "ID": 301820,
+      "Entries": [
+        "Dungeon Man (Slave Lantern) _ sword)"
+      ]
+    },
+    {
+      "ID": 301830,
+      "Entries": [
+        "Dungeon Man (Slave Lantern) _ Hatchet)"
+      ]
+    },
+    {
+      "ID": 301840,
+      "Entries": [
+        "Dungeon Man (Slave Axe) for Creation _ ax )"
+      ]
+    },
+    {
+      "ID": 301842,
+      "Entries": [
+        "Dungeon Man (Slave Axe) for Creation _ ax ) For surprise attacks"
+      ]
+    },
+    {
+      "ID": 301844,
+      "Entries": [
+        "Dungeon Man (Slave Axe) for Creation _ ax ) For pushing enemies"
+      ]
+    },
+    {
+      "ID": 301850,
+      "Entries": [
+        "For generation Dungeon people (Slaves Pole Weapons )"
+      ]
+    },
+    {
+      "ID": 301900,
+      "Entries": [
+        "【ruins _ Substitute for Throwing Character] Dungeon Man (Slave Sword) _ (Bare-handed throw)"
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        "Dungeon Person (Guardian/Sword Shield)"
+      ]
+    },
+    {
+      "ID": 302010,
+      "Entries": [
+        "Dungeon Person (Guardian Morning Star)"
+      ]
+    },
+    {
+      "ID": 302020,
+      "Entries": [
+        "Dungeon Guardian (Sword Crossbow)"
+      ]
+    },
+    {
+      "ID": 302030,
+      "Entries": [
+        "Dungeon Man (Guardian Great Sword)"
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        "Dungeon Person (Guardian/Sword Shield)"
+      ]
+    },
+    {
+      "ID": 302110,
+      "Entries": [
+        "Dungeon Person (Guardian Morning Star)"
+      ]
+    },
+    {
+      "ID": 302120,
+      "Entries": [
+        "Dungeon Guardian (Sword Crossbow)"
+      ]
+    },
+    {
+      "ID": 302130,
+      "Entries": [
+        "Dungeon Man (Guardian Great Sword)"
+      ]
+    },
+    {
+      "ID": 302630,
+      "Entries": [
+        "University Dungeon Person (Guardian Great Sword)"
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        "Dungeon Man (Madman One-handed Scythe)"
+      ]
+    },
+    {
+      "ID": 303001,
+      "Entries": [
+        "Dungeon Man (Madman One-Handed Broken Great Sword)"
+      ]
+    },
+    {
+      "ID": 303002,
+      "Entries": [
+        "Dungeon Man (Madman One-handed Scythe) for surprise attacks"
+      ]
+    },
+    {
+      "ID": 303004,
+      "Entries": [
+        "Dungeon Man (Madman One-handed Scythe) for pushing enemies out"
+      ]
+    },
+    {
+      "ID": 303010,
+      "Entries": [
+        "Dungeon Man (Madman/Corpse Carrier)"
+      ]
+    },
+    {
+      "ID": 303012,
+      "Entries": [
+        "Dungeon Man (Madman/Carrying Corpse) for Wall"
+      ]
+    },
+    {
+      "ID": 303020,
+      "Entries": [
+        "Dungeon Man (Madman Dual Scythe)"
+      ]
+    },
+    {
+      "ID": 303100,
+      "Entries": [
+        "Dungeon Man (Madman One-handed Scythe)"
+      ]
+    },
+    {
+      "ID": 303110,
+      "Entries": [
+        "Dungeon Man (Madman/Corpse Carrier)"
+      ]
+    },
+    {
+      "ID": 303120,
+      "Entries": [
+        "Dungeon Man (Madman Dual Scythe)"
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        "Dungeon Man (Fat Nata Lantern)"
+      ]
+    },
+    {
+      "ID": 304010,
+      "Entries": [
+        "Dungeon Man (Fat Nata Red Hot Lantern)"
+      ]
+    },
+    {
+      "ID": 304020,
+      "Entries": [
+        "Dungeon Man (Fat Shotgun Lantern Machete)"
+      ]
+    },
+    {
+      "ID": 304021,
+      "Entries": [
+        "Dungeon Man (Fat Shotgun Lantern Hatchet) BOSS 】's entourage"
+      ]
+    },
+    {
+      "ID": 304040,
+      "Entries": [
+        "Dungeon Man (Fat Saw)"
+      ]
+    },
+    {
+      "ID": 304041,
+      "Entries": [
+        "Dungeon Man (Fat Saw) BOSS 】's entourage"
+      ]
+    },
+    {
+      "ID": 304042,
+      "Entries": [
+        "Dungeon Man (Fat Saw) for wall use"
+      ]
+    },
+    {
+      "ID": 304050,
+      "Entries": [
+        "Dungeon Man (fat iron balls in both hands naked)"
+      ]
+    },
+    {
+      "ID": 304090,
+      "Entries": [
+        "Dungeon Man (Fat Nata Lantern) BOSS 】"
+      ]
+    },
+    {
+      "ID": 304100,
+      "Entries": [
+        "Dungeon Man (Fat Nata Lantern)"
+      ]
+    },
+    {
+      "ID": 304110,
+      "Entries": [
+        "Dungeon Man (Fat Nata Red Hot Lantern)"
+      ]
+    },
+    {
+      "ID": 304120,
+      "Entries": [
+        "Dungeon Man (Fat Shotgun Lantern Machete)"
+      ]
+    },
+    {
+      "ID": 304140,
+      "Entries": [
+        "Dungeon Man (Fat Saw)"
+      ]
+    },
+    {
+      "ID": 304150,
+      "Entries": [
+        "Dungeon Man (fat iron balls in both hands naked)"
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        "Dungeon Lord Sword (Dual Swords) BOSS 】"
+      ]
+    },
+    {
+      "ID": 305010,
+      "Entries": [
+        "Dungeon Lord Rod/Staff BOSS 】"
+      ]
+    },
+    {
+      "ID": 305080,
+      "Entries": [
+        "Dungeon Lord Sword (Dual) _ Treated like a weakling"
+      ]
+    },
+    {
+      "ID": 305081,
+      "Entries": [
+        "Dungeon Lord Rod/Staff _ Treated like a weakling"
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        "Dungeon Person (Bride) BOSS 】"
+      ]
+    },
+    {
+      "ID": 306001,
+      "Entries": [
+        "Dungeon people (bride/pregnant woman) BOSS 】"
+      ]
+    },
+    {
+      "ID": 306050,
+      "Entries": [
+        "Dungeon Person (Bride/Alter ego)"
+      ]
+    },
+    {
+      "ID": 306100,
+      "Entries": [
+        "Dungeon Bride Fetus"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Sacrificial Town Mimic"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Sacrificial Town Mimic _ shooting"
+      ]
+    },
+    {
+      "ID": 310010,
+      "Entries": [
+        "Sacrificial City Mimic (no box)"
+      ]
+    },
+    {
+      "ID": 310011,
+      "Entries": [
+        "Sacrificial City Mimic (No Box)_ shooting)"
+      ]
+    },
+    {
+      "ID": 310080,
+      "Entries": [
+        "Mimic Dungeon"
+      ]
+    },
+    {
+      "ID": 310081,
+      "Entries": [
+        "mimic _ Shooting Dungeon"
+      ]
+    },
+    {
+      "ID": 311000,
+      "Entries": [
+        "Evil spirit man"
+      ]
+    },
+    {
+      "ID": 311050,
+      "Entries": [
+        "Evil spirit man ( Enhanced Possession )"
+      ]
+    },
+    {
+      "ID": 311200,
+      "Entries": [
+        "Evil spirit bullet firing dummy character"
+      ]
+    },
+    {
+      "ID": 312000,
+      "Entries": [
+        "Evil Spirit Female Dungeon"
+      ]
+    },
+    {
+      "ID": 312010,
+      "Entries": [
+        "Evil Spirit Female Dungeon Stalker"
+      ]
+    },
+    {
+      "ID": 313000,
+      "Entries": [
+        "Fresh Golem (Tip Sword + Elbow Sword)"
+      ]
+    },
+    {
+      "ID": 313001,
+      "Entries": [
+        "Fresh Golem (Tip Sword + Elbow Sword) _ Sleeping"
+      ]
+    },
+    {
+      "ID": 313002,
+      "Entries": [
+        "Fresh Golem (Tip Sword + Elbow Sword) _ I'm going to wake up"
+      ]
+    },
+    {
+      "ID": 313010,
+      "Entries": [
+        "Fresh Golem (Axe + Cannon)"
+      ]
+    },
+    {
+      "ID": 313020,
+      "Entries": [
+        "Fresh Golem (Meat + Hook)"
+      ]
+    },
+    {
+      "ID": 313090,
+      "Entries": [
+        "Fresh Golem (Tip Sword + Elbow Sword) BOSS 】"
+      ]
+    },
+    {
+      "ID": 313091,
+      "Entries": [
+        "Fresh Golem (Axe + Cannon) BOSS 】"
+      ]
+    },
+    {
+      "ID": 313092,
+      "Entries": [
+        "Fresh Golem (flesh chunk + hook) BOSS 】"
+      ]
+    },
+    {
+      "ID": 313900,
+      "Entries": [
+        "SP Fresh Golem (Tip Sword + Elbow Sword) _ Cathedral Quarter A"
+      ]
+    },
+    {
+      "ID": 313901,
+      "Entries": [
+        "SPFresh Golem (Tip Sword + Elbow Sword) _ Cathedral Quarter A Short battle start distance"
+      ]
+    },
+    {
+      "ID": 313902,
+      "Entries": [
+        "SP Fresh Golem (Tip Sword + Elbow Sword) _ Cathedral Quarter A For plazas"
+      ]
+    },
+    {
+      "ID": 313910,
+      "Entries": [
+        "SP Fresh Golem (Axe + Cannon) _ Cathedral Quarter A"
+      ]
+    },
+    {
+      "ID": 313920,
+      "Entries": [
+        "SP Fresh Golem (Meat + Hook) _ Cathedral Quarter A"
+      ]
+    },
+    {
+      "ID": 313922,
+      "Entries": [
+        "SP Fresh Golem (Meat + Hook) _ Cathedral Quarter A For plazas"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Fallen Hunter _ Saw curved sword (early saw)"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword ( Early curved sword )"
+      ]
+    },
+    {
+      "ID": 400002,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword _ Gun Specialization ( Early curved sword )"
+      ]
+    },
+    {
+      "ID": 400003,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & Torch (initial saw)"
+      ]
+    },
+    {
+      "ID": 400004,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & torch (Early curved sword )"
+      ]
+    },
+    {
+      "ID": 400005,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & Torch (initial saw) _ Command"
+      ]
+    },
+    {
+      "ID": 400006,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & torch ( Early curved sword )_ Command"
+      ]
+    },
+    {
+      "ID": 400007,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & Torch (initial saw) _ Command AI No sound"
+      ]
+    },
+    {
+      "ID": 400008,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword & torch ( Early curved sword )_ Command AI No sound"
+      ]
+    },
+    {
+      "ID": 400009,
+      "Entries": [
+        "Fallen Hunter _ Saw whip ( TGS② )"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Fallen Hunter _ Saw Whip (initial saw)"
+      ]
+    },
+    {
+      "ID": 400011,
+      "Entries": [
+        "Fallen Hunter _ Saw Whip (initial placement whip)"
+      ]
+    },
+    {
+      "ID": 400012,
+      "Entries": [
+        "Fallen Hunter _ Saw Whip (initial saw)"
+      ]
+    },
+    {
+      "ID": 400013,
+      "Entries": [
+        "Fallen Hunter _ Saw curved sword (early saw)"
+      ]
+    },
+    {
+      "ID": 400014,
+      "Entries": [
+        "Fallen Hunter _ Saw whip (running slash)"
+      ]
+    },
+    {
+      "ID": 400015,
+      "Entries": [
+        "Fallen Hunter _ Saw curved sword (running slash)"
+      ]
+    },
+    {
+      "ID": 400016,
+      "Entries": [
+        "Fallen Hunter _Saw Curved Sword (Running Slash) _ strikeout)"
+      ]
+    },
+    {
+      "ID": 400017,
+      "Entries": [
+        "Fallen Hunter _ Saw Whip (initial saw)"
+      ]
+    },
+    {
+      "ID": 400018,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword _ Gun Specialization ( Early curved sword )"
+      ]
+    },
+    {
+      "ID": 400019,
+      "Entries": [
+        "Fallen Hunter _ Saw whip (large horizontal slash)"
+      ]
+    },
+    {
+      "ID": 400020,
+      "Entries": [
+        "Fallen Hunter _ Bomber Hammer (Initial placement: One-handed)"
+      ]
+    },
+    {
+      "ID": 400022,
+      "Entries": [
+        "Fallen Hunter _ Bomber Hammer (Initial placement: One-handed) _ Torch down state"
+      ]
+    },
+    {
+      "ID": 400025,
+      "Entries": [
+        "Fallen Hunter _ Ace Saw"
+      ]
+    },
+    {
+      "ID": 400026,
+      "Entries": [
+        "Fallen Hunter _ Saw Whip (Ace)"
+      ]
+    },
+    {
+      "ID": 400027,
+      "Entries": [
+        "Fallen Hunter _ Bomber (Ace)"
+      ]
+    },
+    {
+      "ID": 400028,
+      "Entries": [
+        "Fallen Hunter _ Bomber (Ace) _ Torch down state"
+      ]
+    },
+    {
+      "ID": 400099,
+      "Entries": [
+        "Fallen Hunter _ Saw Curved Sword Delay"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "The Executioner (Nightmare) _ Great Axe"
+      ]
+    },
+    {
+      "ID": 401001,
+      "Entries": [
+        "The Executioner (Nightmare) _ Great Axe"
+      ]
+    },
+    {
+      "ID": 401010,
+      "Entries": [
+        "The Executioner (Nightmare) _ cannon"
+      ]
+    },
+    {
+      "ID": 401011,
+      "Entries": [
+        "The Executioner (Nightmare) _ Cannon Delay"
+      ]
+    },
+    {
+      "ID": 402000,
+      "Entries": [
+        "Clock Tower Patient A_ Blood Transfusion Equipment"
+      ]
+    },
+    {
+      "ID": 402001,
+      "Entries": [
+        "Clock Tower Patient A_ Blood transfusion equipment for first-look performance"
+      ]
+    },
+    {
+      "ID": 402002,
+      "Entries": [
+        "Clock Tower Patient A_ Transfusion equipment responds to sound"
+      ]
+    },
+    {
+      "ID": 402003,
+      "Entries": [
+        "Clock Tower Patient A_ Transfusion equipment unresponsive to sound"
+      ]
+    },
+    {
+      "ID": 402005,
+      "Entries": [
+        "Clock Tower Patient A_ Blood transfusion equipment Supersensory"
+      ]
+    },
+    {
+      "ID": 402010,
+      "Entries": [
+        "Clock Tower Patient A_ Arm tumor"
+      ]
+    },
+    {
+      "ID": 402011,
+      "Entries": [
+        "Clock Tower Patient A_ Arm bump for surprise attacks"
+      ]
+    },
+    {
+      "ID": 402012,
+      "Entries": [
+        "Clock Tower Patient A_ Arm tumor reacts to sound"
+      ]
+    },
+    {
+      "ID": 402013,
+      "Entries": [
+        "Clock Tower Patient A_ Arm tumor unresponsive to sound"
+      ]
+    },
+    {
+      "ID": 402020,
+      "Entries": [
+        "Clock Tower Patient A_ Barehanded (passive)"
+      ]
+    },
+    {
+      "ID": 402021,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands Insensitive (passive)"
+      ]
+    },
+    {
+      "ID": 402022,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands Sound response"
+      ]
+    },
+    {
+      "ID": 402023,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands No reaction to sound"
+      ]
+    },
+    {
+      "ID": 402024,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands Aggressive A (Proximity)"
+      ]
+    },
+    {
+      "ID": 402025,
+      "Entries": [
+        "Clock Tower Patient A_ Unarmed Headless (Melee)"
+      ]
+    },
+    {
+      "ID": 402026,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands Running (charging)"
+      ]
+    },
+    {
+      "ID": 402027,
+      "Entries": [
+        "Clock Tower Patient A_ Bare hands Aggressive B (Charge)"
+      ]
+    },
+    {
+      "ID": 402028,
+      "Entries": [
+        "Clock Tower Patient A_ Unarmed Throwing"
+      ]
+    },
+    {
+      "ID": 402030,
+      "Entries": [
+        "Clock Tower Patient A (four legs) Good jumping ability"
+      ]
+    },
+    {
+      "ID": 402033,
+      "Entries": [
+        "Clock Tower Patient A (Four legs) Unresponsive to sound Doesn't fly much"
+      ]
+    },
+    {
+      "ID": 402035,
+      "Entries": [
+        "Clock Tower Patient A (Four-legged) Doesn't jump much"
+      ]
+    },
+    {
+      "ID": 402040,
+      "Entries": [
+        "Clock Tower Patient A General purpose Special standby"
+      ]
+    },
+    {
+      "ID": 402050,
+      "Entries": [
+        "Clock Tower Patient A_ Unarmed Moon Envoy Magic"
+      ]
+    },
+    {
+      "ID": 402100,
+      "Entries": [
+        "Clock Tower Patient A (Crawling)"
+      ]
+    },
+    {
+      "ID": 402101,
+      "Entries": [
+        "Clock Tower Patient A (Crawling) Insensitive"
+      ]
+    },
+    {
+      "ID": 402102,
+      "Entries": [
+        "Clock Tower Patient A (Crawling) Tentacles are used frequently"
+      ]
+    },
+    {
+      "ID": 402103,
+      "Entries": [
+        "Clock Tower Patient A (Crawling) For surprise attacks"
+      ]
+    },
+    {
+      "ID": 402200,
+      "Entries": [
+        "Clock Tower Patient A (Head only)"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "patient B_ Proximity"
+      ]
+    },
+    {
+      "ID": 403010,
+      "Entries": [
+        "patient B_ Passive"
+      ]
+    },
+    {
+      "ID": 403020,
+      "Entries": [
+        "patient B_ magic"
+      ]
+    },
+    {
+      "ID": 403030,
+      "Entries": [
+        "patient B_ Special Attack"
+      ]
+    },
+    {
+      "ID": 403100,
+      "Entries": [
+        "Meteorite launch dummy"
+      ]
+    },
+    {
+      "ID": 404000,
+      "Entries": [
+        "Fishman A_ harpoon"
+      ]
+    },
+    {
+      "ID": 404001,
+      "Entries": [
+        "Fishman A_ harpoon _ village 1 Crosscut"
+      ]
+    },
+    {
+      "ID": 404002,
+      "Entries": [
+        "Fishman A_ harpoon _ village 1 Main Street _ Mountain trail"
+      ]
+    },
+    {
+      "ID": 404003,
+      "Entries": [
+        "Fishman A_ harpoon _Lurking"
+      ]
+    },
+    {
+      "ID": 404004,
+      "Entries": [
+        "Fishman A_ harpoon _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404005,
+      "Entries": [
+        "Fishman A_ harpoon _ Throwing"
+      ]
+    },
+    {
+      "ID": 404006,
+      "Entries": [
+        "Fishman A_ harpoon _ Throwing _ Mid-distance"
+      ]
+    },
+    {
+      "ID": 404007,
+      "Entries": [
+        "Fishman A_ harpoon _ Throwing _ Mid-distance 2"
+      ]
+    },
+    {
+      "ID": 404008,
+      "Entries": [
+        "Fishman A_ harpoon _ Throwing _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404010,
+      "Entries": [
+        "Fishman A_ Rake Rake"
+      ]
+    },
+    {
+      "ID": 404011,
+      "Entries": [
+        "Fishman A_ Rake Rake _ Crosscut or Specializing in surprise attacks"
+      ]
+    },
+    {
+      "ID": 404012,
+      "Entries": [
+        "Fishman A_ Rake Rake _ indoor"
+      ]
+    },
+    {
+      "ID": 404013,
+      "Entries": [
+        "Fishman A_ Rake Rake _2F"
+      ]
+    },
+    {
+      "ID": 404014,
+      "Entries": [
+        "Fishman A_ Rake Rake _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404015,
+      "Entries": [
+        "Fishman A_ Rake Rake _ Mountain trail"
+      ]
+    },
+    {
+      "ID": 404016,
+      "Entries": [
+        "Fishman A_ Rake Rake _ Lurking"
+      ]
+    },
+    {
+      "ID": 404018,
+      "Entries": [
+        "Fishman A_ Rake Rake _ Top of the aquaculture tank _ Special standby"
+      ]
+    },
+    {
+      "ID": 404019,
+      "Entries": [
+        "Fishman A_ Rake Rake _Top of the aquaculture tank _ Special standby release"
+      ]
+    },
+    {
+      "ID": 404020,
+      "Entries": [
+        "Fishman A_ Rake blood removal"
+      ]
+    },
+    {
+      "ID": 404024,
+      "Entries": [
+        "Fishman A_ Rake blood removal _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404025,
+      "Entries": [
+        "Fishman A_ Rake blood removal _ Throwing"
+      ]
+    },
+    {
+      "ID": 404026,
+      "Entries": [
+        "Fishman A_ Rake blood removal _ Throwing _ village 1 indoor 2F"
+      ]
+    },
+    {
+      "ID": 404029,
+      "Entries": [
+        "Fishman A_ Rake blood removal _ Throwing _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404030,
+      "Entries": [
+        "Fishman A_ Knife"
+      ]
+    },
+    {
+      "ID": 404031,
+      "Entries": [
+        "Fishman A_ Knife _ Specializing in surprise throws"
+      ]
+    },
+    {
+      "ID": 404032,
+      "Entries": [
+        "Fishman A_ Knife _ Ceiling Mounted"
+      ]
+    },
+    {
+      "ID": 404034,
+      "Entries": [
+        "Fishman A_ Knife _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 404035,
+      "Entries": [
+        "Fishman A_ Knife _ village 2 Lower _ Specializing in surprise throws"
+      ]
+    },
+    {
+      "ID": 404040,
+      "Entries": [
+        "Fishman A_ harpoon _ Suneo"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "Fishman B_ village 2_1_PC When is on top"
+      ]
+    },
+    {
+      "ID": 405001,
+      "Entries": [
+        "Fishman B_ village 2_1_PC When you are below"
+      ]
+    },
+    {
+      "ID": 405002,
+      "Entries": [
+        "Fishman B_ village 2_2"
+      ]
+    },
+    {
+      "ID": 405003,
+      "Entries": [
+        "Fishman B_ Slug culture tank upper layer 1"
+      ]
+    },
+    {
+      "ID": 405004,
+      "Entries": [
+        "Fishman B_ Slug culture tank upper layer 2"
+      ]
+    },
+    {
+      "ID": 405005,
+      "Entries": [
+        "Fishman B_ Slug culture tank upper layer 3"
+      ]
+    },
+    {
+      "ID": 405006,
+      "Entries": [
+        "Fishman B_ Lower layer of slug culture tank 1"
+      ]
+    },
+    {
+      "ID": 405007,
+      "Entries": [
+        "Fishman B_ Lower layer of slug culture tank 2"
+      ]
+    },
+    {
+      "ID": 405010,
+      "Entries": [
+        "Fishman B_ Ghost Bullet"
+      ]
+    },
+    {
+      "ID": 405015,
+      "Entries": [
+        "Fishman B_ Ghost Bullet _ Don't shoot upwards"
+      ]
+    },
+    {
+      "ID": 405016,
+      "Entries": [
+        "Fishman B_ Ghost Bullet _ Don't shoot upwards _ First Encounter"
+      ]
+    },
+    {
+      "ID": 405020,
+      "Entries": [
+        "Fishman B_ Self-mummified monk _ well"
+      ]
+    },
+    {
+      "ID": 405021,
+      "Entries": [
+        "Fishman B_ Self-mummified monk _ Mountain trail"
+      ]
+    },
+    {
+      "ID": 405022,
+      "Entries": [
+        "Fishman B_ Self-mummified monk _ culvert"
+      ]
+    },
+    {
+      "ID": 405100,
+      "Entries": [
+        "Fishing Village Priest"
+      ]
+    },
+    {
+      "ID": 406000,
+      "Entries": [
+        "Fishman Large _ bare hands"
+      ]
+    },
+    {
+      "ID": 406001,
+      "Entries": [
+        "Fishman Large _ bare hands _ First Look"
+      ]
+    },
+    {
+      "ID": 406005,
+      "Entries": [
+        "Fishman Large _ bare hands _ strength"
+      ]
+    },
+    {
+      "ID": 406010,
+      "Entries": [
+        "Fishman Large _ Anchor"
+      ]
+    },
+    {
+      "ID": 406015,
+      "Entries": [
+        "Fishman Large _ Anchor _ strength"
+      ]
+    },
+    {
+      "ID": 407000,
+      "Entries": [
+        "Hermit crab _ Small (without shell)"
+      ]
+    },
+    {
+      "ID": 407001,
+      "Entries": [
+        "Hermit crab _ Small (without shell) _ The one who runs away"
+      ]
+    },
+    {
+      "ID": 407002,
+      "Entries": [
+        "Hermit crab _ Small (without shell) _ First encounter only"
+      ]
+    },
+    {
+      "ID": 407003,
+      "Entries": [
+        "Hermit crab _ Small (without shell) _ Bottom layer of the aquaculture tank 1"
+      ]
+    },
+    {
+      "ID": 407004,
+      "Entries": [
+        "Hermit crab _ Small (without shell) _ Bottom layer of the aquaculture tank 2"
+      ]
+    },
+    {
+      "ID": 407005,
+      "Entries": [
+        "Hermit crab _ Small (without shell) _ sucker punch"
+      ]
+    },
+    {
+      "ID": 407010,
+      "Entries": [
+        "Hermit crab _ Small (left-handed)"
+      ]
+    },
+    {
+      "ID": 407011,
+      "Entries": [
+        "Hermit crab _ Small (left-handed) _ Shelling"
+      ]
+    },
+    {
+      "ID": 407012,
+      "Entries": [
+        "Hermit crab _ Small (left-handed) _ Shelling _ Reaction in the area"
+      ]
+    },
+    {
+      "ID": 407020,
+      "Entries": [
+        "Hermit crab _ Small (right-handed)"
+      ]
+    },
+    {
+      "ID": 407021,
+      "Entries": [
+        "Hermit crab _ Small (right-handed) _ Shelling"
+      ]
+    },
+    {
+      "ID": 407022,
+      "Entries": [
+        "Hermit crab _ Small (right-handed) _ Shelling _ Reaction in the area"
+      ]
+    },
+    {
+      "ID": 408000,
+      "Entries": [
+        "Fishing dog"
+      ]
+    },
+    {
+      "ID": 408004,
+      "Entries": [
+        "Fishing dog _ village 2 Lower"
+      ]
+    },
+    {
+      "ID": 412000,
+      "Entries": [
+        "Clock Tower Patient A_ Blood Transfusion Equipment"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Parishioner Ω"
+      ]
+    },
+    {
+      "ID": 451000,
+      "Entries": [
+        "Ludwig"
+      ]
+    },
+    {
+      "ID": 452000,
+      "Entries": [
+        "Clock Tower Boss"
+      ]
+    },
+    {
+      "ID": 454000,
+      "Entries": [
+        "Final Boss"
+      ]
+    },
+    {
+      "ID": 454100,
+      "Entries": [
+        "Last Boss (Awakened)"
+      ]
+    },
+    {
+      "ID": 454300,
+      "Entries": [
+        "Last boss (funnel dummy)"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Parishioner"
+      ]
+    },
+    {
+      "ID": 500241,
+      "Entries": [
+        "Cathedral Quarter B Parishioner"
+      ]
+    },
+    {
+      "ID": 501000,
+      "Entries": [
+        "Flame Beast [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 501080,
+      "Entries": [
+        "Flame Beast _ For use in dungeons"
+      ]
+    },
+    {
+      "ID": 502000,
+      "Entries": [
+        "SP Saint Beast"
+      ]
+    },
+    {
+      "ID": 503000,
+      "Entries": [
+        "SP Snake ball"
+      ]
+    },
+    {
+      "ID": 503100,
+      "Entries": [
+        "SP Snake ball (weak point)"
+      ]
+    },
+    {
+      "ID": 503200,
+      "Entries": [
+        "SP Snake ball (single neck medium)"
+      ]
+    },
+    {
+      "ID": 503300,
+      "Entries": [
+        "SP Snake ball (single head large)"
+      ]
+    },
+    {
+      "ID": 504000,
+      "Entries": [
+        "Storm Beast [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 504010,
+      "Entries": [
+        "SP Storm Beast ( For ruins )"
+      ]
+    },
+    {
+      "ID": 504020,
+      "Entries": [
+        "SP Storm Beast ( Infected beggars )"
+      ]
+    },
+    {
+      "ID": 504030,
+      "Entries": [
+        "SP Storm Beast ( Infected beggars )"
+      ]
+    },
+    {
+      "ID": 504080,
+      "Entries": [
+        "Storm Beast _ For use in dungeons"
+      ]
+    },
+    {
+      "ID": 507000,
+      "Entries": [
+        "The failed evil god _ The person below"
+      ]
+    },
+    {
+      "ID": 507100,
+      "Entries": [
+        "The failed evil god _ Senior"
+      ]
+    },
+    {
+      "ID": 507200,
+      "Entries": [
+        "The failed evil god _ Bullet Officer"
+      ]
+    },
+    {
+      "ID": 508000,
+      "Entries": [
+        "Ruins Storm Beast (Bone)"
+      ]
+    },
+    {
+      "ID": 508090,
+      "Entries": [
+        "Storm Beast (Bone) BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 509000,
+      "Entries": [
+        "Founder Beast [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 509010,
+      "Entries": [
+        "Founder Beast (headless) BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 509011,
+      "Entries": [
+        "Founder Beast (headless) _ No vision BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 509080,
+      "Entries": [
+        "Founder Beast _ For use in dungeons"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Idiot Spider"
+      ]
+    },
+    {
+      "ID": 510080,
+      "Entries": [
+        "Idiot Spider _ For use in dungeons"
+      ]
+    },
+    {
+      "ID": 510090,
+      "Entries": [
+        "Idiot Spider BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Silver Beast [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 511100,
+      "Entries": [
+        "Silver Beast Dummy character for generating lightning For dungeons"
+      ]
+    },
+    {
+      "ID": 512000,
+      "Entries": [
+        "Hometown Evil God Fallen Angel ver"
+      ]
+    },
+    {
+      "ID": 512010,
+      "Entries": [
+        "Sacrifice Evil God Angel Eyeless ver"
+      ]
+    },
+    {
+      "ID": 512011,
+      "Entries": [
+        "Sacrifice Evil God Angel Eyes ver"
+      ]
+    },
+    {
+      "ID": 512090,
+      "Entries": [
+        "Evil God Fallen Angel ver [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 513000,
+      "Entries": [
+        "University Professor"
+      ]
+    },
+    {
+      "ID": 513100,
+      "Entries": [
+        "University Professor Bit"
+      ]
+    },
+    {
+      "ID": 514000,
+      "Entries": [
+        "Sacrifice 1Body size: Evil God (Large)"
+      ]
+    },
+    {
+      "ID": 514010,
+      "Entries": [
+        "Second sacrifice: Evil God (Large)"
+      ]
+    },
+    {
+      "ID": 514020,
+      "Entries": [
+        "Cathedral Quarter A Evil God (Large)"
+      ]
+    },
+    {
+      "ID": 515000,
+      "Entries": [
+        "Trap Lord Evil Eye"
+      ]
+    },
+    {
+      "ID": 516000,
+      "Entries": [
+        "Trap Lord Evil Eye (Crush)"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "SP Inheritor of Nightmares (Part 2 form)"
+      ]
+    },
+    {
+      "ID": 540001,
+      "Entries": [
+        "SP Inheritor of Nightmares (Part 2 Form) Cathedral Quarter C"
+      ]
+    },
+    {
+      "ID": 540090,
+      "Entries": [
+        "Inheritor of Nightmares (Part 2 form)【 BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 542000,
+      "Entries": [
+        "Inheritor of Nightmares (Final Form) BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 550000,
+      "Entries": [
+        "Lesser Demon"
+      ]
+    },
+    {
+      "ID": 550001,
+      "Entries": [
+        "Lesser Demon Defensive"
+      ]
+    },
+    {
+      "ID": 550002,
+      "Entries": [
+        "Lesser Demon Swamp"
+      ]
+    },
+    {
+      "ID": 550003,
+      "Entries": [
+        "Lesser Demon Defensive _ Path Movement 1"
+      ]
+    },
+    {
+      "ID": 550004,
+      "Entries": [
+        "Lesser Demon Dungeon A For Swamps"
+      ]
+    },
+    {
+      "ID": 550100,
+      "Entries": [
+        "Lesser Demon's Left Neck"
+      ]
+    },
+    {
+      "ID": 550101,
+      "Entries": [
+        "Lesser Demon's Left Head"
+      ]
+    },
+    {
+      "ID": 550102,
+      "Entries": [
+        "Lesser Demon's Left Head (Swamp)"
+      ]
+    },
+    {
+      "ID": 551000,
+      "Entries": [
+        "Lesser Demon ( Death and Darkness )"
+      ]
+    },
+    {
+      "ID": 551090,
+      "Entries": [
+        "Lesser Demon ( Death and Darkness ) [ BOSS 】 Dungeon"
+      ]
+    },
+    {
+      "ID": 552000,
+      "Entries": [
+        "Lesser Demon Variation"
+      ]
+    },
+    {
+      "ID": 552100,
+      "Entries": [
+        "Lesser Demon Variation Left Neck"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior [Normal]"
+      ]
+    },
+    {
+      "ID": 700001,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior Religious District [Normal]"
+      ]
+    },
+    {
+      "ID": 700002,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior Religious Town 【 GO 】"
+      ]
+    },
+    {
+      "ID": 700003,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior Religious Town 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 700004,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior 【 GO 】"
+      ]
+    },
+    {
+      "ID": 700005,
+      "Entries": [
+        "SP Proto Avatar A Basic Wolf Warrior 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 700010,
+      "Entries": [
+        "SP Proto Avatar A Spear Chik Wolf Warrior [Normal]"
+      ]
+    },
+    {
+      "ID": 700011,
+      "Entries": [
+        "SP Proto Avatar A Spear Chik Wolf Warrior 【 GO 】"
+      ]
+    },
+    {
+      "ID": 700012,
+      "Entries": [
+        "SPProto Avatar A Spear Chik Wolf Warrior 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 700020,
+      "Entries": [
+        "SP Proto Avatar A Healing Wolf Warrior [Normal]"
+      ]
+    },
+    {
+      "ID": 700021,
+      "Entries": [
+        "SP Proto Avatar A Recovery Wolf Warrior 【 GO 】"
+      ]
+    },
+    {
+      "ID": 700022,
+      "Entries": [
+        "SP Proto Avatar A Recovery Wolf Warrior 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 700030,
+      "Entries": [
+        "SP Proto Avatar A Magic Wolf Warrior [Normal]"
+      ]
+    },
+    {
+      "ID": 700031,
+      "Entries": [
+        "SP Proto Avatar A Magic Wolf Warrior 【 GO 】"
+      ]
+    },
+    {
+      "ID": 700032,
+      "Entries": [
+        "SP Proto Avatar A Magic Wolf Warrior 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King [Normal]"
+      ]
+    },
+    {
+      "ID": 701001,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King 【 GO 】"
+      ]
+    },
+    {
+      "ID": 701002,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 701003,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King Religious District [Normal]"
+      ]
+    },
+    {
+      "ID": 701004,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King Religious Town 【 GO 】"
+      ]
+    },
+    {
+      "ID": 701005,
+      "Entries": [
+        "SP Proto Avatar B Arrogant Pig King Religious Town 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 701010,
+      "Entries": [
+        "SP Proto Avatar B Berserker Pig [Normal]"
+      ]
+    },
+    {
+      "ID": 701011,
+      "Entries": [
+        "SP Proto Avatar B Berserker Pig 【 GO 】"
+      ]
+    },
+    {
+      "ID": 701012,
+      "Entries": [
+        "SP Proto Avatar B Berserker Pig 【 STOP 】"
+      ]
+    },
+    {
+      "ID": 701020,
+      "Entries": [
+        "SP Avatar B enemy"
+      ]
+    },
+    {
+      "ID": 701070,
+      "Entries": [
+        "Forest Avatar B enemy"
+      ]
+    },
+    {
+      "ID": 701071,
+      "Entries": [
+        "Forest Avatar B Enemy Sleeping"
+      ]
+    },
+    {
+      "ID": 701072,
+      "Entries": [
+        "Forest Avatar B The enemy is about to wake up"
+      ]
+    },
+    {
+      "ID": 701073,
+      "Entries": [
+        "Forest Avatar B Enemy Smell 10m"
+      ]
+    },
+    {
+      "ID": 710000,
+      "Entries": [
+        "Ruins Ruins Gatling"
+      ]
+    },
+    {
+      "ID": 750000,
+      "Entries": [
+        "SP Enemy Avatar"
+      ]
+    },
+    {
+      "ID": 750080,
+      "Entries": [
+        "Enemy Avatars for Dungeons"
+      ]
+    },
+    {
+      "ID": 750081,
+      "Entries": [
+        "Enemy Avatar for Dungeon Sleeping"
+      ]
+    },
+    {
+      "ID": 750082,
+      "Entries": [
+        "Enemy avatar for dungeons"
+      ]
+    },
+    {
+      "ID": 750090,
+      "Entries": [
+        "Enemy Avatar [ BOSS 】 For dungeons"
+      ]
+    },
+    {
+      "ID": 802000,
+      "Entries": [
+        "SP Princess Slug"
+      ]
+    },
+    {
+      "ID": 803000,
+      "Entries": [
+        "Doll Heroine"
+      ]
+    },
+    {
+      "ID": 805000,
+      "Entries": [
+        "Base Elderly (Awakened)"
+      ]
+    },
+    {
+      "ID": 807000,
+      "Entries": [
+        "For testing NPC I use it in"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Messenger"
+      ]
+    },
+    {
+      "ID": 901010,
+      "Entries": [
+        "Cannon firing judgment dummy character"
+      ]
+    },
+    {
+      "ID": 901011,
+      "Entries": [
+        "Cannon firing judgment dummy character (step room A For"
+      ]
+    },
+    {
+      "ID": 901012,
+      "Entries": [
+        "Cannon firing judgment dummy character (for forest)"
+      ]
+    },
+    {
+      "ID": 901900,
+      "Entries": [
+        "Cannon firing dummy character"
+      ]
+    },
+    {
+      "ID": 903000,
+      "Entries": [
+        "Group Patrol Dummy Leader"
+      ]
+    },
+    {
+      "ID": 903009,
+      "Entries": [
+        "Forest Glowing Butterfly Test ( Moving type )"
+      ]
+    },
+    {
+      "ID": 990299,
+      "Entries": [
+        "Radar Bullet Character"
+      ]
+    }
+  ]
+}

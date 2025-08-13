@@ -1,0 +1,545 @@
+{
+  "Name": "eventparam_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "the gate that opens up with a lever"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Hanging Poison Vase 01_Attach"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Hanging Poison Pot 01_Operation"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "OBJ attachment of a huge windmill"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Lifting machine- Molten iron castle"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "On elevator lever"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Lower elevator lever"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Elevator_Connection replacement"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Connection _Connection flag OFF"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Iron bars that can be opened and closed with levers"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Hanging Poison Vase 02_Attached"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Hanging Poison Pot 02_Operation"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "【Insect key】Hidden door (1) for start-up"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "【Insect Key】Hidden Door"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "【Insect Key】Hidden Door (1)_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "【Insect key】The fountain of recovery_poisonous_for start-up"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "【Insect Key】The Fountain of Recovery_Poisonous"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Boss: Shabazahat_ Combat"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Worker semanating in the jar 1"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Freed dead workers in a jar 2"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Freed dead workers in a jar 3"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "Worker semanating in the jar 4"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Boss: Naga_ Combat"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Navi mesh change of hidden door 3"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Disable poison fog damage for enemy characters"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Tree wall 1 that the enemy destroys"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Tree wall 2 destroyed by the enemy"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Floor switch trampling arrow_before iron bar"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Floor switch trampling arrow_crossroads"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Navi mesh change of destructive scaffold"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Hunting Forest MAP Loading Destruction"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "One-way door (back road)"
+      ]
+    },
+    {
+      "ID": 31100,
+      "Entries": [
+        "Wing condition management of huge windmills"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Suspended ceiling: Ceiling"
+      ]
+    },
+    {
+      "ID": 42000,
+      "Entries": [
+        "Poison water drop"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Reclaim edi-fire 01_ cave in front of the village mining square"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Play Seed Fire 02_Bosjavaza hat after, tower lower"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Reclaimed Spark 03_Entrance Poison Reservoir Cave"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Reproduced seed fire 04_ after a huge windmill, the middle belly of the tower"
+      ]
+    },
+    {
+      "ID": 84000,
+      "Entries": [
+        "Reproduction seed fire 05_boss room front hidden door tip, tower upper layer"
+      ]
+    },
+    {
+      "ID": 111090,
+      "Entries": [
+        "NPC: Ladder Shop (Valley of The Reservoir)"
+      ]
+    },
+    {
+      "ID": 111091,
+      "Entries": [
+        "NPC: Ladder Shop (Valley of The Reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111092,
+      "Entries": [
+        "OBJ: Ladder Shop (Valley of The Reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111093,
+      "Entries": [
+        "OBJ: Ladder Shop (Valley of The Reservoir): Key Guide"
+      ]
+    },
+    {
+      "ID": 111094,
+      "Entries": [
+        "OBJ: Ladder Shop (Valley of The Reservoir): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111095,
+      "Entries": [
+        "OBJ: Ladder Shop (Valley of The Reservoir): Ladder"
+      ]
+    },
+    {
+      "ID": 111096,
+      "Entries": [
+        "OBJ: Ladder Shop (Valley of The Reservoir): Ladder Poly Play"
+      ]
+    },
+    {
+      "ID": 111200,
+      "Entries": [
+        "NPC: Dwarf (Valley of the Reservoir)"
+      ]
+    },
+    {
+      "ID": 111201,
+      "Entries": [
+        "NPC: Dwarf (Valley of the Reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111202,
+      "Entries": [
+        "OBJ: Dwarf (Valley of The Reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111203,
+      "Entries": [
+        "OBJ: Dwarf (Valley of The Reservoir): Key Guide"
+      ]
+    },
+    {
+      "ID": 111204,
+      "Entries": [
+        "OBJ: Dwarf (Valley of the Reservoir): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111205,
+      "Entries": [
+        "OBJ: Dwarf (Valley of the Reservoir): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111250,
+      "Entries": [
+        "NPC: Patch (Valley of The Reservoir)"
+      ]
+    },
+    {
+      "ID": 111251,
+      "Entries": [
+        "NPC: Patch (Valley of The Reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111252,
+      "Entries": [
+        "OBJ: Patch (Valley of The Reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111253,
+      "Entries": [
+        "OBJ: Patch (Valley of The Reservoir): Key Guide"
+      ]
+    },
+    {
+      "ID": 111254,
+      "Entries": [
+        "OBJ: Patch (Valley of the Reservoir): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111255,
+      "Entries": [
+        "OBJ: Patch (Valley of The Reservoir): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111256,
+      "Entries": [
+        "OBJ: Patch (Valley of The Reservoir): Treasure Acquisition Judgment"
+      ]
+    },
+    {
+      "ID": 111270,
+      "Entries": [
+        "NPC: Female Knight (Valley of The Reservoir)"
+      ]
+    },
+    {
+      "ID": 111271,
+      "Entries": [
+        "NPC: Female Knight (Valley of The Reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111272,
+      "Entries": [
+        "OBJ: Female Knight (Valley of The Reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111273,
+      "Entries": [
+        "OBJ: Female Knight (Valley of The Reservoir): Key Guide"
+      ]
+    },
+    {
+      "ID": 111274,
+      "Entries": [
+        "OBJ: Female Knight (Valley of The Reservoir): Death Judgment"
+      ]
+    },
+    {
+      "ID": 111275,
+      "Entries": [
+        "OBJ: Female Knight (Valley of The Reservoir): Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111340,
+      "Entries": [
+        "NPC: Material shop (Valley of the reservoir)"
+      ]
+    },
+    {
+      "ID": 111341,
+      "Entries": [
+        "NPC: Material shop (Valley of the reservoir): Ghost"
+      ]
+    },
+    {
+      "ID": 111342,
+      "Entries": [
+        "OBJ: Material shop (Valley of the reservoir): Tomb"
+      ]
+    },
+    {
+      "ID": 111343,
+      "Entries": [
+        "OBJ: Material shop (Valley of the reservoir): Key guide"
+      ]
+    },
+    {
+      "ID": 111344,
+      "Entries": [
+        "OBJ: Material shop (valley of the reservoir): death judgment"
+      ]
+    },
+    {
+      "ID": 112010,
+      "Entries": [
+        "NPC: Altar of the Sun (Pledge Event)"
+      ]
+    },
+    {
+      "ID": 112011,
+      "Entries": [
+        "OBJ: Altar of the Sun (Pledge Event)"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        "NPC for Multi: Swordsman (Male): White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120000,
+      "Entries": [
+        "Trophy: Shine Pledge"
+      ]
+    },
+    {
+      "ID": 120130,
+      "Entries": [
+        "Trophy: Akertilla"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4004000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

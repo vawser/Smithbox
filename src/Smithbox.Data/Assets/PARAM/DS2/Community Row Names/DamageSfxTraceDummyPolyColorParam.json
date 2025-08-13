@@ -1,0 +1,35 @@
+{
+  "Name": "DamageSfxTraceDummyPolyColorParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Without -- なし"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Stabbing Test -- 刺剣テスト"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Two-handed sword test -- 両手剣テスト"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Spear Test -- 槍テスト"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Two-handed ax test -- 両手長斧テスト"
+      ]
+    }
+  ]
+}

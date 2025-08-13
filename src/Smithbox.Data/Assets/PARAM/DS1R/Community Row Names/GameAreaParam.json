@@ -1,0 +1,287 @@
+{
+  "Name": "GameAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "テスト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "テスト1"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "石柱_なりそこない"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "王城1_ファランクス（本体）"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "王城2_王の盾"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "王城3_王の剣"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "王城4_レンドル王"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "古砦1_審判者"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "古砦2_嵐の戦士"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "古砦3_嵐の獣"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "牢城1_カミサマ"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "牢城2_キメラ"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "牢城3_召喚ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "不浄1_蛭デーモン"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "不浄2_蠅たかり"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "不浄3_聖女リーブラ"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "坑道1_大蜘蛛"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "坑道2_炎怪人"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "坑道3_ドラゴンデーモン(坑道)"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "チュートリアル_デブデーモン"
+      ]
+    },
+    {
+      "ID": 1000800,
+      "Entries": [
+        "Gaping Dragon"
+      ]
+    },
+    {
+      "ID": 1010700,
+      "Entries": [
+        "Taurus Demon"
+      ]
+    },
+    {
+      "ID": 1010750,
+      "Entries": [
+        "Capra Demon"
+      ]
+    },
+    {
+      "ID": 1010800,
+      "Entries": [
+        "Bell Gargoyles"
+      ]
+    },
+    {
+      "ID": 1100160,
+      "Entries": [
+        "Crossbreed Priscilla"
+      ]
+    },
+    {
+      "ID": 1200800,
+      "Entries": [
+        "Sif, the Great Grey Wolf"
+      ]
+    },
+    {
+      "ID": 1200801,
+      "Entries": [
+        "Moonlight Butterfly"
+      ]
+    },
+    {
+      "ID": 1210401,
+      "Entries": [
+        "Black Dragon Kalameet"
+      ]
+    },
+    {
+      "ID": 1210800,
+      "Entries": [
+        "Sanctuary Guardian"
+      ]
+    },
+    {
+      "ID": 1210820,
+      "Entries": [
+        "Knight Artorias"
+      ]
+    },
+    {
+      "ID": 1210840,
+      "Entries": [
+        "Manus, Father of the Abyss"
+      ]
+    },
+    {
+      "ID": 1300800,
+      "Entries": [
+        "Pinwheel"
+      ]
+    },
+    {
+      "ID": 1310800,
+      "Entries": [
+        "Gravelord Nito"
+      ]
+    },
+    {
+      "ID": 1400800,
+      "Entries": [
+        "Chaos Witch Quelaag"
+      ]
+    },
+    {
+      "ID": 1410400,
+      "Entries": [
+        "Demon Firesage"
+      ]
+    },
+    {
+      "ID": 1410600,
+      "Entries": [
+        "Ceaseless Discharge"
+      ]
+    },
+    {
+      "ID": 1410700,
+      "Entries": [
+        "Centipede Demon"
+      ]
+    },
+    {
+      "ID": 1410800,
+      "Entries": [
+        "Bed of Chaos"
+      ]
+    },
+    {
+      "ID": 1500800,
+      "Entries": [
+        "Iron Golem"
+      ]
+    },
+    {
+      "ID": 1510650,
+      "Entries": [
+        "Dark Sun Gwyndolin"
+      ]
+    },
+    {
+      "ID": 1510801,
+      "Entries": [
+        "Dragon Slayer Ornstein"
+      ]
+    },
+    {
+      "ID": 1510811,
+      "Entries": [
+        "Executioner Smough"
+      ]
+    },
+    {
+      "ID": 1600800,
+      "Entries": [
+        "Four Kings"
+      ]
+    },
+    {
+      "ID": 1700800,
+      "Entries": [
+        "Seath the Scaleless"
+      ]
+    },
+    {
+      "ID": 1800800,
+      "Entries": [
+        "Gwyn, Lord of Cinder"
+      ]
+    },
+    {
+      "ID": 1810800,
+      "Entries": [
+        "Asylum Demon"
+      ]
+    },
+    {
+      "ID": 1810810,
+      "Entries": [
+        "Stray Demon"
+      ]
+    }
+  ]
+}

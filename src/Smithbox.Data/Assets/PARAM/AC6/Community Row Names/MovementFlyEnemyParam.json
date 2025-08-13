@@ -1,0 +1,65 @@
+{
+  "Name": "MovementFlyEnemyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 5900,
+      "Entries": [
+        "Stiglo"
+      ]
+    },
+    {
+      "ID": 5930,
+      "Entries": [
+        "stealth battleship"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "flying enemy"
+      ]
+    },
+    {
+      "ID": 9031,
+      "Entries": [
+        "Flying enemy (Nakanishi test)"
+      ]
+    },
+    {
+      "ID": 9032,
+      "Entries": [
+        "Flying enemy (swarm test)"
+      ]
+    },
+    {
+      "ID": 9039,
+      "Entries": [
+        "Flying enemy (for dummy reader test)"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "bomber"
+      ]
+    },
+    {
+      "ID": 850010,
+      "Entries": [
+        "bomber patrol"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "Strong enemy (fat)"
+      ]
+    }
+  ]
+}

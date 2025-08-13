@@ -1,0 +1,762 @@
+{
+  "Name": "NpcMaterialParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "none"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Default Grey",
+        "Default Grey",
+        "Default Grey",
+        "Default Grey",
+        "Default Grey",
+        "Default Grey",
+        "Default Grey"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Default Green",
+        "Default Green",
+        "Default Green",
+        "Default Green",
+        "Default Green",
+        "Default Green",
+        "Default Green"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Default Yellow",
+        "Default Yellow",
+        "Default Yellow",
+        "Default Yellow",
+        "Default Yellow",
+        "Default Yellow",
+        "Default Yellow"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue",
+        "Default Light Grey-Blue"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Default Grey-Blue",
+        "Default Grey-Blue",
+        "Default Grey-Blue",
+        "Default Grey-Blue",
+        "Default Grey-Blue",
+        "Default Grey-Blue",
+        "Default Grey-Blue"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red",
+        "Default Red"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "BAWS Guard MT",
+        "BAWS Guard MT",
+        "BAWS Guard MT",
+        "BAWS Guard MT"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "BAWS Bipedal MT (Arquebus) Peeling_Int",
+        "BAWS Bipedal MT (Arquebus) Peeling_Int",
+        "BAWS Bipedal MT (Arquebus) Peeling_Int",
+        "BAWS Bipedal MT (Arquebus) Peeling_Int",
+        "BAWS Bipedal MT (Arquebus) Peeling_Int",
+        "BAWS Bipedal MT (Arquebus) Peeling_Int"
+      ]
+    },
+    {
+      "ID": 30201010,
+      "Entries": [
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye",
+        "BAWS Bipedal MT (Arquebus Combat Log) Eye"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "BAWS Bipedal MT (Balam)",
+        "BAWS Bipedal MT (Balam)",
+        "BAWS Bipedal MT (Balam)",
+        "BAWS Bipedal MT (Balam)",
+        "BAWS Bipedal MT (Balam)",
+        "BAWS Bipedal MT (Balam)"
+      ]
+    },
+    {
+      "ID": 30202010,
+      "Entries": [
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)",
+        "BAWS Bipedal MT (Balam Combat Log)"
+      ]
+    },
+    {
+      "ID": 30203000,
+      "Entries": [
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)",
+        "BAWS Bipedal MT (RLF)"
+      ]
+    },
+    {
+      "ID": 30203010,
+      "Entries": [
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)",
+        "BAWS Bipedal MT (RLF Combat Log)"
+      ]
+    },
+    {
+      "ID": 30206000,
+      "Entries": [
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)",
+        "BAWS Bipedal MT (RaD)"
+      ]
+    },
+    {
+      "ID": 30206010,
+      "Entries": [
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)",
+        "BAWS Bipedal MT (RaD Combat Log)"
+      ]
+    },
+    {
+      "ID": 30207000,
+      "Entries": [
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)",
+        "BAWS Bipedal MT (Coyotes)"
+      ]
+    },
+    {
+      "ID": 30207010,
+      "Entries": [
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)",
+        "BAWS Bipedal MT (Coyotes Combat Log)"
+      ]
+    },
+    {
+      "ID": 30209998,
+      "Entries": [
+        "Rust test_nakama_rust"
+      ]
+    },
+    {
+      "ID": 30209999,
+      "Entries": [
+        "Test_nakama_BASE",
+        "Test_nakama_SUB",
+        "Test_nakama_SUPPORT_1",
+        "Test_nakama_SUPPORT_2",
+        "Test_nakama_JOINT",
+        "Test_nakama_EYE",
+        "Test_nakama_rust"
+      ]
+    },
+    {
+      "ID": 30504000,
+      "Entries": [
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)",
+        "PCA Subject Guard MT (PCA)"
+      ]
+    },
+    {
+      "ID": 30505000,
+      "Entries": [
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)",
+        "PCA Subject Guard MT (Arquebus)"
+      ]
+    },
+    {
+      "ID": 31000010,
+      "Entries": [
+        "Xylem Flying MT"
+      ]
+    },
+    {
+      "ID": 32004000,
+      "Entries": [
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)",
+        "PCA SP EKDROMOI (PCA)"
+      ]
+    },
+    {
+      "ID": 32504000,
+      "Entries": [
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)",
+        "LIGHT CAVALRY (LC) (PCA)"
+      ]
+    },
+    {
+      "ID": 32505000,
+      "Entries": [
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)",
+        "LIGHT CAVALRY (LC) (Arquebus)"
+      ]
+    },
+    {
+      "ID": 32604000,
+      "Entries": [
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)",
+        "HEAVY CAVALRY (HC) (PCA)"
+      ]
+    },
+    {
+      "ID": 32605000,
+      "Entries": [
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)",
+        "HEAVY CAVALRY (HC) (Arquebus)"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "BAWS Tetrapod MT (Arquebus)",
+        "BAWS Tetrapod MT (Arquebus)",
+        "BAWS Tetrapod MT (Arquebus)",
+        "BAWS Tetrapod MT (Arquebus)",
+        "BAWS Tetrapod MT (Arquebus)",
+        "BAWS Tetrapod MT (Arquebus)"
+      ]
+    },
+    {
+      "ID": 34001010,
+      "Entries": [
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)",
+        "BAWS Tetrapod MT (Arquebus Combat Log)"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "BAWS Tetrapod MT (Balam)",
+        "BAWS Tetrapod MT (Balam)",
+        "BAWS Tetrapod MT (Balam)",
+        "BAWS Tetrapod MT (Balam)",
+        "BAWS Tetrapod MT (Balam)",
+        "BAWS Tetrapod MT (Balam)"
+      ]
+    },
+    {
+      "ID": 34002010,
+      "Entries": [
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)",
+        "BAWS Tetrapod MT (Balam Combat Log)"
+      ]
+    },
+    {
+      "ID": 34003000,
+      "Entries": [
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)",
+        "BAWS Tetrapod MT (RLF)"
+      ]
+    },
+    {
+      "ID": 34003010,
+      "Entries": [
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)",
+        "BAWS Tetrapod MT (RLF Combat Log)"
+      ]
+    },
+    {
+      "ID": 34006000,
+      "Entries": [
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)",
+        "BAWS Tetrapod MT (RaD)"
+      ]
+    },
+    {
+      "ID": 34006010,
+      "Entries": [
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)",
+        "BAWS Tetrapod MT (RaD Combat Log)"
+      ]
+    },
+    {
+      "ID": 34007000,
+      "Entries": [
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)",
+        "BAWS Tetrapod MT (Coyotes)"
+      ]
+    },
+    {
+      "ID": 34007010,
+      "Entries": [
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)",
+        "BAWS Tetrapod MT (Coyotes Combat Log)"
+      ]
+    },
+    {
+      "ID": 35000010,
+      "Entries": [
+        "Institute MT (Combat Log)"
+      ]
+    },
+    {
+      "ID": 36006000,
+      "Entries": [
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)",
+        "RaD Spider MT (RaD)"
+      ]
+    },
+    {
+      "ID": 36007000,
+      "Entries": [
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)",
+        "RaD Spider MT (Coyotes)"
+      ]
+    },
+    {
+      "ID": 37000001,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000010,
+      "Entries": [
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37000011,
+      "Entries": [
+        "Deleteter_No right arm emissive by default (green mono eye)_Right arm",
+        "Deleter_No right arm emissive by default (green monoeye)_Monoeye"
+      ]
+    },
+    {
+      "ID": 37003000,
+      "Entries": [
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37003001,
+      "Entries": [
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37003010,
+      "Entries": [
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 37003011,
+      "Entries": [
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT",
+        "PCA Drone MT"
+      ]
+    },
+    {
+      "ID": 40004000,
+      "Entries": [
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)",
+        "PCA SP CATAPHRACT (PCA)"
+      ]
+    },
+    {
+      "ID": 41004000,
+      "Entries": [
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)",
+        "BALTEUS (PCA)"
+      ]
+    },
+    {
+      "ID": 41005000,
+      "Entries": [
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)",
+        "BALTEUS (Arquebus)"
+      ]
+    },
+    {
+      "ID": 41506000,
+      "Entries": [
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)",
+        "TOYBOX MT (RaD)"
+      ]
+    },
+    {
+      "ID": 41507000,
+      "Entries": [
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)",
+        "TOYBOX MT (Coyotes)"
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter",
+        "Transport Helicopter"
+      ]
+    },
+    {
+      "ID": 60504000,
+      "Entries": [
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)",
+        "PCA Heavy Combat Helicopter (PCA)"
+      ]
+    },
+    {
+      "ID": 61009000,
+      "Entries": [
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)",
+        "SEA SPIDER (ALLMIND)"
+      ]
+    },
+    {
+      "ID": 72300100,
+      "Entries": [
+        "Grenade turret_snow difference_entire"
+      ]
+    },
+    {
+      "ID": 72400100,
+      "Entries": [
+        "Bazooka Battery_Snow Difference_Overall"
+      ]
+    },
+    {
+      "ID": 72500100,
+      "Entries": [
+        "Gatling gun battery_snow difference_whole"
+      ]
+    },
+    {
+      "ID": 72600100,
+      "Entries": [
+        "Twin missile battery_Snow difference_Overall"
+      ]
+    },
+    {
+      "ID": 72610100,
+      "Entries": [
+        "Vertical missile battery_snow difference_entire"
+      ]
+    },
+    {
+      "ID": 72700100,
+      "Entries": [
+        "Sniper battery_snow difference_entire"
+      ]
+    },
+    {
+      "ID": 73000100,
+      "Entries": [
+        "Speaker turret_snow difference_whole"
+      ]
+    },
+    {
+      "ID": 74010100,
+      "Entries": [
+        "Landing ship main gun_Snow difference_Overall"
+      ]
+    },
+    {
+      "ID": 74020100,
+      "Entries": [
+        "Landing ship secondary gun_Snow difference_Overall"
+      ]
+    }
+  ]
+}

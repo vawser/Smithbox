@@ -1,0 +1,3395 @@
+{
+  "Name": "FaceParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "0: Test Male\r"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "1: Test Male\r"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "2: Test Male\r"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "3: Test Male\r"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "4: Test Female\r"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "5: Test Male\r"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "6: Test Female\r"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "7: Test Male\r"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "8: Test Female\r"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "9: Test Male\r"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10: Test Silly\r"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "11: Test Silly\r"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "12: Test Silly\r"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "13: Test Silly\r"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "14: Test Male\r"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "15: Network Test Male\r"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "16: Network Test Female\r"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "17: Network Test Male\r"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "18: Network Test Female\r"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "19: Network Test Male\r"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "20: Network Test Female\r"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "21: Network Test Male\r"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "22: Network Test Female\r"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "23: Network Test Male\r"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "24: Network Test Female\r"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "25: ???\r"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "26: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "27: Truth-Seeker Male\r"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "28: Aristocrat Male\r"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "29: Loner Male\r"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "30: Northerner Male\r"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "31: Seafarer Male\r"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "32: Reedlander Male\r"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "33: Draconian Male\r"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "34: Nightfolk Male\r"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "35: Numen Male\r"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "36: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "37: Truth-Seeker Female\r"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "38: Aristocrat Female\r"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "39: Loner Female\r"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "40: Northerner Female\r"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "41: Seafarer Female\r"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "42: Reedlander Female\r"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "43: Draconian Female\r"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "44: Nightfolk Female\r"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "45: Numen Female\r"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "46: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "47: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "48: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "49: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "50: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "51: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "52: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "53: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        "54: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "55: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "56: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "57: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "58: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        "59: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        "60: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "61: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3116,
+      "Entries": [
+        "62: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "63: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 3118,
+      "Entries": [
+        "64: Warrior Male\r"
+      ]
+    },
+    {
+      "ID": 3119,
+      "Entries": [
+        "65: Warrior Female\r"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "66: Eyes\r"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "67: Prototype Scruffy Man?\r"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "68: Prototype Seluvis?\r"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "69: Prototype Irina?\r"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "70: Prototype Male?\r"
+      ]
+    },
+    {
+      "ID": 10004,
+      "Entries": [
+        "71: Prototype Old Man Istvan?\r"
+      ]
+    },
+    {
+      "ID": 10005,
+      "Entries": [
+        "72: Prototype Tanith?\r"
+      ]
+    },
+    {
+      "ID": 10006,
+      "Entries": [
+        "73: Prototype Tanith?\r"
+      ]
+    },
+    {
+      "ID": 10007,
+      "Entries": [
+        "74: Prototype Red-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10008,
+      "Entries": [
+        "75: Prototype D?\r"
+      ]
+    },
+    {
+      "ID": 10009,
+      "Entries": [
+        "76: Prototype Dung Eater?\r"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "77: Prototype Brown-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10011,
+      "Entries": [
+        "78: Prototype Millicent?\r"
+      ]
+    },
+    {
+      "ID": 10012,
+      "Entries": [
+        "79: Prototype Mustache Male?\r"
+      ]
+    },
+    {
+      "ID": 10013,
+      "Entries": [
+        "80: Prototype Male?\r"
+      ]
+    },
+    {
+      "ID": 10014,
+      "Entries": [
+        "81: Prototype Rot Sister?\r"
+      ]
+    },
+    {
+      "ID": 10015,
+      "Entries": [
+        "82: Prototype Brown-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10016,
+      "Entries": [
+        "83: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10017,
+      "Entries": [
+        "84: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10018,
+      "Entries": [
+        "85: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10019,
+      "Entries": [
+        "86: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "87: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10021,
+      "Entries": [
+        "88: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10022,
+      "Entries": [
+        "89: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10023,
+      "Entries": [
+        "90: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10024,
+      "Entries": [
+        "91: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10025,
+      "Entries": [
+        "92: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10026,
+      "Entries": [
+        "93: Prototype Gideon?\r"
+      ]
+    },
+    {
+      "ID": 10027,
+      "Entries": [
+        "94: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10028,
+      "Entries": [
+        "95: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10029,
+      "Entries": [
+        "96: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "97: Prototype Grey-skinned Male?\r"
+      ]
+    },
+    {
+      "ID": 10031,
+      "Entries": [
+        "98: Prototype Grey-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10032,
+      "Entries": [
+        "99: Prototype Grey-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10033,
+      "Entries": [
+        "100: Prototype D?\r"
+      ]
+    },
+    {
+      "ID": 10034,
+      "Entries": [
+        "101: Prototype D with facial hair?\r"
+      ]
+    },
+    {
+      "ID": 10035,
+      "Entries": [
+        "102: Prototype Old Man Istvan?\r"
+      ]
+    },
+    {
+      "ID": 10036,
+      "Entries": [
+        "103: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10037,
+      "Entries": [
+        "104: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10038,
+      "Entries": [
+        "105: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10039,
+      "Entries": [
+        "106: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "107: Prototype Red-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10041,
+      "Entries": [
+        "108: Prototype Bald Man?\r"
+      ]
+    },
+    {
+      "ID": 10042,
+      "Entries": [
+        "109: Prototype Red-haired Butcher?\r"
+      ]
+    },
+    {
+      "ID": 10043,
+      "Entries": [
+        "110: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10044,
+      "Entries": [
+        "111: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10045,
+      "Entries": [
+        "112: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10046,
+      "Entries": [
+        "113: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10047,
+      "Entries": [
+        "114: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10048,
+      "Entries": [
+        "115: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10049,
+      "Entries": [
+        "116: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10050,
+      "Entries": [
+        "117: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10051,
+      "Entries": [
+        "118: Prototype Okina's Disciple?\r"
+      ]
+    },
+    {
+      "ID": 10052,
+      "Entries": [
+        "119: Prototype Vyke?\r"
+      ]
+    },
+    {
+      "ID": 10053,
+      "Entries": [
+        "120: Prototype Bearded Male?\r"
+      ]
+    },
+    {
+      "ID": 10054,
+      "Entries": [
+        "121: Prototype Okina?\r"
+      ]
+    },
+    {
+      "ID": 10055,
+      "Entries": [
+        "122: Prototype Pale Female?\r"
+      ]
+    },
+    {
+      "ID": 10056,
+      "Entries": [
+        "123: Prototype Blue-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10057,
+      "Entries": [
+        "124: Prototype Black-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10058,
+      "Entries": [
+        "125: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10059,
+      "Entries": [
+        "126: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10060,
+      "Entries": [
+        "127: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10061,
+      "Entries": [
+        "128: Prototype Millicent\r"
+      ]
+    },
+    {
+      "ID": 10062,
+      "Entries": [
+        "129: Prototype Side-cut Male?\r"
+      ]
+    },
+    {
+      "ID": 10063,
+      "Entries": [
+        "130: Prototype Anastacia?\r"
+      ]
+    },
+    {
+      "ID": 10064,
+      "Entries": [
+        "131: Prototype Anastacia?\r"
+      ]
+    },
+    {
+      "ID": 10065,
+      "Entries": [
+        "132: Prototype Okina?\r"
+      ]
+    },
+    {
+      "ID": 10066,
+      "Entries": [
+        "133: Prototype Silver Tear?\r"
+      ]
+    },
+    {
+      "ID": 10067,
+      "Entries": [
+        "134: Prototype Grey-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10068,
+      "Entries": [
+        "135: Prototype Ensha?\r"
+      ]
+    },
+    {
+      "ID": 10069,
+      "Entries": [
+        "136: Prototype Eyepatch Male?\r"
+      ]
+    },
+    {
+      "ID": 10070,
+      "Entries": [
+        "137: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10071,
+      "Entries": [
+        "138: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10072,
+      "Entries": [
+        "139: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10073,
+      "Entries": [
+        "140: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10074,
+      "Entries": [
+        "141: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10075,
+      "Entries": [
+        "142: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10076,
+      "Entries": [
+        "143: Prototype D?\r"
+      ]
+    },
+    {
+      "ID": 10077,
+      "Entries": [
+        "144: Prototype Jerren?\r"
+      ]
+    },
+    {
+      "ID": 10078,
+      "Entries": [
+        "145: Prototype Sellen?\r"
+      ]
+    },
+    {
+      "ID": 10079,
+      "Entries": [
+        "146: Prototype Sellen Male?\r"
+      ]
+    },
+    {
+      "ID": 10080,
+      "Entries": [
+        "147: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10081,
+      "Entries": [
+        "148: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10082,
+      "Entries": [
+        "149: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10083,
+      "Entries": [
+        "150: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10084,
+      "Entries": [
+        "151: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10085,
+      "Entries": [
+        "152: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10086,
+      "Entries": [
+        "153: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10087,
+      "Entries": [
+        "154: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10088,
+      "Entries": [
+        "155: Prototype Stubble Male?\r"
+      ]
+    },
+    {
+      "ID": 10089,
+      "Entries": [
+        "156: Prototype Mascara Male?\r"
+      ]
+    },
+    {
+      "ID": 10090,
+      "Entries": [
+        "157: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10091,
+      "Entries": [
+        "158: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10092,
+      "Entries": [
+        "159: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10093,
+      "Entries": [
+        "160: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10094,
+      "Entries": [
+        "161: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10095,
+      "Entries": [
+        "162: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10096,
+      "Entries": [
+        "163: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10097,
+      "Entries": [
+        "164: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10098,
+      "Entries": [
+        "165: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10099,
+      "Entries": [
+        "166: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10100,
+      "Entries": [
+        "167: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10101,
+      "Entries": [
+        "168: Prototype Warrior Male?\r"
+      ]
+    },
+    {
+      "ID": 10102,
+      "Entries": [
+        "169: Prototype Truth-Seeker Male?\r"
+      ]
+    },
+    {
+      "ID": 10103,
+      "Entries": [
+        "170: Prototype Gold-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10104,
+      "Entries": [
+        "171: Prototype Aristocrat Male?\r"
+      ]
+    },
+    {
+      "ID": 10105,
+      "Entries": [
+        "172: Prototype Loner?\r"
+      ]
+    },
+    {
+      "ID": 10106,
+      "Entries": [
+        "173: Prototype Black-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10107,
+      "Entries": [
+        "174: Prototype Pale Male?\r"
+      ]
+    },
+    {
+      "ID": 10108,
+      "Entries": [
+        "175: Prototype Northerner Male?\r"
+      ]
+    },
+    {
+      "ID": 10109,
+      "Entries": [
+        "176: Prototype Reedlander Male?\r"
+      ]
+    },
+    {
+      "ID": 10110,
+      "Entries": [
+        "177: Prototype Seafarer Male?\r"
+      ]
+    },
+    {
+      "ID": 10111,
+      "Entries": [
+        "178: Prototype Warrior Female?\r"
+      ]
+    },
+    {
+      "ID": 10112,
+      "Entries": [
+        "179: Prototype Truth-Seeker Female?\r"
+      ]
+    },
+    {
+      "ID": 10113,
+      "Entries": [
+        "180: Prototype Gold-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10114,
+      "Entries": [
+        "181: Prototype Aristocrat Female?\r"
+      ]
+    },
+    {
+      "ID": 10115,
+      "Entries": [
+        "182: Prototype Loner Female\r"
+      ]
+    },
+    {
+      "ID": 10116,
+      "Entries": [
+        "183: Prototype Black-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10117,
+      "Entries": [
+        "184: Prototype Pale Female?\r"
+      ]
+    },
+    {
+      "ID": 10118,
+      "Entries": [
+        "185: Prototype Northerner Female?\r"
+      ]
+    },
+    {
+      "ID": 10119,
+      "Entries": [
+        "186: Prototype Reedlander Female?\r"
+      ]
+    },
+    {
+      "ID": 10120,
+      "Entries": [
+        "187: Prototype Seafarer Female?\r"
+      ]
+    },
+    {
+      "ID": 10121,
+      "Entries": [
+        "188: Tattoo test Male?\r"
+      ]
+    },
+    {
+      "ID": 10122,
+      "Entries": [
+        "189: Tattoo test Male?\r"
+      ]
+    },
+    {
+      "ID": 10123,
+      "Entries": [
+        "190: Prototype Dark-haired Gold-eyed Female?\r"
+      ]
+    },
+    {
+      "ID": 10124,
+      "Entries": [
+        "191: Prototype Dark-haired Gold-eyed Male?\r"
+      ]
+    },
+    {
+      "ID": 10125,
+      "Entries": [
+        "192: Prototype Old Asian Male?\r"
+      ]
+    },
+    {
+      "ID": 10126,
+      "Entries": [
+        "193: Prototype Brown-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10127,
+      "Entries": [
+        "194: Tattoo test Female?\r"
+      ]
+    },
+    {
+      "ID": 10128,
+      "Entries": [
+        "195: Prototype Brown-haired Gold-eyed Male?\r"
+      ]
+    },
+    {
+      "ID": 10129,
+      "Entries": [
+        "196: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10130,
+      "Entries": [
+        "197: Prototype Black-haired Gold-eyed Male?\r"
+      ]
+    },
+    {
+      "ID": 10131,
+      "Entries": [
+        "198: Prototype Black-haired Gold-eyed Female?\r"
+      ]
+    },
+    {
+      "ID": 10132,
+      "Entries": [
+        "199: Prototype Black-haired Gold-eyed Female?\r"
+      ]
+    },
+    {
+      "ID": 10133,
+      "Entries": [
+        "200: Prototype Gold-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10134,
+      "Entries": [
+        "201: Prototype Dark-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10135,
+      "Entries": [
+        "202: Prototype Ginger-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10136,
+      "Entries": [
+        "203: Prototype Red-eyed Female?\r"
+      ]
+    },
+    {
+      "ID": 10137,
+      "Entries": [
+        "204: Prototype Reedlander Female?\r"
+      ]
+    },
+    {
+      "ID": 10138,
+      "Entries": [
+        "205: Prototype Seafarer Female?\r"
+      ]
+    },
+    {
+      "ID": 10139,
+      "Entries": [
+        "206: Prototype Gold-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10140,
+      "Entries": [
+        "207: Prototype Loner Male?\r"
+      ]
+    },
+    {
+      "ID": 10141,
+      "Entries": [
+        "208: Prototype Truth-Seeker Male?\r"
+      ]
+    },
+    {
+      "ID": 10142,
+      "Entries": [
+        "209: Prototype Warrior Male?\r"
+      ]
+    },
+    {
+      "ID": 10143,
+      "Entries": [
+        "210: Prototype Warrior Female?\r"
+      ]
+    },
+    {
+      "ID": 10144,
+      "Entries": [
+        "211: Prototype Warrior Female?\r"
+      ]
+    },
+    {
+      "ID": 10145,
+      "Entries": [
+        "212: Prototype Numen Male?\r"
+      ]
+    },
+    {
+      "ID": 10146,
+      "Entries": [
+        "213: Prototype Numen Female?\r"
+      ]
+    },
+    {
+      "ID": 10147,
+      "Entries": [
+        "214: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10148,
+      "Entries": [
+        "215: Prototype Nightfolk Female?\r"
+      ]
+    },
+    {
+      "ID": 10149,
+      "Entries": [
+        "216: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10150,
+      "Entries": [
+        "217: Prototype Auburn-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10151,
+      "Entries": [
+        "218: Prototype Auburn-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10152,
+      "Entries": [
+        "219: Prototype Greyscale Male?\r"
+      ]
+    },
+    {
+      "ID": 10153,
+      "Entries": [
+        "220: Prototype Draconian Male?\r"
+      ]
+    },
+    {
+      "ID": 10154,
+      "Entries": [
+        "221: Prototype Numen Female?\r"
+      ]
+    },
+    {
+      "ID": 10155,
+      "Entries": [
+        "222: Prototype Rotten Male?\r"
+      ]
+    },
+    {
+      "ID": 10156,
+      "Entries": [
+        "223: Tattoo test Kintsugi Male?\r"
+      ]
+    },
+    {
+      "ID": 10157,
+      "Entries": [
+        "224: Tattoo test Kintsugi Male?\r"
+      ]
+    },
+    {
+      "ID": 10158,
+      "Entries": [
+        "225: Prototype Draconian Male?\r"
+      ]
+    },
+    {
+      "ID": 10159,
+      "Entries": [
+        "226: Prototype Numen Male?\r"
+      ]
+    },
+    {
+      "ID": 10160,
+      "Entries": [
+        "227: Tattoo test Kintsugi Male?\r"
+      ]
+    },
+    {
+      "ID": 10161,
+      "Entries": [
+        "228: Tattoo test Kintsugi Male?\r"
+      ]
+    },
+    {
+      "ID": 10162,
+      "Entries": [
+        "229: Prototype Nightfolk Female?\r"
+      ]
+    },
+    {
+      "ID": 10163,
+      "Entries": [
+        "230: Prototype Nightfolk Female?\r"
+      ]
+    },
+    {
+      "ID": 10164,
+      "Entries": [
+        "231: Prototype Nightfolk Female?\r"
+      ]
+    },
+    {
+      "ID": 10165,
+      "Entries": [
+        "232: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10166,
+      "Entries": [
+        "233: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10167,
+      "Entries": [
+        "234: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10168,
+      "Entries": [
+        "235: Prototype Nightfolk Female?\r"
+      ]
+    },
+    {
+      "ID": 10169,
+      "Entries": [
+        "236: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10170,
+      "Entries": [
+        "237: Prototype Numen Female?\r"
+      ]
+    },
+    {
+      "ID": 10171,
+      "Entries": [
+        "238: Prototype Numen Male?\r"
+      ]
+    },
+    {
+      "ID": 10172,
+      "Entries": [
+        "239: Prototype Numen Male?\r"
+      ]
+    },
+    {
+      "ID": 10173,
+      "Entries": [
+        "240: Prototype Gold-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10174,
+      "Entries": [
+        "241: Prototype Reedlander Male?\r"
+      ]
+    },
+    {
+      "ID": 10175,
+      "Entries": [
+        "242: Prototype Draconian Male?\r"
+      ]
+    },
+    {
+      "ID": 10176,
+      "Entries": [
+        "243: Prototype Numen Female?\r"
+      ]
+    },
+    {
+      "ID": 10177,
+      "Entries": [
+        "244: Prototype Numen Male?\r"
+      ]
+    },
+    {
+      "ID": 10178,
+      "Entries": [
+        "245: Prototype Northerner Male?\r"
+      ]
+    },
+    {
+      "ID": 10179,
+      "Entries": [
+        "246: Prototype Northerner Female?\r"
+      ]
+    },
+    {
+      "ID": 10180,
+      "Entries": [
+        "247: Prototype Bald Female?\r"
+      ]
+    },
+    {
+      "ID": 10181,
+      "Entries": [
+        "248: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10182,
+      "Entries": [
+        "249: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10183,
+      "Entries": [
+        "250: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10184,
+      "Entries": [
+        "251: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10185,
+      "Entries": [
+        "252: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10186,
+      "Entries": [
+        "253: Prototype ??? Female?\r"
+      ]
+    },
+    {
+      "ID": 10187,
+      "Entries": [
+        "254: Prototype ??? Male?\r"
+      ]
+    },
+    {
+      "ID": 10188,
+      "Entries": [
+        "255: Prototype Nightfolk Male?\r"
+      ]
+    },
+    {
+      "ID": 10189,
+      "Entries": [
+        "256: Prototype Scarred Male?\r"
+      ]
+    },
+    {
+      "ID": 10190,
+      "Entries": [
+        "257: Prototype White-haired Male?\r"
+      ]
+    },
+    {
+      "ID": 10191,
+      "Entries": [
+        "258: Prototype Ginger Female?\r"
+      ]
+    },
+    {
+      "ID": 10192,
+      "Entries": [
+        "259: Prototype Brown-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10193,
+      "Entries": [
+        "260: Prototype Black-haired Female?\r"
+      ]
+    },
+    {
+      "ID": 10194,
+      "Entries": [
+        "261: Prototype Ginger Male?\r"
+      ]
+    },
+    {
+      "ID": 10195,
+      "Entries": [
+        "262: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10196,
+      "Entries": [
+        "263: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10197,
+      "Entries": [
+        "264: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10198,
+      "Entries": [
+        "265: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10199,
+      "Entries": [
+        "266: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10200,
+      "Entries": [
+        "267: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10201,
+      "Entries": [
+        "268: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10202,
+      "Entries": [
+        "269: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10203,
+      "Entries": [
+        "270: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10204,
+      "Entries": [
+        "271: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10205,
+      "Entries": [
+        "272: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10206,
+      "Entries": [
+        "273: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10207,
+      "Entries": [
+        "274: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10208,
+      "Entries": [
+        "275: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10209,
+      "Entries": [
+        "276: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10210,
+      "Entries": [
+        "277: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10211,
+      "Entries": [
+        "278: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10212,
+      "Entries": [
+        "279: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10213,
+      "Entries": [
+        "280: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10214,
+      "Entries": [
+        "281: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10215,
+      "Entries": [
+        "282: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10216,
+      "Entries": [
+        "283: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10217,
+      "Entries": [
+        "284: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10218,
+      "Entries": [
+        "285: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10219,
+      "Entries": [
+        "286: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 10220,
+      "Entries": [
+        "287: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "288: Tanith"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "289: White Mask Varré\r"
+      ]
+    },
+    {
+      "ID": 23020,
+      "Entries": [
+        "290: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23030,
+      "Entries": [
+        "291: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23040,
+      "Entries": [
+        "292: Festering Fingerprint Vyke\r"
+      ]
+    },
+    {
+      "ID": 23050,
+      "Entries": [
+        "293: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23060,
+      "Entries": [
+        "294: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23070,
+      "Entries": [
+        "295: Preceptor Seluvis\r"
+      ]
+    },
+    {
+      "ID": 23080,
+      "Entries": [
+        "296: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23090,
+      "Entries": [
+        "297: Patches\r"
+      ]
+    },
+    {
+      "ID": 23100,
+      "Entries": [
+        "298: Irina of Morne\r"
+      ]
+    },
+    {
+      "ID": 23110,
+      "Entries": [
+        "299: Castellan Edgar\r"
+      ]
+    },
+    {
+      "ID": 23120,
+      "Entries": [
+        "300: Castellan Jerren\r"
+      ]
+    },
+    {
+      "ID": 23130,
+      "Entries": [
+        "301: Rya the Scout\r"
+      ]
+    },
+    {
+      "ID": 23140,
+      "Entries": [
+        "302: Knight Diallos\r"
+      ]
+    },
+    {
+      "ID": 23150,
+      "Entries": [
+        "303: Lanya\r"
+      ]
+    },
+    {
+      "ID": 23160,
+      "Entries": [
+        "304: Sorceress Sellen\r"
+      ]
+    },
+    {
+      "ID": 23162,
+      "Entries": [
+        "305: Sorceress Sellen\r"
+      ]
+    },
+    {
+      "ID": 23170,
+      "Entries": [
+        "306: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23180,
+      "Entries": [
+        "307: Yura"
+      ]
+    },
+    {
+      "ID": 23190,
+      "Entries": [
+        "308: D"
+      ]
+    },
+    {
+      "ID": 23192,
+      "Entries": [
+        "309: D's Younger Sibling\r"
+      ]
+    },
+    {
+      "ID": 23200,
+      "Entries": [
+        "310: Roderika"
+      ]
+    },
+    {
+      "ID": 23210,
+      "Entries": [
+        "311: Kenneth Haight"
+      ]
+    },
+    {
+      "ID": 23220,
+      "Entries": [
+        "312: Fia"
+      ]
+    },
+    {
+      "ID": 23230,
+      "Entries": [
+        "313: Dung Eater\r"
+      ]
+    },
+    {
+      "ID": 23240,
+      "Entries": [
+        "314: Sir Gideon Ofnir"
+      ]
+    },
+    {
+      "ID": 23250,
+      "Entries": [
+        "315: Sorcerer Rogier\r"
+      ]
+    },
+    {
+      "ID": 23260,
+      "Entries": [
+        "316: Knight Bernahl\r"
+      ]
+    },
+    {
+      "ID": 23270,
+      "Entries": [
+        "317: Eleonora"
+      ]
+    },
+    {
+      "ID": 23280,
+      "Entries": [
+        "318: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23290,
+      "Entries": [
+        "319: Lionel the Lionhearted\r"
+      ]
+    },
+    {
+      "ID": 23300,
+      "Entries": [
+        "320: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23310,
+      "Entries": [
+        "321: Blackguard\r"
+      ]
+    },
+    {
+      "ID": 23320,
+      "Entries": [
+        "322: Gelmir Spirit\r"
+      ]
+    },
+    {
+      "ID": 23330,
+      "Entries": [
+        "323: Sorcerer Thops\r"
+      ]
+    },
+    {
+      "ID": 23340,
+      "Entries": [
+        "324: Nepheli Loux"
+      ]
+    },
+    {
+      "ID": 23350,
+      "Entries": [
+        "325: Reeling Rico\r"
+      ]
+    },
+    {
+      "ID": 23360,
+      "Entries": [
+        "326: Vyke's Finger Maiden\r"
+      ]
+    },
+    {
+      "ID": 23370,
+      "Entries": [
+        "327: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23380,
+      "Entries": [
+        "328: Finger Maiden\r"
+      ]
+    },
+    {
+      "ID": 23390,
+      "Entries": [
+        "329: Ensha of the Royal Remains\r"
+      ]
+    },
+    {
+      "ID": 23400,
+      "Entries": [
+        "330: Bloody Finger Ravenmount\r"
+      ]
+    },
+    {
+      "ID": 23410,
+      "Entries": [
+        "331: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23420,
+      "Entries": [
+        "332: Human Boc\r"
+      ]
+    },
+    {
+      "ID": 23430,
+      "Entries": [
+        "333: Bloody Finger Nerijus\r"
+      ]
+    },
+    {
+      "ID": 23440,
+      "Entries": [
+        "334: Great Horned Tragoth\r"
+      ]
+    },
+    {
+      "ID": 23450,
+      "Entries": [
+        "335: Old Knight Istvan\r"
+      ]
+    },
+    {
+      "ID": 23460,
+      "Entries": [
+        "336: Rileigh the Idle\r"
+      ]
+    },
+    {
+      "ID": 23470,
+      "Entries": [
+        "337: Juno Hoslow"
+      ]
+    },
+    {
+      "ID": 23480,
+      "Entries": [
+        "338: Millicent\r"
+      ]
+    },
+    {
+      "ID": 23481,
+      "Entries": [
+        "339: Millicent\r"
+      ]
+    },
+    {
+      "ID": 23490,
+      "Entries": [
+        "340: Sage Gowry\r"
+      ]
+    },
+    {
+      "ID": 23500,
+      "Entries": [
+        "341: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23510,
+      "Entries": [
+        "342: Brother Corhyn\r"
+      ]
+    },
+    {
+      "ID": 23520,
+      "Entries": [
+        "343: Preceptor Miriam\r"
+      ]
+    },
+    {
+      "ID": 23530,
+      "Entries": [
+        "344: Anastasia"
+      ]
+    },
+    {
+      "ID": 23540,
+      "Entries": [
+        "345: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23550,
+      "Entries": [
+        "346: Bloody Figner Okina\r"
+      ]
+    },
+    {
+      "ID": 23560,
+      "Entries": [
+        "347: Adan"
+      ]
+    },
+    {
+      "ID": 23570,
+      "Entries": [
+        "348: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23580,
+      "Entries": [
+        "349: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23590,
+      "Entries": [
+        "350: Moongrum"
+      ]
+    },
+    {
+      "ID": 23600,
+      "Entries": [
+        "351: Vargram"
+      ]
+    },
+    {
+      "ID": 23610,
+      "Entries": [
+        "352: Fia's Champion\r"
+      ]
+    },
+    {
+      "ID": 23611,
+      "Entries": [
+        "353: Fia's Champion\r"
+      ]
+    },
+    {
+      "ID": 23612,
+      "Entries": [
+        "354: Fia's Champion\r"
+      ]
+    },
+    {
+      "ID": 23620,
+      "Entries": [
+        "355: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23630,
+      "Entries": [
+        "356: Finger Maiden Therolina\r"
+      ]
+    },
+    {
+      "ID": 23640,
+      "Entries": [
+        "357: Dolores the Sleeping Arrow\r"
+      ]
+    },
+    {
+      "ID": 23650,
+      "Entries": [
+        "358: Jarwight\r"
+      ]
+    },
+    {
+      "ID": 23660,
+      "Entries": [
+        "359: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23670,
+      "Entries": [
+        "360: Inaba"
+      ]
+    },
+    {
+      "ID": 23680,
+      "Entries": [
+        "361: Silver Tear\r"
+      ]
+    },
+    {
+      "ID": 23681,
+      "Entries": [
+        "362: Silver Tear\r"
+      ]
+    },
+    {
+      "ID": 23682,
+      "Entries": [
+        "363: Silver Tear\r"
+      ]
+    },
+    {
+      "ID": 23683,
+      "Entries": [
+        "364: Silver Tear\r"
+      ]
+    },
+    {
+      "ID": 23690,
+      "Entries": [
+        "365: Recusant Henricus\r"
+      ]
+    },
+    {
+      "ID": 23700,
+      "Entries": [
+        "366: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23710,
+      "Entries": [
+        "367: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23720,
+      "Entries": [
+        "\"368: Maleigh Marais"
+      ]
+    },
+    {
+      "ID": 23730,
+      "Entries": [
+        "369: Knight of the Great Jar\r"
+      ]
+    },
+    {
+      "ID": 23740,
+      "Entries": [
+        "370: Knight of the Great Jar\r"
+      ]
+    },
+    {
+      "ID": 23750,
+      "Entries": [
+        "371: Knight of the Great Jar\r"
+      ]
+    },
+    {
+      "ID": 23760,
+      "Entries": [
+        "372: Necromancer Garris\r"
+      ]
+    },
+    {
+      "ID": 23770,
+      "Entries": [
+        "373: Nameless White Mask\r"
+      ]
+    },
+    {
+      "ID": 23780,
+      "Entries": [
+        "374: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23790,
+      "Entries": [
+        "375: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23800,
+      "Entries": [
+        "376: Errant Sorcerer Wilhelm\r"
+      ]
+    },
+    {
+      "ID": 23810,
+      "Entries": [
+        "377: Unused NPC\r"
+      ]
+    },
+    {
+      "ID": 23820,
+      "Entries": [
+        "378: Chief Guardian Arganthy\r"
+      ]
+    },
+    {
+      "ID": 23830,
+      "Entries": [
+        "379: Flame Guardian\r"
+      ]
+    },
+    {
+      "ID": 23840,
+      "Entries": [
+        "380: Inquisitor Ghiza\r"
+      ]
+    },
+    {
+      "ID": 23850,
+      "Entries": [
+        "381: Mad Tongue Alberich\r"
+      ]
+    },
+    {
+      "ID": 23860,
+      "Entries": [
+        "382: Esgar"
+      ]
+    },
+    {
+      "ID": 23870,
+      "Entries": [
+        "383: Mary"
+      ]
+    },
+    {
+      "ID": 23880,
+      "Entries": [
+        "384: Maureen"
+      ]
+    },
+    {
+      "ID": 23890,
+      "Entries": [
+        "385: Amy"
+      ]
+    },
+    {
+      "ID": 23900,
+      "Entries": [
+        "386: Polyanna"
+      ]
+    },
+    {
+      "ID": 23910,
+      "Entries": [
+        "387: Brave\r"
+      ]
+    },
+    {
+      "ID": 27000,
+      "Entries": [
+        "388: Carian\r"
+      ]
+    },
+    {
+      "ID": 27001,
+      "Entries": [
+        "389: Brave (Altered)\r"
+      ]
+    },
+    {
+      "ID": 27002,
+      "Entries": [
+        "390: Vagabond\r"
+      ]
+    },
+    {
+      "ID": 27003,
+      "Entries": [
+        "391: Guilty\r"
+      ]
+    },
+    {
+      "ID": 27900,
+      "Entries": [
+        "392: Placeholder Female\r"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "393: Ghoul\r"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "394: Placeholder White-haired Old man\r"
+      ]
+    },
+    {
+      "ID": 30019,
+      "Entries": [
+        "395: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30020,
+      "Entries": [
+        "396: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30021,
+      "Entries": [
+        "397: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30022,
+      "Entries": [
+        "398: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30023,
+      "Entries": [
+        "399: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30024,
+      "Entries": [
+        "400: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30025,
+      "Entries": [
+        "401: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30026,
+      "Entries": [
+        "402: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30027,
+      "Entries": [
+        "403: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30028,
+      "Entries": [
+        "404: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30029,
+      "Entries": [
+        "405: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30030,
+      "Entries": [
+        "406: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30031,
+      "Entries": [
+        "407: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30032,
+      "Entries": [
+        "408: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30033,
+      "Entries": [
+        "409: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30034,
+      "Entries": [
+        "410: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30035,
+      "Entries": [
+        "411: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30036,
+      "Entries": [
+        "412: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30037,
+      "Entries": [
+        "413: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30038,
+      "Entries": [
+        "414: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30039,
+      "Entries": [
+        "415: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30040,
+      "Entries": [
+        "416: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30041,
+      "Entries": [
+        "417: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30042,
+      "Entries": [
+        "418: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30043,
+      "Entries": [
+        "419: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30044,
+      "Entries": [
+        "420: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30045,
+      "Entries": [
+        "421: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30046,
+      "Entries": [
+        "422: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30047,
+      "Entries": [
+        "423: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30048,
+      "Entries": [
+        "424: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30049,
+      "Entries": [
+        "425: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30050,
+      "Entries": [
+        "426: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30051,
+      "Entries": [
+        "427: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30052,
+      "Entries": [
+        "428: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30053,
+      "Entries": [
+        "429: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30054,
+      "Entries": [
+        "430: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30055,
+      "Entries": [
+        "431: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30056,
+      "Entries": [
+        "432: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30057,
+      "Entries": [
+        "433: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30058,
+      "Entries": [
+        "434: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30059,
+      "Entries": [
+        "435: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "436: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30061,
+      "Entries": [
+        "437: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30062,
+      "Entries": [
+        "438: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30063,
+      "Entries": [
+        "439: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30064,
+      "Entries": [
+        "440: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30065,
+      "Entries": [
+        "441: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30066,
+      "Entries": [
+        "442: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30067,
+      "Entries": [
+        "443: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30068,
+      "Entries": [
+        "444: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30069,
+      "Entries": [
+        "445: Placeholder Female\r"
+      ]
+    },
+    {
+      "ID": 30070,
+      "Entries": [
+        "446: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30071,
+      "Entries": [
+        "447: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30072,
+      "Entries": [
+        "448: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30073,
+      "Entries": [
+        "449: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30074,
+      "Entries": [
+        "450: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30075,
+      "Entries": [
+        "451: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30076,
+      "Entries": [
+        "452: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30077,
+      "Entries": [
+        "453: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30078,
+      "Entries": [
+        "454: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30079,
+      "Entries": [
+        "455: Placeholder Female\r"
+      ]
+    },
+    {
+      "ID": 30080,
+      "Entries": [
+        "456: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30081,
+      "Entries": [
+        "457: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30082,
+      "Entries": [
+        "458: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30083,
+      "Entries": [
+        "459: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30084,
+      "Entries": [
+        "460: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30085,
+      "Entries": [
+        "461: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30086,
+      "Entries": [
+        "462: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30087,
+      "Entries": [
+        "463: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30088,
+      "Entries": [
+        "464: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30089,
+      "Entries": [
+        "465: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30090,
+      "Entries": [
+        "466: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30091,
+      "Entries": [
+        "467: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30092,
+      "Entries": [
+        "468: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30093,
+      "Entries": [
+        "469: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30094,
+      "Entries": [
+        "470: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30095,
+      "Entries": [
+        "471: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30096,
+      "Entries": [
+        "472: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30097,
+      "Entries": [
+        "473: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30098,
+      "Entries": [
+        "474: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30099,
+      "Entries": [
+        "475: Placeholder Blonde Male\r"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "476: Placeholder Blonde Female\r"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "477: Placeholder Female\r"
+      ]
+    },
+    {
+      "ID": 30102,
+      "Entries": [
+        "478: Placeholder Scarred Male\r"
+      ]
+    },
+    {
+      "ID": 30103,
+      "Entries": [
+        "479: Placeholder Short-haired Male\r"
+      ]
+    },
+    {
+      "ID": 30104,
+      "Entries": [
+        "480: Placeholder Black-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30105,
+      "Entries": [
+        "481: Placeholder Brown-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30106,
+      "Entries": [
+        "482: Placeholder Brown-haired Millicent?\r"
+      ]
+    },
+    {
+      "ID": 30107,
+      "Entries": [
+        "483: Placeholder Black-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30108,
+      "Entries": [
+        "484: Placeholder Brown-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30109,
+      "Entries": [
+        "485: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "486: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "487: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30112,
+      "Entries": [
+        "488: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30113,
+      "Entries": [
+        "489: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30114,
+      "Entries": [
+        "490: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30115,
+      "Entries": [
+        "491: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30116,
+      "Entries": [
+        "492: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30117,
+      "Entries": [
+        "493: Placeholder Dark-skinned Male\r"
+      ]
+    },
+    {
+      "ID": 30118,
+      "Entries": [
+        "494: Placeholder Dark-skinned Male\r"
+      ]
+    },
+    {
+      "ID": 30119,
+      "Entries": [
+        "495: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "496: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30121,
+      "Entries": [
+        "497: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30122,
+      "Entries": [
+        "498: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30123,
+      "Entries": [
+        "499: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30124,
+      "Entries": [
+        "500: Placeholder Dark-skinned Female\r"
+      ]
+    },
+    {
+      "ID": 30125,
+      "Entries": [
+        "501: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30126,
+      "Entries": [
+        "502: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30127,
+      "Entries": [
+        "503: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30128,
+      "Entries": [
+        "504: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30129,
+      "Entries": [
+        "505: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "506: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30131,
+      "Entries": [
+        "507: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30132,
+      "Entries": [
+        "508: Placeholder Dark-skinned White-haired Female\r"
+      ]
+    },
+    {
+      "ID": 30133,
+      "Entries": [
+        "509: Placeholder Asian Male\r"
+      ]
+    },
+    {
+      "ID": 30134,
+      "Entries": [
+        "510: Placeholder Asian Male\r"
+      ]
+    },
+    {
+      "ID": 30135,
+      "Entries": [
+        "511: Placeholder Asian Male\r"
+      ]
+    },
+    {
+      "ID": 30136,
+      "Entries": [
+        "512: Placeholder Male\r"
+      ]
+    },
+    {
+      "ID": 30137,
+      "Entries": [
+        "513: Placeholder Burnt Body Male\r"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "514: Placeholder Frenzied Male\r"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "515: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 81001,
+      "Entries": [
+        "516: Placeholder Dragon Male\r"
+      ]
+    },
+    {
+      "ID": 81002,
+      "Entries": [
+        "517: Placeholder Silver-Eyed Male\r"
+      ]
+    },
+    {
+      "ID": 81003,
+      "Entries": [
+        "518: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "519: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "520: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "521: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "522: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90004,
+      "Entries": [
+        "523: Placeholder Eyeless Male\r"
+      ]
+    },
+    {
+      "ID": 90005,
+      "Entries": [
+        "524: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "525: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91001,
+      "Entries": [
+        "526: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91002,
+      "Entries": [
+        "527: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91003,
+      "Entries": [
+        "528: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91004,
+      "Entries": [
+        "529: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91005,
+      "Entries": [
+        "530: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91006,
+      "Entries": [
+        "531: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91007,
+      "Entries": [
+        "532: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91008,
+      "Entries": [
+        "533: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91009,
+      "Entries": [
+        "534: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91010,
+      "Entries": [
+        "535: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 91011,
+      "Entries": [
+        "536: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 99991,
+      "Entries": [
+        "537: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 99992,
+      "Entries": [
+        "538: Placeholder Bald Male\r"
+      ]
+    },
+    {
+      "ID": 2024030,
+      "Entries": [
+        "539: Igon\r"
+      ]
+    },
+    {
+      "ID": 2024032,
+      "Entries": [
+        "540: Igon\r"
+      ]
+    },
+    {
+      "ID": 2024060,
+      "Entries": [
+        "541: Dragon Communion Priestess\r"
+      ]
+    },
+    {
+      "ID": 2024070,
+      "Entries": [
+        "542: Ancient Dragon-Man\r"
+      ]
+    },
+    {
+      "ID": 2024090,
+      "Entries": [
+        "543: Swordhand of Night Jolán\r"
+      ]
+    },
+    {
+      "ID": 2024120,
+      "Entries": [
+        "544: Swordhand of Night Anna\r"
+      ]
+    },
+    {
+      "ID": 2024130,
+      "Entries": [
+        "545: Fire Knight Queelign\r"
+      ]
+    },
+    {
+      "ID": 2024140,
+      "Entries": [
+        "546: Hornsent\r"
+      ]
+    },
+    {
+      "ID": 2024150,
+      "Entries": [
+        "547: Moore\r"
+      ]
+    },
+    {
+      "ID": 2024160,
+      "Entries": [
+        "548: Sir Ansbach\r"
+      ]
+    },
+    {
+      "ID": 2024170,
+      "Entries": [
+        "549: Redmane Freyja\r"
+      ]
+    },
+    {
+      "ID": 2024180,
+      "Entries": [
+        "550: Needle Knight Leda\r"
+      ]
+    },
+    {
+      "ID": 2024190,
+      "Entries": [
+        "551: Thiollier\r"
+      ]
+    },
+    {
+      "ID": 2024200,
+      "Entries": [
+        "552: Count Ymir"
+      ]
+    },
+    {
+      "ID": 2024201,
+      "Entries": [
+        "553: Count Ymir"
+      ]
+    },
+    {
+      "ID": 2024210,
+      "Entries": [
+        "554: Red Bear\r"
+      ]
+    },
+    {
+      "ID": 2024220,
+      "Entries": [
+        "555: Dancer of Ranah\r"
+      ]
+    },
+    {
+      "ID": 2024230,
+      "Entries": [
+        "556: Rakshasa\r"
+      ]
+    },
+    {
+      "ID": 2024240,
+      "Entries": [
+        "557: Knight of the Solitary Gaol\r"
+      ]
+    },
+    {
+      "ID": 2024250,
+      "Entries": [
+        "558: Dryleaf Dane\r"
+      ]
+    },
+    {
+      "ID": 2024260,
+      "Entries": [
+        "559: Sanguine Noble Nataan\r"
+      ]
+    },
+    {
+      "ID": 2024270,
+      "Entries": [
+        "560: Lamenter\r"
+      ]
+    },
+    {
+      "ID": 2024280,
+      "Entries": [
+        "561: Greater Potentate\r"
+      ]
+    },
+    {
+      "ID": 2024290,
+      "Entries": [
+        "562: Madding Hand\r"
+      ]
+    },
+    {
+      "ID": 2024310,
+      "Entries": [
+        "563: Logur"
+      ]
+    },
+    {
+      "ID": 2024320,
+      "Entries": [
+        "564: Moonrithyll"
+      ]
+    }
+  ]
+}

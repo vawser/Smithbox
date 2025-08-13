@@ -1,0 +1,245 @@
+{
+  "Name": "eventparam_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 3000,
+      "Entries": [
+        "Boss: Dog Rat_ Combat"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Boss War_ Count of Deaths"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Boss War_ Death Count_2"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Boss War_ Death Count_3"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Boss War_ Death Count_4"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Boss War_ Death Count_5"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Boss War_ Death Count_6"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Boss War_ Death Count_7"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Boss War_ Death Count_8"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Boss War_ Death Count_9"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Boss War_ Death Count_10"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Boss War_ Death Count_11"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Boss War_ Death Count_12"
+      ]
+    },
+    {
+      "ID": 4500,
+      "Entries": [
+        "Variable reset for bosses"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Boss War_ Boss Generation Flag"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "[Insect key interlocking] drawbridge 1"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Insect key use_drawbridge 1"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "The torch disappears with water."
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Insect key use_water dripping"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "[Insect key interlocking] light off"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Insect key use_ light-out"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "[Insect key interlocking] drawbridge 2"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Insect key use_drawbridge 2"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Insect key interlocking] poison spitting rat _ white door front"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Insect key use_poison-spitting rat_white door front"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat _ left hand eye"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Insect key use_poison-spitting rat_left hand first body"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat _ left hand body"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Insect key use_poison-spitting rat_left hand 2body"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "[Insect key interlocking] poison vomiting rat _ left hand body"
+      ]
+    },
+    {
+      "ID": 14010,
+      "Entries": [
+        "Insect key use_poison-spitting rat_left hand 3body"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play spark 01_ pledge area after boss room front"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Before the pledge area of the start destination spark 02_of the regeneration"
+      ]
+    },
+    {
+      "ID": 111510,
+      "Entries": [
+        "NPC: The King of Mice (The Door way of Faros)"
+      ]
+    },
+    {
+      "ID": 111511,
+      "Entries": [
+        "NPC: The King of Mice (The Door way of Faros): Ghost"
+      ]
+    },
+    {
+      "ID": 111512,
+      "Entries": [
+        "OBJ: King of mice (Door way of Faros): Tomb"
+      ]
+    },
+    {
+      "ID": 111513,
+      "Entries": [
+        "OBJ: The King of Mice (The Door way of Faros): Key Guide"
+      ]
+    },
+    {
+      "ID": 111514,
+      "Entries": [
+        "OBJ: The King of Mice (The Doorway of Faros): Death Judgment"
+      ]
+    },
+    {
+      "ID": 118220,
+      "Entries": [
+        "NPC for Multi: The Magician (Male): Black Phantom Appearance: Offline"
+      ]
+    },
+    {
+      "ID": 120040,
+      "Entries": [
+        "Trophy: Mouse Pledge"
+      ]
+    }
+  ]
+}

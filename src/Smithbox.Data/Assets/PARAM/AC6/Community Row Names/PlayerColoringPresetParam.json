@@ -1,0 +1,41 @@
+{
+  "Name": "PlayerColoringPresetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "default"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "red"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "blue"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "yellow"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "peach"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "green"
+      ]
+    }
+  ]
+}

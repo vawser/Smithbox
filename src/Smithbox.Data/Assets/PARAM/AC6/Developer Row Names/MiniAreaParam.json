@@ -1,0 +1,17 @@
+{
+  "Name": "MiniAreaParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Test data (you can delete it later) -- テスト用データ（後で消してもOK）"
+      ]
+    }
+  ]
+}

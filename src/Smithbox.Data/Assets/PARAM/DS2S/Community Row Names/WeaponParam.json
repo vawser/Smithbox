@@ -1,0 +1,2843 @@
+{
+  "Name": "WeaponParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "Test "
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Test "
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Test "
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Unauthorized data (prohibited) "
+      ]
+    },
+    {
+      "ID": 8182,
+      "Entries": [
+        "Weapon Color Check "
+      ]
+    },
+    {
+      "ID": 8183,
+      "Entries": [
+        "Landing Check "
+      ]
+    },
+    {
+      "ID": 732000,
+      "Entries": [
+        "NPC: Pyromancy Flame (Lost Sinner Phantom)"
+      ]
+    },
+    {
+      "ID": 733000,
+      "Entries": [
+        "NPC: Pyromancy Flame (Lost Sinner Phantom)"
+      ]
+    },
+    {
+      "ID": 741000,
+      "Entries": [
+        "NPC: Bastard Sword (Crestfallen Saulden)"
+      ]
+    },
+    {
+      "ID": 761000,
+      "Entries": [
+        "NPC: Falchion (Maughlin the Armourer)"
+      ]
+    },
+    {
+      "ID": 763000,
+      "Entries": [
+        "NPC: Bone Staff (NPC)"
+      ]
+    },
+    {
+      "ID": 766000,
+      "Entries": [
+        "NPC: Lizard Staff (Carhillion of the Fold)"
+      ]
+    },
+    {
+      "ID": 772000,
+      "Entries": [
+        "NPC: Scythe (Magerold of Lanafir)"
+      ]
+    },
+    {
+      "ID": 784000,
+      "Entries": [
+        "NPC: Great Scythe (Cromwell the Pardoner)"
+      ]
+    },
+    {
+      "ID": 810000,
+      "Entries": [
+        "NPC: Zweihander (Masterless Glencour)"
+      ]
+    },
+    {
+      "ID": 811000,
+      "Entries": [
+        "NPC: Composite Bow (Lone Hunter Schmidt)"
+      ]
+    },
+    {
+      "ID": 812000,
+      "Entries": [
+        "NPC: Staff of Amana (Pilgrim Bellclaire)"
+      ]
+    },
+    {
+      "ID": 813000,
+      "Entries": [
+        "NPC: Heide Greatlance (Felicia the Brave)"
+      ]
+    },
+    {
+      "ID": 814000,
+      "Entries": [
+        "NPC: Greataxe (Melinda the Butcher)"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "NPC: Winged Spear (Vorgel the Sinner)"
+      ]
+    },
+    {
+      "ID": 821000,
+      "Entries": [
+        "NPC: Bone Scythe (Merciless Roenna)"
+      ]
+    },
+    {
+      "ID": 822000,
+      "Entries": [
+        "NPC: Black Witch's Staff (Peculiar Kindalur)"
+      ]
+    },
+    {
+      "ID": 823000,
+      "Entries": [
+        "NPC: Black Dragon Greatsword (Dragonfang Villard/Transcendent Edde)"
+      ]
+    },
+    {
+      "ID": 824000,
+      "Entries": [
+        "NPC: Mirrah Greatsword (Aslatiel of Mirrah)"
+      ]
+    },
+    {
+      "ID": 831000,
+      "Entries": [
+        "NPC: Chime of Want (Dingy Cleric/Abbess Feeva/Evangelist Scion Waslo/Hexer Nicholai)"
+      ]
+    },
+    {
+      "ID": 831100,
+      "Entries": [
+        "NPC: Ruler's Sword (Faraam Knight/Holy Knight Aurheim)"
+      ]
+    },
+    {
+      "ID": 832000,
+      "Entries": [
+        "NPC: Composite Bow (Underworld Deadeye)"
+      ]
+    },
+    {
+      "ID": 832100,
+      "Entries": [
+        "NPC: Drakekeeper's Great Hammer (Abyss Ironclad)"
+      ]
+    },
+    {
+      "ID": 832200,
+      "Entries": [
+        "NPC: Pyromancy Flame (Pretender to the Xanthous Throne)"
+      ]
+    },
+    {
+      "ID": 832201,
+      "Entries": [
+        "NPC: Notched Whip (Swashbuckling Matelas)"
+      ]
+    },
+    {
+      "ID": 832300,
+      "Entries": [
+        "NPC: Pyromancy Flame (Pretender to the Xanthous Throne)"
+      ]
+    },
+    {
+      "ID": 832301,
+      "Entries": [
+        "NPC: Notched Whip (NPC)"
+      ]
+    },
+    {
+      "ID": 832400,
+      "Entries": [
+        "NPC: Bandit's Knife (Tenebrous Rogue)"
+      ]
+    },
+    {
+      "ID": 832401,
+      "Entries": [
+        "NPC: Mytha's Bent Blade (Tenebrous Rogue)"
+      ]
+    },
+    {
+      "ID": 832500,
+      "Entries": [
+        "NPC: Ricard's Rapier (The Ghost of Princes Past/Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 832600,
+      "Entries": [
+        "NPC: Dragon Tooth (A Chip Off the Ol Rock/Ancient Soldier Varg)"
+      ]
+    },
+    {
+      "ID": 832700,
+      "Entries": [
+        "NPC: Shotel (Shadowveil Assasin)"
+      ]
+    },
+    {
+      "ID": 832701,
+      "Entries": [
+        "NPC: Warped Sword (Shadowveil Assasin)"
+      ]
+    },
+    {
+      "ID": 833000,
+      "Entries": [
+        "NPC: Butcher's Knife (Peculiar Kindalur)"
+      ]
+    },
+    {
+      "ID": 835000,
+      "Entries": [
+        "NPC: Black Dragon Greataxe (Black Dragon Knight) [Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 835001,
+      "Entries": [
+        "NPC: Monastery Scimitar (Black Dragon Knight) [Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 835100,
+      "Entries": [
+        "NPC: Black Dragon Warpick (Black Dragon Knight) [Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 835200,
+      "Entries": [
+        "NPC: Black Dragon Sword (Black Dragon Knight) [Dragon Aerie]"
+      ]
+    },
+    {
+      "ID": 836000,
+      "Entries": [
+        "NPC: Berserker Blade (Mad Warrior/Prowler) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836001,
+      "Entries": [
+        "NPC: Berserker Blade (Mad Warrior/Afflicted Graverobber) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836100,
+      "Entries": [
+        "NPC: Greatsword (Bell Keeper) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836200,
+      "Entries": [
+        "NPC: Avelyn (Bell Keeper) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836300,
+      "Entries": [
+        "NPC: Bat Staff (Bell Keeper) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836301,
+      "Entries": [
+        "NPC: Spitfire Spear (Bell Keeper) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 836400,
+      "Entries": [
+        "NPC: Drakekeeper's Great Hammer (Ironclad Warrior) [Iron Keep]"
+      ]
+    },
+    {
+      "ID": 837000,
+      "Entries": [
+        "NPC: Shortsword (NPC) [Things Betwixt]"
+      ]
+    },
+    {
+      "ID": 837100,
+      "Entries": [
+        "NPC: Broken Straight Sword (Foreign Wanderer) [Things Betwixt]"
+      ]
+    },
+    {
+      "ID": 837200,
+      "Entries": [
+        "NPC: Short Bow (Foreigner) [Things Betwixt]"
+      ]
+    },
+    {
+      "ID": 838000,
+      "Entries": [
+        "NPC: Dagger (Forest Guardian) [Shaded Woods]"
+      ]
+    },
+    {
+      "ID": 838100,
+      "Entries": [
+        "NPC: Longsword (Forest Guardian) [Shaded Woods]"
+      ]
+    },
+    {
+      "ID": 842000,
+      "Entries": [
+        "NPC: Mastodon Greatsword (Syan Knight/Steel-willed Lorrie) [Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 843000,
+      "Entries": [
+        "NPC: Heide Knight Sword (Knight) [Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 843001,
+      "Entries": [
+        "NPC: Dagger (Knight/Butcher) [Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 844000,
+      "Entries": [
+        "NPC: Broadsword (Catarina Knight) [Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 845000,
+      "Entries": [
+        "NPC: Scimitar (NPC) [Forest of Fallen Giants]"
+      ]
+    },
+    {
+      "ID": 846000,
+      "Entries": [
+        "NPC: Pickaxe (NPC) [Brightstone Cove Tseldora]"
+      ]
+    },
+    {
+      "ID": 847000,
+      "Entries": [
+        "NPC: Chariot Lance (Executioner) [Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 847100,
+      "Entries": [
+        "NPC: Blue Knight's Halberd (Sentinel) [Heide's Tower of Flame]"
+      ]
+    },
+    {
+      "ID": 848000,
+      "Entries": [
+        "NPC: Blue Flame (Swordsman) [Undead Crypt]"
+      ]
+    },
+    {
+      "ID": 848100,
+      "Entries": [
+        "NPC: Bandit's Knife (NPC) [Undead Crypt]"
+      ]
+    },
+    {
+      "ID": 849000,
+      "Entries": [
+        "NPC: Bandit's Knife (Nameless Usurper) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 849100,
+      "Entries": [
+        "NPC: Pyromancy Flame (Jester Thomas) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 849200,
+      "Entries": [
+        "NPC: Shotel (Rhoy the Explorer/Rapacious Andrei) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "NPC: Shadow Dagger (Painting Guardian) [Aldia's Keep]"
+      ]
+    },
+    {
+      "ID": 850001,
+      "Entries": [
+        "NPC: Broken Thief Sword (Painting Guardian) [Aldia's Keep]"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "NPC: Full Moon Sickle (NPC) [Harvest Valley]"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "NPC: Greatsword (NPC) [Huntsman's Copse]"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "NPC: Avelyn (Bowman Guthry) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 853100,
+      "Entries": [
+        "NPC: Estoc (Ashen Knight Boyd/Twiggy Shei) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 853200,
+      "Entries": [
+        "NPC: Drakekeeper's Warpick (Drakekeeper Knight/Wall Watchman) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 853300,
+      "Entries": [
+        "NPC: Longsword (Elite Knight) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 853400,
+      "Entries": [
+        "NPC: Dragonslayer Greatbow (Knight/Cerah the Old Explorer/Twiggy Shei) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 853500,
+      "Entries": [
+        "NPC: Washing Pole (Samurai) [Drangleic Castle]"
+      ]
+    },
+    {
+      "ID": 854000,
+      "Entries": [
+        "NPC: Stone Twinblade (Drifter Swordsman Aidel) [No-man's Wharf]"
+      ]
+    },
+    {
+      "ID": 867000,
+      "Entries": [
+        "NPC: Caestus (Steelheart Ellie)"
+      ]
+    },
+    {
+      "ID": 880000,
+      "Entries": [
+        "NPC: Drakeblood Greatsword (Drakeblood Knight Rondor)"
+      ]
+    },
+    {
+      "ID": 883000,
+      "Entries": [
+        "NPC: Drakekeeper's Sword (Wall Watchman)"
+      ]
+    },
+    {
+      "ID": 885000,
+      "Entries": [
+        "NPC: Puzzling Stone Sword (Fencer Sharron/Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 885001,
+      "Entries": [
+        "NPC: Lion Greataxe (NPC)"
+      ]
+    },
+    {
+      "ID": 885002,
+      "Entries": [
+        "NPC: Mastodon Halberd (NPC)"
+      ]
+    },
+    {
+      "ID": 886000,
+      "Entries": [
+        "NPC: Greatshield of Glory (Sellsword Luet)"
+      ]
+    },
+    {
+      "ID": 887000,
+      "Entries": [
+        "NPC: Mace (Devotee Scarlett)"
+      ]
+    },
+    {
+      "ID": 888000,
+      "Entries": [
+        "NPC: Umbral Dagger (Bashful Ray)"
+      ]
+    },
+    {
+      "ID": 889000,
+      "Entries": [
+        "NPC: Claws (Bashful Ray)"
+      ]
+    },
+    {
+      "ID": 890000,
+      "Entries": [
+        "NPC: Heide Spear (Bradley of the Old Guard)"
+      ]
+    },
+    {
+      "ID": 892000,
+      "Entries": [
+        "NPC: Giant Stone Axe (Woodland Child Victor/Woodland Child Gully)"
+      ]
+    },
+    {
+      "ID": 893000,
+      "Entries": [
+        "NPC: Spider Fang (Fencer Sharron)"
+      ]
+    },
+    {
+      "ID": 894000,
+      "Entries": [
+        "NPC: Blue Flame (Armorer Dennis)"
+      ]
+    },
+    {
+      "ID": 895000,
+      "Entries": [
+        "NPC: Santier's Spear (Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 896000,
+      "Entries": [
+        "NPC: Majestic Greatsword (Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 897000,
+      "Entries": [
+        "NPC: Bone Fist (Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 898000,
+      "Entries": [
+        "NPC: Smelter Hammer (Oliver the Collector)"
+      ]
+    },
+    {
+      "ID": 899000,
+      "Entries": [
+        "NPC: Mace of the Insolent (Insolent Knight)"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "NPC: Greatsword of the Forlorn (Forlorn)"
+      ]
+    },
+    {
+      "ID": 910000,
+      "Entries": [
+        "NPC: Scythe of the Forlorn (Forlorn)"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Dagger"
+      ]
+    },
+    {
+      "ID": 1010000,
+      "Entries": [
+        "Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 1040000,
+      "Entries": [
+        "Mytha's Bent Blade"
+      ]
+    },
+    {
+      "ID": 1050000,
+      "Entries": [
+        "Shadow Dagger"
+      ]
+    },
+    {
+      "ID": 1060000,
+      "Entries": [
+        "Thief Dagger"
+      ]
+    },
+    {
+      "ID": 1070000,
+      "Entries": [
+        "Broken Thief Sword"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Parrying Dagger"
+      ]
+    },
+    {
+      "ID": 1110000,
+      "Entries": [
+        "Manikin Knife"
+      ]
+    },
+    {
+      "ID": 1130000,
+      "Entries": [
+        "Royal Dirk"
+      ]
+    },
+    {
+      "ID": 1140000,
+      "Entries": [
+        "Blue Dagger"
+      ]
+    },
+    {
+      "ID": 1150000,
+      "Entries": [
+        "Umbral Dagger"
+      ]
+    },
+    {
+      "ID": 1160000,
+      "Entries": [
+        "Retainer's Short Sword"
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "Broken Straight Sword"
+      ]
+    },
+    {
+      "ID": 1210000,
+      "Entries": [
+        "Shortsword"
+      ]
+    },
+    {
+      "ID": 1220000,
+      "Entries": [
+        "Longsword"
+      ]
+    },
+    {
+      "ID": 1230000,
+      "Entries": [
+        "Broadsword"
+      ]
+    },
+    {
+      "ID": 1240000,
+      "Entries": [
+        "Foot Soldier Sword"
+      ]
+    },
+    {
+      "ID": 1250000,
+      "Entries": [
+        "Puzzling Stone Sword"
+      ]
+    },
+    {
+      "ID": 1260000,
+      "Entries": [
+        "Possessed Armor Sword"
+      ]
+    },
+    {
+      "ID": 1270000,
+      "Entries": [
+        "Varangian Sword"
+      ]
+    },
+    {
+      "ID": 1280000,
+      "Entries": [
+        "Blue Flame"
+      ]
+    },
+    {
+      "ID": 1290000,
+      "Entries": [
+        "Fume Sword"
+      ]
+    },
+    {
+      "ID": 1320000,
+      "Entries": [
+        "Heide Knight Sword"
+      ]
+    },
+    {
+      "ID": 1330000,
+      "Entries": [
+        "Red Rust Sword"
+      ]
+    },
+    {
+      "ID": 1350000,
+      "Entries": [
+        "Black Dragon Sword"
+      ]
+    },
+    {
+      "ID": 1360000,
+      "Entries": [
+        "Sun Sword"
+      ]
+    },
+    {
+      "ID": 1370000,
+      "Entries": [
+        "Drakekeeper's Sword"
+      ]
+    },
+    {
+      "ID": 1380000,
+      "Entries": [
+        "Ashen Warrior Sword"
+      ]
+    },
+    {
+      "ID": 1390000,
+      "Entries": [
+        "Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Estoc"
+      ]
+    },
+    {
+      "ID": 1410000,
+      "Entries": [
+        "Mail Breaker"
+      ]
+    },
+    {
+      "ID": 1420000,
+      "Entries": [
+        "Chaos Rapier"
+      ]
+    },
+    {
+      "ID": 1430000,
+      "Entries": [
+        "Spider's Silk"
+      ]
+    },
+    {
+      "ID": 1440000,
+      "Entries": [
+        "Espada Ropera"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Rapier"
+      ]
+    },
+    {
+      "ID": 1520000,
+      "Entries": [
+        "Black Scorpion Stinger"
+      ]
+    },
+    {
+      "ID": 1530000,
+      "Entries": [
+        "Ricard's Rapier"
+      ]
+    },
+    {
+      "ID": 1580000,
+      "Entries": [
+        "Ice Rapier"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Falchion"
+      ]
+    },
+    {
+      "ID": 1610000,
+      "Entries": [
+        "Shotel"
+      ]
+    },
+    {
+      "ID": 1620000,
+      "Entries": [
+        "Warped Sword"
+      ]
+    },
+    {
+      "ID": 1630000,
+      "Entries": [
+        "Eleum Loyce"
+      ]
+    },
+    {
+      "ID": 1640000,
+      "Entries": [
+        "Manikin Sabre"
+      ]
+    },
+    {
+      "ID": 1650000,
+      "Entries": [
+        "Scimitar"
+      ]
+    },
+    {
+      "ID": 1660000,
+      "Entries": [
+        "Red Rust Scimitar"
+      ]
+    },
+    {
+      "ID": 1670000,
+      "Entries": [
+        "Spider Fang"
+      ]
+    },
+    {
+      "ID": 1680000,
+      "Entries": [
+        "Melu Scimitar"
+      ]
+    },
+    {
+      "ID": 1690000,
+      "Entries": [
+        "Monastery Scimitar"
+      ]
+    },
+    {
+      "ID": 1700000,
+      "Entries": [
+        "Uchigatana"
+      ]
+    },
+    {
+      "ID": 1710000,
+      "Entries": [
+        "Washing Pole"
+      ]
+    },
+    {
+      "ID": 1720000,
+      "Entries": [
+        "Chaos Blade"
+      ]
+    },
+    {
+      "ID": 1730000,
+      "Entries": [
+        "Blacksteel Katana"
+      ]
+    },
+    {
+      "ID": 1740000,
+      "Entries": [
+        "Manslayer"
+      ]
+    },
+    {
+      "ID": 1760000,
+      "Entries": [
+        "Darkdrift"
+      ]
+    },
+    {
+      "ID": 1770000,
+      "Entries": [
+        "Berserker Blade"
+      ]
+    },
+    {
+      "ID": 1790000,
+      "Entries": [
+        "Bewitched Alonne Sword"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Bastard Sword"
+      ]
+    },
+    {
+      "ID": 1810000,
+      "Entries": [
+        "Flamberge"
+      ]
+    },
+    {
+      "ID": 1820000,
+      "Entries": [
+        "Claymore"
+      ]
+    },
+    {
+      "ID": 1830000,
+      "Entries": [
+        "Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 1831000,
+      "Entries": [
+        "Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 1850000,
+      "Entries": [
+        "Drangleic Sword"
+      ]
+    },
+    {
+      "ID": 1860000,
+      "Entries": [
+        "Thorned Greatsword"
+      ]
+    },
+    {
+      "ID": 1870000,
+      "Entries": [
+        "Bluemoon Greatsword"
+      ]
+    },
+    {
+      "ID": 1871000,
+      "Entries": [
+        "Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 1880000,
+      "Entries": [
+        "Mastodon Greatsword"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Ruler's Sword"
+      ]
+    },
+    {
+      "ID": 1910000,
+      "Entries": [
+        "Mirrah Greatsword"
+      ]
+    },
+    {
+      "ID": 1911000,
+      "Entries": [
+        "Old Mirrah Greatsword"
+      ]
+    },
+    {
+      "ID": 1920000,
+      "Entries": [
+        "Black Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 1930000,
+      "Entries": [
+        "Black Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 1940000,
+      "Entries": [
+        "Royal Greatsword"
+      ]
+    },
+    {
+      "ID": 1950000,
+      "Entries": [
+        "Old Knight Greatsword"
+      ]
+    },
+    {
+      "ID": 1960000,
+      "Entries": [
+        "Defender Greatsword"
+      ]
+    },
+    {
+      "ID": 1970000,
+      "Entries": [
+        "Watcher Greatsword"
+      ]
+    },
+    {
+      "ID": 1980000,
+      "Entries": [
+        "Key to the Embedded"
+      ]
+    },
+    {
+      "ID": 1990000,
+      "Entries": [
+        "Drakeblood Greatsword"
+      ]
+    },
+    {
+      "ID": 1995000,
+      "Entries": [
+        "Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 1996000,
+      "Entries": [
+        "Charred Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 1997000,
+      "Entries": [
+        "Greatsword of the Forlorn"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        "Hand Axe"
+      ]
+    },
+    {
+      "ID": 2010000,
+      "Entries": [
+        "Battle Axe"
+      ]
+    },
+    {
+      "ID": 2020000,
+      "Entries": [
+        "Bandit Axe"
+      ]
+    },
+    {
+      "ID": 2030000,
+      "Entries": [
+        "Infantry Axe"
+      ]
+    },
+    {
+      "ID": 2070000,
+      "Entries": [
+        "Gyrm Axe"
+      ]
+    },
+    {
+      "ID": 2080000,
+      "Entries": [
+        "Dragonslayer's Crescent Axe"
+      ]
+    },
+    {
+      "ID": 2090000,
+      "Entries": [
+        "Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 2100000,
+      "Entries": [
+        "Silverblack Sickle"
+      ]
+    },
+    {
+      "ID": 2200000,
+      "Entries": [
+        "Crescent Axe"
+      ]
+    },
+    {
+      "ID": 2210000,
+      "Entries": [
+        "Greataxe"
+      ]
+    },
+    {
+      "ID": 2220000,
+      "Entries": [
+        "Bandit Greataxe"
+      ]
+    },
+    {
+      "ID": 2240000,
+      "Entries": [
+        "Lion Greataxe"
+      ]
+    },
+    {
+      "ID": 2250000,
+      "Entries": [
+        "Giant Stone Axe"
+      ]
+    },
+    {
+      "ID": 2260000,
+      "Entries": [
+        "Gyrm Greataxe"
+      ]
+    },
+    {
+      "ID": 2290000,
+      "Entries": [
+        "Black Dragon Greataxe"
+      ]
+    },
+    {
+      "ID": 2300000,
+      "Entries": [
+        "Black Knight Greataxe"
+      ]
+    },
+    {
+      "ID": 2310000,
+      "Entries": [
+        "Drakekeeper's Greataxe"
+      ]
+    },
+    {
+      "ID": 2400000,
+      "Entries": [
+        "Club"
+      ]
+    },
+    {
+      "ID": 2410000,
+      "Entries": [
+        "Mace"
+      ]
+    },
+    {
+      "ID": 2420000,
+      "Entries": [
+        "Morning Star"
+      ]
+    },
+    {
+      "ID": 2430000,
+      "Entries": [
+        "Reinforced Club"
+      ]
+    },
+    {
+      "ID": 2440000,
+      "Entries": [
+        "Craftsman's Hammer"
+      ]
+    },
+    {
+      "ID": 2470000,
+      "Entries": [
+        "Mace of the Insolent"
+      ]
+    },
+    {
+      "ID": 2500000,
+      "Entries": [
+        "Handmaid's Ladle"
+      ]
+    },
+    {
+      "ID": 2520000,
+      "Entries": [
+        "Blacksmith's Hammer"
+      ]
+    },
+    {
+      "ID": 2530000,
+      "Entries": [
+        "Black Dragon Warpick"
+      ]
+    },
+    {
+      "ID": 2540000,
+      "Entries": [
+        "Aldia Hammer"
+      ]
+    },
+    {
+      "ID": 2560000,
+      "Entries": [
+        "Barbed Club"
+      ]
+    },
+    {
+      "ID": 2600000,
+      "Entries": [
+        "Large Club"
+      ]
+    },
+    {
+      "ID": 2610000,
+      "Entries": [
+        "Pickaxe"
+      ]
+    },
+    {
+      "ID": 2620000,
+      "Entries": [
+        "Great Club"
+      ]
+    },
+    {
+      "ID": 2630000,
+      "Entries": [
+        "Gyrm Great Hammer"
+      ]
+    },
+    {
+      "ID": 2660000,
+      "Entries": [
+        "Iron King Hammer"
+      ]
+    },
+    {
+      "ID": 2670000,
+      "Entries": [
+        "Malformed Skull"
+      ]
+    },
+    {
+      "ID": 2680000,
+      "Entries": [
+        "Dragon Tooth"
+      ]
+    },
+    {
+      "ID": 2690000,
+      "Entries": [
+        "Giant Warrior Club"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "Malformed Shell"
+      ]
+    },
+    {
+      "ID": 2710000,
+      "Entries": [
+        "Demon's Great Hammer"
+      ]
+    },
+    {
+      "ID": 2720000,
+      "Entries": [
+        "Archdrake Mace"
+      ]
+    },
+    {
+      "ID": 2730000,
+      "Entries": [
+        "Old Knight Hammer"
+      ]
+    },
+    {
+      "ID": 2740000,
+      "Entries": [
+        "Drakekeeper's Great Hammer"
+      ]
+    },
+    {
+      "ID": 2750000,
+      "Entries": [
+        "Sacred Chime Hammer"
+      ]
+    },
+    {
+      "ID": 2760000,
+      "Entries": [
+        "Sanctum Mace"
+      ]
+    },
+    {
+      "ID": 2800000,
+      "Entries": [
+        "Spear"
+      ]
+    },
+    {
+      "ID": 2810000,
+      "Entries": [
+        "Winged Spear"
+      ]
+    },
+    {
+      "ID": 2820000,
+      "Entries": [
+        "Pike"
+      ]
+    },
+    {
+      "ID": 2830000,
+      "Entries": [
+        "Partizan"
+      ]
+    },
+    {
+      "ID": 2840000,
+      "Entries": [
+        "Stone Soldier Spear"
+      ]
+    },
+    {
+      "ID": 2850000,
+      "Entries": [
+        "Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 2855000,
+      "Entries": [
+        "Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 2860000,
+      "Entries": [
+        "Silverblack Spear"
+      ]
+    },
+    {
+      "ID": 2870000,
+      "Entries": [
+        "Heide Spear"
+      ]
+    },
+    {
+      "ID": 2880000,
+      "Entries": [
+        "Pate's Spear"
+      ]
+    },
+    {
+      "ID": 2890000,
+      "Entries": [
+        "Channeler's Trident"
+      ]
+    },
+    {
+      "ID": 2895000,
+      "Entries": [
+        "Gargoyle Bident"
+      ]
+    },
+    {
+      "ID": 2896000,
+      "Entries": [
+        "Dragonslayer Spear"
+      ]
+    },
+    {
+      "ID": 2900000,
+      "Entries": [
+        "Heide Lance"
+      ]
+    },
+    {
+      "ID": 2920000,
+      "Entries": [
+        "Heide Greatlance"
+      ]
+    },
+    {
+      "ID": 2930000,
+      "Entries": [
+        "Grand Lance"
+      ]
+    },
+    {
+      "ID": 2940000,
+      "Entries": [
+        "Chariot Lance"
+      ]
+    },
+    {
+      "ID": 2950000,
+      "Entries": [
+        "Rampart Golem Lance"
+      ]
+    },
+    {
+      "ID": 2960000,
+      "Entries": [
+        "Smelter Hammer"
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        "Great Scythe"
+      ]
+    },
+    {
+      "ID": 3010000,
+      "Entries": [
+        "Great Machete"
+      ]
+    },
+    {
+      "ID": 3020000,
+      "Entries": [
+        "Full Moon Sickle"
+      ]
+    },
+    {
+      "ID": 3040000,
+      "Entries": [
+        "Crescent Sickle"
+      ]
+    },
+    {
+      "ID": 3050000,
+      "Entries": [
+        "Scythe of Nahr Alma"
+      ]
+    },
+    {
+      "ID": 3060000,
+      "Entries": [
+        "Bone Scythe"
+      ]
+    },
+    {
+      "ID": 3070000,
+      "Entries": [
+        "Scythe of Want"
+      ]
+    },
+    {
+      "ID": 3080000,
+      "Entries": [
+        "Scythe of the Forlorn"
+      ]
+    },
+    {
+      "ID": 3200000,
+      "Entries": [
+        "Lucerne"
+      ]
+    },
+    {
+      "ID": 3210000,
+      "Entries": [
+        "Scythe"
+      ]
+    },
+    {
+      "ID": 3220000,
+      "Entries": [
+        "Halberd"
+      ]
+    },
+    {
+      "ID": 3240000,
+      "Entries": [
+        "Helix Halberd"
+      ]
+    },
+    {
+      "ID": 3250000,
+      "Entries": [
+        "Santier's Spear - Unbroken"
+      ]
+    },
+    {
+      "ID": 3251000,
+      "Entries": [
+        "Santier's Spear - Broken"
+      ]
+    },
+    {
+      "ID": 3270000,
+      "Entries": [
+        "Mastodon Halberd"
+      ]
+    },
+    {
+      "ID": 3280000,
+      "Entries": [
+        "Blue Knight's Halberd"
+      ]
+    },
+    {
+      "ID": 3290000,
+      "Entries": [
+        "Dragonrider's Halberd"
+      ]
+    },
+    {
+      "ID": 3300000,
+      "Entries": [
+        "Black Knight Halberd"
+      ]
+    },
+    {
+      "ID": 3310000,
+      "Entries": [
+        "Syan's Halberd"
+      ]
+    },
+    {
+      "ID": 3320000,
+      "Entries": [
+        "Roaring Halberd"
+      ]
+    },
+    {
+      "ID": 3330000,
+      "Entries": [
+        "Old Knight Halberd"
+      ]
+    },
+    {
+      "ID": 3340000,
+      "Entries": [
+        "Old Knight Pike"
+      ]
+    },
+    {
+      "ID": 3350000,
+      "Entries": [
+        "Drakekeeper's Warpick"
+      ]
+    },
+    {
+      "ID": 3370000,
+      "Entries": [
+        "Wrathful Axe"
+      ]
+    },
+    {
+      "ID": 3400000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3401000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3402000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3403000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3404000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3405000,
+      "Entries": [
+        "Fists"
+      ]
+    },
+    {
+      "ID": 3406000,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 3407000,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 3408000,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 3410000,
+      "Entries": [
+        "Claws"
+      ]
+    },
+    {
+      "ID": 3420000,
+      "Entries": [
+        "Malformed Claws"
+      ]
+    },
+    {
+      "ID": 3430000,
+      "Entries": [
+        "Manikin Claws"
+      ]
+    },
+    {
+      "ID": 3440000,
+      "Entries": [
+        "Work Hook"
+      ]
+    },
+    {
+      "ID": 3500000,
+      "Entries": [
+        "Caestus"
+      ]
+    },
+    {
+      "ID": 3530000,
+      "Entries": [
+        "Bone Fist"
+      ]
+    },
+    {
+      "ID": 3600000,
+      "Entries": [
+        "Whip"
+      ]
+    },
+    {
+      "ID": 3610000,
+      "Entries": [
+        "Notched Whip"
+      ]
+    },
+    {
+      "ID": 3620000,
+      "Entries": [
+        "Bloodied Whip"
+      ]
+    },
+    {
+      "ID": 3630000,
+      "Entries": [
+        "Spotted Whip"
+      ]
+    },
+    {
+      "ID": 3660000,
+      "Entries": [
+        "Old Whip"
+      ]
+    },
+    {
+      "ID": 3800000,
+      "Entries": [
+        "Sorcerer's Staff"
+      ]
+    },
+    {
+      "ID": 3810000,
+      "Entries": [
+        "Staff of Amana"
+      ]
+    },
+    {
+      "ID": 3820000,
+      "Entries": [
+        "Witchtree Branch"
+      ]
+    },
+    {
+      "ID": 3830000,
+      "Entries": [
+        "Lizard Staff"
+      ]
+    },
+    {
+      "ID": 3850000,
+      "Entries": [
+        "Olenford's Staff"
+      ]
+    },
+    {
+      "ID": 3860000,
+      "Entries": [
+        "Archdrake Staff"
+      ]
+    },
+    {
+      "ID": 3870000,
+      "Entries": [
+        "Bat Staff"
+      ]
+    },
+    {
+      "ID": 3880000,
+      "Entries": [
+        "Bone Staff"
+      ]
+    },
+    {
+      "ID": 3890000,
+      "Entries": [
+        "Staff of Wisdom"
+      ]
+    },
+    {
+      "ID": 3900000,
+      "Entries": [
+        "Sunset Staff"
+      ]
+    },
+    {
+      "ID": 3910000,
+      "Entries": [
+        "Pilgrim's Spontoon"
+      ]
+    },
+    {
+      "ID": 3930000,
+      "Entries": [
+        "Azal's Staff"
+      ]
+    },
+    {
+      "ID": 3940000,
+      "Entries": [
+        "Retainer Staff"
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        "Cleric's Sacred Chime"
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        "Witchtree Bellvine"
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        "Priest's Chime"
+      ]
+    },
+    {
+      "ID": 4040000,
+      "Entries": [
+        "Dragon Chime"
+      ]
+    },
+    {
+      "ID": 4050000,
+      "Entries": [
+        "Chime of Want"
+      ]
+    },
+    {
+      "ID": 4060000,
+      "Entries": [
+        "Archdrake Chime"
+      ]
+    },
+    {
+      "ID": 4080000,
+      "Entries": [
+        "Idol's Chime"
+      ]
+    },
+    {
+      "ID": 4090000,
+      "Entries": [
+        "Caitha's Chime"
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        "Protective Chime"
+      ]
+    },
+    {
+      "ID": 4110000,
+      "Entries": [
+        "Disc Chime"
+      ]
+    },
+    {
+      "ID": 4120000,
+      "Entries": [
+        "Chime of Screams"
+      ]
+    },
+    {
+      "ID": 4150000,
+      "Entries": [
+        "Black Witch's Staff"
+      ]
+    },
+    {
+      "ID": 4200000,
+      "Entries": [
+        "Short Bow"
+      ]
+    },
+    {
+      "ID": 4210000,
+      "Entries": [
+        "Long Bow"
+      ]
+    },
+    {
+      "ID": 4220000,
+      "Entries": [
+        "Composite Bow"
+      ]
+    },
+    {
+      "ID": 4230000,
+      "Entries": [
+        "Sea Bow"
+      ]
+    },
+    {
+      "ID": 4240000,
+      "Entries": [
+        "Dragonrider Bow"
+      ]
+    },
+    {
+      "ID": 4270000,
+      "Entries": [
+        "Bell Keeper Bow"
+      ]
+    },
+    {
+      "ID": 4280000,
+      "Entries": [
+        "Bow of Want"
+      ]
+    },
+    {
+      "ID": 4290000,
+      "Entries": [
+        "Hunter's Blackbow"
+      ]
+    },
+    {
+      "ID": 4400000,
+      "Entries": [
+        "Alonne Greatbow"
+      ]
+    },
+    {
+      "ID": 4420000,
+      "Entries": [
+        "Dragonslayer Greatbow"
+      ]
+    },
+    {
+      "ID": 4430000,
+      "Entries": [
+        "Possessed Armor Greatbow"
+      ]
+    },
+    {
+      "ID": 4440000,
+      "Entries": [
+        "Twin-headed Greatbow"
+      ]
+    },
+    {
+      "ID": 4600000,
+      "Entries": [
+        "Light Crossbow"
+      ]
+    },
+    {
+      "ID": 4610000,
+      "Entries": [
+        "Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 4630000,
+      "Entries": [
+        "Shield Crossbow"
+      ]
+    },
+    {
+      "ID": 4660000,
+      "Entries": [
+        "Avelyn"
+      ]
+    },
+    {
+      "ID": 4670000,
+      "Entries": [
+        "Sanctum Crossbow"
+      ]
+    },
+    {
+      "ID": 4680000,
+      "Entries": [
+        "Sanctum Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 5000000,
+      "Entries": [
+        "Murakumo"
+      ]
+    },
+    {
+      "ID": 5010000,
+      "Entries": [
+        "Arced Sword"
+      ]
+    },
+    {
+      "ID": 5040000,
+      "Entries": [
+        "Curved Dragon Greatsword"
+      ]
+    },
+    {
+      "ID": 5050000,
+      "Entries": [
+        "Curved Nil Greatsword"
+      ]
+    },
+    {
+      "ID": 5200000,
+      "Entries": [
+        "Zweihander"
+      ]
+    },
+    {
+      "ID": 5210000,
+      "Entries": [
+        "Greatsword"
+      ]
+    },
+    {
+      "ID": 5220000,
+      "Entries": [
+        "Smelter Sword"
+      ]
+    },
+    {
+      "ID": 5225000,
+      "Entries": [
+        "Aged Smelter Sword"
+      ]
+    },
+    {
+      "ID": 5230000,
+      "Entries": [
+        "Drakewing Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5240000,
+      "Entries": [
+        "King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5250000,
+      "Entries": [
+        "Fume Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5255000,
+      "Entries": [
+        "Ivory King Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5270000,
+      "Entries": [
+        "Pursuer's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5275000,
+      "Entries": [
+        "Drakekeeper's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5280000,
+      "Entries": [
+        "Crypt Blacksword"
+      ]
+    },
+    {
+      "ID": 5285000,
+      "Entries": [
+        "Old Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5290000,
+      "Entries": [
+        "Black Knight Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 5295000,
+      "Entries": [
+        "Lost Sinner's Sword"
+      ]
+    },
+    {
+      "ID": 5310000,
+      "Entries": [
+        "Stone Twinblade"
+      ]
+    },
+    {
+      "ID": 5330000,
+      "Entries": [
+        "Dragonrider Twinblade"
+      ]
+    },
+    {
+      "ID": 5340000,
+      "Entries": [
+        "Twinblade"
+      ]
+    },
+    {
+      "ID": 5350000,
+      "Entries": [
+        "Red Iron Twinblade"
+      ]
+    },
+    {
+      "ID": 5360000,
+      "Entries": [
+        "Curved Twinblade"
+      ]
+    },
+    {
+      "ID": 5370000,
+      "Entries": [
+        "Sorcerer's Twinblade"
+      ]
+    },
+    {
+      "ID": 5400000,
+      "Entries": [
+        "Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 5410000,
+      "Entries": [
+        "Dark Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 5500000,
+      "Entries": [
+        "Black Flamestone Dagger"
+      ]
+    },
+    {
+      "ID": 5510000,
+      "Entries": [
+        "Yellow Quartz Longsword"
+      ]
+    },
+    {
+      "ID": 5520000,
+      "Entries": [
+        "Bound Hand Axe"
+      ]
+    },
+    {
+      "ID": 5530000,
+      "Entries": [
+        "Homunculus Mace"
+      ]
+    },
+    {
+      "ID": 5540000,
+      "Entries": [
+        "Transgressor's Staff"
+      ]
+    },
+    {
+      "ID": 5600000,
+      "Entries": [
+        "Longsword [Recolor]"
+      ]
+    },
+    {
+      "ID": 5610000,
+      "Entries": [
+        "Murakumo [Recolor]"
+      ]
+    },
+    {
+      "ID": 5620000,
+      "Entries": [
+        "Blacksteel Katana [Recolor]"
+      ]
+    },
+    {
+      "ID": 5630000,
+      "Entries": [
+        "Rapier [Recolor]"
+      ]
+    },
+    {
+      "ID": 5640000,
+      "Entries": [
+        "Greataxe [Recolor]"
+      ]
+    },
+    {
+      "ID": 5650000,
+      "Entries": [
+        "Great Club [Recolor]"
+      ]
+    },
+    {
+      "ID": 5660000,
+      "Entries": [
+        "Caestus [Recolor]"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        "Torch"
+      ]
+    },
+    {
+      "ID": 6100000,
+      "Entries": [
+        "Binoculars"
+      ]
+    },
+    {
+      "ID": 6300000,
+      "Entries": [
+        "Ghost Phantom - Dagger  "
+      ]
+    },
+    {
+      "ID": 6310000,
+      "Entries": [
+        "Ghost Phantom - Dagger"
+      ]
+    },
+    {
+      "ID": 6320000,
+      "Entries": [
+        "Ghost Phantom - Curved Sword"
+      ]
+    },
+    {
+      "ID": 6330000,
+      "Entries": [
+        "Ghost Phantom - Katana"
+      ]
+    },
+    {
+      "ID": 6340000,
+      "Entries": [
+        "Ghost Phantom - Straight Sword"
+      ]
+    },
+    {
+      "ID": 6350000,
+      "Entries": [
+        "Ghost Phantom - Greatsword"
+      ]
+    },
+    {
+      "ID": 6360000,
+      "Entries": [
+        "Ghost Phantom - Hammer"
+      ]
+    },
+    {
+      "ID": 6370000,
+      "Entries": [
+        "Ghost Phantom - Great Hammer"
+      ]
+    },
+    {
+      "ID": 6380000,
+      "Entries": [
+        "Ghost Phantom - Axe"
+      ]
+    },
+    {
+      "ID": 6390000,
+      "Entries": [
+        "Ghost Phantom - Greataxe"
+      ]
+    },
+    {
+      "ID": 6400000,
+      "Entries": [
+        "Ghost Phantom - Spear "
+      ]
+    },
+    {
+      "ID": 6410000,
+      "Entries": [
+        "Ghost Phantom - Scythe"
+      ]
+    },
+    {
+      "ID": 6420000,
+      "Entries": [
+        "Ghost Phantom - Halberd"
+      ]
+    },
+    {
+      "ID": 6430000,
+      "Entries": [
+        "Ghost Phantom - Fists"
+      ]
+    },
+    {
+      "ID": 6440000,
+      "Entries": [
+        "Ghost Phantom - Claw"
+      ]
+    },
+    {
+      "ID": 6450000,
+      "Entries": [
+        "Ghost Phantom - Torch "
+      ]
+    },
+    {
+      "ID": 6460000,
+      "Entries": [
+        "Ghost Phantom - Binoculars"
+      ]
+    },
+    {
+      "ID": 6470000,
+      "Entries": [
+        "Ghost Phantom - Whip  "
+      ]
+    },
+    {
+      "ID": 6480000,
+      "Entries": [
+        "Ghost Phantom - Staff"
+      ]
+    },
+    {
+      "ID": 6490000,
+      "Entries": [
+        "Ghost Phantom - Chime"
+      ]
+    },
+    {
+      "ID": 6500000,
+      "Entries": [
+        "Ghost Phantom - Bow"
+      ]
+    },
+    {
+      "ID": 6510000,
+      "Entries": [
+        "Ghost Phantom - Greatbow"
+      ]
+    },
+    {
+      "ID": 6520000,
+      "Entries": [
+        "Ghost Phantom - Crossbow"
+      ]
+    },
+    {
+      "ID": 6530000,
+      "Entries": [
+        "Ghost Phantom - Curved Greatsword"
+      ]
+    },
+    {
+      "ID": 6540000,
+      "Entries": [
+        "Ghost Phantom - Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 6550000,
+      "Entries": [
+        "Ghost Phantom - Twinblade"
+      ]
+    },
+    {
+      "ID": 7010000,
+      "Entries": [
+        "Cutscene - Statue of a Man"
+      ]
+    },
+    {
+      "ID": 11000000,
+      "Entries": [
+        "Buckler"
+      ]
+    },
+    {
+      "ID": 11005000,
+      "Entries": [
+        "Benhart's Parma"
+      ]
+    },
+    {
+      "ID": 11010000,
+      "Entries": [
+        "Small Leather Shield"
+      ]
+    },
+    {
+      "ID": 11020000,
+      "Entries": [
+        "Iron Parma"
+      ]
+    },
+    {
+      "ID": 11030000,
+      "Entries": [
+        "Foot Soldier Shield"
+      ]
+    },
+    {
+      "ID": 11040000,
+      "Entries": [
+        "Target Shield"
+      ]
+    },
+    {
+      "ID": 11050000,
+      "Entries": [
+        "Golden Falcon Shield"
+      ]
+    },
+    {
+      "ID": 11070000,
+      "Entries": [
+        "Manikin Shield"
+      ]
+    },
+    {
+      "ID": 11080000,
+      "Entries": [
+        "Llewellyn Shield"
+      ]
+    },
+    {
+      "ID": 11091000,
+      "Entries": [
+        "Crimson Parma"
+      ]
+    },
+    {
+      "ID": 11110000,
+      "Entries": [
+        "Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 11120000,
+      "Entries": [
+        "Cleric's Small Shield"
+      ]
+    },
+    {
+      "ID": 11130000,
+      "Entries": [
+        "Magic Shield"
+      ]
+    },
+    {
+      "ID": 11140000,
+      "Entries": [
+        "Cursed Bone Shield"
+      ]
+    },
+    {
+      "ID": 11150000,
+      "Entries": [
+        "Sanctum Shield"
+      ]
+    },
+    {
+      "ID": 11160000,
+      "Entries": [
+        "Varangian Shield"
+      ]
+    },
+    {
+      "ID": 11185000,
+      "Entries": [
+        "Watcher's Shield"
+      ]
+    },
+    {
+      "ID": 11200000,
+      "Entries": [
+        "Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 11210000,
+      "Entries": [
+        "Blue Wooden Shield"
+      ]
+    },
+    {
+      "ID": 11220000,
+      "Entries": [
+        "Silver Eagle Kite Shield"
+      ]
+    },
+    {
+      "ID": 11230000,
+      "Entries": [
+        "Drangleic Shield"
+      ]
+    },
+    {
+      "ID": 11240000,
+      "Entries": [
+        "Lion Clan Shield"
+      ]
+    },
+    {
+      "ID": 11250000,
+      "Entries": [
+        "Archdrake Shield"
+      ]
+    },
+    {
+      "ID": 11260000,
+      "Entries": [
+        "King's Shield"
+      ]
+    },
+    {
+      "ID": 11270000,
+      "Entries": [
+        "Mirrah Shield"
+      ]
+    },
+    {
+      "ID": 11280000,
+      "Entries": [
+        "Old Knight's Shield"
+      ]
+    },
+    {
+      "ID": 11290000,
+      "Entries": [
+        "Loyce Shield"
+      ]
+    },
+    {
+      "ID": 11295000,
+      "Entries": [
+        "Charred Loyce Shield"
+      ]
+    },
+    {
+      "ID": 11300000,
+      "Entries": [
+        "Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 11310000,
+      "Entries": [
+        "Golden Wing Shield"
+      ]
+    },
+    {
+      "ID": 11320000,
+      "Entries": [
+        "Vessel Shield"
+      ]
+    },
+    {
+      "ID": 11330000,
+      "Entries": [
+        "Shield of the Insolent"
+      ]
+    },
+    {
+      "ID": 11350000,
+      "Entries": [
+        "Silverblack Shield"
+      ]
+    },
+    {
+      "ID": 11360000,
+      "Entries": [
+        "Stone Parma"
+      ]
+    },
+    {
+      "ID": 11370000,
+      "Entries": [
+        "Grand Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 11380000,
+      "Entries": [
+        "Moon Butterfly Shield"
+      ]
+    },
+    {
+      "ID": 11390000,
+      "Entries": [
+        "Slumbering Dragon Shield"
+      ]
+    },
+    {
+      "ID": 11395000,
+      "Entries": [
+        "Chaos Shield"
+      ]
+    },
+    {
+      "ID": 11400000,
+      "Entries": [
+        "Wooden Shield"
+      ]
+    },
+    {
+      "ID": 11420000,
+      "Entries": [
+        "Hollow Soldier Shield"
+      ]
+    },
+    {
+      "ID": 11430000,
+      "Entries": [
+        "Royal Kite Shield"
+      ]
+    },
+    {
+      "ID": 11450000,
+      "Entries": [
+        "Red Rust Shield"
+      ]
+    },
+    {
+      "ID": 11455000,
+      "Entries": [
+        "Rampart Golem Shield"
+      ]
+    },
+    {
+      "ID": 11470000,
+      "Entries": [
+        "Bell Keeper Shield"
+      ]
+    },
+    {
+      "ID": 11475000,
+      "Entries": [
+        "Defender's Shield"
+      ]
+    },
+    {
+      "ID": 11480000,
+      "Entries": [
+        "Black Dragon Shield"
+      ]
+    },
+    {
+      "ID": 11485000,
+      "Entries": [
+        "Drakekeeper's Shield"
+      ]
+    },
+    {
+      "ID": 11490000,
+      "Entries": [
+        "Porcine Shield"
+      ]
+    },
+    {
+      "ID": 11495000,
+      "Entries": [
+        "Bone Shield"
+      ]
+    },
+    {
+      "ID": 11500000,
+      "Entries": [
+        "Twin Dragon Greatshield"
+      ]
+    },
+    {
+      "ID": 11510000,
+      "Entries": [
+        "Tower Shield"
+      ]
+    },
+    {
+      "ID": 11530000,
+      "Entries": [
+        "Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 11540000,
+      "Entries": [
+        "Reeve's Greatshield"
+      ]
+    },
+    {
+      "ID": 11550000,
+      "Entries": [
+        "King's Mirror"
+      ]
+    },
+    {
+      "ID": 11560000,
+      "Entries": [
+        "Dragonrider Greatshield"
+      ]
+    },
+    {
+      "ID": 11570000,
+      "Entries": [
+        "Mastodon Greatshield"
+      ]
+    },
+    {
+      "ID": 11590000,
+      "Entries": [
+        "Havel's Greatshield"
+      ]
+    },
+    {
+      "ID": 11600000,
+      "Entries": [
+        "Gyrm Greatshield"
+      ]
+    },
+    {
+      "ID": 11610000,
+      "Entries": [
+        "Pursuer's Greatshield"
+      ]
+    },
+    {
+      "ID": 11620000,
+      "Entries": [
+        "Pate's Shield"
+      ]
+    },
+    {
+      "ID": 11630000,
+      "Entries": [
+        "Old Knight Greatshield"
+      ]
+    },
+    {
+      "ID": 11640000,
+      "Entries": [
+        "Drakekeeper's Greatshield"
+      ]
+    },
+    {
+      "ID": 11650000,
+      "Entries": [
+        "Greatshield of Glory"
+      ]
+    },
+    {
+      "ID": 11700000,
+      "Entries": [
+        "Phoenix Parma"
+      ]
+    },
+    {
+      "ID": 11710000,
+      "Entries": [
+        "Sunlight Parma"
+      ]
+    },
+    {
+      "ID": 11720000,
+      "Entries": [
+        "Watchdragon Parma"
+      ]
+    },
+    {
+      "ID": 11730000,
+      "Entries": [
+        "Blossom Kite Shield"
+      ]
+    },
+    {
+      "ID": 11740000,
+      "Entries": [
+        "Rebel's Greatshield"
+      ]
+    },
+    {
+      "ID": 11750000,
+      "Entries": [
+        "Wicked Eye Greatshield"
+      ]
+    },
+    {
+      "ID": 11800000,
+      "Entries": [
+        "Black Flamestone Parma"
+      ]
+    },
+    {
+      "ID": 11810000,
+      "Entries": [
+        "Yellow Quartz Shield"
+      ]
+    },
+    {
+      "ID": 11820000,
+      "Entries": [
+        "Bound Wooden Shield"
+      ]
+    },
+    {
+      "ID": 11830000,
+      "Entries": [
+        "Homunculus Wooden Shield"
+      ]
+    },
+    {
+      "ID": 11840000,
+      "Entries": [
+        "Transgressor's Leather Shield"
+      ]
+    },
+    {
+      "ID": 12000000,
+      "Entries": [
+        "Ghost Phantom - Small Shield "
+      ]
+    },
+    {
+      "ID": 12010000,
+      "Entries": [
+        "Ghost Phantom - Medium Shield "
+      ]
+    },
+    {
+      "ID": 12020000,
+      "Entries": [
+        "Ghost Phantom - Greatshield "
+      ]
+    }
+  ]
+}

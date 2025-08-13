@@ -1,0 +1,77 @@
+{
+  "Name": "hitgroupparam_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Group 0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Group 1"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Group 2_Venomous Swamp ⇒ Soil _ Under knee"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Group 2_Venomous Swamp ⇒ Soil _ Under knee"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Group 3_VenomOus ⇒ Stone_Ankle"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Group 3_Venomous Swamp ⇒ Stone_ Under Knee"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Group 3_Venomous Swamp ⇒ Stone_Waist"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Group 3_Poison Marsh_Knee Down ⇒ Poison Marsh_Ankle"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "On the map for elevator connection reading"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Under the map for elevator connection reading"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "【Insect Key】Fountain of Recovery (Poisoned)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "For the destruction judgment of the hunting forest MAP"
+      ]
+    }
+  ]
+}

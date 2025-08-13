@@ -1,0 +1,1127 @@
+{
+  "Name": "eventlocation_m10_17_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intrusion Point 1-10"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Intrusion Point 2-9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Intrusion Point 2-10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Intrusion Point 2-11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Intrusion Point 2-12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Intrusion Point 2-13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Intrusion Point 2-14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Intrusion Point 2-15"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Intrusion Point 3-5"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Intrusion Point 3-6"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Intrusion Point 3-7"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Intrusion Point 3-8"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Intrusion Point 3-9"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Intrusion Point 3-10"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Intrusion Point 3-11"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Intrusion Point 3-12"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "Intrusion Point 3-13"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Intrusion Point 3-14"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Intrusion Point 3-15"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 2_01"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 2_02"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 2_03"
+      ]
+    },
+    {
+      "ID": 40030,
+      "Entries": [
+        "【Advice Blood Character】Hidden Door 3_01"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2_01"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2_02"
+      ]
+    },
+    {
+      "ID": 45020,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2_03"
+      ]
+    },
+    {
+      "ID": 45030,
+      "Entries": [
+        "[Blood character prohibited] hidden door 3_01"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Navi mesh change of the gate opened with the lever"
+      ]
+    },
+    {
+      "ID": 101700,
+      "Entries": [
+        "Backlead Safety Points [Hunting]"
+      ]
+    },
+    {
+      "ID": 101701,
+      "Entries": [
+        "Safety points for backlead [molten iron]"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Lifting machine - Under The Molten Iron Castle"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Lifting machine - On The Molten Iron Castle"
+      ]
+    },
+    {
+      "ID": 403000,
+      "Entries": [
+        "Elevator_Connection Replacement Point"
+      ]
+    },
+    {
+      "ID": 405000,
+      "Entries": [
+        "Flag switching point for connection"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Gate_Navigation change point opened with lever"
+      ]
+    },
+    {
+      "ID": 702000,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Boss: Shabazahat battle start judgment"
+      ]
+    },
+    {
+      "ID": 850000,
+      "Entries": [
+        "Boss: Naga battle start judgment"
+      ]
+    },
+    {
+      "ID": 900000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 901000,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 902000,
+      "Entries": [
+        "Navi mesh change of hidden door 3"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Tree wall 1 that the enemy destroys"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "Tree wall 2 destroyed by the enemy"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "Rotating floor_navi mesh change"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Navi mesh change of destructive scaffold"
+      ]
+    },
+    {
+      "ID": 2700000,
+      "Entries": [
+        "One-way door (where you jumped)"
+      ]
+    },
+    {
+      "ID": 3201000,
+      "Entries": [
+        "Suspended ceiling: The extent to which damage is dealt from the event"
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        "Poison Fog Damage Area_1"
+      ]
+    },
+    {
+      "ID": 4100010,
+      "Entries": [
+        "Poison Fog Damage Area_2"
+      ]
+    },
+    {
+      "ID": 4100020,
+      "Entries": [
+        "Poison Fog Damage Area_3"
+      ]
+    },
+    {
+      "ID": 4100030,
+      "Entries": [
+        "Poison Fog Damage Area_4"
+      ]
+    },
+    {
+      "ID": 4100040,
+      "Entries": [
+        "Poison Fog Damage Area_5"
+      ]
+    },
+    {
+      "ID": 4100050,
+      "Entries": [
+        "Poison Fog Damage Area_6"
+      ]
+    },
+    {
+      "ID": 4100060,
+      "Entries": [
+        "Poison Fog Damage Area_7"
+      ]
+    },
+    {
+      "ID": 4100070,
+      "Entries": [
+        "Poison Fog Damage Area_8"
+      ]
+    },
+    {
+      "ID": 6000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Enemy launch area on the path side of the poison"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "Enemy launch area in the right corner of the poison"
+      ]
+    },
+    {
+      "ID": 50001500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001501,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001502,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001503,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001504,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001505,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001552,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50001553,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50002000,
+      "Entries": [
+        "The enemy comes out from the back of the room in the poison."
+      ]
+    },
+    {
+      "ID": 50003100,
+      "Entries": [
+        "Dead launch area on the slopes of Poison Square"
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50006000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50008000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50008010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50008020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50008100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50009000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50009010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50009100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50010020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50010100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50010110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50012000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50013000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50013010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50013100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50014000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50014010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50014100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50015000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50016000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50016010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50016020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50017000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50019000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50019001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50020010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50021000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50022000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50023000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50024000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50025000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50025010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50025020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50026000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50026500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50027000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50028000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50028010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50029000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50029010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50029020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50031100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50031110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50032000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50033000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50033010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50034000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50035000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50035010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50035020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50036000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50037000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50037010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50038000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50039000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50040000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50041000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50042000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50043000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50044000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50044010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50045000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50046000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50047000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50048000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50050000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50050001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50050010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50060000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51008105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54007000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59100000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000301,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000401,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000402,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000501,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

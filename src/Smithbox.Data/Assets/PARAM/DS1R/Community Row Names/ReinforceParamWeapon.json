@@ -1,0 +1,2819 @@
+{
+  "Name": "ReinforceParamWeapon",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Normal +0"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Normal +1"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Normal +2"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Normal +3"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Normal +4"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Normal +5"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Normal +6"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Normal +7"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Normal +8"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Normal +9"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Normal +10"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Normal +11"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Normal +12"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Normal +13"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Normal +14"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Normal +15"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Crystal +0"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Crystal +1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Crystal +2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Crystal +3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Crystal +4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Crystal +5"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Lightning +0"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Lightning +1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Lightning +2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Lightning +3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Lightning +4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Lightning +5"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Raw +0"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Raw +1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Raw +2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Raw +3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Raw +4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Raw +5"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Magic +0"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Magic +1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Magic +2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Magic +3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Magic +4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Magic +5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Magic +6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "Magic +7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "Magic +8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "Magic +9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Magic +10"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Enchanted +0"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Enchanted +1"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Enchanted +2"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Enchanted +3"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Enchanted +4"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Enchanted +5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Divine +0"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Divine +1"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Divine +2"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Divine +3"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Divine +4"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Divine +5"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Divine +6"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Divine +7"
+      ]
+    },
+    {
+      "ID": 608,
+      "Entries": [
+        "Divine +8"
+      ]
+    },
+    {
+      "ID": 609,
+      "Entries": [
+        "Divine +9"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Divine +10"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Occult +0"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Occult +1"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Occult +2"
+      ]
+    },
+    {
+      "ID": 703,
+      "Entries": [
+        "Occult +3"
+      ]
+    },
+    {
+      "ID": 704,
+      "Entries": [
+        "Occult +4"
+      ]
+    },
+    {
+      "ID": 705,
+      "Entries": [
+        "Occult +5"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Fire +0"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Fire +1"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Fire +2"
+      ]
+    },
+    {
+      "ID": 803,
+      "Entries": [
+        "Fire +3"
+      ]
+    },
+    {
+      "ID": 804,
+      "Entries": [
+        "Fire +4"
+      ]
+    },
+    {
+      "ID": 805,
+      "Entries": [
+        "Fire +5"
+      ]
+    },
+    {
+      "ID": 806,
+      "Entries": [
+        "Fire +6"
+      ]
+    },
+    {
+      "ID": 807,
+      "Entries": [
+        "Fire +7"
+      ]
+    },
+    {
+      "ID": 808,
+      "Entries": [
+        "Fire +8"
+      ]
+    },
+    {
+      "ID": 809,
+      "Entries": [
+        "Fire +9"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "Fire +10"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Chaos +0"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Chaos +1"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "Chaos +2"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "Chaos +3"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "Chaos +4"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "Chaos +5"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Boss +0"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Boss +1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Boss +2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Boss +3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Boss +4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Boss +5"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Dragon +0"
+      ]
+    },
+    {
+      "ID": 1101,
+      "Entries": [
+        "Dragon +1"
+      ]
+    },
+    {
+      "ID": 1102,
+      "Entries": [
+        "Dragon +2"
+      ]
+    },
+    {
+      "ID": 1103,
+      "Entries": [
+        "Dragon +3"
+      ]
+    },
+    {
+      "ID": 1104,
+      "Entries": [
+        "Dragon +4"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Dragon +5"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Twinkling Titanite +0"
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Twinkling Titanite +1"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Twinkling Titanite +2"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Twinkling Titanite +3"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Twinkling Titanite +4"
+      ]
+    },
+    {
+      "ID": 1205,
+      "Entries": [
+        "Twinkling Titanite +5"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Boss +0"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "Boss +1"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "Boss +2"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "Boss +3"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "Boss +4"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "Boss +5"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Shield - Unique +0"
+      ]
+    },
+    {
+      "ID": 1401,
+      "Entries": [
+        "Shield - Unique +1"
+      ]
+    },
+    {
+      "ID": 1402,
+      "Entries": [
+        "Shield - Unique +2"
+      ]
+    },
+    {
+      "ID": 1403,
+      "Entries": [
+        "Shield - Unique +3"
+      ]
+    },
+    {
+      "ID": 1404,
+      "Entries": [
+        "Shield - Unique +4"
+      ]
+    },
+    {
+      "ID": 1405,
+      "Entries": [
+        "Shield - Unique +5"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Dark +0"
+      ]
+    },
+    {
+      "ID": 1501,
+      "Entries": [
+        "Dark +1"
+      ]
+    },
+    {
+      "ID": 1502,
+      "Entries": [
+        "Dark +2"
+      ]
+    },
+    {
+      "ID": 1503,
+      "Entries": [
+        "Dark +3"
+      ]
+    },
+    {
+      "ID": 1504,
+      "Entries": [
+        "Dark +4"
+      ]
+    },
+    {
+      "ID": 1505,
+      "Entries": [
+        "Dark +5"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Club - Normal +0"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Club - Normal +1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Club - Normal +2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Club - Normal +3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Club - Normal +4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Club - Normal +5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Club - Normal +6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Club - Normal +7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Club - Normal +8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Club - Normal +9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Club - Normal +10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Club - Normal +11"
+      ]
+    },
+    {
+      "ID": 2012,
+      "Entries": [
+        "Club - Normal +12"
+      ]
+    },
+    {
+      "ID": 2013,
+      "Entries": [
+        "Club - Normal +13"
+      ]
+    },
+    {
+      "ID": 2014,
+      "Entries": [
+        "Club - Normal +14"
+      ]
+    },
+    {
+      "ID": 2015,
+      "Entries": [
+        "Club - Normal +15"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Club - Crystal +0"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "Club - Crystal +1"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "Club - Crystal +2"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "Club - Crystal +3"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "Club - Crystal +4"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "Club - Crystal +5"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Club - Lightning +0"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Club - Lightning +1"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Club - Lightning +2"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "Club - Lightning +3"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "Club - Lightning +4"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "Club - Lightning +5"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Club - Raw +0"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Club - Raw +1"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "Club - Raw +2"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "Club - Raw +3"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "Club - Raw +4"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "Club - Raw +5"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Club - Magic +0"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "Club - Magic +1"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "Club - Magic +2"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "Club - Magic +3"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "Club - Magic +4"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "Club - Magic +5"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "Club - Magic +6"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "Club - Magic +7"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "Club - Magic +8"
+      ]
+    },
+    {
+      "ID": 2409,
+      "Entries": [
+        "Club - Magic +9"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Club - Magic +10"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Club - Enchanted +0"
+      ]
+    },
+    {
+      "ID": 2501,
+      "Entries": [
+        "Club - Enchanted +1"
+      ]
+    },
+    {
+      "ID": 2502,
+      "Entries": [
+        "Club - Enchanted +2"
+      ]
+    },
+    {
+      "ID": 2503,
+      "Entries": [
+        "Club - Enchanted +3"
+      ]
+    },
+    {
+      "ID": 2504,
+      "Entries": [
+        "Club - Enchanted +4"
+      ]
+    },
+    {
+      "ID": 2505,
+      "Entries": [
+        "Club - Enchanted +5"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Club - Divine +0"
+      ]
+    },
+    {
+      "ID": 2601,
+      "Entries": [
+        "Club - Divine +1"
+      ]
+    },
+    {
+      "ID": 2602,
+      "Entries": [
+        "Club - Divine +2"
+      ]
+    },
+    {
+      "ID": 2603,
+      "Entries": [
+        "Club - Divine +3"
+      ]
+    },
+    {
+      "ID": 2604,
+      "Entries": [
+        "Club - Divine +4"
+      ]
+    },
+    {
+      "ID": 2605,
+      "Entries": [
+        "Club - Divine +5"
+      ]
+    },
+    {
+      "ID": 2606,
+      "Entries": [
+        "Club - Divine +6"
+      ]
+    },
+    {
+      "ID": 2607,
+      "Entries": [
+        "Club - Divine +7"
+      ]
+    },
+    {
+      "ID": 2608,
+      "Entries": [
+        "Club - Divine +8"
+      ]
+    },
+    {
+      "ID": 2609,
+      "Entries": [
+        "Club - Divine +9"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Club - Divine +10"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Club - Occult +0"
+      ]
+    },
+    {
+      "ID": 2701,
+      "Entries": [
+        "Club - Occult +1"
+      ]
+    },
+    {
+      "ID": 2702,
+      "Entries": [
+        "Club - Occult +2"
+      ]
+    },
+    {
+      "ID": 2703,
+      "Entries": [
+        "Club - Occult +3"
+      ]
+    },
+    {
+      "ID": 2704,
+      "Entries": [
+        "Club - Occult +4"
+      ]
+    },
+    {
+      "ID": 2705,
+      "Entries": [
+        "Club - Occult +5"
+      ]
+    },
+    {
+      "ID": 2800,
+      "Entries": [
+        "Club - Fire +0"
+      ]
+    },
+    {
+      "ID": 2801,
+      "Entries": [
+        "Club - Fire +1"
+      ]
+    },
+    {
+      "ID": 2802,
+      "Entries": [
+        "Club - Fire +2"
+      ]
+    },
+    {
+      "ID": 2803,
+      "Entries": [
+        "Club - Fire +3"
+      ]
+    },
+    {
+      "ID": 2804,
+      "Entries": [
+        "Club - Fire +4"
+      ]
+    },
+    {
+      "ID": 2805,
+      "Entries": [
+        "Club - Fire +5"
+      ]
+    },
+    {
+      "ID": 2806,
+      "Entries": [
+        "Club - Fire +6"
+      ]
+    },
+    {
+      "ID": 2807,
+      "Entries": [
+        "Club - Fire +7"
+      ]
+    },
+    {
+      "ID": 2808,
+      "Entries": [
+        "Club - Fire +8"
+      ]
+    },
+    {
+      "ID": 2809,
+      "Entries": [
+        "Club - Fire +9"
+      ]
+    },
+    {
+      "ID": 2810,
+      "Entries": [
+        "Club - Fire +10"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Club - Chaos +0"
+      ]
+    },
+    {
+      "ID": 2901,
+      "Entries": [
+        "Club - Chaos +1"
+      ]
+    },
+    {
+      "ID": 2902,
+      "Entries": [
+        "Club - Chaos +2"
+      ]
+    },
+    {
+      "ID": 2903,
+      "Entries": [
+        "Club - Chaos +3"
+      ]
+    },
+    {
+      "ID": 2904,
+      "Entries": [
+        "Club - Chaos +4"
+      ]
+    },
+    {
+      "ID": 2905,
+      "Entries": [
+        "Club - Chaos +5"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Composite - Lightning +0"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Composite - Lightning +1"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Composite - Lightning +2"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        "Composite - Lightning +3"
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Composite - Lightning +4"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "Composite - Lightning +5"
+      ]
+    },
+    {
+      "ID": 3800,
+      "Entries": [
+        "Composite - Fire +0"
+      ]
+    },
+    {
+      "ID": 3801,
+      "Entries": [
+        "Composite - Fire +1"
+      ]
+    },
+    {
+      "ID": 3802,
+      "Entries": [
+        "Composite - Fire +2"
+      ]
+    },
+    {
+      "ID": 3803,
+      "Entries": [
+        "Composite - Fire +3"
+      ]
+    },
+    {
+      "ID": 3804,
+      "Entries": [
+        "Composite - Fire +4"
+      ]
+    },
+    {
+      "ID": 3805,
+      "Entries": [
+        "Composite - Fire +5"
+      ]
+    },
+    {
+      "ID": 3806,
+      "Entries": [
+        "Composite - Fire +6"
+      ]
+    },
+    {
+      "ID": 3807,
+      "Entries": [
+        "Composite - Fire +7"
+      ]
+    },
+    {
+      "ID": 3808,
+      "Entries": [
+        "Composite - Fire +8"
+      ]
+    },
+    {
+      "ID": 3809,
+      "Entries": [
+        "Composite - Fire +9"
+      ]
+    },
+    {
+      "ID": 3810,
+      "Entries": [
+        "Composite - Fire +10"
+      ]
+    },
+    {
+      "ID": 3900,
+      "Entries": [
+        "Composite - Chaos +0"
+      ]
+    },
+    {
+      "ID": 3901,
+      "Entries": [
+        "Composite - Chaos +1"
+      ]
+    },
+    {
+      "ID": 3902,
+      "Entries": [
+        "Composite - Chaos +2"
+      ]
+    },
+    {
+      "ID": 3903,
+      "Entries": [
+        "Composite - Chaos +3"
+      ]
+    },
+    {
+      "ID": 3904,
+      "Entries": [
+        "Composite - Chaos +4"
+      ]
+    },
+    {
+      "ID": 3905,
+      "Entries": [
+        "Composite - Chaos +5"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Shield - Normal +0"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Shield - Normal +1"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Shield - Normal +2"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Shield - Normal +3"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Shield - Normal +4"
+      ]
+    },
+    {
+      "ID": 5005,
+      "Entries": [
+        "Shield - Normal +5"
+      ]
+    },
+    {
+      "ID": 5006,
+      "Entries": [
+        "Shield - Normal +6"
+      ]
+    },
+    {
+      "ID": 5007,
+      "Entries": [
+        "Shield - Normal +7"
+      ]
+    },
+    {
+      "ID": 5008,
+      "Entries": [
+        "Shield - Normal +8"
+      ]
+    },
+    {
+      "ID": 5009,
+      "Entries": [
+        "Shield - Normal +9"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Shield - Normal +10"
+      ]
+    },
+    {
+      "ID": 5011,
+      "Entries": [
+        "Shield - Normal +11"
+      ]
+    },
+    {
+      "ID": 5012,
+      "Entries": [
+        "Shield - Normal +12"
+      ]
+    },
+    {
+      "ID": 5013,
+      "Entries": [
+        "Shield - Normal +13"
+      ]
+    },
+    {
+      "ID": 5014,
+      "Entries": [
+        "Shield - Normal +14"
+      ]
+    },
+    {
+      "ID": 5015,
+      "Entries": [
+        "Shield - Normal +15"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Shield - Magic +0"
+      ]
+    },
+    {
+      "ID": 5101,
+      "Entries": [
+        "Shield - Magic +1"
+      ]
+    },
+    {
+      "ID": 5102,
+      "Entries": [
+        "Shield - Magic +2"
+      ]
+    },
+    {
+      "ID": 5103,
+      "Entries": [
+        "Shield - Magic +3"
+      ]
+    },
+    {
+      "ID": 5104,
+      "Entries": [
+        "Shield - Magic +4"
+      ]
+    },
+    {
+      "ID": 5105,
+      "Entries": [
+        "Shield - Magic +5"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "Shield - Lightning +0"
+      ]
+    },
+    {
+      "ID": 5201,
+      "Entries": [
+        "Shield - Lightning +1"
+      ]
+    },
+    {
+      "ID": 5202,
+      "Entries": [
+        "Shield - Lightning +2"
+      ]
+    },
+    {
+      "ID": 5203,
+      "Entries": [
+        "Shield - Lightning +3"
+      ]
+    },
+    {
+      "ID": 5204,
+      "Entries": [
+        "Shield - Lightning +4"
+      ]
+    },
+    {
+      "ID": 5205,
+      "Entries": [
+        "Shield - Lightning +5"
+      ]
+    },
+    {
+      "ID": 5400,
+      "Entries": [
+        "Shield - Magic +0"
+      ]
+    },
+    {
+      "ID": 5401,
+      "Entries": [
+        "Shield - Magic +1"
+      ]
+    },
+    {
+      "ID": 5402,
+      "Entries": [
+        "Shield - Magic +2"
+      ]
+    },
+    {
+      "ID": 5403,
+      "Entries": [
+        "Shield - Magic +3"
+      ]
+    },
+    {
+      "ID": 5404,
+      "Entries": [
+        "Shield - Magic +4"
+      ]
+    },
+    {
+      "ID": 5405,
+      "Entries": [
+        "Shield - Magic +5"
+      ]
+    },
+    {
+      "ID": 5406,
+      "Entries": [
+        "Shield - Magic +6"
+      ]
+    },
+    {
+      "ID": 5407,
+      "Entries": [
+        "Shield - Magic +7"
+      ]
+    },
+    {
+      "ID": 5408,
+      "Entries": [
+        "Shield - Magic +8"
+      ]
+    },
+    {
+      "ID": 5409,
+      "Entries": [
+        "Shield - Magic +9"
+      ]
+    },
+    {
+      "ID": 5410,
+      "Entries": [
+        "Shield - Magic +10"
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Shield - Divine +0"
+      ]
+    },
+    {
+      "ID": 5601,
+      "Entries": [
+        "Shield - Divine +1"
+      ]
+    },
+    {
+      "ID": 5602,
+      "Entries": [
+        "Shield - Divine +2"
+      ]
+    },
+    {
+      "ID": 5603,
+      "Entries": [
+        "Shield - Divine +3"
+      ]
+    },
+    {
+      "ID": 5604,
+      "Entries": [
+        "Shield - Divine +4"
+      ]
+    },
+    {
+      "ID": 5605,
+      "Entries": [
+        "Shield - Divine +5"
+      ]
+    },
+    {
+      "ID": 5606,
+      "Entries": [
+        "Shield - Divine +6"
+      ]
+    },
+    {
+      "ID": 5607,
+      "Entries": [
+        "Shield - Divine +7"
+      ]
+    },
+    {
+      "ID": 5608,
+      "Entries": [
+        "Shield - Divine +8"
+      ]
+    },
+    {
+      "ID": 5609,
+      "Entries": [
+        "Shield - Divine +9"
+      ]
+    },
+    {
+      "ID": 5610,
+      "Entries": [
+        "Shield - Divine +10"
+      ]
+    },
+    {
+      "ID": 5800,
+      "Entries": [
+        "Shield - Fire +0"
+      ]
+    },
+    {
+      "ID": 5801,
+      "Entries": [
+        "Shield - Fire +1"
+      ]
+    },
+    {
+      "ID": 5802,
+      "Entries": [
+        "Shield - Fire +2"
+      ]
+    },
+    {
+      "ID": 5803,
+      "Entries": [
+        "Shield - Fire +3"
+      ]
+    },
+    {
+      "ID": 5804,
+      "Entries": [
+        "Shield - Fire +4"
+      ]
+    },
+    {
+      "ID": 5805,
+      "Entries": [
+        "Shield - Fire +5"
+      ]
+    },
+    {
+      "ID": 5806,
+      "Entries": [
+        "Shield - Fire +6"
+      ]
+    },
+    {
+      "ID": 5807,
+      "Entries": [
+        "Shield - Fire +7"
+      ]
+    },
+    {
+      "ID": 5808,
+      "Entries": [
+        "Shield - Fire +8"
+      ]
+    },
+    {
+      "ID": 5809,
+      "Entries": [
+        "Shield - Fire +9"
+      ]
+    },
+    {
+      "ID": 5810,
+      "Entries": [
+        "Shield - Fire +10"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Shield [2] - Normal +0"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Shield [2] - Normal +1"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Shield [2] - Normal +2"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Shield [2] - Normal +3"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Shield [2] - Normal +4"
+      ]
+    },
+    {
+      "ID": 6005,
+      "Entries": [
+        "Shield [2] - Normal +5"
+      ]
+    },
+    {
+      "ID": 6006,
+      "Entries": [
+        "Shield [2] - Normal +6"
+      ]
+    },
+    {
+      "ID": 6007,
+      "Entries": [
+        "Shield [2] - Normal +7"
+      ]
+    },
+    {
+      "ID": 6008,
+      "Entries": [
+        "Shield [2] - Normal +8"
+      ]
+    },
+    {
+      "ID": 6009,
+      "Entries": [
+        "Shield [2] - Normal +9"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Shield [2] - Normal +10"
+      ]
+    },
+    {
+      "ID": 6011,
+      "Entries": [
+        "Shield [2] - Normal +11"
+      ]
+    },
+    {
+      "ID": 6012,
+      "Entries": [
+        "Shield [2] - Normal +12"
+      ]
+    },
+    {
+      "ID": 6013,
+      "Entries": [
+        "Shield [2] - Normal +13"
+      ]
+    },
+    {
+      "ID": 6014,
+      "Entries": [
+        "Shield [2] - Normal +14"
+      ]
+    },
+    {
+      "ID": 6015,
+      "Entries": [
+        "Shield [2] - Normal +15"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Shield [2] - Crystal +0"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Shield [2] - Crystal +1"
+      ]
+    },
+    {
+      "ID": 6102,
+      "Entries": [
+        "Shield [2] - Crystal +2"
+      ]
+    },
+    {
+      "ID": 6103,
+      "Entries": [
+        "Shield [2] - Crystal +3"
+      ]
+    },
+    {
+      "ID": 6104,
+      "Entries": [
+        "Shield [2] - Crystal +4"
+      ]
+    },
+    {
+      "ID": 6105,
+      "Entries": [
+        "Shield [2] - Crystal +5"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Shield [2] - Lightning +0"
+      ]
+    },
+    {
+      "ID": 6201,
+      "Entries": [
+        "Shield [2] - Lightning +1"
+      ]
+    },
+    {
+      "ID": 6202,
+      "Entries": [
+        "Shield [2] - Lightning +2"
+      ]
+    },
+    {
+      "ID": 6203,
+      "Entries": [
+        "Shield [2] - Lightning +3"
+      ]
+    },
+    {
+      "ID": 6204,
+      "Entries": [
+        "Shield [2] - Lightning +4"
+      ]
+    },
+    {
+      "ID": 6205,
+      "Entries": [
+        "Shield [2] - Lightning +5"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "Shield [2] - Magic +0"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Shield [2] - Magic +1"
+      ]
+    },
+    {
+      "ID": 6402,
+      "Entries": [
+        "Shield [2] - Magic +2"
+      ]
+    },
+    {
+      "ID": 6403,
+      "Entries": [
+        "Shield [2] - Magic +3"
+      ]
+    },
+    {
+      "ID": 6404,
+      "Entries": [
+        "Shield [2] - Magic +4"
+      ]
+    },
+    {
+      "ID": 6405,
+      "Entries": [
+        "Shield [2] - Magic +5"
+      ]
+    },
+    {
+      "ID": 6406,
+      "Entries": [
+        "Shield [2] - Magic +6"
+      ]
+    },
+    {
+      "ID": 6407,
+      "Entries": [
+        "Shield [2] - Magic +7"
+      ]
+    },
+    {
+      "ID": 6408,
+      "Entries": [
+        "Shield [2] - Magic +8"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "Shield [2] - Magic +9"
+      ]
+    },
+    {
+      "ID": 6410,
+      "Entries": [
+        "Shield [2] - Magic +10"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Shield [2] - Divine +0"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Shield [2] - Divine +1"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "Shield [2] - Divine +2"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "Shield [2] - Divine +3"
+      ]
+    },
+    {
+      "ID": 6604,
+      "Entries": [
+        "Shield [2] - Divine +4"
+      ]
+    },
+    {
+      "ID": 6605,
+      "Entries": [
+        "Shield [2] - Divine +5"
+      ]
+    },
+    {
+      "ID": 6606,
+      "Entries": [
+        "Shield [2] - Divine +6"
+      ]
+    },
+    {
+      "ID": 6607,
+      "Entries": [
+        "Shield [2] - Divine +7"
+      ]
+    },
+    {
+      "ID": 6608,
+      "Entries": [
+        "Shield [2] - Divine +8"
+      ]
+    },
+    {
+      "ID": 6609,
+      "Entries": [
+        "Shield [2] - Divine +9"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Shield [2] - Divine +10"
+      ]
+    },
+    {
+      "ID": 6800,
+      "Entries": [
+        "Shield [2] - Fire +0"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "Shield [2] - Fire +1"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "Shield [2] - Fire +2"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "Shield [2] - Fire +3"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "Shield [2] - Fire +4"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "Shield [2] - Fire +5"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "Shield [2] - Fire +6"
+      ]
+    },
+    {
+      "ID": 6807,
+      "Entries": [
+        "Shield [2] - Fire +7"
+      ]
+    },
+    {
+      "ID": 6808,
+      "Entries": [
+        "Shield [2] - Fire +8"
+      ]
+    },
+    {
+      "ID": 6809,
+      "Entries": [
+        "Shield [2] - Fire +9"
+      ]
+    },
+    {
+      "ID": 6810,
+      "Entries": [
+        "Shield [2] - Fire +10"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Shield [3] Lightning +0"
+      ]
+    },
+    {
+      "ID": 7201,
+      "Entries": [
+        "Shield [3] Lightning +1"
+      ]
+    },
+    {
+      "ID": 7202,
+      "Entries": [
+        "Shield [3] Lightning +2"
+      ]
+    },
+    {
+      "ID": 7203,
+      "Entries": [
+        "Shield [3] Lightning +3"
+      ]
+    },
+    {
+      "ID": 7204,
+      "Entries": [
+        "Shield [3] Lightning +4"
+      ]
+    },
+    {
+      "ID": 7205,
+      "Entries": [
+        "Shield [3] Lightning +5"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "Shield [3] Magic +0"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Shield [3] Magic +1"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "Shield [3] Magic +2"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "Shield [3] Magic +3"
+      ]
+    },
+    {
+      "ID": 7404,
+      "Entries": [
+        "Shield [3] Magic +4"
+      ]
+    },
+    {
+      "ID": 7405,
+      "Entries": [
+        "Shield [3] Magic +5"
+      ]
+    },
+    {
+      "ID": 7406,
+      "Entries": [
+        "Shield [3] Magic +6"
+      ]
+    },
+    {
+      "ID": 7407,
+      "Entries": [
+        "Shield [3] Magic +7"
+      ]
+    },
+    {
+      "ID": 7408,
+      "Entries": [
+        "Shield [3] Magic +8"
+      ]
+    },
+    {
+      "ID": 7409,
+      "Entries": [
+        "Shield [3] Magic +9"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Shield [3] Magic +10"
+      ]
+    },
+    {
+      "ID": 7800,
+      "Entries": [
+        "Shield [3] Fire +0"
+      ]
+    },
+    {
+      "ID": 7801,
+      "Entries": [
+        "Shield [3] Fire +1"
+      ]
+    },
+    {
+      "ID": 7802,
+      "Entries": [
+        "Shield [3] Fire +2"
+      ]
+    },
+    {
+      "ID": 7803,
+      "Entries": [
+        "Shield [3] Fire +3"
+      ]
+    },
+    {
+      "ID": 7804,
+      "Entries": [
+        "Shield [3] Fire +4"
+      ]
+    },
+    {
+      "ID": 7805,
+      "Entries": [
+        "Shield [3] Fire +5"
+      ]
+    },
+    {
+      "ID": 7806,
+      "Entries": [
+        "Shield [3] Fire +6"
+      ]
+    },
+    {
+      "ID": 7807,
+      "Entries": [
+        "Shield [3] Fire +7"
+      ]
+    },
+    {
+      "ID": 7808,
+      "Entries": [
+        "Shield [3] Fire +8"
+      ]
+    },
+    {
+      "ID": 7809,
+      "Entries": [
+        "Shield [3] Fire +9"
+      ]
+    },
+    {
+      "ID": 7810,
+      "Entries": [
+        "Shield [3] Fire +10"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Dread - Normal +0"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Dread - Normal +1"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Dread - Normal +2"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Dread - Normal +3"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Dread - Normal +4"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "Dread - Normal +5"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "Dread - Normal +6"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "Dread - Normal +7"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "Dread - Normal +8"
+      ]
+    },
+    {
+      "ID": 8009,
+      "Entries": [
+        "Dread - Normal +9"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Dread - Normal +10"
+      ]
+    },
+    {
+      "ID": 8011,
+      "Entries": [
+        "Dread - Normal +11"
+      ]
+    },
+    {
+      "ID": 8012,
+      "Entries": [
+        "Dread - Normal +12"
+      ]
+    },
+    {
+      "ID": 8013,
+      "Entries": [
+        "Dread - Normal +13"
+      ]
+    },
+    {
+      "ID": 8014,
+      "Entries": [
+        "Dread - Normal +14"
+      ]
+    },
+    {
+      "ID": 8015,
+      "Entries": [
+        "Dread - Normal +15"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "Dread - Crystal +0"
+      ]
+    },
+    {
+      "ID": 8101,
+      "Entries": [
+        "Dread - Crystal +1"
+      ]
+    },
+    {
+      "ID": 8102,
+      "Entries": [
+        "Dread - Crystal +2"
+      ]
+    },
+    {
+      "ID": 8103,
+      "Entries": [
+        "Dread - Crystal +3"
+      ]
+    },
+    {
+      "ID": 8104,
+      "Entries": [
+        "Dread - Crystal +4"
+      ]
+    },
+    {
+      "ID": 8105,
+      "Entries": [
+        "Dread - Crystal +5"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "Dread - Lightning +0"
+      ]
+    },
+    {
+      "ID": 8201,
+      "Entries": [
+        "Dread - Lightning +1"
+      ]
+    },
+    {
+      "ID": 8202,
+      "Entries": [
+        "Dread - Lightning +2"
+      ]
+    },
+    {
+      "ID": 8203,
+      "Entries": [
+        "Dread - Lightning +3"
+      ]
+    },
+    {
+      "ID": 8204,
+      "Entries": [
+        "Dread - Lightning +4"
+      ]
+    },
+    {
+      "ID": 8205,
+      "Entries": [
+        "Dread - Lightning +5"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        "Dread - Magic +0"
+      ]
+    },
+    {
+      "ID": 8401,
+      "Entries": [
+        "Dread - Magic +1"
+      ]
+    },
+    {
+      "ID": 8402,
+      "Entries": [
+        "Dread - Magic +2"
+      ]
+    },
+    {
+      "ID": 8403,
+      "Entries": [
+        "Dread - Magic +3"
+      ]
+    },
+    {
+      "ID": 8404,
+      "Entries": [
+        "Dread - Magic +4"
+      ]
+    },
+    {
+      "ID": 8405,
+      "Entries": [
+        "Dread - Magic +5"
+      ]
+    },
+    {
+      "ID": 8406,
+      "Entries": [
+        "Dread - Magic +6"
+      ]
+    },
+    {
+      "ID": 8407,
+      "Entries": [
+        "Dread - Magic +7"
+      ]
+    },
+    {
+      "ID": 8408,
+      "Entries": [
+        "Dread - Magic +8"
+      ]
+    },
+    {
+      "ID": 8409,
+      "Entries": [
+        "Dread - Magic +9"
+      ]
+    },
+    {
+      "ID": 8410,
+      "Entries": [
+        "Dread - Magic +10"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "Dread - Divine +0"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "Dread - Divine +1"
+      ]
+    },
+    {
+      "ID": 8602,
+      "Entries": [
+        "Dread - Divine +2"
+      ]
+    },
+    {
+      "ID": 8603,
+      "Entries": [
+        "Dread - Divine +3"
+      ]
+    },
+    {
+      "ID": 8604,
+      "Entries": [
+        "Dread - Divine +4"
+      ]
+    },
+    {
+      "ID": 8605,
+      "Entries": [
+        "Dread - Divine +5"
+      ]
+    },
+    {
+      "ID": 8606,
+      "Entries": [
+        "Dread - Divine +6"
+      ]
+    },
+    {
+      "ID": 8607,
+      "Entries": [
+        "Dread - Divine +7"
+      ]
+    },
+    {
+      "ID": 8608,
+      "Entries": [
+        "Dread - Divine +8"
+      ]
+    },
+    {
+      "ID": 8609,
+      "Entries": [
+        "Dread - Divine +9"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "Dread - Divine +10"
+      ]
+    },
+    {
+      "ID": 8800,
+      "Entries": [
+        "Dread - Fire +0"
+      ]
+    },
+    {
+      "ID": 8801,
+      "Entries": [
+        "Dread - Fire +1"
+      ]
+    },
+    {
+      "ID": 8802,
+      "Entries": [
+        "Dread - Fire +2"
+      ]
+    },
+    {
+      "ID": 8803,
+      "Entries": [
+        "Dread - Fire +3"
+      ]
+    },
+    {
+      "ID": 8804,
+      "Entries": [
+        "Dread - Fire +4"
+      ]
+    },
+    {
+      "ID": 8805,
+      "Entries": [
+        "Dread - Fire +5"
+      ]
+    },
+    {
+      "ID": 8806,
+      "Entries": [
+        "Dread - Fire +6"
+      ]
+    },
+    {
+      "ID": 8807,
+      "Entries": [
+        "Dread - Fire +7"
+      ]
+    },
+    {
+      "ID": 8808,
+      "Entries": [
+        "Dread - Fire +8"
+      ]
+    },
+    {
+      "ID": 8809,
+      "Entries": [
+        "Dread - Fire +9"
+      ]
+    },
+    {
+      "ID": 8810,
+      "Entries": [
+        "Dread - Fire +10"
+      ]
+    },
+    {
+      "ID": 9200,
+      "Entries": [
+        "Bow - Lightning +0"
+      ]
+    },
+    {
+      "ID": 9201,
+      "Entries": [
+        "Bow - Lightning +1"
+      ]
+    },
+    {
+      "ID": 9202,
+      "Entries": [
+        "Bow - Lightning +2"
+      ]
+    },
+    {
+      "ID": 9203,
+      "Entries": [
+        "Bow - Lightning +3"
+      ]
+    },
+    {
+      "ID": 9204,
+      "Entries": [
+        "Bow - Lightning +4"
+      ]
+    },
+    {
+      "ID": 9205,
+      "Entries": [
+        "Bow - Lightning +5"
+      ]
+    },
+    {
+      "ID": 9500,
+      "Entries": [
+        "Bow - Enchanted +0"
+      ]
+    },
+    {
+      "ID": 9501,
+      "Entries": [
+        "Bow - Enchanted +1"
+      ]
+    },
+    {
+      "ID": 9502,
+      "Entries": [
+        "Bow - Enchanted +2"
+      ]
+    },
+    {
+      "ID": 9503,
+      "Entries": [
+        "Bow - Enchanted +3"
+      ]
+    },
+    {
+      "ID": 9504,
+      "Entries": [
+        "Bow - Enchanted +4"
+      ]
+    },
+    {
+      "ID": 9505,
+      "Entries": [
+        "Bow - Enchanted +5"
+      ]
+    },
+    {
+      "ID": 9800,
+      "Entries": [
+        "Bow - Fire +0"
+      ]
+    },
+    {
+      "ID": 9801,
+      "Entries": [
+        "Bow - Fire +1"
+      ]
+    },
+    {
+      "ID": 9802,
+      "Entries": [
+        "Bow - Fire +2"
+      ]
+    },
+    {
+      "ID": 9803,
+      "Entries": [
+        "Bow - Fire +3"
+      ]
+    },
+    {
+      "ID": 9804,
+      "Entries": [
+        "Bow - Fire +4"
+      ]
+    },
+    {
+      "ID": 9805,
+      "Entries": [
+        "Bow - Fire +5"
+      ]
+    },
+    {
+      "ID": 9806,
+      "Entries": [
+        "Bow - Fire +6"
+      ]
+    },
+    {
+      "ID": 9807,
+      "Entries": [
+        "Bow - Fire +7"
+      ]
+    },
+    {
+      "ID": 9808,
+      "Entries": [
+        "Bow - Fire +8"
+      ]
+    },
+    {
+      "ID": 9809,
+      "Entries": [
+        "Bow - Fire +9"
+      ]
+    },
+    {
+      "ID": 9810,
+      "Entries": [
+        "Bow - Fire +10"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "Bow - Chaos +0"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        "Bow - Chaos +1"
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        "Bow - Chaos +2"
+      ]
+    },
+    {
+      "ID": 9903,
+      "Entries": [
+        "Bow - Chaos +3"
+      ]
+    },
+    {
+      "ID": 9904,
+      "Entries": [
+        "Bow - Chaos +4"
+      ]
+    },
+    {
+      "ID": 9905,
+      "Entries": [
+        "Bow - Chaos +5"
+      ]
+    }
+  ]
+}

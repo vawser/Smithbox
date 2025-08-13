@@ -1,0 +1,347 @@
+{
+  "Name": "Wind",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "For testing"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "General Environment Wind (weak)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "General environment Wind (medium)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "General Environment Wind (strong)"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "General-Purpose one shot wind (weak)"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "General-Purpose one shot wind (medium)"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "General-Purpose one shot wind (strong)"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Map Placement Collision"
+      ]
+    },
+    {
+      "ID": 120100000,
+      "Entries": [
+        "M20_01 start part (after door open)"
+      ]
+    },
+    {
+      "ID": 120100001,
+      "Entries": [
+        "m20_01 Start Room-Ohashi"
+      ]
+    },
+    {
+      "ID": 120100002,
+      "Entries": [
+        "M20_01 Ohashi"
+      ]
+    },
+    {
+      "ID": 120100003,
+      "Entries": [
+        "M20_01 Orphanage"
+      ]
+    },
+    {
+      "ID": 120100004,
+      "Entries": [
+        "M20_01 Orphanage Armpit"
+      ]
+    },
+    {
+      "ID": 120100005,
+      "Entries": [
+        "M20_01 Orphanage Passage (after window destruction)"
+      ]
+    },
+    {
+      "ID": 120100006,
+      "Entries": [
+        "M20_01 Orphanage Hall"
+      ]
+    },
+    {
+      "ID": 120100007,
+      "Entries": [
+        "M20_01 Orphanage Terrace"
+      ]
+    },
+    {
+      "ID": 120100008,
+      "Entries": [
+        "M20_01 Orphanage-Basilica Terrace"
+      ]
+    },
+    {
+      "ID": 120100009,
+      "Entries": [
+        "M20_01 Cathedral Terrace"
+      ]
+    },
+    {
+      "ID": 120100010,
+      "Entries": [
+        "m20_01 Basilica"
+      ]
+    },
+    {
+      "ID": 120100011,
+      "Entries": [
+        "M20_01 boss Front passage (after door open)"
+      ]
+    },
+    {
+      "ID": 120100012,
+      "Entries": [
+        "M20_01 Boss Room"
+      ]
+    },
+    {
+      "ID": 120150000,
+      "Entries": [
+        "M20_01 a small door and blow it"
+      ]
+    },
+    {
+      "ID": 120150001,
+      "Entries": [
+        "M20_01 Open the big door and breathe"
+      ]
+    },
+    {
+      "ID": 120150002,
+      "Entries": [
+        "m20_01 Windows Blow broken"
+      ]
+    },
+    {
+      "ID": 120150003,
+      "Entries": [
+        "M20_01 Boss appearance production wind"
+      ]
+    },
+    {
+      "ID": 129100000,
+      "Entries": [
+        "M29 boss Stairs 20 ° Wind"
+      ]
+    },
+    {
+      "ID": 191040000,
+      "Entries": [
+        "M91_04 Yamagishi Style"
+      ]
+    },
+    {
+      "ID": 200000000,
+      "Entries": [
+        "Test (Tae Style)"
+      ]
+    },
+    {
+      "ID": 200000010,
+      "Entries": [
+        "General character style (weak)"
+      ]
+    },
+    {
+      "ID": 200000011,
+      "Entries": [
+        "General character style (medium)"
+      ]
+    },
+    {
+      "ID": 200000012,
+      "Entries": [
+        "General character style (strong)"
+      ]
+    },
+    {
+      "ID": 200000100,
+      "Entries": [
+        "Pc_ Front _ Wind"
+      ]
+    },
+    {
+      "ID": 200000101,
+      "Entries": [
+        "Pc_ Left _ Wind"
+      ]
+    },
+    {
+      "ID": 200000102,
+      "Entries": [
+        "Pc_ Right _ Wind"
+      ]
+    },
+    {
+      "ID": 200000103,
+      "Entries": [
+        "Pc_ left after _ wind"
+      ]
+    },
+    {
+      "ID": 200000104,
+      "Entries": [
+        "Pc_ right after _ wind"
+      ]
+    },
+    {
+      "ID": 200000810,
+      "Entries": [
+        "Pc_ bodies _ before _ wind"
+      ]
+    },
+    {
+      "ID": 200000811,
+      "Entries": [
+        "Pc_ bodies _ after _ winds"
+      ]
+    },
+    {
+      "ID": 200000812,
+      "Entries": [
+        "Pc_ Bodies _ left _ winds"
+      ]
+    },
+    {
+      "ID": 200000813,
+      "Entries": [
+        "Pc_ Bodies _ right _ winds"
+      ]
+    },
+    {
+      "ID": 200000814,
+      "Entries": [
+        "Test for debugging"
+      ]
+    },
+    {
+      "ID": 200001000,
+      "Entries": [
+        "Player collision body for SFX interference"
+      ]
+    },
+    {
+      "ID": 200001010,
+      "Entries": [
+        "SFX interference player collision right arm"
+      ]
+    },
+    {
+      "ID": 200001020,
+      "Entries": [
+        "SFX interference player collision left arm"
+      ]
+    },
+    {
+      "ID": 200001030,
+      "Entries": [
+        "SFX interference player collision right foot"
+      ]
+    },
+    {
+      "ID": 200001040,
+      "Entries": [
+        "The left foot of the player collision for SFX interference"
+      ]
+    },
+    {
+      "ID": 200001050,
+      "Entries": [
+        "SFX Interference player collision Weapon (Common)"
+      ]
+    },
+    {
+      "ID": 350000100,
+      "Entries": [
+        "Parish Chief _ front _ Wind"
+      ]
+    },
+    {
+      "ID": 350000101,
+      "Entries": [
+        "Parish Warden _ Before the Wind"
+      ]
+    },
+    {
+      "ID": 350000102,
+      "Entries": [
+        "Parish Chief _ right _ winds"
+      ]
+    },
+    {
+      "ID": 350000103,
+      "Entries": [
+        "Parish Warden _ After left _ winds"
+      ]
+    },
+    {
+      "ID": 350000104,
+      "Entries": [
+        "Parish Warden _ right after winds"
+      ]
+    },
+    {
+      "ID": 350000810,
+      "Entries": [
+        "Parish Chief _ Body _ before _ Wind"
+      ]
+    },
+    {
+      "ID": 350000811,
+      "Entries": [
+        "Parish Warden _ After body _ winds"
+      ]
+    },
+    {
+      "ID": 350000812,
+      "Entries": [
+        "Parish Chief _ Body _ left _ Wind"
+      ]
+    },
+    {
+      "ID": 350000813,
+      "Entries": [
+        "Parish Chief _ Body _ right _ winds"
+      ]
+    },
+    {
+      "ID": 350000900,
+      "Entries": [
+        "Parish Chief _ Feet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "Name": "CoolTimeParam",
+  "Entries": [
+    {
+      "ID": 101,
+      "Entries": [
+        "Intrusion level 1"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Intrusion level 2"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Intrusion level 3"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Intrusion level 4"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Intrusion level 5"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Intrusion level 6"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Intrusion level 7"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Intrusion level 8"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Intrusion level 9"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Intrusion level 10"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Map guardian (forest) level 1"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Map guardian (forest) level 2"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Map guardian (forest) level 3"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Map guardian (forest) level 4"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Map guardian (forest) level 5"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Map guardian (forest) level 6"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Map guardian (forest) level 7"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Map guardian (forest) level 8"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Map guardian (forest) level 9"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Map guardian (forest) level 10"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Map Guardian (Anole) Level 1"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Map Guardian (Anole) Level 2"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Map Guardian (Anole) Level 3"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Map Guardian (Anole) Level 4"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Map Guardian (Anole) Level 5"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Map Guardian (Anole) Level 6"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Map Guardian (Anole) Level 7"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Map Guardian (Anole) Level 8"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Map Guardian (Anole) Level 9"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Map Guardian (Anole) Level 10"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "red hunting level 1"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "red hunting level 2"
+      ]
+    },
+    {
+      "ID": 403,
+      "Entries": [
+        "Red hunt level 3"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "red hunting level 4"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Red hunt level 5"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "red hunting level 6"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "red hunting level 7"
+      ]
+    },
+    {
+      "ID": 408,
+      "Entries": [
+        "red hunting level 8"
+      ]
+    },
+    {
+      "ID": 409,
+      "Entries": [
+        "red hunting level 9"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Red hunt level 10"
+      ]
+    }
+  ]
+}

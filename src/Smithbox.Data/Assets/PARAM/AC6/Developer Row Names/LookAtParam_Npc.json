@@ -1,0 +1,5948 @@
+{
+  "Name": "LookAtParam_Npc",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Eyeball laser 01 -- 目玉レーザー\u300001"
+      ]
+    },
+    {
+      "ID": 853010,
+      "Entries": [
+        "Eyeball laser 02 -- 目玉レーザー\u300002"
+      ]
+    },
+    {
+      "ID": 853020,
+      "Entries": [
+        "Eyeball laser 03 -- 目玉レーザー\u300003"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "c1000 template default -- c1000 テンプレート\u3000デフォルト"
+      ]
+    },
+    {
+      "ID": 10000010,
+      "Entries": [
+        "c1000 template machine gun -- c1000 テンプレート\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 10000020,
+      "Entries": [
+        "c1000 template shotgun -- c1000 テンプレート\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 10000030,
+      "Entries": [
+        "c1000 template bazooka -- c1000 テンプレート\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 10000040,
+      "Entries": [
+        "c1000 template sniper rifle -- c1000 テンプレート\u3000スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "c1000 template missile -- c1000 テンプレート\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 10000060,
+      "Entries": [
+        "c1000 template pulse gun -- c1000 テンプレート\u3000パルスガン"
+      ]
+    },
+    {
+      "ID": 10000510,
+      "Entries": [
+        "c1000 template proximity -- c1000 テンプレート\u3000近接"
+      ]
+    },
+    {
+      "ID": 10000520,
+      "Entries": [
+        "c1000 template extended proximity -- c1000 テンプレート\u3000伸びる近接"
+      ]
+    },
+    {
+      "ID": 10000610,
+      "Entries": [
+        "c1000 template shield -- c1000 テンプレート\u3000シールド"
+      ]
+    },
+    {
+      "ID": 11119900,
+      "Entries": [
+        "c1111 Dress-up NPC (wingman) Mike -- c1111\u3000着せ替えNPC(僚機) マイク"
+      ]
+    },
+    {
+      "ID": 11129900,
+      "Entries": [
+        "c1112 Dress-up NPC (wingman) Daisy -- c1112\u3000着せ替えNPC(僚機) デイジー"
+      ]
+    },
+    {
+      "ID": 11139900,
+      "Entries": [
+        "c1113 Dress-up NPC (wingman) Boss -- c1113\u3000着せ替えNPC(僚機) ボス"
+      ]
+    },
+    {
+      "ID": 11149900,
+      "Entries": [
+        "c1114 Dress-up NPC (wingman) Patrick -- c1114\u3000着せ替えNPC(僚機) パトリック"
+      ]
+    },
+    {
+      "ID": 11159900,
+      "Entries": [
+        "c1115 Dress-up NPC (wingman) Yoffe -- c1115\u3000着せ替えNPC(僚機) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 11169900,
+      "Entries": [
+        "c1116 Dress-up NPC (wingman) Estella -- c1116\u3000着せ替えNPC(僚機) エステラ"
+      ]
+    },
+    {
+      "ID": 11179900,
+      "Entries": [
+        "c1117 Dress-up NPC (wingman) Jonathan -- c1117\u3000着せ替えNPC(僚機) ジョナサン"
+      ]
+    },
+    {
+      "ID": 11189900,
+      "Entries": [
+        "c1118 Dress-up NPC (wingman) William -- c1118\u3000着せ替えNPC(僚機) ウィリアム"
+      ]
+    },
+    {
+      "ID": 12109900,
+      "Entries": [
+        "c1210 Dress-up NPC (enemy) Jotuel -- c1210\u3000着せ替えNPC(敵) ヨトゥエル"
+      ]
+    },
+    {
+      "ID": 12149900,
+      "Entries": [
+        "c1214 Dress-up NPC (enemy) Patrick -- c1214\u3000着せ替えNPC(敵) パトリック"
+      ]
+    },
+    {
+      "ID": 12159900,
+      "Entries": [
+        "c1215 Dress-up NPC (enemy) Yoffe -- c1215\u3000着せ替えNPC(敵) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 12169900,
+      "Entries": [
+        "c1216 Dress-up NPC (enemy) Estella -- c1216\u3000着せ替えNPC(敵) エステラ"
+      ]
+    },
+    {
+      "ID": 12179900,
+      "Entries": [
+        "c1217 Dress-up NPC (enemy) Jonathan -- c1217\u3000着せ替えNPC(敵) ジョナサン"
+      ]
+    },
+    {
+      "ID": 13109900,
+      "Entries": [
+        "c1310 Dress-up NPC (Arena) Jotuel -- c1310\u3000着せ替えNPC(アリーナ) ヨトゥエル"
+      ]
+    },
+    {
+      "ID": 13119900,
+      "Entries": [
+        "c1311 Dress-up NPC (Arena) Mike -- c1311\u3000着せ替えNPC(アリーナ) マイク"
+      ]
+    },
+    {
+      "ID": 13129900,
+      "Entries": [
+        "c1312 Dress-up NPC (Arena) Daisy -- c1312\u3000着せ替えNPC(アリーナ) デイジー"
+      ]
+    },
+    {
+      "ID": 13139900,
+      "Entries": [
+        "c1313 Dress-up NPC (Arena) Boss -- c1313\u3000着せ替えNPC(アリーナ) ボス"
+      ]
+    },
+    {
+      "ID": 13149900,
+      "Entries": [
+        "c1314 Dress-up NPC (Arena) Patrick -- c1314\u3000着せ替えNPC(アリーナ) パトリック"
+      ]
+    },
+    {
+      "ID": 13159900,
+      "Entries": [
+        "c1315 Dress-up NPC (Arena) Yoffe -- c1315\u3000着せ替えNPC(アリーナ) ヨッフェ"
+      ]
+    },
+    {
+      "ID": 13169900,
+      "Entries": [
+        "c1316 Dress-up NPC (Arena) Estella -- c1316\u3000着せ替えNPC(アリーナ) エステラ"
+      ]
+    },
+    {
+      "ID": 13179900,
+      "Entries": [
+        "c1317 Dress-up NPC (Arena) Jonathan -- c1317\u3000着せ替えNPC(アリーナ) ジョナサン"
+      ]
+    },
+    {
+      "ID": 13189900,
+      "Entries": [
+        "c1318 Dress-up NPC (Arena) William -- c1318\u3000着せ替えNPC(アリーナ) ウィリアム"
+      ]
+    },
+    {
+      "ID": 14019900,
+      "Entries": [
+        "c1401 Dress-up NPC (test) Bipod aircraft -- c1401\u3000着せ替えNPC(テスト) 二脚機体"
+      ]
+    },
+    {
+      "ID": 14029900,
+      "Entries": [
+        "c1402 Dress-up NPC (test) Reverse legged aircraft -- c1402\u3000着せ替えNPC(テスト) 逆脚機体"
+      ]
+    },
+    {
+      "ID": 14039900,
+      "Entries": [
+        "c1403 Dress-up NPC (test) Quadruped aircraft -- c1403\u3000着せ替えNPC(テスト) 四脚機体"
+      ]
+    },
+    {
+      "ID": 14049900,
+      "Entries": [
+        "c1404 Dress-up NPC (test) Tank aircraft -- c1404\u3000着せ替えNPC(テスト) タンク機体"
+      ]
+    },
+    {
+      "ID": 14059900,
+      "Entries": [
+        "c1405 Dress-up NPC (test) NPAC appearing in missile launch support -- c1405\u3000着せ替えNPC(テスト) ミサイル発射支援に登場するNPAC"
+      ]
+    },
+    {
+      "ID": 15009900,
+      "Entries": [
+        "c1500 Dress-up NPC (enemy) Ace A of decisive battle C -- c1500\u3000着せ替えNPC(敵) 決戦ＣのエースＡ"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "c3000 security MT (rifle) rifle -- c3000 警備MT（ライフル）\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "c3000 Security MT (EN Rifle) EN Rifle -- c3000 警備MT（ENライフル）\u3000ENライフル"
+      ]
+    },
+    {
+      "ID": 30000200,
+      "Entries": [
+        "c3000 Security MT (EN Rifle) EN Rifle Charge -- c3000 警備MT（ENライフル）\u3000ENライフルチャージ"
+      ]
+    },
+    {
+      "ID": 30000300,
+      "Entries": [
+        "c3000 security MT (missile) missile -- c3000 警備MT（ミサイル）\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 30000400,
+      "Entries": [
+        "c3000 Security MT (Rocket) Rocket -- c3000 警備MT（ロケット）\u3000ロケット"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "c3000 Security MT (enhanced type) Bazooka -- c3000 警備MT（強化タイプ）\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "c3000 Security MT (Rocket) Rocket (Right) -- c3000 警備MT（ロケット）\u3000ロケット（右）"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "c3000 security MT (rifle) for checking bullet trajectory -- c3000 警備MT（ライフル）\u3000弾丸軌道確認用"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "c3000 security MT missile missile (right) -- c3000 警備MT ミサイル\u3000ミサイル（右）"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "c3000 Security MT Full Equipment Reinforced Rifle -- c3000 警備MT 全装備\u3000強化ライフル"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "c3000 Security MT Full Equipment Enhanced Rifle (different performance) -- c3000 警備MT 全装備\u3000強化ライフル（性能違い）"
+      ]
+    },
+    {
+      "ID": 30002000,
+      "Entries": [
+        "c3000 Security MT (reinforced type) One-shot attack -- c3000 警備MT（強化タイプ）\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 30003100,
+      "Entries": [
+        "c3000 Security MT (Rifle) Always LookAt -- c3000 警備MT（ライフル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 30009900,
+      "Entries": [
+        "c3000 Security MT LookAt -- c3000 警備MT LookAt"
+      ]
+    },
+    {
+      "ID": 30010900,
+      "Entries": [
+        "c3001 Security MT Enhancement A Firepower Enhancement Enhancement Rifle -- c3001 警備MT強化A火力強化\u3000強化ライフル"
+      ]
+    },
+    {
+      "ID": 30200000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT machine gun -- c3020 旧共産圏汎用MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 30200010,
+      "Entries": [
+        "c3020 Former communist country general purpose MT machine gun for one shot -- c3020 旧共産圏汎用MT\u3000マシンガン\u3000ワンショット用"
+      ]
+    },
+    {
+      "ID": 30200200,
+      "Entries": [
+        "c3020 former communist country general purpose MT rifle -- c3020 旧共産圏汎用MT\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 30200300,
+      "Entries": [
+        "c3020 Former communist country general purpose MT rifle cover shooting -- c3020 旧共産圏汎用MT\u3000ライフルカバー射撃"
+      ]
+    },
+    {
+      "ID": 30200500,
+      "Entries": [
+        "c3020 Former communist country general purpose MT shotgun -- c3020 旧共産圏汎用MT\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 30200600,
+      "Entries": [
+        "c3020 Former communist area general purpose MT shield -- c3020 旧共産圏汎用MT\u3000シールド"
+      ]
+    },
+    {
+      "ID": 30200800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT double machine gun -- c3020 旧共産圏汎用MT\u3000ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 30200900,
+      "Entries": [
+        "c3020 Former communist general-purpose MT throwing gun -- c3020 旧共産圏汎用MT\u3000投擲銃"
+      ]
+    },
+    {
+      "ID": 30201000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT hand rocket -- c3020 旧共産圏汎用MT\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 30201100,
+      "Entries": [
+        "c3020 Former communist country general purpose MT grenade cannon -- c3020 旧共産圏汎用MT\u3000グレネードキャノン"
+      ]
+    },
+    {
+      "ID": 30201200,
+      "Entries": [
+        "c3020 former communist bloc general purpose MT missile -- c3020 旧共産圏汎用MT\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 30201300,
+      "Entries": [
+        "c3020 Former communist country general purpose MT camera -- c3020 旧共産圏汎用MT\u3000カメラ"
+      ]
+    },
+    {
+      "ID": 30201400,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (for damage reaction confirmation) DL1 stage addition machine gun assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL1\u3000段階加算\u3000マシンガン想定"
+      ]
+    },
+    {
+      "ID": 30201500,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (for damage reaction confirmation) DL1 100% addition Rifle assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL1\u3000100%加算\u3000ライフル想定"
+      ]
+    },
+    {
+      "ID": 30201600,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (for damage reaction confirmation) DL2 hit stop machine gun assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL2\u3000ヒットストップ\u3000マシンガン想定"
+      ]
+    },
+    {
+      "ID": 30201700,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (for damage reaction confirmation) DL3 Small stagger Bazooka assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL3\u3000小よろけ\u3000バズーカ想定"
+      ]
+    },
+    {
+      "ID": 30201800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT (for damage reaction confirmation) DL4 Large stagger bazooka assumption -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL4\u3000大よろけ\u3000バズーカ想定"
+      ]
+    },
+    {
+      "ID": 30201900,
+      "Entries": [
+        "c3020 General-purpose MT for former communist countries (for checking damage reactions) DL5 Blow-off grenade cannon assumed -- c3020 旧共産圏汎用MT(ダメージリアクション確認用）\u3000DL5\u3000吹っ飛び\u3000グレネードキャノン想定"
+      ]
+    },
+    {
+      "ID": 30202000,
+      "Entries": [
+        "c3020 Former communist country general purpose MT one-shot attack -- c3020 旧共産圏汎用MT\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 30202500,
+      "Entries": [
+        "c3020 Former communist country MT base Bayrum death shot -- c3020 旧共産圏MT ベース ベイラム\u3000死亡時射撃"
+      ]
+    },
+    {
+      "ID": 30203100,
+      "Entries": [
+        "c3020 Former communist area general purpose MT Always Lookat -- c3020 旧共産圏汎用MT 常時Lookat"
+      ]
+    },
+    {
+      "ID": 30209800,
+      "Entries": [
+        "c3020 Former communist country general purpose MT LookAt for during turn -- c3020 旧共産圏汎用MT\u3000ターン中用LookAt"
+      ]
+    },
+    {
+      "ID": 30209900,
+      "Entries": [
+        "c3020 Former communist area general purpose MT -- c3020 旧共産圏汎用MT"
+      ]
+    },
+    {
+      "ID": 30500000,
+      "Entries": [
+        "c3050 Regular Army MT_Normal Laser Rifle -- c3050 正規軍MT_ノーマル\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 30500100,
+      "Entries": [
+        "c3050 regular army MT_normal missile -- c3050 正規軍MT_ノーマル\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 30500200,
+      "Entries": [
+        "c3050 Regular Army MT_Support Machine Gun -- c3050 正規軍MT_支援\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 30500300,
+      "Entries": [
+        "c3050 Regular Army MT_Support Throwing Gun -- c3050 正規軍MT_支援\u3000投擲銃"
+      ]
+    },
+    {
+      "ID": 30500400,
+      "Entries": [
+        "c3050 Regular Army MT_Flame radiation Flame radiation -- c3050 正規軍MT_火炎放射\u3000火炎放射"
+      ]
+    },
+    {
+      "ID": 30500500,
+      "Entries": [
+        "c3050 Regular Army MT_Bombing Upper Grenade -- c3050 正規軍MT_爆撃\u3000上位グレネード"
+      ]
+    },
+    {
+      "ID": 30500600,
+      "Entries": [
+        "c3050 regular army MT_sniper sniper rifle -- c3050 正規軍MT_狙撃\u3000スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 30500700,
+      "Entries": [
+        "c3050 Regular Army MT_Normal Laser Rifle Cover Shooting -- c3050 正規軍MT_ノーマル\u3000レーザーライフルカバー射撃"
+      ]
+    },
+    {
+      "ID": 30501100,
+      "Entries": [
+        "c3050 Regular Army MT_Normal Missile Right -- c3050 正規軍MT_ノーマル\u3000ミサイル\u3000右"
+      ]
+    },
+    {
+      "ID": 30501400,
+      "Entries": [
+        "c3050 Regular army MT_Flame radiation Flame radiation Charge -- c3050 正規軍MT_火炎放射\u3000火炎放射\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 30501500,
+      "Entries": [
+        "c3050 Regular Army MT_Bombing Upper Grenade Right -- c3050 正規軍MT_爆撃\u3000上位グレネード 右"
+      ]
+    },
+    {
+      "ID": 30502000,
+      "Entries": [
+        "c3050 Regular Army MT_Normal One Shot 00 -- c3050 正規軍MT_ノーマル\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 30502500,
+      "Entries": [
+        "c3050 Regular Army MT_Melee Blade 1 -- c3050 正規軍MT_近接\u3000ブレード1"
+      ]
+    },
+    {
+      "ID": 30502600,
+      "Entries": [
+        "c3050 Regular Army MT_Melee Blade 2 -- c3050 正規軍MT_近接\u3000ブレード2"
+      ]
+    },
+    {
+      "ID": 30502700,
+      "Entries": [
+        "c3050 Regular Army MT_Melee Blade 3 -- c3050 正規軍MT_近接\u3000ブレード3"
+      ]
+    },
+    {
+      "ID": 30509900,
+      "Entries": [
+        "c3050 Regular Army MT_Always LookAt -- c3050 正規軍MT_常時LookAt"
+      ]
+    },
+    {
+      "ID": 30509901,
+      "Entries": [
+        "c3050 Regular Army MT_ LookAt during cover shooting transition -- c3050 正規軍MT_カバー射撃遷移時LookAt"
+      ]
+    },
+    {
+      "ID": 31000100,
+      "Entries": [
+        "c3100 flight MT machine gun -- c3100 飛行MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 31000200,
+      "Entries": [
+        "c3100 flight MT shooting type plasma cannon -- c3100 飛行MT 射撃タイプ\u3000プラズマキャノン"
+      ]
+    },
+    {
+      "ID": 31000201,
+      "Entries": [
+        "c3100 flight MT shooting type plasma cannon special landing -- c3100 飛行MT 射撃タイプ\u3000プラズマキャノン\u3000特殊着地時"
+      ]
+    },
+    {
+      "ID": 31000300,
+      "Entries": [
+        "c3100 flight MT shooting type twin missile right -- c3100 飛行MT 射撃タイプ\u3000連装ミサイル\u3000右"
+      ]
+    },
+    {
+      "ID": 31000400,
+      "Entries": [
+        "c3100 flight MT shooting type twin missile left -- c3100 飛行MT 射撃タイプ\u3000連装ミサイル\u3000左"
+      ]
+    },
+    {
+      "ID": 31000500,
+      "Entries": [
+        "c3100 flight MT firing type check firing right -- c3100 飛行MT 射撃タイプ\u3000牽制射撃\u3000右"
+      ]
+    },
+    {
+      "ID": 31000600,
+      "Entries": [
+        "c3100 flight MT firing type check firing left -- c3100 飛行MT 射撃タイプ\u3000牽制射撃\u3000左"
+      ]
+    },
+    {
+      "ID": 31000700,
+      "Entries": [
+        "c3100 flight MT shooting type basic cooperation -- c3100 飛行MT 射撃タイプ\u3000基本連携"
+      ]
+    },
+    {
+      "ID": 31000800,
+      "Entries": [
+        "c3100 flight MT shooting type basic cooperation left -- c3100 飛行MT 射撃タイプ\u3000基本連携 左"
+      ]
+    },
+    {
+      "ID": 31000900,
+      "Entries": [
+        "c3100 flight MT shooting type ascending shooting -- c3100 飛行MT 射撃タイプ\u3000上昇射撃"
+      ]
+    },
+    {
+      "ID": 31001000,
+      "Entries": [
+        "c3100 flight MT shooting type large detour encirclement missile -- c3100 飛行MT 射撃タイプ\u3000大回り込み包囲ミサイル"
+      ]
+    },
+    {
+      "ID": 31001100,
+      "Entries": [
+        "c3100 flight MT shooting type melee -- c3100 飛行MT 射撃タイプ\u3000近接"
+      ]
+    },
+    {
+      "ID": 31001200,
+      "Entries": [
+        "c3100 flight MT shooting type melee -- c3100 飛行MT 射撃タイプ\u3000近接"
+      ]
+    },
+    {
+      "ID": 31001300,
+      "Entries": [
+        "c3100 flight MT shooting type missile 2 right -- c3100 飛行MT 射撃タイプ\u3000ミサイル2 右"
+      ]
+    },
+    {
+      "ID": 31001400,
+      "Entries": [
+        "c3100 flight MT shooting type missile 2 left -- c3100 飛行MT 射撃タイプ\u3000ミサイル2 左"
+      ]
+    },
+    {
+      "ID": 31001500,
+      "Entries": [
+        "c3100 Flight MT Proximity Type EN Shotgun -- c3100 飛行MT 近接タイプ\u3000ENショットガン"
+      ]
+    },
+    {
+      "ID": 31001600,
+      "Entries": [
+        "c3100 flight MT close-in type check fire -- c3100 飛行MT 近接タイプ\u3000牽制射撃"
+      ]
+    },
+    {
+      "ID": 31001700,
+      "Entries": [
+        "c3100 Flight MT Proximity Type Basic Cooperation -- c3100 飛行MT 近接タイプ\u3000基本連携"
+      ]
+    },
+    {
+      "ID": 31001800,
+      "Entries": [
+        "c3100 Flight MT Melee Type Edge Blade 2 consecutive attacks 1st stage -- c3100 飛行MT 近接タイプ\u3000エッジブレード2連撃\u30001段目"
+      ]
+    },
+    {
+      "ID": 31001900,
+      "Entries": [
+        "c3100 Flight MT Melee type Edge Blade 2 consecutive attacks 2nd stage -- c3100 飛行MT 近接タイプ\u3000エッジブレード2連撃\u30002段目"
+      ]
+    },
+    {
+      "ID": 31002000,
+      "Entries": [
+        "c3100 Flight MT Close Type Immelman Turn Ascent Missile -- c3100 飛行MT 近接タイプ\u3000インメルマンターン上昇\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 31002100,
+      "Entries": [
+        "c3100 Flight MT Close Type Immelman Turn Ascent Derivative Assault -- c3100 飛行MT 近接タイプ\u3000インメルマンターン上昇派生\u3000突撃"
+      ]
+    },
+    {
+      "ID": 31002200,
+      "Entries": [
+        "c3100 flight MT close-in type missile -- c3100 飛行MT 近接タイプ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 31002300,
+      "Entries": [
+        "c3100 flight MT close-in type missile -- c3100 飛行MT 近接タイプ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 31002900,
+      "Entries": [
+        "c3100 Flight MT Shooting Type Temporary Skill Frame 2 -- c3100 飛行MT 射撃タイプ\u3000仮技枠\u30002"
+      ]
+    },
+    {
+      "ID": 31003000,
+      "Entries": [
+        "c3100 Flight MT Shooting Type Temporary Skill Frame 1 -- c3100 飛行MT 射撃タイプ\u3000仮技枠\u30001"
+      ]
+    },
+    {
+      "ID": 31009900,
+      "Entries": [
+        "c3100 Flight MT Always LookAt -- c3100 飛行MT\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 31500000,
+      "Entries": [
+        "c3150 Juggernaut main gun_cluster_right -- c3150 ジャガーノート\u3000主砲_クラスタ_右"
+      ]
+    },
+    {
+      "ID": 31500100,
+      "Entries": [
+        "c3150 Juggernaut main gun_cluster_left -- c3150 ジャガーノート\u3000主砲_クラスタ_左"
+      ]
+    },
+    {
+      "ID": 31500200,
+      "Entries": [
+        "c3150 juggernaut main gun_missile -- c3150 ジャガーノート\u3000主砲_ミサイル"
+      ]
+    },
+    {
+      "ID": 31500300,
+      "Entries": [
+        "c3150 Juggernaut secondary gun_right -- c3150 ジャガーノート\u3000副砲_右"
+      ]
+    },
+    {
+      "ID": 31500400,
+      "Entries": [
+        "c3150 Juggernaut secondary gun_left -- c3150 ジャガーノート\u3000副砲_左"
+      ]
+    },
+    {
+      "ID": 31500500,
+      "Entries": [
+        "c3150 juggernaut vertical missile -- c3150 ジャガーノート\u3000垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 31500600,
+      "Entries": [
+        "c3150 juggernaut mine -- c3150 ジャガーノート\u3000地雷"
+      ]
+    },
+    {
+      "ID": 31500700,
+      "Entries": [
+        "c3150 Juggernaut_Full ride Flare -- c3150 ジャガーノート_全乗せ\u3000フレア"
+      ]
+    },
+    {
+      "ID": 31502000,
+      "Entries": [
+        "c3150 Juggernaut One Shot_00 -- c3150 ジャガーノート\u3000ワンショット_00"
+      ]
+    },
+    {
+      "ID": 31509900,
+      "Entries": [
+        "c3150 juggernaut -- c3150\u3000ジャガーノート"
+      ]
+    },
+    {
+      "ID": 32000000,
+      "Entries": [
+        "c3200 Avalanche EX boost pile -- c3200 アバランチ\u3000EXブーストパイル"
+      ]
+    },
+    {
+      "ID": 32000100,
+      "Entries": [
+        "c3200 avalanche base one shot formation -- c3200 アバランチ ベース\u3000ワンショット フォーメーション"
+      ]
+    },
+    {
+      "ID": 32000200,
+      "Entries": [
+        "c3200 Avalanche Combo 1 1st stage -- c3200 アバランチ\u3000コンボ1\u30001段目"
+      ]
+    },
+    {
+      "ID": 32000300,
+      "Entries": [
+        "c3200 Avalanche Combo 1 2nd stage -- c3200 アバランチ\u3000コンボ1\u30002段目"
+      ]
+    },
+    {
+      "ID": 32000400,
+      "Entries": [
+        "c3200 Avalanche Combo 1 3rd stage -- c3200 アバランチ\u3000コンボ1\u30003段目"
+      ]
+    },
+    {
+      "ID": 32000500,
+      "Entries": [
+        "c3200 avalanche base ace rescue request bullet -- c3200 アバランチ ベース\u3000エース救援要請弾丸"
+      ]
+    },
+    {
+      "ID": 32000600,
+      "Entries": [
+        "c3200 Avalanche Combo 2 1st stage -- c3200 アバランチ\u3000コンボ2\u30001段目"
+      ]
+    },
+    {
+      "ID": 32000700,
+      "Entries": [
+        "c3200 Avalanche Combo 2 2nd stage -- c3200 アバランチ\u3000コンボ2\u30002段目"
+      ]
+    },
+    {
+      "ID": 32000800,
+      "Entries": [
+        "c3200 Avalanche Combo 2 3rd stage -- c3200 アバランチ\u3000コンボ2\u30003段目"
+      ]
+    },
+    {
+      "ID": 32001000,
+      "Entries": [
+        "c3200 Avalanche skewered pile 1st row -- c3200 アバランチ\u3000串刺しパイル\u30001段目"
+      ]
+    },
+    {
+      "ID": 32001100,
+      "Entries": [
+        "c3200 Avalanche skewered pile 2nd tier -- c3200 アバランチ\u3000串刺しパイル\u30002段目"
+      ]
+    },
+    {
+      "ID": 32001300,
+      "Entries": [
+        "c3200 avalanche double machine gun -- c3200 アバランチ\u3000ダブルマシンガン"
+      ]
+    },
+    {
+      "ID": 32001500,
+      "Entries": [
+        "c3200 avalanche missile -- c3200 アバランチ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 32001700,
+      "Entries": [
+        "c3200 Avalanche Bazooka -- c3200 アバランチ\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 32001900,
+      "Entries": [
+        "c3200 avalanche missile -- c3200 アバランチ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 32002100,
+      "Entries": [
+        "c3200 avalanche left hand rifle -- c3200 アバランチ\u3000左手ライフル"
+      ]
+    },
+    {
+      "ID": 32002200,
+      "Entries": [
+        "c3200 avalanche base assault formation movement start bullet -- c3200 アバランチ ベース\u3000突撃フォーメーション移動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002300,
+      "Entries": [
+        "c3200 avalanche base check formation movement start bullet -- c3200 アバランチ ベース\u3000牽制フォーメーション移動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002400,
+      "Entries": [
+        "c3200 avalanche base balance formation movement start bullet -- c3200 アバランチ ベース\u3000バランスフォーメーション移動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002500,
+      "Entries": [
+        "c3200 Avalanche Assault Formation A Action Start Bullet -- c3200 アバランチ\u3000突撃フォーメーションA 行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002600,
+      "Entries": [
+        "c3200 Avalanche Base Assault Formation B Action Start Bullet -- c3200 アバランチ ベース\u3000突撃フォーメーションB行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002700,
+      "Entries": [
+        "c3200 Avalanche Base Check Formation A Action Start Bullet -- c3200 アバランチ ベース\u3000牽制フォーメーションA行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002800,
+      "Entries": [
+        "c3200 Avalanche Base Check Formation B Action Start Bullet -- c3200 アバランチ ベース\u3000牽制フォーメーションB行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32002900,
+      "Entries": [
+        "c3200 Avalanche Base Balance Formation A Action Start Bullet -- c3200 アバランチ ベース\u3000バランスフォーメーションA行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32003000,
+      "Entries": [
+        "c3200 Avalanche Base Balance Formation B Action Start Bullet -- c3200 アバランチ ベース\u3000バランスフォーメーションB行動開始弾丸"
+      ]
+    },
+    {
+      "ID": 32009900,
+      "Entries": [
+        "c3200 Avalanche Base Always LookAt -- c3200 アバランチ ベース\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32500000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Rifle A -- c3250 正規軍AC（ノーマル）\u3000ライフルA"
+      ]
+    },
+    {
+      "ID": 32500100,
+      "Entries": [
+        "c3250 regular army AC (normal) throwing gun -- c3250 正規軍AC（ノーマル）\u3000投擲銃"
+      ]
+    },
+    {
+      "ID": 32500200,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Missile B -- c3250 正規軍AC（ノーマル）\u3000ミサイルB"
+      ]
+    },
+    {
+      "ID": 32500300,
+      "Entries": [
+        "c3250 Regular Army AC (Heavy Firepower) Diffusion Buzz -- c3250 正規軍AC（重火力）\u3000拡散バズ"
+      ]
+    },
+    {
+      "ID": 32500400,
+      "Entries": [
+        "c3250 Regular Army AC (Heavy Firepower) Grenade -- c3250 正規軍AC（重火力）\u3000グレネード"
+      ]
+    },
+    {
+      "ID": 32500500,
+      "Entries": [
+        "c3250 Regular Army AC (Heavy Firepower) Flare -- c3250 正規軍AC（重火力）\u3000フレア"
+      ]
+    },
+    {
+      "ID": 32500600,
+      "Entries": [
+        "c3250 Regular Army AC (Support) Rifle B -- c3250 正規軍AC（支援）\u3000ライフルB"
+      ]
+    },
+    {
+      "ID": 32500700,
+      "Entries": [
+        "c3250 Regular Army AC (Support) Missile A -- c3250 正規軍AC（支援）\u3000ミサイルA"
+      ]
+    },
+    {
+      "ID": 32500800,
+      "Entries": [
+        "c3250 regular army AC (sniper) sniper rifle -- c3250 正規軍AC（狙撃）\u3000スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 32500900,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Shield -- c3250 正規軍AC（ノーマル）\u3000シールド"
+      ]
+    },
+    {
+      "ID": 32501000,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower Shoulder Parts Missile -- c3250 正規軍AC 強化重火力\u3000肩パーツミサイル"
+      ]
+    },
+    {
+      "ID": 32501100,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower Diffusion Bazooka Left Hand -- c3250 正規軍AC 強化重火力\u3000拡散バズーカ 左手"
+      ]
+    },
+    {
+      "ID": 32501300,
+      "Entries": [
+        "c3250 Regular Army AC (High Mobility) Missile (High Mobility Type) -- c3250 正規軍AC (高機動)\u3000ミサイル（高機動タイプ）"
+      ]
+    },
+    {
+      "ID": 32501400,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32501500,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower Enhanced Missile (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u3000強化ミサイル（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32501600,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32501700,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32501800,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32501900,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32502000,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32502100,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32502200,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32502300,
+      "Entries": [
+        "c3250 Regular Army AC Enhanced Heavy Firepower 6 Cannon Cannon (Enhanced Heavy Firepower) -- c3250 正規軍AC 強化重火力\u30006連キャノン砲（強化重火力）"
+      ]
+    },
+    {
+      "ID": 32503100,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32509900,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt -- c3250 正規軍AC（ノーマル）\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 32509901,
+      "Entries": [
+        "c3250 Regular Army AC (Normal) Always LookAt Early -- c3250 正規軍AC（ノーマル）\u3000常時LookAt 早め"
+      ]
+    },
+    {
+      "ID": 32600000,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Heavy EN Rifle -- c3260 正規軍重AC（ベース）\u3000重ENライフル"
+      ]
+    },
+    {
+      "ID": 32600100,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Double Gatling Gun -- c3260 正規軍重AC（ベース）\u3000ダブルガトリングガン"
+      ]
+    },
+    {
+      "ID": 32600200,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Plasma Gun -- c3260 正規軍重AC（ベース）\u3000プラズマガン"
+      ]
+    },
+    {
+      "ID": 32600300,
+      "Entries": [
+        "c3260 regular army heavy AC (base) missile -- c3260 正規軍重AC（ベース）\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 32600400,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Heavy EN Rifle Charge -- c3260 正規軍重AC（ベース）\u3000重ENライフルチャージ"
+      ]
+    },
+    {
+      "ID": 32600500,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) AI Missile -- c3260 正規軍重AC（ベース）\u3000AIミサイル"
+      ]
+    },
+    {
+      "ID": 32600600,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Pulse Cannon -- c3260 正規軍重AC（ベース）\u3000パルスキャノン"
+      ]
+    },
+    {
+      "ID": 32601200,
+      "Entries": [
+        "c3260 Regular army heavy AC normal missile left -- c3260 正規軍重AC ノーマル\u3000ミサイル左"
+      ]
+    },
+    {
+      "ID": 32602000,
+      "Entries": [
+        "c3260 Regular army heavy AC base one shot attack 00 -- c3260 正規軍重AC ベース\u3000ワンショット攻撃00"
+      ]
+    },
+    {
+      "ID": 32602100,
+      "Entries": [
+        "c3260 Regular army heavy AC base one shot attack 01 -- c3260 正規軍重AC ベース\u3000ワンショット攻撃01"
+      ]
+    },
+    {
+      "ID": 32602200,
+      "Entries": [
+        "c3260 Regular army heavy AC base one shot attack 02 -- c3260 正規軍重AC ベース\u3000ワンショット攻撃02"
+      ]
+    },
+    {
+      "ID": 32602300,
+      "Entries": [
+        "c3260 Regular army heavy AC base one shot attack 03 -- c3260 正規軍重AC ベース\u3000ワンショット攻撃03"
+      ]
+    },
+    {
+      "ID": 32602500,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) for charge shot bullets -- c3260 正規軍重AC（ベース）\u3000チャージショット弾丸用"
+      ]
+    },
+    {
+      "ID": 32602900,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) PA Shield -- c3260 正規軍重AC（ベース）\u3000PAシールド"
+      ]
+    },
+    {
+      "ID": 32603000,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Bash Shield -- c3260 正規軍重AC（ベース）\u3000バッシュシールド"
+      ]
+    },
+    {
+      "ID": 32603100,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Always Lookat -- c3260 正規軍重AC（ベース）\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 32609900,
+      "Entries": [
+        "c3260 regular army heavy AC (base) -- c3260 正規軍重AC（ベース）"
+      ]
+    },
+    {
+      "ID": 32609901,
+      "Entries": [
+        "c3260 Regular military heavy AC (base) Lookat at high speed rotation -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000高速回転時"
+      ]
+    },
+    {
+      "ID": 32609902,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Lookat Palcan -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000パルキャン時"
+      ]
+    },
+    {
+      "ID": 32609903,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) Lookat QB when turning -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000QBでターン時"
+      ]
+    },
+    {
+      "ID": 32609904,
+      "Entries": [
+        "c3260 Regular Army Heavy AC (Base) Lookat Dynamic CS Rear Gap -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000ダイナミックCS後隙"
+      ]
+    },
+    {
+      "ID": 32609905,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) Lookat when turning before blade attack -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000ブレード系攻撃前旋回時"
+      ]
+    },
+    {
+      "ID": 32609906,
+      "Entries": [
+        "c3260 Regular army heavy AC (base) Lookat CS before shooting -- c3260 正規軍重AC（ベース）\u3000Lookat\u3000CS撃つ前"
+      ]
+    },
+    {
+      "ID": 33000000,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Laser Rifle -- c3300 ゴーストMT（ステルス）\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 33000100,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Laser Rifle Charge -- c3300 ゴーストMT（ステルス）\u3000レーザーライフルチャージ"
+      ]
+    },
+    {
+      "ID": 33000200,
+      "Entries": [
+        "c3300 Ghost MT (PA) Plasma Rifle -- c3300 ゴーストMT（PA）\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 33000300,
+      "Entries": [
+        "c3300 Ghost MT (PA) Plasma Rifle Charge -- c3300 ゴーストMT（PA）\u3000プラズマライフルチャージ"
+      ]
+    },
+    {
+      "ID": 33000400,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit -- c3300 ゴーストMT（ステルス）\u3000機雷オービット"
+      ]
+    },
+    {
+      "ID": 33000500,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit (different performance) -- c3300 ゴーストMT（ステルス）\u3000機雷オービット（性能違い）"
+      ]
+    },
+    {
+      "ID": 33001000,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 1 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット1"
+      ]
+    },
+    {
+      "ID": 33001100,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 2 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット2"
+      ]
+    },
+    {
+      "ID": 33001200,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 3 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット3"
+      ]
+    },
+    {
+      "ID": 33001300,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 4 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット4"
+      ]
+    },
+    {
+      "ID": 33001400,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 5 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット5"
+      ]
+    },
+    {
+      "ID": 33001500,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Mine Orbit 6 -- c3300 ゴーストMT（ステルス）\u3000機雷オービット6"
+      ]
+    },
+    {
+      "ID": 33001600,
+      "Entries": [
+        "c3300 Ghost MT (PA) Assault Armor -- c3300 ゴーストMT（PA）\u3000アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 33001700,
+      "Entries": [
+        "c3300 Ghost MT Stealth Mine Orbit 2 Right -- c3300 ゴーストMT ステルス\u3000機雷オービット2右"
+      ]
+    },
+    {
+      "ID": 33001800,
+      "Entries": [
+        "c3300 Ghost MT Stealth Mine Orbit 2 Left -- c3300 ゴーストMT ステルス\u3000機雷オービット2左"
+      ]
+    },
+    {
+      "ID": 33001900,
+      "Entries": [
+        "c3300 ghost MT stealth sniper shooting -- c3300 ゴーストMT ステルス\u3000スナイパー射撃"
+      ]
+    },
+    {
+      "ID": 33002000,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Melee -- c3300 ゴーストMT（ステルス）\u3000近接"
+      ]
+    },
+    {
+      "ID": 33002100,
+      "Entries": [
+        "c3300 Ghost MT (Stealth) Whip Charge -- c3300 ゴーストMT（ステルス）\u3000ウィップチャージ"
+      ]
+    },
+    {
+      "ID": 33002500,
+      "Entries": [
+        "c3300 Ghost MT fully equipped wall mounted laser rifle -- c3300 ゴーストMT 全装備\u3000壁張り付きレーザーライフル"
+      ]
+    },
+    {
+      "ID": 33003100,
+      "Entries": [
+        "c3300 Ghost MT (PA) PA -- c3300 ゴーストMT（PA）\u3000PA"
+      ]
+    },
+    {
+      "ID": 33009900,
+      "Entries": [
+        "c3300 Ghost MT LookAt -- c3300 ゴーストMT LookAt"
+      ]
+    },
+    {
+      "ID": 34000000,
+      "Entries": [
+        "c3400 Quadruped MT Triple Bazooka -- c3400 四脚MT\u3000三連バズーカ"
+      ]
+    },
+    {
+      "ID": 34000100,
+      "Entries": [
+        "c3400 Quadruped MT triple bazooka stance -- c3400 四脚MT\u3000三連バズーカ構え"
+      ]
+    },
+    {
+      "ID": 34000200,
+      "Entries": [
+        "c3400 quadruped MT machine gun -- c3400 四脚MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 34000300,
+      "Entries": [
+        "c3400 Quadruped MT Shield for communist countries 4 legs -- c3400 四脚MT\u3000共産圏4脚用シールド"
+      ]
+    },
+    {
+      "ID": 34000400,
+      "Entries": [
+        "c3400 Quadruped MT Nine Bazooka -- c3400 四脚MT\u3000九連バズーカ"
+      ]
+    },
+    {
+      "ID": 34000500,
+      "Entries": [
+        "c3400 Quadruped MT Nine Bazooka stance -- c3400 四脚MT\u3000九連バズーカ構え"
+      ]
+    },
+    {
+      "ID": 34000600,
+      "Entries": [
+        "c3400 Quadruped MT Left arm Gatling gun -- c3400 四脚MT\u3000左腕ガトリングガン"
+      ]
+    },
+    {
+      "ID": 34000700,
+      "Entries": [
+        "c3400 Quadruped MT Right arm Gatling gun -- c3400 四脚MT\u3000右腕ガトリングガン"
+      ]
+    },
+    {
+      "ID": 34000800,
+      "Entries": [
+        "c3400 quadruped MT sniper cannon -- c3400 四脚MT\u3000スナイパーキャノン"
+      ]
+    },
+    {
+      "ID": 34000900,
+      "Entries": [
+        "c3400 quadruped MT sniper cannon stance -- c3400 四脚MT\u3000スナイパーキャノン構え"
+      ]
+    },
+    {
+      "ID": 34001000,
+      "Entries": [
+        "c3400 quadruped MT blade -- c3400 四脚MT\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 34001100,
+      "Entries": [
+        "c3400 quadruped MT smoke screen -- c3400 四脚MT\u3000煙幕"
+      ]
+    },
+    {
+      "ID": 34001200,
+      "Entries": [
+        "c3400 Quadruped MT Grenade Cannon -- c3400 四脚MT\u3000グレネードキャノン"
+      ]
+    },
+    {
+      "ID": 34001300,
+      "Entries": [
+        "c3400 quadruped MT grenade cannon stance -- c3400 四脚MT\u3000グレネードキャノン構え"
+      ]
+    },
+    {
+      "ID": 34001400,
+      "Entries": [
+        "c3400 quadruped MT throwing gun -- c3400 四脚MT\u3000投擲銃"
+      ]
+    },
+    {
+      "ID": 34001500,
+      "Entries": [
+        "c3400 quadruped MT fully equipped bay ram shotgun -- c3400 四脚MT 全装備 ベイラム\u3000ショットガン",
+        "c3400 quadruped MT fully equipped bay ram shotgun -- c3400 四脚MT 全装備 ベイラム\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 34001600,
+      "Entries": [
+        "c3400 Quadruped MT (Sniper) Sniper Cannon (Aerial) -- c3400 四脚MT（スナイパー）\u3000スナイパーキャノン（空中）"
+      ]
+    },
+    {
+      "ID": 34001700,
+      "Entries": [
+        "c3400 Quadruped MT (Grenade) Grenade Cannon (Aerial) -- c3400 四脚MT（グレネード）\u3000グレネードキャノン（空中）"
+      ]
+    },
+    {
+      "ID": 34001800,
+      "Entries": [
+        "c3400 quadruped MT (triple buzz) guard shooting (machine gun) -- c3400 四脚MT（三連バズ）\u3000ガード射撃（マシンガン）"
+      ]
+    },
+    {
+      "ID": 34002000,
+      "Entries": [
+        "c3400 Quadruped MT One Shot Attack -- c3400 四脚MT\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 34002100,
+      "Entries": [
+        "c3400 Quadruped MT Fully Equipped Bayram One Shot Attack 01 -- c3400 四脚MT 全装備 ベイラム\u3000ワンショット攻撃01"
+      ]
+    },
+    {
+      "ID": 34002200,
+      "Entries": [
+        "c3400 Quadruped MT Fully Equipped Bayram One Shot Attack 02 -- c3400 四脚MT 全装備 ベイラム\u3000ワンショット攻撃02"
+      ]
+    },
+    {
+      "ID": 34003100,
+      "Entries": [
+        "c3400 Quadruped MT Always Lookat -- c3400 四脚MT\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 34009900,
+      "Entries": [
+        "c3400 Quadruped MT LookAt -- c3400 四脚MT LookAt"
+      ]
+    },
+    {
+      "ID": 35000000,
+      "Entries": [
+        "c3500 old world MT gray double rapid fire gun -- c3500 旧世界MT グレ\u30002連速射砲"
+      ]
+    },
+    {
+      "ID": 35000100,
+      "Entries": [
+        "c3500 Old World MT Gray Grenade Cannon -- c3500 旧世界MT グレ\u3000グレネードキャノン"
+      ]
+    },
+    {
+      "ID": 35000200,
+      "Entries": [
+        "c3500 old world MT gray chest micro missile -- c3500 旧世界MT グレ\u3000胸部マイクロミサイル"
+      ]
+    },
+    {
+      "ID": 35000400,
+      "Entries": [
+        "c3500 old world MT gray cluster missile -- c3500 旧世界MT グレ\u3000クラスターミサイル"
+      ]
+    },
+    {
+      "ID": 35001200,
+      "Entries": [
+        "c3500 old world MT base chest AI missile -- c3500 旧世界MT ベース\u3000胸部AIミサイル"
+      ]
+    },
+    {
+      "ID": 35002000,
+      "Entries": [
+        "c3500 old world MT gray slalom -- c3500 旧世界MT グレ\u3000スラローム"
+      ]
+    },
+    {
+      "ID": 35002100,
+      "Entries": [
+        "c3500 Old World MT Gray Kick & Gray Shoot Down -- c3500 旧世界MT グレ\u3000キック&グレ撃ち下ろし"
+      ]
+    },
+    {
+      "ID": 35003100,
+      "Entries": [
+        "c3500 Old World MT Slalom Medium LookAt -- c3500 旧世界MT\u3000スラローム中用LookAt"
+      ]
+    },
+    {
+      "ID": 35003101,
+      "Entries": [
+        "c3500 Old World MT Slalom Medium LookAt Satellite Left -- c3500 旧世界MT\u3000スラローム中用LookAt サテライト左"
+      ]
+    },
+    {
+      "ID": 35003102,
+      "Entries": [
+        "c3500 Old World MT Slalom Medium LookAt Satellite Right -- c3500 旧世界MT\u3000スラローム中用LookAt サテライト右"
+      ]
+    },
+    {
+      "ID": 35009900,
+      "Entries": [
+        "c3500 Old World MT Grenade Always LookAt -- c3500 旧世界MT\u3000グレネード\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 35009901,
+      "Entries": [
+        "c3500 Old World MT Cluster Always LookAt -- c3500 旧世界MT\u3000クラスター\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 35009999,
+      "Entries": [
+        "c3500 Old World MT Temporary Limit Speed ​​LookAt -- c3500 旧世界MT\u3000仮限界速度用LookAt"
+      ]
+    },
+    {
+      "ID": 36000000,
+      "Entries": [
+        "c3600 Construction Machinery Spider Hand Rocket_Left -- c3600 建機クモ\u3000ハンドロケット_左"
+      ]
+    },
+    {
+      "ID": 36000100,
+      "Entries": [
+        "c3600 Construction Machinery Spider Hand Rocket_Right -- c3600 建機クモ\u3000ハンドロケット_右"
+      ]
+    },
+    {
+      "ID": 36000200,
+      "Entries": [
+        "c3600 construction machine spider submachine gun -- c3600 建機クモ\u3000サブマシンガン"
+      ]
+    },
+    {
+      "ID": 36000300,
+      "Entries": [
+        "c3600 construction machine spider mine thrower -- c3600 建機クモ\u3000地雷投射機"
+      ]
+    },
+    {
+      "ID": 36000400,
+      "Entries": [
+        "c3600 construction machine spider electromagnetic net injection machine -- c3600 建機クモ\u3000電磁ネット射出機"
+      ]
+    },
+    {
+      "ID": 36000500,
+      "Entries": [
+        "c3600 construction machine spider cruise rocket -- c3600 建機クモ\u3000巡行ロケット"
+      ]
+    },
+    {
+      "ID": 36000600,
+      "Entries": [
+        "c3600 construction machine spider missile -- c3600 建機クモ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 36000700,
+      "Entries": [
+        "c3600 construction machine spider armor armor plate -- c3600 建機クモ 装甲\u3000装甲板"
+      ]
+    },
+    {
+      "ID": 36002000,
+      "Entries": [
+        "c3600 construction machine spider one shot attack -- c3600 建機クモ\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 36009900,
+      "Entries": [
+        "c3600 Construction Machinery Spider Always Lookat -- c3600\u3000建機クモ 常時Lookat"
+      ]
+    },
+    {
+      "ID": 37000000,
+      "Entries": [
+        "c3700 Deleteer Vulcan -- c3700 デリーター\u3000バルカン"
+      ]
+    },
+    {
+      "ID": 37000100,
+      "Entries": [
+        "c3700 deleter laser rifle -- c3700 デリーター\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 37000200,
+      "Entries": [
+        "c3700 deleter laser machine gun -- c3700 デリーター\u3000レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 37000300,
+      "Entries": [
+        "c3700 deleter plasma missile -- c3700 デリーター\u3000プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 37000400,
+      "Entries": [
+        "c3700 Deleteer dual rapid fire gun -- c3700 デリーター\u3000二連速射砲"
+      ]
+    },
+    {
+      "ID": 37000500,
+      "Entries": [
+        "c3700 Delete PA breaker -- c3700 デリーター\u3000PAブレーカー"
+      ]
+    },
+    {
+      "ID": 37000600,
+      "Entries": [
+        "c3700 Delete PA Shield -- c3700 デリーター\u3000PAシールド"
+      ]
+    },
+    {
+      "ID": 37000700,
+      "Entries": [
+        "c3700 deleter vertical missile -- c3700 デリーター\u3000垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 37000800,
+      "Entries": [
+        "c3700 Deleteer Railgun -- c3700 デリーター\u3000レールガン"
+      ]
+    },
+    {
+      "ID": 37000900,
+      "Entries": [
+        "c3700 Deleteer laser machine gun special stance -- c3700 デリーター\u3000レーザーマシンガン特殊構え"
+      ]
+    },
+    {
+      "ID": 37001100,
+      "Entries": [
+        "c3700 deleter base side missile container left -- c3700 デリーター ベース\u3000サイドミサイルコンテナ\u3000左"
+      ]
+    },
+    {
+      "ID": 37001200,
+      "Entries": [
+        "c3700 deleter base side missile container right -- c3700 デリーター ベース\u3000サイドミサイルコンテナ\u3000右"
+      ]
+    },
+    {
+      "ID": 37001300,
+      "Entries": [
+        "c3700 deleter base head missile container -- c3700 デリーター ベース\u3000頭部ミサイルコンテナ"
+      ]
+    },
+    {
+      "ID": 37002000,
+      "Entries": [
+        "c3700 Deleteer one shot attack -- c3700 デリーター\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 37002100,
+      "Entries": [
+        "c3700 Deleter Base One Shot 01 -- c3700 デリーター ベース\u3000ワンショット01"
+      ]
+    },
+    {
+      "ID": 37002200,
+      "Entries": [
+        "c3700 Deleter Base One Shot 02 -- c3700 デリーター ベース\u3000ワンショット02"
+      ]
+    },
+    {
+      "ID": 37003100,
+      "Entries": [
+        "c3700 Deleteer LookAt control -- c3700 デリーター\u3000LookAt制御"
+      ]
+    },
+    {
+      "ID": 37009900,
+      "Entries": [
+        "c3700 Deleteter -- c3700\u3000デリーター"
+      ]
+    },
+    {
+      "ID": 37009901,
+      "Entries": [
+        "c3700 Deleteer for diving -- c3700 デリーター\u3000レザマシ飛び込み用"
+      ]
+    },
+    {
+      "ID": 37009902,
+      "Entries": [
+        "c3700 Deleteer PA shield slightly upward -- c3700 デリーター\u3000PAシールド\u3000少し上向く"
+      ]
+    },
+    {
+      "ID": 37009903,
+      "Entries": [
+        "c3700 Deleteer Charge Slash Slightly upward -- c3700 デリーター\u3000溜め斬り\u3000少し上向く"
+      ]
+    },
+    {
+      "ID": 37009904,
+      "Entries": [
+        "c3700 Deleteer High Speed ​​LookAt -- c3700\u3000デリーター 高速LookAt"
+      ]
+    },
+    {
+      "ID": 37009905,
+      "Entries": [
+        "c3700 Deleteer for head vulcanization -- c3700\u3000デリーター 頭部バルカン用"
+      ]
+    },
+    {
+      "ID": 40000200,
+      "Entries": [
+        "c4000 ADF EN shotgun body -- c4000 ADF\u3000ENショットガン\u3000本体"
+      ]
+    },
+    {
+      "ID": 40000300,
+      "Entries": [
+        "c4000 ADF EN shotgun parts -- c4000 ADF\u3000ENショットガン\u3000パーツ"
+      ]
+    },
+    {
+      "ID": 40000400,
+      "Entries": [
+        "c4000 ADF horizontal missile -- c4000 ADF\u3000水平ミサイル"
+      ]
+    },
+    {
+      "ID": 40000500,
+      "Entries": [
+        "c4000 ADF vertical missile -- c4000 ADF\u3000垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 40000600,
+      "Entries": [
+        "c4000 ADF Gatling (left) -- c4000 ADF\u3000ガトリング（左）"
+      ]
+    },
+    {
+      "ID": 40000700,
+      "Entries": [
+        "c4000 ADF Gatling (right) -- c4000 ADF\u3000ガトリング（右）"
+      ]
+    },
+    {
+      "ID": 40000800,
+      "Entries": [
+        "c4000 ADF Bazooka (left) -- c4000 ADF\u3000バズーカ（左）"
+      ]
+    },
+    {
+      "ID": 40000900,
+      "Entries": [
+        "c4000 ADF Bazooka (right) -- c4000 ADF\u3000バズーカ（右）"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "c4000 ADF Bazooka type Bazooka (main body) -- c4000 ADF バズーカタイプ\u3000バズーカ（本体）"
+      ]
+    },
+    {
+      "ID": 40002000,
+      "Entries": [
+        "c4000 ADF one shot (EN shotgun) -- c4000 ADF\u3000ワンショット（ENショットガン）"
+      ]
+    },
+    {
+      "ID": 40002100,
+      "Entries": [
+        "c4000 ADF one shot (EN shotgun) -- c4000 ADF\u3000ワンショット（ENショットガン）"
+      ]
+    },
+    {
+      "ID": 40002200,
+      "Entries": [
+        "c4000 ADF one shot (EN shotgun) -- c4000 ADF\u3000ワンショット（ENショットガン）"
+      ]
+    },
+    {
+      "ID": 40002300,
+      "Entries": [
+        "c4000 ADF one shot (EN shotgun) -- c4000 ADF\u3000ワンショット（ENショットガン）"
+      ]
+    },
+    {
+      "ID": 40002400,
+      "Entries": [
+        "c4000 ADF one shot (object destruction) -- c4000 ADF\u3000ワンショット（オブジェ破壊）"
+      ]
+    },
+    {
+      "ID": 40002500,
+      "Entries": [
+        "c4000 ADF one shot (object destruction) -- c4000 ADF\u3000ワンショット（オブジェ破壊）"
+      ]
+    },
+    {
+      "ID": 40002600,
+      "Entries": [
+        "c4000 ADF one shot (object destruction) -- c4000 ADF\u3000ワンショット（オブジェ破壊）"
+      ]
+    },
+    {
+      "ID": 40002700,
+      "Entries": [
+        "c4000 ADF one shot (object destruction) -- c4000 ADF\u3000ワンショット（オブジェ破壊）"
+      ]
+    },
+    {
+      "ID": 40009900,
+      "Entries": [
+        "c4000 ADF LookAt"
+      ]
+    },
+    {
+      "ID": 40009901,
+      "Entries": [
+        "c4000 ADF LookAt explosive speed with acceleration -- c4000 ADF LookAt 爆速 加速度あり"
+      ]
+    },
+    {
+      "ID": 40009902,
+      "Entries": [
+        "c4000 ADF LookAt Explosive speed No acceleration -- c4000 ADF LookAt 爆速 加速度なし"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "c4100 Humanoid heavy boss EN type single main gun -- c4100 人型重量級ボス ENタイプ\u3000単体主砲"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shoulder missile -- c4100 人型重量級ボス\u3000肩部ミサイル"
+      ]
+    },
+    {
+      "ID": 41000200,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Gatling gun right hand -- c4100 人型重量級ボス\u3000ガトリング砲 右手"
+      ]
+    },
+    {
+      "ID": 41000300,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss shotgun left hand -- c4100 人型重量級ボス\u3000ショットガン 左手"
+      ]
+    },
+    {
+      "ID": 41000400,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss large pulse machine gun cannon -- c4100 人型重量級ボス\u3000大型パルスマシンガンキャノン"
+      ]
+    },
+    {
+      "ID": 41000500,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss plasma rifle -- c4100 人型重量級ボス\u3000プラズマライフル"
+      ]
+    },
+    {
+      "ID": 41000600,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet A -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸A"
+      ]
+    },
+    {
+      "ID": 41000700,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet B -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸B"
+      ]
+    },
+    {
+      "ID": 41000800,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet C -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸C"
+      ]
+    },
+    {
+      "ID": 41000900,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet D -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸D"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet E -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸E"
+      ]
+    },
+    {
+      "ID": 41001100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet F -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸F"
+      ]
+    },
+    {
+      "ID": 41001200,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet G -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸G"
+      ]
+    },
+    {
+      "ID": 41001300,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Grenade Cannon -- c4100 人型重量級ボス\u3000グレネードキャノン"
+      ]
+    },
+    {
+      "ID": 41001400,
+      "Entries": [
+        "c4100 humanoid heavyweight boss (base ENOW main gun bullet -- c4100 人型重量級ボス(ベース\u3000ENOW 主砲弾丸"
+      ]
+    },
+    {
+      "ID": 41001500,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base ENOW pulse array bullet -- c4100 人型重量級ボス(ベース\u3000ENOW パルスアレイ弾丸"
+      ]
+    },
+    {
+      "ID": 41001600,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base ENOW pulse array bullet right) -- c4100 人型重量級ボス(ベース\u3000ENOW パルスアレイ弾丸 右"
+      ]
+    },
+    {
+      "ID": 41001900,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base live ammunition OW flame radiation) -- c4100 人型重量級ボス(ベース\u3000実弾OW 火炎放射"
+      ]
+    },
+    {
+      "ID": 41002000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss one shot attack 00 -- c4100 人型重量級ボス\u3000ワンショット攻撃00"
+      ]
+    },
+    {
+      "ID": 41002100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss one shot attack 01 -- c4100 人型重量級ボス\u3000ワンショット攻撃01"
+      ]
+    },
+    {
+      "ID": 41002200,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss one shot attack 02 -- c4100 人型重量級ボス\u3000ワンショット攻撃02"
+      ]
+    },
+    {
+      "ID": 41002300,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss one shot attack 03 -- c4100 人型重量級ボス\u3000ワンショット攻撃03"
+      ]
+    },
+    {
+      "ID": 41002400,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss Brejo attack -- c4100 人型重量級ボス\u3000ブレホ攻撃"
+      ]
+    },
+    {
+      "ID": 41002500,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet H -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸H"
+      ]
+    },
+    {
+      "ID": 41002600,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet I -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸I"
+      ]
+    },
+    {
+      "ID": 41002700,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet J -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸J"
+      ]
+    },
+    {
+      "ID": 41002800,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet K -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸K"
+      ]
+    },
+    {
+      "ID": 41002900,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet L -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸L"
+      ]
+    },
+    {
+      "ID": 41003000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss missile OW bullet -- c4100 人型重量級ボス\u3000ミサイルOW弾丸"
+      ]
+    },
+    {
+      "ID": 41003100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss (base missile OW bullet N -- c4100 人型重量級ボス(ベース\u3000ミサイルOW弾丸N"
+      ]
+    },
+    {
+      "ID": 41009900,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss -- c4100\u3000人型重量級ボス"
+      ]
+    },
+    {
+      "ID": 41009901,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Grenade -- c4100\u3000人型重量級ボス グレネード"
+      ]
+    },
+    {
+      "ID": 41009902,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss grenade slow -- c4100\u3000人型重量級ボス グレネード遅"
+      ]
+    },
+    {
+      "ID": 41500000,
+      "Entries": [
+        "c4150 Special attack MT finger (double trigger) -- c4150 特攻MT\u3000フィンガー（ダブルトリガー）"
+      ]
+    },
+    {
+      "ID": 41500100,
+      "Entries": [
+        "c4150 Special attack MT finger (left) -- c4150 特攻MT\u3000フィンガー（左）"
+      ]
+    },
+    {
+      "ID": 41500200,
+      "Entries": [
+        "c4150 Special attack MT finger (right) -- c4150 特攻MT\u3000フィンガー（右）"
+      ]
+    },
+    {
+      "ID": 41500300,
+      "Entries": [
+        "c4150 special attack MT rapid fire missile -- c4150 特攻MT\u3000連射ミサイル"
+      ]
+    },
+    {
+      "ID": 41500400,
+      "Entries": [
+        "c4150 special attack MT vertical missile -- c4150 特攻MT\u3000垂直ミサイル"
+      ]
+    },
+    {
+      "ID": 41500500,
+      "Entries": [
+        "c4150 Special Attack MT Surface Suppression Artillery -- c4150 特攻MT\u3000面制圧火砲"
+      ]
+    },
+    {
+      "ID": 41500600,
+      "Entries": [
+        "c4150 special attack MT missile -- c4150 特攻MT\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 41500700,
+      "Entries": [
+        "c4150 Special attack MT rapid fire missile (different performance) -- c4150 特攻MT\u3000連射ミサイル（性能違い）"
+      ]
+    },
+    {
+      "ID": 41500800,
+      "Entries": [
+        "c4150 Special Attack MT (PA) Assault Armor -- c4150 特攻MT（PA）\u3000アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 41500900,
+      "Entries": [
+        "c4150 special attack MT large missile large missile -- c4150 特攻MT 大型ミサイル\u3000大型ミサイル"
+      ]
+    },
+    {
+      "ID": 41502000,
+      "Entries": [
+        "c4150 Special attack MT one shot attack -- c4150 特攻MT\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 41503100,
+      "Entries": [
+        "c4150 Special Attack MT Always LookAt -- c4150 特攻MT\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 41509900,
+      "Entries": [
+        "c4150 Special Attack MT LookAt -- c4150 特攻MT LookAt"
+      ]
+    },
+    {
+      "ID": 42000000,
+      "Entries": [
+        "c4200 next generation proto AC laser rifle (left) -- c4200 次世代プロトACレーザーライフル（左）"
+      ]
+    },
+    {
+      "ID": 42000100,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Laser Rifle (Right) -- c4200 次世代プロトAC\u3000レーザーライフル（右）"
+      ]
+    },
+    {
+      "ID": 42000200,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Laser Rifle (Charge Left) -- c4200 次世代プロトAC\u3000レーザーライフル（チャージ左）"
+      ]
+    },
+    {
+      "ID": 42000300,
+      "Entries": [
+        "c4200 Next Generation Proto AC Laser Rifle (Charge Right) -- c4200 次世代プロトAC\u3000レーザーライフル（チャージ右）"
+      ]
+    },
+    {
+      "ID": 42000400,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC\u3000マイクロミサイル（左）"
+      ]
+    },
+    {
+      "ID": 42000500,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC\u3000マイクロミサイル（右）"
+      ]
+    },
+    {
+      "ID": 42000600,
+      "Entries": [
+        "c4200 Next Generation Proto AC Melange Bullet (Small) -- c4200 次世代プロトAC\u3000メランジ弾（小）"
+      ]
+    },
+    {
+      "ID": 42000700,
+      "Entries": [
+        "c4200 next generation proto AC melange bullet (large right) -- c4200 次世代プロトAC\u3000メランジ弾（大右）"
+      ]
+    },
+    {
+      "ID": 42000800,
+      "Entries": [
+        "c4200 next generation proto AC melange bullet (large left) -- c4200 次世代プロトAC\u3000メランジ弾（大左）"
+      ]
+    },
+    {
+      "ID": 42000900,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Melange Bullet Sign -- c4200 次世代プロトAC\u3000メランジ弾予兆"
+      ]
+    },
+    {
+      "ID": 42001000,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Melange Bullet Sign -- c4200 次世代プロトAC\u3000メランジ弾予兆"
+      ]
+    },
+    {
+      "ID": 42001100,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Left) -- c4200 次世代プロトAC\u3000マイクロミサイル（左）"
+      ]
+    },
+    {
+      "ID": 42001200,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Right) -- c4200 次世代プロトAC\u3000マイクロミサイル（右）"
+      ]
+    },
+    {
+      "ID": 42001300,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Micro Missile (Right with different performance) -- c4200 次世代プロトAC\u3000マイクロミサイル（性能違い右）"
+      ]
+    },
+    {
+      "ID": 42001400,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Melange Bullet (Small) Simultaneous Firing ① -- c4200 次世代プロトAC\u3000メランジ弾（小）同時発射①"
+      ]
+    },
+    {
+      "ID": 42001500,
+      "Entries": [
+        "c4200 Next generation proto AC melange bullet (small) simultaneous firing ② -- c4200 次世代プロトAC\u3000メランジ弾（小）同時発射②"
+      ]
+    },
+    {
+      "ID": 42001600,
+      "Entries": [
+        "c4200 Next generation proto AC melange bullet (small) simultaneous firing ③ -- c4200 次世代プロトAC\u3000メランジ弾（小）同時発射③"
+      ]
+    },
+    {
+      "ID": 42001700,
+      "Entries": [
+        "c4200 Next generation proto AC melange bullet (small) simultaneous firing ④ -- c4200 次世代プロトAC\u3000メランジ弾（小）同時発射④"
+      ]
+    },
+    {
+      "ID": 42001800,
+      "Entries": [
+        "c4200 Next Generation Proto AC Laser Rifle (Owaza Offset Left) -- c4200 次世代プロトAC\u3000レーザーライフル（大技オフセット左）"
+      ]
+    },
+    {
+      "ID": 42001900,
+      "Entries": [
+        "c4200 Next Generation Proto AC Laser Rifle (Owaza Offset Right) -- c4200 次世代プロトAC\u3000レーザーライフル（大技オフセット右）"
+      ]
+    },
+    {
+      "ID": 42002000,
+      "Entries": [
+        "c4200 Next Generation ProtoAC One Shot Attack 1 -- c4200 次世代プロトAC\u3000ワンショット攻撃1"
+      ]
+    },
+    {
+      "ID": 42002100,
+      "Entries": [
+        "c4200 Next Generation ProtoAC One Shot Attack 2 -- c4200 次世代プロトAC\u3000ワンショット攻撃2"
+      ]
+    },
+    {
+      "ID": 42002200,
+      "Entries": [
+        "c4200 Next Generation ProtoAC One Shot Attack 3 -- c4200 次世代プロトAC\u3000ワンショット攻撃3"
+      ]
+    },
+    {
+      "ID": 42002300,
+      "Entries": [
+        "c4200 Next Generation ProtoAC One Shot Attack 4 -- c4200 次世代プロトAC\u3000ワンショット攻撃4"
+      ]
+    },
+    {
+      "ID": 42002400,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Blade -- c4200 次世代プロトAC\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 42002500,
+      "Entries": [
+        "c4200 Next Generation Proto AC Blade Charge -- c4200 次世代プロトAC\u3000ブレードチャージ"
+      ]
+    },
+    {
+      "ID": 42002600,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Blade Gravity Field -- c4200 次世代プロトAC\u3000ブレード重力場"
+      ]
+    },
+    {
+      "ID": 42002700,
+      "Entries": [
+        "c4200 Next Generation ProtoAC Daiwaki Beam -- c4200 次世代プロトAC\u3000大技ビーム"
+      ]
+    },
+    {
+      "ID": 42002800,
+      "Entries": [
+        "c4210 Next generation proto AC illusion melange residual (large) -- c4210 次世代プロトAC\u3000幻影\u3000メランジ残留（大）",
+        "c4210 Next generation proto AC illusion melange residual (large) -- c4210 次世代プロトAC\u3000幻影\u3000メランジ残留（大）"
+      ]
+    },
+    {
+      "ID": 42003000,
+      "Entries": [
+        "c4200 next generation proto AC HU judgment bullet -- c4200 次世代プロトAC\u3000HU判定弾丸"
+      ]
+    },
+    {
+      "ID": 42003100,
+      "Entries": [
+        "c4200 next generation proto AC PA -- c4200 次世代プロトAC\u3000PA"
+      ]
+    },
+    {
+      "ID": 42009900,
+      "Entries": [
+        "c4200 Next Generation ProtoAC LookAt Control -- c4200 次世代プロトAC\u3000LookAt制御"
+      ]
+    },
+    {
+      "ID": 42010000,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Gatling (Left) -- c4201 次世代プロトAC\u3000Cエンド\u3000ガトリング（左）"
+      ]
+    },
+    {
+      "ID": 42010100,
+      "Entries": [
+        "c4201 Next generation proto AC C end Gatling (right) -- c4201 次世代プロトAC\u3000Cエンド\u3000ガトリング（右）"
+      ]
+    },
+    {
+      "ID": 42010200,
+      "Entries": [
+        "c4201 Next generation proto AC C end shot (left) -- c4201 次世代プロトAC\u3000Cエンド\u3000ショット（左）"
+      ]
+    },
+    {
+      "ID": 42010300,
+      "Entries": [
+        "c4201 Next generation proto AC C-end shot (right) -- c4201 次世代プロトAC\u3000Cエンド\u3000ショット（右）"
+      ]
+    },
+    {
+      "ID": 42010400,
+      "Entries": [
+        "c4201 Next generation proto AC C end arm parts hit -- c4201 次世代プロトAC\u3000Cエンド\u3000腕パーツヒット"
+      ]
+    },
+    {
+      "ID": 42010500,
+      "Entries": [
+        "c4201 Next generation proto AC C end slamming shock wave -- c4201 次世代プロトAC\u3000Cエンド\u3000叩きつけ衝撃波"
+      ]
+    },
+    {
+      "ID": 42010600,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Aubade Continuous Explosion (1 Stage) -- c4201 次世代プロトAC\u3000Cエンド\u3000オーバード連爆(1段)"
+      ]
+    },
+    {
+      "ID": 42010700,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Aubade Continuous Explosion (2 Stages) -- c4201 次世代プロトAC\u3000Cエンド\u3000オーバード連爆(2段)"
+      ]
+    },
+    {
+      "ID": 42010800,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Aubade Continuous Explosion (3 Stages) -- c4201 次世代プロトAC\u3000Cエンド\u3000オーバード連爆(3段)"
+      ]
+    },
+    {
+      "ID": 42010900,
+      "Entries": [
+        "c4201 Next generation proto AC C end linkage end flag -- c4201 次世代プロトAC\u3000Cエンド\u3000連携終了フラグ"
+      ]
+    },
+    {
+      "ID": 42011000,
+      "Entries": [
+        "c4201 Next generation proto AC C end turret transformation -- c4201 次世代プロトAC\u3000Cエンド\u3000砲台変形"
+      ]
+    },
+    {
+      "ID": 42011100,
+      "Entries": [
+        "c4201 Next generation proto AC C end sea spider instructions -- c4201 次世代プロトAC\u3000Cエンド\u3000ウミグモ指示"
+      ]
+    },
+    {
+      "ID": 42011200,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Time Difference Huge Judgment 2 -- c4201 次世代プロトAC\u3000Cエンド\u3000時間差巨大判定2",
+        "c4201 Next Generation Proto AC C End Time Difference Huge Judgment 2 -- c4201 次世代プロトAC\u3000Cエンド\u3000時間差巨大判定2"
+      ]
+    },
+    {
+      "ID": 42011400,
+      "Entries": [
+        "c4201 Next generation proto AC C end cooperation flag 1 -- c4201 次世代プロトAC\u3000Cエンド\u3000連携フラグ1"
+      ]
+    },
+    {
+      "ID": 42011500,
+      "Entries": [
+        "c4201 Next generation proto AC C end cooperation flag 2 -- c4201 次世代プロトAC\u3000Cエンド\u3000連携フラグ2"
+      ]
+    },
+    {
+      "ID": 42011600,
+      "Entries": [
+        "c4201 Next generation proto AC C end cooperation flag 3 -- c4201 次世代プロトAC\u3000Cエンド\u3000連携フラグ3"
+      ]
+    },
+    {
+      "ID": 42011700,
+      "Entries": [
+        "c4201 Next generation proto AC C end cooperation flag 4 -- c4201 次世代プロトAC\u3000Cエンド\u3000連携フラグ4"
+      ]
+    },
+    {
+      "ID": 42011800,
+      "Entries": [
+        "c4201 Next generation proto AC C end cooperation flag 5 -- c4201 次世代プロトAC\u3000Cエンド\u3000連携フラグ5"
+      ]
+    },
+    {
+      "ID": 42011900,
+      "Entries": [
+        "c4201 Next generation proto AC C end temporary AA -- c4201 次世代プロトAC\u3000Cエンド\u3000仮AA"
+      ]
+    },
+    {
+      "ID": 42012000,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End One Shot Attack 1 -- c4201 次世代プロトAC\u3000Cエンド\u3000ワンショット攻撃1"
+      ]
+    },
+    {
+      "ID": 42012100,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End One Shot Attack 2 -- c4201 次世代プロトAC\u3000Cエンド\u3000ワンショット攻撃2"
+      ]
+    },
+    {
+      "ID": 42012200,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End One Shot Attack 3 -- c4201 次世代プロトAC\u3000Cエンド\u3000ワンショット攻撃3"
+      ]
+    },
+    {
+      "ID": 42012300,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End One Shot Attack 4 -- c4201 次世代プロトAC\u3000Cエンド\u3000ワンショット攻撃4"
+      ]
+    },
+    {
+      "ID": 42012400,
+      "Entries": [
+        "c4201 Next generation proto AC C-end laser blade (right) -- c4201 次世代プロトAC\u3000Cエンド\u3000レーザーブレード（右）"
+      ]
+    },
+    {
+      "ID": 42012500,
+      "Entries": [
+        "c4201 Next generation proto AC C-end laser blade (left) -- c4201 次世代プロトAC\u3000Cエンド\u3000レーザーブレード（左）"
+      ]
+    },
+    {
+      "ID": 42012600,
+      "Entries": [
+        "c4201 Next generation proto AC C-end pulse blade -- c4201 次世代プロトAC\u3000Cエンド\u3000パルスブレード"
+      ]
+    },
+    {
+      "ID": 42012700,
+      "Entries": [
+        "c4201 Next generation proto AC C end overdo blade -- c4201 次世代プロトAC\u3000Cエンド\u3000オーバードブレード"
+      ]
+    },
+    {
+      "ID": 42012800,
+      "Entries": [
+        "c4201 Next generation proto AC C end overdo blade large -- c4201 次世代プロトAC\u3000Cエンド\u3000オーバードブレード大"
+      ]
+    },
+    {
+      "ID": 42012900,
+      "Entries": [
+        "c4201 Next Generation Proto AC C End Time Difference Huge Judgment (From the Main Unit) -- c4201 次世代プロトAC\u3000Cエンド\u3000時間差巨大判定（本体から）"
+      ]
+    },
+    {
+      "ID": 42013000,
+      "Entries": [
+        "c4201 Next generation proto AC C end Daiwaki beam -- c4201 次世代プロトAC\u3000Cエンド\u3000大技ビーム"
+      ]
+    },
+    {
+      "ID": 42013001,
+      "Entries": [
+        "c4201 Next generation proto AC C end big technique beam landing -- c4201 次世代プロトAC\u3000Cエンド\u3000大技ビーム着弾"
+      ]
+    },
+    {
+      "ID": 42013100,
+      "Entries": [
+        "c4201 Next generation proto AC C end proximity -- c4201 次世代プロトAC\u3000Cエンド\u3000近接"
+      ]
+    },
+    {
+      "ID": 42019500,
+      "Entries": [
+        "c4201 Next generation proto AC C end melange bullet (small right) -- c4201 次世代プロトAC\u3000Cエンド\u3000メランジ弾（小右）"
+      ]
+    },
+    {
+      "ID": 42019600,
+      "Entries": [
+        "c4201 Next generation proto AC C end melange bullet (small left) -- c4201 次世代プロトAC\u3000Cエンド\u3000メランジ弾（小左）"
+      ]
+    },
+    {
+      "ID": 42019700,
+      "Entries": [
+        "c4201 Next generation proto AC C-end melange bullet (large right) -- c4201 次世代プロトAC\u3000Cエンド\u3000メランジ弾（大右）"
+      ]
+    },
+    {
+      "ID": 42019800,
+      "Entries": [
+        "c4201 Next generation proto AC C-end melange bullet (large left) -- c4201 次世代プロトAC\u3000Cエンド\u3000メランジ弾（大左）"
+      ]
+    },
+    {
+      "ID": 42019900,
+      "Entries": [
+        "c4201 Next generation proto AC C end LookAt control -- c4201 次世代プロトAC\u3000Cエンド\u3000LookAt制御"
+      ]
+    },
+    {
+      "ID": 42100000,
+      "Entries": [
+        "c4210 Next Generation ProtoAC Phantom HU Melange Particle -- c4210 次世代プロトAC\u3000幻影\u3000HUメランジ粒子"
+      ]
+    },
+    {
+      "ID": 42102300,
+      "Entries": [
+        "c4210 Next Generation Proto AC Phantom One Shot Attack 5 -- c4210 次世代プロトAC\u3000幻影\u3000ワンショット攻撃5"
+      ]
+    },
+    {
+      "ID": 42102400,
+      "Entries": [
+        "c4210 Next Generation Proto AC Phantom One Shot Attack 6 -- c4210 次世代プロトAC\u3000幻影\u3000ワンショット攻撃6"
+      ]
+    },
+    {
+      "ID": 42102500,
+      "Entries": [
+        "c4210 Next Generation ProtoAC Phantom Afterimage Fade Out -- c4210 次世代プロトAC\u3000幻影\u3000残像フェードアウト"
+      ]
+    },
+    {
+      "ID": 42109900,
+      "Entries": [
+        "c4210 Next Generation ProtoAC Phantom LookAt Control -- c4210 次世代プロトAC\u3000幻影\u3000LookAt制御"
+      ]
+    },
+    {
+      "ID": 42500000,
+      "Entries": [
+        "c4250 Orbit Seed Ob Jab Shoulder Pad Raise -- c4250 オービットシード\u3000Obジャブ\u3000肩パッド上げ"
+      ]
+    },
+    {
+      "ID": 42500100,
+      "Entries": [
+        "c4250 Orbit Seed Ob Jab Manual Payment -- c4250 オービットシード\u3000Obジャブ\u3000手払い"
+      ]
+    },
+    {
+      "ID": 42500200,
+      "Entries": [
+        "c4250 Orbit Seed Ob Jab Manual Pay Right -- c4250 オービットシード\u3000Obジャブ\u3000手払い\u3000右"
+      ]
+    },
+    {
+      "ID": 42505000,
+      "Entries": [
+        "c4250 Orbit Seed Ob Left 344 -- c4250 オービットシード\u3000Ob\u3000左\u3000344"
+      ]
+    },
+    {
+      "ID": 42505100,
+      "Entries": [
+        "c4250 Orbit Seed Ob Left 342 -- c4250 オービットシード\u3000Ob\u3000左\u3000342"
+      ]
+    },
+    {
+      "ID": 42505200,
+      "Entries": [
+        "c4250 Orbit Seed Ob Left 340 -- c4250 オービットシード\u3000Ob\u3000左\u3000340"
+      ]
+    },
+    {
+      "ID": 42505300,
+      "Entries": [
+        "c4250 Orbit Seed Ob Left 341 -- c4250 オービットシード\u3000Ob\u3000左\u3000341"
+      ]
+    },
+    {
+      "ID": 42505400,
+      "Entries": [
+        "c4250 Orbit Seed Ob Left 343 -- c4250 オービットシード\u3000Ob\u3000左\u3000343"
+      ]
+    },
+    {
+      "ID": 42505600,
+      "Entries": [
+        "c4250 Orbit Seed Ob Right 314 -- c4250 オービットシード\u3000Ob\u3000右\u3000314"
+      ]
+    },
+    {
+      "ID": 42505700,
+      "Entries": [
+        "c4250 Orbit Seed Ob Right 312 -- c4250 オービットシード\u3000Ob\u3000右\u3000312"
+      ]
+    },
+    {
+      "ID": 42505800,
+      "Entries": [
+        "c4250 Orbit Seed Ob Right 310 -- c4250 オービットシード\u3000Ob\u3000右\u3000310"
+      ]
+    },
+    {
+      "ID": 42505900,
+      "Entries": [
+        "c4250 Orbit Seed Ob Right 311 -- c4250 オービットシード\u3000Ob\u3000右\u3000311"
+      ]
+    },
+    {
+      "ID": 42506000,
+      "Entries": [
+        "c4250 Orbit Seed Ob Right 313 -- c4250 オービットシード\u3000Ob\u3000右\u3000313"
+      ]
+    },
+    {
+      "ID": 42501300,
+      "Entries": [
+        "c4250 orbit seed chest main gun -- c4250 オービットシード\u3000胸主砲"
+      ]
+    },
+    {
+      "ID": 42502000,
+      "Entries": [
+        "c4250 Orbit Seed One Shot 00 -- c4250 オービットシード\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 42502100,
+      "Entries": [
+        "c4250 Orbit Seed One Shot 01 -- c4250 オービットシード\u3000ワンショット01"
+      ]
+    },
+    {
+      "ID": 42502200,
+      "Entries": [
+        "c4250 Orbit Seed One Shot 02 -- c4250 オービットシード\u3000ワンショット02"
+      ]
+    },
+    {
+      "ID": 42507000,
+      "Entries": [
+        "c4250 Orbit Seed Lightwave Emission Left Hand -- c4250 オービットシード\u3000光波射出\u3000左手"
+      ]
+    },
+    {
+      "ID": 42507010,
+      "Entries": [
+        "c4250 Orbit Seed Lightwave Emission Right Hand -- c4250 オービットシード\u3000光波射出\u3000右手"
+      ]
+    },
+    {
+      "ID": 42509900,
+      "Entries": [
+        "c4250 Orbit Seed Always LookAT -- c4250 オービットシード\u3000常時LookAT"
+      ]
+    },
+    {
+      "ID": 42600200,
+      "Entries": [
+        "c4260 Orbit control wraparound sweep -- c4260 オービット制御\u3000回り込み掃射"
+      ]
+    },
+    {
+      "ID": 42602000,
+      "Entries": [
+        "c4260 Orbit control one shot 00 -- c4260 オービット制御\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 42602100,
+      "Entries": [
+        "c4260 Orbit control one shot 01 -- c4260 オービット制御\u3000ワンショット01"
+      ]
+    },
+    {
+      "ID": 42602200,
+      "Entries": [
+        "c4260 Orbit control one shot 02 -- c4260 オービット制御\u3000ワンショット02"
+      ]
+    },
+    {
+      "ID": 42609900,
+      "Entries": [
+        "c4260 Orbit control -- c4260\u3000オービット制御"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "c5000 guard mechanism (aerial) machine gun type machine gun -- c5000 ガードメカ(空中) 機関銃タイプ\u3000機関銃"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Machine Gun Type Rocket -- c5000 ガードメカ(空中) 機関銃タイプ\u3000ロケット"
+      ]
+    },
+    {
+      "ID": 50000200,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Machine gun type Suicide attack -- c5000 ガードメカ(空中) 機関銃タイプ\u3000自爆特攻"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "c5000 guard mechanism (air) machine gun type siren sound -- c5000 ガードメカ(空中) 機関銃タイプ\u3000サイレン鳴らし"
+      ]
+    },
+    {
+      "ID": 50003100,
+      "Entries": [
+        "c5000 guard mechanism (aerial) machine gun type rotor -- c5000 ガードメカ(空中) 機関銃タイプ\u3000ローター"
+      ]
+    },
+    {
+      "ID": 50100000,
+      "Entries": [
+        "c5010 bug (security type) laser gun -- c5010 バグ（警備タイプ）\u3000レーザーガン"
+      ]
+    },
+    {
+      "ID": 50100100,
+      "Entries": [
+        "c5010 Bug (Work Type B) Flamethrower -- c5010 バグ（作業タイプB）\u3000火炎放射"
+      ]
+    },
+    {
+      "ID": 50100200,
+      "Entries": [
+        "c5010 Bug (Work Type B) Grenade -- c5010 バグ（作業タイプB）\u3000グレネード"
+      ]
+    },
+    {
+      "ID": 50100300,
+      "Entries": [
+        "c5010 Bug (special type) Poison fog -- c5010 バグ（特殊タイプ）\u3000毒霧"
+      ]
+    },
+    {
+      "ID": 50100400,
+      "Entries": [
+        "c5010 Bug (security type) laser gun charge -- c5010 バグ（警備タイプ）\u3000レーザーガンチャージ"
+      ]
+    },
+    {
+      "ID": 50102000,
+      "Entries": [
+        "c5010 Bug (Work Type A) One-shot attack -- c5010 バグ（作業タイプA）\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 50103100,
+      "Entries": [
+        "c5010 Bug (work type A) Always Lookat -- c5010 バグ（作業タイプA）\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 50109900,
+      "Entries": [
+        "c5010 bug Lookat -- c5010 バグ Lookat"
+      ]
+    },
+    {
+      "ID": 50200000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Chest Main Gun -- c5020 重ガードメカ\u3000胸部主砲"
+      ]
+    },
+    {
+      "ID": 50200100,
+      "Entries": [
+        "c5020 Heavy guard mechanism main body furnace_flame radiation -- c5020 重ガードメカ\u3000本体炉_火炎放射"
+      ]
+    },
+    {
+      "ID": 50200200,
+      "Entries": [
+        "c5020 Heavy guard mechanism upper body furnace_flame radiation -- c5020 重ガードメカ\u3000上半身炉_火炎放射"
+      ]
+    },
+    {
+      "ID": 50200300,
+      "Entries": [
+        "c5020 Heavy guard mechanism extinguishing agent injection -- c5020 重ガードメカ\u3000消火剤射出"
+      ]
+    },
+    {
+      "ID": 50200400,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Missile -- c5020 重ガードメカ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 50200500,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Missile -- c5020 重ガードメカ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 50200600,
+      "Entries": [
+        "c5020 Heavy guard mechanism Main furnace_Eruption_Junk close range -- c5020 重ガードメカ\u3000本体炉_噴火_ガラクタ近距離"
+      ]
+    },
+    {
+      "ID": 50200700,
+      "Entries": [
+        "c5020 Heavy guard mechanism Main furnace_Eruption_Junk medium range -- c5020 重ガードメカ\u3000本体炉_噴火_ガラクタ中距離"
+      ]
+    },
+    {
+      "ID": 50200800,
+      "Entries": [
+        "c5020 Heavy guard mechanism Main furnace_Eruption_Junk long distance -- c5020 重ガードメカ\u3000本体炉_噴火_ガラクタ遠距離"
+      ]
+    },
+    {
+      "ID": 50200900,
+      "Entries": [
+        "c5020 Heavy guard mech burst into flames after HU -- c5020 重ガードメカ\u3000HU後\u3000炎上"
+      ]
+    },
+    {
+      "ID": 50201000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 1 -- c5020 重ガードメカ\u3000スカートミサイル1"
+      ]
+    },
+    {
+      "ID": 50201100,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 2 -- c5020 重ガードメカ\u3000スカートミサイル2"
+      ]
+    },
+    {
+      "ID": 50201200,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 3 -- c5020 重ガードメカ\u3000スカートミサイル3"
+      ]
+    },
+    {
+      "ID": 50201300,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 4 -- c5020 重ガードメカ\u3000スカートミサイル4"
+      ]
+    },
+    {
+      "ID": 50201400,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 5 -- c5020 重ガードメカ\u3000スカートミサイル5"
+      ]
+    },
+    {
+      "ID": 50201500,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Skirt Missile 6 -- c5020 重ガードメカ\u3000スカートミサイル6"
+      ]
+    },
+    {
+      "ID": 50201700,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Ceiling Destruction Cannon -- c5020 重ガードメカ\u3000天井破壊砲"
+      ]
+    },
+    {
+      "ID": 50202000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha One Shot Attack -- c5020 重ガードメカ\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 50202100,
+      "Entries": [
+        "c5020 Heavy guard mechanism melee -- c5020 重ガードメカ\u3000近接"
+      ]
+    },
+    {
+      "ID": 50202200,
+      "Entries": [
+        "c5020 Heavy Guard Mecha One Shot Attack Attack 02 -- c5020 重ガードメカ\u3000ワンショット攻撃攻撃02"
+      ]
+    },
+    {
+      "ID": 50209900,
+      "Entries": [
+        "c5020 Heavy guard mechanism upper body -- c5020\u3000重ガードメカ 上半身"
+      ]
+    },
+    {
+      "ID": 50209901,
+      "Entries": [
+        "c5020 Heavy Guard Mecha Turret -- c5020\u3000重ガードメカ 砲塔"
+      ]
+    },
+    {
+      "ID": 50209910,
+      "Entries": [
+        "c5020 Heavy guard mechanism upper body for one shot -- c5020\u3000重ガードメカ 上半身 ワンショット用"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "c5100 large transport helicopter missile -- c5100 大型輸送ヘリ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 51000100,
+      "Entries": [
+        "c5100 large transport helicopter missile left -- c5100 大型輸送ヘリ\u3000ミサイル左"
+      ]
+    },
+    {
+      "ID": 51002000,
+      "Entries": [
+        "c5100 large transport helicopter one shot 0 -- c5100 大型輸送ヘリ\u3000ワンショット0"
+      ]
+    },
+    {
+      "ID": 51002100,
+      "Entries": [
+        "c5100 large transport helicopter one shot 1 -- c5100 大型輸送ヘリ\u3000ワンショット1"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "c5100 large transport helicopter rotor -- c5100 大型輸送ヘリ\u3000ローター"
+      ]
+    },
+    {
+      "ID": 51003100,
+      "Entries": [
+        "c5100 large transport helicopter shield -- c5100 大型輸送ヘリ\u3000シールド"
+      ]
+    },
+    {
+      "ID": 51010000,
+      "Entries": [
+        "c5101 large transport helicopter machine gun c5101 large transport helicopter_machine gun -- c5101 大型輸送ヘリ機銃\u3000c5101大型輸送ヘリ_機銃"
+      ]
+    },
+    {
+      "ID": 51019900,
+      "Entries": [
+        "c5101 large transport helicopter machine gun -- c5101\u3000大型輸送ヘリ機銃"
+      ]
+    },
+    {
+      "ID": 51200000,
+      "Entries": [
+        "c5120 Military US Drone Laser Rifle -- c5120 軍事用USドローン\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 51200100,
+      "Entries": [
+        "c5120 Military US Drone Pulse -- c5120 軍事用USドローン\u3000パルス"
+      ]
+    },
+    {
+      "ID": 51200200,
+      "Entries": [
+        "c5120 military US drone cluster missile -- c5120 軍事用USドローン\u3000クラスターミサイル"
+      ]
+    },
+    {
+      "ID": 51201000,
+      "Entries": [
+        "c5120 military US drone PA -- c5120 軍事用USドローン\u3000PA"
+      ]
+    },
+    {
+      "ID": 51202000,
+      "Entries": [
+        "c5120 military US drone one shot -- c5120 軍事用USドローン\u3000ワンショット"
+      ]
+    },
+    {
+      "ID": 51209900,
+      "Entries": [
+        "c5120 military US drone -- c5120\u3000軍事用USドローン"
+      ]
+    },
+    {
+      "ID": 51500100,
+      "Entries": [
+        "c5150 combat helicopter machine gun -- c5150 戦闘ヘリ\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 51500200,
+      "Entries": [
+        "c5150 combat helicopter machine gun -- c5150 戦闘ヘリ\u3000機銃"
+      ]
+    },
+    {
+      "ID": 51500300,
+      "Entries": [
+        "c5150 combat helicopter EN machine gun -- c5150 戦闘ヘリ\u3000ENマシンガン"
+      ]
+    },
+    {
+      "ID": 51500400,
+      "Entries": [
+        "c5150 combat helicopter napalm -- c5150 戦闘ヘリ\u3000ナパーム"
+      ]
+    },
+    {
+      "ID": 51503100,
+      "Entries": [
+        "c5150 combat helicopter rotor control -- c5150 戦闘ヘリ\u3000ロータ制御"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "c5200 tank cannon -- c5200 戦車\u3000キャノン"
+      ]
+    },
+    {
+      "ID": 52000200,
+      "Entries": [
+        "c5200 tank machine gun -- c5200 戦車\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 52000300,
+      "Entries": [
+        "c5200 tank missile -- c5200 戦車\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 52000400,
+      "Entries": [
+        "c5200 tank laser -- c5200 戦車\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 52001000,
+      "Entries": [
+        "c5200 tank stop fire -- c5200 戦車\u3000停止射撃"
+      ]
+    },
+    {
+      "ID": 52002000,
+      "Entries": [
+        "c5200 tank test left turn -- c5200 戦車\u3000テスト左旋回"
+      ]
+    },
+    {
+      "ID": 52002100,
+      "Entries": [
+        "c5200 tank test right turn -- c5200 戦車\u3000テスト右旋回"
+      ]
+    },
+    {
+      "ID": 52003000,
+      "Entries": [
+        "c5200 tank test 1 -- c5200 戦車\u3000テスト用1"
+      ]
+    },
+    {
+      "ID": 52003100,
+      "Entries": [
+        "c5200 tank test 2 -- c5200 戦車\u3000テスト用2"
+      ]
+    },
+    {
+      "ID": 52009900,
+      "Entries": [
+        "c5200 tank Lookat -- c5200 戦車\u3000Lookat"
+      ]
+    },
+    {
+      "ID": 52500000,
+      "Entries": [
+        "c5250 Sunflower straight line rush -- c5250 サンフラワー\u3000直線突進"
+      ]
+    },
+    {
+      "ID": 52500100,
+      "Entries": [
+        "c5250 Sunflower curve lunge left -- c5250 サンフラワー\u3000カーブ突進左"
+      ]
+    },
+    {
+      "ID": 52500200,
+      "Entries": [
+        "c5250 Sunflower curve lunge right -- c5250 サンフラワー\u3000カーブ突進右"
+      ]
+    },
+    {
+      "ID": 52500300,
+      "Entries": [
+        "c5250 Sunflower Switch and rush left -- c5250 サンフラワー\u3000切り替えし突進左"
+      ]
+    },
+    {
+      "ID": 52500400,
+      "Entries": [
+        "c5250 Sunflower Switch and rush right -- c5250 サンフラワー\u3000切り替えし突進右"
+      ]
+    },
+    {
+      "ID": 52500500,
+      "Entries": [
+        "c5250 Sunflower Drift turning left -- c5250 サンフラワー\u3000ドリフト旋回左"
+      ]
+    },
+    {
+      "ID": 52500600,
+      "Entries": [
+        "c5250 Sunflower Drift turning right -- c5250 サンフラワー\u3000ドリフト旋回右"
+      ]
+    },
+    {
+      "ID": 52500700,
+      "Entries": [
+        "c5250 Sunflower flame radiation -- c5250 サンフラワー\u3000火炎放射"
+      ]
+    },
+    {
+      "ID": 52500800,
+      "Entries": [
+        "c5250 Sunflower rising and turning left -- c5250 サンフラワー\u3000起き上がり旋回左"
+      ]
+    },
+    {
+      "ID": 52500900,
+      "Entries": [
+        "c5250 Sunflower rising and turning right -- c5250 サンフラワー\u3000起き上がり旋回右"
+      ]
+    },
+    {
+      "ID": 52501000,
+      "Entries": [
+        "c5250 Sunflower missile launch -- c5250 サンフラワー\u3000ミサイル発射"
+      ]
+    },
+    {
+      "ID": 52501100,
+      "Entries": [
+        "c5250 Sunflower playing -- c5250 サンフラワー\u3000弾き"
+      ]
+    },
+    {
+      "ID": 52501200,
+      "Entries": [
+        "c5250 Sunflower Drift Flame Radiation Left -- c5250 サンフラワー\u3000ドリフト火炎放射左"
+      ]
+    },
+    {
+      "ID": 52501300,
+      "Entries": [
+        "c5250 Sunflower Drift Flamethrower Right -- c5250 サンフラワー\u3000ドリフト火炎放射右"
+      ]
+    },
+    {
+      "ID": 52501400,
+      "Entries": [
+        "c5250 Sunflower Akira flame radiation left -- c5250 サンフラワー\u3000アキラ火炎放射左"
+      ]
+    },
+    {
+      "ID": 52501500,
+      "Entries": [
+        "c5250 Sunflower Akira Flamethrower Right -- c5250 サンフラワー\u3000アキラ火炎放射右"
+      ]
+    },
+    {
+      "ID": 52501600,
+      "Entries": [
+        "c5250 Sunflower Straight line charge (blow left) -- c5250 サンフラワー\u3000直線突進（吹き飛ばし左）"
+      ]
+    },
+    {
+      "ID": 52501700,
+      "Entries": [
+        "c5250 Sunflower Straight line charge (blow right) -- c5250 サンフラワー\u3000直線突進（吹き飛ばし右）"
+      ]
+    },
+    {
+      "ID": 52501800,
+      "Entries": [
+        "c5250 Sunflower large turn left -- c5250 サンフラワー\u3000大回り左"
+      ]
+    },
+    {
+      "ID": 52501900,
+      "Entries": [
+        "c5250 Sunflower large turn right -- c5250 サンフラワー\u3000大回り右"
+      ]
+    },
+    {
+      "ID": 52502000,
+      "Entries": [
+        "c5250 Sunflower Ground vehicle turning_left -- c5250 サンフラワー\u3000地上車両旋回_左"
+      ]
+    },
+    {
+      "ID": 52502100,
+      "Entries": [
+        "c5250 Sunflower ground vehicle turning_right -- c5250 サンフラワー\u3000地上車両旋回_右"
+      ]
+    },
+    {
+      "ID": 52502200,
+      "Entries": [
+        "c5250 Sunflower short drift left -- c5250 サンフラワー\u3000ショートドリフト左"
+      ]
+    },
+    {
+      "ID": 52502300,
+      "Entries": [
+        "c5250 Sunflower Short Drift Right -- c5250 サンフラワー\u3000ショートドリフト右"
+      ]
+    },
+    {
+      "ID": 52502400,
+      "Entries": [
+        "c5250 sunflower acceleration -- c5250 サンフラワー\u3000加速"
+      ]
+    },
+    {
+      "ID": 52502500,
+      "Entries": [
+        "c5250 Sunflower deceleration -- c5250 サンフラワー\u3000減速"
+      ]
+    },
+    {
+      "ID": 52503100,
+      "Entries": [
+        "c5250 Sunflower Always LookAt -- c5250 サンフラワー\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 52509900,
+      "Entries": [
+        "c5250 Sunflower LookAt -- c5250 サンフラワー\u3000LookAt"
+      ]
+    },
+    {
+      "ID": 53000000,
+      "Entries": [
+        "c5300 suicide satellite laser gun -- c5300 自爆衛星\u3000レーザーガン"
+      ]
+    },
+    {
+      "ID": 53000100,
+      "Entries": [
+        "c5300 suicide satellite mine detachment -- c5300 自爆衛星\u3000機雷切り離し"
+      ]
+    },
+    {
+      "ID": 53000200,
+      "Entries": [
+        "c5300 suicide satellite suicide attack -- c5300 自爆衛星\u3000自爆特攻"
+      ]
+    },
+    {
+      "ID": 53000400,
+      "Entries": [
+        "c5300 suicide satellite special approach suicide explosion -- c5300 自爆衛星\u3000特殊接近自爆"
+      ]
+    },
+    {
+      "ID": 53000800,
+      "Entries": [
+        "c5300 suicide satellite suicide attack mission use -- c5300 自爆衛星\u3000自爆特攻 ミッション用"
+      ]
+    },
+    {
+      "ID": 53002000,
+      "Entries": [
+        "c5300 suicide satellite proximity -- c5300 自爆衛星\u3000近接"
+      ]
+    },
+    {
+      "ID": 53002100,
+      "Entries": [
+        "c5300 suicide satellite proximity -- c5300 自爆衛星\u3000近接"
+      ]
+    },
+    {
+      "ID": 53009000,
+      "Entries": [
+        "c5300 Suicide satellite stopped -- c5300\u3000自爆衛星 停止"
+      ]
+    },
+    {
+      "ID": 53009900,
+      "Entries": [
+        "c5300 suicide satellite -- c5300\u3000自爆衛星"
+      ]
+    },
+    {
+      "ID": 53009901,
+      "Entries": [
+        "c5300 Suicide satellite for satellite gun -- c5300\u3000自爆衛星 衛星砲用"
+      ]
+    },
+    {
+      "ID": 53009902,
+      "Entries": [
+        "c5300 Suicide satellite for satellite cannon PC tracking -- c5300\u3000自爆衛星 衛星砲用 PC追跡時"
+      ]
+    },
+    {
+      "ID": 53009910,
+      "Entries": [
+        "c5300 Suicide satellite Suicide attack stance -- c5300\u3000自爆衛星 自爆特攻 構え"
+      ]
+    },
+    {
+      "ID": 53009911,
+      "Entries": [
+        "c5300 Suicide satellite suicide attack -- c5300\u3000自爆衛星 自爆特攻"
+      ]
+    },
+    {
+      "ID": 55000000,
+      "Entries": [
+        "c5500 Biological Weapon Right Bite -- c5500 生体兵器\u3000右噛みつき"
+      ]
+    },
+    {
+      "ID": 55000100,
+      "Entries": [
+        "c5500 Biological Weapon Left Bite -- c5500 生体兵器\u3000左噛みつき"
+      ]
+    },
+    {
+      "ID": 55000200,
+      "Entries": [
+        "c5500 Biological Weapon Jump and Bite -- c5500 生体兵器\u3000飛びかかり噛みつき"
+      ]
+    },
+    {
+      "ID": 55000300,
+      "Entries": [
+        "c5500 Biological Weapon Dash Bite -- c5500 生体兵器\u3000ダッシュ噛みつき"
+      ]
+    },
+    {
+      "ID": 55000400,
+      "Entries": [
+        "c5500 Biological Weapon Spit acid (straight line) -- c5500 生体兵器\u3000酸を吐く（直線）"
+      ]
+    },
+    {
+      "ID": 55000500,
+      "Entries": [
+        "c5500 Biological Weapon Spit acid (range) -- c5500 生体兵器\u3000酸を吐く（範囲）"
+      ]
+    },
+    {
+      "ID": 55000600,
+      "Entries": [
+        "c5500 Biological weapon threat (upper body arched) -- c5500 生体兵器\u3000威嚇（上体反らし）"
+      ]
+    },
+    {
+      "ID": 55000700,
+      "Entries": [
+        "c5500 Biological weapon threat (sideways shaking) -- c5500 生体兵器\u3000威嚇（横揺らし）"
+      ]
+    },
+    {
+      "ID": 55000800,
+      "Entries": [
+        "c5500 Biological Weapon Threat (3) -- c5500 生体兵器\u3000威嚇（3）"
+      ]
+    },
+    {
+      "ID": 55000900,
+      "Entries": [
+        "c5500 biological weapon self-destruction -- c5500 生体兵器\u3000自爆"
+      ]
+    },
+    {
+      "ID": 55003100,
+      "Entries": [
+        "c5500 Biological weapon Always LookAt -- c5500 生体兵器\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 55009900,
+      "Entries": [
+        "c5500 Biological Weapon LookAt -- c5500 生体兵器\u3000LookAt"
+      ]
+    },
+    {
+      "ID": 55109900,
+      "Entries": [
+        "c5510 Biological Weapon (Large) -- c5510\u3000生体兵器（大）"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "c6000 Necklace Keeper Main Gun -- c6000 首飾りの番人\u3000主砲"
+      ]
+    },
+    {
+      "ID": 60000100,
+      "Entries": [
+        "c6000 Necklace Keeper Extra Thick Laser -- c6000 首飾りの番人\u3000極太レーザー"
+      ]
+    },
+    {
+      "ID": 60000200,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A Speed ​​MAX -- c6000 首飾りの番人\u3000レーザー\u3000アームA\u3000速度MAX"
+      ]
+    },
+    {
+      "ID": 60000201,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A half speed -- c6000 首飾りの番人\u3000レーザー\u3000アームA\u3000速度半分"
+      ]
+    },
+    {
+      "ID": 60000202,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A Speed ​​0 -- c6000 首飾りの番人\u3000レーザー\u3000アームA\u3000速度0"
+      ]
+    },
+    {
+      "ID": 60000300,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Strong -- c6000 首飾りの番人\u3000副砲強"
+      ]
+    },
+    {
+      "ID": 60000400,
+      "Entries": [
+        "c6000 Necklace Keeper Secondary Gun Weak -- c6000 首飾りの番人\u3000副砲弱"
+      ]
+    },
+    {
+      "ID": 60000500,
+      "Entries": [
+        "c6000 Necklace Keeper Face Missile -- c6000 首飾りの番人\u3000面ミサイル"
+      ]
+    },
+    {
+      "ID": 60000600,
+      "Entries": [
+        "c6000 Necklace Keeper Giant Missile -- c6000 首飾りの番人\u3000巨大ミサイル"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm A Back -- c6000 首飾りの番人\u3000レーザー\u3000アームA背面"
+      ]
+    },
+    {
+      "ID": 60001100,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm B Speed ​​MAX -- c6000 首飾りの番人\u3000レーザー\u3000アームB\u3000速度MAX"
+      ]
+    },
+    {
+      "ID": 60001101,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm B Half Speed -- c6000 首飾りの番人\u3000レーザー\u3000アームB\u3000速度半分"
+      ]
+    },
+    {
+      "ID": 60001102,
+      "Entries": [
+        "c6000 Necklace Keeper Laser Arm B Speed ​​0 -- c6000 首飾りの番人\u3000レーザー\u3000アームB\u3000速度0"
+      ]
+    },
+    {
+      "ID": 60002000,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 00 -- c6000 首飾りの番人\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 60002100,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 01 -- c6000 首飾りの番人\u3000ワンショット01"
+      ]
+    },
+    {
+      "ID": 60002200,
+      "Entries": [
+        "c6000 Necklace Keeper One Shot 02 -- c6000 首飾りの番人\u3000ワンショット02"
+      ]
+    },
+    {
+      "ID": 60009900,
+      "Entries": [
+        "c6000 Necklace Keeper LookAt0 -- c6000\u3000首飾りの番人 LookAt0"
+      ]
+    },
+    {
+      "ID": 60009901,
+      "Entries": [
+        "c6000 Necklace Keeper LookAt1 -- c6000\u3000首飾りの番人 LookAt1"
+      ]
+    },
+    {
+      "ID": 60009902,
+      "Entries": [
+        "c6000 Necklace Keeper LookAt2 -- c6000\u3000首飾りの番人 LookAt2"
+      ]
+    },
+    {
+      "ID": 60009903,
+      "Entries": [
+        "c6000 Necklace Keeper LookAt3 -- c6000\u3000首飾りの番人 LookAt3"
+      ]
+    },
+    {
+      "ID": 60009904,
+      "Entries": [
+        "c6000 Necklace Keeper LookAt4 -- c6000\u3000首飾りの番人 LookAt4"
+      ]
+    },
+    {
+      "ID": 60100000,
+      "Entries": [
+        "c6010 barrier unit laser machine gun -- c6010 バリアユニット\u3000レーザーマシンガン"
+      ]
+    },
+    {
+      "ID": 60102000,
+      "Entries": [
+        "c6010 barrier unit one shot -- c6010 バリアユニット\u3000ワンショット"
+      ]
+    },
+    {
+      "ID": 60103000,
+      "Entries": [
+        "c6010 barrier unit shield -- c6010 バリアユニット\u3000シールド"
+      ]
+    },
+    {
+      "ID": 60109900,
+      "Entries": [
+        "c6010 barrier unit -- c6010\u3000バリアユニット"
+      ]
+    },
+    {
+      "ID": 60500000,
+      "Entries": [
+        "c6050 Pharaon Mega Gatling Gun -- c6050 ファラオン\u3000メガ・ガトリングガン"
+      ]
+    },
+    {
+      "ID": 60500100,
+      "Entries": [
+        "c6050 Pharaon quadruple machine gun (right) -- c6050 ファラオン\u30004連機銃（右）"
+      ]
+    },
+    {
+      "ID": 60500200,
+      "Entries": [
+        "c6050 Pharaon quadruple machine gun (left) -- c6050 ファラオン\u30004連機銃（左）"
+      ]
+    },
+    {
+      "ID": 60500300,
+      "Entries": [
+        "c6050 Pharaon missile (right) -- c6050 ファラオン\u3000ミサイル（右）"
+      ]
+    },
+    {
+      "ID": 60500400,
+      "Entries": [
+        "c6050 Pharaon missile (left) -- c6050 ファラオン\u3000ミサイル（左）"
+      ]
+    },
+    {
+      "ID": 60500500,
+      "Entries": [
+        "c6050 Pharaon Napalm -- c6050 ファラオン\u3000ナパーム"
+      ]
+    },
+    {
+      "ID": 60500600,
+      "Entries": [
+        "c6050 Pharaon needle gun (right) -- c6050 ファラオン\u3000ニードルガン（右）"
+      ]
+    },
+    {
+      "ID": 60500700,
+      "Entries": [
+        "c6050 Pharaon needle gun (left) -- c6050 ファラオン\u3000ニードルガン（左）"
+      ]
+    },
+    {
+      "ID": 60501100,
+      "Entries": [
+        "c6050 Pharaon offset repartition nose right -- c6050 ファラオン\u3000オフセット仕切り直し\u3000機首右"
+      ]
+    },
+    {
+      "ID": 60501200,
+      "Entries": [
+        "c6050 Pharaon offset repartition nose left -- c6050 ファラオン\u3000オフセット仕切り直し\u3000機首左"
+      ]
+    },
+    {
+      "ID": 60501500,
+      "Entries": [
+        "c6050 Pharaon Side QB turn right move nose left -- c6050 ファラオン\u3000横QB回り込み右移動旋回機首左"
+      ]
+    },
+    {
+      "ID": 60501600,
+      "Entries": [
+        "c6050 Pharaon Side QB turn left move nose right -- c6050 ファラオン\u3000横QB回り込み左移動旋回機首右"
+      ]
+    },
+    {
+      "ID": 60501700,
+      "Entries": [
+        "c6050 Pharaon side step right movement -- c6050 ファラオン\u3000サイドステップ右移動"
+      ]
+    },
+    {
+      "ID": 60501800,
+      "Entries": [
+        "c6050 Pharaon side step left movement -- c6050 ファラオン\u3000サイドステップ左移動"
+      ]
+    },
+    {
+      "ID": 60502000,
+      "Entries": [
+        "c6050 Pharaon Repartition nose right (short) -- c6050 ファラオン\u3000仕切り直し機首右（短）"
+      ]
+    },
+    {
+      "ID": 60502100,
+      "Entries": [
+        "c6050 Pharaon Repartition nose left (short) -- c6050 ファラオン\u3000仕切り直し機首左（短）"
+      ]
+    },
+    {
+      "ID": 60502500,
+      "Entries": [
+        "c6050 Pharaon backward turning nose right direction -- c6050 ファラオン\u3000後退旋回機首右方向"
+      ]
+    },
+    {
+      "ID": 60502600,
+      "Entries": [
+        "c6050 Pharaon backward turning nose left direction -- c6050 ファラオン\u3000後退旋回機首左方向"
+      ]
+    },
+    {
+      "ID": 60503000,
+      "Entries": [
+        "c6050 Pharaon_Full equipment for downwash SFX -- c6050 ファラオン_全装備\u3000ダウンウォッシュSFX用"
+      ]
+    },
+    {
+      "ID": 60504000,
+      "Entries": [
+        "c6050 Pharaon Flare -- c6050 ファラオン\u3000フレア"
+      ]
+    },
+    {
+      "ID": 61000000,
+      "Entries": [
+        "c6100 sea spider multi-legged mode main gun -- c6100 ウミグモ\u3000多脚モード\u3000主砲"
+      ]
+    },
+    {
+      "ID": 61000010,
+      "Entries": [
+        "c6100 sea spider multi-leg mode main gun vertically fixed -- c6100 ウミグモ\u3000多脚モード\u3000主砲\u3000縦固定"
+      ]
+    },
+    {
+      "ID": 61000020,
+      "Entries": [
+        "c6100 sea spider multi-leg mode main gun horizontal fixed -- c6100 ウミグモ\u3000多脚モード\u3000主砲\u3000横固定"
+      ]
+    },
+    {
+      "ID": 61000021,
+      "Entries": [
+        "c6100 sea spider multi-leg mode main gun vertical and horizontal fixed -- c6100 ウミグモ\u3000多脚モード\u3000主砲\u3000縦横固定"
+      ]
+    },
+    {
+      "ID": 61000100,
+      "Entries": [
+        "c6100 sea spider flight mode main gun vertical -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000縦"
+      ]
+    },
+    {
+      "ID": 61000200,
+      "Entries": [
+        "c6100 sea spider flight mode main gun left -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000左"
+      ]
+    },
+    {
+      "ID": 61000300,
+      "Entries": [
+        "c6100 sea spider flight mode main gun right -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000右"
+      ]
+    },
+    {
+      "ID": 61000400,
+      "Entries": [
+        "c6100 sea spider flight mode main gun vertical end -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000縦\u3000終了"
+      ]
+    },
+    {
+      "ID": 61000500,
+      "Entries": [
+        "c6100 sea spider flight mode main gun left end -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000左\u3000終了"
+      ]
+    },
+    {
+      "ID": 61000600,
+      "Entries": [
+        "c6100 sea spider flight mode main gun right end -- c6100 ウミグモ\u3000飛行モード\u3000主砲\u3000右\u3000終了"
+      ]
+    },
+    {
+      "ID": 61000700,
+      "Entries": [
+        "c6100 sea spider multi-legged mode secondary gun -- c6100 ウミグモ\u3000多脚モード\u3000副砲"
+      ]
+    },
+    {
+      "ID": 61000800,
+      "Entries": [
+        "c6100 sea spider flight mode secondary gun -- c6100 ウミグモ\u3000飛行モード\u3000副砲"
+      ]
+    },
+    {
+      "ID": 61000900,
+      "Entries": [
+        "c6100 sea spider multi-legged mode missile -- c6100 ウミグモ\u3000多脚モード\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 61001000,
+      "Entries": [
+        "c6100 sea spider flight mode missile left -- c6100 ウミグモ\u3000飛行モード\u3000ミサイル左"
+      ]
+    },
+    {
+      "ID": 61001100,
+      "Entries": [
+        "c6100 sea spider flight mode missile right -- c6100 ウミグモ\u3000飛行モード\u3000ミサイル右"
+      ]
+    },
+    {
+      "ID": 61002000,
+      "Entries": [
+        "c6100 Sea spider diving trampling -- c6100 ウミグモ\u3000飛び込み踏みつけ"
+      ]
+    },
+    {
+      "ID": 61002200,
+      "Entries": [
+        "c6100 Sea spider trampling front length -- c6100 ウミグモ\u3000踏みつけ\u3000前\u3000長"
+      ]
+    },
+    {
+      "ID": 61002300,
+      "Entries": [
+        "c6100 Sea spider trampling front short -- c6100 ウミグモ\u3000踏みつけ\u3000前\u3000短"
+      ]
+    },
+    {
+      "ID": 61002400,
+      "Entries": [
+        "c6100 Sea spider trampling left rear long -- c6100 ウミグモ\u3000踏みつけ\u3000左後\u3000長"
+      ]
+    },
+    {
+      "ID": 61002500,
+      "Entries": [
+        "c6100 Sea spider trampling left rear short -- c6100 ウミグモ\u3000踏みつけ\u3000左後\u3000短"
+      ]
+    },
+    {
+      "ID": 61002600,
+      "Entries": [
+        "c6100 Sea spider trampling right rear long -- c6100 ウミグモ\u3000踏みつけ\u3000右後\u3000長"
+      ]
+    },
+    {
+      "ID": 61002700,
+      "Entries": [
+        "c6100 Sea spider trampling right rear short -- c6100 ウミグモ\u3000踏みつけ\u3000右後\u3000短"
+      ]
+    },
+    {
+      "ID": 61002900,
+      "Entries": [
+        "c6100 sea spider flight mode transparent bullet -- c6100 ウミグモ\u3000飛行モード\u3000透明弾丸"
+      ]
+    },
+    {
+      "ID": 61003000,
+      "Entries": [
+        "c6100 sea spider flight mode secondary gun active -- c6100 ウミグモ\u3000飛行モード\u3000副砲アクティブ"
+      ]
+    },
+    {
+      "ID": 61003100,
+      "Entries": [
+        "c6100 Sea spider HU deformation -- c6100 ウミグモ\u3000ＨＵ変形"
+      ]
+    },
+    {
+      "ID": 61004100,
+      "Entries": [
+        "c6100 Sea spider [C end] Flight mode Main gun -- c6100 ウミグモ\u3000【Cエンド】\u3000飛行モード\u3000主砲"
+      ]
+    },
+    {
+      "ID": 61009000,
+      "Entries": [
+        "c6100 sea spider main gun for ground death -- c6100 ウミグモ\u3000地上死亡時主砲用"
+      ]
+    },
+    {
+      "ID": 61010000,
+      "Entries": [
+        "c6101 Sea spider secondary gun rapid fire -- c6101 ウミグモ副砲\u3000連射"
+      ]
+    },
+    {
+      "ID": 61010100,
+      "Entries": [
+        "c6101 Sea spider secondary gun random firing -- c6101 ウミグモ副砲\u3000乱射"
+      ]
+    },
+    {
+      "ID": 61010200,
+      "Entries": [
+        "c6101 Sea spider secondary gun laser -- c6101 ウミグモ副砲\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 61012000,
+      "Entries": [
+        "c6101 Sea Spider Secondary Cannon One Shot Attack 00 -- c6101 ウミグモ副砲\u3000ワンショット攻撃\u300000"
+      ]
+    },
+    {
+      "ID": 61012100,
+      "Entries": [
+        "c6101 Sea spider secondary gun one shot attack 01 -- c6101 ウミグモ副砲\u3000ワンショット攻撃\u300001"
+      ]
+    },
+    {
+      "ID": 61012200,
+      "Entries": [
+        "c6101 Sea Spider Secondary Cannon One Shot Attack 02 -- c6101 ウミグモ副砲\u3000ワンショット攻撃\u300002"
+      ]
+    },
+    {
+      "ID": 61013100,
+      "Entries": [
+        "c6101 Sea spider secondary gun Always LookAt -- c6101 ウミグモ副砲\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 61019900,
+      "Entries": [
+        "c6101 Sea spider secondary gun Always LookAt -- c6101 ウミグモ副砲\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 62500000,
+      "Entries": [
+        "c6250 Sandworm Upper Body_Body Missile -- c6250 サンドワーム\u3000上半身_ボディミサイル"
+      ]
+    },
+    {
+      "ID": 62500100,
+      "Entries": [
+        "c6250 Sandworm upper body_tail missile -- c6250 サンドワーム\u3000上半身_テールミサイル"
+      ]
+    },
+    {
+      "ID": 62500200,
+      "Entries": [
+        "c6250 Sandworm upper body_tail missile_right -- c6250 サンドワーム\u3000上半身_テールミサイル_右"
+      ]
+    },
+    {
+      "ID": 62502000,
+      "Entries": [
+        "c6250 Sandworm One Shot 00 -- c6250 サンドワーム\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 62502100,
+      "Entries": [
+        "c6250 Sandworm One Shot 01 -- c6250 サンドワーム\u3000ワンショット01"
+      ]
+    },
+    {
+      "ID": 62502200,
+      "Entries": [
+        "c6250 Sandworm One Shot 02 -- c6250 サンドワーム\u3000ワンショット02"
+      ]
+    },
+    {
+      "ID": 62600000,
+      "Entries": [
+        "c6260 Sandworm small body missile -- c6260 サンドワーム小\u3000ボディミサイル"
+      ]
+    },
+    {
+      "ID": 62600100,
+      "Entries": [
+        "c6260 Sandworm small tail missile_left -- c6260 サンドワーム小\u3000テールミサイル_左"
+      ]
+    },
+    {
+      "ID": 62600200,
+      "Entries": [
+        "c6260 Sandworm small tail missile_right -- c6260 サンドワーム小\u3000テールミサイル_右"
+      ]
+    },
+    {
+      "ID": 62602000,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_00 -- c6260 サンドワーム小\u3000ワンショット攻撃_00"
+      ]
+    },
+    {
+      "ID": 62602100,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_01 -- c6260 サンドワーム小\u3000ワンショット攻撃_01"
+      ]
+    },
+    {
+      "ID": 62602200,
+      "Entries": [
+        "c6260 Sandworm Small One Shot Attack_02 -- c6260 サンドワーム小\u3000ワンショット攻撃_02"
+      ]
+    },
+    {
+      "ID": 62609900,
+      "Entries": [
+        "c6260 Sandworm small -- c6260\u3000サンドワーム小"
+      ]
+    },
+    {
+      "ID": 63500000,
+      "Entries": [
+        "c6350 Dora Dora gun -- c6350 ドーラ\u3000ドーラ砲"
+      ]
+    },
+    {
+      "ID": 63509900,
+      "Entries": [
+        "c6350 Dora Always Lookat -- c6350 ドーラ\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 63510000,
+      "Entries": [
+        "c6351 Dora secondary gun secondary gun fire -- c6351 ドーラ副砲\u3000副砲射撃"
+      ]
+    },
+    {
+      "ID": 63519900,
+      "Entries": [
+        "c6351 Dora secondary gun Always Lookat -- c6351 ドーラ副砲\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 63520000,
+      "Entries": [
+        "c6352 Dora missile missile -- c6352 ドーラミサイル\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 63529900,
+      "Entries": [
+        "c6352 Dora Missile Always Lookat -- c6352 ドーラミサイル\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 mining ship missile -- c6400 採掘艦\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 64000500,
+      "Entries": [
+        "c6400 mining ship damage judgment upon death -- c6400 採掘艦\u3000死亡時ダメージ判定"
+      ]
+    },
+    {
+      "ID": 64009900,
+      "Entries": [
+        "c6400 mining ship -- c6400\u3000採掘艦"
+      ]
+    },
+    {
+      "ID": 64019900,
+      "Entries": [
+        "c6401 mining ship connection part weak point -- c6401\u3000採掘艦 連結部 弱点"
+      ]
+    },
+    {
+      "ID": 64029900,
+      "Entries": [
+        "c6402 mining ship wheel weakness -- c6402\u3000採掘艦 ホイール 弱点"
+      ]
+    },
+    {
+      "ID": 64109900,
+      "Entries": [
+        "c6410 mining drill -- c6410\u3000採掘ドリル"
+      ]
+    },
+    {
+      "ID": 64200000,
+      "Entries": [
+        "c6420 mining ship eyeball irradiation beam -- c6420 採掘艦 目玉\u3000照射ビーム"
+      ]
+    },
+    {
+      "ID": 64200100,
+      "Entries": [
+        "c6420 mining ship highlight missile 1 -- c6420 採掘艦 目玉\u3000ミサイル1"
+      ]
+    },
+    {
+      "ID": 64200200,
+      "Entries": [
+        "c6420 mining ship highlight missile 2 -- c6420 採掘艦 目玉\u3000ミサイル2"
+      ]
+    },
+    {
+      "ID": 64200300,
+      "Entries": [
+        "c6420 mining ship highlight missile 3 -- c6420 採掘艦 目玉\u3000ミサイル3"
+      ]
+    },
+    {
+      "ID": 64200400,
+      "Entries": [
+        "c6420 Mining ship Feature: Plasma ripple shock wave -- c6420 採掘艦 目玉\u3000プラズマ波紋衝撃波"
+      ]
+    },
+    {
+      "ID": 64200600,
+      "Entries": [
+        "c6420 Mining ship Main feature: Irradiation beam ① -- c6420 採掘艦 目玉\u3000照射ビーム①"
+      ]
+    },
+    {
+      "ID": 64200700,
+      "Entries": [
+        "c6420 Mining ship Main feature: Irradiation beam ② -- c6420 採掘艦 目玉\u3000照射ビーム②"
+      ]
+    },
+    {
+      "ID": 64202000,
+      "Entries": [
+        "c6420 mining ship main gun irradiation laser -- c6420 採掘艦 目玉\u3000主砲 照射レーザー"
+      ]
+    },
+    {
+      "ID": 64209900,
+      "Entries": [
+        "c6420 mining ship eyeball -- c6420\u3000採掘艦 目玉"
+      ]
+    },
+    {
+      "ID": 64209901,
+      "Entries": [
+        "c6420 mining ship eyeball -- c6420\u3000採掘艦 目玉"
+      ]
+    },
+    {
+      "ID": 72209900,
+      "Entries": [
+        "c7220 field missile (repeat type) missile -- c7220 野戦ミサイル（連射型）\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72219900,
+      "Entries": [
+        "c7221 field missile (vertical type) missile -- c7221 野戦ミサイル（垂直型）\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72239900,
+      "Entries": [
+        "c7223 field missile (simultaneous launch type) missile -- c7223 野戦ミサイル（同時発射型）\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72300000,
+      "Entries": [
+        "c7230 Ground Force Battery Grenade (Large) Grenade -- c7230 地上勢力砲台 グレネード(大)\u3000グレネード"
+      ]
+    },
+    {
+      "ID": 72300100,
+      "Entries": [
+        "c7230 Ground force battery grenade (large) for shield -- c7230 地上勢力砲台 グレネード(大)\u3000盾用"
+      ]
+    },
+    {
+      "ID": 72309900,
+      "Entries": [
+        "c7230 Ground Force Artillery Grenade (Large) -- c7230\u3000地上勢力砲台 グレネード(大)"
+      ]
+    },
+    {
+      "ID": 72400000,
+      "Entries": [
+        "c7240 Ground Force Artillery Bazooka Bazooka -- c7240 地上勢力砲台 バズーカ\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 72409900,
+      "Entries": [
+        "c7240 Ground Force Artillery Bazooka -- c7240\u3000地上勢力砲台 バズーカ"
+      ]
+    },
+    {
+      "ID": 72500000,
+      "Entries": [
+        "c7250 Ground force battery Gatling (large) machine gun -- c7250 地上勢力砲台 ガトリング(大)\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 72509900,
+      "Entries": [
+        "c7250 Ground Force Artillery Gatling (Large) -- c7250\u3000地上勢力砲台 ガトリング(大)"
+      ]
+    },
+    {
+      "ID": 72600000,
+      "Entries": [
+        "c7260 Ground Force Artillery Missile Twin Missile -- c7260 地上勢力砲台 ミサイル 連装\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72609900,
+      "Entries": [
+        "c7260 ground force artillery missile twin -- c7260\u3000地上勢力砲台 ミサイル 連装"
+      ]
+    },
+    {
+      "ID": 72610000,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile Vertical Missile -- c7261 地上勢力砲台 ミサイル 垂直\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72619900,
+      "Entries": [
+        "c7261 Ground Force Artillery Missile Vertical -- c7261\u3000地上勢力砲台 ミサイル 垂直"
+      ]
+    },
+    {
+      "ID": 72620000,
+      "Entries": [
+        "c7262 Ground Force Artillery Missile Horizontal Missile -- c7262 地上勢力砲台 ミサイル 水平\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 72629900,
+      "Entries": [
+        "c7262 Ground Force Artillery Missile Horizontal -- c7262\u3000地上勢力砲台 ミサイル 水平"
+      ]
+    },
+    {
+      "ID": 72700000,
+      "Entries": [
+        "c7270 Ground Force Battery Sniper (Large) Sniper Rifle -- c7270 地上勢力砲台 スナイパー(大)\u3000スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 72700100,
+      "Entries": [
+        "c7270 Ground Force Battery Sniper (Large) Hacking Sniper Rifle Regular Battery -- c7270 地上勢力砲台 スナイパー(大) ハッキング\u3000スナイパーライフル 通常砲台"
+      ]
+    },
+    {
+      "ID": 72709900,
+      "Entries": [
+        "c7270 Ground Force Artillery Sniper (Large) -- c7270\u3000地上勢力砲台 スナイパー(大)"
+      ]
+    },
+    {
+      "ID": 72800100,
+      "Entries": [
+        "c7280 Ground force battery EN rifle EN rifle -- c7280 地上勢力砲台 ENライフル\u3000ENライフル"
+      ]
+    },
+    {
+      "ID": 72809900,
+      "Entries": [
+        "c7280 Ground Force Artillery EN Rifle -- c7280\u3000地上勢力砲台 ENライフル"
+      ]
+    },
+    {
+      "ID": 72909900,
+      "Entries": [
+        "c7290 Old EN turret laser bazooka -- c7290\u3000旧式EN砲台 レーザーバズーカ"
+      ]
+    },
+    {
+      "ID": 73009900,
+      "Entries": [
+        "c7300 speaker antenna turret pulse -- c7300\u3000スピーカーアンテナ砲台 パルス"
+      ]
+    },
+    {
+      "ID": 73100000,
+      "Entries": [
+        "c7310 State-of-the-art EN battery plasma rifle -- c7310\u3000最新鋭EN砲台 プラズマライフル"
+      ]
+    },
+    {
+      "ID": 73101000,
+      "Entries": [
+        "Emerging new B layer c7310 state-of-the-art EN battery plasma rifle -- 浮上する新B層用\u3000c7310\u3000最新鋭EN砲台 プラズマライフル"
+      ]
+    },
+    {
+      "ID": 73109900,
+      "Entries": [
+        "c7310 Latest EN Battery Plasma Rifle Lookat -- c7310\u3000最新鋭EN砲台 プラズマライフル Lookat"
+      ]
+    },
+    {
+      "ID": 73209900,
+      "Entries": [
+        "c7320 state-of-the-art EN battery plasma missile -- c7320\u3000最新鋭EN砲台 プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 73900000,
+      "Entries": [
+        "c7390 D layer giant cannon anemone laser -- c7390 D層巨大砲台 アネモネ\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 73900100,
+      "Entries": [
+        "c7390 D layer giant battery Anemone plasma missile -- c7390 D層巨大砲台 アネモネ\u3000プラズマミサイル"
+      ]
+    },
+    {
+      "ID": 73900200,
+      "Entries": [
+        "c7390 D-tier giant gun battery Anemone laser short range -- c7390 D層巨大砲台 アネモネ\u3000レーザー\u3000近距離"
+      ]
+    },
+    {
+      "ID": 73900900,
+      "Entries": [
+        "c7390 D layer giant cannon anemone laser CS -- c7390 D層巨大砲台 アネモネ\u3000レーザー\u3000CS"
+      ]
+    },
+    {
+      "ID": 73902000,
+      "Entries": [
+        "c7390 D layer giant turret Anemone one shot attack -- c7390 D層巨大砲台 アネモネ\u3000ワンショット攻撃"
+      ]
+    },
+    {
+      "ID": 73909900,
+      "Entries": [
+        "c7390 D layer giant turret Anemone disc stance loop -- c7390 D層巨大砲台 アネモネ\u3000円盤\u3000構えループ"
+      ]
+    },
+    {
+      "ID": 73909909,
+      "Entries": [
+        "c7390 D layer giant cannon anemone disk fundamentally invalid transition -- c7390 D層巨大砲台 アネモネ\u3000円盤\u3000根本無効遷移"
+      ]
+    },
+    {
+      "ID": 73909910,
+      "Entries": [
+        "c7390 D layer giant battery Anemone secondary gun stance loop -- c7390 D層巨大砲台 アネモネ\u3000副砲\u3000構えループ"
+      ]
+    },
+    {
+      "ID": 73909919,
+      "Entries": [
+        "c7390 D layer giant battery Anemone secondary gun fundamentally disabled transition -- c7390 D層巨大砲台 アネモネ\u3000副砲\u3000根本無効遷移"
+      ]
+    },
+    {
+      "ID": 74000000,
+      "Entries": [
+        "c7400 amphibious assault ship missile vertical type -- c7400 強襲揚陸艦\u3000ミサイル・垂直型"
+      ]
+    },
+    {
+      "ID": 74000100,
+      "Entries": [
+        "c7400 amphibious assault ship missile/drop type -- c7400 強襲揚陸艦\u3000ミサイル・降下型"
+      ]
+    },
+    {
+      "ID": 74000200,
+      "Entries": [
+        "c7400 amphibious assault ship railgun -- c7400 強襲揚陸艦\u3000レールガン"
+      ]
+    },
+    {
+      "ID": 74000300,
+      "Entries": [
+        "c7400 amphibious assault ship container/upper hatch -- c7400 強襲揚陸艦\u3000コンテナ・上部ハッチ"
+      ]
+    },
+    {
+      "ID": 74000400,
+      "Entries": [
+        "c7400 amphibious assault ship container/all hatches -- c7400 強襲揚陸艦\u3000コンテナ・全部ハッチ"
+      ]
+    },
+    {
+      "ID": 74000500,
+      "Entries": [
+        "c7400 amphibious assault ship forward fan-shaped laser single-shot A -- c7400 強襲揚陸艦\u3000前方扇状レーザー・単発A"
+      ]
+    },
+    {
+      "ID": 74000600,
+      "Entries": [
+        "c7400 amphibious assault ship forward fan laser single shot B -- c7400 強襲揚陸艦\u3000前方扇状レーザー・単発B"
+      ]
+    },
+    {
+      "ID": 74000700,
+      "Entries": [
+        "c7400 amphibious assault ship forward fan laser single shot C -- c7400 強襲揚陸艦\u3000前方扇状レーザー・単発C"
+      ]
+    },
+    {
+      "ID": 74000800,
+      "Entries": [
+        "c7400 amphibious assault ship container/lower hatch -- c7400 強襲揚陸艦\u3000コンテナ・下部ハッチ"
+      ]
+    },
+    {
+      "ID": 74000900,
+      "Entries": [
+        "c7400 amphibious assault ship missile bottom starboard -- c7400 強襲揚陸艦\u3000ミサイル・下面右舷"
+      ]
+    },
+    {
+      "ID": 74001000,
+      "Entries": [
+        "c7400 amphibious assault ship missile/lower port side -- c7400 強襲揚陸艦\u3000ミサイル・下面左舷"
+      ]
+    },
+    {
+      "ID": 74001500,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Forward Fan Shotgun Single-shot A -- c7400 強襲揚陸艦\u3000前方扇状ショットガン・単発A"
+      ]
+    },
+    {
+      "ID": 74001600,
+      "Entries": [
+        "c7400 amphibious assault ship forward fan shotgun single shot B -- c7400 強襲揚陸艦\u3000前方扇状ショットガン・単発B"
+      ]
+    },
+    {
+      "ID": 74001700,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Forward Fan Shotgun Single-shot C -- c7400 強襲揚陸艦\u3000前方扇状ショットガン・単発C"
+      ]
+    },
+    {
+      "ID": 74002000,
+      "Entries": [
+        "c7400 amphibious assault ship one shot 00 -- c7400 強襲揚陸艦\u3000ワンショット00"
+      ]
+    },
+    {
+      "ID": 74008900,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Special Lookat for Missions -- c7400\u3000強襲揚陸艦\u3000ミッション用特殊Lookat"
+      ]
+    },
+    {
+      "ID": 74009900,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Always Lookat -- c7400\u3000強襲揚陸艦\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 74010000,
+      "Entries": [
+        "c7401 amphibious assault ship main gun main gun -- c7401 強襲揚陸艦 主砲\u3000主砲"
+      ]
+    },
+    {
+      "ID": 74019900,
+      "Entries": [
+        "c7401 Amphibious Assault Ship Main Gun Always Lookat -- c7401 強襲揚陸艦\u3000主砲\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 74019901,
+      "Entries": [
+        "c7401 Amphibious Assault Ship Main Gun Constant Lookat For Rear Attachment -- c7401 強襲揚陸艦\u3000主砲\u3000常時Lookat\u3000後部アタッチ用"
+      ]
+    },
+    {
+      "ID": 74020000,
+      "Entries": [
+        "c7402 amphibious assault ship secondary gun secondary gun -- c7402 強襲揚陸艦 副砲\u3000副砲"
+      ]
+    },
+    {
+      "ID": 74029900,
+      "Entries": [
+        "c7402 Amphibious Assault Ship Secondary Gun Always Lookat -- c7402 強襲揚陸艦 副砲\u3000常時Lookat"
+      ]
+    },
+    {
+      "ID": 74030000,
+      "Entries": [
+        "c7403 amphibious assault ship missile cannon missile -- c7403 強襲揚陸艦 ミサイル砲\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 74039900,
+      "Entries": [
+        "c7403 Amphibious Assault Ship Missile Cannon -- c7403\u3000強襲揚陸艦 ミサイル砲"
+      ]
+    },
+    {
+      "ID": 74100000,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit laser -- c7410 強襲揚陸艦 子機\u3000レーザー"
+      ]
+    },
+    {
+      "ID": 74100100,
+      "Entries": [
+        "c7410 amphibious assault ship child unit suicide bombing attack -- c7410 強襲揚陸艦 子機\u3000自爆特攻"
+      ]
+    },
+    {
+      "ID": 74102000,
+      "Entries": [
+        "c7410 amphibious assault ship child unit irradiation laser -- c7410 強襲揚陸艦 子機\u3000照射レーザー"
+      ]
+    },
+    {
+      "ID": 74102001,
+      "Entries": [
+        "c7410 amphibious assault ship child unit irradiation laser left and right branch -- c7410 強襲揚陸艦 子機\u3000照射レーザー 左右分岐"
+      ]
+    },
+    {
+      "ID": 74109900,
+      "Entries": [
+        "c7410 amphibious assault ship slave unit -- c7410\u3000強襲揚陸艦 子機"
+      ]
+    },
+    {
+      "ID": 80100100,
+      "Entries": [
+        "c8010 Aerial Snap Railgun -- c8010 高所スナ レールガン"
+      ]
+    },
+    {
+      "ID": 80100110,
+      "Entries": [
+        "c8010 High Altitude Snap Gatling -- c8010 高所スナ ガトリング"
+      ]
+    },
+    {
+      "ID": 80200100,
+      "Entries": [
+        "c8020 guntank mortar -- c8020 ガンタンク\u3000迫撃砲"
+      ]
+    },
+    {
+      "ID": 80200109,
+      "Entries": [
+        "c8020 guntank mortar -- c8020 ガンタンク\u3000迫撃砲"
+      ]
+    },
+    {
+      "ID": 80200110,
+      "Entries": [
+        "c8020 Guntank Hand Rocket -- c8020 ガンタンク\u3000ハンドロケット"
+      ]
+    },
+    {
+      "ID": 80300110,
+      "Entries": [
+        "c8030 pile MT (shotgun shotgun -- c8030 パイルMT（ショットガン\u3000ショットガン"
+      ]
+    },
+    {
+      "ID": 80300120,
+      "Entries": [
+        "c8030 pile MT (shotgun sliding shotgun) -- c8030 パイルMT（ショットガン\u3000スライディングショットガン"
+      ]
+    },
+    {
+      "ID": 80600120,
+      "Entries": [
+        "c8060 Gunship (Strong Zako Gatling) -- c8060 ガンシップ（強ザコ\u3000ガトリング"
+      ]
+    },
+    {
+      "ID": 80700100,
+      "Entries": [
+        "c8070 irradiation laser -- c8070 照射レーザー"
+      ]
+    },
+    {
+      "ID": 80801000,
+      "Entries": [
+        "c8080 Fire-breathing MT Flame radiation straight line -- c8080 火吹きMT\u3000火炎放射\u3000直線"
+      ]
+    },
+    {
+      "ID": 80801100,
+      "Entries": [
+        "c8080 Fire-breathing MT Flame radiation mowing down -- c8080 火吹きMT\u3000火炎放射\u3000薙ぎ払い"
+      ]
+    },
+    {
+      "ID": 80900100,
+      "Entries": [
+        "c8090 fighter jet -- c8090 戦闘機"
+      ]
+    },
+    {
+      "ID": 81000600,
+      "Entries": [
+        "c8100 Shield holding MT (heat rod heat rod 2nd stage -- c8100 盾持ちMT（ヒートロッド\u3000ヒートロッド2段め"
+      ]
+    },
+    {
+      "ID": 81001000,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod Handgun) -- c8100 盾持ちMT（ヒートロッド\u3000ハンドガン"
+      ]
+    },
+    {
+      "ID": 81001200,
+      "Entries": [
+        "c8100 Shield Holder MT (Heat Rod Shield -- c8100 盾持ちMT（ヒートロッド\u3000シールド"
+      ]
+    },
+    {
+      "ID": 81100100,
+      "Entries": [
+        "c8110 colorless MT rifle -- c8110 無色MT ライフル"
+      ]
+    },
+    {
+      "ID": 81100120,
+      "Entries": [
+        "c8110 Colorless MT Cover Medium Rifle -- c8110 無色MT カバー中 ライフル"
+      ]
+    },
+    {
+      "ID": 81100600,
+      "Entries": [
+        "c8110 Colorless MT Reload Test -- c8110 無色MT\u3000リロードテスト"
+      ]
+    },
+    {
+      "ID": 81101400,
+      "Entries": [
+        "c8110 Colorless MT look around -- c8110 無色MT\u3000キョロキョロ"
+      ]
+    },
+    {
+      "ID": 81110100,
+      "Entries": [
+        "c8111 Colorless MT machine gun for control confirmation -- c8111 制御確認用無色MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 81110200,
+      "Entries": [
+        "c8111 Colorless MT normal machine gun for control confirmation -- c8111 制御確認用無色MT\u3000通常マシンガン"
+      ]
+    },
+    {
+      "ID": 81170100,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Sniper Rifle -- c8117 無色MT\u3000コピーテスト3\u3000スナイパーライフル"
+      ]
+    },
+    {
+      "ID": 81170200,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity -- c8117 無色MT\u3000コピーテスト3\u3000近接"
+      ]
+    },
+    {
+      "ID": 81170300,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Missile -- c8117 無色MT\u3000コピーテスト3\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 81170400,
+      "Entries": [
+        "c8117 Colorless MT Copy Test 3 Proximity -- c8117 無色MT\u3000コピーテスト3\u3000近接"
+      ]
+    },
+    {
+      "ID": 81190100,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Machine Gun -- c8119 無色MT\u3000コピーテスト\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 81190200,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity -- c8119 無色MT\u3000コピーテスト\u3000近接"
+      ]
+    },
+    {
+      "ID": 81190300,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Missile -- c8119 無色MT\u3000コピーテスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 81190400,
+      "Entries": [
+        "c8119 Colorless MT Copy Test Proximity -- c8119 無色MT\u3000コピーテスト\u3000近接"
+      ]
+    },
+    {
+      "ID": 81300100,
+      "Entries": [
+        "c8130 Humanoid strong enemy pile shooting (plasma rifle) -- c8130 人型強敵\u3000パイル射撃（プラズマライフル）"
+      ]
+    },
+    {
+      "ID": 81300110,
+      "Entries": [
+        "c8130 Humanoid Strong Enemy Guard -- c8130 人型強敵\u3000ガード"
+      ]
+    },
+    {
+      "ID": 81310000,
+      "Entries": [
+        "c8131 Control prototype character shield -- c8131 制御試作用キャラ\u3000シールド"
+      ]
+    },
+    {
+      "ID": 81310100,
+      "Entries": [
+        "c8131 Control prototype character machine gun -- c8131 制御試作用キャラ\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 81310200,
+      "Entries": [
+        "c8131 Control prototype character reload -- c8131 制御試作用キャラ\u3000リロード"
+      ]
+    },
+    {
+      "ID": 81310300,
+      "Entries": [
+        "c8131 control prototype character missile -- c8131 制御試作用キャラ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 81310400,
+      "Entries": [
+        "c8131 Control prototype character Charge (Stance) -- c8131 制御試作用キャラ\u3000チャージ（構え"
+      ]
+    },
+    {
+      "ID": 81310500,
+      "Entries": [
+        "c8131 Control prototype character charge shot -- c8131 制御試作用キャラ\u3000チャージショット"
+      ]
+    },
+    {
+      "ID": 81310600,
+      "Entries": [
+        "c8131 Control prototype character charge pile -- c8131 制御試作用キャラ\u3000チャージパイル"
+      ]
+    },
+    {
+      "ID": 81310700,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 1 kesa -- c8131 制御試作用キャラ\u3000近接\u3000基本コンボ1\u3000袈裟"
+      ]
+    },
+    {
+      "ID": 81310800,
+      "Entries": [
+        "c8131 Control prototype character Melee basic combo 2 Sakanagi -- c8131 制御試作用キャラ\u3000近接\u3000基本コンボ2\u3000逆薙"
+      ]
+    },
+    {
+      "ID": 81310900,
+      "Entries": [
+        "c8131 Control prototype character melee basic combo 3 storage thrust -- c8131 制御試作用キャラ\u3000近接\u3000基本コンボ3\u3000貯め突き"
+      ]
+    },
+    {
+      "ID": 81350000,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Laser Rifle -- c8135 宮武強敵（人型）\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 81350100,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Pulse Gun -- c8135 宮武強敵（人型）\u3000パルスガン"
+      ]
+    },
+    {
+      "ID": 81350200,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Missile_Vertical -- c8135 宮武強敵（人型）\u3000ミサイル_縦"
+      ]
+    },
+    {
+      "ID": 81350300,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Missile_Horizontal -- c8135 宮武強敵（人型）\u3000ミサイル_横"
+      ]
+    },
+    {
+      "ID": 81350400,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Rocket Launcher -- c8135 宮武強敵（人型）\u3000ロケットランチャー"
+      ]
+    },
+    {
+      "ID": 81350500,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Rocket Launcher_Left -- c8135 宮武強敵（人型）\u3000ロケットランチャー_左"
+      ]
+    },
+    {
+      "ID": 81350600,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Shield -- c8135 宮武強敵（人型）\u3000シールド"
+      ]
+    },
+    {
+      "ID": 81351000,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Pile Continuous Fire Hovering in the Air -- c8135 宮武強敵（人型）\u3000パイル連射\u3000滞空"
+      ]
+    },
+    {
+      "ID": 81351100,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Pile Explosion -- c8135 宮武強敵（人型）\u3000パイル\u3000爆発"
+      ]
+    },
+    {
+      "ID": 81351200,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) Pile Directional Explosion -- c8135 宮武強敵（人型）\u3000パイル\u3000指向性爆発"
+      ]
+    },
+    {
+      "ID": 81352000,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) One Shot -- c8135 宮武強敵（人型）\u3000ワンショット"
+      ]
+    },
+    {
+      "ID": 81352100,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) One Shot 2 -- c8135 宮武強敵（人型）\u3000ワンショット2"
+      ]
+    },
+    {
+      "ID": 81355000,
+      "Entries": [
+        "c8135 Miyatake Strong Enemy (Humanoid) One Shot Medium Pulse -- c8135 宮武強敵（人型）\u3000ワンショット中パルス用"
+      ]
+    },
+    {
+      "ID": 81359900,
+      "Entries": [
+        "c8135 Official Miyatake Strong Enemy Always LookAt -- c8135 正式宮武強敵\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 81359901,
+      "Entries": [
+        "c8135 Official Miyatake strong enemy Long pile turning correction -- c8135 正式宮武強敵\u3000長パイル時旋回補正"
+      ]
+    },
+    {
+      "ID": 81450000,
+      "Entries": [
+        "c8145 Miyatake Strong Enemy Bird-shaped Laser Rifle -- c8145\u3000宮武強敵 鳥型\u3000レーザーライフル"
+      ]
+    },
+    {
+      "ID": 81450100,
+      "Entries": [
+        "c8145 Miyatake Strong Enemy Bird-shaped Missile -- c8145\u3000宮武強敵 鳥型\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 81452000,
+      "Entries": [
+        "c8145 Miyatake Strong Enemy Bird Type Melee -- c8145 宮武強敵 鳥型\u3000近接"
+      ]
+    },
+    {
+      "ID": 81459900,
+      "Entries": [
+        "c8145 Miyatake Strong Enemy Bird Type Always LookAt -- c8145\u3000宮武強敵 鳥型\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 82500000,
+      "Entries": [
+        "c8250 D layer giant elevator missile -- c8250 D層\u3000巨大エレベータ\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 82500100,
+      "Entries": [
+        "c8250 D layer huge elevator for transportation -- c8250 D層\u3000巨大エレベータ\u3000移動用"
+      ]
+    },
+    {
+      "ID": 84001000,
+      "Entries": [
+        "c8400 Maritime giant battery cannon -- c8400 海上巨大砲台\u3000キャノン"
+      ]
+    },
+    {
+      "ID": 84009000,
+      "Entries": [
+        "c8400 Maritime giant artillery mining ship attach cannon -- c8400 海上巨大砲台\u3000採掘艦アタッチ\u3000キャノン"
+      ]
+    },
+    {
+      "ID": 85104000,
+      "Entries": [
+        "c8510 Strong Zako (bazooka exit shield for adjustment) -- c8510 強ザコ(バズーカ 出口さん調整用\u3000シールド"
+      ]
+    },
+    {
+      "ID": 85104100,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka -- c8510 強ザコ(バズーカ 出口さん調整用\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 85104200,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile) -- c8510 強ザコ(バズーカ 出口さん調整用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 85104300,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka for exit adjustment Bazooka -- c8510 強ザコ(バズーカ 出口さん調整用\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 85104700,
+      "Entries": [
+        "c8510 Strong Zako (Bazooka Deguchi-san adjustment missile) -- c8510 強ザコ(バズーカ 出口さん調整用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 85110000,
+      "Entries": [
+        "c8511 Bazooka for strong-strike practice -- c8511 強ザコ練習用\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 85110100,
+      "Entries": [
+        "c8511 Strong Zako practice missile -- c8511 強ザコ練習用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 85110200,
+      "Entries": [
+        "c8511 Shield for strong zako practice -- c8511 強ザコ練習用\u3000シールド"
+      ]
+    },
+    {
+      "ID": 85330000,
+      "Entries": [
+        "c8533 Mining ship attach giant gun battery (for map) -- c8533 採掘艦\u3000アタッチ巨大砲台（マップ用）"
+      ]
+    },
+    {
+      "ID": 85330100,
+      "Entries": [
+        "c8533 Mining ship attached giant gun battery -- c8533 採掘艦\u3000アタッチ巨大砲台"
+      ]
+    },
+    {
+      "ID": 85359900,
+      "Entries": [
+        "eyeball -- 目玉"
+      ]
+    },
+    {
+      "ID": 85359901,
+      "Entries": [
+        "Eyeball fast -- 目玉 はやーい"
+      ]
+    },
+    {
+      "ID": 92012000,
+      "Entries": [
+        "c9201 reverse joint machine gun -- c9201 逆関節\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 92020100,
+      "Entries": [
+        "c9202 reverse joint armament test missile -- c9202 逆関節\u3000武装テスト用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 92030100,
+      "Entries": [
+        "c9203 Reverse joint damage Lv1 interval 2 seconds machine gun -- c9203 逆関節 ダメージLv1 間隔2秒\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 92040100,
+      "Entries": [
+        "c9204 Reverse joint damage Lv1 interval 0.1 seconds machine gun -- c9204 逆関節 ダメージLv1 間隔0.1秒\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 93070100,
+      "Entries": [
+        "c9307 Colorless poured communist MT machine gun -- c9307 無色流し込み共産MT\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 93080100,
+      "Entries": [
+        "c9308 Tank control verification missile -- c9308 タンク制御検証用\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93081000,
+      "Entries": [
+        "c9308 Proximity for tank control verification -- c9308 タンク制御検証用\u3000近接"
+      ]
+    },
+    {
+      "ID": 93081100,
+      "Entries": [
+        "c9308 Proximity for tank control verification -- c9308 タンク制御検証用\u3000近接"
+      ]
+    },
+    {
+      "ID": 93083100,
+      "Entries": [
+        "c9308 Constant LookAt for tank control verification -- c9308 タンク制御検証用\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 93093100,
+      "Entries": [
+        "c9309 Machine gun for quadruped control test -- c9309 四脚制御テスト用\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 93200000,
+      "Entries": [
+        "c9320 planning training aircraft shield -- c9320 企画練習機\u3000シールド"
+      ]
+    },
+    {
+      "ID": 93200100,
+      "Entries": [
+        "c9320 Planning training machine Bazooka -- c9320 企画練習機\u3000バズーカ"
+      ]
+    },
+    {
+      "ID": 93200200,
+      "Entries": [
+        "c9320 planning training aircraft missile right -- c9320 企画練習機\u3000ミサイル右"
+      ]
+    },
+    {
+      "ID": 93200300,
+      "Entries": [
+        "c9320 planning training aircraft missile left -- c9320 企画練習機\u3000ミサイル左"
+      ]
+    },
+    {
+      "ID": 93200400,
+      "Entries": [
+        "c9320 planning training machine machine gun -- c9320 企画練習機\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 93210000,
+      "Entries": [
+        "c9321 link test rifle -- c9321 リンクテスト\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 93210100,
+      "Entries": [
+        "c9321 link test machine gun reload -- c9321 リンクテスト\u3000マシンガンリロード"
+      ]
+    },
+    {
+      "ID": 93210200,
+      "Entries": [
+        "c9321 link test blade -- c9321 リンクテスト\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 93210300,
+      "Entries": [
+        "c9321 link test missile -- c9321 リンクテスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93210400,
+      "Entries": [
+        "c9321 Link Test Assault Armor -- c9321 リンクテスト\u3000アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 93211000,
+      "Entries": [
+        "c9321 Link test LookAT test -- c9321 リンクテスト\u3000LookATテスト"
+      ]
+    },
+    {
+      "ID": 93213100,
+      "Entries": [
+        "c9321 Link test Always LookAt -- c9321 リンクテスト\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 93221000,
+      "Entries": [
+        "c9322 Enomoto test guard -- c9322 榎本テスト\u3000ガード"
+      ]
+    },
+    {
+      "ID": 93221100,
+      "Entries": [
+        "c9322 Enomoto test shooting -- c9322 榎本テスト\u3000射撃"
+      ]
+    },
+    {
+      "ID": 93221300,
+      "Entries": [
+        "c9322 Enomoto test missile -- c9322 榎本テスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93221400,
+      "Entries": [
+        "c9322 Enomoto test missile -- c9322 榎本テスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93222000,
+      "Entries": [
+        "c9322 Enomoto test cooling -- c9322 榎本テスト\u3000冷却"
+      ]
+    },
+    {
+      "ID": 93222100,
+      "Entries": [
+        "c9322 Enomoto test reload -- c9322 榎本テスト\u3000リロード"
+      ]
+    },
+    {
+      "ID": 93222200,
+      "Entries": [
+        "c9322 Enomoto test radome -- c9322 榎本テスト\u3000レドーム"
+      ]
+    },
+    {
+      "ID": 93223000,
+      "Entries": [
+        "c9322 Enomoto test diving pile -- c9322 榎本テスト\u3000飛び込みパイル"
+      ]
+    },
+    {
+      "ID": 93224000,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 1 1st stage -- c9322 榎本テスト\u3000コンボ1\u30001\u3000\u3000\u3000\u30001段目"
+      ]
+    },
+    {
+      "ID": 93224100,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 2 2nd stage -- c9322 榎本テスト\u3000コンボ1\u30002\u3000\u3000\u3000\u30002段目"
+      ]
+    },
+    {
+      "ID": 93224200,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-1 Thrust -- c9322 榎本テスト\u3000コンボ1\u30003－1\u3000\u3000突き"
+      ]
+    },
+    {
+      "ID": 93224300,
+      "Entries": [
+        "c9322 Enomoto Test Combo 1 3-2 Charge Thrust -- c9322 榎本テスト\u3000コンボ1\u30003－2\u3000\u3000溜め突き"
+      ]
+    },
+    {
+      "ID": 93225000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 1 -- c9322 榎本テスト\u3000突きコンボ\u30001"
+      ]
+    },
+    {
+      "ID": 93225100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo 2 -- c9322 榎本テスト\u3000突きコンボ\u30002"
+      ]
+    },
+    {
+      "ID": 93226000,
+      "Entries": [
+        "c9322 Enomoto test side right -- c9322 榎本テスト\u3000側面\u3000右"
+      ]
+    },
+    {
+      "ID": 93226100,
+      "Entries": [
+        "c9322 Enomoto test side left -- c9322 榎本テスト\u3000側面\u3000左"
+      ]
+    },
+    {
+      "ID": 93227000,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 1 -- c9322 榎本テスト\u3000新王城騎士コンボ\u30001"
+      ]
+    },
+    {
+      "ID": 93227100,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 2 -- c9322 榎本テスト\u3000新王城騎士コンボ\u30002"
+      ]
+    },
+    {
+      "ID": 93227200,
+      "Entries": [
+        "c9322 Enomoto Test New Castle Knight Combo 3 -- c9322 榎本テスト\u3000新王城騎士コンボ\u30003"
+      ]
+    },
+    {
+      "ID": 93228000,
+      "Entries": [
+        "c9322 Enomoto test Supervisor rush cut -- c9322 榎本テスト\u3000監視者突進切り"
+      ]
+    },
+    {
+      "ID": 93229000,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga Test 1 -- c9322 榎本テスト\u3000突きコンボ\u3000森永さんテスト1"
+      ]
+    },
+    {
+      "ID": 93229100,
+      "Entries": [
+        "c9322 Enomoto Test Thrust Combo Morinaga-san Test 2 -- c9322 榎本テスト\u3000突きコンボ\u3000森永さんテスト2"
+      ]
+    },
+    {
+      "ID": 93229800,
+      "Entries": [
+        "c9322 Enomoto test mono-eye behavior -- c9322 榎本テスト\u3000モノアイ挙動"
+      ]
+    },
+    {
+      "ID": 93229900,
+      "Entries": [
+        "c9322 Enomoto test Always LookAt -- c9322 榎本テスト\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 93231000,
+      "Entries": [
+        "c9323 Hagiya Test Guard -- c9323 はぎやてすと\u3000ガード"
+      ]
+    },
+    {
+      "ID": 93231100,
+      "Entries": [
+        "c9323 Hagiya Test Shooting -- c9323 はぎやてすと\u3000射撃"
+      ]
+    },
+    {
+      "ID": 93231300,
+      "Entries": [
+        "c9323 Hagiya Test Missile -- c9323 はぎやてすと\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93232000,
+      "Entries": [
+        "c9323 Hagiya Test Cooling -- c9323 はぎやてすと\u3000冷却"
+      ]
+    },
+    {
+      "ID": 93232100,
+      "Entries": [
+        "c9323 Hagiya Test Reload -- c9323 はぎやてすと\u3000リロード"
+      ]
+    },
+    {
+      "ID": 93232200,
+      "Entries": [
+        "c9323 Hagiya Test Radome -- c9323 はぎやてすと\u3000レドーム"
+      ]
+    },
+    {
+      "ID": 93233000,
+      "Entries": [
+        "c9323 Hagiya Test Diving Pile -- c9323 はぎやてすと\u3000飛び込みパイル"
+      ]
+    },
+    {
+      "ID": 93234000,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 1 1st stage -- c9323 はぎやてすと\u3000コンボ1\u30001\u3000\u3000\u3000\u30001段目"
+      ]
+    },
+    {
+      "ID": 93234100,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 2 2nd stage -- c9323 はぎやてすと\u3000コンボ1\u30002\u3000\u3000\u3000\u30002段目"
+      ]
+    },
+    {
+      "ID": 93234200,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-1 Thrust -- c9323 はぎやてすと\u3000コンボ1\u30003－1\u3000\u3000突き"
+      ]
+    },
+    {
+      "ID": 93234300,
+      "Entries": [
+        "c9323 Hagiya Test Combo 1 3-2 Charge Thrust -- c9323 はぎやてすと\u3000コンボ1\u30003－2\u3000\u3000溜め突き"
+      ]
+    },
+    {
+      "ID": 93235000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 1 -- c9323 はぎやてすと\u3000突きコンボ\u30001"
+      ]
+    },
+    {
+      "ID": 93235100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo 2 -- c9323 はぎやてすと\u3000突きコンボ\u30002"
+      ]
+    },
+    {
+      "ID": 93236000,
+      "Entries": [
+        "c9323 Hagiya Test Side Right -- c9323 はぎやてすと\u3000側面\u3000右"
+      ]
+    },
+    {
+      "ID": 93236100,
+      "Entries": [
+        "c9323 Hagiya Test Side Left -- c9323 はぎやてすと\u3000側面\u3000左"
+      ]
+    },
+    {
+      "ID": 93236200,
+      "Entries": [
+        "c9323 Hagiya Test Side Left 2 -- c9323 はぎやてすと\u3000側面\u3000左2"
+      ]
+    },
+    {
+      "ID": 93237000,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 1 -- c9323 はぎやてすと\u3000新王城騎士コンボ\u30001"
+      ]
+    },
+    {
+      "ID": 93237100,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2 -- c9323 はぎやてすと\u3000新王城騎士コンボ\u30002"
+      ]
+    },
+    {
+      "ID": 93237200,
+      "Entries": [
+        "c9323 Hagiya Test New Castle Knight Combo 2 -- c9323 はぎやてすと\u3000新王城騎士コンボ\u30002"
+      ]
+    },
+    {
+      "ID": 93238000,
+      "Entries": [
+        "c9323 Hagiya Test Watcher Rush Cut -- c9323 はぎやてすと\u3000監視者突進切り"
+      ]
+    },
+    {
+      "ID": 93239000,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga Test 1 -- c9323 はぎやてすと\u3000突きコンボ\u3000森永さんテスト1"
+      ]
+    },
+    {
+      "ID": 93239100,
+      "Entries": [
+        "c9323 Hagiya Test Thrust Combo Morinaga-san Test 2 -- c9323 はぎやてすと\u3000突きコンボ\u3000森永さんテスト2"
+      ]
+    },
+    {
+      "ID": 93239800,
+      "Entries": [
+        "c9323 Hagiya Test Mono-Eye Behavior -- c9323 はぎやてすと\u3000モノアイ挙動"
+      ]
+    },
+    {
+      "ID": 93239900,
+      "Entries": [
+        "c9323 Hagiya Test Always LookAt -- c9323 はぎやてすと\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 93300000,
+      "Entries": [
+        "c9330 Large ragdoll confirmation confirmation dummy -- c9330 大型ラグドール確認用\u3000確認用ダミー"
+      ]
+    },
+    {
+      "ID": 93400000,
+      "Entries": [
+        "c9340 link test rifle -- c9340 リンクテスト\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 93400100,
+      "Entries": [
+        "c9340 link test machine gun reload -- c9340 リンクテスト\u3000マシンガンリロード"
+      ]
+    },
+    {
+      "ID": 93400200,
+      "Entries": [
+        "c9340 link test blade -- c9340 リンクテスト\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 93400300,
+      "Entries": [
+        "c9340 link test missile -- c9340 リンクテスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93400400,
+      "Entries": [
+        "c9340 Link Test Assault Armor -- c9340 リンクテスト\u3000アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 93401000,
+      "Entries": [
+        "c9340 Link test LookAT test -- c9340 リンクテスト\u3000LookATテスト"
+      ]
+    },
+    {
+      "ID": 93403100,
+      "Entries": [
+        "c9340 Link test Always LookAt -- c9340 リンクテスト\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 93410000,
+      "Entries": [
+        "c9341 link test rifle -- c9341 リンクテスト\u3000ライフル"
+      ]
+    },
+    {
+      "ID": 93410100,
+      "Entries": [
+        "c9341 link test machine gun reload -- c9341 リンクテスト\u3000マシンガンリロード"
+      ]
+    },
+    {
+      "ID": 93410200,
+      "Entries": [
+        "c9341 link test blade -- c9341 リンクテスト\u3000ブレード"
+      ]
+    },
+    {
+      "ID": 93410300,
+      "Entries": [
+        "c9341 link test missile -- c9341 リンクテスト\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 93410400,
+      "Entries": [
+        "c9341 Link Test Assault Armor -- c9341 リンクテスト\u3000アサルトアーマー"
+      ]
+    },
+    {
+      "ID": 93411000,
+      "Entries": [
+        "c9341 Link test LookAT test -- c9341 リンクテスト\u3000LookATテスト"
+      ]
+    },
+    {
+      "ID": 93413100,
+      "Entries": [
+        "c9341 Link test Always LookAt -- c9341 リンクテスト\u3000常時LookAt"
+      ]
+    },
+    {
+      "ID": 94000000,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 00 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300000"
+      ]
+    },
+    {
+      "ID": 94000100,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 01 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300001"
+      ]
+    },
+    {
+      "ID": 94000200,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 02 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300002"
+      ]
+    },
+    {
+      "ID": 94000300,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 03 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300003"
+      ]
+    },
+    {
+      "ID": 94000400,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 04 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300004"
+      ]
+    },
+    {
+      "ID": 94000500,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 05 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300005"
+      ]
+    },
+    {
+      "ID": 94000600,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 06 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300006"
+      ]
+    },
+    {
+      "ID": 94000700,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 07 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300007"
+      ]
+    },
+    {
+      "ID": 94000800,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 08 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300008"
+      ]
+    },
+    {
+      "ID": 94000900,
+      "Entries": [
+        "c9400 Map team test bazooka battery small test bazooka small 09 -- c9400 マップ班テスト用 バズーカ砲台 小\u3000テストバズーカ\u3000小\u300009"
+      ]
+    },
+    {
+      "ID": 94010000,
+      "Entries": [
+        "c9401 Map team test bazooka turret large test bazooka 00 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300000"
+      ]
+    },
+    {
+      "ID": 94010100,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 01 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300001"
+      ]
+    },
+    {
+      "ID": 94010200,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 02 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300002"
+      ]
+    },
+    {
+      "ID": 94010300,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 03 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300003"
+      ]
+    },
+    {
+      "ID": 94010400,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 04 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300004"
+      ]
+    },
+    {
+      "ID": 94010500,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 05 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300005"
+      ]
+    },
+    {
+      "ID": 94010600,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 06 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300006"
+      ]
+    },
+    {
+      "ID": 94010700,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 07 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300007"
+      ]
+    },
+    {
+      "ID": 94010800,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 08 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300008"
+      ]
+    },
+    {
+      "ID": 94010900,
+      "Entries": [
+        "c9401 Map team test bazooka battery large test bazooka 09 -- c9401 マップ班テスト用 バズーカ砲台 大\u3000テストバズーカ\u300009"
+      ]
+    },
+    {
+      "ID": 94100000,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 00 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300000"
+      ]
+    },
+    {
+      "ID": 94100100,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 01 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300001"
+      ]
+    },
+    {
+      "ID": 94100200,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 02 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300002"
+      ]
+    },
+    {
+      "ID": 94100300,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 03 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300003"
+      ]
+    },
+    {
+      "ID": 94100400,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 04 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300004"
+      ]
+    },
+    {
+      "ID": 94100500,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 05 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300005"
+      ]
+    },
+    {
+      "ID": 94100600,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 06 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300006"
+      ]
+    },
+    {
+      "ID": 94100700,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 07 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300007"
+      ]
+    },
+    {
+      "ID": 94100800,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 08 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300008"
+      ]
+    },
+    {
+      "ID": 94100900,
+      "Entries": [
+        "c9410 Map team test sniper battery small test sniper rifle small 09 -- c9410 マップ班テスト用 スナイパー砲台 小\u3000テストスナイパーライフル\u3000小\u300009"
+      ]
+    },
+    {
+      "ID": 94110000,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 00 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300000"
+      ]
+    },
+    {
+      "ID": 94110100,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 01 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300001"
+      ]
+    },
+    {
+      "ID": 94110200,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 02 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300002"
+      ]
+    },
+    {
+      "ID": 94110300,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 03 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300003"
+      ]
+    },
+    {
+      "ID": 94110400,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 04 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300004"
+      ]
+    },
+    {
+      "ID": 94110500,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 05 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300005"
+      ]
+    },
+    {
+      "ID": 94110600,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 06 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300006"
+      ]
+    },
+    {
+      "ID": 94110700,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 07 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300007"
+      ]
+    },
+    {
+      "ID": 94110800,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 08 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300008"
+      ]
+    },
+    {
+      "ID": 94110900,
+      "Entries": [
+        "c9411 Map team test sniper battery large test sniper rifle 09 -- c9411 マップ班テスト用 スナイパー砲台 大\u3000テストスナイパーライフル\u300009"
+      ]
+    },
+    {
+      "ID": 94200000,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200100,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200200,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200300,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200400,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200500,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200600,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200700,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200800,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94200900,
+      "Entries": [
+        "c9420 Map team test missile battery small missile -- c9420 マップ班テスト用 ミサイル砲台 小\u3000ミサイル"
+      ]
+    },
+    {
+      "ID": 94310000,
+      "Entries": [
+        "c9431 machine gun battery machine gun -- c9431 マシンガン砲台\u3000マシンガン"
+      ]
+    },
+    {
+      "ID": 94319900,
+      "Entries": [
+        "c9431 machine gun turret -- c9431\u3000マシンガン砲台"
+      ]
+    },
+    {
+      "ID": 99600000,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB Bullet generation A -- c9960 VOB用弾発生ダミーキャラ\u3000弾発生A"
+      ]
+    },
+    {
+      "ID": 99600100,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB Bullet generation B -- c9960 VOB用弾発生ダミーキャラ\u3000弾発生B"
+      ]
+    },
+    {
+      "ID": 99600200,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB Bullet generation C -- c9960 VOB用弾発生ダミーキャラ\u3000弾発生C"
+      ]
+    },
+    {
+      "ID": 99600300,
+      "Entries": [
+        "c9960 VOB bullet generation dummy character poison tank test -- c9960 VOB用弾発生ダミーキャラ\u3000毒タンクテスト"
+      ]
+    },
+    {
+      "ID": 99600400,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB Treasure corpse exploding bullet -- c9960 VOB用弾発生ダミーキャラ\u3000宝死体爆発弾丸"
+      ]
+    },
+    {
+      "ID": 99609900,
+      "Entries": [
+        "c9960 Bullet generation dummy character for VOB -- c9960\u3000VOB用弾発生ダミーキャラ"
+      ]
+    },
+    {
+      "ID": 99800000,
+      "Entries": [
+        "c9980 Lookat for dummy character -- c9980\u3000ダミーキャラ用Lookat"
+      ]
+    },
+    {
+      "ID": 99801000,
+      "Entries": [
+        "c9980 Weak Lookat for dummy character attack -- c9980\u3000ダミーキャラ攻撃用Lookat 弱め"
+      ]
+    },
+    {
+      "ID": 99801010,
+      "Entries": [
+        "c9980 Lookat for dummy character attack Strong -- c9980\u3000ダミーキャラ攻撃用Lookat\u3000強め"
+      ]
+    },
+    {
+      "ID": 99801020,
+      "Entries": [
+        "c9980 Lookat fixed for dummy character attack -- c9980\u3000ダミーキャラ攻撃用Lookat 固定"
+      ]
+    },
+    {
+      "ID": 99801030,
+      "Entries": [
+        "c9980 Lookat for dummy character attack Follow-up -- c9980\u3000ダミーキャラ攻撃用Lookat\u3000追従用"
+      ]
+    },
+    {
+      "ID": 99980000,
+      "Entries": [
+        "General-purpose control Common attack ID 800 Head LookAt control -- 汎用制御用\u3000共通攻撃ID\u3000800\u3000頭部LookAt制御"
+      ]
+    },
+    {
+      "ID": 99992090,
+      "Entries": [
+        "enemy general purpose laser sight lookat -- 敵汎用レーザーサイトlookat"
+      ]
+    }
+  ]
+}

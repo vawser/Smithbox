@@ -1,0 +1,563 @@
+{
+  "Name": "eventlocation_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 1001,
+      "Entries": [
+        "Intrusion Point 1-1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Intrusion Point 1-2"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Intrusion Point 1-3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Intrusion Point 1-4"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Intrusion Point 1-5"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Intrusion Point 1-6"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Intrusion Point 1-7"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Intrusion Point 1-8"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Intrusion Point 1-9"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Intrusion Point 1-10"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Intrusion Point 2-1"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Intrusion Point 2-2"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Intrusion Point 2-3"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Intrusion Point 2-4"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Intrusion Point 2-5"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Intrusion Point 2-6"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Intrusion Point 2-7"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Intrusion Point 2-8"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Intrusion Point 2-9"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Intrusion Point 2-10"
+      ]
+    },
+    {
+      "ID": 2011,
+      "Entries": [
+        "Intrusion Point 2-11"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Intrusion Point 3-1"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Intrusion Point 3-2"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Intrusion Point 3-3"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Intrusion Point 3-4"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Intrusion Point 3-5"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Intrusion Point 3-6"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Intrusion Point 3-7"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Intrusion Point 3-8"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Intrusion Point 3-9"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Intrusion Point 3-10"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Intrusion Point 3-11"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "Switch on elevator"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "Switch under elevator"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Boss: Battle start judgment with Agaturan stand_01"
+      ]
+    },
+    {
+      "ID": 200001,
+      "Entries": [
+        "Boss: Battle start judgment with Agaturan stand_02"
+      ]
+    },
+    {
+      "ID": 200002,
+      "Entries": [
+        "Boss: Battle start judgment with Agaturan stand_03"
+      ]
+    },
+    {
+      "ID": 201000,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 1"
+      ]
+    },
+    {
+      "ID": 201001,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 2"
+      ]
+    },
+    {
+      "ID": 201002,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 3"
+      ]
+    },
+    {
+      "ID": 201003,
+      "Entries": [
+        "Agaturan Wormhole Shooting _Shooting Point 4"
+      ]
+    },
+    {
+      "ID": 201004,
+      "Entries": [
+        "Agaturan Wormhole Shooting _Shooting Point 5"
+      ]
+    },
+    {
+      "ID": 201005,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 6"
+      ]
+    },
+    {
+      "ID": 201006,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 7"
+      ]
+    },
+    {
+      "ID": 201007,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 8"
+      ]
+    },
+    {
+      "ID": 201008,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 9"
+      ]
+    },
+    {
+      "ID": 201009,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 10"
+      ]
+    },
+    {
+      "ID": 201010,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 11"
+      ]
+    },
+    {
+      "ID": 201011,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 12"
+      ]
+    },
+    {
+      "ID": 201012,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 13"
+      ]
+    },
+    {
+      "ID": 201013,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 14"
+      ]
+    },
+    {
+      "ID": 201014,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 15"
+      ]
+    },
+    {
+      "ID": 201015,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 16"
+      ]
+    },
+    {
+      "ID": 201016,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 17"
+      ]
+    },
+    {
+      "ID": 201017,
+      "Entries": [
+        "Agaturan Wormhole Shooting _Shooting Point 18"
+      ]
+    },
+    {
+      "ID": 201018,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 19"
+      ]
+    },
+    {
+      "ID": 201019,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 20"
+      ]
+    },
+    {
+      "ID": 201020,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 21"
+      ]
+    },
+    {
+      "ID": 201021,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 22"
+      ]
+    },
+    {
+      "ID": 201022,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 23"
+      ]
+    },
+    {
+      "ID": 201023,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 24"
+      ]
+    },
+    {
+      "ID": 201024,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 25"
+      ]
+    },
+    {
+      "ID": 201025,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 26"
+      ]
+    },
+    {
+      "ID": 201026,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 27"
+      ]
+    },
+    {
+      "ID": 201027,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 28"
+      ]
+    },
+    {
+      "ID": 201028,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 29"
+      ]
+    },
+    {
+      "ID": 201029,
+      "Entries": [
+        "Agaturan Wormhole Shooting _ Shooting Point 30"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Warp one by falling into the hole"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "Fall into the hole and warp 2"
+      ]
+    },
+    {
+      "ID": 400002,
+      "Entries": [
+        "Fall into the hole and warp three"
+      ]
+    },
+    {
+      "ID": 400003,
+      "Entries": [
+        "Warp point 1 to the boss room"
+      ]
+    },
+    {
+      "ID": 400004,
+      "Entries": [
+        "Warp point 2 to boss room"
+      ]
+    },
+    {
+      "ID": 400005,
+      "Entries": [
+        "Warp point 3 to the boss room"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Warp point from the forest of the shadow of the emptiness"
+      ]
+    },
+    {
+      "ID": 400020,
+      "Entries": [
+        "Warp point from Dranggreig"
+      ]
+    },
+    {
+      "ID": 400030,
+      "Entries": [
+        "Warp point from the bottom of the scum"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Warp in the hole (return from the boss's room)"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Torch disappears by water droplets 1"
+      ]
+    },
+    {
+      "ID": 600001,
+      "Entries": [
+        "Torch disappears by water droplets 2"
+      ]
+    },
+    {
+      "ID": 600002,
+      "Entries": [
+        "Torch disappears by water droplets 3"
+      ]
+    },
+    {
+      "ID": 600003,
+      "Entries": [
+        "Torch disappearing by water droplets 4"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Agaduran Stand Warp Point 00"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Agaduran Stand Warp Point 01"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "Agaduran Stand Warp Point 02"
+      ]
+    },
+    {
+      "ID": 50000003,
+      "Entries": [
+        "Agaduran Stand Warp Point 03"
+      ]
+    },
+    {
+      "ID": 50000004,
+      "Entries": [
+        "Agaduran Stand Warp Point 04"
+      ]
+    },
+    {
+      "ID": 50000005,
+      "Entries": [
+        "Agaduran Stand Warp Point 05"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "Ishimori (4001) Logic Launch Point"
+      ]
+    },
+    {
+      "ID": 50000300,
+      "Entries": [
+        "Block 2 First Half Enemy Feedback Area"
+      ]
+    },
+    {
+      "ID": 50000301,
+      "Entries": [
+        "Block 2 Late Enemy Feedback Area"
+      ]
+    },
+    {
+      "ID": 50000302,
+      "Entries": [
+        "Block 3 Enemy Feedback Area"
+      ]
+    },
+    {
+      "ID": 50000303,
+      "Entries": [
+        "【Return area】On the return before the list"
+      ]
+    },
+    {
+      "ID": 50000304,
+      "Entries": [
+        "【Return area】Under the return before the list"
+      ]
+    }
+  ]
+}

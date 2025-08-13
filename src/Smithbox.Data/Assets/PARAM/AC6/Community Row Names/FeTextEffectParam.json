@@ -1,0 +1,1685 @@
+{
+  "Name": "FeTextEffectParam",
+  "Entries": [
+    {
+      "ID": 10,
+      "Entries": [
+        "[Basic notification] Mission start"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "[Basic notification] Mission successful"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "[Basic notification] Mission failed"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "[Basic notification] Mission update"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "[Basic notification] Training starts"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "[Basic notification] Training success"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "[Basic notification] Training failure"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "[Basic notification] Training update"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "[Basic notification] Defeat the enemy (success conditions are met)"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[Basic notification] Defeat multiple enemies (success conditions are met)"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Basic notification] Facility destruction (success conditions are met)"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "[Basic notification] Destroy multiple facilities (success conditions are met)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "[Basic notification] Player killed by defeat"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "[Basic notification] Player dies from falling"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "[Basic notification] Player time up"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "[Basic notification] Defeat the middle boss"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "[Basic notification] Defeat medium target"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "[Basic notification] Defeated in interpersonal battle (3 on 3)"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "[Basic notice] Return from fall"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "[Basic notification] Supply completed"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "[Basic notification] Arena, interpersonal/falling death"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "[Basic Notice] Arena, Round 1"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "[Basic Notice] Arena, Round 2"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "[Basic Notice] Arena, Round 3"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 1"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 2"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "[Basic notification] Arena, at the start of round 3"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "[Basic notification] Arena, 3on3 at the start of the match"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "[Basic notification] Responsibility"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "[Basic notification] 3on3 upon respawn"
+      ]
+    },
+    {
+      "ID": 20103000,
+      "Entries": [
+        "[Goal display] Prologue Aim for the catapult"
+      ]
+    },
+    {
+      "ID": 20103010,
+      "Entries": [
+        "[Objective Display] Prologue Eliminate the armed forces in the new industrial area"
+      ]
+    },
+    {
+      "ID": 20103020,
+      "Entries": [
+        "[Objective display] Prologue: Destroy the enemy captured aircraft"
+      ]
+    },
+    {
+      "ID": 20103030,
+      "Entries": [
+        "[Target display] Prologue: Assault the transport unit"
+      ]
+    },
+    {
+      "ID": 20103040,
+      "Entries": [
+        "[Objective display] Prologue: Destroy the enemy aircraft"
+      ]
+    },
+    {
+      "ID": 20103900,
+      "Entries": [
+        "[Goal Display] Obtain Prologue License"
+      ]
+    },
+    {
+      "ID": 20103910,
+      "Entries": [
+        "[Target display] Investigate the wreckage"
+      ]
+    },
+    {
+      "ID": 20103920,
+      "Entries": [
+        "[Goal display] Prologue Defeat Pharaon."
+      ]
+    },
+    {
+      "ID": 20103930,
+      "Entries": [
+        "[Target display] Investigate the wreckage_second time"
+      ]
+    },
+    {
+      "ID": 20103940,
+      "Entries": [
+        "[Goal Display] Obtain Prologue License"
+      ]
+    },
+    {
+      "ID": 20103950,
+      "Entries": [
+        "[Target Display] Prologue Head to Pharaon location"
+      ]
+    },
+    {
+      "ID": 20103960,
+      "Entries": [
+        "[Goal Display] Prologue: Destroy the enemy"
+      ]
+    },
+    {
+      "ID": 20103970,
+      "Entries": [
+        "[Goal display] Prologue Aim for the catapult"
+      ]
+    },
+    {
+      "ID": 20203010,
+      "Entries": [
+        "Destroy all substation facilities"
+      ]
+    },
+    {
+      "ID": 20203030,
+      "Entries": [
+        "Defeat Bayram AC"
+      ]
+    },
+    {
+      "ID": 20203040,
+      "Entries": [
+        "Destroy remaining substation facilities"
+      ]
+    },
+    {
+      "ID": 20303010,
+      "Entries": [
+        "Eliminate Gatling turrets and quadruped MTs"
+      ]
+    },
+    {
+      "ID": 20303020,
+      "Entries": [
+        "Proceed inside the \"wall\" and reach the rooftop"
+      ]
+    },
+    {
+      "ID": 20303030,
+      "Entries": [
+        "Destroy a heavy mobile artillery battery"
+      ]
+    },
+    {
+      "ID": 20503000,
+      "Entries": [
+        "Eliminate the SG troops in the 1st section"
+      ]
+    },
+    {
+      "ID": 20503010,
+      "Entries": [
+        "Eliminate the SG troops in the 2nd section"
+      ]
+    },
+    {
+      "ID": 20503020,
+      "Entries": [
+        "Eliminate the SG troops in the 3rd section"
+      ]
+    },
+    {
+      "ID": 20503030,
+      "Entries": [
+        "Destroy the sensing valve"
+      ]
+    },
+    {
+      "ID": 20503040,
+      "Entries": [
+        "Destroy an unknown aircraft"
+      ]
+    },
+    {
+      "ID": 20503050,
+      "Entries": [
+        "Destroy the sensing valve"
+      ]
+    },
+    {
+      "ID": 20503060,
+      "Entries": [
+        "Destroy an unknown aircraft"
+      ]
+    },
+    {
+      "ID": 20603000,
+      "Entries": [
+        "Enter the factory and investigate the interior."
+      ]
+    },
+    {
+      "ID": 20603010,
+      "Entries": [
+        "destroy an attacker"
+      ]
+    },
+    {
+      "ID": 20803000,
+      "Entries": [
+        "approach the mining ship"
+      ]
+    },
+    {
+      "ID": 20803005,
+      "Entries": [
+        "Destroy the legs of the mining ship"
+      ]
+    },
+    {
+      "ID": 20803010,
+      "Entries": [
+        "Destroy the sub generator"
+      ]
+    },
+    {
+      "ID": 20803020,
+      "Entries": [
+        "destroy the eyeball"
+      ]
+    },
+    {
+      "ID": 20803030,
+      "Entries": [
+        "leave the deck"
+      ]
+    },
+    {
+      "ID": 21003000,
+      "Entries": [
+        "Collect as much junk as possible"
+      ]
+    },
+    {
+      "ID": 21003010,
+      "Entries": [
+        "Recovered parts 0 pieces"
+      ]
+    },
+    {
+      "ID": 21003011,
+      "Entries": [
+        "Collected parts 1 piece"
+      ]
+    },
+    {
+      "ID": 21003012,
+      "Entries": [
+        "Collected parts 2 pieces"
+      ]
+    },
+    {
+      "ID": 21003013,
+      "Entries": [
+        "Collected parts 3 pieces"
+      ]
+    },
+    {
+      "ID": 21003014,
+      "Entries": [
+        "Collected parts 4 pieces"
+      ]
+    },
+    {
+      "ID": 21003015,
+      "Entries": [
+        "Collected parts 5 pieces"
+      ]
+    },
+    {
+      "ID": 21003016,
+      "Entries": [
+        "6 recovered parts"
+      ]
+    },
+    {
+      "ID": 21003017,
+      "Entries": [
+        "7 recovered parts"
+      ]
+    },
+    {
+      "ID": 21003018,
+      "Entries": [
+        "8 recovered parts"
+      ]
+    },
+    {
+      "ID": 21203000,
+      "Entries": [
+        "Aim for the top"
+      ]
+    },
+    {
+      "ID": 21203010,
+      "Entries": [
+        "annihilate MT"
+      ]
+    },
+    {
+      "ID": 21203020,
+      "Entries": [
+        "Destroy the unmanned heavy machine that appears"
+      ]
+    },
+    {
+      "ID": 21203030,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 21203040,
+      "Entries": [
+        "Aim for the top"
+      ]
+    },
+    {
+      "ID": 21403000,
+      "Entries": [
+        "Escort a transport helicopter heading to rescue prisoners"
+      ]
+    },
+    {
+      "ID": 21403010,
+      "Entries": [
+        "Escort the transport helicopter until it leaves the operational area"
+      ]
+    },
+    {
+      "ID": 21403030,
+      "Entries": [
+        "G2 Nile/Defeat Bayram MT unit"
+      ]
+    },
+    {
+      "ID": 21703520,
+      "Entries": [
+        "TGT approach 1"
+      ]
+    },
+    {
+      "ID": 21703530,
+      "Entries": [
+        "TGT approach 2"
+      ]
+    },
+    {
+      "ID": 21703540,
+      "Entries": [
+        "branch"
+      ]
+    },
+    {
+      "ID": 21703550,
+      "Entries": [
+        "eliminate the assassin"
+      ]
+    },
+    {
+      "ID": 21803000,
+      "Entries": [
+        "Aim for the rooftop"
+      ]
+    },
+    {
+      "ID": 21803010,
+      "Entries": [
+        "Destroy the unmanned weapon that appears"
+      ]
+    },
+    {
+      "ID": 21803020,
+      "Entries": [
+        "board the container"
+      ]
+    },
+    {
+      "ID": 21803030,
+      "Entries": [
+        "I went to the palace"
+      ]
+    },
+    {
+      "ID": 22003000,
+      "Entries": [
+        "Eliminate enemies in the facility"
+      ]
+    },
+    {
+      "ID": 22003010,
+      "Entries": [
+        "destroy the enemy"
+      ]
+    },
+    {
+      "ID": 22003020,
+      "Entries": [
+        "Special mission aircraft Cataphract / Defeat Ekdromoi"
+      ]
+    },
+    {
+      "ID": 22103000,
+      "Entries": [
+        "Defeat many transport helicopters"
+      ]
+    },
+    {
+      "ID": 22203000,
+      "Entries": [
+        "eliminate enemy forces"
+      ]
+    },
+    {
+      "ID": 22203010,
+      "Entries": [
+        "Defend large ballistic missiles"
+      ]
+    },
+    {
+      "ID": 22303000,
+      "Entries": [
+        "destroy the hacking device"
+      ]
+    },
+    {
+      "ID": 22303010,
+      "Entries": [
+        "Recovered parts: 0"
+      ]
+    },
+    {
+      "ID": 22303020,
+      "Entries": [
+        "Collected parts 1 piece"
+      ]
+    },
+    {
+      "ID": 22303030,
+      "Entries": [
+        "2 recovered parts"
+      ]
+    },
+    {
+      "ID": 22303040,
+      "Entries": [
+        "3 recovered parts"
+      ]
+    },
+    {
+      "ID": 22303050,
+      "Entries": [
+        "4 recovered parts"
+      ]
+    },
+    {
+      "ID": 22303060,
+      "Entries": [
+        "Collected parts 5 pieces"
+      ]
+    },
+    {
+      "ID": 22303070,
+      "Entries": [
+        "6 recovered parts"
+      ]
+    },
+    {
+      "ID": 22303080,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 22303090,
+      "Entries": [
+        "destroy enemy aircraft"
+      ]
+    },
+    {
+      "ID": 22303100,
+      "Entries": [
+        "Destruction target remaining"
+      ]
+    },
+    {
+      "ID": 22303110,
+      "Entries": [
+        "Head to the data delivery location"
+      ]
+    },
+    {
+      "ID": 22403000,
+      "Entries": [
+        "Independent Mercenary King/Defeat Chartreuse"
+      ]
+    },
+    {
+      "ID": 22403010,
+      "Entries": [
+        "Defeat the independent mercenary Ravens."
+      ]
+    },
+    {
+      "ID": 22503000,
+      "Entries": [
+        "Mission begins"
+      ]
+    },
+    {
+      "ID": 22503010,
+      "Entries": [
+        "Old world MT appears"
+      ]
+    },
+    {
+      "ID": 30003000,
+      "Entries": [
+        "Find the source of the signal"
+      ]
+    },
+    {
+      "ID": 30003010,
+      "Entries": [
+        "blank"
+      ]
+    },
+    {
+      "ID": 30003020,
+      "Entries": [
+        "destroy the transmitter"
+      ]
+    },
+    {
+      "ID": 30103000,
+      "Entries": [
+        "Hack a power generation facility"
+      ]
+    },
+    {
+      "ID": 30103100,
+      "Entries": [
+        "destroy the reinforcements"
+      ]
+    },
+    {
+      "ID": 30113000,
+      "Entries": [
+        "steal data"
+      ]
+    },
+    {
+      "ID": 30113020,
+      "Entries": [
+        "Prevent the transfer of observation data"
+      ]
+    },
+    {
+      "ID": 30113100,
+      "Entries": [
+        "Destroying an amphibious assault ship"
+      ]
+    },
+    {
+      "ID": 30303000,
+      "Entries": [
+        "Destruction of fuel plant"
+      ]
+    },
+    {
+      "ID": 30303100,
+      "Entries": [
+        "Defeat the enemy MT unit"
+      ]
+    },
+    {
+      "ID": 30433000,
+      "Entries": [
+        "Destroy an amphibious assault ship"
+      ]
+    },
+    {
+      "ID": 30433010,
+      "Entries": [
+        "replenish ammunition"
+      ]
+    },
+    {
+      "ID": 30433020,
+      "Entries": [
+        "Defeat enemy reinforcements"
+      ]
+    },
+    {
+      "ID": 30433030,
+      "Entries": [
+        "Boss battle"
+      ]
+    },
+    {
+      "ID": 30433040,
+      "Entries": [
+        "Approach the ice worm signal"
+      ]
+    },
+    {
+      "ID": 32303000,
+      "Entries": [
+        "C Weapon: Defeat the Ice Worm"
+      ]
+    },
+    {
+      "ID": 133203010,
+      "Entries": [
+        "control one's surroundings"
+      ]
+    },
+    {
+      "ID": 133203020,
+      "Entries": [
+        "go to destination"
+      ]
+    },
+    {
+      "ID": 34103000,
+      "Entries": [
+        "collect supplies"
+      ]
+    },
+    {
+      "ID": 34103010,
+      "Entries": [
+        "escape the mine shaft"
+      ]
+    },
+    {
+      "ID": 34103020,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 34203000,
+      "Entries": [
+        "Investigate the machinery at the bottom of the mine shaft"
+      ]
+    },
+    {
+      "ID": 34203010,
+      "Entries": [
+        "escape from the mine"
+      ]
+    },
+    {
+      "ID": 34303000,
+      "Entries": [
+        "\"Destroy the enemy aircraft\""
+      ]
+    },
+    {
+      "ID": 35003000,
+      "Entries": [
+        "Collect data logs"
+      ]
+    },
+    {
+      "ID": 40003000,
+      "Entries": [
+        "go deep"
+      ]
+    },
+    {
+      "ID": 40003100,
+      "Entries": [
+        "stop defense mechanism"
+      ]
+    },
+    {
+      "ID": 40003200,
+      "Entries": [
+        "Going deep 2"
+      ]
+    },
+    {
+      "ID": 40103000,
+      "Entries": [
+        "Depth 2: Reach the bottom"
+      ]
+    },
+    {
+      "ID": 40103010,
+      "Entries": [
+        "Depth 2: Reach the bottom"
+      ]
+    },
+    {
+      "ID": 40103100,
+      "Entries": [
+        "Destroy an unmanned defense weapon"
+      ]
+    },
+    {
+      "ID": 40103110,
+      "Entries": [
+        "Destroy an unmanned defense weapon"
+      ]
+    },
+    {
+      "ID": 40103120,
+      "Entries": [
+        "Destroy an unmanned defense weapon"
+      ]
+    },
+    {
+      "ID": 40203000,
+      "Entries": [
+        "Infiltrate the inside of a giant blast furnace"
+      ]
+    },
+    {
+      "ID": 40203010,
+      "Entries": [
+        "Destroy the pressure chamber"
+      ]
+    },
+    {
+      "ID": 40203100,
+      "Entries": [
+        "Escape from inside the blast furnace"
+      ]
+    },
+    {
+      "ID": 40203110,
+      "Entries": [
+        "Defeat Unmanned Defense AC Mayfly"
+      ]
+    },
+    {
+      "ID": 40213000,
+      "Entries": [
+        "Reach the depths of unexplored territory"
+      ]
+    },
+    {
+      "ID": 40213100,
+      "Entries": [
+        "Defeat the after image"
+      ]
+    },
+    {
+      "ID": 40213200,
+      "Entries": [
+        "move on"
+      ]
+    },
+    {
+      "ID": 40213300,
+      "Entries": [
+        "Defeat Rusty and Flat"
+      ]
+    },
+    {
+      "ID": 40303000,
+      "Entries": [
+        "Eliminate the AC unit of Corporate Entente"
+      ]
+    },
+    {
+      "ID": 40303010,
+      "Entries": [
+        "Aiming for a melange accumulation point"
+      ]
+    },
+    {
+      "ID": 40303020,
+      "Entries": [
+        "Search for melange"
+      ]
+    },
+    {
+      "ID": 40303100,
+      "Entries": [
+        "Destroy an unknown aircraft"
+      ]
+    },
+    {
+      "ID": 40303200,
+      "Entries": [
+        "Eliminate Vesper 2 Snail"
+      ]
+    },
+    {
+      "ID": 40303300,
+      "Entries": [
+        "Defeat Snail and Iguazu"
+      ]
+    },
+    {
+      "ID": 40303400,
+      "Entries": [
+        "listen/ignore"
+      ]
+    },
+    {
+      "ID": 41003000,
+      "Entries": [
+        "Break through the railroad"
+      ]
+    },
+    {
+      "ID": 41003010,
+      "Entries": [
+        "Break through the railroad"
+      ]
+    },
+    {
+      "ID": 41003020,
+      "Entries": [
+        "defeat red"
+      ]
+    },
+    {
+      "ID": 41003100,
+      "Entries": [
+        "destroy the enemy"
+      ]
+    },
+    {
+      "ID": 41103000,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 42003000,
+      "Entries": [
+        "reach the specified coordinates"
+      ]
+    },
+    {
+      "ID": 42003010,
+      "Entries": [
+        "destroy the enemy"
+      ]
+    },
+    {
+      "ID": 42003020,
+      "Entries": [
+        "Head to the escape point"
+      ]
+    },
+    {
+      "ID": 50103000,
+      "Entries": [
+        "Defend the control tower"
+      ]
+    },
+    {
+      "ID": 50203000,
+      "Entries": [
+        "Eliminate the ace machine of corporate cooperation"
+      ]
+    },
+    {
+      "ID": 50203010,
+      "Entries": [
+        "Go to the rescue of friendly forces"
+      ]
+    },
+    {
+      "ID": 50203020,
+      "Entries": [
+        "Vesper 1 defeats Freud"
+      ]
+    },
+    {
+      "ID": 50303000,
+      "Entries": [
+        "Destroy the generator and bather drum"
+      ]
+    },
+    {
+      "ID": 50303010,
+      "Entries": [
+        "Infiltrate the trench city"
+      ]
+    },
+    {
+      "ID": 50303020,
+      "Entries": [
+        "Fight together with Ash to remove obstacles"
+      ]
+    },
+    {
+      "ID": 50303030,
+      "Entries": [
+        "Defeat an unknown enemy"
+      ]
+    },
+    {
+      "ID": 50303040,
+      "Entries": [
+        "Update to destroy generators and bather drums"
+      ]
+    },
+    {
+      "ID": 50303050,
+      "Entries": [
+        "go to the deepest end"
+      ]
+    },
+    {
+      "ID": 50403000,
+      "Entries": [
+        "Intercept the main fleet of the Corporate Entente"
+      ]
+    },
+    {
+      "ID": 50403010,
+      "Entries": [
+        "Eliminate the main fleet in the forward sector"
+      ]
+    },
+    {
+      "ID": 50403020,
+      "Entries": [
+        "Defeat Ash"
+      ]
+    },
+    {
+      "ID": 50503010,
+      "Entries": [
+        "Eliminate Cinder Kara"
+      ]
+    },
+    {
+      "ID": 51003000,
+      "Entries": [
+        "Stop ECM fog control device"
+      ]
+    },
+    {
+      "ID": 51003010,
+      "Entries": [
+        "Examine the wreckage of the research drone"
+      ]
+    },
+    {
+      "ID": 51003020,
+      "Entries": [
+        "Destroy a large armed helicopter"
+      ]
+    },
+    {
+      "ID": 51003030,
+      "Entries": [
+        "Defeat enemy AC"
+      ]
+    },
+    {
+      "ID": 51003040,
+      "Entries": [
+        "Stop ECM fog control device"
+      ]
+    },
+    {
+      "ID": 51003050,
+      "Entries": [
+        "intercept enemy aircraft"
+      ]
+    },
+    {
+      "ID": 51103000,
+      "Entries": [
+        "destroy all targets"
+      ]
+    },
+    {
+      "ID": 51103010,
+      "Entries": [
+        "Destroy the control room objective"
+      ]
+    },
+    {
+      "ID": 51103020,
+      "Entries": [
+        "Reach Xylem central control room"
+      ]
+    },
+    {
+      "ID": 60003000,
+      "Entries": [
+        "Defeat Win"
+      ]
+    },
+    {
+      "ID": 60103000,
+      "Entries": [
+        "destroy the ramjet engine"
+      ]
+    },
+    {
+      "ID": 60103010,
+      "Entries": [
+        "Defeat Leicester"
+      ]
+    },
+    {
+      "ID": 60203000,
+      "Entries": [
+        "Defeat Yuria"
+      ]
+    },
+    {
+      "ID": 79003000,
+      "Entries": [
+        "Destroy a resource transport helicopter"
+      ]
+    },
+    {
+      "ID": 79103000,
+      "Entries": [
+        "annihilate the enemy"
+      ]
+    },
+    {
+      "ID": 79203000,
+      "Entries": [
+        "Infiltrate the occupied base"
+      ]
+    },
+    {
+      "ID": 79203010,
+      "Entries": [
+        "Destroy the MT troops"
+      ]
+    },
+    {
+      "ID": 79303000,
+      "Entries": [
+        "Intercept the Bayram MT unit"
+      ]
+    },
+    {
+      "ID": 79303010,
+      "Entries": [
+        "Defeat G1 Michigan"
+      ]
+    },
+    {
+      "ID": 79403000,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 79503000,
+      "Entries": [
+        "Defeat the unidentified AC"
+      ]
+    },
+    {
+      "ID": 79603000,
+      "Entries": [
+        "Destroy the other Dozer MTs"
+      ]
+    },
+    {
+      "ID": 79703000,
+      "Entries": [
+        "destroy the turret"
+      ]
+    },
+    {
+      "ID": 79803000,
+      "Entries": [
+        "Destroy enemy AC"
+      ]
+    },
+    {
+      "ID": 79903000,
+      "Entries": [
+        "Destroy the planetary blockade organization enforcement force"
+      ]
+    },
+    {
+      "ID": 90015000,
+      "Entries": [
+        "\"License Certification\""
+      ]
+    },
+    {
+      "ID": 90015001,
+      "Entries": [
+        "2nd round of “License Certification”"
+      ]
+    },
+    {
+      "ID": 90015002,
+      "Entries": [
+        "“License Certification” C not achieved after 2nd round"
+      ]
+    },
+    {
+      "ID": 90015003,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015004,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015005,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015006,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015007,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015008,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015009,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015010,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015011,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 90015012,
+      "Entries": [
+        "Not used"
+      ]
+    },
+    {
+      "ID": 91000000,
+      "Entries": [
+        "Voicemail_Walter"
+      ]
+    },
+    {
+      "ID": 91000010,
+      "Entries": [
+        "Voicemail_All Mind"
+      ]
+    },
+    {
+      "ID": 91000020,
+      "Entries": [
+        "Voicemail_Rusty"
+      ]
+    },
+    {
+      "ID": 91000030,
+      "Entries": [
+        "voicemail_air"
+      ]
+    },
+    {
+      "ID": 91000040,
+      "Entries": [
+        "Voicemail_Carla"
+      ]
+    },
+    {
+      "ID": 91000050,
+      "Entries": [
+        "Voicemail_Iguazu"
+      ]
+    },
+    {
+      "ID": 91000060,
+      "Entries": [
+        "Voicemail_COM"
+      ]
+    },
+    {
+      "ID": 91000070,
+      "Entries": [
+        "Voicemail_Pater"
+      ]
+    },
+    {
+      "ID": 91000080,
+      "Entries": [
+        "Voicemail_Red"
+      ]
+    },
+    {
+      "ID": 91000090,
+      "Entries": [
+        "Voicemail_Rubicon"
+      ]
+    },
+    {
+      "ID": 91000100,
+      "Entries": [
+        "Voicemail_Chati"
+      ]
+    },
+    {
+      "ID": 91000110,
+      "Entries": [
+        "Voicemail_Kate"
+      ]
+    },
+    {
+      "ID": 91000200,
+      "Entries": [
+        "Whiskey_Michigan"
+      ]
+    },
+    {
+      "ID": 91000210,
+      "Entries": [
+        "Hiso Hiso_Snail"
+      ]
+    },
+    {
+      "ID": 91000220,
+      "Entries": [
+        "whisper_kara"
+      ]
+    },
+    {
+      "ID": 110003021,
+      "Entries": [
+        "PROGRAM START"
+      ]
+    },
+    {
+      "ID": 110003022,
+      "Entries": [
+        "PROGRAM COMPLETE"
+      ]
+    },
+    {
+      "ID": 110003023,
+      "Entries": [
+        "PROGRAM ABORTED"
+      ]
+    },
+    {
+      "ID": 210001000,
+      "Entries": [
+        "3VS3 rules_Start of battle"
+      ]
+    },
+    {
+      "ID": 260001000,
+      "Entries": [
+        "1VS1 rules_Start of battle"
+      ]
+    },
+    {
+      "ID": 260001001,
+      "Entries": [
+        "1VS1 rule_1st round start"
+      ]
+    },
+    {
+      "ID": 260001002,
+      "Entries": [
+        "1VS1 rule_2nd round starts"
+      ]
+    },
+    {
+      "ID": 260001003,
+      "Entries": [
+        "1VS1 rule_Start of 3rd round"
+      ]
+    },
+    {
+      "ID": 260001021,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round"
+      ]
+    },
+    {
+      "ID": 260001022,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round"
+      ]
+    },
+    {
+      "ID": 260001023,
+      "Entries": [
+        "1VS1 rule_before the start of the 1st round"
+      ]
+    },
+    {
+      "ID": 260001050,
+      "Entries": [
+        "3VS3 rules_Start of battle"
+      ]
+    },
+    {
+      "ID": 260001055,
+      "Entries": [
+        "3VS3 rules_before the battle starts"
+      ]
+    },
+    {
+      "ID": 260001100,
+      "Entries": [
+        "Defeat the enemy 1on1"
+      ]
+    },
+    {
+      "ID": 260001105,
+      "Entries": [
+        "Defeat the enemy in 3on3"
+      ]
+    },
+    {
+      "ID": 260001200,
+      "Entries": [
+        "Player defeated and killed"
+      ]
+    },
+    {
+      "ID": 260001205,
+      "Entries": [
+        "Player falls to death"
+      ]
+    },
+    {
+      "ID": 260001210,
+      "Entries": [
+        "Player defeated and killed 3on3"
+      ]
+    },
+    {
+      "ID": 260001215,
+      "Entries": [
+        "Player falls to death 3on3"
+      ]
+    },
+    {
+      "ID": 260002000,
+      "Entries": [
+        "1VS1 rule_total result draw"
+      ]
+    },
+    {
+      "ID": 260002001,
+      "Entries": [
+        "1VS1 rule_1st round draw"
+      ]
+    },
+    {
+      "ID": 260002100,
+      "Entries": [
+        "1VS1 rule_total result victory"
+      ]
+    },
+    {
+      "ID": 260002101,
+      "Entries": [
+        "1VS1 rule_1st round victory"
+      ]
+    },
+    {
+      "ID": 260002102,
+      "Entries": [
+        "1VS1 rule_2nd round victory"
+      ]
+    },
+    {
+      "ID": 260002110,
+      "Entries": [
+        "1VS1 rules_Total result A victory_For spectators"
+      ]
+    },
+    {
+      "ID": 260002111,
+      "Entries": [
+        "1VS1 rule_1st round A victory_for spectators"
+      ]
+    },
+    {
+      "ID": 260002112,
+      "Entries": [
+        "1VS1 rule_2nd round A victory_for spectators"
+      ]
+    },
+    {
+      "ID": 260002120,
+      "Entries": [
+        "1VS1 rule_Total result B victory_For spectators"
+      ]
+    },
+    {
+      "ID": 260002121,
+      "Entries": [
+        "1VS1 rule_1st round B victory_for spectators"
+      ]
+    },
+    {
+      "ID": 260002122,
+      "Entries": [
+        "1VS1 rule_2nd round B victory_for spectators"
+      ]
+    },
+    {
+      "ID": 260002200,
+      "Entries": [
+        "1VS1 rule_total result defeat"
+      ]
+    },
+    {
+      "ID": 260002201,
+      "Entries": [
+        "1VS1 rule_1st round defeat"
+      ]
+    },
+    {
+      "ID": 260002202,
+      "Entries": [
+        "1VS1 rule_2nd round defeat"
+      ]
+    },
+    {
+      "ID": 260003000,
+      "Entries": [
+        "time up"
+      ]
+    },
+    {
+      "ID": 260003010,
+      "Entries": [
+        "3VS3 time UP"
+      ]
+    },
+    {
+      "ID": 260004000,
+      "Entries": [
+        "3VS3 rules_respawn"
+      ]
+    },
+    {
+      "ID": 260005000,
+      "Entries": [
+        "3VS3 rules_total result draw"
+      ]
+    },
+    {
+      "ID": 260005100,
+      "Entries": [
+        "3VS3 rules_total result victory"
+      ]
+    },
+    {
+      "ID": 260005110,
+      "Entries": [
+        "3VS3 rules_Total result A victory_For spectators"
+      ]
+    },
+    {
+      "ID": 260005120,
+      "Entries": [
+        "3VS3 rules_Total result B victory_For spectators"
+      ]
+    },
+    {
+      "ID": 260005200,
+      "Entries": [
+        "3VS3 rule_total result defeat"
+      ]
+    },
+    {
+      "ID": 260009000,
+      "Entries": [
+        "Arena pre-fight performance"
+      ]
+    },
+    {
+      "ID": 260009900,
+      "Entries": [
+        "1VS1 rule pre-match production A"
+      ]
+    },
+    {
+      "ID": 260009901,
+      "Entries": [
+        "1VS1 rule pre-match production B"
+      ]
+    },
+    {
+      "ID": 260009902,
+      "Entries": [
+        "3VS3 rule pre-match production A"
+      ]
+    },
+    {
+      "ID": 260009903,
+      "Entries": [
+        "3VS3 rule pre-competition production B"
+      ]
+    }
+  ]
+}

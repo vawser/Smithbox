@@ -1,0 +1,869 @@
+{
+  "Name": "PlayRegionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Invalid data (no deletion)"
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        "High Wall of Lothric - Initial Area up to Tower on the Wall bonfire"
+      ]
+    },
+    {
+      "ID": 300002,
+      "Entries": [
+        "High Wall of Lothric - Darkwraith Chamber"
+      ]
+    },
+    {
+      "ID": 300003,
+      "Entries": [
+        "High Wall of Lothric - From Tower on the Wall to Courtyard (Bonfire 2)"
+      ]
+    },
+    {
+      "ID": 300004,
+      "Entries": [
+        "High Wall of Lothric - Lower High Wall"
+      ]
+    },
+    {
+      "ID": 300006,
+      "Entries": [
+        "High Wall of Lothric - Dancer of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 300007,
+      "Entries": [
+        "High Wall of Lothric - Vordt of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 300008,
+      "Entries": [
+        "High Wall of Lothric - High Wall (Post-Dancer)"
+      ]
+    },
+    {
+      "ID": 300009,
+      "Entries": [
+        "High Wall of Lothric - High Wall (Post-Vordt)"
+      ]
+    },
+    {
+      "ID": 300020,
+      "Entries": [
+        "High Wall of Lothric - Consumed King's Garden - Upper"
+      ]
+    },
+    {
+      "ID": 300021,
+      "Entries": [
+        "High Wall of Lothric - Consumed King's Garden - Lower"
+      ]
+    },
+    {
+      "ID": 300022,
+      "Entries": [
+        "High Wall of Lothric - Consumed King's Garden - Courtyard"
+      ]
+    },
+    {
+      "ID": 300023,
+      "Entries": [
+        "High Wall of Lothric - Oceiros Arena"
+      ]
+    },
+    {
+      "ID": 300024,
+      "Entries": [
+        "High Wall of Lothric - Untended Graves Passage"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Lothric Castle"
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        "Lothric Castle - Dragon Barracks"
+      ]
+    },
+    {
+      "ID": 301002,
+      "Entries": [
+        "Lothric Castle - Lower Barracks"
+      ]
+    },
+    {
+      "ID": 301003,
+      "Entries": [
+        "Lothric Castle - Altar of Sunlight"
+      ]
+    },
+    {
+      "ID": 301010,
+      "Entries": [
+        "Lothric Castle - Dragonslayer Armour"
+      ]
+    },
+    {
+      "ID": 301011,
+      "Entries": [
+        "Lothric Castle - None"
+      ]
+    },
+    {
+      "ID": 310000,
+      "Entries": [
+        "Undead Settlement - Foot of the High Wall"
+      ]
+    },
+    {
+      "ID": 310001,
+      "Entries": [
+        "Undead Settlement - Dilapidated Bridge"
+      ]
+    },
+    {
+      "ID": 310002,
+      "Entries": [
+        "Undead Settlement - Cliff Underside"
+      ]
+    },
+    {
+      "ID": 310003,
+      "Entries": [
+        "Undead Settlement - Irina's Cell"
+      ]
+    },
+    {
+      "ID": 310004,
+      "Entries": [
+        "Undead Settlement - None"
+      ]
+    },
+    {
+      "ID": 310020,
+      "Entries": [
+        "Undead Settlement - Curse-rotted Greatwood"
+      ]
+    },
+    {
+      "ID": 310021,
+      "Entries": [
+        "Undead Settlement - Just Before Crucifixion Woods (Road of Sacrifices)"
+      ]
+    },
+    {
+      "ID": 320001,
+      "Entries": [
+        "Archdragon Peak - None"
+      ]
+    },
+    {
+      "ID": 320002,
+      "Entries": [
+        "Archdragon Peak"
+      ]
+    },
+    {
+      "ID": 320010,
+      "Entries": [
+        "Archdragon Peak - Ancient Wyvern"
+      ]
+    },
+    {
+      "ID": 320011,
+      "Entries": [
+        "Archdragon Peak - Dragon-kin Mausoleum"
+      ]
+    },
+    {
+      "ID": 320012,
+      "Entries": [
+        "Archdragon Peak - King of the Storm and Nameless King"
+      ]
+    },
+    {
+      "ID": 320013,
+      "Entries": [
+        "Archdragon Peak - Great Belfry"
+      ]
+    },
+    {
+      "ID": 320020,
+      "Entries": [
+        "Archdragon Peak - Mausoleum Lift"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "Crucifixion Woods"
+      ]
+    },
+    {
+      "ID": 330001,
+      "Entries": [
+        "Crucifixion Woods - Crystal Sage"
+      ]
+    },
+    {
+      "ID": 330002,
+      "Entries": [
+        "Crucifixion Woods - Halfway Fortress"
+      ]
+    },
+    {
+      "ID": 330010,
+      "Entries": [
+        "Farron Keep - Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 330011,
+      "Entries": [
+        "Farron Keep - Keep Ruins"
+      ]
+    },
+    {
+      "ID": 330012,
+      "Entries": [
+        "Farron Keep - Swamp"
+      ]
+    },
+    {
+      "ID": 330013,
+      "Entries": [
+        "Farron Keep - Old Wolf of Farron Bonfire"
+      ]
+    },
+    {
+      "ID": 330014,
+      "Entries": [
+        "Farron Keep - Inside the Wolf Blood (Pre-Abyss Watchers)"
+      ]
+    },
+    {
+      "ID": 330015,
+      "Entries": [
+        "Farron Keep - Farron Keep Perimeter"
+      ]
+    },
+    {
+      "ID": 330020,
+      "Entries": [
+        "Crucifixion Woods - Road of Sacrifices"
+      ]
+    },
+    {
+      "ID": 330021,
+      "Entries": [
+        "Crucifixion Woods - Road to Cathedral of the Deep (Post-Crystal Sage)"
+      ]
+    },
+    {
+      "ID": 330022,
+      "Entries": [
+        "Crucifixion Woods - None"
+      ]
+    },
+    {
+      "ID": 341000,
+      "Entries": [
+        "Grand Archives"
+      ]
+    },
+    {
+      "ID": 341001,
+      "Entries": [
+        "Grand Archives - Archive Rooftops"
+      ]
+    },
+    {
+      "ID": 341002,
+      "Entries": [
+        "Grand Archives - Post-Ganker NPC Trio"
+      ]
+    },
+    {
+      "ID": 341003,
+      "Entries": [
+        "Grand Archives - Grand Rooftop"
+      ]
+    },
+    {
+      "ID": 341010,
+      "Entries": [
+        "Grand Archives - Twin Princes"
+      ]
+    },
+    {
+      "ID": 341011,
+      "Entries": [
+        "Grand Archives - None"
+      ]
+    },
+    {
+      "ID": 350000,
+      "Entries": [
+        "Cathedral of the Deep - Deacons of the Deep"
+      ]
+    },
+    {
+      "ID": 350001,
+      "Entries": [
+        "Cathedral of the Deep - Cleansing Chapel"
+      ]
+    },
+    {
+      "ID": 350002,
+      "Entries": [
+        "Cathedral of the Deep - Below Chapel"
+      ]
+    },
+    {
+      "ID": 350003,
+      "Entries": [
+        "Cathedral of the Deep - Outside Great Cathedral Door"
+      ]
+    },
+    {
+      "ID": 350004,
+      "Entries": [
+        "Cathedral of the Deep"
+      ]
+    },
+    {
+      "ID": 350005,
+      "Entries": [
+        "Cathedral of the Deep - Pre-Deacons"
+      ]
+    },
+    {
+      "ID": 350010,
+      "Entries": [
+        "Cathedral of the Deep - Rosaria's Bed Chambers"
+      ]
+    },
+    {
+      "ID": 350011,
+      "Entries": [
+        "Cathedral of the Deep - Pre-Rosaria"
+      ]
+    },
+    {
+      "ID": 350020,
+      "Entries": [
+        "Cathedral of the Deep - Pre-Cleansing Chapel"
+      ]
+    },
+    {
+      "ID": 360001,
+      "Entries": [
+        "God Grave _01"
+      ]
+    },
+    {
+      "ID": 360002,
+      "Entries": [
+        "God Grave _02"
+      ]
+    },
+    {
+      "ID": 360003,
+      "Entries": [
+        "God Grave _03"
+      ]
+    },
+    {
+      "ID": 370001,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Central Irithyll"
+      ]
+    },
+    {
+      "ID": 370002,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Church of Yorshka"
+      ]
+    },
+    {
+      "ID": 370003,
+      "Entries": [
+        "Irithyll of the Boreal Valley"
+      ]
+    },
+    {
+      "ID": 370004,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Kitchen (Siegward's Fireplace)"
+      ]
+    },
+    {
+      "ID": 370005,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Pre-Pontiff"
+      ]
+    },
+    {
+      "ID": 370006,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Pontiff Sullyvahn"
+      ]
+    },
+    {
+      "ID": 370007,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Pontiff Beast Bridge Entrance"
+      ]
+    },
+    {
+      "ID": 370008,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Tower of Yorshka"
+      ]
+    },
+    {
+      "ID": 370010,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Pontiff's PVP Hotspot (Post-Pontiff Sullyvahn)"
+      ]
+    },
+    {
+      "ID": 370011,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Darkmoon Tomb (Past Gwyn's illusory statue)"
+      ]
+    },
+    {
+      "ID": 370012,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Anor Londo"
+      ]
+    },
+    {
+      "ID": 370013,
+      "Entries": [
+        "Irithyll of the Boreal Valley - Aldrich, Devourer of Gods"
+      ]
+    },
+    {
+      "ID": 380000,
+      "Entries": [
+        "Catacombs of Carthus - High Lord Wolnir"
+      ]
+    },
+    {
+      "ID": 380001,
+      "Entries": [
+        "Catacombs of Carthus - Entrance (1st Bonfire)"
+      ]
+    },
+    {
+      "ID": 380002,
+      "Entries": [
+        "Catacombs of Carthus - Past Boulder Stairs"
+      ]
+    },
+    {
+      "ID": 380003,
+      "Entries": [
+        "Catacombs of Carthus - None"
+      ]
+    },
+    {
+      "ID": 380010,
+      "Entries": [
+        "Demon Ruins - Old Demon King"
+      ]
+    },
+    {
+      "ID": 380011,
+      "Entries": [
+        "Demon Ruins - None"
+      ]
+    },
+    {
+      "ID": 380012,
+      "Entries": [
+        "Demon Ruins - Abandoned Tomb"
+      ]
+    },
+    {
+      "ID": 380013,
+      "Entries": [
+        "Demon Ruins - Horace's Cave"
+      ]
+    },
+    {
+      "ID": 380014,
+      "Entries": [
+        "Demon Ruins - Giant Avelyn"
+      ]
+    },
+    {
+      "ID": 380015,
+      "Entries": [
+        "Demon Ruins - Old King's Antechamber"
+      ]
+    },
+    {
+      "ID": 380016,
+      "Entries": [
+        "Demon Ruins - None"
+      ]
+    },
+    {
+      "ID": 380020,
+      "Entries": [
+        "Catacombs of Carthus - Post-Abyss Watchers"
+      ]
+    },
+    {
+      "ID": 380021,
+      "Entries": [
+        "Catacombs of Carthus - Post-High Lord Wolnir (Catacombs to Irithyll)"
+      ]
+    },
+    {
+      "ID": 390000,
+      "Entries": [
+        "Irithyll Dungeon"
+      ]
+    },
+    {
+      "ID": 390001,
+      "Entries": [
+        "Irithyll Dungeon - Sleeping Giant"
+      ]
+    },
+    {
+      "ID": 390002,
+      "Entries": [
+        "Irithyll Dungeon - Lower Dungeon"
+      ]
+    },
+    {
+      "ID": 390003,
+      "Entries": [
+        "Profaned Capital"
+      ]
+    },
+    {
+      "ID": 390004,
+      "Entries": [
+        "Profaned Capital - Pre-Yhorm"
+      ]
+    },
+    {
+      "ID": 390005,
+      "Entries": [
+        "Profaned Capital - Yhorm the Giant"
+      ]
+    },
+    {
+      "ID": 390006,
+      "Entries": [
+        "Profaned Capital - None"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 400001,
+      "Entries": [
+        "Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 400002,
+      "Entries": [
+        "Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 400010,
+      "Entries": [
+        "Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 400100,
+      "Entries": [
+        "Cemetery of Ash - Iudex Gundyr"
+      ]
+    },
+    {
+      "ID": 400101,
+      "Entries": [
+        "Cemetery of Ash"
+      ]
+    },
+    {
+      "ID": 400102,
+      "Entries": [
+        "Cemetery of Ash - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 400110,
+      "Entries": [
+        "Cemetery of Ash - None"
+      ]
+    },
+    {
+      "ID": 410000,
+      "Entries": [
+        "Kiln of the First Flame - Soul of Cinder Arena"
+      ]
+    },
+    {
+      "ID": 410001,
+      "Entries": [
+        "Kiln of the First Flame - Path to the Kiln"
+      ]
+    },
+    {
+      "ID": 410002,
+      "Entries": [
+        "Kiln of the First Flame - Flameless Shrine"
+      ]
+    },
+    {
+      "ID": 450000,
+      "Entries": [
+        "Painted World of Ariandel - Sister Friede and Father Ariandel"
+      ]
+    },
+    {
+      "ID": 450001,
+      "Entries": [
+        "Painted World of Ariandel - Snowfield"
+      ]
+    },
+    {
+      "ID": 450002,
+      "Entries": [
+        "Painted World of Ariandel - Corvian Settlement"
+      ]
+    },
+    {
+      "ID": 450003,
+      "Entries": [
+        "Painted World of Ariandel - Snowy Mountain Pass"
+      ]
+    },
+    {
+      "ID": 450004,
+      "Entries": [
+        "Painted World of Ariandel - None"
+      ]
+    },
+    {
+      "ID": 450005,
+      "Entries": [
+        "Painted World of Ariandel - Ariandel Chapel"
+      ]
+    },
+    {
+      "ID": 450006,
+      "Entries": [
+        "Painted World of Ariandel - None"
+      ]
+    },
+    {
+      "ID": 450010,
+      "Entries": [
+        "Painted World of Ariandel - Champion's Gravetender"
+      ]
+    },
+    {
+      "ID": 450011,
+      "Entries": [
+        "Painted World of Ariandel - Depths of the Painting"
+      ]
+    },
+    {
+      "ID": 450020,
+      "Entries": [
+        "Painted World of Ariandel - Priscilla's Arena"
+      ]
+    },
+    {
+      "ID": 460000,
+      "Entries": [
+        "Arena - Grand Roof"
+      ]
+    },
+    {
+      "ID": 470000,
+      "Entries": [
+        "Arena - Kiln of Flame"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Dreg Heap - Demon Prince"
+      ]
+    },
+    {
+      "ID": 500001,
+      "Entries": [
+        "Dreg Heap"
+      ]
+    },
+    {
+      "ID": 500002,
+      "Entries": [
+        "Dreg Heap - Earthen Peak Ruins"
+      ]
+    },
+    {
+      "ID": 500003,
+      "Entries": [
+        "Dreg Heap - Within the Earthen Peak Ruins"
+      ]
+    },
+    {
+      "ID": 500020,
+      "Entries": [
+        "Dreg Heap - None"
+      ]
+    },
+    {
+      "ID": 510000,
+      "Entries": [
+        "Ringed City - Halflight, Spear of the Church"
+      ]
+    },
+    {
+      "ID": 510001,
+      "Entries": [
+        "Ringed City - Mausoleum Lookout"
+      ]
+    },
+    {
+      "ID": 510002,
+      "Entries": [
+        "Ringed City - Ringed Inner Wall"
+      ]
+    },
+    {
+      "ID": 510003,
+      "Entries": [
+        "Ringed City - Ringed City Streets"
+      ]
+    },
+    {
+      "ID": 510004,
+      "Entries": [
+        "Ringed City - Shared Grave"
+      ]
+    },
+    {
+      "ID": 510005,
+      "Entries": [
+        "Ringed City - Post-Midir Bridge"
+      ]
+    },
+    {
+      "ID": 510010,
+      "Entries": [
+        "Ringed City - Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 510011,
+      "Entries": [
+        "Ringed City - Pre-Darkeater Midir"
+      ]
+    },
+    {
+      "ID": 510020,
+      "Entries": [
+        "Ringed City - Church of Filianore"
+      ]
+    },
+    {
+      "ID": 511000,
+      "Entries": [
+        "Filianore's Rest - Slave Knight Gael"
+      ]
+    },
+    {
+      "ID": 511001,
+      "Entries": [
+        "Filianore's Rest"
+      ]
+    },
+    {
+      "ID": 511010,
+      "Entries": [
+        "Filianore's Rest - Broken Church"
+      ]
+    },
+    {
+      "ID": 511020,
+      "Entries": [
+        "Filianore's Rest - None"
+      ]
+    },
+    {
+      "ID": 530000,
+      "Entries": [
+        "Arena - Dragon Ruins"
+      ]
+    },
+    {
+      "ID": 540000,
+      "Entries": [
+        "Arena - Round Plaza"
+      ]
+    },
+    {
+      "ID": 981001,
+      "Entries": [
+        "Test Map _01"
+      ]
+    },
+    {
+      "ID": 981002,
+      "Entries": [
+        "Test Map _02"
+      ]
+    },
+    {
+      "ID": 981003,
+      "Entries": [
+        "Test Map _03"
+      ]
+    },
+    {
+      "ID": 981004,
+      "Entries": [
+        "Test Map _04"
+      ]
+    },
+    {
+      "ID": 981005,
+      "Entries": [
+        "Test Map _05"
+      ]
+    }
+  ]
+}

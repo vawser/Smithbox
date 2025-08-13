@@ -1,0 +1,1157 @@
+{
+  "Name": "npctalkparam_m10_14_00_00",
+  "Entries": [
+    {
+      "ID": 69200010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200430,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200520,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200530,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200540,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200610,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200640,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200650,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200820,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200830,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200840,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200920,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200930,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69200940,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 69201040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74201000,
+      "Entries": [
+        "Battle Events: Conversation"
+      ]
+    },
+    {
+      "ID": 74201100,
+      "Entries": [
+        "Player: Talkto: Part 1"
+      ]
+    },
+    {
+      "ID": 74201110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201200,
+      "Entries": [
+        "Player: Talkto: Part 2"
+      ]
+    },
+    {
+      "ID": 74201210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201220,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201230,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201240,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201300,
+      "Entries": [
+        "Player: Talkto: Part 3"
+      ]
+    },
+    {
+      "ID": 74201400,
+      "Entries": [
+        "Player Non-Player: Talking To: Part 1"
+      ]
+    },
+    {
+      "ID": 74201500,
+      "Entries": [
+        "Player Non-Player: Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 74201510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201600,
+      "Entries": [
+        "Patch Death: Talking To: Part 1(Unless you have a warrior ring, you'll have to loop alone."
+      ]
+    },
+    {
+      "ID": 74201610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201700,
+      "Entries": [
+        "Patch Death: Talking To: Part 2"
+      ]
+    },
+    {
+      "ID": 74201710,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201720,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201730,
+      "Entries": [
+        "↓ YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 74201800,
+      "Entries": [
+        "Patch Death: Talking To: Part 2:YES"
+      ]
+    },
+    {
+      "ID": 74201810,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201820,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201830,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201840,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74201900,
+      "Entries": [
+        "Patch Death: Talkto: Part 3 (Single Loop)"
+      ]
+    },
+    {
+      "ID": 74202000,
+      "Entries": [
+        "Patch Death: Talking To: Part 2:NO(After this, it transitions to hostility)"
+      ]
+    },
+    {
+      "ID": 74202100,
+      "Entries": [
+        "Explosion Treasure Chest Time"
+      ]
+    },
+    {
+      "ID": 74206000,
+      "Entries": [
+        "Player Addition: Transfer of equipment"
+      ]
+    },
+    {
+      "ID": 74206010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 74209000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 74209100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 74209200,
+      "Entries": [
+        "Resume dissinginating"
+      ]
+    },
+    {
+      "ID": 74209300,
+      "Entries": [
+        "Killing players"
+      ]
+    },
+    {
+      "ID": 74209400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74209410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74209420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 74209500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 74209600,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 74401200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401310,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401320,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401330,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401340,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401510,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74401600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74406000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74406010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409300,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409410,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409420,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409500,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 74409600,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 77500300,
+      "Entries": [
+        "Talk to: First Time"
+      ]
+    },
+    {
+      "ID": 77500310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500330,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500350,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500360,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500380,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500390,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500400,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77500510,
+      "Entries": [
+        "Talk to: Free time"
+      ]
+    },
+    {
+      "ID": 77500530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77501100,
+      "Entries": [
+        "Menu: Walk Away: Non-purchase"
+      ]
+    },
+    {
+      "ID": 77501300,
+      "Entries": [
+        "Menu Conversation: Part 1"
+      ]
+    },
+    {
+      "ID": 77501310,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77501320,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77501400,
+      "Entries": [
+        "Greetings: Continuous 1"
+      ]
+    },
+    {
+      "ID": 77501500,
+      "Entries": [
+        "Greetings: Continuous 2"
+      ]
+    },
+    {
+      "ID": 77501600,
+      "Entries": [
+        "Greetings: First time in a while 1"
+      ]
+    },
+    {
+      "ID": 77501700,
+      "Entries": [
+        "Greetings: It's been a while 2"
+      ]
+    },
+    {
+      "ID": 77502200,
+      "Entries": [
+        "Menu: Walk Away: Purchase"
+      ]
+    },
+    {
+      "ID": 77502300,
+      "Entries": [
+        "Menu: Cancel"
+      ]
+    },
+    {
+      "ID": 77502400,
+      "Entries": [
+        "Menu Conversation: Part 2:When The King's Soul Is Not Available"
+      ]
+    },
+    {
+      "ID": 77502410,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502420,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502430,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502500,
+      "Entries": [
+        "Menu Conversation: Part 3"
+      ]
+    },
+    {
+      "ID": 77502510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502520,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502530,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502600,
+      "Entries": [
+        "Menu Conversation: Part 4"
+      ]
+    },
+    {
+      "ID": 77502610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 77502630,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 77505000,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 77505010,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 77505020,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 77505030,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77505040,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77505050,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 77505060,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 77505070,
+      "Entries": [
+        "Death"
+      ]
+    },
+    {
+      "ID": 77506000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 78400000,
+      "Entries": [
+        "talkto_part one"
+      ]
+    },
+    {
+      "ID": 78400010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400020,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400030,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400040,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400050,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400100,
+      "Entries": [
+        "talkto_part 2"
+      ]
+    },
+    {
+      "ID": 78400110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400120,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400130,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400140,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78400200,
+      "Entries": [
+        "Talk(Continuous)"
+      ]
+    },
+    {
+      "ID": 78400300,
+      "Entries": [
+        "Talk(Continuous)"
+      ]
+    },
+    {
+      "ID": 78400400,
+      "Entries": [
+        "TalkIt's been a while."
+      ]
+    },
+    {
+      "ID": 78400500,
+      "Entries": [
+        "TalkIt's been a while."
+      ]
+    },
+    {
+      "ID": 78400600,
+      "Entries": [
+        "Menu \"Go Away\"I took advantage of"
+      ]
+    },
+    {
+      "ID": 78400700,
+      "Entries": [
+        "Menu \"Go Away\"I didn't use it."
+      ]
+    },
+    {
+      "ID": 78400800,
+      "Entries": [
+        "they leave suddenly"
+      ]
+    },
+    {
+      "ID": 78405000,
+      "Entries": [
+        "Menu: Sin sin YES/NO dialog"
+      ]
+    },
+    {
+      "ID": 78405100,
+      "Entries": [
+        "Menu: Pardon: YES/NO Dialog: YES"
+      ]
+    },
+    {
+      "ID": 78405110,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78405200,
+      "Entries": [
+        "Menu: Pardon: YES/NO Dialog: NO"
+      ]
+    },
+    {
+      "ID": 78405210,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78405300,
+      "Entries": [
+        "Menu: Pledge Discard YES/NO Dialog"
+      ]
+    },
+    {
+      "ID": 78405400,
+      "Entries": [
+        "Menu: Pledge Discard: YES/NO Dialog: YES"
+      ]
+    },
+    {
+      "ID": 78405500,
+      "Entries": [
+        "Menu: Pledge Destroy: YES/NO Dialog: NO"
+      ]
+    },
+    {
+      "ID": 78405510,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78405600,
+      "Entries": [
+        "Menu: Conversation: Part 1 (Loop)"
+      ]
+    },
+    {
+      "ID": 78405610,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78405620,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78406000,
+      "Entries": [
+        "Transfer of equipment (condition: more than a certain level of faith)"
+      ]
+    },
+    {
+      "ID": 78406010,
+      "Entries": [
+        "↓"
+      ]
+    },
+    {
+      "ID": 78409000,
+      "Entries": [
+        "End of role in spiritualization"
+      ]
+    },
+    {
+      "ID": 78409100,
+      "Entries": [
+        "Hostile"
+      ]
+    },
+    {
+      "ID": 78409200,
+      "Entries": [
+        "United again in hostile state"
+      ]
+    },
+    {
+      "ID": 78409300,
+      "Entries": [
+        "I killed a player."
+      ]
+    },
+    {
+      "ID": 78409400,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78409410,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78409420,
+      "Entries": [
+        "We're under attack."
+      ]
+    },
+    {
+      "ID": 78409500,
+      "Entries": [
+        "HP is less than or equal to a certain level"
+      ]
+    },
+    {
+      "ID": 78409600,
+      "Entries": [
+        "Death"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "Name": "EFID_m34_10_00_00",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A dummy to keep the \"individual ID\" displayed above. You can erase this dummy when adding an individual ID."
+      ]
+    },
+    {
+      "ID": 34100000,
+      "Entries": [
+        "Bonfire flag"
+      ]
+    },
+    {
+      "ID": 34100050,
+      "Entries": [
+        "Initialization flag"
+      ]
+    },
+    {
+      "ID": 34100100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 34100200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 34100500,
+      "Entries": [
+        "Magic floor unlock",
+        "Magic floor unlock"
+      ]
+    },
+    {
+      "ID": 34100700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 34100800,
+      "Entries": [
+        "Boss flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 34100900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 34101200,
+      "Entries": [
+        "Character flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 34101500,
+      "Entries": [
+        "Object flag (do not reset)"
+      ]
+    },
+    {
+      "ID": 34102100,
+      "Entries": [
+        "System flag"
+      ]
+    },
+    {
+      "ID": 34102200,
+      "Entries": [
+        "Character flag (reset)"
+      ]
+    },
+    {
+      "ID": 34102500,
+      "Entries": [
+        "Object flag (reset)"
+      ]
+    },
+    {
+      "ID": 34102700,
+      "Entries": [
+        "Conversation flag"
+      ]
+    },
+    {
+      "ID": 34102800,
+      "Entries": [
+        "Boss flag (reset)"
+      ]
+    },
+    {
+      "ID": 34102900,
+      "Entries": [
+        "For debugging/testing"
+      ]
+    },
+    {
+      "ID": 34108500,
+      "Entries": [
+        "Object act flag"
+      ]
+    }
+  ]
+}

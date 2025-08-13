@@ -1,0 +1,89 @@
+{
+  "Name": "MenuPartsModelRendParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "AM_M_XXXX"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "BD_M_XXXX"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "HD_M_XXXX"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "LG_M_XXXX"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "BS_A_XXXX"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "WP_A_XXXX"
+      ]
+    },
+    {
+      "ID": 68960,
+      "Entries": [
+        "F.C.S. -- FCS"
+      ]
+    },
+    {
+      "ID": 68970,
+      "Entries": [
+        "F.C.S. -- FCS"
+      ]
+    },
+    {
+      "ID": 68980,
+      "Entries": [
+        "generator"
+      ]
+    },
+    {
+      "ID": 68990,
+      "Entries": [
+        "generator"
+      ]
+    },
+    {
+      "ID": 69000,
+      "Entries": [
+        "LimiterRelease"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "WP_L_XXXX"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "WP_R_XXX"
+      ]
+    }
+  ]
+}

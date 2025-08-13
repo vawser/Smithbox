@@ -1,0 +1,159 @@
+{
+  "Name": "ThrustersLocomotionParam_PC",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Shouldn't be erased -- 消すべからず"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "PC default -- PCデフォルト"
+      ]
+    },
+    {
+      "ID": 3035,
+      "Entries": [
+        "Auxiliary booster right -- 補助ブースター\u3000右",
+        "Auxiliary booster right -- 補助ブースター\u3000右"
+      ]
+    },
+    {
+      "ID": 14100,
+      "Entries": [
+        "Bayram 4-legged main booster back booster -- ベイラム4脚メインブースター\u3000バックブースタ",
+        "Bayram 4-legged main booster back booster -- ベイラム4脚メインブースター\u3000バックブースタ",
+        "Bayram 4-legged main booster back booster -- ベイラム4脚メインブースター\u3000バックブースタ",
+        "Bayram 4-legged main booster back booster -- ベイラム4脚メインブースター\u3000バックブースタ"
+      ]
+    },
+    {
+      "ID": 15100,
+      "Entries": [
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】",
+        "For ascending [bottom] -- 上昇用【底面】"
+      ]
+    },
+    {
+      "ID": 37100,
+      "Entries": [
+        "Scavenger Core Left Booster -- スカベンジャーコア\u3000左ブースタ",
+        "Scavenger Core Left Booster -- スカベンジャーコア\u3000左ブースタ"
+      ]
+    },
+    {
+      "ID": 37200,
+      "Entries": [
+        "Scavenger arm left arm turn booster -- スカベンジャーアーム\u3000左腕ターンブースター",
+        "Scavenger arm left arm turn booster -- スカベンジャーアーム\u3000左腕ターンブースター",
+        "Scavenger arm left arm turn booster -- スカベンジャーアーム\u3000左腕ターンブースター",
+        "Scavenger arm left arm turn booster -- スカベンジャーアーム\u3000左腕ターンブースター"
+      ]
+    },
+    {
+      "ID": 37300,
+      "Entries": [
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター"
+      ]
+    },
+    {
+      "ID": 44100,
+      "Entries": [
+        "Bayram 4-legged main booster left booster -- ベイラム4脚メインブースター\u3000左ブースタ",
+        "Bayram 4-legged main booster left booster -- ベイラム4脚メインブースター\u3000左ブースタ"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加",
+        "For walking movement [rear left side] *Unique addition -- 歩行移動用【後方左側面】※ユニーク追加"
+      ]
+    },
+    {
+      "ID": 55100,
+      "Entries": [
+        "For climbing [side rear left] -- 上昇用【側面後左】",
+        "For climbing [side rear left] -- 上昇用【側面後左】",
+        "For climbing [side rear left] -- 上昇用【側面後左】",
+        "For climbing [side rear left] -- 上昇用【側面後左】"
+      ]
+    },
+    {
+      "ID": 60100,
+      "Entries": [
+        "Iqbal core lower booster -- イクバールコア\u3000下ブースタ",
+        "Iqbal core lower booster -- イクバールコア\u3000下ブースタ"
+      ]
+    },
+    {
+      "ID": 75100,
+      "Entries": [
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加",
+        "Assault boost [bottom center] *Unique addition -- アサルトブースト【底面中央】※ユニーク追加"
+      ]
+    },
+    {
+      "ID": 80100,
+      "Entries": [
+        "Kawamori core left booster -- 河森コア\u3000左ブースタ",
+        "Kawamori core left booster -- 河森コア\u3000左ブースタ"
+      ]
+    },
+    {
+      "ID": 80700,
+      "Entries": [
+        "",
+        ""
+      ]
+    },
+    {
+      "ID": 83500,
+      "Entries": [
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター",
+        "Scavenger leg left leg back booster -- スカベンジャーレッグ\u3000左足バックブースター"
+      ]
+    }
+  ]
+}

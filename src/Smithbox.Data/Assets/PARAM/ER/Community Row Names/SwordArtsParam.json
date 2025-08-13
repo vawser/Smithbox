@@ -1,0 +1,1661 @@
+{
+  "Name": "SwordArtsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "No Skill"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Lion's Claw"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Piercing Fang"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "%null%"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Charge Forth"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Blood Tax"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Wild Strikes"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Double Slash"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Unsheathe"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Square Off"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Giant Hunt"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Torch Attack"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "%null%"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Storm Assault"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Stormcaller"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Sword Dance"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Spinning Chain"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Sacred Blade"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Ice Spear"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Bloody Slash"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Eruption"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Gravitas"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Storm Blade"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Earthshaker"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Golden Land"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Flaming Strike"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Thunderbolt"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Lightning Slash"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Firebreather"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Blood Blade"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Phantom Slash"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Spectral Lance"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Chilling Mist"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Barricade Shield"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Buckler Parry"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Storm Wall"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Golden Parry"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Shield Crash"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Through and Through"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Barrage"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Mighty Shot"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Enchanted Shot"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Sky Shot"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 407,
+      "Entries": [
+        "%null%"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Storm Stomp"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Lightning Ram"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Ground Slam"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Golden Slam"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Determination"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Golden Vow"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Sacred Order"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Shared Order"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Seppuku"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Cragblade"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 651,
+      "Entries": [
+        "War Cry"
+      ]
+    },
+    {
+      "ID": 652,
+      "Entries": [
+        "Beast's Roar"
+      ]
+    },
+    {
+      "ID": 653,
+      "Entries": [
+        "Troll's Roar"
+      ]
+    },
+    {
+      "ID": 654,
+      "Entries": [
+        "Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Holy Ground"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Surge of Faith"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Flame Spit"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Tongues of Fire"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Bubble Shower"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Great Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Sea of Magma"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Viper Bite"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Siluria's Woe"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Rallying Standard"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Bear Witness!"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Eochaid's Dancing Blade"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Soul Stifler"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Taker's Flames"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Shriek of Milos"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Reduvia Blood Blade"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Glintstone Dart"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Flowing Form"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Night-and-Flame Stance"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Wave of Gold"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Ruinous Ghostflame"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Establish Order"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Mists of Slumber"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Spearcall Ritual"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Wolf's Assault"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "Thundercloud Form"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Cursed-Blood Slice"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Waterfowl Dance"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Gold Breaker"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "I Command Thee Kneel!"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Regal Roar"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Starcaller Cry"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "Wave of Destruction"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Bloodboon Ritual"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        "Flowing Form"
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        "Blade of Death"
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        "Blade of Gold"
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        "Destined Death"
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        "Spinning Wheel"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Alabaster Lords' Pull"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Onyx Lords' Repulsion"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "Oath of Vengeance"
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        "Ice Lightning Sword"
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        "Regal Beastclaw"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        "Flame Dance"
+      ]
+    },
+    {
+      "ID": 1046,
+      "Entries": [
+        "Claw Flick"
+      ]
+    },
+    {
+      "ID": 1047,
+      "Entries": [
+        "Nebula"
+      ]
+    },
+    {
+      "ID": 1048,
+      "Entries": [
+        "Ghostflame Ignition"
+      ]
+    },
+    {
+      "ID": 1049,
+      "Entries": [
+        "Ancient Lightning Spear"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Frenzyflame Thrust"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Miquella's Ring of Light"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Golden Tempering"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Last Rites"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "Unblockable Blade"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "Eochaid's Dancing Blade"
+      ]
+    },
+    {
+      "ID": 1165,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1166,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1167,
+      "Entries": [
+        "Corpse Wax Cutter"
+      ]
+    },
+    {
+      "ID": 1168,
+      "Entries": [
+        "Zamor Ice Storm"
+      ]
+    },
+    {
+      "ID": 1169,
+      "Entries": [
+        "Radahn's Rain"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "The Queen's Black Flame"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        "Dynast's Finesse"
+      ]
+    },
+    {
+      "ID": 1172,
+      "Entries": [
+        "Magma Shower"
+      ]
+    },
+    {
+      "ID": 1173,
+      "Entries": [
+        "Nebula"
+      ]
+    },
+    {
+      "ID": 1174,
+      "Entries": [
+        "Death Flare"
+      ]
+    },
+    {
+      "ID": 1175,
+      "Entries": [
+        "Bloodhound's Finesse"
+      ]
+    },
+    {
+      "ID": 1176,
+      "Entries": [
+        "Magma Guillotine"
+      ]
+    },
+    {
+      "ID": 1177,
+      "Entries": [
+        "Corpse Piler"
+      ]
+    },
+    {
+      "ID": 1178,
+      "Entries": [
+        "Transient Moonlight"
+      ]
+    },
+    {
+      "ID": 1179,
+      "Entries": [
+        "Bloodblade Dance"
+      ]
+    },
+    {
+      "ID": 1180,
+      "Entries": [
+        "%null%"
+      ]
+    },
+    {
+      "ID": 1181,
+      "Entries": [
+        "%null%"
+      ]
+    },
+    {
+      "ID": 1182,
+      "Entries": [
+        "Knowledge Above All"
+      ]
+    },
+    {
+      "ID": 1183,
+      "Entries": [
+        "Devourer of Worlds"
+      ]
+    },
+    {
+      "ID": 1184,
+      "Entries": [
+        "Familal Rancor"
+      ]
+    },
+    {
+      "ID": 1185,
+      "Entries": [
+        "Rosus's Summons"
+      ]
+    },
+    {
+      "ID": 1186,
+      "Entries": [
+        "Thunderstorm"
+      ]
+    },
+    {
+      "ID": 1187,
+      "Entries": [
+        "Sacred Phalanx"
+      ]
+    },
+    {
+      "ID": 1188,
+      "Entries": [
+        "Great-Serpent Hunt"
+      ]
+    },
+    {
+      "ID": 1189,
+      "Entries": [
+        "Angel's Wings"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Storm Kick"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "Unblockable Blade"
+      ]
+    },
+    {
+      "ID": 1192,
+      "Entries": [
+        "Sorcery of the Crozier"
+      ]
+    },
+    {
+      "ID": 1193,
+      "Entries": [
+        "Erdtree Slam"
+      ]
+    },
+    {
+      "ID": 1194,
+      "Entries": [
+        "Gravity Bolt"
+      ]
+    },
+    {
+      "ID": 1195,
+      "Entries": [
+        "Fires of Slumber"
+      ]
+    },
+    {
+      "ID": 1196,
+      "Entries": [
+        "Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 1197,
+      "Entries": [
+        "Contagious Fury"
+      ]
+    },
+    {
+      "ID": 1198,
+      "Entries": [
+        "Ordovis's Vortex"
+      ]
+    },
+    {
+      "ID": 1199,
+      "Entries": [
+        "Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Dryleaf Whirlwind"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Aspects of the Crucible: Wings"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Spinning Gravity Thrust"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Palm Blast"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "Piercing Throw"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "Scattershot Throw"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "Wall of Sparks"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "Rolling Sparks"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "Raging Beast"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "Savage Claws"
+      ]
+    },
+    {
+      "ID": 4080,
+      "Entries": [
+        "Red Bear Hunt"
+      ]
+    },
+    {
+      "ID": 4090,
+      "Entries": [
+        "Blind Spot"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Swift Slash"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Overhead Stance"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Wing Stance"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Blinkbolt"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Flame Skewer"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Savage Lion's Claw"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Divine Beast Frost Stomp"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Flame Spear"
+      ]
+    },
+    {
+      "ID": 4180,
+      "Entries": [
+        "Carian Sovereignty"
+      ]
+    },
+    {
+      "ID": 4190,
+      "Entries": [
+        "Shriek of Sorrow"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Igon's Drake Hunt"
+      ]
+    },
+    {
+      "ID": 4220,
+      "Entries": [
+        "Ghostflame Call"
+      ]
+    },
+    {
+      "ID": 4990,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Dragonwound Slash"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "Needle Piercer"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Light"
+      ]
+    },
+    {
+      "ID": 5030,
+      "Entries": [
+        "Darkness"
+      ]
+    },
+    {
+      "ID": 5040,
+      "Entries": [
+        "Onze's Line of Stars"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "The Poison Flower Blooms Twice"
+      ]
+    },
+    {
+      "ID": 5080,
+      "Entries": [
+        "Spinning Guillotine"
+      ]
+    },
+    {
+      "ID": 5090,
+      "Entries": [
+        "Unending Dance"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "Revenger's Blade"
+      ]
+    },
+    {
+      "ID": 5110,
+      "Entries": [
+        "Mists of Eternal Sleep"
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        "Dynastic Sickleplay"
+      ]
+    },
+    {
+      "ID": 5130,
+      "Entries": [
+        "Blinkbolt: Twinaxe"
+      ]
+    },
+    {
+      "ID": 5140,
+      "Entries": [
+        "Blinkbolt: Long-hafted Axe"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "Promised Consort"
+      ]
+    },
+    {
+      "ID": 5160,
+      "Entries": [
+        "Shadow Sunflower Headbutts"
+      ]
+    },
+    {
+      "ID": 5170,
+      "Entries": [
+        "Moon-and-Fire Stance"
+      ]
+    },
+    {
+      "ID": 5180,
+      "Entries": [
+        "Devonia's Vortex"
+      ]
+    },
+    {
+      "ID": 5190,
+      "Entries": [
+        "Messmer's Assault"
+      ]
+    },
+    {
+      "ID": 5210,
+      "Entries": [
+        "Sleep Evermore"
+      ]
+    },
+    {
+      "ID": 5220,
+      "Entries": [
+        "Golden Crux"
+      ]
+    },
+    {
+      "ID": 5230,
+      "Entries": [
+        "Moore's Charge"
+      ]
+    },
+    {
+      "ID": 5240,
+      "Entries": [
+        "White Light Charge"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "Rancor Slash"
+      ]
+    },
+    {
+      "ID": 5260,
+      "Entries": [
+        "Witching Hour Slash"
+      ]
+    },
+    {
+      "ID": 5270,
+      "Entries": [
+        "Euporia Vortex"
+      ]
+    },
+    {
+      "ID": 5280,
+      "Entries": [
+        "Smithing Art Spears"
+      ]
+    },
+    {
+      "ID": 5290,
+      "Entries": [
+        "Rancor Slash"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "Romina's Purification"
+      ]
+    },
+    {
+      "ID": 5310,
+      "Entries": [
+        "Poison Spear-Hand Strike"
+      ]
+    },
+    {
+      "ID": 5320,
+      "Entries": [
+        "Madding Spear-Hand Strike"
+      ]
+    },
+    {
+      "ID": 5330,
+      "Entries": [
+        "Feeble Lord's Frenzied Flame"
+      ]
+    },
+    {
+      "ID": 5340,
+      "Entries": [
+        "Repeating Fire"
+      ]
+    },
+    {
+      "ID": 5350,
+      "Entries": [
+        "Deadly Dance"
+      ]
+    },
+    {
+      "ID": 5360,
+      "Entries": [
+        "Fan Shot"
+      ]
+    },
+    {
+      "ID": 5370,
+      "Entries": [
+        "Discus Hurl"
+      ]
+    },
+    {
+      "ID": 5380,
+      "Entries": [
+        "Flower Dragonbolt"
+      ]
+    },
+    {
+      "ID": 5390,
+      "Entries": [
+        "Kowtower's Resentment"
+      ]
+    },
+    {
+      "ID": 5420,
+      "Entries": [
+        "Painful Strike"
+      ]
+    },
+    {
+      "ID": 5430,
+      "Entries": [
+        "Solitary Moon Slash"
+      ]
+    },
+    {
+      "ID": 5440,
+      "Entries": [
+        "Revenge of the Night"
+      ]
+    },
+    {
+      "ID": 5450,
+      "Entries": [
+        "Weed Cutter"
+      ]
+    },
+    {
+      "ID": 5460,
+      "Entries": [
+        "Blindfold of Happiness"
+      ]
+    },
+    {
+      "ID": 5461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5470,
+      "Entries": [
+        "Jori's Inquisition"
+      ]
+    },
+    {
+      "ID": 5480,
+      "Entries": [
+        "Roaring Bash"
+      ]
+    },
+    {
+      "ID": 5490,
+      "Entries": [
+        "Deadly Poison Spray"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Flare- O Serpent"
+      ]
+    },
+    {
+      "ID": 5510,
+      "Entries": [
+        "Scattershot (Claws)"
+      ]
+    },
+    {
+      "ID": 5520,
+      "Entries": [
+        "Hone Blade"
+      ]
+    },
+    {
+      "ID": 5530,
+      "Entries": [
+        "Horn Calling"
+      ]
+    },
+    {
+      "ID": 5540,
+      "Entries": [
+        "Horn Calling: Storm"
+      ]
+    },
+    {
+      "ID": 5550,
+      "Entries": [
+        "Tremendous Phalanx"
+      ]
+    },
+    {
+      "ID": 5560,
+      "Entries": [
+        "Bloodfiends' Bloodboon"
+      ]
+    },
+    {
+      "ID": 5570,
+      "Entries": [
+        "Dragonform Flame"
+      ]
+    },
+    {
+      "ID": 5580,
+      "Entries": [
+        "Lightspeed Slash"
+      ]
+    },
+    {
+      "ID": 5590,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 5600,
+      "Entries": [
+        "Rancor Shot"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9991,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9992,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

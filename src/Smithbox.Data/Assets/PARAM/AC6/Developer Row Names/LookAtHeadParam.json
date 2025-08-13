@@ -1,0 +1,29 @@
+{
+  "Name": "LookAtHeadParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard aircraft -- 標準機体"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "Quadruped _ two-handed -- 四脚_両手持ち"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "quadruped -- 四脚"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Standard head (speed: normal) -- 標準ヘッド（速度：普通）"
+      ]
+    }
+  ]
+}

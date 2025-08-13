@@ -1,0 +1,689 @@
+{
+  "Name": "generatordbglocation_m20_21_00_00",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "【Belager】NPC -- 【べラガー】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "【NPC】Pilgrims in the Abyss -- 【ＮＰＣ】深淵の巡礼者（生者）"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "【NPC】Pilgrims in the Abyss -- 【ＮＰＣ】深淵の巡礼者（亡者）"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "【Tsukiko Grandfather】 Npc -- 【月光爺】NPC"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【Tsukiko Grandfather】 NPC (Ghost) -- 【月光爺】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "【Dragon Shrine Maiden】NPC -- 【龍の巫女】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "【Queen】NPC -- 【王妃】ＮＰＣ"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "【Queen】NPC -- 【王妃】ＮＰＣ（死骸）"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "[Girl in captivity] Npc -- 【虜囚の少女】NPC"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "[Girl in captivity] NPC: Ghosts -- 【虜囚の少女】NPC：幽霊"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "【Dragon Shrine Maiden】NPC: 2nd Place -- 【龍の巫女】ＮＰＣ：２箇所目"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "[Black Spirit_ On the Way] Enclosed Man -- 【黒霊_道中】封じられた人"
+      ]
+    },
+    {
+      "ID": 671,
+      "Entries": [
+        "【Black Spirit_Road】Castle Drangreig: Dark Spirit 1 (Ghost) -- 【黒霊_道中】王城ドラングレイグ：闇霊１（亡霊）"
+      ]
+    },
+    {
+      "ID": 676,
+      "Entries": [
+        "[White Spirit _ Boss Room Front: Mirror Night] Tsukiko Grandfather -- 【白霊_ボス部屋前：ミラーナイト】月光爺"
+      ]
+    },
+    {
+      "ID": 677,
+      "Entries": [
+        "【White Spirit_Boss Room Front: Queen】 Durahan -- 【白霊_ボス部屋前：王妃】デュラハン"
+      ]
+    },
+    {
+      "ID": 678,
+      "Entries": [
+        "[White Spirit_ Boss Room Front: Queen] Tsukiko Grandfather -- 【白霊_ボス部屋前：王妃】月光爺"
+      ]
+    },
+    {
+      "ID": 825,
+      "Entries": [
+        "【Boss】Mirror Night -- 【ボス】ミラーナイト"
+      ]
+    },
+    {
+      "ID": 859,
+      "Entries": [
+        "[Queen's armor form] -- 【王妃の鎧形態】"
+      ]
+    },
+    {
+      "ID": 860,
+      "Entries": [
+        "[Queen Knight A] -- 【王妃の騎士A】"
+      ]
+    },
+    {
+      "ID": 862,
+      "Entries": [
+        "[Queen Knight C] -- 【王妃の騎士C】"
+      ]
+    },
+    {
+      "ID": 863,
+      "Entries": [
+        "【Boss】Heavy Cavalry Soldiers: Soldiers Only A -- 【ボス】重騎馬兵：兵士のみＡ"
+      ]
+    },
+    {
+      "ID": 864,
+      "Entries": [
+        "【Boss】Heavy Cavalry Soldiers Only Soldier B -- 【ボス】重騎馬兵：兵士のみＢ"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "【In front of the main gate】Elephant soldier_live man -- 【正門前】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "【In front of the main gate】Elephant soldier_live man -- 【正門前】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "【In front of the main gate】 Npc -- 【正門前】NPC"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "[Main gate front] Kingdom soldier: Crossbow -- 【正門前】王国兵士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "[Main gate front] Kingdom Soldier: Crossbow Return Preparation 17.5 -- 【正門前】王国兵士：クロスボウ\u3000帰還準備17.5"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "[Main gate left] kingdom soldier warrior: two-handed sword: infinite spring ing spirit_01 -- 【正門左】王国兵戦士：両手剣：無限湧き霊体_01"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "[Main gate left] kingdom soldier warrior swords: infinite spring ing spirit_02 (on lap 2) -- 【正門左】王国兵戦士：両手剣：無限湧き霊体_02\u3000（２周目に）"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "[Main gate left] kingdom soldier warrior swords: infinite spring ing spirit_02 (on lap 2) -- 【正門左】王国兵戦士：両手剣：無限湧き霊体_02\u3000（２周目に）"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "[Main gate left] kingdom soldier warrior: two-handed sword: infinite spring ing spirit_04 -- 【正門左】王国兵戦士：両手剣：無限湧き霊体_04"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "[Road in front of the stairs in front of the main gate] Kingdom soldier warrior: crossbow -- 【正門前階段前の道】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1091,
+      "Entries": [
+        "[Road in front of the stairs in front of the main gate] Kingdom soldier warrior: crossbow -- 【正門前階段前の道】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1092,
+      "Entries": [
+        "[Road in front of the stairs in front of the main gate] kingdom soldier warrior: two-handed sword -- 【正門前階段前の道】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1098,
+      "Entries": [
+        "【Road in front of the main gate stairs】Ishimori -- 【正門前階段前の道】石守"
+      ]
+    },
+    {
+      "ID": 1099,
+      "Entries": [
+        "[Stairway in front of the main gate] elephant soldier_live man -- 【正門前階段】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "【Entrance】Kingdom Guard: Axe Spear -- 【エントランス】王国護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "【Entrance Passage】Kingdom Guard: Oversized Sword -- 【エントランス通路】王国護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "【Entrance Passage】Kingdom Soldier Warrior: Two-Handed Sword -- 【エントランス通路】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "【Entrance Passage】Kingdom Soldier Warrior: Two-Handed Sword -- 【エントランス通路】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "[Between entrance and aisle] royal guard: oversized sword -- 【エントランスと通路の間】王国兵護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1230,
+      "Entries": [
+        "【Entrance Passage Ladder Top Room】Kingdom Soldier Warrior: Two-Handed Sword_01 -- 【エントランス通路梯子上部屋】王国兵戦士：両手剣_01"
+      ]
+    },
+    {
+      "ID": 1240,
+      "Entries": [
+        "【Entrance Passage Ladder Top Room】Kingdom Soldier Warrior: Two-Handed Sword_02 -- 【エントランス通路梯子上部屋】王国兵戦士：両手剣_02"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "【Entrance passage ladder below】Kingdom guard: Oversized sword -- 【エントランス通路梯子下】王国護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "Appeared when you meet the conditions to open the door in front of the king's door] red spirit -- 【王の扉前_扉を開く条件を満たすと登場】赤霊"
+      ]
+    },
+    {
+      "ID": 1291,
+      "Entries": [
+        "Appeared when you meet the conditions to open the door in front of the king's door] red spirit -- 【王の扉前_扉を開く条件を満たすと登場】赤霊"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1301,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1302,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1303,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1304,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1305,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1306,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1307,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1308,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1309,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "【Golem Room】Statue: Pawn Shield -- 【ゴーレム部屋】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "【Golem Room】Statue: Pawn -- 【ゴーレム部屋】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "[Golem room _ right center door back] warrior in the mirror -- 【ゴーレム部屋_右中央の扉奥】鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 1325,
+      "Entries": [
+        "[Golem room _ right back door back] warrior in the mirror -- 【ゴーレム部屋_右奥の扉奥】鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "[Golem room _ the door in front of the left hand] warrior in the mirror -- 【ゴーレム部屋_左手前の扉奥】鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 1335,
+      "Entries": [
+        "[Golem room _ left center door back] warrior in the mirror -- 【ゴーレム部屋_左中央の扉奥】鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "[Golem room _ left back] warrior in the mirror -- 【ゴーレム部屋_左奥】鏡の中の戦士"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "[Gorlem room _ slap] kingdom soldier heavy warrior: color (1): two-handed hammer -- 【ゴーレム部屋上_叩きつけ】王国兵重戦士：色①：両手戦槌"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "【Accumulation of Acid】Elephant Soldier_Live -- 【酸の溜まり】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "【Accumulation of Acid】Elephant Soldier_Dead -- 【酸の溜まり】象兵_亡者"
+      ]
+    },
+    {
+      "ID": 1420,
+      "Entries": [
+        "[Accumulation of acid] Kingdom Warrior: Crossbow -- 【酸の溜まり】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "[Hidden Bonfire Soba] Kingdom Soldier Warrior: Crossbow -- 【隠し篝火そば】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1550,
+      "Entries": [
+        "【Portrait】Kingdom Soldier Escort: Two-Handed Sword -- 【肖像画の間】王国兵護衛：両手剣"
+      ]
+    },
+    {
+      "ID": 1560,
+      "Entries": [
+        "【Portrait】Kingdom Soldier Escort: Two-Handed Sword -- 【肖像画の間】王国兵護衛：両手剣"
+      ]
+    },
+    {
+      "ID": 1561,
+      "Entries": [
+        "【Between portraits】Kingdom soldier escort: Two-handed sword emphasis on the protection of the exit -- 【肖像画の間】王国兵護衛：両手剣\u3000出口の守り重視"
+      ]
+    },
+    {
+      "ID": 1591,
+      "Entries": [
+        "[Outer passage (2) First Half Stairs] Kingdom Warrior: Crossbow -- 【外側通路②前半階段】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "[Outer passage (2)】 Kingdom guards: Oversized sword -- 【外側通路②】王国護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "[Outer passage (2)】 Kingdom Soldier Warrior: Crossbow -- 【外側通路②】王国兵戦士：クロスボウ"
+      ]
+    },
+    {
+      "ID": 1620,
+      "Entries": [
+        "[Outer passage (2) second half stairs] kingdom soldier warrior: two-handed sword -- 【外側通路②後半階段】王国兵戦士：両手剣"
+      ]
+    },
+    {
+      "ID": 1702,
+      "Entries": [
+        "【One-way passage】Damon Armor (deceased): Bow_01 -- 【一方通行通路】デーモン鎧（亡者）：弓_01"
+      ]
+    },
+    {
+      "ID": 1703,
+      "Entries": [
+        "【One-way passage】Damon Armor (deceased): Bow_02 -- 【一方通行通路】デーモン鎧（亡者）：弓_02"
+      ]
+    },
+    {
+      "ID": 1704,
+      "Entries": [
+        "【One-way passage】Damon Armor (deceased): Bow_03 -- 【一方通行通路】デーモン鎧（亡者）：弓_03"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "【One-way passage】Kingdom guards: Oversized sword -- 【一方通行通路】王国護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1750,
+      "Entries": [
+        "[One-way lever front] kingdom guard: axe spear -- 【一方通行レバー前】王国護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 1751,
+      "Entries": [
+        "[One-way lever front] kingdom escort: oversized sword -- 【一方通行レバー前】王国護衛兵：特大剣"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "【Machine Room】Statue: Pawn Shield -- 【機械室】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1801,
+      "Entries": [
+        "【Machine Room】Statue: Pawn -- 【機械室】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1802,
+      "Entries": [
+        "【Machine Room】Statue: Pawn Shield -- 【機械室】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1803,
+      "Entries": [
+        "【Machine Room】Statue: Pawn -- 【機械室】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1804,
+      "Entries": [
+        "【Machine Room】Statue: Pawn Shield -- 【機械室】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1805,
+      "Entries": [
+        "【Machine Room】Statue: Pawn -- 【機械室】スタチュー：ポーン"
+      ]
+    },
+    {
+      "ID": 1806,
+      "Entries": [
+        "【Machine Room】Statue: Pawn Shield -- 【機械室】スタチュー：ポーン\u3000盾"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "[Large saloon] royal guard: axe spear -- 【大広間】王国兵護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 1911,
+      "Entries": [
+        "[Large saloon] royal guard: axe spear -- 【大広間】王国兵護衛兵：斧槍"
+      ]
+    },
+    {
+      "ID": 1920,
+      "Entries": [
+        "[Large saloon exit destination] elephant soldier_live man -- 【大広間出口先】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1921,
+      "Entries": [
+        "【Large Saloon】Elephant Soldier_Born -- 【大広間】象兵_生者"
+      ]
+    },
+    {
+      "ID": 1930,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_01 -- 【大広間】デーモン鎧（亡者）：弓_01"
+      ]
+    },
+    {
+      "ID": 1931,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_02 -- 【大広間】デーモン鎧（亡者）：弓_02"
+      ]
+    },
+    {
+      "ID": 1932,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_03 -- 【大広間】デーモン鎧（亡者）：弓_03"
+      ]
+    },
+    {
+      "ID": 1933,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_04 -- 【大広間】デーモン鎧（亡者）：弓_04"
+      ]
+    },
+    {
+      "ID": 1934,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_05 -- 【大広間】デーモン鎧（亡者）：弓_05"
+      ]
+    },
+    {
+      "ID": 1935,
+      "Entries": [
+        "【Large Hall】Damon Armor (Deceased): Bow_06 -- 【大広間】デーモン鎧（亡者）：弓_06"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Between kings] Demon Heavy Warrior Swords -- 【王の間】デーモン重戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Mirror Night Corridor] Statue: Night -- 【ミラーナイトの回廊】スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "[Mirror Night Corridor] Statue: Night -- 【ミラーナイトの回廊】スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 3030,
+      "Entries": [
+        "[Mirror Night Corridor] Statue: Night -- 【ミラーナイトの回廊】スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 3040,
+      "Entries": [
+        "[Mirror Night Corridor] Statue: Night -- 【ミラーナイトの回廊】スタチュー：ナイト"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "【Key room of corridor】Red Spirit -- 【回廊の鍵部屋】赤霊"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "[Before Rasbos] Demon Heavy Warrior - Two-Handed Sword - Medium Shield -- 【ラスボス前】デーモン重戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Before Rasbos] Demon Heavy Warrior: Oversized Sword -- 【ラスボス前】デーモン重戦士：特大剣"
+      ]
+    },
+    {
+      "ID": 4020,
+      "Entries": [
+        "[Before Rasbos] Demon Heavy Warrior : Two-handed long axe -- 【ラスボス前】デーモン重戦士：両手長斧"
+      ]
+    },
+    {
+      "ID": 4030,
+      "Entries": [
+        "[Before Rasbos] Demon Heavy Warrior: Two-Handed Mallet -- 【ラスボス前】デーモン重戦士：両手槌"
+      ]
+    },
+    {
+      "ID": 4040,
+      "Entries": [
+        "[Before Rasbos] Demon Heavy Warrior - Two-Handed Sword - Medium Shield -- 【ラスボス前】デーモン重戦士：両手剣＆中盾"
+      ]
+    },
+    {
+      "ID": 4900,
+      "Entries": [
+        "[Mirror Night Door Front] Kingdom Escorts -- 【ミラーナイト扉前】王国護衛兵"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "[Mirror Night War _ Attendant] I under the mirror night: two-handed sword -- 【ミラーナイト戦_お供】ミラーナイトの下僕：両手剣"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "[Mirror Night War _ Attendant] I under the mirror night: two-handed long axe -- 【ミラーナイト戦_お供】ミラーナイトの下僕：両手長斧"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "【Entrance Room】Bay Grant -- 【エントランス部屋】ベイグラント"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "【Entrance Room】Bay Grant -- 【エントランス部屋】ベイグラント"
+      ]
+    }
+  ]
+}

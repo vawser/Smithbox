@@ -1,0 +1,185 @@
+{
+  "Name": "mapobjectinstanceparam_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 40030600,
+      "Entries": [
+        "Boss White Door_01"
+      ]
+    },
+    {
+      "ID": 40030601,
+      "Entries": [
+        "Boss White Door_02"
+      ]
+    },
+    {
+      "ID": 40030602,
+      "Entries": [
+        "Boss White Door_03"
+      ]
+    },
+    {
+      "ID": 40030603,
+      "Entries": [
+        "Boss White Door"
+      ]
+    },
+    {
+      "ID": 40030740,
+      "Entries": [
+        "【Unique Light Stand】01"
+      ]
+    },
+    {
+      "ID": 40030741,
+      "Entries": [
+        "【Unique Light Stand】02"
+      ]
+    },
+    {
+      "ID": 40030742,
+      "Entries": [
+        "【Unique Light Stand】03"
+      ]
+    },
+    {
+      "ID": 40031010,
+      "Entries": [
+        "Lift_Lever on"
+      ]
+    },
+    {
+      "ID": 40031015,
+      "Entries": [
+        "Lift_Lever Under"
+      ]
+    },
+    {
+      "ID": 40031020,
+      "Entries": [
+        "Lift_Pedestal"
+      ]
+    },
+    {
+      "ID": 40032000,
+      "Entries": [
+        "【Other】Dummy OBJ for placement"
+      ]
+    },
+    {
+      "ID": 40032010,
+      "Entries": [
+        "【Processing load】SFX of the hole for warp"
+      ]
+    },
+    {
+      "ID": 40033900,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 40033901,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 40033902,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 40033903,
+      "Entries": [
+        "[Mimetic OBJ: Normal] lamp stand"
+      ]
+    },
+    {
+      "ID": 40033904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40033905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40033910,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 40033911,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 40033912,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 40033913,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Vase"
+      ]
+    },
+    {
+      "ID": 40033914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40033915,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40033920,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 40033921,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 40033922,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 40033923,
+      "Entries": [
+        "[Mimetic OBJ: Normal] 【General purpose】Barrel 1"
+      ]
+    },
+    {
+      "ID": 40033924,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40033925,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

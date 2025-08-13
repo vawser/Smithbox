@@ -1,0 +1,509 @@
+{
+  "Name": "HeroStatusParam",
+  "Entries": [
+    {
+      "ID": 10000,
+      "Entries": [
+        "Wylder: 1"
+      ]
+    },
+    {
+      "ID": 10001,
+      "Entries": [
+        "Wylder: 2"
+      ]
+    },
+    {
+      "ID": 10002,
+      "Entries": [
+        "Wylder: 12"
+      ]
+    },
+    {
+      "ID": 10003,
+      "Entries": [
+        "Wylder: 15"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Guardian: 1"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Guardian: 2"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Guardian: 12"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Guardian: 15"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Ironeye: 1"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Ironeye: 2"
+      ]
+    },
+    {
+      "ID": 30002,
+      "Entries": [
+        "Ironeye: 12"
+      ]
+    },
+    {
+      "ID": 30003,
+      "Entries": [
+        "Ironeye: 15"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "Duchess: 1"
+      ]
+    },
+    {
+      "ID": 40001,
+      "Entries": [
+        "Duchess: 2"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Duchess: 12"
+      ]
+    },
+    {
+      "ID": 40003,
+      "Entries": [
+        "Duchess: 15"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Raider: 1"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Raider: 2"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Raider: 12"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Raider: 15"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Revenant: 1"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "Revenant: 2"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "Revenant: 12"
+      ]
+    },
+    {
+      "ID": 60003,
+      "Entries": [
+        "Revenant: 15"
+      ]
+    },
+    {
+      "ID": 70000,
+      "Entries": [
+        "Recluse: 1"
+      ]
+    },
+    {
+      "ID": 70001,
+      "Entries": [
+        "Recluse: 2"
+      ]
+    },
+    {
+      "ID": 70002,
+      "Entries": [
+        "Recluse: 12"
+      ]
+    },
+    {
+      "ID": 70003,
+      "Entries": [
+        "Recluse: 15"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Executor: 1"
+      ]
+    },
+    {
+      "ID": 80001,
+      "Entries": [
+        "Executor: 2"
+      ]
+    },
+    {
+      "ID": 80002,
+      "Entries": [
+        "Executor: 12"
+      ]
+    },
+    {
+      "ID": 80003,
+      "Entries": [
+        "Executor: 15"
+      ]
+    },
+    {
+      "ID": 210000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 210003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 220000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 220001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 220002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 220003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 230000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 230001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 230002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 230003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 240000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 240001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 240002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 240003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250002,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 250003,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 300101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 301101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 302101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 303101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 304101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 305101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 306101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307001,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 307101,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "Name": "BuoyancyParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "test -- テスト"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "small -- 小"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Medium -- 中"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "large -- 大"
+      ]
+    }
+  ]
+}

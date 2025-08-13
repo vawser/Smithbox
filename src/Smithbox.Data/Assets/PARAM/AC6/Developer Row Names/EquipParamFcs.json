@@ -1,0 +1,119 @@
+{
+  "Name": "EquipParamFcs",
+  "Entries": [
+    {
+      "ID": 70000000,
+      "Entries": [
+        "1st generation FCS -- 第1世代FCS"
+      ]
+    },
+    {
+      "ID": 70010000,
+      "Entries": [
+        "2nd generation FCS A-1 -- 第2世代FCS A-1"
+      ]
+    },
+    {
+      "ID": 70010100,
+      "Entries": [
+        "2nd generation FCS A-2 -- 第2世代FCS A-2"
+      ]
+    },
+    {
+      "ID": 70010200,
+      "Entries": [
+        "2nd generation FCS A-3 -- 第2世代FCS A-3"
+      ]
+    },
+    {
+      "ID": 70010300,
+      "Entries": [
+        "2nd generation FCS B-1 -- 第2世代FCS B-1"
+      ]
+    },
+    {
+      "ID": 70010400,
+      "Entries": [
+        "2nd generation FCS B-2 -- 第2世代FCS B-2"
+      ]
+    },
+    {
+      "ID": 70020000,
+      "Entries": [
+        "3rd generation FCS 1 -- 第3世代FCS 1"
+      ]
+    },
+    {
+      "ID": 70020100,
+      "Entries": [
+        "3rd generation FCS 2 -- 第3世代FCS 2"
+      ]
+    },
+    {
+      "ID": 70030000,
+      "Entries": [
+        "Melange type FCS 1 -- メランジ系FCS 1"
+      ]
+    },
+    {
+      "ID": 70030100,
+      "Entries": [
+        "Melange type FCS 2 -- メランジ系FCS 2"
+      ]
+    },
+    {
+      "ID": 70900000,
+      "Entries": [
+        "Event exclusive_FCS for jailbreak mission -- イベント専用_脱獄ミッション用FCS"
+      ]
+    },
+    {
+      "ID": 70900100,
+      "Entries": [
+        "FCS01 for tremo -- トレモ用FCS01"
+      ]
+    },
+    {
+      "ID": 70900200,
+      "Entries": [
+        "FCS02 for tremo -- トレモ用FCS02"
+      ]
+    },
+    {
+      "ID": 70900300,
+      "Entries": [
+        "FCS03 for tremo -- トレモ用FCS03"
+      ]
+    },
+    {
+      "ID": 70900400,
+      "Entries": [
+        "FCS04 for tremo -- トレモ用FCS04"
+      ]
+    },
+    {
+      "ID": 70900500,
+      "Entries": [
+        "FCS05 for tremo -- トレモ用FCS05"
+      ]
+    },
+    {
+      "ID": 70900600,
+      "Entries": [
+        "FCS06 for tremo -- トレモ用FCS06"
+      ]
+    },
+    {
+      "ID": 70901000,
+      "Entries": [
+        "Event exclusive_FCS for jailbreak mission -- イベント専用_脱獄ミッション用FCS"
+      ]
+    },
+    {
+      "ID": 70901100,
+      "Entries": [
+        "FCS for prologue -- プロローグ用FCS"
+      ]
+    }
+  ]
+}

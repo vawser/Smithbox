@@ -1,0 +1,41 @@
+{
+  "Name": "TargetableBodyRegionsParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "A bad example -- ダメな例"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Wait relationship -- 待機関係"
+      ]
+    },
+    {
+      "ID": 41000,
+      "Entries": [
+        "An exaggeration -- 袈裟構え"
+      ]
+    },
+    {
+      "ID": 41100,
+      "Entries": [
+        "I'm in a position to be there. -- 居合い構え"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "Poise Dash -- 構えダッシュ"
+      ]
+    },
+    {
+      "ID": 59100,
+      "Entries": [
+        "Ai dash -- 居合いダッシュ"
+      ]
+    }
+  ]
+}

@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -2162,6 +2163,13 @@ public class ParamBank
     /// </summary>
     public void RowNameStrip()
     {
+        var exportDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names");
+
+        if (!Directory.Exists(exportDir))
+        {
+            Directory.CreateDirectory(exportDir);
+        }
+
         var store = new RowNameStore();
         store.Params = new();
 
@@ -2181,82 +2189,86 @@ public class ParamBank
                 Entries = kvp.Value
             }).ToList();
 
-            store.Params.Add(paramEntry);
+            var fullPath = Path.Combine(exportDir, $"{p.Key}.json");
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
+
+            File.WriteAllText(fullPath, json);
 
             for (int i = 0; i < p.Value.Rows.Count; i++)
             {
                 // Strip
                 p.Value.Rows[i].Name = "";
             }
+
+            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {fullPath}");
         }
 
-        var folder = ProjectUtils.GetLocalProjectFolder(Project);
-
-        if (!Directory.Exists(folder))
-        {
-            Directory.CreateDirectory(folder);
-        }
-
-        var file = Path.Combine(folder, "Stripped Row Names.json");
-
-        var json = JsonSerializer.Serialize(store, SmithboxSerializerContext.Default.RowNameStore);
-
-        File.WriteAllText(file, json);
-
-        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {file}");
     }
 
     public void RowNameRestore()
     {
-        RowNameStore store = null;
+        RowNameStore store = new();
+        store.Params = new();
 
-        var folder = ProjectUtils.GetLocalProjectFolder(Project);
-        var file = Path.Combine(folder, "Stripped Row Names.json");
+        var importDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names");
 
-        if (!File.Exists(file))
+        if (!Directory.Exists(importDir))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {file} for row name restore.", LogLevel.Error);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {importDir} for row name restore.", LogLevel.Error);
         }
         else
         {
-            try
+            foreach (var file in Directory.EnumerateFiles(importDir))
             {
-                var filestring = File.ReadAllText(file);
-
                 try
                 {
+                    var filestring = File.ReadAllText(file);
                     var options = new JsonSerializerOptions();
-                    store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+
+                    if (item == null)
+                    {
+                        throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                    }
+                    else
+                    {
+                        store.Params.Add(item);
+                    }
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to deserialize {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
-            }
         }
 
-        // Only proceed if we have row names to work with
-        if (store != null)
+        if (store == null)
+            return;
+
+        if (store.Params == null)
+            return;
+
+        var storeDict = store.Params.ToDictionary(e => e.Name);
+
+        foreach (KeyValuePair<string, Param> p in Params)
         {
-            var storeDict = store.Params.ToDictionary(e => e.Name);
+            if (!storeDict.ContainsKey(p.Key))
+                continue;
 
-            foreach (KeyValuePair<string, Param> p in Params)
-            {
-                if (!storeDict.ContainsKey(p.Key))
-                    continue;
-
-                SetParamNames(
-                    p.Value,
-                    storeDict[p.Key]
-                );
-            }
+            SetParamNames(
+                p.Value,
+                storeDict[p.Key]
+            );
         }
 
-        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names from {file}");
+        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
     }
 
     #endregion
@@ -2302,41 +2314,49 @@ public class ParamBank
     {
         await Task.Yield();
 
-        var sourceFilepath = filepath;
+        var sourceDirectory = filepath;
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
 
         switch (sourceType)
         {
             case ImportRowNameSourceType.Community:
-                sourceFilepath = Path.Combine(folder, "Community Row Names.json");
+                sourceDirectory = Path.Combine(folder, "Community Row Names");
                 break;
             case ImportRowNameSourceType.Developer:
-                sourceFilepath = Path.Combine(folder, "Developer Row Names.json");
+                sourceDirectory = Path.Combine(folder, "Developer Row Names");
                 break;
         }
 
-        if (!File.Exists(sourceFilepath))
+        if (!Directory.Exists(sourceDirectory))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceFilepath}");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceDirectory}");
             return false;
         }
 
-        RowNameStore store = null;
+        RowNameStore store = new RowNameStore();
+        store.Params = new();
 
-        try
+        foreach (var file in Directory.EnumerateFiles(sourceDirectory))
         {
-            var filestring = File.ReadAllText(sourceFilepath);
-            var options = new JsonSerializerOptions();
-            store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
-
-            if (store == null)
+            try
             {
-                throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+
+                if (item == null)
+                {
+                    throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                }
+                else
+                {
+                    store.Params.Add(item);
+                }
             }
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFilepath} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
         }
 
         if (store == null)
@@ -2400,44 +2420,28 @@ public class ParamBank
     /// <param name="paramName"></param>
     public async void ExportRowNames(ExportRowNameType exportType, string filepath, string paramName = "")
     {
-        Task<bool> exportRowNameTask = ExportRowNamesTask(exportType, filepath, paramName);
+        var exportDir = Path.Combine(Project.ProjectPath, "Row Name Export");
+
+        if (!Directory.Exists(exportDir))
+        {
+            Directory.CreateDirectory(exportDir);
+        }
+
+        Task<bool> exportRowNameTask = ExportRowNamesTask(exportDir, exportType, filepath, paramName);
         bool rowNamesExported = await exportRowNameTask;
+
 
         if (rowNamesExported)
         {
-            // JSON
-            if (exportType is ExportRowNameType.JSON)
-            {
-                var outputName = $"{Project.ProjectName} -- Row Names.json";
-
-                if (paramName != "")
-                {
-                    outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.json";
-                }
-
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {outputName}");
-            }
-
-            // Text
-            if (exportType is ExportRowNameType.Text)
-            {
-                var outputName = $"{Project.ProjectName} -- Row Names.txt";
-
-                if (paramName != "")
-                {
-                    outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.txt";
-                }
-
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {outputName}");
-            }
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {exportDir}");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to export row names.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to export row names to {exportDir}");
         }
     }
 
-    public async Task<bool> ExportRowNamesTask(ExportRowNameType exportType, string filepath, string paramName = "")
+    public async Task<bool> ExportRowNamesTask(string exportDir, ExportRowNameType exportType, string filepath, string paramName = "")
     {
         await Task.Yield();
 
@@ -2466,44 +2470,39 @@ public class ParamBank
                 Entries = kvp.Value
             }).ToList();
 
-            store.Params.Add(paramEntry);
-        }
-
-        // JSON
-        if (exportType is ExportRowNameType.JSON)
-        {
-            var outputName = $"{Project.ProjectName} -- Row Names.json";
-
-            if (paramName != "")
+            // JSON
+            if (exportType is ExportRowNameType.JSON)
             {
-                outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.json";
+                var fullPath = Path.Combine(exportDir, $"{p.Key}.json");
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true,
+                    IncludeFields = true
+                };
+                var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
+
+                File.WriteAllText(fullPath, json);
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {fullPath}");
             }
 
-            var file = Path.Combine(filepath, outputName);
-
-            var json = JsonSerializer.Serialize(store, SmithboxSerializerContext.Default.RowNameStore);
-
-            File.WriteAllText(file, json);
-
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {file}");
+            if (exportType is ExportRowNameType.Text)
+            {
+                store.Params.Add(paramEntry);
+            }
         }
 
         // Text
         if (exportType is ExportRowNameType.Text)
         {
-            var outputName = $"{Project.ProjectName} -- Row Names.txt";
-
-            if (paramName != "")
-            {
-                outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.txt";
-            }
-
-            var file = Path.Combine(filepath, outputName);
-
             var textOuput = "";
 
             foreach (var entry in store.Params)
             {
+                var fullPath = Path.Combine(exportDir, $"{entry.Name}.txt");
+
                 if (paramName != "")
                 {
                     if (entry.Name != paramName)
@@ -2520,10 +2519,9 @@ public class ParamBank
                         textOuput = $"{textOuput};{indexRow}";
                     }
                 }
+
+                File.WriteAllText(fullPath, textOuput);
             }
-
-
-            File.WriteAllText(file, textOuput);
         }
 
         return true;

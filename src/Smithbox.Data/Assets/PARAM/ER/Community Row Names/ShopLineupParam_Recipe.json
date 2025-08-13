@@ -1,0 +1,1133 @@
+{
+  "Name": "ShopLineupParam_Recipe",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Furlcalling Finger Remedy - Default"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "Fire Pot - Default"
+      ]
+    },
+    {
+      "ID": 30101,
+      "Entries": [
+        "Redmane Fire Pot - Armorer's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30102,
+      "Entries": [
+        "Giantsflame Fire Pot - Armorer's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 30103,
+      "Entries": [
+        "Lightning Pot - Ancient Dragon Apostle's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30104,
+      "Entries": [
+        "Ancient Dragonbolt Pot - Ancient Dragon Apostle's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30105,
+      "Entries": [
+        "Fetid Pot - Nomadic Warrior's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30106,
+      "Entries": [
+        "Swarm Pot - Nomadic Warrior's Cookbook [24]"
+      ]
+    },
+    {
+      "ID": 30107,
+      "Entries": [
+        "Holy Water Pot - Missionary's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30108,
+      "Entries": [
+        "Sacred Order Pot - Missionary's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30109,
+      "Entries": [
+        "Freezing Pot - Glintstone Craftsman's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 30110,
+      "Entries": [
+        "Poison Pot - Nomadic Warrior's Cookbook [14]"
+      ]
+    },
+    {
+      "ID": 30111,
+      "Entries": [
+        "Oil Pot - Nomadic Warrior's Cookbook [17]"
+      ]
+    },
+    {
+      "ID": 30112,
+      "Entries": [
+        "Alluring Pot - Nomadic Warrior's Cookbook [21]"
+      ]
+    },
+    {
+      "ID": 30113,
+      "Entries": [
+        "Beastlure Pot - Nomadic Warrior's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30114,
+      "Entries": [
+        "Roped Fire Pot - Nomadic Warrior's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 30115,
+      "Entries": [
+        "Roped Lightning Pot - Ancient Dragon Apostle's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30116,
+      "Entries": [
+        "Roped Fetid Pot - Nomadic Warrior's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30117,
+      "Entries": [
+        "Roped Poison Pot - Nomadic Warrior's Cookbook [14]"
+      ]
+    },
+    {
+      "ID": 30118,
+      "Entries": [
+        "Roped Oil Pot - Nomadic Warrior's Cookbook [17]"
+      ]
+    },
+    {
+      "ID": 30119,
+      "Entries": [
+        "Roped Magic Pot - Glintstone Craftsman's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30120,
+      "Entries": [
+        "Roped Fly Pot - Nomadic Warrior's Cookbook [24]"
+      ]
+    },
+    {
+      "ID": 30122,
+      "Entries": [
+        "Roped Volcano Pot - Nomadic Warrior's Cookbook [20]"
+      ]
+    },
+    {
+      "ID": 30123,
+      "Entries": [
+        "Roped Holy Water Pot - Missionary's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30124,
+      "Entries": [
+        "Volcano Pot - Nomadic Warrior's Cookbook [20]"
+      ]
+    },
+    {
+      "ID": 30125,
+      "Entries": [
+        "Albinauric Pot - Glintstone Craftsman's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30126,
+      "Entries": [
+        "Cursed-Blood Pot - Nomadic Warrior's Cookbook [12]"
+      ]
+    },
+    {
+      "ID": 30127,
+      "Entries": [
+        "Sleep Pot - Fevor's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30128,
+      "Entries": [
+        "Rancor Pot - Nomadic Warrior's Cookbook [9]"
+      ]
+    },
+    {
+      "ID": 30129,
+      "Entries": [
+        "Magic Pot - Glintstone Craftsman's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30130,
+      "Entries": [
+        "Academy Magic Pot - Glintstone Craftsman's Cookbook [8]"
+      ]
+    },
+    {
+      "ID": 30131,
+      "Entries": [
+        "Rot Pot - Nomadic Warrior's Cookbook [22]"
+      ]
+    },
+    {
+      "ID": 30200,
+      "Entries": [
+        "Rowa Raisin - Default"
+      ]
+    },
+    {
+      "ID": 30201,
+      "Entries": [
+        "Sweet Raisin - Nomadic Warrior's Cookbook [19]"
+      ]
+    },
+    {
+      "ID": 30202,
+      "Entries": [
+        "Frozen Raisin - Nomadic Warrior's Cookbook [23]"
+      ]
+    },
+    {
+      "ID": 30300,
+      "Entries": [
+        "Neutralizing Boluses - Armorer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30301,
+      "Entries": [
+        "Stanching Boluses - Nomadic Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 30302,
+      "Entries": [
+        "Thawfrost Boluses - Nomadic Warrior's Cookbook [16]"
+      ]
+    },
+    {
+      "ID": 30303,
+      "Entries": [
+        "Stimulating Boluses - Nomadic Warrior's Cookbook [16]"
+      ]
+    },
+    {
+      "ID": 30304,
+      "Entries": [
+        "Preserving Boluses - Armorer's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 30305,
+      "Entries": [
+        "Rejuvenating Boluses - Missionary's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 30306,
+      "Entries": [
+        "Clarifying Boluses - Frenzied's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30400,
+      "Entries": [
+        "Pickled Turtle Neck - Nomadic Warrior's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30401,
+      "Entries": [
+        "Immunizing Cured Meat - Armorer's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30402,
+      "Entries": [
+        "Invigorating Cured Meat - Nomadic Warrior's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30403,
+      "Entries": [
+        "Clarifying Cured Meat - Nomadic Warrior's Cookbook [23]"
+      ]
+    },
+    {
+      "ID": 30404,
+      "Entries": [
+        "Dappled Cured Meat - Nomadic Warrior's Cookbook [18]"
+      ]
+    },
+    {
+      "ID": 30405,
+      "Entries": [
+        "Spellproof Dried Liver - Nomadic Warrior's Cookbook [11]"
+      ]
+    },
+    {
+      "ID": 30406,
+      "Entries": [
+        "Fireproof Dried Liver - Armorer's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30407,
+      "Entries": [
+        "Lightningproof Dried Liver - Ancient Dragon Apostle's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30408,
+      "Entries": [
+        "Holyproof Dried Liver - Missionary's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 30409,
+      "Entries": [
+        "Silver-Pickled Fowl Foot - Missionary's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30410,
+      "Entries": [
+        "Gold-Pickled Fowl Foot - Missionary's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30411,
+      "Entries": [
+        "Exalted Flesh - Armorer's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30413,
+      "Entries": [
+        "Immunizing White Cured Meat - Armorer's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30414,
+      "Entries": [
+        "Invigorating White Cured Meat - Nomadic Warrior's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30415,
+      "Entries": [
+        "Clarifying White Cured Meat - Nomadic Warrior's Cookbook [23]"
+      ]
+    },
+    {
+      "ID": 30416,
+      "Entries": [
+        "Dappled White Cured Meat - Nomadic Warrior's Cookbook [18]"
+      ]
+    },
+    {
+      "ID": 30500,
+      "Entries": [
+        "Fire Grease - Armorer's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30501,
+      "Entries": [
+        "Lightning Grease - Ancient Dragon Apostle's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30502,
+      "Entries": [
+        "Magic Grease - Glintstone Craftsman's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30503,
+      "Entries": [
+        "Holy Grease - Missionary's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30504,
+      "Entries": [
+        "Blood Grease - Nomadic Warrior's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 30505,
+      "Entries": [
+        "Soporific Grease - Fevor's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30506,
+      "Entries": [
+        "Poison Grease - Nomadic Warrior's Cookbook [8]"
+      ]
+    },
+    {
+      "ID": 30507,
+      "Entries": [
+        "Freezing Grease - Glintstone Craftsman's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30508,
+      "Entries": [
+        "Dragonwound Grease - Ancient Dragon Apostle's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30509,
+      "Entries": [
+        "Rot Grease - Nomadic Warrior's Cookbook [22]"
+      ]
+    },
+    {
+      "ID": 30510,
+      "Entries": [
+        "Drawstring Fire Grease - Armorer's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30511,
+      "Entries": [
+        "Drawstring Lightning Grease - Ancient Dragon Apostle's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30512,
+      "Entries": [
+        "Drawstring Magic Grease - Glintstone Craftsman's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 30513,
+      "Entries": [
+        "Drawstring Holy Grease - Missionary's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30514,
+      "Entries": [
+        "Drawstring Blood Grease - Nomadic Warrior's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 30515,
+      "Entries": [
+        "Drawstring Soporific Grease - Fevor's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30516,
+      "Entries": [
+        "Drawstring Poison Grease - Nomadeic Warrior's Cookbook [8]"
+      ]
+    },
+    {
+      "ID": 30518,
+      "Entries": [
+        "Drawstring Rot Grease - Nomadic Warrior's Cookbook [22]"
+      ]
+    },
+    {
+      "ID": 30519,
+      "Entries": [
+        "Shield Grease - Glintstone Craftsman's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 30600,
+      "Entries": [
+        "Bone Dart - Default"
+      ]
+    },
+    {
+      "ID": 30601,
+      "Entries": [
+        "Poisonbone Dart - Nomadic Warrior's Cookbook [14]"
+      ]
+    },
+    {
+      "ID": 30602,
+      "Entries": [
+        "Crystal Dart - Nomadic Warrior's Cookbook [11]"
+      ]
+    },
+    {
+      "ID": 30700,
+      "Entries": [
+        "Rainbow Stone - Default"
+      ]
+    },
+    {
+      "ID": 30701,
+      "Entries": [
+        "Glowstone - Nomadic Warrior's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30702,
+      "Entries": [
+        "Grace Mimic - Missionary's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30703,
+      "Entries": [
+        "Soft Cotton - Nomadic Warrior's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 30704,
+      "Entries": [
+        "Soap - Nomadic Warrior's Cookbook [17]"
+      ]
+    },
+    {
+      "ID": 30800,
+      "Entries": [
+        "Cuckoo Glintstone - Glintstone Craftsman's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30801,
+      "Entries": [
+        "Warming Stone - Nomadic Warrior's Cookbook [19]"
+      ]
+    },
+    {
+      "ID": 30802,
+      "Entries": [
+        "Frenzyflame Stone - Frenzied’s Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30803,
+      "Entries": [
+        "Scriptstone - Missionary's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30804,
+      "Entries": [
+        "Bewitching Branch - Fevor's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "Uplifting Aromatic - Perfumer's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30901,
+      "Entries": [
+        "Spark Aromatic - Perfumer's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 30902,
+      "Entries": [
+        "Ironjar Aromatic - Perfumer's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 30903,
+      "Entries": [
+        "Bloodboil Aromatic - Perfumer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30904,
+      "Entries": [
+        "Poison Spraymist - Perfumer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 30905,
+      "Entries": [
+        "Acid Spraymist - Perfumer's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 32000,
+      "Entries": [
+        "Bone Arrow (Fletched) - Nomadic Warrior's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32001,
+      "Entries": [
+        "Bone Arrow - Nomadic Warrior's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32002,
+      "Entries": [
+        "Firebone Arrow (Fletched) - Armorer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32003,
+      "Entries": [
+        "Firebone Arrow - Armorer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32004,
+      "Entries": [
+        "Poisonbone Arrow (Fletched) - Nomadic Warrior's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 32005,
+      "Entries": [
+        "Poisonbone Arrow - Nomadic Warrior's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 32006,
+      "Entries": [
+        "Sleepbone Arrow (Fletched) - Fevor's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32007,
+      "Entries": [
+        "Sleepbone Arrow - Fevor's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32008,
+      "Entries": [
+        "Stormwing Bone Arrow - Nomadic Warrior's Cookbook [10]"
+      ]
+    },
+    {
+      "ID": 32009,
+      "Entries": [
+        "Lightningbone Arrow (Fletched) - Ancient Dragon Apostle's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32010,
+      "Entries": [
+        "Lightningbone Arrow - Ancient Dragon Apostle's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32011,
+      "Entries": [
+        "Rainbow Stone Arrow - Nomadic Warrior's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 32012,
+      "Entries": [
+        "Shattershard Arrow - Nomadic Warrior's Cookbook [11]"
+      ]
+    },
+    {
+      "ID": 32013,
+      "Entries": [
+        "Magicbone Arrow (Fletched) - Glintstone Craftsman's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 32014,
+      "Entries": [
+        "Magicbone Arrow - Glintstone Craftsman's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 32015,
+      "Entries": [
+        "Haligbone Arrow (Fletched) - Missionary's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 32016,
+      "Entries": [
+        "Haligbone Arrow - Missionary's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 32017,
+      "Entries": [
+        "Bloodbone Arrow (Fletched) - Nomadic Warrior's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 32018,
+      "Entries": [
+        "Bloodbone Arrow - Nomadic Warrior's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 32019,
+      "Entries": [
+        "Coldbone Arrow (Fletched) - Glintstone Craftsman's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 32020,
+      "Entries": [
+        "Coldbone Arrow - Glintstone Craftsman's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 32021,
+      "Entries": [
+        "Rotbone Arrow (Fletched) - Nomadic Warrior's Cookbook [15]"
+      ]
+    },
+    {
+      "ID": 32022,
+      "Entries": [
+        "Rotbone Arrow - Nomadic Warrior's Cookbook [15]"
+      ]
+    },
+    {
+      "ID": 32100,
+      "Entries": [
+        "Bone Great Arrow (Fletched) - Nomadic Warrior's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32101,
+      "Entries": [
+        "Bone Great Arrow - Nomadic Warrior's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32200,
+      "Entries": [
+        "Bone Bolt - Nomadic Warrior's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32201,
+      "Entries": [
+        "Firebone Bolt - Armorer's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32202,
+      "Entries": [
+        "Lightningbone Bolt - Ancient Dragon Apostle's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 32203,
+      "Entries": [
+        "Magicbone Bolt - Glintstone Craftsman's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 32204,
+      "Entries": [
+        "Haligbone Bolt - Missionary's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 32205,
+      "Entries": [
+        "Poisonbone Bolt - Nomadic Warrior's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 32206,
+      "Entries": [
+        "Bloodbone Bolt - Nomadic Warrior's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 32207,
+      "Entries": [
+        "Coldbone Bolt - Glintstone Craftsman's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 32208,
+      "Entries": [
+        "Rotbone Bolt - Nomadic Warrior's Cookbook [15]"
+      ]
+    },
+    {
+      "ID": 32209,
+      "Entries": [
+        "Sleepbone Bolt -  Fevor's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 32300,
+      "Entries": [
+        "Bone Ballista Bolt - Nomadic Warrior's Cookbook [13]"
+      ]
+    },
+    {
+      "ID": 35100,
+      "Entries": [
+        "Hefty Fire Pot - Greater Potentate's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35101,
+      "Entries": [
+        "Hefty Magic Pot - Greater Potentate's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 35102,
+      "Entries": [
+        "Hefty Lightning Pot - Greater Potentate's Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 35104,
+      "Entries": [
+        "Hefty Rock Pot - Greater Potentate's Cookbook [12]"
+      ]
+    },
+    {
+      "ID": 35105,
+      "Entries": [
+        "Hefty Poison Pot - Greater Potentate's Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 35106,
+      "Entries": [
+        "Hefty Rot Pot - Greater Potentate's Cookbook [9]"
+      ]
+    },
+    {
+      "ID": 35107,
+      "Entries": [
+        "Hefty Fly Pot - Greater Potentate's Cookbook [10]"
+      ]
+    },
+    {
+      "ID": 35108,
+      "Entries": [
+        "Hefty Freezing Pot - Greater Potentate's Cookbook [11]"
+      ]
+    },
+    {
+      "ID": 35110,
+      "Entries": [
+        "Hefty Frenzied Flame Pot - Greater Potentate's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35111,
+      "Entries": [
+        "Hefty Fetid Pot - Greater Potentate's Cookbook [8]"
+      ]
+    },
+    {
+      "ID": 35112,
+      "Entries": [
+        "Hefty Oil Pot - Greater Potentate's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 35113,
+      "Entries": [
+        "Hefty Volcano Pot - Greater Potentate's Cookbook [13]"
+      ]
+    },
+    {
+      "ID": 35114,
+      "Entries": [
+        "Hefty Rancor Pot - Greater Potentate's Cookbook [14]"
+      ]
+    },
+    {
+      "ID": 35115,
+      "Entries": [
+        "Hefty Red Lightning Pot - Greater Potentate's Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 35116,
+      "Entries": [
+        "Hefty Furance Pot - Greater Potentate's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35120,
+      "Entries": [
+        "Red Lightning Pot - Ancient Dragon Knight's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35121,
+      "Entries": [
+        "Frenzied Flame Pot - Mad Craftsman's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35122,
+      "Entries": [
+        "Eternal Sleep Pot - St. Trina Disciple's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35131,
+      "Entries": [
+        "Roped Frenzied Flame Pot - Mad Craftsman's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35200,
+      "Entries": [
+        "Spirit Raisin - Forager Brood Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 35300,
+      "Entries": [
+        "Lulling Branch - St. Trina Disciple's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 35400,
+      "Entries": [
+        "Dragon Communion Flesh - Igon's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35401,
+      "Entries": [
+        "Fingerprint Nostrum - Finger-Weaver's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35410,
+      "Entries": [
+        "Spellproof Pickled Liver - Forager Brood Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35411,
+      "Entries": [
+        "Fireproof Pickled Liver - Forager Brood Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35412,
+      "Entries": [
+        "Lightningproof Pickled Liver - Forager Brood Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 35413,
+      "Entries": [
+        "Holyproof Pickled Liver - Forager Brood Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 35414,
+      "Entries": [
+        "Opaline Pickled Liver - Forager Brood Cookbook [5]"
+      ]
+    },
+    {
+      "ID": 35415,
+      "Entries": [
+        "Well-Pickled Turtle Neck - Forager Brood Cookbook [6]"
+      ]
+    },
+    {
+      "ID": 35500,
+      "Entries": [
+        "Messmerfire Grease - Fire Knight's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35501,
+      "Entries": [
+        "Dragonbolt Grease - Ancient Dragon Knight's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35502,
+      "Entries": [
+        "Royal Magic Grease - Loyal Knight's Cookbook"
+      ]
+    },
+    {
+      "ID": 35503,
+      "Entries": [
+        "Golden Grease - Battlefield Priest's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35504,
+      "Entries": [
+        "Eternal Sleep Grease - St. Trina Disciple's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35505,
+      "Entries": [
+        "Dragon Communion Grease - Igon's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35506,
+      "Entries": [
+        "Drawstring Messmerfire Grease - Fire Knight's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35507,
+      "Entries": [
+        "Drawstring Dragonbolt Grease - Ancient Dragon Knight's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35508,
+      "Entries": [
+        "Drawstring Royal Magic Grease - Loyal Knight's Cookbook"
+      ]
+    },
+    {
+      "ID": 35509,
+      "Entries": [
+        "Drawstring Golden Grease - Battlefield Priest's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35510,
+      "Entries": [
+        "Drawstring Eternal Sleep Grease - St. Trina Disciple's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35511,
+      "Entries": [
+        "Festive Grease - Battlefield Priest's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35600,
+      "Entries": [
+        "Dragon Communion Harpoon - Igon's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35700,
+      "Entries": [
+        "Polter Stone - Grave Keeper's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35800,
+      "Entries": [
+        "Spritestone - Antiquity Scholar's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35801,
+      "Entries": [
+        "Call of Tibia - Tibia's Cookbook"
+      ]
+    },
+    {
+      "ID": 35802,
+      "Entries": [
+        "Surging Frenzied Flame - Mad Craftsman's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 35803,
+      "Entries": [
+        "Golden Vow - Battlefield Priest's Cookbook [3]"
+      ]
+    },
+    {
+      "ID": 35804,
+      "Entries": [
+        "Fire Coil - Fire Knight's Cookbook [2]"
+      ]
+    },
+    {
+      "ID": 35805,
+      "Entries": [
+        "Fire Spritestone - Antiquity Scholar's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35806,
+      "Entries": [
+        "Glinting Nail - Finger-Weaver's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 35807,
+      "Entries": [
+        "Sunwarmth Stone - Battlefield Priest's Cookbook [4]"
+      ]
+    },
+    {
+      "ID": 35808,
+      "Entries": [
+        "Charming Branch - Forager Brood Cookbook [7]"
+      ]
+    },
+    {
+      "ID": 37000,
+      "Entries": [
+        "Piquebone Arrow (Fletched) - Grave Keeper's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 37001,
+      "Entries": [
+        "Piquebone Arrow - Grave Keeper's Cookbook [1]"
+      ]
+    },
+    {
+      "ID": 37100,
+      "Entries": [
+        "Piquebone Bolt - Grave Keeper's Cookbook [1]"
+      ]
+    }
+  ]
+}

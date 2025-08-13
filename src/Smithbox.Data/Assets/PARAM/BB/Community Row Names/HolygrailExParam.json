@@ -1,0 +1,263 @@
+{
+  "Name": "HolygrailExParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Defaults"
+      ]
+    },
+    {
+      "ID": 6109,
+      "Entries": [
+        "Fixed Grail [Level 1 】Thumel"
+      ]
+    },
+    {
+      "ID": 6209,
+      "Entries": [
+        "Fixed Grail [Level 2 】Thumel"
+      ]
+    },
+    {
+      "ID": 6219,
+      "Entries": [
+        "Fixed Grail [Level 2 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6309,
+      "Entries": [
+        "Fixed Grail [Level 3 】Thumel"
+      ]
+    },
+    {
+      "ID": 6319,
+      "Entries": [
+        "Fixed Grail [Level 3 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6409,
+      "Entries": [
+        "Fixed Grail [Level 4 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6429,
+      "Entries": [
+        "Fixed Grail [Level 4 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6509,
+      "Entries": [
+        "Fixed Grail [Level 5 ] Tumer-Il"
+      ]
+    },
+    {
+      "ID": 6529,
+      "Entries": [
+        "Fixed Grail [Level 5 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6539,
+      "Entries": [
+        "Fixed Grail [Level 5 】Is"
+      ]
+    },
+    {
+      "ID": 6629,
+      "Entries": [
+        "Fixed Grail [Level 6 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6639,
+      "Entries": [
+        "Fixed Grail [Level 6 】Is"
+      ]
+    },
+    {
+      "ID": 6809,
+      "Entries": [
+        "Fixed Grail [Level 8 】Thumel"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Automatically generated chalice [Level 1 】Thumel"
+      ]
+    },
+    {
+      "ID": 6200,
+      "Entries": [
+        "Automatically generated chalice [Level 2 】Thumel"
+      ]
+    },
+    {
+      "ID": 6210,
+      "Entries": [
+        "Automatically generated chalice [Level 2】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】Thumel _ Multi"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 Remote Grave"
+      ]
+    },
+    {
+      "ID": 6312,
+      "Entries": [
+        "Automatically generated chalice [Level 3 】 Remote Grave _ Multi"
+      ]
+    },
+    {
+      "ID": 6401,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Automatically generated chalice [Level 4 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel"
+      ]
+    },
+    {
+      "ID": 6502,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Thumel _ Multi"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 Laurent"
+      ]
+    },
+    {
+      "ID": 6522,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】 Laurent _ Multi"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Is"
+      ]
+    },
+    {
+      "ID": 6532,
+      "Entries": [
+        "Automatically generated chalice [Level 5 】Is _ Multi"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6621,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】 Laurent _ curse"
+      ]
+    },
+    {
+      "ID": 6631,
+      "Entries": [
+        "Automatically generated chalice [Level 6 】Is _ curse"
+      ]
+    },
+    {
+      "ID": 6701,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ curse"
+      ]
+    },
+    {
+      "ID": 6702,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ Multi"
+      ]
+    },
+    {
+      "ID": 6703,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Thumel _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 6721,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ curse"
+      ]
+    },
+    {
+      "ID": 6722,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ Multi"
+      ]
+    },
+    {
+      "ID": 6723,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】 Laurent _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 6731,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ curse"
+      ]
+    },
+    {
+      "ID": 6732,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ Multi"
+      ]
+    },
+    {
+      "ID": 6733,
+      "Entries": [
+        "Automatically generated chalice [Level 7 】Is _ A terrible curse"
+      ]
+    },
+    {
+      "ID": 6900,
+      "Entries": [
+        "For character debugging 1"
+      ]
+    },
+    {
+      "ID": 6901,
+      "Entries": [
+        "For character debugging 2"
+      ]
+    }
+  ]
+}

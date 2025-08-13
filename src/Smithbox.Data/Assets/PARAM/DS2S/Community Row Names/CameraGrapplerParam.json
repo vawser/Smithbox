@@ -1,0 +1,71 @@
+{
+  "Name": "CameraGrapplerParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Tossing Camera -- 投げカメラ"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Throwing camera normal interpolation -- 投げカメラ通常補間"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Backstab: Dagger -- バックスタブ：短剣"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Backstab: Naoken -- バックスタブ：直剣"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Backstab: Spear -- バックスタブ：槍"
+      ]
+    },
+    {
+      "ID": 10030,
+      "Entries": [
+        "Backstub: Two-handed oversized sword -- バックスタブ：両手特大剣"
+      ]
+    },
+    {
+      "ID": 10040,
+      "Entries": [
+        "Backstub: Two-Handed Axe -- バックスタブ：両手斧"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Guard Break Stub: Dagger -- ガードブレイクスタブ：短剣"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Paribreak Stub: Dagger -- パリィブレイクスタブ：短剣"
+      ]
+    },
+    {
+      "ID": 10500000,
+      "Entries": [
+        "Fall Ingt: Javaza Hat -- 落下スタブ：ジャバザハット"
+      ]
+    },
+    {
+      "ID": 10601000,
+      "Entries": [
+        "Fall Ingrata: Salamander -- 落下スタブ：サラマンダー"
+      ]
+    }
+  ]
+}

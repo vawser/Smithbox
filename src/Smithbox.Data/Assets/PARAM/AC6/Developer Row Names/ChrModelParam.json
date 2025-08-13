@@ -1,0 +1,377 @@
+{
+  "Name": "ChrModelParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "dummy -- ダミー"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Security MT -- 警備MT"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Security MT Enhancement A Firepower Enhancement -- 警備MT 強化A 火力強化"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Security MT Reinforcement B Leg Reinforcement -- 警備MT 強化B 脚部強化"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Former communist country MT -- 旧共産圏MT"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "regular army MT -- 正規軍MT"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Flying type MT -- 飛行型MT"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "juggernaut -- ジャガーノート"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "avalanche -- アバランチ"
+      ]
+    },
+    {
+      "ID": 3250,
+      "Entries": [
+        "regular army AC -- 正規軍AC"
+      ]
+    },
+    {
+      "ID": 3260,
+      "Entries": [
+        "Regular Army AC (Heavyweight) -- 正規軍AC（重量級）"
+      ]
+    },
+    {
+      "ID": 3300,
+      "Entries": [
+        "ghost -- ゴースト"
+      ]
+    },
+    {
+      "ID": 3400,
+      "Entries": [
+        "Quadruped MT -- 四脚MT"
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "old world MT -- 旧世界MT"
+      ]
+    },
+    {
+      "ID": 3600,
+      "Entries": [
+        "construction machinery spider -- 建機クモ"
+      ]
+    },
+    {
+      "ID": 3700,
+      "Entries": [
+        "Deleter -- デリーター"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Mobile armored infantry \"Adolf\" -- 機動装甲歩兵”アードルフ”"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "valkyria -- ヴァルキュリア"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Special attack MT -- 特攻MT"
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "Next generation proto AC -- 次世代プロトAC"
+      ]
+    },
+    {
+      "ID": 4201,
+      "Entries": [
+        "next generation proto ac c route -- 次世代プロトAC cルート"
+      ]
+    },
+    {
+      "ID": 4210,
+      "Entries": [
+        "Next generation proto AC illusion (retarget) -- 次世代プロトAC\u3000幻影（リターゲット）"
+      ]
+    },
+    {
+      "ID": 4250,
+      "Entries": [
+        "orbit seed -- オービットシード"
+      ]
+    },
+    {
+      "ID": 4260,
+      "Entries": [
+        "Orbit control character -- オービット制御用キャラ"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Guard mecha (air) -- ガードメカ（空中）"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "bug -- バグ"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "Heavy guard mechanism (ground) -- 重ガードメカ（地上）"
+      ]
+    },
+    {
+      "ID": 5100,
+      "Entries": [
+        "large transport helicopter -- 大型輸送ヘリ"
+      ]
+    },
+    {
+      "ID": 5120,
+      "Entries": [
+        "military us drone -- 軍事用USドローン"
+      ]
+    },
+    {
+      "ID": 5150,
+      "Entries": [
+        "combat helicopter -- 戦闘ヘリ"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "combat vehicle -- 戦闘車両"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "sunflower -- サンフラワー"
+      ]
+    },
+    {
+      "ID": 5300,
+      "Entries": [
+        "suicide satellite -- 自爆衛星"
+      ]
+    },
+    {
+      "ID": 5500,
+      "Entries": [
+        "Biological weapon (insect) -- 生体兵器（虫）"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Anti-AC large combat helicopter “Pharaon” -- 対AC大型戦闘ヘリ”ファラオン”"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "sea ​​spider -- ウミグモ"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "sea ​​spider secondary gun -- ウミグモ副砲"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "sand worm -- サンドワーム"
+      ]
+    },
+    {
+      "ID": 6400,
+      "Entries": [
+        "huge mining ship -- 巨大採掘艦"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Giant Mining Ship Eyeball Redesign Ver. -- 巨大採掘艦 目玉 リデザインVer"
+      ]
+    },
+    {
+      "ID": 7222,
+      "Entries": [
+        "Field missile large (main body only) -- 野戦ミサイル\u3000大型（本体のみ）"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Ground Force Artillery Grenade (Large) -- 地上勢力砲台\u3000グレネード(大)"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "Ground force artillery bazooka (medium) -- 地上勢力砲台\u3000バズーカ(中)"
+      ]
+    },
+    {
+      "ID": 7250,
+      "Entries": [
+        "Ground force artillery gatling (large) -- 地上勢力砲台\u3000ガトリング(大)"
+      ]
+    },
+    {
+      "ID": 7260,
+      "Entries": [
+        "Ground force artillery missile (medium) twin -- 地上勢力砲台\u3000ミサイル(中) 連装"
+      ]
+    },
+    {
+      "ID": 7261,
+      "Entries": [
+        "Ground Force Artillery Missile (Medium) Vertical -- 地上勢力砲台\u3000ミサイル(中) 垂直"
+      ]
+    },
+    {
+      "ID": 7262,
+      "Entries": [
+        "Ground force artillery missile (medium) horizontal -- 地上勢力砲台\u3000ミサイル(中) 水平"
+      ]
+    },
+    {
+      "ID": 7270,
+      "Entries": [
+        "Ground Force Artillery Sniper (Large) -- 地上勢力砲台\u3000スナイパー(大)"
+      ]
+    },
+    {
+      "ID": 7280,
+      "Entries": [
+        "Old style EN battery Rezarai (medium) -- 旧式EN砲台\u3000レザライ(中)"
+      ]
+    },
+    {
+      "ID": 7290,
+      "Entries": [
+        "Old style EN battery Reza Buzz (extra large) -- 旧式EN砲台\u3000レザバズ(特大)"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "Speaker antenna turret pulse (medium) -- スピーカーアンテナ砲台\u3000パルス(中)"
+      ]
+    },
+    {
+      "ID": 7310,
+      "Entries": [
+        "State-of-the-art EN gun battery Plarai (extra large) -- 最新鋭EN砲台\u3000プラライ(特大)"
+      ]
+    },
+    {
+      "ID": 7320,
+      "Entries": [
+        "State-of-the-art EN battery Plamisa (medium) -- 最新鋭EN砲台\u3000プラミサ(中)"
+      ]
+    },
+    {
+      "ID": 7390,
+      "Entries": [
+        "D layer giant gun battery Anemone -- D層巨大砲台\u3000アネモネ"
+      ]
+    },
+    {
+      "ID": 7400,
+      "Entries": [
+        "amphibious assault ship -- 強襲揚陸艦"
+      ]
+    },
+    {
+      "ID": 7401,
+      "Entries": [
+        "Amphibious assault ship main gun (medium) -- 強襲揚陸艦主砲(中)"
+      ]
+    },
+    {
+      "ID": 7402,
+      "Entries": [
+        "Amphibious assault ship secondary gun (small) -- 強襲揚陸艦副砲(小)"
+      ]
+    },
+    {
+      "ID": 7403,
+      "Entries": [
+        "Amphibious assault ship missile gun (small) -- 強襲揚陸艦ミサイル砲(小)"
+      ]
+    },
+    {
+      "ID": 7410,
+      "Entries": [
+        "Amphibious assault ship_Slave aircraft -- 強襲揚陸艦_子機"
+      ]
+    },
+    {
+      "ID": 8135,
+      "Entries": [
+        "Strong enemy (humanoid) -- 強敵(人型）"
+      ]
+    },
+    {
+      "ID": 8145,
+      "Entries": [
+        "Strong enemy (bird type) -- 強敵(鳥型）"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Enemy equipment parts start -- 敵の装備パーツ開始"
+      ]
+    }
+  ]
+}

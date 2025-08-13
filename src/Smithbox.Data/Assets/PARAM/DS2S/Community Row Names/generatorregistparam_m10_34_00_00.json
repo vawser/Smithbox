@@ -1,0 +1,83 @@
+{
+  "Name": "generatorregistparam_m10_34_00_00",
+  "Entries": [
+    {
+      "ID": 12500000,
+      "Entries": [
+        "[REG:12500000] Rupturing Hollow"
+      ]
+    },
+    {
+      "ID": 15301400,
+      "Entries": [
+        "[REG:15301400] Syan Knight"
+      ]
+    },
+    {
+      "ID": 21300000,
+      "Entries": [
+        "[REG:21300000] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "[REG:22600000] Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22600010,
+      "Entries": [
+        "[REG:22600010] Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22600060,
+      "Entries": [
+        "[REG:22600060] Corpse Rat"
+      ]
+    },
+    {
+      "ID": 22620000,
+      "Entries": [
+        "[REG:22620000] Corpse Rat (Rat King)"
+      ]
+    },
+    {
+      "ID": 22620001,
+      "Entries": [
+        "[REG:22620001] Corpse Rat (Rat King)"
+      ]
+    },
+    {
+      "ID": 33700015,
+      "Entries": [
+        "[REG:33700015] Captive Undead"
+      ]
+    },
+    {
+      "ID": 33700020,
+      "Entries": [
+        "[REG:33700020] Captive Undead"
+      ]
+    },
+    {
+      "ID": 81100000,
+      "Entries": [
+        "[REG:81100000] Dingy Cleric Phantom"
+      ]
+    },
+    {
+      "ID": 81110000,
+      "Entries": [
+        "[REG:81110000] Faraam Knight Phantom"
+      ]
+    },
+    {
+      "ID": 84920000,
+      "Entries": [
+        "[REG:84920000] Rhoy the Explorer"
+      ]
+    }
+  ]
+}

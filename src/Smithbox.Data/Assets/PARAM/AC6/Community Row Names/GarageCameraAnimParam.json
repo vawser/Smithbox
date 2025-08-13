@@ -1,0 +1,47 @@
+{
+  "Name": "GarageCameraAnimParam",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "garage"
+      ]
+    },
+    {
+      "ID": 100000100,
+      "Entries": [
+        "Garage_(Chapter 1/Chapter 2)"
+      ]
+    },
+    {
+      "ID": 100000200,
+      "Entries": [
+        "Garage 2_(Chapter 3)"
+      ]
+    },
+    {
+      "ID": 100000300,
+      "Entries": [
+        "Garage 3_(Chapter 4)"
+      ]
+    },
+    {
+      "ID": 100000400,
+      "Entries": [
+        "Garage 4_(Chapter 5)"
+      ]
+    },
+    {
+      "ID": 100000500,
+      "Entries": [
+        "garage 5"
+      ]
+    },
+    {
+      "ID": 100001000,
+      "Entries": [
+        "For conversation production"
+      ]
+    }
+  ]
+}

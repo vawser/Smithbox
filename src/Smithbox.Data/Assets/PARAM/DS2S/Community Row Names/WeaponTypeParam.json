@@ -1,0 +1,869 @@
+{
+  "Name": "WeaponTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Hands: Generic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Hands: Pyromancy Flame"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Claw: Generic"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Claw: Work Hook"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Claw: Malformed Claws"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Fist: Generic"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Dagger: Generic"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Dagger: Thief Dagger / Retainer's Short Sword"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Dagger: Parrying Dagger / Blue Dagger"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Dagger: Black Flamestone Dagger"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Dagger: Dagger"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Dagger: Royal Dirk"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Thrusting Sword: Generic"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Thrusting Sword: Estoc"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Thrusting Sword: Rapier"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Thrusting Sword: Spider's Silk"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Whip: Generic"
+      ]
+    },
+    {
+      "ID": 90,
+      "Entries": [
+        "Twinblade: Generic"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "Twinblade: Dragonrider Twinblade/Red Iron Twinblade"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "Twinblade: Stone Twinblade"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Spear: Generic"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Spear: Gargoyle Bident"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Lance: Generic"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Curved Sword: Generic"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Curved Sword: Falchion"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Curved Sword: Warped Sword"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Katana: Generic"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Katana: Beserker Blade"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Katana: Uchigatana"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Katana: Chaos Blade"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Straight Sword: Generic"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Straight Sword: Longsword"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Straight Sword: Shortsword"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "Straight Sword: Blue Flame"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "Scythe: Generic"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Scythe: Silverblack Sickle"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Greatsword: Generic"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Greatsword: Claymore"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Greatsword: Bastard Sword"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Greatsword: Key to the Embedded"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Greatsword: Drakeblood Greatsword"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "Ultra Greatsword: Generic"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "Ultra Greatsword: King's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "Ultra Greatsword: Pursuer's Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curved Greatsword: Generic"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Hammer: Generic"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Hammer: Mace of the Insolent"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Hammer: Handmaid's Ladle"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Hammer: Archdrake Mace"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Hammer: Club"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Hammer: Craftsman's Hammer"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "Great Hammer: Generic"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "Great Hammer: Pickaxe"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Great Hammer: Blank"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Great Hammer: Drakekeeper's Warpick"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "Axe: Hand Axe"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "Axe: Battle Axe"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "Axe: Dragonslayer's Crescent Axe"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "Axe: Gyrm Axe"
+      ]
+    },
+    {
+      "ID": 276,
+      "Entries": [
+        "Axe: Blank"
+      ]
+    },
+    {
+      "ID": 277,
+      "Entries": [
+        "Axe: Butcher's Knife"
+      ]
+    },
+    {
+      "ID": 280,
+      "Entries": [
+        "Greataxe: Generic"
+      ]
+    },
+    {
+      "ID": 281,
+      "Entries": [
+        "Greataxe: Bandit Greataxe"
+      ]
+    },
+    {
+      "ID": 285,
+      "Entries": [
+        "Greataxe: Giant Stone Axe"
+      ]
+    },
+    {
+      "ID": 286,
+      "Entries": [
+        "Greataxe: Crescent Axe"
+      ]
+    },
+    {
+      "ID": 287,
+      "Entries": [
+        "Greataxe: Greataxe"
+      ]
+    },
+    {
+      "ID": 290,
+      "Entries": [
+        "Halberd: Generic"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Staff: Generic"
+      ]
+    },
+    {
+      "ID": 331,
+      "Entries": [
+        "Staff: Sunset Staff"
+      ]
+    },
+    {
+      "ID": 332,
+      "Entries": [
+        "Staff: Blank"
+      ]
+    },
+    {
+      "ID": 333,
+      "Entries": [
+        "Staff: Blank"
+      ]
+    },
+    {
+      "ID": 334,
+      "Entries": [
+        "Staff: Lizard Staff"
+      ]
+    },
+    {
+      "ID": 335,
+      "Entries": [
+        "Staff: Bat Staff"
+      ]
+    },
+    {
+      "ID": 336,
+      "Entries": [
+        "Staff: Sorcerer's Staff"
+      ]
+    },
+    {
+      "ID": 337,
+      "Entries": [
+        "Staff: Witchtree Branch"
+      ]
+    },
+    {
+      "ID": 338,
+      "Entries": [
+        "Staff: Archdrake Staff"
+      ]
+    },
+    {
+      "ID": 339,
+      "Entries": [
+        "Staff: Bone Staff"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Staff: Black Witch's Staff"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Staff: Staff of Wisdom"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Staff: Azal's Staff"
+      ]
+    },
+    {
+      "ID": 343,
+      "Entries": [
+        "Staff: Olenford's Staff"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Chime: Generic"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Chime: Protective Chime"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Chime: Idol's Chime"
+      ]
+    },
+    {
+      "ID": 353,
+      "Entries": [
+        "Chime: Priest's Chime"
+      ]
+    },
+    {
+      "ID": 354,
+      "Entries": [
+        "Chime: Chime of Want"
+      ]
+    },
+    {
+      "ID": 355,
+      "Entries": [
+        "Chime: Disc Chime"
+      ]
+    },
+    {
+      "ID": 356,
+      "Entries": [
+        "Chime: Cleric's Sacred Chime"
+      ]
+    },
+    {
+      "ID": 357,
+      "Entries": [
+        "Chime: Dragon Chime"
+      ]
+    },
+    {
+      "ID": 358,
+      "Entries": [
+        "Chime: Caitha's Chime"
+      ]
+    },
+    {
+      "ID": 360,
+      "Entries": [
+        "Bow: Generic"
+      ]
+    },
+    {
+      "ID": 361,
+      "Entries": [
+        "Bow: Short Bow"
+      ]
+    },
+    {
+      "ID": 362,
+      "Entries": [
+        "Bow: Long Bow"
+      ]
+    },
+    {
+      "ID": 363,
+      "Entries": [
+        "Bow: Hunter's Blackbow"
+      ]
+    },
+    {
+      "ID": 364,
+      "Entries": [
+        "Bow: Sea Bow"
+      ]
+    },
+    {
+      "ID": 365,
+      "Entries": [
+        "Bow: Bow of Want"
+      ]
+    },
+    {
+      "ID": 370,
+      "Entries": [
+        "Greatbow: Generic"
+      ]
+    },
+    {
+      "ID": 371,
+      "Entries": [
+        "Greatbow: Blank"
+      ]
+    },
+    {
+      "ID": 380,
+      "Entries": [
+        "Crossbow: Generic"
+      ]
+    },
+    {
+      "ID": 381,
+      "Entries": [
+        "Crossbow: Shield Crossbow"
+      ]
+    },
+    {
+      "ID": 385,
+      "Entries": [
+        "Crossbow: Avelyn"
+      ]
+    },
+    {
+      "ID": 386,
+      "Entries": [
+        "Crossbow: Heavy Crossbow"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "Small Shield: Generic"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "Small Shield: Cleric's Parma"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "Medium Shield: Large Leather Shield"
+      ]
+    },
+    {
+      "ID": 431,
+      "Entries": [
+        "Medium Shield: Archdrake Shield"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "Medium Shield: Spirit Tree Shield"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "Medium Shield: Blank"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "Greatshield: Tower Shield"
+      ]
+    },
+    {
+      "ID": 461,
+      "Entries": [
+        "Greatshield: King's Mirror"
+      ]
+    },
+    {
+      "ID": 465,
+      "Entries": [
+        "Greatshield: Orma's Greatshield"
+      ]
+    },
+    {
+      "ID": 466,
+      "Entries": [
+        "Greatshield: Reeve's Greatshield"
+      ]
+    },
+    {
+      "ID": 470,
+      "Entries": [
+        "Torch: Generic"
+      ]
+    },
+    {
+      "ID": 480,
+      "Entries": [
+        "Binoculars: Generic"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Twinblade: Sorcerer's Twinblade"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "Straight Sword: Ivory Straight Sword"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "Greatsword: Majestic Greatsword"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "Ultra Greatsword: Fume Ultra Greatsword"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "Greatbow: Possessed Armor Greatbow"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "Greatbow: Twin-headed Greatbow"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "Crossbow: Sanctum Crossbow"
+      ]
+    },
+    {
+      "ID": 570,
+      "Entries": [
+        "Crossbow: Sanctum Repeating Crossbow"
+      ]
+    },
+    {
+      "ID": 580,
+      "Entries": [
+        "Crossbow: Sanctum Shield"
+      ]
+    },
+    {
+      "ID": 590,
+      "Entries": [
+        "Katana: Bewitched Alonne Sword"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Fist: Bone Fist"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "Hammer: Sanctum Mace"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "Spear: Pilgrim's Spontoon"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "Thrusting Sword: Ice Rapier"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "Spear: Blank"
+      ]
+    },
+    {
+      "ID": 641,
+      "Entries": [
+        "Spear: Yorgh's Spear"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Chime: Chime of Screams"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "Blank"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "Ultra Greatsword: Crypt Blacksword"
+      ]
+    },
+    {
+      "ID": 680,
+      "Entries": [
+        "Halberd: Helix Halberd"
+      ]
+    },
+    {
+      "ID": 690,
+      "Entries": [
+        "Great Hammer: Smelter Hammer"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Spear: Spitfire Spear"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "Greatsword: Loyce Greatsword"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "Blank"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "Staff: Retainer Staff"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "Dagger: Bandit's Knife"
+      ]
+    },
+    {
+      "ID": 741,
+      "Entries": [
+        "Dagger: Shadow Dagger"
+      ]
+    },
+    {
+      "ID": 742,
+      "Entries": [
+        "Dagger: Umbral Dagger"
+      ]
+    },
+    {
+      "ID": 745,
+      "Entries": [
+        "Dagger: Manikin Knife"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,851 @@
+{
+  "Name": "eventlocation_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 40000,
+      "Entries": [
+        "【Advice blood character】Hidden door 2"
+      ]
+    },
+    {
+      "ID": 40010,
+      "Entries": [
+        "【Advice blood character】Hidden door 3"
+      ]
+    },
+    {
+      "ID": 40020,
+      "Entries": [
+        "【Advice blood character】Crane start"
+      ]
+    },
+    {
+      "ID": 45000,
+      "Entries": [
+        "[Blood character prohibited] hidden door 2"
+      ]
+    },
+    {
+      "ID": 45010,
+      "Entries": [
+        "[Blood character prohibited] hidden door 3"
+      ]
+    },
+    {
+      "ID": 106000,
+      "Entries": [
+        "Torch fire ball firing_6"
+      ]
+    },
+    {
+      "ID": 107000,
+      "Entries": [
+        "Fireball Firing_7"
+      ]
+    },
+    {
+      "ID": 200000,
+      "Entries": [
+        "Front fireball generation point_first half"
+      ]
+    },
+    {
+      "ID": 200010,
+      "Entries": [
+        "Front fireball generation point_ second half"
+      ]
+    },
+    {
+      "ID": 300000,
+      "Entries": [
+        "Stone statue head_rumbling start"
+      ]
+    },
+    {
+      "ID": 301000,
+      "Entries": [
+        "Navi mesh change by stone head destruction"
+      ]
+    },
+    {
+      "ID": 400000,
+      "Entries": [
+        "Shaking Cantera_1st"
+      ]
+    },
+    {
+      "ID": 401000,
+      "Entries": [
+        "Shaking Cantera_2nd"
+      ]
+    },
+    {
+      "ID": 460004,
+      "Entries": [
+        "Distant Area of Fire Ball Operating Area_5"
+      ]
+    },
+    {
+      "ID": 460005,
+      "Entries": [
+        "Distant Area of Fire Ball Operating Area_6"
+      ]
+    },
+    {
+      "ID": 500000,
+      "Entries": [
+        "Chandelier shaking start point"
+      ]
+    },
+    {
+      "ID": 600000,
+      "Entries": [
+        "Wall_Navimesh Switching where giants appear"
+      ]
+    },
+    {
+      "ID": 600010,
+      "Entries": [
+        "The area of restricting the behavior of giants emerging from the wall"
+      ]
+    },
+    {
+      "ID": 600020,
+      "Entries": [
+        "Wall destruction giant soldier launch range (for events)"
+      ]
+    },
+    {
+      "ID": 700000,
+      "Entries": [
+        "Wheel Crane 1_Navi Mesh Change"
+      ]
+    },
+    {
+      "ID": 701000,
+      "Entries": [
+        "Wheel Crane 2_Navi Mesh Change"
+      ]
+    },
+    {
+      "ID": 800000,
+      "Entries": [
+        "Boss: Determination to start fighting for new giant senior soldiers"
+      ]
+    },
+    {
+      "ID": 801000,
+      "Entries": [
+        "Boss: Warp point after the poly play of the new giant senior soldier (raw)"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        "Seoul's firing source to shoot and get barista"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "Seoul's firing source 2 to shoot barista"
+      ]
+    },
+    {
+      "ID": 1002000,
+      "Entries": [
+        "Seoul's firing source 3 to shoot barista"
+      ]
+    },
+    {
+      "ID": 1003000,
+      "Entries": [
+        "Seoul's firing source 4 to shoot barista"
+      ]
+    },
+    {
+      "ID": 1101000,
+      "Entries": [
+        "The start area of the trap where the blade flies"
+      ]
+    },
+    {
+      "ID": 1111000,
+      "Entries": [
+        "Hidden door of insect key_Navimesh change"
+      ]
+    },
+    {
+      "ID": 1400000,
+      "Entries": [
+        "Giant King Breaks Tower _Navimesh Change"
+      ]
+    },
+    {
+      "ID": 1500000,
+      "Entries": [
+        "Navi mesh change of hidden door"
+      ]
+    },
+    {
+      "ID": 1600000,
+      "Entries": [
+        "Navi mesh change by fence destruction"
+      ]
+    },
+    {
+      "ID": 1800000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 1"
+      ]
+    },
+    {
+      "ID": 1801000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 2"
+      ]
+    },
+    {
+      "ID": 1802000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 3"
+      ]
+    },
+    {
+      "ID": 1803000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 4"
+      ]
+    },
+    {
+      "ID": 1804000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 5"
+      ]
+    },
+    {
+      "ID": 1805000,
+      "Entries": [
+        "Navi mesh change by semi-destroyed barista destruction 6"
+      ]
+    },
+    {
+      "ID": 1806000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 7"
+      ]
+    },
+    {
+      "ID": 1807000,
+      "Entries": [
+        "Navi mesh change by semi-broken barista destruction 8"
+      ]
+    },
+    {
+      "ID": 1808000,
+      "Entries": [
+        "Navi mesh change 9 by semi-broken barista destruction"
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Navi mesh change by barista destruction 1"
+      ]
+    },
+    {
+      "ID": 1901000,
+      "Entries": [
+        "Navi mesh change by barista destruction 2"
+      ]
+    },
+    {
+      "ID": 1902000,
+      "Entries": [
+        "Navi mesh change by barista destruction 3"
+      ]
+    },
+    {
+      "ID": 1903000,
+      "Entries": [
+        "Navi mesh change by barista destruction 4"
+      ]
+    },
+    {
+      "ID": 1904000,
+      "Entries": [
+        "Navi mesh change by barista destruction 5"
+      ]
+    },
+    {
+      "ID": 1905000,
+      "Entries": [
+        "Navi mesh change by barista destruction 6"
+      ]
+    },
+    {
+      "ID": 1906000,
+      "Entries": [
+        "Navi mesh change by barista destruction 7"
+      ]
+    },
+    {
+      "ID": 1907000,
+      "Entries": [
+        "Navi mesh change by barista destruction 8"
+      ]
+    },
+    {
+      "ID": 1908000,
+      "Entries": [
+        "Navi mesh change by barista destruction 9"
+      ]
+    },
+    {
+      "ID": 1909000,
+      "Entries": [
+        "Navi mesh change by barista destruction 10_1"
+      ]
+    },
+    {
+      "ID": 1910000,
+      "Entries": [
+        "Navi mesh change by barista destruction 10_2"
+      ]
+    },
+    {
+      "ID": 3700000,
+      "Entries": [
+        "Boss Route Start ing point"
+      ]
+    },
+    {
+      "ID": 3701000,
+      "Entries": [
+        "Mine route start point"
+      ]
+    },
+    {
+      "ID": 3702000,
+      "Entries": [
+        "Chandelier start point"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "Home point of the first senior Giants soldier"
+      ]
+    },
+    {
+      "ID": 50000001,
+      "Entries": [
+        "Range of Action of Senior Giants Soldiers"
+      ]
+    },
+    {
+      "ID": 50000002,
+      "Entries": [
+        "Whole moat (bottom)"
+      ]
+    },
+    {
+      "ID": 50000004,
+      "Entries": [
+        "Giant son (fireball) target switching 1"
+      ]
+    },
+    {
+      "ID": 50000005,
+      "Entries": [
+        "Navigation point for falling 1"
+      ]
+    },
+    {
+      "ID": 50000006,
+      "Entries": [
+        "Navigation point for falling 2"
+      ]
+    },
+    {
+      "ID": 50000007,
+      "Entries": [
+        "Navigation point 3 for falling"
+      ]
+    },
+    {
+      "ID": 50000008,
+      "Entries": [
+        "Giant son (fireball) target switching 2"
+      ]
+    },
+    {
+      "ID": 50000009,
+      "Entries": [
+        "Giant soldier's action start trigger on roof"
+      ]
+    },
+    {
+      "ID": 50000101,
+      "Entries": [
+        "withdrawal line one of the giants soldiers on the roof"
+      ]
+    },
+    {
+      "ID": 50000102,
+      "Entries": [
+        "Giant soldiers withdrawal line 2 on the roof"
+      ]
+    },
+    {
+      "ID": 50000103,
+      "Entries": [
+        "The giant's falling home point on the roof"
+      ]
+    },
+    {
+      "ID": 50000400,
+      "Entries": [
+        "Giant jumping area on the roof"
+      ]
+    },
+    {
+      "ID": 50000500,
+      "Entries": [
+        "square enemy movement and area one"
+      ]
+    },
+    {
+      "ID": 50000501,
+      "Entries": [
+        "Square enemy movement and area 2"
+      ]
+    },
+    {
+      "ID": 50000502,
+      "Entries": [
+        "Rooftop enemy launch area"
+      ]
+    },
+    {
+      "ID": 50001100,
+      "Entries": [
+        "One-off falling giant's fall destination home point"
+      ]
+    },
+    {
+      "ID": 50002001,
+      "Entries": [
+        "Navi point_1 for patrol men (2 some)"
+      ]
+    },
+    {
+      "ID": 50002100,
+      "Entries": [
+        "Start moving four patrolmen"
+      ]
+    },
+    {
+      "ID": 50002101,
+      "Entries": [
+        "Navi point_1 for patrol men (4 some)"
+      ]
+    },
+    {
+      "ID": 50002110,
+      "Entries": [
+        "Trigger for giants to reach out"
+      ]
+    },
+    {
+      "ID": 50002201,
+      "Entries": [
+        "Home point of continuous falling giant"
+      ]
+    },
+    {
+      "ID": 50002202,
+      "Entries": [
+        "Fall destination home point of continuous falling giant"
+      ]
+    },
+    {
+      "ID": 50002203,
+      "Entries": [
+        "Home point where the fall of the continuous falling giant"
+      ]
+    },
+    {
+      "ID": 50002300,
+      "Entries": [
+        "Coastal_Right Zone_Battle Zone"
+      ]
+    },
+    {
+      "ID": 50002301,
+      "Entries": [
+        "Spiral Staircase Giant Soldier_ Action Trigger"
+      ]
+    },
+    {
+      "ID": 50003000,
+      "Entries": [
+        "Barista Trigger for Barista Soldiers"
+      ]
+    },
+    {
+      "ID": 50003001,
+      "Entries": [
+        "Coastal_Right Zone_Rooftop"
+      ]
+    },
+    {
+      "ID": 50003002,
+      "Entries": [
+        "Rooftop Barista Line"
+      ]
+    },
+    {
+      "ID": 50003003,
+      "Entries": [
+        "Courtyard Barista Line"
+      ]
+    },
+    {
+      "ID": 50004000,
+      "Entries": [
+        "Start editing in a flame vase"
+      ]
+    },
+    {
+      "ID": 50004001,
+      "Entries": [
+        "Navigation point for jumping of flame barrels and giants"
+      ]
+    },
+    {
+      "ID": 50005000,
+      "Entries": [
+        "Giants start moving for a pinch"
+      ]
+    },
+    {
+      "ID": 50005001,
+      "Entries": [
+        "Navigation point for jumping giants to intercept"
+      ]
+    },
+    {
+      "ID": 50005002,
+      "Entries": [
+        "2500: All the passages"
+      ]
+    },
+    {
+      "ID": 50005100,
+      "Entries": [
+        "Fall judgment from a single road to be caught"
+      ]
+    },
+    {
+      "ID": 50005101,
+      "Entries": [
+        "Navigation points for jumping after fallen players"
+      ]
+    },
+    {
+      "ID": 50006000,
+      "Entries": [
+        "Start moving the pillar destruction giant"
+      ]
+    },
+    {
+      "ID": 50006001,
+      "Entries": [
+        "Pillar destruction giant performs destructive action"
+      ]
+    },
+    {
+      "ID": 50007000,
+      "Entries": [
+        "Giants fight ing in the basement begins"
+      ]
+    },
+    {
+      "ID": 50008000,
+      "Entries": [
+        "Start of battle of the advanced giants"
+      ]
+    },
+    {
+      "ID": 50009000,
+      "Entries": [
+        "Start moving the rumbling giant soldiers"
+      ]
+    },
+    {
+      "ID": 50010000,
+      "Entries": [
+        "2700_1: Barista shooting of royal soldiers"
+      ]
+    },
+    {
+      "ID": 50010001,
+      "Entries": [
+        "The back door of the barista trap room"
+      ]
+    },
+    {
+      "ID": 50011000,
+      "Entries": [
+        "Kingdom soldier killed by fireball"
+      ]
+    },
+    {
+      "ID": 50012000,
+      "Entries": [
+        "The target point of the Rumbling Giants"
+      ]
+    },
+    {
+      "ID": 50013000,
+      "Entries": [
+        "The target point of the Senior Giants (bare hand)"
+      ]
+    },
+    {
+      "ID": 50013001,
+      "Entries": [
+        "Range of action restrictions for senior giants"
+      ]
+    },
+    {
+      "ID": 50013002,
+      "Entries": [
+        "Player judgment range in the room"
+      ]
+    },
+    {
+      "ID": 50014000,
+      "Entries": [
+        "If it's hostile, the kingdom soldiers will close the gate."
+      ]
+    },
+    {
+      "ID": 50019000,
+      "Entries": [
+        "lower giant soldiers_fireball_square"
+      ]
+    },
+    {
+      "ID": 50019001,
+      "Entries": [
+        "Lower Giants_Fireball_Central Hill"
+      ]
+    },
+    {
+      "ID": 50019002,
+      "Entries": [
+        "lower giant soldiers_fireball_outer rim"
+      ]
+    },
+    {
+      "ID": 50019003,
+      "Entries": [
+        "Fire Ball Soldiers' Withdrawal Line"
+      ]
+    },
+    {
+      "ID": 50020000,
+      "Entries": [
+        "The last senior giant war square"
+      ]
+    },
+    {
+      "ID": 50020001,
+      "Entries": [
+        "fireball giant soldiers high ground_right"
+      ]
+    },
+    {
+      "ID": 50020003,
+      "Entries": [
+        "Fireball Giant soldier's high ground_left"
+      ]
+    },
+    {
+      "ID": 50021000,
+      "Entries": [
+        "Boss Mae Cave_ Battle started"
+      ]
+    },
+    {
+      "ID": 50030000,
+      "Entries": [
+        "50030000"
+      ]
+    },
+    {
+      "ID": 50031000,
+      "Entries": [
+        "Boss Room_Ladder Lower"
+      ]
+    },
+    {
+      "ID": 50031001,
+      "Entries": [
+        "Boss room_ ladder upper side"
+      ]
+    },
+    {
+      "ID": 50031002,
+      "Entries": [
+        "on top of the boss room_ tower"
+      ]
+    },
+    {
+      "ID": 50031003,
+      "Entries": [
+        "Logic Giant King Moving Range"
+      ]
+    },
+    {
+      "ID": 50032000,
+      "Entries": [
+        "Lower Giant Soldiers Fall Start Area Rooftop"
+      ]
+    },
+    {
+      "ID": 50032010,
+      "Entries": [
+        "Lower Giant Soldiers Fall Start Area Square"
+      ]
+    },
+    {
+      "ID": 50033000,
+      "Entries": [
+        "Enemy Skit Start Area"
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 1"
+      ]
+    },
+    {
+      "ID": 51000001,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 2"
+      ]
+    },
+    {
+      "ID": 51000002,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 3"
+      ]
+    },
+    {
+      "ID": 51000003,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 4"
+      ]
+    },
+    {
+      "ID": 51000004,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 5"
+      ]
+    },
+    {
+      "ID": 51000005,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 6"
+      ]
+    },
+    {
+      "ID": 51000006,
+      "Entries": [
+        "White Spirit: Kingdom Captain Mobile Navi 7"
+      ]
+    },
+    {
+      "ID": 52000100,
+      "Entries": [
+        "[Return area] battle break"
+      ]
+    },
+    {
+      "ID": 52000101,
+      "Entries": [
+        "【Return area】Entrance to the hut"
+      ]
+    },
+    {
+      "ID": 52000102,
+      "Entries": [
+        "【Return area】Hut exit"
+      ]
+    },
+    {
+      "ID": 52000103,
+      "Entries": [
+        "【Return area】In front of the falling square"
+      ]
+    },
+    {
+      "ID": 52000104,
+      "Entries": [
+        "【Return area】Rooftop entrance"
+      ]
+    },
+    {
+      "ID": 52000105,
+      "Entries": [
+        "【Return area】On the roof"
+      ]
+    },
+    {
+      "ID": 52000106,
+      "Entries": [
+        "【Return area】Hidden room"
+      ]
+    },
+    {
+      "ID": 52000107,
+      "Entries": [
+        "【Return area】Starting point"
+      ]
+    },
+    {
+      "ID": 52000108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52000109,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "Chandelier aisle enemy launch"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "Launch the enemy in the back of the arch"
+      ]
+    },
+    {
+      "ID": 60002000,
+      "Entries": [
+        "Launch the Arched Enemy"
+      ]
+    }
+  ]
+}

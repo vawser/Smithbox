@@ -1,0 +1,125 @@
+{
+  "Name": "AutoAssembleEvaluate",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "FRAME - AP"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "AC - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "AC - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "AC - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "FRAME - AP"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "AC - Anti-Kinetic Defense"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "FRAME - AP"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "AC - Anti-Energy Defense"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "FRAME - AP"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "AC - Anti-Explosive Defense"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Weight"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "EN Load"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "BOOSTER - QB Reload Time"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "BOOSTER - QB EN Consumption"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "GENERATOR - EN Recharge"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "GENERATOR - Supply Recovery"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "LEGS - Jump Distance"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "LEGS - Jump Height"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "CORE - Booster Efficiency Adj."
+      ]
+    }
+  ]
+}

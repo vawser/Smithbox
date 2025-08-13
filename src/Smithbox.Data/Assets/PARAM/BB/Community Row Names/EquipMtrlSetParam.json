@@ -1,0 +1,161 @@
+{
+  "Name": "EquipMtrlSetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Basic"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Basic +1"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Base +2"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Basic +3"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Base +4"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "Basic +5"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Base +6"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Basic +7"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Basic +8"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "Basic +9"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Base +10"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Tentacle Summoning"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "Space Summoning"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Reflect Wall"
+      ]
+    },
+    {
+      "ID": 2030,
+      "Entries": [
+        "Slippery"
+      ]
+    },
+    {
+      "ID": 2040,
+      "Entries": [
+        "Light"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "Area Recovery"
+      ]
+    },
+    {
+      "ID": 2060,
+      "Entries": [
+        "acceleration"
+      ]
+    },
+    {
+      "ID": 2070,
+      "Entries": [
+        "Ground-Crawling Magic"
+      ]
+    },
+    {
+      "ID": 2080,
+      "Entries": [
+        "Guided missile"
+      ]
+    },
+    {
+      "ID": 2090,
+      "Entries": [
+        "Friendly Fire"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "Messenger Bomb"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "Messenger Mimicry"
+      ]
+    },
+    {
+      "ID": 2500,
+      "Entries": [
+        "Pistol _ bullet"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Long gun _ bullet"
+      ]
+    },
+    {
+      "ID": 2700,
+      "Entries": [
+        "Large canister _ bullet"
+      ]
+    }
+  ]
+}

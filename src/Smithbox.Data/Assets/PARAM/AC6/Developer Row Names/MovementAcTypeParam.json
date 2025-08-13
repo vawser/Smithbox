@@ -1,0 +1,119 @@
+{
+  "Name": "MovementAcTypeParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Default (for test AC) -- デフォルト（テストAC用）"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Default boost move_after -- デフォルト ブースト移動_後"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Default boost movement_guarding -- デフォルト ブースト移動_ガード中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "Default (rise boost) -- デフォルト（上昇ブースト）"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Default machine_water movement test -- デフォルト機_水上移動テスト"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Propeller plane (proto) test -- プロペラ機（プロト）テスト"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Heaviest boost speed test -- 最重量ブースト速度テスト"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Lightest boost speed test -- 最軽量ブースト速度テスト"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Tank_Baylum -- タンク_ベイラム"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Tank_Label -- タンク_ラベール"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Tank_Cuba -- タンク_キューバ"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "TETRAPOD - LG-033M VERRILL"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "TETRAPOD - VP-424"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "TETRAPOD - LAMMERGEIER/42F"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "reverse joint aircraft -- 逆関節機体"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Reverse joint aircraft_QB derived jump -- 逆関節機体_QB派生ジャンプ"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "for c900 -- c900用"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "Horizontal movement speed during jump for c900 -- c900用\u3000ジャンプ中水平移動速度"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "Test AC: Brake ALL0 -- テストAC：ブレーキALL０"
+      ]
+    }
+  ]
+}

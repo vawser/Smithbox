@@ -1,0 +1,509 @@
+{
+  "Name": "DefaultKeyAssignParam01",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Running (before)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "Running (after)"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Running (left)"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "Running (right)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "jump"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "Camera (top)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "Camera (bottom)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "Camera (left)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Camera (right)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "Lock on/Camera reset"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "stealth"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Tool switching"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Right weapon switch"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Left weapon switch"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "Use right hand weapon"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "QB/swooping QB"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "Use left hand weapon"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "boost"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "item use"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "Two-handed switch/action panel switch"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "Auxiliary menu"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "Open menu"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "Move cursor (up)"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "Move cursor (down)"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Move cursor (left)"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "Move cursor (right)"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "decision"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "cancel"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Menu:RU"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "Menu: RL"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Menu: L1"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "Menu: R1"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "Menu: L2"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Menu: R2"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "Menu: L3"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Menu: R3"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Menu: BACK"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Menu: Scroll (top)"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "Menu: Scroll (bottom)"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "Menu: Conversation response (left)"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Menu: Conversation response (right)"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "Menu: Left stick (top)"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "Menu: Left stick (down)"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Menu: Left stick (left)"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Menu: Left stick (right)"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Menu: Right stick (top)"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "Menu: Right stick (down)"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "Menu: Right stick (left)"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Menu: Right stick (right)"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Mouse: left button"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "Mouse: right button"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "context menu"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Debugging: LU"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "Debugging: LD"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "Debug: LL"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "Debug: LR"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "Debug: RU"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Debugging: RD"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "Debugging: RL"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Debug: RR"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Debug: L1"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Debug: R1"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Debug: L2"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Debug: R2"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Debugging: L3"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Debug: R3"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Player: Action"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "Player: Shift operation"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Player: Precision shooting stance"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "Text input: Confirm"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Text input: Cancel"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Debugging: Map missing"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Debug: Debug Move OnOff"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Debugging: super dash"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Debugging: Camera mode switching (next)"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Debugging: Camera mode switching (previous)"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Player: Use left back weapon"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Player: Use right back weapon"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "Conversation sending"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "Player: Use extension"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "Player: Assault Boost"
+      ]
+    },
+    {
+      "ID": 81,
+      "Entries": [
+        "Menu: Shift operation (left)"
+      ]
+    },
+    {
+      "ID": 82,
+      "Entries": [
+        "Menu: Shift operation (right)"
+      ]
+    },
+    {
+      "ID": 83,
+      "Entries": [
+        "Player: Purge"
+      ]
+    }
+  ]
+}

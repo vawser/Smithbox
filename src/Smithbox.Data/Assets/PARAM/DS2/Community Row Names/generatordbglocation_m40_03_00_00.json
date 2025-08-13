@@ -1,0 +1,143 @@
+{
+  "Name": "generatordbglocation_m40_03_00_00",
+  "Entries": [
+    {
+      "ID": 811,
+      "Entries": [
+        "【BOSS】Agadulan Stand -- 【BOSS】アガドゥランのスタンド"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Before the block 1 hole] NPC for multi: traveler (man) 1 -- 【ブロック1穴の前】マルチ用NPC：旅人（男）1"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Block 1 lamp stand front] NPC for multi: Sniper (man) -- 【ブロック1灯火台前】マルチ用NPC：スナイパー（男）"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Block 1 lamp stand front] MULTI NPC: Traveler (male) 3 -- 【ブロック1灯火台前】マルチ用NPC：旅人（男）3"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Block 3 corpse room entrance] NPC for multi: heavy warrior (man) -- 【ブロック3死体部屋入り口】マルチ用NPC：重戦士（男）"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Block 2 Kagesaka Exit] MULTI NPC: Yellow Robe (Male) -- 【ブロック2影絵坂出口】マルチ用NPC：黄衣夫（男）"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[Block 2 Kagesaka Exit] MULTI NPC: Axeman (Male) 1 -- 【ブロック2影絵坂出口】マルチ用NPC：アックスマン（男）1"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[Before the block 2 hole] NPC for multi: Axeman (man) 3 -- 【ブロック2穴の前】マルチ用NPC：アックスマン（男）3"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[Before the block 2 holes] NPC for multi: Yellow wife (female) -- 【ブロック2穴の前】マルチ用NPC：黄衣妻（女）"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[Block 3 corpse room] NPC for multi: Knight (man) -- 【ブロック3死体部屋】マルチ用NPC：騎士（男）"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "[Block 3 goal front] NPC for multi: Queen (female) -- 【ブロック3ゴール前】マルチ用NPC：女王（女）"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "【Boss Attendant】Wormhole 01 -- 【ボスお供】ワームホール01"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "【Boss Attendant】Wormhole 02 -- 【ボスお供】ワームホール02"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "【Boss Attendant】Wormhole 03 -- 【ボスお供】ワームホール03"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "【Boss Attendant】Wormhole 04 -- 【ボスお供】ワームホール04"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "【Boss Attendant】Wormhole 05 -- 【ボスお供】ワームホール05"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "【Boss Attendant】Wormhole 06 -- 【ボスお供】ワームホール06"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "【Boss Attendant】Wormhole 07 -- 【ボスお供】ワームホール07"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "【BOSS】Agadulan Stand_Alterego -- 【ＢＯＳＳ】アガドゥランのスタンド_分身"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Stage 1_ Appeared in _PC4 before lift] Forest Keeper: Bell -- 【ステージ1_リフト前_PC4人で登場】森の番人：ベル"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "[Stage 2_ Appeared in _PC4 Corpse Yamayoko] The Keeper Cane of the Forest -- 【ステージ2_死体山横_PC4人で登場】森の番人杖"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "[Stage 2_ Shadow Esakashita _PC4 appeared in the person] mori's keeper : Bell -- 【ステージ2_影絵坂下_PC4人で登場】森の番人：ベル"
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        "[Appeared in the front hill _PC4 of the hole] the keeper of the forest: cane -- 【ステージ2_穴の前高台_PC4人で登場】森の番人：杖"
+      ]
+    }
+  ]
+}

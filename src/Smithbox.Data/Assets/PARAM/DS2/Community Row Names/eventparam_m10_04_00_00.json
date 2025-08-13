@@ -1,0 +1,791 @@
+{
+  "Name": "eventparam_m10_04_00_00",
+  "Entries": [
+    {
+      "ID": 3010,
+      "Entries": [
+        "Breaking into the world of miracle people _ item use judgment"
+      ]
+    },
+    {
+      "ID": 3020,
+      "Entries": [
+        "Reward decisions at the destination of the invasion of the world of miracle people"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "The key door opened by \"Mr. A's house key\""
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "The key door opened by \"Mr. B's house key\""
+      ]
+    },
+    {
+      "ID": 4200,
+      "Entries": [
+        "The key door opened by the key door of death"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "NPC Ladder Shop Small Ladder_Navi Mesh Change"
+      ]
+    },
+    {
+      "ID": 5010,
+      "Entries": [
+        "NPC Ladder Shop Medium Ladder_Navi Mesh Change"
+      ]
+    },
+    {
+      "ID": 5020,
+      "Entries": [
+        "NPC Ladder Shop Large Ladder_Navi Mesh Change"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Treasure corpse from well"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Madura - Giant Forest Gimmick Door"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Rotating door switch"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Switch global flags related to rotating doors"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Navi mesh change of rotating door"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "Switching the gimmick door-related flags of the connection path"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "Flame 1 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "Flame 2 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "Flame 3 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11030,
+      "Entries": [
+        "Flame 4 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11040,
+      "Entries": [
+        "Flame 5 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11050,
+      "Entries": [
+        "Flame 6 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11060,
+      "Entries": [
+        "Flame 7 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 11070,
+      "Entries": [
+        "Flame 8 to light up the world map to be updated"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Obelisk_Front side"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Obelisk_Backside"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "SFX linked to the migration of miracle people"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Miracle people move in the hidden harbor clear"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Skeleton Destroyer: Lap 1"
+      ]
+    },
+    {
+      "ID": 20001,
+      "Entries": [
+        "Skeleton Destroyer: Lap 2"
+      ]
+    },
+    {
+      "ID": 20002,
+      "Entries": [
+        "Skeleton Destroyer: Lap 3"
+      ]
+    },
+    {
+      "ID": 20003,
+      "Entries": [
+        "Skeleton Destroyer: Lap 4"
+      ]
+    },
+    {
+      "ID": 20004,
+      "Entries": [
+        "Skeleton Destroyer: Lap 5"
+      ]
+    },
+    {
+      "ID": 20005,
+      "Entries": [
+        "Skeleton Destroyer: Lap 6"
+      ]
+    },
+    {
+      "ID": 20006,
+      "Entries": [
+        "Skeleton Destroyer: Lap 7"
+      ]
+    },
+    {
+      "ID": 20007,
+      "Entries": [
+        "Skeleton Destroyer: Lap 8"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play Seed Fire 01_ Village Middle Main Bonfire"
+      ]
+    },
+    {
+      "ID": 111040,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Standing 1: Looking at the Sky"
+      ]
+    },
+    {
+      "ID": 111041,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Standing 1: Looking at the Sky"
+      ]
+    },
+    {
+      "ID": 111042,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Rock Sitting 1: Poke your cheek with your hand"
+      ]
+    },
+    {
+      "ID": 111043,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Rock Seat 2: Stretch ing your hands behind your back"
+      ]
+    },
+    {
+      "ID": 111046,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Standing 2: Kicking the Ground"
+      ]
+    },
+    {
+      "ID": 111051,
+      "Entries": [
+        "NPC: Dragon Shrine Maiden: Ghost"
+      ]
+    },
+    {
+      "ID": 111052,
+      "Entries": [
+        "OBJ: The Shrine Maiden of the Dragon: Tomb"
+      ]
+    },
+    {
+      "ID": 111053,
+      "Entries": [
+        "OBJ: Dragon Shrine Maiden: Key Guide"
+      ]
+    },
+    {
+      "ID": 111054,
+      "Entries": [
+        "OBJ: Dragon Shrine Maiden: Boss Destroying Counter"
+      ]
+    },
+    {
+      "ID": 111055,
+      "Entries": [
+        "OBJ: Dragon Shrine Maiden: Permission to Appear"
+      ]
+    },
+    {
+      "ID": 111090,
+      "Entries": [
+        "NPC: Ladder Shop"
+      ]
+    },
+    {
+      "ID": 111091,
+      "Entries": [
+        "NPC: Ladder Shop: Ghost"
+      ]
+    },
+    {
+      "ID": 111092,
+      "Entries": [
+        "OBJ: Ladder: Tomb"
+      ]
+    },
+    {
+      "ID": 111093,
+      "Entries": [
+        "OBJ: Ladder Shop: Key Guide"
+      ]
+    },
+    {
+      "ID": 111094,
+      "Entries": [
+        "OBJ: Ladder: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111095,
+      "Entries": [
+        "OBJ: Ladder: Installed a small ladder"
+      ]
+    },
+    {
+      "ID": 111096,
+      "Entries": [
+        "OBJ: Ladder: Middle ladder installation"
+      ]
+    },
+    {
+      "ID": 111097,
+      "Entries": [
+        "OBJ: Ladder shop: Large ladder installation"
+      ]
+    },
+    {
+      "ID": 111098,
+      "Entries": [
+        "OBJ: Ladder Shop: All Ladder Erase"
+      ]
+    },
+    {
+      "ID": 111099,
+      "Entries": [
+        "OBJ: Ladder: Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111220,
+      "Entries": [
+        "NPC: A heartbroken blue warrior"
+      ]
+    },
+    {
+      "ID": 111221,
+      "Entries": [
+        "NPC: A Heartbroken Blue Warrior: A Ghost"
+      ]
+    },
+    {
+      "ID": 111222,
+      "Entries": [
+        "OBJ: A heartbroken blue warrior: tomb"
+      ]
+    },
+    {
+      "ID": 111223,
+      "Entries": [
+        "OBJ: A Heartbroken Blue Warrior: A Key Guide"
+      ]
+    },
+    {
+      "ID": 111224,
+      "Entries": [
+        "OBJ: Heartbroken Blue Warrior: Migrant Count"
+      ]
+    },
+    {
+      "ID": 111260,
+      "Entries": [
+        "NPC: Atlas"
+      ]
+    },
+    {
+      "ID": 111261,
+      "Entries": [
+        "NPC: Atlas: Ghosts"
+      ]
+    },
+    {
+      "ID": 111262,
+      "Entries": [
+        "OBJ: Atlas: Tomb"
+      ]
+    },
+    {
+      "ID": 111263,
+      "Entries": [
+        "OBJ: Atlas: Key Guide"
+      ]
+    },
+    {
+      "ID": 111264,
+      "Entries": [
+        "OBJ: Map: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111265,
+      "Entries": [
+        "OBJ: Map: Immigration Decision"
+      ]
+    },
+    {
+      "ID": 111266,
+      "Entries": [
+        "OBJ: Map: Skeleton Destroy"
+      ]
+    },
+    {
+      "ID": 111267,
+      "Entries": [
+        "OBJ: Mapping: Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111290,
+      "Entries": [
+        "NPC: Yorozu Babaa"
+      ]
+    },
+    {
+      "ID": 111291,
+      "Entries": [
+        "NPC: Yorozu Babaa: Ghost"
+      ]
+    },
+    {
+      "ID": 111292,
+      "Entries": [
+        "OBJ: Yorozu Babaa: Tomb"
+      ]
+    },
+    {
+      "ID": 111293,
+      "Entries": [
+        "OBJ: Yorozu Babaa: Key Guide"
+      ]
+    },
+    {
+      "ID": 111294,
+      "Entries": [
+        "OBJ: Yorozu Babaa: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111330,
+      "Entries": [
+        "NPC: Armor shop: Bearish"
+      ]
+    },
+    {
+      "ID": 111331,
+      "Entries": [
+        "NPC: Armor shop: Ghost"
+      ]
+    },
+    {
+      "ID": 111332,
+      "Entries": [
+        "OBJ: Armor shop: Tomb"
+      ]
+    },
+    {
+      "ID": 111333,
+      "Entries": [
+        "OBJ: Armor shop: Key Guide"
+      ]
+    },
+    {
+      "ID": 111334,
+      "Entries": [
+        "OBJ: Armor shop: State transition"
+      ]
+    },
+    {
+      "ID": 111336,
+      "Entries": [
+        "NPC: Armor shop: Normal"
+      ]
+    },
+    {
+      "ID": 111337,
+      "Entries": [
+        "NPC: Armor shop: Bullish"
+      ]
+    },
+    {
+      "ID": 111338,
+      "Entries": [
+        "OBJ: Armor shop: Shop list"
+      ]
+    },
+    {
+      "ID": 111340,
+      "Entries": [
+        "NPC: Materials Store"
+      ]
+    },
+    {
+      "ID": 111341,
+      "Entries": [
+        "NPC: Material shop: Ghost"
+      ]
+    },
+    {
+      "ID": 111342,
+      "Entries": [
+        "OBJ: Material Shop: Tomb"
+      ]
+    },
+    {
+      "ID": 111343,
+      "Entries": [
+        "OBJ: Material Shop: Key Guide"
+      ]
+    },
+    {
+      "ID": 111344,
+      "Entries": [
+        "OBJ: Material shop: Death judgment"
+      ]
+    },
+    {
+      "ID": 111350,
+      "Entries": [
+        "NPC: Sorcerer"
+      ]
+    },
+    {
+      "ID": 111351,
+      "Entries": [
+        "NPC: Sorcerer: Ghost"
+      ]
+    },
+    {
+      "ID": 111352,
+      "Entries": [
+        "OBJ: Sorcerer: Tomb"
+      ]
+    },
+    {
+      "ID": 111353,
+      "Entries": [
+        "OBJ: Sorcerer: Key Guide"
+      ]
+    },
+    {
+      "ID": 111354,
+      "Entries": [
+        "OBJ: Sorcerer: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111355,
+      "Entries": [
+        "OBJ: Sorcerer: Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111360,
+      "Entries": [
+        "NPC: Blacksmith"
+      ]
+    },
+    {
+      "ID": 111361,
+      "Entries": [
+        "NPC: Blacksmith: Ghost"
+      ]
+    },
+    {
+      "ID": 111362,
+      "Entries": [
+        "OBJ: Blacksmith: Tomb"
+      ]
+    },
+    {
+      "ID": 111363,
+      "Entries": [
+        "OBJ: Blacksmith: Key Guide"
+      ]
+    },
+    {
+      "ID": 111364,
+      "Entries": [
+        "NPC: Blacksmith: After The Move"
+      ]
+    },
+    {
+      "ID": 111365,
+      "Entries": [
+        "OBJ: Blacksmith: Movement Judgment"
+      ]
+    },
+    {
+      "ID": 111366,
+      "Entries": [
+        "OBJ: Blacksmith: Door unlock"
+      ]
+    },
+    {
+      "ID": 111390,
+      "Entries": [
+        "NPC: Sorcerer"
+      ]
+    },
+    {
+      "ID": 111391,
+      "Entries": [
+        "NPC: Sorcerer: Ghost"
+      ]
+    },
+    {
+      "ID": 111392,
+      "Entries": [
+        "OBJ: Sorcerer: Tomb"
+      ]
+    },
+    {
+      "ID": 111393,
+      "Entries": [
+        "OBJ: Sorcerer: Key Guide"
+      ]
+    },
+    {
+      "ID": 111394,
+      "Entries": [
+        "OBJ: Sorcerer: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111395,
+      "Entries": [
+        "OBJ: Sorcerer: Appearance Judgment"
+      ]
+    },
+    {
+      "ID": 111410,
+      "Entries": [
+        "NPC: Miracle Man"
+      ]
+    },
+    {
+      "ID": 111411,
+      "Entries": [
+        "NPC: Miracle Man: Ghost"
+      ]
+    },
+    {
+      "ID": 111412,
+      "Entries": [
+        "OBJ: Miracle Man: Tomb"
+      ]
+    },
+    {
+      "ID": 111413,
+      "Entries": [
+        "OBJ: Miracle Man: Key Guide"
+      ]
+    },
+    {
+      "ID": 111414,
+      "Entries": [
+        "OBJ: Miracle Man: Death Judgment"
+      ]
+    },
+    {
+      "ID": 111415,
+      "Entries": [
+        "OBJ: Miracle Man: Boss Destroyer Counter"
+      ]
+    },
+    {
+      "ID": 111416,
+      "Entries": [
+        "OBJ: Miracle Man: Revolving Door"
+      ]
+    },
+    {
+      "ID": 111417,
+      "Entries": [
+        "NPC: Miracle Man (Battle Event)"
+      ]
+    },
+    {
+      "ID": 111460,
+      "Entries": [
+        "NPC: Cat: Sitting"
+      ]
+    },
+    {
+      "ID": 111461,
+      "Entries": [
+        "NPC: Cat: Box sitting"
+      ]
+    },
+    {
+      "ID": 111464,
+      "Entries": [
+        "NPC: Cat: Sharpening nails"
+      ]
+    },
+    {
+      "ID": 111465,
+      "Entries": [
+        "NPC: Cat: Lean on the back of the chair"
+      ]
+    },
+    {
+      "ID": 111466,
+      "Entries": [
+        "NPC: Cat: Sleeping on the edge of the table"
+      ]
+    },
+    {
+      "ID": 111467,
+      "Entries": [
+        "OBJ: Cat: Random Generation"
+      ]
+    },
+    {
+      "ID": 111468,
+      "Entries": [
+        "OBJ: Cat: Shop List"
+      ]
+    },
+    {
+      "ID": 112000,
+      "Entries": [
+        "NPC: Stone Monument of the Strong (Pledge Event)"
+      ]
+    },
+    {
+      "ID": 112001,
+      "Entries": [
+        "OBJ: Stone Monument of the Strong (Pledge Event)"
+      ]
+    },
+    {
+      "ID": 120030,
+      "Entries": [
+        "Trophies: The Pledge of the Weak"
+      ]
+    },
+    {
+      "ID": 120070,
+      "Entries": [
+        "Trophies: The Pledge of the Strong"
+      ]
+    },
+    {
+      "ID": 120090,
+      "Entries": [
+        "Trophy: Completion of a strange map"
+      ]
+    },
+    {
+      "ID": 120100,
+      "Entries": [
+        "Trophies: Out of the Deserted People"
+      ]
+    },
+    {
+      "ID": 120101,
+      "Entries": [
+        "Trophies: Abandoned People: Survival Assessment"
+      ]
+    },
+    {
+      "ID": 120150,
+      "Entries": [
+        "Trophy: The Defender"
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

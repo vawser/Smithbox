@@ -1,0 +1,833 @@
+{
+  "Name": "LookAtSpineParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Standard aircraft -- 標準機体"
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        "■c0000_bipod_standard -- ■c0000_二脚_標準"
+      ]
+    },
+    {
+      "ID": 1001010,
+      "Entries": [
+        "[7/17 version] Bipod_holding with both hands_while guarding -- 【7/17版】二脚_両手持ち_ガード中"
+      ]
+    },
+    {
+      "ID": 1001020,
+      "Entries": [
+        "c0000_Bipod_NPAC exclusive coral rifle shooting -- c0000_二脚_NPAC専用コーラルライフル射撃"
+      ]
+    },
+    {
+      "ID": 1001030,
+      "Entries": [
+        "Bipod_holding with both hands_guarding -- 二脚_両手持ち_ガード中"
+      ]
+    },
+    {
+      "ID": 1001100,
+      "Entries": [
+        "Bipod_carrying two -- 二脚_2丁持ち"
+      ]
+    },
+    {
+      "ID": 1001300,
+      "Entries": [
+        "c0000_Bipod_When using shoulder weapon -- c0000_二脚_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1100000,
+      "Entries": [
+        "■c0100_quadruped_standard -- ■c0100_四脚_標準"
+      ]
+    },
+    {
+      "ID": 1100001,
+      "Entries": [
+        "c0100_Quadruped_Assault boost in progress -- c0100_四脚_アサルトブースト中"
+      ]
+    },
+    {
+      "ID": 1100100,
+      "Entries": [
+        "Quadruped_carrying 2 knives -- 四脚_2丁持ち"
+      ]
+    },
+    {
+      "ID": 1100300,
+      "Entries": [
+        "c0100_quadruped_when using shoulder weapon -- c0100_四脚_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1100410,
+      "Entries": [
+        "c0100_quadruped_coral blade_strong attack -- c0100_四脚_コーラルブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 1100411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100420,
+      "Entries": [
+        "c0100_quadruped_hammer_strong attack -- c0100_四脚_ハンマー_強攻撃"
+      ]
+    },
+    {
+      "ID": 1100421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100430,
+      "Entries": [
+        "c0100_quadruped_light wave blade -- c0100_四脚_光波ブレード"
+      ]
+    },
+    {
+      "ID": 1100431,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100432,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100449,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1100491,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1200000,
+      "Entries": [
+        "■c0200_Reverse leg__Standard -- ■c0200_逆脚__標準"
+      ]
+    },
+    {
+      "ID": 1200300,
+      "Entries": [
+        "c0200_Reverse leg_When using shoulder weapon -- c0200_逆脚_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1300000,
+      "Entries": [
+        "■c0300_tank -- ■c0300_タンク"
+      ]
+    },
+    {
+      "ID": 1300001,
+      "Entries": [
+        "c0300_Tank_Assault boost in progress -- c0300_タンク_アサルトブースト中"
+      ]
+    },
+    {
+      "ID": 1300002,
+      "Entries": [
+        "c0300_Tank_Ground → Air transition problem -- c0300_タンク_地上→空中遷移不具合用"
+      ]
+    },
+    {
+      "ID": 1300009,
+      "Entries": [
+        "c0300_Tank_Staggering while being grabbed -- c0300_タンク_掴まれよろけ中"
+      ]
+    },
+    {
+      "ID": 1300300,
+      "Entries": [
+        "c0300_Tank_When using shoulder weapon -- c0300_タンク_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1300410,
+      "Entries": [
+        "c0300_Tank_Coral Blade_Strong attack -- c0300_タンク_コーラルブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 1300411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300420,
+      "Entries": [
+        "c0300_Tank_Hammer_Strong attack -- c0300_タンク_ハンマー_強攻撃"
+      ]
+    },
+    {
+      "ID": 1300421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300430,
+      "Entries": [
+        "c0300_tank_light wave blade -- c0300_タンク_光波ブレード"
+      ]
+    },
+    {
+      "ID": 1300431,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300432,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300449,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1300491,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301000,
+      "Entries": [
+        "■c0301_tank hover -- ■c0301_タンクホバー"
+      ]
+    },
+    {
+      "ID": 1301001,
+      "Entries": [
+        "c0301_Tank Hover_Assault boost in progress -- c0301_タンクホバー_アサルトブースト中"
+      ]
+    },
+    {
+      "ID": 1301002,
+      "Entries": [
+        "c0301_Tank Hover_For ground → air transition problem -- c0301_タンクホバー_地上→空中遷移不具合用"
+      ]
+    },
+    {
+      "ID": 1301009,
+      "Entries": [
+        "c0301_Tank Hover_Staggering while being grabbed -- c0301_タンクホバー_掴まれよろけ中"
+      ]
+    },
+    {
+      "ID": 1301300,
+      "Entries": [
+        "c0301_Tank Hover_When using shoulder weapon -- c0301_タンクホバー_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1301410,
+      "Entries": [
+        "c0301_Tank Hover_Coral Blade_Strong attack -- c0301_タンクホバー_コーラルブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 1301411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301420,
+      "Entries": [
+        "c0301_Tank Hover_Hammer_Strong attack -- c0301_タンクホバー_ハンマー_強攻撃"
+      ]
+    },
+    {
+      "ID": 1301421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301430,
+      "Entries": [
+        "c0301_Tank hover_Light wave blade -- c0301_タンクホバー_光波ブレード"
+      ]
+    },
+    {
+      "ID": 1301431,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301432,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301449,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1301491,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302000,
+      "Entries": [
+        "■c0302_tank wheelchair -- ■c0302_タンク車椅子"
+      ]
+    },
+    {
+      "ID": 1302001,
+      "Entries": [
+        "c0302_Tank wheelchair_Assault boost in progress -- c0302_タンク車椅子_アサルトブースト中"
+      ]
+    },
+    {
+      "ID": 1302002,
+      "Entries": [
+        "c0302_Tank wheelchair_For ground → air transition problem -- c0302_タンク車椅子_地上→空中遷移不具合用"
+      ]
+    },
+    {
+      "ID": 1302009,
+      "Entries": [
+        "c0302_Tank wheelchair_Staggering while being grabbed -- c0302_タンク車椅子_掴まれよろけ中"
+      ]
+    },
+    {
+      "ID": 1302300,
+      "Entries": [
+        "c0302_Tank wheelchair_When using shoulder weapon -- c0302_タンク車椅子_肩武器使用時"
+      ]
+    },
+    {
+      "ID": 1302410,
+      "Entries": [
+        "c0302_Tank wheelchair_Coral blade_Strong attack -- c0302_タンク車椅子_コーラルブレード_強攻撃"
+      ]
+    },
+    {
+      "ID": 1302411,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302412,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302413,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302420,
+      "Entries": [
+        "c0302_Tank wheelchair_Hammer_Strong attack -- c0302_タンク車椅子_ハンマー_強攻撃"
+      ]
+    },
+    {
+      "ID": 1302421,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302430,
+      "Entries": [
+        "c0302_Tank wheelchair_Light wave blade -- c0302_タンク車椅子_光波ブレード"
+      ]
+    },
+    {
+      "ID": 1302431,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302432,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302440,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302441,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302442,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302449,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302450,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302460,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302461,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302462,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302470,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302471,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302472,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302480,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302481,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302482,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302490,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1302491,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1900000,
+      "Entries": [
+        "Bipod operation change ver_Two-handed -- 二脚操作変更ver_両手持ち"
+      ]
+    },
+    {
+      "ID": 1900100,
+      "Entries": [
+        "Bipod operation change ver_Has 2 knives -- 二脚操作変更ver_2丁持ち"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "Name": "generatordbglocation_m20_10_00_00",
+  "Entries": [
+    {
+      "ID": 30,
+      "Entries": [
+        "[Captain of the Kingdom] NPC Memory 1 -- 【王国隊長】NPC記憶１"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "[Captain of the Kingdom] NPC (Ghost) -- 【王国隊長】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "【Tsukiko Grandfather】 Npc -- 【月光爺】NPC"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "【Tsukiko Grandfather】 NPC (Ghost) -- 【月光爺】NPC（亡霊）"
+      ]
+    },
+    {
+      "ID": 656,
+      "Entries": [
+        "【White Spirit】Tsukiko Ya -- 【白霊】月光爺"
+      ]
+    },
+    {
+      "ID": 657,
+      "Entries": [
+        "[White Spirit] Captain of the Kingdom -- 【白霊】王国隊長"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "【BOSS】New Giant Senior Soldier (Deceased) -- 【BOSS】新・巨人上級兵士（亡者）"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "Giant lower-level soldiers (giant): Square 1 at the end of the tunnel -- 巨人下級兵士（巨人）：棍棒_トンネル先の広場１"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "Giant lower soldier poison (giant): bare hands: tunnel destination square 1 -- 巨人下級兵士 毒（巨人）：素手：トンネル先の広場１"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "Kingdom Soldier (Living): Medium Shield: Spear_ Beyond the Arc de Triomphe -- 王国兵士（生者）：中盾：槍_凱旋門の先"
+      ]
+    },
+    {
+      "ID": 1211,
+      "Entries": [
+        "Kingdom Soldier (Living): Medium Shield: Spear_ Beyond the Arc de Triomphe -- 王国兵士（生者）：中盾：槍_凱旋門の先"
+      ]
+    },
+    {
+      "ID": 1212,
+      "Entries": [
+        "Kingdom Soldier (Living): Medium Shield: Spear_ Beyond the Arc de Triomphe -- 王国兵士（生者）：中盾：槍_凱旋門の先"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Giant Lower Soldier Bare Hands (Giant): Next To Oil Jar -- 巨人下級兵士 素手（巨人）：油壷横"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "Giant Lower Soldier Club (Giant): Arc de Triomphe -- 巨人下級兵士 棍棒（巨人）：凱旋門先"
+      ]
+    },
+    {
+      "ID": 1311,
+      "Entries": [
+        "Giant Lower Soldier Bare Hands (Giant): Arc of Triumph -- 巨人下級兵士 素手（巨人）：凱旋門先"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "Giant lower soldier fire (giant): bare hands: Attack from the roof -- 巨人下級兵士 火（巨人）：素手：屋上から攻撃"
+      ]
+    },
+    {
+      "ID": 1331,
+      "Entries": [
+        "Giant lower soldier fire (giant): bare hands: Attack from the roof -- 巨人下級兵士 火（巨人）：素手：屋上から攻撃"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2-Swords: Jump Attack -- 巨人上級兵士（巨人）：２刀流：ジャンプ攻撃"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Giant Senior Soldier (Giant): Two-Handed Club: Keeper in front of goal -- 巨人上級兵士（巨人）：両手棍棒：ゴール前の番人"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "Lower Soldier (Raw): One-handed axe: Before sub-route rubble -- 下級兵士（生者）：片手斧：サブルート瓦礫前"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "Lower soldier (raw): Bow: Subroute before rubble -- 下級兵士（生者）：弓：サブルート瓦礫前"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "Lower soldier (raw): Bow: Subroute before rubble -- 下級兵士（生者）：弓：サブルート瓦礫前"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "Lower Soldier (Raw Man): Small Shield: One Hand Sword: Subroute Before Rubble_Barista -- 下級兵士（生者）：小盾：片手剣：サブルート瓦礫前_バリスタ"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "Kingdom Soldier (Living Man): 1 on the wooden scaffolding of the bow square -- 王国兵士（生者）：弓_広場の木組み足場の上１"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "Kingdom Soldier (Living Man): 2 on the wooden scaffolding of bow_square -- 王国兵士（生者）：弓_広場の木組み足場の上２"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2-Swords_ War Square -- 巨人上級兵士（巨人）：２刀流_乱戦の広場"
+      ]
+    },
+    {
+      "ID": 2410,
+      "Entries": [
+        "Kingdom Soldier (Living): Two-Handed Sword -- 王国兵士（生者）：両手剣"
+      ]
+    },
+    {
+      "ID": 2510,
+      "Entries": [
+        "Kingdom Soldier (Live): Barista left in the back of the arch -- 王国兵士（生者）：アーチ奥のバリスタ左"
+      ]
+    },
+    {
+      "ID": 2511,
+      "Entries": [
+        "Kingdom Soldier (Live): Barista right in the back of the arch -- 王国兵士（生者）：アーチ奥のバリスタ右"
+      ]
+    },
+    {
+      "ID": 2520,
+      "Entries": [
+        "Giant lower soldier (giant): Falling appearance _ oil jar destruction -- 巨人下級兵士（巨人）：落下出現_油壷破壊"
+      ]
+    },
+    {
+      "ID": 2600,
+      "Entries": [
+        "Kingdom Soldier (Live Man): Spear: Medium Shield: Barista left next to wall crane -- 王国兵士（生者）：槍：中盾：城壁クレーン横のバリスタ左"
+      ]
+    },
+    {
+      "ID": 2610,
+      "Entries": [
+        "Kingdom Soldier (Live Man): Spear: Medium Shield: Barista right next to wall crane -- 王国兵士（生者）：槍：中盾：城壁クレーン横のバリスタ右"
+      ]
+    },
+    {
+      "ID": 2900,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Club: Man-in-The-World Sniping 1 -- 巨人下級兵士（巨人）：棍棒：バリスタで狙撃され役１"
+      ]
+    },
+    {
+      "ID": 2910,
+      "Entries": [
+        "Giant lower soldier fire (giant): bare hands: 2 officers snipered by barista -- 巨人下級兵士 火（巨人）：素手：バリスタで狙撃され役２"
+      ]
+    },
+    {
+      "ID": 2920,
+      "Entries": [
+        "Giant Lower Soldier (Giant): Club: Hidden Room -- 巨人下級兵士（巨人）：棍棒：隠し部屋"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2-Swords_First Half_1 -- 巨人上級兵士（巨人）：２刀流_前半_1"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Kingdom Soldier (Living): Two-Handed Sword: Bow_ First Half -- 王国兵士（生者）：両手剣：弓_前半"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Kingdom Soldier (Living): Spear_First Half_1 -- 王国兵士（生者）：槍_前半_1"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Kingdom Soldier (Living): Spear_First Half_2 -- 王国兵士（生者）：槍_前半_2"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Giant Senior Soldier (Giant): 2 Swords_Late_2 -- 巨人上級兵士（巨人）：２刀流_後半_2"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Kingdom Soldier (Alive): Spear_ Late -- 王国兵士（生者）：槍_後半"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Kingdom Soldier (Alive): Spear_ Late -- 王国兵士（生者）：槍_後半"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Kingdom Soldier (Living): Two-Handed Sword: Bow_ First Half -- 王国兵士（生者）：両手剣：弓_前半"
+      ]
+    },
+    {
+      "ID": 9990,
+      "Entries": [
+        "[Official] giant soldiers appearing from a broken wall -- 【正式】壊れた壁から登場する巨人兵"
+      ]
+    }
+  ]
+}

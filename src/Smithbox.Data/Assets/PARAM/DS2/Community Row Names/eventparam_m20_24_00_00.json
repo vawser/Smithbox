@@ -1,0 +1,635 @@
+{
+  "Name": "eventparam_m20_24_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Ring the bell and the enemy running_01"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Ring the bell and the enemy running_02"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Ring the bell and enemy running_03"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Shortcut Drawbridge"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "A huge candlestick is lit by fire."
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Boss: Queen Knight B Battle"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "Boss: Queen's Knight B_ Poly Play"
+      ]
+    },
+    {
+      "ID": 4100,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 1"
+      ]
+    },
+    {
+      "ID": 4110,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 2"
+      ]
+    },
+    {
+      "ID": 4120,
+      "Entries": [
+        "Navimesh change 3 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 4130,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 4"
+      ]
+    },
+    {
+      "ID": 4140,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 5"
+      ]
+    },
+    {
+      "ID": 4150,
+      "Entries": [
+        "Navimesh change 6 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 4160,
+      "Entries": [
+        "Navimesh change of pillars destroyed in queen's knight B battle 7"
+      ]
+    },
+    {
+      "ID": 4170,
+      "Entries": [
+        "Navimesh change 8 of the pillars destroyed in the Queen's Knight B battle"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "【Insect key】Hidden door (1) for start-up"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "【Insect Key】Hidden Door"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "【Insect Key】Hidden Door (1)_Navi mesh change"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "King whose defenses fluctuate depending on the number of items he owns"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Bgm playback of the king's room"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Boss battle with the king"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Get the King's Ring"
+      ]
+    },
+    {
+      "ID": 8040,
+      "Entries": [
+        "The King's White Door Management"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "The King's Hostile Judgment"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Oil Jar 1"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Oil Jar 2"
+      ]
+    },
+    {
+      "ID": 9020,
+      "Entries": [
+        "Oil Jar 3"
+      ]
+    },
+    {
+      "ID": 9030,
+      "Entries": [
+        "Oil Jar 4"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 1"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 2"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 3"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 4"
+      ]
+    },
+    {
+      "ID": 12040,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 5"
+      ]
+    },
+    {
+      "ID": 12050,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 6"
+      ]
+    },
+    {
+      "ID": 12060,
+      "Entries": [
+        "Tombstone destruction stops enemy generation 7"
+      ]
+    },
+    {
+      "ID": 12070,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 8"
+      ]
+    },
+    {
+      "ID": 12080,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 9"
+      ]
+    },
+    {
+      "ID": 12090,
+      "Entries": [
+        "Tombstone destruction stops the generation of enemies 10"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 13010,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play ing seed fire 01_before the atrium passage"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Regeneration seed fire 02_gap under the inlet stairs"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy_Van Clad"
+      ]
+    },
+    {
+      "ID": 111020,
+      "Entries": [
+        "NPC: Tomb Guard"
+      ]
+    },
+    {
+      "ID": 111021,
+      "Entries": [
+        "NPC: Tomb Guard: Ghosts"
+      ]
+    },
+    {
+      "ID": 111022,
+      "Entries": [
+        "OBJ: Tomb Guard: Tomb"
+      ]
+    },
+    {
+      "ID": 111023,
+      "Entries": [
+        "OBJ: Tomb Guard: Key Guide"
+      ]
+    },
+    {
+      "ID": 111024,
+      "Entries": [
+        "OBJ: Tomb Guard: State Change"
+      ]
+    },
+    {
+      "ID": 111025,
+      "Entries": [
+        "OBJ: Tomb Guard: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111050,
+      "Entries": [
+        "NPC: The Shrine Maiden of the Dragon (In King's Castle)"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118220,
+      "Entries": [
+        "NPC for Multi: The Magician (Male): Black Phantom Appearance"
+      ]
+    },
+    {
+      "ID": 1000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4003000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4011010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4012000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4015000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4015010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4016000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4016010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4017000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4017010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4018000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4018010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4019000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4019010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4019020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4020010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4021000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030040,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030060,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030070,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030080,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030090,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030120,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030130,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4030140,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

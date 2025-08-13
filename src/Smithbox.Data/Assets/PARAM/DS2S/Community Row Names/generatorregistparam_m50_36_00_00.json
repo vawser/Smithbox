@@ -1,0 +1,611 @@
+{
+  "Name": "generatorregistparam_m50_36_00_00",
+  "Entries": [
+    {
+      "ID": 21301400,
+      "Entries": [
+        "[REG:21301400] Crystal Lizard"
+      ]
+    },
+    {
+      "ID": 30600700,
+      "Entries": [
+        "[REG:30600700] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30600701,
+      "Entries": [
+        "[REG:30600701] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 30601901,
+      "Entries": [
+        "[REG:30601901] Alonne Captain"
+      ]
+    },
+    {
+      "ID": 31900800,
+      "Entries": [
+        "[REG:31900800] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 31901100,
+      "Entries": [
+        "[REG:31901100] Alonne Knight"
+      ]
+    },
+    {
+      "ID": 65000000,
+      "Entries": [
+        "[REG:65000000] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000001,
+      "Entries": [
+        "[REG:65000001] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000002,
+      "Entries": [
+        "[REG:65000002] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000010,
+      "Entries": [
+        "[REG:65000010] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000011,
+      "Entries": [
+        "[REG:65000011] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000012,
+      "Entries": [
+        "[REG:65000012] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000020,
+      "Entries": [
+        "[REG:65000020] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000021,
+      "Entries": [
+        "[REG:65000021] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000022,
+      "Entries": [
+        "[REG:65000022] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000030,
+      "Entries": [
+        "[REG:65000030] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65000031,
+      "Entries": [
+        "[REG:65000031] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001000,
+      "Entries": [
+        "[REG:65001000] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001001,
+      "Entries": [
+        "[REG:65001001] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001010,
+      "Entries": [
+        "[REG:65001010] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001011,
+      "Entries": [
+        "[REG:65001011] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001020,
+      "Entries": [
+        "[REG:65001020] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001021,
+      "Entries": [
+        "[REG:65001021] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001030,
+      "Entries": [
+        "[REG:65001030] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65001031,
+      "Entries": [
+        "[REG:65001031] Iron Warrior"
+      ]
+    },
+    {
+      "ID": 65100000,
+      "Entries": [
+        "[REG:65100000] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100001,
+      "Entries": [
+        "[REG:65100001] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100010,
+      "Entries": [
+        "[REG:65100010] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100011,
+      "Entries": [
+        "[REG:65100011] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100020,
+      "Entries": [
+        "[REG:65100020] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100021,
+      "Entries": [
+        "[REG:65100021] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65100030,
+      "Entries": [
+        "[REG:65100030] Fume Sorcerer"
+      ]
+    },
+    {
+      "ID": 65300000,
+      "Entries": [
+        "[REG:65300000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300001,
+      "Entries": [
+        "[REG:65300001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300010,
+      "Entries": [
+        "[REG:65300010] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300011,
+      "Entries": [
+        "[REG:65300011] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300020,
+      "Entries": [
+        "[REG:65300020] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300021,
+      "Entries": [
+        "[REG:65300021] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300100,
+      "Entries": [
+        "[REG:65300100] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300101,
+      "Entries": [
+        "[REG:65300101] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300400,
+      "Entries": [
+        "[REG:65300400] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300401,
+      "Entries": [
+        "[REG:65300401] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300402,
+      "Entries": [
+        "[REG:65300402] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300500,
+      "Entries": [
+        "[REG:65300500] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300501,
+      "Entries": [
+        "[REG:65300501] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300600,
+      "Entries": [
+        "[REG:65300600] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65300601,
+      "Entries": [
+        "[REG:65300601] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301000,
+      "Entries": [
+        "[REG:65301000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301001,
+      "Entries": [
+        "[REG:65301001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301010,
+      "Entries": [
+        "[REG:65301010] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301011,
+      "Entries": [
+        "[REG:65301011] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301012,
+      "Entries": [
+        "[REG:65301012] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301020,
+      "Entries": [
+        "[REG:65301020] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65301021,
+      "Entries": [
+        "[REG:65301021] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302000,
+      "Entries": [
+        "[REG:65302000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302001,
+      "Entries": [
+        "[REG:65302001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302010,
+      "Entries": [
+        "[REG:65302010] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302011,
+      "Entries": [
+        "[REG:65302011] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302012,
+      "Entries": [
+        "[REG:65302012] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302013,
+      "Entries": [
+        "[REG:65302013] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302020,
+      "Entries": [
+        "[REG:65302020] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65302021,
+      "Entries": [
+        "[REG:65302021] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303000,
+      "Entries": [
+        "[REG:65303000] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303001,
+      "Entries": [
+        "[REG:65303001] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303010,
+      "Entries": [
+        "[REG:65303010] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303011,
+      "Entries": [
+        "[REG:65303011] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303020,
+      "Entries": [
+        "[REG:65303020] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65303021,
+      "Entries": [
+        "[REG:65303021] Ashen Warrior"
+      ]
+    },
+    {
+      "ID": 65400000,
+      "Entries": [
+        "[REG:65400000] Ashen Crawler"
+      ]
+    },
+    {
+      "ID": 65600000,
+      "Entries": [
+        "[REG:65600000] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600001,
+      "Entries": [
+        "[REG:65600001] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600010,
+      "Entries": [
+        "[REG:65600010] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600011,
+      "Entries": [
+        "[REG:65600011] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600020,
+      "Entries": [
+        "[REG:65600020] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600021,
+      "Entries": [
+        "[REG:65600021] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65600030,
+      "Entries": [
+        "[REG:65600030] Possessed Armor"
+      ]
+    },
+    {
+      "ID": 65700000,
+      "Entries": [
+        "[REG:65700000] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65700001,
+      "Entries": [
+        "[REG:65700001] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65700002,
+      "Entries": [
+        "[REG:65700002] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65700010,
+      "Entries": [
+        "[REG:65700010] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65700011,
+      "Entries": [
+        "[REG:65700011] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 65700012,
+      "Entries": [
+        "[REG:65700012] Barrel Carrier"
+      ]
+    },
+    {
+      "ID": 67500000,
+      "Entries": [
+        "[REG:67500000] Fume Knight [Boss]"
+      ]
+    },
+    {
+      "ID": 68000000,
+      "Entries": [
+        "[REG:68000000] Sir Alonne [Boss]"
+      ]
+    },
+    {
+      "ID": 68800000,
+      "Entries": [
+        "[REG:68800000] Flame Lizard"
+      ]
+    },
+    {
+      "ID": 68900000,
+      "Entries": [
+        "[REG:68900000] Blue Smelter Demon [Boss]"
+      ]
+    },
+    {
+      "ID": 69400000,
+      "Entries": [
+        "[REG:69400000] Forlorn (Scythe)"
+      ]
+    },
+    {
+      "ID": 82100010,
+      "Entries": [
+        "[REG:82100010] Steelheart Ellie"
+      ]
+    },
+    {
+      "ID": 82100021,
+      "Entries": [
+        "[REG:82100021] Carhillion of the Fold"
+      ]
+    },
+    {
+      "ID": 82100030,
+      "Entries": [
+        "[REG:82100030] Prowlers"
+      ]
+    },
+    {
+      "ID": 82100031,
+      "Entries": [
+        "[REG:82100031] Prowlers"
+      ]
+    },
+    {
+      "ID": 82100040,
+      "Entries": [
+        "[REG:82100040] Quicksword Rachel"
+      ]
+    },
+    {
+      "ID": 82100041,
+      "Entries": [
+        "[REG:82100041] Maldron the Assassin"
+      ]
+    },
+    {
+      "ID": 82100042,
+      "Entries": [
+        "[REG:82100042] Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 82100043,
+      "Entries": [
+        "[REG:82100043] Swashbuckling Matelas"
+      ]
+    },
+    {
+      "ID": 82100044,
+      "Entries": [
+        "[REG:82100044] Evangelist Scion Waslo"
+      ]
+    },
+    {
+      "ID": 84000000,
+      "Entries": [
+        "[REG:84000000] Voice Marker"
+      ]
+    },
+    {
+      "ID": 87500000,
+      "Entries": [
+        "[REG:87500000] Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 87500100,
+      "Entries": [
+        "[REG:87500100] Steel-willed Lorrie"
+      ]
+    },
+    {
+      "ID": 87600000,
+      "Entries": [
+        "[REG:87600000] Drifter Swordsman Aidel"
+      ]
+    },
+    {
+      "ID": 87600100,
+      "Entries": [
+        "[REG:87600100] Drifter Swordsman Aidel"
+      ]
+    }
+  ]
+}

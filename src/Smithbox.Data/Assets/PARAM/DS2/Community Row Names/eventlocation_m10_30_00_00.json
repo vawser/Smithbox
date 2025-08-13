@@ -1,0 +1,89 @@
+{
+  "Name": "eventlocation_m10_30_00_00",
+  "Entries": [
+    {
+      "ID": 100000,
+      "Entries": [
+        "On the elevator to the hidden port"
+      ]
+    },
+    {
+      "ID": 100010,
+      "Entries": [
+        "Lifts to hidden ports"
+      ]
+    },
+    {
+      "ID": 103000,
+      "Entries": [
+        "Backlead Safety Points [Heide]"
+      ]
+    },
+    {
+      "ID": 103001,
+      "Entries": [
+        "Backlead Safety [Port]"
+      ]
+    },
+    {
+      "ID": 104000,
+      "Entries": [
+        "Elevator_Connection Replacement Point"
+      ]
+    },
+    {
+      "ID": 6000020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58000000,
+      "Entries": [
+        "Heide side entrance_feedback area"
+      ]
+    },
+    {
+      "ID": 58000010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58000100,
+      "Entries": [
+        "Port side_feedback area 01"
+      ]
+    },
+    {
+      "ID": 58000110,
+      "Entries": [
+        "Port side_feedback area 02"
+      ]
+    },
+    {
+      "ID": 58000200,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

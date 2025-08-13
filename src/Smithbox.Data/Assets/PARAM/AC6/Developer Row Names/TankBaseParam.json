@@ -1,0 +1,53 @@
+{
+  "Name": "TankBaseParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "reservation -- 予約"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "personal tank -- 自機タンク"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Own tank (LG_M_7510) -- 自機タンク(LG_M_7510)"
+      ]
+    },
+    {
+      "ID": 3150,
+      "Entries": [
+        "juggernaut -- ジャガーノート"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "ADF"
+      ]
+    },
+    {
+      "ID": 5200,
+      "Entries": [
+        "combat vehicle -- 戦闘車輌"
+      ]
+    },
+    {
+      "ID": 5250,
+      "Entries": [
+        "sunflower -- サンフラワー"
+      ]
+    },
+    {
+      "ID": 9999,
+      "Entries": [
+        "enemy general purpose -- 敵の汎用"
+      ]
+    }
+  ]
+}

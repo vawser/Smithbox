@@ -1,0 +1,803 @@
+{
+  "Name": "PlayerAttackDirectionParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "Dummy data -- ダミーデータ"
+      ]
+    },
+    {
+      "ID": 61141,
+      "Entries": [
+        "Near, Speed, Left, 4, Front -- 近・速・左・4・前"
+      ]
+    },
+    {
+      "ID": 61142,
+      "Entries": [
+        "Near, Speed, Left, 4, Horizontal -- 近・速・左・4・横"
+      ]
+    },
+    {
+      "ID": 61143,
+      "Entries": [
+        "Close, Speed, Left, 4, After -- 近・速・左・4・後"
+      ]
+    },
+    {
+      "ID": 61151,
+      "Entries": [
+        "Close, Speed, Left, 5, Front -- 近・速・左・5・前"
+      ]
+    },
+    {
+      "ID": 61152,
+      "Entries": [
+        "Near, Speed, Left, 5, Horizontal -- 近・速・左・5・横"
+      ]
+    },
+    {
+      "ID": 61153,
+      "Entries": [
+        "Close, Speed, Left, 5, After -- 近・速・左・5・後"
+      ]
+    },
+    {
+      "ID": 61161,
+      "Entries": [
+        "Close, Speed, Left, 6, Front -- 近・速・左・6・前"
+      ]
+    },
+    {
+      "ID": 61162,
+      "Entries": [
+        "Near, Speed, Left, 6, Horizontal -- 近・速・左・6・横"
+      ]
+    },
+    {
+      "ID": 61163,
+      "Entries": [
+        "Close, Speed, Left, 6, After -- 近・速・左・6・後"
+      ]
+    },
+    {
+      "ID": 61241,
+      "Entries": [
+        "Near, Speed, Right, 4, Front -- 近・速・右・4・前"
+      ]
+    },
+    {
+      "ID": 61242,
+      "Entries": [
+        "Near, Speed, Right, 4, Side -- 近・速・右・4・横"
+      ]
+    },
+    {
+      "ID": 61243,
+      "Entries": [
+        "Close, Speed, Right, 4, After -- 近・速・右・4・後"
+      ]
+    },
+    {
+      "ID": 61251,
+      "Entries": [
+        "Near, Speed, Right, 5, Front -- 近・速・右・5・前"
+      ]
+    },
+    {
+      "ID": 61252,
+      "Entries": [
+        "Near, Speed, Right, 5, Horizontal -- 近・速・右・5・横"
+      ]
+    },
+    {
+      "ID": 61253,
+      "Entries": [
+        "Close, Speed, Right, 5, After -- 近・速・右・5・後"
+      ]
+    },
+    {
+      "ID": 61261,
+      "Entries": [
+        "Near, Speed, Right, 6, Front -- 近・速・右・6・前"
+      ]
+    },
+    {
+      "ID": 61262,
+      "Entries": [
+        "Near, Speed, Right, 6, Horizontal -- 近・速・右・6・横"
+      ]
+    },
+    {
+      "ID": 61263,
+      "Entries": [
+        "Close, Speed, Right, 6, After -- 近・速・右・6・後"
+      ]
+    },
+    {
+      "ID": 62111,
+      "Entries": [
+        "Kin, Fu, Left, 1, Front -- 近・普・左・1・前"
+      ]
+    },
+    {
+      "ID": 62121,
+      "Entries": [
+        "Kin, Fu, Left, 2, Front -- 近・普・左・2・前"
+      ]
+    },
+    {
+      "ID": 62122,
+      "Entries": [
+        "Near, Fu, Left, 2, Side -- 近・普・左・2・横"
+      ]
+    },
+    {
+      "ID": 62124,
+      "Entries": [
+        "Kin, Fu, Left, 2, After -- 近・普・左・2・後"
+      ]
+    },
+    {
+      "ID": 62131,
+      "Entries": [
+        "Kin, Fu, Left, 3, Front -- 近・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 62132,
+      "Entries": [
+        "Near, Fu, Left, 3, Side -- 近・普・左・3・横"
+      ]
+    },
+    {
+      "ID": 62133,
+      "Entries": [
+        "Kin, Fu, Left, 3, After -- 近・普・左・3・後"
+      ]
+    },
+    {
+      "ID": 62141,
+      "Entries": [
+        "Kin, Fu, Left, 4, Front -- 近・普・左・4・前"
+      ]
+    },
+    {
+      "ID": 62161,
+      "Entries": [
+        "Kin, Fu, Left, 6, Front -- 近・普・左・6・前"
+      ]
+    },
+    {
+      "ID": 62162,
+      "Entries": [
+        "Near, Fu, Left, 6, Side -- 近・普・左・6・横"
+      ]
+    },
+    {
+      "ID": 62163,
+      "Entries": [
+        "Kin, Fu, Left, 6, After -- 近・普・左・6・後"
+      ]
+    },
+    {
+      "ID": 62171,
+      "Entries": [
+        "Kin, Fu, Left, 7, Front -- 近・普・左・7・前"
+      ]
+    },
+    {
+      "ID": 62181,
+      "Entries": [
+        "Kin, Fu, Left, 8, Front -- 近・普・左・8・前"
+      ]
+    },
+    {
+      "ID": 62182,
+      "Entries": [
+        "Near, Fu, Left, 8, Side -- 近・普・左・8・横"
+      ]
+    },
+    {
+      "ID": 62183,
+      "Entries": [
+        "Kin, Fu, Left, 8, After -- 近・普・左・8・後"
+      ]
+    },
+    {
+      "ID": 62191,
+      "Entries": [
+        "Kin, Fu, Left, 9, Front -- 近・普・左・9・前"
+      ]
+    },
+    {
+      "ID": 62192,
+      "Entries": [
+        "Near, Fu, Left, 9, Side -- 近・普・左・9・横"
+      ]
+    },
+    {
+      "ID": 62193,
+      "Entries": [
+        "Kin, Fu, Left, 9, After -- 近・普・左・9・後"
+      ]
+    },
+    {
+      "ID": 62211,
+      "Entries": [
+        "Kin, Fu, Right, 1, Front -- 近・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 62212,
+      "Entries": [
+        "Near, Fu, Right, 1, Side -- 近・普・右・1・横"
+      ]
+    },
+    {
+      "ID": 62213,
+      "Entries": [
+        "Kin, Fu, Right, 1, After -- 近・普・右・1・後"
+      ]
+    },
+    {
+      "ID": 62221,
+      "Entries": [
+        "Near, Fu, Right, 2, Front -- 近・普・右・2・前"
+      ]
+    },
+    {
+      "ID": 62222,
+      "Entries": [
+        "Near, Fu, Right, 2, Side -- 近・普・右・2・横"
+      ]
+    },
+    {
+      "ID": 62223,
+      "Entries": [
+        "Kin, Fu, Right, 2, After -- 近・普・右・2・後"
+      ]
+    },
+    {
+      "ID": 62231,
+      "Entries": [
+        "Kin, Fu, Right, 3, Front -- 近・普・右・3・前"
+      ]
+    },
+    {
+      "ID": 62241,
+      "Entries": [
+        "Kin, Fu, Right, 4, Front -- 近・普・右・4・前"
+      ]
+    },
+    {
+      "ID": 62242,
+      "Entries": [
+        "Near, Fu, Right, 4, Side -- 近・普・右・4・横"
+      ]
+    },
+    {
+      "ID": 62243,
+      "Entries": [
+        "Kin, Fu, Right, 4, After -- 近・普・右・4・後"
+      ]
+    },
+    {
+      "ID": 62261,
+      "Entries": [
+        "Kin, Fu, Right, 6, Front -- 近・普・右・6・前"
+      ]
+    },
+    {
+      "ID": 62271,
+      "Entries": [
+        "Kin, Fu, Right, 7, Front -- 近・普・右・7・前"
+      ]
+    },
+    {
+      "ID": 62272,
+      "Entries": [
+        "Near, Fu, Right, 7, Side -- 近・普・右・7・横"
+      ]
+    },
+    {
+      "ID": 62273,
+      "Entries": [
+        "Kin, Fu, Right, 7, After -- 近・普・右・7・後"
+      ]
+    },
+    {
+      "ID": 62281,
+      "Entries": [
+        "Kin, Fu, Right, 8, Front -- 近・普・右・8・前"
+      ]
+    },
+    {
+      "ID": 62282,
+      "Entries": [
+        "Near, Fu, Right, 8, Side -- 近・普・右・8・横"
+      ]
+    },
+    {
+      "ID": 62283,
+      "Entries": [
+        "Kin, Fu, Right, 8, After -- 近・普・右・8・後"
+      ]
+    },
+    {
+      "ID": 62291,
+      "Entries": [
+        "Kin, Fu, Right, 9, Front -- 近・普・右・9・前"
+      ]
+    },
+    {
+      "ID": 63111,
+      "Entries": [
+        "Close, Late, Left, 1, Front -- 近・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 63112,
+      "Entries": [
+        "Near, Late, Left, 1, Horizontal -- 近・遅・左・1・横"
+      ]
+    },
+    {
+      "ID": 63113,
+      "Entries": [
+        "Close, Late, Left, 1, After -- 近・遅・左・1・後"
+      ]
+    },
+    {
+      "ID": 63211,
+      "Entries": [
+        "Close, Slow, Right, 1, Front -- 近・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 63212,
+      "Entries": [
+        "Near, Slow, Right, 1, Side -- 近・遅・右・1・横"
+      ]
+    },
+    {
+      "ID": 63213,
+      "Entries": [
+        "Close, Slow, Right, 1, After -- 近・遅・右・1・後"
+      ]
+    },
+    {
+      "ID": 64111,
+      "Entries": [
+        "Middle, Speed, Left, 1, Front -- 中・速・左・1・前"
+      ]
+    },
+    {
+      "ID": 64121,
+      "Entries": [
+        "Middle, Speed, Left, 2, Front -- 中・速・左・2・前"
+      ]
+    },
+    {
+      "ID": 64131,
+      "Entries": [
+        "Middle, Speed, Left, 3, Front -- 中・速・左・3・前"
+      ]
+    },
+    {
+      "ID": 64132,
+      "Entries": [
+        "Middle, Speed, Left, 3, Front -- 中・速・左・3・前"
+      ]
+    },
+    {
+      "ID": 64133,
+      "Entries": [
+        "Middle, Speed, Left, 3, Front -- 中・速・左・3・前"
+      ]
+    },
+    {
+      "ID": 64141,
+      "Entries": [
+        "Middle, Speed, Left, 4, Front -- 中・速・左・4・前"
+      ]
+    },
+    {
+      "ID": 64161,
+      "Entries": [
+        "Middle, Speed, Left, 6, Front -- 中・速・左・6・前"
+      ]
+    },
+    {
+      "ID": 64171,
+      "Entries": [
+        "Middle, Speed, Left, 7, Front -- 中・速・左・7・前"
+      ]
+    },
+    {
+      "ID": 64181,
+      "Entries": [
+        "Middle, Speed, Left, 8, Front -- 中・速・左・8・前"
+      ]
+    },
+    {
+      "ID": 64191,
+      "Entries": [
+        "Middle, Speed, Left, 9, Front -- 中・速・左・9・前"
+      ]
+    },
+    {
+      "ID": 64211,
+      "Entries": [
+        "Middle, Speed, Right, 1, Front -- 中・速・右・1・前"
+      ]
+    },
+    {
+      "ID": 64221,
+      "Entries": [
+        "Middle, Speed, Right, 2, Front -- 中・速・右・2・前"
+      ]
+    },
+    {
+      "ID": 64231,
+      "Entries": [
+        "Middle, Speed, Right, 3, Front -- 中・速・右・3・前"
+      ]
+    },
+    {
+      "ID": 64241,
+      "Entries": [
+        "Middle, Speed, Right, 4, Front -- 中・速・右・4・前"
+      ]
+    },
+    {
+      "ID": 64261,
+      "Entries": [
+        "Middle, Speed, Right, 6, Front -- 中・速・右・6・前"
+      ]
+    },
+    {
+      "ID": 64271,
+      "Entries": [
+        "Middle, Speed, Right, 7, Front -- 中・速・右・7・前"
+      ]
+    },
+    {
+      "ID": 64272,
+      "Entries": [
+        "Middle, Speed, Right, 7, Front -- 中・速・右・7・前"
+      ]
+    },
+    {
+      "ID": 64273,
+      "Entries": [
+        "Middle, Speed, Right, 7, Front -- 中・速・右・7・前"
+      ]
+    },
+    {
+      "ID": 64281,
+      "Entries": [
+        "Middle, Speed, Right, 8, Front -- 中・速・右・8・前"
+      ]
+    },
+    {
+      "ID": 64291,
+      "Entries": [
+        "Middle, Speed, Right, 9, Front -- 中・速・右・9・前"
+      ]
+    },
+    {
+      "ID": 65111,
+      "Entries": [
+        "Inside, Fu, Left, 1, Front -- 中・普・左・1・前"
+      ]
+    },
+    {
+      "ID": 65121,
+      "Entries": [
+        "Inside, Fu, Left, 2, Front -- 中・普・左・2・前"
+      ]
+    },
+    {
+      "ID": 65131,
+      "Entries": [
+        "Inside, Fu, Left, 3, Front -- 中・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 65132,
+      "Entries": [
+        "Inside, Fu, Left, 3, Front -- 中・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 65133,
+      "Entries": [
+        "Inside, Fu, Left, 3, Front -- 中・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 65141,
+      "Entries": [
+        "Inside, Fu, Left, 4, Front -- 中・普・左・4・前"
+      ]
+    },
+    {
+      "ID": 65161,
+      "Entries": [
+        "Inside, Fu, Left, 6, Front -- 中・普・左・6・前"
+      ]
+    },
+    {
+      "ID": 65171,
+      "Entries": [
+        "Inside, Fu, Left, 7, Front -- 中・普・左・7・前"
+      ]
+    },
+    {
+      "ID": 65181,
+      "Entries": [
+        "Inside, Fu, Left, 8, Front -- 中・普・左・8・前"
+      ]
+    },
+    {
+      "ID": 65191,
+      "Entries": [
+        "Inside, Fu, Left, 9, Front -- 中・普・左・9・前"
+      ]
+    },
+    {
+      "ID": 65211,
+      "Entries": [
+        "Inside, Fu, Right, 1, Front -- 中・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 65212,
+      "Entries": [
+        "Inside, Fu, Right, 1, Front -- 中・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 65213,
+      "Entries": [
+        "Inside, Fu, Right, 1, Front -- 中・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 65221,
+      "Entries": [
+        "Inside, Fu, Right, 2, Front -- 中・普・右・2・前"
+      ]
+    },
+    {
+      "ID": 65231,
+      "Entries": [
+        "Inside, Fu, Right, 3, Front -- 中・普・右・3・前"
+      ]
+    },
+    {
+      "ID": 65241,
+      "Entries": [
+        "Inside, Fu, Right, 4, Front -- 中・普・右・4・前"
+      ]
+    },
+    {
+      "ID": 65261,
+      "Entries": [
+        "Inside, Fu, Right, 6, Front -- 中・普・右・6・前"
+      ]
+    },
+    {
+      "ID": 65271,
+      "Entries": [
+        "Inside, Fu, Right, 7, Front -- 中・普・右・7・前"
+      ]
+    },
+    {
+      "ID": 65281,
+      "Entries": [
+        "Inside, Fu, Right, 8, Front -- 中・普・右・8・前"
+      ]
+    },
+    {
+      "ID": 65291,
+      "Entries": [
+        "Inside, Fu, Right, 9, Front -- 中・普・右・9・前"
+      ]
+    },
+    {
+      "ID": 66111,
+      "Entries": [
+        "Medium, Late, Left, 1, Front -- 中・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 66112,
+      "Entries": [
+        "Medium, Late, Left, 1, Front -- 中・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 66113,
+      "Entries": [
+        "Medium, Late, Left, 1, Front -- 中・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 66211,
+      "Entries": [
+        "Medium, Slow, Right, 1, Front -- 中・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 66212,
+      "Entries": [
+        "Medium, Slow, Right, 1, Front -- 中・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 66213,
+      "Entries": [
+        "Medium, Slow, Right, 1, Front -- 中・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 68111,
+      "Entries": [
+        "Distance, Fu, Left, 1, Front -- 遠・普・左・1・前"
+      ]
+    },
+    {
+      "ID": 68121,
+      "Entries": [
+        "Distance, Fu, Left, 2, Front -- 遠・普・左・2・前"
+      ]
+    },
+    {
+      "ID": 68131,
+      "Entries": [
+        "Distance, Fu, Left, 3, Front -- 遠・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 68132,
+      "Entries": [
+        "Distance, Fu, Left, 3, Front -- 遠・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 68133,
+      "Entries": [
+        "Distance, Fu, Left, 3, Front -- 遠・普・左・3・前"
+      ]
+    },
+    {
+      "ID": 68141,
+      "Entries": [
+        "Distance, Fu, Left, 4, Front -- 遠・普・左・4・前"
+      ]
+    },
+    {
+      "ID": 68161,
+      "Entries": [
+        "Distance, Fu, Left, 6, Front -- 遠・普・左・6・前"
+      ]
+    },
+    {
+      "ID": 68171,
+      "Entries": [
+        "Distance, Fu, Left, 7, Front -- 遠・普・左・7・前"
+      ]
+    },
+    {
+      "ID": 68181,
+      "Entries": [
+        "Distance, Fu, Left, 8, Front -- 遠・普・左・8・前"
+      ]
+    },
+    {
+      "ID": 68191,
+      "Entries": [
+        "Distance, Fu, Left, 9, Front -- 遠・普・左・9・前"
+      ]
+    },
+    {
+      "ID": 68211,
+      "Entries": [
+        "Distance, Fu, Right, 1, Front -- 遠・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 68212,
+      "Entries": [
+        "Distance, Fu, Right, 1, Front -- 遠・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 68213,
+      "Entries": [
+        "Distance, Fu, Right, 1, Front -- 遠・普・右・1・前"
+      ]
+    },
+    {
+      "ID": 68221,
+      "Entries": [
+        "Distance, Fu, Right, 2, Front -- 遠・普・右・2・前"
+      ]
+    },
+    {
+      "ID": 68231,
+      "Entries": [
+        "Distance, Fu, Right, 3, Front -- 遠・普・右・3・前"
+      ]
+    },
+    {
+      "ID": 68241,
+      "Entries": [
+        "Distance, Fu, Right, 4, Front -- 遠・普・右・4・前"
+      ]
+    },
+    {
+      "ID": 68261,
+      "Entries": [
+        "Distance, Fu, Right, 6, Front -- 遠・普・右・6・前"
+      ]
+    },
+    {
+      "ID": 68271,
+      "Entries": [
+        "Distance, Fu, Right, 7, Front -- 遠・普・右・7・前"
+      ]
+    },
+    {
+      "ID": 68281,
+      "Entries": [
+        "Distance, Fu, Right, 8, Front -- 遠・普・右・8・前"
+      ]
+    },
+    {
+      "ID": 68291,
+      "Entries": [
+        "Distance, Fu, Right, 9, Front -- 遠・普・右・9・前"
+      ]
+    },
+    {
+      "ID": 69111,
+      "Entries": [
+        "Far, Late, Left, 1, Front -- 遠・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 69112,
+      "Entries": [
+        "Far, Late, Left, 1, Front -- 遠・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 69113,
+      "Entries": [
+        "Far, Late, Left, 1, Front -- 遠・遅・左・1・前"
+      ]
+    },
+    {
+      "ID": 69211,
+      "Entries": [
+        "Far, Late, Right, 1, Front -- 遠・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 69212,
+      "Entries": [
+        "Far, Late, Right, 1, Front -- 遠・遅・右・1・前"
+      ]
+    },
+    {
+      "ID": 69213,
+      "Entries": [
+        "Far, Late, Right, 1, Front -- 遠・遅・右・1・前"
+      ]
+    }
+  ]
+}

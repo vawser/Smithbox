@@ -1,0 +1,515 @@
+{
+  "Name": "eventparam_m10_19_00_00",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "scaffolding up and down with lever"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "One-way door from the bonfire room"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "【Insect Key】For The Fountain of Recovery_01"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "[Insect key start] fountain of recovery_01"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "【Insect Key】For The Fountain of Recovery_02"
+      ]
+    },
+    {
+      "ID": 4010,
+      "Entries": [
+        "[Insect key start] fountain of recovery_02"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "a bridge descending by a lever"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Burning furnace_Shutter opening and closing"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "If you open the burning furnace door, you will see a flame."
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "If you open the burning furnace door, you will see a flame."
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Molten iron kettle 01"
+      ]
+    },
+    {
+      "ID": 7010,
+      "Entries": [
+        "Molten iron kettle 02"
+      ]
+    },
+    {
+      "ID": 7020,
+      "Entries": [
+        "Molten iron kettle 03"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Boss: Demon Night Combat"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Flame linked to boss's actions"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Bay Grant Generation Determination"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "Bay Grant Deletion Judgment"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Lever to stop all flame images"
+      ]
+    },
+    {
+      "ID": 10000,
+      "Entries": [
+        "The lever where the bell bell rings"
+      ]
+    },
+    {
+      "ID": 10010,
+      "Entries": [
+        "Bell Mori_ Bell Net Reception"
+      ]
+    },
+    {
+      "ID": 10020,
+      "Entries": [
+        "Determination of lever use of bell guard_bell guard"
+      ]
+    },
+    {
+      "ID": 11000,
+      "Entries": [
+        "[Insect key] hidden door_dialog display"
+      ]
+    },
+    {
+      "ID": 11010,
+      "Entries": [
+        "[Insect key] hidden door _face SFX"
+      ]
+    },
+    {
+      "ID": 11020,
+      "Entries": [
+        "[Insect key] hidden door _navi mesh change"
+      ]
+    },
+    {
+      "ID": 12000,
+      "Entries": [
+        "Falling scaffolding 01_left back"
+      ]
+    },
+    {
+      "ID": 12010,
+      "Entries": [
+        "Falling Scaffolding 02_Right Back"
+      ]
+    },
+    {
+      "ID": 12020,
+      "Entries": [
+        "Falling scaffolding 03_right hand"
+      ]
+    },
+    {
+      "ID": 12030,
+      "Entries": [
+        "Falling scaffolding 04_left hand"
+      ]
+    },
+    {
+      "ID": 13000,
+      "Entries": [
+        "Attach a statue that spits flames in two directions"
+      ]
+    },
+    {
+      "ID": 14000,
+      "Entries": [
+        "Disable damage floor"
+      ]
+    },
+    {
+      "ID": 15000,
+      "Entries": [
+        "Boss: Molten Iron Demon Combat"
+      ]
+    },
+    {
+      "ID": 15010,
+      "Entries": [
+        "Boss: Molten Iron Daemon_ Poly Play"
+      ]
+    },
+    {
+      "ID": 15020,
+      "Entries": [
+        "Boss: Iron Daemon_ Initial Placement Change"
+      ]
+    },
+    {
+      "ID": 16000,
+      "Entries": [
+        "Connection flag ON"
+      ]
+    },
+    {
+      "ID": 17000,
+      "Entries": [
+        "Bridge navigation changes destroyed by enemies"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Guillotine Door"
+      ]
+    },
+    {
+      "ID": 20000,
+      "Entries": [
+        "Terminating fire_molten iron"
+      ]
+    },
+    {
+      "ID": 23000,
+      "Entries": [
+        "Navi mesh change of hidden door 1"
+      ]
+    },
+    {
+      "ID": 23010,
+      "Entries": [
+        "Hidden Door Navi Mesh Change 2"
+      ]
+    },
+    {
+      "ID": 24000,
+      "Entries": [
+        "Navi mesh change by barista destruction"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "Pledge: Bell Guard_ Contribution UP"
+      ]
+    },
+    {
+      "ID": 60010,
+      "Entries": [
+        "Pledge: The sensitivity of the UP_ intruder generation judgment"
+      ]
+    },
+    {
+      "ID": 80000,
+      "Entries": [
+        "Play ing seed fire 01_ boss demon knight after one-way door room"
+      ]
+    },
+    {
+      "ID": 81000,
+      "Entries": [
+        "Stairs heading under the regeneration seed fire 02_entrance bridge"
+      ]
+    },
+    {
+      "ID": 82000,
+      "Entries": [
+        "Regenerate distoonal spark 03_ giant cow statue head"
+      ]
+    },
+    {
+      "ID": 82010,
+      "Entries": [
+        "Shop Lineup Expansion_Molten Iron Daemon"
+      ]
+    },
+    {
+      "ID": 83000,
+      "Entries": [
+        "Regenerated spark 04_depression in front of bell guard area"
+      ]
+    },
+    {
+      "ID": 90000,
+      "Entries": [
+        "Trophy_ Molten Iron Light"
+      ]
+    },
+    {
+      "ID": 111276,
+      "Entries": [
+        "OBJ: Female Knight: White Phantom Sign Display"
+      ]
+    },
+    {
+      "ID": 111277,
+      "Entries": [
+        "OBJ: Female Knight: White Phantom"
+      ]
+    },
+    {
+      "ID": 111280,
+      "Entries": [
+        "NPC: Bell Guard: Vain"
+      ]
+    },
+    {
+      "ID": 111281,
+      "Entries": [
+        "NPC: Bell Guard: Vain: Ghost"
+      ]
+    },
+    {
+      "ID": 111282,
+      "Entries": [
+        "OBJ: Bell Guard: Vain: Tomb"
+      ]
+    },
+    {
+      "ID": 111283,
+      "Entries": [
+        "OBJ: Bell Guard: Vain: Key Guide"
+      ]
+    },
+    {
+      "ID": 111284,
+      "Entries": [
+        "OBJ: Bell Guard: Vain: Black Phantom Appearance: Offline"
+      ]
+    },
+    {
+      "ID": 111440,
+      "Entries": [
+        "NPC: A curiosity shop"
+      ]
+    },
+    {
+      "ID": 111441,
+      "Entries": [
+        "NPC: Curiosity: Ghost"
+      ]
+    },
+    {
+      "ID": 111442,
+      "Entries": [
+        "OBJ: Curiosity: Tomb"
+      ]
+    },
+    {
+      "ID": 111443,
+      "Entries": [
+        "OBJ: Curiosity: Key Guide"
+      ]
+    },
+    {
+      "ID": 111444,
+      "Entries": [
+        "OBJ: Curiosity: Shop List"
+      ]
+    },
+    {
+      "ID": 118100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118220,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 118230,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 120050,
+      "Entries": [
+        "Trophy: Bell Pledge (Molten Castle)"
+      ]
+    },
+    {
+      "ID": 120060,
+      "Entries": [
+        "Trophies: Old Pledges"
+      ]
+    },
+    {
+      "ID": 2000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2001030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4000000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4001000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4002000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4010000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4020000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4021000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4021010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4022020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4031010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4100000,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

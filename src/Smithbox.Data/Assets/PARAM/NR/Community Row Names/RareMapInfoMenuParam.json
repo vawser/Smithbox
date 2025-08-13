@@ -1,0 +1,29 @@
+{
+  "Name": "RareMapInfoMenuParam",
+  "Entries": [
+    {
+      "ID": 11,
+      "Entries": [
+        "Mountaintop"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "The Crater"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Rotted Woods"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "Noklateo, the Shrouded City"
+      ]
+    }
+  ]
+}

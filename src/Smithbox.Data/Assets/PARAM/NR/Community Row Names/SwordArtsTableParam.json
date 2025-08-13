@@ -1,0 +1,6365 @@
+{
+  "Name": "SwordArtsTableParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "(0% weight)"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "No Skill"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "No Skill"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "Lion's Claw"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "Impaling Thrust"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "Piercing Fang"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Charge Forth"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Stamp (Upward Cut)"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Stamp (Sweep)"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Blood Tax"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Repeating Thrust"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "Wild Strikes"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Spinning Strikes"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Double Slash"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "Unsheathe"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "Square Off"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "Giant Hunt"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "Torch Attack"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "Poison Moth Flight"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Spinning Weapon"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Storm Assault"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "Stormcaller"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "Sword Dance"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "Spinning Chain"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "Glintblade Phalanx"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "Sacred Blade"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "Ice Spear"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Glintstone Pebble"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Bloody Slash"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Eruption"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Prayerful Strike"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Gravitas"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Storm Blade"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Earthshaker"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Golden Land"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Flaming Strike"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Thunderbolt"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Lightning Slash"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Carian Grandeur"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Vacuum Slice"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Sacred Ring of Light"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Firebreather"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Blood Blade"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Phantom Slash"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Spectral Lance"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Chilling Mist"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Shield Bash"
+      ]
+    },
+    {
+      "ID": 301,
+      "Entries": [
+        "Barricade Shield"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Parry"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Buckler Parry"
+      ]
+    },
+    {
+      "ID": 305,
+      "Entries": [
+        "Carian Retaliation"
+      ]
+    },
+    {
+      "ID": 306,
+      "Entries": [
+        "Storm Wall"
+      ]
+    },
+    {
+      "ID": 307,
+      "Entries": [
+        "Golden Parry"
+      ]
+    },
+    {
+      "ID": 308,
+      "Entries": [
+        "Shield Crash"
+      ]
+    },
+    {
+      "ID": 309,
+      "Entries": [
+        "Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "Through and Through"
+      ]
+    },
+    {
+      "ID": 401,
+      "Entries": [
+        "Barrage"
+      ]
+    },
+    {
+      "ID": 402,
+      "Entries": [
+        "Mighty Shot"
+      ]
+    },
+    {
+      "ID": 404,
+      "Entries": [
+        "Enchanted Shot"
+      ]
+    },
+    {
+      "ID": 405,
+      "Entries": [
+        "Sky Shot"
+      ]
+    },
+    {
+      "ID": 406,
+      "Entries": [
+        "Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 501,
+      "Entries": [
+        "Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 502,
+      "Entries": [
+        "Storm Stomp"
+      ]
+    },
+    {
+      "ID": 503,
+      "Entries": [
+        "Kick"
+      ]
+    },
+    {
+      "ID": 504,
+      "Entries": [
+        "Lightning Ram"
+      ]
+    },
+    {
+      "ID": 505,
+      "Entries": [
+        "Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 506,
+      "Entries": [
+        "Ground Slam"
+      ]
+    },
+    {
+      "ID": 507,
+      "Entries": [
+        "Golden Slam"
+      ]
+    },
+    {
+      "ID": 508,
+      "Entries": [
+        "Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 509,
+      "Entries": [
+        "Hoarah Loux's Earthshaker"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "Determination"
+      ]
+    },
+    {
+      "ID": 601,
+      "Entries": [
+        "Royal Knight's Resolve"
+      ]
+    },
+    {
+      "ID": 602,
+      "Entries": [
+        "Assassin's Gambit"
+      ]
+    },
+    {
+      "ID": 603,
+      "Entries": [
+        "Golden Vow"
+      ]
+    },
+    {
+      "ID": 604,
+      "Entries": [
+        "Sacred Order"
+      ]
+    },
+    {
+      "ID": 605,
+      "Entries": [
+        "Shared Order"
+      ]
+    },
+    {
+      "ID": 606,
+      "Entries": [
+        "Seppuku"
+      ]
+    },
+    {
+      "ID": 607,
+      "Entries": [
+        "Cragblade"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "Barbaric Roar"
+      ]
+    },
+    {
+      "ID": 651,
+      "Entries": [
+        "War Cry"
+      ]
+    },
+    {
+      "ID": 652,
+      "Entries": [
+        "Beast's Roar"
+      ]
+    },
+    {
+      "ID": 653,
+      "Entries": [
+        "Troll's Roar"
+      ]
+    },
+    {
+      "ID": 654,
+      "Entries": [
+        "Braggart's Roar"
+      ]
+    },
+    {
+      "ID": 700,
+      "Entries": [
+        "Endure"
+      ]
+    },
+    {
+      "ID": 701,
+      "Entries": [
+        "Vow of the Indomitable"
+      ]
+    },
+    {
+      "ID": 702,
+      "Entries": [
+        "Holy Ground"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "Quickstep"
+      ]
+    },
+    {
+      "ID": 801,
+      "Entries": [
+        "Bloodhound's Step"
+      ]
+    },
+    {
+      "ID": 802,
+      "Entries": [
+        "Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 850,
+      "Entries": [
+        "White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Surge of Faith"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Flame Spit"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Tongues of Fire"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Bubble Shower"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "Great Oracular Bubble"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "Sea of Magma"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "Viper Bite"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "Moonlight Greatsword"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "Siluria's Woe"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "Rallying Standard"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "Bear Witness!"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "Eochaid's Dancing Blade"
+      ]
+    },
+    {
+      "ID": 1013,
+      "Entries": [
+        "Soul Stifler"
+      ]
+    },
+    {
+      "ID": 1014,
+      "Entries": [
+        "Taker's Flames"
+      ]
+    },
+    {
+      "ID": 1015,
+      "Entries": [
+        "Shriek of Milos"
+      ]
+    },
+    {
+      "ID": 1016,
+      "Entries": [
+        "Reduvia Blood Blade"
+      ]
+    },
+    {
+      "ID": 1017,
+      "Entries": [
+        "Glintstone Dart"
+      ]
+    },
+    {
+      "ID": 1018,
+      "Entries": [
+        "Flowing Form"
+      ]
+    },
+    {
+      "ID": 1019,
+      "Entries": [
+        "Night-and-Flame Stance"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "Wave of Gold"
+      ]
+    },
+    {
+      "ID": 1021,
+      "Entries": [
+        "Ruinous Ghostflame"
+      ]
+    },
+    {
+      "ID": 1022,
+      "Entries": [
+        "Establish Order"
+      ]
+    },
+    {
+      "ID": 1023,
+      "Entries": [
+        "Mists of Slumber"
+      ]
+    },
+    {
+      "ID": 1024,
+      "Entries": [
+        "Spearcall Ritual"
+      ]
+    },
+    {
+      "ID": 1025,
+      "Entries": [
+        "Wolf's Assault"
+      ]
+    },
+    {
+      "ID": 1026,
+      "Entries": [
+        "Thundercloud Form"
+      ]
+    },
+    {
+      "ID": 1027,
+      "Entries": [
+        "Cursed-Blood Slice"
+      ]
+    },
+    {
+      "ID": 1028,
+      "Entries": [
+        "Waterfowl Dance"
+      ]
+    },
+    {
+      "ID": 1029,
+      "Entries": [
+        "Gold Breaker"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "I Command Thee, Kneel!"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "Regal Roar"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "Starcaller Cry"
+      ]
+    },
+    {
+      "ID": 1033,
+      "Entries": [
+        "Wave of Destruction"
+      ]
+    },
+    {
+      "ID": 1034,
+      "Entries": [
+        "Bloodboon Ritual"
+      ]
+    },
+    {
+      "ID": 1035,
+      "Entries": [
+        "Flowing Form"
+      ]
+    },
+    {
+      "ID": 1036,
+      "Entries": [
+        "Blade of Death"
+      ]
+    },
+    {
+      "ID": 1037,
+      "Entries": [
+        "Blade of Gold"
+      ]
+    },
+    {
+      "ID": 1038,
+      "Entries": [
+        "Destined Death"
+      ]
+    },
+    {
+      "ID": 1039,
+      "Entries": [
+        "Spinning Wheel"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "Alabaster Lords' Pull"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "Onyx Lords' Repulsion"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "Oath of Vengeance"
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        "Ice Lightning Sword"
+      ]
+    },
+    {
+      "ID": 1044,
+      "Entries": [
+        "Regal Beastclaw"
+      ]
+    },
+    {
+      "ID": 1045,
+      "Entries": [
+        "Flame Dance"
+      ]
+    },
+    {
+      "ID": 1046,
+      "Entries": [
+        "Claw Flick"
+      ]
+    },
+    {
+      "ID": 1047,
+      "Entries": [
+        "Nebula"
+      ]
+    },
+    {
+      "ID": 1048,
+      "Entries": [
+        "Ghostflame Ignition"
+      ]
+    },
+    {
+      "ID": 1049,
+      "Entries": [
+        "Ancient Lightning Spear"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "Frenzyflame Thrust"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "Miquella's Ring of Light"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "Golden Tempering"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "Last Rites"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "Unblockable Blade"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "Eochaid's Dancing Blade"
+      ]
+    },
+    {
+      "ID": 1056,
+      "Entries": [
+        "Magic Dagger"
+      ]
+    },
+    {
+      "ID": 1165,
+      "Entries": [
+        "Loretta's Slash"
+      ]
+    },
+    {
+      "ID": 1166,
+      "Entries": [
+        "Spinning Slash"
+      ]
+    },
+    {
+      "ID": 1167,
+      "Entries": [
+        "Corpse Wax Cutter"
+      ]
+    },
+    {
+      "ID": 1168,
+      "Entries": [
+        "Zamor Ice Storm"
+      ]
+    },
+    {
+      "ID": 1169,
+      "Entries": [
+        "Radahn's Rain"
+      ]
+    },
+    {
+      "ID": 1170,
+      "Entries": [
+        "The Queen's Black Flame"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        "Dynast's Finesse"
+      ]
+    },
+    {
+      "ID": 1172,
+      "Entries": [
+        "Magma Shower"
+      ]
+    },
+    {
+      "ID": 1173,
+      "Entries": [
+        "Nebula"
+      ]
+    },
+    {
+      "ID": 1174,
+      "Entries": [
+        "Death Flare"
+      ]
+    },
+    {
+      "ID": 1175,
+      "Entries": [
+        "Bloodhound's Finesse"
+      ]
+    },
+    {
+      "ID": 1176,
+      "Entries": [
+        "Magma Guillotine"
+      ]
+    },
+    {
+      "ID": 1177,
+      "Entries": [
+        "Corpse Piler"
+      ]
+    },
+    {
+      "ID": 1178,
+      "Entries": [
+        "Transient Moonlight"
+      ]
+    },
+    {
+      "ID": 1179,
+      "Entries": [
+        "Bloodblade Dance"
+      ]
+    },
+    {
+      "ID": 1182,
+      "Entries": [
+        "Knowledge Above All"
+      ]
+    },
+    {
+      "ID": 1183,
+      "Entries": [
+        "Devourer of Worlds"
+      ]
+    },
+    {
+      "ID": 1184,
+      "Entries": [
+        "Familial Rancor"
+      ]
+    },
+    {
+      "ID": 1185,
+      "Entries": [
+        "Rosus's Summons"
+      ]
+    },
+    {
+      "ID": 1186,
+      "Entries": [
+        "Thunderstorm"
+      ]
+    },
+    {
+      "ID": 1187,
+      "Entries": [
+        "Sacred Phalanx"
+      ]
+    },
+    {
+      "ID": 1188,
+      "Entries": [
+        "Great-Serpent Hunt"
+      ]
+    },
+    {
+      "ID": 1189,
+      "Entries": [
+        "Angel's Wings"
+      ]
+    },
+    {
+      "ID": 1190,
+      "Entries": [
+        "Storm Kick"
+      ]
+    },
+    {
+      "ID": 1191,
+      "Entries": [
+        "Unblockable Blade"
+      ]
+    },
+    {
+      "ID": 1192,
+      "Entries": [
+        "Sorcery of the Crozier"
+      ]
+    },
+    {
+      "ID": 1193,
+      "Entries": [
+        "Erdtree Slam"
+      ]
+    },
+    {
+      "ID": 1194,
+      "Entries": [
+        "Gravity Bolt"
+      ]
+    },
+    {
+      "ID": 1195,
+      "Entries": [
+        "Fires of Slumber"
+      ]
+    },
+    {
+      "ID": 1196,
+      "Entries": [
+        "Golden Retaliation"
+      ]
+    },
+    {
+      "ID": 1197,
+      "Entries": [
+        "Contagious Fury"
+      ]
+    },
+    {
+      "ID": 1198,
+      "Entries": [
+        "Ordovis's Vortex"
+      ]
+    },
+    {
+      "ID": 1200,
+      "Entries": [
+        "Storm Ruler"
+      ]
+    },
+    {
+      "ID": 10000000,
+      "Entries": [
+        "<Dagger> Impaling Thrust",
+        "<Dagger> Spinning Slash",
+        "<Dagger> Blood Tax",
+        "<Dagger> Repeating Thrust",
+        "<Dagger> Double Slash",
+        "<Dagger> Poison Moth Flight",
+        "<Dagger> Spinning Weapon",
+        "<Dagger> Sword Dance",
+        "<Dagger> Glintblade Phalanx",
+        "<Dagger> Sacred Blade",
+        "<Dagger> Glintstone Pebble",
+        "<Dagger> Bloody Slash",
+        "<Dagger> Storm Blade",
+        "<Dagger> Flaming Strike",
+        "<Dagger> Thunderbolt",
+        "<Dagger> Lightning Slash",
+        "<Dagger> Carian Grandeur",
+        "<Dagger> Carian Greatsword",
+        "<Dagger> Vacuum Slice",
+        "<Dagger> Blood Blade",
+        "<Dagger> Chilling Mist",
+        "<Dagger> Poisonous Mist",
+        "<Dagger> Parry",
+        "<Dagger> Hoarfrost Stomp",
+        "<Dagger> Storm Stomp",
+        "<Dagger> Kick",
+        "<Dagger> Lightning Ram",
+        "<Dagger> Flame of the Redmanes",
+        "<Dagger> Ground Slam",
+        "<Dagger> Golden Slam",
+        "<Dagger> Hoarah Loux's Earthshaker",
+        "<Dagger> Determination",
+        "<Dagger> Royal Knight's Resolve",
+        "<Dagger> Assassin's Gambit",
+        "<Dagger> Golden Vow",
+        "<Dagger> Sacred Order",
+        "<Dagger> Shared Order",
+        "<Dagger> Cragblade",
+        "<Dagger> Beast's Roar",
+        "<Dagger> Endure",
+        "<Dagger> Quickstep",
+        "<Dagger> Bloodhound's Step",
+        "<Dagger> Raptor of the Mists",
+        "<Dagger> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 10000050,
+      "Entries": [
+        "<Untyped Dagger> Impaling Thrust",
+        "<Untyped Dagger> Spinning Slash",
+        "<Untyped Dagger> Repeating Thrust",
+        "<Untyped Dagger> Double Slash",
+        "<Untyped Dagger> Sword Dance",
+        "<Untyped Dagger> Storm Blade",
+        "<Untyped Dagger> Vacuum Slice",
+        "<Untyped Dagger> Parry",
+        "<Untyped Dagger> Storm Stomp",
+        "<Untyped Dagger> Kick",
+        "<Untyped Dagger> Ground Slam",
+        "<Untyped Dagger> Hoarah Loux's Earthshaker",
+        "<Untyped Dagger> Determination",
+        "<Untyped Dagger> Royal Knight's Resolve",
+        "<Untyped Dagger> Cragblade",
+        "<Untyped Dagger> Beast's Roar",
+        "<Untyped Dagger> Endure",
+        "<Untyped Dagger> Quickstep",
+        "<Untyped Dagger> Bloodhound's Step",
+        "<Untyped Dagger> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 10000100,
+      "Entries": [
+        "<Elemental Dagger> Flaming Strike",
+        "<Elemental Dagger> Flame of the Redmanes",
+        "<Elemental Dagger> Thunderbolt",
+        "<Elemental Dagger> Lightning Slash",
+        "<Elemental Dagger> Lightning Ram",
+        "<Elemental Dagger> Sacred Blade",
+        "<Elemental Dagger> Golden Slam",
+        "<Elemental Dagger> Golden Vow",
+        "<Elemental Dagger> Sacred Order",
+        "<Elemental Dagger> Shared Order",
+        "<Elemental Dagger> Spinning Weapon",
+        "<Elemental Dagger> Glintblade Phalanx",
+        "<Elemental Dagger> Glintstone Pebble",
+        "<Elemental Dagger> Carian Grandeur",
+        "<Elemental Dagger> Carian Greatsword",
+        "<Elemental Dagger> Chilling Mist",
+        "<Elemental Dagger> Hoarfrost Stomp",
+        "<Elemental Dagger> Poison Moth Flight",
+        "<Elemental Dagger> Poisonous Mist",
+        "<Elemental Dagger> Blood Tax",
+        "<Elemental Dagger> Bloody Slash",
+        "<Elemental Dagger> Blood Blade",
+        "<Elemental Dagger> Assassin's Gambit",
+        "<Elemental Dagger> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 10000500,
+      "Entries": [
+        "<Fire Dagger> Flaming Strike",
+        "<Fire Dagger> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 10000600,
+      "Entries": [
+        "<Lightning Dagger> Thunderbolt",
+        "<Lightning Dagger> Lightning Slash",
+        "<Lightning Dagger> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 10000700,
+      "Entries": [
+        "<Holy Dagger> Sacred Blade",
+        "<Holy Dagger> Golden Slam",
+        "<Holy Dagger> Golden Vow",
+        "<Holy Dagger> Sacred Order",
+        "<Holy Dagger> Shared Order"
+      ]
+    },
+    {
+      "ID": 10000800,
+      "Entries": [
+        "<Magic Dagger> Spinning Weapon",
+        "<Magic Dagger> Glintblade Phalanx",
+        "<Magic Dagger> Glintstone Pebble",
+        "<Magic Dagger> Carian Grandeur",
+        "<Magic Dagger> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 10000900,
+      "Entries": [
+        "<Frost Dagger> Chilling Mist",
+        "<Frost Dagger> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 10001000,
+      "Entries": [
+        "<Poison Dagger> Poison Moth Flight",
+        "<Poison Dagger> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 10001100,
+      "Entries": [
+        "<Blood Dagger> Blood Tax",
+        "<Blood Dagger> Bloody Slash",
+        "<Blood Dagger> Blood Blade"
+      ]
+    },
+    {
+      "ID": 10001200,
+      "Entries": [
+        "<Shadow Dagger> Assassin's Gambit",
+        "<Shadow Dagger> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 11140000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Blood Tax",
+        "<Table> Bloody Slash",
+        "<Table> Blood Blade"
+      ]
+    },
+    {
+      "ID": 11140050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 11140100,
+      "Entries": [
+        "<Table> Blood Tax",
+        "<Table> Bloody Slash",
+        "<Table> Blood Blade"
+      ]
+    },
+    {
+      "ID": 20000000,
+      "Entries": [
+        "<Short Sword> Lion's Claw",
+        "<Short Sword> Impaling Thrust",
+        "<Short Sword> Piercing Fang",
+        "<Short Sword> Spinning Slash",
+        "<Short Sword> Repeating Thrust",
+        "<Short Sword> Double Slash",
+        "<Short Sword> Square Off",
+        "<Short Sword> Stormcaller",
+        "<Short Sword> Sword Dance",
+        "<Short Sword> Storm Blade",
+        "<Short Sword> Vacuum Slice",
+        "<Short Sword> Storm Stomp",
+        "<Short Sword> Kick",
+        "<Short Sword> Ground Slam",
+        "<Short Sword> Hoarah Loux's Earthshaker",
+        "<Short Sword> Determination",
+        "<Short Sword> Royal Knight's Resolve",
+        "<Short Sword> Cragblade",
+        "<Short Sword> Barbaric Roar",
+        "<Short Sword> War Cry",
+        "<Short Sword> Beast's Roar",
+        "<Short Sword> Braggart's Roar",
+        "<Short Sword> Endure",
+        "<Short Sword> Quickstep",
+        "<Short Sword> Bloodhound's Step",
+        "<Short Sword> Raptor of the Mists",
+        "<Short Sword> Flaming Strike",
+        "<Short Sword> Flame of the Redmanes",
+        "<Short Sword> Thunderbolt",
+        "<Short Sword> Lightning Slash",
+        "<Short Sword> Lightning Ram",
+        "<Short Sword> Sacred Blade",
+        "<Short Sword> Golden Slam",
+        "<Short Sword> Golden Vow",
+        "<Short Sword> Sacred Order",
+        "<Short Sword> Shared Order",
+        "<Short Sword> Spinning Weapon",
+        "<Short Sword> Glintblade Phalanx",
+        "<Short Sword> Glintstone Pebble",
+        "<Short Sword> Gravitas",
+        "<Short Sword> Carian Grandeur",
+        "<Short Sword> Carian Greatsword",
+        "<Short Sword> Chilling Mist",
+        "<Short Sword> Hoarfrost Stomp",
+        "<Short Sword> Poison Moth Flight",
+        "<Short Sword> Poisonous Mist",
+        "<Short Sword> Blood Tax",
+        "<Short Sword> Bloody Slash",
+        "<Short Sword> Blood Blade",
+        "<Short Sword> Seppuku",
+        "<Short Sword> Assassin's Gambit",
+        "<Short Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 20000050,
+      "Entries": [
+        "<Untyped Straight Sword> Lion's Claw",
+        "<Untyped Straight Sword> Impaling Thrust",
+        "<Untyped Straight Sword> Piercing Fang",
+        "<Untyped Straight Sword> Spinning Slash",
+        "<Untyped Straight Sword> Repeating Thrust",
+        "<Untyped Straight Sword> Double Slash",
+        "<Untyped Straight Sword> Square Off",
+        "<Untyped Straight Sword> Stormcaller",
+        "<Untyped Straight Sword> Sword Dance",
+        "<Untyped Straight Sword> Storm Blade",
+        "<Untyped Straight Sword> Vacuum Slice",
+        "<Untyped Straight Sword> Storm Stomp",
+        "<Untyped Straight Sword> Kick",
+        "<Untyped Straight Sword> Ground Slam",
+        "<Untyped Straight Sword> Hoarah Loux's Earthshaker",
+        "<Untyped Straight Sword> Determination",
+        "<Untyped Straight Sword> Royal Knight's Resolve",
+        "<Untyped Straight Sword> Cragblade",
+        "<Untyped Straight Sword> Barbaric Roar",
+        "<Untyped Straight Sword> War Cry",
+        "<Untyped Straight Sword> Beast's Roar",
+        "<Untyped Straight Sword> Braggart's Roar",
+        "<Untyped Straight Sword> Endure",
+        "<Untyped Straight Sword> Quickstep",
+        "<Untyped Straight Sword> Bloodhound's Step",
+        "<Untyped Straight Sword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 20000100,
+      "Entries": [
+        "<Elemental Straight Sword> Flaming Strike",
+        "<Elemental Straight Sword> Flame of the Redmanes",
+        "<Elemental Straight Sword> Thunderbolt",
+        "<Elemental Straight Sword> Lightning Slash",
+        "<Elemental Straight Sword> Lightning Ram",
+        "<Elemental Straight Sword> Sacred Blade",
+        "<Elemental Straight Sword> Golden Slam",
+        "<Elemental Straight Sword> Golden Vow",
+        "<Elemental Straight Sword> Sacred Order",
+        "<Elemental Straight Sword> Shared Order",
+        "<Elemental Straight Sword> Spinning Weapon",
+        "<Elemental Straight Sword> Glintblade Phalanx",
+        "<Elemental Straight Sword> Glintstone Pebble",
+        "<Elemental Straight Sword> Gravitas",
+        "<Elemental Straight Sword> Carian Grandeur",
+        "<Elemental Straight Sword> Carian Greatsword",
+        "<Elemental Straight Sword> Chilling Mist",
+        "<Elemental Straight Sword> Hoarfrost Stomp",
+        "<Elemental Straight Sword> Poison Moth Flight",
+        "<Elemental Straight Sword> Poisonous Mist",
+        "<Elemental Straight Sword> Blood Tax",
+        "<Elemental Straight Sword> Bloody Slash",
+        "<Elemental Straight Sword> Blood Blade",
+        "<Elemental Straight Sword> Seppuku",
+        "<Elemental Straight Sword> Assassin's Gambit",
+        "<Elemental Straight Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 20000500,
+      "Entries": [
+        "<Fire Straight Sword> Flaming Strike",
+        "<Fire Straight Sword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 20000600,
+      "Entries": [
+        "<Lightning Straight Sword> Thunderbolt",
+        "<Lightning Straight Sword> Lightning Slash",
+        "<Lightning Straight Sword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 20000700,
+      "Entries": [
+        "<Holy Straight Sword> Sacred Blade",
+        "<Holy Straight Sword> Golden Slam",
+        "<Holy Straight Sword> Golden Vow",
+        "<Holy Straight Sword> Sacred Order",
+        "<Holy Straight Sword> Shared Order"
+      ]
+    },
+    {
+      "ID": 20000800,
+      "Entries": [
+        "<Magic Straight Sword> Spinning Weapon",
+        "<Magic Straight Sword> Glintblade Phalanx",
+        "<Magic Straight Sword> Glintstone Pebble",
+        "<Magic Straight Sword> Gravitas",
+        "<Magic Straight Sword> Carian Grandeur",
+        "<Magic Straight Sword> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 20000900,
+      "Entries": [
+        "<Frost Straight Sword> Chilling Mist",
+        "<Frost Straight Sword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 20001000,
+      "Entries": [
+        "<Poison Straight Sword> Poison Moth Flight",
+        "<Poison Straight Sword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 20001100,
+      "Entries": [
+        "<Blood Straight Sword> Blood Tax",
+        "<Blood Straight Sword> Bloody Slash",
+        "<Blood Straight Sword> Blood Blade",
+        "<Blood Straight Sword> Seppuku"
+      ]
+    },
+    {
+      "ID": 20001200,
+      "Entries": [
+        "<Shadow Straight Sword> Assassin's Gambit",
+        "<Shadow Straight Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 20900000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Repeating Thrust",
+        "<Table> Wild Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 20900050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Repeating Thrust",
+        "<Table> Wild Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 20900700,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 21180000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 21180050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 21180800,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 21500000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 21500050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 21500800,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 22500000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 22500050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 22500800,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 22600000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 22600050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Square Off",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 22600800,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 30000000,
+      "Entries": [
+        "<Greatsword> Lion's Claw",
+        "<Greatsword> Impaling Thrust",
+        "<Greatsword> Piercing Fang",
+        "<Greatsword> Spinning Slash",
+        "<Greatsword> Stamp (Upward Cut)",
+        "<Greatsword> Stamp (Sweep)",
+        "<Greatsword> Repeating Thrust",
+        "<Greatsword> Wild Strikes",
+        "<Greatsword> Double Slash",
+        "<Greatsword> Giant Hunt",
+        "<Greatsword> Stormcaller",
+        "<Greatsword> Sword Dance",
+        "<Greatsword> Storm Blade",
+        "<Greatsword> Vacuum Slice",
+        "<Greatsword> Storm Stomp",
+        "<Greatsword> Kick",
+        "<Greatsword> Ground Slam",
+        "<Greatsword> Hoarah Loux's Earthshaker",
+        "<Greatsword> Determination",
+        "<Greatsword> Royal Knight's Resolve",
+        "<Greatsword> Cragblade",
+        "<Greatsword> Barbaric Roar",
+        "<Greatsword> War Cry",
+        "<Greatsword> Beast's Roar",
+        "<Greatsword> Troll's Roar",
+        "<Greatsword> Braggart's Roar",
+        "<Greatsword> Endure",
+        "<Greatsword> Quickstep",
+        "<Greatsword> Bloodhound's Step",
+        "<Greatsword> Raptor of the Mists",
+        "<Greatsword> Eruption",
+        "<Greatsword> Flaming Strike",
+        "<Greatsword> Flame of the Redmanes",
+        "<Greatsword> Thunderbolt",
+        "<Greatsword> Lightning Slash",
+        "<Greatsword> Lightning Ram",
+        "<Greatsword> Sacred Blade",
+        "<Greatsword> Golden Slam",
+        "<Greatsword> Golden Vow",
+        "<Greatsword> Sacred Order",
+        "<Greatsword> Shared Order",
+        "<Greatsword> Glintblade Phalanx",
+        "<Greatsword> Glintstone Pebble",
+        "<Greatsword> Gravitas",
+        "<Greatsword> Carian Grandeur",
+        "<Greatsword> Carian Greatsword",
+        "<Greatsword> Chilling Mist",
+        "<Greatsword> Hoarfrost Stomp",
+        "<Greatsword> Poisonous Mist",
+        "<Greatsword> Blood Tax",
+        "<Greatsword> Bloody Slash",
+        "<Greatsword> Seppuku",
+        "<Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 30000050,
+      "Entries": [
+        "<Untyped Greatsword> Lion's Claw",
+        "<Untyped Greatsword> Impaling Thrust",
+        "<Untyped Greatsword> Piercing Fang",
+        "<Untyped Greatsword> Spinning Slash",
+        "<Untyped Greatsword> Stamp (Upward Cut)",
+        "<Untyped Greatsword> Stamp (Sweep)",
+        "<Untyped Greatsword> Repeating Thrust",
+        "<Untyped Greatsword> Wild Strikes",
+        "<Untyped Greatsword> Double Slash",
+        "<Untyped Greatsword> Giant Hunt",
+        "<Untyped Greatsword> Stormcaller",
+        "<Untyped Greatsword> Sword Dance",
+        "<Untyped Greatsword> Storm Blade",
+        "<Untyped Greatsword> Vacuum Slice",
+        "<Untyped Greatsword> Storm Stomp",
+        "<Untyped Greatsword> Kick",
+        "<Untyped Greatsword> Ground Slam",
+        "<Untyped Greatsword> Hoarah Loux's Earthshaker",
+        "<Untyped Greatsword> Determination",
+        "<Untyped Greatsword> Royal Knight's Resolve",
+        "<Untyped Greatsword> Cragblade",
+        "<Untyped Greatsword> Barbaric Roar",
+        "<Untyped Greatsword> War Cry",
+        "<Untyped Greatsword> Beast's Roar",
+        "<Untyped Greatsword> Troll's Roar",
+        "<Untyped Greatsword> Braggart's Roar",
+        "<Untyped Greatsword> Endure",
+        "<Untyped Greatsword> Quickstep",
+        "<Untyped Greatsword> Bloodhound's Step",
+        "<Untyped Greatsword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 30000100,
+      "Entries": [
+        "<Elemental Greatsword> Eruption",
+        "<Elemental Greatsword> Flaming Strike",
+        "<Elemental Greatsword> Flame of the Redmanes",
+        "<Elemental Greatsword> Thunderbolt",
+        "<Elemental Greatsword> Lightning Slash",
+        "<Elemental Greatsword> Lightning Ram",
+        "<Elemental Greatsword> Sacred Blade",
+        "<Elemental Greatsword> Golden Slam",
+        "<Elemental Greatsword> Golden Vow",
+        "<Elemental Greatsword> Sacred Order",
+        "<Elemental Greatsword> Shared Order",
+        "<Elemental Greatsword> Glintblade Phalanx",
+        "<Elemental Greatsword> Glintstone Pebble",
+        "<Elemental Greatsword> Gravitas",
+        "<Elemental Greatsword> Carian Grandeur",
+        "<Elemental Greatsword> Carian Greatsword",
+        "<Elemental Greatsword> Chilling Mist",
+        "<Elemental Greatsword> Hoarfrost Stomp",
+        "<Elemental Greatsword> Poisonous Mist",
+        "<Elemental Greatsword> Blood Tax",
+        "<Elemental Greatsword> Bloody Slash",
+        "<Elemental Greatsword> Seppuku",
+        "<Elemental Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 30000500,
+      "Entries": [
+        "<Fire Greatsword> Eruption",
+        "<Fire Greatsword> Flaming Strike",
+        "<Fire Greatsword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 30000600,
+      "Entries": [
+        "<Lightning Greatsword> Thunderbolt",
+        "<Lightning Greatsword> Lightning Slash",
+        "<Lightning Greatsword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 30000700,
+      "Entries": [
+        "<Holy Greatsword> Sacred Blade",
+        "<Holy Greatsword> Golden Slam",
+        "<Holy Greatsword> Golden Vow",
+        "<Holy Greatsword> Sacred Order",
+        "<Holy Greatsword> Shared Order"
+      ]
+    },
+    {
+      "ID": 30000800,
+      "Entries": [
+        "<Magic Greatsword> Glintblade Phalanx",
+        "<Magic Greatsword> Glintstone Pebble",
+        "<Magic Greatsword> Gravitas",
+        "<Magic Greatsword> Carian Grandeur",
+        "<Magic Greatsword> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 30000900,
+      "Entries": [
+        "<Frost Greatsword> Chilling Mist",
+        "<Frost Greatsword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 30001000,
+      "Entries": [
+        "<Poison Greatsword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 30001100,
+      "Entries": [
+        "<Blood Greatsword> Blood Tax",
+        "<Blood Greatsword> Bloody Slash",
+        "<Blood Greatsword> Seppuku"
+      ]
+    },
+    {
+      "ID": 30001200,
+      "Entries": [
+        "<Shadow Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "<Colossal Sword> Lion's Claw",
+        "<Colossal Sword> Stamp (Upward Cut)",
+        "<Colossal Sword> Stamp (Sweep)",
+        "<Colossal Sword> Giant Hunt",
+        "<Colossal Sword> Earthshaker",
+        "<Colossal Sword> Vacuum Slice",
+        "<Colossal Sword> Storm Stomp",
+        "<Colossal Sword> Kick",
+        "<Colossal Sword> Ground Slam",
+        "<Colossal Sword> Hoarah Loux's Earthshaker",
+        "<Colossal Sword> Determination",
+        "<Colossal Sword> Royal Knight's Resolve",
+        "<Colossal Sword> Cragblade",
+        "<Colossal Sword> Barbaric Roar",
+        "<Colossal Sword> War Cry",
+        "<Colossal Sword> Beast's Roar",
+        "<Colossal Sword> Troll's Roar",
+        "<Colossal Sword> Braggart's Roar",
+        "<Colossal Sword> Endure",
+        "<Colossal Sword> Quickstep",
+        "<Colossal Sword> Bloodhound's Step",
+        "<Colossal Sword> Raptor of the Mists",
+        "<Colossal Sword> Eruption",
+        "<Colossal Sword> Flame of the Redmanes",
+        "<Colossal Sword> Thunderbolt",
+        "<Colossal Sword> Lightning Slash",
+        "<Colossal Sword> Lightning Ram",
+        "<Colossal Sword> Sacred Blade",
+        "<Colossal Sword> Golden Land",
+        "<Colossal Sword> Golden Slam",
+        "<Colossal Sword> Golden Vow",
+        "<Colossal Sword> Sacred Order",
+        "<Colossal Sword> Shared Order",
+        "<Colossal Sword> Gravitas",
+        "<Colossal Sword> Waves of Darkness",
+        "<Colossal Sword> Chilling Mist",
+        "<Colossal Sword> Hoarfrost Stomp",
+        "<Colossal Sword> Poisonous Mist",
+        "<Colossal Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 40000050,
+      "Entries": [
+        "<Untyped Colossal Sword> Lion's Claw",
+        "<Untyped Colossal Sword> Stamp (Upward Cut)",
+        "<Untyped Colossal Sword> Stamp (Sweep)",
+        "<Untyped Colossal Sword> Giant Hunt",
+        "<Untyped Colossal Sword> Earthshaker",
+        "<Untyped Colossal Sword> Vacuum Slice",
+        "<Untyped Colossal Sword> Storm Stomp",
+        "<Untyped Colossal Sword> Kick",
+        "<Untyped Colossal Sword> Ground Slam",
+        "<Untyped Colossal Sword> Hoarah Loux's Earthshaker",
+        "<Untyped Colossal Sword> Determination",
+        "<Untyped Colossal Sword> Royal Knight's Resolve",
+        "<Untyped Colossal Sword> Cragblade",
+        "<Untyped Colossal Sword> Barbaric Roar",
+        "<Untyped Colossal Sword> War Cry",
+        "<Untyped Colossal Sword> Beast's Roar",
+        "<Untyped Colossal Sword> Troll's Roar",
+        "<Untyped Colossal Sword> Braggart's Roar",
+        "<Untyped Colossal Sword> Endure",
+        "<Untyped Colossal Sword> Quickstep",
+        "<Untyped Colossal Sword> Bloodhound's Step",
+        "<Untyped Colossal Sword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "<Elemental Colossal Sword> Eruption",
+        "<Elemental Colossal Sword> Flame of the Redmanes",
+        "<Elemental Colossal Sword> Thunderbolt",
+        "<Elemental Colossal Sword> Lightning Slash",
+        "<Elemental Colossal Sword> Lightning Ram",
+        "<Elemental Colossal Sword> Sacred Blade",
+        "<Elemental Colossal Sword> Golden Land",
+        "<Elemental Colossal Sword> Golden Slam",
+        "<Elemental Colossal Sword> Golden Vow",
+        "<Elemental Colossal Sword> Sacred Order",
+        "<Elemental Colossal Sword> Shared Order",
+        "<Elemental Colossal Sword> Gravitas",
+        "<Elemental Colossal Sword> Waves of Darkness",
+        "<Elemental Colossal Sword> Chilling Mist",
+        "<Elemental Colossal Sword> Hoarfrost Stomp",
+        "<Elemental Colossal Sword> Poisonous Mist",
+        "<Elemental Colossal Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 40000500,
+      "Entries": [
+        "<Fire Colossal Sword> Eruption",
+        "<Fire Colossal Sword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 40000600,
+      "Entries": [
+        "<Lightning Colossal Sword> Thunderbolt",
+        "<Lightning Colossal Sword> Lightning Slash",
+        "<Lightning Colossal Sword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 40000700,
+      "Entries": [
+        "<Holy Colossal Sword> Sacred Blade",
+        "<Holy Colossal Sword> Golden Land",
+        "<Holy Colossal Sword> Golden Slam",
+        "<Holy Colossal Sword> Golden Vow",
+        "<Holy Colossal Sword> Sacred Order",
+        "<Holy Colossal Sword> Shared Order"
+      ]
+    },
+    {
+      "ID": 40000800,
+      "Entries": [
+        "<Magic Colossal Sword> Gravitas",
+        "<Magic Colossal Sword> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 40000900,
+      "Entries": [
+        "<Frost Colossal Sword> Chilling Mist",
+        "<Frost Colossal Sword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 40001000,
+      "Entries": [
+        "<Poison Colossal Sword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 40001200,
+      "Entries": [
+        "<Shadow Colossal Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 41100000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Giant Hunt",
+        "<Table> Earthshaker",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Gravitas",
+        "<Table> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 41100050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Giant Hunt",
+        "<Table> Earthshaker",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 41100800,
+      "Entries": [
+        "<Table> Gravitas",
+        "<Table> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 50000000,
+      "Entries": [
+        "<Thrusting Sword> Impaling Thrust",
+        "<Thrusting Sword> Repeating Thrust",
+        "<Thrusting Sword> Storm Blade",
+        "<Thrusting Sword> Vacuum Slice",
+        "<Thrusting Sword> Parry",
+        "<Thrusting Sword> Storm Stomp",
+        "<Thrusting Sword> Kick",
+        "<Thrusting Sword> Ground Slam",
+        "<Thrusting Sword> Determination",
+        "<Thrusting Sword> Royal Knight's Resolve",
+        "<Thrusting Sword> Cragblade",
+        "<Thrusting Sword> Endure",
+        "<Thrusting Sword> Quickstep",
+        "<Thrusting Sword> Bloodhound's Step",
+        "<Thrusting Sword> Raptor of the Mists",
+        "<Thrusting Sword> White Shadow's Lure",
+        "<Thrusting Sword> Flaming Strike",
+        "<Thrusting Sword> Flame of the Redmanes",
+        "<Thrusting Sword> Thunderbolt",
+        "<Thrusting Sword> Lightning Ram",
+        "<Thrusting Sword> Sacred Blade",
+        "<Thrusting Sword> Golden Slam",
+        "<Thrusting Sword> Golden Vow",
+        "<Thrusting Sword> Sacred Order",
+        "<Thrusting Sword> Shared Order",
+        "<Thrusting Sword> Spinning Weapon",
+        "<Thrusting Sword> Glintblade Phalanx",
+        "<Thrusting Sword> Glintstone Pebble",
+        "<Thrusting Sword> Gravitas",
+        "<Thrusting Sword> Carian Grandeur",
+        "<Thrusting Sword> Carian Greatsword",
+        "<Thrusting Sword> Chilling Mist",
+        "<Thrusting Sword> Hoarfrost Stomp",
+        "<Thrusting Sword> Poison Moth Flight",
+        "<Thrusting Sword> Poisonous Mist",
+        "<Thrusting Sword> Blood Tax",
+        "<Thrusting Sword> Seppuku",
+        "<Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 50000050,
+      "Entries": [
+        "<Untyped Thrusting Sword> Impaling Thrust",
+        "<Untyped Thrusting Sword> Repeating Thrust",
+        "<Untyped Thrusting Sword> Storm Blade",
+        "<Untyped Thrusting Sword> Vacuum Slice",
+        "<Untyped Thrusting Sword> Parry",
+        "<Untyped Thrusting Sword> Storm Stomp",
+        "<Untyped Thrusting Sword> Kick",
+        "<Untyped Thrusting Sword> Ground Slam",
+        "<Untyped Thrusting Sword> Determination",
+        "<Untyped Thrusting Sword> Royal Knight's Resolve",
+        "<Untyped Thrusting Sword> Cragblade",
+        "<Untyped Thrusting Sword> Endure",
+        "<Untyped Thrusting Sword> Quickstep",
+        "<Untyped Thrusting Sword> Bloodhound's Step",
+        "<Untyped Thrusting Sword> Raptor of the Mists",
+        "<Untyped Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 50000100,
+      "Entries": [
+        "<Elemental Thrusting Sword> Flaming Strike",
+        "<Elemental Thrusting Sword> Flame of the Redmanes",
+        "<Elemental Thrusting Sword> Thunderbolt",
+        "<Elemental Thrusting Sword> Lightning Ram",
+        "<Elemental Thrusting Sword> Sacred Blade",
+        "<Elemental Thrusting Sword> Golden Slam",
+        "<Elemental Thrusting Sword> Golden Vow",
+        "<Elemental Thrusting Sword> Sacred Order",
+        "<Elemental Thrusting Sword> Shared Order",
+        "<Elemental Thrusting Sword> Spinning Weapon",
+        "<Elemental Thrusting Sword> Glintblade Phalanx",
+        "<Elemental Thrusting Sword> Glintstone Pebble",
+        "<Elemental Thrusting Sword> Gravitas",
+        "<Elemental Thrusting Sword> Carian Grandeur",
+        "<Elemental Thrusting Sword> Carian Greatsword",
+        "<Elemental Thrusting Sword> Chilling Mist",
+        "<Elemental Thrusting Sword> Hoarfrost Stomp",
+        "<Elemental Thrusting Sword> Poison Moth Flight",
+        "<Elemental Thrusting Sword> Poisonous Mist",
+        "<Elemental Thrusting Sword> Blood Tax",
+        "<Elemental Thrusting Sword> Seppuku",
+        "<Elemental Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 50000500,
+      "Entries": [
+        "<Fire Thrusting Sword> Flaming Strike",
+        "<Fire Thrusting Sword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 50000600,
+      "Entries": [
+        "<Lightning Thrusting Sword> Thunderbolt",
+        "<Lightning Thrusting Sword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 50000700,
+      "Entries": [
+        "<Holy Thrusting Sword> Sacred Blade",
+        "<Holy Thrusting Sword> Golden Slam",
+        "<Holy Thrusting Sword> Golden Vow",
+        "<Holy Thrusting Sword> Sacred Order",
+        "<Holy Thrusting Sword> Shared Order"
+      ]
+    },
+    {
+      "ID": 50000800,
+      "Entries": [
+        "<Magic Thrusting Sword> Spinning Weapon",
+        "<Magic Thrusting Sword> Glintblade Phalanx",
+        "<Magic Thrusting Sword> Glintstone Pebble",
+        "<Magic Thrusting Sword> Gravitas",
+        "<Magic Thrusting Sword> Carian Grandeur",
+        "<Magic Thrusting Sword> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 50000900,
+      "Entries": [
+        "<Frost Thrusting Sword> Chilling Mist",
+        "<Frost Thrusting Sword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 50001000,
+      "Entries": [
+        "<Poison Thrusting Sword> Poison Moth Flight",
+        "<Poison Thrusting Sword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 50001100,
+      "Entries": [
+        "<Blood Thrusting Sword> Blood Tax",
+        "<Blood Thrusting Sword> Seppuku"
+      ]
+    },
+    {
+      "ID": 50001200,
+      "Entries": [
+        "<Shadow Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 50500000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Repeating Thrust",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> White Shadow's Lure",
+        "<Table> Chilling Mist",
+        "<Table> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 50500050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Repeating Thrust",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 50500900,
+      "Entries": [
+        "<Table> Chilling Mist",
+        "<Table> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 60000000,
+      "Entries": [
+        "<Heavy Thrusting Sword> Impaling Thrust",
+        "<Heavy Thrusting Sword> Piercing Fang",
+        "<Heavy Thrusting Sword> Charge Forth",
+        "<Heavy Thrusting Sword> Stamp (Upward Cut)",
+        "<Heavy Thrusting Sword> Stamp (Sweep)",
+        "<Heavy Thrusting Sword> Repeating Thrust",
+        "<Heavy Thrusting Sword> Giant Hunt",
+        "<Heavy Thrusting Sword> Storm Assault",
+        "<Heavy Thrusting Sword> Storm Blade",
+        "<Heavy Thrusting Sword> Vacuum Slice",
+        "<Heavy Thrusting Sword> Storm Stomp",
+        "<Heavy Thrusting Sword> Kick",
+        "<Heavy Thrusting Sword> Ground Slam",
+        "<Heavy Thrusting Sword> Hoarah Loux's Earthshaker",
+        "<Heavy Thrusting Sword> Determination",
+        "<Heavy Thrusting Sword> Royal Knight's Resolve",
+        "<Heavy Thrusting Sword> Cragblade",
+        "<Heavy Thrusting Sword> Beast's Roar",
+        "<Heavy Thrusting Sword> Troll's Roar",
+        "<Heavy Thrusting Sword> Endure",
+        "<Heavy Thrusting Sword> Quickstep",
+        "<Heavy Thrusting Sword> Bloodhound's Step",
+        "<Heavy Thrusting Sword> Raptor of the Mists",
+        "<Heavy Thrusting Sword> Eruption",
+        "<Heavy Thrusting Sword> Flaming Strike",
+        "<Heavy Thrusting Sword> Flame of the Redmanes",
+        "<Heavy Thrusting Sword> Thunderbolt",
+        "<Heavy Thrusting Sword> Lightning Slash",
+        "<Heavy Thrusting Sword> Lightning Ram",
+        "<Heavy Thrusting Sword> Sacred Blade",
+        "<Heavy Thrusting Sword> Golden Slam",
+        "<Heavy Thrusting Sword> Golden Vow",
+        "<Heavy Thrusting Sword> Sacred Order",
+        "<Heavy Thrusting Sword> Shared Order",
+        "<Heavy Thrusting Sword> Glintblade Phalanx",
+        "<Heavy Thrusting Sword> Glintstone Pebble",
+        "<Heavy Thrusting Sword> Gravitas",
+        "<Heavy Thrusting Sword> Carian Grandeur",
+        "<Heavy Thrusting Sword> Carian Greatsword",
+        "<Heavy Thrusting Sword> Chilling Mist",
+        "<Heavy Thrusting Sword> Hoarfrost Stomp",
+        "<Heavy Thrusting Sword> Poisonous Mist",
+        "<Heavy Thrusting Sword> Blood Tax",
+        "<Heavy Thrusting Sword> Bloody Slash",
+        "<Heavy Thrusting Sword> Seppuku",
+        "<Heavy Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 60000050,
+      "Entries": [
+        "<Untyped Heavy Thrusting Sword> Impaling Thrust",
+        "<Untyped Heavy Thrusting Sword> Piercing Fang",
+        "<Untyped Heavy Thrusting Sword> Charge Forth",
+        "<Untyped Heavy Thrusting Sword> Stamp (Upward Cut)",
+        "<Untyped Heavy Thrusting Sword> Stamp (Sweep)",
+        "<Untyped Heavy Thrusting Sword> Repeating Thrust",
+        "<Untyped Heavy Thrusting Sword> Giant Hunt",
+        "<Untyped Heavy Thrusting Sword> Storm Assault",
+        "<Untyped Heavy Thrusting Sword> Storm Blade",
+        "<Untyped Heavy Thrusting Sword> Vacuum Slice",
+        "<Untyped Heavy Thrusting Sword> Storm Stomp",
+        "<Untyped Heavy Thrusting Sword> Kick",
+        "<Untyped Heavy Thrusting Sword> Ground Slam",
+        "<Untyped Heavy Thrusting Sword> Hoarah Loux's Earthshaker",
+        "<Untyped Heavy Thrusting Sword> Determination",
+        "<Untyped Heavy Thrusting Sword> Royal Knight's Resolve",
+        "<Untyped Heavy Thrusting Sword> Cragblade",
+        "<Untyped Heavy Thrusting Sword> Beast's Roar",
+        "<Untyped Heavy Thrusting Sword> Troll's Roar",
+        "<Untyped Heavy Thrusting Sword> Endure",
+        "<Untyped Heavy Thrusting Sword> Quickstep",
+        "<Untyped Heavy Thrusting Sword> Bloodhound's Step",
+        "<Untyped Heavy Thrusting Sword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 60000100,
+      "Entries": [
+        "<Elemental Heavy Thrusting Sword> Eruption",
+        "<Elemental Heavy Thrusting Sword> Flaming Strike",
+        "<Elemental Heavy Thrusting Sword> Flame of the Redmanes",
+        "<Elemental Heavy Thrusting Sword> Thunderbolt",
+        "<Elemental Heavy Thrusting Sword> Lightning Slash",
+        "<Elemental Heavy Thrusting Sword> Lightning Ram",
+        "<Elemental Heavy Thrusting Sword> Sacred Blade",
+        "<Elemental Heavy Thrusting Sword> Golden Slam",
+        "<Elemental Heavy Thrusting Sword> Golden Vow",
+        "<Elemental Heavy Thrusting Sword> Sacred Order",
+        "<Elemental Heavy Thrusting Sword> Shared Order",
+        "<Elemental Heavy Thrusting Sword> Glintblade Phalanx",
+        "<Elemental Heavy Thrusting Sword> Glintstone Pebble",
+        "<Elemental Heavy Thrusting Sword> Gravitas",
+        "<Elemental Heavy Thrusting Sword> Carian Grandeur",
+        "<Elemental Heavy Thrusting Sword> Carian Greatsword",
+        "<Elemental Heavy Thrusting Sword> Chilling Mist",
+        "<Elemental Heavy Thrusting Sword> Hoarfrost Stomp",
+        "<Elemental Heavy Thrusting Sword> Poisonous Mist",
+        "<Elemental Heavy Thrusting Sword> Blood Tax",
+        "<Elemental Heavy Thrusting Sword> Bloody Slash",
+        "<Elemental Heavy Thrusting Sword> Seppuku",
+        "<Elemental Heavy Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 60000500,
+      "Entries": [
+        "<Fire Heavy Thrusting Sword> Eruption",
+        "<Fire Heavy Thrusting Sword> Flaming Strike",
+        "<Fire Heavy Thrusting Sword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 60000600,
+      "Entries": [
+        "<Lightning Heavy Thrusting Sword> Thunderbolt",
+        "<Lightning Heavy Thrusting Sword> Lightning Slash",
+        "<Lightning Heavy Thrusting Sword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 60000700,
+      "Entries": [
+        "<Holy Heavy Thrusting Sword> Sacred Blade",
+        "<Holy Heavy Thrusting Sword> Golden Slam",
+        "<Holy Heavy Thrusting Sword> Golden Vow",
+        "<Holy Heavy Thrusting Sword> Sacred Order",
+        "<Holy Heavy Thrusting Sword> Shared Order"
+      ]
+    },
+    {
+      "ID": 60000800,
+      "Entries": [
+        "<Magic Heavy Thrusting Sword> Glintblade Phalanx",
+        "<Magic Heavy Thrusting Sword> Glintstone Pebble",
+        "<Magic Heavy Thrusting Sword> Gravitas",
+        "<Magic Heavy Thrusting Sword> Carian Grandeur",
+        "<Magic Heavy Thrusting Sword> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 60000900,
+      "Entries": [
+        "<Frost Heavy Thrusting Sword> Chilling Mist",
+        "<Frost Heavy Thrusting Sword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 60001000,
+      "Entries": [
+        "<Poison Heavy Thrusting Sword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 60001100,
+      "Entries": [
+        "<Blood Heavy Thrusting Sword> Blood Tax",
+        "<Blood Heavy Thrusting Sword> Bloody Slash",
+        "<Blood Heavy Thrusting Sword> Seppuku"
+      ]
+    },
+    {
+      "ID": 60001200,
+      "Entries": [
+        "<Shadow Heavy Thrusting Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 70000000,
+      "Entries": [
+        "<Curved Sword> Spinning Slash",
+        "<Curved Sword> Wild Strikes",
+        "<Curved Sword> Storm Blade",
+        "<Curved Sword> Vacuum Slice",
+        "<Curved Sword> Parry",
+        "<Curved Sword> Storm Stomp",
+        "<Curved Sword> Kick",
+        "<Curved Sword> Ground Slam",
+        "<Curved Sword> Determination",
+        "<Curved Sword> Royal Knight's Resolve",
+        "<Curved Sword> Cragblade",
+        "<Curved Sword> Barbaric Roar",
+        "<Curved Sword> War Cry",
+        "<Curved Sword> Endure",
+        "<Curved Sword> Quickstep",
+        "<Curved Sword> Bloodhound's Step",
+        "<Curved Sword> Raptor of the Mists",
+        "<Curved Sword> Double Slash",
+        "<Curved Sword> Flaming Strike",
+        "<Curved Sword> Flame of the Redmanes",
+        "<Curved Sword> Thunderbolt",
+        "<Curved Sword> Lightning Slash",
+        "<Curved Sword> Lightning Ram",
+        "<Curved Sword> Sacred Blade",
+        "<Curved Sword> Golden Slam",
+        "<Curved Sword> Golden Vow",
+        "<Curved Sword> Sacred Order",
+        "<Curved Sword> Shared Order",
+        "<Curved Sword> Spinning Weapon",
+        "<Curved Sword> Glintstone Pebble",
+        "<Curved Sword> Gravitas",
+        "<Curved Sword> Chilling Mist",
+        "<Curved Sword> Hoarfrost Stomp",
+        "<Curved Sword> Poison Moth Flight",
+        "<Curved Sword> Poisonous Mist",
+        "<Curved Sword> Seppuku",
+        "<Curved Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 70000050,
+      "Entries": [
+        "<Untyped Curved Sword> Spinning Slash",
+        "<Untyped Curved Sword> Wild Strikes",
+        "<Untyped Curved Sword> Double Slash",
+        "<Untyped Curved Sword> Storm Blade",
+        "<Untyped Curved Sword> Vacuum Slice",
+        "<Untyped Curved Sword> Parry",
+        "<Untyped Curved Sword> Storm Stomp",
+        "<Untyped Curved Sword> Kick",
+        "<Untyped Curved Sword> Ground Slam",
+        "<Untyped Curved Sword> Determination",
+        "<Untyped Curved Sword> Royal Knight's Resolve",
+        "<Untyped Curved Sword> Cragblade",
+        "<Untyped Curved Sword> Barbaric Roar",
+        "<Untyped Curved Sword> War Cry",
+        "<Untyped Curved Sword> Endure",
+        "<Untyped Curved Sword> Quickstep",
+        "<Untyped Curved Sword> Bloodhound's Step",
+        "<Untyped Curved Sword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 70000100,
+      "Entries": [
+        "<Elemental Curved Sword> Flaming Strike",
+        "<Elemental Curved Sword> Flame of the Redmanes",
+        "<Elemental Curved Sword> Thunderbolt",
+        "<Elemental Curved Sword> Lightning Slash",
+        "<Elemental Curved Sword> Lightning Ram",
+        "<Elemental Curved Sword> Sacred Blade",
+        "<Elemental Curved Sword> Golden Slam",
+        "<Elemental Curved Sword> Golden Vow",
+        "<Elemental Curved Sword> Sacred Order",
+        "<Elemental Curved Sword> Shared Order",
+        "<Elemental Curved Sword> Spinning Weapon",
+        "<Elemental Curved Sword> Glintstone Pebble",
+        "<Elemental Curved Sword> Gravitas",
+        "<Elemental Curved Sword> Chilling Mist",
+        "<Elemental Curved Sword> Hoarfrost Stomp",
+        "<Elemental Curved Sword> Poison Moth Flight",
+        "<Elemental Curved Sword> Poisonous Mist",
+        "<Elemental Curved Sword> Seppuku",
+        "<Elemental Curved Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 70000500,
+      "Entries": [
+        "<Fire Curved Sword> Flaming Strike",
+        "<Fire Curved Sword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 70000600,
+      "Entries": [
+        "<Lightning Curved Sword> Thunderbolt",
+        "<Lightning Curved Sword> Lightning Slash",
+        "<Lightning Curved Sword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 70000700,
+      "Entries": [
+        "<Holy Curved Sword> Sacred Blade",
+        "<Holy Curved Sword> Golden Slam",
+        "<Holy Curved Sword> Golden Vow",
+        "<Holy Curved Sword> Sacred Order",
+        "<Holy Curved Sword> Shared Order"
+      ]
+    },
+    {
+      "ID": 70000800,
+      "Entries": [
+        "<Magic Curved Sword> Spinning Weapon",
+        "<Magic Curved Sword> Glintstone Pebble",
+        "<Magic Curved Sword> Gravitas"
+      ]
+    },
+    {
+      "ID": 70000900,
+      "Entries": [
+        "<Frost Curved Sword> Chilling Mist",
+        "<Frost Curved Sword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 70001000,
+      "Entries": [
+        "<Poison Curved Sword> Poison Moth Flight",
+        "<Poison Curved Sword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 70001100,
+      "Entries": [
+        "<Blood Curved Sword> Seppuku"
+      ]
+    },
+    {
+      "ID": 70001200,
+      "Entries": [
+        "<Shadow Curved Sword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 80000000,
+      "Entries": [
+        "<Curved Greatsword> Lion's Claw",
+        "<Curved Greatsword> Spinning Slash",
+        "<Curved Greatsword> Stamp (Upward Cut)",
+        "<Curved Greatsword> Stamp (Sweep)",
+        "<Curved Greatsword> Wild Strikes",
+        "<Curved Greatsword> Double Slash",
+        "<Curved Greatsword> Stormcaller",
+        "<Curved Greatsword> Sword Dance",
+        "<Curved Greatsword> Storm Blade",
+        "<Curved Greatsword> Vacuum Slice",
+        "<Curved Greatsword> Storm Stomp",
+        "<Curved Greatsword> Kick",
+        "<Curved Greatsword> Ground Slam",
+        "<Curved Greatsword> Hoarah Loux's Earthshaker",
+        "<Curved Greatsword> Determination",
+        "<Curved Greatsword> Royal Knight's Resolve",
+        "<Curved Greatsword> Cragblade",
+        "<Curved Greatsword> Barbaric Roar",
+        "<Curved Greatsword> War Cry",
+        "<Curved Greatsword> Beast's Roar",
+        "<Curved Greatsword> Troll's Roar",
+        "<Curved Greatsword> Braggart's Roar",
+        "<Curved Greatsword> Endure",
+        "<Curved Greatsword> Quickstep",
+        "<Curved Greatsword> Bloodhound's Step",
+        "<Curved Greatsword> Raptor of the Mists",
+        "<Curved Greatsword> Eruption",
+        "<Curved Greatsword> Flaming Strike",
+        "<Curved Greatsword> Flame of the Redmanes",
+        "<Curved Greatsword> Thunderbolt",
+        "<Curved Greatsword> Lightning Slash",
+        "<Curved Greatsword> Lightning Ram",
+        "<Curved Greatsword> Sacred Blade",
+        "<Curved Greatsword> Golden Slam",
+        "<Curved Greatsword> Golden Vow",
+        "<Curved Greatsword> Sacred Order",
+        "<Curved Greatsword> Shared Order",
+        "<Curved Greatsword> Glintblade Phalanx",
+        "<Curved Greatsword> Glintstone Pebble",
+        "<Curved Greatsword> Gravitas",
+        "<Curved Greatsword> Carian Grandeur",
+        "<Curved Greatsword> Carian Greatsword",
+        "<Curved Greatsword> Chilling Mist",
+        "<Curved Greatsword> Hoarfrost Stomp",
+        "<Curved Greatsword> Poisonous Mist",
+        "<Curved Greatsword> Bloody Slash",
+        "<Curved Greatsword> Seppuku",
+        "<Curved Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 80000050,
+      "Entries": [
+        "<Untyped Curved Greatsword> Lion's Claw",
+        "<Untyped Curved Greatsword> Spinning Slash",
+        "<Untyped Curved Greatsword> Stamp (Upward Cut)",
+        "<Untyped Curved Greatsword> Stamp (Sweep)",
+        "<Untyped Curved Greatsword> Wild Strikes",
+        "<Untyped Curved Greatsword> Double Slash",
+        "<Untyped Curved Greatsword> Stormcaller",
+        "<Untyped Curved Greatsword> Sword Dance",
+        "<Untyped Curved Greatsword> Storm Blade",
+        "<Untyped Curved Greatsword> Vacuum Slice",
+        "<Untyped Curved Greatsword> Storm Stomp",
+        "<Untyped Curved Greatsword> Kick",
+        "<Untyped Curved Greatsword> Ground Slam",
+        "<Untyped Curved Greatsword> Hoarah Loux's Earthshaker",
+        "<Untyped Curved Greatsword> Determination",
+        "<Untyped Curved Greatsword> Royal Knight's Resolve",
+        "<Untyped Curved Greatsword> Cragblade",
+        "<Untyped Curved Greatsword> Barbaric Roar",
+        "<Untyped Curved Greatsword> War Cry",
+        "<Untyped Curved Greatsword> Beast's Roar",
+        "<Untyped Curved Greatsword> Troll's Roar",
+        "<Untyped Curved Greatsword> Braggart's Roar",
+        "<Untyped Curved Greatsword> Endure",
+        "<Untyped Curved Greatsword> Quickstep",
+        "<Untyped Curved Greatsword> Bloodhound's Step",
+        "<Untyped Curved Greatsword> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 80000100,
+      "Entries": [
+        "<Elemental Curved Greatsword> Eruption",
+        "<Elemental Curved Greatsword> Flaming Strike",
+        "<Elemental Curved Greatsword> Flame of the Redmanes",
+        "<Elemental Curved Greatsword> Thunderbolt",
+        "<Elemental Curved Greatsword> Lightning Slash",
+        "<Elemental Curved Greatsword> Lightning Ram",
+        "<Elemental Curved Greatsword> Sacred Blade",
+        "<Elemental Curved Greatsword> Golden Slam",
+        "<Elemental Curved Greatsword> Golden Vow",
+        "<Elemental Curved Greatsword> Sacred Order",
+        "<Elemental Curved Greatsword> Shared Order",
+        "<Elemental Curved Greatsword> Glintblade Phalanx",
+        "<Elemental Curved Greatsword> Glintstone Pebble",
+        "<Elemental Curved Greatsword> Gravitas",
+        "<Elemental Curved Greatsword> Carian Grandeur",
+        "<Elemental Curved Greatsword> Carian Greatsword",
+        "<Elemental Curved Greatsword> Chilling Mist",
+        "<Elemental Curved Greatsword> Hoarfrost Stomp",
+        "<Elemental Curved Greatsword> Poisonous Mist",
+        "<Elemental Curved Greatsword> Bloody Slash",
+        "<Elemental Curved Greatsword> Seppuku",
+        "<Elemental Curved Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 80000500,
+      "Entries": [
+        "<Fire Curved Greatsword> Eruption",
+        "<Fire Curved Greatsword> Flaming Strike",
+        "<Fire Curved Greatsword> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 80000600,
+      "Entries": [
+        "<Lightning Curved Greatsword> Thunderbolt",
+        "<Lightning Curved Greatsword> Lightning Slash",
+        "<Lightning Curved Greatsword> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 80000700,
+      "Entries": [
+        "<Holy Curved Greatsword> Sacred Blade",
+        "<Holy Curved Greatsword> Golden Slam",
+        "<Holy Curved Greatsword> Golden Vow",
+        "<Holy Curved Greatsword> Sacred Order",
+        "<Holy Curved Greatsword> Shared Order"
+      ]
+    },
+    {
+      "ID": 80000800,
+      "Entries": [
+        "<Magic Curved Greatsword> Glintblade Phalanx",
+        "<Magic Curved Greatsword> Glintstone Pebble",
+        "<Magic Curved Greatsword> Gravitas",
+        "<Magic Curved Greatsword> Carian Grandeur",
+        "<Magic Curved Greatsword> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 80000900,
+      "Entries": [
+        "<Frost Curved Greatsword> Chilling Mist",
+        "<Frost Curved Greatsword> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 80001000,
+      "Entries": [
+        "<Poison Curved Greatsword> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 80001100,
+      "Entries": [
+        "<Blood Curved Greatsword> Bloody Slash",
+        "<Blood Curved Greatsword> Seppuku"
+      ]
+    },
+    {
+      "ID": 80001200,
+      "Entries": [
+        "<Shadow Curved Greatsword> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 90000000,
+      "Entries": [
+        "<Katana> Lion's Claw",
+        "<Katana> Impaling Thrust",
+        "<Katana> Piercing Fang",
+        "<Katana> Spinning Slash",
+        "<Katana> Repeating Thrust",
+        "<Katana> Double Slash",
+        "<Katana> Unsheathe",
+        "<Katana> Stormcaller",
+        "<Katana> Sword Dance",
+        "<Katana> Storm Blade",
+        "<Katana> Vacuum Slice",
+        "<Katana> Storm Stomp",
+        "<Katana> Kick",
+        "<Katana> Ground Slam",
+        "<Katana> Hoarah Loux's Earthshaker",
+        "<Katana> Determination",
+        "<Katana> Royal Knight's Resolve",
+        "<Katana> Cragblade",
+        "<Katana> Barbaric Roar",
+        "<Katana> War Cry",
+        "<Katana> Beast's Roar",
+        "<Katana> Braggart's Roar",
+        "<Katana> Endure",
+        "<Katana> Quickstep",
+        "<Katana> Bloodhound's Step",
+        "<Katana> Raptor of the Mists",
+        "<Katana> Flaming Strike",
+        "<Katana> Flame of the Redmanes",
+        "<Katana> Thunderbolt",
+        "<Katana> Lightning Slash",
+        "<Katana> Lightning Ram",
+        "<Katana> Sacred Blade",
+        "<Katana> Golden Slam",
+        "<Katana> Golden Vow",
+        "<Katana> Sacred Order",
+        "<Katana> Shared Order",
+        "<Katana> Spinning Weapon",
+        "<Katana> Glintblade Phalanx",
+        "<Katana> Glintstone Pebble",
+        "<Katana> Gravitas",
+        "<Katana> Carian Grandeur",
+        "<Katana> Carian Greatsword",
+        "<Katana> Chilling Mist",
+        "<Katana> Hoarfrost Stomp",
+        "<Katana> Poison Moth Flight",
+        "<Katana> Poisonous Mist",
+        "<Katana> Blood Tax",
+        "<Katana> Bloody Slash",
+        "<Katana> Blood Blade",
+        "<Katana> Seppuku",
+        "<Katana> Assassin's Gambit",
+        "<Katana> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 90000050,
+      "Entries": [
+        "<Untyped Katana> Lion's Claw",
+        "<Untyped Katana> Impaling Thrust",
+        "<Untyped Katana> Piercing Fang",
+        "<Untyped Katana> Spinning Slash",
+        "<Untyped Katana> Repeating Thrust",
+        "<Untyped Katana> Double Slash",
+        "<Untyped Katana> Unsheathe",
+        "<Untyped Katana> Stormcaller",
+        "<Untyped Katana> Sword Dance",
+        "<Untyped Katana> Storm Blade",
+        "<Untyped Katana> Vacuum Slice",
+        "<Untyped Katana> Storm Stomp",
+        "<Untyped Katana> Kick",
+        "<Untyped Katana> Ground Slam",
+        "<Untyped Katana> Hoarah Loux's Earthshaker",
+        "<Untyped Katana> Determination",
+        "<Untyped Katana> Royal Knight's Resolve",
+        "<Untyped Katana> Cragblade",
+        "<Untyped Katana> Barbaric Roar",
+        "<Untyped Katana> War Cry",
+        "<Untyped Katana> Beast's Roar",
+        "<Untyped Katana> Braggart's Roar",
+        "<Untyped Katana> Endure",
+        "<Untyped Katana> Quickstep",
+        "<Untyped Katana> Bloodhound's Step",
+        "<Untyped Katana> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 90000100,
+      "Entries": [
+        "<Elemental Katana> Flaming Strike",
+        "<Elemental Katana> Flame of the Redmanes",
+        "<Elemental Katana> Thunderbolt",
+        "<Elemental Katana> Lightning Slash",
+        "<Elemental Katana> Lightning Ram",
+        "<Elemental Katana> Sacred Blade",
+        "<Elemental Katana> Golden Slam",
+        "<Elemental Katana> Golden Vow",
+        "<Elemental Katana> Sacred Order",
+        "<Elemental Katana> Shared Order",
+        "<Elemental Katana> Spinning Weapon",
+        "<Elemental Katana> Glintblade Phalanx",
+        "<Elemental Katana> Glintstone Pebble",
+        "<Elemental Katana> Gravitas",
+        "<Elemental Katana> Carian Grandeur",
+        "<Elemental Katana> Carian Greatsword",
+        "<Elemental Katana> Chilling Mist",
+        "<Elemental Katana> Hoarfrost Stomp",
+        "<Elemental Katana> Poison Moth Flight",
+        "<Elemental Katana> Poisonous Mist",
+        "<Elemental Katana> Blood Tax",
+        "<Elemental Katana> Bloody Slash",
+        "<Elemental Katana> Blood Blade",
+        "<Elemental Katana> Seppuku",
+        "<Elemental Katana> Assassin's Gambit",
+        "<Elemental Katana> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 90000500,
+      "Entries": [
+        "<Fire Katana> Flaming Strike",
+        "<Fire Katana> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 90000600,
+      "Entries": [
+        "<Lightning Katana> Thunderbolt",
+        "<Lightning Katana> Lightning Slash",
+        "<Lightning Katana> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 90000700,
+      "Entries": [
+        "<Holy Katana> Sacred Blade",
+        "<Holy Katana> Golden Slam",
+        "<Holy Katana> Golden Vow",
+        "<Holy Katana> Sacred Order",
+        "<Holy Katana> Shared Order"
+      ]
+    },
+    {
+      "ID": 90000800,
+      "Entries": [
+        "<Magic Katana> Spinning Weapon",
+        "<Magic Katana> Glintblade Phalanx",
+        "<Magic Katana> Glintstone Pebble",
+        "<Magic Katana> Gravitas",
+        "<Magic Katana> Carian Grandeur",
+        "<Magic Katana> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 90000900,
+      "Entries": [
+        "<Frost Katana> Chilling Mist",
+        "<Frost Katana> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 90001000,
+      "Entries": [
+        "<Poison Katana> Poison Moth Flight",
+        "<Poison Katana> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 90001100,
+      "Entries": [
+        "<Blood Katana> Blood Tax",
+        "<Blood Katana> Bloody Slash",
+        "<Blood Katana> Blood Blade",
+        "<Blood Katana> Seppuku"
+      ]
+    },
+    {
+      "ID": 90001200,
+      "Entries": [
+        "<Shadow Katana> Assassin's Gambit",
+        "<Shadow Katana> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 90800000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Unsheathe",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Poison Moth Flight",
+        "<Table> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 90800050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Unsheathe",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 90801000,
+      "Entries": [
+        "<Table> Poison Moth Flight",
+        "<Table> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 91030000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Unsheathe",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword",
+        "<Table> Blood Tax",
+        "<Table> Bloody Slash",
+        "<Table> Blood Blade",
+        "<Table> Seppuku"
+      ]
+    },
+    {
+      "ID": 91030050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Unsheathe",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Storm Blade",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 91030100,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword",
+        "<Table> Blood Tax",
+        "<Table> Bloody Slash",
+        "<Table> Blood Blade",
+        "<Table> Seppuku"
+      ]
+    },
+    {
+      "ID": 91030800,
+      "Entries": [
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas",
+        "<Table> Carian Grandeur",
+        "<Table> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 91031100,
+      "Entries": [
+        "<Table> Blood Tax",
+        "<Table> Bloody Slash",
+        "<Table> Blood Blade",
+        "<Table> Seppuku"
+      ]
+    },
+    {
+      "ID": 100000000,
+      "Entries": [
+        "<Twinblade> Lion's Claw",
+        "<Twinblade> Impaling Thrust",
+        "<Twinblade> Piercing Fang",
+        "<Twinblade> Spinning Slash",
+        "<Twinblade> Charge Forth",
+        "<Twinblade> Repeating Thrust",
+        "<Twinblade> Double Slash",
+        "<Twinblade> Giant Hunt",
+        "<Twinblade> Storm Assault",
+        "<Twinblade> Stormcaller",
+        "<Twinblade> Sword Dance",
+        "<Twinblade> Vacuum Slice",
+        "<Twinblade> Phantom Slash",
+        "<Twinblade> Storm Stomp",
+        "<Twinblade> Kick",
+        "<Twinblade> Ground Slam",
+        "<Twinblade> Hoarah Loux's Earthshaker",
+        "<Twinblade> Determination",
+        "<Twinblade> Royal Knight's Resolve",
+        "<Twinblade> Cragblade",
+        "<Twinblade> Barbaric Roar",
+        "<Twinblade> War Cry",
+        "<Twinblade> Beast's Roar",
+        "<Twinblade> Braggart's Roar",
+        "<Twinblade> Endure",
+        "<Twinblade> Quickstep",
+        "<Twinblade> Bloodhound's Step",
+        "<Twinblade> Raptor of the Mists",
+        "<Twinblade> Flaming Strike",
+        "<Twinblade> Flame of the Redmanes",
+        "<Twinblade> Black Flame Tornado",
+        "<Twinblade> Thunderbolt",
+        "<Twinblade> Lightning Slash",
+        "<Twinblade> Lightning Ram",
+        "<Twinblade> Sacred Blade",
+        "<Twinblade> Golden Slam",
+        "<Twinblade> Golden Vow",
+        "<Twinblade> Sacred Order",
+        "<Twinblade> Shared Order",
+        "<Twinblade> Loretta's Slash",
+        "<Twinblade> Spinning Weapon",
+        "<Twinblade> Glintblade Phalanx",
+        "<Twinblade> Glintstone Pebble",
+        "<Twinblade> Gravitas",
+        "<Twinblade> Carian Grandeur",
+        "<Twinblade> Carian Greatsword",
+        "<Twinblade> Ice Spear",
+        "<Twinblade> Chilling Mist",
+        "<Twinblade> Hoarfrost Stomp",
+        "<Twinblade> Poisonous Mist",
+        "<Twinblade> Blood Tax",
+        "<Twinblade> Bloody Slash",
+        "<Twinblade> Blood Blade",
+        "<Twinblade> Seppuku",
+        "<Twinblade> Assassin's Gambit",
+        "<Twinblade> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 100000050,
+      "Entries": [
+        "<Untyped Twinblade> Lion's Claw",
+        "<Untyped Twinblade> Impaling Thrust",
+        "<Untyped Twinblade> Piercing Fang",
+        "<Untyped Twinblade> Spinning Slash",
+        "<Untyped Twinblade> Charge Forth",
+        "<Untyped Twinblade> Repeating Thrust",
+        "<Untyped Twinblade> Double Slash",
+        "<Untyped Twinblade> Giant Hunt",
+        "<Untyped Twinblade> Storm Assault",
+        "<Untyped Twinblade> Stormcaller",
+        "<Untyped Twinblade> Sword Dance",
+        "<Untyped Twinblade> Vacuum Slice",
+        "<Untyped Twinblade> Phantom Slash",
+        "<Untyped Twinblade> Storm Stomp",
+        "<Untyped Twinblade> Kick",
+        "<Untyped Twinblade> Ground Slam",
+        "<Untyped Twinblade> Hoarah Loux's Earthshaker",
+        "<Untyped Twinblade> Determination",
+        "<Untyped Twinblade> Royal Knight's Resolve",
+        "<Untyped Twinblade> Cragblade",
+        "<Untyped Twinblade> Barbaric Roar",
+        "<Untyped Twinblade> War Cry",
+        "<Untyped Twinblade> Beast's Roar",
+        "<Untyped Twinblade> Braggart's Roar",
+        "<Untyped Twinblade> Endure",
+        "<Untyped Twinblade> Quickstep",
+        "<Untyped Twinblade> Bloodhound's Step",
+        "<Untyped Twinblade> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 100000100,
+      "Entries": [
+        "<Elemental Twinblade> Flaming Strike",
+        "<Elemental Twinblade> Flame of the Redmanes",
+        "<Elemental Twinblade> Black Flame Tornado",
+        "<Elemental Twinblade> Thunderbolt",
+        "<Elemental Twinblade> Lightning Slash",
+        "<Elemental Twinblade> Lightning Ram",
+        "<Elemental Twinblade> Sacred Blade",
+        "<Elemental Twinblade> Golden Slam",
+        "<Elemental Twinblade> Golden Vow",
+        "<Elemental Twinblade> Sacred Order",
+        "<Elemental Twinblade> Shared Order",
+        "<Elemental Twinblade> Loretta's Slash",
+        "<Elemental Twinblade> Spinning Weapon",
+        "<Elemental Twinblade> Glintblade Phalanx",
+        "<Elemental Twinblade> Glintstone Pebble",
+        "<Elemental Twinblade> Gravitas",
+        "<Elemental Twinblade> Carian Grandeur",
+        "<Elemental Twinblade> Carian Greatsword",
+        "<Elemental Twinblade> Ice Spear",
+        "<Elemental Twinblade> Chilling Mist",
+        "<Elemental Twinblade> Hoarfrost Stomp",
+        "<Elemental Twinblade> Poisonous Mist",
+        "<Elemental Twinblade> Blood Tax",
+        "<Elemental Twinblade> Bloody Slash",
+        "<Elemental Twinblade> Blood Blade",
+        "<Elemental Twinblade> Seppuku",
+        "<Elemental Twinblade> Assassin's Gambit",
+        "<Elemental Twinblade> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 100000500,
+      "Entries": [
+        "<Fire Twinblade> Flaming Strike",
+        "<Fire Twinblade> Flame of the Redmanes",
+        "<Fire Twinblade> Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 100000600,
+      "Entries": [
+        "<Lightning Twinblade> Thunderbolt",
+        "<Lightning Twinblade> Lightning Slash",
+        "<Lightning Twinblade> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 100000700,
+      "Entries": [
+        "<Holy Twinblade> Sacred Blade",
+        "<Holy Twinblade> Golden Slam",
+        "<Holy Twinblade> Golden Vow",
+        "<Holy Twinblade> Sacred Order",
+        "<Holy Twinblade> Shared Order"
+      ]
+    },
+    {
+      "ID": 100000800,
+      "Entries": [
+        "<Magic Twinblade> Loretta's Slash",
+        "<Magic Twinblade> Spinning Weapon",
+        "<Magic Twinblade> Glintblade Phalanx",
+        "<Magic Twinblade> Glintstone Pebble",
+        "<Magic Twinblade> Gravitas",
+        "<Magic Twinblade> Carian Grandeur",
+        "<Magic Twinblade> Carian Greatsword"
+      ]
+    },
+    {
+      "ID": 100000900,
+      "Entries": [
+        "<Frost Twinblade> Ice Spear",
+        "<Frost Twinblade> Chilling Mist",
+        "<Frost Twinblade> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 100001000,
+      "Entries": [
+        "<Poison Twinblade> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 100001100,
+      "Entries": [
+        "<Blood Twinblade> Blood Tax",
+        "<Blood Twinblade> Bloody Slash",
+        "<Blood Twinblade> Blood Blade",
+        "<Blood Twinblade> Seppuku"
+      ]
+    },
+    {
+      "ID": 100001200,
+      "Entries": [
+        "<Shadow Twinblade> Assassin's Gambit",
+        "<Shadow Twinblade> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 100900000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Vacuum Slice",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 100900050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Vacuum Slice",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 100900700,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 110000000,
+      "Entries": [
+        "<Hammer> Wild Strikes",
+        "<Hammer> Storm Stomp",
+        "<Hammer> Kick",
+        "<Hammer> Ground Slam",
+        "<Hammer> Determination",
+        "<Hammer> Royal Knight's Resolve",
+        "<Hammer> Cragblade",
+        "<Hammer> Barbaric Roar",
+        "<Hammer> War Cry",
+        "<Hammer> Endure",
+        "<Hammer> Quickstep",
+        "<Hammer> Bloodhound's Step",
+        "<Hammer> Raptor of the Mists",
+        "<Hammer> Flaming Strike",
+        "<Hammer> Flame of the Redmanes",
+        "<Hammer> Thunderbolt",
+        "<Hammer> Lightning Ram",
+        "<Hammer> Sacred Blade",
+        "<Hammer> Golden Slam",
+        "<Hammer> Golden Vow",
+        "<Hammer> Sacred Order",
+        "<Hammer> Shared Order",
+        "<Hammer> Spinning Weapon",
+        "<Hammer> Gravitas",
+        "<Hammer> Chilling Mist",
+        "<Hammer> Hoarfrost Stomp",
+        "<Hammer> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 110000050,
+      "Entries": [
+        "<Untyped Hammer> Wild Strikes",
+        "<Untyped Hammer> Storm Stomp",
+        "<Untyped Hammer> Kick",
+        "<Untyped Hammer> Ground Slam",
+        "<Untyped Hammer> Determination",
+        "<Untyped Hammer> Royal Knight's Resolve",
+        "<Untyped Hammer> Cragblade",
+        "<Untyped Hammer> Barbaric Roar",
+        "<Untyped Hammer> War Cry",
+        "<Untyped Hammer> Endure",
+        "<Untyped Hammer> Quickstep",
+        "<Untyped Hammer> Bloodhound's Step",
+        "<Untyped Hammer> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 110000100,
+      "Entries": [
+        "<Elemental Hammer> Flaming Strike",
+        "<Elemental Hammer> Flame of the Redmanes",
+        "<Elemental Hammer> Thunderbolt",
+        "<Elemental Hammer> Lightning Ram",
+        "<Elemental Hammer> Sacred Blade",
+        "<Elemental Hammer> Golden Slam",
+        "<Elemental Hammer> Golden Vow",
+        "<Elemental Hammer> Sacred Order",
+        "<Elemental Hammer> Shared Order",
+        "<Elemental Hammer> Spinning Weapon",
+        "<Elemental Hammer> Gravitas",
+        "<Elemental Hammer> Chilling Mist",
+        "<Elemental Hammer> Hoarfrost Stomp",
+        "<Elemental Hammer> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 110000500,
+      "Entries": [
+        "<Fire Hammer> Flaming Strike",
+        "<Fire Hammer> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 110000600,
+      "Entries": [
+        "<Lightning Hammer> Thunderbolt",
+        "<Lightning Hammer> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 110000700,
+      "Entries": [
+        "<Holy Hammer> Sacred Blade",
+        "<Holy Hammer> Golden Slam",
+        "<Holy Hammer> Golden Vow",
+        "<Holy Hammer> Sacred Order",
+        "<Holy Hammer> Shared Order"
+      ]
+    },
+    {
+      "ID": 110000800,
+      "Entries": [
+        "<Magic Hammer> Spinning Weapon",
+        "<Magic Hammer> Gravitas"
+      ]
+    },
+    {
+      "ID": 110000900,
+      "Entries": [
+        "<Frost Hammer> Chilling Mist",
+        "<Frost Hammer> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 110001000,
+      "Entries": [
+        "<Poison Hammer> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 110600000,
+      "Entries": [
+        "<Table> Wild Strikes",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 120000000,
+      "Entries": [
+        "<Great Hammer> Lion's Claw",
+        "<Great Hammer> Stamp (Upward Cut)",
+        "<Great Hammer> Stamp (Sweep)",
+        "<Great Hammer> Wild Strikes",
+        "<Great Hammer> Stormcaller",
+        "<Great Hammer> Earthshaker",
+        "<Great Hammer> Storm Stomp",
+        "<Great Hammer> Kick",
+        "<Great Hammer> Ground Slam",
+        "<Great Hammer> Hoarah Loux's Earthshaker",
+        "<Great Hammer> Determination",
+        "<Great Hammer> Royal Knight's Resolve",
+        "<Great Hammer> Cragblade",
+        "<Great Hammer> Barbaric Roar",
+        "<Great Hammer> War Cry",
+        "<Great Hammer> Beast's Roar",
+        "<Great Hammer> Troll's Roar",
+        "<Great Hammer> Braggart's Roar",
+        "<Great Hammer> Endure",
+        "<Great Hammer> Quickstep",
+        "<Great Hammer> Bloodhound's Step",
+        "<Great Hammer> Raptor of the Mists",
+        "<Great Hammer> Eruption",
+        "<Great Hammer> Flaming Strike",
+        "<Great Hammer> Flame of the Redmanes",
+        "<Great Hammer> Prelate's Charge",
+        "<Great Hammer> Thunderbolt",
+        "<Great Hammer> Lightning Slash",
+        "<Great Hammer> Lightning Ram",
+        "<Great Hammer> Sacred Blade",
+        "<Great Hammer> Prayerful Strike",
+        "<Great Hammer> Golden Land",
+        "<Great Hammer> Golden Slam",
+        "<Great Hammer> Golden Vow",
+        "<Great Hammer> Sacred Order",
+        "<Great Hammer> Shared Order",
+        "<Great Hammer> Gravitas",
+        "<Great Hammer> Waves of Darkness",
+        "<Great Hammer> Chilling Mist",
+        "<Great Hammer> Hoarfrost Stomp",
+        "<Great Hammer> Poisonous Mist",
+        "<Great Hammer> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 120000050,
+      "Entries": [
+        "<Untyped Great Hammer> Lion's Claw",
+        "<Untyped Great Hammer> Stamp (Upward Cut)",
+        "<Untyped Great Hammer> Stamp (Sweep)",
+        "<Untyped Great Hammer> Wild Strikes",
+        "<Untyped Great Hammer> Stormcaller",
+        "<Untyped Great Hammer> Earthshaker",
+        "<Untyped Great Hammer> Storm Stomp",
+        "<Untyped Great Hammer> Kick",
+        "<Untyped Great Hammer> Ground Slam",
+        "<Untyped Great Hammer> Hoarah Loux's Earthshaker",
+        "<Untyped Great Hammer> Determination",
+        "<Untyped Great Hammer> Royal Knight's Resolve",
+        "<Untyped Great Hammer> Cragblade",
+        "<Untyped Great Hammer> Barbaric Roar",
+        "<Untyped Great Hammer> War Cry",
+        "<Untyped Great Hammer> Beast's Roar",
+        "<Untyped Great Hammer> Troll's Roar",
+        "<Untyped Great Hammer> Braggart's Roar",
+        "<Untyped Great Hammer> Endure",
+        "<Untyped Great Hammer> Quickstep",
+        "<Untyped Great Hammer> Bloodhound's Step",
+        "<Untyped Great Hammer> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 120000100,
+      "Entries": [
+        "<Elemental Great Hammer> Eruption",
+        "<Elemental Great Hammer> Flaming Strike",
+        "<Elemental Great Hammer> Flame of the Redmanes",
+        "<Elemental Great Hammer> Prelate's Charge",
+        "<Elemental Great Hammer> Thunderbolt",
+        "<Elemental Great Hammer> Lightning Slash",
+        "<Elemental Great Hammer> Lightning Ram",
+        "<Elemental Great Hammer> Sacred Blade",
+        "<Elemental Great Hammer> Prayerful Strike",
+        "<Elemental Great Hammer> Golden Land",
+        "<Elemental Great Hammer> Golden Slam",
+        "<Elemental Great Hammer> Golden Vow",
+        "<Elemental Great Hammer> Sacred Order",
+        "<Elemental Great Hammer> Shared Order",
+        "<Elemental Great Hammer> Gravitas",
+        "<Elemental Great Hammer> Waves of Darkness",
+        "<Elemental Great Hammer> Chilling Mist",
+        "<Elemental Great Hammer> Hoarfrost Stomp",
+        "<Elemental Great Hammer> Poisonous Mist",
+        "<Elemental Great Hammer> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 120000500,
+      "Entries": [
+        "<Fire Great Hammer> Eruption",
+        "<Fire Great Hammer> Flaming Strike",
+        "<Fire Great Hammer> Flame of the Redmanes",
+        "<Fire Great Hammer> Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 120000600,
+      "Entries": [
+        "<Lightning Great Hammer> Thunderbolt",
+        "<Lightning Great Hammer> Lightning Slash",
+        "<Lightning Great Hammer> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 120000700,
+      "Entries": [
+        "<Holy Great Hammer> Sacred Blade",
+        "<Holy Great Hammer> Prayerful Strike",
+        "<Holy Great Hammer> Golden Land",
+        "<Holy Great Hammer> Golden Slam",
+        "<Holy Great Hammer> Golden Vow",
+        "<Holy Great Hammer> Sacred Order",
+        "<Holy Great Hammer> Shared Order"
+      ]
+    },
+    {
+      "ID": 120000800,
+      "Entries": [
+        "<Magic Great Hammer> Gravitas",
+        "<Magic Great Hammer> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 120000900,
+      "Entries": [
+        "<Frost Great Hammer> Chilling Mist",
+        "<Frost Great Hammer> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 120001000,
+      "Entries": [
+        "<Poison Great Hammer> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 120001200,
+      "Entries": [
+        "<Shadow Great Hammer> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 130000000,
+      "Entries": [
+        "<Flail> Stamp (Upward Cut)",
+        "<Flail> Stamp (Sweep)",
+        "<Flail> Wild Strikes",
+        "<Flail> Storm Stomp",
+        "<Flail> Kick",
+        "<Flail> Ground Slam",
+        "<Flail> Determination",
+        "<Flail> Royal Knight's Resolve",
+        "<Flail> Cragblade",
+        "<Flail> Barbaric Roar",
+        "<Flail> War Cry",
+        "<Flail> Endure",
+        "<Flail> Quickstep",
+        "<Flail> Bloodhound's Step",
+        "<Flail> Raptor of the Mists",
+        "<Flail> Flame of the Redmanes",
+        "<Flail> Thunderbolt",
+        "<Flail> Lightning Ram",
+        "<Flail> Sacred Blade",
+        "<Flail> Prayerful Strike",
+        "<Flail> Golden Slam",
+        "<Flail> Golden Vow",
+        "<Flail> Sacred Order",
+        "<Flail> Shared Order",
+        "<Flail> Spinning Weapon",
+        "<Flail> Gravitas",
+        "<Flail> Chilling Mist",
+        "<Flail> Hoarfrost Stomp",
+        "<Flail> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 130000050,
+      "Entries": [
+        "<Untyped Flail> Stamp (Upward Cut)",
+        "<Untyped Flail> Stamp (Sweep)",
+        "<Untyped Flail> Wild Strikes",
+        "<Untyped Flail> Storm Stomp",
+        "<Untyped Flail> Kick",
+        "<Untyped Flail> Ground Slam",
+        "<Untyped Flail> Determination",
+        "<Untyped Flail> Royal Knight's Resolve",
+        "<Untyped Flail> Cragblade",
+        "<Untyped Flail> Barbaric Roar",
+        "<Untyped Flail> War Cry",
+        "<Untyped Flail> Endure",
+        "<Untyped Flail> Quickstep",
+        "<Untyped Flail> Bloodhound's Step",
+        "<Untyped Flail> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 130000100,
+      "Entries": [
+        "<Elemental Flail> Flame of the Redmanes",
+        "<Elemental Flail> Thunderbolt",
+        "<Elemental Flail> Lightning Ram",
+        "<Elemental Flail> Sacred Blade",
+        "<Elemental Flail> Prayerful Strike",
+        "<Elemental Flail> Golden Slam",
+        "<Elemental Flail> Golden Vow",
+        "<Elemental Flail> Sacred Order",
+        "<Elemental Flail> Shared Order",
+        "<Elemental Flail> Spinning Weapon",
+        "<Elemental Flail> Gravitas",
+        "<Elemental Flail> Chilling Mist",
+        "<Elemental Flail> Hoarfrost Stomp",
+        "<Elemental Flail> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 130000500,
+      "Entries": [
+        "<Fire Flail> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 130000600,
+      "Entries": [
+        "<Lightning Flail> Thunderbolt",
+        "<Lightning Flail> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 130000700,
+      "Entries": [
+        "<Holy Flail> Sacred Blade",
+        "<Holy Flail> Prayerful Strike",
+        "<Holy Flail> Golden Slam",
+        "<Holy Flail> Golden Vow",
+        "<Holy Flail> Sacred Order",
+        "<Holy Flail> Shared Order"
+      ]
+    },
+    {
+      "ID": 130000800,
+      "Entries": [
+        "<Magic Flail> Spinning Weapon",
+        "<Magic Flail> Gravitas"
+      ]
+    },
+    {
+      "ID": 130000900,
+      "Entries": [
+        "<Frost Flail> Chilling Mist",
+        "<Frost Flail> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 130001000,
+      "Entries": [
+        "<Poison Flail> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 130001200,
+      "Entries": [
+        "<Shadow Flail> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 140000000,
+      "Entries": [
+        "<Axe> Spinning Slash",
+        "<Axe> Stamp (Upward Cut)",
+        "<Axe> Stamp (Sweep)",
+        "<Axe> Wild Strikes",
+        "<Axe> Vacuum Slice",
+        "<Axe> Storm Stomp",
+        "<Axe> Kick",
+        "<Axe> Ground Slam",
+        "<Axe> Determination",
+        "<Axe> Royal Knight's Resolve",
+        "<Axe> Cragblade",
+        "<Axe> Barbaric Roar",
+        "<Axe> War Cry",
+        "<Axe> Endure",
+        "<Axe> Quickstep",
+        "<Axe> Bloodhound's Step",
+        "<Axe> Raptor of the Mists",
+        "<Axe> Flaming Strike",
+        "<Axe> Flame of the Redmanes",
+        "<Axe> Thunderbolt",
+        "<Axe> Lightning Ram",
+        "<Axe> Sacred Blade",
+        "<Axe> Golden Slam",
+        "<Axe> Golden Vow",
+        "<Axe> Sacred Order",
+        "<Axe> Shared Order",
+        "<Axe> Spinning Weapon",
+        "<Axe> Gravitas",
+        "<Axe> Chilling Mist",
+        "<Axe> Hoarfrost Stomp",
+        "<Axe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 140000050,
+      "Entries": [
+        "<Untyped Axe> Spinning Slash",
+        "<Untyped Axe> Stamp (Upward Cut)",
+        "<Untyped Axe> Stamp (Sweep)",
+        "<Untyped Axe> Wild Strikes",
+        "<Untyped Axe> Vacuum Slice",
+        "<Untyped Axe> Storm Stomp",
+        "<Untyped Axe> Kick",
+        "<Untyped Axe> Ground Slam",
+        "<Untyped Axe> Determination",
+        "<Untyped Axe> Royal Knight's Resolve",
+        "<Untyped Axe> Cragblade",
+        "<Untyped Axe> Barbaric Roar",
+        "<Untyped Axe> War Cry",
+        "<Untyped Axe> Endure",
+        "<Untyped Axe> Quickstep",
+        "<Untyped Axe> Bloodhound's Step",
+        "<Untyped Axe> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 140000100,
+      "Entries": [
+        "<Elemental Axe> Flaming Strike",
+        "<Elemental Axe> Flame of the Redmanes",
+        "<Elemental Axe> Thunderbolt",
+        "<Elemental Axe> Lightning Ram",
+        "<Elemental Axe> Sacred Blade",
+        "<Elemental Axe> Golden Slam",
+        "<Elemental Axe> Golden Vow",
+        "<Elemental Axe> Sacred Order",
+        "<Elemental Axe> Shared Order",
+        "<Elemental Axe> Spinning Weapon",
+        "<Elemental Axe> Gravitas",
+        "<Elemental Axe> Chilling Mist",
+        "<Elemental Axe> Hoarfrost Stomp",
+        "<Elemental Axe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 140000500,
+      "Entries": [
+        "<Fire Axe> Flaming Strike",
+        "<Fire Axe> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 140000600,
+      "Entries": [
+        "<Lightning Axe> Thunderbolt",
+        "<Lightning Axe> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 140000700,
+      "Entries": [
+        "<Holy Axe> Sacred Blade",
+        "<Holy Axe> Golden Slam",
+        "<Holy Axe> Golden Vow",
+        "<Holy Axe> Sacred Order",
+        "<Holy Axe> Shared Order"
+      ]
+    },
+    {
+      "ID": 140000800,
+      "Entries": [
+        "<Magic Axe> Spinning Weapon",
+        "<Magic Axe> Gravitas"
+      ]
+    },
+    {
+      "ID": 140000900,
+      "Entries": [
+        "<Frost Axe> Chilling Mist",
+        "<Frost Axe> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 140001000,
+      "Entries": [
+        "<Poison Axe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 140001200,
+      "Entries": [
+        "<Shadow Axe> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 140500000,
+      "Entries": [
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 140800000,
+      "Entries": [
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 140800050,
+      "Entries": [
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 140800100,
+      "Entries": [
+        "<Table> Chilling Mist",
+        "<Table> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 150000000,
+      "Entries": [
+        "<Greataxe> Lion's Claw",
+        "<Greataxe> Spinning Slash",
+        "<Greataxe> Stamp (Upward Cut)",
+        "<Greataxe> Stamp (Sweep)",
+        "<Greataxe> Wild Strikes",
+        "<Greataxe> Stormcaller",
+        "<Greataxe> Sword Dance",
+        "<Greataxe> Earthshaker",
+        "<Greataxe> Vacuum Slice",
+        "<Greataxe> Storm Stomp",
+        "<Greataxe> Kick",
+        "<Greataxe> Ground Slam",
+        "<Greataxe> Hoarah Loux's Earthshaker",
+        "<Greataxe> Determination",
+        "<Greataxe> Royal Knight's Resolve",
+        "<Greataxe> Cragblade",
+        "<Greataxe> Barbaric Roar",
+        "<Greataxe> War Cry",
+        "<Greataxe> Beast's Roar",
+        "<Greataxe> Troll's Roar",
+        "<Greataxe> Braggart's Roar",
+        "<Greataxe> Endure",
+        "<Greataxe> Quickstep",
+        "<Greataxe> Bloodhound's Step",
+        "<Greataxe> Raptor of the Mists",
+        "<Greataxe> Eruption",
+        "<Greataxe> Flaming Strike",
+        "<Greataxe> Flame of the Redmanes",
+        "<Greataxe> Prelate's Charge",
+        "<Greataxe> Thunderbolt",
+        "<Greataxe> Lightning Slash",
+        "<Greataxe> Lightning Ram",
+        "<Greataxe> Sacred Blade",
+        "<Greataxe> Prayerful Strike",
+        "<Greataxe> Golden Land",
+        "<Greataxe> Golden Slam",
+        "<Greataxe> Golden Vow",
+        "<Greataxe> Sacred Order",
+        "<Greataxe> Shared Order",
+        "<Greataxe> Gravitas",
+        "<Greataxe> Waves of Darkness",
+        "<Greataxe> Chilling Mist",
+        "<Greataxe> Hoarfrost Stomp",
+        "<Greataxe> Poisonous Mist",
+        "<Greataxe> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 150000050,
+      "Entries": [
+        "<Untyped Greataxe> Lion's Claw",
+        "<Untyped Greataxe> Spinning Slash",
+        "<Untyped Greataxe> Stamp (Upward Cut)",
+        "<Untyped Greataxe> Stamp (Sweep)",
+        "<Untyped Greataxe> Wild Strikes",
+        "<Untyped Greataxe> Stormcaller",
+        "<Untyped Greataxe> Sword Dance",
+        "<Untyped Greataxe> Earthshaker",
+        "<Untyped Greataxe> Vacuum Slice",
+        "<Untyped Greataxe> Storm Stomp",
+        "<Untyped Greataxe> Kick",
+        "<Untyped Greataxe> Ground Slam",
+        "<Untyped Greataxe> Hoarah Loux's Earthshaker",
+        "<Untyped Greataxe> Determination",
+        "<Untyped Greataxe> Royal Knight's Resolve",
+        "<Untyped Greataxe> Cragblade",
+        "<Untyped Greataxe> Barbaric Roar",
+        "<Untyped Greataxe> War Cry",
+        "<Untyped Greataxe> Beast's Roar",
+        "<Untyped Greataxe> Troll's Roar",
+        "<Untyped Greataxe> Braggart's Roar",
+        "<Untyped Greataxe> Endure",
+        "<Untyped Greataxe> Quickstep",
+        "<Untyped Greataxe> Bloodhound's Step",
+        "<Untyped Greataxe> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 150000100,
+      "Entries": [
+        "<Elemental Greataxe> Eruption",
+        "<Elemental Greataxe> Flaming Strike",
+        "<Elemental Greataxe> Flame of the Redmanes",
+        "<Elemental Greataxe> Prelate's Charge",
+        "<Elemental Greataxe> Thunderbolt",
+        "<Elemental Greataxe> Lightning Slash",
+        "<Elemental Greataxe> Lightning Ram",
+        "<Elemental Greataxe> Sacred Blade",
+        "<Elemental Greataxe> Prayerful Strike",
+        "<Elemental Greataxe> Golden Land",
+        "<Elemental Greataxe> Golden Slam",
+        "<Elemental Greataxe> Golden Vow",
+        "<Elemental Greataxe> Sacred Order",
+        "<Elemental Greataxe> Shared Order",
+        "<Elemental Greataxe> Gravitas",
+        "<Elemental Greataxe> Waves of Darkness",
+        "<Elemental Greataxe> Chilling Mist",
+        "<Elemental Greataxe> Hoarfrost Stomp",
+        "<Elemental Greataxe> Poisonous Mist",
+        "<Elemental Greataxe> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 150000500,
+      "Entries": [
+        "<Fire Greataxe> Eruption",
+        "<Fire Greataxe> Flaming Strike",
+        "<Fire Greataxe> Flame of the Redmanes",
+        "<Fire Greataxe> Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 150000600,
+      "Entries": [
+        "<Lightning Greataxe> Thunderbolt",
+        "<Lightning Greataxe> Lightning Slash",
+        "<Lightning Greataxe> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 150000700,
+      "Entries": [
+        "<Holy Greataxe> Sacred Blade",
+        "<Holy Greataxe> Prayerful Strike",
+        "<Holy Greataxe> Golden Land",
+        "<Holy Greataxe> Golden Slam",
+        "<Holy Greataxe> Golden Vow",
+        "<Holy Greataxe> Sacred Order",
+        "<Holy Greataxe> Shared Order"
+      ]
+    },
+    {
+      "ID": 150000800,
+      "Entries": [
+        "<Magic Greataxe> Gravitas",
+        "<Magic Greataxe> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 150000900,
+      "Entries": [
+        "<Frost Greataxe> Chilling Mist",
+        "<Frost Greataxe> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 150001000,
+      "Entries": [
+        "<Poison Greataxe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 150001200,
+      "Entries": [
+        "<Shadow Greataxe> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 151020000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Earthshaker",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 151400000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Earthshaker",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Prayerful Strike",
+        "<Table> Golden Land",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 151400050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Spinning Slash",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Wild Strikes",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Earthshaker",
+        "<Table> Vacuum Slice",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 151400700,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Prayerful Strike",
+        "<Table> Golden Land",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 160000000,
+      "Entries": [
+        "<Spear> Impaling Thrust",
+        "<Spear> Piercing Fang",
+        "<Spear> Spinning Slash",
+        "<Spear> Charge Forth",
+        "<Spear> Repeating Thrust",
+        "<Spear> Spinning Strikes",
+        "<Spear> Giant Hunt",
+        "<Spear> Storm Assault",
+        "<Spear> Stormcaller",
+        "<Spear> Sword Dance",
+        "<Spear> Phantom Slash",
+        "<Spear> Storm Stomp",
+        "<Spear> Kick",
+        "<Spear> Ground Slam",
+        "<Spear> Hoarah Loux's Earthshaker",
+        "<Spear> Determination",
+        "<Spear> Royal Knight's Resolve",
+        "<Spear> Cragblade",
+        "<Spear> Barbaric Roar",
+        "<Spear> War Cry",
+        "<Spear> Beast's Roar",
+        "<Spear> Braggart's Roar",
+        "<Spear> Endure",
+        "<Spear> Quickstep",
+        "<Spear> Bloodhound's Step",
+        "<Spear> Raptor of the Mists",
+        "<Spear> Flaming Strike",
+        "<Spear> Flame of the Redmanes",
+        "<Spear> Black Flame Tornado",
+        "<Spear> Thunderbolt",
+        "<Spear> Lightning Ram",
+        "<Spear> Sacred Blade",
+        "<Spear> Sacred Ring of Light",
+        "<Spear> Golden Slam",
+        "<Spear> Golden Vow",
+        "<Spear> Sacred Order",
+        "<Spear> Shared Order",
+        "<Spear> Loretta's Slash",
+        "<Spear> Spinning Weapon",
+        "<Spear> Glintblade Phalanx",
+        "<Spear> Glintstone Pebble",
+        "<Spear> Gravitas",
+        "<Spear> Ice Spear",
+        "<Spear> Chilling Mist",
+        "<Spear> Hoarfrost Stomp",
+        "<Spear> Poisonous Mist",
+        "<Spear> Blood Tax",
+        "<Spear> Seppuku",
+        "<Spear> Spectral Lance",
+        "<Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 160000050,
+      "Entries": [
+        "<Untyped Spear> Impaling Thrust",
+        "<Untyped Spear> Piercing Fang",
+        "<Untyped Spear> Spinning Slash",
+        "<Untyped Spear> Charge Forth",
+        "<Untyped Spear> Repeating Thrust",
+        "<Untyped Spear> Spinning Strikes",
+        "<Untyped Spear> Giant Hunt",
+        "<Untyped Spear> Storm Assault",
+        "<Untyped Spear> Stormcaller",
+        "<Untyped Spear> Sword Dance",
+        "<Untyped Spear> Phantom Slash",
+        "<Untyped Spear> Storm Stomp",
+        "<Untyped Spear> Kick",
+        "<Untyped Spear> Ground Slam",
+        "<Untyped Spear> Hoarah Loux's Earthshaker",
+        "<Untyped Spear> Determination",
+        "<Untyped Spear> Royal Knight's Resolve",
+        "<Untyped Spear> Cragblade",
+        "<Untyped Spear> Barbaric Roar",
+        "<Untyped Spear> War Cry",
+        "<Untyped Spear> Beast's Roar",
+        "<Untyped Spear> Braggart's Roar",
+        "<Untyped Spear> Endure",
+        "<Untyped Spear> Quickstep",
+        "<Untyped Spear> Bloodhound's Step",
+        "<Untyped Spear> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 160000100,
+      "Entries": [
+        "<Elemental Spear> Flaming Strike",
+        "<Elemental Spear> Flame of the Redmanes",
+        "<Elemental Spear> Black Flame Tornado",
+        "<Elemental Spear> Thunderbolt",
+        "<Elemental Spear> Lightning Ram",
+        "<Elemental Spear> Sacred Blade",
+        "<Elemental Spear> Sacred Ring of Light",
+        "<Elemental Spear> Golden Slam",
+        "<Elemental Spear> Golden Vow",
+        "<Elemental Spear> Sacred Order",
+        "<Elemental Spear> Shared Order",
+        "<Elemental Spear> Loretta's Slash",
+        "<Elemental Spear> Spinning Weapon",
+        "<Elemental Spear> Glintblade Phalanx",
+        "<Elemental Spear> Glintstone Pebble",
+        "<Elemental Spear> Gravitas",
+        "<Elemental Spear> Ice Spear",
+        "<Elemental Spear> Chilling Mist",
+        "<Elemental Spear> Hoarfrost Stomp",
+        "<Elemental Spear> Poisonous Mist",
+        "<Elemental Spear> Blood Tax",
+        "<Elemental Spear> Seppuku",
+        "<Elemental Spear> Spectral Lance",
+        "<Elemental Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 160000500,
+      "Entries": [
+        "<Fire Spear> Flaming Strike",
+        "<Fire Spear> Flame of the Redmanes",
+        "<Fire Spear> Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 160000600,
+      "Entries": [
+        "<Lightning Spear> Thunderbolt",
+        "<Lightning Spear> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 160000700,
+      "Entries": [
+        "<Holy Spear> Sacred Blade",
+        "<Holy Spear> Sacred Ring of Light",
+        "<Holy Spear> Golden Slam",
+        "<Holy Spear> Golden Vow",
+        "<Holy Spear> Sacred Order",
+        "<Holy Spear> Shared Order"
+      ]
+    },
+    {
+      "ID": 160000800,
+      "Entries": [
+        "<Magic Spear> Loretta's Slash",
+        "<Magic Spear> Spinning Weapon",
+        "<Magic Spear> Glintblade Phalanx",
+        "<Magic Spear> Glintstone Pebble",
+        "<Magic Spear> Gravitas"
+      ]
+    },
+    {
+      "ID": 160000900,
+      "Entries": [
+        "<Frost Spear> Ice Spear",
+        "<Frost Spear> Chilling Mist",
+        "<Frost Spear> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 160001000,
+      "Entries": [
+        "<Poison Spear> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 160001100,
+      "Entries": [
+        "<Blood Spear> Blood Tax",
+        "<Blood Spear> Seppuku"
+      ]
+    },
+    {
+      "ID": 160001200,
+      "Entries": [
+        "<Shadow Spear> Spectral Lance",
+        "<Shadow Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 160800000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Flaming Strike",
+        "<Table> Flame of the Redmanes",
+        "<Table> Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 160800050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 160800500,
+      "Entries": [
+        "<Table> Flaming Strike",
+        "<Table> Flame of the Redmanes",
+        "<Table> Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 161600000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Loretta's Slash",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas"
+      ]
+    },
+    {
+      "ID": 161600050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 161600100,
+      "Entries": [
+        "<Table> Loretta's Slash",
+        "<Table> Spinning Weapon",
+        "<Table> Glintblade Phalanx",
+        "<Table> Glintstone Pebble",
+        "<Table> Gravitas"
+      ]
+    },
+    {
+      "ID": 170000000,
+      "Entries": [
+        "<Heavy Spear> Stormcaller",
+        "<Heavy Spear> Earthshaker",
+        "<Heavy Spear> Storm Stomp",
+        "<Heavy Spear> Kick",
+        "<Heavy Spear> Ground Slam",
+        "<Heavy Spear> Hoarah Loux's Earthshaker",
+        "<Heavy Spear> Determination",
+        "<Heavy Spear> Royal Knight's Resolve",
+        "<Heavy Spear> Cragblade",
+        "<Heavy Spear> Barbaric Roar",
+        "<Heavy Spear> War Cry",
+        "<Heavy Spear> Beast's Roar",
+        "<Heavy Spear> Braggart's Roar",
+        "<Heavy Spear> Endure",
+        "<Heavy Spear> Quickstep",
+        "<Heavy Spear> Bloodhound's Step",
+        "<Heavy Spear> Raptor of the Mists",
+        "<Heavy Spear> Flaming Strike",
+        "<Heavy Spear> Flame of the Redmanes",
+        "<Heavy Spear> Thunderbolt",
+        "<Heavy Spear> Lightning Ram",
+        "<Heavy Spear> Sacred Blade",
+        "<Heavy Spear> Golden Land",
+        "<Heavy Spear> Golden Slam",
+        "<Heavy Spear> Golden Vow",
+        "<Heavy Spear> Sacred Order",
+        "<Heavy Spear> Shared Order",
+        "<Heavy Spear> Loretta's Slash",
+        "<Heavy Spear> Gravitas",
+        "<Heavy Spear> Waves of Darkness",
+        "<Heavy Spear> Chilling Mist",
+        "<Heavy Spear> Hoarfrost Stomp",
+        "<Heavy Spear> Poisonous Mist",
+        "<Heavy Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 170000050,
+      "Entries": [
+        "<Untyped Heavy Spear> Stormcaller",
+        "<Untyped Heavy Spear> Earthshaker",
+        "<Untyped Heavy Spear> Storm Stomp",
+        "<Untyped Heavy Spear> Kick",
+        "<Untyped Heavy Spear> Ground Slam",
+        "<Untyped Heavy Spear> Hoarah Loux's Earthshaker",
+        "<Untyped Heavy Spear> Determination",
+        "<Untyped Heavy Spear> Royal Knight's Resolve",
+        "<Untyped Heavy Spear> Cragblade",
+        "<Untyped Heavy Spear> Barbaric Roar",
+        "<Untyped Heavy Spear> War Cry",
+        "<Untyped Heavy Spear> Beast's Roar",
+        "<Untyped Heavy Spear> Braggart's Roar",
+        "<Untyped Heavy Spear> Endure",
+        "<Untyped Heavy Spear> Quickstep",
+        "<Untyped Heavy Spear> Bloodhound's Step",
+        "<Untyped Heavy Spear> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 170000100,
+      "Entries": [
+        "<Elemental Heavy Spear> Flaming Strike",
+        "<Elemental Heavy Spear> Flame of the Redmanes",
+        "<Elemental Heavy Spear> Thunderbolt",
+        "<Elemental Heavy Spear> Lightning Ram",
+        "<Elemental Heavy Spear> Sacred Blade",
+        "<Elemental Heavy Spear> Golden Land",
+        "<Elemental Heavy Spear> Golden Slam",
+        "<Elemental Heavy Spear> Golden Vow",
+        "<Elemental Heavy Spear> Sacred Order",
+        "<Elemental Heavy Spear> Shared Order",
+        "<Elemental Heavy Spear> Loretta's Slash",
+        "<Elemental Heavy Spear> Gravitas",
+        "<Elemental Heavy Spear> Waves of Darkness",
+        "<Elemental Heavy Spear> Chilling Mist",
+        "<Elemental Heavy Spear> Hoarfrost Stomp",
+        "<Elemental Heavy Spear> Poisonous Mist",
+        "<Elemental Heavy Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 170000500,
+      "Entries": [
+        "<Fire Heavy Spear> Flaming Strike",
+        "<Fire Heavy Spear> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 170000600,
+      "Entries": [
+        "<Lightning Heavy Spear> Thunderbolt",
+        "<Lightning Heavy Spear> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 170000700,
+      "Entries": [
+        "<Holy Heavy Spear> Sacred Blade",
+        "<Holy Heavy Spear> Golden Land",
+        "<Holy Heavy Spear> Golden Slam",
+        "<Holy Heavy Spear> Golden Vow",
+        "<Holy Heavy Spear> Sacred Order",
+        "<Holy Heavy Spear> Shared Order"
+      ]
+    },
+    {
+      "ID": 170000800,
+      "Entries": [
+        "<Magic Heavy Spear> Loretta's Slash",
+        "<Magic Heavy Spear> Gravitas",
+        "<Magic Heavy Spear> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 170000900,
+      "Entries": [
+        "<Frost Heavy Spear> Chilling Mist",
+        "<Frost Heavy Spear> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 170001000,
+      "Entries": [
+        "<Poison Heavy Spear> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 170001200,
+      "Entries": [
+        "<Shadow Heavy Spear> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 171070000,
+      "Entries": [
+        "<Table> Stormcaller",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Golden Land",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 171070050,
+      "Entries": [
+        "<Table> Stormcaller",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 171070100,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Golden Land",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 180000000,
+      "Entries": [
+        "<Halberd> Impaling Thrust",
+        "<Halberd> Piercing Fang",
+        "<Halberd> Spinning Slash",
+        "<Halberd> Charge Forth",
+        "<Halberd> Repeating Thrust",
+        "<Halberd> Spinning Strikes",
+        "<Halberd> Double Slash",
+        "<Halberd> Giant Hunt",
+        "<Halberd> Storm Assault",
+        "<Halberd> Stormcaller",
+        "<Halberd> Sword Dance",
+        "<Halberd> Phantom Slash",
+        "<Halberd> Storm Stomp",
+        "<Halberd> Kick",
+        "<Halberd> Ground Slam",
+        "<Halberd> Hoarah Loux's Earthshaker",
+        "<Halberd> Determination",
+        "<Halberd> Royal Knight's Resolve",
+        "<Halberd> Cragblade",
+        "<Halberd> Barbaric Roar",
+        "<Halberd> War Cry",
+        "<Halberd> Beast's Roar",
+        "<Halberd> Braggart's Roar",
+        "<Halberd> Endure",
+        "<Halberd> Quickstep",
+        "<Halberd> Bloodhound's Step",
+        "<Halberd> Raptor of the Mists",
+        "<Halberd> Flaming Strike",
+        "<Halberd> Flame of the Redmanes",
+        "<Halberd> Black Flame Tornado",
+        "<Halberd> Thunderbolt",
+        "<Halberd> Lightning Ram",
+        "<Halberd> Sacred Blade",
+        "<Halberd> Sacred Ring of Light",
+        "<Halberd> Golden Slam",
+        "<Halberd> Golden Vow",
+        "<Halberd> Sacred Order",
+        "<Halberd> Shared Order",
+        "<Halberd> Loretta's Slash",
+        "<Halberd> Spinning Weapon",
+        "<Halberd> Glintblade Phalanx",
+        "<Halberd> Glintstone Pebble",
+        "<Halberd> Gravitas",
+        "<Halberd> Ice Spear",
+        "<Halberd> Chilling Mist",
+        "<Halberd> Hoarfrost Stomp",
+        "<Halberd> Poisonous Mist",
+        "<Halberd> Blood Tax",
+        "<Halberd> Seppuku",
+        "<Halberd> Spectral Lance",
+        "<Halberd> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 180000050,
+      "Entries": [
+        "<Untyped Halberd> Impaling Thrust",
+        "<Untyped Halberd> Piercing Fang",
+        "<Untyped Halberd> Spinning Slash",
+        "<Untyped Halberd> Charge Forth",
+        "<Untyped Halberd> Repeating Thrust",
+        "<Untyped Halberd> Spinning Strikes",
+        "<Untyped Halberd> Double Slash",
+        "<Untyped Halberd> Giant Hunt",
+        "<Untyped Halberd> Storm Assault",
+        "<Untyped Halberd> Stormcaller",
+        "<Untyped Halberd> Sword Dance",
+        "<Untyped Halberd> Phantom Slash",
+        "<Untyped Halberd> Storm Stomp",
+        "<Untyped Halberd> Kick",
+        "<Untyped Halberd> Ground Slam",
+        "<Untyped Halberd> Hoarah Loux's Earthshaker",
+        "<Untyped Halberd> Determination",
+        "<Untyped Halberd> Royal Knight's Resolve",
+        "<Untyped Halberd> Cragblade",
+        "<Untyped Halberd> Barbaric Roar",
+        "<Untyped Halberd> War Cry",
+        "<Untyped Halberd> Beast's Roar",
+        "<Untyped Halberd> Braggart's Roar",
+        "<Untyped Halberd> Endure",
+        "<Untyped Halberd> Quickstep",
+        "<Untyped Halberd> Bloodhound's Step",
+        "<Untyped Halberd> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 180000100,
+      "Entries": [
+        "<Elemental Halberd> Flaming Strike",
+        "<Elemental Halberd> Flame of the Redmanes",
+        "<Elemental Halberd> Black Flame Tornado",
+        "<Elemental Halberd> Thunderbolt",
+        "<Elemental Halberd> Lightning Ram",
+        "<Elemental Halberd> Sacred Blade",
+        "<Elemental Halberd> Sacred Ring of Light",
+        "<Elemental Halberd> Golden Slam",
+        "<Elemental Halberd> Golden Vow",
+        "<Elemental Halberd> Sacred Order",
+        "<Elemental Halberd> Shared Order",
+        "<Elemental Halberd> Loretta's Slash",
+        "<Elemental Halberd> Spinning Weapon",
+        "<Elemental Halberd> Glintblade Phalanx",
+        "<Elemental Halberd> Glintstone Pebble",
+        "<Elemental Halberd> Gravitas",
+        "<Elemental Halberd> Ice Spear",
+        "<Elemental Halberd> Chilling Mist",
+        "<Elemental Halberd> Hoarfrost Stomp",
+        "<Elemental Halberd> Poisonous Mist",
+        "<Elemental Halberd> Blood Tax",
+        "<Elemental Halberd> Seppuku",
+        "<Elemental Halberd> Spectral Lance",
+        "<Elemental Halberd> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 180000500,
+      "Entries": [
+        "<Fire Halberd> Flaming Strike",
+        "<Fire Halberd> Flame of the Redmanes",
+        "<Fire Halberd> Black Flame Tornado"
+      ]
+    },
+    {
+      "ID": 180000600,
+      "Entries": [
+        "<Lightning Halberd> Thunderbolt",
+        "<Lightning Halberd> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 180000700,
+      "Entries": [
+        "<Holy Halberd> Sacred Blade",
+        "<Holy Halberd> Sacred Ring of Light",
+        "<Holy Halberd> Golden Slam",
+        "<Holy Halberd> Golden Vow",
+        "<Holy Halberd> Sacred Order",
+        "<Holy Halberd> Shared Order"
+      ]
+    },
+    {
+      "ID": 180000800,
+      "Entries": [
+        "<Magic Halberd> Loretta's Slash",
+        "<Magic Halberd> Spinning Weapon",
+        "<Magic Halberd> Glintblade Phalanx",
+        "<Magic Halberd> Glintstone Pebble",
+        "<Magic Halberd> Gravitas"
+      ]
+    },
+    {
+      "ID": 180000900,
+      "Entries": [
+        "<Frost Halberd> Ice Spear",
+        "<Frost Halberd> Chilling Mist",
+        "<Frost Halberd> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 180001000,
+      "Entries": [
+        "<Poison Halberd> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 180001100,
+      "Entries": [
+        "<Blood Halberd> Blood Tax",
+        "<Blood Halberd> Seppuku"
+      ]
+    },
+    {
+      "ID": 180001200,
+      "Entries": [
+        "<Shadow Halberd> Spectral Lance",
+        "<Shadow Halberd> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 180600000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 181080000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Sacred Ring of Light",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 181080050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 181080100,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Sacred Ring of Light",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 181600000,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Sacred Blade",
+        "<Table> Sacred Ring of Light",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 181600050,
+      "Entries": [
+        "<Table> Impaling Thrust",
+        "<Table> Piercing Fang",
+        "<Table> Spinning Slash",
+        "<Table> Charge Forth",
+        "<Table> Repeating Thrust",
+        "<Table> Spinning Strikes",
+        "<Table> Double Slash",
+        "<Table> Giant Hunt",
+        "<Table> Storm Assault",
+        "<Table> Stormcaller",
+        "<Table> Sword Dance",
+        "<Table> Phantom Slash",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 181600700,
+      "Entries": [
+        "<Table> Sacred Blade",
+        "<Table> Sacred Ring of Light",
+        "<Table> Golden Slam",
+        "<Table> Golden Vow",
+        "<Table> Sacred Order",
+        "<Table> Shared Order"
+      ]
+    },
+    {
+      "ID": 190000000,
+      "Entries": [
+        "<Scythe> Spinning Slash",
+        "<Scythe> Spinning Strikes",
+        "<Scythe> Stormcaller",
+        "<Scythe> Storm Stomp",
+        "<Scythe> Kick",
+        "<Scythe> Ground Slam",
+        "<Scythe> Determination",
+        "<Scythe> Royal Knight's Resolve",
+        "<Scythe> Cragblade",
+        "<Scythe> Barbaric Roar",
+        "<Scythe> War Cry",
+        "<Scythe> Endure",
+        "<Scythe> Quickstep",
+        "<Scythe> Bloodhound's Step",
+        "<Scythe> Raptor of the Mists",
+        "<Scythe> Double Slash",
+        "<Scythe> Black Flame Tornado",
+        "<Scythe> Flame of the Redmanes",
+        "<Scythe> Thunderbolt",
+        "<Scythe> Lightning Ram",
+        "<Scythe> Sacred Blade",
+        "<Scythe> Sacred Ring of Light",
+        "<Scythe> Golden Slam",
+        "<Scythe> Golden Vow",
+        "<Scythe> Sacred Order",
+        "<Scythe> Shared Order",
+        "<Scythe> Spinning Weapon",
+        "<Scythe> Gravitas",
+        "<Scythe> Chilling Mist",
+        "<Scythe> Hoarfrost Stomp",
+        "<Scythe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 190000050,
+      "Entries": [
+        "<Untyped Scythe> Spinning Slash",
+        "<Untyped Scythe> Spinning Strikes",
+        "<Untyped Scythe> Double Slash",
+        "<Untyped Scythe> Stormcaller",
+        "<Untyped Scythe> Storm Stomp",
+        "<Untyped Scythe> Kick",
+        "<Untyped Scythe> Ground Slam",
+        "<Untyped Scythe> Determination",
+        "<Untyped Scythe> Royal Knight's Resolve",
+        "<Untyped Scythe> Cragblade",
+        "<Untyped Scythe> Barbaric Roar",
+        "<Untyped Scythe> War Cry",
+        "<Untyped Scythe> Endure",
+        "<Untyped Scythe> Quickstep",
+        "<Untyped Scythe> Bloodhound's Step",
+        "<Untyped Scythe> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 190000100,
+      "Entries": [
+        "<Elemental Scythe> Black Flame Tornado",
+        "<Elemental Scythe> Flame of the Redmanes",
+        "<Elemental Scythe> Thunderbolt",
+        "<Elemental Scythe> Lightning Ram",
+        "<Elemental Scythe> Sacred Blade",
+        "<Elemental Scythe> Sacred Ring of Light",
+        "<Elemental Scythe> Golden Slam",
+        "<Elemental Scythe> Golden Vow",
+        "<Elemental Scythe> Sacred Order",
+        "<Elemental Scythe> Shared Order",
+        "<Elemental Scythe> Loretta's Slash",
+        "<Elemental Scythe> Spinning Weapon",
+        "<Elemental Scythe> Gravitas",
+        "<Elemental Scythe> Chilling Mist",
+        "<Elemental Scythe> Hoarfrost Stomp",
+        "<Elemental Scythe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 190000500,
+      "Entries": [
+        "<Fire Scythe> Black Flame Tornado",
+        "<Fire Scythe> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 190000600,
+      "Entries": [
+        "<Lightning Scythe> Thunderbolt",
+        "<Lightning Scythe> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 190000700,
+      "Entries": [
+        "<Holy Scythe> Sacred Blade",
+        "<Holy Scythe> Sacred Ring of Light",
+        "<Holy Scythe> Golden Slam",
+        "<Holy Scythe> Golden Vow",
+        "<Holy Scythe> Sacred Order",
+        "<Holy Scythe> Shared Order"
+      ]
+    },
+    {
+      "ID": 190000800,
+      "Entries": [
+        "<Magic Scythe> Loretta's Slash",
+        "<Magic Scythe> Spinning Weapon",
+        "<Magic Scythe> Gravitas"
+      ]
+    },
+    {
+      "ID": 190000900,
+      "Entries": [
+        "<Frost Scythe> Chilling Mist",
+        "<Frost Scythe> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 190001000,
+      "Entries": [
+        "<Poison Scythe> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 200000000,
+      "Entries": [
+        "<Whip> Storm Stomp",
+        "<Whip> Kick",
+        "<Whip> Ground Slam",
+        "<Whip> Hoarah Loux's Earthshaker",
+        "<Whip> Determination",
+        "<Whip> Royal Knight's Resolve",
+        "<Whip> Beast's Roar",
+        "<Whip> Endure",
+        "<Whip> Quickstep",
+        "<Whip> Bloodhound's Step",
+        "<Whip> Raptor of the Mists",
+        "<Whip> Flame of the Redmanes",
+        "<Whip> Thunderbolt",
+        "<Whip> Lightning Ram",
+        "<Whip> Golden Slam",
+        "<Whip> Golden Vow",
+        "<Whip> Sacred Order",
+        "<Whip> Shared Order",
+        "<Whip> Hoarfrost Stomp",
+        "<Whip> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 200000050,
+      "Entries": [
+        "<Untyped Whip> Storm Stomp",
+        "<Untyped Whip> Kick",
+        "<Untyped Whip> Ground Slam",
+        "<Untyped Whip> Hoarah Loux's Earthshaker",
+        "<Untyped Whip> Determination",
+        "<Untyped Whip> Royal Knight's Resolve",
+        "<Untyped Whip> Beast's Roar",
+        "<Untyped Whip> Endure",
+        "<Untyped Whip> Quickstep",
+        "<Untyped Whip> Bloodhound's Step",
+        "<Untyped Whip> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 200000100,
+      "Entries": [
+        "<Elemental Whip> Flame of the Redmanes",
+        "<Elemental Whip> Thunderbolt",
+        "<Elemental Whip> Lightning Ram",
+        "<Elemental Whip> Golden Slam",
+        "<Elemental Whip> Golden Vow",
+        "<Elemental Whip> Sacred Order",
+        "<Elemental Whip> Shared Order",
+        "<Elemental Whip> Hoarfrost Stomp",
+        "<Elemental Whip> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 200000500,
+      "Entries": [
+        "<Fire Whip> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 200000600,
+      "Entries": [
+        "<Lightning Whip> Thunderbolt",
+        "<Lightning Whip> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 200000700,
+      "Entries": [
+        "<Holy Whip> Golden Slam",
+        "<Holy Whip> Golden Vow",
+        "<Holy Whip> Sacred Order",
+        "<Holy Whip> Shared Order"
+      ]
+    },
+    {
+      "ID": 200000900,
+      "Entries": [
+        "<Frost Whip> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 200001200,
+      "Entries": [
+        "<Shadow Whip> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 201050000,
+      "Entries": [
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Beast's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 210000000,
+      "Entries": [
+        "<Fist> Parry",
+        "<Fist> Storm Stomp",
+        "<Fist> Kick",
+        "<Fist> Ground Slam",
+        "<Fist> Determination",
+        "<Fist> Royal Knight's Resolve",
+        "<Fist> Cragblade",
+        "<Fist> Barbaric Roar",
+        "<Fist> War Cry",
+        "<Fist> Endure",
+        "<Fist> Quickstep",
+        "<Fist> Bloodhound's Step",
+        "<Fist> Raptor of the Mists",
+        "<Fist> Flame of the Redmanes",
+        "<Fist> Thunderbolt",
+        "<Fist> Lightning Ram",
+        "<Fist> Golden Slam",
+        "<Fist> Golden Vow",
+        "<Fist> Sacred Order",
+        "<Fist> Shared Order",
+        "<Fist> Hoarfrost Stomp",
+        "<Fist> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 210000050,
+      "Entries": [
+        "<Untyped Fist> Parry",
+        "<Untyped Fist> Storm Stomp",
+        "<Untyped Fist> Kick",
+        "<Untyped Fist> Ground Slam",
+        "<Untyped Fist> Determination",
+        "<Untyped Fist> Royal Knight's Resolve",
+        "<Untyped Fist> Cragblade",
+        "<Untyped Fist> Barbaric Roar",
+        "<Untyped Fist> War Cry",
+        "<Untyped Fist> Endure",
+        "<Untyped Fist> Quickstep",
+        "<Untyped Fist> Bloodhound's Step",
+        "<Untyped Fist> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 210000100,
+      "Entries": [
+        "<Elemental Fist> Flame of the Redmanes",
+        "<Elemental Fist> Thunderbolt",
+        "<Elemental Fist> Lightning Ram",
+        "<Elemental Fist> Golden Slam",
+        "<Elemental Fist> Golden Vow",
+        "<Elemental Fist> Sacred Order",
+        "<Elemental Fist> Shared Order",
+        "<Elemental Fist> Hoarfrost Stomp",
+        "<Elemental Fist> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 210000500,
+      "Entries": [
+        "<Fire Fist> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 210000600,
+      "Entries": [
+        "<Lightning Fist> Thunderbolt",
+        "<Lightning Fist> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 210000700,
+      "Entries": [
+        "<Holy Fist> Golden Slam",
+        "<Holy Fist> Golden Vow",
+        "<Holy Fist> Sacred Order",
+        "<Holy Fist> Shared Order"
+      ]
+    },
+    {
+      "ID": 210000900,
+      "Entries": [
+        "<Frost Fist> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 210001100,
+      "Entries": [
+        "<Blood Fist> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 220000000,
+      "Entries": [
+        "<Claw> Parry",
+        "<Claw> Storm Stomp",
+        "<Claw> Kick",
+        "<Claw> Ground Slam",
+        "<Claw> Determination",
+        "<Claw> Royal Knight's Resolve",
+        "<Claw> Cragblade",
+        "<Claw> Barbaric Roar",
+        "<Claw> War Cry",
+        "<Claw> Endure",
+        "<Claw> Quickstep",
+        "<Claw> Bloodhound's Step",
+        "<Claw> Raptor of the Mists",
+        "<Claw> Flame of the Redmanes",
+        "<Claw> Thunderbolt",
+        "<Claw> Lightning Ram",
+        "<Claw> Golden Slam",
+        "<Claw> Golden Vow",
+        "<Claw> Sacred Order",
+        "<Claw> Shared Order",
+        "<Claw> Hoarfrost Stomp",
+        "<Claw> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 220000050,
+      "Entries": [
+        "<Untyped Claw> Parry",
+        "<Untyped Claw> Storm Stomp",
+        "<Untyped Claw> Kick",
+        "<Untyped Claw> Ground Slam",
+        "<Untyped Claw> Determination",
+        "<Untyped Claw> Royal Knight's Resolve",
+        "<Untyped Claw> Cragblade",
+        "<Untyped Claw> Barbaric Roar",
+        "<Untyped Claw> War Cry",
+        "<Untyped Claw> Endure",
+        "<Untyped Claw> Quickstep",
+        "<Untyped Claw> Bloodhound's Step",
+        "<Untyped Claw> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 220000100,
+      "Entries": [
+        "<Elemental Claw> Flame of the Redmanes",
+        "<Elemental Claw> Thunderbolt",
+        "<Elemental Claw> Lightning Ram",
+        "<Elemental Claw> Golden Slam",
+        "<Elemental Claw> Golden Vow",
+        "<Elemental Claw> Sacred Order",
+        "<Elemental Claw> Shared Order",
+        "<Elemental Claw> Hoarfrost Stomp",
+        "<Elemental Claw> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 220000500,
+      "Entries": [
+        "<Fire Claw> Flame of the Redmanes"
+      ]
+    },
+    {
+      "ID": 220000600,
+      "Entries": [
+        "<Lightning Claw> Thunderbolt",
+        "<Lightning Claw> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 220000700,
+      "Entries": [
+        "<Holy Claw> Golden Slam",
+        "<Holy Claw> Golden Vow",
+        "<Holy Claw> Sacred Order",
+        "<Holy Claw> Shared Order"
+      ]
+    },
+    {
+      "ID": 220000900,
+      "Entries": [
+        "<Frost Claw> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 220001100,
+      "Entries": [
+        "<Blood Claw> Lifesteal Fist"
+      ]
+    },
+    {
+      "ID": 230000000,
+      "Entries": [
+        "<Colossal Weapon> Lion's Claw",
+        "<Colossal Weapon> Stamp (Upward Cut)",
+        "<Colossal Weapon> Stamp (Sweep)",
+        "<Colossal Weapon> Earthshaker",
+        "<Colossal Weapon> Storm Stomp",
+        "<Colossal Weapon> Kick",
+        "<Colossal Weapon> Ground Slam",
+        "<Colossal Weapon> Hoarah Loux's Earthshaker",
+        "<Colossal Weapon> Determination",
+        "<Colossal Weapon> Royal Knight's Resolve",
+        "<Colossal Weapon> Cragblade",
+        "<Colossal Weapon> Barbaric Roar",
+        "<Colossal Weapon> War Cry",
+        "<Colossal Weapon> Beast's Roar",
+        "<Colossal Weapon> Troll's Roar",
+        "<Colossal Weapon> Braggart's Roar",
+        "<Colossal Weapon> Endure",
+        "<Colossal Weapon> Quickstep",
+        "<Colossal Weapon> Bloodhound's Step",
+        "<Colossal Weapon> Raptor of the Mists",
+        "<Colossal Weapon> Eruption",
+        "<Colossal Weapon> Flame of the Redmanes",
+        "<Colossal Weapon> Prelate's Charge",
+        "<Colossal Weapon> Thunderbolt",
+        "<Colossal Weapon> Lightning Slash",
+        "<Colossal Weapon> Lightning Ram",
+        "<Colossal Weapon> Sacred Blade",
+        "<Colossal Weapon> Prayerful Strike",
+        "<Colossal Weapon> Golden Land",
+        "<Colossal Weapon> Golden Slam",
+        "<Colossal Weapon> Golden Vow",
+        "<Colossal Weapon> Sacred Order",
+        "<Colossal Weapon> Shared Order",
+        "<Colossal Weapon> Gravitas",
+        "<Colossal Weapon> Waves of Darkness",
+        "<Colossal Weapon> Chilling Mist",
+        "<Colossal Weapon> Hoarfrost Stomp",
+        "<Colossal Weapon> Poisonous Mist",
+        "<Colossal Weapon> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 230000050,
+      "Entries": [
+        "<Untyped Colossal Weapon> Lion's Claw",
+        "<Untyped Colossal Weapon> Stamp (Upward Cut)",
+        "<Untyped Colossal Weapon> Stamp (Sweep)",
+        "<Untyped Colossal Weapon> Earthshaker",
+        "<Untyped Colossal Weapon> Storm Stomp",
+        "<Untyped Colossal Weapon> Kick",
+        "<Untyped Colossal Weapon> Ground Slam",
+        "<Untyped Colossal Weapon> Hoarah Loux's Earthshaker",
+        "<Untyped Colossal Weapon> Determination",
+        "<Untyped Colossal Weapon> Royal Knight's Resolve",
+        "<Untyped Colossal Weapon> Cragblade",
+        "<Untyped Colossal Weapon> Barbaric Roar",
+        "<Untyped Colossal Weapon> War Cry",
+        "<Untyped Colossal Weapon> Beast's Roar",
+        "<Untyped Colossal Weapon> Troll's Roar",
+        "<Untyped Colossal Weapon> Braggart's Roar",
+        "<Untyped Colossal Weapon> Endure",
+        "<Untyped Colossal Weapon> Quickstep",
+        "<Untyped Colossal Weapon> Bloodhound's Step",
+        "<Untyped Colossal Weapon> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 230000100,
+      "Entries": [
+        "<Elemental Colossal Weapon> Eruption",
+        "<Elemental Colossal Weapon> Flame of the Redmanes",
+        "<Elemental Colossal Weapon> Prelate's Charge",
+        "<Elemental Colossal Weapon> Thunderbolt",
+        "<Elemental Colossal Weapon> Lightning Slash",
+        "<Elemental Colossal Weapon> Lightning Ram",
+        "<Elemental Colossal Weapon> Sacred Blade",
+        "<Elemental Colossal Weapon> Prayerful Strike",
+        "<Elemental Colossal Weapon> Golden Land",
+        "<Elemental Colossal Weapon> Golden Slam",
+        "<Elemental Colossal Weapon> Golden Vow",
+        "<Elemental Colossal Weapon> Sacred Order",
+        "<Elemental Colossal Weapon> Shared Order",
+        "<Elemental Colossal Weapon> Gravitas",
+        "<Elemental Colossal Weapon> Waves of Darkness",
+        "<Elemental Colossal Weapon> Chilling Mist",
+        "<Elemental Colossal Weapon> Hoarfrost Stomp",
+        "<Elemental Colossal Weapon> Poisonous Mist",
+        "<Elemental Colossal Weapon> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 230000500,
+      "Entries": [
+        "<Fire Colossal Weapon> Eruption",
+        "<Fire Colossal Weapon> Flame of the Redmanes",
+        "<Fire Colossal Weapon> Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 230000600,
+      "Entries": [
+        "<Lightning Colossal Weapon> Thunderbolt",
+        "<Lightning Colossal Weapon> Lightning Slash",
+        "<Lightning Colossal Weapon> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 230000700,
+      "Entries": [
+        "<Holy Colossal Weapon> Sacred Blade",
+        "<Holy Colossal Weapon> Prayerful Strike",
+        "<Holy Colossal Weapon> Golden Land",
+        "<Holy Colossal Weapon> Golden Slam",
+        "<Holy Colossal Weapon> Golden Vow",
+        "<Holy Colossal Weapon> Sacred Order",
+        "<Holy Colossal Weapon> Shared Order"
+      ]
+    },
+    {
+      "ID": 230000800,
+      "Entries": [
+        "<Magic Colossal Weapon> Gravitas",
+        "<Magic Colossal Weapon> Waves of Darkness"
+      ]
+    },
+    {
+      "ID": 230000900,
+      "Entries": [
+        "<Frost Colossal Weapon> Chilling Mist",
+        "<Frost Colossal Weapon> Hoarfrost Stomp"
+      ]
+    },
+    {
+      "ID": 230001000,
+      "Entries": [
+        "<Poison Colossal Weapon> Poisonous Mist"
+      ]
+    },
+    {
+      "ID": 230001200,
+      "Entries": [
+        "<Shadow Colossal Weapon> White Shadow's Lure"
+      ]
+    },
+    {
+      "ID": 230060000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Thunderbolt",
+        "<Table> Lightning Slash",
+        "<Table> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 230060050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 230060600,
+      "Entries": [
+        "<Table> Thunderbolt",
+        "<Table> Lightning Slash",
+        "<Table> Lightning Ram"
+      ]
+    },
+    {
+      "ID": 231300000,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists",
+        "<Table> Eruption",
+        "<Table> Flame of the Redmanes",
+        "<Table> Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 231300050,
+      "Entries": [
+        "<Table> Lion's Claw",
+        "<Table> Stamp (Upward Cut)",
+        "<Table> Stamp (Sweep)",
+        "<Table> Earthshaker",
+        "<Table> Storm Stomp",
+        "<Table> Kick",
+        "<Table> Ground Slam",
+        "<Table> Hoarah Loux's Earthshaker",
+        "<Table> Determination",
+        "<Table> Royal Knight's Resolve",
+        "<Table> Cragblade",
+        "<Table> Barbaric Roar",
+        "<Table> War Cry",
+        "<Table> Beast's Roar",
+        "<Table> Troll's Roar",
+        "<Table> Braggart's Roar",
+        "<Table> Endure",
+        "<Table> Quickstep",
+        "<Table> Bloodhound's Step",
+        "<Table> Raptor of the Mists"
+      ]
+    },
+    {
+      "ID": 231300500,
+      "Entries": [
+        "<Table> Eruption",
+        "<Table> Flame of the Redmanes",
+        "<Table> Prelate's Charge"
+      ]
+    },
+    {
+      "ID": 240000000,
+      "Entries": [
+        "<Torch> No Skill",
+        "<Torch> Torch Attack"
+      ]
+    },
+    {
+      "ID": 300000000,
+      "Entries": [
+        "<Small Shield> No Skill",
+        "<Small Shield> Shield Bash",
+        "<Small Shield> Barricade Shield",
+        "<Small Shield> Parry",
+        "<Small Shield> Storm Wall",
+        "<Small Shield> Shield Crash",
+        "<Small Shield> Buckler Parry",
+        "<Small Shield> Golden Parry",
+        "<Small Shield> Vow of the Indomitable",
+        "<Small Shield> Holy Ground",
+        "<Small Shield> Carian Retaliation",
+        "<Small Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 300000050,
+      "Entries": [
+        "<Untyped Small Shield> No Skill",
+        "<Untyped Small Shield> Shield Bash",
+        "<Untyped Small Shield> Barricade Shield",
+        "<Untyped Small Shield> Parry",
+        "<Untyped Small Shield> Storm Wall",
+        "<Untyped Small Shield> Shield Crash",
+        "<Untyped Small Shield> Buckler Parry"
+      ]
+    },
+    {
+      "ID": 300000100,
+      "Entries": [
+        "<Elemental Small Shield> Golden Parry",
+        "<Elemental Small Shield> Vow of the Indomitable",
+        "<Elemental Small Shield> Holy Ground",
+        "<Elemental Small Shield> Carian Retaliation",
+        "<Elemental Small Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 300000700,
+      "Entries": [
+        "<Holy Small Shield> Golden Parry",
+        "<Holy Small Shield> Vow of the Indomitable",
+        "<Holy Small Shield> Holy Ground"
+      ]
+    },
+    {
+      "ID": 300000800,
+      "Entries": [
+        "<Magic Small Shield> Carian Retaliation",
+        "<Magic Small Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 301150000,
+      "Entries": [
+        "<Table> No Skill",
+        "<Table> Shield Bash",
+        "<Table> Barricade Shield",
+        "<Table> Parry",
+        "<Table> Storm Wall",
+        "<Table> Shield Crash",
+        "<Table> Buckler Parry"
+      ]
+    },
+    {
+      "ID": 310000000,
+      "Entries": [
+        "<Medium Shield> No Skill",
+        "<Medium Shield> Shield Bash",
+        "<Medium Shield> Barricade Shield",
+        "<Medium Shield> Parry",
+        "<Medium Shield> Storm Wall",
+        "<Medium Shield> Shield Crash",
+        "<Medium Shield> Golden Parry",
+        "<Medium Shield> Vow of the Indomitable",
+        "<Medium Shield> Holy Ground",
+        "<Medium Shield> Carian Retaliation",
+        "<Medium Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 310000050,
+      "Entries": [
+        "<Untyped Medium Shield> No Skill",
+        "<Untyped Medium Shield> Shield Bash",
+        "<Untyped Medium Shield> Barricade Shield",
+        "<Untyped Medium Shield> Parry",
+        "<Untyped Medium Shield> Storm Wall",
+        "<Untyped Medium Shield> Shield Crash"
+      ]
+    },
+    {
+      "ID": 310000100,
+      "Entries": [
+        "<Elemental Medium Shield> Golden Parry",
+        "<Elemental Medium Shield> Vow of the Indomitable",
+        "<Elemental Medium Shield> Holy Ground",
+        "<Elemental Medium Shield> Carian Retaliation",
+        "<Elemental Medium Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 310000700,
+      "Entries": [
+        "<Holy Medium Shield> Golden Parry",
+        "<Holy Medium Shield> Vow of the Indomitable",
+        "<Holy Medium Shield> Holy Ground"
+      ]
+    },
+    {
+      "ID": 310000800,
+      "Entries": [
+        "<Magic Medium Shield> Carian Retaliation",
+        "<Magic Medium Shield> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 311060000,
+      "Entries": [
+        "<Table> No Skill",
+        "<Table> Shield Bash",
+        "<Table> Barricade Shield",
+        "<Table> Parry",
+        "<Table> Storm Wall",
+        "<Table> Shield Crash",
+        "<Table> Carian Retaliation",
+        "<Table> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 311060050,
+      "Entries": [
+        "<Table> No Skill",
+        "<Table> Shield Bash",
+        "<Table> Barricade Shield",
+        "<Table> Parry",
+        "<Table> Storm Wall",
+        "<Table> Shield Crash"
+      ]
+    },
+    {
+      "ID": 311060100,
+      "Entries": [
+        "<Table> Carian Retaliation",
+        "<Table> Thops's Barrier"
+      ]
+    },
+    {
+      "ID": 320000000,
+      "Entries": [
+        "<Greatshield> No Skill",
+        "<Greatshield> Shield Bash",
+        "<Greatshield> Barricade Shield",
+        "<Greatshield> Shield Crash",
+        "<Greatshield> Vow of the Indomitable",
+        "<Greatshield> Holy Ground"
+      ]
+    },
+    {
+      "ID": 320000050,
+      "Entries": [
+        "<Untyped Greatshield> No Skill",
+        "<Untyped Greatshield> Shield Bash",
+        "<Untyped Greatshield> Barricade Shield",
+        "<Untyped Greatshield> Shield Crash"
+      ]
+    },
+    {
+      "ID": 320000100,
+      "Entries": [
+        "<Elemental Greatshield> Vow of the Indomitable",
+        "<Elemental Greatshield> Holy Ground"
+      ]
+    },
+    {
+      "ID": 321040000,
+      "Entries": [
+        "<Table> No Skill",
+        "<Table> Shield Bash",
+        "<Table> Barricade Shield",
+        "<Table> Shield Crash",
+        "<Table> Vow of the Indomitable",
+        "<Table> Holy Ground"
+      ]
+    },
+    {
+      "ID": 321040050,
+      "Entries": [
+        "<Table> No Skill",
+        "<Table> Shield Bash",
+        "<Table> Barricade Shield",
+        "<Table> Shield Crash"
+      ]
+    },
+    {
+      "ID": 321040100,
+      "Entries": [
+        "<Table> Vow of the Indomitable",
+        "<Table> Holy Ground"
+      ]
+    },
+    {
+      "ID": 410000000,
+      "Entries": [
+        "<Bow> Barrage",
+        "<Bow> Mighty Shot",
+        "<Bow> Enchanted Shot",
+        "<Bow> Sky Shot",
+        "<Bow> Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 420000000,
+      "Entries": [
+        "<Greatbow> Radahn's Rain"
+      ]
+    },
+    {
+      "ID": 420100000,
+      "Entries": [
+        "<Table> Through and Through",
+        "<Table> Rain of Arrows"
+      ]
+    },
+    {
+      "ID": 430000000,
+      "Entries": [
+        "<Crossbow> Kick"
+      ]
+    },
+    {
+      "ID": 440000000,
+      "Entries": [
+        "<Ballista> Kick"
+      ]
+    },
+    {
+      "ID": 999999999,
+      "Entries": [
+        "(0% weight)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4751 @@
+{
+  "Name": "SpEffectVfxParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "for testing -- テスト用"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "flame -- 炎"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "poison -- 毒"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "hill -- ヒル"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "corrosion -- 腐食"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "plague -- 疫病"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "bleeding -- 出血"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "Hiding -- 姿隠し"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "gravity user -- グラビティ使用者"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "Status abnormality recovery [poison] -- 状態異常回復【毒】"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "Abnormal status recovery [plague] -- 状態異常回復【疫病】"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "Abnormal status recovery [bleeding] -- 状態異常回復【出血】"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        "Abnormal status recovery [all-purpose] -- 状態異常回復【万能】"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "soul steal -- ソウルスティール"
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        "zoom -- ズーム"
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        "warp -- ワープ"
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        "demon's souls -- デモンズソウル"
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        "black ghost exorcism -- 黒ゴースト退散"
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        "strong ghost -- 強ゴースト"
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "white hope -- ホワイト希望"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "black hope -- ブラック希望"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        "black ghosting -- 黒ゴースト化"
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        "resuscitation -- 蘇生"
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        "Prohibition of using magic -- 魔法使用禁止"
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        "miracle motion extension -- 奇跡モーション延長"
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        "whetstone -- 砥石"
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        "Asphyxia resuscitation -- 仮死蘇生"
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        "Weapon enhancement -- 武器強化"
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        "defensive shield -- 防御シールド"
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "Covered in thread -- 糸まみれ"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "[System] Ghost param change -- 【システム】ゴーストパラム変化"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        "money bondage -- 金縛り"
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        "Fly hunting -- 蠅たかり"
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        "[GR Proto] Freezing slime -- 【GRプロト】スライム凍結"
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        "Flame Monster_Second Stage -- 炎怪人_第２段階"
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        "Flame monster_3rd stage -- 炎怪人_第３段階"
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        "Flame monster_4th stage -- 炎怪人_第４段階"
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        "auditory hallucination -- 幻聴"
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        "soul coin -- ソウルコイン"
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "Strong defense shield -- 強防御シールド"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "fire resistant shield -- 火耐性シールド"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        "HP recovery state -- HP回復状態"
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "Forced Ghosting Stage 1 -- 強制ゴースト化 第1段階"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "Forced Ghosting Stage 2 -- 強制ゴースト化 第2段階"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "Forced Ghosting Stage 3 -- 強制ゴースト化 第3段階"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "pheromones -- フェロモン"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        "cat landing -- 猫着地"
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "Increases pinch attack power -- ピンチ攻撃力アップ"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        "Increases pinch defense power -- ピンチ防御力アップ"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "regenerate -- リジェネレイト"
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        "torch -- たいまつ"
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        "Weak regenerate -- 弱リジェネレイト"
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        "weak ghost camouflage -- 弱ゴーストカムフラージュ"
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        "hide your weak appearance -- 弱姿隠し"
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        "tips blood letters -- ヒント血文字"
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        "leech foot -- ヒル足"
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        "Yellow coat -- 黄衣"
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        "point light source -- 点光源"
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "blood letter evaluation -- 血文字評価"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Weapon reinforcement [medium] -- 武器強化【中】"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Weapon enhancement [Large] -- 武器強化【大】"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "flame reinforcement -- 炎強化"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Flame Enhancement [Large] -- 炎強化【大】"
+      ]
+    },
+    {
+      "ID": 64,
+      "Entries": [
+        "Magic enhancement -- 魔法強化"
+      ]
+    },
+    {
+      "ID": 65,
+      "Entries": [
+        "Chimera reinforcement -- キメラ強化"
+      ]
+    },
+    {
+      "ID": 66,
+      "Entries": [
+        "Item drop correction -- アイテムドロップ補正"
+      ]
+    },
+    {
+      "ID": 67,
+      "Entries": [
+        "MP regenerate -- MPリジェネレイト"
+      ]
+    },
+    {
+      "ID": 68,
+      "Entries": [
+        "Weak MP regenerate -- 弱MPリジェネレイト"
+      ]
+    },
+    {
+      "ID": 69,
+      "Entries": [
+        "resurrection when dead -- 死んだとき復活"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "Poison resistance UP -- 毒耐性UP"
+      ]
+    },
+    {
+      "ID": 71,
+      "Entries": [
+        "Magic power UP -- 魔法威力UP"
+      ]
+    },
+    {
+      "ID": 72,
+      "Entries": [
+        "Magic defense UP -- 魔法防御UP"
+      ]
+    },
+    {
+      "ID": 73,
+      "Entries": [
+        "Bleeding resistance UP -- 出血耐性UP"
+      ]
+    },
+    {
+      "ID": 74,
+      "Entries": [
+        "Epidemic resistance UP -- 疫病耐性UP"
+      ]
+    },
+    {
+      "ID": 75,
+      "Entries": [
+        "Stamina recovery UP -- スタミナ回復UP"
+      ]
+    },
+    {
+      "ID": 76,
+      "Entries": [
+        "Soul acquisition UP -- ソウル取得UP"
+      ]
+    },
+    {
+      "ID": 77,
+      "Entries": [
+        "Fire resistance UP -- 炎耐性UP"
+      ]
+    },
+    {
+      "ID": 78,
+      "Entries": [
+        "King's Shield Level 1 Left Foot -- 王の盾1段階左足"
+      ]
+    },
+    {
+      "ID": 79,
+      "Entries": [
+        "King's Shield Level 2 Left Foot -- 王の盾2段階左足"
+      ]
+    },
+    {
+      "ID": 80,
+      "Entries": [
+        "King's Shield Level 3 Left Foot -- 王の盾3段階左足"
+      ]
+    },
+    {
+      "ID": 91,
+      "Entries": [
+        "King's Shield Level 1 Right Foot -- 王の盾1段階右足"
+      ]
+    },
+    {
+      "ID": 92,
+      "Entries": [
+        "King's Shield Stage 2 Right Leg -- 王の盾2段階右足"
+      ]
+    },
+    {
+      "ID": 93,
+      "Entries": [
+        "King's Shield Stage 3 Right Leg -- 王の盾3段階右足"
+      ]
+    },
+    {
+      "ID": 94,
+      "Entries": [
+        "Referee abdominal bleeding -- 審判者腹出血"
+      ]
+    },
+    {
+      "ID": 95,
+      "Entries": [
+        "mimicry -- 擬態"
+      ]
+    },
+    {
+      "ID": 96,
+      "Entries": [
+        "[SP] Transformation -- 【SP】変身"
+      ]
+    },
+    {
+      "ID": 97,
+      "Entries": [
+        "Gasman -- ガスマン"
+      ]
+    },
+    {
+      "ID": 98,
+      "Entries": [
+        "detection -- 探知"
+      ]
+    },
+    {
+      "ID": 99,
+      "Entries": [
+        "Waiting for cooperation -- 協力待ち"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "cooperation -- 協力"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "cooperation sending -- 協力送信"
+      ]
+    },
+    {
+      "ID": 102,
+      "Entries": [
+        "gravity -- グラビティ"
+      ]
+    },
+    {
+      "ID": 103,
+      "Entries": [
+        "evil eye -- 邪眼"
+      ]
+    },
+    {
+      "ID": 104,
+      "Entries": [
+        "Status release [waiting for cooperation] -- 状態解除【協力待ち】"
+      ]
+    },
+    {
+      "ID": 105,
+      "Entries": [
+        "Effect Lv1 -- エフェクトLv1"
+      ]
+    },
+    {
+      "ID": 106,
+      "Entries": [
+        "Effect Lv2 -- エフェクトLv2"
+      ]
+    },
+    {
+      "ID": 107,
+      "Entries": [
+        "Effect Lv3 -- エフェクトLv3"
+      ]
+    },
+    {
+      "ID": 108,
+      "Entries": [
+        "Evil eye Lv1 -- 邪眼Lv1"
+      ]
+    },
+    {
+      "ID": 109,
+      "Entries": [
+        "Evil eye Lv2 -- 邪眼Lv2"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "counter -- カウンター"
+      ]
+    },
+    {
+      "ID": 111,
+      "Entries": [
+        "Egg planting standby -- 植卵スタンバイ"
+      ]
+    },
+    {
+      "ID": 112,
+      "Entries": [
+        "Egg planting -- 植卵"
+      ]
+    },
+    {
+      "ID": 113,
+      "Entries": [
+        "egg head standby -- 卵頭スタンバイ"
+      ]
+    },
+    {
+      "ID": 114,
+      "Entries": [
+        "egg head -- 卵頭"
+      ]
+    },
+    {
+      "ID": 115,
+      "Entries": [
+        "ultralight travel -- 超軽量移動"
+      ]
+    },
+    {
+      "ID": 116,
+      "Entries": [
+        "curse -- 呪い"
+      ]
+    },
+    {
+      "ID": 117,
+      "Entries": [
+        "petrification -- 石化"
+      ]
+    },
+    {
+      "ID": 118,
+      "Entries": [
+        "curse removed -- 呪い解除"
+      ]
+    },
+    {
+      "ID": 119,
+      "Entries": [
+        "human nature damage -- 人間性ダメージ"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "Damage animation change_SA time only -- ダメージアニメ変化_SA時限定"
+      ]
+    },
+    {
+      "ID": 121,
+      "Entries": [
+        "Damage animation change_added -- ダメージアニメ変化_追加"
+      ]
+    },
+    {
+      "ID": 122,
+      "Entries": [
+        "Underwater behavior -- 水中挙動"
+      ]
+    },
+    {
+      "ID": 123,
+      "Entries": [
+        "weapon head -- 武器頭"
+      ]
+    },
+    {
+      "ID": 124,
+      "Entries": [
+        "weapon body -- 武器胴"
+      ]
+    },
+    {
+      "ID": 125,
+      "Entries": [
+        "weapon hand -- 武器手"
+      ]
+    },
+    {
+      "ID": 126,
+      "Entries": [
+        "weapon legs -- 武器脚"
+      ]
+    },
+    {
+      "ID": 127,
+      "Entries": [
+        "sleep -- 眠り"
+      ]
+    },
+    {
+      "ID": 128,
+      "Entries": [
+        "Mimic_mimicry -- ミミック_擬態"
+      ]
+    },
+    {
+      "ID": 129,
+      "Entries": [
+        "Mimic_mimetic sleep -- ミミック_擬態眠り"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "Mimic_Normal -- ミミック_通常"
+      ]
+    },
+    {
+      "ID": 131,
+      "Entries": [
+        "Mimic_normal sleep -- ミミック_通常眠り"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Fascinating -- 魅了"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Blood letter acquisition -- 血文字取得"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Repulsion change -- はじき変化"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Mimic_starts to sleep normally -- ミミック_通常眠り始め"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "crystallization -- 結晶化"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Resonance Lv0 -- 共鳴Lv0"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Resonance Lv1 -- 共鳴Lv1"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Resonance Lv2 -- 共鳴Lv2"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "Resonance Lv3 -- 共鳴Lv3"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "Resonance Lv4 -- 共鳴Lv4"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "Action ID specification -- 行動ID指定"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "enemy_immortality -- 敵_不死"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "Enemy_Asphyxia -- 敵_仮死"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "holy attribute -- 聖属性"
+      ]
+    },
+    {
+      "ID": 146,
+      "Entries": [
+        "whole body whetstone -- 全身砥石"
+      ]
+    },
+    {
+      "ID": 147,
+      "Entries": [
+        "light magic -- ライト魔法"
+      ]
+    },
+    {
+      "ID": 148,
+      "Entries": [
+        "Relief request -- 救援要請"
+      ]
+    },
+    {
+      "ID": 149,
+      "Entries": [
+        "white relief -- 白救援"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "black relief -- 黒救援"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "Lightning enhancement -- 雷強化"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "Poison enhancement -- 毒強化"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "Epidemic reinforcement -- 疫病強化"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "Est cannot be used -- エスト使用不可"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "SA reinforcement -- SA強化"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "Durability reduction disabled -- 耐久度減少無効"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "Anti-spirit enhancement -- 対霊強化"
+      ]
+    },
+    {
+      "ID": 158,
+      "Entries": [
+        "Guard reinforcement -- ガード強化"
+      ]
+    },
+    {
+      "ID": 159,
+      "Entries": [
+        "Ring usually revives when you die -- 通常死んだとき指輪復活"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "Ring revives when you die due to curse -- 呪いで死んだとき指輪復活"
+      ]
+    },
+    {
+      "ID": 161,
+      "Entries": [
+        "Warp B -- ワープB"
+      ]
+    },
+    {
+      "ID": 162,
+      "Entries": [
+        "Warp C -- ワープC"
+      ]
+    },
+    {
+      "ID": 163,
+      "Entries": [
+        "Warp D -- ワープD"
+      ]
+    },
+    {
+      "ID": 164,
+      "Entries": [
+        "Warp E -- ワープE"
+      ]
+    },
+    {
+      "ID": 165,
+      "Entries": [
+        "Warp A -- ワープA"
+      ]
+    },
+    {
+      "ID": 166,
+      "Entries": [
+        "Abandonment of vows -- 誓約破棄"
+      ]
+    },
+    {
+      "ID": 167,
+      "Entries": [
+        "[SP] Whole body transformation -- 【SP】全身変身"
+      ]
+    },
+    {
+      "ID": 168,
+      "Entries": [
+        "precision reinforcement -- 精密強化"
+      ]
+    },
+    {
+      "ID": 169,
+      "Entries": [
+        "resonance enhancement -- 共鳴強化"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "cause and effect -- 因果応報"
+      ]
+    },
+    {
+      "ID": 171,
+      "Entries": [
+        "cause and effect explosion -- 因果応報爆発"
+      ]
+    },
+    {
+      "ID": 172,
+      "Entries": [
+        "sheath invincible 1 -- シース無敵１"
+      ]
+    },
+    {
+      "ID": 173,
+      "Entries": [
+        "sheath invincible 2 -- シース無敵２"
+      ]
+    },
+    {
+      "ID": 174,
+      "Entries": [
+        "sheath invincible 3 -- シース無敵３"
+      ]
+    },
+    {
+      "ID": 175,
+      "Entries": [
+        "revival of humanity -- 人間性復活"
+      ]
+    },
+    {
+      "ID": 176,
+      "Entries": [
+        "Soul coin (immortal type) -- ソウルコイン(不死系)"
+      ]
+    },
+    {
+      "ID": 177,
+      "Entries": [
+        "Soul coin (beast type) -- ソウルコイン(獣系)"
+      ]
+    },
+    {
+      "ID": 178,
+      "Entries": [
+        "Ally strengthening magic -- 味方強化魔法"
+      ]
+    },
+    {
+      "ID": 179,
+      "Entries": [
+        "Curse effect Lv1 -- 呪い効果Lv1"
+      ]
+    },
+    {
+      "ID": 180,
+      "Entries": [
+        "Curse effect Lv2 -- 呪い効果Lv2"
+      ]
+    },
+    {
+      "ID": 181,
+      "Entries": [
+        "Curse effect Lv3 -- 呪い効果Lv3"
+      ]
+    },
+    {
+      "ID": 182,
+      "Entries": [
+        "Curse effect Lv4 -- 呪い効果Lv4"
+      ]
+    },
+    {
+      "ID": 183,
+      "Entries": [
+        "SOS visible -- SOS可視"
+      ]
+    },
+    {
+      "ID": 184,
+      "Entries": [
+        "invisible weapon -- インビジブルウェポン"
+      ]
+    },
+    {
+      "ID": 185,
+      "Entries": [
+        "nit effect -- ニト効果"
+      ]
+    },
+    {
+      "ID": 186,
+      "Entries": [
+        "flame kick -- 炎キック"
+      ]
+    },
+    {
+      "ID": 187,
+      "Entries": [
+        "Grim reaper -- 死神化"
+      ]
+    },
+    {
+      "ID": 188,
+      "Entries": [
+        "Request to summon forest thieves -- 森の盗賊団召喚希望"
+      ]
+    },
+    {
+      "ID": 189,
+      "Entries": [
+        "Inside the Forest Thieves Territory -- 森の盗賊団テリトリ内"
+      ]
+    },
+    {
+      "ID": 190,
+      "Entries": [
+        "Hope to summon the queen's younger brother -- 王母弟召喚希望"
+      ]
+    },
+    {
+      "ID": 191,
+      "Entries": [
+        "In the queen mother's younger brother's territory -- 王母弟テリトリ内"
+      ]
+    },
+    {
+      "ID": 192,
+      "Entries": [
+        "Egg head_second stage -- 卵頭_二段目"
+      ]
+    },
+    {
+      "ID": 193,
+      "Entries": [
+        "Life extension -- 寿命延長"
+      ]
+    },
+    {
+      "ID": 194,
+      "Entries": [
+        "Increase number of magic uses -- 魔法使用回数アップ"
+      ]
+    },
+    {
+      "ID": 195,
+      "Entries": [
+        "dragon newt sign -- ドラゴンニュートサイン"
+      ]
+    },
+    {
+      "ID": 196,
+      "Entries": [
+        "bounty head sign -- 賞金首サイン"
+      ]
+    },
+    {
+      "ID": 197,
+      "Entries": [
+        "counter up -- カウンターアップ"
+      ]
+    },
+    {
+      "ID": 198,
+      "Entries": [
+        "Egg soup -- 卵くだし"
+      ]
+    },
+    {
+      "ID": 199,
+      "Entries": [
+        "HP drain -- HPドレイン"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "power of madness -- 狂気の力"
+      ]
+    },
+    {
+      "ID": 201,
+      "Entries": [
+        "For magic ban effect -- 魔法禁止エフェクト用"
+      ]
+    },
+    {
+      "ID": 202,
+      "Entries": [
+        "dragon roar -- 竜咆哮"
+      ]
+    },
+    {
+      "ID": 203,
+      "Entries": [
+        "Reduces number of magic uses -- 魔法使用回数ダウン"
+      ]
+    },
+    {
+      "ID": 204,
+      "Entries": [
+        "Guard reinforcement [Large] -- ガード強化【大】"
+      ]
+    },
+    {
+      "ID": 205,
+      "Entries": [
+        "[DLC] Dark reinforcement -- 【DLC】闇強化"
+      ]
+    },
+    {
+      "ID": 206,
+      "Entries": [
+        "Arena 1v1 [Small] Inside the territory -- 闘技場1対1【小】テリトリ内"
+      ]
+    },
+    {
+      "ID": 207,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Inside the territory -- 闘技場2対2【小】テリトリ内"
+      ]
+    },
+    {
+      "ID": 208,
+      "Entries": [
+        "Arena Battle Royale [Small] Inside the territory -- 闘技場バトルロイヤル【小】テリトリ内"
+      ]
+    },
+    {
+      "ID": 209,
+      "Entries": [
+        "Arena 1v1 [Small] Summoning Request A -- 闘技場1対1【小】召喚希望A"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "Arena 1v1 [Small] Summoning Request B -- 闘技場1対1【小】召喚希望B"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request A1 -- 闘技場2対2【小】召喚希望A1"
+      ]
+    },
+    {
+      "ID": 212,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request A2 -- 闘技場2対2【小】召喚希望A2"
+      ]
+    },
+    {
+      "ID": 213,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning Hope B1 -- 闘技場2対2【小】召喚希望B1"
+      ]
+    },
+    {
+      "ID": 214,
+      "Entries": [
+        "Arena 2 vs 2 [Small] Summoning request B2 -- 闘技場2対2【小】召喚希望B2"
+      ]
+    },
+    {
+      "ID": 215,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request A -- 闘技場バトルロイヤル【小】召喚希望A"
+      ]
+    },
+    {
+      "ID": 216,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request B -- 闘技場バトルロイヤル【小】召喚希望B"
+      ]
+    },
+    {
+      "ID": 217,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Request C -- 闘技場バトルロイヤル【小】召喚希望C"
+      ]
+    },
+    {
+      "ID": 218,
+      "Entries": [
+        "Arena Battle Royale [Small] Summoning Hope D -- 闘技場バトルロイヤル【小】召喚希望D"
+      ]
+    },
+    {
+      "ID": 219,
+      "Entries": [
+        "Arena 1v1 [Large] Inside the territory -- 闘技場1対1【大】テリトリ内"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "Arena 2v2 [Large] Inside the territory -- 闘技場2対2【大】テリトリ内"
+      ]
+    },
+    {
+      "ID": 221,
+      "Entries": [
+        "Arena Battle Royale [Large] Inside the territory -- 闘技場バトルロイヤル【大】テリトリ内"
+      ]
+    },
+    {
+      "ID": 222,
+      "Entries": [
+        "Arena 1v1 [Large] Summoning Hope A -- 闘技場1対1【大】召喚希望A"
+      ]
+    },
+    {
+      "ID": 223,
+      "Entries": [
+        "Arena 1v1 [Large] Summoning Request B -- 闘技場1対1【大】召喚希望B"
+      ]
+    },
+    {
+      "ID": 224,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope A1 -- 闘技場2対2【大】召喚希望A1"
+      ]
+    },
+    {
+      "ID": 225,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope A2 -- 闘技場2対2【大】召喚希望A2"
+      ]
+    },
+    {
+      "ID": 226,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope B1 -- 闘技場2対2【大】召喚希望B1"
+      ]
+    },
+    {
+      "ID": 227,
+      "Entries": [
+        "Arena 2 vs 2 [Large] Summoning Hope B2 -- 闘技場2対2【大】召喚希望B2"
+      ]
+    },
+    {
+      "ID": 228,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request A -- 闘技場バトルロイヤル【大】召喚希望A"
+      ]
+    },
+    {
+      "ID": 229,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Request B -- 闘技場バトルロイヤル【大】召喚希望B"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Hope C -- 闘技場バトルロイヤル【大】召喚希望C"
+      ]
+    },
+    {
+      "ID": 231,
+      "Entries": [
+        "Arena Battle Royale [Large] Summoning Hope D -- 闘技場バトルロイヤル【大】召喚希望D"
+      ]
+    },
+    {
+      "ID": 232,
+      "Entries": [
+        "Prohibited to use arena items Prohibited to use items -- 闘技場使用禁止アイテム使用禁止"
+      ]
+    },
+    {
+      "ID": 233,
+      "Entries": [
+        "death in arena -- 闘技場死亡"
+      ]
+    },
+    {
+      "ID": 234,
+      "Entries": [
+        "Tentative 1st place in the arena -- 闘技場暫定１位"
+      ]
+    },
+    {
+      "ID": 235,
+      "Entries": [
+        "Arena NoDead -- 闘技場NoDead"
+      ]
+    },
+    {
+      "ID": 236,
+      "Entries": [
+        "Arena tie for 1st place -- 闘技場同率１位"
+      ]
+    },
+    {
+      "ID": 237,
+      "Entries": [
+        "black dragon ring -- 黒竜の指輪"
+      ]
+    },
+    {
+      "ID": 238,
+      "Entries": [
+        "10 or more wins in the arena -- 闘技場10勝以上"
+      ]
+    },
+    {
+      "ID": 239,
+      "Entries": [
+        "30 or more wins in the arena -- 闘技場30勝以上"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "50 wins or more in the arena -- 闘技場50勝以上"
+      ]
+    },
+    {
+      "ID": 241,
+      "Entries": [
+        "100 wins or more in the arena -- 闘技場100勝以上"
+      ]
+    },
+    {
+      "ID": 242,
+      "Entries": [
+        "Blood material overwrite -- 血材質上書き"
+      ]
+    },
+    {
+      "ID": 243,
+      "Entries": [
+        "Blood material_blood -- 血材質_血"
+      ]
+    },
+    {
+      "ID": 244,
+      "Entries": [
+        "Blood material_flame -- 血材質_炎"
+      ]
+    },
+    {
+      "ID": 245,
+      "Entries": [
+        "Blood material_little blood -- 血材質_血少"
+      ]
+    },
+    {
+      "ID": 246,
+      "Entries": [
+        "Layered magic A_LV1 -- 重ね掛け魔法A_LV1"
+      ]
+    },
+    {
+      "ID": 247,
+      "Entries": [
+        "Layered magic A_LV2 -- 重ね掛け魔法A_LV2"
+      ]
+    },
+    {
+      "ID": 248,
+      "Entries": [
+        "Layered magic A_LV3 -- 重ね掛け魔法A_LV3"
+      ]
+    },
+    {
+      "ID": 249,
+      "Entries": [
+        "Layered magic B_LV1 -- 重ね掛け魔法B_LV1"
+      ]
+    },
+    {
+      "ID": 250,
+      "Entries": [
+        "Layered magic B_LV2 -- 重ね掛け魔法B_LV2"
+      ]
+    },
+    {
+      "ID": 251,
+      "Entries": [
+        "Layered magic B_LV3 -- 重ね掛け魔法B_LV3"
+      ]
+    },
+    {
+      "ID": 252,
+      "Entries": [
+        "covered in oil -- 油まみれ"
+      ]
+    },
+    {
+      "ID": 253,
+      "Entries": [
+        "Fire Daruma -- 火だるま"
+      ]
+    },
+    {
+      "ID": 254,
+      "Entries": [
+        "being possessed -- 取り憑かれ中"
+      ]
+    },
+    {
+      "ID": 255,
+      "Entries": [
+        "darkness magic -- 暗闇魔法"
+      ]
+    },
+    {
+      "ID": 256,
+      "Entries": [
+        "Burnt corpse combustion level 1 -- 焼死体燃焼レベル1"
+      ]
+    },
+    {
+      "ID": 257,
+      "Entries": [
+        "Burnt corpse combustion level 2 -- 焼死体燃焼レベル2"
+      ]
+    },
+    {
+      "ID": 258,
+      "Entries": [
+        "Sound magnification change -- 音倍率変更"
+      ]
+    },
+    {
+      "ID": 259,
+      "Entries": [
+        "Target down -- ターゲットダウン中"
+      ]
+    },
+    {
+      "ID": 260,
+      "Entries": [
+        "eclipse -- 蝕"
+      ]
+    },
+    {
+      "ID": 261,
+      "Entries": [
+        "Maggot -- 蛆"
+      ]
+    },
+    {
+      "ID": 262,
+      "Entries": [
+        "Status abnormality recovery [Maggot] -- 状態異常回復【蛆】"
+      ]
+    },
+    {
+      "ID": 263,
+      "Entries": [
+        "bleeding condition -- 出血状態"
+      ]
+    },
+    {
+      "ID": 264,
+      "Entries": [
+        "Ceremony possible -- 儀式可能"
+      ]
+    },
+    {
+      "ID": 265,
+      "Entries": [
+        "quick match request -- クイックマッチリクエスト"
+      ]
+    },
+    {
+      "ID": 266,
+      "Entries": [
+        "Death while falling is disabled -- 落下中死亡無効"
+      ]
+    },
+    {
+      "ID": 267,
+      "Entries": [
+        "Visual range change -- 視覚範囲変更"
+      ]
+    },
+    {
+      "ID": 268,
+      "Entries": [
+        "eclipse death -- 蝕死亡"
+      ]
+    },
+    {
+      "ID": 269,
+      "Entries": [
+        "Double chanting in progress -- 二重詠唱中"
+      ]
+    },
+    {
+      "ID": 270,
+      "Entries": [
+        "General Avatar Buff 1 -- 汎用アバターバフ1"
+      ]
+    },
+    {
+      "ID": 271,
+      "Entries": [
+        "General Avatar Buff 2 -- 汎用アバターバフ2"
+      ]
+    },
+    {
+      "ID": 272,
+      "Entries": [
+        "General Avatar Buff 3 -- 汎用アバターバフ3"
+      ]
+    },
+    {
+      "ID": 273,
+      "Entries": [
+        "General Avatar Buff 4 -- 汎用アバターバフ4"
+      ]
+    },
+    {
+      "ID": 274,
+      "Entries": [
+        "General Avatar Buff 5 -- 汎用アバターバフ5"
+      ]
+    },
+    {
+      "ID": 275,
+      "Entries": [
+        "nerve load noise -- 神経負荷ノイズ"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Torch_flame effect -- 松明_炎エフェクト"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Torch, effect when raised -- 松明、掲げた時のエフェクト"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Fire weapon enhancement -- 炎武器強化"
+      ]
+    },
+    {
+      "ID": 8010,
+      "Entries": [
+        "Regeneration double chant -- リジェネ二重詠唱"
+      ]
+    },
+    {
+      "ID": 8020,
+      "Entries": [
+        "Recovery double chant -- 回復二重詠唱"
+      ]
+    },
+    {
+      "ID": 8030,
+      "Entries": [
+        "sun sword -- 太陽剣"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "Eclipse_Attraction -- 蝕_引き寄せ"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Eclipse_escape -- 蝕_逃げる"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Abnormal status recovery [eclipse] -- 状態異常回復【蝕】"
+      ]
+    },
+    {
+      "ID": 9900,
+      "Entries": [
+        "VOB equipment -- VOB装備"
+      ]
+    },
+    {
+      "ID": 40002,
+      "Entries": [
+        "Poison (body-centered effect) -- 毒（体中心エフェクト）"
+      ]
+    },
+    {
+      "ID": 40253,
+      "Entries": [
+        "Fire Daruma -- 火だるま"
+      ]
+    },
+    {
+      "ID": 40260,
+      "Entries": [
+        "Eclipse (body-centered effect) -- 蝕（体中心エフェクト）"
+      ]
+    },
+    {
+      "ID": 50000,
+      "Entries": [
+        "Demon Priest_Magic Small -- デーモン司祭_呪術小"
+      ]
+    },
+    {
+      "ID": 50001,
+      "Entries": [
+        "Demon priest_curse -- デーモン司祭_呪術中"
+      ]
+    },
+    {
+      "ID": 50002,
+      "Entries": [
+        "Demon Priest_Magic Great -- デーモン司祭_呪術大"
+      ]
+    },
+    {
+      "ID": 50003,
+      "Entries": [
+        "Demon Priest_Flame Enchantment -- デーモン司祭_炎エンチャント"
+      ]
+    },
+    {
+      "ID": 50004,
+      "Entries": [
+        "Demon Priest_ -- デーモン司祭_"
+      ]
+    },
+    {
+      "ID": 50010,
+      "Entries": [
+        "Crystal Elder_Ally -- 結晶の古老_味方"
+      ]
+    },
+    {
+      "ID": 50020,
+      "Entries": [
+        "Wax Dead_Covered in wax -- 蝋の死人_蝋まみれ"
+      ]
+    },
+    {
+      "ID": 50021,
+      "Entries": [
+        "Wax Dead Man_Head of Flame -- 蝋の死人_頭の炎"
+      ]
+    },
+    {
+      "ID": 50030,
+      "Entries": [
+        "Firewood Demon_Head (Resident SFX) -- 薪のデーモン_頭（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50031,
+      "Entries": [
+        "Firewood Demon_Chest (Resident SFX) -- 薪のデーモン_胸（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50032,
+      "Entries": [
+        "Firewood Demon_Back (Resident SFX) -- 薪のデーモン_背中（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50033,
+      "Entries": [
+        "Firewood Demon_Weapon (Resident SFX) -- 薪のデーモン_武器（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50034,
+      "Entries": [
+        "Firewood Demon HU_Head (Resident SFX) -- 薪のデーモンHU_頭（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50035,
+      "Entries": [
+        "Firewood Demon HU_Chest (Resident SFX) -- 薪のデーモンHU_胸 （常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50036,
+      "Entries": [
+        "Firewood Demon HU_Back (Resident SFX) -- 薪のデーモンHU_背中（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50037,
+      "Entries": [
+        "Firewood Demon HU_Weapon (Resident SFX) -- 薪のデーモンHU_武器（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50040,
+      "Entries": [
+        "New skeleton torch (resident SFX) -- 新スケルトン松明（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50050,
+      "Entries": [
+        "Sullivan's Reaper_Sword Enchantment -- サリヴァーンの死神_剣エンチャント"
+      ]
+    },
+    {
+      "ID": 50051,
+      "Entries": [
+        "Sullivan's Grim Reaper_Sickle Enchantment -- サリヴァーンの死神_鎌エンチャント"
+      ]
+    },
+    {
+      "ID": 50052,
+      "Entries": [
+        "Sullivan's Grim Reaper (Resident SFX) -- サリヴァーンの死神（常駐SFX)"
+      ]
+    },
+    {
+      "ID": 50053,
+      "Entries": [
+        "Sullivan's Grim Reaper_(Resident SFX) -- サリヴァーンの死神_(常駐ＳＦＸ)"
+      ]
+    },
+    {
+      "ID": 50055,
+      "Entries": [
+        "Tindalos_Eyelight -- ティンダロス_眼光"
+      ]
+    },
+    {
+      "ID": 50058,
+      "Entries": [
+        "gargoyle torch -- ガーゴイルトーチ"
+      ]
+    },
+    {
+      "ID": 50060,
+      "Entries": [
+        "King of the Dead: Miasma Pneumothorax Resident SFX -- 死霊の王 瘴気胸 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50061,
+      "Entries": [
+        "King of the dead miasma -- 死霊の王 瘴気"
+      ]
+    },
+    {
+      "ID": 50070,
+      "Entries": [
+        "Old King of Eclipse Eclipse Aura Resident SFX -- 蝕の老王 蝕オーラ 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50071,
+      "Entries": [
+        "Old King of Eclipse Eclipse Aura Hu Resident SFX -- 蝕の老王 蝕オーラHu 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50072,
+      "Entries": [
+        "Old King of Eclipses Eclipse Feather Resident SFX -- 蝕の老王 蝕羽根 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50073,
+      "Entries": [
+        "Old King of Eclipses Eclipse Feather Resident SFX -- 蝕の老王 蝕羽根 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50074,
+      "Entries": [
+        "Old King of Eclipses Kaze Resident SFX -- 蝕の老王 風 常駐SFX"
+      ]
+    },
+    {
+      "ID": 50080,
+      "Entries": [
+        "Eclipse Butterfly Scale Powder Resident -- 蝕の蝶鱗粉常駐"
+      ]
+    },
+    {
+      "ID": 50090,
+      "Entries": [
+        "Ash Demon_Weapon Smoke (Resident SFX) -- 灰のデーモン_武器の煙（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50091,
+      "Entries": [
+        "Ash Demon_Full body smoke (Resident SFX) -- 灰のデーモン_全身煙（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50092,
+      "Entries": [
+        "Ash Demon_Joint 1 (Resident SFX) -- 灰のデーモン_関節１（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50093,
+      "Entries": [
+        "Ash Demon_Joint 2 (Resident SFX) -- 灰のデーモン_関節２（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50094,
+      "Entries": [
+        "Ash Demon_Joint 3 (Resident SFX) -- 灰のデーモン_関節３（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50095,
+      "Entries": [
+        "Ash Demon_Joint 4 (Resident SFX) -- 灰のデーモン_関節４（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50096,
+      "Entries": [
+        "Ash Demon_Distortion 1 (Resident SFX) -- 灰のデーモン_歪み１（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50097,
+      "Entries": [
+        "Ash Demon_Distortion 2 (Resident SFX) -- 灰のデーモン_歪み２（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50098,
+      "Entries": [
+        "Ash Demon_Distortion 3 (Resident SFX) -- 灰のデーモン_歪み３（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50100,
+      "Entries": [
+        "c4300_Grave Revealer Torch SFX -- c4300_墓暴きの貴人\u3000松明SFX"
+      ]
+    },
+    {
+      "ID": 50102,
+      "Entries": [
+        "c4300_Grave Revealing Nobleman Staff Cantera SFX -- c4300_墓暴きの貴人\u3000杖カンテラSFX"
+      ]
+    },
+    {
+      "ID": 50103,
+      "Entries": [
+        "c4300_Grave Revealer Waist Cantera SFX -- c4300_墓暴きの貴人\u3000腰カンテラSFX"
+      ]
+    },
+    {
+      "ID": 50110,
+      "Entries": [
+        "c4300_Grave Revealing Nobleman Shield -- c4300_墓暴きの貴人\u3000シールド"
+      ]
+    },
+    {
+      "ID": 50120,
+      "Entries": [
+        "c4020_Nazgul (Grandworm) Resident SFX -- c4020_ナズグル(地虫)\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 50150,
+      "Entries": [
+        "New Castle Knight: Akame (Resident SFX) -- 新王城騎士：赤目（常駐ＳＦＸ）"
+      ]
+    },
+    {
+      "ID": 50200,
+      "Entries": [
+        "Dark Knight Beast_Head (Resident SFX) -- ダークナイトビースト_頭（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50201,
+      "Entries": [
+        "Dark Night Beast_Torso (Resident SFX) -- ダークナイトビースト_胴（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50202,
+      "Entries": [
+        "Dark Knight Beast_Left Arm (Resident SFX) -- ダークナイトビースト_左腕（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50203,
+      "Entries": [
+        "Dark Knight Beast_Right Arm (Resident SFX) -- ダークナイトビースト_右腕（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50204,
+      "Entries": [
+        "Dark Night Beast_Right Leg (Resident SFX) -- ダークナイトビースト_右足（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50205,
+      "Entries": [
+        "Dark Night Beast_Left Foot (Resident SFX) -- ダークナイトビースト_左足（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50206,
+      "Entries": [
+        "Dark Knight Beast_Weapon (Resident SFX) -- ダークナイトビースト_武器（常駐SFX）"
+      ]
+    },
+    {
+      "ID": 50300,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (when it appears) -- c7000_バディ（汎用）\u3000組成シェーダ（出現時）"
+      ]
+    },
+    {
+      "ID": 50301,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (appearing → materialized) -- c7000_バディ（汎用）\u3000組成シェーダ（出現中→実体化）"
+      ]
+    },
+    {
+      "ID": 50302,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (entity → disappearing) -- c7000_バディ（汎用）\u3000組成シェーダ（実体→消滅中）"
+      ]
+    },
+    {
+      "ID": 50303,
+      "Entries": [
+        "c7000_buddy (general purpose) composition shader (when destroyed) -- c7000_バディ（汎用）\u3000組成シェーダ（消滅時）"
+      ]
+    },
+    {
+      "ID": 54050,
+      "Entries": [
+        "c4050_Warlord's Warrior_Warcry -- c4050_戦王の戦士_ウォークライ"
+      ]
+    },
+    {
+      "ID": 54100,
+      "Entries": [
+        "c41xx_gray demi-human_general purpose_red eyes -- c41xx_灰色の亜人_汎用_赤目"
+      ]
+    },
+    {
+      "ID": 54200,
+      "Entries": [
+        "[GR] For mowing item acquisition effect -- 【GR】草刈りアイテム取得エフェクト用"
+      ]
+    },
+    {
+      "ID": 57000,
+      "Entries": [
+        "Buddy for pre-battle_hidden -- バディ戦闘前用_姿隠し"
+      ]
+    },
+    {
+      "ID": 58000,
+      "Entries": [
+        "c7100_Buddy unique crazy cold air -- c7100_バディユニーク狂化冷気"
+      ]
+    },
+    {
+      "ID": 58001,
+      "Entries": [
+        "c7100_Buddy Unique Crazy Cold Air_Feet -- c7100_バディユニーク狂化冷気_足元"
+      ]
+    },
+    {
+      "ID": 58100,
+      "Entries": [
+        "c7100_Buddy Unique Normal Cold Air -- c7100_バディユニーク通常冷気"
+      ]
+    },
+    {
+      "ID": 58101,
+      "Entries": [
+        "c7100_Buddy Unique Normal Cold Air -- c7100_バディユニーク通常冷気"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "flaming small -- 炎上 小"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "Under fire -- 炎上 中"
+      ]
+    },
+    {
+      "ID": 6302,
+      "Entries": [
+        "Large flame -- 炎上 大"
+      ]
+    },
+    {
+      "ID": 6303,
+      "Entries": [
+        "flaming extra large -- 炎上 特大"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Melange (weak/silver) -- メランジ (弱/銀色)"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Melange (strong/red) -- メランジ (強/赤色)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Stan small -- スタン 小"
+      ]
+    },
+    {
+      "ID": 6601,
+      "Entries": [
+        "Stun Medium -- スタン 中"
+      ]
+    },
+    {
+      "ID": 6602,
+      "Entries": [
+        "Stan big -- スタン 大"
+      ]
+    },
+    {
+      "ID": 6603,
+      "Entries": [
+        "Stan extra large -- スタン 特大"
+      ]
+    },
+    {
+      "ID": 7300,
+      "Entries": [
+        "flaming small -- 炎上 小"
+      ]
+    },
+    {
+      "ID": 7301,
+      "Entries": [
+        "Under fire -- 炎上 中"
+      ]
+    },
+    {
+      "ID": 7302,
+      "Entries": [
+        "Large flame -- 炎上 大"
+      ]
+    },
+    {
+      "ID": 7303,
+      "Entries": [
+        "flaming extra large -- 炎上 特大"
+      ]
+    },
+    {
+      "ID": 7500,
+      "Entries": [
+        "Melange (weak/silver) -- メランジ (弱/銀色)"
+      ]
+    },
+    {
+      "ID": 7510,
+      "Entries": [
+        "Melange (strong/red) -- メランジ (強/赤色)"
+      ]
+    },
+    {
+      "ID": 7600,
+      "Entries": [
+        "Stan small -- スタン 小"
+      ]
+    },
+    {
+      "ID": 7601,
+      "Entries": [
+        "Stun Medium -- スタン 中"
+      ]
+    },
+    {
+      "ID": 7602,
+      "Entries": [
+        "Stan big -- スタン 大"
+      ]
+    },
+    {
+      "ID": 7603,
+      "Entries": [
+        "Stan extra large -- スタン 特大"
+      ]
+    },
+    {
+      "ID": 12200,
+      "Entries": [
+        "WP_2200_EN shield_luminescence -- WP_2200_ENシールド_発光"
+      ]
+    },
+    {
+      "ID": 12300,
+      "Entries": [
+        "WP_2300_EN shield_luminescence -- WP_2300_ENシールド_発光"
+      ]
+    },
+    {
+      "ID": 12301,
+      "Entries": [
+        "WP_2300_EN shield_landing -- WP_2300_ENシールド_着弾"
+      ]
+    },
+    {
+      "ID": 12310,
+      "Entries": [
+        "WP_2300_EN shield_luminescence_fade out -- WP_2300_ENシールド_発光_フェードアウト"
+      ]
+    },
+    {
+      "ID": 12311,
+      "Entries": [
+        "WP_2300_EN shield_landing_fade out -- WP_2300_ENシールド_着弾_フェードアウト"
+      ]
+    },
+    {
+      "ID": 22200,
+      "Entries": [
+        "WP_2200_EN Shield_Stop -- WP_2200_ENシールド_停止"
+      ]
+    },
+    {
+      "ID": 30000,
+      "Entries": [
+        "Recovery system_loop ver -- 回復システム_ループver"
+      ]
+    },
+    {
+      "ID": 30001,
+      "Entries": [
+        "Recovery system_one shot ver -- 回復システム_ワンショットver"
+      ]
+    },
+    {
+      "ID": 30010,
+      "Entries": [
+        "Recovery system_Spark_HEAD -- 回復システム_火花_HEAD"
+      ]
+    },
+    {
+      "ID": 30011,
+      "Entries": [
+        "Recovery system_Spark_CORE -- 回復システム_火花_CORE"
+      ]
+    },
+    {
+      "ID": 30012,
+      "Entries": [
+        "Recovery system_Spark_ARMS -- 回復システム_火花_ARMS"
+      ]
+    },
+    {
+      "ID": 30013,
+      "Entries": [
+        "Recovery system_Spark_LEGS -- 回復システム_火花_LEGS"
+      ]
+    },
+    {
+      "ID": 30100,
+      "Entries": [
+        "EN recovery enhancement item_loop ver -- EN回復強化アイテム_ループver"
+      ]
+    },
+    {
+      "ID": 40000,
+      "Entries": [
+        "[Your machine] Core special function_Blade reinforcement_Active -- 【自機】コア特殊機能_ブレード強化_発動中"
+      ]
+    },
+    {
+      "ID": 49000,
+      "Entries": [
+        "[Test] Own machine: Core special function_Genki ball gauge increase bullet_landing -- 【test】自機：コア特殊機能_元気玉ゲージ増加弾丸_着弾"
+      ]
+    },
+    {
+      "ID": 49001,
+      "Entries": [
+        "[Test] Own machine: Core special function_Genki ball gauge increase bullet_Defeated -- 【test】自機：コア特殊機能_元気玉ゲージ増加弾丸_撃破"
+      ]
+    },
+    {
+      "ID": 59000,
+      "Entries": [
+        "Stiglo_Monoeye strength increases -- スティグロ_モノアイ強度が上がる"
+      ]
+    },
+    {
+      "ID": 59001,
+      "Entries": [
+        "Stiglo_Monoeye strength returns -- スティグロ_モノアイ強度が戻る"
+      ]
+    },
+    {
+      "ID": 59002,
+      "Entries": [
+        "Stiglo_MonoEye lights out -- スティグロ_モノアイ消灯"
+      ]
+    },
+    {
+      "ID": 59010,
+      "Entries": [
+        "Stiglo_Heat sink combustion -- スティグロ_ヒートシンク燃焼"
+      ]
+    },
+    {
+      "ID": 59011,
+      "Entries": [
+        "Stiglo_Heat Sink Back -- スティグロ_ヒートシンク戻る"
+      ]
+    },
+    {
+      "ID": 59020,
+      "Entries": [
+        "Stiglo_barrier front -- スティグロ_バリア正面"
+      ]
+    },
+    {
+      "ID": 59021,
+      "Entries": [
+        "Stiglo_barrier bottom -- スティグロ_バリア底面"
+      ]
+    },
+    {
+      "ID": 59022,
+      "Entries": [
+        "Stiglo_barrier left -- スティグロ_バリア左"
+      ]
+    },
+    {
+      "ID": 59023,
+      "Entries": [
+        "Stiglo_barrier right -- スティグロ_バリア右"
+      ]
+    },
+    {
+      "ID": 60000,
+      "Entries": [
+        "c3300 Ghost hiding special effects -- c3300 ゴースト姿隠し用特殊効果"
+      ]
+    },
+    {
+      "ID": 60001,
+      "Entries": [
+        "c3300 Special effects for removing ghost appearance -- c3300 ゴースト姿隠し解除用特殊効果"
+      ]
+    },
+    {
+      "ID": 60002,
+      "Entries": [
+        "c3300 Ghost hidden special effects dark -- c3300 ゴースト姿隠し用特殊効果 濃い"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "Reverse joint dying SFX -- 逆関節\u3000瀕死SFX"
+      ]
+    },
+    {
+      "ID": 93000,
+      "Entries": [
+        "Collapse A layer enemy laser -- 崩落A層敵レーザー"
+      ]
+    },
+    {
+      "ID": 99000,
+      "Entries": [
+        "Laser impact combustion -- レーザー着弾燃焼"
+      ]
+    },
+    {
+      "ID": 99001,
+      "Entries": [
+        "Laser impact combustion ends -- レーザー着弾燃焼終了"
+      ]
+    },
+    {
+      "ID": 99010,
+      "Entries": [
+        "Start of stealth -- ステルス発動開始"
+      ]
+    },
+    {
+      "ID": 99011,
+      "Entries": [
+        "Cancel stealth activation -- ステルス発動解除"
+      ]
+    },
+    {
+      "ID": 99020,
+      "Entries": [
+        "Stealth fog airflow SFX1 -- ステルス霧用気流SFX1"
+      ]
+    },
+    {
+      "ID": 99021,
+      "Entries": [
+        "Stealth fog airflow SFX2 -- ステルス霧用気流SFX2"
+      ]
+    },
+    {
+      "ID": 99022,
+      "Entries": [
+        "Stealth fog airflow SFX3 -- ステルス霧用気流SFX3"
+      ]
+    },
+    {
+      "ID": 99023,
+      "Entries": [
+        "Stealth fog airflow SFX4 -- ステルス霧用気流SFX4"
+      ]
+    },
+    {
+      "ID": 99024,
+      "Entries": [
+        "Stealth fog airflow SFX4 -- ステルス霧用気流SFX4"
+      ]
+    },
+    {
+      "ID": 99030,
+      "Entries": [
+        "Additional SFX occurs during fog (machine gun) -- 霧時追加SFX発生（マシンガン）"
+      ]
+    },
+    {
+      "ID": 99040,
+      "Entries": [
+        "own aircraft spotlight -- 自機スポットライト"
+      ]
+    },
+    {
+      "ID": 99050,
+      "Entries": [
+        "Dummy effect on own aircraft -- 自機にダミーエフェクト"
+      ]
+    },
+    {
+      "ID": 99051,
+      "Entries": [
+        "explosion effect -- 爆発エフェクト"
+      ]
+    },
+    {
+      "ID": 99060,
+      "Entries": [
+        "Own aircraft light SFX -- 自機ライトSFX"
+      ]
+    },
+    {
+      "ID": 99100,
+      "Entries": [
+        "Reverse load effect -- 逆負荷エフェクト"
+      ]
+    },
+    {
+      "ID": 99900,
+      "Entries": [
+        "Client rescue test -- クライアント救出テスト"
+      ]
+    },
+    {
+      "ID": 99901,
+      "Entries": [
+        "Client Rescue Tess 2 -- クライアント救出テス2"
+      ]
+    },
+    {
+      "ID": 99902,
+      "Entries": [
+        "Client Rescue Tess 3 -- クライアント救出テス3"
+      ]
+    },
+    {
+      "ID": 99903,
+      "Entries": [
+        "Client Rescue Tess 4 -- クライアント救出テス4"
+      ]
+    },
+    {
+      "ID": 99904,
+      "Entries": [
+        "Client Rescue Tess 5 -- クライアント救出テス5"
+      ]
+    },
+    {
+      "ID": 99905,
+      "Entries": [
+        "Client Rescue Tess 6 -- クライアント救出テス6"
+      ]
+    },
+    {
+      "ID": 99910,
+      "Entries": [
+        "[Test] Poison fog -- 【テスト】毒霧"
+      ]
+    },
+    {
+      "ID": 99913,
+      "Entries": [
+        "[Test] Defeating Ice Worm for Railgun Landing -- 【テスト】アイスワーム撃破\u3000レールガン着弾用"
+      ]
+    },
+    {
+      "ID": 99914,
+      "Entries": [
+        "[Test] Defeat Ice Worm Mob Temporary Searchlight -- 【テスト】アイスワーム撃破 モブ仮サーチライト"
+      ]
+    },
+    {
+      "ID": 99915,
+      "Entries": [
+        "[Test] Melange cloud breaking through the atmosphere -- 【テスト】大気圏突破メランジ雲"
+      ]
+    },
+    {
+      "ID": 99916,
+      "Entries": [
+        "[Test] Strike street reverse run bullet SFX -- 【テスト】スト街逆走着弾SFX"
+      ]
+    },
+    {
+      "ID": 99917,
+      "Entries": [
+        "[Test] Laser sight -- 【テスト】レーザーサイト"
+      ]
+    },
+    {
+      "ID": 99918,
+      "Entries": [
+        "[Test] Mine Dot damage -- 【テスト】坑道Dotダメージ"
+      ]
+    },
+    {
+      "ID": 99920,
+      "Entries": [
+        "[Test] Visibility trial_Camera eye 00 -- 【テスト】視認性トライアル_カメラアイ00"
+      ]
+    },
+    {
+      "ID": 99921,
+      "Entries": [
+        "[Test] Visibility trial_Camera eye 01 -- 【テスト】視認性トライアル_カメラアイ01"
+      ]
+    },
+    {
+      "ID": 99922,
+      "Entries": [
+        "Camera eye_regular implementation_for wingman -- カメラアイ_正規実装_僚機用"
+      ]
+    },
+    {
+      "ID": 99990,
+      "Entries": [
+        "[Test] Chinese Communist Party MT Spotlight -- 【テスト】中共産MTスポットライト"
+      ]
+    },
+    {
+      "ID": 99991,
+      "Entries": [
+        "[Test] Right Communist MT Spotlight -- 【テスト】右共産MTスポットライト"
+      ]
+    },
+    {
+      "ID": 99992,
+      "Entries": [
+        "[Test] Left Communist MT Spotlight -- 【テスト】左共産MTスポットライト"
+      ]
+    },
+    {
+      "ID": 315000,
+      "Entries": [
+        "Juggernaut Damage Hit Back -- ジャガーノート\u3000ダメージヒット\u3000背面"
+      ]
+    },
+    {
+      "ID": 315001,
+      "Entries": [
+        "Juggernaut resident light -- ジャガーノート\u3000常駐ライト"
+      ]
+    },
+    {
+      "ID": 625000,
+      "Entries": [
+        "Sandworm Damage Hit Mouth -- サンドワーム\u3000ダメージヒット\u3000口"
+      ]
+    },
+    {
+      "ID": 625001,
+      "Entries": [
+        "Sandworm Damage Hit Body_01 -- サンドワーム\u3000ダメージヒット\u3000体_01"
+      ]
+    },
+    {
+      "ID": 625002,
+      "Entries": [
+        "Sandworm Damage Hit Body_02 -- サンドワーム\u3000ダメージヒット\u3000体_02"
+      ]
+    },
+    {
+      "ID": 625003,
+      "Entries": [
+        "Sandworm Damage Hit Body_03 -- サンドワーム\u3000ダメージヒット\u3000体_03"
+      ]
+    },
+    {
+      "ID": 625004,
+      "Entries": [
+        "Sandworm Damage Hit Body_04 -- サンドワーム\u3000ダメージヒット\u3000体_04"
+      ]
+    },
+    {
+      "ID": 625005,
+      "Entries": [
+        "Sandworm Damage Hit Body_05 -- サンドワーム\u3000ダメージヒット\u3000体_05"
+      ]
+    },
+    {
+      "ID": 625006,
+      "Entries": [
+        "Sandworm Damage Hit Body_06 -- サンドワーム\u3000ダメージヒット\u3000体_06"
+      ]
+    },
+    {
+      "ID": 625007,
+      "Entries": [
+        "Sandworm Damage Hit Body_07 -- サンドワーム\u3000ダメージヒット\u3000体_07"
+      ]
+    },
+    {
+      "ID": 625008,
+      "Entries": [
+        "Sandworm Damage Hit Body_08 -- サンドワーム\u3000ダメージヒット\u3000体_08"
+      ]
+    },
+    {
+      "ID": 625009,
+      "Entries": [
+        "Sandworm Damage Hit Body_09 -- サンドワーム\u3000ダメージヒット\u3000体_09"
+      ]
+    },
+    {
+      "ID": 625010,
+      "Entries": [
+        "Sandworm Damage Hit Body_10 -- サンドワーム\u3000ダメージヒット\u3000体_10"
+      ]
+    },
+    {
+      "ID": 625011,
+      "Entries": [
+        "Sandworm Damage Hit Body_11 -- サンドワーム\u3000ダメージヒット\u3000体_11"
+      ]
+    },
+    {
+      "ID": 625012,
+      "Entries": [
+        "Sandworm Damage Hit Body_12 -- サンドワーム\u3000ダメージヒット\u3000体_12"
+      ]
+    },
+    {
+      "ID": 625013,
+      "Entries": [
+        "Sandworm Damage Hit Body_13 -- サンドワーム\u3000ダメージヒット\u3000体_13"
+      ]
+    },
+    {
+      "ID": 625014,
+      "Entries": [
+        "Sandworm Damage Hit Body_14 -- サンドワーム\u3000ダメージヒット\u3000体_14"
+      ]
+    },
+    {
+      "ID": 625015,
+      "Entries": [
+        "Sandworm damage hit body_15 -- サンドワーム\u3000ダメージヒット\u3000体_15"
+      ]
+    },
+    {
+      "ID": 625016,
+      "Entries": [
+        "Sandworm Damage Hit Body_16 -- サンドワーム\u3000ダメージヒット\u3000体_16"
+      ]
+    },
+    {
+      "ID": 625017,
+      "Entries": [
+        "Sandworm damage hit body_17 -- サンドワーム\u3000ダメージヒット\u3000体_17"
+      ]
+    },
+    {
+      "ID": 625018,
+      "Entries": [
+        "Sandworm damage hit body_18 -- サンドワーム\u3000ダメージヒット\u3000体_18"
+      ]
+    },
+    {
+      "ID": 625019,
+      "Entries": [
+        "Sandworm Damage Hit Body_19 -- サンドワーム\u3000ダメージヒット\u3000体_19"
+      ]
+    },
+    {
+      "ID": 625020,
+      "Entries": [
+        "Sandworm damage hit body_20 -- サンドワーム\u3000ダメージヒット\u3000体_20"
+      ]
+    },
+    {
+      "ID": 625021,
+      "Entries": [
+        "Sandworm Damage Hit Body_21 -- サンドワーム\u3000ダメージヒット\u3000体_21"
+      ]
+    },
+    {
+      "ID": 625022,
+      "Entries": [
+        "Sandworm Damage Hit Body_22 -- サンドワーム\u3000ダメージヒット\u3000体_22"
+      ]
+    },
+    {
+      "ID": 625023,
+      "Entries": [
+        "Sandworm Damage Hit Body_23 -- サンドワーム\u3000ダメージヒット\u3000体_23"
+      ]
+    },
+    {
+      "ID": 625024,
+      "Entries": [
+        "Sandworm Damage Hit Body_24 -- サンドワーム\u3000ダメージヒット\u3000体_24"
+      ]
+    },
+    {
+      "ID": 625025,
+      "Entries": [
+        "Sandworm damage hit body_25 -- サンドワーム\u3000ダメージヒット\u3000体_25"
+      ]
+    },
+    {
+      "ID": 625026,
+      "Entries": [
+        "Sandworm damage hit body_26 -- サンドワーム\u3000ダメージヒット\u3000体_26"
+      ]
+    },
+    {
+      "ID": 625027,
+      "Entries": [
+        "Sandworm Damage Hit Body_27 -- サンドワーム\u3000ダメージヒット\u3000体_27"
+      ]
+    },
+    {
+      "ID": 625028,
+      "Entries": [
+        "Sandworm damage hit body_28 -- サンドワーム\u3000ダメージヒット\u3000体_28"
+      ]
+    },
+    {
+      "ID": 625100,
+      "Entries": [
+        "Sandworm body spark after HU -- サンドワーム\u3000HU後本体スパーク"
+      ]
+    },
+    {
+      "ID": 625110,
+      "Entries": [
+        "Sandworm Charge Spark after HU_801 -- サンドワーム\u3000HU後チャージスパーク_801"
+      ]
+    },
+    {
+      "ID": 625111,
+      "Entries": [
+        "Sandworm Charge Spark after HU_802 -- サンドワーム\u3000HU後チャージスパーク_802"
+      ]
+    },
+    {
+      "ID": 625112,
+      "Entries": [
+        "Sandworm Charge Spark after HU_803 -- サンドワーム\u3000HU後チャージスパーク_803"
+      ]
+    },
+    {
+      "ID": 625200,
+      "Entries": [
+        "Sandworm Dora reception status_1 -- サンドワーム\u3000ドーラ受付状態_1"
+      ]
+    },
+    {
+      "ID": 625201,
+      "Entries": [
+        "Sandworm Dora reception status_2 -- サンドワーム\u3000ドーラ受付状態_2"
+      ]
+    },
+    {
+      "ID": 625202,
+      "Entries": [
+        "Sandworm Dora reception status_3 -- サンドワーム\u3000ドーラ受付状態_3"
+      ]
+    },
+    {
+      "ID": 625203,
+      "Entries": [
+        "Sandworm Dora reception status_4 -- サンドワーム\u3000ドーラ受付状態_4"
+      ]
+    },
+    {
+      "ID": 625210,
+      "Entries": [
+        "Sandworm secondary barrier is being deployed -- サンドワーム\u3000二次バリア展開中"
+      ]
+    },
+    {
+      "ID": 625300,
+      "Entries": [
+        "Sandworm underground moving marker -- サンドワーム\u3000地中移動中マーカー"
+      ]
+    },
+    {
+      "ID": 813500,
+      "Entries": [
+        "Miyatake Strong Enemy, Pal Charged State -- 宮武強敵\u3000溜めパルチャージ状態"
+      ]
+    },
+    {
+      "ID": 813510,
+      "Entries": [
+        "Miyatake Strong Enemy HU_Body -- 宮武強敵\u3000HU_本体"
+      ]
+    },
+    {
+      "ID": 813511,
+      "Entries": [
+        "Miyatake Strong Enemy HU_Pile -- 宮武強敵\u3000HU_パイル"
+      ]
+    },
+    {
+      "ID": 813512,
+      "Entries": [
+        "Miyatake Strong Enemy HU1_3 -- 宮武強敵\u3000HU1_3"
+      ]
+    },
+    {
+      "ID": 813520,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_1 -- 宮武強敵\u3000HU2_1"
+      ]
+    },
+    {
+      "ID": 813521,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_2 -- 宮武強敵\u3000HU2_2"
+      ]
+    },
+    {
+      "ID": 813522,
+      "Entries": [
+        "Miyatake Strong Enemy HU2_3 -- 宮武強敵\u3000HU2_3"
+      ]
+    },
+    {
+      "ID": 814500,
+      "Entries": [
+        "Miyatake Strong Enemy_Bird Leg Charge -- 宮武強敵_鳥脚\u3000チャージ"
+      ]
+    },
+    {
+      "ID": 820000,
+      "Entries": [
+        "hidden test -- 姿隠しテスト"
+      ]
+    },
+    {
+      "ID": 820001,
+      "Entries": [
+        "Toton test -- 土遁テスト"
+      ]
+    },
+    {
+      "ID": 820010,
+      "Entries": [
+        "Dust smoke SFX test -- 土煙SFXテスト"
+      ]
+    },
+    {
+      "ID": 851000,
+      "Entries": [
+        "c8510 Resident SFX -- c8510\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 852000,
+      "Entries": [
+        "Radar resident SFX -- レーダー\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 853000,
+      "Entries": [
+        "Mining ship weak point 1st right shoulder -- 採掘艦\u3000弱点部位\u30001基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853001,
+      "Entries": [
+        "Mining ship weak point 1st left shoulder -- 採掘艦\u3000弱点部位\u30001基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853002,
+      "Entries": [
+        "Mining ship weak point 1st right elbow -- 採掘艦\u3000弱点部位\u30001基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853003,
+      "Entries": [
+        "Mining ship weak point 1st left elbow -- 採掘艦\u3000弱点部位\u30001基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853010,
+      "Entries": [
+        "Mining ship weak point 2nd right shoulder -- 採掘艦\u3000弱点部位\u30002基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853011,
+      "Entries": [
+        "Mining ship weak point 2nd left shoulder -- 採掘艦\u3000弱点部位\u30002基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853012,
+      "Entries": [
+        "Mining ship weak point 2nd right elbow -- 採掘艦\u3000弱点部位\u30002基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853013,
+      "Entries": [
+        "Mining ship weak point 2nd left elbow -- 採掘艦\u3000弱点部位\u30002基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853020,
+      "Entries": [
+        "Mining ship weak point 3rd right shoulder -- 採掘艦\u3000弱点部位\u30003基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853021,
+      "Entries": [
+        "Mining ship weak point 3rd left shoulder -- 採掘艦\u3000弱点部位\u30003基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853022,
+      "Entries": [
+        "Mining ship weak point 3rd right elbow -- 採掘艦\u3000弱点部位\u30003基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853023,
+      "Entries": [
+        "Mining ship weak point 3rd left elbow -- 採掘艦\u3000弱点部位\u30003基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853070,
+      "Entries": [
+        "Mining ship Weak spot Highlight 1 -- 採掘艦\u3000弱点部位\u3000目玉\u30001"
+      ]
+    },
+    {
+      "ID": 853071,
+      "Entries": [
+        "Mining ship Weak spot Eyeball 2 -- 採掘艦\u3000弱点部位\u3000目玉\u30002"
+      ]
+    },
+    {
+      "ID": 853072,
+      "Entries": [
+        "Mining ship Weak spot Eyeball 3 -- 採掘艦\u3000弱点部位\u3000目玉\u30003"
+      ]
+    },
+    {
+      "ID": 853080,
+      "Entries": [
+        "Mining ship weak point core 1 -- 採掘艦\u3000弱点部位\u3000コア\u30001"
+      ]
+    },
+    {
+      "ID": 853081,
+      "Entries": [
+        "Mining ship weak point core 2 -- 採掘艦\u3000弱点部位\u3000コア\u30002"
+      ]
+    },
+    {
+      "ID": 853082,
+      "Entries": [
+        "Mining ship weak point core 3 -- 採掘艦\u3000弱点部位\u3000コア\u30003"
+      ]
+    },
+    {
+      "ID": 853090,
+      "Entries": [
+        "Mining ship weak point connection part 1-2 right -- 採掘艦\u3000弱点部位\u3000接続部\u30001-2 右"
+      ]
+    },
+    {
+      "ID": 853091,
+      "Entries": [
+        "Mining ship weak point connection part 1-2 left -- 採掘艦\u3000弱点部位\u3000接続部\u30001-2 左"
+      ]
+    },
+    {
+      "ID": 853092,
+      "Entries": [
+        "Mining ship weak point connection part 2-3 right -- 採掘艦\u3000弱点部位\u3000接続部\u30002-3 右"
+      ]
+    },
+    {
+      "ID": 853093,
+      "Entries": [
+        "Mining ship weak point connection part 2-3 left -- 採掘艦\u3000弱点部位\u3000接続部\u30002-3 左"
+      ]
+    },
+    {
+      "ID": 853100,
+      "Entries": [
+        "Mining ship weak point hit 1st right shoulder -- 採掘艦\u3000弱点ヒット\u30001基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853101,
+      "Entries": [
+        "Mining ship weak point hit 1st left shoulder -- 採掘艦\u3000弱点ヒット\u30001基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853102,
+      "Entries": [
+        "Mining ship weak point hit 1st right elbow -- 採掘艦\u3000弱点ヒット\u30001基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853103,
+      "Entries": [
+        "Mining ship weak point hit 1st left elbow -- 採掘艦\u3000弱点ヒット\u30001基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853110,
+      "Entries": [
+        "Mining ship weak point hit 2nd right shoulder -- 採掘艦\u3000弱点ヒット\u30002基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853111,
+      "Entries": [
+        "Mining ship weak point hit 2nd left shoulder -- 採掘艦\u3000弱点ヒット\u30002基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853112,
+      "Entries": [
+        "Mining ship weak point hit 2nd right elbow -- 採掘艦\u3000弱点ヒット\u30002基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853113,
+      "Entries": [
+        "Mining ship weak point hit 2nd left elbow -- 採掘艦\u3000弱点ヒット\u30002基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853120,
+      "Entries": [
+        "Mining ship weak point hit 3rd unit right shoulder -- 採掘艦\u3000弱点ヒット\u30003基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853121,
+      "Entries": [
+        "Mining ship weak point hit 3rd unit left shoulder -- 採掘艦\u3000弱点ヒット\u30003基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853122,
+      "Entries": [
+        "Mining ship weak point hit 3rd right elbow -- 採掘艦\u3000弱点ヒット\u30003基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853123,
+      "Entries": [
+        "Mining ship weak point hit 3rd left elbow -- 採掘艦\u3000弱点ヒット\u30003基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853170,
+      "Entries": [
+        "Mining ship weak point hit eyeball 1 -- 採掘艦\u3000弱点ヒット\u3000目玉\u30001"
+      ]
+    },
+    {
+      "ID": 853171,
+      "Entries": [
+        "Mining ship weak point hit eyeball 2 -- 採掘艦\u3000弱点ヒット\u3000目玉\u30002"
+      ]
+    },
+    {
+      "ID": 853172,
+      "Entries": [
+        "Mining ship weak point hit eyeball 3 -- 採掘艦\u3000弱点ヒット\u3000目玉\u30003"
+      ]
+    },
+    {
+      "ID": 853180,
+      "Entries": [
+        "Mining ship weak point hit core 1 -- 採掘艦\u3000弱点ヒット\u3000コア\u30001"
+      ]
+    },
+    {
+      "ID": 853181,
+      "Entries": [
+        "Mining ship weak point hit core 2 -- 採掘艦\u3000弱点ヒット\u3000コア\u30002"
+      ]
+    },
+    {
+      "ID": 853182,
+      "Entries": [
+        "Mining ship weak point hit core 3 -- 採掘艦\u3000弱点ヒット\u3000コア\u30003"
+      ]
+    },
+    {
+      "ID": 853190,
+      "Entries": [
+        "Mining ship weak point hit connection part 1-2 right -- 採掘艦\u3000弱点ヒット\u3000接続部\u30001-2 右"
+      ]
+    },
+    {
+      "ID": 853191,
+      "Entries": [
+        "Mining ship weak point hit connection part 1-2 left -- 採掘艦\u3000弱点ヒット\u3000接続部\u30001-2 左"
+      ]
+    },
+    {
+      "ID": 853192,
+      "Entries": [
+        "Mining ship weak point hit connection part 2-3 right -- 採掘艦\u3000弱点ヒット\u3000接続部\u30002-3 右"
+      ]
+    },
+    {
+      "ID": 853193,
+      "Entries": [
+        "Mining ship weak point hit connection part 2-3 left -- 採掘艦\u3000弱点ヒット\u3000接続部\u30002-3 左"
+      ]
+    },
+    {
+      "ID": 853200,
+      "Entries": [
+        "Mining ship weak point destruction 1st unit right shoulder -- 採掘艦\u3000弱点破壊\u30001基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853201,
+      "Entries": [
+        "Mining ship weak point destruction 1st unit left shoulder -- 採掘艦\u3000弱点破壊\u30001基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853202,
+      "Entries": [
+        "Mining ship weak point destruction 1st right elbow -- 採掘艦\u3000弱点破壊\u30001基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853203,
+      "Entries": [
+        "Mining ship weak point destruction 1st left elbow -- 採掘艦\u3000弱点破壊\u30001基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853210,
+      "Entries": [
+        "Mining ship weak point destruction 2nd unit right shoulder -- 採掘艦\u3000弱点破壊\u30002基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853211,
+      "Entries": [
+        "Mining ship weak point destruction 2nd unit left shoulder -- 採掘艦\u3000弱点破壊\u30002基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853212,
+      "Entries": [
+        "Mining ship weak point destruction 2nd right elbow -- 採掘艦\u3000弱点破壊\u30002基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853213,
+      "Entries": [
+        "Mining ship weak point destruction 2nd left elbow -- 採掘艦\u3000弱点破壊\u30002基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853220,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit right shoulder -- 採掘艦\u3000弱点破壊\u30003基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853221,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit left shoulder -- 採掘艦\u3000弱点破壊\u30003基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853222,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit right elbow -- 採掘艦\u3000弱点破壊\u30003基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853223,
+      "Entries": [
+        "Mining ship weak point destruction 3rd unit left elbow -- 採掘艦\u3000弱点破壊\u30003基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853270,
+      "Entries": [
+        "Mining ship weak point destruction highlight 1 -- 採掘艦\u3000弱点破壊\u3000目玉\u30001"
+      ]
+    },
+    {
+      "ID": 853271,
+      "Entries": [
+        "Mining ship weak point destruction eyeball 2 -- 採掘艦\u3000弱点破壊\u3000目玉\u30002"
+      ]
+    },
+    {
+      "ID": 853272,
+      "Entries": [
+        "Mining ship weak point destruction eyeball 3 -- 採掘艦\u3000弱点破壊\u3000目玉\u30003"
+      ]
+    },
+    {
+      "ID": 853280,
+      "Entries": [
+        "Mining ship weak point destruction core 1 -- 採掘艦\u3000弱点破壊\u3000コア\u30001"
+      ]
+    },
+    {
+      "ID": 853281,
+      "Entries": [
+        "Mining ship weak point destruction core 2 -- 採掘艦\u3000弱点破壊\u3000コア\u30002"
+      ]
+    },
+    {
+      "ID": 853282,
+      "Entries": [
+        "Mining ship weak point destruction core 3 -- 採掘艦\u3000弱点破壊\u3000コア\u30003"
+      ]
+    },
+    {
+      "ID": 853290,
+      "Entries": [
+        "Mining ship weak point destruction connection part 1-2 right -- 採掘艦\u3000弱点破壊\u3000接続部\u30001-2\u3000右"
+      ]
+    },
+    {
+      "ID": 853291,
+      "Entries": [
+        "Mining ship weak point destruction connection part 1-2 left -- 採掘艦\u3000弱点破壊\u3000接続部\u30001-2\u3000左"
+      ]
+    },
+    {
+      "ID": 853292,
+      "Entries": [
+        "Mining ship weak point destruction connection part 2-3 right -- 採掘艦\u3000弱点破壊\u3000接続部\u30002-3\u3000右"
+      ]
+    },
+    {
+      "ID": 853293,
+      "Entries": [
+        "Mining ship weak point destruction connection part 2-3 left -- 採掘艦\u3000弱点破壊\u3000接続部\u30002-3\u3000左"
+      ]
+    },
+    {
+      "ID": 853300,
+      "Entries": [
+        "Mining ship floating eyeball 1st unit -- 採掘艦\u3000目玉浮遊中\u30001基目"
+      ]
+    },
+    {
+      "ID": 853301,
+      "Entries": [
+        "Mining ship floating eyeball 2nd unit -- 採掘艦\u3000目玉浮遊中\u30002基目"
+      ]
+    },
+    {
+      "ID": 853302,
+      "Entries": [
+        "Mining ship floating eyeball 3rd unit -- 採掘艦\u3000目玉浮遊中\u30003基目"
+      ]
+    },
+    {
+      "ID": 853400,
+      "Entries": [
+        "Mining ship weak point emphasis 1st right shoulder -- 採掘艦\u3000弱点部位強調\u30001基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853401,
+      "Entries": [
+        "Mining ship weak point emphasis 1st left shoulder -- 採掘艦\u3000弱点部位強調\u30001基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853402,
+      "Entries": [
+        "Mining ship weak point emphasis 1st right elbow -- 採掘艦\u3000弱点部位強調\u30001基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853403,
+      "Entries": [
+        "Mining ship weak point emphasis 1st left elbow -- 採掘艦\u3000弱点部位強調\u30001基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853410,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd unit right shoulder -- 採掘艦\u3000弱点部位強調\u30002基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853411,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd left shoulder -- 採掘艦\u3000弱点部位強調\u30002基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853412,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd right elbow -- 採掘艦\u3000弱点部位強調\u30002基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853413,
+      "Entries": [
+        "Mining ship weak point emphasis 2nd left elbow -- 採掘艦\u3000弱点部位強調\u30002基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853420,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit right shoulder -- 採掘艦\u3000弱点部位強調\u30003基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853421,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit left shoulder -- 採掘艦\u3000弱点部位強調\u30003基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853422,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd unit right elbow -- 採掘艦\u3000弱点部位強調\u30003基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853423,
+      "Entries": [
+        "Mining ship weak point emphasis 3rd left elbow -- 採掘艦\u3000弱点部位強調\u30003基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853500,
+      "Entries": [
+        "Mining ship production machine gun 1st right 1 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右1"
+      ]
+    },
+    {
+      "ID": 853501,
+      "Entries": [
+        "Mining ship production machine gun 1st right 2 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右2"
+      ]
+    },
+    {
+      "ID": 853502,
+      "Entries": [
+        "Mining ship production machine gun 1st right 3 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右3"
+      ]
+    },
+    {
+      "ID": 853503,
+      "Entries": [
+        "Mining ship production machine gun 1st right 4 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右4"
+      ]
+    },
+    {
+      "ID": 853504,
+      "Entries": [
+        "Mining ship production machine gun 1st right 5 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右5"
+      ]
+    },
+    {
+      "ID": 853505,
+      "Entries": [
+        "Mining ship production machine gun 1st right 6 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右6"
+      ]
+    },
+    {
+      "ID": 853506,
+      "Entries": [
+        "Mining ship production machine gun 1st right 7 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右7"
+      ]
+    },
+    {
+      "ID": 853507,
+      "Entries": [
+        "Mining ship production machine gun 1st right 8 -- 採掘艦\u3000演出マシンガン\u30001基目\u3000右8"
+      ]
+    },
+    {
+      "ID": 853590,
+      "Entries": [
+        "Mining ship performance machine gun for battery -- 採掘艦\u3000演出マシンガン\u3000砲台用"
+      ]
+    },
+    {
+      "ID": 853600,
+      "Entries": [
+        "Mining ship drill weak point HIT -- 採掘艦\u3000ドリル\u3000弱点HIT"
+      ]
+    },
+    {
+      "ID": 853610,
+      "Entries": [
+        "Mining ship drill weak point HIT -- 採掘艦\u3000ドリル\u3000弱点HIT"
+      ]
+    },
+    {
+      "ID": 853700,
+      "Entries": [
+        "Mining ship part destruction smoke 1st unit right shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30001基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853701,
+      "Entries": [
+        "Mining ship part destruction smoke 1st left shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30001基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853702,
+      "Entries": [
+        "Mining ship part destruction smoke 1st right elbow -- 採掘艦\u3000部位破壊\u3000煙\u30001基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853703,
+      "Entries": [
+        "Mining ship Part destruction Smoke 1st left elbow -- 採掘艦\u3000部位破壊\u3000煙\u30001基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853710,
+      "Entries": [
+        "Mining ship part destruction smoke 2nd right shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30002基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853711,
+      "Entries": [
+        "Mining ship part destruction smoke 2nd left shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30002基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853712,
+      "Entries": [
+        "Mining ship Part destruction Smoke 2nd right elbow -- 採掘艦\u3000部位破壊\u3000煙\u30002基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853713,
+      "Entries": [
+        "Mining ship Part destruction Smoke 2nd left elbow -- 採掘艦\u3000部位破壊\u3000煙\u30002基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 853720,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit right shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30003基目\u3000右肩"
+      ]
+    },
+    {
+      "ID": 853721,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit left shoulder -- 採掘艦\u3000部位破壊\u3000煙\u30003基目\u3000左肩"
+      ]
+    },
+    {
+      "ID": 853722,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit right elbow -- 採掘艦\u3000部位破壊\u3000煙\u30003基目\u3000右肘"
+      ]
+    },
+    {
+      "ID": 853723,
+      "Entries": [
+        "Mining ship part destruction smoke 3rd unit left elbow -- 採掘艦\u3000部位破壊\u3000煙\u30003基目\u3000左肘"
+      ]
+    },
+    {
+      "ID": 903100,
+      "Entries": [
+        "c9031 Resident SFX -- c9031\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 920100,
+      "Entries": [
+        "c9201 Resident SFX -- c9201\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 940000,
+      "Entries": [
+        "c9400 Resident SFX -- c9400\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 941000,
+      "Entries": [
+        "c9410 Resident SFX -- c9410\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 942000,
+      "Entries": [
+        "c9420 Resident SFX -- c9420\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 2140000,
+      "Entries": [
+        "c5100_large transport helicopter_slightly damaged -- c5100_大型輸送ヘリ_小破"
+      ]
+    },
+    {
+      "ID": 2140010,
+      "Entries": [
+        "c5100_large transport helicopter_medium damaged -- c5100_大型輸送ヘリ_中破"
+      ]
+    },
+    {
+      "ID": 2170000,
+      "Entries": [
+        "Security MTSFX -- 警備MTSFX"
+      ]
+    },
+    {
+      "ID": 2170001,
+      "Entries": [
+        "4 leg light SFX -- 4脚ライトSFX"
+      ]
+    },
+    {
+      "ID": 2170002,
+      "Entries": [
+        "communist light sfx -- 共産ライトSFX"
+      ]
+    },
+    {
+      "ID": 2170003,
+      "Entries": [
+        "communist light sfx -- 共産ライトSFX"
+      ]
+    },
+    {
+      "ID": 2170004,
+      "Entries": [
+        "tank light sfx -- 戦車ライトSFX"
+      ]
+    },
+    {
+      "ID": 2170005,
+      "Entries": [
+        "combat heli light sfx -- 戦闘ヘリライトSFX"
+      ]
+    },
+    {
+      "ID": 2170006,
+      "Entries": [
+        "communist light sfx -- 共産ライトSFX"
+      ]
+    },
+    {
+      "ID": 4200000,
+      "Entries": [
+        "communist light sfx -- 共産ライトSFX"
+      ]
+    },
+    {
+      "ID": 4200001,
+      "Entries": [
+        "4 leg light SFX -- 4脚ライトSFX"
+      ]
+    },
+    {
+      "ID": 5040000,
+      "Entries": [
+        "[Test] Atmospheric breakthrough: resident SFX of own aircraft when in EN infinite state -- 【テスト】大気圏突破：EN無限状態であるときに自機の常駐SFX"
+      ]
+    },
+    {
+      "ID": 6010000,
+      "Entries": [
+        "In front of the camera effect for production -- 演出用カメラ前効果"
+      ]
+    },
+    {
+      "ID": 9991000,
+      "Entries": [
+        "Special effects for markers 01 Moving target -- マーカー用特殊効果\u300001\u3000移動目標"
+      ]
+    },
+    {
+      "ID": 9991001,
+      "Entries": [
+        "Special effects for markers 02 Attention target -- マーカー用特殊効果\u300002\u3000注意目標"
+      ]
+    },
+    {
+      "ID": 9991002,
+      "Entries": [
+        "Special effects for markers 03 Defense target -- マーカー用特殊効果\u300003\u3000防衛目標"
+      ]
+    },
+    {
+      "ID": 9991003,
+      "Entries": [
+        "Special effects for markers for events -- マーカー用特殊効果\u3000イベント用"
+      ]
+    },
+    {
+      "ID": 9991004,
+      "Entries": [
+        "Special effects for markers TGT -- マーカー用特殊効果\u3000TGT"
+      ]
+    },
+    {
+      "ID": 9991005,
+      "Entries": [
+        "Special effects for markers, special standby -- マーカー用特殊効果\u3000特殊待機用"
+      ]
+    },
+    {
+      "ID": 9991006,
+      "Entries": [
+        "Special effects for markers 03 Attention target Lock-on dummy poly designation -- マーカー用特殊効果\u300003\u3000注意目標\u3000ロックオンダミポリ指定"
+      ]
+    },
+    {
+      "ID": 9991007,
+      "Entries": [
+        "Special effects for markers Check TGT -- マーカー用特殊効果\u3000調べるTGT"
+      ]
+    },
+    {
+      "ID": 9992000,
+      "Entries": [
+        "Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー"
+      ]
+    },
+    {
+      "ID": 9992001,
+      "Entries": [
+        "Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー"
+      ]
+    },
+    {
+      "ID": 9992002,
+      "Entries": [
+        "searchlight -- サーチライト"
+      ]
+    },
+    {
+      "ID": 9992003,
+      "Entries": [
+        "Searchlight for combat helicopters -- サーチライト\u3000戦闘ヘリ用"
+      ]
+    },
+    {
+      "ID": 10605040,
+      "Entries": [
+        "[Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab -- 【テスト】視認性トライアル\u3000大気圏突破\u3000アッシュ後期アサブ"
+      ]
+    },
+    {
+      "ID": 10605041,
+      "Entries": [
+        "[Test] Visibility Trial Atmospheric Breakthrough Ash Late Asab -- 【テスト】視認性トライアル\u3000大気圏突破\u3000アッシュ後期アサブ"
+      ]
+    },
+    {
+      "ID": 31003200,
+      "Entries": [
+        "[Test] Visibility trial_Flight MT camera eye 01 -- 【テスト】視認性トライアル_飛行MTカメラアイ01"
+      ]
+    },
+    {
+      "ID": 320010000,
+      "Entries": [
+        "c3200 resident SFX -- c3200\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 32509910,
+      "Entries": [
+        "c3250 camera eye -- c3250\u3000カメラアイ"
+      ]
+    },
+    {
+      "ID": 32509920,
+      "Entries": [
+        "c3250 Camera eye_Token enemy use -- c3250\u3000カメラアイ_トークン敵用"
+      ]
+    },
+    {
+      "ID": 330000,
+      "Entries": [
+        "c3300 Ghost hiding special effects -- c3300 ゴースト姿隠し用特殊効果"
+      ]
+    },
+    {
+      "ID": 330001,
+      "Entries": [
+        "c3300 Special effects for removing ghost appearance -- c3300 ゴースト姿隠し解除用特殊効果"
+      ]
+    },
+    {
+      "ID": 330002,
+      "Entries": [
+        "c3300 Ghost special standby concealment special effects -- c3300 ゴースト特殊待機姿隠し用特殊効果"
+      ]
+    },
+    {
+      "ID": 330003,
+      "Entries": [
+        "c3300 Ghost forced hiding special effects -- c3300 ゴースト強制姿隠し用特殊効果"
+      ]
+    },
+    {
+      "ID": 33003100,
+      "Entries": [
+        "c3300 Ghost MT (PA) PA -- c3300\u3000ゴーストMT（PA）PA"
+      ]
+    },
+    {
+      "ID": 33003200,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 01 -- 【テスト】視認性トライアル_ゴーストカメラアイ01"
+      ]
+    },
+    {
+      "ID": 33003210,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 02 -- 【テスト】視認性トライアル_ゴーストカメラアイ02"
+      ]
+    },
+    {
+      "ID": 33003220,
+      "Entries": [
+        "[Test] Visibility trial_Ghost camera eye 03 -- 【テスト】視認性トライアル_ゴーストカメラアイ03"
+      ]
+    },
+    {
+      "ID": 33006000,
+      "Entries": [
+        "c3300 Always-on PA special effects 1 -- c3300 常時展開PA特殊効果1"
+      ]
+    },
+    {
+      "ID": 33006001,
+      "Entries": [
+        "c3300 Always-on PA special effects 2 -- c3300 常時展開PA特殊効果2"
+      ]
+    },
+    {
+      "ID": 340010000,
+      "Entries": [
+        "c3400 resident SFX -- c3400\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 35005000,
+      "Entries": [
+        "c3500 Self-playing SFX -- c3500\u3000自己再生SFX"
+      ]
+    },
+    {
+      "ID": 36002100,
+      "Entries": [
+        "c3600 heat sink -- ｃ3600\u3000放熱板"
+      ]
+    },
+    {
+      "ID": 37009400,
+      "Entries": [
+        "c3700 Deleter Tattered camera eye -- c3700\u3000デリーター\u3000ボロボロ用カメラアイ"
+      ]
+    },
+    {
+      "ID": 40000000,
+      "Entries": [
+        "ADF Damage Hit Weakness -- ADF\u3000ダメージヒット\u3000弱点"
+      ]
+    },
+    {
+      "ID": 40000100,
+      "Entries": [
+        "ADF\u3000HU temporary -- ADF\u3000HU仮"
+      ]
+    },
+    {
+      "ID": 41000000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss for live bullet HU -- c4100\u3000人型重量級ボス 実弾HU用"
+      ]
+    },
+    {
+      "ID": 41000100,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss for ENHU -- c4100\u3000人型重量級ボス ENHU用"
+      ]
+    },
+    {
+      "ID": 41000500,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss resident ring frame thruster SFX for live ammunition -- c4100\u3000人型重量級ボス 実弾用常駐リングフレームスラスターSFX"
+      ]
+    },
+    {
+      "ID": 41000501,
+      "Entries": [
+        "c4100 Humanoid Heavyweight Boss Resident Ring Frame Thruster SFX for EN -- c4100\u3000人型重量級ボス EN用常駐リングフレームスラスターSFX"
+      ]
+    },
+    {
+      "ID": 41001000,
+      "Entries": [
+        "c4100 Humanoid heavyweight boss PA Crackling SFX -- c4100\u3000人型重量級ボス PA\u3000バチバチSFX"
+      ]
+    },
+    {
+      "ID": 41503100,
+      "Entries": [
+        "c4150 Special attack MT (PA) PA -- c4150\u3000特攻MT（PA）PA"
+      ]
+    },
+    {
+      "ID": 42000100,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2 -- c4200\u3000次世代プロトAC\u3000HU2"
+      ]
+    },
+    {
+      "ID": 42000101,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2 -- c4200\u3000次世代プロトAC\u3000HU2"
+      ]
+    },
+    {
+      "ID": 42000102,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2 -- c4200\u3000次世代プロトAC\u3000HU2"
+      ]
+    },
+    {
+      "ID": 42000103,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2 -- c4200\u3000次世代プロトAC\u3000HU2"
+      ]
+    },
+    {
+      "ID": 42000104,
+      "Entries": [
+        "c4200 Next Generation ProtoAC HU2 -- c4200\u3000次世代プロトAC\u3000HU2"
+      ]
+    },
+    {
+      "ID": 42006000,
+      "Entries": [
+        "c4200 Next Generation Proto AC PA Spark -- c4200\u3000次世代プロトAC\u3000PAスパーク"
+      ]
+    },
+    {
+      "ID": 42102000,
+      "Entries": [
+        "c4210 Next generation ProtoAC special effects for hiding afterimage -- c4210\u3000次世代プロトAC残像姿隠し用特殊効果"
+      ]
+    },
+    {
+      "ID": 42103000,
+      "Entries": [
+        "c4210 Next Generation ProtoAC Special Effects for Afterimage Hidden Release -- c4210\u3000次世代プロトAC残像姿隠し解除用特殊効果"
+      ]
+    },
+    {
+      "ID": 425020000,
+      "Entries": [
+        "c4250 Orbit Seed After HU Melange Wing Left -- c4250\u3000オービットシード\u3000HU後\u3000メランジ翅\u3000左"
+      ]
+    },
+    {
+      "ID": 425020001,
+      "Entries": [
+        "c4250 Orbit Seed After HU Melange Wings Right -- c4250\u3000オービットシード\u3000HU後\u3000メランジ翅\u3000右"
+      ]
+    },
+    {
+      "ID": 500090000,
+      "Entries": [
+        "c5000 Guard Mecha (Aerial) Rotor SFX -- c5000\u3000ガードメカ(空中)\u3000ローターSFX"
+      ]
+    },
+    {
+      "ID": 501000000,
+      "Entries": [
+        "c5010 For attitude maintenance thruster -- c5010\u3000姿勢維持スラスター用"
+      ]
+    },
+    {
+      "ID": 501000100,
+      "Entries": [
+        "c5010 For expanded poison fog range version -- c5010\u3000毒霧範囲拡大版用"
+      ]
+    },
+    {
+      "ID": 502000000,
+      "Entries": [
+        "c5020 Heavy guard mechanism main body furnace upper attack judgment SFX -- c5020\u3000重ガードメカ本体炉上部攻撃判定SFX"
+      ]
+    },
+    {
+      "ID": 502010000,
+      "Entries": [
+        "c5020 Heavy guard mecha body furnace weak point hit SFX -- c5020\u3000重ガードメカ本体炉弱点ヒットSFX"
+      ]
+    },
+    {
+      "ID": 502010001,
+      "Entries": [
+        "c5020 Heavy guard mech upper body furnace weak point hit SFX -- c5020\u3000重ガードメカ上半身炉弱点ヒットSFX"
+      ]
+    },
+    {
+      "ID": 502020000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Right Arm Spark -- c5020\u3000重ガードメカHU右腕火花"
+      ]
+    },
+    {
+      "ID": 502021000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Left Arm Spark -- c5020\u3000重ガードメカHU左腕火花"
+      ]
+    },
+    {
+      "ID": 502030000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Right Arm Aura -- c5020\u3000重ガードメカHU右腕オーラ"
+      ]
+    },
+    {
+      "ID": 502031000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Left Arm Aura -- c5020\u3000重ガードメカHU左腕オーラ"
+      ]
+    },
+    {
+      "ID": 502032000,
+      "Entries": [
+        "c5020 Heavy Guard Mecha HU Upper Body Furnace Aura -- c5020\u3000重ガードメカHU上半身炉オーラ"
+      ]
+    },
+    {
+      "ID": 502033000,
+      "Entries": [
+        "c5020 Heavy guard mechanism HU main body furnace upper aura -- c5020\u3000重ガードメカHU本体炉上部オーラ"
+      ]
+    },
+    {
+      "ID": 510080000,
+      "Entries": [
+        "c5100 Large transport helicopter damage expression_1 -- c5100\u3000大型輸送ヘリ\u3000ダメージ表現_1"
+      ]
+    },
+    {
+      "ID": 510081000,
+      "Entries": [
+        "c5100 Large transport helicopter damage expression_2 -- c5100\u3000大型輸送ヘリ\u3000ダメージ表現_2"
+      ]
+    },
+    {
+      "ID": 510090000,
+      "Entries": [
+        "c5100 large transport helicopter rotor SFX clockwise rotation front -- c5100\u3000大型輸送ヘリ\u3000ローターSFX\u3000右回転\u3000前"
+      ]
+    },
+    {
+      "ID": 512080000,
+      "Entries": [
+        "c5120 US Drone Rotor SFX -- ｃ5120 USドローン\u3000ローターSFX"
+      ]
+    },
+    {
+      "ID": 512090000,
+      "Entries": [
+        "c5120 US drone searchlight -- ｃ5120 USドローン\u3000サーチライト"
+      ]
+    },
+    {
+      "ID": 51500000,
+      "Entries": [
+        "c5150 combat helicopter -- ｃ5150 戦闘ヘリ"
+      ]
+    },
+    {
+      "ID": 515090000,
+      "Entries": [
+        "c5150 combat helicopter rotor SFX -- ｃ5150 戦闘ヘリ\u3000ローターSFX"
+      ]
+    },
+    {
+      "ID": 515090001,
+      "Entries": [
+        "c5150 combat helicopter rotor SFX tail rotor -- ｃ5150 戦闘ヘリ\u3000ローターSFX\u3000テールローター"
+      ]
+    },
+    {
+      "ID": 55009900,
+      "Entries": [
+        "c5500 biological weapon charred after death -- ｃ5500 生体兵器 死亡後焦げ"
+      ]
+    },
+    {
+      "ID": 605001000,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue -- ｃ6050 ファラオン サーチライト_プロローグ"
+      ]
+    },
+    {
+      "ID": 605001001,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue_Strong -- ｃ6050 ファラオン サーチライト_プロローグ_強"
+      ]
+    },
+    {
+      "ID": 605001002,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Prologue_Strong_On the Road -- ｃ6050 ファラオン サーチライト_プロローグ_強_道中"
+      ]
+    },
+    {
+      "ID": 605001010,
+      "Entries": [
+        "c6050 Pharaon Searchlight_Ocean City -- ｃ6050 ファラオン サーチライト_洋上の都市"
+      ]
+    },
+    {
+      "ID": 605001100,
+      "Entries": [
+        "c6050 Pharaon wing tip lights_red -- ｃ6050 ファラオン 翼端灯_赤"
+      ]
+    },
+    {
+      "ID": 605001101,
+      "Entries": [
+        "c6050 Pharaon wingtip lights_blue -- ｃ6050 ファラオン 翼端灯_青"
+      ]
+    },
+    {
+      "ID": 605001102,
+      "Entries": [
+        "c6050 Pharaon wing tip lights_yellow -- ｃ6050 ファラオン 翼端灯_黄"
+      ]
+    },
+    {
+      "ID": 605090000,
+      "Entries": [
+        "c6050 Pharaon Rotor SFX -- ｃ6050 ファラオン\u3000ローターSFX"
+      ]
+    },
+    {
+      "ID": 605090001,
+      "Entries": [
+        "c6050 Pharaon Rotor SFX left -- ｃ6050 ファラオン\u3000ローターSFX\u3000左"
+      ]
+    },
+    {
+      "ID": 605010000,
+      "Entries": [
+        "c6050 Pharaon PA -- ｃ6050 ファラオン PA"
+      ]
+    },
+    {
+      "ID": 610010000,
+      "Entries": [
+        "c6100 resident SFX -- c6100\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 64000000,
+      "Entries": [
+        "c6400 Part destruction instant SFX -- c6400\u3000部位破壊 瞬間SFX"
+      ]
+    },
+    {
+      "ID": 64000001,
+      "Entries": [
+        "c6400 Part destruction SFX during standby transition -- c6400\u3000部位破壊 待機遷移中SFX"
+      ]
+    },
+    {
+      "ID": 64000005,
+      "Entries": [
+        "c6400 Part destruction AP remaining half -- c6400\u3000部位破壊 AP残り半分"
+      ]
+    },
+    {
+      "ID": 64000100,
+      "Entries": [
+        "c6400 Part hit SFX -- c6400\u3000部位被弾SFX"
+      ]
+    },
+    {
+      "ID": 64000200,
+      "Entries": [
+        "c6400 Part weakness expression SFX -- c6400\u3000部位弱点表現SFX"
+      ]
+    },
+    {
+      "ID": 64009000,
+      "Entries": [
+        "c6400 sideways downloop SFX1 -- c6400\u3000横倒しダウンループSFX1"
+      ]
+    },
+    {
+      "ID": 64009001,
+      "Entries": [
+        "c6400 Sideways downloop SFX2 -- c6400\u3000横倒しダウンループSFX2"
+      ]
+    },
+    {
+      "ID": 64009002,
+      "Entries": [
+        "c6400 Sideways downloop SFX3 -- c6400\u3000横倒しダウンループSFX3"
+      ]
+    },
+    {
+      "ID": 64009003,
+      "Entries": [
+        "c6400 sideways downloop SFX4 -- c6400\u3000横倒しダウンループSFX4"
+      ]
+    },
+    {
+      "ID": 64009004,
+      "Entries": [
+        "c6400 sideways downloop SFX5 -- c6400\u3000横倒しダウンループSFX5"
+      ]
+    },
+    {
+      "ID": 64009005,
+      "Entries": [
+        "c6400 sideways downloop SFX6 -- c6400\u3000横倒しダウンループSFX6"
+      ]
+    },
+    {
+      "ID": 64009006,
+      "Entries": [
+        "c6400 sideways downloop SFX7 -- c6400\u3000横倒しダウンループSFX7"
+      ]
+    },
+    {
+      "ID": 64009007,
+      "Entries": [
+        "c6400 sideways downloop SFX8 -- c6400\u3000横倒しダウンループSFX8"
+      ]
+    },
+    {
+      "ID": 64200010,
+      "Entries": [
+        "c6420 Mining Ship Highlight Damage Hit Weakness -- c6420採掘艦目玉\u3000ダメージヒット\u3000弱点"
+      ]
+    },
+    {
+      "ID": 731010000,
+      "Entries": [
+        "c7310 Prarai PA -- ｃ7310 プラライ PA"
+      ]
+    },
+    {
+      "ID": 739040000,
+      "Entries": [
+        "c7390 D layer giant cannon anemone neck weak point hit SFX -- c7390\u3000D層巨大砲台アネモネ\u3000首元弱点ヒットSFX"
+      ]
+    },
+    {
+      "ID": 740000000,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 810 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000前部\u3000810"
+      ]
+    },
+    {
+      "ID": 740000001,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 811 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000前部\u3000811"
+      ]
+    },
+    {
+      "ID": 740000002,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion upon Death Front 812 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000前部\u3000812"
+      ]
+    },
+    {
+      "ID": 740000010,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 813 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000中央部\u3000813"
+      ]
+    },
+    {
+      "ID": 740000011,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 814 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000中央部\u3000814"
+      ]
+    },
+    {
+      "ID": 740000012,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 815 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000中央部\u3000815"
+      ]
+    },
+    {
+      "ID": 740000013,
+      "Entries": [
+        "c7400 Amphibious Assault Ship Fracture hole explosion upon death Center part 816 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000中央部\u3000816"
+      ]
+    },
+    {
+      "ID": 740000020,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 817 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000後部\u3000817"
+      ]
+    },
+    {
+      "ID": 740000021,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture hole explosion upon death Rear 818 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000後部\u3000818"
+      ]
+    },
+    {
+      "ID": 740000022,
+      "Entries": [
+        "C7400 Amphibious Assault Ship Fracture Hole Explosion Upon Death Rear 819 -- c7400\u3000強襲揚陸艦\u3000死亡時破砕孔爆発\u3000後部\u3000819"
+      ]
+    },
+    {
+      "ID": 801009900,
+      "Entries": [
+        "c8010 Resident SFX -- c8010\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 802009900,
+      "Entries": [
+        "c8020 Resident SFX -- c8020\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 803009900,
+      "Entries": [
+        "c8030 Resident SFX -- c8030\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 804001000,
+      "Entries": [
+        "c8040 Barrier -- c8040\u3000バリア"
+      ]
+    },
+    {
+      "ID": 804009900,
+      "Entries": [
+        "c8040 Resident SFX -- c8040\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 805009900,
+      "Entries": [
+        "c8050 resident SFX -- c8050\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 806009900,
+      "Entries": [
+        "c8060 Resident SFX -- c8060\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 807009900,
+      "Entries": [
+        "c8070 Resident SFX -- c8070\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 808009900,
+      "Entries": [
+        "c8080 Resident SFX -- c8080\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 809000000,
+      "Entries": [
+        "c8090 Resident SFX -- c8090\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 809009900,
+      "Entries": [
+        "c8090 Resident SFX -- c8090\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 810009900,
+      "Entries": [
+        "c8100 Resident SFX -- c8100\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 811009900,
+      "Entries": [
+        "c8110 Resident SFX -- c8110\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 812009900,
+      "Entries": [
+        "c8120 Resident SFX -- c8120\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 813009900,
+      "Entries": [
+        "c8130 Resident SFX -- c8130\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 814009900,
+      "Entries": [
+        "c8140 Resident SFX -- c8140\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 840009900,
+      "Entries": [
+        "c8400 resident SFX -- c8400\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 841009900,
+      "Entries": [
+        "c8410 Resident SFX -- c8410\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 842009900,
+      "Entries": [
+        "c8420 Resident SFX -- c8420\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 843009900,
+      "Entries": [
+        "c8430 Resident SFX -- c8430\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 844009900,
+      "Entries": [
+        "c8440 Resident SFX -- c8440\u3000常駐SFX"
+      ]
+    },
+    {
+      "ID": 853501000,
+      "Entries": [
+        "Mining ship centerpiece shooting barrier -- 採掘艦\u3000目玉\u3000射撃バリア"
+      ]
+    },
+    {
+      "ID": 853601100,
+      "Entries": [
+        "Mining Ship Drill Weaknesses -- 採掘艦\u3000ドリル\u3000弱点"
+      ]
+    },
+    {
+      "ID": 853601110,
+      "Entries": [
+        "Mining ship drill weak point HIT -- 採掘艦\u3000ドリル\u3000弱点HIT"
+      ]
+    },
+    {
+      "ID": 853702010,
+      "Entries": [
+        "Mining ship knee cover damage part 1 -- 採掘艦\u3000膝カバー\u3000ダメージ\u3000部位1"
+      ]
+    },
+    {
+      "ID": 853702020,
+      "Entries": [
+        "Mining ship knee cover damage part 2 -- 採掘艦\u3000膝カバー\u3000ダメージ\u3000部位2"
+      ]
+    },
+    {
+      "ID": 853702030,
+      "Entries": [
+        "Mining ship knee cover damage part 3 -- 採掘艦\u3000膝カバー\u3000ダメージ\u3000部位3"
+      ]
+    },
+    {
+      "ID": 853702040,
+      "Entries": [
+        "Mining ship knee cover damage part 4 -- 採掘艦\u3000膝カバー\u3000ダメージ\u3000部位4"
+      ]
+    },
+    {
+      "ID": 853703010,
+      "Entries": [
+        "Mining ship knee cover black smoke part 1 -- 採掘艦\u3000膝カバー\u3000黒煙\u3000部位1"
+      ]
+    },
+    {
+      "ID": 853703020,
+      "Entries": [
+        "Mining ship knee cover black smoke part 2 -- 採掘艦\u3000膝カバー\u3000黒煙\u3000部位2"
+      ]
+    },
+    {
+      "ID": 853703030,
+      "Entries": [
+        "Mining ship knee cover black smoke part 3 -- 採掘艦\u3000膝カバー\u3000黒煙\u3000部位3"
+      ]
+    },
+    {
+      "ID": 853703040,
+      "Entries": [
+        "Mining ship knee cover black smoke part 4 -- 採掘艦\u3000膝カバー\u3000黒煙\u3000部位4"
+      ]
+    },
+    {
+      "ID": 853802010,
+      "Entries": [
+        "Mining ship fire control damage -- 採掘艦\u3000火器管制\u3000ダメージ"
+      ]
+    },
+    {
+      "ID": 853803010,
+      "Entries": [
+        "Mining ship fire control black smoke -- 採掘艦\u3000火器管制\u3000黒煙"
+      ]
+    },
+    {
+      "ID": 854000010,
+      "Entries": [
+        "c8540_Strong enemy_Blade resident SFX_Development -- c8540_強敵_ブレード常駐SFX_展開"
+      ]
+    },
+    {
+      "ID": 854000012,
+      "Entries": [
+        "c8540_Strong enemy_Resident SFX when limit is released_Deployment -- c8540_強敵_リミット解除時常駐SFX_展開"
+      ]
+    },
+    {
+      "ID": 998000000,
+      "Entries": [
+        "c9980 Resident SFX for environmental effects Under the wall -- c9980\u3000環境効果用常駐SFX\u3000壁下"
+      ]
+    },
+    {
+      "ID": 998000010,
+      "Entries": [
+        "c9980 Resident SFX for environmental effects Wall-mounted -- c9980\u3000環境効果用常駐SFX\u3000壁上"
+      ]
+    },
+    {
+      "ID": 998000020,
+      "Entries": [
+        "c9980 Resident SFX B layer for environmental effects -- c9980\u3000環境効果用常駐SFX\u3000B層"
+      ]
+    },
+    {
+      "ID": 998000040,
+      "Entries": [
+        "FP version special effects in front of screen snowy mountain -- FP版\u3000画面前用特殊効果\u3000雪山"
+      ]
+    },
+    {
+      "ID": 998000050,
+      "Entries": [
+        "FP version Special effects for screen front Grakyani -- FP版\u3000画面前用特殊効果\u3000グラキャニ"
+      ]
+    },
+    {
+      "ID": 998000060,
+      "Entries": [
+        "FP version Special effects in front of the screen Communist town -- FP版\u3000画面前用特殊効果\u3000共産党街"
+      ]
+    },
+    {
+      "ID": 998000070,
+      "Entries": [
+        "FP version Special effects for screen A layer -- FP版\u3000画面前用特殊効果\u3000A層"
+      ]
+    },
+    {
+      "ID": 998000100,
+      "Entries": [
+        "General-purpose emphasis SFX red -- 汎用強調SFX\u3000赤色"
+      ]
+    },
+    {
+      "ID": 998000110,
+      "Entries": [
+        "Persistent nerve load -- 神経負荷永続"
+      ]
+    },
+    {
+      "ID": 998000200,
+      "Entries": [
+        "Special effects for markers 01 Moving target -- マーカー用特殊効果\u300001\u3000移動目標"
+      ]
+    },
+    {
+      "ID": 998000201,
+      "Entries": [
+        "Special effects for markers 02 Attention target -- マーカー用特殊効果\u300002\u3000注意目標"
+      ]
+    },
+    {
+      "ID": 998000202,
+      "Entries": [
+        "Special effects for markers 03 Defense target -- マーカー用特殊効果\u300003\u3000防衛目標"
+      ]
+    },
+    {
+      "ID": 998000203,
+      "Entries": [
+        "Special effects for markers for events -- マーカー用特殊効果\u3000イベント用"
+      ]
+    },
+    {
+      "ID": 998000204,
+      "Entries": [
+        "Special effects for markers TGT -- マーカー用特殊効果\u3000TGT"
+      ]
+    },
+    {
+      "ID": 998000205,
+      "Entries": [
+        "Special effects for markers, special standby -- マーカー用特殊効果\u3000特殊待機用"
+      ]
+    },
+    {
+      "ID": 998000206,
+      "Entries": [
+        "Special effects for markers 03 Attention target Lock-on dummy poly designation -- マーカー用特殊効果\u300003\u3000注意目標\u3000ロックオンダミポリ指定"
+      ]
+    },
+    {
+      "ID": 998000210,
+      "Entries": [
+        "TGT01 for mining ships -- 採掘艦用TGT01"
+      ]
+    },
+    {
+      "ID": 998000211,
+      "Entries": [
+        "TGT02 for mining ships -- 採掘艦用TGT02"
+      ]
+    },
+    {
+      "ID": 998000212,
+      "Entries": [
+        "TGT03333333 for mining ships -- 採掘艦用TGT03333333"
+      ]
+    },
+    {
+      "ID": 998000300,
+      "Entries": [
+        "Hacking SFX -- ハッキング中SFX"
+      ]
+    },
+    {
+      "ID": 998000301,
+      "Entries": [
+        "Hacking SFX -- ハッキング中SFX"
+      ]
+    },
+    {
+      "ID": 998000302,
+      "Entries": [
+        "Hacking SFX -- ハッキング中SFX"
+      ]
+    },
+    {
+      "ID": 998000303,
+      "Entries": [
+        "Hacking completed SFX -- ハッキング完了SFX"
+      ]
+    },
+    {
+      "ID": 998000304,
+      "Entries": [
+        "Hacking completed SFX -- ハッキング完了SFX"
+      ]
+    },
+    {
+      "ID": 998000305,
+      "Entries": [
+        "Hacking completed SFX -- ハッキング完了SFX"
+      ]
+    },
+    {
+      "ID": 998000310,
+      "Entries": [
+        "Fabricated red light 1 -- でっち上げ赤色灯1"
+      ]
+    },
+    {
+      "ID": 998000311,
+      "Entries": [
+        "Fabricated red light 2 -- でっち上げ赤色灯2"
+      ]
+    },
+    {
+      "ID": 998000312,
+      "Entries": [
+        "Fabricated red light 3 -- でっち上げ赤色灯3"
+      ]
+    },
+    {
+      "ID": 998000313,
+      "Entries": [
+        "Transport helicopter red light test 1 -- 輸送ヘリ用赤色灯テスト1"
+      ]
+    },
+    {
+      "ID": 998000314,
+      "Entries": [
+        "Transport helicopter red light test 2 -- 輸送ヘリ用赤色灯テスト2"
+      ]
+    },
+    {
+      "ID": 998000315,
+      "Entries": [
+        "Red light test for transport helicopter 3 -- 輸送ヘリ用赤色灯テスト3"
+      ]
+    },
+    {
+      "ID": 998000316,
+      "Entries": [
+        "Transport helicopter red light test 4 -- 輸送ヘリ用赤色灯テスト4"
+      ]
+    },
+    {
+      "ID": 998000317,
+      "Entries": [
+        "Test underground facility recapture bomb SFX -- テスト用\u3000地下施設奪還爆弾SFX"
+      ]
+    },
+    {
+      "ID": 998000318,
+      "Entries": [
+        "For testing, guard mechanism flashing -- テスト用\u3000ガードメカ点滅用"
+      ]
+    },
+    {
+      "ID": 998000320,
+      "Entries": [
+        "Spotlight for transport helicopter_310 -- 輸送ヘリ用スポットライト_310"
+      ]
+    },
+    {
+      "ID": 998000321,
+      "Entries": [
+        "Spotlight for transport helicopter_312 -- 輸送ヘリ用スポットライト_312"
+      ]
+    },
+    {
+      "ID": 998000322,
+      "Entries": [
+        "Spotlight for transport helicopter_314 -- 輸送ヘリ用スポットライト_314"
+      ]
+    },
+    {
+      "ID": 998000323,
+      "Entries": [
+        "Spotlight for transport helicopter_316 -- 輸送ヘリ用スポットライト_316"
+      ]
+    },
+    {
+      "ID": 998000400,
+      "Entries": [
+        "Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー"
+      ]
+    },
+    {
+      "ID": 998000401,
+      "Entries": [
+        "Screen effect for final effect_Blur -- とどめ演出用画面効果_ブラー"
+      ]
+    },
+    {
+      "ID": 998000500,
+      "Entries": [
+        "Hacking continuation distance SFX -- ハッキング継続距離SFX"
+      ]
+    },
+    {
+      "ID": 998000501,
+      "Entries": [
+        "Suppression area VFX -- 制圧領域VFX"
+      ]
+    },
+    {
+      "ID": 998000600,
+      "Entries": [
+        "searchlight -- サーチライト"
+      ]
+    },
+    {
+      "ID": 998000601,
+      "Entries": [
+        "Searchlight for combat helicopters -- サーチライト\u3000戦闘ヘリ用"
+      ]
+    }
+  ]
+}

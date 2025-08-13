@@ -1,0 +1,1877 @@
+{
+  "Name": "CharaInitParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "LEVELUP presentation version_Knight"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "IGNITE Demo Play Version_Knight"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "For SCE online check (no pledge)"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "For SCE online check (Hakukyo)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "SCE online check (princess protection)"
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "For SCE online check (solar warrior)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        "For SCE Online Check (Dark Reis)"
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        "SCE Online Check (Road to Old Dragon)"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        "For SCE online check (subordinate of Grave King)"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "SCE Online Check (Forest Hunter)"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "SCE Online Check (Dark Moon Sword)"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "For SCE online check (servant of chaos)"
+      ]
+    },
+    {
+      "ID": 100,
+      "Entries": [
+        "[PC version] for GGD_Artorius"
+      ]
+    },
+    {
+      "ID": 101,
+      "Entries": [
+        "[PC version] GGD_Sniper"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Proto version_Knight"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Prototype_Magician"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Proto_Onion Knight"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Proto version_NPC transformed into a pot"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "December 2009 version_knight"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "December 2009 edition_priest"
+      ]
+    },
+    {
+      "ID": 1012,
+      "Entries": [
+        "December 2009 version_Magician"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "April 2010 edition_bandit"
+      ]
+    },
+    {
+      "ID": 1031,
+      "Entries": [
+        "April 2010 version_Ninja"
+      ]
+    },
+    {
+      "ID": 1032,
+      "Entries": [
+        "April 2010 edition_Black Knight"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "January 2011_Warrior"
+      ]
+    },
+    {
+      "ID": 1041,
+      "Entries": [
+        "January 2011_Hunter"
+      ]
+    },
+    {
+      "ID": 1042,
+      "Entries": [
+        "January 2011_Sorcerer"
+      ]
+    },
+    {
+      "ID": 1043,
+      "Entries": [
+        "January 2011 version_Knight"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "April 2011 edition_Warrior"
+      ]
+    },
+    {
+      "ID": 1051,
+      "Entries": [
+        "April 2011_Knight"
+      ]
+    },
+    {
+      "ID": 1052,
+      "Entries": [
+        "April 2011 version_Magician"
+      ]
+    },
+    {
+      "ID": 1053,
+      "Entries": [
+        "April 2011 version_Sorcerer"
+      ]
+    },
+    {
+      "ID": 1054,
+      "Entries": [
+        "April 2011 version_warrior"
+      ]
+    },
+    {
+      "ID": 1055,
+      "Entries": [
+        "April 2011 version_Knight"
+      ]
+    },
+    {
+      "ID": 1056,
+      "Entries": [
+        "April 2011 version_Magician"
+      ]
+    },
+    {
+      "ID": 1057,
+      "Entries": [
+        "April 2011, Magician"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Early Character_Warrior"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Early Character_Knight"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Early Character_Wanderer"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Early Character_ Thief"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Early Character_Bandit"
+      ]
+    },
+    {
+      "ID": 2005,
+      "Entries": [
+        "Early Character_Hunter"
+      ]
+    },
+    {
+      "ID": 2006,
+      "Entries": [
+        "Early Character_Sorcerer"
+      ]
+    },
+    {
+      "ID": 2007,
+      "Entries": [
+        "Early Character_Sorcerer"
+      ]
+    },
+    {
+      "ID": 2008,
+      "Entries": [
+        "Early Character_Monk"
+      ]
+    },
+    {
+      "ID": 2009,
+      "Entries": [
+        "Early Character"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "Title Selection_Warrior"
+      ]
+    },
+    {
+      "ID": 2021,
+      "Entries": [
+        "Title selection_Knight + Miracle"
+      ]
+    },
+    {
+      "ID": 2022,
+      "Entries": [
+        "Title selection_Magician"
+      ]
+    },
+    {
+      "ID": 2023,
+      "Entries": [
+        "Title selection_Sorcerer"
+      ]
+    },
+    {
+      "ID": 2024,
+      "Entries": [
+        "Title selection_Sun Knight"
+      ]
+    },
+    {
+      "ID": 2025,
+      "Entries": [
+        "Title selection_Black Knight"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "[Physique - Male] Average"
+      ]
+    },
+    {
+      "ID": 2101,
+      "Entries": [
+        "[Physique - Male] Slim"
+      ]
+    },
+    {
+      "ID": 2102,
+      "Entries": [
+        "[Physique - Male] Very Slim"
+      ]
+    },
+    {
+      "ID": 2103,
+      "Entries": [
+        "[Physique - Male] Large"
+      ]
+    },
+    {
+      "ID": 2104,
+      "Entries": [
+        "[Physique - Male] Very Large"
+      ]
+    },
+    {
+      "ID": 2105,
+      "Entries": [
+        "[Physique - Male] Large Upper Body"
+      ]
+    },
+    {
+      "ID": 2106,
+      "Entries": [
+        "[Physique - Male] Large Lower Body"
+      ]
+    },
+    {
+      "ID": 2107,
+      "Entries": [
+        "[Physique - Male] Top-heavy"
+      ]
+    },
+    {
+      "ID": 2108,
+      "Entries": [
+        "[Physique - Male] Tiny Head"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "[Physique - Female] Average"
+      ]
+    },
+    {
+      "ID": 2201,
+      "Entries": [
+        "[Physique - Female] Slim"
+      ]
+    },
+    {
+      "ID": 2202,
+      "Entries": [
+        "[Physique - Female] Very Slim"
+      ]
+    },
+    {
+      "ID": 2203,
+      "Entries": [
+        "[Physique - Female] Large"
+      ]
+    },
+    {
+      "ID": 2204,
+      "Entries": [
+        "[Physique - Female] Very Large"
+      ]
+    },
+    {
+      "ID": 2205,
+      "Entries": [
+        "[Physique - Female] Large Upper Body"
+      ]
+    },
+    {
+      "ID": 2206,
+      "Entries": [
+        "[Physique - Female] Large Lower Body"
+      ]
+    },
+    {
+      "ID": 2207,
+      "Entries": [
+        "[Physique - Female] Top-heavy"
+      ]
+    },
+    {
+      "ID": 2208,
+      "Entries": [
+        "[Physique - Female] Tiny Head"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "[Face - Male] Commoner"
+      ]
+    },
+    {
+      "ID": 2301,
+      "Entries": [
+        "[Face - Male] Delta Farmer"
+      ]
+    },
+    {
+      "ID": 2302,
+      "Entries": [
+        "[Face - Male] Astora Noble"
+      ]
+    },
+    {
+      "ID": 2303,
+      "Entries": [
+        "[Face - Male] Dragon Scholar"
+      ]
+    },
+    {
+      "ID": 2304,
+      "Entries": [
+        "[Face - Male] Thorolund Cleric"
+      ]
+    },
+    {
+      "ID": 2305,
+      "Entries": [
+        "[Face - Male] Jubilant Catarina"
+      ]
+    },
+    {
+      "ID": 2306,
+      "Entries": [
+        "[Face - Male] Dubious Carim"
+      ]
+    },
+    {
+      "ID": 2307,
+      "Entries": [
+        "[Face - Male] Classic Zena"
+      ]
+    },
+    {
+      "ID": 2308,
+      "Entries": [
+        "[Face - Male] Eerie Great Swamp"
+      ]
+    },
+    {
+      "ID": 2309,
+      "Entries": [
+        "[Face - Male] Far East Traveler"
+      ]
+    },
+    {
+      "ID": 2310,
+      "Entries": [
+        "[Face - Female] Commoner"
+      ]
+    },
+    {
+      "ID": 2311,
+      "Entries": [
+        "[Face - Female] Delta Farmer"
+      ]
+    },
+    {
+      "ID": 2312,
+      "Entries": [
+        "[Face - Female] Astora Noble"
+      ]
+    },
+    {
+      "ID": 2313,
+      "Entries": [
+        "[Face - Female] Dragon Scholar"
+      ]
+    },
+    {
+      "ID": 2314,
+      "Entries": [
+        "[Face - Female] Thorolund Cleric"
+      ]
+    },
+    {
+      "ID": 2315,
+      "Entries": [
+        "[Face - Female] Jubilant Catarina"
+      ]
+    },
+    {
+      "ID": 2316,
+      "Entries": [
+        "[Face - Female] Dubious Carim"
+      ]
+    },
+    {
+      "ID": 2317,
+      "Entries": [
+        "[Face - Female] Classic Zena"
+      ]
+    },
+    {
+      "ID": 2318,
+      "Entries": [
+        "[Face - Female] Eerie Great Swamp"
+      ]
+    },
+    {
+      "ID": 2319,
+      "Entries": [
+        "[Face - Female] Far East Traveler"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "[Gift] None"
+      ]
+    },
+    {
+      "ID": 2401,
+      "Entries": [
+        "[Gift] Divine Blessing"
+      ]
+    },
+    {
+      "ID": 2402,
+      "Entries": [
+        "[Gift] Black Firebomb"
+      ]
+    },
+    {
+      "ID": 2403,
+      "Entries": [
+        "[Gift] Twin Humanities"
+      ]
+    },
+    {
+      "ID": 2404,
+      "Entries": [
+        "[Gift] Binoculars"
+      ]
+    },
+    {
+      "ID": 2405,
+      "Entries": [
+        "[Gift] Pendant"
+      ]
+    },
+    {
+      "ID": 2406,
+      "Entries": [
+        "[Gift] Master Key"
+      ]
+    },
+    {
+      "ID": 2407,
+      "Entries": [
+        "[Gift] Tiny Being's Ring"
+      ]
+    },
+    {
+      "ID": 2408,
+      "Entries": [
+        "[Gift] Old Witch's Ring"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "[Class] Warrior"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "[Class] Knight"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "[Class] Wanderer"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "[Class] Thief"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "[Class] Bandit"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "[Class] Hunter"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "[Class] Sorcerer"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "[Class] Pyromancer"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "[Class] Cleric"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "[Class] Deprived"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Knight Solaire - Undead Burg"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Knight Solaire - Anor Londo"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Knight Solaire"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Knight Solaire - Demon Ruins"
+      ]
+    },
+    {
+      "ID": 6010,
+      "Entries": [
+        "Lady of the Darkling"
+      ]
+    },
+    {
+      "ID": 6020,
+      "Entries": [
+        "Oscar, Knight of Astora"
+      ]
+    },
+    {
+      "ID": 6021,
+      "Entries": [
+        "Oscar, Knight of Astora (Hostile)"
+      ]
+    },
+    {
+      "ID": 6030,
+      "Entries": [
+        "Big Hat Logan - Sen's Fortress"
+      ]
+    },
+    {
+      "ID": 6031,
+      "Entries": [
+        "Big Hat Logan - Duke's Archives"
+      ]
+    },
+    {
+      "ID": 6032,
+      "Entries": [
+        "Big Hat Logan - Duke's Archives (Hollow)"
+      ]
+    },
+    {
+      "ID": 6040,
+      "Entries": [
+        "Griggs of Vinheim - Undead Burg"
+      ]
+    },
+    {
+      "ID": 6041,
+      "Entries": [
+        "Griggs of Vinheim - Sen's Fortress (Hollow)"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "Dusk of Oolacile"
+      ]
+    },
+    {
+      "ID": 6051,
+      "Entries": [
+        "Dusk of Oolacile (Summoned)"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "Rhea of Thorolund"
+      ]
+    },
+    {
+      "ID": 6071,
+      "Entries": [
+        "Rhea of Thorolund (Hollow)"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "Petrus of Thorolund"
+      ]
+    },
+    {
+      "ID": 6090,
+      "Entries": [
+        "Vince of Thorolund"
+      ]
+    },
+    {
+      "ID": 6091,
+      "Entries": [
+        "Vince of Thorolund (Hollow)"
+      ]
+    },
+    {
+      "ID": 6100,
+      "Entries": [
+        "Nico of Thorolund"
+      ]
+    },
+    {
+      "ID": 6101,
+      "Entries": [
+        "Nico of Thorolund (Hollow)"
+      ]
+    },
+    {
+      "ID": 6130,
+      "Entries": [
+        "Laurentius of the Great Swamp"
+      ]
+    },
+    {
+      "ID": 6131,
+      "Entries": [
+        "Laurentius of the Great Swamp (Hollow)"
+      ]
+    },
+    {
+      "ID": 6170,
+      "Entries": [
+        "Quelana of Izalith"
+      ]
+    },
+    {
+      "ID": 6180,
+      "Entries": [
+        "Ingward"
+      ]
+    },
+    {
+      "ID": 6220,
+      "Entries": [
+        "Blacksmith Rickert"
+      ]
+    },
+    {
+      "ID": 6250,
+      "Entries": [
+        "Crestfallen Merchant"
+      ]
+    },
+    {
+      "ID": 6260,
+      "Entries": [
+        "Domhnall of Zena"
+      ]
+    },
+    {
+      "ID": 6270,
+      "Entries": [
+        "Crestfallen Warrior"
+      ]
+    },
+    {
+      "ID": 6271,
+      "Entries": [
+        "Crestfallen Warrior (Hollow)"
+      ]
+    },
+    {
+      "ID": 6280,
+      "Entries": [
+        "Siegmeyer of Catarina - Sen's Fortress"
+      ]
+    },
+    {
+      "ID": 6281,
+      "Entries": [
+        "Siegmeyer of Catarina - Anor Londo"
+      ]
+    },
+    {
+      "ID": 6282,
+      "Entries": [
+        "Siegmeyer of Catarina - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 6283,
+      "Entries": [
+        "Siegmeyer of Catarina"
+      ]
+    },
+    {
+      "ID": 6284,
+      "Entries": [
+        "Siegmeyer of Catarina"
+      ]
+    },
+    {
+      "ID": 6290,
+      "Entries": [
+        "Sieglinde of Catarina - Duke's Archives"
+      ]
+    },
+    {
+      "ID": 6291,
+      "Entries": [
+        "Sieglinde of Catarina - Great Hollow"
+      ]
+    },
+    {
+      "ID": 6300,
+      "Entries": [
+        "Knight Lautrec - Undead Burg"
+      ]
+    },
+    {
+      "ID": 6301,
+      "Entries": [
+        "Knight Lautrec - Anor Londo"
+      ]
+    },
+    {
+      "ID": 6310,
+      "Entries": [
+        "Shiva of the East"
+      ]
+    },
+    {
+      "ID": 6320,
+      "Entries": [
+        "Patches - Catacombs"
+      ]
+    },
+    {
+      "ID": 6321,
+      "Entries": [
+        "Patches - Firelink Shrine"
+      ]
+    },
+    {
+      "ID": 6370,
+      "Entries": [
+        "Oswald of Carim"
+      ]
+    },
+    {
+      "ID": 6390,
+      "Entries": [
+        "Black Knight Tarkus"
+      ]
+    },
+    {
+      "ID": 6420,
+      "Entries": [
+        "Shiva's Bodyguard"
+      ]
+    },
+    {
+      "ID": 6490,
+      "Entries": [
+        "Lautrec Bodyguard 1"
+      ]
+    },
+    {
+      "ID": 6500,
+      "Entries": [
+        "Lautrec Bodyguard 2"
+      ]
+    },
+    {
+      "ID": 6510,
+      "Entries": [
+        "Iron Tarkus (Summon) - Sen's Fortress"
+      ]
+    },
+    {
+      "ID": 6511,
+      "Entries": [
+        "Iron Tarkus (Summon)"
+      ]
+    },
+    {
+      "ID": 6520,
+      "Entries": [
+        "Witch Beatrice (Summon)"
+      ]
+    },
+    {
+      "ID": 6521,
+      "Entries": [
+        "Witch Beatrice (Summon)"
+      ]
+    },
+    {
+      "ID": 6530,
+      "Entries": [
+        "Maneater Mildred (Summon)"
+      ]
+    },
+    {
+      "ID": 6531,
+      "Entries": [
+        "Maneater Mildred (Invader)"
+      ]
+    },
+    {
+      "ID": 6540,
+      "Entries": [
+        "Knight Solaire (Summon) - Undead Burg"
+      ]
+    },
+    {
+      "ID": 6541,
+      "Entries": [
+        "Knight Solaire (Summon) - The Depths"
+      ]
+    },
+    {
+      "ID": 6542,
+      "Entries": [
+        "Knight Solaire (Summon) - Anor Londo"
+      ]
+    },
+    {
+      "ID": 6543,
+      "Entries": [
+        "Knight Solaire (Summon) - Demon Ruins"
+      ]
+    },
+    {
+      "ID": 6544,
+      "Entries": [
+        "Knight Solaire (Summon) - Tomb of the Giants"
+      ]
+    },
+    {
+      "ID": 6550,
+      "Entries": [
+        "Paladin Leeroy (Summon)"
+      ]
+    },
+    {
+      "ID": 6551,
+      "Entries": [
+        "Paladin Leeroy (Invader)"
+      ]
+    },
+    {
+      "ID": 6560,
+      "Entries": [
+        "Knight Kirk (Invader) - The Depths"
+      ]
+    },
+    {
+      "ID": 6561,
+      "Entries": [
+        "Knight Kirk (Invader) - Demon Ruins"
+      ]
+    },
+    {
+      "ID": 6562,
+      "Entries": [
+        "Knight Kirk (Invader) - Lost Izalith"
+      ]
+    },
+    {
+      "ID": 6570,
+      "Entries": [
+        "Xanthous King, Jeremiah (Invader)"
+      ]
+    },
+    {
+      "ID": 6580,
+      "Entries": [
+        "Havel the Rock"
+      ]
+    },
+    {
+      "ID": 6590,
+      "Entries": [
+        "Knight Lautrec (Summon)"
+      ]
+    },
+    {
+      "ID": 6591,
+      "Entries": [
+        "Knight Lautrec (Summon)"
+      ]
+    },
+    {
+      "ID": 6600,
+      "Entries": [
+        "Prince Ricard"
+      ]
+    },
+    {
+      "ID": 6610,
+      "Entries": [
+        "Crystal Knight"
+      ]
+    },
+    {
+      "ID": 6620,
+      "Entries": [
+        "Daughter of Chaos"
+      ]
+    },
+    {
+      "ID": 6640,
+      "Entries": [
+        "Dark Moon Sword (Heavy Knight)"
+      ]
+    },
+    {
+      "ID": 6650,
+      "Entries": [
+        "Dark Moon Sword (Light Knight)"
+      ]
+    },
+    {
+      "ID": 6700,
+      "Entries": [
+        "Dusk of Oolacile"
+      ]
+    },
+    {
+      "ID": 6740,
+      "Entries": [
+        "Lord's Blade Ciaran"
+      ]
+    },
+    {
+      "ID": 6801,
+      "Entries": [
+        "Forest Hunter - Bandit"
+      ]
+    },
+    {
+      "ID": 6802,
+      "Entries": [
+        "Forest Hunter - Knight"
+      ]
+    },
+    {
+      "ID": 6803,
+      "Entries": [
+        "Forest Hunter - Hunter"
+      ]
+    },
+    {
+      "ID": 6804,
+      "Entries": [
+        "Forest Hunter - Cleric"
+      ]
+    },
+    {
+      "ID": 6805,
+      "Entries": [
+        "Forest Hunter - Sorcerer"
+      ]
+    },
+    {
+      "ID": 6806,
+      "Entries": [
+        "Forest Hunter - Thief"
+      ]
+    },
+    {
+      "ID": 7100,
+      "Entries": [
+        "Castle 2_Vagrant NPC_Warrior"
+      ]
+    },
+    {
+      "ID": 7110,
+      "Entries": [
+        "Castle 1 ・ First half_Vagrant NPC_Voyeur"
+      ]
+    },
+    {
+      "ID": 7111,
+      "Entries": [
+        "Castle 1st & 2nd half_Vagrant NPC_Voyeur"
+      ]
+    },
+    {
+      "ID": 7120,
+      "Entries": [
+        "Painting world_Vagrant NPC_Wanderer"
+      ]
+    },
+    {
+      "ID": 7130,
+      "Entries": [
+        "Moriwaba, first half_Vagrant NPC_Hunter"
+      ]
+    },
+    {
+      "ID": 7131,
+      "Entries": [
+        "Moriwaba, latter half_Vagrant NPC_Hunter"
+      ]
+    },
+    {
+      "ID": 7140,
+      "Entries": [
+        "Cemetery 1_Vagrant NPC_Cleric"
+      ]
+    },
+    {
+      "ID": 7150,
+      "Entries": [
+        "Cemetery 2_Vagrant NPC_Cleric"
+      ]
+    },
+    {
+      "ID": 7160,
+      "Entries": [
+        "Underground Lake_Vagrant NPC_Dragon Newt"
+      ]
+    },
+    {
+      "ID": 7170,
+      "Entries": [
+        "Kagemachi_Vagrant NPC_Wanderer"
+      ]
+    },
+    {
+      "ID": 7180,
+      "Entries": [
+        "Closed city_Vagrant NPC_Sorcerer"
+      ]
+    },
+    {
+      "ID": 7190,
+      "Entries": [
+        "Royal Castle 1_Vagrant NPC_Warrior"
+      ]
+    },
+    {
+      "ID": 7200,
+      "Entries": [
+        "Royal Castle 2_Vagrant NPC_Knight"
+      ]
+    },
+    {
+      "ID": 7210,
+      "Entries": [
+        "Abyss_Vagrant NPC_Bandit"
+      ]
+    },
+    {
+      "ID": 7220,
+      "Entries": [
+        "Crystal Tower_Vagrant NPC_Sorcerer"
+      ]
+    },
+    {
+      "ID": 7230,
+      "Entries": [
+        "Great tomb_Vagrant NPC_Not possessed"
+      ]
+    },
+    {
+      "ID": 7240,
+      "Entries": [
+        "Tutorial_Vagrant NPC_What You Don't Have"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "for PV_warrior equipment (hero)"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "PV_Sorcerer"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "For PV_Red clothing head not equipped"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "PV for _ Chain Mail Woman (Phantom)"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "PV_Hunter head not equipped (Phantom)"
+      ]
+    },
+    {
+      "ID": 8005,
+      "Entries": [
+        "PV for onion (phantom)"
+      ]
+    },
+    {
+      "ID": 8006,
+      "Entries": [
+        "PV for _ gray saint"
+      ]
+    },
+    {
+      "ID": 8007,
+      "Entries": [
+        "PV_Knight"
+      ]
+    },
+    {
+      "ID": 8008,
+      "Entries": [
+        "PV_Black Knight"
+      ]
+    },
+    {
+      "ID": 8500,
+      "Entries": [
+        "Test Player (Warrior / Sword, Ax Spear, Shield)"
+      ]
+    },
+    {
+      "ID": 8501,
+      "Entries": [
+        "Test player (hunter / ax, bow, shield)"
+      ]
+    },
+    {
+      "ID": 8502,
+      "Entries": [
+        "Test player (mage / catalyst, straight sword, small shield, projection flame)"
+      ]
+    },
+    {
+      "ID": 8600,
+      "Entries": [
+        "Test Player_Warrior (Tutorial Clear)"
+      ]
+    },
+    {
+      "ID": 8601,
+      "Entries": [
+        "Test Player_Knight (Tutorial Clear)"
+      ]
+    },
+    {
+      "ID": 8602,
+      "Entries": [
+        "test player_magician (clear tutorial)"
+      ]
+    },
+    {
+      "ID": 8603,
+      "Entries": [
+        "test player_magician (tutorial clear)"
+      ]
+    },
+    {
+      "ID": 8604,
+      "Entries": [
+        "Test player_Monk (clear tutorial)"
+      ]
+    },
+    {
+      "ID": 8610,
+      "Entries": [
+        "test player_warrior (gargoyle clear)"
+      ]
+    },
+    {
+      "ID": 8611,
+      "Entries": [
+        "test player_knight (gargoyle clear)"
+      ]
+    },
+    {
+      "ID": 8612,
+      "Entries": [
+        "Test player_Magician (gargoyle clear)"
+      ]
+    },
+    {
+      "ID": 8613,
+      "Entries": [
+        "Test player_Sorcerer (gargoyle clear)"
+      ]
+    },
+    {
+      "ID": 8614,
+      "Entries": [
+        "Test player_Monk (gargoyle clear)"
+      ]
+    },
+    {
+      "ID": 8620,
+      "Entries": [
+        "Test player_Warrior (Journey 2 search only)"
+      ]
+    },
+    {
+      "ID": 8621,
+      "Entries": [
+        "Test player_Knight (only search 2 castles)"
+      ]
+    },
+    {
+      "ID": 8622,
+      "Entries": [
+        "Test player_Magician (Journey 2 search only)"
+      ]
+    },
+    {
+      "ID": 8623,
+      "Entries": [
+        "Test player_Sorcerer (only search 2 castles)"
+      ]
+    },
+    {
+      "ID": 8624,
+      "Entries": [
+        "Test player_Monk (only search for castle 2)"
+      ]
+    },
+    {
+      "ID": 8630,
+      "Entries": [
+        "test player_warrior (castle clear 2 / devour clear)"
+      ]
+    },
+    {
+      "ID": 8631,
+      "Entries": [
+        "test player_knight (castle 2 clear / phagocy clear)"
+      ]
+    },
+    {
+      "ID": 8632,
+      "Entries": [
+        "Test player_Magician (Castle 2 clear / phagocytic clear)"
+      ]
+    },
+    {
+      "ID": 8633,
+      "Entries": [
+        "test player_magician (castle 2 clear / phagocy clear)"
+      ]
+    },
+    {
+      "ID": 8634,
+      "Entries": [
+        "test player_ monk (castle clear 2 / devour clear)"
+      ]
+    },
+    {
+      "ID": 8640,
+      "Entries": [
+        "test player_warrior (Kagemachi clear)"
+      ]
+    },
+    {
+      "ID": 8641,
+      "Entries": [
+        "Test Player_Knight (Kagecho Clear)"
+      ]
+    },
+    {
+      "ID": 8642,
+      "Entries": [
+        "Test Player_Magician (Kagemachi Clear)"
+      ]
+    },
+    {
+      "ID": 8643,
+      "Entries": [
+        "Test player_Sorcerer (Kagemachi clear)"
+      ]
+    },
+    {
+      "ID": 8644,
+      "Entries": [
+        "Test player_Monk (Kagemachi clear)"
+      ]
+    },
+    {
+      "ID": 8650,
+      "Entries": [
+        "test player_warrior (Ojo 1 clear)"
+      ]
+    },
+    {
+      "ID": 8651,
+      "Entries": [
+        "Test player_Knight (Ojo 1 clear)"
+      ]
+    },
+    {
+      "ID": 8652,
+      "Entries": [
+        "test player_magician (Ojo 1 clear)"
+      ]
+    },
+    {
+      "ID": 8653,
+      "Entries": [
+        "Test player_Sorcerer (Ojo 1 clear)"
+      ]
+    },
+    {
+      "ID": 8654,
+      "Entries": [
+        "test player _ monk (Ojo 1 clear)"
+      ]
+    },
+    {
+      "ID": 8660,
+      "Entries": [
+        "test player_warrior (Ojo 2 clear)"
+      ]
+    },
+    {
+      "ID": 8661,
+      "Entries": [
+        "test player_knight (Ojo 2 clear)"
+      ]
+    },
+    {
+      "ID": 8662,
+      "Entries": [
+        "test player_magician (Ojo 2 clear)"
+      ]
+    },
+    {
+      "ID": 8663,
+      "Entries": [
+        "Test Player_Sorcerer (Ojo 2 Clear)"
+      ]
+    },
+    {
+      "ID": 8664,
+      "Entries": [
+        "Test player_Monk (Ojo 2 clear)"
+      ]
+    },
+    {
+      "ID": 8670,
+      "Entries": [
+        "Test Player_Warrior (Abyss Clear)"
+      ]
+    },
+    {
+      "ID": 8671,
+      "Entries": [
+        "Test Player_Knight (Abyss Clear)"
+      ]
+    },
+    {
+      "ID": 8672,
+      "Entries": [
+        "test player_magician (abyss clear)"
+      ]
+    },
+    {
+      "ID": 8673,
+      "Entries": [
+        "Test Player_Mage (Abyss Clear)"
+      ]
+    },
+    {
+      "ID": 8674,
+      "Entries": [
+        "Test Player_Monk (Abyss Clear)"
+      ]
+    },
+    {
+      "ID": 8680,
+      "Entries": [
+        "test player_warrior (crystal tower clear)"
+      ]
+    },
+    {
+      "ID": 8681,
+      "Entries": [
+        "Test player_Knight (crystal tower clear)"
+      ]
+    },
+    {
+      "ID": 8682,
+      "Entries": [
+        "test player_magician (crystal tower clear)"
+      ]
+    },
+    {
+      "ID": 8683,
+      "Entries": [
+        "test player_magician (crystal tower clear)"
+      ]
+    },
+    {
+      "ID": 8684,
+      "Entries": [
+        "Test player_Monk (crystal tower clear)"
+      ]
+    },
+    {
+      "ID": 8690,
+      "Entries": [
+        "Test Player_Warrior (Clear city)"
+      ]
+    },
+    {
+      "ID": 8691,
+      "Entries": [
+        "Test Player_Knight (Clear city)"
+      ]
+    },
+    {
+      "ID": 8692,
+      "Entries": [
+        "test player_magician (closed city clear)"
+      ]
+    },
+    {
+      "ID": 8693,
+      "Entries": [
+        "Test Player_Sorcerer (Clear city)"
+      ]
+    },
+    {
+      "ID": 8694,
+      "Entries": [
+        "test player_ monk (closed city clear)"
+      ]
+    },
+    {
+      "ID": 9000,
+      "Entries": [
+        "debug player (memory verification)"
+      ]
+    },
+    {
+      "ID": 9001,
+      "Entries": [
+        "Debug player (general-purpose man)"
+      ]
+    },
+    {
+      "ID": 9002,
+      "Entries": [
+        "Debug player (general-purpose woman)"
+      ]
+    },
+    {
+      "ID": 9005,
+      "Entries": [
+        "Debug player (with lantern)"
+      ]
+    },
+    {
+      "ID": 9006,
+      "Entries": [
+        "Debug player (for network check)"
+      ]
+    },
+    {
+      "ID": 9007,
+      "Entries": [
+        "Debug Player (AITestPG)"
+      ]
+    },
+    {
+      "ID": 9008,
+      "Entries": [
+        "Debug player with bow"
+      ]
+    },
+    {
+      "ID": 9010,
+      "Entries": [
+        "Standard character (Hirai)"
+      ]
+    },
+    {
+      "ID": 9011,
+      "Entries": [
+        "TEST for ladder test"
+      ]
+    },
+    {
+      "ID": 9012,
+      "Entries": [
+        "for damage test"
+      ]
+    },
+    {
+      "ID": 9013,
+      "Entries": [
+        "Enemy reference (assassin)"
+      ]
+    },
+    {
+      "ID": 9014,
+      "Entries": [
+        "Debug Player (for anti-spirit verification)"
+      ]
+    },
+    {
+      "ID": 9015,
+      "Entries": [
+        "Debug Player (Ishizaki Custom)"
+      ]
+    },
+    {
+      "ID": 9016,
+      "Entries": [
+        "Debug player (poison + fire weapon)"
+      ]
+    },
+    {
+      "ID": 9017,
+      "Entries": [
+        "Debug player (light dress)"
+      ]
+    },
+    {
+      "ID": 9018,
+      "Entries": [
+        "Debug player (dragon makeover)"
+      ]
+    },
+    {
+      "ID": 9100,
+      "Entries": [
+        "Debug player (magic: EN bullets A to C2)"
+      ]
+    },
+    {
+      "ID": 9101,
+      "Entries": [
+        "Debug player (magic: EN bullet D-D2 / weapon enhancement 1-3 / shield enhancement 1-2)"
+      ]
+    },
+    {
+      "ID": 9102,
+      "Entries": [
+        "Debug player (magic: invisible W / B / light / silence / sound / repair)"
+      ]
+    },
+    {
+      "ID": 9103,
+      "Entries": [
+        "Debug player (magic: F control / mimicry / curse / curative / crystal beam)"
+      ]
+    },
+    {
+      "ID": 9104,
+      "Entries": [
+        "Debug player (magic: F ball 1-3 / F storm 1-2 / flame emission / flame whip)"
+      ]
+    },
+    {
+      "ID": 9105,
+      "Entries": [
+        "Debug player (magic: melee flame 1-2 / poison mist / poison mist / acid mist)"
+      ]
+    },
+    {
+      "ID": 9106,
+      "Entries": [
+        "Debug Player (Spells: Iron Body / Veil of Water / Copper Body / Enchanted / Crazy Power)"
+      ]
+    },
+    {
+      "ID": 9107,
+      "Entries": [
+        "Debug player (Spell: C_Fireball / C_Firestorm / C_Fire Whip)"
+      ]
+    },
+    {
+      "ID": 9108,
+      "Entries": [
+        "Debug player (miracle: recovery 1-4 / regen / great regen)"
+      ]
+    },
+    {
+      "ID": 9109,
+      "Entries": [
+        "Debug player (miracle: Summon 1-2 / one-time resurrection / return / force 1-3)"
+      ]
+    },
+    {
+      "ID": 9110,
+      "Entries": [
+        "Debug player (miracle: hint / lightning 1-3 / magic protection 1-2)"
+      ]
+    },
+    {
+      "ID": 9111,
+      "Entries": [
+        "Debug player (miracle: causal reward / causal reward _ bullet / gravity / anti-magic / sun sword / moonlight sword)"
+      ]
+    },
+    {
+      "ID": 9112,
+      "Entries": [
+        "Debug Player ([DLC] Dark Ball / Dark Splash / Dark Mist / Followers / Black Flame)"
+      ]
+    },
+    {
+      "ID": 9120,
+      "Entries": [
+        "Debug player (Magic weapon: Straight sword of ancient dragon / Sword of stone)"
+      ]
+    },
+    {
+      "ID": 9121,
+      "Entries": [
+        "Debug player (magic weapon: moonlight / old dragon sword)"
+      ]
+    },
+    {
+      "ID": 9122,
+      "Entries": [
+        "Debug Player (Magic Weapon: Iron Ax / Dragon King's Ax)"
+      ]
+    },
+    {
+      "ID": 9123,
+      "Entries": [
+        "Debug Player (Magic Weapon: Hammer of Law Judgment / Dark Hand)"
+      ]
+    },
+    {
+      "ID": 9124,
+      "Entries": [
+        "Debug player (magic weapon: 6th magic spear / dragon hunting spear)"
+      ]
+    },
+    {
+      "ID": 9125,
+      "Entries": [
+        "Debug Player (Magic Weapon: Quartz Ring Shield / Rock Shield)"
+      ]
+    },
+    {
+      "ID": 9130,
+      "Entries": [
+        "Beat value / beat value check _ warrior (LV5 castle 1 hammer)"
+      ]
+    },
+    {
+      "ID": 9131,
+      "Entries": [
+        "Beat value / beat value check _ warrior (until LV15 castle 2 search)"
+      ]
+    },
+    {
+      "ID": 9132,
+      "Entries": [
+        "Beat value / beat value check _ warrior (LV25 castle 2 devour)"
+      ]
+    },
+    {
+      "ID": 9133,
+      "Entries": [
+        "Beat value / beat value check _ warrior (to LV35 Kagemachi)"
+      ]
+    },
+    {
+      "ID": 9134,
+      "Entries": [
+        "Beat value / beat value check_warrior (LV45 Ojo 1)"
+      ]
+    },
+    {
+      "ID": 9135,
+      "Entries": [
+        "Beat value / beat value check_warrior (LV55 to Moriwaba)"
+      ]
+    },
+    {
+      "ID": 9136,
+      "Entries": [
+        "Beat value / beat value check_Warrior (up to LV65 Cemetery 2)"
+      ]
+    },
+    {
+      "ID": 9137,
+      "Entries": [
+        "Beat value / beat value check_Warrior (up to LV75 last)"
+      ]
+    },
+    {
+      "ID": 9140,
+      "Entries": [
+        "Debug Player (Check damage animation)"
+      ]
+    }
+  ]
+}

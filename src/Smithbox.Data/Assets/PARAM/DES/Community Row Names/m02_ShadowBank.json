@@ -1,0 +1,389 @@
+{
+  "Name": "m02_ShadowBank",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "B0 basic"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "B0 Indoor"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "Inside the B0 castle"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "B0 reflection countermeasure"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "B0 (h0012)"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 6,
+      "Entries": [
+        "B0 basic (bird's shadow)"
+      ]
+    },
+    {
+      "ID": 7,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 8,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "B1 basic"
+      ]
+    },
+    {
+      "ID": 11,
+      "Entries": [
+        "B1 Indoor"
+      ]
+    },
+    {
+      "ID": 12,
+      "Entries": [
+        "B1 boss room"
+      ]
+    },
+    {
+      "ID": 13,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 15,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 16,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 17,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 18,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 19,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "B2"
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        "B2 Indoor"
+      ]
+    },
+    {
+      "ID": 22,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 23,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 24,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 26,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 27,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 28,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 29,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        "B3 Basic"
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        "B3 Indoor"
+      ]
+    },
+    {
+      "ID": 32,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 33,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 34,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 35,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 36,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 37,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 38,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 39,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        "for rough map"
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        "For poly drama (p20202-A"
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 43,
+      "Entries": [
+        "For poly drama (p20100-king's shield-c02-whole body"
+      ]
+    },
+    {
+      "ID": 44,
+      "Entries": [
+        "For polyplay (p20100-King's shield-c03-up"
+      ]
+    },
+    {
+      "ID": 45,
+      "Entries": [
+        "For poly drama (p20100-Prisoner"
+      ]
+    },
+    {
+      "ID": 46,
+      "Entries": [
+        "For poly drama (p20100-Soldier"
+      ]
+    },
+    {
+      "ID": 47,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 48,
+      "Entries": [
+        "For poly drama (p20002"
+      ]
+    },
+    {
+      "ID": 49,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 51,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 52,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 53,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 55,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 56,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 57,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 58,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 59,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-01"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c01"
+      ]
+    },
+    {
+      "ID": 61,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-02"
+      ]
+    },
+    {
+      "ID": 62,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-03"
+      ]
+    },
+    {
+      "ID": 63,
+      "Entries": [
+        "Poly drama (p20302-Rendl-c02-04"
+      ]
+    }
+  ]
+}

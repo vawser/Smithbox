@@ -1,0 +1,515 @@
+{
+  "Name": "MapGdRegionDrawParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 21,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 31,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 40,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 41,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 42,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Stormveil Castle"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Chapel of Anticipation"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Leyndell- Royal Capital"
+      ]
+    },
+    {
+      "ID": 1105,
+      "Entries": [
+        "Leyndell- Ashen Capital"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "Roundtable Hold"
+      ]
+    },
+    {
+      "ID": 1171,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 1201,
+      "Entries": [
+        "Ainsel River"
+      ]
+    },
+    {
+      "ID": 1202,
+      "Entries": [
+        "Siofra River"
+      ]
+    },
+    {
+      "ID": 1203,
+      "Entries": [
+        "Deeproot Depths"
+      ]
+    },
+    {
+      "ID": 1204,
+      "Entries": [
+        "Ainsel River Boss"
+      ]
+    },
+    {
+      "ID": 1300,
+      "Entries": [
+        "Crumbling Farum Azula"
+      ]
+    },
+    {
+      "ID": 1400,
+      "Entries": [
+        "Academy of Raya Lucaria"
+      ]
+    },
+    {
+      "ID": 1500,
+      "Entries": [
+        "Miquella's Haligtree"
+      ]
+    },
+    {
+      "ID": 1600,
+      "Entries": [
+        "Volcano Manor"
+      ]
+    },
+    {
+      "ID": 1800,
+      "Entries": [
+        "Stranded Graveyard"
+      ]
+    },
+    {
+      "ID": 1900,
+      "Entries": [
+        "Stone Platform"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Tombsward Catacombs"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Impaler's Catacombs"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Stormfoot Catacombs"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Road's End Catacombs"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Murkwater Catacombs"
+      ]
+    },
+    {
+      "ID": 3005,
+      "Entries": [
+        "Black Knife Catacombs"
+      ]
+    },
+    {
+      "ID": 3006,
+      "Entries": [
+        "Cliffbottom Catacombs"
+      ]
+    },
+    {
+      "ID": 3007,
+      "Entries": [
+        "Wyndham Catacombs"
+      ]
+    },
+    {
+      "ID": 3008,
+      "Entries": [
+        "Sainted Hero's Grave"
+      ]
+    },
+    {
+      "ID": 3009,
+      "Entries": [
+        "Gelmir Hero's Grave"
+      ]
+    },
+    {
+      "ID": 3010,
+      "Entries": [
+        "Auriza's Hero Grave"
+      ]
+    },
+    {
+      "ID": 3011,
+      "Entries": [
+        "Deathtouched Catacombs"
+      ]
+    },
+    {
+      "ID": 3012,
+      "Entries": [
+        "Unsightly Catacombs"
+      ]
+    },
+    {
+      "ID": 3013,
+      "Entries": [
+        "Auriza Side Tomb"
+      ]
+    },
+    {
+      "ID": 3014,
+      "Entries": [
+        "Minor Erdtree Catacombs"
+      ]
+    },
+    {
+      "ID": 3015,
+      "Entries": [
+        "Caelid Catacombs"
+      ]
+    },
+    {
+      "ID": 3016,
+      "Entries": [
+        "War-Dead Catacombs"
+      ]
+    },
+    {
+      "ID": 3017,
+      "Entries": [
+        "Giant-Conquering Hero's Grave"
+      ]
+    },
+    {
+      "ID": 3018,
+      "Entries": [
+        "Giants' Mountaintops Catacombs"
+      ]
+    },
+    {
+      "ID": 3100,
+      "Entries": [
+        "Murkwater Cave"
+      ]
+    },
+    {
+      "ID": 3101,
+      "Entries": [
+        "Earthbore Cave"
+      ]
+    },
+    {
+      "ID": 3102,
+      "Entries": [
+        "Tombsward Cave"
+      ]
+    },
+    {
+      "ID": 3103,
+      "Entries": [
+        "Groveside Cave"
+      ]
+    },
+    {
+      "ID": 3104,
+      "Entries": [
+        "Stillwater Cave"
+      ]
+    },
+    {
+      "ID": 3105,
+      "Entries": [
+        "Lakeside Crystal Cave"
+      ]
+    },
+    {
+      "ID": 3106,
+      "Entries": [
+        "Academy Crystal Cave"
+      ]
+    },
+    {
+      "ID": 3107,
+      "Entries": [
+        "Seethewater Cave"
+      ]
+    },
+    {
+      "ID": 3108,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3109,
+      "Entries": [
+        "Volcano Cave"
+      ]
+    },
+    {
+      "ID": 3110,
+      "Entries": [
+        "Dragonbarrow Cave"
+      ]
+    },
+    {
+      "ID": 3111,
+      "Entries": [
+        "Sellia Hideaway"
+      ]
+    },
+    {
+      "ID": 3112,
+      "Entries": [
+        "Cave of the Forlorn"
+      ]
+    },
+    {
+      "ID": 3113,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3114,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3115,
+      "Entries": [
+        "Coastal Cave"
+      ]
+    },
+    {
+      "ID": 3117,
+      "Entries": [
+        "High Road Cave"
+      ]
+    },
+    {
+      "ID": 3200,
+      "Entries": [
+        "Morne Tunnel"
+      ]
+    },
+    {
+      "ID": 3201,
+      "Entries": [
+        "Limgrave Tunnels"
+      ]
+    },
+    {
+      "ID": 3202,
+      "Entries": [
+        "Raya Lucaria Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 3203,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3204,
+      "Entries": [
+        "Old Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 3205,
+      "Entries": [
+        "Altus Tunnel"
+      ]
+    },
+    {
+      "ID": 3206,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3207,
+      "Entries": [
+        "Gael Tunnel"
+      ]
+    },
+    {
+      "ID": 3208,
+      "Entries": [
+        "Sellia Crystal Tunnel"
+      ]
+    },
+    {
+      "ID": 3209,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3210,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3211,
+      "Entries": [
+        "Yelough Anix Tunnel"
+      ]
+    },
+    {
+      "ID": 3212,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3410,
+      "Entries": [
+        "Divine Tower of Limgrave"
+      ]
+    },
+    {
+      "ID": 3411,
+      "Entries": [
+        "Divine Tower of Liurnia (Carian Study Hall)"
+      ]
+    },
+    {
+      "ID": 3412,
+      "Entries": [
+        "Divine Tower of West Altus (Sealed Tunnel)"
+      ]
+    },
+    {
+      "ID": 3413,
+      "Entries": [
+        "Divine Tower of Caelid"
+      ]
+    },
+    {
+      "ID": 3414,
+      "Entries": [
+        "Divine Tower of East Altus"
+      ]
+    },
+    {
+      "ID": 3415,
+      "Entries": [
+        "Isolated Divine Tower"
+      ]
+    },
+    {
+      "ID": 3416,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 3500,
+      "Entries": [
+        "Subterranean Shunning-Grounds"
+      ]
+    },
+    {
+      "ID": 3920,
+      "Entries": [
+        "Ruin-Strewn Precipice"
+      ]
+    },
+    {
+      "ID": 9901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 9902,
+      "Entries": [
+        ""
+      ]
+    }
+  ]
+}

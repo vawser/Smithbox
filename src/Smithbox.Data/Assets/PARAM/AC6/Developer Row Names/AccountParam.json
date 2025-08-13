@@ -1,0 +1,1097 @@
+{
+  "Name": "AccountParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "----"
+      ]
+    },
+    {
+      "ID": 10,
+      "Entries": [
+        "10_? ? ? -- 10_？？？"
+      ]
+    },
+    {
+      "ID": 9,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 20,
+      "Entries": [
+        "20_? ? ? -- 20_？？？"
+      ]
+    },
+    {
+      "ID": 50,
+      "Entries": [
+        "50_? ? ? -- 50_？？？"
+      ]
+    },
+    {
+      "ID": 60,
+      "Entries": [
+        "60_IB-07: SOL 644"
+      ]
+    },
+    {
+      "ID": 70,
+      "Entries": [
+        "70_IB-C03: HAL 826"
+      ]
+    },
+    {
+      "ID": 110,
+      "Entries": [
+        "110_STEEL HAZE"
+      ]
+    },
+    {
+      "ID": 120,
+      "Entries": [
+        "120_STEEL HAZE ORTUS"
+      ]
+    },
+    {
+      "ID": 130,
+      "Entries": [
+        "130_NIGHTFALL"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "140_DEADSLED"
+      ]
+    },
+    {
+      "ID": 150,
+      "Entries": [
+        "150_ASTER CROWN"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "160_BITTER PROMISE"
+      ]
+    },
+    {
+      "ID": 170,
+      "Entries": [
+        "170_UMBER OX"
+      ]
+    },
+    {
+      "ID": 200,
+      "Entries": [
+        "200_? ? ? -- 200_？？？"
+      ]
+    },
+    {
+      "ID": 210,
+      "Entries": [
+        "210_TRANSCRIBER"
+      ]
+    },
+    {
+      "ID": 220,
+      "Entries": [
+        "220_ENTANGLE"
+      ]
+    },
+    {
+      "ID": 230,
+      "Entries": [
+        "230_ALLMIND"
+      ]
+    },
+    {
+      "ID": 240,
+      "Entries": [
+        "240_ALLMIND"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "300_? ? ? -- 300_？？？"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "310_FULL COURSE"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "320_CIRCUS"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "330_MILK TOOTH"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "340_MAD STOMP"
+      ]
+    },
+    {
+      "ID": 400,
+      "Entries": [
+        "400_? ? ? -- 400_？？？"
+      ]
+    },
+    {
+      "ID": 410,
+      "Entries": [
+        "410_BURN PICKAXE"
+      ]
+    },
+    {
+      "ID": 420,
+      "Entries": [
+        "420_YUE YU"
+      ]
+    },
+    {
+      "ID": 430,
+      "Entries": [
+        "430_CANDLE RING"
+      ]
+    },
+    {
+      "ID": 440,
+      "Entries": [
+        "440_TSUBASA"
+      ]
+    },
+    {
+      "ID": 450,
+      "Entries": [
+        "450_ASTGHIK"
+      ]
+    },
+    {
+      "ID": 460,
+      "Entries": [
+        "460_SHINOBI"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "500_? ? ? -- 500_？？？"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "510_LIGER TAIL"
+      ]
+    },
+    {
+      "ID": 520,
+      "Entries": [
+        "520_DEEP DOWN"
+      ]
+    },
+    {
+      "ID": 530,
+      "Entries": [
+        "530_HEAD BRINGER"
+      ]
+    },
+    {
+      "ID": 540,
+      "Entries": [
+        "540_CANNON HEAD"
+      ]
+    },
+    {
+      "ID": 550,
+      "Entries": [
+        "550_LI LONG"
+      ]
+    },
+    {
+      "ID": 560,
+      "Entries": [
+        "560_HERMIT"
+      ]
+    },
+    {
+      "ID": 600,
+      "Entries": [
+        "600_? ? ? -- 600_？？？"
+      ]
+    },
+    {
+      "ID": 610,
+      "Entries": [
+        "610_LOCKSMITH"
+      ]
+    },
+    {
+      "ID": 620,
+      "Entries": [
+        "620_OPEN FAITH"
+      ]
+    },
+    {
+      "ID": 630,
+      "Entries": [
+        "630_BARREN FLOWER"
+      ]
+    },
+    {
+      "ID": 640,
+      "Entries": [
+        "640_RECONFIG"
+      ]
+    },
+    {
+      "ID": 650,
+      "Entries": [
+        "650_INFECTION"
+      ]
+    },
+    {
+      "ID": 660,
+      "Entries": [
+        "660_GUIDANCE"
+      ]
+    },
+    {
+      "ID": 670,
+      "Entries": [
+        "670_DUAL NATURE"
+      ]
+    },
+    {
+      "ID": 710,
+      "Entries": [
+        "710_MIND ALPHA"
+      ]
+    },
+    {
+      "ID": 720,
+      "Entries": [
+        "720_INSTITUTE"
+      ]
+    },
+    {
+      "ID": 730,
+      "Entries": [
+        "730_RUBICONIAN"
+      ]
+    },
+    {
+      "ID": 740,
+      "Entries": [
+        "740_CORPORATION"
+      ]
+    },
+    {
+      "ID": 750,
+      "Entries": [
+        "750_NIGHTFALL"
+      ]
+    },
+    {
+      "ID": 760,
+      "Entries": [
+        "760_TRAINER"
+      ]
+    },
+    {
+      "ID": 770,
+      "Entries": [
+        "770_TESTER"
+      ]
+    },
+    {
+      "ID": 780,
+      "Entries": [
+        "780_STEEL HAZE ORTUS"
+      ]
+    },
+    {
+      "ID": 790,
+      "Entries": [
+        "790_IB-C03: HAL 826"
+      ]
+    },
+    {
+      "ID": 800,
+      "Entries": [
+        "800_MIND BETA"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "810_ECHO"
+      ]
+    },
+    {
+      "ID": 820,
+      "Entries": [
+        "820_MIND GAMMA"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "910_IA-C01: EPHEMERA"
+      ]
+    },
+    {
+      "ID": 920,
+      "Entries": [
+        "920_TESTER AC"
+      ]
+    },
+    {
+      "ID": 930,
+      "Entries": [
+        "930_ECHO"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "1010_? ? ? -- 1010_？？？"
+      ]
+    },
+    {
+      "ID": 1020,
+      "Entries": [
+        "1020_? ? ? -- 1020_？？？"
+      ]
+    },
+    {
+      "ID": 1030,
+      "Entries": [
+        "1030_? ? ? -- 1030_？？？"
+      ]
+    },
+    {
+      "ID": 1040,
+      "Entries": [
+        "1040_? ? ? -- 1040_？？？"
+      ]
+    },
+    {
+      "ID": 1050,
+      "Entries": [
+        "1050_? ? ? -- 1050_？？？"
+      ]
+    },
+    {
+      "ID": 1060,
+      "Entries": [
+        "1060_? ? ? -- 1060_？？？"
+      ]
+    },
+    {
+      "ID": 1070,
+      "Entries": [
+        "1070_? ? ? -- 1070_？？？"
+      ]
+    },
+    {
+      "ID": 1080,
+      "Entries": [
+        "1080_? ? ? -- 1080_？？？"
+      ]
+    },
+    {
+      "ID": 1090,
+      "Entries": [
+        "1090_? ? ? -- 1090_？？？"
+      ]
+    },
+    {
+      "ID": 1110,
+      "Entries": [
+        "1110_? ? ? -- 1110_？？？"
+      ]
+    },
+    {
+      "ID": 1120,
+      "Entries": [
+        "1120_? ? ? -- 1120_？？？"
+      ]
+    },
+    {
+      "ID": 1130,
+      "Entries": [
+        "1130_? ? ? -- 1130_？？？"
+      ]
+    },
+    {
+      "ID": 1140,
+      "Entries": [
+        "1140_? ? ? -- 1140_？？？"
+      ]
+    },
+    {
+      "ID": 1150,
+      "Entries": [
+        "1150_? ? ? -- 1150_？？？"
+      ]
+    },
+    {
+      "ID": 1210,
+      "Entries": [
+        "1210_? ? ? -- 1210_？？？"
+      ]
+    },
+    {
+      "ID": 1220,
+      "Entries": [
+        "1220_? ? ? -- 1220_？？？"
+      ]
+    },
+    {
+      "ID": 1250,
+      "Entries": [
+        "1250_? ? ? -- 1250_？？？"
+      ]
+    },
+    {
+      "ID": 1260,
+      "Entries": [
+        "1260_? ? ? -- 1260_？？？"
+      ]
+    },
+    {
+      "ID": 1270,
+      "Entries": [
+        "1270_? ? ? -- 1270_？？？"
+      ]
+    },
+    {
+      "ID": 1280,
+      "Entries": [
+        "1280_? ? ? -- 1280_？？？"
+      ]
+    },
+    {
+      "ID": 1290,
+      "Entries": [
+        "1290_? ? ? -- 1290_？？？"
+      ]
+    },
+    {
+      "ID": 1310,
+      "Entries": [
+        "1310_? ? ? -- 1310_？？？"
+      ]
+    },
+    {
+      "ID": 1320,
+      "Entries": [
+        "1320_? ? ? -- 1320_？？？"
+      ]
+    },
+    {
+      "ID": 1330,
+      "Entries": [
+        "1330_? ? ? -- 1330_？？？"
+      ]
+    },
+    {
+      "ID": 1340,
+      "Entries": [
+        "1340_? ? ? -- 1340_？？？"
+      ]
+    },
+    {
+      "ID": 1350,
+      "Entries": [
+        "1350_? ? ? -- 1350_？？？"
+      ]
+    },
+    {
+      "ID": 1360,
+      "Entries": [
+        "1360_? ? ? -- 1360_？？？"
+      ]
+    },
+    {
+      "ID": 1370,
+      "Entries": [
+        "1370_? ? ? -- 1370_？？？"
+      ]
+    },
+    {
+      "ID": 1380,
+      "Entries": [
+        "1380_? ? ? -- 1380_？？？"
+      ]
+    },
+    {
+      "ID": 1390,
+      "Entries": [
+        "1390_? ? ? -- 1390_？？？"
+      ]
+    },
+    {
+      "ID": 1410,
+      "Entries": [
+        "1410_? ? ? -- 1410_？？？"
+      ]
+    },
+    {
+      "ID": 1510,
+      "Entries": [
+        "1510_? ? ? -- 1510_？？？"
+      ]
+    },
+    {
+      "ID": 1610,
+      "Entries": [
+        "1610_? ? ? -- 1610_？？？"
+      ]
+    },
+    {
+      "ID": 1710,
+      "Entries": [
+        "1710_? ? ? -- 1710_？？？"
+      ]
+    },
+    {
+      "ID": 1780,
+      "Entries": [
+        "1780_? ? ? -- 1780_？？？"
+      ]
+    },
+    {
+      "ID": 1910,
+      "Entries": [
+        "1910_? ? ? -- 1910_？？？"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "2000_? ? ? -- 2000_？？？"
+      ]
+    },
+    {
+      "ID": 2010,
+      "Entries": [
+        "2010_AAP07: BALTEUS"
+      ]
+    },
+    {
+      "ID": 2020,
+      "Entries": [
+        "2020_AAP07A: ARQUEBUS BALTEUS"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        "2050_AAP03: ENFORCER"
+      ]
+    },
+    {
+      "ID": 2100,
+      "Entries": [
+        "2100_AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 2110,
+      "Entries": [
+        "2110_AA22: HEAVY CAVALRY"
+      ]
+    },
+    {
+      "ID": 2120,
+      "Entries": [
+        "2120_AA18: LIGHT CAVALRY"
+      ]
+    },
+    {
+      "ID": 2130,
+      "Entries": [
+        "2130_AA18: LIGHT CAVALRY"
+      ]
+    },
+    {
+      "ID": 2140,
+      "Entries": [
+        "2140_AA22: HEAVY CAVALRY"
+      ]
+    },
+    {
+      "ID": 2150,
+      "Entries": [
+        "2150_AAS03: EKDROMOI EP"
+      ]
+    },
+    {
+      "ID": 2160,
+      "Entries": [
+        "2160_AAS03: EKDROMOI PG"
+      ]
+    },
+    {
+      "ID": 2200,
+      "Entries": [
+        "2200_AA22: HEAVY CAVALRY"
+      ]
+    },
+    {
+      "ID": 2210,
+      "Entries": [
+        "2210_AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 2220,
+      "Entries": [
+        "2220_AAS02: CATAPHRACT"
+      ]
+    },
+    {
+      "ID": 2230,
+      "Entries": [
+        "2230_AAS03: EKDROMOI PG"
+      ]
+    },
+    {
+      "ID": 2240,
+      "Entries": [
+        "2240_AAS03: EKDROMOI MG"
+      ]
+    },
+    {
+      "ID": 2250,
+      "Entries": [
+        "2250_AA18A: LIGHT CAVALRY HM"
+      ]
+    },
+    {
+      "ID": 2260,
+      "Entries": [
+        "2260_AA22: HEAVY CAVALRY"
+      ]
+    },
+    {
+      "ID": 2300,
+      "Entries": [
+        "2300_AS07: HEAVY WARSHIP"
+      ]
+    },
+    {
+      "ID": 2350,
+      "Entries": [
+        "2350_AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 2360,
+      "Entries": [
+        "2360_AH12: HC HELICOPTER"
+      ]
+    },
+    {
+      "ID": 2400,
+      "Entries": [
+        "2400_AB08: NEPENTHES"
+      ]
+    },
+    {
+      "ID": 3050,
+      "Entries": [
+        "MAIN MISSILE"
+      ]
+    },
+    {
+      "ID": 4050,
+      "Entries": [
+        "SUB MISSILE RIGHT"
+      ]
+    },
+    {
+      "ID": 4060,
+      "Entries": [
+        "SUB MISSILE LEFT"
+      ]
+    },
+    {
+      "ID": 4070,
+      "Entries": [
+        "4070_? ? ? -- 4070_？？？"
+      ]
+    },
+    {
+      "ID": 5050,
+      "Entries": [
+        "5050_? ? ? -- 5050_？？？"
+      ]
+    },
+    {
+      "ID": 5060,
+      "Entries": [
+        "5060_? ? ? -- 5060_？？？"
+      ]
+    },
+    {
+      "ID": 6050,
+      "Entries": [
+        "6050_IA-02: ICE WORM"
+      ]
+    },
+    {
+      "ID": 6060,
+      "Entries": [
+        "6060_IA-05: DESERT WEEVIL"
+      ]
+    },
+    {
+      "ID": 6070,
+      "Entries": [
+        "6070_IB-01: CEL 240"
+      ]
+    },
+    {
+      "ID": 6080,
+      "Entries": [
+        "6080_IA-13: SEA SPIDER"
+      ]
+    },
+    {
+      "ID": 7050,
+      "Entries": [
+        "7050_12(34) GHOST"
+      ]
+    },
+    {
+      "ID": 8050,
+      "Entries": [
+        "8050_RLF HELICOPTER"
+      ]
+    },
+    {
+      "ID": 8100,
+      "Entries": [
+        "8100_RaD HACKED PROGRESS"
+      ]
+    },
+    {
+      "ID": 8200,
+      "Entries": [
+        "8200_RaD MAIN MISSILE"
+      ]
+    },
+    {
+      "ID": 8210,
+      "Entries": [
+        "8210_RaD SUB MISSILE RIGHT"
+      ]
+    },
+    {
+      "ID": 8220,
+      "Entries": [
+        "8220_RaD SUB MISSILE LEFT"
+      ]
+    },
+    {
+      "ID": 8300,
+      "Entries": [
+        "8300_XYLEM CONTROL TOWER"
+      ]
+    },
+    {
+      "ID": 8310,
+      "Entries": [
+        "8310_XYLEM SHIELD"
+      ]
+    },
+    {
+      "ID": 8320,
+      "Entries": [
+        "8320_XYLEM ALL BLOCK PROGRESS"
+      ]
+    },
+    {
+      "ID": 8400,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 30060,
+      "Entries": [
+        "main missile -- メインミサイル"
+      ]
+    },
+    {
+      "ID": 30061,
+      "Entries": [
+        "Sub missile_right -- サブミサイル_右"
+      ]
+    },
+    {
+      "ID": 30062,
+      "Entries": [
+        "Sub missile_left -- サブミサイル_左"
+      ]
+    },
+    {
+      "ID": 91000,
+      "Entries": [
+        "Decisive Ace A -- 決戦のエースA"
+      ]
+    },
+    {
+      "ID": 91010,
+      "Entries": [
+        "Decisive Ace B -- 決戦のエースB"
+      ]
+    },
+    {
+      "ID": 91020,
+      "Entries": [
+        "string AC -- 文字列AC"
+      ]
+    },
+    {
+      "ID": 91030,
+      "Entries": [
+        "Yulia -- ユーリヤ"
+      ]
+    },
+    {
+      "ID": 91040,
+      "Entries": [
+        "assassin -- 刺客"
+      ]
+    },
+    {
+      "ID": 91050,
+      "Entries": [
+        "Ash (early model) -- アッシュ（前期機体）"
+      ]
+    },
+    {
+      "ID": 91060,
+      "Entries": [
+        "Ash (late model) -- アッシュ（後期機体）"
+      ]
+    },
+    {
+      "ID": 91070,
+      "Entries": [
+        "number 2 -- ナンバー2"
+      ]
+    },
+    {
+      "ID": 91080,
+      "Entries": [
+        "Number 4 (Reinforced Human Company A) -- ナンバー4（強化人間中隊A）"
+      ]
+    },
+    {
+      "ID": 91090,
+      "Entries": [
+        "Number 7 (Reinforced Human Company B) -- ナンバー7（強化人間中隊B）"
+      ]
+    },
+    {
+      "ID": 91100,
+      "Entries": [
+        "Collapse A layer AC -- 崩落A層AC"
+      ]
+    },
+    {
+      "ID": 91110,
+      "Entries": [
+        "Unmanned AC in the reactor core -- 炉心の無人AC"
+      ]
+    },
+    {
+      "ID": 91120,
+      "Entries": [
+        "Carla -- カーラ"
+      ]
+    },
+    {
+      "ID": 91130,
+      "Entries": [
+        "leicester -- レスター"
+      ]
+    },
+    {
+      "ID": 91140,
+      "Entries": [
+        "Wild Geese A -- ワイルド・ギースA"
+      ]
+    },
+    {
+      "ID": 91150,
+      "Entries": [
+        "Wild Geese B -- ワイルド・ギースB"
+      ]
+    },
+    {
+      "ID": 91160,
+      "Entries": [
+        "Wild Geese C -- ワイルド・ギースC"
+      ]
+    },
+    {
+      "ID": 91170,
+      "Entries": [
+        "People of Ash A -- 灰の民A"
+      ]
+    },
+    {
+      "ID": 91180,
+      "Entries": [
+        "People of Ash B -- 灰の民B"
+      ]
+    },
+    {
+      "ID": 91190,
+      "Entries": [
+        "People of Ash C -- 灰の民C"
+      ]
+    },
+    {
+      "ID": 91200,
+      "Entries": [
+        "number 1 -- ナンバー1"
+      ]
+    },
+    {
+      "ID": 91210,
+      "Entries": [
+        "Kara's subordinate -- カーラの部下"
+      ]
+    },
+    {
+      "ID": 91220,
+      "Entries": [
+        "Nest unmanned AC (shooting) -- ネストの無人AC（射撃）"
+      ]
+    },
+    {
+      "ID": 91230,
+      "Entries": [
+        "Nest Unmanned AC (Melee) -- ネストの無人AC（近接）"
+      ]
+    },
+    {
+      "ID": 91240,
+      "Entries": [
+        "Nest unmanned AC (strong small fry) -- ネストの無人AC（強雑魚）"
+      ]
+    },
+    {
+      "ID": 92000,
+      "Entries": [
+        "Wild Geese D -- ワイルドギースD"
+      ]
+    },
+    {
+      "ID": 92010,
+      "Entries": [
+        "Wild Geese E -- ワイルドギースE"
+      ]
+    },
+    {
+      "ID": 92020,
+      "Entries": [
+        "Wild Geese F -- ワイルドギースF"
+      ]
+    },
+    {
+      "ID": 92030,
+      "Entries": [
+        "Bayram battle data -- ベイラムの戦闘データ"
+      ]
+    },
+    {
+      "ID": 92040,
+      "Entries": [
+        "number 6 -- ナンバー6"
+      ]
+    },
+    {
+      "ID": 92050,
+      "Entries": [
+        "number 5 -- ナンバー5"
+      ]
+    },
+    {
+      "ID": 92060,
+      "Entries": [
+        "number 3 -- ナンバー3"
+      ]
+    },
+    {
+      "ID": 92070,
+      "Entries": [
+        "People of Ash D -- 灰の民D"
+      ]
+    },
+    {
+      "ID": 92080,
+      "Entries": [
+        "People of Ash E (strong JUDO) -- 灰の民E（強JUDO）"
+      ]
+    },
+    {
+      "ID": 92090,
+      "Entries": [
+        "Drunker -- ドランカー"
+      ]
+    },
+    {
+      "ID": 92100,
+      "Entries": [
+        "Drunker battle data -- ドランカーの戦闘データ"
+      ]
+    },
+    {
+      "ID": 92110,
+      "Entries": [
+        "Independent mercenary A -- 独立傭兵A"
+      ]
+    },
+    {
+      "ID": 92120,
+      "Entries": [
+        "Independent mercenary B -- 独立傭兵B"
+      ]
+    },
+    {
+      "ID": 92130,
+      "Entries": [
+        "dead strongman -- 死んだ強者"
+      ]
+    },
+    {
+      "ID": 92140,
+      "Entries": [
+        "simulator unmanned ac -- シミュレーター無人AC"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "Name": "AntiqueStandParam",
+  "Entries": [
+    {
+      "ID": 1000,
+      "Entries": [
+        "Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "Wylder's Goblet"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "Wylder's Chalice"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "Soot-Covered Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "Sealed Wylder's Urn"
+      ]
+    },
+    {
+      "ID": 2000,
+      "Entries": [
+        "Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 2001,
+      "Entries": [
+        "Guardian's Goblet"
+      ]
+    },
+    {
+      "ID": 2002,
+      "Entries": [
+        "Guardian's Chalice"
+      ]
+    },
+    {
+      "ID": 2003,
+      "Entries": [
+        "Soot-Covered Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 2004,
+      "Entries": [
+        "Sealed Guardian's Urn"
+      ]
+    },
+    {
+      "ID": 3000,
+      "Entries": [
+        "Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 3001,
+      "Entries": [
+        "Ironeye's Goblet"
+      ]
+    },
+    {
+      "ID": 3002,
+      "Entries": [
+        "Ironeye's Chalice"
+      ]
+    },
+    {
+      "ID": 3003,
+      "Entries": [
+        "Soot-Covered Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 3004,
+      "Entries": [
+        "Sealed Ironeye's Urn"
+      ]
+    },
+    {
+      "ID": 4000,
+      "Entries": [
+        "Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 4001,
+      "Entries": [
+        "Duchess' Goblet"
+      ]
+    },
+    {
+      "ID": 4002,
+      "Entries": [
+        "Duchess' Chalice"
+      ]
+    },
+    {
+      "ID": 4003,
+      "Entries": [
+        "Soot-Covered Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 4004,
+      "Entries": [
+        "Sealed Duchess' Urn"
+      ]
+    },
+    {
+      "ID": 5000,
+      "Entries": [
+        "Raider's Urn"
+      ]
+    },
+    {
+      "ID": 5001,
+      "Entries": [
+        "Raider's Goblet"
+      ]
+    },
+    {
+      "ID": 5002,
+      "Entries": [
+        "Raider's Chalice"
+      ]
+    },
+    {
+      "ID": 5003,
+      "Entries": [
+        "Soot-Covered Raider's Urn"
+      ]
+    },
+    {
+      "ID": 5004,
+      "Entries": [
+        "Sealed Raider's Urn"
+      ]
+    },
+    {
+      "ID": 6000,
+      "Entries": [
+        "Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 6001,
+      "Entries": [
+        "Revenant's Goblet"
+      ]
+    },
+    {
+      "ID": 6002,
+      "Entries": [
+        "Revenant's Chalice"
+      ]
+    },
+    {
+      "ID": 6003,
+      "Entries": [
+        "Soot-Covered Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 6004,
+      "Entries": [
+        "Sealed Revenant's Urn"
+      ]
+    },
+    {
+      "ID": 7000,
+      "Entries": [
+        "Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 7001,
+      "Entries": [
+        "Recluse's Goblet"
+      ]
+    },
+    {
+      "ID": 7002,
+      "Entries": [
+        "Recluse's Chalice"
+      ]
+    },
+    {
+      "ID": 7003,
+      "Entries": [
+        "Soot-Covered Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 7004,
+      "Entries": [
+        "Sealed Recluse's Urn"
+      ]
+    },
+    {
+      "ID": 8000,
+      "Entries": [
+        "Executor's Urn"
+      ]
+    },
+    {
+      "ID": 8001,
+      "Entries": [
+        "Executor's Goblet"
+      ]
+    },
+    {
+      "ID": 8002,
+      "Entries": [
+        "Executor's Chalice"
+      ]
+    },
+    {
+      "ID": 8003,
+      "Entries": [
+        "Soot-Covered Executor's Urn"
+      ]
+    },
+    {
+      "ID": 8004,
+      "Entries": [
+        "Sealed Executor's Urn"
+      ]
+    },
+    {
+      "ID": 19000,
+      "Entries": [
+        "Sacred Erdtree Grail"
+      ]
+    },
+    {
+      "ID": 19001,
+      "Entries": [
+        "Spirit Shelter Grail"
+      ]
+    },
+    {
+      "ID": 19002,
+      "Entries": [
+        "Giant's Cradle Grail"
+      ]
+    }
+  ]
+}
