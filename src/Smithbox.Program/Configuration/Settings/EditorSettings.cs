@@ -688,8 +688,14 @@ public class ParamEditorTab
                 ImGui.Checkbox("Show advanced options in massedit popup", ref CFG.Current.Param_AdvancedMassedit);
                 UIHelper.Tooltip("Show additional options for advanced users within the massedit popup.");
 
+                ImGui.Checkbox("Pinned params stay visible", ref CFG.Current.Param_PinnedParamsStayVisible);
+                UIHelper.Tooltip("Pinned params will stay visible when you scroll instead of only being pinned to the top of the list.");
+
                 ImGui.Checkbox("Pinned rows stay visible", ref CFG.Current.Param_PinnedRowsStayVisible);
                 UIHelper.Tooltip("Pinned rows will stay visible when you scroll instead of only being pinned to the top of the list.");
+
+                ImGui.Checkbox("Pinned fields stay visible", ref CFG.Current.Param_PinnedFieldsStayVisible);
+                UIHelper.Tooltip("Pinned fields will stay visible when you scroll instead of only being pinned to the top of the list.");
             }
 
             if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))

@@ -126,7 +126,7 @@ public class ParamFieldView
             List<string> pinnedFields =
                 Editor.Project.PinnedFields.GetValueOrDefault(activeParam, null);
 
-            if (CFG.Current.Param_PinnedRowsStayVisible)
+            if (CFG.Current.Param_PinnedFieldsStayVisible)
             {
                 ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
             }
@@ -176,7 +176,7 @@ public class ParamFieldView
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             // Pinned Fields
-            if (CFG.Current.Param_PinnedRowsStayVisible)
+            if (CFG.Current.Param_PinnedFieldsStayVisible)
             {
                 if (pinnedFields?.Count > 0)
                 {
@@ -471,7 +471,7 @@ public class ParamFieldView
             {
                 firstRow = false;
 
-                if (!CFG.Current.Param_PinnedRowsStayVisible)
+                if (!CFG.Current.Param_PinnedFieldsStayVisible)
                 {
                     if (pinnedFields?.Count > 0)
                     {

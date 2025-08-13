@@ -1055,7 +1055,9 @@ public class CFG
     public bool Param_HideObsoleteFields = true;
     public bool Param_ShowColorPreview = true;
     public bool Param_ShowGraphVisualisation = true;
+    public bool Param_PinnedParamsStayVisible = true;
     public bool Param_PinnedRowsStayVisible = true;
+    public bool Param_PinnedFieldsStayVisible = true;
     public bool Param_ViewInMapOption = true;
     public bool Param_ViewModelOption = true;
 

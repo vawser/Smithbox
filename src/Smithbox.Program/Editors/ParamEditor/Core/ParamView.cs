@@ -47,14 +47,14 @@ public class ParamView
     {
         DisplayHeader(isActiveView);
 
-        if (CFG.Current.Param_PinnedRowsStayVisible)
+        if (CFG.Current.Param_PinnedParamsStayVisible)
         {
             DisplayPinnedParams(scale);
         }
 
         ImGui.BeginChild("paramTypes");
 
-        if (!CFG.Current.Param_PinnedRowsStayVisible)
+        if (!CFG.Current.Param_PinnedParamsStayVisible)
         {
             DisplayPinnedParams(scale);
         }
