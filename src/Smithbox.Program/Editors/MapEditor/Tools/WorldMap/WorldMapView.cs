@@ -115,7 +115,7 @@ public class WorldMapView : IResourceEventListener
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleWorldMap))
         {
-            IsMapWindowOpen = !IsMapWindowOpen;
+            DisplayMenuOption();
         }
 
         if (!IsMapWindowOpen)
