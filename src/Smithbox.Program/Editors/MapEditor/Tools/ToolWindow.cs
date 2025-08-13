@@ -61,7 +61,7 @@ public class ToolWindow
                     UIHelper.WrappedText("Create a new object within the target map.");
                     UIHelper.WrappedText("");
 
-                    if (Editor.IsAnyMapLoaded())
+                    if (!Editor.IsAnyMapLoaded())
                     {
                         UIHelper.WrappedText("No maps have been loaded yet.");
                         UIHelper.WrappedText("");
