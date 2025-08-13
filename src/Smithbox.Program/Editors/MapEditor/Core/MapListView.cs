@@ -142,7 +142,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         {
             DPI.ApplyInputWidth(windowWidth * 0.75f);
             ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
-            if(ImGui.IsItemDeactivatedAfterEdit())
+            if(ImGui.IsItemEdited())
             {
                 if (_lastSearchText != SearchBarText)
                 {
