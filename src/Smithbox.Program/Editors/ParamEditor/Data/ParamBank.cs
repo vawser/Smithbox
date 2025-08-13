@@ -2225,36 +2225,39 @@ public class ParamBank
         {
             var importFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
 
-            var filestring = File.ReadAllText(importFile);
-            var options = new JsonSerializerOptions();
-            RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStoreLegacy);
+            if (File.Exists(importFile))
+            {
+                var filestring = File.ReadAllText(importFile);
+                var options = new JsonSerializerOptions();
+                RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStoreLegacy);
 
-            if (legacyStore == null)
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {importDir} for row name restore.", LogLevel.Error);
-            }
-            else
-            {
                 if (legacyStore == null)
-                    return;
-
-                if (legacyStore.Params == null)
-                    return;
-
-                var storeDict = legacyStore.Params.ToDictionary(e => e.Name);
-
-                foreach (KeyValuePair<string, Param> p in Params)
                 {
-                    if (!storeDict.ContainsKey(p.Key))
-                        continue;
-
-                    SetParamNamesLegacy(
-                        p.Value,
-                        storeDict[p.Key]
-                    );
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {importDir} for row name restore.", LogLevel.Error);
                 }
+                else
+                {
+                    if (legacyStore == null)
+                        return;
 
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
+                    if (legacyStore.Params == null)
+                        return;
+
+                    var storeDict = legacyStore.Params.ToDictionary(e => e.Name);
+
+                    foreach (KeyValuePair<string, Param> p in Params)
+                    {
+                        if (!storeDict.ContainsKey(p.Key))
+                            continue;
+
+                        SetParamNamesLegacy(
+                            p.Value,
+                            storeDict[p.Key]
+                        );
+                    }
+
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
+                }
             }
         }
         else
