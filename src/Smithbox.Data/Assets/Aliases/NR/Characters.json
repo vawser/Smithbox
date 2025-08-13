@@ -1,0 +1,1529 @@
+[
+  {
+    "ID": "c0000",
+    "Name": "Player",
+    "Tags": [
+      "player",
+      "human"
+    ]
+  },
+  {
+    "ID": "c0010",
+    "Name": "Executor Beast",
+    "Tags": [
+      "player",
+      "human"
+    ]
+  },
+  {
+    "ID": "c2040",
+    "Name": "Juvenile Scholar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2041",
+    "Name": "Larva of Rot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2100",
+    "Name": "Black Knife Assassin",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2130",
+    "Name": "Morgott",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c2140",
+    "Name": "Omen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2150",
+    "Name": "Lightning Ball",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2270",
+    "Name": "Giant Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2271",
+    "Name": "Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2276",
+    "Name": "Giant Death Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2500",
+    "Name": "Crucible Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3000",
+    "Name": "Exile Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3010",
+    "Name": "Banished Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3020",
+    "Name": "Exile Soldier (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3050",
+    "Name": "Commander Niall/O'Neill",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3060",
+    "Name": "Giant Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3080",
+    "Name": "Imp",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3100",
+    "Name": "Bell Bearing Hunter / Elemer of the Briar",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3150",
+    "Name": "Night's Cavalry",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3160",
+    "Name": "Funeral Steed",
+    "Tags": [
+      "creature",
+      "horse"
+    ]
+  },
+  {
+    "ID": "c3170",
+    "Name": "Albinauric Archer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3180",
+    "Name": "Albinauric Archer's Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3181",
+    "Name": "Red Wolf of Radagon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3200",
+    "Name": "Nomadic Merchant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3250",
+    "Name": "Draconic Tree Sentinel",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3251",
+    "Name": "Tree Sentinel",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3252",
+    "Name": "Loretta",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3300",
+    "Name": "Nox Swordstress/Monk/Nightmaiden",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3320",
+    "Name": "Silver Tear",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3350",
+    "Name": "Crystalian",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3360",
+    "Name": "Ancestral Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3361",
+    "Name": "Putrid Ancestral Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3370",
+    "Name": "Ancestral Follower Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3371",
+    "Name": "Putrid Ancestral Follower Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3400",
+    "Name": "Grave Warden Duelist",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3450",
+    "Name": "Misbegotten",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3451",
+    "Name": "Scaly Misbegotten",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3460",
+    "Name": "Leonine Misbegotten",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3470",
+    "Name": "Albinauric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3471",
+    "Name": "Large Albinauric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3500",
+    "Name": "Skeletal Militiaman/Bandit/Knight/Grave Warden",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3550",
+    "Name": "Sanguine Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3560",
+    "Name": "Godskin Apostle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3570",
+    "Name": "Godskin Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3600",
+    "Name": "Alabaster Lord",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3610",
+    "Name": "Oracle Envoy",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3620",
+    "Name": "Oracle Envoy (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3650",
+    "Name": "Erdtree Guardian",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3660",
+    "Name": "Commoner",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3661",
+    "Name": "Putrid Corpse",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3662",
+    "Name": "Putrid Corpse (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3664",
+    "Name": "Cemetery Shade",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3700",
+    "Name": "Depraved Perfumer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3701",
+    "Name": "Perfumer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3702",
+    "Name": "Glintstone Sorcerer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3703",
+    "Name": "Page",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3704",
+    "Name": "Battlemage",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3800",
+    "Name": "Cleanrot Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3810",
+    "Name": "Kindred of Rot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3850",
+    "Name": "Marionette Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3900",
+    "Name": "Fire Monk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3901",
+    "Name": "Blackflame Monk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3910",
+    "Name": "Fire Prelate",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3950",
+    "Name": "Man-Serpent",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3970",
+    "Name": "Azula Beastman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4000",
+    "Name": "Revenant Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4020",
+    "Name": "Royal Revenant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4021",
+    "Name": "Royal Revenant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4040",
+    "Name": "Slug",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4050",
+    "Name": "Kaiden Sellsword",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4060",
+    "Name": "Kaiden Sellsword's Horse",
+    "Tags": [
+      "creature",
+      "horse"
+    ]
+  },
+  {
+    "ID": "c4070",
+    "Name": "Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4071",
+    "Name": "White Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4080",
+    "Name": "Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4090",
+    "Name": "Giant Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4100",
+    "Name": "Demi-Human",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4101",
+    "Name": "Demi-Human (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4110",
+    "Name": "Demi-Human Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4120",
+    "Name": "Demi-Human Chief",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4130",
+    "Name": "Demi-Human Queen",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4150",
+    "Name": "Basilisk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4160",
+    "Name": "Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4161",
+    "Name": "Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4164",
+    "Name": "Bloodbane Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4165",
+    "Name": "Bloodbane Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4166",
+    "Name": "Rotten Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4170",
+    "Name": "Putrid Flesh",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4171",
+    "Name": "Putrid Flesh (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4180",
+    "Name": "Spirit Jellyfish",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4181",
+    "Name": "Spirit Jellyfish",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4190",
+    "Name": "Large Scarab",
+    "Tags": [
+      "creature",
+      "scarab"
+    ]
+  },
+  {
+    "ID": "c4191",
+    "Name": "Scarab",
+    "Tags": [
+      "creature",
+      "scarab"
+    ]
+  },
+  {
+    "ID": "c4200",
+    "Name": "Man-Bat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4201",
+    "Name": "Operatic Bat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4230",
+    "Name": "Land Octopus (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4240",
+    "Name": "Fingercreeper",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4241",
+    "Name": "Fingercreeper (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4250",
+    "Name": "Fingercreeper (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4260",
+    "Name": "Erdtree Burial Watchdog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4270",
+    "Name": "Elder Lion",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4280",
+    "Name": "Giant Ant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4281",
+    "Name": "Giant Ant (Skull Plate)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4290",
+    "Name": "Bloodhound Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4300",
+    "Name": "Wandering Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4310",
+    "Name": "Lordsworn Soldier",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4311",
+    "Name": "Godrick Soldier",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4312",
+    "Name": "Raya Lucaria Soldier",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4313",
+    "Name": "Leyndell Soldier",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4314",
+    "Name": "Radahn Soldier",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4315",
+    "Name": "Mausoleum Soldier",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4320",
+    "Name": "Vulgar Militia",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4321",
+    "Name": "Vulgar Militia",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4340",
+    "Name": "Mad Pumpkin Head",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4350",
+    "Name": "Lordsworn Knight",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4351",
+    "Name": "Godrick Knight",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4352",
+    "Name": "Cuckoo Knight",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4353",
+    "Name": "Leyndell Knight",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4354",
+    "Name": "Redmane Knight",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4355",
+    "Name": "Mausoleum Knight",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4360",
+    "Name": "Lordsworn Knight's Horse",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4363",
+    "Name": "Lordsworn Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4370",
+    "Name": "Foot Soldier",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4371",
+    "Name": "Godrick Foot Soldier",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4372",
+    "Name": "Raya Lucaria Foot Soldier",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4373",
+    "Name": "Leyndell Foot Soldier",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4374",
+    "Name": "Radahn Foot Soldier",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4375",
+    "Name": "Mausoleum Foot Soldier",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4377",
+    "Name": "Highwayman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4380",
+    "Name": "Starcaller",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4381",
+    "Name": "Guilty",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4382",
+    "Name": "Stonedigger",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4383",
+    "Name": "Glintstone Digger",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4384",
+    "Name": "Glintstone Digger (Small Sack)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4386",
+    "Name": "Flame Priestess",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4440",
+    "Name": "Land Squirt",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4450",
+    "Name": "Walking Mausoleum",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4460",
+    "Name": "Flame Chariot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4470",
+    "Name": "Abductor Virgin",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4480",
+    "Name": "Miranda Blossom",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4481",
+    "Name": "Miranda Sprout",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4490",
+    "Name": "Living Jar Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4491",
+    "Name": "Living Jar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4500",
+    "Name": "Flying Dragon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4501",
+    "Name": "Decaying Ekzykes",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4503",
+    "Name": "Borealis the Freezing Fog",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4505",
+    "Name": "Flying Dragon (Small)",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4510",
+    "Name": "Ancient Dragon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4550",
+    "Name": "Giant Dog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4560",
+    "Name": "Giant Crow",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4570",
+    "Name": "Wormface",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4580",
+    "Name": "Large Wormface",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4600",
+    "Name": "Troll",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4602",
+    "Name": "Snowfield Troll",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4620",
+    "Name": "Astel, Naturalborn of the Void",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4630",
+    "Name": "Runebear",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4640",
+    "Name": "Ulcerated Tree Spirit",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4650",
+    "Name": "Dragonkin Soldier",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4660",
+    "Name": "Guardian Golem",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4670",
+    "Name": "Ancestor Spirit",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4680",
+    "Name": "Falling-star Beast",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4690",
+    "Name": "Grafted Scion",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4750",
+    "Name": "Godrick the Grafted",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4770",
+    "Name": "Valiant Gargoyle",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4810",
+    "Name": "Erdtree Avatar",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4900",
+    "Name": "Dragon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4901",
+    "Name": "Caligo - Miasma of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4910",
+    "Name": "Magma Wyrm",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4911",
+    "Name": "Great Wyrm Theodorix",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4950",
+    "Name": "Tibia Mariner",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4960",
+    "Name": "Giant Skeleton Torso",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4961",
+    "Name": "Giant Skeleton Torso",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4980",
+    "Name": "Death Rite Bird",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c5010",
+    "Name": "Golden Hippopotamus",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c5011",
+    "Name": "Golden Hippopotamus (Golden Wings)",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c5110",
+    "Name": "Spirit Eel",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5810",
+    "Name": "Demi-Human Swordmaster",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6000",
+    "Name": "Unknown",
+    "Tags": [
+      "fauna",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c6001",
+    "Name": "Eagle",
+    "Tags": [
+      "fauna",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c7000",
+    "Name": "Fallen Hawks Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7100",
+    "Name": "Ancient Hero",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7500",
+    "Name": "Gladius - Beast of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7510",
+    "Name": "Adel - Baron of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7511",
+    "Name": "Adel - Baron of Night (Lightning Fang)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7520",
+    "Name": "Gnoster - Wisdom of Night (Moth)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7521",
+    "Name": "Gnoster - Wisdom of Night (Moth)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7530",
+    "Name": "Gnoster - Wisdom of Night (Pest)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7540",
+    "Name": "Maris - Fathom of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7560",
+    "Name": "Libra - Creature of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7561",
+    "Name": "Libra - Creature of Night",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7570",
+    "Name": "Libra - Creature of Night (Shrouded)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7580",
+    "Name": "Heolstor the Nightlord",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7600",
+    "Name": "Fulghor - Champion of Nightglow",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7700",
+    "Name": "Gaping Dragon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7710",
+    "Name": "Centipede Demon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7711",
+    "Name": "Centipede Grub",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7712",
+    "Name": "Centipede Grub",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7800",
+    "Name": "Duke's Dear Freja",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7810",
+    "Name": "Freja Spiderling",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7820",
+    "Name": "Smelter Demon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7900",
+    "Name": "Nameless King",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7910",
+    "Name": "Nameless King (Mount)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7920",
+    "Name": "Dancer of the Boreal Valley",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8000",
+    "Name": "Torrent",
+    "Tags": [
+      "horse"
+    ]
+  },
+  {
+    "ID": "c8130",
+    "Name": "Traning Dummy (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8131",
+    "Name": "Traning Dummy (Medium)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8132",
+    "Name": "Traning Dummy (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8910",
+    "Name": "Human Man",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8911",
+    "Name": "Long-limbed Man",
+    "Tags": [
+      "creature"
+    ]
+  }
+]

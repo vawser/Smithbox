@@ -1,0 +1,9767 @@
+[
+  {
+    "ID": "o000001",
+    "Name": "Plane",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000002",
+    "Name": "Plane",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000100",
+    "Name": "Loot Bag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000101",
+    "Name": "",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000110",
+    "Name": "Wolf Body - After Heavy Deflect Success",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000112",
+    "Name": "Gourd",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000113",
+    "Name": "Gourd",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000114",
+    "Name": "Gourd",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000120",
+    "Name": "Rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000121",
+    "Name": "Oil Vial",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000130",
+    "Name": "Mibu Ballon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000131",
+    "Name": "Mibu Ballon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000132",
+    "Name": "Mibu Ballon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000133",
+    "Name": "Mibu Ballon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000140",
+    "Name": "Storage Bag (Empty)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000141",
+    "Name": "Storage Bag (Half-filled)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000142",
+    "Name": "Storage Bag (Filled)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000150",
+    "Name": "Ceremonial Dagger",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000151",
+    "Name": "Ceremonial Dagger",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000160",
+    "Name": "Touch Paper",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000161",
+    "Name": "Touch Paper",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000163",
+    "Name": "Touch Paper",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000170",
+    "Name": "Cermaic Shard",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000180",
+    "Name": "Leaf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000190",
+    "Name": "Illusive Hall Bell",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000200",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o000300",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001000",
+    "Name": "Some kind of box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001001",
+    "Name": "No models, contains a  file",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001200",
+    "Name": "Sliding door in Ashina castle dojo?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001205",
+    "Name": "Large sliding door?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001210",
+    "Name": "Extra large door?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001211",
+    "Name": "Extra large door?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001220",
+    "Name": "Extra large door?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001221",
+    "Name": "Gate door with sliding lock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001230",
+    "Name": "Very large door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001231",
+    "Name": "Very large door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001400",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001401",
+    "Name": "Door frame?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001402",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o001500",
+    "Name": "Shinobi wall?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002000",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002001",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002010",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002011",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002020",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002021",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002030",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002031",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002040",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002041",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002042",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002050",
+    "Name": "Tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002051",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002052",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002100",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002110",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002120",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002500",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002501",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002510",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002511",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002520",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002521",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002530",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002531",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002540",
+    "Name": "Grapple-able tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002541",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002542",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002550",
+    "Name": "Tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002551",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002552",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002600",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002610",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002620",
+    "Name": "Tree Branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o002700",
+    "Name": "Kite and Kite Reel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003000",
+    "Name": "Grapple-able tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003001",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003010",
+    "Name": "Grapple-able tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003020",
+    "Name": "Grapple-able tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003100",
+    "Name": "Castle Roof Fish Decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003110",
+    "Name": "Castle Roof Fish Decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003150",
+    "Name": "Unknown Object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003160",
+    "Name": "Unknown Object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003200",
+    "Name": "Snake like object (grapple-able?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003210",
+    "Name": "Snake like decoration grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003250",
+    "Name": "Ape like wall decoration (grapple-able?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003500",
+    "Name": "Grapple-eable tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003510",
+    "Name": "Grapple-eable tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003520",
+    "Name": "Grapple-eable tree branch (small)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003600",
+    "Name": "Castle Roof Fish Decoration (grappleable)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003601",
+    "Name": "Castle Roof Fish Decoration (grappleable)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003610",
+    "Name": "Castle Roof Fish Decoration (grappleable)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003650",
+    "Name": "Unknown Object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003660",
+    "Name": "Unknown Object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003700",
+    "Name": "Ashina Depths Animal Remains (horned skull, grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o003710",
+    "Name": "Ashina Depths Animal Remains (spine, grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004000",
+    "Name": "Buddha grave rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004010",
+    "Name": "Buddha statue/carving",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004020",
+    "Name": "Buddha grave rock (curved top)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004500",
+    "Name": "Buddha grave rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004510",
+    "Name": "Buddha statue/carving",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o004520",
+    "Name": "Buddha grave rock (curved top)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005000",
+    "Name": "Sculptor's Idol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005150",
+    "Name": "Crow / Raven Model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005200",
+    "Name": "Wooden Shield with lever",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005210",
+    "Name": "Hirata Bandit Wooden Shield?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005220",
+    "Name": "Senpou Assassin's Bamboo Hat Shield",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005222",
+    "Name": "Taro Troop Crude Armor (pulled off by loaded spear)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005223",
+    "Name": "Taro Troop Crude Armor (pulled off by loaded spear)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005224",
+    "Name": "Crude Armor?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005225",
+    "Name": "Taro Troop Crude Armor (pulled off by loaded spear)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005300",
+    "Name": "Ornate Chest (openable?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005380",
+    "Name": "Loot item bag on some kind of bowl",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005381",
+    "Name": "Bowl minus the loot item bag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005390",
+    "Name": "Loot item bag on some kind of bowl with some weird wrapping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005391",
+    "Name": "Loot item bag on some kind of bowl with some weird wrapping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005392",
+    "Name": "Loot item bag on some kind of bowl with some weird wrapping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005400",
+    "Name": "Underwater sunken ornate chest (openable)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005500",
+    "Name": "Sculptor's Idol with rock stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005510",
+    "Name": "Sculptor's Idol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o005900",
+    "Name": "Some kind of wall?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o006000",
+    "Name": "Memorial Mob Salesman's tent",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o006010",
+    "Name": "Anayama the Peddler's chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o006500",
+    "Name": "Memorial Mob Salesman's tent",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007000",
+    "Name": "Plant (stealth plants?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007001",
+    "Name": "Plant (stealth plants?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007002",
+    "Name": "Plant (stealth plants?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007009",
+    "Name": "Some Weird cross shaped box thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007010",
+    "Name": "Fern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007011",
+    "Name": "Fern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007019",
+    "Name": "Fern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007020",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007021",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007022",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007023",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007024",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007025",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007026",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007027",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007029",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007030",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007031",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007040",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007050",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007070",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007071",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007080",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007090",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007091",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007092",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007093",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007100",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007110",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007111",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007120",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007130",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007140",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007150",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007160",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007170",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007200",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007201",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007202",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007210",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007211",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007220",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007230",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007240",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007250",
+    "Name": "Fireplace?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007260",
+    "Name": "Icicles",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007261",
+    "Name": "longer icicles",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007262",
+    "Name": "large single icicle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007270",
+    "Name": "Several Stalagtites (rocks sticking out of ground)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007271",
+    "Name": "3 Stalagtites (rocks sticking out of ground)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007272",
+    "Name": "single stalagtite",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007280",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007281",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007282",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007283",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007284",
+    "Name": "Underwater Plant?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007285",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007286",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007287",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007290",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007300",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007310",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007320",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007330",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007340",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007350",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007351",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007352",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007360",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007370",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007500",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007501",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007502",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007509",
+    "Name": "Some crossshaped box thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007510",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007520",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007521",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007522",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007523",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007530",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007540",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007550",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007560",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007570",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007571",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007580",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007590",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007591",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007592",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007600",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007610",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007630",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007660",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007700",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007701",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007800",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o007840",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o008000",
+    "Name": "Kusabimaru sheathed (sheathe and sword one mesh, tsuba its own mesh) - This the model used in the cutscene where Kuro gives you Kusabimaru in Ashina Resavoir",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o008010",
+    "Name": "Mortal Blade sheathed - most likely the model used in the cutscene where the Divine Child of Rejuvanating Waters gives you the Mortal Blade",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o008020",
+    "Name": "Black Mortal Blade (no sheathe)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o008110",
+    "Name": "Owl's Odachi (no sheathe)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009000",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009010",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009011",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009012",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009013",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009014",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009015",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009016",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009017",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009018",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009019",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009020",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009021",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009022",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009023",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009024",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009025",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009026",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009027",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009028",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009029",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009030",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009031",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009032",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009033",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009034",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009035",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009036",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009037",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009038",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009039",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009040",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009041",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009042",
+    "Name": "Unknown triangle shape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009070",
+    "Name": "Large rectangular  box thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009090",
+    "Name": "Entire map for Hirata Estate?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009091",
+    "Name": "Entire map for Ashina Outskirts?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009092",
+    "Name": "Entire map for Ashina Castle?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009093",
+    "Name": "Unknown area around Ashina Castle map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009094",
+    "Name": "Unknown area map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009095",
+    "Name": "Mibu Forest area map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009096",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009097",
+    "Name": "Senpou Temple area map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009098",
+    "Name": "Fountainhead Palace area map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009099",
+    "Name": "Sunken Valley area map?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009100",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009101",
+    "Name": "Unknown area map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009200",
+    "Name": "Unknown ara map",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009210",
+    "Name": "Castle Stairwell model?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009220",
+    "Name": "Ladder model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009230",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009240",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009241",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009250",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009251",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009260",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009261",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009300",
+    "Name": "Some kind of ceiling",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009530",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009540",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009541",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009550",
+    "Name": "Bigger gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009551",
+    "Name": "Bigger gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009560",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009561",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009980",
+    "Name": "Some bridge model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o009990",
+    "Name": "Hanging corpse lamp thing (seen in mibu forest)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o101000",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o101020",
+    "Name": "Small gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o101050",
+    "Name": "Small gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o101070",
+    "Name": "Some gate model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o101100",
+    "Name": "Unknown wall/door model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o103000",
+    "Name": "Small boat model (seen in mibu village)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104000",
+    "Name": "Firewood/wood bundle model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104050",
+    "Name": "Spear rack (undone)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104060",
+    "Name": "Ashina Grunt Sword Rack (undone)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104090",
+    "Name": "Dojo small wall model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104100",
+    "Name": "wooden diving board looking model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104110",
+    "Name": "some kind of rice barrel?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104120",
+    "Name": "Lord's arm rest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104130",
+    "Name": "Small ornate table thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104140",
+    "Name": "Small floor shelf model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104150",
+    "Name": "Unknown small floor rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104160",
+    "Name": "Small floor table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104170",
+    "Name": "Floor Kimono rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104171",
+    "Name": "Wall kimono rack?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104172",
+    "Name": "Floor Kimono rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104180",
+    "Name": "Unknown bamboo lattice model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104181",
+    "Name": "Unknown bamboo cross model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104182",
+    "Name": "Broken bamboo fence/lattice",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104190",
+    "Name": "Unknown bamboo lattice model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104191",
+    "Name": "Broken bamboo fence/lattice",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104192",
+    "Name": "Broken bamboo lattice",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104193",
+    "Name": "Bamboo rod model  (weapon possibly?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104200",
+    "Name": "Big Vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104201",
+    "Name": "Unknown rolled up fabric model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104210",
+    "Name": "Small vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104220",
+    "Name": "Some kind of hatchet?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104230",
+    "Name": "Another hatchet?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104240",
+    "Name": "Folding wall decoration",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104250",
+    "Name": "Vase with spoon ladel thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104260",
+    "Name": "Big vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104300",
+    "Name": "Slightly opened wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104310",
+    "Name": "Close wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104350",
+    "Name": "Small open wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104370",
+    "Name": "Some kind of plank bundle?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104380",
+    "Name": "Shallow wide open wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104390",
+    "Name": "Shoulder water carrying buckets",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104400",
+    "Name": "Bamboo rod/stick sticking out of ground",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104410",
+    "Name": "Bamboo rod/stick sticking out of ground",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104420",
+    "Name": "Bamboo rod/stick sticking out of ground",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104430",
+    "Name": "Unknown spikey yam shaped thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104440",
+    "Name": "Unknown long spikey yam shaped thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104450",
+    "Name": "Wall leaning bamboo rods",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104460",
+    "Name": "Snapped bamboo rod",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104501",
+    "Name": "Docked wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104502",
+    "Name": "Docked wooden cart alternative",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104503",
+    "Name": "Docked wooden cart alternative 2",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104510",
+    "Name": "Broken down wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104511",
+    "Name": "Docked wooden cart alternative 3",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104630",
+    "Name": "Bamboo basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104640",
+    "Name": "Bamboo basket alternative",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104650",
+    "Name": "Small round bamboo basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104660",
+    "Name": "Small round firepit basket?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104661",
+    "Name": "Unknown spikey yam shaped thing inside small round bamboo basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104680",
+    "Name": "Kimono on long bamboo rod",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104690",
+    "Name": "Kimono on long bamboo rod",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104700",
+    "Name": "Blanket covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104701",
+    "Name": "chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104702",
+    "Name": "chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104710",
+    "Name": "Blanket covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104711",
+    "Name": "Blanket covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104720",
+    "Name": "Raised chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104721",
+    "Name": "Opened raised chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104750",
+    "Name": "Small vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104760",
+    "Name": "Sake bottle and cup",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104770",
+    "Name": "Scattered baskets and bottles",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104771",
+    "Name": "Scattered reading / writing materials",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104780",
+    "Name": "Tattered Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104781",
+    "Name": "Tattered Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104790",
+    "Name": "Tea kettle ceiling mount",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104800",
+    "Name": "idk how to describe it",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104801",
+    "Name": "Wooden wall mounted shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104802",
+    "Name": "idk how to describe it",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104803",
+    "Name": "Ashina Castle Inner sanctum library wooden shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104804",
+    "Name": "Ashina Castle Inner sanctum library wooden shelf empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104810",
+    "Name": "Shoji door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104811",
+    "Name": "Slightly destroyed Shoji Door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104812",
+    "Name": "Slightly destroyed Shoji Door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104813",
+    "Name": "Slightly destroyed Shoji Door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104814",
+    "Name": "Half destroyed shoji door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104815",
+    "Name": "Shoji door alternative style",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104820",
+    "Name": "Dojo solid sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104830",
+    "Name": "Partially destroyed dojo solid sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104840",
+    "Name": "Partially destroyed dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104850",
+    "Name": "Dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104860",
+    "Name": "Partially destroyed dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104870",
+    "Name": "Dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104880",
+    "Name": "Dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104881",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104882",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104883",
+    "Name": "Dojo solid wider sliding door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104890",
+    "Name": "Bamboo rods",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o104900",
+    "Name": "Samurai armor display",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105100",
+    "Name": "Corpse (abandoned dungeon?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105200",
+    "Name": "Unknown Samurai NPC (Mogami Inonsuke?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105210",
+    "Name": "Unknown NPC model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105211",
+    "Name": "Unknown NPC model (same as 10210 but has sash)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105220",
+    "Name": "Nogami Gensai?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105221",
+    "Name": "Nogami Gensai?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o105300",
+    "Name": "Hirata Bandit?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106000",
+    "Name": "Hirata Bandit?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106010",
+    "Name": "Torch stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106020",
+    "Name": "Candle stand?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106050",
+    "Name": "Large torch stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106051",
+    "Name": "Large torch stand (empty)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106060",
+    "Name": "Shallow soup bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106070",
+    "Name": "Tipped over candle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106100",
+    "Name": "Stone lantern stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106150",
+    "Name": "Wooden plans on something",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106200",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106210",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106220",
+    "Name": "straw bundle pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106221",
+    "Name": "straw bundle pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106225",
+    "Name": "Straw bundle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106226",
+    "Name": "Straw bundle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106227",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106228",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106229",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106230",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106300",
+    "Name": "Large flat rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106301",
+    "Name": "Large flat rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106310",
+    "Name": "Large flat rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106311",
+    "Name": "Large flat rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106320",
+    "Name": "Large tall rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106321",
+    "Name": "Large tall rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106400",
+    "Name": "Tree branchs",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106401",
+    "Name": "Tree branchs",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106500",
+    "Name": "Destroyed wooden gate fence",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106501",
+    "Name": "Destroyed wooden gate fence",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106998",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o106999",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o107000",
+    "Name": "Turtle decoration (grapple-able?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o107010",
+    "Name": "Castle roof fish decoration (grapple-able?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o107020",
+    "Name": "Castle roof wave looking decoration (grapple-able?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o107100",
+    "Name": "Partial stone wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o108000",
+    "Name": "Broken wood support",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o108010",
+    "Name": "Large wooden support?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o108020",
+    "Name": "Large wooden support?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o108100",
+    "Name": "Hirata Estate hidden temple giant idol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109050",
+    "Name": "Broken Wooden Support",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109100",
+    "Name": "Hirata Estate Entrance (blocked by fire?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109101",
+    "Name": "Hirata Estate Entrance (blocked by fire?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109150",
+    "Name": "Wooden gate fence",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109151",
+    "Name": "Wooden gate fence",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109800",
+    "Name": "Destroyed wooden supports",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109850",
+    "Name": "Large destroyed wooden supports",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109900",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109910",
+    "Name": "Bridge wooden supports?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109920",
+    "Name": "Bridge wooden supports?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109930",
+    "Name": "Bridge wooden supports?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109950",
+    "Name": "Tatami mat hidden door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109960",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o109990",
+    "Name": "Hirata Bandit's Wooden Shield",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o110000",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111000",
+    "Name": "Buddha wooden small wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111100",
+    "Name": "Small wooden door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111200",
+    "Name": "Buddha large wooden small wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111300",
+    "Name": "Ashina Castle wooden gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111310",
+    "Name": "Ashina Castle wooden gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111320",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111330",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111400",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111410",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111500",
+    "Name": "Large gate doors with frame",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111510",
+    "Name": "Small wooden door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111520",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111530",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111540",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111550",
+    "Name": "Large gate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111600",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111610",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111620",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111630",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111650",
+    "Name": "Dojo solid wider sliding wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111690",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111750",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111751",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111780",
+    "Name": "Shojidoor",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111800",
+    "Name": "Striped small wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111810",
+    "Name": "Striped small wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111850",
+    "Name": "Striped small wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111860",
+    "Name": "Dojo door with frame?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o111900",
+    "Name": "Castle windows?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112000",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112200",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112201",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112202",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112203",
+    "Name": "Broken wooden support beam",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112300",
+    "Name": "Long thin tree branch?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112400",
+    "Name": "Long thin tree branch?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112410",
+    "Name": "Long thin tree branch?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112420",
+    "Name": "Long thin tree branch?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112430",
+    "Name": "Several tree branches",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112440",
+    "Name": "Several tree branches",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112700",
+    "Name": "Several tree branches",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o112710",
+    "Name": "Several tree branches",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113000",
+    "Name": "Rocks in shape of cone",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113001",
+    "Name": "Rocks in shape of lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113002",
+    "Name": "Rocks in shape of inverted cone",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113010",
+    "Name": "Several small rocks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113100",
+    "Name": "Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113101",
+    "Name": "Tilted Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113102",
+    "Name": "Snapped tilted battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113110",
+    "Name": "Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113111",
+    "Name": "Tilted Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113112",
+    "Name": "Snapped tilted battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113120",
+    "Name": "Square battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113200",
+    "Name": "Longer battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113201",
+    "Name": "Tilted Longer battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113202",
+    "Name": "Snapped Longer battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113210",
+    "Name": "Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113211",
+    "Name": "Titled battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113220",
+    "Name": "Castle banner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113300",
+    "Name": "Large battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113301",
+    "Name": "Titled large battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113302",
+    "Name": "Snapped titled large battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113310",
+    "Name": "Large battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113320",
+    "Name": "Large castle banner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113360",
+    "Name": "Large wooden stake style barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113370",
+    "Name": "Inverted T shaped wooden stake",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113371",
+    "Name": "Inverted T shaped wooden stake",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113372",
+    "Name": "Disconnected Inverted T shaped wooden stake",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113373",
+    "Name": "Small raised wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113374",
+    "Name": "Raisable wooden paltform/elevator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113380",
+    "Name": "Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113381",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113382",
+    "Name": "Large titled wooden stake style barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113390",
+    "Name": "Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113391",
+    "Name": "Diagonal based wooden stake barrier (no floating roped knots)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113392",
+    "Name": "Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113393",
+    "Name": "Thicker Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113394",
+    "Name": "Thicker Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113395",
+    "Name": "Thicker Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113398",
+    "Name": "Large titled wooden stake style barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113399",
+    "Name": "Slightly diagonal small wooden stake style barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113400",
+    "Name": "Mounted wooden shield with single arrow stuck",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113401",
+    "Name": "Destroyed mounted wooden shield with several stuck arrows",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113402",
+    "Name": "Destroyed / shattered mounted wooden shield",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113403",
+    "Name": "Wooden siding",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113404",
+    "Name": "Plated wooden siding?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113405",
+    "Name": "Encampment small foldable chair",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113406",
+    "Name": "Double mounted wooden shields",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113407",
+    "Name": "Raised wooden barrier sandbagged",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113409",
+    "Name": "Large diagonal wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113410",
+    "Name": "Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113411",
+    "Name": "Diagonal based wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113412",
+    "Name": "Cross shaped wooden stake with rope knots",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113413",
+    "Name": "Cross shaped wooden stake",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113414",
+    "Name": "Destroyed wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113415",
+    "Name": "Large wooden stake barrier reinforced",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113416",
+    "Name": "Destroyed large wooden stake barrier reinforced",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113417",
+    "Name": "Some kind of wooden structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113418",
+    "Name": "Tall wooden stake barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113420",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113430",
+    "Name": "Some kind of cloth tied to a long wooden rod",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113435",
+    "Name": "Empty spear rack with single spear on floor (single spear its own mesh)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113440",
+    "Name": "Closed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113450",
+    "Name": "Detached table surface and stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113451",
+    "Name": "Detached table surface and stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113470",
+    "Name": "Wrapped firewood bundle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113480",
+    "Name": "Rug mat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113490",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113500",
+    "Name": "Wooden watch tower",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113501",
+    "Name": "Deconstructed small wooden watch tower",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113510",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113511",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113515",
+    "Name": "Wooden stake torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113521",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113522",
+    "Name": "Wooden shack structure pieces?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113530",
+    "Name": "Wooden shack structure pieces?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113540",
+    "Name": "Some wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113550",
+    "Name": "Market stand?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113560",
+    "Name": "Platform market stand with longer cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113570",
+    "Name": "Platform market stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113580",
+    "Name": "Battle flag contained in wooden structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113600",
+    "Name": "Wooden stand",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113610",
+    "Name": "Partial wooden bridge?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113611",
+    "Name": "Partial wooden bridge?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113630",
+    "Name": "Round wooden column",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113631",
+    "Name": "Round wooden column",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113640",
+    "Name": "Small wooden support",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o113650",
+    "Name": "Square rug/floor mat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114000",
+    "Name": "Ashina Castle Inner sanctum library wooden shelf empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114001",
+    "Name": "Smaller wooden shelf empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114010",
+    "Name": "Smaller wooden shelf empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114050",
+    "Name": "Spear rack - missing one spear",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114100",
+    "Name": "Wooden bench",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114110",
+    "Name": "Wooden rice casket?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114120",
+    "Name": "Lord's arm rest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114130",
+    "Name": "Small table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114140",
+    "Name": "Small ornate shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114150",
+    "Name": "Small box and wooden rack of some kind",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114160",
+    "Name": "Small table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114172",
+    "Name": "Kimono rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114180",
+    "Name": "small bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114181",
+    "Name": "Flat bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114182",
+    "Name": "Broken bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114190",
+    "Name": "Flat bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114191",
+    "Name": "Broken bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114192",
+    "Name": "Broken bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114193",
+    "Name": "Bamboo rod",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114200",
+    "Name": "Vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114210",
+    "Name": "Vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114240",
+    "Name": "Room folding wall separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114241",
+    "Name": "Longer room folding wall separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114250",
+    "Name": "Small wooden wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114251",
+    "Name": "Small wooden wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114255",
+    "Name": "Small wooden wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114260",
+    "Name": "Tatami round floor mat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114270",
+    "Name": "Mibu village water pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114280",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114290",
+    "Name": "Square floor object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114300",
+    "Name": "Slightly opened wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114310",
+    "Name": "Closed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114320",
+    "Name": "Destroyed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114350",
+    "Name": "Small wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114370",
+    "Name": "Small wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114380",
+    "Name": "Shallow wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114400",
+    "Name": "Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114410",
+    "Name": "Battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114420",
+    "Name": "Tilted Battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114430",
+    "Name": "Tilted Snapped Battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114450",
+    "Name": "Wall leaning bamboo rod pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114500",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114501",
+    "Name": "Pot with floor leaning lid",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114502",
+    "Name": "Covered pot with ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114503",
+    "Name": "Small pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114505",
+    "Name": "Mibu styled covered pot with ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114506",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114507",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114508",
+    "Name": "Plant in large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114510",
+    "Name": "Small sake bottle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114511",
+    "Name": "Small sake bottle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114512",
+    "Name": "Sake bottle with cup",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114515",
+    "Name": "Slightly opened wooden drawer",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114520",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114525",
+    "Name": "Small container with jars",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114530",
+    "Name": "Small Tree stump?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114531",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114533",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114540",
+    "Name": "Firewood/wood bundle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114541",
+    "Name": "Firewood/wood bundle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114550",
+    "Name": "Straw cape and straw hat wall mounted",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114560",
+    "Name": "Spear",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114565",
+    "Name": "Spear",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114570",
+    "Name": "Musket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114571",
+    "Name": "Big musket turret mounting",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114575",
+    "Name": "Bow rack with one bow",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114580",
+    "Name": "Wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114585",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114590",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114595",
+    "Name": "Wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114600",
+    "Name": "Opened chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114610",
+    "Name": "Log pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114620",
+    "Name": "Big wooden stake",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114630",
+    "Name": "Unknown floor mounted pole",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114640",
+    "Name": "Wooden basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114641",
+    "Name": "Unknown wooden platform with wooden shield barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114650",
+    "Name": "Wooden basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114655",
+    "Name": "Tall wooden basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114660",
+    "Name": "Firepit basket?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114661",
+    "Name": "Large basket with yam shaped thing inside",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114670",
+    "Name": "Gigantic cannon of some sort",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114680",
+    "Name": "Armor padding Spear and Sword",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114690",
+    "Name": "Pile of metal rings?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114700",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114701",
+    "Name": "Partial cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114702",
+    "Name": "Boards on top of chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114710",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114711",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114712",
+    "Name": "Chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114720",
+    "Name": "Small chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114730",
+    "Name": "Raised chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114731",
+    "Name": "Open raised chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114740",
+    "Name": "Large chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114741",
+    "Name": "Large opened chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114750",
+    "Name": "Partially opened cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114760",
+    "Name": "Partially clothed covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114765",
+    "Name": "Square chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114770",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114780",
+    "Name": "Stack of books",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114781",
+    "Name": "Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114785",
+    "Name": "Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114800",
+    "Name": "Group of small rocks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114801",
+    "Name": "Group of small rocks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114805",
+    "Name": "Rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114806",
+    "Name": "Rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114809",
+    "Name": "Rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114810",
+    "Name": "Some kind of log?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114820",
+    "Name": "Rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114900",
+    "Name": "Samurai armor display",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114901",
+    "Name": "Samurai armor display (with helmet crest)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114902",
+    "Name": "Samurai armor display (with coat and helmet crest)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114903",
+    "Name": "Samurai armor display (with helmet crest)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114904",
+    "Name": "Samurai armor display (with coat and helmet crest)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114905",
+    "Name": "Samurai armor display (samurai general mini boss' helmet)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114906",
+    "Name": "Samurai armor display (samurai general mini boss' helmet no horns)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114910",
+    "Name": "Altar table of some kind?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114920",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114930",
+    "Name": "Katana and Wakizashi sword stand (genichiro looking ones?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114940",
+    "Name": "Small table with some weird cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114950",
+    "Name": "Some weird shoji door thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114960",
+    "Name": "Some kind of horn decoration?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o114990",
+    "Name": "Wall hung scrolls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115000",
+    "Name": "Hawk model",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115010",
+    "Name": "Kind faced buddha",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115020",
+    "Name": "Some padlock looking thing with a rope attached",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115030",
+    "Name": "Wood stump and rug?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115040",
+    "Name": "Dilapidated Temple Multi-idol sculpture",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115100",
+    "Name": "Interior ministry samurai? (helmet, late game)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115110",
+    "Name": "Interior ministry samurai? (helmet, late game)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115120",
+    "Name": "Dead, wall leaning Nightjar Ninja (weapon is 3rd to last)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115200",
+    "Name": "Dead corpse pile with rock and tattered battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115210",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115220",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115260",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115300",
+    "Name": "Unknown Onmyo mage looking NPC",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115400",
+    "Name": "Snake canyon palanquin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115401",
+    "Name": "Unknown wall hung cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115410",
+    "Name": "Interior ministry bamboo platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115411",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115412",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115420",
+    "Name": "Interior ministry bamboo platform (longer version)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115421",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115430",
+    "Name": "Interior ministry bamboo platform (longer version)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115431",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115440",
+    "Name": "Unknown wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115441",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115450",
+    "Name": "Unknown wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115451",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115460",
+    "Name": "Unknown wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115461",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115470",
+    "Name": "Interior ministry bamboo platform (ends only and middle flat square base)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115471",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115480",
+    "Name": "Interior ministry bamboo platform (ends only and middle flat square base)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115481",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115490",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115491",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115500",
+    "Name": "Unknown wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115501",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115510",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115520",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115550",
+    "Name": "Snake decoration grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115560",
+    "Name": "Snake decoration grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115600",
+    "Name": "Angry buddha wall decoration?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115700",
+    "Name": "Some C shaped object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115710",
+    "Name": "Some C shaped object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115720",
+    "Name": "Decoration grapple point?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115730",
+    "Name": "Hook shaped grapple point?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115750",
+    "Name": "Dragon decoration around stalagtite?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115760",
+    "Name": "Underground Great Serpent Shrine Dried viscera holder?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115780",
+    "Name": "Large 4 pronged grappling hook",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115790",
+    "Name": "Large castle roof decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115800",
+    "Name": "Giant flat rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115810",
+    "Name": "Giant wide rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115820",
+    "Name": "Giant wide rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115830",
+    "Name": "Corpses and spears",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115840",
+    "Name": "Unknown small triangle object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115850",
+    "Name": "Large wide rock and tree branches?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115880",
+    "Name": "Fallen battle flag and spears",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115890",
+    "Name": "Dead corpses and bones",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115900",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115901",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115920",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115921",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115922",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115923",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115950",
+    "Name": "Burned tree branch grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115960",
+    "Name": "Burned tree branch grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115970",
+    "Name": "Burned tree branch grapple point",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115980",
+    "Name": "Hanging mibu balloon decoration?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115981",
+    "Name": "Small hanging mibu balloon decoration?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o115990",
+    "Name": "Unknown cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116000",
+    "Name": "Large torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116010",
+    "Name": "Hanging large torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116020",
+    "Name": "Hanging broke torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116050",
+    "Name": "Unknown rock and wooden tree structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116051",
+    "Name": "Unknown rock and wooden tree structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116060",
+    "Name": "Fenced off corpse in dirt?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116070",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116100",
+    "Name": "Floor empty candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116101",
+    "Name": "Floor empty candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116110",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116120",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116130",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116140",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116200",
+    "Name": "Large dirt area with bones in middle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116210",
+    "Name": "Small stone lantern altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116220",
+    "Name": "Large flat rock with straw bundles on top?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116300",
+    "Name": "Gigantic stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116310",
+    "Name": "Tall stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116320",
+    "Name": "Gigantic stone lantern (with missing parts)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116400",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116410",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116420",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116501",
+    "Name": "wooden cart full",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116600",
+    "Name": "Unknown barrier looking structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116601",
+    "Name": "Wall mounted hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116602",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o116710",
+    "Name": "Small stone lantern altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117000",
+    "Name": "Large wooden floor or platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117010",
+    "Name": "Large wooden floor or platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117020",
+    "Name": "Large wooden floor or platform stairs",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117030",
+    "Name": "Unknown wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117100",
+    "Name": "Mat stack with two floating rock things",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117110",
+    "Name": "two floor mats",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117200",
+    "Name": "Large rectangular shaped boulder on wooden platform",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117300",
+    "Name": "Large wooden chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117500",
+    "Name": "two planks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117600",
+    "Name": "Checkered shape floor board",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o117601",
+    "Name": "Checkered shape floor board",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118000",
+    "Name": "Floor mat (way the hell far away from the center)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118010",
+    "Name": "Owl's shuriken?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118020",
+    "Name": "Genichiro's severed head",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118090",
+    "Name": "Sculptors idol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118100",
+    "Name": "Sculptor's carving tool and current wooden sculpture",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118110",
+    "Name": "Interior Ministry Samurai's Wakizashi (the one genichiro gives to Kuro?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118120",
+    "Name": "Destroyed body armor",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118130",
+    "Name": "Kuro's bell charm?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118140",
+    "Name": "Large boulder with homeward idol inside",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118150",
+    "Name": "Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118160",
+    "Name": "Emma's Umbrella",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118170",
+    "Name": "Emma's note to Wolf in beginning cutscene",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118180",
+    "Name": "Tiny sakura petal?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118190",
+    "Name": "Large sakura petal?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118200",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118201",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118202",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118203",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118204",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118210",
+    "Name": "Wolf's grave? Stone with Kusabimaru in front of it",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118250",
+    "Name": "Rock pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118300",
+    "Name": "Large standing boulder rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118301",
+    "Name": "Large standing boulder rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118302",
+    "Name": "Large standing boulder rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118303",
+    "Name": "Large standing boulder rock",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118400",
+    "Name": "Wolf's severed left arm",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118500",
+    "Name": "Abandoned dungeon door and frame",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118600",
+    "Name": "Shinobi prosthetic covered in cloth (seen in the one ending where wolf becomes the next sculptor?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o118900",
+    "Name": "Rock mountain pillar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o119000",
+    "Name": "Box case for mortal blade?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o119010",
+    "Name": "Castle fish roof decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o119020",
+    "Name": "Castle fish roof decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o123000",
+    "Name": "Wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o123001",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124100",
+    "Name": "Small table with scroll under",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124120",
+    "Name": "Lord's arm rest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124140",
+    "Name": "Small ornate floor shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124200",
+    "Name": "Slightly opened pot with ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124210",
+    "Name": "Small pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124290",
+    "Name": "Pot with cloth underneathe",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124300",
+    "Name": "Slightly opened wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124310",
+    "Name": "Closed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124350",
+    "Name": "Small wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124420",
+    "Name": "Tilted battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124430",
+    "Name": "Snapped tilted battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124700",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124701",
+    "Name": "Chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124900",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124901",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124902",
+    "Name": "Floor corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124903",
+    "Name": "Floor corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124904",
+    "Name": "Sitting wall leaning corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124910",
+    "Name": "Unknown stone popsicle looking thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124911",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124920",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124930",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o124940",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126000",
+    "Name": "Wooden torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126001",
+    "Name": "Wooden torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126010",
+    "Name": "Hanging torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126100",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126110",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126300",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o126900",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o133000",
+    "Name": "Rock cone pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o133001",
+    "Name": "Rock lantern like pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o133002",
+    "Name": "Innverted rock cone pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134200",
+    "Name": "Closed pot with wooden ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134210",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134270",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134280",
+    "Name": "Very large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134290",
+    "Name": "Infested pot?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134300",
+    "Name": "Slightly opened wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134310",
+    "Name": "Closed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134320",
+    "Name": "Destroyed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134350",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134370",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134380",
+    "Name": "Shallow wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134390",
+    "Name": "Infested drawer on wooden board?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134400",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134410",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134420",
+    "Name": "Sandbag and rolled up cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134450",
+    "Name": "Bamboo rod wall leaning pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134460",
+    "Name": "Abandoned dungeon open doorway",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134501",
+    "Name": "Wooden cart full",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134510",
+    "Name": "Small sake bottle?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134511",
+    "Name": "Small sake bottle?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134540",
+    "Name": "Bundled firewood/wood",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134650",
+    "Name": "Small wooden basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134660",
+    "Name": "Torch basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134661",
+    "Name": "Wooden basket with yam shaped thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134700",
+    "Name": "Tipped over small wooden fence",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134701",
+    "Name": "Surgical cleaver (used by Dojoun)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o134702",
+    "Name": "Two machetes (both tied to one mesh)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o135100",
+    "Name": "Abandoned dungeon test subject",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136000",
+    "Name": "Wooden torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136001",
+    "Name": "Wooden torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136010",
+    "Name": "Wall mounted hanging torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136100",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136110",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136200",
+    "Name": "Large stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136210",
+    "Name": "Stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136250",
+    "Name": "Small stone lantern altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136450",
+    "Name": "Unknown wooden stick",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136455",
+    "Name": "Water reeds?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136460",
+    "Name": "Paintbrush container?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o136465",
+    "Name": "Paintbrush container?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o137500",
+    "Name": "Two wooden planks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o151000",
+    "Name": "Wedding cave stone doors?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o153000",
+    "Name": "Small wooden boat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154000",
+    "Name": "Bundled firewood/wood",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154010",
+    "Name": "Plank pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154100",
+    "Name": "Basket and fishing net",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154110",
+    "Name": "Tall wooden buckets and stick",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154120",
+    "Name": "Closed Incense burner?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154200",
+    "Name": "Closed pot with wooden ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154201",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154210",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154300",
+    "Name": "Slightly opened wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154310",
+    "Name": "Closed wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154320",
+    "Name": "Tall container with separated metal rings",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154350",
+    "Name": "Small wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154360",
+    "Name": "Small wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154370",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154500",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154510",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154600",
+    "Name": "Wooden basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154620",
+    "Name": "Unknown rock structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154630",
+    "Name": "Square basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154640",
+    "Name": "Square basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154650",
+    "Name": "Tall basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154700",
+    "Name": "Small sake bottle?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154710",
+    "Name": "Sake bottle and cup",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154750",
+    "Name": "Hut hanging kettle hanger",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154800",
+    "Name": "Full wooden floor shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154809",
+    "Name": "Wooden plank marker",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154810",
+    "Name": "Wooden plank marker",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154811",
+    "Name": "Wooden barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154812",
+    "Name": "Bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154813",
+    "Name": "Bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154814",
+    "Name": "Wooden barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154815",
+    "Name": "Wooden barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154816",
+    "Name": "Tipped over bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154817",
+    "Name": "Wooden fish hanger?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154818",
+    "Name": "Wooden fish hanger?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154819",
+    "Name": "Slight diagonal bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154820",
+    "Name": "Tipped over bamboo barrier",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154900",
+    "Name": "Offering container",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154910",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o154950",
+    "Name": "Ripped room separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155000",
+    "Name": "Senpou temple corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155010",
+    "Name": "Senpou temple corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155020",
+    "Name": "Senpou temple corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155030",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155040",
+    "Name": "Half buried corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155041",
+    "Name": "Half buried corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155042",
+    "Name": "Half buried corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155100",
+    "Name": "Wooden board",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155200",
+    "Name": "Boulder on wooden planks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155210",
+    "Name": "Tree branch on wooden planks?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155220",
+    "Name": "Unknown magnet shaped thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155230",
+    "Name": "Mibu Villager's sickle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155300",
+    "Name": "Can't descibe",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155400",
+    "Name": "Shelter Stone?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o155500",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156000",
+    "Name": "Dirt area with pile of sticks in center",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156100",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156110",
+    "Name": "Candle bowl with sticks coming out of it",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156111",
+    "Name": "Candle bowl with sticks coming out of it",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156150",
+    "Name": "Small floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156160",
+    "Name": "Medium floor candleh holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156170",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156300",
+    "Name": "Stone lantern top",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156310",
+    "Name": "Rocks grouping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156320",
+    "Name": "Rocks grouping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156350",
+    "Name": "Stone altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156400",
+    "Name": "Mibu temple in floor pot altar?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156500",
+    "Name": "Hanging ball lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o156820",
+    "Name": "Bent wooden wall hanging shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o157000",
+    "Name": "Long folder cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o157001",
+    "Name": "Long folder cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o157002",
+    "Name": "Long folder cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o157200",
+    "Name": "Ceiling decoration",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o157300",
+    "Name": "Hung corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o158000",
+    "Name": "Unknown wooden contraption",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o158100",
+    "Name": "Wedding cave palanquin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o158110",
+    "Name": "Destroyed wedding cave palanquin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o158200",
+    "Name": "Small tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o159000",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o159020",
+    "Name": "Senpou main hall layout?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o159030",
+    "Name": "Unknown area layout",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o159100",
+    "Name": "Wooden latter and other stuff",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174100",
+    "Name": "Small incense burner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174300",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174301",
+    "Name": "Slightly opened wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174310",
+    "Name": "Wooden rectangular box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174311",
+    "Name": "Wooden rectangular box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174330",
+    "Name": "Small wooden rectangular drawer opened",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174340",
+    "Name": "Small wooden container with stuff",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174350",
+    "Name": "Christmas ornament looking things",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174400",
+    "Name": "Some kind of wooden support?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174410",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174540",
+    "Name": "Bundled firewood/wood",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174550",
+    "Name": "Hatchet?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174551",
+    "Name": "Axe",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174560",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174561",
+    "Name": "Mibu Village pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174562",
+    "Name": "Mibu Village pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174700",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174800",
+    "Name": "Rock grouping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174805",
+    "Name": "Rock with cloth?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174806",
+    "Name": "Rock with cloth?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o174850",
+    "Name": "Stone",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175000",
+    "Name": "Sunken Valley bridge (in front of gun fort)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175100",
+    "Name": "Sunken Valley bridge (one the Great Serprent destroys)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175101",
+    "Name": "Mibu village bridge?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175102",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175200",
+    "Name": "Dirt mound with hole?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175300",
+    "Name": "Gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175400",
+    "Name": "Large flat wide stone pathway",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175500",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175510",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175520",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175600",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175610",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175620",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175700",
+    "Name": "Unknown building entrance (mibu village elder's hut?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175701",
+    "Name": "Unknown building entrance (mibu village elder's hut?) no arch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175800",
+    "Name": "Tall dead tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175810",
+    "Name": "Tall dead tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175900",
+    "Name": "Some kind of stone?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175901",
+    "Name": "Some kind of stone?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175910",
+    "Name": "Some kind of stone?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o175911",
+    "Name": "Some kind of stone?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176000",
+    "Name": "Torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176010",
+    "Name": "Hanging torch basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176020",
+    "Name": "Hanging torch basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176030",
+    "Name": "Torch wood?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176050",
+    "Name": "Camp fire with pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176100",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176110",
+    "Name": "Medium floor candleh holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176120",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176125",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176140",
+    "Name": "Shallow bowl",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176141",
+    "Name": "Chipped shallow bowl",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176200",
+    "Name": "Stone altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o176210",
+    "Name": "Stone altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177000",
+    "Name": "Don't know how to describe",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177100",
+    "Name": "Bundled bamboo rods",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177110",
+    "Name": "Sunken valley hand canon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177120",
+    "Name": "Snake eye's rifle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177130",
+    "Name": "Sunken valley grunt's rifle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177500",
+    "Name": "Sunken valley funnel flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177700",
+    "Name": "Great carp carcas",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177800",
+    "Name": "White lotus flower?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o177900",
+    "Name": "Dead squid looking thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201000",
+    "Name": "Senpou temple ornate gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201010",
+    "Name": "Senpou temple ornate gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201020",
+    "Name": "Senpou temple gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201030",
+    "Name": "Senpou temple gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201040",
+    "Name": "Senpou temple gate opened",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o201050",
+    "Name": "Senpou temple gate opened",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o202000",
+    "Name": "Sunken valley tree branchs?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o202010",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203000",
+    "Name": "Senpou temple lattice wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203001",
+    "Name": "Tilted Semple temple lattice wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203002",
+    "Name": "Senpou temple wall board",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203005",
+    "Name": "Senpou temple balcony fencing?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203010",
+    "Name": "Pinwheel (Red/white and White?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203020",
+    "Name": "Pinwheel (Red/white and White?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203030",
+    "Name": "Pinwheel (Red/white and White?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o203100",
+    "Name": "Grouped buddha sculptures",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204100",
+    "Name": "Incense burner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204105",
+    "Name": "Incense burner and empty bowls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204106",
+    "Name": "Vases and star shaped symbol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204110",
+    "Name": "Senpou temple large pot display",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204120",
+    "Name": "Large incense burner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204260",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204270",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204280",
+    "Name": "Very large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204290",
+    "Name": "Tilted basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204291",
+    "Name": "Tilted basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204500",
+    "Name": "Empty wooden floor shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204700",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204710",
+    "Name": "Ornate table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204715",
+    "Name": "Ornate table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204720",
+    "Name": "Box full of scrolls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204730",
+    "Name": "Tall basket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204781",
+    "Name": "Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204782",
+    "Name": "Book",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204790",
+    "Name": "Scattered scrolls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204800",
+    "Name": "Castle folding door/window covers?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204801",
+    "Name": "Castle folding door/window covers?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204810",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204811",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204820",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204821",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204822",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204823",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204830",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204831",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204832",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204833",
+    "Name": "Unknown panel wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204850",
+    "Name": "Fountainhead palace decor",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o204851",
+    "Name": "Vase of flowers",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205000",
+    "Name": "Abandoned dungeon elevator to Senpou temple",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205010",
+    "Name": "Abandoned dungeon elevator to Senpou temple lever",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205100",
+    "Name": "Demon Bell",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205101",
+    "Name": "Hall of Illusion bell",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205110",
+    "Name": "Unknown wooden rods",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205200",
+    "Name": "Senpou temple buddha carving/statue",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205300",
+    "Name": "Senpou assassin kite pulley system",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205550",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205570",
+    "Name": "Vase",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205600",
+    "Name": "Hanging Wall scroll",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205700",
+    "Name": "Wall fabric?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205900",
+    "Name": "Infested monk",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o205910",
+    "Name": "Infested high priest monk",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206000",
+    "Name": "Senpou temple stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206010",
+    "Name": "Medium floor candleh holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206020",
+    "Name": "Tall candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206030",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206040",
+    "Name": "Wooden candle rack?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206050",
+    "Name": "Senpou temple main hall altar candle stands",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206051",
+    "Name": "Senpou temple main hall altar candle stands",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206052",
+    "Name": "Senpou temple main hall altar candle stands",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206060",
+    "Name": "Snake candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206070",
+    "Name": "Tall candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206071",
+    "Name": "Candleholder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206080",
+    "Name": "Torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206100",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206101",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206110",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206111",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206150",
+    "Name": "Small candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206160",
+    "Name": "Small candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206200",
+    "Name": "Large budhha statue",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o206300",
+    "Name": "Rocks, small roofing and Budhar statue carving",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o207000",
+    "Name": "Corpse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o207100",
+    "Name": "Genie lamp looking thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o207110",
+    "Name": "Flower petal stand and orb object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o207300",
+    "Name": "Ceiling decorations",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208000",
+    "Name": "Illusion hall bell and base",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208100",
+    "Name": "Mortal blade's box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208200",
+    "Name": "Child of Rejuvenating Water's floor chair",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208210",
+    "Name": "Child of Rejuvenating Water's Floor pillow",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208300",
+    "Name": "Small long ornate table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208500",
+    "Name": "Sleeping head rest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o208600",
+    "Name": "Tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o250500",
+    "Name": "Bulky chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o251000",
+    "Name": "Fountainhead palace gate?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o251100",
+    "Name": "Fountainhead Palace gate?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252000",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252001",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252010",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252011",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252020",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252021",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252030",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252031",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252040",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252041",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252042",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252050",
+    "Name": "Fountainhead palace tree?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252051",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252052",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252200",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252201",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252202",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252203",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252212",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252213",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252300",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252550",
+    "Name": "Okami Warrior's Face Mask",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o252551",
+    "Name": "Okami Warrior's Face Mask",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253000",
+    "Name": "Destroyed wooden crate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253100",
+    "Name": "Large lantern?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253110",
+    "Name": "Destroyed container",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253200",
+    "Name": "Fountainhead palace banner",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253500",
+    "Name": "Fountainhead palace roofing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253510",
+    "Name": "Destroyed wall with window",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253520",
+    "Name": "Unknown wall and structure supports",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253530",
+    "Name": "Unknown wooden structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253600",
+    "Name": "Unkonwn wooden structure and roofing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o253610",
+    "Name": "Unknown fountainhead wooden structure",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254000",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254001",
+    "Name": "Destroyed room separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254002",
+    "Name": "Folded slightly torn room separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254003",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254004",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254005",
+    "Name": "Destroyed room separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254006",
+    "Name": "Destroyed room separator",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254010",
+    "Name": "Fountainhead palace wall fabric",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254020",
+    "Name": "Small wooden wall",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254050",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254051",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254052",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254100",
+    "Name": "Kimono Rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254110",
+    "Name": "Small wooden table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254120",
+    "Name": "Small floor mirror looking thing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254130",
+    "Name": "Bowl with carrying brace",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254140",
+    "Name": "Small floor decoration",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254150",
+    "Name": "Fountainhead palace bow rack with arrows/quivers",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254151",
+    "Name": "Fountainhead palace bow rack table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254200",
+    "Name": "Floor chest raised",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254250",
+    "Name": "Small box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254270",
+    "Name": "Large pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254300",
+    "Name": "Large pot on table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254310",
+    "Name": "Large pot on table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254350",
+    "Name": "Small Sake bottle and bowl",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254900",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254901",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o254902",
+    "Name": "Unknown object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255000",
+    "Name": "Destroyed fountainhead palace bridge",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255001",
+    "Name": "Unknown floor object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255100",
+    "Name": "Multipe door frames and ornate doors",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255110",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255210",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255250",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255251",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255252",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255300",
+    "Name": "Large long fountainhead palace chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255400",
+    "Name": "Large long fountainhead palace chest (underwater)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255500",
+    "Name": "Fountainhead palace hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255600",
+    "Name": "Elder tree sculpture",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o255610",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256000",
+    "Name": "Stone lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256010",
+    "Name": "Stone Lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256020",
+    "Name": "Hanging lantern",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256030",
+    "Name": "Hanging ornament",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256100",
+    "Name": "Small candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256110",
+    "Name": "Small candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o256120",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257000",
+    "Name": "Wooden floor boards",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257010",
+    "Name": "Destroyed wooden floor boards",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257020",
+    "Name": "Wooden floor planks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257030",
+    "Name": "Two planks",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257100",
+    "Name": "Lattice floor boards",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257110",
+    "Name": "Destroyed lattice floor boards",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257200",
+    "Name": "Cut floor mat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257210",
+    "Name": "Floor fabric",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257300",
+    "Name": "Destroyed floor boards",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257400",
+    "Name": "Crinkled floor rug?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257500",
+    "Name": "Kimono on floor",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257600",
+    "Name": "Destryed wooden wall/fencing?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257800",
+    "Name": "Unknown long floor cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o257801",
+    "Name": "Unknown long floor cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o258000",
+    "Name": "Sakura Dragon's tree branch base",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o258020",
+    "Name": "Unknown oval shaped object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o258100",
+    "Name": "Fountainhead palace priestess",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259000",
+    "Name": "Fountainhead palace willow-like tree",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259900",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259910",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259911",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259912",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259920",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259921",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259922",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259923",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259924",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o259925",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o919900",
+    "Name": "Unknown square panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o950000",
+    "Name": "Unknown roofing",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o950010",
+    "Name": "Unknown walls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o950100",
+    "Name": "Unknown walls",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o959000",
+    "Name": "Unknown box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o959010",
+    "Name": "Unknown box",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961000",
+    "Name": "Shoji door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961010",
+    "Name": "Shoji door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961100",
+    "Name": "Shoji door",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961200",
+    "Name": "Shoji door panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961500",
+    "Name": "Ornate gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961598",
+    "Name": "Ornate gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o961599",
+    "Name": "Ornate gate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962000",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962001",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962002",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962010",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962020",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962030",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962040",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962050",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962100",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962110",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962120",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962200",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962201",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962202",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o962203",
+    "Name": "Tree branch (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o963000",
+    "Name": "Cone shaped rock pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o963001",
+    "Name": "Lantern shaped rock pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o963002",
+    "Name": "Inverted cone shaped rock pile",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964000",
+    "Name": "Long wooden floor table",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964100",
+    "Name": "Wooden floor shelf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964200",
+    "Name": "Floor drawer with rack",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964300",
+    "Name": "Unknown wall panel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964400",
+    "Name": "Battle flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964410",
+    "Name": "Battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964420",
+    "Name": "Tilted Battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964430",
+    "Name": "Destroyed snapped tipped battle flag with mini flag",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964450",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964451",
+    "Name": "Wooden bucket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964500",
+    "Name": "Pot",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964501",
+    "Name": "Pot with lid",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964502",
+    "Name": "Closed pot with wooden ladel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964510",
+    "Name": "Bottle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964511",
+    "Name": "Bottle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964530",
+    "Name": "Small tree stump?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964540",
+    "Name": "Bundled firewood/wood",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964550",
+    "Name": "Wall mounted strawhat and straw cape",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964560",
+    "Name": "Spear",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964570",
+    "Name": "Musket",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964580",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964590",
+    "Name": "Destroyed wooden cart",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964600",
+    "Name": "Open chest on raised flooring",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964700",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964701",
+    "Name": "Chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964710",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964711",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964800",
+    "Name": "Small rock grouping",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964805",
+    "Name": "Some kind of rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964806",
+    "Name": "Some kind of rock?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964810",
+    "Name": "Cut log?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964820",
+    "Name": "Rocks, small roofing and Budhar statue carving",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964900",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964901",
+    "Name": "Tree branch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o964902",
+    "Name": "Leaf pile?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965000",
+    "Name": "Crow / Raven",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965100",
+    "Name": "Wooden wall with buddha sculpted on it?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965200",
+    "Name": "Wooden bridge",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965210",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965220",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965300",
+    "Name": "Onmyo mage looking NPC",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965400",
+    "Name": "Palanquin",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965401",
+    "Name": "Palanquin cloth",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965500",
+    "Name": "Tree trunk (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965510",
+    "Name": "Tree trunk (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965520",
+    "Name": "Burned tree trunk",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965550",
+    "Name": "Snake decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965560",
+    "Name": "Snake decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965600",
+    "Name": "Angry buddha wall decoration?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965700",
+    "Name": "No idea what this is",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965710",
+    "Name": "No idea what this is",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965800",
+    "Name": "Castle roof fish decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965810",
+    "Name": "Castle roof fish decoration (grapple-able)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o965900",
+    "Name": "Fountainhead palace bridge corner post",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966000",
+    "Name": "Torch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966050",
+    "Name": "Campire and spitt",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966051",
+    "Name": "Campire and spitt",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966060",
+    "Name": "Mostly buried body fenced off",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966100",
+    "Name": "Floor candle holder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966110",
+    "Name": "Tall floor candleholder",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966120",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966130",
+    "Name": "Candle bowl?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966200",
+    "Name": "Large dirt area with bones in center",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o966210",
+    "Name": "Small stone altar",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o967000",
+    "Name": "Stacked supply chests and straw hat",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o967001",
+    "Name": "Unknown triangle shaped object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o967100",
+    "Name": "Cloth covered chest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969000",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969001",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969002",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969010",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969020",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969021",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969030",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969040",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969050",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969060",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969070",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969071",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969080",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969090",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o969900",
+    "Name": "Plant",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o991081",
+    "Name": "Large wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o991083",
+    "Name": "Large wooden barrel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999000",
+    "Name": "Great Serpent's body?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999010",
+    "Name": "Sword Saint Isshin's Pistol?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999011",
+    "Name": "GIGANTIC Isshin Asshina's sword?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999013",
+    "Name": "A pair of legs and some other weird stuff and japanese text",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999014",
+    "Name": "Japanese text and some cylindrical object",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999020",
+    "Name": "Mibu village old lady?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999021",
+    "Name": "Gigantic Owl's Odachi and sheathe",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999022",
+    "Name": "Wolf's body skeleton",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999023",
+    "Name": "Some kind of large beast (cut boss?)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999024",
+    "Name": "Mibu villager with strawhat?",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "o999050",
+    "Name": "Strawhat Monk's Shuriken (material points to chr 1060)",
+    "Tags": [
+      ""
+    ]
+  }
+]

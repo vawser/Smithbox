@@ -1,4 +1,6 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Asn1.X509;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
@@ -19,6 +21,7 @@ public static class ProjectAliasEditor
 {
     private static Smithbox BaseEditor;
     private static ProjectEntry TargetProject;
+    private static AliasStore? BaseAliases = null;
 
     private static bool Display = false;
 
@@ -36,7 +39,50 @@ public static class ProjectAliasEditor
         if (TargetProject.Aliases == null)
             return;
 
+        if (BaseAliases == null)
+        {
+            SetupBaseAliases();
+        }
+
         Display = true;
+    }
+
+    public static void SetupBaseAliases()
+    {
+        BaseAliases = new();
+
+        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "Aliases",
+            ProjectUtils.GetGameDirectory(TargetProject.ProjectType));
+
+        List<string> sourceFiles = Directory.GetFiles(dir, "*.json").ToList();
+
+        foreach (string sourceFile in sourceFiles)
+        {
+            try
+            {
+                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out AliasType type)) continue;
+                string text = File.ReadAllText(sourceFile);
+                try
+                {
+                    // var options = new JsonSerializerOptions();
+                    var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
+                    if (!BaseAliases.ContainsKey(type))
+                    {
+                        BaseAliases.TryAdd(type, entries);
+                        continue;
+                    }
+                    BaseAliases[type] = entries.UnionBy(BaseAliases[type], e => e.ID).ToList();
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the aliases: {sourceFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the aliases: {sourceFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
     }
 
     public static void Draw()
@@ -355,63 +401,8 @@ public static class ProjectAliasEditor
     {
         var source = new List<AliasEntry>();
 
-        switch (CurrentAliasEditor)
-        {
-            case AliasType.None:
-                break;
-
-            case AliasType.Assets:
-                source = TargetProject.Aliases.Assets;
-                break;
-
-            case AliasType.Characters:
-                source = TargetProject.Aliases.Characters;
-                break;
-
-            case AliasType.Cutscenes:
-                source = TargetProject.Aliases.Cutscenes;
-                break;
-
-            case AliasType.EventFlags:
-                source = TargetProject.Aliases.EventFlags;
-                break;
-
-            case AliasType.Gparams:
-                source = TargetProject.Aliases.Gparams;
-                break;
-
-            case AliasType.MapPieces:
-                source = TargetProject.Aliases.MapPieces;
-                break;
-
-            case AliasType.MapNames:
-                source = TargetProject.Aliases.MapNames;
-                break;
-
-            case AliasType.Movies:
-                source = TargetProject.Aliases.Movies;
-                break;
-
-            case AliasType.Particles:
-                source = TargetProject.Aliases.Particles;
-                break;
-
-            case AliasType.Parts:
-                source = TargetProject.Aliases.Parts;
-                break;
-
-            case AliasType.Sounds:
-                source = TargetProject.Aliases.Sounds;
-                break;
-
-            case AliasType.TalkScripts:
-                source = TargetProject.Aliases.TalkScripts;
-                break;
-
-            case AliasType.TimeActs:
-                source = TargetProject.Aliases.TimeActs;
-                break;
-        }
+        if (TargetProject.Aliases.ContainsKey(CurrentAliasEditor))
+            source = TargetProject.Aliases[CurrentAliasEditor];
 
         return source;
     }
@@ -439,51 +430,31 @@ public static class ProjectAliasEditor
     /// </summary>
     public static void Save()
     {
-        var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Assets", "Aliases", ProjectUtils.GetGameDirectory(TargetProject.ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Aliases.json");
+        var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Assets", "Aliases");
 
-        var json = JsonSerializer.Serialize(TargetProject.Aliases, SmithboxSerializerContext.Default.AliasStore);
-
-        if(!Directory.Exists(projectFolder))
-        {
+        if (!Directory.Exists(projectFolder))
             Directory.CreateDirectory(projectFolder);
+
+        foreach ((AliasType aliasType, List<AliasEntry> aliases) in TargetProject.Aliases)
+        {
+            string path = Path.Combine(projectFolder, $"{aliasType}.json");
+
+            List<AliasEntry> baseAliases =
+                (BaseAliases != null && BaseAliases.TryGetValue(aliasType, out List<AliasEntry> bAliases)) ? bAliases : new();
+
+            List<AliasEntry> diffAliases = aliases.Where(a =>
+            {
+                var baseA = baseAliases.FirstOrDefault(b => b.ID == a.ID);
+
+                if (baseA == null) return true;
+                return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
+            }).ToList();
+
+            if (!diffAliases.Any()) continue;
+
+            var json = JsonSerializer.Serialize(diffAliases, SmithboxSerializerContext.Default.ListAliasEntry);
+
+            File.WriteAllText(path, json);
         }
-
-        File.WriteAllText(projectFile, json);
-    }
-
-    /// <summary>
-    /// Keep in sync with the AliasStore class
-    /// </summary>
-    public enum AliasType
-    {
-        [Display(Name = "None")]
-        None,
-        [Display(Name = "Assets")]
-        Assets,
-        [Display(Name = "Characters")]
-        Characters,
-        [Display(Name = "Cutscenes")]
-        Cutscenes,
-        [Display(Name = "Event Flags")]
-        EventFlags,
-        [Display(Name = "Gparams")]
-        Gparams,
-        [Display(Name = "Map Pieces")]
-        MapPieces,
-        [Display(Name = "Map Names")]
-        MapNames,
-        [Display(Name = "Movies")]
-        Movies,
-        [Display(Name = "Particles")]
-        Particles,
-        [Display(Name = "Parts")]
-        Parts,
-        [Display(Name = "Sounds")]
-        Sounds,
-        [Display(Name = "Talk Scripts")]
-        TalkScripts,
-        [Display(Name = "Time Acts")]
-        TimeActs
     }
 }

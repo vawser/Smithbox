@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -1031,9 +1032,9 @@ public class MapActionHandler
             {
                 if (obj.IsPart())
                 {
-                    if (Project.Aliases.Assets != null)
+                    if (Project.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> assetAliases))
                     {
-                        foreach (var assetEntry in Project.Aliases.Assets)
+                        foreach (var assetEntry in assetAliases)
                         {
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
@@ -1062,9 +1063,9 @@ public class MapActionHandler
                         }
                     }
 
-                    if (Project.Aliases.MapPieces != null)
+                    if (Project.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases))
                     {
-                        foreach (var mapPieceEntry in Project.Aliases.MapPieces)
+                        foreach (var mapPieceEntry in mapPieceAliases)
                         {
                             var entryName = $"m{mapPieceEntry.ID.Split("_").Last()}";
                             var modelName = obj.GetPropertyValue<string>("ModelName");

@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -203,7 +204,7 @@ public class ParamRowNamer
 
     public void HandleNpcParam(string activeParam, string targetParam, List<Param.Row> rows)
     {
-        var characters = Editor.Project.Aliases.Characters;
+        Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characters);
 
         if (activeParam == targetParam)
         {
@@ -216,7 +217,7 @@ public class ParamRowNamer
 
                 var chrID = $"c{row.ID}".Substring(0, 5);
 
-                if(characters.Any(e => e.ID == chrID))
+                if (characters != null && characters.Any(e => e.ID == chrID))
                 {
                     var newName = characters.FirstOrDefault(e => e.ID == chrID);
                     if(newName != null)
@@ -292,6 +293,7 @@ public class ParamRowNamer
     {
         if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
         {
+            Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characterAliases);
             foreach (var row in rows)
             {
                 var refID = $"{row["refId"].Value.Value}";
@@ -351,7 +353,7 @@ public class ParamRowNamer
                     {
                         var chrID = $"c{row.ID.ToString().Substring(1, 4)}";
 
-                        var result = Editor.Project.Aliases.Characters.Where(e => e.ID == chrID).FirstOrDefault();
+                        var result = characterAliases?.Where(e => e.ID == chrID).FirstOrDefault();
                         if(result != null)
                         {
                             if (row.Name == "")
@@ -467,7 +469,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamMap(Param.Row row)
     {
-        var mapNames = Editor.Project.Aliases.MapNames;
+        Editor.Project.Aliases.TryGetValue(AliasType.MapNames, out List<AliasEntry> mapNames);
 
         var newName = "";
         var prefix = "";
@@ -500,7 +502,7 @@ public class ParamRowNamer
 
             var mapID = $"m{mapAA}_{mapBB}_{mapCC}_00";
 
-            var nameMatch = mapNames.FirstOrDefault(e => e.ID == mapID);
+            var nameMatch = mapNames?.FirstOrDefault(e => e.ID == mapID);
             if (nameMatch != null)
             {
                 if(nameMatch.Name.Contains(","))
@@ -650,7 +652,7 @@ public class ParamRowNamer
 
     public string GetName_ItemLotParamEnemy(Param.Row row)
     {
-        var chrNames = Editor.Project.Aliases.Characters;
+        Editor.Project.Aliases.TryGetValue(AliasType.Characters, out var characterAliases);
 
         var newName = "";
         var prefix = "";
@@ -675,7 +677,7 @@ public class ParamRowNamer
 
             var chrID = $"c{chrStr}";
 
-            var nameMatch = chrNames.FirstOrDefault(e => e.ID == chrID);
+            var nameMatch = characterAliases?.FirstOrDefault(e => e.ID == chrID);
             if (nameMatch != null)
             {
                 prefix = $"[{nameMatch.Name}] ";

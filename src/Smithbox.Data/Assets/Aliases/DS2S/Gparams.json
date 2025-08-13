@@ -1,0 +1,282 @@
+[
+  {
+    "ID": "m10_02",
+    "Name": "Things Betwixt",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_04",
+    "Name": "Majula",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_10",
+    "Name": "Forest of Fallen Giants",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_11",
+    "Name": "Shrine of Amana (alt)",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m10_14",
+    "Name": "Brightstone Cove Tseldora",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_15",
+    "Name": "Aldia's Keep",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_16",
+    "Name": "The Lost Bastille & Belfry Luna",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_17",
+    "Name": "Harvest Valley & Earthen Peak",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_18",
+    "Name": "No-man's Wharf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_19",
+    "Name": "Iron Keep & Belfry Sol",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_21",
+    "Name": "Drangleic Castle (alt)",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m10_23",
+    "Name": "Huntsman's Copse & Undead Purgatory",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_24",
+    "Name": "Mausoleum",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m10_25",
+    "Name": "The Gutter & Black Gulch",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_27",
+    "Name": "Dragon Aerie & Dragon Shrine",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_28",
+    "Name": "Firelink Throne",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m10_29",
+    "Name": "Majula <-> Shaded Woods",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_30",
+    "Name": "Heide's Tower <-> No-man's Wharf",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_31",
+    "Name": "Heide's Tower of Flame",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_32",
+    "Name": "Shaded Woods & Shrine of Winter",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_33",
+    "Name": "Doors of Pharros",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m10_34",
+    "Name": "Grave of Saints",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_03",
+    "Name": "Dark Chasm of Old (alt)",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m20_10",
+    "Name": "Memory of Vammar, Orro, and Jeigh",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_11",
+    "Name": "Shrine of Amana",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_15",
+    "Name": "Aldia's Keep (alt)",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_21",
+    "Name": "Drangleic Castle & Throne of Want",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_24",
+    "Name": "Undead Crypt",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_26",
+    "Name": "Dragon Memories",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_27",
+    "Name": "Dragon Aerie & Dragon Shrine (alt)",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m20_62",
+    "Name": "",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m20_63",
+    "Name": "",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m40_03",
+    "Name": "Dark Chasm of Old",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m40_50",
+    "Name": "Abyss Map 1",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m40_51",
+    "Name": "Abyss Map 2",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m40_52",
+    "Name": "Abyss Map 3",
+    "Tags": [
+      "unused"
+    ]
+  },
+  {
+    "ID": "m50_35",
+    "Name": "Shulva, Sanctum City",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_36",
+    "Name": "Brume Tower",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_37",
+    "Name": "Frozen Eleum Loyce",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_38",
+    "Name": "Memory of the King",
+    "Tags": [
+      ""
+    ]
+  }
+]

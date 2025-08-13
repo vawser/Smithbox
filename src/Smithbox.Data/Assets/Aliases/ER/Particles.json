@@ -1,0 +1,58 @@
+[
+  {
+    "ID": "808004",
+    "Name": "Wind (Strong)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "808006",
+    "Name": "Wind (Default)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "808007",
+    "Name": "Wind (Foggy)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "806100",
+    "Name": "Rain (Screen-space)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "806120",
+    "Name": "Snow (Screen-space)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "806121",
+    "Name": "Windy Snow (Screen-space)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "806130",
+    "Name": "Windy Rain (Screen-space)",
+    "Tags": [
+      "fxr"
+    ]
+  },
+  {
+    "ID": "1004010",
+    "Name": "Rain Ground Splashes",
+    "Tags": [
+      "fxr"
+    ]
+  }
+]

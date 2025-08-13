@@ -316,23 +316,7 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var project = BaseEditor.ProjectManager.SelectedProject;
-
-        ConvertToOldStyleRowNames("AC6", "Community Row Names");
-        ConvertToOldStyleRowNames("AC6", "Developer Row Names");
-
-        ConvertToOldStyleRowNames("BB", "Community Row Names");
-        ConvertToOldStyleRowNames("BB", "Developer Row Names");
-
-        ConvertToOldStyleRowNames("DES", "Community Row Names");
-        ConvertToOldStyleRowNames("DS1", "Community Row Names");
-        ConvertToOldStyleRowNames("DS1R", "Community Row Names");
-        ConvertToOldStyleRowNames("DS2", "Community Row Names");
-        ConvertToOldStyleRowNames("DS2S", "Community Row Names");
-        ConvertToOldStyleRowNames("DS3", "Community Row Names");
-        ConvertToOldStyleRowNames("SDT", "Community Row Names");
-        ConvertToOldStyleRowNames("ER", "Community Row Names");
-        ConvertToOldStyleRowNames("NR", "Community Row Names");
+        SplitAliases();
     }
 
     public static void ConvertToOldStyleRowNames(string type, string group)
@@ -387,6 +371,31 @@ public class DebugTools
             var json = JsonSerializer.Serialize(param, typeof(RowNameParam), options);
 
             File.WriteAllText(writePath, json);
+        }
+    }
+    public static void SplitAliases()
+    {
+
+        string aliasesDir = @$"G:\Creative\GitHub\Smithbox\src\Smithbox.Data\Assets\Aliases";
+        var games = Directory.GetDirectories(aliasesDir);
+        foreach (string gameDir in games)
+        {
+            string sourceFile = File.ReadAllText(Path.Combine(gameDir, "Aliases.json"));
+            AliasStore store = JsonSerializer.Deserialize(sourceFile, SmithboxSerializerContext.Default.AliasStore);
+            foreach ((AliasType aliasType, List<AliasEntry> entries) in store)
+            {
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true,
+                    IncludeFields = true
+                };
+                var json = JsonSerializer.Serialize(entries, typeof(List<AliasEntry>), options);
+
+                File.WriteAllText(Path.Combine(gameDir, $"{aliasType.ToString()}.json"), json);
+            }
+
+            File.Delete(Path.Combine(gameDir, "Aliases.json"));
         }
     }
 

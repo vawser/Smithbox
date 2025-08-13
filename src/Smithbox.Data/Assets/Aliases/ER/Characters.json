@@ -1,0 +1,3289 @@
+[
+  {
+    "ID": "default",
+    "Name": "Default",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c0000",
+    "Name": "Player",
+    "Tags": [
+      "player",
+      "human"
+    ]
+  },
+  {
+    "ID": "c2010",
+    "Name": "Blaidd",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2030",
+    "Name": "Rennala",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2031",
+    "Name": "Rennala",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2040",
+    "Name": "Juvenile Scholar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2041",
+    "Name": "Larva of Rot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2050",
+    "Name": "Ranni the Witch",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2051",
+    "Name": "Ranni the Witch",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2060",
+    "Name": "The Two Fingers",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2070",
+    "Name": "The Three Fingers",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2100",
+    "Name": "Black Knife Assassin",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2110",
+    "Name": "Beast Clergyman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2120",
+    "Name": "Malenia, Blade of Miquella",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2130",
+    "Name": "Morgott",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c2131",
+    "Name": "Morgott (Dead)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2140",
+    "Name": "Omen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2150",
+    "Name": "Lightning Ball",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2160",
+    "Name": "Finger Reader Crone",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2170",
+    "Name": "Finger Reader Crone",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2180",
+    "Name": "Melina",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2190",
+    "Name": "Radagon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c2191",
+    "Name": "Radagon (Crucified)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2200",
+    "Name": "Elden Beast",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c2270",
+    "Name": "Giant Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2271",
+    "Name": "Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2272",
+    "Name": "Giant Black Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2273",
+    "Name": "Black Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2274",
+    "Name": "Giant Albinauric Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2275",
+    "Name": "Albinauric Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2276",
+    "Name": "Giant Death Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2277",
+    "Name": "Death Crab",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2500",
+    "Name": "Crucible Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3000",
+    "Name": "Exile Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3010",
+    "Name": "Banished Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3020",
+    "Name": "Exile Soldier (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3050",
+    "Name": "Commander Niall/O'Neill",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3060",
+    "Name": "Giant Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3061",
+    "Name": "Giant Beast Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3070",
+    "Name": "Dominula Celebrant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3080",
+    "Name": "Imp",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3100",
+    "Name": "Bell Bearing Hunter / Elemer of the Briar",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3150",
+    "Name": "Night's Cavalry",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3160",
+    "Name": "Funeral Steed",
+    "Tags": [
+      "creature",
+      "horse"
+    ]
+  },
+  {
+    "ID": "c3170",
+    "Name": "Albinauric Archer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3171",
+    "Name": "Phillia, Towering Little Sister",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3180",
+    "Name": "Albinauric Archer's Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3181",
+    "Name": "Red Wolf of Radagon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3200",
+    "Name": "Nomadic Merchant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3201",
+    "Name": "Frenzied Nomad",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3202",
+    "Name": "Nomadic Merchant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3210",
+    "Name": "Nomadic Merchant's Donkey",
+    "Tags": [
+      "creature",
+      "horse"
+    ]
+  },
+  {
+    "ID": "c3250",
+    "Name": "Draconic Tree Sentinel",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3251",
+    "Name": "Tree Sentinel",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3252",
+    "Name": "Loretta",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3300",
+    "Name": "Nox Swordstress/Monk/Nightmaiden",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3320",
+    "Name": "Silver Tear",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3330",
+    "Name": "Giant Silver Tear",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3350",
+    "Name": "Crystalian",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3360",
+    "Name": "Ancestral Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3361",
+    "Name": "Putrid Ancestral Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3370",
+    "Name": "Ancestral Follower Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3371",
+    "Name": "Putrid Ancestral Follower Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3400",
+    "Name": "Grave Warden Duelist",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3450",
+    "Name": "Misbegotten",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3451",
+    "Name": "Scaly Misbegotten",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3460",
+    "Name": "Leonine Misbegotten",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c3470",
+    "Name": "Albinauric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3471",
+    "Name": "Large Albinauric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3500",
+    "Name": "Skeletal Militiaman/Bandit/Knight/Grave Warden",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3510",
+    "Name": "Catacomb Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3550",
+    "Name": "Sanguine Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3560",
+    "Name": "Godskin Apostle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3570",
+    "Name": "Godskin Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3600",
+    "Name": "Alabaster Lord",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3610",
+    "Name": "Oracle Envoy",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3620",
+    "Name": "Oracle Envoy (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3630",
+    "Name": "Oracle Envoy (Giant)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3650",
+    "Name": "Erdtree Guardian",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3660",
+    "Name": "Commoner",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3661",
+    "Name": "Putrid Corpse",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3662",
+    "Name": "Putrid Corpse (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3664",
+    "Name": "Cemetery Shade",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3665",
+    "Name": "Gostoc",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3666",
+    "Name": "The Noble Goldmask",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3670",
+    "Name": "Elder Albinauric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3700",
+    "Name": "Depraved Perfumer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3701",
+    "Name": "Perfumer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3702",
+    "Name": "Glintstone Sorcerer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3703",
+    "Name": "Page",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3704",
+    "Name": "Battlemage",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3710",
+    "Name": "Azur",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3720",
+    "Name": "Lusat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3730",
+    "Name": "Graven School",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3750",
+    "Name": "Clayman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3800",
+    "Name": "Cleanrot Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3810",
+    "Name": "Kindred of Rot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3850",
+    "Name": "Marionette Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3860",
+    "Name": "Avionette Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3900",
+    "Name": "Fire Monk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3901",
+    "Name": "Blackflame Monk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3910",
+    "Name": "Fire Prelate",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3950",
+    "Name": "Man-Serpent",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3970",
+    "Name": "Azula Beastman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4000",
+    "Name": "Revenant Follower",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4020",
+    "Name": "Royal Revenant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4040",
+    "Name": "Slug",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4050",
+    "Name": "Kaiden Sellsword",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4060",
+    "Name": "Kaiden Sellsword's Horse",
+    "Tags": [
+      "creature",
+      "horse"
+    ]
+  },
+  {
+    "ID": "c4070",
+    "Name": "Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4071",
+    "Name": "White Wolf",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4080",
+    "Name": "Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4090",
+    "Name": "Giant Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4100",
+    "Name": "Demi-Human",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4101",
+    "Name": "Demi-Human (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4110",
+    "Name": "Demi-Human Shaman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4120",
+    "Name": "Demi-Human Chief",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4130",
+    "Name": "Demi-Human Queen",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4140",
+    "Name": "Snail",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4150",
+    "Name": "Basilisk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4160",
+    "Name": "Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4161",
+    "Name": "Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4162",
+    "Name": "Farum Azula Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4163",
+    "Name": "Farum Azula Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4164",
+    "Name": "Bloodbane Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4165",
+    "Name": "Bloodbane Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4166",
+    "Name": "Rotten Stray (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4167",
+    "Name": "Rotten Stray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4170",
+    "Name": "Putrid Flesh",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4171",
+    "Name": "Putrid Flesh (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4180",
+    "Name": "Spirit Jellyfish",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4190",
+    "Name": "Large Scarab",
+    "Tags": [
+      "creature",
+      "scarab"
+    ]
+  },
+  {
+    "ID": "c4191",
+    "Name": "Scarab",
+    "Tags": [
+      "creature",
+      "scarab"
+    ]
+  },
+  {
+    "ID": "c4192",
+    "Name": "Giant Scarab",
+    "Tags": [
+      "creature",
+      "scarab"
+    ]
+  },
+  {
+    "ID": "c4200",
+    "Name": "Man-Bat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4201",
+    "Name": "Operatic Bat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4210",
+    "Name": "Warhawk",
+    "Tags": [
+      "creature",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c4220",
+    "Name": "Land Octopus (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4230",
+    "Name": "Land Octopus (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4240",
+    "Name": "Fingercreeper",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4241",
+    "Name": "Fingercreeper (Large)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4250",
+    "Name": "Fingercreeper (Small)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4260",
+    "Name": "Erdtree Burial Watchdog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4270",
+    "Name": "Elder Lion",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4280",
+    "Name": "Giant Ant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4281",
+    "Name": "Giant Ant (Skull Plate)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4290",
+    "Name": "Bloodhound Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4300",
+    "Name": "Wandering Noble",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4310",
+    "Name": "Lordsworn Soldier",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4311",
+    "Name": "Godrick Soldier",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4312",
+    "Name": "Raya Lucaria Soldier",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4313",
+    "Name": "Leyndell Soldier",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4314",
+    "Name": "Radahn Soldier",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4315",
+    "Name": "Mausoleum Soldier",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4316",
+    "Name": "Haligtree Soldier",
+    "Tags": [
+      "creature",
+      "haligtree"
+    ]
+  },
+  {
+    "ID": "c4321",
+    "Name": "Vulgar Militia",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4340",
+    "Name": "Mad Pumpkin Head",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4341",
+    "Name": "Mad Pumpkin Head (Thin)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4350",
+    "Name": "Lordsworn Knight",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4351",
+    "Name": "Godrick Knight",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4352",
+    "Name": "Cuckoo Knight",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4353",
+    "Name": "Leyndell Knight",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4354",
+    "Name": "Redmane Knight",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4355",
+    "Name": "Mausoleum Knight",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4356",
+    "Name": "Haligtree Knight",
+    "Tags": [
+      "creature",
+      "haligtree"
+    ]
+  },
+  {
+    "ID": "c4360",
+    "Name": "Lordsworn Knight's Horse",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4361",
+    "Name": "Godrick Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4362",
+    "Name": "Cuckoo Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4363",
+    "Name": "Leyndell Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4364",
+    "Name": "Redmane Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4365",
+    "Name": "Mausoleum Knight's Horse",
+    "Tags": [
+      "creature",
+      "horse",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4370",
+    "Name": "Foot Soldier",
+    "Tags": [
+      "creature",
+      "knight"
+    ]
+  },
+  {
+    "ID": "c4371",
+    "Name": "Godrick Foot Soldier",
+    "Tags": [
+      "creature",
+      "godrick"
+    ]
+  },
+  {
+    "ID": "c4372",
+    "Name": "Raya Lucaria Foot Soldier",
+    "Tags": [
+      "creature",
+      "cuckoo"
+    ]
+  },
+  {
+    "ID": "c4373",
+    "Name": "Leyndell Foot Soldier",
+    "Tags": [
+      "creature",
+      "leyndell"
+    ]
+  },
+  {
+    "ID": "c4374",
+    "Name": "Radahn Foot Soldier",
+    "Tags": [
+      "creature",
+      "redmane"
+    ]
+  },
+  {
+    "ID": "c4375",
+    "Name": "Mausoleum Foot Soldier",
+    "Tags": [
+      "creature",
+      "mausoleum"
+    ]
+  },
+  {
+    "ID": "c4376",
+    "Name": "Haligtree Foot Soldier",
+    "Tags": [
+      "creature",
+      "haligtree"
+    ]
+  },
+  {
+    "ID": "c4377",
+    "Name": "Highwayman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4380",
+    "Name": "Starcaller",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4381",
+    "Name": "Guilty",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4382",
+    "Name": "Stonedigger",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4383",
+    "Name": "Glintstone Digger",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4384",
+    "Name": "Glintstone Digger (Small Sack)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4385",
+    "Name": "Disciple of Rot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4420",
+    "Name": "Giant Crayfish",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4421",
+    "Name": "Giant Crayfish",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4430",
+    "Name": "Watcher Stones",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4440",
+    "Name": "Land Squirt",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4441",
+    "Name": "Giant Land Squirt",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4442",
+    "Name": "Giant Rotten Land Squirt",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4450",
+    "Name": "Walking Mausoleum",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4460",
+    "Name": "Flame Chariot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4470",
+    "Name": "Abductor Virgin",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4480",
+    "Name": "Miranda Blossom",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4481",
+    "Name": "Miranda Sprout",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4482",
+    "Name": "Rotten Miranda Blossom",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4483",
+    "Name": "Rotten Miranda Sprout",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4490",
+    "Name": "Living Jar Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4491",
+    "Name": "Living Jar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4492",
+    "Name": "Greatjar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4500",
+    "Name": "Flying Dragon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4501",
+    "Name": "Decaying Ekzykes",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4502",
+    "Name": "Glintstone Dragon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4503",
+    "Name": "Borealis the Freezing Fog",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4504",
+    "Name": "Elder Dragon Greyoll",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4505",
+    "Name": "Flying Dragon (Small)",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4510",
+    "Name": "Ancient Dragon",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4511",
+    "Name": "Lichdragon Fortissax",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4520",
+    "Name": "Dragonlord Placidusax",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4550",
+    "Name": "Giant Dog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4560",
+    "Name": "Giant Crow",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4561",
+    "Name": "Giant Crow (Rotten)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4570",
+    "Name": "Wormface",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4580",
+    "Name": "Large Wormface",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4600",
+    "Name": "Troll",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4601",
+    "Name": "Troll Knight (Carian Blade)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4602",
+    "Name": "Snowfield Troll",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4603",
+    "Name": "Stonedigger Troll",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4604",
+    "Name": "War Counselor Iji",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4620",
+    "Name": "Astel, Naturalborn of the Void",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4630",
+    "Name": "Runebear",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4640",
+    "Name": "Ulcerated Tree Spirit",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4650",
+    "Name": "Dragonkin Soldier",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4660",
+    "Name": "Guardian Golem",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4670",
+    "Name": "Ancestor Spirit",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4680",
+    "Name": "Falling-star Beast",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4690",
+    "Name": "Grafted Scion",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4710",
+    "Name": "God-Devouring Serpent / Rykard, Lord of Blasphemy",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4711",
+    "Name": "Rykard's Corpse",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4720",
+    "Name": "Godfrey, First Elden Lord",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4721",
+    "Name": "Hoarah Loux, Warrior",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4730",
+    "Name": "Starscourge Radahn",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4750",
+    "Name": "Godrick the Grafted",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4751",
+    "Name": "Godrick's Corpse",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4760",
+    "Name": "Fire Giant",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4770",
+    "Name": "Valiant Gargoyle",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4800",
+    "Name": "Mohg, Lord of Blood",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4801",
+    "Name": "Mohg, Lord of Blood (Unknown)",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4810",
+    "Name": "Erdtree Avatar",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4811",
+    "Name": "Putrid Avatar",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4820",
+    "Name": "Omenkiller",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4910",
+    "Name": "Magma Wyrm",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4911",
+    "Name": "Great Wyrm Theodorix",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4950",
+    "Name": "Tibia Mariner",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c4960",
+    "Name": "Giant Skeleton Torso",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c4980",
+    "Name": "Death Rite Bird",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c5000",
+    "Name": "Commander Gaius",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5010",
+    "Name": "Golden Hippopotamus",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5011",
+    "Name": "Golden Hippopotamus (Golden Wings)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5020",
+    "Name": "Putrescent Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5030",
+    "Name": "Romina, Saint of the Bud",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5040",
+    "Name": "Curseblade Labirith",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5050",
+    "Name": "Midra, Lord of Frenzied Flame",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5051",
+    "Name": "Midra, Lord of Frenzied Flame",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5060",
+    "Name": "Lamprey",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5061",
+    "Name": "Lamprey (Large)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5070",
+    "Name": "Death Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5080",
+    "Name": "Bloodfiend",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5081",
+    "Name": "Chief Bloodfiend",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5090",
+    "Name": "Gravebird",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5110",
+    "Name": "Spirit Eel",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5120",
+    "Name": "Bayle the Dread",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5130",
+    "Name": "Messmer the Impaler",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5131",
+    "Name": "Messmer the Impaler",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5132",
+    "Name": "Messmer the Impaler",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5140",
+    "Name": "Messmer: Base Serpent",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5141",
+    "Name": "Messmer: Base Serpent",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5160",
+    "Name": "Fire Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5170",
+    "Name": "Furnace Golem",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5180",
+    "Name": "Dummy Entity (TEMP NAME)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5181",
+    "Name": "Dummy Entity (TEMP NAME)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5190",
+    "Name": "Spider Scorpion",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5192",
+    "Name": "Spider Scorpion",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5193",
+    "Name": "Spider Scorpion (Small)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5194",
+    "Name": "Spider Scorpion (Small)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5200",
+    "Name": "Metyr, Mother of Fingers",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5210",
+    "Name": "Divine Beast Dancing Lion",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5220",
+    "Name": "Promised Consort Radahn",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5221",
+    "Name": "Miquella's Arms",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5230",
+    "Name": "Scadutree Avatar",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5240",
+    "Name": "Commoner (Pot)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5241",
+    "Name": "Commoner",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5250",
+    "Name": "Horned Warrior",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5251",
+    "Name": "Horned Shaman",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5260",
+    "Name": "Golem Smith",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5261",
+    "Name": "Smith Golem",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5270",
+    "Name": "Jar Innards",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5271",
+    "Name": "Jar Innards",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5280",
+    "Name": "Winter-Lantern",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5300",
+    "Name": "Rellana, Twin Moon Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5311",
+    "Name": "Inquisitor (Candles)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5312",
+    "Name": "Jori, Elder Inquisitor",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5320",
+    "Name": "Fat Inquisitor",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5330",
+    "Name": "St. Trina",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5340",
+    "Name": "Dummy Entity (TEMP NAME)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5350",
+    "Name": "Basilisk Eyes",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5360",
+    "Name": "Giant Beast Skeleton",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5370",
+    "Name": "Ancient Dragon Senessax",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5380",
+    "Name": "Miranda Blossom",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5381",
+    "Name": "Miranda Sprout",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5390",
+    "Name": "Troll",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5391",
+    "Name": "Troll Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5401",
+    "Name": "Eagle",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5410",
+    "Name": "Deer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5421",
+    "Name": "Red Bear",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5430",
+    "Name": "Owl",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5440",
+    "Name": "Boar",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5450",
+    "Name": "Ram",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5460",
+    "Name": "Murre",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5470",
+    "Name": "Dragonfly",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5471",
+    "Name": "Yellow Dragonfly",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5472",
+    "Name": "Great Dragonfly",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5480",
+    "Name": "Turtle",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5490",
+    "Name": "Springhare",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5500",
+    "Name": "Living Magma",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5511",
+    "Name": "Shade",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5512",
+    "Name": "Shade",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5513",
+    "Name": "Cemetery Shade",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5520",
+    "Name": "Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5521",
+    "Name": "Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5522",
+    "Name": "Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5523",
+    "Name": "Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5524",
+    "Name": "Braided Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5525",
+    "Name": "Braided Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5526",
+    "Name": "Bloodbane Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5527",
+    "Name": "Bloodbane Stray",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5530",
+    "Name": "Man-Bat",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5540",
+    "Name": "Wolf",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5541",
+    "Name": "Wolf",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5550",
+    "Name": "Fingercreeper",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5551",
+    "Name": "Fingercreeper (Large)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5560",
+    "Name": "Fingercreeper (Small)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5570",
+    "Name": "Marionette Soldier",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5580",
+    "Name": "Jagged Peak Drake",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5590",
+    "Name": "Putrid Flesh",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5591",
+    "Name": "Putrid Flesh (Large)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5600",
+    "Name": "Catacomb Skeleton",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5620",
+    "Name": "Tibia Mariner",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5630",
+    "Name": "Giant Crayfish",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5640",
+    "Name": "Giant Crab",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5641",
+    "Name": "Crab",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5650",
+    "Name": "Messmer Foot Soldier",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5651",
+    "Name": "Messmer Foot Soldier",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5660",
+    "Name": "Shadow Militia",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5661",
+    "Name": "Shadow Militia",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5680",
+    "Name": "Wheeled Ballista",
+    "Tags": [
+      "trap",
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5690",
+    "Name": "Dragon-faced Flamethrower",
+    "Tags": [
+      "trap",
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5700",
+    "Name": "Demi-Human",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5701",
+    "Name": "Demi-Human (Large)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5710",
+    "Name": "Demi-Human Shaman",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5720",
+    "Name": "Demi-Human Chief",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5730",
+    "Name": "Demi-Human Queen",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5740",
+    "Name": "Kindred of Rot",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5750",
+    "Name": "Living Jar Warrior",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5751",
+    "Name": "Living Jar",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5760",
+    "Name": "Rat",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5761",
+    "Name": "Giant Rat",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5780",
+    "Name": "Runebear",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5790",
+    "Name": "Guardian Golem",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5800",
+    "Name": "Crucible Knight Devonia",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5810",
+    "Name": "Demi-Human Swordmaster Onze",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5820",
+    "Name": "Great Red Bear",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5830",
+    "Name": "Messmer Soldier",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5840",
+    "Name": "Black Knight",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5850",
+    "Name": "Giant Ram",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5860",
+    "Name": "Ghostflame Dragon",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5870",
+    "Name": "Imp (Lion Head)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5871",
+    "Name": "Imp (Dragon Head)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5872",
+    "Name": "Imp (Dragon Head)",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5880",
+    "Name": "Catacombs Sorcerer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5890",
+    "Name": "Black Knight Horse",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5900",
+    "Name": "Man-Fly",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5910",
+    "Name": "Hornsent Grandam",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5920",
+    "Name": "Magma Wyrm",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5930",
+    "Name": "Giant Skeleton",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5931",
+    "Name": "Giant Beast Skeleton",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5940",
+    "Name": "Watcher Stones",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5950",
+    "Name": "Leonine Misbegotten",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5960",
+    "Name": "Ulcerated Tree Spirit",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5970",
+    "Name": "Abductor Virgin",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5980",
+    "Name": "Omenkiller",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c5990",
+    "Name": "Basilisk",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6001",
+    "Name": "Eagle",
+    "Tags": [
+      "fauna",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c6010",
+    "Name": "Deer",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6031",
+    "Name": "Bear",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6040",
+    "Name": "Owl",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6050",
+    "Name": "Boar",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6060",
+    "Name": "Goat",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6070",
+    "Name": "Murre",
+    "Tags": [
+      "fauna",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c6072",
+    "Name": "Carrier Pigeon",
+    "Tags": [
+      "fauna",
+      "bird"
+    ]
+  },
+  {
+    "ID": "c6080",
+    "Name": "Dragonfly",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6081",
+    "Name": "Yellow Dragonfly",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6082",
+    "Name": "Great Dragonfly",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6090",
+    "Name": "Turtle",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6091",
+    "Name": "Miriel, Pastor of Vows",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6100",
+    "Name": "Springhare",
+    "Tags": [
+      "fauna"
+    ]
+  },
+  {
+    "ID": "c6200",
+    "Name": "Scarab",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6201",
+    "Name": "Scarab",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6202",
+    "Name": "Scarab",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6210",
+    "Name": "Albinauric Archer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6220",
+    "Name": "Wolf",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6221",
+    "Name": "Wolf",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6223",
+    "Name": "Wolf",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6230",
+    "Name": "Perfumer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6231",
+    "Name": "Perfumer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6232",
+    "Name": "Glintstone Sorcerer",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6233",
+    "Name": "Page",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6240",
+    "Name": "Dummy",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6251",
+    "Name": "Tree Sentinel",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6260",
+    "Name": "Death Rite Bird",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6270",
+    "Name": "Royal Revenant",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6290",
+    "Name": "Misbegotten",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6291",
+    "Name": "Scaly Misbegotten",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6300",
+    "Name": "Snail",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6310",
+    "Name": "Fallingstar Beast",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c6320",
+    "Name": "Wandering Noble",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c7000",
+    "Name": "Fallen Hawks Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7100",
+    "Name": "Ancient Hero",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8000",
+    "Name": "Torrent",
+    "Tags": [
+      "horse"
+    ]
+  },
+  {
+    "ID": "c8100",
+    "Name": "Ballista",
+    "Tags": [
+      "trap"
+    ]
+  },
+  {
+    "ID": "c8101",
+    "Name": "Wheeled Ballista",
+    "Tags": [
+      "trap"
+    ]
+  },
+  {
+    "ID": "c8110",
+    "Name": "Dragon-faced Flamethrower",
+    "Tags": [
+      "trap"
+    ]
+  },
+  {
+    "ID": "c8120",
+    "Name": "Merciless Chariot",
+    "Tags": [
+      "trap"
+    ]
+  },
+  {
+    "ID": "c8900",
+    "Name": "Malenia, Blade of Miquella",
+    "Tags": [
+      "humanoid",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c8901",
+    "Name": "Beast Clergyman",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c8902",
+    "Name": "Miquella",
+    "Tags": [
+      "shadow of the erdtree",
+      "sote"
+    ]
+  },
+  {
+    "ID": "c8903",
+    "Name": "Rennala, Queen of the Full Moon",
+    "Tags": [
+      "humanoid",
+      "boss",
+      "spellcaster"
+    ]
+  },
+  {
+    "ID": "c8904",
+    "Name": "Morgott",
+    "Tags": [
+      "creature",
+      "humanoid"
+    ]
+  },
+  {
+    "ID": "c8905",
+    "Name": "Mohg, Lord of Blood",
+    "Tags": [
+      "creature",
+      "boss"
+    ]
+  },
+  {
+    "ID": "c8906",
+    "Name": "Melina",
+    "Tags": [
+      "humanoid"
+    ]
+  },
+  {
+    "ID": "c8907",
+    "Name": "Ranni Doll",
+    "Tags": [
+      "humanoid"
+    ]
+  },
+  {
+    "ID": "c9001",
+    "Name": "FLVER Test",
+    "Tags": [
+      "debug"
+    ]
+  }
+]

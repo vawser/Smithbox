@@ -1,0 +1,65 @@
+[
+  {
+    "ID": "m10_00_00_00",
+    "Name": "Hirata Estate",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m11_00_00_00",
+    "Name": "Ashina Outskirts",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m11_01_00_00",
+    "Name": "Ashina Castle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m11_02_00_00",
+    "Name": "Ashina Reservoir",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m13_00_00_00",
+    "Name": "Abandoned Dungeon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m15_00_00_00",
+    "Name": "Mibu Village",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m17_00_00_00",
+    "Name": "Sunken Valley",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m20_00_00_00",
+    "Name": "Senpou Temple",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m25_00_00_00",
+    "Name": "Fountainhead Palace",
+    "Tags": [
+      ""
+    ]
+  }
+]

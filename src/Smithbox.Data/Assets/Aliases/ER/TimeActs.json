@@ -1,0 +1,5028 @@
+[
+  {
+    "ID": "c0000_000",
+    "Name": "Default",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_002",
+    "Name": "Idle: One Hand on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_003",
+    "Name": "Idle: One Hand down and behind Hip",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_010",
+    "Name": "Idle: Both Hands in Front",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_012",
+    "Name": "Idle: Both Hands on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_013",
+    "Name": "Idle: Both Hands in Spear Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_014",
+    "Name": "Idle: Both Hands in Bow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_015",
+    "Name": "Idle: Both Hands in Shield Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_016",
+    "Name": "Idle: Both Hands in Crossbow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_020",
+    "Name": "Base: Dagger",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_021",
+    "Name": "Base: Torch",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_022",
+    "Name": "Base: Claw",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_023",
+    "Name": "Base: Straight Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_024",
+    "Name": "Base: Twinblade",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_025",
+    "Name": "Base: Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_026",
+    "Name": "Base: Colossal Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_027",
+    "Name": "Base: Thrusting Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_028",
+    "Name": "Base: Curved Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_029",
+    "Name": "Base: Katana",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_030",
+    "Name": "Base: Axe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_031",
+    "Name": "Base: Colossal Weapon",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_032",
+    "Name": "Base: Greataxe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_033",
+    "Name": "Base: Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_034",
+    "Name": "Base: Flail",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_035",
+    "Name": "Base: Great Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_036",
+    "Name": "Base: Spear",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_037",
+    "Name": "Base: Great Spear",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_038",
+    "Name": "Base: Halberd",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_039",
+    "Name": "Base: Heavy Thrusting Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_040",
+    "Name": "Base: Curved Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_041",
+    "Name": "Base: Catalyst",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_042",
+    "Name": "Base: Fist",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_043",
+    "Name": "Base: Whip",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_044",
+    "Name": "Base: Bow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_045",
+    "Name": "Base: Greatbow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_046",
+    "Name": "Base: Crossbow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_047",
+    "Name": "Base: Greatshield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_048",
+    "Name": "Base: Small Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_049",
+    "Name": "Base: Medium Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_050",
+    "Name": "Base: Scythe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_051",
+    "Name": "Base: Light Bow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_052",
+    "Name": "Base: Ballista",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_053",
+    "Name": "Base: Throwing Blade",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_055",
+    "Name": "Base: Hand-to-Hand",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_056",
+    "Name": "Base: Perfume Bottle",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_057",
+    "Name": "Base: Thrusting Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_058",
+    "Name": "Base: Reverse-hand Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_060",
+    "Name": "Base: Light Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_061",
+    "Name": "Base: Great Katana",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_062",
+    "Name": "Base: Beast Claw",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_100",
+    "Name": "Override: Great Knife, Ivory Sickle, Celebrant's Sickle",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_101",
+    "Name": "Override: isericorde, Scorpion's Stinger, Glintstone Kris",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_103",
+    "Name": "Override: Erdsteel Dagger, Blade of Calling, Black Knife",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_104",
+    "Name": "Override: Wakizashi",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_110",
+    "Name": "Override: Broadsword, Cane Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_111",
+    "Name": "Override: Short Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_112",
+    "Name": "Override: Miquellan Knight's Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_113",
+    "Name": "Override: Carian Knight's Sword, Lazuli Glintstone Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_117",
+    "Name": "Override: Warhawk's Talon",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_120",
+    "Name": "Override: Eleonora's Poleblade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_121",
+    "Name": "Override: Godskin Peeler",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_125",
+    "Name": "Override: Claymore",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_126",
+    "Name": "Override: Flamberge",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_127",
+    "Name": "Override: Sword of Milos, Death's Poker",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_128",
+    "Name": "Override: Knight's Greatsword, Banished Knight's Greatsword, Inseparable Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_129",
+    "Name": "Override: Dark Moon Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_130",
+    "Name": "Override: Marais Executioner's Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_135",
+    "Name": "Override: Zweihander, Troll Knight's Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_136",
+    "Name": "Override: Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_137",
+    "Name": "Override: Godslayer's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_138",
+    "Name": "Override: Ruins Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_145",
+    "Name": "Override: Estoc, Noble's Estoc",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_146",
+    "Name": "Override: Rogier's Rapier",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_147",
+    "Name": "Override: Frozen Needle",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_150",
+    "Name": "Override: Godskin Stitcher",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_151",
+    "Name": "Override: Great Epee",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_155",
+    "Name": "Override: Shotel, Eclipse Shotel, Nox Flowing Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_156",
+    "Name": "Override: Scimitar, Shamshir",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_157",
+    "Name": "Override: Flowing Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_158",
+    "Name": "Override: Mantis Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_159",
+    "Name": "Override: Wing of Astel",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_161",
+    "Name": "Override: Beastman's Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_165",
+    "Name": "Override: Serpentbone Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_166",
+    "Name": "Override: Meteoric Ore Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_167",
+    "Name": "Override: Nagakiba",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_170",
+    "Name": "Override: Hand Axe, Icerind Hatchet, Forked Hatchet",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_171",
+    "Name": "Override: Warped Axe, Ripple Blade",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_172",
+    "Name": "Override: Iron Cleaver, Celebrant's Cleaver",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_175",
+    "Name": "Override: Butchering Knife",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_176",
+    "Name": "Override: Pickaxe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_177",
+    "Name": "Override: Axe of Godrick, Crescent Moon Axe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_180",
+    "Name": "Override: Club, Stone Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_181",
+    "Name": "Override: Spiked Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_182",
+    "Name": "Override: Morning Star, Scepter of the All-Knowing",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_183",
+    "Name": "Override: Mace",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_184",
+    "Name": "Override: Monk's Flamemace",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_195",
+    "Name": "Override: Great Club",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_196",
+    "Name": "Override: Prelate's Inferno Crozier",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_197",
+    "Name": "Override: Giant-Crusher",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_198",
+    "Name": "Override: Golem's Halberd",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_200",
+    "Name": "Override: Partisan, Spiked Spear, Death Ritual Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_201",
+    "Name": "Override: Pike",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_202",
+    "Name": "Override: Cross-Naginata",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_203",
+    "Name": "Override: Short Spear, Cleanrot Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_205",
+    "Name": "Override: Vyke's War Spear, Siluria's Tree",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_206",
+    "Name": "Override: Treespear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_207",
+    "Name": "Override: Serpent-Hunter",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_210",
+    "Name": "Override: Halberd, Commander's Standard, Banished Knight's Halberd, Dragon Halberd",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_211",
+    "Name": "Override: Lucerne, Golden Halberd, Nightrider Glaive",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_212",
+    "Name": "Override: Guardian's Swordspear, Loretta's War Sickle",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_215",
+    "Name": "Override: Zamor Curved Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_216",
+    "Name": "Override: Omen Cleaver, Magma Wyrm's Scalesword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_220",
+    "Name": "Override: Katar, Veteran's Prosthesis",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_221",
+    "Name": "Override: Caestus",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_225",
+    "Name": "Override: Scythe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_226",
+    "Name": "Override: Urumi",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_227",
+    "Name": "Override: Raptor Talons",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_230",
+    "Name": "Override: Albinauric Bow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_232",
+    "Name": "Override: Harp Bow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_233",
+    "Name": "Override: Pulley Crossbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_236",
+    "Name": "Override: Full Moon Crossbow",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_240",
+    "Name": "Override: Seal",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_241",
+    "Name": "Override: Sword Lance",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_246",
+    "Name": "Override: Dane's Footwork",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_247",
+    "Name": "Override: Smithscript Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_248",
+    "Name": "Override: Smithscript Axe",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_249",
+    "Name": "Override: Rellana's Twin Blades",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_250",
+    "Name": "Override: Smithscript Greathammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_251",
+    "Name": "Override: Smithscript Cirque",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_252",
+    "Name": "Override: Swift Spear",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_253",
+    "Name": "Override: Black Steel Greathammer",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_254",
+    "Name": "Override: Claws of Night",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_255",
+    "Name": "Override: Falx, Horned Warrior's Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_257",
+    "Name": "Override: Dancing Blade of Ranah",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_258",
+    "Name": "Override: Death Knight's Twin Axes",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_259",
+    "Name": "Override: Golem Fist",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_261",
+    "Name": "Override: Rabbath's Cannon",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_262",
+    "Name": "Override: Main-gauche",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_263",
+    "Name": "Override: Fire Knight's Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_264",
+    "Name": "Override: Lizard Greatsword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_265",
+    "Name": "Override: Curseblade's Cirque",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_266",
+    "Name": "Override: Spear of the Impaler",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_267",
+    "Name": "Override: Bloodfiend's Arm",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_268",
+    "Name": "Override: Putrescence Cleaver",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_288",
+    "Name": "Override: Nanaya's Torch",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_289",
+    "Name": "Override: Lamenting Visage",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_290",
+    "Name": "Override: Staff of the Great Beyond",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_291",
+    "Name": "Override: Ghostflame Torch",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_292",
+    "Name": "Override: St. Trina's Torch",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_293",
+    "Name": "Override: Carian Sorcery Sword",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_300",
+    "Name": "Female Default",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_302",
+    "Name": "Female Idle: One Hand on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_303",
+    "Name": "Female Idle: One Hand down and behind Hip",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_310",
+    "Name": "Female Idle: Both Hands in Front",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_312",
+    "Name": "Female Idle: Both Hands on Shoulder",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_313",
+    "Name": "Female Idle: Both Hands in Spear Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_314",
+    "Name": "Female Idle: Both Hands in Bow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_315",
+    "Name": "Female Idle: Both Hands in Shield Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_316",
+    "Name": "Female Idle: Both Hands in Crossbow Position",
+    "Tags": [
+      "tae",
+      "idle"
+    ]
+  },
+  {
+    "ID": "c0000_320",
+    "Name": "Female Base: Dagger",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_321",
+    "Name": "Female Base: Torch",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_322",
+    "Name": "Female Base: Claw",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_323",
+    "Name": "Female Base: Straight Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_324",
+    "Name": "Female Base: Twinblade",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_325",
+    "Name": "Female Base: Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_326",
+    "Name": "Female Base: Colossal Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_327",
+    "Name": "Female Base: Thrusting Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_328",
+    "Name": "Female Base: Curved Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_329",
+    "Name": "Female Base: Katana",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_330",
+    "Name": "Female Base: Axe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_331",
+    "Name": "Female Base: Colossal Weapon",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_332",
+    "Name": "Female Base: Greataxe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_333",
+    "Name": "Female Base: Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_334",
+    "Name": "Female Base: Flail",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_335",
+    "Name": "Female Base: Great Hammer",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_336",
+    "Name": "Female Base: Spear",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_337",
+    "Name": "Female Base: Great Spear",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_338",
+    "Name": "Female Base: Halberd",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_339",
+    "Name": "Female Base: Heavy Thrusting Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_340",
+    "Name": "Female Base: Curved Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_341",
+    "Name": "Female Base: Catalyst",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_342",
+    "Name": "Female Base: Fist",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_343",
+    "Name": "Female Base: Whip",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_344",
+    "Name": "Female Base: Bow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_345",
+    "Name": "Female Base: Greatbow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_346",
+    "Name": "Female Base: Crossbow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_347",
+    "Name": "Female Base: Greatshield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_348",
+    "Name": "Female Base: Small Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_349",
+    "Name": "Female Base: Medium Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_350",
+    "Name": "Female Base: Scythe",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_351",
+    "Name": "Female Base: Light Bow",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_352",
+    "Name": "Female Base: Ballista",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_353",
+    "Name": "Female Base: Throwing Blade",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_355",
+    "Name": "Female Base: Hand-to-Hand",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_356",
+    "Name": "Female Base: Perfume Bottle",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_357",
+    "Name": "Female Base: Thrusting Shield",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_358",
+    "Name": "Female Base: Reverse-hand Sword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_360",
+    "Name": "Female Base: Light Greatsword",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_361",
+    "Name": "Female Base: Great Katana",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_362",
+    "Name": "Female Base: Beast Claw",
+    "Tags": [
+      "tae",
+      "base"
+    ]
+  },
+  {
+    "ID": "c0000_400",
+    "Name": "Magic: Inescapable Frenzy",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_401",
+    "Name": "Magic: Glintstone Pebble, Great Glintstone Shard, Glintstone Icecrag",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_402",
+    "Name": "Magic: Glintstone Cometshard, Comet, Shard Spiral, Night Comet",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_404",
+    "Name": "Magic: Crystal Barrage",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_405",
+    "Name": "Magic: Loretta's Greatbow, Loretta's Mastery",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_406",
+    "Name": "Magic: Rennala's Full Moon, Ranni's Dark Moon",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_407",
+    "Name": "Magic: Comet Azur, Crystal Torrent",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_408",
+    "Name": "Magic: Glintblade Phalanx, Carian Phalanx, Eternal Darkness",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_409",
+    "Name": "Magic: Carian Greatsword, Adula's Moonblade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_410",
+    "Name": "Magic: Carian Piercer",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_411",
+    "Name": "Magic: Scholar's Armament, Frozen Armament, Unseen Blade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_412",
+    "Name": "Magic: Scholar's Shield",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_413",
+    "Name": "Magic: Terra Magicus, Starlight, Lucidity",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_414",
+    "Name": "Magic: Zamor Ice Storm",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_415",
+    "Name": "Magic: Meteorite, Meteorite of Astel",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_416",
+    "Name": "Magic: Glintstone Arc",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_417",
+    "Name": "Magic: Flame Sling, Flame Fall Upon Them",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_419",
+    "Name": "Magic: Flame Of The Fell God, Watchful Spirit",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_420",
+    "Name": "Magic: Whirl, O Flame",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_422",
+    "Name": "Magic: Scouring Black Flame",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_423",
+    "Name": "Magic: Surge, O Flame",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_424",
+    "Name": "Magic: Burn, O Flame!, Fire's Deadly Sin",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_425",
+    "Name": "Magic: O, Flame!",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_426",
+    "Name": "Magic: Shadow Bait, Darkness, Swarm of Flies, Poison Mist",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_427",
+    "Name": "Magic: Discus of Light, Triple Rings of Light",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_428",
+    "Name": "Magic: Rejection",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_429",
+    "Name": "Magic: Wrath Of Gold",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_431",
+    "Name": "Magic: Flame Cleanse Me, Flame Grant Me Strength, Flame Protect Me, Black Flame's Protection, Bestial Vitality, Bestial Constitution",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_432",
+    "Name": "Magic: Black Flame Blade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_433",
+    "Name": "Magic: Urgent Heal, Cure Poison, Fortification, Magic Fortification, Lightning Fortification, Divine Fortification",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_434",
+    "Name": "Magic: Barrier of Gold, Protection of The Erdtree, Heal, Great Heal, Lord's Heal, Erdtree Heal, Blessing's Boon, Blessing of the Erdtree, Lord's Aid, Lord's Divine Fortification, Golden Light Fortification",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_435",
+    "Name": "Magic: Golden Vow",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_436",
+    "Name": "Magic: Lightning Spear",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_437",
+    "Name": "Magic: Stone of Gurranq",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_438",
+    "Name": "Magic: Bestial Sling",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_440",
+    "Name": "Magic: Beast Claw",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_441",
+    "Name": "Magic: Gurranq's Beast Claw",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_442",
+    "Name": "Magic: Death Lightning, Ancient Dragons' Light Strike",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_444",
+    "Name": "Magic: Ancient Dragons' Light Spear",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_445",
+    "Name": "Magic: Lansseax's Glaive",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_448",
+    "Name": "Magic: Radagon's Rings Of Light",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_449",
+    "Name": "Magic: Immutable Shield",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_450",
+    "Name": "Magic: Agheel's Flame, Borealis's Mist, Ekzykes's Decay, Smarag's Glint Breath, Ghostflame Breath",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_451",
+    "Name": "Magic: Placidusax's Ruin",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_452",
+    "Name": "Magic: Dragonclaw",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_454",
+    "Name": "Magic: Dragonmaw",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_455",
+    "Name": "Magic: Greyoll's Roar",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_456",
+    "Name": "Magic: Shatter Earth",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_457",
+    "Name": "Magic: Rock Blaster",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_458",
+    "Name": "Magic: Crystal Release",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_459",
+    "Name": "Magic: Electrify Armament, Vyke's Dragonbolt",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_460",
+    "Name": "Magic: Dragonbolt Blessing",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_466",
+    "Name": "Magic: The Flame of Frenzy",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_467",
+    "Name": "Magic: Dragonfire, Dragonice, Rotten Breath, Glintstone Breath",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_470",
+    "Name": "Magic: Aspects of the Crucible: Tail",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_471",
+    "Name": "Magic: Aspects of the Crucible: Horns",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_474",
+    "Name": "Magic: Pest Threads",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_475",
+    "Name": "Magic: Oracle Bubbles",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_476",
+    "Name": "Magic: Great Oracular Bubble",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_478",
+    "Name": "Magic: Gavel of Haima",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_479",
+    "Name": "Magic: Swift Glintstone Shard / Night Shard",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_480",
+    "Name": "Magic: Carian Slicer",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_481",
+    "Name": "Magic: Briars of Sin",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_482",
+    "Name": "Magic: Briars of Punishment",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_483",
+    "Name": "Magic: Ambush Shard",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_484",
+    "Name": "Magic: Carian Retaliation",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_486",
+    "Name": "Magic: Law of Regression, Law of Causality, Order Healing",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_487",
+    "Name": "Magic: Litany of Proper Death",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_488",
+    "Name": "Magic: Unendurable Frenzy",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_489",
+    "Name": "Magic: Frenzied Burst",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_490",
+    "Name": "Magic: Howl of Shabriri",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_491",
+    "Name": "Magic: Elden Stars",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_492",
+    "Name": "Magic: Cannon of Haima",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_493",
+    "Name": "Magic: Bloodboon",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_494",
+    "Name": "Magic: Bloodflame Talons",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_495",
+    "Name": "Magic: Greatblade Phalanx, Rykard's Rancor",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_498",
+    "Name": "Magic: Fortissax's Light Spear",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_499",
+    "Name": "Magic: Black Flame Ritual",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_500",
+    "Name": "Magic: Aspects of the Crucible: Breath",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_502",
+    "Name": "Magic: Gelmir's Fury",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_503",
+    "Name": "Magic: Rancorcall, Ancient Death Rancor",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_504",
+    "Name": "Magic: Order's Blade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_505",
+    "Name": "Magic: Noble Presence",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_506",
+    "Name": "Magic: Catch Flame",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_507",
+    "Name": "Magic: Glintstone Stars, Star Shower, Stars of Ruin, Magic Downpour, Glintstone Nail, Glintstone Nails",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_508",
+    "Name": "Magic: Rock Sling",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_509",
+    "Name": "Magic: Unseen Form",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_510",
+    "Name": "Magic: Thops's Barrier",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_511",
+    "Name": "Magic: Lightning Strike, Honed Bolt",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_512",
+    "Name": "Magic: Bloodflame Blade, Poison Armament",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_513",
+    "Name": "Magic: Crystal Burst, Freezing Mist, Shattering Crystal, Fia's Mist, Night Maiden's Mist",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_514",
+    "Name": "Magic: Assassin's Approach",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_515",
+    "Name": "Magic: Explosive Ghostflame",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_516",
+    "Name": "Magic: Black Blade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_517",
+    "Name": "Magic: Magma Shot, Roiling Magma",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_518",
+    "Name": "Magic: Magic Glintblade",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_519",
+    "Name": "Magic: Frozen Lightning Spear",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_520",
+    "Name": "Magic: Gravity Well, Collapsing Stars, Blades of Stone, Gravitational Missile, Fleeting Microcosm",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_521",
+    "Name": "Magic: Tibia's Summons",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_522",
+    "Name": "Magic: Scarlet Aeonia",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_523",
+    "Name": "Magic: Magma Breath, Theodorix's Magma",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_524",
+    "Name": "Magic: Founding Rain of Stars",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_525",
+    "Name": "Magic: Aspects of the Crucible: Thorns",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_526",
+    "Name": "Magic: Vortex of Putrescence",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_527",
+    "Name": "Magic: Miriam's Vanishing",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_528",
+    "Name": "Magic: Minor Erdtree",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_529",
+    "Name": "Magic: Aspects of the Crucible: Bloom",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_530",
+    "Name": "Magic: Heal from Afar",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_531",
+    "Name": "Magic: Roar of Rugalea",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_533",
+    "Name": "Magic: Bayle's Tyranny",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_534",
+    "Name": "Magic: Bayle's Flame Lightning",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_535",
+    "Name": "Magic: Rotten Butterflies",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_536",
+    "Name": "Magic: Pest-Thread Spears",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_537",
+    "Name": "Magic: Midra's Flame of Frenzy",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_538",
+    "Name": "Magic: Glintblade Trio",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_539",
+    "Name": "Magic: Knight's Lightning Spear",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_540",
+    "Name": "Magic: Furious Blade of Ansbach",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_541",
+    "Name": "Magic: Messmer's Orb",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_542",
+    "Name": "Magic: Fleeting Microcosm",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_543",
+    "Name": "Magic: Rings of Spectral Light",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_544",
+    "Name": "Magic: Dragonbolt of Florissax",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_545",
+    "Name": "Magic: Light of Miquella",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_546",
+    "Name": "Magic: Spira",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_547",
+    "Name": "Magic: Divine Beast Tornado",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_548",
+    "Name": "Magic: Golden Arcs",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_549",
+    "Name": "Magic: Multilayered Ring of Light",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_550",
+    "Name": "Magic: Mantle of Thorns",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_551",
+    "Name": "Magic: Wrath from Afar",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_552",
+    "Name": "Magic: Divine Bird Feathers",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_553",
+    "Name": "Magic: Fire Serpent",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_554",
+    "Name": "Magic: Giant Golden Arc",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_556",
+    "Name": "Magic: Impenetrable Thorns",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_557",
+    "Name": "Magic: Cherishing Fingers",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_558",
+    "Name": "Magic: Mass of Putrescence",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_559",
+    "Name": "Magic: Rain of Fire",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_560",
+    "Name": "Magic: Fleeting Microcosm (NPC)",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_561",
+    "Name": "Magic: Rellana's Twin Moons",
+    "Tags": [
+      "tae",
+      "magic"
+    ]
+  },
+  {
+    "ID": "c0000_600",
+    "Name": "Skill: Lion's Claw",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_601",
+    "Name": "Skill: Impaling Thrust",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_602",
+    "Name": "Skill: Piercing Fang",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_603",
+    "Name": "Skill: Spinning Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_605",
+    "Name": "Skill: Charge Forth",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_606",
+    "Name": "Skill: Stamp (Upward Cut)",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_607",
+    "Name": "Skill: Stamp (Sweep)",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_608",
+    "Name": "Skill: Blood Tax",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_609",
+    "Name": "Skill: Repeating Thrust",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_610",
+    "Name": "Skill: Wild Strikes",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_611",
+    "Name": "Skill: Spinning Strikes",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_612",
+    "Name": "Skill: Double Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_613",
+    "Name": "Skill: Prelate's Charge",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_614",
+    "Name": "Skill: Unsheathe",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_615",
+    "Name": "Skill: Square Off",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_616",
+    "Name": "Skill: Giant Hunt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_617",
+    "Name": "Skill: Torch Attack",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_618",
+    "Name": "Skill: Loretta's Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_619",
+    "Name": "Skill: Poison Moth Flight",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_620",
+    "Name": "Skill: Spinning Weapon",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_622",
+    "Name": "Skill: Storm Assault",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_623",
+    "Name": "Skill: Stormcaller",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_624",
+    "Name": "Skill: Sword Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_625",
+    "Name": "Skill: Spinning Chain",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_650",
+    "Name": "Skill: Glintblade Phalanx",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_651",
+    "Name": "Skill: Sacred Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_652",
+    "Name": "Skill: Ice Spear",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_653",
+    "Name": "Skill: Glintstone Pebble",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_654",
+    "Name": "Skill: Bloody Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_655",
+    "Name": "Skill: Lifesteal Fist",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_656",
+    "Name": "Skill: Eruption",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_657",
+    "Name": "Skill: Prayerful Strike",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_658",
+    "Name": "Skill: Gravitas",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_659",
+    "Name": "Skill: Storm Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_661",
+    "Name": "Skill: Earthshaker",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_662",
+    "Name": "Skill: Golden Land",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_663",
+    "Name": "Skill: Flaming Strike",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_664",
+    "Name": "Skill: Thunderbolt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_665",
+    "Name": "Skill: Lightning Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_666",
+    "Name": "Skill: Carian Grandeur",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_667",
+    "Name": "Skill: Carian Greatsword",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_668",
+    "Name": "Skill: Vacuum Slice",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_669",
+    "Name": "Skill: Black Flame Tornado",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_670",
+    "Name": "Skill: Sacred Ring of Light",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_671",
+    "Name": "Skill: Firebreather",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_672",
+    "Name": "Skill: Blood Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_673",
+    "Name": "Skill: Phantom Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_674",
+    "Name": "Skill: Spectral Lance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_675",
+    "Name": "Skill: Chilling Mist",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_676",
+    "Name": "Skill: Poisonous Mist",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_690",
+    "Name": "Skill: Shield Bash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_691",
+    "Name": "Skill: Barricade Shield",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_692",
+    "Name": "Skill: Parry",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_693",
+    "Name": "Skill: Buckler Parry",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_695",
+    "Name": "Skill: Carian Retaliation",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_696",
+    "Name": "Skill: Storm Wall",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_697",
+    "Name": "Skill: Golden Parry",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_698",
+    "Name": "Skill: Shield Crash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_699",
+    "Name": "Skill: Thops's Barrier",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_700",
+    "Name": "Skill: Through and Through",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_701",
+    "Name": "Skill: Barrage",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_702",
+    "Name": "Skill: Mighty Shot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_703",
+    "Name": "Skill: Enchanted Shot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_705",
+    "Name": "Skill: Rain of Arrows",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_708",
+    "Name": "Skill: Sky Shot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_710",
+    "Name": "Skill: Hoarfrost Stomp",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_711",
+    "Name": "Skill: Storm Stomp",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_712",
+    "Name": "Skill: Kick",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_713",
+    "Name": "Skill: Lightning Ram",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_714",
+    "Name": "Skill: Flame of the Redmanes",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_715",
+    "Name": "Skill: Ground Slam",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_716",
+    "Name": "Skill: Golden Slam",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_717",
+    "Name": "Skill: Waves of Darkness",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_718",
+    "Name": "Skill: Hoarah Loux's Earthshaker",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_730",
+    "Name": "Skill: Determination",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_731",
+    "Name": "Skill: Royal Knight's Resolve",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_732",
+    "Name": "Skill: Assassin's Gambit",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_733",
+    "Name": "Skill: Golden Vow",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_734",
+    "Name": "Skill: Sacred Order",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_735",
+    "Name": "Skill: Shared Order",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_736",
+    "Name": "Skill: Seppuku",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_737",
+    "Name": "Skill: Cragblade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_740",
+    "Name": "Skill: Barbaric Roar",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_741",
+    "Name": "Skill: War Cry",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_742",
+    "Name": "Skill: Beast's Roar",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_743",
+    "Name": "Skill: Troll's Roar",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_744",
+    "Name": "Skill: Braggart's Roar",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_750",
+    "Name": "Skill: Endure",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_751",
+    "Name": "Skill: Vow of the Indomitable",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_752",
+    "Name": "Skill: Holy Ground",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_755",
+    "Name": "Skill: Quickstep",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_756",
+    "Name": "Skill: Bloodhound's Step",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_757",
+    "Name": "Skill: Raptor of the Mists",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_760",
+    "Name": "Skill: White Shadow's Lure",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_767",
+    "Name": "Skill: Corpse Wax Cutter",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_768",
+    "Name": "Skill: Zamor Ice Storm",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_769",
+    "Name": "Skill: Radahn's Rain",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_770",
+    "Name": "Skill: The Queen's Black Flame",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_771",
+    "Name": "Skill: Dynast's Finesse",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_772",
+    "Name": "Skill: Magma Shower",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_773",
+    "Name": "Skill: Nebula",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_774",
+    "Name": "Skill: Death Flare",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_775",
+    "Name": "Skill: Bloodhound's Finesse",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_776",
+    "Name": "Skill: Magma Guillotine",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_777",
+    "Name": "Skill: Corpse Piler",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_778",
+    "Name": "Skill: Transient Moonlight",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_779",
+    "Name": "Skill: Bloodblade Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_782",
+    "Name": "Skill: Knowledge Above All",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_783",
+    "Name": "Skill: Devourer of Worlds",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_784",
+    "Name": "Skill: Familal Rancor",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_785",
+    "Name": "Skill: Rosus's Summons",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_786",
+    "Name": "Skill: Thunderstorm",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_787",
+    "Name": "Skill: Sacred Phalanx",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_788",
+    "Name": "Skill: Great-Serpent Hunt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_789",
+    "Name": "Skill: Angel's Wings",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_790",
+    "Name": "Skill: Storm Kick",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_791",
+    "Name": "Skill: Unblockable Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_792",
+    "Name": "Skill: Sorcery of the Crozier",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_793",
+    "Name": "Skill: Erdtree Slam",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_794",
+    "Name": "Skill: Gravity Bolt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_795",
+    "Name": "Skill: Fires of Slumber",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_796",
+    "Name": "Skill: Golden Retaliation",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_797",
+    "Name": "Skill: Contagious Fury",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_798",
+    "Name": "Skill: Ordovis's Vortex",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_799",
+    "Name": "Skill: Spinning Weapon",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_800",
+    "Name": "Skill: Surge of Faith",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_801",
+    "Name": "Skill: Flame Spit",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_802",
+    "Name": "Skill: Tongues of Fire",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_803",
+    "Name": "Skill: Oracular Bubble",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_804",
+    "Name": "Skill: Bubble Shower",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_805",
+    "Name": "Skill: Great Oracular Bubble",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_806",
+    "Name": "Skill: Sea of Magma",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_807",
+    "Name": "Skill: Viper Bite",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_808",
+    "Name": "Skill: Moonlight Greatsword",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_809",
+    "Name": "Skill: Siluria's Woe",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_810",
+    "Name": "Skill: Rallying Standard",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_811",
+    "Name": "Skill: Bear Witness!",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_812",
+    "Name": "Skill: Eochaid's Dancing Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_813",
+    "Name": "Skill: Soul Stifler",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_814",
+    "Name": "Skill: Taker's Flames",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_815",
+    "Name": "Skill: Shriek of Milos",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_816",
+    "Name": "Skill: Reduvia Blood Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_817",
+    "Name": "Skill: Glintstone Dart",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_818",
+    "Name": "Skill: Flowing Form",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_819",
+    "Name": "Skill: Night-and-Flame Stance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_820",
+    "Name": "Skill: Wave of Gold",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_821",
+    "Name": "Skill: Ruinous Ghostflame",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_822",
+    "Name": "Skill: Establish Order",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_823",
+    "Name": "Skill: Mists of Slumber",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_824",
+    "Name": "Skill: Spearcall Ritual",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_825",
+    "Name": "Skill: Wolf's Assault",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_826",
+    "Name": "Skill: Thundercloud Form",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_827",
+    "Name": "Skill: Cursed-Blood Slice",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_828",
+    "Name": "Skill: Waterfowl Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_829",
+    "Name": "Skill: Gold Breaker",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_830",
+    "Name": "Skill: I Command Thee Kneel!",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_831",
+    "Name": "Override: Axe of Godfrey + Skill: Regal Roar",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_832",
+    "Name": "Override: Starscourge Greatsword, Greatsword of Radahn + Skill: Starcaller Cry",
+    "Tags": [
+      "tae",
+      "override"
+    ]
+  },
+  {
+    "ID": "c0000_833",
+    "Name": "Skill: Wave of Destruction",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_834",
+    "Name": "Skill: Bloodboon Ritual",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_835",
+    "Name": "Skill: Flowing Form",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_836",
+    "Name": "Skill: Blade of Death",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_837",
+    "Name": "Skill: Blade of Gold",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_838",
+    "Name": "Skill: Destined Death",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_839",
+    "Name": "Override: Ghiza's Wheel + Skill: Spinning Wheel",
+    "Tags": [
+      "tae",
+      "override",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_840",
+    "Name": "Skill: Alabaster Lords' Pull",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_841",
+    "Name": "Skill: Onyx Lords' Repulsion",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_842",
+    "Name": "Skill: Oath of Vengeance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_843",
+    "Name": "Skill: Ice Lightning Sword",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_844",
+    "Name": "Skill: Regal Beastclaw",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_845",
+    "Name": "Skill: Flame Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_846",
+    "Name": "Skill: Claw Flick",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_847",
+    "Name": "Skill: Nebula",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_848",
+    "Name": "Skill: Ghostflame Ignition",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_849",
+    "Name": "Skill: Ancient Lightning Spear",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_850",
+    "Name": "Skill: Frenzyflame Thrust",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_851",
+    "Name": "Skill: Miquella's Ring of Light",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_852",
+    "Name": "Override: Ornamental Straight Sword + Skill: Golden Tempering",
+    "Tags": [
+      "tae",
+      "override",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_853",
+    "Name": "Skill: Last Rites",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_854",
+    "Name": "Skill: Unblockable Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_856",
+    "Name": "Skill: Aspects of the Crucible: Wings",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_858",
+    "Name": "Skill: Dryleaf Whirlwind",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_860",
+    "Name": "Skill: Spinning Gravity Thrust",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_861",
+    "Name": "Skill: Palm Blast",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_862",
+    "Name": "Skill: Piercing Throw",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_863",
+    "Name": "Skill: Scattershot Throw",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_864",
+    "Name": "Skill: Wall of Sparks",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_865",
+    "Name": "Skill: Rolling Sparks",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_869",
+    "Name": "Skill: Painful Strike",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_872",
+    "Name": "Skill: Hone Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_873",
+    "Name": "Skill: Raging Beast",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_874",
+    "Name": "Skill: Savage Claws",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_875",
+    "Name": "Skill: Red Bear Hunt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_876",
+    "Name": "Skill: Blind Spot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_877",
+    "Name": "Skill: Swift Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_878",
+    "Name": "Skill: Overhead Stance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_879",
+    "Name": "Skill: Wing Stance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_880",
+    "Name": "Skill: Blinkbolt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_881",
+    "Name": "Skill: Flame Skewer",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_882",
+    "Name": "Skill: Savage Lion's Claw",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_883",
+    "Name": "Skill: Divine Beast Frost Stomp",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_884",
+    "Name": "Skill: Flame Spear",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_885",
+    "Name": "Skill: Carian Sovereignty",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_886",
+    "Name": "Skill: Shriek of Sorrow",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_900",
+    "Name": "Skill: Dragonwound Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_901",
+    "Name": "Skill: Needle Piercer",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_902",
+    "Name": "Skill: Light",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_903",
+    "Name": "Skill: Darkness",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_904",
+    "Name": "Skill: Onze's Line of Stars",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_905",
+    "Name": "Skill: The Poison Flower Blooms Twice",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_908",
+    "Name": "Skill: Spinning Guillotine",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_909",
+    "Name": "Skill: Unending Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_910",
+    "Name": "Skill: Revenger's Blade",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_911",
+    "Name": "Skill: Mists of Eternal Sleep",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_913",
+    "Name": "Skill: Dynastic Sickleplay",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_914",
+    "Name": "Skill: Blinkbolt: Twinaxe",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_915",
+    "Name": "Skill: Blinkbolt: Long-hafted Axe",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_916",
+    "Name": "Skill: Promised Consort",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_917",
+    "Name": "Skill: Shadow Sunflower Headbutts",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_918",
+    "Name": "Skill: Moon-and-Fire Stance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_919",
+    "Name": "Skill: Devonia's Vortex",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_920",
+    "Name": "Skill: Messmer's Assault",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_922",
+    "Name": "Skill: Sleep Evermore",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_923",
+    "Name": "Skill: Golden Crux",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_924",
+    "Name": "Skill: Moore's Charge",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_925",
+    "Name": "Skill: White Light Charge",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_927",
+    "Name": "Skill: Witching Hour Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_928",
+    "Name": "Skill: Euporia Vortex",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_929",
+    "Name": "Skill: Smithing Art Spears",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_931",
+    "Name": "Skill: Romina's Purification",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_932",
+    "Name": "Skill: Poison Spear-Hand Strike",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_933",
+    "Name": "Skill: Madding Spear-Hand Strike",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_934",
+    "Name": "Skill: Feeble Lord's Frenzied Flame",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_935",
+    "Name": "Skill: Repeating Fire",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_936",
+    "Name": "Skill: Deadly Dance",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_937",
+    "Name": "Skill: Fan Shot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_948",
+    "Name": "Skill: Discus Hurl",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_949",
+    "Name": "Skill: Flower Dragonbolt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_950",
+    "Name": "Skill: Kowtower's Resentment",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_951",
+    "Name": "Skill: Solitary Moon Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_952",
+    "Name": "Skill: Revenge of the Night",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_953",
+    "Name": "Override: Rakshasa's Great Katana + Skill: Weed Cutter",
+    "Tags": [
+      "tae",
+      "skill",
+      "override",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_954",
+    "Name": "Skill: Blindfold of Happiness",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_956",
+    "Name": "Skill: Jori's Inquisition",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_957",
+    "Name": "Skill: Igon's Drake Hunt",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_958",
+    "Name": "Skill: Deadly Poison Spray",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_959",
+    "Name": "Skill: Roaring Bash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_960",
+    "Name": "Skill: Flare O Serpent",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_961",
+    "Name": "Skill: Scattershot (Claws)",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_962",
+    "Name": "Skill: Horn Calling",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_963",
+    "Name": "Skill: Horn Calling: Storm",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_964",
+    "Name": "Skill: Ghostflame Call",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_965",
+    "Name": "Skill: Rancor Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_966",
+    "Name": "Skill: Rancor Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_967",
+    "Name": "Skill: Tremendous Phalanx",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_968",
+    "Name": "Skill: Bloodfiends' Bloodboon",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_969",
+    "Name": "Skill: Dragonform Flame",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_970",
+    "Name": "Skill: Lightspeed Slash",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  },
+  {
+    "ID": "c0000_971",
+    "Name": "Skill: Rancor Shot",
+    "Tags": [
+      "tae",
+      "skill",
+      "ash of war"
+    ]
+  }
+]

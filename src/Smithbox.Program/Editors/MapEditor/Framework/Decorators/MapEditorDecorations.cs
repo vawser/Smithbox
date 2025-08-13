@@ -376,27 +376,29 @@ public static class MapEditorDecorations
         bool display = false;
         List<AliasEntry> options = null;
 
-        if (meta != null && meta.ShowParticleList)
+        var aliases = editor.Project.Aliases;
+
+        if (meta != null && meta.ShowParticleList && aliases.TryGetValue(AliasType.Particles, out List<AliasEntry> particleAliases))
         {
-            options = editor.Project.Aliases.Particles;
+            options = particleAliases;
             display = true;
         }
 
-        if (meta != null && meta.ShowEventFlagList)
+        if (meta != null && meta.ShowEventFlagList && aliases.TryGetValue(AliasType.EventFlags, out List<AliasEntry> eventFlagAliases))
         {
-            options = editor.Project.Aliases.EventFlags;
+            options = eventFlagAliases;
             display = true;
         }
 
-        if (meta != null && meta.ShowSoundList)
+        if (meta != null && meta.ShowSoundList && aliases.TryGetValue(AliasType.Sounds, out List<AliasEntry> soundAliases))
         {
-            options = editor.Project.Aliases.Sounds;
+            options = soundAliases;
             display = true;
         }
 
-        if (meta != null && meta.ShowTalkList)
+        if (meta != null && meta.ShowTalkList && aliases.TryGetValue(AliasType.TalkScripts, out List<AliasEntry> talkAliases))
         {
-            options = editor.Project.Aliases.TalkScripts;
+            options = talkAliases;
             display = true;
         }
 

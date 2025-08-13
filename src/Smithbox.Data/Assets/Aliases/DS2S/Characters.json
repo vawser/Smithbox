@@ -1,0 +1,1437 @@
+[
+  {
+    "ID": "default",
+    "Name": "Default",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c0001",
+    "Name": "Human NPC/Player",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1000",
+    "Name": "Goblin",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1010",
+    "Name": "Kobold",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1020",
+    "Name": "Hollow Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1021",
+    "Name": "Royal Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1030",
+    "Name": "Hollow Infantry",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1031",
+    "Name": "Royal Infantry",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1050",
+    "Name": "Amana Shrine Maiden",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1060",
+    "Name": "Hollow Priest",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1062",
+    "Name": "Hollow Priestess",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1070",
+    "Name": "Parasitized Undead",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1080",
+    "Name": "Hollow Rouge",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1130",
+    "Name": "Varangian Sailor",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1150",
+    "Name": "Undead Traveler",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1170",
+    "Name": "Stone Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1180",
+    "Name": "Hollow Mage (Black)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1182",
+    "Name": "Hollow Mage (White)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1210",
+    "Name": "Giant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1230",
+    "Name": "Suspicious Shadow",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1240",
+    "Name": "Manikin",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1250",
+    "Name": "Undead Citizen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1270",
+    "Name": "Undead Laborer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1271",
+    "Name": "Undead Laborer (Frozen)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1290",
+    "Name": "Witchtree",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1292",
+    "Name": "Witchtree (Frozen)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1310",
+    "Name": "Lindelt Cleric",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1320",
+    "Name": "Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1330",
+    "Name": "Bonewheel Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1340",
+    "Name": "Gyrm",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1350",
+    "Name": "Gyrm Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1370",
+    "Name": "Aldia Warlock",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1380",
+    "Name": "Torturer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1390",
+    "Name": "Artificial Undead",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1400",
+    "Name": "Weaponsmith Ornifex",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1410",
+    "Name": "Undead Aberration",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1460",
+    "Name": "Duke Tseldora",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1470",
+    "Name": "Undead Supplicant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1480",
+    "Name": "Undead Peasant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1490",
+    "Name": "Undead Steelworker",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1500",
+    "Name": "Stone Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1510",
+    "Name": "Ironclad Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1512",
+    "Name": "Old Ironclad Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1520",
+    "Name": "Royal Swordsman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1530",
+    "Name": "Syan Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1540",
+    "Name": "Skeleton Lords",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1550",
+    "Name": "Amana Aberration",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c1570",
+    "Name": "Armored Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2011",
+    "Name": "Enslaved Pig",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2021",
+    "Name": "Undead Boar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2030",
+    "Name": "Parasite Spider",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2040",
+    "Name": "Poison Moth",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2050",
+    "Name": "Poison Horn Beetle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2051",
+    "Name": "Acid Horn Beetle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2060",
+    "Name": "Razorback Nightcrawler",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2090",
+    "Name": "Hunting Dog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2100",
+    "Name": "Basilisk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2120",
+    "Name": "Guardian Dragon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2130",
+    "Name": "Crystal Lizard",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2131",
+    "Name": "Red Crystal Lizard",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2140",
+    "Name": "Giant Undead Boar",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2160",
+    "Name": "Wall Ghost",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2170",
+    "Name": "Dark Stalker",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2200",
+    "Name": "Giant Acid Horn Beetle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2220",
+    "Name": "Giant Basilisk",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2230",
+    "Name": "Dog Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2240",
+    "Name": "Darksucker",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2250",
+    "Name": "Marker NPC",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2260",
+    "Name": "Corpse Rat",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2261",
+    "Name": "Royal Rat Vanguard",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2262",
+    "Name": "The Rat King",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2270",
+    "Name": "Stray Hound Stray Dog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c2271",
+    "Name": "Frost Hound",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3000",
+    "Name": "Ogre",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3010",
+    "Name": "Heide Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3020",
+    "Name": "Undead Jailer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3033",
+    "Name": "Flexile Sentry",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3040",
+    "Name": "Injured Milfanito",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3050",
+    "Name": "Smelter Demon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3052",
+    "Name": "Smelter Demon (Blue)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3060",
+    "Name": "Alonne Captain",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3070",
+    "Name": "Body of Vengarl",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3071",
+    "Name": "Head of Vengarl",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3080",
+    "Name": "Lion Clan Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3081",
+    "Name": "Lion Clan Warrior (Golden)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3090",
+    "Name": "Elite Giant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3096",
+    "Name": "The Last Giant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3097",
+    "Name": "Giant Lord",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3110",
+    "Name": "Mounted Overseer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3120",
+    "Name": "Grave Warden",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3130",
+    "Name": "Falconer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3140",
+    "Name": "Primal Knight (Undead)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3150",
+    "Name": "Primal Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3160",
+    "Name": "Desert Sorceress",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3170",
+    "Name": "Dragon Acolyte",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3180",
+    "Name": "The Pursuer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3190",
+    "Name": "Alonne Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3210",
+    "Name": "Mimic",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3240",
+    "Name": "Belfry Gargoyles",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3250",
+    "Name": "Ruin Sentinels",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3260",
+    "Name": "The Rotten",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3270",
+    "Name": "Dragon Skeleton",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3300",
+    "Name": "Old Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3310",
+    "Name": "Drakekeeper",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3320",
+    "Name": "Throne Defender",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3330",
+    "Name": "Velstadt, The Royal Aegis",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3340",
+    "Name": "Throne Watcher",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c3370",
+    "Name": "Captive Undead",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5000",
+    "Name": "Covetous Demon (Boss)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5001",
+    "Name": "Covetous Demon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5010",
+    "Name": "Mytha, the Baneful Queen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5020",
+    "Name": "Manscorpion Tark",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5030",
+    "Name": "Scorpioness Najka",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5040",
+    "Name": "Looking Glass Knighy",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5061",
+    "Name": "Darklurker",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5062",
+    "Name": "Darklurker (Clone)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5065",
+    "Name": "Grave Warden Agdayne",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5090",
+    "Name": "Leydia Witch",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5110",
+    "Name": "Imperious Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5120",
+    "Name": "Leydia Pyromancer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c5146",
+    "Name": "Vendrick (Boss)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6000",
+    "Name": "Ancient Dragon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6010",
+    "Name": "Flame Salamander",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6020",
+    "Name": "Demon of Song",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6030",
+    "Name": "The Duke's Dear Freja",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6070",
+    "Name": "Old Iron King",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6080",
+    "Name": "Corrosive Ant Queen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6110",
+    "Name": "Dragonrider (Black)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6115",
+    "Name": "Dragonrider (Red)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6191",
+    "Name": "Executioner's Chariot",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6250",
+    "Name": "Old Dragonslayer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6260",
+    "Name": "Lost Sinner",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6270",
+    "Name": "Nashandra (Boss)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6280",
+    "Name": "Royal Rat Authority",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6500",
+    "Name": "Iron Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6510",
+    "Name": "Fume Sorcerer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6530",
+    "Name": "Ashen Warrior",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6540",
+    "Name": "Scorcher Ashen Crawler",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6560",
+    "Name": "Possessed Armor",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6570",
+    "Name": "Cask Runner Barrel Carrier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6580",
+    "Name": "Alsanna, Silent Oracle",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6590",
+    "Name": "Rampart Golem",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6600",
+    "Name": "Ice Golem",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6610",
+    "Name": "Ice Stallion Frozen Reindeer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6620",
+    "Name": "Ice Rat Rampart Hedgehog",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6630",
+    "Name": "Spellsword Rampart Spearman",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6650",
+    "Name": "Sanctum Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6660",
+    "Name": "Sanctum Soldier",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6700",
+    "Name": "Sanctum Priestess",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6710",
+    "Name": "Poison Kokeshi Lizard",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6711",
+    "Name": "Petrifying Kokeshi Lizard",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6720",
+    "Name": "Corrosive Egg Insect",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6740",
+    "Name": "Pagan Tree",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6750",
+    "Name": "Fume Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6770",
+    "Name": "Retainer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6780",
+    "Name": "Frozen Golem",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6790",
+    "Name": "Lud & Zallen, the King's Pets",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6791",
+    "Name": "Aava, the King's Pet",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6800",
+    "Name": "Sir Alonne",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6810",
+    "Name": "Sinh, the Slumbering Dragon",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6820",
+    "Name": "Elana, the Squalid Queen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6830",
+    "Name": "The Imperfect",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6840",
+    "Name": "Vendrick",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6880",
+    "Name": "Loyce Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6890",
+    "Name": "Charred Loyce Knight",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6900",
+    "Name": "Burnt Ivory King",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6920",
+    "Name": "Aldia, Scholar of the First Sin",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c6930",
+    "Name": "Aldia (Voice Marker)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7005",
+    "Name": "Emerald Herald Shanalotte",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7015",
+    "Name": "Child Emerald Herald (unused)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7036",
+    "Name": "Nashandra",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7045",
+    "Name": "Laddersmith Gilligan",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7050",
+    "Name": "Strowen (cutscene)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7051",
+    "Name": "Griant (cutscene)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7053",
+    "Name": "Morrel (cutscene)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7055",
+    "Name": "Strowen",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7056",
+    "Name": "Griant",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7058",
+    "Name": "Morrel",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7210",
+    "Name": "Chancellor Wellager",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7230",
+    "Name": "Milibeth",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7240",
+    "Name": "Captain Drummond",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7250",
+    "Name": "Darkdiver Grandahl",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7300",
+    "Name": "Looking Glass Phantom (Ultra Greatsword)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7310",
+    "Name": "Looking Glass Phantom (Halberd)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7420",
+    "Name": "Creighton the Wanderer",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7430",
+    "Name": "Benhart of Jugo",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7440",
+    "Name": "Mild-mannered Pate",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7510",
+    "Name": "Cartographer Cale",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7520",
+    "Name": "Lucatiel of Mirrah",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7530",
+    "Name": "Bell Keeper",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7540",
+    "Name": "Merchant Hag Melentia",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7600",
+    "Name": "Milfanito (Blonde)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7601",
+    "Name": "Milfanito (Brunette)",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7602",
+    "Name": "Imprisoned Milfanito",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7620",
+    "Name": "Stone Trader Chloanne",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7640",
+    "Name": "Blacksmith Lenigrast",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7643",
+    "Name": "Steady Hand McDuff",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7680",
+    "Name": "Straid of Olaphis",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7690",
+    "Name": "Licia of Lindeldt",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7700",
+    "Name": "Felkin the Outcast",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7710",
+    "Name": "Royal Sorcerer Navlaan",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7770",
+    "Name": "Sweet Shalquoir",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7830",
+    "Name": "Titchy Gren",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7850",
+    "Name": "Blue Sentinel Targray",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c8050",
+    "Name": "Player Cutscene Character",
+    "Tags": [
+      "creature"
+    ]
+  }
+]

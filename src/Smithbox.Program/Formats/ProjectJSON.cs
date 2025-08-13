@@ -1,6 +1,7 @@
 ﻿using StudioCore.Core;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,22 +45,42 @@ public class FileDictionaryEntry
 
 // -------------- Aliases --------------
 #region Aliases
-public class AliasStore
+
+
+
+public enum AliasType
 {
-    public List<AliasEntry> Assets { get; set; }
-    public List<AliasEntry> Characters { get; set; }
-    public List<AliasEntry> Cutscenes { get; set; }
-    public List<AliasEntry> EventFlags { get; set; }
-    public List<AliasEntry> Gparams { get; set; }
-    public List<AliasEntry> MapPieces { get; set; }
-    public List<AliasEntry> MapNames { get; set; }
-    public List<AliasEntry> Movies { get; set; }
-    public List<AliasEntry> Particles { get; set; }
-    public List<AliasEntry> Parts { get; set; }
-    public List<AliasEntry> Sounds { get; set; }
-    public List<AliasEntry> TalkScripts { get; set; }
-    public List<AliasEntry> TimeActs { get; set; }
+    [Display(Name = "None")]
+    None,
+    [Display(Name = "Assets")]
+    Assets,
+    [Display(Name = "Characters")]
+    Characters,
+    [Display(Name = "Cutscenes")]
+    Cutscenes,
+    [Display(Name = "Event Flags")]
+    EventFlags,
+    [Display(Name = "Gparams")]
+    Gparams,
+    [Display(Name = "Map Pieces")]
+    MapPieces,
+    [Display(Name = "Map Names")]
+    MapNames,
+    [Display(Name = "Movies")]
+    Movies,
+    [Display(Name = "Particles")]
+    Particles,
+    [Display(Name = "Parts")]
+    Parts,
+    [Display(Name = "Sounds")]
+    Sounds,
+    [Display(Name = "Talk Scripts")]
+    TalkScripts,
+    [Display(Name = "Time Acts")]
+    TimeActs
 }
+
+public class AliasStore : Dictionary<AliasType, List<AliasEntry>>;
 
 public class AliasEntry
 {

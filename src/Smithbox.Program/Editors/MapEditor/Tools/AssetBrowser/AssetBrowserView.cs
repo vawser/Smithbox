@@ -110,9 +110,9 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
 
         private void DisplayCharacterList()
         {
-            if (ImGui.CollapsingHeader("Characters"))
+            if (Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> characterAliases) && ImGui.CollapsingHeader("Characters"))
             {
-                foreach (var entry in Editor.Project.Aliases.Characters)
+                foreach (var entry in characterAliases)
                 {
                     if (FilterSelectionList(entry))
                     {
@@ -151,9 +151,9 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                 assetLabel = "Assets";
             }
 
-            if (ImGui.CollapsingHeader(assetLabel))
+            if (Editor.Project.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> assetAliases) && ImGui.CollapsingHeader(assetLabel))
             {
-                foreach (var entry in Editor.Project.Aliases.Assets)
+                foreach (var entry in assetAliases)
                 {
                     if (FilterSelectionList(entry))
                     {
@@ -185,9 +185,9 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
 
         private void DisplayPartList()
         {
-            if (ImGui.CollapsingHeader("Parts"))
+            if (Editor.Project.Aliases.TryGetValue(AliasType.Parts, out List<AliasEntry> partsAliases) && ImGui.CollapsingHeader("Parts"))
             {
-                foreach (var entry in Editor.Project.Aliases.Parts)
+                foreach (var entry in partsAliases)
                 {
                     if (FilterSelectionList(entry))
                     {
@@ -221,7 +221,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
         {
             var maps = MapLocator.GetFullMapList(Editor.Project);
 
-            if (ImGui.CollapsingHeader("Map Pieces"))
+            if (Editor.Project.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases) && ImGui.CollapsingHeader("Map Pieces"))
             {
                 foreach (var map in maps)
                 {
@@ -238,7 +238,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                             displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
                         }
 
-                        foreach (var entry in Editor.Project.Aliases.MapPieces)
+                        foreach (var entry in mapPieceAliases)
                         {
                             var mapPieceName = $"{entry.ID.Replace(map, "m")}";
 

@@ -1,0 +1,6768 @@
+[
+  {
+    "ID": "20",
+    "Name": "Playthrough Complete: Age of Fracture",
+    "Tags": [
+      "ending",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "21",
+    "Name": "Playthrough Complete: Age of Stars",
+    "Tags": [
+      "ending",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "22",
+    "Name": "Playthrough Complete: Lord of the Frenzied Flame",
+    "Tags": [
+      "ending",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "23",
+    "Name": "Playthrough Complete: Unused Ending",
+    "Tags": [
+      "ending",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "24",
+    "Name": "Playthrough Complete: Unused Ending",
+    "Tags": [
+      "ending",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30",
+    "Name": "Trigger New Game Plus",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "50",
+    "Name": "Playthrough Lap: 0",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "51",
+    "Name": "Playthrough Lap: 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "52",
+    "Name": "Playthrough Lap: 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "53",
+    "Name": "Playthrough Lap: 3",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "54",
+    "Name": "Playthrough Lap: 4",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "55",
+    "Name": "Playthrough Lap: 5",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "56",
+    "Name": "Playthrough Lap: 6",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "57",
+    "Name": "Playthrough Lap: 7",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "58",
+    "Name": "Playthrough Lap: 8",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "70",
+    "Name": "Apply DLC Game Clear SpEffect (Occurs if Radahn, Consort of Miquella is beated and NG+ is entered)",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "100",
+    "Name": "Story: Start",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "101",
+    "Name": "Story: Reached Tutorial",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "102",
+    "Name": "Story: Reached Limgrave",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "104",
+    "Name": "Story: Reached Roundtable Hold",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "105",
+    "Name": "Story: Roundtable Hold Introduction",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "108",
+    "Name": "Story: Received the Frenzied Flame",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "109",
+    "Name": "Story: Received the Frenzied Flame (back)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "110",
+    "Name": "Story: Reached Forge of the Giants",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "111",
+    "Name": "Story: Forge of the Giants - Melina A",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "112",
+    "Name": "Story: Forge of the Giants - Melina B",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "114",
+    "Name": "Story: Ranni",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "116",
+    "Name": "Story: Frenzied Flame Nullified",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "118",
+    "Name": "Story: Erdtree on Fire",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "120",
+    "Name": "Story: Watched Ending",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "130",
+    "Name": "Arrival: Stormveil Castle",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "131",
+    "Name": "Arrival: Morne Castle",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "132",
+    "Name": "Arrival: Academy of Raya Lucaria",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "133",
+    "Name": "Arrival: Ruin-Strewn Precipice",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "134",
+    "Name": "Arrival: Volcano Manor",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "135",
+    "Name": "Arrival: Volcano Manor (Inner)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "136",
+    "Name": "Arrival: Leyndell, Royal Capital",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "137",
+    "Name": "Arrival: Subterranean Shunning-Grounds",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "138",
+    "Name": "Arrival: Miquella's Haligtree - Canopy",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "139",
+    "Name": "Arrival: Miquella's Haligtree - Trunk",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "140",
+    "Name": "Arrival: Downhill Ruins",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "180",
+    "Name": "Great Rune Count: 0",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "181",
+    "Name": "Great Rune Count: 1",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "182",
+    "Name": "Great Rune Count: 2",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "183",
+    "Name": "Great Rune Count: 3",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "184",
+    "Name": "Great Rune Count: 4",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "185",
+    "Name": "Great Rune Count: 5",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "186",
+    "Name": "Great Rune Count: 6",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "187",
+    "Name": "Great Rune Count: 7",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "191",
+    "Name": "Acquired Godrick's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "192",
+    "Name": "Acquired Radahn's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "193",
+    "Name": "Acquired Morgott's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "194",
+    "Name": "Acquired Rykard's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "195",
+    "Name": "Acquired Mohg's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "196",
+    "Name": "Acquired Malenia's Great Rune",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "197",
+    "Name": "Acquired Great Rune of the Unborn",
+    "Tags": [
+      "progression",
+      "great rune",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "200",
+    "Name": "Is Host",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "201",
+    "Name": "Is Guest",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "210",
+    "Name": "Host in Legacy Dungeon",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "211",
+    "Name": "Guest in Legacy Dungeon",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "220",
+    "Name": "Host in Legacy Dungeon",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "221",
+    "Name": "Guest in Legacy Dungeon",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "300",
+    "Name": "World Event: Erdtree Burnt",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "301",
+    "Name": "World Event: Erdtree Burnt (Flaming Sparks)",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "302",
+    "Name": "World Event: Erdtree Burnt (Small Flames)",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "310",
+    "Name": "World Event: Green Meteorite",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "311",
+    "Name": "World Event: Snowfield Meteorite",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "312",
+    "Name": "World Event: Plain Meteorite",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "320",
+    "Name": "World Event: Carian Study Hall Reversal",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "370",
+    "Name": "World Event: Carian Study Hall Reversal",
+    "Tags": [
+      "progression",
+      "world",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "530",
+    "Name": "Time: Morning",
+    "Tags": [
+      "script",
+      "time"
+    ]
+  },
+  {
+    "ID": "531",
+    "Name": "Time: Noon",
+    "Tags": [
+      "script",
+      "time"
+    ]
+  },
+  {
+    "ID": "532",
+    "Name": "Time: Night",
+    "Tags": [
+      "script",
+      "time"
+    ]
+  },
+  {
+    "ID": "550",
+    "Name": "Weather: Fine",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "551",
+    "Name": "Weather: Sunny",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "552",
+    "Name": "Weather: Cloudy",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "553",
+    "Name": "Weather: Lightly Cloudy",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "554",
+    "Name": "Weather: Rain",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "555",
+    "Name": "Weather: Heavy Rain",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "556",
+    "Name": "Weather: Storm",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "557",
+    "Name": "Weather: Storm",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "558",
+    "Name": "Weather: Snow",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "559",
+    "Name": "Weather: Heavy Snow",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "560",
+    "Name": "Weather: Fog",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "561",
+    "Name": "Weather: Thick Fog",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "562",
+    "Name": "Weather: Thick Fog and Rain",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "563",
+    "Name": "Weather: Sandstorm",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "564",
+    "Name": "Weather: Unused",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "565",
+    "Name": "Weather: Unused",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "570",
+    "Name": "Weather Group: Fine",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "571",
+    "Name": "Weather Group: Cloudy",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "572",
+    "Name": "Weather Group: Rain",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "573",
+    "Name": "Weather Group: Snow",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "574",
+    "Name": "Weather Group: Fog",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "575",
+    "Name": "Weather Group: Other",
+    "Tags": [
+      "script",
+      "weather"
+    ]
+  },
+  {
+    "ID": "6000",
+    "Name": "Always OFF",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "6001",
+    "Name": "Always ON",
+    "Tags": [
+      "script"
+    ]
+  },
+  {
+    "ID": "9100",
+    "Name": "Defeated Godrick the Grafted",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9101",
+    "Name": "Defeated Margit, the Fell Omen",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9103",
+    "Name": "Defeated Grafted Scion",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9104",
+    "Name": "Defeated Morgott, the Omen King",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9105",
+    "Name": "Defeated Godfrey, First Elden Lord",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9106",
+    "Name": "Defeated Sir Gideon Ofnir, the All-Knowing",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9107",
+    "Name": "Defeated Hoarah Loux",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9108",
+    "Name": "Defeated Astel, Naturalborn of the Void",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9109",
+    "Name": "Defeated Dragonkin Soldier of Nokstella",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9111",
+    "Name": "Defeated Lichdragon Fortissax",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9112",
+    "Name": "Defeated Mohg, Lord of Blood",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9115",
+    "Name": "Defeated Dragonlord Placidusax",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9116",
+    "Name": "Defeated Maliketh, the Black Blade",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9118",
+    "Name": "Defeated Rennala, Queen of the Full Moon",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9119",
+    "Name": "Defeated Royal Knight Loretta",
+    "Tags": [
+      "boss",
+      "progression",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9120",
+    "Name": "Defeated Malenia, Blade of Miquella",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9122",
+    "Name": "Defeated Rykard, Lord of Blasphemy",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9123",
+    "Name": "Defeated the Elden Beast",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9130",
+    "Name": "Defeated Starscourge Radahn",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9131",
+    "Name": "Defeated Fire Giant",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9133",
+    "Name": "Defeated Regal Ancestor Spirit",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9134",
+    "Name": "Defeated Dragonkin Soldier - Lake of Rot",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9135",
+    "Name": "Defeated Fia's Champion",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9182",
+    "Name": "Defeated Elemer of the Briar",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9184",
+    "Name": "Defeated Commander Niall",
+    "Tags": [
+      "boss",
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9143",
+    "Name": "Defeated Radahn, Consort of Miquella",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9146",
+    "Name": "Defeated Messmer the Impaler",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9164",
+    "Name": "Defeated Commander Gaius",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9162",
+    "Name": "Defeated Scadutree Avatar",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9190",
+    "Name": "Defeated Rellana, Twin Moon Knight",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9160",
+    "Name": "Defeated Romina, Saint of the Bud",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9140",
+    "Name": "Defeated Divine Beast Dancing Lion",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9156",
+    "Name": "Defeated Midra, Lord of Frenzied Flame",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9155",
+    "Name": "Defeated Metyr, Mother of Fingers",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9148",
+    "Name": "Defeated Putrescent Knight",
+    "Tags": [
+      "boss",
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "9500",
+    "Name": "Obtained Mending Rune of Perfect Order",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9502",
+    "Name": "Obtained Mending Rune of the Death-Prince",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "9504",
+    "Name": "Obtained Mending Rune of the Fell Curse",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60000",
+    "Name": "Obtained Flask of Crimson/Cerulean Tears",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60010",
+    "Name": "Obtained Flask of Cerulean Tears",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60020",
+    "Name": "Obtained Flask of Wondrous Physick",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60100",
+    "Name": "Obtained Spectral Steed Whisle",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60110",
+    "Name": "Obtained Spirit Calling Bell",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60120",
+    "Name": "Obtained Crafting Kit",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60130",
+    "Name": "Obtained Whetstone Knife",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60140",
+    "Name": "Obtained Tailoring Tools",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60150",
+    "Name": "Obtained Golden Tailoring Tools",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60200",
+    "Name": "Can Host Multiplayer",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60210",
+    "Name": "Obtained Tarnished's Wizened Finger",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60220",
+    "Name": "Obtained Tarnished's Furled Finger",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60230",
+    "Name": "Obtained Small Golden Effigy",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60240",
+    "Name": "Obtained Duelist's Furled Finger",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60250",
+    "Name": "Obtained Small Red Effigy",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60260",
+    "Name": "Obtained Recusant Finger",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60270",
+    "Name": "Obtained Bloody Finger",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60280",
+    "Name": "Obtained White Cipher Ring",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60300",
+    "Name": "Obtained Taunter's Tongue",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60310",
+    "Name": "Obtained Finger Severer",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60400",
+    "Name": "Obtained Memory Stone 0",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60410",
+    "Name": "Obtained Memory Stone 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60420",
+    "Name": "Obtained Memory Stone 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60430",
+    "Name": "Obtained Memory Stone 3",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60440",
+    "Name": "Obtained Memory Stone 4",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60450",
+    "Name": "Obtained Memory Stone 5",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60460",
+    "Name": "Obtained Memory Stone 6",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60470",
+    "Name": "Obtained Memory Stone 7",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60480",
+    "Name": "Obtained Memory Stone 8 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60490",
+    "Name": "Obtained Memory Stone 9 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60500",
+    "Name": "Obtained Talisman Pouch 0",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60510",
+    "Name": "Obtained Talisman Pouch 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60520",
+    "Name": "Obtained Talisman Pouch 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60530",
+    "Name": "Obtained Talisman Pouch 3 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60540",
+    "Name": "Obtained Talisman Pouch 4 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60550",
+    "Name": "Obtained Talisman Pouch 5 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60560",
+    "Name": "Obtained Talisman Pouch 6 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60570",
+    "Name": "Obtained Talisman Pouch 7 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60580",
+    "Name": "Obtained Talisman Pouch 8 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "60590",
+    "Name": "Obtained Talisman Pouch 9 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62000",
+    "Name": "Allow Map Display",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62001",
+    "Name": "Allow Underground Map Display",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62004",
+    "Name": "Allow Starfall Crater Display",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62010",
+    "Name": "Reveal Map: Limgrave, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62011",
+    "Name": "Reveal Map: Weeping Peninsula",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62012",
+    "Name": "Reveal Map: Limgrave, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62020",
+    "Name": "Reveal Map: Liurnia, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62021",
+    "Name": "Reveal Map: Liurnia, North",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62022",
+    "Name": "Reveal Map: Liurnia, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62030",
+    "Name": "Reveal Map: Altus Plateau",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62031",
+    "Name": "Reveal Map: Leyndell, Royal Capital",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62032",
+    "Name": "Reveal Map: Mt. Gelmir",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62040",
+    "Name": "Reveal Map: Caelid",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62041",
+    "Name": "Reveal Map: Dragonbarrow",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62050",
+    "Name": "Reveal Map: Mountaintops of the Giants, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62051",
+    "Name": "Reveal Map: Mountaintops of the Giants, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62052",
+    "Name": "Reveal Map: Consecrated Snowfield",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62060",
+    "Name": "Reveal Map: Ainsel River",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62061",
+    "Name": "Reveal Map: Lake of Rot",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62062",
+    "Name": "Reveal Map: Mohgwyn Palace",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62063",
+    "Name": "Reveal Map: Siofra River",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62064",
+    "Name": "Reveal Map: Map: Deeproot Depths",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62065",
+    "Name": "Reveal Map: Map: Unused",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63010",
+    "Name": "Acquired Map: Limgrave, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63011",
+    "Name": "Acquired Map: Weeping Peninsula",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63012",
+    "Name": "Acquired Map: Limgrave, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63020",
+    "Name": "Acquired Map: Liurnia, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63021",
+    "Name": "Acquired Map: Liurnia, North",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63022",
+    "Name": "Acquired Map: Liurnia, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63030",
+    "Name": "Acquired Map: Altus Plateau",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63031",
+    "Name": "Acquired Map: Leyndell, Royal Capital",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63032",
+    "Name": "Acquired Map: Mt. Gelmir",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63040",
+    "Name": "Acquired Map: Caelid",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63041",
+    "Name": "Acquired Map: Dragonbarrow",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63050",
+    "Name": "Acquired Map: Mountaintops of the Giants, West",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63051",
+    "Name": "Acquired Map: Mountaintops of the Giants, East",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63052",
+    "Name": "Acquired Map: Consecrated Snowfield",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63060",
+    "Name": "Acquired Map: Ainsel River",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63061",
+    "Name": "Acquired Map: Lake of Rot",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63062",
+    "Name": "Acquired Map: Mohgwyn Palace",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63063",
+    "Name": "Acquired Map: Siofra River",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63064",
+    "Name": "Acquired Map: Deeproot Depths",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "63065",
+    "Name": "Acquired Map: Unused",
+    "Tags": [
+      "map",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "62084",
+    "Name": "Reveal Map: Abyss",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62083",
+    "Name": "Reveal Map: Rauh Ruins",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62082",
+    "Name": "Reveal Map: Southern Shore",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62081",
+    "Name": "Reveal Map: Scadu Altus",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "62080",
+    "Name": "Reveal Map: Gravesite Plain",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63084",
+    "Name": "Acquired Map: Abyss",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63083",
+    "Name": "Acquired Map: Rauh Ruins",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63082",
+    "Name": "Acquired Map: Southern Shore",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63081",
+    "Name": "Acquired Map: Scadu Altus",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "63080",
+    "Name": "Acquired Map: Gravesite Plain",
+    "Tags": [
+      "map",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65000",
+    "Name": "Obtained Crimsonspill Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65010",
+    "Name": "Obtained Greenspill Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65020",
+    "Name": "Obtained Crimson Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65030",
+    "Name": "Obtained Crimson Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65040",
+    "Name": "Obtained Cerulean Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65050",
+    "Name": "Obtained Cerulean Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65060",
+    "Name": "Obtained Speckled Hardtear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65070",
+    "Name": "Obtained Crimson Bubbletear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65080",
+    "Name": "Obtained Opaline Bubbletear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65090",
+    "Name": "Obtained Crimsonburst Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65100",
+    "Name": "Obtained Greenburst Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65110",
+    "Name": "Obtained Opaline Hardtear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65120",
+    "Name": "Obtained Winged Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65130",
+    "Name": "Obtained Thorny Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65140",
+    "Name": "Obtained Spiked Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65150",
+    "Name": "Obtained Windy Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65160",
+    "Name": "Obtained Ruptured Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65170",
+    "Name": "Obtained Ruptured Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65180",
+    "Name": "Obtained Leaden Hardtear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65190",
+    "Name": "Obtained Twiggy Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65200",
+    "Name": "Obtained Crimsonwhorl Bubbletear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65210",
+    "Name": "Obtained Strength-knot Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65220",
+    "Name": "Obtained Dexterity-knot Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65230",
+    "Name": "Obtained Intelligence-knot Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65240",
+    "Name": "Obtained Faith-knot Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65250",
+    "Name": "Obtained Cerulean Hidden Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65260",
+    "Name": "Obtained Stonebarb Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65270",
+    "Name": "Obtained Purifying Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65280",
+    "Name": "Obtained Flame-Shrouding Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65290",
+    "Name": "Obtained Magic-Shrouding Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65300",
+    "Name": "Obtained Lightning-Shrouding Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65310",
+    "Name": "Obtained Holy-Shrouding Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65400",
+    "Name": "Obtained Viridian Hidden Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65410",
+    "Name": "Obtained Crimsonburst Dried Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65420",
+    "Name": "Obtained Crimson-Sapping Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65430",
+    "Name": "Obtained Cerulean-Sapping Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65440",
+    "Name": "Obtained Oil-Soaked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65450",
+    "Name": "Obtained Bloodsucking Cracked Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65460",
+    "Name": "Obtained Glovewort Crystal Tear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65470",
+    "Name": "Obtained Deflecting Hardtear",
+    "Tags": [
+      "physick",
+      "tear",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65600",
+    "Name": "Unlock Affinity 0: Standard",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65610",
+    "Name": "Unlock Affinity 1: Heavy",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65620",
+    "Name": "Unlock Affinity 2: Keen",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65630",
+    "Name": "Unlock Affinity 3: Quality",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65640",
+    "Name": "Unlock Affinity 4: Fire",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65650",
+    "Name": "Unlock Affinity 5: Flame Art",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65660",
+    "Name": "Unlock Affinity 6: Lightning",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65670",
+    "Name": "Unlock Affinity 7: Sacred",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65680",
+    "Name": "Unlock Affinity 8: Magic",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65690",
+    "Name": "Unlock Affinity 9: Occult",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65700",
+    "Name": "Unlock Affinity 10: Frost",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65710",
+    "Name": "Unlock Affinity 11: Poison",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65720",
+    "Name": "Unlock Affinity 12: Blood",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65730",
+    "Name": "Unlock Affinity 13: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65740",
+    "Name": "Unlock Affinity 14: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65750",
+    "Name": "Unlock Affinity 15: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65760",
+    "Name": "Unlock Affinity 16: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65770",
+    "Name": "Unlock Affinity 17: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65780",
+    "Name": "Unlock Affinity 18: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65790",
+    "Name": "Unlock Affinity 19: Unused",
+    "Tags": [
+      "affinity",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65800",
+    "Name": "Acquired Ashes of War: 1 or more",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65810",
+    "Name": "Acquired Ash of War: Impaling Thrust",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65811",
+    "Name": "Acquired Ash of War: Piercing Fang",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65812",
+    "Name": "Acquired Ash of War: Spinning Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65813",
+    "Name": "Acquired Ash of War: Repeating Thrust",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65814",
+    "Name": "Acquired Ash of War: Double Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65815",
+    "Name": "Acquired Ash of War: Unsheathe",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65816",
+    "Name": "Acquired Ash of War: Sword Dance",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65818",
+    "Name": "Acquired Ash of War: Quickstep",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65819",
+    "Name": "Acquired Ash of War: Bloodhound's Step",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65820",
+    "Name": "Acquired Ash of War: Lion's Claw",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65821",
+    "Name": "Acquired Ash of War: Stamp (Upward Cut)",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65822",
+    "Name": "Acquired Ash of War: Stamp (Sweep)",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65823",
+    "Name": "Acquired Ash of War: Wild Strikes",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65824",
+    "Name": "Acquired Ash of War: Earthshaker",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65825",
+    "Name": "Acquired Ash of War: Kick",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65826",
+    "Name": "Acquired Ash of War: Ground Slam",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65827",
+    "Name": "Acquired Ash of War: Hoarah Loux's Earthshaker",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65828",
+    "Name": "Acquired Ash of War: Barbaric Roar",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65829",
+    "Name": "Acquired Ash of War: War Cry",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65830",
+    "Name": "Acquired Ash of War: Troll's Roar",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65831",
+    "Name": "Acquired Ash of War: Braggart's Roar",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65832",
+    "Name": "Acquired Ash of War: Endure",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65833",
+    "Name": "Acquired Ash of War: Charge Forth",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65834",
+    "Name": "Acquired Ash of War: Square Off",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65835",
+    "Name": "Acquired Ash of War: Giant Hunt",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65836",
+    "Name": "Acquired Ash of War: Spinning Strikes",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65837",
+    "Name": "Acquired Ash of War: Storm Assault",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65838",
+    "Name": "Acquired Ash of War: Stormcaller",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65839",
+    "Name": "Acquired Ash of War: Storm Blade",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65840",
+    "Name": "Acquired Ash of War: Vacuum Slice",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65841",
+    "Name": "Acquired Ash of War: Storm Stomp",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65842",
+    "Name": "Acquired Ash of War: Determination",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65843",
+    "Name": "Acquired Ash of War: Royal Knight's Resolve",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65844",
+    "Name": "Acquired Ash of War: Prelate's Charge",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65845",
+    "Name": "Acquired Ash of War: Eruption",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65846",
+    "Name": "Acquired Ash of War: Flaming Strike",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65847",
+    "Name": "Acquired Ash of War: Black Flame Tornado",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65848",
+    "Name": "Acquired Ash of War: Flame of the Redmanes",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65849",
+    "Name": "Acquired Ash of War: Thunderbolt",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65850",
+    "Name": "Acquired Ash of War: Lightning Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65851",
+    "Name": "Acquired Ash of War: Lightning Ram",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65852",
+    "Name": "Acquired Ash of War: Loretta's Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65853",
+    "Name": "Acquired Ash of War: Spinning Weapon",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65854",
+    "Name": "Acquired Ash of War: Glintblade Phalanx",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65855",
+    "Name": "Acquired Ash of War: Glintstone Pebble",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65856",
+    "Name": "Acquired Ash of War: Gravitas",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65857",
+    "Name": "Acquired Ash of War: Carian Grandeur",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65858",
+    "Name": "Acquired Ash of War: Carian Greatsword",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65859",
+    "Name": "Acquired Ash of War: Waves of Darkness",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65860",
+    "Name": "Acquired Ash of War: Cragblade",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65861",
+    "Name": "Acquired Ash of War: Sacred Blade",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65862",
+    "Name": "Acquired Ash of War: Prayerful Strike",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65863",
+    "Name": "Acquired Ash of War: Golden Land",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65864",
+    "Name": "Acquired Ash of War: Sacred Ring of Light",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65865",
+    "Name": "Acquired Ash of War: Golden Slam",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65866",
+    "Name": "Acquired Ash of War: Golden Vow",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65867",
+    "Name": "Acquired Ash of War: Sacred Order",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65868",
+    "Name": "Acquired Ash of War: Shared Order",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65869",
+    "Name": "Acquired Ash of War: Beast's Roar",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65870",
+    "Name": "Acquired Ash of War: Phantom Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65871",
+    "Name": "Acquired Ash of War: Spectral Lance",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65872",
+    "Name": "Acquired Ash of War: Raptor of the Mists",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65873",
+    "Name": "Acquired Ash of War: White Shadow's Lure",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65874",
+    "Name": "Acquired Ash of War: Poison Moth Flight",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65875",
+    "Name": "Acquired Ash of War: Poisonous Mist",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65876",
+    "Name": "Acquired Ash of War: Blood Tax",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65877",
+    "Name": "Acquired Ash of War: Bloody Slash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65878",
+    "Name": "Acquired Ash of War: Lifesteal Fist",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65879",
+    "Name": "Acquired Ash of War: Blood Blade",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65880",
+    "Name": "Acquired Ash of War: Assassin's Gambit",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65881",
+    "Name": "Acquired Ash of War: Seppuku",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65882",
+    "Name": "Acquired Ash of War: Ice Spear",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65883",
+    "Name": "Acquired Ash of War: Chilling Mist",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65884",
+    "Name": "Acquired Ash of War: Hoarfrost Stomp",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65885",
+    "Name": "Acquired Ash of War: No Skill",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65886",
+    "Name": "Acquired Ash of War: Shield Bash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65887",
+    "Name": "Acquired Ash of War: Shield Crash",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65888",
+    "Name": "Acquired Ash of War: Barricade Shield",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65889",
+    "Name": "Acquired Ash of War: Parry",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65890",
+    "Name": "Acquired Ash of War: Carian Retaliation",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65891",
+    "Name": "Acquired Ash of War: Storm Wall",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65892",
+    "Name": "Acquired Ash of War: Golden Parry",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65893",
+    "Name": "Acquired Ash of War: Thops's Barrier",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65894",
+    "Name": "Acquired Ash of War: Holy Ground",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65895",
+    "Name": "Acquired Ash of War: Vow of the Indomitable",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65896",
+    "Name": "Acquired Ash of War: Barrage",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65897",
+    "Name": "Acquired Ash of War: Mighty Shot",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65898",
+    "Name": "Acquired Ash of War: Sky Shot",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65899",
+    "Name": "Acquired Ash of War: Through and Through",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65900",
+    "Name": "Acquired Ash of War: Enchanted Shot",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65901",
+    "Name": "Acquired Ash of War: Rain of Arrows",
+    "Tags": [
+      "ash of war",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "65910",
+    "Name": "Acquired Ash of War: Dryleaf Whirlwind",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65911",
+    "Name": "Acquired Ash of War: Aspects of the Crucible: Wings",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65912",
+    "Name": "Acquired Ash of War: Spinning Gravity Thrust",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65913",
+    "Name": "Acquired Ash of War: Palm Blast",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65914",
+    "Name": "Acquired Ash of War: Piercing Throw",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65915",
+    "Name": "Acquired Ash of War: Scattershot Throw",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65916",
+    "Name": "Acquired Ash of War: Wall of Sparks",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65917",
+    "Name": "Acquired Ash of War: Rolling Sparks",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65918",
+    "Name": "Acquired Ash of War: Raging Beast",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65919",
+    "Name": "Acquired Ash of War: Savage Claws",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65920",
+    "Name": "Acquired Ash of War: Blind Spot",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65921",
+    "Name": "Acquired Ash of War: Swift Slash",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65922",
+    "Name": "Acquired Ash of War: Overhead Stance",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65923",
+    "Name": "Acquired Ash of War: Wing Stance",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65924",
+    "Name": "Acquired Ash of War: Blinkbolt",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65925",
+    "Name": "Acquired Ash of War: Flame Skewer",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65926",
+    "Name": "Acquired Ash of War: Savage Lion's Claw",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65927",
+    "Name": "Acquired Ash of War: Divine Beast Frost Stomp",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65928",
+    "Name": "Acquired Ash of War: Flame Spear",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65929",
+    "Name": "Acquired Ash of War: Carian Sovereignty",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65930",
+    "Name": "Acquired Ash of War: Shriek of Sorrow",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65931",
+    "Name": "Acquired Ash of War: Ghostflame Call",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65932",
+    "Name": "Acquired Ash of War: The Poison Flower Blooms Twice",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65933",
+    "Name": "Acquired Ash of War: Igon's Drake Hunt",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "65934",
+    "Name": "Acquired Ash of War: Shield Strike",
+    "Tags": [
+      "ash of war",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66000",
+    "Name": "Cracked Pot Unlock: 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66010",
+    "Name": "Cracked Pot Unlock: 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66020",
+    "Name": "Cracked Pot Unlock: 3",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66030",
+    "Name": "Cracked Pot Unlock: 4",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66040",
+    "Name": "Cracked Pot Unlock: 5",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66050",
+    "Name": "Cracked Pot Unlock: 6",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66060",
+    "Name": "Cracked Pot Unlock: 7",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66070",
+    "Name": "Cracked Pot Unlock: 8",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66080",
+    "Name": "Cracked Pot Unlock: 9",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66090",
+    "Name": "Cracked Pot Unlock: 10",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66100",
+    "Name": "Cracked Pot Unlock: 11",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66110",
+    "Name": "Cracked Pot Unlock: 12",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66120",
+    "Name": "Cracked Pot Unlock: 13",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66130",
+    "Name": "Cracked Pot Unlock: 14",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66140",
+    "Name": "Cracked Pot Unlock: 15",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66150",
+    "Name": "Cracked Pot Unlock: 16",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66160",
+    "Name": "Cracked Pot Unlock: 17",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66170",
+    "Name": "Cracked Pot Unlock: 18",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66180",
+    "Name": "Cracked Pot Unlock: 19",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66190",
+    "Name": "Cracked Pot Unlock: 20",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66200",
+    "Name": "Cracked Pot Unlock: 21 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66210",
+    "Name": "Cracked Pot Unlock: 22 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66220",
+    "Name": "Cracked Pot Unlock: 23 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66230",
+    "Name": "Cracked Pot Unlock: 24 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66240",
+    "Name": "Cracked Pot Unlock: 25 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66250",
+    "Name": "Cracked Pot Unlock: 26 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66260",
+    "Name": "Cracked Pot Unlock: 27 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66270",
+    "Name": "Cracked Pot Unlock: 28 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66280",
+    "Name": "Cracked Pot Unlock: 29 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66290",
+    "Name": "Cracked Pot Unlock: 30 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66400",
+    "Name": "Ritual Pot Unlock: 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66410",
+    "Name": "Ritual Pot Unlock: 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66420",
+    "Name": "Ritual Pot Unlock: 3",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66430",
+    "Name": "Ritual Pot Unlock: 4",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66440",
+    "Name": "Ritual Pot Unlock: 5",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66450",
+    "Name": "Ritual Pot Unlock: 6",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66460",
+    "Name": "Ritual Pot Unlock: 7",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66470",
+    "Name": "Ritual Pot Unlock: 8",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66480",
+    "Name": "Ritual Pot Unlock: 9",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66490",
+    "Name": "Ritual Pot Unlock: 10",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66500",
+    "Name": "Ritual Pot Unlock: 11 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66510",
+    "Name": "Ritual Pot Unlock: 12 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66520",
+    "Name": "Ritual Pot Unlock: 13 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66530",
+    "Name": "Ritual Pot Unlock: 14 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66540",
+    "Name": "Ritual Pot Unlock: 15 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66550",
+    "Name": "Ritual Pot Unlock: 16 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66560",
+    "Name": "Ritual Pot Unlock: 17 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66570",
+    "Name": "Ritual Pot Unlock: 18 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66580",
+    "Name": "Ritual Pot Unlock: 19 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66590",
+    "Name": "Ritual Pot Unlock: 20 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66700",
+    "Name": "Perfume Bottle Unlock: 1",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66710",
+    "Name": "Perfume Bottle Unlock: 2",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66720",
+    "Name": "Perfume Bottle Unlock: 3",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66730",
+    "Name": "Perfume Bottle Unlock: 4",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66740",
+    "Name": "Perfume Bottle Unlock: 5",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66750",
+    "Name": "Perfume Bottle Unlock: 6",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66760",
+    "Name": "Perfume Bottle Unlock: 7",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66770",
+    "Name": "Perfume Bottle Unlock: 8",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66780",
+    "Name": "Perfume Bottle Unlock: 9",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66790",
+    "Name": "Perfume Bottle Unlock: 10",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66800",
+    "Name": "Perfume Bottle Unlock: 11 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66810",
+    "Name": "Perfume Bottle Unlock: 12 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66820",
+    "Name": "Perfume Bottle Unlock: 13 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66830",
+    "Name": "Perfume Bottle Unlock: 14 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66840",
+    "Name": "Perfume Bottle Unlock: 15 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66850",
+    "Name": "Perfume Bottle Unlock: 16 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66860",
+    "Name": "Perfume Bottle Unlock: 17 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66870",
+    "Name": "Perfume Bottle Unlock: 18 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66880",
+    "Name": "Perfume Bottle Unlock: 19 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66890",
+    "Name": "Perfume Bottle Unlock: 20 (Unused)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "66900",
+    "Name": "Hefty Cracked Pot Unlock: 1",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66910",
+    "Name": "Hefty Cracked Pot Unlock: 2",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66920",
+    "Name": "Hefty Cracked Pot Unlock: 3",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66930",
+    "Name": "Hefty Cracked Pot Unlock: 4",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66940",
+    "Name": "Hefty Cracked Pot Unlock: 5",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66950",
+    "Name": "Hefty Cracked Pot Unlock: 6",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66960",
+    "Name": "Hefty Cracked Pot Unlock: 7",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66970",
+    "Name": "Hefty Cracked Pot Unlock: 8",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66980",
+    "Name": "Hefty Cracked Pot Unlock: 9",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "66990",
+    "Name": "Hefty Cracked Pot Unlock: 10",
+    "Tags": [
+      "progression",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "67000",
+    "Name": "Obtained Nomadic Warrior's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67110",
+    "Name": "Obtained Nomadic Warrior's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67010",
+    "Name": "Obtained Nomadic Warrior's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67800",
+    "Name": "Obtained Nomadic Warrior's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67830",
+    "Name": "Obtained Nomadic Warrior's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67020",
+    "Name": "Obtained Nomadic Warrior's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67050",
+    "Name": "Obtained Nomadic Warrior's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67880",
+    "Name": "Obtained Nomadic Warrior's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67430",
+    "Name": "Obtained Nomadic Warrior's Cookbook [9]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67030",
+    "Name": "Obtained Nomadic Warrior's Cookbook [10]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67220",
+    "Name": "Obtained Nomadic Warrior's Cookbook [11]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67060",
+    "Name": "Obtained Nomadic Warrior's Cookbook [12]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67080",
+    "Name": "Obtained Nomadic Warrior's Cookbook [13]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67870",
+    "Name": "Obtained Nomadic Warrior's Cookbook [14]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67900",
+    "Name": "Obtained Nomadic Warrior's Cookbook [15]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67290",
+    "Name": "Obtained Nomadic Warrior's Cookbook [16]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67100",
+    "Name": "Obtained Nomadic Warrior's Cookbook [17]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67270",
+    "Name": "Obtained Nomadic Warrior's Cookbook [18]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67070",
+    "Name": "Obtained Nomadic Warrior's Cookbook [19]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67230",
+    "Name": "Obtained Nomadic Warrior's Cookbook [20]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67120",
+    "Name": "Obtained Nomadic Warrior's Cookbook [21]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67890",
+    "Name": "Obtained Nomadic Warrior's Cookbook [22]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67090",
+    "Name": "Obtained Nomadic Warrior's Cookbook [23]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67910",
+    "Name": "Obtained Nomadic Warrior's Cookbook [24]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67200",
+    "Name": "Obtained Armorer's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67210",
+    "Name": "Obtained Armorer's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67280",
+    "Name": "Obtained Armorer's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67260",
+    "Name": "Obtained Armorer's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67310",
+    "Name": "Obtained Armorer's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67300",
+    "Name": "Obtained Armorer's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67250",
+    "Name": "Obtained Armorer's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67410",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67450",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67480",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67400",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67420",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67460",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67470",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67440",
+    "Name": "Obtained Glintstone Craftsman's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67610",
+    "Name": "Obtained Missionary's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67600",
+    "Name": "Obtained Missionary's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67650",
+    "Name": "Obtained Missionary's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67640",
+    "Name": "Obtained Missionary's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67630",
+    "Name": "Obtained Missionary's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67130",
+    "Name": "Obtained Missionary's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68230",
+    "Name": "Obtained Missionary's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68000",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68010",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68030",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68020",
+    "Name": "Obtained Ancient Dragon Apostle's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67840",
+    "Name": "Obtained Perfumer's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67850",
+    "Name": "Obtained Perfumer's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67860",
+    "Name": "Obtained Perfumer's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "67920",
+    "Name": "Obtained Perfumer's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68200",
+    "Name": "Obtained Fevor's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68220",
+    "Name": "Obtained Fevor's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68210",
+    "Name": "Obtained Fevor's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68400",
+    "Name": "Obtained Frenzied's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68410",
+    "Name": "Obtained Frenzied's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "68950",
+    "Name": "Obtained St. Trina Disciple's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68940",
+    "Name": "Obtained Grave Keeper's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68930",
+    "Name": "Obtained Battlefield Priest's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68920",
+    "Name": "Obtained Finger-Weaver's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68910",
+    "Name": "Obtained Antiquity Scholar's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68900",
+    "Name": "Obtained Fire Knight's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68890",
+    "Name": "Obtained Battlefield Priest's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68880",
+    "Name": "Obtained Mad Craftsman's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68870",
+    "Name": "Obtained Tibia's Cookbook",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68860",
+    "Name": "Obtained Antiquity Scholar's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68850",
+    "Name": "Obtained Grave Keeper's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68840",
+    "Name": "Obtained St. Trina Disciple's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68830",
+    "Name": "Obtained Forager Brood Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68820",
+    "Name": "Obtained Battlefield Priest's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68810",
+    "Name": "Obtained Igon's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68800",
+    "Name": "Obtained Battlefield Priest's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68790",
+    "Name": "Obtained Loyal Knight's Cookbook",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68780",
+    "Name": "Obtained Ancient Dragon Knight's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68770",
+    "Name": "Obtained Fire Knight's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68760",
+    "Name": "Obtained St. Trina Disciple's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68750",
+    "Name": "Obtained Mad Craftsman's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68740",
+    "Name": "Obtained Ancient Dragon Knight's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68730",
+    "Name": "Obtained Greater Potentate's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68720",
+    "Name": "Obtained Greater Potentate's Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68710",
+    "Name": "Obtained Greater Potentate's Cookbook [14]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68700",
+    "Name": "Obtained Greater Potentate's Cookbook [13]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68690",
+    "Name": "Obtained Greater Potentate's Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68680",
+    "Name": "Obtained Greater Potentate's Cookbook [8]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68670",
+    "Name": "Obtained Mad Craftsman's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68660",
+    "Name": "Obtained Greater Potentate's Cookbook [11]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68650",
+    "Name": "Obtained Greater Potentate's Cookbook [10]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68640",
+    "Name": "Obtained Greater Potentate's Cookbook [9]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68630",
+    "Name": "Obtained Greater Potentate's Cookbook [7]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68620",
+    "Name": "Obtained Greater Potentate's Cookbook [12]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68610",
+    "Name": "Obtained Greater Potentate's Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68600",
+    "Name": "Obtained Greater Potentate's Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68590",
+    "Name": "Obtained Greater Potentate's Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68580",
+    "Name": "Obtained Finger-Weaver's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68570",
+    "Name": "Obtained Igon's Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68560",
+    "Name": "Obtained Forager Brood Cookbook [5]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68550",
+    "Name": "Obtained Forager Brood Cookbook [4]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68540",
+    "Name": "Obtained Forager Brood Cookbook [3]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68530",
+    "Name": "Obtained Forager Brood Cookbook [2]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68520",
+    "Name": "Obtained Forager Brood Cookbook [1]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "68510",
+    "Name": "Obtained Forager Brood Cookbook [6]",
+    "Tags": [
+      "cookbook",
+      "shadow of the erdtree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "82001",
+    "Name": "Display Undergroup Map Option",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "10000800",
+    "Name": "Boss Defeated: Godrick the Grafted",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "10000850",
+    "Name": "Boss Defeated: Margit the Fell Omen",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "10010800",
+    "Name": "Boss Defeated: Grafted Scion (Chapel of Anticipation)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "11000800",
+    "Name": "Boss Defeated: Morgott, the Omen King",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "11000850",
+    "Name": "Boss Defeated: Godfrey, First Elden Lord",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "11050800",
+    "Name": "Boss Defeated: Hoarah Loux",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "11050850",
+    "Name": "Boss Defeated: Sir Gideon Ofnir",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12010800",
+    "Name": "Boss Defeated: Dragonkin Soldier of Nokstella",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12010850",
+    "Name": "Boss Defeated: Dragonkin Soldier (Lake of Rot)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12020800",
+    "Name": "Boss Defeated: Valiant Gargoyles",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12020830",
+    "Name": "Boss Defeated: Dragonkin Soldier of Nokron",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12020850",
+    "Name": "Boss Defeated: Mimic Tear",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12020390",
+    "Name": "Boss Defeated: Crucible Knight",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12030800",
+    "Name": "Boss Defeated: Fia's Champion",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12030850",
+    "Name": "Boss Defeated: Lichdragon Fortissax",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12040800",
+    "Name": "Boss Defeated: Astel, Naturalborn of the Void",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12050800",
+    "Name": "Boss Defeated: Mohg, Lord of Blood",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12080800",
+    "Name": "Boss Defeated: Ancestor Spirit",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "12090800",
+    "Name": "Boss Defeated: Regal Ancestor Spirit",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "13000800",
+    "Name": "Boss Defeated: Maliketh, the Black Blade",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "13000830",
+    "Name": "Boss Defeated: Dragonlord Placidusax",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "13000850",
+    "Name": "Boss Defeated: Godskin Duo",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "14000800",
+    "Name": "Boss Defeated: Rennala, Queen of the Full Moon",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "14000850",
+    "Name": "Boss Defeated: Red Wolf of Radagon",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "15000800",
+    "Name": "Boss Defeated: Malenia, Blade of Miquella",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "15000850",
+    "Name": "Boss Defeated: Loretta, Knight of the Haligtree",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "16000800",
+    "Name": "Boss Defeated: Rykard, Lord of Blasphemy",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "16000850",
+    "Name": "Boss Defeated: Godskin Noble",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "16000860",
+    "Name": "Boss Defeated: Abductor Virgins",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "18000800",
+    "Name": "Boss Defeated: Ulcerated Tree Spirit",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "18000850",
+    "Name": "Boss Defeated: Soldier of Godrick",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "19000800",
+    "Name": "Boss Defeated: Elden Beast",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "20000800",
+    "Name": "Boss Defeated: Divine Beast Dancing Lion",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "20010800",
+    "Name": "Boss Defeated: Promised Consort Radahn",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "21000850",
+    "Name": "Boss Defeated: Golden Hippopotamus",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "21010800",
+    "Name": "Boss Defeated: Messmer the Impaler",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "22000800",
+    "Name": "Boss Defeated: Putrescent Knight",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "25000800",
+    "Name": "Boss Defeated: Metyr, Mother of Fingers",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "28000800",
+    "Name": "Boss Defeated: Midra, Lord of Frenzied Flame",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "30000800",
+    "Name": "Boss Defeated: Cemetery Shade (Tombsward Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30010800",
+    "Name": "Boss Defeated: Erdtree Burial Watchdog (Impaler's Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30020800",
+    "Name": "Boss Defeated: Erdtree Burial Watchdog (Stormfoot Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30030800",
+    "Name": "Boss Defeated: Spirit-Caller Snail (Road's End Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30040800",
+    "Name": "Boss Defeated: Grave Warden Duelist (Murkwater Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30050800",
+    "Name": "Boss Defeated: Cemetery Shade (Black Knife Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30050850",
+    "Name": "Boss Defeated: Black Knife Assassin (Black Knife Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30060800",
+    "Name": "Boss Defeated: Erdtree Burial Watchdog (Cliffbottom Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30070800",
+    "Name": "Boss Defeated: Erdtree Burial Watchdog (Wyndham Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30080800",
+    "Name": "Boss Defeated: Ancient Hero of Zamor (Sainted Hero's Grave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30090800",
+    "Name": "Boss Defeated: Red Wolf of the Champion (Gelmir Hero's Grave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30100800",
+    "Name": "Boss Defeated: Crucible Knight Ordovis (Auriza Hero's Grave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30100800",
+    "Name": "Boss Defeated: Crucible Knight (Auriza Hero's Grave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30110800",
+    "Name": "Boss Defeated: Black Knife Assassin (Deathtouched Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30120800",
+    "Name": "Boss Defeated: Perfumer Tricia (Unsightly Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30120800",
+    "Name": "Boss Defeated: Misbegotten Warrior (Unsightly Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30130800",
+    "Name": "Boss Defeated: Grave Warden Duelist (Auriza Side Tomb)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30140800",
+    "Name": "Boss Defeated: Erdtree Burial Watchdog (Minor Erdtree Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30150800",
+    "Name": "Boss Defeated: Cemetery Shade (Caelid Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30160800",
+    "Name": "Boss Defeated: Putrid Tree Spirit (War-Dead Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30170800",
+    "Name": "Boss Defeated: Ancient Hero of Zamor (Giant-Conquering Hero's Grave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30180800",
+    "Name": "Boss Defeated: Ulcerated Tree Sprit (Giants' Mountaintop Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30190800",
+    "Name": "Boss Defeated: Putrid Grave Warden Duelist (Consecrated Snowfield Catacombs)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "30200810",
+    "Name": "Boss Defeated: Stray Mimic Tear (Hidden Path to the Haligtree)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31000800",
+    "Name": "Boss Defeated: Patches (Murkwater Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31010800",
+    "Name": "Boss Defeated: Runebear (Earthbore Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31020800",
+    "Name": "Boss Defeated: Miranda the Blighted Bloom (Tombsward Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31030800",
+    "Name": "Boss Defeated: Beastman of Farum Azula (Groveside Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31040800",
+    "Name": "Boss Defeated: Cleanrot Knight (Stillwater Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31050800",
+    "Name": "Boss Defeated: Bloodhound Knight (Lakeside Crystal Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31060800",
+    "Name": "Boss Defeated: Crystalians (Academy Crystal Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31070800",
+    "Name": "Boss Defeated: Kindred of Rot (Seethewater Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31090800",
+    "Name": "Boss Defeated: Demi-Human Queen Margot (Volcano Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31100800",
+    "Name": "Boss Defeated: Beastman of Farum Azula (Dragonbarrow Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31110800",
+    "Name": "Boss Defeated: Crystalians (Sellia Hideaway)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31120800",
+    "Name": "Boss Defeated: Misbegotten Crusader (Cave of the Forlorn)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31150800",
+    "Name": "Boss Defeated: Demi-Human Chief (Coastal Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31170800",
+    "Name": "Boss Defeated: Guardian Golem (Highroad Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31180800",
+    "Name": "Boss Defeated: Omenkiller (Perfumer's Grotto)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31190800",
+    "Name": "Boss Defeated: Black Knife Assassin (Sage's Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31190850",
+    "Name": "Boss Defeated: Necromancer Garris (Sage's Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31200800",
+    "Name": "Boss Defeated: Cleanrot Knight (Abandoned Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31210800",
+    "Name": "Boss Defeated: Frenzied Duelist (Gaol Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "31220800",
+    "Name": "Boss Defeated: Spirit-Caller Snail (Spiritcaller's Cave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32000800",
+    "Name": "Boss Defeated: Scaly Misbegotten (Morne Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32010800",
+    "Name": "Boss Defeated: Stonedigger Troll (Limgrave Tunnels)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32020800",
+    "Name": "Boss Defeated: Crystalian - Ringblade (Raya Lucaria Crystal Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32040800",
+    "Name": "Boss Defeated: Stonedigger Troll (Old Altus Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32050800",
+    "Name": "Boss Defeated: Crystalian - Ringblade/Spear (Altus Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32070800",
+    "Name": "Boss Defeated: Magma Wyrm (Gael Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32080800",
+    "Name": "Boss Defeated: Fallingstar Beast (Sellia Crystal Tunnel)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "32110800",
+    "Name": "Boss Defeated: Astel, Stars of Darkness",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "34120800",
+    "Name": "Boss Defeated: Onyx Lord (Divine Tower of West Altus)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "34130800",
+    "Name": "Boss Defeated: Godskin Apostle (Divine Tower of Caelid)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "34140850",
+    "Name": "Boss Defeated: Fell Twins (Divine Tower of East Altus)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "35000800",
+    "Name": "Boss Defeated: Mohg, The Omen (Subterranean Shunning-Grounds)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "35000850",
+    "Name": "Boss Defeated: Esgar, Priest of Blood (Subterranean Shunning-Grounds)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "39200800",
+    "Name": "Boss Defeated: Magma Wyrm Makar (Ruin-Strewn Precipice)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "40000800",
+    "Name": "Boss Defeated: Death Knight (Fog Rift Catacombs)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "40010800",
+    "Name": "Boss Defeated: Death Knight (Scorpion River Catacombs)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "41000800",
+    "Name": "Boss Defeated: Demi-Human Swordmaster Onze (Belurat Gaol)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "41010800",
+    "Name": "Boss Defeated: Curseblade Labirith (Bonny Gaol)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "41020800",
+    "Name": "Boss Defeated: Lamenter (Lamenter's Gaol)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "43000800",
+    "Name": "Boss Defeated: Chief Bloodfiend (Rivermouth Cave)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "43010800",
+    "Name": "Boss Defeated: Ancient Dragon-man (Dragon's Pit)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "1033420800",
+    "Name": "Boss Defeated: Alecto Black Knife Ringleader (Moonlight Altar)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1033430800",
+    "Name": "Boss Defeated: Erdtree Avatar (Minor Erdtree - Liurnia)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1033450800",
+    "Name": "Boss Defeated: Bols, Carian Knight (Cuckoo's Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1034420800",
+    "Name": "Boss Defeated: Glintstone Dragon Adula (Moonfolk Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1034450800",
+    "Name": "Boss Defeated: Glintstone Dragon Smarag (Meeting Place)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1034480800",
+    "Name": "Boss Defeated: Royal Revenant (Kingsrealm Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1034500800",
+    "Name": "Boss Defeated: Glintstone Dragon Adula (Ranni's Rise)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1035420800",
+    "Name": "Boss Defeated: Omenkiller (Albinauric Village)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1035500800",
+    "Name": "Boss Defeated: Loretta, Royal Knight (Caria Manor)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1035530800",
+    "Name": "Boss Defeated: Magma Wyrm (Seethewater Terminus)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1036450340",
+    "Name": "Boss Defeated: Death Rite Bird (Gate Town Northwest)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1036480340",
+    "Name": "Boss Defeated: Night's Cavalry (East Raya Lucaria Gate)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1036500800",
+    "Name": "Boss Defeated: Onyx Lord (Royal Grave Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1036540800",
+    "Name": "Boss Defeated: Fallingstar Beast (Ninth Mt. Gelmir Campsite)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1037420340",
+    "Name": "Boss Defeated: Death Rite Bird (Laskyar Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1037460800",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Church of Vows)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1037510800",
+    "Name": "Boss Defeated: Ancient Dragon Lansseax (Abandoned Coffin)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1037530800",
+    "Name": "Boss Defeated: Demi-Human Queen Maggie (Primeval Sorcerer Azur)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1037540810",
+    "Name": "Boss Defeated: Ulcerated Tree Spirit (Minor Erdtree - Mt. Gelmir)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1038410800",
+    "Name": "Boss Defeated: Adan, Thief of Fire (Malefactor's Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1038480800",
+    "Name": "Boss Defeated: Erdtree Avatar (Minor Erdtree - Bellum Highway)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1038520800",
+    "Name": "Boss Defeated: Tibia Mariner (Wyndham Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1039430340",
+    "Name": "Boss Defeated: Night's Cavalry (Liurnia Highway Far North)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1039440800",
+    "Name": "Boss Defeated: Tibia Mariner (Divine Tower of Liurnia Entrance)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1039500800",
+    "Name": "Boss Defeated: Godrick the Reskinned (Golden Lineage Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043530800",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Hermit Merchant's Shack)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1039540800",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Shaded Castle)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1040520800",
+    "Name": "Boss Defeated: Black Knife Assassin (Sainted Hero's Grave Entrance)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1040530800",
+    "Name": "Boss Defeated: Sanguine Noble (Writheblood Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1041500800",
+    "Name": "Boss Defeated: Fallingstar Beast (South of Tree Sentinel Duo)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1041510800",
+    "Name": "Boss Defeated: Tree Sentinels (Tree Sentinel Duo)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1041520800",
+    "Name": "Boss Defeated: Ancient Dragon (Altus Tunnel Entrance)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1041530800",
+    "Name": "Boss Defeated: Wormface (Minor Erdtree - Altus Plateau)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1042330800",
+    "Name": "Boss Defeated: Ancient Hero of Zamor (Weeping Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1042360800",
+    "Name": "Boss Defeated: Tree Sentinel (Church of Elleh)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1042370800",
+    "Name": "Boss Defeated: Crucible Knight (Stormhill Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1042380800",
+    "Name": "Boss Defeated: Death Rite Bird (Stormgate)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1042380850",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Warmaster's Shack)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043300800",
+    "Name": "Boss Defeated: Leonine Misbegotten (Morne Moangrave)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043330800",
+    "Name": "Boss Defeated: Erdtree Avatar (Minor Erdtree - Weeping Peninsula)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043360800",
+    "Name": "Boss Defeated: Flying Dragon Agheel (Agheel Lake)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1043370800",
+    "Name": "Boss Defeated: Night's Cavalry (Agheel Lake North)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1044320800",
+    "Name": "Boss Defeated: Death Rite Bird (Castle Morne Approach North)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1044320850",
+    "Name": "Boss Defeated: Night's Cavalry (Castle Morne Approach North)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1044350800",
+    "Name": "Boss Defeated: Bloodhound Knight Darriwil",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1044360800",
+    "Name": "Boss Defeated: Mad Pumpkin Head (Waypoint Ruins)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1045390800",
+    "Name": "Boss Defeated: Tibia Mariner (Summonwater Village)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1045520800",
+    "Name": "Boss Defeated: Draconic Tree Sentinel (Capital Rampart)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1047400800",
+    "Name": "Boss Defeated: Putrid Avatar (Minor Erdtree - Caelid)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1048370800",
+    "Name": "Boss Defeated: Decaying Ekzykes (Caelid Highway South)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1048400800",
+    "Name": "Boss Defeated: Mad Pumpkin Head (Dragonbarrow West)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1048410800",
+    "Name": "Boss Defeated: Bell Bearing Hunter (Isolated Merchant's Shack)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1048510800",
+    "Name": "Boss Defeated: Night's Cavalry (Forbidden Lands Midway)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1048570800",
+    "Name": "Boss Defeated: Death Rite Bird (Ordina, Liturgical Town)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049370800",
+    "Name": "Boss Defeated: Night's Cavalry (Southern Aeonia Swamp Bank)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049370850",
+    "Name": "Boss Defeated: Death Rite Bird (Southern Aeonia Swamp Bank)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049380800",
+    "Name": "Boss Defeated: Commander O'Neil (East Aeonia Swamp)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049390800",
+    "Name": "Boss Defeated: Nox Swordress & Nok Monk (West Sellia)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049390850",
+    "Name": "Boss Defeated: Battlemage (West Sellia)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1049520800",
+    "Name": "Boss Defeated: Black Blade Kindred (Before Grand Lift of Rold)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1050560800",
+    "Name": "Boss Defeated: Great Wyrm Theodorix (Consecrated Snowfield)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1050570800",
+    "Name": "Boss Defeated: Death Rite Bird (West of Castle Sol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1050570850",
+    "Name": "Boss Defeated: Putrid Avatar (North of Minor Erdtree - Consecrated Snowfield)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1051360800",
+    "Name": "Boss Defeated: Crucible Knight (Redmane Castle)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1051400800",
+    "Name": "Boss Defeated: Putrid Avatar (Minor Erdtree)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1051430800",
+    "Name": "Boss Defeated: Black Blade Kindred (Bestial Sanctum)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1051570800",
+    "Name": "Boss Defeated: Commander Niall (Castle Sol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1252380800",
+    "Name": "Boss Defeated: Starscourge Radahn",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1052410800",
+    "Name": "Boss Defeated: Flying Dragon Greyll (Southeast Farum Greatbridge)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1052410850",
+    "Name": "Boss Defeated: Night's Cavalry (Lenne's Rise)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1052520800",
+    "Name": "Boss Defeated: Fire Giant",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1052560800",
+    "Name": "Boss Defeated: Erdtree Avatar (Minor Erdtree - Mountaintops of the Giants)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1053560800",
+    "Name": "Boss Defeated: Roundtable Knight Vyke (Lord Contender's Evergaol)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1254560800",
+    "Name": "Boss Defeated: Borealis the Freezing Fog (Northeast Mountaintops)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "1248550800",
+    "Name": "Boss Defeated: Night's Cavalry (Southwest Mountaintops)",
+    "Tags": [
+      "progression",
+      "vanilla"
+    ]
+  },
+  {
+    "ID": "2044450800",
+    "Name": "Boss Defeated: Romina, Saint of the Bud (Ancient Ruins of Rauh)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2044470800",
+    "Name": "Boss Defeated: Rugalea the Great Red Bear (Ancient Ruins of Rauh)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2045440800",
+    "Name": "Boss Defeated: Ghostflame Dragon (Gravesite Plain)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2046380800",
+    "Name": "Boss Defeated: Dancer of Ranah (Cerulean Coast)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2046400800",
+    "Name": "Boss Defeated: Demi-Human Queen Marigga (Cerulean Coast)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2046410800",
+    "Name": "Boss Defeated: Knight of the Solitary Gaol (Gravesite Plain)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2046450800",
+    "Name": "Boss Defeated: Red Bear (Gravesite Plain)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2046460800",
+    "Name": "Boss Defeated: Divine Beast Dancing Lion (Gravesite Plain)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2047390800",
+    "Name": "Boss Defeated: Death Rite Bird (Cerulean Coast)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2047450800",
+    "Name": "Boss Defeated: Black Knight Garrew (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2048380850",
+    "Name": "Boss Defeated: Ghostflame Dragon (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2048440800",
+    "Name": "Boss Defeated: Rellana, Twin Moon Knight (Gravesite Plain)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2049410800",
+    "Name": "Boss Defeated: Jagged Peak Drake (Jagged Peak)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2049430800",
+    "Name": "Boss Defeated: Ghostflame Dragon (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2049430850",
+    "Name": "Boss Defeated: Black Knight Edredd (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2049450800",
+    "Name": "Boss Defeated: Ralva the Great Red Bear (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2049480800",
+    "Name": "Boss Defeated: Commander Gaius (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2050470800",
+    "Name": "Boss Defeated: Tree Sentinel (Hinterland)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2050480800",
+    "Name": "Boss Defeated: Scadutree Avatar (Scaduview)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2050480860",
+    "Name": "Boss Defeated: Tree Sentinel (Hinterland)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2051440800",
+    "Name": "Boss Defeated: Rakshasa (Scadu Altus)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2051450800",
+    "Name": "Boss Defeated: XXXX",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2052400800",
+    "Name": "Boss Defeated: XXXX",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2052430800",
+    "Name": "Boss Defeated: Jori, the Elder Inquisitor (Abyssal Woods)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2052480800",
+    "Name": "Boss Defeated: Fallingstar Beast",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2054390800",
+    "Name": "Boss Defeated: Bayle the Dread (Jagged Peak)",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "2054390850",
+    "Name": "Boss Defeated: Ancient Dragon Senessax (Jagged Peak",
+    "Tags": [
+      "progression",
+      "shadow of the erd tree",
+      "sote",
+      "dlc"
+    ]
+  },
+  {
+    "ID": "1000",
+    "Name": "default",
+    "Tags": [
+      "flag"
+    ]
+  }
+]
