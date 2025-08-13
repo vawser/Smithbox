@@ -1140,7 +1140,7 @@ public class ProjectEntry
             Path.Join(ProjectPath,".smithbox","Assets","Aliases")
         ];
 
-        List<string> sourceFiles = sourceDirectories.Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
+        List<string> sourceFiles = sourceDirectories.Where(Directory.Exists).Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
 
         foreach (string sourceFile in sourceFiles)
         {
