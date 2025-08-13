@@ -72,8 +72,12 @@ namespace StudioCore.Formats.JSON;
 
 // Row Names
 [JsonSerializable(typeof(RowNameStore))]
+[JsonSerializable(typeof(RowNameStoreLegacy))]
 [JsonSerializable(typeof(RowNameParam))]
+[JsonSerializable(typeof(RowNameParamLegacy))]
 [JsonSerializable(typeof(RowNameEntry))]
+[JsonSerializable(typeof(RowNameEntryLegacy))]
+
 
 // Param Upgrader Instructions
 [JsonSerializable(typeof(ParamUpgraderInfo))]

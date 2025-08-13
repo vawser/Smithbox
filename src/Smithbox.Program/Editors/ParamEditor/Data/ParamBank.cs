@@ -9,6 +9,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Formats.JSON;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -2219,9 +2220,42 @@ public class ParamBank
 
         var importDir = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names");
 
+        // Fallback to pre 2.0.6 method if the Stripped Row Names folder doesn't exist
         if (!Directory.Exists(importDir))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {importDir} for row name restore.", LogLevel.Error);
+            var importFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
+
+            var filestring = File.ReadAllText(importFile);
+            var options = new JsonSerializerOptions();
+            RowNameStoreLegacy legacyStore = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStoreLegacy);
+
+            if (legacyStore == null)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {importDir} for row name restore.", LogLevel.Error);
+            }
+            else
+            {
+                if (legacyStore == null)
+                    return;
+
+                if (legacyStore.Params == null)
+                    return;
+
+                var storeDict = legacyStore.Params.ToDictionary(e => e.Name);
+
+                foreach (KeyValuePair<string, Param> p in Params)
+                {
+                    if (!storeDict.ContainsKey(p.Key))
+                        continue;
+
+                    SetParamNamesLegacy(
+                        p.Value,
+                        storeDict[p.Key]
+                    );
+                }
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
+            }
         }
         else
         {
@@ -2247,28 +2281,38 @@ public class ParamBank
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
+
+            if (store == null)
+                return;
+
+            if (store.Params == null)
+                return;
+
+            var storeDict = store.Params.ToDictionary(e => e.Name);
+
+            foreach (KeyValuePair<string, Param> p in Params)
+            {
+                if (!storeDict.ContainsKey(p.Key))
+                    continue;
+
+                SetParamNames(
+                    p.Value,
+                    storeDict[p.Key]
+                );
+            }
+
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
+
+            var legacyFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
+            if (File.Exists(legacyFile))
+            {
+                var dialog = PlatformUtils.Instance.MessageBox("Delete legacy JSON for row names?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if(dialog is DialogResult.Yes)
+                {
+                    File.Delete(legacyFile);
+                }
+            }
         }
-
-        if (store == null)
-            return;
-
-        if (store.Params == null)
-            return;
-
-        var storeDict = store.Params.ToDictionary(e => e.Name);
-
-        foreach (KeyValuePair<string, Param> p in Params)
-        {
-            if (!storeDict.ContainsKey(p.Key))
-                continue;
-
-            SetParamNames(
-                p.Value,
-                storeDict[p.Key]
-            );
-        }
-
-        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names");
     }
 
     #endregion
@@ -2389,7 +2433,14 @@ public class ParamBank
         if (rowNames == null)
             return;
 
-        var nameEntriesByID = rowNames.Entries.ToDictionary(e => e.ID, e => e);
+        var nameEntriesByID = new Dictionary<int, RowNameEntry>();
+        foreach(var entry in rowNames.Entries)
+        {
+            if(!nameEntriesByID.ContainsKey(entry.ID))
+            {
+                nameEntriesByID.Add(entry.ID, entry);
+            }
+        }
         var idCounts = new Dictionary<int, int>();
 
         foreach (var row in param.Rows)
@@ -2401,9 +2452,38 @@ public class ParamBank
 
             if (nameEntriesByID.TryGetValue(row.ID, out var nameEntry))
             {
-                if (index < nameEntry.Entries.Count)
+                if (nameEntry.Entries != null)
                 {
-                    row.Name = nameEntry.Entries[index];
+                    if (index < nameEntry.Entries.Count)
+                    {
+                        row.Name = nameEntry.Entries[index];
+                    }
+                }
+            }
+        }
+    }
+    private static void SetParamNamesLegacy(Param param, RowNameParamLegacy rowNames)
+    {
+        var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+
+        for (var i = 0; i < param.Rows.Count; i++)
+        {
+            if (CFG.Current.UseIndexMatchForRowNameRestore)
+            {
+                if (rowNameDict.ContainsKey(i))
+                {
+                    param.Rows[i].Name = rowNameDict[i].Name;
+                }
+            }
+            else
+            {
+                // ID may not be unique, so we will manually loop here
+                foreach (var entry in rowNames.Entries)
+                {
+                    if (entry.ID == param.Rows[i].ID)
+                    {
+                        param.Rows[i].Name = entry.Name;
+                    }
                 }
             }
         }
