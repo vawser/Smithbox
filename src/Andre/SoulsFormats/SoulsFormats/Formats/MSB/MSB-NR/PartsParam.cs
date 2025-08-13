@@ -1011,7 +1011,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public sbyte Day2SpEffectParamID { get; set; }
+                public sbyte Unk21 { get; set; }
 
                 /// <summary>
                 /// Creates a SceneGparamConfig with default values.
@@ -1026,7 +1026,7 @@ namespace SoulsFormats
                     Unk1C = -1;
                     Unk1D = -1;
                     Unk20 = -1;
-                    Day2SpEffectParamID = -1;
+                    Unk21 = -1;
                 }
 
                 /// <summary>
@@ -1052,7 +1052,7 @@ namespace SoulsFormats
                     br.AssertSByte(0);
                     br.AssertSByte(0);
                     Unk20 = br.ReadSByte();
-                    Day2SpEffectParamID = br.ReadSByte();
+                    Unk21 = br.ReadSByte();
                     br.AssertSByte(0);
                     br.AssertSByte(0);
                     br.AssertPattern(44, 0x00);
@@ -1072,7 +1072,7 @@ namespace SoulsFormats
                     bw.WriteSByte(0);
                     bw.WriteSByte(0);
                     bw.WriteSByte(Unk20);
-                    bw.WriteSByte(Day2SpEffectParamID);
+                    bw.WriteSByte(Unk21);
                     bw.WriteSByte(0);
                     bw.WriteSByte(0);
                     bw.WritePattern(44, 0x00);
@@ -1584,6 +1584,11 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                public int UnkSpEffectSetParamID { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
                 public int CondemnedSpEffectSetParamID { get; set; }
 
                 /// <summary>
@@ -1638,7 +1643,6 @@ namespace SoulsFormats
                 private int UnkT00 { get; set; }
                 private int UnkT04 { get; set; }
                 private short UnkT1E { get; set; }
-                private int UnkT30 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1657,7 +1661,7 @@ namespace SoulsFormats
                     UnkT24 = br.ReadInt32();
                     UnkT28 = br.ReadInt32();
                     ChrActivateCondParamID = br.ReadInt32();
-                    UnkT30 = br.ReadInt32();
+                    UnkSpEffectSetParamID = br.ReadInt32();
                     CondemnedSpEffectSetParamID = br.ReadInt32();
                     BackupEventAnimID = br.ReadInt32();
                     UnkT3C = br.ReadInt32();
@@ -1700,7 +1704,7 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT24);
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(ChrActivateCondParamID);
-                    bw.WriteInt32(UnkT30);
+                    bw.WriteInt32(UnkSpEffectSetParamID);
                     bw.WriteInt32(CondemnedSpEffectSetParamID);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(UnkT3C);

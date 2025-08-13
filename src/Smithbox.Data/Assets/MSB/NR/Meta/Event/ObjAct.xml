@@ -25,11 +25,18 @@
     AltName="ObjAct State"
     Wiki="The interaction state this interaction uses."
     Enum="OBJACT_STATE" />
+
+    <ObjAct_Unk0E
+    AltName="Unknown: 0x0E" />
     
     <EventFlagID
     AltName="Event Flag ID"
     Wiki="The event flag this ObjAct sets upon interaction." 
     FlagAlias="" />
+
+    <ObjAct_Unk14
+    AltName="Unknown: 0x14" />
+
   </Field>
   
   <Enums>
