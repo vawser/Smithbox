@@ -406,7 +406,7 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SwordArtsParam",
-      "Command": "param SwordArtsParam: modified && !added: unk_00: = vanillafield unk_00"
+      "Command": "param SwordArtsParam: modified && !added: sparringGroundsEventFlagId: = vanillafield sparringGroundsEventFlagId"
     },
     {
       "Version": "10200000",
