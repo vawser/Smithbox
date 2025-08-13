@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018;
 using HKLib.hk2018.hkcdStaticMeshTree;
 using HKLib.Serialization.hk2018.Binary;
+using HKLib.Serialization.hk2018.Xml;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -71,7 +72,7 @@ public class HavokCollisionManager
 
     private void LoadMapCollision(string mapId, string type)
     {
-        byte[] CompendiumBytes = null;
+        byte[]? CompendiumBytes = null;
 
         var bdtPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbdt");
         var bhdPath = Path.Join("map", mapId.Substring(0, 3), mapId, $"{type}{mapId.Substring(1)}.hkxbhd");
@@ -86,6 +87,9 @@ public class HavokCollisionManager
 
             var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+            HavokXmlSerializer? xmlSerializer = null;
+
             // Get compendium
             foreach (var file in packedBinder.Files)
             {
@@ -94,9 +98,6 @@ public class HavokCollisionManager
                     CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
                 }
             }
-
-            if (CompendiumBytes == null)
-                return;
 
             foreach (var file in packedBinder.Files)
             {
@@ -114,14 +115,25 @@ public class HavokCollisionManager
 
                 try
                 {
-                    HavokBinarySerializer serializer = new HavokBinarySerializer();
-                    using (MemoryStream memoryStream = new MemoryStream(CompendiumBytes))
+                    if (CompendiumBytes != null)
                     {
+                        using MemoryStream memoryStream = new MemoryStream(CompendiumBytes);
                         serializer.LoadCompendium(memoryStream);
                     }
+
                     using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                     {
-                        var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        hkRootLevelContainer fileHkx;
+                        try
+                        {
+                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        }
+                        catch (InvalidDataException e)
+                        {
+                            if (xmlSerializer == null)
+                                xmlSerializer = new HavokXmlSerializer();
+                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
+                        }
 
                         if (!HavokContainers.ContainsKey(name))
                         {
@@ -183,6 +195,8 @@ public class HavokCollisionManager
         {
             var bndData = Project.FS.ReadFile(fileEntry.Path);
             var binder = BND4.Read((Memory<byte>)bndData);
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+            HavokXmlSerializer? xmlSerializer = null;
 
             // Read collisions
             foreach (var file in binder.Files)
@@ -198,10 +212,19 @@ public class HavokCollisionManager
 
                 try
                 {
-                    HavokBinarySerializer serializer = new HavokBinarySerializer();
                     using (MemoryStream memoryStream = new MemoryStream(FileBytes))
                     {
-                        var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        hkRootLevelContainer fileHkx;
+                        try
+                        {
+                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        }
+                        catch (InvalidDataException e)
+                        {
+                            if (xmlSerializer == null)
+                                xmlSerializer = new HavokXmlSerializer();
+                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
+                        }
 
                         if (!HavokContainers.ContainsKey(storedName))
                         {
