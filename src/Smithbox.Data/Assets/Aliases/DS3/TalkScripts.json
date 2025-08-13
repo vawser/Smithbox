@@ -1,0 +1,1514 @@
+[
+  {
+    "ID": "300000",
+    "Name": "Bonfire: High Wall of Lothric",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300001",
+    "Name": "Bonfire: Oceris, the Consumed King",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300002",
+    "Name": "Bonfire: Vordt of the Boreal Valley",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300003",
+    "Name": "Bonfire: Dancer of the Boreal Valley",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300004",
+    "Name": "Bonfire: Tower on the Wall",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300005",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300008",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300009",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300020",
+    "Name": "Interactable: Path of the Dragon Gesture Pickup",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300220",
+    "Name": "NPC: Greirat of the Undead Settlement",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300324",
+    "Name": "NPC: Oceiros, the Consumed King",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300330",
+    "Name": "NPC: Emma, High Priestess of Lothric Castle",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300705",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300706",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "300720",
+    "Name": "Unused",
+    "Tags": [
+      "m30_00_00_00"
+    ]
+  },
+  {
+    "ID": "301000",
+    "Name": "Bonfire: Lothric Castle",
+    "Tags": [
+      "m30_01_00_00"
+    ]
+  },
+  {
+    "ID": "301001",
+    "Name": "Bonfire: Dragonslayer Armour",
+    "Tags": [
+      "m30_01_00_00"
+    ]
+  },
+  {
+    "ID": "301002",
+    "Name": "Bonfire: Dragon Barracks",
+    "Tags": [
+      "m30_01_00_00"
+    ]
+  },
+  {
+    "ID": "301003",
+    "Name": "Bonfire: Altar of Sunlight",
+    "Tags": [
+      "m30_01_00_00"
+    ]
+  },
+  {
+    "ID": "310000",
+    "Name": "Bonfire: Undead Settlement",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310001",
+    "Name": "Bonfire: Pit of Hollows",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310002",
+    "Name": "Bonfire: Cliff Underside",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310003",
+    "Name": "Bonfire: Dilapidated Bridge",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310004",
+    "Name": "Bonfire: Foot of the High Wall",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310020",
+    "Name": "Interactable: Sacrificial Altar",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310021",
+    "Name": "Interactable: Velka, the Goddess of Sin",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310150",
+    "Name": "NPC: Yoel of Londor",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310180",
+    "Name": "NPC: Sirris of the Sunless Realms",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310240",
+    "Name": "NPC: Cornyx of the Great Swamp",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310260",
+    "Name": "NPC: Irina of Carim",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310270",
+    "Name": "NPC: Eygon of Carim",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310310",
+    "Name": "NPC: Siegward of Catarina (lift)",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310311",
+    "Name": "NPC: Siegward of Catarina (ledge)",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310380",
+    "Name": "NPC: Talking Cage Hollow",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310420",
+    "Name": "NPC: Holy Knight Hodrick",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "310610",
+    "Name": "NPC: Giant Archer",
+    "Tags": [
+      "m31_00_00_00"
+    ]
+  },
+  {
+    "ID": "320000",
+    "Name": "Bonfire: Archdragon Peak",
+    "Tags": [
+      "m32_00_00_00"
+    ]
+  },
+  {
+    "ID": "320001",
+    "Name": "Bonfire: Nameless King",
+    "Tags": [
+      "m32_00_00_00"
+    ]
+  },
+  {
+    "ID": "320002",
+    "Name": "Bonfire: Great Belfry",
+    "Tags": [
+      "m32_00_00_00"
+    ]
+  },
+  {
+    "ID": "320003",
+    "Name": "Bonfire: Dragon-kin Mausoleum",
+    "Tags": [
+      "m32_00_00_00"
+    ]
+  },
+  {
+    "ID": "330000",
+    "Name": "Bonfire: Halfway Fortress",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330001",
+    "Name": "Bonfire: Abyss Watchers",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330002",
+    "Name": "Bonfire: Crystal Sage",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330003",
+    "Name": "Bonfire: Farron Keep",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330004",
+    "Name": "Bonfire: Keep Ruins",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330005",
+    "Name": "Bonfire: Old Wolf of Farron",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330006",
+    "Name": "Bonfire: Road of Sacrifices",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330007",
+    "Name": "Bonfire: Crucifixion Woods",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330008",
+    "Name": "Bonfire: Farron Keep Perimeter",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330020",
+    "Name": "Interactable: Old Wolf of Farron",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330170",
+    "Name": "NPC: Hawkwood the Deserter",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330230",
+    "Name": "NPC: Orbeck of Vinheim",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330290",
+    "Name": "NPC: Anri of Astora (male)",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330291",
+    "Name": "NPC: Anri of Astora (unknown)",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330295",
+    "Name": "NPC: Anri of Astora (female)",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "330360",
+    "Name": "NPC: Horace the Hushed",
+    "Tags": [
+      "m33_00_00_00"
+    ]
+  },
+  {
+    "ID": "341000",
+    "Name": "Bonfire: Twin Princes",
+    "Tags": [
+      "m34_01_00_00"
+    ]
+  },
+  {
+    "ID": "341001",
+    "Name": "Bonfire: Grand Archives",
+    "Tags": [
+      "m34_01_00_00"
+    ]
+  },
+  {
+    "ID": "341320",
+    "Name": "NPC: Lothric, Younger Prince",
+    "Tags": [
+      "m34_01_00_00"
+    ]
+  },
+  {
+    "ID": "350000",
+    "Name": "Bonfire: Cleansing Chapel",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350001",
+    "Name": "Bonfire: Rosaria's Bed Chamber",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350002",
+    "Name": "Bonfire: Deacons of the Deep",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350003",
+    "Name": "Bonfire: Cathedral of the Deep",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350020",
+    "Name": "Interactable: Rosaria, Mother of Rebirth",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350190",
+    "Name": "NPC: Ringfinger Leonhard",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350191",
+    "Name": "NPC: Ringfinger Leonhard (unknown)",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350300",
+    "Name": "NPC: Unbreakable Patches (Door side 1)",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350301",
+    "Name": "NPC: Unbreakable Patches (Rosaria side)",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350302",
+    "Name": "NPC: Unbreakable Patches (Door side 2)",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350310",
+    "Name": "NPC: Siegward of Catarina",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350510",
+    "Name": "NPC: Slave Knight Gael",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350793",
+    "Name": "Unused",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350903",
+    "Name": "Unused",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "350906",
+    "Name": "Unused",
+    "Tags": [
+      "m35_00_00_00"
+    ]
+  },
+  {
+    "ID": "370000",
+    "Name": "Bonfire: Church of Yorshka",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370001",
+    "Name": "Bonfire: Pontiff Sulyvahn",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370002",
+    "Name": "Bonfire: Aldrich, Devourer of Gods",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370003",
+    "Name": "Bonfire: Anor Londo",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370004",
+    "Name": "Bonfire: Central Irithyll",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370005",
+    "Name": "Bonfire: Distant Manor",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370006",
+    "Name": "Bonfire: Water Reserve",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370007",
+    "Name": "Bonfire: Irithyll of the Boreal Valley",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370008",
+    "Name": "Bonfire: Prison Tower",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370020",
+    "Name": "Interactable: Archdeacon McDonnell",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370160",
+    "Name": "NPC: Company Captain Yorshka",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370180",
+    "Name": "NPC: Sirris of the Sunless Realms",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370190",
+    "Name": "NPC: Ringfinger Leonhard",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370290",
+    "Name": "NPC: Anri of Astora (male, Church of Yorshka)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370291",
+    "Name": "NPC: Anri of Astora (male, Aldrich)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370292",
+    "Name": "NPC: Anri of Astora (male, unknown)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370295",
+    "Name": "NPC: Anri of Astora (female, Church of Yorshka)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370296",
+    "Name": "NPC: Anri of Astora (female, Aldrich)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370310",
+    "Name": "NPC: Siegward of Catarina",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370400",
+    "Name": "NPC: Londor Assassin (Church of Yorshka)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "370401",
+    "Name": "NPC: Londor Assassin (Darkmoon Tomb)",
+    "Tags": [
+      "m37_00_00_00"
+    ]
+  },
+  {
+    "ID": "380000",
+    "Name": "Bonfire: High Lord Wolnir",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380001",
+    "Name": "Bonfire: Abandoned Tomb",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380002",
+    "Name": "Bonfire: Old King's Antechamber",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380003",
+    "Name": "Bonfire: Demon Ruins",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380004",
+    "Name": "Bonfire: Old Demon King",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380005",
+    "Name": "Bonfire: Unused",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380006",
+    "Name": "Bonfire: Catacombs of Carthus",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380290",
+    "Name": "NPC: Anri of Astora (male, upper catacombs)",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380291",
+    "Name": "NPC: Anri of Astora (male, ledge near Wolnir bridge)",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380295",
+    "Name": "NPC: Anri of Astora (female, upper catacombs)",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "380296",
+    "Name": "NPC: Anri of Astora (female, ledge near Wolnir bridge)",
+    "Tags": [
+      "m38_00_00_00"
+    ]
+  },
+  {
+    "ID": "390000",
+    "Name": "Bonfire: Irithyll Dungeon",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "390001",
+    "Name": "Bonfire: Yhorm the Giant",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "390002",
+    "Name": "Bonfire: Profaned Capital",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "390250",
+    "Name": "NPC: Karla",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "390310",
+    "Name": "NPC: Siegward of Catarina (Profaned Capital cell)",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "390311",
+    "Name": "NPC: Seigward of Catarina (Yhorm's throne room)",
+    "Tags": [
+      "m39_00_00_00"
+    ]
+  },
+  {
+    "ID": "400000",
+    "Name": "Bonfire: Firelink Shrine",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400001",
+    "Name": "Bonfire: Cemetery of Ash",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400002",
+    "Name": "Bonfire: Iudex Gundyr",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400003",
+    "Name": "Bonfire: Untended Graves",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400004",
+    "Name": "Bonfire: Champion Gundyr",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400010",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400120",
+    "Name": "NPC: Fire Keeper",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400130",
+    "Name": "NPC: Ludleth of Courland",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400131",
+    "Name": "NPC: Ludleth of Courland (remains)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400140",
+    "Name": "NPC: Yuria of Londor",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400150",
+    "Name": "NPC: Yoel of Londor",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400170",
+    "Name": "NPC: Hawkwood the Deserter (Firelink Shrine)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400171",
+    "Name": "NPC: Hawkwood the Deserter (remains)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400172",
+    "Name": "Interactable: Legion Etiquette Gesture Pickup",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400180",
+    "Name": "NPC: Sirris of the Sunless Realms",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400190",
+    "Name": "NPC: Ringfinger Leonhard",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400200",
+    "Name": "NPC: Blacksmith Andre",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400210",
+    "Name": "NPC: Shrine Handmaid (Firelink Shrine)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400211",
+    "Name": "NPC: Shrine Handmaid (Untended Graves)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400220",
+    "Name": "NPC: Greirat of the Undead Settlement",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400230",
+    "Name": "NPC: Orbeck of Vinheim",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400240",
+    "Name": "NPC: Cornyx of the Great Swamp",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400250",
+    "Name": "NPC: Karla",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400260",
+    "Name": "NPC: Irina of Carim (Firelink Shrine)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400261",
+    "Name": "NPC: Irina of Carim (Iudex Gundyr arena)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400262",
+    "Name": "NPC: Irina of Carim (Fire Keeper Tower)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400270",
+    "Name": "NPC: Eygon of Carim (Firelink Shrine)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400271",
+    "Name": "NPC: Eygon of Carim (Iudex Gundyr arena)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400290",
+    "Name": "NPC: Anri of Astora (male)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400295",
+    "Name": "NPC: Anri of Astora (female)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400300",
+    "Name": "NPC: Unbreakable Patches (Tower walkway)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400301",
+    "Name": "NPC: Unbreakable Patches (Firelink Shrine)",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400360",
+    "Name": "NPC: Horace the Hushed",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400390",
+    "Name": "NPC: Pickle Pee, Pump-a-Rum",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400500",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400790",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400791",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400792",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400900",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400901",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400902",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400903",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400904",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400905",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400906",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400907",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400908",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "400909",
+    "Name": "Unused",
+    "Tags": [
+      "m40_00_00_00"
+    ]
+  },
+  {
+    "ID": "410000",
+    "Name": "Bonfire: Unused",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "410001",
+    "Name": "Bonfire: Kiln of the First Flame",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "410002",
+    "Name": "Bonfire: The First Flame",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "410010",
+    "Name": "Bonfire: Flameless Shrine",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "410120",
+    "Name": "NPC: Fire Keeper",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "410990",
+    "Name": "Interactable: Begin New Journey Prompt",
+    "Tags": [
+      "m41_00_00_00"
+    ]
+  },
+  {
+    "ID": "450000",
+    "Name": "Bonfire: Sister Friede",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450001",
+    "Name": "Bonfire: Snowfield",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450002",
+    "Name": "Bonfire: Rope Bridge Cave",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450003",
+    "Name": "Bonfire: Corvian Settlement",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450004",
+    "Name": "Bonfire: Snowy Mountain Pass",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450005",
+    "Name": "Bonfire: Ariandel Chapel",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450006",
+    "Name": "Bonfire: Champion's Gravetender",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450007",
+    "Name": "Bonfire: Depths of the Painting",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450520",
+    "Name": "NPC: Sir Vilhelm (Ariandel Chapel)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450521",
+    "Name": "NPC: Sir Vilhelm (Settlement House)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450530",
+    "Name": "NPC: The Painter (Ariandel Chapel)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450531",
+    "Name": "NPC: The Painter (Settlement House)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450540",
+    "Name": "NPC: Forlorn Corvian Settler (Inside)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450541",
+    "Name": "NPC: Forlorn Corvian Settler (Outside)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450550",
+    "Name": "NPC: Sister Friede (Ariandel Chapel)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450551",
+    "Name": "NPC: Sister Friede (Bossfight)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450552",
+    "Name": "NPC: Blackflame Friede (Bossfight)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450560",
+    "Name": "NPC: Father Ariandel (Passive)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450561",
+    "Name": "NPC: Father Ariandel (Bossfight)",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "450590",
+    "Name": "NPC: Drowsy Forlorn",
+    "Tags": [
+      "m45_00_00_00"
+    ]
+  },
+  {
+    "ID": "500000",
+    "Name": "Bonfire: The Demon Prince",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500001",
+    "Name": "Bonfire: The Dreg Heap",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500002",
+    "Name": "Bonfire: Earthen Peak Ruins",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500003",
+    "Name": "Bonfire: Within the Earthen Peak Ruins",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500004",
+    "Name": "Bonfire: Unused",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500730",
+    "Name": "NPC: Amnesiac Lapp (Lothric Remnants)",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500731",
+    "Name": "NPC: Amnesiac Lapp (Earthen Peak Remnants 1)",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500732",
+    "Name": "NPC: Amnesiac Lapp (Earthen Peak Remnants 2)",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "500760",
+    "Name": "NPC: Stone-humped Hag",
+    "Tags": [
+      "m50_00_00_00"
+    ]
+  },
+  {
+    "ID": "510000",
+    "Name": "Bonfire: Church of Filianore",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510001",
+    "Name": "Bonfire: Darkeater Midir",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510002",
+    "Name": "Bonfire: Mausoleum Lookout",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510003",
+    "Name": "Bonfire: Ringed Inner Wall",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510004",
+    "Name": "Bonfire: Ringed City Streets",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510005",
+    "Name": "Bonfire: Shared Grave",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510020",
+    "Name": "Interactable: Divine Spear Monument",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510021",
+    "Name": "Interactable: Purging Monument",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510730",
+    "Name": "NPC: Amnesiac Lapp (Ringed Inner Wall)",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510731",
+    "Name": "NPC: Amnesiac Lapp (Above Ringed City Streets)",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510732",
+    "Name": "NPC: Amnesiac Lapp (near Shared Grave",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510740",
+    "Name": "NPC: Shira, Knight of Filianore",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510750",
+    "Name": "NPC: Locust Preacher (near Ringed Inner Wall)",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510751",
+    "Name": "NPC: Locust Preacher (in swamp)",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510752",
+    "Name": "NPC: Locust Preacher (near Ringed City Streets)",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510770",
+    "Name": "NPC: Pygmy Lord",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "510780",
+    "Name": "NPC: Judicator Argo",
+    "Tags": [
+      "m51_00_00_00"
+    ]
+  },
+  {
+    "ID": "511000",
+    "Name": "Bonfire: Slave Knight Gael",
+    "Tags": [
+      "m51_01_00_00"
+    ]
+  },
+  {
+    "ID": "511001",
+    "Name": "Bonfire: Filianore's Rest",
+    "Tags": [
+      "m51_01_00_00"
+    ]
+  },
+  {
+    "ID": "511740",
+    "Name": "NPC: Shira, Knight of Filianore",
+    "Tags": [
+      "m51_01_00_00"
+    ]
+  },
+  {
+    "ID": "511770",
+    "Name": "NPC: Pygmy Lord",
+    "Tags": [
+      "m51_01_00_00"
+    ]
+  }
+]

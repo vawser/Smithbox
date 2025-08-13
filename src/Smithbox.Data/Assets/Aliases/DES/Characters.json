@@ -1,0 +1,653 @@
+[
+  {
+    "ID": "c0000",
+    "Name": "Player",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1000",
+    "Name": "Serpent Soldier (Sword)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1001",
+    "Name": "Serpent Soldier (Archer)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1020",
+    "Name": "Dragon God",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1030",
+    "Name": "Vanguard",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1040",
+    "Name": "Crocodile",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1070",
+    "Name": "Deer (Male)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c1080",
+    "Name": "Deer (Female)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2000",
+    "Name": "Dregling",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2005",
+    "Name": "Slave Trader",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2010",
+    "Name": "Boletaria Soldier",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2011",
+    "Name": "Boletaria Soldier",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2020",
+    "Name": "Knight",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2030",
+    "Name": "Imperial Spy",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2040",
+    "Name": "Wolf Warrior",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2050",
+    "Name": "Bear Warrior",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2060",
+    "Name": "Hyena Warrior",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2070",
+    "Name": "Prisoner",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2075",
+    "Name": "Prisoner Horde",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2080",
+    "Name": "Fat Official",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2090",
+    "Name": "Once Royal Mistress",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2100",
+    "Name": "Depraved One",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2101",
+    "Name": "Giant Depraved One",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2110",
+    "Name": "Scale Miner",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2120",
+    "Name": "Shadowlurker",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2130",
+    "Name": "Shadowlurker (Female)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c2140",
+    "Name": "Owl Warrior",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3010",
+    "Name": "Dog",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3020",
+    "Name": "Wolf",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3030",
+    "Name": "Hawk",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3040",
+    "Name": "Maneater",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3050",
+    "Name": "Gargoyle",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3060",
+    "Name": "Rat",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3070",
+    "Name": "Phosphorescent Slug",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3080",
+    "Name": "Poison Jelly",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3090",
+    "Name": "Mosquito",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3100",
+    "Name": "Rock Worm",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3110",
+    "Name": "Crystal Lizard",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3130",
+    "Name": "Bearbug",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3131",
+    "Name": "Bearbug",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3132",
+    "Name": "Flying Bearbug",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3133",
+    "Name": "Bearbug",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3140",
+    "Name": "Shadow Bird",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3160",
+    "Name": "Mind Flayer",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3170",
+    "Name": "Chomper",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c3180",
+    "Name": "Giant Tick",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4000",
+    "Name": "King Allant",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4010",
+    "Name": "Reaper",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4020",
+    "Name": "Skeleton (Gold)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4021",
+    "Name": "Skeleton (Silver)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4022",
+    "Name": "Skeleton (Black)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4030",
+    "Name": "Mind Flayer",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4040",
+    "Name": "Filthy One",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4050",
+    "Name": "Flamelurker",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c4060",
+    "Name": "Yeti Monster",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5000",
+    "Name": "Hoplite",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5001",
+    "Name": "Phalanx",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5009",
+    "Name": "Hoplite",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5010",
+    "Name": "Tower Knight",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5020",
+    "Name": "Penetrator",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5030",
+    "Name": "Storm King",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5031",
+    "Name": "Storm Beast (Sting Ray)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5040",
+    "Name": "Adjudicator",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5050",
+    "Name": "Mind Flayer",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5060",
+    "Name": "Fool's Idol",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5070",
+    "Name": "Man Centipede",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5080",
+    "Name": "Dirty Colossus",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5090",
+    "Name": "Leechmonger",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5100",
+    "Name": "Armor Spider",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5110",
+    "Name": "Primeval Demon",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5120",
+    "Name": "Blue Dragon / Wyvern",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c5130",
+    "Name": "Red Dragon / Wyvern",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6000",
+    "Name": "Old One",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6020",
+    "Name": "Old Hero",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6030",
+    "Name": "Old Monk",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6031",
+    "Name": "Old Monk",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6032",
+    "Name": "Old Monk's Flying Robe (cutscene)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6040",
+    "Name": "Maiden Astraea",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6041",
+    "Name": "Plague Baby",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c6050",
+    "Name": "Dragon God",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7050",
+    "Name": "NPC Male in Leather Armor Set",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7080",
+    "Name": "The Monumental",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7090",
+    "Name": "Unknown NPC with Monocle",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7100",
+    "Name": "Filthy Man Vendor",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7105",
+    "Name": "Filthy Man Vendor (Ghost)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7110",
+    "Name": "Filthy Woman",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7115",
+    "Name": "Filthy Woman (Ghost)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7120",
+    "Name": "Child",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7130",
+    "Name": "Blacksmith Boldwin",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7131",
+    "Name": "Blacksmith Ed",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7135",
+    "Name": "Blacksmith (Ghost)",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7150",
+    "Name": "Maiden in Black",
+    "Tags": [
+      "default"
+    ]
+  },
+  {
+    "ID": "c7230",
+    "Name": "False King Allant",
+    "Tags": [
+      "default"
+    ]
+  }
+]

@@ -1,0 +1,555 @@
+[
+  {
+    "ID": "default",
+    "Name": "Default",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "eclipse",
+    "Name": "Eclipse",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "empty",
+    "Name": "Empty",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m30_00",
+    "Name": "High Wall of Lothric",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m30_01",
+    "Name": "Lothric Castle",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m31_00",
+    "Name": "Undead Settlement",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m32_00",
+    "Name": "Archdragon Peak",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m33_00",
+    "Name": "Farron Keep",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m34_01",
+    "Name": "Grand Archives",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m35_00",
+    "Name": "Cathedral of the Deep",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m37_00",
+    "Name": "Irithyll of the Boreal Valley",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m38_00",
+    "Name": "Catacombs of Carthus",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m39_00",
+    "Name": "Irithyll Dungeon",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m40_00",
+    "Name": "Cemetery of Ash",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m41_00",
+    "Name": "Kiln of Flame",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m45_00",
+    "Name": "Ariandel",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m46_00",
+    "Name": "Arena - Grand Roof",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m47_00",
+    "Name": "Arena - Kiln of Flame",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m50_00",
+    "Name": "Dreg Heap",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m51_00",
+    "Name": "Ringed City",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m51_01",
+    "Name": "Filianore's Rest",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m53_00",
+    "Name": "Arena - Dragon Ruins",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "m54_00",
+    "Name": "Arena - Round Plaza",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "s30_00_0000",
+    "Name": "Cutscene: Raise the Banner",
+    "Tags": [
+      "High Wall of Lothric"
+    ]
+  },
+  {
+    "ID": "s30_00_0010",
+    "Name": "Cutscene: Dancer Introduction",
+    "Tags": [
+      "High Wall of Lothric"
+    ]
+  },
+  {
+    "ID": "s30_00_0020",
+    "Name": "Cutscene: Placing Basin of Vows",
+    "Tags": [
+      "High Wall of Lothric"
+    ]
+  },
+  {
+    "ID": "s30_00_0030",
+    "Name": "Cutscene: Vordt Introduction",
+    "Tags": [
+      "High Wall of Lothric"
+    ]
+  },
+  {
+    "ID": "s30_00_0040",
+    "Name": "Cutscene: Oceiros Introduction",
+    "Tags": [
+      "High Wall of Lothric"
+    ]
+  },
+  {
+    "ID": "s30_00_9000",
+    "Name": "Cutscene: High Wall of Lothric",
+    "Tags": [
+      ""
+    ]
+  },
+  {
+    "ID": "s31_00_0000",
+    "Name": "Cutscene: Cage to the Pit of Hollows",
+    "Tags": [
+      "Undead Settlement"
+    ]
+  },
+  {
+    "ID": "s31_00_0010",
+    "Name": "Cutscene: Raise the Banner",
+    "Tags": [
+      "Undead Settlement"
+    ]
+  },
+  {
+    "ID": "s32_00_0000",
+    "Name": "Cutscene: Nameless King Bell",
+    "Tags": [
+      "Archdragon Peak"
+    ]
+  },
+  {
+    "ID": "s32_00_0010",
+    "Name": "Cutscene: Nameless King - Phase 2",
+    "Tags": [
+      "Archdragon Peak"
+    ]
+  },
+  {
+    "ID": "s32_00_0020",
+    "Name": "Cutscene: Nameless King - Victory",
+    "Tags": [
+      "Archdragon Peak"
+    ]
+  },
+  {
+    "ID": "s32_00_0030",
+    "Name": "Cutscene: Teleport to Mausoleum",
+    "Tags": [
+      "Archdragon Peak"
+    ]
+  },
+  {
+    "ID": "s33_00_0000",
+    "Name": "Cutscene: Abyss Watchers - Phase 2",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0010",
+    "Name": "Cutscene: Abyss Watchers Introduction",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0020",
+    "Name": "Cutscene: Extinguish Gate Flame 1",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0021",
+    "Name": "Cutscene: Extinguish Gate Flame 2",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0022",
+    "Name": "Cutscene: Extinguish Gate Flame 3",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0030",
+    "Name": "Cutscene: Gate Flame 1",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0031",
+    "Name": "Cutscene: Gate Flame 2",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0032",
+    "Name": "Cutscene: Gate Flame 3",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0040",
+    "Name": "Cutscene: Keep Gate Opens",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0041",
+    "Name": "Cutscene: Keep Gate Opens",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s33_00_0042",
+    "Name": "Cutscene: Keep Gate Opens",
+    "Tags": [
+      "Farron Keep"
+    ]
+  },
+  {
+    "ID": "s34_01_0000",
+    "Name": "Cutscene: Twin Princes - Phase 2",
+    "Tags": [
+      "Grand Archives"
+    ]
+  },
+  {
+    "ID": "s34_01_0010",
+    "Name": "Cutscene: Twin Princes Introduction",
+    "Tags": [
+      "Grand Archives"
+    ]
+  },
+  {
+    "ID": "s35_00_0000",
+    "Name": "Cutscene: Tricked by Patches (Wrench)",
+    "Tags": [
+      "Cathedral of the Deep"
+    ]
+  },
+  {
+    "ID": "s35_00_0001",
+    "Name": "Cutscene: Trucked by Patches (Nun)",
+    "Tags": [
+      "Cathedral of the Deep"
+    ]
+  },
+  {
+    "ID": "s35_00_0050",
+    "Name": "Cutscene: Sent to Ariandel by Gael",
+    "Tags": [
+      "Cathedral of the Deep"
+    ]
+  },
+  {
+    "ID": "s35_00_0051",
+    "Name": "Cutscene: Touching Painting Scrap",
+    "Tags": [
+      "Cathedral of the Deep"
+    ]
+  },
+  {
+    "ID": "s37_00_0020",
+    "Name": "Cutscene: Anri Wedding Scene",
+    "Tags": [
+      "Irithyll of the Boreal Valley"
+    ]
+  },
+  {
+    "ID": "s37_00_0021",
+    "Name": "Cutscene: Anri Wedding Scene",
+    "Tags": [
+      "Irithyll of the Boreal Valley"
+    ]
+  },
+  {
+    "ID": "s37_00_0030",
+    "Name": "Cutscene: Aldrich Victory - Warp to Lothric Castle",
+    "Tags": [
+      "Irithyll of the Boreal Valley"
+    ]
+  },
+  {
+    "ID": "s38_00_0030",
+    "Name": "Cutscene: Long Fade",
+    "Tags": [
+      "Catacombs of Carthus"
+    ]
+  },
+  {
+    "ID": "s38_00_0000",
+    "Name": "Cutscene: Entering Wolnir's Arena",
+    "Tags": [
+      "Catacombs of Carthus"
+    ]
+  },
+  {
+    "ID": "s38_00_0010",
+    "Name": "Cutscene: Entering Wolnir's Arena",
+    "Tags": [
+      "Catacombs of Carthus"
+    ]
+  },
+  {
+    "ID": "s38_00_0020",
+    "Name": "Cutscene: Leaving Wolnir's Arena",
+    "Tags": [
+      "Catacombs of Carthus"
+    ]
+  },
+  {
+    "ID": "s39_00_0010",
+    "Name": "Cutscene: Way of the Dragon",
+    "Tags": [
+      "Irithyll Dungeon"
+    ]
+  },
+  {
+    "ID": "s39_00_0020",
+    "Name": "Cutscene: Yhorm Fight with Siegward",
+    "Tags": [
+      "Irithyll Dungeon"
+    ]
+  },
+  {
+    "ID": "s39_00_0030",
+    "Name": "Cutscene: Yhorm Victory - Warp to Lothric Castle",
+    "Tags": [
+      "Irithyll Dungeon"
+    ]
+  },
+  {
+    "ID": "s40_00_0020",
+    "Name": "Cutscene: Lords of Cinder Defeated",
+    "Tags": [
+      "Firelink Shrine"
+    ]
+  },
+  {
+    "ID": "s40_00_0021",
+    "Name": "Cutscene: Lords of Cinder Defeated",
+    "Tags": [
+      "Firelink Shrine"
+    ]
+  },
+  {
+    "ID": "s40_00_0040",
+    "Name": "Cutscene: Exit from Grave",
+    "Tags": [
+      "Firelink Shrine"
+    ]
+  },
+  {
+    "ID": "s41_00_0000",
+    "Name": "Cutscene: Link Fire Ending",
+    "Tags": [
+      "Kiln of Flame"
+    ]
+  },
+  {
+    "ID": "s41_00_0050",
+    "Name": "Cutscene: Usurption of the Fire Ending",
+    "Tags": [
+      "Kiln of Flame"
+    ]
+  },
+  {
+    "ID": "s41_00_0051",
+    "Name": "Cutscene: Usurption of the Fire Ending",
+    "Tags": [
+      "Kiln of Flame"
+    ]
+  },
+  {
+    "ID": "s41_00_0060",
+    "Name": "Cutscene: End of Fire Ending",
+    "Tags": [
+      "Kiln of Flame"
+    ]
+  },
+  {
+    "ID": "s41_00_0070",
+    "Name": "Cutscene: Unkindled Ending",
+    "Tags": [
+      "Kiln of Flame"
+    ]
+  },
+  {
+    "ID": "s45_00_0000",
+    "Name": "Cutscene: Sister Friede Introduction",
+    "Tags": [
+      "Ariandel"
+    ]
+  },
+  {
+    "ID": "s45_00_0010",
+    "Name": "Cutscene: Father Ariandel Introduction",
+    "Tags": [
+      "Ariandel"
+    ]
+  },
+  {
+    "ID": "s45_00_0030",
+    "Name": "Cutscene: Way to Father Ariandel (With Friede)",
+    "Tags": [
+      "Ariandel"
+    ]
+  },
+  {
+    "ID": "s45_00_0031",
+    "Name": "Cutscene: Way to Father Ariandel (Without Friede)",
+    "Tags": [
+      "Ariandel"
+    ]
+  },
+  {
+    "ID": "s51_00_0000",
+    "Name": "Cutscene: Dreg Heap Banner",
+    "Tags": [
+      "Ringed City"
+    ]
+  },
+  {
+    "ID": "s51_00_0010",
+    "Name": "Cutscene: Patches Kick",
+    "Tags": [
+      "Ringed City"
+    ]
+  },
+  {
+    "ID": "s51_01_0000",
+    "Name": "Cutscene: Filianore Introduction",
+    "Tags": [
+      "Filianore's Rest"
+    ]
+  },
+  {
+    "ID": "s51_01_0005",
+    "Name": "Cutscene: Slave Knight Gael - Phase 1",
+    "Tags": [
+      "Filianore's Rest"
+    ]
+  },
+  {
+    "ID": "s51_01_0010",
+    "Name": "Cutscene: Slave Knight Gael - Phase 2",
+    "Tags": [
+      "Filianore's Rest"
+    ]
+  }
+]

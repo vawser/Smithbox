@@ -25,6 +25,13 @@ public static class AliasUtils
         return alias?.Name ?? string.Empty;
     }
 
+    public static string GetAliasName(this ProjectEntry project, AliasType aliasType, string id)
+    {
+        if (!project.Aliases.TryGetValue(aliasType, out var aliases)) return string.Empty;
+        var alias = aliases.FirstOrDefault(e => e.ID == id);
+        return alias?.Name ?? string.Empty;
+    }
+
     public static void AliasTooltip(List<string> aliases, string title)
     {
         var lines = string.Join("\n- ", aliases);
@@ -52,78 +59,41 @@ public static class AliasUtils
 
     public static string GetMapNameAlias(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.MapNames)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Name;
-            }
-        }
-
-        return "";
+        project.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static List<string> GetMapTags(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.MapNames)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Tags;
-            }
-        }
+        project.Aliases.TryGetValue(AliasType.MapNames, out var aliases);
+
+        var alias = aliases?.FirstOrDefault(e => e.ID == name);
+        if (alias != null)
+            return alias.Tags;
 
         return new List<string>();
     }
 
     public static string GetCharacterAlias(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.Characters)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Name;
-            }
-        }
-
-        return "";
+        project.Aliases.TryGetValue(AliasType.Characters, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetAssetAlias(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.Assets)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Name;
-            }
-        }
-
-        return "";
+        project.Aliases.TryGetValue(AliasType.Assets, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static string GetPartAlias(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.Parts)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Name;
-            }
-        }
-
-        return "";
+        project.Aliases.TryGetValue(AliasType.Parts, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
     public static string GetMapPieceAlias(ProjectEntry project, string name)
     {
-        foreach (var alias in project.Aliases.MapPieces)
-        {
-            if (name == alias.ID)
-            {
-                return alias.Name;
-            }
-        }
-
-        return "";
+        project.Aliases.TryGetValue(AliasType.MapPieces, out var aliases);
+        return aliases?.FirstOrDefault(e => e.ID == name)?.Name ?? string.Empty;
     }
 
     public static string GetTagListString(List<string> refTagList)
@@ -166,6 +136,8 @@ public static class AliasUtils
     // Gparam Editor
     public static string GetGparamAliasName(ProjectEntry project, string gparamName)
     {
+        if (!project.Aliases.TryGetValue(AliasType.Gparams, out var aliases)) return string.Empty;
+
         var mPrefix = gparamName;
         var sPrefix = gparamName;
 
@@ -176,7 +148,7 @@ public static class AliasUtils
             sPrefix = gparamName.Substring(0, 6).Replace("s", "m"); // Cutscene
         }
 
-        foreach (var entry in project.Aliases.Gparams)
+        foreach (var entry in aliases)
         {
             // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
             if (entry.ID == gparamName || entry.ID == mPrefix || entry.ID == sPrefix)
@@ -185,7 +157,7 @@ public static class AliasUtils
             }
         }
 
-        return "";
+        return string.Empty;
     }
 
     // Texture Viewer

@@ -19,6 +19,7 @@ using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
@@ -107,7 +108,7 @@ public class ProjectEntry
     [JsonIgnore]
     public MaterialData MaterialData;
     [JsonIgnore]
-    public GparamData GparamData; 
+    public GparamData GparamData;
     [JsonIgnore]
     public TextData TextData;
     [JsonIgnore]
@@ -222,7 +223,7 @@ public class ProjectEntry
         }
 
         /// The order of operations here is important:
-        /// 1. Externals 
+        /// 1. Externals
         /// 2. VFS
         /// 3. Aliases and other external information sources
         /// 4a. Data Bank
@@ -314,7 +315,7 @@ public class ProjectEntry
         }
 
         InitializeEditors(initType, silent);
-        
+
         Initialized = true;
         IsInitializing = false;
 
@@ -343,7 +344,7 @@ public class ProjectEntry
         FileData = null;
 
         // ---- Map Editor ----
-        if (EnableMapEditor 
+        if (EnableMapEditor
             && initType is InitType.ProjectDefined or InitType.MapEditorOnly
             && ProjectUtils.SupportsMapEditor(ProjectType))
         {
@@ -438,7 +439,7 @@ public class ProjectEntry
         }
 
         // ---- Model Editor ----
-        if (EnableModelEditor 
+        if (EnableModelEditor
             && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsModelEditor(ProjectType))
         {
@@ -483,7 +484,7 @@ public class ProjectEntry
         }
 
         // ---- Text Editor ----
-        if (EnableTextEditor 
+        if (EnableTextEditor
             && initType is InitType.ProjectDefined or InitType.TextEditorOnly
             && ProjectUtils.SupportsTextEditor(ProjectType))
         {
@@ -509,7 +510,7 @@ public class ProjectEntry
         }
 
         // ---- Param Editor ----
-        if (EnableParamEditor 
+        if (EnableParamEditor
             && initType is InitType.ProjectDefined or InitType.ParamEditorOnly
             && ProjectUtils.SupportsParamEditor(ProjectType))
         {
@@ -589,8 +590,8 @@ public class ProjectEntry
         }
 
         // ---- Graphics Param Editor ----
-        if (EnableGparamEditor 
-            && initType is InitType.ProjectDefined 
+        if (EnableGparamEditor
+            && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsGraphicsParamEditor(ProjectType))
         {
             // GPARAM Information
@@ -631,7 +632,7 @@ public class ProjectEntry
         }
 
         // ---- Material Editor ----
-        if (EnableMaterialEditor 
+        if (EnableMaterialEditor
             && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsMaterialEditor(ProjectType))
         {
@@ -676,7 +677,7 @@ public class ProjectEntry
         }
 
         // ---- Texture Viewer ----
-        if (EnableTextureViewer 
+        if (EnableTextureViewer
             && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsTextureViewer(ProjectType))
         {
@@ -702,7 +703,7 @@ public class ProjectEntry
         }
 
         // ---- File Browser ----
-        if (EnableFileBrowser 
+        if (EnableFileBrowser
             && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsFileBrowser(ProjectType))
         {
@@ -881,7 +882,7 @@ public class ProjectEntry
     }
 
     /// <summary>
-    /// Editor draw to viewport 
+    /// Editor draw to viewport
     /// </summary>
     /// <param name="device"></param>
     /// <param name="cl"></param>
@@ -1133,39 +1134,45 @@ public class ProjectEntry
 
         Aliases = new();
 
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType));
-        var sourceFile = Path.Combine(sourceFolder, "Aliases.json");
+        HashSet<string> sourceDirectories =
+        [
+            Path.Join(AppContext.BaseDirectory,"Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType)),
+            Path.Join(ProjectPath,".smithbox","Assets","Aliases")
+        ];
 
-        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType));
-        var projectFile = Path.Combine(projectFolder, "Aliases.json");
+        List<string> sourceFiles = sourceDirectories.Select(dir => Directory.GetFiles(dir, "*.json")).SelectMany(f => f).ToList();
 
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
+        foreach (string sourceFile in sourceFiles)
         {
             try
             {
-                var filestring = File.ReadAllText(targetFile);
-
+                if (!Enum.TryParse(Path.GetFileNameWithoutExtension(sourceFile), out AliasType type)) continue;
+                string text = File.ReadAllText(sourceFile);
                 try
                 {
-                    var options = new JsonSerializerOptions();
-                    Aliases = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.AliasStore);
+                    // var options = new JsonSerializerOptions();
+                    var entries = JsonSerializer.Deserialize(text, SmithboxSerializerContext.Default.ListAliasEntry);
+                    if (!Aliases.ContainsKey(type))
+                    {
+                        Aliases.TryAdd(type, entries);
+                        continue;
+                    }
+                    Aliases[type] = entries.UnionBy(Aliases[type], e => e.ID).ToList();
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the aliases: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the aliases: {sourceFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the aliases: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+                TaskLogs.AddLog($"[Smithbox] Failed to read the aliases: {sourceFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
+        }
+
+        foreach ((AliasType type, List<AliasEntry> entries) in Aliases)
+        {
+            Aliases[type] = entries.OrderBy(e => e.ID).ToList();
         }
 
         return true;

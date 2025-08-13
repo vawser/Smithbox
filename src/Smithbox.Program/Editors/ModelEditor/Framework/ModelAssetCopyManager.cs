@@ -15,6 +15,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using StudioCore.Core;
+using StudioCore.Formats.JSON;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -84,7 +85,7 @@ public class ModelAssetCopyManager
                 {
                     var matchChr = $"c{newChrIdStr}";
 
-                    if (Editor.Project.Aliases.Characters.Any(x => x.ID == matchChr))
+                    if (Editor.Project.Aliases.TryGetValue(AliasType.Characters, out List<AliasEntry> aliases) && aliases.Any(x => x.ID == matchChr))
                     {
                         createChr = false;
                         PlatformUtils.Instance.MessageBox($"{matchChr} already exists.", "Warning", MessageBoxButtons.OK);
@@ -242,7 +243,7 @@ public class ModelAssetCopyManager
                         NewAssetID >= 0 && NewAssetID <= 999 &&
                         NewAssetCategoryID >= 0 && NewAssetCategoryID <= 999)
                     {
-                        if (Editor.Project.Aliases.Assets.Any(x => x.ID == matchAsset))
+                        if (Editor.Project.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> aliases) && aliases.Any(x => x.ID == matchAsset))
                         {
                             createAsset = false;
                             PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
@@ -275,7 +276,7 @@ public class ModelAssetCopyManager
                     if (matchAsset != "" &&
                         NewAssetID >= 0 && NewAssetID <= 999999)
                     {
-                        if (Editor.Project.Aliases.Assets.Any(x => x.ID == matchAsset))
+                        if (Editor.Project.Aliases.TryGetValue(AliasType.Assets, out List<AliasEntry> aliases) && aliases.Any(x => x.ID == matchAsset))
                         {
                             createAsset = false;
                             PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
@@ -398,7 +399,7 @@ public class ModelAssetCopyManager
 
                 if (NewPartID >= 0 && NewPartID <= 9999)
                 {
-                    if (Editor.Project.Aliases.Parts.Any(x => x.ID == matchPart))
+                    if (Editor.Project.Aliases.TryGetValue(AliasType.Parts, out List<AliasEntry> aliases) && aliases.Any(x => x.ID == matchPart))
                     {
                         createPart = false;
                         PlatformUtils.Instance.MessageBox($"{matchPart} already exists.", "Warning", MessageBoxButtons.OK);
@@ -533,7 +534,7 @@ public class ModelAssetCopyManager
 
                 if (NewMapPieceID >= 0 && NewMapPieceID <= 999999)
                 {
-                    if (Editor.Project.Aliases.MapPieces.Any(x => x.ID == matchMapPiece))
+                    if (Editor.Project.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> aliases) && aliases.Any(x => x.ID == matchMapPiece))
                     {
                         createMapPiece = false;
                         PlatformUtils.Instance.MessageBox($"{matchMapPiece} already exists.", "Warning", MessageBoxButtons.OK);

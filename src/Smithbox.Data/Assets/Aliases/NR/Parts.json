@@ -1,0 +1,267 @@
+[
+  {
+    "ID": "bd_m_1427",
+    "Name": "Unknown",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5000",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5010",
+    "Name": "Wylder",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5020",
+    "Name": "Ironeye (with Quiver)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5025",
+    "Name": "Ironeye (without Quiver)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5030",
+    "Name": "Duchess",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5031",
+    "Name": "Duchess (Firekeeper)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5032",
+    "Name": "Duchess (Veil)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5040",
+    "Name": "Raider",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5050",
+    "Name": "Revenant",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5060",
+    "Name": "Recluse",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5070",
+    "Name": "Executor",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5100",
+    "Name": "Wylder (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5110",
+    "Name": "Guardian (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5120",
+    "Name": "Ironeye (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5130",
+    "Name": "Duchess (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5140",
+    "Name": "Raider (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5150",
+    "Name": "Revenant (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5160",
+    "Name": "Recluse (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5170",
+    "Name": "Executor (Dawn)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5200",
+    "Name": "Wylder (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5210",
+    "Name": "Guardian (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5220",
+    "Name": "Ironeye (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5230",
+    "Name": "Duchess (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5240",
+    "Name": "Raider (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5250",
+    "Name": "Revenant (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5260",
+    "Name": "Recluse (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5270",
+    "Name": "Executor (Darkness)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5300",
+    "Name": "Wylder (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5310",
+    "Name": "Guardian (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5320",
+    "Name": "Ironeye (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5330",
+    "Name": "Duchess (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5340",
+    "Name": "Raider (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5345",
+    "Name": "Raider (Remembrance) - Alt",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5350",
+    "Name": "Revenant (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5360",
+    "Name": "Recluse (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5370",
+    "Name": "Executor (Remembrance)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5500",
+    "Name": "Wylder (Abysswalker)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5510",
+    "Name": "Guardian (Sunlight Knight)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5520",
+    "Name": "Ironeye (Ringfinger)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5530",
+    "Name": "Duchess (Black Leather)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5540",
+    "Name": "Raider (Rock-like)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5550",
+    "Name": "Revenant (The Sister in the Painting)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5560",
+    "Name": "Recluse (Heretic Sorcerer)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5570",
+    "Name": "Executor (Thorns)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5600",
+    "Name": "Wylder (Lion Knight)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5610",
+    "Name": "Guardian (Wayfarer)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5620",
+    "Name": "Ironeye (Sellsword)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5630",
+    "Name": "Duchess (Wraith)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5640",
+    "Name": "Raider (Catarina)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5650",
+    "Name": "Revenant (Dragon School)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5660",
+    "Name": "Recluse (Emerald Fate)",
+    "Tags": []
+  },
+  {
+    "ID": "bd_m_5670",
+    "Name": "Executor (Sable Church)",
+    "Tags": []
+  }
+]

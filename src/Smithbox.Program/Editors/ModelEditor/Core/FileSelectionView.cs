@@ -167,7 +167,7 @@ public class FileSelectionView
             {
                 var id = entry.Filename;
 
-                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Characters, id);
+                var aliasName = Editor.Project.GetAliasName(AliasType.Characters, id);
 
                 if (FilterSelectionList(id, aliasName))
                 {
@@ -231,7 +231,7 @@ public class FileSelectionView
         {
             var id = entry.Filename;
 
-            var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Assets, id);
+            var aliasName = Editor.Project.GetAliasName(AliasType.Assets, id);
 
             if (FilterSelectionList(id, aliasName))
             {
@@ -308,7 +308,7 @@ public class FileSelectionView
             {
                 var id = entry.Filename;
 
-                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Parts, id);
+                var aliasName = Editor.Project.GetAliasName(AliasType.Parts, id);
 
                 if (FilterSelectionList(id, aliasName))
                 {
@@ -394,7 +394,7 @@ public class FileSelectionView
                 if (!id.StartsWith(map))
                     continue;
 
-                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.MapPieces, id);
+                var aliasName = Editor.Project.GetAliasName(AliasType.MapPieces, id);
 
                 var mapPieceName = id.Replace(map, "m");
 
