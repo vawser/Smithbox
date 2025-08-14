@@ -62,6 +62,11 @@
     Wiki="The ID in ChrActivateConditionParam that affects enemy appearance conditions."
     ParamRef="ChrActivateConditionParam" />
     
+    <UnkSpEffectSetParamID
+    AltName="Unkown SpEffect Set ID"
+    Wiki="looks like condemned SpeffectSetParamID.Used in m30."
+    ParamRef="SpEffectSetParam" />
+    
     <CondemnedSpEffectSetParamID
     AltName="Condemned SpEffect Set ID"
     Wiki="A set of SpEffects applied when the region is condemned."

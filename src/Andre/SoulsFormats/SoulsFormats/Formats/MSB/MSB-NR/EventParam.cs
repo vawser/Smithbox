@@ -482,6 +482,31 @@ namespace SoulsFormats
                 public byte StartDisabled { get; set; }
 
                 /// <summary>
+                /// Unkown.
+                /// </summary>
+                public byte Treasure_Unk42 { get; set; }
+
+                /// <summary>
+                /// Unkown.
+                /// </summary>
+                public byte Treasure_Unk43 { get; set; }
+
+                /// <summary>
+                /// Unkown.
+                /// </summary>
+                public int Treasure_Unk44 { get; set; }
+
+                /// <summary>
+                /// Unkown.
+                /// </summary>
+                public short Treasure_Unk48 { get; set; }
+
+                /// <summary>
+                /// Unkown.
+                /// </summary>
+                public short Treasure_Unk4A { get; set; }
+
+                /// <summary>
                 /// Creates a Treasure with default values.
                 /// </summary>
                 public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}")
@@ -492,8 +517,6 @@ namespace SoulsFormats
                 }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
-
-                public int Unk00 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -507,9 +530,11 @@ namespace SoulsFormats
                     PickupAnimID = br.ReadInt32();
                     InChest = br.ReadByte();
                     StartDisabled = br.ReadByte();
-                    br.AssertInt16(0);
-                    Unk00 = br.ReadInt32();
-                    br.AssertInt32(0);
+                    Treasure_Unk42 = br.ReadByte();
+                    Treasure_Unk43 = br.ReadByte();
+                    Treasure_Unk44 = br.ReadInt32();
+                    Treasure_Unk48 = br.ReadInt16();
+                    Treasure_Unk4A = br.ReadInt16();
                     br.AssertInt32(0);
                 }
 
@@ -525,9 +550,11 @@ namespace SoulsFormats
                     bw.WriteInt32(PickupAnimID);
                     bw.WriteByte(InChest);
                     bw.WriteByte(StartDisabled);
-                    bw.WriteInt16(0);
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(0);
+                    bw.WriteByte(Treasure_Unk42);
+                    bw.WriteByte(Treasure_Unk43);
+                    bw.WriteInt32(Treasure_Unk44);
+                    bw.WriteInt16(Treasure_Unk48);
+                    bw.WriteInt16(Treasure_Unk4A);
                     bw.WriteInt32(0);
                 }
 
@@ -721,14 +748,24 @@ namespace SoulsFormats
                 public int ObjActID { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// StateType.
                 /// </summary>
                 public byte StateType { get; set; }
 
                 /// <summary>
                 /// Unknown.
                 /// </summary>
+                public short ObjAct_Unk0E { get; set; }
+
+                /// <summary>
+                /// EventFlagID.
+                /// </summary>
                 public uint EventFlagID { get; set; }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public int ObjAct_Unk14 { get; set; }
 
                 /// <summary>
                 /// Creates an ObjAct with default values.
@@ -749,9 +786,9 @@ namespace SoulsFormats
                     ObjActID = br.ReadInt32();
                     StateType = br.ReadByte();
                     br.AssertByte(0);
-                    br.AssertInt16(0);
+                    ObjAct_Unk0E = br.ReadInt16();
                     EventFlagID = br.ReadUInt32();
-                    br.AssertInt32(0);
+                    ObjAct_Unk14 = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                 }
@@ -763,9 +800,9 @@ namespace SoulsFormats
                     bw.WriteInt32(ObjActID);
                     bw.WriteByte(StateType);
                     bw.WriteByte(0);
-                    bw.WriteInt16(0);
+                    bw.WriteInt16(ObjAct_Unk0E);
                     bw.WriteUInt32(EventFlagID);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(ObjAct_Unk14);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
