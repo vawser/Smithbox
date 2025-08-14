@@ -345,7 +345,7 @@ typedef struct {
     int unk38; // -1
     byte unk3c; // -1
     byte unk3d <hidden=true>; Assert(!unk3d);
-    short unk3e <hidden=true>; Assert(!unk3e);
+    short unk3e; // -1
     int unk40; // 0
     int unk44; // 0
     int unk48; // 0

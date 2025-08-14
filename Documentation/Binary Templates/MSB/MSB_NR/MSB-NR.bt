@@ -30,8 +30,8 @@ LittleEndian();
 
 //------------------------------------------------
 
-typedef struct (wstring assertName, int assertVersion) {
-    ParamHeader header; Assert(header.name == assertName && header.version == assertVersion);
+typedef struct (wstring assertName) {
+    ParamHeader header; Assert(header.name == assertName);
     
     local int i <hidden=true>;
     for (i = 0; i < header.count - 1; i++) {
@@ -50,15 +50,15 @@ typedef struct (wstring assertName, int assertVersion) {
 //------------------------------------------------
 
 Header header;
-Param modelParam("MODEL_PARAM_ST", 75);
+Param modelParam("MODEL_PARAM_ST");
 FSeek(modelParam.header.nextParamOffset);
-Param eventParam("EVENT_PARAM_ST", 75);
+Param eventParam("EVENT_PARAM_ST");
 FSeek(eventParam.header.nextParamOffset);
-Param pointParam("POINT_PARAM_ST", 75);
+Param pointParam("POINT_PARAM_ST");
 FSeek(pointParam.header.nextParamOffset);
-Param routeParam("ROUTE_PARAM_ST", 75);
+Param routeParam("ROUTE_PARAM_ST");
 FSeek(routeParam.header.nextParamOffset);
-Param layerParam("LAYER_PARAM_ST", 75); Assert(layerParam.header.count == 1);
+Param layerParam("LAYER_PARAM_ST"); Assert(layerParam.header.count == 1);
 FSeek(layerParam.header.nextParamOffset);
-Param partsParam("PARTS_PARAM_ST", 75);
+Param partsParam("PARTS_PARAM_ST");
 Assert(partsParam.header.nextParamOffset == 0);

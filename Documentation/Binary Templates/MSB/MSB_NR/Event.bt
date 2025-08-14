@@ -156,13 +156,15 @@ typedef struct {
     int unk2c <hidden=true>; Assert(unk2c == -1);
     int unk30 <hidden=true>; Assert(unk30 == -1);
     int unk34 <hidden=true>; Assert(unk34 == -1);
-    int actionButtonParamId <hidden=true>; Assert(!actionButtonParamId);
+    int unk38; // -1
     int pickupAnim <hidden=true>; Assert(pickupAnim == -1);
     byte unk40; // 1
     byte unk41; Assert(IsBool(unk41));
-    short unk42 <hidden=true>; Assert(!unk42);
+    byte unk42; Assert(IsBool(unk42));
+    byte unk43; Assert(IsBool(unk43)); // 1
     int unk44; // -1
-    int unk48 <hidden=true>; Assert(!unk48);
+    short unk48; // -1
+    short unk4a;
     int unk4c <hidden=true>; Assert(!unk4c);
 } EventTreasure;
 
@@ -206,7 +208,7 @@ typedef struct {
     int objActParamId;
     int unk0c; // 5
     int eventFlagId; // 0
-    int unk14 <hidden=true>; Assert(!unk14);
+    int unk14; // -1
     int unk18 <hidden=true>; Assert(!unk18);
     int unk1C <hidden=true>; Assert(!unk1C);
 } EventObjAct;
@@ -287,4 +289,7 @@ typedef struct {
     int unk04;
     int unk08; // -1
     int unk0c;
+    if (eventParam.header.version >= 78) {
+        int unk10; // -1
+    }
 } EventTeamFight;
