@@ -4,7 +4,23 @@
   Wiki="" />
   
   <Field>
-  
+    <TargetEntityGroupID
+    AltName="Enemy Entity Group ID" />
+
+    <FirstItemLot
+    AltName="ItemLot - First"
+    ParamRef="ItemLotParam_enemy" />
+
+    <SecondItemLot
+    AltName="ItemLot - Second"
+    ParamRef="ItemLotParam_enemy" />
+
+    <LeaderEntityID
+    AltName="Leader Entity ID" />
+
+    <UnkItemLot
+    AltName="ItemLot - Unkown"
+    ParamRef="ItemLotParam_enemy" />    
   </Field>
   
   <Enums>

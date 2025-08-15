@@ -1506,25 +1506,31 @@ namespace SoulsFormats
 
                 public int TargetEntityGroupID { get; set; }
 
-                // LUA goal?
-                public int Unk04 { get; set; }
-                public int Unk08 { get; set; }
+                public int FirstItemLot { get; set; }
+                public int SecondItemLot { get; set; }
                 public int LeaderEntityID { get; set; }
+
+                /// <summary>
+                /// Added in 1.02.0
+                /// </summary>
+                public int UnkItemLot { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     TargetEntityGroupID = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
+                    FirstItemLot = br.ReadInt32();
+                    SecondItemLot = br.ReadInt32();
                     LeaderEntityID = br.ReadInt32();
+                    UnkItemLot = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(TargetEntityGroupID);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(FirstItemLot);
+                    bw.WriteInt32(SecondItemLot);
                     bw.WriteInt32(LeaderEntityID);
+                    bw.WriteInt32(UnkItemLot);
                 }
             }
 
