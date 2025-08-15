@@ -410,7 +410,7 @@ public class ProjectEntry
             initTasks.Add(InitializeFileBrowser(silent));
         }
 
-        await initTasks.ParallelForEachAsync(Task.FromResult);
+        await initTasks.ParallelForEachAsync(Task.FromResult, Environment.ProcessorCount);
     }
 
     private async Task InitializeFileBrowser(bool silent)
