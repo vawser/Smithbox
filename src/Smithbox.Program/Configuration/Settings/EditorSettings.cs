@@ -153,6 +153,10 @@ public class SystemTab
             DPI.ApplyInputWidth();
             ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
+
+            ImGui.Checkbox("Enable Collapsible Project Categories",
+                ref CFG.Current.DisplayCollapsibleProjectCategories);
+            UIHelper.Tooltip("If true, the project list is split into project type collapsible categories.");
         }
 
         if (ImGui.CollapsingHeader("Tools"))

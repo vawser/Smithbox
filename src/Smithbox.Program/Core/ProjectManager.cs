@@ -32,6 +32,8 @@ public class ProjectManager
 
     public bool IsProjectLoading = false;
 
+    public string ProjectListFilter = "";
+
     public ProjectManager(Smithbox baseEditor)
     {
         BaseEditor = baseEditor;
@@ -65,18 +67,22 @@ public class ProjectManager
 
             UIHelper.SimpleHeader("possibleProjectsHeader", "Available Projects", "The projects that are avaliable.",
                 UI.Current.ImGui_AliasName_Text);
+
+            ImGui.InputText("##projectListFilter", ref ProjectListFilter, 255);
+            UIHelper.Tooltip("Filter the project list by this term.");
+
             // Project List
-            DisplayProjectListOfType(ProjectType.DES);
-            DisplayProjectListOfType(ProjectType.DS1);
-            DisplayProjectListOfType(ProjectType.DS1R);
-            DisplayProjectListOfType(ProjectType.DS2);
-            DisplayProjectListOfType(ProjectType.DS2S);
-            DisplayProjectListOfType(ProjectType.DS3);
-            DisplayProjectListOfType(ProjectType.BB);
-            DisplayProjectListOfType(ProjectType.SDT);
-            DisplayProjectListOfType(ProjectType.ER);
-            DisplayProjectListOfType(ProjectType.AC6);
-            DisplayProjectListOfType(ProjectType.NR);
+            DisplayProjectListGroup(ProjectType.DES);
+            DisplayProjectListGroup(ProjectType.DS1);
+            DisplayProjectListGroup(ProjectType.DS1R);
+            DisplayProjectListGroup(ProjectType.DS2);
+            DisplayProjectListGroup(ProjectType.DS2S);
+            DisplayProjectListGroup(ProjectType.DS3);
+            DisplayProjectListGroup(ProjectType.BB);
+            DisplayProjectListGroup(ProjectType.SDT);
+            DisplayProjectListGroup(ProjectType.ER);
+            DisplayProjectListGroup(ProjectType.AC6);
+            DisplayProjectListGroup(ProjectType.NR);
 
             ImGui.EndMenu();
         }
@@ -109,6 +115,22 @@ public class ProjectManager
         }
     }
 
+    private void DisplayProjectListGroup(ProjectType projectType)
+    {
+        // When filtering the list, don't use the collapsible sections since it makes it harder to see the filtered results
+        if (CFG.Current.DisplayCollapsibleProjectCategories && ProjectListFilter == "")
+        {
+            if(ImGui.CollapsingHeader($"{projectType}##collapsibleSection_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                DisplayProjectListOfType(projectType);
+            }
+        }
+        else
+        {
+            DisplayProjectListOfType(projectType);
+        }
+    }
+
     private void DisplayProjectListOfType(ProjectType projectType)
     {
         var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
@@ -120,10 +142,14 @@ public class ProjectManager
                 if (project == SelectedProject)
                     continue;
 
+                if (!FilterProjectEntry(project))
+                    continue;
+
                 var imGuiID = project.ProjectGUID;
                 var projectName = $"{project.ProjectName}";
 
-                if (CFG.Current.DisplayProjectPrefix)
+                // Only display type prefix if user is not using the categories
+                if (CFG.Current.DisplayProjectPrefix && !CFG.Current.DisplayCollapsibleProjectCategories)
                 {
                     projectName = $"[{project.ProjectType}] {projectName}";
                 }
@@ -136,6 +162,21 @@ public class ProjectManager
                 }
             }
         }
+    }
+
+    private bool FilterProjectEntry(ProjectEntry curProject)
+    {
+        var projName = curProject.ProjectName;
+
+        if(ProjectListFilter != "")
+        {
+            if(!projName.ToLower().Contains(ProjectListFilter.ToLower()))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private void DisplayProjectActions(ProjectEntry curProject)

@@ -57,6 +57,11 @@ public class CFG
     /// </summary>
     public string ModEngine2Dlls = "";
 
+    /// <summary>
+    /// If true, the project list is split into project type collapsible categories
+    /// </summary>
+    public bool DisplayCollapsibleProjectCategories = true;
+
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
