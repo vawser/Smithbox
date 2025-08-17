@@ -456,11 +456,6 @@ public class CFG
     public bool RepackLooseDS2Params = false;
 
     /// <summary>
-    /// If true, then row name restore will use index matching. If false, it will use ID matching.
-    /// </summary>
-    public bool UseIndexMatchForRowNameRestore = true;
-
-    /// <summary>
     /// The delimiter character to use when exporting param data.
     /// </summary>
     public string Param_Export_Delimiter

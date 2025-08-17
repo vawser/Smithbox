@@ -704,9 +704,6 @@ public class ParamEditorTab
 
             if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Checkbox("Use index matching for row name restore", ref CFG.Current.UseIndexMatchForRowNameRestore);
-                UIHelper.Tooltip("If enabled, when row names are restored, they will be matched based on the row index, rather than ID. If disabled, row ID will be used.");
-
                 switch (curProject.ProjectType)
                 {
                     case ProjectType.DES:

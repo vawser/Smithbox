@@ -2503,27 +2503,14 @@ public class ParamBank
     }
     private static void SetParamNamesLegacy(Param param, RowNameParamLegacy rowNames)
     {
-        var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+        var rowsByID = param.Rows.ToLookup(e => e.ID);
+        var rowNamesByID = rowNames.Entries.ToLookup(e => e.ID);
 
-        for (var i = 0; i < param.Rows.Count; i++)
+        foreach (var entry in rowsByID)
         {
-            if (CFG.Current.UseIndexMatchForRowNameRestore)
+            foreach (var (row, nameEntry) in entry.Zip(rowNamesByID[entry.Key]))
             {
-                if (rowNameDict.ContainsKey(i))
-                {
-                    param.Rows[i].Name = rowNameDict[i].Name;
-                }
-            }
-            else
-            {
-                // ID may not be unique, so we will manually loop here
-                foreach (var entry in rowNames.Entries)
-                {
-                    if (entry.ID == param.Rows[i].ID)
-                    {
-                        param.Rows[i].Name = entry.Name;
-                    }
-                }
+                row.Name = nameEntry.Name;
             }
         }
     }
