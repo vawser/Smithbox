@@ -418,19 +418,19 @@
     {
       "ID": 2100,
       "Entries": [
-        ""
+        "[Blood Loss] Spawn Vicinity Bullet"
       ]
     },
     {
       "ID": 2101,
       "Entries": [
-        ""
+        "[Frostbite] Spawn Vicinity Bullet"
       ]
     },
     {
       "ID": 2105,
       "Entries": [
-        ""
+        "[Poison/Rot] Spawn Vicinity Bullet"
       ]
     },
     {
@@ -1600,13 +1600,13 @@
     {
       "ID": 180015,
       "Entries": [
-        ""
+        "[Material] Restore HP"
       ]
     },
     {
       "ID": 180016,
       "Entries": [
-        ""
+        "[Material] Restore HP"
       ]
     },
     {
@@ -1636,13 +1636,13 @@
     {
       "ID": 180030,
       "Entries": [
-        ""
+        "[Material] Boost rune acquisition"
       ]
     },
     {
       "ID": 180031,
       "Entries": [
-        ""
+        "[Material] Boost rune acquisition"
       ]
     },
     {
@@ -1660,13 +1660,13 @@
     {
       "ID": 180040,
       "Entries": [
-        ""
+        "[Material] Heal ailments"
       ]
     },
     {
       "ID": 180041,
       "Entries": [
-        ""
+        "[Material] Heal ailments"
       ]
     },
     {
@@ -1696,13 +1696,13 @@
     {
       "ID": 180055,
       "Entries": [
-        ""
+        "[Material] Summon foe-chasing vengeful spirits"
       ]
     },
     {
       "ID": 180056,
       "Entries": [
-        ""
+        "[Material] Summon foe-chasing vengeful spirits"
       ]
     },
     {
@@ -1720,25 +1720,25 @@
     {
       "ID": 180065,
       "Entries": [
-        ""
+        "[Material] Boost physical and fire damage"
       ]
     },
     {
       "ID": 180066,
       "Entries": [
-        ""
+        "[Material] Boost physical and fire damage"
       ]
     },
     {
       "ID": 180070,
       "Entries": [
-        ""
+        "[Material] Cure rot"
       ]
     },
     {
       "ID": 180071,
       "Entries": [
-        ""
+        "[Material] Cure rot"
       ]
     },
     {
@@ -1768,25 +1768,25 @@
     {
       "ID": 180085,
       "Entries": [
-        ""
+        "[Material] Restore FP"
       ]
     },
     {
       "ID": 180086,
       "Entries": [
-        ""
+        "[Material] Restore FP"
       ]
     },
     {
       "ID": 180090,
       "Entries": [
-        ""
+        "[Material] Boost damage negation"
       ]
     },
     {
       "ID": 180091,
       "Entries": [
-        ""
+        "[Material] Boost damage negation"
       ]
     },
     {
@@ -1924,7 +1924,7 @@
     {
       "ID": 290000,
       "Entries": [
-        "Revenant: Spirit Summon Spawn"
+        "[Skill - Revenant] Spirit Summon Spawn"
       ]
     },
     {
@@ -1942,67 +1942,67 @@
     {
       "ID": 200100100,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 1"
       ]
     },
     {
       "ID": 200100110,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 2"
       ]
     },
     {
       "ID": 200100120,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 3-1"
       ]
     },
     {
       "ID": 200100121,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 3-2"
       ]
     },
     {
       "ID": 200100130,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 4"
       ]
     },
     {
       "ID": 200100135,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 4 (Shockwave)"
       ]
     },
     {
       "ID": 200100150,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 1"
       ]
     },
     {
       "ID": 200100170,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-1"
       ]
     },
     {
       "ID": 200100171,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-2"
       ]
     },
     {
       "ID": 200100175,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-2 (Shockwave)"
       ]
     },
     {
       "ID": 200100200,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Dodge Attack"
       ]
     },
     {
@@ -2014,55 +2014,55 @@
     {
       "ID": 200100250,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack"
       ]
     },
     {
       "ID": 200100255,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack (Shockwave)"
       ]
     },
     {
       "ID": 200100400,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Roar"
       ]
     },
     {
       "ID": 200100405,
       "Entries": [
-        ""
+        "[Ultimate - Executor]"
       ]
     },
     {
       "ID": 200100450,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Skill Attack"
       ]
     },
     {
       "ID": 200100455,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Skill Attack (Bullet)"
       ]
     },
     {
       "ID": 200100700,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Activation Roar"
       ]
     },
     {
       "ID": 200100800,
       "Entries": [
-        ""
+        "[Relic - Executor] Roaring restores HP while Art is active"
       ]
     },
     {
       "ID": 200100990,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Body Collision"
       ]
     },
     {
@@ -2122,19 +2122,19 @@
     {
       "ID": 201200080,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
       "ID": 201200081,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
       "ID": 201200082,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
@@ -2158,7 +2158,7 @@
     {
       "ID": 201200090,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
@@ -2170,7 +2170,7 @@
     {
       "ID": 201200095,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
@@ -20686,337 +20686,337 @@
     {
       "ID": 238500100,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500101,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500102,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500103,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500110,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500111,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500112,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500113,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500120,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500130,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500140,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500141,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500150,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500151,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500152,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500153,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500154,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500155,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500156,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500157,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500158,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500159,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500160,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500170,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500171,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500172,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500173,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500180,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500190,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500200,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500201,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500210,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500211,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500220,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500221,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500230,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500231,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500300,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500310,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500311,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500320,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500330,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500340,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500350,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500360,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500361,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500370,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500371,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500380,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500381,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500390,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500391,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500400,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500401,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500410,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
       "ID": 238500420,
       "Entries": [
-        ""
+        "[Marionette]"
       ]
     },
     {
@@ -51716,6 +51716,18 @@
       ]
     },
     {
+      "ID": 249000550,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 249000551,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 249000552,
       "Entries": [
         ""
@@ -62854,337 +62866,337 @@
     {
       "ID": 278200100,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200101,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200102,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200103,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200110,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200111,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200112,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200113,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200120,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200121,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200122,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200123,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200130,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200131,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200132,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200133,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200140,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200141,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200142,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200143,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200150,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200151,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200152,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200153,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200160,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200161,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200162,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200163,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200270,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200271,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200272,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200275,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200276,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200280,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200281,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200282,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200283,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200285,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200286,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200287,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200288,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200290,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200291,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200292,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200293,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200300,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 1 Flame Aura (Red)"
       ]
     },
     {
       "ID": 278200310,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 2 Flame Aura (Red/Blue)"
       ]
     },
     {
       "ID": 278200320,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 3 Flame Aura (Blue)"
       ]
     },
     {
       "ID": 278200340,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200341,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200350,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200351,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200360,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200361,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200370,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 278200900,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
@@ -67222,25 +67234,25 @@
     {
       "ID": 910610300,
       "Entries": [
-        ""
+        "[Effect] Magic Attack Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610400,
       "Entries": [
-        ""
+        "[Effect] Fire Attack Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610500,
       "Entries": [
-        ""
+        "[Effect] Lightning Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610600,
       "Entries": [
-        ""
+        "[Effect] Holy Attack Follows Charge Attacks"
       ]
     }
   ]

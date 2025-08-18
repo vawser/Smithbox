@@ -4,37 +4,37 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "Default"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        ""
+        "No Target"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        ""
+        "Enemy and Self Target"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        ""
+        "Enemy Target"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        ""
+        "Enemy Target"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        ""
+        "Friendly Target"
       ]
     },
     {
@@ -1084,121 +1084,121 @@
     {
       "ID": 10100,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 1"
       ]
     },
     {
       "ID": 10110,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 2"
       ]
     },
     {
       "ID": 10120,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 3-1"
       ]
     },
     {
       "ID": 10121,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 3-2"
       ]
     },
     {
       "ID": 10130,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 4"
       ]
     },
     {
       "ID": 10135,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Light 4 (Shockwave)"
       ]
     },
     {
       "ID": 10150,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 1"
       ]
     },
     {
       "ID": 10170,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-1"
       ]
     },
     {
       "ID": 10171,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-2"
       ]
     },
     {
       "ID": 10175,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Heavy 2-2 (Shockwave)"
       ]
     },
     {
       "ID": 10200,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Dodge Attack"
       ]
     },
     {
       "ID": 10250,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack"
       ]
     },
     {
       "ID": 10255,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Jump Attack (Shockwave)"
       ]
     },
     {
       "ID": 10400,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Roar"
       ]
     },
     {
       "ID": 10405,
       "Entries": [
-        ""
+        "[Ultimate - Executor]"
       ]
     },
     {
       "ID": 10450,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Skill Attack"
       ]
     },
     {
       "ID": 10455,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Skill Attack (Bullet)"
       ]
     },
     {
       "ID": 10700,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Activation Roar"
       ]
     },
     {
       "ID": 10800,
       "Entries": [
-        ""
+        "[Relic - Executor] Roaring restores HP while Art is active"
       ]
     },
     {
       "ID": 10990,
       "Entries": [
-        ""
+        "[Ultimate - Executor] Body Collision"
       ]
     },
     {
@@ -1426,13 +1426,13 @@
     {
       "ID": 120069,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
       "ID": 120070,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
@@ -1444,7 +1444,7 @@
     {
       "ID": 120072,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts (Level Absorb)"
       ]
     },
     {
@@ -1486,19 +1486,19 @@
     {
       "ID": 120090,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
       "ID": 120091,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts"
       ]
     },
     {
       "ID": 120095,
       "Entries": [
-        ""
+        "[Boss Raid] Sentient Pest - Swarm of Locusts (Level Absorb)"
       ]
     },
     {
@@ -47480,6 +47480,24 @@
       ]
     },
     {
+      "ID": 4901105,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4901110,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 4901111,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 4901115,
       "Entries": [
         ""
@@ -51826,13 +51844,13 @@
     {
       "ID": 7510930,
       "Entries": [
-        ""
+        "[Adel] Apply Force Target"
       ]
     },
     {
       "ID": 7510931,
       "Entries": [
-        ""
+        "[Adel] Clear Force Target"
       ]
     },
     {
@@ -53068,13 +53086,13 @@
     {
       "ID": 7520930,
       "Entries": [
-        ""
+        "[Gnoster] Apply Force Target"
       ]
     },
     {
       "ID": 7520931,
       "Entries": [
-        ""
+        "[Gnoster] Clear Force Target"
       ]
     },
     {
@@ -56626,325 +56644,325 @@
     {
       "ID": 7820100,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820101,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820102,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820103,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820110,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820111,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820112,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820113,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820120,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820121,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820122,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820123,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820130,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820131,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820132,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820133,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820140,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820141,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820142,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820143,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820150,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820151,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820152,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820153,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820160,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820161,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820162,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820163,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820270,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820271,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820272,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820280,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820281,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820282,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820283,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820285,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820286,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820287,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820288,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820290,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820291,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820292,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820293,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820300,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 1 Flame Aura (Red)"
       ]
     },
     {
       "ID": 7820310,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 2 Flame Aura (Red/Blue)"
       ]
     },
     {
       "ID": 7820320,
       "Entries": [
-        ""
+        "[Smelter Demon] Tier 3 Flame Aura (Blue)"
       ]
     },
     {
       "ID": 7820340,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820341,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820350,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820351,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820360,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820361,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820370,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
       "ID": 7820900,
       "Entries": [
-        ""
+        "[Smelter Demon]"
       ]
     },
     {
@@ -61090,25 +61108,25 @@
     {
       "ID": 910610300,
       "Entries": [
-        ""
+        "[Effect] Magic Attack Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610400,
       "Entries": [
-        ""
+        "[Effect] Fire Attack Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610500,
       "Entries": [
-        ""
+        "[Effect] Lightning Follows Charge Attacks"
       ]
     },
     {
       "ID": 910610600,
       "Entries": [
-        ""
+        "[Effect] Holy Attack Follows Charge Attacks"
       ]
     }
   ]
