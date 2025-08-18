@@ -4,25 +4,25 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "Common Weapon"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        ""
+        "Common Weapon +1 (Blue)"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        ""
+        "Common Weapon +2 (Purple)"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        ""
+        "Common Weapon +3 (Gold)"
       ]
     },
     {
@@ -40,19 +40,19 @@
     {
       "ID": 100,
       "Entries": [
-        ""
+        "Uncommon Weapon"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        ""
+        "Uncommon Weapon +1 (Purple)"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        ""
+        "Uncommon Weapon +2 (Gold)"
       ]
     },
     {
@@ -76,13 +76,13 @@
     {
       "ID": 200,
       "Entries": [
-        ""
+        "Rare Weapon"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        ""
+        "Rare Weapon +1 (Gold)"
       ]
     },
     {

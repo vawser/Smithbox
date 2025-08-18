@@ -6670,49 +6670,49 @@
     {
       "ID": 20200,
       "Entries": [
-        ""
+        "[NPC Ironeye] Traitor"
       ]
     },
     {
       "ID": 20300,
       "Entries": [
-        ""
+        "[NPC Duchess] Priestess"
       ]
     },
     {
       "ID": 20310,
       "Entries": [
-        ""
+        "[NPC Duchess] Priestess"
       ]
     },
     {
       "ID": 20320,
       "Entries": [
-        ""
+        "[Duchess]"
       ]
     },
     {
       "ID": 20500,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 20510,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 20700,
       "Entries": [
-        ""
+        "[Executor]"
       ]
     },
     {
       "ID": 21000,
       "Entries": [
-        ""
+        "[NPC] Dead Maiden"
       ]
     },
     {
@@ -6736,13 +6736,13 @@
     {
       "ID": 25000,
       "Entries": [
-        ""
+        "[Wylder] Tutorial"
       ]
     },
     {
       "ID": 25010,
       "Entries": [
-        ""
+        "[Duchess] Tutorial"
       ]
     },
     {
@@ -6766,79 +6766,79 @@
     {
       "ID": 30000,
       "Entries": [
-        "Wylder"
+        "[Wylder] Night Assassin"
       ]
     },
     {
       "ID": 30100,
       "Entries": [
-        "Guardian"
+        "[Guardian] Night Fallen"
       ]
     },
     {
       "ID": 30200,
       "Entries": [
-        "Ironeye (with Quiver)"
+        "[Ironeye] Night Hunter"
       ]
     },
     {
       "ID": 30201,
       "Entries": [
-        "Ironeye (with Quiver)"
+        "[Ironeye] Night Hunter (Remembrance)"
       ]
     },
     {
       "ID": 30300,
       "Entries": [
-        "Duchess"
+        "[Duchess] Night Thief"
       ]
     },
     {
       "ID": 30400,
       "Entries": [
-        "Raider"
+        "[Raider] Night Raider"
       ]
     },
     {
       "ID": 30401,
       "Entries": [
-        "Raider (Remembrance)"
+        "[Raider] White Horn (Remembrance)"
       ]
     },
     {
       "ID": 30500,
       "Entries": [
-        "Revenant"
+        "[Revenant] Night Idol"
       ]
     },
     {
       "ID": 30501,
       "Entries": [
-        "Revenant"
+        "[Revenant] Unlock Fight"
       ]
     },
     {
       "ID": 30502,
       "Entries": [
-        "Revenant"
+        "[Revenant] Duchess Remembrance"
       ]
     },
     {
       "ID": 30600,
       "Entries": [
-        "Recluse"
+        "[Recluse] Night Witch"
       ]
     },
     {
       "ID": 30700,
       "Entries": [
-        "Executor"
+        "[Executor] Night Executor"
       ]
     },
     {
       "ID": 30701,
       "Entries": [
-        "Executor"
+        "[Executor] Executor's Cry (Remembrance)"
       ]
     },
     {
@@ -6862,289 +6862,289 @@
     {
       "ID": 35000,
       "Entries": [
-        ""
+        "[Wylder] Default"
       ]
     },
     {
       "ID": 35001,
       "Entries": [
-        ""
+        "[Wylder] Dawn"
       ]
     },
     {
       "ID": 35002,
       "Entries": [
-        ""
+        "[Wylder] Darkness"
       ]
     },
     {
       "ID": 35003,
       "Entries": [
-        ""
+        "[Wylder] Remembrance"
       ]
     },
     {
       "ID": 35004,
       "Entries": [
-        ""
+        "[Wylder] Abysswalker"
       ]
     },
     {
       "ID": 35005,
       "Entries": [
-        ""
+        "[Wylder] Lion Knight"
       ]
     },
     {
       "ID": 35100,
       "Entries": [
-        ""
+        "[Guardian] Default"
       ]
     },
     {
       "ID": 35101,
       "Entries": [
-        ""
+        "[Guardian] Dawn"
       ]
     },
     {
       "ID": 35102,
       "Entries": [
-        ""
+        "[Guardian] Darkness"
       ]
     },
     {
       "ID": 35103,
       "Entries": [
-        ""
+        "[Guardian] Remembrance"
       ]
     },
     {
       "ID": 35104,
       "Entries": [
-        ""
+        "[Guardian] Sunlight Knight"
       ]
     },
     {
       "ID": 35105,
       "Entries": [
-        ""
+        "[Guardian] Wayfarer"
       ]
     },
     {
       "ID": 35200,
       "Entries": [
-        ""
+        "[Ironeye] Default"
       ]
     },
     {
       "ID": 35201,
       "Entries": [
-        ""
+        "[Ironeye] Dawn"
       ]
     },
     {
       "ID": 35202,
       "Entries": [
-        ""
+        "[Ironeye] Darkness"
       ]
     },
     {
       "ID": 35203,
       "Entries": [
-        ""
+        "[Ironeye] Remembrance"
       ]
     },
     {
       "ID": 35204,
       "Entries": [
-        ""
+        "[Ironeye] Ringfinger"
       ]
     },
     {
       "ID": 35205,
       "Entries": [
-        ""
+        "[Ironeye] Sellsword"
       ]
     },
     {
       "ID": 35300,
       "Entries": [
-        ""
+        "[Duchess] Default"
       ]
     },
     {
       "ID": 35301,
       "Entries": [
-        ""
+        "[Duchess] Dawn"
       ]
     },
     {
       "ID": 35302,
       "Entries": [
-        ""
+        "[Duchess] Darkness"
       ]
     },
     {
       "ID": 35303,
       "Entries": [
-        ""
+        "[Duchess] Remembrance"
       ]
     },
     {
       "ID": 35304,
       "Entries": [
-        ""
+        "[Duchess] Black Leather"
       ]
     },
     {
       "ID": 35305,
       "Entries": [
-        ""
+        "[Duchess] Wraith"
       ]
     },
     {
       "ID": 35400,
       "Entries": [
-        ""
+        "[Raider] Default"
       ]
     },
     {
       "ID": 35401,
       "Entries": [
-        ""
+        "[Raider] Dawn"
       ]
     },
     {
       "ID": 35402,
       "Entries": [
-        ""
+        "[Raider] Darkness"
       ]
     },
     {
       "ID": 35403,
       "Entries": [
-        ""
+        "[Raider] Remembrance"
       ]
     },
     {
       "ID": 35404,
       "Entries": [
-        ""
+        "[Raider] Rock-like"
       ]
     },
     {
       "ID": 35405,
       "Entries": [
-        ""
+        "[Raider] Catarina"
       ]
     },
     {
       "ID": 35500,
       "Entries": [
-        ""
+        "[Revenant] Default"
       ]
     },
     {
       "ID": 35501,
       "Entries": [
-        ""
+        "[Revenant] Dawn"
       ]
     },
     {
       "ID": 35502,
       "Entries": [
-        ""
+        "[Revenant] Darkness"
       ]
     },
     {
       "ID": 35503,
       "Entries": [
-        ""
+        "[Revenant] Remembrance"
       ]
     },
     {
       "ID": 35504,
       "Entries": [
-        ""
+        "[Revenant] The Sister in the Painting"
       ]
     },
     {
       "ID": 35505,
       "Entries": [
-        ""
+        "[Revenant] Dragon School"
       ]
     },
     {
       "ID": 35600,
       "Entries": [
-        ""
+        "[Recluse] Default"
       ]
     },
     {
       "ID": 35601,
       "Entries": [
-        ""
+        "[Recluse] Dawn"
       ]
     },
     {
       "ID": 35602,
       "Entries": [
-        ""
+        "[Recluse] Darkness"
       ]
     },
     {
       "ID": 35603,
       "Entries": [
-        ""
+        "[Recluse] Remembrance"
       ]
     },
     {
       "ID": 35604,
       "Entries": [
-        ""
+        "[Recluse] Heretic Sorcerer"
       ]
     },
     {
       "ID": 35605,
       "Entries": [
-        ""
+        "[Recluse] Emerald Fate"
       ]
     },
     {
       "ID": 35700,
       "Entries": [
-        ""
+        "[Executor] Default"
       ]
     },
     {
       "ID": 35701,
       "Entries": [
-        ""
+        "[Executor] Dawn"
       ]
     },
     {
       "ID": 35702,
       "Entries": [
-        ""
+        "[Executor] Darkness"
       ]
     },
     {
       "ID": 35703,
       "Entries": [
-        ""
+        "[Executor] Remembrance"
       ]
     },
     {
       "ID": 35704,
       "Entries": [
-        ""
+        "[Executor] Thorns"
       ]
     },
     {
       "ID": 35705,
       "Entries": [
-        ""
+        "[Executor] Sable Church"
       ]
     },
     {
@@ -7168,145 +7168,145 @@
     {
       "ID": 40100,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40101,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40102,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40200,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 40201,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 40202,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 40300,
       "Entries": [
-        ""
+        "[Ironeye]"
       ]
     },
     {
       "ID": 40301,
       "Entries": [
-        ""
+        "[Ironeye]"
       ]
     },
     {
       "ID": 40302,
       "Entries": [
-        ""
+        "[Ironeye]"
       ]
     },
     {
       "ID": 40400,
       "Entries": [
-        ""
+        "[Duchess]"
       ]
     },
     {
       "ID": 40401,
       "Entries": [
-        ""
+        "[Duchess]"
       ]
     },
     {
       "ID": 40402,
       "Entries": [
-        ""
+        "[Duchess]"
       ]
     },
     {
       "ID": 40500,
       "Entries": [
-        ""
+        "[Raider]"
       ]
     },
     {
       "ID": 40501,
       "Entries": [
-        ""
+        "[Raider]"
       ]
     },
     {
       "ID": 40502,
       "Entries": [
-        ""
+        "[Raider]"
       ]
     },
     {
       "ID": 40600,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 40601,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 40602,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 40700,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40701,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40702,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 40800,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 40801,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 40802,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
@@ -7330,295 +7330,295 @@
     {
       "ID": 50000,
       "Entries": [
-        "Player: Wylder"
+        "[Player - Wylder] Default"
       ]
     },
     {
       "ID": 50010,
       "Entries": [
-        "Player: Wylder (Dawn)"
+        "[Player - Wylder] Dawn"
       ]
     },
     {
       "ID": 50020,
       "Entries": [
-        "Player: Wylder (Darkness)"
+        "[Player - Wylder] Darkness"
       ]
     },
     {
       "ID": 50030,
       "Entries": [
-        "Player: Wylder (Remembrance)"
+        "[Player - Wylder] Remembrance"
       ]
     },
     {
       "ID": 50050,
       "Entries": [
-        "Player: Wylder (Abysswalker)"
+        "[Player - Wylder] Abysswalker"
       ]
     },
     {
       "ID": 50060,
       "Entries": [
-        "Player: Wylder (Lion Knight)"
+        "[Player - Wylder] Lion Knight"
       ]
     },
     {
       "ID": 50100,
       "Entries": [
-        "Player: Guardian"
+        "[Player - Guardian] Default"
       ]
     },
     {
       "ID": 50110,
       "Entries": [
-        "Player: Guardian (Dawn)"
+        "[Player - Guardian] Dawn"
       ]
     },
     {
       "ID": 50120,
       "Entries": [
-        "Player: Guardian (Darkness)"
+        "[Player - Guardian] Darkness"
       ]
     },
     {
       "ID": 50130,
       "Entries": [
-        "Player: Guardian (Remembrance)"
+        "[Player - Guardian] Remembrance"
       ]
     },
     {
       "ID": 50150,
       "Entries": [
-        "Player: Guardian (Sunlight Knight)"
+        "[Player - Guardian] Sunlight Knight"
       ]
     },
     {
       "ID": 50160,
       "Entries": [
-        "Player: Guardian (Wayfarer)"
+        "[Player - Guardian] Wayfarer"
       ]
     },
     {
       "ID": 50200,
       "Entries": [
-        "Player: Ironeye (with Quiver)"
+        "[Player - Ironeye] Default"
       ]
     },
     {
       "ID": 50210,
       "Entries": [
-        "Player: Ironeye (Dawn)"
+        "[Player - Ironeye] Dawn"
       ]
     },
     {
       "ID": 50220,
       "Entries": [
-        "Player: Ironeye (Darkness)"
+        "[Player - Ironeye] Darkness"
       ]
     },
     {
       "ID": 50230,
       "Entries": [
-        "Player: Ironeye (Remembrance)"
+        "[Player - Ironeye] Remembrance"
       ]
     },
     {
       "ID": 50250,
       "Entries": [
-        "Player: Ironeye (Ringfinger)"
+        "[Player - Ironeye] Ringfinger"
       ]
     },
     {
       "ID": 50260,
       "Entries": [
-        "Player: Ironeye (Sellsword)"
+        "[Player - Ironeye] Sellsword"
       ]
     },
     {
       "ID": 50300,
       "Entries": [
-        "Player: Duchess"
+        "[Player - Duchess] Default"
       ]
     },
     {
       "ID": 50310,
       "Entries": [
-        "Player: Duchess (Dawn)"
+        "[Player - Duchess] Dawn"
       ]
     },
     {
       "ID": 50320,
       "Entries": [
-        "Player: Duchess (Darkness)"
+        "[Player - Duchess] Darkness"
       ]
     },
     {
       "ID": 50330,
       "Entries": [
-        "Player: Duchess (Remembrance)"
+        "[Player - Duchess] Remembrance"
       ]
     },
     {
       "ID": 50350,
       "Entries": [
-        "Player: Duchess (Black Leather)"
+        "[Player - Duchess] Black Leather"
       ]
     },
     {
       "ID": 50360,
       "Entries": [
-        "Player: Duchess (Wraith)"
+        "[Player - Duchess] Wraith"
       ]
     },
     {
       "ID": 50400,
       "Entries": [
-        "Player: Raider"
+        "[Player - Raider] Default"
       ]
     },
     {
       "ID": 50410,
       "Entries": [
-        "Player: Raider (Dawn)"
+        "[Player - Raider] Dawn"
       ]
     },
     {
       "ID": 50420,
       "Entries": [
-        "Player: Raider (Darkness)"
+        "[Player - Raider] Darkness"
       ]
     },
     {
       "ID": 50430,
       "Entries": [
-        "Player: Raider (Remembrance)"
+        "[Player - Raider] Remembrance"
       ]
     },
     {
       "ID": 50450,
       "Entries": [
-        "Player: Raider (Rock-like)"
+        "[Player - Raider] Rock-like"
       ]
     },
     {
       "ID": 50460,
       "Entries": [
-        "Player: Raider (Catarina)"
+        "[Player - Raider] Catarina"
       ]
     },
     {
       "ID": 50500,
       "Entries": [
-        "Player: Revenant"
+        "[Player - Revenant] Default"
       ]
     },
     {
       "ID": 50510,
       "Entries": [
-        "Player: Revenant (Dawn)"
+        "[Player - Revenant] Dawn"
       ]
     },
     {
       "ID": 50520,
       "Entries": [
-        "Player: Revenant (Darkness)"
+        "[Player - Revenant] Darkness"
       ]
     },
     {
       "ID": 50530,
       "Entries": [
-        "Player: Revenant (Remembrance)"
+        "[Player - Revenant] Remembrance"
       ]
     },
     {
       "ID": 50550,
       "Entries": [
-        "Player: Revenant (The Sister in the Painting)"
+        "[Player - Revenant] The Sister in the Painting"
       ]
     },
     {
       "ID": 50560,
       "Entries": [
-        "Player: Revenant (Dragon School)"
+        "[Player - Revenant] Dragon School"
       ]
     },
     {
       "ID": 50570,
       "Entries": [
-        "Player: Revenant"
+        "[Player - Revenant]"
       ]
     },
     {
       "ID": 50600,
       "Entries": [
-        "Player: Recluse"
+        "[Player - Recluse] Default"
       ]
     },
     {
       "ID": 50610,
       "Entries": [
-        "Player: Recluse (Dawn)"
+        "[Player - Recluse] Dawn"
       ]
     },
     {
       "ID": 50620,
       "Entries": [
-        "Player: Recluse (Darkness)"
+        "[Player - Recluse] Darkness"
       ]
     },
     {
       "ID": 50630,
       "Entries": [
-        "Player: Recluse (Remembrance)"
+        "[Player - Recluse] Remembrance"
       ]
     },
     {
       "ID": 50650,
       "Entries": [
-        "Player: Recluse (Heretic Sorcerer)"
+        "[Player - Recluse] Heretic Sorcerer"
       ]
     },
     {
       "ID": 50660,
       "Entries": [
-        "Player: Recluse (Emerald Fate)"
+        "[Player - Recluse] Emerald Fate"
       ]
     },
     {
       "ID": 50700,
       "Entries": [
-        "Player: Executor"
+        "[Player - Executor] Default"
       ]
     },
     {
       "ID": 50710,
       "Entries": [
-        "Player: Executor (Dawn)"
+        "[Player - Executor] Dawn"
       ]
     },
     {
       "ID": 50720,
       "Entries": [
-        "Player: Executor (Darkness)"
+        "[Player - Executor] Darkness"
       ]
     },
     {
       "ID": 50730,
       "Entries": [
-        "Player: Executor (Remembrance)"
+        "[Player - Executor] Remembrance"
       ]
     },
     {
       "ID": 50750,
       "Entries": [
-        "Player: Executor (Thorns)"
+        "[Player - Executor] Thorns"
       ]
     },
     {
       "ID": 50760,
       "Entries": [
-        "Player: Executor (Sable Church)"
+        "[Player - Executor] Sable Church"
       ]
     },
     {
@@ -7744,7 +7744,7 @@
     {
       "ID": 52200,
       "Entries": [
-        ""
+        "[Wylder] With Skill Replacement Effect 104900"
       ]
     },
     {
@@ -7822,19 +7822,19 @@
     {
       "ID": 53400,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 53401,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 53402,
       "Entries": [
-        ""
+        "[Ironeye]"
       ]
     },
     {
@@ -8344,721 +8344,721 @@
     {
       "ID": 61000,
       "Entries": [
-        ""
+        "[Wylder] Level 1"
       ]
     },
     {
       "ID": 61001,
       "Entries": [
-        ""
+        "[Wylder] Level 2"
       ]
     },
     {
       "ID": 61002,
       "Entries": [
-        ""
+        "[Wylder] Level 3"
       ]
     },
     {
       "ID": 61003,
       "Entries": [
-        ""
+        "[Wylder] Level 4"
       ]
     },
     {
       "ID": 61004,
       "Entries": [
-        ""
+        "[Wylder] Level 5"
       ]
     },
     {
       "ID": 61005,
       "Entries": [
-        ""
+        "[Wylder] Level 6"
       ]
     },
     {
       "ID": 61006,
       "Entries": [
-        ""
+        "[Wylder] Level 7"
       ]
     },
     {
       "ID": 61007,
       "Entries": [
-        ""
+        "[Wylder] Level 8"
       ]
     },
     {
       "ID": 61008,
       "Entries": [
-        ""
+        "[Wylder] Level 9"
       ]
     },
     {
       "ID": 61009,
       "Entries": [
-        ""
+        "[Wylder] Level 10"
       ]
     },
     {
       "ID": 61010,
       "Entries": [
-        ""
+        "[Wylder] Level 11"
       ]
     },
     {
       "ID": 61011,
       "Entries": [
-        ""
+        "[Wylder] Level 12"
       ]
     },
     {
       "ID": 61012,
       "Entries": [
-        ""
+        "[Wylder] Level 13"
       ]
     },
     {
       "ID": 61013,
       "Entries": [
-        ""
+        "[Wylder] Level 14"
       ]
     },
     {
       "ID": 61014,
       "Entries": [
-        ""
+        "[Wylder] Level 15"
       ]
     },
     {
       "ID": 61100,
       "Entries": [
-        ""
+        "[Guardian] Level 1"
       ]
     },
     {
       "ID": 61101,
       "Entries": [
-        ""
+        "[Guardian] Level 2"
       ]
     },
     {
       "ID": 61102,
       "Entries": [
-        ""
+        "[Guardian] Level 3"
       ]
     },
     {
       "ID": 61103,
       "Entries": [
-        ""
+        "[Guardian] Level 4"
       ]
     },
     {
       "ID": 61104,
       "Entries": [
-        ""
+        "[Guardian] Level 5"
       ]
     },
     {
       "ID": 61105,
       "Entries": [
-        ""
+        "[Guardian] Level 6"
       ]
     },
     {
       "ID": 61106,
       "Entries": [
-        ""
+        "[Guardian] Level 7"
       ]
     },
     {
       "ID": 61107,
       "Entries": [
-        ""
+        "[Guardian] Level 8"
       ]
     },
     {
       "ID": 61108,
       "Entries": [
-        ""
+        "[Guardian] Level 9"
       ]
     },
     {
       "ID": 61109,
       "Entries": [
-        ""
+        "[Guardian] Level 10"
       ]
     },
     {
       "ID": 61110,
       "Entries": [
-        ""
+        "[Guardian] Level 11"
       ]
     },
     {
       "ID": 61111,
       "Entries": [
-        ""
+        "[Guardian] Level 12"
       ]
     },
     {
       "ID": 61112,
       "Entries": [
-        ""
+        "[Guardian] Level 13"
       ]
     },
     {
       "ID": 61113,
       "Entries": [
-        ""
+        "[Guardian] Level 14"
       ]
     },
     {
       "ID": 61114,
       "Entries": [
-        ""
+        "[Guardian] Level 15"
       ]
     },
     {
       "ID": 61200,
       "Entries": [
-        ""
+        "[Ironeye] Level 1"
       ]
     },
     {
       "ID": 61201,
       "Entries": [
-        ""
+        "[Ironeye] Level 2"
       ]
     },
     {
       "ID": 61202,
       "Entries": [
-        ""
+        "[Ironeye] Level 3"
       ]
     },
     {
       "ID": 61203,
       "Entries": [
-        ""
+        "[Ironeye] Level 4"
       ]
     },
     {
       "ID": 61204,
       "Entries": [
-        ""
+        "[Ironeye] Level 5"
       ]
     },
     {
       "ID": 61205,
       "Entries": [
-        ""
+        "[Ironeye] Level 6"
       ]
     },
     {
       "ID": 61206,
       "Entries": [
-        ""
+        "[Ironeye] Level 7"
       ]
     },
     {
       "ID": 61207,
       "Entries": [
-        ""
+        "[Ironeye] Level 8"
       ]
     },
     {
       "ID": 61208,
       "Entries": [
-        ""
+        "[Ironeye] Level 9"
       ]
     },
     {
       "ID": 61209,
       "Entries": [
-        ""
+        "[Ironeye] Level 10"
       ]
     },
     {
       "ID": 61210,
       "Entries": [
-        ""
+        "[Ironeye] Level 11"
       ]
     },
     {
       "ID": 61211,
       "Entries": [
-        ""
+        "[Ironeye] Level 12"
       ]
     },
     {
       "ID": 61212,
       "Entries": [
-        ""
+        "[Ironeye] Level 13"
       ]
     },
     {
       "ID": 61213,
       "Entries": [
-        ""
+        "[Ironeye] Level 14"
       ]
     },
     {
       "ID": 61214,
       "Entries": [
-        ""
+        "[Ironeye] Level 15"
       ]
     },
     {
       "ID": 61300,
       "Entries": [
-        ""
+        "[Duchess] Level 1"
       ]
     },
     {
       "ID": 61301,
       "Entries": [
-        ""
+        "[Duchess] Level 2"
       ]
     },
     {
       "ID": 61302,
       "Entries": [
-        ""
+        "[Duchess] Level 3"
       ]
     },
     {
       "ID": 61303,
       "Entries": [
-        ""
+        "[Duchess] Level 4"
       ]
     },
     {
       "ID": 61304,
       "Entries": [
-        ""
+        "[Duchess] Level 5"
       ]
     },
     {
       "ID": 61305,
       "Entries": [
-        ""
+        "[Duchess] Level 6"
       ]
     },
     {
       "ID": 61306,
       "Entries": [
-        ""
+        "[Duchess] Level 7"
       ]
     },
     {
       "ID": 61307,
       "Entries": [
-        ""
+        "[Duchess] Level 8"
       ]
     },
     {
       "ID": 61308,
       "Entries": [
-        ""
+        "[Duchess] Level 9"
       ]
     },
     {
       "ID": 61309,
       "Entries": [
-        ""
+        "[Duchess] Level 10"
       ]
     },
     {
       "ID": 61310,
       "Entries": [
-        ""
+        "[Duchess] Level 11"
       ]
     },
     {
       "ID": 61311,
       "Entries": [
-        ""
+        "[Duchess] Level 12"
       ]
     },
     {
       "ID": 61312,
       "Entries": [
-        ""
+        "[Duchess] Level 13"
       ]
     },
     {
       "ID": 61313,
       "Entries": [
-        ""
+        "[Duchess] Level 14"
       ]
     },
     {
       "ID": 61314,
       "Entries": [
-        ""
+        "[Duchess] Level 15"
       ]
     },
     {
       "ID": 61400,
       "Entries": [
-        ""
+        "[Raider] Level 1"
       ]
     },
     {
       "ID": 61401,
       "Entries": [
-        ""
+        "[Raider] Level 2"
       ]
     },
     {
       "ID": 61402,
       "Entries": [
-        ""
+        "[Raider] Level 3"
       ]
     },
     {
       "ID": 61403,
       "Entries": [
-        ""
+        "[Raider] Level 4"
       ]
     },
     {
       "ID": 61404,
       "Entries": [
-        ""
+        "[Raider] Level 5"
       ]
     },
     {
       "ID": 61405,
       "Entries": [
-        ""
+        "[Raider] Level 6"
       ]
     },
     {
       "ID": 61406,
       "Entries": [
-        ""
+        "[Raider] Level 7"
       ]
     },
     {
       "ID": 61407,
       "Entries": [
-        ""
+        "[Raider] Level 8"
       ]
     },
     {
       "ID": 61408,
       "Entries": [
-        ""
+        "[Raider] Level 9"
       ]
     },
     {
       "ID": 61409,
       "Entries": [
-        ""
+        "[Raider] Level 10"
       ]
     },
     {
       "ID": 61410,
       "Entries": [
-        ""
+        "[Raider] Level 11"
       ]
     },
     {
       "ID": 61411,
       "Entries": [
-        ""
+        "[Raider] Level 12"
       ]
     },
     {
       "ID": 61412,
       "Entries": [
-        ""
+        "[Raider] Level 13"
       ]
     },
     {
       "ID": 61413,
       "Entries": [
-        ""
+        "[Raider] Level 14"
       ]
     },
     {
       "ID": 61414,
       "Entries": [
-        ""
+        "[Raider] Level 15"
       ]
     },
     {
       "ID": 61500,
       "Entries": [
-        ""
+        "[Revenant] Level 1"
       ]
     },
     {
       "ID": 61501,
       "Entries": [
-        ""
+        "[Revenant] Level 2"
       ]
     },
     {
       "ID": 61502,
       "Entries": [
-        ""
+        "[Revenant] Level 3"
       ]
     },
     {
       "ID": 61503,
       "Entries": [
-        ""
+        "[Revenant] Level 4"
       ]
     },
     {
       "ID": 61504,
       "Entries": [
-        ""
+        "[Revenant] Level 5"
       ]
     },
     {
       "ID": 61505,
       "Entries": [
-        ""
+        "[Revenant] Level 6"
       ]
     },
     {
       "ID": 61506,
       "Entries": [
-        ""
+        "[Revenant] Level 7"
       ]
     },
     {
       "ID": 61507,
       "Entries": [
-        ""
+        "[Revenant] Level 8"
       ]
     },
     {
       "ID": 61508,
       "Entries": [
-        ""
+        "[Revenant] Level 9"
       ]
     },
     {
       "ID": 61509,
       "Entries": [
-        ""
+        "[Revenant] Level 10"
       ]
     },
     {
       "ID": 61510,
       "Entries": [
-        ""
+        "[Revenant] Level 11"
       ]
     },
     {
       "ID": 61511,
       "Entries": [
-        ""
+        "[Revenant] Level 12"
       ]
     },
     {
       "ID": 61512,
       "Entries": [
-        ""
+        "[Revenant] Level 13"
       ]
     },
     {
       "ID": 61513,
       "Entries": [
-        ""
+        "[Revenant] Level 14"
       ]
     },
     {
       "ID": 61514,
       "Entries": [
-        ""
+        "[Revenant] Level 15"
       ]
     },
     {
       "ID": 61600,
       "Entries": [
-        ""
+        "[Recluse] Level 1"
       ]
     },
     {
       "ID": 61601,
       "Entries": [
-        ""
+        "[Recluse] Level 2"
       ]
     },
     {
       "ID": 61602,
       "Entries": [
-        ""
+        "[Recluse] Level 3"
       ]
     },
     {
       "ID": 61603,
       "Entries": [
-        ""
+        "[Recluse] Level 4"
       ]
     },
     {
       "ID": 61604,
       "Entries": [
-        ""
+        "[Recluse] Level 5"
       ]
     },
     {
       "ID": 61605,
       "Entries": [
-        ""
+        "[Recluse] Level 6"
       ]
     },
     {
       "ID": 61606,
       "Entries": [
-        ""
+        "[Recluse] Level 7"
       ]
     },
     {
       "ID": 61607,
       "Entries": [
-        ""
+        "[Recluse] Level 8"
       ]
     },
     {
       "ID": 61608,
       "Entries": [
-        ""
+        "[Recluse] Level 9"
       ]
     },
     {
       "ID": 61609,
       "Entries": [
-        ""
+        "[Recluse] Level 10"
       ]
     },
     {
       "ID": 61610,
       "Entries": [
-        ""
+        "[Recluse] Level 11"
       ]
     },
     {
       "ID": 61611,
       "Entries": [
-        ""
+        "[Recluse] Level 12"
       ]
     },
     {
       "ID": 61612,
       "Entries": [
-        ""
+        "[Recluse] Level 13"
       ]
     },
     {
       "ID": 61613,
       "Entries": [
-        ""
+        "[Recluse] Level 14"
       ]
     },
     {
       "ID": 61614,
       "Entries": [
-        ""
+        "[Recluse] Level 15"
       ]
     },
     {
       "ID": 61700,
       "Entries": [
-        ""
+        "[Executor] Level 1"
       ]
     },
     {
       "ID": 61701,
       "Entries": [
-        ""
+        "[Executor] Level 2"
       ]
     },
     {
       "ID": 61702,
       "Entries": [
-        ""
+        "[Executor] Level 3"
       ]
     },
     {
       "ID": 61703,
       "Entries": [
-        ""
+        "[Executor] Level 4"
       ]
     },
     {
       "ID": 61704,
       "Entries": [
-        ""
+        "[Executor] Level 5"
       ]
     },
     {
       "ID": 61705,
       "Entries": [
-        ""
+        "[Executor] Level 6"
       ]
     },
     {
       "ID": 61706,
       "Entries": [
-        ""
+        "[Executor] Level 7"
       ]
     },
     {
       "ID": 61707,
       "Entries": [
-        ""
+        "[Executor] Level 8"
       ]
     },
     {
       "ID": 61708,
       "Entries": [
-        ""
+        "[Executor] Level 9"
       ]
     },
     {
       "ID": 61709,
       "Entries": [
-        ""
+        "[Executor] Level 10"
       ]
     },
     {
       "ID": 61710,
       "Entries": [
-        ""
+        "[Executor] Level 11"
       ]
     },
     {
       "ID": 61711,
       "Entries": [
-        ""
+        "[Executor] Level 12"
       ]
     },
     {
       "ID": 61712,
       "Entries": [
-        ""
+        "[Executor] Level 13"
       ]
     },
     {
       "ID": 61713,
       "Entries": [
-        ""
+        "[Executor] Level 14"
       ]
     },
     {
       "ID": 61714,
       "Entries": [
-        ""
+        "[Executor] Level 15"
       ]
     },
     {
@@ -9124,49 +9124,49 @@
     {
       "ID": 90000,
       "Entries": [
-        ""
+        "[Wylder]"
       ]
     },
     {
       "ID": 90001,
       "Entries": [
-        ""
+        "[Guardian]"
       ]
     },
     {
       "ID": 90002,
       "Entries": [
-        ""
+        "[Ironeye]"
       ]
     },
     {
       "ID": 90003,
       "Entries": [
-        ""
+        "[Duchess]"
       ]
     },
     {
       "ID": 90004,
       "Entries": [
-        ""
+        "[Raider]"
       ]
     },
     {
       "ID": 90005,
       "Entries": [
-        ""
+        "[Revenant]"
       ]
     },
     {
       "ID": 90006,
       "Entries": [
-        ""
+        "[Recluse]"
       ]
     },
     {
       "ID": 90007,
       "Entries": [
-        ""
+        "[Executor]"
       ]
     },
     {
