@@ -10,301 +10,301 @@
     {
       "ID": 100,
       "Entries": [
-        "Humanoid: All"
+        "[NPC] All Statuses"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "Enemy: Poison"
+        "[Poison] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 2002,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 2003,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 2004,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 2005,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 2010,
       "Entries": [
-        "Enemy: Scarlet Rot"
+        "[Scarlet Rot] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 3000,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 3001,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 3002,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 3003,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 3004,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 3005,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        "Enemy: Hemorrhage"
+        "[Blood Loss] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 4000,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 4001,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 4002,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 4003,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 4004,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 4005,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 4010,
       "Entries": [
-        "Enemy: Deathblight"
+        "[Death Blight] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 5000,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 5001,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 5002,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 5003,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 5004,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 5005,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 5010,
       "Entries": [
-        "Enemy: Frostbite"
+        "[Frostbite] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 6000,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 6001,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 6002,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 6003,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 6004,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 6005,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 6010,
       "Entries": [
-        "Enemy: Sleep"
+        "[Sleep] Tier 0 (20 Base)"
       ]
     },
     {
       "ID": 7000,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 1 (63 base)"
       ]
     },
     {
       "ID": 7001,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 2 (84 base)"
       ]
     },
     {
       "ID": 7002,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 3 (112 base)"
       ]
     },
     {
       "ID": 7003,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 4 (154 base)"
       ]
     },
     {
       "ID": 7004,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 5 (252 base)"
       ]
     },
     {
       "ID": 7005,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 6 (542 base)"
       ]
     },
     {
       "ID": 7010,
       "Entries": [
-        "Enemy: Madness"
+        "[Madness] Tier 0 (20 Base)"
       ]
     }
   ]

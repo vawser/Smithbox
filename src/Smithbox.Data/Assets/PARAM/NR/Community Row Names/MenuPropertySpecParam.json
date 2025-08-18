@@ -4,37 +4,37 @@
     {
       "ID": 0,
       "Entries": [
-        ""
+        "None"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        ""
+        "[All] Name"
       ]
     },
     {
       "ID": 1001,
       "Entries": [
-        ""
+        "[All] Description (Short)"
       ]
     },
     {
       "ID": 1002,
       "Entries": [
-        ""
+        "[All] Description (Large)"
       ]
     },
     {
       "ID": 1003,
       "Entries": [
-        ""
+        "[All] Weight"
       ]
     },
     {
       "ID": 1004,
       "Entries": [
-        ""
+        "[All] Sort ID"
       ]
     },
     {
@@ -46,13 +46,13 @@
     {
       "ID": 1010,
       "Entries": [
-        ""
+        "[Item] Current no. in slot"
       ]
     },
     {
       "ID": 1011,
       "Entries": [
-        ""
+        "[Item] Max no. in slot"
       ]
     },
     {
@@ -70,19 +70,19 @@
     {
       "ID": 1014,
       "Entries": [
-        ""
+        "[Item] Max no. per slot"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        ""
+        "[Item] Max no. per slot"
       ]
     },
     {
       "ID": 1016,
       "Entries": [
-        ""
+        "[Item] Total carried"
       ]
     },
     {
@@ -220,43 +220,43 @@
     {
       "ID": 1099,
       "Entries": [
-        ""
+        "[Grief Weapon] Name"
       ]
     },
     {
       "ID": 2000,
       "Entries": [
-        ""
+        "[Item] Item Type (Consumable vs Reusable)"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        ""
+        "[Item] Strength Scaling"
       ]
     },
     {
       "ID": 2002,
       "Entries": [
-        ""
+        "[Item] Dexterity Scaling"
       ]
     },
     {
       "ID": 2003,
       "Entries": [
-        ""
+        "[Item] Intelligence Scaling"
       ]
     },
     {
       "ID": 2004,
       "Entries": [
-        ""
+        "[Item] Faith Scaling"
       ]
     },
     {
       "ID": 2005,
       "Entries": [
-        ""
+        "[Item] Arcane Scaling"
       ]
     },
     {
@@ -268,7 +268,7 @@
     {
       "ID": 2010,
       "Entries": [
-        ""
+        "[Item] FP Cost"
       ]
     },
     {
@@ -304,23 +304,41 @@
     {
       "ID": 2040,
       "Entries": [
-        ""
+        "[Vessel] Hero Icon"
       ]
     },
     {
       "ID": 2041,
       "Entries": [
-        ""
+        "[Vessel] Slot 1 Color"
       ]
     },
     {
       "ID": 2042,
       "Entries": [
-        ""
+        "[Vessel] Slot 2 Color"
       ]
     },
     {
       "ID": 2043,
+      "Entries": [
+        "[Vessel] Slot 3 Color"
+      ]
+    },
+    {
+      "ID": 2050,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2051,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 2052,
       "Entries": [
         ""
       ]
@@ -352,13 +370,13 @@
     {
       "ID": 3000,
       "Entries": [
-        ""
+        "[Weapon] Armament Type"
       ]
     },
     {
       "ID": 3001,
       "Entries": [
-        ""
+        "[Weapon] Attack Affinity"
       ]
     },
     {
@@ -370,43 +388,43 @@
     {
       "ID": 3003,
       "Entries": [
-        ""
+        "[Grief Weapon] Player Name"
       ]
     },
     {
       "ID": 3004,
       "Entries": [
-        ""
+        "[Weapon] Min. Level"
       ]
     },
     {
       "ID": 3010,
       "Entries": [
-        ""
+        "Physical Damage"
       ]
     },
     {
       "ID": 3011,
       "Entries": [
-        ""
+        "Magic Damage"
       ]
     },
     {
       "ID": 3012,
       "Entries": [
-        ""
+        "Fire Damage"
       ]
     },
     {
       "ID": 3013,
       "Entries": [
-        ""
+        "Lightning Damage"
       ]
     },
     {
       "ID": 3014,
       "Entries": [
-        ""
+        "Holy Damage"
       ]
     },
     {
@@ -442,7 +460,7 @@
     {
       "ID": 3020,
       "Entries": [
-        ""
+        "Range"
       ]
     },
     {
@@ -454,7 +472,7 @@
     {
       "ID": 3022,
       "Entries": [
-        ""
+        "Critical"
       ]
     },
     {
@@ -502,43 +520,43 @@
     {
       "ID": 3038,
       "Entries": [
-        ""
+        "Sorcery Scaling"
       ]
     },
     {
       "ID": 3039,
       "Entries": [
-        ""
+        "Incant Scaling"
       ]
     },
     {
       "ID": 3040,
       "Entries": [
-        ""
+        "Physical Guard"
       ]
     },
     {
       "ID": 3041,
       "Entries": [
-        ""
+        "Magic Guard"
       ]
     },
     {
       "ID": 3042,
       "Entries": [
-        ""
+        "Fire Guard"
       ]
     },
     {
       "ID": 3043,
       "Entries": [
-        ""
+        "Lightning Guard"
       ]
     },
     {
       "ID": 3044,
       "Entries": [
-        ""
+        "Holy Guard"
       ]
     },
     {
@@ -574,13 +592,13 @@
     {
       "ID": 3050,
       "Entries": [
-        ""
+        "Guard Boost"
       ]
     },
     {
       "ID": 3051,
       "Entries": [
-        ""
+        "Guard Boost Bonus"
       ]
     },
     {
@@ -652,61 +670,61 @@
     {
       "ID": 3070,
       "Entries": [
-        ""
+        "[Weapon] Strength Scaling"
       ]
     },
     {
       "ID": 3071,
       "Entries": [
-        ""
+        "[Weapon] Dexterity Scaling"
       ]
     },
     {
       "ID": 3072,
       "Entries": [
-        ""
+        "[Weapon] Intelligence Scaling"
       ]
     },
     {
       "ID": 3073,
       "Entries": [
-        ""
+        "[Weapon] Faith Scaling"
       ]
     },
     {
       "ID": 3074,
       "Entries": [
-        ""
+        "[Weapon] Arcane Scaling"
       ]
     },
     {
       "ID": 3075,
       "Entries": [
-        ""
+        "Physical Damage"
       ]
     },
     {
       "ID": 3076,
       "Entries": [
-        ""
+        "Magic Damage"
       ]
     },
     {
       "ID": 3077,
       "Entries": [
-        ""
+        "Fire Damage"
       ]
     },
     {
       "ID": 3078,
       "Entries": [
-        ""
+        "Lightning Damage"
       ]
     },
     {
       "ID": 3079,
       "Entries": [
-        ""
+        "Holy Damage"
       ]
     },
     {
@@ -730,97 +748,97 @@
     {
       "ID": 3100,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 1 (Name)"
       ]
     },
     {
       "ID": 3101,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 2 (Name)"
       ]
     },
     {
       "ID": 3102,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 3 (Name)"
       ]
     },
     {
       "ID": 3103,
       "Entries": [
-        ""
+        "[Legend Weapon] Unique Effect (Name)"
       ]
     },
     {
       "ID": 3104,
       "Entries": [
-        ""
+        "[Grief Weapon] Grief Effect (Name)"
       ]
     },
     {
       "ID": 3110,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 1 (Value)"
       ]
     },
     {
       "ID": 3111,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 2 (Value)"
       ]
     },
     {
       "ID": 3112,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 3 (Value)"
       ]
     },
     {
       "ID": 3113,
       "Entries": [
-        ""
+        "[Legend Weapon] Unique Effect (Value)"
       ]
     },
     {
       "ID": 3114,
       "Entries": [
-        ""
+        "[Grief Weapon] Grief Effect (Value)"
       ]
     },
     {
       "ID": 3120,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 1 (Icon)"
       ]
     },
     {
       "ID": 3121,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 2 (Icon)"
       ]
     },
     {
       "ID": 3122,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 3 (Icon)"
       ]
     },
     {
       "ID": 3123,
       "Entries": [
-        ""
+        "[Legend Weapon] Unique Effect (Icon)"
       ]
     },
     {
       "ID": 3124,
       "Entries": [
-        ""
+        "[Grief Weapon] Grief Effect (Icon)"
       ]
     },
     {
       "ID": 3130,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment"
       ]
     },
     {
@@ -838,91 +856,91 @@
     {
       "ID": 3133,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment"
       ]
     },
     {
       "ID": 3150,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment 1 (Value)"
       ]
     },
     {
       "ID": 3151,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment 2 (Value)"
       ]
     },
     {
       "ID": 3160,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment 1 (Icon)"
       ]
     },
     {
       "ID": 3161,
       "Entries": [
-        ""
+        "[Weapon] Status Ailment 2 (Icon)"
       ]
     },
     {
       "ID": 3170,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 1 (Unk)"
       ]
     },
     {
       "ID": 3171,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 2 (Unk)"
       ]
     },
     {
       "ID": 3172,
       "Entries": [
-        ""
+        "[Attach Effect] Effect 3 (Unk)"
       ]
     },
     {
       "ID": 3173,
       "Entries": [
-        ""
+        "[Legend Weapon] Unique Effect (Unk)"
       ]
     },
     {
       "ID": 3174,
       "Entries": [
-        ""
+        "[Grief Weapon] Grief Effect (Unk)"
       ]
     },
     {
       "ID": 3200,
       "Entries": [
-        ""
+        "[Weapon] Attack"
       ]
     },
     {
       "ID": 3210,
       "Entries": [
-        ""
+        "[Weapon] Attack Bonus"
       ]
     },
     {
       "ID": 3220,
       "Entries": [
-        ""
+        "[Weapon] Skill (Name)"
       ]
     },
     {
       "ID": 3221,
       "Entries": [
-        ""
+        "[Weapon] Skill (Icon)"
       ]
     },
     {
       "ID": 3222,
       "Entries": [
-        ""
+        "[Weapon] Skill (Attack Power)"
       ]
     },
     {
@@ -934,37 +952,37 @@
     {
       "ID": 3300,
       "Entries": [
-        ""
+        "[Catalyst] Slot 1 Spell (Name)"
       ]
     },
     {
       "ID": 3301,
       "Entries": [
-        ""
+        "[Catalyst] Slot 2 Spell (Name)"
       ]
     },
     {
       "ID": 3310,
       "Entries": [
-        ""
+        "[Catalyst] Slot 1 Spell (Icon)"
       ]
     },
     {
       "ID": 3311,
       "Entries": [
-        ""
+        "[Catalyst] Slot 2 Spell (Icon)"
       ]
     },
     {
       "ID": 3320,
       "Entries": [
-        ""
+        "[Catalyst] Slot 1 Spell (Attack Power)"
       ]
     },
     {
       "ID": 3321,
       "Entries": [
-        ""
+        "[Catalyst] Slot 2 Spell (Attack Power)"
       ]
     },
     {
@@ -1120,7 +1138,7 @@
     {
       "ID": 5000,
       "Entries": [
-        ""
+        "[Spell] Spell Type"
       ]
     },
     {
@@ -1162,13 +1180,13 @@
     {
       "ID": 5020,
       "Entries": [
-        ""
+        "[Spell] FP Cost"
       ]
     },
     {
       "ID": 5021,
       "Entries": [
-        ""
+        "[Spell] Followup FP Cost"
       ]
     },
     {
@@ -1186,37 +1204,37 @@
     {
       "ID": 6010,
       "Entries": [
-        ""
+        "Physical Damage"
       ]
     },
     {
       "ID": 6011,
       "Entries": [
-        ""
+        "Magic Damage"
       ]
     },
     {
       "ID": 6012,
       "Entries": [
-        ""
+        "Fire Damage"
       ]
     },
     {
       "ID": 6013,
       "Entries": [
-        ""
+        "Lightning Damage"
       ]
     },
     {
       "ID": 6014,
       "Entries": [
-        ""
+        "Critical"
       ]
     },
     {
       "ID": 6015,
       "Entries": [
-        ""
+        "Holy Damage"
       ]
     },
     {
@@ -1288,43 +1306,43 @@
     {
       "ID": 8000,
       "Entries": [
-        ""
+        "[Skill] L2 FP Cost (Value)"
       ]
     },
     {
       "ID": 8001,
       "Entries": [
-        ""
+        "[Skill] R1 FP Cost (Value)"
       ]
     },
     {
       "ID": 8002,
       "Entries": [
-        ""
+        "[Skill] R2 FP Cost (Value)"
       ]
     },
     {
       "ID": 8010,
       "Entries": [
-        ""
+        "[Skill] L2 FP Cost"
       ]
     },
     {
       "ID": 8011,
       "Entries": [
-        ""
+        "[Skill] R1 FP Cost"
       ]
     },
     {
       "ID": 8012,
       "Entries": [
-        ""
+        "[Skill] R2 FP Cost"
       ]
     },
     {
       "ID": 8020,
       "Entries": [
-        ""
+        "[Skill] Usable Armament Types"
       ]
     },
     {
@@ -1390,7 +1408,7 @@
     {
       "ID": 10000,
       "Entries": [
-        ""
+        "[Character] Player Name"
       ]
     },
     {
@@ -1438,19 +1456,19 @@
     {
       "ID": 10008,
       "Entries": [
-        ""
+        "[Character] Level"
       ]
     },
     {
       "ID": 10009,
       "Entries": [
-        ""
+        "[Character] Runes Held"
       ]
     },
     {
       "ID": 10010,
       "Entries": [
-        ""
+        "[Character] Runes Needed"
       ]
     },
     {
@@ -1492,13 +1510,13 @@
     {
       "ID": 10017,
       "Entries": [
-        ""
+        "[Character] Platform ID"
       ]
     },
     {
       "ID": 10018,
       "Entries": [
-        ""
+        "[Character] Sovereign Sigils"
       ]
     },
     {
@@ -1588,31 +1606,31 @@
     {
       "ID": 10200,
       "Entries": [
-        ""
+        "[Status] HP"
       ]
     },
     {
       "ID": 10201,
       "Entries": [
-        ""
+        "[Status] HP (Max)"
       ]
     },
     {
       "ID": 10202,
       "Entries": [
-        ""
+        "[Status] FP"
       ]
     },
     {
       "ID": 10203,
       "Entries": [
-        ""
+        "[Status] FP (Max)"
       ]
     },
     {
       "ID": 10204,
       "Entries": [
-        ""
+        "[Status] Stamina"
       ]
     },
     {
@@ -1894,13 +1912,13 @@
     {
       "ID": 10303,
       "Entries": [
-        ""
+        "[Status] Hero Name"
       ]
     },
     {
       "ID": 10304,
       "Entries": [
-        ""
+        "[Status] Hero Icon"
       ]
     },
     {
@@ -2302,37 +2320,37 @@
     {
       "ID": 10510,
       "Entries": [
-        ""
+        "[Status] RH Slot 1 Weapon (Icon)"
       ]
     },
     {
       "ID": 10511,
       "Entries": [
-        ""
+        "[Status] RH Slot 2 Weapon (Icon)"
       ]
     },
     {
       "ID": 10512,
       "Entries": [
-        ""
+        "[Status] RH Slot 3 Weapon (Icon)"
       ]
     },
     {
       "ID": 10513,
       "Entries": [
-        ""
+        "[Status] LH Slot 1 Weapon (Icon)"
       ]
     },
     {
       "ID": 10514,
       "Entries": [
-        ""
+        "[Status] LH Slot 2 Weapon (Icon)"
       ]
     },
     {
       "ID": 10515,
       "Entries": [
-        ""
+        "[Status] LH Slot 3 Weapon (Icon)"
       ]
     },
     {
@@ -2374,37 +2392,37 @@
     {
       "ID": 10530,
       "Entries": [
-        ""
+        "[Status] RH Slot 1 Weapon (Attack Power)"
       ]
     },
     {
       "ID": 10531,
       "Entries": [
-        ""
+        "[Status] RH Slot 2 Weapon (Attack Power)"
       ]
     },
     {
       "ID": 10532,
       "Entries": [
-        ""
+        "[Status] RH Slot 3 Weapon (Attack Power)"
       ]
     },
     {
       "ID": 10533,
       "Entries": [
-        ""
+        "[Status] LH Slot 1 Weapon (Attack Power)"
       ]
     },
     {
       "ID": 10534,
       "Entries": [
-        ""
+        "[Status] LH Slot 2 Weapon (Attack Power)"
       ]
     },
     {
       "ID": 10535,
       "Entries": [
-        ""
+        "[Status] LH Slot 3 Weapon (Attack Power)"
       ]
     },
     {
@@ -2518,109 +2536,109 @@
     {
       "ID": 10570,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10571,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10572,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10580,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10581,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10582,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10590,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10591,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10592,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10610,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10611,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10612,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 3 (Icon)"
       ]
     },
     {
       "ID": 10620,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10621,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10622,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 3 (Icon)"
       ]
     },
     {
       "ID": 10630,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10631,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10632,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 3 (Icon)"
       ]
     },
     {
@@ -2680,217 +2698,217 @@
     {
       "ID": 10690,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 1"
       ]
     },
     {
       "ID": 10691,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 2"
       ]
     },
     {
       "ID": 10692,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 3"
       ]
     },
     {
       "ID": 10700,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 1"
       ]
     },
     {
       "ID": 10701,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 2"
       ]
     },
     {
       "ID": 10702,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 3"
       ]
     },
     {
       "ID": 10710,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 1"
       ]
     },
     {
       "ID": 10711,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 2"
       ]
     },
     {
       "ID": 10712,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 3"
       ]
     },
     {
       "ID": 10720,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10721,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10722,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 1 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 10730,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10731,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10732,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 2 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 10740,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10741,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10742,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 3 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 10750,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10751,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10752,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10760,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10761,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10762,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10770,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 1 (Description)"
       ]
     },
     {
       "ID": 10771,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 2 (Description)"
       ]
     },
     {
       "ID": 10772,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 3 (Description)"
       ]
     },
     {
       "ID": 10780,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10781,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10782,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 3 (Icon)"
       ]
     },
     {
       "ID": 10790,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10791,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10792,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 3 (Icon)"
       ]
     },
     {
       "ID": 10800,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 1 (Icon)"
       ]
     },
     {
       "ID": 10801,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 2 (Icon)"
       ]
     },
     {
       "ID": 10802,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 3 (Icon)"
       ]
     },
     {
@@ -2950,193 +2968,193 @@
     {
       "ID": 10840,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 1"
       ]
     },
     {
       "ID": 10841,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 2"
       ]
     },
     {
       "ID": 10842,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 3"
       ]
     },
     {
       "ID": 10850,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 1"
       ]
     },
     {
       "ID": 10851,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 2"
       ]
     },
     {
       "ID": 10852,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 3"
       ]
     },
     {
       "ID": 10860,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 1"
       ]
     },
     {
       "ID": 10861,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 2"
       ]
     },
     {
       "ID": 10862,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 3"
       ]
     },
     {
       "ID": 10870,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10871,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10872,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 4 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 10880,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10881,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10882,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 5 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 10890,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 1 (Stacks)"
       ]
     },
     {
       "ID": 10891,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 2 (Stacks)"
       ]
     },
     {
       "ID": 10892,
       "Entries": [
-        ""
+        "[Status - Relics] Slot 6 Effect 3 (Stacks)"
       ]
     },
     {
       "ID": 11000,
       "Entries": [
-        ""
+        "[Hero] Character Skill (Caption)"
       ]
     },
     {
       "ID": 11001,
       "Entries": [
-        ""
+        "[Hero] Character Skill (Name)"
       ]
     },
     {
       "ID": 11002,
       "Entries": [
-        ""
+        "[Hero] Character Skill (Description)"
       ]
     },
     {
       "ID": 11003,
       "Entries": [
-        ""
+        "[Hero] Character Skill (Icon)"
       ]
     },
     {
       "ID": 11004,
       "Entries": [
-        ""
+        "[Hero] Ultimate Art (Caption)"
       ]
     },
     {
       "ID": 11005,
       "Entries": [
-        ""
+        "[Hero] Ultimate Art (Name)"
       ]
     },
     {
       "ID": 11006,
       "Entries": [
-        ""
+        "[Hero] Ultimate Art (Description)"
       ]
     },
     {
       "ID": 11007,
       "Entries": [
-        ""
+        "[Hero] Ultimate Art (Icon)"
       ]
     },
     {
       "ID": 11008,
       "Entries": [
-        ""
+        "[Hero] Passive Ability (Caption)"
       ]
     },
     {
       "ID": 11009,
       "Entries": [
-        ""
+        "[Hero] Passive Ability (Name)"
       ]
     },
     {
       "ID": 11010,
       "Entries": [
-        ""
+        "[Hero] Passive Ability (Description)"
       ]
     },
     {
       "ID": 11011,
       "Entries": [
-        ""
+        "[Hero] Passive Ability (Icon)"
       ]
     },
     {
       "ID": 11012,
       "Entries": [
-        ""
+        "[Visual Codex] Battle Record - Character"
       ]
     },
     {
       "ID": 11013,
       "Entries": [
-        ""
+        "[Visual Codex] No. of Expeditions"
       ]
     },
     {
@@ -3172,79 +3190,79 @@
     {
       "ID": 11019,
       "Entries": [
-        ""
+        "[Hero] Character Skill (Extra)"
       ]
     },
     {
       "ID": 11020,
       "Entries": [
-        ""
+        "[Hero] Ultimate Art (Extra)"
       ]
     },
     {
       "ID": 11021,
       "Entries": [
-        ""
+        "[Hero] Passive Ability (Extra)"
       ]
     },
     {
       "ID": 11050,
       "Entries": [
-        ""
+        "[Hero] Grade - HP"
       ]
     },
     {
       "ID": 11051,
       "Entries": [
-        ""
+        "[Hero] Grade - FP"
       ]
     },
     {
       "ID": 11052,
       "Entries": [
-        ""
+        "[Hero] Grade - Stamina"
       ]
     },
     {
       "ID": 11053,
       "Entries": [
-        ""
+        "[Hero] Grade - Strength"
       ]
     },
     {
       "ID": 11054,
       "Entries": [
-        ""
+        "[Hero] Grade - Dexterity"
       ]
     },
     {
       "ID": 11055,
       "Entries": [
-        ""
+        "[Hero] Grade - Intelligence"
       ]
     },
     {
       "ID": 11056,
       "Entries": [
-        ""
+        "[Hero] Grade - Faith"
       ]
     },
     {
       "ID": 11057,
       "Entries": [
-        ""
+        "[Hero] Grade - Arcane"
       ]
     },
     {
       "ID": 12000,
       "Entries": [
-        ""
+        "[Relic] Characteristics (Color)"
       ]
     },
     {
       "ID": 12002,
       "Entries": [
-        ""
+        "[Relic] Size"
       ]
     },
     {
@@ -3286,19 +3304,19 @@
     {
       "ID": 13000,
       "Entries": [
-        ""
+        "[Expedition] Boss Title"
       ]
     },
     {
       "ID": 13001,
       "Entries": [
-        ""
+        "[Expedition] Boss Name"
       ]
     },
     {
       "ID": 13002,
       "Entries": [
-        ""
+        "[Expedition] Boss Description"
       ]
     },
     {
@@ -3310,19 +3328,19 @@
     {
       "ID": 13004,
       "Entries": [
-        ""
+        "[Expedition] Background Icon"
       ]
     },
     {
       "ID": 13005,
       "Entries": [
-        ""
+        "[Expedition] Effective"
       ]
     },
     {
       "ID": 13006,
       "Entries": [
-        ""
+        "[Expedition] Boss Icon"
       ]
     },
     {
@@ -3646,181 +3664,181 @@
     {
       "ID": 22000,
       "Entries": [
-        ""
+        "[Battle Record - Summary] Play time"
       ]
     },
     {
       "ID": 22001,
       "Entries": [
-        ""
+        "[Battle Record - Summary] Expedition time"
       ]
     },
     {
       "ID": 22002,
       "Entries": [
-        ""
+        "[Battle Record - Summary] Total expeditions"
       ]
     },
     {
       "ID": 22003,
       "Entries": [
-        ""
+        "[Battle Record - Summary] Wins"
       ]
     },
     {
       "ID": 22004,
       "Entries": [
-        ""
+        "[Battle Record - Summary] Win streak"
       ]
     },
     {
       "ID": 22005,
       "Entries": [
-        ""
+        "[Battle Record - Summary] 'Win streak (Depths)'"
       ]
     },
     {
       "ID": 22006,
       "Entries": [
-        ""
+        "[Battle Record - All] Runes acquired"
       ]
     },
     {
       "ID": 22007,
       "Entries": [
-        ""
+        "[Battle Record - All] Runes used"
       ]
     },
     {
       "ID": 22008,
       "Entries": [
-        ""
+        "[Battle Record - All] Murk acquired"
       ]
     },
     {
       "ID": 22009,
       "Entries": [
-        ""
+        "[Battle Record - All] Sovereign Sigils acquired"
       ]
     },
     {
       "ID": 22010,
       "Entries": [
-        ""
+        "[Battle Record - All] Ending reached"
       ]
     },
     {
       "ID": 22011,
       "Entries": [
-        ""
+        "[Battle Record - All] Enemies felled"
       ]
     },
     {
       "ID": 22012,
       "Entries": [
-        ""
+        "[Battle Record - All] Great enemies felled"
       ]
     },
     {
       "ID": 22013,
       "Entries": [
-        ""
+        "[Battle Record - All] Chests opened"
       ]
     },
     {
       "ID": 22014,
       "Entries": [
-        ""
+        "[Battle Record - All] Grace discovered"
       ]
     },
     {
       "ID": 22015,
       "Entries": [
-        ""
+        "[Battle Record - All] Encounters with shifting earth"
       ]
     },
     {
       "ID": 22016,
       "Entries": [
-        ""
+        "[Battle Record - All] Raid events completed"
       ]
     },
     {
       "ID": 22017,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Greatest attack"
       ]
     },
     {
       "ID": 22018,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Runes acquired"
       ]
     },
     {
       "ID": 22019,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Runes used"
       ]
     },
     {
       "ID": 22020,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Enemies felled"
       ]
     },
     {
       "ID": 22021,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Great enemies felled"
       ]
     },
     {
       "ID": 22022,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Chests opened"
       ]
     },
     {
       "ID": 22023,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Grace discovered "
       ]
     },
     {
       "ID": 22024,
       "Entries": [
-        ""
+        "[Battle Record - All] Rescues performed"
       ]
     },
     {
       "ID": 22025,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Rescues performed"
       ]
     },
     {
       "ID": 22026,
       "Entries": [
-        ""
+        "[Battle Record - All] Effects & powers gained"
       ]
     },
     {
       "ID": 22027,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Special effects obtained"
       ]
     },
     {
       "ID": 22028,
       "Entries": [
-        ""
+        "[Battle Record - All] Armaments discovered"
       ]
     },
     {
       "ID": 22029,
       "Entries": [
-        ""
+        "[Battle Record - Personal Bests] Runes lost"
       ]
     },
     {
@@ -3844,49 +3862,49 @@
     {
       "ID": 22300,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Wylder (Name)"
       ]
     },
     {
       "ID": 22301,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Guardian (Name)"
       ]
     },
     {
       "ID": 22302,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Ironeye (Name)"
       ]
     },
     {
       "ID": 22303,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Duchess (Name)"
       ]
     },
     {
       "ID": 22304,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Raider (Name)"
       ]
     },
     {
       "ID": 22305,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Revenant (Name)"
       ]
     },
     {
       "ID": 22306,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Recluse (Name)"
       ]
     },
     {
       "ID": 22307,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Executor (Name)"
       ]
     },
     {
@@ -3904,49 +3922,49 @@
     {
       "ID": 22310,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Wylder (Uses)"
       ]
     },
     {
       "ID": 22311,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Guardian (Uses)"
       ]
     },
     {
       "ID": 22312,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Ironeye (Uses)"
       ]
     },
     {
       "ID": 22313,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Duchess (Uses)"
       ]
     },
     {
       "ID": 22314,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Raider (Uses)"
       ]
     },
     {
       "ID": 22315,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Revenant (Uses)"
       ]
     },
     {
       "ID": 22316,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Recluse (Uses)"
       ]
     },
     {
       "ID": 22317,
       "Entries": [
-        ""
+        "[Battle Record - Character Usage] Executor (Uses)"
       ]
     },
     {
@@ -3964,49 +3982,49 @@
     {
       "ID": 22400,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Gladius (Name)"
       ]
     },
     {
       "ID": 22401,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Adel (Name)"
       ]
     },
     {
       "ID": 22402,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Gnoster (Name)"
       ]
     },
     {
       "ID": 22403,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Maris (Name)"
       ]
     },
     {
       "ID": 22404,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Libra (Name)"
       ]
     },
     {
       "ID": 22405,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Fulghor (Name)"
       ]
     },
     {
       "ID": 22406,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Caligo (Name)"
       ]
     },
     {
       "ID": 22407,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Heolstor (Name)"
       ]
     },
     {
@@ -4024,49 +4042,49 @@
     {
       "ID": 22410,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Gladius (Victories)"
       ]
     },
     {
       "ID": 22411,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Adel (Victories)"
       ]
     },
     {
       "ID": 22412,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Gnoster (Victories)"
       ]
     },
     {
       "ID": 22413,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Maris (Victories)"
       ]
     },
     {
       "ID": 22414,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Libra (Victories)"
       ]
     },
     {
       "ID": 22415,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Fulghor (Victories)"
       ]
     },
     {
       "ID": 22416,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Caligo (Victories)"
       ]
     },
     {
       "ID": 22417,
       "Entries": [
-        ""
+        "[Battle Record - Victories Achieved] Heolstor (Victories)"
       ]
     },
     {
@@ -4180,7 +4198,7 @@
     {
       "ID": 30000,
       "Entries": [
-        ""
+        "[Caption] Attribute Scaling"
       ]
     },
     {

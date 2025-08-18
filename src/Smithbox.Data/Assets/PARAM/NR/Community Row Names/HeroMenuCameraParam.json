@@ -4,37 +4,37 @@
     {
       "ID": 1,
       "Entries": [
-        ""
+        "[Character Selection] Tall Hero"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        ""
+        "[Character Selection] Standard Hero"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        ""
+        "[Character Selection] Short Hero"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Guardian / Raider"
+        "[Change Garb] Tall Hero"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Wylder / Ironeye / Duchess / Recluse / Executor"
+        "[Change Garb] Standard Hero"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Revenant"
+        "[Change Garb] Short Hero"
       ]
     }
   ]

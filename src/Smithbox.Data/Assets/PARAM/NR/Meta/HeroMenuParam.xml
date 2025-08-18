@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="Handles various visual information for Heros, such as appearances in menus and Visual Codex stats." />
+  
+  <Enums>
+    <Enum Name="ATTRIBUTE_GRADE" type="s8">
+        <Option Value="0" Name="S" />
+        <Option Value="1" Name="A" />
+        <Option Value="2" Name="B" />
+		<Option Value="3" Name="C" />
+        <Option Value="4" Name="D" />
+		<Option Value="5" Name="E" />
+    </Enum>
+  </Enums>
   
   <Field>
     <disableParam_NT 
@@ -19,13 +30,66 @@
     
     <charaInitParamId
     AltName="Character ID"
-    Wiki="Doesn't seem to actually change the character data"
+    Wiki="Possibly default CharaInitParam"
     Refs="CharaInitParam" />
-    
-    <heroMenuCameraId
-    AltName="Hero Menu Camera ID"
-    Wiki="The menu camera to use for this character."
+	
+	<characterSelectPoseAnim
+    AltName="Character Select Pose"
+    Wiki="The animation to use for this character when at Character Selection. (Unused)" />
+	
+	<characterSelectCameraId
+    AltName="Character Select Camera ID"
+    Wiki="The menu camera to use for this character when at Character Selection. (Unused)"
     Refs="HeroMenuCameraParam" />
+    
+    <changeGarbCameraId
+    AltName="Change Garb Camera ID"
+    Wiki="The menu camera to use for this character when at Change Garb."
+    Refs="HeroMenuCameraParam" />
+	
+	<changeGarbPoseAnim
+    AltName="Change Garb Pose"
+    Wiki="The animation to use for this character when at Change Garb." />
+	
+	<hpGrade
+	AltName="HP Grade"
+	Wiki="HP letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<fpGrade
+	AltName="FP Grade"
+	Wiki="FP letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<staminaGrade
+	AltName="Stamina Grade"
+	Wiki="Stamina letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<strengthGrade
+	AltName="Strength Grade"
+	Wiki="Strength letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<dexterityGrade
+	AltName="Dexterity Grade"
+	Wiki="Dexterity letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<intelligenceGrade
+	AltName="Intelligence Grade"
+	Wiki="Intelligence letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<faithGrade
+	AltName="Faith Grade"
+	Wiki="Faith letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
+	
+	<arcaneGrade
+	AltName="Arcane Grade"
+	Wiki="Arcane letter grade for Visual Codex"
+	Enum="ATTRIBUTE_GRADE" />
   </Field>
   
   <Enums>

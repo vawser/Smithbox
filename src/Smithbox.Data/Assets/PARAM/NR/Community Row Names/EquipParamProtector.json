@@ -274,13 +274,13 @@
     {
       "ID": 30000,
       "Entries": [
-        ""
+        "[Effect] Gnoster Parasite (Egg)"
       ]
     },
     {
       "ID": 31000,
       "Entries": [
-        ""
+        "[Effect] Gnoster Parasite (Hatched)"
       ]
     },
     {
@@ -334,139 +334,139 @@
     {
       "ID": 1000000,
       "Entries": [
-        ""
+        "[NPC] Dead Maiden (Head)"
       ]
     },
     {
       "ID": 1000100,
       "Entries": [
-        ""
+        "[NPC] Dead Maiden (Body) [Model]"
       ]
     },
     {
       "ID": 1000200,
       "Entries": [
-        ""
+        "[NPC] Dead Maiden (Arms)"
       ]
     },
     {
       "ID": 1000300,
       "Entries": [
-        ""
+        "[NPC] Dead Maiden (Legs)"
       ]
     },
     {
       "ID": 5000000,
       "Entries": [
-        "Wylder - Head"
+        "[Wylder] Default (Head)"
       ]
     },
     {
       "ID": 5000100,
       "Entries": [
-        "Wylder - Body [Visible Model]"
+        "[Wylder] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5000200,
       "Entries": [
-        "Wylder - Arms"
+        "[Wylder] Default (Arms)"
       ]
     },
     {
       "ID": 5000300,
       "Entries": [
-        "Wylder - Legs"
+        "[Wylder] Default (Legs)"
       ]
     },
     {
       "ID": 5000900,
       "Entries": [
-        ""
+        "[Wylder] Change Skill to Bird (Legs)"
       ]
     },
     {
       "ID": 5001000,
       "Entries": [
-        "Guardian - Head"
+        "[Guardian] Default (Head)"
       ]
     },
     {
       "ID": 5001100,
       "Entries": [
-        "Guardian - Body [Visible Model]"
+        "[Guardian] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5001200,
       "Entries": [
-        "Guardian - Arms"
+        "[Guardian] Default (Arms)"
       ]
     },
     {
       "ID": 5001300,
       "Entries": [
-        "Guardian - Legs"
+        "[Guardian] Default (Legs)"
       ]
     },
     {
       "ID": 5002000,
       "Entries": [
-        "Ironeye (with Quiver) - Head"
+        "[Ironeye] Default (Head)"
       ]
     },
     {
       "ID": 5002100,
       "Entries": [
-        "Ironeye (with Quiver) - Body [Visible Model]"
+        "[Ironeye] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5002200,
       "Entries": [
-        "Ironeye (with Quiver) - Arms"
+        "[Ironeye] Default (Arms)"
       ]
     },
     {
       "ID": 5002300,
       "Entries": [
-        "Ironeye (with Quiver) - Legs"
+        "[Ironeye] Default (Legs)"
       ]
     },
     {
       "ID": 5002500,
       "Entries": [
-        "Ironeye (without Quiver) [Visible Model]"
+        "[Ironeye] No Quiver (Traitor) [Model]"
       ]
     },
     {
       "ID": 5003000,
       "Entries": [
-        "Duchess - Head"
+        "[Duchess] Default (Head)"
       ]
     },
     {
       "ID": 5003100,
       "Entries": [
-        "Duchess - Body [Visible Model]"
+        "[Duchess] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5003200,
       "Entries": [
-        "Duchess - Arms"
+        "[Duchess] Default (Arms)"
       ]
     },
     {
       "ID": 5003300,
       "Entries": [
-        "Duchess - Legs"
+        "[Duchess] Default (Legs)"
       ]
     },
     {
       "ID": 5003500,
       "Entries": [
-        "Duchess (Firekeeper) [Visible Model]"
+        "[Duchess] Priestess [Model]"
       ]
     },
     {
@@ -478,1075 +478,1075 @@
     {
       "ID": 5004000,
       "Entries": [
-        "Raider - Head"
+        "[Raider] Default (Head)"
       ]
     },
     {
       "ID": 5004100,
       "Entries": [
-        "Raider - Body [Visible Model]"
+        "[Raider] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5004200,
       "Entries": [
-        "Raider - Arms"
+        "[Raider] Default (Arms)"
       ]
     },
     {
       "ID": 5004300,
       "Entries": [
-        "Raider - Legs"
+        "[Raider] Default (Legs)"
       ]
     },
     {
       "ID": 5005000,
       "Entries": [
-        "Revenant - Head"
+        "[Revenant] Default (Head)"
       ]
     },
     {
       "ID": 5005100,
       "Entries": [
-        "Revenant - Body [Visible Model]"
+        "[Revenant] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5005200,
       "Entries": [
-        "Revenant - Arms"
+        "[Revenant] Default (Arms)"
       ]
     },
     {
       "ID": 5005300,
       "Entries": [
-        "Revenant - Legs"
+        "[Revenant] Default (Legs)"
       ]
     },
     {
       "ID": 5005500,
       "Entries": [
-        "Revenant (Outfit) [Visible Model]"
+        "[Revenant] Chloe (Remembrance) [Model]"
       ]
     },
     {
       "ID": 5005600,
       "Entries": [
-        "Revenant (Outfit) [Visible Model]"
+        "[Revenant] Doll (Remembrance) [Model]"
       ]
     },
     {
       "ID": 5006000,
       "Entries": [
-        "Recluse - Head"
+        "[Recluse] Default (Head)"
       ]
     },
     {
       "ID": 5006100,
       "Entries": [
-        "Recluse - Body [Visible Model]"
+        "[Recluse] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5006200,
       "Entries": [
-        "Recluse - Arms"
+        "[Recluse] Default (Arms)"
       ]
     },
     {
       "ID": 5006300,
       "Entries": [
-        "Recluse - Legs"
+        "[Recluse] Default (Legs)"
       ]
     },
     {
       "ID": 5007000,
       "Entries": [
-        "Executor - Head"
+        "[Executor] Default (Head)"
       ]
     },
     {
       "ID": 5007100,
       "Entries": [
-        "Executor - Body [Visible Model]"
+        "[Executor] Default (Body) [Model]"
       ]
     },
     {
       "ID": 5007200,
       "Entries": [
-        "Executor - Arms"
+        "[Executor] Default (Arms)"
       ]
     },
     {
       "ID": 5007300,
       "Entries": [
-        "Executor - Legs"
+        "[Executor] Default (Legs)"
       ]
     },
     {
       "ID": 5010000,
       "Entries": [
-        "Wylder (Dawn) - Head"
+        "[Wylder] Dawn (Head)"
       ]
     },
     {
       "ID": 5010100,
       "Entries": [
-        "Wylder (Dawn) - Body [Visible Model]"
+        "[Wylder] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5010200,
       "Entries": [
-        "Wylder (Dawn) - Arms"
+        "[Wylder] Dawn (Arms)"
       ]
     },
     {
       "ID": 5010300,
       "Entries": [
-        "Wylder (Dawn) - Legs"
+        "[Wylder] Dawn (Legs)"
       ]
     },
     {
       "ID": 5011000,
       "Entries": [
-        "Guardian (Dawn) - Head"
+        "[Guardian] Dawn (Head)"
       ]
     },
     {
       "ID": 5011100,
       "Entries": [
-        "Guardian (Dawn) - Body [Visible Model]"
+        "[Guardian] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5011200,
       "Entries": [
-        "Guardian (Dawn) - Arms"
+        "[Guardian] Dawn (Arms)"
       ]
     },
     {
       "ID": 5011300,
       "Entries": [
-        "Guardian (Dawn) - Legs"
+        "[Guardian] Dawn (Legs)"
       ]
     },
     {
       "ID": 5012000,
       "Entries": [
-        "Ironeye (Dawn) - Head"
+        "[Ironeye] Dawn (Head)"
       ]
     },
     {
       "ID": 5012100,
       "Entries": [
-        "Ironeye (Dawn) - Body [Visible Model]"
+        "[Ironeye] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5012200,
       "Entries": [
-        "Ironeye (Dawn) - Arms"
+        "[Ironeye] Dawn (Arms)"
       ]
     },
     {
       "ID": 5012300,
       "Entries": [
-        "Ironeye (Dawn) - Legs"
+        "[Ironeye] Dawn (Legs)"
       ]
     },
     {
       "ID": 5013000,
       "Entries": [
-        "Duchess (Dawn) - Head"
+        "[Duchess] Dawn (Head)"
       ]
     },
     {
       "ID": 5013100,
       "Entries": [
-        "Duchess (Dawn) - Body [Visible Model]"
+        "[Duchess] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5013200,
       "Entries": [
-        "Duchess (Dawn) - Arms"
+        "[Duchess] Dawn (Arms)"
       ]
     },
     {
       "ID": 5013300,
       "Entries": [
-        "Duchess (Dawn) - Legs"
+        "[Duchess] Dawn (Legs)"
       ]
     },
     {
       "ID": 5014000,
       "Entries": [
-        "Raider (Dawn) - Head"
+        "[Raider] Dawn (Head)"
       ]
     },
     {
       "ID": 5014100,
       "Entries": [
-        "Raider (Dawn) - Body [Visible Model]"
+        "[Raider] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5014200,
       "Entries": [
-        "Raider (Dawn) - Arms"
+        "[Raider] Dawn (Arms)"
       ]
     },
     {
       "ID": 5014300,
       "Entries": [
-        "Raider (Dawn) - Legs"
+        "[Raider] Dawn (Legs)"
       ]
     },
     {
       "ID": 5015000,
       "Entries": [
-        "Revenant (Dawn) - Head"
+        "[Revenant] Dawn (Head)"
       ]
     },
     {
       "ID": 5015100,
       "Entries": [
-        "Revenant (Dawn) - Body [Visible Model]"
+        "[Revenant] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5015200,
       "Entries": [
-        "Revenant (Dawn) - Arms"
+        "[Revenant] Dawn (Arms)"
       ]
     },
     {
       "ID": 5015300,
       "Entries": [
-        "Revenant (Dawn) - Legs"
+        "[Revenant] Dawn (Legs)"
       ]
     },
     {
       "ID": 5016000,
       "Entries": [
-        "Recluse (Dawn) - Head"
+        "[Recluse] Dawn (Head)"
       ]
     },
     {
       "ID": 5016100,
       "Entries": [
-        "Recluse (Dawn) - Body [Visible Model]"
+        "[Recluse] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5016200,
       "Entries": [
-        "Recluse (Dawn) - Arms"
+        "[Recluse] Dawn (Arms)"
       ]
     },
     {
       "ID": 5016300,
       "Entries": [
-        "Recluse (Dawn) - Legs"
+        "[Recluse] Dawn (Legs)"
       ]
     },
     {
       "ID": 5017000,
       "Entries": [
-        "Executor (Dawn) - Head"
+        "[Executor] Dawn (Head)"
       ]
     },
     {
       "ID": 5017100,
       "Entries": [
-        "Executor (Dawn) - Body [Visible Model]"
+        "[Executor] Dawn (Body) [Model]"
       ]
     },
     {
       "ID": 5017200,
       "Entries": [
-        "Executor (Dawn) - Arms"
+        "[Executor] Dawn (Arms)"
       ]
     },
     {
       "ID": 5017300,
       "Entries": [
-        "Executor (Dawn) - Legs"
+        "[Executor] Dawn (Legs)"
       ]
     },
     {
       "ID": 5020000,
       "Entries": [
-        "Wylder (Darkness) - Head"
+        "[Wylder] Darkness (Head)"
       ]
     },
     {
       "ID": 5020100,
       "Entries": [
-        "Wylder (Darkness) - Body [Visible Model]"
+        "[Wylder] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5020200,
       "Entries": [
-        "Wylder (Darkness) - Arms"
+        "[Wylder] Darkness (Arms)"
       ]
     },
     {
       "ID": 5020300,
       "Entries": [
-        "Wylder (Darkness) - Legs"
+        "[Wylder] Darkness (Legs)"
       ]
     },
     {
       "ID": 5021000,
       "Entries": [
-        "Guardian (Darkness) - Head"
+        "[Guardian] Darkness (Head)"
       ]
     },
     {
       "ID": 5021100,
       "Entries": [
-        "Guardian (Darkness) - Body [Visible Model]"
+        "[Guardian] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5021200,
       "Entries": [
-        "Guardian (Darkness) - Arms"
+        "[Guardian] Darkness (Arms)"
       ]
     },
     {
       "ID": 5021300,
       "Entries": [
-        "Guardian (Darkness) - Legs"
+        "[Guardian] Darkness (Legs)"
       ]
     },
     {
       "ID": 5022000,
       "Entries": [
-        "Ironeye (Darkness) - Head"
+        "[Ironeye] Darkness (Head)"
       ]
     },
     {
       "ID": 5022100,
       "Entries": [
-        "Ironeye (Darkness) - Body [Visible Model]"
+        "[Ironeye] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5022200,
       "Entries": [
-        "Ironeye (Darkness) - Arms"
+        "[Ironeye] Darkness (Arms)"
       ]
     },
     {
       "ID": 5022300,
       "Entries": [
-        "Ironeye (Darkness) - Legs"
+        "[Ironeye] Darkness (Legs)"
       ]
     },
     {
       "ID": 5023000,
       "Entries": [
-        "Duchess (Darkness) - Head"
+        "[Duchess] Darkness (Head)"
       ]
     },
     {
       "ID": 5023100,
       "Entries": [
-        "Duchess (Darkness) - Body [Visible Model]"
+        "[Duchess] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5023200,
       "Entries": [
-        "Duchess (Darkness) - Arms"
+        "[Duchess] Darkness (Arms)"
       ]
     },
     {
       "ID": 5023300,
       "Entries": [
-        "Duchess (Darkness) - Legs"
+        "[Duchess] Darkness (Legs)"
       ]
     },
     {
       "ID": 5024000,
       "Entries": [
-        "Raider (Darkness) - Head"
+        "[Raider] Darkness (Head)"
       ]
     },
     {
       "ID": 5024100,
       "Entries": [
-        "Raider (Darkness) - Body [Visible Model]"
+        "[Raider] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5024200,
       "Entries": [
-        "Raider (Darkness) - Arms"
+        "[Raider] Darkness (Arms)"
       ]
     },
     {
       "ID": 5024300,
       "Entries": [
-        "Raider (Darkness) - Legs"
+        "[Raider] Darkness (Legs)"
       ]
     },
     {
       "ID": 5025000,
       "Entries": [
-        "Revenant (Darkness) - Head"
+        "[Revenant] Darkness (Head)"
       ]
     },
     {
       "ID": 5025100,
       "Entries": [
-        "Revenant (Darkness) - Body [Visible Model]"
+        "[Revenant] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5025200,
       "Entries": [
-        "Revenant (Darkness) - Arms"
+        "[Revenant] Darkness (Arms)"
       ]
     },
     {
       "ID": 5025300,
       "Entries": [
-        "Revenant (Darkness) - Legs"
+        "[Revenant] Darkness (Legs)"
       ]
     },
     {
       "ID": 5026000,
       "Entries": [
-        "Recluse (Darkness) - Head"
+        "[Recluse] Darkness (Head)"
       ]
     },
     {
       "ID": 5026100,
       "Entries": [
-        "Recluse (Darkness) - Body [Visible Model]"
+        "[Recluse] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5026200,
       "Entries": [
-        "Recluse (Darkness) - Arms"
+        "[Recluse] Darkness (Arms)"
       ]
     },
     {
       "ID": 5026300,
       "Entries": [
-        "Recluse (Darkness) - Legs"
+        "[Recluse] Darkness (Legs)"
       ]
     },
     {
       "ID": 5027000,
       "Entries": [
-        "Executor (Darkness) - Head"
+        "[Executor] Darkness (Head)"
       ]
     },
     {
       "ID": 5027100,
       "Entries": [
-        "Executor (Darkness) - Body [Visible Model]"
+        "[Executor] Darkness (Body) [Model]"
       ]
     },
     {
       "ID": 5027200,
       "Entries": [
-        "Executor (Darkness) - Arms"
+        "[Executor] Darkness (Arms)"
       ]
     },
     {
       "ID": 5027300,
       "Entries": [
-        "Executor (Darkness) - Legs"
+        "[Executor] Darkness (Legs)"
       ]
     },
     {
       "ID": 5030000,
       "Entries": [
-        "Wylder (Remembrance) - Head"
+        "[Wylder] Remembrance (Head)"
       ]
     },
     {
       "ID": 5030100,
       "Entries": [
-        "Wylder (Remembrance) - Body [Visible Model]"
+        "[Wylder] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5030200,
       "Entries": [
-        "Wylder (Remembrance) - Arms"
+        "[Wylder] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5030300,
       "Entries": [
-        "Wylder (Remembrance) - Legs"
+        "[Wylder] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5031000,
       "Entries": [
-        "Guardian (Remembrance) - Head"
+        "[Guardian] Remembrance (Head)"
       ]
     },
     {
       "ID": 5031100,
       "Entries": [
-        "Guardian (Remembrance) - Body [Visible Model]"
+        "[Guardian] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5031200,
       "Entries": [
-        "Guardian (Remembrance) - Arms"
+        "[Guardian] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5031300,
       "Entries": [
-        "Guardian (Remembrance) - Legs"
+        "[Guardian] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5032000,
       "Entries": [
-        "Ironeye (Remembrance) - Head"
+        "[Ironeye] Remembrance (Head)"
       ]
     },
     {
       "ID": 5032100,
       "Entries": [
-        "Ironeye (Remembrance) - Body [Visible Model]"
+        "[Ironeye] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5032200,
       "Entries": [
-        "Ironeye (Remembrance) - Arms"
+        "[Ironeye] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5032300,
       "Entries": [
-        "Ironeye (Remembrance) - Legs"
+        "[Ironeye] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5033000,
       "Entries": [
-        "Duchess (Remembrance) - Head"
+        "[Duchess] Remembrance (Head)"
       ]
     },
     {
       "ID": 5033100,
       "Entries": [
-        "Duchess (Remembrance) - Body [Visible Model]"
+        "[Duchess] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5033200,
       "Entries": [
-        "Duchess (Remembrance) - Arms"
+        "[Duchess] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5033300,
       "Entries": [
-        "Duchess (Remembrance) - Legs"
+        "[Duchess] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5034000,
       "Entries": [
-        "Raider (Remembrance) - Head"
+        "[Raider] Remembrance (Head)"
       ]
     },
     {
       "ID": 5034100,
       "Entries": [
-        "Raider (Remembrance) - Body [Visible Model]"
+        "[Raider] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5034200,
       "Entries": [
-        "Raider (Remembrance) - Arms"
+        "[Raider] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5034300,
       "Entries": [
-        "Raider (Remembrance) - Legs"
+        "[Raider] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5034400,
       "Entries": [
-        "Raider (Remembrance) - Alt [Visible Model]"
+        "[Raider] White Horn [Model]"
       ]
     },
     {
       "ID": 5035000,
       "Entries": [
-        "Revenant (Remembrance) - Head"
+        "[Revenant] Remembrance (Head)"
       ]
     },
     {
       "ID": 5035100,
       "Entries": [
-        "Revenant (Remembrance) - Body [Visible Model]"
+        "[Revenant] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5035200,
       "Entries": [
-        "Revenant (Remembrance) - Arms"
+        "[Revenant] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5035300,
       "Entries": [
-        "Revenant (Remembrance) - Legs"
+        "[Revenant] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5036000,
       "Entries": [
-        "Recluse (Remembrance) - Head"
+        "[Recluse] Remembrance (Head)"
       ]
     },
     {
       "ID": 5036100,
       "Entries": [
-        "Recluse (Remembrance) - Body [Visible Model]"
+        "[Recluse] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5036200,
       "Entries": [
-        "Recluse (Remembrance) - Arms"
+        "[Recluse] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5036300,
       "Entries": [
-        "Recluse (Remembrance) - Legs"
+        "[Recluse] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5037000,
       "Entries": [
-        "Executor (Remembrance) - Head"
+        "[Executor] Remembrance (Head)"
       ]
     },
     {
       "ID": 5037100,
       "Entries": [
-        "Executor (Remembrance) - Body [Visible Model]"
+        "[Executor] Remembrance (Body) [Model]"
       ]
     },
     {
       "ID": 5037200,
       "Entries": [
-        "Executor (Remembrance) - Arms"
+        "[Executor] Remembrance (Arms)"
       ]
     },
     {
       "ID": 5037300,
       "Entries": [
-        "Executor (Remembrance) - Legs"
+        "[Executor] Remembrance (Legs)"
       ]
     },
     {
       "ID": 5050000,
       "Entries": [
-        "Wylder (Abysswalker) - Head"
+        "[Wylder] Abysswalker (Head)"
       ]
     },
     {
       "ID": 5050100,
       "Entries": [
-        "Wylder (Abysswalker) - Body [Visible Model]"
+        "[Wylder] Abysswalker (Body) [Model]"
       ]
     },
     {
       "ID": 5050200,
       "Entries": [
-        "Wylder (Abysswalker) - Arms"
+        "[Wylder] Abysswalker (Arms)"
       ]
     },
     {
       "ID": 5050300,
       "Entries": [
-        "Wylder (Abysswalker) - Legs"
+        "[Wylder] Abysswalker (Legs)"
       ]
     },
     {
       "ID": 5051000,
       "Entries": [
-        "Guardian (Sunlight Knight) - Head"
+        "[Guardian] Sunlight Knight (Head)"
       ]
     },
     {
       "ID": 5051100,
       "Entries": [
-        "Guardian (Sunlight Knight) - Body [Visible Model]"
+        "[Guardian] Sunlight Knight (Body) [Model]"
       ]
     },
     {
       "ID": 5051200,
       "Entries": [
-        "Guardian (Sunlight Knight) - Arms"
+        "[Guardian] Sunlight Knight (Arms)"
       ]
     },
     {
       "ID": 5051300,
       "Entries": [
-        "Guardian (Sunlight Knight) - Legs"
+        "[Guardian] Sunlight Knight (Legs)"
       ]
     },
     {
       "ID": 5052000,
       "Entries": [
-        "Ironeye (Ringfinger) - Head"
+        "[Ironeye] Ringfinger (Head)"
       ]
     },
     {
       "ID": 5052100,
       "Entries": [
-        "Ironeye (Ringfinger) - Body [Visible Model]"
+        "[Ironeye] Ringfinger (Body) [Model]"
       ]
     },
     {
       "ID": 5052200,
       "Entries": [
-        "Ironeye (Ringfinger) - Arms"
+        "[Ironeye] Ringfinger (Arms)"
       ]
     },
     {
       "ID": 5052300,
       "Entries": [
-        "Ironeye (Ringfinger) - Legs"
+        "[Ironeye] Ringfinger (Legs)"
       ]
     },
     {
       "ID": 5053000,
       "Entries": [
-        "Duchess (Black Leather) - Head"
+        "[Duchess] Black Leather (Head)"
       ]
     },
     {
       "ID": 5053100,
       "Entries": [
-        "Duchess (Black Leather) - Body [Visible Model]"
+        "[Duchess] Black Leather (Body) [Model]"
       ]
     },
     {
       "ID": 5053200,
       "Entries": [
-        "Duchess (Black Leather) - Arms"
+        "[Duchess] Black Leather (Arms)"
       ]
     },
     {
       "ID": 5053300,
       "Entries": [
-        "Duchess (Black Leather) - Legs"
+        "[Duchess] Black Leather (Legs)"
       ]
     },
     {
       "ID": 5054000,
       "Entries": [
-        "Raider (Rock-like) - Head"
+        "[Raider] Rock-like (Head)"
       ]
     },
     {
       "ID": 5054100,
       "Entries": [
-        "Raider (Rock-like) - Body [Visible Model]"
+        "[Raider] Rock-like (Body) [Model]"
       ]
     },
     {
       "ID": 5054200,
       "Entries": [
-        "Raider (Rock-like) - Arms"
+        "[Raider] Rock-like (Arms)"
       ]
     },
     {
       "ID": 5054300,
       "Entries": [
-        "Raider (Rock-like) - Legs"
+        "[Raider] Rock-like (Legs)"
       ]
     },
     {
       "ID": 5055000,
       "Entries": [
-        "Revenant (The Sister in the Painting) - Head"
+        "[Revenant] The Sister in the Painting (Head)"
       ]
     },
     {
       "ID": 5055100,
       "Entries": [
-        "Revenant (The Sister in the Painting) - Body [Visible Model]"
+        "[Revenant] The Sister in the Painting (Body) [Model]"
       ]
     },
     {
       "ID": 5055200,
       "Entries": [
-        "Revenant (The Sister in the Painting) - Arms"
+        "[Revenant] The Sister in the Painting (Arms)"
       ]
     },
     {
       "ID": 5055300,
       "Entries": [
-        "Revenant (The Sister in the Painting) - Legs"
+        "[Revenant] The Sister in the Painting (Legs)"
       ]
     },
     {
       "ID": 5056000,
       "Entries": [
-        "Recluse (Heretic Sorcerer) - Head"
+        "[Recluse] Heretic Sorcerer (Head)"
       ]
     },
     {
       "ID": 5056100,
       "Entries": [
-        "Recluse (Heretic Sorcerer) - Body [Visible Model]"
+        "[Recluse] Heretic Sorcerer (Body) [Model]"
       ]
     },
     {
       "ID": 5056200,
       "Entries": [
-        "Recluse (Heretic Sorcerer) - Arms"
+        "[Recluse] Heretic Sorcerer (Arms)"
       ]
     },
     {
       "ID": 5056300,
       "Entries": [
-        "Recluse (Heretic Sorcerer) - Legs"
+        "[Recluse] Heretic Sorcerer (Legs)"
       ]
     },
     {
       "ID": 5057000,
       "Entries": [
-        "Executor (Thorns) - Head"
+        "[Executor] Thorns (Head)"
       ]
     },
     {
       "ID": 5057100,
       "Entries": [
-        "Executor (Thorns) - Body [Visible Model]"
+        "[Executor] Thorns (Body) [Model]"
       ]
     },
     {
       "ID": 5057200,
       "Entries": [
-        "Executor (Thorns) - Arms"
+        "[Executor] Thorns (Arms)"
       ]
     },
     {
       "ID": 5057300,
       "Entries": [
-        "Executor (Thorns) - Legs"
+        "[Executor] Thorns (Legs)"
       ]
     },
     {
       "ID": 5060000,
       "Entries": [
-        "Wylder (Lion Knight) - Head"
+        "[Wylder] Lion Knight (Head)"
       ]
     },
     {
       "ID": 5060100,
       "Entries": [
-        "Wylder (Lion Knight) - Body [Visible Model]"
+        "[Wylder] Lion Knight (Body) [Model]"
       ]
     },
     {
       "ID": 5060200,
       "Entries": [
-        "Wylder (Lion Knight) - Arms"
+        "[Wylder] Lion Knight (Arms)"
       ]
     },
     {
       "ID": 5060300,
       "Entries": [
-        "Wylder (Lion Knight) - Legs"
+        "[Wylder] Lion Knight (Legs)"
       ]
     },
     {
       "ID": 5061000,
       "Entries": [
-        "Guardian (Wayfarer) - Head"
+        "[Guardian] Wayfarer (Head)"
       ]
     },
     {
       "ID": 5061100,
       "Entries": [
-        "Guardian (Wayfarer) - Body [Visible Model]"
+        "[Guardian] Wayfarer (Body) [Model]"
       ]
     },
     {
       "ID": 5061200,
       "Entries": [
-        "Guardian (Wayfarer) - Arms"
+        "[Guardian] Wayfarer (Arms)"
       ]
     },
     {
       "ID": 5061300,
       "Entries": [
-        "Guardian (Wayfarer) - Legs"
+        "[Guardian] Wayfarer (Legs)"
       ]
     },
     {
       "ID": 5062000,
       "Entries": [
-        "Ironeye (Sellsword) - Head"
+        "[Ironeye] Sellsword (Head)"
       ]
     },
     {
       "ID": 5062100,
       "Entries": [
-        "Ironeye (Sellsword) - Body [Visible Model]"
+        "[Ironeye] Sellsword (Body) [Model]"
       ]
     },
     {
       "ID": 5062200,
       "Entries": [
-        "Ironeye (Sellsword) - Arms"
+        "[Ironeye] Sellsword (Arms)"
       ]
     },
     {
       "ID": 5062300,
       "Entries": [
-        "Ironeye (Sellsword) - Legs"
+        "[Ironeye] Sellsword (Legs)"
       ]
     },
     {
       "ID": 5063000,
       "Entries": [
-        "Duchess (Wraith) - Head"
+        "[Duchess] Wraith (Head)"
       ]
     },
     {
       "ID": 5063100,
       "Entries": [
-        "Duchess (Wraith) - Body [Visible Model]"
+        "[Duchess] Wraith (Body) [Model]"
       ]
     },
     {
       "ID": 5063200,
       "Entries": [
-        "Duchess (Wraith) - Arms"
+        "[Duchess] Wraith (Arms)"
       ]
     },
     {
       "ID": 5063300,
       "Entries": [
-        "Duchess (Wraith) - Legs"
+        "[Duchess] Wraith (Legs)"
       ]
     },
     {
       "ID": 5064000,
       "Entries": [
-        "Raider (Catarina) - Head"
+        "[Raider] Catarina (Head)"
       ]
     },
     {
       "ID": 5064100,
       "Entries": [
-        "Raider (Catarina) - Body [Visible Model]"
+        "[Raider] Catarina (Body) [Model]"
       ]
     },
     {
       "ID": 5064200,
       "Entries": [
-        "Raider (Catarina) - Arms"
+        "[Raider] Catarina (Arms)"
       ]
     },
     {
       "ID": 5064300,
       "Entries": [
-        "Raider (Catarina) - Legs"
+        "[Raider] Catarina (Legs)"
       ]
     },
     {
       "ID": 5065000,
       "Entries": [
-        "Revenant (Dragon School) - Head"
+        "[Revenant] Dragon School (Head)"
       ]
     },
     {
       "ID": 5065100,
       "Entries": [
-        "Revenant (Dragon School) - Body [Visible Model]"
+        "[Revenant] Dragon School (Body) [Model]"
       ]
     },
     {
       "ID": 5065200,
       "Entries": [
-        "Revenant (Dragon School) - Arms"
+        "[Revenant] Dragon School (Arms)"
       ]
     },
     {
       "ID": 5065300,
       "Entries": [
-        "Revenant (Dragon School) - Legs"
+        "[Revenant] Dragon School (Legs)"
       ]
     },
     {
       "ID": 5066000,
       "Entries": [
-        "Recluse (Emerald Fate) - Head"
+        "[Recluse] Emerald Fate (Head)"
       ]
     },
     {
       "ID": 5066100,
       "Entries": [
-        "Recluse (Emerald Fate) - Body [Visible Model]"
+        "[Recluse] Emerald Fate (Body) [Model]"
       ]
     },
     {
       "ID": 5066200,
       "Entries": [
-        "Recluse (Emerald Fate) - Arms"
+        "[Recluse] Emerald Fate (Arms)"
       ]
     },
     {
       "ID": 5066300,
       "Entries": [
-        "Recluse (Emerald Fate) - Legs"
+        "[Recluse] Emerald Fate (Legs)"
       ]
     },
     {
       "ID": 5067000,
       "Entries": [
-        "Executor (Sable Church) - Head"
+        "[Executor] Sable Church (Head)"
       ]
     },
     {
       "ID": 5067100,
       "Entries": [
-        "Executor (Sable Church) - Body [Visible Model]"
+        "[Executor] Sable Church (Body) [Model]"
       ]
     },
     {
       "ID": 5067200,
       "Entries": [
-        "Executor (Sable Church) - Arms"
+        "[Executor] Sable Church (Arms)"
       ]
     },
     {
       "ID": 5067300,
       "Entries": [
-        "Executor (Sable Church) - Legs"
+        "[Executor] Sable Church (Legs)"
       ]
     }
   ]
