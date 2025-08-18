@@ -4,505 +4,505 @@
     {
       "ID": 10000,
       "Entries": [
-        "Wylder: 1"
+        "[Wylder] Level 1"
       ]
     },
     {
       "ID": 10001,
       "Entries": [
-        "Wylder: 2"
+        "[Wylder] Level 2"
       ]
     },
     {
       "ID": 10002,
       "Entries": [
-        "Wylder: 12"
+        "[Wylder] Level 12"
       ]
     },
     {
       "ID": 10003,
       "Entries": [
-        "Wylder: 15"
+        "[Wylder] Level 15"
       ]
     },
     {
       "ID": 20000,
       "Entries": [
-        "Guardian: 1"
+        "[Guardian] Level 1"
       ]
     },
     {
       "ID": 20001,
       "Entries": [
-        "Guardian: 2"
+        "[Guardian] Level 2"
       ]
     },
     {
       "ID": 20002,
       "Entries": [
-        "Guardian: 12"
+        "[Guardian] Level 12"
       ]
     },
     {
       "ID": 20003,
       "Entries": [
-        "Guardian: 15"
+        "[Guardian] Level 15"
       ]
     },
     {
       "ID": 30000,
       "Entries": [
-        "Ironeye: 1"
+        "[Ironeye] Level 1"
       ]
     },
     {
       "ID": 30001,
       "Entries": [
-        "Ironeye: 2"
+        "[Ironeye] Level 2"
       ]
     },
     {
       "ID": 30002,
       "Entries": [
-        "Ironeye: 12"
+        "[Ironeye] Level 12"
       ]
     },
     {
       "ID": 30003,
       "Entries": [
-        "Ironeye: 15"
+        "[Ironeye] Level 15"
       ]
     },
     {
       "ID": 40000,
       "Entries": [
-        "Duchess: 1"
+        "[Duchess] Level 1"
       ]
     },
     {
       "ID": 40001,
       "Entries": [
-        "Duchess: 2"
+        "[Duchess] Level 2"
       ]
     },
     {
       "ID": 40002,
       "Entries": [
-        "Duchess: 12"
+        "[Duchess] Level 12"
       ]
     },
     {
       "ID": 40003,
       "Entries": [
-        "Duchess: 15"
+        "[Duchess] Level 15"
       ]
     },
     {
       "ID": 50000,
       "Entries": [
-        "Raider: 1"
+        "[Raider] Level 1"
       ]
     },
     {
       "ID": 50001,
       "Entries": [
-        "Raider: 2"
+        "[Raider] Level 2"
       ]
     },
     {
       "ID": 50002,
       "Entries": [
-        "Raider: 12"
+        "[Raider] Level 12"
       ]
     },
     {
       "ID": 50003,
       "Entries": [
-        "Raider: 15"
+        "[Raider] Level 15"
       ]
     },
     {
       "ID": 60000,
       "Entries": [
-        "Revenant: 1"
+        "[Revenant] Level 1"
       ]
     },
     {
       "ID": 60001,
       "Entries": [
-        "Revenant: 2"
+        "[Revenant] Level 2"
       ]
     },
     {
       "ID": 60002,
       "Entries": [
-        "Revenant: 12"
+        "[Revenant] Level 12"
       ]
     },
     {
       "ID": 60003,
       "Entries": [
-        "Revenant: 15"
+        "[Revenant] Level 15"
       ]
     },
     {
       "ID": 70000,
       "Entries": [
-        "Recluse: 1"
+        "[Recluse] Level 1"
       ]
     },
     {
       "ID": 70001,
       "Entries": [
-        "Recluse: 2"
+        "[Recluse] Level 2"
       ]
     },
     {
       "ID": 70002,
       "Entries": [
-        "Recluse: 12"
+        "[Recluse] Level 12"
       ]
     },
     {
       "ID": 70003,
       "Entries": [
-        "Recluse: 15"
+        "[Recluse] Level 15"
       ]
     },
     {
       "ID": 80000,
       "Entries": [
-        "Executor: 1"
+        "[Executor] Level 1"
       ]
     },
     {
       "ID": 80001,
       "Entries": [
-        "Executor: 2"
+        "[Executor] Level 2"
       ]
     },
     {
       "ID": 80002,
       "Entries": [
-        "Executor: 12"
+        "[Executor] Level 12"
       ]
     },
     {
       "ID": 80003,
       "Entries": [
-        "Executor: 15"
+        "[Executor] Level 15"
       ]
     },
     {
       "ID": 210000,
       "Entries": [
-        ""
+        "[Libra - Strength] Level 1"
       ]
     },
     {
       "ID": 210001,
       "Entries": [
-        ""
+        "[Libra - Strength] Level 2"
       ]
     },
     {
       "ID": 210002,
       "Entries": [
-        ""
+        "[Libra - Strength] Level 12"
       ]
     },
     {
       "ID": 210003,
       "Entries": [
-        ""
+        "[Libra - Strength] Level 15"
       ]
     },
     {
       "ID": 220000,
       "Entries": [
-        ""
+        "[Libra - Dexterity] Level 1"
       ]
     },
     {
       "ID": 220001,
       "Entries": [
-        ""
+        "[Libra - Dexterity] Level 2"
       ]
     },
     {
       "ID": 220002,
       "Entries": [
-        ""
+        "[Libra - Dexterity] Level 12"
       ]
     },
     {
       "ID": 220003,
       "Entries": [
-        ""
+        "[Libra - Dexterity] Level 15"
       ]
     },
     {
       "ID": 230000,
       "Entries": [
-        ""
+        "[Libra - Intelligence] Level 1"
       ]
     },
     {
       "ID": 230001,
       "Entries": [
-        ""
+        "[Libra - Intelligence] Level 2"
       ]
     },
     {
       "ID": 230002,
       "Entries": [
-        ""
+        "[Libra - Intelligence] Level 12"
       ]
     },
     {
       "ID": 230003,
       "Entries": [
-        ""
+        "[Libra - Intelligence] Level 15"
       ]
     },
     {
       "ID": 240000,
       "Entries": [
-        ""
+        "[Libra - Faith] Level 1"
       ]
     },
     {
       "ID": 240001,
       "Entries": [
-        ""
+        "[Libra - Faith] Level 2"
       ]
     },
     {
       "ID": 240002,
       "Entries": [
-        ""
+        "[Libra - Faith] Level 12"
       ]
     },
     {
       "ID": 240003,
       "Entries": [
-        ""
+        "[Libra - Faith] Level 15"
       ]
     },
     {
       "ID": 250000,
       "Entries": [
-        ""
+        "[Libra - Arcane] Level 1"
       ]
     },
     {
       "ID": 250001,
       "Entries": [
-        ""
+        "[Libra - Arcane] Level 2"
       ]
     },
     {
       "ID": 250002,
       "Entries": [
-        ""
+        "[Libra - Arcane] Level 12"
       ]
     },
     {
       "ID": 250003,
       "Entries": [
-        ""
+        "[Libra - Arcane] Level 15"
       ]
     },
     {
       "ID": 300000,
       "Entries": [
-        ""
+        "[Wylder - +Mnd/-Vig] Level 1"
       ]
     },
     {
       "ID": 300001,
       "Entries": [
-        ""
+        "[Wylder - +Mnd/-Vig] Level 12"
       ]
     },
     {
       "ID": 300100,
       "Entries": [
-        ""
+        "[Wylder - +Int/+Fth/-Str/-Dex] Level 1"
       ]
     },
     {
       "ID": 300101,
       "Entries": [
-        ""
+        "[Wylder - +Int/+Fth/-Str/-Dex] Level 12"
       ]
     },
     {
       "ID": 301000,
       "Entries": [
-        ""
+        "[Guardian - +Str/+Dex/-Vig] Level 1"
       ]
     },
     {
       "ID": 301001,
       "Entries": [
-        ""
+        "[Guardian - +Str/+Dex/-Vig] Level 12"
       ]
     },
     {
       "ID": 301100,
       "Entries": [
-        ""
+        "[Guardian - +Mnd/+Fth/-Vig] Level 1"
       ]
     },
     {
       "ID": 301101,
       "Entries": [
-        ""
+        "[Guardian - +Mnd/+Fth/-Vig] Level 12"
       ]
     },
     {
       "ID": 302000,
       "Entries": [
-        ""
+        "[Ironeye - +Arc/-Dex] Level 1"
       ]
     },
     {
       "ID": 302001,
       "Entries": [
-        ""
+        "[Ironeye - +Arc/-Dex] Level 12"
       ]
     },
     {
       "ID": 302100,
       "Entries": [
-        ""
+        "[Ironeye - +Vig/+Str/-Dex] Level 1"
       ]
     },
     {
       "ID": 302101,
       "Entries": [
-        ""
+        "[Ironeye - +Vig/+Str/-Dex] Level 12"
       ]
     },
     {
       "ID": 303000,
       "Entries": [
-        ""
+        "[Duchess - +Vig/+Str/-Mnd] Level 1"
       ]
     },
     {
       "ID": 303001,
       "Entries": [
-        ""
+        "[Duchess - +Vig/+Str/-Mnd] Level 12"
       ]
     },
     {
       "ID": 303100,
       "Entries": [
-        ""
+        "[Duchess - +Mnd/+Fth/-Int] Level 1"
       ]
     },
     {
       "ID": 303101,
       "Entries": [
-        ""
+        "[Duchess - +Mnd/+Fth/-Int] Level 12"
       ]
     },
     {
       "ID": 304000,
       "Entries": [
-        ""
+        "[Raider - +Mnd/+Int/-Vig/-End] Level 1"
       ]
     },
     {
       "ID": 304001,
       "Entries": [
-        ""
+        "[Raider - +Mnd/+Int/-Vig/-End] Level 12"
       ]
     },
     {
       "ID": 304100,
       "Entries": [
-        ""
+        "[Raider - +Arc/-Vig] Level 1"
       ]
     },
     {
       "ID": 304101,
       "Entries": [
-        ""
+        "[Raider - +Arc/-Vig] Level 12"
       ]
     },
     {
       "ID": 305000,
       "Entries": [
-        ""
+        "[Revenant - +Vig/+End/-Mnd] Level 1"
       ]
     },
     {
       "ID": 305001,
       "Entries": [
-        ""
+        "[Revenant - +Vig/+End/-Mnd] Level 12"
       ]
     },
     {
       "ID": 305100,
       "Entries": [
-        ""
+        "[Revenant - +Str/-Fth] Level 1"
       ]
     },
     {
       "ID": 305101,
       "Entries": [
-        ""
+        "[Revenant - +Str/-Fth] Level 12"
       ]
     },
     {
       "ID": 306000,
       "Entries": [
-        ""
+        "[Recluse - +Vig/+End/+Dex/-Int/-Fth] Level 1"
       ]
     },
     {
       "ID": 306001,
       "Entries": [
-        ""
+        "[Recluse - +Vig/+End/+Dex/-Int/-Fth] Level 12"
       ]
     },
     {
       "ID": 306100,
       "Entries": [
-        ""
+        "[Recluse - +Int/+Fth/-Mnd] Level 1"
       ]
     },
     {
       "ID": 306101,
       "Entries": [
-        ""
+        "[Recluse - +Int/+Fth/-Mnd] Level 12"
       ]
     },
     {
       "ID": 307000,
       "Entries": [
-        ""
+        "[Executor - +Vig/+End/-Arc] Level 1"
       ]
     },
     {
       "ID": 307001,
       "Entries": [
-        ""
+        "[Executor - +Vig/+End/-Arc] Level 12"
       ]
     },
     {
       "ID": 307100,
       "Entries": [
-        ""
+        "[Executor - +Dex/+Arc/-Vig] Level 1"
       ]
     },
     {
       "ID": 307101,
       "Entries": [
-        ""
+        "[Executor - +Dex/+Arc/-Vig] Level 12"
       ]
     }
   ]
