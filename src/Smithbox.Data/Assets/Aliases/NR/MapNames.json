@@ -11,17 +11,17 @@
   },
   {
     "ID": "m11_00_00_00",
-    "Name": "Roundtable Hold (Flashback)",
+    "Name": "Roundtable Hold Ending",
     "Tags": []
   },
   {
     "ID": "m12_00_00_00",
-    "Name": "Final Day Chamber",
+    "Name": "Spirit Shelter",
     "Tags": []
   },
   {
     "ID": "m12_00_00_99",
-    "Name": "Final Day Chamber (Skybox)",
+    "Name": "Spirit Shelter (Skybox)",
     "Tags": []
   },
   {
@@ -61,642 +61,642 @@
   },
   {
     "ID": "m18_00_00_00",
-    "Name": "Final Boss Arena: Base",
+    "Name": "Nightlord - Final Boss",
     "Tags": []
   },
   {
     "ID": "m18_00_00_99",
-    "Name": "Final Boss Arena: Base (Skybox)",
+    "Name": "Nightlord - Final Boss (Skybox)",
     "Tags": []
   },
   {
     "ID": "m19_00_00_00",
-    "Name": "Final Boss Arena: Encounter",
+    "Name": "Nightlord - Others",
     "Tags": []
   },
   {
     "ID": "m19_00_00_99",
-    "Name": "Final Boss Arena: Encounter (Skybox)",
+    "Name": "Nightlord - Others (Skybox)",
     "Tags": []
   },
   {
     "ID": "m20_00_00_00",
-    "Name": "Tile: Walking Mausoleum (Upright Column) / Meteor Stike ",
+    "Name": "Map Event - 0",
     "Tags": []
   },
   {
     "ID": "m20_10_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 1",
     "Tags": []
   },
   {
     "ID": "m20_20_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 2",
     "Tags": []
   },
   {
     "ID": "m20_30_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 3",
     "Tags": []
   },
   {
     "ID": "m20_40_00_00",
-    "Name": "Tile: Walking Mausoleum (Fallen Wall) / Meteor Stike",
+    "Name": "Map Event - 4",
     "Tags": []
   },
   {
     "ID": "m20_50_00_00",
-    "Name": "Tile: Walking Mausoleum (Pool) / Meteor Stike",
+    "Name": "Map Event - 5",
     "Tags": []
   },
   {
     "ID": "m20_60_00_00",
-    "Name": "Tile: Walking Mausoleum",
+    "Name": "Map Event - 6",
     "Tags": []
   },
   {
     "ID": "m20_70_00_00",
-    "Name": "Tile: Walking Mausoleum (Upright Wall) / Meteor Stike",
+    "Name": "Map Event - 7",
     "Tags": []
   },
   {
     "ID": "m20_80_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 8",
     "Tags": []
   },
   {
     "ID": "m20_90_00_00",
-    "Name": "Tile: Walking Mausoleum (Graves) / Meteor Stike",
+    "Name": "Map Event - 9",
     "Tags": []
   },
   {
     "ID": "m21_00_00_00",
-    "Name": "Tile: Walking Mausoleum (Ruined Columns) / Meteor Stike",
+    "Name": "Map Event - 10",
     "Tags": []
   },
   {
     "ID": "m21_10_00_00",
-    "Name": "Tile: Walking Mausoleum (Fallen Wall) / Meteor Stike",
+    "Name": "Map Event - 11",
     "Tags": []
   },
   {
     "ID": "m21_20_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 12",
     "Tags": []
   },
   {
     "ID": "m21_30_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 13",
     "Tags": []
   },
   {
     "ID": "m21_40_00_00",
-    "Name": "Tile: Walking Mausoleum / Meteor Stike",
+    "Name": "Map Event - 14",
     "Tags": []
   },
   {
     "ID": "m21_50_00_00",
-    "Name": "Tile: Walking Mausoleum (Shallow Water) / Meteor Stike",
+    "Name": "Map Event - 15",
     "Tags": []
   },
   {
     "ID": "m30_00_00_00",
-    "Name": "Tile: Fort (Cataclysm)",
+    "Name": "Fort - Lordsworn Captain; Abductor Virgin",
     "Tags": []
   },
   {
     "ID": "m30_30_00_00",
-    "Name": "Tile: Castle (Cataclysm)",
+    "Name": "Fort - Guardian Golem; Crystalians",
     "Tags": []
   },
   {
     "ID": "m31_90_00_00",
-    "Name": "Tile: Castle",
+    "Name": "Fort - Rotted Woods",
     "Tags": []
   },
   {
     "ID": "m32_00_00_00",
-    "Name": "Tile: Large Encampment",
+    "Name": "Camp - Banished Knights; Elder Lion",
     "Tags": []
   },
   {
     "ID": "m32_10_00_00",
-    "Name": "Tile: Large Encampment with Siege Tower",
+    "Name": "Camp - Leonine Misbegotten; Redmane Knights; Royal Army Knights",
     "Tags": []
   },
   {
     "ID": "m32_20_00_00",
-    "Name": "Tile: Large Encampment (Cataclysm)",
+    "Name": "Camp - Flame Chariots; Frenzied Flame Troll",
     "Tags": []
   },
   {
     "ID": "m34_00_00_00",
-    "Name": "Tile: Major Ruins A (Cataclysm)",
+    "Name": "Ruins - Erdtree Burial Watchdogs; Sanguine Noble; Ancient Heroes of Zamor; Albinauric Archers",
     "Tags": []
   },
   {
     "ID": "m34_10_00_00",
-    "Name": "Tile: Major Ruins B (Cataclysm)",
+    "Name": "Ruins - Perfumer; Depraved Perfumer; Battlemages; Albinauric Archers; Runebear",
     "Tags": []
   },
   {
     "ID": "m34_20_00_00",
-    "Name": "Tile: Major Ruins C (Cataclysm)",
+    "Name": "Ruins - Wormface; Beastmen of Farum Azula",
     "Tags": []
   },
   {
     "ID": "m34_30_00_00",
-    "Name": "Tile: Major Ruins D (Cataclysm)",
+    "Name": "Ruins - Beastmen of Farum Azula",
     "Tags": []
   },
   {
     "ID": "m35_90_00_00",
-    "Name": "Tile: Major Ruins E",
+    "Name": "Ruins - Tutorial and Revenant Encounter",
     "Tags": []
   },
   {
     "ID": "m37_90_00_00",
-    "Name": "Tile: Village",
+    "Name": "Township",
     "Tags": []
   },
   {
     "ID": "m38_00_00_00",
-    "Name": "Tile: Cathedral A (Cataclysm)",
+    "Name": "Great Church - Oracle Envoys; Guardian Golem",
     "Tags": []
   },
   {
     "ID": "m38_10_00_00",
-    "Name": "Tile: Cathedral B (Cataclysm)",
+    "Name": "Great Church - Oracle Envoys; Guardian Golem",
     "Tags": []
   },
   {
     "ID": "m40_00_00_00",
-    "Name": "Tile: Sorcerer's Rise A",
+    "Name": "Sorcerer's Rise - Normal",
     "Tags": []
   },
   {
     "ID": "m40_90_00_00",
-    "Name": "Tile: Sorcerer's Rise B",
+    "Name": "Sorcerer's Rise - Ruined",
     "Tags": []
   },
   {
     "ID": "m41_00_00_00",
-    "Name": "Tile: Church A",
+    "Name": "Church - Dogs",
     "Tags": []
   },
   {
     "ID": "m41_01_00_00",
-    "Name": "Tile: Church B",
+    "Name": "Church - Rats; Rats Alt",
     "Tags": []
   },
   {
     "ID": "m41_30_00_00",
-    "Name": "Tile: Church (Rotted Woods)",
+    "Name": "Church - Rotted",
     "Tags": []
   },
   {
     "ID": "m41_90_00_00",
-    "Name": "Tile: Church C",
+    "Name": "Church - Lake",
     "Tags": []
   },
   {
     "ID": "m43_00_00_00",
-    "Name": "Tile: Encampment A",
+    "Name": "Small Camp - Dogs and Soldiers; Soldiers",
     "Tags": []
   },
   {
     "ID": "m43_01_00_00",
-    "Name": "Tile: Encampment B",
+    "Name": "Small Camp - Wandering Nobles; Wandering Nobles and Soldiers",
     "Tags": []
   },
   {
     "ID": "m43_02_00_00",
-    "Name": "Tile: Encampment C",
+    "Name": "Small Camp - Foot Soldiers",
     "Tags": []
   },
   {
     "ID": "m43_30_00_00",
-    "Name": "Tile: Encampment (Rotted Woods)",
+    "Name": "Small Camp - Putrid Ancestral Followers; Putrid Ancestral Followers Alt",
     "Tags": []
   },
   {
     "ID": "m43_40_00_00",
-    "Name": "Tile: Encampment D",
+    "Name": "Small Camp - Dogs; Misbegotten",
     "Tags": []
   },
   {
     "ID": "m43_41_00_00",
-    "Name": "Tile: Encampment E",
+    "Name": "Small Camp - Demi-Humans; Dogs and Demi-Humans",
     "Tags": []
   },
   {
     "ID": "m43_50_00_00",
-    "Name": "Tile: Encampment F",
+    "Name": "Small Camp - Guilty; Guilty Alt",
     "Tags": []
   },
   {
     "ID": "m44_01_00_00",
-    "Name": "Tile: Shack",
+    "Name": "Small Camp - Shack",
     "Tags": []
   },
   {
     "ID": "m45_00_00_00",
-    "Name": "Tile: Caravans A",
+    "Name": "Small Camp - Caravans",
     "Tags": []
   },
   {
     "ID": "m45_01_00_00",
-    "Name": "Tile: Caravans B",
+    "Name": "Small Camp - Caravans and Soldiers",
     "Tags": []
   },
   {
     "ID": "m45_51_00_00",
-    "Name": "Encounter: Morgott",
+    "Name": "Field Boss - Black Knife Assassin",
     "Tags": []
   },
   {
     "ID": "m45_52_00_00",
-    "Name": "Encounter: Augur",
+    "Name": "Event - Maris",
     "Tags": []
   },
   {
     "ID": "m45_53_00_00",
-    "Name": "Encounter: Sentient Pest (Moth)",
+    "Name": "Event - Gnoster",
     "Tags": []
   },
   {
     "ID": "m45_55_00_00",
-    "Name": "Encounter: Libra / Creature of Night",
+    "Name": "Event - Libra",
     "Tags": []
   },
   {
     "ID": "m46_00_00_00",
-    "Name": "Encounter: Trolls, Knights and Soldiers",
+    "Name": "Night Horde - Frenzied Horde",
     "Tags": []
   },
   {
     "ID": "m46_01_00_00",
-    "Name": "Encounter: Large Dogs and Crows",
+    "Name": "Night Horde - Caelid Horde",
     "Tags": []
   },
   {
     "ID": "m46_02_00_00",
-    "Name": "Encounter: Ants",
+    "Name": "Night Horde - Ant Horde",
     "Tags": []
   },
   {
     "ID": "m46_03_00_00",
-    "Name": "Encounter: Fingercreepers",
+    "Name": "Night Horde - Finger Horde",
     "Tags": []
   },
   {
     "ID": "m46_04_00_00",
-    "Name": "Encounter: Dragons",
+    "Name": "Night Horde - Dragon Horde",
     "Tags": []
   },
   {
     "ID": "m46_05_00_00",
-    "Name": "Encounter: Guardian Golems",
+    "Name": "Night Horde - Golem Horde",
     "Tags": []
   },
   {
     "ID": "m46_06_00_00",
-    "Name": "Encounter: Royal Riders",
+    "Name": "Night Horde - Wraith Horde",
     "Tags": []
   },
   {
     "ID": "m46_50_00_00",
-    "Name": "Tile: Evergaol A",
+    "Name": "Evergaol - Unused Banished Knights; Unused Nox Duo; Omen; Grave Warden Duelist; Beastman of Farum Azula; Beastly Brigade; Unused Bloodhound Knight",
     "Tags": []
   },
   {
     "ID": "m46_51_00_00",
-    "Name": "Encounter: Red Wolf of Radagon",
+    "Name": "Field Boss - Red Wolf",
     "Tags": []
   },
   {
     "ID": "m46_52_00_00",
-    "Name": "Encounter: Tree Sentinel",
+    "Name": "Field Boss - Draconic Tree Sentinel",
     "Tags": []
   },
   {
     "ID": "m46_53_00_00",
-    "Name": "Encounter: Draconic Sentinel",
+    "Name": "Field Boss - Tree Sentinel",
     "Tags": []
   },
   {
     "ID": "m46_54_00_00",
-    "Name": "Encounter: Draconic Sentinel",
+    "Name": "Field Boss - Royal Carian Knight",
     "Tags": []
   },
   {
     "ID": "m46_55_00_00",
-    "Name": "Encounter: Leonine Misbegotten",
+    "Name": "Field Boss - Leonine Misbegotten",
     "Tags": []
   },
   {
     "ID": "m46_56_00_00",
-    "Name": "Encounter: Royal Revenant",
+    "Name": "Field Boss - Bell Bearing Hunter",
     "Tags": []
   },
   {
     "ID": "m46_57_00_00",
-    "Name": "Encounter: Lion Guardian",
+    "Name": "Field Boss - Elder Lion",
     "Tags": []
   },
   {
     "ID": "m46_58_00_00",
-    "Name": "Encounter: Dragon",
+    "Name": "Field Boss - Flying Dragon of the Hills",
     "Tags": []
   },
   {
     "ID": "m46_59_00_00",
-    "Name": "Encounter: Dragon",
+    "Name": "Field Boss - Royal Revenant",
     "Tags": []
   },
   {
     "ID": "m46_60_00_00",
-    "Name": "Tile: Evergaol B",
+    "Name": "Evergaol - Crucible Knight with Sword; Crucible Knight with Spear; Crystalians; Stoneskin Lords; Banished Knights; Nox Duo; Bloodhound Knight",
     "Tags": []
   },
   {
     "ID": "m46_62_00_00",
-    "Name": "Encounter: Wormface and Night's Cavalry",
+    "Name": "Field Boss - Night's Cavalry",
     "Tags": []
   },
   {
     "ID": "m46_63_00_00",
-    "Name": "Encounter: Ulcerated Tree Spirit",
+    "Name": "Field Boss - Ulcerated Tree Spirit",
     "Tags": []
   },
   {
     "ID": "m46_64_00_00",
-    "Name": "Encounter: Ancestor Spirit",
+    "Name": "Field Boss - Ancestor Spirit",
     "Tags": []
   },
   {
     "ID": "m46_65_00_00",
-    "Name": "Encounter: Grafted Scion",
+    "Name": "Field Boss - Grafted Scion",
     "Tags": []
   },
   {
     "ID": "m46_66_00_00",
-    "Name": "Encounter: Valiant Gargoyle",
+    "Name": "Field Boss - Valiant Gargoyle",
     "Tags": []
   },
   {
     "ID": "m46_67_00_00",
-    "Name": "Encounter: Erdtree Avatar",
+    "Name": "Field Boss - Erdtree Avatar",
     "Tags": []
   },
   {
     "ID": "m46_68_00_00",
-    "Name": "Encounter: Magma Wyrm",
+    "Name": "Field Boss - Magma Wyrm",
     "Tags": []
   },
   {
     "ID": "m46_69_00_00",
-    "Name": "Encounter: Ancient Hero of Zamor",
+    "Name": "Field Boss - Ancient Hero of Zamor",
     "Tags": []
   },
   {
     "ID": "m46_70_00_00",
-    "Name": "Tile: Evergaol C",
+    "Name": "Evergaol - Dragonkin Soldier; Godskin Apostle; Godskin Noble; Crucible Knight with Sword; Crucible Knight with Spear",
     "Tags": []
   },
   {
     "ID": "m46_71_00_00",
-    "Name": "Encounter: Miranda Blossom",
+    "Name": "Field Boss - Miranda Blossom",
     "Tags": []
   },
   {
     "ID": "m46_72_00_00",
-    "Name": "Encounter: Golden Hippopotamus",
+    "Name": "Field Boss - Golden Hippopotamus",
     "Tags": []
   },
   {
     "ID": "m46_74_00_00",
-    "Name": "Encounter: Death Rite Bird",
+    "Name": "Field Boss - Death Rite Bird",
     "Tags": []
   },
   {
     "ID": "m46_77_00_00",
-    "Name": "Encounter: Demi-Human Queen",
+    "Name": "Field Boss - Demi-Human Queen",
     "Tags": []
   },
   {
     "ID": "m46_78_00_00",
-    "Name": "Encounter: Morgott",
+    "Name": "Event - Fell Omen",
     "Tags": []
   },
   {
     "ID": "m46_80_00_00",
-    "Name": "Tile: Evergaol D",
+    "Name": "Evergaol - Death Rite Bird; Ancient Dragon; Godskin Duo",
     "Tags": []
   },
   {
     "ID": "m46_81_00_00",
-    "Name": "Encounter: Black Knife Assassin",
+    "Name": "Basement Boss - Black Knife Assassin",
     "Tags": []
   },
   {
     "ID": "m46_82_00_00",
-    "Name": "Encounter: Red Wolf of Radagon",
+    "Name": "Basement Boss - Red Wolf",
     "Tags": []
   },
   {
     "ID": "m46_86_00_00",
-    "Name": "Encounter: Leonine Misbegotten",
+    "Name": "Basement Boss - Leonine Misbegotten",
     "Tags": []
   },
   {
     "ID": "m46_87_00_00",
-    "Name": "Encounter: Bell-bearing Hunter",
+    "Name": "Basement Boss - Bell Bearing Hunter",
     "Tags": []
   },
   {
     "ID": "m46_88_00_00",
-    "Name": "Encounter: Royal Revenant",
+    "Name": "Basement Boss - Royal Revenant",
     "Tags": []
   },
   {
     "ID": "m46_90_00_00",
-    "Name": "Encounter: Ancestor Spirit",
+    "Name": "Basement Boss - Ancestor Spirit",
     "Tags": []
   },
   {
     "ID": "m46_91_00_00",
-    "Name": "Encounter: Grafted Scion",
+    "Name": "Basement Boss - Grafted Scion",
     "Tags": []
   },
   {
     "ID": "m46_95_00_00",
-    "Name": "Encounter: Ancient Hero of Zamor",
+    "Name": "Basement Boss - Ancient Hero of Zamor",
     "Tags": []
   },
   {
     "ID": "m47_70_00_00",
-    "Name": "Encounter: Tibia Horde and Death Rite Bird",
+    "Name": "Night Boss - Tibia Mariner",
     "Tags": []
   },
   {
     "ID": "m47_80_00_00",
-    "Name": "Encounter: Gaping Dragon and Rats",
+    "Name": "Night Boss - Gaping Dragon",
     "Tags": []
   },
   {
     "ID": "m47_90_00_00",
-    "Name": "Encounter: Centipede Demon",
+    "Name": "Night Boss - Centipede Demon",
     "Tags": []
   },
   {
     "ID": "m48_00_00_00",
-    "Name": "Encounter: Duke's Dear Freja",
+    "Name": "Night Boss - The Duke's Dear Freja",
     "Tags": []
   },
   {
     "ID": "m48_10_00_00",
-    "Name": "Encounter: Smelter Demon, Watchdog and Entourage",
+    "Name": "Night Boss - Smelter Demon",
     "Tags": []
   },
   {
     "ID": "m48_20_00_00",
-    "Name": "Encounter: Dragon",
+    "Name": "Night Boss - Nameless King",
     "Tags": []
   },
   {
     "ID": "m48_30_00_00",
-    "Name": "Encounter: Dancer of the Boreal Valley",
+    "Name": "Night Boss - Dancer of the Boreal Valley",
     "Tags": []
   },
   {
     "ID": "m48_40_00_00",
-    "Name": "Encounter: Morgott and Entourage",
+    "Name": "Night Boss - Fell Omen",
     "Tags": []
   },
   {
     "ID": "m48_50_00_00",
-    "Name": "Encounter: Draconic Sentinel and Cavalry",
+    "Name": "Night Boss - Draconic Tree Sentinel and Royal Cavalrymen",
     "Tags": []
   },
   {
     "ID": "m48_60_00_00",
-    "Name": "Encounter: Tree Sentine and Cavalry",
+    "Name": "Night Boss - Tree Sentinel and Royal Cavalrymen",
     "Tags": []
   },
   {
     "ID": "m48_70_00_00",
-    "Name": "Encounter: Godskin Apostle and Entourage",
+    "Name": "Night Boss - Godskin Apostle",
     "Tags": []
   },
   {
     "ID": "m48_80_00_00",
-    "Name": "Encounter: Godskin Apostle and Noble, plsu Entourage",
+    "Name": "Night Boss - Godskin Duo",
     "Tags": []
   },
   {
     "ID": "m48_90_00_00",
-    "Name": "Encounter: Wormface, Crabs and Putrid Corpses",
+    "Name": "Night Boss - Wormface",
     "Tags": []
   },
   {
     "ID": "m49_10_00_00",
-    "Name": "Encounter: Godrick and Entourage",
+    "Name": "Night Boss - Grafted Monarch",
     "Tags": []
   },
   {
     "ID": "m49_17_00_00",
-    "Name": "Encounter: Valiant Gargoyle and Entourage",
+    "Name": "Night Boss - Valiant Gargoyle",
     "Tags": []
   },
   {
     "ID": "m49_18_00_00",
-    "Name": "Encounter: Magma Wyrm and Entourage",
+    "Name": "Night Boss - Great Wyrm",
     "Tags": []
   },
   {
     "ID": "m49_19_00_00",
-    "Name": "Encounter: Ancient Dragon and Entourage",
+    "Name": "Night Boss - Ancient Dragon",
     "Tags": []
   },
   {
     "ID": "m49_20_00_00",
-    "Name": "Encounter: Fallingstar Beast and Entourage",
+    "Name": "Night Boss - Full Grown Fallingstar Beast",
     "Tags": []
   },
   {
     "ID": "m49_21_00_00",
-    "Name": "Encounter: Death Rite Bird and Entourage",
+    "Name": "Night Boss - Death Rite Bird",
     "Tags": []
   },
   {
     "ID": "m49_23_00_00",
-    "Name": "Encounter: Dragonkin Soldier and Entourage",
+    "Name": "Night Boss - Dragonkin Soldier",
     "Tags": []
   },
   {
     "ID": "m49_24_00_00",
-    "Name": "Encounter: Bell-bearing Hunter and Entourage",
+    "Name": "Night Boss - Bell Bearing Hunter",
     "Tags": []
   },
   {
     "ID": "m49_25_00_00",
-    "Name": "Encounter: Crucible Knight and Golden Hippopotamus",
+    "Name": "Night Boss - Crucible Knight and Golden Hippopotamus",
     "Tags": []
   },
   {
     "ID": "m49_26_00_00",
-    "Name": "Encounter: Commander and Banished Knights",
+    "Name": "Night Boss - Outland Commander",
     "Tags": []
   },
   {
     "ID": "m49_27_00_00",
-    "Name": "Encounter: Commander and Banished Knights",
+    "Name": "Night Boss - Battlefield Commander",
     "Tags": []
   },
   {
     "ID": "m49_28_00_00",
-    "Name": "Encounter: Omen and Night's Cavalry",
+    "Name": "Night Boss - Night's Cavalry Duo",
     "Tags": []
   },
   {
     "ID": "m49_29_00_00",
-    "Name": "Encounter: Demi-human Queen and Entourage",
+    "Name": "Night Boss - Demi-Human Queen and Swordmaster",
     "Tags": []
   },
   {
     "ID": "m49_30_00_00",
-    "Name": "Encounter: Royal Revenants and Riders",
+    "Name": "Night Boss - Royal Revenant",
     "Tags": []
   },
   {
     "ID": "m49_40_00_00",
-    "Name": "Encounter: Libra / Creature of Night",
+    "Name": "Event - Libra Alt",
     "Tags": []
   },
   {
     "ID": "m49_41_00_00",
-    "Name": "Encounter: Castle Layout A",
+    "Name": "Castle - Banished Knights",
     "Tags": []
   },
   {
     "ID": "m49_42_00_00",
-    "Name": "Encounter: Castle Layout B",
+    "Name": "Castle - Trolls",
     "Tags": []
   },
   {
     "ID": "m49_43_00_00",
-    "Name": "Encounter: Castle Layout C",
+    "Name": "Castle - Crucible Knights",
     "Tags": []
   },
   {
     "ID": "m49_90_00_00",
-    "Name": "Encounter: Ulcerated Tree Spirit and Guardians",
+    "Name": "Night Boss - Ulcerated Tree Spirit",
     "Tags": []
   },
   {
     "ID": "m60_00_00_99",
-    "Name": "Overworld: Limveld",
+    "Name": "Overworld",
     "Tags": []
   },
   {
@@ -706,22 +706,22 @@
   },
   {
     "ID": "m60_10_09_02",
-    "Name": "Region: Limveld: East",
+    "Name": "Limveld - East",
     "Tags": []
   },
   {
     "ID": "m60_10_09_12",
-    "Name": "Region: Limveld: East (The Mountaintop)",
+    "Name": "Limveld - East (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_10_09_22",
-    "Name": "Region: Limveld: East (The Crater)",
+    "Name": "Limveld - East (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_10_09_52",
-    "Name": "Region: Limveld: East (Noklateo)",
+    "Name": "Limveld - East (Noklateo)",
     "Tags": []
   },
   {
@@ -736,22 +736,22 @@
   },
   {
     "ID": "m60_11_09_02",
-    "Name": "Region: Limveld: West",
+    "Name": "Limveld - West",
     "Tags": []
   },
   {
     "ID": "m60_11_09_22",
-    "Name": "Overworld: Limveld: West (The Crater)",
+    "Name": "Limveld - West (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_11_09_32",
-    "Name": "Region: Limveld: West (Rotted Woods)",
+    "Name": "Limveld - West (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_11_09_52",
-    "Name": "Region: Limveld: West (Noklateo)",
+    "Name": "Limveld - West (Noklateo)",
     "Tags": []
   },
   {
@@ -816,42 +816,42 @@
   },
   {
     "ID": "m60_21_18_01",
-    "Name": "Block: Limveld: South-West [0:0]",
+    "Name": "Limveld - Southwest",
     "Tags": []
   },
   {
     "ID": "m60_21_18_11",
-    "Name": "Block: Limveld: South-West [0:0] (The Mountaintops)",
+    "Name": "Limveld - Southwest (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_21_18_21",
-    "Name": "Block: Limveld: South-West [0:0] (The Crater)",
+    "Name": "Limveld - Southwest (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_21_18_51",
-    "Name": "Block: Limveld: South-West [0:0] (Noklateo)",
+    "Name": "Limveld - Southwest (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_21_19_01",
-    "Name": "Block: Limveld: North-West [1:0]",
+    "Name": "Limveld - Northwest",
     "Tags": []
   },
   {
     "ID": "m60_21_19_11",
-    "Name": "Block: Limveld: North-West [1:0] (The Mountaintops)",
+    "Name": "Limveld - Northwest (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_21_19_21",
-    "Name": "Block: Limveld: North-West [1:0] (The Crater)",
+    "Name": "Limveld - Northwest (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_21_19_51",
-    "Name": "Block: Limveld: North-West [1:0] (Noklateo)",
+    "Name": "Limveld - Northwest (Noklateo)",
     "Tags": []
   },
   {
@@ -866,42 +866,42 @@
   },
   {
     "ID": "m60_22_18_01",
-    "Name": "Block: Limveld: South-East [0:1]",
+    "Name": "Limveld - Southeast",
     "Tags": []
   },
   {
     "ID": "m60_22_18_21",
-    "Name": "Block: Limveld: South-East [0:1] (The Crater)",
+    "Name": "Limveld - Southeast (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_22_18_31",
-    "Name": "Block: Limveld: South-East [0:1] (Rotted Woods)",
+    "Name": "Limveld - Southeast (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_22_18_51",
-    "Name": "Block: Limveld: South-East [0:1] (Noklateo)",
+    "Name": "Limveld - Southeast (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_22_19_01",
-    "Name": "Block: Limveld: North-East [1:1]",
+    "Name": "Limveld - Northeast",
     "Tags": []
   },
   {
     "ID": "m60_22_19_21",
-    "Name": "Block: Limveld: North-East [1:1] (The Crater)",
+    "Name": "Limveld - Northeast (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_22_19_31",
-    "Name": "Block: Limveld: North-East [1:1] (Rotted Woods)",
+    "Name": "Limveld - Northeast (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_22_19_51",
-    "Name": "Block: Limveld: North-East [1:1] (Noklateo)",
+    "Name": "Limveld - Northeast (Noklateo)",
     "Tags": []
   },
   {
@@ -961,542 +961,542 @@
   },
   {
     "ID": "m60_41_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_36_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_36_10",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_36_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_36_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_37_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_37_10",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_37_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_37_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_38_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_38_10",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_38_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_38_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_39_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_39_10",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_39_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_39_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_41_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_42_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_42_36_00",
-    "Name": "Tile: Limveld: South-West [0:0]",
+    "Name": "Limveld - Southwest Corner, West Lake",
     "Tags": []
   },
   {
     "ID": "m60_42_36_10",
-    "Name": "Tile: Limveld: South-West [0:0] (The Mountaintops)",
+    "Name": "Limveld - Southwest Corner, West Lake (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_42_36_20",
-    "Name": "Tile: Limveld: South-West [0:0] (The Crater)",
+    "Name": "Limveld - Southwest Corner, West Lake (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_42_36_50",
-    "Name": "Tile: Limveld: South-West [0:0] (Noklateo)",
+    "Name": "Limveld - Noklateo Inner Tier (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_42_37_00",
-    "Name": "Tile: Limveld: South-West [1:0]",
+    "Name": "Limveld - Gatefront",
     "Tags": []
   },
   {
     "ID": "m60_42_37_10",
-    "Name": "Tile: Limveld: South-West [1:0] (The Mountaintops)",
+    "Name": "Limveld - Gatefront (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_42_37_20",
-    "Name": "Tile: Limveld: South-West [1:0] (The Crater)",
+    "Name": "Limveld - Gatefront (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_42_37_50",
-    "Name": "Tile: Limveld: South-West [1:0] (Noklateo)",
+    "Name": "Limveld - Noklateo North Wall (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_42_38_00",
-    "Name": "Tile: Limveld: North-West [2:0]",
+    "Name": "Limveld - Southwest Stormhill",
     "Tags": []
   },
   {
     "ID": "m60_42_38_10",
-    "Name": "Tile: Limveld: North-West [2:0] (The Mountaintops)",
+    "Name": "Limveld - Southwest Mountaintop (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_42_38_20",
-    "Name": "Tile: Limveld: North-West [2:0] (The Crater)",
+    "Name": "Limveld - Southwest Stormhill (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_42_38_50",
-    "Name": "Tile: Limveld: North-West [2:0] (Noklateo)",
+    "Name": "Limveld - Southwest Stormhill (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_42_39_00",
-    "Name": "Tile: Limveld: North-West [3:0]",
+    "Name": "Limveld - Northwest Corner",
     "Tags": []
   },
   {
     "ID": "m60_42_39_10",
-    "Name": "Tile: Limveld: North-West [3:0]",
+    "Name": "Limveld - Northwest Mountaintop (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_42_39_20",
-    "Name": "Tile: Limveld: North-West [3:0] (The Crater)",
+    "Name": "Limveld - Northwest Corner (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_42_39_50",
-    "Name": "Tile: Limveld: North-West [3:0] (Noklateo)",
+    "Name": "Limveld - Northwest Corner (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_42_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_43_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_43_36_00",
-    "Name": "Tile: Limveld: South-West [0:1]",
+    "Name": "Limveld - Central Lake",
     "Tags": []
   },
   {
     "ID": "m60_43_36_10",
-    "Name": "Tile: Limveld: South-West [0:1] (The Mountaintops)",
+    "Name": "Limveld - Central Lake (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_43_36_20",
-    "Name": "Tile: Limveld: South-West [0:1] (The Crater)",
+    "Name": "Limveld - Central Lake (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_43_36_50",
-    "Name": "Tile: Limveld: South-West [0:1] (Noklateo)",
+    "Name": "Limveld - Noklateo East Wall, West Lake (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_43_37_00",
-    "Name": "Tile: Limveld: South-West [1:1]",
+    "Name": "Limveld - Castle",
     "Tags": []
   },
   {
     "ID": "m60_43_37_10",
-    "Name": "Tile: Limveld: South-West [1:1] (The Mountaintops)",
+    "Name": "Limveld - Castle (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_43_37_20",
-    "Name": "Tile: Limveld: South-West [1:1] (The Crater)",
+    "Name": "Limveld - Castle (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_43_37_50",
-    "Name": "Tile: Limveld: South-West [1:1] (Noklateo)",
+    "Name": "Limveld - Noklateo Entrance (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_43_38_00",
-    "Name": "Tile: Limveld: North-West [2:1]",
+    "Name": "Limveld - West Murkwater, Southeast Stormhill",
     "Tags": []
   },
   {
     "ID": "m60_43_38_10",
-    "Name": "Tile: Limveld: North-West [2:1] (The Mountaintops)",
+    "Name": "Limveld - Southeast Mountaintop (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_43_38_20",
-    "Name": "Tile: Limveld: North-West [2:1] (The Crater)",
+    "Name": "Limveld - Southwest Crater (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_43_38_50",
-    "Name": "Tile: Limveld: North-West [2:1] (Noklateo)",
+    "Name": "Limveld - West Murkwater, Southeast Stormhill (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_43_39_00",
-    "Name": "Tile: Limveld: North-West [3:1]",
+    "Name": "Limveld - West Saintsbridge",
     "Tags": []
   },
   {
     "ID": "m60_43_39_10",
-    "Name": "Tile: Limveld: North-West [3:1] (The Mountaintops)",
+    "Name": "Limveld - Northeast Mountaintop (Mountaintop)",
     "Tags": []
   },
   {
     "ID": "m60_43_39_20",
-    "Name": "Tile: Limveld: North-West [3:1] (The Crater)",
+    "Name": "Limveld - Northwest Crater (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_43_39_50",
-    "Name": "Tile: Limveld: North-West [3:1] (Noklateo)",
+    "Name": "Limveld - West Saintsbridge (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_43_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_44_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_44_36_00",
-    "Name": "Tile: Limveld: South-East [0:2]",
+    "Name": "Limveld - East Lake",
     "Tags": []
   },
   {
     "ID": "m60_44_36_20",
-    "Name": "Tile: Limveld: South-East [0:2] (The Crater)",
+    "Name": "Limveld - East Lake (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_44_36_30",
-    "Name": "Tile: Limveld: South-East [0:2] (Rotted Woods)",
+    "Name": "Limveld - Southwest Rotted Woods (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_44_36_50",
-    "Name": "Tile: Limveld: South-East [0:2] (Noklateo)",
+    "Name": "Limveld - East Lake (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_44_37_00",
-    "Name": "Tile: Limveld: South-East [1:2]",
+    "Name": "Limveld - Castle Front",
     "Tags": []
   },
   {
     "ID": "m60_44_37_20",
-    "Name": "Tile: Limveld: South-East [1:2] (The Crater)",
+    "Name": "Limveld - Castle Front (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_44_37_30",
-    "Name": "Tile: Limveld: South-East [1:2] (Rotted Woods)",
+    "Name": "Limveld - Northwest Rotted Woods (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_44_37_50",
-    "Name": "Tile: Limveld: South-East [1:2] (Noklateo)",
+    "Name": "Limveld - East of Noklateo Entrance (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_44_38_00",
-    "Name": "Tile: Limveld: North-East [2:2]",
+    "Name": "Limveld - East Murkwater",
     "Tags": []
   },
   {
     "ID": "m60_44_38_20",
-    "Name": "Tile: Limveld: North-East [2:2] (The Crater)",
+    "Name": "Limveld - Southeast Crater (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_44_38_30",
-    "Name": "Tile: Limveld: North-East [2:2] (Rotted Woods)",
+    "Name": "Limveld - East Murkwater (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_44_38_50",
-    "Name": "Tile: Limveld: North-East [2:2] (Noklateo)",
+    "Name": "Limveld - East Murkwater (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_44_39_00",
-    "Name": "Tile: Limveld: North-East [3:2]",
+    "Name": "Limveld - Saintsbridge to Summonwater",
     "Tags": []
   },
   {
     "ID": "m60_44_39_20",
-    "Name": "Tile: Limveld: North-East [3:2] (The Crater)",
+    "Name": "Limveld - Northeast Crater (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_44_39_30",
-    "Name": "Tile: Limveld: North-East [3:2] (Rotted Woods)",
+    "Name": "Limveld - Saintsbridge to Summonwater (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_44_39_50",
-    "Name": "Tile: Limveld: North-East [3:2] (Noklateo)",
+    "Name": "Limveld - Saintsbridge to Summonwater (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_44_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_45_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_45_36_00",
-    "Name": "Tile: Limveld: South-East [0:3]",
+    "Name": "Limveld - South Mistwood",
     "Tags": []
   },
   {
     "ID": "m60_45_36_20",
-    "Name": "Tile: Limveld: South-East [0:3] (The Crater)",
+    "Name": "Limveld - South Mistwood (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_45_36_30",
-    "Name": "Tile: Limveld: South-East [0:3] (Rotted Woods)",
+    "Name": "Limveld - Southeast Rotted Woods (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_45_36_50",
-    "Name": "Tile: Limveld: South-East [0:3] (Noklateo)",
+    "Name": "Limveld - South Mistwood (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_45_37_00",
-    "Name": "Tile: Limveld: South-East [1:3]",
+    "Name": "Limveld - Central Mistwood",
     "Tags": []
   },
   {
     "ID": "m60_45_37_20",
-    "Name": "Tile: Limveld: South-East [1:3] (The Crater)",
+    "Name": "Limveld - Central Mistwood (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_45_37_30",
-    "Name": "Tile: Limveld: South-East [1:3] (Rotted Woods)",
+    "Name": "Limveld - Northeast Rotted Woods (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_45_37_50",
-    "Name": "Tile: Limveld: South-East [1:3] (Noklateo)",
+    "Name": "Limveld - Central Mistwood (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_45_38_00",
-    "Name": "Tile: Limveld: North-East [2:3]",
+    "Name": "Limveld - Road to Third Church",
     "Tags": []
   },
   {
     "ID": "m60_45_38_20",
-    "Name": "Tile: Limveld: North-East [2:3] (The Crater)",
+    "Name": "Limveld - Road to Third Church (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_45_38_30",
-    "Name": "Tile: Limveld: North-East [2:3] (Rotted Woods)",
+    "Name": "Limveld - Road to Third Church (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_45_38_50",
-    "Name": "Tile: Limveld: North-East [2:3] (Noklateo)",
+    "Name": "Limveld - Road to Third Church (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_45_39_00",
-    "Name": "Tile: Limveld: North-East [3:3]",
+    "Name": "Limveld - Summonwater",
     "Tags": []
   },
   {
     "ID": "m60_45_39_20",
-    "Name": "Tile: Limveld: North-East [3:3] (The Crater)",
+    "Name": "Limveld - Summonwater (Crater)",
     "Tags": []
   },
   {
     "ID": "m60_45_39_30",
-    "Name": "Tile: Limveld: North-East [3:3] (Rotted Woods)",
+    "Name": "Limveld - Summonwater (Rotted Woods)",
     "Tags": []
   },
   {
     "ID": "m60_45_39_50",
-    "Name": "Tile: Limveld: North-East [3:3] (Noklateo)",
+    "Name": "Limveld - Summonwater (Noklateo)",
     "Tags": []
   },
   {
     "ID": "m60_45_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_35_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_36_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_36_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_36_30",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_36_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_37_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_37_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_37_30",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_37_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_38_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_38_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_38_30",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_38_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_39_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_39_20",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_39_30",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_39_50",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   },
   {
     "ID": "m60_46_40_00",
-    "Name": "Tile: Blank",
+    "Name": "Blank",
     "Tags": []
   }
 ]
