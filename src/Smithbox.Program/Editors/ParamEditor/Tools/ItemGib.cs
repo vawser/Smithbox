@@ -122,7 +122,8 @@ public class ItemGib
 
         var activeParam = Editor._activeView.Selection.GetActiveParam();
 
-        if (string.IsNullOrEmpty(activeParam) || !GetGameOffsets().Bases.Any(item => item.itemIDCategories.ContainsKey(activeParam)))
+        var gameOffsets = GetGameOffsets();
+        if (string.IsNullOrEmpty(activeParam) || gameOffsets == null || !gameOffsets.Bases.Any(item => item.itemIDCategories.ContainsKey(activeParam)))
         {
             return;
         }
