@@ -1,8 +1,8 @@
 m10_00_00_00:Roundtable Hold
 m10_00_00_99:Roundtable Hold (Skybox)
-m11_00_00_00:Roundtable Hold (Flashback)
-m12_00_00_00:Final Day Chamber
-m12_00_00_99:Final Day Chamber (Skybox)
+m11_00_00_00:Roundtable Hold Ending
+m12_00_00_00:Spirit Shelter
+m12_00_00_99:Spirit Shelter (Skybox)
 m13_00_00_00:High Clifftop
 m13_00_00_99:High Clifftop (Skybox)
 m13_20_00_00:Amphitheatre
@@ -10,145 +10,145 @@ m13_20_00_99:Amphitheatre (Skybox)
 m14_00_00_00:?
 m14_00_00_99:? (Skybox)
 m15_00_00_00:Library
-m18_00_00_00:Final Boss Arena: Base
-m18_00_00_99:Final Boss Arena: Base (Skybox)
-m19_00_00_00:Final Boss Arena: Encounter
-m19_00_00_99:Final Boss Arena: Encounter (Skybox)
-m20_00_00_00:Tile: Walking Mausoleum (Upright Column) / Meteor Stike 
-m20_10_00_00:Tile: Walking Mausoleum / Meteor Stike
-m20_20_00_00:Tile: Walking Mausoleum / Meteor Stike
-m20_30_00_00:Tile: Walking Mausoleum / Meteor Stike
-m20_40_00_00:Tile: Walking Mausoleum (Fallen Wall) / Meteor Stike
-m20_50_00_00:Tile: Walking Mausoleum (Pool) / Meteor Stike
-m20_60_00_00:Tile: Walking Mausoleum
-m20_70_00_00:Tile: Walking Mausoleum (Upright Wall) / Meteor Stike
-m20_80_00_00:Tile: Walking Mausoleum / Meteor Stike
-m20_90_00_00:Tile: Walking Mausoleum (Graves) / Meteor Stike
-m21_00_00_00:Tile: Walking Mausoleum (Ruined Columns) / Meteor Stike
-m21_10_00_00:Tile: Walking Mausoleum (Fallen Wall) / Meteor Stike
-m21_20_00_00:Tile: Walking Mausoleum / Meteor Stike
-m21_30_00_00:Tile: Walking Mausoleum / Meteor Stike
-m21_40_00_00:Tile: Walking Mausoleum / Meteor Stike
-m21_50_00_00:Tile: Walking Mausoleum (Shallow Water) / Meteor Stike
-m30_00_00_00:Tile: Fort (Cataclysm)
-m30_30_00_00:Tile: Castle (Cataclysm)
-m31_90_00_00:Tile: Castle
-m32_00_00_00:Tile: Large Encampment
-m32_10_00_00:Tile: Large Encampment with Siege Tower
-m32_20_00_00:Tile: Large Encampment (Cataclysm)
-m34_00_00_00:Tile: Major Ruins A (Cataclysm)
-m34_10_00_00:Tile: Major Ruins B (Cataclysm)
-m34_20_00_00:Tile: Major Ruins C (Cataclysm)
-m34_30_00_00:Tile: Major Ruins D (Cataclysm)
-m35_90_00_00:Tile: Major Ruins E
-m37_90_00_00:Tile: Village
-m38_00_00_00:Tile: Cathedral A (Cataclysm)
-m38_10_00_00:Tile: Cathedral B (Cataclysm)
-m40_00_00_00:Tile: Sorcerer's Rise A
-m40_90_00_00:Tile: Sorcerer's Rise B
-m41_00_00_00:Tile: Church A
-m41_01_00_00:Tile: Church B
-m41_30_00_00:Tile: Church (Rotted Woods)
-m41_90_00_00:Tile: Church C
-m43_00_00_00:Tile: Encampment A
-m43_01_00_00:Tile: Encampment B
-m43_02_00_00:Tile: Encampment C
-m43_30_00_00:Tile: Encampment (Rotted Woods)
-m43_40_00_00:Tile: Encampment D
-m43_41_00_00:Tile: Encampment E
-m43_50_00_00:Tile: Encampment F
-m44_01_00_00:Tile: Shack
-m45_00_00_00:Tile: Caravans A
-m45_01_00_00:Tile: Caravans B
-m45_51_00_00:Encounter: Morgott
-m45_52_00_00:Encounter: Augur
-m45_53_00_00:Encounter: Sentient Pest (Moth)
-m45_55_00_00:Encounter: Libra / Creature of Night
-m46_00_00_00:Encounter: Trolls, Knights and Soldiers
-m46_01_00_00:Encounter: Large Dogs and Crows
-m46_02_00_00:Encounter: Ants
-m46_03_00_00:Encounter: Fingercreepers
-m46_04_00_00:Encounter: Dragons
-m46_05_00_00:Encounter: Guardian Golems
-m46_06_00_00:Encounter: Royal Riders
-m46_50_00_00:Tile: Evergaol A
-m46_51_00_00:Encounter: Red Wolf of Radagon
-m46_52_00_00:Encounter: Tree Sentinel
-m46_53_00_00:Encounter: Draconic Sentinel
-m46_54_00_00:Encounter: Draconic Sentinel
-m46_55_00_00:Encounter: Leonine Misbegotten
-m46_56_00_00:Encounter: Royal Revenant
-m46_57_00_00:Encounter: Lion Guardian
-m46_58_00_00:Encounter: Dragon
-m46_59_00_00:Encounter: Dragon
-m46_60_00_00:Tile: Evergaol B
-m46_62_00_00:Encounter: Wormface and Night's Cavalry
-m46_63_00_00:Encounter: Ulcerated Tree Spirit
-m46_64_00_00:Encounter: Ancestor Spirit
-m46_65_00_00:Encounter: Grafted Scion
-m46_66_00_00:Encounter: Valiant Gargoyle
-m46_67_00_00:Encounter: Erdtree Avatar
-m46_68_00_00:Encounter: Magma Wyrm
-m46_69_00_00:Encounter: Ancient Hero of Zamor
-m46_70_00_00:Tile: Evergaol C
-m46_71_00_00:Encounter: Miranda Blossom
-m46_72_00_00:Encounter: Golden Hippopotamus
-m46_74_00_00:Encounter: Death Rite Bird
-m46_77_00_00:Encounter: Demi-Human Queen
-m46_78_00_00:Encounter: Morgott
-m46_80_00_00:Tile: Evergaol D
-m46_81_00_00:Encounter: Black Knife Assassin
-m46_82_00_00:Encounter: Red Wolf of Radagon
-m46_86_00_00:Encounter: Leonine Misbegotten
-m46_87_00_00:Encounter: Bell-bearing Hunter
-m46_88_00_00:Encounter: Royal Revenant
-m46_90_00_00:Encounter: Ancestor Spirit
-m46_91_00_00:Encounter: Grafted Scion
-m46_95_00_00:Encounter: Ancient Hero of Zamor
-m47_70_00_00:Encounter: Tibia Horde and Death Rite Bird
-m47_80_00_00:Encounter: Gaping Dragon and Rats
-m47_90_00_00:Encounter: Centipede Demon
-m48_00_00_00:Encounter: Duke's Dear Freja
-m48_10_00_00:Encounter: Smelter Demon, Watchdog and Entourage
-m48_20_00_00:Encounter: Dragon
-m48_30_00_00:Encounter: Dancer of the Boreal Valley
-m48_40_00_00:Encounter: Morgott and Entourage
-m48_50_00_00:Encounter: Draconic Sentinel and Cavalry
-m48_60_00_00:Encounter: Tree Sentinel and Cavalry
-m48_70_00_00:Encounter: Godskin Apostle and Entourage
-m48_80_00_00:Encounter: Godskin Apostle and Noble, plsu Entourage
-m48_90_00_00:Encounter: Wormface, Crabs and Putrid Corpses
-m49_10_00_00:Encounter: Godrick and Entourage
-m49_17_00_00:Encounter: Valiant Gargoyle and Entourage
-m49_18_00_00:Encounter: Magma Wyrm and Entourage
-m49_19_00_00:Encounter: Ancient Dragon and Entourage
-m49_20_00_00:Encounter: Fallingstar Beast and Entourage
-m49_21_00_00:Encounter: Death Rite Bird and Entourage
-m49_23_00_00:Encounter: Dragonkin Soldier and Entourage
-m49_24_00_00:Encounter: Bell-bearing Hunter and Entourage
-m49_25_00_00:Encounter: Crucible Knight and Golden Hippopotamus
-m49_26_00_00:Encounter: Commander and Banished Knights
-m49_27_00_00:Encounter: Commander and Banished Knights
-m49_28_00_00:Encounter: Omen and Night's Cavalry
-m49_29_00_00:Encounter: Demi-human Queen and Entourage
-m49_30_00_00:Encounter: Royal Revenants and Riders
-m49_40_00_00:Encounter: Libra / Creature of Night
-m49_41_00_00:Encounter: Castle Layout A
-m49_42_00_00:Encounter: Castle Layout B
-m49_43_00_00:Encounter: Castle Layout C
-m49_90_00_00:Encounter: Ulcerated Tree Spirit and Guardians
-m60_00_00_99:Overworld: Limveld
+m18_00_00_00:Nightlord - Final Boss
+m18_00_00_99:Nightlord - Final Boss (Skybox)
+m19_00_00_00:Nightlord - Others
+m19_00_00_99:Nightlord - Others (Skybox)
+m20_00_00_00:Map Event - 0
+m20_10_00_00:Map Event - 1
+m20_20_00_00:Map Event - 2
+m20_30_00_00:Map Event - 3
+m20_40_00_00:Map Event - 4
+m20_50_00_00:Map Event - 5
+m20_60_00_00:Map Event - 6
+m20_70_00_00:Map Event - 7
+m20_80_00_00:Map Event - 8
+m20_90_00_00:Map Event - 9
+m21_00_00_00:Map Event - 10
+m21_10_00_00:Map Event - 11
+m21_20_00_00:Map Event - 12
+m21_30_00_00:Map Event - 13
+m21_40_00_00:Map Event - 14
+m21_50_00_00:Map Event - 15
+m30_00_00_00:Fort - Lordsworn Captain; Abductor Virgin
+m30_30_00_00:Fort - Guardian Golem; Crystalians
+m31_90_00_00:Fort - Rotted Woods
+m32_00_00_00:Camp - Banished Knights; Elder Lion
+m32_10_00_00:Camp - Leonine Misbegotten; Redmane Knights; Royal Army Knights
+m32_20_00_00:Camp - Flame Chariots; Frenzied Flame Troll
+m34_00_00_00:Ruins - Erdtree Burial Watchdogs; Sanguine Noble; Ancient Heroes of Zamor; Albinauric Archers
+m34_10_00_00:Ruins - Perfumer; Depraved Perfumer; Battlemages; Albinauric Archers; Runebear
+m34_20_00_00:Ruins - Wormface; Beastmen of Farum Azula
+m34_30_00_00:Ruins - Beastmen of Farum Azula
+m35_90_00_00:Ruins - Tutorial and Revenant Encounter
+m37_90_00_00:Township
+m38_00_00_00:Great Church - Oracle Envoys; Guardian Golem
+m38_10_00_00:Great Church - Oracle Envoys; Guardian Golem
+m40_00_00_00:Sorcerer's Rise - Normal
+m40_90_00_00:Sorcerer's Rise - Ruined
+m41_00_00_00:Church - Dogs
+m41_01_00_00:Church - Rats; Rats Alt
+m41_30_00_00:Church - Rotted
+m41_90_00_00:Church - Lake
+m43_00_00_00:Small Camp - Dogs and Soldiers; Soldiers
+m43_01_00_00:Small Camp - Wandering Nobles; Wandering Nobles and Soldiers
+m43_02_00_00:Small Camp - Foot Soldiers
+m43_30_00_00:Small Camp - Putrid Ancestral Followers; Putrid Ancestral Followers Alt
+m43_40_00_00:Small Camp - Dogs; Misbegotten
+m43_41_00_00:Small Camp - Demi-Humans; Dogs and Demi-Humans
+m43_50_00_00:Small Camp - Guilty; Guilty Alt
+m44_01_00_00:Small Camp - Shack
+m45_00_00_00:Small Camp - Caravans
+m45_01_00_00:Small Camp - Caravans and Soldiers
+m45_51_00_00:Field Boss - Black Knife Assassin
+m45_52_00_00:Event - Maris
+m45_53_00_00:Event - Gnoster
+m45_55_00_00:Event - Libra
+m46_00_00_00:Night Horde - Frenzied Horde
+m46_01_00_00:Night Horde - Caelid Horde
+m46_02_00_00:Night Horde - Ant Horde
+m46_03_00_00:Night Horde - Finger Horde
+m46_04_00_00:Night Horde - Dragon Horde
+m46_05_00_00:Night Horde - Golem Horde
+m46_06_00_00:Night Horde - Wraith Horde
+m46_50_00_00:Evergaol - Unused Banished Knights; Unused Nox Duo; Omen; Grave Warden Duelist; Beastman of Farum Azula; Beastly Brigade; Unused Bloodhound Knight
+m46_51_00_00:Field Boss - Red Wolf
+m46_52_00_00:Field Boss - Draconic Tree Sentinel
+m46_53_00_00:Field Boss - Tree Sentinel
+m46_54_00_00:Field Boss - Royal Carian Knight
+m46_55_00_00:Field Boss - Leonine Misbegotten
+m46_56_00_00:Field Boss - Bell Bearing Hunter
+m46_57_00_00:Field Boss - Elder Lion
+m46_58_00_00:Field Boss - Flying Dragon of the Hills
+m46_59_00_00:Field Boss - Royal Revenant
+m46_60_00_00:Evergaol - Crucible Knight with Sword; Crucible Knight with Spear; Crystalians; Stoneskin Lords; Banished Knights; Nox Duo; Bloodhound Knight
+m46_62_00_00:Field Boss - Night's Cavalry
+m46_63_00_00:Field Boss - Ulcerated Tree Spirit
+m46_64_00_00:Field Boss - Ancestor Spirit
+m46_65_00_00:Field Boss - Grafted Scion
+m46_66_00_00:Field Boss - Valiant Gargoyle
+m46_67_00_00:Field Boss - Erdtree Avatar
+m46_68_00_00:Field Boss - Magma Wyrm
+m46_69_00_00:Field Boss - Ancient Hero of Zamor
+m46_70_00_00:Evergaol - Dragonkin Soldier; Godskin Apostle; Godskin Noble; Crucible Knight with Sword; Crucible Knight with Spear
+m46_71_00_00:Field Boss - Miranda Blossom
+m46_72_00_00:Field Boss - Golden Hippopotamus
+m46_74_00_00:Field Boss - Death Rite Bird
+m46_77_00_00:Field Boss - Demi-Human Queen
+m46_78_00_00:Event - Fell Omen
+m46_80_00_00:Evergaol - Death Rite Bird; Ancient Dragon; Godskin Duo
+m46_81_00_00:Basement Boss - Black Knife Assassin
+m46_82_00_00:Basement Boss - Red Wolf
+m46_86_00_00:Basement Boss - Leonine Misbegotten
+m46_87_00_00:Basement Boss - Bell Bearing Hunter
+m46_88_00_00:Basement Boss - Royal Revenant
+m46_90_00_00:Basement Boss - Ancestor Spirit
+m46_91_00_00:Basement Boss - Grafted Scion
+m46_95_00_00:Basement Boss - Ancient Hero of Zamor
+m47_70_00_00:Night Boss - Tibia Mariner
+m47_80_00_00:Night Boss - Gaping Dragon
+m47_90_00_00:Night Boss - Centipede Demon
+m48_00_00_00:Night Boss - The Duke's Dear Freja
+m48_10_00_00:Night Boss - Smelter Demon
+m48_20_00_00:Night Boss - Nameless King
+m48_30_00_00:Night Boss - Dancer of the Boreal Valley
+m48_40_00_00:Night Boss - Fell Omen
+m48_50_00_00:Night Boss - Draconic Tree Sentinel and Royal Cavalrymen
+m48_60_00_00:Night Boss - Tree Sentinel and Royal Cavalrymen
+m48_70_00_00:Night Boss - Godskin Apostle
+m48_80_00_00:Night Boss - Godskin Duo
+m48_90_00_00:Night Boss - Wormface
+m49_10_00_00:Night Boss - Grafted Monarch
+m49_17_00_00:Night Boss - Valiant Gargoyle
+m49_18_00_00:Night Boss - Great Wyrm
+m49_19_00_00:Night Boss - Ancient Dragon
+m49_20_00_00:Night Boss - Full Grown Fallingstar Beast
+m49_21_00_00:Night Boss - Death Rite Bird
+m49_23_00_00:Night Boss - Dragonkin Soldier
+m49_24_00_00:Night Boss - Bell Bearing Hunter
+m49_25_00_00:Night Boss - Crucible Knight and Golden Hippopotamus
+m49_26_00_00:Night Boss - Outland Commander
+m49_27_00_00:Night Boss - Battlefield Commander
+m49_28_00_00:Night Boss - Night's Cavalry Duo
+m49_29_00_00:Night Boss - Demi-Human Queen and Swordmaster
+m49_30_00_00:Night Boss - Royal Revenant
+m49_40_00_00:Event - Libra Alt
+m49_41_00_00:Castle - Banished Knights
+m49_42_00_00:Castle - Trolls
+m49_43_00_00:Castle - Crucible Knights
+m49_90_00_00:Night Boss - Ulcerated Tree Spirit
+m60_00_00_99:Overworld
 m60_10_08_02:Blank
-m60_10_09_02:Region: Limveld: East
-m60_10_09_12:Region: Limveld: East (The Mountaintop)
-m60_10_09_22:Region: Limveld: East (The Crater)
-m60_10_09_52:Region: Limveld: East (Noklateo)
+m60_10_09_02:Limveld - East
+m60_10_09_12:Limveld - East (Mountaintop)
+m60_10_09_22:Limveld - East (Crater)
+m60_10_09_52:Limveld - East (Noklateo)
 m60_10_10_02:Blank
 m60_11_08_02:Blank
-m60_11_09_02:Region: Limveld: West
-m60_11_09_22:Overworld: Limveld: West (The Crater)
-m60_11_09_32:Region: Limveld: West (Rotted Woods)
-m60_11_09_52:Region: Limveld: West (Noklateo)
+m60_11_09_02:Limveld - West
+m60_11_09_22:Limveld - West (Crater)
+m60_11_09_32:Limveld - West (Rotted Woods)
+m60_11_09_52:Limveld - West (Noklateo)
 m60_11_10_02:Blank
 m60_20_17_01:Blank
 m60_20_18_01:Blank
@@ -161,24 +161,24 @@ m60_20_19_21:Blank
 m60_20_19_51:Blank
 m60_20_20_01:Blank
 m60_21_17_01:Blank
-m60_21_18_01:Block: Limveld: South-West [0:0]
-m60_21_18_11:Block: Limveld: South-West [0:0] (The Mountaintops)
-m60_21_18_21:Block: Limveld: South-West [0:0] (The Crater)
-m60_21_18_51:Block: Limveld: South-West [0:0] (Noklateo)
-m60_21_19_01:Block: Limveld: North-West [1:0]
-m60_21_19_11:Block: Limveld: North-West [1:0] (The Mountaintops)
-m60_21_19_21:Block: Limveld: North-West [1:0] (The Crater)
-m60_21_19_51:Block: Limveld: North-West [1:0] (Noklateo)
+m60_21_18_01:Limveld - Southwest
+m60_21_18_11:Limveld - Southwest (Mountaintop)
+m60_21_18_21:Limveld - Southwest (Crater)
+m60_21_18_51:Limveld - Southwest (Noklateo)
+m60_21_19_01:Limveld - Northwest
+m60_21_19_11:Limveld - Northwest (Mountaintop)
+m60_21_19_21:Limveld - Northwest (Crater)
+m60_21_19_51:Limveld - Northwest (Noklateo)
 m60_21_20_01:Blank
 m60_22_17_01:Blank
-m60_22_18_01:Block: Limveld: South-East [0:1]
-m60_22_18_21:Block: Limveld: South-East [0:1] (The Crater)
-m60_22_18_31:Block: Limveld: South-East [0:1] (Rotted Woods)
-m60_22_18_51:Block: Limveld: South-East [0:1] (Noklateo)
-m60_22_19_01:Block: Limveld: North-East [1:1]
-m60_22_19_21:Block: Limveld: North-East [1:1] (The Crater)
-m60_22_19_31:Block: Limveld: North-East [1:1] (Rotted Woods)
-m60_22_19_51:Block: Limveld: North-East [1:1] (Noklateo)
+m60_22_18_01:Limveld - Southeast
+m60_22_18_21:Limveld - Southeast (Crater)
+m60_22_18_31:Limveld - Southeast (Rotted Woods)
+m60_22_18_51:Limveld - Southeast (Noklateo)
+m60_22_19_01:Limveld - Northeast
+m60_22_19_21:Limveld - Northeast (Crater)
+m60_22_19_31:Limveld - Northeast (Rotted Woods)
+m60_22_19_51:Limveld - Northeast (Noklateo)
 m60_22_20_01:Blank
 m60_23_17_01:Blank
 m60_23_18_01:Blank
@@ -190,111 +190,111 @@ m60_23_19_21:Blank
 m60_23_19_31:Blank
 m60_23_19_51:Blank
 m60_23_20_01:Blank
-m60_41_35_00:Tile: Blank
-m60_41_36_00:Tile: Blank
-m60_41_36_10:Tile: Blank
-m60_41_36_20:Tile: Blank
-m60_41_36_50:Tile: Blank
-m60_41_37_00:Tile: Blank
-m60_41_37_10:Tile: Blank
-m60_41_37_20:Tile: Blank
-m60_41_37_50:Tile: Blank
-m60_41_38_00:Tile: Blank
-m60_41_38_10:Tile: Blank
-m60_41_38_20:Tile: Blank
-m60_41_38_50:Tile: Blank
-m60_41_39_00:Tile: Blank
-m60_41_39_10:Tile: Blank
-m60_41_39_20:Tile: Blank
-m60_41_39_50:Tile: Blank
-m60_41_40_00:Tile: Blank
-m60_42_35_00:Tile: Blank
-m60_42_36_00:Tile: Limveld: South-West [0:0]
-m60_42_36_10:Tile: Limveld: South-West [0:0] (The Mountaintops)
-m60_42_36_20:Tile: Limveld: South-West [0:0] (The Crater)
-m60_42_36_50:Tile: Limveld: South-West [0:0] (Noklateo)
-m60_42_37_00:Tile: Limveld: South-West [1:0]
-m60_42_37_10:Tile: Limveld: South-West [1:0] (The Mountaintops)
-m60_42_37_20:Tile: Limveld: South-West [1:0] (The Crater)
-m60_42_37_50:Tile: Limveld: South-West [1:0] (Noklateo)
-m60_42_38_00:Tile: Limveld: North-West [2:0]
-m60_42_38_10:Tile: Limveld: North-West [2:0] (The Mountaintops)
-m60_42_38_20:Tile: Limveld: North-West [2:0] (The Crater)
-m60_42_38_50:Tile: Limveld: North-West [2:0] (Noklateo)
-m60_42_39_00:Tile: Limveld: North-West [3:0]
-m60_42_39_10:Tile: Limveld: North-West [3:0]
-m60_42_39_20:Tile: Limveld: North-West [3:0] (The Crater)
-m60_42_39_50:Tile: Limveld: North-West [3:0] (Noklateo)
-m60_42_40_00:Tile: Blank
-m60_43_35_00:Tile: Blank
-m60_43_36_00:Tile: Limveld: South-West [0:1]
-m60_43_36_10:Tile: Limveld: South-West [0:1] (The Mountaintops)
-m60_43_36_20:Tile: Limveld: South-West [0:1] (The Crater)
-m60_43_36_50:Tile: Limveld: South-West [0:1] (Noklateo)
-m60_43_37_00:Tile: Limveld: South-West [1:1]
-m60_43_37_10:Tile: Limveld: South-West [1:1] (The Mountaintops)
-m60_43_37_20:Tile: Limveld: South-West [1:1] (The Crater)
-m60_43_37_50:Tile: Limveld: South-West [1:1] (Noklateo)
-m60_43_38_00:Tile: Limveld: North-West [2:1]
-m60_43_38_10:Tile: Limveld: North-West [2:1] (The Mountaintops)
-m60_43_38_20:Tile: Limveld: North-West [2:1] (The Crater)
-m60_43_38_50:Tile: Limveld: North-West [2:1] (Noklateo)
-m60_43_39_00:Tile: Limveld: North-West [3:1]
-m60_43_39_10:Tile: Limveld: North-West [3:1] (The Mountaintops)
-m60_43_39_20:Tile: Limveld: North-West [3:1] (The Crater)
-m60_43_39_50:Tile: Limveld: North-West [3:1] (Noklateo)
-m60_43_40_00:Tile: Blank
-m60_44_35_00:Tile: Blank
-m60_44_36_00:Tile: Limveld: South-East [0:2]
-m60_44_36_20:Tile: Limveld: South-East [0:2] (The Crater)
-m60_44_36_30:Tile: Limveld: South-East [0:2] (Rotted Woods)
-m60_44_36_50:Tile: Limveld: South-East [0:2] (Noklateo)
-m60_44_37_00:Tile: Limveld: South-East [1:2]
-m60_44_37_20:Tile: Limveld: South-East [1:2] (The Crater)
-m60_44_37_30:Tile: Limveld: South-East [1:2] (Rotted Woods)
-m60_44_37_50:Tile: Limveld: South-East [1:2] (Noklateo)
-m60_44_38_00:Tile: Limveld: North-East [2:2]
-m60_44_38_20:Tile: Limveld: North-East [2:2] (The Crater)
-m60_44_38_30:Tile: Limveld: North-East [2:2] (Rotted Woods)
-m60_44_38_50:Tile: Limveld: North-East [2:2] (Noklateo)
-m60_44_39_00:Tile: Limveld: North-East [3:2]
-m60_44_39_20:Tile: Limveld: North-East [3:2] (The Crater)
-m60_44_39_30:Tile: Limveld: North-East [3:2] (Rotted Woods)
-m60_44_39_50:Tile: Limveld: North-East [3:2] (Noklateo)
-m60_44_40_00:Tile: Blank
-m60_45_35_00:Tile: Blank
-m60_45_36_00:Tile: Limveld: South-East [0:3]
-m60_45_36_20:Tile: Limveld: South-East [0:3] (The Crater)
-m60_45_36_30:Tile: Limveld: South-East [0:3] (Rotted Woods)
-m60_45_36_50:Tile: Limveld: South-East [0:3] (Noklateo)
-m60_45_37_00:Tile: Limveld: South-East [1:3]
-m60_45_37_20:Tile: Limveld: South-East [1:3] (The Crater)
-m60_45_37_30:Tile: Limveld: South-East [1:3] (Rotted Woods)
-m60_45_37_50:Tile: Limveld: South-East [1:3] (Noklateo)
-m60_45_38_00:Tile: Limveld: North-East [2:3]
-m60_45_38_20:Tile: Limveld: North-East [2:3] (The Crater)
-m60_45_38_30:Tile: Limveld: North-East [2:3] (Rotted Woods)
-m60_45_38_50:Tile: Limveld: North-East [2:3] (Noklateo)
-m60_45_39_00:Tile: Limveld: North-East [3:3]
-m60_45_39_20:Tile: Limveld: North-East [3:3] (The Crater)
-m60_45_39_30:Tile: Limveld: North-East [3:3] (Rotted Woods)
-m60_45_39_50:Tile: Limveld: North-East [3:3] (Noklateo)
-m60_45_40_00:Tile: Blank
-m60_46_35_00:Tile: Blank
-m60_46_36_00:Tile: Blank
-m60_46_36_20:Tile: Blank
-m60_46_36_30:Tile: Blank
-m60_46_36_50:Tile: Blank
-m60_46_37_00:Tile: Blank
-m60_46_37_20:Tile: Blank
-m60_46_37_30:Tile: Blank
-m60_46_37_50:Tile: Blank
-m60_46_38_00:Tile: Blank
-m60_46_38_20:Tile: Blank
-m60_46_38_30:Tile: Blank
-m60_46_38_50:Tile: Blank
-m60_46_39_00:Tile: Blank
-m60_46_39_20:Tile: Blank
-m60_46_39_30:Tile: Blank
-m60_46_39_50:Tile: Blank
-m60_46_40_00:Tile: Blank
+m60_41_35_00:Blank
+m60_41_36_00:Blank
+m60_41_36_10:Blank
+m60_41_36_20:Blank
+m60_41_36_50:Blank
+m60_41_37_00:Blank
+m60_41_37_10:Blank
+m60_41_37_20:Blank
+m60_41_37_50:Blank
+m60_41_38_00:Blank
+m60_41_38_10:Blank
+m60_41_38_20:Blank
+m60_41_38_50:Blank
+m60_41_39_00:Blank
+m60_41_39_10:Blank
+m60_41_39_20:Blank
+m60_41_39_50:Blank
+m60_41_40_00:Blank
+m60_42_35_00:Blank
+m60_42_36_00:Limveld - Southwest Corner, West Lake
+m60_42_36_10:Limveld - Southwest Corner, West Lake (Mountaintop)
+m60_42_36_20:Limveld - Southwest Corner, West Lake (Crater)
+m60_42_36_50:Limveld - Noklateo Inner Tier (Noklateo)
+m60_42_37_00:Limveld - Gatefront
+m60_42_37_10:Limveld - Gatefront (Mountaintop)
+m60_42_37_20:Limveld - Gatefront (Crater)
+m60_42_37_50:Limveld - Noklateo North Wall (Noklateo)
+m60_42_38_00:Limveld - Southwest Stormhill
+m60_42_38_10:Limveld - Southwest Mountaintop (Mountaintop)
+m60_42_38_20:Limveld - Southwest Stormhill (Crater)
+m60_42_38_50:Limveld - Southwest Stormhill (Noklateo)
+m60_42_39_00:Limveld - Northwest Corner
+m60_42_39_10:Limveld - Northwest Mountaintop (Mountaintop)
+m60_42_39_20:Limveld - Northwest Corner (Crater)
+m60_42_39_50:Limveld - Northwest Corner (Noklateo)
+m60_42_40_00:Blank
+m60_43_35_00:Blank
+m60_43_36_00:Limveld - Central Lake
+m60_43_36_10:Limveld - Central Lake (Mountaintop)
+m60_43_36_20:Limveld - Central Lake (Crater)
+m60_43_36_50:Limveld - Noklateo East Wall, West Lake (Noklateo)
+m60_43_37_00:Limveld - Castle
+m60_43_37_10:Limveld - Castle (Mountaintop)
+m60_43_37_20:Limveld - Castle (Crater)
+m60_43_37_50:Limveld - Noklateo Entrance (Noklateo)
+m60_43_38_00:Limveld - West Murkwater, Southeast Stormhill
+m60_43_38_10:Limveld - Southeast Mountaintop (Mountaintop)
+m60_43_38_20:Limveld - Southwest Crater (Crater)
+m60_43_38_50:Limveld - West Murkwater, Southeast Stormhill (Noklateo)
+m60_43_39_00:Limveld - West Saintsbridge
+m60_43_39_10:Limveld - Northeast Mountaintop (Mountaintop)
+m60_43_39_20:Limveld - Northwest Crater (Crater)
+m60_43_39_50:Limveld - West Saintsbridge (Noklateo)
+m60_43_40_00:Blank
+m60_44_35_00:Blank
+m60_44_36_00:Limveld - East Lake
+m60_44_36_20:Limveld - East Lake (Crater)
+m60_44_36_30:Limveld - Southwest Rotted Woods (Rotted Woods)
+m60_44_36_50:Limveld - East Lake (Noklateo)
+m60_44_37_00:Limveld - Castle Front
+m60_44_37_20:Limveld - Castle Front (Crater)
+m60_44_37_30:Limveld - Northwest Rotted Woods (Rotted Woods)
+m60_44_37_50:Limveld - East of Noklateo Entrance (Noklateo)
+m60_44_38_00:Limveld - East Murkwater
+m60_44_38_20:Limveld - Southeast Crater (Crater)
+m60_44_38_30:Limveld - East Murkwater (Rotted Woods)
+m60_44_38_50:Limveld - East Murkwater (Noklateo)
+m60_44_39_00:Limveld - Saintsbridge to Summonwater
+m60_44_39_20:Limveld - Northeast Crater (Crater)
+m60_44_39_30:Limveld - Saintsbridge to Summonwater (Rotted Woods)
+m60_44_39_50:Limveld - Saintsbridge to Summonwater (Noklateo)
+m60_44_40_00:Blank
+m60_45_35_00:Blank
+m60_45_36_00:Limveld - South Mistwood
+m60_45_36_20:Limveld - South Mistwood (Crater)
+m60_45_36_30:Limveld - Southeast Rotted Woods (Rotted Woods)
+m60_45_36_50:Limveld - South Mistwood (Noklateo)
+m60_45_37_00:Limveld - Central Mistwood
+m60_45_37_20:Limveld - Central Mistwood (Crater)
+m60_45_37_30:Limveld - Northeast Rotted Woods (Rotted Woods)
+m60_45_37_50:Limveld - Central Mistwood (Noklateo)
+m60_45_38_00:Limveld - Road to Third Church
+m60_45_38_20:Limveld - Road to Third Church (Crater)
+m60_45_38_30:Limveld - Road to Third Church (Rotted Woods)
+m60_45_38_50:Limveld - Road to Third Church (Noklateo)
+m60_45_39_00:Limveld - Summonwater
+m60_45_39_20:Limveld - Summonwater (Crater)
+m60_45_39_30:Limveld - Summonwater (Rotted Woods)
+m60_45_39_50:Limveld - Summonwater (Noklateo)
+m60_45_40_00:Blank
+m60_46_35_00:Blank
+m60_46_36_00:Blank
+m60_46_36_20:Blank
+m60_46_36_30:Blank
+m60_46_36_50:Blank
+m60_46_37_00:Blank
+m60_46_37_20:Blank
+m60_46_37_30:Blank
+m60_46_37_50:Blank
+m60_46_38_00:Blank
+m60_46_38_20:Blank
+m60_46_38_30:Blank
+m60_46_38_50:Blank
+m60_46_39_00:Blank
+m60_46_39_20:Blank
+m60_46_39_30:Blank
+m60_46_39_50:Blank
+m60_46_40_00:Blank
