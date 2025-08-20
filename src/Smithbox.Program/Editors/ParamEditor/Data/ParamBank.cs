@@ -1797,8 +1797,8 @@ public class ParamBank
         // Event Param
         if (!TargetFS.FileExists(eventParamPath))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High);
-            successfulLoad = false;
+            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High);
+            //successfulLoad = false;
         }
         else
         {
