@@ -56,8 +56,8 @@ public class GameOffsetBaseEntry
     public int? ERItemGiveFuncOffset = null;
     public int? ERMapItemManOffset = null;
 
-    public Dictionary<string, int> paramOffsets;
-    public Dictionary<string, int> itemIDCategories;
+    public Dictionary<string, int> paramOffsets = new();
+    public Dictionary<string, int> itemIDCategories = new();
 
     public GameOffsetBaseEntry() { }
 

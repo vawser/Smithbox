@@ -126,14 +126,7 @@ public class HavokCollisionResource : IResource, IDisposable
                     // HKX for ER is loaded directly in HavokCollisionManager
                     // This is required since the parallel nature of the
                     // Resource Manager doesn't work with the HavokBinarySerializer
-                    if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
-                    {
-                        ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    return curProject.MapEditor.CollisionManager.HavokContainers.TryGetValue(filename, out ER_HKX);
                 }
                 // Fallback for map collision
                 else

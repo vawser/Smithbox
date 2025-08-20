@@ -117,24 +117,24 @@ public class ProjectManager
 
     private void DisplayProjectListGroup(ProjectType projectType)
     {
+        var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
+        if (!projectList.Any()) return;
         // When filtering the list, don't use the collapsible sections since it makes it harder to see the filtered results
         if (CFG.Current.DisplayCollapsibleProjectCategories && ProjectListFilter == "")
         {
             if(ImGui.CollapsingHeader($"{projectType}##collapsibleSection_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                DisplayProjectListOfType(projectType);
+                DisplayProjectList(projectList);
             }
         }
         else
         {
-            DisplayProjectListOfType(projectType);
+            DisplayProjectList(projectList);
         }
     }
 
-    private void DisplayProjectListOfType(ProjectType projectType)
+    private void DisplayProjectList(List<ProjectEntry> projectList)
     {
-        var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
-
         if (projectList.Count > 0)
         {
             foreach (var project in projectList)
