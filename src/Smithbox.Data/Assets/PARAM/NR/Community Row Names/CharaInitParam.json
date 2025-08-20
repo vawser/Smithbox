@@ -6862,289 +6862,865 @@
     {
       "ID": 35000,
       "Entries": [
-        "[Wylder] Default"
+        "[Libra Wylder 1] Default"
       ]
     },
     {
       "ID": 35001,
       "Entries": [
-        "[Wylder] Dawn"
+        "[Libra Wylder 1] Dawn"
       ]
     },
     {
       "ID": 35002,
       "Entries": [
-        "[Wylder] Darkness"
+        "[Libra Wylder 1] Darkness"
       ]
     },
     {
       "ID": 35003,
       "Entries": [
-        "[Wylder] Remembrance"
+        "[Libra Wylder 1] Remembrance"
       ]
     },
     {
       "ID": 35004,
       "Entries": [
-        "[Wylder] Abysswalker"
+        "[Libra Wylder 1] Abysswalker"
       ]
     },
     {
       "ID": 35005,
       "Entries": [
-        "[Wylder] Lion Knight"
+        "[Libra Wylder 1] Lion Knight"
+      ]
+    },
+    {
+      "ID": 35010,
+      "Entries": [
+        "[Libra Wylder 2] Default"
+      ]
+    },
+    {
+      "ID": 35011,
+      "Entries": [
+        "[Libra Wylder 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35012,
+      "Entries": [
+        "[Libra Wylder 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35013,
+      "Entries": [
+        "[Libra Wylder 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35014,
+      "Entries": [
+        "[Libra Wylder 2] Abysswalker"
+      ]
+    },
+    {
+      "ID": 35015,
+      "Entries": [
+        "[Libra Wylder 2] Lion Knight"
+      ]
+    },
+    {
+      "ID": 35020,
+      "Entries": [
+        "[Libra Wylder 3] Default"
+      ]
+    },
+    {
+      "ID": 35021,
+      "Entries": [
+        "[Libra Wylder 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35022,
+      "Entries": [
+        "[Libra Wylder 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35023,
+      "Entries": [
+        "[Libra Wylder 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35024,
+      "Entries": [
+        "[Libra Wylder 3] Abysswalker"
+      ]
+    },
+    {
+      "ID": 35025,
+      "Entries": [
+        "[Libra Wylder 3] Lion Knight"
       ]
     },
     {
       "ID": 35100,
       "Entries": [
-        "[Guardian] Default"
+        "[Libra Guardian 1] Default"
       ]
     },
     {
       "ID": 35101,
       "Entries": [
-        "[Guardian] Dawn"
+        "[Libra Guardian 1] Dawn"
       ]
     },
     {
       "ID": 35102,
       "Entries": [
-        "[Guardian] Darkness"
+        "[Libra Guardian 1] Darkness"
       ]
     },
     {
       "ID": 35103,
       "Entries": [
-        "[Guardian] Remembrance"
+        "[Libra Guardian 1] Remembrance"
       ]
     },
     {
       "ID": 35104,
       "Entries": [
-        "[Guardian] Sunlight Knight"
+        "[Libra Guardian 1] Sunlight Knight"
       ]
     },
     {
       "ID": 35105,
       "Entries": [
-        "[Guardian] Wayfarer"
+        "[Libra Guardian 1] Wayfarer"
+      ]
+    },
+    {
+      "ID": 35110,
+      "Entries": [
+        "[Libra Guardian 2] Default"
+      ]
+    },
+    {
+      "ID": 35111,
+      "Entries": [
+        "[Libra Guardian 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35112,
+      "Entries": [
+        "[Libra Guardian 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35113,
+      "Entries": [
+        "[Libra Guardian 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35114,
+      "Entries": [
+        "[Libra Guardian 2] Sunlight Knight"
+      ]
+    },
+    {
+      "ID": 35115,
+      "Entries": [
+        "[Libra Guardian 2] Wayfarer"
+      ]
+    },
+    {
+      "ID": 35120,
+      "Entries": [
+        "[Libra Guardian 3] Default"
+      ]
+    },
+    {
+      "ID": 35121,
+      "Entries": [
+        "[Libra Guardian 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35122,
+      "Entries": [
+        "[Libra Guardian 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35123,
+      "Entries": [
+        "[Libra Guardian 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35124,
+      "Entries": [
+        "[Libra Guardian 3] Sunlight Knight"
+      ]
+    },
+    {
+      "ID": 35125,
+      "Entries": [
+        "[Libra Guardian 3] Wayfarer"
       ]
     },
     {
       "ID": 35200,
       "Entries": [
-        "[Ironeye] Default"
+        "[Libra Ironeye 1] Default"
       ]
     },
     {
       "ID": 35201,
       "Entries": [
-        "[Ironeye] Dawn"
+        "[Libra Ironeye 1] Dawn"
       ]
     },
     {
       "ID": 35202,
       "Entries": [
-        "[Ironeye] Darkness"
+        "[Libra Ironeye 1] Darkness"
       ]
     },
     {
       "ID": 35203,
       "Entries": [
-        "[Ironeye] Remembrance"
+        "[Libra Ironeye 1] Remembrance"
       ]
     },
     {
       "ID": 35204,
       "Entries": [
-        "[Ironeye] Ringfinger"
+        "[Libra Ironeye 1] Ringfinger"
       ]
     },
     {
       "ID": 35205,
       "Entries": [
-        "[Ironeye] Sellsword"
+        "[Libra Ironeye 1] Sellsword"
+      ]
+    },
+    {
+      "ID": 35210,
+      "Entries": [
+        "[Libra Ironeye 2] Default"
+      ]
+    },
+    {
+      "ID": 35211,
+      "Entries": [
+        "[Libra Ironeye 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35212,
+      "Entries": [
+        "[Libra Ironeye 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35213,
+      "Entries": [
+        "[Libra Ironeye 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35214,
+      "Entries": [
+        "[Libra Ironeye 2] Ringfinger"
+      ]
+    },
+    {
+      "ID": 35215,
+      "Entries": [
+        "[Libra Ironeye 2] Sellsword"
+      ]
+    },
+    {
+      "ID": 35220,
+      "Entries": [
+        "[Libra Ironeye 3] Default"
+      ]
+    },
+    {
+      "ID": 35221,
+      "Entries": [
+        "[Libra Ironeye 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35222,
+      "Entries": [
+        "[Libra Ironeye 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35223,
+      "Entries": [
+        "[Libra Ironeye 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35224,
+      "Entries": [
+        "[Libra Ironeye 3] Ringfinger"
+      ]
+    },
+    {
+      "ID": 35225,
+      "Entries": [
+        "[Libra Ironeye 3] Sellsword"
       ]
     },
     {
       "ID": 35300,
       "Entries": [
-        "[Duchess] Default"
+        "[Libra Duchess 1] Default"
       ]
     },
     {
       "ID": 35301,
       "Entries": [
-        "[Duchess] Dawn"
+        "[Libra Duchess 1] Dawn"
       ]
     },
     {
       "ID": 35302,
       "Entries": [
-        "[Duchess] Darkness"
+        "[Libra Duchess 1] Darkness"
       ]
     },
     {
       "ID": 35303,
       "Entries": [
-        "[Duchess] Remembrance"
+        "[Libra Duchess 1] Remembrance"
       ]
     },
     {
       "ID": 35304,
       "Entries": [
-        "[Duchess] Black Leather"
+        "[Libra Duchess 1] Black Leather"
       ]
     },
     {
       "ID": 35305,
       "Entries": [
-        "[Duchess] Wraith"
+        "[Libra Duchess 1] Wraith"
+      ]
+    },
+    {
+      "ID": 35310,
+      "Entries": [
+        "[Libra Duchess 2] Default"
+      ]
+    },
+    {
+      "ID": 35311,
+      "Entries": [
+        "[Libra Duchess 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35312,
+      "Entries": [
+        "[Libra Duchess 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35313,
+      "Entries": [
+        "[Libra Duchess 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35314,
+      "Entries": [
+        "[Libra Duchess 2] Black Leather"
+      ]
+    },
+    {
+      "ID": 35315,
+      "Entries": [
+        "[Libra Duchess 2] Wraith"
+      ]
+    },
+    {
+      "ID": 35320,
+      "Entries": [
+        "[Libra Duchess 3] Default"
+      ]
+    },
+    {
+      "ID": 35321,
+      "Entries": [
+        "[Libra Duchess 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35322,
+      "Entries": [
+        "[Libra Duchess 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35323,
+      "Entries": [
+        "[Libra Duchess 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35324,
+      "Entries": [
+        "[Libra Duchess 3] Black Leather"
+      ]
+    },
+    {
+      "ID": 35325,
+      "Entries": [
+        "[Libra Duchess 3] Wraith"
       ]
     },
     {
       "ID": 35400,
       "Entries": [
-        "[Raider] Default"
+        "[Libra Raider 1] Default"
       ]
     },
     {
       "ID": 35401,
       "Entries": [
-        "[Raider] Dawn"
+        "[Libra Raider 1] Dawn"
       ]
     },
     {
       "ID": 35402,
       "Entries": [
-        "[Raider] Darkness"
+        "[Libra Raider 1] Darkness"
       ]
     },
     {
       "ID": 35403,
       "Entries": [
-        "[Raider] Remembrance"
+        "[Libra Raider 1] Remembrance"
       ]
     },
     {
       "ID": 35404,
       "Entries": [
-        "[Raider] Rock-like"
+        "[Libra Raider 1] Rock-like"
       ]
     },
     {
       "ID": 35405,
       "Entries": [
-        "[Raider] Catarina"
+        "[Libra Raider 1] Catarina"
+      ]
+    },
+    {
+      "ID": 35410,
+      "Entries": [
+        "[Libra Raider 2] Default"
+      ]
+    },
+    {
+      "ID": 35411,
+      "Entries": [
+        "[Libra Raider 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35412,
+      "Entries": [
+        "[Libra Raider 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35413,
+      "Entries": [
+        "[Libra Raider 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35414,
+      "Entries": [
+        "[Libra Raider 2] Rock-like"
+      ]
+    },
+    {
+      "ID": 35415,
+      "Entries": [
+        "[Libra Raider 2] Catarina"
+      ]
+    },
+    {
+      "ID": 35420,
+      "Entries": [
+        "[Libra Raider 3] Default"
+      ]
+    },
+    {
+      "ID": 35421,
+      "Entries": [
+        "[Libra Raider 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35422,
+      "Entries": [
+        "[Libra Raider 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35423,
+      "Entries": [
+        "[Libra Raider 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35424,
+      "Entries": [
+        "[Libra Raider 3] Rock-like"
+      ]
+    },
+    {
+      "ID": 35425,
+      "Entries": [
+        "[Libra Raider 3] Catarina"
       ]
     },
     {
       "ID": 35500,
       "Entries": [
-        "[Revenant] Default"
+        "[Libra Revenant 1] Default"
       ]
     },
     {
       "ID": 35501,
       "Entries": [
-        "[Revenant] Dawn"
+        "[Libra Revenant 1] Dawn"
       ]
     },
     {
       "ID": 35502,
       "Entries": [
-        "[Revenant] Darkness"
+        "[Libra Revenant 1] Darkness"
       ]
     },
     {
       "ID": 35503,
       "Entries": [
-        "[Revenant] Remembrance"
+        "[Libra Revenant 1] Remembrance"
       ]
     },
     {
       "ID": 35504,
       "Entries": [
-        "[Revenant] The Sister in the Painting"
+        "[Libra Revenant 1] The Sister in the Painting"
       ]
     },
     {
       "ID": 35505,
       "Entries": [
-        "[Revenant] Dragon School"
+        "[Libra Revenant 1] Dragon School"
+      ]
+    },
+    {
+      "ID": 35510,
+      "Entries": [
+        "[Libra Revenant 2] Default"
+      ]
+    },
+    {
+      "ID": 35511,
+      "Entries": [
+        "[Libra Revenant 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35512,
+      "Entries": [
+        "[Libra Revenant 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35513,
+      "Entries": [
+        "[Libra Revenant 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35514,
+      "Entries": [
+        "[Libra Revenant 2] The Sister in the Painting"
+      ]
+    },
+    {
+      "ID": 35515,
+      "Entries": [
+        "[Libra Revenant 2] Dragon School"
+      ]
+    },
+    {
+      "ID": 35520,
+      "Entries": [
+        "[Libra Revenant 3] Default"
+      ]
+    },
+    {
+      "ID": 35521,
+      "Entries": [
+        "[Libra Revenant 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35522,
+      "Entries": [
+        "[Libra Revenant 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35523,
+      "Entries": [
+        "[Libra Revenant 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35524,
+      "Entries": [
+        "[Libra Revenant 3] The Sister in the Painting"
+      ]
+    },
+    {
+      "ID": 35525,
+      "Entries": [
+        "[Libra Revenant 3] Dragon School"
       ]
     },
     {
       "ID": 35600,
       "Entries": [
-        "[Recluse] Default"
+        "[Libra Recluse 1] Default"
       ]
     },
     {
       "ID": 35601,
       "Entries": [
-        "[Recluse] Dawn"
+        "[Libra Recluse 1] Dawn"
       ]
     },
     {
       "ID": 35602,
       "Entries": [
-        "[Recluse] Darkness"
+        "[Libra Recluse 1] Darkness"
       ]
     },
     {
       "ID": 35603,
       "Entries": [
-        "[Recluse] Remembrance"
+        "[Libra Recluse 1] Remembrance"
       ]
     },
     {
       "ID": 35604,
       "Entries": [
-        "[Recluse] Heretic Sorcerer"
+        "[Libra Recluse 1] Heretic Sorcerer"
       ]
     },
     {
       "ID": 35605,
       "Entries": [
-        "[Recluse] Emerald Fate"
+        "[Libra Recluse 1] Emerald Fate"
+      ]
+    },
+    {
+      "ID": 35610,
+      "Entries": [
+        "[Libra Recluse 2] Default"
+      ]
+    },
+    {
+      "ID": 35611,
+      "Entries": [
+        "[Libra Recluse 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35612,
+      "Entries": [
+        "[Libra Recluse 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35613,
+      "Entries": [
+        "[Libra Recluse 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35614,
+      "Entries": [
+        "[Libra Recluse 2] Heretic Sorcerer"
+      ]
+    },
+    {
+      "ID": 35615,
+      "Entries": [
+        "[Libra Recluse 2] Emerald Fate"
+      ]
+    },
+    {
+      "ID": 35620,
+      "Entries": [
+        "[Libra Recluse 3] Default"
+      ]
+    },
+    {
+      "ID": 35621,
+      "Entries": [
+        "[Libra Recluse 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35622,
+      "Entries": [
+        "[Libra Recluse 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35623,
+      "Entries": [
+        "[Libra Recluse 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35624,
+      "Entries": [
+        "[Libra Recluse 3] Heretic Sorcerer"
+      ]
+    },
+    {
+      "ID": 35625,
+      "Entries": [
+        "[Libra Recluse 3] Emerald Fate"
       ]
     },
     {
       "ID": 35700,
       "Entries": [
-        "[Executor] Default"
+        "[Libra Executor 1] Default"
       ]
     },
     {
       "ID": 35701,
       "Entries": [
-        "[Executor] Dawn"
+        "[Libra Executor 1] Dawn"
       ]
     },
     {
       "ID": 35702,
       "Entries": [
-        "[Executor] Darkness"
+        "[Libra Executor 1] Darkness"
       ]
     },
     {
       "ID": 35703,
       "Entries": [
-        "[Executor] Remembrance"
+        "[Libra Executor 1] Remembrance"
       ]
     },
     {
       "ID": 35704,
       "Entries": [
-        "[Executor] Thorns"
+        "[Libra Executor 1] Thorns"
       ]
     },
     {
       "ID": 35705,
       "Entries": [
-        "[Executor] Sable Church"
+        "[Libra Executor 1] Sable Church"
+      ]
+    },
+    {
+      "ID": 35710,
+      "Entries": [
+        "[Libra Executor 2] Default"
+      ]
+    },
+    {
+      "ID": 35711,
+      "Entries": [
+        "[Libra Executor 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35712,
+      "Entries": [
+        "[Libra Executor 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35713,
+      "Entries": [
+        "[Libra Executor 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35714,
+      "Entries": [
+        "[Libra Executor 2] Thorns"
+      ]
+    },
+    {
+      "ID": 35715,
+      "Entries": [
+        "[Libra Executor 2] Sable Church"
+      ]
+    },
+    {
+      "ID": 35720,
+      "Entries": [
+        "[Libra Executor 3] Default"
+      ]
+    },
+    {
+      "ID": 35721,
+      "Entries": [
+        "[Libra Executor 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35722,
+      "Entries": [
+        "[Libra Executor 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35723,
+      "Entries": [
+        "[Libra Executor 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35724,
+      "Entries": [
+        "[Libra Executor 3] Thorns"
+      ]
+    },
+    {
+      "ID": 35725,
+      "Entries": [
+        "[Libra Executor 3] Sable Church"
       ]
     },
     {
