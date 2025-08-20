@@ -1389,6 +1389,7 @@ public class CFG
     public int Toolbar_EntityGroupID = 0;
     public string Toolbar_EntityGroup_Attribute = "";
 
+    public bool UseLatestGameOffset = true;
     public int SelectedGameOffsetData = 0;
 
     public int GFX_Display_Width { get; set; } = 1920;

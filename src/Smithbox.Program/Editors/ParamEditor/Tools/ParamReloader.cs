@@ -27,6 +27,20 @@ public class ParamReloader
     {
         Editor = editor;
         Project = project;
+
+        UpdateSelectedOffset();
+    }
+
+    // Set the game offset to the latest from the JSON so user's always use the latest offset,
+    // which is what is expected.
+    private void UpdateSelectedOffset()
+    {
+        if (CFG.Current.UseLatestGameOffset)
+        {
+            var entries = Project.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+
+            CFG.Current.SelectedGameOffsetData = entries.Count() - 1;
+        }
     }
 
     private readonly List<ProjectType> _reloaderSupportedGames = new()

@@ -1004,8 +1004,12 @@ public class ParamEditorTab
             // Ignore if no game offsets exist for the project type
             if (curProject.ParamMemoryOffsets != null && curProject.ParamMemoryOffsets.list != null)
             {
+                // Auto-set to the latest version
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
                 {
+                    ImGui.Checkbox("Set latest version on program start", ref CFG.Current.UseLatestGameOffset);
+                    UIHelper.Tooltip("If enabled, the param reloader version will be set to the latest executable version whenever Smithbox is started.");
+
                     ImGui.Text("Param Reloader Version");
                     UIHelper.Tooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
