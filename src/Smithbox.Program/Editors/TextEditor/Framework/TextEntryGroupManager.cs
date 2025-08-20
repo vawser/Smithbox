@@ -700,18 +700,10 @@ public class TextEntryGroupManager
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_NR.Personal_Scenario_Title,
-                    Menu_MsgBndID_NR.Personal_Scenario_Objective,
-                    Menu_MsgBndID_NR.Personal_Scenario_Body,
-                    null));
-
-
-                groupings.Add(new EntryGroupAssociation(
                     Menu_MsgBndID_NR.SpEffect_Name,
                     Menu_MsgBndID_NR.SpEffect_Info,
                     Menu_MsgBndID_NR.SpEffect_Caption,
                     null));
-
                 break;
         }
 

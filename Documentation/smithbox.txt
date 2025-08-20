@@ -25,4 +25,3 @@
 # TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
 - Param Merge doesn't seem to merge in modified VALUES
-

@@ -1780,13 +1780,13 @@ public enum Menu_MsgBndID_NR
     [Display(Name = "Terms of Service", ShortName = "Common", Description = "")]
     Terms_of_Service = 210,
 
-    [Display(Name = "Personal Scenario Objective", ShortName = "Summary", Description = "")]
+    [Display(Name = "Personal Scenario Objective", ShortName = "Common", Description = "")]
     Personal_Scenario_Objective = 211,
 
-    [Display(Name = "Personal Scenario Title", ShortName = "Title", Description = "")]
+    [Display(Name = "Personal Scenario Title", ShortName = "Common", Description = "")]
     Personal_Scenario_Title = 212,
 
-    [Display(Name = "Personal Scenario Body", ShortName = "Description", Description = "")]
+    [Display(Name = "Personal Scenario Body", ShortName = "Common", Description = "")]
     Personal_Scenario_Body = 213,
 
     [Display(Name = "SpEffect Name", ShortName = "Title", Description = "")]
