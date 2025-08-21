@@ -1392,21 +1392,23 @@
       <SortID>1802</SortID>
     </Field>
     
-    <Field Def="s16 unknown_1">
-    </Field>
+    <Field Def="s8 spAttributeMixcraft" />
+	
+	<Field Def="s8 unknown_2" />
     
     <Field Def="dummy8 pad4[1]">
       <DisplayName>pad</DisplayName>
       <SortID>12005</SortID>
     </Field>
     
-    <Field Def="s32 ultimateArtGainCorrection" />
+    <Field Def="s16 ultimateChargeCorrection" />
+	<Field Def="s16 ultimateCharge" />
     <Field Def="s32 reviveDamageCorrection" />
-    <Field Def="f32 unknown_3" />
+    <Field Def="f32 reviveDamage" />
     <Field Def="f32 unknown_4" />
-    <Field Def="u8 unknown_5a" />
-    <Field Def="u8 unknown_5b" />
-    <Field Def="u8 unknown_5c" />
+    <Field Def="u8 subCategory3" />
+    <Field Def="u8 subCategory4" />
+    <Field Def="u8 subCategory5" />
     <Field Def="u8 unknown_5d" />
     
     <Field Def="dummy8 pad7_old[4]"/>

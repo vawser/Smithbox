@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="Handles Ironeye's Marking, such as damage and animations of characters" />
   
   <Field>
     <characterId
     AltName="Character ID"
     Wiki="The character this affects."
     CharacterAlias="" />
+	
+	<healthPercentDamage
+	AltName="Trigger Damage Rate"
+	Wiki="How much percent health to remove when triggered" />
+	
+	<healthPercentTrigger
+	AltName="Damage Amount to Trigger"
+	Wiki="How much percent health must be removed to trigger" />
+	
+	<damageTakenRate
+	AltName="Damage Taken Rate"
+	Wiki="How much extra damage character takes when affected" />
+	
+	<animationId
+	AltName="Animation ID"
+	Wiki="Animation to play when weak point triggers" />
+	
+	<dummyPolyId
+	AltName="Dummy Poly Id"
+	Wiki="Dummy poly the marking signal attaches to" />
   </Field>
   
   <Enums>

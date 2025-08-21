@@ -124,9 +124,9 @@
     </Enum>
     <Enum Name="ATK_PATAM_THROWFLAG_TYPE" type="u8">
         <Option Value="0" Name="None" />
-        <Option Value="1" Name="Throw transition" />
-        <Option Value="2" Name="Throw" />
-        <Option Value="3" Name="Throw transition (with dmgLevel" />
+        <Option Value="1" Name="Throw Transition" />
+        <Option Value="2" Name="Throw Damage" />
+        <Option Value="3" Name="Throw Transition (with dmgLevel" />
     </Enum>
     <Enum Name="ATKPARAM_SFX_ATK_POW" type="s8">
         <Option Value="0" Name="Small" />
@@ -144,17 +144,19 @@
     </Enum>
     <Enum Name="ATKPARAM_BEHAVIOR_ID" type="u8">
         <Option Value="0" Name="None" />
-        <Option Value="1" Name="Continuous Attack" />
-        <Option Value="2" Name="Super huge blowout" />
-        <Option Value="3" Name="Delayed damage reaction" />
-        <Option Value="4" Name="Damage only FE" />
-        <Option Value="5" Name="Small stagger guarantee" />
-        <Option Value="6" Name="Unknown" />
-        <Option Value="7" Name="Unknown" />
-        <Option Value="8" Name="Unknown" />
-        <Option Value="9" Name="Unknown" />
-        <Option Value="10" Name="Start Grab" />
-        <Option Value="11" Name="Finish Grab" />
+        <Option Value="1" Name="Rolling" />
+        <Option Value="2" Name="No AddBlend" />
+        <Option Value="3" Name="Large2 Damage" />
+        <Option Value="4" Name="Insect" />
+        <Option Value="5" Name="Golem Confusion" />
+        <Option Value="6" Name="Maliketh Parry" />
+        <Option Value="7" Name="Margit's Shackle" />
+        <Option Value="8" Name="Mohg's Shackle" />
+        <Option Value="9" Name="No DamageCount Increment" />
+		<Option Value="10" Name="Prevent Stagger after Falling 10+" />
+        <Option Value="12" Name="Extra Large Damage (Ult Stagger)" />
+        <Option Value="15" Name="Claw Shot" />
+		<Option Value="16" Name="Claw Shot Pull" />
     </Enum>
     <Enum Name="ATKPARAM_SE_ATK_POW" type="s8">
         <Option Value="0" Name="Small" />
@@ -253,6 +255,7 @@
     <subCategory2 AltName="Conditional Category [2]" Wiki="Subcategory 2" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
     <subCategory3 AltName="Conditional Category [3]" Wiki="Subcategory 3" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
     <subCategory4 AltName="Conditional Category [4]" Wiki="Subcategory 4" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
+	<subCategory5 AltName="Conditional Category [5]" Wiki="Subcategory 5" VRef="MagicSubCategory" ProjectEnum="ATK_SUB_CATEGORY" />
     <atkPhys AltName="Damage: Physical" Wiki="NPCs only. Basic damage of physical attack" />
     <atkMag AltName="Damage: Magic" Wiki="NPCs only. Additional damage from magic attacks" />
     <atkFire AltName="Damage: Fire" Wiki="NPCs only. Additional damage from fire attacks" />
@@ -432,13 +435,26 @@
     
     <pad4 AltName="" Padding=""/>
     
-    <ultimateArtGainCorrection
+	<spAttributeMixcraft
+	AltName="Special Attribute for Magic Cocktail"
+	Wiki="Override for purposes of Magic Cocktail affinity residue"
+	ProjectEnum="ATKPARAM_SPATTR_TYPE" />
+	
+    <ultimateChargeCorrection
     AltName="Attack Correction: Ultimate Art" 
-    Wiki="The correction for ultimate art gauge restoration." />
+    Wiki="The correction for ultimate art gauge charge." />
+	
+	<ultimateCharge
+	AltName="Charge: Ultimate Art"
+	Wiki="Flat amount of ultimate art gauge charge." />
     
-    <reviveDamageCorrection 
+    <reviveDamageCorrection
     AltName="Attack Correction: Revive" 
     Wiki="The correction for revive damage." />
+	
+	<reviveDamage
+	AltName="Damage: Revive"
+	Wiki="Flat amount of revive damage." />
     
   </Field>
   <Self Wiki="Governs hitboxes and damage of attacks" AlternativeOrder="
@@ -454,20 +470,20 @@ hit0_DmyPoly2,hit1_DmyPoly2,hit2_DmyPoly2,hit3_DmyPoly2,
 hit4_DmyPoly2,hit5_DmyPoly2,hit6_DmyPoly2,hit7_DmyPoly2,hit8_DmyPoly2,hit9_DmyPoly2,hit10_DmyPoly2,hit11_DmyPoly2,hit12_DmyPoly2,hit13_DmyPoly2,hit14_DmyPoly2,hit15_DmyPoly2,-,
 knockbackDist,hitStopTime,blowingCorrection,-,
 spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
-atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,reviveDamageCorrection,
+atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,reviveDamageCorrection,ultimateChargeCorrection,
 atkThrowEscapeCorrection,guardAtkRateCorrection,guardBreakCorrection,-,
-atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,
+atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,reviveDamage,ultimateCharge,
 atkThrowEscape,guardAtkRate,guardBreakRate,-,
 dmgLevel,dmgLevel_vsPlayer,-,
 statusAilmentAtkPowerCorrectRate,statusAilmentAtkPowerCorrectRate_byPoint,
 spEffectAtkPowerCorrectRate_byPoint,spEffectAtkPowerCorrectRate_byRate,spEffectAtkPowerCorrectRate_byDmg,-,
 atkObj,-,
 guardCutCancelRate,guardStaminaCutRate,guardRate,-,
-subCategory1,subCategory2,subCategory3,subCategory4,finalDamageRateId,overwriteAttackElementCorrectId,-,
+subCategory1,subCategory2,subCategory3,subCategory4,subCategory5,finalDamageRateId,overwriteAttackElementCorrectId,-,
 isEnableCalcDamageForBushesObj,-,
 throwTypeId,throwFlag,throwDamageAttribute,-,
 mapHitType,guardRangeType,hitSourceType,-,
-atkAttribute,spAttribute,spAttributeVariationValue,atkType,atkMaterial,-,
+atkAttribute,spAttribute,spAttributeVariationValue,spAttributeMixcraft,atkType,atkMaterial,-,
 defSeMaterial1,defSfxMaterial1,defSeMaterial2,defSfxMaterial2,defSfxMaterialVariationValue,-,
 disableGuard,disableStaminaAttack,disableHitSpEffect,isDisableParry,isDisableBothHandsAtkBonus,isInvalidatedByNoDamageInAir,-,
 isArrowAtk,isGhostAtk,isVsRideAtk,isAddBaseAtk,isDisableNoDamage,isCheckDoorPenetration,excludeThreatLvNotify,IgnoreNotifyMissSwingForAI,
