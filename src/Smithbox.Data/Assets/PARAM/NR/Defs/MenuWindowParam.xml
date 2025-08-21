@@ -8,9 +8,9 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 soundOpen"/>
+    <Field Def="s32 soundUnk"/>
+    <Field Def="s32 soundClose"/>
     <Field Def="u8 unknown_4a"/>
     <Field Def="u8 unknown_4b"/>
     <Field Def="u8 unknown_4c"/>
@@ -19,7 +19,7 @@
     <Field Def="u16 unknown_5b"/>
     <Field Def="s32 textId"/>
     <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
+    <Field Def="s32 menuPropertyLayoutParamId"/>
     <Field Def="s32 unknown_9"/>
     <Field Def="s32 unknown_10"/>
   </Fields>

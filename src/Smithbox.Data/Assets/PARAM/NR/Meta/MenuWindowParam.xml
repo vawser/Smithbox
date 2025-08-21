@@ -4,13 +4,31 @@
   Wiki="" />
   
   <Field>
-    <textId 
-    FmgRef="Modern_Menu_Text" />
+	<textId 
+	FmgRef="Modern_Menu_Text" />
+	
+	<soundOpen
+	AltName="Opening Sound"
+	Wiki="Sound played when opening menu" />
+	
+	<soundUnk
+	AltName="Unknown Sound"
+	Wiki="Sound played in unknown scenario, typically same as closing sound" />
+	
+	<soundClose
+	AltName="Closing Sound"
+	Wiki="Sound played when closing menu" />
 
-  <iconId
-  AltName="Icon ID"
-  Wiki="Icon ID"
-  TextureRef="Direct/01_common_h/SB_MenuIcon_0/iconId/MENU_MenuIcon_,Direct/01_common_h/SB_MenuIcon_1/iconId/MENU_MenuIcon_" />
+	<iconId
+	AltName="Icon ID"
+	Wiki="Icon ID"
+	TextureRef="Direct/01_common_h/SB_MenuIcon_0/iconId/MENU_MenuIcon_,Direct/01_common_h/SB_MenuIcon_1/iconId/MENU_MenuIcon_" />
+	  
+	<menuPropertyLayoutParamId
+	AltName="Menu Property Layout ID"
+	Wiki="Used in currency menus like Small Jar and Signboard"
+	Refs="MenuPropertyLayoutParam" />
+  
   </Field>
   
   <Enums>

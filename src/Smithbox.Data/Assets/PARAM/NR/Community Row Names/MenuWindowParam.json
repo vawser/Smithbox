@@ -82,7 +82,7 @@
     {
       "ID": 112,
       "Entries": [
-        ""
+        "Result"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 204,
       "Entries": [
-        "Target"
+        "[Expeditions] Target"
       ]
     },
     {
       "ID": 205,
       "Entries": [
-        "Matchmaking Settings"
+        "[Expeditions] Matchmaking Settings"
       ]
     },
     {
@@ -148,31 +148,31 @@
     {
       "ID": 210,
       "Entries": [
-        ""
+        "[Visual Codex] Characters"
       ]
     },
     {
       "ID": 211,
       "Entries": [
-        ""
+        "[Visual Codex] Equipment"
       ]
     },
     {
       "ID": 212,
       "Entries": [
-        ""
+        "[Visual Codex] Skill/Sorceries/Incantations"
       ]
     },
     {
       "ID": 213,
       "Entries": [
-        ""
+        "[Visual Codex] Guide"
       ]
     },
     {
       "ID": 214,
       "Entries": [
-        ""
+        "[Visual Codex] Handbook"
       ]
     },
     {
@@ -202,25 +202,25 @@
     {
       "ID": 219,
       "Entries": [
-        ""
+        "[Sparring Equipment] Armaments"
       ]
     },
     {
       "ID": 220,
       "Entries": [
-        ""
+        "[Sparring Equipment] Skill/Sorc/Incan"
       ]
     },
     {
       "ID": 221,
       "Entries": [
-        ""
+        "[Sparring Equipment] Consumables"
       ]
     },
     {
       "ID": 222,
       "Entries": [
-        "Handbook"
+        "[Sparring Equipment] Handbook"
       ]
     },
     {
@@ -322,7 +322,7 @@
     {
       "ID": 303,
       "Entries": [
-        ""
+        "[Status] Effect Details"
       ]
     },
     {
@@ -334,7 +334,7 @@
     {
       "ID": 305,
       "Entries": [
-        ""
+        "[System - Display] Brightness"
       ]
     },
     {
@@ -346,7 +346,7 @@
     {
       "ID": 307,
       "Entries": [
-        ""
+        "[System - Graphics] Advanced Settings"
       ]
     },
     {
