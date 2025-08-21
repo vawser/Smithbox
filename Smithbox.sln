@@ -58,8 +58,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.SoapstoneLib", "src\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Tests", "src\Smithbox.Tests\Smithbox.Tests.csproj", "{C438DB12-F15F-4D20-8A69-BBF09A663AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Updater", "src\Smithbox.Updater\Smithbox.Updater.csproj", "{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Veldrid.MetalBindings", "src\Veldrid\Veldrid.MetalBindings\Veldrid.MetalBindings.csproj", "{77EB2AA9-02E6-4356-9A86-956A946CBBBF}"
 EndProject
 Global
@@ -978,38 +976,6 @@ Global
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release-win|Any CPU.Build.0 = Release|Any CPU
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release-win|x64.ActiveCfg = Release|Any CPU
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release-win|x64.Build.0 = Release|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.ActiveCfg = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.Build.0 = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.ActiveCfg = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.Build.0 = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|Any CPU.ActiveCfg = Debug-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|Any CPU.Build.0 = Debug-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|x64.ActiveCfg = Debug-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-linux|x64.Build.0 = Debug-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|Any CPU.ActiveCfg = Debug-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|Any CPU.Build.0 = Debug-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|x64.ActiveCfg = Debug-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-osx|x64.Build.0 = Debug-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|Any CPU.ActiveCfg = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|Any CPU.Build.0 = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|x64.ActiveCfg = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug-win|x64.Build.0 = Debug-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.ActiveCfg = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.Build.0 = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.ActiveCfg = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.Build.0 = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|Any CPU.ActiveCfg = Release-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|Any CPU.Build.0 = Release-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|x64.ActiveCfg = Release-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-linux|x64.Build.0 = Release-linux|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|Any CPU.ActiveCfg = Release-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|Any CPU.Build.0 = Release-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|x64.ActiveCfg = Release-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-osx|x64.Build.0 = Release-osx|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|Any CPU.ActiveCfg = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|Any CPU.Build.0 = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.ActiveCfg = Release-win|Any CPU
-		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release-win|x64.Build.0 = Release-win|Any CPU
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77EB2AA9-02E6-4356-9A86-956A946CBBBF}.Debug|x64.ActiveCfg = Debug|Any CPU
