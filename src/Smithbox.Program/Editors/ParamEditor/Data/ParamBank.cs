@@ -1895,9 +1895,8 @@ public class ParamBank
 
         if (!Project.FS.FileExists(eventParam))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error, Tasks.LogPriority.High);
-
-            return false;
+            //TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error, Tasks.LogPriority.High);
+            //return false;
         }
 
         if (IsEventParamTouched())
