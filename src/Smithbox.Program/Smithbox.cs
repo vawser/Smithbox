@@ -98,8 +98,6 @@ public class Smithbox
         SetupFonts();
 
         _context.ImguiRenderer.OnSetupDone();
-
-        ProgramUpdater.CheckForUpdate(_version);
     }
 
     public void SetProgramName(ProjectEntry curProject)
@@ -656,8 +654,6 @@ public class Smithbox
             // Warning Logger
             TaskLogs.DisplayWarningLoggerBar();
             TaskLogs.DisplayWarningLoggerWindow();
-
-            ProgramUpdater.DisplayUpdateHint(this);
 
             ImGui.EndMainMenuBar();
         }
