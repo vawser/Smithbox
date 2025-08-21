@@ -152,10 +152,10 @@
     <ReplacementStatus4 AltName="Replacement Threshold [4]" Wiki="Replacement status value 4" />
     <refCategory5 AltName="Reference Category [5]" Wiki="Call ID category [Attack, Projectile, Special Effects]" Enum="BEHAVIOR_REF_TYPE" />
     <consumeSA AltName="Poise Consumption" Wiki="SA consumption [normal / reservoir]" />
-    <ReplacementMagic1 AltName="Replacement Magic ID [1]" Wiki="Replacement ID1" />
-    <ReplacementMagic2 AltName="Replacement Magic ID [2]" Wiki="Replacement ID2" />
-    <ReplacementMagic3 AltName="Replacement Magic ID [3]" Wiki="Replacement ID3" />
-    <ReplacementMagic4 AltName="Replacement Magic ID [4]" Wiki="Replacement ID 4" />
+    <ReplacementMagic1 AltName="Replacement Magic ID [1]" Wiki="Replacement ID1" Refs="Magic"/>
+    <ReplacementMagic2 AltName="Replacement Magic ID [2]" Wiki="Replacement ID2" Refs="Magic"/>
+    <ReplacementMagic3 AltName="Replacement Magic ID [3]" Wiki="Replacement ID3" Refs="Magic"/>
+    <ReplacementMagic4 AltName="Replacement Magic ID [4]" Wiki="Replacement ID4" Refs="Magic"/>
     <mp_charge AltName="FP Consumption - Charged" Wiki="MP consumption [reservoir]" />
     <stamina_charge AltName="Stamina Consumption - Charged" Wiki="Consumption stamina [reservoir]" />
     <createLimitGroupId AltName="Create Limit Group ID" Wiki="If it is 0, it is unused. Check the number of bullets created for the specified group Id, and if the upper limit is reached, you will not be able to use magic." />
@@ -189,6 +189,24 @@
     <consumeType10 AltName="Consumption Type [10]" Wiki="When Reference ID [10] is called, consume FP/Stamina according to the configured cost." Enum="MAGIC_CONSUME_TYPE" />
     <consumeLoopMP_forMenu AltName="FP Consumption Loop - For Menu Display" Wiki="MP consumption for menu supplement display" />
     <pad AltName="" Padding=""/>
+	
+	<sortGroupId
+	AltName="Sort Group ID" />
+	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds/Visual Codex"
+	Wiki="Allows spell to appear in Sparring Grounds/Visual Codex"
+	IsBool="" />
+	
+	<atkParamId
+    AltName="Attack ID"
+    Wiki="Used for unused menu power display"
+    Refs="AtkParam_Pc" />
+    
+    <sparringGroundsWeaponId
+    AltName="Sparring Grounds Weapon"
+    Wiki="Base weapon used for Sparring Grounds"
+    Refs="EquipParamWeapon" />
   </Field>
   <Self Wiki="Defines behaviour data of spells. Do not confuse with version in EquipParamGoods." AlternativeOrder="yesNoDialogMessageId,opmeMenuType,-,
 sortId,iconId,-,
