@@ -147,6 +147,7 @@
       <Maximum>128</Maximum>
       <SortID>990</SortID>
     </Field>
+    <Field Def="dummy8 endPadding[1]" RemovedVersion="10701000" />
     
     <Field Def="u16 swordArtsTypeNew" FirstVersion="10701000" />
     

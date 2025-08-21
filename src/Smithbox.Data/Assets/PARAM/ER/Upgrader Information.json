@@ -97,13 +97,13 @@
   "UpgradeCommands": [
     {
       "Version": "10701000",
-      "Message": "1.07 - (SwordArtsParam) Move swordArtsType to swordArtsTypeNew",
-      "Command": "param SwordArtsParam: modified: swordArtsTypeNew: = field swordArtsType"
+      "Message": "1.07 - (SwordArtsParam) Set swordArtsTypeNew to Vanilla v1.07 values",
+      "Command": "param SwordArtsParam: modified: swordArtsTypeNew: = vanillafield swordArtsTypeNew"
     },
     {
       "Version": "10701000",
-      "Message": "1.07 - (SwordArtsParam) Set swordArtsType to 0",
-      "Command": "param SwordArtsParam: modified \u0026\u0026 !added: swordArtsType: = 0"
+      "Message": "1.07 - (SwordArtsParam) Set swordArtsType to Vanilla v1.07 values",
+      "Command": "param SwordArtsParam: modified: swordArtsType: = vanillafield swordArtsType"
     },
     {
       "Version": "10701000",

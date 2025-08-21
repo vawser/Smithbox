@@ -78,7 +78,7 @@
       <SortID>14</SortID>
     </Field>
     
-    <Field Def="dummy8 reserved_old[8]" FirstVersion="10501000" RemovedVersion="11210015" />
+    <Field Def="dummy8 reserved_old[8]" RemovedVersion="11210015" />
     
     <Field Def="u8 unknown_0x18" FirstVersion="11210015" />
     <Field Def="u8 unknown_0x19" FirstVersion="11210015" />
