@@ -8,7 +8,7 @@
       <Option Value="1" Name="Uncommon" />
       <Option Value="2" Name="Rare" />
       <Option Value="3" Name="Legendary" />
-      <Option Value="9" Name="Unique" />
+      <Option Value="9" Name="Cursed" />
     </Enum>
     <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
       <Option Value="10" Name="Group 10 - Core Stats" />
@@ -64,6 +64,16 @@
     AltName="Sort Group ID"
     Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
     Enum="DISPLAY_CATEGORY_ID" />
+	
+	<isDiscard
+	AltName="Can Discard"
+	Wiki="Allows talisman to be discarded"
+	IsBool="" />
+	
+	<enableVisualCodex
+	AltName="Enable Visual Codex"
+	Wiki="Allows talisman to appear in the Visual Codex"
+	IsBool="" />
     
     <spEffectId_1 
     AltName="Attached Effect: 1" 

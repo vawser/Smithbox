@@ -19,6 +19,19 @@
     AltName="Relic Color"
     Wiki="The color this relic slots into."
     Enum="SLOT_COLOR" />
+	
+	<sortGroupId
+	AltName="Sort Group ID" />
+	
+	<isDeepRelic
+	AltName="Is Depths Relic"
+	Wiki="Determines if relic goes in standard or depths slots"
+	IsBool="" />
+	
+	<colorIcon
+	AltName="Use Color Icon"
+	Wiki="Displays the relic's color as an icon if true"
+	IsBool="" />
     
     <sortId
     AltName="Sort ID"
@@ -43,6 +56,21 @@
     AltName="Icon ID"
     Wiki="Icon for relic"
     TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_" />
+	
+	<attachEffectTableId_curse1 
+    AltName="Attached Effect Table: Curse 1" 
+    Wiki="The attached effect table to use for a cursed effect." 
+    Refs="AttachEffectTableParam" />
+	
+	<attachEffectTableId_curse2 
+    AltName="Attached Effect Table: Curse 2" 
+    Wiki="The attached effect table to use for a cursed effect." 
+    Refs="AttachEffectTableParam" />
+	
+	<attachEffectTableId_curse3 
+    AltName="Attached Effect Table: Curse 3" 
+    Wiki="The attached effect table to use for a cursed effect." 
+    Refs="AttachEffectTableParam" />
     
   </Field>
   

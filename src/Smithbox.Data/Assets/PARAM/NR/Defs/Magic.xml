@@ -787,9 +787,11 @@
       <SortID>420</SortID>
     </Field>
     
-    <Field Def="s32 unknown_1" />
-    <Field Def="s32 unknown_2" />
-    <Field Def="s32 unknown_3" />
+    <Field Def="s8 sortGroupId" />
+	<Field Def="s8 enableSparringGrounds" />
+	<Field Def="s16 unknown_1" />
+    <Field Def="s32 atkParamId" />
+    <Field Def="s32 sparringGroundsWeaponId" />
     
   </Fields>
 </PARAMDEF>

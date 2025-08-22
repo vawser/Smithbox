@@ -51,19 +51,39 @@
     Refs="AttachEffectTableParam" />
 
     <weaponLevel
-    AltName="Weapon Level" 
+    AltName="Weapon Reinforcement Level" 
     Wiki="The adjusted power level of the weapon"
     Enum="WEAPON_LEVEL" />
+	
+	<isCursed
+	AltName="Is Cursed Weapon"
+	Wiki="Changes weapon color to red if true"
+	IsBool="" />
     
     <magicTableId_1 
     AltName="Magic Table: 1" 
-    Wiki="" 
+    Wiki="Spell for slot 1" 
     Refs="MagicTableParam" />
     
     <magicTableId_2 
     AltName="Magic Table: 2" 
-    Wiki="" 
+    Wiki="Spell for slot 2" 
     Refs="MagicTableParam" />
+	
+	<attachEffectTableId_4 
+    AltName="Attached Effect Table: 4" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_5
+    AltName="Attached Effect Table: 5" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_6 
+    AltName="Attached Effect Table: 6" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
     
   </Field>
   
