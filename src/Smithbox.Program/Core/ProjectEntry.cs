@@ -315,6 +315,7 @@ public class ProjectEntry
             }
         }
 
+        ClearEditors();
         InitializeEditors(initType, silent);
 
         Initialized = true;
@@ -323,7 +324,7 @@ public class ProjectEntry
         return true;
     }
 
-    public async void InitializeEditors(InitType initType, bool silent = false)
+    public void ClearEditors()
     {
         // Clear all existing editors and editor data
         MapEditor = null;
@@ -344,6 +345,10 @@ public class ProjectEntry
         TextureData = null;
         FileData = null;
 
+    }
+
+    public async void InitializeEditors(InitType initType, bool silent = false)
+    {
         List<Task> initTasks = [];
 
         // ---- Map Editor ----
@@ -608,10 +613,18 @@ public class ProjectEntry
             }
         }
 
-        ParamEditor = new ParamEditorScreen(BaseEditor, this);
+        // Added this so throws during init can be logged
+        try
+        {
+            ParamEditor = new ParamEditorScreen(BaseEditor, this);
+        }
+        catch(Exception ex)
+        {
+            TaskLogs.AddLog($"[{ProjectName}:Param Editor]: Failed to setup Param Editor: {ex}");
+        }
 
         // Placed here so the mass edit stuff is initialized once the editor is setup fully
-        if(ParamEditor != null)
+        if (ParamEditor != null)
         {
             ParamEditor.MassEditHandler.Setup();
         }

@@ -131,6 +131,7 @@ public static class ProjectSettings
 
                 if (EditorStateChanged)
                 {
+                    TargetProject.ClearEditors();
                     TargetProject.InitializeEditors(InitType.ProjectDefined);
                 }
             }

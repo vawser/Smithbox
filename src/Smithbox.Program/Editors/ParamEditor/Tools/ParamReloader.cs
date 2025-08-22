@@ -37,9 +37,12 @@ public class ParamReloader
     {
         if (CFG.Current.UseLatestGameOffset)
         {
-            var entries = Project.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
+            if (Project.ParamMemoryOffsets != null && Project.ParamMemoryOffsets.list != null)
+            {
+                var entries = Project.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
-            CFG.Current.SelectedGameOffsetData = entries.Count() - 1;
+                CFG.Current.SelectedGameOffsetData = entries.Count() - 1;
+            }
         }
     }
 
