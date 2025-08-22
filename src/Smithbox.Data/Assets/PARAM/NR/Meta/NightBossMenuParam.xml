@@ -53,8 +53,31 @@
     AltName="Large Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu."
     TextureRef="Direct/01_common_h/SB_MenuIcon_1/largeBossIconId/MENU_MenuIcon_"/>
+	
+	<effectiveAffinity1
+	AltName="Effective Affinity 1"
+	Wiki="Icon to display in Effective section"
+	Enum="EFFECTIVE_AFFINITY"/>
+	<effectiveAffinity2
+	AltName="Effective Affinity 2"
+	Wiki="Icon to display in Effective section"
+	Enum="EFFECTIVE_AFFINITY"/>
   </Field>
   
   <Enums>
+    <Enum Name="EFFECTIVE_AFFINITY" type="s8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Magic" />
+      <Option Value="2" Name="Fire" />
+	  <Option Value="3" Name="Lightning" />
+      <Option Value="4" Name="Holy" />
+      <Option Value="5" Name="Poison" />
+	  <Option Value="6" Name="Scarlet Rot" />
+      <Option Value="7" Name="Blood Loss" />
+      <Option Value="8" Name="Death Blight" />
+	  <Option Value="9" Name="Frostbite" />
+      <Option Value="10" Name="Sleep" />
+	  <Option Value="11" Name="Madness" />
+    </Enum>
   </Enums>
 </PARAMMETA>

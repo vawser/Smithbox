@@ -15,10 +15,14 @@
     <Field Def="s32 attachEffectTableId_1"/>
     <Field Def="s32 attachEffectTableId_2"/>
     <Field Def="s32 attachEffectTableId_3"/>
-    <Field Def="s32 weaponLevel"/>
+    <Field Def="s8 weaponLevel"/>
+	<Field Def="s8 isCursed"/>
+	<Field Def="s16 unknown_1"/>
     <Field Def="s32 magicTableId_1"/>
     <Field Def="s32 magicTableId_2"/>
-    
-    <Field Def="dummy8 padding[12]"/>
+	
+	<Field Def="s32 attachEffectTableId_4"/>
+    <Field Def="s32 attachEffectTableId_5"/>
+    <Field Def="s32 attachEffectTableId_6"/>
   </Fields>
 </PARAMDEF>
