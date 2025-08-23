@@ -18,9 +18,7 @@ public class KeybindWindow
     private ParamEditorKeybindTab ParamEditorKeybinds;
     private TextEditorKeybindTab TextEditorKeybinds;
     private GparamEditorKeybindTab GparamEditorKeybinds;
-    private TimeActEditorKeybindTab TimeActEditorKeybinds;
     private TextureViewerKeybindTab TextureViewerKeybinds;
-    private BehaviorEditorKeybindTab BehaviorEditorKeybinds;
 
     public KeybindWindow(Smithbox baseEditor)
     {
@@ -33,9 +31,7 @@ public class KeybindWindow
         ParamEditorKeybinds = new ParamEditorKeybindTab();
         TextEditorKeybinds = new TextEditorKeybindTab();
         GparamEditorKeybinds = new GparamEditorKeybindTab();
-        TimeActEditorKeybinds = new TimeActEditorKeybindTab();
         TextureViewerKeybinds = new TextureViewerKeybindTab();
-        BehaviorEditorKeybinds = new BehaviorEditorKeybindTab();
     }
 
     public void ToggleWindow(SelectedKeybindTab focusedTab, bool ignoreIfOpen = true)
@@ -104,14 +100,8 @@ public class KeybindWindow
                 case SelectedKeybindTab.GparamEditor:
                     GparamEditorKeybinds.Display();
                     break;
-                case SelectedKeybindTab.TimeActEditor:
-                    TimeActEditorKeybinds.Display();
-                    break;
                 case SelectedKeybindTab.TextureViewer:
                     TextureViewerKeybinds.Display();
-                    break;
-                case SelectedKeybindTab.BehaviorEditor:
-                    BehaviorEditorKeybinds.Display();
                     break;
             }
 

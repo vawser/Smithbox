@@ -705,29 +705,6 @@ public class GparamEditorKeybindTab
 }
 #endregion
 
-//------------------------------------------
-// Time Act Editor
-//------------------------------------------
-#region Time Act Editor
-public class TimeActEditorKeybindTab
-{
-    public TimeActEditorKeybindTab() { }
-
-    public void Display()
-    {
-        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.TIMEACT_Multiselect = InputTracker.KeybindLine(0,
-                KeyBindings.Current.TIMEACT_Multiselect,
-                KeyBindings.Default.TIMEACT_Multiselect);
-
-            KeyBindings.Current.TIMEACT_MultiselectRange = InputTracker.KeybindLine(1,
-                KeyBindings.Current.TIMEACT_MultiselectRange,
-                KeyBindings.Default.TIMEACT_MultiselectRange);
-        }
-    }
-}
-#endregion
 
 //------------------------------------------
 // Texture Viewer
@@ -752,30 +729,6 @@ public class TextureViewerKeybindTab
             KeyBindings.Current.TEXTURE_ResetZoomLevel = InputTracker.KeybindLine(0,
                 KeyBindings.Current.TEXTURE_ResetZoomLevel,
                 KeyBindings.Default.TEXTURE_ResetZoomLevel);
-        }
-    }
-}
-#endregion
-
-//------------------------------------------
-// Behavior Editor
-//------------------------------------------
-#region Behavior Editor
-public class BehaviorEditorKeybindTab
-{
-    public BehaviorEditorKeybindTab() { }
-
-    public void Display()
-    {
-        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.BEHAVIOR_SelectAll = InputTracker.KeybindLine(0,
-                KeyBindings.Current.BEHAVIOR_SelectAll,
-                KeyBindings.Default.BEHAVIOR_SelectAll);
-
-            KeyBindings.Current.BEHAVIOR_FocusSelection = InputTracker.KeybindLine(1,
-                KeyBindings.Current.BEHAVIOR_FocusSelection,
-                KeyBindings.Default.BEHAVIOR_FocusSelection);
         }
     }
 }
