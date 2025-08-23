@@ -19,7 +19,6 @@ public enum KeybindCategory
     ModelEditor,
     ParamEditor,
     TextEditor,
-    TimeActEditor,
     Viewport,
     TextureViewer
 }
@@ -501,6 +500,7 @@ public class KeyBindings
             "Cycle Rotation Increment Type (Forward)",
             "Changes the degree increment used by Rotate Selection on X/Y-axis. Up to 5 increments can be stored.",
             Key.C,
+            true,
             true);
 
         public KeyBind MAP_SwitchDegreeIncrementTypeBackward = new(
@@ -1025,24 +1025,6 @@ public class KeyBindings
             Key.F5);
 
         //-----------------------------
-        // Time Act Editor
-        //-----------------------------
-        // Core
-        public KeyBind TIMEACT_Multiselect = new(
-            "Multi-Select Row",
-            "When held, multiple rows may be selected.",
-            Key.Z);
-
-        public KeyBind TIMEACT_MultiselectRange = new(
-            "Multi-Select Row Range", 
-            "When held, the next row selected will be considered the 'start', and the next row after that the 'end'. All rows between them will be selected.",
-            Key.LShift, 
-            false, 
-            false, 
-            false, 
-            true);
-
-        //-----------------------------
         // Texture Viewer
         //-----------------------------
         // Core
@@ -1065,22 +1047,6 @@ public class KeyBindings
             "Reset Zoom Level", 
             "Resets the zoom level to default.", 
             Key.R);
-
-        //-----------------------------
-        // Behavior Editor
-        //-----------------------------
-        // Core
-        public KeyBind BEHAVIOR_SelectAll = new(
-            "Select All",
-            "Select all havok objects.",
-            Key.A,
-            true);
-
-        public KeyBind BEHAVIOR_FocusSelection = new(
-            "Focus Selection",
-            "Focus the first selected entry in your selection.",
-            Key.F,
-            true);
 
         //-----------------------------
         // Misc
