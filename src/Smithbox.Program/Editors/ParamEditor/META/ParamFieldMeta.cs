@@ -95,10 +95,10 @@ public class ParamFieldMeta
             };
         }
 
-        XmlAttribute TexRef = fieldMeta.Attributes["TextureRef"];
-        if (TexRef != null)
+        XmlAttribute tIconConfig = fieldMeta.Attributes["IconConfig"];
+        if (tIconConfig != null)
         {
-            TextureRef = TexRef.InnerText.Split(",").Select(x => new TexRef(parent, x)).ToList();
+            IconConfig = new IconConfig(parent, tIconConfig.InnerText);
         }
 
         XmlAttribute Enum = fieldMeta.Attributes["Enum"];
@@ -265,9 +265,9 @@ public class ParamFieldMeta
     public List<FMGRef> MapFmgRef { get; set; }
 
     /// <summary>
-    ///     Name of an Texture Container and File that a Field may refer to.
+    /// Tex Ref
     /// </summary>
-    public List<TexRef> TextureRef { get; set; }
+    public IconConfig IconConfig { get; set; }
 
     /// <summary>
     ///     Set of generally acceptable values, named

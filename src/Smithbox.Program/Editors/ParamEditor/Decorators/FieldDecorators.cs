@@ -31,7 +31,7 @@ public class FieldDecorators
     public static string enumSearchStr = "";
 
     #region Decorator
-    public static bool Decorator_ContextMenuItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool Decorator_ContextMenuItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, IconConfig fieldIcon, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
@@ -49,10 +49,10 @@ public class FieldDecorators
             TextReference_ContextMenuItems(editor, mapFmgRefs, context, oldval, executor);
         }
 
-        if (textureRefs != null)
-        {
-            TextureReference_ContextMenuItems(editor, textureRefs, context, executor);
-        }
+        //if (textureRefs != null)
+        //{
+        //    TextureReference_ContextMenuItems(editor, textureRefs, context, executor);
+        //}
 
         if (Enum != null)
         {
@@ -704,7 +704,7 @@ public class FieldDecorators
     /// <param name="Enum"></param>
     /// <param name="executor"></param>
     /// <returns></returns>
-    public static bool ParamReference_ShortcutItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool ParamReference_ShortcutItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, IconConfig fieldIcon, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
 
@@ -1157,13 +1157,13 @@ public class FieldDecorators
     /// </summary>
     /// <param name="textureRef"></param>
     /// <param name="context"></param>
-    public static void TextureReference_Title(List<TexRef> textureRef, Param.Row context)
+    public static void TextureReference_Title(IconConfig fieldIcon, Param.Row context)
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (textureRef == null)
+        if (fieldIcon == null)
         {
             return;
         }
@@ -1190,8 +1190,7 @@ public class FieldDecorators
     /// <param name="texRefs"></param>
     /// <param name="context"></param>
     /// <param name="oldval"></param>
-    public static void TextureReference_Value(ParamEditorScreen editor, TextureViewerScreen textureViewer, List<TexRef> texRefs, Param.Row context,
-        dynamic oldval)
+    public static void TextureReference_Value(ParamEditorScreen editor, TextureViewerScreen textureViewer, IconConfig fieldIcon, Param.Row context, dynamic oldval, string fieldName, int columnIndex)
     {
         if (editor.Project.TextureViewer == null)
             return;
@@ -1205,18 +1204,9 @@ public class FieldDecorators
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
 
-        ImGui.TextUnformatted("View Source Image");
-
-        foreach (var texRef in texRefs)
+        if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
         {
-            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
-            {
-                var imageDisplayed = textureViewer.ImagePreview.DisplayImagePreview(context, texRef);
-
-                // If an image has been displayed, exit the loop so we don't show multiple images
-                if (imageDisplayed)
-                    break;
-            }
+            var imageDisplayed = textureViewer.ImagePreview.DisplayImagePreview(context, fieldIcon, oldval, fieldName, columnIndex);
         }
 
         ImGui.PopStyleColor();
@@ -1230,20 +1220,20 @@ public class FieldDecorators
     /// <param name="oldval"></param>
     /// <param name="context"></param>
     /// <param name="textureRefs"></param>
-    public static void TextureReference_ContextMenu(ParamEditorScreen editor, ParamBank bank, object oldval,  Param.Row context, List<TexRef> textureRefs)
+    public static void TextureReference_ContextMenu(ParamEditorScreen editor, ParamBank bank, object oldval,  Param.Row context, IconConfig fieldIcon)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
             (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
         {
             
-            if (textureRefs != null && textureRefs.Count > 0)
-            {
-                TexRef primaryRef = textureRefs.First();
-                if (primaryRef?.TextureContainer != null && primaryRef?.TextureFile != null)
-                {
-                    EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.TextureContainer}/{primaryRef?.TextureFile}");
-                }
-            }
+            //if (textureRefs != null && textureRefs.Count > 0)
+            //{
+            //    TexRef primaryRef = textureRefs.First();
+            //    if (primaryRef?.TargetIconConfiguration != null)
+            //    {
+            //        EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.TargetIconConfiguration}/{primaryRef?.TargetField}");
+            //    }
+            //}
         }
     }
 
@@ -1254,35 +1244,35 @@ public class FieldDecorators
     /// <param name="reftypes"></param>
     /// <param name="context"></param>
     /// <param name="executor"></param>
-    public static void TextureReference_ContextMenuItems(ParamEditorScreen editor, List<TexRef> reftypes, Param.Row context, ActionManager executor)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
+    //public static void TextureReference_ContextMenuItems(ParamEditorScreen editor, List<TexRef> reftypes, Param.Row context, ActionManager executor)
+    //{
+    //    // Required to stop the LowRequirements build from failing
+    //    if (Smithbox.LowRequirementsMode)
+    //        return;
 
-        var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+    //    var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
 
-        foreach (var textureRef in reftypes)
-        {
-            if (editor.Project.TextureViewer != null)
-            {
-                bool displayedImage = editor.Project.TextureViewer.ImagePreview.DisplayImagePreview(context, textureRef, false);
+    //    foreach (var textureRef in reftypes)
+    //    {
+    //        if (editor.Project.TextureViewer != null)
+    //        {
+    //            bool displayedImage = editor.Project.TextureViewer.ImagePreview.DisplayImagePreview(context, textureRef, false);
 
-                if (displayedImage)
-                {
-                    if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
-                    {
-                        EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
-                    }
-                }
-            }
+    //            //if (displayedImage)
+    //            //{
+    //            //    if (ImGui.Selectable($@"View"))
+    //            //    {
+    //            //        EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TargetIconConfiguration}/{textureRef.TargetField}");
+    //            //    }
+    //            //}
+    //        }
 
-            if (context == null || executor == null)
-            {
-                continue;
-            }
-        }
-    }
+    //        if (context == null || executor == null)
+    //        {
+    //            continue;
+    //        }
+    //    }
+    //}
 
     #endregion
 

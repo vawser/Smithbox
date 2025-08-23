@@ -96,6 +96,10 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(GithubAsset))]
 [JsonSerializable(typeof(GithubUploader))]
 
+// Icon Configurations
+[JsonSerializable(typeof(IconConfigurations))]
+[JsonSerializable(typeof(IconConfigurationEntry))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

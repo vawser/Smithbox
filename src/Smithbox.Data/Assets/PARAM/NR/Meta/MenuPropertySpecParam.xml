@@ -12,7 +12,7 @@
     <IconID
     AltName="Icon ID"
     Wiki="The icon to use." 
-    TextureRef="Direct/01_common_h/SB_PropertyIcon_0/IconID/MENU_PropertyIcon_"/>
+    IconConfig="MenuProperty"/>
     
     <RequiredPropertyID
     AltName="Required Property ID"

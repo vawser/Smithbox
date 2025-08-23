@@ -20,12 +20,12 @@
     <properPortraitId
     AltName="Portrait ID"
     Wiki="The in-game looking portrait to use for this character."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/properPortraitId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <simplePortraitId
     AltName="Icon Portrait ID"
     Wiki="The simple icon portrait to use for this character."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/simplePortraitId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <characterUnlockFlag
     AltName="Character Unlock Flag"
@@ -50,7 +50,7 @@
     <characterSkillIconId
     AltName="Character Skill Icon ID"
     Wiki="The icon ID for the character skill."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/characterSkillIconId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <ultimateArtTitleId
     AltName="Ultimate Art Title ID"
@@ -65,7 +65,7 @@
     <ultimateArtIconId
     AltName="Ultimate Art Icon ID"
     Wiki="The icon ID for the ultimate art."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/ultimateArtIconId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <backgroundDescriptionId
     AltName="Background Description ID"
@@ -102,12 +102,12 @@
     <passiveAbilityIconId
     AltName="Passive Ability Icon ID"
     Wiki="The icon ID for the passive ability."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/passiveAbilityIconId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <smallHudIconId
     AltName="Small HUD Icon ID"
     Wiki="The icon ID for the a small HUD element."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/smallHudIconId/MENU_MenuIcon_" />
+    IconConfig="Menu" />
     
     <characterSkillDescriptionId
     AltName="Character Skill Description ID"

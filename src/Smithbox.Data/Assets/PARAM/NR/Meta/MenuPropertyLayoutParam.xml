@@ -25,7 +25,7 @@
     <iconID
     AltName="Icon ID"
     Wiki="The icon to use." 
-    TextureRef="Direct/01_common_h/SB_PropertyIcon_0/iconID/MENU_PropertyIcon_"/>
+    IconConfig="MenuProperty"/>
     
   </Field>
 </PARAMMETA>

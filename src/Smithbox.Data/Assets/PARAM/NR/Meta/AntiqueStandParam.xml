@@ -18,7 +18,7 @@
     <iconId
     AltName="Icon ID"
     Wiki="The icon to display for this relic vessel in the menu."
-    TextureRef="Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_"/>
+    IconConfig="Item" />
     
     <heroType
     AltName="Hero Type"

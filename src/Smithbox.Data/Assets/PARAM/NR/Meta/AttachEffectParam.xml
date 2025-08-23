@@ -123,7 +123,7 @@
     <statusIconId
     AltName="Icon ID"
     Wiki="The icon ID to use to display this effect under the top HUD bar." 
-    TextureRef="Direct/01_common_h/SB_StatusIcon_0/statusIconId/MENU_StatusIcon_"/>
+    IconConfig="Status"/>
     
     <attachFilterParamId
     AltName="Filter Category"

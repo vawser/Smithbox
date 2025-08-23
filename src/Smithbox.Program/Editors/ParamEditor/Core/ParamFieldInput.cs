@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using System;

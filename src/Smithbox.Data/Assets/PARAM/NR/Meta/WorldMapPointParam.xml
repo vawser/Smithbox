@@ -53,7 +53,7 @@
     <iconId 
     AltName="Icon ID" 
     Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" 
-    TextureRef="Direct/01_common_h/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
+    IconConfig="MapIcon"/>
     
     <bgmPlaceType 
     AltName="BGM Location Type" 

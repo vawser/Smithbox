@@ -12,14 +12,12 @@
     <iconId
     AltName="Icon ID"
     Wiki="The icon used to represent this permanent buff" 
-    TextureRef="Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_"/>
+    IconConfig="Item"/>
     
     <secondaryIconId
     AltName="Secondary Icon ID"
-    Wiki="The icon displayed to the left of the title on pickup." />
-    
-    <!-- Need to adjust image preview to support multiple sources
-    TextureRef="Direct/01_common_h/SB_MenuIcon_0/secondaryIconId/MENU_MenuIcon_" -->
+    Wiki="The icon displayed to the left of the title on pickup." 
+    IconConfig="Menu"/>
     
     <displayNumericValue
     AltName="Display Numeric Value"

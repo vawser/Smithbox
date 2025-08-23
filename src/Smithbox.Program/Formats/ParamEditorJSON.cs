@@ -162,3 +162,17 @@ public class GraphLegendEntry
     public string X { get; set; }
     public string Y { get; set; }
 }
+
+// -------------- Icon Configurations --------------
+public class IconConfigurations
+{
+    public List<IconConfigurationEntry> Configurations { get; set; }
+}
+
+public class IconConfigurationEntry
+{
+    public string Name { get; set; }
+    public string File { get; set; }
+    public string SubTexturePrefix { get; set; }
+    public List<string> InternalFiles { get; set; }
+}

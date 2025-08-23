@@ -55,7 +55,7 @@
     <iconId
     AltName="Icon ID"
     Wiki="Icon for relic"
-    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_" />
+    IconConfig="Item" />
 	
 	<attachEffectTableId_curse1 
     AltName="Attached Effect Table: Curse 1" 

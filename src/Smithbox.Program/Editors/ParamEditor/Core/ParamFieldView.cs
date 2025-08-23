@@ -312,6 +312,20 @@ public class ParamFieldView
                 fieldPaddingMode = "Visible";
 
             UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+
+            // Toggle Icon Preview
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
+            {
+                CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn = !CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn;
+            }
+
+            var iconPreviewMode = "Hidden";
+            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+                iconPreviewMode = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of icons.\nCurrent Mode: {iconPreviewMode}");
         }
     }
 
@@ -598,8 +612,9 @@ public class ParamFieldView
         List<ParamRef> RefTypes = cellMeta?.RefTypes;
         List<FMGRef> FmgRef = cellMeta?.FmgRef;
         List<ExtRef> ExtRefs = cellMeta?.ExtRefs;
-        List<TexRef> TextureRef = cellMeta?.TextureRef;
         List<FMGRef> MapFmgRef = cellMeta?.MapFmgRef;
+
+        IconConfig IconConfig = cellMeta?.IconConfig;
 
         var VirtualRef = cellMeta?.VirtualRef;
 
@@ -612,7 +627,7 @@ public class ParamFieldView
 
         var displayRefTypes = !CFG.Current.Param_HideReferenceRows && RefTypes != null;
         var displayFmgRef = !CFG.Current.Param_HideReferenceRows && FmgRef != null;
-        var displayTextureRef = !CFG.Current.Param_HideReferenceRows && TextureRef != null;
+        var displayIcon = !CFG.Current.Param_HideReferenceRows && IconConfig != null;
         var displayEnum = !CFG.Current.Param_HideEnums && Enum != null;
         var displayMapFmgRef = !CFG.Current.Param_HideReferenceRows && MapFmgRef != null;
 
@@ -767,7 +782,7 @@ public class ParamFieldView
             // Name column
             PropertyRowName(Editor, fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -789,10 +804,10 @@ public class ParamFieldView
                     FieldDecorators.TextReference_Title(MapFmgRef, row, "MAP FMGS");
                 }
 
-                // Texture Ref
-                if (displayTextureRef)
+                // Field Icon
+                if (displayIcon)
                 {
-                    FieldDecorators.TextureReference_Title(TextureRef, row);
+                    FieldDecorators.TextureReference_Title(IconConfig, row);
                 }
 
                 if (displayEnum)
@@ -882,7 +897,7 @@ public class ParamFieldView
         var conflict = (diffVanilla ? 1 : 0) + diffAuxPrimaryAndVanilla.Where(x => x).Count() > 1;
 
         var matchDefault = nullableCell?.Def.Default != null && nullableCell.Value.Def.Default.Equals(oldval);
-        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null || TextureRef != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
+        var isRef = CFG.Current.Param_HideReferenceRows == false && (RefTypes != null || FmgRef != null || IconConfig != null) || CFG.Current.Param_HideEnums == false && Enum != null || VirtualRef != null || ExtRefs != null || CFG.Current.Param_HideEnums == false && showParticleEnum;
 
         if (ImGui.TableNextColumn())
         {
@@ -929,7 +944,7 @@ public class ParamFieldView
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (displayRefTypes || displayFmgRef || displayIcon || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -951,10 +966,10 @@ public class ParamFieldView
                     FieldDecorators.TextReference_Value(Editor, MapFmgRef, row, oldval);
                 }
 
-                // TextureRef
-                if (displayTextureRef)
+                // Field Icon
+                if (displayIcon)
                 {
-                    FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
+                    FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, IconConfig, row, oldval, internalName, 0);
                 }
 
                 // Enum
@@ -1023,7 +1038,7 @@ public class ParamFieldView
 
             FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
             FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
-            FieldDecorators.TextureReference_ContextMenu(Editor, bank, oldval, row, TextureRef);
+            FieldDecorators.TextureReference_ContextMenu(Editor, bank, oldval, row, IconConfig);
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
@@ -1083,7 +1098,7 @@ public class ParamFieldView
 
         if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
         {
-            AdditionalColumnValue(activeParam, vanillaval, propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, "vanilla", cellMeta);
+            AdditionalColumnValue(activeParam, vanillaval, propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, IconConfig, "vanilla", cellMeta, internalName);
         }
 
         if (CFG.Current.Param_ShowAuxColumn)
@@ -1095,7 +1110,7 @@ public class ParamFieldView
                     if (!conflict && diffAuxVanilla[i])
                         ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_AuxVanilla_Background);
 
-                    AdditionalColumnValue(activeParam, auxVals[i], propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
+                    AdditionalColumnValue(activeParam, auxVals[i], propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, IconConfig, i.ToString(), cellMeta, internalName);
 
                     if (!conflict && diffAuxVanilla[i])
                         ImGui.PopStyleColor();
@@ -1115,7 +1130,7 @@ public class ParamFieldView
                 ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_DiffCompare_Background);
             }
 
-            AdditionalColumnValue(activeParam, compareval, propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, "compRow", cellMeta);
+            AdditionalColumnValue(activeParam, compareval, propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, IconConfig, "compRow", cellMeta, internalName);
 
             if (diffCompare)
             {
@@ -1130,7 +1145,7 @@ public class ParamFieldView
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, 
                 activeParam != null, isPinned, col, selection, propType, Wiki, oldval, true);
             PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
+                RefTypes, FmgRef, MapFmgRef, IconConfig, Enum, internalName);
 
             ImGui.EndPopup();
         }
@@ -1148,13 +1163,13 @@ public class ParamFieldView
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
             PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
-                RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
+                RefTypes, FmgRef, MapFmgRef, IconConfig, Enum, internalName);
 
             ImGui.EndPopup();
         }
 
         // Context Menu Shortcuts
-        if (FieldDecorators.ParamReference_ShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+        if (FieldDecorators.ParamReference_ShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, IconConfig, Enum, ContextActionManager))
         {
             ParamFieldInput.SetLastPropertyManual(newval);
         }
@@ -1163,14 +1178,21 @@ public class ParamFieldView
             nullableCell != null ? nullableCell : row, proprow, oldval);
 
         if (committed)
+        {
+            if (Project.TextureViewer != null)
+            {
+                Project.TextureViewer.ImagePreview.ClearIcons();
+            }
+
             Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, row, activeParam);
+        }
 
         ImGui.PopID();
         imguiId++;
     }
 
     private void AdditionalColumnValue(string activeParam, object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix, ParamFieldMeta cellMeta)
+        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, Param.Row context, ParamEnum Enum, IconConfig iconConfig, string imguiSuffix, ParamFieldMeta cellMeta, string fieldName)
     {
         if (colVal == null)
         {
@@ -1243,9 +1265,9 @@ public class ParamFieldView
                 FieldDecorators.TextReference_Value(Editor, MapFmgRef, context, colVal);
             }
 
-            if (CFG.Current.Param_HideReferenceRows == false && TextureRef != null)
+            if (CFG.Current.Param_HideReferenceRows == false && iconConfig != null)
             {
-                FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
+                FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, iconConfig, context, colVal, fieldName, 1);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
@@ -1522,16 +1544,16 @@ public class ParamFieldView
 
     private void PropertyRowValueContextMenuItems(ParamEditorScreen editor, ParamBank bank, Param.Row row, ParamFieldMeta cellMeta, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, List<TexRef> TextureRef, ParamEnum Enum)
+        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, IconConfig iconConfig, ParamEnum Enum, string fieldName)
     {
         if (CFG.Current.Param_FieldContextMenu_References)
         {
-            if (RefTypes != null || FmgRef != null || MapFmgRef != null || TextureRef != null || Enum != null || cellMeta != null)
+            if (RefTypes != null || FmgRef != null || MapFmgRef != null || iconConfig != null || Enum != null || cellMeta != null)
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Ref_Text);
 
-                if (FieldDecorators.Decorator_ContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+                if (FieldDecorators.Decorator_ContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, iconConfig, Enum, ContextActionManager))
                 {
                     ParamFieldInput.SetLastPropertyManual(newval);
                 }

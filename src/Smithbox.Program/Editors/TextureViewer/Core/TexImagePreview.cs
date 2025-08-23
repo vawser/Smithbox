@@ -1,11 +1,17 @@
 ﻿using Andre.Formats;
+using CsvHelper.Configuration.Attributes;
+using DotNext.Collections.Generic;
 using Hexa.NET.ImGui;
+using HexaGen.Runtime;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource;
 using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
@@ -29,131 +35,137 @@ public class TexImagePreview : IResourceEventListener
         Project = project;
     }
 
+    private Dictionary<string, TextureResource> LoadedResources = new();
+
+    public void ClearIcons()
+    {
+        foreach (var entry in LoadedResources)
+        {
+            entry.Value.Dispose();
+        }
+
+        LoadedResources.Clear();
+    }
+
     /// <summary>
     /// Display the Image Preview texture in the Param Editor properties view
     /// </summary>
-    public bool DisplayImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
+    public bool DisplayImagePreview(Param.Row context, IconConfig iconConfig, object fieldValue, string fieldName, int columnIndex)
     {
-        // DISABLE UNTIL FIXED
+        var resourceKey = $"{fieldName}_{columnIndex}";
+
+        if (Project.ParamData.IconConfigurations == null)
+            return false;
+
+        // Check Icon Config, if not present then don't attempt to load or display anything
+        if (iconConfig == null)
+            return false;
+
+        var iconEntry = Project.ParamData.IconConfigurations.Configurations.Where(e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();
+
+        if (iconEntry == null)
+            return false;
+
+        // If icon texture resource doesn't exist yet, load it
+        if (!LoadedResources.ContainsKey(resourceKey))
+        {
+            var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == iconEntry.File);
+
+            if(targetFile == null)
+                return false;
+
+            Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
+
+            Task.WaitAll(loadTask);
+
+            var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+
+            int index = 0;
+
+            SubTexture curPreviewTexture = null;
+
+            // TPF
+            foreach (var entry in targetBinder.Value.Files)
+            {
+                var curTpf = entry.Value;
+
+                index = 0;
+
+                foreach (var curTex in curTpf.Textures)
+                {
+                    foreach (var curInternalFilename in iconEntry.InternalFiles)
+                    {
+                        if (curTex.Name == curInternalFilename)
+                        {
+                            curPreviewTexture = GetPreviewSubTexture(curTex.Name, context, 
+                                iconConfig, iconEntry, fieldValue, fieldName);
+
+                            if(curPreviewTexture != null)
+                            {
+                                var newResource = new TextureResource(curTpf, index);
+                                newResource.SubTexture = curPreviewTexture;
+                                newResource._LoadTexture(AccessLevel.AccessFull);
+
+                                LoadedResources.Add(resourceKey, newResource);
+                                break;
+                            }
+                        }
+                    }
+
+                    index++;
+                }
+            }
+        }
+
+        // If icon texture resource exists, grab it and display the image
+        if (LoadedResources.ContainsKey(resourceKey))
+        {
+            var curResource = LoadedResources[resourceKey];
+
+            if (curResource == null)
+                return false;
+
+            if (curResource.GPUTexture == null)
+                return false;
+
+            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+            {
+                DisplayImage(curResource);
+            }
+
+            return true;
+        }
+
         return false;
-
-        if(textureRef == null) 
-            return false;
-
-        var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == textureRef.TextureContainer);
-
-        if(targetFile == null)
-            return false;
-
-        Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
-
-        Task.WaitAll(loadTask);
-
-        var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
-
-        if (targetBinder.Key != null)
-        {
-            Editor.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
-        }
-
-        // TPF
-        foreach(var entry in targetBinder.Value.Files)
-        {
-            var binderFile = entry.Key;
-            var tpfEntry = entry.Value;
-
-            if (binderFile.Name == textureRef.TextureContainer)
-            {
-                Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
-                break;
-            }
-        }
-
-        if (Editor.Selection.SelectedTpf == null)
-            return false;
-
-        // Texture
-        int index = 0;
-
-        foreach (var entry in Editor.Selection.SelectedTpf.Textures)
-        {
-            if(entry.Name == textureRef.TextureFile)
-            {
-                TargetIndex = index;
-                Editor.Selection.SelectTextureEntry(entry.Name, entry);
-                LoadTexture = true;
-                break;
-            }
-
-            index++;
-        }
-
-        if (Editor.Selection.PreviewTextureResource == null)
-            return false;
-
-        if (Editor.Selection.PreviewTextureResource.GPUTexture == null)
-            return false;
-
-        Editor.Selection.PreviewSubTexture = GetPreviewSubTexture(context, textureRef);
-
-        if (Editor.Selection.PreviewSubTexture == null)
-            return false;
-
-        DisplayImage(displayImage);
-
-        return true;
     }
 
-    private int TargetIndex = -1;
-    private bool LoadTexture = false;
-
-    public void Update()
-    {
-        if (!Smithbox.LowRequirementsMode)
-        {
-            if (LoadTexture)
-            {
-                Editor.Selection.PreviewTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
-                Editor.Selection.PreviewTextureResource._LoadTexture(AccessLevel.AccessFull);
-
-                LoadTexture = false;
-            }
-        }
-    }
-
-    public void DisplayImage(bool displayImage)
+    public void DisplayImage(TextureResource curResource)
     {
         // Get scaled image size vector
         var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
 
         // Get crop bounds
-        float Xmin = float.Parse(Editor.Selection.PreviewSubTexture.X);
-        float Xmax = Xmin + float.Parse(Editor.Selection.PreviewSubTexture.Width);
-        float Ymin = float.Parse(Editor.Selection.PreviewSubTexture.Y);
-        float Ymax = Ymin + float.Parse(Editor.Selection.PreviewSubTexture.Height);
+        float Xmin = float.Parse(curResource.SubTexture.X);
+        float Xmax = Xmin + float.Parse(curResource.SubTexture.Width);
+        float Ymin = float.Parse(curResource.SubTexture.Y);
+        float Ymax = Ymin + float.Parse(curResource.SubTexture.Height);
 
         // Image size should be based on cropped image
         Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
 
         // Get UV coordinates based on full image
-        float left = (Xmin) / Editor.Selection.PreviewTextureResource.GPUTexture.Width;
-        float top = (Ymin) / Editor.Selection.PreviewTextureResource.GPUTexture.Height;
-        float right = (Xmax) / Editor.Selection.PreviewTextureResource.GPUTexture.Width;
-        float bottom = (Ymax) / Editor.Selection.PreviewTextureResource.GPUTexture.Height;
+        float left = (Xmin) / curResource.GPUTexture.Width;
+        float top = (Ymin) / curResource.GPUTexture.Height;
+        float right = (Xmax) / curResource.GPUTexture.Width;
+        float bottom = (Ymax) / curResource.GPUTexture.Height;
 
         // Build UV coordinates
         var UV0 = new Vector2(left, top);
         var UV1 = new Vector2(right, bottom);
 
-        if (CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu)
+        if(curResource.GPUTexture != null)
         {
-            displayImage = true;
-        }
-
-        // Display image
-        if (displayImage)
-        {
-            var textureId = new ImTextureID(Editor.Selection.PreviewTextureResource.GPUTexture.TexHandle);
+            var textureId = new ImTextureID(curResource.GPUTexture.TexHandle);
             ImGui.Image(textureId, size, UV0, UV1);
         }
     }
@@ -161,78 +173,74 @@ public class TexImagePreview : IResourceEventListener
     /// <summary>
     /// Get the image preview sub texture
     /// </summary>
-    private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
+    private SubTexture GetPreviewSubTexture(string textureKey, Param.Row context, IconConfig fieldIcon, IconConfigurationEntry iconEntry, object fieldValue, string fieldName)
     {
         // Guard clauses checking the validity of the TextureRef
-        if (context[textureRef.TargetField] == null)
+        if (context[fieldName] == null)
         {
             return null;
         }
 
-        var imageIdx = $"{context[textureRef.TargetField].Value.Value}";
+        var imageIdx = $"{fieldValue}";
 
         SubTexture subTex = null;
 
-        // Dynamic lookup based on meta information
-        if (textureRef.LookupType == "Direct")
-        {
-            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, textureRef.SubTexturePrefix);
-        }
+        subTex = GetMatchingSubTexture(textureKey, imageIdx, iconEntry.SubTexturePrefix);
 
         // Hardcoded logic for AC6
-        if (Editor.Project.ProjectType == ProjectType.AC6)
-        {
-            if (textureRef.LookupType == "Booster")
-            {
-                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "BS_A_");
-            }
-            if (textureRef.LookupType == "Weapon")
-            {
-                // Check for WP_A_ match
-                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_A_");
+        //if (Editor.Project.ProjectType == ProjectType.AC6)
+        //{
+        //    if (textureRef.LookupType == "Booster")
+        //    {
+        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "BS_A_");
+        //    }
+        //    if (textureRef.LookupType == "Weapon")
+        //    {
+        //        // Check for WP_A_ match
+        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_A_");
 
-                // If failed, check for WP_R_ match
-                if (subTex == null)
-                {
-                    subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_R_");
-                }
+        //        // If failed, check for WP_R_ match
+        //        if (subTex == null)
+        //        {
+        //            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_R_");
+        //        }
 
-                // If failed, check for WP_L_ match
-                if (subTex == null)
-                {
-                    subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_L_");
-                }
-            }
-            if (textureRef.LookupType == "Armor")
-            {
-                var prefix = "";
+        //        // If failed, check for WP_L_ match
+        //        if (subTex == null)
+        //        {
+        //            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_L_");
+        //        }
+        //    }
+        //    if (textureRef.LookupType == "Armor")
+        //    {
+        //        var prefix = "";
 
-                var headEquip = context["headEquip"].Value.Value.ToString();
-                var bodyEquip = context["bodyEquip"].Value.Value.ToString();
-                var armEquip = context["armEquip"].Value.Value.ToString();
-                var legEquip = context["legEquip"].Value.Value.ToString();
+        //        var headEquip = context["headEquip"].Value.Value.ToString();
+        //        var bodyEquip = context["bodyEquip"].Value.Value.ToString();
+        //        var armEquip = context["armEquip"].Value.Value.ToString();
+        //        var legEquip = context["legEquip"].Value.Value.ToString();
 
-                if (headEquip == "1")
-                {
-                    prefix = "HD_M_";
-                }
-                if (bodyEquip == "1")
-                {
-                    prefix = "BD_M_";
-                }
-                if (armEquip == "1")
-                {
-                    prefix = "AM_M_";
-                }
-                if (legEquip == "1")
-                {
-                    prefix = "LG_M_";
-                }
+        //        if (headEquip == "1")
+        //        {
+        //            prefix = "HD_M_";
+        //        }
+        //        if (bodyEquip == "1")
+        //        {
+        //            prefix = "BD_M_";
+        //        }
+        //        if (armEquip == "1")
+        //        {
+        //            prefix = "AM_M_";
+        //        }
+        //        if (legEquip == "1")
+        //        {
+        //            prefix = "LG_M_";
+        //        }
 
-                // Check for match
-                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, prefix);
-            }
-        }
+        //        // Check for match
+        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, prefix);
+        //    }
+        //}
 
         return subTex;
     }

@@ -540,6 +540,11 @@ public class ParamRowView
                 if (ParamFieldInput.UpdateProperty(Editor.EditorActionManager, c, compareColProp,
                         c.Value))
                 {
+                    if (Project.TextureViewer != null)
+                    {
+                        Project.TextureViewer.ImagePreview.ClearIcons();
+                    }
+
                     Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, r, activeParam);
                 }
 

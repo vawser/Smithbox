@@ -49,7 +49,7 @@
     <iconId 
     AltName="Icon ID" 
     Wiki="Menu icon ID"
-    TextureRef="Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_" />
+    IconConfig="Item" />
 
     <accessoryGroup
     AltName="Accessory Group"

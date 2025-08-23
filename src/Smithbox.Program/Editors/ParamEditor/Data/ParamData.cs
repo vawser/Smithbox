@@ -42,6 +42,8 @@ public class ParamData
 
     public GraphLegends GraphLegends;
 
+    public IconConfigurations IconConfigurations;
+
     public ParamData(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -92,6 +94,19 @@ public class ParamData
         else
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup graph legends.");
+        }
+
+        // Icon Configurations
+        Task<bool> iconConfigTask = SetupIconConfigurations();
+        bool iconConfigTaskResult = await iconConfigTask;
+
+        if (iconConfigTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup icon configurations.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup icon configurations.");
         }
 
 
@@ -401,6 +416,38 @@ public class ParamData
             catch (Exception e)
             {
                 TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Graph Legends: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupIconConfigurations()
+    {
+        await Task.Yield();
+
+        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var file = Path.Combine(folder, "Icon Configurations.json");
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    IconConfigurations = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.IconConfigurations);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Icon Configurations: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Icon Configurations: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

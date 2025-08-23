@@ -9,7 +9,7 @@
     <iconId 
     AltName="Icon ID" 
     Wiki="Icon ID (When -1, no icon is required)" 
-    TextureRef="Direct/01_common_h/SB_StatusIcon_0/iconId/MENU_StatusIcon_" 
+    IconConfig="Status"
     DefaultValue="-1" />
     
     <conditionHp 
@@ -1394,7 +1394,7 @@
     <secondaryIconId 
     AltName="Secondary Icon ID" 
     Wiki="Icon ID (When -1, no icon is required)" 
-    TextureRef="Direct/01_common_h/SB_StatusIcon_0/secondaryIconId/MENU_StatusIcon_" 
+    IconConfig="Status" 
     DefaultValue="-1" />
     
     <isUseStatusAilmentAtkPowerCorrect 

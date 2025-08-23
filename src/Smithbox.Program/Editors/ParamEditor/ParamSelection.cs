@@ -213,6 +213,12 @@ public class ParamSelection
                 Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
             s.selectionCacheDirty = true;
+
+            // Clear the icon preview resource dictionary on active row switch
+            if(Project.TextureViewer != null)
+            {
+                Project.TextureViewer.ImagePreview.ClearIcons();
+            }
         }
     }
 

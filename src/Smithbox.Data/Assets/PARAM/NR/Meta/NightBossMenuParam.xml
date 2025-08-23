@@ -32,12 +32,12 @@
     <bossIconId
     AltName="Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/bossIconId/MENU_MenuIcon_"/>
+    IconConfig="Menu"/>
     
     <defeatedBossIconId
     AltName="Defeated Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu when defeated."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/defeatedBossIconId/MENU_MenuIcon_"/>
+    IconConfig="Menu"/>
     
     <sortId
     AltName="Sort ID"
@@ -45,19 +45,19 @@
     
     <expeditionBackgroundId
     AltName="Background ID"
-    Wiki="The background to display for this night boss in the Expedition menu." />
-    <!-- TextureRef="Direct/01_common_h/SB_MenuIcon_0/expeditionBackgroundId/MENU_MenuIcon_"/>
-     The icons are actually in the 0 folder, but seems program doesn't work with multiple sources in this case-->
+    Wiki="The background to display for this night boss in the Expedition menu." 
+    IconConfig="Menu"/>>
     
     <largeBossIconId
     AltName="Large Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu."
-    TextureRef="Direct/01_common_h/SB_MenuIcon_1/largeBossIconId/MENU_MenuIcon_"/>
+    IconConfig="Menu"/>
 	
 	<effectiveAffinity1
 	AltName="Effective Affinity 1"
 	Wiki="Icon to display in Effective section"
 	Enum="EFFECTIVE_AFFINITY"/>
+    
 	<effectiveAffinity2
 	AltName="Effective Affinity 2"
 	Wiki="Icon to display in Effective section"

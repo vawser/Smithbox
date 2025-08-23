@@ -1,0 +1,48 @@
+{
+    "Configurations": [
+        {
+          "Name": "Item",
+          "File": "01_common_h",
+          "InternalFiles": [
+            "SB_ItemIcon_0",
+            "SB_ItemIcon_1",
+            "SB_ItemIcon_2"
+          ],
+          "SubTexturePrefix": "MENU_ItemIcon_"
+        },
+        {
+          "Name": "Status",
+          "File": "01_common_h",
+          "InternalFiles": [
+            "SB_StatusIcon_0"
+          ],
+          "SubTexturePrefix": "MENU_StatusIcon_"
+        },
+        {
+          "Name": "MapIcon",
+          "File": "01_common_h",
+          "InternalFiles": [
+            "SB_MapCursor_0",
+            "SB_MapCursor_02_0"
+          ],
+          "SubTexturePrefix": "MENU_MAP_"
+        },
+        {
+          "Name": "Menu",
+          "File": "01_common_h",
+          "InternalFiles": [
+            "SB_MenuIcon_0",
+            "SB_MenuIcon_1"
+          ],
+          "SubTexturePrefix": "MENU_MenuIcon_"
+        },
+        {
+          "Name": "MenuProperty",
+          "File": "01_common_h",
+          "InternalFiles": [
+            "SB_PropertyIcon_0"
+          ],
+          "SubTexturePrefix": "MENU_PropertyIcon_"
+        }
+    ]
+}

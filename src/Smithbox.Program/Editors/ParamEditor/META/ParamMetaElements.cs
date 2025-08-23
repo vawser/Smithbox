@@ -180,64 +180,21 @@ public class FMGRef
     }
 }
 
-public class TexRef
+public class IconConfig
 {
     /// <summary>
-    /// The lookup process to use.
+    /// The icon configuration to use for this tex ref
     /// </summary>
-    public string LookupType = "";
+    public string TargetConfiguration = "";
 
-    /// <summary>
-    /// The name of the texture container.
-    /// </summary>
-    public string TextureContainer = "";
-
-    /// <summary>
-    /// The name of the texture file within the texture container.
-    /// </summary>
-    public string TextureFile = "";
-
-    /// <summary>
-    /// The param row field that the image index is taken from.
-    /// </summary>
-    public string TargetField = "";
-
-    /// <summary>
-    /// The initial part of the subtexture filename to match with.
-    /// </summary>
-    public string SubTexturePrefix = "";
-
-    internal TexRef(ParamMeta parent, string refString)
+    internal IconConfig(ParamMeta parent, string refString)
     {
-        var refSplit = refString.Split('/');
-
-        LookupType = refSplit[0];
-
-        if (refSplit.Length > 1)
-        {
-            TextureContainer = refSplit[1];
-        }
-        if (refSplit.Length > 2)
-        {
-            TextureFile = refSplit[2];
-        }
-        if (refSplit.Length > 3)
-        {
-            TargetField = refSplit[3];
-        }
-
-        if (LookupType == "Direct")
-        {
-            if (refSplit.Length > 4)
-            {
-                SubTexturePrefix = refSplit[4];
-            }
-        }
+        TargetConfiguration = refString;
     }
 
     internal string getStringForm()
     {
-        return TextureFile;
+        return TargetConfiguration;
     }
 }
 

@@ -155,10 +155,12 @@
     <useEnableSpEffectType AltName="Use Enable SpEffect Type" Wiki="Allow to use only when the special effect of the set state change type is applied" ProjectEnum="SP_EFFECT_TYPE" />
     <potGroupId AltName="Pot Group ID" Wiki="Consumable items for which 0 or more is set for the pot group ID can be possessed by the number of pots with the same pot group ID." />
     <pad AltName="" Padding=""/>
+    
     <iconId 
     AltName="Icon ID" 
     Wiki="Menu icon ID"
-    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_1/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_StatusIcon_0/iconId/MENU_StatusIcon_"/>
+    IconConfig="Item"/>
+    
     <modelId AltName="Model ID" Wiki="Model ID" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
     <compTrophySedId AltName="Achivement ID" Wiki="SEQ number of complete trophy" />

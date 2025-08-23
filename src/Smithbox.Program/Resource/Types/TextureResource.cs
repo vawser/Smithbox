@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.Scene;
 using System;
 
@@ -18,6 +19,16 @@ public class TextureResource : IResource, IDisposable
         Texture = tex;
         TPFIndex = index;
     }
+
+    /// <summary>
+    /// Denotes whether this resource can be re-assigned (for Icon Preview)
+    /// </summary>
+    public bool Locked { get; set; }
+
+    /// <summary>
+    /// Denotes the sub-texture this resource uses (for Icon Preview)
+    /// </summary>
+    public SubTexture SubTexture { get; set; }
 
     public TPF Texture { get; private set; }
 
