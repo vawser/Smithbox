@@ -39,6 +39,8 @@ public static class TextMerge
 
         // Project list
 
+        int index = 0;
+
         foreach (var proj in editor.Project.BaseEditor.ProjectManager.Projects)
         {
             if (proj == null)
@@ -57,10 +59,12 @@ public static class TextMerge
                 isSelected = TargetProject.ProjectName == proj.ProjectName;
             }
 
-            if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
+            if (ImGui.Selectable($"{proj.ProjectName}##targetProject{index}", isSelected))
             {
                 TargetProject = proj;
             }
+
+            index++;
         }
 
         UIHelper.WrappedText("");

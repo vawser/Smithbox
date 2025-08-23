@@ -52,48 +52,8 @@ public class MaterialBinderList
         {
             var wrappers = Project.MaterialData.PrimaryBank.MTDs;
 
-            var filteredEntries = new List<FileDictionaryEntry>();
-            foreach (var entry in wrappers)
+            if (wrappers != null)
             {
-                if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
-                {
-                    filteredEntries.Add(entry.Key);
-                }
-            }
-
-            var clipper = new ImGuiListClipper();
-            clipper.Begin(filteredEntries.Count);
-
-            while (clipper.Step())
-            {
-                for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
-                {
-                    var key = filteredEntries[i];
-                    var curWrapper = Project.MaterialData.PrimaryBank.MTDs[key];
-
-                    var displayName = $"{key.Filename}";
-
-                    if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
-                    {
-                        Editor.Selection.SelectedBinderEntry = key;
-                        Editor.Selection.MTDWrapper = curWrapper;
-
-                        Editor.Selection.SelectedFileKey = "";
-                        Editor.Selection.SelectedMTD = null;
-                        Editor.Selection.SelectedMATBIN = null;
-                    }
-                }
-            }
-
-            clipper.End();
-        }
-
-        if (MaterialUtils.SupportsMATBIN(Project))
-        {
-            if (Editor.Selection.SourceType is SourceType.MATBIN)
-            {
-                var wrappers = Project.MaterialData.PrimaryBank.MATBINs;
-
                 var filteredEntries = new List<FileDictionaryEntry>();
                 foreach (var entry in wrappers)
                 {
@@ -111,14 +71,14 @@ public class MaterialBinderList
                     for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                     {
                         var key = filteredEntries[i];
-                        var curWrapper = Project.MaterialData.PrimaryBank.MATBINs[key];
+                        var curWrapper = Project.MaterialData.PrimaryBank.MTDs[key];
 
                         var displayName = $"{key.Filename}";
 
-                        if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                        if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             Editor.Selection.SelectedBinderEntry = key;
-                            Editor.Selection.MATBINWrapper = curWrapper;
+                            Editor.Selection.MTDWrapper = curWrapper;
 
                             Editor.Selection.SelectedFileKey = "";
                             Editor.Selection.SelectedMTD = null;
@@ -128,6 +88,52 @@ public class MaterialBinderList
                 }
 
                 clipper.End();
+            }
+        }
+
+        if (MaterialUtils.SupportsMATBIN(Project))
+        {
+            if (Editor.Selection.SourceType is SourceType.MATBIN)
+            {
+                var wrappers = Project.MaterialData.PrimaryBank.MATBINs;
+
+                if (wrappers != null)
+                {
+                    var filteredEntries = new List<FileDictionaryEntry>();
+                    foreach (var entry in wrappers)
+                    {
+                        if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
+                        {
+                            filteredEntries.Add(entry.Key);
+                        }
+                    }
+
+                    var clipper = new ImGuiListClipper();
+                    clipper.Begin(filteredEntries.Count);
+
+                    while (clipper.Step())
+                    {
+                        for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+                        {
+                            var key = filteredEntries[i];
+                            var curWrapper = Project.MaterialData.PrimaryBank.MATBINs[key];
+
+                            var displayName = $"{key.Filename}";
+
+                            if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                            {
+                                Editor.Selection.SelectedBinderEntry = key;
+                                Editor.Selection.MATBINWrapper = curWrapper;
+
+                                Editor.Selection.SelectedFileKey = "";
+                                Editor.Selection.SelectedMTD = null;
+                                Editor.Selection.SelectedMATBIN = null;
+                            }
+                        }
+                    }
+
+                    clipper.End();
+                }
             }
         }
 

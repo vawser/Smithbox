@@ -5,6 +5,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
+using System;
 using System.Numerics;
 
 namespace StudioCore.TextEditor;
@@ -288,16 +289,24 @@ public class TextEditorScreen : EditorScreen
         var fileEntry = Selection.SelectedFileDictionaryEntry;
         var wrapper = Selection.SelectedContainerWrapper;
 
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        try
         {
-            await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            {
+                await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
+            }
+            else
+            {
+                await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+            }
+
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved {fileEntry.Path}");
         }
-        else
+        catch(Exception ex)
         {
-            await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save {fileEntry.Path}", Microsoft.Extensions.Logging.LogLevel.Warning, Tasks.LogPriority.High, ex);
         }
 
-        TaskLogs.AddLog($"Saved {fileEntry.Path}");
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
@@ -308,9 +317,16 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public async void SaveAll()
     {
-        await Project.TextData.PrimaryBank.SaveTextFiles();
+        try
+        {
+            await Project.TextData.PrimaryBank.SaveTextFiles();
 
-        TaskLogs.AddLog($"Saved all modified text files.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Saved all modified text files.");
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to save all modified text files", Microsoft.Extensions.Logging.LogLevel.Warning, Tasks.LogPriority.High, ex);
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
