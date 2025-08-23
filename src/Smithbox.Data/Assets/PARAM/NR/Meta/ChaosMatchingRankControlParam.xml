@@ -7,9 +7,11 @@
 	  <mapChallengeWeight_Map AltName="Map Challenge Weight - Missing Map" Wiki="The weighted likelihood that the map challenge will be the map not being visible." />
 	  <mapChallengeWeight_Nightlord AltName="Map Challenge Weight - Missing Nightlord" Wiki="The weighted likelihood that the map challenge will be the nightlord not being visible." />
 	  <mapChallengeWeight_None AltName="Map Challenge Weight - None" Wiki="The weighted likelihood that there won't be a map challenge." />
+	  <cataclysmWeight_0 AltName="Catacylsm Weight - 0" Wiki="The weighted likelihood that there will be no catacylsm locations." />
 	  <cataclysmWeight_1 AltName="Catacylsm Weight - 1" Wiki="The weighted likelihood that there will be one catacylsm location." />
 	  <cataclysmWeight_2 AltName="Catacylsm Weight - 2" Wiki="The weighted likelihood that there will be two catacylsm locations." />
-	  <cataclysmWeight_3 AltName="Catacylsm Weight - 3" Wiki="The weighted likelihood that there will be three catacylsm locations." />
+	  <cursedUncommonRate AltName="Cursed Uncommon Rate" Wiki="Probability that uncommon weapons will have 3 passives." />
+	  <cursedRareRate AltName="Cursed Rate Rare" Wiki="Probability that rare weapons will have 3 passives." />
   </Field>
   
   <Enums>

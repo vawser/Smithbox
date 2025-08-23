@@ -10,11 +10,11 @@
     <Field Def="u8 mapChallengeWeight_Map"/>
     <Field Def="u8 mapChallengeWeight_Nightlord"/>
     <Field Def="u8 mapChallengeWeight_None"/>
+    <Field Def="u8 cataclysmWeight_0"/>
     <Field Def="u8 cataclysmWeight_1"/>
     <Field Def="u8 cataclysmWeight_2"/>
-    <Field Def="u8 cataclysmWeight_3"/>
-    <Field Def="u8 unk_01c"/>
-    <Field Def="u8 unk_01d"/>
+    <Field Def="u8 cursedUncommonRate"/>
+    <Field Def="u8 cursedRareRate"/>
     
     <Field Def="dummy8 endPadding[4]"/>
   </Fields>
