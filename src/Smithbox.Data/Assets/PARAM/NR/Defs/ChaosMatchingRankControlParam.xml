@@ -7,12 +7,12 @@
   <FormatVersion>0</FormatVersion>
   <!-- FirstVersion="10200000" -->
   <Fields>
-    <Field Def="u8 unk_00a"/>
-    <Field Def="u8 unk_00b"/>
-    <Field Def="u8 unk_00c"/>
-    <Field Def="u8 unk_00d"/>
-    <Field Def="u8 unk_01a"/>
-    <Field Def="u8 unk_01b"/>
+    <Field Def="u8 mapChallengeWeight_Map"/>
+    <Field Def="u8 mapChallengeWeight_Nightlord"/>
+    <Field Def="u8 mapChallengeWeight_None"/>
+    <Field Def="u8 cataclysmWeight_1"/>
+    <Field Def="u8 cataclysmWeight_2"/>
+    <Field Def="u8 cataclysmWeight_3"/>
     <Field Def="u8 unk_01c"/>
     <Field Def="u8 unk_01d"/>
     
