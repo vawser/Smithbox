@@ -50,8 +50,8 @@
 	<faceScaleF_MaxZ />
 	<qwcId />
 	<equipModelId Wiki="Parts file Id used for armor model when equipped" />
-	<iconIdM />
-	<iconIdF />
+	<iconIdM IconConfig="Item" />
+	<iconIdF IconConfig="Item" />
 	<knockBackCutRate_vsPlayer_DirectHit />
 	<knockBackCutRate_vsEnemy_DirectHit />
 	<knockbackBounceRate />

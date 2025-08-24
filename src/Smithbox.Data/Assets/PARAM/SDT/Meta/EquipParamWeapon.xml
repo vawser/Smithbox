@@ -77,7 +77,7 @@
     <vagrantBonusEneDropItemLotId />
     <vagrantItemEneDropItemLotId />
     <equipModelId Wiki="Model used when the weapon is equipped" />
-    <iconId Wiki="Icon used for UI" />
+    <iconId Wiki="Icon used for UI" IconConfig="Item" />
     <durability Wiki="Base durability" />
     <durabilityMax Wiki="New durability" />
     <attackThrowEscape Wiki="Basic value of throwing attack power" />

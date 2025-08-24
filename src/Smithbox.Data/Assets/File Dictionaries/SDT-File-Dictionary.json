@@ -62673,34 +62673,6 @@
     },
     {
       "Archive": "",
-      "Path": "/menu/hi/50_soundtrack.sblytbnd.dcx",
-      "Folder": "/menu/hi",
-      "Filename": "50_soundtrack",
-      "Extension": "sblytbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/menu/hi/50_soundtrack.tpf.dcx",
-      "Folder": "/menu/hi",
-      "Filename": "50_soundtrack",
-      "Extension": "tpf"
-    },
-    {
-      "Archive": "",
-      "Path": "/menu/low/50_soundtrack.sblytbnd.dcx",
-      "Folder": "/menu/low",
-      "Filename": "50_soundtrack",
-      "Extension": "sblytbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/menu/low/50_soundtrack.tpf.dcx",
-      "Folder": "/menu/low",
-      "Filename": "50_soundtrack",
-      "Extension": "tpf"
-    },
-    {
-      "Archive": "",
       "Path": "/param/gameparam/gameparam.parambnd.dcx",
       "Folder": "/param/gameparam",
       "Filename": "gameparam",

@@ -490,7 +490,8 @@
     </Enum>
   </Enums>
   <Field>
-    <iconId AltName="Icon ID" Wiki="Icon that will appear below the player's healthbar when this effect is active" />
+    <iconId AltName="Icon ID" Wiki="Icon that will appear below the player's healthbar when this effect is active" 
+    IconConfig="Status" />
     <conditionHp AltName="Trigger at HP Below %" Wiki="SpEffect will not be applied until HP is at or below this threshold" />
     <effectEndurance AltName="Duration" Wiki="Duration of the SpEffect -1=Infinite 0=One frame" />
     <motionInterval AltName="Trigger Interval" Wiki="Amount of times the effect will be applied over it's duration, primarily used for healing or damage over time effects" />

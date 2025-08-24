@@ -68,7 +68,7 @@
     <qwcId Wiki="World Tendency shenanigans, not relevant to Sekiro" />
     <yesNoDialogMessageId Wiki="Message ID used when displaying the YesNo dialog" />
     <actionUnlockParamId Wiki="When this item is in your inventory the Action referenced here will be unlocked" Refs="ActionUnlockParam" />
-    <iconId Wiki="Icon displayed in inventory" />
+    <iconId Wiki="Icon displayed in inventory" IconConfig="Item" />
     <modelId />
     <shopLv Wiki="Level that can be sold in stores" />
     <compTrophySedId Wiki="Category for unlocking trophies/achievements, when you have all the items with same category the corresponding trophy will be unlocked" />

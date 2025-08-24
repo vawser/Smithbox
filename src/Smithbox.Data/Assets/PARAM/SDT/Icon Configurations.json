@@ -1,2 +1,33 @@
 {
+    "Configurations": [
+        {
+          "Name": "Item",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Icon",
+            "SB_Icon_02",
+            "SB_Icon_03",
+            "SB_Icon_04"
+          ],
+          "SubTexturePrefix": "MENU_ItemIcon_"
+        },
+        {
+          "Name": "Skill",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Icon_Skill",
+            "SB_Icon_Skill_02"
+          ],
+          "SubTexturePrefix": "MENU_SkillStory_"
+        },
+        {
+          "Name": "Status",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Status",
+            "SB_Status_02"
+          ],
+          "SubTexturePrefix": "MENU_StatusIcon_"
+        }
+    ]
 }
