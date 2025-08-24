@@ -157,7 +157,12 @@ public class ParamRowView
 
                 View.Selection.GetCurrentRowSearchString(), true, true));
 
-                var enableGrouping = !CFG.Current.Param_DisableRowGrouping && meta.ConsecutiveIDs;
+                var enableGrouping = false;
+
+                if (meta != null)
+                {
+                    enableGrouping = !CFG.Current.Param_DisableRowGrouping && meta.ConsecutiveIDs;
+                }
 
                 // Rows
                 var selectionCache = View.Selection.GetSelectionCache(rows, "regular");

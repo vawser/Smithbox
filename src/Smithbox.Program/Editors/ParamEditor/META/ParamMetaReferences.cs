@@ -1230,16 +1230,19 @@ public static class ParamMetaReferences
         string fields = "";
         string placementField = "";
 
-        foreach (var cEditor in meta.ColorEditors)
+        if (meta != null)
         {
-            name = cEditor.Name;
-            fields = cEditor.Fields;
-            placementField = cEditor.PlacedField;
-
-            if(currentField == placementField)
+            foreach (var cEditor in meta.ColorEditors)
             {
-                proceed = true;
-                break;
+                name = cEditor.Name;
+                fields = cEditor.Fields;
+                placementField = cEditor.PlacedField;
+
+                if (currentField == placementField)
+                {
+                    proceed = true;
+                    break;
+                }
             }
         }
 

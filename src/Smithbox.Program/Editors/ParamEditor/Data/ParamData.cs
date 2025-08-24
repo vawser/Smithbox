@@ -522,7 +522,7 @@ public class ParamData
 
         if (File.Exists(srcFile))
         {
-            File.Copy(srcFile, targetFile);
+            File.Copy(srcFile, targetFile, true);
         }
     }
 

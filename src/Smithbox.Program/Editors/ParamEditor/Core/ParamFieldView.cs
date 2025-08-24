@@ -337,6 +337,9 @@ public class ParamFieldView
     /// <param name="row"></param>
     private static void DisplayGraph(ParamEditorScreen editor, bool isActiveView, Param.Row row, ParamMeta meta)
     {
+        if (meta == null)
+            return;
+
         if (CFG.Current.Param_ShowGraphVisualisation)
         {
             var columnWidth = ImGui.GetColumnWidth();
@@ -807,7 +810,7 @@ public class ParamFieldView
                 // Field Icon
                 if (displayIcon)
                 {
-                    FieldDecorators.TextureReference_Title(IconConfig, row);
+                    FieldDecorators.FieldIcon_Title(IconConfig, row);
                 }
 
                 if (displayEnum)
@@ -969,7 +972,7 @@ public class ParamFieldView
                 // Field Icon
                 if (displayIcon)
                 {
-                    FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, IconConfig, row, oldval, internalName, 0);
+                    FieldDecorators.FieldIcon_Display(Editor, Editor.Project.TextureViewer, IconConfig, row, oldval, internalName, 0);
                 }
 
                 // Enum
@@ -1038,7 +1041,6 @@ public class ParamFieldView
 
             FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
             FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
-            FieldDecorators.TextureReference_ContextMenu(Editor, bank, oldval, row, IconConfig);
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
@@ -1267,7 +1269,7 @@ public class ParamFieldView
 
             if (CFG.Current.Param_HideReferenceRows == false && iconConfig != null)
             {
-                FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, iconConfig, context, colVal, fieldName, 1);
+                FieldDecorators.FieldIcon_Display(Editor, Editor.Project.TextureViewer, iconConfig, context, colVal, fieldName, 1);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)

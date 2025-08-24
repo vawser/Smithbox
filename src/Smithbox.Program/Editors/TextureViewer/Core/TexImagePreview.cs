@@ -61,6 +61,9 @@ public class TexImagePreview : IResourceEventListener
         if (iconConfig == null)
             return false;
 
+        if (Project.ParamData.IconConfigurations.Configurations == null)
+            return false;
+
         var iconEntry = Project.ParamData.IconConfigurations.Configurations.Where(e => e.Name == iconConfig.TargetConfiguration).FirstOrDefault();
 
         if (iconEntry == null)

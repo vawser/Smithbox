@@ -707,7 +707,7 @@ public class ParamEditorTab
 
                 if (ImGui.Checkbox("Use project metadata", ref CFG.Current.Param_UseProjectMeta))
                 {
-                    curProject.ParamData.ParamMeta = new();
+                    curProject.ParamData.ParamMeta.Clear();
                     curProject.ParamData.ReloadMeta();
                 }
                 UIHelper.Tooltip("Use project-specific metadata instead of Smithbox's base versions.");
@@ -887,7 +887,7 @@ public class ParamEditorTab
                 ImGui.Checkbox("Show field text labels", ref CFG.Current.Param_ShowFieldFmgLabels);
                 UIHelper.Tooltip("The field fmg reference labels will be shown below the field name.");
 
-                ImGui.Checkbox("Show field image labels", ref CFG.Current.Param_ShowFieldTextureLabels);
+                ImGui.Checkbox("Show field icon labels", ref CFG.Current.Param_ShowFieldTextureLabels);
                 UIHelper.Tooltip("The field texture reference labels will be shown below the field name.");
             }
 
@@ -1000,16 +1000,11 @@ public class ParamEditorTab
             // Image Preview
             if (ImGui.CollapsingHeader("Image Preview", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Display icon preview", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
+
                 ImGui.Text("Image Preview Scale:");
                 ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
                 UIHelper.Tooltip("Scale of the previewed image.");
-
-                ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu);
-                UIHelper.Tooltip("Display image preview of any image index fields if possible within the field context menu.");
-
-                ImGui.Checkbox("Display image preview in field column", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
-
-                UIHelper.Tooltip("Display image preview of any image index fields if possible at the bottom of the field column.");
             }
 
             // Ignore if no game offsets exist for the project type
