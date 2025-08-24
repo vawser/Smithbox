@@ -337,7 +337,7 @@ public class ParamData
 
         var projectMetaDir = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        if (CFG.Current.UseProjectMeta)
+        if (CFG.Current.Param_UseProjectMeta)
         {
             if (Project.ProjectType != ProjectType.Undefined)
             {
@@ -370,7 +370,7 @@ public class ParamData
 
             try
             {
-                if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
+                if (CFG.Current.Param_UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
                 {
                     meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
@@ -396,6 +396,18 @@ public class ParamData
 
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");
+
+        if(CFG.Current.Param_UseProjectMeta)
+        {
+            var projFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+            var projFile = Path.Combine(projFolder, "Graph Legends.json");
+
+            if(File.Exists(projFile))
+            {
+                folder = projFolder;
+                file = projFile;
+            }
+        }
 
         if (File.Exists(file))
         {
@@ -429,6 +441,18 @@ public class ParamData
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Icon Configurations.json");
 
+        if (CFG.Current.Param_UseProjectMeta)
+        {
+            var projFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+            var projFile = Path.Combine(projFolder, "Icon Configurations.json");
+
+            if (File.Exists(projFile))
+            {
+                folder = projFolder;
+                file = projFile;
+            }
+        }
+
         if (File.Exists(file))
         {
             try
@@ -454,8 +478,9 @@ public class ParamData
         return true;
     }
 
-    public void CreateProjectMeta()
+    public void CreateProjectMetadata()
     {
+        // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
         var projectDir = Path.Join(Project.ProjectPath, ".smithbox", metaDir);
@@ -475,6 +500,29 @@ public class ParamData
                     File.Copy(tPath, pPath);
                 }
             }
+        }
+
+        CopyMetadataFile("Shared Param Enums.json");
+        CopyMetadataFile("Graph Legends.json");
+        CopyMetadataFile("Icon Configurations.json");
+    }
+
+    public void CopyMetadataFile(string name)
+    {
+        var srcFolder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var srcFile = Path.Combine(srcFolder, name);
+
+        var targetFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");
+        var targetFile = Path.Combine(targetFolder, name);
+
+        if(!Directory.Exists(targetFolder))
+        {
+            Directory.CreateDirectory(targetFolder);
+        }
+
+        if (File.Exists(srcFile))
+        {
+            File.Copy(srcFile, targetFile);
         }
     }
 

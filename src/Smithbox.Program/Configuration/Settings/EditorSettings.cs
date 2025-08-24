@@ -672,17 +672,6 @@ public class ParamEditorTab
             // General
             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (ImGui.Checkbox("Use project meta", ref CFG.Current.Param_UseProjectMeta))
-                {
-                    if (CFG.Current.Param_UseProjectMeta)
-                    {
-                        curProject.ParamData.CreateProjectMeta();
-                    }
-
-                    curProject.ParamData.ReloadMeta();
-                }
-                UIHelper.Tooltip("Use project-specific PARAM meta instead of Smithbox's base version.");
-
                 ImGui.Checkbox("Use loose params", ref CFG.Current.UseLooseParams);
                 UIHelper.Tooltip("If true, then loose params will be loaded over the packed versions.");
 
@@ -700,6 +689,28 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Pinned fields stay visible", ref CFG.Current.Param_PinnedFieldsStayVisible);
                 UIHelper.Tooltip("Pinned fields will stay visible when you scroll instead of only being pinned to the top of the list.");
+            }
+
+            if (ImGui.CollapsingHeader("Metadata", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.Text("Configure whether the current project draws the param editor metadata from project files rather than base files.");
+
+                if (ImGui.Button("Create Project Metadata##createProjectMetaData", DPI.StandardButtonSize))
+                {
+                    var dialog = PlatformUtils.Instance.MessageBox("This will overwrite any existing project-specific metadata. Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (dialog is DialogResult.Yes)
+                    {
+                        curProject.ParamData.CreateProjectMetadata();
+                    }
+                }
+
+                if (ImGui.Checkbox("Use project metadata", ref CFG.Current.Param_UseProjectMeta))
+                {
+                    curProject.ParamData.ParamMeta = new();
+                    curProject.ParamData.ReloadMeta();
+                }
+                UIHelper.Tooltip("Use project-specific metadata instead of Smithbox's base versions.");
             }
 
             if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))

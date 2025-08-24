@@ -441,11 +441,6 @@ public class CFG
     /// Param Editor
     ///------------------------------------------------------------
     /// <summary>
-    /// If true, the project Meta files are used instead of the primary Meta files.
-    /// </summary>
-    public bool UseProjectMeta = false;
-
-    /// <summary>
     /// If true, then loose params are prioitized over packed params (for games where it is relevant)
     /// </summary>
     public bool UseLooseParams = false;
@@ -997,8 +992,6 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
-    public bool Param_UseLooseParams = false;
-
     // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
     public bool Param_StripRowNamesOnSave_DES = false;
     public bool Param_StripRowNamesOnSave_DS1 = false;

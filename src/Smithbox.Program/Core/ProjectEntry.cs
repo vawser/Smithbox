@@ -1593,9 +1593,12 @@ public class ProjectEntry
 
         var targetFile = sourceFile;
 
-        if (File.Exists(projectFile))
+        if (CFG.Current.Param_UseProjectMeta)
         {
-            targetFile = projectFile;
+            if (File.Exists(projectFile))
+            {
+                targetFile = projectFile;
+            }
         }
 
         if (File.Exists(targetFile))
