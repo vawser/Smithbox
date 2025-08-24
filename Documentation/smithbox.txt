@@ -6,7 +6,7 @@
 - Map Editor: add JSON export for MSB
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
 - Map Editor: visibility icon cannot be clicked
-- Map Editor: add for special map connections for NR
+- Map Editor: add special map connections for NR
 
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Model Editor: implement VFS + data bank overhaul
@@ -17,12 +17,13 @@
 - Param Editor: add defaultvalues to ER paramdex + re-format it
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
+- Param Editor: fix the icon flickering when switching row/changing field value
+- Param Editor: Param Merge doesn't seem to merge in modified VALUES
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
-- Texture Editor: need to fix icon preview to allow for multiple icon sources
 
 # TODO NOW
-- Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
-- Param Merge doesn't seem to merge in modified VALUES
 
+- Add IconConfigs to ER / AC6 meta
+- Add project-override support for the supplementry Param Editor JSONs

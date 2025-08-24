@@ -235,6 +235,22 @@ public class ProjectManager
             }
         }
 
+        if (ImGui.MenuItem($"Set as Primary##setPrimaryProject"))
+        {
+            foreach(var project in Projects)
+            {
+                project.AutoSelect = false;
+
+                if(curProject == project)
+                {
+                    curProject.AutoSelect = true;
+                }
+
+                SaveProject(project);
+            }
+        }
+        UIHelper.Tooltip("Set this project as the primary project to automatically load when Smithbox starts.");
+
         // ME2
         if (ModEngineHandler.IsME2Project(curProject))
         {
