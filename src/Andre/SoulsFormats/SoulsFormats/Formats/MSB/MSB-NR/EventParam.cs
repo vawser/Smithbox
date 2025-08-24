@@ -462,9 +462,9 @@ namespace SoulsFormats
                 public int ItemLotID { get; set; }
 
                 /// <summary>
-                /// If not -1, uses an entry from ActionButtonParam for the pickup prompt.
+                /// Uesd for drop uncommon weapons or magic.
                 /// </summary>
-                public int ActionButtonID { get; set; }
+                public int UncommonItemLotID { get; set; }
 
                 /// <summary>
                 /// Animation to play when taking this treasure.
@@ -512,7 +512,7 @@ namespace SoulsFormats
                 public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}")
                 {
                     ItemLotID = -1;
-                    ActionButtonID = -1;
+                    UncommonItemLotID = -1;
                     PickupAnimID = -1;
                 }
 
@@ -526,7 +526,7 @@ namespace SoulsFormats
                     br.AssertInt32(0);
                     ItemLotID = br.ReadInt32();
                     br.AssertPattern(0x24, 0xFF);
-                    ActionButtonID = br.ReadInt32();
+                    UncommonItemLotID = br.ReadInt32();
                     PickupAnimID = br.ReadInt32();
                     InChest = br.ReadByte();
                     StartDisabled = br.ReadByte();
@@ -546,7 +546,7 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                     bw.WriteInt32(ItemLotID);
                     bw.WritePattern(0x24, 0xFF);
-                    bw.WriteInt32(ActionButtonID);
+                    bw.WriteInt32(UncommonItemLotID);
                     bw.WriteInt32(PickupAnimID);
                     bw.WriteByte(InChest);
                     bw.WriteByte(StartDisabled);
