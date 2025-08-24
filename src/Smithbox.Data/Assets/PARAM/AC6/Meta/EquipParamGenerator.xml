@@ -30,7 +30,7 @@
     <modelId
     AltName="Model ID"
     Wiki="The model ID for this item. Also determines the menu preview icon." 
-    TextureRef="Weapon/01_common/SB_PartsThumbnails/modelId/" />
+    IconConfig="Weapon" />
     
     <sortId
     AltName="Sort ID"
@@ -76,7 +76,7 @@
     AltName="Corporation Texture ID"  
     Wiki="The corporation texture displayed for this part."
     Enum="EQUIP_MAKER_TYPE" 
-    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    IconConfig="Logo" />
     
     <sellValue
     AltName="Sell Value"

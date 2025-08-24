@@ -35,7 +35,7 @@
     <iconId 
     AltName="OS Install: Image ID" 
     Wiki="Refers to the icon ID from SB_OsIcon.layout" 
-    TextureRef="Direct/01_common/SB_OsIcon/iconId/OsIcon_" />
+    IconConfig="OS" />
     
     <pad0
     Padding="" />

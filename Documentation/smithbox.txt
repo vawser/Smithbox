@@ -25,5 +25,4 @@
 
 # TODO NOW
 
-- Add IconConfigs to ER / AC6 meta
-- Add project-override support for the supplementry Param Editor JSONs
+- Add IconConfigs to AC6 meta

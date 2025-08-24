@@ -84,7 +84,7 @@
     <rankIconID 
     AltName="Rank Texture ID" 
     Wiki="Texture ID defined in the SB_ArenaRank layout." 
-    TextureRef="Direct/01_common/SB_ArenaRank/rankIconID/ArenaRank_" />
+    IconConfig="Arena" />
     
     <endCutsceneId 
     AltName="Outro Cutscene ID" 

@@ -264,7 +264,7 @@
     <equipModelId 
     AltName="Model ID" 
     Wiki="The model ID to use for this equipment. Also determines the menu preview icon." 
-    TextureRef="Weapon/01_common/SB_PartsThumbnails/equipModelId/" />
+    IconConfig="Weapon" />
     
     <iconId 
     AltName="Icon ID " 
@@ -2083,7 +2083,7 @@
     AltName="Corporation Texture ID" 
     Wiki="The maker icon to use for this weapon."
     Enum="EQUIP_MAKER_TYPE" 
-    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    IconConfig="Logo" />
     
     <menuManageCategory 
     AltName="Equipment Menu Category" 

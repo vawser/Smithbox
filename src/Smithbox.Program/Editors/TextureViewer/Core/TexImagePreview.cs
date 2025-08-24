@@ -188,62 +188,59 @@ public class TexImagePreview : IResourceEventListener
 
         SubTexture subTex = null;
 
-        subTex = GetMatchingSubTexture(textureKey, imageIdx, iconEntry.SubTexturePrefix);
+        // Special-case handling for some icons in AC6 that are awkward to fit into the Icon Configuration system
+        if(iconEntry.SubTexturePrefix == "AC6-Weapon" || iconEntry.SubTexturePrefix == "AC6-Armor")
+        {
+            if(iconEntry.SubTexturePrefix == "AC6-Weapon")
+            {
+                subTex = GetMatchingSubTexture(textureKey, imageIdx, "WP_A_");
 
-        // Hardcoded logic for AC6
-        //if (Editor.Project.ProjectType == ProjectType.AC6)
-        //{
-        //    if (textureRef.LookupType == "Booster")
-        //    {
-        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "BS_A_");
-        //    }
-        //    if (textureRef.LookupType == "Weapon")
-        //    {
-        //        // Check for WP_A_ match
-        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_A_");
+                // If failed, check for WP_R_ match
+                if (subTex == null)
+                {
+                    subTex = GetMatchingSubTexture(textureKey, imageIdx, "WP_R_");
+                }
 
-        //        // If failed, check for WP_R_ match
-        //        if (subTex == null)
-        //        {
-        //            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_R_");
-        //        }
+                // If failed, check for WP_L_ match
+                if (subTex == null)
+                {
+                    subTex = GetMatchingSubTexture(textureKey, imageIdx, "WP_L_");
+                }
+            }
 
-        //        // If failed, check for WP_L_ match
-        //        if (subTex == null)
-        //        {
-        //            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_L_");
-        //        }
-        //    }
-        //    if (textureRef.LookupType == "Armor")
-        //    {
-        //        var prefix = "";
+            if (iconEntry.SubTexturePrefix == "AC6-Armor")
+            {
+                var prefix = "";
 
-        //        var headEquip = context["headEquip"].Value.Value.ToString();
-        //        var bodyEquip = context["bodyEquip"].Value.Value.ToString();
-        //        var armEquip = context["armEquip"].Value.Value.ToString();
-        //        var legEquip = context["legEquip"].Value.Value.ToString();
+                var headEquip = context["headEquip"].Value.Value.ToString();
+                var bodyEquip = context["bodyEquip"].Value.Value.ToString();
+                var armEquip = context["armEquip"].Value.Value.ToString();
+                var legEquip = context["legEquip"].Value.Value.ToString();
 
-        //        if (headEquip == "1")
-        //        {
-        //            prefix = "HD_M_";
-        //        }
-        //        if (bodyEquip == "1")
-        //        {
-        //            prefix = "BD_M_";
-        //        }
-        //        if (armEquip == "1")
-        //        {
-        //            prefix = "AM_M_";
-        //        }
-        //        if (legEquip == "1")
-        //        {
-        //            prefix = "LG_M_";
-        //        }
+                if (headEquip == "1")
+                {
+                    prefix = "HD_M_";
+                }
+                if (bodyEquip == "1")
+                {
+                    prefix = "BD_M_";
+                }
+                if (armEquip == "1")
+                {
+                    prefix = "AM_M_";
+                }
+                if (legEquip == "1")
+                {
+                    prefix = "LG_M_";
+                }
 
-        //        // Check for match
-        //        subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, prefix);
-        //    }
-        //}
+                subTex = GetMatchingSubTexture(textureKey, imageIdx, prefix);
+            }
+        }
+        else
+        {
+            subTex = GetMatchingSubTexture(textureKey, imageIdx, iconEntry.SubTexturePrefix);
+        }
 
         return subTex;
     }

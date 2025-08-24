@@ -229,7 +229,7 @@
     <equipModelId 
     AltName="Model ID" 
     Wiki="The model ID to use for this part. Also determines the menu preview icon." 
-    TextureRef="Armor/01_common/SB_PartsThumbnails/equipModelId/" />
+    IconConfig="Armor" />
     
     <iconIdM 
     AltName="Male: Icon ID " 
@@ -1393,7 +1393,7 @@
     AltName="Corporation Texture ID" 
     Wiki="The coporation logo to show for this part."
     Enum="EQUIP_MAKER_TYPE" 
-    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    IconConfig="Logo" />
     
     <menuManageCategory 
     AltName="Menu Management Category" 

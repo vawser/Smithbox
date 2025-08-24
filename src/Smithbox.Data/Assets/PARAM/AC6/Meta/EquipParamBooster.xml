@@ -30,7 +30,7 @@
     <modelId
     AltName="Model ID"
     Wiki="The model ID for this part. Also determines the menu preview icon." 
-    TextureRef="Booster/01_common/SB_PartsThumbnails/modelId/" />
+    IconConfig="Booster" />
     
     <sortId
     AltName="Sort ID"
@@ -317,7 +317,7 @@
     AltName="Corporation Texture ID" 
     Wiki="The maker icon to use for this booster."
     Enum="EQUIP_MAKER_TYPE" 
-    TextureRef="Direct/01_common/SB_MakerLogo/Maker/MakerLogo_" />
+    IconConfig="Logo" />
     
     <bladeHoming_InitSpeedKMH
     AltName="Blade Homing: Initial Speed"

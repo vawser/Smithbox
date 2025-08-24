@@ -1,2 +1,76 @@
 {
+    "Configurations": [
+        {
+          "Name": "Booster",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_PartsThumbnails"
+          ],
+          "SubTexturePrefix": "BS_A_"
+        },
+        {
+          "Name": "Weapon",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_PartsThumbnails"
+          ],
+          "SubTexturePrefix": "AC6-Weapon"
+        },
+        {
+          "Name": "Armor",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_PartsThumbnails"
+          ],
+          "SubTexturePrefix": "AC6-Armor"
+        },
+        {
+          "Name": "Decal",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_DecalThumbnails"
+          ],
+          "SubTexturePrefix": "Decal_tmb_"
+        },
+        {
+          "Name": "Arena",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_ArenaRank"
+          ],
+          "SubTexturePrefix": "ArenaRank_"
+        },
+        {
+          "Name": "Emblem",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_PieceThumbnails"
+          ],
+          "SubTexturePrefix": "Piece_tmb_"
+        },
+        {
+          "Name": "Logo",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_MakerLogo"
+          ],
+          "SubTexturePrefix": "MakerLogo_"
+        },
+        {
+          "Name": "Mercenary",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_MercenaryRank"
+          ],
+          "SubTexturePrefix": "MercenaryRank_"
+        },
+        {
+          "Name": "OS",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_OsIcon"
+          ],
+          "SubTexturePrefix": "OsIcon_"
+        }
+    ]
 }

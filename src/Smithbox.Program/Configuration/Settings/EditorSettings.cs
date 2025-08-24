@@ -997,12 +997,12 @@ public class ParamEditorTab
                 UIHelper.Tooltip("Controls the height of the field context menu when enum or aliases lists are present.");
             }
 
-            // Image Preview
-            if (ImGui.CollapsingHeader("Image Preview", ImGuiTreeNodeFlags.DefaultOpen))
+            // Icon Preview
+            if (ImGui.CollapsingHeader("Icon Preview", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.Checkbox("Display icon preview", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
 
-                ImGui.Text("Image Preview Scale:");
+                ImGui.Text("Icon Preview Scale:");
                 ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
                 UIHelper.Tooltip("Scale of the previewed image.");
             }

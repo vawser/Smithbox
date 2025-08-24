@@ -12,7 +12,7 @@
     <emblemImageID 
     AltName="Emblem Decal ID" 
     Wiki="ID of the Menu Decal to use, refers to SB_DecalThumbnails.layout" 
-    TextureRef="Direct/01_common/SB_DecalThumbnails/emblemImageID/Decal_tmb_" />
+    IconConfig="Decal" />
     
     <reserved
     AltName=""

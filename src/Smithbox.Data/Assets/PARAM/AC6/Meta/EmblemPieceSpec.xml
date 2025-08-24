@@ -7,7 +7,7 @@
       <PieceID 
       AltName="Decal Texture ID" 
       Wiki="Piece identification ID. Used for texture file name MENU_EmblemPiece_xxxxxxxx"
-      TextureRef="Direct/01_common/SB_PieceThumbnails/decalTextureId/Piece_tmb_" />
+      IconConfig="Emblem" />
       
       <CategoryID 
       AltName="Category ID" 

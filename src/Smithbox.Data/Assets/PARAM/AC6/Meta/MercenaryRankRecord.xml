@@ -30,7 +30,7 @@
     AltName="Icon ID" 
     Wiki="The icon ID to use for the rank." 
     Enum="MERCENARY_ICON_ID"
-    TextureRef="Direct/01_common/SB_MercenaryRank/mercenaryRankIcon/MercenaryRank_" />
+    IconConfig="Mercenary" />
     
     <reserved
     Padding="" />
