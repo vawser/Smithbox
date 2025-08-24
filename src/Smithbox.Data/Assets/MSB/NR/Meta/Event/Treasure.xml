@@ -13,14 +13,14 @@
     IndexProperty="" />
     
     <ItemLotID
-    AltName="Item Lot"
+    AltName="Item Lot - Normal"
     Wiki="The item lot to award when this treasure is acquired."
     ParamRef="ItemLotParam_map" />
     
-    <ActionButtonParamID
-    AltName="Action Button ID"
-    Wiki="The action button parameters to use when this treasure is used."
-    ParamRef="ActionButtonParam" />
+    <UncommonItemLotID
+    AltName="Item Lot - Uncommon"
+    Wiki="Making drops yield special weapons or magic."
+    ParamRef="ItemLotParam_map" />
     
     <PickupAnimID
     AltName="Pick-up Animation ID"
