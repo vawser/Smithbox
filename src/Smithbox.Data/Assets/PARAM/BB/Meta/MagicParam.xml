@@ -87,7 +87,8 @@
     <refId AltName="Reference ID" Refs="Bullet,SpEffectParam,BehaviorParam_PC" />
     <mp AltName="FP Consumption" />
     <stamina AltName="Stamina Consumption" />
-    <iconId AltName="Icon ID" />
+    <iconId AltName="Icon ID" 
+    IconConfig="Item" />
     <behaviorId AltName="Behavior ID" Wiki="Set the action ID" />
     <mtrlItemId AltName="Material Item ID" Wiki="Item ID required for purchase" />
 	<replaceMagicId AltName="Replace Magic ID" Wiki="Greys out icon when set to 1 and Disabled by State Info has a value. Needs further testing." />

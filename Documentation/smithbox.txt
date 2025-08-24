@@ -24,5 +24,3 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-
-- Add IconConfigs to AC6 meta

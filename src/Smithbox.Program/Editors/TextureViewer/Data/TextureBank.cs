@@ -99,7 +99,7 @@ public class TextureBank
             ShoeboxEntries.Add(entry, newShoeboxContainer);
         }
 
-        if (Project.ProjectType is ProjectType.DS3)
+        if (Project.ProjectType is ProjectType.DS3 or ProjectType.BB)
         {
             var newFileEntry = new FileDictionaryEntry();
             newFileEntry.Archive = "";

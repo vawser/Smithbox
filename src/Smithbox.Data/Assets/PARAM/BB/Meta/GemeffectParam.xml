@@ -7,7 +7,8 @@
 	<rankMin AltName="Appearance Rank: Lower Limit" Wiki="" />
 	<rankMax AltName="Appearance Rank: Upper Limit" Wiki="" />
 	<disposalPrice AltName="Sell Price" Wiki="" />
-	<gemIconIdOffset AltName="Gem Icon ID Offset" Wiki="" />
+	<gemIconIdOffset AltName="Gem Icon ID Offset" Wiki="" 
+    IconConfig="GemEffect" />
 	<sortId AltName="Sort ID" Wiki="" />
 	<sortCategory AltName="Sort Category" Wiki="" />
 	<gemNameIdOffset AltName="Gem Name ID Offset" Wiki="" />

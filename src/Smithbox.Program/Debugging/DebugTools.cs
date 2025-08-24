@@ -316,39 +316,74 @@ public class DebugTools
 
     public void QuickTest()
     {
-        GenerateIconLayout("MENU_Icon_00000", 0, 12, 12);
-        GenerateIconLayout("MENU_Icon_00001", 144, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_01000", 1000, 12, 12);
-        GenerateIconLayout("MENU_Icon_01001", 1144, 12, 12);
-        GenerateIconLayout("MENU_Icon_01002", 1288, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_02000", 2000, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_03000", 3000, 12, 12);
-        GenerateIconLayout("MENU_Icon_03001", 3144, 12, 12);
-        GenerateIconLayout("MENU_Icon_03002", 3288, 12, 12);
-        GenerateIconLayout("MENU_Icon_03003", 3432, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_04000", 4000, 12, 12);
-        GenerateIconLayout("MENU_Icon_04001", 4144, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_05000", 5000, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_06000", 5000, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_07000", 5000, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_08000", 5000, 12, 12);
-
-        GenerateIconLayout("MENU_Icon_09000", 5000, 12, 12);
+        GenerateIconLayouts_BB();
     }
 
-    public void GenerateIconLayout(string filename, int idStart, int width, int height)
+    public void GenerateIconLayouts_BB()
     {
-        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\DS3\Icon Layouts";
+        GenerateIconLayout("MENU_Icon_00001", 0, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_00002", 144, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_00003", 288, 12, 12, 80, 1024);
 
-        var header = $@"<TextureAtlas imagePath=""{filename}.tif"" width=""2048"" height=""2048"">";
+        GenerateIconLayout("MENU_Icon_01001", 1000, 12, 12, 80, 1024);
+
+        GenerateIconLayout("MENU_Icon_02001", 2000, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_02002", 2144, 12, 12, 80, 1024);
+
+        GenerateIconLayout("MENU_Icon_03001", 3000, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03002", 3144, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03003", 3288, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03004", 3432, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03005", 3576, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03006", 3720, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03007", 3864, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03008", 4008, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_03009", 4152, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_04001", 4296, 12, 12, 80, 1024);
+        GenerateIconLayout("MENU_Icon_04002", 4440, 12, 12, 80, 1024);
+
+        GenerateIconLayout("MENU_Icon_05001", 5000, 12, 12, 80, 1024);
+
+        GenerateIconLayout("MENU_Icon_06001", 6000, 32, 4, 32, 1024);
+
+        GenerateIconLayout("MENU_Icon_07001", 0, 32, 4, 32, 1024);
+    }
+
+    public void GenerateIconLayouts_DS3()
+    {
+        GenerateIconLayout("MENU_Icon_00000", 0, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_00001", 144, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_01000", 1000, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_01001", 1144, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_01002", 1288, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_02000", 2000, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_03000", 3000, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_03001", 3144, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_03002", 3288, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_03003", 3432, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_04000", 4000, 12, 12, 160, 2048);
+        GenerateIconLayout("MENU_Icon_04001", 4144, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_05000", 5000, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_06000", 5000, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_07000", 5000, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_08000", 5000, 12, 12, 160, 2048);
+
+        GenerateIconLayout("MENU_Icon_09000", 5000, 12, 12, 160, 2048);
+    }
+
+    public void GenerateIconLayout(string filename, int idStart, int width, int height, int iconIncrement, int resolution)
+    {
+        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\BB\Icon Layouts";
+
+        var header = $@"<TextureAtlas imagePath=""{filename}.tif"" width=""{resolution}"" height=""{resolution}"">";
         var footer = @"</TextureAtlas>";
 
         List<string> lines = new();
@@ -391,12 +426,12 @@ public class DebugTools
 
                 lines.Add(line);
 
-                curX = (160 * (k + 1));
+                curX = (iconIncrement * (k + 1));
                 curId = curId + 1;
             }
 
             curX = 0;
-            curY = (160 * (i + 1));
+            curY = (iconIncrement * (i + 1));
         }
 
         lines.Add(footer);

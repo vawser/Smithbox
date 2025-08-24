@@ -1,2 +1,52 @@
 {
+    "Configurations": [
+        {
+          "Name": "Item",
+          "File": "common",
+          "InternalFiles": [
+            "MENU_Icon_00001",
+            "MENU_Icon_00002",
+            "MENU_Icon_00003",
+            "MENU_Icon_01001",
+            "MENU_Icon_02001",
+            "MENU_Icon_02002",
+            "MENU_Icon_05001"
+          ],
+          "SubTexturePrefix": "ICON_"
+        },
+        {
+          "Name": "Gem",
+          "File": "common",
+          "InternalFiles": [
+            "MENU_Icon_03001",
+            "MENU_Icon_03002",
+            "MENU_Icon_03003",
+            "MENU_Icon_03004",
+            "MENU_Icon_03005",
+            "MENU_Icon_03006",
+            "MENU_Icon_03007",
+            "MENU_Icon_03008",
+            "MENU_Icon_03009",
+            "MENU_Icon_04001",
+            "MENU_Icon_04002"
+          ],
+          "SubTexturePrefix": "ICON_"
+        },
+        {
+          "Name": "Status",
+          "File": "common",
+          "InternalFiles": [
+            "MENU_Icon_06001"
+          ],
+          "SubTexturePrefix": "ICON_"
+        },
+        {
+          "Name": "GemEffect",
+          "File": "common",
+          "InternalFiles": [
+            "MENU_Icon_07001"
+          ],
+          "SubTexturePrefix": "ICON_"
+        }
+    ]
 }

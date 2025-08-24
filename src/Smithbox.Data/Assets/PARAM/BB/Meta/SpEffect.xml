@@ -400,7 +400,8 @@
     </Enum>
   </Enums>
   <Field>
-    <iconId AltName="Icon ID" Wiki="Icon ID (When -1, no icon is required)" />
+    <iconId AltName="Icon ID" Wiki="Icon ID (When -1, no icon is required)" 
+    IconConfig="Status" />
     <conditionHp AltName="Trigger at HP Below %" Wiki="Set what percentage of maxHP the remaining HP will be activated" />
     <effectEndurance AltName="Duration" Wiki="Change duration / -1 for permanent / 0 for one moment only" />
     <motionInterval AltName="Trigger Interval" Wiki="Set how many seconds it occurs" />
