@@ -1,2 +1,51 @@
 {
+    "Configurations": [
+        {
+          "Name": "Item",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Icon_00",
+            "SB_Icon_01",
+            "SB_Icon_02",
+            "SB_Icon_02_A",
+            "SB_Icon_02_B",
+            "SB_Icon_03",
+            "SB_Icon_03_A",
+            "SB_Icon_04",
+            "SB_Icon_05",
+            "SB_Icon_06",
+            "SB_Icon_07_dlc",
+            "SB_Icon_07_dlc_A",
+            "SB_Icon_08_dlc"
+          ],
+          "SubTexturePrefix": "MENU_ItemIcon_"
+        },
+        {
+          "Name": "Status",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Status_00",
+            "SB_Status_01_dlc"
+          ],
+          "SubTexturePrefix": "MENU_StatusIcon_"
+        },
+        {
+          "Name": "MapIcon",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_MapCursor",
+            "SB_MapCursor_02",
+            "SB_MapCursor_03_dlc"
+          ],
+          "SubTexturePrefix": "MENU_MAP_"
+        },
+        {
+          "Name": "CharacterCreator",
+          "File": "01_common",
+          "InternalFiles": [
+            "SB_Chara_01"
+          ],
+          "SubTexturePrefix": "MENU_ItemIcon_"
+        }
+    ]
 }

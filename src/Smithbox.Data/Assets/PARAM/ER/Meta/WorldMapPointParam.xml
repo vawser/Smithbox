@@ -111,7 +111,8 @@
     <disableParamReserve2 AltName="" Padding=""/>
     <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" FlagAlias="" />
     <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" FlagAlias="" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
     <bgmPlaceType AltName="BGM Location Type" Wiki="Bgm location type" Enum="SOUND_BGM_MAP_PLACE_TYPE" />
     <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
     <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />
@@ -177,7 +178,8 @@
     <dispMinZoomStep AltName="Display - Min Zoom Step" Wiki="Zoom step to display map points (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
     <selectMinZoomStep AltName="Selection - Min Zoom Step" Wiki="Zoom step where map points can be selected (0 when zoomed out most, +1 for each zoom). Selectable when Selectable zoom step  Current enlargement stage. Default is 0 (always selectable)" />
     <entryFEType AltName="Entry FE Type" Wiki="Admission display format. Map points to be displayed at the time of admission Types of admission FE" Enum="WORLD_MAP_ENTRY_FE_TYPE" />
-    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
     <pad4 AltName="" Padding=""/>
     <textEnableFlag2Id1 AltName="Text Enable Flag ID 2 [1]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />
     <textEnableFlag2Id2 AltName="Text Enable Flag ID 2 [2]" Wiki="Display text Event flag ID. Display if the event flag is On. If the event flag ID (0) is invalid, it will be treated as On." FlagAlias="" />

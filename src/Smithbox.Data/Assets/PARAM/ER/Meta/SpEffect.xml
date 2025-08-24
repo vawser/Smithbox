@@ -114,7 +114,7 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     <iconId 
     AltName="Icon ID" 
     Wiki="Icon ID (When -1, no icon is required)" 
-    TextureRef="Direct/01_common/SB_Status_00/iconId/MENU_StatusIcon_,Direct/01_common/SB_Status_01_dlc/iconId/MENU_StatusIcon_" 
+    IconConfig="Status" 
     DefaultValue="-1" />
     
     <conditionHp 

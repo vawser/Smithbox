@@ -63,7 +63,8 @@
     <sortId AltName="Sort ID" Wiki="" />
     <qwcId AltName="QWC ID" Wiki="" />
     <equipModelId AltName="Equip Model ID" Wiki="Equipment model number" />
-    <iconId AltName="Icon ID" Wiki="Menu icon ID" TextureRef="Direct/01_common/SB_Icon_00/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_01/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_02_B/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_03_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_04/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_05/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_06/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_07_dlc_A/iconId/MENU_ItemIcon_,Direct/01_common/SB_Icon_08_dlc/iconId/MENU_ItemIcon_" />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" 
+    IconConfig="Item" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
     <trophySGradeId AltName="Achievement Grade ID" Wiki="" />
     <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />

@@ -15,13 +15,16 @@
     <pad4 AltName="" Padding=""/>
     
     <bonfireSubCategorySortId AltName="Sort ID" Wiki="Bonfire Warp Subcategory Sort ID. Specify the order (ascending order) in the same subcategory" />
-    <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
+    <forbiddenIconId AltName="Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited" ProjectEnum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
+    
     <dispMinZoomStep AltName="Display Zoom Step" Wiki="Zoom step to display the bonfire (0 when zoomed out most, +1 for each zoom). Displayed when Display zoom step  Current zoom step. Default is 0 (always displayed)" />
     <selectMinZoomStep AltName="Selectable Zoom Step" Wiki="A zoom step that allows you to select and snap a bonfire (0 for the most zoomed out state, +1 for each zoom). Can be selected and snapped when Selectable zoom step  current enlargement stage. The default is 0 (always selectable / snappable)" />
     <bonfireSubCategoryId AltName="Subcategory ID" Wiki="Bonfire Warp Subcategory Parameter ID (-1: Invalid). Set which subcategory it belongs to. If it is invalid, it will not be displayed in the bonfire list." Refs="BonfireWarpSubCategoryParam" />
     
     <clearedEventFlagId AltName="Cleared Event Flag ID" Wiki="Cleared event flag ID (0: always treated as cleared)" FlagAlias="" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_" />
+    <iconId AltName="Icon ID" Wiki="Icon ID" ProjectEnum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
     <dispMask00 AltName="Display Setting M00" Wiki="Whether to display with M00" IsBool="" />
     <dispMask01 AltName="Display Setting M01" Wiki="Whether to display with M01" IsBool="" />
     <dispMask02 AltName="Display Setting M02" Wiki="Whether to display with M02" IsBool="" />
@@ -86,8 +89,10 @@
     <textDisableFlag2Id6 AltName="Text Disable Flag ID 2 [6]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
     <textDisableFlag2Id7 AltName="Text Disable Flag ID 2 [7]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
     <textDisableFlag2Id8 AltName="Text Disable Flag ID 2 [8]" Wiki="Hidden event flag ID of the text. If the event flag is On, it will not be displayed. It takes precedence over the display event flag ID. If the event flag ID (0) is invalid, it will be treated as Off." FlagAlias="" />
-    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
-    <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
+    <altIconId AltName="Alternate Icon ID" Wiki="Icon ID that applies when a Text Enable Flag ID is true and it's corrosponding Text Type is set to 1" ProjectEnum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
+    <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" 
+    IconConfig="MapIcon" />
     <pad5 AltName="" Padding=""/>
   </Field>
   <Self />
