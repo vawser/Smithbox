@@ -52,7 +52,8 @@ showLogCondType,showDialogCondType,-," />
     <sortId AltName="Sort ID" Wiki="" />
     <qwcId AltName="QWC ID" Wiki="" />
     <equipModelId AltName="Equip Model ID" Wiki="Equipment model number" />
-    <iconId AltName="Icon ID" Wiki="Menu icon ID" />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID" 
+    IconConfig="Item" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
     <trophySGradeId AltName="Achievement Grade ID" Wiki="" />
     <trophySeqId AltName="Achievement Sequential ID" Wiki="Trophy SEQ number" />

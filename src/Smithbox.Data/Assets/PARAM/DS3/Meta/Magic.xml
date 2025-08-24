@@ -104,7 +104,8 @@ unknown1,unknown2,unknown3,unknown4,unknown5,unknown6,unknown,enableMulti,enable
     <yesNoDialogMessageId AltName="Dialog Message ID" Wiki="Message ID of Yes / No dialog issued when using magic" />
     <limitCancelSpEffectId AltName="Ignore Usage Restriction - SpEffect ID" Wiki="Usage restrictions can be ignored when the specified special effect ID is activated" />
     <sortId AltName="Sort ID" Wiki="Sort ID (-1: Do not collect)" />
-    <iconId AltName="Icon ID" />
+    <iconId AltName="Icon ID" 
+    IconConfig="Item" />
     <requirementLuck AltName="Requirement: LCK" Wiki="Can't be equipped without more PC luck" />
     <aiNotifyType AltName="AI Interrupt Type" Wiki="AI interrupt occurs in act (AI notification when magic is activated)" />
     <refIdFpCost1 AltName="FP Consumption [1]" />

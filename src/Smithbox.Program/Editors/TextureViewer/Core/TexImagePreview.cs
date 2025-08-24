@@ -105,11 +105,15 @@ public class TexImagePreview : IResourceEventListener
 
                             if(curPreviewTexture != null)
                             {
-                                var newResource = new TextureResource(curTpf, index);
-                                newResource.SubTexture = curPreviewTexture;
-                                newResource._LoadTexture(AccessLevel.AccessFull);
+                                if (!LoadedResources.ContainsKey(resourceKey))
+                                {
+                                    var newResource = new TextureResource(curTpf, index);
+                                    newResource.SubTexture = curPreviewTexture;
+                                    newResource._LoadTexture(AccessLevel.AccessFull);
 
-                                LoadedResources.Add(resourceKey, newResource);
+                                    LoadedResources.Add(resourceKey, newResource);
+                                }
+
                                 break;
                             }
                         }

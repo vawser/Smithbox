@@ -252,7 +252,8 @@ trophySGradeId,trophySeqId,-,"/>
     <vagrantBonuseneDropItemLotId AltName="Vagrant Bonus Drop Itemlot ID" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Enemy Drop Itemlot ID" />
     <equipModelId AltName="Weapon Model ID" Wiki="The part model ID. Determines the part model used by the weapon." />
-    <iconId AltName="Icon ID" Wiki="Menu icon ID." />
+    <iconId AltName="Icon ID" Wiki="Menu icon ID." 
+    IconConfig="Item" />
     <durability AltName="Durability Resistance" Wiki="Determines how quickly durability is drained by attacking.\nLower is faster." />
     <durailityMax AltName="Durability Max" Wiki="This the maximum durability, it will be shown in the game GUI" />
     <attackThrowEscape AltName="Throw Escape Damage" Wiki="Basic value of throw-through attack power" />

@@ -32,19 +32,16 @@ public class ShoeboxLayoutContainer
     {
         await Task.Yield();
 
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        try
         {
-            try
-            {
-                var shoeboxData = Project.FS.ReadFile(FileEntry.Path);
+            var shoeboxData = Project.FS.ReadFile(FileEntry.Path);
 
-                LoadLayouts(FileEntry, (Memory<byte>)shoeboxData);
-                BuildTextureDictionary();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, Tasks.LogPriority.High, ex);
-            }
+            LoadLayouts(FileEntry, (Memory<byte>)shoeboxData);
+            BuildTextureDictionary();
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, Tasks.LogPriority.High, ex);
         }
 
         return true;
@@ -73,6 +70,32 @@ public class ShoeboxLayoutContainer
         {
             TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, Tasks.LogPriority.High, e);
         }
+    }
+
+    public async Task<bool> SetupLayoutsDirectly()
+    {
+        await Task.Yield();
+
+        var srcFolder = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Icon Layouts");
+
+        foreach (var path in Directory.EnumerateFiles(srcFolder))
+        {
+            var filename = Path.GetFileName(path);
+
+            if (filename.Contains(".layout"))
+            {
+                ShoeboxLayout newLayout = new ShoeboxLayout(path);
+
+                if (!Layouts.ContainsKey(filename))
+                {
+                    Layouts.Add(filename, newLayout);
+                }
+            }
+        }
+
+        BuildTextureDictionary();
+
+        return true;
     }
 
     public void BuildTextureDictionary()

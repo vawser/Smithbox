@@ -1,2 +1,28 @@
 {
+    "Configurations": [
+        {
+          "Name": "Item",
+          "File": "01_common",
+          "InternalFiles": [
+            "MENU_Icon_00000",
+            "MENU_Icon_00001",
+            "MENU_Icon_01000",
+            "MENU_Icon_01001",
+            "MENU_Icon_01002",
+            "MENU_Icon_02000",
+            "MENU_Icon_03000",
+            "MENU_Icon_03001",
+            "MENU_Icon_03002",
+            "MENU_Icon_03003",
+            "MENU_Icon_04000",
+            "MENU_Icon_04001",
+            "MENU_Icon_05000",
+            "MENU_Icon_06000",
+            "MENU_Icon_07000",
+            "MENU_Icon_08000",
+            "MENU_Icon_09000"
+          ],
+          "SubTexturePrefix": "ICON_"
+        }
+    ]
 }

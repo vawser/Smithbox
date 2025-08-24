@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,6 +97,21 @@ public class TextureBank
             await newShoeboxContainer.Setup();
 
             ShoeboxEntries.Add(entry, newShoeboxContainer);
+        }
+
+        if (Project.ProjectType is ProjectType.DS3)
+        {
+            var newFileEntry = new FileDictionaryEntry();
+            newFileEntry.Archive = "";
+            newFileEntry.Path = "";
+            newFileEntry.Folder = "";
+            newFileEntry.Filename = "icon_preview";
+            newFileEntry.Extension = "";
+
+            var newShoeboxContainer = new ShoeboxLayoutContainer(BaseEditor, Project, newFileEntry);
+            await newShoeboxContainer.SetupLayoutsDirectly();
+
+            ShoeboxEntries.Add(newFileEntry, newShoeboxContainer);
         }
 
         return true;

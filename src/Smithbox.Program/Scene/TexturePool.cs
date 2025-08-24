@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 using StudioCore.Memory;
 using StudioCore.Resource;
 using StudioCore.TextureViewer;
@@ -473,8 +474,27 @@ public class TexturePool
             {
                 var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
-                // Ignore if in the Texture Viewer, or for the world map textures
-                if (curProject.FocusedEditor is not TextureViewerScreen && !exlusions.Contains(tex.Name))
+                var checkPow = true;
+
+                // Ignore the World Map textures
+                if (exlusions.Contains(tex.Name))
+                {
+                    checkPow = false;
+                }
+
+                // Ignore for Icon Preview
+                if(curProject.FocusedEditor is ParamEditorScreen)
+                {
+                    checkPow = false;
+                }
+
+                // Ignore for Texture Viewer
+                if (curProject.FocusedEditor is TextureViewerScreen)
+                {
+                    checkPow = false;
+                }
+
+                if (checkPow)
                 {
                     if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
                     {

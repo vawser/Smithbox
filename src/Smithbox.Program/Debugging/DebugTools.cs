@@ -316,7 +316,94 @@ public class DebugTools
 
     public void QuickTest()
     {
-        SplitAliases();
+        GenerateIconLayout("MENU_Icon_00000", 0, 12, 12);
+        GenerateIconLayout("MENU_Icon_00001", 144, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_01000", 1000, 12, 12);
+        GenerateIconLayout("MENU_Icon_01001", 1144, 12, 12);
+        GenerateIconLayout("MENU_Icon_01002", 1288, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_02000", 2000, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_03000", 3000, 12, 12);
+        GenerateIconLayout("MENU_Icon_03001", 3144, 12, 12);
+        GenerateIconLayout("MENU_Icon_03002", 3288, 12, 12);
+        GenerateIconLayout("MENU_Icon_03003", 3432, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_04000", 4000, 12, 12);
+        GenerateIconLayout("MENU_Icon_04001", 4144, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_05000", 5000, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_06000", 5000, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_07000", 5000, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_08000", 5000, 12, 12);
+
+        GenerateIconLayout("MENU_Icon_09000", 5000, 12, 12);
+    }
+
+    public void GenerateIconLayout(string filename, int idStart, int width, int height)
+    {
+        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\DS3\Icon Layouts";
+
+        var header = $@"<TextureAtlas imagePath=""{filename}.tif"" width=""2048"" height=""2048"">";
+        var footer = @"</TextureAtlas>";
+
+        List<string> lines = new();
+
+        lines.Add(header);
+
+        var curId = idStart;
+        var curX = 0;
+        var curY = 0;
+
+        // Rows
+        for (int i = 0; i < height; i++)
+        {
+            // Icon in Row
+            for(int k = 0; k < width; k++)
+            {
+                var idStr = "";
+                if(curId < 10)
+                {
+                    idStr = $"0000{curId}";
+                }
+                else if (curId >= 10 && curId < 100)
+                {
+                    idStr = $"000{curId}";
+                }
+                else if (curId >= 100 && curId < 1000)
+                {
+                    idStr = $"00{curId}";
+                }
+                else if (curId >= 1000 && curId < 10000)
+                {
+                    idStr = $"0{curId}";
+                }
+                else
+                {
+                    idStr = $"{curId}";
+                }
+
+                var line = $@"    <SubTexture name=""ICON_{idStr}.png"" x=""{curX}"" y=""{curY}"" width=""160""  height=""160"" originalWidth=""160"" originalHeight=""160"" half=""0""/>";
+
+                lines.Add(line);
+
+                curX = (160 * (k + 1));
+                curId = curId + 1;
+            }
+
+            curX = 0;
+            curY = (160 * (i + 1));
+        }
+
+        lines.Add(footer);
+
+        var outputFile = Path.Combine(outputDir, $"{filename}.layout");
+
+        File.WriteAllLines(outputFile, lines);
     }
 
     public static void ConvertToOldStyleRowNames(string type, string group)

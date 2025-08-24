@@ -90,8 +90,10 @@ InvisibleFlag00,InvisibleFlag01,InvisibleFlag02,InvisibleFlag03,InvisibleFlag04,
     <faceScaleF_MaxZ AltName="Facescale - Female - Max Z" Wiki="" />
     <qwcId AltName="QWC ID" Wiki="QWC parameter ID" />
     <equipModelId AltName="Equip Model ID" Wiki="Equipment model number." />
-    <iconIdM AltName="Icon ID - Male" Wiki="Men's menu icon ID." />
-    <iconIdF AltName="Icon ID - Female" Wiki="Women's menu icon ID." />
+    <iconIdM AltName="Icon ID - Male" Wiki="Men's menu icon ID." 
+    IconConfig="Item" />
+    <iconIdF AltName="Icon ID - Female" Wiki="Women's menu icon ID." 
+    IconConfig="Item" />
 	<knockBack AltName="Knockback" Wiki="Knockback reduction value." />
     <knockbackBounceRate AltName="Knockback Bounce Rate" Wiki="Knockback repulsion rate." Refs="KnockBackParam" />
     <durability AltName="Durability" Wiki="Initial durability." />
