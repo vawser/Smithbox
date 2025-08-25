@@ -300,12 +300,17 @@ public partial class ParamTools
 
         var actions = new List<EditorAction>();
 
+        var displayWarning = false;
+
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
 
             if (fieldDef == null)
+            {
+                displayWarning = true;
                 continue;
+            }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
@@ -325,6 +330,11 @@ public partial class ParamTools
 
                 rf.Item2.Name = row.Name;
             }
+        }
+
+        if(displayWarning)
+        {
+            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
@@ -351,12 +361,17 @@ public partial class ParamTools
 
         var actions = new List<EditorAction>();
 
+        var displayWarning = false;
+
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
 
             if (fieldDef == null)
+            {
+                displayWarning = true;
                 continue;
+            }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
@@ -376,6 +391,11 @@ public partial class ParamTools
 
                 row.Name = rf.Item2.Name;
             }
+        }
+
+        if (displayWarning)
+        {
+            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
@@ -402,12 +422,17 @@ public partial class ParamTools
 
         var actions = new List<EditorAction>();
 
+        var displayWarning = false;
+
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
 
             if (fieldDef == null)
+            {
+                displayWarning = true;
                 continue;
+            }
 
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
@@ -427,6 +452,11 @@ public partial class ParamTools
 
                 row.Name = result.Entry.Text;
             }
+        }
+
+        if (displayWarning)
+        {
+            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
         }
     }
     #endregion
