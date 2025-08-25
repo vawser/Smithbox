@@ -291,6 +291,6 @@
       <SortID>450</SortID>
     </Field>
     
-    <Field Def="f32 unknown_1" />
+    <Field Def="f32 correctSpellScalingRate" />
   </Fields>
 </PARAMDEF>

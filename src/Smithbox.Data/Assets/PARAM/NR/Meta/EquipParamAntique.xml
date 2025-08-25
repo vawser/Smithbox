@@ -23,6 +23,11 @@
 	<sortGroupId
 	AltName="Sort Group ID" />
 	
+	<isSalable
+	AltName="Is Salable"
+	Wiki="Determines if item can be sold"
+	IsBool="" />
+	
 	<isDeepRelic
 	AltName="Is Depths Relic"
 	Wiki="Determines if relic goes in standard or depths slots"
