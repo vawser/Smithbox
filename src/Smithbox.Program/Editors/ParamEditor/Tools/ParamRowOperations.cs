@@ -303,8 +303,15 @@ public partial class ParamTools
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+
+            if (fieldDef == null)
+                continue;
+
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            if (fieldMeta == null)
+                continue;
 
             List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
                 Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
@@ -347,8 +354,15 @@ public partial class ParamTools
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+
+            if (fieldDef == null)
+                continue;
+
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            if (fieldMeta == null)
+                continue;
 
             List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
                 Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
@@ -391,8 +405,15 @@ public partial class ParamTools
         foreach (Param.Row row in rows)
         {
             var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+
+            if (fieldDef == null)
+                continue;
+
             var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
             var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            if (fieldMeta == null)
+                continue;
 
             List<TextResult> refs = ReferenceResolver.ResolveTextReferences(
                 Editor, fieldMeta.FmgRef, row, targetCell.Value);
