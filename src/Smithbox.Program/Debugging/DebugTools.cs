@@ -1,28 +1,6 @@
-﻿using Andre.Formats;
-using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using Octokit;
-using ProcessMemoryUtilities.Native;
-using Smithbox.Program.Debugging;
-using SoulsFormats;
-using StudioCore.Core;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
-using StudioCore.Editors.TextEditor.Enums;
-using StudioCore.Formats.JSON;
-using StudioCore.Interface;
-using StudioCore.Platform;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Numerics;
-using System.Runtime.InteropServices;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace StudioCore.DebugNS;
 

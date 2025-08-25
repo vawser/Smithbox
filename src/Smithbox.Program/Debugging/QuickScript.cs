@@ -8,7 +8,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Smithbox.Program.Debugging;
+namespace StudioCore.DebugNS;
 
 public class QuickScript
 {
