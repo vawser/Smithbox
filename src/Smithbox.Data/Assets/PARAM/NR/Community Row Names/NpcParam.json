@@ -1858,7 +1858,7 @@
     {
       "ID": 31000030,
       "Entries": [
-        "Bell Bearing Hunter (Castle)"
+        "Bell Bearing Hunter (Castle Basement)"
       ]
     },
     {
@@ -13576,289 +13576,289 @@
     {
       "ID": 700035000,
       "Entries": [
-        ""
+        "[Libra Wylder] Default"
       ]
     },
     {
       "ID": 700035001,
       "Entries": [
-        ""
+        "[Libra Wylder] Dawn"
       ]
     },
     {
       "ID": 700035002,
       "Entries": [
-        ""
+        "[Libra Wylder] Darkness"
       ]
     },
     {
       "ID": 700035003,
       "Entries": [
-        ""
+        "[Libra Wylder] Remembrance"
       ]
     },
     {
       "ID": 700035004,
       "Entries": [
-        ""
+        "[Libra Wylder] Abysswalker"
       ]
     },
     {
       "ID": 700035005,
       "Entries": [
-        ""
+        "[Libra Wylder] Lion Knight"
       ]
     },
     {
       "ID": 700035100,
       "Entries": [
-        ""
+        "[Libra Guardian] Default"
       ]
     },
     {
       "ID": 700035101,
       "Entries": [
-        ""
+        "[Libra Guardian] Dawn"
       ]
     },
     {
       "ID": 700035102,
       "Entries": [
-        ""
+        "[Libra Guardian] Darkness"
       ]
     },
     {
       "ID": 700035103,
       "Entries": [
-        ""
+        "[Libra Guardian] Remembrance"
       ]
     },
     {
       "ID": 700035104,
       "Entries": [
-        ""
+        "[Libra Guardian] Sunlight Knight"
       ]
     },
     {
       "ID": 700035105,
       "Entries": [
-        ""
+        "[Libra Guardian] Wayfarer"
       ]
     },
     {
       "ID": 700035200,
       "Entries": [
-        ""
+        "[Libra Ironeye] Default"
       ]
     },
     {
       "ID": 700035201,
       "Entries": [
-        ""
+        "[Libra Ironeye] Dawn"
       ]
     },
     {
       "ID": 700035202,
       "Entries": [
-        ""
+        "[Libra Ironeye] Darkness"
       ]
     },
     {
       "ID": 700035203,
       "Entries": [
-        ""
+        "[Libra Ironeye] Remembrance"
       ]
     },
     {
       "ID": 700035204,
       "Entries": [
-        ""
+        "[Libra Ironeye] Ringfinger"
       ]
     },
     {
       "ID": 700035205,
       "Entries": [
-        ""
+        "[Libra Ironeye] Sellsword"
       ]
     },
     {
       "ID": 700035300,
       "Entries": [
-        ""
+        "[Libra Duchess] Default"
       ]
     },
     {
       "ID": 700035301,
       "Entries": [
-        ""
+        "[Libra Duchess] Dawn"
       ]
     },
     {
       "ID": 700035302,
       "Entries": [
-        ""
+        "[Libra Duchess] Darkness"
       ]
     },
     {
       "ID": 700035303,
       "Entries": [
-        ""
+        "[Libra Duchess] Remembrance"
       ]
     },
     {
       "ID": 700035304,
       "Entries": [
-        ""
+        "[Libra Duchess] Black Leather"
       ]
     },
     {
       "ID": 700035305,
       "Entries": [
-        ""
+        "[Libra Duchess] Wraith"
       ]
     },
     {
       "ID": 700035400,
       "Entries": [
-        ""
+        "[Libra Raider] Default"
       ]
     },
     {
       "ID": 700035401,
       "Entries": [
-        ""
+        "[Libra Raider] Dawn"
       ]
     },
     {
       "ID": 700035402,
       "Entries": [
-        ""
+        "[Libra Raider] Darkness"
       ]
     },
     {
       "ID": 700035403,
       "Entries": [
-        ""
+        "[Libra Raider] Remembrance"
       ]
     },
     {
       "ID": 700035404,
       "Entries": [
-        ""
+        "[Libra Raider] Rock-like"
       ]
     },
     {
       "ID": 700035405,
       "Entries": [
-        ""
+        "[Libra Raider] Catarina"
       ]
     },
     {
       "ID": 700035500,
       "Entries": [
-        ""
+        "[Libra Revenant] Default"
       ]
     },
     {
       "ID": 700035501,
       "Entries": [
-        ""
+        "[Libra Revenant] Dawn"
       ]
     },
     {
       "ID": 700035502,
       "Entries": [
-        ""
+        "[Libra Revenant] Darkness"
       ]
     },
     {
       "ID": 700035503,
       "Entries": [
-        ""
+        "[Libra Revenant] Remembrance"
       ]
     },
     {
       "ID": 700035504,
       "Entries": [
-        ""
+        "[Libra Revenant] The Sister in the Painting"
       ]
     },
     {
       "ID": 700035505,
       "Entries": [
-        ""
+        "[Libra Revenant] Dragon School"
       ]
     },
     {
       "ID": 700035600,
       "Entries": [
-        ""
+        "[Libra Recluse] Default"
       ]
     },
     {
       "ID": 700035601,
       "Entries": [
-        ""
+        "[Libra Recluse] Dawn"
       ]
     },
     {
       "ID": 700035602,
       "Entries": [
-        ""
+        "[Libra Recluse] Darkness"
       ]
     },
     {
       "ID": 700035603,
       "Entries": [
-        ""
+        "[Libra Recluse] Remembrance"
       ]
     },
     {
       "ID": 700035604,
       "Entries": [
-        ""
+        "[Libra Recluse] Heretic Sorcerer"
       ]
     },
     {
       "ID": 700035605,
       "Entries": [
-        ""
+        "[Libra Recluse] Emerald Fate"
       ]
     },
     {
       "ID": 700035700,
       "Entries": [
-        ""
+        "[Libra Executor] Default"
       ]
     },
     {
       "ID": 700035701,
       "Entries": [
-        ""
+        "[Libra Executor] Dawn"
       ]
     },
     {
       "ID": 700035702,
       "Entries": [
-        ""
+        "[Libra Executor] Darkness"
       ]
     },
     {
       "ID": 700035703,
       "Entries": [
-        ""
+        "[Libra Executor] Remembrance"
       ]
     },
     {
       "ID": 700035704,
       "Entries": [
-        ""
+        "[Libra Executor] Thorns"
       ]
     },
     {
       "ID": 700035705,
       "Entries": [
-        ""
+        "[Libra Executor] Sable Church"
       ]
     }
   ]

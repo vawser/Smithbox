@@ -42,6 +42,7 @@
     <sleepGuardDefRate AltName="Guard Absorption %: Sleep" Wiki="Correction value of sleep attack cut rate when guarding" />
     <madnessGuardDefRate AltName="Guard Absorption %: Madness" Wiki="Correction value of mad attack cut rate when guarding" />
     <baseAtkRate AltName="Damage %: BaseAtk" Wiki="Damage multiplier for attacks with isAddBaseAtk in AtkParam, typically used with Ash of Wars." />
+	<correctSpellScalingRate AltName="Spellcast Scaling Correction" Wiki="Correction value for sorcery and incant scaling" />
   </Field>
   <Self ConsecutiveIDs="" Wiki="Defines upgrades of weapons, include stat changes and upgrade cost (EquipMtrlSetParam id offset)" AlternativeOrder="materialSetId,maxReinforceLevel,reinforcePriceRate,baseChangePriceRate,enableGemRank,-,
 baseAtkRate,physicsAtkRate,magicAtkRate,fireAtkRate,thunderAtkRate,darkAtkRate,-,
