@@ -266,7 +266,8 @@ public class Smithbox
 
     public void Run()
     {
-        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+        CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
         if (_soapstoneService != null)
         {
