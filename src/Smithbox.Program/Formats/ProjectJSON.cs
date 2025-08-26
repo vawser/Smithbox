@@ -253,7 +253,7 @@ public class LegacyProjectJSON
     public LegacyProjectJSON(ProjectEntry curProject)
     {
         ProjectName = curProject.ProjectName;
-        GameRoot = curProject.ProjectPath;
+        GameRoot = curProject.DataPath;
         GameType = curProject.ProjectType;
 
         PinnedParams = new();
