@@ -547,7 +547,7 @@
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (PlayerCommonParam) Set unknown_0xe0 to Vanilla v1.12.1 values",
+      "Message": "1.12.1 - (PlayerCommonParam) Set dlcWorldMapEventFlagForDisplay to Vanilla v1.12.1 values",
       "Command": "param PlayerCommonParam: modified \u0026\u0026 !added: unknown_0xe0: = vanillafield unknown_0xe0"
     },
     {
@@ -637,23 +637,8 @@
     },
     {
       "Version": "11210015",
-      "Message": "1.12.1 - (MenuCommonParam) Set unknown_0xe0 to Vanilla v1.12.1 values",
-      "Command": "param MenuCommonParam: modified \u0026\u0026 !added: unknown_0xe0: = vanillafield unknown_0xe0"
-    },
-    {
-      "Version": "11210015",
-      "Message": "1.12.1 - (MenuCommonParam) Set unknown_0xe1 to Vanilla v1.12.1 values",
-      "Command": "param MenuCommonParam: modified \u0026\u0026 !added: unknown_0xe1: = vanillafield unknown_0xe1"
-    },
-    {
-      "Version": "11210015",
-      "Message": "1.12.1 - (MenuCommonParam) Set unknown_0xe2 to Vanilla v1.12.1 values",
-      "Command": "param MenuCommonParam: modified \u0026\u0026 !added: unknown_0xe2: = vanillafield unknown_0xe2"
-    },
-    {
-      "Version": "11210015",
-      "Message": "1.12.1 - (MenuCommonParam) Set unknown_0xe3 to Vanilla v1.12.1 values",
-      "Command": "param MenuCommonParam: modified \u0026\u0026 !added: unknown_0xe3: = vanillafield unknown_0xe3"
+      "Message": "1.12.1 - (MenuCommonParam) Set worldMap_DlcLayerEventFlagId to Vanilla v1.12.1 values",
+      "Command": "param MenuCommonParam: modified \u0026\u0026 !added: worldMap_DlcLayerEventFlagId: = vanillafield worldMap_DlcLayerEventFlagId"
     },
     {
       "Version": "11210015",

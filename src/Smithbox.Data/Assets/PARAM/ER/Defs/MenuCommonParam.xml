@@ -585,10 +585,7 @@
     
     <Field Def="dummy8 reserved33_old[32]" RemovedVersion="11210015" />
     
-    <Field Def="u8 unknown_0xe0" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe1" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe2" FirstVersion="11210015" />
-    <Field Def="u8 unknown_0xe3" FirstVersion="11210015" />
+    <Field Def="u32 worldMap_DlcLayerEventFlagId" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xe4" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xe5" FirstVersion="11210015" />
     <Field Def="u8 unknown_0xe6" FirstVersion="11210015" />

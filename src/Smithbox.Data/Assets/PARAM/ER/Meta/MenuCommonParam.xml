@@ -62,6 +62,12 @@
     <enemyTagSafeTop AltName="Enemy HP Guage - Max Top Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the upper end? Since it is the center coordinate, the size of the gauge body is included." />
     <enemyTagSafeBottom AltName="Enemy HP Guage - Max Bottom Justification" Wiki="How far can the center coordinates of the enemy HP gauge go to the lower end? Since it is the center coordinate, the size of the gauge body is included." />
     <pcHorseHpRecoverDispThreshold AltName="HP Threshold to display Horse HP" Wiki="Threshold for displaying the PC horse HP gauge at the time of recovery. Constant value of Display HP bar when it increases more than a certain value at a time" />
+    
+    <worldMap_DlcLayerEventFlagId
+    AltName="World Map - DLC Layer Event Flag ID"
+    Wiki="The event flag that must be ON for the DLC world map to be displayed."
+    FlagAlias="" />
+    
     <reserved33 AltName="" Padding=""/>
   </Field>
   <Self />
