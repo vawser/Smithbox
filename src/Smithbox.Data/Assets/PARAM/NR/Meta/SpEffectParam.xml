@@ -1686,6 +1686,7 @@
     <applyIdOnGetSoul 
     AltName="Kill SpEffect ID" 
     Wiki="When the special effect of the state change type HP drain is enabled, when the enemy is defeated, the special effect ID set in the HP drain activation special effect of the same special effect is called (0: ignore)." 
+    Refs="SpEffectParam"
     DefaultValue="0" />
     
     <extendLifeRate 
