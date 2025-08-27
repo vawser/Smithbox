@@ -102,18 +102,6 @@ public class ParamEditorShortcuts
             {
                 Editor.GotoSelectedRow = true;
             }
-
-            // Copy Row ID
-            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
-            {
-                Editor.ParamTools.CopyRowDetails();
-            }
-
-            // Copy Row ID and Name
-            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
-            {
-                Editor.ParamTools.CopyRowDetails(true);
-            }
         }
 
         // Create Param Pin Group

@@ -512,14 +512,6 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_SearchField = InputTracker.KeybindLine(8,
                 KeyBindings.Current.PARAM_SearchField,
                 KeyBindings.Default.PARAM_SearchField);
-
-            KeyBindings.Current.PARAM_CopyId = InputTracker.KeybindLine(9,
-                KeyBindings.Current.PARAM_CopyId,
-                KeyBindings.Default.PARAM_CopyId);
-
-            KeyBindings.Current.PARAM_CopyId = InputTracker.KeybindLine(10,
-                KeyBindings.Current.PARAM_CopyIdAndName,
-                KeyBindings.Default.PARAM_CopyIdAndName);
         }
 
         if (ImGui.CollapsingHeader("Mass Edit", ImGuiTreeNodeFlags.DefaultOpen))

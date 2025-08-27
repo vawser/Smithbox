@@ -2,12 +2,24 @@ using Andre.Formats;
 using StudioCore.Editors.ParamEditor.META;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
+    public enum ParamRowCopyBehavior
+    {
+        [Display(Name = "ID")]
+        ID = 0,
+        [Display(Name = "Name")]
+        Name = 1,
+        [Display(Name = "ID and Name")]
+        ID_Name = 2
+    }
+
     public static string ParseRegulationVersion(ulong version)
     {
         string verStr = version.ToString();

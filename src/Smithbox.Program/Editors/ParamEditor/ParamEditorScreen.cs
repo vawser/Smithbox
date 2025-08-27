@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.ParamEditor.ParamUtils;
 using static StudioCore.Editors.ParamEditor.Tools.ParamTools;
 using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
@@ -1159,6 +1160,37 @@ public class ParamEditorScreen : EditorScreen
 
         _clipboardBaseRow = baseValue;
         _currentCtrlVValue = _clipboardBaseRow.ToString();
+
+        var lines = "";
+
+        // Copy the first row name to the actual clipboard
+        foreach (Param.Row r in selectionState.GetSelectedRows())
+        {
+            var appendSymbol = "\n";
+
+            if(r == selectionState.GetSelectedRows().Last())
+            {
+                appendSymbol = "";
+            }
+
+            if (r.Name != null)
+            {
+                if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.ID)
+                {
+                    lines = lines + $"{r.ID}{appendSymbol}";
+                }
+                else if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.Name)
+                {
+                    lines = lines + $"{r.Name}{appendSymbol}";
+                }
+                else if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.ID_Name)
+                {
+                    lines = lines + $"{r.ID};{r.Name}{appendSymbol}";
+                }
+            }
+        }
+
+        PlatformUtils.Instance.SetClipboardText(lines);
     }
 
     private static void DelimiterInputText()

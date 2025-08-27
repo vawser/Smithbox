@@ -11,6 +11,7 @@ using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
 
@@ -1040,6 +1041,7 @@ public class CFG
     public bool Param_ShowFieldFmgLabels = true;
     public bool Param_ShowFieldTextureLabels = true;
     public bool Param_ShowFmgDecorator = true;
+    public ParamRowCopyBehavior Param_RowCopyBehavior = ParamRowCopyBehavior.ID;
 
     public bool Param_ShowVanillaColumn = true;
     public bool Param_ShowAuxColumn = true;

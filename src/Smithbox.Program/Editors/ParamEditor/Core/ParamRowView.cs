@@ -8,6 +8,7 @@ using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Veldrid;
+using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -339,6 +341,28 @@ public class ParamRowView
 
         UIHelper.Tooltip($"Toggle the display of FMG references.\nCurrent Mode: {fmgDecoratorDisplayStatus}");
 
+        // Toggle Row Copy Behavior
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}", DPI.IconButtonSize))
+        {
+            if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.ID)
+            {
+                CFG.Current.Param_RowCopyBehavior = ParamRowCopyBehavior.Name;
+            }
+            else if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.Name)
+            {
+                CFG.Current.Param_RowCopyBehavior = ParamRowCopyBehavior.ID_Name;
+            }
+            else if (CFG.Current.Param_RowCopyBehavior == ParamRowCopyBehavior.ID_Name)
+            {
+                CFG.Current.Param_RowCopyBehavior = ParamRowCopyBehavior.ID;
+            }
+        }
+
+        UIHelper.Tooltip($"Determines what is copied to the text clipboard when Ctrl+C is used on selected rows.\nCurrent Mode: {CFG.Current.Param_RowCopyBehavior.GetDisplayName()}");
+
+
         ImGui.Separator();
     }
 
@@ -659,28 +683,6 @@ public class ParamRowView
                     ImGui.EndMenu();
                 }
                 UIHelper.Tooltip($"Duplicate the current row selection into the chosen target param.");
-
-                // Copy ID
-                if (ImGui.Selectable(@$"Copy ID", false,
-                        View.Selection.RowSelectionExists()
-                            ? ImGuiSelectableFlags.None
-                            : ImGuiSelectableFlags.Disabled))
-                {
-                    Editor.ParamTools.CopyRowDetails(false);
-                }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyId.HintText}\n\n" +
-                    "Copy the current row selection ID to the clipboard (multiple rows will produce a list of IDs).");
-
-                // Copy ID and Name
-                if (ImGui.Selectable(@$"Copy ID and Name", false,
-                        View.Selection.RowSelectionExists()
-                            ? ImGuiSelectableFlags.None
-                            : ImGuiSelectableFlags.Disabled))
-                {
-                    Editor.ParamTools.CopyRowDetails(true);
-                }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyIdAndName.HintText}\n\n" +
-                    "Copy the current row selection ID and Name to the clipboard (multiple rows will produce a list of IDs and Names).");
 
                 // Revert to Default
                 if (ImGui.Selectable(@$"Revert to Default", false,
