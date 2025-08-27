@@ -2218,8 +2218,8 @@
     
     <Field Def="s32 chaosMatchingCorrectParamId" FirstVersion="10200000"/>
     <Field Def="s32 chaosMatchingSpEffectSetParamId" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingRewardLotId" FirstVersion="10200000"/>
     <Field Def="s32 chaosMatchingItemLotId" FirstVersion="10200000"/>
-    <Field Def="s32 chaosMatchingMutationTableId" FirstVersion="10200000"/>
     <Field Def="s32 chaosMatchingUnk" FirstVersion="10200000"/>
     
     <Field Def="dummy8 endPadding[12]" FirstVersion="10200000"/>

@@ -648,23 +648,23 @@
     
     <chaosMatchingCorrectParamId
     AltName="Chaos Matching: Correction ID"
-    Wiki=""
+    Wiki="Speffect sets that determine enemy scaling for each depth."
     Refs="ChaosMatchingCorrectParam" />
     
     <chaosMatchingSpEffectSetParamId
     AltName="Chaos Matching: SpEffect Set ID"
-    Wiki=""
+    Wiki="Applies when an enemy is mutated."
     Refs="SpEffectSetParam" />
     
-    <chaosMatchingItemLotId
-    AltName="Chaos Matching: Item Lot ID"
-    Wiki=""
+    <chaosMatchingRewardLotId
+    AltName="Chaos Matching: Reward ItemLot ID"
+    Wiki="The item lot id that replaces the normal reward itemlot id when an enemy is mutated. Includes the Dormant Power roll."
     Refs="ItemLotParam_enemy" />
     
-    <chaosMatchingMutationTableId
-    AltName="Chaos Matching: Mutation Table ID"
-    Wiki=""
-    Refs="ChaosMatchingMutationEnemyTableParam" />
+    <chaosMatchingItemLotId
+    AltName="Chaos Matching: Enemy Itemlot ID"
+    Wiki="The item lot id that replaces the normal enemy itemlot id when an enemy is mutated."
+    Refs="ItemLotParam_enemy" />
 
     <Day2SpEffectParamID
     AltName="Day 2 SpEffect ID"
