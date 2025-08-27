@@ -50,19 +50,19 @@
     Wiki="The linked goods item for this relic vessel." 
     Refs="EquipParamGoods" />
     
-    <unkColor_01
-    AltName="Unknown - Color: 1"
-    Wiki=""
+    <deepRelicSlot1
+    AltName="Depths Relic Slot Color: 1"
+    Wiki="The color for the first depths relic slot."
     Enum="SLOT_COLOR" />
     
-    <unkColor_02
-    AltName="Unknown - Color: 3"
-    Wiki=""
+    <deepRelicSlot2
+    AltName="Depths Relic Slot Color: 2"
+    Wiki="The color for the second depths relic slot."
     Enum="SLOT_COLOR" />
     
-    <unkColor_03
-    AltName="Unknown - Color: 4"
-    Wiki=""
+    <deepRelicSlot3
+    AltName="Depths Relic Slot Color: 3"
+    Wiki="The color for the third depths relic slot."
     Enum="SLOT_COLOR" />
     
     <endPadding

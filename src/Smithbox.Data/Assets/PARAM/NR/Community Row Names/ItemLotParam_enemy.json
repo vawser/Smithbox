@@ -364,19 +364,19 @@
     {
       "ID": 5310000,
       "Entries": [
-        ""
+        "[Coffin]"
       ]
     },
     {
       "ID": 5310001,
       "Entries": [
-        ""
+        "[Coffin]"
       ]
     },
     {
       "ID": 5310002,
       "Entries": [
-        "Cord End"
+        "[Coffin] Cord End"
       ]
     },
     {
@@ -2008,19 +2008,19 @@
     {
       "ID": 6123000,
       "Entries": [
-        "[Unused Crater Boss]"
+        "[Unused Rotted Woods Boss]"
       ]
     },
     {
       "ID": 6123001,
       "Entries": [
-        "[Unused Crater Boss]"
+        "[Unused Rotted Woods Boss]"
       ]
     },
     {
       "ID": 6123002,
       "Entries": [
-        "[Unused Crater Boss] Power Table 8 / Wending Grace"
+        "[Unused Rotted Woods Boss] Power Table 8 / Wending Grace"
       ]
     },
     {
@@ -2044,13 +2044,13 @@
     {
       "ID": 6123100,
       "Entries": [
-        "[Lordsworn Knight (Crater?)]"
+        "[Lordsworn Knight (Rotted Woods)]"
       ]
     },
     {
       "ID": 6123101,
       "Entries": [
-        "[Lordsworn Knight (Crater?)]"
+        "[Lordsworn Knight (Rotted Woods)]"
       ]
     },
     {
@@ -2362,37 +2362,37 @@
     {
       "ID": 6300000,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {
       "ID": 6300001,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {
       "ID": 6300002,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {
       "ID": 6300100,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {
       "ID": 6300101,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {
       "ID": 6300102,
       "Entries": [
-        "[Unused Boss Drop]"
+        "[Flame of Frenzy (Random Encounter)]"
       ]
     },
     {

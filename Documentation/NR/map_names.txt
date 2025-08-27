@@ -43,7 +43,7 @@ m34_30_00_00:Ruins - Beastmen of Farum Azula
 m35_90_00_00:Ruins - Tutorial and Revenant Encounter
 m37_90_00_00:Township
 m38_00_00_00:Great Church - Oracle Envoys; Guardian Golem
-m38_10_00_00:Great Church - Oracle Envoys; Guardian Golem
+m38_10_00_00:Great Church - Mausoleum Knight; Fire Monk
 m40_00_00_00:Sorcerer's Rise - Normal
 m40_90_00_00:Sorcerer's Rise - Ruined
 m41_00_00_00:Church - Dogs
