@@ -113,6 +113,11 @@ public partial class ParamTools
                 {
                     Editor.FieldValueFinder.Display();
                 }
+
+                if (ImGui.CollapsingHeader("Find Value Set Instances"))
+                {
+                    Editor.ValueSetFinder.Display();
+                }
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder)

@@ -68,10 +68,13 @@ public class ParamEditorScreen : EditorScreen
     public ParamTools ParamTools;
     public MassEditHandler MassEditHandler;
     public PinGroups PinGroupHandler;
+
     public FieldNameFinder FieldNameFinder;
     public FieldValueFinder FieldValueFinder;
     public RowNameFinder RowNameFinder;
     public RowIDFinder RowIDFinder;
+    public ValueSetFinder ValueSetFinder;
+
     public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
@@ -98,6 +101,8 @@ public class ParamEditorScreen : EditorScreen
         FieldValueFinder = new(this);
         RowNameFinder = new(this);
         RowIDFinder = new(this);
+        ValueSetFinder = new(this);
+
         RowNamer = new(this);
         PinGroupHandler = new(this);
         ComparisonReport = new ParamComparisonReport(this, project);
