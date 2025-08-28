@@ -21,9 +21,14 @@ public class CFG
     /// Developer
     ///------------------------------------------------------------
     /// <summary>
-    /// If true, the DokuWiki tools for generating the Param page contents will be visible.
+    /// If true, the developer-only tools are visible.
     /// </summary>
-    public bool EnableWikiTools = false;
+    public bool EnableDeveloperTools = false;
+
+    /// <summary>
+    /// The local build folder for Smithbox (used for some tools)
+    /// </summary>
+    public string SmithboxBuildFolder = "";
 
     ///------------------------------------------------------------
     /// Project

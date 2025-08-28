@@ -79,7 +79,7 @@ public class QuickScript
 
     public void GenerateIconLayout(string filename, int idStart, int width, int height, int iconIncrement, int resolution)
     {
-        var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\BB\Icon Layouts";
+        var outputDir = $@"{CFG.Current.SmithboxBuildFolder}\src\Smithbox.Data\Assets\PARAM\BB\Icon Layouts";
 
         var header = $@"<TextureAtlas imagePath=""{filename}.tif"" width=""{resolution}"" height=""{resolution}"">";
         var footer = @"</TextureAtlas>";
@@ -141,7 +141,7 @@ public class QuickScript
 
     public static void ConvertToOldStyleRowNames(string type, string group)
     {
-        var outputDir = @"C:\Users\benja\Programming\C#\_temp";
+        var outputDir = $@"{CFG.Current.SmithboxBuildFolder}\_temp";
 
         var sourceFilepath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{type}";
         sourceFilepath = Path.Combine(sourceFilepath, $"{group}.json");

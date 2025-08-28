@@ -159,13 +159,6 @@ public class SystemTab
             UIHelper.Tooltip("If true, the project list is split into project type collapsible categories.");
         }
 
-        if (ImGui.CollapsingHeader("Tools"))
-        {
-            ImGui.Checkbox("Enable DokuWiki Tools",
-                ref CFG.Current.EnableWikiTools);
-            UIHelper.Tooltip("Enables various functionality changes for DokuWiki outputs.");
-        }
-
         if (ImGui.CollapsingHeader("Loggers"))
         {
             ImGui.Checkbox("Show Action Logger", ref CFG.Current.System_ShowActionLogger);
@@ -181,9 +174,34 @@ public class SystemTab
 
             ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
             UIHelper.Tooltip("The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.");
+        }
 
+        if (ImGui.CollapsingHeader("Developer"))
+        {
+            ImGui.Checkbox("Enable Developer Tools",
+                ref CFG.Current.EnableDeveloperTools);
+            UIHelper.Tooltip("Enables various tools meant for Smithbox developers only.");
+
+            ImGui.Separator();
+
+            if (ImGui.Button("Select##smithboxBuildDirSelect", DPI.StandardButtonSize))
+            {
+                var smithboxBuildDir = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Build directory", out smithboxBuildDir);
+
+                if (result)
+                {
+                    CFG.Current.SmithboxBuildFolder = smithboxBuildDir;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.InputText("Smithbox Build Directory##smithboxBuildDir", ref CFG.Current.SmithboxBuildFolder, 255);
+            UIHelper.Tooltip("Select the build directory for Smithbox (where the Smithbox.sln is placed).");
         }
     }
+
 }
 
 #endregion

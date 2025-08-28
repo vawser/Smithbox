@@ -1,6 +1,5 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -14,8 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
@@ -362,6 +359,10 @@ public class ParamRowView
 
         UIHelper.Tooltip($"Determines what is copied to the text clipboard when Ctrl+C is used on selected rows.\nCurrent Mode: {CFG.Current.Param_RowCopyBehavior.GetDisplayName()}");
 
+        if (CFG.Current.EnableDeveloperTools)
+        {
+            ParamDebugTools.DisplayQuickRowNameExport(Editor, Project);
+        }
 
         ImGui.Separator();
     }

@@ -207,7 +207,7 @@ public static class ProjectAliasEditor
                         PlatformUtils.Instance.SetClipboardText(output);
                     }
 
-                    if(CFG.Current.EnableWikiTools)
+                    if(CFG.Current.EnableDeveloperTools)
                     {
                         if (ImGui.Selectable($"Copy Entries as Table"))
                         {
