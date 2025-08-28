@@ -67,5 +67,6 @@ public static class ParamDebugTools
                 TaskLogs.AddLog($"[{project.ProjectName}:Param Editor] Exported row names to {fullPath}");
             }
         }
+        UIHelper.Tooltip("Export the current row names for the current param directly to the Smithbox.Data folder.");
     }
 }

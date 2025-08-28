@@ -54134,6 +54134,18 @@
       ]
     },
     {
+      "ID": 750000100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 750000101,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 800000000,
       "Entries": [
         ""
@@ -54652,19 +54664,19 @@
     {
       "ID": 900010020,
       "Entries": [
-        ""
+        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 1"
       ]
     },
     {
       "ID": 900010021,
       "Entries": [
-        ""
+        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 2"
       ]
     },
     {
       "ID": 900010022,
       "Entries": [
-        ""
+        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 3"
       ]
     },
     {
@@ -58100,6 +58112,18 @@
       ]
     },
     {
+      "ID": 901110005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901110010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 901110015,
       "Entries": [
         ""
@@ -58179,6 +58203,18 @@
     },
     {
       "ID": 901112000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901112005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901112010,
       "Entries": [
         ""
       ]
@@ -58268,6 +58304,18 @@
       ]
     },
     {
+      "ID": 901113005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901113010,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 901113015,
       "Entries": [
         ""
@@ -58347,6 +58395,18 @@
     },
     {
       "ID": 901116000,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901116005,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 901116010,
       "Entries": [
         ""
       ]
