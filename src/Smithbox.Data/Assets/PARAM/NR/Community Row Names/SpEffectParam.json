@@ -2500,7 +2500,7 @@
     {
       "ID": 1546,
       "Entries": [
-        "Enemy Absorption Reduction"
+        "Enemy Damage Negation Reduction"
       ]
     },
     {
@@ -65032,7 +65032,7 @@
     {
       "ID": 8800200,
       "Entries": [
-        ""
+        "WEP: Repeated Evasions Lower Damage Negation"
       ]
     },
     {
@@ -65128,379 +65128,379 @@
     {
       "ID": 8810200,
       "Entries": [
-        ""
+        "WEP: Slower Art Gauge When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810250,
       "Entries": [
-        ""
+        "WEP: Slower Art Gauge When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810300,
       "Entries": [
-        ""
+        "WEP: Poison Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810301,
       "Entries": [
-        ""
+        "WEP: Poison Buildup When Below Max HP - Apply Poison"
       ]
     },
     {
       "ID": 8810350,
       "Entries": [
-        ""
+        "WEP: Poison Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810351,
       "Entries": [
-        ""
+        "WEP: Poison Buildup When Below Max HP - Apply Poison"
       ]
     },
     {
       "ID": 8810400,
       "Entries": [
-        ""
+        "WEP: Rot Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810401,
       "Entries": [
-        ""
+        "WEP: Rot Buildup When Below Max HP - Apply Scarlet Rot"
       ]
     },
     {
       "ID": 8810450,
       "Entries": [
-        ""
+        "WEP: Rot Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810451,
       "Entries": [
-        ""
+        "WEP: Rot Buildup When Below Max HP - Apply Scarlet Rot"
       ]
     },
     {
       "ID": 8813100,
       "Entries": [
-        ""
+        "WEP: Lower Stamina Impairs Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8813150,
       "Entries": [
-        ""
+        "WEP: Lower Stamina Impairs Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8821000,
       "Entries": [
-        ""
+        "WEP: Attacks Impaired on Occasion"
       ]
     },
     {
       "ID": 8821050,
       "Entries": [
-        ""
+        "WEP: Attacks Impaired on Occasion"
       ]
     },
     {
       "ID": 8830000,
       "Entries": [
-        ""
+        "WEP: Ailments Cause Increased Damage - Potency 1"
       ]
     },
     {
       "ID": 8830050,
       "Entries": [
-        ""
+        "WEP: Ailments Cause Increased Damage - Potency 2"
       ]
     },
     {
       "ID": 8831000,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Art Gauge - Potency 1"
       ]
     },
     {
       "ID": 8831001,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Art Gauge"
       ]
     },
     {
       "ID": 8831050,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Art Gauge - Potency 2"
       ]
     },
     {
       "ID": 8831200,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831201,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831202,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831203,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP - Max HP Debuff - Potency 1"
       ]
     },
     {
       "ID": 8831220,
       "Entries": [
-        ""
+        "WEP: Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8831221,
       "Entries": [
-        ""
+        "WEP: Repeated Evasions Lower Damage Negation - Negation Debuff"
       ]
     },
     {
       "ID": 8831250,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831251,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831252,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831253,
       "Entries": [
-        ""
+        "WEP: Near Death Reduces Max HP - Max HP Debuff - Potency 2"
       ]
     },
     {
       "ID": 8850000,
       "Entries": [
-        ""
+        "WEP: Increased Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8850050,
       "Entries": [
-        ""
+        "WEP: Increased Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8850100,
       "Entries": [
-        ""
+        "WEP: Increased Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8850150,
       "Entries": [
-        ""
+        "WEP: Increased Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8850200,
       "Entries": [
-        ""
+        "WEP: Reduced FP Consumption - Potency 1"
       ]
     },
     {
       "ID": 8850250,
       "Entries": [
-        ""
+        "WEP: Reduced FP Consumption - Potency 2"
       ]
     },
     {
       "ID": 8850300,
       "Entries": [
-        ""
+        "WEP: Increased Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8850350,
       "Entries": [
-        ""
+        "WEP: Increased Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8850400,
       "Entries": [
-        ""
+        "WEP: Improved Stamina Recovery - Potency 1"
       ]
     },
     {
       "ID": 8850450,
       "Entries": [
-        ""
+        "WEP: Improved Stamina Recovery - Potency 2"
       ]
     },
     {
       "ID": 8850500,
       "Entries": [
-        ""
+        "WEP: Physical Attack Up - Potency 1"
       ]
     },
     {
       "ID": 8850550,
       "Entries": [
-        ""
+        "WEP: Physical Attack Up - Potency 2"
       ]
     },
     {
       "ID": 8850600,
       "Entries": [
-        ""
+        "WEP: Improved Affinity Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8850650,
       "Entries": [
-        ""
+        "WEP: Improved Affinity Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8850700,
       "Entries": [
-        ""
+        "WEP: Improved Stance-Breaking - Potency 1"
       ]
     },
     {
       "ID": 8850750,
       "Entries": [
-        ""
+        "WEP: Improved Stance-Breaking - Potency 2"
       ]
     },
     {
       "ID": 8850800,
       "Entries": [
-        ""
+        "WEP: Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850850,
       "Entries": [
-        ""
+        "WEP: Improved Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8850900,
       "Entries": [
-        ""
+        "WEP: Improved Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850950,
       "Entries": [
-        ""
+        "WEP: Improved Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8851000,
       "Entries": [
-        ""
+        "WEP: All Resistances Up - Potency 1"
       ]
     },
     {
       "ID": 8851050,
       "Entries": [
-        ""
+        "WEP: All Resistances Up - Potency 2"
       ]
     },
     {
       "ID": 8851100,
       "Entries": [
-        ""
+        "WEP: Improved Poise - Potency 1"
       ]
     },
     {
       "ID": 8851150,
       "Entries": [
-        ""
+        "WEP: Improved Poise - Potency 2"
       ]
     },
     {
       "ID": 8851200,
       "Entries": [
-        ""
+        "WEP: Improved Sorceries & Incantations - Potency 1"
       ]
     },
     {
       "ID": 8851250,
       "Entries": [
-        ""
+        "WEP: Improved Sorceries & Incantations - Potency 2"
       ]
     },
     {
       "ID": 8851300,
       "Entries": [
-        ""
+        "WEP: Increased Sorcery & Incantation Duration - Potency 1"
       ]
     },
     {
       "ID": 8851350,
       "Entries": [
-        ""
+        "WEP: Increased Sorcery & Incantation Duration - Potency 2"
       ]
     },
     {
       "ID": 8851800,
       "Entries": [
-        ""
+        "WEP: Improved Thrusting Counterattack - Potency 1"
       ]
     },
     {
       "ID": 8851850,
       "Entries": [
-        ""
+        "WEP: Improved Thrusting Counterattack - Potency 2"
       ]
     },
     {
       "ID": 8851900,
       "Entries": [
-        ""
+        "WEP: Improved Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8851950,
       "Entries": [
-        ""
+        "WEP: Improved Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8852000,
       "Entries": [
-        ""
+        "WEP: More Runes from Defeated Enemies - Potency 1"
       ]
     },
     {
       "ID": 8852050,
       "Entries": [
-        ""
+        "WEP: More Runes from Defeated Enemies - Potency 2"
       ]
     },
     {
@@ -65512,79 +65512,79 @@
     {
       "ID": 8880001,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Apply Frostbite"
       ]
     },
     {
       "ID": 8880010,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8880011,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Frostbite Buff (Right)"
       ]
     },
     {
       "ID": 8880012,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8880013,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Frostbite Buff (Left)"
       ]
     },
     {
       "ID": 8880014,
       "Entries": [
-        ""
+        "WEP: Ice Storm upon Charged Slash - Frostbite Debuff"
       ]
     },
     {
       "ID": 8880200,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks"
       ]
     },
     {
       "ID": 8880201,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - VFX"
       ]
     },
     {
       "ID": 8880210,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8880211,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - Black Flame Buff (Right)"
       ]
     },
     {
       "ID": 8880212,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8880213,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - Black Flame Buff (Left)"
       ]
     },
     {
       "ID": 8880214,
       "Entries": [
-        ""
+        "WEP: Black Flames upon Charge Attacks - Black Flame Debuff"
       ]
     },
     {
@@ -65596,145 +65596,145 @@
     {
       "ID": 8881000,
       "Entries": [
-        ""
+        "WEP: Holy Shockwave upon Charge Attacks"
       ]
     },
     {
       "ID": 8881010,
       "Entries": [
-        ""
+        "WEP: Holy Shockwave upon Charge Attacks - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8881011,
       "Entries": [
-        ""
+        "WEP: Holy Shockwave upon Charge Attacks - Holy Buff (Right)"
       ]
     },
     {
       "ID": 8881012,
       "Entries": [
-        ""
+        "WEP: Holy Shockwave upon Charge Attacks - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8881013,
       "Entries": [
-        ""
+        "WEP: Holy Shockwave upon Charge Attacks - Holy Buff (Left)"
       ]
     },
     {
       "ID": 8881200,
       "Entries": [
-        ""
+        "WEP: Luring Enemies upon Charge Attacks"
       ]
     },
     {
       "ID": 8881500,
       "Entries": [
-        ""
+        "WEP: Magma upon Charge Attack"
       ]
     },
     {
       "ID": 8881510,
       "Entries": [
-        ""
+        "WEP: Magma upon Charge Attack - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8881511,
       "Entries": [
-        ""
+        "WEP: Magma upon Charge Attack - Flame Buff (Right)"
       ]
     },
     {
       "ID": 8881512,
       "Entries": [
-        ""
+        "WEP: Magma upon Charge Attack - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8881513,
       "Entries": [
-        ""
+        "WEP: Magma upon Charge Attack - Flame Buff (Left)"
       ]
     },
     {
       "ID": 8882100,
       "Entries": [
-        ""
+        "WEP: Lightning upon Charge Attacks"
       ]
     },
     {
       "ID": 8882110,
       "Entries": [
-        ""
+        "WEP: Lightning upon Charge Attacks - Apply to Right-Hand"
       ]
     },
     {
       "ID": 8882111,
       "Entries": [
-        ""
+        "WEP: Lightning upon Charge Attacks - Apply Lightning (Right)"
       ]
     },
     {
       "ID": 8882112,
       "Entries": [
-        ""
+        "WEP: Lightning upon Charge Attacks - Apply to Left-Hand"
       ]
     },
     {
       "ID": 8882113,
       "Entries": [
-        ""
+        "WEP: Lightning upon Charge Attacks - Apply Lightning (Left)"
       ]
     },
     {
       "ID": 8882300,
       "Entries": [
-        ""
+        "WEP: Pest Threads upon Charged Thrust"
       ]
     },
     {
       "ID": 8882500,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist"
       ]
     },
     {
       "ID": 8882510,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Apply to Right-Hand"
       ]
     },
     {
       "ID": 8882511,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Apply Sleep (Right)"
       ]
     },
     {
       "ID": 8882512,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Apply to Left-Hand"
       ]
     },
     {
       "ID": 8882513,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Apply Sleep (Left)"
       ]
     },
     {
       "ID": 8882514,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
       ]
     },
     {
       "ID": 8882515,
       "Entries": [
-        ""
+        "WEP: Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
       ]
     },
     {
@@ -65746,19 +65746,19 @@
     {
       "ID": 8883011,
       "Entries": [
-        ""
+        "WEP: Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
       "ID": 8883012,
       "Entries": [
-        ""
+        "WEP: Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
       "ID": 8883013,
       "Entries": [
-        ""
+        "WEP: Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
@@ -65776,7 +65776,7 @@
     {
       "ID": 8883210,
       "Entries": [
-        ""
+        "WEP: Poison Mist upon Precision Aiming - Apply Poison"
       ]
     },
     {
@@ -65788,7 +65788,7 @@
     {
       "ID": 8883310,
       "Entries": [
-        ""
+        "WEP: Rot Mist upon Precision Aiming - Apply Scarlet Rot"
       ]
     },
     {
@@ -65836,19 +65836,19 @@
     {
       "ID": 8884203,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Apply Behavior 1"
+        "WEP: Shielding Creates Holy Ground - Apply Behavior Change"
       ]
     },
     {
       "ID": 8884204,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Apply Behavior 2"
+        "WEP: Shielding Creates Holy Ground - Apply Behavior Change"
       ]
     },
     {
       "ID": 8884210,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Absorption Buff"
+        "WEP: Shielding Creates Holy Ground - Damage Negation Buff"
       ]
     },
     {
@@ -65926,55 +65926,55 @@
     {
       "ID": 8885201,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator Level 1"
+        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 1"
       ]
     },
     {
       "ID": 8885202,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator Level 2"
+        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 2"
       ]
     },
     {
       "ID": 8885203,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator Level 3"
+        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 3"
       ]
     },
     {
       "ID": 8885210,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Effect Level 1"
+        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 1"
       ]
     },
     {
       "ID": 8885211,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Effect Level 2"
+        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 2"
       ]
     },
     {
       "ID": 8885212,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Effect Level 3"
+        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 3"
       ]
     },
     {
       "ID": 8885220,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect Level 1"
+        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 1"
       ]
     },
     {
       "ID": 8885221,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect Level 2"
+        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 2"
       ]
     },
     {
       "ID": 8885222,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect Level 3"
+        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 3"
       ]
     },
     {
@@ -66382,7 +66382,7 @@
     {
       "ID": 8980103,
       "Entries": [
-        "Dark Moon Greatsword - Magic Absorption Debuff on Hit"
+        "Dark Moon Greatsword - Magic Damage Negation Debuff on Hit"
       ]
     },
     {
@@ -66658,7 +66658,7 @@
     {
       "ID": 8981703,
       "Entries": [
-        "POW: Power of the Ancestral Spirit - Absorption Debuff"
+        "POW: Power of the Ancestral Spirit - Damage Negation Debuff"
       ]
     },
     {

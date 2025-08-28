@@ -825,6 +825,8 @@
                 { "ID": "2207", "Name": "Apply upon successful guard", "Description": "" },
                 { "ID": "2208", "Name": "Apply upon spell cast", "Description": "" },
                 
+                { "ID": "2121", "Name": "Attacks Impaired on Occasion", "Description": "" },
+                
                 { "ID": "2210", "Name": "Bundle of Arrows on Strong Attack", "Description": "" },
                 { "ID": "2211", "Name": "Ice Storm upon Charged Slash", "Description": "" },
                 { "ID": "2212", "Name": "Ring of Light upon Charged Slash", "Description": "" },
@@ -859,6 +861,9 @@
                 
                 { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
                 { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
+                
+                { "ID": "2355", "Name": "Near Death Reduces Art Gauge", "Description": "" }
+                { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" }
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]
