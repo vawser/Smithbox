@@ -227,8 +227,8 @@
     <defenseThrust AltName="Defence - Thrust" Wiki="Look at the attack attribute, and if it is a hit attribute, reduce the defense power." />
     <resistPoison AltName="Resist - Poison" Wiki="Difficulty in getting poisonous" />
     <resistDisease AltName="Resist - Scarlet Rot" Wiki="Difficulty in getting sick" />
-    <resistBlood AltName="Resist - Hemorrhage" Wiki="Difficulty in getting bleeding abnormalities" />
-    <resistCurse AltName="Resist - Blight" Wiki="Difficulty in getting a curse condition" />
+    <resistBlood AltName="Resist - Blood Loss" Wiki="Difficulty in getting bleeding abnormalities" />
+    <resistCurse AltName="Resist - Death Blight" Wiki="Difficulty in getting a curse condition" />
     <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamProtector"/>
     <trophySGradeId AltName="Achievement ID" Wiki="Is it related to the trophy system?" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />

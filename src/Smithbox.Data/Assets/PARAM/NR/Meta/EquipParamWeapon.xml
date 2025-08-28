@@ -396,8 +396,8 @@
     <thrustGuardCutRate AltName="Guard Absorption: Thrust" Wiki="Looking at the attack type, what percentage of the damage of the piercing attribute is cut? Specify" />
     <poisonGuardResist AltName="Guard Resist: Poison" Wiki="How much to cut the attack power to poison (set to the special effect parameter)" />
     <diseaseGuardResist AltName="Guard Resist: Scarlet Rot" Wiki="How much to cut the attack power (set as a special effect parameter) to make it a plague" />
-    <bloodGuardResist AltName="Guard Resist: Hemorrhage" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
-    <curseGuardResist AltName="Guard Resist: Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to curse" />
+    <bloodGuardResist AltName="Guard Resist: Blood Loss" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
+    <curseGuardResist AltName="Guard Resist: Death Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to curse" />
     <atkAttribute AltName="Attack Attribute [1]" Wiki="Physical attribute 1" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
     <rightHandEquipable AltName="Can wield in Right Hand" Wiki="Is it possible to equip it with the right hand?" IsBool="" />
     <leftHandEquipable AltName="Can wield in Left Hand" Wiki="Is it possible to equip it with the left hand?" IsBool="" />
@@ -485,7 +485,7 @@
     <atkAttribute2 AltName="Attack Attribute [2]" Wiki="Physical attribute referred to in the AtkParam" ProjectEnum="ATKPARAM_ATKATTR_TYPE" />
     <sleepGuardResist AltName="Guard Resist: Sleep" Wiki="How much to cut the attack power (set as a special effect parameter) to sleep" />
     <madnessGuardResist AltName="Guard Resist: Madness" Wiki="How much to cut the attack power (set to the special effect parameter) that makes you go mad" />
-    <correctType_Blood AltName="Correction Type: Hemorrhage" Wiki="Determine the type of bleeding attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
+    <correctType_Blood AltName="Correction Type: Blood Loss" Wiki="Determine the type of bleeding attack power correction graph with primary parameters" Refs="CalcCorrectGraph" />
     <properLuck AltName="Requirement: ARC" Wiki="Equipment appropriate value." />
     <freezeGuardResist AltName="Guard Resist: Frostbite" Wiki="How much to cut the attack power (set to the special effect parameter) to cool down" />
     <autoReplenishType AltName="Auto Replenish Type" Wiki="Controls whether or not to automatically replenish and default settings" Enum="AUTO_REPLENISH_TYPE" />
@@ -502,8 +502,8 @@
     <darkGuardCutRate_MaxCorrect AltName="Max Correction: Holy Guard Absorption" Wiki="Maximum value of correction value of damage darkness cut rate when guarding" />
     <poisonGuardResist_MaxCorrect AltName="Max Correction: Poison Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against poison (set as special effect parameter)" />
     <diseaseGuardResist_MaxCorrect AltName="Max Correction: Scarlet Rot Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against plague (set as special effect parameter)" />
-    <bloodGuardResist_MaxCorrect AltName="Max Correction: Hemorrhage Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against bleeding (set as special effect parameter)" />
-    <curseGuardResist_MaxCorrect AltName="Max Correction: Blight Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against curse (set as special effect parameter)" />
+    <bloodGuardResist_MaxCorrect AltName="Max Correction: Blood Loss Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against bleeding (set as special effect parameter)" />
+    <curseGuardResist_MaxCorrect AltName="Max Correction: Death Blight Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against curse (set as special effect parameter)" />
     <freezeGuardResist_MaxCorrect AltName="Max Correction: Frostbite Guard Absorption" Wiki="Maximum value of cut rate correction value for attack power against cold air (set as special effect parameter)" />
     <staminaGuardDef_MaxCorrect AltName="Max Correction: Guard Stability" Wiki="When the guard is successful, the maximum value of the defense power correction value against the enemy's stamina attack" />
     <residentSfxId_1 AltName="Resident SFX [1]" Wiki="Resident SfxId1" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
@@ -521,7 +521,7 @@
     <vsPlayerDmgCorrectRate_Thunder AltName="Vs. Player - Lightning Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Dark AltName="Vs. Player - Holy Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Poison AltName="Vs. Player - Poison Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Blood AltName="Vs. Player - Hemorrhage Damage %" Wiki="Only attacks on the player will correct the damage done." />
+    <vsPlayerDmgCorrectRate_Blood AltName="Vs. Player - Blood Loss Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <vsPlayerDmgCorrectRate_Freeze AltName="Vs. Player - Frostbite Damage %" Wiki="Only attacks on the player will correct the damage done." />
     <attainmentWepStatusStr AltName="Unique R2 Attack - STR Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />
     <attainmentWepStatusDex AltName="Unique R2 Attack - DEX Requirement" Wiki="To change the R2 attack into a special action when the status is X or higher when using a specific weapon." />

@@ -24,10 +24,10 @@
     <SoulRate AltName="Rune Multiplier" Wiki="Possession soul rate" />
     <PoisionResistRate AltName="Resist %: Poison" Wiki="Poison resistance change rate" />
     <DiseaseResistRate AltName="Resist %: Scarlet Rot" Wiki="Epidemic resistance change rate" />
-    <BloodResistRate AltName="Resist %: Hemorrhage" Wiki="Bleeding resistance change rate" />
-    <CurseResistRate AltName="Resist %: Blight" Wiki="Curse resistance change rate" />
+    <BloodResistRate AltName="Resist %: Blood Loss" Wiki="Bleeding resistance change rate" />
+    <CurseResistRate AltName="Resist %: Death Blight" Wiki="Curse resistance change rate" />
     <FreezeResistRate AltName="Resist %: Frostbite" Wiki="Cold resistance change rate" />
-    <BloodDamageRate AltName="Damage %: Hemorrhage" Wiki="Bleeding damage correction factor" />
+    <BloodDamageRate AltName="Damage %: Blood Loss" Wiki="Bleeding damage correction factor" />
     <SuperArmorDamageRate AltName="Damage %: Poise" Wiki="SA damage correction factor" />
     <FreezeDamageRate AltName="Damage %: Frostbite" Wiki="Cold damage correction factor" />
     <SleepResistRate AltName="Resist %: Sleep" Wiki="Sleep tolerance change rate" />

@@ -65,7 +65,7 @@
         <Option Value="4" Name="Apply First [10002]" />
         <Option Value="5" Name="Apply Highest (Category Priority) [1000]" />
         <Option Value="6" Name="Apply Highest (Category Priority) [1001]" />
-        <Option Value="7" Name="Apply First (Hemorrhage)" />
+        <Option Value="7" Name="Apply First (Blood Loss)" />
         <Option Value="8" Name="Apply First (Poison)" />
         <Option Value="9" Name="Apply First (Scarlet Rot)" />
         <Option Value="10" Name="Apply First (Frostbite)" />
@@ -85,7 +85,7 @@
         <Option Value="4" Name="Apply First [10002]" />
         <Option Value="5" Name="Apply Highest (Category Priority) [1000]" />
         <Option Value="6" Name="Apply Highest (Category Priority) [1001]" />
-        <Option Value="7" Name="Apply First (Hemorrhage)" />
+        <Option Value="7" Name="Apply First (Blood Loss)" />
         <Option Value="8" Name="Apply First (Poison)" />
         <Option Value="9" Name="Apply First (Scarlet Rot)" />
         <Option Value="10" Name="Apply First (Frostbite)" />

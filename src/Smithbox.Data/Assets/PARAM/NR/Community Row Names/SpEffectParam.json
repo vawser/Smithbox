@@ -46864,13 +46864,13 @@
     {
       "ID": 90020,
       "Entries": [
-        "Disable Bleed"
+        "Disable Blood Loss"
       ]
     },
     {
       "ID": 90030,
       "Entries": [
-        "Disable Blight"
+        "Disable Death Blight"
       ]
     },
     {
@@ -46972,13 +46972,13 @@
     {
       "ID": 91000,
       "Entries": [
-        "Disable Poison, Rot, Bleed, Blight, Frostbite, Sleep, Madness"
+        "Disable Poison, Rot, Blood Loss, Death Blight, Frostbite, Sleep, Madness"
       ]
     },
     {
       "ID": 91001,
       "Entries": [
-        "Disable Poison, Rot, Bleed, Blight, Frostbite, Sleep, Madness"
+        "Disable Poison, Rot, Blood Loss, Death Blight, Frostbite, Sleep, Madness"
       ]
     },
     {
@@ -65800,7 +65800,7 @@
     {
       "ID": 8883410,
       "Entries": [
-        "WEP: Bloodflies upon Precision Aiming - Apply Bleed"
+        "WEP: Bloodflies upon Precision Aiming - Apply Blood Loss"
       ]
     },
     {
@@ -66010,85 +66010,85 @@
     {
       "ID": 8920800,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920801,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920802,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920803,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920804,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920805,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920806,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920807,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920810,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920811,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920812,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920813,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920814,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
       "ID": 8920815,
       "Entries": [
-        "? - Apply Hemorrhage"
+        "? - Apply Blood Loss"
       ]
     },
     {
