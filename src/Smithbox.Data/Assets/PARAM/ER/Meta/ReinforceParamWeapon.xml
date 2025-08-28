@@ -20,8 +20,8 @@
     <thunderGuardCutRate AltName="Guard Absorption %: Lightning" Wiki="Correction value of electric shock attack cut rate when guarding" />
     <poisonGuardResistRate AltName="Guard Absorption %: Poison" Wiki="Correction value of poison attack cut rate when guarding" />
     <diseaseGuardResistRate AltName="Guard Absorption %: Scarlet Rot" Wiki="Correction value of plague attack cut rate when guarding" />
-    <bloodGuardResistRate AltName="Guard Absorption %: Hemorrhage" Wiki="Correction value for bleeding attack cut rate when guarding" />
-    <curseGuardResistRate AltName="Guard Absorption %: Blight" Wiki="Correction value of curse attack cut rate when guarding" />
+    <bloodGuardResistRate AltName="Guard Absorption %: Blood Loss" Wiki="Correction value for bleeding attack cut rate when guarding" />
+    <curseGuardResistRate AltName="Guard Absorption %: Death Blight" Wiki="Correction value of curse attack cut rate when guarding" />
     <staminaGuardDefRate AltName="Guard Absorption %: Stability" Wiki="Correction value of stamina defense power when guarding" />
     <spEffectId1 AltName="Behavior SpEffect [1] Offset" Wiki="Addition correction value for special effect ID1" />
     <spEffectId2 AltName="Behavior SpEffect [2] Offset" Wiki="Addition correction value for special effect ID2" />

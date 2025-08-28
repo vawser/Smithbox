@@ -45,13 +45,13 @@
     <reserved27 AltName="" Padding=""/>
     <resistRecoverPoint_Poision_Player AltName="Player Resist Recovery - Poison" Wiki="Player resistance recovery amount_poison point / s" />
     <resistRecoverPoint_Desease_Player AltName="Player Resist Recovery - Scarlet Rot" Wiki="Player resistance value recovery amount_plague point / s" />
-    <resistRecoverPoint_Blood_Player AltName="Player Resist Recovery - Hemorrhage" Wiki="Player resistance recovery amount_bleeding point / s" />
-    <resistRecoverPoint_Curse_Player AltName="Player Resist Recovery - Blight" Wiki="Player resistance recovery amount_curse point / s" />
+    <resistRecoverPoint_Blood_Player AltName="Player Resist Recovery - Blood Loss" Wiki="Player resistance recovery amount_bleeding point / s" />
+    <resistRecoverPoint_Curse_Player AltName="Player Resist Recovery - Death Blight" Wiki="Player resistance recovery amount_curse point / s" />
     <resistRecoverPoint_Freeze_Player AltName="Player Resist Recovery - Frostbite" Wiki="Player resistance value recovery amount_cold air point / s" />
     <resistRecoverPoint_Poision_Enemy AltName="Enemy Resist Recovery - Poison" Wiki="Enemy resistance recovery amount_poison point / s" />
     <resistRecoverPoint_Desease_Enemy AltName="Enemy Resist Recovery - Scarlet Rot" Wiki="Enemy resistance value recovery amount_plague point / s" />
-    <resistRecoverPoint_Blood_Enemy AltName="Enemy Resist Recovery - Hemorrhage" Wiki="Enemy resistance recovery amount_bleeding point / s" />
-    <resistRecoverPoint_Curse_Enemy AltName="Enemy Resist Recovery - Blight" Wiki="Enemy resistance recovery amount_curse point / s" />
+    <resistRecoverPoint_Blood_Enemy AltName="Enemy Resist Recovery - Blood Loss" Wiki="Enemy resistance recovery amount_bleeding point / s" />
+    <resistRecoverPoint_Curse_Enemy AltName="Enemy Resist Recovery - Death Blight" Wiki="Enemy resistance recovery amount_curse point / s" />
     <resistRecoverPoint_Freeze_Enemy AltName="Enemy Resist Recovery - Frostbite" Wiki="Enemy resistance value recovery amount_cold air point / s" />
     <requestTimeLeftBothHand AltName="Button Input Time for Both-Hand Left" Wiki="Button input time when holding both left hand" />
     <resistRecoverPoint_Madness_Player AltName="Player Resist Recovery - Madness" Wiki="Player resistance value recovery amount_madness point / s" />
@@ -62,11 +62,11 @@
     <mpEstusFlaskAllocateOffsetForYellowMonk AltName="FP Flask Offset - Yellow Monk" Wiki="Yellow Cloth MP Est Bottle Offset" />
     <resistRecoverPoint_Sleep_Enemy AltName="Enemy Resist Recovery - Sleep" Wiki="Enemy resistance value recovery amount_sleep point / s" />
     <resistRecoverPoint_Madness_Enemy AltName="Enemy Resist Recovery - Madness" Wiki="Enemy resistance value recovery amount_madness point / s" />
-    <resistCurseItemId AltName="Resist Blight Item ID" Wiki="Abnormal condition_immediate death_immediate death Item ID" Refs="EquipParamGoods"/>
-    <resistCurseItemMaxNum AltName="Resist Blight Item Max Count" Wiki="Abnormal condition_immediate death_maximum number of instant death items" />
+    <resistCurseItemId AltName="Resist Death Blight Item ID" Wiki="Abnormal condition_immediate death_immediate death Item ID" Refs="EquipParamGoods"/>
+    <resistCurseItemMaxNum AltName="Resist Death Blight Item Max Count" Wiki="Abnormal condition_immediate death_maximum number of instant death items" />
     <reserved_123 AltName="" Padding=""/>
-    <resistCurseItemSpEffectBaseId AltName="Resist Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
-    <resistCurseItemLotParamId_map AltName="Resist Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
+    <resistCurseItemSpEffectBaseId AltName="Resist Death Blight Item - Base SpEffect ID" Wiki="Abnormal condition_Instant death_Instant death Item possession Special effect base ID" Refs="SpEffectParam"/>
+    <resistCurseItemLotParamId_map AltName="Resist Death Blight Item - Map Item Lot ID" Wiki="Abnormal condition_immediate death_immediate death item lottery ID_for map" Refs="ItemLotParam_map"/>
     <reserved41 AltName="" Padding=""/>
   </Field>
   <Self />

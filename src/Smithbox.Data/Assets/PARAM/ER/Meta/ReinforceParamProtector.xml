@@ -12,8 +12,8 @@
     <thrustDefRate AltName="Defence %: Thrust" Wiki="Correction value of piercing defense power" />
     <resistPoisonRate AltName="Aux Resist %: Poison" Wiki="Poison resistance correction value" />
     <resistDiseaseRate AltName="Aux Resist %: Scarlet Rot" Wiki="Epidemic resistance correction value" />
-    <resistBloodRate AltName="Aux Resist %: Hemorrhage" Wiki="Bleeding resistance correction value" />
-    <resistCurseRate AltName="Aux Resist %: Blight" Wiki="Curse resistance correction value" />
+    <resistBloodRate AltName="Aux Resist %: Blood Loss" Wiki="Bleeding resistance correction value" />
+    <resistCurseRate AltName="Aux Resist %: Death Blight" Wiki="Curse resistance correction value" />
     <residentSpEffectId1 AltName="Passive SpEffect ID [1] Offset" Wiki="Addition correction value for resident special effect ID1" />
     <residentSpEffectId2 AltName="Passive SpEffect ID [2] Offset" Wiki="Addition correction value for resident special effect ID2" />
     <residentSpEffectId3 AltName="Passive SpEffect ID [3] Offset" Wiki="Addition correction value for resident special effect ID3" />

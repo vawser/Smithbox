@@ -378,12 +378,12 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="0" />
     
     <bloodAttackPower 
-    AltName="Aux Inflict +: Hemorrhage" 
+    AltName="Aux Inflict +: Blood Loss" 
     Wiki="A value to be added to the target's [bleeding resistance value] when it hits\nRequires State Info 6" 
     DefaultValue="0" />
     
     <curseAttackPower 
-    AltName="Aux Inflict +: Blight" 
+    AltName="Aux Inflict +: Death Blight" 
     Wiki="A number to be added to the target [curse resistance value] when hit\nRequires State Info 116" 
     DefaultValue="0" />
     
@@ -453,12 +453,12 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="1" />
     
     <registBloodChangeRate 
-    AltName="Aux Resist %: Hemorrhage" 
+    AltName="Aux Resist %: Blood Loss" 
     Wiki="Multiply the bleeding resistance value by the set magnification" 
     DefaultValue="1" />
     
     <registCurseChangeRate 
-    AltName="Aux Resist %: Blight" 
+    AltName="Aux Resist %: Death Blight" 
     Wiki="Multiply the spell resistance value by the set multiplier" 
     DefaultValue="1" />
     
@@ -572,7 +572,7 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="0" />
     
     <bloodDamageRate 
-    AltName="Damage Correction %: Hemorrhage" 
+    AltName="Damage Correction %: Blood Loss" 
     Wiki="Point damage of state change type [bleeding], correction value used only when% damage" 
     DefaultValue="100" />
     
@@ -916,13 +916,13 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="0" />
     
     <disableBlood 
-    AltName="Disable Hemorrhage" 
+    AltName="Disable Blood Loss" 
     Wiki="With this effect, you won't get bleeding" 
     IsBool="" 
     DefaultValue="0" />
     
     <disableCurse 
-    AltName="Disable Blight" 
+    AltName="Disable Death Blight" 
     Wiki="With this effect, you won't be cursed" 
     IsBool="" 
     DefaultValue="0" />
@@ -1370,12 +1370,12 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="0" />
     
     <changeBloodResistPoint 
-    AltName="Aux Resist +: Hemorrhage" 
+    AltName="Aux Resist +: Blood Loss" 
     Wiki="Increase or decrease the state resistance value" 
     DefaultValue="0" />
     
     <changeCurseResistPoint 
-    AltName="Aux Resist +: Blight" 
+    AltName="Aux Resist +: Death Blight" 
     Wiki="Increase or decrease the state resistance value" 
     DefaultValue="0" />
     
@@ -2033,12 +2033,12 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
     DefaultValue="1" />
     
     <bloodDefDamageRate 
-    AltName="Aux Damage Correction %: Hemorrhage" 
+    AltName="Aux Damage Correction %: Blood Loss" 
     Wiki="Bleeding resistance damage ratio: Correct the calculated damage by XX times. 1 is normal." 
     DefaultValue="1" />
     
     <curseDefDamageRate 
-    AltName="Aux Damage Correction %: Blight" 
+    AltName="Aux Damage Correction %: Death Blight" 
     Wiki="Curse resistance damage multiplier: Corrects the calculated damage by XX times. 1 is normal." 
     DefaultValue="1" />
     
@@ -2140,12 +2140,12 @@ mpRecoverChangeSpeed,allItemWeightChangeRate,grabityRate,soulStealRate,rayCastPa
         <Option Value="10000" Name="Apply First" />
         <Option Value="10001" Name="Apply First (Damage Level Change)" />
         <Option Value="10002" Name="Apply First" />
-        <Option Value="10003" Name="Apply First (Hemorrhage)" />
+        <Option Value="10003" Name="Apply First (Blood Loss)" />
         <Option Value="10004" Name="Apply First (Poison)" />
         <Option Value="10005" Name="Apply First (Scarlet Rot)" />
         <Option Value="10006" Name="Apply First" />
         <Option Value="10007" Name="Apply First (Frostbite)" />
-        <Option Value="10008" Name="Apply First (Death)" />
+        <Option Value="10008" Name="Apply First (Death Blight)" />
         <Option Value="10009" Name="Apply First (Sleep)" />
         <Option Value="10010" Name="Apply First (Madness)" />
     </Enum>

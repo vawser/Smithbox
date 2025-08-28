@@ -136,7 +136,7 @@
       "Param": "CalcCorrectGraph",
       "RowID": "112",
       "X": "Soul Level",
-      "Y": "Hemorrhage Resistance"
+      "Y": "Blood Loss Resistance"
     },
     {
       "Param": "CalcCorrectGraph",
@@ -160,7 +160,7 @@
       "Param": "CalcCorrectGraph",
       "RowID": "116",
       "X": "Soul Level",
-      "Y": "Deathblight Resistance"
+      "Y": "Death Blight Resistance"
     },
     {
       "Param": "CalcCorrectGraph",
@@ -178,7 +178,7 @@
       "Param": "CalcCorrectGraph",
       "RowID": "122",
       "X": "Stat",
-      "Y": "Hemorrhage Resistance"
+      "Y": "Blood Loss Resistance"
     },
     {
       "Param": "CalcCorrectGraph",
@@ -202,7 +202,7 @@
       "Param": "CalcCorrectGraph",
       "RowID": "126",
       "X": "Stat",
-      "Y": "Deathblight Resistance"
+      "Y": "Death Blight Resistance"
     },
     {
       "Param": "CalcCorrectGraph",

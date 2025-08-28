@@ -298,7 +298,7 @@
     {
       "ID": 70,
       "Entries": [
-        "Blight Effect"
+        "Death Blight Effect"
       ]
     },
     {
@@ -448,7 +448,7 @@
     {
       "ID": 102,
       "Entries": [
-        "Grace - Remove Hemorrhage"
+        "Grace - Remove Blood Loss"
       ]
     },
     {
@@ -490,7 +490,7 @@
     {
       "ID": 109,
       "Entries": [
-        "Grace - Remove Blight"
+        "Grace - Remove Death Blight"
       ]
     },
     {
@@ -1366,13 +1366,13 @@
     {
       "ID": 500,
       "Entries": [
-        "Hemorrhage (Cycled)"
+        "Blood Loss (Cycled)"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        "Hemorrhage - Presence of Blood"
+        "Blood Loss - Presence of Blood"
       ]
     },
     {
@@ -3358,7 +3358,7 @@
     {
       "ID": 1789,
       "Entries": [
-        "[Weapon] Eclipse Shotel - Bullet - Blight"
+        "[Weapon] Eclipse Shotel - Bullet - Death Blight"
       ]
     },
     {
@@ -3370,7 +3370,7 @@
     {
       "ID": 1791,
       "Entries": [
-        "[Weapon] Eclipse Shotel - Holy/Blight Buff"
+        "[Weapon] Eclipse Shotel - Holy/Death Blight Buff"
       ]
     },
     {
@@ -3382,13 +3382,13 @@
     {
       "ID": 1793,
       "Entries": [
-        "[Weapon] Eclipse Shotel - Holy/Blight Buff"
+        "[Weapon] Eclipse Shotel - Holy/Death Blight Buff"
       ]
     },
     {
       "ID": 1794,
       "Entries": [
-        "[Weapon] Eclipse Shotel - Blight"
+        "[Weapon] Eclipse Shotel - Death Blight"
       ]
     },
     {
@@ -4168,7 +4168,7 @@
     {
       "ID": 3051,
       "Entries": [
-        "[Item] Stanching Boluses - Remove Hemorrhage (Chained)"
+        "[Item] Stanching Boluses - Remove Blood Loss (Chained)"
       ]
     },
     {
@@ -4240,7 +4240,7 @@
     {
       "ID": 3090,
       "Entries": [
-        "[Item] Rejuvenating Boluses - Remove Blight"
+        "[Item] Rejuvenating Boluses - Remove Death Blight"
       ]
     },
     {
@@ -4288,13 +4288,13 @@
     {
       "ID": 3125,
       "Entries": [
-        "[Item] Swarm of Flies - Hemorrhage (Cycled)"
+        "[Item] Swarm of Flies - Blood Loss (Cycled)"
       ]
     },
     {
       "ID": 3126,
       "Entries": [
-        "[Item] Swarm of Flies - Hemorrhage"
+        "[Item] Swarm of Flies - Blood Loss"
       ]
     },
     {
@@ -5260,7 +5260,7 @@
     {
       "ID": 3612,
       "Entries": [
-        "[Tear] Speckled Hardtear - Remove Hemorrhage (Cycled)"
+        "[Tear] Speckled Hardtear - Remove Blood Loss (Cycled)"
       ]
     },
     {
@@ -5296,7 +5296,7 @@
     {
       "ID": 3618,
       "Entries": [
-        "[Tear] Speckled Hardtear - Remove Blight (Cycled)"
+        "[Tear] Speckled Hardtear - Remove Death Blight (Cycled)"
       ]
     },
     {
@@ -8854,79 +8854,79 @@
     {
       "ID": 6400,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 1"
+        "Blood Loss - Type 1 - Special 1"
       ]
     },
     {
       "ID": 6401,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 2"
+        "Blood Loss - Type 1 - Special 2"
       ]
     },
     {
       "ID": 6402,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 3"
+        "Blood Loss - Type 1 - Special 3"
       ]
     },
     {
       "ID": 6403,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 4"
+        "Blood Loss - Type 1 - Special 4"
       ]
     },
     {
       "ID": 6404,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 5"
+        "Blood Loss - Type 1 - Special 5"
       ]
     },
     {
       "ID": 6405,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 6"
+        "Blood Loss - Type 1 - Special 6"
       ]
     },
     {
       "ID": 6406,
       "Entries": [
-        "Hemorrhage - Type 1 - Special 7"
+        "Blood Loss - Type 1 - Special 7"
       ]
     },
     {
       "ID": 6410,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 1"
+        "Blood Loss - Type 2 - Special 1"
       ]
     },
     {
       "ID": 6411,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 2"
+        "Blood Loss - Type 2 - Special 2"
       ]
     },
     {
       "ID": 6412,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 3"
+        "Blood Loss - Type 2 - Special 3"
       ]
     },
     {
       "ID": 6413,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 4"
+        "Blood Loss - Type 2 - Special 4"
       ]
     },
     {
       "ID": 6414,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 5"
+        "Blood Loss - Type 2 - Special 5"
       ]
     },
     {
       "ID": 6415,
       "Entries": [
-        "Hemorrhage - Type 2 - Special 6"
+        "Blood Loss - Type 2 - Special 6"
       ]
     },
     {
@@ -9160,37 +9160,37 @@
     {
       "ID": 6800,
       "Entries": [
-        "Blight - Type 1 - Special 1"
+        "Death Blight - Type 1 - Special 1"
       ]
     },
     {
       "ID": 6801,
       "Entries": [
-        "Blight - Type 1 - Special 2"
+        "Death Blight - Type 1 - Special 2"
       ]
     },
     {
       "ID": 6802,
       "Entries": [
-        "Blight - Type 1 - Special 3"
+        "Death Blight - Type 1 - Special 3"
       ]
     },
     {
       "ID": 6803,
       "Entries": [
-        "Blight - Type 1 - Special 4"
+        "Death Blight - Type 1 - Special 4"
       ]
     },
     {
       "ID": 6804,
       "Entries": [
-        "Blight - Type 1 - Special 5"
+        "Death Blight - Type 1 - Special 5"
       ]
     },
     {
       "ID": 6805,
       "Entries": [
-        "Blight - Type 1 - Special 6"
+        "Death Blight - Type 1 - Special 6"
       ]
     },
     {
@@ -34210,343 +34210,343 @@
     {
       "ID": 22000,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22001,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22002,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22003,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22004,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22005,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22006,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22007,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22008,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22009,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22010,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22011,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22012,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22013,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22014,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22015,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22016,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22017,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22018,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22019,
       "Entries": [
-        "NPC: Hemorrhage"
+        "NPC: Blood Loss"
       ]
     },
     {
       "ID": 22100,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22101,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22110,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22111,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22120,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22130,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22131,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22132,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 22133,
       "Entries": [
-        "NPC: Maggots - Hemorrhage"
+        "NPC: Maggots - Blood Loss"
       ]
     },
     {
       "ID": 23000,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23001,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23002,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23003,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23004,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23005,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23006,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23007,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23008,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23009,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23010,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23011,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23012,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23013,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23014,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23015,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23016,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23017,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23018,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23019,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23100,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23101,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23102,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23110,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23111,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23112,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23113,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
       "ID": 23150,
       "Entries": [
-        "NPC: Blight"
+        "NPC: Death Blight"
       ]
     },
     {
@@ -35140,13 +35140,13 @@
     {
       "ID": 30020,
       "Entries": [
-        "NPC: Cure Hemorrhage"
+        "NPC: Cure Blood Loss"
       ]
     },
     {
       "ID": 30030,
       "Entries": [
-        "NPC: Cure Blight"
+        "NPC: Cure Death Blight"
       ]
     },
     {
@@ -35188,13 +35188,13 @@
     {
       "ID": 90020,
       "Entries": [
-        "NPC: Disable Hemorrhage"
+        "NPC: Disable Blood Loss"
       ]
     },
     {
       "ID": 90030,
       "Entries": [
-        "NPC: Disable Blight"
+        "NPC: Disable Death Blight"
       ]
     },
     {
@@ -36568,1093 +36568,1093 @@
     {
       "ID": 105000,
       "Entries": [
-        "Hemorrhage - Low - Addition +0"
+        "Blood Loss - Low - Addition +0"
       ]
     },
     {
       "ID": 105001,
       "Entries": [
-        "Hemorrhage - Low - Addition +1"
+        "Blood Loss - Low - Addition +1"
       ]
     },
     {
       "ID": 105002,
       "Entries": [
-        "Hemorrhage - Low - Addition +2"
+        "Blood Loss - Low - Addition +2"
       ]
     },
     {
       "ID": 105003,
       "Entries": [
-        "Hemorrhage - Low - Addition +3"
+        "Blood Loss - Low - Addition +3"
       ]
     },
     {
       "ID": 105004,
       "Entries": [
-        "Hemorrhage - Low - Addition +4"
+        "Blood Loss - Low - Addition +4"
       ]
     },
     {
       "ID": 105005,
       "Entries": [
-        "Hemorrhage - Low - Addition +5"
+        "Blood Loss - Low - Addition +5"
       ]
     },
     {
       "ID": 105006,
       "Entries": [
-        "Hemorrhage - Low - Addition +6"
+        "Blood Loss - Low - Addition +6"
       ]
     },
     {
       "ID": 105007,
       "Entries": [
-        "Hemorrhage - Low - Addition +7"
+        "Blood Loss - Low - Addition +7"
       ]
     },
     {
       "ID": 105008,
       "Entries": [
-        "Hemorrhage - Low - Addition +8"
+        "Blood Loss - Low - Addition +8"
       ]
     },
     {
       "ID": 105009,
       "Entries": [
-        "Hemorrhage - Low - Addition +9"
+        "Blood Loss - Low - Addition +9"
       ]
     },
     {
       "ID": 105010,
       "Entries": [
-        "Hemorrhage - Low - Addition +10"
+        "Blood Loss - Low - Addition +10"
       ]
     },
     {
       "ID": 105011,
       "Entries": [
-        "Hemorrhage - Low - Addition +11"
+        "Blood Loss - Low - Addition +11"
       ]
     },
     {
       "ID": 105012,
       "Entries": [
-        "Hemorrhage - Low - Addition +12"
+        "Blood Loss - Low - Addition +12"
       ]
     },
     {
       "ID": 105013,
       "Entries": [
-        "Hemorrhage - Low - Addition +13"
+        "Blood Loss - Low - Addition +13"
       ]
     },
     {
       "ID": 105014,
       "Entries": [
-        "Hemorrhage - Low - Addition +14"
+        "Blood Loss - Low - Addition +14"
       ]
     },
     {
       "ID": 105015,
       "Entries": [
-        "Hemorrhage - Low - Addition +15"
+        "Blood Loss - Low - Addition +15"
       ]
     },
     {
       "ID": 105016,
       "Entries": [
-        "Hemorrhage - Low - Addition +16"
+        "Blood Loss - Low - Addition +16"
       ]
     },
     {
       "ID": 105017,
       "Entries": [
-        "Hemorrhage - Low - Addition +17"
+        "Blood Loss - Low - Addition +17"
       ]
     },
     {
       "ID": 105018,
       "Entries": [
-        "Hemorrhage - Low - Addition +18"
+        "Blood Loss - Low - Addition +18"
       ]
     },
     {
       "ID": 105019,
       "Entries": [
-        "Hemorrhage - Low - Addition +19"
+        "Blood Loss - Low - Addition +19"
       ]
     },
     {
       "ID": 105020,
       "Entries": [
-        "Hemorrhage - Low - Addition +20"
+        "Blood Loss - Low - Addition +20"
       ]
     },
     {
       "ID": 105021,
       "Entries": [
-        "Hemorrhage - Low - Addition +21"
+        "Blood Loss - Low - Addition +21"
       ]
     },
     {
       "ID": 105022,
       "Entries": [
-        "Hemorrhage - Low - Addition +22"
+        "Blood Loss - Low - Addition +22"
       ]
     },
     {
       "ID": 105023,
       "Entries": [
-        "Hemorrhage - Low - Addition +23"
+        "Blood Loss - Low - Addition +23"
       ]
     },
     {
       "ID": 105024,
       "Entries": [
-        "Hemorrhage - Low - Addition +24"
+        "Blood Loss - Low - Addition +24"
       ]
     },
     {
       "ID": 105025,
       "Entries": [
-        "Hemorrhage - Low - Addition +25"
+        "Blood Loss - Low - Addition +25"
       ]
     },
     {
       "ID": 105050,
       "Entries": [
-        "Hemorrhage - Low - Innate +0"
+        "Blood Loss - Low - Innate +0"
       ]
     },
     {
       "ID": 105051,
       "Entries": [
-        "Hemorrhage - Low - Innate +1"
+        "Blood Loss - Low - Innate +1"
       ]
     },
     {
       "ID": 105052,
       "Entries": [
-        "Hemorrhage - Low - Innate +2"
+        "Blood Loss - Low - Innate +2"
       ]
     },
     {
       "ID": 105053,
       "Entries": [
-        "Hemorrhage - Low - Innate +3"
+        "Blood Loss - Low - Innate +3"
       ]
     },
     {
       "ID": 105054,
       "Entries": [
-        "Hemorrhage - Low - Innate +4"
+        "Blood Loss - Low - Innate +4"
       ]
     },
     {
       "ID": 105055,
       "Entries": [
-        "Hemorrhage - Low - Innate +5"
+        "Blood Loss - Low - Innate +5"
       ]
     },
     {
       "ID": 105056,
       "Entries": [
-        "Hemorrhage - Low - Innate +6"
+        "Blood Loss - Low - Innate +6"
       ]
     },
     {
       "ID": 105057,
       "Entries": [
-        "Hemorrhage - Low - Innate +7"
+        "Blood Loss - Low - Innate +7"
       ]
     },
     {
       "ID": 105058,
       "Entries": [
-        "Hemorrhage - Low - Innate +8"
+        "Blood Loss - Low - Innate +8"
       ]
     },
     {
       "ID": 105059,
       "Entries": [
-        "Hemorrhage - Low - Innate +9"
+        "Blood Loss - Low - Innate +9"
       ]
     },
     {
       "ID": 105060,
       "Entries": [
-        "Hemorrhage - Low - Innate +10"
+        "Blood Loss - Low - Innate +10"
       ]
     },
     {
       "ID": 105061,
       "Entries": [
-        "Hemorrhage - Low - Innate +11"
+        "Blood Loss - Low - Innate +11"
       ]
     },
     {
       "ID": 105062,
       "Entries": [
-        "Hemorrhage - Low - Innate +12"
+        "Blood Loss - Low - Innate +12"
       ]
     },
     {
       "ID": 105063,
       "Entries": [
-        "Hemorrhage - Low - Innate +13"
+        "Blood Loss - Low - Innate +13"
       ]
     },
     {
       "ID": 105064,
       "Entries": [
-        "Hemorrhage - Low - Innate +14"
+        "Blood Loss - Low - Innate +14"
       ]
     },
     {
       "ID": 105065,
       "Entries": [
-        "Hemorrhage - Low - Innate +15"
+        "Blood Loss - Low - Innate +15"
       ]
     },
     {
       "ID": 105066,
       "Entries": [
-        "Hemorrhage - Low - Innate +16"
+        "Blood Loss - Low - Innate +16"
       ]
     },
     {
       "ID": 105067,
       "Entries": [
-        "Hemorrhage - Low - Innate +17"
+        "Blood Loss - Low - Innate +17"
       ]
     },
     {
       "ID": 105068,
       "Entries": [
-        "Hemorrhage - Low - Innate +18"
+        "Blood Loss - Low - Innate +18"
       ]
     },
     {
       "ID": 105069,
       "Entries": [
-        "Hemorrhage - Low - Innate +19"
+        "Blood Loss - Low - Innate +19"
       ]
     },
     {
       "ID": 105070,
       "Entries": [
-        "Hemorrhage - Low - Innate +20"
+        "Blood Loss - Low - Innate +20"
       ]
     },
     {
       "ID": 105071,
       "Entries": [
-        "Hemorrhage - Low - Innate +21"
+        "Blood Loss - Low - Innate +21"
       ]
     },
     {
       "ID": 105072,
       "Entries": [
-        "Hemorrhage - Low - Innate +22"
+        "Blood Loss - Low - Innate +22"
       ]
     },
     {
       "ID": 105073,
       "Entries": [
-        "Hemorrhage - Low - Innate +23"
+        "Blood Loss - Low - Innate +23"
       ]
     },
     {
       "ID": 105074,
       "Entries": [
-        "Hemorrhage - Low - Innate +24"
+        "Blood Loss - Low - Innate +24"
       ]
     },
     {
       "ID": 105075,
       "Entries": [
-        "Hemorrhage - Low - Innate +25"
+        "Blood Loss - Low - Innate +25"
       ]
     },
     {
       "ID": 105100,
       "Entries": [
-        "Hemorrhage - Medium - Addition +0"
+        "Blood Loss - Medium - Addition +0"
       ]
     },
     {
       "ID": 105101,
       "Entries": [
-        "Hemorrhage - Medium - Addition +1"
+        "Blood Loss - Medium - Addition +1"
       ]
     },
     {
       "ID": 105102,
       "Entries": [
-        "Hemorrhage - Medium - Addition +2"
+        "Blood Loss - Medium - Addition +2"
       ]
     },
     {
       "ID": 105103,
       "Entries": [
-        "Hemorrhage - Medium - Addition +3"
+        "Blood Loss - Medium - Addition +3"
       ]
     },
     {
       "ID": 105104,
       "Entries": [
-        "Hemorrhage - Medium - Addition +4"
+        "Blood Loss - Medium - Addition +4"
       ]
     },
     {
       "ID": 105105,
       "Entries": [
-        "Hemorrhage - Medium - Addition +5"
+        "Blood Loss - Medium - Addition +5"
       ]
     },
     {
       "ID": 105106,
       "Entries": [
-        "Hemorrhage - Medium - Addition +6"
+        "Blood Loss - Medium - Addition +6"
       ]
     },
     {
       "ID": 105107,
       "Entries": [
-        "Hemorrhage - Medium - Addition +7"
+        "Blood Loss - Medium - Addition +7"
       ]
     },
     {
       "ID": 105108,
       "Entries": [
-        "Hemorrhage - Medium - Addition +8"
+        "Blood Loss - Medium - Addition +8"
       ]
     },
     {
       "ID": 105109,
       "Entries": [
-        "Hemorrhage - Medium - Addition +9"
+        "Blood Loss - Medium - Addition +9"
       ]
     },
     {
       "ID": 105110,
       "Entries": [
-        "Hemorrhage - Medium - Addition +10"
+        "Blood Loss - Medium - Addition +10"
       ]
     },
     {
       "ID": 105111,
       "Entries": [
-        "Hemorrhage - Medium - Addition +11"
+        "Blood Loss - Medium - Addition +11"
       ]
     },
     {
       "ID": 105112,
       "Entries": [
-        "Hemorrhage - Medium - Addition +12"
+        "Blood Loss - Medium - Addition +12"
       ]
     },
     {
       "ID": 105113,
       "Entries": [
-        "Hemorrhage - Medium - Addition +13"
+        "Blood Loss - Medium - Addition +13"
       ]
     },
     {
       "ID": 105114,
       "Entries": [
-        "Hemorrhage - Medium - Addition +14"
+        "Blood Loss - Medium - Addition +14"
       ]
     },
     {
       "ID": 105115,
       "Entries": [
-        "Hemorrhage - Medium - Addition +15"
+        "Blood Loss - Medium - Addition +15"
       ]
     },
     {
       "ID": 105116,
       "Entries": [
-        "Hemorrhage - Medium - Addition +16"
+        "Blood Loss - Medium - Addition +16"
       ]
     },
     {
       "ID": 105117,
       "Entries": [
-        "Hemorrhage - Medium - Addition +17"
+        "Blood Loss - Medium - Addition +17"
       ]
     },
     {
       "ID": 105118,
       "Entries": [
-        "Hemorrhage - Medium - Addition +18"
+        "Blood Loss - Medium - Addition +18"
       ]
     },
     {
       "ID": 105119,
       "Entries": [
-        "Hemorrhage - Medium - Addition +19"
+        "Blood Loss - Medium - Addition +19"
       ]
     },
     {
       "ID": 105120,
       "Entries": [
-        "Hemorrhage - Medium - Addition +20"
+        "Blood Loss - Medium - Addition +20"
       ]
     },
     {
       "ID": 105121,
       "Entries": [
-        "Hemorrhage - Medium - Addition +21"
+        "Blood Loss - Medium - Addition +21"
       ]
     },
     {
       "ID": 105122,
       "Entries": [
-        "Hemorrhage - Medium - Addition +22"
+        "Blood Loss - Medium - Addition +22"
       ]
     },
     {
       "ID": 105123,
       "Entries": [
-        "Hemorrhage - Medium - Addition +23"
+        "Blood Loss - Medium - Addition +23"
       ]
     },
     {
       "ID": 105124,
       "Entries": [
-        "Hemorrhage - Medium - Addition +24"
+        "Blood Loss - Medium - Addition +24"
       ]
     },
     {
       "ID": 105125,
       "Entries": [
-        "Hemorrhage - Medium - Addition +25"
+        "Blood Loss - Medium - Addition +25"
       ]
     },
     {
       "ID": 105150,
       "Entries": [
-        "Hemorrhage - Medium - Innate +0"
+        "Blood Loss - Medium - Innate +0"
       ]
     },
     {
       "ID": 105151,
       "Entries": [
-        "Hemorrhage - Medium - Innate +1"
+        "Blood Loss - Medium - Innate +1"
       ]
     },
     {
       "ID": 105152,
       "Entries": [
-        "Hemorrhage - Medium - Innate +2"
+        "Blood Loss - Medium - Innate +2"
       ]
     },
     {
       "ID": 105153,
       "Entries": [
-        "Hemorrhage - Medium - Innate +3"
+        "Blood Loss - Medium - Innate +3"
       ]
     },
     {
       "ID": 105154,
       "Entries": [
-        "Hemorrhage - Medium - Innate +4"
+        "Blood Loss - Medium - Innate +4"
       ]
     },
     {
       "ID": 105155,
       "Entries": [
-        "Hemorrhage - Medium - Innate +5"
+        "Blood Loss - Medium - Innate +5"
       ]
     },
     {
       "ID": 105156,
       "Entries": [
-        "Hemorrhage - Medium - Innate +6"
+        "Blood Loss - Medium - Innate +6"
       ]
     },
     {
       "ID": 105157,
       "Entries": [
-        "Hemorrhage - Medium - Innate +7"
+        "Blood Loss - Medium - Innate +7"
       ]
     },
     {
       "ID": 105158,
       "Entries": [
-        "Hemorrhage - Medium - Innate +8"
+        "Blood Loss - Medium - Innate +8"
       ]
     },
     {
       "ID": 105159,
       "Entries": [
-        "Hemorrhage - Medium - Innate +9"
+        "Blood Loss - Medium - Innate +9"
       ]
     },
     {
       "ID": 105160,
       "Entries": [
-        "Hemorrhage - Medium - Innate +10"
+        "Blood Loss - Medium - Innate +10"
       ]
     },
     {
       "ID": 105161,
       "Entries": [
-        "Hemorrhage - Medium - Innate +11"
+        "Blood Loss - Medium - Innate +11"
       ]
     },
     {
       "ID": 105162,
       "Entries": [
-        "Hemorrhage - Medium - Innate +12"
+        "Blood Loss - Medium - Innate +12"
       ]
     },
     {
       "ID": 105163,
       "Entries": [
-        "Hemorrhage - Medium - Innate +13"
+        "Blood Loss - Medium - Innate +13"
       ]
     },
     {
       "ID": 105164,
       "Entries": [
-        "Hemorrhage - Medium - Innate +14"
+        "Blood Loss - Medium - Innate +14"
       ]
     },
     {
       "ID": 105165,
       "Entries": [
-        "Hemorrhage - Medium - Innate +15"
+        "Blood Loss - Medium - Innate +15"
       ]
     },
     {
       "ID": 105166,
       "Entries": [
-        "Hemorrhage - Medium - Innate +16"
+        "Blood Loss - Medium - Innate +16"
       ]
     },
     {
       "ID": 105167,
       "Entries": [
-        "Hemorrhage - Medium - Innate +17"
+        "Blood Loss - Medium - Innate +17"
       ]
     },
     {
       "ID": 105168,
       "Entries": [
-        "Hemorrhage - Medium - Innate +18"
+        "Blood Loss - Medium - Innate +18"
       ]
     },
     {
       "ID": 105169,
       "Entries": [
-        "Hemorrhage - Medium - Innate +19"
+        "Blood Loss - Medium - Innate +19"
       ]
     },
     {
       "ID": 105170,
       "Entries": [
-        "Hemorrhage - Medium - Innate +20"
+        "Blood Loss - Medium - Innate +20"
       ]
     },
     {
       "ID": 105171,
       "Entries": [
-        "Hemorrhage - Medium - Innate +21"
+        "Blood Loss - Medium - Innate +21"
       ]
     },
     {
       "ID": 105172,
       "Entries": [
-        "Hemorrhage - Medium - Innate +22"
+        "Blood Loss - Medium - Innate +22"
       ]
     },
     {
       "ID": 105173,
       "Entries": [
-        "Hemorrhage - Medium - Innate +23"
+        "Blood Loss - Medium - Innate +23"
       ]
     },
     {
       "ID": 105174,
       "Entries": [
-        "Hemorrhage - Medium - Innate +24"
+        "Blood Loss - Medium - Innate +24"
       ]
     },
     {
       "ID": 105175,
       "Entries": [
-        "Hemorrhage - Medium - Innate +25"
+        "Blood Loss - Medium - Innate +25"
       ]
     },
     {
       "ID": 105200,
       "Entries": [
-        "Hemorrhage - High - Addition +0"
+        "Blood Loss - High - Addition +0"
       ]
     },
     {
       "ID": 105201,
       "Entries": [
-        "Hemorrhage - High - Addition +1"
+        "Blood Loss - High - Addition +1"
       ]
     },
     {
       "ID": 105202,
       "Entries": [
-        "Hemorrhage - High - Addition +2"
+        "Blood Loss - High - Addition +2"
       ]
     },
     {
       "ID": 105203,
       "Entries": [
-        "Hemorrhage - High - Addition +3"
+        "Blood Loss - High - Addition +3"
       ]
     },
     {
       "ID": 105204,
       "Entries": [
-        "Hemorrhage - High - Addition +4"
+        "Blood Loss - High - Addition +4"
       ]
     },
     {
       "ID": 105205,
       "Entries": [
-        "Hemorrhage - High - Addition +5"
+        "Blood Loss - High - Addition +5"
       ]
     },
     {
       "ID": 105206,
       "Entries": [
-        "Hemorrhage - High - Addition +6"
+        "Blood Loss - High - Addition +6"
       ]
     },
     {
       "ID": 105207,
       "Entries": [
-        "Hemorrhage - High - Addition +7"
+        "Blood Loss - High - Addition +7"
       ]
     },
     {
       "ID": 105208,
       "Entries": [
-        "Hemorrhage - High - Addition +8"
+        "Blood Loss - High - Addition +8"
       ]
     },
     {
       "ID": 105209,
       "Entries": [
-        "Hemorrhage - High - Addition +9"
+        "Blood Loss - High - Addition +9"
       ]
     },
     {
       "ID": 105210,
       "Entries": [
-        "Hemorrhage - High - Addition +10"
+        "Blood Loss - High - Addition +10"
       ]
     },
     {
       "ID": 105211,
       "Entries": [
-        "Hemorrhage - High - Addition +11"
+        "Blood Loss - High - Addition +11"
       ]
     },
     {
       "ID": 105212,
       "Entries": [
-        "Hemorrhage - High - Addition +12"
+        "Blood Loss - High - Addition +12"
       ]
     },
     {
       "ID": 105213,
       "Entries": [
-        "Hemorrhage - High - Addition +13"
+        "Blood Loss - High - Addition +13"
       ]
     },
     {
       "ID": 105214,
       "Entries": [
-        "Hemorrhage - High - Addition +14"
+        "Blood Loss - High - Addition +14"
       ]
     },
     {
       "ID": 105215,
       "Entries": [
-        "Hemorrhage - High - Addition +15"
+        "Blood Loss - High - Addition +15"
       ]
     },
     {
       "ID": 105216,
       "Entries": [
-        "Hemorrhage - High - Addition +16"
+        "Blood Loss - High - Addition +16"
       ]
     },
     {
       "ID": 105217,
       "Entries": [
-        "Hemorrhage - High - Addition +17"
+        "Blood Loss - High - Addition +17"
       ]
     },
     {
       "ID": 105218,
       "Entries": [
-        "Hemorrhage - High - Addition +18"
+        "Blood Loss - High - Addition +18"
       ]
     },
     {
       "ID": 105219,
       "Entries": [
-        "Hemorrhage - High - Addition +19"
+        "Blood Loss - High - Addition +19"
       ]
     },
     {
       "ID": 105220,
       "Entries": [
-        "Hemorrhage - High - Addition +20"
+        "Blood Loss - High - Addition +20"
       ]
     },
     {
       "ID": 105221,
       "Entries": [
-        "Hemorrhage - High - Addition +21"
+        "Blood Loss - High - Addition +21"
       ]
     },
     {
       "ID": 105222,
       "Entries": [
-        "Hemorrhage - High - Addition +22"
+        "Blood Loss - High - Addition +22"
       ]
     },
     {
       "ID": 105223,
       "Entries": [
-        "Hemorrhage - High - Addition +23"
+        "Blood Loss - High - Addition +23"
       ]
     },
     {
       "ID": 105224,
       "Entries": [
-        "Hemorrhage - High - Addition +24"
+        "Blood Loss - High - Addition +24"
       ]
     },
     {
       "ID": 105225,
       "Entries": [
-        "Hemorrhage - High - Addition +25"
+        "Blood Loss - High - Addition +25"
       ]
     },
     {
       "ID": 105250,
       "Entries": [
-        "Hemorrhage - High - Innate +0"
+        "Blood Loss - High - Innate +0"
       ]
     },
     {
       "ID": 105251,
       "Entries": [
-        "Hemorrhage - High - Innate +1"
+        "Blood Loss - High - Innate +1"
       ]
     },
     {
       "ID": 105252,
       "Entries": [
-        "Hemorrhage - High - Innate +2"
+        "Blood Loss - High - Innate +2"
       ]
     },
     {
       "ID": 105253,
       "Entries": [
-        "Hemorrhage - High - Innate +3"
+        "Blood Loss - High - Innate +3"
       ]
     },
     {
       "ID": 105254,
       "Entries": [
-        "Hemorrhage - High - Innate +4"
+        "Blood Loss - High - Innate +4"
       ]
     },
     {
       "ID": 105255,
       "Entries": [
-        "Hemorrhage - High - Innate +5"
+        "Blood Loss - High - Innate +5"
       ]
     },
     {
       "ID": 105256,
       "Entries": [
-        "Hemorrhage - High - Innate +6"
+        "Blood Loss - High - Innate +6"
       ]
     },
     {
       "ID": 105257,
       "Entries": [
-        "Hemorrhage - High - Innate +7"
+        "Blood Loss - High - Innate +7"
       ]
     },
     {
       "ID": 105258,
       "Entries": [
-        "Hemorrhage - High - Innate +8"
+        "Blood Loss - High - Innate +8"
       ]
     },
     {
       "ID": 105259,
       "Entries": [
-        "Hemorrhage - High - Innate +9"
+        "Blood Loss - High - Innate +9"
       ]
     },
     {
       "ID": 105260,
       "Entries": [
-        "Hemorrhage - High - Innate +10"
+        "Blood Loss - High - Innate +10"
       ]
     },
     {
       "ID": 105261,
       "Entries": [
-        "Hemorrhage - High - Innate +11"
+        "Blood Loss - High - Innate +11"
       ]
     },
     {
       "ID": 105262,
       "Entries": [
-        "Hemorrhage - High - Innate +12"
+        "Blood Loss - High - Innate +12"
       ]
     },
     {
       "ID": 105263,
       "Entries": [
-        "Hemorrhage - High - Innate +13"
+        "Blood Loss - High - Innate +13"
       ]
     },
     {
       "ID": 105264,
       "Entries": [
-        "Hemorrhage - High - Innate +14"
+        "Blood Loss - High - Innate +14"
       ]
     },
     {
       "ID": 105265,
       "Entries": [
-        "Hemorrhage - High - Innate +15"
+        "Blood Loss - High - Innate +15"
       ]
     },
     {
       "ID": 105266,
       "Entries": [
-        "Hemorrhage - High - Innate +16"
+        "Blood Loss - High - Innate +16"
       ]
     },
     {
       "ID": 105267,
       "Entries": [
-        "Hemorrhage - High - Innate +17"
+        "Blood Loss - High - Innate +17"
       ]
     },
     {
       "ID": 105268,
       "Entries": [
-        "Hemorrhage - High - Innate +18"
+        "Blood Loss - High - Innate +18"
       ]
     },
     {
       "ID": 105269,
       "Entries": [
-        "Hemorrhage - High - Innate +19"
+        "Blood Loss - High - Innate +19"
       ]
     },
     {
       "ID": 105270,
       "Entries": [
-        "Hemorrhage - High - Innate +20"
+        "Blood Loss - High - Innate +20"
       ]
     },
     {
       "ID": 105271,
       "Entries": [
-        "Hemorrhage - High - Innate +21"
+        "Blood Loss - High - Innate +21"
       ]
     },
     {
       "ID": 105272,
       "Entries": [
-        "Hemorrhage - High - Innate +22"
+        "Blood Loss - High - Innate +22"
       ]
     },
     {
       "ID": 105273,
       "Entries": [
-        "Hemorrhage - High - Innate +23"
+        "Blood Loss - High - Innate +23"
       ]
     },
     {
       "ID": 105274,
       "Entries": [
-        "Hemorrhage - High - Innate +24"
+        "Blood Loss - High - Innate +24"
       ]
     },
     {
       "ID": 105275,
       "Entries": [
-        "Hemorrhage - High - Innate +25"
+        "Blood Loss - High - Innate +25"
       ]
     },
     {
       "ID": 105300,
       "Entries": [
-        "Hemorrhage - Special - Addition +0"
+        "Blood Loss - Special - Addition +0"
       ]
     },
     {
       "ID": 105301,
       "Entries": [
-        "Hemorrhage - Special - Addition +1"
+        "Blood Loss - Special - Addition +1"
       ]
     },
     {
       "ID": 105302,
       "Entries": [
-        "Hemorrhage - Special - Addition +2"
+        "Blood Loss - Special - Addition +2"
       ]
     },
     {
       "ID": 105303,
       "Entries": [
-        "Hemorrhage - Special - Addition +3"
+        "Blood Loss - Special - Addition +3"
       ]
     },
     {
       "ID": 105304,
       "Entries": [
-        "Hemorrhage - Special - Addition +4"
+        "Blood Loss - Special - Addition +4"
       ]
     },
     {
       "ID": 105305,
       "Entries": [
-        "Hemorrhage - Special - Addition +5"
+        "Blood Loss - Special - Addition +5"
       ]
     },
     {
       "ID": 105306,
       "Entries": [
-        "Hemorrhage - Special - Addition +6"
+        "Blood Loss - Special - Addition +6"
       ]
     },
     {
       "ID": 105307,
       "Entries": [
-        "Hemorrhage - Special - Addition +7"
+        "Blood Loss - Special - Addition +7"
       ]
     },
     {
       "ID": 105308,
       "Entries": [
-        "Hemorrhage - Special - Addition +8"
+        "Blood Loss - Special - Addition +8"
       ]
     },
     {
       "ID": 105309,
       "Entries": [
-        "Hemorrhage - Special - Addition +9"
+        "Blood Loss - Special - Addition +9"
       ]
     },
     {
       "ID": 105310,
       "Entries": [
-        "Hemorrhage - Special - Addition +10"
+        "Blood Loss - Special - Addition +10"
       ]
     },
     {
       "ID": 105311,
       "Entries": [
-        "Hemorrhage - Special - Addition +11"
+        "Blood Loss - Special - Addition +11"
       ]
     },
     {
       "ID": 105312,
       "Entries": [
-        "Hemorrhage - Special - Addition +12"
+        "Blood Loss - Special - Addition +12"
       ]
     },
     {
       "ID": 105313,
       "Entries": [
-        "Hemorrhage - Special - Addition +13"
+        "Blood Loss - Special - Addition +13"
       ]
     },
     {
       "ID": 105314,
       "Entries": [
-        "Hemorrhage - Special - Addition +14"
+        "Blood Loss - Special - Addition +14"
       ]
     },
     {
       "ID": 105315,
       "Entries": [
-        "Hemorrhage - Special - Addition +15"
+        "Blood Loss - Special - Addition +15"
       ]
     },
     {
       "ID": 105316,
       "Entries": [
-        "Hemorrhage - Special - Addition +16"
+        "Blood Loss - Special - Addition +16"
       ]
     },
     {
       "ID": 105317,
       "Entries": [
-        "Hemorrhage - Special - Addition +17"
+        "Blood Loss - Special - Addition +17"
       ]
     },
     {
       "ID": 105318,
       "Entries": [
-        "Hemorrhage - Special - Addition +18"
+        "Blood Loss - Special - Addition +18"
       ]
     },
     {
       "ID": 105319,
       "Entries": [
-        "Hemorrhage - Special - Addition +19"
+        "Blood Loss - Special - Addition +19"
       ]
     },
     {
       "ID": 105320,
       "Entries": [
-        "Hemorrhage - Special - Addition +20"
+        "Blood Loss - Special - Addition +20"
       ]
     },
     {
       "ID": 105321,
       "Entries": [
-        "Hemorrhage - Special - Addition +21"
+        "Blood Loss - Special - Addition +21"
       ]
     },
     {
       "ID": 105322,
       "Entries": [
-        "Hemorrhage - Special - Addition +22"
+        "Blood Loss - Special - Addition +22"
       ]
     },
     {
       "ID": 105323,
       "Entries": [
-        "Hemorrhage - Special - Addition +23"
+        "Blood Loss - Special - Addition +23"
       ]
     },
     {
       "ID": 105324,
       "Entries": [
-        "Hemorrhage - Special - Addition +24"
+        "Blood Loss - Special - Addition +24"
       ]
     },
     {
       "ID": 105325,
       "Entries": [
-        "Hemorrhage - Special - Addition +25"
+        "Blood Loss - Special - Addition +25"
       ]
     },
     {
@@ -41728,937 +41728,937 @@
     {
       "ID": 108000,
       "Entries": [
-        "Blight - Low - Addition +0"
+        "Death Blight - Low - Addition +0"
       ]
     },
     {
       "ID": 108001,
       "Entries": [
-        "Blight - Low - Addition +1"
+        "Death Blight - Low - Addition +1"
       ]
     },
     {
       "ID": 108002,
       "Entries": [
-        "Blight - Low - Addition +2"
+        "Death Blight - Low - Addition +2"
       ]
     },
     {
       "ID": 108003,
       "Entries": [
-        "Blight - Low - Addition +3"
+        "Death Blight - Low - Addition +3"
       ]
     },
     {
       "ID": 108004,
       "Entries": [
-        "Blight - Low - Addition +4"
+        "Death Blight - Low - Addition +4"
       ]
     },
     {
       "ID": 108005,
       "Entries": [
-        "Blight - Low - Addition +5"
+        "Death Blight - Low - Addition +5"
       ]
     },
     {
       "ID": 108006,
       "Entries": [
-        "Blight - Low - Addition +6"
+        "Death Blight - Low - Addition +6"
       ]
     },
     {
       "ID": 108007,
       "Entries": [
-        "Blight - Low - Addition +7"
+        "Death Blight - Low - Addition +7"
       ]
     },
     {
       "ID": 108008,
       "Entries": [
-        "Blight - Low - Addition +8"
+        "Death Blight - Low - Addition +8"
       ]
     },
     {
       "ID": 108009,
       "Entries": [
-        "Blight - Low - Addition +9"
+        "Death Blight - Low - Addition +9"
       ]
     },
     {
       "ID": 108010,
       "Entries": [
-        "Blight - Low - Addition +10"
+        "Death Blight - Low - Addition +10"
       ]
     },
     {
       "ID": 108011,
       "Entries": [
-        "Blight - Low - Addition +11"
+        "Death Blight - Low - Addition +11"
       ]
     },
     {
       "ID": 108012,
       "Entries": [
-        "Blight - Low - Addition +12"
+        "Death Blight - Low - Addition +12"
       ]
     },
     {
       "ID": 108013,
       "Entries": [
-        "Blight - Low - Addition +13"
+        "Death Blight - Low - Addition +13"
       ]
     },
     {
       "ID": 108014,
       "Entries": [
-        "Blight - Low - Addition +14"
+        "Death Blight - Low - Addition +14"
       ]
     },
     {
       "ID": 108015,
       "Entries": [
-        "Blight - Low - Addition +15"
+        "Death Blight - Low - Addition +15"
       ]
     },
     {
       "ID": 108016,
       "Entries": [
-        "Blight - Low - Addition +16"
+        "Death Blight - Low - Addition +16"
       ]
     },
     {
       "ID": 108017,
       "Entries": [
-        "Blight - Low - Addition +17"
+        "Death Blight - Low - Addition +17"
       ]
     },
     {
       "ID": 108018,
       "Entries": [
-        "Blight - Low - Addition +18"
+        "Death Blight - Low - Addition +18"
       ]
     },
     {
       "ID": 108019,
       "Entries": [
-        "Blight - Low - Addition +19"
+        "Death Blight - Low - Addition +19"
       ]
     },
     {
       "ID": 108020,
       "Entries": [
-        "Blight - Low - Addition +20"
+        "Death Blight - Low - Addition +20"
       ]
     },
     {
       "ID": 108021,
       "Entries": [
-        "Blight - Low - Addition +21"
+        "Death Blight - Low - Addition +21"
       ]
     },
     {
       "ID": 108022,
       "Entries": [
-        "Blight - Low - Addition +22"
+        "Death Blight - Low - Addition +22"
       ]
     },
     {
       "ID": 108023,
       "Entries": [
-        "Blight - Low - Addition +23"
+        "Death Blight - Low - Addition +23"
       ]
     },
     {
       "ID": 108024,
       "Entries": [
-        "Blight - Low - Addition +24"
+        "Death Blight - Low - Addition +24"
       ]
     },
     {
       "ID": 108025,
       "Entries": [
-        "Blight - Low - Addition +25"
+        "Death Blight - Low - Addition +25"
       ]
     },
     {
       "ID": 108050,
       "Entries": [
-        "Blight - Low - Innate +0"
+        "Death Blight - Low - Innate +0"
       ]
     },
     {
       "ID": 108051,
       "Entries": [
-        "Blight - Low - Innate +1"
+        "Death Blight - Low - Innate +1"
       ]
     },
     {
       "ID": 108052,
       "Entries": [
-        "Blight - Low - Innate +2"
+        "Death Blight - Low - Innate +2"
       ]
     },
     {
       "ID": 108053,
       "Entries": [
-        "Blight - Low - Innate +3"
+        "Death Blight - Low - Innate +3"
       ]
     },
     {
       "ID": 108054,
       "Entries": [
-        "Blight - Low - Innate +4"
+        "Death Blight - Low - Innate +4"
       ]
     },
     {
       "ID": 108055,
       "Entries": [
-        "Blight - Low - Innate +5"
+        "Death Blight - Low - Innate +5"
       ]
     },
     {
       "ID": 108056,
       "Entries": [
-        "Blight - Low - Innate +6"
+        "Death Blight - Low - Innate +6"
       ]
     },
     {
       "ID": 108057,
       "Entries": [
-        "Blight - Low - Innate +7"
+        "Death Blight - Low - Innate +7"
       ]
     },
     {
       "ID": 108058,
       "Entries": [
-        "Blight - Low - Innate +8"
+        "Death Blight - Low - Innate +8"
       ]
     },
     {
       "ID": 108059,
       "Entries": [
-        "Blight - Low - Innate +9"
+        "Death Blight - Low - Innate +9"
       ]
     },
     {
       "ID": 108060,
       "Entries": [
-        "Blight - Low - Innate +10"
+        "Death Blight - Low - Innate +10"
       ]
     },
     {
       "ID": 108061,
       "Entries": [
-        "Blight - Low - Innate +11"
+        "Death Blight - Low - Innate +11"
       ]
     },
     {
       "ID": 108062,
       "Entries": [
-        "Blight - Low - Innate +12"
+        "Death Blight - Low - Innate +12"
       ]
     },
     {
       "ID": 108063,
       "Entries": [
-        "Blight - Low - Innate +13"
+        "Death Blight - Low - Innate +13"
       ]
     },
     {
       "ID": 108064,
       "Entries": [
-        "Blight - Low - Innate +14"
+        "Death Blight - Low - Innate +14"
       ]
     },
     {
       "ID": 108065,
       "Entries": [
-        "Blight - Low - Innate +15"
+        "Death Blight - Low - Innate +15"
       ]
     },
     {
       "ID": 108066,
       "Entries": [
-        "Blight - Low - Innate +16"
+        "Death Blight - Low - Innate +16"
       ]
     },
     {
       "ID": 108067,
       "Entries": [
-        "Blight - Low - Innate +17"
+        "Death Blight - Low - Innate +17"
       ]
     },
     {
       "ID": 108068,
       "Entries": [
-        "Blight - Low - Innate +18"
+        "Death Blight - Low - Innate +18"
       ]
     },
     {
       "ID": 108069,
       "Entries": [
-        "Blight - Low - Innate +19"
+        "Death Blight - Low - Innate +19"
       ]
     },
     {
       "ID": 108070,
       "Entries": [
-        "Blight - Low - Innate +20"
+        "Death Blight - Low - Innate +20"
       ]
     },
     {
       "ID": 108071,
       "Entries": [
-        "Blight - Low - Innate +21"
+        "Death Blight - Low - Innate +21"
       ]
     },
     {
       "ID": 108072,
       "Entries": [
-        "Blight - Low - Innate +22"
+        "Death Blight - Low - Innate +22"
       ]
     },
     {
       "ID": 108073,
       "Entries": [
-        "Blight - Low - Innate +23"
+        "Death Blight - Low - Innate +23"
       ]
     },
     {
       "ID": 108074,
       "Entries": [
-        "Blight - Low - Innate +24"
+        "Death Blight - Low - Innate +24"
       ]
     },
     {
       "ID": 108075,
       "Entries": [
-        "Blight - Low - Innate +25"
+        "Death Blight - Low - Innate +25"
       ]
     },
     {
       "ID": 108100,
       "Entries": [
-        "Blight - Medium - Addition +0"
+        "Death Blight - Medium - Addition +0"
       ]
     },
     {
       "ID": 108101,
       "Entries": [
-        "Blight - Medium - Addition +1"
+        "Death Blight - Medium - Addition +1"
       ]
     },
     {
       "ID": 108102,
       "Entries": [
-        "Blight - Medium - Addition +2"
+        "Death Blight - Medium - Addition +2"
       ]
     },
     {
       "ID": 108103,
       "Entries": [
-        "Blight - Medium - Addition +3"
+        "Death Blight - Medium - Addition +3"
       ]
     },
     {
       "ID": 108104,
       "Entries": [
-        "Blight - Medium - Addition +4"
+        "Death Blight - Medium - Addition +4"
       ]
     },
     {
       "ID": 108105,
       "Entries": [
-        "Blight - Medium - Addition +5"
+        "Death Blight - Medium - Addition +5"
       ]
     },
     {
       "ID": 108106,
       "Entries": [
-        "Blight - Medium - Addition +6"
+        "Death Blight - Medium - Addition +6"
       ]
     },
     {
       "ID": 108107,
       "Entries": [
-        "Blight - Medium - Addition +7"
+        "Death Blight - Medium - Addition +7"
       ]
     },
     {
       "ID": 108108,
       "Entries": [
-        "Blight - Medium - Addition +8"
+        "Death Blight - Medium - Addition +8"
       ]
     },
     {
       "ID": 108109,
       "Entries": [
-        "Blight - Medium - Addition +9"
+        "Death Blight - Medium - Addition +9"
       ]
     },
     {
       "ID": 108110,
       "Entries": [
-        "Blight - Medium - Addition +10"
+        "Death Blight - Medium - Addition +10"
       ]
     },
     {
       "ID": 108111,
       "Entries": [
-        "Blight - Medium - Addition +11"
+        "Death Blight - Medium - Addition +11"
       ]
     },
     {
       "ID": 108112,
       "Entries": [
-        "Blight - Medium - Addition +12"
+        "Death Blight - Medium - Addition +12"
       ]
     },
     {
       "ID": 108113,
       "Entries": [
-        "Blight - Medium - Addition +13"
+        "Death Blight - Medium - Addition +13"
       ]
     },
     {
       "ID": 108114,
       "Entries": [
-        "Blight - Medium - Addition +14"
+        "Death Blight - Medium - Addition +14"
       ]
     },
     {
       "ID": 108115,
       "Entries": [
-        "Blight - Medium - Addition +15"
+        "Death Blight - Medium - Addition +15"
       ]
     },
     {
       "ID": 108116,
       "Entries": [
-        "Blight - Medium - Addition +16"
+        "Death Blight - Medium - Addition +16"
       ]
     },
     {
       "ID": 108117,
       "Entries": [
-        "Blight - Medium - Addition +17"
+        "Death Blight - Medium - Addition +17"
       ]
     },
     {
       "ID": 108118,
       "Entries": [
-        "Blight - Medium - Addition +18"
+        "Death Blight - Medium - Addition +18"
       ]
     },
     {
       "ID": 108119,
       "Entries": [
-        "Blight - Medium - Addition +19"
+        "Death Blight - Medium - Addition +19"
       ]
     },
     {
       "ID": 108120,
       "Entries": [
-        "Blight - Medium - Addition +20"
+        "Death Blight - Medium - Addition +20"
       ]
     },
     {
       "ID": 108121,
       "Entries": [
-        "Blight - Medium - Addition +21"
+        "Death Blight - Medium - Addition +21"
       ]
     },
     {
       "ID": 108122,
       "Entries": [
-        "Blight - Medium - Addition +22"
+        "Death Blight - Medium - Addition +22"
       ]
     },
     {
       "ID": 108123,
       "Entries": [
-        "Blight - Medium - Addition +23"
+        "Death Blight - Medium - Addition +23"
       ]
     },
     {
       "ID": 108124,
       "Entries": [
-        "Blight - Medium - Addition +24"
+        "Death Blight - Medium - Addition +24"
       ]
     },
     {
       "ID": 108125,
       "Entries": [
-        "Blight - Medium - Addition +25"
+        "Death Blight - Medium - Addition +25"
       ]
     },
     {
       "ID": 108150,
       "Entries": [
-        "Blight - Medium - Innate +0"
+        "Death Blight - Medium - Innate +0"
       ]
     },
     {
       "ID": 108151,
       "Entries": [
-        "Blight - Medium - Innate +1"
+        "Death Blight - Medium - Innate +1"
       ]
     },
     {
       "ID": 108152,
       "Entries": [
-        "Blight - Medium - Innate +2"
+        "Death Blight - Medium - Innate +2"
       ]
     },
     {
       "ID": 108153,
       "Entries": [
-        "Blight - Medium - Innate +3"
+        "Death Blight - Medium - Innate +3"
       ]
     },
     {
       "ID": 108154,
       "Entries": [
-        "Blight - Medium - Innate +4"
+        "Death Blight - Medium - Innate +4"
       ]
     },
     {
       "ID": 108155,
       "Entries": [
-        "Blight - Medium - Innate +5"
+        "Death Blight - Medium - Innate +5"
       ]
     },
     {
       "ID": 108156,
       "Entries": [
-        "Blight - Medium - Innate +6"
+        "Death Blight - Medium - Innate +6"
       ]
     },
     {
       "ID": 108157,
       "Entries": [
-        "Blight - Medium - Innate +7"
+        "Death Blight - Medium - Innate +7"
       ]
     },
     {
       "ID": 108158,
       "Entries": [
-        "Blight - Medium - Innate +8"
+        "Death Blight - Medium - Innate +8"
       ]
     },
     {
       "ID": 108159,
       "Entries": [
-        "Blight - Medium - Innate +9"
+        "Death Blight - Medium - Innate +9"
       ]
     },
     {
       "ID": 108160,
       "Entries": [
-        "Blight - Medium - Innate +10"
+        "Death Blight - Medium - Innate +10"
       ]
     },
     {
       "ID": 108161,
       "Entries": [
-        "Blight - Medium - Innate +11"
+        "Death Blight - Medium - Innate +11"
       ]
     },
     {
       "ID": 108162,
       "Entries": [
-        "Blight - Medium - Innate +12"
+        "Death Blight - Medium - Innate +12"
       ]
     },
     {
       "ID": 108163,
       "Entries": [
-        "Blight - Medium - Innate +13"
+        "Death Blight - Medium - Innate +13"
       ]
     },
     {
       "ID": 108164,
       "Entries": [
-        "Blight - Medium - Innate +14"
+        "Death Blight - Medium - Innate +14"
       ]
     },
     {
       "ID": 108165,
       "Entries": [
-        "Blight - Medium - Innate +15"
+        "Death Blight - Medium - Innate +15"
       ]
     },
     {
       "ID": 108166,
       "Entries": [
-        "Blight - Medium - Innate +16"
+        "Death Blight - Medium - Innate +16"
       ]
     },
     {
       "ID": 108167,
       "Entries": [
-        "Blight - Medium - Innate +17"
+        "Death Blight - Medium - Innate +17"
       ]
     },
     {
       "ID": 108168,
       "Entries": [
-        "Blight - Medium - Innate +18"
+        "Death Blight - Medium - Innate +18"
       ]
     },
     {
       "ID": 108169,
       "Entries": [
-        "Blight - Medium - Innate +19"
+        "Death Blight - Medium - Innate +19"
       ]
     },
     {
       "ID": 108170,
       "Entries": [
-        "Blight - Medium - Innate +20"
+        "Death Blight - Medium - Innate +20"
       ]
     },
     {
       "ID": 108171,
       "Entries": [
-        "Blight - Medium - Innate +21"
+        "Death Blight - Medium - Innate +21"
       ]
     },
     {
       "ID": 108172,
       "Entries": [
-        "Blight - Medium - Innate +22"
+        "Death Blight - Medium - Innate +22"
       ]
     },
     {
       "ID": 108173,
       "Entries": [
-        "Blight - Medium - Innate +23"
+        "Death Blight - Medium - Innate +23"
       ]
     },
     {
       "ID": 108174,
       "Entries": [
-        "Blight - Medium - Innate +24"
+        "Death Blight - Medium - Innate +24"
       ]
     },
     {
       "ID": 108175,
       "Entries": [
-        "Blight - Medium - Innate +25"
+        "Death Blight - Medium - Innate +25"
       ]
     },
     {
       "ID": 108200,
       "Entries": [
-        "Blight - High - Addition +0"
+        "Death Blight - High - Addition +0"
       ]
     },
     {
       "ID": 108201,
       "Entries": [
-        "Blight - High - Addition +1"
+        "Death Blight - High - Addition +1"
       ]
     },
     {
       "ID": 108202,
       "Entries": [
-        "Blight - High - Addition +2"
+        "Death Blight - High - Addition +2"
       ]
     },
     {
       "ID": 108203,
       "Entries": [
-        "Blight - High - Addition +3"
+        "Death Blight - High - Addition +3"
       ]
     },
     {
       "ID": 108204,
       "Entries": [
-        "Blight - High - Addition +4"
+        "Death Blight - High - Addition +4"
       ]
     },
     {
       "ID": 108205,
       "Entries": [
-        "Blight - High - Addition +5"
+        "Death Blight - High - Addition +5"
       ]
     },
     {
       "ID": 108206,
       "Entries": [
-        "Blight - High - Addition +6"
+        "Death Blight - High - Addition +6"
       ]
     },
     {
       "ID": 108207,
       "Entries": [
-        "Blight - High - Addition +7"
+        "Death Blight - High - Addition +7"
       ]
     },
     {
       "ID": 108208,
       "Entries": [
-        "Blight - High - Addition +8"
+        "Death Blight - High - Addition +8"
       ]
     },
     {
       "ID": 108209,
       "Entries": [
-        "Blight - High - Addition +9"
+        "Death Blight - High - Addition +9"
       ]
     },
     {
       "ID": 108210,
       "Entries": [
-        "Blight - High - Addition +10"
+        "Death Blight - High - Addition +10"
       ]
     },
     {
       "ID": 108211,
       "Entries": [
-        "Blight - High - Addition +11"
+        "Death Blight - High - Addition +11"
       ]
     },
     {
       "ID": 108212,
       "Entries": [
-        "Blight - High - Addition +12"
+        "Death Blight - High - Addition +12"
       ]
     },
     {
       "ID": 108213,
       "Entries": [
-        "Blight - High - Addition +13"
+        "Death Blight - High - Addition +13"
       ]
     },
     {
       "ID": 108214,
       "Entries": [
-        "Blight - High - Addition +14"
+        "Death Blight - High - Addition +14"
       ]
     },
     {
       "ID": 108215,
       "Entries": [
-        "Blight - High - Addition +15"
+        "Death Blight - High - Addition +15"
       ]
     },
     {
       "ID": 108216,
       "Entries": [
-        "Blight - High - Addition +16"
+        "Death Blight - High - Addition +16"
       ]
     },
     {
       "ID": 108217,
       "Entries": [
-        "Blight - High - Addition +17"
+        "Death Blight - High - Addition +17"
       ]
     },
     {
       "ID": 108218,
       "Entries": [
-        "Blight - High - Addition +18"
+        "Death Blight - High - Addition +18"
       ]
     },
     {
       "ID": 108219,
       "Entries": [
-        "Blight - High - Addition +19"
+        "Death Blight - High - Addition +19"
       ]
     },
     {
       "ID": 108220,
       "Entries": [
-        "Blight - High - Addition +20"
+        "Death Blight - High - Addition +20"
       ]
     },
     {
       "ID": 108221,
       "Entries": [
-        "Blight - High - Addition +21"
+        "Death Blight - High - Addition +21"
       ]
     },
     {
       "ID": 108222,
       "Entries": [
-        "Blight - High - Addition +22"
+        "Death Blight - High - Addition +22"
       ]
     },
     {
       "ID": 108223,
       "Entries": [
-        "Blight - High - Addition +23"
+        "Death Blight - High - Addition +23"
       ]
     },
     {
       "ID": 108224,
       "Entries": [
-        "Blight - High - Addition +24"
+        "Death Blight - High - Addition +24"
       ]
     },
     {
       "ID": 108225,
       "Entries": [
-        "Blight - High - Addition +25"
+        "Death Blight - High - Addition +25"
       ]
     },
     {
       "ID": 108250,
       "Entries": [
-        "Blight - High - Innate +0"
+        "Death Blight - High - Innate +0"
       ]
     },
     {
       "ID": 108251,
       "Entries": [
-        "Blight - High - Innate +1"
+        "Death Blight - High - Innate +1"
       ]
     },
     {
       "ID": 108252,
       "Entries": [
-        "Blight - High - Innate +2"
+        "Death Blight - High - Innate +2"
       ]
     },
     {
       "ID": 108253,
       "Entries": [
-        "Blight - High - Innate +3"
+        "Death Blight - High - Innate +3"
       ]
     },
     {
       "ID": 108254,
       "Entries": [
-        "Blight - High - Innate +4"
+        "Death Blight - High - Innate +4"
       ]
     },
     {
       "ID": 108255,
       "Entries": [
-        "Blight - High - Innate +5"
+        "Death Blight - High - Innate +5"
       ]
     },
     {
       "ID": 108256,
       "Entries": [
-        "Blight - High - Innate +6"
+        "Death Blight - High - Innate +6"
       ]
     },
     {
       "ID": 108257,
       "Entries": [
-        "Blight - High - Innate +7"
+        "Death Blight - High - Innate +7"
       ]
     },
     {
       "ID": 108258,
       "Entries": [
-        "Blight - High - Innate +8"
+        "Death Blight - High - Innate +8"
       ]
     },
     {
       "ID": 108259,
       "Entries": [
-        "Blight - High - Innate +9"
+        "Death Blight - High - Innate +9"
       ]
     },
     {
       "ID": 108260,
       "Entries": [
-        "Blight - High - Innate +10"
+        "Death Blight - High - Innate +10"
       ]
     },
     {
       "ID": 108261,
       "Entries": [
-        "Blight - High - Innate +11"
+        "Death Blight - High - Innate +11"
       ]
     },
     {
       "ID": 108262,
       "Entries": [
-        "Blight - High - Innate +12"
+        "Death Blight - High - Innate +12"
       ]
     },
     {
       "ID": 108263,
       "Entries": [
-        "Blight - High - Innate +13"
+        "Death Blight - High - Innate +13"
       ]
     },
     {
       "ID": 108264,
       "Entries": [
-        "Blight - High - Innate +14"
+        "Death Blight - High - Innate +14"
       ]
     },
     {
       "ID": 108265,
       "Entries": [
-        "Blight - High - Innate +15"
+        "Death Blight - High - Innate +15"
       ]
     },
     {
       "ID": 108266,
       "Entries": [
-        "Blight - High - Innate +16"
+        "Death Blight - High - Innate +16"
       ]
     },
     {
       "ID": 108267,
       "Entries": [
-        "Blight - High - Innate +17"
+        "Death Blight - High - Innate +17"
       ]
     },
     {
       "ID": 108268,
       "Entries": [
-        "Blight - High - Innate +18"
+        "Death Blight - High - Innate +18"
       ]
     },
     {
       "ID": 108269,
       "Entries": [
-        "Blight - High - Innate +19"
+        "Death Blight - High - Innate +19"
       ]
     },
     {
       "ID": 108270,
       "Entries": [
-        "Blight - High - Innate +20"
+        "Death Blight - High - Innate +20"
       ]
     },
     {
       "ID": 108271,
       "Entries": [
-        "Blight - High - Innate +21"
+        "Death Blight - High - Innate +21"
       ]
     },
     {
       "ID": 108272,
       "Entries": [
-        "Blight - High - Innate +22"
+        "Death Blight - High - Innate +22"
       ]
     },
     {
       "ID": 108273,
       "Entries": [
-        "Blight - High - Innate +23"
+        "Death Blight - High - Innate +23"
       ]
     },
     {
       "ID": 108274,
       "Entries": [
-        "Blight - High - Innate +24"
+        "Death Blight - High - Innate +24"
       ]
     },
     {
       "ID": 108275,
       "Entries": [
-        "Blight - High - Innate +25"
+        "Death Blight - High - Innate +25"
       ]
     },
     {
@@ -66280,7 +66280,7 @@
     {
       "ID": 20381203,
       "Entries": [
-        "[Talisman] Ailment Talisman: Setup Hemorrhage Resistance Boost"
+        "[Talisman] Ailment Talisman: Setup Blood Loss Resistance Boost"
       ]
     },
     {
@@ -66322,7 +66322,7 @@
     {
       "ID": 20381213,
       "Entries": [
-        "[Talisman] Ailment Talisman: Monitor Hemorrhage Application"
+        "[Talisman] Ailment Talisman: Monitor Blood Loss Application"
       ]
     },
     {
@@ -66358,7 +66358,7 @@
     {
       "ID": 20381223,
       "Entries": [
-        "[Talisman] Ailment Talisman: Apply on Hemorrhage"
+        "[Talisman] Ailment Talisman: Apply on Blood Loss"
       ]
     },
     {
@@ -66394,7 +66394,7 @@
     {
       "ID": 20381233,
       "Entries": [
-        "[Talisman] Ailment Talisman: Hemorrhage Resistance Boost"
+        "[Talisman] Ailment Talisman: Blood Loss Resistance Boost"
       ]
     },
     {
@@ -66430,7 +66430,7 @@
     {
       "ID": 20381243,
       "Entries": [
-        "[Talisman] Ailment Talisman: Hemorrhage Tracker"
+        "[Talisman] Ailment Talisman: Blood Loss Tracker"
       ]
     },
     {
@@ -66502,7 +66502,7 @@
     {
       "ID": 20381263,
       "Entries": [
-        "[Talisman] Ailment Talisman: Reduce Hemorrhage Axu"
+        "[Talisman] Ailment Talisman: Reduce Blood Loss Aux"
       ]
     },
     {
@@ -66538,7 +66538,7 @@
     {
       "ID": 20381273,
       "Entries": [
-        "[Talisman] Ailment Talisman: Setup Hemorrhage Reduction"
+        "[Talisman] Ailment Talisman: Setup Blood Loss Reduction"
       ]
     },
     {
@@ -66574,7 +66574,7 @@
     {
       "ID": 20381283,
       "Entries": [
-        "[Talisman] Ailment Talisman: Hemorrhage Reduction Duration"
+        "[Talisman] Ailment Talisman: Blood Loss Reduction Duration"
       ]
     },
     {
@@ -66910,7 +66910,7 @@
     {
       "ID": 20500902,
       "Entries": [
-        "[Item] Blessing of Marika: Remove Hemorrhage Buildup"
+        "[Item] Blessing of Marika: Remove Blood Loss Buildup"
       ]
     },
     {
@@ -66946,7 +66946,7 @@
     {
       "ID": 20500908,
       "Entries": [
-        "[Item] Blessing of Marika: Remove Deathblight Buildup"
+        "[Item] Blessing of Marika: Remove Death Blight Buildup"
       ]
     },
     {
@@ -66964,7 +66964,7 @@
     {
       "ID": 20500912,
       "Entries": [
-        "[Item] Blessing of Marika: Clear Hemorrhage"
+        "[Item] Blessing of Marika: Clear Blood Loss"
       ]
     },
     {
@@ -67000,7 +67000,7 @@
     {
       "ID": 20500918,
       "Entries": [
-        "[Item] Blessing of Marika: Clear Deathblight"
+        "[Item] Blessing of Marika: Clear Death Blight"
       ]
     },
     {
@@ -67714,7 +67714,7 @@
     {
       "ID": 21490003,
       "Entries": [
-        "[Sorcery] Mantle of Thorns: Apply Hemorrhage"
+        "[Sorcery] Mantle of Thorns: Apply Blood Loss"
       ]
     },
     {
@@ -67726,13 +67726,13 @@
     {
       "ID": 21491001,
       "Entries": [
-        "[Sorcery] Impenetrable Thorns: Apply Hemorrhage"
+        "[Sorcery] Impenetrable Thorns: Apply Blood Loss"
       ]
     },
     {
       "ID": 21491010,
       "Entries": [
-        "[Sorcery] Impenetrable Thorns: Apply Hemorrhage"
+        "[Sorcery] Impenetrable Thorns: Apply Blood Loss"
       ]
     },
     {
@@ -67786,7 +67786,7 @@
     {
       "ID": 21630001,
       "Entries": [
-        "[Incantation] Furious Blade of Ansbach: Attack 1 - Apply Hemorrhage"
+        "[Incantation] Furious Blade of Ansbach: Attack 1 - Apply Blood Loss"
       ]
     },
     {
@@ -67798,7 +67798,7 @@
     {
       "ID": 21630003,
       "Entries": [
-        "[Incantation] Furious Blade of Ansbach: Attack 2 - Apply Hemorrhage"
+        "[Incantation] Furious Blade of Ansbach: Attack 2 - Apply Blood Loss"
       ]
     },
     {
@@ -67810,7 +67810,7 @@
     {
       "ID": 21630011,
       "Entries": [
-        "[Incantation] Furious Blade of Ansbach: Attack 3 - Apply Hemorrhage"
+        "[Incantation] Furious Blade of Ansbach: Attack 3 - Apply Blood Loss"
       ]
     },
     {
@@ -67822,7 +67822,7 @@
     {
       "ID": 21630013,
       "Entries": [
-        "[Incantation] Furious Blade of Ansbach: Attack 4 - Apply Hemorrhage"
+        "[Incantation] Furious Blade of Ansbach: Attack 4 - Apply Blood Loss"
       ]
     },
     {

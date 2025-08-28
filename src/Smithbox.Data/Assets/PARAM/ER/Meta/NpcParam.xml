@@ -315,8 +315,8 @@
     <defFlickPower AltName="Weapon Repel Power" Wiki="Used to determine the repelling of enemy attacks. // It is intended to be repelled by normal attacks other than guards. // Enemies with a hard skin can be repelled without doing anything ... It doesn't matter if it is a normal enemy." />
     <resist_poison AltName="Resist - Poison" Wiki="Difficulty in getting poisonous" />
     <resist_desease AltName="Resist - Scarlet Rot" Wiki="Difficulty in getting sick" />
-    <resist_blood AltName="Resist - Hemorrhage" Wiki="Difficulty in getting bleeding abnormalities" />
-    <resist_curse AltName="Resist - Blight" Wiki="Difficulty in dealing with abnormal curse conditions" />
+    <resist_blood AltName="Resist - Blood Loss" Wiki="Difficulty in getting bleeding abnormalities" />
+    <resist_curse AltName="Resist - Death Blight" Wiki="Difficulty in dealing with abnormal curse conditions" />
     <ghostModelId AltName="Ghost Model ID" Wiki="Replacement model when wandering ghost, texture ID" />
     <normalChangeResouceId AltName="Override Resource Chr ID" Wiki="Replace resource ID during normal operation (do not use it unnecessarily)" />
     <guardAngle AltName="Guard Angle" Wiki="Defense range angle when guarding weapons. Pending" />
@@ -351,8 +351,8 @@
     <burnSfxType AltName="Burn SFX Type" Wiki="SFX type at the time of combustion" Enum="NPC_BURN_TYPE" />
     <poisonGuardResist AltName="Guard Resist - Poison" Wiki="How much to cut the attack power to poison (set to the special effect parameter)" />
     <diseaseGuardResist AltName="Guard Resist - Scarlet Rot" Wiki="How much to cut the attack power (set as a special effect parameter) to make it a plague" />
-    <bloodGuardResist AltName="Guard Resist - Hemorrhage" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
-    <curseGuardResist AltName="Guard Resist - Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to make a curse" />
+    <bloodGuardResist AltName="Guard Resist - Blood Loss" Wiki="How much to cut the attack power (set as a special effect parameter) to make bleeding" />
+    <curseGuardResist AltName="Guard Resist - Death Blight" Wiki="How much to cut the attack power (set as a special effect parameter) to make a curse" />
     <parryAttack AltName="Parry Attack Power" Wiki="Parry attack power. Used by the parrying side" />
     <parryDefence AltName="Parry Defence Power" Wiki="Parry defense. Used by the parried side." />
     <sfxSize AltName="SFX Size" Wiki="SFX size" Enum="NPC_SFX_SIZE" />
@@ -544,8 +544,8 @@
     <superArmorDurability AltName="Poise" Wiki="Super armor durability value" />
     <saRecoveryRate AltName="Poise Recovery" Wiki="Correct the SA recovery speed by multiplying the SA basic recovery amount" />
     <saGuardCutRate AltName="Guard Absorption % - Poise Damage" Wiki="Cut rate of SA damage when guard is successful" />
-    <resistCorrectId_blood AltName="Resist Correction - Hemorrhage" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
-    <resistCorrectId_curse AltName="Resist Correction - Blight" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
+    <resistCorrectId_blood AltName="Resist Correction - Blood Loss" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
+    <resistCorrectId_curse AltName="Resist Correction - Death Blight" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <resistCorrectId_freeze AltName="Resist Correction - Frostbite" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the setting value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <resistCorrectId_sleep AltName="Resist Correction - Sleep" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
     <resistCorrectId_madness AltName="Resist Correction - Madness" Wiki="When the abnormal condition is activated, the maximum value is temporarily changed by using the set value of the abnormal condition resistance correction parameter." Refs="ResistCorrectParam"/>
