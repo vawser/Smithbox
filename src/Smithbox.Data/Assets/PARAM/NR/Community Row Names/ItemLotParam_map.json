@@ -3046,25 +3046,25 @@
     {
       "ID": 1012000000,
       "Entries": [
-        "[Lot] <Table> Fire Pot"
+        "[Mountaintop Crystal] Weapon"
       ]
     },
     {
       "ID": 1012000001,
       "Entries": [
-        "[Lot] <Table> Fire Pot"
+        "[Mountaintop Crystal] Consumable"
       ]
     },
     {
       "ID": 1012000002,
       "Entries": [
-        "[Lot] <Table> Fire Pot"
+        "[Mountaintop Crystal] Consumable / Nothing"
       ]
     },
     {
       "ID": 1012000003,
       "Entries": [
-        ""
+        "[Mountaintop Crystal]"
       ]
     },
     {
@@ -9646,49 +9646,49 @@
     {
       "ID": 1200000000,
       "Entries": [
-        "[Lot] Starlight Shards"
+        "[Sorcerer's Rise Crate] Starlight Shards"
       ]
     },
     {
       "ID": 1200000001,
       "Entries": [
-        "[Lot] Starlight Shards"
+        "[Sorcerer's Rise Crate] Starlight Shards"
       ]
     },
     {
       "ID": 1206000000,
       "Entries": [
-        "[Lot] <Table> Crystal Staff"
+        "[Sorcerer's Rise Reward] Uncommon Staff"
       ]
     },
     {
       "ID": 1206000001,
       "Entries": [
-        "[Lot] <Table> Erdsteel Dagger"
+        "[Sorcerer's Rise Reward] Uncommon Magic Weapon"
       ]
     },
     {
       "ID": 1206000002,
       "Entries": [
-        "[Lot] <Table> Ancestral Infant's Head"
+        "[Sorcerer's Rise Reward] Sorcerer's Rise Reward"
       ]
     },
     {
       "ID": 1206010000,
       "Entries": [
-        "[Lot] <Table> Prince of Death's Staff"
+        "[Ruined Rise Reward] Rare Staff"
       ]
     },
     {
       "ID": 1206010001,
       "Entries": [
-        "[Lot] <Table> Glintstone Kris"
+        "[Ruined Rise Reward] Rare Magic Weapon"
       ]
     },
     {
       "ID": 1206010002,
       "Entries": [
-        "[Lot] <Table> Ancestral Infant's Head"
+        "[Ruined Rise Reward] Ruined Rise Reward"
       ]
     },
     {
