@@ -573,6 +573,10 @@ public class ParamEditorKeybindTab
             KeyBindings.Current.PARAM_ReloadAllParams = InputTracker.KeybindLine(12,
                 KeyBindings.Current.PARAM_ReloadAllParams,
                 KeyBindings.Default.PARAM_ReloadAllParams);
+
+            KeyBindings.Current.PARAM_ReloadDrawParam = InputTracker.KeybindLine(70,
+                KeyBindings.Current.PARAM_ReloadDrawParam,
+                KeyBindings.Default.PARAM_ReloadDrawParam);
         }
 
         if (ImGui.CollapsingHeader("Pin Groups", ImGuiTreeNodeFlags.DefaultOpen))

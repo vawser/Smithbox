@@ -60,6 +60,11 @@ public class StridedByteArray
 
     public bool BigEndian { get; }
 
+    public byte[] GetByteArray()
+    {
+        return _backing;
+    }
+
     private void GrowIfNeeded()
     {
         if (Count <= Capacity) return;

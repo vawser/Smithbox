@@ -849,6 +849,11 @@ public class Param : SoulsFile<Param>
         internal readonly Param Parent;
         internal uint DataIndex;
 
+        public uint GetDataOffset()
+        {
+            return DataIndex;
+        }
+
         internal Row(int id, string? name, Param parent, uint dataIndex)
         {
             ID = id;

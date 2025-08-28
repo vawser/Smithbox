@@ -870,6 +870,11 @@ public class KeyBindings
             "Reloads the rows of the current Param selection in-game.", 
             Key.F5);
 
+        public KeyBind PARAM_ReloadDrawParam = new(
+            "Reload Current Draw Param",
+            "Reloads the rows of the current Draw Param selection in-game.",
+            Key.F6);
+
         public KeyBind PARAM_ReloadAllParams = new(
             "Reload All Params",
             "Reloads the rows of all Params in-game.",
