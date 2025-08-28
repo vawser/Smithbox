@@ -4,7 +4,6 @@
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
-- Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
 - Map Editor: visibility icon cannot be clicked
 - Map Editor: add special map connections for NR
 
@@ -24,4 +23,4 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-
+- Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
