@@ -862,8 +862,8 @@
                 { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
                 { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
                 
-                { "ID": "2355", "Name": "Near Death Reduces Art Gauge", "Description": "" }
-                { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" }
+                { "ID": "2355", "Name": "Near Death Reduces Art Gauge", "Description": "" },
+                { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" },
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]
