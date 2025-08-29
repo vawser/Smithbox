@@ -42,7 +42,7 @@
     <Field Def="s32 characterSkillDescriptionId"/>
     <Field Def="s32 ultimateArtDescriptionId"/>
     <Field Def="s32 passiveAbilityDescriptionId"/>
-    <Field Def="s32 unknown_38"/>
+    <Field Def="s32 defaultWeaponTypeDiscovery"/>
     <Field Def="s32 unknown_39"/>
   </Fields>
 </PARAMDEF>

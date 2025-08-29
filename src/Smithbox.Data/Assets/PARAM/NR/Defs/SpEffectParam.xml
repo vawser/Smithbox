@@ -77,7 +77,7 @@
     <Field Def="f32 registDiseaseChangeRate"/>
     <Field Def="f32 registBloodChangeRate"/>
     <Field Def="f32 registCurseChangeRate"/>
-    <Field Def="s32 soulStealRate"/>
+    <Field Def="s32 secondaryIconId"/>
     <Field Def="f32 lifeReductionRate"/>
     <Field Def="f32 hpRecoverRate"/>
     <Field Def="s32 replaceSpEffectId"/>
@@ -256,7 +256,7 @@
     <Field Def="f32 unknown_146"/>
     <Field Def="f32 unknown_147"/>
     <Field Def="f32 unknown_148"/>
-    <Field Def="s32 secondaryIconId"/>
+    <Field Def="s32 tertiaryIconId"/>
     
     <Field Def="u8 madnessDamageRate"/>
     <Field Def="u8 isUseStatusAilmentAtkPowerCorrect:1"/>

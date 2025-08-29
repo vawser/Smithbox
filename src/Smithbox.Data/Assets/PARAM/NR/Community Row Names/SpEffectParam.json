@@ -9550,61 +9550,61 @@
     {
       "ID": 6900,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 2"
       ]
     },
     {
       "ID": 6901,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 4"
       ]
     },
     {
       "ID": 6902,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 6"
       ]
     },
     {
       "ID": 6903,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 8"
       ]
     },
     {
       "ID": 6904,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 10"
       ]
     },
     {
       "ID": 6905,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 12"
       ]
     },
     {
       "ID": 6906,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 14"
       ]
     },
     {
       "ID": 6907,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 16"
       ]
     },
     {
       "ID": 6908,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 18"
       ]
     },
     {
       "ID": 6909,
       "Entries": [
-        ""
+        "Successive Attacks AccumuVal: 20"
       ]
     },
     {
@@ -39370,7 +39370,7 @@
     {
       "ID": 42176,
       "Entries": [
-        ""
+        "[Adel] Poison Special Behavior - Damage"
       ]
     },
     {
@@ -42832,13 +42832,13 @@
     {
       "ID": 46306,
       "Entries": [
-        ""
+        "[Fulghor] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
       "ID": 46307,
       "Entries": [
-        ""
+        "[Fulghor] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
@@ -44716,7 +44716,7 @@
     {
       "ID": 49063,
       "Entries": [
-        ""
+        "[Libra] Madness Special Behavior - Buff"
       ]
     },
     {
@@ -45940,25 +45940,25 @@
     {
       "ID": 49500,
       "Entries": [
-        ""
+        "[Libra] The Condemned's Golden Buff"
       ]
     },
     {
       "ID": 49501,
       "Entries": [
-        ""
+        "[Libra] The Condemned's Golden Buff - 1st"
       ]
     },
     {
       "ID": 49502,
       "Entries": [
-        ""
+        "[Libra] The Condemned's Golden Buff - 2nd and later"
       ]
     },
     {
       "ID": 49503,
       "Entries": [
-        ""
+        "[Libra] The Condemned's HP Recovery"
       ]
     },
     {
@@ -47044,25 +47044,25 @@
     {
       "ID": 96010,
       "Entries": [
-        ""
+        "[Caligo] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
       "ID": 96011,
       "Entries": [
-        ""
+        "[Caligo] Elemental Weakness Special Behavior - Debuff"
       ]
     },
     {
       "ID": 96015,
       "Entries": [
-        ""
+        "[Caligo] Elemental Weakness Increased Resistance"
       ]
     },
     {
       "ID": 96016,
       "Entries": [
-        ""
+        "[Caligo] Elemental Weakness Increased Resistance 2"
       ]
     },
     {
@@ -47074,13 +47074,13 @@
     {
       "ID": 96101,
       "Entries": [
-        ""
+        "[Maris] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
       "ID": 96102,
       "Entries": [
-        ""
+        "[Maris] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
@@ -47104,49 +47104,49 @@
     {
       "ID": 96200,
       "Entries": [
-        ""
+        "[Gladius] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
       "ID": 96201,
       "Entries": [
-        ""
+        "[Gladius] Elemental Weakness Special Behavior - Debuff"
       ]
     },
     {
       "ID": 96205,
       "Entries": [
-        ""
+        "[Gladius] Elemental Weakness Increased Resistance"
       ]
     },
     {
       "ID": 96206,
       "Entries": [
-        ""
+        "[Gladius] Elemental Weakness Increased Resistance 2"
       ]
     },
     {
       "ID": 96210,
       "Entries": [
-        ""
+        "[Heolstor] Elemental Weakness Special Behavior - Damage"
       ]
     },
     {
       "ID": 96211,
       "Entries": [
-        ""
+        "[Heolstor] Elemental Weakness Special Behavior - Debuff"
       ]
     },
     {
       "ID": 96215,
       "Entries": [
-        ""
+        "[Heolstor] Elemental Weakness Increased Resistance"
       ]
     },
     {
       "ID": 96216,
       "Entries": [
-        ""
+        "[Heolstor] Elemental Weakness Increased Resistance 2"
       ]
     },
     {
@@ -47596,7 +47596,7 @@
     {
       "ID": 99515,
       "Entries": [
-        ""
+        "[Material] Rowa Fruit - Restore HP"
       ]
     },
     {
@@ -47614,55 +47614,55 @@
     {
       "ID": 99530,
       "Entries": [
-        ""
+        "[Material] Gold Firefly - Boost Rune Acquisition"
       ]
     },
     {
       "ID": 99540,
       "Entries": [
-        ""
+        "[Material] Nascent Butterfly - Cure Status Effects"
       ]
     },
     {
       "ID": 99541,
       "Entries": [
-        ""
+        "[Material] Nascent Butterfly - Improve Status Effects Resistance"
       ]
     },
     {
       "ID": 99555,
       "Entries": [
-        ""
+        "[Material] Grave Violet - Summon Foe-chasing Vengeful Spirits"
       ]
     },
     {
       "ID": 99565,
       "Entries": [
-        ""
+        "[Material] Smoldering Butterfly - Boost Physical and Fire Damage"
       ]
     },
     {
       "ID": 99570,
       "Entries": [
-        ""
+        "[Material] Sacramental Bud - Cure Rot and Restore HP"
       ]
     },
     {
       "ID": 99585,
       "Entries": [
-        ""
+        "[Material] Crystal Bud - Restore FP"
       ]
     },
     {
       "ID": 99590,
       "Entries": [
-        ""
+        "[Material] Silver Tear Husk - Boost Damage Negation"
       ]
     },
     {
       "ID": 99605,
       "Entries": [
-        ""
+        "[Material] Rimed Rowa - Restore HP"
       ]
     },
     {
