@@ -1384,37 +1384,37 @@
     {
       "ID": 500,
       "Entries": [
-        ""
+        "Blood Loss - Spawn Proximity Bullet"
       ]
     },
     {
       "ID": 501,
       "Entries": [
-        ""
+        "Blood Loss - Apply State Info"
       ]
     },
     {
       "ID": 502,
       "Entries": [
-        ""
+        "Frostbite - Spawn Proximity Bullet"
       ]
     },
     {
       "ID": 503,
       "Entries": [
-        ""
+        "Frostbite - Apply State Info"
       ]
     },
     {
       "ID": 505,
       "Entries": [
-        ""
+        "Poison / Rot - Spawn Proximity Bullet"
       ]
     },
     {
       "ID": 506,
       "Entries": [
-        ""
+        "Poison / Rot - Apply State Info"
       ]
     },
     {
@@ -2392,13 +2392,13 @@
     {
       "ID": 1100,
       "Entries": [
-        ""
+        "Sleep - Apply Behavior Effect"
       ]
     },
     {
       "ID": 1101,
       "Entries": [
-        ""
+        "Sleep - Apply State Info"
       ]
     },
     {
@@ -13300,7 +13300,7 @@
     {
       "ID": 9760,
       "Entries": [
-        "Character Relic: Art gauge greatly filled when ability is"
+        "[Effect] Art gauge greatly filled when ability is"
       ]
     },
     {
@@ -13312,7 +13312,7 @@
     {
       "ID": 9762,
       "Entries": [
-        "Character Relic: Taking attacks improves attack power"
+        "[Effect] Taking attacks improves attack power"
       ]
     },
     {
@@ -56806,241 +56806,241 @@
     {
       "ID": 7000000,
       "Entries": [
-        "RELIC: Vigor +1"
+        "[Effect] Vigor +1"
       ]
     },
     {
       "ID": 7000001,
       "Entries": [
-        "RELIC: Vigor +2"
+        "[Effect] Vigor +2"
       ]
     },
     {
       "ID": 7000002,
       "Entries": [
-        "RELIC: Vigor +3"
+        "[Effect] Vigor +3"
       ]
     },
     {
       "ID": 7000090,
       "Entries": [
-        "RELIC: Increased Maximum HP"
+        "[Effect] Increased Maximum HP"
       ]
     },
     {
       "ID": 7000100,
       "Entries": [
-        "RELIC: Mind +1"
+        "[Effect] Mind +1"
       ]
     },
     {
       "ID": 7000101,
       "Entries": [
-        "RELIC: Mind +2"
+        "[Effect] Mind +2"
       ]
     },
     {
       "ID": 7000102,
       "Entries": [
-        "RELIC: Mind +3"
+        "[Effect] Mind +3"
       ]
     },
     {
       "ID": 7000190,
       "Entries": [
-        "RELIC: Increased Maximum FP"
+        "[Effect] Increased Maximum FP"
       ]
     },
     {
       "ID": 7000200,
       "Entries": [
-        "RELIC: Endurance +1"
+        "[Effect] Endurance +1"
       ]
     },
     {
       "ID": 7000201,
       "Entries": [
-        "RELIC: Endurance +2"
+        "[Effect] Endurance +2"
       ]
     },
     {
       "ID": 7000202,
       "Entries": [
-        "RELIC: Endurance +3"
+        "[Effect] Endurance +3"
       ]
     },
     {
       "ID": 7000290,
       "Entries": [
-        "RELIC: Increased Maximum Stamina"
+        "[Effect] Increased Maximum Stamina"
       ]
     },
     {
       "ID": 7000300,
       "Entries": [
-        "RELIC: Strength +1"
+        "[Effect] Strength +1"
       ]
     },
     {
       "ID": 7000301,
       "Entries": [
-        "RELIC: Strength +2"
+        "[Effect] Strength +2"
       ]
     },
     {
       "ID": 7000302,
       "Entries": [
-        "RELIC: Strength +3"
+        "[Effect] Strength +3"
       ]
     },
     {
       "ID": 7000400,
       "Entries": [
-        "RELIC: Dexterity +1"
+        "[Effect] Dexterity +1"
       ]
     },
     {
       "ID": 7000401,
       "Entries": [
-        "RELIC: Dexterity +2"
+        "[Effect] Dexterity +2"
       ]
     },
     {
       "ID": 7000402,
       "Entries": [
-        "RELIC: Dexterity +3"
+        "[Effect] Dexterity +3"
       ]
     },
     {
       "ID": 7000500,
       "Entries": [
-        "RELIC: Intelligence +1"
+        "[Effect] Intelligence +1"
       ]
     },
     {
       "ID": 7000501,
       "Entries": [
-        "RELIC: Intelligence +2"
+        "[Effect] Intelligence +2"
       ]
     },
     {
       "ID": 7000502,
       "Entries": [
-        "RELIC: Intelligence +3"
+        "[Effect] Intelligence +3"
       ]
     },
     {
       "ID": 7000600,
       "Entries": [
-        "RELIC: Faith +1"
+        "[Effect] Faith +1"
       ]
     },
     {
       "ID": 7000601,
       "Entries": [
-        "RELIC: Faith +2"
+        "[Effect] Faith +2"
       ]
     },
     {
       "ID": 7000602,
       "Entries": [
-        "RELIC: Faith +3"
+        "[Effect] Faith +3"
       ]
     },
     {
       "ID": 7000700,
       "Entries": [
-        "RELIC: Arcane +1"
+        "[Effect] Arcane +1"
       ]
     },
     {
       "ID": 7000701,
       "Entries": [
-        "RELIC: Arcane +2"
+        "[Effect] Arcane +2"
       ]
     },
     {
       "ID": 7000702,
       "Entries": [
-        "RELIC: Arcane +3"
+        "[Effect] Arcane +3"
       ]
     },
     {
       "ID": 7000800,
       "Entries": [
-        "RELIC: Character Skill Cooldown Reduction +1"
+        "[Effect] Character Skill Cooldown Reduction +1"
       ]
     },
     {
       "ID": 7000801,
       "Entries": [
-        "RELIC: Character Skill Cooldown Reduction +2"
+        "[Effect] Character Skill Cooldown Reduction +2"
       ]
     },
     {
       "ID": 7000802,
       "Entries": [
-        "RELIC: Character Skill Cooldown Reduction +3"
+        "[Effect] Character Skill Cooldown Reduction +3"
       ]
     },
     {
       "ID": 7000900,
       "Entries": [
-        "RELIC: Ultimate Art Gauge +1"
+        "[Effect] Ultimate Art Gauge +1"
       ]
     },
     {
       "ID": 7000901,
       "Entries": [
-        "RELIC: Ultimate Art Gauge +2"
+        "[Effect] Ultimate Art Gauge +2"
       ]
     },
     {
       "ID": 7000902,
       "Entries": [
-        "RELIC: Ultimate Art Gauge +3"
+        "[Effect] Ultimate Art Gauge +3"
       ]
     },
     {
       "ID": 7001000,
       "Entries": [
-        "RELIC: Poise +1"
+        "[Effect] Poise +1"
       ]
     },
     {
       "ID": 7001001,
       "Entries": [
-        "RELIC: Poise +2"
+        "[Effect] Poise +2"
       ]
     },
     {
       "ID": 7001002,
       "Entries": [
-        "RELIC: Poise +3"
+        "[Effect] Poise +3"
       ]
     },
     {
       "ID": 7001100,
       "Entries": [
-        "RELIC: HP Restoration"
+        "[Effect] HP Restoration"
       ]
     },
     {
       "ID": 7001400,
       "Entries": [
-        "RELIC: Physical Attack Up"
+        "[Effect] Physical Attack Up"
       ]
     },
     {
       "ID": 7001401,
       "Entries": [
-        "RELIC: Physical Attack Up +1"
+        "[Effect] Physical Attack Up +1"
       ]
     },
     {
       "ID": 7001402,
       "Entries": [
-        "RELIC: Physical Attack Up +2"
+        "[Effect] Physical Attack Up +2"
       ]
     },
     {
@@ -57058,19 +57058,19 @@
     {
       "ID": 7001500,
       "Entries": [
-        "RELIC: Magic Attack Power Up"
+        "[Effect] Magic Attack Power Up"
       ]
     },
     {
       "ID": 7001501,
       "Entries": [
-        "RELIC: Magic Attack Power Up +1"
+        "[Effect] Magic Attack Power Up +1"
       ]
     },
     {
       "ID": 7001502,
       "Entries": [
-        "RELIC: Magic Attack Power Up +2"
+        "[Effect] Magic Attack Power Up +2"
       ]
     },
     {
@@ -57088,19 +57088,19 @@
     {
       "ID": 7001600,
       "Entries": [
-        "RELIC: Fire Attack Power Up"
+        "[Effect] Fire Attack Power Up"
       ]
     },
     {
       "ID": 7001601,
       "Entries": [
-        "RELIC: Fire Attack Power Up +1"
+        "[Effect] Fire Attack Power Up +1"
       ]
     },
     {
       "ID": 7001602,
       "Entries": [
-        "RELIC: Fire Attack Power Up +2"
+        "[Effect] Fire Attack Power Up +2"
       ]
     },
     {
@@ -57118,19 +57118,19 @@
     {
       "ID": 7001700,
       "Entries": [
-        "RELIC: Lightning Attack Power Up"
+        "[Effect] Lightning Attack Power Up"
       ]
     },
     {
       "ID": 7001701,
       "Entries": [
-        "RELIC: Lightning Attack Power Up +1"
+        "[Effect] Lightning Attack Power Up +1"
       ]
     },
     {
       "ID": 7001702,
       "Entries": [
-        "RELIC: Lightning Attack Power Up +2"
+        "[Effect] Lightning Attack Power Up +2"
       ]
     },
     {
@@ -57148,19 +57148,19 @@
     {
       "ID": 7001800,
       "Entries": [
-        "RELIC: Holy Attack Power Up"
+        "[Effect] Holy Attack Power Up"
       ]
     },
     {
       "ID": 7001801,
       "Entries": [
-        "RELIC: Holy Attack Power Up +1"
+        "[Effect] Holy Attack Power Up +1"
       ]
     },
     {
       "ID": 7001802,
       "Entries": [
-        "RELIC: Holy Attack Power Up +2"
+        "[Effect] Holy Attack Power Up +2"
       ]
     },
     {
@@ -57178,7 +57178,7 @@
     {
       "ID": 7002600,
       "Entries": [
-        "RELIC: Magic Damage Negation Up"
+        "[Effect] Magic Damage Negation Up"
       ]
     },
     {
@@ -57196,7 +57196,7 @@
     {
       "ID": 7002700,
       "Entries": [
-        "RELIC: Fire Damage Negation Up"
+        "[Effect] Fire Damage Negation Up"
       ]
     },
     {
@@ -57214,7 +57214,7 @@
     {
       "ID": 7002800,
       "Entries": [
-        "RELIC: Lightning Damage Negation Up"
+        "[Effect] Lightning Damage Negation Up"
       ]
     },
     {
@@ -57232,7 +57232,7 @@
     {
       "ID": 7002900,
       "Entries": [
-        "RELIC: Holy Damage Negation Up"
+        "[Effect] Holy Damage Negation Up"
       ]
     },
     {
@@ -57250,7 +57250,7 @@
     {
       "ID": 7003000,
       "Entries": [
-        "RELIC: Improved Poison Resistance"
+        "[Effect] Improved Poison Resistance"
       ]
     },
     {
@@ -57268,7 +57268,7 @@
     {
       "ID": 7003100,
       "Entries": [
-        "RELIC: Improved Blood Loss Resistance"
+        "[Effect] Improved Blood Loss Resistance"
       ]
     },
     {
@@ -57286,7 +57286,7 @@
     {
       "ID": 7003200,
       "Entries": [
-        "RELIC: Improved Sleep Resistance"
+        "[Effect] Improved Sleep Resistance"
       ]
     },
     {
@@ -57304,7 +57304,7 @@
     {
       "ID": 7003300,
       "Entries": [
-        "RELIC: Improved Death Blight Resistance"
+        "[Effect] Improved Death Blight Resistance"
       ]
     },
     {
@@ -57322,7 +57322,7 @@
     {
       "ID": 7003400,
       "Entries": [
-        "RELIC: Improved Rot Resistance"
+        "[Effect] Improved Rot Resistance"
       ]
     },
     {
@@ -57340,7 +57340,7 @@
     {
       "ID": 7003500,
       "Entries": [
-        "RELIC: Improved Frost Resistance"
+        "[Effect] Improved Frost Resistance"
       ]
     },
     {
@@ -57358,7 +57358,7 @@
     {
       "ID": 7003600,
       "Entries": [
-        "RELIC: Improved Madness Resistance"
+        "[Effect] Improved Madness Resistance"
       ]
     },
     {
@@ -57376,7 +57376,7 @@
     {
       "ID": 7005600,
       "Entries": [
-        "RELIC: Partial HP Restoration upon Post-Damage Attacks"
+        "[Effect] Partial HP Restoration upon Post-Damage Attacks"
       ]
     },
     {
@@ -57394,7 +57394,7 @@
     {
       "ID": 7006200,
       "Entries": [
-        "RELIC: Improved Physical Damage Negation"
+        "[Effect] Improved Physical Damage Negation"
       ]
     },
     {
@@ -57412,103 +57412,103 @@
     {
       "ID": 7010001,
       "Entries": [
-        "RELIC: Improved Physical Damage Negation"
+        "[Effect] Improved Physical Damage Negation"
       ]
     },
     {
       "ID": 7010200,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010211,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010220,
       "Entries": [
-        "RELIC: Flask Also Heals Allies (Self)"
+        "[Effect] Flask Also Heals Allies (Self)"
       ]
     },
     {
       "ID": 7010221,
       "Entries": [
-        "RELIC: Flask Also Heals Allies (Ally)"
+        "[Effect] Flask Also Heals Allies (Ally)"
       ]
     },
     {
       "ID": 7010230,
       "Entries": [
-        "POW: Gradual Restoration by Flask (Unused)"
+        "[Effect] Gradual Restoration by Flask (Unused)"
       ]
     },
     {
       "ID": 7010231,
       "Entries": [
-        "POW: Gradual Restoration by Flask / RELIC: Ally Flask + POW: Gradual Flask (Self)"
+        "[Effect] Gradual Restoration by Flask / Ally Flask + Gradual Flask (Self)"
       ]
     },
     {
       "ID": 7010240,
       "Entries": [
-        "RELIC: Ally Flask + POW: Gradual Flask (Flat For Allies)"
+        "[Effect] Ally Flask + Gradual Flask (Flat For Allies)"
       ]
     },
     {
       "ID": 7010241,
       "Entries": [
-        "RELIC: Ally Flask + POW: Gradual Flask (Overtime For Allies)"
+        "[Effect] Ally Flask + Gradual Flask (Overtime For Allies)"
       ]
     },
     {
       "ID": 7010250,
       "Entries": [
-        "RELIC: Ally Flask + POW: Unifying Fate (Self)"
+        "[Effect] Ally Flask + Unifying Fate (Self)"
       ]
     },
     {
       "ID": 7010260,
       "Entries": [
-        "RELIC: Ally Flask + POW: Unifying Fate (Ally)"
+        "[Effect] Ally Flask + Unifying Fate (Ally)"
       ]
     },
     {
       "ID": 7010280,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010281,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010282,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010283,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010299,
       "Entries": [
-        "RELIC: Flask Also Heals Allies"
+        "[Effect] Flask Also Heals Allies"
       ]
     },
     {
       "ID": 7010500,
       "Entries": [
-        "RELIC: Wylder: Art activation spreads fire in area"
+        "[Effect] Wylder: Art activation spreads fire in area"
       ]
     },
     {
@@ -57520,193 +57520,193 @@
     {
       "ID": 7010700,
       "Entries": [
-        "RELIC: Duchess: Dagger chain attack reprises event upon nearby enemies"
+        "[Effect] Duchess: Dagger chain attack reprises event upon nearby enemies"
       ]
     },
     {
       "ID": 7010701,
       "Entries": [
-        "RELIC: Duchess: Dagger chain attack reprises event upon nearby enemies"
+        "[Effect] Duchess: Dagger chain attack reprises event upon nearby enemies"
       ]
     },
     {
       "ID": 7010702,
       "Entries": [
-        "RELIC: Duchess: Dagger chain attack reprises event upon nearby enemies"
+        "[Effect] Duchess: Dagger chain attack reprises event upon nearby enemies"
       ]
     },
     {
       "ID": 7010703,
       "Entries": [
-        "RELIC: Duchess: Dagger chain attack reprises event upon nearby enemies"
+        "[Effect] Duchess: Dagger chain attack reprises event upon nearby enemies"
       ]
     },
     {
       "ID": 7010900,
       "Entries": [
-        "RELIC: Revenant: Expend own HP to fully heal nearby allies when activating Art"
+        "[Effect] Revenant: Expend own HP to fully heal nearby allies when activating Art"
       ]
     },
     {
       "ID": 7010901,
       "Entries": [
-        "RELIC: Revenant: Expend own HP to fully heal nearby allies when activating Art"
+        "[Effect] Revenant: Expend own HP to fully heal nearby allies when activating Art"
       ]
     },
     {
       "ID": 7010902,
       "Entries": [
-        "RELIC: Revenant: Expend own HP to fully heal nearby allies when activating Art"
+        "[Effect] Revenant: Expend own HP to fully heal nearby allies when activating Art"
       ]
     },
     {
       "ID": 7011000,
       "Entries": [
-        "RELIC: Guardian: Increased duration for Character Skill"
+        "[Effect] Guardian: Increased duration for Character Skill"
       ]
     },
     {
       "ID": 7011001,
       "Entries": [
-        "RELIC: Guardian: Increased duration for Character Skill"
+        "[Effect] Guardian: Increased duration for Character Skill"
       ]
     },
     {
       "ID": 7011101,
       "Entries": [
-        "RELIC: Guardian: Increased duration for Character Skill"
+        "[Effect] Guardian: Increased duration for Character Skill"
       ]
     },
     {
       "ID": 7011200,
       "Entries": [
-        "RELIC: Revenant: Trigger ghostflame explosion during Ultimate Art activation"
+        "[Effect] Revenant: Trigger ghostflame explosion during Ultimate Art activation"
       ]
     },
     {
       "ID": 7011600,
       "Entries": [
-        "RELIC: Guardian: Creates whirlwind when charging halberd attacks"
+        "[Effect] Guardian: Creates whirlwind when charging halberd attacks"
       ]
     },
     {
       "ID": 7011700,
       "Entries": [
-        "RELIC: Executor: Roaring restores HP while Art is active"
+        "[Effect] Executor: Roaring restores HP while Art is active"
       ]
     },
     {
       "ID": 7011701,
       "Entries": [
-        "RELIC: Executor: Roaring restores HP while Art is active"
+        "[Effect] Executor: Roaring restores HP while Art is active"
       ]
     },
     {
       "ID": 7012000,
       "Entries": [
-        "RELIC: Guardian: Slowly restores nearby allies' HP while Art is active"
+        "[Effect] Guardian: Slowly restores nearby allies' HP while Art is active"
       ]
     },
     {
       "ID": 7012002,
       "Entries": [
-        "RELIC: Guardian: Slowly restores nearby allies' HP while Art is active"
+        "[Effect] Guardian: Slowly restores nearby allies' HP while Art is active"
       ]
     },
     {
       "ID": 7012200,
       "Entries": [
-        "RELIC: Slowly restore HP for self and nearby allies when HP is low"
+        "[Effect] Slowly restore HP for self and nearby allies when HP is low"
       ]
     },
     {
       "ID": 7012201,
       "Entries": [
-        "RELIC: Slowly restore HP for self and nearby allies when HP is low"
+        "[Effect] Slowly restore HP for self and nearby allies when HP is low"
       ]
     },
     {
       "ID": 7012202,
       "Entries": [
-        "RELIC: Slowly restore HP for self and nearby allies when HP is low"
+        "[Effect] Slowly restore HP for self and nearby allies when HP is low"
       ]
     },
     {
       "ID": 7012300,
       "Entries": [
-        "RELIC: Improved Damage Negation at Low HP"
+        "[Effect] Improved Damage Negation at Low HP"
       ]
     },
     {
       "ID": 7020000,
       "Entries": [
-        "RELIC: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "[Effect] Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7020001,
       "Entries": [
-        "RELIC: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "[Effect] Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7020002,
       "Entries": [
-        "RELIC: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "[Effect] Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7020003,
       "Entries": [
-        "RELIC: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "[Effect] Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7020004,
       "Entries": [
-        "RELIC: Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
+        "[Effect] Wylder: Follow-up attacks possible when using Character Skill (greatsword only)"
       ]
     },
     {
       "ID": 7030000,
       "Entries": [
-        "RELIC: Improved Poise Near Totem Stela"
+        "[Effect] Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030001,
       "Entries": [
-        "RELIC: Improved Poise Near Totem Stela"
+        "[Effect] Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030002,
       "Entries": [
-        "RELIC: Improved Poise Near Totem Stela"
+        "[Effect] Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030003,
       "Entries": [
-        "RELIC: Improved Poise Near Totem Stela"
+        "[Effect] Improved Poise Near Totem Stela"
       ]
     },
     {
       "ID": 7030200,
       "Entries": [
-        "RELIC: HP restored when using cured meats, medicinal boluses, etc."
+        "[Effect] HP restored when using cured meats, medicinal boluses, etc."
       ]
     },
     {
       "ID": 7030201,
       "Entries": [
-        "RELIC: HP restored when using cured meats, medicinal boluses, etc."
+        "[Effect] HP restored when using cured meats, medicinal boluses, etc."
       ]
     },
     {
       "ID": 7030202,
       "Entries": [
-        "RELIC: HP restored when using cured meats, medicinal boluses, etc."
+        "[Effect] HP restored when using cured meats, medicinal boluses, etc."
       ]
     },
     {
@@ -57748,19 +57748,19 @@
     {
       "ID": 7030600,
       "Entries": [
-        "RELIC: Art gauge charged from successful guarding"
+        "[Effect] Art gauge charged from successful guarding"
       ]
     },
     {
       "ID": 7030601,
       "Entries": [
-        "RELIC: Art gauge charged from successful guarding"
+        "[Effect] Art gauge charged from successful guarding"
       ]
     },
     {
       "ID": 7030602,
       "Entries": [
-        "RELIC: Art gauge charged from successful guarding"
+        "[Effect] Art gauge charged from successful guarding"
       ]
     },
     {
@@ -57784,37 +57784,37 @@
     {
       "ID": 7030700,
       "Entries": [
-        "RELIC: Draw enemy attention while guarding"
+        "[Effect] Draw enemy attention while guarding"
       ]
     },
     {
       "ID": 7030701,
       "Entries": [
-        "RELIC: Draw enemy attention while guarding"
+        "[Effect] Draw enemy attention while guarding"
       ]
     },
     {
       "ID": 7030702,
       "Entries": [
-        "RELIC: Draw enemy attention while guarding"
+        "[Effect] Draw enemy attention while guarding"
       ]
     },
     {
       "ID": 7030800,
       "Entries": [
-        "RELIC: Art gauge fills moderately upon critical hit"
+        "[Effect] Art gauge fills moderately upon critical hit"
       ]
     },
     {
       "ID": 7030801,
       "Entries": [
-        "RELIC: Art gauge fills moderately upon critical hit"
+        "[Effect] Art gauge fills moderately upon critical hit"
       ]
     },
     {
       "ID": 7030802,
       "Entries": [
-        "RELIC: Art gauge fills moderately upon critical hit"
+        "[Effect] Art gauge fills moderately upon critical hit"
       ]
     },
     {
@@ -57838,19 +57838,19 @@
     {
       "ID": 7030900,
       "Entries": [
-        "RELIC: Attack power increases after using grease items"
+        "[Effect] Attack power increases after using grease items"
       ]
     },
     {
       "ID": 7030901,
       "Entries": [
-        "RELIC: Attack power increases after using grease items"
+        "[Effect] Attack power increases after using grease items"
       ]
     },
     {
       "ID": 7030902,
       "Entries": [
-        "RELIC: Attack power increases after using grease items"
+        "[Effect] Attack power increases after using grease items"
       ]
     },
     {
@@ -57892,361 +57892,361 @@
     {
       "ID": 7031200,
       "Entries": [
-        "RELIC: Revenant: Strengthens family and allies when Ultimate Art is activated"
+        "[Effect] Revenant: Strengthens family and allies when Ultimate Art is activated"
       ]
     },
     {
       "ID": 7031201,
       "Entries": [
-        "RELIC: Revenant: Strengthens family and allies when Ultimate Art is activated"
+        "[Effect] Revenant: Strengthens family and allies when Ultimate Art is activated"
       ]
     },
     {
       "ID": 7031202,
       "Entries": [
-        "RELIC: Revenant: Strengthens family and allies when Ultimate Art is activated"
+        "[Effect] Revenant: Strengthens family and allies when Ultimate Art is activated"
       ]
     },
     {
       "ID": 7031300,
       "Entries": [
-        "RELIC: Raider: Damage taken while using Character Skill improves attack power and stamina"
+        "[Effect] Raider: Damage taken while using Character Skill improves attack power and stamina"
       ]
     },
     {
       "ID": 7031301,
       "Entries": [
-        "RELIC: Raider: Damage taken while using Character Skill improves attack power and stamina"
+        "[Effect] Raider: Damage taken while using Character Skill improves attack power and stamina"
       ]
     },
     {
       "ID": 7031302,
       "Entries": [
-        "RELIC: Raider: Damage taken while using Character Skill improves attack power and stamina"
+        "[Effect] Raider: Damage taken while using Character Skill improves attack power and stamina"
       ]
     },
     {
       "ID": 7031800,
       "Entries": [
-        "RELIC: Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
+        "[Effect] Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
       ]
     },
     {
       "ID": 7031801,
       "Entries": [
-        "RELIC: Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
+        "[Effect] Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
       ]
     },
     {
       "ID": 7031802,
       "Entries": [
-        "RELIC: Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
+        "[Effect] Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
       ]
     },
     {
       "ID": 7031803,
       "Entries": [
-        "RELIC: Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
+        "[Effect] Duchess: Become difficult to spot and silence footsteps after landing critical from behind"
       ]
     },
     {
       "ID": 7031900,
       "Entries": [
-        "RELIC: Critical Hits Earn Runes"
+        "[Effect] Critical Hits Earn Runes"
       ]
     },
     {
       "ID": 7031901,
       "Entries": [
-        "RELIC: Critical Hits Earn Runes"
+        "[Effect] Critical Hits Earn Runes"
       ]
     },
     {
       "ID": 7032200,
       "Entries": [
-        "RELIC: Taking attacks improves attack power"
+        "[Effect] Taking attacks improves attack power"
       ]
     },
     {
       "ID": 7032201,
       "Entries": [
-        "RELIC: Character Taking attacks improves attack power"
+        "[Effect] Character Taking attacks improves attack power"
       ]
     },
     {
       "ID": 7032202,
       "Entries": [
-        "RELIC: Character Taking attacks improves attack power"
+        "[Effect] Character Taking attacks improves attack power"
       ]
     },
     {
       "ID": 7032400,
       "Entries": [
-        "RELIC: Wylder: Art gauge greatly filled when ability is activated"
+        "[Effect] Wylder: Art gauge greatly filled when ability is activated"
       ]
     },
     {
       "ID": 7032401,
       "Entries": [
-        "RELIC: Wylder: Art gauge greatly filled when ability is activated"
+        "[Effect] Wylder: Art gauge greatly filled when ability is activated"
       ]
     },
     {
       "ID": 7032402,
       "Entries": [
-        "RELIC: Wylder: Art gauge greatly filled when ability is activated"
+        "[Effect] Wylder: Art gauge greatly filled when ability is activated"
       ]
     },
     {
       "ID": 7032700,
       "Entries": [
-        "RELIC: Duchess: Defeating enemies while Art is active ups attack power"
+        "[Effect] Duchess: Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032701,
       "Entries": [
-        "RELIC: Duchess: Defeating enemies while Art is active ups attack power"
+        "[Effect] Duchess: Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032702,
       "Entries": [
-        "RELIC: Duchess: Defeating enemies while Art is active ups attack power"
+        "[Effect] Duchess: Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032703,
       "Entries": [
-        "RELIC: Duchess: Defeating enemies while Art is active ups attack power"
+        "[Effect] Duchess: Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032704,
       "Entries": [
-        "RELIC: Duchess: Defeating enemies while Art is active ups attack power"
+        "[Effect] Duchess: Defeating enemies while Art is active ups attack power"
       ]
     },
     {
       "ID": 7032800,
       "Entries": [
-        "RELIC: Recluse: Collecting affinity residue activates Terra Magica"
+        "[Effect] Recluse: Collecting affinity residue activates Terra Magica"
       ]
     },
     {
       "ID": 7032801,
       "Entries": [
-        "RELIC: Recluse: Collecting affinity residue activates Terra Magica"
+        "[Effect] Recluse: Collecting affinity residue activates Terra Magica"
       ]
     },
     {
       "ID": 7032802,
       "Entries": [
-        "RELIC: Recluse: Collecting affinity residue activates Terra Magica"
+        "[Effect] Recluse: Collecting affinity residue activates Terra Magica"
       ]
     },
     {
       "ID": 7032803,
       "Entries": [
-        "RELIC: Recluse: Collecting affinity residue activates Terra Magica"
+        "[Effect] Recluse: Collecting affinity residue activates Terra Magica"
       ]
     },
     {
       "ID": 7032900,
       "Entries": [
-        "RELIC: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "[Effect] Recluse: Suffer blood loss and increase attack power upon Art activation"
       ]
     },
     {
       "ID": 7032901,
       "Entries": [
-        "RELIC: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "[Effect] Recluse: Suffer blood loss and increase attack power upon Art activation"
       ]
     },
     {
       "ID": 7032902,
       "Entries": [
-        "RELIC: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "[Effect] Recluse: Suffer blood loss and increase attack power upon Art activation"
       ]
     },
     {
       "ID": 7032903,
       "Entries": [
-        "RELIC: Recluse: Suffer blood loss and increase attack power upon Art activation"
+        "[Effect] Recluse: Suffer blood loss and increase attack power upon Art activation"
       ]
     },
     {
       "ID": 7033200,
       "Entries": [
-        "RELIC: Wylder: +1 additional Character Skill use"
+        "[Effect] Wylder: +1 additional Character Skill use"
       ]
     },
     {
       "ID": 7033300,
       "Entries": [
-        "RELIC: Guardian: Become the target of enemy aggression when ability is activated"
+        "[Effect] Guardian: Become the target of enemy aggression when ability is activated"
       ]
     },
     {
       "ID": 7033301,
       "Entries": [
-        "RELIC: Guardian: Become the target of enemy aggression when ability is activated"
+        "[Effect] Guardian: Become the target of enemy aggression when ability is activated"
       ]
     },
     {
       "ID": 7033302,
       "Entries": [
-        "RELIC: Guardian: Become the target of enemy aggression when ability is activated"
+        "[Effect] Guardian: Become the target of enemy aggression when ability is activated"
       ]
     },
     {
       "ID": 7033400,
       "Entries": [
-        "RELIC: Guardian: Reflect a portion of damage received when ability is activated"
+        "[Effect] Guardian: Reflect a portion of damage received when ability is activated"
       ]
     },
     {
       "ID": 7033401,
       "Entries": [
-        "RELIC: Guardian: Reflect a portion of damage received when ability is activated"
+        "[Effect] Guardian: Reflect a portion of damage received when ability is activated"
       ]
     },
     {
       "ID": 7033402,
       "Entries": [
-        "RELIC: Guardian: Reflect a portion of damage received when ability is activated"
+        "[Effect] Guardian: Reflect a portion of damage received when ability is activated"
       ]
     },
     {
       "ID": 7033403,
       "Entries": [
-        "RELIC: Guardian: Reflect a portion of damage received when ability is activated"
+        "[Effect] Guardian: Reflect a portion of damage received when ability is activated"
       ]
     },
     {
       "ID": 7033404,
       "Entries": [
-        "RELIC: Guardian: Reflect a portion of damage received when ability is activated"
+        "[Effect] Guardian: Reflect a portion of damage received when ability is activated"
       ]
     },
     {
       "ID": 7034100,
       "Entries": [
-        "RELIC: Recluse: Activating Ultimate Art raises Max HP"
+        "[Effect] Recluse: Activating Ultimate Art raises Max HP"
       ]
     },
     {
       "ID": 7034101,
       "Entries": [
-        "RELIC: Recluse: Activating Ultimate Art raises Max HP"
+        "[Effect] Recluse: Activating Ultimate Art raises Max HP"
       ]
     },
     {
       "ID": 7034102,
       "Entries": [
-        "RELIC: Recluse: Activating Ultimate Art raises Max HP"
+        "[Effect] Recluse: Activating Ultimate Art raises Max HP"
       ]
     },
     {
       "ID": 7034400,
       "Entries": [
-        "RELIC: Executor: Character Skill Boosts Attack but Attacking Drains HP"
+        "[Effect] Executor: Character Skill Boosts Attack but Attacking Drains HP"
       ]
     },
     {
       "ID": 7034401,
       "Entries": [
-        "RELIC: Executor: Character Skill Boosts Attack but Attacking Drains HP"
+        "[Effect] Executor: Character Skill Boosts Attack but Attacking Drains HP"
       ]
     },
     {
       "ID": 7034402,
       "Entries": [
-        "RELIC: Executor: Character Skill Boosts Attack but Attacking Drains HP"
+        "[Effect] Executor: Character Skill Boosts Attack but Attacking Drains HP"
       ]
     },
     {
       "ID": 7034403,
       "Entries": [
-        "RELIC: Executor: Character Skill Boosts Attack but Attacking Drains HP"
+        "[Effect] Executor: Character Skill Boosts Attack but Attacking Drains HP"
       ]
     },
     {
       "ID": 7034404,
       "Entries": [
-        "RELIC: Executor: Character Skill Boosts Attack but Attacking Drains HP"
+        "[Effect] Executor: Character Skill Boosts Attack but Attacking Drains HP"
       ]
     },
     {
       "ID": 7034500,
       "Entries": [
-        "RELIC: Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
+        "[Effect] Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
       ]
     },
     {
       "ID": 7034501,
       "Entries": [
-        "RELIC: Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
+        "[Effect] Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
       ]
     },
     {
       "ID": 7034502,
       "Entries": [
-        "RELIC: Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
+        "[Effect] Executor: While Character Skill is active, unlocking use of cursed sword restores HP"
       ]
     },
     {
       "ID": 7034600,
       "Entries": [
-        "RELIC: Ironeye:  Art Charge Activation Adds Poison Effect"
+        "[Effect] Ironeye:  Art Charge Activation Adds Poison Effect"
       ]
     },
     {
       "ID": 7034601,
       "Entries": [
-        "RELIC: Ironeye:  Art Charge Activation Adds Poison Effect"
+        "[Effect] Ironeye:  Art Charge Activation Adds Poison Effect"
       ]
     },
     {
       "ID": 7034602,
       "Entries": [
-        "RELIC: Ironeye:  Art Charge Activation Adds Poison Effect"
+        "[Effect] Ironeye:  Art Charge Activation Adds Poison Effect"
       ]
     },
     {
       "ID": 7034700,
       "Entries": [
-        "RELIC: Ironeye:  Boosts thrusting counterattacks after executing Art"
+        "[Effect] Ironeye:  Boosts thrusting counterattacks after executing Art"
       ]
     },
     {
       "ID": 7034701,
       "Entries": [
-        "RELIC: Ironeye:  Boosts thrusting counterattacks after executing Art"
+        "[Effect] Ironeye:  Boosts thrusting counterattacks after executing Art"
       ]
     },
     {
       "ID": 7034702,
       "Entries": [
-        "RELIC: Ironeye:  Boosts thrusting counterattacks after executing Art"
+        "[Effect] Ironeye:  Boosts thrusting counterattacks after executing Art"
       ]
     },
     {
       "ID": 7035100,
       "Entries": [
-        "RELIC: Critical Hit Boosts Stamina Recovery Speed"
+        "[Effect] Critical Hit Boosts Stamina Recovery Speed"
       ]
     },
     {
       "ID": 7035101,
       "Entries": [
-        "RELIC: Critical Hit Boosts Stamina Recovery Speed"
+        "[Effect] Critical Hit Boosts Stamina Recovery Speed"
       ]
     },
     {
       "ID": 7035102,
       "Entries": [
-        "RELIC: Critical Hit Boosts Stamina Recovery Speed"
+        "[Effect] Critical Hit Boosts Stamina Recovery Speed"
       ]
     },
     {
@@ -58288,271 +58288,271 @@
     {
       "ID": 7035400,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035401,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035402,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035410,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035411,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035412,
       "Entries": [
-        "RELIC: Gesture \"Crossed Legs\" Builds Up Madness"
+        "[Effect] Gesture \"Crossed Legs\" Builds Up Madness"
       ]
     },
     {
       "ID": 7035500,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035501,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035502,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035510,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035511,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035512,
       "Entries": [
-        "RELIC: Madness Continually Recovers FP"
+        "[Effect] Madness Continually Recovers FP"
       ]
     },
     {
       "ID": 7035700,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035701,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035702,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035703,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035704,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035705,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035706,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035707,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035708,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035709,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035710,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035711,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035712,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035713,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035714,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035715,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035716,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035717,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035718,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035719,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035720,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035721,
       "Entries": [
-        "RELIC: Switching Weapons Adds an Affinity Attack"
+        "[Effect] Switching Weapons Adds an Affinity Attack"
       ]
     },
     {
       "ID": 7035800,
       "Entries": [
-        "RELIC: Boosts Attack Power of Added Affinity Attacks"
+        "[Effect] Boosts Attack Power of Added Affinity Attacks"
       ]
     },
     {
       "ID": 7035900,
       "Entries": [
-        "RELIC: Switching Weapons Boosts Attack Power"
+        "[Effect] Switching Weapons Boosts Attack Power"
       ]
     },
     {
       "ID": 7035901,
       "Entries": [
-        "RELIC: Switching Weapons Boosts Attack Power"
+        "[Effect] Switching Weapons Boosts Attack Power"
       ]
     },
     {
       "ID": 7035902,
       "Entries": [
-        "RELIC: Switching Weapons Boosts Attack Power"
+        "[Effect] Switching Weapons Boosts Attack Power"
       ]
     },
     {
       "ID": 7036000,
       "Entries": [
-        "RELIC: FP Restoration upon Successive Attacks"
+        "[Effect] FP Restoration upon Successive Attacks"
       ]
     },
     {
       "ID": 7036001,
       "Entries": [
-        "RELIC: FP Restoration upon Successive Attacks"
+        "[Effect] FP Restoration upon Successive Attacks"
       ]
     },
     {
       "ID": 7036100,
       "Entries": [
-        "RELIC: HP Recovery From Successful Guarding"
+        "[Effect] HP Recovery From Successful Guarding"
       ]
     },
     {
       "ID": 7036101,
       "Entries": [
-        "RELIC: HP Recovery From Successful Guarding"
+        "[Effect] HP Recovery From Successful Guarding"
       ]
     },
     {
       "ID": 7036102,
       "Entries": [
-        "RELIC: HP Recovery From Successful Guarding"
+        "[Effect] HP Recovery From Successful Guarding"
       ]
     },
     {
       "ID": 7040000,
       "Entries": [
-        "RELIC: Improved Initial Standard Attack"
+        "[Effect] Improved Initial Standard Attack"
       ]
     },
     {
       "ID": 7040100,
       "Entries": [
-        "RELIC: Improved Guard Counters"
+        "[Effect] Improved Guard Counters"
       ]
     },
     {
@@ -58570,19 +58570,19 @@
     {
       "ID": 7040200,
       "Entries": [
-        "RELIC: Improved Critical Hits"
+        "[Effect] Improved Critical Hits"
       ]
     },
     {
       "ID": 7040201,
       "Entries": [
-        "RELIC: Improved Critical Hits"
+        "[Effect] Improved Critical Hits"
       ]
     },
     {
       "ID": 7040300,
       "Entries": [
-        "RELIC: Improved Throwing Pot Damage"
+        "[Effect] Improved Throwing Pot Damage"
       ]
     },
     {
@@ -58600,7 +58600,7 @@
     {
       "ID": 7040400,
       "Entries": [
-        "RELIC: Improved Throwing Knife Damage"
+        "[Effect] Improved Throwing Knife Damage"
       ]
     },
     {
@@ -58618,7 +58618,7 @@
     {
       "ID": 7040500,
       "Entries": [
-        "RELIC: Improved Throwing Stone Damage"
+        "[Effect] Improved Throwing Stone Damage"
       ]
     },
     {
@@ -58636,319 +58636,319 @@
     {
       "ID": 7043200,
       "Entries": [
-        "RELIC: Improved Stonedigger Sorcery"
+        "[Effect] Improved Stonedigger Sorcery"
       ]
     },
     {
       "ID": 7043300,
       "Entries": [
-        "RELIC: Improved Carian Sword Sorcery"
+        "[Effect] Improved Carian Sword Sorcery"
       ]
     },
     {
       "ID": 7043400,
       "Entries": [
-        "RELIC: Improved Glintblade Sorcery"
+        "[Effect] Improved Glintblade Sorcery"
       ]
     },
     {
       "ID": 7043500,
       "Entries": [
-        "RELIC: Improved Invisibility Sorcery"
+        "[Effect] Improved Invisibility Sorcery"
       ]
     },
     {
       "ID": 7043600,
       "Entries": [
-        "RELIC: Improved Crystalian sorcery"
+        "[Effect] Improved Crystalian sorcery"
       ]
     },
     {
       "ID": 7043700,
       "Entries": [
-        "RELIC: Improved Gravity Sorcery"
+        "[Effect] Improved Gravity Sorcery"
       ]
     },
     {
       "ID": 7043800,
       "Entries": [
-        "RELIC: Improved Thorn Sorcery"
+        "[Effect] Improved Thorn Sorcery"
       ]
     },
     {
       "ID": 7044000,
       "Entries": [
-        "RELIC: Improved Fundamentalist Incantations"
+        "[Effect] Improved Fundamentalist Incantations"
       ]
     },
     {
       "ID": 7044100,
       "Entries": [
-        "RELIC: Improved Dragon Cult Incantations"
+        "[Effect] Improved Dragon Cult Incantations"
       ]
     },
     {
       "ID": 7044200,
       "Entries": [
-        "RELIC: Improved Giants' Flame Incantations"
+        "[Effect] Improved Giants' Flame Incantations"
       ]
     },
     {
       "ID": 7044300,
       "Entries": [
-        "RELIC: Improved Godslayer Incantations"
+        "[Effect] Improved Godslayer Incantations"
       ]
     },
     {
       "ID": 7044400,
       "Entries": [
-        "RELIC: Improved Bestial Incantations"
+        "[Effect] Improved Bestial Incantations"
       ]
     },
     {
       "ID": 7044500,
       "Entries": [
-        "RELIC: Improved Frenzied Flame Incantations"
+        "[Effect] Improved Frenzied Flame Incantations"
       ]
     },
     {
       "ID": 7044600,
       "Entries": [
-        "RELIC: Improved Dragon Communion Incantations"
+        "[Effect] Improved Dragon Communion Incantations"
       ]
     },
     {
       "ID": 7050000,
       "Entries": [
-        "RELIC: Raised stamina recovery for nearby allies, but not for self"
+        "[Effect] Raised stamina recovery for nearby allies, but not for self"
       ]
     },
     {
       "ID": 7050001,
       "Entries": [
-        "RELIC: Raised stamina recovery for nearby allies, but not for self"
+        "[Effect] Raised stamina recovery for nearby allies, but not for self"
       ]
     },
     {
       "ID": 7050100,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies"
+        "[Effect] Items confer effect to all nearby allies"
       ]
     },
     {
       "ID": 7050101,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Starlight Shards)"
+        "[Effect] Items confer effect to all nearby allies (Starlight Shards)"
       ]
     },
     {
       "ID": 7050102,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Starlight Shards)"
+        "[Effect] Items confer effect to all nearby allies (Starlight Shards)"
       ]
     },
     {
       "ID": 7050200,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies"
+        "[Effect] Items confer effect to all nearby allies"
       ]
     },
     {
       "ID": 7050201,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Neutralizing Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Neutralizing Boluses)"
       ]
     },
     {
       "ID": 7050202,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Neutralizing Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Neutralizing Boluses)"
       ]
     },
     {
       "ID": 7050203,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Neutralizing Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Neutralizing Boluses)"
       ]
     },
     {
       "ID": 7050204,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stanching Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stanching Boluses)"
       ]
     },
     {
       "ID": 7050205,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stanching Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stanching Boluses)"
       ]
     },
     {
       "ID": 7050206,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stanching Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stanching Boluses)"
       ]
     },
     {
       "ID": 7050207,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Thawfrost Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Thawfrost Boluses)"
       ]
     },
     {
       "ID": 7050208,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Thawfrost Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Thawfrost Boluses)"
       ]
     },
     {
       "ID": 7050209,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Thawfrost Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Thawfrost Boluses)"
       ]
     },
     {
       "ID": 7050210,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stimulating Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stimulating Boluses)"
       ]
     },
     {
       "ID": 7050211,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stimulating Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stimulating Boluses)"
       ]
     },
     {
       "ID": 7050212,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Stimulating Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Stimulating Boluses)"
       ]
     },
     {
       "ID": 7050213,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Preserving Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Preserving Boluses)"
       ]
     },
     {
       "ID": 7050214,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Preserving Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Preserving Boluses)"
       ]
     },
     {
       "ID": 7050215,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Preserving Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Preserving Boluses)"
       ]
     },
     {
       "ID": 7050216,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Rejuvenating Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Rejuvenating Boluses)"
       ]
     },
     {
       "ID": 7050217,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Rejuvenating Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Rejuvenating Boluses)"
       ]
     },
     {
       "ID": 7050218,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Clarifying Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Clarifying Boluses)"
       ]
     },
     {
       "ID": 7050219,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Clarifying Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Clarifying Boluses)"
       ]
     },
     {
       "ID": 7050220,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Clarifying Boluses)"
+        "[Effect] Items confer effect to all nearby allies (Clarifying Boluses)"
       ]
     },
     {
       "ID": 7050300,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies"
+        "[Effect] Items confer effect to all nearby allies"
       ]
     },
     {
       "ID": 7050301,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Exalted Flesh)"
+        "[Effect] Items confer effect to all nearby allies (Exalted Flesh)"
       ]
     },
     {
       "ID": 7050302,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Pickled Turtle Neck)"
+        "[Effect] Items confer effect to all nearby allies (Pickled Turtle Neck)"
       ]
     },
     {
       "ID": 7050303,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Silver-Pickled Fowl Foot)"
+        "[Effect] Items confer effect to all nearby allies (Silver-Pickled Fowl Foot)"
       ]
     },
     {
       "ID": 7050304,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Gold-Pickled Fowl Foot)"
+        "[Effect] Items confer effect to all nearby allies (Gold-Pickled Fowl Foot)"
       ]
     },
     {
       "ID": 7050305,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Boiled Crab)"
+        "[Effect] Items confer effect to all nearby allies (Boiled Crab)"
       ]
     },
     {
       "ID": 7050306,
       "Entries": [
-        "RELIC: Items confer effect to all nearby allies (Boiled Prawn)"
+        "[Effect] Items confer effect to all nearby allies (Boiled Prawn)"
       ]
     },
     {
       "ID": 7060000,
       "Entries": [
-        "RELIC: Attack power permanently increased for each evergaol prisoner defeated"
+        "[Effect] Attack power permanently increased for each evergaol prisoner defeated"
       ]
     },
     {
       "ID": 7060001,
       "Entries": [
-        "RELIC: Attack power permanently increased for each evergaol prisoner defeated"
+        "[Effect] Attack power permanently increased for each evergaol prisoner defeated"
       ]
     },
     {
       "ID": 7060100,
       "Entries": [
-        "RELIC: Max FP permanently increased after releasing Sorcerer's Rise mechanism"
+        "[Effect] Max FP permanently increased after releasing Sorcerer's Rise mechanism"
       ]
     },
     {
       "ID": 7060101,
       "Entries": [
-        "RELIC: Max FP permanently increased after releasing Sorcerer's Rise mechanism"
+        "[Effect] Max FP permanently increased after releasing Sorcerer's Rise mechanism"
       ]
     },
     {
       "ID": 7060200,
       "Entries": [
-        "RELIC: Attack power up after defeating a Night Invader"
+        "[Effect] Attack power up after defeating a Night Invader"
       ]
     },
     {
       "ID": 7060201,
       "Entries": [
-        "RELIC: Attack power up after defeating a Night Invader"
+        "[Effect] Attack power up after defeating a Night Invader"
       ]
     },
     {
@@ -59008,199 +59008,199 @@
     {
       "ID": 7070000,
       "Entries": [
-        "RELIC: Treasure marked upon map"
+        "[Effect] Treasure marked upon map"
       ]
     },
     {
       "ID": 7070001,
       "Entries": [
-        "RELIC: Treasure marked upon map"
+        "[Effect] Treasure marked upon map"
       ]
     },
     {
       "ID": 7080000,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Daggers Equipped"
+        "[Effect] Improved Attack Power with 3+ Daggers Equipped"
       ]
     },
     {
       "ID": 7080100,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Straight Swords Equipped"
+        "[Effect] Improved Attack Power with 3+ Straight Swords Equipped"
       ]
     },
     {
       "ID": 7080200,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Greatswords Equipped"
+        "[Effect] Improved Attack Power with 3+ Greatswords Equipped"
       ]
     },
     {
       "ID": 7080300,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Colossal Swords Equipped"
+        "[Effect] Improved Attack Power with 3+ Colossal Swords Equipped"
       ]
     },
     {
       "ID": 7080400,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Curved Swords Equipped"
+        "[Effect] Improved Attack Power with 3+ Curved Swords Equipped"
       ]
     },
     {
       "ID": 7080500,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Curved Greatswords Equipped"
+        "[Effect] Improved Attack Power with 3+ Curved Greatswords Equipped"
       ]
     },
     {
       "ID": 7080600,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Katana Equipped"
+        "[Effect] Improved Attack Power with 3+ Katana Equipped"
       ]
     },
     {
       "ID": 7080700,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Twinblades Equipped"
+        "[Effect] Improved Attack Power with 3+ Twinblades Equipped"
       ]
     },
     {
       "ID": 7080800,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Thrusting Swords Equipped"
+        "[Effect] Improved Attack Power with 3+ Thrusting Swords Equipped"
       ]
     },
     {
       "ID": 7080900,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Heavy Thrusting Swords Equipped"
+        "[Effect] Improved Attack Power with 3+ Heavy Thrusting Swords Equipped"
       ]
     },
     {
       "ID": 7081000,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Axes Equipped"
+        "[Effect] Improved Attack Power with 3+ Axes Equipped"
       ]
     },
     {
       "ID": 7081100,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Greataxes Equipped"
+        "[Effect] Improved Attack Power with 3+ Greataxes Equipped"
       ]
     },
     {
       "ID": 7081200,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Hammers Equipped"
+        "[Effect] Improved Attack Power with 3+ Hammers Equipped"
       ]
     },
     {
       "ID": 7081300,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Great Hammers Equipped"
+        "[Effect] Improved Attack Power with 3+ Great Hammers Equipped"
       ]
     },
     {
       "ID": 7081400,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Flails Equipped"
+        "[Effect] Improved Attack Power with 3+ Flails Equipped"
       ]
     },
     {
       "ID": 7081500,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Spears Equipped"
+        "[Effect] Improved Attack Power with 3+ Spears Equipped"
       ]
     },
     {
       "ID": 7081700,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Great Spears Equipped"
+        "[Effect] Improved Attack Power with 3+ Great Spears Equipped"
       ]
     },
     {
       "ID": 7081800,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Halberds Equipped"
+        "[Effect] Improved Attack Power with 3+ Halberds Equipped"
       ]
     },
     {
       "ID": 7081900,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Reapers Equipped"
+        "[Effect] Improved Attack Power with 3+ Reapers Equipped"
       ]
     },
     {
       "ID": 7082000,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Fists Equipped"
+        "[Effect] Improved Attack Power with 3+ Fists Equipped"
       ]
     },
     {
       "ID": 7082100,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Claws Equipped"
+        "[Effect] Improved Attack Power with 3+ Claws Equipped"
       ]
     },
     {
       "ID": 7082200,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Whips Equipped"
+        "[Effect] Improved Attack Power with 3+ Whips Equipped"
       ]
     },
     {
       "ID": 7082300,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Colossal Weapons Equipped"
+        "[Effect] Improved Attack Power with 3+ Colossal Weapons Equipped"
       ]
     },
     {
       "ID": 7082400,
       "Entries": [
-        "RELIC: Improved Attack Power with 3+ Bows Equipped"
+        "[Effect] Improved Attack Power with 3+ Bows Equipped"
       ]
     },
     {
       "ID": 7082500,
       "Entries": [
-        "RELIC: Max FP Up with 3+ Staves Equipped"
+        "[Effect] Max FP Up with 3+ Staves Equipped"
       ]
     },
     {
       "ID": 7082600,
       "Entries": [
-        "RELIC: Max FP Up with 3+ Sacred Seals Equipped"
+        "[Effect] Max FP Up with 3+ Sacred Seals Equipped"
       ]
     },
     {
       "ID": 7082700,
       "Entries": [
-        "RELIC: Max HP Up with 3+ Small Shields Equipped"
+        "[Effect] Max HP Up with 3+ Small Shields Equipped"
       ]
     },
     {
       "ID": 7082800,
       "Entries": [
-        "RELIC: Max HP Up with 3+ Medium Shields Equipped"
+        "[Effect] Max HP Up with 3+ Medium Shields Equipped"
       ]
     },
     {
       "ID": 7082900,
       "Entries": [
-        "RELIC: Max HP Up with 3+ Greatshields Equipped"
+        "[Effect] Max HP Up with 3+ Greatshields Equipped"
       ]
     },
     {
       "ID": 7090000,
       "Entries": [
-        "RELIC: Defeating enemies fills more of the Art gauge"
+        "[Effect] Defeating enemies fills more of the Art gauge"
       ]
     },
     {
       "ID": 7090001,
       "Entries": [
-        "RELIC: Defeating enemies fills more of the Art gauge"
+        "[Effect] Defeating enemies fills more of the Art gauge"
       ]
     },
     {
@@ -59218,607 +59218,607 @@
     {
       "ID": 7090100,
       "Entries": [
-        "RELIC: Defeating enemies restores HP for allies but not for self"
+        "[Effect] Defeating enemies restores HP for allies but not for self"
       ]
     },
     {
       "ID": 7090101,
       "Entries": [
-        "RELIC: Defeating enemies restores HP for allies but not for self"
+        "[Effect] Defeating enemies restores HP for allies but not for self"
       ]
     },
     {
       "ID": 7090102,
       "Entries": [
-        "RELIC: Defeating enemies restores HP for allies but not for self"
+        "[Effect] Defeating enemies restores HP for allies but not for self"
       ]
     },
     {
       "ID": 7090300,
       "Entries": [
-        "RELIC: Defeating enemies near Totem Stela restores HP"
+        "[Effect] Defeating enemies near Totem Stela restores HP"
       ]
     },
     {
       "ID": 7090302,
       "Entries": [
-        "RELIC: Defeating enemies near Totem Stela restores HP"
+        "[Effect] Defeating enemies near Totem Stela restores HP"
       ]
     },
     {
       "ID": 7090303,
       "Entries": [
-        "RELIC: Defeating enemies near Totem Stela restores HP"
+        "[Effect] Defeating enemies near Totem Stela restores HP"
       ]
     },
     {
       "ID": 7090304,
       "Entries": [
-        "RELIC: Defeating enemies near Totem Stela restores HP"
+        "[Effect] Defeating enemies near Totem Stela restores HP"
       ]
     },
     {
       "ID": 7090305,
       "Entries": [
-        "RELIC: Defeating enemies near Totem Stela restores HP"
+        "[Effect] Defeating enemies near Totem Stela restores HP"
       ]
     },
     {
       "ID": 7100100,
       "Entries": [
-        "RELIC: Stamina recovers with each successful attack"
+        "[Effect] Stamina recovers with each successful attack"
       ]
     },
     {
       "ID": 7100101,
       "Entries": [
-        "RELIC: Stamina recovers with each successful attack"
+        "[Effect] Stamina recovers with each successful attack"
       ]
     },
     {
       "ID": 7100110,
       "Entries": [
-        "RELIC: Night of the Beast: Recover Stamina on Attack"
+        "[Effect] Night of the Beast: Recover Stamina on Attack"
       ]
     },
     {
       "ID": 7100111,
       "Entries": [
-        "RELIC: Night of the Beast: Recover Stamina on Attack"
+        "[Effect] Night of the Beast: Recover Stamina on Attack"
       ]
     },
     {
       "ID": 7110000,
       "Entries": [
-        "RELIC: Increased rune acquisition for self and allies"
+        "[Effect] Increased rune acquisition for self and allies"
       ]
     },
     {
       "ID": 7120000,
       "Entries": [
-        "RELIC: Starting armament deals magic damage"
+        "[Effect] Starting armament deals magic damage"
       ]
     },
     {
       "ID": 7120001,
       "Entries": [
-        "RELIC: Starting armament deals magic damage"
+        "[Effect] Starting armament deals magic damage"
       ]
     },
     {
       "ID": 7120002,
       "Entries": [
-        "RELIC: Starting armament deals magic damage"
+        "[Effect] Starting armament deals magic damage"
       ]
     },
     {
       "ID": 7120003,
       "Entries": [
-        "RELIC: Starting armament deals magic damage"
+        "[Effect] Starting armament deals magic damage"
       ]
     },
     {
       "ID": 7120004,
       "Entries": [
-        "RELIC: Starting armament deals magic damage"
+        "[Effect] Starting armament deals magic damage"
       ]
     },
     {
       "ID": 7120100,
       "Entries": [
-        "RELIC: Starting armament deals fire damage"
+        "[Effect] Starting armament deals fire damage"
       ]
     },
     {
       "ID": 7120101,
       "Entries": [
-        "RELIC: Starting armament deals fire damage"
+        "[Effect] Starting armament deals fire damage"
       ]
     },
     {
       "ID": 7120102,
       "Entries": [
-        "RELIC: Starting armament deals fire damage"
+        "[Effect] Starting armament deals fire damage"
       ]
     },
     {
       "ID": 7120103,
       "Entries": [
-        "RELIC: Starting armament deals fire damage"
+        "[Effect] Starting armament deals fire damage"
       ]
     },
     {
       "ID": 7120104,
       "Entries": [
-        "RELIC: Starting armament deals fire damage"
+        "[Effect] Starting armament deals fire damage"
       ]
     },
     {
       "ID": 7120200,
       "Entries": [
-        "RELIC: Starting armament deals lightning damage"
+        "[Effect] Starting armament deals lightning damage"
       ]
     },
     {
       "ID": 7120201,
       "Entries": [
-        "RELIC: Starting armament deals lightning damage"
+        "[Effect] Starting armament deals lightning damage"
       ]
     },
     {
       "ID": 7120202,
       "Entries": [
-        "RELIC: Starting armament deals lightning damage"
+        "[Effect] Starting armament deals lightning damage"
       ]
     },
     {
       "ID": 7120203,
       "Entries": [
-        "RELIC: Starting armament deals lightning damage"
+        "[Effect] Starting armament deals lightning damage"
       ]
     },
     {
       "ID": 7120204,
       "Entries": [
-        "RELIC: Starting armament deals lightning damage"
+        "[Effect] Starting armament deals lightning damage"
       ]
     },
     {
       "ID": 7120300,
       "Entries": [
-        "RELIC: Starting armament deals holy damage"
+        "[Effect] Starting armament deals holy damage"
       ]
     },
     {
       "ID": 7120301,
       "Entries": [
-        "RELIC: Starting armament deals holy damage"
+        "[Effect] Starting armament deals holy damage"
       ]
     },
     {
       "ID": 7120302,
       "Entries": [
-        "RELIC: Starting armament deals holy damage"
+        "[Effect] Starting armament deals holy damage"
       ]
     },
     {
       "ID": 7120303,
       "Entries": [
-        "RELIC: Starting armament deals holy damage"
+        "[Effect] Starting armament deals holy damage"
       ]
     },
     {
       "ID": 7120304,
       "Entries": [
-        "RELIC: Starting armament deals holy damage"
+        "[Effect] Starting armament deals holy damage"
       ]
     },
     {
       "ID": 7120400,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120401,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120402,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120403,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120404,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120405,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120406,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120407,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120408,
       "Entries": [
-        "RELIC: Starting armament inflicts frost"
+        "[Effect] Starting armament inflicts frost"
       ]
     },
     {
       "ID": 7120500,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120501,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120502,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120503,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120504,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120505,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120506,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120507,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120508,
       "Entries": [
-        "RELIC: Starting armament inflicts poison"
+        "[Effect] Starting armament inflicts poison"
       ]
     },
     {
       "ID": 7120600,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120601,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120602,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120603,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120604,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120605,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120606,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120607,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120608,
       "Entries": [
-        "RELIC: Starting armament inflicts blood loss"
+        "[Effect] Starting armament inflicts blood loss"
       ]
     },
     {
       "ID": 7120900,
       "Entries": [
-        "RELIC: Stonesword Key in possession at start of expedition"
+        "[Effect] Stonesword Key in possession at start of expedition"
       ]
     },
     {
       "ID": 7121000,
       "Entries": [
-        "RELIC: Small Pouch in possession at start of expedition"
+        "[Effect] Small Pouch in possession at start of expedition"
       ]
     },
     {
       "ID": 7121100,
       "Entries": [
-        "RELIC: Fire Pots in possession at start of expedition"
+        "[Effect] Fire Pots in possession at start of expedition"
       ]
     },
     {
       "ID": 7121200,
       "Entries": [
-        "RELIC: Magic Pots in possession at start of expedition"
+        "[Effect] Magic Pots in possession at start of expedition"
       ]
     },
     {
       "ID": 7121300,
       "Entries": [
-        "RELIC: Lightning Pots in possession at start of expedition"
+        "[Effect] Lightning Pots in possession at start of expedition"
       ]
     },
     {
       "ID": 7121400,
       "Entries": [
-        "RELIC: Holy Water Pots in possession at start of expedition"
+        "[Effect] Holy Water Pots in possession at start of expedition"
       ]
     },
     {
       "ID": 7121500,
       "Entries": [
-        "RELIC: Poisonbone Darts in possession at start of expedition"
+        "[Effect] Poisonbone Darts in possession at start of expedition"
       ]
     },
     {
       "ID": 7121600,
       "Entries": [
-        "RELIC: Crystal Darts in possession at start of expedition"
+        "[Effect] Crystal Darts in possession at start of expedition"
       ]
     },
     {
       "ID": 7121700,
       "Entries": [
-        "RELIC: Throwing Daggers in possession at start of expedition"
+        "[Effect] Throwing Daggers in possession at start of expedition"
       ]
     },
     {
       "ID": 7121800,
       "Entries": [
-        "RELIC: Glintstone Scraps in possession at start of expedition"
+        "[Effect] Glintstone Scraps in possession at start of expedition"
       ]
     },
     {
       "ID": 7121900,
       "Entries": [
-        "RELIC: Gravity Stone Chunks in possession at start of expedition"
+        "[Effect] Gravity Stone Chunks in possession at start of expedition"
       ]
     },
     {
       "ID": 7122000,
       "Entries": [
-        "RELIC: Bewitching Branches in possession at start of expedition"
+        "[Effect] Bewitching Branches in possession at start of expedition"
       ]
     },
     {
       "ID": 7122100,
       "Entries": [
-        "RELIC: Wraith Calling Bell in possession at start of expedition"
+        "[Effect] Wraith Calling Bell in possession at start of expedition"
       ]
     },
     {
       "ID": 7122200,
       "Entries": [
-        "RELIC: Fire Grease in possession at start of expedition"
+        "[Effect] Fire Grease in possession at start of expedition"
       ]
     },
     {
       "ID": 7122300,
       "Entries": [
-        "RELIC: Magic Grease in possession at start of expedition"
+        "[Effect] Magic Grease in possession at start of expedition"
       ]
     },
     {
       "ID": 7122400,
       "Entries": [
-        "RELIC: Lightning Grease in possession at start of expedition"
+        "[Effect] Lightning Grease in possession at start of expedition"
       ]
     },
     {
       "ID": 7122500,
       "Entries": [
-        "RELIC: Holy Grease in possession at start of expedition"
+        "[Effect] Holy Grease in possession at start of expedition"
       ]
     },
     {
       "ID": 7122600,
       "Entries": [
-        "RELIC: Shield Grease in possession at start of expedition"
+        "[Effect] Shield Grease in possession at start of expedition"
       ]
     },
     {
       "ID": 7122700,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Glintblade Phalanx at start of expedition"
+        "[Effect] Changes compatible armament's skill to Glintblade Phalanx at start of expedition"
       ]
     },
     {
       "ID": 7122800,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Gravitas at start of expedition"
+        "[Effect] Changes compatible armament's skill to Gravitas at start of expedition"
       ]
     },
     {
       "ID": 7122900,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Flaming Strike at start of expedition"
+        "[Effect] Changes compatible armament's skill to Flaming Strike at start of expedition"
       ]
     },
     {
       "ID": 7123000,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Eruption at start of expedition"
+        "[Effect] Changes compatible armament's skill to Eruption at start of expedition"
       ]
     },
     {
       "ID": 7123100,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Thunderbolt at start of expedition"
+        "[Effect] Changes compatible armament's skill to Thunderbolt at start of expedition"
       ]
     },
     {
       "ID": 7123200,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Lightning Slash at start of expedition"
+        "[Effect] Changes compatible armament's skill to Lightning Slash at start of expedition"
       ]
     },
     {
       "ID": 7123300,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Sacred Blade at start of expedition"
+        "[Effect] Changes compatible armament's skill to Sacred Blade at start of expedition"
       ]
     },
     {
       "ID": 7123400,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Prayerful Strike at start of expedition"
+        "[Effect] Changes compatible armament's skill to Prayerful Strike at start of expedition"
       ]
     },
     {
       "ID": 7123500,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Poisonous Mist at start of expedition"
+        "[Effect] Changes compatible armament's skill to Poisonous Mist at start of expedition"
       ]
     },
     {
       "ID": 7123600,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Poison Moth Flight at start of expedition"
+        "[Effect] Changes compatible armament's skill to Poison Moth Flight at start of expedition"
       ]
     },
     {
       "ID": 7123700,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Blood Blade at start of expedition"
+        "[Effect] Changes compatible armament's skill to Blood Blade at start of expedition"
       ]
     },
     {
       "ID": 7123800,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Seppuku at start of expedition"
+        "[Effect] Changes compatible armament's skill to Seppuku at start of expedition"
       ]
     },
     {
       "ID": 7123900,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Chilling Mist at start of expedition"
+        "[Effect] Changes compatible armament's skill to Chilling Mist at start of expedition"
       ]
     },
     {
       "ID": 7124000,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Hoarfrost Stomp at start of expedition"
+        "[Effect] Changes compatible armament's skill to Hoarfrost Stomp at start of expedition"
       ]
     },
     {
       "ID": 7124100,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to White Shadow's Lure at start of expedition"
+        "[Effect] Changes compatible armament's skill to White Shadow's Lure at start of expedition"
       ]
     },
     {
       "ID": 7124300,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Endure at start of expedition"
+        "[Effect] Changes compatible armament's skill to Endure at start of expedition"
       ]
     },
     {
       "ID": 7124400,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Quickstep at start of expedition"
+        "[Effect] Changes compatible armament's skill to Quickstep at start of expedition"
       ]
     },
     {
       "ID": 7124500,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Storm Stomp at start of expedition"
+        "[Effect] Changes compatible armament's skill to Storm Stomp at start of expedition"
       ]
     },
     {
       "ID": 7124600,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Determination at start of expedition"
+        "[Effect] Changes compatible armament's skill to Determination at start of expedition"
       ]
     },
     {
       "ID": 7124700,
       "Entries": [
-        "RELIC: Changes compatible armament's skill to Rain of Arrows at start of expedition"
+        "[Effect] Changes compatible armament's skill to Rain of Arrows at start of expedition"
       ]
     },
     {
       "ID": 7126000,
       "Entries": [
-        "RELIC: Starlight Shards in possession at start of expedition"
+        "[Effect] Starlight Shards in possession at start of expedition"
       ]
     },
     {
       "ID": 7150000,
       "Entries": [
-        "RELIC: Guard counter is given a boost based on current HP"
+        "[Effect] Guard counter is given a boost based on current HP"
       ]
     },
     {
       "ID": 7160000,
       "Entries": [
-        "RELIC: HP Restoration upon Thrusting Counterattack"
+        "[Effect] HP Restoration upon Thrusting Counterattack"
       ]
     },
     {
@@ -59830,19 +59830,19 @@
     {
       "ID": 7220000,
       "Entries": [
-        "RELIC: Revenant: Power up while fighting alongside family"
+        "[Effect] Revenant: Power up while fighting alongside family"
       ]
     },
     {
       "ID": 7220001,
       "Entries": [
-        "RELIC: Revenant: Power up while fighting alongside family"
+        "[Effect] Revenant: Power up while fighting alongside family"
       ]
     },
     {
       "ID": 7220002,
       "Entries": [
-        "RELIC: Revenant: Power up while fighting alongside family"
+        "[Effect] Revenant: Power up while fighting alongside family"
       ]
     },
     {
@@ -59872,91 +59872,91 @@
     {
       "ID": 7230000,
       "Entries": [
-        "RELIC: Rune discount for shop purchases while on expedition"
+        "[Effect] Rune discount for shop purchases while on expedition"
       ]
     },
     {
       "ID": 7230001,
       "Entries": [
-        "RELIC: Huge rune discount for shop purchases while on expedition"
+        "[Effect] Huge rune discount for shop purchases while on expedition"
       ]
     },
     {
       "ID": 7240000,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240001,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240003,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240004,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240006,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240007,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240008,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240009,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240010,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240011,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240012,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7240013,
       "Entries": [
-        "RELIC: Improved Poise & Damage Negation When Knocked Back by Damage"
+        "[Effect] Improved Poise & Damage Negation When Knocked Back by Damage"
       ]
     },
     {
       "ID": 7260000,
       "Entries": [
-        "RELIC: Attack power up when facing poison-afflicted enemy"
+        "[Effect] Attack power up when facing poison-afflicted enemy"
       ]
     },
     {
@@ -59974,7 +59974,7 @@
     {
       "ID": 7260300,
       "Entries": [
-        "RELIC: Attack power up when facing scarlet rot-afflicted enemy"
+        "[Effect] Attack power up when facing scarlet rot-afflicted enemy"
       ]
     },
     {
@@ -59992,7 +59992,7 @@
     {
       "ID": 7260400,
       "Entries": [
-        "RELIC: Attack power up when facing frostbite-afflicted enemy"
+        "[Effect] Attack power up when facing frostbite-afflicted enemy"
       ]
     },
     {
@@ -60010,103 +60010,103 @@
     {
       "ID": 7260700,
       "Entries": [
-        "RELIC: Nearby Frostbite Conceals Self"
+        "[Effect] Nearby Frostbite Conceals Self"
       ]
     },
     {
       "ID": 7260701,
       "Entries": [
-        "RELIC: Nearby Frostbite Conceals Self"
+        "[Effect] Nearby Frostbite Conceals Self"
       ]
     },
     {
       "ID": 7260702,
       "Entries": [
-        "RELIC: Nearby Frostbite Conceals Self"
+        "[Effect] Nearby Frostbite Conceals Self"
       ]
     },
     {
       "ID": 7260703,
       "Entries": [
-        "RELIC: Nearby Frostbite Conceals Self"
+        "[Effect] Nearby Frostbite Conceals Self"
       ]
     },
     {
       "ID": 7260800,
       "Entries": [
-        "RELIC: Poison & Rot in Vicinity Increases Attack Power"
+        "[Effect] Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
       "ID": 7260801,
       "Entries": [
-        "RELIC: Poison & Rot in Vicinity Increases Attack Power"
+        "[Effect] Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
       "ID": 7260802,
       "Entries": [
-        "RELIC: Poison & Rot in Vicinity Increases Attack Power"
+        "[Effect] Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
       "ID": 7260803,
       "Entries": [
-        "RELIC: Poison & Rot in Vicinity Increases Attack Power"
+        "[Effect] Poison & Rot in Vicinity Increases Attack Power"
       ]
     },
     {
       "ID": 7270100,
       "Entries": [
-        "RELIC: Ironeye:  +1 additional Character Skill use"
+        "[Effect] Ironeye:  +1 additional Character Skill use"
       ]
     },
     {
       "ID": 7280000,
       "Entries": [
-        "RELIC: Ironeye:  Extends duration of weak point"
+        "[Effect] Ironeye:  Extends duration of weak point"
       ]
     },
     {
       "ID": 7290000,
       "Entries": [
-        "RELIC: Duchess: Improved Character Skill Attack Power"
+        "[Effect] Duchess: Improved Character Skill Attack Power"
       ]
     },
     {
       "ID": 7290001,
       "Entries": [
-        "RELIC: Duchess: Improved Character Skill Attack Power"
+        "[Effect] Duchess: Improved Character Skill Attack Power"
       ]
     },
     {
       "ID": 7290002,
       "Entries": [
-        "RELIC: Duchess: Improved Character Skill Attack Power"
+        "[Effect] Duchess: Improved Character Skill Attack Power"
       ]
     },
     {
       "ID": 7310000,
       "Entries": [
-        "RELIC: Raider: Duration of Ultimate Art extended"
+        "[Effect] Raider: Duration of Ultimate Art extended"
       ]
     },
     {
       "ID": 7310001,
       "Entries": [
-        "RELIC: Raider: Duration of Ultimate Art extended"
+        "[Effect] Raider: Duration of Ultimate Art extended"
       ]
     },
     {
       "ID": 7310002,
       "Entries": [
-        "RELIC: Raider: Duration of Ultimate Art extended"
+        "[Effect] Raider: Duration of Ultimate Art extended"
       ]
     },
     {
       "ID": 7310003,
       "Entries": [
-        "RELIC: Raider: Duration of Ultimate Art extended"
+        "[Effect] Raider: Duration of Ultimate Art extended"
       ]
     },
     {
@@ -61186,7 +61186,7 @@
     {
       "ID": 7998004,
       "Entries": [
-        "WEP: Defeating Group Fires Golden Shockwave"
+        "[Effect] Defeating Group Fires Golden Shockwave"
       ]
     },
     {
@@ -61246,1105 +61246,1105 @@
     {
       "ID": 8000000,
       "Entries": [
-        "WEP: Increased Maximum HP: 1"
+        "[Effect] Increased Maximum HP: 1"
       ]
     },
     {
       "ID": 8000001,
       "Entries": [
-        "WEP: Increased Maximum HP: 2"
+        "[Effect] Increased Maximum HP: 2"
       ]
     },
     {
       "ID": 8010000,
       "Entries": [
-        "WEP: Increased Maximum FP: 1"
+        "[Effect] Increased Maximum FP: 1"
       ]
     },
     {
       "ID": 8010001,
       "Entries": [
-        "WEP: Increased Maximum FP: 2"
+        "[Effect] Increased Maximum FP: 2"
       ]
     },
     {
       "ID": 8010100,
       "Entries": [
-        "WEP: Reduced FP Consumption: 1"
+        "[Effect] Reduced FP Consumption: 1"
       ]
     },
     {
       "ID": 8010101,
       "Entries": [
-        "WEP: Reduced FP Consumption: 2"
+        "[Effect] Reduced FP Consumption: 2"
       ]
     },
     {
       "ID": 8020000,
       "Entries": [
-        "WEP: Increased Maximum Stamina: 1"
+        "[Effect] Increased Maximum Stamina: 1"
       ]
     },
     {
       "ID": 8020001,
       "Entries": [
-        "WEP: Increased Maximum Stamina: 2"
+        "[Effect] Increased Maximum Stamina: 2"
       ]
     },
     {
       "ID": 8020200,
       "Entries": [
-        "WEP: Improved Stamina Recovery: 1"
+        "[Effect] Improved Stamina Recovery: 1"
       ]
     },
     {
       "ID": 8020201,
       "Entries": [
-        "WEP: Improved Stamina Recovery: 2"
+        "[Effect] Improved Stamina Recovery: 2"
       ]
     },
     {
       "ID": 8100000,
       "Entries": [
-        "WEP: Improved Physical Attack Power: 1"
+        "[Effect] Improved Physical Attack Power: 1"
       ]
     },
     {
       "ID": 8100001,
       "Entries": [
-        "WEP: Improved Physical Attack Power: 2"
+        "[Effect] Improved Physical Attack Power: 2"
       ]
     },
     {
       "ID": 8100100,
       "Entries": [
-        "WEP: Improved Magic Attack Power: 1"
+        "[Effect] Improved Magic Attack Power: 1"
       ]
     },
     {
       "ID": 8100101,
       "Entries": [
-        "WEP: Improved Magic Attack Power: 2"
+        "[Effect] Improved Magic Attack Power: 2"
       ]
     },
     {
       "ID": 8100102,
       "Entries": [
-        "WEP: Improved Magic Attack Power: 3"
+        "[Effect] Improved Magic Attack Power: 3"
       ]
     },
     {
       "ID": 8100200,
       "Entries": [
-        "WEP: Improved Fire Attack Power: 1"
+        "[Effect] Improved Fire Attack Power: 1"
       ]
     },
     {
       "ID": 8100201,
       "Entries": [
-        "WEP: Improved Fire Attack Power: 2"
+        "[Effect] Improved Fire Attack Power: 2"
       ]
     },
     {
       "ID": 8100202,
       "Entries": [
-        "WEP: Improved Fire Attack Power: 3"
+        "[Effect] Improved Fire Attack Power: 3"
       ]
     },
     {
       "ID": 8100300,
       "Entries": [
-        "WEP: Improved Lightning Attack Power: 1"
+        "[Effect] Improved Lightning Attack Power: 1"
       ]
     },
     {
       "ID": 8100301,
       "Entries": [
-        "WEP: Improved Lightning Attack Power: 2"
+        "[Effect] Improved Lightning Attack Power: 2"
       ]
     },
     {
       "ID": 8100302,
       "Entries": [
-        "WEP: Improved Lightning Attack Power: 3"
+        "[Effect] Improved Lightning Attack Power: 3"
       ]
     },
     {
       "ID": 8100400,
       "Entries": [
-        "WEP: Improved Holy Attack Power: 1"
+        "[Effect] Improved Holy Attack Power: 1"
       ]
     },
     {
       "ID": 8100401,
       "Entries": [
-        "WEP: Improved Holy Attack Power: 2"
+        "[Effect] Improved Holy Attack Power: 2"
       ]
     },
     {
       "ID": 8100402,
       "Entries": [
-        "WEP: Improved Holy Attack Power: 3"
+        "[Effect] Improved Holy Attack Power: 3"
       ]
     },
     {
       "ID": 8100500,
       "Entries": [
-        "WEP: Improved Affinity Attack Power: 1"
+        "[Effect] Improved Affinity Attack Power: 1"
       ]
     },
     {
       "ID": 8100501,
       "Entries": [
-        "WEP: Improved Affinity Attack Power: 2"
+        "[Effect] Improved Affinity Attack Power: 2"
       ]
     },
     {
       "ID": 8110000,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110001,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110002,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110010,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110011,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110012,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110015,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110016,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110017,
       "Entries": [
-        "WEP: Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison"
       ]
     },
     {
       "ID": 8110100,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110101,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110102,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110110,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110111,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110112,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110115,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110116,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110117,
       "Entries": [
-        "WEP: Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss"
       ]
     },
     {
       "ID": 8110200,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110201,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110202,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110210,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110211,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110212,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110215,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110216,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110217,
       "Entries": [
-        "WEP: Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep"
       ]
     },
     {
       "ID": 8110400,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110401,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110402,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110410,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110411,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110412,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110415,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110416,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110417,
       "Entries": [
-        "WEP: Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot"
       ]
     },
     {
       "ID": 8110500,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110501,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110502,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110510,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110511,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110512,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110515,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110516,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110517,
       "Entries": [
-        "WEP: Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost"
       ]
     },
     {
       "ID": 8110700,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110701,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110702,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110703,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110750,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110751,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110752,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110753,
       "Entries": [
-        "WEP: Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon"
       ]
     },
     {
       "ID": 8110800,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110801,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110802,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110803,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110850,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110851,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110852,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110853,
       "Entries": [
-        "WEP: Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon"
       ]
     },
     {
       "ID": 8110900,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110901,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110902,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110903,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110950,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110951,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110952,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8110953,
       "Entries": [
-        "WEP: Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon"
       ]
     },
     {
       "ID": 8111000,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111001,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111002,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111003,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111050,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111051,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111052,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8111053,
       "Entries": [
-        "WEP: Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon"
       ]
     },
     {
       "ID": 8120000,
       "Entries": [
-        "WEP: Improved Stance-Breaking: 1"
+        "[Effect] Improved Stance-Breaking: 1"
       ]
     },
     {
       "ID": 8120001,
       "Entries": [
-        "WEP: Improved Stance-Breaking: 2"
+        "[Effect] Improved Stance-Breaking: 2"
       ]
     },
     {
       "ID": 8130000,
       "Entries": [
-        "WEP: Improved Critical Hits"
+        "[Effect] Improved Critical Hits"
       ]
     },
     {
       "ID": 8130001,
       "Entries": [
-        "WEP: Improved Critical Hits"
+        "[Effect] Improved Critical Hits"
       ]
     },
     {
       "ID": 8130002,
       "Entries": [
-        "WEP: Improved Critical Hits"
+        "[Effect] Improved Critical Hits"
       ]
     },
     {
       "ID": 8140000,
       "Entries": [
-        "WEP: Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking"
       ]
     },
     {
       "ID": 8140001,
       "Entries": [
-        "WEP: Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking"
       ]
     },
     {
       "ID": 8140002,
       "Entries": [
-        "WEP: Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking"
       ]
     },
     {
       "ID": 8160000,
       "Entries": [
-        "RELIC: Improved Dagger Attack Power"
+        "[Effect] Improved Dagger Attack Power"
       ]
     },
     {
       "ID": 8160100,
       "Entries": [
-        "RELIC: Improved Straight Sword Attack Power"
+        "[Effect] Improved Straight Sword Attack Power"
       ]
     },
     {
       "ID": 8160200,
       "Entries": [
-        "RELIC: Improved Greatsword Attack Power"
+        "[Effect] Improved Greatsword Attack Power"
       ]
     },
     {
       "ID": 8160300,
       "Entries": [
-        "RELIC: Improved Colossal Sword Attack Power"
+        "[Effect] Improved Colossal Sword Attack Power"
       ]
     },
     {
       "ID": 8160400,
       "Entries": [
-        "RELIC: Improved Curved Sword Attack Power"
+        "[Effect] Improved Curved Sword Attack Power"
       ]
     },
     {
       "ID": 8160500,
       "Entries": [
-        "RELIC: Improved Curved Greatsword Attack Power"
+        "[Effect] Improved Curved Greatsword Attack Power"
       ]
     },
     {
       "ID": 8160600,
       "Entries": [
-        "RELIC: Improved Katana Attack Power"
+        "[Effect] Improved Katana Attack Power"
       ]
     },
     {
       "ID": 8160700,
       "Entries": [
-        "RELIC: Improved Twinblade Attack Power"
+        "[Effect] Improved Twinblade Attack Power"
       ]
     },
     {
       "ID": 8160800,
       "Entries": [
-        "RELIC: Improved Thrusting Sword Attack Power"
+        "[Effect] Improved Thrusting Sword Attack Power"
       ]
     },
     {
       "ID": 8160900,
       "Entries": [
-        "RELIC: Improved Heavy Thrusting Sword Attack Power"
+        "[Effect] Improved Heavy Thrusting Sword Attack Power"
       ]
     },
     {
       "ID": 8161000,
       "Entries": [
-        "RELIC: Improved Axe Attack Power"
+        "[Effect] Improved Axe Attack Power"
       ]
     },
     {
       "ID": 8161100,
       "Entries": [
-        "RELIC: Improved Greataxe Attack Power"
+        "[Effect] Improved Greataxe Attack Power"
       ]
     },
     {
       "ID": 8161200,
       "Entries": [
-        "RELIC: Improved Hammer Attack Power"
+        "[Effect] Improved Hammer Attack Power"
       ]
     },
     {
       "ID": 8161300,
       "Entries": [
-        "RELIC: Improved Great Hammer Attack Power"
+        "[Effect] Improved Great Hammer Attack Power"
       ]
     },
     {
       "ID": 8161400,
       "Entries": [
-        "RELIC: Improved Flail Attack Power"
+        "[Effect] Improved Flail Attack Power"
       ]
     },
     {
       "ID": 8161500,
       "Entries": [
-        "RELIC: Improved Spear Attack Power"
+        "[Effect] Improved Spear Attack Power"
       ]
     },
     {
       "ID": 8161600,
       "Entries": [
-        "RELIC: Improved ? Attack Power"
+        "[Effect] Improved ? Attack Power"
       ]
     },
     {
       "ID": 8161700,
       "Entries": [
-        "RELIC: Improved Great Spear Attack Power"
+        "[Effect] Improved Great Spear Attack Power"
       ]
     },
     {
       "ID": 8161800,
       "Entries": [
-        "RELIC: Improved Halberd Attack Power"
+        "[Effect] Improved Halberd Attack Power"
       ]
     },
     {
       "ID": 8161900,
       "Entries": [
-        "RELIC: Improved Reaper Attack Power"
+        "[Effect] Improved Reaper Attack Power"
       ]
     },
     {
       "ID": 8162000,
       "Entries": [
-        "RELIC: Improved Fist Attack Power"
+        "[Effect] Improved Fist Attack Power"
       ]
     },
     {
       "ID": 8162100,
       "Entries": [
-        "RELIC: Improved Claw Attack Power"
+        "[Effect] Improved Claw Attack Power"
       ]
     },
     {
       "ID": 8162200,
       "Entries": [
-        "RELIC: Improved Whip Attack Power"
+        "[Effect] Improved Whip Attack Power"
       ]
     },
     {
       "ID": 8162300,
       "Entries": [
-        "RELIC: Improved Colossal Weapon Attack Power"
+        "[Effect] Improved Colossal Weapon Attack Power"
       ]
     },
     {
       "ID": 8162400,
       "Entries": [
-        "RELIC: Improved Bow Attack Power"
+        "[Effect] Improved Bow Attack Power"
       ]
     },
     {
       "ID": 8200000,
       "Entries": [
-        "POW / WEP: Improved Physical Damage Negation: 1"
+        "POW / [Effect] Improved Physical Damage Negation: 1"
       ]
     },
     {
       "ID": 8200001,
       "Entries": [
-        "POW / WEP: Improved Physical Damage Negation: 2"
+        "POW / [Effect] Improved Physical Damage Negation: 2"
       ]
     },
     {
       "ID": 8200100,
       "Entries": [
-        "WEP: Improved Magic Damage Negation: 1"
+        "[Effect] Improved Magic Damage Negation: 1"
       ]
     },
     {
       "ID": 8200101,
       "Entries": [
-        "WEP: Improved Magic Damage Negation: 2"
+        "[Effect] Improved Magic Damage Negation: 2"
       ]
     },
     {
       "ID": 8200102,
       "Entries": [
-        "WEP: Improved Magic Damage Negation: 3"
+        "[Effect] Improved Magic Damage Negation: 3"
       ]
     },
     {
       "ID": 8200200,
       "Entries": [
-        "WEP: Improved Fire Damage Negation: 1"
+        "[Effect] Improved Fire Damage Negation: 1"
       ]
     },
     {
       "ID": 8200201,
       "Entries": [
-        "WEP: Improved Fire Damage Negation: 2"
+        "[Effect] Improved Fire Damage Negation: 2"
       ]
     },
     {
       "ID": 8200202,
       "Entries": [
-        "WEP: Improved Fire Damage Negation: 3"
+        "[Effect] Improved Fire Damage Negation: 3"
       ]
     },
     {
       "ID": 8200300,
       "Entries": [
-        "WEP: Improved Lightning Damage Negation: 1"
+        "[Effect] Improved Lightning Damage Negation: 1"
       ]
     },
     {
       "ID": 8200301,
       "Entries": [
-        "WEP: Improved Lightning Damage Negation: 2"
+        "[Effect] Improved Lightning Damage Negation: 2"
       ]
     },
     {
       "ID": 8200302,
       "Entries": [
-        "WEP: Improved Lightning Damage Negation: 3"
+        "[Effect] Improved Lightning Damage Negation: 3"
       ]
     },
     {
       "ID": 8200400,
       "Entries": [
-        "WEP: Improved Holy Damage Negation: 1"
+        "[Effect] Improved Holy Damage Negation: 1"
       ]
     },
     {
       "ID": 8200401,
       "Entries": [
-        "WEP: Improved Holy Damage Negation: 2"
+        "[Effect] Improved Holy Damage Negation: 2"
       ]
     },
     {
       "ID": 8200402,
       "Entries": [
-        "WEP: Improved Holy Damage Negation: 3"
+        "[Effect] Improved Holy Damage Negation: 3"
       ]
     },
     {
       "ID": 8200500,
       "Entries": [
-        "POW / WEP: Improved Non-Physical Damage Negation: 1"
+        "POW / [Effect] Improved Non-Physical Damage Negation: 1"
       ]
     },
     {
       "ID": 8200501,
       "Entries": [
-        "POW / WEP: Improved Non-Physical Damage Negation: 2"
+        "POW / [Effect] Improved Non-Physical Damage Negation: 2"
       ]
     },
     {
       "ID": 8210000,
       "Entries": [
-        "WEP: Improved Poison Resistance: 1"
+        "[Effect] Improved Poison Resistance: 1"
       ]
     },
     {
       "ID": 8210001,
       "Entries": [
-        "WEP: Improved Poison Resistance: 2"
+        "[Effect] Improved Poison Resistance: 2"
       ]
     },
     {
       "ID": 8210002,
       "Entries": [
-        "WEP: Improved Poison Resistance: 3"
+        "[Effect] Improved Poison Resistance: 3"
       ]
     },
     {
       "ID": 8210100,
       "Entries": [
-        "WEP: Improved Blood Loss Resistance: 1"
+        "[Effect] Improved Blood Loss Resistance: 1"
       ]
     },
     {
       "ID": 8210101,
       "Entries": [
-        "WEP: Improved Blood Loss Resistance: 2"
+        "[Effect] Improved Blood Loss Resistance: 2"
       ]
     },
     {
       "ID": 8210102,
       "Entries": [
-        "WEP: Improved Blood Loss Resistance: 3"
+        "[Effect] Improved Blood Loss Resistance: 3"
       ]
     },
     {
       "ID": 8210200,
       "Entries": [
-        "WEP: Improved Sleep Resistance: 1"
+        "[Effect] Improved Sleep Resistance: 1"
       ]
     },
     {
       "ID": 8210201,
       "Entries": [
-        "WEP: Improved Sleep Resistance: 2"
+        "[Effect] Improved Sleep Resistance: 2"
       ]
     },
     {
       "ID": 8210202,
       "Entries": [
-        "WEP: Improved Sleep Resistance: 3"
+        "[Effect] Improved Sleep Resistance: 3"
       ]
     },
     {
       "ID": 8210300,
       "Entries": [
-        "WEP: Improved Death Blight Resistance: 1"
+        "[Effect] Improved Death Blight Resistance: 1"
       ]
     },
     {
       "ID": 8210301,
       "Entries": [
-        "WEP: Improved Death Blight Resistance: 2"
+        "[Effect] Improved Death Blight Resistance: 2"
       ]
     },
     {
       "ID": 8210302,
       "Entries": [
-        "WEP: Improved Death Blight Resistance: 3"
+        "[Effect] Improved Death Blight Resistance: 3"
       ]
     },
     {
       "ID": 8210400,
       "Entries": [
-        "WEP: Improved Rot Resistance: 1"
+        "[Effect] Improved Rot Resistance: 1"
       ]
     },
     {
       "ID": 8210401,
       "Entries": [
-        "WEP: Improved Rot Resistance: 2"
+        "[Effect] Improved Rot Resistance: 2"
       ]
     },
     {
       "ID": 8210402,
       "Entries": [
-        "WEP: Improved Rot Resistance: 3"
+        "[Effect] Improved Rot Resistance: 3"
       ]
     },
     {
       "ID": 8210500,
       "Entries": [
-        "WEP: Improved Frost Resistance: 1"
+        "[Effect] Improved Frost Resistance: 1"
       ]
     },
     {
       "ID": 8210501,
       "Entries": [
-        "WEP: Improved Frost Resistance: 2"
+        "[Effect] Improved Frost Resistance: 2"
       ]
     },
     {
       "ID": 8210502,
       "Entries": [
-        "WEP: Improved Frost Resistance: 3"
+        "[Effect] Improved Frost Resistance: 3"
       ]
     },
     {
       "ID": 8210600,
       "Entries": [
-        "WEP: Improved Madness Resistance: 1"
+        "[Effect] Improved Madness Resistance: 1"
       ]
     },
     {
       "ID": 8210601,
       "Entries": [
-        "WEP: Improved Madness Resistance: 2"
+        "[Effect] Improved Madness Resistance: 2"
       ]
     },
     {
       "ID": 8210602,
       "Entries": [
-        "WEP: Improved Madness Resistance: 3"
+        "[Effect] Improved Madness Resistance: 3"
       ]
     },
     {
       "ID": 8210700,
       "Entries": [
-        "POW / WEP: All Resistances Up: 1"
+        "POW / [Effect] All Resistances Up: 1"
       ]
     },
     {
       "ID": 8210701,
       "Entries": [
-        "POW / WEP: All Resistances Up: 2"
+        "POW / [Effect] All Resistances Up: 2"
       ]
     },
     {
       "ID": 8220000,
       "Entries": [
-        "WEP: Improved Guarding Ability: 1"
+        "[Effect] Improved Guarding Ability: 1"
       ]
     },
     {
       "ID": 8220001,
       "Entries": [
-        "WEP: Improved Guarding Ability: 2"
+        "[Effect] Improved Guarding Ability: 2"
       ]
     },
     {
       "ID": 8220002,
       "Entries": [
-        "WEP: Improved Guarding Ability: 3"
+        "[Effect] Improved Guarding Ability: 3"
       ]
     },
     {
       "ID": 8230000,
       "Entries": [
-        "POW / WEP: Improved Poise: 1"
+        "POW / [Effect] Improved Poise: 1"
       ]
     },
     {
       "ID": 8230001,
       "Entries": [
-        "POW / WEP: Improved Poise: 2"
+        "POW / [Effect] Improved Poise: 2"
       ]
     },
     {
       "ID": 8300000,
       "Entries": [
-        "POW / WEP: Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing"
       ]
     },
     {
       "ID": 8300001,
       "Entries": [
-        "POW / WEP: Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing"
       ]
     },
     {
       "ID": 8300002,
       "Entries": [
-        "POW / WEP: Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing"
       ]
     },
     {
       "ID": 8300100,
       "Entries": [
-        "RELIC: Improved Stance-Breaking when Two-Handing"
+        "[Effect] Improved Stance-Breaking when Two-Handing"
       ]
     },
     {
@@ -63910,19 +63910,19 @@
     {
       "ID": 8600300,
       "Entries": [
-        "POW: Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks"
       ]
     },
     {
       "ID": 8600301,
       "Entries": [
-        "POW: Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks"
       ]
     },
     {
       "ID": 8600302,
       "Entries": [
-        "POW: Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks"
       ]
     },
     {
@@ -63952,13 +63952,13 @@
     {
       "ID": 8600307,
       "Entries": [
-        "POW: Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks"
       ]
     },
     {
       "ID": 8600308,
       "Entries": [
-        "POW: Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks"
       ]
     },
     {
@@ -64828,1153 +64828,1153 @@
     {
       "ID": 8690400,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
       "ID": 8690401,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep - Apply Sleep"
       ]
     },
     {
       "ID": 8690402,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
       "ID": 8700000,
       "Entries": [
-        ""
+        "[Effect] Poison Increases Attack Power"
       ]
     },
     {
       "ID": 8700001,
       "Entries": [
-        ""
+        "[Effect] Poison Increases Attack Power"
       ]
     },
     {
       "ID": 8700002,
       "Entries": [
-        ""
+        "[Effect] Poison Increases Attack Power"
       ]
     },
     {
       "ID": 8700003,
       "Entries": [
-        ""
+        "[Effect] Poison Increases Attack Power"
       ]
     },
     {
       "ID": 8710000,
       "Entries": [
-        ""
+        "[Effect] Blood Loss Increases Attack Power - Apply Behavior Effect"
       ]
     },
     {
       "ID": 8710001,
       "Entries": [
-        ""
+        "[Effect] Blood Loss Increases Attack Power - Trigger on Blood Loss"
       ]
     },
     {
       "ID": 8710002,
       "Entries": [
-        ""
+        "[Effect] Blood Loss Increases Attack Power"
       ]
     },
     {
       "ID": 8710003,
       "Entries": [
-        ""
+        "[Effect] Blood Loss Increases Attack Power - Attack Buff"
       ]
     },
     {
       "ID": 8760000,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8760050,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8760100,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8760150,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8760200,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8760250,
       "Entries": [
-        ""
+        "[Effect] Reduced Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8761000,
       "Entries": [
-        ""
+        "[Effect] Impaired Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8761050,
       "Entries": [
-        ""
+        "[Effect] Impaired Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8761100,
       "Entries": [
-        ""
+        "[Effect] Impaired Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8761150,
       "Entries": [
-        ""
+        "[Effect] Impaired Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8762000,
       "Entries": [
-        ""
+        "[Effect] All Resistances Down - Potency 1"
       ]
     },
     {
       "ID": 8762050,
       "Entries": [
-        ""
+        "[Effect] All Resistances Down - Potency 2"
       ]
     },
     {
       "ID": 8763000,
       "Entries": [
-        ""
+        "[Effect] Reduced Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8763050,
       "Entries": [
-        ""
+        "[Effect] Reduced Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8766000,
       "Entries": [
-        ""
+        "[Effect] Continuous HP Loss - Potency 1"
       ]
     },
     {
       "ID": 8766050,
       "Entries": [
-        ""
+        "[Effect] Continuous HP Loss - Potency 2"
       ]
     },
     {
       "ID": 8770000,
       "Entries": [
-        ""
+        "[Effect] Night's Tide Damage Increased - Potency 1"
       ]
     },
     {
       "ID": 8770050,
       "Entries": [
-        ""
+        "[Effect] Night's Tide Damage Increased - Potency 2"
       ]
     },
     {
       "ID": 8771000,
       "Entries": [
-        ""
+        "[Effect] Damage Increased by Night's Encroachment - Potency 1"
       ]
     },
     {
       "ID": 8771050,
       "Entries": [
-        ""
+        "[Effect] Damage Increased by Night's Encroachment - Potency 2"
       ]
     },
     {
       "ID": 8800100,
       "Entries": [
-        ""
+        "[Effect] More Damage Taken After Evasion - Potency 1"
       ]
     },
     {
       "ID": 8800101,
       "Entries": [
-        ""
+        "[Effect] More Damage Taken After Evasion"
       ]
     },
     {
       "ID": 8800150,
       "Entries": [
-        ""
+        "[Effect] More Damage Taken After Evasion - Potency 2"
       ]
     },
     {
       "ID": 8800200,
       "Entries": [
-        "WEP: Repeated Evasions Lower Damage Negation"
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800201,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800202,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800203,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800204,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800205,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800210,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800230,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800250,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800270,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8800271,
       "Entries": [
-        ""
+        "[Effect] Repeated Evasions Lower Damage Negation - Damage Negation Debuff"
       ]
     },
     {
       "ID": 8801000,
       "Entries": [
-        ""
+        "[Effect] Reduced Damage Negation for Flask Usages - Potency 1"
       ]
     },
     {
       "ID": 8801001,
       "Entries": [
-        ""
+        "[Effect] Reduced Damage Negation for Flask Usages"
       ]
     },
     {
       "ID": 8801050,
       "Entries": [
-        ""
+        "[Effect] Reduced Damage Negation for Flask Usages - Potency 2"
       ]
     },
     {
       "ID": 8810000,
       "Entries": [
-        ""
+        "[Effect] Lower Attack When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810050,
       "Entries": [
-        ""
+        "[Effect] Lower Attack When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810200,
       "Entries": [
-        "WEP: Slower Art Gauge When Below Max HP - Potency 1"
+        "[Effect] Slower Art Gauge When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810250,
       "Entries": [
-        "WEP: Slower Art Gauge When Below Max HP - Potency 2"
+        "[Effect] Slower Art Gauge When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810300,
       "Entries": [
-        "WEP: Poison Buildup When Below Max HP - Potency 1"
+        "[Effect] Poison Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810301,
       "Entries": [
-        "WEP: Poison Buildup When Below Max HP - Apply Poison"
+        "[Effect] Poison Buildup When Below Max HP - Apply Poison"
       ]
     },
     {
       "ID": 8810350,
       "Entries": [
-        "WEP: Poison Buildup When Below Max HP - Potency 2"
+        "[Effect] Poison Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810351,
       "Entries": [
-        "WEP: Poison Buildup When Below Max HP - Apply Poison"
+        "[Effect] Poison Buildup When Below Max HP - Apply Poison"
       ]
     },
     {
       "ID": 8810400,
       "Entries": [
-        "WEP: Rot Buildup When Below Max HP - Potency 1"
+        "[Effect] Rot Buildup When Below Max HP - Potency 1"
       ]
     },
     {
       "ID": 8810401,
       "Entries": [
-        "WEP: Rot Buildup When Below Max HP - Apply Scarlet Rot"
+        "[Effect] Rot Buildup When Below Max HP - Apply Scarlet Rot"
       ]
     },
     {
       "ID": 8810450,
       "Entries": [
-        "WEP: Rot Buildup When Below Max HP - Potency 2"
+        "[Effect] Rot Buildup When Below Max HP - Potency 2"
       ]
     },
     {
       "ID": 8810451,
       "Entries": [
-        "WEP: Rot Buildup When Below Max HP - Apply Scarlet Rot"
+        "[Effect] Rot Buildup When Below Max HP - Apply Scarlet Rot"
       ]
     },
     {
       "ID": 8813100,
       "Entries": [
-        "WEP: Lower Stamina Impairs Damage Negation - Potency 1"
+        "[Effect] Lower Stamina Impairs Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8813150,
       "Entries": [
-        "WEP: Lower Stamina Impairs Damage Negation - Potency 2"
+        "[Effect] Lower Stamina Impairs Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8821000,
       "Entries": [
-        "WEP: Attacks Impaired on Occasion"
+        "[Effect] Attacks Impaired on Occasion"
       ]
     },
     {
       "ID": 8821050,
       "Entries": [
-        "WEP: Attacks Impaired on Occasion"
+        "[Effect] Attacks Impaired on Occasion"
       ]
     },
     {
       "ID": 8830000,
       "Entries": [
-        "WEP: Ailments Cause Increased Damage - Potency 1"
+        "[Effect] Ailments Cause Increased Damage - Potency 1"
       ]
     },
     {
       "ID": 8830050,
       "Entries": [
-        "WEP: Ailments Cause Increased Damage - Potency 2"
+        "[Effect] Ailments Cause Increased Damage - Potency 2"
       ]
     },
     {
       "ID": 8831000,
       "Entries": [
-        "WEP: Near Death Reduces Art Gauge - Potency 1"
+        "[Effect] Near Death Reduces Art Gauge - Potency 1"
       ]
     },
     {
       "ID": 8831001,
       "Entries": [
-        "WEP: Near Death Reduces Art Gauge"
+        "[Effect] Near Death Reduces Art Gauge"
       ]
     },
     {
       "ID": 8831050,
       "Entries": [
-        "WEP: Near Death Reduces Art Gauge - Potency 2"
+        "[Effect] Near Death Reduces Art Gauge - Potency 2"
       ]
     },
     {
       "ID": 8831200,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831201,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831202,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831203,
       "Entries": [
-        "WEP: Near Death Reduces Max HP - Max HP Debuff - Potency 1"
+        "[Effect] Near Death Reduces Max HP - Max HP Debuff - Potency 1"
       ]
     },
     {
       "ID": 8831220,
       "Entries": [
-        "WEP: Repeated Evasions Lower Damage Negation"
+        "[Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
       "ID": 8831221,
       "Entries": [
-        "WEP: Repeated Evasions Lower Damage Negation - Negation Debuff"
+        "[Effect] Repeated Evasions Lower Damage Negation - Negation Debuff"
       ]
     },
     {
       "ID": 8831250,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831251,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831252,
       "Entries": [
-        "WEP: Near Death Reduces Max HP"
+        "[Effect] Near Death Reduces Max HP"
       ]
     },
     {
       "ID": 8831253,
       "Entries": [
-        "WEP: Near Death Reduces Max HP - Max HP Debuff - Potency 2"
+        "[Effect] Near Death Reduces Max HP - Max HP Debuff - Potency 2"
       ]
     },
     {
       "ID": 8850000,
       "Entries": [
-        "WEP: Increased Maximum HP - Potency 1"
+        "[Effect] Increased Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8850050,
       "Entries": [
-        "WEP: Increased Maximum HP - Potency 2"
+        "[Effect] Increased Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8850100,
       "Entries": [
-        "WEP: Increased Maximum FP - Potency 1"
+        "[Effect] Increased Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8850150,
       "Entries": [
-        "WEP: Increased Maximum FP - Potency 2"
+        "[Effect] Increased Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8850200,
       "Entries": [
-        "WEP: Reduced FP Consumption - Potency 1"
+        "[Effect] Reduced FP Consumption - Potency 1"
       ]
     },
     {
       "ID": 8850250,
       "Entries": [
-        "WEP: Reduced FP Consumption - Potency 2"
+        "[Effect] Reduced FP Consumption - Potency 2"
       ]
     },
     {
       "ID": 8850300,
       "Entries": [
-        "WEP: Increased Maximum Stamina - Potency 1"
+        "[Effect] Increased Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8850350,
       "Entries": [
-        "WEP: Increased Maximum Stamina - Potency 2"
+        "[Effect] Increased Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8850400,
       "Entries": [
-        "WEP: Improved Stamina Recovery - Potency 1"
+        "[Effect] Improved Stamina Recovery - Potency 1"
       ]
     },
     {
       "ID": 8850450,
       "Entries": [
-        "WEP: Improved Stamina Recovery - Potency 2"
+        "[Effect] Improved Stamina Recovery - Potency 2"
       ]
     },
     {
       "ID": 8850500,
       "Entries": [
-        "WEP: Physical Attack Up - Potency 1"
+        "[Effect] Physical Attack Up - Potency 1"
       ]
     },
     {
       "ID": 8850550,
       "Entries": [
-        "WEP: Physical Attack Up - Potency 2"
+        "[Effect] Physical Attack Up - Potency 2"
       ]
     },
     {
       "ID": 8850600,
       "Entries": [
-        "WEP: Improved Affinity Attack Power - Potency 1"
+        "[Effect] Improved Affinity Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8850650,
       "Entries": [
-        "WEP: Improved Affinity Attack Power - Potency 2"
+        "[Effect] Improved Affinity Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8850700,
       "Entries": [
-        "WEP: Improved Stance-Breaking - Potency 1"
+        "[Effect] Improved Stance-Breaking - Potency 1"
       ]
     },
     {
       "ID": 8850750,
       "Entries": [
-        "WEP: Improved Stance-Breaking - Potency 2"
+        "[Effect] Improved Stance-Breaking - Potency 2"
       ]
     },
     {
       "ID": 8850800,
       "Entries": [
-        "WEP: Improved Physical Damage Negation - Potency 1"
+        "[Effect] Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850850,
       "Entries": [
-        "WEP: Improved Physical Damage Negation - Potency 2"
+        "[Effect] Improved Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8850900,
       "Entries": [
-        "WEP: Improved Affinity Damage Negation - Potency 1"
+        "[Effect] Improved Affinity Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8850950,
       "Entries": [
-        "WEP: Improved Affinity Damage Negation - Potency 2"
+        "[Effect] Improved Affinity Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8851000,
       "Entries": [
-        "WEP: All Resistances Up - Potency 1"
+        "[Effect] All Resistances Up - Potency 1"
       ]
     },
     {
       "ID": 8851050,
       "Entries": [
-        "WEP: All Resistances Up - Potency 2"
+        "[Effect] All Resistances Up - Potency 2"
       ]
     },
     {
       "ID": 8851100,
       "Entries": [
-        "WEP: Improved Poise - Potency 1"
+        "[Effect] Improved Poise - Potency 1"
       ]
     },
     {
       "ID": 8851150,
       "Entries": [
-        "WEP: Improved Poise - Potency 2"
+        "[Effect] Improved Poise - Potency 2"
       ]
     },
     {
       "ID": 8851200,
       "Entries": [
-        "WEP: Improved Sorceries & Incantations - Potency 1"
+        "[Effect] Improved Sorceries & Incantations - Potency 1"
       ]
     },
     {
       "ID": 8851250,
       "Entries": [
-        "WEP: Improved Sorceries & Incantations - Potency 2"
+        "[Effect] Improved Sorceries & Incantations - Potency 2"
       ]
     },
     {
       "ID": 8851300,
       "Entries": [
-        "WEP: Increased Sorcery & Incantation Duration - Potency 1"
+        "[Effect] Increased Sorcery & Incantation Duration - Potency 1"
       ]
     },
     {
       "ID": 8851350,
       "Entries": [
-        "WEP: Increased Sorcery & Incantation Duration - Potency 2"
+        "[Effect] Increased Sorcery & Incantation Duration - Potency 2"
       ]
     },
     {
       "ID": 8851800,
       "Entries": [
-        "WEP: Improved Thrusting Counterattack - Potency 1"
+        "[Effect] Improved Thrusting Counterattack - Potency 1"
       ]
     },
     {
       "ID": 8851850,
       "Entries": [
-        "WEP: Improved Thrusting Counterattack - Potency 2"
+        "[Effect] Improved Thrusting Counterattack - Potency 2"
       ]
     },
     {
       "ID": 8851900,
       "Entries": [
-        "WEP: Improved Flask HP Restoration - Potency 1"
+        "[Effect] Improved Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8851950,
       "Entries": [
-        "WEP: Improved Flask HP Restoration - Potency 2"
+        "[Effect] Improved Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8852000,
       "Entries": [
-        "WEP: More Runes from Defeated Enemies - Potency 1"
+        "[Effect] More Runes from Defeated Enemies - Potency 1"
       ]
     },
     {
       "ID": 8852050,
       "Entries": [
-        "WEP: More Runes from Defeated Enemies - Potency 2"
+        "[Effect] More Runes from Defeated Enemies - Potency 2"
       ]
     },
     {
       "ID": 8880000,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash"
+        "[Effect] Ice Storm upon Charged Slash"
       ]
     },
     {
       "ID": 8880001,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Apply Frostbite"
+        "[Effect] Ice Storm upon Charged Slash - Apply Frostbite"
       ]
     },
     {
       "ID": 8880010,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Apply on Right-Hand"
+        "[Effect] Ice Storm upon Charged Slash - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8880011,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Frostbite Buff (Right)"
+        "[Effect] Ice Storm upon Charged Slash - Frostbite Buff (Right)"
       ]
     },
     {
       "ID": 8880012,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Apply on Left-Hand"
+        "[Effect] Ice Storm upon Charged Slash - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8880013,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Frostbite Buff (Left)"
+        "[Effect] Ice Storm upon Charged Slash - Frostbite Buff (Left)"
       ]
     },
     {
       "ID": 8880014,
       "Entries": [
-        "WEP: Ice Storm upon Charged Slash - Frostbite Debuff"
+        "[Effect] Ice Storm upon Charged Slash - Frostbite Debuff"
       ]
     },
     {
       "ID": 8880200,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks"
+        "[Effect] Black Flames upon Charge Attacks"
       ]
     },
     {
       "ID": 8880201,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - VFX"
+        "[Effect] Black Flames upon Charge Attacks - VFX"
       ]
     },
     {
       "ID": 8880210,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - Apply on Right-Hand"
+        "[Effect] Black Flames upon Charge Attacks - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8880211,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - Black Flame Buff (Right)"
+        "[Effect] Black Flames upon Charge Attacks - Black Flame Buff (Right)"
       ]
     },
     {
       "ID": 8880212,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - Apply on Left-Hand"
+        "[Effect] Black Flames upon Charge Attacks - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8880213,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - Black Flame Buff (Left)"
+        "[Effect] Black Flames upon Charge Attacks - Black Flame Buff (Left)"
       ]
     },
     {
       "ID": 8880214,
       "Entries": [
-        "WEP: Black Flames upon Charge Attacks - Black Flame Debuff"
+        "[Effect] Black Flames upon Charge Attacks - Black Flame Debuff"
       ]
     },
     {
       "ID": 8880300,
       "Entries": [
-        "WEP: Phantom Attack upon Charged Slash"
+        "[Effect] Phantom Attack upon Charged Slash"
       ]
     },
     {
       "ID": 8881000,
       "Entries": [
-        "WEP: Holy Shockwave upon Charge Attacks"
+        "[Effect] Holy Shockwave upon Charge Attacks"
       ]
     },
     {
       "ID": 8881010,
       "Entries": [
-        "WEP: Holy Shockwave upon Charge Attacks - Apply on Right-Hand"
+        "[Effect] Holy Shockwave upon Charge Attacks - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8881011,
       "Entries": [
-        "WEP: Holy Shockwave upon Charge Attacks - Holy Buff (Right)"
+        "[Effect] Holy Shockwave upon Charge Attacks - Holy Buff (Right)"
       ]
     },
     {
       "ID": 8881012,
       "Entries": [
-        "WEP: Holy Shockwave upon Charge Attacks - Apply on Left-Hand"
+        "[Effect] Holy Shockwave upon Charge Attacks - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8881013,
       "Entries": [
-        "WEP: Holy Shockwave upon Charge Attacks - Holy Buff (Left)"
+        "[Effect] Holy Shockwave upon Charge Attacks - Holy Buff (Left)"
       ]
     },
     {
       "ID": 8881200,
       "Entries": [
-        "WEP: Luring Enemies upon Charge Attacks"
+        "[Effect] Luring Enemies upon Charge Attacks"
       ]
     },
     {
       "ID": 8881500,
       "Entries": [
-        "WEP: Magma upon Charge Attack"
+        "[Effect] Magma upon Charge Attack"
       ]
     },
     {
       "ID": 8881510,
       "Entries": [
-        "WEP: Magma upon Charge Attack - Apply on Right-Hand"
+        "[Effect] Magma upon Charge Attack - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8881511,
       "Entries": [
-        "WEP: Magma upon Charge Attack - Flame Buff (Right)"
+        "[Effect] Magma upon Charge Attack - Flame Buff (Right)"
       ]
     },
     {
       "ID": 8881512,
       "Entries": [
-        "WEP: Magma upon Charge Attack - Apply on Left-Hand"
+        "[Effect] Magma upon Charge Attack - Apply on Left-Hand"
       ]
     },
     {
       "ID": 8881513,
       "Entries": [
-        "WEP: Magma upon Charge Attack - Flame Buff (Left)"
+        "[Effect] Magma upon Charge Attack - Flame Buff (Left)"
       ]
     },
     {
       "ID": 8882100,
       "Entries": [
-        "WEP: Lightning upon Charge Attacks"
+        "[Effect] Lightning upon Charge Attacks"
       ]
     },
     {
       "ID": 8882110,
       "Entries": [
-        "WEP: Lightning upon Charge Attacks - Apply to Right-Hand"
+        "[Effect] Lightning upon Charge Attacks - Apply to Right-Hand"
       ]
     },
     {
       "ID": 8882111,
       "Entries": [
-        "WEP: Lightning upon Charge Attacks - Apply Lightning (Right)"
+        "[Effect] Lightning upon Charge Attacks - Apply Lightning (Right)"
       ]
     },
     {
       "ID": 8882112,
       "Entries": [
-        "WEP: Lightning upon Charge Attacks - Apply to Left-Hand"
+        "[Effect] Lightning upon Charge Attacks - Apply to Left-Hand"
       ]
     },
     {
       "ID": 8882113,
       "Entries": [
-        "WEP: Lightning upon Charge Attacks - Apply Lightning (Left)"
+        "[Effect] Lightning upon Charge Attacks - Apply Lightning (Left)"
       ]
     },
     {
       "ID": 8882300,
       "Entries": [
-        "WEP: Pest Threads upon Charged Thrust"
+        "[Effect] Pest Threads upon Charged Thrust"
       ]
     },
     {
       "ID": 8882500,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist"
+        "[Effect] Charge Attacks Invoke Sleep Mist"
       ]
     },
     {
       "ID": 8882510,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Apply to Right-Hand"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Apply to Right-Hand"
       ]
     },
     {
       "ID": 8882511,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Apply Sleep (Right)"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Apply Sleep (Right)"
       ]
     },
     {
       "ID": 8882512,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Apply to Left-Hand"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Apply to Left-Hand"
       ]
     },
     {
       "ID": 8882513,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Apply Sleep (Left)"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Apply Sleep (Left)"
       ]
     },
     {
       "ID": 8882514,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
       ]
     },
     {
       "ID": 8882515,
       "Entries": [
-        "WEP: Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
+        "[Effect] Charge Attacks Invoke Sleep Mist - Sleep Effect On-Hit"
       ]
     },
     {
       "ID": 8883000,
       "Entries": [
-        "WEP: Projectiles Launched upon Attacks"
+        "[Effect] Projectiles Launched upon Attacks"
       ]
     },
     {
       "ID": 8883011,
       "Entries": [
-        "WEP: Projectiles Launched upon Attacks - VFX"
+        "[Effect] Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
       "ID": 8883012,
       "Entries": [
-        "WEP: Projectiles Launched upon Attacks - VFX"
+        "[Effect] Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
       "ID": 8883013,
       "Entries": [
-        "WEP: Projectiles Launched upon Attacks - VFX"
+        "[Effect] Projectiles Launched upon Attacks - VFX"
       ]
     },
     {
       "ID": 8883100,
       "Entries": [
-        "WEP: Lightning upon Precision Aiming"
+        "[Effect] Lightning upon Precision Aiming"
       ]
     },
     {
       "ID": 8883200,
       "Entries": [
-        "WEP: Poison Mist upon Precision Aiming"
+        "[Effect] Poison Mist upon Precision Aiming"
       ]
     },
     {
       "ID": 8883210,
       "Entries": [
-        "WEP: Poison Mist upon Precision Aiming - Apply Poison"
+        "[Effect] Poison Mist upon Precision Aiming - Apply Poison"
       ]
     },
     {
       "ID": 8883300,
       "Entries": [
-        "WEP: Rot Mist upon Precision Aiming"
+        "[Effect] Rot Mist upon Precision Aiming"
       ]
     },
     {
       "ID": 8883310,
       "Entries": [
-        "WEP: Rot Mist upon Precision Aiming - Apply Scarlet Rot"
+        "[Effect] Rot Mist upon Precision Aiming - Apply Scarlet Rot"
       ]
     },
     {
       "ID": 8883400,
       "Entries": [
-        "WEP: Bloodflies upon Precision Aiming"
+        "[Effect] Bloodflies upon Precision Aiming"
       ]
     },
     {
       "ID": 8883410,
       "Entries": [
-        "WEP: Bloodflies upon Precision Aiming - Apply Blood Loss"
+        "[Effect] Bloodflies upon Precision Aiming - Apply Blood Loss"
       ]
     },
     {
       "ID": 8884190,
       "Entries": [
-        "WEP: Bloodflies upon Precision Aiming - Accumulator"
+        "[Effect] Bloodflies upon Precision Aiming - Accumulator"
       ]
     },
     {
       "ID": 8884195,
       "Entries": [
-        "WEP: Bloodflies upon Precision Aiming"
+        "[Effect] Bloodflies upon Precision Aiming"
       ]
     },
     {
       "ID": 8884200,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground"
+        "[Effect] Shielding Creates Holy Ground"
       ]
     },
     {
       "ID": 8884201,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Accumulator 1"
+        "[Effect] Shielding Creates Holy Ground - Accumulator 1"
       ]
     },
     {
       "ID": 8884202,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Accumulator 2"
+        "[Effect] Shielding Creates Holy Ground - Accumulator 2"
       ]
     },
     {
       "ID": 8884203,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Apply Behavior Change"
+        "[Effect] Shielding Creates Holy Ground - Apply Behavior Change"
       ]
     },
     {
       "ID": 8884204,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Apply Behavior Change"
+        "[Effect] Shielding Creates Holy Ground - Apply Behavior Change"
       ]
     },
     {
       "ID": 8884210,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Damage Negation Buff"
+        "[Effect] Shielding Creates Holy Ground - Damage Negation Buff"
       ]
     },
     {
       "ID": 8884211,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - HP Restore"
+        "[Effect] Shielding Creates Holy Ground - HP Restore"
       ]
     },
     {
       "ID": 8884220,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground"
+        "[Effect] Shielding Creates Holy Ground"
       ]
     },
     {
       "ID": 8884221,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground"
+        "[Effect] Shielding Creates Holy Ground"
       ]
     },
     {
       "ID": 8884300,
       "Entries": [
-        "WEP: Broken Stance Activates Endure"
+        "[Effect] Broken Stance Activates Endure"
       ]
     },
     {
       "ID": 8884301,
       "Entries": [
-        "WEP: Broken Stance Activates Endure - Endure Buff"
+        "[Effect] Broken Stance Activates Endure - Endure Buff"
       ]
     },
     {
       "ID": 8885000,
       "Entries": [
-        "WEP: Flask Healing Also Restores FP"
+        "[Effect] Flask Healing Also Restores FP"
       ]
     },
     {
       "ID": 8885001,
       "Entries": [
-        "WEP: Flask Healing Also Restores FP"
+        "[Effect] Flask Healing Also Restores FP"
       ]
     },
     {
       "ID": 8885002,
       "Entries": [
-        "WEP: Flask Healing Also Restores FP"
+        "[Effect] Flask Healing Also Restores FP"
       ]
     },
     {
       "ID": 8885003,
       "Entries": [
-        "WEP: Flask Healing Also Restores FP - FP Restore"
+        "[Effect] Flask Healing Also Restores FP - FP Restore"
       ]
     },
     {
       "ID": 8885100,
       "Entries": [
-        "WEP: Failing to Cast Sorcery Restores FP"
+        "[Effect] Failing to Cast Sorcery Restores FP"
       ]
     },
     {
       "ID": 8885101,
       "Entries": [
-        "WEP: Failing to Cast Sorcery Restores FP - FP Restore"
+        "[Effect] Failing to Cast Sorcery Restores FP - FP Restore"
       ]
     },
     {
       "ID": 8885200,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds"
+        "[Effect] Guarding Ups Attack & Casting Speeds"
       ]
     },
     {
       "ID": 8885201,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 1"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Accumulator 1"
       ]
     },
     {
       "ID": 8885202,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 2"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Accumulator 2"
       ]
     },
     {
       "ID": 8885203,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Accumulator 3"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Accumulator 3"
       ]
     },
     {
       "ID": 8885210,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 1"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Apply Behavior Change 1"
       ]
     },
     {
       "ID": 8885211,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 2"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Apply Behavior Change 2"
       ]
     },
     {
       "ID": 8885212,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Apply Behavior Change 3"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Apply Behavior Change 3"
       ]
     },
     {
       "ID": 8885220,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 1"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Effect 1"
       ]
     },
     {
       "ID": 8885221,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 2"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Effect 2"
       ]
     },
     {
       "ID": 8885222,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Effect 3"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Effect 3"
       ]
     },
     {
@@ -66250,133 +66250,133 @@
     {
       "ID": 8921300,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8921301,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8921302,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8921303,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8921304,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8921305,
       "Entries": [
-        "Libra Deal: Power of a Demon - Apply Madness"
+        "[Effect] Libra Deal: Power of a Demon - Apply Madness"
       ]
     },
     {
       "ID": 8970000,
       "Entries": [
-        "POW: Traces of Grace-Given Lord - Boost Attack Power for each Grace Discovered"
+        "[Effect] Traces of Grace-Given Lord - Boost Attack Power for each Grace Discovered"
       ]
     },
     {
       "ID": 8970001,
       "Entries": [
-        "POW: Traces of Grace-Given Lord"
+        "[Effect] Traces of Grace-Given Lord"
       ]
     },
     {
       "ID": 8970010,
       "Entries": [
-        "POW: Integration of Intelligence"
+        "[Effect] Integration of Intelligence"
       ]
     },
     {
       "ID": 8970011,
       "Entries": [
-        "POW: Integration of Intelligence (On Attack)"
+        "[Effect] Integration of Intelligence (On Attack)"
       ]
     },
     {
       "ID": 8970012,
       "Entries": [
-        "POW: Integration of Intelligence - Rarely Gain Large Amount of Runes on Enemy Kill"
+        "[Effect] Integration of Intelligence - Rarely Gain Large Amount of Runes on Enemy Kill"
       ]
     },
     {
       "ID": 8970020,
       "Entries": [
-        "POW: Unifying Fate - Flasks restore FP"
+        "[Effect] Unifying Fate - Flasks restore FP"
       ]
     },
     {
       "ID": 8970030,
       "Entries": [
-        "POW: Demon's Plating - Runes boost Attack Power"
+        "[Effect] Demon's Plating - Runes boost Attack Power"
       ]
     },
     {
       "ID": 8980000,
       "Entries": [
-        "POW: Power of Night and Flame: Skill activation adds attack power of magic or fire affinities"
+        "[Effect] Power of Night and Flame: Skill activation adds attack power of magic or fire affinities"
       ]
     },
     {
       "ID": 8980001,
       "Entries": [
-        "POW: Power of Night and Flame"
+        "[Effect] Power of Night and Flame"
       ]
     },
     {
       "ID": 8980002,
       "Entries": [
-        "POW: Power of Night and Flame: Magic Damage Buff (Right)"
+        "[Effect] Power of Night and Flame: Magic Damage Buff (Right)"
       ]
     },
     {
       "ID": 8980003,
       "Entries": [
-        "POW: Power of Night and Flame"
+        "[Effect] Power of Night and Flame"
       ]
     },
     {
       "ID": 8980004,
       "Entries": [
-        "POW: Power of Night and Flame: Magic Damage Buff (Left)"
+        "[Effect] Power of Night and Flame: Magic Damage Buff (Left)"
       ]
     },
     {
       "ID": 8980005,
       "Entries": [
-        "POW: Power of Night and Flame"
+        "[Effect] Power of Night and Flame"
       ]
     },
     {
       "ID": 8980006,
       "Entries": [
-        "POW: Power of Night and Flame: Fire Damage Buff (Right)"
+        "[Effect] Power of Night and Flame: Fire Damage Buff (Right)"
       ]
     },
     {
       "ID": 8980007,
       "Entries": [
-        "POW: Power of Night and Flame"
+        "[Effect] Power of Night and Flame"
       ]
     },
     {
       "ID": 8980008,
       "Entries": [
-        "POW: Power of Night and Flame: Fire Damage Buff (Left)"
+        "[Effect] Power of Night and Flame: Fire Damage Buff (Left)"
       ]
     },
     {
@@ -66388,601 +66388,601 @@
     {
       "ID": 8980200,
       "Entries": [
-        "POW: Power of the Greater Will"
+        "[Effect] Power of the Greater Will"
       ]
     },
     {
       "ID": 8980201,
       "Entries": [
-        "POW: Power of the Greater Will"
+        "[Effect] Power of the Greater Will"
       ]
     },
     {
       "ID": 8980202,
       "Entries": [
-        "POW: Power of the Greater Will - Apply Behavior Change"
+        "[Effect] Power of the Greater Will - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980300,
       "Entries": [
-        "POW: Power of the Blasphemous - Apply On-Kill Effect"
+        "[Effect] Power of the Blasphemous - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8980301,
       "Entries": [
-        "POW: Power of the Blasphemous - HP Restore on Kill"
+        "[Effect] Power of the Blasphemous - HP Restore on Kill"
       ]
     },
     {
       "ID": 8980400,
       "Entries": [
-        "POW: Power of the Golden Order"
+        "[Effect] Power of the Golden Order"
       ]
     },
     {
       "ID": 8980401,
       "Entries": [
-        "POW: Power of the Golden Order"
+        "[Effect] Power of the Golden Order"
       ]
     },
     {
       "ID": 8980402,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980403,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980404,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980405,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980406,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980407,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980408,
       "Entries": [
-        "POW: Power of the Golden Order - Apply Behavior Change"
+        "[Effect] Power of the Golden Order - Apply Behavior Change"
       ]
     },
     {
       "ID": 8980500,
       "Entries": [
-        "POW: Power of Destined Death - HP Burn"
+        "[Effect] Power of Destined Death - HP Burn"
       ]
     },
     {
       "ID": 8980600,
       "Entries": [
-        "POW: Power of the Starscourge - Bundle of Arrows on Strong Attack"
+        "[Effect] Power of the Starscourge - Bundle of Arrows on Strong Attack"
       ]
     },
     {
       "ID": 8980601,
       "Entries": [
-        "POW: Power of the Starscourge - Bundle of Arrows on Strong Attack"
+        "[Effect] Power of the Starscourge - Bundle of Arrows on Strong Attack"
       ]
     },
     {
       "ID": 8980602,
       "Entries": [
-        "POW: Power of the Starscourge - VFX"
+        "[Effect] Power of the Starscourge - VFX"
       ]
     },
     {
       "ID": 8980700,
       "Entries": [
-        "POW: Power of Destruction"
+        "[Effect] Power of Destruction"
       ]
     },
     {
       "ID": 8980800,
       "Entries": [
-        "POW: Power of Vengeance - Apply On-Kill Effect"
+        "[Effect] Power of Vengeance - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8980801,
       "Entries": [
-        "POW: Power of Vengeance - VFX"
+        "[Effect] Power of Vengeance - VFX"
       ]
     },
     {
       "ID": 8980802,
       "Entries": [
-        "POW: Power of Vengeance - Buff"
+        "[Effect] Power of Vengeance - Buff"
       ]
     },
     {
       "ID": 8980900,
       "Entries": [
-        "POW: Power of the Dragonlord"
+        "[Effect] Power of the Dragonlord"
       ]
     },
     {
       "ID": 8980901,
       "Entries": [
-        "POW: Power of the Dragonlord"
+        "[Effect] Power of the Dragonlord"
       ]
     },
     {
       "ID": 8980902,
       "Entries": [
-        "POW: Power of the Dragonlord - VFX"
+        "[Effect] Power of the Dragonlord - VFX"
       ]
     },
     {
       "ID": 8981000,
       "Entries": [
-        "POW: Power of Despair"
+        "[Effect] Power of Despair"
       ]
     },
     {
       "ID": 8981001,
       "Entries": [
-        "POW: Power of Despair"
+        "[Effect] Power of Despair"
       ]
     },
     {
       "ID": 8981100,
       "Entries": [
-        "POW: Power of the Omen King"
+        "[Effect] Power of the Omen King"
       ]
     },
     {
       "ID": 8981101,
       "Entries": [
-        "POW: Power of the Omen King"
+        "[Effect] Power of the Omen King"
       ]
     },
     {
       "ID": 8981104,
       "Entries": [
-        "POW: Power of the Omen King - Flame Weapon Buff"
+        "[Effect] Power of the Omen King - Flame Weapon Buff"
       ]
     },
     {
       "ID": 8981200,
       "Entries": [
-        "POW: Power of the Undefeated"
+        "[Effect] Power of the Undefeated"
       ]
     },
     {
       "ID": 8981300,
       "Entries": [
-        "POW: Power of the Queen"
+        "[Effect] Power of the Queen"
       ]
     },
     {
       "ID": 8981301,
       "Entries": [
-        "POW: Power of the Queen"
+        "[Effect] Power of the Queen"
       ]
     },
     {
       "ID": 8981302,
       "Entries": [
-        "POW: Power of the Queen - Apply Behavior Change"
+        "[Effect] Power of the Queen - Apply Behavior Change"
       ]
     },
     {
       "ID": 8981400,
       "Entries": [
-        "POW: Power of the Blasphemous - Apply On-Kill Effect"
+        "[Effect] Power of the Blasphemous - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8981401,
       "Entries": [
-        "POW: Power of the Blasphemous - HP Restore on Kill"
+        "[Effect] Power of the Blasphemous - HP Restore on Kill"
       ]
     },
     {
       "ID": 8981500,
       "Entries": [
-        "POW: Power of the Lightless Void"
+        "[Effect] Power of the Lightless Void"
       ]
     },
     {
       "ID": 8981501,
       "Entries": [
-        "POW: Power of the Lightless Void"
+        "[Effect] Power of the Lightless Void"
       ]
     },
     {
       "ID": 8981502,
       "Entries": [
-        "POW: Power of the Lightless Void - Apply Behavior Change"
+        "[Effect] Power of the Lightless Void - Apply Behavior Change"
       ]
     },
     {
       "ID": 8981503,
       "Entries": [
-        "POW: Power of the Lightless Void - Apply Behavior Change"
+        "[Effect] Power of the Lightless Void - Apply Behavior Change"
       ]
     },
     {
       "ID": 8981504,
       "Entries": [
-        "POW: Power of the Lightless Void - Apply Behavior Change"
+        "[Effect] Power of the Lightless Void - Apply Behavior Change"
       ]
     },
     {
       "ID": 8981600,
       "Entries": [
-        "POW: Power of the Golden Lineage"
+        "[Effect] Power of the Golden Lineage"
       ]
     },
     {
       "ID": 8981700,
       "Entries": [
-        "POW: Power of the Ancestral Spirit"
+        "[Effect] Power of the Ancestral Spirit"
       ]
     },
     {
       "ID": 8981701,
       "Entries": [
-        "POW: Power of the Ancestral Spirit"
+        "[Effect] Power of the Ancestral Spirit"
       ]
     },
     {
       "ID": 8981702,
       "Entries": [
-        "POW: Power of the Ancestral Spirit - Apply Behavior Change"
+        "[Effect] Power of the Ancestral Spirit - Apply Behavior Change"
       ]
     },
     {
       "ID": 8981703,
       "Entries": [
-        "POW: Power of the Ancestral Spirit - Damage Negation Debuff"
+        "[Effect] Power of the Ancestral Spirit - Damage Negation Debuff"
       ]
     },
     {
       "ID": 8981800,
       "Entries": [
-        "POW: Power of the Great Ancient Dragon"
+        "[Effect] Power of the Great Ancient Dragon"
       ]
     },
     {
       "ID": 8981801,
       "Entries": [
-        "POW: Power of the Great Ancient Dragon - Apply to Right-Hand"
+        "[Effect] Power of the Great Ancient Dragon - Apply to Right-Hand"
       ]
     },
     {
       "ID": 8981802,
       "Entries": [
-        "POW: Power of the Great Ancient Dragon - Lightning Weapon Buff - Right-Hand"
+        "[Effect] Power of the Great Ancient Dragon - Lightning Weapon Buff - Right-Hand"
       ]
     },
     {
       "ID": 8981803,
       "Entries": [
-        "POW: Power of the Great Ancient Dragon - Apply to Left-Hand"
+        "[Effect] Power of the Great Ancient Dragon - Apply to Left-Hand"
       ]
     },
     {
       "ID": 8981804,
       "Entries": [
-        "POW: Power of the Great Ancient Dragon - Lightning Weapon Buff - Left-Hand"
+        "[Effect] Power of the Great Ancient Dragon - Lightning Weapon Buff - Left-Hand"
       ]
     },
     {
       "ID": 8981900,
       "Entries": [
-        "POW: Power of the Blood Lord"
+        "[Effect] Power of the Blood Lord"
       ]
     },
     {
       "ID": 8981901,
       "Entries": [
-        "POW: Power of the Blood Lord"
+        "[Effect] Power of the Blood Lord"
       ]
     },
     {
       "ID": 8981902,
       "Entries": [
-        "POW: Power of the Blood Lord"
+        "[Effect] Power of the Blood Lord"
       ]
     },
     {
       "ID": 8981903,
       "Entries": [
-        "POW: Power of the Blood Lord - Attack Buff"
+        "[Effect] Power of the Blood Lord - Attack Buff"
       ]
     },
     {
       "ID": 8982000,
       "Entries": [
-        "POW: Power of the Giant"
+        "[Effect] Power of the Giant"
       ]
     },
     {
       "ID": 8982100,
       "Entries": [
-        "POW: Power of the Flying Dragon"
+        "[Effect] Power of the Flying Dragon"
       ]
     },
     {
       "ID": 8982200,
       "Entries": [
-        "POW: Power of the First Lord"
+        "[Effect] Power of the First Lord"
       ]
     },
     {
       "ID": 8982201,
       "Entries": [
-        "POW: Power of the First Lord"
+        "[Effect] Power of the First Lord"
       ]
     },
     {
       "ID": 8982202,
       "Entries": [
-        "POW: Power of the First Lord - Attack Buff"
+        "[Effect] Power of the First Lord - Attack Buff"
       ]
     },
     {
       "ID": 8982300,
       "Entries": [
-        "POW: Power of the Full Moon"
+        "[Effect] Power of the Full Moon"
       ]
     },
     {
       "ID": 8982301,
       "Entries": [
-        "POW: Power of the Full Moon"
+        "[Effect] Power of the Full Moon"
       ]
     },
     {
       "ID": 8982302,
       "Entries": [
-        "POW: Power of the Full Moon - Apply Behavior Change"
+        "[Effect] Power of the Full Moon - Apply Behavior Change"
       ]
     },
     {
       "ID": 8982303,
       "Entries": [
-        "POW: Power of the Full Moon - Apply Behavior Change"
+        "[Effect] Power of the Full Moon - Apply Behavior Change"
       ]
     },
     {
       "ID": 8982400,
       "Entries": [
-        "POW: Power of House Marais - Apply On-Kill Effect"
+        "[Effect] Power of House Marais - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8982401,
       "Entries": [
-        "POW: Power of House Marais - VFX"
+        "[Effect] Power of House Marais - VFX"
       ]
     },
     {
       "ID": 8982402,
       "Entries": [
-        "POW: Power of House Marais - Attack Buff on Kill"
+        "[Effect] Power of House Marais - Attack Buff on Kill"
       ]
     },
     {
       "ID": 8990100,
       "Entries": [
-        "POW: The Wylder's Grief"
+        "[Effect] The Wylder's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990101,
       "Entries": [
-        "POW: The Wylder's Grief"
+        "[Effect] The Wylder's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990102,
       "Entries": [
-        "POW: The Wylder's Grief"
+        "[Effect] The Wylder's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990200,
       "Entries": [
-        "POW: The Guardian's Grief"
+        "[Effect] The Guardian's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990201,
       "Entries": [
-        "POW: The Guardian's Grief"
+        "[Effect] The Guardian's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990202,
       "Entries": [
-        "POW: The Guardian's Grief"
+        "[Effect] The Guardian's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990300,
       "Entries": [
-        "POW: The Ironeye's Grief"
+        "[Effect] The Ironeye's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990301,
       "Entries": [
-        "POW: The Ironeye's Grief"
+        "[Effect] The Ironeye's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990302,
       "Entries": [
-        "POW: The Ironeye's Grief"
+        "[Effect] The Ironeye's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990400,
       "Entries": [
-        "POW: The Duchess' Grief"
+        "[Effect] The Duchess' Grief - Potency 1"
       ]
     },
     {
       "ID": 8990401,
       "Entries": [
-        "POW: The Duchess' Grief"
+        "[Effect] The Duchess' Grief - Potency 2"
       ]
     },
     {
       "ID": 8990402,
       "Entries": [
-        "POW: The Duchess' Grief"
+        "[Effect] The Duchess' Grief - Potency 3"
       ]
     },
     {
       "ID": 8990500,
       "Entries": [
-        "POW: The Raider's Grief"
+        "[Effect] The Raider's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990501,
       "Entries": [
-        "POW: The Raider's Grief"
+        "[Effect] The Raider's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990502,
       "Entries": [
-        "POW: The Raider's Grief"
+        "[Effect] The Raider's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990600,
       "Entries": [
-        "POW: The Revenant's Grief"
+        "[Effect] The Revenant's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990601,
       "Entries": [
-        "POW: The Revenant's Grief"
+        "[Effect] The Revenant's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990602,
       "Entries": [
-        "POW: The Revenant's Grief"
+        "[Effect] The Revenant's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990700,
       "Entries": [
-        "POW: The Recluse's Grief"
+        "[Effect] The Recluse's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990701,
       "Entries": [
-        "POW: The Recluse's Grief"
+        "[Effect] The Recluse's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990702,
       "Entries": [
-        "POW: The Recluse's Grief"
+        "[Effect] The Recluse's Grief - Potency 3"
       ]
     },
     {
       "ID": 8990800,
       "Entries": [
-        "POW: The Executor's Grief"
+        "[Effect] The Executor's Grief - Potency 1"
       ]
     },
     {
       "ID": 8990801,
       "Entries": [
-        "POW: The Executor's Grief"
+        "[Effect] The Executor's Grief - Potency 2"
       ]
     },
     {
       "ID": 8990802,
       "Entries": [
-        "POW: The Executor's Grief"
+        "[Effect] The Executor's Grief - Potency 3"
       ]
     },
     {
       "ID": 8999000,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999001,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999002,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999100,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999101,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999102,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999200,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999201,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {
       "ID": 8999202,
       "Entries": [
-        "WEP: Improved Magic Attack Power"
+        "[Effect] Improved Magic Attack Power"
       ]
     },
     {

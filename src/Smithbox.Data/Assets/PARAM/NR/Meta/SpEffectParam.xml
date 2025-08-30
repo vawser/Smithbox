@@ -2151,10 +2151,17 @@
         <Option Value="166" Name="Remove Previous" />
         <Option Value="167" Name="Remove Previous" />
         <Option Value="168" Name="Remove Previous" />
+        <Option Value="169" Name="Remove Previous" />
+        <Option Value="170" Name="Remove Previous" />
+        <Option Value="171" Name="Remove Previous" />
+        <Option Value="172" Name="Remove Previous" />
+        <Option Value="173" Name="Remove Previous" />
         <Option Value="174" Name="Remove Previous" />
         <Option Value="200" Name="Remove Previous w/ Matching Priority" />
         <Option Value="201" Name="Remove Previous" />
         <Option Value="202" Name="Remove Previous" />
+        <Option Value="203" Name="Remove Previous" />
+        <Option Value="204" Name="Remove Previous" />
         <Option Value="1000" Name="Apply Highest (Category Priority)" />
         <Option Value="1001" Name="Apply Highest (Category Priority)" />
         <Option Value="1002" Name="Apply Highest (Category Priority)" />

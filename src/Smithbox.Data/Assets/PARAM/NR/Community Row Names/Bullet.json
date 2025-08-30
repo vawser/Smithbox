@@ -82,25 +82,25 @@
     {
       "ID": 1000,
       "Entries": [
-        "[Blood Loss] Spawn Vicinity Bullet"
+        "Blood Loss - Proximity Bullet"
       ]
     },
     {
       "ID": 1005,
       "Entries": [
-        "[Poison/Rot] Spawn Vicinity Bullet"
+        "Poison / Rot - Proximity Bullet"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "[Frostbite] Spawn Vicinity Bullet"
+        "Frostbite - Proximity Bullet"
       ]
     },
     {
       "ID": 1015,
       "Entries": [
-        ""
+        "Sleep - Proximity Bullet"
       ]
     },
     {
@@ -52564,13 +52564,13 @@
     {
       "ID": 12064000,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
       "ID": 12064001,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
@@ -62230,43 +62230,43 @@
     {
       "ID": 98884200,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 98884201,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 98884202,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 98884203,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 98885200,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 1"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 1"
       ]
     },
     {
       "ID": 98885201,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 2"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 2"
       ]
     },
     {
       "ID": 98885202,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 3"
+        "[Effect] Guarding Ups Attack & Casting Speeds - On-Hit Bullet Level 3"
       ]
     },
     {

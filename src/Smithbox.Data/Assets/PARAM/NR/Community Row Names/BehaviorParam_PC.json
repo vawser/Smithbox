@@ -370,25 +370,25 @@
     {
       "ID": 2100,
       "Entries": [
-        ""
+        "Blood Loss - Trigger Proximity Bullet"
       ]
     },
     {
       "ID": 2101,
       "Entries": [
-        ""
+        "Frostbite - Trigger Proximity Bullet"
       ]
     },
     {
       "ID": 2105,
       "Entries": [
-        ""
+        "Poison / Rot - Trigger Proximity Bullet"
       ]
     },
     {
       "ID": 2106,
       "Entries": [
-        ""
+        "Sleep - Trigger Proximity Bullet"
       ]
     },
     {
@@ -54586,7 +54586,7 @@
     {
       "ID": 869040000,
       "Entries": [
-        ""
+        "[Effect] Sleep Produces a Mist of Sleep"
       ]
     },
     {
@@ -54652,31 +54652,31 @@
     {
       "ID": 900010000,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground 1"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground 1"
       ]
     },
     {
       "ID": 900010001,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground 2"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground 2"
       ]
     },
     {
       "ID": 900010020,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 1"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Behavior Effect Level 1"
       ]
     },
     {
       "ID": 900010021,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 2"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Behavior Effect Level 2"
       ]
     },
     {
       "ID": 900010022,
       "Entries": [
-        "WEP: Guarding Ups Attack & Casting Speeds - Behavior Effect Level 3"
+        "[Effect] Guarding Ups Attack & Casting Speeds - Behavior Effect Level 3"
       ]
     },
     {

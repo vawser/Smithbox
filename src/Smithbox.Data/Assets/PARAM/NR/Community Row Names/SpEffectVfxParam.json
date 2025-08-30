@@ -16,7 +16,7 @@
     {
       "ID": 2,
       "Entries": [
-        ""
+        "Poison VFX"
       ]
     },
     {
@@ -34,13 +34,13 @@
     {
       "ID": 5,
       "Entries": [
-        ""
+        "Scarlet Rot VFX"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        ""
+        "Blood Loss VFX"
       ]
     },
     {
@@ -370,7 +370,7 @@
     {
       "ID": 62,
       "Entries": [
-        ""
+        "Flame Weapon VFX (Right)"
       ]
     },
     {
@@ -844,7 +844,7 @@
     {
       "ID": 151,
       "Entries": [
-        ""
+        "Lightning Weapon VFX (Right)"
       ]
     },
     {
@@ -1168,7 +1168,7 @@
     {
       "ID": 205,
       "Entries": [
-        ""
+        "Holy Weapon VFX (Right)"
       ]
     },
     {
@@ -1498,7 +1498,7 @@
     {
       "ID": 260,
       "Entries": [
-        ""
+        "Frostbite VFX"
       ]
     },
     {
@@ -1954,7 +1954,7 @@
     {
       "ID": 5092,
       "Entries": [
-        ""
+        "Frostbite Weapon VFX (Right)"
       ]
     },
     {
@@ -1972,13 +1972,13 @@
     {
       "ID": 5100,
       "Entries": [
-        ""
+        "Flame Weapon VFX (Left)"
       ]
     },
     {
       "ID": 5105,
       "Entries": [
-        ""
+        "Lightning Weapon VFX (Left)"
       ]
     },
     {
@@ -1996,7 +1996,7 @@
     {
       "ID": 5120,
       "Entries": [
-        ""
+        "Holy Weapon VFX (Left)"
       ]
     },
     {
@@ -2014,7 +2014,7 @@
     {
       "ID": 5135,
       "Entries": [
-        ""
+        "Frostbite Weapon VFX (Left)"
       ]
     },
     {
@@ -2350,7 +2350,7 @@
     {
       "ID": 5700,
       "Entries": [
-        ""
+        "Attack Debuff VFX"
       ]
     },
     {
@@ -2518,7 +2518,7 @@
     {
       "ID": 5891,
       "Entries": [
-        ""
+        "FP Restore VFX"
       ]
     },
     {
@@ -2872,7 +2872,7 @@
     {
       "ID": 8400,
       "Entries": [
-        ""
+        "Sleep VFX"
       ]
     },
     {
@@ -3004,7 +3004,7 @@
     {
       "ID": 8540,
       "Entries": [
-        ""
+        "Damage Negation Debuff VFX"
       ]
     },
     {
@@ -3052,7 +3052,7 @@
     {
       "ID": 8565,
       "Entries": [
-        ""
+        "Black Flame Weapon VFX (Right)"
       ]
     },
     {
@@ -3064,7 +3064,7 @@
     {
       "ID": 8570,
       "Entries": [
-        ""
+        "Endure VFX"
       ]
     },
     {
@@ -3088,7 +3088,7 @@
     {
       "ID": 8580,
       "Entries": [
-        ""
+        "HP Restore VFX"
       ]
     },
     {
@@ -3400,7 +3400,7 @@
     {
       "ID": 9010,
       "Entries": [
-        ""
+        "Black Flame Debuff VFX"
       ]
     },
     {
@@ -3418,7 +3418,7 @@
     {
       "ID": 9013,
       "Entries": [
-        ""
+        "Max HP Debuff VFX"
       ]
     },
     {
@@ -3520,7 +3520,7 @@
     {
       "ID": 40260,
       "Entries": [
-        ""
+        "Frostbite VFX"
       ]
     },
     {
@@ -7874,6 +7874,18 @@
       ]
     },
     {
+      "ID": 54821,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 54822,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 54900,
       "Entries": [
         ""
@@ -10108,37 +10120,37 @@
     {
       "ID": 18880200,
       "Entries": [
-        ""
+        "Black Flame Weapon VFX (Left)"
       ]
     },
     {
       "ID": 18883011,
       "Entries": [
-        ""
+        "Projectiles Launched upon Attacks - VFX 1"
       ]
     },
     {
       "ID": 18883012,
       "Entries": [
-        ""
+        "Projectiles Launched upon Attacks - VFX 2"
       ]
     },
     {
       "ID": 18883013,
       "Entries": [
-        ""
+        "Projectiles Launched upon Attacks - VFX 3"
       ]
     },
     {
       "ID": 18884200,
       "Entries": [
-        ""
+        "Holy Ground - VFX 1"
       ]
     },
     {
       "ID": 18884201,
       "Entries": [
-        ""
+        "Holy Ground - VFX 2"
       ]
     },
     {
@@ -10150,19 +10162,19 @@
     {
       "ID": 18885200,
       "Entries": [
-        ""
+        "Attack Buff - VFX 1"
       ]
     },
     {
       "ID": 18885201,
       "Entries": [
-        ""
+        "Attack Buff - VFX 2"
       ]
     },
     {
       "ID": 18885202,
       "Entries": [
-        ""
+        "Attack Buff - VFX 3"
       ]
     },
     {

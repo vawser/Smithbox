@@ -825,19 +825,20 @@
                 { "ID": "2207", "Name": "Apply upon successful guard", "Description": "" },
                 { "ID": "2208", "Name": "Apply upon spell cast", "Description": "" },
                 
-                { "ID": "2121", "Name": "Attacks Impaired on Occasion", "Description": "" },
+                { "ID": "2120", "Name": "Apply Effect upon Night's Encroachment", "Description": "" },
+                { "ID": "2121", "Name": "Apply Effect Randomly", "Description": "" },
                 
                 { "ID": "2210", "Name": "Bundle of Arrows on Strong Attack", "Description": "" },
                 { "ID": "2211", "Name": "Ice Storm upon Charged Slash", "Description": "" },
-                { "ID": "2212", "Name": "Ring of Light upon Charged Slash", "Description": "" },
+                { "ID": "2212", "Name": "More Damage Taken After Evasion", "Description": "" },
                 { "ID": "2213", "Name": "Black Flames upon Charged Slash", "Description": "" },
                 { "ID": "2214", "Name": "Phantom Attack upon Charged Slash", "Description": "" },
-                { "ID": "2215", "Name": "Roaring Flames upon Charged Slash", "Description": "" },
+                { "ID": "2215", "Name": "Repeated Evasions Lower Damage Negation", "Description": "" },
                 { "ID": "2216", "Name": "Holy Shockwave upon Charged Strike", "Description": "" },
-                { "ID": "2217", "Name": "Projectiles upon Charged Strike", "Description": "" },
+                { "ID": "2217", "Name": "Near Death Reduces Max HP", "Description": "" },
                 { "ID": "2218", "Name": "Luring Enemies upon Charged Strike", "Description": "" },
                 { "ID": "2219", "Name": "Shockwave upon Charged Strike", "Description": "" },
-                { "ID": "2220", "Name": "Phantom Attack upon Charged Strike", "Description": "" },
+                { "ID": "2220", "Name": "Repeated Evasions Lower Damage Negation", "Description": "" },
                 { "ID": "2221", "Name": "Magma upon Charged Strike", "Description": "" },
                 { "ID": "2222", "Name": "Magic Bubbles upon Charged Strike", "Description": "" },
                 { "ID": "2223", "Name": "Phantom Attack upon Charged Thrust", "Description": "" },
@@ -862,8 +863,13 @@
                 { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
                 { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
                 
-                { "ID": "2355", "Name": "Near Death Reduces Art Gauge", "Description": "" },
+                { "ID": "2280", "Name": "Trigger in Presence of Frostbite", "Description": "" },
+                
+                { "ID": "2349", "Name": "Unknown", "Description": "" }
+                
+                { "ID": "2355", "Name": "Near Death Art Gauge", "Description": "" },
                 { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" },
+                { "ID": "2378", "Name": "Sleep Behavior", "Description": "" },
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]

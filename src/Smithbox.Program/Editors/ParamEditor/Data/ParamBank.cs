@@ -2308,7 +2308,7 @@ public class ParamBank
             var legacyFile = Path.Combine(ProjectUtils.GetLocalProjectFolder(Project), "Stripped Row Names.json");
             if (File.Exists(legacyFile))
             {
-                var dialog = PlatformUtils.Instance.MessageBox("Delete legacy JSON for row names?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                var dialog = PlatformUtils.Instance.MessageBox("Delete legacy JSON for row names?\nBy default, you should click Yes.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if(dialog is DialogResult.Yes)
                 {
                     File.Delete(legacyFile);
