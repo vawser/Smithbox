@@ -2404,13 +2404,13 @@
     {
       "ID": 1110,
       "Entries": [
-        ""
+        "Madness - Apply Behavior Effect"
       ]
     },
     {
       "ID": 1111,
       "Entries": [
-        ""
+        "Madness - Apply State Info"
       ]
     },
     {
@@ -44698,13 +44698,13 @@
     {
       "ID": 49060,
       "Entries": [
-        ""
+        "Madness - Apply Behavior Effect"
       ]
     },
     {
       "ID": 49061,
       "Entries": [
-        ""
+        "Madness - Apply State Info"
       ]
     },
     {
@@ -61168,7 +61168,7 @@
     {
       "ID": 7998001,
       "Entries": [
-        ""
+        "Clear Accumulator 4"
       ]
     },
     {
@@ -61186,7 +61186,7 @@
     {
       "ID": 7998004,
       "Entries": [
-        "[Effect] Defeating Group Fires Golden Shockwave"
+        "Trigger Accumulator 4 Clear at Value 24"
       ]
     },
     {
@@ -62062,13 +62062,13 @@
     {
       "ID": 8200000,
       "Entries": [
-        "POW / [Effect] Improved Physical Damage Negation: 1"
+        "[Effect] Improved Physical Damage Negation: 1"
       ]
     },
     {
       "ID": 8200001,
       "Entries": [
-        "POW / [Effect] Improved Physical Damage Negation: 2"
+        "[Effect] Improved Physical Damage Negation: 2"
       ]
     },
     {
@@ -62146,13 +62146,13 @@
     {
       "ID": 8200500,
       "Entries": [
-        "POW / [Effect] Improved Non-Physical Damage Negation: 1"
+        "[Effect] Improved Non-Physical Damage Negation: 1"
       ]
     },
     {
       "ID": 8200501,
       "Entries": [
-        "POW / [Effect] Improved Non-Physical Damage Negation: 2"
+        "[Effect] Improved Non-Physical Damage Negation: 2"
       ]
     },
     {
@@ -62284,13 +62284,13 @@
     {
       "ID": 8210700,
       "Entries": [
-        "POW / [Effect] All Resistances Up: 1"
+        "[Effect] All Resistances Up: 1"
       ]
     },
     {
       "ID": 8210701,
       "Entries": [
-        "POW / [Effect] All Resistances Up: 2"
+        "[Effect] All Resistances Up: 2"
       ]
     },
     {
@@ -62314,13 +62314,13 @@
     {
       "ID": 8230000,
       "Entries": [
-        "POW / [Effect] Improved Poise: 1"
+        "[Effect] Improved Poise: 1"
       ]
     },
     {
       "ID": 8230001,
       "Entries": [
-        "POW / [Effect] Improved Poise: 2"
+        "[Effect] Improved Poise: 2"
       ]
     },
     {
@@ -63850,61 +63850,61 @@
     {
       "ID": 8600250,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Fist Attacks"
       ]
     },
     {
       "ID": 8600251,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Fist Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600252,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Claw Attacks"
       ]
     },
     {
       "ID": 8600253,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Claw Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600254,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Whip Attacks"
       ]
     },
     {
       "ID": 8600255,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Whip Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600256,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Colossal Weapon Attacks"
       ]
     },
     {
       "ID": 8600257,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Colossal Weapon Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600258,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Bow Attacks"
       ]
     },
     {
       "ID": 8600259,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Bow Attacks - FP Restore"
       ]
     },
     {
@@ -63928,25 +63928,25 @@
     {
       "ID": 8600303,
       "Entries": [
-        "Sudden Death Difficulty Tier 1"
+        "[Effect] Sudden Enemy Death upon Attacks: Difficulty Tier 1"
       ]
     },
     {
       "ID": 8600304,
       "Entries": [
-        "Sudden Death Difficulty Tier 2"
+        "[Effect] Sudden Enemy Death upon Attacks: Difficulty Tier 2"
       ]
     },
     {
       "ID": 8600305,
       "Entries": [
-        "Sudden Death Difficulty Tier 3"
+        "[Effect] Sudden Enemy Death upon Attacks: Difficulty Tier 3"
       ]
     },
     {
       "ID": 8600306,
       "Entries": [
-        "Sudden Death Difficulty Tier 4"
+        "[Effect] Sudden Enemy Death upon Attacks: Difficulty Tier 4"
       ]
     },
     {
@@ -63958,871 +63958,871 @@
     {
       "ID": 8600308,
       "Entries": [
-        "[Effect] Sudden Enemy Death upon Attacks"
+        "[Effect] Sudden Enemy Death upon Attacks - Sudden Death Marker"
       ]
     },
     {
       "ID": 8610000,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Successive Attacks"
       ]
     },
     {
       "ID": 8610001,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Successive Attacks - HP Restore"
       ]
     },
     {
       "ID": 8610100,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Successive Attacks"
       ]
     },
     {
       "ID": 8610101,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Successive Attacks - FP Restore"
       ]
     },
     {
       "ID": 8610300,
       "Entries": [
-        ""
+        "[Effect] Magic Follows Charge Attacks"
       ]
     },
     {
       "ID": 8610301,
       "Entries": [
-        ""
+        "[Effect] Magic Follows Charge Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8610400,
       "Entries": [
-        ""
+        "[Effect] Fire Follows Charge Attacks"
       ]
     },
     {
       "ID": 8610401,
       "Entries": [
-        ""
+        "[Effect] Fire Follows Charge Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8610500,
       "Entries": [
-        ""
+        "[Effect] Lightning Follows Charge Attacks"
       ]
     },
     {
       "ID": 8610501,
       "Entries": [
-        ""
+        "[Effect] Lightning Follows Charge Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8610600,
       "Entries": [
-        ""
+        "[Effect] Holy Attack Follows Charge Attacks"
       ]
     },
     {
       "ID": 8610601,
       "Entries": [
-        ""
+        "[Effect] Holy Attack Follows Charge Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8610700,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Accumulator 2"
       ]
     },
     {
       "ID": 8610701,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Clear Accumulator 2"
       ]
     },
     {
       "ID": 8610702,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Damage Negation Buff - Potency 1"
       ]
     },
     {
       "ID": 8610710,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Accumulator 2"
       ]
     },
     {
       "ID": 8610711,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Clear Accumulator 2"
       ]
     },
     {
       "ID": 8610712,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Damage Negation Buff - Potency 2"
       ]
     },
     {
       "ID": 8610720,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Accumulator 2"
       ]
     },
     {
       "ID": 8610721,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Clear Accumulator 2"
       ]
     },
     {
       "ID": 8610722,
       "Entries": [
-        ""
+        "[Effect] Successive Attacks Negate Damage - Damage Negation Buff - Potency 3"
       ]
     },
     {
       "ID": 8620000,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620001,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620002,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP - FP Restore - Potency 1"
       ]
     },
     {
       "ID": 8620010,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620011,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620012,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP - FP Restore - Potency 2"
       ]
     },
     {
       "ID": 8620020,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620021,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP"
       ]
     },
     {
       "ID": 8620022,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Restores FP - FP Restore - Potency 3"
       ]
     },
     {
       "ID": 8620100,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620101,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620102,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation - Damage Negation Buff - Potency 1"
       ]
     },
     {
       "ID": 8620110,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620111,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620112,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation - Damage Negation Buff - Potency 2"
       ]
     },
     {
       "ID": 8620120,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620121,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation"
       ]
     },
     {
       "ID": 8620122,
       "Entries": [
-        ""
+        "[Effect] Taking Damage Boosts Damage Negation - Damage Negation Buff - Potency 3"
       ]
     },
     {
       "ID": 8630000,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630001,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - HP Restore - Potency 1"
       ]
     },
     {
       "ID": 8630010,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630011,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - HP Restore - Potency 2"
       ]
     },
     {
       "ID": 8630020,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630021,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores HP - HP Restore - Potency 3"
       ]
     },
     {
       "ID": 8630100,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630101,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - FP Restore - Potency 1"
       ]
     },
     {
       "ID": 8630110,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630111,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - FP Restore - Potency 2"
       ]
     },
     {
       "ID": 8630120,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 8630121,
       "Entries": [
-        ""
+        "[Effect] Defeating Enemies Restores FP - FP Restore - Potency 3"
       ]
     },
     {
       "ID": 8630200,
       "Entries": [
-        ""
+        "[Effect] Attacks Summon Wraiths"
       ]
     },
     {
       "ID": 8630201,
       "Entries": [
-        ""
+        "[Effect] Attacks Summon Wraiths - Accumulator 4"
       ]
     },
     {
       "ID": 8630202,
       "Entries": [
-        ""
+        "[Effect] Attacks Summon Wraiths - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630300,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Charm"
       ]
     },
     {
       "ID": 8630301,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Charm - Accumulator 4"
       ]
     },
     {
       "ID": 8630302,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Charm - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630400,
       "Entries": [
-        ""
+        "[Effect] Attacks Call Vengeful Spirits"
       ]
     },
     {
       "ID": 8630401,
       "Entries": [
-        ""
+        "[Effect] Attacks Call Vengeful Spirits - Accumulator 4"
       ]
     },
     {
       "ID": 8630402,
       "Entries": [
-        ""
+        "[Effect] Attacks Call Vengeful Spirits - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630500,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Lava"
       ]
     },
     {
       "ID": 8630501,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Lava - Accumulator 4"
       ]
     },
     {
       "ID": 8630502,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Lava - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630600,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Frost"
       ]
     },
     {
       "ID": 8630601,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Frost - Accumulator 4"
       ]
     },
     {
       "ID": 8630602,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Frost - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630700,
       "Entries": [
-        ""
+        "[Effect] Attacks Unleash Lightning"
       ]
     },
     {
       "ID": 8630701,
       "Entries": [
-        ""
+        "[Effect] Attacks Unleash Lightning - Accumulator 4"
       ]
     },
     {
       "ID": 8630702,
       "Entries": [
-        ""
+        "[Effect] Attacks Unleash Lightning - Apply Behavior Change"
       ]
     },
     {
       "ID": 8630800,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Golden Shockwave"
       ]
     },
     {
       "ID": 8630801,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Golden Shockwave - Accumulator 4"
       ]
     },
     {
       "ID": 8630802,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Golden Shockwave - Apply Behavior Change"
       ]
     },
     {
       "ID": 8640000,
       "Entries": [
-        ""
+        "[Effect] Critical Hit HP Restoration"
       ]
     },
     {
       "ID": 8640001,
       "Entries": [
-        ""
+        "[Effect] Critical Hit HP Restoration"
       ]
     },
     {
       "ID": 8640002,
       "Entries": [
-        ""
+        "[Effect] Critical Hit HP Restoration - HP Restore"
       ]
     },
     {
       "ID": 8640100,
       "Entries": [
-        ""
+        "[Effect] Critical Hit FP Restoration"
       ]
     },
     {
       "ID": 8640101,
       "Entries": [
-        ""
+        "[Effect] Critical Hit FP Restoration"
       ]
     },
     {
       "ID": 8640102,
       "Entries": [
-        ""
+        "[Effect] Critical Hit FP Restoration - FP Restore"
       ]
     },
     {
       "ID": 8642000,
       "Entries": [
-        ""
+        "[Effect] Damage Boosted after Critical Hit"
       ]
     },
     {
       "ID": 8642001,
       "Entries": [
-        ""
+        "[Effect] Damage Boosted after Critical Hit"
       ]
     },
     {
       "ID": 8642002,
       "Entries": [
-        ""
+        "[Effect] Damage Boosted after Critical Hit - On-Attack Effect"
       ]
     },
     {
       "ID": 8650000,
       "Entries": [
-        ""
+        "[Effect] HP Recovery from Successful Guarding"
       ]
     },
     {
       "ID": 8650001,
       "Entries": [
-        ""
+        "[Effect] HP Recovery from Successful Guarding"
       ]
     },
     {
       "ID": 8650002,
       "Entries": [
-        ""
+        "[Effect] HP Recovery from Successful Guarding - HP Restore"
       ]
     },
     {
       "ID": 8650100,
       "Entries": [
-        ""
+        "[Effect] FP Recovery from Successful Guarding"
       ]
     },
     {
       "ID": 8650101,
       "Entries": [
-        ""
+        "[Effect] FP Recovery from Successful Guarding"
       ]
     },
     {
       "ID": 8650102,
       "Entries": [
-        ""
+        "[Effect] FP Recovery from Successful Guarding - FP Restore"
       ]
     },
     {
       "ID": 8652000,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652001,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652002,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise - Poise Buff - Potency 1"
       ]
     },
     {
       "ID": 8652010,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652011,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652012,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise - Poise Buff - Potency 2"
       ]
     },
     {
       "ID": 8652020,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652021,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise"
       ]
     },
     {
       "ID": 8652022,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Poise - Poise Buff - Potency 3"
       ]
     },
     {
       "ID": 8652100,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652101,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652102,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation - Damage Negation Buff - Potency 1"
       ]
     },
     {
       "ID": 8652110,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652111,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652112,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation - Damage Negation Buff - Potency 2"
       ]
     },
     {
       "ID": 8652120,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652121,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation"
       ]
     },
     {
       "ID": 8652122,
       "Entries": [
-        ""
+        "[Effect] Successful Guarding Ups Dmg Negation - Damage Negation Buff - Potency 3"
       ]
     },
     {
       "ID": 8660000,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Low HP - Potency 1"
       ]
     },
     {
       "ID": 8660001,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Low HP - Potency 2"
       ]
     },
     {
       "ID": 8660002,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Low HP - Potency 3"
       ]
     },
     {
       "ID": 8660100,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Low HP - Potency 1"
       ]
     },
     {
       "ID": 8660101,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Low HP - Potency 2"
       ]
     },
     {
       "ID": 8660102,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Low HP - Potency 3"
       ]
     },
     {
       "ID": 8660200,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss"
       ]
     },
     {
       "ID": 8660201,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss"
       ]
     },
     {
       "ID": 8660202,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8660203,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - On-Attack Effect"
       ]
     },
     {
       "ID": 8660204,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - Apply Blood Loss"
       ]
     },
     {
       "ID": 8660205,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - Apply on Right-Hand"
       ]
     },
     {
       "ID": 8660206,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - On-Attack Effect"
       ]
     },
     {
       "ID": 8660207,
       "Entries": [
-        ""
+        "[Effect] Critical Hits Inflict Blood Loss - Apply Blood Loss"
       ]
     },
     {
       "ID": 8660300,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
       "ID": 8660301,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
       "ID": 8660302,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP - Apply Behavior Change"
       ]
     },
     {
       "ID": 8660303,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP - Apply Behavior Change"
       ]
     },
     {
       "ID": 8670000,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Full HP - Potency 1"
       ]
     },
     {
       "ID": 8670001,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Full HP - Potency 2"
       ]
     },
     {
       "ID": 8670002,
       "Entries": [
-        ""
+        "[Effect] Improved Attack Power at Full HP - Potency 3"
       ]
     },
     {
       "ID": 8670100,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Full HP - Potency 1"
       ]
     },
     {
       "ID": 8670101,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Full HP - Potency 2"
       ]
     },
     {
       "ID": 8670102,
       "Entries": [
-        ""
+        "[Effect] Improved Damage Negation at Full HP - Potency 3"
       ]
     },
     {
       "ID": 8690000,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 8690001,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison - Apply Poison"
       ]
     },
     {
       "ID": 8690002,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison - Apply Poison"
       ]
     },
     {
       "ID": 8690003,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison - Apply Behavior Change"
       ]
     },
     {
       "ID": 8690100,
       "Entries": [
-        ""
+        "[Effect] Madness Produces a Frenzied Burst"
       ]
     },
     {
       "ID": 8690101,
       "Entries": [
-        ""
+        "[Effect] Madness Produces a Frenzied Burst - Apply Madness"
       ]
     },
     {
       "ID": 8690102,
       "Entries": [
-        ""
+        "[Effect] Madness Produces a Frenzied Burst"
       ]
     },
     {
       "ID": 8690200,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 8690201,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 8690202,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 8690203,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 8690300,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 8690301,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost - Apply Frostbite"
       ]
     },
     {
       "ID": 8690302,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost - Apply Frostbite"
       ]
     },
     {
       "ID": 8690303,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost - Apply Behavior Change"
       ]
     },
     {

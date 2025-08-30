@@ -1942,7 +1942,7 @@
     {
       "ID": 5090,
       "Entries": [
-        ""
+        "Blood Weapon VFX (Right)"
       ]
     },
     {
@@ -2002,7 +2002,7 @@
     {
       "ID": 5125,
       "Entries": [
-        ""
+        "Blood Weapon VFX (Left)"
       ]
     },
     {
@@ -2506,7 +2506,7 @@
     {
       "ID": 5867,
       "Entries": [
-        ""
+        "Damage Negation Buff VFX"
       ]
     },
     {
@@ -3070,7 +3070,7 @@
     {
       "ID": 8571,
       "Entries": [
-        ""
+        "Poise Buff VFX"
       ]
     },
     {
@@ -3430,7 +3430,7 @@
     {
       "ID": 9015,
       "Entries": [
-        ""
+        "Sudden Death VFX"
       ]
     },
     {
@@ -8980,13 +8980,13 @@
     {
       "ID": 320400,
       "Entries": [
-        ""
+        "Attack Power Buff VFX"
       ]
     },
     {
       "ID": 320500,
       "Entries": [
-        ""
+        "Attack Power Buff VFX"
       ]
     },
     {
@@ -9016,37 +9016,37 @@
     {
       "ID": 340800,
       "Entries": [
-        ""
+        "Damage Negation Buff VFX"
       ]
     },
     {
       "ID": 340900,
       "Entries": [
-        ""
+        "Damage Negation Buff VFX"
       ]
     },
     {
       "ID": 350300,
       "Entries": [
-        ""
+        "HP Restore VFX"
       ]
     },
     {
       "ID": 350400,
       "Entries": [
-        ""
+        "HP Restore VFX"
       ]
     },
     {
       "ID": 350500,
       "Entries": [
-        ""
+        "HP Restore VFX"
       ]
     },
     {
       "ID": 350600,
       "Entries": [
-        ""
+        "FP Restore VFX"
       ]
     },
     {

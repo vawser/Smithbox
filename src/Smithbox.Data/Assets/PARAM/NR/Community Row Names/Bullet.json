@@ -106,7 +106,7 @@
     {
       "ID": 1020,
       "Entries": [
-        ""
+        "Madness - Proximity Bullet"
       ]
     },
     {
@@ -202,7 +202,7 @@
     {
       "ID": 1600,
       "Entries": [
-        ""
+        "Blood Loss - Bullet"
       ]
     },
     {
@@ -232,7 +232,7 @@
     {
       "ID": 1625,
       "Entries": [
-        "[Madness] Spawn Bullet"
+        "Madness - Bullet"
       ]
     },
     {
@@ -52516,49 +52516,49 @@
     {
       "ID": 12036000,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036001,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036002,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost - Emitter"
       ]
     },
     {
       "ID": 12036003,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12037000,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037001,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037002,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison - Emitter"
       ]
     },
     {
       "ID": 12037003,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
@@ -52576,25 +52576,25 @@
     {
       "ID": 12067000,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067001,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067002,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot - Emitter"
       ]
     },
     {
       "ID": 12067003,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
@@ -52642,55 +52642,55 @@
     {
       "ID": 12301100,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301101,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301102,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301110,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301120,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301121,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301122,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12335000,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Charm"
+        "[On-Attack Projectile] Mist of Charm"
       ]
     },
     {
       "ID": 12335001,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Charm"
+        "[On-Attack Projectile] Mist of Charm"
       ]
     },
     {
@@ -52870,13 +52870,13 @@
     {
       "ID": 12442050,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Frost"
+        "[On-Attack Projectile] Mist of Frost"
       ]
     },
     {
       "ID": 12442051,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Frost"
+        "[On-Attack Projectile] Mist of Frost"
       ]
     },
     {
@@ -52912,127 +52912,127 @@
     {
       "ID": 12482050,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482051,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482052,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482053,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482054,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482055,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482056,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12482057,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12500050,
       "Entries": [
-        "[Effect] Defeating Group Calls Vengeful Spirits"
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12500051,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12500052,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12500055,
       "Entries": [
-        "[Effect] Defeating Group Calls Vengeful Spirits"
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12500099,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501000,
       "Entries": [
-        "[Effect] Defeating Group Calls Vengeful Spirits"
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501001,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501002,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501003,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501004,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12501020,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12502000,
       "Entries": [
-        "[Effect] Guard Counters Activate Holy Attacks (Spawn 1)"
+        "[Guard Counter Projectile] Holy Attacks (Spawn 1)"
       ]
     },
     {
       "ID": 12502001,
       "Entries": [
-        "[Effect] Guard Counters Activate Holy Attacks (Spawn 2)"
+        "[Guard Counter Projectile] Holy Attacks (Spawn 2)"
       ]
     },
     {
@@ -53116,7 +53116,7 @@
     {
       "ID": 12641050,
       "Entries": [
-        "[Effect] Defeating Group Fires Golden Shockwave"
+        "[On-Attack Projectile] Golden Shockwave"
       ]
     },
     {
@@ -53320,85 +53320,85 @@
     {
       "ID": 12692100,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692102,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692103,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692104,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692105,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692106,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692109,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692110,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692111,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692112,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692113,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692114,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692115,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
       "ID": 12692116,
       "Entries": [
-        "[Effect] Defeating Group Unleashes Lightning"
+        "[On-Attack Projectile] Lightning"
       ]
     },
     {
@@ -62602,25 +62602,25 @@
     {
       "ID": 910610300,
       "Entries": [
-        "[Effect] Magic Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Magic Attack"
       ]
     },
     {
       "ID": 910610400,
       "Entries": [
-        "[Effect] Fire Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Fire Attack"
       ]
     },
     {
       "ID": 910610500,
       "Entries": [
-        "[Effect] Lightning Follows Charge Attacks"
+        "[On-Attack Projectile] Lightning Attack"
       ]
     },
     {
       "ID": 910610600,
       "Entries": [
-        "[Effect] Holy Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Holy Attack"
       ]
     },
     {

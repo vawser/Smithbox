@@ -38580,43 +38580,43 @@
     {
       "ID": 12036000,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036001,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036002,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12036003,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
       "ID": 12037000,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037001,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
       "ID": 12037002,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
@@ -38634,79 +38634,79 @@
     {
       "ID": 12044205,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Frost"
+        "[On-Attack Projectile] Mist of Frost"
       ]
     },
     {
       "ID": 12048210,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048211,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048212,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048213,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048214,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048215,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12048216,
       "Entries": [
-        "[Effect] Magma upon Defeating Multiple Enemies"
+        "[On-Attack Projectile] Magma"
       ]
     },
     {
       "ID": 12050005,
       "Entries": [
-        "[Effect] Defeating Group Calls Vengeful Spirits"
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12050100,
       "Entries": [
-        "[Effect] Defeating Group Calls Vengeful Spirits"
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12050101,
       "Entries": [
-        ""
+        "[On-Attack Projectile] Vengeful Spirits"
       ]
     },
     {
       "ID": 12050200,
       "Entries": [
-        "[Effect] Guard Counters Activate Holy Attacks (Spawn 2)"
+        "[Guard Counter Projectile] Holy Attacks (Spawn 12"
       ]
     },
     {
       "ID": 12050201,
       "Entries": [
-        "[Effect] Guard Counters Activate Holy Attacks (Spawn 1)"
+        "[Guard Counter Projectile] Holy Attacks (Spawn 1)"
       ]
     },
     {
@@ -38736,31 +38736,31 @@
     {
       "ID": 12064105,
       "Entries": [
-        "[Effect] Defeating Group Fires Golden Shockwave"
+        "[Effect] Golden Shockwave"
       ]
     },
     {
       "ID": 12067000,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067001,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067002,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 12067003,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
@@ -38796,31 +38796,31 @@
     {
       "ID": 12301100,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301101,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12301102,
       "Entries": [
-        "[Effect] Defeating Group Summons Wraiths"
+        "[On-Attack Projectile] Wraiths"
       ]
     },
     {
       "ID": 12335000,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Charm"
+        "[On-Attack Projectile] Mist of Charm"
       ]
     },
     {
       "ID": 12335001,
       "Entries": [
-        "[Effect] Defeating Group Releases Mist of Charm"
+        "[On-Attack Projectile] Mist of Charm"
       ]
     },
     {
@@ -51096,25 +51096,25 @@
     {
       "ID": 878884200,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884201,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884202,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {
       "ID": 878884203,
       "Entries": [
-        "WEP: Shielding Creates Holy Ground - Holy Ground"
+        "[Effect] Shielding Creates Holy Ground - Holy Ground"
       ]
     },
     {

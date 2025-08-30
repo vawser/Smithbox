@@ -93,7 +93,7 @@
                 { "ID": "13", "Name": "Holy", "Description": "" },
                 { "ID": "20", "Name": "Poison", "Description": "" },
                 { "ID": "21", "Name": "Scarlet Rot", "Description": "" },
-                { "ID": "22", "Name": "Bloodloss", "Description": "" },
+                { "ID": "22", "Name": "Blood Loss", "Description": "" },
                 { "ID": "23", "Name": "Frostbite", "Description": "" },
                 { "ID": "24", "Name": "Sleep", "Description": "" },
                 { "ID": "25", "Name": "Madness", "Description": "" },
@@ -749,6 +749,8 @@
                 { "ID": "1000", "Name": "SkipSpCategoryCheck1", "Description": "" },
                 { "ID": "1001", "Name": "SkipSpCategoryCheck2", "Description": "" },
                 
+                { "ID": "2001", "Name": "HP Recovery from Successful Guarding", "Description": "" },
+                { "ID": "2002", "Name": "FP Recovery from Successful Guarding", "Description": "" },
                 { "ID": "2004", "Name": "Unknown", "Description": "" },
                 { "ID": "2006", "Name": "Apply on edible item consumption", "Description": "" },
                 { "ID": "2008", "Name": "Apply when near Totem Stela", "Description": "" },
@@ -783,6 +785,9 @@
                 { "ID": "2052", "Name": "Ice Storm Surge Sprint", "Description": "" },
                 { "ID": "2054", "Name": "Savage Flames Roar While Walking", "Description": "" },
                 { "ID": "2055", "Name": "Flame of Frenzy While Walking", "Description": "" },
+                
+                { "ID": "2076", "Name": "Damage Boosted after Critical Hit", "Description": "" },
+                { "ID": "2077", "Name": "Successful Guarding Ups Poise (1)", "Description": "" },
                 
                 { "ID": "2085", "Name": "Guard Counters Activate Holy Attacks", "Description": "" },
                 { "ID": "2086", "Name": "Guard Counters Launch Summoning Attack", "Description": "" },
@@ -819,11 +824,11 @@
                 
                 { "ID": "2200", "Name": "Holy Shockwave on Charged Attack", "Description": "" },
                 { "ID": "2203", "Name": "Apply on Thrust Attack", "Description": "" },
-                { "ID": "2204", "Name": "Apply on enemy kill if Ultimate Art is active", "Description": "" },
+                { "ID": "2204", "Name": "Apply on Enemy kill if Ultimate Art is active", "Description": "" },
                 { "ID": "2205", "Name": "Affinity Residue activates Terra Magica", "Description": "" },
-                { "ID": "2206", "Name": "Apply on blood loss if Ultimate Art is active", "Description": "" },
-                { "ID": "2207", "Name": "Apply upon successful guard", "Description": "" },
-                { "ID": "2208", "Name": "Apply upon spell cast", "Description": "" },
+                { "ID": "2206", "Name": "Apply on Blood Loss if Ultimate Art is active", "Description": "" },
+                { "ID": "2207", "Name": "Successful Guarding Ups Dmg Negation (1)", "Description": "" },
+                { "ID": "2208", "Name": "Apply upon Spell Cast", "Description": "" },
                 
                 { "ID": "2120", "Name": "Apply Effect upon Night's Encroachment", "Description": "" },
                 { "ID": "2121", "Name": "Apply Effect Randomly", "Description": "" },
@@ -860,16 +865,30 @@
                 { "ID": "2239", "Name": "Failing to Cast Sorcery Restores FP", "Description": "" },
                 { "ID": "2240", "Name": "Guarding Ups Attack & Casting Speeds", "Description": "" },
                 
+                { "ID": "2243", "Name": "Successful Guarding Ups Poise (2)", "Description": "" },
+                { "ID": "2244", "Name": "Successful Guarding Ups Poise (3)", "Description": "" },
+                { "ID": "2245", "Name": "Successful Guarding Ups Dmg Negation (2)", "Description": "" },
+                { "ID": "2246", "Name": "Successful Guarding Ups Dmg Negation (3)", "Description": "" },
+                
+                { "ID": "2270", "Name": "Attacks Generate On-Attack Projectile", "Description": "" },
                 { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
                 { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
                 
                 { "ID": "2280", "Name": "Trigger in Presence of Frostbite", "Description": "" },
+                { "ID": "2281", "Name": "Taking Damage Restores FP (1)", "Description": "" },
+                { "ID": "2282", "Name": "Taking Damage Restores FP (2)", "Description": "" },
+                { "ID": "2283", "Name": "Taking Damage Restores FP (3)", "Description": "" },
+                { "ID": "2284", "Name": "Taking Damage Boosts Damage Negation (1)", "Description": "" },
+                { "ID": "2285", "Name": "Taking Damage Boosts Damage Negation (2)", "Description": "" },
+                { "ID": "2286", "Name": "Taking Damage Boosts Damage Negation (3)", "Description": "" },
+                { "ID": "2287", "Name": "Related to Madness", "Description": "" },
                 
                 { "ID": "2349", "Name": "Unknown", "Description": "" },
                 
                 { "ID": "2355", "Name": "Near Death Art Gauge", "Description": "" },
                 { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" },
                 { "ID": "2378", "Name": "Sleep Behavior", "Description": "" },
+                { "ID": "2379", "Name": "Madness Behavior", "Description": "" },
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]

@@ -50426,6 +50426,12 @@
       ]
     },
     {
+      "ID": 7500353,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 7500355,
       "Entries": [
         ""
@@ -50510,13 +50516,25 @@
       ]
     },
     {
-      "ID": 7500445,
+      "ID": 7500450,
       "Entries": [
         ""
       ]
     },
     {
-      "ID": 7500446,
+      "ID": 7500451,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500452,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500453,
       "Entries": [
         ""
       ]
@@ -50576,7 +50594,85 @@
       ]
     },
     {
-      "ID": 7500615,
+      "ID": 7500620,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500621,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500700,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500701,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500702,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500710,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500711,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500712,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500713,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500714,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500715,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500720,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500721,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7500722,
       "Entries": [
         ""
       ]
@@ -54411,6 +54507,12 @@
     },
     {
       "ID": 7561201,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 7561202,
       "Entries": [
         ""
       ]
@@ -61108,25 +61210,25 @@
     {
       "ID": 910610300,
       "Entries": [
-        "[Effect] Magic Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Magic Attack"
       ]
     },
     {
       "ID": 910610400,
       "Entries": [
-        "[Effect] Fire Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Fire Attack"
       ]
     },
     {
       "ID": 910610500,
       "Entries": [
-        "[Effect] Lightning Follows Charge Attacks"
+        "[On-Attack Projectile] Lightning Attack"
       ]
     },
     {
       "ID": 910610600,
       "Entries": [
-        "[Effect] Holy Attack Follows Charge Attacks"
+        "[On-Attack Projectile] Holy Attack"
       ]
     }
   ]

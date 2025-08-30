@@ -394,7 +394,7 @@
     {
       "ID": 2107,
       "Entries": [
-        ""
+        "Madness - Trigger Proximity Bullet"
       ]
     },
     {
@@ -616,7 +616,7 @@
     {
       "ID": 8100,
       "Entries": [
-        ""
+        "[Effect] Blood Loss - Trigger Bullet"
       ]
     },
     {
@@ -646,7 +646,7 @@
     {
       "ID": 8125,
       "Entries": [
-        ""
+        "[Effect] Madness - Trigger Bullet"
       ]
     },
     {
@@ -54520,49 +54520,49 @@
     {
       "ID": 863020000,
       "Entries": [
-        ""
+        "[Effect] Attacks Summon Wraiths"
       ]
     },
     {
       "ID": 863030000,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Charm"
       ]
     },
     {
       "ID": 863040000,
       "Entries": [
-        ""
+        "[Effect] Attacks Call Vengeful Spirits"
       ]
     },
     {
       "ID": 863050000,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Lava"
       ]
     },
     {
       "ID": 863060000,
       "Entries": [
-        ""
+        "[Effect] Attacks Release Mist of Frost"
       ]
     },
     {
       "ID": 863070000,
       "Entries": [
-        ""
+        "[Effect] Attacks Unleash Lightning - Trigger Bullet"
       ]
     },
     {
       "ID": 863080000,
       "Entries": [
-        ""
+        "[Effect] Attacks Generate Golden Shockwave - Trigger Bullet"
       ]
     },
     {
       "ID": 869000000,
       "Entries": [
-        ""
+        "[Effect] Poison Produces a Mist of Poison"
       ]
     },
     {
@@ -54574,13 +54574,13 @@
     {
       "ID": 869020000,
       "Entries": [
-        ""
+        "[Effect] Rot Produces a Mist of Scarlet Rot"
       ]
     },
     {
       "ID": 869030000,
       "Entries": [
-        ""
+        "[Effect] Frostbite Produces a Mist of Frost"
       ]
     },
     {
@@ -54598,25 +54598,25 @@
     {
       "ID": 869060000,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
       "ID": 869060001,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
       "ID": 869060002,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
       "ID": 869060003,
       "Entries": [
-        ""
+        "[Effect] Creates Holy Ground at Low HP"
       ]
     },
     {
