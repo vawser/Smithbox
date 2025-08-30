@@ -123,9 +123,24 @@
     AltName="Passive Ability Description ID"
     Wiki="The description of the passive ability for this character." 
     FmgRef="Modern_Menu_Text" />
+	
+	<defaultWeaponTypeDiscovery
+    AltName="Default Weapon Type Discovery"
+    Wiki="Default weaponTypeDiscovery for each character." 
+    Enum="WEP_TYPE" />
     
   </Field>
   
   <Enums>
+    <Enum Name="WEP_TYPE" type="u16">
+	  <Option Value="1100" Name="Wylder - Greatsword" />
+	  <Option Value="1200" Name="Guardian - Halberd" />
+	  <Option Value="1300" Name="Ironeye - Light Bow / Bow" />
+	  <Option Value="1400" Name="Duchess - Dagger" />
+	  <Option Value="1500" Name="Raider - Great Hammer / Greataxe / Colossal Weapon" />
+	  <Option Value="1600" Name="Revenant - Seal" />
+	  <Option Value="1700" Name="Recluse - Staff" />
+	  <Option Value="1800" Name="Executor - Katana" />
+	</Enum>
   </Enums>
 </PARAMMETA>

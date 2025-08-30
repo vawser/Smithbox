@@ -48,7 +48,7 @@
 
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
-    Wiki="Only roll this entry if the player has a SpEffect with matching weaponTypeDiscovery."
+    Wiki="Only roll this entry if the player has a matching weaponTypeDiscovery. Related relic SpEffect will overwrite the default one. "
     Enum="WEP_TYPE" />
   </Field>
   
@@ -77,6 +77,7 @@
     </Enum>
 
     <Enum Name="WEP_TYPE" type="u16">
+	  <Option Value="-1" Name="Matching Any weaponTypeDiscovery" />
       <Option Value="0" Name="None" />
       <Option Value="1" Name="Dagger" />
       <Option Value="3" Name="Straight Sword" />
@@ -126,6 +127,14 @@
       <Option Value="95" Name="Beast Claw" />
       <Option Value="256" Name="Weapons" />
       <Option Value="512" Name="Shields" />
+	  <Option Value="1100" Name="Wylder - Greatsword" />
+	  <Option Value="1200" Name="Guardian - Halberd" />
+	  <Option Value="1300" Name="Ironeye - Light Bow / Bow" />
+	  <Option Value="1400" Name="Duchess - Dagger" />
+	  <Option Value="1500" Name="Raider - Great Hammer / Greataxe / Colossal Weapon" />
+	  <Option Value="1600" Name="Revenant - Seal" />
+	  <Option Value="1700" Name="Recluse - Staff" />
+	  <Option Value="1800" Name="Executor - Katana" />
     </Enum>
   </Enums>
 </PARAMMETA>

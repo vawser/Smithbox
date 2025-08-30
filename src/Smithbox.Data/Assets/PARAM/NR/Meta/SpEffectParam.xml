@@ -358,9 +358,10 @@
     Wiki="Multiply the spell resistance value by the set multiplier" 
     DefaultValue="1" />
     
-    <soulStealRate 
-    AltName="Soul Steal %" 
-    Wiki="Defense against HP robbed by NPCs in Soul Steel" 
+    <secondaryIconId 
+    AltName="Secondary Icon ID" 
+    Wiki="Icon ID (When -1, no icon is required)" 
+	IconConfig="Status" 
     DefaultValue="-1" />
     
     <lifeReductionRate 
@@ -1391,8 +1392,8 @@
     Wiki="Correction value used only for point damage and% damage of state change type [madness]" 
     DefaultValue="100" />
     
-    <secondaryIconId 
-    AltName="Secondary Icon ID" 
+    <tertiaryIconId 
+    AltName="Tertiary Icon ID" 
     Wiki="Icon ID (When -1, no icon is required)" 
     IconConfig="Status" 
     DefaultValue="-1" />
