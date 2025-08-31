@@ -1570,7 +1570,7 @@
     {
       "ID": 180001,
       "Entries": [
-        ""
+        "[Interactable] Arteria Leaf - Spawn Bullet"
       ]
     },
     {
@@ -1600,25 +1600,25 @@
     {
       "ID": 180015,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rowa Fruit Bush - Spawn Bullet (Restore HP)"
       ]
     },
     {
       "ID": 180016,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rowa Fruit Bush - Spawn Bullet (Restore HP)"
       ]
     },
     {
       "ID": 180020,
       "Entries": [
-        "[Interactable] Grave Violets - Spawn Bullet"
+        "[Interactable] Grave Violets - Spawn Bullet (HP Recovery)"
       ]
     },
     {
       "ID": 180021,
       "Entries": [
-        "[Interactable] Grave Violets - Spawn Bullet"
+        "[Interactable] Grave Violets - Spawn Bullet (HP Recovery)"
       ]
     },
     {
@@ -1636,13 +1636,13 @@
     {
       "ID": 180030,
       "Entries": [
-        "[Interactable] Gold Firefly Bush - Spawn Bullet"
+        "[Interactable] Gold Firefly Bush - Spawn Bullet (Boost Rune Acquisition)"
       ]
     },
     {
       "ID": 180031,
       "Entries": [
-        "[Interactable] Gold Firefly Bush - Spawn Bullet"
+        "[Interactable] Gold Firefly Bush - Spawn Bullet (Boost Rune Acquisition)"
       ]
     },
     {
@@ -1660,13 +1660,13 @@
     {
       "ID": 180040,
       "Entries": [
-        "[Interactable] Nascent Butterfly - Spawn Bullet"
+        "[Interactable] Nascent Butterfly - Spawn Bullet (Cure Status Effects)"
       ]
     },
     {
       "ID": 180041,
       "Entries": [
-        "[Interactable] Nascent Butterfly - Spawn Bullet"
+        "[Interactable] Nascent Butterfly - Spawn Bullet (Cure Status Effects)"
       ]
     },
     {
@@ -1684,25 +1684,25 @@
     {
       "ID": 180050,
       "Entries": [
-        "[Interactable] Grave Violets - Spawn Bullet"
+        "[Interactable] Grave Violets - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
       "ID": 180051,
       "Entries": [
-        "[Interactable] Grave Violets - Spawn Bullet"
+        "[Interactable] Grave Violets - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
       "ID": 180055,
       "Entries": [
-        "[Interactable] Gravestones and Grave Violets - Spawn Bullet"
+        "[Interactable] Gravestones and Grave Violets - Spawn Bullet (Summon Vengeful Spirits)"
       ]
     },
     {
       "ID": 180056,
       "Entries": [
-        "[Interactable] Gravestones and Grave Violets - Spawn Bullet"
+        "[Interactable] Gravestones and Grave Violets - Spawn Bullet (Summon Vengeful Spirits)"
       ]
     },
     {
@@ -1720,25 +1720,25 @@
     {
       "ID": 180065,
       "Entries": [
-        "[Interactable] Smoldering Butterfly - Spawn Bullet"
+        "[Interactable] Smoldering Butterfly - Spawn Bullet (Boost Physical and Fire Damage)"
       ]
     },
     {
       "ID": 180066,
       "Entries": [
-        "[Interactable] Smoldering Butterfly - Spawn Bullet"
+        "[Interactable] Smoldering Butterfly - Spawn Bullet (Boost Physical and Fire Damage)"
       ]
     },
     {
       "ID": 180070,
       "Entries": [
-        "[Interactable] Sacremental Bud - Spawn Bullet"
+        "[Interactable] Sacremental Bud - Spawn Bullet (Cure Rot and Restore HP)"
       ]
     },
     {
       "ID": 180071,
       "Entries": [
-        "[Interactable] Sacremental Bud - Spawn Bullet"
+        "[Interactable] Sacremental Bud - Spawn Bullet (Cure Rot and Restore HP)"
       ]
     },
     {
@@ -1768,25 +1768,25 @@
     {
       "ID": 180085,
       "Entries": [
-        "[Interactable] Sacremental Bud Tree - Spawn Bullet"
+        "[Interactable] Sacremental Bud Tree - Spawn Bullet (Restore FP)"
       ]
     },
     {
       "ID": 180086,
       "Entries": [
-        "[Interactable] Sacremental Bud Tree - Spawn Bullet"
+        "[Interactable] Sacremental Bud Tree - Spawn Bullet (Restore FP)"
       ]
     },
     {
       "ID": 180090,
       "Entries": [
-        "[Interactable] Silver Tear Remains - Spawn Bullet"
+        "[Interactable] Silver Tear Remains - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
       "ID": 180091,
       "Entries": [
-        "[Interactable] Silver Tear Remains - Spawn Bullet"
+        "[Interactable] Silver Tear Remains - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
@@ -1804,37 +1804,37 @@
     {
       "ID": 180100,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rowa Fruit Bush - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
       "ID": 180101,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rowa Fruit Bush - Spawn Bullet (Boost Damage Negation)"
       ]
     },
     {
       "ID": 180105,
       "Entries": [
-        "[Interactable] Rimed Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rimed Rowa Fruit Bush - Spawn Bullet (Restore HP)"
       ]
     },
     {
       "ID": 180106,
       "Entries": [
-        "[Interactable] Rimed Rowa Fruit Bush - Spawn Bullet"
+        "[Interactable] Rimed Rowa Fruit Bush - Spawn Bullet (Restore HP)"
       ]
     },
     {
       "ID": 180110,
       "Entries": [
-        "[Interactable] Fallen Meteroite - Spawn Bullet"
+        "[Interactable] Fallen Meteroite - Spawn Bullet (Boost Attack and Poise)"
       ]
     },
     {
       "ID": 180111,
       "Entries": [
-        "[Interactable] Fallen Meteroite - Spawn Bullet"
+        "[Interactable] Fallen Meteroite - Spawn Bullet (Boost Attack and Poise)"
       ]
     },
     {

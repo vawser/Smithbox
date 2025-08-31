@@ -112150,13 +112150,13 @@
     {
       "ID": 599853,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush"
+        "[Interactable] Rowa Fruit Bush (Restore HP)"
       ]
     },
     {
       "ID": 599854,
       "Entries": [
-        "[Interactable] Grave Violets"
+        "[Interactable] Grave Violets (HP Recovery)"
       ]
     },
     {
@@ -112168,7 +112168,7 @@
     {
       "ID": 599856,
       "Entries": [
-        "[Interactable] Gold Firefly Bush"
+        "[Interactable] Gold Firefly Bush (Boost Rune Acquisition)"
       ]
     },
     {
@@ -112180,7 +112180,7 @@
     {
       "ID": 599858,
       "Entries": [
-        "[Interactable] Nascent Butterfly"
+        "[Interactable] Nascent Butterfly (Cure Status Effects)"
       ]
     },
     {
@@ -112192,13 +112192,13 @@
     {
       "ID": 599860,
       "Entries": [
-        "[Interactable] Grave Violets"
+        "[Interactable] Grave Violets (Boost Damage Negation)"
       ]
     },
     {
       "ID": 599861,
       "Entries": [
-        "[Interactable] Gravestones and Grave Violets"
+        "[Interactable] Gravestones and Grave Violets (Summon Vengeful Spirits)"
       ]
     },
     {
@@ -112210,13 +112210,13 @@
     {
       "ID": 599863,
       "Entries": [
-        "[Interactable] Smoldering Butterfly"
+        "[Interactable] Smoldering Butterfly (Boost Physical and Fire Damage)"
       ]
     },
     {
       "ID": 599864,
       "Entries": [
-        "[Interactable] Sacremental Bud"
+        "[Interactable] Sacremental Bud (Cure Rot and Restore HP)"
       ]
     },
     {
@@ -112234,13 +112234,13 @@
     {
       "ID": 599867,
       "Entries": [
-        "[Interactable] Sacremental Bud Tree"
+        "[Interactable] Sacremental Bud Tree (Restore HP)"
       ]
     },
     {
       "ID": 599868,
       "Entries": [
-        "[Interactable] Silver Tear Remains"
+        "[Interactable] Silver Tear Remains (Boost Damage Negation)"
       ]
     },
     {
@@ -112252,13 +112252,13 @@
     {
       "ID": 599870,
       "Entries": [
-        "[Interactable] Rowa Fruit Bush"
+        "[Interactable] Rowa Fruit Bush (Boost Damage Negation)"
       ]
     },
     {
       "ID": 599871,
       "Entries": [
-        "[Interactable] Rimed Rowa Fruit Bush"
+        "[Interactable] Rimed Rowa Fruit Bush (Restore HP)"
       ]
     },
     {
@@ -112342,7 +112342,7 @@
     {
       "ID": 599906,
       "Entries": [
-        "[Interactable] Fallen Meteroite"
+        "[Interactable] Fallen Meteroite (Boost Attack and Poise)"
       ]
     },
     {
