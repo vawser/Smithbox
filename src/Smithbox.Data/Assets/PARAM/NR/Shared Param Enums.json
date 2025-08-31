@@ -827,6 +827,8 @@
                 { "ID": "2120", "Name": "Apply Effect upon Night's Encroachment", "Description": "" },
                 { "ID": "2121", "Name": "Apply Effect Randomly", "Description": "" },
                 
+                { "ID": "2123", "Name": "Apply Hero Status Change", "Description": "" },
+                
                 { "ID": "2210", "Name": "Bundle of Arrows on Strong Attack", "Description": "" },
                 { "ID": "2211", "Name": "Ice Storm upon Charged Slash", "Description": "" },
                 { "ID": "2212", "Name": "More Damage Taken After Evasion", "Description": "" },

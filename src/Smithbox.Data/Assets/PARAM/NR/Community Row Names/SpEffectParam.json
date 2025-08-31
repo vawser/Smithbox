@@ -61150,43 +61150,43 @@
     {
       "ID": 7647000,
       "Entries": [
-        ""
+        "[Effect] Executor: Improved Vigor and Endurance, Reduced Arcane - Apply Hero Status Change"
       ]
     },
     {
       "ID": 7647100,
       "Entries": [
-        ""
+        "[Effect] Executor: Improved Dexterity and Arcane, Reduced Vigor - Apply Hero Status Change"
       ]
     },
     {
       "ID": 7998000,
       "Entries": [
-        ""
+        "On-Attack Projectile Accumulator"
       ]
     },
     {
       "ID": 7998001,
       "Entries": [
-        "Clear Accumulator 4"
+        "On-Attack Projectile Accumulator - Clear Accumulator 4"
       ]
     },
     {
       "ID": 7998002,
       "Entries": [
-        ""
+        "On-Attack Projectile Accumulator - On-Kill Effect - Increment Accumulator 4 by 8"
       ]
     },
     {
       "ID": 7998003,
       "Entries": [
-        ""
+        "On-Attack Projectile Accumulator - Apply Om-Kill Effect"
       ]
     },
     {
       "ID": 7998004,
       "Entries": [
-        "Trigger Accumulator 4 Clear at Value 24"
+        "On-Attack Projectile Accumulator - Reset Accumulator 4 once it reaches 24"
       ]
     },
     {
@@ -61240,7 +61240,7 @@
     {
       "ID": 7999071,
       "Entries": [
-        ""
+        "Executor: Apply StateInfo 2255 + Apply VFX"
       ]
     },
     {

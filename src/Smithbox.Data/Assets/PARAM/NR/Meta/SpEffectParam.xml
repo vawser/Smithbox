@@ -2059,7 +2059,14 @@
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
     Wiki="Weapons of this type show up in class weapon rolls."
-    Enum="WEP_TYPE" />
+    Enum="WEP_TYPE" 
+    DefaultValue="-1" />
+    
+    <applyHeroStatusChange
+    AltName="Apply Hero Status Change"
+    Wiki="Apply a Hero status change for a specific character." 
+    Refs="HeroStatusParam" 
+    DefaultValue="-1" />
     
   </Field>
   <Enums>

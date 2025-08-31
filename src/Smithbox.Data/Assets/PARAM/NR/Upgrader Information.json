@@ -390,12 +390,12 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unk_07: = vanillafield unk_07"
+      "Command": "param SpEffectParam: modified && !added: weaponTypeDiscovery: = vanillafield weaponTypeDiscovery"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unk_08: = vanillafield unk_08"
+      "Command": "param SpEffectParam: modified && !added: applyHeroStatusChange: = vanillafield applyHeroStatusChange"
     },
     {
       "Version": "10200000",

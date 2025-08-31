@@ -24,3 +24,5 @@
 
 # TODO NOW
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
+
+                { "ID": "2349", "Name": "Unknown", "Description": "" },
