@@ -4,31 +4,38 @@
   Wiki="" />
   
   <Field>
-    <mapId_AA
+    <areaNo
     AltName="Map ID: AA"
     Wiki="The AA part of the MSB that this targets." />
     
-    <mapId_BB
+    <gridXNo
     AltName="Map ID: BB"
     Wiki="The BB part of the MSB that this targets." />
     
-    <mapId_CC
+    <gridZNo
     AltName="Map ID: CC"
     Wiki="The CC part of the MSB that this targets." />
     
-    <mapId_DD
-    AltName="Map ID: DD"
-    Wiki="The DD part of the MSB that this targets." />
+    <pad
+    Padding="" />
     
-    <placementOrigin_x
+    <attachPointEntityId
+    AltName="Attachment Point Entity ID"
+    Wiki="" />
+    
+    <defaultSmallBase
+    AltName="Default Small Base ID"
+    Wiki="" />
+    
+    <posX
     AltName="Placement Location: X"
     Wiki="The x coordinate in the MSB to place this attach point." />
     
-    <placementOrigin_y
+    <posY
     AltName="Placement Location: Y"
     Wiki="The y coordinate in the MSB to place this attach point." />
     
-    <placementOrigin_z
+    <posZ
     AltName="Placement Location: Z"
     Wiki="The Z coordinate in the MSB to place this attach point." />
   </Field>

@@ -4,10 +4,51 @@
   Wiki="" />
   
   <Field>
-    <playAreaCreateId
-    AltName="Play Area Create ID"
+    <patternId
+    AltName="Pattern ID"
+    Wiki="" />
+  
+    <playArea1
+    AltName="Play Area ID: 1"
     Wiki=""
     Refs="PlayAreaCreateParam" />
+  
+    <playArea2
+    AltName="Play Area ID: 2"
+    Wiki=""
+    Refs="PlayAreaCreateParam" />
+    
+    <bossId1
+    AltName="Boss ID: 1"
+    Wiki="" />
+    
+    <bossId2
+    AltName="Boss ID: 2"
+    Wiki="" />
+    
+    <extraBossId1
+    AltName="Extra Boss ID: 1" 
+    Wiki="" />
+    
+    <extraBossId2
+    AltName="Extra Boss ID: 2" 
+    Wiki="" />
+    
+    <bossModifier1
+    AltName="Boss Modifier: 1"
+    Wiki="" />
+    
+    <bossModifier2
+    AltName="Boss Modifier: 2"
+    Wiki="" />
+    
+    <extraBossModifier1
+    AltName="Extra Boss Modifier: 1"
+    Wiki="" />
+    
+    <extraBossModifier2
+    AltName="Extra Boss Modifier: 2"
+    Wiki="" />
   </Field>
   
   <Enums>

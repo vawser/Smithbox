@@ -4,11 +4,34 @@
   Wiki="" />
   
   <Field>
+    <patternId
+    AltName="Pattern ID"
+    Wiki="" />
+    
+    <modifierSet
+    AltName="Modifier Set"
+    Wiki="" />
+    
+    <modifier
+    AltName="Modifier"
+    Wiki="" />
+    
     <eventFlag
     AltName="Event Flag"
     Wiki=""
     FlagAlias="" />
     
+    <patternSetId
+    AltName="Pattern Set ID"
+    Wiki="" />
+    
+    <targetBoss
+    AltName="Target Boss"
+    Wiki="" />
+    
+    <rareMap
+    AltName="Rare Map"
+    Wiki="" />
   </Field>
   
   <Enums>

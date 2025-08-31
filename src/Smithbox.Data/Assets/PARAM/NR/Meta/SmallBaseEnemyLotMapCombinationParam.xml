@@ -4,7 +4,29 @@
   Wiki="" />
   
   <Field>
+    <patternId
+    AltName="Pattern ID"
+    Wiki="" />
+  
+    <mapId1
+    AltName="Map ID: 1"
+    Wiki="" 
+    TileRef="" />
     
+    <mapId2
+    AltName="Map ID: 2"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId3
+    AltName="Map ID: 3"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId4
+    AltName="Map ID: 4"
+    Wiki="" 
+    TileRef="" />
   </Field>
   
   <Enums>

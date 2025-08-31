@@ -4,6 +4,119 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <variationValue_1
+    AltName="Variation Value: 1" 
+    Wiki="" />
+    
+    <variationValue_2
+    AltName="Variation Value: 2" 
+    Wiki="" />
+    
+    <variationValue_3
+    AltName="Variation Value: 3" 
+    Wiki="" />
+    
+    <variationValue_4
+    AltName="Variation Value: 4" 
+    Wiki="" />
+    
+    <variationValue_5
+    AltName="Variation Value: 5" 
+    Wiki="" />
+    
+    <variationValue_6
+    AltName="Variation Value: 6" 
+    Wiki="" />
+    
+    <variationValue_7
+    AltName="Variation Value: 7" 
+    Wiki="" />
+    
+    <variationValue_8
+    AltName="Variation Value: 8" 
+    Wiki="" />
+    
+    <variationValue_9
+    AltName="Variation Value: 9" 
+    Wiki="" />
+    
+    <variationValue_10
+    AltName="Variation Value: 10" 
+    Wiki="" />
+    
+    <modifier1
+    AltName="Modifier: 1"
+    Wiki="" />
+    
+    <modifier2
+    AltName="Modifier: 2"
+    Wiki="" />
+    
+    <modifier3
+    AltName="Modifier: 3"
+    Wiki="" />
+    
+    <variationIconId_1
+    AltName="Variation Icon ID: 1" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_2
+    AltName="Variation Icon ID: 2" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_3
+    AltName="Variation Icon ID: 3" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_4
+    AltName="Variation Icon ID: 4" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_5
+    AltName="Variation Icon ID: 5" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_6
+    AltName="Variation Icon ID: 6" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_7
+    AltName="Variation Icon ID: 7" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_8
+    AltName="Variation Icon ID: 8" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_9
+    AltName="Variation Icon ID: 9" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
+    <variationIconId_10
+    AltName="Variation Icon ID: 10" 
+    Wiki="" 
+    IconConfig="Menu" />
+    
     
   </Field>
   

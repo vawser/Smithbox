@@ -4,20 +4,32 @@
   Wiki="" />
   
   <Field>
-    <lotResultPlayArea
-    AltName="Lot Result Play Area"
-    Wiki=""
-    Refs="LotResultPlayAreaParam" />
+    <patternId
+    AltName="Pattern ID"
+    Wiki="The pattern set this entry belongs to." />
     
-    <tileAttachPoint
-    AltName="Tile Attach Point"
-    Wiki="The attach point for the tile."
+    <attachId
+    AltName="Attach Point ID"
+    Wiki="The attach point for this entry."
     Refs="SmallBaseAndSpotAttachPoint" />
     
-    <tileTargetMsb
-    AltName="Target Tile ID"
-    Wiki="The target tile MSB to use for this lot. Value matches the mXX_XX part of the MSB ID." 
-    TileRef="" />
+    <smallBaseMapId
+    AltName="Small Map ID"
+    Wiki=""
+    Refs="SmallBaseMapVariationParam" />
+    
+    <mapIndex
+    AltName="Map Index"
+    Wiki="" />
+    
+    <variationId
+    AltName="Variation ID"
+    Wiki="" />
+    
+    <modifier
+    AltName="Modifier"
+    Wiki="" />
+    
   </Field>
   
   <Enums>

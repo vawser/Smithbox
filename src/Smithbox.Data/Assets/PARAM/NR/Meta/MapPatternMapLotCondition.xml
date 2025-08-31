@@ -4,7 +4,13 @@
   Wiki="" />
   
   <Field>
+    <modifier1
+    AltName="Modifier 1"
+    Wiki="" />
     
+    <modifier2
+    AltName="Modifier 2"
+    Wiki="" />
   </Field>
   
   <Enums>

@@ -4,7 +4,66 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <areaNo
+    AltName="Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
+    
+    <gridXNo
+    AltName="Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <gridZNo
+    AltName="Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <mapIdPad
+    Padding="" />
+    
+    <birdRouteEntityId
+    AltName="Bird Route Entity ID"
+    Wiki="" />
+    
+    <requireModifier
+    AltName="Required Modifier"
+    Wiki="" />
+    
+    <excludeModifier1
+    AltName="Excluded Modifier: 1"
+    Wiki="" />
+    
+    <excludeModifier2
+    AltName="Excluded Modifier: 2"
+    Wiki="" />
+    
+    <spawnGridAreaNo
+    AltName="Spawn Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
+    
+    <spawnGridXNo
+    AltName="Spawn Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <spawnGridZNo
+    AltName="Spawn Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <spawnMapIdPad
+    Padding="" />
+    
+    <spawnPointEntityId
+    AltName="Spawn Point Entity ID"
+    Wiki="" />
   </Field>
   
   <Enums>

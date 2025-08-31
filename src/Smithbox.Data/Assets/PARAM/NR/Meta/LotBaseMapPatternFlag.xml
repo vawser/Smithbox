@@ -4,10 +4,38 @@
   Wiki="" />
   
   <Field>
+    <modifierSet
+    AltName="Modifier Set" />
+    
+    <requireModifier1
+    AltName="Required Modifier 1"
+    Wiki="" />
+    
+    <requireModifier2
+    AltName="Required Modifier 2"
+    Wiki=""  />
+    
+    <excludeModifier1
+    AltName="Excluded Modifier 1"
+    Wiki="" />
+    
+    <excludeModifier2
+    AltName="Excluded Modifier 2"
+    Wiki=""  />
+    
+    <modifier
+    AltName="Modifier"
+    Wiki="" />
+  
     <eventFlag
-    AltName="Event Flag"
-    Wiki="?"
+    AltName="Usage Event Flag"
+    Wiki="The event flag that determines the usage of this map pattern base."
     FlagAlias="" />
+    
+    <weight
+    AltName="Weight"
+    Wiki="" />
+    
   </Field>
   
   <Enums>

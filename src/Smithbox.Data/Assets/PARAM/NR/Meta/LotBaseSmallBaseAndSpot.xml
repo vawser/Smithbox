@@ -4,16 +4,13 @@
   Wiki="" />
   
   <Field>
-    <lotResult1
-    AltName="Lot Result 1"
-    Wiki=""
-    Refs="LotResultSmallBaseAndSpot" />
+    <modifier1
+    AltName="Modifier 1"
+    Wiki=""/>
     
-    <lotResult2
-    AltName="Lot Result 2"
-    Wiki=""
-    Refs="LotResultSmallBaseAndSpot" />
-    
+    <modifier2
+    AltName="Modifier 2"
+    Wiki=""/>
   </Field>
   
   <Enums>

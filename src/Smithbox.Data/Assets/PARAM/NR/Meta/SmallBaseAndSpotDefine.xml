@@ -4,7 +4,145 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <mapId1
+    AltName="Map ID: 1"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId2
+    AltName="Map ID: 2"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId3
+    AltName="Map ID: 3"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId4
+    AltName="Map ID: 4"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId5
+    AltName="Map ID: 5"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId6
+    AltName="Map ID: 6"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId7
+    AltName="Map ID: 7"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId8
+    AltName="Map ID: 8"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId9
+    AltName="Map ID: 9"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId10
+    AltName="Map ID: 10"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId11
+    AltName="Map ID: 11"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId12
+    AltName="Map ID: 12"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId13
+    AltName="Map ID: 13"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId14
+    AltName="Map ID: 14"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId15
+    AltName="Map ID: 15"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId16
+    AltName="Map ID: 16"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId17
+    AltName="Map ID: 17"
+    Wiki="" 
+    TileRef="" />
+    
+    <mapId18
+    AltName="Map ID: 18"
+    Wiki="" 
+    TileRef="" />
+    
+    <worldMapPointIconId1
+    AltName="World Map Point Icon ID: 1"
+    Wiki=""
+    IconConfig="MapIcon" />
+    
+    <detailIconId1
+    AltName="Detail Icon ID: 1"
+    Wiki=""
+    IconConfig="MapIcon" />
+    
+    <detailIconId2
+    AltName="Detail Icon ID: 2"
+    Wiki=""
+    IconConfig="Menu" />
+    
+    <detailIconId3
+    AltName="Detail Icon ID: 3"
+    Wiki=""
+    IconConfig="Menu" />
+    
+    <invasionIcon
+    AltName="Invasion Icon ID"
+    Wiki=""
+    IconConfig="MapIcon" />
+    
+    <invasionWeight
+    AltName="Invasion Weight" 
+    Wiki="" />
+    
+    <worldMapPointIconId2
+    AltName="World Map Point Icon ID: 2"
+    Wiki=""
+    IconConfig="MapIcon" />
+    
+    <worldMapPointIconId3
+    AltName="World Map Point Icon ID: 3"
+    Wiki=""
+    IconConfig="MapIcon" />
   </Field>
   
   <Enums>
