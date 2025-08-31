@@ -4,7 +4,42 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <areaNo
+    AltName="Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
+    
+    <gridXNo
+    AltName="Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <gridZNo
+    AltName="Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <pad
+    Padding="" />
+    
+    <posX
+    AltName="Placement Position: X"
+    Wiki="" />
+    
+    <posZ
+    AltName="Placement Position: Z"
+    Wiki="" />
+    
+    <endPad
+    Padding="" />
   </Field>
   
   <Enums>

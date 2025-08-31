@@ -4,17 +4,79 @@
   Wiki="" />
   
   <Field>
-    <unknown_EventFlag1
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <areaNo
+    AltName="Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
+    
+    <gridXNo
+    AltName="Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <gridZNo
+    AltName="Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <pad
+    Padding="" />
+    
+    <posX
+    AltName="Placement Position: X"
+    Wiki="" />
+    
+    <posZ
+    AltName="Placement Position: Z"
+    Wiki="" />
+    
+    <day1Flag
+    AltName="Day 1 Flag"
+    Wiki=""
     FlagAlias="" />
     
-    <unknown_EventFlag2
+    <day2Flag
+    AltName="Day 2 Flag"
+    Wiki=""
     FlagAlias="" />
     
-    <worldMapPointId_1
-    Refs="WorldMapPointParam" />
+    <requireModifier1
+    AltName="Required Modifier: 1"
+    Wiki="" />
     
-    <worldMapPointId_2
-    Refs="WorldMapPointParam" />
+    <excludeModifier1
+    AltName="Excluded Modifier: 1"
+    Wiki="" />
+    
+    <excludeModifier2
+    AltName="Excluded Modifier: 2"
+    Wiki="" />
+    
+    <bossAttachPoint
+    AltName="Boss Attachment Point"
+    Wiki="The attach point for this entry."
+    Refs="SmallBaseAndSpotAttachPoint" />
+    
+    <connectColEntityId
+    AltName="Connect Collision Entity ID"
+    Wiki="" />
+    
+    <requireModifier2
+    AltName="Required Modifier: 2"
+    Wiki="" />
+    
+    <extraBossAttachPoint
+    AltName="Extra Boss Attachment Point"
+    Wiki="The attach point for this entry."
+    Refs="SmallBaseAndSpotAttachPoint" />
   </Field>
   
   <Enums>

@@ -7,11 +7,15 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
     <Field Def="u8 areaNo"/>
     <Field Def="u8 gridXNo"/>
     <Field Def="u8 gridZNo"/>
-    <Field Def="u8 unknown_1d"/>
+    <Field Def="dummy8 pad[1]"/>
+    
     <Field Def="f32 posX"/>
     <Field Def="f32 posZ"/>
     <Field Def="s32 day1Flag"/>
