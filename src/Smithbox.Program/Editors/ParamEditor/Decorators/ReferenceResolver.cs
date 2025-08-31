@@ -129,6 +129,9 @@ public class ReferenceResolver
     {
         List<TextResult> newTextResults = new();
 
+        if (fmgRefs == null)
+            return newTextResults;
+
         foreach (var entry in fmgRefs)
         {
             Param.Cell? c = context?[entry.conditionField];

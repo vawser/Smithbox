@@ -810,6 +810,15 @@ public class ParamRowView
                         Editor.ParamTools.InheritRowNameFromFMG(TargetField);
                     }
                     UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
+
+                    if (ImGui.Selectable(@$"Inherit name from Alias", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        Editor.ParamTools.InheritRowNameFromAlias(TargetField);
+                    }
+                    UIHelper.Tooltip($"Inherit the name of the referenced Alias connected to via the target field.");
                 }
 
                 ImGui.InputText("##targetField", ref TargetField, 255);

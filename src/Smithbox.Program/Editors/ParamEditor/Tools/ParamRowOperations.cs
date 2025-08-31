@@ -5,6 +5,7 @@ using Octokit;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -451,6 +452,128 @@ public partial class ParamTools
                 }
 
                 row.Name = result.Entry.Text;
+            }
+        }
+
+        if (displayWarning)
+        {
+            TaskLogs.AddLog($"Failed to find field with internal name of: {targetField}");
+        }
+    }
+    #endregion
+
+
+    #region Inherit Row Name from Alias
+    public void InheritRowNameFromAlias(string targetField)
+    {
+        if (targetField == null)
+            return;
+
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+
+        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+
+        var actions = new List<EditorAction>();
+
+        var displayWarning = false;
+
+        foreach (Param.Row row in rows)
+        {
+            var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+
+            if (fieldDef == null)
+            {
+                displayWarning = true;
+                continue;
+            }
+
+            var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
+            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            if (fieldMeta == null)
+                continue;
+
+            if(fieldMeta.ShowCharacterEnumList)
+            {
+                foreach(var entry in Editor.Project.Aliases[AliasType.Characters])
+                {
+                    var text = entry.ID.Substring(1);
+                    if (text == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
+            }
+
+            if (fieldMeta.ShowCutsceneEnumList)
+            {
+                foreach (var entry in Editor.Project.Aliases[AliasType.Cutscenes])
+                {
+                    if (entry.ID == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
+            }
+
+            if (fieldMeta.ShowFlagEnumList)
+            {
+                foreach (var entry in Editor.Project.Aliases[AliasType.EventFlags])
+                {
+                    if (entry.ID == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
+            }
+
+            if (fieldMeta.ShowMovieEnumList)
+            {
+                foreach (var entry in Editor.Project.Aliases[AliasType.Movies])
+                {
+                    if (entry.ID == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
+            }
+
+            if (fieldMeta.ShowParticleEnumList)
+            {
+                foreach (var entry in Editor.Project.Aliases[AliasType.Particles])
+                {
+                    if (entry.ID == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
+            }
+
+            if (fieldMeta.ShowSoundEnumList)
+            {
+                foreach (var entry in Editor.Project.Aliases[AliasType.Sounds])
+                {
+                    if (entry.ID == $"{targetCell.Value}")
+                    {
+                        row.Name = entry.Name;
+                        break;
+                    }
+                }
             }
         }
 
