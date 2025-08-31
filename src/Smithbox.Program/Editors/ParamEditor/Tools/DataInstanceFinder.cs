@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using DotNext.Collections.Generic;
 using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using HKLib.hk2018.hkReflect.Opt;
@@ -1400,7 +1401,7 @@ public class ValueSetFinder
         UIHelper.WrappedText("Search Value:");
         DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
-        UIHelper.Tooltip("The values to search for.");
+        UIHelper.Tooltip("The values to search for. Split with a space.");
 
         if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
         {
@@ -1517,6 +1518,146 @@ public class ValueSetFinder
 
                 output.Add(newResult);
             }
+        }
+    }
+}
+
+
+public class IdSetFinder
+{
+    public ParamEditorScreen Editor;
+
+    public string imguiID = "IdSetFinder";
+
+    public string SearchText = "";
+    public string CachedSearchText = "";
+
+    public List<string> Results = new();
+
+    public IdSetFinder(ParamEditorScreen editor)
+    {
+        Editor = editor;
+    }
+    public void Display()
+    {
+        if (Editor.Project.ParamData.PrimaryBank.Params == null)
+        {
+            return;
+        }
+
+        var windowWidth = ImGui.GetWindowWidth();
+
+        var Size = ImGui.GetWindowSize();
+        float EditX = (Size.X / 100) * 95;
+        float EditY = (Size.Y / 100) * 25;
+
+        UIHelper.WrappedText("Display param that contains the specified set of rows.");
+        UIHelper.WrappedText("");
+
+        /// Search Configuration
+        UIHelper.SimpleHeader("searchConfiguration", "Search Configuration", "The configuration parameters for the search.", UI.Current.ImGui_AliasName_Text);
+
+        UIHelper.WrappedText("Search Value:");
+        DPI.ApplyInputWidth(windowWidth);
+        ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
+        UIHelper.Tooltip("The values to search for. Split with a space.");
+
+        if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
+        {
+            CachedSearchText = SearchText;
+
+            Results = ConstructResults();
+        }
+
+        // Result List
+        if (Results.Count > 0)
+        {
+            UIHelper.SimpleHeader("searchResults", "Search Results", "The results of the last search performed.", UI.Current.ImGui_AliasName_Text);
+
+            UIHelper.WrappedText($"Search Term:");
+            UIHelper.DisplayAlias(CachedSearchText);
+
+            UIHelper.WrappedText($"Result Count:");
+            UIHelper.DisplayAlias($"{Results.Count}");
+
+            UIHelper.WrappedText($"");
+            UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
+
+            ImGui.BeginChild($"##resultSection_{imguiID}",
+                new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
+
+            foreach (var result in Results)
+            {
+                if (ImGui.Selectable($"{result}##resultEntry_{imguiID}"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{result}");
+                }
+            }
+            ImGui.EndChild();
+        }
+        else
+        {
+            ImGui.Text("No results to display.");
+        }
+
+        UIHelper.WrappedText("");
+
+    }
+
+    /// <summary>
+    /// Construct the results list when the search button is used.
+    /// </summary>
+    public List<string> ConstructResults()
+    {
+        List<string> output = new();
+
+        Dictionary<string, bool> Values = new();
+
+        if (SearchText.Contains(" "))
+        {
+            var strValues = SearchText.Split(" ");
+            foreach(var val in strValues)
+            {
+                if (!Values.ContainsKey(val))
+                {
+                    Values.Add(val, false);
+                }
+            }
+        }
+        else
+        {
+            if (!Values.ContainsKey(SearchText))
+            {
+                Values.Add(SearchText, false);
+            }
+        }
+
+        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
+        {
+            ProcessParam(ref output, p.Key, p.Value, Values);
+        }
+
+        return output;
+    }
+
+    public void ProcessParam(ref List<string> output, string paramKey, Andre.Formats.Param param, Dictionary<string, bool> values)
+    {
+        var tempTruthValues = new Dictionary<string, bool>(values);
+
+        foreach (var row in param.Rows)
+        {
+            foreach(var entry in tempTruthValues)
+            {
+                if($"{row.ID}" == entry.Key)
+                {
+                    tempTruthValues[entry.Key] = true;
+                }
+            }
+        }
+
+        if(tempTruthValues.All(x => x.Value == true))
+        {
+            output.Add(paramKey);
         }
     }
 }

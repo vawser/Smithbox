@@ -114,11 +114,6 @@ public partial class ParamTools
                 {
                     Editor.FieldValueFinder.Display();
                 }
-
-                if (ImGui.CollapsingHeader("Find Value Set Instances"))
-                {
-                    Editor.ValueSetFinder.Display();
-                }
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder)
@@ -132,6 +127,19 @@ public partial class ParamTools
                 if (ImGui.CollapsingHeader("Find Row ID Instances"))
                 {
                     Editor.RowIDFinder.Display();
+                }
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_SetFinder)
+            {
+                if (ImGui.CollapsingHeader("Find Field Value Set Instances"))
+                {
+                    Editor.ValueSetFinder.Display();
+                }
+
+                if (ImGui.CollapsingHeader("Find Row ID Set Instances"))
+                {
+                    Editor.IdSetFinder.Display();
                 }
             }
         }
@@ -222,6 +230,12 @@ public partial class ParamTools
                 CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder = !CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder);
+
+            if (ImGui.MenuItem("Set Finders"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_SetFinder = !CFG.Current.Interface_ParamEditor_Tool_SetFinder;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_SetFinder);
 
             ImGui.EndMenu();
         }

@@ -75,6 +75,7 @@ public class ParamEditorScreen : EditorScreen
     public RowNameFinder RowNameFinder;
     public RowIDFinder RowIDFinder;
     public ValueSetFinder ValueSetFinder;
+    public IdSetFinder IdSetFinder;
 
     public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
@@ -104,6 +105,7 @@ public class ParamEditorScreen : EditorScreen
         RowNameFinder = new(this);
         RowIDFinder = new(this);
         ValueSetFinder = new(this);
+        IdSetFinder = new(this);
 
         RowNamer = new(this);
         PinGroupHandler = new(this);

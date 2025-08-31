@@ -555,6 +555,11 @@ public class CFG
     /// </summary>
     public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
 
+    /// <summary>
+    /// If true, the Set Finder tool collapsibles are visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_SetFinder = true;
+
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
