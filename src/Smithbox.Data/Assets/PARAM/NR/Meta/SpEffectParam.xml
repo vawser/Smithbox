@@ -2087,9 +2087,10 @@
       <Option Value="23" Name="Great Hammer" />
       <Option Value="24" Name="Flail" />
       <Option Value="25" Name="Spear" />
-      <Option Value="28" Name="Heavy Spear" />
+      <Option Value="27" Name="Unknown" />
+      <Option Value="28" Name="Great Spear" />
       <Option Value="29" Name="Halberd" />
-      <Option Value="31" Name="Scythe" />
+      <Option Value="31" Name="Reaper" />
       <Option Value="35" Name="Fist" />
       <Option Value="37" Name="Claw" />
       <Option Value="39" Name="Whip" />

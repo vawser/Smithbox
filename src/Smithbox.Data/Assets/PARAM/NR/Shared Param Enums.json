@@ -783,8 +783,11 @@
                 { "ID": "2050", "Name": "Lightning upon Dodging", "Description": "" },
                 { "ID": "2051", "Name": "Magma Surge Sprint", "Description": "" },
                 { "ID": "2052", "Name": "Ice Storm Surge Sprint", "Description": "" },
-                { "ID": "2054", "Name": "Savage Flames Roar While Walking", "Description": "" },
+                { "ID": "2054", "Name": "Savage Pillars of Flame Rise While Walking", "Description": "" },
                 { "ID": "2055", "Name": "Flame of Frenzy While Walking", "Description": "" },
+                { "ID": "2056", "Name": "Wraiths While Walking", "Description": "" },
+                { "ID": "2057", "Name": "Vicious Star Rain Pours While Walking", "Description": "" },
+                { "ID": "2058", "Name": "Storm of Red Lightning While Walking", "Description": "" },
                 
                 { "ID": "2076", "Name": "Damage Boosted after Critical Hit", "Description": "" },
                 { "ID": "2077", "Name": "Successful Guarding Ups Poise (1)", "Description": "" },
@@ -793,15 +796,6 @@
                 { "ID": "2086", "Name": "Guard Counters Launch Summoning Attack", "Description": "" },
                 { "ID": "2087", "Name": "Communion Grants Anti-Dragon Effect", "Description": "" },
                 { "ID": "2088", "Name": "Parries Activate Golden Retaliation", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
-                { "ID": "2099", "Name": "Unknown", "Description": "" },
                 
                 { "ID": "2100", "Name": "Use Weapon Type Trigger", "Description": "" },
                 { "ID": "2101", "Name": "Apply Starting Weapon Effect", "Description": "" },
@@ -872,6 +866,9 @@
                 
                 { "ID": "2270", "Name": "Attacks Generate On-Attack Projectile", "Description": "" },
                 { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
+                { "ID": "2273", "Name": "Multiple Periodical Glintblades", "Description": "" },
+                { "ID": "2274", "Name": "Many Periodical Glintblades", "Description": "" },
+                { "ID": "2275", "Name": "Periodical Giant Glintblades", "Description": "" },
                 { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
                 
                 { "ID": "2280", "Name": "Trigger in Presence of Frostbite", "Description": "" },
@@ -882,6 +879,50 @@
                 { "ID": "2285", "Name": "Taking Damage Boosts Damage Negation (2)", "Description": "" },
                 { "ID": "2286", "Name": "Taking Damage Boosts Damage Negation (3)", "Description": "" },
                 { "ID": "2287", "Name": "Related to Madness", "Description": "" },
+                
+                { "ID": "2304", "Name": "Parries Activate Golden Retaliation", "Description": "" },
+                { "ID": "2305", "Name": "Parries Activate Golden Retaliation", "Description": "" },
+                { "ID": "2306", "Name": "Parries Activate Golden Retaliation", "Description": "" },
+                
+                { "ID": "2311", "Name": "Attacks Inflict Poison (1)", "Description": "" },
+                { "ID": "2312", "Name": "Attacks Inflict Poison (2)", "Description": "" },
+                { "ID": "2313", "Name": "Attacks Inflict Poison (3)", "Description": "" },
+                
+                { "ID": "2314", "Name": "Attacks Inflict Blood Loss (1)", "Description": "" },
+                { "ID": "2315", "Name": "Attacks Inflict Blood Loss (2)", "Description": "" },
+                { "ID": "2316", "Name": "Attacks Inflict Blood Loss (3)", "Description": "" },
+                
+                { "ID": "2317", "Name": "Attacks Inflict Sleep (1)", "Description": "" },
+                { "ID": "2318", "Name": "Attacks Inflict Sleep (2)", "Description": "" },
+                { "ID": "2319", "Name": "Attacks Inflict Sleep (3)", "Description": "" },
+                
+                { "ID": "2320", "Name": "Attacks Inflict Rot (1)", "Description": "" },
+                { "ID": "2321", "Name": "Attacks Inflict Rot (2)", "Description": "" },
+                { "ID": "2322", "Name": "Attacks Inflict Rot (3)", "Description": "" },
+                
+                { "ID": "2323", "Name": "Attacks Inflict Frost (1)", "Description": "" },
+                { "ID": "2324", "Name": "Attacks Inflict Frost (2)", "Description": "" },
+                { "ID": "2325", "Name": "Attacks Inflict Frost (3)", "Description": "" },
+                
+                { "ID": "2326", "Name": "Add Fire to Weapon (1)", "Description": "" },
+                { "ID": "2327", "Name": "Add Fire to Weapon (3)", "Description": "" },
+                { "ID": "2328", "Name": "Add Fire to Weapon (4)", "Description": "" },
+                { "ID": "2329", "Name": "Add Fire to Weapon (2)", "Description": "" },
+                
+                { "ID": "2330", "Name": "Add Magic to Weapon (1)", "Description": "" },
+                { "ID": "2331", "Name": "Add Magic to Weapon (3)", "Description": "" },
+                { "ID": "2332", "Name": "Add Magic to Weapon (4)", "Description": "" },
+                { "ID": "2333", "Name": "Add Magic to Weapon (2)", "Description": "" },
+                
+                { "ID": "2334", "Name": "Add Lightning to Weapon (1)", "Description": "" },
+                { "ID": "2335", "Name": "Add Lightning to Weapon (3)", "Description": "" },
+                { "ID": "2336", "Name": "Add Lightning to Weapon (4)", "Description": "" },
+                { "ID": "2337", "Name": "Add Lightning to Weapon (2)", "Description": "" },
+                
+                { "ID": "2338", "Name": "Add Holy to Weapon (1)", "Description": "" },
+                { "ID": "2339", "Name": "Add Holy to Weapon (3)", "Description": "" },
+                { "ID": "2340", "Name": "Add Holy to Weapon (4)", "Description": "" },
+                { "ID": "2341", "Name": "Add Holy to Weapon (2)", "Description": "" },
                 
                 { "ID": "2349", "Name": "Unknown", "Description": "" },
                 
@@ -929,7 +970,7 @@
                 { "ID": "47", "Name": "Greatshield", "Description": "" },
                 { "ID": "48", "Name": "Small Shield", "Description": "" },
                 { "ID": "49", "Name": "Medium Shield", "Description": "" },
-                { "ID": "50", "Name": "Scythe", "Description": "" },
+                { "ID": "50", "Name": "Reaper", "Description": "" },
                 { "ID": "51", "Name": "Light Bow", "Description": "" },
                 { "ID": "52", "Name": "Ballista", "Description": "" },
                 { "ID": "53", "Name": "Throwing Blade", "Description": "" },
@@ -1194,9 +1235,9 @@
                 { "ID": "23", "Name": "Great Hammer", "Description": ""},
                 { "ID": "24", "Name": "Flail", "Description": ""},
                 { "ID": "25", "Name": "Spear", "Description": ""},
-                { "ID": "28", "Name": "Heavy Spear", "Description": ""},
+                { "ID": "28", "Name": "Great Spear", "Description": ""},
                 { "ID": "29", "Name": "Halberd", "Description": ""},
-                { "ID": "31", "Name": "Scythe", "Description": ""},
+                { "ID": "31", "Name": "Reaper", "Description": ""},
                 { "ID": "35", "Name": "Fist", "Description": ""},
                 { "ID": "37", "Name": "Claw", "Description": ""},
                 { "ID": "39", "Name": "Whip", "Description": ""},

@@ -38628,7 +38628,7 @@
     {
       "ID": 12042100,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking"
+        "[On-Walk Projectile] Violent Deluge of Star Rain"
       ]
     },
     {
@@ -38718,7 +38718,7 @@
     {
       "ID": 12061203,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
@@ -38766,31 +38766,31 @@
     {
       "ID": 12069100,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12069101,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12301000,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301001,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301002,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
@@ -38826,31 +38826,31 @@
     {
       "ID": 12441000,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
       "ID": 12441002,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
       "ID": 12480001,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480002,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480004,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
@@ -50958,13 +50958,13 @@
     {
       "ID": 800000020,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 800000021,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {

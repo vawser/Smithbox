@@ -52468,37 +52468,37 @@
     {
       "ID": 12002840,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation"
+        "[On-Parry Projectile] Golden Retaliation"
       ]
     },
     {
       "ID": 12002841,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation (Successful Absorb)"
+        "[On-Parry Projectile] Golden Retaliation (Successful Absorb)"
       ]
     },
     {
       "ID": 12002842,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation (Retaliation)"
+        "[On-Parry Projectile] Golden Retaliation (Retaliation)"
       ]
     },
     {
       "ID": 12002843,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation (Retaliation Blast)"
+        "[On-Parry Projectile] Golden Retaliation (Retaliation Blast)"
       ]
     },
     {
       "ID": 12002845,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation (Lightning Parry)"
+        "[On-Parry Projectile] Golden Retaliation (Lightning Parry)"
       ]
     },
     {
       "ID": 12002846,
       "Entries": [
-        "[Effect] Successful Parries Activate Golden Retaliation (Absorb - Lightning Parry)"
+        "[On-Parry Projectile] Golden Retaliation (Absorb - Lightning Parry)"
       ]
     },
     {
@@ -52600,43 +52600,43 @@
     {
       "ID": 12301000,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301001,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301002,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301010,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301020,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301021,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
       "ID": 12301022,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Wraiths "
       ]
     },
     {
@@ -52726,145 +52726,145 @@
     {
       "ID": 12421001,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 1)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 1)"
       ]
     },
     {
       "ID": 12421002,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 1)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 1)"
       ]
     },
     {
       "ID": 12421003,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking"
+        "[On-Walk Projectile] Violent Deluge of Star Rain "
       ]
     },
     {
       "ID": 12421004,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking"
+        "[On-Walk Projectile] Violent Deluge of Star Rain "
       ]
     },
     {
       "ID": 12421005,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Damage)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Damage)"
       ]
     },
     {
       "ID": 12421006,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Damage)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Damage)"
       ]
     },
     {
       "ID": 12421007,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 1)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 1)"
       ]
     },
     {
       "ID": 12421008,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 1)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 1)"
       ]
     },
     {
       "ID": 12421010,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 2)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 2)"
       ]
     },
     {
       "ID": 12421011,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 2)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 2)"
       ]
     },
     {
       "ID": 12421012,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 2)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 2)"
       ]
     },
     {
       "ID": 12421013,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 2)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 2)"
       ]
     },
     {
       "ID": 12421020,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 3)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 3)"
       ]
     },
     {
       "ID": 12421021,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 3)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 3)"
       ]
     },
     {
       "ID": 12421022,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 3)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 3)"
       ]
     },
     {
       "ID": 12421023,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 3)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 3)"
       ]
     },
     {
       "ID": 12421030,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 4)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 4)"
       ]
     },
     {
       "ID": 12421031,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 4)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 4)"
       ]
     },
     {
       "ID": 12421032,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 4)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 4)"
       ]
     },
     {
       "ID": 12421033,
       "Entries": [
-        "[Effect] Violent Deluge of Star Rain While Walking (Spawn 4)"
+        "[On-Walk Projectile] Violent Deluge of Star Rain  (Spawn 4)"
       ]
     },
     {
       "ID": 12441000,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
       "ID": 12441001,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
       "ID": 12441002,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
       "ID": 12441009,
       "Entries": [
-        ""
+        "[On-Sprint Projectile] Ice Storm"
       ]
     },
     {
@@ -52882,31 +52882,31 @@
     {
       "ID": 12480000,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480001,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480002,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480003,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
       "ID": 12480004,
       "Entries": [
-        "[Effect] Magma Surge Sprint"
+        "[On-Sprint Projectile] Magma"
       ]
     },
     {
@@ -53038,79 +53038,79 @@
     {
       "ID": 12503000,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503001,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503002,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503003,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503004,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503010,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12503011,
       "Entries": [
-        ""
+        "[Guard Counter Projectile] Summoning Attack"
       ]
     },
     {
       "ID": 12612050,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
       "ID": 12612051,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
       "ID": 12612052,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
       "ID": 12612053,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
       "ID": 12612054,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
       "ID": 12612055,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Savage Pillars of Flame "
       ]
     },
     {
@@ -53122,199 +53122,199 @@
     {
       "ID": 12691000,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691001,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691002,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691003,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691004,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691005,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691010,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691011,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691012,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691013,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691014,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691015,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691016,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691020,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691021,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691022,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691023,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691024,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12691025,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Storm of Red Lightning"
       ]
     },
     {
       "ID": 12692000,
       "Entries": [
-        "[Effect] Lightning upon Dodging"
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692002,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692003,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692004,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692005,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692006,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692009,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692010,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692011,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692012,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692013,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692014,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692015,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
       "ID": 12692016,
       "Entries": [
-        ""
+        "[On-Dodge Projectile] Lightning"
       ]
     },
     {
@@ -62626,61 +62626,61 @@
     {
       "ID": 910610700,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610701,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610702,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610703,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610704,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610705,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610706,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610707,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610708,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 910610709,
       "Entries": [
-        ""
+        "[On-Walk Projectile] Flame of Frenzy While Walking"
       ]
     },
     {

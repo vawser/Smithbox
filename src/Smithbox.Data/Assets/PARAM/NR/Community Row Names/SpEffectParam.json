@@ -55870,7 +55870,7 @@
     {
       "ID": 1731000,
       "Entries": [
-        ""
+        "Flame of Frenzy - Apply Madness"
       ]
     },
     {
@@ -61246,667 +61246,667 @@
     {
       "ID": 8000000,
       "Entries": [
-        "[Effect] Increased Maximum HP: 1"
+        "[Effect] Increased Maximum HP - Potency 1"
       ]
     },
     {
       "ID": 8000001,
       "Entries": [
-        "[Effect] Increased Maximum HP: 2"
+        "[Effect] Increased Maximum HP - Potency 2"
       ]
     },
     {
       "ID": 8010000,
       "Entries": [
-        "[Effect] Increased Maximum FP: 1"
+        "[Effect] Increased Maximum FP - Potency 1"
       ]
     },
     {
       "ID": 8010001,
       "Entries": [
-        "[Effect] Increased Maximum FP: 2"
+        "[Effect] Increased Maximum FP - Potency 2"
       ]
     },
     {
       "ID": 8010100,
       "Entries": [
-        "[Effect] Reduced FP Consumption: 1"
+        "[Effect] Reduced FP Consumption - Potency 1"
       ]
     },
     {
       "ID": 8010101,
       "Entries": [
-        "[Effect] Reduced FP Consumption: 2"
+        "[Effect] Reduced FP Consumption - Potency 2"
       ]
     },
     {
       "ID": 8020000,
       "Entries": [
-        "[Effect] Increased Maximum Stamina: 1"
+        "[Effect] Increased Maximum Stamina - Potency 1"
       ]
     },
     {
       "ID": 8020001,
       "Entries": [
-        "[Effect] Increased Maximum Stamina: 2"
+        "[Effect] Increased Maximum Stamina - Potency 2"
       ]
     },
     {
       "ID": 8020200,
       "Entries": [
-        "[Effect] Improved Stamina Recovery: 1"
+        "[Effect] Improved Stamina Recovery - Potency 1"
       ]
     },
     {
       "ID": 8020201,
       "Entries": [
-        "[Effect] Improved Stamina Recovery: 2"
+        "[Effect] Improved Stamina Recovery - Potency 2"
       ]
     },
     {
       "ID": 8100000,
       "Entries": [
-        "[Effect] Improved Physical Attack Power: 1"
+        "[Effect] Improved Physical Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100001,
       "Entries": [
-        "[Effect] Improved Physical Attack Power: 2"
+        "[Effect] Improved Physical Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100100,
       "Entries": [
-        "[Effect] Improved Magic Attack Power: 1"
+        "[Effect] Improved Magic Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100101,
       "Entries": [
-        "[Effect] Improved Magic Attack Power: 2"
+        "[Effect] Improved Magic Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100102,
       "Entries": [
-        "[Effect] Improved Magic Attack Power: 3"
+        "[Effect] Improved Magic Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100200,
       "Entries": [
-        "[Effect] Improved Fire Attack Power: 1"
+        "[Effect] Improved Fire Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100201,
       "Entries": [
-        "[Effect] Improved Fire Attack Power: 2"
+        "[Effect] Improved Fire Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100202,
       "Entries": [
-        "[Effect] Improved Fire Attack Power: 3"
+        "[Effect] Improved Fire Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100300,
       "Entries": [
-        "[Effect] Improved Lightning Attack Power: 1"
+        "[Effect] Improved Lightning Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100301,
       "Entries": [
-        "[Effect] Improved Lightning Attack Power: 2"
+        "[Effect] Improved Lightning Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100302,
       "Entries": [
-        "[Effect] Improved Lightning Attack Power: 3"
+        "[Effect] Improved Lightning Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100400,
       "Entries": [
-        "[Effect] Improved Holy Attack Power: 1"
+        "[Effect] Improved Holy Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100401,
       "Entries": [
-        "[Effect] Improved Holy Attack Power: 2"
+        "[Effect] Improved Holy Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8100402,
       "Entries": [
-        "[Effect] Improved Holy Attack Power: 3"
+        "[Effect] Improved Holy Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8100500,
       "Entries": [
-        "[Effect] Improved Affinity Attack Power: 1"
+        "[Effect] Improved Affinity Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100501,
       "Entries": [
-        "[Effect] Improved Affinity Attack Power: 2"
+        "[Effect] Improved Affinity Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8110000,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Potency 1"
       ]
     },
     {
       "ID": 8110001,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Potency 2"
       ]
     },
     {
       "ID": 8110002,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Potency 3"
       ]
     },
     {
       "ID": 8110010,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply On-Attack Effect 1"
       ]
     },
     {
       "ID": 8110011,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply On-Attack Effect 2"
       ]
     },
     {
       "ID": 8110012,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply On-Attack Effect 3"
       ]
     },
     {
       "ID": 8110015,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply State Info 1"
       ]
     },
     {
       "ID": 8110016,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply State Info 2"
       ]
     },
     {
       "ID": 8110017,
       "Entries": [
-        "[Effect] Attacks Inflict Poison"
+        "[Effect] Attacks Inflict Poison - Apply State Info 3"
       ]
     },
     {
       "ID": 8110100,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Potency 1"
       ]
     },
     {
       "ID": 8110101,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Potency 2"
       ]
     },
     {
       "ID": 8110102,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Potency 3"
       ]
     },
     {
       "ID": 8110110,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply On-Attack Effect 1"
       ]
     },
     {
       "ID": 8110111,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply On-Attack Effect 2"
       ]
     },
     {
       "ID": 8110112,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply On-Attack Effect 3"
       ]
     },
     {
       "ID": 8110115,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply State Info 1"
       ]
     },
     {
       "ID": 8110116,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply State Info 2"
       ]
     },
     {
       "ID": 8110117,
       "Entries": [
-        "[Effect] Attacks Inflict Blood Loss"
+        "[Effect] Attacks Inflict Blood Loss - Apply State Info 3"
       ]
     },
     {
       "ID": 8110200,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Potency 1"
       ]
     },
     {
       "ID": 8110201,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Potency 2"
       ]
     },
     {
       "ID": 8110202,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Potency 3"
       ]
     },
     {
       "ID": 8110210,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply On-Attack Effect 1"
       ]
     },
     {
       "ID": 8110211,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply On-Attack Effect 2"
       ]
     },
     {
       "ID": 8110212,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply On-Attack Effect 3"
       ]
     },
     {
       "ID": 8110215,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply State Info 1"
       ]
     },
     {
       "ID": 8110216,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply State Info 2"
       ]
     },
     {
       "ID": 8110217,
       "Entries": [
-        "[Effect] Attacks Inflict Sleep"
+        "[Effect] Attacks Inflict Sleep - Apply State Info 3"
       ]
     },
     {
       "ID": 8110400,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Potency 1"
       ]
     },
     {
       "ID": 8110401,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Potency 2"
       ]
     },
     {
       "ID": 8110402,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Potency 3"
       ]
     },
     {
       "ID": 8110410,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply On-Attack Effect 1"
       ]
     },
     {
       "ID": 8110411,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply On-Attack Effect 2"
       ]
     },
     {
       "ID": 8110412,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply On-Attack Effect 3"
       ]
     },
     {
       "ID": 8110415,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply State Info 1"
       ]
     },
     {
       "ID": 8110416,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply State Info 2"
       ]
     },
     {
       "ID": 8110417,
       "Entries": [
-        "[Effect] Attacks Inflict Rot"
+        "[Effect] Attacks Inflict Rot - Apply State Info 3"
       ]
     },
     {
       "ID": 8110500,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Potency 1"
       ]
     },
     {
       "ID": 8110501,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Potency 2"
       ]
     },
     {
       "ID": 8110502,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Potency 3"
       ]
     },
     {
       "ID": 8110510,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply On-Attack Effect 1"
       ]
     },
     {
       "ID": 8110511,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply On-Attack Effect 2"
       ]
     },
     {
       "ID": 8110512,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply On-Attack Effect 3"
       ]
     },
     {
       "ID": 8110515,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply State Info 1"
       ]
     },
     {
       "ID": 8110516,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply State Info 2"
       ]
     },
     {
       "ID": 8110517,
       "Entries": [
-        "[Effect] Attacks Inflict Frost"
+        "[Effect] Attacks Inflict Frost - Apply State Info 3"
       ]
     },
     {
       "ID": 8110700,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110701,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Potency 3"
       ]
     },
     {
       "ID": 8110702,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Potency 4"
       ]
     },
     {
       "ID": 8110703,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110750,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Apply State Info 1"
       ]
     },
     {
       "ID": 8110751,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Apply State Info 3"
       ]
     },
     {
       "ID": 8110752,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Apply State Info 4"
       ]
     },
     {
       "ID": 8110753,
       "Entries": [
-        "[Effect] Add Fire to Weapon"
+        "[Effect] Add Fire to Weapon - Apply State Info 2"
       ]
     },
     {
       "ID": 8110800,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110801,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Potency 3"
       ]
     },
     {
       "ID": 8110802,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Potency 4"
       ]
     },
     {
       "ID": 8110803,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110850,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Apply State Info 1"
       ]
     },
     {
       "ID": 8110851,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Apply State Info 3"
       ]
     },
     {
       "ID": 8110852,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Apply State Info 4"
       ]
     },
     {
       "ID": 8110853,
       "Entries": [
-        "[Effect] Add Magic to Weapon"
+        "[Effect] Add Magic to Weapon - Apply State Info 2"
       ]
     },
     {
       "ID": 8110900,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8110901,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Potency 3"
       ]
     },
     {
       "ID": 8110902,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Potency 4"
       ]
     },
     {
       "ID": 8110903,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8110950,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Apply State Info 1"
       ]
     },
     {
       "ID": 8110951,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Apply State Info 3"
       ]
     },
     {
       "ID": 8110952,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Apply State Info 4"
       ]
     },
     {
       "ID": 8110953,
       "Entries": [
-        "[Effect] Add Lightning to Weapon"
+        "[Effect] Add Lightning to Weapon - Apply State Info 2"
       ]
     },
     {
       "ID": 8111000,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Potency 1"
       ]
     },
     {
       "ID": 8111001,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Potency 3"
       ]
     },
     {
       "ID": 8111002,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Potency 4"
       ]
     },
     {
       "ID": 8111003,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Potency 2"
       ]
     },
     {
       "ID": 8111050,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Apply State Info 1"
       ]
     },
     {
       "ID": 8111051,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Apply State Info 3"
       ]
     },
     {
       "ID": 8111052,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Apply State Info 4"
       ]
     },
     {
       "ID": 8111053,
       "Entries": [
-        "[Effect] Add Holy to Weapon"
+        "[Effect] Add Holy to Weapon - Apply State Info 2"
       ]
     },
     {
       "ID": 8120000,
       "Entries": [
-        "[Effect] Improved Stance-Breaking: 1"
+        "[Effect] Improved Stance-Breaking - Potency 1"
       ]
     },
     {
       "ID": 8120001,
       "Entries": [
-        "[Effect] Improved Stance-Breaking: 2"
+        "[Effect] Improved Stance-Breaking - Potency 2"
       ]
     },
     {
       "ID": 8130000,
       "Entries": [
-        "[Effect] Improved Critical Hits"
+        "[Effect] Improved Critical Hits - Potency 1"
       ]
     },
     {
       "ID": 8130001,
       "Entries": [
-        "[Effect] Improved Critical Hits"
+        "[Effect] Improved Critical Hits - Potency 2"
       ]
     },
     {
       "ID": 8130002,
       "Entries": [
-        "[Effect] Improved Critical Hits"
+        "[Effect] Improved Critical Hits - Potency 3"
       ]
     },
     {
       "ID": 8140000,
       "Entries": [
-        "[Effect] Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking - Potency 1"
       ]
     },
     {
       "ID": 8140001,
       "Entries": [
-        "[Effect] Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking - Potency 2"
       ]
     },
     {
       "ID": 8140002,
       "Entries": [
-        "[Effect] Improved Guard Breaking"
+        "[Effect] Improved Guard Breaking - Potency 3"
       ]
     },
     {
@@ -62062,283 +62062,283 @@
     {
       "ID": 8200000,
       "Entries": [
-        "[Effect] Improved Physical Damage Negation: 1"
+        "[Effect] Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200001,
       "Entries": [
-        "[Effect] Improved Physical Damage Negation: 2"
+        "[Effect] Improved Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200100,
       "Entries": [
-        "[Effect] Improved Magic Damage Negation: 1"
+        "[Effect] Improved Magic Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200101,
       "Entries": [
-        "[Effect] Improved Magic Damage Negation: 2"
+        "[Effect] Improved Magic Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200102,
       "Entries": [
-        "[Effect] Improved Magic Damage Negation: 3"
+        "[Effect] Improved Magic Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200200,
       "Entries": [
-        "[Effect] Improved Fire Damage Negation: 1"
+        "[Effect] Improved Fire Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200201,
       "Entries": [
-        "[Effect] Improved Fire Damage Negation: 2"
+        "[Effect] Improved Fire Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200202,
       "Entries": [
-        "[Effect] Improved Fire Damage Negation: 3"
+        "[Effect] Improved Fire Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200300,
       "Entries": [
-        "[Effect] Improved Lightning Damage Negation: 1"
+        "[Effect] Improved Lightning Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200301,
       "Entries": [
-        "[Effect] Improved Lightning Damage Negation: 2"
+        "[Effect] Improved Lightning Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200302,
       "Entries": [
-        "[Effect] Improved Lightning Damage Negation: 3"
+        "[Effect] Improved Lightning Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200400,
       "Entries": [
-        "[Effect] Improved Holy Damage Negation: 1"
+        "[Effect] Improved Holy Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200401,
       "Entries": [
-        "[Effect] Improved Holy Damage Negation: 2"
+        "[Effect] Improved Holy Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8200402,
       "Entries": [
-        "[Effect] Improved Holy Damage Negation: 3"
+        "[Effect] Improved Holy Damage Negation - Potency 3"
       ]
     },
     {
       "ID": 8200500,
       "Entries": [
-        "[Effect] Improved Non-Physical Damage Negation: 1"
+        "[Effect] Improved Non-Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 8200501,
       "Entries": [
-        "[Effect] Improved Non-Physical Damage Negation: 2"
+        "[Effect] Improved Non-Physical Damage Negation - Potency 2"
       ]
     },
     {
       "ID": 8210000,
       "Entries": [
-        "[Effect] Improved Poison Resistance: 1"
+        "[Effect] Improved Poison Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210001,
       "Entries": [
-        "[Effect] Improved Poison Resistance: 2"
+        "[Effect] Improved Poison Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210002,
       "Entries": [
-        "[Effect] Improved Poison Resistance: 3"
+        "[Effect] Improved Poison Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210100,
       "Entries": [
-        "[Effect] Improved Blood Loss Resistance: 1"
+        "[Effect] Improved Blood Loss Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210101,
       "Entries": [
-        "[Effect] Improved Blood Loss Resistance: 2"
+        "[Effect] Improved Blood Loss Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210102,
       "Entries": [
-        "[Effect] Improved Blood Loss Resistance: 3"
+        "[Effect] Improved Blood Loss Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210200,
       "Entries": [
-        "[Effect] Improved Sleep Resistance: 1"
+        "[Effect] Improved Sleep Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210201,
       "Entries": [
-        "[Effect] Improved Sleep Resistance: 2"
+        "[Effect] Improved Sleep Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210202,
       "Entries": [
-        "[Effect] Improved Sleep Resistance: 3"
+        "[Effect] Improved Sleep Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210300,
       "Entries": [
-        "[Effect] Improved Death Blight Resistance: 1"
+        "[Effect] Improved Death Blight Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210301,
       "Entries": [
-        "[Effect] Improved Death Blight Resistance: 2"
+        "[Effect] Improved Death Blight Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210302,
       "Entries": [
-        "[Effect] Improved Death Blight Resistance: 3"
+        "[Effect] Improved Death Blight Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210400,
       "Entries": [
-        "[Effect] Improved Rot Resistance: 1"
+        "[Effect] Improved Rot Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210401,
       "Entries": [
-        "[Effect] Improved Rot Resistance: 2"
+        "[Effect] Improved Rot Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210402,
       "Entries": [
-        "[Effect] Improved Rot Resistance: 3"
+        "[Effect] Improved Rot Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210500,
       "Entries": [
-        "[Effect] Improved Frost Resistance: 1"
+        "[Effect] Improved Frost Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210501,
       "Entries": [
-        "[Effect] Improved Frost Resistance: 2"
+        "[Effect] Improved Frost Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210502,
       "Entries": [
-        "[Effect] Improved Frost Resistance: 3"
+        "[Effect] Improved Frost Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210600,
       "Entries": [
-        "[Effect] Improved Madness Resistance: 1"
+        "[Effect] Improved Madness Resistance - Potency 1"
       ]
     },
     {
       "ID": 8210601,
       "Entries": [
-        "[Effect] Improved Madness Resistance: 2"
+        "[Effect] Improved Madness Resistance - Potency 2"
       ]
     },
     {
       "ID": 8210602,
       "Entries": [
-        "[Effect] Improved Madness Resistance: 3"
+        "[Effect] Improved Madness Resistance - Potency 3"
       ]
     },
     {
       "ID": 8210700,
       "Entries": [
-        "[Effect] All Resistances Up: 1"
+        "[Effect] All Resistances Up - Potency 1"
       ]
     },
     {
       "ID": 8210701,
       "Entries": [
-        "[Effect] All Resistances Up: 2"
+        "[Effect] All Resistances Up - Potency 2"
       ]
     },
     {
       "ID": 8220000,
       "Entries": [
-        "[Effect] Improved Guarding Ability: 1"
+        "[Effect] Improved Guarding Ability - Potency 1"
       ]
     },
     {
       "ID": 8220001,
       "Entries": [
-        "[Effect] Improved Guarding Ability: 2"
+        "[Effect] Improved Guarding Ability - Potency 2"
       ]
     },
     {
       "ID": 8220002,
       "Entries": [
-        "[Effect] Improved Guarding Ability: 3"
+        "[Effect] Improved Guarding Ability - Potency 3"
       ]
     },
     {
       "ID": 8230000,
       "Entries": [
-        "[Effect] Improved Poise: 1"
+        "[Effect] Improved Poise - Potency 1"
       ]
     },
     {
       "ID": 8230001,
       "Entries": [
-        "[Effect] Improved Poise: 2"
+        "[Effect] Improved Poise - Potency 2"
       ]
     },
     {
       "ID": 8300000,
       "Entries": [
-        "[Effect] Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing - Potency 1"
       ]
     },
     {
       "ID": 8300001,
       "Entries": [
-        "[Effect] Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing - Potency 2"
       ]
     },
     {
       "ID": 8300002,
       "Entries": [
-        "[Effect] Improved Attack Power when Two-Handing"
+        "[Effect] Improved Attack Power when Two-Handing - Potency 3"
       ]
     },
     {
@@ -62350,1501 +62350,1501 @@
     {
       "ID": 8310000,
       "Entries": [
-        ""
+        "[Effect] Attack Up when Wielding Two Armaments - Potency 1"
       ]
     },
     {
       "ID": 8310001,
       "Entries": [
-        ""
+        "[Effect] Attack Up when Wielding Two Armaments - Potency 2"
       ]
     },
     {
       "ID": 8310002,
       "Entries": [
-        ""
+        "[Effect] Attack Up when Wielding Two Armaments - Potency 3"
       ]
     },
     {
       "ID": 8310100,
       "Entries": [
-        ""
+        "[Effect] Improved Stance-Breaking when Wielding Two Armaments"
       ]
     },
     {
       "ID": 8320000,
       "Entries": [
-        ""
+        "[Effect] Improved Chain Attack Finishers - Potency 1"
       ]
     },
     {
       "ID": 8320001,
       "Entries": [
-        ""
+        "[Effect] Improved Chain Attack Finishers - Potency 2"
       ]
     },
     {
       "ID": 8320002,
       "Entries": [
-        ""
+        "[Effect] Improved Chain Attack Finishers - Potency 3"
       ]
     },
     {
       "ID": 8320100,
       "Entries": [
-        ""
+        "[Effect] Improved Charge Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320101,
       "Entries": [
-        ""
+        "[Effect] Improved Charge Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320102,
       "Entries": [
-        ""
+        "[Effect] Improved Charge Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320300,
       "Entries": [
-        ""
+        "[Effect] Improved Jump Attacks - Potency 1"
       ]
     },
     {
       "ID": 8320301,
       "Entries": [
-        ""
+        "[Effect] Improved Jump Attacks - Potency 2"
       ]
     },
     {
       "ID": 8320302,
       "Entries": [
-        ""
+        "[Effect] Improved Jump Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320400,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks"
       ]
     },
     {
       "ID": 8320401,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks - Damage Negation Buff - Potency 1"
       ]
     },
     {
       "ID": 8320410,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks"
       ]
     },
     {
       "ID": 8320411,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks - Damage Negation Buff - Potency 2"
       ]
     },
     {
       "ID": 8320420,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks"
       ]
     },
     {
       "ID": 8320421,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up upon Landing Charge Attacks - Damage Negation Buff - Potency 3"
       ]
     },
     {
       "ID": 8330000,
       "Entries": [
-        ""
+        "[Effect] Improved Sorceries - Potency 1"
       ]
     },
     {
       "ID": 8330001,
       "Entries": [
-        ""
+        "[Effect] Improved Sorceries - Potency 2"
       ]
     },
     {
       "ID": 8330002,
       "Entries": [
-        ""
+        "[Effect] Improved Sorceries - Potency 3"
       ]
     },
     {
       "ID": 8330100,
       "Entries": [
-        ""
+        "[Effect] Improved Incantations - Potency 1"
       ]
     },
     {
       "ID": 8330101,
       "Entries": [
-        ""
+        "[Effect] Improved Incantations - Potency 2"
       ]
     },
     {
       "ID": 8330102,
       "Entries": [
-        ""
+        "[Effect] Improved Incantations - Potency 3"
       ]
     },
     {
       "ID": 8330103,
       "Entries": [
-        ""
+        "[Effect] Improved Sorceries and Incantations - Potency 1"
       ]
     },
     {
       "ID": 8330104,
       "Entries": [
-        ""
+        "[Effect] Improved Sorceries and Incantations - Potency 2"
       ]
     },
     {
       "ID": 8330200,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Sorceries - Potency 1"
       ]
     },
     {
       "ID": 8330201,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Sorceries - Potency 2"
       ]
     },
     {
       "ID": 8330202,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Sorceries - Potency 3"
       ]
     },
     {
       "ID": 8330300,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Incantations - Potency 1"
       ]
     },
     {
       "ID": 8330301,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Incantations - Potency 2"
       ]
     },
     {
       "ID": 8330302,
       "Entries": [
-        ""
+        "[Effect] Improved Charged Incantations - Potency 3"
       ]
     },
     {
       "ID": 8330400,
       "Entries": [
-        ""
+        "[Effect] Improved Spell Casting Speed - Potency 1"
       ]
     },
     {
       "ID": 8330401,
       "Entries": [
-        ""
+        "[Effect] Improved Spell Casting Speed - Potency 2"
       ]
     },
     {
       "ID": 8330500,
       "Entries": [
-        ""
+        "[Effect] Extended Spell Duration"
       ]
     },
     {
       "ID": 8330600,
       "Entries": [
-        ""
+        "[Effect] Reduced Spell FP Cost - Potency 1"
       ]
     },
     {
       "ID": 8330601,
       "Entries": [
-        ""
+        "[Effect] Reduced Spell FP Cost - Potency 2"
       ]
     },
     {
       "ID": 8330602,
       "Entries": [
-        ""
+        "[Effect] Reduced Spell FP Cost - Potency 3"
       ]
     },
     {
       "ID": 8330700,
       "Entries": [
-        ""
+        "[Effect] Communion Grants Anti-Dragon Effect"
       ]
     },
     {
       "ID": 8330701,
       "Entries": [
-        ""
+        "[Effect] Communion Grants Anti-Dragon Effect"
       ]
     },
     {
       "ID": 8330702,
       "Entries": [
-        ""
+        "[Effect] Communion Grants Anti-Dragon Effect - Anti-Dragon Buff (Right)"
       ]
     },
     {
       "ID": 8330703,
       "Entries": [
-        ""
+        "[Effect] Communion Grants Anti-Dragon Effect"
       ]
     },
     {
       "ID": 8330704,
       "Entries": [
-        ""
+        "[Effect] Communion Grants Anti-Dragon Effect - Anti-Dragon Buff (Left)"
       ]
     },
     {
       "ID": 8330900,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330901,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330902,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells - Damage Negation Buff - Potency 1"
       ]
     },
     {
       "ID": 8330910,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330911,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330912,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells - Damage Negation Buff - Potency 2"
       ]
     },
     {
       "ID": 8330920,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330921,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells"
       ]
     },
     {
       "ID": 8330922,
       "Entries": [
-        ""
+        "[Effect] Dmg Negation Up While Casting Spells - Damage Negation Buff - Potency 3"
       ]
     },
     {
       "ID": 8340000,
       "Entries": [
-        ""
+        "[Effect] Improved Ranged Weapon Attacks - Potency 1"
       ]
     },
     {
       "ID": 8340001,
       "Entries": [
-        ""
+        "[Effect] Improved Ranged Weapon Attacks - Potency 2"
       ]
     },
     {
       "ID": 8340002,
       "Entries": [
-        ""
+        "[Effect] Improved Ranged Weapon Attacks - Potency 3"
       ]
     },
     {
       "ID": 8340100,
       "Entries": [
-        ""
+        "[Effect] Projectile Damage Drop-Off Reduced - Potency 1"
       ]
     },
     {
       "ID": 8340101,
       "Entries": [
-        ""
+        "[Effect] Projectile Damage Drop-Off Reduced - Potency 2"
       ]
     },
     {
       "ID": 8340102,
       "Entries": [
-        ""
+        "[Effect] Projectile Damage Drop-Off Reduced - Potency 3"
       ]
     },
     {
       "ID": 8350000,
       "Entries": [
-        ""
+        "[Effect] Improved Skill Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8350001,
       "Entries": [
-        ""
+        "[Effect] Improved Skill Attack Power - Potency 2"
       ]
     },
     {
       "ID": 8350002,
       "Entries": [
-        ""
+        "[Effect] Improved Skill Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8350200,
       "Entries": [
-        ""
+        "[Effect] Reduced Skill FP Cost - Potency 1"
       ]
     },
     {
       "ID": 8350201,
       "Entries": [
-        ""
+        "[Effect] Reduced Skill FP Cost - Potency 2"
       ]
     },
     {
       "ID": 8350202,
       "Entries": [
-        ""
+        "[Effect] Reduced Skill FP Cost - Potency 3"
       ]
     },
     {
       "ID": 8350400,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350401,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350402,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation - Apply Behavior Change"
       ]
     },
     {
       "ID": 8350403,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350404,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation - Apply Behavior Change"
       ]
     },
     {
       "ID": 8350410,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350411,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350412,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350415,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation - Apply Behavior Change"
       ]
     },
     {
       "ID": 8350416,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350417,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation - Apply Behavior Change"
       ]
     },
     {
       "ID": 8350418,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8350419,
       "Entries": [
-        ""
+        "[Effect] Parries Activate Golden Retaliation"
       ]
     },
     {
       "ID": 8360000,
       "Entries": [
-        ""
+        "[Effect] Ultimate Art Gauge Charge Speed Up"
       ]
     },
     {
       "ID": 8370000,
       "Entries": [
-        ""
+        "[Effect] Character Skill Cooldown Reduction"
       ]
     },
     {
       "ID": 8380000,
       "Entries": [
-        ""
+        "[Effect] Improved Roar & Breath Attacks"
       ]
     },
     {
       "ID": 8390000,
       "Entries": [
-        ""
+        "[EFfect] Improved Thrown Pot Attacks"
       ]
     },
     {
       "ID": 8400000,
       "Entries": [
-        ""
+        "[Effect] Improved Perfuming Arts - Potency 1"
       ]
     },
     {
       "ID": 8400001,
       "Entries": [
-        ""
+        "[Effect] Improved Perfuming Arts - Potency 2"
       ]
     },
     {
       "ID": 8400002,
       "Entries": [
-        ""
+        "[Effect] Improved Perfuming Arts - Potency 3"
       ]
     },
     {
       "ID": 8410000,
       "Entries": [
-        ""
+        "[Effect] Improved Dodging"
       ]
     },
     {
       "ID": 8410100,
       "Entries": [
-        ""
+        "[Effect] Lightning upon Dodging"
       ]
     },
     {
       "ID": 8410101,
       "Entries": [
-        ""
+        "[Effect] Lightning upon Dodging"
       ]
     },
     {
       "ID": 8410102,
       "Entries": [
-        ""
+        "[Effect] Lightning upon Dodging - Apply Behavior Change"
       ]
     },
     {
       "ID": 8420000,
       "Entries": [
-        ""
+        "[Effect] Improved Guard Counters - Potency 1"
       ]
     },
     {
       "ID": 8420001,
       "Entries": [
-        ""
+        "[Effect] Improved Guard Counters - Potency 2"
       ]
     },
     {
       "ID": 8420002,
       "Entries": [
-        ""
+        "[Effect] Improved Guard Counters - Potency 3"
       ]
     },
     {
       "ID": 8420100,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Activate Holy Attacks"
       ]
     },
     {
       "ID": 8420101,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Activate Holy Attacks"
       ]
     },
     {
       "ID": 8420102,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Activate Holy Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8420105,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Activate Holy Attacks"
       ]
     },
     {
       "ID": 8420106,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Activate Holy Attacks - Apply Behavior Change"
       ]
     },
     {
       "ID": 8420200,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Launch Summoning Attack"
       ]
     },
     {
       "ID": 8420201,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Launch Summoning Attack"
       ]
     },
     {
       "ID": 8420202,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Launch Summoning Attack - Apply Behavior Change"
       ]
     },
     {
       "ID": 8420203,
       "Entries": [
-        ""
+        "[Effect] Guard Counters Launch Summoning Attack - Apply Behavior Change"
       ]
     },
     {
       "ID": 8430000,
       "Entries": [
-        ""
+        "[Effect] Improved Thrusting Counterattack"
       ]
     },
     {
       "ID": 8440000,
       "Entries": [
-        ""
+        "[Effect] Improved Flask HP Restoration - Potency 1"
       ]
     },
     {
       "ID": 8440001,
       "Entries": [
-        ""
+        "[Effect] Improved Flask HP Restoration - Potency 2"
       ]
     },
     {
       "ID": 8440200,
       "Entries": [
-        ""
+        "[Effect] Gradual Restoration by Flask"
       ]
     },
     {
       "ID": 8450000,
       "Entries": [
-        ""
+        "[Effect] Magma Surge Sprint"
       ]
     },
     {
       "ID": 8450001,
       "Entries": [
-        ""
+        "[Effect] Magma Surge Sprint"
       ]
     },
     {
       "ID": 8450002,
       "Entries": [
-        ""
+        "[Effect] Magma Surge Sprint - Apply Behavior Change"
       ]
     },
     {
       "ID": 8450100,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint"
       ]
     },
     {
       "ID": 8450101,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint"
       ]
     },
     {
       "ID": 8450102,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint - Apply Behavior Change"
       ]
     },
     {
       "ID": 8450103,
       "Entries": [
-        ""
+        "[Effect] Ice Storm Surge Sprint - Apply Frostbite"
       ]
     },
     {
       "ID": 8460100,
       "Entries": [
-        ""
+        "[Effect] Savage Pillars of Flame Rise While Walking"
       ]
     },
     {
       "ID": 8460101,
       "Entries": [
-        ""
+        "[Effect] Savage Pillars of Flame Rise While Walking"
       ]
     },
     {
       "ID": 8460102,
       "Entries": [
-        ""
+        "[Effect] Savage Pillars of Flame Rise While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460200,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 8460201,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking"
       ]
     },
     {
       "ID": 8460202,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460203,
       "Entries": [
-        ""
+        "[Effect] Flame of Frenzy While Walking - Apply Madness"
       ]
     },
     {
       "ID": 8460300,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking"
       ]
     },
     {
       "ID": 8460301,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking"
       ]
     },
     {
       "ID": 8460302,
       "Entries": [
-        ""
+        "[Effect] Wraiths While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460400,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking"
       ]
     },
     {
       "ID": 8460401,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking"
       ]
     },
     {
       "ID": 8460402,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460403,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460404,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460405,
       "Entries": [
-        ""
+        "[Effect] Vicious Star Rain Pours While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8460500,
       "Entries": [
-        ""
+        "[Effect] Storm of Red Lightning While Walking"
       ]
     },
     {
       "ID": 8460501,
       "Entries": [
-        ""
+        "[Effect] Storm of Red Lightning While Walking"
       ]
     },
     {
       "ID": 8460502,
       "Entries": [
-        ""
+        "[Effect] Storm of Red Lightning While Walking - Apply Behavior Change"
       ]
     },
     {
       "ID": 8500000,
       "Entries": [
-        ""
+        "[Effect] More Runes From Defeated Enemies"
       ]
     },
     {
       "ID": 8500100,
       "Entries": [
-        ""
+        "[Effect] Rune of the Strong - Potency 1"
       ]
     },
     {
       "ID": 8500101,
       "Entries": [
-        ""
+        "[Effect] Rune of the Strong - Potency 2"
       ]
     },
     {
       "ID": 8500102,
       "Entries": [
-        ""
+        "[Effect] Rune of the Strong - Potency 3"
       ]
     },
     {
       "ID": 8510000,
       "Entries": [
-        ""
+        "[Effect] Improved Item Discovery - Potency 1"
       ]
     },
     {
       "ID": 8510001,
       "Entries": [
-        ""
+        "[Effect] Improved Item Discovery - Potency 2"
       ]
     },
     {
       "ID": 8510002,
       "Entries": [
-        ""
+        "[Effect] Improved Item Discovery - Potency 3"
       ]
     },
     {
       "ID": 8520000,
       "Entries": [
-        ""
+        "[Effect] Less Likely to Be Targeted - Potency 1"
       ]
     },
     {
       "ID": 8520001,
       "Entries": [
-        ""
+        "[Effect] Less Likely to Be Targeted - Potency 2"
       ]
     },
     {
       "ID": 8520002,
       "Entries": [
-        ""
+        "[Effect] Less Likely to Be Targeted - Potency 3"
       ]
     },
     {
       "ID": 8530000,
       "Entries": [
-        ""
+        "[Effect] Multiple Periodical Glintblades"
       ]
     },
     {
       "ID": 8530001,
       "Entries": [
-        ""
+        "[Effect] Multiple Periodical Glintblades - Apply Behavior Change"
       ]
     },
     {
       "ID": 8530100,
       "Entries": [
-        ""
+        "[Effect] Many Periodical Glintblades"
       ]
     },
     {
       "ID": 8530101,
       "Entries": [
-        ""
+        "[Effect] Many Periodical Glintblades - Apply Behavior Change"
       ]
     },
     {
       "ID": 8530200,
       "Entries": [
-        ""
+        "[Effect] Periodical Giant Glintblades"
       ]
     },
     {
       "ID": 8530201,
       "Entries": [
-        ""
+        "[Effect] Periodical Giant Glintblades - Apply Behavior Change"
       ]
     },
     {
       "ID": 8540000,
       "Entries": [
-        ""
+        "[Effect] Continuous HP Recovery"
       ]
     },
     {
       "ID": 8600100,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600101,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600102,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600105,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600106,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600107,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Landing Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600110,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Dagger Attacks"
       ]
     },
     {
       "ID": 8600111,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Dagger Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600112,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Straight Sword Attacks"
       ]
     },
     {
       "ID": 8600113,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Straight Sword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600114,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Greatsword Attacks"
       ]
     },
     {
       "ID": 8600115,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Greatsword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600116,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Colossal Sword Attacks"
       ]
     },
     {
       "ID": 8600117,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Colossal Sword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600118,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Curved Sword Attacks"
       ]
     },
     {
       "ID": 8600119,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Curved Sword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600120,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Curved Greatsword Attacks"
       ]
     },
     {
       "ID": 8600121,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Curved Greatsword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600122,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Katana Attacks"
       ]
     },
     {
       "ID": 8600123,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Katana Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600124,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Twinblade Attacks"
       ]
     },
     {
       "ID": 8600125,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Twinblade Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600126,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Thrusting Sword Attacks"
       ]
     },
     {
       "ID": 8600127,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Thrusting Sword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600128,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Heavy Thrusting Sword Attacks"
       ]
     },
     {
       "ID": 8600129,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Heavy Thrusting Sword Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600130,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Axe Attacks"
       ]
     },
     {
       "ID": 8600131,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Axe Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600132,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Greataxe Attacks"
       ]
     },
     {
       "ID": 8600133,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Greataxe Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600134,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Hammer Attacks"
       ]
     },
     {
       "ID": 8600135,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Hammer Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600136,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Great Hammer Attacks"
       ]
     },
     {
       "ID": 8600137,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Great Hammer Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600138,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Flail Attacks"
       ]
     },
     {
       "ID": 8600139,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Flail Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600140,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Spear Attacks"
       ]
     },
     {
       "ID": 8600141,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Spear Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600142,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon ? Attacks"
       ]
     },
     {
       "ID": 8600143,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon ? Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600144,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Great Spear Attacks"
       ]
     },
     {
       "ID": 8600145,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Great Spear Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600146,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Halberd Attacks"
       ]
     },
     {
       "ID": 8600147,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Halberd Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600148,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Reaper Attacks"
       ]
     },
     {
       "ID": 8600149,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Reaper Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600150,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Fist Attacks"
       ]
     },
     {
       "ID": 8600151,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Fist Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600152,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Claw Attacks"
       ]
     },
     {
       "ID": 8600153,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Claw Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600154,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Whip Attacks"
       ]
     },
     {
       "ID": 8600155,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Whip Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600156,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Colossal Weapon Attacks"
       ]
     },
     {
       "ID": 8600157,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Colossal Weapon Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600158,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Bow Attacks"
       ]
     },
     {
       "ID": 8600159,
       "Entries": [
-        ""
+        "[Effect] HP Restoration upon Bow Attacks - HP Restore"
       ]
     },
     {
       "ID": 8600200,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600201,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600202,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks"
       ]
     },
     {
       "ID": 8600205,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600206,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600207,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Landing Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600210,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Dagger Attacks"
       ]
     },
     {
       "ID": 8600211,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Dagger Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600212,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Straight Sword Attacks"
       ]
     },
     {
       "ID": 8600213,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Straight Sword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600214,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Greatsword Attacks"
       ]
     },
     {
       "ID": 8600215,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Greatsword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600216,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Colossal Sword Attacks"
       ]
     },
     {
       "ID": 8600217,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Colossal Sword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600218,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Curved Sword Attacks"
       ]
     },
     {
       "ID": 8600219,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Curved Sword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600220,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Curved Greatsword Attacks"
       ]
     },
     {
       "ID": 8600221,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Curved Greatsword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600222,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Katana Attacks"
       ]
     },
     {
       "ID": 8600223,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Katana Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600224,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Twinblade Attacks"
       ]
     },
     {
       "ID": 8600225,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Twinblade Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600226,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Thrusting Sword Attacks"
       ]
     },
     {
       "ID": 8600227,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Thrusting Sword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600228,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Heavy Thrusting Sword Attacks"
       ]
     },
     {
       "ID": 8600229,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Heavy Thrusting Sword Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600230,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Axe Attacks"
       ]
     },
     {
       "ID": 8600231,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Axe Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600232,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Greataxe Attacks"
       ]
     },
     {
       "ID": 8600233,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Greataxe Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600234,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Hammer Attacks"
       ]
     },
     {
       "ID": 8600235,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Hammer Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600236,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Great Hammer Attacks"
       ]
     },
     {
       "ID": 8600237,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Great Hammer Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600238,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Flail Attacks"
       ]
     },
     {
       "ID": 8600239,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Flail Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600240,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Spear Attacks"
       ]
     },
     {
       "ID": 8600241,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Spear Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600242,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon ? Attacks"
       ]
     },
     {
       "ID": 8600243,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon ? Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600244,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Great Spear Attacks"
       ]
     },
     {
       "ID": 8600245,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Great Spear Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600246,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Halberd Attacks"
       ]
     },
     {
       "ID": 8600247,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Halberd Attacks - FP Restore"
       ]
     },
     {
       "ID": 8600248,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Reaper Attacks"
       ]
     },
     {
       "ID": 8600249,
       "Entries": [
-        ""
+        "[Effect] FP Restoration upon Reaper Attacks - FP Restore"
       ]
     },
     {
