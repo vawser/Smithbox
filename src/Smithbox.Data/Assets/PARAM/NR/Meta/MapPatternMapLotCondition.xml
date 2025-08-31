@@ -11,6 +11,14 @@
     <modifier2
     AltName="Modifier 2"
     Wiki="" />
+    
+    <targetBoss1
+    AltName="Target Boss: 1"
+    Wiki="" />
+    
+    <targetBoss2
+    AltName="Target Boss: 2"
+    Wiki="" />
   </Field>
   
   <Enums>

@@ -4,7 +4,81 @@
   Wiki="" />
   
   <Field>
+    <secondCircleRadius
+    AltName="Second Circle Radius"
+    Wiki="" />
     
+    <firstCircleStartHour
+    AltName="First Circle: Start Hour"
+    Wiki="" />
+    
+    <firstCircleStartMinute
+    AltName="First Circle: Start Minute"
+    Wiki="" />
+    
+    <firstCircleEndHour
+    AltName="First Circle: End Hour"
+    Wiki="" />
+    
+    <firstCircleEndMinute
+    AltName="First Circle: End Minute"
+    Wiki="" />
+    
+    <secondCircleStartHour
+    AltName="Second Circle: Start Hour"
+    Wiki="" />
+    
+    <secondCircleStartMinute
+    AltName="Second Circle: Start Minute"
+    Wiki="" />
+    
+    <secondCircleEndHour
+    AltName="Second Circle: End Hour"
+    Wiki="" />
+    
+    <secondCircleEndMinute
+    AltName="Second Circle: End Minute"
+    Wiki="" />
+    
+    <day1RainSpEffect
+    AltName="Day 1 Rain: SpEffect ID"
+    Wiki=""
+    Refs="SpEffectParam" />
+    
+    <day2RainSpEffect
+    AltName="Day 2 Rain: SpEffect ID"
+    Wiki=""
+    Refs="SpEffectParam" />
+    
+    <initialCircleRadius
+    AltName="Initial Circle Radius"
+    Wiki="" />
+    
+    <initialCircleAreaNo
+    AltName="Initial Circle: Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
+    
+    <initialCircleGridXNo
+    AltName="Initial Circle: Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <initialCircleGridZNo
+    AltName="Initial Circle: Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <pad1
+    Padding="" />
+    
+    <initialCirclePosX
+    AltName="Initial Circle: Placement Position: X"
+    Wiki="" />
+    
+    <initialCirclePosZ
+    AltName="Initial Circle: Placement Position: Z"
+    Wiki="" />
+    
+    <endPadding
+    Padding="" />
   </Field>
   
   <Enums>

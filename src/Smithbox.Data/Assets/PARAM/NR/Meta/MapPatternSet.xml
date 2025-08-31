@@ -4,7 +4,137 @@
   Wiki="" />
   
   <Field>
+    <weight
+    AltName="Weight"
+    Wiki="" />
     
+    <modifier1
+    AltName="Modifier: 1"
+    Wiki="" />
+    
+    <modifier2
+    AltName="Modifier: 2"
+    Wiki="" />
+    
+    <modifier3
+    AltName="Modifier: 3"
+    Wiki="" />
+    
+    <modifier4
+    AltName="Modifier: 4"
+    Wiki="" />
+    
+    <modifier5
+    AltName="Modifier: 5"
+    Wiki="" />
+    
+    <modifier6
+    AltName="Modifier: 6"
+    Wiki="" />
+    
+    <modifier7
+    AltName="Modifier: 7"
+    Wiki="" />
+    
+    <modifier8
+    AltName="Modifier: 8"
+    Wiki="" />
+    
+    <modifier9
+    AltName="Modifier: 9"
+    Wiki="" />
+    
+    <modifier10
+    AltName="Modifier: 10"
+    Wiki="" />
+    
+    <modifier11
+    AltName="Modifier: 11"
+    Wiki="" />
+    
+    <modifier12
+    AltName="Modifier: 12"
+    Wiki="" />
+    
+    <modifier13
+    AltName="Modifier: 13"
+    Wiki="" />
+    
+    <modifier14
+    AltName="Modifier: 14"
+    Wiki="" />
+    
+    <modifier15
+    AltName="Modifier: 15"
+    Wiki="" />
+    
+    <modifier16
+    AltName="Modifier: 16"
+    Wiki="" />
+    
+    <modifier17
+    AltName="Modifier: 17"
+    Wiki="" />
+    
+    <modifier18
+    AltName="Modifier: 18"
+    Wiki="" />
+    
+    <modifier19
+    AltName="Modifier: 19"
+    Wiki="" />
+    
+    <modifier20
+    AltName="Modifier: 20"
+    Wiki="" />
+    
+    <modifier21
+    AltName="Modifier: 21"
+    Wiki="" />
+    
+    <modifier22
+    AltName="Modifier: 22"
+    Wiki="" />
+    
+    <modifier23
+    AltName="Modifier: 23"
+    Wiki="" />
+    
+    <modifier24
+    AltName="Modifier: 24"
+    Wiki="" />
+    
+    <modifier25
+    AltName="Modifier: 25"
+    Wiki="" />
+    
+    <modifier26
+    AltName="Modifier: 26"
+    Wiki="" />
+    
+    <modifier27
+    AltName="Modifier: 27"
+    Wiki="" />
+    
+    <modifier28
+    AltName="Modifier: 28"
+    Wiki="" />
+    
+    <modifier29
+    AltName="Modifier: 29"
+    Wiki="" />
+    
+    <modifier30
+    AltName="Modifier: 30"
+    Wiki="" />
+    
+    <modifier31
+    AltName="Modifier: 31"
+    Wiki="" />
+    
+    <modifier32
+    AltName="Modifier: 32"
+    Wiki="" />
   </Field>
   
   <Enums>
