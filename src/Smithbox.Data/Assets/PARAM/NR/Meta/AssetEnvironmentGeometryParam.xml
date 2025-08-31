@@ -82,6 +82,7 @@
     <breakBulletBehaviorId
     AltName="Destruction Bullet Behavior ID" 
     Wiki="Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps. ([GR] SEQ35556)" 
+    Refs="BehaviorParam,BehaviorParam_PC" />
     DefaultValue="-1" />
     
     <breakBulletCpId 
@@ -242,10 +243,10 @@
     <burnSfxDelayTimeMax_1 AltName="Burn SFX Maximum Delay Time [1]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMax_2 AltName="Burn SFX Maximum Delay Time [2]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
     <burnSfxDelayTimeMax_3 AltName="Burn SFX Maximum Delay Time [3]" Wiki="SFX generation delay time during combustion Randomly determined between start and end times" />
-    <burnBulletBehaviorId AltName="Burn Bullet Behavior ID [0]" Wiki="Bullet generation behavior parameter at the time of burning: 0 (-1: does not occur)" />
-    <burnBulletBehaviorId_1 AltName="Burn Bullet Behavior ID [1]" Wiki="Bullet generation behavior parameter at the time of burning: 1 (-1: does not occur)" />
-    <burnBulletBehaviorId_2 AltName="Burn Bullet Behavior ID [2]" Wiki="Bullet generation behavior parameter at the time of burning: 2 (-1: does not occur)" />
-    <burnBulletBehaviorId_3 AltName="Burn Bullet Behavior ID [3]" Wiki="Bullet generation behavior parameter at the time of burning: 3 (-1: does not occur)" />
+    <burnBulletBehaviorId AltName="Burn Bullet Behavior ID [0]" Wiki="Bullet generation behavior parameter at the time of burning: 0 (-1: does not occur)" Refs="BehaviorParam,BehaviorParam_PC" />
+    <burnBulletBehaviorId_1 AltName="Burn Bullet Behavior ID [1]" Wiki="Bullet generation behavior parameter at the time of burning: 1 (-1: does not occur)" Refs="BehaviorParam,BehaviorParam_PC" />
+    <burnBulletBehaviorId_2 AltName="Burn Bullet Behavior ID [2]" Wiki="Bullet generation behavior parameter at the time of burning: 2 (-1: does not occur)" Refs="BehaviorParam,BehaviorParam_PC" />
+    <burnBulletBehaviorId_3 AltName="Burn Bullet Behavior ID [3]" Wiki="Bullet generation behavior parameter at the time of burning: 3 (-1: does not occur)" Refs="BehaviorParam,BehaviorParam_PC" />
     <burnBulletDelayTime AltName="Burn Bullet Delay Time" Wiki="Time to delay the generation of bullets for fire spread (seconds)" />
     <paintDecalTargetTextureSize AltName="Paint Decal Target Texture Size" Wiki="Paint decal target size 0: Decal disabled (0 to 4096 power of 2 0, 2, 4, 8, 2048 only valid)" />
     <navimeshFlag_after AltName="Post-destruction Navmesh Flag" Wiki="Navimesh flag set from the destroyed asset" Enum="ASSET_NAVIMESH_FLAG" />

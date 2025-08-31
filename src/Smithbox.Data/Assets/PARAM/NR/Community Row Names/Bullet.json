@@ -4546,19 +4546,19 @@
     {
       "ID": 180000,
       "Entries": [
-        ""
+        "[Interactable] Arteria Leaf - Bullet"
       ]
     },
     {
       "ID": 180001,
       "Entries": [
-        ""
+        "[Interactable] Arteria Leaf - Bullet"
       ]
     },
     {
       "ID": 180002,
       "Entries": [
-        ""
+        "[Interactable] Arteria Leaf - Bullet"
       ]
     },
     {
@@ -4600,31 +4600,31 @@
     {
       "ID": 180015,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rowa Fruit Bush - Bullet"
       ]
     },
     {
       "ID": 180016,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rowa Fruit Bush - Bullet"
       ]
     },
     {
       "ID": 180017,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rowa Fruit Bush - Bullet"
       ]
     },
     {
       "ID": 180020,
       "Entries": [
-        ""
+        "[Interactable] Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180021,
       "Entries": [
-        ""
+        "[Interactable] Grave Violets - Bullet"
       ]
     },
     {
@@ -4654,19 +4654,19 @@
     {
       "ID": 180030,
       "Entries": [
-        "[Material] Boost rune acquisition"
+        "[Interactable] Gold Firefly Bush - Bullet"
       ]
     },
     {
       "ID": 180031,
       "Entries": [
-        "[Material] Boost rune acquisition"
+        "[Interactable] Gold Firefly Bush - Bullet"
       ]
     },
     {
       "ID": 180032,
       "Entries": [
-        "[Material] Boost rune acquisition"
+        "[Interactable] Gold Firefly Bush - Bullet"
       ]
     },
     {
@@ -4690,289 +4690,289 @@
     {
       "ID": 180040,
       "Entries": [
-        "[Material] Heal ailments"
+        "[Interactable] Nascent Butterfly - Bullet"
       ]
     },
     {
       "ID": 180041,
       "Entries": [
-        "[Material] Heal ailments"
+        "[Interactable] Nascent Butterfly - Bullet"
       ]
     },
     {
       "ID": 180042,
       "Entries": [
-        "[Material] Heal ailments"
+        "[Interactable] Nascent Butterfly - Bullet"
       ]
     },
     {
       "ID": 180045,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180046,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180047,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180050,
       "Entries": [
-        ""
+        "[Interactable] Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180051,
       "Entries": [
-        ""
+        "[Interactable] Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180052,
       "Entries": [
-        ""
+        "[Interactable] Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180055,
       "Entries": [
-        "[Material] Summon foe-chasing vengeful spirits"
+        "[Interactable] Gravestones and Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180056,
       "Entries": [
-        "[Material] Summon foe-chasing vengeful spirits"
+        "[Interactable] Gravestones and Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180057,
       "Entries": [
-        "[Material] Summon foe-chasing vengeful spirits"
+        "[Interactable] Gravestones and Grave Violets - Bullet"
       ]
     },
     {
       "ID": 180060,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180061,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180062,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180065,
       "Entries": [
-        "[Material] Boost physical and fire damage"
+        "[Interactable] Smoldering Butterfly - Bullet"
       ]
     },
     {
       "ID": 180066,
       "Entries": [
-        "[Material] Boost physical and fire damage"
+        "[Interactable] Smoldering Butterfly - Bullet"
       ]
     },
     {
       "ID": 180067,
       "Entries": [
-        "[Material] Boost physical and fire damage"
+        "[Interactable] Smoldering Butterfly - Bullet"
       ]
     },
     {
       "ID": 180070,
       "Entries": [
-        "[Material] Cure rot"
+        "[Interactable] Sacremental Bud - Bullet"
       ]
     },
     {
       "ID": 180071,
       "Entries": [
-        "[Material] Cure rot"
+        "[Interactable] Sacremental Bud - Bullet"
       ]
     },
     {
       "ID": 180072,
       "Entries": [
-        "[Material] Cure rot"
+        "[Interactable] Sacremental Bud - Bullet"
       ]
     },
     {
       "ID": 180075,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180076,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180077,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180080,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180081,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180082,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180085,
       "Entries": [
-        "[Material] Restore FP"
+        "[Interactable] Sacremental Bud Tree - Bullet"
       ]
     },
     {
       "ID": 180086,
       "Entries": [
-        "[Material] Restore FP"
+        "[Interactable] Sacremental Bud Tree - Bullet"
       ]
     },
     {
       "ID": 180087,
       "Entries": [
-        "[Material] Restore FP"
+        "[Interactable] Sacremental Bud Tree - Bullet"
       ]
     },
     {
       "ID": 180090,
       "Entries": [
-        "[Material] Boost damage negation"
+        "[Interactable] Silver Tear Remains - Bullet"
       ]
     },
     {
       "ID": 180091,
       "Entries": [
-        "[Material] Boost damage negation"
+        "[Interactable] Silver Tear Remains - Bullet"
       ]
     },
     {
       "ID": 180092,
       "Entries": [
-        "[Material] Boost damage negation"
+        "[Interactable] Silver Tear Remains - Bullet"
       ]
     },
     {
       "ID": 180095,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180096,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180097,
       "Entries": [
-        ""
+        "[Interactable] ? - Bullet"
       ]
     },
     {
       "ID": 180100,
       "Entries": [
-        ""
+        "[Interactable] Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180101,
       "Entries": [
-        ""
+        "[Interactable] Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180102,
       "Entries": [
-        ""
+        "[Interactable] Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180105,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rimed Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180106,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rimed Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180107,
       "Entries": [
-        "[Material] Restore HP"
+        "[Interactable] Rimed Rowa Bush - Bullet"
       ]
     },
     {
       "ID": 180110,
       "Entries": [
-        ""
+        "[Interactable] Fallen Meteroite - Bullet"
       ]
     },
     {
       "ID": 180111,
       "Entries": [
-        ""
+        "[Interactable] Fallen Meteroite - Bullet"
       ]
     },
     {
       "ID": 180112,
       "Entries": [
-        ""
+        "[Interactable] Fallen Meteroite - Bullet"
       ]
     },
     {
       "ID": 180900,
       "Entries": [
-        "[Material] Summon foe-chasing vengeful spirits (Waiting)"
+        "Gravestones - Summon foe-chasing vengeful spirits (Waiting)"
       ]
     },
     {
       "ID": 180901,
       "Entries": [
-        "[Material] Summon foe-chasing vengeful spirits (Launch)"
+        "Gravestones - Summon foe-chasing vengeful spirits (Launch)"
       ]
     },
     {
       "ID": 180902,
       "Entries": [
-        ""
+        "Gravestones - Summon foe-chasing vengeful spirits"
       ]
     },
     {

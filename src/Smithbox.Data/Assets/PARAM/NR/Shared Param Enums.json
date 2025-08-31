@@ -771,6 +771,7 @@
                 { "ID": "2027", "Name": "Wylder: Follow-up attacks possible when using Character Skill (greatsword only)", "Description": "" },
                 
                 { "ID": "2032", "Name": "Revenant: Trigger ghostflame explosion during Ultimate Art activation", "Description": "" },
+                { "ID": "2035", "Name": "Wylder: Apply on Character Skill Usage", "Description": "" },
                 { "ID": "2036", "Name": "Guardian: Creates whirlwind when charging halberd attacks", "Description": "" },
                 { "ID": "2037", "Name": "Unknown", "Description": "" },
                 { "ID": "2038", "Name": "Unknown", "Description": "" },
@@ -799,14 +800,14 @@
                 
                 { "ID": "2100", "Name": "Use Weapon Type Trigger", "Description": "" },
                 { "ID": "2101", "Name": "Apply Starting Weapon Effect", "Description": "" },
-                { "ID": "2102", "Name": "Award Starting Goods Effect", "Description": "" },
+                { "ID": "2102", "Name": "Award Starting Good on Expedition Start", "Description": "" },
                 { "ID": "2103", "Name": "Apply On-Attack Effect", "Description": "" },
                 { "ID": "2104", "Name": "Apply Item Effect to Allies", "Description": "" },
                 { "ID": "2105", "Name": "Change Starting Weapon Skill", "Description": "" },
                 { "ID": "2106", "Name": "Trigger Thrust Attack Effects", "Description": "" },
-                { "ID": "2107", "Name": "Revenant Family Effect 1", "Description": "" },
-                { "ID": "2108", "Name": "Revenant Family Effect 2", "Description": "" },
-                { "ID": "2109", "Name": "Revenant Family Effect 3", "Description": "" },
+                { "ID": "2107", "Name": "Revenant Family Effect: HP Recovery", "Description": "" },
+                { "ID": "2108", "Name": "Revenant Family Effect: Attack Boost", "Description": "" },
+                { "ID": "2109", "Name": "Revenant Family Effect: Damage Negation Boost", "Description": "" },
                 { "ID": "2110", "Name": "Use Enemy State Info Trigger", "Description": "" },
                 { "ID": "2111", "Name": "Scale Guard Counter based on Current HP", "Description": "" },
                 { "ID": "2112", "Name": "Ironeye: Extend Weakpoint Duration", "Description": "" },
@@ -815,6 +816,7 @@
                 { "ID": "2115", "Name": "Unknown", "Description": "" },
                 { "ID": "2116", "Name": "Apply Rune Discount to Merchants", "Description": "" },
                 { "ID": "2118", "Name": "Unknown", "Description": "" },
+                { "ID": "2119", "Name": "Revenant: Apply on Ability Activation", "Description": "" },
                 
                 { "ID": "2200", "Name": "Holy Shockwave on Charged Attack", "Description": "" },
                 { "ID": "2203", "Name": "Apply on Thrust Attack", "Description": "" },
@@ -826,7 +828,7 @@
                 
                 { "ID": "2120", "Name": "Apply Effect upon Night's Encroachment", "Description": "" },
                 { "ID": "2121", "Name": "Apply Effect Randomly", "Description": "" },
-                
+                { "ID": "2122", "Name": "Apply Weapon Discovery Change", "Description": "" },
                 { "ID": "2123", "Name": "Apply Hero Status Change", "Description": "" },
                 
                 { "ID": "2210", "Name": "Bundle of Arrows on Strong Attack", "Description": "" },
@@ -866,8 +868,11 @@
                 { "ID": "2245", "Name": "Successful Guarding Ups Dmg Negation (2)", "Description": "" },
                 { "ID": "2246", "Name": "Successful Guarding Ups Dmg Negation (3)", "Description": "" },
                 
+                { "ID": "2250", "Name": "Ironeye: Additional Character Skill Usage", "Description": "" },
+                { "ID": "2256", "Name": "Raider: Extend Totem Stela Duration", "Description": "" },
+                
                 { "ID": "2270", "Name": "Attacks Generate On-Attack Projectile", "Description": "" },
-                { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
+                { "ID": "2271", "Name": "Duchess: Improve Character Skill Attack Power", "Description": "" },
                 { "ID": "2273", "Name": "Multiple Periodical Glintblades", "Description": "" },
                 { "ID": "2274", "Name": "Many Periodical Glintblades", "Description": "" },
                 { "ID": "2275", "Name": "Periodical Giant Glintblades", "Description": "" },
@@ -932,6 +937,13 @@
                 { "ID": "2356", "Name": "Near Death Reduces Max HP", "Description": "" },
                 { "ID": "2378", "Name": "Sleep Behavior", "Description": "" },
                 { "ID": "2379", "Name": "Madness Behavior", "Description": "" },
+                
+                { "ID": "2392", "Name": "Guardian: Apply on Character Skill Usage", "Description": "" },
+                { "ID": "2393", "Name": "Ironeye: Apply on Character Skill Hit", "Description": "" },
+                { "ID": "2394", "Name": "Duchess: Invulnerability after Character Skill Usage", "Description": "" },
+                { "ID": "2395", "Name": "Raider: Apply on Character Skill Hit", "Description": "" },
+                { "ID": "2396", "Name": "Recluse: Apply on Affinity Residue Collection", "Description": "" },
+                { "ID": "2397", "Name": "Executor: Apply on Ability Activation", "Description": "" },
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]

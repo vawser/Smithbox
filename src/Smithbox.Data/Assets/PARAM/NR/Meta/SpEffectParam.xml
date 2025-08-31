@@ -1467,6 +1467,11 @@
     Wiki="The amount of weapons of the above type that need to be present for the effect to trigger." 
     DefaultValue="0"/>
     
+    <startingItemAmount
+    AltName="Starting Item Amount"
+    Wiki="The starting item amount given at the start of an expedition." 
+    DefaultValue="0"/>
+    
     <enemyStateInfoTrigger
     AltName="Enemy State Info Trigger"
     Wiki="Trigger this effect when this state info is present on an enemy."
@@ -2016,9 +2021,10 @@
     DefaultValue="0"/>
     
     <triggerEffectOnKnockback_unk
-    AltName="triggerEffectOnKnockback_unk"
+    AltName="Trigger Effect on Specified Knockback Type"
     Wiki="Appears related to the effects that trigger a boost on knockback" 
-    DefaultValue="-1"/>
+    ProjectEnum="SPEFFECT_DMGTYPE_NEW"
+    DefaultValue="-1" />
     
     <weakPointValue
     AltName="Weak Point Duration"

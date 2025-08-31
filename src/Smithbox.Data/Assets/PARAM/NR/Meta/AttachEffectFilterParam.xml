@@ -20,7 +20,7 @@
     <filterTextId
     AltName="Filter Name ID"
     Wiki="The text ID to use for the name of this filter." 
-    FmgRef="Modern_Menu_Text" />
+    FmgRef="Title_AttachEffect" />
     
     <filterValue
     AltName="Filter Value" 
