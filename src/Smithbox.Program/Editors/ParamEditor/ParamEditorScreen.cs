@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Threading.Tasks;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 using static StudioCore.Editors.ParamEditor.Tools.ParamTools;
 using ActionManager = StudioCore.Editor.ActionManager;
@@ -372,11 +373,6 @@ public class ParamEditorScreen : EditorScreen
             if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
             {
                 Save();
-            }
-
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
-            {
-                SaveAll();
             }
 
             if (ParamUpgrader.SupportsParamUpgrading(Project) && ParamUpgrader.IsParamUpgradeValid(Project))
@@ -981,7 +977,28 @@ public class ParamEditorScreen : EditorScreen
         }
     }
 
+    public bool SaveLock = false;
+
     public async void Save()
+    {
+        await Task.Yield();
+
+        if (!SaveLock)
+        {
+            SaveLock = true;
+
+            Task<bool> paramSaveTask = SaveParams();
+            Task.WaitAll(paramSaveTask);
+
+            SaveLock = false;
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Param saving already in progress.");
+        }
+    }
+
+    public async Task<bool> SaveParams()
     {
         try
         {
@@ -1001,30 +1018,16 @@ public class ParamEditorScreen : EditorScreen
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
+
+        return true;
     }
 
     public async void SaveAll()
     {
-        try
-        {
-            await Project.ParamData.PrimaryBank.Save();
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
-        }
-        catch (SavingFailedException e)
-        {
-            TaskLogs.AddLog($"{e.Message}",
-                LogLevel.Error, LogPriority.High, e.Wrapped);
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddLog($"{e.Message}",
-                LogLevel.Error, LogPriority.High, e);
-        }
+        await Task.Yield();
 
-        // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        Save();
     }
-
 
     private IReadOnlyList<Param.Row> CsvExportGetRows(ParamBank.RowGetType rowType)
     {

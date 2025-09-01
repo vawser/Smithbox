@@ -104,7 +104,7 @@ public partial class ParamTools
                         Project.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath);
                     }
                 }
-                UIHelper.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
+                UIHelper.Tooltip("This will import the external names from a legacy row name file (older Stripped Row Name folder), matching via row index.");
 
                 if (ImGui.MenuItem($"Selected Param"))
                 {
