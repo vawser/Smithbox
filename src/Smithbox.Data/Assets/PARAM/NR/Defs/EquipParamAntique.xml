@@ -12,7 +12,7 @@
     
     <Field Def="u8 relicColor"/>
     <Field Def="u8 sortGroupId"/>
-	<Field Def="u8 isSalable:1"/>
+	<Field Def="u8 isSalable"/>
     <Field Def="u8 isDeepRelic:1"/>
     <Field Def="u8 colorIcon:1"/>
 	<Field Def="u8 unknown_2:6"/>
