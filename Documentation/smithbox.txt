@@ -18,6 +18,7 @@
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: fix the icon flickering when switching row/changing field value
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
+- Param Editor: Updater doesn't apply mass edit update commands to modified / added rows
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
@@ -25,4 +26,3 @@
 # TODO NOW
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
 
-                { "ID": "2349", "Name": "Unknown", "Description": "" },

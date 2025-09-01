@@ -1992,17 +1992,20 @@
     <auxAttribute
     AltName="Status Attribute"
     Wiki="Related to the inflicted status from the SpEffect." 
-    ProjectEnum="ATKPARAM_SPATTR_TYPE" />
+    ProjectEnum="ATKPARAM_SPATTR_TYPE" 
+    DefaultValue="0" />
     
     <playerHandValue
     AltName="Player Handiness"
     Wiki="Related to the player hand: 0 is both?, 1 is right, 2 is left." 
-    Enum="PLAYER_HAND" />
+    Enum="PLAYER_HAND" 
+    DefaultValue="3" />
     
     <permanentBuffTextId
     AltName="Permanent Buff Text ID"
     Wiki="The text to display on the status screen whilst this permanent buff is active." 
-    FmgRef="SpEffect_Name" />
+    FmgRef="Title_PermanentBuff" 
+    DefaultValue="-1"/>
     
     <guardCounterAttackRate
     AltName="Guard Counter Attack %"

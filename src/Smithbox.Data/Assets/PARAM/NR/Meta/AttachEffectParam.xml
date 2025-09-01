@@ -11,18 +11,22 @@
     
     <passiveSpEffectId_1 
     AltName="Passive SpEffect ID: 1" 
-    Wiki="The passive SpEffec to apply when this attach effect is present." 
+    Wiki="The passive SpEffect to apply when this attach effect is present." 
     Refs="SpEffectParam" />
     
     <passiveSpEffectId_2
     AltName="Passive SpEffect ID: 2" 
-    Wiki="The passive SpEffec to apply when this attach effect is present." 
+    Wiki="The passive SpEffect to apply when this attach effect is present." 
     Refs="SpEffectParam" />
     
     <passiveSpEffectId_3 
     AltName="Passive SpEffect ID: 3" 
-    Wiki="The passive SpEffec to apply when this attach effect is present." 
+    Wiki="The passive SpEffect to apply when this attach effect is present." 
     Refs="SpEffectParam" />
+    
+    <compatibilityId
+    AltName="Compatibility ID"
+    Wiki="Entries with the same compatibility ID cannot appear together on a relic or weapon." />
     
     <attachTextId
     AltName="Text ID"

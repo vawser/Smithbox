@@ -15,7 +15,7 @@
     <Field Def="s32 passiveSpEffectId_1"/>
     <Field Def="s32 passiveSpEffectId_2"/>
     <Field Def="s32 passiveSpEffectId_3"/>
-    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 compatibilityId"/>
     <Field Def="s32 attachTextId"/>
     <Field Def="u8 isPersistentEffect:1"/>
     <Field Def="u8 isNumericEffect:1"/>
