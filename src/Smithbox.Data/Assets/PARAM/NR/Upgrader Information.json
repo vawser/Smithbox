@@ -360,17 +360,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unkSpEffectId: = vanillafield unkSpEffectId"
+      "Command": "param SpEffectParam: modified && !added: abilityActivationSpEffectId: = vanillafield abilityActivationSpEffectId"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unk_02: = vanillafield unk_02"
+      "Command": "param SpEffectParam: modified && !added: ultimateArtGaugeChargeRate: = vanillafield ultimateArtGaugeChargeRate"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: unk_03: = vanillafield unk_03"
+      "Command": "param SpEffectParam: modified && !added: conditionStamina: = vanillafield conditionStamina"
     },
     {
       "Version": "10200000",

@@ -381,11 +381,10 @@
     <Field Def="u16 overwrite_BackHome_LookTargetDist"/>
     <Field Def="f32 goodsConsumptionRate"/>
     <Field Def="f32 guardStaminaMult"/>
-    <Field Def="f32 ultimateArtGauge"/>
+    <Field Def="f32 ultimateArtGaugeRate"/>
     <Field Def="f32 characterSkillCooldownReduction"/>
     <Field Def="f32 characterSkillGauge"/>
-    
-    <Field Def="u16 unknown_230a"/>
+    <Field Def="u16 ultimateArtGauge"/>
     <Field Def="u8 auxAttribute"/>
     <Field Def="u8 playerHandValue"/>
     <Field Def="s32 permanentBuffTextId"/>
@@ -409,15 +408,15 @@
     
     <Field Def="u8 unknown_241a"/>
     <Field Def="u8 unknown_241b"/>
-    <Field Def="u8 unknown_241c"/>
+    <Field Def="u8 randomChanceValue"/>
     <Field Def="u8 unknown_241d"/>
     
     <Field Def="dummy8 endPadding[8]" RemovedVersion="10200000"/>
     
     <Field Def="s32 unk_00" FirstVersion="10200000"/>
-    <Field Def="s32 unkSpEffectId" FirstVersion="10200000"/>
-    <Field Def="f32 unk_02" FirstVersion="10200000"/>
-    <Field Def="f32 unk_03" FirstVersion="10200000"/>
+    <Field Def="s32 abilityActivationSpEffectId" FirstVersion="10200000"/>
+    <Field Def="f32 ultimateArtGaugeChargeRate" FirstVersion="10200000"/>
+    <Field Def="f32 conditionStamina" FirstVersion="10200000"/>
     <Field Def="f32 unk_04" FirstVersion="10200000"/>
     <Field Def="s32 unk_05" FirstVersion="10200000"/>
     <Field Def="f32 unk_06" FirstVersion="10200000"/>

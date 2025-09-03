@@ -1969,8 +1969,8 @@
     Wiki="Multiplies stamina lost when blocking an attack"
     DefaultValue="1" />
     
-    <ultimateArtGauge
-    AltName="Ultimate Art Gauge"
+    <ultimateArtGaugeRate
+    AltName="Ultimate Art Gauge %"
     Wiki="The amount of ultimate art gauge to recover." 
     DefaultValue="1"/>
     
@@ -1980,8 +1980,13 @@
     DefaultValue="1"/>
     
     <characterSkillGauge
-    AltName="Character Skill Gauge"
+    AltName="Character Skill Gauge +"
     Wiki="The amount of character skill gauge to recover." 
+    DefaultValue="0"/>
+    
+    <ultimateArtGauge
+    AltName="Ultimate Art Gauge +"
+    Wiki="The amount of ultimate art gauge to add." 
     DefaultValue="0"/>
     
     <ultimateArtDuration
@@ -2060,10 +2065,26 @@
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
-    <unkSpEffectId
-    AltName="Unknown SpEffect ID"
-    Wiki=""
-    Refs="SpEffectParam" />
+    <randomChanceValue
+    AltName="Random Chance Value"
+    Wiki="The random chance value to use when in conjunction with state info 2121." 
+    DefaultValue="0" />
+    
+    <abilityActivationSpEffectId
+    AltName="Ability Activation SpEffect ID"
+    Wiki="The SpEffect to apply upon Ability activation."
+    Refs="SpEffectParam" 
+    DefaultValue="-1"/>
+    
+    <ultimateArtGaugeChargeRate
+    AltName="Ultimate Art Gauge Charge %"
+    Wiki="The rate at which the Ultimate Art gauge is charged on hit." 
+    DefaultValue="1" />
+    
+    <conditionStamina
+    AltName="Trigger at Stamina Below %" 
+    Wiki="The effect of this SpEffect will start when stamina is below this specified rate." 
+    DefaultValue="-1" />
 
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
