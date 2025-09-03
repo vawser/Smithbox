@@ -59194,37 +59194,37 @@
     {
       "ID": 7090000,
       "Entries": [
-        "[Relic Effect] Defeating enemies fills more of the Art gauge"
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 7090001,
       "Entries": [
-        "[Relic Effect] Defeating enemies fills more of the Art gauge"
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Art Gauge Restore - Potency 1"
       ]
     },
     {
       "ID": 7090010,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 7090011,
       "Entries": [
-        ""
+        "[Relic Effect] Defeating enemies fills more of the Art gauge - Art Gauge Restore - Potency 2"
       ]
     },
     {
       "ID": 7090100,
       "Entries": [
-        "[Relic Effect] Defeating enemies restores HP for allies but not for self"
+        "[Relic Effect] Defeating enemies restores HP for allies but not for self - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 7090101,
       "Entries": [
-        "[Relic Effect] Defeating enemies restores HP for allies but not for self"
+        "[Relic Effect] Defeating enemies restores HP for allies but not for self - Apply Behavior Change"
       ]
     },
     {
@@ -59236,31 +59236,31 @@
     {
       "ID": 7090300,
       "Entries": [
-        "[Relic Effect] Defeating enemies near Totem Stela restores HP"
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - Apply State Info"
       ]
     },
     {
       "ID": 7090302,
       "Entries": [
-        "[Relic Effect] Defeating enemies near Totem Stela restores HP"
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 7090303,
       "Entries": [
-        "[Relic Effect] Defeating enemies near Totem Stela restores HP"
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - HP Restore"
       ]
     },
     {
       "ID": 7090304,
       "Entries": [
-        "[Relic Effect] Defeating enemies near Totem Stela restores HP"
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - Apply On-Kill Effect"
       ]
     },
     {
       "ID": 7090305,
       "Entries": [
-        "[Relic Effect] Defeating enemies near Totem Stela restores HP"
+        "[Relic Effect] Defeating enemies near Totem Stela restores HP - HP Restore"
       ]
     },
     {
@@ -59302,25 +59302,25 @@
     {
       "ID": 7120001,
       "Entries": [
-        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment - Potency 1"
       ]
     },
     {
       "ID": 7120002,
       "Entries": [
-        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment - Potency 2"
       ]
     },
     {
       "ID": 7120003,
       "Entries": [
-        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment - Potency 3"
       ]
     },
     {
       "ID": 7120004,
       "Entries": [
-        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals magic damage - Damage Adjustment - Potency 4"
       ]
     },
     {
@@ -59332,25 +59332,25 @@
     {
       "ID": 7120101,
       "Entries": [
-        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment - Potency 1"
       ]
     },
     {
       "ID": 7120102,
       "Entries": [
-        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment - Potency 2"
       ]
     },
     {
       "ID": 7120103,
       "Entries": [
-        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment - Potency 3"
       ]
     },
     {
       "ID": 7120104,
       "Entries": [
-        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals fire damage - Damage Adjustment - Potency 4"
       ]
     },
     {
@@ -59362,25 +59362,25 @@
     {
       "ID": 7120201,
       "Entries": [
-        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment - Potency 1"
       ]
     },
     {
       "ID": 7120202,
       "Entries": [
-        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment - Potency 2"
       ]
     },
     {
       "ID": 7120203,
       "Entries": [
-        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment - Potency 3"
       ]
     },
     {
       "ID": 7120204,
       "Entries": [
-        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals lightning damage - Damage Adjustment - Potency 4"
       ]
     },
     {
@@ -59392,25 +59392,25 @@
     {
       "ID": 7120301,
       "Entries": [
-        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment - Potency 1"
       ]
     },
     {
       "ID": 7120302,
       "Entries": [
-        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment - Potency 2"
       ]
     },
     {
       "ID": 7120303,
       "Entries": [
-        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment - Potency 3"
       ]
     },
     {
       "ID": 7120304,
       "Entries": [
-        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment"
+        "[Relic Effect] Starting armament deals holy damage - Damage Adjustment - Potency 4"
       ]
     },
     {
