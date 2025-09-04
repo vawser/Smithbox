@@ -127,13 +127,12 @@ public class ParamTableGroupView
 
     public void DisplayContextMenu(int groupKey)
     {
-        var activeParam = View.Selection.GetActiveParam();
-
-        var curTableGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
-
         if (ImGui.BeginPopupContextItem($"{groupKey}"))
         {
             DPI.ApplyInputWidth(CFG.Current.Param_TableGroupContextMenu_Width);
+
+            var activeParam = View.Selection.GetActiveParam();
+            var curTableGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
 
             var curName = "";
             if(curTableGroup != null)
@@ -149,45 +148,19 @@ public class ParamTableGroupView
 
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                if (curTableGroup == null)
-                {
-                    var newTableGroup = new TableGroupParamEntry();
-                    newTableGroup.Param = activeParam;
-                    newTableGroup.Entries = new();
-
-                    var newTableEntry = new TableGroupEntry();
-                    newTableEntry.ID = groupKey;
-                    newTableEntry.Name = curName;
-
-                    newTableGroup.Entries.Add(newTableEntry);
-
-                    Project.ParamData.TableGroupNames.Groups.Add(newTableGroup);
-                }
-                else
-                {
-                    if (curTableGroup.Entries.Any(e => e.ID == groupKey))
-                    {
-                        var curEntry = curTableGroup.Entries.FirstOrDefault(e => e.ID == groupKey);
-                        if (curEntry != null)
-                        {
-                            curEntry.Name = curName;
-                        }
-                    }
-                    else
-                    {
-                        var newTableEntry = new TableGroupEntry();
-                        newTableEntry.ID = groupKey;
-                        newTableEntry.Name = curName;
-
-                        curTableGroup.Entries.Add(newTableEntry);
-                    }
-                }
+                UpdateTableGroupNames(activeParam, curTableGroup, groupKey, curName);
             }
 
-            //if (ImGui.Selectable("Duplicate"))
+            //if (ImGui.BeginMenu("Duplicate"))
             //{
+
+
+            //    if (ImGui.Selectable("Apply"))
+            //    {
+
+            //    }
+            //    UIHelper.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
             //}
-            //UIHelper.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
 
             //if (ImGui.Selectable("Delete"))
             //{
@@ -195,6 +168,43 @@ public class ParamTableGroupView
             //UIHelper.Tooltip($"Duplicate this table group. This will remove the rows that comprise this group.");
 
             ImGui.EndPopup();
+        }
+    }
+
+    public void UpdateTableGroupNames(string activeParam, TableGroupParamEntry curTableGroup, int groupKey, string curName)
+    {
+        if (curTableGroup == null)
+        {
+            var newTableGroup = new TableGroupParamEntry();
+            newTableGroup.Param = activeParam;
+            newTableGroup.Entries = new();
+
+            var newTableEntry = new TableGroupEntry();
+            newTableEntry.ID = groupKey;
+            newTableEntry.Name = curName;
+
+            newTableGroup.Entries.Add(newTableEntry);
+
+            Project.ParamData.TableGroupNames.Groups.Add(newTableGroup);
+        }
+        else
+        {
+            if (curTableGroup.Entries.Any(e => e.ID == groupKey))
+            {
+                var curEntry = curTableGroup.Entries.FirstOrDefault(e => e.ID == groupKey);
+                if (curEntry != null)
+                {
+                    curEntry.Name = curName;
+                }
+            }
+            else
+            {
+                var newTableEntry = new TableGroupEntry();
+                newTableEntry.ID = groupKey;
+                newTableEntry.Name = curName;
+
+                curTableGroup.Entries.Add(newTableEntry);
+            }
         }
     }
 

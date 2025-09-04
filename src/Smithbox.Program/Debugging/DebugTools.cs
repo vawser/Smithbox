@@ -45,7 +45,9 @@ public class DebugTools
         {
             if (ImGui.MenuItem($"Execute Quick Script"))
             {
-                QuickScript.ApplyQuickScript(BaseEditor);
+                var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+                QuickScript.ApplyQuickScript(BaseEditor, curProject);
             }
 
             if (ImGui.MenuItem($"Tasks"))

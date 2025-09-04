@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
 using Octokit;
 using StudioCore.Core;
+using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
@@ -9,18 +12,64 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.DebugNS;
 
 public class QuickScript
 {
+    public static void ApplyQuickScript(Smithbox baseEditor, ProjectEntry curProject)
+    {
+        GenerateTableGroupNmaes(baseEditor, curProject);
+    }
+
+    public static void GenerateTableGroupNmaes(Smithbox baseEditor, ProjectEntry curProject)
+    {
+        var targetParam = "ItemTableParam";
+        Dictionary<int, Param.Row> uniqueRows = new();
+
+        foreach(var row in curProject.ParamData.PrimaryBank.Params.FirstOrDefault(e => e.Key == targetParam).Value.Rows)
+        {
+            if(!uniqueRows.ContainsKey(row.ID))
+            {
+                uniqueRows.Add(row.ID, row);
+            }
+        }
+
+        var curTableGroup = curProject.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == targetParam);
+
+        foreach (var row in uniqueRows)
+        {
+            var id = row.Key;
+            var name = row.Value.Name;
+
+            Regex regex = new Regex(@"<([^>]*)>");
+
+            var tableName = "";
+            foreach (Match match in regex.Matches(name))
+            {
+                tableName = match.Groups[1].Value;
+                break;
+            }
+
+            if(tableName != "" && tableName != "Table")
+            {
+                curProject.ParamEditor._activeView.TableGroupView.UpdateTableGroupNames(targetParam, curTableGroup, id, tableName);
+            }
+        }
+
+        var dir = Path.Combine(CFG.Current.SmithboxBuildFolder,
+            "src", "Smithbox.Data", "Assets", "PARAM",
+            ProjectUtils.GetGameDirectory(curProject), "Community Table Names");
+
+        curProject.ParamEditor._activeView.TableGroupView.WriteTableGroupNames(dir);
+    }
+
     private static ParamUpgraderInfo UpgraderInfo;
 
-    public static void ApplyQuickScript(Smithbox baseEditor)
+    public void GenerateUpgraderInfo(Smithbox baseEditor, ProjectEntry curProject)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
-
         var srcPath = Path.Combine(CFG.Current.SmithboxBuildFolder,
             "src", "Smithbox.Data", "Assets", "PARAM",
             ProjectUtils.GetGameDirectory(curProject), "Upgrader Information.json");
@@ -44,7 +93,7 @@ public class QuickScript
             TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogLevel.Error, Tasks.LogPriority.High, e);
         }
 
-        for(int i = 0; i < UpgraderInfo.UpgradeCommands.Count; i++)
+        for (int i = 0; i < UpgraderInfo.UpgradeCommands.Count; i++)
         {
             var curEntry = UpgraderInfo.UpgradeCommands[i];
 

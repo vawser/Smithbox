@@ -19,7 +19,7 @@ public static class ParamDebugTools
     {
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Copyright}", DPI.IconButtonSize))
+        if (ImGui.Button($"{Icons.Copyright}##tableNameExport", DPI.IconButtonSize))
         {
             var dir = Path.Combine(CFG.Current.SmithboxBuildFolder,
                 "src", "Smithbox.Data", "Assets", "PARAM",
