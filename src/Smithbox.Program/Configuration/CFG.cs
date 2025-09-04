@@ -1036,6 +1036,9 @@ public class CFG
 
     public bool Param_DisplayParamCategories = true;
 
+    public bool Param_DisplayTableGroupColumn = true;
+    public ParamTableGroupRowDisplayType Param_TableGroupRowDisplayType = ParamTableGroupRowDisplayType.None;
+
     public bool Param_AdvancedMassedit = false;
     public bool Param_AllowFieldReorder = true;
     public bool Param_DisableLineWrapping = false;
@@ -1076,6 +1079,8 @@ public class CFG
     public bool Param_MassEdit_ShowAddButtons = true;
 
     public float Param_ParamContextMenu_Width = 350f;
+
+    public float Param_TableGroupContextMenu_Width = 350f;
 
     public float Param_RowContextMenu_Width = 350f;
     public bool Param_RowContextMenu_NameInput = true;

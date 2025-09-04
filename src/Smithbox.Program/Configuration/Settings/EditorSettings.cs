@@ -939,6 +939,12 @@ public class ParamEditorTab
                 ImGui.DragFloat("Context Menu Width##paramContextMenuWidth", ref CFG.Current.Param_ParamContextMenu_Width);
             }
 
+            // Table Group Context Menu
+            if (ImGui.CollapsingHeader("Table Group Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                ImGui.DragFloat("Context Menu Width##tableGroupContextMenuWidth", ref CFG.Current.Param_TableGroupContextMenu_Width);
+            }
+
             // Row Context Menu
             if (ImGui.CollapsingHeader("Row Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
             {

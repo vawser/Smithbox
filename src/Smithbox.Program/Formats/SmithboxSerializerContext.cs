@@ -100,6 +100,14 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(IconConfigurations))]
 [JsonSerializable(typeof(IconConfigurationEntry))]
 
+// Table Group Names
+[JsonSerializable(typeof(TableGroupNameStore))]
+[JsonSerializable(typeof(TableGroupParamEntry))]
+[JsonSerializable(typeof(TableGroupEntry))]
+
+// Table Params
+[JsonSerializable(typeof(TableParams))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

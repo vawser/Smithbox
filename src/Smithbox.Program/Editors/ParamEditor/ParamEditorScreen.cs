@@ -158,6 +158,15 @@ public class ParamEditorScreen : EditorScreen
 
                     _activeView = viewToModify;
                     viewToModify.Selection.SetActiveParam(initcmd[2]);
+
+                    var curActiveParam = viewToModify.Selection.GetActiveParam();
+
+                    // In TAble Group mode: update the table group list
+                    if (viewToModify.TableGroupView.IsInTableGroupMode(curActiveParam))
+                    {
+                        viewToModify.TableGroupView.UpdateTableSelection(curActiveParam);
+                    }
+
                     if (initcmd.Length > 3)
                     {
                         bool onlyAddToSelection = initcmd.Length > 4 && initcmd[4] == "addOnly";
@@ -167,6 +176,13 @@ public class ParamEditorScreen : EditorScreen
                         Param p = Project.ParamData.PrimaryBank.Params[viewToModify.Selection.GetActiveParam()];
                         int id;
                         var parsed = int.TryParse(initcmd[3], out id);
+
+                        // In Table Group mode: set the current Table Group to this ID
+                        if (viewToModify.TableGroupView.IsInTableGroupMode(curActiveParam))
+                        {
+                            viewToModify.TableGroupView.CurrentTableGroup = id;
+                        }
+
                         if (parsed)
                         {
                             Param.Row r = p.Rows.FirstOrDefault(r => r.ID == id);
@@ -986,6 +1002,8 @@ public class ParamEditorScreen : EditorScreen
         if (!SaveLock)
         {
             SaveLock = true;
+
+            _activeView.TableGroupView.WriteTableGroupNames();
 
             Task<bool> paramSaveTask = SaveParams();
             Task.WaitAll(paramSaveTask);

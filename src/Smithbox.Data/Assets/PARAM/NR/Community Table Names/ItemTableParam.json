@@ -1,0 +1,9 @@
+{
+  "Param": "ItemTableParam",
+  "Entries": [
+    {
+      "ID": 100,
+      "Name": "Example"
+    }
+  ]
+}

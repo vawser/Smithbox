@@ -176,3 +176,27 @@ public class IconConfigurationEntry
     public string SubTexturePrefix { get; set; }
     public List<string> InternalFiles { get; set; }
 }
+
+// -------------- Table Group Name Store --------------
+public class TableGroupNameStore
+{
+    public List<TableGroupParamEntry> Groups { get; set; }
+}
+
+public class TableGroupParamEntry
+{
+    public string Param { get; set; }
+    public List<TableGroupEntry> Entries { get; set; }
+}
+
+public class TableGroupEntry
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+
+}// -------------- Table Params --------------
+public class TableParams
+{
+    public List<string> Params { get; set; }
+}
+

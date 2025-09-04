@@ -120,6 +120,20 @@ public class ParamView
             lastParamSearch = View.Selection.currentParamSearchString;
         }
 
+        // Toggle Table Group Column
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Table}##tableGroupToggle", DPI.IconButtonSize))
+        {
+            CFG.Current.Param_DisplayTableGroupColumn = !CFG.Current.Param_DisplayTableGroupColumn;
+        }
+
+        var rowGroupColumnVisibility = "Hidden";
+        if (!CFG.Current.Param_DisplayTableGroupColumn)
+            rowGroupColumnVisibility = "Visible";
+
+        UIHelper.Tooltip($"Toggle the display of the Table Group column.\nCurrent Mode: {rowGroupColumnVisibility}");
+
         ImGui.Separator();
     }
 
@@ -157,6 +171,7 @@ public class ParamView
                     if (ImGui.Selectable($"{paramKey}##pin{paramKey}", paramKey == View.Selection.GetActiveParam()))
                     {
                         EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
+                        View.TableGroupView.UpdateTableSelection(paramKey);
                     }
 
                     DisplayContextMenu(p, paramKey, true);
@@ -357,6 +372,7 @@ public class ParamView
             {
                 //_selection.setActiveParam(param.Key);
                 EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
+                View.TableGroupView.UpdateTableSelection(paramKey);
 
                 Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
             }

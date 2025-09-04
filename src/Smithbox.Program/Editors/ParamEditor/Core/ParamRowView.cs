@@ -172,32 +172,49 @@ public class ParamRowView
                     {
                         Param.Row currentRow = rows[i];
 
-                        // Display groupings if ConsecutiveIDs is set in the meta for the current param.
-                        if (enableGrouping)
+                        var displayRow = false;
+
+                        if(View.TableGroupView.IsInTableGroupMode(activeParam))
                         {
-                            Param.Row prev = i - 1 > 0 ? rows[i - 1] : null;
-                            Param.Row next = i + 1 < rows.Count ? rows[i + 1] : null;
-                            if (prev != null && next != null && prev.ID + 1 != currentRow.ID &&
-                                currentRow.ID + 1 == next.ID)
+                            if(currentRow.ID == View.TableGroupView.CurrentTableGroup)
                             {
-                                EditorDecorations.ImguiTableSeparator();
-                            }
-
-                            HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
-                                meta);
-
-                            if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
-                                currentRow.ID + 1 != next.ID)
-                            {
-                                EditorDecorations.ImguiTableSeparator();
+                                displayRow = true;
                             }
                         }
                         else
                         {
-                            HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
-                                meta);
+                            displayRow = true;
+                        }
+
+                        if (displayRow)
+                        {
+                            // Display groupings if ConsecutiveIDs is set in the meta for the current param.
+                            if (enableGrouping)
+                            {
+                                Param.Row prev = i - 1 > 0 ? rows[i - 1] : null;
+                                Param.Row next = i + 1 < rows.Count ? rows[i + 1] : null;
+                                if (prev != null && next != null && prev.ID + 1 != currentRow.ID &&
+                                    currentRow.ID + 1 == next.ID)
+                                {
+                                    EditorDecorations.ImguiTableSeparator();
+                                }
+
+                                HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
+                                    auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                    meta);
+
+                                if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
+                                    currentRow.ID + 1 != next.ID)
+                                {
+                                    EditorDecorations.ImguiTableSeparator();
+                                }
+                            }
+                            else
+                            {
+                                HandleRowPresentation(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
+                                    auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                    meta);
+                            }
                         }
                     }
                 }
@@ -451,6 +468,14 @@ public class ParamRowView
         var label = $@"{r.ID} {Utils.ImGuiEscape(r.Name)}";
         label = Utils.ImGui_WordWrapString(label, ImGui.GetColumnWidth(),
             CFG.Current.Param_DisableLineWrapping ? 1 : 3);
+
+        if(View.TableGroupView.IsInTableGroupMode(activeParam))
+        {
+            if (CFG.Current.Param_TableGroupRowDisplayType is ParamTableGroupRowDisplayType.None)
+            {
+                label = $@"{Utils.ImGuiEscape(r.Name)}";
+            }
+        }
 
         if (ImGui.Selectable($@"{label}##{selectionCacheIndex}", selected))
         {

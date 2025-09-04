@@ -15,6 +15,22 @@ namespace StudioCore.Editors.ParamEditor.Tools;
 
 public static class ParamDebugTools
 {
+    public static void DisplayQuickTableNameExport(ParamEditorScreen editor, ProjectEntry project)
+    {
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Copyright}", DPI.IconButtonSize))
+        {
+            var dir = Path.Combine(CFG.Current.SmithboxBuildFolder,
+                "src", "Smithbox.Data", "Assets", "PARAM",
+                ProjectUtils.GetGameDirectory(project), "Community Table Names");
+
+            editor._activeView.TableGroupView.WriteTableGroupNames(dir);
+            TaskLogs.AddLog($"[{project.ProjectName}:Param Editor] Exported table names to {dir}");
+        }
+        UIHelper.Tooltip("Export the current table names for the current param directly to the Smithbox.Data folder.");
+    }
+
     public static void DisplayQuickRowNameExport(ParamEditorScreen editor, ProjectEntry project)
     {
         ImGui.SameLine();

@@ -19,6 +19,13 @@ public static class ParamUtils
         [Display(Name = "ID and Name")]
         ID_Name = 2
     }
+    public enum ParamTableGroupRowDisplayType
+    {
+        [Display(Name = "ID")]
+        ID = 0,
+        [Display(Name = "None")]
+        None = 1
+    }
 
     public static string ParseRegulationVersion(ulong version)
     {

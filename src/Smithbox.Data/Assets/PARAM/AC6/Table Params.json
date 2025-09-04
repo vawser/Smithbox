@@ -1,0 +1,12 @@
+{
+  "Params": [
+    "MenuColorTableParam",
+    "MenuValueTableParam",
+    "ThrustersLocomotionParam_PC",
+    "ThrustersParam_NPC",
+    "ThrustersParam_PC",
+    "TankArmourParam",
+    "TankWheelModelParam",
+    "TankWheelParam"
+  ]
+}

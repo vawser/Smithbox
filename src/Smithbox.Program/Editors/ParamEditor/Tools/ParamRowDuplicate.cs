@@ -104,7 +104,42 @@ public partial class ParamTools
             rowsToInsert.Add(newrow);
         }
 
-        if(CFG.Current.Param_Toolbar_Duplicate_Offset == 0)
+        var IsInTableGroupMode = Editor._activeView.TableGroupView.IsInTableGroupMode(curParamKey);
+
+        // Default Behavior
+        if (!IsInTableGroupMode)
+        {
+            if (CFG.Current.Param_Toolbar_Duplicate_Offset == 0)
+            {
+                var lastRow = rows.Last();
+
+                for (int i = 0; i < param.Rows.Count; i++)
+                {
+                    var curRow = param.Rows[i];
+
+                    if (lastRow == curRow)
+                    {
+                        insertIndex = i + 1;
+                        break;
+                    }
+                }
+
+                rowsToInsert.Reverse();
+            }
+
+            List<EditorAction> actions = new List<EditorAction>();
+
+            for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
+            {
+                actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
+            }
+
+            var compoundAction = new CompoundAction(actions);
+
+            Editor.EditorActionManager.ExecuteAction(compoundAction);
+        }
+        // Row Group Mode behavior
+        else
         {
             var lastRow = rows.Last();
 
@@ -112,7 +147,7 @@ public partial class ParamTools
             {
                 var curRow = param.Rows[i];
 
-                if(lastRow == curRow)
+                if (lastRow == curRow)
                 {
                     insertIndex = i + 1;
                     break;
@@ -120,18 +155,19 @@ public partial class ParamTools
             }
 
             rowsToInsert.Reverse();
+
+            List<EditorAction> actions = new List<EditorAction>();
+
+            for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
+            {
+                actions.Add(
+                    new AddRowsToTableGroup(Editor, param, rowsToInsert, insertIndex));
+            }
+
+            var compoundAction = new CompoundAction(actions);
+
+            Editor.EditorActionManager.ExecuteAction(compoundAction);
         }
-
-        List<EditorAction> actions = new List<EditorAction>();
-
-        for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
-        {
-            actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
-        }
-
-        var compoundAction = new CompoundAction(actions);
-
-        Editor.EditorActionManager.ExecuteAction(compoundAction);
     }
 
     #endregion

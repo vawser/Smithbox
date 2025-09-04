@@ -23,6 +23,7 @@ public class ParamEditorView
     public ProjectEntry Project;
 
     public readonly ParamView ParamView;
+    public readonly ParamTableGroupView TableGroupView;
     public readonly ParamRowView RowView;
     public readonly ParamFieldView FieldView;
 
@@ -38,6 +39,7 @@ public class ParamEditorView
         Selection = new ParamSelection(Editor, Project);
 
         ParamView = new ParamView(Editor, Project, this);
+        TableGroupView = new ParamTableGroupView(Editor, Project, this);
         RowView = new ParamRowView(Editor, Project, this);
         FieldView = new ParamFieldView(Editor, Project, this);
     }
@@ -51,10 +53,23 @@ public class ParamEditorView
     {
         var scale = DPI.UIScale();
 
-        if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
+        var activeParam = Selection.GetActiveParam();
+
+        var columnCount = 3;
+        if (TableGroupView.IsInTableGroupMode(activeParam))
+        {
+            columnCount = 4;
+        }
+
+        if (EditorDecorations.ImGuiTableStdColumns("paramsT", columnCount, true))
         {
             ImGui.TableSetupColumn("paramsCol", ImGuiTableColumnFlags.None, 0.5f);
             ImGui.TableSetupColumn("paramsCol2", ImGuiTableColumnFlags.None, 0.5f);
+
+            if (TableGroupView.IsInTableGroupMode(activeParam))
+            {
+                ImGui.TableSetupColumn("rowGroupCol", ImGuiTableColumnFlags.None, 0.5f);
+            }
 
             var scrollTo = 0f;
             if (ImGui.TableNextColumn())
@@ -62,7 +77,14 @@ public class ParamEditorView
                 ParamView.Display(doFocus, isActiveView, scale, scrollTo);
             }
 
-            var activeParam = Selection.GetActiveParam();
+            if (TableGroupView.IsInTableGroupMode(activeParam))
+            {
+                if (ImGui.TableNextColumn())
+                {
+                    TableGroupView.Display(doFocus, isActiveView, scrollTo, activeParam);
+                }
+            }
+
             if (ImGui.TableNextColumn())
             {
                 RowView.Display(doFocus, isActiveView, scrollTo, activeParam);

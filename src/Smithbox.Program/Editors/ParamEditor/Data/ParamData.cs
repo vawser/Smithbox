@@ -44,6 +44,9 @@ public class ParamData
 
     public IconConfigurations IconConfigurations;
 
+    public TableParams TableParamList;
+    public TableGroupNameStore TableGroupNames;
+
     public ParamData(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -107,6 +110,32 @@ public class ParamData
         else
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup icon configurations.");
+        }
+
+        // Table Param List
+        Task<bool> tableParamTask = SetupTableParamList();
+        bool tableParamTaskResult = await tableParamTask;
+
+        if (tableParamTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup table param list.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup table param list.");
+        }
+
+        // Table Group Names
+        Task<bool> tableGroupNameTask = SetupTableGroupNames();
+        bool tableGroupNameTaskResult = await tableGroupNameTask;
+
+        if (tableGroupNameTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup table group name bank.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup table group name bank.");
         }
 
 
@@ -473,6 +502,165 @@ public class ParamData
             {
                 TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Icon Configurations: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupTableGroupNames()
+    {
+        await Task.Yield();
+
+        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
+
+        if (!Directory.Exists(srcDir))
+        {
+            return false;
+        }
+
+        // Base Store
+        var baseStore = new TableGroupNameStore();
+        baseStore.Groups = new();
+
+        foreach (var file in Directory.EnumerateFiles(srcDir))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
+
+                if (item == null)
+                {
+                    throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
+                }
+                else
+                {
+                    baseStore.Groups.Add(item);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load {file} for table group name import during Base Store step.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        // Project Store
+        var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Table Names");
+
+        var projStore = new TableGroupNameStore();
+        projStore.Groups = new();
+
+        if (Directory.Exists(projDir))
+        {
+            foreach (var file in Directory.EnumerateFiles(projDir))
+            {
+                try
+                {
+                    var filestring = File.ReadAllText(file);
+                    var options = new JsonSerializerOptions();
+                    var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableGroupParamEntry);
+
+                    if (item == null)
+                    {
+                        throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
+                    }
+                    else
+                    {
+                        projStore.Groups.Add(item);
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load {file} for table group name import during Project Store step.", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+        }
+
+        // Final Store
+        TableGroupNames = baseStore;
+
+        // Add unique groups from project store
+        foreach (var entry in projStore.Groups)
+        {
+            if(!TableGroupNames.Groups.Any(e => e.Param == entry.Param))
+            {
+                TableGroupNames.Groups.Add(entry);
+            }
+        }
+
+        // Merge in unique table group names from the project store,
+        // and replace base group names if the project store contains entries that match
+        foreach(var group in TableGroupNames.Groups)
+        {
+            var projGroup = projStore.Groups.FirstOrDefault(e => e.Param == group.Param);
+
+            if (projGroup != null)
+            {
+                // Update the names if any project entries should replace the base entries
+                foreach (var entry in group.Entries)
+                {
+                    if(projGroup.Entries.Any(e => e.ID == entry.ID))
+                    {
+                        entry.Name = projGroup.Entries.FirstOrDefault(e => e.ID == entry.ID).Name;
+                    }
+                }
+
+                foreach(var entry in projGroup.Entries)
+                {
+                    if(!group.Entries.Any(e => e.ID == entry.ID))
+                    {
+                        var newEntry = new TableGroupEntry();
+                        newEntry.ID = entry.ID;
+                        newEntry.Name = entry.Name;
+
+                        group.Entries.Add(newEntry);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupTableParamList()
+    {
+        await Task.Yield();
+
+        var srcFile = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
+        var projFile = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Table Params.json");
+
+        if (Directory.Exists(projFile))
+        {
+            srcFile = projFile;
+        }
+
+        TableParamList = new();
+        TableParamList.Params = new();
+
+        if (!File.Exists(srcFile))
+        {
+            return false;
+        }
+
+        try
+        {
+            var filestring = File.ReadAllText(srcFile);
+            var options = new JsonSerializerOptions();
+            var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.TableParams);
+
+            if (item == null)
+            {
+                throw new Exception($"[{Project.ProjectName}:Param Editor] JsonConvert returned null.");
+            }
+            else
+            {
+                TableParamList = item;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load table param list.", LogLevel.Error, Tasks.LogPriority.High, e);
         }
 
         return true;
