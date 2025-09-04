@@ -42,28 +42,52 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - AntiqueStandParam",
-      "Command": "param AntiqueStandParam: modified && !added: unkColor_01: = vanillafield unkColor_01"
+      "Command": "param AntiqueStandParam: modified && !added: deepRelicSlot1: = vanillafield deepRelicSlot1"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - AntiqueStandParam",
-      "Command": "param AntiqueStandParam: modified && !added: unkColor_02: = vanillafield unkColor_02"
+      "Command": "param AntiqueStandParam: added: deepRelicSlot1: = vanillafield deepRelicSlot1"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - AntiqueStandParam",
-      "Command": "param AntiqueStandParam: modified && !added: unkColor_03: = vanillafield unkColor_03"
+      "Command": "param AntiqueStandParam: modified && !added: deepRelicSlot2: = vanillafield deepRelicSlot2"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - AntiqueStandParam",
+      "Command": "param AntiqueStandParam: added: deepRelicSlot2: = vanillafield deepRelicSlot2"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - AntiqueStandParam",
+      "Command": "param AntiqueStandParam: modified && !added: deepRelicSlot3: = vanillafield deepRelicSlot3"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - AntiqueStandParam",
+      "Command": "param AntiqueStandParam: added: deepRelicSlot3: = vanillafield deepRelicSlot3"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - AntiqueStandParam",
       "Command": "param AntiqueStandParam: modified && !added: endPadding: = vanillafield endPadding"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - AntiqueStandParam",
+      "Command": "param AntiqueStandParam: added: endPadding: = vanillafield endPadding"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: midstPadding: = vanillafield midstPadding"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: midstPadding: = vanillafield midstPadding"
     },
     {
       "Version": "10200000",
@@ -73,7 +97,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_01: = vanillafield lotActionButtonTypeA_01"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeA_02: = vanillafield lotActionButtonTypeA_02"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_02: = vanillafield lotActionButtonTypeA_02"
     },
     {
       "Version": "10200000",
@@ -83,7 +117,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_03: = vanillafield lotActionButtonTypeA_03"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeA_04: = vanillafield lotActionButtonTypeA_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_04: = vanillafield lotActionButtonTypeA_04"
     },
     {
       "Version": "10200000",
@@ -93,7 +137,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_05: = vanillafield lotActionButtonTypeA_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeA_06: = vanillafield lotActionButtonTypeA_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_06: = vanillafield lotActionButtonTypeA_06"
     },
     {
       "Version": "10200000",
@@ -103,7 +157,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_07: = vanillafield lotActionButtonTypeA_07"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeA_08: = vanillafield lotActionButtonTypeA_08"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeA_08: = vanillafield lotActionButtonTypeA_08"
     },
     {
       "Version": "10200000",
@@ -113,7 +177,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_01: = vanillafield lotActionButtonTypeB_01"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeB_02: = vanillafield lotActionButtonTypeB_02"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_02: = vanillafield lotActionButtonTypeB_02"
     },
     {
       "Version": "10200000",
@@ -123,7 +197,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_03: = vanillafield lotActionButtonTypeB_03"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeB_04: = vanillafield lotActionButtonTypeB_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_04: = vanillafield lotActionButtonTypeB_04"
     },
     {
       "Version": "10200000",
@@ -133,7 +217,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_05: = vanillafield lotActionButtonTypeB_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeB_06: = vanillafield lotActionButtonTypeB_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_06: = vanillafield lotActionButtonTypeB_06"
     },
     {
       "Version": "10200000",
@@ -143,7 +237,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_07: = vanillafield lotActionButtonTypeB_07"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: lotActionButtonTypeB_08: = vanillafield lotActionButtonTypeB_08"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: lotActionButtonTypeB_08: = vanillafield lotActionButtonTypeB_08"
     },
     {
       "Version": "10200000",
@@ -153,18 +257,37 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: unk_16: = vanillafield unk_16"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: unk_17: = vanillafield unk_17"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: unk_17: = vanillafield unk_17"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_enemy",
       "Command": "param ItemLotParam_enemy: modified && !added: midstPadding: = vanillafield midstPadding"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_enemy",
+      "Command": "param ItemLotParam_enemy: added: midstPadding: = vanillafield midstPadding"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: midstPadding: = vanillafield midstPadding"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: midstPadding: = vanillafield midstPadding"
     },
     {
       "Version": "10200000",
@@ -174,7 +297,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_01: = vanillafield lotActionButtonTypeA_01"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeA_02: = vanillafield lotActionButtonTypeA_02"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_02: = vanillafield lotActionButtonTypeA_02"
     },
     {
       "Version": "10200000",
@@ -184,7 +317,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_03: = vanillafield lotActionButtonTypeA_03"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeA_04: = vanillafield lotActionButtonTypeA_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_04: = vanillafield lotActionButtonTypeA_04"
     },
     {
       "Version": "10200000",
@@ -194,7 +337,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_05: = vanillafield lotActionButtonTypeA_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeA_06: = vanillafield lotActionButtonTypeA_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_06: = vanillafield lotActionButtonTypeA_06"
     },
     {
       "Version": "10200000",
@@ -204,7 +357,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_07: = vanillafield lotActionButtonTypeA_07"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeA_08: = vanillafield lotActionButtonTypeA_08"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeA_08: = vanillafield lotActionButtonTypeA_08"
     },
     {
       "Version": "10200000",
@@ -214,7 +377,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_01: = vanillafield lotActionButtonTypeB_01"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeB_02: = vanillafield lotActionButtonTypeB_02"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_02: = vanillafield lotActionButtonTypeB_02"
     },
     {
       "Version": "10200000",
@@ -224,7 +397,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_03: = vanillafield lotActionButtonTypeB_03"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeB_04: = vanillafield lotActionButtonTypeB_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_04: = vanillafield lotActionButtonTypeB_04"
     },
     {
       "Version": "10200000",
@@ -234,7 +417,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_05: = vanillafield lotActionButtonTypeB_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeB_06: = vanillafield lotActionButtonTypeB_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_06: = vanillafield lotActionButtonTypeB_06"
     },
     {
       "Version": "10200000",
@@ -244,7 +437,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_07: = vanillafield lotActionButtonTypeB_07"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: lotActionButtonTypeB_08: = vanillafield lotActionButtonTypeB_08"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: lotActionButtonTypeB_08: = vanillafield lotActionButtonTypeB_08"
     },
     {
       "Version": "10200000",
@@ -254,25 +457,47 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: unk_16: = vanillafield unk_16"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemLotParam_map: modified && !added: unk_17: = vanillafield unk_17"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemLotParam_map: added: unk_17: = vanillafield unk_17"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - ItemLotParam_map",
       "Command": "param ItemTableParam: modified && !added: unk_00: = vanillafield unk_00"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - ItemLotParam_map",
+      "Command": "param ItemTableParam: added: unk_00: = vanillafield unk_00"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - NightBossMenuParam",
       "Command": "param NightBossMenuParam: modified && !added: unk_00: = vanillafield unk_00"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NightBossMenuParam",
+      "Command": "param NightBossMenuParam: added: unk_00: = vanillafield unk_00"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - NpcParam",
       "Command": "param NpcParam: modified && !added: chaosMatchingCorrectParamId: = vanillafield chaosMatchingCorrectParamId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: chaosMatchingCorrectParamId: = vanillafield chaosMatchingCorrectParamId"
     },
     {
       "Version": "10200000",
@@ -282,7 +507,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: chaosMatchingSpEffectSetParamId: = vanillafield chaosMatchingSpEffectSetParamId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
       "Command": "param NpcParam: modified && !added: chaosMatchingItemLotId: = vanillafield chaosMatchingItemLotId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: chaosMatchingItemLotId: = vanillafield chaosMatchingItemLotId"
     },
     {
       "Version": "10200000",
@@ -292,18 +527,37 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: chaosMatchingMutationTableId: = vanillafield chaosMatchingMutationTableId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
       "Command": "param NpcParam: modified && !added: chaosMatchingUnk: = vanillafield chaosMatchingUnk"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: chaosMatchingUnk: = vanillafield chaosMatchingUnk"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - NpcParam",
       "Command": "param NpcParam: modified && !added: endPadding: = vanillafield endPadding"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - NpcParam",
+      "Command": "param NpcParam: added: endPadding: = vanillafield endPadding"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
       "Command": "param PlayerCommonParam: modified && !added: unk_00: = vanillafield unk_00"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_00: = vanillafield unk_00"
     },
     {
       "Version": "10200000",
@@ -313,7 +567,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_01: = vanillafield unk_01"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
       "Command": "param PlayerCommonParam: modified && !added: unk_02: = vanillafield unk_02"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_02: = vanillafield unk_02"
     },
     {
       "Version": "10200000",
@@ -323,7 +587,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_03: = vanillafield unk_03"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
       "Command": "param PlayerCommonParam: modified && !added: unk_04: = vanillafield unk_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_04: = vanillafield unk_04"
     },
     {
       "Version": "10200000",
@@ -333,7 +607,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_05: = vanillafield unk_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
       "Command": "param PlayerCommonParam: modified && !added: unk_06: = vanillafield unk_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_06: = vanillafield unk_06"
     },
     {
       "Version": "10200000",
@@ -343,19 +627,37 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_07: = vanillafield unk_07"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
       "Command": "param PlayerCommonParam: modified && !added: unk_08: = vanillafield unk_08"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: unk_08: = vanillafield unk_08"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SmallBaseAndSpotDefine",
       "Command": "param SmallBaseAndSpotDefine: modified && !added: unk_00: = vanillafield unk_00"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SmallBaseAndSpotDefine",
+      "Command": "param SmallBaseAndSpotDefine: added: unk_00: = vanillafield unk_00"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: unk_00: = vanillafield unk_00"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: unk_00: = vanillafield unk_00"
     },
     {
       "Version": "10200000",
@@ -365,7 +667,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: abilityActivationSpEffectId: = vanillafield abilityActivationSpEffectId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: ultimateArtGaugeChargeRate: = vanillafield ultimateArtGaugeChargeRate"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: ultimateArtGaugeChargeRate: = vanillafield ultimateArtGaugeChargeRate"
     },
     {
       "Version": "10200000",
@@ -375,7 +687,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: conditionStamina: = vanillafield conditionStamina"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: unk_04: = vanillafield unk_04"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: unk_04: = vanillafield unk_04"
     },
     {
       "Version": "10200000",
@@ -385,7 +707,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: unk_05: = vanillafield unk_05"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: unk_06: = vanillafield unk_06"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: unk_06: = vanillafield unk_06"
     },
     {
       "Version": "10200000",
@@ -395,14 +727,28 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: weaponTypeDiscovery: = vanillafield weaponTypeDiscovery"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: applyHeroStatusChange: = vanillafield applyHeroStatusChange"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: applyHeroStatusChange: = vanillafield applyHeroStatusChange"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
       "Command": "param SpEffectParam: modified && !added: endPadding: = vanillafield endPadding"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SpEffectParam",
+      "Command": "param SpEffectParam: added: endPadding: = vanillafield endPadding"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SwordArtsParam",
@@ -411,9 +757,18 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SwordArtsParam",
+      "Command": "param SwordArtsParam: added: sparringGroundsEventFlagId: = vanillafield sparringGroundsEventFlagId"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SwordArtsParam",
       "Command": "param SwordArtsParam: modified && !added: endPadding: = vanillafield endPadding"
     },
-    
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - SwordArtsParam",
+      "Command": "param SwordArtsParam: added: endPadding: = vanillafield endPadding"
+    },
     {
       "Version": "10200000",
       "Message": "1.02.0 - WorldMapPointParam",
@@ -422,7 +777,17 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: unk_00: = vanillafield unk_00"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - WorldMapPointParam",
       "Command": "param WorldMapPointParam: modified && !added: eventFlagId8: = vanillafield eventFlagId8"
+    },
+    {
+      "Version": "10200000",
+      "Message": "1.02.0 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: eventFlagId8: = vanillafield eventFlagId8"
     }
   ]
 }

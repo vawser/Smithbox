@@ -16,7 +16,6 @@
 - Param Editor: add defaultvalues to ER paramdex + re-format it
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
-- Param Editor: fix the icon flickering when switching row/changing field value
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: Updater doesn't apply mass edit update commands to modified / added rows
 

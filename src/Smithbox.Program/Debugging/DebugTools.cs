@@ -45,7 +45,7 @@ public class DebugTools
         {
             if (ImGui.MenuItem($"Execute Quick Script"))
             {
-                QuickScript.ApplyQuickScript();
+                QuickScript.ApplyQuickScript(BaseEditor);
             }
 
             if (ImGui.MenuItem($"Tasks"))

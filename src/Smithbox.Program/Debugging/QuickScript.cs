@@ -1,4 +1,7 @@
-﻿using StudioCore.Formats.JSON;
+﻿using Microsoft.Extensions.Logging;
+using Octokit;
+using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,9 +15,60 @@ namespace StudioCore.DebugNS;
 
 public class QuickScript
 {
-    public static void ApplyQuickScript()
-    {
+    private static ParamUpgraderInfo UpgraderInfo;
 
+    public static void ApplyQuickScript(Smithbox baseEditor)
+    {
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
+        var srcPath = Path.Combine(CFG.Current.SmithboxBuildFolder,
+            "src", "Smithbox.Data", "Assets", "PARAM",
+            ProjectUtils.GetGameDirectory(curProject), "Upgrader Information.json");
+
+        try
+        {
+            var filestring = File.ReadAllText(srcPath);
+
+            try
+            {
+                var options = new JsonSerializerOptions();
+                UpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Failed to deserialize Upgrader Information.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogLevel.Error, Tasks.LogPriority.High, e);
+        }
+
+        for(int i = 0; i < UpgraderInfo.UpgradeCommands.Count; i++)
+        {
+            var curEntry = UpgraderInfo.UpgradeCommands[i];
+
+            if (curEntry.Command.Contains("modified && !added:"))
+            {
+                var newCommand = curEntry.Command.Replace("modified && !added:", "added:");
+                var newEntry = new UpgraderMassEditEntry();
+                newEntry.Version = curEntry.Version;
+                newEntry.Message = curEntry.Message;
+                newEntry.Command = newCommand;
+
+                UpgraderInfo.UpgradeCommands.Insert(i + 1, newEntry);
+            }
+        }
+
+        var writeOptions = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+            IncludeFields = true
+        };
+        var json = JsonSerializer.Serialize(UpgraderInfo, typeof(ParamUpgraderInfo), writeOptions);
+
+        File.WriteAllText(srcPath, json);
     }
 
     public void GenerateIconLayouts_BB()
