@@ -153,8 +153,6 @@ public class ParamTableGroupView
 
             //if (ImGui.BeginMenu("Duplicate"))
             //{
-
-
             //    if (ImGui.Selectable("Apply"))
             //    {
 

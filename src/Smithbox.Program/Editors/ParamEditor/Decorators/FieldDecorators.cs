@@ -1079,7 +1079,7 @@ public class FieldDecorators
                 TextResult? primaryRef = ReferenceResolver.ResolveTextReferences(editor, fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef != null)
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.FileEntry.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.ContainerDisplayCategory}/{primaryRef.ContainerWrapper.FileEntry.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
                 }
             }
         }
