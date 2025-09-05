@@ -69,7 +69,6 @@ public class FlverContainer
 
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
-        BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
         RootBinderPath = $"{Editor.Project.DataPath}{BinderPath}";
         ModBinderPath = $"{Editor.Project.ProjectPath}{BinderPath}";
         ModBinderDirectory = $"{Editor.Project.ProjectPath}{BinderDirectory}";
@@ -94,10 +93,10 @@ public class FlverContainer
 
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
-        BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
-        RootBinderPath = $"{Editor.Project.DataPath}{BinderPath}";
-        ModBinderPath = $"{Editor.Project.ProjectPath}{BinderPath}";
-        ModBinderDirectory = $"{Editor.Project.ProjectPath}{BinderDirectory}";
+        BinderPath = Path.Combine(BinderDirectory, $"{ContainerName}{BinderExtension}");
+        RootBinderPath = Path.Combine(Editor.Project.DataPath, BinderPath);
+        ModBinderPath = Path.Combine(Editor.Project.ProjectPath, BinderPath);
+        ModBinderDirectory = Path.Combine(Editor.Project.ProjectPath, BinderDirectory);
 
         FlverFileExtension = GetFlverExtension();
         FlverFileName = $"{ContainerName}{FlverFileExtension}";
@@ -182,41 +181,41 @@ public class FlverContainer
         switch (Type)
         {
             case FlverContainerType.Character:
-                string chrDir = Path.Join("chr");
+                string chrDir = Path.Combine("chr");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    chrDir = Path.Join("model", "chr");
+                    chrDir = Path.Combine("model", "chr");
                 }
 
                 return chrDir;
             case FlverContainerType.Enemy:
-                string eneDir = Path.Join("model", "ene");
+                string eneDir = Path.Combine("model", "ene");
                 return eneDir;
             case FlverContainerType.Object:
-                string objDir = Path.Join("obj");
+                string objDir = Path.Combine("obj");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    objDir = Path.Join("model", "obj");
+                    objDir = Path.Combine("model", "obj");
                 }
                 else if (Editor.Project.ProjectType is ProjectType.ER)
                 {
                     var category = ContainerName.Split("_")[0];
-                    objDir = Path.Join("asset", "aeg", category);
+                    objDir = Path.Combine("asset", "aeg", category);
                 }
                 else if (Editor.Project.ProjectType is ProjectType.AC6)
                 {
-                    objDir = Path.Join("asset", "environment", "geometry");
+                    objDir = Path.Combine("asset", "environment", "geometry");
                 }
 
                 return objDir;
             case FlverContainerType.Parts:
-                string partDir = Path.Join("parts");
+                string partDir = Path.Combine("parts");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    partDir = Path.Join("model", "parts");
+                    partDir = Path.Combine("model", "parts");
 
                     var partType = "";
                     switch (ContainerName[..2])
@@ -249,11 +248,11 @@ public class FlverContainer
                             break;
                     }
 
-                    partDir = Path.Join(partDir, partType);
+                    partDir = Path.Combine(partDir, partType);
                 }
                 else if (Editor.Project.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    partDir = Path.Join("model", "ac");
+                    partDir = Path.Combine("model", "ac");
 
                     string partCat = @"parts";
                     string partType = string.Empty;
@@ -349,22 +348,22 @@ public class FlverContainer
                             break;
                     }
 
-                    partDir = Path.Join(partDir, partCat, partType);
+                    partDir = Path.Combine(partDir, partCat, partType);
                 }
 
                 return partDir;
             case FlverContainerType.MapPiece:
-                string mapPieceDir = Path.Join("map", MapID);
+                string mapPieceDir = Path.Combine("map", MapID);
 
                 if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     string shortMapId = MapID.Split("_")[0];
-                    mapPieceDir = Path.Join("map", shortMapId, MapID);
+                    mapPieceDir = Path.Combine("map", shortMapId, MapID);
                 }
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    mapPieceDir = Path.Join("model", "map");
+                    mapPieceDir = Path.Combine("model", "map");
                 }
 
                 return mapPieceDir;
