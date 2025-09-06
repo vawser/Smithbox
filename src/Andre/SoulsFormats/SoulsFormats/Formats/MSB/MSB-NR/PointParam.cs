@@ -618,7 +618,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int MapID { get; set; }
+            public sbyte[] MapID { get; set; } = new sbyte[4];
 
             /// <summary>
             /// Unknown.
@@ -744,7 +744,7 @@ namespace SoulsFormats
 
                 // Unk4
                 br.Position = start + unkOffset4;
-                MapID = br.ReadInt32();
+                MapID = br.ReadReversedSBytesButLastIsHex(4);
                 UnkS04 = br.ReadInt32();
                 br.AssertInt32(0);
                 UnkS0C = br.ReadInt32();
@@ -830,7 +830,7 @@ namespace SoulsFormats
                 }
 
                 bw.FillInt64("Unk4Offset", bw.Position - start);
-                bw.WriteInt32(MapID);
+                bw.WriteReversedSBytesButLastIsHex(MapID);
                 bw.WriteInt32(UnkS04);
                 bw.WriteInt32(0);
                 bw.WriteInt32(UnkS0C);
@@ -2575,14 +2575,6 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.SmallBaseAttachPoint;
                 private protected override bool HasTypeData => true;
 
-                public int TUnk00 { get; set; }
-
-                public int TUnk04 { get; set; }
-
-                public int TUnk08 { get; set; }
-
-                public int TUnk0C { get; set; }
-
                 /// <summary>
                 /// Creates a LockedMountJump with default values.
                 /// </summary>
@@ -2592,18 +2584,14 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    TUnk00 = br.ReadInt32();
-                    TUnk04 = br.ReadInt32();
-                    TUnk08 = br.ReadInt32();
-                    TUnk0C = br.ReadInt32();
+                    br.AssertInt32(0);
+                    br.AssertInt32(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(TUnk00);
-                    bw.WriteInt32(TUnk04);
-                    bw.WriteInt32(TUnk08);
-                    bw.WriteInt32(TUnk0C);
+                    bw.WriteInt32(0);
+                    bw.WriteInt32(0);
                 }
             }
 

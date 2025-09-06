@@ -262,7 +262,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int MapID { get; set; }
+            public sbyte[] MapID { get; set; } = new sbyte[4];
 
             /// <summary>
             /// Unknown.
@@ -346,7 +346,7 @@ namespace SoulsFormats
 
                 // Unk3
                 br.Position = start + unk3Offset;
-                MapID = br.ReadInt32();
+                MapID = br.ReadSBytes(4);
                 UnkS04 = br.ReadInt32();
                 UnkS08 = br.ReadInt32();
                 UnkS0C = br.ReadInt32();
@@ -408,7 +408,7 @@ namespace SoulsFormats
                 }
 
                 bw.FillInt64("Unk3Offset", bw.Position - start);
-                bw.WriteInt32(MapID);
+                bw.WriteSBytes(MapID);
                 bw.WriteInt32(UnkS04);
                 bw.WriteInt32(UnkS08);
                 bw.WriteInt32(UnkS0C);
@@ -1366,7 +1366,7 @@ namespace SoulsFormats
 
 
             /// <summary>
-            /// Unknown.
+            /// The structure is very similar to Sekiro.
             /// </summary>
             public class ConversationInformation : Event
             {
@@ -1380,112 +1380,48 @@ namespace SoulsFormats
 
                 internal ConversationInformation(BinaryReaderEx br) : base(br) { }
 
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; }
-                public int Unk08 { get; set; }
-                public int Unk0C { get; set; }
-                public int Unk10 { get; set; }
-                public int Unk14 { get; set; }
-                public int Unk18 { get; set; }
-                public int Unk1C { get; set; }
-                public int Unk20 { get; set; }
-                public int Unk24 { get; set; }
-                public int Unk28 { get; set; }
-                public int Unk2C { get; set; }
-                public int Unk30 { get; set; }
-                public int Unk34 { get; set; }
-                public int Unk38 { get; set; }
-                public int Unk3C { get; set; }
-                public int Unk40 { get; set; }
-                public int Unk44 { get; set; }
-                public int Unk48 { get; set; }
-                public int Unk4C { get; set; }
-                public int Unk50 { get; set; }
-                public int Unk54 { get; set; }
-                public int Unk58 { get; set; }
-                public int Unk5C { get; set; }
-                public int Unk60 { get; set; }
-                public int Unk64 { get; set; }
-                public int Unk68 { get; set; }
-                public int Unk6C { get; set; }
-                public int Unk70 { get; set; }
-                public int Unk74 { get; set; }
-                public int Unk78 { get; set; }
-                public int Unk7C { get; set; }
-                public int Unk80 { get; set; }
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
+                public string[] Talk_EnemyNames { get; private set; }
+                public int[] Talk_EnemyIndices;
+
+                public int[] Talk_TalkIDs { get; set; }
+                public byte Talk_Unk44 { get; set; }
+                public byte Talk_Unk45 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
-                    Unk04 = br.ReadInt32();
-                    Unk08 = br.ReadInt32();
-                    Unk0C = br.ReadInt32();
-                    Unk10 = br.ReadInt32();
-                    Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt32();
-                    Unk1C = br.ReadInt32();
-                    Unk20 = br.ReadInt32();
-                    Unk24 = br.ReadInt32();
-                    Unk28 = br.ReadInt32();
-                    Unk2C = br.ReadInt32();
-                    Unk30 = br.ReadInt32();
-                    Unk34 = br.ReadInt32();
-                    Unk38 = br.ReadInt32();
-                    Unk3C = br.ReadInt32();
-                    Unk40 = br.ReadInt32();
-                    Unk44 = br.ReadInt32();
-                    Unk48 = br.ReadInt32();
-                    Unk4C = br.ReadInt32();
-                    Unk50 = br.ReadInt32();
-                    Unk54 = br.ReadInt32();
-                    Unk58 = br.ReadInt32();
-                    Unk5C = br.ReadInt32();
-                    Unk60 = br.ReadInt32();
-                    Unk64 = br.ReadInt32();
-                    Unk68 = br.ReadInt32();
-                    Unk6C = br.ReadInt32();
-                    Unk70 = br.ReadInt32();
-                    Unk74 = br.ReadInt32();
-                    Unk78 = br.ReadInt32();
-                    Unk7C = br.ReadInt32();
-                    Unk80 = br.ReadInt32();
+                    Talk_EnemyIndices = br.ReadInt32s(4);
+                    br.AssertPattern(0x14, 0xFF);
+                    Talk_TalkIDs = br.ReadInt32s(3);
+                    br.AssertPattern(0x14, 0x00);
+                    Talk_Unk44 = br.ReadByte();
+                    Talk_Unk45 = br.ReadByte();
+                    br.AssertPattern(0x3A, 0x00);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk04);
-                    bw.WriteInt32(Unk08);
-                    bw.WriteInt32(Unk0C);
-                    bw.WriteInt32(Unk10);
-                    bw.WriteInt32(Unk14);
-                    bw.WriteInt32(Unk18);
-                    bw.WriteInt32(Unk1C);
-                    bw.WriteInt32(Unk20);
-                    bw.WriteInt32(Unk24);
-                    bw.WriteInt32(Unk28);
-                    bw.WriteInt32(Unk2C);
-                    bw.WriteInt32(Unk30);
-                    bw.WriteInt32(Unk34);
-                    bw.WriteInt32(Unk38);
-                    bw.WriteInt32(Unk3C);
-                    bw.WriteInt32(Unk40);
-                    bw.WriteInt32(Unk44);
-                    bw.WriteInt32(Unk48);
-                    bw.WriteInt32(Unk4C);
-                    bw.WriteInt32(Unk50);
-                    bw.WriteInt32(Unk54);
-                    bw.WriteInt32(Unk58);
-                    bw.WriteInt32(Unk5C);
-                    bw.WriteInt32(Unk60);
-                    bw.WriteInt32(Unk64);
-                    bw.WriteInt32(Unk68);
-                    bw.WriteInt32(Unk6C);
-                    bw.WriteInt32(Unk70);
-                    bw.WriteInt32(Unk74);
-                    bw.WriteInt32(Unk78);
-                    bw.WriteInt32(Unk7C);
-                    bw.WriteInt32(Unk80);
+                    bw.WriteInt32s(Talk_EnemyIndices);
+                    bw.WritePattern(0x14, 0xFF);
+                    bw.WriteInt32s(Talk_TalkIDs);
+                    bw.WritePattern(0x14, 0x00);
+                    bw.WriteByte(Talk_Unk44);
+                    bw.WriteByte(Talk_Unk45);
+                    bw.WritePattern(0x3A, 0x00);
+                }
+                internal override void GetNames(MSB_NR msb, Entries entries)
+                {
+                    base.GetNames(msb, entries);
+                    Talk_EnemyNames = MSB.FindNames(msb.Parts.Enemies, Talk_EnemyIndices);
+                }
+
+                internal override void GetIndices(MSB_NR msb, Entries entries)
+                {
+                    base.GetIndices(msb, entries);
+                    Talk_EnemyIndices = MSB.FindIndices(this, msb.Parts.Enemies, Talk_EnemyNames);
                 }
             }
 
