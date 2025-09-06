@@ -96,6 +96,25 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Reads length sbytes, makes the last returned element a BCD-decoded value if valid.
+        /// </summary>
+        public sbyte[] ReadReversedSBytesButLastIsHex(int length)
+        {
+            sbyte[] sbytes = ReadSBytes(length);
+            if (length > 0)
+            {
+                byte b0 = unchecked((byte)sbytes[0]);
+                int hi = (b0 >> 4) & 0xF;
+                int lo = b0 & 0xF;
+                if (hi <= 9 && lo <= 9)
+                    sbytes[0] = (sbyte)(hi * 10 + lo);
+            }
+
+            Array.Reverse(sbytes);
+            return sbytes;
+        }
+
+        /// <summary>
         /// Reads a value from the specified offset using the given function, returning the stream to its original position afterwards.
         /// </summary>
         private T GetValue<T>(Func<T> readValue, long offset)
