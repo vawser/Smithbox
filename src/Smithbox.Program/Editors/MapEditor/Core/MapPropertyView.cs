@@ -610,6 +610,7 @@ public class MapPropertyView
 
         if (input.Draw("##value", out string newValue))
         {
+            editName = (newValue, first);
             if (entities.Count() == 1)
             {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
