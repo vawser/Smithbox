@@ -35,6 +35,17 @@ public static class MapWriteValidator
             }
         }
 
+        // Clear all current mismatches
+        if (Directory.Exists(Path.Join(mapDir, "mismatches")))
+        {
+            var curDir = Path.Join(mapDir, "mismatches");
+
+            foreach (var file in Directory.EnumerateFiles(curDir))
+            {
+                File.Delete(file);
+            }
+        }
+
         foreach (var res in resMaps)
         {
             var basepath = Path.GetDirectoryName(res.AssetPath);
@@ -87,7 +98,10 @@ public static class MapWriteValidator
             {
                 var diffSize = entry.OriginalBytes - entry.WrittenBytes;
 
-                TaskLogs.AddLog($" {entry.MSB} - Original Size: {entry.OriginalBytes}, Written Size: {entry.WrittenBytes}, Diff Size: {diffSize}");
+                if (diffSize != 0)
+                {
+                    TaskLogs.AddLog($" {entry.MSB} - Original Size: {entry.OriginalBytes}, Written Size: {entry.WrittenBytes}, Diff Size: {diffSize}");
+                }
             }
         }
         else

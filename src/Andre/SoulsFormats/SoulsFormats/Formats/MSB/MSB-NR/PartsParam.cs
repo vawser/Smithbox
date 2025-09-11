@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using static SoulsFormats.EMEVD;
+using static SoulsFormats.MSB_NR.Part.EnemyBase;
 using static SoulsFormats.MSBE.Part;
 
 namespace SoulsFormats
@@ -230,7 +232,7 @@ namespace SoulsFormats
                 if (HasUnk88Data ^ Unk88_DataOffset != 0)
                     throw new InvalidDataException($"Unexpected {nameof(Unk88_DataOffset)} 0x{Unk88_DataOffset:X} in type {GetType()}.");
 
-                if (HasUnk90Data ^ Unk88_DataOffset != 0)
+                if (HasUnk90Data ^ Unk90_DataOffset != 0)
                     throw new InvalidDataException($"Unexpected {nameof(Unk90_DataOffset)} 0x{Unk90_DataOffset:X} in type {GetType()}.");
 
                 if (HasTileData ^ Tile_DataOffset != 0)
@@ -424,7 +426,7 @@ namespace SoulsFormats
                 bw.ReserveInt64("EntityOffset");
                 bw.ReserveInt64("TypeOffset");
                 bw.ReserveInt64("GparamOffset");
-                bw.ReserveInt64("SceneGparamtOffset");
+                bw.ReserveInt64("SceneGparamOffset");
                 bw.ReserveInt64("GrassOffset");
                 bw.ReserveInt64("Unk88Offset");
                 bw.ReserveInt64("Unk90Offset");
@@ -1386,10 +1388,10 @@ namespace SoulsFormats
                 //private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
                 // --- UnkA8
-                private protected override bool HasUnkA8Data => false;
-                //public UnkA8Struct UnkA8Data { get; set; }
-                //private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
-                //private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
+                private protected override bool HasUnkA8Data => true;
+                public UnkA8Struct UnkA8Data { get; set; }
+                private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+                private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
 
                 private protected EnemyBase() : base("cXXXX_XXXX")
                 {
@@ -1398,6 +1400,7 @@ namespace SoulsFormats
                     GparamData = new GparamStruct();
                     Unk88Data = new Unk88Struct();
                     TileData = new TileStruct();
+                    UnkA8Data = new UnkA8Struct();
                 }
                 private protected EnemyBase(BinaryReaderEx br) : base(br) { }
                 private protected override void DeepCopyTo(Part part)
@@ -1408,6 +1411,7 @@ namespace SoulsFormats
                     enemy.GparamData = GparamData.DeepCopy();
                     enemy.Unk88Data = Unk88Data.DeepCopy();
                     enemy.TileData = TileData.DeepCopy();
+                    enemy.UnkA8Data = UnkA8Data.DeepCopy();
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
@@ -1508,9 +1512,9 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk68);
                     bw.WriteInt32(Unk6C);
 
-                    bw.ReserveInt64("Offset70");
-                    bw.ReserveInt64("Offset78");
+                    bw.WriteInt64(Offset70);
 
+                    bw.ReserveInt64("Offset78");
                     bw.FillInt64("Offset78", bw.Position - start);
                     Unk78Data.Write(bw);
                 }
@@ -1773,185 +1777,95 @@ namespace SoulsFormats
             public class Collision : Part
             {
                 private protected override PartType Type => PartType.Collision;
+
+                // --- Entity
+                public EntityStruct EntityData { get; set; }
+                private protected override void ReadEntityData(BinaryReaderEx br) => EntityData = new EntityStruct(br);
+                private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
+
+                // --- Display
                 private protected override bool HasDisplayData => true;
+                public DisplayStruct DisplayData { get; set; }
+                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
+                private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
+
+                // --- Display Group
                 private protected override bool HasDisplayGroupData => true;
+                public DisplayGroupStruct DisplayGroupData { get; set; }
+                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
+                private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
+
+                // --- Gparam
                 private protected override bool HasGparamData => true;
+                public GparamStruct GparamData { get; set; }
+                private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
+                private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
+
+                // --- Scene Gparam
                 private protected override bool HasSceneGparamData => true;
+                public SceneGparamStruct SceneGparamData { get; set; }
+                private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
+                private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
+
+                // --- Grass
                 private protected override bool HasGrassData => false;
+                //public GrassStruct GrassData { get; set; }
+                //private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
+                //private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
+
+                // --- Unk88
                 private protected override bool HasUnk88Data => true;
-                private protected override bool HasUnk9 => false;
-                private protected override bool HasTileLoadConfig => true;
-                private protected override bool HasUnk11 => true;
+                public Unk88Struct Unk88Data { get; set; }
+                private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
+                private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayStruct DisplayDataStruct { get; set; }
+                // --- Unk90
+                private protected override bool HasUnk90Data => false;
+                //public Unk90Struct Unk90Data { get; set; }
+                //private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
+                //private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                // --- Tile
+                private protected override bool HasTileData => true;
+                public TileStruct TileData { get; set; }
+                private protected override void ReadTileData(BinaryReaderEx br) => TileData = new TileStruct(br);
+                private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public GparamStruct GparamConfigStruct { get; set; }
+                // --- UnkA0
+                private protected override bool HasUnkA0Data => true;
+                public UnkA0Struct UnkA0Data { get; set; }
+                private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
+                private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public SceneGparamStruct SceneGparamConfigStruct { get; set; }
+                // --- UnkA8
+                private protected override bool HasUnkA8Data => false;
+                //public UnkA8Struct UnkA8Data { get; set; }
+                //private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+                //private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Unk88Struct UnkStruct8 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public TileStruct TileLoadConfig { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public UnkA0Struct UnkStruct11 { get; set; }
-
-                /// <summary>
-                /// Sets collision behavior. Fall collision, death collision, enemy-only collision, etc.
-                /// </summary>
-                public byte HitFilterID { get; set; } = 8;
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT01 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT02 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public bool UnkT03 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT04 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT06 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT14 { get; set; }
-
-                /// <summary>
-                /// ID of location text to display when stepping onto this collision.
-                /// </summary>
-                public int LocationTextID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT1C { get; set; }
-
-                /// <summary>
-                /// Used to determine invasion eligibility.
-                /// </summary>
-                public int PlayRegionID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT24 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT26 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT30 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT34 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT35 { get; set; }
-
-                /// <summary>
-                /// Disable being able to summon/ride Torrent.
-                /// </summary>
-                public bool DisableTorrent { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT3C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT3E { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT40 { get; set; }
-
-                /// <summary>
-                /// Disables Fast Travel if Event Flag is not set.
-                /// </summary>
-                public uint EnableFastTravelEventFlagID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT4C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT4E { get; set; }
-
-                /// <summary>
-                /// Creates a Collision with default values.
-                /// </summary>
                 public Collision() : base("hXXXXXX")
                 {
-                    DisplayDataStruct = new DisplayStruct();
-                    DisplayGroupStruct = new DisplayGroupStruct();
-                    GparamConfigStruct = new GparamStruct();
-                    SceneGparamConfigStruct = new SceneGparamStruct();
-                    UnkStruct8 = new Unk88Struct();
-                    TileLoadConfig = new TileStruct();
-                    UnkStruct11 = new UnkA0Struct();
+                    EntityData = new EntityStruct();
+                    DisplayData = new DisplayStruct();
+                    DisplayGroupData = new DisplayGroupStruct();
+                    GparamData = new GparamStruct();
+                    SceneGparamData = new SceneGparamStruct();
+                    Unk88Data = new Unk88Struct();
+                    TileData = new TileStruct();
+                    UnkA0Data = new UnkA0Struct();
                 }
 
                 private protected override void DeepCopyTo(Part part)
                 {
                     var collision = (Collision)part;
-                    collision.DisplayDataStruct = DisplayDataStruct.DeepCopy();
-                    collision.DisplayGroupStruct = DisplayGroupStruct.DeepCopy();
-                    collision.GparamConfigStruct = GparamConfigStruct.DeepCopy();
-                    collision.SceneGparamConfigStruct = SceneGparamConfigStruct.DeepCopy();
-                    collision.UnkStruct8 = UnkStruct8.DeepCopy();
-                    collision.TileLoadConfig = TileLoadConfig.DeepCopy();
-                    collision.UnkStruct11 = UnkStruct11.DeepCopy();
+                    collision.EntityData = EntityData.DeepCopy();
+                    collision.DisplayData = DisplayData.DeepCopy();
+                    collision.DisplayGroupData = DisplayGroupData.DeepCopy();
+                    collision.GparamData = GparamData.DeepCopy();
+                    collision.SceneGparamData = SceneGparamData.DeepCopy();
+                    collision.Unk88Data = Unk88Data.DeepCopy();
+                    collision.TileData = TileData.DeepCopy();
+                    collision.UnkA0Data = UnkA0Data.DeepCopy();
                 }
 
                 internal Collision(BinaryReaderEx br) : base(br) { }
@@ -1959,84 +1873,99 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     HitFilterID = br.ReadByte();
-                    UnkT01 = br.ReadByte();
-                    UnkT02 = br.ReadByte();
-                    UnkT03 = br.ReadBoolean();
-                    UnkT04 = br.ReadSingle();
-                    UnkT06 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    UnkT14 = br.ReadSingle();
+                    Unk01 = br.ReadSByte();
+                    Unk02 = br.ReadSByte();
+                    Unk03 = br.ReadByte();
+                    Unk04 = br.ReadSingle();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadSingle();
                     LocationTextID = br.ReadInt32();
-                    UnkT1C = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
                     PlayRegionID = br.ReadInt32();
-                    UnkT24 = br.ReadInt16();
-                    UnkT26 = br.ReadInt16();
-                    br.AssertInt32(0);
-                    br.AssertInt32(-1);
-                    UnkT30 = br.ReadInt32();
-                    UnkT34 = br.ReadByte();
-                    UnkT35 = br.ReadByte();
-                    DisableTorrent = br.ReadBoolean();
-                    br.AssertByte(0);
-                    br.AssertInt32(-1);
-                    UnkT3C = br.ReadInt16();
-                    UnkT3E = br.ReadInt16();
-                    UnkT40 = br.ReadSingle();
-                    br.AssertInt32(0);
-                    EnableFastTravelEventFlagID = br.ReadUInt32();
-                    UnkT4C = br.AssertInt16([0, 1, 2]);
-                    UnkT4E = br.ReadInt16();
+                    Unk24 = br.ReadInt16();
+                    Unk26 = br.ReadByte();
+                    Unk27 = br.ReadByte();
+                    Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
+                    Unk30 = br.ReadInt32();
+                    Unk34 = br.ReadByte();
+                    Unk35 = br.ReadSByte();
+                    Unk36 = br.ReadInt16();
+                    Unk38 = br.ReadInt32();
+                    Unk3C = br.ReadInt16();
+                    Unk3E = br.ReadInt16();
+                    Unk40 = br.ReadInt32();
+                    HitUnk44 = br.ReadInt32();
+                    Unk48 = br.ReadInt32();
+                    HitUnk4C = br.ReadInt16();
+                    Unk4E = br.ReadInt16();
                 }
-
-                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayDataStruct = new DisplayStruct(br);
-                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupStruct = new DisplayGroupStruct(br);
-                private protected override void ReadGparamData(BinaryReaderEx br) => GparamConfigStruct = new GparamStruct(br);
-                private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamConfigStruct = new SceneGparamStruct(br);
-                private protected override void ReadUnk8(BinaryReaderEx br) => UnkStruct8 = new Unk88Struct(br);
-                private protected override void ReadTileLoad(BinaryReaderEx br) => TileLoadConfig = new TileStruct(br);
-                private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkStruct11 = new UnkA0Struct(br);
-
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte((byte)HitFilterID);
-                    bw.WriteByte(UnkT01);
-                    bw.WriteByte(UnkT02);
-                    bw.WriteBoolean(UnkT03);
-                    bw.WriteSingle(UnkT04);
-                    bw.WriteInt32(UnkT06);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteSingle(UnkT14);
+                    bw.WriteByte(HitFilterID);
+                    bw.WriteSByte(Unk01);
+                    bw.WriteSByte(Unk02);
+                    bw.WriteByte(Unk03);
+                    bw.WriteSingle(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteSingle(Unk14);
                     bw.WriteInt32(LocationTextID);
-                    bw.WriteInt32(UnkT1C);
+                    bw.WriteInt32(Unk1C);
                     bw.WriteInt32(PlayRegionID);
-                    bw.WriteInt16(UnkT24);
-                    bw.WriteInt16(UnkT26);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(UnkT30);
-                    bw.WriteByte(UnkT34);
-                    bw.WriteByte(UnkT35);
-                    bw.WriteBoolean(DisableTorrent);
-                    bw.WriteByte(0);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt16(UnkT3C);
-                    bw.WriteInt16(UnkT3E);
-                    bw.WriteSingle(UnkT40);
-                    bw.WriteInt32(0);
-                    bw.WriteUInt32(EnableFastTravelEventFlagID);
-                    bw.WriteInt16(UnkT4C);
-                    bw.WriteInt16(UnkT4E);
+                    bw.WriteInt16(Unk24);
+                    bw.WriteByte(Unk26);
+                    bw.WriteByte(Unk27);
+                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(Unk2C);
+                    bw.WriteInt32(Unk30);
+                    bw.WriteByte(Unk34);
+                    bw.WriteSByte(Unk35);
+                    bw.WriteInt16(Unk36);
+                    bw.WriteInt32(Unk38);
+                    bw.WriteInt16(Unk3C);
+                    bw.WriteInt16(Unk3E);
+                    bw.WriteInt32(Unk40);
+                    bw.WriteInt32(HitUnk44);
+                    bw.WriteInt32(Unk48);
+                    bw.WriteInt16(HitUnk4C);
+                    bw.WriteInt16(Unk4E);
                 }
 
-                private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);
-                private protected override void WriteUnk2(BinaryWriterEx bw) => DisplayGroupStruct.Write(bw);
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfigStruct.Write(bw);
-                private protected override void WriteSceneGparamConfig(BinaryWriterEx bw) => SceneGparamConfigStruct.Write(bw);
-                private protected override void WriteUnk8(BinaryWriterEx bw) => UnkStruct8.Write(bw);
-                private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
-                private protected override void WriteUnk11(BinaryWriterEx bw) => UnkStruct11.Write(bw);
+                // Layout
+                public byte HitFilterID { get; set; } = 8;
+                public sbyte Unk01 { get; set; } = -1; // Hidden
+                public sbyte Unk02 { get; set; } = -1;
+                public byte Unk03 { get; set; } = 0; // Hidden
+                public float Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0; // Hidden
+                public int Unk0C { get; set; } = 0; // Hidden
+                public int Unk10 { get; set; } = 0; // Hidden
+                public float Unk14 { get; set; } = -1; // Hidden
+                public int LocationTextID { get; set; } = -1;
+                public int Unk1C { get; set; } = -1;
+                public int PlayRegionID { get; set; } = -1;
+                public short Unk24 { get; set; } = -1;
+                public byte Unk26 { get; set; } = 0; // Boolean
+                public byte Unk27 { get; set; } = 0; // Boolean
+                public int Unk28 { get; set; } = 0; // Hidden
+                public int Unk2C { get; set; } = -1; // Hidden
+                public int Unk30 { get; set; } = -1; // Hidden
+                public byte Unk34 { get; set; } = 0;
+                public sbyte Unk35 { get; set; } = -1;
+                public short Unk36 { get; set; } = 0; // Hidden
+                public int Unk38 { get; set; } = -1; // Hidden
+                public short Unk3C { get; set; } = -1;
+                public short Unk3E { get; set; } = -1; // Hidden
+                public int Unk40 { get; set; } = 0; // Hidden
+                public int HitUnk44 { get; set; } = 0; // Hidden
+                public int Unk48 { get; set; } = 0; // Hidden
+                public short HitUnk4C { get; set; } = 0; // Hidden
+                public short Unk4E { get; set; } = -1; // Hidden
+
             }
 
             /// <summary>
@@ -2045,96 +1974,126 @@ namespace SoulsFormats
             public class DummyAsset : Part
             {
                 private protected override PartType Type => PartType.DummyAsset;
+
+                // --- Entity
+                public EntityStruct EntityData { get; set; }
+                private protected override void ReadEntityData(BinaryReaderEx br) => EntityData = new EntityStruct(br);
+                private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
+
+                // --- Display
                 private protected override bool HasDisplayData => true;
+                public DisplayStruct DisplayData { get; set; }
+                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
+                private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
+
+                // --- Display Group
                 private protected override bool HasDisplayGroupData => false;
+                //public DisplayGroupStruct DisplayGroupData { get; set; }
+                //private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
+                //private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
+
+                // --- Gparam
                 private protected override bool HasGparamData => true;
+                public GparamStruct GparamData { get; set; }
+                private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
+                private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
+
+                // --- Scene Gparam
                 private protected override bool HasSceneGparamData => false;
+                //public SceneGparamStruct SceneGparamData { get; set; }
+                //private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
+                //private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
+
+                // --- Grass
                 private protected override bool HasGrassData => false;
+                //public GrassStruct GrassData { get; set; }
+                //private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
+                //private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
+
+                // --- Unk88
                 private protected override bool HasUnk88Data => true;
-                private protected override bool HasUnk9 => false;
-                private protected override bool HasTileLoadConfig => true;
-                private protected override bool HasUnk11 => false;
+                public Unk88Struct Unk88Data { get; set; }
+                private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
+                private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayStruct DisplayDataStruct { get; set; }
+                // --- Unk90
+                private protected override bool HasUnk90Data => false;
+                //public Unk90Struct Unk90Data { get; set; }
+                //private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
+                //private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public GparamStruct GparamConfigStruct { get; set; }
+                // --- Tile
+                private protected override bool HasTileData => true;
+                public TileStruct TileData { get; set; }
+                private protected override void ReadTileData(BinaryReaderEx br) => TileData = new TileStruct(br);
+                private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Unk88Struct UnkStruct8 { get; set; }
+                // --- UnkA0
+                private protected override bool HasUnkA0Data => false;
+                //public UnkA0Struct UnkA0Data { get; set; }
+                //private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
+                //private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public TileStruct TileLoadConfig { get; set; }
+                // --- UnkA8
+                private protected override bool HasUnkA8Data => false;
+                //public UnkA8Struct UnkA8Data { get; set; }
+                //private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+                //private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT18 { get; set; }
-
-                /// <summary>
-                /// Creates a MapPiece with default values.
-                /// </summary>
                 public DummyAsset() : base("AEGxxx_xxx_xxxx")
                 {
-                    DisplayDataStruct = new DisplayStruct();
-                    GparamConfigStruct = new GparamStruct();
-                    UnkStruct8 = new Unk88Struct();
-                    TileLoadConfig = new TileStruct();
+                    EntityData = new EntityStruct();
+                    DisplayData = new DisplayStruct();
+                    GparamData = new GparamStruct();
+                    Unk88Data = new Unk88Struct();
+                    TileData = new TileStruct();
                 }
 
                 private protected override void DeepCopyTo(Part part)
                 {
                     var asset = (DummyAsset)part;
-                    asset.DisplayDataStruct = DisplayDataStruct.DeepCopy();
-                    asset.GparamConfigStruct = GparamConfigStruct.DeepCopy();
-                    asset.UnkStruct8 = UnkStruct8.DeepCopy();
-                    asset.TileLoadConfig = TileLoadConfig.DeepCopy();
+                    asset.EntityData = EntityData.DeepCopy();
+                    asset.DisplayData = DisplayData.DeepCopy();
+                    asset.GparamData = GparamData.DeepCopy();
+                    asset.Unk88Data = Unk88Data.DeepCopy();
+                    asset.TileData = TileData.DeepCopy();
                 }
 
                 internal DummyAsset(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(0);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(-1);
-                    UnkT18 = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
                 }
-
-                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayDataStruct = new DisplayStruct(br);
-                private protected override void ReadGparamData(BinaryReaderEx br) => GparamConfigStruct = new GparamStruct(br);
-                private protected override void ReadUnk8(BinaryReaderEx br) => UnkStruct8 = new Unk88Struct(br);
-                private protected override void ReadTileLoad(BinaryReaderEx br) => TileLoadConfig = new TileStruct(br);
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(UnkT18);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt32(Unk1C);
                 }
 
-                private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfigStruct.Write(bw);
-                private protected override void WriteUnk8(BinaryWriterEx bw) => UnkStruct8.Write(bw);
-                private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
+                // Layout
+                public int Unk00 { get; set; } = 0; // Hidden
+                public int Unk04 { get; set; } = 0; // Hidden
+                public int Unk08 { get; set; } = -1; // Hidden
+                public int Unk0C { get; set; } = 0; // Hidden
+                public int Unk10 { get; set; } = -1; // Hidden
+                public int Unk14 { get; set; } = -1; // Hidden
+                public int Unk18 { get; set; } = -1; // Hidden
+                public int Unk1C { get; set; } = -1; // Hidden
             }
 
             /// <summary>
@@ -2143,10 +2102,8 @@ namespace SoulsFormats
             public class DummyEnemy : EnemyBase
             {
                 private protected override PartType Type => PartType.DummyEnemy;
+                private protected override bool HasUnkA8Data => false;
 
-                /// <summary>
-                /// Creates a DummyEnemy with default values.
-                /// </summary>
                 public DummyEnemy() : base() { }
 
                 internal DummyEnemy(BinaryReaderEx br) : base(br) { }
@@ -2158,145 +2115,136 @@ namespace SoulsFormats
             public class ConnectCollision : Part
             {
                 private protected override PartType Type => PartType.ConnectCollision;
+
+                // --- Entity
+                public EntityStruct EntityData { get; set; }
+                private protected override void ReadEntityData(BinaryReaderEx br) => EntityData = new EntityStruct(br);
+                private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
+
+                // --- Display
                 private protected override bool HasDisplayData => true;
+                public DisplayStruct DisplayData { get; set; }
+                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
+                private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
+
+                // --- Display Group
                 private protected override bool HasDisplayGroupData => true;
+                public DisplayGroupStruct DisplayGroupData { get; set; }
+                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
+                private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
+
+                // --- Gparam
                 private protected override bool HasGparamData => false;
+                //public GparamStruct GparamData { get; set; }
+                //private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
+                //private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
+
+                // --- Scene Gparam
                 private protected override bool HasSceneGparamData => false;
+                //public SceneGparamStruct SceneGparamData { get; set; }
+                //private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
+                //private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
+
+                // --- Grass
                 private protected override bool HasGrassData => false;
+                //public GrassStruct GrassData { get; set; }
+                //private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
+                //private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
+
+                // --- Unk88
                 private protected override bool HasUnk88Data => true;
-                private protected override bool HasUnk9 => false;
-                private protected override bool HasTileLoadConfig => true;
-                private protected override bool HasUnk11 => true;
+                public Unk88Struct Unk88Data { get; set; }
+                private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
+                private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayStruct DisplayDataStruct { get; set; }
+                // --- Unk90
+                private protected override bool HasUnk90Data => false;
+                //public Unk90Struct Unk90Data { get; set; }
+                //private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
+                //private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
+                // --- Tile
+                private protected override bool HasTileData => true;
+                public TileStruct TileData { get; set; }
+                private protected override void ReadTileData(BinaryReaderEx br) => TileData = new TileStruct(br);
+                private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Unk88Struct UnkStruct8 { get; set; }
+                // --- UnkA0
+                private protected override bool HasUnkA0Data => true;
+                public UnkA0Struct UnkA0Data { get; set; }
+                private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
+                private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public TileStruct TileLoadConfig { get; set; }
+                // --- UnkA8
+                private protected override bool HasUnkA8Data => false;
+                //public UnkA8Struct UnkA8Data { get; set; }
+                //private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+                //private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public UnkA0Struct UnkStruct11 { get; set; }
-
-                /// <summary>
-                /// The collision part to attach to.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Collision))]
-                [NoRenderGroupInheritence()]
-                public string CollisionName { get; set; }
-                private int CollisionIndex { get; set; }
-
-                /// <summary>
-                /// The map to load when on this collision.
-                /// </summary>
-                public byte[] MapID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT08 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public bool UnkT09 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT0A { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public bool UnkT0B { get; set; }
-
-                /// <summary>
-                /// Creates a ConnectCollision with default values.
-                /// </summary>
                 public ConnectCollision() : base("hXXXXXX_XXXX")
                 {
-                    DisplayDataStruct = new DisplayStruct();
-                    DisplayGroupStruct = new DisplayGroupStruct();
-                    MapID = new byte[4];
-                    UnkStruct8 = new Unk88Struct();
-                    TileLoadConfig = new TileStruct();
-                    UnkStruct11 = new UnkA0Struct();
+                    EntityData = new EntityStruct();
+                    DisplayData = new DisplayStruct();
+                    DisplayGroupData = new DisplayGroupStruct();
+                    Unk88Data = new Unk88Struct();
+                    TileData = new TileStruct();
+                    UnkA0Data = new UnkA0Struct();
                 }
 
                 private protected override void DeepCopyTo(Part part)
                 {
                     var connect = (ConnectCollision)part;
-                    connect.DisplayDataStruct = DisplayDataStruct.DeepCopy();
-                    connect.DisplayGroupStruct = DisplayGroupStruct.DeepCopy();
-                    connect.MapID = (byte[])MapID.Clone();
-                    connect.UnkStruct8 = UnkStruct8.DeepCopy();
-                    connect.TileLoadConfig = TileLoadConfig.DeepCopy();
-                    connect.UnkStruct11 = UnkStruct11.DeepCopy();
+                    connect.EntityData = EntityData.DeepCopy();
+                    connect.DisplayData = DisplayData.DeepCopy();
+                    connect.DisplayGroupData = DisplayGroupData.DeepCopy();
+                    connect.Unk88Data = Unk88Data.DeepCopy();
+                    connect.TileData = TileData.DeepCopy();
+                    connect.UnkA0Data = UnkA0Data.DeepCopy();
+                }
+
+                internal override void GetNames(MSB_NR msb, Entries entries)
+                {
+                    base.GetNames(msb, entries);
+                    ParentHitName = MSB.FindName(msb.Parts.Collisions, ParentHitIndex);
+                }
+                internal override void GetIndices(MSB_NR msb, Entries entries)
+                {
+                    base.GetIndices(msb, entries);
+                    ParentHitIndex = MSB.FindIndex(this, msb.Parts.Collisions, ParentHitName);
                 }
 
                 internal ConnectCollision(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    CollisionIndex = br.ReadInt32();
-                    MapID = br.ReadBytes(4);
-                    UnkT08 = br.ReadByte();
-                    UnkT09 = br.ReadBoolean();
-                    UnkT0A = br.ReadByte();
-                    UnkT0B = br.ReadBoolean();
-                    br.AssertInt32(0);
+                    ParentHitIndex = br.ReadInt32();
+                    MapID = br.ReadMapIDBytes(4);
+                    Unk08 = br.ReadInt16();
+                    Unk0A = br.ReadSByte();
+                    Unk0B = br.ReadSByte();
+                    Unk0C = br.ReadInt32();
                 }
-
-                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayDataStruct = new DisplayStruct(br);
-                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupStruct = new DisplayGroupStruct(br);
-                private protected override void ReadUnk8(BinaryReaderEx br) => UnkStruct8 = new Unk88Struct(br);
-                private protected override void ReadTileLoad(BinaryReaderEx br) => TileLoadConfig = new TileStruct(br);
-                private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkStruct11 = new UnkA0Struct(br);
-
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(CollisionIndex);
-                    bw.WriteBytes(MapID);
-                    bw.WriteByte(UnkT08);
-                    bw.WriteBoolean(UnkT09);
-                    bw.WriteByte(UnkT0A);
-                    bw.WriteBoolean(UnkT0B);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(ParentHitIndex);
+                    bw.WriteMapIDBytes(MapID);
+                    bw.WriteInt16(Unk08);
+                    bw.WriteSByte(Unk0A);
+                    bw.WriteSByte(Unk0B);
+                    bw.WriteInt32(Unk0C);
                 }
 
-                private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);
-                private protected override void WriteUnk2(BinaryWriterEx bw) => DisplayGroupStruct.Write(bw);
-                private protected override void WriteUnk8(BinaryWriterEx bw) => UnkStruct8.Write(bw);
-                private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
-                private protected override void WriteUnk11(BinaryWriterEx bw) => UnkStruct11.Write(bw);
+                // Layout
+                private int ParentHitIndex { get; set; }
+                public sbyte[] MapID { get; set; } = new sbyte[4];
+                public short Unk08 { get; set; } = 0; // Hidden
+                public sbyte Unk0A { get; set; } = -1;
+                public sbyte Unk0B { get; set; } = 0; // Boolean
+                public int Unk0C { get; set; } = 0; // Hidden
 
-                internal override void GetNames(MSB_NR msb, Entries entries)
-                {
-                    base.GetNames(msb, entries);
-                    CollisionName = MSB.FindName(msb.Parts.Collisions, CollisionIndex);
-                }
-
-                internal override void GetIndices(MSB_NR msb, Entries entries)
-                {
-                    base.GetIndices(msb, entries);
-                    CollisionIndex = MSB.FindIndex(this, msb.Parts.Collisions, CollisionName);
-                }
+                [MSBReference(ReferenceType = typeof(Collision))]
+                [NoRenderGroupInheritence()]
+                public string ParentHitName { get; set; }
             }
 
             /// <summary>
@@ -2305,790 +2253,627 @@ namespace SoulsFormats
             public class Asset : Part
             {
                 private protected override PartType Type => PartType.Asset;
+
+                // --- Entity
+                public EntityStruct EntityData { get; set; }
+                private protected override void ReadEntityData(BinaryReaderEx br) => EntityData = new EntityStruct(br);
+                private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
+
+                // --- Display
                 private protected override bool HasDisplayData => true;
+                public DisplayStruct DisplayData { get; set; }
+                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
+                private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
+
+                // --- Display Group
                 private protected override bool HasDisplayGroupData => true;
+                public DisplayGroupStruct DisplayGroupData { get; set; }
+                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
+                private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
+
+                // --- Gparam
                 private protected override bool HasGparamData => true;
+                public GparamStruct GparamData { get; set; }
+                private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
+                private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
+
+                // --- Scene Gparam
                 private protected override bool HasSceneGparamData => false;
+                //public SceneGparamStruct SceneGparamData { get; set; }
+                //private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
+                //private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
+
+                // --- Grass
                 private protected override bool HasGrassData => true;
+                public GrassStruct GrassData { get; set; }
+                private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
+                private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
+
+                // --- Unk88
                 private protected override bool HasUnk88Data => true;
-                private protected override bool HasUnk9 => true;
-                private protected override bool HasTileLoadConfig => true;
-                private protected override bool HasUnk11 => true;
+                public Unk88Struct Unk88Data { get; set; }
+                private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
+                private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
+
+                // --- Unk90
+                private protected override bool HasUnk90Data => true;
+                public Unk90Struct Unk90Data { get; set; }
+                private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
+                private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
+
+                // --- Tile
+                private protected override bool HasTileData => true;
+                public TileStruct TileData { get; set; }
+                private protected override void ReadTileData(BinaryReaderEx br) => TileData = new TileStruct(br);
+                private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
+
+                // --- UnkA0
+                private protected override bool HasUnkA0Data => true;
+                public UnkA0Struct UnkA0Data { get; set; }
+                private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
+                private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
+
+                // --- UnkA8
+                private protected override bool HasUnkA8Data => true;
+                public UnkA8Struct UnkA8Data { get; set; }
+                private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+                private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayStruct DisplayDataStruct { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public DisplayGroupStruct DisplayGroupStruct { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public GparamStruct GparamConfigStruct { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public GrassStruct GrassConfigStruct { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Unk88Struct UnkStruct8 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public Unk90Struct UnkStruct9 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public TileStruct TileLoadConfig { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public UnkA0Struct UnkStruct11 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT00 { get; set; }
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT02 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT10 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public bool UnkT11 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT12 { get; set; }
-
-                /// <summary>
-                /// Value added onto model ID determining AssetModelSfxParam to use.
-                /// </summary>
-                public short AssetSfxParamRelativeID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short UnkT1E { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT24 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT28 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT30 { get; set; }
-
-                /// <summary>
-                /// The <c>ItemLotParam_map</c> row ID that this asset spawns upon interaction.
-                /// </summary>
-                public int ItemLotParamMapID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string[] PartNames { get; set; }
-
-                private int[] PartIndices { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public bool UnkT50 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT51 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte UnkT53 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string UnkT54PartName { get; set; }
-                private int UnkT54PartIndex { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [EldenRingAssetMask]
-                public int UnkModelMaskAndAnimID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT5C { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT60 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT64 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public class AssetUnkStruct1
-                {
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetStruct1_Unk00 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public bool AssetStruct1_Unk04 { get; set; }
-
-                    /// <summary>
-                    /// Disable being able to summon/ride Torrent, but only when asset isn't referencing collision DisableTorrent.
-                    /// </summary>
-                    public bool DisableTorrentAssetOnly { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetStruct1_Unk1C { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetStruct1_Unk24 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetStruct1_Unk26 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetStruct1_Unk28 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetStruct1_Unk2C { get; set; }
-
-                    /// <summary>
-                    /// Creates an AssetUnkStruct1 with default values.
-                    /// </summary>
-                    public AssetUnkStruct1() { }
-
-                    /// <summary>
-                    /// Creates a deep copy of the struct.
-                    /// </summary>
-                    public AssetUnkStruct1 DeepCopy()
-                    {
-                        return (AssetUnkStruct1)MemberwiseClone();
-                    }
-
-                    internal AssetUnkStruct1(BinaryReaderEx br)
-                    {
-                        AssetStruct1_Unk00 = br.ReadInt16();
-                        br.AssertInt16(-1);
-                        AssetStruct1_Unk04 = br.ReadBoolean();
-                        DisableTorrentAssetOnly = br.ReadBoolean();
-                        br.AssertInt16(-1);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(-1);
-                        br.AssertInt32(-1);
-                        br.AssertInt32(-1);
-                        AssetStruct1_Unk1C = br.ReadInt32();
-                        br.AssertInt32(0);
-                        AssetStruct1_Unk24 = br.ReadInt16();
-                        AssetStruct1_Unk26 = br.ReadInt16();
-                        AssetStruct1_Unk28 = br.ReadInt32();
-                        AssetStruct1_Unk2C = br.ReadInt32();
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                    }
-
-                    internal void Write(BinaryWriterEx bw)
-                    {
-                        bw.WriteInt16(AssetStruct1_Unk00);
-                        bw.WriteInt16(-1);
-                        bw.WriteBoolean(AssetStruct1_Unk04);
-                        bw.WriteBoolean(DisableTorrentAssetOnly);
-                        bw.WriteInt16(-1);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(-1);
-                        bw.WriteInt32(-1);
-                        bw.WriteInt32(-1);
-                        bw.WriteInt32(AssetStruct1_Unk1C);
-                        bw.WriteInt32(0);
-                        bw.WriteInt16(AssetStruct1_Unk24);
-                        bw.WriteInt16(AssetStruct1_Unk26);
-                        bw.WriteInt32(AssetStruct1_Unk28);
-                        bw.WriteInt32(AssetStruct1_Unk2C);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                    }
-                }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public class AssetUnkStruct2
-                {
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct2_Unk00 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct2_Unk04 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public float AssetUnkStruct2_Unk14 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct2_Unk1C { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct2_Unk1D { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct2_Unk1E { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct2_Unk1F { get; set; }
-
-                    /// <summary>
-                    /// Creates an AssetUnkStruct2 with default values.
-                    /// </summary>
-                    public AssetUnkStruct2() { }
-
-                    /// <summary>
-                    /// Creates a deep copy of the struct.
-                    /// </summary>
-                    public AssetUnkStruct2 DeepCopy()
-                    {
-                        return (AssetUnkStruct2)MemberwiseClone();
-                    }
-
-                    internal AssetUnkStruct2(BinaryReaderEx br)
-                    {
-                        AssetUnkStruct2_Unk00 = br.ReadInt32();
-                        AssetUnkStruct2_Unk04 = br.ReadInt32();
-                        br.AssertInt32(-1);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        AssetUnkStruct2_Unk14 = br.ReadSingle();
-                        br.AssertInt32(0);
-                        AssetUnkStruct2_Unk1C = br.ReadByte();
-                        AssetUnkStruct2_Unk1D = br.ReadByte();
-                        AssetUnkStruct2_Unk1E = br.ReadByte();
-                        AssetUnkStruct2_Unk1F = br.ReadByte();
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                    }
-
-                    internal void Write(BinaryWriterEx bw)
-                    {
-                        bw.WriteInt32(AssetUnkStruct2_Unk00);
-                        bw.WriteInt32(AssetUnkStruct2_Unk04);
-                        bw.WriteInt32(-1);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteSingle(AssetUnkStruct2_Unk14);
-                        bw.WriteInt32(0);
-                        bw.WriteByte(AssetUnkStruct2_Unk1C);
-                        bw.WriteByte(AssetUnkStruct2_Unk1D);
-                        bw.WriteByte(AssetUnkStruct2_Unk1E);
-                        bw.WriteByte(AssetUnkStruct2_Unk1F);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                    }
-                }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public class AssetUnkStruct3
-                {
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct3_Unk00 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public float AssetUnkStruct3_Unk04 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct3_Unk09 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct3_Unk0A { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct3_Unk0B { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetUnkStruct3_Unk0C { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public short AssetUnkStruct3_Unk0E { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public float AssetUnkStruct3_Unk10 { get; set; }
-
-                    /// <summary>
-                    /// Disables the asset when the specified map is loaded.
-                    /// </summary>
-                    public sbyte[] DisableWhenMapLoadedMapID { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct3_Unk18 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct3_Unk1C { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct3_Unk20 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public sbyte AssetUnkStruct3_Unk24 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public bool AssetUnkStruct3_Unk25 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public int AssetUnkStruct3_Unk28 { get; set; }
-
-                    /// <summary>
-                    /// Creates an AssetUnkStruct3 with default values.
-                    /// </summary>
-                    public AssetUnkStruct3()
-                    {
-                        DisableWhenMapLoadedMapID = new sbyte[4];
-                    }
-
-                    /// <summary>
-                    /// Creates a deep copy of the struct.
-                    /// </summary>
-                    public AssetUnkStruct3 DeepCopy()
-                    {
-                        var unks3 = (AssetUnkStruct3)MemberwiseClone();
-                        unks3.DisableWhenMapLoadedMapID = (sbyte[])DisableWhenMapLoadedMapID.Clone();
-                        return unks3;
-                    }
-
-                    internal AssetUnkStruct3(BinaryReaderEx br)
-                    {
-                        AssetUnkStruct3_Unk00 = br.ReadInt32();
-                        AssetUnkStruct3_Unk04 = br.ReadSingle();
-                        br.AssertSByte(-1);
-                        AssetUnkStruct3_Unk09 = br.ReadByte();
-                        AssetUnkStruct3_Unk0A = br.ReadByte();
-                        AssetUnkStruct3_Unk0B = br.ReadByte();
-                        AssetUnkStruct3_Unk0C = br.ReadInt16();
-                        AssetUnkStruct3_Unk0E = br.ReadInt16();
-                        AssetUnkStruct3_Unk10 = br.ReadSingle();
-                        DisableWhenMapLoadedMapID = br.ReadSBytes(4);
-                        AssetUnkStruct3_Unk18 = br.ReadInt32();
-                        AssetUnkStruct3_Unk1C = br.ReadInt32();
-                        AssetUnkStruct3_Unk20 = br.ReadInt32();
-                        AssetUnkStruct3_Unk24 = br.ReadSByte();
-                        AssetUnkStruct3_Unk25 = br.ReadBoolean();
-                        br.AssertByte(0);
-                        br.AssertByte(0);
-                        AssetUnkStruct3_Unk28 = br.ReadInt32();
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                    }
-
-                    internal void Write(BinaryWriterEx bw)
-                    {
-                        bw.WriteInt32(AssetUnkStruct3_Unk00);
-                        bw.WriteSingle(AssetUnkStruct3_Unk04);
-                        bw.WriteSByte(-1);
-                        bw.WriteByte(AssetUnkStruct3_Unk09);
-                        bw.WriteByte(AssetUnkStruct3_Unk0A);
-                        bw.WriteByte(AssetUnkStruct3_Unk0B);
-                        bw.WriteInt16(AssetUnkStruct3_Unk0C);
-                        bw.WriteInt16(AssetUnkStruct3_Unk0E);
-                        bw.WriteSingle(AssetUnkStruct3_Unk10);
-                        bw.WriteSBytes(DisableWhenMapLoadedMapID);
-                        bw.WriteInt32(AssetUnkStruct3_Unk18);
-                        bw.WriteInt32(AssetUnkStruct3_Unk1C);
-                        bw.WriteInt32(AssetUnkStruct3_Unk20);
-                        bw.WriteSByte(AssetUnkStruct3_Unk24);
-                        bw.WriteBoolean(AssetUnkStruct3_Unk25);
-                        bw.WriteByte(0);
-                        bw.WriteByte(0);
-                        bw.WriteInt32(AssetUnkStruct3_Unk28);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                    }
-                }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public class AssetUnkStruct4
-                {
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public bool AssetUnkStruct4_Unk00 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct4_Unk01 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public byte AssetUnkStruct4_Unk02 { get; set; }
-
-                    /// <summary>
-                    /// Unknown.
-                    /// </summary>
-                    public bool AssetUnkStruct4_Unk03 { get; set; }
-
-                    /// <summary>
-                    /// Creates an AssetUnkStruct4 with default values.
-                    /// </summary>
-                    public AssetUnkStruct4() { }
-
-                    /// <summary>
-                    /// Creates a deep copy of the struct.
-                    /// </summary>
-                    public AssetUnkStruct4 DeepCopy()
-                    {
-                        return (AssetUnkStruct4)MemberwiseClone();
-                    }
-
-                    internal AssetUnkStruct4(BinaryReaderEx br)
-                    {
-                        AssetUnkStruct4_Unk00 = br.ReadBoolean();
-                        AssetUnkStruct4_Unk01 = br.ReadByte();
-                        AssetUnkStruct4_Unk02 = br.ReadByte();
-                        AssetUnkStruct4_Unk03 = br.ReadBoolean();
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                        br.AssertInt32(0);
-                    }
-
-                    internal void Write(BinaryWriterEx bw)
-                    {
-                        bw.WriteBoolean(AssetUnkStruct4_Unk00);
-                        bw.WriteByte(AssetUnkStruct4_Unk01);
-                        bw.WriteByte(AssetUnkStruct4_Unk02);
-                        bw.WriteBoolean(AssetUnkStruct4_Unk03);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                        bw.WriteInt32(0);
-                    }
-                }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public AssetUnkStruct1 AssetUnk1 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public AssetUnkStruct2 AssetUnk2 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public AssetUnkStruct3 AssetUnk3 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public AssetUnkStruct4 AssetUnk4 { get; set; }
-
-                /// <summary>
-                /// Creates an Asset with default values.
-                /// </summary>
                 public Asset() : base("AEGxxx_xxx_xxxx")
                 {
-                    DisplayDataStruct = new DisplayStruct();
-                    DisplayGroupStruct = new DisplayGroupStruct();
-                    GparamConfigStruct = new GparamStruct();
-                    GrassConfigStruct = new GrassStruct();
-                    UnkStruct8 = new Unk88Struct();
-                    UnkStruct9 = new Unk90Struct();
-                    TileLoadConfig = new TileStruct();
-                    UnkStruct11 = new UnkA0Struct();
-
-                    AssetUnk1 = new AssetUnkStruct1();
-                    AssetUnk2 = new AssetUnkStruct2();
-                    AssetUnk3 = new AssetUnkStruct3();
-                    AssetUnk4 = new AssetUnkStruct4();
-
-                    PartNames = new string[6];
-                }
-
-                private protected override void DeepCopyTo(Part part)
-                {
-                    var asset = (Asset)part;
-                    asset.DisplayDataStruct = DisplayDataStruct.DeepCopy();
-                    asset.DisplayGroupStruct = DisplayGroupStruct.DeepCopy();
-                    asset.GparamConfigStruct = GparamConfigStruct.DeepCopy();
-                    asset.GrassConfigStruct = GrassConfigStruct.DeepCopy();
-                    asset.UnkStruct8 = UnkStruct8.DeepCopy();
-                    asset.UnkStruct9 = UnkStruct9.DeepCopy();
-                    asset.TileLoadConfig = TileLoadConfig.DeepCopy();
-                    asset.UnkStruct11 = UnkStruct11.DeepCopy();
-
-                    asset.AssetUnk1 = AssetUnk1.DeepCopy();
-                    asset.AssetUnk2 = AssetUnk2.DeepCopy();
-                    asset.AssetUnk3 = AssetUnk3.DeepCopy();
-                    asset.AssetUnk4 = AssetUnk4.DeepCopy();
-
-                    PartNames = (string[])PartNames.Clone();
+                    EntityData = new EntityStruct();
+                    DisplayData = new DisplayStruct();
+                    DisplayGroupData = new DisplayGroupStruct();
+                    GparamData = new GparamStruct();
+                    GrassData = new GrassStruct();
+                    Unk88Data = new Unk88Struct();
+                    Unk90Data = new Unk90Struct();
+                    TileData = new TileStruct();
+                    UnkA0Data = new UnkA0Struct();
+                    UnkA8Data = new UnkA8Struct();
                 }
 
                 internal Asset(BinaryReaderEx br) : base(br) { }
 
-                private int UnkT04 { get; set; }
-                private int UnkT14 { get; set; }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void DeepCopyTo(Part part)
                 {
-                    UnkT00 = br.ReadInt16();
-                    UnkT02 = br.AssertInt16([0, 1]);
-                    UnkT04 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    UnkT10 = br.ReadByte();
-                    UnkT11 = br.ReadBoolean();
-                    UnkT12 = br.ReadByte();
-                    br.AssertByte(0);
-                    UnkT14 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    AssetSfxParamRelativeID = br.ReadInt16();
-                    UnkT1E = br.ReadInt16();
-                    br.AssertInt32(-1);
-                    UnkT24 = br.ReadInt32();
-                    UnkT28 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    UnkT30 = br.ReadInt32();
-                    ItemLotParamMapID = br.ReadInt32();
-                    PartIndices = br.ReadInt32s(6);
-                    UnkT50 = br.ReadBoolean();
-                    UnkT51 = br.ReadByte();
-                    br.AssertByte(0);
-                    UnkT53 = br.ReadByte();
-                    UnkT54PartIndex = br.ReadInt32();
-                    UnkModelMaskAndAnimID = br.ReadInt32();
-                    UnkT5C = br.ReadInt32();
-                    UnkT60 = br.ReadInt32();
-                    UnkT64 = br.ReadInt32();
+                    var asset = (Asset)part;
+                    asset.EntityData = EntityData.DeepCopy();
+                    asset.DisplayData = DisplayData.DeepCopy();
+                    asset.DisplayGroupData = DisplayGroupData.DeepCopy();
+                    asset.GparamData = GparamData.DeepCopy();
+                    asset.GrassData = GrassData.DeepCopy();
+                    asset.Unk88Data = Unk88Data.DeepCopy();
+                    asset.Unk90Data = Unk90Data.DeepCopy();
+                    asset.TileData = TileData.DeepCopy();
+                    asset.UnkA0Data = UnkA0Data.DeepCopy();
+                    asset.UnkA8Data = UnkA8Data.DeepCopy();
 
-                    // Offsets for embedded structs that are fortunately always the same
-                    br.AssertInt64(0x88);
-                    br.AssertInt64(0xC8);
-                    br.AssertInt64(0x108);
-                    br.AssertInt64(0x148);
-
-                    AssetUnk1 = new AssetUnkStruct1(br);
-                    AssetUnk2 = new AssetUnkStruct2(br);
-                    AssetUnk3 = new AssetUnkStruct3(br);
-                    AssetUnk4 = new AssetUnkStruct4(br);
+                    asset.InnerStruct68 = InnerStruct68.DeepCopy();
+                    asset.InnerStruct70 = InnerStruct70.DeepCopy();
+                    asset.InnerStruct78 = InnerStruct78.DeepCopy();
+                    asset.InnerStruct80 = InnerStruct80.DeepCopy();
                 }
-
-                private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayDataStruct = new DisplayStruct(br);
-                private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupStruct = new DisplayGroupStruct(br);
-                private protected override void ReadGparamData(BinaryReaderEx br) => GparamConfigStruct = new GparamStruct(br);
-                private protected override void ReadGrassData(BinaryReaderEx br) => GrassConfigStruct = new GrassStruct(br);
-                private protected override void ReadUnk8(BinaryReaderEx br) => UnkStruct8 = new Unk88Struct(br);
-                private protected override void ReadUnk9(BinaryReaderEx br) => UnkStruct9 = new Unk90Struct(br);
-                private protected override void ReadTileLoad(BinaryReaderEx br) => TileLoadConfig = new TileStruct(br);
-                private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkStruct11 = new UnkA0Struct(br);
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteInt16(UnkT00);
-                    bw.WriteInt16(UnkT02);
-                    bw.WriteInt32(UnkT04);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteByte(UnkT10);
-                    bw.WriteBoolean(UnkT11);
-                    bw.WriteByte(UnkT12);
-                    bw.WriteByte(0);
-                    bw.WriteInt32(UnkT14);
-                    bw.WriteInt32(0);
-                    bw.WriteInt16(AssetSfxParamRelativeID);
-                    bw.WriteInt16(UnkT1E);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(UnkT24);
-                    bw.WriteInt32(UnkT28);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(UnkT30);
-                    bw.WriteInt32(ItemLotParamMapID);
-                    bw.WriteInt32s(PartIndices);
-                    bw.WriteBoolean(UnkT50);
-                    bw.WriteByte(UnkT51);
-                    bw.WriteByte(0);
-                    bw.WriteByte(UnkT53);
-                    bw.WriteInt32(UnkT54PartIndex);
-                    bw.WriteInt32(UnkModelMaskAndAnimID);
-                    bw.WriteInt32(UnkT5C);
-                    bw.WriteInt32(UnkT60);
-                    bw.WriteInt32(UnkT64);
-
-                    bw.WriteInt64(0x88);
-                    bw.WriteInt64(0xC8);
-                    bw.WriteInt64(0x108);
-                    bw.WriteInt64(0x148);
-
-                    AssetUnk1.Write(bw);
-                    AssetUnk2.Write(bw);
-                    AssetUnk3.Write(bw);
-                    AssetUnk4.Write(bw);
-                }
-
-                private protected override void WriteUnk1(BinaryWriterEx bw) => DisplayDataStruct.Write(bw);
-                private protected override void WriteUnk2(BinaryWriterEx bw) => DisplayGroupStruct.Write(bw);
-                private protected override void WriteGparamConfig(BinaryWriterEx bw) => GparamConfigStruct.Write(bw);
-                private protected override void WriteGrassConfig(BinaryWriterEx bw) => GrassConfigStruct.Write(bw);
-                private protected override void WriteUnk8(BinaryWriterEx bw) => UnkStruct8.Write(bw);
-                private protected override void WriteUnk9(BinaryWriterEx bw) => UnkStruct9.Write(bw);
-                private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
-                private protected override void WriteUnk11(BinaryWriterEx bw) => UnkStruct11.Write(bw);
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    PartNames = MSB.FindNames(entries.Parts, PartIndices);
-                    UnkT54PartName = MSB.FindName(entries.Parts, UnkT54PartIndex);
+
+                    PartName1 = MSB.FindName(entries.Parts, PartIndex1);
+                    PartName2 = MSB.FindName(entries.Parts, PartIndex2);
+                    PartName3 = MSB.FindName(entries.Parts, PartIndex3);
+                    PartName4 = MSB.FindName(entries.Parts, PartIndex4);
+                    PartName5 = MSB.FindName(entries.Parts, PartIndex5);
+                    PartName6 = MSB.FindName(entries.Parts, PartIndex6);
                 }
 
                 internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);
-                    UnkT54PartIndex = MSB.FindIndex(entries.Parts, UnkT54PartName);
+
+                    PartIndex1 = MSB.FindIndex(this, entries.Parts, PartName1);
+                    PartIndex2 = MSB.FindIndex(this, entries.Parts, PartName2);
+                    PartIndex3 = MSB.FindIndex(this, entries.Parts, PartName3);
+                    PartIndex4 = MSB.FindIndex(this, entries.Parts, PartName4);
+                    PartIndex5 = MSB.FindIndex(this, entries.Parts, PartName5);
+                    PartIndex6 = MSB.FindIndex(this, entries.Parts, PartName6);
+                }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    var start = br.Position;
+
+                    Unk00 = br.ReadByte();
+                    Unk01 = br.ReadByte();
+                    Unk02 = br.ReadInt16();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadByte();
+                    Unk11 = br.ReadByte();
+                    Unk12 = br.ReadSByte();
+                    Unk13 = br.ReadByte();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    AssetSfxParamRelativeID = br.ReadInt16();
+                    Unk1E = br.ReadInt16();
+                    Unk20 = br.ReadInt32();
+                    Unk24 = br.ReadInt32();
+                    Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
+                    Unk30 = br.ReadInt32();
+                    ItemLotParamMapID = br.ReadInt32();
+                    PartIndex1 = br.ReadInt32();
+                    Unk3C = br.ReadInt32();
+                    PartIndex2 = br.ReadInt32();
+                    PartIndex3 = br.ReadInt32();
+                    PartIndex4 = br.ReadInt32();
+                    PartIndex5 = br.ReadInt32();
+                    Unk50 = br.ReadInt32();
+                    PartIndex6 = br.ReadInt32();
+                    Unk58 = br.ReadInt32();
+                    Unk5C = br.ReadInt32();
+                    Unk60 = br.ReadInt32();
+                    Unk64 = br.ReadInt32();
+
+                    Offset68 = br.ReadInt64();
+                    Offset70 = br.ReadInt64();
+                    Offset78 = br.ReadInt64();
+                    Offset80 = br.ReadInt64();
+
+                    if (Offset68 != 0x88)
+                        throw new InvalidDataException($"Unexpected {nameof(Offset68)} 0x{Offset68:X} in type {GetType()}.");
+
+                    if (Offset70 != 0xC8)
+                        throw new InvalidDataException($"Unexpected {nameof(Offset70)} 0x{Offset70:X} in type {GetType()}.");
+
+                    if (Offset78 != 0x108)
+                        throw new InvalidDataException($"Unexpected {nameof(Offset78)} 0x{Offset78:X} in type {GetType()}.");
+
+                    if (Offset80 != 0x148)
+                        throw new InvalidDataException($"Unexpected {nameof(Offset80)} 0x{Offset80:X} in type {GetType()}.");
+
+                    br.Position = start + Offset68;
+                    InnerStruct68 = new AssetInnnerStruct68(br);
+
+                    br.Position = start + Offset70;
+                    InnerStruct70 = new AssetInnnerStruct70(br);
+
+                    br.Position = start + Offset78;
+                    InnerStruct78 = new AssetInnnerStruct78(br);
+
+                    br.Position = start + Offset80;
+                    InnerStruct80 = new AssetInnnerStruct80(br);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    var start = bw.Position;
+
+                    bw.WriteByte(Unk00);
+                    bw.WriteByte(Unk01);
+                    bw.WriteInt16(Unk02);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteByte(Unk10);
+                    bw.WriteByte(Unk11);
+                    bw.WriteSByte(Unk12);
+                    bw.WriteByte(Unk13);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt16(AssetSfxParamRelativeID);
+                    bw.WriteInt16(Unk1E);
+                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32(Unk24);
+                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(Unk2C);
+                    bw.WriteInt32(Unk30);
+                    bw.WriteInt32(ItemLotParamMapID);
+                    bw.WriteInt32(PartIndex1);
+                    bw.WriteInt32(Unk3C);
+                    bw.WriteInt32(PartIndex2);
+                    bw.WriteInt32(PartIndex3);
+                    bw.WriteInt32(PartIndex4);
+                    bw.WriteInt32(PartIndex5);
+                    bw.WriteInt32(Unk50);
+                    bw.WriteInt32(PartIndex6);
+                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(Unk5C);
+                    bw.WriteInt32(Unk60);
+                    bw.WriteInt32(Unk64);
+
+                    bw.ReserveInt64("Offset68");
+                    bw.ReserveInt64("Offset70");
+                    bw.ReserveInt64("Offset78");
+                    bw.ReserveInt64("Offset80");
+
+                    bw.FillInt64("Offset68", bw.Position - start);
+                    InnerStruct68.Write(bw);
+
+                    bw.FillInt64("Offset70", bw.Position - start);
+                    InnerStruct70.Write(bw);
+
+                    bw.FillInt64("Offset78", bw.Position - start);
+                    InnerStruct78.Write(bw);
+
+                    bw.FillInt64("Offset80", bw.Position - start);
+                    InnerStruct80.Write(bw);
+                }
+
+                // Internal
+                public AssetInnnerStruct68 InnerStruct68 { get; set; }
+                public AssetInnnerStruct70 InnerStruct70 { get; set; }
+                public AssetInnnerStruct78 InnerStruct78 { get; set; }
+                public AssetInnnerStruct80 InnerStruct80 { get; set; }
+
+                // Layout
+                public byte Unk00 { get; set; } = 0; // Boolean
+                public byte Unk01 { get; set; } = 0;
+                public short Unk02 { get; set; } = 0; // Hidden
+                public int Unk04 { get; set; } = -1;
+                public int Unk08 { get; set; } = 0; // Hidden
+                public int Unk0C { get; set; } = 0; // Hidden
+                public byte Unk10 { get; set; } = 0;
+                public byte Unk11 { get; set; } = 0; // Boolean
+                public sbyte Unk12 { get; set; } = -1;
+                public byte Unk13 { get; set; } = 0; // Hidden
+                public int Unk14 { get; set; } = 0;
+                public int Unk18 { get; set; } = 0; // Hidden
+                public short AssetSfxParamRelativeID { get; set; } = -1;
+                public short Unk1E { get; set; } = -1; // Hidden
+                public int Unk20 { get; set; } = -1; // Hidden
+                public int Unk24 { get; set; } = -1; // Hidden
+                public int Unk28 { get; set; } = 0; // Hidden
+                public int Unk2C { get; set; } = 0; // Hidden
+                public int Unk30 { get; set; } = -1; // Hidden
+                public int ItemLotParamMapID { get; set; } = -1;
+                public int PartIndex1 { get; set; } = -1;
+                public int Unk3C { get; set; } = -1; // Hidden
+                public int PartIndex2 { get; set; } = -1;
+                public int PartIndex3 { get; set; } = -1;
+                public int PartIndex4 { get; set; } = -1;
+                public int PartIndex5 { get; set; } = -1;
+                public int Unk50 { get; set; } = -1; // Hidden
+                public int PartIndex6 { get; set; } = -1;
+                public int Unk58 { get; set; } = -1;
+                public int Unk5C { get; set; } = -1; // Hidden
+                public int Unk60 { get; set; } = -1; // Hidden
+                public int Unk64 { get; set; } = -1; // Hidden
+
+                private long Offset68 { get; set; } = 0;
+                private long Offset70 { get; set; } = 0;
+                private long Offset78 { get; set; } = 0;
+                private long Offset80 { get; set; } = 0;
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName1 { get; set; }
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName2 { get; set; }
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName3 { get; set; }
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName4 { get; set; }
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName5 { get; set; }
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string PartName6 { get; set; }
+
+                public class AssetInnnerStruct68
+                {
+                    public AssetInnnerStruct68 DeepCopy()
+                    {
+                        return (AssetInnnerStruct68)MemberwiseClone();
+                    }
+
+                    internal AssetInnnerStruct68(BinaryReaderEx br)
+                    {
+                        Unk00 = br.ReadInt16();
+                        Unk02 = br.ReadInt16();
+                        Unk04 = br.ReadInt16();
+                        Unk06 = br.ReadInt16();
+                        Unk08 = br.ReadInt32();
+                        Unk0C = br.ReadInt32();
+                        Unk10 = br.ReadInt32();
+                        Unk14 = br.ReadInt32();
+                        Unk18 = br.ReadInt32();
+                        Unk1C = br.ReadInt32();
+                        Unk20 = br.ReadInt32();
+                        Unk24 = br.ReadInt32();
+                        Unk28 = br.ReadInt32();
+                        Unk2C = br.ReadInt32();
+                        Unk30 = br.ReadInt32();
+                        Unk34 = br.ReadInt32();
+                        Unk38 = br.ReadInt32();
+                        Unk3C = br.ReadInt32();
+                    }
+
+                    internal void Write(BinaryWriterEx bw)
+                    {
+                        bw.WriteInt16(Unk00);
+                        bw.WriteInt16(Unk02);
+                        bw.WriteInt16(Unk04);
+                        bw.WriteInt16(Unk06);
+                        bw.WriteInt32(Unk08);
+                        bw.WriteInt32(Unk0C);
+                        bw.WriteInt32(Unk10);
+                        bw.WriteInt32(Unk14);
+                        bw.WriteInt32(Unk18);
+                        bw.WriteInt32(Unk1C);
+                        bw.WriteInt32(Unk20);
+                        bw.WriteInt32(Unk24);
+                        bw.WriteInt32(Unk28);
+                        bw.WriteInt32(Unk2C);
+                        bw.WriteInt32(Unk30);
+                        bw.WriteInt32(Unk34);
+                        bw.WriteInt32(Unk38);
+                        bw.WriteInt32(Unk3C);
+                    }
+
+                    // Layout
+                    public short Unk00 { get; set; } = 0; // Boolean
+                    public short Unk02 { get; set; } = -1; // Hidden
+                    public short Unk04 { get; set; } = 0; // Boolean
+                    public short Unk06 { get; set; } = -1; // Hidden
+                    public int Unk08 { get; set; } = 0; // Hidden
+                    public int Unk0C { get; set; } = 0; // Hidden
+                    public int Unk10 { get; set; } = -1; // Hidden
+                    public int Unk14 { get; set; } = -1; // Hidden
+                    public int Unk18 { get; set; } = -1; // Hidden
+                    public int Unk1C { get; set; } = -1; // Hidden
+                    public int Unk20 { get; set; } = 0; // Hidden
+                    public int Unk24 { get; set; } = -1; // Hidden
+                    public int Unk28 { get; set; } = -1; // Hidden
+                    public int Unk2C { get; set; } = -1; // Hidden
+                    public int Unk30 { get; set; } = 0; // Hidden
+                    public int Unk34 { get; set; } = 0; // Hidden
+                    public int Unk38 { get; set; } = 0; // Hidden
+                    public int Unk3C { get; set; } = 0; // Hidden
+                }
+
+                public class AssetInnnerStruct70
+                {
+                    public AssetInnnerStruct70() { }
+
+                    public AssetInnnerStruct70 DeepCopy()
+                    {
+                        return (AssetInnnerStruct70)MemberwiseClone();
+                    }
+
+                    internal AssetInnnerStruct70(BinaryReaderEx br)
+                    {
+                        Unk00 = br.ReadInt32();
+                        Unk04 = br.ReadInt32();
+                        Unk08 = br.ReadInt32();
+                        Unk0C = br.ReadInt32();
+                        Unk10 = br.ReadInt32();
+                        Unk14 = br.ReadSingle();
+                        Unk18 = br.ReadInt32();
+                        Unk1C = br.ReadSByte();
+                        Unk1D = br.ReadSByte();
+                        Unk1E = br.ReadInt16();
+                        Unk20 = br.ReadInt32();
+                        Unk24 = br.ReadInt32();
+                        Unk28 = br.ReadInt32();
+                        Unk2C = br.ReadInt32();
+                        Unk30 = br.ReadInt32();
+                        Unk34 = br.ReadInt32();
+                        Unk38 = br.ReadInt32();
+                        Unk3C = br.ReadInt32();
+                    }
+
+                    internal void Write(BinaryWriterEx bw)
+                    {
+                        bw.WriteInt32(Unk00);
+                        bw.WriteInt32(Unk04);
+                        bw.WriteInt32(Unk08);
+                        bw.WriteInt32(Unk0C);
+                        bw.WriteInt32(Unk10);
+                        bw.WriteSingle(Unk14);
+                        bw.WriteInt32(Unk18);
+                        bw.WriteSByte(Unk1C);
+                        bw.WriteSByte(Unk1D);
+                        bw.WriteInt16(Unk1E);
+                        bw.WriteInt32(Unk20);
+                        bw.WriteInt32(Unk24);
+                        bw.WriteInt32(Unk28);
+                        bw.WriteInt32(Unk2C);
+                        bw.WriteInt32(Unk30);
+                        bw.WriteInt32(Unk34);
+                        bw.WriteInt32(Unk38);
+                        bw.WriteInt32(Unk3C);
+                    }
+
+                    // Layout
+                    public int Unk00 { get; set; } = 0; // Hidden
+                    public int Unk04 { get; set; } = -1;
+                    public int Unk08 { get; set; } = -1; // Hidden
+                    public int Unk0C { get; set; } = 0; // Hidden
+                    public int Unk10 { get; set; } = 0; // Hidden
+                    public float Unk14 { get; set; } = 0;
+                    public int Unk18 { get; set; } = 0;
+                    public sbyte Unk1C { get; set; } = -1;
+                    public sbyte Unk1D { get; set; } = -1;
+                    public short Unk1E { get; set; } = -1;
+                    public int Unk20 { get; set; } = 0; // Hidden
+                    public int Unk24 { get; set; } = 0; // Hidden
+                    public int Unk28 { get; set; } = 0; // Hidden
+                    public int Unk2C { get; set; } = 0; // Hidden
+                    public int Unk30 { get; set; } = 0; // Hidden
+                    public int Unk34 { get; set; } = 0; // Hidden
+                    public int Unk38 { get; set; } = 0; // Hidden
+                    public int Unk3C { get; set; } = 0; // Hidden
+                }
+
+                public class AssetInnnerStruct78
+                {
+                    public AssetInnnerStruct78() { }
+
+                    public AssetInnnerStruct78 DeepCopy()
+                    {
+                        var unks3 = (AssetInnnerStruct78)MemberwiseClone();
+                        return unks3;
+                    }
+
+                    internal AssetInnnerStruct78(BinaryReaderEx br)
+                    {
+                        Unk00 = br.ReadInt32();
+                        Unk04 = br.ReadSingle();
+                        Unk08 = br.ReadInt16();
+                        Unk0A = br.ReadByte();
+                        Unk0B = br.ReadSByte();
+                        Unk0C = br.ReadInt16();
+                        Unk0E = br.ReadInt16();
+                        Unk10 = br.ReadSingle();
+                        Unk14 = br.ReadInt32();
+                        Unk18 = br.ReadInt32();
+                        Unk1C = br.ReadInt32();
+                        Unk20 = br.ReadInt32();
+                        Unk24 = br.ReadSByte();
+                        Unk25 = br.ReadByte();
+                        Unk26 = br.ReadInt16();
+                        Unk28 = br.ReadInt32();
+                        Unk2C = br.ReadInt32();
+                        Unk30 = br.ReadInt32();
+                        Unk34 = br.ReadInt32();
+                        Unk38 = br.ReadInt32();
+                        Unk3C = br.ReadInt32();
+                    }
+
+                    internal void Write(BinaryWriterEx bw)
+                    {
+                        bw.WriteInt32(Unk00);
+                        bw.WriteSingle(Unk04);
+                        bw.WriteInt16(Unk08);
+                        bw.WriteByte(Unk0A);
+                        bw.WriteSByte(Unk0B);
+                        bw.WriteInt16(Unk0C);
+                        bw.WriteInt16(Unk0E);
+                        bw.WriteSingle(Unk10);
+                        bw.WriteInt32(Unk14);
+                        bw.WriteInt32(Unk18);
+                        bw.WriteInt32(Unk1C);
+                        bw.WriteInt32(Unk20);
+                        bw.WriteSByte(Unk24);
+                        bw.WriteByte(Unk25);
+                        bw.WriteInt16(Unk26);
+                        bw.WriteInt32(Unk28);
+                        bw.WriteInt32(Unk2C);
+                        bw.WriteInt32(Unk30);
+                        bw.WriteInt32(Unk34);
+                        bw.WriteInt32(Unk38);
+                        bw.WriteInt32(Unk3C);
+                    }
+
+                    // Layout
+                    public int Unk00 { get; set; } = 0; // Boolean
+                    public float Unk04 { get; set; } = 0;
+                    public short Unk08 { get; set; } = -1; // Hidden
+                    public byte Unk0A { get; set; } = 0;
+                    public sbyte Unk0B { get; set; } = -1;
+                    public short Unk0C { get; set; } = -1;
+                    public short Unk0E { get; set; } = 0; // Hidden
+                    public float Unk10 { get; set; } = 0; // Hidden
+                    public int Unk14 { get; set; } = -1; // Hidden
+                    public int Unk18 { get; set; } = -1; // Hidden
+                    public int Unk1C { get; set; } = -1; // Hidden
+                    public int Unk20 { get; set; } = -1; // Hidden
+                    public sbyte Unk24 { get; set; } = -1; // Hidden
+                    public byte Unk25 { get; set; } = 0; // Hidden
+                    public short Unk26 { get; set; } = 0; // Hidden
+                    public int Unk28 { get; set; } = 0; // Hidden
+                    public int Unk2C { get; set; } = 0; // Hidden
+                    public int Unk30 { get; set; } = 0; // Hidden
+                    public int Unk34 { get; set; } = 0; // Hidden
+                    public int Unk38 { get; set; } = 0; // Hidden
+                    public int Unk3C { get; set; } = 0; // Hidden
+
+                }
+
+                /// <summary>
+                /// Unknown.
+                /// </summary>
+                public class AssetInnnerStruct80
+                {
+                    public AssetInnnerStruct80() { }
+
+                    public AssetInnnerStruct80 DeepCopy()
+                    {
+                        return (AssetInnnerStruct80)MemberwiseClone();
+                    }
+
+                    internal AssetInnnerStruct80(BinaryReaderEx br)
+                    {
+                        Unk00 = br.ReadByte();
+                        Unk01 = br.ReadSByte();
+                        Unk02 = br.ReadSByte();
+                        Unk03 = br.ReadByte();
+                        Unk04 = br.ReadInt32();
+                        Unk08 = br.ReadInt32();
+                        Unk0C = br.ReadInt32();
+                        Unk10 = br.ReadInt32();
+                        Unk14 = br.ReadInt32();
+                        Unk18 = br.ReadInt32();
+                        Unk1C = br.ReadInt32();
+                        Unk20 = br.ReadInt32();
+                        Unk24 = br.ReadInt32();
+                        Unk28 = br.ReadInt32();
+                        Unk2C = br.ReadInt32();
+                        Unk30 = br.ReadInt32();
+                        Unk34 = br.ReadInt32();
+                        Unk38 = br.ReadInt32();
+                        Unk3C = br.ReadInt32();
+                    }
+
+                    internal void Write(BinaryWriterEx bw)
+                    {
+                        bw.WriteByte(Unk00);
+                        bw.WriteSByte(Unk01);
+                        bw.WriteSByte(Unk02);
+                        bw.WriteByte(Unk03);
+                        bw.WriteInt32(Unk04);
+                        bw.WriteInt32(Unk08);
+                        bw.WriteInt32(Unk0C);
+                        bw.WriteInt32(Unk10);
+                        bw.WriteInt32(Unk14);
+                        bw.WriteInt32(Unk18);
+                        bw.WriteInt32(Unk1C);
+                        bw.WriteInt32(Unk20);
+                        bw.WriteInt32(Unk24);
+                        bw.WriteInt32(Unk28);
+                        bw.WriteInt32(Unk2C);
+                        bw.WriteInt32(Unk30);
+                        bw.WriteInt32(Unk34);
+                        bw.WriteInt32(Unk38);
+                        bw.WriteInt32(Unk3C);
+                    }
+
+                    // Layout
+                    public byte Unk00 { get; set; } = 0; // Boolean
+                    public sbyte Unk01 { get; set; } = -1; // Hidden
+                    public sbyte Unk02 { get; set; } = -1; 
+                    public byte Unk03 { get; set; } = 0; // Hidden
+                    public int Unk04 { get; set; } = 0; // Hidden
+                    public int Unk08 { get; set; } = 0; // Hidden
+                    public int Unk0C { get; set; } = 0; // Hidden
+                    public int Unk10 { get; set; } = 0; // Hidden
+                    public int Unk14 { get; set; } = 0; // Hidden
+                    public int Unk18 { get; set; } = 0; // Hidden
+                    public int Unk1C { get; set; } = 0; // Hidden
+                    public int Unk20 { get; set; } = 0; // Hidden
+                    public int Unk24 { get; set; } = 0; // Hidden
+                    public int Unk28 { get; set; } = 0; // Hidden
+                    public int Unk2C { get; set; } = 0; // Hidden
+                    public int Unk30 { get; set; } = 0; // Hidden
+                    public int Unk34 { get; set; } = 0; // Hidden
+                    public int Unk38 { get; set; } = 0; // Hidden
+                    public int Unk3C { get; set; } = 0; // Hidden
                 }
             }
         }
