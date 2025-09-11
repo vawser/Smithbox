@@ -8565,20 +8565,20 @@
         "<Table> Improved Lightning Damage Negation +2",
         "<Table> Improved Holy Damage Negation +1",
         "<Table> Improved Holy Damage Negation +2",
-        "<Table> Improved Poison Resistance +1",
-        "<Table> Improved Poison Resistance +2",
-        "<Table> Improved Blood Loss Resistance +1",
-        "<Table> Improved Blood Loss Resistance +2",
-        "<Table> Improved Sleep Resistance +1",
-        "<Table> Improved Sleep Resistance +2",
-        "<Table> Improved Death Blight Resistance +1",
-        "<Table> Improved Death Blight Resistance +2",
-        "<Table> Improved Rot Resistance +1",
-        "<Table> Improved Rot Resistance +2",
-        "<Table> Improved Frost Resistance +1",
-        "<Table> Improved Frost Resistance +2",
-        "<Table> Improved Madness Resistance +1",
-        "<Table> Improved Madness Resistance +2",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
+        "<Table> (0% weight)",
         "<Table> Partial HP Restoration upon Post-Damage Attacks +1",
         "<Table> Partial HP Restoration upon Post-Damage Attacks +2",
         "<Table> (0% weight)",
@@ -9035,19 +9035,19 @@
         "<Table> (0% weight)",
         "<Table> (0% weight)",
         "<Table> (0% weight)",
+        "<Table> Improved Poison Resistance +1",
         "<Table> (0% weight)",
+        "<Table> Improved Blood Loss Resistance +1",
         "<Table> (0% weight)",
+        "<Table> Improved Sleep Resistance +1",
         "<Table> (0% weight)",
+        "<Table> Improved Death Blight Resistance +1",
         "<Table> (0% weight)",
+        "<Table> Improved Rot Resistance +1",
         "<Table> (0% weight)",
+        "<Table> Improved Frost Resistance +1",
         "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
-        "<Table> (0% weight)",
+        "<Table> Improved Madness Resistance +1",
         "<Table> (0% weight)",
         "<Table> (0% weight)",
         "<Table> (0% weight)",
@@ -9175,7 +9175,7 @@
         "<Table> Dormant Power Helps Discover Greatshields",
         "<Table> Dormant Power Helps Discover Staves",
         "<Table> Dormant Power Helps Discover Sacred Seals",
-        "<Table> Dormant Power Helps Discover Torches",
+        "<Table> (0% weight)",
         "<Table> [Wylder] Improved Mind, Reduced Vigor",
         "<Table> [Wylder] Improved Intelligence and Faith, Reduced Strength and Dexterity",
         "<Table> [Guardian] Improved Strength and Dexterity, Reduced Vigor",
@@ -9434,12 +9434,6 @@
       ]
     },
     {
-      "ID": 6030201,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 6030600,
       "Entries": [
         "Art gauge charged from successful guarding +1"
@@ -9470,12 +9464,6 @@
       ]
     },
     {
-      "ID": 6035101,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 6040100,
       "Entries": [
         "Improved Guard Counters +1"
@@ -9494,21 +9482,9 @@
       ]
     },
     {
-      "ID": 6040301,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 6040400,
       "Entries": [
         "Improved Throwing Knife Damage +1"
-      ]
-    },
-    {
-      "ID": 6040401,
-      "Entries": [
-        ""
       ]
     },
     {
@@ -9518,21 +9494,33 @@
       ]
     },
     {
-      "ID": 6040501,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 6043100,
       "Entries": [
         "Improved Perfuming Arts +1"
       ]
     },
     {
-      "ID": 6043101,
+      "ID": 6060300,
       "Entries": [
-        ""
+        "Max HP increased for each great enemy defeated at a Great Church."
+      ]
+    },
+    {
+      "ID": 6060400,
+      "Entries": [
+        "Runes and Item Discovery increased for each great enemy defeated at a Fort"
+      ]
+    },
+    {
+      "ID": 6060500,
+      "Entries": [
+        "Arcane increased for each great enemy defeated at a Ruin"
+      ]
+    },
+    {
+      "ID": 6060600,
+      "Entries": [
+        "Max stamina increased for each great enemy defeated at a Great Encampment"
       ]
     },
     {
@@ -9677,18 +9665,6 @@
       "ID": 6610700,
       "Entries": [
         "Reduced FP Consumption"
-      ]
-    },
-    {
-      "ID": 6610701,
-      "Entries": [
-        ""
-      ]
-    },
-    {
-      "ID": 6610702,
-      "Entries": [
-        ""
       ]
     },
     {
@@ -9950,21 +9926,297 @@
       ]
     },
     {
-      "ID": 6800000,
+      "ID": 6630000,
       "Entries": [
-        ""
+        "Dormant Power Helps Discover Daggers"
       ]
     },
     {
-      "ID": 6800200,
+      "ID": 6630100,
       "Entries": [
-        ""
+        "Dormant Power Helps Discover Straight Swords"
       ]
     },
     {
-      "ID": 6810100,
+      "ID": 6630200,
       "Entries": [
-        ""
+        "Dormant Power Helps Discover Greatswords"
+      ]
+    },
+    {
+      "ID": 6630300,
+      "Entries": [
+        "Dormant Power Helps Discover Colossal Swords"
+      ]
+    },
+    {
+      "ID": 6630400,
+      "Entries": [
+        "Dormant Power Helps Discover Curved Swords"
+      ]
+    },
+    {
+      "ID": 6630500,
+      "Entries": [
+        "Dormant Power Helps Discover Curved Greatswords"
+      ]
+    },
+    {
+      "ID": 6630600,
+      "Entries": [
+        "Dormant Power Helps Discover Katana"
+      ]
+    },
+    {
+      "ID": 6630700,
+      "Entries": [
+        "Dormant Power Helps Discover Twinblades"
+      ]
+    },
+    {
+      "ID": 6630800,
+      "Entries": [
+        "Dormant Power Helps Discover Thrusting Swords"
+      ]
+    },
+    {
+      "ID": 6630900,
+      "Entries": [
+        "Dormant Power Helps Discover Heavy Thrusting Swords"
+      ]
+    },
+    {
+      "ID": 6631000,
+      "Entries": [
+        "Dormant Power Helps Discover Axes"
+      ]
+    },
+    {
+      "ID": 6631100,
+      "Entries": [
+        "Dormant Power Helps Discover Greataxes"
+      ]
+    },
+    {
+      "ID": 6631200,
+      "Entries": [
+        "Dormant Power Helps Discover Hammers"
+      ]
+    },
+    {
+      "ID": 6631300,
+      "Entries": [
+        "Dormant Power Helps Discover Great Hammers"
+      ]
+    },
+    {
+      "ID": 6631400,
+      "Entries": [
+        "Dormant Power Helps Discover Flails"
+      ]
+    },
+    {
+      "ID": 6631500,
+      "Entries": [
+        "Dormant Power Helps Discover Spears"
+      ]
+    },
+    {
+      "ID": 6631600,
+      "Entries": [
+        "Dormant Power Helps Discover Great Spears"
+      ]
+    },
+    {
+      "ID": 6631700,
+      "Entries": [
+        "Dormant Power Helps Discover Halberds"
+      ]
+    },
+    {
+      "ID": 6631800,
+      "Entries": [
+        "Dormant Power Helps Discover Reapers"
+      ]
+    },
+    {
+      "ID": 6631900,
+      "Entries": [
+        "Dormant Power Helps Discover Fists"
+      ]
+    },
+    {
+      "ID": 6632000,
+      "Entries": [
+        "Dormant Power Helps Discover Claws"
+      ]
+    },
+    {
+      "ID": 6632100,
+      "Entries": [
+        "Dormant Power Helps Discover Whips"
+      ]
+    },
+    {
+      "ID": 6632200,
+      "Entries": [
+        "Dormant Power Helps Discover Colossal Weapons"
+      ]
+    },
+    {
+      "ID": 6632300,
+      "Entries": [
+        "Dormant Power Helps Discover Bows"
+      ]
+    },
+    {
+      "ID": 6632400,
+      "Entries": [
+        "Dormant Power Helps Discover Greatbows"
+      ]
+    },
+    {
+      "ID": 6632500,
+      "Entries": [
+        "Dormant Power Helps Discover Crossbows"
+      ]
+    },
+    {
+      "ID": 6632600,
+      "Entries": [
+        "Dormant Power Helps Discover Ballistas"
+      ]
+    },
+    {
+      "ID": 6632700,
+      "Entries": [
+        "Dormant Power Helps Discover Small Shields"
+      ]
+    },
+    {
+      "ID": 6632800,
+      "Entries": [
+        "Dormant Power Helps Discover Medium Shields"
+      ]
+    },
+    {
+      "ID": 6632900,
+      "Entries": [
+        "Dormant Power Helps Discover Greatshields"
+      ]
+    },
+    {
+      "ID": 6633000,
+      "Entries": [
+        "Dormant Power Helps Discover Staves"
+      ]
+    },
+    {
+      "ID": 6633100,
+      "Entries": [
+        "Dormant Power Helps Discover Sacred Seals"
+      ]
+    },
+    {
+      "ID": 6633200,
+      "Entries": [
+        "Dormant Power Helps Discover Torches"
+      ]
+    },
+    {
+      "ID": 6640000,
+      "Entries": [
+        "[Wylder] Improved Mind, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6640100,
+      "Entries": [
+        "[Wylder] Improved Intelligence and Faith, Reduced Strength and Dexterity"
+      ]
+    },
+    {
+      "ID": 6641000,
+      "Entries": [
+        "[Guardian] Improved Strength and Dexterity, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6641100,
+      "Entries": [
+        "[Guardian] Improved Mind and Faith, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6642000,
+      "Entries": [
+        "[Ironeye] Improved Arcane, Reduced Dexterity"
+      ]
+    },
+    {
+      "ID": 6642100,
+      "Entries": [
+        "[Ironeye] Improved Vigor and Strength, Reduced Dexterity"
+      ]
+    },
+    {
+      "ID": 6643000,
+      "Entries": [
+        "[Duchess] Improved Vigor and Strength, Reduced Mind"
+      ]
+    },
+    {
+      "ID": 6643100,
+      "Entries": [
+        "[Duchess] Improved Mind and Faith, Reduced Intelligence"
+      ]
+    },
+    {
+      "ID": 6644000,
+      "Entries": [
+        "[Raider] Improved Mind and Intelligence, Reduced Vigor and Endurance"
+      ]
+    },
+    {
+      "ID": 6644100,
+      "Entries": [
+        "[Raider] Improved Arcane, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6645000,
+      "Entries": [
+        "[Revenant] Improved Vigor and Endurance, Reduced Mind"
+      ]
+    },
+    {
+      "ID": 6645100,
+      "Entries": [
+        "[Revenant] Improved Strength, Reduced Faith"
+      ]
+    },
+    {
+      "ID": 6646000,
+      "Entries": [
+        "[Recluse] Improved Vigor, Endurance, and Dexterity, Reduced Intelligence and Faith"
+      ]
+    },
+    {
+      "ID": 6646100,
+      "Entries": [
+        "[Recluse] Improved Intelligence and Faith, Reduced Mind"
+      ]
+    },
+    {
+      "ID": 6647000,
+      "Entries": [
+        "[Executor] Improved Vigor and Endurance, Reduced Arcane"
+      ]
+    },
+    {
+      "ID": 6647100,
+      "Entries": [
+        "[Executor] Improved Dexterity and Arcane, Reduced Vigor"
       ]
     },
     {
@@ -10058,18 +10310,6 @@
       ]
     },
     {
-      "ID": 6850000,
-      "Entries": [
-        ""
-      ]
-    },
-    {
-      "ID": 6850100,
-      "Entries": [
-        ""
-      ]
-    },
-    {
       "ID": 6850200,
       "Entries": [
         "All Resistances Down"
@@ -10115,12 +10355,6 @@
       "ID": 6851400,
       "Entries": [
         "Rot Buildup When Below Max HP"
-      ]
-    },
-    {
-      "ID": 6851500,
-      "Entries": [
-        "(0% weight)"
       ]
     },
     {
@@ -16643,6 +16877,88 @@
         "<Table> Improved Thrusting Counterattack",
         "<Table> Improved Flask HP Restoration",
         "<Table> More Runes From Defeated Enemies"
+      ]
+    },
+    {
+      "ID": 603000000,
+      "Entries": [
+        "<Table> Increased Maximum HP",
+        "<Table> Increased Maximum FP",
+        "<Table> Reduced FP Consumption",
+        "<Table> Increased Maximum Stamina",
+        "<Table> Improved Stamina Recovery",
+        "<Table> Physical Attack Up",
+        "<Table> Improved Affinity Attack Power",
+        "<Table> Improved Stance-Breaking",
+        "<Table> Improved Physical Damage Negation",
+        "<Table> Improved Affinity Damage Negation",
+        "<Table> All Resistances Up",
+        "<Table> Improved Poise",
+        "<Table> Improved Sorceries & Incantations",
+        "<Table> Increased Sorcery & Incantation Duration",
+        "<Table> Improved Thrusting Counterattack",
+        "<Table> Improved Flask HP Restoration",
+        "<Table> More Runes From Defeated Enemies",
+        "<Table> Ice Storm upon Charged Slash",
+        "<Table> Black Flames upon Charge Attacks",
+        "<Table> Phantom Attack upon Charge Attacks",
+        "<Table> Holy Shockwave upon Charge Attacks",
+        "<Table> Luring Enemies upon Charge Attacks",
+        "<Table> Magma upon Charge Attacks",
+        "<Table> Lightning upon Charge Attacks",
+        "<Table> Charge Attacks Invoke Sleep Mist"
+      ]
+    },
+    {
+      "ID": 603000100,
+      "Entries": [
+        "<Table> Increased Maximum HP",
+        "<Table> Increased Maximum FP",
+        "<Table> Reduced FP Consumption",
+        "<Table> Increased Maximum Stamina",
+        "<Table> Improved Stamina Recovery",
+        "<Table> Physical Attack Up",
+        "<Table> Improved Affinity Attack Power",
+        "<Table> Improved Stance-Breaking",
+        "<Table> Improved Physical Damage Negation",
+        "<Table> Improved Affinity Damage Negation",
+        "<Table> All Resistances Up",
+        "<Table> Improved Poise",
+        "<Table> Improved Sorceries & Incantations",
+        "<Table> Increased Sorcery & Incantation Duration",
+        "<Table> Improved Thrusting Counterattack",
+        "<Table> Improved Flask HP Restoration",
+        "<Table> More Runes From Defeated Enemies",
+        "<Table> Projectiles Launched upon Charge Attacks",
+        "<Table> Lightning upon Precision Aiming",
+        "<Table> Poison Mist upon Precision Aiming",
+        "<Table> Rot Mist upon Precision Aiming",
+        "<Table> Bloodflies upon Precision Aiming"
+      ]
+    },
+    {
+      "ID": 603000200,
+      "Entries": [
+        "<Table> Increased Maximum HP",
+        "<Table> Increased Maximum FP",
+        "<Table> Reduced FP Consumption",
+        "<Table> Increased Maximum Stamina",
+        "<Table> Improved Stamina Recovery",
+        "<Table> Physical Attack Up",
+        "<Table> Improved Affinity Attack Power",
+        "<Table> Improved Stance-Breaking",
+        "<Table> Improved Physical Damage Negation",
+        "<Table> Improved Affinity Damage Negation",
+        "<Table> All Resistances Up",
+        "<Table> Improved Poise",
+        "<Table> Improved Sorceries & Incantations",
+        "<Table> Increased Sorcery & Incantation Duration",
+        "<Table> Improved Thrusting Counterattack",
+        "<Table> Improved Flask HP Restoration",
+        "<Table> More Runes From Defeated Enemies",
+        "<Table> Flask Healing Also Restores FP",
+        "<Table> Failing to Cast Spell Restores FP",
+        "<Table> Guarding Ups Sorceries & Incantations"
       ]
     },
     {

@@ -885,7 +885,7 @@
                 { "ID": "2284", "Name": "Taking Damage Boosts Damage Negation (1)", "Description": "" },
                 { "ID": "2285", "Name": "Taking Damage Boosts Damage Negation (2)", "Description": "" },
                 { "ID": "2286", "Name": "Taking Damage Boosts Damage Negation (3)", "Description": "" },
-                { "ID": "2287", "Name": "Related to Madness", "Description": "" },
+                { "ID": "2287", "Name": "Active Only for Deep of Night", "Description": "" },
                 
                 { "ID": "2304", "Name": "Parries Activate Golden Retaliation", "Description": "" },
                 { "ID": "2305", "Name": "Parries Activate Golden Retaliation", "Description": "" },
