@@ -17,7 +17,6 @@
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
-- Param Editor: Updater doesn't apply mass edit update commands to modified / added rows
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
@@ -25,3 +24,79 @@
 # TODO NOW
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
 
+EntityData = new EntityStruct();
+DisplayData = new DisplayStruct();
+DisplayGroupData = new DisplayGroupStruct();
+GparamData = new GparamStruct();
+SceneGparamData = new SceneGparamStruct();
+GrassData = new GrassStruct();
+Unk88Data = new Unk88Struct();
+Unk90Data = new Unk90Struct();
+TileData = new TileStruct();
+UnkA0Data = new UnkA0Struct();
+UnkA8Data = new UnkA8Struct();
+                    
+// --- Entity
+public EntityStruct EntityData { get; set; }
+private protected override void ReadEntityData(BinaryReaderEx br) => EntityData = new EntityStruct(br);
+private protected override void WriteEntityData(BinaryWriterEx bw) => EntityData.Write(bw);
+
+// --- Display
+private protected override bool HasDisplayData => true;
+public DisplayStruct DisplayData { get; set; }
+private protected override void ReadDisplayData(BinaryReaderEx br) => DisplayData = new DisplayStruct(br);
+private protected override void WriteDisplayData(BinaryWriterEx bw) => DisplayData.Write(bw);
+
+// --- Display Group
+private protected override bool HasDisplayGroupData => false;
+//public DisplayGroupStruct DisplayGroupData { get; set; }
+//private protected override void ReadDisplayGroupData(BinaryReaderEx br) => DisplayGroupData = new DisplayGroupStruct(br);
+//private protected override void WriteDisplayGroupData(BinaryWriterEx bw) => DisplayGroupData.Write(bw);
+
+// --- Gparam
+private protected override bool HasGparamData => true;
+public GparamStruct GparamData { get; set; }
+private protected override void ReadGparamData(BinaryReaderEx br) => GparamData = new GparamStruct(br);
+private protected override void WriteGparamData(BinaryWriterEx bw) => GparamData.Write(bw);
+
+// --- Scene Gparam
+private protected override bool HasSceneGparamData => false;
+//public SceneGparamStruct SceneGparamData { get; set; }
+//private protected override void ReadSceneGparamData(BinaryReaderEx br) => SceneGparamData = new SceneGparamStruct(br);
+//private protected override void WriteSceneGparamData(BinaryWriterEx bw) => SceneGparamData.Write(bw);
+
+// --- Grass
+private protected override bool HasGrassData => true;
+public GrassStruct GrassData { get; set; }
+private protected override void ReadGrassData(BinaryReaderEx br) => GrassData = new GrassStruct(br);
+private protected override void WriteGrassData(BinaryWriterEx bw) => GrassData.Write(bw);
+
+// --- Unk88
+private protected override bool HasUnk88Data => true;
+public Unk88Struct Unk88Data { get; set; }
+private protected override void ReadUnk88Data(BinaryReaderEx br) => Unk88Data = new Unk88Struct(br);
+private protected override void WriteUnk88Data(BinaryWriterEx bw) => Unk88Data.Write(bw);
+
+// --- Unk90
+private protected override bool HasUnk90Data => true;
+public Unk90Struct Unk90Data { get; set; }
+private protected override void ReadUnk90Data(BinaryReaderEx br) => Unk90Data = new Unk90Struct(br);
+private protected override void WriteUnk90Data(BinaryWriterEx bw) => Unk90Data.Write(bw);
+
+// --- Tile
+private protected override bool HasTileData => true;
+public TileStruct TileData { get; set; }
+private protected override void ReadTileData(BinaryReaderEx br) => TileData = new TileStruct(br);
+private protected override void WriteTileData(BinaryWriterEx bw) => TileData.Write(bw);
+
+// --- UnkA0
+private protected override bool HasUnkA0Data => true;
+public UnkA0Struct UnkA0Data { get; set; }
+private protected override void ReadUnkA0Data(BinaryReaderEx br) => UnkA0Data = new UnkA0Struct(br);
+private protected override void WriteUnkA0Data(BinaryWriterEx bw) => UnkA0Data.Write(bw);
+
+// --- UnkA8
+private protected override bool HasUnkA8Data => true;
+public UnkA8Struct UnkA8Data { get; set; }
+private protected override void ReadUnkA8Data(BinaryReaderEx br) => UnkA8Data = new UnkA8Struct(br);
+private protected override void WriteUnkA8Data(BinaryWriterEx bw) => UnkA8Data.Write(bw);

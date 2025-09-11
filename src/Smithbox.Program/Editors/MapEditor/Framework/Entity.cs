@@ -1484,7 +1484,7 @@ public class Entity : ISelectable, IDisposable
     public bool IsRegionConnection()
     {
         return WrappedObject is MSBE.Region.Connection ||
-            WrappedObject is MSB_NR.Region.Connection ? true : false;
+            WrappedObject is MSB_NR.Region.MapConnection ? true : false;
     }
 
     /// <summary>
@@ -1827,7 +1827,7 @@ public class MsbEntity : Entity
                 case ProjectType.NR:
                     if (WrappedObject is MSB_NR.Part.EnemyBase nre)
                     {
-                        var npcParamId = nre.NPCParamID;
+                        var npcParamId = nre.NpcParamId;
 
                         if (npcParam.ContainsRow(npcParamId))
                         {

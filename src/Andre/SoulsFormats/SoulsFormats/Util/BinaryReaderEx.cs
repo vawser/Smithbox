@@ -98,7 +98,7 @@ namespace SoulsFormats
         /// <summary>
         /// Reads length sbytes, makes the last returned element a BCD-decoded value if valid.
         /// </summary>
-        public sbyte[] ReadReversedSBytesButLastIsHex(int length)
+        public sbyte[] ReadMapIDBytes(int length)
         {
             sbyte[] sbytes = ReadSBytes(length);
             if (length > 0)

@@ -74,7 +74,7 @@ namespace SoulsFormats
             bw.Write(bytes);
         }
 
-        public void WriteReversedSBytesButLastIsHex(sbyte[] sbytes)
+        public void WriteMapIDBytes(sbyte[] sbytes)
         {
             if (sbytes == null) throw new ArgumentNullException(nameof(sbytes));
 

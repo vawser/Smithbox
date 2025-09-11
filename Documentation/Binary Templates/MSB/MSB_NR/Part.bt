@@ -214,7 +214,7 @@ typedef struct {
     int unk40; // 0
     int variation; // -1
     int unk48 <hidden=true>; Assert(!unk48);
-    int unk4c <hidden=true>; Assert(!unk4c);
+    int unk4c;
 } PartCommon;
 
 typedef struct {

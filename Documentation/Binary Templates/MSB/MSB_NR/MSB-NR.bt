@@ -11,7 +11,7 @@
 //   History: 
 //------------------------------------------------
 
-#include "../../../Common.bt"
+#include "../Common.bt"
 #include "../MSB.bt"
 
 typedef byte MapId[4] <read=Str("m%02d_%02d_%02d_%02d",

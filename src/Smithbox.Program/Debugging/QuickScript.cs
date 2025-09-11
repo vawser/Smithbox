@@ -21,10 +21,10 @@ public class QuickScript
 {
     public static void ApplyQuickScript(Smithbox baseEditor, ProjectEntry curProject)
     {
-        GenerateTableGroupNmaes(baseEditor, curProject);
+        MapWriteValidator.ValidatorMapWrite(baseEditor, curProject);
     }
 
-    public static void GenerateTableGroupNmaes(Smithbox baseEditor, ProjectEntry curProject)
+    public static void GenerateTableGroupNames(Smithbox baseEditor, ProjectEntry curProject)
     {
         var targetParam = "ItemTableParam";
         Dictionary<int, Param.Row> uniqueRows = new();

@@ -1,10 +1,10 @@
 //------------------------------------------------
-//--- 010 Editor v9.0.1 Binary Template
+//--- 010 Editor v15.0.2 Binary Template
 //
-//      File: MSB.bt
+//      File: MSB/MSB.bt
 //   Authors: TKGP
 //   Version: 
-//   Purpose: Common structs for MSB formats
+//   Purpose: 
 //  Category: 
 // File Mask: 
 //  ID Bytes: 
@@ -14,74 +14,27 @@
 typedef struct {
     char magic[4]; Assert(magic == "MSB ");
     int unk04; Assert(unk04 == 1);
-    int headerSize; Assert(headerSize == 0x10);
-    byte isBigEndian; Assert(isBigEndian == 0);
-    byte isBitBigEndian; Assert(isBitBigEndian == 0);
+    int unk08; Assert(unk08 == 0x10);
+    byte bigEndian; Assert(bigEndian == 0);
+    byte bitBigEndian; Assert(bitBigEndian == 0);
     byte textEncoding; Assert(textEncoding == 1);
-    byte is64BitOffset; Assert(is64BitOffset == -1);
-} Header;
+    byte is64Bit; Assert(is64Bit == -1);
+} Header <bgcolor=cLtRed>;
 
 
-typedef struct (int assertVersion, string assertName, int encoding) {
-    int version; if (assertVersion != -1) Assert(version == assertVersion);
-    if (VARINT_LONG) {
-        int count;
-        OffsetString name(1, encoding); Assert(name.str == assertName);
-    } else {
-        OffsetString name(0, encoding); Assert(name.str == assertName);
-        int count;
+typedef struct {
+    int version;
+    int count; Assert(count >= 1);
+    quad nameOffset <format=hex>;
+    if (count - 1) {
+        quad offsets[count - 1] <format=hex>;
     }
-    if (count > 1) {
-        Varint offsets[count - 1] <optimize=true>;
-    }
-    Varint nextParamOffset;
-} Param <read=ReadParam>;
+    quad nextParamOffset <format=hex>;
+    
+    FSeek(nameOffset);
+    wstring name;
+} ParamHeader <read=ReadParamHeader, bgcolor=cWhite, fgcolor=cBlack>;
 
-string ReadParam(Param &param) {
-    string str;
-    SPrintf(str, "[%5i] %2i %s", param.count - 1, param.version, param.name.str);
-    return str;
+wstring ReadParamHeader(ParamHeader &header) {
+    return Str("[%4d] ", header.count - 1) + header.name + Str(" v%d", header.version);
 }
-
-
-enum <int> ShapeType {
-    ShapeTypeNone = -1,
-    ShapeTypePoint = 0,
-    ShapeTypeCircle = 1,
-    ShapeTypeSphere = 2,
-    ShapeTypeCylinder = 3,
-    ShapeTypeRect = 4,
-    ShapeTypeBox = 5,
-    ShapeTypeComposite = 6
-};
-
-typedef struct {
-    float radius;
-} ShapeCircle;
-
-typedef struct {
-    float radius;
-} ShapeSphere;
-
-typedef struct {
-    float radius;
-    float height;
-} ShapeCylinder;
-
-typedef struct {
-    float width;
-    float depth;
-} ShapeRect;
-
-typedef struct {
-    float width;
-    float depth;
-    float height;
-} ShapeBox;
-
-typedef struct {
-    struct {
-        int pointIndex;
-        int unk04;
-    } pointIndices[8] <optimize=false>;
-} ShapeComposite;
