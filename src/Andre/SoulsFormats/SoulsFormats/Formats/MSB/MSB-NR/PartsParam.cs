@@ -410,7 +410,7 @@ namespace SoulsFormats
 
                 bw.WriteInt32(InstanceID);
                 bw.WriteUInt32((uint)Type);
-                bw.WriteInt32(TypeIndex);
+                bw.WriteInt32(id);
                 bw.WriteInt32(ModelIndex);
 
                 bw.ReserveInt64("FileOffset");
