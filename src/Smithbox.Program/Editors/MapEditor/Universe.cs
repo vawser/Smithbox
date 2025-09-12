@@ -300,15 +300,6 @@ public class Universe
 
     public void SaveMap(MapContainer map)
     {
-        // Prevent saving on release builds until byte-perfect NR MSB is achieved, we don't want to spread corrupted maps about.
-#if !DEBUG
-        if(Project.ProjectType is ProjectType.NR)
-        {
-            TaskLogs.AddLog("Saving is currently not supported for NR projects.");
-            return;
-        }
-#endif
-
         SaveBTL(Editor, map);
 
         try
