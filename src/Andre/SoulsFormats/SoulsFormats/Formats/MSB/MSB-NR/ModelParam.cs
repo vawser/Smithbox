@@ -61,7 +61,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty ModelParam with the default version.
             /// </summary>
-            public ModelParam() : base(73, "MODEL_PARAM_ST")
+            public ModelParam() : base(78, "MODEL_PARAM_ST")
             {
                 MapPieces = new List<Model.MapPiece>();
                 Enemies = new List<Model.Enemy>();

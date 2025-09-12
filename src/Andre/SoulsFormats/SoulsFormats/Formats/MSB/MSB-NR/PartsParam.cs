@@ -70,7 +70,7 @@ namespace SoulsFormats
             /// <summary>
             /// Creates an empty PartsParam with the default version.
             /// </summary>
-            public PartsParam() : base(73, "PARTS_PARAM_ST")
+            public PartsParam() : base(78, "PARTS_PARAM_ST")
             {
                 MapPieces = new List<Part.MapPiece>();
                 Enemies = new List<Part.Enemy>();
@@ -349,6 +349,7 @@ namespace SoulsFormats
             public int MapStudioLayer { get; set; } = -1;
             public int Unk4C { get; set; } = 0;
 
+            // Offsets
             private long Display_DataOffset { get; set; }
             private long DisplayGroup_DataOffset { get; set; }
             private long Entity_DataOffset { get; set; }
@@ -364,6 +365,7 @@ namespace SoulsFormats
             private long UnkB0 { get; set; } = 0;
             private long UnkB8 { get; set; } = 0;
 
+            // Names
             public string SibPath { get; set; }
 
             private protected abstract void ReadTypeData(BinaryReaderEx br);
@@ -1418,14 +1420,14 @@ namespace SoulsFormats
                 {
                     base.GetNames(msb, entries);
                     HitPartName = MSB.FindName(entries.Parts, HitPartIndex);
-                    PatrolRouteName = MSB.FindName(msb.Events.PatrolInfo, PatrolRouteIndex);
+                    PatrolRouteName = MSB.FindName(msb.Events.PatrolRoutes, PatrolRouteIndex);
                 }
 
                 internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     HitPartIndex = MSB.FindIndex(this, entries.Parts, HitPartName);
-                    PatrolRouteIndex = (short)MSB.FindIndex(this, msb.Events.PatrolInfo, PatrolRouteName);
+                    PatrolRouteIndex = (short)MSB.FindIndex(this, msb.Events.PatrolRoutes, PatrolRouteName);
                 }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)

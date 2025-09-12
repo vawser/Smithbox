@@ -231,6 +231,14 @@ namespace SoulsFormats
             return indices;
         }
 
+        internal static short[] FindShortIndices<T>(List<T> list, IList<string> names) where T : IMsbEntry
+        {
+            var indices = new short[names.Count];
+            for (int i = 0; i < names.Count; i++)
+                indices[i] = (short)FindIndex(list, names[i]);
+            return indices;
+        }
+
         internal static int[] FindIndices<T>(IMsbEntry referrer, List<T> list, IList<string> names) where T : IMsbEntry
         {
             var indices = new int[names.Count];

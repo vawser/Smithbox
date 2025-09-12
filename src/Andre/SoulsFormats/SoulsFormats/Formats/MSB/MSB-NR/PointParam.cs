@@ -128,7 +128,7 @@ namespace SoulsFormats
             public List<Region.UserEdgeRemovalOuter> UserEdgeRemovalOuters { get; set; }
             public List<Region.Other> Others { get; set; }
 
-            public PointParam() : base(73, "POINT_PARAM_ST")
+            public PointParam() : base(78, "POINT_PARAM_ST")
             {
                 EntryPoints = new List<Region.EntryPoint>();
                 EnvMapPoints = new List<Region.EnvMapPoint>();

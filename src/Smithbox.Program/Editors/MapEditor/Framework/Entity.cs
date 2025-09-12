@@ -1475,7 +1475,7 @@ public class Entity : ISelectable, IDisposable
     public bool IsEventMount()
     {
         return WrappedObject is MSBE.Event.Mount ||
-            WrappedObject is MSB_NR.Event.Mount ? true : false;
+            WrappedObject is MSB_NR.Event.Riding ? true : false;
     }
 
     /// <summary>

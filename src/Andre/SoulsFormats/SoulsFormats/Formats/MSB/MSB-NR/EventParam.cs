@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
+using static SoulsFormats.MSB_AC6.Event;
 using static SoulsFormats.MSB_NR.Event;
+using static SoulsFormats.MSB_NR.Region;
+using static SoulsFormats.MSB2.Event;
 
 namespace SoulsFormats
 {
@@ -10,19 +13,34 @@ namespace SoulsFormats
     {
         internal enum EventType : uint
         {
+            // Unused = 0,
+            // Unused = 1,
+            // Unused = 2,
+            // Unused = 3,
             Treasure = 4,
             Generator = 5,
+            // Unused = 6,
             ObjAct = 7,
-            Navmesh = 10,
+            // Unused = 8,
+            MapOffset = 9,
+            // Unused = 10,
+            // Unused = 11,
             PseudoMultiplayer = 12,
+            // Unused = 13,
+            PatrolInfo = 14,
             PlatoonInfo = 15,
-            PatrolInfo = 20,
-            Mount = 21,
-            SignPool = 23,
+            // Unused = 16,
+            // Unused = 17,
+            // Unused = 18,
+            // Unused = 19,
+            PatrolRoute = 20,
+            Riding = 21,
+            AutoDrawGroup = 22,
+            SignPuddle = 23,
             RetryPoint = 24,
-            AreaTeam = 25,
-            ConversationInformation = 26,
-            GroupBattleInfo = 27,
+            BirdRoute = 25,
+            TalkInfo = 26,
+            TeamFight = 27,
             Other = 0xFFFFFFFF,
         }
 
@@ -31,94 +49,40 @@ namespace SoulsFormats
         /// </summary>
         public class EventParam : Param<Event>, IMsbParam<IMsbEvent>
         {
-            /// <summary>
-            /// Item pickups out in the open or inside containers.
-            /// </summary>
             public List<Event.Treasure> Treasures { get; set; }
-
-            /// <summary>
-            /// Enemy spawners.
-            /// </summary>
             public List<Event.Generator> Generators { get; set; }
-
-            /// <summary>
-            /// Interactive objects like levers and doors.
-            /// </summary>
             public List<Event.ObjAct> ObjActs { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.Navmesh> Navmeshes { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
+            public List<Event.MapOffset> MapOffsets { get; set; }
             public List<Event.PseudoMultiplayer> PseudoMultiplayers { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.PlatoonInfo> PlatoonInfo { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.PatrolInfo> PatrolInfo { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.Mount> Mounts { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.SignPool> SignPools { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
+            public List<Event.PatrolInfo> PatrolInfos { get; set; }
+            public List<Event.PlatoonInfo> PlatoonInfos { get; set; }
+            public List<Event.PatrolRoute> PatrolRoutes { get; set; }
+            public List<Event.Riding> Ridings { get; set; }
+            public List<Event.AutoDrawGroup> AutoDrawGroups { get; set; }
+            public List<Event.SignPuddle> SignPuddles { get; set; }
             public List<Event.RetryPoint> RetryPoints { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.AreaTeam> AreaTeams { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.ConversationInformation> ConversationInfos { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public List<Event.GroupBattleInfo> GroupBattleInfos { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
+            public List<Event.BirdRoute> BirdRoutes { get; set; }
+            public List<Event.TalkInfo> TalkInfos { get; set; }
+            public List<Event.TeamFight> TeamFights { get; set; }
             public List<Event.Other> Others { get; set; }
 
-            /// <summary>
-            /// Creates an empty EventParam with the default version.
-            /// </summary>
-            public EventParam() : base(73, "EVENT_PARAM_ST")
+            public EventParam() : base(78, "EVENT_PARAM_ST")
             {
                 Treasures = new List<Event.Treasure>();
                 Generators = new List<Event.Generator>();
                 ObjActs = new List<Event.ObjAct>();
-                Navmeshes = new List<Event.Navmesh>();
+                MapOffsets = new List<Event.MapOffset>();
                 PseudoMultiplayers = new List<Event.PseudoMultiplayer>();
-                PlatoonInfo = new List<Event.PlatoonInfo>();
-                PatrolInfo = new List<Event.PatrolInfo>();
-                Mounts = new List<Event.Mount>();
-                SignPools = new List<Event.SignPool>();
+                PatrolInfos = new List<Event.PatrolInfo>();
+                PlatoonInfos = new List<Event.PlatoonInfo>();
+                PatrolRoutes = new List<Event.PatrolRoute>();
+                Ridings = new List<Event.Riding>();
+                AutoDrawGroups = new List<Event.AutoDrawGroup>();
+                SignPuddles = new List<Event.SignPuddle>();
                 RetryPoints = new List<Event.RetryPoint>();
-                AreaTeams = new List<Event.AreaTeam>();
-                ConversationInfos = new List<Event.ConversationInformation>();
-                GroupBattleInfos = new List<Event.GroupBattleInfo>();
+                BirdRoutes = new List<Event.BirdRoute>();
+                TalkInfos = new List<Event.TalkInfo>();
+                TeamFights = new List<Event.TeamFight>();
                 Others = new List<Event.Other>();
             }
 
@@ -132,16 +96,18 @@ namespace SoulsFormats
                     case Event.Treasure e: Treasures.Add(e); break;
                     case Event.Generator e: Generators.Add(e); break;
                     case Event.ObjAct e: ObjActs.Add(e); break;
-                    case Event.Navmesh e: Navmeshes.Add(e); break;
+                    case Event.MapOffset e: MapOffsets.Add(e); break;
                     case Event.PseudoMultiplayer e: PseudoMultiplayers.Add(e); break;
-                    case Event.PlatoonInfo e: PlatoonInfo.Add(e); break;
-                    case Event.PatrolInfo e: PatrolInfo.Add(e); break;
-                    case Event.Mount e: Mounts.Add(e); break;
-                    case Event.SignPool e: SignPools.Add(e); break;
+                    case Event.PatrolInfo e: PatrolInfos.Add(e); break;
+                    case Event.PlatoonInfo e: PlatoonInfos.Add(e); break;
+                    case Event.PatrolRoute e: PatrolRoutes.Add(e); break;
+                    case Event.Riding e: Ridings.Add(e); break;
+                    case Event.AutoDrawGroup e: AutoDrawGroups.Add(e); break;
+                    case Event.SignPuddle e: SignPuddles.Add(e); break;
                     case Event.RetryPoint e: RetryPoints.Add(e); break;
-                    case Event.AreaTeam e: AreaTeams.Add(e); break;
-                    case Event.ConversationInformation e: ConversationInfos.Add(e); break;
-                    case Event.GroupBattleInfo e: GroupBattleInfos.Add(e); break;
+                    case Event.BirdRoute e: BirdRoutes.Add(e); break;
+                    case Event.TalkInfo e: TalkInfos.Add(e); break;
+                    case Event.TeamFight e: TeamFights.Add(e); break;
                     case Event.Other e: Others.Add(e); break;
 
                     default:
@@ -157,10 +123,11 @@ namespace SoulsFormats
             public override List<Event> GetEntries()
             {
                 return SFUtil.ConcatAll<Event>(
-                    Treasures, Generators, ObjActs, Navmeshes, PseudoMultiplayers, PlatoonInfo,
-                    PatrolInfo, Mounts, SignPools, RetryPoints, AreaTeams,
-                    ConversationInfos, GroupBattleInfos, 
-                    Others);
+                    Treasures, Generators, ObjActs,
+                    MapOffsets, PseudoMultiplayers, PatrolInfos,
+                    PlatoonInfos, PatrolRoutes, Ridings,
+                    SignPuddles, RetryPoints, BirdRoutes,
+                    TalkInfos, TeamFights, Others);
             }
             IReadOnlyList<IMsbEvent> IMsbParam<IMsbEvent>.GetEntries() => GetEntries();
 
@@ -178,35 +145,38 @@ namespace SoulsFormats
                     case EventType.ObjAct:
                         return ObjActs.EchoAdd(new Event.ObjAct(br));
 
-                    case EventType.Navmesh:
-                        return Navmeshes.EchoAdd(new Event.Navmesh(br));
+                    case EventType.MapOffset:
+                        return MapOffsets.EchoAdd(new Event.MapOffset(br));
 
                     case EventType.PseudoMultiplayer:
                         return PseudoMultiplayers.EchoAdd(new Event.PseudoMultiplayer(br));
 
-                    case EventType.PlatoonInfo:
-                        return PlatoonInfo.EchoAdd(new Event.PlatoonInfo(br));
-
                     case EventType.PatrolInfo:
-                        return PatrolInfo.EchoAdd(new Event.PatrolInfo(br));
+                        return PatrolInfos.EchoAdd(new Event.PatrolInfo(br));
 
-                    case EventType.Mount:
-                        return Mounts.EchoAdd(new Event.Mount(br));
+                    case EventType.PlatoonInfo:
+                        return PlatoonInfos.EchoAdd(new Event.PlatoonInfo(br));
 
-                    case EventType.SignPool:
-                        return SignPools.EchoAdd(new Event.SignPool(br));
+                    case EventType.PatrolRoute:
+                        return PatrolRoutes.EchoAdd(new Event.PatrolRoute(br));
+
+                    case EventType.Riding:
+                        return Ridings.EchoAdd(new Event.Riding(br));
+
+                    case EventType.SignPuddle:
+                        return SignPuddles.EchoAdd(new Event.SignPuddle(br));
 
                     case EventType.RetryPoint:
                         return RetryPoints.EchoAdd(new Event.RetryPoint(br));
 
-                    case EventType.AreaTeam:
-                        return AreaTeams.EchoAdd(new Event.AreaTeam(br));
+                    case EventType.BirdRoute:
+                        return BirdRoutes.EchoAdd(new Event.BirdRoute(br));
 
-                    case EventType.ConversationInformation:
-                        return ConversationInfos.EchoAdd(new Event.ConversationInformation(br));
+                    case EventType.TalkInfo:
+                        return TalkInfos.EchoAdd(new Event.TalkInfo(br));
 
-                    case EventType.GroupBattleInfo:
-                        return GroupBattleInfos.EchoAdd(new Event.GroupBattleInfo(br));
+                    case EventType.TeamFight:
+                        return TeamFights.EchoAdd(new Event.TeamFight(br));
 
                     case EventType.Other:
                         return Others.EchoAdd(new Event.Other(br));
@@ -224,77 +194,17 @@ namespace SoulsFormats
         {
             private protected abstract EventType Type { get; }
             private protected abstract bool HasTypeData { get; }
+            private protected virtual void ReadTypeData(BinaryReaderEx br)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
 
-            /// <summary>
-            /// "Other" events, which are likely unused, seem to have no logic to their ID, so we store it
-            /// </summary>
-            internal int OtherID { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int EventID { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            [MSBReference(ReferenceType = typeof(Part))]
-            public string PartName { get; set; }
-            private int PartIndex { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            [MSBReference(ReferenceType = typeof(Region))]
-            public string RegionName { get; set; }
-            private int RegionIndex { get; set; }
-
-            /// <summary>
-            /// Identifies the Event in event scripts.
-            /// </summary>
-            public uint EntityID { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkT14 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public sbyte[] MapID { get; set; } = new sbyte[4];
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public byte UnkE0C { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkS04 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkS08 { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public int UnkS0C { get; set; }
+            private protected virtual void WriteTypeData(BinaryWriterEx bw)
+                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
 
             private protected Event(string name)
             {
                 Name = name;
-                OtherID = -1;
-                EventID = -1;
-                EntityID = 0;
             }
 
-            /// <summary>
-            /// Creates a deep copy of the event.
-            /// </summary>
             public Event DeepCopy()
             {
                 var evnt = (Event)MemberwiseClone();
@@ -304,122 +214,6 @@ namespace SoulsFormats
             IMsbEvent IMsbEvent.DeepCopy() => DeepCopy();
 
             private protected virtual void DeepCopyTo(Event evnt) { }
-
-            private protected Event(BinaryReaderEx br)
-            {
-                long start = br.Position;
-                long nameOffset = br.ReadInt64();
-                EventID = br.ReadInt32();
-                br.AssertUInt32((uint)Type);
-                OtherID = br.ReadInt32(); // ID
-                UnkT14 = br.AssertInt32([0, 1]);
-                long baseDataOffset = br.ReadInt64();
-                long typeDataOffset = br.ReadInt64();
-                long unk3Offset = br.ReadInt64();
-
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (baseDataOffset == 0)
-                    throw new InvalidDataException($"{nameof(baseDataOffset)} must not be 0 in type {GetType()}.");
-                if (HasTypeData ^ typeDataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
-                if (unk3Offset == 0)
-                    throw new InvalidDataException($"{nameof(unk3Offset)} must not be 0 in type {GetType()}.");
-
-                br.Position = start + nameOffset;
-                Name = br.ReadUTF16();
-
-                br.Position = start + baseDataOffset;
-                PartIndex = br.ReadInt32();
-                RegionIndex = br.ReadInt32();
-                EntityID = br.ReadUInt32();
-                UnkE0C = br.ReadByte();
-                br.AssertByte(0);
-                br.AssertByte(0);
-                br.AssertByte(0);
-
-                if (HasTypeData)
-                {
-                    br.Position = start + typeDataOffset;
-                    ReadTypeData(br);
-                }
-
-                // Unk3
-                br.Position = start + unk3Offset;
-                MapID = br.ReadSBytes(4);
-                UnkS04 = br.ReadInt32();
-                UnkS08 = br.ReadInt32();
-                UnkS0C = br.ReadInt32();
-                br.AssertInt32(0);
-                br.AssertInt32(0);
-                br.AssertInt32(0);
-                br.AssertInt32(0);
-            }
-
-            private protected virtual void ReadTypeData(BinaryReaderEx br)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
-
-            internal override void Write(BinaryWriterEx bw, int id)
-            {
-                long start = bw.Position;
-                bw.ReserveInt64("NameOffset");
-                bw.WriteInt32(EventID);
-                bw.WriteUInt32((uint)Type);
-                if (OtherID != -1)
-                    bw.WriteInt32(OtherID);
-                else
-                    bw.WriteInt32(id);
-                bw.WriteInt32(UnkT14);
-                bw.ReserveInt64("BaseDataOffset");
-                bw.ReserveInt64("TypeDataOffset");
-                bw.ReserveInt64("Unk3Offset");
-
-                bw.FillInt64("NameOffset", bw.Position - start);
-                bw.WriteUTF16(MSB.ReambiguateName(Name), true);
-                bw.Pad(8);
-
-                bw.FillInt64("BaseDataOffset", bw.Position - start);
-                bw.WriteInt32(PartIndex);
-                bw.WriteInt32(RegionIndex);
-                bw.WriteUInt32(EntityID);
-                bw.WriteByte(UnkE0C);
-                bw.WriteByte(0);
-                bw.WriteByte(0);
-                bw.WriteByte(0);
-
-                if (HasTypeData)
-                {
-                    bw.FillInt64("TypeDataOffset", bw.Position - start);
-                    WriteTypeData(bw);
-                }
-                else
-                {
-                    bw.FillInt64("TypeDataOffset", 0);
-                }
-
-                switch(Type)
-                {
-                    case EventType.PseudoMultiplayer:
-                        bw.Pad(4);
-                        break;
-                    default:
-                        bw.Pad(8);
-                        break;
-                }
-
-                bw.FillInt64("Unk3Offset", bw.Position - start);
-                bw.WriteSBytes(MapID);
-                bw.WriteInt32(UnkS04);
-                bw.WriteInt32(UnkS08);
-                bw.WriteInt32(UnkS0C);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-                bw.WriteInt32(0);
-            }
-
-            private protected virtual void WriteTypeData(BinaryWriterEx bw)
-                => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
 
             internal virtual void GetNames(MSB_NR msb, Entries entries)
             {
@@ -433,13 +227,167 @@ namespace SoulsFormats
                 RegionIndex = MSB.FindIndex(this, entries.Regions, RegionName);
             }
 
-            /// <summary>
-            /// Returns the type and name of the event as a string.
-            /// </summary>
             public override string ToString()
             {
                 return $"{Type} {Name}";
             }
+
+            private protected Event(BinaryReaderEx br)
+            {
+                long start = br.Position;
+
+                NameOffset = br.ReadInt64();
+                EventID = br.ReadInt32();
+                br.AssertUInt32((uint)Type);
+                TypeIndex = br.ReadInt32();
+                BaseUnk14 = br.ReadInt32();
+                CommonOffset = br.ReadInt64();
+                TypeOffset = br.ReadInt64();
+                Unk28Offset = br.ReadInt64();
+
+                if (NameOffset == 0)
+                    throw new InvalidDataException($"{nameof(NameOffset)} must not be 0 in type {GetType()}.");
+
+                if (CommonOffset == 0)
+                    throw new InvalidDataException($"{nameof(CommonOffset)} must not be 0 in type {GetType()}.");
+
+                if (HasTypeData ^ TypeOffset != 0)
+                    throw new InvalidDataException($"Unexpected {nameof(TypeOffset)} 0x{TypeOffset:X} in type {GetType()}.");
+
+                if (Unk28Offset == 0)
+                    throw new InvalidDataException($"{nameof(Unk28Offset)} must not be 0 in type {GetType()}.");
+
+                br.Position = start + NameOffset;
+                Name = br.ReadUTF16();
+
+                // Common
+                br.Position = start + CommonOffset;
+                PartIndex = br.ReadInt32();
+                RegionIndex = br.ReadInt32();
+                EntityID = br.ReadUInt32();
+                CommonUnk0C = br.ReadSByte();
+                CommonUnk0D = br.ReadByte();
+                CommonUnk0E = br.ReadInt16();
+
+                // Type
+                if (HasTypeData)
+                {
+                    br.Position = start + TypeOffset;
+                    ReadTypeData(br);
+                }
+
+                // Unk 28
+                br.Position = start + Unk28Offset;
+                MapID = br.ReadMapIDBytes(4);
+                MapUnk04 = br.ReadInt32();
+                MapUnk08 = br.ReadInt32();
+                MapUnk0C = br.ReadInt32();
+                MapUnk10 = br.ReadInt32();
+                MapUnk14 = br.ReadInt32();
+                MapUnk18 = br.ReadInt32();
+                MapUnk1C = br.ReadInt32();
+            }
+
+            internal override void Write(BinaryWriterEx bw, int id)
+            {
+                long start = bw.Position;
+
+                bw.ReserveInt64("NameOffset");
+                bw.WriteInt32(EventID);
+                bw.WriteUInt32((uint)Type);
+
+                if (TypeIndex != -1)
+                    bw.WriteInt32(TypeIndex);
+                else
+                    bw.WriteInt32(id);
+
+                bw.WriteInt32(BaseUnk14);
+
+                bw.ReserveInt64("CommonOffset");
+                bw.ReserveInt64("TypeOffset");
+                bw.ReserveInt64("Unk28Offset");
+
+                bw.FillInt64("NameOffset", bw.Position - start);
+                bw.WriteUTF16(MSB.ReambiguateName(Name), true);
+                bw.Pad(8);
+
+                // Common
+                bw.FillInt64("CommonOffset", bw.Position - start);
+                bw.WriteInt32(PartIndex);
+                bw.WriteInt32(RegionIndex);
+                bw.WriteUInt32(EntityID);
+                bw.WriteSByte(CommonUnk0C);
+                bw.WriteByte(CommonUnk0D);
+                bw.WriteInt16(CommonUnk0E);
+
+                // Type
+                if (HasTypeData)
+                {
+                    bw.FillInt64("TypeOffset", bw.Position - start);
+                    WriteTypeData(bw);
+                }
+                else
+                {
+                    bw.FillInt64("TypeOffset", 0);
+                }
+
+                switch (Type)
+                {
+                    case EventType.PseudoMultiplayer:
+                        bw.Pad(4);
+                        break;
+                    default:
+                        bw.Pad(8);
+                        break;
+                }
+
+                // Unk 28
+                bw.FillInt64("Unk28Offset", bw.Position - start);
+                bw.WriteMapIDBytes(MapID);
+                bw.WriteInt32(MapUnk04);
+                bw.WriteInt32(MapUnk08);
+                bw.WriteInt32(MapUnk0C);
+                bw.WriteInt32(MapUnk10);
+                bw.WriteInt32(MapUnk14);
+                bw.WriteInt32(MapUnk18);
+                bw.WriteInt32(MapUnk1C);
+            }
+
+            // Layout
+            public int EventID { get; set; } = -1;
+            internal int TypeIndex { get; set; }
+            public int BaseUnk14 { get; set; } = 0; // Hidden
+
+            // Offsets
+            internal long NameOffset { get; set; }
+            internal long CommonOffset { get; set; }
+            internal long TypeOffset { get; set; }
+            internal long Unk28Offset { get; set; }
+
+            // Common - Not separated into discrete class for simplicity
+            private int PartIndex { get; set; } = -1;
+            private int RegionIndex { get; set; } = -1;
+            public uint EntityID { get; set; } = 0;
+            public sbyte CommonUnk0C { get; set; } = -1;
+            public byte CommonUnk0D { get; set; } = 0; // Hidden
+            public short CommonUnk0E { get; set; } = 0; // Hidden
+
+            // Unk 28 - Not separated into discrete class for simplicity
+            public sbyte[] MapID { get; set; } = new sbyte[4];
+            public int MapUnk04 { get; set; } = 0;
+            public int MapUnk08 { get; set; } = 0; // Hidden
+            public int MapUnk0C { get; set; } = -1;
+            public int MapUnk10 { get; set; } = 0; // Hidden
+            public int MapUnk14 { get; set; } = 0; // Hidden
+            public int MapUnk18 { get; set; } = 0; // Hidden
+            public int MapUnk1C { get; set; } = 0; // Hidden
+
+            // Names
+            [MSBReference(ReferenceType = typeof(Part))]
+            public string PartName { get; set; }
+
+            [MSBReference(ReferenceType = typeof(Region))]
+            public string RegionName { get; set; }
 
             /// <summary>
             /// An item pickup in the open or inside a container.
@@ -449,114 +397,9 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Treasure;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// The part that the treasure is attached to.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string TreasurePartName { get; set; }
-                private int TreasurePartIndex { get; set; }
-
-                /// <summary>
-                /// The item lot to be given.
-                /// </summary>
-                public int ItemLotID { get; set; }
-
-                /// <summary>
-                /// Uesd for drop uncommon weapons or magic.
-                /// </summary>
-                public int UncommonItemLotID { get; set; }
-
-                /// <summary>
-                /// Animation to play when taking this treasure.
-                /// </summary>
-                public int PickupAnimID { get; set; }
-
-                /// <summary>
-                /// Changes the text of the pickup prompt.
-                /// </summary>
-                public byte InChest { get; set; }
-
-                /// <summary>
-                /// Whether the treasure should be hidden by default.
-                /// </summary>
-                public byte StartDisabled { get; set; }
-
-                /// <summary>
-                /// Unkown.
-                /// </summary>
-                public byte Treasure_Unk42 { get; set; }
-
-                /// <summary>
-                /// Unkown.
-                /// </summary>
-                public byte Treasure_Unk43 { get; set; }
-
-                /// <summary>
-                /// Unkown.
-                /// </summary>
-                public int Treasure_Unk44 { get; set; }
-
-                /// <summary>
-                /// Unkown.
-                /// </summary>
-                public short Treasure_Unk48 { get; set; }
-
-                /// <summary>
-                /// Unkown.
-                /// </summary>
-                public short Treasure_Unk4A { get; set; }
-
-                /// <summary>
-                /// Creates a Treasure with default values.
-                /// </summary>
-                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}")
-                {
-                    ItemLotID = -1;
-                    UncommonItemLotID = -1;
-                    PickupAnimID = -1;
-                }
+                public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") { }
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    TreasurePartIndex = br.ReadInt32();
-                    br.AssertInt32(0);
-                    ItemLotID = br.ReadInt32();
-                    br.AssertPattern(0x24, 0xFF);
-                    UncommonItemLotID = br.ReadInt32();
-                    PickupAnimID = br.ReadInt32();
-                    InChest = br.ReadByte();
-                    StartDisabled = br.ReadByte();
-                    Treasure_Unk42 = br.ReadByte();
-                    Treasure_Unk43 = br.ReadByte();
-                    Treasure_Unk44 = br.ReadInt32();
-                    Treasure_Unk48 = br.ReadInt16();
-                    Treasure_Unk4A = br.ReadInt16();
-                    br.AssertInt32(0);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(TreasurePartIndex);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(ItemLotID);
-                    bw.WritePattern(0x24, 0xFF);
-                    bw.WriteInt32(UncommonItemLotID);
-                    bw.WriteInt32(PickupAnimID);
-                    bw.WriteByte(InChest);
-                    bw.WriteByte(StartDisabled);
-                    bw.WriteByte(Treasure_Unk42);
-                    bw.WriteByte(Treasure_Unk43);
-                    bw.WriteInt32(Treasure_Unk44);
-                    bw.WriteInt16(Treasure_Unk48);
-                    bw.WriteInt16(Treasure_Unk4A);
-                    bw.WriteInt32(0);
-                }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -569,6 +412,92 @@ namespace SoulsFormats
                     base.GetIndices(msb, entries);
                     TreasurePartIndex = MSB.FindIndex(this, entries.Parts, TreasurePartName);
                 }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    TreasurePartIndex = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    ItemLotID = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
+                    Unk20 = br.ReadInt32();
+                    Unk24 = br.ReadInt32();
+                    Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
+                    Unk30 = br.ReadInt32();
+                    Unk34 = br.ReadInt32();
+                    UncommonItemLotID = br.ReadInt32();
+                    PickupAnimID = br.ReadInt32();
+                    InChest = br.ReadByte();
+                    StartDisabled = br.ReadByte();
+                    Unk42 = br.ReadByte();
+                    Unk43 = br.ReadByte();
+                    Unk44 = br.ReadInt32();
+                    Unk48 = br.ReadInt16();
+                    Unk4A = br.ReadInt16();
+                    Unk4C = br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(TreasurePartIndex);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(ItemLotID);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32(Unk24);
+                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(Unk2C);
+                    bw.WriteInt32(Unk30);
+                    bw.WriteInt32(Unk34);
+                    bw.WriteInt32(UncommonItemLotID);
+                    bw.WriteInt32(PickupAnimID);
+                    bw.WriteByte(InChest);
+                    bw.WriteByte(StartDisabled);
+                    bw.WriteByte(Unk42);
+                    bw.WriteByte(Unk43);
+                    bw.WriteInt32(Unk44);
+                    bw.WriteInt16(Unk48);
+                    bw.WriteInt16(Unk4A);
+                    bw.WriteInt32(Unk4C);
+                }
+
+                // Layout
+                public int Unk00 { get; set; } = 0; // Hidden
+                public int Unk04 { get; set; } = 0; // Hidden
+                private int TreasurePartIndex { get; set; } = -1;
+                public int Unk0C { get; set; } = 0; // Hidden
+                public int ItemLotID { get; set; } = -1;
+                public int Unk14 { get; set; } = 0; // Hidden
+                public int Unk18 { get; set; } = 0; // Hidden
+                public int Unk1C { get; set; } = 0; // Hidden
+                public int Unk20 { get; set; } = 0; // Hidden
+                public int Unk24 { get; set; } = 0; // Hidden
+                public int Unk28 { get; set; } = 0; // Hidden
+                public int Unk2C { get; set; } = 0; // Hidden
+                public int Unk30 { get; set; } = 0; // Hidden
+                public int Unk34 { get; set; } = 0; // Hidden
+                public int UncommonItemLotID { get; set; } = -1;
+                public int PickupAnimID { get; set; } = -1; // Hidden
+                public byte InChest { get; set; } = 1;
+                public byte StartDisabled { get; set; } = 0; // Boolean
+                public byte Unk42 { get; set; } = 0; // Boolean
+                public byte Unk43 { get; set; } = 1; // Boolean
+                public int Unk44 { get; set; } = -1;
+                public short Unk48 { get; set; } = -1;
+                public short Unk4A { get; set; } = 0;
+                public int Unk4C { get; set; } = 0; // Hidden
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string TreasurePartName { get; set; }
             }
 
             /// <summary>
@@ -579,132 +508,14 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.Generator;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte MaxNum { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public sbyte GenType { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short LimitNum { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short MinGenNum { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short MaxGenNum { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float MinInterval { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float MaxInterval { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public byte InitialSpawnCount { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT14 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public float UnkT18 { get; set; }
-
-                /// <summary>
-                /// Regions where parts will spawn from.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Region))]
-                public string[] SpawnRegionNames { get; set; }
-
-                private int[] SpawnRegionIndices { get; set; }
-
-                /// <summary>
-                /// Parts that will be respawned.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string[] SpawnPartNames { get; set; }
-
-                private int[] SpawnPartIndices { get; set; }
-
-                /// <summary>
-                /// Creates a Generator with default values.
-                /// </summary>
-                public Generator() : base($"{nameof(Event)}: {nameof(Generator)}")
-                {
-                    SpawnRegionNames = new string[8];
-                    SpawnPartNames = new string[32];
-                }
+                public Generator() : base($"{nameof(Event)}: {nameof(Generator)}") { }
+                internal Generator(BinaryReaderEx br) : base(br) { }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
                     var generator = (Generator)evnt;
                     generator.SpawnRegionNames = (string[])SpawnRegionNames.Clone();
                     generator.SpawnPartNames = (string[])SpawnPartNames.Clone();
-                }
-
-                internal Generator(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    MaxNum = br.ReadByte();
-                    GenType = br.ReadSByte();
-                    LimitNum = br.ReadInt16();
-                    MinGenNum = br.ReadInt16();
-                    MaxGenNum = br.ReadInt16();
-                    MinInterval = br.ReadSingle();
-                    MaxInterval = br.ReadSingle();
-                    InitialSpawnCount = br.ReadByte();
-                    br.AssertByte(0);
-                    br.AssertByte(0);
-                    br.AssertByte(0);
-                    UnkT14 = br.ReadSingle();
-                    UnkT18 = br.ReadSingle();
-                    br.AssertPattern(0x14, 0x00);
-                    SpawnRegionIndices = br.ReadInt32s(8);
-                    br.AssertPattern(0x10, 0x00);
-                    SpawnPartIndices = br.ReadInt32s(32);
-                    br.AssertPattern(0x20, 0x00);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteByte(MaxNum);
-                    bw.WriteSByte(GenType);
-                    bw.WriteInt16(LimitNum);
-                    bw.WriteInt16(MinGenNum);
-                    bw.WriteInt16(MaxGenNum);
-                    bw.WriteSingle(MinInterval);
-                    bw.WriteSingle(MaxInterval);
-                    bw.WriteByte(InitialSpawnCount);
-                    bw.WriteByte(0);
-                    bw.WriteByte(0);
-                    bw.WriteByte(0);
-                    bw.WriteSingle(UnkT14);
-                    bw.WriteSingle(UnkT18);
-                    bw.WritePattern(0x14, 0x00);
-                    bw.WriteInt32s(SpawnRegionIndices);
-                    bw.WritePattern(0x10, 0x00);
-                    bw.WriteInt32s(SpawnPartIndices);
-                    bw.WritePattern(0x20, 0x00);
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
@@ -720,6 +531,116 @@ namespace SoulsFormats
                     SpawnRegionIndices = MSB.FindIndices(this, entries.Regions, SpawnRegionNames);
                     SpawnPartIndices = MSB.FindIndices(this, entries.Parts, SpawnPartNames);
                 }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    MaxNum = br.ReadByte();
+                    GenType = br.ReadSByte();
+                    LimitNum = br.ReadInt16();
+                    MinGenNum = br.ReadInt16();
+                    MaxGenNum = br.ReadInt16();
+                    MinInterval = br.ReadSingle();
+                    MaxInterval = br.ReadSingle();
+                    InitialSpawnCount = br.ReadSByte();
+                    Unk11 = br.ReadByte();
+                    Unk12 = br.ReadInt16();
+                    Unk14 = br.ReadSingle();
+                    Unk18 = br.ReadSingle();
+                    Unk1C = br.ReadInt32();
+                    Unk20 = br.ReadInt32();
+                    Unk24 = br.ReadInt32();
+                    Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
+                    SpawnRegionIndices = br.ReadInt32s(8);
+                    Unk50 = br.ReadInt32();
+                    Unk54 = br.ReadInt32();
+                    Unk58 = br.ReadInt32();
+                    Unk5C = br.ReadInt32();
+                    SpawnPartIndices = br.ReadInt32s(32);
+                    UnkE0 = br.ReadInt32();
+                    UnkE4 = br.ReadInt32();
+                    UnkE8 = br.ReadInt32();
+                    UnkEC = br.ReadInt32();
+                    UnkF0 = br.ReadInt32();
+                    UnkF4 = br.ReadInt32();
+                    UnkF8 = br.ReadInt32();
+                    UnkFC = br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteByte(MaxNum);
+                    bw.WriteSByte(GenType);
+                    bw.WriteInt16(LimitNum);
+                    bw.WriteInt16(MinGenNum);
+                    bw.WriteInt16(MaxGenNum);
+                    bw.WriteSingle(MinInterval);
+                    bw.WriteSingle(MaxInterval);
+                    bw.WriteSByte(InitialSpawnCount);
+                    bw.WriteByte(Unk11);
+                    bw.WriteInt16(Unk12);
+                    bw.WriteSingle(Unk14);
+                    bw.WriteSingle(Unk18);
+                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32(Unk24);
+                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(Unk2C);
+                    bw.WriteInt32s(SpawnRegionIndices);
+                    bw.WriteInt32(Unk50);
+                    bw.WriteInt32(Unk54);
+                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(Unk5C);
+                    bw.WriteInt32s(SpawnPartIndices);
+                    bw.WriteInt32(UnkE0);
+                    bw.WriteInt32(UnkE4);
+                    bw.WriteInt32(UnkE8);
+                    bw.WriteInt32(UnkEC);
+                    bw.WriteInt32(UnkF0);
+                    bw.WriteInt32(UnkF4);
+                    bw.WriteInt32(UnkF8);
+                    bw.WriteInt32(UnkFC);
+                }
+
+                // Layout
+                public byte MaxNum { get; set; } = 1;
+                public sbyte GenType { get; set; }
+                public short LimitNum { get; set; } = -1;
+                public short MinGenNum { get; set; } = 1;
+                public short MaxGenNum { get; set; } = 1;
+                public float MinInterval { get; set; } = 0;
+                public float MaxInterval { get; set; } = 0;
+                public sbyte InitialSpawnCount { get; set; } = -1;
+                public byte Unk11 { get; set; } = 0; // Hidden
+                public short Unk12 { get; set; } = 0; // Hidden
+                public float Unk14 { get; set; } = 0;
+                public float Unk18 { get; set; } = 0;
+                public int Unk1C { get; set; } = 0; // Hidden
+                public int Unk20 { get; set; } = 0; // Hidden
+                public int Unk24 { get; set; } = 0; // Hidden
+                public int Unk28 { get; set; } = 0; // Hidden
+                public int Unk2C { get; set; } = 0; // Hidden
+                private int[] SpawnRegionIndices { get; set; } = new int[8];
+                public int Unk50 { get; set; } = 0; // Hidden
+                public int Unk54 { get; set; } = 0; // Hidden
+                public int Unk58 { get; set; } = 0; // Hidden
+                public int Unk5C { get; set; } = 0; // Hidden
+                private int[] SpawnPartIndices { get; set; } = new int[32];
+                public int UnkE0 { get; set; } = 0; // Hidden
+                public int UnkE4 { get; set; } = 0; // Hidden
+                public int UnkE8 { get; set; } = 0; // Hidden
+                public int UnkEC { get; set; } = 0; // Hidden
+                public int UnkF0 { get; set; } = 0; // Hidden
+                public int UnkF4 { get; set; } = 0; // Hidden
+                public int UnkF8 { get; set; } = 0; // Hidden
+                public int UnkFC { get; set; } = 0; // Hidden
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string[] SpawnRegionNames { get; set; } = new string[8];
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] SpawnPartNames { get; set; } = new string[32];
             }
 
             /// <summary>
@@ -730,82 +651,8 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.ObjAct;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Unknown why objacts need an extra entity ID.
-                /// </summary>
-                public uint ObjActEntityID { get; set; }
-
-                /// <summary>
-                /// The part to be interacted with.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string ObjActPartName { get; set; }
-                private int ObjActPartIndex { get; set; }
-
-                /// <summary>
-                /// A row in ObjActParam.
-                /// </summary>
-                public int ObjActID { get; set; }
-
-                /// <summary>
-                /// StateType.
-                /// </summary>
-                public byte StateType { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public short ObjAct_Unk0E { get; set; }
-
-                /// <summary>
-                /// EventFlagID.
-                /// </summary>
-                public uint EventFlagID { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int ObjAct_Unk14 { get; set; }
-
-                /// <summary>
-                /// Creates an ObjAct with default values.
-                /// </summary>
-                public ObjAct() : base($"{nameof(Event)}: {nameof(ObjAct)}")
-                {
-                    ObjActEntityID = 0;
-                    ObjActID = -1;
-                    EventFlagID = 0;
-                }
-
+                public ObjAct() : base($"{nameof(Event)}: {nameof(ObjAct)}") { }
                 internal ObjAct(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    ObjActEntityID = br.ReadUInt32();
-                    ObjActPartIndex = br.ReadInt32();
-                    ObjActID = br.ReadInt32();
-                    StateType = br.ReadByte();
-                    br.AssertByte(0);
-                    ObjAct_Unk0E = br.ReadInt16();
-                    EventFlagID = br.ReadUInt32();
-                    ObjAct_Unk14 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteUInt32(ObjActEntityID);
-                    bw.WriteInt32(ObjActPartIndex);
-                    bw.WriteInt32(ObjActID);
-                    bw.WriteByte(StateType);
-                    bw.WriteByte(0);
-                    bw.WriteInt16(ObjAct_Unk0E);
-                    bw.WriteUInt32(EventFlagID);
-                    bw.WriteInt32(ObjAct_Unk14);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -818,57 +665,68 @@ namespace SoulsFormats
                     base.GetIndices(msb, entries);
                     ObjActPartIndex = MSB.FindIndex(this, entries.Parts, ObjActPartName);
                 }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Navmesh : Event
-            {
-                private protected override EventType Type => EventType.Navmesh;
-                private protected override bool HasTypeData => true;
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Region))]
-                public string NavmeshRegionName { get; set; }
-                private int NavmeshRegionIndex { get; set; }
-
-                /// <summary>
-                /// Creates a Navmesh with default values.
-                /// </summary>
-                public Navmesh() : base($"{nameof(Event)}: {nameof(Navmesh)}") { }
-
-                internal Navmesh(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    NavmeshRegionIndex = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
+                    ObjActEntityId = br.ReadUInt32();
+                    ObjActPartIndex = br.ReadInt32();
+                    ObjActParamId = br.ReadInt32();
+                    StateType = br.ReadInt32();
+                    EventFlagID = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(NavmeshRegionIndex);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteUInt32(ObjActEntityId);
+                    bw.WriteInt32(ObjActPartIndex);
+                    bw.WriteInt32(ObjActParamId);
+                    bw.WriteInt32(StateType);
+                    bw.WriteInt32(EventFlagID);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt32(Unk1C);
                 }
 
-                internal override void GetNames(MSB_NR msb, Entries entries)
+                // Layout
+                public uint ObjActEntityId { get; set; } = 0;
+                private int ObjActPartIndex { get; set; } = -1;
+                public int ObjActParamId { get; set; }
+                public int StateType { get; set; } = 5;
+                public int EventFlagID { get; set; } = 0;
+                public int Unk14 { get; set; } = -1;
+                public int Unk18 { get; set; } = 0; // Hidden
+                public int Unk1C { get; set; } = 0; // Hidden
+
+                // Names
+
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string ObjActPartName { get; set; }
+
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class MapOffset : Event
+            {
+                private protected override EventType Type => EventType.MapOffset;
+                private protected override bool HasTypeData => true;
+
+                public MapOffset() : base($"{nameof(Event)}: {nameof(MapOffset)}") { }
+
+                internal MapOffset(BinaryReaderEx br) : base(br) { }
+                private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    base.GetNames(msb, entries);
-                    NavmeshRegionName = MSB.FindName(entries.Regions, NavmeshRegionIndex);
                 }
 
-                internal override void GetIndices(MSB_NR msb, Entries entries)
+                private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    base.GetIndices(msb, entries);
-                    NavmeshRegionIndex = MSB.FindIndex(this, entries.Regions, NavmeshRegionName);
                 }
+
+                // Layout
             }
 
             /// <summary>
@@ -879,284 +737,186 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.PseudoMultiplayer;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// The NPC whose world you're entering.
-                /// </summary>
-                public uint HostEntityID { get; set; }
-
-                /// <summary>
-                /// Set when inside the event's region, unset when outside it.
-                /// </summary>
-                public uint EventFlagID { get; set; }
-
-                /// <summary>
-                /// ID of a goods item that is used to trigger the event.
-                /// </summary>
-                public int ActivateGoodsID { get; set; }
-
-                /// <summary>
-                /// Unknown; possibly a sound ID.
-                /// </summary>
-                public int UnkT0C { get; set; }
-
-                /// <summary>
-                /// Unknown; possibly a map event ID.
-                /// </summary>
-                public int UnkT10 { get; set; }
-
-                /// <summary>
-                /// Unknown; possibly flags.
-                /// </summary>
-                public int UnkT14 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT18 { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT1C { get; set; }
-
-                /// <summary>
-                /// Creates a new PseudoMultiplayer with the given name.
-                /// </summary>
-                public PseudoMultiplayer() : base($"{nameof(Event)}: {nameof(PseudoMultiplayer)}")
-                {
-                    HostEntityID = 0;
-                    EventFlagID = 0;
-                    ActivateGoodsID = -1;
-                    UnkT0C = -1;
-                    UnkT10 = -1;
-                    UnkT1C = 0;
-                }
+                public PseudoMultiplayer() : base($"{nameof(Event)}: {nameof(PseudoMultiplayer)}") { }
 
                 internal PseudoMultiplayer(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    HostEntityID = br.ReadUInt32();
-                    EventFlagID = br.ReadUInt32();
-                    ActivateGoodsID = br.ReadInt32();
-                    UnkT0C = br.ReadInt32();
-                    UnkT10 = br.ReadInt32();
-                    UnkT14 = br.ReadInt32();
-                    UnkT18 = br.ReadInt32();
-                    UnkT1C = br.ReadInt32();
-                    br.AssertInt32(-1);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteUInt32(HostEntityID);
-                    bw.WriteUInt32(EventFlagID);
-                    bw.WriteInt32(ActivateGoodsID);
-                    bw.WriteInt32(UnkT0C);
-                    bw.WriteInt32(UnkT10);
-                    bw.WriteInt32(UnkT14);
-                    bw.WriteInt32(UnkT18);
-                    bw.WriteInt32(UnkT1C);
-                    bw.WriteInt32(-1);
                 }
+
+                // Layout
             }
 
             /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class PlatoonInfo : Event
-            {
-                private protected override EventType Type => EventType.PlatoonInfo;
-                private protected override bool HasTypeData => true;
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int PlatoonIDScriptActivate { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int State { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string[] GroupPartsNames { get; set; }
-
-                private int[] GroupPartsIndices { get; set; }
-
-                /// <summary>
-                /// Creates a PlatoonInfo with default values.
-                /// </summary>
-                public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}")
-                {
-                    GroupPartsNames = new string[32];
-                }
-
-                private protected override void DeepCopyTo(Event evnt)
-                {
-                    var groupTour = (PlatoonInfo)evnt;
-                    groupTour.GroupPartsNames = (string[])GroupPartsNames.Clone();
-                }
-
-                internal PlatoonInfo(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    PlatoonIDScriptActivate = br.ReadInt32();
-                    State = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    GroupPartsIndices = br.ReadInt32s(32);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteInt32(PlatoonIDScriptActivate);
-                    bw.WriteInt32(State);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32s(GroupPartsIndices);
-                }
-
-                internal override void GetNames(MSB_NR msb, Entries entries)
-                {
-                    base.GetNames(msb, entries);
-                    GroupPartsNames = MSB.FindNames(entries.Parts, GroupPartsIndices);
-                }
-
-                internal override void GetIndices(MSB_NR msb, Entries entries)
-                {
-                    base.GetIndices(msb, entries);
-                    GroupPartsIndices = MSB.FindIndices(this, entries.Parts, GroupPartsNames);
-                }
-            }
-
-            /// <summary>
-            /// Unknown.
+            /// 
             /// </summary>
             public class PatrolInfo : Event
             {
                 private protected override EventType Type => EventType.PatrolInfo;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Determines patrol behavior. 0 = return to first region on loop, 1 = go through list backwards on loop, etc.
-                /// </summary>
-                public byte PatrolType { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Region))]
-                public string[] WalkRegionNames { get; set; }
-
-                private short[] WalkRegionIndices { get; set; }
-
-                /// <summary>
-                /// Creates a PatrolInfo with default values.
-                /// </summary>
-                public PatrolInfo() : base($"{nameof(Event)}: {nameof(PatrolInfo)}")
-                {
-                    WalkRegionIndices = new short[64];
-                    WalkRegionNames = new string[64];
-                }
-
-                private protected override void DeepCopyTo(Event evnt)
-                {
-                    var walkRoute = (PatrolInfo)evnt;
-                    walkRoute.WalkRegionNames = (string[])WalkRegionNames.Clone();
-                }
+                public PatrolInfo() : base($"{nameof(Event)}: {nameof(PatrolInfo)}") { }
 
                 internal PatrolInfo(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    PatrolType = br.ReadByte();
-                    br.AssertByte(0);
-                    br.AssertByte(0);
-                    br.AssertByte(1);
-                    br.AssertInt32(-1);
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    WalkRegionIndices = br.ReadInt16s(64);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(PatrolType);
-                    bw.WriteByte(0);
-                    bw.WriteByte(0);
-                    bw.WriteByte(1);
-                    bw.WriteInt32(-1);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt16s(WalkRegionIndices);
+                }
+
+                // Layout
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class PlatoonInfo : Event
+            {
+                private protected override EventType Type => EventType.PlatoonInfo;
+                private protected override bool HasTypeData => true;
+
+                public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}") { }
+                internal PlatoonInfo(BinaryReaderEx br) : base(br) { }
+
+                private protected override void DeepCopyTo(Event evnt)
+                {
+                    var groupTour = (PlatoonInfo)evnt;
+                    groupTour.GroupPartsNames = (string[])GroupPartsNames.Clone();
+                }
+                internal override void GetNames(MSB_NR msb, Entries entries)
+                {
+                    base.GetNames(msb, entries);
+                    GroupPartsNames = MSB.FindNames(entries.Parts, GroupPartsIndices);
+                }
+                internal override void GetIndices(MSB_NR msb, Entries entries)
+                {
+                    base.GetIndices(msb, entries);
+                    GroupPartsIndices = MSB.FindIndices(this, entries.Parts, GroupPartsNames);
+                }
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    PlatoonScriptId = br.ReadInt32();
+                    Unk04 = br.ReadByte();
+                    Unk05 = br.ReadByte();
+                    Unk06 = br.ReadInt16();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    GroupPartsIndices = br.ReadInt32s(32);
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(PlatoonScriptId);
+                    bw.WriteByte(Unk04);
+                    bw.WriteByte(Unk05);
+                    bw.WriteInt16(Unk06);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32s(GroupPartsIndices);
+                }
+
+                // Layout
+                public int PlatoonScriptId { get; set; } = -1;
+                public byte Unk04 { get; set; } = 0; // Boolean
+                public byte Unk05 { get; set; } = 0; // Hidden
+                public short Unk06 { get; set; } = 0; // Hidden
+                public int Unk08 { get; set; } = 0; // Hidden
+                public int Unk0C { get; set; } = 0; // Hidden
+                private int[] GroupPartsIndices { get; set; } = new int[32];
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string[] GroupPartsNames { get; set; } = new string[32];
+
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class PatrolRoute : Event
+            {
+                private protected override EventType Type => EventType.PatrolRoute;
+                private protected override bool HasTypeData => true;
+
+                public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolInfo)}") { }
+                internal PatrolRoute(BinaryReaderEx br) : base(br) { }
+
+                private protected override void DeepCopyTo(Event evnt)
+                {
+                    var walkRoute = (PatrolRoute)evnt;
+                    walkRoute.RegionNames = (string[])RegionNames.Clone();
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    WalkRegionNames = new string[WalkRegionIndices.Length];
-                    for (int i = 0; i < WalkRegionIndices.Length; i++)
-                        WalkRegionNames[i] = MSB.FindName(entries.Regions, WalkRegionIndices[i]);
+                    RegionNames = MSB.FindNames(entries.Regions, RegionIndices);
                 }
 
                 internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    WalkRegionIndices = new short[WalkRegionNames.Length];
-                    for (int i = 0; i < WalkRegionNames.Length; i++)
-                        WalkRegionIndices[i] = (short)MSB.FindIndex(this, entries.Regions, WalkRegionNames[i]);
+                    RegionIndices = MSB.FindShortIndices(entries.Regions, RegionNames);
                 }
-            }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class Mount : Event
-            {
-                private protected override EventType Type => EventType.Mount;
-                private protected override bool HasTypeData => true;
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string RiderPartName { get; set; }
-                private int RiderPartIndex { get; set; }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string MountPartName { get; set; }
-                private int MountPartIndex { get; set; }
-
-                /// <summary>
-                /// Creates a Mount with default values.
-                /// </summary>
-                public Mount() : base($"{nameof(Event)}: {nameof(Mount)}")
-                {
-                    RiderPartIndex = -1;
-                    MountPartIndex = -1;
-                }
-
-                internal Mount(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    RiderPartIndex = br.ReadInt32();
-                    MountPartIndex = br.ReadInt32();
+                    PatrolType = br.ReadByte();
+                    Unk01 = br.ReadByte();
+                    Unk02 = br.ReadByte();
+                    Unk03 = br.ReadByte();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    RegionIndices = br.ReadInt16s(64);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(RiderPartIndex);
-                    bw.WriteInt32(MountPartIndex);
+                    bw.WriteByte(PatrolType);
+                    bw.WriteByte(Unk01);
+                    bw.WriteByte(Unk02);
+                    bw.WriteByte(Unk03);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt16s(RegionIndices);
                 }
+
+                // Layout
+                public byte PatrolType { get; set; } = 0;
+                public byte Unk01 { get; set; } = 0; // Hidden
+                public byte Unk02 { get; set; } = 0; // Hidden
+                public byte Unk03 { get; set; } = 1; // Hidden
+                public int Unk04 { get; set; } = -1; // Hidden
+                public int Unk08 { get; set; } = 0; // Hidden
+                public int Unk0C { get; set; } = 0; // Hidden
+
+                private short[] RegionIndices { get; set; } = new short[64];
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string[] RegionNames { get; set; } = new string[64];
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class Riding : Event
+            {
+                private protected override EventType Type => EventType.Riding;
+                private protected override bool HasTypeData => true;
+
+                public Riding() : base($"{nameof(Event)}: {nameof(Riding)}") { }
+                internal Riding(BinaryReaderEx br) : base(br) { }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -1171,285 +931,296 @@ namespace SoulsFormats
                     RiderPartIndex = MSB.FindIndex(this, entries.Parts, RiderPartName);
                     MountPartIndex = MSB.FindIndex(this, entries.Parts, MountPartName);
                 }
-            }
 
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            public class SignPool : Event
-            {
-                private protected override EventType Type => EventType.SignPool;
-                private protected override bool HasTypeData => true;
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    RiderPartIndex = br.ReadInt32();
+                    MountPartIndex = br.ReadInt32();
+                }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32(RiderPartIndex);
+                    bw.WriteInt32(MountPartIndex);
+                }
+
+                // Layout
+                private int RiderPartIndex { get; set; }
+                private int MountPartIndex { get; set; }
+
+                // Names
                 [MSBReference(ReferenceType = typeof(Part))]
-                public string SignPartName { get; set; }
-                private int SignPartIndex { get; set; }
+                public string RiderPartName { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int SignPuddleParamID { get; set; }
+                [MSBReference(ReferenceType = typeof(Part))]
+                public string MountPartName { get; set; }
 
-                /// <summary>
-                /// Creates a SignPool with default values.
-                /// </summary>
-                public SignPool() : base($"{nameof(Event)}: {nameof(SignPool)}")
-                {
-                    SignPartIndex = -1;
-                }
-
-                internal SignPool(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    SignPartIndex = br.ReadInt32();
-                    SignPuddleParamID = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    bw.WriteInt32(SignPartIndex);
-                    bw.WriteInt32(SignPuddleParamID);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                }
-
-                internal override void GetNames(MSB_NR msb, Entries entries)
-                {
-                    base.GetNames(msb, entries);
-                    SignPartName = MSB.FindName(entries.Parts, SignPartIndex);
-                }
-
-                internal override void GetIndices(MSB_NR msb, Entries entries)
-                {
-                    base.GetIndices(msb, entries);
-                    SignPartIndex = MSB.FindIndex(this, entries.Parts, SignPartName);
-                }
             }
 
             /// <summary>
-            /// Unknown.
+            /// 
             /// </summary>
-            public class AreaTeam : Event
+            public class AutoDrawGroup : Event
             {
-                private protected override EventType Type => EventType.AreaTeam;
+                private protected override EventType Type => EventType.AutoDrawGroup;
                 private protected override bool HasTypeData => true;
 
-                public int EntityID_Leader { get; set; }
-                public int EUnk04 { get; set; }
-                public int EUnk08 { get; set; }
-                public int EUnk0c { get; set; }
-                public int RegionID_Leader { get; set; }
-                public int RegionID_Guest1 { get; set; }
-                public int RegionID_Guest2 { get; set; }
-                public int EUnk1c { get; set; }
-                public int EUnk20 { get; set; }
-                public int EUnk24 { get; set; }
-                public int EUnk28 { get; set; }
+                public AutoDrawGroup() : base($"{nameof(Event)}: {nameof(AutoDrawGroup)}") { }
 
-                /// <summary>
-                /// Creates a AreaTeam with default values.
-                /// </summary>
-                public AreaTeam() : base($"{nameof(Event)}: {nameof(AreaTeam)}")
-                {
-                }
-
-                internal AreaTeam(BinaryReaderEx br) : base(br) { }
-
+                internal AutoDrawGroup(BinaryReaderEx br) : base(br) { }
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EntityID_Leader = br.ReadInt32();
-                    EUnk04 = br.ReadInt32();
-                    EUnk08 = br.ReadInt32();
-                    EUnk0c = br.ReadInt32();
-                    RegionID_Leader = br.ReadInt32();
-                    RegionID_Guest1 = br.ReadInt32();
-                    RegionID_Guest2 = br.ReadInt32();
-                    EUnk1c = br.ReadInt32();
-                    EUnk20 = br.ReadInt32();
-                    EUnk24 = br.ReadInt32();
-                    EUnk28 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(EntityID_Leader);
-                    bw.WriteInt32(EUnk04);
-                    bw.WriteInt32(EUnk08);
-                    bw.WriteInt32(EUnk0c);
-                    bw.WriteInt32(RegionID_Leader);
-                    bw.WriteInt32(RegionID_Guest1);
-                    bw.WriteInt32(RegionID_Guest2);
-                    bw.WriteInt32(EUnk1c);
-                    bw.WriteInt32(EUnk20);
-                    bw.WriteInt32(EUnk24);
-                    bw.WriteInt32(EUnk28);
                 }
+
+                // Layout
             }
 
             /// <summary>
-            /// Unknown.
+            /// 
+            /// </summary>
+            public class SignPuddle : Event
+            {
+                private protected override EventType Type => EventType.SignPuddle;
+                private protected override bool HasTypeData => true;
+
+                public SignPuddle() : base($"{nameof(Event)}: {nameof(SignPuddle)}") { }
+                internal SignPuddle(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                }
+
+                // Layout
+            }
+
+            /// <summary>
+            /// 
             /// </summary>
             public class RetryPoint : Event
             {
                 private protected override EventType Type => EventType.RetryPoint;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// The asset name that the stake is represented by.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part))]
-                public string RetryPartName { get; set; }
-                private int RetryPartIndex { get; set; }
-
-                /// <summary>
-                /// Flag that must be set for stake to be available.
-                /// </summary>
-                public uint TriggerEventFlagID { get; set; }
-
-                /// <summary>
-                /// The distance at which the retry point is active (only used if no retry region is set).
-                /// </summary>
-                public float RetryDistance { get; set; }
-
-                /// <summary>
-                /// The region in which the retry point is active.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Region))]
-                public string RetryRegionName { get; set; }
-                private short RetryRegionIndex { get; set; }
-
-                /// <summary>
-                /// Creates a RetryPoint with default values.
-                /// </summary>
                 public RetryPoint() : base($"{nameof(Event)}: {nameof(RetryPoint)}") { }
-
                 internal RetryPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    RetryPartIndex = br.ReadInt32();
-                    TriggerEventFlagID = br.ReadUInt32();
-                    RetryDistance = br.ReadSingle();
-                    RetryRegionIndex = br.ReadInt16();
-                    br.AssertInt16(0);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(RetryPartIndex);
-                    bw.WriteUInt32(TriggerEventFlagID);
-                    bw.WriteSingle(RetryDistance);
-                    bw.WriteInt16(RetryRegionIndex);
-                    bw.WriteInt16(0);
+                }
+
+                // Layout
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class BirdRoute : Event
+            {
+                private protected override EventType Type => EventType.BirdRoute;
+                private protected override bool HasTypeData => true;
+
+                public BirdRoute() : base($"{nameof(Event)}: {nameof(BirdRoute)}") { }
+
+                internal BirdRoute(BinaryReaderEx br) : base(br) { }
+
+                private protected override void DeepCopyTo(Event evnt)
+                {
+                    var birdRoute = (BirdRoute)evnt;
+                    birdRoute.RegionNames = (string[])RegionNames.Clone();
                 }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    RetryPartName = MSB.FindName(entries.Parts, RetryPartIndex);
-                    RetryRegionName = MSB.FindName(entries.Regions, RetryRegionIndex);
+                    RegionNames = MSB.FindNames(entries.Regions, RegionIndices);
                 }
 
                 internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    RetryPartIndex = MSB.FindIndex(this, entries.Parts, RetryPartName);
-                    RetryRegionIndex = (short)MSB.FindIndex(this, entries.Regions, RetryRegionName);
+                    RegionIndices = MSB.FindShortIndices(entries.Regions, RegionNames);
                 }
-            }
-
-
-            /// <summary>
-            /// The structure is very similar to Sekiro.
-            /// </summary>
-            public class ConversationInformation : Event
-            {
-                private protected override EventType Type => EventType.ConversationInformation;
-                private protected override bool HasTypeData => true;
-
-                /// <summary>
-                /// Creates a Unknown_0x1A with default values.
-                /// </summary>
-                public ConversationInformation() : base($"{nameof(Event)}: {nameof(ConversationInformation)}") { }
-
-                internal ConversationInformation(BinaryReaderEx br) : base(br) { }
-
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
-                public string[] Talk_EnemyNames { get; private set; }
-                public int[] Talk_EnemyIndices;
-
-                public int[] Talk_TalkIDs { get; set; }
-                public byte Talk_Unk44 { get; set; }
-                public byte Talk_Unk45 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Talk_EnemyIndices = br.ReadInt32s(4);
-                    br.AssertPattern(0x14, 0xFF);
-                    Talk_TalkIDs = br.ReadInt32s(3);
-                    br.AssertPattern(0x14, 0x00);
-                    Talk_Unk44 = br.ReadByte();
-                    Talk_Unk45 = br.ReadByte();
-                    br.AssertPattern(0x3A, 0x00);
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    RegionIndices = br.ReadInt16s(32);
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32s(Talk_EnemyIndices);
-                    bw.WritePattern(0x14, 0xFF);
-                    bw.WriteInt32s(Talk_TalkIDs);
-                    bw.WritePattern(0x14, 0x00);
-                    bw.WriteByte(Talk_Unk44);
-                    bw.WriteByte(Talk_Unk45);
-                    bw.WritePattern(0x3A, 0x00);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt16s(RegionIndices);
                 }
+
+                // Layout
+                public int Unk00 { get; set; } = 0; // Hidden
+                public int Unk04 { get; set; } = 0; 
+                public int Unk08 { get; set; } = 0; 
+                public int Unk0C { get; set; } = 0;
+                public short[] RegionIndices { get; set; } = new short[32];
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Region))]
+                public string[] RegionNames { get; set; } = new string[32];
+
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public class TalkInfo : Event
+            {
+                private protected override EventType Type => EventType.TalkInfo;
+                private protected override bool HasTypeData => true;
+
+                public TalkInfo() : base($"{nameof(Event)}: {nameof(TalkInfo)}") { }
+
+                internal TalkInfo(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    EnemyPartIndices = br.ReadInt32s(4);
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
+                    Unk20 = br.ReadInt32();
+                    TalkEntries = br.ReadInt32s(3);
+                    Unk30 = br.ReadInt32();
+                    Unk34 = br.ReadInt32();
+                    Unk38 = br.ReadInt32();
+                    Unk3C = br.ReadInt32();
+                    Unk40 = br.ReadInt32();
+                    Unk44 = br.ReadByte();
+                    Unk45 = br.ReadByte();
+                    Unk46 = br.ReadInt16();
+                    Unk48 = br.ReadInt32();
+                    Unk4C = br.ReadInt32();
+                    Unk50 = br.ReadInt32();
+                    Unk54 = br.ReadInt32();
+                    Unk58 = br.ReadInt32();
+                    Unk5C = br.ReadInt32();
+                    Unk60 = br.ReadInt32();
+                    Unk64 = br.ReadInt32();
+                    Unk68 = br.ReadInt32();
+                    Unk6C = br.ReadInt32();
+                    Unk70 = br.ReadInt32();
+                    Unk74 = br.ReadInt32();
+                    Unk78 = br.ReadInt32();
+                    Unk7C = br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    bw.WriteInt32s(EnemyPartIndices);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32s(TalkEntries);
+                    bw.WriteInt32(Unk30);
+                    bw.WriteInt32(Unk34);
+                    bw.WriteInt32(Unk38);
+                    bw.WriteInt32(Unk3C);
+                    bw.WriteInt32(Unk40);
+                    bw.WriteByte(Unk44);
+                    bw.WriteByte(Unk45);
+                    bw.WriteInt16(Unk46);
+                    bw.WriteInt32(Unk48);
+                    bw.WriteInt32(Unk4C);
+                    bw.WriteInt32(Unk50);
+                    bw.WriteInt32(Unk54);
+                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(Unk5C);
+                    bw.WriteInt32(Unk60);
+                    bw.WriteInt32(Unk64);
+                    bw.WriteInt32(Unk68);
+                    bw.WriteInt32(Unk6C);
+                    bw.WriteInt32(Unk70);
+                    bw.WriteInt32(Unk74);
+                    bw.WriteInt32(Unk78);
+                    bw.WriteInt32(Unk7C);
+                }
+
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
-                    Talk_EnemyNames = MSB.FindNames(msb.Parts.Enemies, Talk_EnemyIndices);
+                    EnemyPartNames = MSB.FindNames(msb.Parts.Enemies, EnemyPartIndices);
                 }
 
                 internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
-                    Talk_EnemyIndices = MSB.FindIndices(this, msb.Parts.Enemies, Talk_EnemyNames);
+                    EnemyPartIndices = MSB.FindIndices(this, msb.Parts.Enemies, EnemyPartNames);
                 }
+
+                // Layout
+                public int[] EnemyPartIndices { get; set; } = new int[4];
+                public int Unk10 { get; set; } = -1; // Hidden
+                public int Unk14 { get; set; } = -1; // Hidden
+                public int Unk18 { get; set; } = -1; // Hidden
+                public int Unk1C { get; set; } = -1; // Hidden
+                public int Unk20 { get; set; } = -1; // Hidden
+                public int[] TalkEntries { get; set; } = new int[3];
+                public int Unk30 { get; set; } = -1; // Hidden
+                public int Unk34 { get; set; } = -1; // Hidden
+                public int Unk38 { get; set; } = -1; // Hidden
+                public int Unk3C { get; set; } = -1; // Hidden
+                public int Unk40 { get; set; } = -1; // Hidden
+                public byte Unk44 { get; set; } = 0;
+                public byte Unk45 { get; set; } = 0; // Boolean
+                public short Unk46 { get; set; } = 0; // Hidden
+                public int Unk48 { get; set; } = 0; // Hidden
+                public int Unk4C { get; set; } = 0; // Hidden
+                public int Unk50 { get; set; } = 0; // Hidden
+                public int Unk54 { get; set; } = 0; // Hidden
+                public int Unk58 { get; set; } = 0; // Hidden
+                public int Unk5C { get; set; } = 0; // Hidden
+                public int Unk60 { get; set; } = 0; // Hidden
+                public int Unk64 { get; set; } = 0; // Hidden
+                public int Unk68 { get; set; } = 0; // Hidden
+                public int Unk6C { get; set; } = 0; // Hidden
+                public int Unk70 { get; set; } = 0; // Hidden
+                public int Unk74 { get; set; } = 0; // Hidden
+                public int Unk78 { get; set; } = 0; // Hidden
+                public int Unk7C { get; set; } = 0; // Hidden
+
+                // Names
+                [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
+                public string[] EnemyPartNames { get; private set; }
             }
 
             /// <summary>
-            /// Unknown.
+            /// 
             /// </summary>
-            public class GroupBattleInfo : Event
+            public class TeamFight : Event
             {
-                private protected override EventType Type => EventType.GroupBattleInfo;
+                private protected override EventType Type => EventType.TeamFight;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Creates a Unknown_0x1B with default values.
-                /// </summary>
-                public GroupBattleInfo() : base($"{nameof(Event)}: {nameof(GroupBattleInfo)}") { }
+                public TeamFight() : base($"{nameof(Event)}: {nameof(TeamFight)}") { }
 
-                internal GroupBattleInfo(BinaryReaderEx br) : base(br) { }
-
-                public int TargetEntityGroupID { get; set; }
-
-                public int FirstItemLot { get; set; }
-                public int SecondItemLot { get; set; }
-                public int LeaderEntityID { get; set; }
-
-                /// <summary>
-                /// Added in 1.02.0
-                /// </summary>
-                public int UnkItemLot { get; set; }
+                internal TeamFight(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1468,19 +1239,24 @@ namespace SoulsFormats
                     bw.WriteInt32(LeaderEntityID);
                     bw.WriteInt32(UnkItemLot);
                 }
+
+                // Layout
+
+                public int TargetEntityGroupID { get; set; }
+                public int FirstItemLot { get; set; }
+                public int SecondItemLot { get; set; } = -1;
+                public int LeaderEntityID { get; set; }
+                public int UnkItemLot { get; set; } = -1;
             }
 
             /// <summary>
-            /// Unknown.
+            /// 
             /// </summary>
             public class Other : Event
             {
                 private protected override EventType Type => EventType.Other;
                 private protected override bool HasTypeData => false;
 
-                /// <summary>
-                /// Creates an Other with default values.
-                /// </summary>
                 public Other() : base($"{nameof(Event)}: {nameof(Other)}") { }
 
                 internal Other(BinaryReaderEx br) : base(br) { }
