@@ -15,6 +15,7 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Veldrid;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -23,6 +24,8 @@ public class ParamTableGroupView
     public ParamEditorScreen Editor;
     public ProjectEntry Project;
     public ParamEditorView View;
+
+    public bool _arrowKeyPressed;
 
     public string CurrentTableGroupSearch = "";
 
@@ -123,6 +126,19 @@ public class ParamTableGroupView
             if(ImGui.Selectable($"{displayName}##rowGroup{group}", CurrentTableGroup == group))
             {
                 UpdateTableGroupSelection(group);
+            }
+
+            // Up/Down arrow key input
+            if ((InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)) && !ImGui.IsAnyItemActive())
+            {
+                _arrowKeyPressed = true;
+            }
+
+            if (_arrowKeyPressed && ImGui.IsItemFocused())
+            {
+                UpdateTableGroupSelection(group);
+
+                _arrowKeyPressed = false;
             }
 
             DisplayContextMenu(group);
@@ -316,7 +332,10 @@ public class ParamTableGroupView
 
         switch(curParam)
         {
+            case "AttachEffectTableParam":
             case "ItemTableParam":
+            case "MagicTableParam":
+            case "SwordArtsTableParam":
                 return "chanceWeight";
             default: break;
         }
