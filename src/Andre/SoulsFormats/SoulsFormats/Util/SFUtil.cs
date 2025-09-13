@@ -773,10 +773,19 @@ namespace SoulsFormats
             cryptor.KeySize = 256;
             cryptor.BlockSize = 128;
 
+            int blockSize = 16;
+            int remainder = encryptedContent.Length % blockSize;
+
+            if (remainder != 0)
+            {
+                Array.Resize(ref encryptedContent, encryptedContent.Length + (blockSize - remainder));
+            }
+
             using (CryptoStream cs = new CryptoStream(ms, cryptor.CreateDecryptor(key, iv), CryptoStreamMode.Write))
             {
                 cs.Write(encryptedContent, 0, encryptedContent.Length);
             }
+
             return ms.ToArray();
         }
 
