@@ -16,14 +16,11 @@
     
     <ChildRegionNames
     AltName="Child Region"
-    Wiki="A child region this emitter will use." />
+    Wiki="A child region this emitter will use." 
+    ArrayProperty="" />
     
     <ChildRegionIndices
     IndexProperty="" />
-    
-    <UnkT49
-    AltName="Unknown: 0x49"
-    Wiki="" />
   </Field>
   
   <Enums>

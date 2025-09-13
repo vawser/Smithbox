@@ -4,7 +4,7 @@
   Wiki="This map object represents an interaction within the map." />
   
   <Field>
-    <ObjActEntityID
+    <ObjActEntityId
     AltName="ObjAct Entity ID"
     Wiki="" />
     
@@ -26,16 +26,10 @@
     Wiki="The interaction state this interaction uses."
     Enum="OBJACT_STATE" />
 
-    <ObjAct_Unk0E
-    AltName="Unknown: 0x0E" />
-    
     <EventFlagID
     AltName="Event Flag ID"
     Wiki="The event flag this ObjAct sets upon interaction." 
     FlagAlias="" />
-
-    <ObjAct_Unk14
-    AltName="Unknown: 0x14" />
 
   </Field>
   

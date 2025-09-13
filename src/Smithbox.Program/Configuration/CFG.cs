@@ -894,7 +894,7 @@ public class CFG
     public bool MapEditor_Always_List_Loaded_Maps = true;
 
     public bool MapEditor_Enable_Commmunity_Names = true;
-    public bool MapEditor_Enable_Padding_Fields = true;
+    public bool MapEditor_DisplayUnknownFields = true;
     public bool MapEditor_Enable_Obsolete_Fields = true;
 
     public bool MapEditor_Enable_Property_Info = false;

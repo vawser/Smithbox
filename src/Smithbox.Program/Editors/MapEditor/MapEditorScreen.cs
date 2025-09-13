@@ -843,17 +843,11 @@ public class MapEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Commmunity_Names);
 
-            if (ImGui.MenuItem("Field: Padding"))
+            if (ImGui.MenuItem("Field: Unknowns"))
             {
-                CFG.Current.MapEditor_Enable_Padding_Fields = !CFG.Current.MapEditor_Enable_Padding_Fields;
+                CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Padding_Fields);
-
-            if (ImGui.MenuItem("Field: Obsolete"))
-            {
-                CFG.Current.MapEditor_Enable_Obsolete_Fields = !CFG.Current.MapEditor_Enable_Obsolete_Fields;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_Enable_Obsolete_Fields);
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_DisplayUnknownFields);
 
             ImGui.EndMenu();
         }

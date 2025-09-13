@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a mount association between two characters." />
+  
+  <Field>
+    <RiderPartName
+    AltName="Rider Name"
+    Wiki="The name of the Rider part."
+    MapRef="Part-Part" />
+    
+    <RiderPartIndex
+    IndexProperty="" />
+    
+    <MountPartName
+    AltName="Mount Name"
+    Wiki="The name of the Mount part."
+    MapRef="Part-Part" />
+    
+    <MountPartIndex
+    IndexProperty="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

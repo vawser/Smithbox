@@ -1,23 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents a mount association between two characters." />
+  Wiki="This map object represents a patrol route for a character" />
   
   <Field>
-    <RiderPartName
-    AltName="Rider Name"
-    Wiki="The name of the Rider part."
-    MapRef="Part-Part" />
+    <PatrolType
+    AltName="Patrol Type"
+    Wiki="The type of patrol this represents."
+    Enum="PATROL_TYPE" />
     
-    <RiderPartIndex
-    IndexProperty="" />
+    <WalkRegionNames
+    AltName="Walk Region"
+    Wiki="A point that a patrol route will reach." 
+    ArrayProperty="" />
     
-    <MountPartName
-    AltName="Mount Name"
-    Wiki="The name of the Mount part."
-    MapRef="Part-Part" />
-    
-    <MountPartIndex
+    <WalkRegionIndices
     IndexProperty="" />
     
   </Field>
@@ -30,6 +27,7 @@
         <Option Value="3" Name="Unknown" />
         <Option Value="4" Name="Use Final Point Only, Idle, then Return to Start Point" />
         <Option Value="5" Name="Idle at Final Point, Look at Penultimate Point, then Return to Final Point" />
+        <Option Value="6" Name="Randomly Wander Around" />
     </Enum>
   </Enums>
 </MSBMETA>

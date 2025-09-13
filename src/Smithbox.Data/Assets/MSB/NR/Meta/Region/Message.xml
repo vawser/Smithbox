@@ -9,10 +9,6 @@
     Wiki="The ID of the message's text in the FMGs."
     FmgRef="Blood_Messages" />
     
-    <UnkT02
-    AltName="Unknown: 0x2"
-    Wiki="" />
-    
     <Hidden
     AltName="Is Hidden"
     Wiki="Whether the message requires Seek Guidance to appear."

@@ -9,94 +9,15 @@
     Wiki="Determines the behavior of the collision with other entities." 
     Enum="HIT_FILTER_TYPE" />
     
-    <UnkT01
-    AltName="Unknown: 0x1"
-    Wiki="" />
-    
-    <UnkT02
-    AltName="Unknown: 0x2"
-    Wiki="" />
-    
-    <UnkT03
-    AltName="Unknown: 0x3"
-    Wiki="" />
-    
-    <UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <UnkT06
-    AltName="Unknown: 0x6"
-    Wiki="" />
-    
-    <UnkT14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
     <LocationTextID
     AltName="Location Text ID"
     Wiki="ID of location text to display when stepping onto this collision."
     FmgRef="Title_Locations" />
     
-    <UnkT1C
-    AltName="Unknown: 0x1C"
-    Wiki="" />
-    
     <PlayRegionID
     AltName="Play Region ID"
     Wiki="Used to determine invasion eligibility." 
     ParamRef="PlayRegionParam" />
-    
-    <UnkT24
-    AltName="Unknown: 0x24"
-    Wiki="" />
-    
-    <UnkT26
-    AltName="Unknown: 0x26"
-    Wiki="" />
-    
-    <UnkT30
-    AltName="Unknown: 0x30"
-    Wiki="" />
-    
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
-    
-    <UnkT35
-    AltName="Unknown: 0x35"
-    Wiki="" />
-    
-    <DisableTorrent
-    AltName="Disable Torrent Usage"
-    Wiki="If ON, Torrent cannot be summoned on this collision." 
-    IsBool="" />
-    
-    <UnkT3C
-    AltName="Unknown: 0x3C"
-    Wiki="" />
-    
-    <UnkT3E
-    AltName="Unknown: 0x3E"
-    Wiki="" />
-    
-    <UnkT40
-    AltName="Unknown: 0x40"
-    Wiki="" />
-    
-    <EnableFastTravelEventFlagID
-    AltName="Allow Fast Travel Event ID"
-    Wiki="If this event flag ID is OFF, fast travel is blocked when on this collision." />
-    
-    <UnkT4C
-    AltName="Unknown: 0x4C"
-    Wiki="" />
-    
-    <UnkT4E
-    AltName="Unknown: 0x4E"
-    Wiki="" />
-    
-    
   </Field>
   
   <Enums>

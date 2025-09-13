@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <MSBMETA XmlVersion="0">
   <Self 
-  Wiki="This map object represents an retry point event." />
+  Wiki="This map object represents a route point for the bird." />
   
   <Field>
+  
   </Field>
   
   <Enums>

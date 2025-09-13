@@ -409,8 +409,8 @@ namespace SoulsFormats
                 Name = name;
                 Shape = new MSB.Shape.Point();
                 MapStudioLayer = 0xFFFFFFFF;
-                Region_UnkA = new List<short>();
-                Region_UnkB = new List<short>();
+                UnkA_Region = new List<short>();
+                UnkB_Region = new List<short>();
                 Common_EntityID = 0;
             }
 
@@ -418,8 +418,8 @@ namespace SoulsFormats
             {
                 var region = (Region)MemberwiseClone();
                 region.Shape = Shape.DeepCopy();
-                region.Region_UnkA = new List<short>(Region_UnkA);
-                region.Region_UnkB = new List<short>(Region_UnkB);
+                region.UnkA_Region = new List<short>(UnkA_Region);
+                region.UnkB_Region = new List<short>(UnkB_Region);
                 DeepCopyTo(region);
                 return region;
             }
@@ -439,7 +439,7 @@ namespace SoulsFormats
                 RegionID = br.ReadInt32();
                 long baseDataOffset1 = br.ReadInt64();
                 long baseDataOffset2 = br.ReadInt64();
-                Region_Unk40 = br.ReadInt32();
+                Unk40_Region = br.ReadInt32();
                 MapStudioLayer = br.ReadUInt32();
                 long shapeDataOffset = br.ReadInt64();
                 long baseDataOffset3 = br.ReadInt64();
@@ -469,11 +469,11 @@ namespace SoulsFormats
 
                 br.Position = start + baseDataOffset1;
                 short countA = br.ReadInt16();
-                Region_UnkA = new List<short>(br.ReadInt16s(countA));
+                UnkA_Region = new List<short>(br.ReadInt16s(countA));
 
                 br.Position = start + baseDataOffset2;
                 short countB = br.ReadInt16();
-                Region_UnkB = new List<short>(br.ReadInt16s(countB));
+                UnkB_Region = new List<short>(br.ReadInt16s(countB));
 
                 if (Shape.HasShapeData)
                 {
@@ -486,14 +486,14 @@ namespace SoulsFormats
                 // Common
                 Common_PartIndex = br.ReadInt32();
                 Common_EntityID = br.ReadUInt32();
-                Common_Unk08 = br.ReadSByte();
-                Common_Unk09 = br.ReadByte();
-                Common_Unk0A = br.ReadInt16();
-                Common_Unk0C = br.ReadInt32();
+                Unk08_Common = br.ReadSByte();
+                Unk09_Common = br.ReadByte();
+                Unk0A_Common = br.ReadInt16();
+                Unk0C_Common = br.ReadInt32();
                 Common_VariationID = br.ReadInt32();
-                Common_Unk14 = br.ReadInt32();
-                Common_Unk18 = br.ReadInt32();
-                Common_Unk1C = br.ReadInt32();
+                Unk14_Common = br.ReadInt32();
+                Unk18_Common = br.ReadInt32();
+                Unk1C_Common = br.ReadInt32();
 
                 if (HasTypeData)
                 {
@@ -504,10 +504,10 @@ namespace SoulsFormats
                 // Unk4
                 br.Position = start + struct98Offset;
                 Stuct98_MapID = br.ReadMapIDBytes(4);
-                Stuct98_Unk04 = br.ReadInt32();
+                Unk04_Struct98 = br.ReadInt32();
                 br.AssertInt32(0);
-                Stuct98_Unk0C = br.ReadInt32();
-                Stuct98_Unk10 = br.ReadInt32();
+                Unk0C_Struct98 = br.ReadInt32();
+                Unk10_Struct98 = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
@@ -528,7 +528,7 @@ namespace SoulsFormats
                 bw.WriteInt32(RegionID);
                 bw.ReserveInt64("BaseDataOffset1");
                 bw.ReserveInt64("BaseDataOffset2");
-                bw.WriteInt32(Region_Unk40);
+                bw.WriteInt32(Unk40_Region);
                 bw.WriteUInt32(MapStudioLayer);
                 bw.ReserveInt64("ShapeDataOffset");
                 bw.ReserveInt64("EntityDataOffset");
@@ -540,13 +540,13 @@ namespace SoulsFormats
                 bw.Pad(4);
 
                 bw.FillInt64("BaseDataOffset1", bw.Position - start);
-                bw.WriteInt16((short)Region_UnkA.Count);
-                bw.WriteInt16s(Region_UnkA);
+                bw.WriteInt16((short)UnkA_Region.Count);
+                bw.WriteInt16s(UnkA_Region);
                 bw.Pad(4);
 
                 bw.FillInt64("BaseDataOffset2", bw.Position - start);
-                bw.WriteInt16((short)Region_UnkB.Count);
-                bw.WriteInt16s(Region_UnkB);
+                bw.WriteInt16((short)UnkB_Region.Count);
+                bw.WriteInt16s(UnkB_Region);
                 bw.Pad(8);
 
                 if (Shape.HasShapeData)
@@ -564,14 +564,14 @@ namespace SoulsFormats
                 bw.FillInt64("EntityDataOffset", bw.Position - start);
                 bw.WriteInt32(Common_PartIndex);
                 bw.WriteUInt32(Common_EntityID);
-                bw.WriteSByte(Common_Unk08);
-                bw.WriteByte(Common_Unk09);
-                bw.WriteInt16(Common_Unk0A);
-                bw.WriteInt32(Common_Unk0C);
+                bw.WriteSByte(Unk08_Common);
+                bw.WriteByte(Unk09_Common);
+                bw.WriteInt16(Unk0A_Common);
+                bw.WriteInt32(Unk0C_Common);
                 bw.WriteInt32(Common_VariationID);
-                bw.WriteInt32(Common_Unk14);
-                bw.WriteInt32(Common_Unk18);
-                bw.WriteInt32(Common_Unk1C);
+                bw.WriteInt32(Unk14_Common);
+                bw.WriteInt32(Unk18_Common);
+                bw.WriteInt32(Unk1C_Common);
 
                 if (Type > RegionType.BuddySummonPoint && Type != RegionType.Other)
                 {
@@ -596,13 +596,13 @@ namespace SoulsFormats
                 // Struct 98
                 bw.FillInt64("Struct98Offset", bw.Position - start);
                 bw.WriteMapIDBytes(Stuct98_MapID);
-                bw.WriteInt32(Stuct98_Unk04);
-                bw.WriteInt32(Stuct98_Unk08);
-                bw.WriteInt32(Stuct98_Unk0C);
-                bw.WriteInt32(Stuct98_Unk10);
-                bw.WriteInt32(Stuct98_Unk14);
-                bw.WriteInt32(Stuct98_Unk18);
-                bw.WriteInt32(Stuct98_Unk1C);
+                bw.WriteInt32(Unk04_Struct98);
+                bw.WriteInt32(Unk08_Struct98);
+                bw.WriteInt32(Unk0C_Struct98);
+                bw.WriteInt32(Unk10_Struct98);
+                bw.WriteInt32(Unk14_Struct98);
+                bw.WriteInt32(Unk18_Struct98);
+                bw.WriteInt32(Unk1C_Struct98);
                 bw.Pad(8);
             }
 
@@ -611,33 +611,33 @@ namespace SoulsFormats
             public Vector3 Position { get; set; }
             public Vector3 Rotation { get; set; }
             public int RegionID { get; set; }
-            public int Region_Unk40 { get; set; }
+            public int Unk40_Region { get; set; }
             public uint MapStudioLayer { get; set; }
-            public List<short> Region_UnkA { get; set; } = new List<short>();
-            public List<short> Region_UnkB { get; set; } = new List<short>();
+            public List<short> UnkA_Region { get; set; } = new List<short>();
+            public List<short> UnkB_Region { get; set; } = new List<short>();
 
             // Common
             private int Common_PartIndex { get; set; } = -1;
             public uint Common_EntityID { get; set; } = 0;
-            public sbyte Common_Unk08 { get; set; } = -1;
-            public byte Common_Unk09 { get; set; } = 0;
-            public short Common_Unk0A { get; set; } = 0;
-            public int Common_Unk0C { get; set; } = 0;
+            public sbyte Unk08_Common { get; set; } = -1;
+            public byte Unk09_Common { get; set; } = 0;
+            public short Unk0A_Common { get; set; } = 0;
+            public int Unk0C_Common { get; set; } = 0;
             public int Common_VariationID { get; set; } = -1;
-            public int Common_Unk14 { get; set; } = 0;
-            public int Common_Unk18 { get; set; } = 0;
-            public int Common_Unk1C { get; set; } = 0;
+            public int Unk14_Common { get; set; } = 0;
+            public int Unk18_Common { get; set; } = 0;
+            public int Unk1C_Common { get; set; } = 0;
 
             // Struct 98
 
             public sbyte[] Stuct98_MapID { get; set; } = new sbyte[4];
-            public int Stuct98_Unk04 { get; set; } = 0;
-            public int Stuct98_Unk08 { get; set; } = 0;
-            public int Stuct98_Unk0C { get; set; } = -1;
-            public int Stuct98_Unk10 { get; set; } = -1;
-            public int Stuct98_Unk14 { get; set; } = 0;
-            public int Stuct98_Unk18 { get; set; } = 0;
-            public int Stuct98_Unk1C { get; set; } = 0;
+            public int Unk04_Struct98 { get; set; } = 0;
+            public int Unk08_Struct98 { get; set; } = 0;
+            public int Unk0C_Struct98 { get; set; } = -1;
+            public int Unk10_Struct98 { get; set; } = -1;
+            public int Unk14_Struct98 { get; set; } = 0;
+            public int Unk18_Struct98 { get; set; } = 0;
+            public int Unk1C_Struct98 { get; set; } = 0;
 
 
             // Names
@@ -1549,7 +1549,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
+                    WorldMapPointParamID = br.ReadInt32();
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadSingle();
                     Unk0C = br.ReadSingle();
@@ -1561,7 +1561,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(WorldMapPointParamID);
                     bw.WriteInt32(Unk04);
                     bw.WriteSingle(Unk08);
                     bw.WriteSingle(Unk0C);
@@ -1572,7 +1572,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = -1;
+                public int WorldMapPointParamID { get; set; } = -1;
                 public int Unk04 { get; set; } = -1;
                 public float Unk08 { get; set; } = -1f;
                 public float Unk0C { get; set; } = -1f;

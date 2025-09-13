@@ -6,11 +6,8 @@
   <Field>
     <JumpHeight
     AltName="Jump Height"
-    Wiki="Height the player will move upwards when activating this spirit spring." />
+    Wiki="Height the player will move upwards when activating this jump point." />
     
-    <UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
   </Field>
   
   <Enums>

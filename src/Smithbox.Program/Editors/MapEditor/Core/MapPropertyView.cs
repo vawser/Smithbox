@@ -95,16 +95,16 @@ public class MapPropertyView
         // Toggle Field Padding
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
+        if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            CFG.Current.MapEditor_Enable_Padding_Fields = !CFG.Current.MapEditor_Enable_Padding_Fields;
+            CFG.Current.MapEditor_DisplayUnknownFields = !CFG.Current.MapEditor_DisplayUnknownFields;
         }
 
-        var fieldPaddingMode = "Hidden";
-        if (!CFG.Current.MapEditor_Enable_Padding_Fields)
-            fieldPaddingMode = "Visible";
+        var unkFieldDisplayMode = "Hidden";
+        if (!CFG.Current.MapEditor_DisplayUnknownFields)
+            unkFieldDisplayMode = "Visible";
 
-        UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+        UIHelper.Tooltip($"Toggle the display of unknown fields.\nCurrent Mode: {unkFieldDisplayMode}");
 
         ImGui.Separator();
 
@@ -837,6 +837,16 @@ public class MapPropertyView
             // Index Properties are hidden by default
             if (meta != null && meta.IndexProperty)
                 continue;
+
+            if(!CFG.Current.MapEditor_DisplayUnknownFields)
+            {
+                // Rough heuristic since all unknown fields start with Unk
+                var propName = prop.Name.ToLower();
+                if (propName.StartsWith("unk"))
+                {
+                    continue;
+                }
+            }
 
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();

@@ -4,14 +4,6 @@
   Wiki="This map object represents a play area in the map." />
   
   <Field>
-    <PlayRegionID
-    AltName="Play Region ID"
-    Wiki="The play region this are uses" 
-    ParamRef="PlayRegionParam" />
-    
-    <UnkT04
-    AltName="Unknown: 0x4"
-    Wiki="" />
     
   </Field>
   

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an bird route." />
+  
+  <Field>
+    <RegionNames
+    AltName="Region Name"
+    Wiki="A region that this bird route uses." 
+    ArrayProperty="" />
+    
+    <RegionIndices
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

@@ -618,8 +618,8 @@ namespace SoulsFormats
                     DisplayGroups = br.ReadUInt32s(8);
                     DrawGroups = br.ReadUInt32s(8);
                     CollisionMask = br.ReadUInt32s(32);
-                    UnkC0 = br.ReadByte();
-                    UnkC1 = br.ReadByte();
+                    Condition1 = br.ReadByte();
+                    Condition2 = br.ReadByte();
                     UnkC2 = br.ReadInt16();
                     UnkC4 = br.ReadInt16();
                     UnkC6 = br.ReadInt16(); 
@@ -631,8 +631,8 @@ namespace SoulsFormats
                     bw.WriteUInt32s(DisplayGroups);
                     bw.WriteUInt32s(DrawGroups);
                     bw.WriteUInt32s(CollisionMask);
-                    bw.WriteByte(UnkC0);
-                    bw.WriteByte(UnkC1);
+                    bw.WriteByte(Condition1);
+                    bw.WriteByte(Condition2);
                     bw.WriteInt16(UnkC2);
                     bw.WriteInt16(UnkC4);
                     bw.WriteInt16(UnkC6);
@@ -644,8 +644,8 @@ namespace SoulsFormats
                 public uint[] DisplayGroups { get; set; } = new uint[8];
                 public uint[] DrawGroups { get; set; } = new uint[8];
                 public uint[] CollisionMask { get; set; } = new uint[32];
-                public byte UnkC0 { get; set; } = 0; // Bool
-                public byte UnkC1 { get; set; } = 0; // Bool
+                public byte Condition1 { get; set; } = 0; // Bool
+                public byte Condition2 { get; set; } = 0; // Bool
                 private short UnkC2 { get; set; } = 0; // Hidden
                 private short UnkC4 { get; set; } = -1; // Hidden
                 private short UnkC6 { get; set; } = 0; // Hidden
@@ -1564,7 +1564,7 @@ namespace SoulsFormats
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string HitPartName { get; set; }
 
-                [MSBReference(ReferenceType = typeof(Event.PatrolInfo))]
+                [MSBReference(ReferenceType = typeof(Event.PatrolRoute))]
                 public string PatrolRouteName { get; set; }
 
                 public class EnemyUnk78Struct
@@ -2336,6 +2336,8 @@ namespace SoulsFormats
                     TileData = new TileStruct();
                     UnkA0Data = new UnkA0Struct();
                     UnkA8Data = new UnkA8Struct();
+
+                    InnerStruct68 = new AssetInnnerStruct68();
                 }
 
                 internal Asset(BinaryReaderEx br) : base(br) { }
@@ -2572,6 +2574,8 @@ namespace SoulsFormats
 
                 public class AssetInnnerStruct68
                 {
+                    public AssetInnnerStruct68() { }
+
                     public AssetInnnerStruct68 DeepCopy()
                     {
                         return (AssetInnnerStruct68)MemberwiseClone();

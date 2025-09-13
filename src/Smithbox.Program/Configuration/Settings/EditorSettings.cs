@@ -294,8 +294,8 @@ public class MapEditorTab
             ImGui.Checkbox("Display community names", ref CFG.Current.MapEditor_Enable_Commmunity_Names);
             UIHelper.Tooltip("The MSB property fields will be given crowd-sourced names instead of the canonical name.");
 
-            ImGui.Checkbox("Display padding fields", ref CFG.Current.MapEditor_Enable_Padding_Fields);
-            UIHelper.Tooltip("The MSB property fields that are considered padding.");
+            ImGui.Checkbox("Display unknown fields", ref CFG.Current.MapEditor_DisplayUnknownFields);
+            UIHelper.Tooltip("The MSB property fields that are considered unknown.");
 
             ImGui.Checkbox("Display obsolete fields", ref CFG.Current.MapEditor_Enable_Obsolete_Fields);
             UIHelper.Tooltip("The MSB property fields that are considered obsolete.");

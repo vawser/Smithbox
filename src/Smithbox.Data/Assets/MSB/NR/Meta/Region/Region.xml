@@ -22,51 +22,25 @@
     AltName="Region ID"
     Wiki="Identifies the region in event scripts." />
     
-    <Unk40
-    AltName="Unknown: 0x40"
-    Wiki="" />
-    
     <MapStudioLayer
     AltName="Map Studio Layer"
     Wiki="Controls whether the region is active in different ceremonies." />
     
-    <UnkA
-    AltName="Unknown A"
-    Wiki=""
-    ArrayProperty="" />
-    
-    <UnkB
-    AltName="Unknown B"
-    Wiki=""
-    ArrayProperty="" />
-    
-    <UnkE08
-    AltName="Unknown: 0x8"
-    Wiki="" />
-    
-    <MapID
-    AltName="Map ID"
-    Wiki="" />
-    
-    <UnkS04
-    AltName="Unknown: 0x4"
-    Wiki="" />
-    
-    <UnkS0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
-    
-    <ActivationPartName
+    <Common_PartName
     AltName="Activation Part Name"
     Wiki="The region remains inactive until the specified part is rendered. Empty means it is always active." />
     
-    <ActivationPartIndex
+    <Common_PartIndex
     IndexProperty="" />
     
-    <EntityID
+    <Common_EntityID
     AltName="Entity ID"
     Wiki="Identifies this region in event scripts." 
     EntityIdentifier="" />
+    
+    <Stuct98_MapID
+    AltName="Map ID"
+    Wiki="" />
     
   </Field>
   

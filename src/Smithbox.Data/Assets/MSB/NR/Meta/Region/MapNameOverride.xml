@@ -4,10 +4,6 @@
   Wiki="This map object represents a map name override area in the map." />
   
   <Field>
-    <TextID
-    AltName="Text ID"
-    Wiki="The FMG id to use for popup titlecards. Negative values apply when entering, Positive values apply on map load."
-    FmgRef="Title_Locations" />
   </Field>
   
   <Enums>

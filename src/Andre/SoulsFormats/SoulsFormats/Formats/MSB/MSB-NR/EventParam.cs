@@ -240,7 +240,7 @@ namespace SoulsFormats
                 EventID = br.ReadInt32();
                 br.AssertUInt32((uint)Type);
                 TypeIndex = br.ReadInt32();
-                BaseUnk14 = br.ReadInt32();
+                Unk14_Base = br.ReadInt32();
                 CommonOffset = br.ReadInt64();
                 TypeOffset = br.ReadInt64();
                 Unk28Offset = br.ReadInt64();
@@ -265,9 +265,9 @@ namespace SoulsFormats
                 PartIndex = br.ReadInt32();
                 RegionIndex = br.ReadInt32();
                 EntityID = br.ReadUInt32();
-                CommonUnk0C = br.ReadSByte();
-                CommonUnk0D = br.ReadByte();
-                CommonUnk0E = br.ReadInt16();
+                Unk0C_Common = br.ReadSByte();
+                Unk0D_Common = br.ReadByte();
+                Unk0E_Common = br.ReadInt16();
 
                 // Type
                 if (HasTypeData)
@@ -279,13 +279,13 @@ namespace SoulsFormats
                 // Unk 28
                 br.Position = start + Unk28Offset;
                 MapID = br.ReadMapIDBytes(4);
-                MapUnk04 = br.ReadInt32();
-                MapUnk08 = br.ReadInt32();
-                MapUnk0C = br.ReadInt32();
-                MapUnk10 = br.ReadInt32();
-                MapUnk14 = br.ReadInt32();
-                MapUnk18 = br.ReadInt32();
-                MapUnk1C = br.ReadInt32();
+                Unk04_Map = br.ReadInt32();
+                Unk08_Map = br.ReadInt32();
+                Unk0C_Map = br.ReadInt32();
+                Unk10_Map = br.ReadInt32();
+                Unk14_Map = br.ReadInt32();
+                Unk18_Map = br.ReadInt32();
+                Unk1C_Map = br.ReadInt32();
             }
 
             internal override void Write(BinaryWriterEx bw, int id)
@@ -301,7 +301,7 @@ namespace SoulsFormats
                 else
                     bw.WriteInt32(id);
 
-                bw.WriteInt32(BaseUnk14);
+                bw.WriteInt32(Unk14_Base);
 
                 bw.ReserveInt64("CommonOffset");
                 bw.ReserveInt64("TypeOffset");
@@ -316,9 +316,9 @@ namespace SoulsFormats
                 bw.WriteInt32(PartIndex);
                 bw.WriteInt32(RegionIndex);
                 bw.WriteUInt32(EntityID);
-                bw.WriteSByte(CommonUnk0C);
-                bw.WriteByte(CommonUnk0D);
-                bw.WriteInt16(CommonUnk0E);
+                bw.WriteSByte(Unk0C_Common);
+                bw.WriteByte(Unk0D_Common);
+                bw.WriteInt16(Unk0E_Common);
 
                 // Type
                 if (HasTypeData)
@@ -344,19 +344,19 @@ namespace SoulsFormats
                 // Unk 28
                 bw.FillInt64("Unk28Offset", bw.Position - start);
                 bw.WriteMapIDBytes(MapID);
-                bw.WriteInt32(MapUnk04);
-                bw.WriteInt32(MapUnk08);
-                bw.WriteInt32(MapUnk0C);
-                bw.WriteInt32(MapUnk10);
-                bw.WriteInt32(MapUnk14);
-                bw.WriteInt32(MapUnk18);
-                bw.WriteInt32(MapUnk1C);
+                bw.WriteInt32(Unk04_Map);
+                bw.WriteInt32(Unk08_Map);
+                bw.WriteInt32(Unk0C_Map);
+                bw.WriteInt32(Unk10_Map);
+                bw.WriteInt32(Unk14_Map);
+                bw.WriteInt32(Unk18_Map);
+                bw.WriteInt32(Unk1C_Map);
             }
 
             // Layout
             public int EventID { get; set; } = -1;
             internal int TypeIndex { get; set; }
-            public int BaseUnk14 { get; set; } = 0; // Hidden
+            public int Unk14_Base { get; set; } = 0; // Hidden
 
             // Offsets
             internal long NameOffset { get; set; }
@@ -368,19 +368,19 @@ namespace SoulsFormats
             private int PartIndex { get; set; } = -1;
             private int RegionIndex { get; set; } = -1;
             public uint EntityID { get; set; } = 0;
-            public sbyte CommonUnk0C { get; set; } = -1;
-            public byte CommonUnk0D { get; set; } = 0; // Hidden
-            public short CommonUnk0E { get; set; } = 0; // Hidden
+            public sbyte Unk0C_Common { get; set; } = -1;
+            public byte Unk0D_Common { get; set; } = 0; // Hidden
+            public short Unk0E_Common { get; set; } = 0; // Hidden
 
             // Unk 28 - Not separated into discrete class for simplicity
             public sbyte[] MapID { get; set; } = new sbyte[4];
-            public int MapUnk04 { get; set; } = 0;
-            public int MapUnk08 { get; set; } = 0; // Hidden
-            public int MapUnk0C { get; set; } = -1;
-            public int MapUnk10 { get; set; } = 0; // Hidden
-            public int MapUnk14 { get; set; } = 0; // Hidden
-            public int MapUnk18 { get; set; } = 0; // Hidden
-            public int MapUnk1C { get; set; } = 0; // Hidden
+            public int Unk04_Map { get; set; } = 0;
+            public int Unk08_Map { get; set; } = 0; // Hidden
+            public int Unk0C_Map { get; set; } = -1;
+            public int Unk10_Map { get; set; } = 0; // Hidden
+            public int Unk14_Map { get; set; } = 0; // Hidden
+            public int Unk18_Map { get; set; } = 0; // Hidden
+            public int Unk1C_Map { get; set; } = 0; // Hidden
 
             // Names
             [MSBReference(ReferenceType = typeof(Part))]
@@ -1207,7 +1207,7 @@ namespace SoulsFormats
 
                 // Names
                 [MSBReference(ReferenceType = typeof(Part.EnemyBase))]
-                public string[] EnemyPartNames { get; private set; }
+                public string[] EnemyPartNames { get; private set; } = new string[4];
             }
 
             /// <summary>

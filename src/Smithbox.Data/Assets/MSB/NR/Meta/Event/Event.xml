@@ -29,29 +29,10 @@
     Wiki="Identifies the part in event scripts." 
     EntityIdentifier="" />
     
-    <Unk14
-    AltName="Unknown: 0x14"
-    Wiki="" />
-    
     <MapID
     AltName="Map ID"
-    Wiki="" />
-    
-    <UnkE0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
-    
-    <UnkS04
-    AltName="Unknown: 0x04"
-    Wiki="" />
-    
-    <UnkS08
-    AltName="Unknown: 0x08"
-    Wiki="" />
-    
-    <UnkS0C
-    AltName="Unknown: 0x0C"
-    Wiki="" />
+    Wiki="" 
+    ArrayProperty="" />
   </Field>
   
   <Enums>

@@ -44,7 +44,7 @@ public class MapEntityPropertyFieldMeta
     public bool IsBool { get; set; } = false;
 
     public bool IsPadding { get; set; } = false;
-
+    public bool IsUnknown { get; set; } = false;
     public bool IsObsolete { get; set; } = false;
 
     public bool ShowParticleList { get; set; } = false;
@@ -128,6 +128,13 @@ public class MapEntityPropertyFieldMeta
         if (tIsPadding != null)
         {
             IsPadding = true;
+        }
+
+        // Unknown
+        XmlAttribute tIsUnknown = entry.Attributes["Unknown"];
+        if (tIsUnknown != null)
+        {
+            IsUnknown = true;
         }
 
         // Obsolete
