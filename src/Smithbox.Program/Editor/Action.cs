@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Microsoft.AspNetCore.Components.Forms;
+using Octokit;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.META;
 using System;
@@ -156,6 +158,7 @@ public class AddParamsAction : EditorAction
     private string ParamString;
     private int IdOffset;
     private bool IsDuplicate;
+    private Action<bool> PostExecutionAction;
 
     public AddParamsAction(ParamEditorScreen editor, Param param, string pstring, List<Param.Row> rows, bool appendOnly, bool replaceParams, int index = -1, int idOffset = 1, bool isDuplicate = false)
     {
@@ -331,6 +334,10 @@ public class AddParamsAction : EditorAction
 
         return ActionEvent.NoEvent;
     }
+    public void SetPostExecutionAction(Action<bool> action)
+    {
+        PostExecutionAction = action;
+    }
 }
 
 public class AddRowsToTableGroup : EditorAction
@@ -342,7 +349,8 @@ public class AddRowsToTableGroup : EditorAction
     private readonly Param Param;
     private readonly List<Param.Row> Removed = new();
     private readonly List<int> RemovedIndex = new();
-    private bool AppendOnly = false; 
+    private bool AppendOnly = false;
+    private Action<bool> PostExecutionAction;
 
     public AddRowsToTableGroup(ParamEditorScreen editor, Param param, List<Param.Row> rows, int insertIndex, bool appendOnly = false)
     {
@@ -438,6 +446,10 @@ public class AddRowsToTableGroup : EditorAction
 
         return ActionEvent.NoEvent;
     }
+    public void SetPostExecutionAction(Action<bool> action)
+    {
+        PostExecutionAction = action;
+    }
 }
 public class DeleteParamsAction : EditorAction
 {
@@ -466,8 +478,13 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var curParam = Editor._activeView.Selection.GetActiveParam();
+
+        if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+        {
+            var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
+            Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+        }
 
         return ActionEvent.NoEvent;
     }
@@ -485,9 +502,13 @@ public class DeleteParamsAction : EditorAction
 
         Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
 
-        var activeParam = Editor._activeView.Selection.GetActiveParam();
-        Editor._activeView.TableGroupView.UpdateTableSelection(activeParam);
+        var curParam = Editor._activeView.Selection.GetActiveParam();
 
+        if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+        {
+            var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
+            Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+        }
         return ActionEvent.NoEvent;
     }
 }

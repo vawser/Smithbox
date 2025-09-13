@@ -65,11 +65,23 @@ public class ParamEditorShortcuts
             {
                 Editor.Project.ParamData.PrimaryBank.ClipboardParam = Editor._activeView.Selection.GetActiveParam();
 
+                var activeParam = Editor._activeView.Selection.GetActiveParam();
+
                 foreach (Param.Row row in UICache.GetCached(Editor, (Editor._activeView.ViewIndex, Editor._activeView.Selection.GetActiveParam()),
                     () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView.Selection.GetActiveParam()]),
                     Editor._activeView.Selection.GetCurrentRowSearchString(), true, true)))
                 {
-                    Editor._activeView.Selection.AddRowToSelection(row);
+                    if (Editor._activeView.TableGroupView.IsInTableGroupMode(activeParam))
+                    {
+                        if (row.ID == Editor._activeView.TableGroupView.CurrentTableGroup)
+                        {
+                            Editor._activeView.Selection.AddRowToSelection(row);
+                        }
+                    }
+                    else
+                    {
+                        Editor._activeView.Selection.AddRowToSelection(row);
+                    }
                 }
             }
 

@@ -495,7 +495,18 @@ public class ParamRowView
                 {
                     foreach (Param.Row r2 in p.GetRange(start < end ? start : end, Math.Abs(end - start)))
                     {
-                        View.Selection.AddRowToSelection(r2);
+                        if (Editor._activeView.TableGroupView.IsInTableGroupMode(activeParam))
+                        {
+                            if(r2.ID == Editor._activeView.TableGroupView.CurrentTableGroup)
+                            {
+
+                                View.Selection.AddRowToSelection(r2);
+                            }
+                        }
+                        else
+                        {
+                            View.Selection.AddRowToSelection(r2);
+                        }
                     }
                 }
 
@@ -533,6 +544,12 @@ public class ParamRowView
             {
                 fmgDecorator.DecorateParam(r);
             }
+        }
+
+        // Roll Chance for Table Group View
+        if (View.TableGroupView.IsInTableGroupMode(activeParam))
+        {
+            View.TableGroupView.DisplayTableEntryChance(r);
         }
 
         if (doFocus && View.Selection.GetActiveRow() == r)
@@ -590,9 +607,9 @@ public class ParamRowView
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
                 ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(0, 0));
 
-                ParamFieldInput.DisplayFieldInput(compareCol.ValueType, c.Value, ref newval, false, false);
+                ParamFieldInput.DisplayFieldInput(Editor, compareCol.ValueType, c.Value, ref newval, false, false);
 
-                if (ParamFieldInput.UpdateProperty(Editor.EditorActionManager, c, compareColProp,
+                if (ParamFieldInput.UpdateProperty(Editor, Editor.EditorActionManager, c, compareColProp,
                         c.Value))
                 {
                     if (Project.TextureViewer != null)
@@ -883,6 +900,11 @@ public class ParamRowView
 
                 ImGui.InputText("##nameAdjustment", ref NameAdjustment, 255);
                 UIHelper.Tooltip("The string to pre or post pend to the existing name.");
+
+                ImGui.Separator();
+
+                var selectedRowCount = Editor._activeView.Selection.GetSelectedRows().Count;
+                ImGui.Text($"{selectedRowCount} rows selected currently.");
             }
 
             ImGui.EndPopup();

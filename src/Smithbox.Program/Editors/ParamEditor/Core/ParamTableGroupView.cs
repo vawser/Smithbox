@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.Formats;
+using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -28,6 +29,9 @@ public class ParamTableGroupView
     public List<int> CurrentTableGroups = new List<int>();
     public int CurrentTableGroup = -1;
     public List<int> CurrentTableGroupIndices = new();
+
+    public int TotalChance = 0;
+    private Dictionary<Param.Row, string> RollChances = new();
 
     public ParamTableGroupView(ParamEditorScreen editor, ProjectEntry project, ParamEditorView view)
     {
@@ -118,7 +122,7 @@ public class ParamTableGroupView
 
             if(ImGui.Selectable($"{displayName}##rowGroup{group}", CurrentTableGroup == group))
             {
-                CurrentTableGroup = group;
+                UpdateTableGroupSelection(group);
             }
 
             DisplayContextMenu(group);
@@ -217,7 +221,8 @@ public class ParamTableGroupView
         if (IsInTableGroupMode(activeParam))
         {
             var curParam = Project.ParamData.PrimaryBank.Params[activeParam];
-            foreach(var entry in curParam.Rows)
+
+            foreach (var entry in curParam.Rows)
             {
                 if(!CurrentTableGroups.Contains(entry.ID))
                 {
@@ -225,6 +230,98 @@ public class ParamTableGroupView
                 }
             }
         }
+    }
+
+    public void UpdateTableGroupSelection(int group)
+    {
+        RollChances = new();
+
+        TotalChance = 0;
+
+        var curParam = Editor._activeView.Selection.GetActiveParam();
+        var fieldName = GetChanceFieldName();
+
+        // Get overall roll chance total
+        foreach (var row in Project.ParamData.PrimaryBank.Params[curParam].Rows)
+        {
+            if (row.ID != group)
+                continue;
+
+            if (row.Cells.Any(e => e.Def.InternalName == fieldName))
+            {
+                var chanceWeight = row.Cells.FirstOrDefault(e => e.Def.InternalName == fieldName);
+                if (chanceWeight.Value != null)
+                {
+                    TotalChance = TotalChance + int.Parse($"{chanceWeight.Value}");
+                }
+            }
+        }
+
+        // Construct list of the individual roll chances
+        foreach (var row in Project.ParamData.PrimaryBank.Params[curParam].Rows)
+        {
+            if (row.ID != group)
+                continue;
+
+            if (row.Cells.Any(e => e.Def.InternalName == fieldName))
+            {
+                var chanceWeight = row.Cells.FirstOrDefault(e => e.Def.InternalName == fieldName);
+                if (chanceWeight.Value != null)
+                {
+                    if (TotalChance != 0)
+                    {
+                        var curChance = int.Parse($"{chanceWeight.Value}");
+
+                        float curRollChance = 0;
+
+                        if (curChance != 0)
+                        {
+                            curRollChance =  ( (float)curChance / (float)TotalChance ) * 100;
+                        }
+
+                        if (!RollChances.ContainsKey(row))
+                        {
+                            RollChances.Add(row, curRollChance.ToString("F3"));
+                        }
+                    }
+                }
+            }
+
+        }
+
+        CurrentTableGroup = group;
+    }
+
+    public void DisplayTableEntryChance(Param.Row r)
+    {
+        var displayChance = "";
+
+        if(RollChances.ContainsKey(r))
+        {
+            displayChance = RollChances[r];
+        }
+
+        if (displayChance != "")
+        {
+            ImGui.SameLine();
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgLink_Text);
+            ImGui.TextUnformatted($@" {displayChance}%");
+            ImGui.PopStyleColor();
+        }
+    }
+
+    public string GetChanceFieldName()
+    {
+        var curParam = Editor._activeView.Selection.GetActiveParam();
+
+        switch(curParam)
+        {
+            case "ItemTableParam":
+                return "chanceWeight";
+            default: break;
+        }
+
+        return "";
     }
 
     public bool IsInTableGroupMode(string activeParam)

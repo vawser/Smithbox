@@ -928,7 +928,7 @@ public class ParamFieldView
             }
 
             // Property Editor UI
-            ParamFieldInput.DisplayFieldInput(propType, oldval, ref newval, IsBool, IsInvertedPercentage);
+            ParamFieldInput.DisplayFieldInput(Editor, propType, oldval, ref newval, IsBool, IsInvertedPercentage);
 
             if (isRef || matchDefault) //if diffVanilla, remove styling later
             {
@@ -1176,7 +1176,7 @@ public class ParamFieldView
             ParamFieldInput.SetLastPropertyManual(newval);
         }
 
-        var committed = ParamFieldInput.UpdateProperty(ContextActionManager,
+        var committed = ParamFieldInput.UpdateProperty(Editor, ContextActionManager,
             nullableCell != null ? nullableCell : row, proprow, oldval);
 
         if (committed)

@@ -22,4 +22,11 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Param Editor: add regulation decryptor change
+
+        var curParam = editor._activeView.Selection.GetActiveParam();
+
+        if (editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+        {
+            var curGroup = editor._activeView.TableGroupView.CurrentTableGroup;
+            editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+        }

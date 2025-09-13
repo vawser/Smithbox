@@ -19,7 +19,7 @@ public class ParamFieldInput
     private static bool _changedCache;
     private static bool _committedCache;
 
-    public static unsafe void DisplayFieldInput(Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
+    public static unsafe void DisplayFieldInput(ParamEditorScreen editor, Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
     {
         _changedCache = false;
         _committedCache = false;
@@ -268,7 +268,7 @@ public class ParamFieldInput
         _committedCache = true;
     }
 
-    public static bool UpdateProperty(ActionManager executor, object obj, PropertyInfo prop, object oldval,
+    public static bool UpdateProperty(ParamEditorScreen editor, ActionManager executor, object obj, PropertyInfo prop, object oldval,
         int arrayindex = -1)
     {
         if (_changedCache)
@@ -283,7 +283,7 @@ public class ParamFieldInput
 
         if (_changedCache)
         {
-            ChangeProperty(executor, _editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
+            ChangeProperty(editor, executor, _editedTypeCache, _editedObjCache, _editedPropCache, ref _committedCache,
                 arrayindex);
         }
 
@@ -292,7 +292,7 @@ public class ParamFieldInput
         return _changedCache && _committedCache;
     }
 
-    private static void ChangeProperty(ActionManager executor, object prop, object obj, object newval,
+    private static void ChangeProperty(ParamEditorScreen editor, ActionManager executor, object prop, object obj, object newval,
         ref bool committed, int arrayindex = -1)
     {
         if (committed)
@@ -308,10 +308,30 @@ public class ParamFieldInput
             if (arrayindex != -1)
             {
                 action = new PropertiesChangedAction((PropertyInfo)prop, arrayindex, obj, newval);
+                action.SetPostExecutionAction(undo =>
+                {
+                    var curParam = editor._activeView.Selection.GetActiveParam();
+
+                    if (editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                    {
+                        var curGroup = editor._activeView.TableGroupView.CurrentTableGroup;
+                        editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                    }
+                });
             }
             else
             {
                 action = new PropertiesChangedAction((PropertyInfo)prop, obj, newval);
+                action.SetPostExecutionAction(undo =>
+                {
+                    var curParam = editor._activeView.Selection.GetActiveParam();
+
+                    if (editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                    {
+                        var curGroup = editor._activeView.TableGroupView.CurrentTableGroup;
+                        editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                    }
+                });
             }
 
             executor.ExecuteAction(action);

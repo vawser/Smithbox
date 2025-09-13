@@ -1247,6 +1247,7 @@ public class ParamEditorScreen : EditorScreen
     {
         List<Param.Row> toRemove = new(selectionState.GetSelectedRows());
         DeleteParamsAction act = new(this, Project.ParamData.PrimaryBank.Params[selectionState.GetActiveParam()], toRemove);
+
         EditorActionManager.ExecuteAction(act);
 
         _views.ForEach(view =>

@@ -131,10 +131,21 @@ public partial class ParamTools
 
             for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
             {
-                actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
+                var dupeAction = new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true);
+                actions.Add(dupeAction);
             }
 
             var compoundAction = new CompoundAction(actions);
+            compoundAction.SetPostExecutionAction(undo =>
+            {
+                var curParam = Editor._activeView.Selection.GetActiveParam();
+
+                if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                {
+                    var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
+                    Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                }
+            });
 
             Editor.EditorActionManager.ExecuteAction(compoundAction);
         }
@@ -160,11 +171,22 @@ public partial class ParamTools
 
             for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
             {
-                actions.Add(
-                    new AddRowsToTableGroup(Editor, param, rowsToInsert, insertIndex));
+                var dupeAction = new AddRowsToTableGroup(Editor, param, rowsToInsert, insertIndex);
+
+                actions.Add(dupeAction);
             }
 
             var compoundAction = new CompoundAction(actions);
+            compoundAction.SetPostExecutionAction(undo =>
+            {
+                var curParam = Editor._activeView.Selection.GetActiveParam();
+
+                if (Editor._activeView.TableGroupView.IsInTableGroupMode(curParam))
+                {
+                    var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
+                    Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+                }
+            });
 
             Editor.EditorActionManager.ExecuteAction(compoundAction);
         }
