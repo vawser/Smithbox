@@ -22,5 +22,4 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Param Editor: update Param Upgrader support for latest NR patch
 - Param Editor: add regulation decryptor change
