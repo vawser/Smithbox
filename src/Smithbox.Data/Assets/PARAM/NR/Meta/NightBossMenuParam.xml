@@ -62,6 +62,26 @@
 	AltName="Effective Affinity 2"
 	Wiki="Icon to display in Effective section"
 	Enum="EFFECTIVE_AFFINITY"/>
+	
+	<depth1ChanceWeight
+    AltName="Depth 1 Roll Weight"
+    Wiki="The weighting to apply during the boss roll." />
+	
+	<depth2ChanceWeight
+    AltName="Depth 2 Roll Weight"
+    Wiki="The weighting to apply during the boss roll." />
+	
+	<depth3ChanceWeight
+    AltName="Depth 3 Roll Weight"
+    Wiki="The weighting to apply during the boss roll." />
+	
+	<depth4ChanceWeight
+    AltName="Depth 4 Roll Weight"
+    Wiki="The weighting to apply during the boss roll." />
+	
+	<depth5ChanceWeight
+    AltName="Depth 5 Roll Weight"
+    Wiki="The weighting to apply during the boss roll." />
   </Field>
   
   <Enums>
