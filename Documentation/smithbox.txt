@@ -24,6 +24,3 @@
 # TODO NOW
 - Param Editor: update Param Upgrader support for latest NR patch
 - Param Editor: add regulation decryptor change
-
-- Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
-

@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
+using static MsbUtils;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -100,7 +101,22 @@ public class MapContentView
 
         var targetContainer = Editor.GetMapContainerFromMapID(MapID);
 
+        // Cycle Name Display Type
+        ImGui.SameLine();
+        if (ImGui.Button($"{Icons.Bars}", DPI.IconButtonSize))
+        {
+            var curType = (int)CFG.Current.MapEditor_MapContentList_NameDisplayType;
+            curType++;
+
+            if (curType > 4)
+                curType = 0;
+
+            CFG.Current.MapEditor_MapContentList_NameDisplayType = (NameDisplayType)curType;
+        }
+        UIHelper.Tooltip($"Cycle through the name display types.\nCurrent Type: {CFG.Current.MapEditor_MapContentList_NameDisplayType.GetDisplayName()}");
+
         // Show All
+        ImGui.SameLine();
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
             foreach (var entry in targetContainer.Objects)
@@ -627,7 +643,30 @@ public class MapContentView
             treeImGuiId++;
             var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap;
 
-            if (ImGui.Selectable($"{padding}{e.PrettyName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
+            var displayName = "";
+
+            if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal or NameDisplayType.Internal_FMG or NameDisplayType.Internal_Community)
+            {
+                displayName = e.PrettyName;
+            }
+            else if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Community or NameDisplayType.Community_FMG)
+            {
+                displayName = e.PrettyName;
+
+                var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+
+                if (nameListEntry.Value != null)
+                {
+                    var match = nameListEntry.Value.Entries.FirstOrDefault(entry => entry.ID == e.Name);
+
+                    if (match != null)
+                    {
+                        displayName = match.Name;
+                    }
+                }
+            }
+
+            if (ImGui.Selectable($"{padding}{displayName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
             {
                 doSelect = true;
 
@@ -646,10 +685,31 @@ public class MapContentView
                 arrowKeySelect = true;
             }
 
-            var alias = AliasUtils.GetEntityAliasName(Editor.Project, e);
-            if (ImGui.IsItemVisible())
+            if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal_FMG or NameDisplayType.Community_FMG)
             {
-                UIHelper.DisplayAlias(alias);
+                var alias = AliasUtils.GetEntityAliasName(Editor.Project, e);
+                if (ImGui.IsItemVisible())
+                {
+                    UIHelper.DisplayAlias(alias);
+                }
+            }
+            else if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal_Community)
+            {
+                var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+
+                if (nameListEntry.Value != null)
+                {
+                    var match = nameListEntry.Value.Entries.FirstOrDefault(entry => entry.ID == e.Name);
+
+                    if (match != null)
+                    {
+                        if (ImGui.IsItemVisible())
+                        {
+                            UIHelper.DisplayAlias(match.Name);
+                        }
+                    }
+                }
+
             }
 
             DisplayMapObjectContextMenu(e, treeImGuiId);

@@ -38,3 +38,17 @@ public class SpawnStatePair
     public string value { get; set; }
     public string name { get; set; }
 }
+
+
+// -------------- Map Object Names --------------
+public class MapObjectNameMapEntry
+{
+    public string Name { get; set; }
+    public List<MapObjectNameEntry> Entries { get; set; }
+}
+
+public class MapObjectNameEntry
+{
+    public string ID { get; set; }
+    public string Name { get; set; }
+}

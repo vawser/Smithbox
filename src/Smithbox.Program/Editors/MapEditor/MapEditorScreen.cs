@@ -827,7 +827,7 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            if (ImGui.MenuItem("Map Object List: Categories"))
+            if (ImGui.MenuItem("Map List: Categories"))
             {
                 CFG.Current.MapEditor_DisplayMapCategories = !CFG.Current.MapEditor_DisplayMapCategories;
             }

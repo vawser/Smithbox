@@ -108,6 +108,10 @@ namespace StudioCore.Formats.JSON;
 // Table Params
 [JsonSerializable(typeof(TableParams))]
 
+// Map Object Names
+[JsonSerializable(typeof(MapObjectNameMapEntry))]
+[JsonSerializable(typeof(MapObjectNameEntry))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

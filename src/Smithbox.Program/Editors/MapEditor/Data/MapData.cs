@@ -2,8 +2,11 @@
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Formats.JSON;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static StudioCore.Core.ProjectEntry;
 
@@ -30,6 +33,8 @@ public class MapData
     public FileDictionary NavmeshFiles = new();
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary CollisionFiles = new();
+
+    public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
 
     public MapData(Smithbox baseEditor, ProjectEntry project)
     {
@@ -73,6 +78,15 @@ public class MapData
         if (!metaTaskResult)
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup MSB Meta.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
+        // Map Object Names
+        Task<bool> mapObjNamesTask = SetupMapObjectNames();
+        bool mapObjNamesTaskResult = await mapObjNamesTask;
+
+        if (!mapObjNamesTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Map Object Name lists.", LogLevel.Error, Tasks.LogPriority.High);
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -159,6 +173,53 @@ public class MapData
         }
 
         TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup Aux MSB Bank for {targetProject.ProjectName}.");
+
+        return true;
+    }
+
+    public async Task<bool> SetupMapObjectNames()
+    {
+        await Task.Yield();
+
+
+        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
+        var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
+
+        if (Directory.Exists(projDir))
+        {
+            srcDir = projDir;
+        }
+
+        MapObjectNameLists = new();
+
+        if (Directory.Exists(srcDir))
+        {
+            foreach (var file in Directory.EnumerateFiles(srcDir))
+            {
+                try
+                {
+                    var filestring = File.ReadAllText(file);
+                    var options = new JsonSerializerOptions();
+                    var item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.MapObjectNameMapEntry);
+
+                    if (item == null)
+                    {
+                        throw new Exception($"[{Project.ProjectName}:Map Editor] JsonConvert returned null.");
+                    }
+                    else
+                    {
+                        if(!MapObjectNameLists.ContainsKey(item.Name))
+                        {
+                            MapObjectNameLists.Add(item.Name, item);
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to load {file} for Map Object Name lists.", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+        }
 
         return true;
     }

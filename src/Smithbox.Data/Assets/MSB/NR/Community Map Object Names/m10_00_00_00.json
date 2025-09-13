@@ -1,0 +1,25 @@
+{
+  "Name": "m10_00_00_00",
+  "Entries": [
+    {
+      "ID": "会話情報 にぎやかし 召使人形用",
+      "Name": "Conversation Information: Servant Doll"
+    },
+    {
+      "ID": "会話情報 メインシナリオ フェーズ4 召使人形用",
+      "Name": "Conversation Information: Servant Doll - Main Scenario - Phase 4"
+    },
+    {
+      "ID": "会話情報 レディシナリオ フェーズ2 無頼漢用",
+      "Name": "Conversation Information: Lady - Scenario - Phase 2 - For Rogues"
+    },
+    {
+      "ID": "会話情報 レディシナリオ フェーズ5 追跡者用",
+      "Name": "Conversation Information: Lady - Scenario - Phase 5 - For Pursuer"
+    },
+    {
+      "ID": "会話情報 追跡者シナリオ フェーズ1 召使人形用",
+      "Name": "Conversation Information: Servant Doll - Scenario - Phase 1 - For Pursuer"
+    }
+  ]
+}

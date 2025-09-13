@@ -11,6 +11,7 @@ using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static MsbUtils;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
@@ -878,6 +879,8 @@ public class CFG
     public bool MapEditor_IgnoreSaveExceptions = false;
 
     public bool MapEditor_DisplayMapCategories = true;
+
+    public NameDisplayType MapEditor_MapContentList_NameDisplayType = NameDisplayType.Internal_Community;
 
     public bool MapEditor_LoadMapQueryData = true;
 
