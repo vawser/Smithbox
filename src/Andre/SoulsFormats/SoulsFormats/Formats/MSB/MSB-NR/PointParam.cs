@@ -486,7 +486,7 @@ namespace SoulsFormats
                 // Common
                 Common_PartIndex = br.ReadInt32();
                 Common_EntityID = br.ReadUInt32();
-                Common_Unk08 = br.ReadByte();
+                Common_Unk08 = br.ReadSByte();
                 Common_Unk09 = br.ReadByte();
                 Common_Unk0A = br.ReadInt16();
                 Common_Unk0C = br.ReadInt32();
@@ -564,7 +564,7 @@ namespace SoulsFormats
                 bw.FillInt64("EntityDataOffset", bw.Position - start);
                 bw.WriteInt32(Common_PartIndex);
                 bw.WriteUInt32(Common_EntityID);
-                bw.WriteByte(Common_Unk08);
+                bw.WriteSByte(Common_Unk08);
                 bw.WriteByte(Common_Unk09);
                 bw.WriteInt16(Common_Unk0A);
                 bw.WriteInt32(Common_Unk0C);
@@ -613,34 +613,36 @@ namespace SoulsFormats
             public int RegionID { get; set; }
             public int Region_Unk40 { get; set; }
             public uint MapStudioLayer { get; set; }
-            public List<short> Region_UnkA { get; set; }
-            public List<short> Region_UnkB { get; set; }
+            public List<short> Region_UnkA { get; set; } = new List<short>();
+            public List<short> Region_UnkB { get; set; } = new List<short>();
 
             // Common
-            [MSBReference(ReferenceType = typeof(Part))]
-            public string Common_PartName { get; set; }
-            private int Common_PartIndex { get; set; }
-            public uint Common_EntityID { get; set; }
-            public byte Common_Unk08 { get; set; }
-            public byte Common_Unk09 { get; set; }
-            public short Common_Unk0A { get; set; }
-            public int Common_Unk0C { get; set; }
-            public int Common_VariationID { get; set; }
-            public int Common_Unk14 { get; set; }
-            public int Common_Unk18 { get; set; }
-            public int Common_Unk1C { get; set; }
+            private int Common_PartIndex { get; set; } = -1;
+            public uint Common_EntityID { get; set; } = 0;
+            public sbyte Common_Unk08 { get; set; } = -1;
+            public byte Common_Unk09 { get; set; } = 0;
+            public short Common_Unk0A { get; set; } = 0;
+            public int Common_Unk0C { get; set; } = 0;
+            public int Common_VariationID { get; set; } = -1;
+            public int Common_Unk14 { get; set; } = 0;
+            public int Common_Unk18 { get; set; } = 0;
+            public int Common_Unk1C { get; set; } = 0;
 
             // Struct 98
 
             public sbyte[] Stuct98_MapID { get; set; } = new sbyte[4];
-            public int Stuct98_Unk04 { get; set; }
-            public int Stuct98_Unk08 { get; set; } // Always 0
-            public int Stuct98_Unk0C { get; set; }
-            public int Stuct98_Unk10 { get; set; }
-            public int Stuct98_Unk14 { get; set; } // Always 0
-            public int Stuct98_Unk18 { get; set; } // Always 0
-            public int Stuct98_Unk1C { get; set; } // Always 0
+            public int Stuct98_Unk04 { get; set; } = 0;
+            public int Stuct98_Unk08 { get; set; } = 0;
+            public int Stuct98_Unk0C { get; set; } = -1;
+            public int Stuct98_Unk10 { get; set; } = -1;
+            public int Stuct98_Unk14 { get; set; } = 0;
+            public int Stuct98_Unk18 { get; set; } = 0;
+            public int Stuct98_Unk1C { get; set; } = 0;
 
+
+            // Names
+            [MSBReference(ReferenceType = typeof(Part))]
+            public string Common_PartName { get; set; }
 
             private protected virtual void WriteTypeData(BinaryWriterEx bw)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
@@ -669,8 +671,6 @@ namespace SoulsFormats
                 private protected override RegionType Type => RegionType.EntryPoint;
                 private protected override bool HasTypeData => true;
 
-                public int Priority { get; set; }
-
                 public EntryPoint() : base($"{nameof(Region)}: {nameof(EntryPoint)}") { }
 
                 internal EntryPoint(BinaryReaderEx br) : base(br) { }
@@ -684,6 +684,9 @@ namespace SoulsFormats
                 {
                     bw.WriteInt32(Priority);
                 }
+
+                // Layout
+                public int Priority { get; set; }
             }
 
             public class EnvMapPoint : Region
@@ -740,23 +743,23 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public float Unk00 { get; set; }
-                public int Unk04 { get; set; }
-                public int Unk08 { get; set; } // Always -1
-                public byte Unk0C { get; set; } // Always 0
+                public float Unk00 { get; set; } = 1;
+                public int Unk04 { get; set; } = 4;
+                public int Unk08 { get; set; } = -1;
+                public byte Unk0C { get; set; } = 0;
                 public byte Unk0D { get; set; } // Boolean
                 public byte Unk0E { get; set; } // Boolean
                 public byte Unk0F { get; set; } // Boolean
-                public float Unk10 { get; set; } // Always 1.0
-                public float Unk14 { get; set; } // Always 1.0
+                public float Unk10 { get; set; } = 1.0f;
+                public float Unk14 { get; set; } = 1.0f;
                 public int Unk18 { get; set; }
-                public int Unk1C { get; set; } // Always 0
+                public int Unk1C { get; set; } = 0;
                 public int Unk20 { get; set; }
                 public int Unk24 { get; set; }
                 public int Unk28 { get; set; }
-                public byte Unk2C { get; set; }
+                public byte Unk2C { get; set; } = 0;
                 public byte Unk2D { get; set; }
-                public short Unk2E { get; set; } // Always 0
+                public short Unk2E { get; set; } = 0;
 
             }
 
@@ -782,8 +785,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class Sound : Region
@@ -839,13 +842,15 @@ namespace SoulsFormats
                 // Layout
                 public int SoundType { get; set; }
                 public int SoundID { get; set; }
+                private int[] ChildRegionIndices { get; set; }
+                public byte Unk48 { get; set; } = 0;
+                public byte Unk49 { get; set; } // Boolean
+                public short Unk4A { get; set; } = 0;
+
+                // Names
 
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string[] ChildRegionNames { get; set; }
-                private int[] ChildRegionIndices { get; set; }
-                public byte Unk48 { get; set; } // Always 0
-                public byte Unk49 { get; set; } // Boolean
-                public short Unk4A { get; set; } // Always 0
 
             }
 
@@ -861,7 +866,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     EffectID = br.ReadInt32();
-                    Unk04 = br.ReadByte();
+                    StartDisabled = br.ReadByte();
                     Unk05 = br.ReadByte();
                     Unk06 = br.ReadInt16();
                 }
@@ -869,16 +874,16 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(EffectID);
-                    bw.WriteByte(Unk04);
+                    bw.WriteByte(StartDisabled);
                     bw.WriteByte(Unk05);
                     bw.WriteInt16(Unk06);
                 }
 
                 // Layout
                 public int EffectID { get; set; }
-                public byte Unk04 { get; set; } // Start Disabled - Boolean
-                public byte Unk05 { get; set; } // Boolean
-                public short Unk06 { get; set; } // Always 0
+                public byte StartDisabled { get; set; } = 0; // Boolean
+                public byte Unk05 { get; set; } = 0; // Boolean
+                public short Unk06 { get; set; } = 0; 
             }
 
             public class WindSFX : Region
@@ -917,12 +922,13 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int EffectID { get; set; }
+                public int EffectID { get; set; } = 808006;
+                private int WindAreaIndex { get; set; } = -1;
+                public float Unk08 { get; set; } = -1.0f;
 
+                // Names
                 [MSBReference(ReferenceType = typeof(Region))]
                 public string WindAreaName { get; set; }
-                private int WindAreaIndex { get; set; }
-                public float Unk08 { get; set; } // Always -1.0
 
             }
 
@@ -952,10 +958,10 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always -1
-                public int Unk04 { get; set; } // Always 0
-                public int Unk08 { get; set; } // Always 0
-                public int Unk0C { get; set; } // Always 0
+                public int Unk00 { get; set; } = -1;
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
             }
 
             public class Message : Region
@@ -1025,10 +1031,10 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadSingle();
-                    Unk04 = br.ReadSingle();
-                    Unk08 = br.ReadByte();
-                    Unk09 = br.ReadByte();
+                    DisplayDistance = br.ReadSingle();
+                    FadeDistance = br.ReadSingle();
+                    ApplyParallaxCorrection = br.ReadByte();
+                    Priority = br.ReadByte();
                     Unk0A = br.ReadInt16();
                     Unk0C = br.ReadInt32();
                     Unk10 = br.ReadInt32();
@@ -1036,8 +1042,8 @@ namespace SoulsFormats
                     Unk18 = br.ReadInt32();
                     Unk1C = br.ReadInt32();
                     Unk20 = br.ReadInt32();
-                    Unk24 = br.ReadSingle();
-                    Unk28 = br.ReadSingle();
+                    AmbientDiffuseIntensity = br.ReadSingle();
+                    AmbientSpecularIntensity = br.ReadSingle();
                     Unk2C = br.ReadInt16();
                     Unk2E = br.ReadByte();
                     Unk2F = br.ReadByte();
@@ -1051,10 +1057,10 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(Unk00);
-                    bw.WriteSingle(Unk04);
-                    bw.WriteByte(Unk08);
-                    bw.WriteByte(Unk09);
+                    bw.WriteSingle(DisplayDistance);
+                    bw.WriteSingle(FadeDistance);
+                    bw.WriteByte(ApplyParallaxCorrection);
+                    bw.WriteByte(Priority);
                     bw.WriteInt16(Unk0A);
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
@@ -1062,8 +1068,8 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk18);
                     bw.WriteInt32(Unk1C);
                     bw.WriteInt32(Unk20);
-                    bw.WriteSingle(Unk24);
-                    bw.WriteSingle(Unk28);
+                    bw.WriteSingle(AmbientDiffuseIntensity);
+                    bw.WriteSingle(AmbientSpecularIntensity);
                     bw.WriteInt16(Unk2C);
                     bw.WriteByte(Unk2E);
                     bw.WriteByte(Unk2F);
@@ -1076,28 +1082,28 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public float Unk00 { get; set; } // Display Distance - Always 0.0 
-                public float Unk04 { get; set; }  // Fade Distance
-                public byte Unk08 { get; set; } // ParallaxCorrection - Bool: Always 0
-                public byte Unk09 { get; set; } // Priority - Always 10
-                public short Unk0A { get; set; }
-                public int Unk0C { get; set; } // Always 0
-                public int Unk10 { get; set; } // Always 0
-                public int Unk14 { get; set; } // Always 0
-                public int Unk18 { get; set; } // Always 0
-                public int Unk1C { get; set; } // Always 0
-                public int Unk20 { get; set; } // Always 0
-                public float Unk24 { get; set; } // Ambient Diffuse Intensity
-                public float Unk28 { get; set; } // Ambient Specular Intensity
-                public short Unk2C { get; set; } // Always 0
-                public byte Unk2E { get; set; } // Is Modify Light - Always 1
-                public byte Unk2F { get; set; } // Always 1
-                public short Unk30 { get; set; }
-                public byte Unk32 { get; set; } // Always 0
-                public byte Unk33 { get; set; } // Bool
-                public short Unk34 { get; set; }
-                public short Unk36 { get; set; } // Bool
-                public int Unk38 { get; set; } // Always 0
+                public float DisplayDistance { get; set; } = 0;
+                public float FadeDistance { get; set; } = 0;
+                public byte ApplyParallaxCorrection { get; set; } = 0; // Boolean
+                public byte Priority { get; set; } = 10; // Priority
+                public short Unk0A { get; set; } = -1;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
+                public int Unk18 { get; set; } = 0;
+                public int Unk1C { get; set; } = 0;
+                public int Unk20 { get; set; } = 0;
+                public float AmbientDiffuseIntensity { get; set; } = 1f;
+                public float AmbientSpecularIntensity { get; set; } = 1f;
+                public short Unk2C { get; set; } = 0;
+                public byte Unk2E { get; set; } = 1;
+                public byte Unk2F { get; set; } = 1;
+                public short Unk30 { get; set; } = -1;
+                public byte Unk32 { get; set; } = 0;
+                public byte Unk33 { get; set; } = 1; // Boolean
+                public short Unk34 { get; set; } = 0;
+                public short Unk36 { get; set; } = 1; // Bool
+                public int Unk38 { get; set; } = 0;
             }
 
             public class WindPlacement : Region
@@ -1146,9 +1152,9 @@ namespace SoulsFormats
 
                 // Layout
                 public sbyte[] ConnectionMapID { get; set; }
-                public int Unk04 { get; set; }
-                public int Unk08 { get; set; }
-                public int Unk0C { get; set; }
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
             }
 
             public class SourceWaypoint : Region
@@ -1288,7 +1294,7 @@ namespace SoulsFormats
                     Unk0C = br.ReadInt32();
                     Unk10 = br.ReadInt32();
                     Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt64();
+                    Offset18 = br.ReadInt64();
 
                     Unk20 = br.ReadInt32();
                     Unk24 = br.ReadSingle();
@@ -1310,7 +1316,7 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
                     bw.WriteInt32(Unk14);
-                    bw.WriteInt64(Unk18);
+                    bw.WriteInt64(Offset18);
 
                     bw.WriteInt32(Unk20);
                     bw.WriteSingle(Unk24);
@@ -1325,23 +1331,25 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; } // Always 0
-                public int Unk08 { get; set; } // Always 0
-                public int Unk0C { get; set; } // Always 0
-                public int Unk10 { get; set; } // Always 0
-                public int Unk14 { get; set; } // Always 0
-                public long Unk18 { get; set; } // Always 0x20 (32)
-                public int Unk20 { get; set; } // Always 0
-                public float Unk24 { get; set; } // Always 100.0
-                public int Unk28 { get; set; } // Always 0
-                public int Unk2C { get; set; } // Always 0
-                public int Unk30 { get; set; } // Always 0
-                public float Unk34 { get; set; } // Always 100.0
-                public int Unk38 { get; set; } // Always 0
-                public float Unk3C { get; set; } // Always -1.0
-                public float Unk40 { get; set; } // Always -1.0
-                public float Unk44 { get; set; } // Always -1.0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
+                public int Unk20 { get; set; } = 0;
+                public float Unk24 { get; set; } = 100f;
+                public int Unk28 { get; set; } = 0;
+                public int Unk2C { get; set; } = 0;
+                public int Unk30 { get; set; } = 0;
+                public float Unk34 { get; set; } = 100f;
+                public int Unk38 { get; set; } = 0;
+                public float Unk3C { get; set; } = -1f;
+                public float Unk40 { get; set; } = -1f;
+                public float Unk44 { get; set; } = -1f;
+
+                // Offsets
+                private long Offset18 { get; set; } = 32;
             }
 
             public class MufflingPortal : Region
@@ -1361,7 +1369,7 @@ namespace SoulsFormats
                     Unk0C = br.ReadInt32();
                     Unk10 = br.ReadInt32();
                     Unk14 = br.ReadInt32();
-                    Unk18 = br.ReadInt64();
+                    Offset18 = br.ReadInt64();
                     Unk20 = br.ReadInt32();
                     Unk24 = br.ReadInt32();
                     Unk28 = br.ReadInt32();
@@ -1378,7 +1386,7 @@ namespace SoulsFormats
                     bw.WriteInt32(Unk0C);
                     bw.WriteInt32(Unk10);
                     bw.WriteInt32(Unk14);
-                    bw.WriteInt64(Unk18);
+                    bw.WriteInt64(Offset18);
                     bw.WriteInt32(Unk20);
                     bw.WriteInt32(Unk24);
                     bw.WriteInt32(Unk28);
@@ -1388,19 +1396,21 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } 
-                public int Unk04 { get; set; } // Always 0
-                public int Unk08 { get; set; } // Always 0
-                public int Unk0C { get; set; } // Always 0
-                public int Unk10 { get; set; } // Always 0
-                public int Unk14 { get; set; } // Always 0
-                public long Unk18 { get; set; } // Always 0x20 (32)
-                public int Unk20 { get; set; } // Always 0
-                public int Unk24 { get; set; } // Always 0
-                public int Unk28 { get; set; } // Always 0
-                public int Unk2C { get; set; } // Always 0
-                public int Unk30 { get; set; } // Always 0
-                public int Unk34 { get; set; } // Always -1
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
+                public int Unk20 { get; set; } = 0;
+                public int Unk24 { get; set; } = 0;
+                public int Unk28 { get; set; } = 0;
+                public int Unk2C { get; set; } = 0;
+                public int Unk30 { get; set; } = 0;
+                public int Unk34 { get; set; } = -1;
+
+                // Offsets
+                private long Offset18 { get; set; } = 32;
             }
 
             public class SoundOverride : Region
@@ -1414,14 +1424,14 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadByte();
+                    Unk00 = br.ReadSByte();
                     Unk01 = br.ReadByte();
                     Unk02 = br.ReadByte();
-                    Unk03 = br.ReadByte();
+                    Unk03 = br.ReadSByte();
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadInt16();
                     Unk0A = br.ReadInt16();
-                    Unk0C = br.ReadByte();
+                    Unk0C = br.ReadSByte();
                     Unk0D = br.ReadByte();
                     Unk0E = br.ReadInt16();
                     Unk10 = br.ReadInt32();
@@ -1432,14 +1442,14 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteByte(Unk00);
+                    bw.WriteSByte(Unk00);
                     bw.WriteByte(Unk01);
                     bw.WriteByte(Unk02);
-                    bw.WriteByte(Unk03);
+                    bw.WriteSByte(Unk03);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt16(Unk08);
                     bw.WriteInt16(Unk0A);
-                    bw.WriteByte(Unk0C);
+                    bw.WriteSByte(Unk0C);
                     bw.WriteByte(Unk0D);
                     bw.WriteInt16(Unk0E);
                     bw.WriteInt32(Unk10);
@@ -1449,20 +1459,20 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public byte Unk00 { get; set; }
-                public byte Unk01 { get; set; }
-                public byte Unk02 { get; set; }
-                public byte Unk03 { get; set; }
-                public int Unk04 { get; set; }
-                public short Unk08 { get; set; }
-                public short Unk0A { get; set; }
-                public byte Unk0C { get; set; } // Always -1
-                public byte Unk0D { get; set; } // Always 0
-                public short Unk0E { get; set; } // Always 0
-                public int Unk10 { get; set; } // Always 0
-                public int Unk14 { get; set; } // Always 0
-                public int Unk18 { get; set; } // Always 0
-                public int Unk1C { get; set; } // Always 0
+                public sbyte Unk00 { get; set; } = -1;
+                public byte Unk01 { get; set; } = 0;
+                public byte Unk02 { get; set; } = 0;
+                public sbyte Unk03 { get; set; } = -1;
+                public int Unk04 { get; set; } = -1;
+                public short Unk08 { get; set; } = -1;
+                public short Unk0A { get; set; } = -1;
+                public sbyte Unk0C { get; set; } = -1;
+                public byte Unk0D { get; set; } = 0;
+                public short Unk0E { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
+                public int Unk18 { get; set; } = 0;
+                public int Unk1C { get; set; } = 0;
             }
 
             public class MufflingPlane : Region
@@ -1505,7 +1515,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
+                public int Unk00 { get; set; } = -1;
             }
 
             public class SoundState : Region
@@ -1562,14 +1572,14 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; } // Always -1
-                public float Unk08 { get; set; } // Always -1.0
-                public float Unk0C { get; set; } // Always -1.0
-                public int Unk10 { get; set; } // Always -1
-                public float Unk14 { get; set; } // Always -1.0
-                public float Unk18 { get; set; } // Always -1.0
-                public int Unk1C { get; set; } // Always 0
+                public int Unk00 { get; set; } = -1;
+                public int Unk04 { get; set; } = -1;
+                public float Unk08 { get; set; } = -1f;
+                public float Unk0C { get; set; } = -1f;
+                public int Unk10 { get; set; } = -1;
+                public float Unk14 { get; set; } = -1f;
+                public float Unk18 { get; set; } = -1f;
+                public int Unk1C { get; set; } = 0;
             }
 
             public class MapInfoOverride : Region
@@ -1606,14 +1616,14 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; } // Always -1
-                public int Unk08 { get; set; } // Always 0
-                public int Unk0C { get; set; } // Always 0
-                public int Unk10 { get; set; } // Always 0
-                public int Unk14 { get; set; } // Always 0
-                public int Unk18 { get; set; } // Always 0
-                public int Unk1C { get; set; } // Always 0
+                public int Unk00 { get; set; } = 4000;
+                public int Unk04 { get; set; } = -1;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
+                public int Unk18 { get; set; } = 0;
+                public int Unk1C { get; set; } = 0;
 
             }
 
@@ -1724,30 +1734,30 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
-                public int Unk04 { get; set; } // Always -1
-                public int Unk08 { get; set; } // Always -1
-                public int Unk0C { get; set; } // Always -1
-                public int Unk10 { get; set; } // Always -1
-                public int Unk14 { get; set; } // Always -1
-                public int Unk18 { get; set; } // Always -1
-                public int Unk1C { get; set; } // Always -1
-                public int Unk20 { get; set; }
-                public int Unk24 { get; set; }  // Always -1
-                public int Unk28 { get; set; }  // Always -1
-                public int Unk2C { get; set; }  // Always -1
-                public int Unk30 { get; set; }  // Always -1
-                public int Unk34 { get; set; }  // Always -1
-                public int Unk38 { get; set; }  // Always -1
-                public int Unk3C { get; set; }  // Always -1
-                public int Unk40 { get; set; }  // Always -1
-                public int Unk44 { get; set; }  // Always -1
-                public int Unk48 { get; set; }  // Always -1
-                public int Unk4C { get; set; }  // Always -1
-                public int Unk50 { get; set; }  // Always -1
-                public int Unk54 { get; set; }  // Always -1
-                public int Unk58 { get; set; }
-                public int Unk5C { get; set; }  // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = -1;
+                public int Unk08 { get; set; } = -1;
+                public int Unk0C { get; set; } = -1;
+                public int Unk10 { get; set; } = -1;
+                public int Unk14 { get; set; } = -1;
+                public int Unk18 { get; set; } = -1;
+                public int Unk1C { get; set; } = -1;
+                public int Unk20 { get; set; } = -1;
+                public int Unk24 { get; set; } = -1;
+                public int Unk28 { get; set; } = -1;
+                public int Unk2C { get; set; } = -1;
+                public int Unk30 { get; set; } = -1;
+                public int Unk34 { get; set; } = -1;
+                public int Unk38 { get; set; } = -1;
+                public int Unk3C { get; set; } = -1;
+                public int Unk40 { get; set; } = -1;
+                public int Unk44 { get; set; } = -1;
+                public int Unk48 { get; set; } = -1;
+                public int Unk4C { get; set; } = -1;
+                public int Unk50 { get; set; } = -1;
+                public int Unk54 { get; set; } = -1;
+                public int Unk58 { get; set; } = -1;
+                public int Unk5C { get; set; } = 0;
 
             }
 
@@ -1811,7 +1821,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
             }
 
             public class FastTravelOverride : Region
@@ -1854,7 +1864,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
             }
 
             public class PlayArea : Region
@@ -1941,9 +1951,9 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public float JumpHeight { get; set; }
-                public int Unk04 { get; set; } // Always 807100
-                public int Unk08 { get; set; } // Always 200
+                public float JumpHeight { get; set; } = 10;
+                public int Unk04 { get; set; } = 807100;
+                public int Unk08 { get; set; } = 200;
             }
 
             public class OpenCharacterActivateLimit : Region
@@ -1988,8 +1998,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; }
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class FallPreventionOverride : Region
@@ -2014,8 +2024,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
 
             }
 
@@ -2123,8 +2133,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class BirdRoute : Region
@@ -2149,8 +2159,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } 
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class ClearInfo : Region
@@ -2218,8 +2228,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class UserEdgeRemovalOuter : Region
@@ -2244,8 +2254,8 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } // Always 0
-                public int Unk04 { get; set; } // Always 0
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
             }
 
             public class Other : Region

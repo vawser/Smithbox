@@ -347,7 +347,7 @@ namespace SoulsFormats
             public Vector3 Scale { get; set; } = new Vector3();
             public int Unk44 { get; set; } = 0;
             public int MapStudioLayer { get; set; } = -1;
-            public int Unk4C { get; set; } = 0;
+            private int Unk4C { get; set; } = 0; // Hidden
 
             // Offsets
             private long Display_DataOffset { get; set; }
@@ -646,9 +646,9 @@ namespace SoulsFormats
                 public uint[] CollisionMask { get; set; } = new uint[32];
                 public byte UnkC0 { get; set; } = 0; // Bool
                 public byte UnkC1 { get; set; } = 0; // Bool
-                public short UnkC2 { get; set; } = 0; // Hidden
-                public short UnkC4 { get; set; } = -1; // Hidden
-                public short UnkC6 { get; set; } = 0; // Hidden
+                private short UnkC2 { get; set; } = 0; // Hidden
+                private short UnkC4 { get; set; } = -1; // Hidden
+                private short UnkC6 { get; set; } = 0; // Hidden
 
             }
 
@@ -697,16 +697,16 @@ namespace SoulsFormats
                 // Layout
                 public int Unk00 { get; set; } = -1;
                 public uint[] DispGroups { get; set; } = new uint[8];
-                public short Unk24 { get; set; } = 0; // Hidden
-                public short Unk26 { get; set; } = -1; // Hidden
-                public int Unk28 { get; set; } = 0; // Hidden
-                public int Unk2C { get; set; } = 0; // Hidden
-                public int Unk30 { get; set; } = 0; // Hidden
-                public int Unk34 { get; set; } = 0; // Hidden
-                public int Unk38 { get; set; } = 0; // Hidden
-                public int Unk3C { get; set; } = 0; // Hidden
-                public int Unk40 { get; set; } = 0; // Hidden
-                public int Unk44 { get; set; } = 0; // Hidden
+                private short Unk24 { get; set; } = 0; // Hidden
+                private short Unk26 { get; set; } = -1; // Hidden
+                private int Unk28 { get; set; } = 0; // Hidden
+                private int Unk2C { get; set; } = 0; // Hidden
+                private int Unk30 { get; set; } = 0; // Hidden
+                private int Unk34 { get; set; } = 0; // Hidden
+                private int Unk38 { get; set; } = 0; // Hidden
+                private int Unk3C { get; set; } = 0; // Hidden
+                private int Unk40 { get; set; } = 0; // Hidden
+                private int Unk44 { get; set; } = 0; // Hidden
 
             }
 
@@ -795,7 +795,7 @@ namespace SoulsFormats
                 public uint EntityID { get; set; } = 0;
                 public byte Unk04 { get; set; } = 0; // Bool
                 public byte Unk05 { get; set; } = 0; // Bool
-                public short Unk06 { get; set; } = 0; // Hidden
+                private short Unk06 { get; set; } = 0; // Hidden
                 public int Unk08 { get; set; } = 0; // Bool
                 public byte Unk0C { get; set; } = 0; // Bool
                 public byte Unk0D { get; set; } = 0; // Bool
@@ -803,12 +803,12 @@ namespace SoulsFormats
                 public byte Unk0F { get; set; } = 1; // Bool
                 public byte Unk10 { get; set; } = 0; // Bool
                 public byte Unk11 { get; set; } = 1; // Bool
-                public short Unk12 { get; set; } = 0; // Hidden
+                private short Unk12 { get; set; } = 0; // Hidden
                 public byte Unk14 { get; set; } = 0; // Bool
                 public byte Unk15 { get; set; } = 0; // Bool
                 public byte Unk16 { get; set; } = 0; // Bool
                 public byte Unk17 { get; set; } = 0; // Bool
-                public short Unk18 { get; set; } = 0; // Hidden
+                private short Unk18 { get; set; } = 0; // Hidden
                 public byte Unk1A { get; set; } = 0;  // Bool
                 public byte Unk1B { get; set; } = 0;
                 public uint[] EntityGroupIDs { get; set; } = new uint[8];
@@ -861,12 +861,12 @@ namespace SoulsFormats
                 // Layout
                 public int LightID { get; set; } = -1;
                 public int FogID { get; set; } = -1;
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = 0; // Hidden
-                public int Unk14 { get; set; } = 0; // Hidden
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
+                private int Unk14 { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
 
             }
             public class SceneGparamStruct
@@ -937,31 +937,31 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0; // Hidden
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
+                private int Unk00 { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
                 public float TransitionTime { get; set; } = -1;
-                public int Unk14 { get; set; } = 0; // Hidden
+                private int Unk14 { get; set; } = 0; // Hidden
                 public sbyte Unk18 { get; set; } = -1;
-                public sbyte Unk19 { get; set; } = -1; // Hidden
-                public short Unk1A { get; set; } = -1; // Hidden
-                public sbyte Unk1C { get; set; } = -1; // Hidden
+                private sbyte Unk19 { get; set; } = -1; // Hidden
+                private short Unk1A { get; set; } = -1; // Hidden
+                private sbyte Unk1C { get; set; } = -1; // Hidden
                 public sbyte Unk1D { get; set; } = -1;
-                public short Unk1E { get; set; } = 0; // Hidden
+                private short Unk1E { get; set; } = 0; // Hidden
                 public short Unk20 { get; set; } = -1;
-                public short Unk22 { get; set; } = 0; // Hidden
-                public int Unk24 { get; set; } = 0; // Hidden
-                public int Unk28 { get; set; } = 0; // Hidden
-                public int Unk2C { get; set; } = 0; // Hidden
-                public int Unk30 { get; set; } = 0; // Hidden
-                public int Unk34 { get; set; } = 0; // Hidden
-                public int Unk38 { get; set; } = 0; // Hidden
-                public int Unk3C { get; set; } = 0; // Hidden
-                public int Unk40 { get; set; } = 0; // Hidden
-                public int Unk44 { get; set; } = 0; // Hidden
-                public int Unk48 { get; set; } = 0; // Hidden
-                public int Unk4C { get; set; } = 0; // Hidden
+                private short Unk22 { get; set; } = 0; // Hidden
+                private int Unk24 { get; set; } = 0; // Hidden
+                private int Unk28 { get; set; } = 0; // Hidden
+                private int Unk2C { get; set; } = 0; // Hidden
+                private int Unk30 { get; set; } = 0; // Hidden
+                private int Unk34 { get; set; } = 0; // Hidden
+                private int Unk38 { get; set; } = 0; // Hidden
+                private int Unk3C { get; set; } = 0; // Hidden
+                private int Unk40 { get; set; } = 0; // Hidden
+                private int Unk44 { get; set; } = 0; // Hidden
+                private int Unk48 { get; set; } = 0; // Hidden
+                private int Unk4C { get; set; } = 0; // Hidden
             }
 
             public class GrassStruct
@@ -1026,14 +1026,14 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0; // Hidden
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = 0; // Hidden
-                public int Unk14 { get; set; } = 0; // Hidden
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk00 { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
+                private int Unk14 { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
             }
 
             public class Unk90Struct
@@ -1070,13 +1070,13 @@ namespace SoulsFormats
 
                 // Layout
                 public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = 0; // Hidden
-                public int Unk14 { get; set; } = 0; // Hidden
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
+                private int Unk14 { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
 
             }
 
@@ -1117,12 +1117,12 @@ namespace SoulsFormats
                 // Layout
                 public sbyte[] MapID { get; set; } = new sbyte[4];
                 public int Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
                 public int Unk0C { get; set; } = -1;
-                public int Unk10 { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
                 public int Unk14 { get; set; } = -1;
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
 
             }
 
@@ -1160,14 +1160,14 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0; // Hidden
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = 0; // Hidden
-                public int Unk14 { get; set; } = 0; // Hidden
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk00 { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
+                private int Unk14 { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
             }
 
             public class UnkA8Struct
@@ -1203,9 +1203,9 @@ namespace SoulsFormats
                 public short Unk00 { get; set; } = -1;
                 public short Unk02 { get; set; } = -1;
                 public short Unk04 { get; set; } = -1;
-                public short Unk06 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
+                private short Unk06 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
             }
 
             /// <summary>
@@ -1525,39 +1525,42 @@ namespace SoulsFormats
                 public EnemyUnk78Struct Unk78Data { get; set; }
 
                 // Layout
-                public int Unk00 { get; set; } = -1; // Hidden
-                public int Unk04 { get; set; } = -1; // Hidden
+                private int Unk00 { get; set; } = -1; // Hidden
+                private int Unk04 { get; set; } = -1; // Hidden
                 public int NpcThinkParamId { get; set; } = 0;
                 public int NpcParamId { get; set; } = 0;
                 public int TalkID { get; set; } = 0;
-                public byte Unk14 { get; set; } = 0; // Hidden
-                public byte Unk15 { get; set; } = 0; // Boolean
+                private byte Unk14 { get; set; } = 0; // Hidden
+                private byte Unk15 { get; set; } = 0; // Boolean
                 public short PlatoonId { get; set; } = 0;
                 public int CharaInitParamId { get; set; } = -1;
                 private int HitPartIndex { get; set; } = -1;
                 private short PatrolRouteIndex { get; set; }
                 public short Unk22 { get; set; } = -1;
-                public int Unk24 { get; set; } = -1; // Hidden
+                private int Unk24 { get; set; } = -1; // Hidden
                 public int Unk28 { get; set; } = 0;
                 public int ChrActivateCondParamID { get; set; } = 0;
                 public int UnkSpEffectSetParamID { get; set; } = 0;
                 public int CondemnedSpEffectSetParamID { get; set; } = 0;
                 public int BackupEventAnimID { get; set; } = -1;
                 public sbyte Unk3C { get; set; } = -1;
-                public byte Unk3D { get; set; } = 0; // Hidden
+                private byte Unk3D { get; set; } = 0; // Hidden
                 public short Unk3E { get; set; } = -1;
                 public int[] SpEffectSetParamIds { get; set; } = new int[4];
-                public int Unk50 { get; set; } = 0; // Hidden
-                public int Unk54 { get; set; } = 0; // Hidden
-                public int Unk58 { get; set; } = 0; // Hidden
-                public int Unk5C { get; set; } = 0; // Hidden
-                public int Unk60 { get; set; } = 0; // Hidden
-                public int Unk64 { get; set; } = 0; // Hidden
-                public int Unk68 { get; set; } = 0; // Hidden
-                public int Unk6C { get; set; } = 0; // Hidden
+                private int Unk50 { get; set; } = 0; // Hidden
+                private int Unk54 { get; set; } = 0; // Hidden
+                private int Unk58 { get; set; } = 0; // Hidden
+                private int Unk5C { get; set; } = 0; // Hidden
+                private int Unk60 { get; set; } = 0; // Hidden
+                private int Unk64 { get; set; } = 0; // Hidden
+                private int Unk68 { get; set; } = 0; // Hidden
+                private int Unk6C { get; set; } = 0; // Hidden
+
+                // Offsets
                 private long Offset70 { get; set; } = 0; // Hidden
                 private long Offset78 { get; set; } = 0; // Hidden
 
+                // Names
                 [MSBReference(ReferenceType = typeof(Collision))]
                 public string HitPartName { get; set; }
 
@@ -1617,10 +1620,10 @@ namespace SoulsFormats
                     // Layout
                     public int Unk00 { get; set; } = 0;
                     public float Unk04 { get; set; } = 1;
-                    public int Unk30 { get; set; } = 0; // Hidden
-                    public int Unk34 { get; set; } = 0; // Hidden
-                    public int Unk38 { get; set; } = 0; // Hidden
-                    public int Unk3C { get; set; } = 0; // Hidden
+                    private int Unk30 { get; set; } = 0; // Hidden
+                    private int Unk34 { get; set; } = 0; // Hidden
+                    private int Unk38 { get; set; } = 0; // Hidden
+                    private int Unk3C { get; set; } = 0; // Hidden
 
                     public class EnemyInnerStruct
                     {
@@ -1768,9 +1771,9 @@ namespace SoulsFormats
 
                 // Layout
                 public int Unk00 { get; set; } = 0;
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
             }
 
             /// <summary>
@@ -1939,34 +1942,34 @@ namespace SoulsFormats
 
                 // Layout
                 public byte HitFilterID { get; set; } = 8;
-                public sbyte Unk01 { get; set; } = -1; // Hidden
+                private sbyte Unk01 { get; set; } = -1; // Hidden
                 public sbyte Unk02 { get; set; } = -1;
-                public byte Unk03 { get; set; } = 0; // Hidden
+                private byte Unk03 { get; set; } = 0; // Hidden
                 public float Unk04 { get; set; } = 0;
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = 0; // Hidden
-                public float Unk14 { get; set; } = -1; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = 0; // Hidden
+                private float Unk14 { get; set; } = -1; // Hidden
                 public int LocationTextID { get; set; } = -1;
                 public int Unk1C { get; set; } = -1;
                 public int PlayRegionID { get; set; } = -1;
                 public short Unk24 { get; set; } = -1;
                 public byte Unk26 { get; set; } = 0; // Boolean
                 public byte Unk27 { get; set; } = 0; // Boolean
-                public int Unk28 { get; set; } = 0; // Hidden
-                public int Unk2C { get; set; } = -1; // Hidden
-                public int Unk30 { get; set; } = -1; // Hidden
+                private int Unk28 { get; set; } = 0; // Hidden
+                private int Unk2C { get; set; } = -1; // Hidden
+                private int Unk30 { get; set; } = -1; // Hidden
                 public byte Unk34 { get; set; } = 0;
                 public sbyte Unk35 { get; set; } = -1;
-                public short Unk36 { get; set; } = 0; // Hidden
-                public int Unk38 { get; set; } = -1; // Hidden
+                private short Unk36 { get; set; } = 0; // Hidden
+                private int Unk38 { get; set; } = -1; // Hidden
                 public short Unk3C { get; set; } = -1;
-                public short Unk3E { get; set; } = -1; // Hidden
-                public int Unk40 { get; set; } = 0; // Hidden
-                public int HitUnk44 { get; set; } = 0; // Hidden
-                public int Unk48 { get; set; } = 0; // Hidden
-                public short HitUnk4C { get; set; } = 0; // Hidden
-                public short Unk4E { get; set; } = -1; // Hidden
+                private short Unk3E { get; set; } = -1; // Hidden
+                private int Unk40 { get; set; } = 0; // Hidden
+                private int HitUnk44 { get; set; } = 0; // Hidden
+                private int Unk48 { get; set; } = 0; // Hidden
+                private short HitUnk4C { get; set; } = 0; // Hidden
+                private short Unk4E { get; set; } = -1; // Hidden
 
             }
 
@@ -2088,14 +2091,14 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0; // Hidden
-                public int Unk04 { get; set; } = 0; // Hidden
-                public int Unk08 { get; set; } = -1; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
-                public int Unk10 { get; set; } = -1; // Hidden
-                public int Unk14 { get; set; } = -1; // Hidden
-                public int Unk18 { get; set; } = -1; // Hidden
-                public int Unk1C { get; set; } = -1; // Hidden
+                private int Unk00 { get; set; } = 0; // Hidden
+                private int Unk04 { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = -1; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
+                private int Unk10 { get; set; } = -1; // Hidden
+                private int Unk14 { get; set; } = -1; // Hidden
+                private int Unk18 { get; set; } = -1; // Hidden
+                private int Unk1C { get; set; } = -1; // Hidden
             }
 
             /// <summary>
@@ -2239,10 +2242,10 @@ namespace SoulsFormats
                 // Layout
                 private int ParentHitIndex { get; set; }
                 public sbyte[] MapID { get; set; } = new sbyte[4];
-                public short Unk08 { get; set; } = 0; // Hidden
+                private short Unk08 { get; set; } = 0; // Hidden
                 public sbyte Unk0A { get; set; } = -1;
                 public sbyte Unk0B { get; set; } = 0; // Boolean
-                public int Unk0C { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
 
                 [MSBReference(ReferenceType = typeof(Collision))]
                 [NoRenderGroupInheritence()]
@@ -2512,36 +2515,36 @@ namespace SoulsFormats
                 // Layout
                 public byte Unk00 { get; set; } = 0; // Boolean
                 public byte Unk01 { get; set; } = 0;
-                public short Unk02 { get; set; } = 0; // Hidden
+                private short Unk02 { get; set; } = 0; // Hidden
                 public int Unk04 { get; set; } = -1;
-                public int Unk08 { get; set; } = 0; // Hidden
-                public int Unk0C { get; set; } = 0; // Hidden
+                private int Unk08 { get; set; } = 0; // Hidden
+                private int Unk0C { get; set; } = 0; // Hidden
                 public byte Unk10 { get; set; } = 0;
                 public byte Unk11 { get; set; } = 0; // Boolean
                 public sbyte Unk12 { get; set; } = -1;
-                public byte Unk13 { get; set; } = 0; // Hidden
+                private byte Unk13 { get; set; } = 0; // Hidden
                 public int Unk14 { get; set; } = 0;
-                public int Unk18 { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
                 public short AssetSfxParamRelativeID { get; set; } = -1;
-                public short Unk1E { get; set; } = -1; // Hidden
-                public int Unk20 { get; set; } = -1; // Hidden
-                public int Unk24 { get; set; } = -1; // Hidden
-                public int Unk28 { get; set; } = 0; // Hidden
-                public int Unk2C { get; set; } = 0; // Hidden
-                public int Unk30 { get; set; } = -1; // Hidden
+                private short Unk1E { get; set; } = -1; // Hidden
+                private int Unk20 { get; set; } = -1; // Hidden
+                private int Unk24 { get; set; } = -1; // Hidden
+                private int Unk28 { get; set; } = 0; // Hidden
+                private int Unk2C { get; set; } = 0; // Hidden
+                private int Unk30 { get; set; } = -1; // Hidden
                 public int ItemLotParamMapID { get; set; } = -1;
                 public int PartIndex1 { get; set; } = -1;
-                public int Unk3C { get; set; } = -1; // Hidden
+                private int Unk3C { get; set; } = -1; // Hidden
                 public int PartIndex2 { get; set; } = -1;
                 public int PartIndex3 { get; set; } = -1;
                 public int PartIndex4 { get; set; } = -1;
                 public int PartIndex5 { get; set; } = -1;
-                public int Unk50 { get; set; } = -1; // Hidden
+                private int Unk50 { get; set; } = -1; // Hidden
                 public int PartIndex6 { get; set; } = -1;
                 public int Unk58 { get; set; } = -1;
-                public int Unk5C { get; set; } = -1; // Hidden
-                public int Unk60 { get; set; } = -1; // Hidden
-                public int Unk64 { get; set; } = -1; // Hidden
+                private int Unk5C { get; set; } = -1; // Hidden
+                private int Unk60 { get; set; } = -1; // Hidden
+                private int Unk64 { get; set; } = -1; // Hidden
 
                 private long Offset68 { get; set; } = 0;
                 private long Offset70 { get; set; } = 0;
@@ -2693,24 +2696,24 @@ namespace SoulsFormats
                     }
 
                     // Layout
-                    public int Unk00 { get; set; } = 0; // Hidden
+                    private int Unk00 { get; set; } = 0; // Hidden
                     public int Unk04 { get; set; } = -1;
-                    public int Unk08 { get; set; } = -1; // Hidden
-                    public int Unk0C { get; set; } = 0; // Hidden
-                    public int Unk10 { get; set; } = 0; // Hidden
+                    private int Unk08 { get; set; } = -1; // Hidden
+                    private int Unk0C { get; set; } = 0; // Hidden
+                    private int Unk10 { get; set; } = 0; // Hidden
                     public float Unk14 { get; set; } = 0;
                     public int Unk18 { get; set; } = 0;
                     public sbyte Unk1C { get; set; } = -1;
                     public sbyte Unk1D { get; set; } = -1;
                     public short Unk1E { get; set; } = -1;
-                    public int Unk20 { get; set; } = 0; // Hidden
-                    public int Unk24 { get; set; } = 0; // Hidden
-                    public int Unk28 { get; set; } = 0; // Hidden
-                    public int Unk2C { get; set; } = 0; // Hidden
-                    public int Unk30 { get; set; } = 0; // Hidden
-                    public int Unk34 { get; set; } = 0; // Hidden
-                    public int Unk38 { get; set; } = 0; // Hidden
-                    public int Unk3C { get; set; } = 0; // Hidden
+                    private int Unk20 { get; set; } = 0; // Hidden
+                    private int Unk24 { get; set; } = 0; // Hidden
+                    private int Unk28 { get; set; } = 0; // Hidden
+                    private int Unk2C { get; set; } = 0; // Hidden
+                    private int Unk30 { get; set; } = 0; // Hidden
+                    private int Unk34 { get; set; } = 0; // Hidden
+                    private int Unk38 { get; set; } = 0; // Hidden
+                    private int Unk3C { get; set; } = 0; // Hidden
                 }
 
                 public class AssetInnnerStruct78
@@ -2776,25 +2779,25 @@ namespace SoulsFormats
                     // Layout
                     public int Unk00 { get; set; } = 0; // Boolean
                     public float Unk04 { get; set; } = 0;
-                    public short Unk08 { get; set; } = -1; // Hidden
+                    private short Unk08 { get; set; } = -1; // Hidden
                     public byte Unk0A { get; set; } = 0;
                     public sbyte Unk0B { get; set; } = -1;
                     public short Unk0C { get; set; } = -1;
-                    public short Unk0E { get; set; } = 0; // Hidden
-                    public float Unk10 { get; set; } = 0; // Hidden
-                    public int Unk14 { get; set; } = -1; // Hidden
-                    public int Unk18 { get; set; } = -1; // Hidden
-                    public int Unk1C { get; set; } = -1; // Hidden
-                    public int Unk20 { get; set; } = -1; // Hidden
-                    public sbyte Unk24 { get; set; } = -1; // Hidden
-                    public byte Unk25 { get; set; } = 0; // Hidden
-                    public short Unk26 { get; set; } = 0; // Hidden
-                    public int Unk28 { get; set; } = 0; // Hidden
-                    public int Unk2C { get; set; } = 0; // Hidden
-                    public int Unk30 { get; set; } = 0; // Hidden
-                    public int Unk34 { get; set; } = 0; // Hidden
-                    public int Unk38 { get; set; } = 0; // Hidden
-                    public int Unk3C { get; set; } = 0; // Hidden
+                    private short Unk0E { get; set; } = 0; // Hidden
+                    private float Unk10 { get; set; } = 0; // Hidden
+                    private int Unk14 { get; set; } = -1; // Hidden
+                    private int Unk18 { get; set; } = -1; // Hidden
+                    private int Unk1C { get; set; } = -1; // Hidden
+                    private int Unk20 { get; set; } = -1; // Hidden
+                    private sbyte Unk24 { get; set; } = -1; // Hidden
+                    private byte Unk25 { get; set; } = 0; // Hidden
+                    private short Unk26 { get; set; } = 0; // Hidden
+                    private int Unk28 { get; set; } = 0; // Hidden
+                    private int Unk2C { get; set; } = 0; // Hidden
+                    private int Unk30 { get; set; } = 0; // Hidden
+                    private int Unk34 { get; set; } = 0; // Hidden
+                    private int Unk38 { get; set; } = 0; // Hidden
+                    private int Unk3C { get; set; } = 0; // Hidden
 
                 }
 
@@ -2858,24 +2861,24 @@ namespace SoulsFormats
 
                     // Layout
                     public byte Unk00 { get; set; } = 0; // Boolean
-                    public sbyte Unk01 { get; set; } = -1; // Hidden
-                    public sbyte Unk02 { get; set; } = -1; 
-                    public byte Unk03 { get; set; } = 0; // Hidden
-                    public int Unk04 { get; set; } = 0; // Hidden
-                    public int Unk08 { get; set; } = 0; // Hidden
-                    public int Unk0C { get; set; } = 0; // Hidden
-                    public int Unk10 { get; set; } = 0; // Hidden
-                    public int Unk14 { get; set; } = 0; // Hidden
-                    public int Unk18 { get; set; } = 0; // Hidden
-                    public int Unk1C { get; set; } = 0; // Hidden
-                    public int Unk20 { get; set; } = 0; // Hidden
-                    public int Unk24 { get; set; } = 0; // Hidden
-                    public int Unk28 { get; set; } = 0; // Hidden
-                    public int Unk2C { get; set; } = 0; // Hidden
-                    public int Unk30 { get; set; } = 0; // Hidden
-                    public int Unk34 { get; set; } = 0; // Hidden
-                    public int Unk38 { get; set; } = 0; // Hidden
-                    public int Unk3C { get; set; } = 0; // Hidden
+                    private sbyte Unk01 { get; set; } = -1; // Hidden
+                    public sbyte Unk02 { get; set; } = -1;
+                    private byte Unk03 { get; set; } = 0; // Hidden
+                    private int Unk04 { get; set; } = 0; // Hidden
+                    private int Unk08 { get; set; } = 0; // Hidden
+                    private int Unk0C { get; set; } = 0; // Hidden
+                    private int Unk10 { get; set; } = 0; // Hidden
+                    private int Unk14 { get; set; } = 0; // Hidden
+                    private int Unk18 { get; set; } = 0; // Hidden
+                    private int Unk1C { get; set; } = 0; // Hidden
+                    private int Unk20 { get; set; } = 0; // Hidden
+                    private int Unk24 { get; set; } = 0; // Hidden
+                    private int Unk28 { get; set; } = 0; // Hidden
+                    private int Unk2C { get; set; } = 0; // Hidden
+                    private int Unk30 { get; set; } = 0; // Hidden
+                    private int Unk34 { get; set; } = 0; // Hidden
+                    private int Unk38 { get; set; } = 0; // Hidden
+                    private int Unk3C { get; set; } = 0; // Hidden
                 }
             }
         }
