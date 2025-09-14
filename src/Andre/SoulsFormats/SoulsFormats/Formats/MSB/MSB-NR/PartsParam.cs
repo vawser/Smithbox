@@ -748,7 +748,7 @@ namespace SoulsFormats
 
                     Unk3C = br.ReadInt16();
                     Unk3E = br.ReadInt16();
-                    Unk40 = br.ReadInt32();
+                    RandomAppearParamID = br.ReadInt32();
                     Variation = br.ReadInt32();
 
                     Unk48 = br.ReadInt32();
@@ -784,7 +784,7 @@ namespace SoulsFormats
 
                     bw.WriteInt16(Unk3C);
                     bw.WriteInt16(Unk3E);
-                    bw.WriteInt32(Unk40);
+                    bw.WriteInt32(RandomAppearParamID);
                     bw.WriteInt32(Variation);
 
                     bw.WriteInt32(Unk48);
@@ -814,7 +814,7 @@ namespace SoulsFormats
                 public uint[] EntityGroupIDs { get; set; } = new uint[8];
                 public short Unk3C { get; set; } = -1;
                 public short Unk3E { get; set; } = 0;
-                private int Unk40 { get; set; } = 0;
+                private int RandomAppearParamID { get; set; } = 0;
                 private int Variation { get; set; } = -1;
                 private int Unk48 { get; set; } // Hidden
                 private int Unk4C { get; set; }
@@ -1092,7 +1092,7 @@ namespace SoulsFormats
 
                 internal TileStruct(BinaryReaderEx br)
                 {
-                    MapID = br.ReadMapIDBytes(4);
+                    MapID = br.ReadSBytes(4);
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
@@ -1104,7 +1104,7 @@ namespace SoulsFormats
 
                 internal void Write(BinaryWriterEx bw)
                 {
-                    bw.WriteMapIDBytes(MapID);
+                    bw.WriteSBytes(MapID);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
@@ -1445,11 +1445,11 @@ namespace SoulsFormats
                     CharaInitParamId = br.ReadInt32();
                     HitPartIndex = br.ReadInt32();
                     PatrolRouteIndex = br.ReadInt16();
-                    Unk22 = br.ReadInt16();
+                    ScenarioPlacementParamID = br.ReadInt16();
                     Unk24 = br.ReadInt32();
-                    Unk28 = br.ReadInt32();
+                    UnkSpEffectSetParamID_0 = br.ReadInt32();
                     ChrActivateCondParamID = br.ReadInt32();
-                    UnkSpEffectSetParamID = br.ReadInt32();
+                    UnkSpEffectSetParamID_1 = br.ReadInt32();
                     CondemnedSpEffectSetParamID = br.ReadInt32();
                     BackupEventAnimID = br.ReadInt32();
                     Unk3C = br.ReadSByte();
@@ -1493,11 +1493,11 @@ namespace SoulsFormats
                     bw.WriteInt32(CharaInitParamId);
                     bw.WriteInt32(HitPartIndex);
                     bw.WriteInt16(PatrolRouteIndex);
-                    bw.WriteInt16(Unk22);
+                    bw.WriteInt16(ScenarioPlacementParamID);
                     bw.WriteInt32(Unk24);
-                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(UnkSpEffectSetParamID_0);
                     bw.WriteInt32(ChrActivateCondParamID);
-                    bw.WriteInt32(UnkSpEffectSetParamID);
+                    bw.WriteInt32(UnkSpEffectSetParamID_1);
                     bw.WriteInt32(CondemnedSpEffectSetParamID);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteSByte(Unk3C);
@@ -1536,11 +1536,11 @@ namespace SoulsFormats
                 public int CharaInitParamId { get; set; } = -1;
                 private int HitPartIndex { get; set; } = -1;
                 private short PatrolRouteIndex { get; set; }
-                public short Unk22 { get; set; } = -1;
+                public short ScenarioPlacementParamID { get; set; } = -1;
                 private int Unk24 { get; set; } = -1; // Hidden
-                public int Unk28 { get; set; } = 0;
+                public int UnkSpEffectSetParamID_0 { get; set; } = 0;
                 public int ChrActivateCondParamID { get; set; } = 0;
-                public int UnkSpEffectSetParamID { get; set; } = 0;
+                public int UnkSpEffectSetParamID_1 { get; set; } = 0;
                 public int CondemnedSpEffectSetParamID { get; set; } = 0;
                 public int BackupEventAnimID { get; set; } = -1;
                 public sbyte Unk3C { get; set; } = -1;
@@ -2223,7 +2223,7 @@ namespace SoulsFormats
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     ParentHitIndex = br.ReadInt32();
-                    MapID = br.ReadMapIDBytes(4);
+                    MapID = br.ReadSBytes(4);
                     Unk08 = br.ReadInt16();
                     Unk0A = br.ReadSByte();
                     Unk0B = br.ReadSByte();
@@ -2232,7 +2232,7 @@ namespace SoulsFormats
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
                     bw.WriteInt32(ParentHitIndex);
-                    bw.WriteMapIDBytes(MapID);
+                    bw.WriteSBytes(MapID);
                     bw.WriteInt16(Unk08);
                     bw.WriteSByte(Unk0A);
                     bw.WriteSByte(Unk0B);

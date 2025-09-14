@@ -6,7 +6,7 @@ using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Numerics;
+using System.Security.Cryptography;
 using static SoulsFormats.MSB_NR;
 
 namespace StudioCore.DebugNS;
@@ -19,6 +19,17 @@ public static class Test_MSB_NR
     public static bool IncludeDisambiguation = false;
 
     public static bool RunOnce = false;
+
+    public static class BytePerfectHashHelpers
+    {
+        public static byte[] Md5(ReadOnlySpan<byte> data) => MD5.HashData(data);
+
+        public static bool Md5Equal(ReadOnlySpan<byte> a, ReadOnlySpan<byte> b)
+            => CryptographicOperations.FixedTimeEquals(MD5.HashData(a), MD5.HashData(b));
+
+        public static string Md5Hex(ReadOnlySpan<byte> data) => Convert.ToHexString(MD5.HashData(data));
+    }
+
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
@@ -102,7 +113,7 @@ public static class Test_MSB_NR
 
             var isMismatch = false;
 
-            if (!decompressed.Span.SequenceEqual(written))
+            if (!BytePerfectHashHelpers.Md5Equal(decompressed.Span, written))
             {
                 isMismatch = true;
             }

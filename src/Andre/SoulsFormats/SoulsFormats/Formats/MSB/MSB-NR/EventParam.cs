@@ -336,6 +336,9 @@ namespace SoulsFormats
                     case EventType.PseudoMultiplayer:
                         bw.Pad(4);
                         break;
+                    case EventType.TeamFight:
+                        bw.Pad(4);
+                        break;
                     default:
                         bw.Pad(8);
                         break;
@@ -351,6 +354,12 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk14_Map);
                 bw.WriteInt32(Unk18_Map);
                 bw.WriteInt32(Unk1C_Map);
+
+                // ???
+                if (Type == EventType.TeamFight)
+                {
+                    bw.Pad(8);
+                }
             }
 
             // Layout
