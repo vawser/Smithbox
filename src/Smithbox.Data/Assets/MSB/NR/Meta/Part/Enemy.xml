@@ -43,14 +43,24 @@
     
     <PatrolRouteIndex
     IndexProperty="" />
+
+    <ScenarioPlacementParamID
+    AltName="Scenario Placement ID"
+    Wiki=""
+    ParamRef="ScenarioPlacementParam" />
+
+    <UnkSpEffectSetParamID_0
+    AltName="Unkown SpEffect Set ID 01"
+    Wiki=""
+    ParamRef="SpEffectSetParam" />
     
     <ChrActivateCondParamID
     AltName="Character Appearance Condition"
     Wiki="The ID in ChrActivateConditionParam that affects enemy appearance conditions."
     ParamRef="ChrActivateConditionParam" />
     
-    <UnkSpEffectSetParamID
-    AltName="Unkown SpEffect Set ID"
+    <UnkSpEffectSetParamID_1
+    AltName="Unkown SpEffect Set ID 02"
     Wiki="looks like condemned SpeffectSetParamID.Used in m30."
     ParamRef="SpEffectSetParam" />
     

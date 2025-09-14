@@ -40,7 +40,6 @@ public class DebugTools
     public void DisplayMenu()
     {
         // Only display these tools this in Debug builds
-#if DEBUG
         if (ImGui.BeginMenu("Debugging"))
         {
             if (ImGui.MenuItem($"Execute Quick Script"))
@@ -140,7 +139,7 @@ public class DebugTools
                 {
                     ShowTest_MSB_ER = !ShowTest_MSB_ER;
                 }
-                if (ImGui.MenuItem($"MSB_ERN"))
+                if (ImGui.MenuItem($"MSB_NR"))
                 {
                     ShowTest_MSB_NR = !ShowTest_MSB_NR;
                 }
@@ -148,7 +147,6 @@ public class DebugTools
             }
             ImGui.EndMenu();
         }
-#endif
     }
 
     public void Display()

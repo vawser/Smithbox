@@ -645,8 +645,10 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
+#if DEBUG
             // Debugging
             DebugTools.DisplayMenu();
+#endif
 
             // Action Logger
             TaskLogs.DisplayActionLoggerBar();

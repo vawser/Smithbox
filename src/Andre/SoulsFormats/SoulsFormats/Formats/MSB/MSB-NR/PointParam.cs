@@ -132,6 +132,7 @@ namespace SoulsFormats
             {
                 EntryPoints = new List<Region.EntryPoint>();
                 EnvMapPoints = new List<Region.EnvMapPoint>();
+                RespawnPoints = new List<Region.RespawnPoint>();
                 Sounds = new List<Region.Sound>();
                 SFX = new List<Region.SFX>();
                 WindSFX = new List<Region.WindSFX>();
@@ -168,7 +169,6 @@ namespace SoulsFormats
                 MountOverrides = new List<Region.MountOverride>();
                 SmallBaseAttachs = new List<Region.SmallBaseAttach>();
                 BirdRoutes = new List<Region.BirdRoute>();
-                RespawnPoints = new List<Region.RespawnPoint>();
                 ClearInfos = new List<Region.ClearInfo>();
                 RespawnOverrides = new List<Region.RespawnOverride>();
                 UserEdgeRemovalInners = new List<Region.UserEdgeRemovalInner>();
@@ -186,6 +186,7 @@ namespace SoulsFormats
                 {
                     case Region.EntryPoint r: EntryPoints.Add(r); break;
                     case Region.EnvMapPoint r: EnvMapPoints.Add(r); break;
+                    case Region.RespawnPoint r: RespawnPoints.Add(r); break;
                     case Region.Sound r: Sounds.Add(r); break;
                     case Region.SFX r: SFX.Add(r); break;
                     case Region.WindSFX r: WindSFX.Add(r); break;
@@ -222,7 +223,6 @@ namespace SoulsFormats
                     case Region.SmallBaseAttach r: SmallBaseAttachs.Add(r); break;
                     case Region.BirdRoute r: BirdRoutes.Add(r); break;
                     case Region.RollingObjectOverride r: RollingObjectOverrides.Add(r); break;
-                    case Region.RespawnPoint r: RespawnPoints.Add(r); break;
                     case Region.ClearInfo r: ClearInfos.Add(r); break;
                     case Region.RespawnOverride r: RespawnOverrides.Add(r); break;
                     case Region.UserEdgeRemovalInner r: UserEdgeRemovalInners.Add(r); break;
@@ -242,7 +242,7 @@ namespace SoulsFormats
             public override List<Region> GetEntries()
             {
                 return SFUtil.ConcatAll<Region>(
-                    EntryPoints, EnvMapPoints, Sounds, SFX, WindSFX,
+                    EntryPoints, EnvMapPoints, RespawnPoints, Sounds, SFX, WindSFX,
                     ReturnPoints, Messages, EnvMapEffectBoxs, WindPlacements,
                     MapConnections, SourceWaypoints, BuddySummonPoints, RollingObjectOverrides, MufflingBoxs,
                     MufflingPortals, SoundOverrides, MufflingPlanes, PatrolPoints,
@@ -251,7 +251,7 @@ namespace SoulsFormats
                     FastTravelOverrides, WeatherAssetGenerations, PlayAreas, MidRangeEnvMapOutputs,
                     BigJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapNameOverrides,
                     BigJumpExits, MountOverrides, SmallBaseAttachs, BirdRoutes,
-                    RespawnPoints, ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
+                     ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -266,6 +266,9 @@ namespace SoulsFormats
 
                     case RegionType.EnvMapPoint:
                         return EnvMapPoints.EchoAdd(new Region.EnvMapPoint(br));
+
+                    case RegionType.RespawnPoint:
+                        return RespawnPoints.EchoAdd(new Region.RespawnPoint(br));
 
                     case RegionType.Sound:
                         return Sounds.EchoAdd(new Region.Sound(br));
@@ -374,9 +377,6 @@ namespace SoulsFormats
 
                     case RegionType.BirdRoute:
                         return BirdRoutes.EchoAdd(new Region.BirdRoute(br));
-
-                    case RegionType.RespawnPoint:
-                        return RespawnPoints.EchoAdd(new Region.RespawnPoint(br));
 
                     case RegionType.ClearInfo:
                         return ClearInfos.EchoAdd(new Region.ClearInfo(br));
@@ -503,7 +503,7 @@ namespace SoulsFormats
 
                 // Unk4
                 br.Position = start + struct98Offset;
-                Stuct98_MapID = br.ReadMapIDBytes(4);
+                Stuct98_MapID = br.ReadSBytes(4);
                 Unk04_Struct98 = br.ReadInt32();
                 br.AssertInt32(0);
                 Unk0C_Struct98 = br.ReadInt32();
@@ -595,7 +595,7 @@ namespace SoulsFormats
 
                 // Struct 98
                 bw.FillInt64("Struct98Offset", bw.Position - start);
-                bw.WriteMapIDBytes(Stuct98_MapID);
+                bw.WriteSBytes(Stuct98_MapID);
                 bw.WriteInt32(Unk04_Struct98);
                 bw.WriteInt32(Unk08_Struct98);
                 bw.WriteInt32(Unk0C_Struct98);
@@ -1136,7 +1136,7 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    ConnectionMapID = br.ReadMapIDBytes(4);
+                    ConnectionMapID = br.ReadSBytes(4);
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
@@ -1144,7 +1144,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteMapIDBytes(ConnectionMapID);
+                    bw.WriteSBytes(ConnectionMapID);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);

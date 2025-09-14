@@ -374,6 +374,8 @@ namespace SoulsFormats
 
                 if (Type == EventType.PseudoMultiplayer)
                     bw.Pad(4);
+                else if (Type == EventType.AreaTeam)
+                    bw.Pad(4);
                 else
                     bw.Pad(8);
 
@@ -387,6 +389,12 @@ namespace SoulsFormats
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.Pad(8);
+
+                // ???
+                if (Type == EventType.AreaTeam)
+                {
+                    bw.Pad(8);
+                }
             }
 
             private protected virtual void WriteTypeData(BinaryWriterEx bw)
