@@ -366,11 +366,6 @@ public class ProjectUtils
         return true;
     }
 
-    public static bool SupportsTimeActEditor(ProjectType curType)
-    {
-        return true;
-    }
-
     public static bool SupportsGraphicsParamEditor(ProjectType curType)
     {
         if (curType 
@@ -392,22 +387,6 @@ public class ProjectUtils
         return true;
     }
 
-    public static bool SupportsEventScriptEditor(ProjectType curType)
-    {
-        return true;
-    }
-
-    public static bool SupportsEzStateScriptEditor(ProjectType curType)
-    {
-        // DES uses DLSE-ESD
-        if (curType is ProjectType.DES)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     public static bool SupportsTextureViewer(ProjectType curType)
     {
         return true;
@@ -416,15 +395,5 @@ public class ProjectUtils
     public static bool SupportsFileBrowser(ProjectType curType)
     {
         return true;
-    }
-
-    public static bool SupportsBehaviorEditor(ProjectType curType)
-    {
-        if (curType is ProjectType.ER or ProjectType.NR)
-        {
-            return true;
-        }
-
-        return false;
     }
 }

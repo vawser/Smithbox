@@ -132,9 +132,7 @@ public class KeybindWindow
         [Display(Name = "Param Editor")] ParamEditor,
         [Display(Name = "Text Editor")] TextEditor,
         [Display(Name = "GPARAM Editor")] GparamEditor,
-        [Display(Name = "Time Act Editor")] TimeActEditor,
         [Display(Name = "Texture Viewer")] TextureViewer,
-        [Display(Name = "Behavior Editor")] BehaviorEditor
     }
 }
 

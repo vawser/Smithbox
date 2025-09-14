@@ -37,14 +37,10 @@ public static class ProjectCreation
     public static bool EnableModelEditor = true;
     public static bool EnableTextEditor = true;
     public static bool EnableParamEditor = true;
-    public static bool EnableTimeActEditor = false;
     public static bool EnableGparamEditor = true;
     public static bool EnableMaterialEditor = false;
-    public static bool EnableEmevdEditor = false;
-    public static bool EnableEsdEditor = false;
     public static bool EnableTextureViewer = true;
     public static bool EnableFileBrowser = false;
-    public static bool EnableBehaviorEditor = false;
 
     public static bool EnableExternalMaterialData = true;
 
@@ -440,48 +436,14 @@ public static class ProjectCreation
                 ImGui.TableSetColumnIndex(4);
 
                 DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableTimeActEditor", ref EnableTimeActEditor);
-
-                ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Time Act Editor");
-                UIHelper.Tooltip("If true, the Time Act Editor and associated data will be initialized for this project.");
-
-                // Section 3
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableMaterialEditor", ref EnableMaterialEditor);
-                ImGui.TableSetColumnIndex(1);
+                ImGui.TableSetColumnIndex(5);
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Material Editor");
                 UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
 
-
-                ImGui.TableSetColumnIndex(2);
-
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
-                ImGui.TableSetColumnIndex(3);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Event Script Editor");
-                UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
-
-                ImGui.TableSetColumnIndex(4);
-
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
-                ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("EzState Script Editor");
-                UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
-
-                // Section 4
+                // Section 3
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
@@ -504,17 +466,6 @@ public static class ProjectCreation
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("File Browser");
                 UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
-
-                ImGui.TableSetColumnIndex(4);
-
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
-
-                ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Behavior Editor");
-                UIHelper.Tooltip("If true, the Behavior Editor and associated data will be initialized for this project.");
 
                 ImGui.EndTable();
             }

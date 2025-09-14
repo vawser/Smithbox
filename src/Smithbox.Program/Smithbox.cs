@@ -576,23 +576,11 @@ public class Smithbox
                 }
                 UIHelper.Tooltip("View the keybinds that apply when in the Gparam Editor.");
 
-                if (ImGui.MenuItem("Time Act Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.TimeActEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Time Act Editor.");
-
                 if (ImGui.MenuItem("Texture Viewer"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
                 }
                 UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
-
-                if (ImGui.MenuItem("Behavior Editor"))
-                {
-                    Keybinds.ToggleWindow(SelectedKeybindTab.BehaviorEditor);
-                }
-                UIHelper.Tooltip("View the keybinds that apply when in the Behavior Editor.");
 
                 ImGui.EndMenu();
             }
