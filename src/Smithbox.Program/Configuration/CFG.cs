@@ -387,64 +387,6 @@ public class CFG
     public bool Interface_TextEditor_Tool_TextMerge = true;
 
     ///------------------------------------------------------------
-    /// Behavior Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the binder list window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_BinderList = true;
-
-    /// <summary>
-    /// If true, the file list window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_FileList = true;
-
-    /// <summary>
-    /// If true, the graph node window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_GraphNodeView = true;
-
-    /// <summary>
-    /// If true, the data categories window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_DataCategoriesView = true;
-
-    /// <summary>
-    /// If true, the data list window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_DataListView = true;
-
-    /// <summary>
-    /// If true, the field window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_FieldView = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Text Editor.
-    /// </summary>
-    public bool Interface_BehaviorEditor_ToolView = true;
-
-    /// <summary>
-    /// The depth limit for the breadth-first traversal search used by the graph
-    /// </summary>
-    public int Behavior_GraphDepthLimit = 1;
-
-    /// <summary>
-    /// If true, the Power Edit tool collapsible is visible in the Behavior Editor Tool window.
-    /// </summary>
-    public bool Interface_BehaviorEditor_Tool_PowerEdit = true;
-
-    /// <summary>
-    /// If true, the Variable Assist tool collapsible is visible in the Behavior Editor Tool window.
-    /// </summary>
-    public bool Interface_BehaviorEditor_Tool_VariableAssist = true;
-
-    /// <summary>
-    /// If true, the Clip Assist tool collapsible is visible in the Behavior Editor Tool window.
-    /// </summary>
-    public bool Interface_BehaviorEditor_Tool_ClipAssist = true;
-
-    ///------------------------------------------------------------
     /// Param Editor
     ///------------------------------------------------------------
     /// <summary>
@@ -630,74 +572,8 @@ public class CFG
     public bool Interface_TextureViewer_Tool_ExportTexture = true;
 
     ///------------------------------------------------------------
-    /// Time Act Editor
-    ///------------------------------------------------------------
-    /// <summary>
-    /// If true, the container file list window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_ContainerFileList = true;
-
-    /// <summary>
-    /// If true, the time act list window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_TimeActList = true;
-
-    /// <summary>
-    /// If true, the animation list window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_AnimationList = true;
-
-    /// <summary>
-    /// If true, the animation properties window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_AnimationProperties = true;
-
-    /// <summary>
-    /// If true, the event list window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_EventList = true;
-
-    /// <summary>
-    /// If true, the event properties window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_EventProperties = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Time Act Editor.
-    /// </summary>
-    public bool Interface_TimeActEditor_ToolWindow = true;
-
-    public bool Interface_TimeActEditor_Tool_TimeActSearch = true;
-
-    ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
-
-    ///------------------------------------------------------------
-    /// Event Script Editor
-    ///------------------------------------------------------------
-    public bool Interface_EmevdEditor_Files = true;
-    public bool Interface_EmevdEditor_Events = true;
-    public bool Interface_EmevdEditor_Instructions = true;
-    public bool Interface_EmevdEditor_EventProperties = true;
-    public bool Interface_EmevdEditor_InstructionProperties = true;
-    public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
-
-    public bool Interface_EmevdEditor_Tool_EventInstanceFinder = true;
-    public bool Interface_EmevdEditor_Tool_InstructionInstanceFinder = true;
-    public bool Interface_EmevdEditor_Tool_ValueInstanceFinder = true;
-    public bool Interface_EmevdEditor_Tool_UnknownInstructionFinder = true;
-    public bool Interface_EmevdEditor_Tool_TemplateReloader = true;
-
-    ///------------------------------------------------------------
-    /// EzState Script Editor
-    ///------------------------------------------------------------
-    public bool Interface_EsdEditor_FileList = true;
-    public bool Interface_EsdEditor_ScriptList = true;
-    public bool Interface_EsdEditor_StateGroupList = true;
-    public bool Interface_EsdEditor_StateNodeList = true;
-    public bool Interface_EsdEditor_StateNodeContents = true;
-    public bool Interface_EsdEditor_ToolConfigurationWindow = true;
 
     ///------------------------------------------------------------
     /// File Browser
