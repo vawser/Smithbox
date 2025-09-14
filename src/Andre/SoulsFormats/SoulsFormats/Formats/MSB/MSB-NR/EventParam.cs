@@ -680,7 +680,9 @@ namespace SoulsFormats
                     ObjActEntityId = br.ReadUInt32();
                     ObjActPartIndex = br.ReadInt32();
                     ObjActParamId = br.ReadInt32();
-                    StateType = br.ReadInt32();
+                    StateType = br.ReadByte();
+                    unk0D = br.ReadByte();
+                    unk0E = br.ReadInt16();
                     EventFlagID = br.ReadInt32();
                     Unk14 = br.ReadInt32();
                     Unk18 = br.ReadInt32();
@@ -692,7 +694,9 @@ namespace SoulsFormats
                     bw.WriteUInt32(ObjActEntityId);
                     bw.WriteInt32(ObjActPartIndex);
                     bw.WriteInt32(ObjActParamId);
-                    bw.WriteInt32(StateType);
+                    bw.WriteByte(StateType);
+                    bw.WriteByte(unk0D);
+                    bw.WriteInt16(unk0E);
                     bw.WriteInt32(EventFlagID);
                     bw.WriteInt32(Unk14);
                     bw.WriteInt32(Unk18);
@@ -703,11 +707,13 @@ namespace SoulsFormats
                 public uint ObjActEntityId { get; set; } = 0;
                 private int ObjActPartIndex { get; set; } = -1;
                 public int ObjActParamId { get; set; }
-                public int StateType { get; set; } = 5;
+                public byte StateType { get; set; } = 5;
+                private byte unk0D { get; set; } = 0;
+                private short unk0E { get; set; } = -1;
                 public int EventFlagID { get; set; } = 0;
                 public int Unk14 { get; set; } = -1;
-                public int Unk18 { get; set; } = 0; // Hidden
-                public int Unk1C { get; set; } = 0; // Hidden
+                private int Unk18 { get; set; } = 0; // Hidden
+                private int Unk1C { get; set; } = 0; // Hidden
 
                 // Names
 

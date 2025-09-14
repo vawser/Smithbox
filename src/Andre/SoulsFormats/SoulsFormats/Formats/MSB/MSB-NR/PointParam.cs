@@ -503,7 +503,7 @@ namespace SoulsFormats
 
                 // Unk4
                 br.Position = start + struct98Offset;
-                Stuct98_MapID = br.ReadSBytes(4);
+                Stuct98_MapID = br.ReadMapIDBytes(4);
                 Unk04_Struct98 = br.ReadInt32();
                 br.AssertInt32(0);
                 Unk0C_Struct98 = br.ReadInt32();
@@ -595,7 +595,7 @@ namespace SoulsFormats
 
                 // Struct 98
                 bw.FillInt64("Struct98Offset", bw.Position - start);
-                bw.WriteSBytes(Stuct98_MapID);
+                bw.WriteMapIDBytes(Stuct98_MapID);
                 bw.WriteInt32(Unk04_Struct98);
                 bw.WriteInt32(Unk08_Struct98);
                 bw.WriteInt32(Unk0C_Struct98);
