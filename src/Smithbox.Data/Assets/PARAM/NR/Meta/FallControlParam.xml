@@ -4,7 +4,13 @@
   Wiki="" />
   
   <Field>
+    <verticalVelocityChange
+    AltName="Vertical Velocity Change"
+    Wiki="" />
     
+    <horizontalVelocityChange
+    AltName="Horizontal Velocity Change"
+    Wiki="" />
   </Field>
   
   <Enums>

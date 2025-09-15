@@ -21,5 +21,5 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Param Editor: restore row name import option to only overwrite empty names
+- Check MSB Mass Edit for ModelName field
 - Add Pav's paramdef fields

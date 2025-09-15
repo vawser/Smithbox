@@ -7,8 +7,8 @@
   <FormatVersion>0</FormatVersion>
   <Fields>
     
-    <Field Def="f32 unknown_0"/>
-    <Field Def="f32 unknown_1"/>
+    <Field Def="f32 verticalVelocityChange"/>
+    <Field Def="f32 horizontalVelocityChange"/>
     <Field Def="f32 unknown_2"/>
     <Field Def="f32 unknown_3"/>
   </Fields>

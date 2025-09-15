@@ -23,6 +23,12 @@
     <horizontalVelocityAngle
     AltName="Horizontal Velocity Change Direction"
     Wiki="The velocity change direction for Horizontal Velocity Change when the front of the character is 0 degrees." />
+    
+    <fallControlParamId
+    AltName="Fall Control ID"
+    Wiki=""
+    Refs="FallControlParam" />
+    
   </Field>
   
   <Enums>
