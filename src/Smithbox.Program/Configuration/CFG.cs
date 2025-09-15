@@ -850,6 +850,8 @@ public class CFG
     public bool DisplayPlacementOrb = false;
     public float PlacementOrb_Distance = 5.0f;
 
+    public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
+
     //****************************
     // Settings: Model Editor
     //****************************
@@ -878,6 +880,8 @@ public class CFG
     public bool ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly = true;
 
     public ModelExportType ModelEditor_ExportType = ModelExportType.OBJ;
+
+    public bool ModelEditor_DisplayVisibilityIcon = true;
 
     //****************************
     // Settings: Param Editor

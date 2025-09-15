@@ -616,6 +616,18 @@ public class MapContentView
 
         var arrowKeySelect = false;
 
+        // Visibility icon
+        if (visicon && CFG.Current.MapEditor_MapContentList_DisplayVisibilityIcon)
+        {
+            var icon = e.EditorVisible ? Icons.Eye : Icons.EyeSlash;
+            if(ImGui.Button($"{icon}##{e.Name}", DPI.IconButtonSize))
+            {
+                e.EditorVisible = !e.EditorVisible;
+                doSelect = false;
+            }
+            ImGui.SameLine();
+        }
+
         if (hierarchial && e.Children.Count > 0)
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
@@ -714,33 +726,6 @@ public class MapContentView
 
             DisplayMapObjectContextMenu(e, treeImGuiId);
 
-        }
-
-        // Visibility icon
-        if (visicon)
-        {
-            ImGui.SameLine();
-
-            float iconWidth = ImGui.CalcTextSize(Icons.Eye).X;
-            float iconPadding = 2.0f * DPI.UIScale(); // optional small gap
-            float rightAlignPos = ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - iconWidth - iconPadding;
-
-            ImGui.SetCursorPosX(rightAlignPos);
-            ImGui.SetNextItemAllowOverlap();
-
-            bool visible = e.EditorVisible;
-            ImGui.PushStyleColor(ImGuiCol.Text, visible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-
-            ImGui.Text(visible ? Icons.Eye : Icons.EyeSlash);
-            ImGui.PopStyleColor();
-
-            if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
-            {
-                e.EditorVisible = !e.EditorVisible;
-                doSelect = false;
-            }
         }
 
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left))

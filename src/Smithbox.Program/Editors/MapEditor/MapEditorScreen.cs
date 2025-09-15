@@ -835,6 +835,14 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
+            if (ImGui.MenuItem("Map Content List: Visibility Icons"))
+            {
+                CFG.Current.MapEditor_MapContentList_DisplayVisibilityIcon = !CFG.Current.MapEditor_MapContentList_DisplayVisibilityIcon;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_MapContentList_DisplayVisibilityIcon);
+
+            ImGui.Separator();
+
             // Quick toggles for some of the Field Editor field visibility options
 
             if (ImGui.MenuItem("Field: Community Names"))
