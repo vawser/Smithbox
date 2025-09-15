@@ -85,7 +85,11 @@ public class PropertiesChangedAction : ViewportAction
         change.ArrayIndex = index;
         Changes.Add(change);
 
-        EditMessage = $"{entityName} -> {prop.Name}[{change.ArrayIndex} was changed to {change.NewValue}";
+        EditMessage = $"{entityName} -> {prop.Name} was changed to {change.NewValue}";
+        if(change.ArrayIndex != -1)
+        {
+            EditMessage = $"{entityName} -> {prop.Name}[{change.ArrayIndex}] was changed to {change.NewValue}";
+        }
     }
 
     public void AddPropertyChange(PropertyInfo prop, object newval, int index = -1)

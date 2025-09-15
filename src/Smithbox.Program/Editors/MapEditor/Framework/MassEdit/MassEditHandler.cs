@@ -1673,6 +1673,13 @@ public class MassEditHandler
                                 return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                             }
                         }
+                        // STRING
+                        if (valueType == typeof(string))
+                        {
+                            string result = newValue;
+
+                            return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
+                        }
                     }
                 }
             }
@@ -2258,6 +2265,13 @@ public class MassEditHandler
 
                         return new PropertiesChangedAction(targetProp, curEnt.WrappedObject, result, curEnt.Name);
                     }
+                }
+                // STRING
+                if (valueType == typeof(string))
+                {
+                    string result = newValue;
+
+                    return new PropertiesChangedAction(targetProp, index, curEnt.WrappedObject, result, curEnt.Name);
                 }
             }
         }
