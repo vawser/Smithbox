@@ -98,41 +98,35 @@ public class MapData
         MapFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "msb")
-            .OrderBy(e => e.Filename)
             .ToList();
 
         // BTL
         LightFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "btl")
-            .OrderBy(e => e.Filename)
             .ToList();
 
         DS2_LightFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "gibhd")
-            .OrderBy(e => e.Filename)
             .ToList();
 
         // NVA
         NavmeshFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "nva")
-            .OrderBy(e => e.Filename)
             .ToList();
 
         // BTAB
         LightAtlasFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "btab")
-            .OrderBy(e => e.Filename)
             .ToList();
 
         // Collision
         CollisionFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "hkxbhd")
-            .OrderBy(e => e.Filename)
             .ToList();
     }
 

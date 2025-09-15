@@ -1173,7 +1173,7 @@ public class ProjectEntry
         }
 
         // Create merged dictionary, including unique entries present in the project directory only.
-        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath, FileDictionary);
+        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath, FileDictionary, ProjectType);
         FileDictionary = ProjectUtils.MergeFileDictionaries(FileDictionary, projectFileDictionary);
 
         return true;

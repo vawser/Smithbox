@@ -114,7 +114,7 @@ public class ProjectUtils
     /// <param name="sourcePath"></param>
     /// <returns></returns>
     /// <exception cref="DirectoryNotFoundException"></exception>
-    public static FileDictionary BuildFromSource(string sourcePath, FileDictionary existingDict)
+    public static FileDictionary BuildFromSource(string sourcePath, FileDictionary existingDict, ProjectType type)
     {
         var fileDict = new FileDictionary();
         fileDict.Entries = new();
@@ -133,6 +133,26 @@ public class ProjectUtils
         var existingPaths = new HashSet<string>(
             existingDict.Entries.Select(e => e.Path.Replace('\\', '/')),
             StringComparer.OrdinalIgnoreCase);
+
+        // Filter Witchy unpacked directories
+        Dictionary<string, bool> confirmedManifestDict = new();
+        var groupedByDir = allFiles.GroupBy(f => Path.GetDirectoryName(f)).ToList();
+        groupedByDir = groupedByDir.Where(g =>
+        {
+            if (g.Key == null) return false;
+            var dir = g.Key;
+            while (dir != null)
+            {
+                if (confirmedManifestDict.TryGetValue(dir, out var result) && result) return false;
+                var manifestFiles = Directory.GetFiles(dir, "_witchy-*.xml");
+                confirmedManifestDict.TryAdd(dir, manifestFiles.Any());
+                if (manifestFiles.Any()) return false;
+                dir = Path.GetDirectoryName(dir);
+            }
+            return true;
+        }).ToList();
+
+        allFiles = groupedByDir.SelectMany(g => g).ToArray();
 
         foreach (var filePath in allFiles)
         {
@@ -160,6 +180,12 @@ public class ProjectUtils
                 {
                     extension = "dcx"; // fallback if no prior extension
                 }
+            }
+
+            if (type == ProjectType.ER)
+            {
+                if (folder.ToLower().StartsWith("/menu/deploy")) continue; // Gideon folders
+                if (extension == "matbinbnd") continue; // There are no custom MATBINBNDs
             }
 
             fileDict.Entries.Add(new FileDictionaryEntry
@@ -199,6 +225,7 @@ public class ProjectUtils
             }
         }
 
+        combined.Entries = combined.Entries.OrderBy(e => e.Filename).ToList();
         return combined;
     }
 
