@@ -1009,6 +1009,8 @@ public class CFG
     public bool Param_PinGroups_ShowOnlyPinnedRows = false;
     public bool Param_PinGroups_ShowOnlyPinnedFields = false;
 
+    public bool Param_RowNameImport_ReplaceEmptyNamesOnly = false;
+
     //****************************
     // Settings: Text Editor
     //****************************

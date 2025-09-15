@@ -121,6 +121,11 @@ public partial class ParamTools
                 ImGui.EndMenu();
             }
 
+            ImGui.Separator();
+
+            ImGui.Checkbox("Replace Empty Names Only", ref CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly);
+            UIHelper.Tooltip("If enabled, only rows with empty names will have their row names replaced with the import name.");
+
             ImGui.EndMenu();
         }
 

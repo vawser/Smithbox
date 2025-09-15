@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Andre.IO.VFS;
 using DotNext.Collections.Generic;
+using HKLib.hk2018.hkHashMapDetail;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
@@ -2494,7 +2495,17 @@ public class ParamBank
                 {
                     if (index < nameEntry.Entries.Count)
                     {
-                        row.Name = nameEntry.Entries[index];
+                        if(CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
+                        {
+                            if (row.Name == null || row.Name == "")
+                            {
+                                row.Name = nameEntry.Entries[index];
+                            }
+                        }
+                        else
+                        {
+                            row.Name = nameEntry.Entries[index];
+                        }
                     }
                 }
             }
@@ -2509,7 +2520,17 @@ public class ParamBank
         {
             foreach (var (row, nameEntry) in entry.Zip(rowNamesByID[entry.Key]))
             {
-                row.Name = nameEntry.Name;
+                if (CFG.Current.Param_RowNameImport_ReplaceEmptyNamesOnly)
+                {
+                    if (row.Name == null || row.Name == "")
+                    {
+                        row.Name = nameEntry.Name;
+                    }
+                }
+                else
+                {
+                    row.Name = nameEntry.Name;
+                }
             }
         }
     }

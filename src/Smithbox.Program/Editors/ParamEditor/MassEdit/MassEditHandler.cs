@@ -446,8 +446,7 @@ public class MassEditHandler
             return;
         }
 
-        var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
-        var scriptPath = $"{projectScriptDir}{NewScriptName}.txt";
+        var scriptPath = Path.Combine(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts", $"{NewScriptName}.txt");
 
         // Check both so the name is unique everywhere
         if (!File.Exists(scriptPath))
