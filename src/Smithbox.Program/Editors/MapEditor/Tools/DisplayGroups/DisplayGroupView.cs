@@ -27,6 +27,9 @@ public class DisplayGroupView
 
     public readonly HashSet<string> HighlightedGroups = new();
 
+    public bool selectHighlightsOperation = false;
+    public bool DisplayHelpText = false;
+
     public DisplayGroupView(MapEditorScreen screen)
     {
         Editor = screen;
@@ -95,181 +98,237 @@ public class DisplayGroupView
         {
             ImGui.SetNextWindowFocus();
         }
+
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * scale);
         if (ImGui.Begin("Render Groups") && RenderScene != null)
         {
             Editor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
 
-            DrawGroup dg = RenderScene.DisplayGroup;
-            if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
-            {
-                dg.RenderGroups = new uint[_dispGroupCount];
-                for (var i = 0; i < _dispGroupCount; i++)
-                {
-                    dg.RenderGroups[i] = 0xFFFFFFFF;
-                }
+            DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
+        }
+        ImGui.PopStyleVar();
+        ImGui.End();
+    }
 
-                dg.AlwaysVisible = false;
+    public void DisplayGroupsGUI(uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
+    {
+        DrawGroup dg = RenderScene.DisplayGroup;
+
+        if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
+        {
+            dg.RenderGroups = new uint[_dispGroupCount];
+            for (var i = 0; i < _dispGroupCount; i++)
+            {
+                dg.RenderGroups[i] = 0xFFFFFFFF;
             }
 
-            if (ImGui.Button($"Show All <{KeyBindings.Current.MAP_ShowAllDisplayGroups.HintText}>", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups))
-            {
-                for (var i = 0; i < _dispGroupCount; i++)
-                {
-                    dg.RenderGroups[i] = 0xFFFFFFFF;
-                }
-            }
+            dg.AlwaysVisible = false;
+        }
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Hide All <{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}>", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
-            {
-                for (var i = 0; i < _dispGroupCount; i++)
-                {
-                    dg.RenderGroups[i] = 0;
-                }
-            }
+        // Targeted Entities
+        DisplayHeaderSection(sels);
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
-            if (sdispgroups == null)
-            {
-                ImGui.BeginDisabled();
-            }
+        // Render Group Table
+        DisplayGroupTable(dg, sdrawgroups, sdispgroups);
 
-            if (ImGui.Button($"Get Disp <{KeyBindings.Current.MAP_GetDisplayGroup.HintText}>", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
-                    && sdispgroups != null)
-            {
-                for (var i = 0; i < _dispGroupCount; i++)
-                {
-                    dg.RenderGroups[i] = sdispgroups[i];
-                }
-            }
+        // Actions
+        DisplayFooterSection(dg, sdrawgroups, sdispgroups, sels);
+    }
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Get Draw <{KeyBindings.Current.MAP_GetDrawGroup.HintText}>", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
-                    && sdispgroups != null)
-            {
-                for (var i = 0; i < _dispGroupCount; i++)
-                {
-                    dg.RenderGroups[i] = sdrawgroups[i];
-                }
-            }
+    public void DisplayFooterSection(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups, HashSet<Entity> sels)
+    {
+        var scale = DPI.UIScale();
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
-            if (ImGui.Button($"Assign Draw <{KeyBindings.Current.MAP_SetDrawGroup.HintText}>", 
-                DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
-                    && sdispgroups != null)
+        // Show All
+        if (ImGui.Button($"Show All", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_ShowAllDisplayGroups))
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
             {
-                IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
-                ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
-                EditorActionManager.ExecuteAction(action);
+                dg.RenderGroups[i] = 0xFFFFFFFF;
             }
+        }
+        UIHelper.Tooltip($"Show all display groups.\n{KeyBindings.Current.MAP_ShowAllDisplayGroups.HintText}");
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
-            if (ImGui.Button($"Assign Disp <{KeyBindings.Current.MAP_SetDisplayGroup.HintText}>", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
-                    && sdispgroups != null)
+        ImGui.SameLine();
+
+        // Hide All
+        if (ImGui.Button($"Hide All", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
             {
-                IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
-                ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
-                EditorActionManager.ExecuteAction(action);
+                dg.RenderGroups[i] = 0;
             }
+        }
+        UIHelper.Tooltip($"Hide all display groups.\n{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}");
 
-            if (sdispgroups == null)
+        // Get Display Group
+        if (sdispgroups == null)
+        {
+            ImGui.BeginDisabled();
+        }
+
+        if (ImGui.Button($"Get Display Group", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDisplayGroup)
+                && sdispgroups != null)
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
             {
-                ImGui.EndDisabled();
+                dg.RenderGroups[i] = sdispgroups[i];
             }
+        }
+        UIHelper.Tooltip($"Get display group for current selection.\n{KeyBindings.Current.MAP_GetDisplayGroup.HintText}");
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
-            if (!HighlightedGroups.Any())
+        ImGui.SameLine();
+
+        // Get Draw Group
+        if (ImGui.Button($"Get Draw Group", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
+                && sdispgroups != null)
+        {
+            for (var i = 0; i < _dispGroupCount; i++)
             {
-                ImGui.BeginDisabled();
+                dg.RenderGroups[i] = sdrawgroups[i];
             }
+        }
+        UIHelper.Tooltip($"Get draw group for current selection.\n{KeyBindings.Current.MAP_GetDrawGroup.HintText}");
 
-            bool selectHighlightsOperation = false;
-            if (ImGui.Button("Select Highlights", DPI.StandardButtonSize)
-                || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectDisplayGroupHighlights))
+        // Assign Display Group
+        if (ImGui.Button($"Assign Display Group", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
+                && sdispgroups != null)
+        {
+            IEnumerable<uint[]> selDispGroups = sels.Select(s => s.Dispgroups);
+            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDispGroups);
+            EditorActionManager.ExecuteAction(action);
+        }
+        UIHelper.Tooltip($"Assign display group for current selection.\n{KeyBindings.Current.MAP_SetDisplayGroup.HintText}");
+
+        ImGui.SameLine();
+
+        // Assign Draw Group
+        if (ImGui.Button($"Assign Draw Group",
+            DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
+                && sdispgroups != null)
+        {
+            IEnumerable<uint[]> selDrawGroups = sels.Select(s => s.Drawgroups);
+            ArrayPropertyCopyAction action = new(dg.RenderGroups, selDrawGroups);
+            EditorActionManager.ExecuteAction(action);
+        }
+        UIHelper.Tooltip($"Assign draw group for current selection.\n{KeyBindings.Current.MAP_SetDrawGroup.HintText}");
+
+        // Select Highlights
+        if (sdispgroups == null)
+        {
+            ImGui.EndDisabled();
+        }
+
+        if (!HighlightedGroups.Any())
+        {
+            ImGui.BeginDisabled();
+        }
+
+        if (ImGui.Button("Select Highlights", DPI.StandardButtonSize)
+            || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectDisplayGroupHighlights))
+        {
+            selectHighlightsOperation = true;
+        }
+        UIHelper.Tooltip($"Select highlighted. Right-click to highlight a checkbox within the table section.\n{KeyBindings.Current.MAP_SelectDisplayGroupHighlights.HintText}");
+
+        ImGui.SameLine();
+
+        // Clear Highlights
+        if (ImGui.Button("Clear Highlights", DPI.StandardButtonSize))
+        {
+            HighlightedGroups.Clear();
+        }
+        else if (!HighlightedGroups.Any())
+        {
+            ImGui.EndDisabled();
+        }
+
+        if (DisplayHelpText)
+        {
+            ImGui.Separator();
+
+            UIHelper.WrappedText(
+                "Render Groups are used by the game to determine what should render and what shouldn't.\n" +
+                "They consist of Display Groups and Draw Groups.\n" +
+                //"Display Groups: Determines which DrawGroups should render.\n" +
+                //"Draw Groups: Determines if things will render when a DispGroup is active.\n" +
+                "When a Display Group is active, Map Objects with that Draw Group will render.\n" +
+                "\n" +
+                "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.\n" +
+                "Also, CollisionName references will be targeted by Smithbox when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
+                "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.\n" +
+                "\n" +
+                "Color indicates which Render Groups selected Map Object is using.\n" +
+                "Red = Selection uses this Display Group.\n" +
+                "Green = Selection uses this Draw Group.\n" +
+                "Yellow = Selection uses both.\n" +
+                "\n" +
+                "(Note: there are unknown differences in Sekiro/ER/AC6)");
+        }
+    }
+
+    public void DisplayHeaderSection(HashSet<Entity> sels)
+    {
+        void DisplayTargetEntities()
+        {
+            // Help
+            if (ImGui.Button($"{Icons.LightbulbO}##renderGroupHelpText", DPI.IconButtonSize))
             {
-                selectHighlightsOperation = true;
+                DisplayHelpText = !DisplayHelpText;
             }
+            UIHelper.Tooltip("Toggle the help section.");
+            ImGui.SameLine();
 
-            ImGui.SameLine(0.0f, 8.0f * scale);
-            if (ImGui.Button("Clear Highlights", DPI.StandardButtonSize))
-            {
-                HighlightedGroups.Clear();
-            }
-            else if (!HighlightedGroups.Any())
-            {
-                ImGui.EndDisabled();
-            }
+            string affectedEntsStr = string.Join(", ", sels.Select(s => s.RenderGroupRefName != "" ? s.RenderGroupRefName : s.Name));
 
-            ImGui.SameLine(0.0f, 8.0f * scale);
-            if (ImGui.Button("Help", DPI.StandardButtonSize))
-            {
-                ImGui.OpenPopup("##RenderHelp");
-            }
+            ImGui.Text($"Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
+            ImGui.Separator();
+        }
 
-            if (ImGui.BeginPopup("##RenderHelp"))
-            {
-                ImGui.Text(
-                    "Render Groups are used by the game to determine what should render and what shouldn't.\n" +
-                    "They consist of Display Groups and Draw Groups.\n" +
-                    //"Display Groups: Determines which DrawGroups should render.\n" +
-                    //"Draw Groups: Determines if things will render when a DispGroup is active.\n" +
-                    "When a Display Group is active, Map Objects with that Draw Group will render.\n" +
-                    "\n" +
-                    "If a Map Object uses the CollisionName field, they will inherit Draw Groups from the referenced Map Object.\n" +
-                    "Also, CollisionName references will be targeted by Smithbox when using `Set Selection`/`Get Selection` instead of your actual selection.\n" +
-                    "When a character walks on top of a piece of collision, they will use its DispGroups and DrawGroups.\n" +
-                    "\n" +
-                    "Color indicates which Render Groups selected Map Object is using.\n" +
-                    "Red = Selection uses this Display Group.\n" +
-                    "Green = Selection uses this Draw Group.\n" +
-                    "Yellow = Selection uses both.\n" +
-                    "\n" +
-                    "(Note: there are unknown differences in Sekiro/ER/AC6)");
-                ImGui.EndPopup();
-            }
-
-
-            void DisplayTargetEntities()
-            {
-                string affectedEntsStr = string.Join(", ", sels.Select(s => s.RenderGroupRefName != "" ? s.RenderGroupRefName : s.Name));
-                ImGui.Text($"Targets: {Utils.ImGui_WordWrapString(affectedEntsStr, ImGui.GetWindowWidth(), 99)}");
-            }
-
-            if (sels.Count <= 5)
+        if (sels.Count <= 5)
+        {
+            DisplayTargetEntities();
+        }
+        else
+        {
+            if (ImGui.CollapsingHeader("Targets##DisplayGroup"))
             {
                 DisplayTargetEntities();
             }
-            else
+        }
+    }
+
+    public void DisplayGroupTable(DrawGroup dg, uint[] sdrawgroups, uint[] sdispgroups)
+    {
+        int groupCount = dg.RenderGroups.Length;
+        int bitCount = 32;
+
+        if (ImGui.BeginTable("RenderGroupsTable", groupCount + 1, ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg))
+        {
+            ImGui.TableSetupColumn("Group");
+            for (int g = 0; g < groupCount; g++)
             {
-                if (ImGui.CollapsingHeader("Targets##DisplayGroup"))
-                {
-                    DisplayTargetEntities();
-                }
+                ImGui.TableSetupColumn($"{g}");
             }
+            ImGui.TableHeadersRow();
 
-            ImGui.Separator();
-            ImGui.BeginChild("##DispTicks", new Vector2());
-            for (var g = 0; g < dg.RenderGroups.Length; g++)
+            for (int i = 0; i < bitCount; i++)
             {
-                // Row (groups)
+                ImGui.TableNextRow();
 
-                // Add spacing every 4 rows
-                if (g % 4 == 0 && g > 0)
-                {
-                    ImGui.Spacing();
-                }
+                ImGui.TableSetColumnIndex(0);
+                ImGui.Text($"Bit {i}");
 
-                ImGui.Text($@"Group {g}:");
-                for (var i = 0; i < 32; i++)
+                for (int g = 0; g < groupCount; g++)
                 {
-                    // Column
+                    ImGui.TableSetColumnIndex(g + 1);
+
                     var cellKey = $"{g}_{i}";
                     if (selectHighlightsOperation)
                     {
@@ -285,88 +344,64 @@ public class DisplayGroupView
 
                     var check = (dg.RenderGroups[g] >> i & 0x1) > 0;
 
-                    // Add spacing every 4 columns
-                    if (i % 4 == 0 && i > 0)
-                    {
-                        ImGui.SameLine();
-                        ImGui.Spacing();
-                    }
-
-                    ImGui.SameLine();
-
                     var drawActive = sdrawgroups != null && (sdrawgroups[g] >> i & 0x1) > 0;
                     var dispActive = sdispgroups != null && (sdispgroups[g] >> i & 0x1) > 0;
 
+                    // --- Color Handling ---
                     if (drawActive && dispActive)
                     {
-                        // Selection dispgroup and drawgroup is ticked
-                        // Yellow
                         ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_CombinedActive_Frame);
                         ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_CombinedActive_Checkbox);
                     }
                     else if (drawActive)
                     {
-                        // Selection drawgroup is ticked
-                        // Green
                         ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_DrawActive_Frame);
                         ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_DrawActive_Checkbox);
                     }
                     else if (dispActive)
                     {
-                        // Selection dispGroup is ticked
-                        // Red
                         ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.DisplayGroupEditor_DisplayActive_Frame);
                         ImGui.PushStyleColor(ImGuiCol.CheckMark, UI.Current.DisplayGroupEditor_DisplayActive_Checkbox);
                     }
+
                     if (HighlightedGroups.Contains(cellKey))
                     {
                         ImGui.PushStyleColor(ImGuiCol.Border, UI.Current.DisplayGroupEditor_Border_Highlight);
                     }
 
-                    if (ImGui.Checkbox($@"##cell_{cellKey}", ref check))
+                    if (ImGui.Checkbox($"##cell_{cellKey}", ref check))
                     {
                         if (check)
-                        {
                             dg.RenderGroups[g] |= 1u << i;
-                        }
                         else
-                        {
                             dg.RenderGroups[g] &= ~(1u << i);
-                        }
                     }
 
-                    if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem) && ImGui.IsMouseDown(ImGuiMouseButton.Left))
+                    if (ImGui.IsItemHovered(ImGuiHoveredFlags.AllowWhenBlockedByActiveItem) &&
+                        ImGui.IsMouseDown(ImGuiMouseButton.Left))
                     {
                         if (_lastHoveredCheckbox != cellKey)
                         {
                             if (check)
-                            {
                                 dg.RenderGroups[g] &= ~(1u << i);
-                            }
                             else
-                            {
                                 dg.RenderGroups[g] |= 1u << i;
-                            }
                             _lastHoveredCheckbox = cellKey;
                         }
                     }
 
                     if (HighlightedGroups.Contains(cellKey))
                     {
-                        ImGui.PopStyleColor(1);
+                        ImGui.PopStyleColor(); // Border
                     }
 
                     if (ImGui.IsItemHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Right))
                     {
                         // Toggle render group highlights
                         if (HighlightedGroups.Contains(cellKey))
-                        {
                             HighlightedGroups.Remove(cellKey);
-                        }
                         else
-                        {
                             HighlightedGroups.Add(cellKey);
-                        }
                     }
 
                     if (drawActive || dispActive)
@@ -376,9 +411,7 @@ public class DisplayGroupView
                 }
             }
 
-            ImGui.EndChild();
+            ImGui.EndTable();
         }
-        ImGui.PopStyleVar();
-        ImGui.End();
     }
 }
