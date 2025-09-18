@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Utilities;
 public static class PropFinderUtil
@@ -26,6 +22,8 @@ public static class PropFinderUtil
     /// <summary>
     private static PropData GetPropData(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
+        if (obj == null) return null;
+
         foreach (PropertyInfo p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
             if (p.GetIndexParameters().Length > 0)
@@ -44,6 +42,9 @@ public static class PropFinderUtil
 
             if (p.PropertyType.IsNested)
             {
+                var check = p.GetValue(obj);
+                if (check == null) continue;
+
                 var retObj = GetPropData(prop, p.GetValue(obj), arrayIndex, classIndex);
                 if (retObj != null)
                     return retObj;
@@ -54,12 +55,14 @@ public static class PropFinderUtil
                 if (pType.IsNested)
                 {
                     var array = (Array)p.GetValue(obj);
+                    if (array == null) continue;
+
                     if (arrayIndex != -1)
                     {
                         var retObj = GetPropData(prop, array.GetValue(arrayIndex), arrayIndex, classIndex);
                         if (retObj != null)
                             return retObj;
-                        
+
                     }
                     else if (classIndex != -1)
                     {
@@ -89,7 +92,7 @@ public static class PropFinderUtil
     /// <returns>PropertyInfo if found, otherwise null.</returns>
     public static PropertyInfo FindProperty(string prop, object obj, int classIndex = -1)
     {
-        if(obj == null) 
+        if (obj == null)
             return null;
 
         var proppy = obj.GetType().GetProperty(prop, BindingFlags.IgnoreCase | BindingFlags.Instance | BindingFlags.Public);

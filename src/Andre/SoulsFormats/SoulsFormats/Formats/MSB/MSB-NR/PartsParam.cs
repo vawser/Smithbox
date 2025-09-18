@@ -1447,10 +1447,7 @@ namespace SoulsFormats
                     PatrolRouteIndex = br.ReadInt16();
                     ScenarioPlacementParamID = br.ReadInt16();
                     Unk24 = br.ReadInt32();
-                    UnkSpEffectSetParamID_0 = br.ReadInt32();
-                    ChrActivateCondParamID = br.ReadInt32();
-                    UnkSpEffectSetParamID_1 = br.ReadInt32();
-                    CondemnedSpEffectSetParamID = br.ReadInt32();
+                    CondemnedSpEffectSetParamIds = br.ReadInt32s(4);
                     BackupEventAnimID = br.ReadInt32();
                     Unk3C = br.ReadSByte();
                     Unk3D = br.ReadByte();
@@ -1495,10 +1492,7 @@ namespace SoulsFormats
                     bw.WriteInt16(PatrolRouteIndex);
                     bw.WriteInt16(ScenarioPlacementParamID);
                     bw.WriteInt32(Unk24);
-                    bw.WriteInt32(UnkSpEffectSetParamID_0);
-                    bw.WriteInt32(ChrActivateCondParamID);
-                    bw.WriteInt32(UnkSpEffectSetParamID_1);
-                    bw.WriteInt32(CondemnedSpEffectSetParamID);
+                    bw.WriteInt32s(CondemnedSpEffectSetParamIds);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteSByte(Unk3C);
                     bw.WriteByte(Unk3D);
@@ -1538,10 +1532,7 @@ namespace SoulsFormats
                 private short PatrolRouteIndex { get; set; }
                 public short ScenarioPlacementParamID { get; set; } = -1;
                 private int Unk24 { get; set; } = -1; // Hidden
-                public int UnkSpEffectSetParamID_0 { get; set; } = 0;
-                public int ChrActivateCondParamID { get; set; } = 0;
-                public int UnkSpEffectSetParamID_1 { get; set; } = 0;
-                public int CondemnedSpEffectSetParamID { get; set; } = 0;
+                public int[] CondemnedSpEffectSetParamIds { get; set; } = new int[4];
                 public int BackupEventAnimID { get; set; } = -1;
                 public sbyte Unk3C { get; set; } = -1;
                 private byte Unk3D { get; set; } = 0; // Hidden
