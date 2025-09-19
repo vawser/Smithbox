@@ -830,7 +830,7 @@ public class MapActionHandler
 
         if (CFG.Current.Toolbar_Move_to_Grid_Y)
         {
-            newPos = new Vector3(newPos[0], CFG.Current.MapEditor_Viewport_Grid_Height, newPos[2]);
+            newPos = new Vector3(newPos[0], CFG.Current.MapEditor_Viewport_Grid_Position_Y, newPos[2]);
         }
 
         newTransform.Position = newPos;

@@ -811,22 +811,6 @@ public class ToolWindow
                     ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
                     UIHelper.Tooltip("Move the current selection to the closest Z co-ordinate within the map grid.");
 
-                    UIHelper.WrappedText("");
-
-                    UIHelper.WrappedText("Grid Height");
-                    DPI.ApplyInputWidth(windowWidth);
-                    if (ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000))
-                    {
-                        if (CFG.Current.MapEditor_Viewport_Grid_Height < -10000)
-                            CFG.Current.MapEditor_Viewport_Grid_Height = -10000;
-
-                        if (CFG.Current.MapEditor_Viewport_Grid_Height > 10000)
-                            CFG.Current.MapEditor_Viewport_Grid_Height = 10000;
-                    }
-                    UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the current height of the map grid.");
-
-                    UIHelper.WrappedText("");
-
                     if (ImGui.Button("Move Selection to Grid", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyMovetoGrid();
@@ -1125,6 +1109,8 @@ public class ToolWindow
                 }
             }
 #endif
+
+            Editor.GridConfiguration.Display();
         }
 
         ImGui.End();

@@ -628,17 +628,32 @@ public class CFG
     public int MapEditor_Viewport_GridType = 0;
     public int MapEditor_Viewport_Grid_Size = 1000;
     public int MapEditor_Viewport_Grid_Square_Size = 10;
-    public float MapEditor_Viewport_Grid_Height = 0;
     public float MapEditor_Viewport_Grid_Height_Increment = 1;
     public Vector3 MapEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
+    public float MapEditor_Viewport_Grid_Position_X = 0;
+    public float MapEditor_Viewport_Grid_Position_Y = 0;
+    public float MapEditor_Viewport_Grid_Position_Z = 0;
+
+    public float MapEditor_Viewport_Grid_Rotation_X = 0;
+    public float MapEditor_Viewport_Grid_Rotation_Y = 0;
+    public float MapEditor_Viewport_Grid_Rotation_Z = 0;
+
     public bool ModelEditor_Viewport_RegenerateMapGrid = false;
+
     public int ModelEditor_Viewport_GridType = 0;
     public int ModelEditor_Viewport_Grid_Size = 1000;
     public int ModelEditor_Viewport_Grid_Square_Size = 10;
-    public float ModelEditor_Viewport_Grid_Height = 0;
-    public float ModelEditor_Viewport_Grid_Height_Increment = 1;
+
     public Vector3 ModelEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_Viewport_Grid_Position_X = 0;
+    public float ModelEditor_Viewport_Grid_Position_Y = 0;
+    public float ModelEditor_Viewport_Grid_Position_Z = 0;
+
+    public float ModelEditor_Viewport_Grid_Rotation_X = 0;
+    public float ModelEditor_Viewport_Grid_Rotation_Y = 0;
+    public float ModelEditor_Viewport_Grid_Rotation_Z = 0;
 
     //****************************
     // Settings: Viewport

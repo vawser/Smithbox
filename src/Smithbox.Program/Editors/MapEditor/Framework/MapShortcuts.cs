@@ -62,20 +62,6 @@ public class MapShortcuts
             }
 
             // Viewport Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_LowerGrid))
-            {
-                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
-                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
-                offset = offset - increment;
-                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RaiseGrid))
-            {
-                var offset = CFG.Current.MapEditor_Viewport_Grid_Height;
-                var increment = CFG.Current.MapEditor_Viewport_Grid_Height_Increment;
-                offset = offset + increment;
-                CFG.Current.MapEditor_Viewport_Grid_Height = offset;
-            }
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight))
             {
                 var tempList = Selection.GetFilteredSelection<MsbEntity>().ToList();
@@ -83,7 +69,7 @@ public class MapShortcuts
                 {
                     MsbEntity sel = tempList.First();
                     Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
-                    CFG.Current.MapEditor_Viewport_Grid_Height = pos.Y;
+                    CFG.Current.MapEditor_Viewport_Grid_Position_Y = pos.Y;
                 }
             }
 

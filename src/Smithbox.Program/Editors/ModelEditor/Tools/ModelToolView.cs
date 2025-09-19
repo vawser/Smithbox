@@ -253,7 +253,7 @@ public class ModelToolView
                 }
             }
 
-
+            Editor.GridConfiguration.Display();
         }
 
         ImGui.End();

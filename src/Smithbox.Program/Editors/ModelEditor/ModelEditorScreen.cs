@@ -8,6 +8,8 @@ using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Core;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
+using StudioCore.Program.Editors.MapEditor.Tools;
+using StudioCore.Program.Editors.ModelEditor.Tools;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.ViewportNS;
@@ -52,6 +54,7 @@ public class ModelEditorScreen : EditorScreen
     public ModelCommandQueue CommandQueue;
     public EditorFocusManager FocusManager;
     public ModelAssetCopyManager AssetCopyManager;
+    public ModelGridConfiguration GridConfiguration;
 
     public FileSelectionView FileSelection;
     public InternalFileSelectionView InternalFileSelection;
@@ -107,6 +110,8 @@ public class ModelEditorScreen : EditorScreen
         ModelPropertyEditor = new ModelPropertyView(this);
 
         CollisionManager = new(this, Project);
+
+        GridConfiguration = new ModelGridConfiguration(this);
     }
 
     public string EditorName => "Model Editor";

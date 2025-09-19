@@ -22,6 +22,7 @@ using StudioCore.Editors.MapEditor.Tools.WorldMap;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
+using StudioCore.Program.Editors.MapEditor.Tools;
 using StudioCore.Resource;
 using StudioCore.Settings;
 using StudioCore.Tasks;
@@ -75,6 +76,7 @@ public class MapEditorScreen : EditorScreen
     public WorldMapView WorldMapView;
     public LocalSearchView LocalSearchView;
     public EntityIdentifierOverview EntityIdentifierOverview;
+    public MapGridConfiguration GridConfiguration;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -121,6 +123,7 @@ public class MapEditorScreen : EditorScreen
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
         EntityIdentifierOverview = new EntityIdentifierOverview(this);
+        GridConfiguration = new MapGridConfiguration(this);
 
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);

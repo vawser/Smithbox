@@ -626,7 +626,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
-            if (ImGui.Button($"{icon}##{e.Name}", DPI.InlineIconButtonSize))
+            if (ImGui.Button($"{icon}##mapObject{e.Name}", DPI.InlineIconButtonSize))
             {
                 if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
                 {

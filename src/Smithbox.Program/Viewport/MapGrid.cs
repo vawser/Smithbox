@@ -38,7 +38,9 @@ public class MapGrid
         WireGridPrimitive.Dispose();
         Grid.Dispose();
 
-        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.MapEditor_Viewport_Grid_Size, CFG.Current.MapEditor_Viewport_Grid_Square_Size);
+        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red,
+            CFG.Current.MapEditor_Viewport_Grid_Size, 
+            CFG.Current.MapEditor_Viewport_Grid_Square_Size);
 
         Grid = new DebugPrimitiveRenderableProxy(RenderList, WireGridPrimitive);
         Grid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
@@ -57,7 +59,13 @@ public class MapGrid
         {
             Grid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             Grid.Visible = true;
-            Grid.World = new Transform(0, CFG.Current.MapEditor_Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
+            Grid.World = new Transform(
+                CFG.Current.MapEditor_Viewport_Grid_Position_X,
+                CFG.Current.MapEditor_Viewport_Grid_Position_Y,
+                CFG.Current.MapEditor_Viewport_Grid_Position_Z,
+                Utils.DegToRadians(CFG.Current.MapEditor_Viewport_Grid_Rotation_X),
+                Utils.DegToRadians(CFG.Current.MapEditor_Viewport_Grid_Rotation_Y),
+                Utils.DegToRadians(CFG.Current.MapEditor_Viewport_Grid_Rotation_Z)).WorldMatrix;
         }
         else
         {

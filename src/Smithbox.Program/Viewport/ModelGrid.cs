@@ -56,7 +56,13 @@ public class ModelGrid
         {
             Grid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
             Grid.Visible = true;
-            Grid.World = new Transform(0, CFG.Current.ModelEditor_Viewport_Grid_Height, 0, 0, 0, 0).WorldMatrix;
+            Grid.World = new Transform(
+                CFG.Current.ModelEditor_Viewport_Grid_Position_X,
+                CFG.Current.ModelEditor_Viewport_Grid_Position_Y,
+                CFG.Current.ModelEditor_Viewport_Grid_Position_Z,
+                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_X),
+                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_Y),
+                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_Z)).WorldMatrix;
         }
         else
         {
