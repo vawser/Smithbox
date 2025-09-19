@@ -628,8 +628,25 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
             if (ImGui.Button($"{icon}##{e.Name}", DPI.InlineIconButtonSize))
             {
-                e.EditorVisible = !e.EditorVisible;
-                doSelect = false;
+                if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
+                {
+                    var targetContainer = Editor.GetMapContainerFromMapID(MapID);
+
+                    var mapRoot = targetContainer.RootObject;
+                    foreach(var entry in mapRoot.Children)
+                    {
+                        if (entry.WrappedObject.GetType() == e.WrappedObject.GetType())
+                        {
+                            entry.EditorVisible = !entry.EditorVisible;
+                            doSelect = false;
+                        }
+                    }
+                }
+                else
+                {
+                    e.EditorVisible = !e.EditorVisible;
+                    doSelect = false;
+                }
             }
             ImGui.PopStyleColor(4);
             ImGui.PopItemFlag();

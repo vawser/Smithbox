@@ -323,6 +323,12 @@ public class KeyBindings
         // Map Editor
         //-----------------------------
         // Core
+        // Core
+        public KeyBind MAP_ToggleMapObjectGroupVisibility = new(
+            "Toggle Map Object Group Visibility",
+            "Applies visibility change to all members of the map object group when clicking the visibility eye icon with this button pressed.",
+            Key.A);
+
         public KeyBind MAP_GoToInList = new(
             "Go to in List",
             "Go to the selection within the Map Object List.",

@@ -43,7 +43,7 @@ public class MapContentFilters
         var mapId = view.MapID;
         var mapName = AliasUtils.GetMapNameAlias(Editor.Project, view.MapID);
 
-        DPI.ApplyInputWidth(windowWidth * 0.75f);
+        DPI.ApplyInputWidth(windowWidth * 0.6f);
         ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
         UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 

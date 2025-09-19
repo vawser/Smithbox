@@ -163,6 +163,10 @@ public class MapEditorKeybindTab
     {
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility = InputTracker.KeybindLine(100,
+                KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility,
+                KeyBindings.Default.MAP_ToggleMapObjectGroupVisibility);
+
             KeyBindings.Current.MAP_DuplicateToMap = InputTracker.KeybindLine(0,
                 KeyBindings.Current.MAP_DuplicateToMap,
                 KeyBindings.Default.MAP_DuplicateToMap);
