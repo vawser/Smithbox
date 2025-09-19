@@ -44,7 +44,15 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
             if (res.GPUMeshes.Length > i)
             {
                 var mask = res.GPUMeshes[i].Material.MaterialMask;
-                return mask == -1 || ModelMasks[mask] == 1;
+
+                if (mask < ModelMasks.Count && mask > -1)
+                {
+                    return ModelMasks[mask] == 1;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

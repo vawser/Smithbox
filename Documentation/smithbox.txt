@@ -27,4 +27,3 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Param Editor: table group names causing CTD for non-NR project types
