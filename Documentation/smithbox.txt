@@ -1,23 +1,30 @@
 # TODO LIST
-- Gparam Editor: update GPARAM format for the NR changes
-- Gparam Editor: check Quick Edit works (CTD report)
+- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
+- Viewport: add ability to change viewport background color
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
 - Map Editor: visibility icon cannot be clicked
 - Map Editor: add special map connections for NR
 
-- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 - Model Editor: add simple JSON export/import for elements of FLVER
-- Viewport: add ability to change viewport background color
+- Model Editor: re-write the internal structure to be less stupid and to reduce code duplication
+ - Add file discovery option that populates model list by looking at model containing container files and building the list from this scan (should be optional toggle to the default file dictionary based approach)
+ - Remove the individual FLVER element import/export stuff and instead support direct JSON import/export of each element set
 
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 
+- Gparam Editor: update GPARAM format for the NR changes
+- Gparam Editor: check Quick Edit works (CTD report)
+
+- Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
+
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
+- Param Editor: table group names causing CTD for non-NR project types

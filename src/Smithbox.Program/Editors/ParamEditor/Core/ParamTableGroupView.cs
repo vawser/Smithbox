@@ -361,7 +361,10 @@ public class ParamTableGroupView
 
     public void WriteTableGroupNames(string writeDir = "")
     {
-        // No table params means the project type doesn't have any table group usage, so don't write anything
+        // If the project type doesn't support table groups, don't attempt to write anything
+        if (Project.ParamData.TableGroupNames == null)
+            return;
+
         if (Project.ParamData.TableParamList.Params.Count == 0)
             return;
 
