@@ -1690,7 +1690,8 @@ public class MsbEntity : Entity
                 icon = Icons.Database;
             }
 
-            return $@"{icon} {Utils.ImGuiEscape(Name, null)}";
+            //return $@"{icon} {Utils.ImGuiEscape(Name, null)}";
+            return $@"{Utils.ImGuiEscape(Name, null)}";
         }
     }
 

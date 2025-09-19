@@ -28,6 +28,9 @@ public static class DPI
     /// </summary>
     public static Vector2 IconButtonSize => new Vector2(20 * UIScale(), 20 * UIScale());
 
+    /// </summary>
+    public static Vector2 InlineIconButtonSize => new Vector2(20 * UIScale(), 16 * UIScale());
+
     public static void ApplyInputWidth(float width = 400f)
     {
         ImGui.SetNextItemWidth((width * 0.93f) * UIScale());

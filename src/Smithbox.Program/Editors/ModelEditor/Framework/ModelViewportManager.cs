@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor.Multiselection;
@@ -7,6 +8,9 @@ using StudioCore.Editors.ModelEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.ViewportNS;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -219,17 +223,9 @@ public class ModelViewportManager
 
         if (curEntity != null)
         {
-            ImGui.SetNextItemAllowOverlap();
-            var isVisible = curEntity.EditorVisible;
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.UIScale());
-            ImGui.PushStyleColor(ImGuiCol.Text, isVisible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
-            ImGui.PopStyleColor();
-
-            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+            var icon = curEntity.EditorVisible ? Icons.Eye : Icons.EyeSlash;
+            ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+            if (ImGui.Button($"{icon}##dummy{index}", DPI.InlineIconButtonSize))
             {
                 // Quick-tool all if this key is down
                 if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
@@ -239,12 +235,14 @@ public class ModelViewportManager
                         ToggleRepresentativeDummy(i);
                     }
                 }
-                // Otherwise just toggle this row
                 else
                 {
                     ToggleRepresentativeDummy(index);
                 }
             }
+            ImGui.PopItemFlag();
+            UIHelper.Tooltip("Toggle visibility state of this model object.");
+            ImGui.SameLine();
         }
     }
 
@@ -266,56 +264,6 @@ public class ModelViewportManager
         curNode.EditorVisible = !curNode.EditorVisible;
     }
 
-    public void DisplayRepresentativeNodeState(int index)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        if (!HasValidLoadedContainer())
-            return;
-
-        var container = Editor._universe.LoadedModelContainer;
-
-        if (index > container.Bone_RootNode.Children.Count - 1)
-            return;
-
-        Entity curEntity = null;
-
-        var curNode = container.Bone_RootNode.Children[index];
-        curEntity = curNode;
-
-        if (curEntity != null)
-        {
-            ImGui.SetNextItemAllowOverlap();
-            var isVisible = curEntity.EditorVisible;
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.UIScale());
-            ImGui.PushStyleColor(ImGuiCol.Text, isVisible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
-            ImGui.PopStyleColor();
-
-            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-            {
-                // Quick-tool all if this key is down
-                if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
-                {
-                    for (int i = 0; i < container.Bone_RootNode.Children.Count; i++)
-                    {
-                        ToggleRepresentativeNode(i);
-                    }
-                }
-                // Otherwise just toggle this row
-                else
-                {
-                    ToggleRepresentativeNode(index);
-                }
-            }
-        }
-    }
-
     public void ToggleRepresentativeNode(int index)
     {
         // Required to stop the LowRequirements build from failing
@@ -332,55 +280,6 @@ public class ModelViewportManager
 
         var curNode = container.Bone_RootNode.Children[index];
         curNode.EditorVisible = !curNode.EditorVisible;
-    }
-    public void DisplayRepresentativeMeshState(int index)
-    {
-        // Required to stop the LowRequirements build from failing
-        if (Smithbox.LowRequirementsMode)
-            return;
-
-        if (!HasValidLoadedContainer())
-            return;
-
-        var container = Editor._universe.LoadedModelContainer;
-
-        if (index > container.Mesh_RootNode.Children.Count - 1)
-            return;
-
-        Entity curEntity = null;
-
-        var curMesh = container.Mesh_RootNode.Children[index];
-        curEntity = curMesh;
-
-        if (curEntity != null)
-        {
-            ImGui.SetNextItemAllowOverlap();
-            var isVisible = curEntity.EditorVisible;
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.UIScale());
-            ImGui.PushStyleColor(ImGuiCol.Text, isVisible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
-            ImGui.PopStyleColor();
-
-            if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
-            {
-                // Quick-tool all if this key is down
-                if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
-                {
-                    for (int i = 0; i < container.Mesh_RootNode.Children.Count; i++)
-                    {
-                        ToggleRepresentativeMesh(i);
-                    }
-                }
-                // Otherwise just toggle this row
-                else
-                {
-                    ToggleRepresentativeMesh(index);
-                }
-            }
-        }
     }
 
     public void ToggleRepresentativeMesh(int index)
@@ -559,5 +458,54 @@ public class ModelViewportManager
         }
 
         return false;
+    }
+
+    public void DisplayVisibilyToggle(string name, int index, List<Entity> childList, Action<int> func)
+    {
+        // Required to stop the LowRequirements build from failing
+        if (Smithbox.LowRequirementsMode)
+            return;
+
+        if (!HasValidLoadedContainer())
+            return;
+
+        if (index > childList.Count - 1)
+            return;
+
+        Entity curEntity = null;
+
+        var curNode = childList[index];
+        curEntity = curNode;
+
+        if (curEntity != null)
+        {
+            var icon = curEntity.EditorVisible ? Icons.Eye : Icons.EyeSlash;
+
+            ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+            ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+            if (ImGui.Button($"{icon}##{name}{index}", DPI.InlineIconButtonSize))
+            {
+                // Quick-tool all if this key is down
+                if (InputTracker.GetKey(KeyBindings.Current.MODEL_ToggleVisibility))
+                {
+                    for (int i = 0; i < childList.Count; i++)
+                    {
+                        func(i);
+                    }
+                }
+                else
+                {
+                    func(index);
+                }
+            }
+            ImGui.PopStyleColor(4);
+            ImGui.PopItemFlag();
+            ImGui.SameLine();
+
+            UIHelper.Tooltip("Toggle visibility state of this model object.");
+        }
     }
 }

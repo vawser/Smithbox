@@ -99,6 +99,8 @@ public class FlverDataSelectionView
 
                 if (Filters.IsModelEditorSearchMatch_Dummy(curDummy, Editor.ResManager.GetCurrentFLVER(), i))
                 {
+                    Editor.ViewportManager.DisplayVisibilyToggle("dummy", i, Editor._universe.LoadedModelContainer.DummyPoly_RootNode.Children, Editor.ViewportManager.ToggleRepresentativeDummy);
+
                     // Dummy Row
                     if (ImGui.Selectable($"Dummy {i} - [{curDummy.ReferenceID}]",
                         Selection.IsDummySelected(i),
@@ -129,8 +131,6 @@ public class FlverDataSelectionView
                             ContextMenu.DummyRowContextMenu(i);
                         }
                     }
-
-                    Editor.ViewportManager.DisplayRepresentativeDummyState(i);
 
                     if (Selection.FocusSelection && Selection.IsDummySelected(i))
                     {
@@ -296,6 +296,8 @@ public class FlverDataSelectionView
 
                 if (Filters.IsModelEditorSearchMatch_Node(curNode, ResManager.GetCurrentFLVER(), i))
                 {
+                    Editor.ViewportManager.DisplayVisibilyToggle("node", i, Editor._universe.LoadedModelContainer.Bone_RootNode.Children, Editor.ViewportManager.ToggleRepresentativeNode);
+
                     // Node row
                     if (ImGui.Selectable($"Node {i} - {curNode.Name}", Selection.IsNodeSelection(i), ImGuiSelectableFlags.AllowDoubleClick))
                     {
@@ -324,8 +326,6 @@ public class FlverDataSelectionView
                             ContextMenu.NodeRowContextMenu(i);
                         }
                     }
-
-                    Editor.ViewportManager.DisplayRepresentativeNodeState(i);
 
                     if (Selection.FocusSelection && Selection.IsNodeSelection(i))
                     {
@@ -367,6 +367,8 @@ public class FlverDataSelectionView
 
                 if (Filters.IsModelEditorSearchMatch_Mesh(curMesh, ResManager.GetCurrentFLVER(), i))
                 {
+                    Editor.ViewportManager.DisplayVisibilyToggle("mesh", i, Editor._universe.LoadedModelContainer.Mesh_RootNode.Children, Editor.ViewportManager.ToggleRepresentativeMesh);
+
                     // Mesh row
                     if (ImGui.Selectable($"Mesh {i} - {material} : {node}", Selection.IsMeshSelection(i), ImGuiSelectableFlags.AllowDoubleClick))
                     {
@@ -395,8 +397,6 @@ public class FlverDataSelectionView
                             ContextMenu.MeshRowContextMenu(i);
                         }
                     }
-
-                    Editor.ViewportManager.DisplayRepresentativeMeshState(i);
 
                     if (Selection.FocusSelection && Selection.IsMeshSelection(i))
                     {

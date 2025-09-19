@@ -617,15 +617,25 @@ public class MapContentView
         var arrowKeySelect = false;
 
         // Visibility icon
-        if (visicon && CFG.Current.MapEditor_MapContentList_DisplayVisibilityIcon)
+        if (visicon)
         {
             var icon = e.EditorVisible ? Icons.Eye : Icons.EyeSlash;
-            if(ImGui.Button($"{icon}##{e.Name}", DPI.IconButtonSize))
+
+            ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+            ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+            if (ImGui.Button($"{icon}##{e.Name}", DPI.InlineIconButtonSize))
             {
                 e.EditorVisible = !e.EditorVisible;
                 doSelect = false;
             }
+            ImGui.PopStyleColor(4);
+            ImGui.PopItemFlag();
             ImGui.SameLine();
+
+            UIHelper.Tooltip("Toggle visibility state of this map object.");
         }
 
         if (hierarchial && e.Children.Count > 0)
@@ -678,7 +688,7 @@ public class MapContentView
                 }
             }
 
-            if (ImGui.Selectable($"{padding}{displayName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
+            if (ImGui.Selectable($"{displayName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
             {
                 doSelect = true;
 

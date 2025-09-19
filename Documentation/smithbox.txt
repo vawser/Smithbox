@@ -4,7 +4,6 @@
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
-- Map Editor: visibility icon cannot be clicked
 - Map Editor: add special map connections for NR
 
 - Model Editor: implement VFS + data bank overhaul
@@ -27,3 +26,8 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
+- Text Editor: add broad Text Sync window that implements this workflow:
+ - select source language
+ - select options (unique, modified, all)
+ - select target language(s)
+ - Sync
