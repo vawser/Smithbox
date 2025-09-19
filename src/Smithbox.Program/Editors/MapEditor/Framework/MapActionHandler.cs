@@ -814,23 +814,23 @@ public class MapActionHandler
 
         if (CFG.Current.Toolbar_Move_to_Grid_X)
         {
-            float temp = newPos[0] / CFG.Current.MapEditor_Viewport_Grid_Square_Size;
-            float newPosX = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_Viewport_Grid_Square_Size;
+            float temp = newPos[0] / CFG.Current.MapEditor_PrimaryGrid_SectionSize;
+            float newPosX = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_PrimaryGrid_SectionSize;
 
             newPos = new Vector3(newPosX, newPos[1], newPos[2]);
         }
 
         if (CFG.Current.Toolbar_Move_to_Grid_Z)
         {
-            float temp = newPos[2] / CFG.Current.MapEditor_Viewport_Grid_Square_Size;
-            float newPosZ = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_Viewport_Grid_Square_Size;
+            float temp = newPos[2] / CFG.Current.MapEditor_PrimaryGrid_SectionSize;
+            float newPosZ = (float)Math.Round(temp, 0) * CFG.Current.MapEditor_PrimaryGrid_SectionSize;
 
             newPos = new Vector3(newPos[0], newPos[1], newPosZ);
         }
 
         if (CFG.Current.Toolbar_Move_to_Grid_Y)
         {
-            newPos = new Vector3(newPos[0], CFG.Current.MapEditor_Viewport_Grid_Position_Y, newPos[2]);
+            newPos = new Vector3(newPos[0], CFG.Current.MapEditor_PrimaryGrid_Position_Y, newPos[2]);
         }
 
         newTransform.Position = newPos;

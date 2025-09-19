@@ -624,36 +624,98 @@ public class CFG
     //****************************
     // Settings: Viewport Grid
     //****************************
-    public bool MapEditor_Viewport_RegenerateMapGrid = false;
-    public int MapEditor_Viewport_GridType = 0;
-    public int MapEditor_Viewport_Grid_Size = 1000;
-    public int MapEditor_Viewport_Grid_Square_Size = 10;
-    public float MapEditor_Viewport_Grid_Height_Increment = 1;
-    public Vector3 MapEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+    // Map Editor: Primary Grid
+    public bool MapEditor_DisplayPrimaryGrid = false;
+    public bool MapEditor_RegeneratePrimaryGrid = false;
+    public int MapEditor_PrimaryGrid_Size = 1000;
+    public float MapEditor_PrimaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
-    public float MapEditor_Viewport_Grid_Position_X = 0;
-    public float MapEditor_Viewport_Grid_Position_Y = 0;
-    public float MapEditor_Viewport_Grid_Position_Z = 0;
+    public float MapEditor_PrimaryGrid_Position_X = 0;
+    public float MapEditor_PrimaryGrid_Position_Y = 0;
+    public float MapEditor_PrimaryGrid_Position_Z = 0;
 
-    public float MapEditor_Viewport_Grid_Rotation_X = 0;
-    public float MapEditor_Viewport_Grid_Rotation_Y = 0;
-    public float MapEditor_Viewport_Grid_Rotation_Z = 0;
+    public float MapEditor_PrimaryGrid_Rotation_X = 0;
+    public float MapEditor_PrimaryGrid_Rotation_Y = 0;
+    public float MapEditor_PrimaryGrid_Rotation_Z = 0;
 
-    public bool ModelEditor_Viewport_RegenerateMapGrid = false;
+    // Map Editor: Secondary Grid
+    public bool MapEditor_DisplaySecondaryGrid = false;
+    public bool MapEditor_RegenerateSecondaryGrid = false;
+    public int MapEditor_SecondaryGrid_Size = 1000;
+    public float MapEditor_SecondaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
-    public int ModelEditor_Viewport_GridType = 0;
-    public int ModelEditor_Viewport_Grid_Size = 1000;
-    public int ModelEditor_Viewport_Grid_Square_Size = 10;
+    public float MapEditor_SecondaryGrid_Position_X = 90;
+    public float MapEditor_SecondaryGrid_Position_Y = 0;
+    public float MapEditor_SecondaryGrid_Position_Z = 0;
 
-    public Vector3 ModelEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+    public float MapEditor_SecondaryGrid_Rotation_X = 0;
+    public float MapEditor_SecondaryGrid_Rotation_Y = 0;
+    public float MapEditor_SecondaryGrid_Rotation_Z = 0;
 
-    public float ModelEditor_Viewport_Grid_Position_X = 0;
-    public float ModelEditor_Viewport_Grid_Position_Y = 0;
-    public float ModelEditor_Viewport_Grid_Position_Z = 0;
+    // Map Editor: Tertiary Grid
+    public bool MapEditor_DisplayTertiaryGrid = false;
+    public bool MapEditor_RegenerateTertiaryGrid = false;
+    public int MapEditor_TertiaryGrid_Size = 1000;
+    public float MapEditor_TertiaryGrid_SectionSize = 10;
+    public Vector3 MapEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
 
-    public float ModelEditor_Viewport_Grid_Rotation_X = 0;
-    public float ModelEditor_Viewport_Grid_Rotation_Y = 0;
-    public float ModelEditor_Viewport_Grid_Rotation_Z = 0;
+    public float MapEditor_TertiaryGrid_Position_X = 0;
+    public float MapEditor_TertiaryGrid_Position_Y = 0;
+    public float MapEditor_TertiaryGrid_Position_Z = 0;
+
+    public float MapEditor_TertiaryGrid_Rotation_X = 0;
+    public float MapEditor_TertiaryGrid_Rotation_Y = 0;
+    public float MapEditor_TertiaryGrid_Rotation_Z = 90;
+
+    // Model Editor: Primary Grid
+    public bool ModelEditor_DisplayPrimaryGrid = false;
+    public bool ModelEditor_RegeneratePrimaryGrid = false;
+    public int ModelEditor_PrimaryGrid_Size = 1000;
+    public float ModelEditor_PrimaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_PrimaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_PrimaryGrid_Position_X = 0;
+    public float ModelEditor_PrimaryGrid_Position_Y = 0;
+    public float ModelEditor_PrimaryGrid_Position_Z = 0;
+
+    public float ModelEditor_PrimaryGrid_Rotation_X = 0;
+    public float ModelEditor_PrimaryGrid_Rotation_Y = 0;
+    public float ModelEditor_PrimaryGrid_Rotation_Z = 0;
+
+    // Model Editor: Secondary Grid
+    public bool ModelEditor_DisplaySecondaryGrid = false;
+    public bool ModelEditor_RegenerateSecondaryGrid = false;
+    public int ModelEditor_SecondaryGrid_Size = 1000;
+    public float ModelEditor_SecondaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_SecondaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_SecondaryGrid_Position_X = 0;
+    public float ModelEditor_SecondaryGrid_Position_Y = 0;
+    public float ModelEditor_SecondaryGrid_Position_Z = 0;
+
+    public float ModelEditor_SecondaryGrid_Rotation_X = 90;
+    public float ModelEditor_SecondaryGrid_Rotation_Y = 0;
+    public float ModelEditor_SecondaryGrid_Rotation_Z = 0;
+
+    // Model Editor: Tertiary Grid
+    public bool ModelEditor_DisplayTertiaryGrid = false;
+    public bool ModelEditor_RegenerateTertiaryGrid = false;
+    public int ModelEditor_TertiaryGrid_Size = 1000;
+    public float ModelEditor_TertiaryGrid_SectionSize = 10;
+
+    public Vector3 ModelEditor_TertiaryGrid_Color = new Vector3(0.5f, 0.5f, 0.5f);
+
+    public float ModelEditor_TertiaryGrid_Position_X = 0;
+    public float ModelEditor_TertiaryGrid_Position_Y = 0;
+    public float ModelEditor_TertiaryGrid_Position_Z = 0;
+
+    public float ModelEditor_TertiaryGrid_Rotation_X = 0;
+    public float ModelEditor_TertiaryGrid_Rotation_Y = 0;
+    public float ModelEditor_TertiaryGrid_Rotation_Z = 90;
 
     //****************************
     // Settings: Viewport

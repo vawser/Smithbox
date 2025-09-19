@@ -34,8 +34,6 @@ public class MapShortcuts
         // Keyboard shortcuts
         if (!ViewportView.ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
         {
-            var type = CFG.Current.MapEditor_Viewport_GridType;
-
             if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
             {
                 Editor.Save();
@@ -69,7 +67,7 @@ public class MapShortcuts
                 {
                     MsbEntity sel = tempList.First();
                     Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
-                    CFG.Current.MapEditor_Viewport_Grid_Position_Y = pos.Y;
+                    CFG.Current.MapEditor_PrimaryGrid_Position_Y = pos.Y;
                 }
             }
 

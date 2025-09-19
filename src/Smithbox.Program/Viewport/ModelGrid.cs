@@ -1,4 +1,5 @@
-﻿using StudioCore.Editors.ModelEditor;
+﻿using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Framework;
@@ -16,15 +17,15 @@ public class ModelGrid
     private DebugPrimitiveRenderableProxy Grid;
     private MeshRenderables RenderList;
 
-    public ModelGrid(ModelEditorScreen editor, MeshRenderables renderlist)
+    public ModelGrid(ModelEditorScreen editor, MeshRenderables renderlist, int size, float sectionSize, Vector3 color)
     {
         Editor = editor;
         RenderList = renderlist;
 
-        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.ModelEditor_Viewport_Grid_Size, CFG.Current.ModelEditor_Viewport_Grid_Square_Size);
+        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, size, sectionSize);
 
         Grid = new DebugPrimitiveRenderableProxy(RenderList, WireGridPrimitive);
-        Grid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
+        Grid.BaseColor = GetViewGridColor(color);
     }
 
     private Color GetViewGridColor(Vector3 color)
@@ -32,37 +33,39 @@ public class ModelGrid
         return Color.FromArgb((int)(color.X * 255), (int)(color.Y * 255), (int)(color.Z * 255));
     }
 
-    public void Regenerate()
+    public void Regenerate(int size, float sectionSize, Vector3 color)
     {
         WireGridPrimitive.Dispose();
         Grid.Dispose();
 
-        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.ModelEditor_Viewport_Grid_Size, CFG.Current.ModelEditor_Viewport_Grid_Square_Size);
+        WireGridPrimitive = new DbgPrimWireGrid(Color.Red, Color.Red,
+            size,
+            sectionSize);
 
         Grid = new DebugPrimitiveRenderableProxy(RenderList, WireGridPrimitive);
-        Grid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
+        Grid.BaseColor = GetViewGridColor(color);
     }
 
-    public void Update(Ray ray)
+    public void Update(bool displayGrid, Ray ray, int size, float sectionSize, Vector3 color, float posX, float posY, float posZ, float rotX, float rotY, float rotZ, ref bool regenerateGrid)
     {
-        if (CFG.Current.ModelEditor_Viewport_RegenerateMapGrid)
+        if (regenerateGrid)
         {
-            CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = false;
+            regenerateGrid = false;
 
-            Regenerate();
+            Regenerate(size, sectionSize, color);
         }
 
-        if (CFG.Current.Interface_ModelEditor_Viewport_Grid && Editor.Project.FocusedEditor is ModelEditorScreen)
+        if (displayGrid && Editor.Project.FocusedEditor is ModelEditorScreen)
         {
-            Grid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
+            Grid.BaseColor = GetViewGridColor(color);
             Grid.Visible = true;
             Grid.World = new Transform(
-                CFG.Current.ModelEditor_Viewport_Grid_Position_X,
-                CFG.Current.ModelEditor_Viewport_Grid_Position_Y,
-                CFG.Current.ModelEditor_Viewport_Grid_Position_Z,
-                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_X),
-                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_Y),
-                Utils.DegToRadians(CFG.Current.ModelEditor_Viewport_Grid_Rotation_Z)).WorldMatrix;
+                posX,
+                posY,
+                posZ,
+                Utils.DegToRadians(rotX),
+                Utils.DegToRadians(rotY),
+                Utils.DegToRadians(rotZ)).WorldMatrix;
         }
         else
         {

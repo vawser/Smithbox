@@ -205,13 +205,6 @@ public class ViewportMenu
         {
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
-                if (ImGui.MenuItem("Viewport Grid"))
-                {
-                    CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
-                    CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_Grid);
-
                 if (ImGui.BeginMenu("Environment Map"))
                 {
                     if (ImGui.MenuItem("Default"))
@@ -228,7 +221,9 @@ public class ViewportMenu
                 if (ImGui.MenuItem("Viewport Grid"))
                 {
                     CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
-                    CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
+                    CFG.Current.ModelEditor_RegeneratePrimaryGrid = true;
+                    CFG.Current.ModelEditor_RegenerateSecondaryGrid = true;
+                    CFG.Current.ModelEditor_RegenerateTertiaryGrid = true;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
             }
