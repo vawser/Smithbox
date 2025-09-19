@@ -332,6 +332,16 @@ public static class ViewportActionCommon
                 }
 
                 sel.SetPropertyValue("PartNames", newNames);
+
+                string unkPartName = (string)sel.GetPropertyValue("UnkT54PartName");
+
+                if (unkPartName != null)
+                {
+                    if (unkPartName.Contains(modelName) && unkPartName.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("UnkT54PartName", partName);
+                    }
+                }
             }
         }
 
@@ -373,6 +383,82 @@ public static class ViewportActionCommon
                 }
 
                 sel.SetPropertyValue("PartNames", newNames);
+            }
+        }
+
+        if (editor.Project.ProjectType == ProjectType.NR)
+        {
+            if (sel.WrappedObject is MSB_NR.Part.Asset)
+            {
+                string partName = (string)sel.GetPropertyValue("Name");
+
+                if (partName == null)
+                    return;
+
+                string modelName = (string)sel.GetPropertyValue("ModelName");
+
+                if (modelName == null)
+                    return;
+
+                string partName1 = (string)sel.GetPropertyValue("PartName1");
+
+                if (partName1 != null)
+                {
+                    if (partName1.Contains(modelName) && partName1.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName1", partName);
+                    }
+                }
+
+                string partName2 = (string)sel.GetPropertyValue("PartName2");
+
+                if (partName2 != null)
+                {
+                    if (partName2.Contains(modelName) && partName2.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName2", partName);
+                    }
+                }
+
+                string partName3 = (string)sel.GetPropertyValue("PartName3");
+
+                if (partName3 != null)
+                {
+                    if (partName3.Contains(modelName) && partName3.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName3", partName);
+                    }
+                }
+
+                string partName4 = (string)sel.GetPropertyValue("PartName4");
+
+                if (partName4 != null)
+                {
+                    if (partName4.Contains(modelName) && partName4.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName4", partName);
+                    }
+                }
+
+                string partName5 = (string)sel.GetPropertyValue("PartName5");
+
+                if (partName5 != null)
+                {
+                    if (partName5.Contains(modelName) && partName5.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName5", partName);
+                    }
+                }
+
+                string partName6 = (string)sel.GetPropertyValue("PartName6");
+
+                if (partName6 != null)
+                {
+                    if (partName6.Contains(modelName) && partName6.Contains("AEG"))
+                    {
+                        sel.SetPropertyValue("PartName6", partName);
+                    }
+                }
             }
         }
     }
@@ -436,11 +522,68 @@ public static class ViewportActionCommon
                 mapPartEntities[m].Add(ent);
             }
         }
+
+        if (editor.Project.ProjectType == ProjectType.NR)
+        {
+            Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
+
+            if (ent.WrappedObject is MSB_NR.Part msbNrPart)
+            {
+                if (mapPartEntities.TryAdd(m, new HashSet<MsbEntity>()))
+                {
+                    foreach (Entity tent in m.Objects)
+                    {
+                        if (ent.WrappedObject != null && tent.WrappedObject is MSB_NR.Part)
+                        {
+                            mapPartEntities[m].Add((MsbEntity)tent);
+                        }
+                    }
+                }
+
+                var newInstanceID = msbNrPart.InstanceID;
+                while (mapPartEntities[m].FirstOrDefault(e =>
+                           ((MSB_NR.Part)e.WrappedObject).ModelName == msbNrPart.ModelName
+                           && ((MSB_NR.Part)e.WrappedObject).InstanceID == newInstanceID) != null)
+                {
+                    newInstanceID++;
+                }
+
+                msbNrPart.InstanceID = newInstanceID;
+                mapPartEntities[m].Add(ent);
+            }
+        }
     }
 
     public static void SetSpecificEntityGroupID(MapEditorScreen editor, MsbEntity ent, MapContainer m)
     {
-        if (editor.Project.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.NR)
+        {
+            var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
+            var added = false;
+
+            var part = ent.WrappedObject as MSB_NR.Part;
+
+            uint[] newEntityGroupIDs = (uint[])ent.GetPropertyValue("EntityGroupIDs");
+
+            if (newEntityGroupIDs == null)
+                return;
+
+            uint[] newEntityGroupIds = new uint[newEntityGroupIDs.Length];
+
+            for (int i = 0; i < newEntityGroupIds.Length; i++)
+            {
+                var curEntityGroupId = newEntityGroupIds[i];
+
+                if (!added && curEntityGroupId == 0)
+                {
+                    added = true;
+                    newEntityGroupIDs[i] = newID;
+                }
+            }
+
+            ent.SetPropertyValue("EntityGroupIDs", newEntityGroupIds);
+        }
+        else if (editor.Project.ProjectType == ProjectType.AC6)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -535,7 +678,7 @@ public static class ViewportActionCommon
         if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER)
+        if (editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.NR)
         {
             ClearEntityID_UINT(sel, map);
         }
@@ -560,7 +703,25 @@ public static class ViewportActionCommon
         if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.NR)
+        {
+            var part = ent.WrappedObject as MSB_NR.Part;
+
+            uint[] newEntityGroupIDs = (uint[])ent.GetPropertyValue("EntityGroupIDs");
+
+            if (newEntityGroupIDs == null)
+                return;
+
+            uint[] newEntityGroupIds = new uint[newEntityGroupIDs.Length];
+
+            for (int i = 0; i < newEntityGroupIds.Length; i++)
+            {
+                newEntityGroupIDs[i] = 0;
+            }
+
+            ent.SetPropertyValue("EntityGroupIDs", newEntityGroupIds);
+        }
+        else if (editor.Project.ProjectType == ProjectType.AC6)
         {
             var part = ent.WrappedObject as MSB_AC6.Part;
 
