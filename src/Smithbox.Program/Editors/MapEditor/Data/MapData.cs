@@ -96,7 +96,7 @@ public class MapData
     {
         // MSB
         MapFiles.Entries = Project.FileDictionary.Entries
-            .Where(e => e.Folder.StartsWith("/map"))
+            .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
             .Where(e => e.Extension == "msb")
             .ToList();
 

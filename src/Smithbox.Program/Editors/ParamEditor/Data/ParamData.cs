@@ -515,6 +515,10 @@ public class ParamData
 
         if (!Directory.Exists(srcDir))
         {
+            // Create blank version so user can add names
+            TableGroupNames = new();
+            TableGroupNames.Groups = new();
+
             return false;
         }
 

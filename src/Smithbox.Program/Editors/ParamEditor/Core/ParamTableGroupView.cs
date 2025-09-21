@@ -109,16 +109,20 @@ public class ParamTableGroupView
             var displayName = $"{group}";
 
             var activeParam = View.Selection.GetActiveParam();
-            if(Project.ParamData.TableGroupNames.Groups.Any(e => e.Param == activeParam))
-            {
-                var curGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
-                if(curGroup != null)
-                {
-                    if(curGroup.Entries.Any(e => e.ID == group))
-                    {
-                        var curEntry = curGroup.Entries.FirstOrDefault(e => e.ID == group);
 
-                        displayName = $"{group} {curEntry.Name}";
+            if (Project.ParamData.TableGroupNames != null)
+            {
+                if (Project.ParamData.TableGroupNames.Groups.Any(e => e.Param == activeParam))
+                {
+                    var curGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
+                    if (curGroup != null)
+                    {
+                        if (curGroup.Entries.Any(e => e.ID == group))
+                        {
+                            var curEntry = curGroup.Entries.FirstOrDefault(e => e.ID == group);
+
+                            displayName = $"{group} {curEntry.Name}";
+                        }
                     }
                 }
             }
@@ -152,23 +156,27 @@ public class ParamTableGroupView
             DPI.ApplyInputWidth(CFG.Current.Param_TableGroupContextMenu_Width);
 
             var activeParam = View.Selection.GetActiveParam();
-            var curTableGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
 
-            var curName = "";
-            if(curTableGroup != null)
+            if (Project.ParamData.TableGroupNames != null)
             {
-                if(curTableGroup.Entries.Any(e => e.ID == groupKey))
+                var curTableGroup = Project.ParamData.TableGroupNames.Groups.FirstOrDefault(e => e.Param == activeParam);
+
+                var curName = "";
+                if (curTableGroup != null)
                 {
-                    curName = curTableGroup.Entries.FirstOrDefault(e => e.ID == groupKey).Name;
+                    if (curTableGroup.Entries.Any(e => e.ID == groupKey))
+                    {
+                        curName = curTableGroup.Entries.FirstOrDefault(e => e.ID == groupKey).Name;
+                    }
                 }
-            }
 
-            // Name Input
-            ImGui.InputText("##tableGroupName", ref curName, 255);
+                // Name Input
+                ImGui.InputText("##tableGroupName", ref curName, 255);
 
-            if (ImGui.IsItemDeactivatedAfterEdit())
-            {
-                UpdateTableGroupNames(activeParam, curTableGroup, groupKey, curName);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    UpdateTableGroupNames(activeParam, curTableGroup, groupKey, curName);
+                }
             }
 
             //if (ImGui.BeginMenu("Duplicate"))
