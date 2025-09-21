@@ -1152,6 +1152,10 @@ public class CFG
     public bool FMG_SearchAndReplace_Regex_Singleline = false;
     public bool FMG_SearchAndReplace_Regex_IgnorePatternWhitespace = false;
 
+    public bool TextEditor_LanguageSync_IncludeDefaultEntries = false;
+    public bool TextEditor_LanguageSync_IncludeModifiedEntries = true;
+    public bool TextEditor_LanguageSync_IncludeUniqueEntries = true;
+
     //****************************
     // Settings: Gparam Editor
     //****************************

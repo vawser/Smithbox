@@ -236,10 +236,20 @@ public static class UIHelper
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(textColor, $"{title}");
             ImGui.SameLine();
-            if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
+
+            var icon = visibilityToggle ? Icons.Eye : Icons.EyeSlash;
+
+            ImGui.PushItemFlag(ImGuiItemFlags.NoNav, true);
+            ImGui.PushStyleColor(ImGuiCol.Button, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
+            ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
+            if (ImGui.Button($"{icon}", DPI.InlineIconButtonSize))
             {
                 visibilityToggle = !visibilityToggle;
             }
+            ImGui.PopStyleColor(4);
+            ImGui.PopItemFlag();
 
             UIHelper.Tooltip(tooltip);
 

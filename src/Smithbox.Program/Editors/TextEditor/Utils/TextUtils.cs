@@ -1,5 +1,6 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using Silk.NET.OpenGL;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Enums;
@@ -63,6 +64,45 @@ public static class TextUtils
         }
 
         return false;
+    }
+
+    public static List<TextContainerCategory> GetSupportedLanguages(ProjectEntry project)
+    {
+        switch (project.ProjectType)
+        {
+            case ProjectType.DES:
+                return CategoryGroupings.DES_Languages;
+            case ProjectType.DS1:
+                return CategoryGroupings.DS1_Languages;
+            case ProjectType.DS1R:
+                return CategoryGroupings.DS1R_Languages;
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                return CategoryGroupings.DS2_Languages;
+            case ProjectType.BB:
+                return CategoryGroupings.BB_Languages;
+            case ProjectType.DS3:
+                return CategoryGroupings.DS3_Languages;
+            case ProjectType.SDT:
+                return CategoryGroupings.SDT_Languages;
+            case ProjectType.ER:
+                return CategoryGroupings.ER_Languages;
+            case ProjectType.NR:
+                return CategoryGroupings.NR_Languages;
+            case ProjectType.AC6:
+                return CategoryGroupings.AC6_Languages;
+            case ProjectType.AC4:
+                return CategoryGroupings.AC4_Languages;
+            case ProjectType.ACFA:
+                return CategoryGroupings.ACFA_Languages;
+            case ProjectType.ACV:
+                return CategoryGroupings.ACV_Languages;
+            case ProjectType.ACVD:
+                return CategoryGroupings.ACVD_Languages;
+            default: break;
+        }
+
+        return new List<TextContainerCategory>();
     }
 
     /// <summary>

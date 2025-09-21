@@ -39,6 +39,9 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
+            // TODO: with grouped FMGs, this will only sync the header FMG, not the associated sub-FMGs, should be fixed.
+            Editor.LanguageSync.DisplaySyncOptions(Editor.Selection.SelectedFmgKey);
+
             Editor.FmgImporter.FmgContextMenuOptions();
             Editor.FmgExporter.FmgContextMenuOptions();
 

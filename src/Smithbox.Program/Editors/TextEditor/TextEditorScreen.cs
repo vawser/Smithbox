@@ -279,6 +279,15 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+
+        if (ImGui.BeginMenu("Language Sync"))
+        {
+            LanguageSync.DisplayMenubarOptions();
+
+            ImGui.EndMenu();
+        }
+
+        LanguageSync.OnGui();
     }
 
     /// <summary>
