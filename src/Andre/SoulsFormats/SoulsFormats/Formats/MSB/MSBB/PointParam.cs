@@ -131,14 +131,17 @@ namespace SoulsFormats
 
                 Shape = MSB.Shape.Create(shapeType);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (unkOffsetA == 0)
-                    throw new InvalidDataException($"{nameof(unkOffsetA)} must not be 0 in type {GetType()}.");
-                if (unkOffsetB == 0)
-                    throw new InvalidDataException($"{nameof(unkOffsetB)} must not be 0 in type {GetType()}.");
-                if (Shape.HasShapeData ^ shapeDataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
+                    if (unkOffsetA == 0)
+                        throw new InvalidDataException($"{nameof(unkOffsetA)} must not be 0 in type {GetType()}.");
+                    if (unkOffsetB == 0)
+                        throw new InvalidDataException($"{nameof(unkOffsetB)} must not be 0 in type {GetType()}.");
+                    if (Shape.HasShapeData ^ shapeDataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
+                }
 
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();

@@ -245,17 +245,21 @@ namespace SoulsFormats
                 TypeOffset = br.ReadInt64();
                 Unk28Offset = br.ReadInt64();
 
-                if (NameOffset == 0)
-                    throw new InvalidDataException($"{nameof(NameOffset)} must not be 0 in type {GetType()}.");
 
-                if (CommonOffset == 0)
-                    throw new InvalidDataException($"{nameof(CommonOffset)} must not be 0 in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (NameOffset == 0)
+                        throw new InvalidDataException($"{nameof(NameOffset)} must not be 0 in type {GetType()}.");
 
-                if (HasTypeData ^ TypeOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(TypeOffset)} 0x{TypeOffset:X} in type {GetType()}.");
+                    if (CommonOffset == 0)
+                        throw new InvalidDataException($"{nameof(CommonOffset)} must not be 0 in type {GetType()}.");
 
-                if (Unk28Offset == 0)
-                    throw new InvalidDataException($"{nameof(Unk28Offset)} must not be 0 in type {GetType()}.");
+                    if (HasTypeData ^ TypeOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(TypeOffset)} 0x{TypeOffset:X} in type {GetType()}.");
+
+                    if (Unk28Offset == 0)
+                        throw new InvalidDataException($"{nameof(Unk28Offset)} must not be 0 in type {GetType()}.");
+                }
 
                 br.Position = start + NameOffset;
                 Name = br.ReadUTF16();

@@ -26,8 +26,4 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Text Editor: add broad Text Sync window that implements this workflow:
- - select source language
- - select options (unique, modified, all)
- - select target language(s)
- - Sync
+- Text Editor: add better duplicate action popup (from Param Editor), so user can easily define offset

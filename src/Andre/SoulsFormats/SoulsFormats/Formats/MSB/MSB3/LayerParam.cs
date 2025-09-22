@@ -90,8 +90,11 @@ namespace SoulsFormats
                 Unk0C = br.ReadInt32();
                 Unk10 = br.ReadInt32();
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0.");
+                }
 
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();

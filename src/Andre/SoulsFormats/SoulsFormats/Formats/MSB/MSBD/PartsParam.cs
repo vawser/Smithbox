@@ -360,14 +360,17 @@ namespace SoulsFormats
                 br.AssertInt32(0);
                 br.AssertInt32(0);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (sibOffset == 0)
-                    throw new InvalidDataException($"{nameof(sibOffset)} must not be 0 in type {GetType()}.");
-                if (entityDataOffset == 0)
-                    throw new InvalidDataException($"{nameof(entityDataOffset)} must not be 0 in type {GetType()}.");
-                if (typeDataOffset == 0)
-                    throw new InvalidDataException($"{nameof(typeDataOffset)} must not be 0 in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
+                    if (sibOffset == 0)
+                        throw new InvalidDataException($"{nameof(sibOffset)} must not be 0 in type {GetType()}.");
+                    if (entityDataOffset == 0)
+                        throw new InvalidDataException($"{nameof(entityDataOffset)} must not be 0 in type {GetType()}.");
+                    if (typeDataOffset == 0)
+                        throw new InvalidDataException($"{nameof(typeDataOffset)} must not be 0 in type {GetType()}.");
+                }
 
                 br.Position = start + nameOffset;
                 Name = br.ReadShiftJIS();

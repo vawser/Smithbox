@@ -87,8 +87,11 @@ namespace SoulsFormats
                 br.ReadInt32(); // ID
                 br.AssertPattern(0x68, 0x00);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0.");
+                }
 
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();

@@ -141,14 +141,12 @@ public static class TextMerge
                 var targetKey = targetEntry.Key.Filename;
                 var targetContainer = targetEntry.Value;
 
-                // Skip if not same file or category
                 if (primaryKey != targetKey ||
                     currentContainer.ContainerDisplayCategory != targetContainer.ContainerDisplayCategory)
                 {
                     continue;
                 }
 
-                // Directly access the matching wrapper (skip Where clause)
                 var targetWrapper = targetContainer;
 
                 foreach (var curWrapper in currentContainer.FmgWrappers)
@@ -157,7 +155,6 @@ public static class TextMerge
                     {
                         if (curWrapper.ID == tarWrapper.ID)
                         {
-                            // Set this so Save All will save everything
                             targetContainer.IsModified = true;
 
                             await ProcessFmg(curWrapper, tarWrapper);

@@ -362,24 +362,27 @@ namespace SoulsFormats
                 br.AssertInt64(0);
                 br.AssertInt64(0);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (sibOffset == 0)
-                    throw new InvalidDataException($"{nameof(sibOffset)} must not be 0 in type {GetType()}.");
-                if (HasUnk1 ^ unkOffset1 != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(unkOffset1)} 0x{unkOffset1:X} in type {GetType()}.");
-                if (HasUnk2 ^ unkOffset2 != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(unkOffset2)} 0x{unkOffset2:X} in type {GetType()}.");
-                if (entityDataOffset == 0)
-                    throw new InvalidDataException($"{nameof(entityDataOffset)} must not be 0 in type {GetType()}.");
-                if (typeDataOffset == 0)
-                    throw new InvalidDataException($"{nameof(typeDataOffset)} must not be 0 in type {GetType()}.");
-                if (HasGparamConfig ^ gparamOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(gparamOffset)} 0x{gparamOffset:X} in type {GetType()}.");
-                if (HasSceneGparamConfig ^ unkOffset6 != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(unkOffset6)} 0x{unkOffset6:X} in type {GetType()}.");
-                if (HasUnk7 ^ unkOffset7 != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(unkOffset7)} 0x{unkOffset7:X} in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
+                    if (sibOffset == 0)
+                        throw new InvalidDataException($"{nameof(sibOffset)} must not be 0 in type {GetType()}.");
+                    if (HasUnk1 ^ unkOffset1 != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(unkOffset1)} 0x{unkOffset1:X} in type {GetType()}.");
+                    if (HasUnk2 ^ unkOffset2 != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(unkOffset2)} 0x{unkOffset2:X} in type {GetType()}.");
+                    if (entityDataOffset == 0)
+                        throw new InvalidDataException($"{nameof(entityDataOffset)} must not be 0 in type {GetType()}.");
+                    if (typeDataOffset == 0)
+                        throw new InvalidDataException($"{nameof(typeDataOffset)} must not be 0 in type {GetType()}.");
+                    if (HasGparamConfig ^ gparamOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(gparamOffset)} 0x{gparamOffset:X} in type {GetType()}.");
+                    if (HasSceneGparamConfig ^ unkOffset6 != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(unkOffset6)} 0x{unkOffset6:X} in type {GetType()}.");
+                    if (HasUnk7 ^ unkOffset7 != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(unkOffset7)} 0x{unkOffset7:X} in type {GetType()}.");
+                }
 
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();

@@ -202,47 +202,50 @@ namespace SoulsFormats
                 UnkA0_DataOffset = br.ReadInt64();
                 UnkA8_DataOffset = br.ReadInt64();
 
-                if (NameOffset == 0)
-                    throw new InvalidDataException($"{nameof(NameOffset)} must not be 0 in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (NameOffset == 0)
+                        throw new InvalidDataException($"{nameof(NameOffset)} must not be 0 in type {GetType()}.");
 
-                if (FileOffset == 0)
-                    throw new InvalidDataException($"{nameof(FileOffset)} must not be 0 in type {GetType()}.");
+                    if (FileOffset == 0)
+                        throw new InvalidDataException($"{nameof(FileOffset)} must not be 0 in type {GetType()}.");
 
-                if (HasDisplayData ^ Display_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Display_DataOffset)} 0x{Display_DataOffset:X} in type {GetType()}.");
+                    if (HasDisplayData ^ Display_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Display_DataOffset)} 0x{Display_DataOffset:X} in type {GetType()}.");
 
-                if (HasDisplayGroupData ^ DisplayGroup_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(DisplayGroup_DataOffset)} 0x{DisplayGroup_DataOffset:X} in type {GetType()}.");
+                    if (HasDisplayGroupData ^ DisplayGroup_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(DisplayGroup_DataOffset)} 0x{DisplayGroup_DataOffset:X} in type {GetType()}.");
 
-                if (Entity_DataOffset == 0)
-                    throw new InvalidDataException($"{nameof(Entity_DataOffset)} must not be 0 in type {GetType()}.");
+                    if (Entity_DataOffset == 0)
+                        throw new InvalidDataException($"{nameof(Entity_DataOffset)} must not be 0 in type {GetType()}.");
 
-                if (Type_DataOffset == 0)
-                    throw new InvalidDataException($"{nameof(Type_DataOffset)} must not be 0 in type {GetType()}.");
+                    if (Type_DataOffset == 0)
+                        throw new InvalidDataException($"{nameof(Type_DataOffset)} must not be 0 in type {GetType()}.");
 
-                if (HasGparamData ^ Gparam_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Gparam_DataOffset)} 0x{Gparam_DataOffset:X} in type {GetType()}.");
+                    if (HasGparamData ^ Gparam_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Gparam_DataOffset)} 0x{Gparam_DataOffset:X} in type {GetType()}.");
 
-                if (HasSceneGparamData ^ SceneGparam_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(SceneGparam_DataOffset)} 0x{SceneGparam_DataOffset:X} in type {GetType()}.");
+                    if (HasSceneGparamData ^ SceneGparam_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(SceneGparam_DataOffset)} 0x{SceneGparam_DataOffset:X} in type {GetType()}.");
 
-                if (HasGrassData ^ Grass_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Grass_DataOffset)} 0x{Grass_DataOffset:X} in type {GetType()}.");
+                    if (HasGrassData ^ Grass_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Grass_DataOffset)} 0x{Grass_DataOffset:X} in type {GetType()}.");
 
-                if (HasUnk88Data ^ Unk88_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Unk88_DataOffset)} 0x{Unk88_DataOffset:X} in type {GetType()}.");
+                    if (HasUnk88Data ^ Unk88_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Unk88_DataOffset)} 0x{Unk88_DataOffset:X} in type {GetType()}.");
 
-                if (HasUnk90Data ^ Unk90_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Unk90_DataOffset)} 0x{Unk90_DataOffset:X} in type {GetType()}.");
+                    if (HasUnk90Data ^ Unk90_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Unk90_DataOffset)} 0x{Unk90_DataOffset:X} in type {GetType()}.");
 
-                if (HasTileData ^ Tile_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(Tile_DataOffset)} 0x{Tile_DataOffset:X} in type {GetType()}.");
+                    if (HasTileData ^ Tile_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(Tile_DataOffset)} 0x{Tile_DataOffset:X} in type {GetType()}.");
 
-                if (HasUnkA0Data ^ UnkA0_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(UnkA0_DataOffset)} 0x{UnkA0_DataOffset:X} in type {GetType()}.");
+                    if (HasUnkA0Data ^ UnkA0_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(UnkA0_DataOffset)} 0x{UnkA0_DataOffset:X} in type {GetType()}.");
 
-                if (HasUnkA8Data ^ UnkA8_DataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(UnkA8_DataOffset)} 0x{UnkA8_DataOffset:X} in type {GetType()}.");
+                    if (HasUnkA8Data ^ UnkA8_DataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(UnkA8_DataOffset)} 0x{UnkA8_DataOffset:X} in type {GetType()}.");
+                }
 
                 UnkB0 = br.ReadInt64();
                 UnkB8 = br.ReadInt64();
@@ -2419,17 +2422,20 @@ namespace SoulsFormats
                     Offset78 = br.ReadInt64();
                     Offset80 = br.ReadInt64();
 
-                    if (Offset68 != 0x88)
-                        throw new InvalidDataException($"Unexpected {nameof(Offset68)} 0x{Offset68:X} in type {GetType()}.");
+                    if (!BinaryReaderEx.IgnoreAsserts)
+                    {
+                        if (Offset68 != 0x88)
+                            throw new InvalidDataException($"Unexpected {nameof(Offset68)} 0x{Offset68:X} in type {GetType()}.");
 
-                    if (Offset70 != 0xC8)
-                        throw new InvalidDataException($"Unexpected {nameof(Offset70)} 0x{Offset70:X} in type {GetType()}.");
+                        if (Offset70 != 0xC8)
+                            throw new InvalidDataException($"Unexpected {nameof(Offset70)} 0x{Offset70:X} in type {GetType()}.");
 
-                    if (Offset78 != 0x108)
-                        throw new InvalidDataException($"Unexpected {nameof(Offset78)} 0x{Offset78:X} in type {GetType()}.");
+                        if (Offset78 != 0x108)
+                            throw new InvalidDataException($"Unexpected {nameof(Offset78)} 0x{Offset78:X} in type {GetType()}.");
 
-                    if (Offset80 != 0x148)
-                        throw new InvalidDataException($"Unexpected {nameof(Offset80)} 0x{Offset80:X} in type {GetType()}.");
+                        if (Offset80 != 0x148)
+                            throw new InvalidDataException($"Unexpected {nameof(Offset80)} 0x{Offset80:X} in type {GetType()}.");
+                    }
 
                     br.Position = start + Offset68;
                     InnerStruct68 = new AssetInnnerStruct68(br);

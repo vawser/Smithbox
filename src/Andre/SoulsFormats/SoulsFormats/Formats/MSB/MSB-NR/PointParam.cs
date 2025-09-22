@@ -448,20 +448,23 @@ namespace SoulsFormats
 
                 Shape = MSB.Shape.Create(shapeType);
 
-                if (nameOffset == 0)
-                    throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
-                if (baseDataOffset1 == 0)
-                    throw new InvalidDataException($"{nameof(baseDataOffset1)} must not be 0 in type {GetType()}.");
-                if (baseDataOffset2 == 0)
-                    throw new InvalidDataException($"{nameof(baseDataOffset2)} must not be 0 in type {GetType()}.");
-                if (Shape.HasShapeData ^ shapeDataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
-                if (baseDataOffset3 == 0)
-                    throw new InvalidDataException($"{nameof(baseDataOffset3)} must not be 0 in type {GetType()}.");
-                if (HasTypeData ^ typeDataOffset != 0)
-                    throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
-                if (struct98Offset == 0)
-                    throw new InvalidDataException($"{nameof(struct98Offset)} must not be 0 in type {GetType()}.");
+                if (!BinaryReaderEx.IgnoreAsserts)
+                {
+                    if (nameOffset == 0)
+                        throw new InvalidDataException($"{nameof(nameOffset)} must not be 0 in type {GetType()}.");
+                    if (baseDataOffset1 == 0)
+                        throw new InvalidDataException($"{nameof(baseDataOffset1)} must not be 0 in type {GetType()}.");
+                    if (baseDataOffset2 == 0)
+                        throw new InvalidDataException($"{nameof(baseDataOffset2)} must not be 0 in type {GetType()}.");
+                    if (Shape.HasShapeData ^ shapeDataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(shapeDataOffset)} 0x{shapeDataOffset:X} in type {GetType()}.");
+                    if (baseDataOffset3 == 0)
+                        throw new InvalidDataException($"{nameof(baseDataOffset3)} must not be 0 in type {GetType()}.");
+                    if (HasTypeData ^ typeDataOffset != 0)
+                        throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
+                    if (struct98Offset == 0)
+                        throw new InvalidDataException($"{nameof(struct98Offset)} must not be 0 in type {GetType()}.");
+                }
 
 
                 br.Position = start + nameOffset;
