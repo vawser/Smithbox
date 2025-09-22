@@ -609,7 +609,7 @@
     <shotgunParamId
     AltName="Shot Control: ID"
     Wiki="Shot Control parameter to use."
-    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />>
+    Refs="BulletShotgunParam_PC,BulletShotgunParam_NPC" />
     
     <shotgunBaseDist
     AltName="Shot Control: Base Distance"
