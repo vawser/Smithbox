@@ -9736,13 +9736,13 @@
     {
       "ID": 7220,
       "Entries": [
-        "[Deep Night Scaling] 2x HP, 1.75x damage"
+        "[Deep Night Scaling] 1.8x HP, 1.75x damage"
       ]
     },
     {
       "ID": 7230,
       "Entries": [
-        "[Deep Night Scaling] 2x HP, 1.5x damage"
+        "[Deep Night Scaling] 1.65x HP, 1.5x damage"
       ]
     },
     {
@@ -47632,7 +47632,7 @@
     {
       "ID": 99271,
       "Entries": [
-        ""
+        "Increased Night's Tide Damage (after 2nd Night Boss)"
       ]
     },
     {
@@ -47890,13 +47890,13 @@
     {
       "ID": 99810,
       "Entries": [
-        "Night Rain Circle: Damage (1st Shrinking)"
+        "Night's Tide: Damage (1st Shrinking)"
       ]
     },
     {
       "ID": 99811,
       "Entries": [
-        "Night Rain Circle: Damage (2nd Shrinking)"
+        "Night's Tide: Damage (2nd Shrinking)"
       ]
     },
     {
@@ -48058,49 +48058,49 @@
     {
       "ID": 99871,
       "Entries": [
-        "Night Rain Circle: Increased Damage (1st Shrinking)"
+        "Night's Tide: Increased Damage (1st Shrinking)"
       ]
     },
     {
       "ID": 99872,
       "Entries": [
-        "Night Rain Circle: Instant Death (1st Shrinking)"
+        "Night's Tide: Instant Death (1st Shrinking)"
       ]
     },
     {
       "ID": 99873,
       "Entries": [
-        "Night Rain Circle (1st Shrinking)"
+        "Night's Tide (1st Shrinking)"
       ]
     },
     {
       "ID": 99874,
       "Entries": [
-        "Night Rain Circle (1st Shrinking)"
+        "Night's Tide (1st Shrinking)"
       ]
     },
     {
       "ID": 99876,
       "Entries": [
-        "Night Rain Circle: Increased Damage (2nd Shrinking)"
+        "Night's Tide: Increased Damage (2nd Shrinking)"
       ]
     },
     {
       "ID": 99877,
       "Entries": [
-        "Night Rain Circle: Instant Death (2nd Shrinking)"
+        "Night's Tide: Instant Death (2nd Shrinking)"
       ]
     },
     {
       "ID": 99878,
       "Entries": [
-        "Night Rain Circle (2nd Shrinking)"
+        "Night's Tide (2nd Shrinking)"
       ]
     },
     {
       "ID": 99879,
       "Entries": [
-        "Night Rain Circle (2nd Shrinking)"
+        "Night's Tide (2nd Shrinking)"
       ]
     },
     {
@@ -54958,31 +54958,31 @@
     {
       "ID": 877801,
       "Entries": [
-        ""
+        "[Deep Night Scaling]"
       ]
     },
     {
       "ID": 877802,
       "Entries": [
-        ""
+        "[Deep Night Scaling]"
       ]
     },
     {
       "ID": 877803,
       "Entries": [
-        ""
+        "[Deep Night Scaling]"
       ]
     },
     {
       "ID": 877804,
       "Entries": [
-        ""
+        "[Deep Night Scaling]"
       ]
     },
     {
       "ID": 877805,
       "Entries": [
-        ""
+        "[Deep Night Scaling]"
       ]
     },
     {

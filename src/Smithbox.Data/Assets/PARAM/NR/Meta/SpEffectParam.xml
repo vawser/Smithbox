@@ -2086,6 +2086,11 @@
     Wiki="The effect of this SpEffect will start when stamina is below this specified rate." 
     DefaultValue="-1" />
 
+    <rainDamageCorrection
+    AltName="Night's Tide Damage Correction %"
+    Wiki="Correct the damage amount of the Night's Tide."
+    DefaultValue="1" />
+	
     <weaponTypeDiscovery
     AltName="Weapon Type Discovery"
     Wiki="Weapons of this type show up in class weapon rolls."
