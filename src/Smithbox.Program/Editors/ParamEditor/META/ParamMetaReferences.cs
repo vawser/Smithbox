@@ -943,7 +943,9 @@ public static class ParamMetaReferences
                 {
                     CurrentMapID = rowMapId;
                     var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_DS3 = MSB3.Read(mapPath.AssetPath);
+
+                    if(mapPath.AssetPath != null)
+                        CurrentPeekMap_DS3 = MSB3.Read(mapPath.AssetPath);
                 }
 
                 if (CurrentPeekMap_DS3 == null)

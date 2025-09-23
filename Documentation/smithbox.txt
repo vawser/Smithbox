@@ -21,9 +21,9 @@
 - Gparam Editor: check Quick Edit works (CTD report)
 
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
+- Text Editor: add better duplicate action popup (from Param Editor), so user can easily define offset
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Text Editor: add better duplicate action popup (from Param Editor), so user can easily define offset
