@@ -2085,6 +2085,16 @@
     AltName="Trigger at Stamina Below %" 
     Wiki="The effect of this SpEffect will start when stamina is below this specified rate." 
     DefaultValue="-1" />
+	
+	<poisonDamageRate 
+    AltName="Damage Correction %: Poison" 
+    Wiki="Correction value used for point damage and %damage of poison." 
+    DefaultValue="100" />
+	
+	<diseaseDamageRate 
+    AltName="Damage Correction %: Scarlet Rot" 
+    Wiki="Correction value used for point damage and %damage of scarlet rot." 
+    DefaultValue="100" />
 
     <rainDamageCorrection
     AltName="Night's Tide Damage Correction %"

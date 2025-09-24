@@ -418,7 +418,9 @@
     <Field Def="f32 ultimateArtGaugeChargeRate" FirstVersion="10200000"/>
     <Field Def="f32 conditionStamina" FirstVersion="10200000"/>
     <Field Def="f32 unk_04" FirstVersion="10200000"/>
-    <Field Def="s32 unk_05" FirstVersion="10200000"/>
+    <Field Def="u8 poisonDamageRate" FirstVersion="10200000"/>
+	<Field Def="u8 diseaseDamageRate" FirstVersion="10200000"/>
+	<Field Def="s16 unk_05" FirstVersion="10200000"/>
     <Field Def="f32 rainDamageCorrection" FirstVersion="10200000"/>
     <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
     <Field Def="s32 applyHeroStatusChange" FirstVersion="10200000"/>
