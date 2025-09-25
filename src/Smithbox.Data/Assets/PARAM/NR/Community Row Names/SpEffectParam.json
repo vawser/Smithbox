@@ -9838,7 +9838,7 @@
     {
       "ID": 7335,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Maris"
       ]
     },
     {
@@ -57634,13 +57634,13 @@
     {
       "ID": 7010230,
       "Entries": [
-        "[Relic Effect] Gradual Restoration by Flask (Unused)"
+        "[Relic Effect] Gradual Restoration by Flask (Flat) / Ally Flask + Gradual Flask (Flat For Self)"
       ]
     },
     {
       "ID": 7010231,
       "Entries": [
-        "[Relic Effect] Gradual Restoration by Flask / Ally Flask + Gradual Flask (Self)"
+        "[Relic Effect] Gradual Restoration by Flask (Overtime) / Ally Flask + Gradual Flask (Overtime For Self)"
       ]
     },
     {
@@ -60671,6 +60671,66 @@
       "ID": 7500550,
       "Entries": [
         "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 50"
+      ]
+    },
+	{
+      "ID": 7500551,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 51"
+      ]
+    },
+	{
+      "ID": 7500552,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 52"
+      ]
+    },
+	{
+      "ID": 7500553,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 53"
+      ]
+    },
+	{
+      "ID": 7500554,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 54"
+      ]
+    },
+	{
+      "ID": 7500555,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 55"
+      ]
+    },
+	{
+      "ID": 7500556,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 56"
+      ]
+    },
+	{
+      "ID": 7500557,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 57"
+      ]
+    },
+	{
+      "ID": 7500558,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 58"
+      ]
+    },
+	{
+      "ID": 7500559,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 59"
+      ]
+    },
+	{
+      "ID": 7500560,
+      "Entries": [
+        "[Relic Effect] Revenant: Increased Max FP upon Ability Activation - Stack 60"
       ]
     },
     {
