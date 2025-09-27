@@ -25,6 +25,12 @@ public static class ModEngineHandler
         if (CFG.Current.ModEngine3ProfileDirectory == "")
             return;
 
+        if (!Directory.Exists(CFG.Current.ModEngine3ProfileDirectory))
+        {
+            TaskLogs.AddLog("The current ME3 profile directory does not exist. Please configure the ME3 profile directory within the settings to a valid directory.");
+            return;
+        }
+
         var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
         var absPath = $"{curProject.ProjectPath}".Replace(@"\", "/"); // Correct backslash to forward slash
         var gametype = "nightrein";
