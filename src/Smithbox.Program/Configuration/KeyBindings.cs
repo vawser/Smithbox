@@ -185,6 +185,14 @@ public class KeyBindings
             Key.D, 
             true);
 
+        public KeyBind CORE_DuplicateSelectedEntryPopup = new(
+            "Duplicate (Popup)",
+            "Display the Duplicate popup for the current selection.",
+            Key.D,
+            false,
+            false,
+            true);
+
         public KeyBind CORE_RedoAction = new(
             "Redo", 
             "Re-executes a previously un-done action.", 

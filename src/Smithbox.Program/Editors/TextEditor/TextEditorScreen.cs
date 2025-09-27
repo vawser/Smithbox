@@ -38,6 +38,7 @@ public class TextEditorScreen : EditorScreen
     public TextFmgEntryPropertyEditor FmgEntryPropertyEditor;
     public TextNewEntryCreationModal EntryCreationModal;
     public TextExporterModal TextExportModal;
+    public TextDuplicatePopup TextDuplicatePopup;
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
@@ -71,6 +72,7 @@ public class TextEditorScreen : EditorScreen
 
         EntryCreationModal = new TextNewEntryCreationModal(this);
         TextExportModal = new TextExporterModal(this);
+        TextDuplicatePopup = new TextDuplicatePopup(this);
 
         FmgExporter = new FmgExporter(this, project);
         FmgImporter = new FmgImporter(this, project);
@@ -140,6 +142,7 @@ public class TextEditorScreen : EditorScreen
 
         CommandQueue.Parse(initcmd);
         EntryCreationModal.Display();
+        TextDuplicatePopup.Display();
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);

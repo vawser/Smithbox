@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.TextEditor;
@@ -66,7 +67,13 @@ public class TextShortcuts
             Editor.EntryCreationModal.ShowModal = true;
         }
 
-        // Duplicate
+        // Configurable Duplicate
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntryPopup))
+        {
+            ImGui.OpenPopup("textDuplicatePopup");
+        }
+
+        // Standard Duplicate
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
             Editor.ActionHandler.DuplicateEntries();

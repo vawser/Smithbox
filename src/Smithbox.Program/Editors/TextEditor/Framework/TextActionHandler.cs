@@ -157,6 +157,50 @@ public class TextActionHandler
         Screen.EditorActionManager.ExecuteAction(groupAction);
     }
 
+    public void DuplicateEntriesPopup(int offset, int amount, bool autoAdjust)
+    {
+        if (Screen.Selection.CurrentWindowContext is not TextEditorContext.FmgEntry)
+            return;
+
+        if (Screen.Selection._selectedFmgEntry == null)
+            return;
+
+        if (Screen.Selection._selectedFmgEntryIndex == -1)
+            return;
+
+        SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
+
+        List<EditorAction> actions = new List<EditorAction>();
+
+        foreach (var entry in storedEntries)
+        {
+            var curFmg = entry.Value.Parent;
+            var curEntry = entry.Value;
+
+            for (int i = 0; i < amount; i++)
+            {
+                var newId = curEntry.ID + offset;
+
+                if (autoAdjust)
+                {
+                    newId = curEntry.ID + (offset * (i + 1));
+                }
+
+                var actionList = ProcessDuplicate(curEntry, newId);
+                foreach (var action in actionList)
+                {
+                    actions.Add(action);
+                }
+            }
+        }
+
+        // Reverse so ID order makes sense
+        actions.Reverse();
+
+        var groupAction = new FmgGroupedAction(actions);
+        Screen.EditorActionManager.ExecuteAction(groupAction);
+    }
+
     private List<EditorAction> ProcessDuplicate(FMG.Entry curEntry, int newId)
     {
         List<EditorAction> actions = new List<EditorAction>();
