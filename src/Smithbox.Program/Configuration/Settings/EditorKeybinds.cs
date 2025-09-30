@@ -122,21 +122,6 @@ public class ViewportKeybindTab
                 KeyBindings.Default.VIEWPORT_GizmoTranslationMode);
         }
 
-        if (ImGui.CollapsingHeader("Grid", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.VIEWPORT_LowerGrid = InputTracker.KeybindLine(11,
-                KeyBindings.Current.VIEWPORT_LowerGrid,
-                KeyBindings.Default.VIEWPORT_LowerGrid);
-
-            KeyBindings.Current.VIEWPORT_RaiseGrid = InputTracker.KeybindLine(12,
-                KeyBindings.Current.VIEWPORT_RaiseGrid,
-                KeyBindings.Default.VIEWPORT_RaiseGrid);
-
-            KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight = InputTracker.KeybindLine(13,
-                KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight,
-                KeyBindings.Default.VIEWPORT_SetGridToSelectionHeight);
-        }
-
         if (ImGui.CollapsingHeader("Selection", ImGuiTreeNodeFlags.DefaultOpen))
         {
             KeyBindings.Current.VIEWPORT_RenderOutline = InputTracker.KeybindLine(14,
@@ -258,6 +243,17 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_ConfigurableSelectAll = InputTracker.KeybindLine(103,
                 KeyBindings.Current.MAP_ConfigurableSelectAll,
                 KeyBindings.Default.MAP_ConfigurableSelectAll);
+        }
+
+        if (ImGui.CollapsingHeader("Grid", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.MAP_AdjustToGrid = InputTracker.KeybindLine(110,
+                KeyBindings.Current.MAP_AdjustToGrid,
+                KeyBindings.Default.MAP_AdjustToGrid);
+
+            KeyBindings.Current.MAP_ConfigureGridPlacement = InputTracker.KeybindLine(111,
+                KeyBindings.Current.MAP_ConfigureGridPlacement,
+                KeyBindings.Default.MAP_ConfigureGridPlacement);
         }
 
         if (ImGui.CollapsingHeader("Rotation Increment", ImGuiTreeNodeFlags.DefaultOpen))

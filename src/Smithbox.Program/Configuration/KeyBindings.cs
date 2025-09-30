@@ -297,25 +297,6 @@ public class KeyBindings
             "Cycles through the gizmo translation modes.", 
             Key.W);
 
-        // Grid
-        public KeyBind VIEWPORT_LowerGrid = new(
-            "Lower Grid",
-            "Lowers the viewport grid height by the specified unit increment.", 
-            Key.Q, 
-            true);
-
-        public KeyBind VIEWPORT_RaiseGrid = new(
-            "Raise Grid",
-            "Raises the viewport grid height by the specified unit increment.",
-            Key.E, 
-            true);
-
-        public KeyBind VIEWPORT_SetGridToSelectionHeight = new(
-            "Move Grid to Selection Height",
-            "Set the viewport grid height to the height of the current selection.",
-            Key.K, 
-            true);
-
         // Selection
         public KeyBind VIEWPORT_RenderOutline = new(
             "Toggle Selection Outline", 
@@ -330,7 +311,6 @@ public class KeyBindings
         //-----------------------------
         // Map Editor
         //-----------------------------
-        // Core
         // Core
         public KeyBind MAP_ToggleMapObjectGroupVisibility = new(
             "Toggle Map Object Group Visibility",
@@ -351,7 +331,6 @@ public class KeyBindings
             "Frame Selection",
             "Frames the current selection within the viewport.",
             Key.F);
-
 
         public KeyBind MAP_RotateFixedAngle = new(
             "Rotate to Fixed Increment for Selection",
@@ -375,6 +354,7 @@ public class KeyBindings
             "Flip Editor Visibility of All",
             "Flip the editor visibility state for all map objects.",
             Key.B, 
+            true,
             true);
 
         public KeyBind MAP_EnableSelectionVisibility = new(
@@ -389,6 +369,7 @@ public class KeyBindings
             "Enable the editor visibility for all map objects.",
             Key.B, 
             true, 
+            true,
             true);
 
         public KeyBind MAP_DisableSelectionVisibility = new(
@@ -494,6 +475,17 @@ public class KeyBindings
             Key.D, 
             false, 
             false, 
+            true);
+
+        public KeyBind MAP_AdjustToGrid = new(
+            "Adjust Selection to Grid",
+            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection.",
+            Key.B);
+
+        public KeyBind MAP_ConfigureGridPlacement = new(
+            "Configure Grid Placement",
+            "Configure the grid placement paramters for Move Selection to Grid.",
+            Key.B,
             true);
 
         // Rotation Increment

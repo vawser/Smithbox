@@ -793,29 +793,6 @@ public class ToolWindow
                         Handler.ApplyReplicate();
                     }
                 }
-
-                ///--------------------
-                /// Move to Grid
-                ///--------------------
-                if (ImGui.CollapsingHeader("Move to Grid"))
-                {
-                    UIHelper.WrappedText("Set the current selection to the closest grid position.");
-                    UIHelper.WrappedText("");
-
-                    ImGui.Checkbox("X", ref CFG.Current.Toolbar_Move_to_Grid_X);
-                    UIHelper.Tooltip("Move the current selection to the closest X co-ordinate within the map grid.");
-
-                    ImGui.Checkbox("Y", ref CFG.Current.Toolbar_Move_to_Grid_Y);
-                    UIHelper.Tooltip("Move the current selection to the closest Y co-ordinate within the map grid.");
-
-                    ImGui.Checkbox("Z", ref CFG.Current.Toolbar_Move_to_Grid_Z);
-                    UIHelper.Tooltip("Move the current selection to the closest Z co-ordinate within the map grid.");
-
-                    if (ImGui.Button("Move Selection to Grid", DPI.WholeWidthButton(windowWidth, 24)))
-                    {
-                        Handler.ApplyMovetoGrid();
-                    }
-                }
             }
 
             if (CFG.Current.Interface_MapEditor_Tool_Prefab)

@@ -428,12 +428,6 @@ public class MapContentView
                 }
                 UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
 
-                if (ImGui.Selectable("Move to Grid"))
-                {
-                    Editor.ActionHandler.ApplyMovetoGrid();
-                }
-                UIHelper.Tooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
-
                 if (ImGui.Selectable("Move to Camera"))
                 {
                     Editor.ActionHandler.ApplyMoveToCamera();
@@ -477,6 +471,21 @@ public class MapContentView
                 }
             }
             UIHelper.Tooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
+
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Adjust to Grid"))
+            {
+                Editor.MapPopupGridPlacement.ApplyGridTransform();
+            }
+            UIHelper.Tooltip($"Adjust the current selection to the current grid placement configuration.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid.HintText}");
+
+            if (ImGui.Selectable("Configure Grid Placement"))
+            {
+                Editor.MapPopupGridPlacement.Show();
+            }
+            UIHelper.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {KeyBindings.Current.MAP_ConfigureGridPlacement.HintText}");
+
 
             ImGui.EndPopup();
         }

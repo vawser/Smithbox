@@ -59,16 +59,16 @@ public class MapShortcuts
                 EditorActionManager.RedoAction();
             }
 
-            // Viewport Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_SetGridToSelectionHeight))
+            // Configure Grid Placement
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigureGridPlacement))
             {
-                var tempList = Selection.GetFilteredSelection<MsbEntity>().ToList();
-                if (tempList != null && tempList.Count > 0)
-                {
-                    MsbEntity sel = tempList.First();
-                    Vector3 pos = (Vector3)sel.GetPropertyValue("Position");
-                    CFG.Current.MapEditor_PrimaryGrid_Position_Y = pos.Y;
-                }
+                Editor.MapPopupGridPlacement.Show();
+            }
+
+            // Adjust to Grid
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid))
+            {
+                Editor.MapPopupGridPlacement.ApplyGridTransform();
             }
 
             // Select All by Configuration
@@ -212,12 +212,6 @@ public class MapShortcuts
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ReplicateSelection) && Selection.IsSelection())
             {
                 ActionHandler.ApplyReplicate();
-            }
-
-            // Move to Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetSelectionToGrid) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMovetoGrid();
             }
 
             // Toggle Editor Visibility

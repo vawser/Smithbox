@@ -78,6 +78,7 @@ public class MapEditorScreen : EditorScreen
     public EntityIdentifierOverview EntityIdentifierOverview;
     public MapGridConfiguration GridConfiguration;
     public MapPopupSelectAll MapPopupSelectAll;
+    public MapPopupGridPlacement MapPopupGridPlacement;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -115,6 +116,7 @@ public class MapEditorScreen : EditorScreen
         MapListView = new MapListView(this, Project);
         MapPropertyView = new MapPropertyView(this);
         MapPopupSelectAll = new MapPopupSelectAll(this, Project);
+        MapPopupGridPlacement = new MapPopupGridPlacement(this, Project);
 
         // Optional Views
         DisplayGroupView = new DisplayGroupView(this);
@@ -286,6 +288,7 @@ public class MapEditorScreen : EditorScreen
         FocusManager.OnFocus();
 
         MapPopupSelectAll.Display();
+        MapPopupGridPlacement.Display();
     }
 
     public void OnDefocus()
@@ -562,15 +565,6 @@ public class MapEditorScreen : EditorScreen
                 ActionHandler.ApplyFrameInViewport();
             }
             UIHelper.Tooltip("Frames the current selection in the viewport.");
-
-            ///--------------------
-            // Move to Grid
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected to Grid", KeyBindings.Current.MAP_SetSelectionToGrid.HintText))
-            {
-                ActionHandler.ApplyMovetoGrid();
-            }
-            UIHelper.Tooltip("Move the current selection to the nearest grid point.");
 
             ///--------------------
             // Move to Camera
