@@ -1253,27 +1253,20 @@ public static class ParamMetaReferences
             List<string> FieldNames = new List<string>();
             FieldNames = fields.Split(",").ToList();
 
-            DisplayColorPicker(editor, row, name, FieldNames[0], FieldNames[1], FieldNames[2]);
+            if (FieldNames.IndexExists(0) && FieldNames.IndexExists(1) && FieldNames.IndexExists(2))
+            {
+                DisplayColorPicker(editor, activeParam, row, name, FieldNames[0], FieldNames[1], FieldNames[2]);
+            }
         }
     }
 
     private static Vector3 heldColor = new();
 
-    private static void DisplayColorPicker(ParamEditorScreen editor, Param.Row row, string name, string redField, string greenField, string blueField)
+    private static void DisplayColorPicker(ParamEditorScreen editor, string activeParam, Param.Row curRow, string name, string redField, string greenField, string blueField)
     {
-        var param = editor.Project.ParamData.PrimaryBank.Params[editor._activeView.Selection.GetActiveParam()];
-
-        if (param == null)
-            return;
-
-        if (!param.ContainsRow(row.ID))
-            return;
-
-        var curRow = param[row.ID];
-
         var color = GetVector3Color(curRow, redField, greenField, blueField);
 
-        if (ImGui.ColorEdit3($"{name}##ColorEdit_{name}{row.ID}", ref color))
+        if (ImGui.ColorEdit3($"{name}##ColorEdit_{name}{curRow.ID}", ref color))
         {
             heldColor = color;
         }

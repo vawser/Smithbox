@@ -5,15 +5,11 @@
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
 - Map Editor: add special map connections for NR
-- Map Editor: adjust the Set Map Object to Grid Position action to allow for it to snap to grid rotation too
-- Map Editor: allow for arrow scrolling to load asset when in Asset Browser
 
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 - Model Editor: add simple JSON export/import for elements of FLVER
-- Model Editor: re-write the internal structure to be less stupid and to reduce code duplication
- - Add file discovery option that populates model list by looking at model containing container files and building the list from this scan (should be optional toggle to the default file dictionary based approach)
- - Remove the individual FLVER element import/export stuff and instead support direct JSON import/export of each element set
+- Model Editor: order dummy polygon list by parent bone (as option?)
 
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
@@ -27,4 +23,11 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
+# Bugs
+Bug: Selection Groups don't seem to be saving properly - [project]/.smithbox/MSB/Entity Selections/Selection Groups.json does not seem to update when adding a new Group and then closing Smithbox - the Group is only "saved" while Smithbox is open
+Bug: CTD (https://cdn.discordapp.com/attachments/1244323524995448943/1421830544223899779/image.png?ex=68dc70a2&is=68db1f22&hm=e0e4526c598bc998711c888d45e1bba44609938d65438b0f6f40d3a949853806&)
+
 # TODO NOW
+- Map Editor: add Ctrl+A for current map object selection to select all of the same internal type (e.g. Part.Enemy)
+- Map Editor: adjust the Set Map Object to Grid Position action to allow for it to snap to grid rotation too
+- Map Editor: allow for arrow scrolling to load asset when in Asset Browser
