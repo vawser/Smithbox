@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using static StudioCore.Core.ProjectEntry;
@@ -26,6 +27,7 @@ public class MapData
     public Dictionary<string, MapBank> AuxBanks = new();
 
     public MsbMeta Meta;
+    public EntitySelectionGroupList MapObjectSelections;
 
     public FileDictionary MapFiles = new();
     public FileDictionary LightFiles = new();
@@ -87,6 +89,15 @@ public class MapData
         if (!mapObjNamesTaskResult)
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Map Object Name lists.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
+        // Map Object Selections
+        Task<bool> mapObjSelectionTask = SetupMapObjectSelections();
+        bool mapObjSelectionTaskResult = await mapObjSelectionTask;
+
+        if (!mapObjSelectionTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Map Object Selections.", LogLevel.Error, Tasks.LogPriority.High);
         }
 
         return primaryBankTaskResult && vanillaBankTaskResult;
@@ -216,5 +227,106 @@ public class MapData
         }
 
         return true;
+    }
+
+    public async Task<bool> SetupMapObjectSelections()
+    {
+        await Task.Yield();
+
+        MapObjectSelections = new();
+
+        // Information
+        var projectFolder = Path.Combine(
+            Project.ProjectPath,
+            ".smithbox",
+            "MSB",
+            "Entity Selections");
+
+        var projectFile = Path.Combine(
+            projectFolder,
+            "Selection Groups.json");
+
+        if (File.Exists(projectFile))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(projectFile);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    MapObjectSelections = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Object Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Object Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+        else
+        {
+            if (!Directory.Exists(projectFolder))
+            {
+                Directory.CreateDirectory(projectFolder);
+            }
+
+            string template = "{ \"Resources\": [ ] }";
+            try
+            {
+                var fs = new FileStream(projectFile, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
+            }
+        }
+
+        if (MapObjectSelections.Resources == null)
+        {
+            MapObjectSelections.Resources = new();
+        }
+
+        return true;
+    }
+
+    public void SaveMapObjectSelections()
+    {
+        var projectFolder = Path.Combine(
+            Project.ProjectPath,
+            ".smithbox",
+            "MSB",
+            "Entity Selections");
+
+        if (!Directory.Exists(projectFolder))
+        {
+            Directory.CreateDirectory(projectFolder);
+        }
+
+        var projectFile = Path.Combine(
+            projectFolder,
+            "Selection Groups.json");
+
+        string jsonString = JsonSerializer.Serialize(MapObjectSelections, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+
+        try
+        {
+            var fs = new FileStream(projectFile, FileMode.Create);
+            var data = Encoding.ASCII.GetBytes(jsonString);
+            fs.Write(data, 0, data.Length);
+            fs.Flush();
+            fs.Dispose();
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog($"Failed to save map object selections: {projectFile}\n{ex}");
+        }
     }
 }

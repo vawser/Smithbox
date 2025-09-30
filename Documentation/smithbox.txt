@@ -25,7 +25,6 @@
 
 # Bugs
 Bug: Selection Groups don't seem to be saving properly - [project]/.smithbox/MSB/Entity Selections/Selection Groups.json does not seem to update when adding a new Group and then closing Smithbox - the Group is only "saved" while Smithbox is open
-Bug: CTD (https://cdn.discordapp.com/attachments/1244323524995448943/1421830544223899779/image.png?ex=68dc70a2&is=68db1f22&hm=e0e4526c598bc998711c888d45e1bba44609938d65438b0f6f40d3a949853806&)
 
 # TODO NOW
 - Map Editor: add Ctrl+A for current map object selection to select all of the same internal type (e.g. Part.Enemy)

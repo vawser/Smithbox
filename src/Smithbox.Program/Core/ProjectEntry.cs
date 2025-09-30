@@ -160,9 +160,6 @@ public class ProjectEntry
     public SpawnStateResource MapSpawnStates;
 
     [JsonIgnore]
-    public EntitySelectionGroupList MapEntitySelections;
-
-    [JsonIgnore]
     public MaterialDisplayConfiguration MaterialDisplayConfiguration;
 
     [JsonIgnore]
@@ -726,22 +723,6 @@ public class ProjectEntry
             else
             {
                 TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
-            }
-        }
-
-        // Entity Selection Groups (per project)
-        Task<bool> entitySelectionGroupTask = SetupMapEntitySelections();
-        bool entitySelectionGroupResult = await entitySelectionGroupTask;
-
-        if (!silent)
-        {
-            if (entitySelectionGroupResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
             }
         }
 
@@ -1775,73 +1756,6 @@ public class ProjectEntry
             {
                 TaskLogs.AddLog($"[Smithbox] Failed to read the Map Spawn States: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Map Entity Selections
-    /// <summary>
-    /// Setup the map spawn states for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupMapEntitySelections()
-    {
-        await Task.Yield();
-
-        MapEntitySelections = new();
-
-        // Information
-        var projectFolder = Path.Join(ProjectPath,".smithbox","MSB","Entity Selections");
-        var projectFile = Path.Join(projectFolder,"Selection Groups.json");
-
-        if (File.Exists(projectFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(projectFile);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    MapEntitySelections = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.EntitySelectionGroupList);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
-            }
-        }
-        else
-        {
-            if(!Directory.Exists(projectFolder))
-            {
-                Directory.CreateDirectory(projectFolder);
-            }
-
-            string template = "{ \"Resources\": [ ] }";
-            try
-            {
-                var fs = new FileStream(projectFile, FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(template);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
-            }
-        }
-
-        if(MapEntitySelections.Resources == null)
-        {
-            MapEntitySelections.Resources = new();
         }
 
         return true;
