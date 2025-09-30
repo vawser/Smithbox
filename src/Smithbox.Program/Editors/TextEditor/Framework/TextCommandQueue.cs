@@ -1,4 +1,5 @@
-﻿using StudioCore.TextEditor;
+﻿using SoulsFormats;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,42 +29,47 @@ public class TextCommandQueue
                 var fmgName = initcmd[3];
                 var fmgEntryId = initcmd[4];
 
-                var index = 0;
+                var fileIndex = 0;
 
                 foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
-                    if(info.ContainerDisplayCategory.ToString() == category)
+                    bool found = false;
+                    FMG.Entry? entry = null;
+                    int index = -1;
+
+                    if (info.ContainerDisplayCategory.ToString() == category &&
+                        (
+                            info.FileEntry.Filename == $"{containerName}_dlc02" ||
+                         info.FileEntry.Filename == $"{containerName}_dlc01" ||
+                         info.FileEntry.Filename == containerName)
+                        )
                     {
-                        if(info.FileEntry.Filename == containerName)
+                        foreach (var fmg in info.FmgWrappers)
                         {
-                            Editor.Selection.FocusFileSelection = true;
-                            Editor.Selection.SelectFileContainer(fileEntry, info, index);
-
-                            foreach (var fmg in info.FmgWrappers)
+                            if (fmg.Name == fmgName)
                             {
-                                if(fmg.Name == fmgName)
+                                Editor.Selection.FocusFmgSelection = true;
+                                Editor.Selection.SelectFmg(fmg);
+                                entry = fmg.File.Entries.FirstOrDefault(e => e.ID.ToString() == fmgEntryId);
+                                if (entry != null)
                                 {
-                                    Editor.Selection.FocusFmgSelection = true;
-                                    Editor.Selection.SelectFmg(fmg);
-
-                                    var entryIndex = 0;
-
-                                    foreach (var entry in fmg.File.Entries)
-                                    {
-                                        if($"{entry.ID}" == fmgEntryId)
-                                        {
-                                            Editor.Selection.FocusFmgEntrySelection = true;
-                                            Editor.Selection.SelectFmgEntry(entryIndex, entry);
-                                        }
-
-                                        entryIndex++;
-                                    }
+                                    index = fmg.File.Entries.IndexOf(entry);
+                                    found = true;
+                                    break;
                                 }
                             }
                         }
                     }
 
-                    index++;
+                    if (found)
+                    {
+                        Editor.Selection.FocusFileSelection = true;
+                        Editor.Selection.SelectFileContainer(fileEntry, info, fileIndex);
+                        Editor.Selection.FocusFmgEntrySelection = true;
+                        Editor.Selection.SelectFmgEntry(index, entry);
+                        break;
+                    }
+                    fileIndex++;
                 }
             }
         }
