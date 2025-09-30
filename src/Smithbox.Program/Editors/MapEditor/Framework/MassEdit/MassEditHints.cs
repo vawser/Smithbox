@@ -106,6 +106,8 @@ public class MassEditHints
         {
             var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
 
+            ImGui.Text("Precede the command with ! to select the invert.");
+
             if (ImGui.CollapsingHeader("Name", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 if (ImGui.BeginTable($"nameSelectionTable", 2, tableFlags))

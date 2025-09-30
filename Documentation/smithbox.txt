@@ -23,9 +23,6 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
-# Bugs
-Bug: Selection Groups don't seem to be saving properly - [project]/.smithbox/MSB/Entity Selections/Selection Groups.json does not seem to update when adding a new Group and then closing Smithbox - the Group is only "saved" while Smithbox is open
-
 # TODO NOW
 - Map Editor: add Ctrl+A for current map object selection to select all of the same internal type (e.g. Part.Enemy)
 - Map Editor: adjust the Set Map Object to Grid Position action to allow for it to snap to grid rotation too

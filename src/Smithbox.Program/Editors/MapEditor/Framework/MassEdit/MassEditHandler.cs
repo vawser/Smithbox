@@ -641,6 +641,7 @@ public class MassEditHandler
     /// </summary>
     private bool IsValidMapObject(MapContentView curView, MsbEntity mEnt)
     {
+        var invertTruth = false;
         var isValid = true;
 
         if (MapObjectSelectionLogic is SelectionConditionLogic.OR)
@@ -654,14 +655,24 @@ public class MassEditHandler
         {
             var cmd = SelectionInputs[i];
 
+            if (cmd.StartsWith("!"))
+            {
+                cmd = cmd.Replace("!", "");
+                invertTruth = true;
+            }
+
             if (cmd.Contains("prop:"))
             {
                 partTruth[i] = PropertyValueFilter(curView, mEnt, cmd);
+                if (invertTruth)
+                    partTruth[i] = !partTruth[i];
             }
             // Default to name filter if no explicit command is used
             else
             {
                 partTruth[i] = PropertyNameFilter(curView, mEnt, cmd);
+                if (invertTruth)
+                    partTruth[i] = !partTruth[i];
             }
         }
 
@@ -685,7 +696,7 @@ public class MassEditHandler
     /// <summary>
     /// Handles the selection filtering for map objects based on name
     /// </summary>
-    private bool PropertyNameFilter(MapContentView view, Entity curEnt, string cmd)
+    public bool PropertyNameFilter(MapContentView view, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -721,7 +732,7 @@ public class MassEditHandler
     /// <summary>
     /// Handles the selection filtering for map objects based on property value
     /// </summary>
-    private bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
+    public bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -807,7 +818,7 @@ public class MassEditHandler
     /// <summary>
     /// Performs the mathematical condition check
     /// </summary>
-    private bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
+    public bool PerformNumericComparison(string comparator, string targetVal, object propValue, Type valueType)
     {
         // LONG
         if (valueType == typeof(long))

@@ -322,6 +322,29 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
         {
+            if (ImGui.Selectable("Select All by Configuration"))
+            {
+                Editor.MapPopupSelectAll.Show();
+            }
+            UIHelper.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {KeyBindings.Current.MAP_ConfigurableSelectAll.HintText}");
+
+            if (ImGui.Selectable("Select All by Type"))
+            {
+                Editor.ActionHandler.SelectAllByMapObjectType();
+            }
+            UIHelper.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByMapObjectType.HintText}");
+
+            if (ent.WrappedObject is IMsbPart)
+            {
+                if (ImGui.Selectable("Select All by Model Name"))
+                {
+                    Editor.ActionHandler.SelectAllByModelName();
+                }
+                UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByModelName.HintText}");
+            }
+
+            ImGui.Separator();
+
             // Only supported for these types
             if (ent.WrappedObject is IMsbPart or IMsbRegion or IMsbEvent)
             {

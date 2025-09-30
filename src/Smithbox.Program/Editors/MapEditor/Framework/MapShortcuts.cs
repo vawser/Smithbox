@@ -71,6 +71,24 @@ public class MapShortcuts
                 }
             }
 
+            // Select All by Configuration
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigurableSelectAll) && Selection.IsSelection())
+            {
+                Editor.MapPopupSelectAll.Show();
+            }
+
+            // Select All by Map Object Type
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByMapObjectType) && Selection.IsSelection())
+            {
+                ActionHandler.SelectAllByMapObjectType();
+            }
+
+            // Select All by Model Name
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByModelName) && Selection.IsSelection())
+            {
+                ActionHandler.SelectAllByModelName();
+            }
+
             // Create
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Selection.IsSelection())
             {

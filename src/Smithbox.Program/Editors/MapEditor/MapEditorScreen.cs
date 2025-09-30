@@ -77,6 +77,7 @@ public class MapEditorScreen : EditorScreen
     public LocalSearchView LocalSearchView;
     public EntityIdentifierOverview EntityIdentifierOverview;
     public MapGridConfiguration GridConfiguration;
+    public MapPopupSelectAll MapPopupSelectAll;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -113,6 +114,7 @@ public class MapEditorScreen : EditorScreen
         // Core Views
         MapListView = new MapListView(this, Project);
         MapPropertyView = new MapPropertyView(this);
+        MapPopupSelectAll = new MapPopupSelectAll(this, Project);
 
         // Optional Views
         DisplayGroupView = new DisplayGroupView(this);
@@ -282,6 +284,8 @@ public class MapEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
 
         FocusManager.OnFocus();
+
+        MapPopupSelectAll.Display();
     }
 
     public void OnDefocus()

@@ -163,10 +163,6 @@ public class MapEditorKeybindTab
     {
         if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility = InputTracker.KeybindLine(100,
-                KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility,
-                KeyBindings.Default.MAP_ToggleMapObjectGroupVisibility);
-
             KeyBindings.Current.MAP_DuplicateToMap = InputTracker.KeybindLine(0,
                 KeyBindings.Current.MAP_DuplicateToMap,
                 KeyBindings.Default.MAP_DuplicateToMap);
@@ -246,6 +242,22 @@ public class MapEditorKeybindTab
             KeyBindings.Current.MAP_SetSelectionToGrid = InputTracker.KeybindLine(19,
                 KeyBindings.Current.MAP_SetSelectionToGrid,
                 KeyBindings.Default.MAP_SetSelectionToGrid);
+
+            KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility = InputTracker.KeybindLine(100,
+                KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility,
+                KeyBindings.Default.MAP_ToggleMapObjectGroupVisibility);
+
+            KeyBindings.Current.MAP_SelectAllByMapObjectType = InputTracker.KeybindLine(101,
+                KeyBindings.Current.MAP_SelectAllByMapObjectType,
+                KeyBindings.Default.MAP_SelectAllByMapObjectType);
+
+            KeyBindings.Current.MAP_SelectAllByModelName = InputTracker.KeybindLine(102,
+                KeyBindings.Current.MAP_SelectAllByModelName,
+                KeyBindings.Default.MAP_SelectAllByModelName);
+
+            KeyBindings.Current.MAP_ConfigurableSelectAll = InputTracker.KeybindLine(103,
+                KeyBindings.Current.MAP_ConfigurableSelectAll,
+                KeyBindings.Default.MAP_ConfigurableSelectAll);
         }
 
         if (ImGui.CollapsingHeader("Rotation Increment", ImGuiTreeNodeFlags.DefaultOpen))

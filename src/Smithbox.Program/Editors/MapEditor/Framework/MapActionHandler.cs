@@ -47,6 +47,141 @@ public class MapActionHandler
     }
 
     /// <summary>
+    /// Select all entries that share the model names of the current selection
+    /// </summary>
+    public void SelectAllByModelName()
+    {
+        if (Editor.ViewportSelection.IsSelection())
+        {
+            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+
+            List<string> targetNames = new List<string>();
+
+            foreach (var entry in sel)
+            {
+                var curName = "";
+                var result = entry.GetPropertyValue("ModelName");
+
+                if (result != null)
+                {
+                    curName = (string)result;
+                }
+
+                if (curName != "" && !targetNames.Contains(curName))
+                {
+                    targetNames.Add(curName);
+                }
+            }
+
+            var curMap = Editor.Selection.SelectedMapView.MapID;
+            MapContainer curMapContainer = null;
+
+            foreach (var entry in Project.MapData.PrimaryBank.Maps)
+            {
+                var mapID = entry.Key.Filename;
+                var map = entry.Value.MapContainer;
+
+                if (map != null)
+                {
+                    if (curMap == mapID)
+                    {
+                        curMapContainer = (MapContainer)map;
+                    }
+                }
+            }
+
+            if (curMapContainer == null)
+            {
+                PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
+                return;
+            }
+
+            Editor.ViewportSelection.ClearSelection(Editor);
+
+            foreach (var ent in curMapContainer.Objects)
+            {
+                var curName = "";
+                var result = ent.GetPropertyValue("ModelName");
+
+                if (result != null)
+                {
+                    curName = (string)result;
+                }
+
+                if (curName != "" && targetNames.Contains(curName))
+                {
+                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                }
+            }
+        }
+        else
+        {
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+        }
+    }
+
+    /// <summary>
+    /// Select all entries that share the internal type(s) of the current selection
+    /// </summary>
+    public void SelectAllByMapObjectType()
+    {
+        if (Editor.ViewportSelection.IsSelection())
+        {
+            var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+
+            List<Type> targetTypes = new List<Type>();
+
+            foreach(var entry in sel)
+            {
+                var curType = entry.WrappedObject.GetType();
+                if(!targetTypes.Contains(curType))
+                {
+                    targetTypes.Add(curType);
+                }
+            }
+
+            var curMap = Editor.Selection.SelectedMapView.MapID;
+            MapContainer curMapContainer = null;
+
+            foreach (var entry in Project.MapData.PrimaryBank.Maps)
+            {
+                var mapID = entry.Key.Filename;
+                var map = entry.Value.MapContainer;
+
+                if (map != null)
+                {
+                    if (curMap == mapID)
+                    {
+                        curMapContainer = (MapContainer)map;
+                    }
+                }
+            }
+
+            if (curMapContainer == null)
+            {
+                PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
+                return;
+            }
+
+            Editor.ViewportSelection.ClearSelection(Editor);
+
+            foreach(var ent in curMapContainer.Objects)
+            {
+                var curType = ent.WrappedObject.GetType();
+
+                if(targetTypes.Contains(curType))
+                {
+                    Editor.ViewportSelection.AddSelection(Editor, ent);
+                }
+            }
+        }
+        else
+        {
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
+        }
+    }
+
+    /// <summary>
     /// Create
     /// </summary>
     public void ApplyObjectCreation()

@@ -454,6 +454,27 @@ public class KeyBindings
             false, 
             true);
 
+        public KeyBind MAP_SelectAllByMapObjectType = new(
+            "Select All by Map Object Type",
+            "Select all entries that share the map object types of the current selection.",
+            Key.A,
+            true);
+
+        public KeyBind MAP_SelectAllByModelName = new(
+            "Select All by Model Name",
+            "Select all entries that share the same model name as the current selection.",
+            Key.A,
+            false,
+            false,
+            true);
+
+        public KeyBind MAP_ConfigurableSelectAll = new(
+            "Select All by Configuration",
+            "Select all entries via a user-defined search filter configuration.",
+            Key.A,
+            false,
+            true);
+
         public KeyBind MAP_CreateMapObject = new(
             "Create Map Object", 
             "Create a new map object of the selected type with default values.", 
