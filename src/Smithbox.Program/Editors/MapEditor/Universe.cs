@@ -290,9 +290,12 @@ public class Universe
         }
         else
         {
-            var btlFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+            if (File.Exists(curEntry.Path))
+            {
+                var btlFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
-            btl = BTL.Read(btlFile);
+                btl = BTL.Read(btlFile);
+            }
         }
 
         return btl;

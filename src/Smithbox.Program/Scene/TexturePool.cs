@@ -202,6 +202,7 @@ public class TexturePool
 
     internal static int GetBlockSize(byte tpfTexFormat)
     {
+        // BC1-7 encode fixed-size blocks of 4×4 pixels to a fixed-size output: 64 bits (8 bytes) per block for BC1 and BC4, 128 bits (16 bytes) for all the other formats.
         switch (tpfTexFormat)
         {
             case 105:
@@ -217,6 +218,7 @@ public class TexturePool
             case 5:
             case 100:
             case 102:
+            case 104:
             case 106:
             case 107:
             case 110:
