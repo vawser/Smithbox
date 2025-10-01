@@ -817,10 +817,10 @@ namespace SoulsFormats
                 public uint[] EntityGroupIDs { get; set; } = new uint[8];
                 public short Unk3C { get; set; } = -1;
                 public short Unk3E { get; set; } = 0;
-                private int RandomAppearParamID { get; set; } = 0;
-                private int Variation { get; set; } = -1;
+                public int RandomAppearParamID { get; set; } = 0;
+                public int Variation { get; set; } = -1;
                 private int Unk48 { get; set; } // Hidden
-                private int Unk4C { get; set; }
+                public int Unk4C { get; set; }
 
             }
 
@@ -1528,7 +1528,7 @@ namespace SoulsFormats
                 public int NpcParamId { get; set; } = 0;
                 public int TalkID { get; set; } = 0;
                 private byte Unk14 { get; set; } = 0; // Hidden
-                private byte Unk15 { get; set; } = 0; // Boolean
+                public byte Unk15 { get; set; } = 0; // Boolean
                 public short PlatoonId { get; set; } = 0;
                 public int CharaInitParamId { get; set; } = -1;
                 private int HitPartIndex { get; set; } = -1;
