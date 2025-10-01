@@ -35,6 +35,12 @@ public class TextData
             .Where(e => e.Extension == "msgbnd")
             .ToList();
 
+
+        if (Project.ProjectType == ProjectType.ER)
+        {
+            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
+        }
+
         var fmgDictionary = new FileDictionary();
         fmgDictionary.Entries = new List<FileDictionaryEntry>();
 
