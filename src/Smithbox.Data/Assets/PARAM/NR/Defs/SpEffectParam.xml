@@ -397,7 +397,7 @@
     
     <Field Def="u16 weakPointValue"/>
     <Field Def="u8 runeDiscountValue"/>
-    <Field Def="s8 unknown_234c"/>
+    <Field Def="s8 modifyPlayerLevel"/>
     
     <Field Def="f32 ultimateArtDuration"/>
     <Field Def="f32 characterSkillAttackRate"/>
