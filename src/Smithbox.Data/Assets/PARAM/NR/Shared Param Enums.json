@@ -735,7 +735,8 @@
 				{ "ID": "600", "Name": "Apply Concealment", "Description": "" },
                 { "ID": "601", "Name": "Restage", "Description": "" },
 				{ "ID": "603", "Name": "Spectral Hawk?", "Description": "" },
-				
+				{ "ID": "604", "Name": "Infinite Skill Usage", "Description": "" },
+				{ "ID": "605", "Name": "Infinite Ultimate Art Usage", "Description": "" },
 				{ "ID": "606", "Name": "Deflecting", "Description": "" },
 				{ "ID": "607", "Name": "Sixth Sense", "Description": "" },
 				{ "ID": "608", "Name": "Soulblood Song", "Description": "" },
@@ -745,6 +746,8 @@
 				{ "ID": "620", "Name": "Near Death", "Description": "" },
 				{ "ID": "625", "Name": "Flask of Crimson Tears", "Description": "" },
 				{ "ID": "627", "Name": "Disable Near Death Timer", "Description": "" },
+
+				{ "ID": "630", "Name": "Infinite Consumable Usage", "Description": "" },
                 
                 { "ID": "1000", "Name": "SkipSpCategoryCheck1", "Description": "" },
                 { "ID": "1001", "Name": "SkipSpCategoryCheck2", "Description": "" },
