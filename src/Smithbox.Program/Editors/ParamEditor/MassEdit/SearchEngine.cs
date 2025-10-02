@@ -398,7 +398,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return noContext(row => row.Name != "" || row.Name == null);
             }));
         filterList.Add("selected", newCmd(new string[0],
-            "Selects rows are already selected", (args, lenient) =>
+            "Selects rows that are already manually selected", (args, lenient) =>
             {
                 var selectedRows = Project.ParamEditor._activeView.Selection.GetSelectedRows();
 
