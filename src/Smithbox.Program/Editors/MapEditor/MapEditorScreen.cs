@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext.Collections.Generic;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -115,6 +116,8 @@ public class MapEditorScreen : EditorScreen
         // Core Views
         MapListView = new MapListView(this, Project);
         MapPropertyView = new MapPropertyView(this);
+
+        // Popups
         MapPopupSelectAll = new MapPopupSelectAll(this, Project);
         MapPopupGridPlacement = new MapPopupGridPlacement(this, Project);
 
@@ -699,32 +702,32 @@ public class MapEditorScreen : EditorScreen
             ///--------------------
             if (ImGui.BeginMenu("Toggle Editor Visibility"))
             {
-                if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.MAP_FlipSelectionVisibility.HintText))
+                if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.Map_Visibility_FlipSelected.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
                 }
 
-                if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_EnableSelectionVisibility.HintText))
+                if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_Visibility_EnableSelected.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
                 }
 
-                if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_DisableSelectionVisibility.HintText))
+                if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_Visibility_DisableSelected.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
                 }
 
-                if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_FlipAllVisibility.HintText))
+                if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_Visibility_FlipAll.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
                 }
 
-                if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_EnableAllVisibility.HintText))
+                if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_Visibility_EnableAll.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
                 }
 
-                if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.MAP_DisableAllVisibility.HintText))
+                if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.Map_Visibility_DisableAll.HintText))
                 {
                     ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
                 }

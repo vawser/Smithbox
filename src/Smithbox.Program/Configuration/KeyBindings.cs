@@ -344,35 +344,30 @@ public class KeyBindings
             true,
             true);
 
-        public KeyBind MAP_FlipSelectionVisibility = new(
+        public KeyBind Map_Visibility_FlipSelected = new(
             "Flip Editor Visibility of Selection", 
             "Flip the editor visibility state for the current selection.", 
             Key.H, 
             true);
 
-        public KeyBind MAP_FlipAllVisibility = new(
+        public KeyBind MAP_Visibility_FlipAll = new(
             "Flip Editor Visibility of All",
             "Flip the editor visibility state for all map objects.",
-            Key.B, 
-            true,
-            true);
+            Key.Unknown);
 
-        public KeyBind MAP_EnableSelectionVisibility = new(
+        public KeyBind MAP_Visibility_EnableSelected = new(
             "Enable Editor Visibility of Selection",
             "Enable the editor visibility for the current selection.",
             Key.H,
             true, 
             true);
 
-        public KeyBind MAP_EnableAllVisibility = new(
+        public KeyBind MAP_Visibility_EnableAll = new(
             "Enable Editor Visibility of All",
             "Enable the editor visibility for all map objects.",
-            Key.B, 
-            true, 
-            true,
-            true);
+            Key.Unknown);
 
-        public KeyBind MAP_DisableSelectionVisibility = new(
+        public KeyBind MAP_Visibility_DisableSelected = new(
             "Disable Editor Visibility of Selection",
             "Disable the editor visibility for the current selection.",
             Key.H, 
@@ -380,13 +375,10 @@ public class KeyBindings
             true, 
             true);
 
-        public KeyBind MAP_DisableAllVisibility = new(
+        public KeyBind Map_Visibility_DisableAll = new(
             "Disable Editor Visibility of All",
             "Disable the editor visibility for all map objects.",
-            Key.B, 
-            true, 
-            true, 
-            true);
+            Key.Unknown);
 
         public KeyBind MAP_MakeDummyObject = new(
             "Make Selection into Dummy Object", 
@@ -477,10 +469,25 @@ public class KeyBindings
             false, 
             true);
 
-        public KeyBind MAP_AdjustToGrid = new(
-            "Adjust Selection to Grid",
-            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection.",
+        public KeyBind MAP_AdjustToGrid_SelectedType = new(
+            "Adjust Selection to Grid (Selected Type)",
+            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection. Uses the currently selected target grid.",
             Key.B);
+
+        public KeyBind MAP_AdjustToGrid_Primary = new(
+            "Adjust Selection to Grid (Primary)",
+            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection. Uses the primary grid.",
+            Key.Unknown);
+
+        public KeyBind MAP_AdjustToGrid_Secondary = new(
+            "Adjust Selection to Grid (Secondary)",
+            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection. Uses the secondary grid.",
+            Key.Unknown);
+
+        public KeyBind MAP_AdjustToGrid_Tertiary = new(
+            "Adjust Selection to Grid (Tertiary)",
+            "Adjust the current selection position and/or rotation to the match current closest grid edge intersection. Uses the tertiary grid.",
+            Key.Unknown);
 
         public KeyBind MAP_ConfigureGridPlacement = new(
             "Configure Grid Placement",

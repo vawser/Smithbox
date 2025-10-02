@@ -176,29 +176,29 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_ResetRotation,
                 KeyBindings.Default.MAP_ResetRotation);
 
-            KeyBindings.Current.MAP_FlipSelectionVisibility = InputTracker.KeybindLine(9,
-                KeyBindings.Current.MAP_FlipSelectionVisibility,
-                KeyBindings.Default.MAP_FlipSelectionVisibility);
+            KeyBindings.Current.Map_Visibility_FlipSelected = InputTracker.KeybindLine(9,
+                KeyBindings.Current.Map_Visibility_FlipSelected,
+                KeyBindings.Default.Map_Visibility_FlipSelected);
 
-            KeyBindings.Current.MAP_FlipAllVisibility = InputTracker.KeybindLine(10,
-                KeyBindings.Current.MAP_FlipAllVisibility,
-                KeyBindings.Default.MAP_FlipAllVisibility);
+            KeyBindings.Current.MAP_Visibility_FlipAll = InputTracker.KeybindLine(10,
+                KeyBindings.Current.MAP_Visibility_FlipAll,
+                KeyBindings.Default.MAP_Visibility_FlipAll);
 
-            KeyBindings.Current.MAP_EnableSelectionVisibility = InputTracker.KeybindLine(11,
-                KeyBindings.Current.MAP_EnableSelectionVisibility,
-                KeyBindings.Default.MAP_EnableSelectionVisibility);
+            KeyBindings.Current.MAP_Visibility_EnableSelected = InputTracker.KeybindLine(11,
+                KeyBindings.Current.MAP_Visibility_EnableSelected,
+                KeyBindings.Default.MAP_Visibility_EnableSelected);
 
-            KeyBindings.Current.MAP_EnableAllVisibility = InputTracker.KeybindLine(12,
-                KeyBindings.Current.MAP_EnableAllVisibility,
-                KeyBindings.Default.MAP_EnableAllVisibility);
+            KeyBindings.Current.MAP_Visibility_EnableAll = InputTracker.KeybindLine(12,
+                KeyBindings.Current.MAP_Visibility_EnableAll,
+                KeyBindings.Default.MAP_Visibility_EnableAll);
 
-            KeyBindings.Current.MAP_DisableSelectionVisibility = InputTracker.KeybindLine(13,
-                KeyBindings.Current.MAP_DisableSelectionVisibility,
-                KeyBindings.Default.MAP_DisableSelectionVisibility);
+            KeyBindings.Current.MAP_Visibility_DisableSelected = InputTracker.KeybindLine(13,
+                KeyBindings.Current.MAP_Visibility_DisableSelected,
+                KeyBindings.Default.MAP_Visibility_DisableSelected);
 
-            KeyBindings.Current.MAP_DisableAllVisibility = InputTracker.KeybindLine(14,
-                KeyBindings.Current.MAP_DisableAllVisibility,
-                KeyBindings.Default.MAP_DisableAllVisibility);
+            KeyBindings.Current.Map_Visibility_DisableAll = InputTracker.KeybindLine(14,
+                KeyBindings.Current.Map_Visibility_DisableAll,
+                KeyBindings.Default.Map_Visibility_DisableAll);
 
             KeyBindings.Current.MAP_MakeDummyObject = InputTracker.KeybindLine(15,
                 KeyBindings.Current.MAP_MakeDummyObject,
@@ -247,13 +247,26 @@ public class MapEditorKeybindTab
 
         if (ImGui.CollapsingHeader("Grid", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.MAP_AdjustToGrid = InputTracker.KeybindLine(110,
-                KeyBindings.Current.MAP_AdjustToGrid,
-                KeyBindings.Default.MAP_AdjustToGrid);
-
-            KeyBindings.Current.MAP_ConfigureGridPlacement = InputTracker.KeybindLine(111,
+            KeyBindings.Current.MAP_ConfigureGridPlacement = InputTracker.KeybindLine(110,
                 KeyBindings.Current.MAP_ConfigureGridPlacement,
                 KeyBindings.Default.MAP_ConfigureGridPlacement);
+
+            KeyBindings.Current.MAP_AdjustToGrid_SelectedType = InputTracker.KeybindLine(111,
+                KeyBindings.Current.MAP_AdjustToGrid_SelectedType,
+                KeyBindings.Default.MAP_AdjustToGrid_SelectedType);
+
+            KeyBindings.Current.MAP_AdjustToGrid_Primary = InputTracker.KeybindLine(112,
+                KeyBindings.Current.MAP_AdjustToGrid_Primary,
+                KeyBindings.Default.MAP_AdjustToGrid_Primary);
+
+            KeyBindings.Current.MAP_AdjustToGrid_Secondary = InputTracker.KeybindLine(113,
+                KeyBindings.Current.MAP_AdjustToGrid_Secondary,
+                KeyBindings.Default.MAP_AdjustToGrid_Secondary);
+
+            KeyBindings.Current.MAP_AdjustToGrid_Tertiary = InputTracker.KeybindLine(114,
+                KeyBindings.Current.MAP_AdjustToGrid_Tertiary,
+                KeyBindings.Default.MAP_AdjustToGrid_Tertiary);
+
         }
 
         if (ImGui.CollapsingHeader("Rotation Increment", ImGuiTreeNodeFlags.DefaultOpen))

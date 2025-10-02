@@ -12,6 +12,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static MsbUtils;
+using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
@@ -639,6 +640,16 @@ public class CFG
     public float MapEditor_PrimaryGrid_Rotation_Y = 0;
     public float MapEditor_PrimaryGrid_Rotation_Z = 0;
 
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_PrimaryGrid_Configure_ApplyRotation_Z = true;
+
+    public RootAxis MapEditor_PrimaryGrid_Configure_RootAxis = RootAxis.Y;
+
     // Map Editor: Secondary Grid
     public bool MapEditor_DisplaySecondaryGrid = false;
     public bool MapEditor_RegenerateSecondaryGrid = false;
@@ -654,6 +665,16 @@ public class CFG
     public float MapEditor_SecondaryGrid_Rotation_Y = 0;
     public float MapEditor_SecondaryGrid_Rotation_Z = 0;
 
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_SecondaryGrid_Configure_ApplyRotation_Z = true;
+
+    public RootAxis MapEditor_SecondaryGrid_Configure_RootAxis = RootAxis.X;
+
     // Map Editor: Tertiary Grid
     public bool MapEditor_DisplayTertiaryGrid = false;
     public bool MapEditor_RegenerateTertiaryGrid = false;
@@ -668,6 +689,16 @@ public class CFG
     public float MapEditor_TertiaryGrid_Rotation_X = 0;
     public float MapEditor_TertiaryGrid_Rotation_Y = 0;
     public float MapEditor_TertiaryGrid_Rotation_Z = 90;
+
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_X = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Y = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyPosition_Z = true;
+
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_X = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Y = true;
+    public bool MapEditor_TertiaryGrid_Configure_ApplyRotation_Z = true;
+
+    public RootAxis MapEditor_TertiaryGrid_Configure_RootAxis = RootAxis.Z;
 
     // Model Editor: Primary Grid
     public bool ModelEditor_DisplayPrimaryGrid = false;

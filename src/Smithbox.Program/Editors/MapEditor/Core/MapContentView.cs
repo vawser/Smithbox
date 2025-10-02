@@ -20,6 +20,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using static MsbUtils;
+using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -474,11 +475,28 @@ public class MapContentView
 
             ImGui.Separator();
 
-            if (ImGui.Selectable("Adjust to Grid"))
+            if(ImGui.BeginMenu("Adjust to Grid"))
             {
-                Editor.MapPopupGridPlacement.ApplyGridTransform();
+                if (ImGui.Selectable("Primary"))
+                {
+                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Primary);
+                }
+                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Primary.HintText}");
+
+                if (ImGui.Selectable("Secondary"))
+                {
+                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Secondary);
+                }
+                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Secondary.HintText}");
+
+                if (ImGui.Selectable("Tertiary"))
+                {
+                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Tertiary);
+                }
+                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Tertiary.HintText}");
+
+                ImGui.EndMenu();
             }
-            UIHelper.Tooltip($"Adjust the current selection to the current grid placement configuration.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid.HintText}");
 
             if (ImGui.Selectable("Configure Grid Placement"))
             {

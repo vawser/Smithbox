@@ -8,6 +8,7 @@ using StudioCore.Scene.Enums;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
+using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
 using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Framework;
@@ -66,9 +67,21 @@ public class MapShortcuts
             }
 
             // Adjust to Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_SelectedType))
             {
-                Editor.MapPopupGridPlacement.ApplyGridTransform();
+                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(Editor.MapPopupGridPlacement.CurrentTargetGrid);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Primary))
+            {
+                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Primary);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Secondary))
+            {
+                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Secondary);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Tertiary))
+            {
+                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Tertiary);
             }
 
             // Select All by Configuration
@@ -215,27 +228,27 @@ public class MapShortcuts
             }
 
             // Toggle Editor Visibility
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FlipSelectionVisibility) && Selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_FlipSelected) && Selection.IsSelection())
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableSelectionVisibility) && Selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableSelected) && Selection.IsSelection())
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableSelectionVisibility) && Selection.IsSelection())
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_DisableSelected) && Selection.IsSelection())
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FlipAllVisibility))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_FlipAll))
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableAllVisibility))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableAll))
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
             }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableAllVisibility))
+            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_DisableAll))
             {
                 ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
             }

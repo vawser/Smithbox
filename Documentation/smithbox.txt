@@ -25,4 +25,3 @@
 
 # TODO NOW
 - Map Editor: allow for arrow scrolling to load asset when in Asset Browser
-- Map Editor: check Adjust to Grid works properly
