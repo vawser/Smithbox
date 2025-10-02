@@ -392,6 +392,18 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return row => cache.Contains(row.ID);
             }
             )));
+        filterList.Add("named", newCmd(new string[0],
+            "Selects rows whose name isn't blank or null", (args, lenient) =>
+            {
+                return noContext(row => row.Name != "" || row.Name == null);
+            }));
+        filterList.Add("selected", newCmd(new string[0],
+            "Selects rows are already selected", (args, lenient) =>
+            {
+                var selectedRows = Project.ParamEditor._activeView.Selection.GetSelectedRows();
+
+                return noContext(row => selectedRows.Contains(row));
+            }));
 
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
