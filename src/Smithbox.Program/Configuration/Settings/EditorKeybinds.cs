@@ -295,13 +295,13 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_NegativePivotSelectionYAxis,
                 KeyBindings.Default.MAP_NegativePivotSelectionYAxis);
 
-            KeyBindings.Current.MAP_SwitchDegreeIncrementType = InputTracker.KeybindLine(86,
-                KeyBindings.Current.MAP_SwitchDegreeIncrementType,
-                KeyBindings.Default.MAP_SwitchDegreeIncrementType);
+            KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType = InputTracker.KeybindLine(86,
+                KeyBindings.Current.MAP_SwitchRotationDegreeIncrementType,
+                KeyBindings.Default.MAP_SwitchRotationDegreeIncrementType);
 
-            KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward = InputTracker.KeybindLine(87,
-                KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward,
-                KeyBindings.Default.MAP_SwitchDegreeIncrementTypeBackward);
+            KeyBindings.Current.MAP_SwitchRotationDegreeIncrementTypeBackward = InputTracker.KeybindLine(87,
+                KeyBindings.Current.MAP_SwitchRotationDegreeIncrementTypeBackward,
+                KeyBindings.Default.MAP_SwitchRotationDegreeIncrementTypeBackward);
 
         }
 
@@ -331,13 +331,13 @@ public class MapEditorKeybindTab
                 KeyBindings.Current.MAP_KeyboardMove_NegativeZ,
                 KeyBindings.Default.MAP_KeyboardMove_NegativeZ);
 
-            KeyBindings.Current.MAP_KeyboardMove_CycleIncrement = InputTracker.KeybindLine(76,
-                KeyBindings.Current.MAP_KeyboardMove_CycleIncrement,
-                KeyBindings.Default.MAP_KeyboardMove_CycleIncrement);
+            KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrement = InputTracker.KeybindLine(76,
+                KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrement,
+                KeyBindings.Default.MAP_KeyboardMove_CycleMovementIncrement);
 
-            KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward = InputTracker.KeybindLine(77,
-                KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward,
-                KeyBindings.Default.MAP_KeyboardMove_CycleIncrementBackward);
+            KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrementBackward = InputTracker.KeybindLine(77,
+                KeyBindings.Current.MAP_KeyboardMove_CycleMovementIncrementBackward,
+                KeyBindings.Default.MAP_KeyboardMove_CycleMovementIncrementBackward);
         }
 
         if (ImGui.CollapsingHeader("Order", ImGuiTreeNodeFlags.DefaultOpen))

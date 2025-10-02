@@ -591,6 +591,11 @@ public class CloneMapObjectsAction : ViewportAction
                     Clonables[i].Parent.AddChild(newobj, idx + 1);
                 }
 
+                if (TargetMap != null)
+                {
+                    TaskLogs.AddLog($"Duplicated {newobj.Name} to {TargetMap.Name}");
+                }
+
                 if (CFG.Current.Toolbar_Duplicate_Increment_Entity_ID)
                 {
                     ViewportActionCommon.SetUniqueEntityID(Editor, newobj, m);
@@ -1771,7 +1776,7 @@ public class MapActionGroupCompoundAction : ViewportAction
             PostExecutionAction.Invoke(true);
         }
 
-        Editor.MassEditHandler.EditLog.ClearLogSource();
+        Editor.MassEditTool.ClearLogSource();
 
         return evt;
     }
@@ -2145,7 +2150,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     {
         if (CFG.Current.Replicator_Apply_Scramble_Configuration)
         {
-            Transform scrambledTransform = Editor.ActionHandler.GetScrambledTransform(newobj);
+            Transform scrambledTransform = Editor.ScrambleAction.GetScrambledTransform(newobj);
 
             if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {

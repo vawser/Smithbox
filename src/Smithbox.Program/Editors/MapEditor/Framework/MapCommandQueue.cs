@@ -134,7 +134,7 @@ public class MapCommandQueue
                 Editor.Universe.Selection.ClearSelection(Editor);
                 Editor.Universe.Selection.AddSelection(Editor, target);
                 Editor.Universe.Selection.GotoTreeTarget = target;
-                Editor.ActionHandler.ApplyFrameInViewport();
+                Editor.FrameAction.ApplyViewportFrame();
             }
         }
     }

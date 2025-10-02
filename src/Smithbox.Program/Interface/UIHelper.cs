@@ -217,7 +217,10 @@ public static class UIHelper
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(textColor, $"{title}");
 
-            UIHelper.Tooltip(tooltip);
+            if (tooltip != "")
+            {
+                UIHelper.Tooltip(tooltip);
+            }
 
             ImGui.EndTable();
         }

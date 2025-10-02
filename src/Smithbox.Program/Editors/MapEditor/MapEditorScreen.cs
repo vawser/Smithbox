@@ -1,5 +1,4 @@
-﻿using DotNext.Collections.Generic;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -7,13 +6,10 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.MassEdit;
-using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
 using StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
@@ -62,24 +58,12 @@ public class MapEditorScreen : EditorScreen
     public MapCommandQueue CommandQueue;
     public MapShortcuts Shortcuts;
 
-    // Core Views
+    public HavokCollisionManager CollisionManager;
+
+    // Core
     public MapViewportView MapViewportView;
     public MapListView MapListView;
     public MapPropertyView MapPropertyView;
-
-    // Optional Views
-    public ModelSelectorView ModelSelectorView;
-    public DisplayGroupView DisplayGroupView;
-    public SelectionGroupView SelectionGroupView;
-    public PrefabView PrefabView;
-    public NavmeshBuilderView NavmeshBuilderView;
-    public MapQueryView MapQueryView;
-    public WorldMapView WorldMapView;
-    public LocalSearchView LocalSearchView;
-    public EntityIdentifierOverview EntityIdentifierOverview;
-    public MapGridConfiguration GridConfiguration;
-    public MapPopupSelectAll MapPopupSelectAll;
-    public MapPopupGridPlacement MapPopupGridPlacement;
 
     // Menubar
     public BasicFilters BasicFilters;
@@ -89,16 +73,50 @@ public class MapEditorScreen : EditorScreen
     // Tools
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
-    public MassEditHandler MassEditHandler;
 
-    public RotationIncrement RotationIncrement;
-    public KeyboardMovement KeyboardMovement;
-    public SimpleTreasureMaker TreasureMaker;
-    public QuickView QuickView;
+    // Actions
+    public CreateAction CreateAction;
+    public DuplicateAction DuplicateAction;
+    public DeleteAction DeleteAction;
+    public DuplicateToMapAction DuplicateToMapAction;
+    public MoveToMapAction MoveToMapAction;
+    public ReorderAction ReorderAction;
+    public GotoAction GotoAction;
+    public FrameAction FrameAction;
+    public PullToCameraAction PullToCameraAction;
+    public RotateAction RotateAction;
+    public ScrambleAction ScrambleAction;
+    public ReplicateAction ReplicateAction;
+    public RenderTypeAction RenderTypeAction;
+    public SelectAllAction SelectAllAction;
+    public EditorVisibilityAction EditorVisibilityAction;
+    public GameVisibilityAction GameVisibilityAction;
+    public SelectionOutlineAction SelectionOutlineAction;
+    public AdjustToGridAction AdjustToGridAction;
+    public EntityInfoAction EntityInfoAction;
+    public EntityIdCheckAction EntityIdCheckAction;
+    public EntityRenameAction EntityRenameAction;
 
-    public HavokCollisionManager CollisionManager;
+    // Tools
+    public MassEditTool MassEditTool;
+    public RotationCycleConfigTool RotationCycleConfigTool;
+    public MovementCycleConfigTool MovementCycleConfigTool;
+    public TreasureMakerTool TreasureMakerTool;
+    public ModelSelectorTool ModelSelectorTool;
+    public DisplayGroupTool DisplayGroupTool;
+    public SelectionGroupTool SelectionGroupTool;
+    public PrefabTool PrefabTool;
+    public NavmeshBuilderTool NavmeshBuilderTool;
+    public LocalSearchTool LocalSearchView;
+    public GlobalSearchTool GlobalSearchTool;
+    public WorldMapTool WorldMapTool;
+    public EntityIdentifierTool EntityIdentifierTool;
+    public MapGridTool MapGridTool;
+    public WorldMapLayoutTool WorldMapLayoutTool;
 
-    // Viewport
+    // Special Tools
+    public AutomaticPreviewTool AutomaticPreviewTool;
+
     public MapEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -114,52 +132,69 @@ public class MapEditorScreen : EditorScreen
         Selection = new(this, project);
 
         // Core Views
-        MapListView = new MapListView(this, Project);
+        MapListView = new MapListView(this, project);
         MapPropertyView = new MapPropertyView(this);
 
-        // Popups
-        MapPopupSelectAll = new MapPopupSelectAll(this, Project);
-        MapPopupGridPlacement = new MapPopupGridPlacement(this, Project);
-
         // Optional Views
-        DisplayGroupView = new DisplayGroupView(this);
-        LocalSearchView = new LocalSearchView(this);
-
-        ModelSelectorView = new ModelSelectorView(this);
-        PrefabView = new PrefabView(this);
-        SelectionGroupView = new SelectionGroupView(this);
-        NavmeshBuilderView = new NavmeshBuilderView(this);
-        EntityIdentifierOverview = new EntityIdentifierOverview(this);
-        GridConfiguration = new MapGridConfiguration(this);
-
         BasicFilters = new BasicFilters(this);
         RegionFilters = new RegionFilters(this);
         MapContentFilter = new MapContentFilters(this);
 
         // Framework
-        ActionHandler = new MapActionHandler(this, Project);
-        MapQueryView = new MapQueryView(this);
-        WorldMapView = new WorldMapView(this, Project);
+        ActionHandler = new MapActionHandler(this, project);
         CommandQueue = new MapCommandQueue(this);
         Shortcuts = new MapShortcuts(this);
+
+        CollisionManager = new HavokCollisionManager(this, project);
 
         // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
-        MassEditHandler = new MassEditHandler(this);
 
-        RotationIncrement = new RotationIncrement(this, project);
-        KeyboardMovement = new KeyboardMovement(this, project);
-        TreasureMaker = new SimpleTreasureMaker(this, project);
-        QuickView = new QuickView(this, project);
+        // Actions
+        CreateAction = new CreateAction(this, project);
+        DuplicateAction = new DuplicateAction(this, project);
+        DeleteAction = new DeleteAction(this, project);
+        DuplicateToMapAction = new DuplicateToMapAction(this, project);
+        MoveToMapAction = new MoveToMapAction(this, project);
+        ReorderAction = new ReorderAction(this, project);
+        GotoAction = new GotoAction(this, project);
+        FrameAction = new FrameAction(this, project);
+        PullToCameraAction = new PullToCameraAction(this, project);
+        RotateAction = new RotateAction(this, project);
+        ScrambleAction = new ScrambleAction(this, project);
+        ReplicateAction = new ReplicateAction(this, project);
+        RenderTypeAction = new RenderTypeAction(this, project);
+        SelectAllAction = new SelectAllAction(this, project);
+        EditorVisibilityAction = new EditorVisibilityAction(this, project);
+        GameVisibilityAction = new GameVisibilityAction(this, project);
+        SelectionOutlineAction = new SelectionOutlineAction(this, project);
+        AdjustToGridAction = new AdjustToGridAction(this, project);
+        EntityInfoAction = new EntityInfoAction(this, project);
+        EntityIdCheckAction = new EntityIdCheckAction(this, project);
+        EntityRenameAction = new EntityRenameAction(this, project);
 
-        CollisionManager = new HavokCollisionManager(this, project);
+        // Tools
+        MassEditTool = new MassEditTool(this, project);
+        RotationCycleConfigTool = new RotationCycleConfigTool(this, project);
+        MovementCycleConfigTool = new MovementCycleConfigTool(this, project);
+        TreasureMakerTool = new TreasureMakerTool(this, project);
+        AutomaticPreviewTool = new AutomaticPreviewTool(this, project);
+        DisplayGroupTool = new DisplayGroupTool(this, project);
+        GlobalSearchTool = new GlobalSearchTool(this, project);
+        LocalSearchView = new LocalSearchTool(this, project);
+        ModelSelectorTool = new ModelSelectorTool(this, project);
+        PrefabTool = new PrefabTool(this, project);
+        SelectionGroupTool = new SelectionGroupTool(this, project);
+        NavmeshBuilderTool = new NavmeshBuilderTool(this, project);
+        EntityIdentifierTool = new EntityIdentifierTool(this, project);
+        MapGridTool = new MapGridTool(this, project);
+        WorldMapTool = new WorldMapTool(this, project);
+        WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
-
-        ActionHandler.PopulateClassNames();
     }
 
     private bool PauseUpdate
@@ -220,7 +255,11 @@ public class MapEditorScreen : EditorScreen
         Shortcuts.Monitor();
         ToolSubMenu.Shortcuts();
         CommandQueue.Parse(initcmd);
-        ActionHandler.HandleDuplicateToMapMenuPopup();
+
+        DuplicateToMapAction.OnGui();
+        MoveToMapAction.OnGui();
+        SelectAllAction.OnGui();
+        AdjustToGridAction.OnGui();
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
@@ -240,8 +279,6 @@ public class MapEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        WorldMapView.DisplayWorldMap();
-
         MapViewportView.OnGui();
         MapListView.OnGui();
 
@@ -258,27 +295,15 @@ public class MapEditorScreen : EditorScreen
 
         MapPropertyView.OnGui(ViewportSelection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
 
+        SelectionGroupTool.OnGui();
         LocalSearchView.OnGui();
-
-        // Not usable yet
-        if (FeatureFlags.EnableNavmeshBuilder)
-        {
-            NavmeshBuilderView.OnGui();
-        }
-
-        if (EntityIdentifierOverview != null)
-        {
-            EntityIdentifierOverview.OnGui();
-        }
+        WorldMapTool.DisplayWorldMap();
 
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
             ResourceListWindow.DisplayWindow("mapResourceList");
         }
-
-        DisplayGroupView.OnGui();
-        SelectionGroupView.OnGui();
 
         if (CFG.Current.Interface_MapEditor_ToolWindow)
         {
@@ -288,9 +313,6 @@ public class MapEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
 
         FocusManager.OnFocus();
-
-        MapPopupSelectAll.Display();
-        MapPopupGridPlacement.Display();
     }
 
     public void OnDefocus()
@@ -379,391 +401,33 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.Separator();
 
-            ///--------------------
-            // Duplicate
-            ///--------------------
-            if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
-            {
-                ActionHandler.ApplyDuplicate();
-            }
-            UIHelper.Tooltip($"Duplicate the currently selected map objects.");
-
-            ///--------------------
-            // Delete
-            ///--------------------
-            if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
-            {
-                ActionHandler.ApplyDelete();
-            }
-            UIHelper.Tooltip($"Delete the currently selected map objects.");
-
-            ///--------------------
-            // Scramble
-            ///--------------------
-            if (ImGui.MenuItem("Scramble", KeyBindings.Current.MAP_ScrambleSelection.HintText))
-            {
-                ActionHandler.ApplyScramble();
-            }
-            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.");
-
-            ///--------------------
-            // Replicate
-            ///--------------------
-            if (ImGui.MenuItem("Replicate", KeyBindings.Current.MAP_ReplicateSelection.HintText))
-            {
-                ActionHandler.ApplyReplicate();
-            }
-            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.");
+            DuplicateAction.OnMenu();
+            DeleteAction.OnMenu();
+            RotateAction.OnMenu();
+            ScrambleAction.OnMenu();
+            ReplicateAction.OnMenu();
+            RenderTypeAction.OnMenu();
 
             ImGui.Separator();
 
-            ///--------------------
-            // Duplicate to Map
-            ///--------------------
-            if (ImGui.BeginMenu("Duplicate Selected to Map"))
-            {
-                ActionHandler.DisplayDuplicateToMapMenu(MapDuplicateToMapType.Menubar);
-
-                ImGui.EndMenu();
-            }
-            UIHelper.Tooltip($"Duplicate the selected map objects into another map.");
-
-            ///--------------------
-            // Move to Map
-            ///--------------------
-            if (ImGui.BeginMenu("Move Selected to Map"))
-            {
-                ActionHandler.DisplayMoveToMapMenu(MapDuplicateToMapType.Menubar);
-
-                ImGui.EndMenu();
-            }
-            UIHelper.Tooltip($"Move the selected map objects into another map.");
-
-            ///--------------------
-            // Create
-            ///--------------------
-            if (ImGui.BeginMenu("Create New Object"))
-            {
-                if (ImGui.BeginCombo("##Targeted Map", ActionHandler._targetMap.Item1))
-                {
-                    foreach (var entry in Project.MapData.MapFiles.Entries)
-                    {
-                        var currentContainer = GetMapContainerFromMapID(entry.Filename);
-
-                        if (currentContainer != null)
-                        {
-                            if (ImGui.Selectable(entry.Filename))
-                            {
-                                ActionHandler._targetMap = (entry.Filename, currentContainer);
-                                break;
-                            }
-                        }
-                    }
-
-                    ImGui.EndCombo();
-                }
-
-                if (ActionHandler._targetMap != (null, null))
-                {
-                    var map = (MapContainer)ActionHandler._targetMap.Item2;
-
-                    if (ImGui.BeginMenu("Parts"))
-                    {
-                        foreach ((string, Type) p in ActionHandler._partsClasses)
-                        {
-                            if (ImGui.MenuItem($"{p.Item1}"))
-                            {
-                                CFG.Current.Toolbar_Create_Part = true;
-                                CFG.Current.Toolbar_Create_Region = false;
-                                CFG.Current.Toolbar_Create_Event = false;
-
-                                ActionHandler._createPartSelectedType = p.Item2;
-                                ActionHandler.ApplyObjectCreation();
-                            }
-                        }
-
-                        ImGui.EndMenu();
-                    }
-                    UIHelper.Tooltip("Create a Part object.");
-
-                    if (ActionHandler._regionClasses.Count == 1)
-                    {
-                        if (ImGui.MenuItem("Region"))
-                        {
-                            CFG.Current.Toolbar_Create_Part = false;
-                            CFG.Current.Toolbar_Create_Region = true;
-                            CFG.Current.Toolbar_Create_Event = false;
-
-                            ActionHandler._createRegionSelectedType = ActionHandler._regionClasses[0].Item2;
-                            ActionHandler.ApplyObjectCreation();
-                        }
-                    }
-                    else
-                    {
-                        if (ImGui.BeginMenu("Regions"))
-                        {
-                            foreach ((string, Type) p in ActionHandler._regionClasses)
-                            {
-                                if (ImGui.MenuItem($"{p.Item1}"))
-                                {
-                                    CFG.Current.Toolbar_Create_Part = false;
-                                    CFG.Current.Toolbar_Create_Region = true;
-                                    CFG.Current.Toolbar_Create_Event = false;
-
-                                    ActionHandler._createRegionSelectedType = p.Item2;
-                                    ActionHandler.ApplyObjectCreation();
-                                }
-                            }
-
-                            ImGui.EndMenu();
-                        }
-                        UIHelper.Tooltip("Create a Region object.");
-                    }
-
-                    if (ImGui.BeginMenu("Events"))
-                    {
-                        foreach ((string, Type) p in ActionHandler._eventClasses)
-                        {
-                            if (ImGui.MenuItem($"{p.Item1}"))
-                            {
-                                CFG.Current.Toolbar_Create_Part = false;
-                                CFG.Current.Toolbar_Create_Region = false;
-                                CFG.Current.Toolbar_Create_Event = true;
-
-                                ActionHandler._createEventSelectedType = p.Item2;
-                                ActionHandler.ApplyObjectCreation();
-                            }
-                        }
-
-                        ImGui.EndMenu();
-                    }
-                    UIHelper.Tooltip("Create an Event object.");
-
-                    if (ImGui.MenuItem("Light"))
-                    {
-                        CFG.Current.Toolbar_Create_Part = false;
-                        CFG.Current.Toolbar_Create_Region = false;
-                        CFG.Current.Toolbar_Create_Event = false;
-
-                        if (map.BTLParents.Any())
-                        {
-                            ActionHandler.ApplyObjectCreation();
-                        }
-                    }
-                    UIHelper.Tooltip("Create a BTL Light object.");
-                }
-
-                ImGui.EndMenu();
-            }
-            UIHelper.Tooltip($"Create a new map object.");
+            CreateAction.OnMenu();
+            DuplicateToMapAction.OnMenu();
+            MoveToMapAction.OnMenu();
 
             ImGui.Separator();
 
-            ///--------------------
-            // Frame in Viewport
-            ///--------------------
-            if (ImGui.MenuItem("Frame Selected in Viewport", KeyBindings.Current.MAP_FrameSelection.HintText))
-            {
-                ActionHandler.ApplyFrameInViewport();
-            }
-            UIHelper.Tooltip("Frames the current selection in the viewport.");
-
-            ///--------------------
-            // Move to Camera
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected to Camera", KeyBindings.Current.MAP_MoveToCamera.HintText))
-            {
-                ActionHandler.ApplyMoveToCamera();
-            }
-            UIHelper.Tooltip("Move the current selection to the camera position.");
-
-            ///--------------------
-            // Toggle Render Type
-            ///--------------------
-            if (ImGui.MenuItem("Toggle Render Type", KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText))
-            {
-                VisualizationHelper.ToggleRenderType(this, ViewportSelection);
-            }
-            UIHelper.Tooltip("Toggle the render type of the current selection.");
+            GotoAction.OnMenu();
+            FrameAction.OnMenu();   
+            PullToCameraAction.OnMenu();
 
             ImGui.Separator();
 
-            ///--------------------
-            // Rotate (X-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Positive Rotate Selected (X-axis)", KeyBindings.Current.MAP_RotateSelectionXAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
-            }
-
-            ///--------------------
-            // Negative Rotate (X-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Negative Rotate Selected (X-axis)", KeyBindings.Current.MAP_NegativeRotateSelectionXAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
-            }
-
-            ///--------------------
-            // Rotate (Y-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Positive Rotate Selected (Y-axis)", KeyBindings.Current.MAP_RotateSelectionYAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
-            }
-
-            ///--------------------
-            // Negative Rotate (Y-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Negative Rotate Selected (Y-axis)", KeyBindings.Current.MAP_NegativeRotateSelectionYAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
-            }
-
-            ///--------------------
-            // Rotate Pivot (Y-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Positive Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_PivotSelectionYAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
-            }
-
-            ///--------------------
-            // Negative Rotate Pivot (Y-axis)
-            ///--------------------
-            if (ImGui.MenuItem("Negative Rotate Selected with Pivot (Y-axis)", KeyBindings.Current.MAP_NegativePivotSelectionYAxis.HintText))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
-            }
-
-            ///--------------------
-            // Rotate Fixed Increment
-            ///--------------------
-            if (ImGui.MenuItem("Rotate Selected to Fixed Angle", KeyBindings.Current.MAP_RotateFixedAngle.HintText))
-            {
-                ActionHandler.SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
-            }
-
-            ///--------------------
-            // Reset Rotation
-            ///--------------------
-            if (ImGui.MenuItem("Reset Selected Rotation", KeyBindings.Current.MAP_ResetRotation.HintText))
-            {
-                ActionHandler.SetSelectionToFixedRotation(new Vector3(0, 0, 0));
-            }
+            ReorderAction.OnMenu();
 
             ImGui.Separator();
 
-            ///--------------------
-            // Go to in List
-            ///--------------------
-            if (ImGui.MenuItem("Go to in List", KeyBindings.Current.MAP_GoToInList.HintText))
-            {
-                ActionHandler.ApplyGoToInObjectList();
-            }
-
-            ///--------------------
-            // Order (Up)
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected Up in List", KeyBindings.Current.MAP_MoveObjectUp.HintText))
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
-            }
-
-            ///--------------------
-            // Order (Down)
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected Down in List", KeyBindings.Current.MAP_MoveObjectDown.HintText))
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
-            }
-
-            ///--------------------
-            // Order (Top)
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected to the List Top", KeyBindings.Current.MAP_MoveObjectTop.HintText))
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
-            }
-
-            ///--------------------
-            // Order (Bottom)
-            ///--------------------
-            if (ImGui.MenuItem("Move Selected to the List Bottom", KeyBindings.Current.MAP_MoveObjectBottom.HintText))
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
-            }
-
-            ImGui.Separator();
-
-            ///--------------------
-            // Toggle Editor Visibility
-            ///--------------------
-            if (ImGui.BeginMenu("Toggle Editor Visibility"))
-            {
-                if (ImGui.MenuItem("Flip Visibility for Selected", KeyBindings.Current.Map_Visibility_FlipSelected.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
-                }
-
-                if (ImGui.MenuItem("Enable Visibility for Selected", KeyBindings.Current.MAP_Visibility_EnableSelected.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
-                }
-
-                if (ImGui.MenuItem("Disable Visibility for Selected", KeyBindings.Current.MAP_Visibility_DisableSelected.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
-                }
-
-                if (ImGui.MenuItem("Flip Visibility for All", KeyBindings.Current.MAP_Visibility_FlipAll.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
-                }
-
-                if (ImGui.MenuItem("Enable Visibility for All", KeyBindings.Current.MAP_Visibility_EnableAll.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
-                }
-
-                if (ImGui.MenuItem("Disable Visibility for All", KeyBindings.Current.Map_Visibility_DisableAll.HintText))
-                {
-                    ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            ///--------------------
-            // Toggle In-game Visibility
-            ///--------------------
-            if (ImGui.BeginMenu("Toggle In-Game Visibility"))
-            {
-                if (ImGui.MenuItem("Make Selected Normal Object into Dummy Object", KeyBindings.Current.MAP_MakeDummyObject.HintText))
-                {
-                    ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
-                }
-
-                if (ImGui.MenuItem("Make Selected Dummy Object into Normal Object", KeyBindings.Current.MAP_MakeNormalObject.HintText))
-                {
-                    ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
-                }
-
-                if (Project.ProjectType is ProjectType.ER)
-                {
-                    if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
-                    {
-                        ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
-                    }
-
-                    if (ImGui.MenuItem("Enable Game Presence of Selected", KeyBindings.Current.MAP_EnableGamePresence.HintText))
-                    {
-                        ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
+            EditorVisibilityAction.OnMenu();
+            GameVisibilityAction.OnMenu();
 
             ImGui.EndMenu();
         }
@@ -804,29 +468,11 @@ public class MapEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
-            if (ImGui.MenuItem("Asset Browser"))
-            {
-                CFG.Current.Interface_MapEditor_AssetBrowser = !CFG.Current.Interface_MapEditor_AssetBrowser;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
-
-            if (ImGui.MenuItem("Render Groups"))
-            {
-                CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
-
             if (ImGui.MenuItem("Resource List"))
             {
                 CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
-
-            if (ImGui.MenuItem("Entity Identifier Overview"))
-            {
-                CFG.Current.Interface_MapEditor_EntityIdentifierOverview = !CFG.Current.Interface_MapEditor_EntityIdentifierOverview;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_EntityIdentifierOverview);
 
             ImGui.Separator();
 
@@ -1010,10 +656,7 @@ public class MapEditorScreen : EditorScreen
         GC.WaitForPendingFinalizers();
         GC.Collect();
 
-        if (Project.ProjectType != ProjectType.Undefined)
-        {
-            ActionHandler.PopulateClassNames();
-        }
+        CreateAction.PopulateClassNames();
     }
 
     public void HandleSaveException(SavingFailedException e)
@@ -1041,7 +684,7 @@ public class MapEditorScreen : EditorScreen
                             {
                                 ViewportSelection.ClearSelection(this);
                                 ViewportSelection.AddSelection(this, obj);
-                                ActionHandler.ApplyFrameInViewport();
+                                FrameAction.ApplyViewportFrame();
                                 return;
                             }
                         }

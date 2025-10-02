@@ -332,7 +332,7 @@ public class ViewportMenu
 
                 if (ImGui.BeginMenu("Quick View"))
                 {
-                    Parent.MapEditor.QuickView.HandleQuickViewProperties();
+                    Parent.MapEditor.AutomaticPreviewTool.HandleQuickViewProperties();
 
                     ImGui.EndMenu();
                 }

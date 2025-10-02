@@ -382,11 +382,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 var mapName = AliasUtils.GetMapNameAlias(Editor.Project, entry);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (Editor.MapQueryView.IsOpen)
+            if (Editor.GlobalSearchTool.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Editor.MapQueryView.AddMapFilterInput(entry);
+                    Editor.GlobalSearchTool.AddMapFilterInput(entry);
                 }
             }
 

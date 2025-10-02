@@ -126,7 +126,7 @@ public class Universe
         {
             HasProcessedMapLoad = false;
 
-            Editor.DisplayGroupView.SetupDrawgroupCount();
+            Editor.DisplayGroupTool.SetupDrawgroupCount();
 
             MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
 

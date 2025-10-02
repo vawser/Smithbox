@@ -1,26 +1,20 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Resource.Locators;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
-using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
 using static MsbUtils;
-using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -303,11 +297,11 @@ public class MapContentView
                 var mapName = AliasUtils.GetMapNameAlias(Editor.Project, MapID);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (Editor.MapQueryView.IsOpen)
+            if (Editor.GlobalSearchTool.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Editor.MapQueryView.AddMapFilterInput(MapID);
+                    Editor.GlobalSearchTool.AddMapFilterInput(MapID);
                 }
             }
 
@@ -323,187 +317,41 @@ public class MapContentView
     {
         if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
         {
-            if (ImGui.Selectable("Select All by Configuration"))
-            {
-                Editor.MapPopupSelectAll.Show();
-            }
-            UIHelper.Tooltip($"Select all map objects via a user-defined search filter configuration.\n\nShortcut: {KeyBindings.Current.MAP_ConfigurableSelectAll.HintText}");
+            Editor.ReorderAction.OnContext(ent);
 
-            if (ImGui.Selectable("Select All by Type"))
-            {
-                Editor.ActionHandler.SelectAllByMapObjectType();
-            }
-            UIHelper.Tooltip($"Select all map objects that share the same internal type as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByMapObjectType.HintText}");
-
-            if (ent.WrappedObject is IMsbPart)
-            {
-                if (ImGui.Selectable("Select All by Model Name"))
-                {
-                    Editor.ActionHandler.SelectAllByModelName();
-                }
-                UIHelper.Tooltip($"Select all part map objects that share the same model name as the current selection.\n\nShortcut: {KeyBindings.Current.MAP_SelectAllByModelName.HintText}");
-            }
+            Editor.DuplicateAction.OnContext();
+            Editor.DeleteAction.OnContext();
+            Editor.DuplicateToMapAction.OnContext();
+            Editor.RotateAction.OnContext();
+            Editor.ScrambleAction.OnContext(ent);
+            Editor.ReplicateAction.OnContext(ent);
+            Editor.RenderTypeAction.OnContext(ent);
 
             ImGui.Separator();
 
-            // Only supported for these types
-            if (ent.WrappedObject is IMsbPart or IMsbRegion or IMsbEvent)
-            {
-                // Move Up
-                if (ImGui.Selectable("Move Up"))
-                {
-                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
-                }
-                UIHelper.Tooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
-
-                // Move Down
-                if (ImGui.Selectable("Move Down"))
-                {
-                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
-                }
-                UIHelper.Tooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
-
-                // Move Top
-                if (ImGui.Selectable("Move to Top"))
-                {
-                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
-                }
-                UIHelper.Tooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
-
-                // Move Bottom
-                if (ImGui.Selectable("Move to Bottom"))
-                {
-                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
-                }
-                UIHelper.Tooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
-
-                ImGui.Separator();
-            }
-
-            if (ImGui.Selectable("Duplicate"))
-            {
-                Editor.ActionHandler.ApplyDuplicate();
-            }
-            UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
-
-            if (ImGui.Selectable("Duplicate to Map"))
-            {
-                Editor.ActionHandler.OpenDuplicateToMapPopup = true;
-            }
-            UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
-
-            if (ImGui.Selectable("Delete"))
-            {
-                Editor.ActionHandler.ApplyDelete();
-            }
-            UIHelper.Tooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
-
-            // Only supported for these types
-            if (ent.WrappedObject is IMsbPart or IMsbRegion or BTL.Light)
-            {
-                if (ImGui.Selectable("Scramble"))
-                {
-                    Editor.ActionHandler.ApplyScramble();
-                }
-                UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
-            }
-
-            // Only supported for these types
-            if (ent.WrappedObject is IMsbPart or IMsbRegion)
-            {
-                if (ImGui.Selectable("Replicate"))
-                {
-                    Editor.ActionHandler.ApplyReplicate();
-                }
-                UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
-            }
+            Editor.FrameAction.OnContext(ent);
+            Editor.PullToCameraAction.OnContext(ent);
 
             ImGui.Separator();
 
-            // Only supported for these types
-            if (ent.WrappedObject is IMsbPart or IMsbRegion)
-            {
-                if (ImGui.Selectable("Frame in Viewport"))
-                {
-                    Editor.ActionHandler.ApplyFrameInViewport();
-                }
-                UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
-
-                if (ImGui.Selectable("Move to Camera"))
-                {
-                    Editor.ActionHandler.ApplyMoveToCamera();
-                }
-                UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
-
-                if (ent.WrappedObject is IMsbRegion or BTL.Light)
-                {
-                    if (ImGui.Selectable("Toggle Render Type"))
-                    {
-                        VisualizationHelper.ToggleRenderType(Editor, Editor.ViewportSelection);
-                    }
-                    UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
-                }
-
-                ImGui.Separator();
-            }
-
-            if (ImGui.Selectable("Copy Name"))
-            {
-                if (Editor.ViewportSelection.IsMultiSelection())
-                {
-                    var fullStr = "";
-
-                    foreach (var entry in Editor.ViewportSelection.GetSelection())
-                    {
-                        var curEnt = (MsbEntity)entry;
-
-                        if (fullStr != "")
-                            fullStr = $"{fullStr}, {curEnt.Name}";
-                        else
-                            fullStr = $"{curEnt.Name}";
-                    }
-
-                    PlatformUtils.Instance.SetClipboardText(fullStr);
-                }
-                else
-                {
-
-                    PlatformUtils.Instance.SetClipboardText(ent.Name);
-                }
-            }
-            UIHelper.Tooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
+            Editor.EditorVisibilityAction.OnContext();
+            Editor.GameVisibilityAction.OnContext();
 
             ImGui.Separator();
 
-            if(ImGui.BeginMenu("Adjust to Grid"))
-            {
-                if (ImGui.Selectable("Primary"))
-                {
-                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Primary);
-                }
-                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Primary.HintText}");
+            Editor.SelectionGroupTool.OnContext();
 
-                if (ImGui.Selectable("Secondary"))
-                {
-                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Secondary);
-                }
-                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Secondary.HintText}");
+            ImGui.Separator();
 
-                if (ImGui.Selectable("Tertiary"))
-                {
-                    Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Tertiary);
-                }
-                UIHelper.Tooltip($"Adjust the current selection to the grid.\n\nShortcut: {KeyBindings.Current.MAP_AdjustToGrid_Tertiary.HintText}");
+            Editor.SelectAllAction.OnContext(ent);
 
-                ImGui.EndMenu();
-            }
+            ImGui.Separator();
 
-            if (ImGui.Selectable("Configure Grid Placement"))
-            {
-                Editor.MapPopupGridPlacement.Show();
-            }
-            UIHelper.Tooltip($"Configure the grid placement for the Adjust to Grid action.\n\nShortcut: {KeyBindings.Current.MAP_ConfigureGridPlacement.HintText}");
+            Editor.AdjustToGridAction.OnContext();
 
+            ImGui.Separator();
+
+            Editor.EntityInfoAction.OnContext(ent);
 
             ImGui.EndPopup();
         }

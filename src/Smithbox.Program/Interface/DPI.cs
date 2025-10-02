@@ -116,4 +116,15 @@ public static class DPI
             scale = scale / DefaultDpi * Dpi;
         return scale;
     }
+
+    public static unsafe Vector2 GetWindowSize(IGraphicsContext _context)
+    {
+        var window = _context.Window.SdlWindowHandle;
+        int width = 0;
+        int height = 0;
+
+        SdlProvider.SDL.Value.GetWindowSize(window, ref width, ref height);
+
+        return new Vector2(width, height);
+    }
 }

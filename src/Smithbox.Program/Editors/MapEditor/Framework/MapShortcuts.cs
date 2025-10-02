@@ -2,14 +2,9 @@
 using StudioCore.Configuration;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
-using System.Linq;
-using System.Numerics;
 using Veldrid;
-using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
-using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -60,228 +55,32 @@ public class MapShortcuts
                 EditorActionManager.RedoAction();
             }
 
-            // Configure Grid Placement
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigureGridPlacement))
-            {
-                Editor.MapPopupGridPlacement.Show();
-            }
+            // Actions
+            Editor.CreateAction.OnShortcut();
+            Editor.DuplicateAction.OnShortcut();
+            Editor.DeleteAction.OnShortcut();
+            Editor.DuplicateToMapAction.OnShortcut();
+            Editor.RotateAction.OnShortcut();
+            Editor.ScrambleAction.OnShortcut();
+            Editor.ReplicateAction.OnShortcut();
+            Editor.RenderTypeAction.OnShortcut();
+            Editor.ReorderAction.OnShortcut();
+            Editor.GotoAction.OnShortcut();
+            Editor.FrameAction.OnShortcut();
+            Editor.PullToCameraAction.OnShortcut();
+            Editor.EditorVisibilityAction.OnShortcut();
+            Editor.SelectionOutlineAction.OnShortcut();
+            Editor.AdjustToGridAction.OnShortcut();
+            Editor.SelectAllAction.OnShortcut();
+            Editor.EntityInfoAction.OnShortcut();
 
-            // Adjust to Grid
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_SelectedType))
-            {
-                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(Editor.MapPopupGridPlacement.CurrentTargetGrid);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Primary))
-            {
-                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Primary);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Secondary))
-            {
-                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Secondary);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_AdjustToGrid_Tertiary))
-            {
-                Editor.MapPopupGridPlacement.AdjustSelectionToGrid(TargetGrid.Tertiary);
-            }
-
-            // Select All by Configuration
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ConfigurableSelectAll) && Selection.IsSelection())
-            {
-                Editor.MapPopupSelectAll.Show();
-            }
-
-            // Select All by Map Object Type
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByMapObjectType) && Selection.IsSelection())
-            {
-                ActionHandler.SelectAllByMapObjectType();
-            }
-
-            // Select All by Model Name
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectAllByModelName) && Selection.IsSelection())
-            {
-                ActionHandler.SelectAllByModelName();
-            }
-
-            // Create
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateMapObject) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyObjectCreation();
-            }
-
-            // Duplicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyDuplicate();
-            }
-
-            // Duplicate to Map
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DuplicateToMap) && Selection.IsSelection())
-            {
-                ImGui.OpenPopup("##DupeToTargetMapPopup");
-            }
-
-            // Delete
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyDelete();
-            }
-
-            // Frame in Viewport
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FrameSelection) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyFrameInViewport();
-            }
-
-            // Go to in Map Object List
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_GoToInList) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyGoToInObjectList();
-            }
-
-            // Move to Camera
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveToCamera) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMoveToCamera();
-            }
-
-            // Rotate (X-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateSelectionXAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(1, 0, 0), false);
-            }
-
-            // Rotate (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), false);
-            }
-
-            // Rotate Pivot (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_PivotSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, 1, 0), true);
-            }
-
-            // Negative Rotate (X-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativeRotateSelectionXAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(-1, 0, 0), false);
-            }
-
-            // Negative Rotate (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativeRotateSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), false);
-            }
-
-            // Negative Rotate Pivot (Y-axis)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_NegativePivotSelectionYAxis))
-            {
-                ActionHandler.ArbitraryRotation_Selection(new Vector3(0, -1, 0), true);
-            }
-            // Rotate (Fixed Increment)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_RotateFixedAngle))
-            {
-                ActionHandler.SetSelectionToFixedRotation(CFG.Current.Toolbar_Rotate_FixedAngle);
-            }
-
-            // Reset Rotation
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ResetRotation))
-            {
-                ActionHandler.SetSelectionToFixedRotation(new Vector3(0, 0, 0));
-            }
-
-            // Order (Up)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectUp) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
-            }
-
-            // Order (Down)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectDown) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
-            }
-
-            // Order (Top)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectTop) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
-            }
-
-            // Order (Bottom)
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MoveObjectBottom) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
-            }
-
-            // Scramble
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ScrambleSelection) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyScramble();
-            }
-
-            // Replicate
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ReplicateSelection) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyReplicate();
-            }
-
-            // Toggle Editor Visibility
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_FlipSelected) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Flip);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableSelected) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_DisableSelected) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.Selected, EditorVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_FlipAll))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Flip);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_Visibility_EnableAll))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.Map_Visibility_DisableAll))
-            {
-                ActionHandler.ApplyEditorVisibilityChange(EditorVisibilityType.All, EditorVisibilityState.Disable);
-            }
-
-            // Toggle In-game Visibility
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeDummyObject) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_MakeNormalObject) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DisableGamePresence) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Disable);
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_EnableGamePresence) && Selection.IsSelection())
-            {
-                ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.GameEditionDisable, GameVisibilityState.Enable);
-            }
-
-            // Toggle Selection Outline
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_RenderOutline))
-            {
-                CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
-            }
-
-            // Toggle Render Type
-            if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_ToggleRenderType))
-            {
-                VisualizationHelper.ToggleRenderType(Editor, Selection);
-            }
+            // Tools
+            Editor.MassEditTool.OnShortcut();
+            Editor.DisplayGroupTool.OnShortcut();
+            Editor.PrefabTool.OnShortcut();
+            Editor.SelectionGroupTool.OnShortcut();
+            Editor.SelectionGroupTool.OnShortcut();
+            Editor.RotationCycleConfigTool.OnShortcut();
 
             // Gizmos
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))

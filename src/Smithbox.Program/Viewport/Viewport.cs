@@ -296,7 +296,7 @@ public class Viewport : IViewport
                 {
                     if (CFG.Current.QuickView_DisplayTooltip)
                     {
-                        MapEditor.QuickView.HandleQuickViewTooltip();
+                        MapEditor.AutomaticPreviewTool.HandleQuickViewTooltip();
                     }
                 }
             }

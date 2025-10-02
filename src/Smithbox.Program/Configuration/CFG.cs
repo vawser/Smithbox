@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Formats.JSON;
@@ -12,7 +13,6 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static MsbUtils;
-using static StudioCore.Editors.MapEditor.Core.MapPopupGridPlacement;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
@@ -219,7 +219,7 @@ public class CFG
     /// <summary>
     /// If true, the Move to Camera tool collapsible is visible in the Map Editor Tool window.
     /// </summary>
-    public bool Interface_MapEditor_Tool_MoveToCamera = true;
+    public bool Interface_MapEditor_Tool_PullToCamera = true;
 
     /// <summary>
     /// If true, the Rotate tool collapsible is visible in the Map Editor Tool window.
@@ -284,6 +284,10 @@ public class CFG
     public bool Interface_MapEditor_Tool_GridConfiguration = true;
 
     public bool Interface_MapEditor_Tool_ModelSelector = true;
+
+    public bool Interface_MapEditor_Tool_DisplayGroups = true;
+
+    public bool Interface_MapEditor_Tool_EntityIdentifier = true;
 
     /// <summary>
     /// If true, the shortcuts for the Selection Groups will be detected.
@@ -949,12 +953,11 @@ public class CFG
     public bool Prefab_ApplyOverrideName = false;
     public string Prefab_OverrideName = "";
 
-    public float WorldMapWindowHeight = 640f;
-    public float WorldMapWindowWidth = 480f;
     public bool WorldMapDisplayTiles = false;
     public bool WorldMapDisplaySmallTiles = true;
     public bool WorldMapDisplayMediumTiles = false;
     public bool WorldMapDisplayLargeTiles = false;
+    public bool WorldMapLockMovement = false;
 
     public bool QuickView_DisplayTooltip = false;
     public List<string> QuickView_TargetProperties = new List<string>() { "Name" };

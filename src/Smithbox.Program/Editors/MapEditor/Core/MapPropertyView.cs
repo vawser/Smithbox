@@ -367,7 +367,7 @@ public class MapPropertyView
             // Actions
             if (ImGui.Selectable(@"Search##PropSearch"))
             {
-                Editor.ToolWindow.FocusLocalPropertySearch = true;
+                Editor.LocalSearchView.FocusLocalPropertySearch = true;
                 RequestedSearchProperty = prop;
                 EditorCommandQueue.AddCommand($@"map/propsearch/{prop.Name}");
             }
@@ -386,11 +386,11 @@ public class MapPropertyView
                 }
             }
 
-            if (Editor.MapQueryView.IsOpen)
+            if (Editor.GlobalSearchTool.IsOpen)
             {
                 if (ImGui.Selectable("Add to Property Filter"))
                 {
-                    Editor.MapQueryView.AddPropertyFilterInput(prop, arrayIndex);
+                    Editor.GlobalSearchTool.AddPropertyFilterInput(prop, arrayIndex);
                 }
             }
 
@@ -1644,7 +1644,7 @@ public class MapPropertyView
 
         if (meta != null && meta.EntityIdentifierProperty)
         {
-            Editor.EntityIdentifierOverview.UpdateEntityCache(selection, oldval, newval);
+            Editor.EntityIdentifierTool.UpdateEntityCache(selection, oldval, newval);
         }
 
         selection.BuildReferenceMap();
@@ -1708,7 +1708,7 @@ public class MapPropertyView
 
                 if (meta.EntityIdentifierProperty)
                 {
-                    Editor.EntityIdentifierOverview.UpdateEntityCache(ent, oldval, newval);
+                    Editor.EntityIdentifierTool.UpdateEntityCache(ent, oldval, newval);
                 }
             }
         }
