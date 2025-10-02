@@ -1046,6 +1046,16 @@ public class ToolWindow
                 }
             }
 
+            if (CFG.Current.Interface_MapEditor_Tool_GridConfiguration)
+            {
+                Editor.GridConfiguration.Display();
+            }
+
+            if (CFG.Current.Interface_MapEditor_Tool_ModelSelector)
+            {
+                Editor.ModelSelectorView.Display();
+            }
+
 #if DEBUG
             if (CFG.Current.Interface_MapEditor_Tool_TreasureMaker)
             {
@@ -1086,8 +1096,6 @@ public class ToolWindow
                 }
             }
 #endif
-
-            Editor.GridConfiguration.Display();
         }
 
         ImGui.End();
@@ -1194,6 +1202,18 @@ public class ToolWindow
                 CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit = !CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_PropertyMassEdit);
+
+            if (ImGui.MenuItem("Map Grid Configuration"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_GridConfiguration = !CFG.Current.Interface_MapEditor_Tool_GridConfiguration;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_GridConfiguration);
+
+            if (ImGui.MenuItem("Model Selector"))
+            {
+                CFG.Current.Interface_MapEditor_Tool_ModelSelector = !CFG.Current.Interface_MapEditor_Tool_ModelSelector;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Tool_ModelSelector);
 
 #if DEBUG
             if (ImGui.MenuItem("Treasure Maker"))

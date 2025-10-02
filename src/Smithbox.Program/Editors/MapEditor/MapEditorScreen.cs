@@ -68,7 +68,7 @@ public class MapEditorScreen : EditorScreen
     public MapPropertyView MapPropertyView;
 
     // Optional Views
-    public AssetBrowserView AssetBrowserView;
+    public ModelSelectorView ModelSelectorView;
     public DisplayGroupView DisplayGroupView;
     public SelectionGroupView SelectionGroupView;
     public PrefabView PrefabView;
@@ -125,7 +125,7 @@ public class MapEditorScreen : EditorScreen
         DisplayGroupView = new DisplayGroupView(this);
         LocalSearchView = new LocalSearchView(this);
 
-        AssetBrowserView = new AssetBrowserView(this);
+        ModelSelectorView = new ModelSelectorView(this);
         PrefabView = new PrefabView(this);
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
@@ -278,7 +278,6 @@ public class MapEditorScreen : EditorScreen
         }
 
         DisplayGroupView.OnGui();
-        AssetBrowserView.OnGui();
         SelectionGroupView.OnGui();
 
         if (CFG.Current.Interface_MapEditor_ToolWindow)
