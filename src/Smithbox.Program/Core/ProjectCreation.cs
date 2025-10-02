@@ -85,7 +85,7 @@ public static class ProjectCreation
 
     public static void Draw()
     {
-        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
+        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
 
         var viewport = ImGui.GetMainViewport();
         Vector2 center = viewport.Pos + viewport.Size / 2;
@@ -137,7 +137,7 @@ public static class ProjectCreation
                     if (ImGui.BeginCombo("##projectTypePicker", ProjectType.GetDisplayName()))
                     {
                         // Make the combo-box dropdown bigger so there is no need to scroll
-                        ImGui.SetNextWindowSize(new System.Numerics.Vector2(600, 600));
+                        ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
                         foreach (var entry in ProjectTypeOrder)
                         {

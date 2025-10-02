@@ -53,51 +53,26 @@ public class ProjectEnumEditor
         if (TargetProject.Aliases == null)
             return;
 
-        var tableWidth = 890f;
-        var tableHeight = 280f;
+        var windowSize = DPI.GetWindowSize(BaseEditor._context);
+
+        var flags = ImGuiWindowFlags.None;
 
         var viewport = ImGui.GetMainViewport();
         Vector2 center = viewport.Pos + viewport.Size / 2;
 
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
-
-        ImGui.SetNextWindowSize(new Vector2(900, 354), ImGuiCond.Always);
+        ImGui.SetNextWindowSize(new Vector2(windowSize.X * 0.25f, windowSize.Y * 0.25f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
         if (Display)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-            if (ImGui.Begin("Project Enums##projectEnumsWindow", ref Display, ImGuiWindowFlags.NoResize  | ImGuiWindowFlags.NoCollapse))
+            if (ImGui.Begin("Project Enums##projectEnumsWindow", ref Display, flags))
             {
-                var windowWidth = ImGui.GetWindowWidth();
+                var windowWidth = ImGui.GetWindowWidth() * DPI.UIScale();
+                var windowHeight = ImGui.GetWindowHeight() * DPI.UIScale();
 
                 Shortcuts();
-
-                var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-
-                ImGui.BeginChild("tableSection", new Vector2(tableWidth, tableHeight));
-                if (ImGui.BeginTable($"projectAliasTbl", 3, tblFlags))
-                {
-                    ImGui.TableSetupColumn("List", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("EntryList", ImGuiTableColumnFlags.WidthFixed);
-                    ImGui.TableSetupColumn("Editor", ImGuiTableColumnFlags.WidthFixed);
-
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    DisplayEnumEntries();
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    DisplayOptionEntries();
-
-                    ImGui.TableSetColumnIndex(2);
-
-                    DisplayEditor();
-
-                    ImGui.EndTable();
-                }
-                ImGui.EndChild();
 
                 // Commit
                 if (ImGui.Button("Commit##updateProjectEnums", DPI.HalfWidthButton(windowWidth, 24)))
@@ -115,6 +90,32 @@ public class ProjectEnumEditor
                     Display = false;
                 }
                 UIHelper.Tooltip("Closes the project enum editor.");
+
+                var tblFlags = ImGuiTableFlags.Resizable | ImGuiTableFlags.Borders;
+
+                ImGui.BeginChild("tableSection", new Vector2(windowWidth * 0.95f, windowHeight - 100f));
+                if (ImGui.BeginTable($"projectAliasTbl", 3, tblFlags))
+                {
+                    ImGui.TableSetupColumn("List", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("EntryList", ImGuiTableColumnFlags.WidthStretch);
+                    ImGui.TableSetupColumn("Editor", ImGuiTableColumnFlags.WidthStretch);
+
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    DisplayEnumEntries();
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    DisplayOptionEntries();
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    DisplayEditor();
+
+                    ImGui.EndTable();
+                }
+                ImGui.EndChild();
 
                 ImGui.End();
             }
@@ -142,11 +143,18 @@ public class ProjectEnumEditor
 
     private static void DisplayOptionEntries()
     {
-        DPI.ApplyInputWidth(260f);
+        var columnWidth = ImGui.GetColumnWidth() * DPI.UIScale();
+        var columnHeight = ImGui.GetWindowHeight() * DPI.UIScale();
+
+        var inputWidth = columnWidth * 0.75f;
+
+        DPI.ApplyInputWidth(inputWidth);
         ImGui.InputText("##optionEntryFilter", ref OptionEntryFilter, 255);
         UIHelper.Tooltip("Filter the option entry list by this term.");
 
-        ImGui.BeginChild("optionEntryList", DPI.ListSize(260f, 238f));
+        ImGui.Separator();
+
+        ImGui.BeginChild("optionEntryList", DPI.ListSize(columnWidth, columnHeight - 100f));
 
         if (CurrentEnum != null)
         {
@@ -216,15 +224,20 @@ public class ProjectEnumEditor
 
     private static void DisplayEditor()
     {
+        var columnWidth = ImGui.GetColumnWidth() * DPI.UIScale();
+        var inputWidth = columnWidth * 0.95f;
+
         // Enum
         if (CurrentEnum != null)
         {
             var curDisplayName = CurrentEnum.DisplayName;
             var curDescription = CurrentEnum.Description;
 
+            UIHelper.SimpleHeader("Enum Display Name", "Enum Display Name", "", UI.Current.ImGui_AliasName_Text);
+
             // Display Name
-            DPI.ApplyInputWidth(250f);
-            ImGui.InputText("Enum Display Name##enumDisplayName", ref curDisplayName, 255);
+            DPI.ApplyInputWidth(inputWidth);
+            ImGui.InputText("##enumDisplayName", ref curDisplayName, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumField(
@@ -235,8 +248,10 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The display name of the currently selected enum entry.");
 
             // Description
-            DPI.ApplyInputWidth(250f);
-            ImGui.InputText("Enum Description##curDescription", ref curDescription, 255);
+            UIHelper.SimpleHeader("Enum Description", "Enum Description", "", UI.Current.ImGui_AliasName_Text);
+
+            DPI.ApplyInputWidth(inputWidth);
+            ImGui.InputText("##curDescription", ref curDescription, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumField(
@@ -250,15 +265,15 @@ public class ProjectEnumEditor
         // Option
         if (CurrentOption != null)
         {
-            ImGui.Separator();
-
             var curID = CurrentOption.ID;
             var curName = CurrentOption.Name;
             var curDescription = CurrentOption.Description;
 
             // ID
-            DPI.ApplyInputWidth(250f);
-            ImGui.InputText("Option ID##enumOptionID", ref curID, 255);
+            UIHelper.SimpleHeader("Option ID", "Option ID", "", UI.Current.ImGui_Default_Text_Color);
+
+            DPI.ApplyInputWidth(inputWidth);
+            ImGui.InputText("##enumOptionID", ref curID, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(
@@ -269,8 +284,10 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The ID of the currently selected enum option entry.");
 
             // Name
-            DPI.ApplyInputWidth(250f);
-            ImGui.InputText("Option Name##enumOptionName", ref curName, 255);
+            UIHelper.SimpleHeader("Option Name", "Option Name", "", UI.Current.ImGui_Default_Text_Color);
+
+            DPI.ApplyInputWidth(inputWidth);
+            ImGui.InputText("##enumOptionName", ref curName, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(
@@ -281,8 +298,10 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The name of the currently selected enum option entry.");
 
             // Description
-            DPI.ApplyInputWidth(250f);
-            ImGui.InputText("Option Description##enumOptionDescription", ref curDescription, 255);
+            UIHelper.SimpleHeader("Option Description", "Option Description", "", UI.Current.ImGui_Default_Text_Color);
+
+            DPI.ApplyInputWidth(inputWidth);
+            ImGui.InputText("##enumOptionDescription", ref curDescription, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 var action = new ChangeEnumOptionField(

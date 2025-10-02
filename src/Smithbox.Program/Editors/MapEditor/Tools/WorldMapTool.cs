@@ -237,6 +237,7 @@ public class WorldMapTool : IResourceEventListener
         Vector2 center = viewport.Pos + viewport.Size / 2;
 
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+        ImGui.SetNextWindowSize(new Vector2(600.0f, 600.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
         ImGui.Begin("World Map##WorldMapImage", flags);
 

@@ -63,7 +63,7 @@ public static class ProjectSettings
 
     public static void Draw()
     {
-        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
+        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
 
         var viewport = ImGui.GetMainViewport();
         Vector2 center = viewport.Pos + viewport.Size / 2;
