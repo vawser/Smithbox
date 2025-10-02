@@ -2041,6 +2041,10 @@
     <runeDiscountValue
     AltName="Rune Discount at Merchants"
     Wiki="Determines the amount of rune discount from merchants." />
+
+	<modifyPlayerLevel
+    AltName="Modify Player Level"
+    Wiki="Increases/decreases the player's level by the set value." />
     
     <characterSkillAttackRate
     AltName="Character Skill Attack %"
