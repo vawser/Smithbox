@@ -320,6 +320,12 @@ public class ViewportMenu
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
 
+            if (ImGui.MenuItem("Enable model masks", CFG.Current.Viewport_Enable_Model_Masks))
+            {
+                CFG.Current.Viewport_Enable_Model_Masks = !CFG.Current.Viewport_Enable_Model_Masks;
+            }
+            UIHelper.Tooltip($"Whether to attempt to hide model masks based on entity NpcParam flags.");
+
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
                 ImGui.Separator();

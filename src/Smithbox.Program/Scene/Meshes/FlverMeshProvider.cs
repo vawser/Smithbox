@@ -49,6 +49,10 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
                 {
                     return ModelMasks[mask] == 1;
                 }
+                else if(mask == -1)
+                {
+                    return true;
+                }
                 else
                 {
                     return false;
