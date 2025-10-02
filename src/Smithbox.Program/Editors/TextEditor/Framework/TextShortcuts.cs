@@ -61,28 +61,31 @@ public class TextShortcuts
             EditorActionManager.RedoAction();
         }
 
-        // Create
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
+        if (Editor.Selection.CurrentWindowContext is TextEditorContext.FmgEntry)
         {
-            Editor.EntryCreationModal.ShowModal = true;
-        }
+            // Create
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
+            {
+                Editor.EntryCreationModal.ShowModal = true;
+            }
 
-        // Configurable Duplicate
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntryPopup))
-        {
-            ImGui.OpenPopup("textDuplicatePopup");
-        }
+            // Configurable Duplicate
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntryPopup))
+            {
+                ImGui.OpenPopup("textDuplicatePopup");
+            }
 
-        // Standard Duplicate
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
-        {
-            Editor.ActionHandler.DuplicateEntries();
-        }
+            // Standard Duplicate
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            {
+                Editor.ActionHandler.DuplicateEntries();
+            }
 
-        // Delete
-        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-        {
-            Editor.ActionHandler.DeleteEntries();
+            // Delete
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            {
+                Editor.ActionHandler.DeleteEntries();
+            }
         }
 
         // Focus Selected Entry
