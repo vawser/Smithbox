@@ -395,7 +395,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         filterList.Add("named", newCmd(new string[0],
             "Selects rows whose name isn't blank or null", (args, lenient) =>
             {
-                return noContext(row => row.Name != "" || row.Name == null);
+                return noContext(row => row.Name != null || row.Name != "");
             }));
         filterList.Add("selected", newCmd(new string[0],
             "Selects rows that are already manually selected", (args, lenient) =>
