@@ -199,19 +199,34 @@ namespace SoulsFormats
             Sbyte = 1,
             Short = 2,
             Int = 3,
-            Unk_4 = 4, // Treated as int for now
             Byte = 5,
-            Unk_6 = 6, // Treated as int for now
             Uint = 7,
-            Unk_8 = 8, // Treated as int for now
             Float = 9,
-            Unk_10 = 10, // Treated as int for now
             Bool = 11, // 0x0B
             Vec2 = 12, // 0x0C
             Vec3 = 13, // 0x0D
             Vec4 = 14, // 0x0E
             Color = 15, // 0x0F
-            Unk_20 = 20, // Treated as int for now
+
+            // Treated as int for now
+            Unk_0x4 = 4,
+            Unk_0x6 = 6, 
+            Unk_0x8 = 8, 
+            Unk_0xA = 10, 
+            Unk_0x14 = 20, 
+            Unk_0x7C = 124
+
+            // x1A - 26
+            // x1C - 28
+            // x10 - 16
+            // x11 - 17
+            // x12 - 18
+            // x13 - 19
+            // x15 - 21
+            // x24 - 36
+            // x2A - 42
+            // x30 - 48
+            // x31 - 49
         }
 
         public interface IField
@@ -252,15 +267,15 @@ namespace SoulsFormats
                         return (GPARAM.IField)new GPARAM.Vector4Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Color:
                         return (GPARAM.IField)new GPARAM.ColorField(br, version, baseOffsets);
-                    case GPARAM.FieldType.Unk_4:
+                    case GPARAM.FieldType.Unk_0x4:
                         return (GPARAM.IField)new GPARAM.Unk_4Field(br, version, baseOffsets);
-                    case GPARAM.FieldType.Unk_6:
+                    case GPARAM.FieldType.Unk_0x6:
                         return (GPARAM.IField)new GPARAM.Unk_6Field(br, version, baseOffsets);
-                    case GPARAM.FieldType.Unk_8:
+                    case GPARAM.FieldType.Unk_0x8:
                         return (GPARAM.IField)new GPARAM.Unk_8Field(br, version, baseOffsets);
-                    case GPARAM.FieldType.Unk_10:
+                    case GPARAM.FieldType.Unk_0xA:
                         return (GPARAM.IField)new GPARAM.Unk_10Field(br, version, baseOffsets);
-                    case GPARAM.FieldType.Unk_20:
+                    case GPARAM.FieldType.Unk_0x14:
                         return (GPARAM.IField)new GPARAM.Unk_20Field(br, version, baseOffsets);
                     default:
                         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(20, 1);
@@ -697,7 +712,7 @@ namespace SoulsFormats
             {
             }
 
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_4;
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x4;
 
             internal Unk_4Field(
               BinaryReaderEx br,
@@ -721,7 +736,7 @@ namespace SoulsFormats
             {
             }
 
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_6;
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x6;
 
             internal Unk_6Field(
               BinaryReaderEx br,
@@ -745,7 +760,7 @@ namespace SoulsFormats
             {
             }
 
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_8;
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x8;
 
             internal Unk_8Field(
               BinaryReaderEx br,
@@ -768,7 +783,7 @@ namespace SoulsFormats
             {
             }
 
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_20;
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x14;
 
             internal Unk_20Field(
               BinaryReaderEx br,
@@ -791,7 +806,7 @@ namespace SoulsFormats
             {
             }
 
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_10;
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0xA;
 
             internal Unk_10Field(
               BinaryReaderEx br,
