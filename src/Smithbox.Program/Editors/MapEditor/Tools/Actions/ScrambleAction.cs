@@ -240,13 +240,13 @@ public class ScrambleAction
             randomOffsetMax_Pos_Y = Math.Clamp(randomOffsetMax_Pos_Y, -10000f, 10000f);
             randomOffsetMax_Pos_Z = Math.Clamp(randomOffsetMax_Pos_Z, -10000f, 10000f);
 
-            randomOffsetMin_Rot_X = Math.Clamp(randomOffsetMin_Rot_X, 0.0f, 360f);
-            randomOffsetMin_Rot_Y = Math.Clamp(randomOffsetMin_Rot_Y, 0.0f, 360f);
-            randomOffsetMin_Rot_Z = Math.Clamp(randomOffsetMin_Rot_Z, 0.0f, 360f);
+            randomOffsetMin_Rot_X = Math.Clamp(randomOffsetMin_Rot_X, -360.0f, 360f);
+            randomOffsetMin_Rot_Y = Math.Clamp(randomOffsetMin_Rot_Y, -360.0f, 360f);
+            randomOffsetMin_Rot_Z = Math.Clamp(randomOffsetMin_Rot_Z, -360.0f, 360f);
 
-            randomOffsetMax_Rot_X = Math.Clamp(randomOffsetMax_Rot_X, 0.0f, 360f);
-            randomOffsetMax_Rot_Y = Math.Clamp(randomOffsetMax_Rot_Y, 0.0f, 360f);
-            randomOffsetMax_Rot_Z = Math.Clamp(randomOffsetMax_Rot_Z, 0.0f, 360f);
+            randomOffsetMax_Rot_X = Math.Clamp(randomOffsetMax_Rot_X, -360.0f, 360f);
+            randomOffsetMax_Rot_Y = Math.Clamp(randomOffsetMax_Rot_Y, -360.0f, 360f);
+            randomOffsetMax_Rot_Z = Math.Clamp(randomOffsetMax_Rot_Z, -360.0f, 360f);
 
             randomOffsetMin_Scale_X = Math.Clamp(randomOffsetMin_Scale_X, 0.0f, 100f);
             randomOffsetMin_Scale_Y = Math.Clamp(randomOffsetMin_Scale_Y, 0.0f, 100f);
