@@ -59,7 +59,7 @@ public class ParamUpgrader
 
     public void ParamUpgradeWarning(ProjectEntry curProject)
     {
-        if (curProject.Initialized && curProject.IsSelected)
+        if (SupportsParamUpgrading(curProject) && curProject.Initialized && curProject.IsSelected)
         {
             if (curProject.ParamData.PrimaryBank.ParamVersion < curProject.ParamData.VanillaBank.ParamVersion)
             {

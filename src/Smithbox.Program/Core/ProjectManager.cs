@@ -209,19 +209,11 @@ public class ProjectManager
     private void DisplayProjectListGroup(ProjectType projectType)
     {
         var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
-        if (!projectList.Any()) return;
-        // When filtering the list, don't use the collapsible sections since it makes it harder to see the filtered results
-        if (CFG.Current.DisplayCollapsibleProjectCategories && ProjectListFilter == "")
-        {
-            DisplayProjectList(projectList);
-            //if (ImGui.CollapsingHeader($"{projectType}##collapsibleSection_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
-            //{
-            //}
-        }
-        else
-        {
-            DisplayProjectList(projectList);
-        }
+
+        if (!projectList.Any()) 
+            return;
+
+        DisplayProjectList(projectList);
     }
 
     private void DisplayProjectList(List<ProjectEntry> projectList)
