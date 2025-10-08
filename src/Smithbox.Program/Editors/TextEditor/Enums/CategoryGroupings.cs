@@ -152,8 +152,8 @@ public static class CategoryGroupings
         TextContainerCategory.TraditionalChinese,
         TextContainerCategory.SimplifiedChinese,
         TextContainerCategory.Thai,
-        TextContainerCategory.Portuguese,
         TextContainerCategory.Arabic,
+        TextContainerCategory.PortugueseLatin,
     };
 
     public static List<TextContainerCategory> AC6_Languages = new()
