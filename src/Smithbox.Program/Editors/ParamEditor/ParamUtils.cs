@@ -1,9 +1,11 @@
 using Andre.Formats;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.META;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 
 namespace StudioCore.Editors.ParamEditor;
@@ -346,6 +348,20 @@ public static class ParamUtils
         }
 
         return value;
+    }
+
+    public static bool HasDeveloperRowNames(ProjectEntry curProject)
+    {
+        var dir = Path.Combine(AppContext.BaseDirectory, 
+            "Assets", "PARAM",
+            ProjectUtils.GetGameDirectory(curProject), "Developer Row Names");
+
+        if(Directory.Exists(dir))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
 

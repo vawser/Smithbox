@@ -18,6 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Data;
@@ -2848,7 +2849,12 @@ public class ParamBank
                         {
                             var name = nameDict[i];
 
-                            curRow.Name = name;
+                            Match match = Regex.Match(name, @"^\d+\s*(.*)$");
+                            if (match.Success)
+                            {
+                                string nonNumericPart = match.Groups[1].Value;
+                                curRow.Name = nonNumericPart;
+                            }
                         }
                     }
                 }

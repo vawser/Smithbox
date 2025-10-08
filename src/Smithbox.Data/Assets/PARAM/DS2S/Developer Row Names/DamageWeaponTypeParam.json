@@ -1,0 +1,35 @@
+{
+  "Name": "DamageWeaponTypeParam",
+  "Entries": [
+    {
+      "ID": 1,
+      "Entries": [
+        "スペル"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "小"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "中"
+      ]
+    },
+    {
+      "ID": 4,
+      "Entries": [
+        "大"
+      ]
+    },
+    {
+      "ID": 5,
+      "Entries": [
+        "特大"
+      ]
+    }
+  ]
+}

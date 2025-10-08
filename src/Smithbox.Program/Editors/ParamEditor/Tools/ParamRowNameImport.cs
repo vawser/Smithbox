@@ -31,8 +31,7 @@ public partial class ParamTools
                 ImGui.EndMenu();
             }
 
-            // Only these projects have Developer Names
-            if (Project.ProjectType is ProjectType.AC6 or ProjectType.BB)
+            if (ParamUtils.HasDeveloperRowNames(Project))
             {
                 if (ImGui.BeginMenu("Developer Names"))
                 {

@@ -1,0 +1,29 @@
+{
+  "Name": "EquipCullingTargetParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "胴体"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "兜"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "腕"
+      ]
+    },
+    {
+      "ID": 3,
+      "Entries": [
+        "足"
+      ]
+    }
+  ]
+}

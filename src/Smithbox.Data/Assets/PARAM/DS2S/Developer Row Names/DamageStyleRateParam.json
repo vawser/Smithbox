@@ -1,0 +1,23 @@
+{
+  "Name": "DamageStyleRateParam",
+  "Entries": [
+    {
+      "ID": 0,
+      "Entries": [
+        "片手"
+      ]
+    },
+    {
+      "ID": 1,
+      "Entries": [
+        "両手"
+      ]
+    },
+    {
+      "ID": 2,
+      "Entries": [
+        "二刀流"
+      ]
+    }
+  ]
+}

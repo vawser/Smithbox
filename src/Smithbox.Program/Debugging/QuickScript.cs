@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using Octokit;
@@ -21,7 +22,47 @@ public class QuickScript
 {
     public static void ApplyQuickScript(Smithbox baseEditor, ProjectEntry curProject)
     {
-        MapWriteValidator.ValidatorMapWrite(baseEditor, curProject);
+        var path = "G:\\Tools\\Dump\\src"; 
+        
+        var dir = Path.Combine(CFG.Current.SmithboxBuildFolder,
+                "src", "Smithbox.Data", "Assets", "PARAM",
+                ProjectUtils.GetGameDirectory(curProject), "Developer Row Names");
+
+        var curParam = curProject.ParamEditor._activeView.Selection.GetActiveParam();
+
+        var store = new RowNameStore();
+        store.Params = new();
+
+        foreach (KeyValuePair<string, Param> p in curProject.ParamData.PrimaryBank.Params)
+        {
+            var paramEntry = new RowNameParam();
+            paramEntry.Name = p.Key;
+            paramEntry.Entries = new();
+
+            var groupedRows = p.Value.Rows
+                .GroupBy(r => r.ID)
+                .ToDictionary(g => g.Key, g => g.Select(r => r.Name ?? "").ToList());
+
+            paramEntry.Entries = groupedRows.Select(kvp => new RowNameEntry
+            {
+                ID = kvp.Key,
+                Entries = kvp.Value
+            }).ToList();
+
+            var fullPath = Path.Combine(dir, $"{p.Key}.json");
+
+            var options = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true,
+                IncludeFields = true
+            };
+            var json = JsonSerializer.Serialize(paramEntry, typeof(RowNameParam), options);
+
+            File.WriteAllText(fullPath, json);
+
+            TaskLogs.AddLog($"[{curProject.ProjectName}:Param Editor] Exported row names to {fullPath}");
+        }
     }
 
     public static void GenerateTableGroupNames(Smithbox baseEditor, ProjectEntry curProject)
