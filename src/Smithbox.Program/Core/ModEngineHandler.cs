@@ -12,7 +12,7 @@ public static class ModEngineHandler
 
     public static bool IsME3Project(ProjectEntry curProject)
     {
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             return true;
         }
@@ -33,16 +33,26 @@ public static class ModEngineHandler
 
         var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
         var absPath = $"{curProject.ProjectPath}".Replace(@"\", "/"); // Correct backslash to forward slash
-        var gametype = "nightrein";
+        var gametype = "nr";
 
         if (curProject.ProjectType is ProjectType.ER)
         {
-            gametype = "elden-ring";
+            gametype = "er";
         }
 
         if (curProject.ProjectType is ProjectType.AC6)
         {
-            gametype = "armoredcore6";
+            gametype = "ac6";
+        }
+
+        if (curProject.ProjectType is ProjectType.DS3)
+        {
+            gametype = "ds3";
+        }
+
+        if (curProject.ProjectType is ProjectType.SDT)
+        {
+            gametype = "sdt";
         }
 
         var profileString = $"profileVersion = \"v1\"\r\nnatives = []\r\n\r\n[[packages]] \r\nid = \"{projectName}\" \r\nsource = \"{absPath}\" \r\n\r\n[[supports]]\r\ngame = \"{gametype}\"\r\n";

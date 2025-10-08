@@ -23,5 +23,7 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Gparam Editor: update GPARAM format for the NR changes
+- Param Data: add the new DS2 row names https://cdn.discordapp.com/attachments/529900741998149643/1425183074177781823/Stable_10_0_FRPG2_Release.rar?ex=68e6a8ab&is=68e5572b&hm=509078087c92a316f8b803c454b115b250f4bf75be44fd8f615c15eed83d9758&
 - Text Editor: Language sync produces duplicate of new entries if applied against after initial sync
+- Gparam Editor: update GPARAM format for the NR changes
+

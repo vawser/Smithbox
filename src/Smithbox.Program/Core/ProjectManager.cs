@@ -71,18 +71,109 @@ public class ProjectManager
             ImGui.InputText("##projectListFilter", ref ProjectListFilter, 255);
             UIHelper.Tooltip("Filter the project list by this term.");
 
+            ImGui.BeginTabBar("##projectSelectionTabBar");
+
             // Project List
-            DisplayProjectListGroup(ProjectType.DES);
-            DisplayProjectListGroup(ProjectType.DS1);
-            DisplayProjectListGroup(ProjectType.DS1R);
-            DisplayProjectListGroup(ProjectType.DS2);
-            DisplayProjectListGroup(ProjectType.DS2S);
-            DisplayProjectListGroup(ProjectType.DS3);
-            DisplayProjectListGroup(ProjectType.BB);
-            DisplayProjectListGroup(ProjectType.SDT);
-            DisplayProjectListGroup(ProjectType.ER);
-            DisplayProjectListGroup(ProjectType.AC6);
-            DisplayProjectListGroup(ProjectType.NR);
+            if (Projects.Any(e => e.ProjectType is ProjectType.DES))
+            {
+                if (ImGui.BeginTabItem("DES##tab_DES"))
+                {
+                    DisplayProjectListGroup(ProjectType.DES);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.DS1))
+            {
+                if (ImGui.BeginTabItem("DS1##tab_DS1"))
+                {
+                    DisplayProjectListGroup(ProjectType.DS1);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.DS1R))
+            {
+                if (ImGui.BeginTabItem("DS1R##tab_DS1R"))
+                {
+                    DisplayProjectListGroup(ProjectType.DS1R);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.DS2))
+            {
+                if (ImGui.BeginTabItem("DS2##tab_DS2"))
+                {
+                    DisplayProjectListGroup(ProjectType.DS2);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.DS2S))
+            {
+                if (ImGui.BeginTabItem("DS2S##tab_DS2S"))
+                {
+                    DisplayProjectListGroup(ProjectType.DS2S);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.DS3))
+            {
+                if (ImGui.BeginTabItem("DS3##tab_DS3"))
+                {
+                    DisplayProjectListGroup(ProjectType.DS3);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.BB))
+            {
+                if (ImGui.BeginTabItem("BB##tab_BB"))
+                {
+                    DisplayProjectListGroup(ProjectType.BB);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.SDT))
+            {
+                if (ImGui.BeginTabItem("SDT##tab_SDT"))
+                {
+                    DisplayProjectListGroup(ProjectType.SDT);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.ER))
+            {
+                if (ImGui.BeginTabItem("ER##tab_ER"))
+                {
+                    DisplayProjectListGroup(ProjectType.ER);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.AC6))
+            {
+                if (ImGui.BeginTabItem("AC6##tab_AC6"))
+                {
+                    DisplayProjectListGroup(ProjectType.AC6);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            if (Projects.Any(e => e.ProjectType is ProjectType.NR))
+            {
+                if (ImGui.BeginTabItem("NR##tab_NR"))
+                {
+                    DisplayProjectListGroup(ProjectType.NR);
+                    ImGui.EndTabItem();
+                }
+            }
+
+            ImGui.EndTabBar();
 
             ImGui.EndMenu();
         }
@@ -122,10 +213,10 @@ public class ProjectManager
         // When filtering the list, don't use the collapsible sections since it makes it harder to see the filtered results
         if (CFG.Current.DisplayCollapsibleProjectCategories && ProjectListFilter == "")
         {
-            if(ImGui.CollapsingHeader($"{projectType}##collapsibleSection_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                DisplayProjectList(projectList);
-            }
+            DisplayProjectList(projectList);
+            //if (ImGui.CollapsingHeader($"{projectType}##collapsibleSection_{projectType}", ImGuiTreeNodeFlags.DefaultOpen))
+            //{
+            //}
         }
         else
         {
@@ -252,45 +343,45 @@ public class ProjectManager
         UIHelper.Tooltip("Set this project as the primary project to automatically load when Smithbox starts.");
 
         // ME2
-        if (ModEngineHandler.IsME2Project(curProject))
-        {
-            ImGui.Separator();
+        //if (ModEngineHandler.IsME2Project(curProject))
+        //{
+        //    ImGui.Separator();
 
-            if (CFG.Current.ModEngine2Install != "")
-            {
-                if (ImGui.MenuItem($"Launch Mod##launchME2Mod"))
-                {
-                    ModEngineHandler.LaunchME2Mod(curProject);
-                }
+        //    if (CFG.Current.ModEngine2Install != "")
+        //    {
+        //        if (ImGui.MenuItem($"Launch Mod##launchME2Mod"))
+        //        {
+        //            ModEngineHandler.LaunchME2Mod(curProject);
+        //        }
 
-                UIHelper.Tooltip("Launch this project with ModEngine2.");
-            }
-            else
-            {
-                if (ImGui.MenuItem($"Set ME2 Executable Location"))
-                {
-                    var modEnginePath = "";
-                    var result =
-                        PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
+        //        UIHelper.Tooltip("Launch this project with ModEngine2.");
+        //    }
+        //    else
+        //    {
+        //        if (ImGui.MenuItem($"Set ME2 Executable Location"))
+        //        {
+        //            var modEnginePath = "";
+        //            var result =
+        //                PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
 
-                    if (result)
-                    {
-                        if (modEnginePath.Contains("modengine2_launcher.exe"))
-                        {
-                            CFG.Current.ModEngine2Install = modEnginePath;
-                        }
-                        else
-                        {
-                            PlatformUtils.Instance.MessageBox("Error",
-                                "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        }
-                    }
-                }
+        //            if (result)
+        //            {
+        //                if (modEnginePath.Contains("modengine2_launcher.exe"))
+        //                {
+        //                    CFG.Current.ModEngine2Install = modEnginePath;
+        //                }
+        //                else
+        //                {
+        //                    PlatformUtils.Instance.MessageBox("Error",
+        //                        "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK,
+        //                        MessageBoxIcon.Error);
+        //                }
+        //            }
+        //        }
 
-                UIHelper.Tooltip("Set the ME2 executable location so you can launch this mod via ModEngine2.");
-            }
-        }
+        //        UIHelper.Tooltip("Set the ME2 executable location so you can launch this mod via ModEngine2.");
+        //    }
+        //}
 
         // ME3
         if (ModEngineHandler.IsME3Project(curProject))
