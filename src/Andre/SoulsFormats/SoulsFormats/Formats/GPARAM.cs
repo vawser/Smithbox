@@ -213,20 +213,76 @@ namespace SoulsFormats
             Unk_0x6 = 6, 
             Unk_0x8 = 8, 
             Unk_0xA = 10, 
-            Unk_0x14 = 20, 
-            Unk_0x7C = 124
+            Unk_0x14 = 20,
 
-            // x1A - 26
-            // x1C - 28
             // x10 - 16
+            Unk_0x10 = 16,
             // x11 - 17
+            Unk_0x11 = 17,
             // x12 - 18
+            Unk_0x12 = 18,
             // x13 - 19
+            Unk_0x13 = 19,
             // x15 - 21
+            Unk_0x15 = 21,
+            // x16 - 22
+            Unk_0x16 = 22,
+            // x17 - 23
+            Unk_0x17 = 23,
+            // x18 - 24
+            Unk_0x18 = 24,
+            // x1A - 26
+            Unk_0x1A = 26,
+            // x1B - 27
+            Unk_0x1B = 27,
+            // x1C - 28
+            Unk_0x1C = 28,
+            // x1D - 29
+            Unk_0x1D = 29,
+            // x1E - 30
+            Unk_0x1E = 30,
+            // x1F - 31
+            Unk_0x1F = 31,
+            // x20 - 32
+            Unk_0x20 = 32,
             // x24 - 36
+            Unk_0x24 = 36,
+            // x28 - 40
+            Unk_0x28 = 40,
+            // x29 - 41
+            Unk_0x29 = 41,
             // x2A - 42
+            Unk_0x2A = 42,
+            // x2C - 44
+            Unk_0x2C = 44,
+            // x2D - 45
+            Unk_0x2D = 45,
             // x30 - 48
+            Unk_0x30 = 48,
             // x31 - 49
+            Unk_0x31 = 49,
+            // x69 - 105
+            Unk_0x69 = 105,
+            // x6C - 108
+            Unk_0x6C = 108,
+            // x78 - 124
+            Unk_0x78 = 120,
+            // x7C - 124
+            Unk_0x7C = 124,
+            // x7F - 127
+            Unk_0x7F = 127,
+            // x80 - 128
+            Unk_0x80 = 128,
+            // x80 - 130
+            Unk_0x82 = 130,
+            // x8B - 139
+            Unk_0x8B = 139,
+            // x91 - 157
+            Unk_0x91 = 145,
+            // x9D - 157
+            Unk_0x9D = 157,
+            // xA3 - 163
+            Unk_0xA3 = 163
         }
 
         public interface IField
@@ -267,16 +323,86 @@ namespace SoulsFormats
                         return (GPARAM.IField)new GPARAM.Vector4Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Color:
                         return (GPARAM.IField)new GPARAM.ColorField(br, version, baseOffsets);
+
                     case GPARAM.FieldType.Unk_0x4:
-                        return (GPARAM.IField)new GPARAM.Unk_4Field(br, version, baseOffsets);
+                        return (GPARAM.IField)new GPARAM.Unk_4_Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Unk_0x6:
-                        return (GPARAM.IField)new GPARAM.Unk_6Field(br, version, baseOffsets);
+                        return (GPARAM.IField)new GPARAM.Unk_6_Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Unk_0x8:
-                        return (GPARAM.IField)new GPARAM.Unk_8Field(br, version, baseOffsets);
+                        return (GPARAM.IField)new GPARAM.Unk_8_Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Unk_0xA:
-                        return (GPARAM.IField)new GPARAM.Unk_10Field(br, version, baseOffsets);
+                        return (GPARAM.IField)new GPARAM.Unk_A_Field(br, version, baseOffsets);
+
+                    case GPARAM.FieldType.Unk_0x10:
+                        return (GPARAM.IField)new GPARAM.Unk_10_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x11:
+                        return (GPARAM.IField)new GPARAM.Unk_11_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x12:
+                        return (GPARAM.IField)new GPARAM.Unk_12_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x13:
+                        return (GPARAM.IField)new GPARAM.Unk_13_Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Unk_0x14:
-                        return (GPARAM.IField)new GPARAM.Unk_20Field(br, version, baseOffsets);
+                        return (GPARAM.IField)new GPARAM.Unk_14_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x15:
+                        return (GPARAM.IField)new GPARAM.Unk_15_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x16:
+                        return (GPARAM.IField)new GPARAM.Unk_16_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x17:
+                        return (GPARAM.IField)new GPARAM.Unk_17_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x18:
+                        return (GPARAM.IField)new GPARAM.Unk_18_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1A:
+                        return (GPARAM.IField)new GPARAM.Unk_1A_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1B:
+                        return (GPARAM.IField)new GPARAM.Unk_1B_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1C:
+                        return (GPARAM.IField)new GPARAM.Unk_1C_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1D:
+                        return (GPARAM.IField)new GPARAM.Unk_1D_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1E:
+                        return (GPARAM.IField)new GPARAM.Unk_1E_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x1F:
+                        return (GPARAM.IField)new GPARAM.Unk_1F_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x20:
+                        return (GPARAM.IField)new GPARAM.Unk_20_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x24:
+                        return (GPARAM.IField)new GPARAM.Unk_24_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x28:
+                        return (GPARAM.IField)new GPARAM.Unk_28_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x29:
+                        return (GPARAM.IField)new GPARAM.Unk_29_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x2A:
+                        return (GPARAM.IField)new GPARAM.Unk_2A_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x2C:
+                        return (GPARAM.IField)new GPARAM.Unk_2C_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x2D:
+                        return (GPARAM.IField)new GPARAM.Unk_2D_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x30:
+                        return (GPARAM.IField)new GPARAM.Unk_30_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x31:
+                        return (GPARAM.IField)new GPARAM.Unk_31_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x69:
+                        return (GPARAM.IField)new GPARAM.Unk_69_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x6C:
+                        return (GPARAM.IField)new GPARAM.Unk_6C_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x78:
+                        return (GPARAM.IField)new GPARAM.Unk_78_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x7C:
+                        return (GPARAM.IField)new GPARAM.Unk_7C_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x7F:
+                        return (GPARAM.IField)new GPARAM.Unk_7F_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x80:
+                        return (GPARAM.IField)new GPARAM.Unk_80_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x82:
+                        return (GPARAM.IField)new GPARAM.Unk_82_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x8B:
+                        return (GPARAM.IField)new GPARAM.Unk_8B_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x91:
+                        return (GPARAM.IField)new GPARAM.Unk_91_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0x9D:
+                        return (GPARAM.IField)new GPARAM.Unk_9D_Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_0xA3:
+                        return (GPARAM.IField)new GPARAM.Unk_A3_Field(br, version, baseOffsets);
                     default:
                         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(20, 1);
                         interpolatedStringHandler.AppendLiteral("Unknown field type: ");
@@ -706,15 +832,15 @@ namespace SoulsFormats
                 bw.WriteRGBA(value);
             }
         }
-        public class Unk_4Field : GPARAM.Field<int>
+        public class Unk_4_Field : GPARAM.Field<int>
         {
-            public Unk_4Field()
+            public Unk_4_Field()
             {
             }
 
             private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x4;
 
-            internal Unk_4Field(
+            internal Unk_4_Field(
               BinaryReaderEx br,
               GPARAM.GparamVersion version,
               GPARAM.BaseOffsets baseOffsets)
@@ -730,15 +856,15 @@ namespace SoulsFormats
             }
         }
 
-        public class Unk_6Field : GPARAM.Field<int>
+        public class Unk_6_Field : GPARAM.Field<int>
         {
-            public Unk_6Field()
+            public Unk_6_Field()
             {
             }
 
             private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x6;
 
-            internal Unk_6Field(
+            internal Unk_6_Field(
               BinaryReaderEx br,
               GPARAM.GparamVersion version,
               GPARAM.BaseOffsets baseOffsets)
@@ -754,15 +880,15 @@ namespace SoulsFormats
             }
         }
 
-        public class Unk_8Field : GPARAM.Field<int>
+        public class Unk_8_Field : GPARAM.Field<int>
         {
-            public Unk_8Field()
+            public Unk_8_Field()
             {
             }
 
             private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x8;
 
-            internal Unk_8Field(
+            internal Unk_8_Field(
               BinaryReaderEx br,
               GPARAM.GparamVersion version,
               GPARAM.BaseOffsets baseOffsets)
@@ -777,38 +903,841 @@ namespace SoulsFormats
                 bw.WriteInt32(value);
             }
         }
-        public class Unk_20Field : GPARAM.Field<int>
+        public class Unk_A_Field : GPARAM.Field<int>
         {
-            public Unk_20Field()
-            {
-            }
-
-            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x14;
-
-            internal Unk_20Field(
-              BinaryReaderEx br,
-              GPARAM.GparamVersion version,
-              GPARAM.BaseOffsets baseOffsets)
-              : base(br, version, baseOffsets)
-            {
-            }
-
-            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
-
-            private protected override void WriteValue(BinaryWriterEx bw, int value)
-            {
-                bw.WriteInt32(value);
-            }
-        }
-        public class Unk_10Field : GPARAM.Field<int>
-        {
-            public Unk_10Field()
+            public Unk_A_Field()
             {
             }
 
             private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0xA;
 
-            internal Unk_10Field(
+            internal Unk_A_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_10_Field : GPARAM.Field<int>
+        {
+            public Unk_10_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x10;
+
+            internal Unk_10_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_11_Field : GPARAM.Field<int>
+        {
+            public Unk_11_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x11;
+
+            internal Unk_11_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_12_Field : GPARAM.Field<int>
+        {
+            public Unk_12_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x12;
+
+            internal Unk_12_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_13_Field : GPARAM.Field<int>
+        {
+            public Unk_13_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x13;
+
+            internal Unk_13_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_14_Field : GPARAM.Field<int>
+        {
+            public Unk_14_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x14;
+
+            internal Unk_14_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_15_Field : GPARAM.Field<int>
+        {
+            public Unk_15_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x15;
+
+            internal Unk_15_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_16_Field : GPARAM.Field<int>
+        {
+            public Unk_16_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x16;
+
+            internal Unk_16_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_17_Field : GPARAM.Field<int>
+        {
+            public Unk_17_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x17;
+
+            internal Unk_17_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_18_Field : GPARAM.Field<int>
+        {
+            public Unk_18_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x18;
+
+            internal Unk_18_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_1A_Field : GPARAM.Field<int>
+        {
+            public Unk_1A_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1A;
+
+            internal Unk_1A_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_1B_Field : GPARAM.Field<int>
+        {
+            public Unk_1B_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1B;
+
+            internal Unk_1B_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_1C_Field : GPARAM.Field<int>
+        {
+            public Unk_1C_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1C;
+
+            internal Unk_1C_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_1D_Field : GPARAM.Field<int>
+        {
+            public Unk_1D_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1D;
+
+            internal Unk_1D_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_1E_Field : GPARAM.Field<int>
+        {
+            public Unk_1E_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1E;
+
+            internal Unk_1E_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_1F_Field : GPARAM.Field<int>
+        {
+            public Unk_1F_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x1F;
+
+            internal Unk_1F_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_20_Field : GPARAM.Field<int>
+        {
+            public Unk_20_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x20;
+
+            internal Unk_20_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_24_Field : GPARAM.Field<int>
+        {
+            public Unk_24_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x24;
+
+            internal Unk_24_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_28_Field : GPARAM.Field<int>
+        {
+            public Unk_28_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x28;
+
+            internal Unk_28_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_29_Field : GPARAM.Field<int>
+        {
+            public Unk_29_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x29;
+
+            internal Unk_29_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_2A_Field : GPARAM.Field<int>
+        {
+            public Unk_2A_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x2A;
+
+            internal Unk_2A_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_2C_Field : GPARAM.Field<int>
+        {
+            public Unk_2C_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x2C;
+
+            internal Unk_2C_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_2D_Field : GPARAM.Field<int>
+        {
+            public Unk_2D_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x2D;
+
+            internal Unk_2D_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_30_Field : GPARAM.Field<int>
+        {
+            public Unk_30_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x30;
+
+            internal Unk_30_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_31_Field : GPARAM.Field<int>
+        {
+            public Unk_31_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x31;
+
+            internal Unk_31_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_69_Field : GPARAM.Field<int>
+        {
+            public Unk_69_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x69;
+
+            internal Unk_69_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_6C_Field : GPARAM.Field<int>
+        {
+            public Unk_6C_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x6C;
+
+            internal Unk_6C_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_78_Field : GPARAM.Field<int>
+        {
+            public Unk_78_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x78;
+
+            internal Unk_78_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_7C_Field : GPARAM.Field<int>
+        {
+            public Unk_7C_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x7C;
+
+            internal Unk_7C_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_7F_Field : GPARAM.Field<int>
+        {
+            public Unk_7F_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x7F;
+
+            internal Unk_7F_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_80_Field : GPARAM.Field<int>
+        {
+            public Unk_80_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x80;
+
+            internal Unk_80_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_82_Field : GPARAM.Field<int>
+        {
+            public Unk_82_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x82;
+
+            internal Unk_82_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_8B_Field : GPARAM.Field<int>
+        {
+            public Unk_8B_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x8B;
+
+            internal Unk_8B_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_91_Field : GPARAM.Field<int>
+        {
+            public Unk_91_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x91;
+
+            internal Unk_91_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_9D_Field : GPARAM.Field<int>
+        {
+            public Unk_9D_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0x9D;
+
+            internal Unk_9D_Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_A3_Field : GPARAM.Field<int>
+        {
+            public Unk_A3_Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_0xA3;
+
+            internal Unk_A3_Field(
               BinaryReaderEx br,
               GPARAM.GparamVersion version,
               GPARAM.BaseOffsets baseOffsets)

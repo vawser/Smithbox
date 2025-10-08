@@ -82,7 +82,7 @@ public static class GparamUtils
 
     public static string GetReadableObjectTypeName(IField field)
     {
-        string typeName = "Unknown";
+        string typeName = $"{field.GetType()}";
 
         if (field is GPARAM.IntField)
         {
