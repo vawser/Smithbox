@@ -22,13 +22,6 @@ public class GparamGroupListView
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
     }
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
-    }
 
     /// <summary>
     /// The main UI for the event parameter view
@@ -39,6 +32,22 @@ public class GparamGroupListView
         Selection.SwitchWindowContext(GparamEditorContext.Group);
 
         Filters.DisplayGroupFilterSearch();
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.CircleO}##emptyGroupToggle"))
+        {
+            CFG.Current.Gparam_DisplayEmptyGroups = !CFG.Current.Gparam_DisplayEmptyGroups;
+        }
+        UIHelper.Tooltip("Toggle the display of empty groups.");
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##addGroupToggle"))
+        {
+            CFG.Current.Gparam_DisplayAddGroups = !CFG.Current.Gparam_DisplayAddGroups;
+        }
+        UIHelper.Tooltip("Toggle the display of the add group buttons.");
 
         ImGui.BeginChild("GparamGroupsSection");
         Selection.SwitchWindowContext(GparamEditorContext.Group);

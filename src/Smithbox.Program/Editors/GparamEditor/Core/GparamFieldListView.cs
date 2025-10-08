@@ -26,14 +26,6 @@ public class GparamFieldListView
     }
 
     /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
-    }
-
-    /// <summary>
     /// The main UI for the event parameter view
     /// </summary>
     public void Display()
@@ -42,6 +34,14 @@ public class GparamFieldListView
         Selection.SwitchWindowContext(GparamEditorContext.Field);
 
         Filters.DisplayFieldFilterSearch();
+
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Bars}##addFieldToggle"))
+        {
+            CFG.Current.Gparam_DisplayAddFields = !CFG.Current.Gparam_DisplayAddFields;
+        }
+        UIHelper.Tooltip("Toggle the display of empty groups.");
 
         ImGui.BeginChild("GparamFieldsSection");
         Selection.SwitchWindowContext(GparamEditorContext.Field);
