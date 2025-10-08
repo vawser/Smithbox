@@ -341,6 +341,7 @@ public class LanguageSync
                         {
                             var parentEntry = syncTargetWrapper.File.Entries.First();
 
+                            // Addition
                             if (CFG.Current.TextEditor_LanguageSync_IncludeUniqueEntries && result.AdditionCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 var newText = result.AdditionCache[syncSrcEntry.ID];
@@ -350,11 +351,27 @@ public class LanguageSync
                                     newText = $"{CFG.Current.TextEditor_LanguageSync_Prefix}{newText}";
                                 }
 
-                                var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
+                                // Guard against multiple usage, if the entry ID already exists, we can assume the addition has already occured
+                                if (!syncTargetWrapper.File.Entries.Any(e => e.ID == syncSrcEntry.ID))
+                                {
+                                    var newEntry = new FMG.Entry(syncTargetWrapper.File, syncSrcEntry.ID, newText);
 
-                                actions.Add(
-                                    new AddFmgEntry(Editor, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                    actions.Add(
+                                        new AddFmgEntry(Editor, syncTargetContainerWrapper, parentEntry, newEntry, syncSrcEntry.ID));
+                                }
+                                // If already added, handle like a modified entry
+                                else
+                                {
+                                    var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
+
+                                    if (targetEntry != null)
+                                    {
+                                        actions.Add(
+                                            new ChangeFmgEntryText(Editor, syncTargetContainerWrapper, targetEntry, result.AdditionCache[syncSrcEntry.ID]));
+                                    }
+                                }
                             }
+                            // Modified
                             else if (CFG.Current.TextEditor_LanguageSync_IncludeModifiedEntries && result.ModifiedCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
@@ -365,6 +382,7 @@ public class LanguageSync
                                         new ChangeFmgEntryText(Editor, syncTargetContainerWrapper, targetEntry, result.ModifiedCache[syncSrcEntry.ID]));
                                 }
                             }
+                            // Any
                             else if (CFG.Current.TextEditor_LanguageSync_IncludeDefaultEntries && result.DefaultCache.ContainsKey(syncSrcEntry.ID))
                             {
                                 var targetEntry = syncTargetWrapper.File.Entries.FirstOrDefault(e => e.ID == syncSrcEntry.ID);
