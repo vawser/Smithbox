@@ -14,9 +14,9 @@
     <Field Def="f32 Unk04" />
     <Field Def="f32 Unk05" />
     <Field Def="s32 fog_door_id" />
-    <Field Def="u8 Unk06" />
-    <Field Def="u8 Unk07" />
-    <Field Def="u8 Unk08" />
+    <Field Def="u8 can_burn_ascetic" />
+    <Field Def="u8 can_burn_effigy" />
+    <Field Def="u8 can_burn_sublime_bone" />
     <Field Def="u8 menu_sort_id" />
     <Field Def="s32 bonfire_lit_flag" />
     <Field Def="s32 Unk10" />

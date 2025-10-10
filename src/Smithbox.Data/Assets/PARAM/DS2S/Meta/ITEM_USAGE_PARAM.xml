@@ -1,8 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines parameters related to item usage." Row0Dummy="" />
+    <Enums>
+    <Enum Name="Only usable as:" >
+      <Option Value="2" Name="Hollow level 1-4" />
+	  <Option Value="3" Name="Human, Hollow level 1-4" />
+	  <Option Value="4" Name="Hollow level 5+" />
+	  <Option Value="5" Name="Human" />
+	  <Option Value="6" Name="Hollow" />
+      <Option Value="7" Name="Human, Hollow" />
+    </Enum>
+  </Enums>
   <Field>
-    <item_no_trade AltName="No Trade"/>
-    <item_can_discard AltName="Can Discard"/>
+    <usage AltName="Usage" Enum="Only usable as:" />
+	<item_no_trade AltName="No Trade" />
+    <item_can_discard AltName="Can Discard" />
   </Field>
 </PARAMMETA>

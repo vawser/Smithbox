@@ -28,13 +28,13 @@
     {
       "ID": 1040,
       "Entries": [
-        "Base-Length -- ベース-長"
+        "Base - Large -- ベース-長"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "Base - Extreme Length -- ベース-極長"
+        "Base - Very Large -- ベース-極長"
       ]
     },
     {
@@ -88,19 +88,19 @@
     {
       "ID": 9961,
       "Entries": [
-        "For bosses - forgotten sinners - 0 lights -- ボス用-忘れられた罪人-ライト０個"
+        "For bosses - Lost Sinner - 0 lights -- ボス用-忘れられた罪人-ライト０個"
       ]
     },
     {
       "ID": 9962,
       "Entries": [
-        "For bosses - forgotten sinners - one light -- ボス用-忘れられた罪人-ライト１個"
+        "For bosses - Lost Sinner - 1 light -- ボス用-忘れられた罪人-ライト１個"
       ]
     },
     {
       "ID": 9963,
       "Entries": [
-        "For Bosses - Old Dragon -- ボス用-古龍"
+        "For Bosses - Ancient Dragon -- ボス用-古龍"
       ]
     },
     {
@@ -112,19 +112,19 @@
     {
       "ID": 9965,
       "Entries": [
-        "For bosses - super oversized -- ボス用-超特大"
+        "For bosses - Super Extra Large -- ボス用-超特大"
       ]
     },
     {
       "ID": 9966,
       "Entries": [
-        "For the Boss - Warrior in the Mirror -- ボス用-鏡の中の戦士"
+        "For the Boss - Looking Glass Knight -- ボス用-鏡の中の戦士"
       ]
     },
     {
       "ID": 9967,
       "Entries": [
-        "For Bosses - Agaduran Stand -- ボス用-アガドゥランのスタンド"
+        "For Bosses - Darklurker -- ボス用-アガドゥランのスタンド"
       ]
     },
     {
@@ -136,247 +136,247 @@
     {
       "ID": 106000,
       "Entries": [
-        "m10_14 Gerdra Zakos 1 -- m10_14\u3000ジェルドラ・ザコボス戦１"
+        "Prowling Magus & Congregation"
       ]
     },
     {
       "ID": 154000,
       "Entries": [
-        "m10_23 Skeleton Aristocracy -- m10_23\u3000スケルトン貴族"
+        "Skeleton Lords"
       ]
     },
     {
       "ID": 212000,
       "Entries": [
-        "m10_15 Wyburn -- m10_15\u3000ワイバーン"
+        "Guardian Dragon"
       ]
     },
     {
       "ID": 223500,
       "Entries": [
-        "m10_33 Giant Rat -- m10_33\u3000巨大ネズミ"
+        "Royal Rat Authority"
       ]
     },
     {
       "ID": 226100,
       "Entries": [
-        "m10_34 Dog Mouse: Color (2) -- m10_34\u3000犬ネズミ：色②"
+        "Royal Rat Vanguard"
       ]
     },
     {
       "ID": 303300,
       "Entries": [
-        "m10_18 Double-sided warrior: Snake head -- m10_18\u3000両面戦士：ヘビ頭"
+        "Flexile Sentry"
       ]
     },
     {
       "ID": 305000,
       "Entries": [
-        "m10_19 Daemon Knight -- m10_19\u3000デーモンナイト"
+        "Smelter Demon"
       ]
     },
     {
       "ID": 305001,
       "Entries": [
-        ""
+        "Smelter Demon - Old Iron King DLC"
       ]
     },
     {
       "ID": 309600,
       "Entries": [
-        "m10_10 New Giant Senior Soldier (Deceased) -- m10_10\u3000新・巨人上級兵士（亡者）"
+        "The Last Giant"
       ]
     },
     {
       "ID": 309610,
       "Entries": [
-        "m20_21 Heavy Cavalry: Soldiers Only 2 Bodies -- m20_21\u3000重騎馬兵：兵士のみ\u30002体戦"
+        "Dragonrider & Dragonrider"
       ]
     },
     {
       "ID": 309700,
       "Entries": [
-        "m20_10 New Giant Senior Soldier (Live) -- m20_10\u3000新・巨人上級兵士（生者）"
+        "Giant Lord"
       ]
     },
     {
       "ID": 318000,
       "Entries": [
-        "m10_10 Bay grant -- m10_10\u3000ベイグラント"
+        "The Pursuer"
       ]
     },
     {
       "ID": 324000,
       "Entries": [
-        "m10_16 Against Gargoil -- m10_16\u3000ガーゴイル戦"
+        "Belfry Gargoyles"
       ]
     },
     {
       "ID": 325000,
       "Entries": [
-        "m10_16 Warrior in the Mirror -- m10_16\u3000鏡の中の戦士"
+        "Ruin Sentinels"
       ]
     },
     {
       "ID": 326000,
       "Entries": [
-        "m10_25 Butcher -- m10_25\u3000ブッチャー"
+        "The Rotten"
       ]
     },
     {
       "ID": 332000,
       "Entries": [
-        "m20_21 Queen Knight A -- m20_21\u3000王妃の騎士A"
+        "Throne Watcher & Throne Defender"
       ]
     },
     {
       "ID": 333000,
       "Entries": [
-        "m20_24 Queen Knight B -- m20_24\u3000王妃の騎士B"
+        "Velstadt, the Royal Aegis"
       ]
     },
     {
       "ID": 500000,
       "Entries": [
-        "m10_17 Javazahat -- m10_17\u3000ジャバザハット"
+        "Covetous Demon"
       ]
     },
     {
       "ID": 501000,
       "Entries": [
-        "m10_17- N. Sa. -- m10_17\u3000ナーガ"
+        "Mytha, the Baneful Queen"
       ]
     },
     {
       "ID": 503000,
       "Entries": [
-        "m10_32 Manscorpion ♀ -- m10_32\u3000マンスコーピオン♀"
+        "Scorpioness Najka"
       ]
     },
     {
       "ID": 504000,
       "Entries": [
-        "m20_21 Mirror Night -- m20_21\u3000ミラーナイト"
+        "Looking Glass Knight"
       ]
     },
     {
       "ID": 506100,
       "Entries": [
-        "m40_03 Agaduran Stand -- m40_03\u3000アガドゥランのスタンド"
+        "Darklurker"
       ]
     },
     {
       "ID": 514600,
       "Entries": [
-        "m20_24 The Old King -- m20_24\u3000年老いた王"
+        "Vendrick"
       ]
     },
     {
       "ID": 600000,
       "Entries": [
-        "m10_27 The Old Dragon -- m10_27\u3000古の龍"
+        "Ancient Dragon"
       ]
     },
     {
       "ID": 602000,
       "Entries": [
-        "m20_11 Beautiful Frog -- m20_11\u3000美声カエル"
+        "Demon of Song"
       ]
     },
     {
       "ID": 603000,
       "Entries": [
-        "m10_14 The Spider Queen- the same for the first half. -- m10_14\u3000蜘蛛の女王\u3000前半戦も同じ"
+        "The Duke's Dear Freja"
       ]
     },
     {
       "ID": 607000,
       "Entries": [
-        "m10_19 Iron Daemon -- m10_19\u3000熔鉄デーモン"
+        "Old Iron King"
       ]
     },
     {
       "ID": 611000,
       "Entries": [
-        "m10_31 Heavy Cavalry: Soldiers Only -- m10_31\u3000重騎馬兵：兵士のみ"
+        "Dragonrider"
       ]
     },
     {
       "ID": 619100,
       "Entries": [
-        "m10_23 Silver Chariot -- m10_23\u3000シルバーチャリオット"
+        "Executioner's Chariot"
       ]
     },
     {
       "ID": 625000,
       "Entries": [
-        "m10_31 Ornstein -- m10_31\u3000オーンスタイン"
+        "Old Dragonslayer"
       ]
     },
     {
       "ID": 626000,
       "Entries": [
-        "m10_16 Forgotten Sinners - 0 Lights -- m10_16\u3000忘れられた罪人-ライト０個"
+        "The Lost Sinner - 0 Lights"
       ]
     },
     {
       "ID": 626001,
       "Entries": [
-        "m10_16 Forgotten Sinners - One Light -- m10_16\u3000忘れられた罪人-ライト１個"
+        "The Lost Sinner - 1 Light"
       ]
     },
     {
       "ID": 626002,
       "Entries": [
-        "m10_16 Forgotten Sinners - Two Lights -- m10_16\u3000忘れられた罪人-ライト２個"
+        "The Lost Sinner - 2 Lights"
       ]
     },
     {
       "ID": 627000,
       "Entries": [
-        "m20_21 Queen's Armor -- m20_21\u3000王妃の鎧形態"
+        "Nashandra"
       ]
     },
     {
       "ID": 675000,
       "Entries": [
-        ""
+        "Fume Knight"
       ]
     },
     {
       "ID": 679000,
       "Entries": [
-        ""
+        "Lud, the King's Pet & Zallen, the King's Pet"
       ]
     },
     {
       "ID": 679100,
       "Entries": [
-        ""
+        "Aava, the King's Pet"
       ]
     },
     {
       "ID": 680000,
       "Entries": [
-        ""
+        "Sir Alonne"
       ]
     },
     {
       "ID": 681000,
       "Entries": [
-        ""
+        "Sinh, the Slumbering Dragon"
       ]
     },
     {
       "ID": 682000,
       "Entries": [
-        ""
+        "Elana, the Squalid Queen"
       ]
     },
     {
       "ID": 689000,
       "Entries": [
-        ""
+        "Burnt Ivory King"
       ]
     },
     {
@@ -388,13 +388,13 @@
     {
       "ID": 692000,
       "Entries": [
-        ""
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
       "ID": 800001,
       "Entries": [
-        ""
+        "Afflicted Graverobber, Ancient Soldier Varg & Cerah, the Old Explorer"
       ]
     },
     {

@@ -790,25 +790,25 @@
     {
       "ID": 12700000,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
       "ID": 12701000,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
       "ID": 12701100,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
       "ID": 12702000,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
@@ -874,19 +874,19 @@
     {
       "ID": 13300000,
       "Entries": [
-        "Skeleton"
+        "Bonewheel Skeleton"
       ]
     },
     {
       "ID": 13301000,
       "Entries": [
-        "Skeleton"
+        "Bonewheel Skeleton - Falchion"
       ]
     },
     {
       "ID": 13302000,
       "Entries": [
-        "Skeleton"
+        "Bonewheel Skeleton - Murakumo"
       ]
     },
     {
@@ -970,7 +970,7 @@
     {
       "ID": 14000000,
       "Entries": [
-        "UNKNOWN"
+        "Weaponsmith Ornifex"
       ]
     },
     {
@@ -982,25 +982,25 @@
     {
       "ID": 14600000,
       "Entries": [
-        "Headless Vengarl"
+        "Lord Tseldora"
       ]
     },
     {
       "ID": 14601000,
       "Entries": [
-        "Headless Vengarl"
+        "Lord Tseldora"
       ]
     },
     {
       "ID": 14602000,
       "Entries": [
-        "Headless Vengarl"
+        "Lord Tseldora"
       ]
     },
     {
       "ID": 14700000,
       "Entries": [
-        "Undead with Head Bandage"
+        "Undead Supplicant"
       ]
     },
     {
@@ -1162,25 +1162,25 @@
     {
       "ID": 15700000,
       "Entries": [
-        "Dual-wielding Skeleton"
+        "Armored Skeleton"
       ]
     },
     {
       "ID": 15701000,
       "Entries": [
-        "Dual-wielding Skeleton"
+        "Armored Skeleton"
       ]
     },
     {
       "ID": 15702000,
       "Entries": [
-        "Dual-wielding Skeleton"
+        "Armored Skeleton"
       ]
     },
     {
       "ID": 15703000,
       "Entries": [
-        "Dual-wielding Skeleton"
+        "Armored Skeleton"
       ]
     },
     {
@@ -1444,7 +1444,7 @@
     {
       "ID": 30400000,
       "Entries": [
-        "Milfanito"
+        "Injured Milfanito"
       ]
     },
     {
@@ -1504,25 +1504,25 @@
     {
       "ID": 30700000,
       "Entries": [
-        "Headless Vengarl"
+        "Body of Vengarl"
       ]
     },
     {
       "ID": 30701000,
       "Entries": [
-        "Headless Vengarl"
+        "Body of Vengarl"
       ]
     },
     {
       "ID": 30710000,
       "Entries": [
-        "Vengarl"
+        "Head of Vengarl"
       ]
     },
     {
       "ID": 30711000,
       "Entries": [
-        "Vengarl"
+        "Head of Vengarl"
       ]
     },
     {
@@ -1540,7 +1540,7 @@
     {
       "ID": 30900000,
       "Entries": [
-        "Forgotten Giant"
+        "Elite Giant"
       ]
     },
     {
@@ -1810,7 +1810,7 @@
     {
       "ID": 50100000,
       "Entries": [
-        "Mytha- the Baneful Queen"
+        "Mytha, Baneful Queen"
       ]
     },
     {
@@ -1846,7 +1846,7 @@
     {
       "ID": 50620000,
       "Entries": [
-        "Darklurker (Clone)"
+        "Darklurker (Portal)"
       ]
     },
     {
@@ -1918,7 +1918,7 @@
     {
       "ID": 51460000,
       "Entries": [
-        "Vendrick (hollow)"
+        "Vendrick (Hollow)"
       ]
     },
     {
@@ -2020,7 +2020,7 @@
     {
       "ID": 60800000,
       "Entries": [
-        "Rotten Vermin"
+        "Corrosive Ant Queen"
       ]
     },
     {
@@ -2272,7 +2272,7 @@
     {
       "ID": 66000000,
       "Entries": [
-        "Crystal Golem"
+        "Ice Golem"
       ]
     },
     {
@@ -2386,13 +2386,13 @@
     {
       "ID": 67110000,
       "Entries": [
-        "Poison Statue Cluster"
+        "Petrifying Statue Cluster"
       ]
     },
     {
       "ID": 67200000,
       "Entries": [
-        "Rotten Vermin"
+        "Corrosive Egg Insect"
       ]
     },
     {
@@ -2440,31 +2440,31 @@
     {
       "ID": 67800000,
       "Entries": [
-        "Ice Golem"
+        "Frozen Golem"
       ]
     },
     {
       "ID": 67800001,
       "Entries": [
-        "Ice Golem"
+        "Frozen Golem"
       ]
     },
     {
       "ID": 67900000,
       "Entries": [
-        "Aava- the King's Pet"
+        "Aava, King's Pet"
       ]
     },
     {
       "ID": 67900100,
       "Entries": [
-        "Aava- the King's Pet"
+        "Aava, King's Pet"
       ]
     },
     {
       "ID": 67900101,
       "Entries": [
-        "Aava- the King's Pet"
+        "Aava, King's Pet"
       ]
     },
     {
@@ -2476,13 +2476,13 @@
     {
       "ID": 68100000,
       "Entries": [
-        "Sinh- the Slumbering Dragon"
+        "Sinh, Slumbering Dragon"
       ]
     },
     {
       "ID": 68200000,
       "Entries": [
-        "Elana- Squalid Queen"
+        "Elana, Squalid Queen"
       ]
     },
     {
@@ -2560,25 +2560,25 @@
     {
       "ID": 69200000,
       "Entries": [
-        "Aldia- Scholar of the First Sin"
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
       "ID": 69201000,
       "Entries": [
-        "Aldia- Scholar of the First Sin"
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
       "ID": 69202000,
       "Entries": [
-        "Aldia- Scholar of the First Sin"
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
       "ID": 69203000,
       "Entries": [
-        "Aldia- Scholar of the First Sin"
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
@@ -2758,7 +2758,7 @@
     {
       "ID": 74100000,
       "Entries": [
-        "UNKNOWN"
+        "Crestfallen Saulden"
       ]
     },
     {
@@ -3100,7 +3100,7 @@
     {
       "ID": 81000000,
       "Entries": [
-        "UNKNOWN"
+        "Player-based NPC - Dark Spirit"
       ]
     },
     {

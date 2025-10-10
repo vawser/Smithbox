@@ -180,7 +180,8 @@
     
     <MapObjectBonfireID 
     AltName="Map Object Bonfire ID" 
-    Wiki="The ID of the bonfire this entity is linked to. Used with ascetics, effigies, and multi-player." />
+    Wiki="The ID of the bonfire this entity is linked to. Used with ascetics, effigies, and multi-player." 
+	ParamRef="MapObjectBonfireParam" />
     
     <LeashDistance 
     AltName="Leash Distance" 

@@ -214,25 +214,25 @@
     {
       "ID": 11001100,
       "Entries": [
-        "1001 [Body], Head -- 1001 【素体】・頭"
+        "1001 [Body] - Head -- 1001 【素体】・頭"
       ]
     },
     {
       "ID": 11001101,
       "Entries": [
-        "1001 [Body], chest -- 1001 【素体】・胸"
+        "1001 [Body] - chest -- 1001 【素体】・胸"
       ]
     },
     {
       "ID": 11001102,
       "Entries": [
-        "1001 [Body], Arm -- 1001 【素体】・腕"
+        "1001 [Body] - Arm -- 1001 【素体】・腕"
       ]
     },
     {
       "ID": 11001103,
       "Entries": [
-        "1001 [Body], foot -- 1001 【素体】・足"
+        "1001 [Body] - foot -- 1001 【素体】・足"
       ]
     },
     {
@@ -358,7 +358,7 @@
     {
       "ID": 11041100,
       "Entries": [
-        "1041 [Hunter (2)】Head -- 1041 【狩人②】・頭11050100 Knight Helm"
+        "Hunter's Hat (NPC exclusive) "
       ]
     },
     {
@@ -748,7 +748,7 @@
     {
       "ID": 11380103,
       "Entries": [
-        "1380 [NPC only: Sealer] and feet -- 1380 【NPC専用：封印者】・足"
+        "Crimson Waistcloth (NPC exclusive) "
       ]
     },
     {
@@ -2770,25 +2770,25 @@
     {
       "ID": 17630100,
       "Entries": [
-        "7630 [NPC Bookstore], Head -- 7630 【NPC\u3000本屋】・頭"
+        "Rosabeth's Dress - Head (NPC exclusive) "
       ]
     },
     {
       "ID": 17630101,
       "Entries": [
-        "7630 [NPC Bookstore]/Chest -- 7630 【NPC\u3000本屋】・胸"
+        "Rosabeth's Dress - Chest (NPC exclusive) "
       ]
     },
     {
       "ID": 17630102,
       "Entries": [
-        "7630 [NPC Bookstore], Arm -- 7630 【NPC\u3000本屋】・腕"
+        "Rosabeth's Dress - Arms (NPC exclusive) "
       ]
     },
     {
       "ID": 17630103,
       "Entries": [
-        "7630 [NPC Bookstore], Foot -- 7630 【NPC\u3000本屋】・足"
+        "Rosabeth's Dress - Legs(NPC exclusive) "
       ]
     },
     {

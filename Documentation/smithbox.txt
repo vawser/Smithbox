@@ -15,12 +15,10 @@
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 
-- Gparam Editor: check Quick Edit works (CTD report)
-
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Gparam Editor: update GPARAM format for the NR changes
+- Add Moonlight Ruin's DS2 def/meta updates

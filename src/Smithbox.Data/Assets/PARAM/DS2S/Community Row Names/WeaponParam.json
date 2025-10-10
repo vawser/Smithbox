@@ -1606,49 +1606,49 @@
     {
       "ID": 3401000,
       "Entries": [
-        "Fists"
+        "Ladder Attack - Kick"
       ]
     },
     {
       "ID": 3402000,
       "Entries": [
-        "Fists"
+        "Ladder Attack - Punch"
       ]
     },
     {
       "ID": 3403000,
       "Entries": [
-        "Fists"
+        "NPC: Ladder Attack - Kick"
       ]
     },
     {
       "ID": 3404000,
       "Entries": [
-        "Fists"
+        "NPC: Ladder Attack - Punch"
       ]
     },
     {
       "ID": 3405000,
       "Entries": [
-        "Fists"
+        "NPC: Fists"
       ]
     },
     {
       "ID": 3406000,
       "Entries": [
-        "Caestus"
+        "Fist (Vanquisher's Seal)"
       ]
     },
     {
       "ID": 3407000,
       "Entries": [
-        "Caestus"
+        "Ladder Attack - Kick (Vanquisher's Seal)"
       ]
     },
     {
       "ID": 3408000,
       "Entries": [
-        "Caestus"
+        "Ladder Attack - Punch (Vanquisher's Seal)"
       ]
     },
     {
@@ -2224,7 +2224,7 @@
     {
       "ID": 6310000,
       "Entries": [
-        "Ghost Phantom - Dagger"
+        "Ghost Phantom - Thrusting Sword"
       ]
     },
     {

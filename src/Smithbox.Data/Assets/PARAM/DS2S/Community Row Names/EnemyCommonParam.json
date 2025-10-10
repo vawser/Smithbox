@@ -148,25 +148,25 @@
     {
       "ID": 127000,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
       "ID": 127001,
       "Entries": [
-        "Captive Undead"
+        "Undead Laborer"
       ]
     },
     {
       "ID": 127010,
       "Entries": [
-        "Captive Undead (Ivory King DLC)"
+        "Undead Laborer (Ivory King DLC)"
       ]
     },
     {
       "ID": 127011,
       "Entries": [
-        "Captive Undead (Ivory King DLC)"
+        "Undead Laborer (Ivory King DLC)"
       ]
     },
     {
@@ -196,7 +196,7 @@
     {
       "ID": 133000,
       "Entries": [
-        "Skeleton"
+        "Bonewheel Skeleton"
       ]
     },
     {
@@ -304,7 +304,7 @@
     {
       "ID": 157000,
       "Entries": [
-        "Dual-wielding Skeleton"
+        "Armored Skeleton"
       ]
     },
     {
@@ -484,7 +484,7 @@
     {
       "ID": 304000,
       "Entries": [
-        "Milfanito"
+        "Injured Milfanito"
       ]
     },
     {
@@ -514,19 +514,19 @@
     {
       "ID": 307000,
       "Entries": [
-        "Headless Vengarl"
+        "Body of Vengarl"
       ]
     },
     {
       "ID": 307100,
       "Entries": [
-        "Headless Vengarl"
+        "Head of Vengarl"
       ]
     },
     {
       "ID": 307110,
       "Entries": [
-        "Vengarl"
+        "Head of Vengarl"
       ]
     },
     {
@@ -538,7 +538,7 @@
     {
       "ID": 309000,
       "Entries": [
-        "Forgotten Giant"
+        "Elite Giant"
       ]
     },
     {
@@ -694,13 +694,13 @@
     {
       "ID": 500010,
       "Entries": [
-        "Snowy Covetous Demon"
+        "Covetous Demon (Ivory King DLC)"
       ]
     },
     {
       "ID": 501000,
       "Entries": [
-        "Mytha- the Baneful Queen"
+        "Mytha, Baneful Queen"
       ]
     },
     {
@@ -742,7 +742,7 @@
     {
       "ID": 506200,
       "Entries": [
-        "Darklurker (Clone)"
+        "Darklurker (Portal)"
       ]
     },
     {
@@ -772,7 +772,7 @@
     {
       "ID": 514600,
       "Entries": [
-        "Vendrick (hollow)"
+        "Vendrick (Hollow)"
       ]
     },
     {
@@ -820,7 +820,7 @@
     {
       "ID": 608000,
       "Entries": [
-        "Corrosive Ant"
+        "Corrosive Ant Queen"
       ]
     },
     {
@@ -832,13 +832,13 @@
     {
       "ID": 611001,
       "Entries": [
-        "Dragonrider (Archer)"
+        "Dragonrider"
       ]
     },
     {
       "ID": 611010,
       "Entries": [
-        "Dragonrider"
+        "Dragonrider (Bow)"
       ]
     },
     {
@@ -922,7 +922,7 @@
     {
       "ID": 660000,
       "Entries": [
-        "Crystal Golem"
+        "Ice Golem"
       ]
     },
     {
@@ -1000,13 +1000,13 @@
     {
       "ID": 678000,
       "Entries": [
-        "Ice Golem"
+        "Frozen Golem"
       ]
     },
     {
       "ID": 679000,
       "Entries": [
-        "Aava- the King's Pet"
+        "Aava, King's Pet"
       ]
     },
     {
@@ -1018,19 +1018,19 @@
     {
       "ID": 681000,
       "Entries": [
-        "Sinh- the Slumbering Dragon"
+        "Sinh, Slumbering Dragon"
       ]
     },
     {
       "ID": 681001,
       "Entries": [
-        "Sinh- the Slumbering Dragon"
+        "Sinh, Slumbering Dragon"
       ]
     },
     {
       "ID": 682000,
       "Entries": [
-        "Elana- Squalid Queen"
+        "Elana, Squalid Queen"
       ]
     },
     {
@@ -1084,13 +1084,13 @@
     {
       "ID": 692000,
       "Entries": [
-        "Aldia- Scholar of the First Sin"
+        "Aldia, Scholar of the First Sin"
       ]
     },
     {
       "ID": 700000,
       "Entries": [
-        "UNKNOWN"
+        "Emerald Herald (Child) - Unused"
       ]
     },
     {
