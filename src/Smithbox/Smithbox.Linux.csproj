@@ -12,35 +12,19 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-    <OutputType>WinExe</OutputType>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
-    <PlatformTargets>arm64;x64</PlatformTargets>
-    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>

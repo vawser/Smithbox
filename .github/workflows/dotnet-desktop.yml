@@ -16,13 +16,13 @@ jobs:
           dotnet-version: '8.0.x' # SDK Version to use;
         
       - name: Restore
-        run: dotnet restore /p:Configuration=Release-win
+        run: dotnet restore
         
       - name: Build
-        run: dotnet build --configuration Release-win --no-restore
+        run: dotnet build --configuration Release --no-restore
 
       - name: Publish
-        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release-win -o deploy
+        run: dotnet publish '${{ runner.workspace }}/Smithbox/src/Smithbox/Smithbox.csproj' --configuration Release -o deploy
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

@@ -6,28 +6,10 @@
     <Nullable>enable</Nullable>
     <LangVersion>12</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>DEBUG</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>RELEASE</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>embedded</DebugType>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-    <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
-    <DefineConstants>$(DefineConstants);OSX</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

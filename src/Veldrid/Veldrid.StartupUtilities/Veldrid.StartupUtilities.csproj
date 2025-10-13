@@ -25,12 +25,7 @@
     <PackageTags>Core Standard Game SDL2 Window Input</PackageTags>
   </PropertyGroup>
 
-  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 
