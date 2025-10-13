@@ -80,7 +80,7 @@ public partial class ParamTools
     /// <summary>
     /// Standard row duplicate
     /// </summary>
-    public void DuplicateRow()
+    public void DuplicateRow(bool wholeTableGroupDuplicate = false)
     {
         var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
@@ -167,11 +167,19 @@ public partial class ParamTools
 
             rowsToInsert.Reverse();
 
+            if(wholeTableGroupDuplicate)
+            {
+                foreach(var row in rowsToInsert)
+                {
+                    row.ID = row.ID + CFG.Current.Param_Toolbar_Duplicate_Offset;
+                }
+            }
+
             List<EditorAction> actions = new List<EditorAction>();
 
             for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
             {
-                var dupeAction = new AddRowsToTableGroup(Editor, param, rowsToInsert, insertIndex);
+                var dupeAction = new AddRowsToTableGroup(Editor, param, rowsToInsert, insertIndex, false, true);
 
                 actions.Add(dupeAction);
             }

@@ -260,6 +260,17 @@ public class ParamSelection
         //Do not perform vanilla diff here, will be very slow when making large selections
     }
 
+    public void ClearRowSelection()
+    {
+        if (_activeParam != null)
+        {
+            ParamSelectionState s = _paramStates[_activeParam];
+
+            s.selectionRows.Clear();
+            s.selectionCacheDirty = true;
+        }
+    }
+
     public void AddRowToSelection(Param.Row row)
     {
         if (_activeParam != null)

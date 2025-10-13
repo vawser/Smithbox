@@ -100,13 +100,19 @@ public class ParamEditorShortcuts
             // Duplicate
             if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
             {
-                Editor.ParamTools.DuplicateRow();
+                if (Editor.ContextManager.CurrentContext is not ParamEditorContext.TableGroupList)
+                {
+                    Editor.ParamTools.DuplicateRow();
+                }
             }
 
             // Delete
             if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
             {
-                Editor.DeleteSelection();
+                if (Editor.ContextManager.CurrentContext is not ParamEditorContext.TableGroupList)
+                {
+                    Editor.DeleteSelection();
+                }
             }
 
             // Go to Row

@@ -54,6 +54,8 @@ public class ParamView
 
         ImGui.BeginChild("paramTypes");
 
+        Editor.ContextManager.SetWindowContext(ParamEditorContext.ParamList);
+
         if (!CFG.Current.Param_PinnedParamsStayVisible)
         {
             DisplayPinnedParams(scale);

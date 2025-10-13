@@ -86,6 +86,7 @@ public class ParamEditorScreen : EditorScreen
     public ParamUpgrader ParamUpgrader;
 
     private ParamEditorShortcuts EditorShortcuts;
+    public ParamContextManager ContextManager;
 
     public ParamEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -99,6 +100,7 @@ public class ParamEditorScreen : EditorScreen
         _activeView = _views[0];
 
         DecoratorHandler = new(this, Project);
+        ContextManager = new(this, Project);
 
         ParamTools = new(this, Project);
         FieldNameFinder = new(this);

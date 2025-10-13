@@ -351,14 +351,16 @@ public class AddRowsToTableGroup : EditorAction
     private readonly List<int> RemovedIndex = new();
     private bool AppendOnly = false;
     private Action<bool> PostExecutionAction;
+    private bool IgnoreNameAppend = false;
 
-    public AddRowsToTableGroup(ParamEditorScreen editor, Param param, List<Param.Row> rows, int insertIndex, bool appendOnly = false)
+    public AddRowsToTableGroup(ParamEditorScreen editor, Param param, List<Param.Row> rows, int insertIndex, bool appendOnly = false, bool ignoreNameAppend = false)
     {
         Editor = editor;
         Param = param;
         Clonables.AddRange(rows);
         AppendOnly = appendOnly;
         InsertIndex = insertIndex;
+        IgnoreNameAppend = ignoreNameAppend;
     }
 
     public override ActionEvent Execute()
@@ -371,14 +373,18 @@ public class AddRowsToTableGroup : EditorAction
 
             if (InsertIndex > -1)
             {
-                newrow.Name = row.Name != null ? row.Name + "_1" : "";
+                if(!IgnoreNameAppend)
+                    newrow.Name = row.Name != null ? row.Name + "_1" : "";
+
                 Param.InsertRow(InsertIndex, newrow);
             }
             else
             {
                 if (Param[row.ID] != null)
                 {
-                    newrow.Name = row.Name != null ? row.Name + "_1" : "";
+                    if (!IgnoreNameAppend)
+                        newrow.Name = row.Name != null ? row.Name + "_1" : "";
+
                     newrow.ID = row.ID;
 
                     Param.InsertRow(Param.IndexOfRow(Param[row.ID]) + 1, newrow);

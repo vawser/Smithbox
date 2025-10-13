@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.META;
@@ -74,6 +75,8 @@ public class ParamEditorView
             var scrollTo = 0f;
             if (ImGui.TableNextColumn())
             {
+                Editor.ContextManager.SetColumnContext(ParamEditorContext.ParamList);
+
                 ParamView.Display(doFocus, isActiveView, scale, scrollTo);
             }
 
@@ -81,18 +84,24 @@ public class ParamEditorView
             {
                 if (ImGui.TableNextColumn())
                 {
+                    Editor.ContextManager.SetColumnContext(ParamEditorContext.TableGroupList);
+
                     TableGroupView.Display(doFocus, isActiveView, scrollTo, activeParam);
                 }
             }
 
             if (ImGui.TableNextColumn())
             {
+                Editor.ContextManager.SetColumnContext(ParamEditorContext.RowList);
+
                 RowView.Display(doFocus, isActiveView, scrollTo, activeParam);
             }
 
             Param.Row activeRow = Selection.GetActiveRow();
             if (ImGui.TableNextColumn())
             {
+                Editor.ContextManager.SetColumnContext(ParamEditorContext.FieldList);
+
                 FieldView.Display(isActiveView, activeParam, activeRow);
             }
 

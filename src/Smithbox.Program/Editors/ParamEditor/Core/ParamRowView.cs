@@ -90,11 +90,13 @@ public class ParamRowView
                     }
                     if (ImGui.TableNextColumn())
                     {
+                        Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                         ImGui.Text("ID\t\tName");
                     }
 
                     if (ImGui.TableNextColumn())
                     {
+                        Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                         ImGui.Text(compareCol.Def.InternalName);
                     }
                 }
@@ -593,6 +595,7 @@ public class ParamRowView
 
         if (ImGui.TableNextColumn())
         {
+            Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
             DisplayRow(selectionCache, selectionCacheIndex, activeParam, p, r, vanillaDiffCache,
                 auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, isPinned, meta);
             lastCol = true;
@@ -602,6 +605,7 @@ public class ParamRowView
         {
             if (ImGui.TableNextColumn())
             {
+                Editor.ContextManager.SetWindowContext(ParamEditorContext.RowList);
                 Param.Cell c = r[compareCol];
                 object newval = null;
                 ImGui.PushID("compareCol_" + selectionCacheIndex);
@@ -708,15 +712,26 @@ public class ParamRowView
                     "Delete the current row selection from the param.");
 
                 // Duplicate
-                if (ImGui.Selectable(@$"Duplicate", false,
+                if (ImGui.BeginMenu("Duplicate"))
+                {
+                    ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                    UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
+
+                    ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+                    UIHelper.Tooltip("The number of times the current selection will be duplicated.");
+
+                    if (ImGui.Selectable(@$"Apply", false,
                         View.Selection.RowSelectionExists()
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
-                {
-                    Editor.ParamTools.DuplicateRow();
+                    {
+                        Editor.ParamTools.DuplicateRow();
+                    }
+                    UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
+                        "Duplicate the current row selection, automatically incrementing the row ID.");
+
+                    ImGui.EndMenu();
                 }
-                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
-                    "Duplicate the current row selection, automatically incrementing the row ID.");
 
                 // Duplicate To
                 if (ImGui.BeginMenu("Duplicate To", Editor.ParamTools.IsCommutativeParam()))

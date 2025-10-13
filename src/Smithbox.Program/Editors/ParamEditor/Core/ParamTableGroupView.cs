@@ -49,7 +49,11 @@ public class ParamTableGroupView
 
         ImGui.BeginChild("rowGroupSection");
 
+        Editor.ContextManager.SetWindowContext(ParamEditorContext.TableGroupList);
+
         DisplayRowGroups(doFocus, scrollTo);
+
+        Shortcuts();
 
         ImGui.EndChild();
     }
@@ -147,6 +151,18 @@ public class ParamTableGroupView
 
             DisplayContextMenu(group);
         }
+
+        if(ApplyTableGroupDuplicate)
+        {
+            DuplicateTableGroup();
+            ApplyTableGroupDuplicate = false;
+        }
+
+        if (ApplyTableGroupDelete)
+        {
+            DeleteTableGroup();
+            ApplyTableGroupDelete = false;
+        }
     }
 
     public void DisplayContextMenu(int groupKey)
@@ -179,22 +195,98 @@ public class ParamTableGroupView
                 }
             }
 
-            //if (ImGui.BeginMenu("Duplicate"))
-            //{
-            //    if (ImGui.Selectable("Apply"))
-            //    {
+            if (ImGui.BeginMenu("Duplicate"))
+            {
+                ImGui.InputInt("Offset##duplicateOffset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
+                UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
 
-            //    }
-            //    UIHelper.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
-            //}
+                ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
+                UIHelper.Tooltip("The number of times the current selection will be duplicated.");
 
-            //if (ImGui.Selectable("Delete"))
-            //{
-            //}
-            //UIHelper.Tooltip($"Duplicate this table group. This will remove the rows that comprise this group.");
+                if (ImGui.Selectable("Apply"))
+                {
+                    ApplyTableGroupDuplicate = true;
+                }
+                UIHelper.Tooltip($"Duplicate this table group. This will duplicate the rows that comprise this group.");
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.Selectable("Delete"))
+            {
+                ApplyTableGroupDelete = true;
+            }
+            UIHelper.Tooltip($"Delete this table group. This will remove the rows that comprise this group.");
 
             ImGui.EndPopup();
         }
+    }
+
+    public void Shortcuts()
+    {
+        if (Editor.ContextManager.CurrentContext is ParamEditorContext.TableGroupList)
+        {
+            if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1 && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            {
+                ApplyTableGroupDuplicate = true;
+            }
+
+            if (!ImGui.IsAnyItemActive() && CurrentTableGroup != -1 && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            {
+                ApplyTableGroupDelete = true;
+            }
+        }
+    }
+
+    private bool ApplyTableGroupDuplicate = false;
+    private bool ApplyTableGroupDelete = false;
+
+    public void DuplicateTableGroup()
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroup).ToList();
+
+        Editor._activeView.Selection.ClearRowSelection();
+        foreach (var entry in targetRows)
+        {
+            Editor._activeView.Selection.AddRowToSelection(entry);
+        }
+
+        CurrentTableGroups.Clear();
+
+        Editor.ParamTools.DuplicateRow(true);
+
+        UpdateTableSelection(curParamKey);
+    }
+
+    public void DeleteTableGroup()
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroup).ToList();
+
+        Editor._activeView.Selection.ClearRowSelection();
+        foreach (var entry in targetRows)
+        {
+            Editor._activeView.Selection.AddRowToSelection(entry);
+        }
+
+        CurrentTableGroups.Clear();
+
+        Editor.DeleteSelection();
+
+        UpdateTableSelection(curParamKey);
     }
 
     public void UpdateTableGroupNames(string activeParam, TableGroupParamEntry curTableGroup, int groupKey, string curName)
@@ -232,6 +324,13 @@ public class ParamTableGroupView
                 curTableGroup.Entries.Add(newTableEntry);
             }
         }
+    }
+
+    public void UpdateTableSelection()
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        UpdateTableSelection(curParamKey);
     }
 
     /// <summary>

@@ -54,12 +54,18 @@ public class ParamFieldView
         if (activeRow == null)
         {
             ImGui.BeginChild("columnsNONE");
+
+            Editor.ContextManager.SetWindowContext(ParamEditorContext.FieldList);
+
             ImGui.Text("Select a row to see properties");
             ImGui.EndChild();
         }
         else
         {
             ImGui.BeginChild("columns" + activeParam);
+
+            Editor.ContextManager.SetWindowContext(ParamEditorContext.FieldList);
+
             Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
 
             var bank = Editor.Project.ParamData.PrimaryBank;

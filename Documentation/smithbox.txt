@@ -1,10 +1,13 @@
 # TODO LIST
+- Interface: re-structure the Editor flow so the windows are immediately created, and then the initialization process occurs (currently they are fully initialized before the window is created).
+
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Viewport: add ability to change viewport background color
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
 - Map Editor: add special map connections for NR
+- Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
@@ -15,10 +18,12 @@
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 
+- Gparam Editor: properly find out the new NR field type structures, so they can be edited.
+
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Add Moonlight Ruin's DS2 def/meta updates
+- Param Editor: add duplicate/delete shortcut/context actions for the Table Groups section
