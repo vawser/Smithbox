@@ -287,7 +287,7 @@ public class QuickScript
     {
         var outputDir = $@"{CFG.Current.SmithboxBuildFolder}\_temp";
 
-        var sourceFilepath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{type}";
+        var sourceFilepath = @$"{Common.FileLocations.Assets}/PARAM/{type}";
         sourceFilepath = Path.Combine(sourceFilepath, $"{group}.json");
 
 

@@ -618,7 +618,7 @@ public static class VirtualPathLocator
             {
                 if (pathElements[i].Equals("worldmap"))
                 {
-                    return $"{AppContext.BaseDirectory}//Assets//MSB//ER//Maps//world_map.tpf.dcx";
+                    return $"{Common.FileLocations.Resources}//Assets//MSB//ER//Maps//world_map.tpf.dcx";
                 }
             }
 
@@ -626,7 +626,7 @@ public static class VirtualPathLocator
             {
                 if (pathElements[i].Equals("worldmap"))
                 {
-                    return $"{AppContext.BaseDirectory}//Assets//MSB//NR//Maps//world_map.tpf.dcx";
+                    return $"{Common.FileLocations.Resources}//Assets//MSB//NR//Maps//world_map.tpf.dcx";
                 }
             }
         }

@@ -16,42 +16,35 @@ public static class SteamGameLocator
 {
     public static string GetSteamInstallPath()
     {
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
 #if WINDOWS
-            using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Valve\Steam"))
+        using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Valve\Steam"))
+        {
+            if (key != null)
             {
-                if (key != null)
-                {
-                    return key.GetValue("InstallPath") as string;
-                }
+                return key.GetValue("InstallPath") as string;
             }
-#endif
         }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+#elif MACOS
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Steam";
+        if (Directory.Exists(path))
+            return path;
+#elif LINUX
+        string home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        var candidates = new[]
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Steam";
-            if (Directory.Exists(path))
-                return path;
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
-            string home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var candidates = new[]
-            {
-                Path.Combine(home, ".steam", "steam"),
-                Path.Combine(home, ".local", "share", "Steam"),
-                Path.Combine(home, ".steam", "root")
-            };
+            Path.Combine(home, ".steam", "steam"),
+            Path.Combine(home, ".local", "share", "Steam"),
+            Path.Combine(home, ".steam", "root")
+        };
 
-            foreach (var path in candidates)
+        foreach (var path in candidates)
+        {
+            if (Directory.Exists(path))
             {
-                if (Directory.Exists(path))
-                {
-                    return path;
-                }
+                return path;
             }
         }
+#endif
 
         return null;
     }

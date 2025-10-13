@@ -352,8 +352,8 @@ public static class ParamUtils
 
     public static bool HasDeveloperRowNames(ProjectEntry curProject)
     {
-        var dir = Path.Combine(AppContext.BaseDirectory, 
-            "Assets", "PARAM",
+        var dir = Path.Combine(Common.FileLocations.Assets, 
+            "PARAM",
             ProjectUtils.GetGameDirectory(curProject), "Developer Row Names");
 
         if(Directory.Exists(dir))

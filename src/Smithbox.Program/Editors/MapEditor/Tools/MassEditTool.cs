@@ -19,7 +19,6 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 

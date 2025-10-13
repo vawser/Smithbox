@@ -6,23 +6,30 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="$(DefineConstants.Contains(MACOS))">
+    <MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>true</MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>
+  </PropertyGroup>
+
   <ItemGroup>
-    <None Update="Assets\**" CopyToOutputDirectory="Always" />
-    <None Update="Licenses\**" CopyToOutputDirectory="Always" />
+    <None Update="Assets\**" CopyToOutputDirectory="Always" PublishFolderType="Resource" />
+    <None Update="Licenses\**" CopyToOutputDirectory="Always" PublishFolderType="Resource" />
   </ItemGroup>
   
   <ItemGroup>
     <Content Include="imgui.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PublishFolderType>Resource</PublishFolderType>
     </Content>
     <Content Include="imgui.default">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PublishFolderType>Resource</PublishFolderType>
     </Content>
     <Content Include="SDL2.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Veldrid.ImGui.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PublishFolderType>Assembly</PublishFolderType>
     </Content>
     <Content Include="libveldrid-spirv.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

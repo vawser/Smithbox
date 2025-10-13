@@ -187,7 +187,7 @@ public class MapData
         await Task.Yield();
 
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
+        var srcDir = Path.Combine(Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Project), "Community Map Object Names");
         var projDir = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Community Map Object Names");
 
         if (Directory.Exists(projDir))

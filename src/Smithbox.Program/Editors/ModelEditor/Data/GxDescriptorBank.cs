@@ -17,7 +17,7 @@ public class GxDescriptorBank
     public GxDescriptorBank(ModelEditorScreen screen)
     {
         Screen = screen;
-        DescriptorPath = Path.Join(AppContext.BaseDirectory, "Assets", "FLVER", "GX_Item_Descriptors.json");
+        DescriptorPath = Path.Join(Common.FileLocations.Assets, "FLVER", "GX_Item_Descriptors.json");
 
         try
         {

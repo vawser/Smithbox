@@ -932,12 +932,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_6_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_6_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.6.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.6.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.6");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.6");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -958,12 +960,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_8_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_8_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.8.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.8.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.8");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.8");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -985,12 +989,14 @@ public class ProjectEntry
 #if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
-#elif OSX
+#elif MACOS
             var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.9.dylib");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.9.dylib");
 #elif LINUX
             var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.9");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.9");
+#else
+            return false;
 #endif
 
             if (!File.Exists(rootDllPath))
@@ -1073,7 +1079,7 @@ public class ProjectEntry
         else
             FS = new CompundVirtualFileSystem(fileSystems);
 
-        var folder = Path.Join(AppContext.BaseDirectory,"Assets","File Dictionaries");
+        var folder = Path.Join(Common.FileLocations.Assets, "File Dictionaries");
         var file = "";
 
         // Build the file dictionary JSON objects here
@@ -1153,7 +1159,7 @@ public class ProjectEntry
 
         HashSet<string> sourceDirectories =
         [
-            Path.Join(AppContext.BaseDirectory,"Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType)),
+            Path.Join(Common.FileLocations.Assets, "Aliases",ProjectUtils.GetGameDirectory(ProjectType)),
             Path.Join(ProjectPath,".smithbox","Assets","Aliases")
         ];
 
@@ -1210,7 +1216,7 @@ public class ProjectEntry
         MsbMasks = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
@@ -1330,7 +1336,7 @@ public class ProjectEntry
         FlverEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","FLVER");
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "FLVER");
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","FLVER");
@@ -1416,7 +1422,7 @@ public class ProjectEntry
         GparamEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
@@ -1501,7 +1507,7 @@ public class ProjectEntry
         ParamMemoryOffsets = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
@@ -1544,7 +1550,7 @@ public class ProjectEntry
         ProjectEnums = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Project");
@@ -1598,7 +1604,7 @@ public class ProjectEntry
         ParamCategories = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
@@ -1650,7 +1656,7 @@ public class ProjectEntry
         CommutativeParamGroups = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
@@ -1701,7 +1707,7 @@ public class ProjectEntry
         MapSpawnStates = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
@@ -1752,7 +1758,7 @@ public class ProjectEntry
         MaterialDisplayConfiguration = new();
 
         // Information
-        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
 
         var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));

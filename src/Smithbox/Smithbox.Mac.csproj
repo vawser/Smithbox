@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>Smithbox</AssemblyName>
+    <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.0.8</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -13,6 +14,7 @@
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
+    <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -27,7 +29,19 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
+  <!-- Required for XCode 16+ builds-->
+  <ItemGroup>
+    <_CustomLinkFlags Include="-ld64;-undefined;dynamic_lookup" Visible="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ValidateXcodeVersion>false</ValidateXcodeVersion>
+    <_UseClassicLinker>true</_UseClassicLinker>
+  </PropertyGroup>
 
+  <ItemGroup>
+    <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
+    <BundleResource Include="AppIcon.icns" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
@@ -43,11 +57,9 @@
     <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
 
-  <Target Name="CopyDataProjectOutput" AfterTargets="Build">
-  <ItemGroup>
-    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\$(TargetFramework)\**\*" />
-  </ItemGroup>
-
-  <Copy SourceFiles="@(DataProjectFiles)" DestinationFolder="$(OutputPath)%(RecursiveDir)" SkipUnchangedFiles="true" />
-</Target>
+  <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
+      <Error Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'" Text="Pass Solution dir, i.e. run:
+            dotnet build $([System.IO.Path]::GetRelativePath('$(MSBuildStartupDirectory)', '$(MSBuildProjectFullPath)')) --no-restore /p:SolutionDir=$([System.IO.Path]::GetFullPath('$(ProjectDir)\..\..'))" />
+      <Copy SourceFiles="Mac.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

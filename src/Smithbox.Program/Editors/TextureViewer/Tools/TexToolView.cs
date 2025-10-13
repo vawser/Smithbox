@@ -78,7 +78,13 @@ public class TexToolView
                     ImGui.SameLine();
                     if (ImGui.Button("View Folder", DPI.HalfWidthButton(windowWidth, 24)))
                     {
+#if WINDOWS
                         Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+#elif MACOS
+                        Process.Start("/usr/bin/open", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+#elif LINUX
+                        Process.Start("xdg-open", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+#endif
                     }
                     UIHelper.Tooltip("The folder destination to export the texture to.");
                     UIHelper.WrappedText("");

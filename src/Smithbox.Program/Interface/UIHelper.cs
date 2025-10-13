@@ -75,8 +75,8 @@ public static class UIHelper
 
     public static void RestoreImguiIfMissing()
     {
-        var curImgui = Path.Join(AppContext.BaseDirectory, "imgui.ini");
-        var defaultImgui = Path.Join(AppContext.BaseDirectory, "imgui.default");
+        var curImgui = Path.Join(Common.FileLocations.CurImgui, "imgui.ini");
+        var defaultImgui = Path.Join(Common.FileLocations.Resources, "imgui.default");
 
         if (!File.Exists(curImgui) && File.Exists(defaultImgui))
         {

@@ -9,7 +9,7 @@ namespace StudioCore.Scene.Helpers;
 
 public static class ShaderHelper
 {
-    private static readonly string s_assetRoot = Path.Combine(AppContext.BaseDirectory, "Assets");
+    private static readonly string s_assetRoot = Common.FileLocations.Assets;
 
     internal static string GetPath(string assetPath)
     {

@@ -307,7 +307,7 @@ public class ParamData
         }
 
         // Param Type Info
-        var paramTypeInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
+        var paramTypeInfoPath = Path.Join(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
 
         if (File.Exists(paramTypeInfoPath))
         {
@@ -362,7 +362,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
+        var rootMetaDir = Path.Join(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
         var projectMetaDir = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
@@ -423,7 +423,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");
 
         if(CFG.Current.Param_UseProjectMeta)
@@ -467,7 +467,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Icon Configurations.json");
 
         if (CFG.Current.Param_UseProjectMeta)
@@ -511,7 +511,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var srcDir = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
+        var srcDir = Path.Combine(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Community Table Names");
 
         if (!Directory.Exists(srcDir))
         {
@@ -631,7 +631,7 @@ public class ParamData
     {
         await Task.Yield();
 
-        var srcFile = Path.Combine(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
+        var srcFile = Path.Combine(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(Project), "Table Params.json");
         var projFile = Path.Combine(Project.ProjectPath, ".smithbox", "Project", "Table Params.json");
 
         if (Directory.Exists(projFile))
@@ -674,7 +674,7 @@ public class ParamData
     {
         // META
         var metaDir = ParamLocator.GetParammetaDir(Project);
-        var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
+        var rootDir = Path.Combine(Common.FileLocations.Resources, metaDir);
         var projectDir = Path.Join(Project.ProjectPath, ".smithbox", metaDir);
 
         if (!Directory.Exists(projectDir))
@@ -701,7 +701,7 @@ public class ParamData
 
     public void CopyMetadataFile(string name)
     {
-        var srcFolder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var srcFolder = @$"{Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var srcFile = Path.Combine(srcFolder, name);
 
         var targetFolder = Path.Combine(Project.ProjectPath, ".smithbox", "Project");

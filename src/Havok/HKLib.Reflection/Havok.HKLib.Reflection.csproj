@@ -8,9 +8,14 @@
         <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
+    <PropertyGroup Condition="$(DefineConstants.Contains(MACOS))">
+        <MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>true</MSBuildDisableGetCopyToPublishDirectoryItemsOptimization>
+    </PropertyGroup>
+
     <ItemGroup>
         <Content Include="Res\*.*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PublishFolderType>Resource</PublishFolderType>
         </Content>
     </ItemGroup>
 

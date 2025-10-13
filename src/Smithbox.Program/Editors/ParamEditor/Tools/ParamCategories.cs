@@ -258,7 +258,7 @@ public static class ParamCategories
 
     public static void RestoreDefault(ParamEditorScreen editor)
     {
-        var sourceFolder = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(editor.Project.ProjectType));
+        var sourceFolder = Path.Join(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(editor.Project.ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         if (File.Exists(sourceFile))

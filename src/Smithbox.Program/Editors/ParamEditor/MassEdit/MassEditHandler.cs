@@ -415,8 +415,13 @@ public class MassEditHandler
             if (ImGui.Button("Open Script Folder", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
-
+#if WINDOWS
                 Process.Start("explorer.exe", projectScriptDir);
+#elif MACOS
+                Process.Start("/usr/bin/open", projectScriptDir);
+#elif LINUX
+                Process.Start("xdg-open", projectScriptDir);
+#endif
             }
         }
     }
