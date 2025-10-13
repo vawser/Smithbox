@@ -14,9 +14,9 @@
 - Model Editor: add simple JSON export/import for elements of FLVER
 - Model Editor: order dummy polygon list by parent bone (as option?)
 
-- Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
+- Param Editor: adjust the difference checker to account for row index
 - Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
 
 - Gparam Editor: properly find out the new NR field type structures, so they can be edited.

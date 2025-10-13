@@ -221,8 +221,6 @@ public class MapEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-
-
     public void OnGUI(string[] initcmd)
     {
         if (Project.IsInitializing)

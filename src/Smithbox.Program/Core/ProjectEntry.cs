@@ -1,6 +1,7 @@
 ﻿using Andre.IO.VFS;
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SDL;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
@@ -77,11 +78,30 @@ public class ProjectEntry
     [JsonIgnore]
     public FileDictionary FileDictionary;
 
-    // Editors
     [JsonIgnore]
     public Smithbox BaseEditor;
     [JsonIgnore]
     public EditorScreen FocusedEditor;
+
+    // Stubs
+    [JsonIgnore]
+    public MapEditorStub MapEditorStub;
+    [JsonIgnore]
+    public ModelEditorStub ModelEditorStub;
+    [JsonIgnore]
+    public TextEditorStub TextEditorStub;
+    [JsonIgnore]
+    public ParamEditorStub ParamEditorStub;
+    [JsonIgnore]
+    public GparamEditorStub GparamEditorStub;
+    [JsonIgnore]
+    public MaterialEditorStub MaterialEditorStub;
+    [JsonIgnore]
+    public TextureViewerStub TextureViewerStub;
+    [JsonIgnore]
+    public FileBrowserStub FileBrowserStub;
+
+    // Editors
     [JsonIgnore]
     public MapEditorScreen MapEditor;
     [JsonIgnore]
@@ -193,6 +213,8 @@ public class ProjectEntry
         EnableFileBrowser = false;
 
         ActionManager = new ActionManager();
+
+        InitStubs(baseEditor);
     }
 
     /// <summary>
@@ -219,6 +241,8 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Project initialization failed. Data path does not exist: {DataPath}", LogLevel.Error, Tasks.LogPriority.High);
             return false;
         }
+
+        InitStubs(BaseEditor);
 
         /// The order of operations here is important:
         /// 1. Externals
@@ -319,6 +343,18 @@ public class ProjectEntry
         IsInitializing = false;
 
         return true;
+    }
+
+    public void InitStubs(Smithbox baseEditor)
+    {
+        MapEditorStub = new(baseEditor, this);
+        ModelEditorStub = new(baseEditor, this);
+        TextEditorStub = new(baseEditor, this);
+        ParamEditorStub = new(baseEditor, this);
+        GparamEditorStub = new(baseEditor, this);
+        MaterialEditorStub = new(baseEditor, this);
+        TextureViewerStub = new(baseEditor, this);
+        FileBrowserStub = new(baseEditor, this);
     }
 
     public void ClearEditors()
@@ -823,81 +859,29 @@ public class ProjectEntry
 
         var commands = EditorCommandQueue.GetNextCommand();
 
-        if (EnableMapEditor && MapEditor != null)
-        {
-            HandleEditor(commands, MapEditor, dt);
-        }
-        if (EnableModelEditor && ModelEditor != null)
-        {
-            HandleEditor(commands, ModelEditor, dt);
-        }
-        if (EnableTextEditor && TextEditor != null)
-        {
-            HandleEditor(commands, TextEditor, dt);
-        }
-        if (EnableParamEditor && ParamEditor != null)
-        {
-            HandleEditor(commands, ParamEditor, dt);
-        }
-        if (EnableGparamEditor && GparamEditor != null)
-        {
-            HandleEditor(commands, GparamEditor, dt);
-        }
-        if (EnableMaterialEditor && MaterialEditor != null)
-        {
-            HandleEditor(commands, MaterialEditor, dt);
-        }
-        if (EnableTextureViewer && TextureViewer != null)
-        {
-            HandleEditor(commands, TextureViewer, dt);
-        }
-        if (EnableFileBrowser && FileBrowser != null)
-        {
-            HandleEditor(commands, FileBrowser, dt);
-        }
-    }
+        if(MapEditorStub != null)
+            MapEditorStub.Display(dt, commands);
 
-    /// <summary>
-    /// Actual handling of the top-level window for each editor
-    /// </summary>
-    /// <param name="screen"></param>
-    /// <param name="dt"></param>
-    public unsafe void HandleEditor(string[] commands, EditorScreen screen, float dt)
-    {
-        if (commands != null && commands[0] == screen.CommandEndpoint)
-        {
-            commands = commands[1..]; // Remove the target editor command
-            ImGui.SetNextWindowFocus();
-        }
+        if (ModelEditorStub != null)
+            ModelEditorStub.Display(dt, commands);
 
-        if (BaseEditor._context.Device == null)
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
-        }
-        else
-        {
-            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
-        }
+        if (TextEditorStub != null)
+            TextEditorStub.Display(dt, commands);
 
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
+        if (ParamEditorStub != null)
+            ParamEditorStub.Display(dt, commands);
 
-        if (ImGui.Begin(screen.EditorName, ImGuiWindowFlags.MenuBar))
-        {
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-            screen.OnGUI(commands);
-            ImGui.End();
-            FocusedEditor = screen;
-            screen.Update(dt);
-        }
-        else
-        {
-            // Reset this so on Focus the first frame focusing happens
-            screen.OnDefocus();
-            ImGui.PopStyleColor(1);
-            ImGui.PopStyleVar(1);
-            ImGui.End();
-        }
+        if (GparamEditorStub != null)
+            GparamEditorStub.Display(dt, commands);
+
+        if (MaterialEditorStub != null)
+            MaterialEditorStub.Display(dt, commands);
+
+        if (TextureViewerStub != null)
+            TextureViewerStub.Display(dt, commands);
+
+        if (FileBrowserStub != null)
+            FileBrowserStub.Display(dt, commands);
     }
 
     /// <summary>
@@ -910,14 +894,11 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
-        {
-            MapEditor.EditorResized(window, device);
-        }
-        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
-        {
-            ModelEditor.EditorResized(window, device);
-        }
+        if (MapEditorStub != null)
+            MapEditorStub.EditorResized(window, device);
+
+        if (ModelEditorStub != null)
+            ModelEditorStub.EditorResized(window, device);
     }
 
     /// <summary>
@@ -930,14 +911,11 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
-        {
-            MapEditor.Draw(device, cl);
-        }
-        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
-        {
-            ModelEditor.Draw(device, cl);
-        }
+        if (MapEditorStub != null)
+            MapEditorStub.Draw(device, cl);
+
+        if (ModelEditorStub != null)
+            ModelEditorStub.Draw(device, cl);
     }
 
     #region Setup DLLS
