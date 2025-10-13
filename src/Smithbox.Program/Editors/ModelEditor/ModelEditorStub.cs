@@ -23,7 +23,7 @@ public class ModelEditorStub
         Project = project;
     }
 
-    public string EditorName = "Map Editor";
+    public string EditorName = "Model Editor";
 
     public string CommandEndpoint = "model";
 

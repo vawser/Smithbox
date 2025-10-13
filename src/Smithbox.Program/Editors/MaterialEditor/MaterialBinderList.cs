@@ -22,6 +22,9 @@ public class MaterialBinderList
 
     public void Draw()
     {
+        if (Project.MaterialData.PrimaryBank == null)
+            return;
+
         // Source Type
         if (MaterialUtils.SupportsMATBIN(Project))
         {

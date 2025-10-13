@@ -1,6 +1,4 @@
 # TODO LIST
-- Interface: re-structure the Editor flow so the windows are immediately created, and then the initialization process occurs (currently they are fully initialized before the window is created).
-
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Viewport: add ability to change viewport background color
 
