@@ -17,6 +17,7 @@
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
+- Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
 
 - Gparam Editor: properly find out the new NR field type structures, so they can be edited.
 
@@ -26,4 +27,3 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Param Editor: add duplicate/delete shortcut/context actions for the Table Groups section

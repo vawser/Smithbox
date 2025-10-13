@@ -1130,6 +1130,8 @@ public class CFG
 
     public bool Param_RowNameImport_ReplaceEmptyNamesOnly = false;
 
+    public bool Param_TableGroupView_AllowDuplicateInject = false;
+
     //****************************
     // Settings: Text Editor
     //****************************

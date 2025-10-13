@@ -490,6 +490,8 @@ public class DeleteParamsAction : EditorAction
         {
             var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
             Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+
+            Editor._activeView.TableGroupView.UpdateTableSelection();
         }
 
         return ActionEvent.NoEvent;
@@ -514,6 +516,8 @@ public class DeleteParamsAction : EditorAction
         {
             var curGroup = Editor._activeView.TableGroupView.CurrentTableGroup;
             Editor._activeView.TableGroupView.UpdateTableGroupSelection(curGroup);
+
+            Editor._activeView.TableGroupView.UpdateTableSelection();
         }
         return ActionEvent.NoEvent;
     }

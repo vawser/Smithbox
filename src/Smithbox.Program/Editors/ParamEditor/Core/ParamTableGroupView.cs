@@ -203,6 +203,9 @@ public class ParamTableGroupView
                 ImGui.InputInt("Amount##duplicateAmount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
                 UIHelper.Tooltip("The number of times the current selection will be duplicated.");
 
+                ImGui.Checkbox("Allow Unrestricted Duplicate##allowUnrestrictedDuplicate", ref CFG.Current.Param_TableGroupView_AllowDuplicateInject);
+                UIHelper.Tooltip("If enabled, duplicate will allow for ID collisions. A collided duplicate will add the source rows into the collided group with the new ID.");
+
                 if (ImGui.Selectable("Apply"))
                 {
                     ApplyTableGroupDuplicate = true;
@@ -250,19 +253,31 @@ public class ParamTableGroupView
 
         Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
 
+        var newId = -1;
+
         var targetRows = param.Rows.Where(e => e.ID == CurrentTableGroup).ToList();
 
-        Editor._activeView.Selection.ClearRowSelection();
-        foreach (var entry in targetRows)
+        newId = targetRows.First().ID + CFG.Current.Param_Toolbar_Duplicate_Offset;
+
+        if (!CFG.Current.Param_TableGroupView_AllowDuplicateInject && param.Rows.Any(e => e.ID == newId))
         {
-            Editor._activeView.Selection.AddRowToSelection(entry);
+            TaskLogs.AddLog("Duplicate aborted. This duplicate would have injected rows into an existing table group.");
         }
+        else
+        {
+            Editor._activeView.Selection.ClearRowSelection();
 
-        CurrentTableGroups.Clear();
+            foreach (var entry in targetRows)
+            {
+                Editor._activeView.Selection.AddRowToSelection(entry);
+            }
 
-        Editor.ParamTools.DuplicateRow(true);
+            CurrentTableGroups.Clear();
 
-        UpdateTableSelection(curParamKey);
+            Editor.ParamTools.DuplicateRow(true);
+
+            UpdateTableSelection(curParamKey);
+        }
     }
 
     public void DeleteTableGroup()
