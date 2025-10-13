@@ -25,3 +25,5 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
+- Map Editor: saving with empty Light entries in BTL causes corrupted BTL save?
+- Map Editor: Map Contents fails to populate properly?

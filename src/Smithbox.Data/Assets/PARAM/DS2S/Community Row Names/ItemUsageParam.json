@@ -16,7 +16,7 @@
     {
       "ID": 1010,
       "Entries": [
-        "Weapon and Key"
+        "Weapon - Key to the Embedded"
       ]
     },
     {
@@ -28,7 +28,7 @@
     {
       "ID": 1110,
       "Entries": [
-        "Dragon Form"
+        "Armor (Unremovable)"
       ]
     },
     {
@@ -64,19 +64,19 @@
     {
       "ID": 1500,
       "Entries": [
-        "Soul Vessel / Estus Flask"
+        "Estus Flask"
       ]
     },
     {
       "ID": 1600,
       "Entries": [
-        "Absorption / Resistance / Stats / Stamina"
+        "Allowed on ladders"
       ]
     },
     {
       "ID": 1610,
       "Entries": [
-        "HP / Spell Recovery"
+        "Prohibited during invasions"
       ]
     },
     {
@@ -94,7 +94,7 @@
     {
       "ID": 1700,
       "Entries": [
-        "Buff / Utility"
+        "Prohibited on ladders"
       ]
     },
     {
@@ -106,7 +106,7 @@
     {
       "ID": 1800,
       "Entries": [
-        "Homeward Bone"
+        "Homeward Bone (Consumed when used)"
       ]
     },
     {
@@ -130,7 +130,7 @@
     {
       "ID": 2110,
       "Entries": [
-        "UNKNOWN"
+        "Online (Multiple choice)"
       ]
     },
     {
@@ -190,7 +190,7 @@
     {
       "ID": 2240,
       "Entries": [
-        "Fragrant Branch of Yore"
+        "Fragrant Branch of Yore (can't be discarded)"
       ]
     },
     {
@@ -214,7 +214,7 @@
     {
       "ID": 2420,
       "Entries": [
-        "Dragon Head Stone"
+        "Dragon Stone"
       ]
     },
     {
@@ -292,31 +292,31 @@
     {
       "ID": 2700,
       "Entries": [
-        "Key"
+        "Key Item"
       ]
     },
     {
       "ID": 2701,
       "Entries": [
-        "UNKNOWN"
+        "Key Item (Consumable)"
       ]
     },
     {
       "ID": 2702,
       "Entries": [
-        "Crushed Eye Orb"
+        "Key Item - Crushed Eye Orb"
       ]
     },
     {
       "ID": 2703,
       "Entries": [
-        "Simpleton's Spice / Skeptic's Spice"
+        "Key Item - Simpleton's Spice / Skeptic's Spice"
       ]
     },
     {
       "ID": 2704,
       "Entries": [
-        "Smelter Wedge / Soul of Nadalia- Bride of Ash"
+        "Smelter Wedge / Soul of Nadalia, Bride of Ash"
       ]
     }
   ]

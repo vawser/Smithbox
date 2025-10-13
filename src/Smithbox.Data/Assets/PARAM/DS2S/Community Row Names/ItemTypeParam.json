@@ -28,7 +28,7 @@
     {
       "ID": 31,
       "Entries": [
-        "Dragon Stone (Black Dragon Armor)"
+        "Armor (Unremovable)"
       ]
     },
     {
@@ -46,25 +46,25 @@
     {
       "ID": 60,
       "Entries": [
-        ""
+        "Ammunition"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "Lifegem Consumable"
+        "Crushing Animation (Lifegems)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Covenant Item/Reward"
+        "Pray Animation"
       ]
     },
     {
       "ID": 250,
       "Entries": [
-        "Homeward Bone/Aged Feather"
+        "Pray Animation (Loop)"
       ]
     },
     {
@@ -82,37 +82,37 @@
     {
       "ID": 300,
       "Entries": [
-        "Buff Consumable"
+        "Eat Animation"
       ]
     },
     {
       "ID": 305,
       "Entries": [
-        "Cast Restoration Consumable"
+        "Eat Animation (Cast Restoration)"
       ]
     },
     {
       "ID": 310,
       "Entries": [
-        "Dried Root"
+        "Eat Animation (Dried Root)"
       ]
     },
     {
       "ID": 350,
       "Entries": [
-        "Poison Moss"
+        "Eat Animation (Fast)"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Water Consumable"
+        "Drink Animation"
       ]
     },
     {
       "ID": 420,
       "Entries": [
-        "Divine Blessing"
+        "Drink Animation (Stop)"
       ]
     },
     {
@@ -142,19 +142,19 @@
     {
       "ID": 560,
       "Entries": [
-        "Dragon Stone (Untransformed)"
+        "Transformation (Dragon Stone)"
       ]
     },
     {
       "ID": 570,
       "Entries": [
-        "Dragon Head Stone"
+        "Dragon Breath"
       ]
     },
     {
       "ID": 580,
       "Entries": [
-        "Dragon Torso Stone"
+        "Dragon Roar"
       ]
     },
     {
@@ -166,31 +166,31 @@
     {
       "ID": 700,
       "Entries": [
-        "Repair Powder/Carving/Estus Flask Shard/Sublime Bone Dust/Bonfire Ascetic"
+        "Scattering Animation (Repair Powder, Carvings)"
       ]
     },
     {
       "ID": 800,
       "Entries": [
-        "Prism Stone/Pharros' Lockstone/Fragrant Branch of Yore"
+        "Placing Item (Prism Stone)"
       ]
     },
     {
       "ID": 850,
       "Entries": [
-        "Soapstone"
+        "Writing Animation (Soapstone)"
       ]
     },
     {
       "ID": 900,
       "Entries": [
-        "Throwable Item (Knife/Effect)"
+        "Throw Animation (Light)"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Throwable Item (Bomb)"
+        "Throw Animation (Heavy)"
       ]
     },
     {
