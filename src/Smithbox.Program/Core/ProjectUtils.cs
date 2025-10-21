@@ -400,7 +400,8 @@ public class ProjectUtils
             or ProjectType.DS1 
             or ProjectType.DS1R 
             or ProjectType.DS2 
-            or ProjectType.DS2S)
+            or ProjectType.DS2S
+            or ProjectType.NR)
         {
             return false;
         }
