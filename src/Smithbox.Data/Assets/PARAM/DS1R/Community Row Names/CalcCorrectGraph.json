@@ -16,55 +16,55 @@
     {
       "ID": 2,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Sharp Stone)"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Clearstone)"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Greystone)"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Bladestone)"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Spiderstone)"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Mercurystone)"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Dragonstone)"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Suckerstone)"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Unused"
+        "[UNUSED] Weapons (DeS Marrowstone)"
       ]
     },
     {
@@ -112,13 +112,13 @@
     {
       "ID": 101,
       "Entries": [
-        "Unused"
+        "Unused - Max MP"
       ]
     },
     {
       "ID": 102,
       "Entries": [
-        "Natural Defence (Soul Level)"
+        "Natural Defense (Soul Level)"
       ]
     },
     {
@@ -155,6 +155,84 @@
       "ID": 200,
       "Entries": [
         "Level up cost"
+      ]
+    },
+    {
+      "ID": 300,
+      "Entries": [
+        "Level Sync: HP"
+      ]
+    },
+    {
+      "ID": 302,
+      "Entries": [
+        "Level Sync: Stamina"
+      ]
+    },
+    {
+      "ID": 303,
+      "Entries": [
+        "Level Sync: Natural Defense"
+      ]
+    },
+    {
+      "ID": 304,
+      "Entries": [
+        "Level Sync: Resistance"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "Level Sync: Sword"
+      ]
+    },
+    {
+      "ID": 320,
+      "Entries": [
+        "Level Sync: Dagger"
+      ]
+    },
+    {
+      "ID": 330,
+      "Entries": [
+        "Level Sync: Greatsword"
+      ]
+    },
+    {
+      "ID": 340,
+      "Entries": [
+        "Level Sync: Bow"
+      ]
+    },
+    {
+      "ID": 341,
+      "Entries": [
+        "Level Sync: Greatbow"
+      ]
+    },
+    {
+      "ID": 342,
+      "Entries": [
+        "Level Sync: Crossbow"
+      ]
+    },
+    {
+      "ID": 350,
+      "Entries": [
+        "Level Sync: Catalyst"
+      ]
+    },
+    {
+      "ID": 351,
+      "Entries": [
+        "Level Sync: Talisman"
+      ]
+    },
+    {
+      "ID": 352,
+      "Entries": [
+        "Level Sync: Pyromancy Flame"
       ]
     }
   ]

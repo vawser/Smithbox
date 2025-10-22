@@ -10,115 +10,115 @@
     {
       "ID": 1,
       "Entries": [
-        "Normal text_brown"
+        "Normal Text - Brown"
       ]
     },
     {
       "ID": 2,
       "Entries": [
-        "Icon color selected in inventory"
+        "Inventory Selected Icon Color"
       ]
     },
     {
       "ID": 3,
       "Entries": [
-        "Parameter text (normal)"
+        "Parameter Text (Normal)"
       ]
     },
     {
       "ID": 4,
       "Entries": [
-        "Parameter text (good)"
+        "Parameter Text (Good)"
       ]
     },
     {
       "ID": 5,
       "Entries": [
-        "Parameter text (bad)"
+        "Parameter text (Bad)"
       ]
     },
     {
       "ID": 6,
       "Entries": [
-        "Information title"
+        "Information Title"
       ]
     },
     {
       "ID": 7,
       "Entries": [
-        "Normal text_white"
+        "Normal Text - White"
       ]
     },
     {
       "ID": 8,
       "Entries": [
-        "Sucrose bar background color"
+        "Scroll Bar Background Color"
       ]
     },
     {
       "ID": 9,
       "Entries": [
-        "Background plate (concentration adjustment)"
+        "Background Plate (Concentration (brightness?) Adjustment)"
       ]
     },
     {
       "ID": 10,
       "Entries": [
-        "Background plate (color adjustment)"
+        "Background Plate (Color Adjustment)"
       ]
     },
     {
       "ID": 11,
       "Entries": [
-        "One-line help"
+        "One-line Help"
       ]
     },
     {
       "ID": 12,
       "Entries": [
-        "Key guide"
+        "Key Guide"
       ]
     },
     {
       "ID": 13,
       "Entries": [
-        "Menu plate"
+        "Menu Plate"
       ]
     },
     {
       "ID": 14,
       "Entries": [
-        "translucent plate"
+        "Translucent Plate"
       ]
     },
     {
       "ID": 15,
       "Entries": [
-        "Translucent gradation plate"
+        "Translucent Gradation Plate"
       ]
     },
     {
       "ID": 16,
       "Entries": [
-        "scroll bar"
+        "Scroll Bar"
       ]
     },
     {
       "ID": 17,
       "Entries": [
-        "blood letter plate"
+        "Bloodstain Plate"
       ]
     },
     {
       "ID": 18,
       "Entries": [
-        "SOS plate"
+        "White Sign Soapstone Plate"
       ]
     },
     {
       "ID": 19,
       "Entries": [
-        "item help blackout"
+        "Item Help Blackout"
       ]
     },
     {
@@ -136,31 +136,31 @@
     {
       "ID": 22,
       "Entries": [
-        "lines"
+        "Line"
       ]
     },
     {
       "ID": 23,
       "Entries": [
-        "Menu tab (in-game)"
+        "Menu Tab (In-game)"
       ]
     },
     {
       "ID": 24,
       "Entries": [
-        "Menu tab (camp)"
+        "Menu Tab (Camp) (Bonfire?)"
       ]
     },
     {
       "ID": 25,
       "Entries": [
-        "Menu tab (blood character input)"
+        "Menu Tab (Bloodstain Input)"
       ]
     },
     {
       "ID": 26,
       "Entries": [
-        "Menu tab (SOS input)"
+        "Menu Tab (White Sign Soapstone Input)"
       ]
     },
     {
@@ -172,7 +172,7 @@
     {
       "ID": 28,
       "Entries": [
-        "Menu tab (title menu)"
+        "Menu Tab (Title Menu)"
       ]
     },
     {
@@ -184,31 +184,31 @@
     {
       "ID": 30,
       "Entries": [
-        "HP bar"
+        "HP Bar"
       ]
     },
     {
       "ID": 31,
       "Entries": [
-        "MP bar"
+        "MP Bar"
       ]
     },
     {
       "ID": 32,
       "Entries": [
-        "SP bar"
+        "SP Bar"
       ]
     },
     {
       "ID": 33,
       "Entries": [
-        "Variable bar"
+        "Variable Bar"
       ]
     },
     {
       "ID": 34,
       "Entries": [
-        "bar plate"
+        "Bar Plate"
       ]
     },
     {
@@ -220,7 +220,7 @@
     {
       "ID": 36,
       "Entries": [
-        "Attack / Defense bar (additional effect)"
+        "Attack / Defense Bar (Additional Effect)"
       ]
     },
     {
@@ -232,31 +232,31 @@
     {
       "ID": 38,
       "Entries": [
-        "Option bar"
+        "Option Bar"
       ]
     },
     {
       "ID": 39,
       "Entries": [
-        "Target sites"
+        "Target Site"
       ]
     },
     {
       "ID": 40,
       "Entries": [
-        "translucent character plate (bright)"
+        "Translucent Character Plate (Light)"
       ]
     },
     {
       "ID": 41,
       "Entries": [
-        "Translucent character plate (dark)"
+        "Translucent Character Plate (Dark)"
       ]
     },
     {
       "ID": 42,
       "Entries": [
-        "button plate"
+        "Button Plate"
       ]
     },
     {
@@ -268,223 +268,223 @@
     {
       "ID": 44,
       "Entries": [
-        "Selection item plate (Akira)"
+        "Selection Plate (Light)"
       ]
     },
     {
       "ID": 45,
       "Entries": [
-        "Selection plate (dark)"
+        "Selection Plate (Dark)"
       ]
     },
     {
       "ID": 46,
       "Entries": [
-        "Selection item plate (OK button)"
+        "Selection Plate (OK button)"
       ]
     },
     {
       "ID": 47,
       "Entries": [
-        "Translucent gradation plate (button)"
+        "Translucent Gradation Plate (Button)"
       ]
     },
     {
       "ID": 48,
       "Entries": [
-        "large plate (dark)"
+        "Large Plate (Dark)"
       ]
     },
     {
       "ID": 49,
       "Entries": [
-        "frames (dark)"
+        "Frame (Dark)"
       ]
     },
     {
       "ID": 50,
       "Entries": [
-        "skills slot"
+        "Skill Slot"
       ]
     },
     {
       "ID": 51,
       "Entries": [
-        "spell slot"
+        "Spell Slot"
       ]
     },
     {
       "ID": 52,
       "Entries": [
-        "white"
+        "White"
       ]
     },
     {
       "ID": 53,
       "Entries": [
-        "Normal text_black"
-      ]
-    },
-    {
-      "ID": 36908,
-      "Entries": [
-        "Title-Face Color 08"
-      ]
-    },
-    {
-      "ID": 36909,
-      "Entries": [
-        "Title-Hair color for face creation 09"
-      ]
-    },
-    {
-      "ID": 36910,
-      "Entries": [
-        "Title-Hair Color for Face Creation 10"
-      ]
-    },
-    {
-      "ID": 37908,
-      "Entries": [
-        "Eye color 08"
-      ]
-    },
-    {
-      "ID": 37909,
-      "Entries": [
-        "Eye color 09 for title face creation"
-      ]
-    },
-    {
-      "ID": 37910,
-      "Entries": [
-        "Eye color for title face creation 10"
+        "Normal Text - Black"
       ]
     },
     {
       "ID": 60,
       "Entries": [
-        "FE human nature numerical value"
+        "FE Humanity Number (Grey While Hollow)"
       ]
     },
     {
       "ID": 61,
       "Entries": [
-        "Test color 11"
+        "Test Color 11"
       ]
     },
     {
       "ID": 62,
       "Entries": [
-        "test color 12"
+        "Test Color 12"
       ]
     },
     {
       "ID": 63,
       "Entries": [
-        "test color 13"
+        "Test Color 13"
       ]
     },
     {
       "ID": 64,
       "Entries": [
-        "test color 14"
+        "Test Color 14"
       ]
     },
     {
       "ID": 65,
       "Entries": [
-        "text color blue"
+        "Text Color - Blue"
       ]
     },
     {
       "ID": 66,
       "Entries": [
-        "text color red"
+        "Text Color - Red"
       ]
     },
     {
       "ID": 36901,
       "Entries": [
-        "Title-Face Color 01"
+        "Title - Hair Color 01"
       ]
     },
     {
       "ID": 36902,
       "Entries": [
-        "Title-Face Color 02"
+        "Title - Hair Color 02"
       ]
     },
     {
       "ID": 36903,
       "Entries": [
-        "Title-Hair Color for Face Creation 03"
+        "Title - Hair Color 03"
       ]
     },
     {
       "ID": 36904,
       "Entries": [
-        "Title-Face Color 04"
+        "Title - Hair Color 04"
       ]
     },
     {
       "ID": 36905,
       "Entries": [
-        "Title-Face Color 05"
+        "Title - Hair Color 05"
       ]
     },
     {
       "ID": 36906,
       "Entries": [
-        "Title-Hair Color for Face Creation 06"
+        "Title - Hair Color 06"
       ]
     },
     {
       "ID": 36907,
       "Entries": [
-        "Title-Face Color 07"
+        "Title - Hair Color 07"
+      ]
+    },
+    {
+      "ID": 36908,
+      "Entries": [
+        "Title - Hair Color 08"
+      ]
+    },
+    {
+      "ID": 36909,
+      "Entries": [
+        "Title - Hair Color 09"
+      ]
+    },
+    {
+      "ID": 36910,
+      "Entries": [
+        "Title - Hair Color 10"
       ]
     },
     {
       "ID": 37901,
       "Entries": [
-        "Eye color for creating title face 01"
+        "Title - Eye Color 01"
       ]
     },
     {
       "ID": 37902,
       "Entries": [
-        "Eye color for creating title face 02"
+        "Title - Eye Color 02"
       ]
     },
     {
       "ID": 37903,
       "Entries": [
-        "Eye color for creating title face 03"
+        "Title - Eye Color 03"
       ]
     },
     {
       "ID": 37904,
       "Entries": [
-        "Eye color for creating face 04"
+        "Title - Eye Color 04"
       ]
     },
     {
       "ID": 37905,
       "Entries": [
-        "Eyes 05 for creating a title face"
+        "Title - Eye Color 05"
       ]
     },
     {
       "ID": 37906,
       "Entries": [
-        "Eye color for creating title face 06"
+        "Title - Eye Color 06"
       ]
     },
     {
       "ID": 37907,
       "Entries": [
-        "Eye color for creating title face 07"
+        "Title - Eye Color 07"
+      ]
+    },
+    {
+      "ID": 37908,
+      "Entries": [
+        "Title - Eye Color 08"
+      ]
+    },
+    {
+      "ID": 37909,
+      "Entries": [
+        "Title - Eye Color 09"
+      ]
+    },
+    {
+      "ID": 37910,
+      "Entries": [
+        "Title - Eye Color 10"
       ]
     }
   ]
