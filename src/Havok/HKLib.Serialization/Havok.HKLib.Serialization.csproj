@@ -17,12 +17,4 @@
       <ProjectReference Include="..\HKLib\Havok.HKLib.csproj" />
     </ItemGroup>
 
-    <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-      <DefineConstants>DEBUG</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-      <DefineConstants>RELEASE</DefineConstants>
-    </PropertyGroup>
-
 </Project>

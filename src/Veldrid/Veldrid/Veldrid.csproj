@@ -10,28 +10,7 @@
     <DefineConstants Condition="'$(ExcludeMetal)' == 'true'">$(DefineConstants);EXCLUDE_METAL_BACKEND</DefineConstants>
     <DefineConstants Condition="'$(ExcludeOpenGL)' == 'true'">$(DefineConstants);EXCLUDE_OPENGL_BACKEND</DefineConstants>
     <LangVersion>12</LangVersion>
-    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
   </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
-      <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
-      <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
-      <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
-      <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
-      <DefineConstants>$(DefineConstants);OSX</DefineConstants>
-    </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />

@@ -99,12 +99,24 @@ public class FileBrowserScreen : EditorScreen
         {
             if (ImGui.MenuItem($"View Game Directory"))
             {
+#if WINDOWS
                 Process.Start("explorer.exe", Project.DataPath);
+#elif MACOS
+                Process.Start("/usr/bin/open", Project.DataPath);
+#elif LINUX
+                Process.Start("xdg-open", Project.DataPath);
+#endif
             }
 
             if (ImGui.MenuItem($"View Project Directory"))
             {
+#if WINDOWS
                 Process.Start("explorer.exe", Project.ProjectPath);
+#elif MACOS
+                Process.Start("/usr/bin/open", Project.ProjectPath);
+#elif LINUX
+                Process.Start("xdg-open", Project.ProjectPath);
+#endif
             }
 
             ImGui.EndMenu();

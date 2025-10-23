@@ -2363,7 +2363,7 @@ public class ParamBank
         await Task.Yield();
 
         var sourceDirectory = filepath;
-        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var folder = @$"{Common.FileLocations.Assets}/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
 
         switch (sourceType)
         {

@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>Smithbox</AssemblyName>
+    <TargetFramework>net9.0-macos</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.0.8</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -12,21 +13,35 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
+    <DefineConstants>$(DefineConstants);MACOS</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <!-- Required for XCode 16+ builds-->
+  <ItemGroup>
+    <_CustomLinkFlags Include="-ld64;-undefined;dynamic_lookup" Visible="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <ValidateXcodeVersion>false</ValidateXcodeVersion>
+    <_UseClassicLinker>true</_UseClassicLinker>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <NativeReference Include="$(VULKAN_SDK)/macOS/lib/libMoltenVK.dylib" Kind="Dynamic" />
+    <BundleResource Include="AppIcon.icns" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
@@ -45,14 +60,6 @@
   <Target Name="DefineGlobals" BeforeTargets="ResolveProjectReferences">
       <Error Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'" Text="Pass Solution dir, i.e. run:
             dotnet build $([System.IO.Path]::GetRelativePath('$(MSBuildStartupDirectory)', '$(MSBuildProjectFullPath)')) --no-restore /p:SolutionDir=$([System.IO.Path]::GetFullPath('$(ProjectDir)\..\..'))" />
-      <Copy SourceFiles="Windows.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
+      <Copy SourceFiles="Mac.Build.props" DestinationFiles="../Directory.Build.props" SkipUnchangedFiles="true" />
   </Target>
-
-  <Target Name="CopyDataProjectOutput" AfterTargets="Build">
-  <ItemGroup>
-    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\$(TargetFramework)\**\*" />
-  </ItemGroup>
-
-  <Copy SourceFiles="@(DataProjectFiles)" DestinationFolder="$(OutputPath)%(RecursiveDir)" SkipUnchangedFiles="true" />
-</Target>
 </Project>
