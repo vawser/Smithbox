@@ -84,7 +84,7 @@ public static class ModEngineHandler
 
         var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
 
-        var readPath = $"{CFG.Current.ModEngine3ProfileDirectory}/{projectName}.me3";
+        var readPath = Path.Combine(CFG.Current.ModEngine3ProfileDirectory, $"{projectName}.me3");
 
         if (File.Exists(readPath))
         {

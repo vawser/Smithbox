@@ -2363,6 +2363,12 @@ public class FlverResource : IResource, IDisposable
                 {
                     matTex = defaultTex;
                 }
+
+                // Allow instant toggle if texture has been loaded in the past
+                if (!CFG.Current.Viewport_Enable_Texturing)
+                {
+                    matTex = defaultTex;
+                }
             }
             else
             {

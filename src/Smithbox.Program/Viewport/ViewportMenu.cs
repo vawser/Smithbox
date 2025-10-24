@@ -1,6 +1,8 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Interface;
+using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Helpers;
@@ -311,6 +313,8 @@ public class ViewportMenu
             if (ImGui.MenuItem("Enable texturing", CFG.Current.Viewport_Enable_Texturing))
             {
                 CFG.Current.Viewport_Enable_Texturing = !CFG.Current.Viewport_Enable_Texturing;
+
+                MapEditorUtils.UpdateAllEntityModels(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
             }
             UIHelper.Tooltip($"Whether to render textures in the viewport.");
 

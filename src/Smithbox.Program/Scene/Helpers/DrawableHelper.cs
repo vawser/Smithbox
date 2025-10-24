@@ -27,7 +27,7 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Part map object
     /// </summary>
-    public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
+    public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks, bool forceReload = false)
     {
         Universe curUniverse = null;
         ProjectEntry curProject = null;
@@ -190,7 +190,16 @@ public static class DrawableHelper
         obj.RenderSceneMesh = model;
         model.SetSelectable(obj);
 
-        if (load && !ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        var isResourceLoaded = ResourceManager.IsResourceLoaded(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+
+        var proceed = !isResourceLoaded;
+
+        if(forceReload)
+        {
+            proceed = true;
+        }
+
+        if (load && proceed)
         {
             if (asset.AssetArchiveVirtualPath != null)
             {

@@ -25,5 +25,5 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Map Editor: saving with empty Light entries in BTL causes corrupted BTL save?
-- Map Editor: Map Contents fails to populate properly?
+- Power Select: define model names, optionally proximity from placement orb - select all entities that have said model names and are within the proximity of the placement orb
+- Selection Outline: see if we can change it to a model fade - need a solution as selecting more than ~30 entities tends to bug out and mess up the rendering, which is very annoying for large map edits

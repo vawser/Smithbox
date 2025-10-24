@@ -934,7 +934,7 @@ public static class ResourceManager
         ///     Loads a loose virtual file
         /// </summary>
         /// <param name="virtualPath"></param>
-        public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
+        public void AddLoadFileTask(string virtualPath, AccessLevel al, bool isPersistent = false, string payload = "")
         {
             // PIPELINE: resource is not already being loaded
             if (InFlightFiles.Contains(virtualPath))

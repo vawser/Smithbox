@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
@@ -2025,6 +2026,38 @@ public class MsbEntity : Entity
         }
 
         base.UpdateRenderModel(editor);
+    }
+
+    public void UpdateEntityModel()
+    {
+        if (Editor is MapEditorScreen)
+        {
+            var curEditor = (MapEditorScreen)Editor;
+            var universe = curEditor.Universe;
+
+            if (_renderSceneMesh != null)
+            {
+                _renderSceneMesh.Dispose();
+            }
+
+            // Get model
+            if (CurrentModelName != null)
+            {
+                _renderSceneMesh = DrawableHelper.GetModelDrawable(Editor, universe.RenderScene, ContainingMap, this, CurrentModelName, true, ModelMasks, true);
+            }
+
+            if (universe.Selection.IsSelected(this))
+            {
+                OnSelected(curEditor);
+            }
+
+            if (universe.HasProcessedMapLoad)
+            {
+                universe.ScheduleTextureRefresh();
+            }
+        }
+
+        base.UpdateRenderModel(Editor);
     }
 
     /// <summary>
