@@ -70,13 +70,13 @@
     {
       "ID": 115,
       "Entries": [
-        "Black Eye Orb -"
+        "Black Eye Orb - Lautrec Invasion"
       ]
     },
     {
       "ID": 116,
       "Entries": [
-        "Black Eye Orb -"
+        "[UNUSED] Black Eye Orb - Shiva Invasion"
       ]
     },
     {
@@ -92,99 +92,195 @@
       ]
     },
     {
-      "ID": 200,
+      "ID": 130,
       "Entries": [
-        "Estus Flask"
+        "None"
       ]
     },
     {
-      "ID": 201,
+      "ID": 131,
+      "Entries": [
+        "Way of White"
+      ]
+    },
+    {
+      "ID": 132,
+      "Entries": [
+        "Princess's Guard"
+      ]
+    },
+    {
+      "ID": 133,
+      "Entries": [
+        "Warrior of Sunlight"
+      ]
+    },
+    {
+      "ID": 134,
+      "Entries": [
+        "Darkwraith"
+      ]
+    },
+    {
+      "ID": 135,
+      "Entries": [
+        "Path of the Dragon"
+      ]
+    },
+    {
+      "ID": 136,
+      "Entries": [
+        "Gravelord Servant"
+      ]
+    },
+    {
+      "ID": 137,
+      "Entries": [
+        "Forest Hunter"
+      ]
+    },
+    {
+      "ID": 138,
+      "Entries": [
+        "Darkmoon Blade"
+      ]
+    },
+    {
+      "ID": 139,
+      "Entries": [
+        "Chaos Servant"
+      ]
+    },
+    {
+      "ID": 140,
+      "Entries": [
+        "dummy10"
+      ]
+    },
+    {
+      "ID": 141,
+      "Entries": [
+        "dummy11"
+      ]
+    },
+    {
+      "ID": 142,
+      "Entries": [
+        "dummy12"
+      ]
+    },
+    {
+      "ID": 143,
+      "Entries": [
+        "dummy13"
+      ]
+    },
+    {
+      "ID": 144,
+      "Entries": [
+        "dummy14"
+      ]
+    },
+    {
+      "ID": 145,
+      "Entries": [
+        "dummy15"
+      ]
+    },
+    {
+      "ID": 200,
       "Entries": [
         "Estus Flask - Drained"
       ]
     },
     {
-      "ID": 202,
+      "ID": 201,
       "Entries": [
-        "Estus Flask +1"
+        "Estus Flask"
       ]
     },
     {
-      "ID": 203,
+      "ID": 202,
       "Entries": [
         "Estus Flask +1 - Drained"
       ]
     },
     {
-      "ID": 204,
+      "ID": 203,
       "Entries": [
-        "Estus Flask +2"
+        "Estus Flask +1"
       ]
     },
     {
-      "ID": 205,
+      "ID": 204,
       "Entries": [
         "Estus Flask +2 - Drained"
       ]
     },
     {
-      "ID": 206,
+      "ID": 205,
       "Entries": [
-        "Estus Flask +3"
+        "Estus Flask +2"
       ]
     },
     {
-      "ID": 207,
+      "ID": 206,
       "Entries": [
         "Estus Flask +3 - Drained"
       ]
     },
     {
-      "ID": 208,
+      "ID": 207,
       "Entries": [
-        "Estus Flask +4"
+        "Estus Flask +3"
       ]
     },
     {
-      "ID": 209,
+      "ID": 208,
       "Entries": [
         "Estus Flask +4 - Drained"
       ]
     },
     {
-      "ID": 210,
+      "ID": 209,
       "Entries": [
-        "Estus Flask +5"
+        "Estus Flask +4"
       ]
     },
     {
-      "ID": 211,
+      "ID": 210,
       "Entries": [
         "Estus Flask +5 - Drained"
       ]
     },
     {
-      "ID": 212,
+      "ID": 211,
       "Entries": [
-        "Estus Flask +6"
+        "Estus Flask +5"
       ]
     },
     {
-      "ID": 213,
+      "ID": 212,
       "Entries": [
         "Estus Flask +6 - Drained"
       ]
     },
     {
+      "ID": 213,
+      "Entries": [
+        "Estus Flask +6"
+      ]
+    },
+    {
       "ID": 214,
       "Entries": [
-        "Estus Flask +7"
+        "Estus Flask +7 - Drained"
       ]
     },
     {
       "ID": 215,
       "Entries": [
-        "Estus Flask +7 - Drained"
+        "Estus Flask +7"
       ]
     },
     {
@@ -412,43 +508,43 @@
     {
       "ID": 390,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (Anastacia of Astora)"
       ]
     },
     {
       "ID": 391,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (Darkmoon Knightess)"
       ]
     },
     {
       "ID": 392,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (The Fair Lady)"
       ]
     },
     {
       "ID": 393,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (New Londo Ruins)"
       ]
     },
     {
       "ID": 394,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (Blighttown)"
       ]
     },
     {
       "ID": 395,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (Duke's Archives)"
       ]
     },
     {
       "ID": 396,
       "Entries": [
-        "Fire Keeper Soul"
+        "Fire Keeper Soul (Undead Parish)"
       ]
     },
     {
@@ -910,37 +1006,37 @@
     {
       "ID": 2200,
       "Entries": [
-        "[Unused] Blacksmith's favorite"
+        "[UNUSED] Blacksmith's favorite"
       ]
     },
     {
       "ID": 2500,
       "Entries": [
-        "Lord Soul"
+        "Lord Soul (Gravelord Nito)"
       ]
     },
     {
       "ID": 2501,
       "Entries": [
-        "Lord Soul"
+        "Lord Soul (Bed of Chaos)"
       ]
     },
     {
       "ID": 2502,
       "Entries": [
-        "Bequeathed Lord Soul Shard"
+        "Bequeathed Lord Soul Shard (Four Kings)"
       ]
     },
     {
       "ID": 2503,
       "Entries": [
-        "Bequeathed Lord Soul Shard"
+        "Bequeathed Lord Soul Shard (Seath the Scaleless)"
       ]
     },
     {
       "ID": 2504,
       "Entries": [
-        "[Unused] Demon Fire 5"
+        "[UNUSED] Lord Soul 5"
       ]
     },
     {
@@ -976,25 +1072,25 @@
     {
       "ID": 2603,
       "Entries": [
-        "[Unused] Magic Equipment Menu Unlock"
+        "[UNUSED] Magic Equipment Menu Unlock"
       ]
     },
     {
       "ID": 2604,
       "Entries": [
-        "[Unused] Item sale menu unlock"
+        "[UNUSED] Item sale menu unlock"
       ]
     },
     {
       "ID": 2605,
       "Entries": [
-        "[Unused] Warp menu unlock"
+        "[UNUSED] Warp menu unlock"
       ]
     },
     {
       "ID": 2606,
       "Entries": [
-        "[Unused] Level up menu unlock"
+        "[UNUSED] Level up menu unlock"
       ]
     },
     {
@@ -1012,7 +1108,7 @@
     {
       "ID": 2609,
       "Entries": [
-        "[Unused] Extra menu unlock"
+        "[UNUSED] Extra menu unlock"
       ]
     },
     {
