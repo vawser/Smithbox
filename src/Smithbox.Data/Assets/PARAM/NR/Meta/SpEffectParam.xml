@@ -1970,23 +1970,23 @@
     DefaultValue="1" />
     
     <ultimateArtGaugeRate
-    AltName="Ultimate Art Gauge %"
-    Wiki="The amount of ultimate art gauge to recover." 
+    AltName="Ultimate Art Gauge Recovery Correction %"
+    Wiki="Correction value for the ultimate art gauge's base combat state recovery." 
     DefaultValue="1"/>
     
     <characterSkillCooldownReduction
-    AltName="Character Skill Cooldown Reduction"
-    Wiki="The amount of cooldown reduction to apply to character skills." 
+    AltName="Character Skill Cooldown Correction %"
+    Wiki="The amount of cooldown correction to apply to character skills." 
     DefaultValue="1"/>
-    
-    <characterSkillGauge
-    AltName="Character Skill Gauge +"
-    Wiki="The amount of character skill gauge to recover." 
-    DefaultValue="0"/>
     
     <ultimateArtGauge
     AltName="Ultimate Art Gauge +"
     Wiki="The amount of ultimate art gauge to add." 
+    DefaultValue="0"/>
+    
+    <ultimateArtGaugeRecovery
+    AltName="Ultimate Art Gauge Recovery +"
+    Wiki="The amount of ultimate art gauge's time-based recovery to add." 
     DefaultValue="0"/>
     
     <ultimateArtDuration

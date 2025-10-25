@@ -383,8 +383,8 @@
     <Field Def="f32 guardStaminaMult"/>
     <Field Def="f32 ultimateArtGaugeRate"/>
     <Field Def="f32 characterSkillCooldownReduction"/>
-    <Field Def="f32 characterSkillGauge"/>
-    <Field Def="u16 ultimateArtGauge"/>
+    <Field Def="f32 ultimateArtGauge"/>
+    <Field Def="u16 ultimateArtGaugeRecovery"/>
     <Field Def="u8 auxAttribute"/>
     <Field Def="u8 playerHandValue"/>
     <Field Def="s32 permanentBuffTextId"/>
