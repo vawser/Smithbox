@@ -364,6 +364,10 @@
     <ReviveRateDecayPercent_Level3
     AltName="Revive Progress Decay: Death Severity 3"
     Wiki="Similar to above, for nearDeathSeverityLevel greater than 2." />
+
+    <FlaskRechargeTimer
+    AltName="Flask Recharge Timer"
+    Wiki="The amount of time in seconds it takes to receive an automatic flask recharge, while on expedition and outside of night bosses/Nightlord battles. 0 disables the mechanic." />
     
     
   </Field>

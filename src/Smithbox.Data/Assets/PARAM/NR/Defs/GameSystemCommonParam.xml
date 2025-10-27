@@ -1502,7 +1502,7 @@
       <SortID>5250</SortID>
     </Field>
     <Field Def="f32 unknown_2DC" />
-    <Field Def="f32 unknown_2E0" />
+    <Field Def="f32 FlaskRechargeTimer" />
     <Field Def="s32 unknown_2E4" />
     <Field Def="s32 unknown_2E8" />
     <Field Def="s32 unknown_2EC" />
