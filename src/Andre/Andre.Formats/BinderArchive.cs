@@ -154,7 +154,10 @@ namespace Andre.Formats
 
         public BinderArchive(string bhdPath, string bdtPath, Game game)
         {
-            using var file = MemoryMappedFile.CreateFromFile(bhdPath, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
+
+            var fs = new FileStream(bhdPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var file = MemoryMappedFile.CreateFromFile(fs, null, 0, MemoryMappedFileAccess.Read,
+                HandleInheritability.None, leaveOpen: false);
             using var accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
 
             if (IsBhdEncrypted(accessor.Memory))

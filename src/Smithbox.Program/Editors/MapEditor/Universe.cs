@@ -290,12 +290,10 @@ public class Universe
         }
         else
         {
-            if (File.Exists(curEntry.Path))
-            {
-                var btlFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+            Memory<byte>? btlFile = (Memory<byte>)Editor.Project.MapData?.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
 
-                btl = BTL.Read(btlFile);
-            }
+            if (btlFile.HasValue)
+                btl = BTL.Read(btlFile.Value);
         }
 
         return btl;
