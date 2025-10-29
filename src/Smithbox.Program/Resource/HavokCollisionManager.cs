@@ -132,6 +132,7 @@ public class HavokCollisionManager
                         {
                             if (xmlSerializer == null)
                                 xmlSerializer = new HavokXmlSerializer();
+                            memoryStream.Position = 0;
                             fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
                         }
 
