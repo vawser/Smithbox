@@ -32,6 +32,9 @@ public class ModelEditorStub
         if (!Project.EnableModelEditor)
             return;
 
+        if (!ProjectUtils.SupportsModelEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

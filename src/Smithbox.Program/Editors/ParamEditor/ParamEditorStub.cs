@@ -29,6 +29,9 @@ public class ParamEditorStub
         if (!Project.EnableParamEditor)
             return;
 
+        if (!ProjectUtils.SupportsParamEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

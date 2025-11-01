@@ -33,6 +33,9 @@ public class TextureViewerStub
         if (!Project.EnableTextureViewer)
             return;
 
+        if (!ProjectUtils.SupportsTextureViewer(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

@@ -29,6 +29,9 @@ public class GparamEditorStub
         if (!Project.EnableGparamEditor)
             return;
 
+        if (!ProjectUtils.SupportsGraphicsParamEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

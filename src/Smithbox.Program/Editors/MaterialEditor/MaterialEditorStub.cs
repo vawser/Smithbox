@@ -29,6 +29,9 @@ public class MaterialEditorStub
         if (!Project.EnableMaterialEditor)
             return;
 
+        if (!ProjectUtils.SupportsMaterialEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

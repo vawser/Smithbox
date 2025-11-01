@@ -40,6 +40,9 @@ public class MapEditorStub
         if (!Project.EnableMapEditor)
             return;
 
+        if (!ProjectUtils.SupportsMapEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

@@ -29,6 +29,9 @@ public class TextEditorStub
         if (!Project.EnableTextEditor)
             return;
 
+        if (!ProjectUtils.SupportsTextEditor(Project.ProjectType))
+            return;
+
         if (commands != null && commands[0] == CommandEndpoint)
         {
             commands = commands[1..];

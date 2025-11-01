@@ -25,6 +25,5 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Map Editor: check the BTL handling, seems to produce bad saves for some.
 - Power Select: define model names, optionally proximity from placement orb - select all entities that have said model names and are within the proximity of the placement orb
 - Selection Outline: mesh creation currently creates an issue when selecting too many entities. Ideally we can switch to an opacity or tint on the actual model: however this requires a overhaul of the rendering pipeline, currently the rendering side is instanced and detacted from the map editor state, making it difficult to apply conditional visuals.
