@@ -215,7 +215,7 @@ internal class SpecialMapConnections
             }
 
             // Avoid putting in tons of maps. These types of cols are not used in the vanilla game.
-            if (editor.Project.ProjectType == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
+            if (editor.Project.ProjectType == ProjectType.ER && (connectParts[0] == 60 || connectParts[0] == 61) && firstWildcard < 3)
             {
                 continue;
             }

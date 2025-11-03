@@ -872,7 +872,7 @@ public class CFG
 
     public bool MapEditor_DisplayMapCategories = true;
 
-    public NameDisplayType MapEditor_MapContentList_NameDisplayType = NameDisplayType.Internal_Community;
+    public NameDisplayType MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_FMG;
 
     public bool MapEditor_LoadMapQueryData = true;
 

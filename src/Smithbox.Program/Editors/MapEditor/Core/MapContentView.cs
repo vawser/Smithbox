@@ -100,15 +100,15 @@ public class MapContentView
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Bars}", DPI.IconButtonSize))
         {
-            var curType = (int)CFG.Current.MapEditor_MapContentList_NameDisplayType;
+            var curType = (int)CFG.Current.MapEditor_MapContentList_EntryNameDisplayType;
             curType++;
 
             if (curType > 4)
                 curType = 0;
 
-            CFG.Current.MapEditor_MapContentList_NameDisplayType = (NameDisplayType)curType;
+            CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = (NameDisplayType)curType;
         }
-        UIHelper.Tooltip($"Cycle through the name display types.\nCurrent Type: {CFG.Current.MapEditor_MapContentList_NameDisplayType.GetDisplayName()}");
+        UIHelper.Tooltip($"Cycle through the name display types.\nCurrent Type: {CFG.Current.MapEditor_MapContentList_EntryNameDisplayType.GetDisplayName()}");
 
         // Show All
         ImGui.SameLine();
@@ -582,11 +582,11 @@ public class MapContentView
 
             var displayName = "";
 
-            if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal or NameDisplayType.Internal_FMG or NameDisplayType.Internal_Community)
+            if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Internal or NameDisplayType.Internal_FMG or NameDisplayType.Internal_Community)
             {
                 displayName = e.PrettyName;
             }
-            else if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Community or NameDisplayType.Community_FMG)
+            else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Community or NameDisplayType.Community_FMG)
             {
                 displayName = e.PrettyName;
 
@@ -622,7 +622,7 @@ public class MapContentView
                 arrowKeySelect = true;
             }
 
-            if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal_FMG or NameDisplayType.Community_FMG)
+            if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Internal_FMG or NameDisplayType.Community_FMG)
             {
                 var alias = AliasUtils.GetEntityAliasName(Editor.Project, e);
                 if (ImGui.IsItemVisible())
@@ -630,7 +630,7 @@ public class MapContentView
                     UIHelper.DisplayAlias(alias);
                 }
             }
-            else if (CFG.Current.MapEditor_MapContentList_NameDisplayType is NameDisplayType.Internal_Community)
+            else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Internal_Community)
             {
                 var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
 

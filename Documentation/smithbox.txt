@@ -27,9 +27,7 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Map Editor: check Dummy/Undummy shortcuts work
 - Map Editor: check Enemy part aliases appear correctly
-- Map Editor: ER DLC map offsets wrong (reported for Abyssal Woods m61_24_20_01)
 
 - Project:
  - Add CFG option to disable .bak and .prev generation (for Map and Param saves)
