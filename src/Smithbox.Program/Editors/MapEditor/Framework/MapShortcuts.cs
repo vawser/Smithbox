@@ -66,6 +66,7 @@ public class MapShortcuts
             Editor.RenderTypeAction.OnShortcut();
             Editor.ReorderAction.OnShortcut();
             Editor.GotoAction.OnShortcut();
+            Editor.GameVisibilityAction.OnShortcut();
             Editor.FrameAction.OnShortcut();
             Editor.PullToCameraAction.OnShortcut();
             Editor.EditorVisibilityAction.OnShortcut();
