@@ -27,7 +27,6 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Map Editor: check Enemy part aliases appear correctly
 
 - Project:
  - Add CFG option to disable .bak and .prev generation (for Map and Param saves)

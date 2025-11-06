@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -282,6 +283,19 @@ public class ProjectUtils
         throw new InvalidOperationException("No suitable VFS was found for writes");
     }
 
+    public static void CreateBackupFolder(ProjectEntry curProject)
+    {
+        if(CFG.Current.BackupProcessType is BackupType.Complete)
+        {
+            var folderPath = Path.Combine(curProject.ProjectPath, ".backup");
+
+            if(!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+        }
+    }
+
     public static void WriteWithBackup<T>(ProjectEntry curProject, string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
@@ -423,4 +437,14 @@ public class ProjectUtils
     {
         return true;
     }
+}
+
+public enum BackupType
+{
+    [Display(Name = "None")]
+    None = 0,
+    [Display(Name = "Simple")]
+    Simple = 1,
+    [Display(Name = "Complete")]
+    Complete = 2
 }

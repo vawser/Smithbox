@@ -155,6 +155,51 @@ public class SystemTab
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
         }
 
+        /*
+        if (ImGui.CollapsingHeader("Backup"))
+        {
+            var width = ImGui.GetWindowWidth();
+            
+            if (ImGui.BeginCombo("Backup Type##backupProcessType", CFG.Current.BackupProcessType.GetDisplayName()))
+            {
+                foreach (var entry in Enum.GetValues(typeof(BackupType)))
+                {
+                    var type = (BackupType)entry;
+                    CFG.Current.BackupProcessType = type;
+                }
+                ImGui.EndCombo();
+            }
+            UIHelper.Tooltip("Set the backup process type to use.");
+
+            if(CFG.Current.BackupProcessType is BackupType.None)
+            {
+                UIHelper.WrappedText("No backup file will be created during the saving process.");
+            }
+
+            if (CFG.Current.BackupProcessType is BackupType.Simple)
+            {
+                UIHelper.WrappedText("A single backup file will be created during the saving process next to the existing file, and will be overwritten by subsequent saves.");
+            }
+
+            if (CFG.Current.BackupProcessType is BackupType.Complete)
+            {
+                UIHelper.WrappedText("A versioned backup file will be created during the saving process in the .backup folder. This will create a new file for each save. Note: this increases disk space consumption.");
+            }
+
+            if(ImGui.Button("Delete Simple Backup", DPI.HalfWidthButton(width, 24)))
+            {
+
+            }
+            UIHelper.Tooltip("Delete all of the simple .bak and .prev files within your project.");
+
+            if (ImGui.Button("Delete Versioned Backup", DPI.HalfWidthButton(width, 24)))
+            {
+
+            }
+            UIHelper.Tooltip("Delete the versioned .bak files within the .backup folder within your project.");
+        }
+        */
+
         if (ImGui.CollapsingHeader("Loggers"))
         {
             ImGui.Checkbox("Show Action Logger", ref CFG.Current.System_ShowActionLogger);
@@ -241,6 +286,33 @@ public class MapEditorTab
 
                     ImGui.Checkbox("Enable Elden Ring collisions", ref CFG.Current.MapEditor_LoadCollisions_ER);
                     UIHelper.Tooltip("Enables the viewing of Elden Ring collisions. Note this will add delay to map loading if enabled.");
+                }
+            }
+        }
+
+        // Map Collision
+        if (BaseEditor.ProjectManager.SelectedProject.ProjectType is ProjectType.DS1R)
+        {
+            if (ImGui.CollapsingHeader("Map Collision", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                var width = ImGui.GetWindowWidth();
+
+                UIHelper.WrappedText("Select the install directory for your Dark Souls: Prepare to Die Edition. This will allow collision to be visible within a Dark Souls: Remastered project.");
+
+                ImGui.InputText("PTDE Game Directory##ptdeGameDirectory", ref CFG.Current.PTDE_Collision_Root, 255);
+                UIHelper.Tooltip("Select the directory of the Dark Souls: Prepare to Die Edition install.");
+
+                ImGui.Separator();
+
+                if (ImGui.Button("Select##ptdeGameDirectorySelect", DPI.StandardButtonSize))
+                {
+                    var ptdeDir = "";
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select PTDE directory", out ptdeDir);
+
+                    if (result)
+                    {
+                        CFG.Current.PTDE_Collision_Root = ptdeDir;
+                    }
                 }
             }
         }

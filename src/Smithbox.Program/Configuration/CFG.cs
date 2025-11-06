@@ -70,6 +70,11 @@ public class CFG
     /// </summary>
     public bool DisplayCollapsibleProjectCategories = true;
 
+    /// <summary>
+    /// The current backup process to use.
+    /// </summary>
+    public BackupType BackupProcessType = BackupType.Simple;
+
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
