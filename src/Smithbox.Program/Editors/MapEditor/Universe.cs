@@ -155,7 +155,7 @@ public class Universe
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+                    if (Editor.Project.ProjectType == ProjectType.ER)
                     {
                         if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid) is Transform
                             loadTransform)

@@ -281,9 +281,6 @@ public class MapEditorTab
             {
                 if (BaseEditor.ProjectManager.SelectedProject.ProjectType is ProjectType.ER)
                 {
-                    ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
-                    UIHelper.Tooltip("");
-
                     ImGui.Checkbox("Enable Elden Ring collisions", ref CFG.Current.MapEditor_LoadCollisions_ER);
                     UIHelper.Tooltip("Enables the viewing of Elden Ring collisions. Note this will add delay to map loading if enabled.");
                 }
