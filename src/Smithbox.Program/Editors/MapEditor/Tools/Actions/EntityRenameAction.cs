@@ -223,7 +223,7 @@ public class EntityRenameAction
     {
         var list = new List<MapObjectNameInfo>();
 
-        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Editor.Project), "namelist.csv");
+        var dir = Path.Join(Common.FileLocations.Assets, "MSB", ProjectUtils.GetGameDirectory(Editor.Project), "namelist.csv");
 
         if (File.Exists(dir))
         {

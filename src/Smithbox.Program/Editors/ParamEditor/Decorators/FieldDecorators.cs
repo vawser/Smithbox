@@ -920,7 +920,13 @@ public class FieldDecorators
             var path = ReferenceResolver.ResolveExternalReferences(matchedExtRefPath, dir);
             if (File.Exists(path))
             {
+#if WINDOWS
                 Process.Start("explorer.exe", $"/select,\"{path}\"");
+#elif MACOS
+                Process.Start("/usr/bin/open", $"-R \"{path}\"");
+#elif LINUX
+                Process.Start("xdg-open", Path.GetDirectoryName(path));
+#endif
             }
             else
             {

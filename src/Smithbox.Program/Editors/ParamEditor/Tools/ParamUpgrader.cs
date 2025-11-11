@@ -252,7 +252,7 @@ public class ParamUpgrader
 
     public void SetupUpgraderInformation()
     {
-        var oldRegInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Upgrader Information.json");
+        var oldRegInfoPath = Path.Join(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Upgrader Information.json");
 
         try
         {
@@ -464,7 +464,7 @@ public class ParamUpgrader
 
         var oldRegulationPath = "";
 
-        var oldRegDirectory = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Regulations");
+        var oldRegDirectory = Path.Join(Common.FileLocations.Assets, "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Regulations");
 
         var targetRegInfo = UpgraderInfo.RegulationEntries.Where(e => e.Version == oldVersionString).FirstOrDefault();
 
