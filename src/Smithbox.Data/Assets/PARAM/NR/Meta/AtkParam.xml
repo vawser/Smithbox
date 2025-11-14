@@ -444,9 +444,9 @@
     AltName="Attack Correction: Ultimate Art" 
     Wiki="The correction for ultimate art gauge charge." />
 	
-	<ultimateCharge
-	AltName="Charge: Ultimate Art"
-	Wiki="Flat amount of ultimate art gauge charge." />
+	<atkSa_JustGuard
+	AltName="Damage: Poise - Deflected"
+	Wiki="Poise damage to self when this attack is deflected." />
     
     <reviveDamageCorrection
     AltName="Attack Correction: Revive" 
@@ -472,7 +472,7 @@ knockbackDist,hitStopTime,blowingCorrection,-,
 spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
 atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,reviveDamageCorrection,ultimateChargeCorrection,
 atkThrowEscapeCorrection,guardAtkRateCorrection,guardBreakCorrection,-,
-atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,reviveDamage,ultimateCharge,
+atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,reviveDamage,atkSa_JustGuard,
 atkThrowEscape,guardAtkRate,guardBreakRate,-,
 dmgLevel,dmgLevel_vsPlayer,-,
 statusAilmentAtkPowerCorrectRate,statusAilmentAtkPowerCorrectRate_byPoint,
