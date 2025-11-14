@@ -1402,7 +1402,7 @@
     </Field>
     
     <Field Def="s16 ultimateChargeCorrection" />
-	<Field Def="s16 ultimateCharge" />
+	<Field Def="s16 atkSa_JustGuard" />
     <Field Def="s32 reviveDamageCorrection" />
     <Field Def="f32 reviveDamage" />
     <Field Def="f32 unknown_4" />

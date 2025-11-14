@@ -251,11 +251,12 @@
     <Field Def="s32 blowAttackPower"/>
     <Field Def="s32 thrustAttackPower"/>
     <Field Def="s32 neutralAttackPower"/>
-    <Field Def="s32 unknown_144"/>
-    <Field Def="f32 unknown_145"/>
-    <Field Def="f32 unknown_146"/>
-    <Field Def="f32 unknown_147"/>
-    <Field Def="f32 unknown_148"/>
+    <Field Def="s16 subSa"/>
+	<Field Def="s16 subSaBonusMax"/>
+    <Field Def="f32 subSaBonusRate_Magic"/>
+    <Field Def="f32 subSaBonusRate_Fire"/>
+    <Field Def="f32 subSaBonusRate_Lightning"/>
+    <Field Def="f32 subSaBonusRate_Holy"/>
     <Field Def="s32 tertiaryIconId"/>
     
     <Field Def="u8 madnessDamageRate"/>
@@ -271,7 +272,7 @@
     
     <Field Def="f32 saReceiveDamageRate"/>
     
-    <Field Def="s16 unknown_old_1a"/>
+    <Field Def="s16 changeGuardAngle"/>
     <Field Def="s16 wepTypeTrigger"/>
     <Field Def="s8 wepTypeTriggerCount"/>
     <Field Def="s8 startingItemAmount"/>
@@ -287,14 +288,14 @@
     <Field Def="f32 defEnemyDmgCorrectRate_Dark"/>
     <Field Def="f32 defObjDmgCorrectRate"/>
     
-    <Field Def="f32 unknown_old_6"/>
-    <Field Def="f32 unknown_old_7"/>
-    <Field Def="f32 unknown_old_8"/>
-    <Field Def="f32 unknown_old_9"/>
-    <Field Def="f32 unknown_old_10"/>
+    <Field Def="f32 subSaBonusRate_Poison"/>
+    <Field Def="f32 subSaBonusRate_ScarletRot"/>
+    <Field Def="f32 subSaBonusRate_Bleed"/>
+    <Field Def="f32 subSaBonusRate_Blight"/>
+    <Field Def="f32 subSaBonusRate_Frostbite"/>
     
-    <Field Def="f32 unknown_old_11"/>
-    <Field Def="f32 unknown_old_12"/>
+    <Field Def="f32 subSaBonusRate_Sleep"/>
+    <Field Def="f32 subSaBonusRate_Madness"/>
     <Field Def="s32 spEffectTextId_1"/>
     <Field Def="s32 spEffectTextId_2"/>
     <Field Def="s32 spEffectTextId_3"/>
@@ -407,7 +408,9 @@
     <Field Def="s32 revenantFamily_spEffectId_3"/>
     
     <Field Def="u8 unknown_241a"/>
-    <Field Def="u8 unknown_241b"/>
+    <Field Def="u8 unknown_241b_1:1"/>
+	<Field Def="u8 isSubSaUseMultiplayCorrect:1"/>
+	<Field Def="u8 unknown_241b_3:6"/>
     <Field Def="u8 randomChanceValue"/>
     <Field Def="u8 unknown_241d"/>
     

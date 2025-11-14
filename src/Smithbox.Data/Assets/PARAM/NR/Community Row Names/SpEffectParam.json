@@ -9838,7 +9838,7 @@
     {
       "ID": 7335,
       "Entries": [
-        "[Deep of Night Everdark Scaling] Maris"
+        "[Deep of Night Everdark Scaling] Maris Phase 2"
       ]
     },
     {
@@ -9862,31 +9862,31 @@
     {
       "ID": 7340,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Gladius Phase 2"
       ]
     },
     {
       "ID": 7341,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Adel Phase 2"
       ]
     },
     {
       "ID": 7342,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Gnoster Phase 2"
       ]
     },
     {
       "ID": 7343,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Animus"
       ]
     },
     {
       "ID": 7344,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Faurtis Phase 2"
       ]
     },
     {
@@ -9898,19 +9898,19 @@
     {
       "ID": 7346,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Libra Phase 2"
       ]
     },
     {
       "ID": 7347,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Fulghor Phase 2"
       ]
     },
     {
       "ID": 7348,
       "Entries": [
-        "[Deep of Night Everdark Scaling]"
+        "[Deep of Night Everdark Scaling] Caligo Phase 2"
       ]
     },
     {
@@ -10000,55 +10000,55 @@
     {
       "ID": 7370,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Gladius Phase 2"
       ]
     },
     {
       "ID": 7371,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Adel Phase 2"
       ]
     },
     {
       "ID": 7372,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Gnoster Phase 2"
       ]
     },
     {
       "ID": 7373,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Animus"
       ]
     },
     {
       "ID": 7374,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Faurtis Phase 2"
       ]
     },
     {
       "ID": 7375,
       "Entries": [
-        "[Everdark Sovereign Scaling] Maris"
+        "[Everdark Sovereign Scaling] Maris Phase 2"
       ]
     },
     {
       "ID": 7376,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Libra Phase 2"
       ]
     },
     {
       "ID": 7377,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Fulghor Phase 2"
       ]
     },
     {
       "ID": 7378,
       "Entries": [
-        "[Everdark Sovereign Scaling]"
+        "[Everdark Sovereign Scaling] Caligo Phase 2"
       ]
     },
     {
@@ -27670,7 +27670,7 @@
     {
       "ID": 15520,
       "Entries": [
-        ""
+        "[Godskin Noble] Temporary poise"
       ]
     },
     {
@@ -39022,7 +39022,7 @@
     {
       "ID": 42055,
       "Entries": [
-        ""
+        "[Gladius] Temporary poise"
       ]
     },
     {
@@ -39358,7 +39358,7 @@
     {
       "ID": 42141,
       "Entries": [
-        ""
+        "[Adel] Temporary Poise"
       ]
     },
     {
@@ -39394,7 +39394,7 @@
     {
       "ID": 42151,
       "Entries": [
-        ""
+        "[Adel] Temporary Poise"
       ]
     },
     {
@@ -39886,7 +39886,7 @@
     {
       "ID": 42250,
       "Entries": [
-        ""
+        "[Tibia Mariner] Temporary Poise"
       ]
     },
     {
@@ -40576,13 +40576,13 @@
     {
       "ID": 45630,
       "Entries": [
-        ""
+        "[Maris] Temporary Poise"
       ]
     },
     {
       "ID": 45631,
       "Entries": [
-        ""
+        "[Everdark Sovereign Maris] Temporary Poise"
       ]
     },
     {
@@ -41266,7 +41266,7 @@
     {
       "ID": 45834,
       "Entries": [
-        ""
+        "[Libra] Temporary Poise"
       ]
     },
     {
@@ -43216,7 +43216,7 @@
     {
       "ID": 46361,
       "Entries": [
-        ""
+        "[Fulghor] Temporary Poise"
       ]
     },
     {
@@ -43510,7 +43510,7 @@
     {
       "ID": 46445,
       "Entries": [
-        ""
+        "[Royal Revenant] Temporary Poise"
       ]
     },
     {
@@ -53626,31 +53626,31 @@
     {
       "ID": 604200,
       "Entries": [
-        ""
+        "[AoW] Strom Ruler - Accumulator 9"
       ]
     },
     {
       "ID": 604201,
       "Entries": [
-        "[AoW] Strom Ruler - FP Restore"
+        "[AoW] Strom Ruler - Charging & FP Restoration"
       ]
     },
     {
       "ID": 604205,
       "Entries": [
-        ""
+        "[AoW] Strom Ruler - Charged"
       ]
     },
     {
       "ID": 604206,
       "Entries": [
-        ""
+        "[AoW] Strom Ruler - Clear Accumulator 9"
       ]
     },
     {
       "ID": 604207,
       "Entries": [
-        ""
+        "[AoW] Strom Ruler - Clear Accumulator 9"
       ]
     },
     {
@@ -53806,13 +53806,13 @@
     {
       "ID": 701531,
       "Entries": [
-        ""
+        "Guardian: Steel Guard - Stamina Cost"
       ]
     },
     {
       "ID": 701535,
       "Entries": [
-        ""
+        "Guardian: Steel Guard - Buff"
       ]
     },
     {
@@ -54208,7 +54208,7 @@
     {
       "ID": 707000,
       "Entries": [
-        ""
+        "Executor : Cursed Sword - Just Guard"
       ]
     },
     {
@@ -54250,49 +54250,49 @@
     {
       "ID": 707050,
       "Entries": [
-        "Executor: "
+        "Executor: Cursed Sword - Accumulator 10"
       ]
     },
     {
       "ID": 707051,
       "Entries": [
-        "Executor: "
+        "Executor: Cursed Sword - Art Active"
       ]
     },
     {
       "ID": 707052,
       "Entries": [
-        ""
+        "Executor: Cursed Sword - Clear Accumulator 10"
       ]
     },
     {
       "ID": 707053,
       "Entries": [
-        ""
+        "Executor: Cursed Sword - AccumuVal 5"
       ]
     },
     {
       "ID": 707054,
       "Entries": [
-        ""
+        "Executor: Cursed Sword - AccumuVal 10"
       ]
     },
     {
       "ID": 707055,
       "Entries": [
-        ""
+        "Executor: Cursed Sword - AccumuVal 15"
       ]
     },
     {
       "ID": 707056,
       "Entries": [
-        ""
+        "Executor: Cursed Sword - AccumuVal 20"
       ]
     },
     {
       "ID": 707057,
       "Entries": [
-        ""
+        "Executor: Demon Sword - Clear Accumulator 10"
       ]
     },
     {
@@ -60076,7 +60076,7 @@
     {
       "ID": 7240001,
       "Entries": [
-        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Medium Stagger"
+        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Big Launch Back"
       ]
     },
     {
@@ -60088,7 +60088,7 @@
     {
       "ID": 7240004,
       "Entries": [
-        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Big Launch Back"
+        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Launch Back"
       ]
     },
     {
@@ -60124,13 +60124,13 @@
     {
       "ID": 7240011,
       "Entries": [
-        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Push"
+        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Huge Launch Back"
       ]
     },
     {
       "ID": 7240012,
       "Entries": [
-        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Huge Launch Back - Trigger on Huge Launch Back"
+        "[Relic Effect] Improved Poise & Damage Negation When Knocked Back by Damage - Trigger on Flailing Arms"
       ]
     },
     {
@@ -66076,13 +66076,13 @@
     {
       "ID": 8884190,
       "Entries": [
-        "[Weapon Effect] Bloodflies upon Precision Aiming - Accumulator"
+        "[Weapon Effect] Guarding Accumulator"
       ]
     },
     {
       "ID": 8884195,
       "Entries": [
-        "[Weapon Effect] Bloodflies upon Precision Aiming"
+        "[Weapon Effect] Guarding Accumulator"
       ]
     },
     {
@@ -66094,13 +66094,13 @@
     {
       "ID": 8884201,
       "Entries": [
-        "[Weapon Effect] Shielding Creates Holy Ground - Accumulator 1"
+        "[Weapon Effect] Shielding Creates Holy Ground - Accumulator 5"
       ]
     },
     {
       "ID": 8884202,
       "Entries": [
-        "[Weapon Effect] Shielding Creates Holy Ground - Accumulator 2"
+        "[Weapon Effect] Shielding Creates Holy Ground - Accumulator 5"
       ]
     },
     {
@@ -66142,7 +66142,7 @@
     {
       "ID": 8884230,
       "Entries": [
-        ""
+        "[Weapon Effect] Shielding Creates Holy Ground - Buff Icon"
       ]
     },
     {

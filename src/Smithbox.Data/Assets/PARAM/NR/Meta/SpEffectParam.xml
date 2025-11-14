@@ -1387,6 +1387,36 @@
     Wiki="Recover arts point miracles" 
     DefaultValue="0" />
     
+	<subSa 
+    AltName="Temporary Poise"
+    Wiki="A temporary poise durability value that is generated within a specific time window." 
+    DefaultValue="-1" />
+	
+	<subSaBonusMax
+    AltName="Max Temporary Poise Bonus"
+    Wiki="The maximum amount of extra temporary poise damage this enemy receives from the temporary poise bonus rate adjustments." 
+    DefaultValue="-1" />
+	
+	<subSaBonusRate_Magic 
+    AltName="Temporary Poise Bonus %: Magic"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Fire 
+    AltName="Temporary Poise Bonus %: Fire"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Lightning
+    AltName="Temporary Poise Bonus %: Lightning"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Holy
+    AltName="Temporary Poise Bonus %: Holy"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
     <madnessDamageRate 
     AltName="Damage Correction %: Madness"
     Wiki="Correction value used only for point damage and% damage of state change type [madness]" 
@@ -1455,6 +1485,11 @@
     AltName="Absorption %: Poise Damage" 
     Wiki="Multiplier for SA damage" 
     DefaultValue="1" />
+    
+	<changeGuardAngle 
+    AltName="Guard Angle Change" 
+    Wiki="The new guard angle to apply when guarding weapons." 
+    DefaultValue="-1" />
     
     <wepTypeTrigger
     AltName="Weapon Type Trigger"
@@ -1551,6 +1586,41 @@
     Wiki="Damage correction for the damage value received from OBJ." 
     DefaultValue="1" />
     
+	<subSaBonusRate_Poison 
+    AltName="Temporary Poise Bonus %: Poison"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_ScarletRot 
+    AltName="Temporary Poise Bonus %: Scarlet Rot"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Bleed 
+    AltName="Temporary Poise Bonus %: Bleed"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Blight 
+    AltName="Temporary Poise Bonus %: Death Blight"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Frostbite 
+    AltName="Temporary Poise Bonus %: Frostbite"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Sleep 
+    AltName="Temporary Poise Bonus %: Sleep"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
+	<subSaBonusRate_Madness 
+    AltName="Temporary Poise Bonus %: Madness"
+    Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
+    DefaultValue="1" />
+	
     <spEffectTextId_1
     AltName="Slot 1: SpEffect Text ID"
     Wiki="The SpEffect text ID to use." 
@@ -2031,7 +2101,7 @@
     <triggerEffectOnKnockback_unk
     AltName="Trigger Effect on Specified Knockback Type"
     Wiki="Appears related to the effects that trigger a boost on knockback" 
-    ProjectEnum="SPEFFECT_DMGTYPE_NEW"
+    ProjectEnum="ATKPARAM_DMGTYPE_NEW"
     DefaultValue="-1" />
     
     <weakPointValue
@@ -2069,6 +2139,12 @@
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
+	<isSubSaUseMultiplayCorrect 
+    AltName="Temporary Poise Use Multiplayer Correction" 
+    Wiki="If set to 0, temporary poise will not apply multiplayer correction."
+    IsBool="" 
+    DefaultValue="1" />
+	
     <randomChanceValue
     AltName="Random Chance Value"
     Wiki="The random chance value to use when in conjunction with state info 2121." 
