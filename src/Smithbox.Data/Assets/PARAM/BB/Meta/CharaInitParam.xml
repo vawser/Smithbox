@@ -12,7 +12,7 @@
   </Enums>
   <Self Wiki="Player NPC data" Row0Dummy="" AlternativeOrder="equip_Wep_Right,equip_Subwep_Right,equip_Wep_Body_GenId,equip_Wep_Left,equip_Subwep_Left,SecondaryItem_01,-,
   equip_Arrow,equip_SubArrow,equip_Bolt,equip_SubBolt,arrowNum,subArrowNum,boltNum,subBoltNum,-,
-  equip_Helm,equip_Armor,equip_Gaunt,equip_Leg,-,
+  equip_Helm,equip_Armer,equip_Gaunt,equip_Leg,-,
   soulLvl,baseVit,baseWil,baseEnd,baseDurability,baseStr,baseDex,baseMag,baseFai,baseLuc,baseHeroPoint,soul,secondaryItemNum_07,secondaryItemNum_08,-,
   equip_Accessory1,equip_Accessory2,equip_Accessory3,equip_Accessory4,equip_Accessory5,-,
   equip_Spell_01,equip_Spell_02,equip_Spell_03,equip_Spell_04,equip_Spell_05,equip_Spell_06,equip_Spell_07,-,
@@ -31,7 +31,7 @@
     <equip_Wep_Left Refs="EquipParamWeapon" AltName="Left Weapon 1" />
     <equip_Subwep_Left Refs="EquipParamWeapon" AltName="Left Weapon 2" />
     <equip_Helm Refs="EquipParamProtector" AltName="Equipped Head" />
-    <equip_Armor Refs="EquipParamProtector" AltName="Equipped Body" />
+    <equip_Armer Refs="EquipParamProtector" AltName="Equipped Body" />
     <equip_Gaunt Refs="EquipParamProtector" AltName="Equipped Arms" />
     <equip_Leg Refs="EquipParamProtector" AltName="Equipped Legs" />
     <equip_Arrow Refs="EquipParamWeapon" AltName="Arrow Slot 1" />
