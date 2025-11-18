@@ -48,6 +48,7 @@ If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vaw
 * [Meowmaritus](https://github.com/meowmaritus)
 * [PredatorCZ](https://github.com/PredatorCZ)
 * [Horkrux](https://github.com/horkrux)
+* Shadowth117
 
 # Libraries
 * [SoulsFormats](https://github.com/JKAnderson/SoulsFormats) - Credit to TKGP
