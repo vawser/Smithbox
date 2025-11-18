@@ -6,6 +6,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -198,6 +199,8 @@ public class GlobalSearchTool : IMapQueryEngine
 
     public void DisplayResults()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         if (Bank.MapBankInitialized)
         {
             UIHelper.WrappedText("");
@@ -211,6 +214,42 @@ public class GlobalSearchTool : IMapQueryEngine
             else if (!MayRunQuery)
             {
                 UIHelper.WrappedText($"Search query is not yet complete...");
+            }
+
+            if (QueryComplete)
+            {
+                if (ImGui.Button("Copy to Clipboard", DPI.WholeWidthButton(windowWidth, 24)))
+                {
+                    CopyResultsToClipboard();
+                }
+
+                ImGui.Checkbox("Header", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeHeader);
+                UIHelper.Tooltip("Include the map headers in the clipboard text.");
+
+                ImGui.SameLine();
+
+                ImGui.Checkbox("Index", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeIndex);
+                UIHelper.Tooltip("Include the result index in the clipboard text.");
+
+                ImGui.SameLine();
+
+                ImGui.Checkbox("Entity Name", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityName);
+                UIHelper.Tooltip("Include the entity name in the clipboard text.");
+
+                ImGui.SameLine();
+
+                ImGui.Checkbox("Entity Alias", ref CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityAlias);
+                UIHelper.Tooltip("Include the entity alias in the clipboard text.");
+
+                ImGui.SameLine();
+
+                ImGui.Checkbox("Property Name", ref CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyName);
+                UIHelper.Tooltip("Include the property name in the clipboard text.");
+
+                ImGui.SameLine();
+
+                ImGui.Checkbox("Property Value", ref CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyValue);
+                UIHelper.Tooltip("Include the property value in the clipboard text.");
             }
         }
     }
@@ -464,6 +503,98 @@ public class GlobalSearchTool : IMapQueryEngine
             }
 
             ImGui.EndChild();
+        }
+    }
+
+    public void CopyResultsToClipboard()
+    {
+        var clipboardText = "";
+
+        if (Matches.Count > 0)
+        {
+            for (int i = 0; i < Matches.Count; i++)
+            {
+                var pair = Matches.ElementAt(i);
+                var mapName = pair.Key;
+                var mapAlias = AliasUtils.GetMapNameAlias(Editor.Project, mapName);
+                var displayName = $"{mapName}: {mapAlias}";
+                var objectMatches = pair.Value;
+
+                if (CFG.Current.GlobalMapSearch_CopyResults_IncludeHeader)
+                {
+                    clipboardText = clipboardText + $"\n#---------------------------\n{displayName}\n#---------------------------\n";
+                }
+
+                int index = 0;
+                foreach (var entry in objectMatches)
+                {
+                    var entryText = "";
+                    var textAddCount = 0;
+
+                    if(CFG.Current.GlobalMapSearch_CopyResults_IncludeIndex)
+                    {
+                        entryText = $"{index}";
+                        textAddCount++;
+                    }
+
+                    if (CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityName)
+                    {
+                        if (textAddCount != 0)
+                        {
+                            entryText = entryText + $"{CFG.Current.GlobalMapSearch_CopyResults_Delimiter}";
+                        }
+                        textAddCount++;
+
+                        entryText = entryText + $"{entry.EntityName}";
+                    }
+
+                    if (CFG.Current.GlobalMapSearch_CopyResults_IncludeEntityAlias)
+                    {
+                        var alias = GetUnknownAlias(entry.EntityName);
+
+                        if (alias != "")
+                        {
+                            if (textAddCount != 0)
+                            {
+                                entryText = entryText + $"{CFG.Current.GlobalMapSearch_CopyResults_Delimiter}";
+                            }
+                            textAddCount++;
+
+                            entryText = entryText + $"{alias}";
+                        }
+                    }
+
+                    if (CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyName)
+                    {
+                        if (textAddCount != 0)
+                        {
+                            entryText = entryText + $"{CFG.Current.GlobalMapSearch_CopyResults_Delimiter}";
+                        }
+                        textAddCount++;
+
+                        entryText = entryText + $"{entry.PropertyName}";
+                    }
+
+                    if (CFG.Current.GlobalMapSearch_CopyResults_IncludePropertyValue)
+                    {
+                        if (textAddCount != 0)
+                        {
+                            entryText = entryText + $"{CFG.Current.GlobalMapSearch_CopyResults_Delimiter}";
+                        }
+                        textAddCount++;
+
+                        entryText = entryText + $"{entry.PropertyValue}";
+                    }
+
+                    entryText = entryText + "\n";
+
+                    clipboardText = clipboardText + entryText;
+
+                    index++;
+                }
+            }
+
+            PlatformUtils.Instance.SetClipboardText(clipboardText);
         }
     }
 

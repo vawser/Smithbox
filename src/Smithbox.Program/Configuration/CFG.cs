@@ -299,6 +299,14 @@ public class CFG
     /// </summary>
     public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
 
+    public bool GlobalMapSearch_CopyResults_IncludeHeader = true;
+    public bool GlobalMapSearch_CopyResults_IncludeIndex = true;
+    public bool GlobalMapSearch_CopyResults_IncludeEntityName = true;
+    public bool GlobalMapSearch_CopyResults_IncludeEntityAlias = true;
+    public bool GlobalMapSearch_CopyResults_IncludePropertyName = true;
+    public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
+    public string GlobalMapSearch_CopyResults_Delimiter = ",";
+
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
