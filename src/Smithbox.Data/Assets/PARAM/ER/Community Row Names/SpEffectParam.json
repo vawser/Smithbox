@@ -70,7 +70,7 @@
     {
       "ID": 11,
       "Entries": [
-        "[Item] Bloody Finger - Attempt Invasion"
+        "[Item] Festering/Bloody Finger - Attempt Invasion"
       ]
     },
     {
@@ -100,7 +100,7 @@
     {
       "ID": 16,
       "Entries": [
-        "[Item] Festering/Recusant Finger - Attempt Invasion"
+        "[Item] Recusant Finger - Attempt Invasion"
       ]
     },
     {
@@ -166,7 +166,7 @@
     {
       "ID": 28,
       "Entries": [
-        ""
+        "[Item] Taunter's Tongue - Icon"
       ]
     },
     {
@@ -1480,7 +1480,7 @@
     {
       "ID": 536,
       "Entries": [
-        "[Item] Phantom Bloody/Recusant Finger - Attempt Invasion"
+        "[Item] Phantom Festering/Bloody/Recusant Finger - Attempt Reinvasion"
       ]
     },
     {
