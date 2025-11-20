@@ -2242,73 +2242,73 @@
     {
       "ID": 1100,
       "Entries": [
-        ""
+        "QuickMatch - Kill"
       ]
     },
     {
       "ID": 1110,
       "Entries": [
-        ""
+        "QuickMatch - Team A Summon/Respawn"
       ]
     },
     {
       "ID": 1111,
       "Entries": [
-        ""
+        "QuickMatch - Team B Summon/Respawn"
       ]
     },
     {
       "ID": 1120,
       "Entries": [
-        ""
+        "QuickMatch - Respawn End Explosion"
       ]
     },
     {
       "ID": 1130,
       "Entries": [
-        ""
+        "QuickMatch - Death"
       ]
     },
     {
       "ID": 1140,
       "Entries": [
-        ""
+        "QuickMatch - Crown for 1st Place"
       ]
     },
     {
       "ID": 1150,
       "Entries": [
-        ""
+        "QuickMatch - Crown for Tied 1st Place"
       ]
     },
     {
       "ID": 1160,
       "Entries": [
-        ""
+        "QuickMatch - Notification to remove 1st place special effects"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        ""
+        "QuickMatch - Heal when killing 1st place player"
       ]
     },
     {
       "ID": 1210,
       "Entries": [
-        ""
+        "QuickMatch - Heal when in 1st place"
       ]
     },
     {
       "ID": 1300,
       "Entries": [
-        ""
+        "QuickMatch - Heal when killing tied 1st place player"
       ]
     },
     {
       "ID": 1310,
       "Entries": [
-        ""
+        "QuickMatch - Heal when in tied 1st place"
       ]
     },
     {

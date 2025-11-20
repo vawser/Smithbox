@@ -7,10 +7,10 @@
     <maxSignPosCorrectionRange AltName="Common - Max Sign Position Correction Range" Wiki="" />
     <summonTimeoutTime AltName="Common - Summon Timeout Time" Wiki="" />
     <pad_0 AltName="" Padding=""/>
-    <signPuddleActiveMessageIntervalSec AltName="Summon Sign - Sign Puddle Active Message Interval" Wiki="" />
-    <keyGuideHeight_0 AltName="Summon Sign - Key Guide Height" Wiki="" />
-    <reloadSignIntervalTime1 AltName="Summon Sign - Reload Sign Interval Time [1]" Wiki="" />
-    <reloadSignIntervalTime2 AltName="Summon Sign - Reload Sign Interval Time [2]" Wiki="" />
+    <signPuddleActiveMessageIntervalSec AltName="Summon Sign - Sign Puddle Active Message Interval" Wiki="Interval between sign puddle on screen notifications" />
+    <signPuddleSendInterval AltName="Summon Sign - Sign Puddle Send Interval" Wiki="Interval between sign puddle sign creation messages" />
+    <signPuddleMatchAreasNum AltName="Summon Sign - Sign Puddle Match Areas Num" Wiki="Amount of areas to put sign in sign puddles per request (when Near/Far option is used)" />
+    <signPuddleUpdateSignInterval AltName="Summon Sign - Sign Puddle Update Sign Interval" Wiki="Interval between sign updates in sign puddles" />
     <reloadSignTotalCount_0 AltName="Summon Sign - Reload Sign Total Count" Wiki="Actually u8 is enough" />
     <reloadSignCellCount_0 AltName="Summon Sign - Reload Sign Cell Count" Wiki="Actually u8 is enough" />
     <updateSignIntervalTime AltName="Summon Sign - Update Sign Interval Time" Wiki="" />
@@ -48,7 +48,7 @@
     <signVisibleRange_1 AltName="Blood Message - Sign Visible Range" Wiki="" />
     <maxWriteSignCount AltName="Blood Message - Max Write Sign Count" Wiki="Actually u8 is enough" />
     <maxReadSignCount AltName="Blood Message - Max Read Sign Count" Wiki="Actually u8 is enough" />
-    <reloadSignIntervalTime_0 AltName="Blood Message - Reload Sign Interval Time" Wiki="" />
+    <bloodMessageDownloadTime AltName="Blood Message - Reload Sign Interval Time" Wiki="" />
     <cellGroupHorizontalRange_1 AltName="Blood Message - Cell Group Horizontal Range" Wiki="Actually u8 is enough" />
     <cellGroupTopRange_1 AltName="Blood Message - Cell Group Top Range" Wiki="Actually u8 is enough" />
     <cellGroupBottomRange_1 AltName="Blood Message - Cell Group Bottom Range" Wiki="Actually u8 is enough" />
@@ -64,7 +64,7 @@
     <reloadSignCellCount_1 AltName="Bloodstain - Reload Sign Cell Count" Wiki="Actually u8 is enough" />
     <maxSignTotalCount_1 AltName="Bloodstain - Max Sign Total Count" Wiki="Actually u16 is enough" />
     <maxSignCellCount_1 AltName="Bloodstain - Max Sign Cell Count" Wiki="Actually u8 is enough" />
-    <reloadSignIntervalTime_1 AltName="Bloodstain - Reload Sign Interval Time" Wiki="" />
+    <bloodStainDownloadTime AltName="Bloodstain - Reload Sign Interval Time" Wiki="" />
     <signVisibleRange_2 AltName="Bloodstain - Sign Visible Range" Wiki="" />
     <basicExclusiveRange_2 AltName="Bloodstain - Basic Exclusive Range" Wiki="" />
     <basicExclusiveHeight_2 AltName="Bloodstain - Basic Exclusive Height" Wiki="" />
@@ -144,13 +144,13 @@
     <guestPlayerNoTimeOutTime AltName="Quick Match - Guest Player No Time Out Time" Wiki="" />
     <hostPlayerNoTimeOutTime AltName="Quick Match - Host Player No Time Out Time" Wiki="" />
     <requestSearchQuickMatchLimit AltName="Quick Match - Request Search Quick Match Limit" Wiki="Actually u8 is enough" />
-    <AvatarMatchSearchMax AltName="Quick Match - Avatar Match Search Max" Wiki="Actually u8 is enough" />
+    <quickMatchSearchTimeout AltName="Quick Match - Quick Match Search Timeout" Wiki="Actually u8 is enough" />
     <BattleRoyalMatchSearchMin AltName="Quick Match - Battle Royale Match Search Min" Wiki="Actually u8 is enough" />
     <BattleRoyalMatchSearchMax AltName="Quick Match - Battle Royale Match Search Max" Wiki="Actually u8 is enough" />
     <pad11 AltName="" Padding=""/>
     <VisitorListMax AltName="Visitor - Visitor List Max" Wiki="Actually u8 is enough" />
     <VisitorTimeOutTime AltName="Visitor - Visitor Time Out Time" Wiki="" />
-    <DownloadSpan_2 AltName="Visitor - Download Span" Wiki="" />
+    <VisitorDownloadSpan AltName="Visitor - Download Span" Wiki="" />
     <VisitorGuestRequestMessageIntervalSec AltName="Visitor - Visitor Guest Request Message Interval" Wiki="Display interval [seconds] of messages sent by visiting guests while searching for a destination" />
     <wanderGhostIntervalLifeTime AltName="Ghost Addition - Wandering Ghost Interval Lifetime" Wiki="Wandering illusion life" />
     <pad13 AltName="" Padding=""/>
