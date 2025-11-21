@@ -7,6 +7,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 
@@ -56,22 +57,22 @@ public static class ModelColladaExporter
             // Add vertices
             foreach (FLVER.Vertex vertex in mesh.Vertices)
             {
-                newMesh.Vertices.Add(new Vector3D(vertex.Position.X, vertex.Position.Y, vertex.Position.Z));
-                newMesh.Normals.Add(new Vector3D(vertex.Normal.X, vertex.Normal.Y, vertex.Normal.Z));
+                newMesh.Vertices.Add(new Vector3(vertex.Position.X, vertex.Position.Y, vertex.Position.Z));
+                newMesh.Normals.Add(new Vector3(vertex.Normal.X, vertex.Normal.Y, vertex.Normal.Z));
 
                 if (newMesh.Tangents.Count > 0)
-                    newMesh.Tangents.Add(new Vector3D(vertex.Tangents[0].X, vertex.Tangents[0].Y, vertex.Tangents[0].Z));
+                    newMesh.Tangents.Add(new Vector3(vertex.Tangents[0].X, vertex.Tangents[0].Y, vertex.Tangents[0].Z));
 
                 // Add UVs
                 for (int j = 0; j < 4; ++j)
                 {
                     if (vertex.UVs.Count > j)
                     {
-                        newMesh.TextureCoordinateChannels[j].Add(new Vector3D(vertex.UVs[j].X, vertex.UVs[j].Y, 0f));
+                        newMesh.TextureCoordinateChannels[j].Add(new Vector3(vertex.UVs[j].X, vertex.UVs[j].Y, 0f));
                     }
                     else
                     {
-                        newMesh.TextureCoordinateChannels[j].Add(new Vector3D(1, 1, 1));
+                        newMesh.TextureCoordinateChannels[j].Add(new Vector3(1, 1, 1));
                     }
                 }
 
@@ -85,7 +86,7 @@ public static class ModelColladaExporter
                 for (int j = 0; j < vertex.Colors.Count; j++)
                 {
                     var color = vertex.Colors[j];
-                    newMesh.VertexColorChannels[j].Add(new Color4D(color.R, color.G, color.B, color.A));
+                    newMesh.VertexColorChannels[j].Add(new Vector4(color.R, color.G, color.B, color.A));
                 }
             }
 

@@ -1368,8 +1368,8 @@ public class InterfaceTab
 
             if (ImGui.Button("Restore Default Fonts", DPI.StandardButtonSize))
             {
-                CFG.Current.System_English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
-                CFG.Current.System_Other_Font = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
+                CFG.Current.System_English_Font = Path.Join(Common.FileLocations.Assets, "Fonts","RobotoMono-Light.ttf");
+                CFG.Current.System_Other_Font = Path.Join(Common.FileLocations.Assets, "Fonts","NotoSansCJKtc-Light.otf");
                 Smithbox.FontRebuildRequest = true;
             }
         }
@@ -1401,27 +1401,22 @@ public class InterfaceTab
         // ImGui
         if (ImGui.CollapsingHeader("Interface Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var storedDir = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Smithbox");
+            var storedDir = Common.FileLocations.StoreImgui;
             var storedPath = Path.Join(storedDir,"imgui.ini");
 
             ImGui.AlignTextToFramePadding();
-            ImGui.Text("Store the current imgui.ini in the AppData folder for future usage.");
+            ImGui.Text($"Store the current imgui.ini at {storedDir} for future usage.");
 
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button("Store##storeImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
+                var curImgui = Path.Join(Common.FileLocations.CurImgui,"imgui.ini");
 
+                if (!Directory.Exists(storedDir) && new DirectoryInfo(storedDir).Parent.Exists)
+                    Directory.CreateDirectory(storedDir);
                 if (Directory.Exists(storedDir))
                 {
-                    if (File.Exists(storedPath))
-                    {
-                        File.Copy(curImgui, storedPath, true);
-                    }
-                    else
-                    {
-                        File.Copy(curImgui, storedPath, true);
-                    }
+                    File.Copy(curImgui, storedPath, true);
                 }
 
                 PlatformUtils.Instance.MessageBox($"Stored at {storedPath}.", "Information", MessageBoxButtons.OK);
@@ -1429,7 +1424,13 @@ public class InterfaceTab
             ImGui.SameLine();
             if (ImGui.Button("Open Folder##openImguiIniFolder", DPI.StandardButtonSize))
             {
+#if WINDOWS
                 Process.Start("explorer.exe", storedDir);
+#elif MACOS
+                Process.Start("/usr/bin/open", storedDir);
+#elif LINUX
+                Process.Start("xdg-open", storedDir});
+#endif
             }
 
             if (File.Exists(storedPath))
@@ -1437,13 +1438,13 @@ public class InterfaceTab
                 ImGui.Separator();
 
                 ImGui.AlignTextToFramePadding();
-                ImGui.Text("Set the current imgui.ini to the version you stored within the AppData folder.");
+                ImGui.Text($"Set the current imgui.ini to the version you stored at {storedDir}.");
 
                 ImGui.AlignTextToFramePadding();
 
                 if (ImGui.Button("Set##setImguiIni", DPI.StandardButtonSize))
                 {
-                    var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
+                    var curImgui = Path.Join(Common.FileLocations.CurImgui, "imgui.ini");
 
                     if (File.Exists(storedPath))
                     {
@@ -1462,8 +1463,8 @@ public class InterfaceTab
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button("Reset##resetImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
-                var defaultImgui = Path.Join(AppContext.BaseDirectory,"imgui.default");
+                var curImgui = Path.Join(Common.FileLocations.CurImgui, "imgui.ini");
+                var defaultImgui = Path.Join(Common.FileLocations.Resources, "imgui.default");
 
                 if (Directory.Exists(storedDir))
                 {
@@ -1511,7 +1512,13 @@ public class InterfaceTab
             ImGui.SameLine();
             if (ImGui.Button("Open Theme Folder", DPI.StandardButtonSize))
             {
-                Process.Start("explorer.exe", Path.Join(AppContext.BaseDirectory,"Assets","Themes")); //! FIXME explorer does not exist
+#if WINDOWS
+                Process.Start("explorer.exe", Path.Join(Common.FileLocations.Assets, "Themes"));
+#elif MACOS
+                Process.Start("/usr/bin/open", Path.Join(Common.FileLocations.Assets, "Themes"));
+#elif LINUX
+                Process.Start("xdg-open", Path.Join(Common.FileLocations.Assets, "Themes"));
+#endif
             }
             ImGui.SameLine();
 
