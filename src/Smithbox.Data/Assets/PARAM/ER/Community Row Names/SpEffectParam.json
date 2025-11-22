@@ -70,7 +70,7 @@
     {
       "ID": 11,
       "Entries": [
-        "[Item] Bloody Finger - Attempt Invasion"
+        "[Item] Festering/Bloody Finger - Attempt Invasion"
       ]
     },
     {
@@ -100,7 +100,7 @@
     {
       "ID": 16,
       "Entries": [
-        "[Item] Festering/Recusant Finger - Attempt Invasion"
+        "[Item] Recusant Finger - Attempt Invasion"
       ]
     },
     {
@@ -118,7 +118,7 @@
     {
       "ID": 20,
       "Entries": [
-        ""
+        "Message appraise HP restoration"
       ]
     },
     {
@@ -166,7 +166,7 @@
     {
       "ID": 28,
       "Entries": [
-        ""
+        "[Item] Taunter's Tongue - Icon"
       ]
     },
     {
@@ -1480,7 +1480,7 @@
     {
       "ID": 536,
       "Entries": [
-        "[Item] Phantom Bloody/Recusant Finger - Attempt Invasion"
+        "[Item] Phantom Festering/Bloody/Recusant Finger - Attempt Reinvasion"
       ]
     },
     {
@@ -1552,367 +1552,367 @@
     {
       "ID": 600,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 601,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 602,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 603,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 604,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 605,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 606,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 607,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 608,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 609,
       "Entries": [
-        ""
+        "[Item] Godrick's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 610,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 611,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 612,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 613,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 614,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 615,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 616,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 617,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 618,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 619,
       "Entries": [
-        ""
+        "[Item] Radahn's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 620,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 621,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 622,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 623,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 624,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 625,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 626,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 627,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 628,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 629,
       "Entries": [
-        ""
+        "[Item] Morgott's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 630,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 631,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 632,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 633,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 634,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 635,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 636,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 637,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 638,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 639,
       "Entries": [
-        ""
+        "[Item] Rykard's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 640,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 641,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 642,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 643,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 644,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 645,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 646,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 647,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 648,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 649,
       "Entries": [
-        ""
+        "[Item] Mohg's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 650,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 0"
       ]
     },
     {
       "ID": 651,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 1"
       ]
     },
     {
       "ID": 652,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 2"
       ]
     },
     {
       "ID": 653,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 3"
       ]
     },
     {
       "ID": 654,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 4"
       ]
     },
     {
       "ID": 655,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 5"
       ]
     },
     {
       "ID": 656,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 6"
       ]
     },
     {
       "ID": 657,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 7"
       ]
     },
     {
       "ID": 658,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Activation Sfx"
       ]
     },
     {
       "ID": 659,
       "Entries": [
-        ""
+        "[Item] Malenia's Great Rune: Effect 9"
       ]
     },
     {
       "ID": 790,
       "Entries": [
-        ""
+        "[Item] No Great Rune: Active Effect"
       ]
     },
     {
