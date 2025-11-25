@@ -286,13 +286,13 @@
     {
       "ID": 1000000001,
       "Entries": [
-        ""
+        "Npc Pseudo Invasion Session Host"
       ]
     },
     {
       "ID": 1000000002,
       "Entries": [
-        ""
+        "Npc Pseudo Invasion Session Guest"
       ]
     }
   ]
