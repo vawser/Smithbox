@@ -22,7 +22,7 @@ enum <int> EventType {
     EventTypeMount = 21,
     EventTypeSignPool = 23,
     EventTypeRetryPoint = 24,
-    EventTypeAreaTeam = 25,
+    EventTypeOnlinePseudoMultiplayer = 25,
     EventTypeOther = -1,
 };
 
@@ -38,7 +38,7 @@ struct EventPatrolInfo;
 struct EventMount;
 struct EventSignPool;
 struct EventRetryPoint;
-struct EventAreaTeam;
+struct EventOnlinePseudoMultiplayer;
 
 //------------------------------------------------
 
@@ -84,8 +84,8 @@ typedef struct {
             case EventTypeMount: EventMount mount; break;
             case EventTypeSignPool: EventSignPool signPool; break;
             case EventTypeRetryPoint: EventRetryPoint retryPoint; break;
-            case EventTypeAreaTeam: EventAreaTeam areaTeam; break;
-            
+            case EventTypeOnlinePseudoMultiplayer: EventOnlinePseudoMultiplayer OnlinePseudoMultiplayer; break;
+
             default: Assert(false);
         }
     }
@@ -268,4 +268,4 @@ typedef struct {
     int unk20;
     int unk24;
     int unk28;
-} EventAreaTeam;
+} EventOnlinePseudoMultiplayer;

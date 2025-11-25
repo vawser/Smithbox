@@ -19,8 +19,16 @@ namespace SoulsFormats
             Mount = 21,
             SignPool = 23,
             RetryPoint = 24,
-            AreaTeam = 25,
+            OnlinePseudoMultiplayer = 25,
             Other = 0xFFFFFFFF,
+        }
+
+        public enum CeremonyType : byte
+        {
+            WhiteSpirit = 0,
+            InvasionA = 1,
+            PhantasmEvent = 2,
+            InvasionB = 3,
         }
 
         /// <summary>
@@ -81,7 +89,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Event.AreaTeam> AreaTeams { get; set; }
+            public List<Event.OnlinePseudoMultiplayer> OnlinePseudoMultiplayers { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -103,7 +111,7 @@ namespace SoulsFormats
                 Mounts = new List<Event.Mount>();
                 SignPools = new List<Event.SignPool>();
                 RetryPoints = new List<Event.RetryPoint>();
-                AreaTeams = new List<Event.AreaTeam>();
+                OnlinePseudoMultiplayers = new List<Event.OnlinePseudoMultiplayer>();
                 Others = new List<Event.Other>();
             }
 
@@ -124,7 +132,7 @@ namespace SoulsFormats
                     case Event.Mount e: Mounts.Add(e); break;
                     case Event.SignPool e: SignPools.Add(e); break;
                     case Event.RetryPoint e: RetryPoints.Add(e); break;
-                    case Event.AreaTeam e: AreaTeams.Add(e); break;
+                    case Event.OnlinePseudoMultiplayer e: OnlinePseudoMultiplayers.Add(e); break;
                     case Event.Other e: Others.Add(e); break;
 
                     default:
@@ -141,7 +149,7 @@ namespace SoulsFormats
             {
                 return SFUtil.ConcatAll<Event>(
                     Treasures, Generators, ObjActs, Navmeshes, PseudoMultiplayers, PlatoonInfo,
-                    PatrolInfo, Mounts, SignPools, RetryPoints, AreaTeams, Others);
+                    PatrolInfo, Mounts, SignPools, RetryPoints, OnlinePseudoMultiplayers, Others);
             }
             IReadOnlyList<IMsbEvent> IMsbParam<IMsbEvent>.GetEntries() => GetEntries();
 
@@ -180,8 +188,8 @@ namespace SoulsFormats
                     case EventType.RetryPoint:
                         return RetryPoints.EchoAdd(new Event.RetryPoint(br));
 
-                    case EventType.AreaTeam:
-                        return AreaTeams.EchoAdd(new Event.AreaTeam(br));
+                    case EventType.OnlinePseudoMultiplayer:
+                        return OnlinePseudoMultiplayers.EchoAdd(new Event.OnlinePseudoMultiplayer(br));
 
                     case EventType.Other:
                         return Others.EchoAdd(new Event.Other(br));
@@ -377,7 +385,7 @@ namespace SoulsFormats
 
                 if (Type == EventType.PseudoMultiplayer)
                     bw.Pad(4);
-                else if (Type == EventType.AreaTeam)
+                else if (Type == EventType.OnlinePseudoMultiplayer)
                     bw.Pad(4);
                 else
                     bw.Pad(8);
@@ -394,7 +402,7 @@ namespace SoulsFormats
                 bw.Pad(8);
 
                 // ???
-                if (Type == EventType.AreaTeam)
+                if (Type == EventType.OnlinePseudoMultiplayer)
                 {
                     bw.Pad(8);
                 }
@@ -833,34 +841,47 @@ namespace SoulsFormats
                 public uint EventFlagID { get; set; }
 
                 /// <summary>
-                /// ID of a goods item that is used to trigger the event.
+                /// Unknown.
                 /// </summary>
+                [MSBParamReference(ParamName = "EquipParamGoods")]
                 public int ActivateGoodsID { get; set; }
 
                 /// <summary>
-                /// Unknown; possibly a sound ID.
+                /// The ceremony ID.
                 /// </summary>
-                public int UnkT0C { get; set; }
+                public uint CeremonyID { get; set; }
 
                 /// <summary>
-                /// Unknown; possibly a map event ID.
+                /// The entity ID of the invasion point.
                 /// </summary>
-                public int UnkT10 { get; set; }
+                public uint InvasionPointEntityID { get; set; }
 
                 /// <summary>
-                /// Unknown; possibly flags.
+                /// The type of ceremony.
                 /// </summary>
-                public int UnkT14 { get; set; }
+                public CeremonyType CeremonyType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// Npc type to use as field in NetworkMsgParam.
                 /// </summary>
-                public int UnkT18 { get; set; }
+                public sbyte NetworkMsgNpcType { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The map ID for event text.
                 /// </summary>
-                public int UnkT1C { get; set; }
+                public int EventTextForMapID { get; set; }
+
+                /// <summary>
+                /// A reference to a row in CeremonyParam.
+                /// </summary>
+                [MSBParamReference(ParamName = "Ceremony")]
+                public int CeremonyParamID { get; set; }
+
+                /// <summary>
+                /// A reference to a row in RoleParam that overrides default role.
+                /// </summary>
+                [MSBParamReference(ParamName = "RoleParam")]
+                public int RoleParamIDOverride { get; set; }
 
                 /// <summary>
                 /// Creates a new PseudoMultiplayer with the given name.
@@ -870,9 +891,13 @@ namespace SoulsFormats
                     HostEntityID = 0;
                     EventFlagID = 0;
                     ActivateGoodsID = -1;
-                    UnkT0C = -1;
-                    UnkT10 = -1;
-                    UnkT1C = 0;
+                    CeremonyID = 20;
+                    InvasionPointEntityID = 0;
+                    CeremonyType = CeremonyType.WhiteSpirit;
+                    NetworkMsgNpcType = -1;
+                    EventTextForMapID = -1;
+                    CeremonyParamID = -1;
+                    RoleParamIDOverride = -1;
                 }
 
                 internal PseudoMultiplayer(BinaryReaderEx br) : base(br) { }
@@ -882,12 +907,15 @@ namespace SoulsFormats
                     HostEntityID = br.ReadUInt32();
                     EventFlagID = br.ReadUInt32();
                     ActivateGoodsID = br.ReadInt32();
-                    UnkT0C = br.ReadInt32();
-                    UnkT10 = br.ReadInt32();
-                    UnkT14 = br.ReadInt32();
-                    UnkT18 = br.ReadInt32();
-                    UnkT1C = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    CeremonyID = br.ReadUInt32();
+                    InvasionPointEntityID = br.ReadUInt32();
+                    CeremonyType = (CeremonyType)br.ReadByte();
+                    NetworkMsgNpcType = br.ReadSByte();
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    EventTextForMapID = br.ReadInt32();
+                    CeremonyParamID = br.ReadInt32();
+                    RoleParamIDOverride = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -895,12 +923,15 @@ namespace SoulsFormats
                     bw.WriteUInt32(HostEntityID);
                     bw.WriteUInt32(EventFlagID);
                     bw.WriteInt32(ActivateGoodsID);
-                    bw.WriteInt32(UnkT0C);
-                    bw.WriteInt32(UnkT10);
-                    bw.WriteInt32(UnkT14);
-                    bw.WriteInt32(UnkT18);
-                    bw.WriteInt32(UnkT1C);
-                    bw.WriteInt32(-1);
+                    bw.WriteUInt32(CeremonyID);
+                    bw.WriteUInt32(InvasionPointEntityID);
+                    bw.WriteByte((byte)CeremonyType);
+                    bw.WriteSByte(NetworkMsgNpcType);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
+                    bw.WriteInt32(EventTextForMapID);
+                    bw.WriteInt32(CeremonyParamID);
+                    bw.WriteInt32(RoleParamIDOverride);
                 }
             }
 
@@ -1178,60 +1209,79 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class AreaTeam : Event
+            public class OnlinePseudoMultiplayer : Event
             {
-                private protected override EventType Type => EventType.AreaTeam;
+                private protected override EventType Type => EventType.OnlinePseudoMultiplayer;
                 private protected override bool HasTypeData => true;
 
-                public int EntityID_Leader { get; set; }
-                public int EUnk04 { get; set; }
-                public int EUnk08 { get; set; }
-                public int EUnk0c { get; set; }
-                public int RegionID_Leader { get; set; }
-                public int RegionID_Guest1 { get; set; }
-                public int RegionID_Guest2 { get; set; }
-                public int EUnk1c { get; set; }
-                public int EUnk20 { get; set; }
-                public int EUnk24 { get; set; }
-                public int EUnk28 { get; set; }
+                public uint HostEntityID { get; set; }
+                public uint EventFlagID { get; set; }
+                [MSBParamReference(ParamName = "EquipParamGoods")]
+                public int ActivateGoodsID { get; set; }
+                public uint CeremonyID { get; set; }
+                public uint HostInvasionPointEntityID { get; set; }
+                public uint Guest1InvasionPointEntityID { get; set; }
+                public uint Guest2InvasionPointEntityID { get; set; }
+                public CeremonyType CeremonyType { get; set; }
+                public sbyte NetworkMsgNpcType { get; set; }
+                public int EventTextForMapID { get; set; }
+                [MSBParamReference(ParamName = "Ceremony")]
+                public int CeremonyParamID { get; set; }
+                [MSBParamReference(ParamName = "RoleParam")]
+                public int RoleParamIDOverride { get; set; }
 
-                /// <summary>
-                /// Creates a AreaTeam with default values.
-                /// </summary>
-                public AreaTeam() : base($"{nameof(Event)}: {nameof(AreaTeam)}")
+                public OnlinePseudoMultiplayer() : base($"{nameof(Event)}: {nameof(OnlinePseudoMultiplayer)}")
                 {
+                    HostEntityID = 0;
+                    EventFlagID = 0;
+                    ActivateGoodsID = -1;
+                    CeremonyID = 20;
+                    HostInvasionPointEntityID = 0;
+                    Guest1InvasionPointEntityID = 0;
+                    Guest2InvasionPointEntityID = 0;
+                    CeremonyType = CeremonyType.WhiteSpirit;
+                    NetworkMsgNpcType = -1;
+                    EventTextForMapID = -1;
+                    CeremonyParamID = -1;
+                    RoleParamIDOverride = -1;
                 }
 
-                internal AreaTeam(BinaryReaderEx br) : base(br) { }
+                internal OnlinePseudoMultiplayer(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EntityID_Leader = br.ReadInt32();
-                    EUnk04 = br.ReadInt32();
-                    EUnk08 = br.ReadInt32();
-                    EUnk0c = br.ReadInt32();
-                    RegionID_Leader = br.ReadInt32();
-                    RegionID_Guest1 = br.ReadInt32();
-                    RegionID_Guest2 = br.ReadInt32();
-                    EUnk1c = br.ReadInt32();
-                    EUnk20 = br.ReadInt32();
-                    EUnk24 = br.ReadInt32();
-                    EUnk28 = br.ReadInt32();
+                    HostEntityID = br.ReadUInt32();
+                    EventFlagID = br.ReadUInt32();
+                    ActivateGoodsID = br.ReadInt32();
+                    CeremonyID = br.ReadUInt32();
+                    HostInvasionPointEntityID = br.ReadUInt32();
+                    Guest1InvasionPointEntityID = br.ReadUInt32();
+                    Guest2InvasionPointEntityID = br.ReadUInt32();
+                    CeremonyType = (CeremonyType)br.ReadByte();
+                    NetworkMsgNpcType = br.ReadSByte();
+                    br.AssertByte(0);
+                    br.AssertByte(0);
+                    EventTextForMapID = br.ReadInt32();
+                    CeremonyParamID = br.ReadInt32();
+                    RoleParamIDOverride = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(EntityID_Leader);
-                    bw.WriteInt32(EUnk04);
-                    bw.WriteInt32(EUnk08);
-                    bw.WriteInt32(EUnk0c);
-                    bw.WriteInt32(RegionID_Leader);
-                    bw.WriteInt32(RegionID_Guest1);
-                    bw.WriteInt32(RegionID_Guest2);
-                    bw.WriteInt32(EUnk1c);
-                    bw.WriteInt32(EUnk20);
-                    bw.WriteInt32(EUnk24);
-                    bw.WriteInt32(EUnk28);
+                    bw.WriteUInt32(HostEntityID);
+                    bw.WriteUInt32(EventFlagID);
+                    bw.WriteInt32(ActivateGoodsID);
+                    bw.WriteUInt32(CeremonyID);
+                    bw.WriteUInt32(HostInvasionPointEntityID);
+                    bw.WriteUInt32(Guest1InvasionPointEntityID);
+                    bw.WriteUInt32(Guest2InvasionPointEntityID);
+                    bw.WriteByte((byte)CeremonyType);
+                    bw.WriteSByte(NetworkMsgNpcType);
+                    bw.WriteByte(0);
+                    bw.WriteByte(0);
+                    bw.WriteInt32(EventTextForMapID);
+                    bw.WriteInt32(CeremonyParamID);
+                    bw.WriteInt32(RoleParamIDOverride);
                 }
             }
 

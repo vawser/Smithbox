@@ -46,6 +46,11 @@
     <forceJoinBlack_Npc AltName="NPC - Black Phantom - Invasion" Wiki="For intrusion_A_NPCs" FmgRef="Network_Messages" />
     <forceJoinBlack_B_Npc AltName="NPC - Black Phantom B - Invasion" Wiki="For intrusion_B_NPCs" FmgRef="Network_Messages" />
     <forceJoinBlack_C_Npc AltName="NPC - Black Phantom C - Invasion" Wiki="For intrusion_C_NPCs" FmgRef="Network_Messages" />
+    <npc17 AltName="NPC [17]" Wiki="NPC Pseudo Multi 17" FmgRef="Network_Messages" />
+    <npc18 AltName="NPC [18]" Wiki="NPC Pseudo Multi 18" FmgRef="Network_Messages" />
+    <npc19 AltName="NPC [19]" Wiki="NPC Pseudo Multi 19" FmgRef="Network_Messages" />
+    <npc20 AltName="NPC [20]" Wiki="NPC Pseudo Multi 20" FmgRef="Network_Messages" />
+    <npc21 AltName="NPC [21]" Wiki="NPC Pseudo Multi 21" FmgRef="Network_Messages" />
     <pad2_new AltName="" Padding=""/>
   </Field>
   <Self />
