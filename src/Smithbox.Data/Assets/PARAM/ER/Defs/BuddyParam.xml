@@ -227,21 +227,21 @@
       <Description>リザーブ２</Description>
       <SortID>1114</SortID>
     </Field>
-    <Field Def="u32 unknown_0x5c" FirstVersion="10801000" />
-    <Field Def="u32 unknown_0x60" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x64" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x68" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x6c" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x70" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x74" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x78" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x7c" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x80" FirstVersion="10801000" />
-    <Field Def="u32 unknown_0x84" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x88" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x8c" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x90" FirstVersion="10801000" />
-    <Field Def="s32 unknown_0x94" FirstVersion="10801000" />
+    <Field Def="s32 arenaDopingSpEffect_1" FirstVersion="10801000" />
+    <Field Def="s32 arenaDopingSpEffect_2" FirstVersion="10801000" />
+    <Field Def="s32 arenaDopingSpEffect_3" FirstVersion="10801000" />
+    <Field Def="s32 arenaDopingSpEffect_4" FirstVersion="10801000" />
+    <Field Def="s32 arenaDopingSpEffect_5" FirstVersion="10801000" />
+    <Field Def="s32 arenaFriendlySpEffect_1" FirstVersion="10801000" />
+    <Field Def="s32 arenaFriendlySpEffect_2" FirstVersion="10801000" />
+    <Field Def="s32 arenaFriendlySpEffect_3" FirstVersion="10801000" />
+    <Field Def="s32 arenaFriendlySpEffect_4" FirstVersion="10801000" />
+    <Field Def="s32 arenaFriendlySpEffect_5" FirstVersion="10801000" />
+    <Field Def="u32 arenaHostileSpEffect_1" FirstVersion="10801000" />
+    <Field Def="s32 arenaHostileSpEffect_2" FirstVersion="10801000" />
+    <Field Def="s32 arenaHostileSpEffect_3" FirstVersion="10801000" />
+    <Field Def="s32 arenaHostileSpEffect_4" FirstVersion="10801000" />
+    <Field Def="s32 arenaHostileSpEffect_5" FirstVersion="10801000" />
     <Field Def="s32 unknown_0x98" FirstVersion="10801000" />
     <Field Def="u32 unknown_0x9c" FirstVersion="10801000" />
   </Fields>

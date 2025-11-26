@@ -36,6 +36,21 @@
     <dopingSpEffect_lv10 AltName="Reinforcement SpEffect: +10" Wiki="SpEffect granted when reinforced to +10." Refs="SpEffectParam" />
     <npcPlayerInitParamId AltName="Character Init ID" Wiki="CharaInitParam ID this c0000 summon will use." Refs="CharaInitParam" />
     <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
+    <arenaDopingSpEffect_1 AltName="Arena Doping SpEffect 1" Wiki="SpEffect applied in arena mode." Refs="SpEffectParam" />
+    <arenaDopingSpEffect_2 AltName="Arena Doping SpEffect 2" Wiki="SpEffect applied in arena mode." Refs="SpEffectParam" />
+    <arenaDopingSpEffect_3 AltName="Arena Doping SpEffect 3" Wiki="SpEffect applied in arena mode." Refs="SpEffectParam" />
+    <arenaDopingSpEffect_4 AltName="Arena Doping SpEffect 4" Wiki="SpEffect applied in arena mode." Refs="SpEffectParam" />
+    <arenaDopingSpEffect_5 AltName="Arena Doping SpEffect 5" Wiki="SpEffect applied in arena mode." Refs="SpEffectParam" />
+    <arenaFriendlySpEffect_1 AltName="Arena Friendly SpEffect 1" Wiki="SpEffect applied on friendly summons in arena." Refs="SpEffectParam" />
+    <arenaFriendlySpEffect_2 AltName="Arena Friendly SpEffect 2" Wiki="SpEffect applied on friendly summons in arena." Refs="SpEffectParam" />
+    <arenaFriendlySpEffect_3 AltName="Arena Friendly SpEffect 3" Wiki="SpEffect applied on friendly summons in arena." Refs="SpEffectParam" />
+    <arenaFriendlySpEffect_4 AltName="Arena Friendly SpEffect 4" Wiki="SpEffect applied on friendly summons in arena." Refs="SpEffectParam" />
+    <arenaFriendlySpEffect_5 AltName="Arena Friendly SpEffect 5" Wiki="SpEffect applied on friendly summons in arena." Refs="SpEffectParam" />
+    <arenaHostileSpEffect_1 AltName="Arena Hostile SpEffect 1" Wiki="SpEffect applied on hostile summons in arena." Refs="SpEffectParam" />
+    <arenaHostileSpEffect_2 AltName="Arena Hostile SpEffect 2" Wiki="SpEffect applied on hostile summons in arena." Refs="SpEffectParam" />
+    <arenaHostileSpEffect_3 AltName="Arena Hostile SpEffect 3" Wiki="SpEffect applied on hostile summons in arena." Refs="SpEffectParam" />
+    <arenaHostileSpEffect_4 AltName="Arena Hostile SpEffect 4" Wiki="SpEffect applied on hostile summons in arena." Refs="SpEffectParam" />
+    <arenaHostileSpEffect_5 AltName="Arena Hostile SpEffect 5" Wiki="SpEffect applied on hostile summons in arena." Refs="SpEffectParam" />
     <Reserve2 AltName="" Padding=""/>
   </Field>
   <Self />
