@@ -134,6 +134,8 @@
     <MpEstMax AltName="FP Flask - Max Possession Limit" Wiki="MP Est Bottle Possession Limit" />
     <pad7 AltName="" Padding=""/>
     <voiceType AltName="Voice Type" Wiki="Voice type" />
+    <scadutreeBlessing AltName="Scadutree Blessing" Wiki="Level of Scadutree Blessing" />
+    <reveredSpiritAshBlessing AltName="Revered Spirit Ash Blessing" Wiki="Level of Revered Spirit Ash Blessing" />
     <reserve AltName="" Padding=""/>
   </Field>
   <Self Wiki="Defines instances of c0000 (player) characters in the game, including starting classes.\nNote that many fields are not used and remain from earlier games, particularly with respect to starting classes.\nStarting classes begin at 3000 with consecutive IDs, and starting gifts begin at 2400 likewise." AlternativeOrder="
