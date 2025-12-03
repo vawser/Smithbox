@@ -758,12 +758,12 @@
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: modified && !added: endPadding: = vanillafield endPadding"
+      "Command": "param SpEffectParam: modified && !added: unknown_10: = vanillafield unknown_10"
     },
     {
       "Version": "10200000",
       "Message": "1.02.0 - SpEffectParam",
-      "Command": "param SpEffectParam: added: endPadding: = vanillafield endPadding"
+      "Command": "param SpEffectParam: added: unknown_10: = vanillafield unknown_10"
     },
     {
       "Version": "10200000",
@@ -804,6 +804,1476 @@
       "Version": "10200000",
       "Message": "1.02.0 - WorldMapPointParam",
       "Command": "param WorldMapPointParam: added: eventFlagId8: = vanillafield eventFlagId8"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_05_bulletId: = vanillafield fh_unknown_05_bulletId"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_05_bulletId: = vanillafield fh_unknown_05_bulletId"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_07_bulletId: = vanillafield fh_unknown_07_bulletId"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_07_bulletId: = vanillafield fh_unknown_07_bulletId"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_09a: = vanillafield fh_unknown_09a"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_09a: = vanillafield fh_unknown_09a"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_09c: = vanillafield fh_unknown_09c"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_09c: = vanillafield fh_unknown_09c"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: modified && !added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - EquipParamGoods",
+      "Command": "param EquipParamGoods: added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: modified && !added: endPadding: = vanillafield endPadding"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - HeroParam",
+      "Command": "param HeroParam: added: endPadding: = vanillafield endPadding"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternMapLotCondition",
+      "Command": "param MapPatternMapLotCondition: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternMapLotCondition",
+      "Command": "param MapPatternMapLotCondition: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_11: = vanillafield fh_unknown_11"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_11: = vanillafield fh_unknown_11"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_12: = vanillafield fh_unknown_12"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_12: = vanillafield fh_unknown_12"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_13: = vanillafield fh_unknown_13"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_13: = vanillafield fh_unknown_13"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_14: = vanillafield fh_unknown_14"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_14: = vanillafield fh_unknown_14"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_15: = vanillafield fh_unknown_15"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_15: = vanillafield fh_unknown_15"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_16: = vanillafield fh_unknown_16"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_16: = vanillafield fh_unknown_16"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_17: = vanillafield fh_unknown_17"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_17: = vanillafield fh_unknown_17"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_18: = vanillafield fh_unknown_18"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_18: = vanillafield fh_unknown_18"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_19: = vanillafield fh_unknown_19"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_19: = vanillafield fh_unknown_19"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_20: = vanillafield fh_unknown_20"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_20: = vanillafield fh_unknown_20"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_21: = vanillafield fh_unknown_21"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_21: = vanillafield fh_unknown_21"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_22: = vanillafield fh_unknown_22"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_22: = vanillafield fh_unknown_22"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_23: = vanillafield fh_unknown_23"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_23: = vanillafield fh_unknown_23"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_24: = vanillafield fh_unknown_24"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_24: = vanillafield fh_unknown_24"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_25: = vanillafield fh_unknown_25"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_25: = vanillafield fh_unknown_25"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_26: = vanillafield fh_unknown_26"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_26: = vanillafield fh_unknown_26"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: modified && !added: fh_unknown_27: = vanillafield fh_unknown_27"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MapPatternSet",
+      "Command": "param MapPatternSet: added: fh_unknown_27: = vanillafield fh_unknown_27"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: modified && !added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - MenuCommonParam",
+      "Command": "param MenuCommonParam: added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_08: = vanillafield fh_unknown_08"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_09: = vanillafield fh_unknown_09"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_10: = vanillafield fh_unknown_10"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_11: = vanillafield fh_unknown_11"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_11: = vanillafield fh_unknown_11"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_12: = vanillafield fh_unknown_12"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_12: = vanillafield fh_unknown_12"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_13: = vanillafield fh_unknown_13"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_13: = vanillafield fh_unknown_13"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_14: = vanillafield fh_unknown_14"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_14: = vanillafield fh_unknown_14"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_15: = vanillafield fh_unknown_15"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_15: = vanillafield fh_unknown_15"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_16: = vanillafield fh_unknown_16"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_16: = vanillafield fh_unknown_16"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_17: = vanillafield fh_unknown_17"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_17: = vanillafield fh_unknown_17"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_18: = vanillafield fh_unknown_18"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_18: = vanillafield fh_unknown_18"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_19: = vanillafield fh_unknown_19"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_19: = vanillafield fh_unknown_19"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_20: = vanillafield fh_unknown_20"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_20: = vanillafield fh_unknown_20"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_21: = vanillafield fh_unknown_21"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_21: = vanillafield fh_unknown_21"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_22: = vanillafield fh_unknown_22"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_22: = vanillafield fh_unknown_22"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_23: = vanillafield fh_unknown_23"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_23: = vanillafield fh_unknown_23"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_24: = vanillafield fh_unknown_24"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_24: = vanillafield fh_unknown_24"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_25: = vanillafield fh_unknown_25"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_25: = vanillafield fh_unknown_25"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_26: = vanillafield fh_unknown_26"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_26: = vanillafield fh_unknown_26"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_27: = vanillafield fh_unknown_27"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_27: = vanillafield fh_unknown_27"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_28: = vanillafield fh_unknown_28"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_28: = vanillafield fh_unknown_28"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_29: = vanillafield fh_unknown_29"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_29: = vanillafield fh_unknown_29"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_30: = vanillafield fh_unknown_30"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_30: = vanillafield fh_unknown_30"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_31: = vanillafield fh_unknown_31"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_31: = vanillafield fh_unknown_31"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_32: = vanillafield fh_unknown_32"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_32: = vanillafield fh_unknown_32"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_33: = vanillafield fh_unknown_33"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_33: = vanillafield fh_unknown_33"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_34: = vanillafield fh_unknown_34"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_34: = vanillafield fh_unknown_34"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_35: = vanillafield fh_unknown_35"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_35: = vanillafield fh_unknown_35"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_36: = vanillafield fh_unknown_36"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_36: = vanillafield fh_unknown_36"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_37: = vanillafield fh_unknown_37"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_37: = vanillafield fh_unknown_37"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_38: = vanillafield fh_unknown_38"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_38: = vanillafield fh_unknown_38"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_39: = vanillafield fh_unknown_39"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_39: = vanillafield fh_unknown_39"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_40: = vanillafield fh_unknown_40"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_40: = vanillafield fh_unknown_40"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_41: = vanillafield fh_unknown_41"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_41: = vanillafield fh_unknown_41"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_42: = vanillafield fh_unknown_42"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_42: = vanillafield fh_unknown_42"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_43: = vanillafield fh_unknown_43"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_43: = vanillafield fh_unknown_43"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_44: = vanillafield fh_unknown_44"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_44: = vanillafield fh_unknown_44"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_45: = vanillafield fh_unknown_45"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_45: = vanillafield fh_unknown_45"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_46: = vanillafield fh_unknown_46"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_46: = vanillafield fh_unknown_46"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_47: = vanillafield fh_unknown_47"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_47: = vanillafield fh_unknown_47"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_48: = vanillafield fh_unknown_48"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_48: = vanillafield fh_unknown_48"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_49: = vanillafield fh_unknown_49"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_49: = vanillafield fh_unknown_49"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_50: = vanillafield fh_unknown_50"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_50: = vanillafield fh_unknown_50"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_51: = vanillafield fh_unknown_51"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_51: = vanillafield fh_unknown_51"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_52: = vanillafield fh_unknown_52"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_52: = vanillafield fh_unknown_52"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_53: = vanillafield fh_unknown_53"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_53: = vanillafield fh_unknown_53"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_54: = vanillafield fh_unknown_54"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_54: = vanillafield fh_unknown_54"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_55: = vanillafield fh_unknown_55"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_55: = vanillafield fh_unknown_55"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_56: = vanillafield fh_unknown_56"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_56: = vanillafield fh_unknown_56"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_57: = vanillafield fh_unknown_57"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_57: = vanillafield fh_unknown_57"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_58: = vanillafield fh_unknown_58"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_58: = vanillafield fh_unknown_58"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_59: = vanillafield fh_unknown_59"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_59: = vanillafield fh_unknown_59"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_60: = vanillafield fh_unknown_60"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_60: = vanillafield fh_unknown_60"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_61: = vanillafield fh_unknown_61"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_61: = vanillafield fh_unknown_61"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_62: = vanillafield fh_unknown_62"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_62: = vanillafield fh_unknown_62"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_63: = vanillafield fh_unknown_63"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_63: = vanillafield fh_unknown_63"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_64: = vanillafield fh_unknown_64"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_64: = vanillafield fh_unknown_64"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_65: = vanillafield fh_unknown_65"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_65: = vanillafield fh_unknown_65"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_66: = vanillafield fh_unknown_66"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_66: = vanillafield fh_unknown_66"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_67: = vanillafield fh_unknown_67"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_67: = vanillafield fh_unknown_67"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_68: = vanillafield fh_unknown_68"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_68: = vanillafield fh_unknown_68"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_69: = vanillafield fh_unknown_69"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_69: = vanillafield fh_unknown_69"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_70: = vanillafield fh_unknown_70"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_70: = vanillafield fh_unknown_70"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_71: = vanillafield fh_unknown_71"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_71: = vanillafield fh_unknown_71"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_72: = vanillafield fh_unknown_72"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_72: = vanillafield fh_unknown_72"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_73: = vanillafield fh_unknown_73"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_73: = vanillafield fh_unknown_73"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_74: = vanillafield fh_unknown_74"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_74: = vanillafield fh_unknown_74"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_75: = vanillafield fh_unknown_75"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_75: = vanillafield fh_unknown_75"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_76: = vanillafield fh_unknown_76"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_76: = vanillafield fh_unknown_76"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_77: = vanillafield fh_unknown_77"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_77: = vanillafield fh_unknown_77"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_78: = vanillafield fh_unknown_78"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_78: = vanillafield fh_unknown_78"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: modified && !added: fh_unknown_79: = vanillafield fh_unknown_79"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - PlayerCommonParam",
+      "Command": "param PlayerCommonParam: added: fh_unknown_79: = vanillafield fh_unknown_79"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_04: = vanillafield fh_unknown_04"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_05: = vanillafield fh_unknown_05"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_06: = vanillafield fh_unknown_06"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: modified && !added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - SpEffectParam",
+      "Command": "param SpEffectParam: added: fh_unknown_07: = vanillafield fh_unknown_07"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: modified && !added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: fh_unknown_00: = vanillafield fh_unknown_00"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: modified && !added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: fh_unknown_01: = vanillafield fh_unknown_01"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: modified && !added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: fh_unknown_02: = vanillafield fh_unknown_02"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: modified && !added: fh_unknown_03: = vanillafield fh_unknown_03"
+    },
+    {
+      "Version": "10310025",
+      "Message": "1.03.1 - WorldMapPointParam",
+      "Command": "param WorldMapPointParam: added: fh_unknown_03: = vanillafield fh_unknown_03"
     }
   ]
 }

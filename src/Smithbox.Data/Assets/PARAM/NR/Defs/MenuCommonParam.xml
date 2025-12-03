@@ -594,5 +594,17 @@
     <Field Def="f32 unknown_11" />
     <Field Def="f32 unknown_12" />
     <Field Def="f32 unknown_13" />
+    
+    <Field Def="f32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_02" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_03" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_04" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_05" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_06" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_07" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_08" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_09" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_10" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

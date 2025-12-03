@@ -285,8 +285,15 @@
     Refs="CharaInitParam" />
     
     <bulletId
-    AltName="Bullet ID"
-    Wiki=""
+    AltName="Usage: Bullet ID"
+    Wiki="Bullet to emit on usage."
     Refs="Bullet" />
+    
+    <fh_unknown_05_bulletId
+    Refs="Bullet" />
+    
+    <fh_unknown_07_bulletId
+    Refs="Bullet" />
+    
   </Field>
 </PARAMMETA>

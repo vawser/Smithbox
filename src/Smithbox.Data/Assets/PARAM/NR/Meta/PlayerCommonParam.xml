@@ -118,6 +118,15 @@
     <unk_00
     Refs="SpEffectParam" />
     
+    <fh_unknown_67
+    Refs="PermanentBuffParam" />
+    
+    <fh_unknown_68
+    Refs="PermanentBuffParam" />
+    
+    <fh_unknown_69
+    Refs="PermanentBuffParam" />
+    
   </Field>
   <Self Wiki="" />
 </PARAMMETA>

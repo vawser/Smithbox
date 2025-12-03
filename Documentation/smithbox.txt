@@ -32,4 +32,12 @@
  - Add 'full' backup toggle option that produces versioned backups for some editor files (MSB, params, gparams) where the exact time is appended and stored in a separate backup folder. This allows for people not using git to maintain full data integrity at the expense of hard drive space.
  - Restore the auto-save support
  
+ - Fix the ME3 mod launch action
+ 
 - Added Vector3 support to MSB Mass Edit
+
+Could not apply ParamDef for SpEffectParam.param
+Row size paramdef mismatch for SP_EFFECT_PARAM_ST - byteOffset:1008 - rowSize:1040
+
+Could not apply ParamDef for WorldMapPointParam.param
+Row size paramdef mismatch for WORLD_MAP_POINT_PARAM_ST - byteOffset:112 - rowSize:128

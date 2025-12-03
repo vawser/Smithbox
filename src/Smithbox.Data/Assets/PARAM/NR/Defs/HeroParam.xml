@@ -43,6 +43,12 @@
     <Field Def="s32 ultimateArtDescriptionId"/>
     <Field Def="s32 passiveAbilityDescriptionId"/>
     <Field Def="s32 defaultWeaponTypeDiscovery"/>
-    <Field Def="s32 unknown_39"/>
+    
+    <Field Def="s32 unknown_39" />
+    
+    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    
+    <Field Def="dummy8 endPadding[8]" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

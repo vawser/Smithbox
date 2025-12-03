@@ -191,5 +191,10 @@
     
     <Field Def="s32 unk_00" FirstVersion="10200000"/>
     <Field Def="s32 eventFlagId8" FirstVersion="10200000"/>
+    
+    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>

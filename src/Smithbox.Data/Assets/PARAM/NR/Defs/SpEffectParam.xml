@@ -427,6 +427,18 @@
     <Field Def="f32 rainDamageCorrection" FirstVersion="10200000"/>
     <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
     <Field Def="s32 applyHeroStatusChange" FirstVersion="10200000"/>
-    <Field Def="dummy8 endPadding[4]" FirstVersion="10200000"/>
+
+    <Field Def="s32 unknown_10" FirstVersion="10200000"/>
+    
+    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_04" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_05" FirstVersion="10310025"/>
+    <Field Def="f32 fh_unknown_06" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_07" FirstVersion="10310025"/>
+    
+    
   </Fields>
 </PARAMDEF>

@@ -90,5 +90,34 @@
     <Field Def="s32 unknown_79"/>
     <Field Def="s32 unknown_80"/>
     <Field Def="s32 unknown_81"/>
+    
+    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_04" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_05" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_06" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_07" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_08" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_09" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_10" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_11" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_12" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_13" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_14" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_15" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_16" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_17" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_18" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_19" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_20" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_21" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_22" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_23" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_24" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_25" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_26" FirstVersion="10310025"/>
+    <Field Def="s32 fh_unknown_27" FirstVersion="10310025"/>
   </Fields>
 </PARAMDEF>
