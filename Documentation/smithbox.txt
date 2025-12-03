@@ -7,7 +7,6 @@
 - Map Editor: add special map connections for NR
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: Selection Outline: mesh creation currently creates an issue when selecting too many entities. Ideally we can switch to an opacity or tint on the actual model: however this requires a overhaul of the rendering pipeline, currently the rendering side is instanced and detacted from the map editor state, making it difficult to apply conditional visuals.
-- Map Editor: Power Select: define model names, optionally proximity from placement orb - select all entities that have said model names and are within the proximity of the placement orb
 
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
@@ -34,4 +33,3 @@
  - Restore the auto-save support
  
 - Added Vector3 support to MSB Mass Edit
-- Check ItemlotParam_map map link CTD for ER projects
