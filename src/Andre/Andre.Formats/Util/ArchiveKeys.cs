@@ -334,6 +334,16 @@ YoSRCDIvFVj0g5iaXr60eRh0d+40TctoBUdtaoJCPOyRlmkE7qU6Q9FyyvMNbhtf
 D95d+6IJejNd7kvyV/ISlB37kb2Uh9TavwIEOqKLtw==
 -----END RSA PUBLIC KEY-----",
 
+            ["dlc01"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBDAKCAQEA1q4MOehlD++h5Ietq9Jk97eGOJL2zDpDcu9Wk6RXK1+R3LycMBQl
+L/hnPg/qqvcoViA7wLX5GOFr5lo6dtKaQqlBkBqgYHGIdBvioBPZ8BuXAjYr3sm8
+N0SYC2TNHXmfw6yFC+ePsrl+gNldrO//XXY27hsGgcegfWr6JuQaJti/BOKlGb8A
+RbKwyIqGc5WiWj/v0tGE1cdPi0fLQRbTrLFaQtx1roQVqsQuJ5zRGTpnj/mhaJtq
+J7V0s5gLG5CCevx71lN8m7oyWk2JemzSLvllwv4tjtzrw3jNQtiYb8nzy2Spjibs
+vX1iRCg5btMSiNPcSeIJ5jX+FUW9LSnrkwIFAKhopbM=
+-----END RSA PUBLIC KEY-----",
+
             ["sd\\sd"] =
             @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEA19Y/R69SXASLOgInwfAXjAXuWSTQ6GP7XNoMDY0ThefISGG2p7G5
@@ -343,6 +353,16 @@ TpbKDCVoDlm80DTv+Fg2ZdgD985ZDGtwBvg+RRe19iLg7imcrHeZdvqI/CzaY+r3
 l5hFle31jjWopOm8sORZUMAWPFxuGm+lnB7v0iCCTboq+YC24sOXNabjsgnKkQF1
 1G7uQz1qjnmQxnp3FgbnHRe1I3mCwELuvwIEOC192w==
 -----END RSA PUBLIC KEY-----",
+
+            ["sd\\sd_dlc01"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBCwKCAQEA19Y/R69SXASLOgInwfAXjAXuWSTQ6GP7XNoMDY0ThefISGG2p7G5
+oQDpvK9oMGISCqHTr4ijs31GoC0dBG5Vnl1dRO+teXORoy+vlM3dRc1XyBXWkLM8
+8O8PkhWeisf2EGyAa1jGjAAPNblKIAWbUFsxW2Ve7PKRF3FQAIiSPiOIbc24C3zE
+TpbKDCVoDlm80DTv+Fg2ZdgD985ZDGtwBvg+RRe19iLg7imcrHeZdvqI/CzaY+r3
+l5hFle31jjWopOm8sORZUMAWPFxuGm+lnB7v0iCCTboq+YC24sOXNabjsgnKkQF1
+1G7uQz1qjnmQxnp3FgbnHRe1I3mCwELuvwIEOC192w==
+-----END RSA PUBLIC KEY-----"
         };
     }
 }

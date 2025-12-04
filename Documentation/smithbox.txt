@@ -7,6 +7,7 @@
 - Map Editor: add special map connections for NR
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: Selection Outline: mesh creation currently creates an issue when selecting too many entities. Ideally we can switch to an opacity or tint on the actual model: however this requires a overhaul of the rendering pipeline, currently the rendering side is instanced and detacted from the map editor state, making it difficult to apply conditional visuals.
+- Map Editor: Add Vector3 support to MSB Mass Edit
 
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
@@ -21,6 +22,8 @@
 - Gparam Editor: properly find out the new NR field type structures, so they can be edited.
 
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
+- Fix the text entry quick-link (from Text Search)
+- Fix the focus text entry action when quick-linked or from search bar (currently it doesn't scroll to position)
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
@@ -31,13 +34,7 @@
  - Add CFG option to disable .bak and .prev generation (for Map and Param saves)
  - Add 'full' backup toggle option that produces versioned backups for some editor files (MSB, params, gparams) where the exact time is appended and stored in a separate backup folder. This allows for people not using git to maintain full data integrity at the expense of hard drive space.
  - Restore the auto-save support
- 
  - Fix the ME3 mod launch action
  
-- Added Vector3 support to MSB Mass Edit
-
-Could not apply ParamDef for SpEffectParam.param
-Row size paramdef mismatch for SP_EFFECT_PARAM_ST - byteOffset:1008 - rowSize:1040
-
-Could not apply ParamDef for WorldMapPointParam.param
-Row size paramdef mismatch for WORLD_MAP_POINT_PARAM_ST - byteOffset:112 - rowSize:128
+- Update NR MSB format
+- Update NR FMG handling as they've introduced DLC stuff (copy ER)

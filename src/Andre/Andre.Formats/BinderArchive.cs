@@ -84,7 +84,9 @@ namespace Andre.Formats
             "data1",
             "data2",
             "data3",
+            "dlc01",
             Path.Join("sd", "sd"),
+            Path.Join("sd", "sd_dlc01"),
         ];
 
         public static string[] GetArchiveNames(Game game)
