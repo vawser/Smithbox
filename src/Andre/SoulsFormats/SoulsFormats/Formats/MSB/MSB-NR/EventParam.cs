@@ -1248,6 +1248,10 @@ namespace SoulsFormats
                     SecondItemLot = br.ReadInt32();
                     LeaderEntityID = br.ReadInt32();
                     UnkItemLot = br.ReadInt32();
+                    Unk00 = br.ReadInt32();
+                    Unk01 = br.ReadInt32();
+                    Unk02 = br.ReadInt32();
+                    Unk03 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1257,6 +1261,10 @@ namespace SoulsFormats
                     bw.WriteInt32(SecondItemLot);
                     bw.WriteInt32(LeaderEntityID);
                     bw.WriteInt32(UnkItemLot);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk01);
+                    bw.WriteInt32(Unk02);
+                    bw.WriteInt32(Unk03);
                 }
 
                 // Layout
@@ -1266,6 +1274,10 @@ namespace SoulsFormats
                 public int SecondItemLot { get; set; } = -1;
                 public int LeaderEntityID { get; set; }
                 public int UnkItemLot { get; set; } = -1;
+                public int Unk00 { get; set; } = -1;
+                public int Unk01 { get; set; } = -1;
+                public int Unk02 { get; set; } = -1;
+                public int Unk03 { get; set; } = -1;
             }
 
             /// <summary>

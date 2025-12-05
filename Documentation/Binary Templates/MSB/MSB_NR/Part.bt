@@ -351,9 +351,9 @@ typedef struct {
     int unk48; // 0
     int unk4c; // 0
     int unk50 <hidden=true>; Assert(!unk50);
-    int unk54 <hidden=true>; Assert(!unk54);
+    int unk54; // 0
     int unk58 <hidden=true>; Assert(!unk58);
-    int unk5c <hidden=true>; Assert(!unk5c);
+    int unk5c; // 0
     int unk60 <hidden=true>; Assert(!unk60);
     int unk64 <hidden=true>; Assert(!unk64);
     int unk68 <hidden=true>; Assert(!unk68);
@@ -460,7 +460,7 @@ typedef struct {
     int unk30 <hidden=true>; Assert(unk30 == -1);
     int unk34; // -1
     int partIndex38; // -1
-    int unk3c <hidden=true>; Assert(unk3c == -1);
+    int unk3c; // -1
     int partIndex40; // -1
     int partIndex44; // -1
     int partIndex48; // -1

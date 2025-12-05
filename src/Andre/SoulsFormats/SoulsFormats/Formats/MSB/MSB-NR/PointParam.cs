@@ -69,6 +69,7 @@ namespace SoulsFormats
             RespawnOverride = 57,
             UserEdgeRemovalInner = 58,
             UserEdgeRemovalOuter = 59,
+            Unknown60 = 60,
             Other = 0xFFFFFFFF,
         }
 
@@ -126,6 +127,7 @@ namespace SoulsFormats
             public List<Region.RespawnOverride> RespawnOverrides { get; set; }
             public List<Region.UserEdgeRemovalInner> UserEdgeRemovalInners { get; set; }
             public List<Region.UserEdgeRemovalOuter> UserEdgeRemovalOuters { get; set; }
+            public List<Region.Unknown60> Unknown60s { get; set; }
             public List<Region.Other> Others { get; set; }
 
             public PointParam() : base(78, "POINT_PARAM_ST")
@@ -173,6 +175,7 @@ namespace SoulsFormats
                 RespawnOverrides = new List<Region.RespawnOverride>();
                 UserEdgeRemovalInners = new List<Region.UserEdgeRemovalInner>();
                 UserEdgeRemovalOuters = new List<Region.UserEdgeRemovalOuter>();
+                Unknown60s = new List<Region.Unknown60>();
 
                 Others = new List<Region.Other>();
             }
@@ -227,6 +230,7 @@ namespace SoulsFormats
                     case Region.RespawnOverride r: RespawnOverrides.Add(r); break;
                     case Region.UserEdgeRemovalInner r: UserEdgeRemovalInners.Add(r); break;
                     case Region.UserEdgeRemovalOuter r: UserEdgeRemovalOuters.Add(r); break;
+                    case Region.Unknown60 r: Unknown60s.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -252,6 +256,7 @@ namespace SoulsFormats
                     BigJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapNameOverrides,
                     BigJumpExits, MountOverrides, SmallBaseAttachs, BirdRoutes,
                      ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
+                     Unknown60s,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -389,6 +394,9 @@ namespace SoulsFormats
 
                     case RegionType.UserEdgeRemovalOuter:
                         return UserEdgeRemovalOuters.EchoAdd(new Region.UserEdgeRemovalOuter(br));
+
+                    case RegionType.Unknown60:
+                        return Unknown60s.EchoAdd(new Region.Unknown60(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2259,6 +2267,26 @@ namespace SoulsFormats
                 // Layout
                 public int Unk00 { get; set; } = 0;
                 public int Unk04 { get; set; } = 0;
+            }
+
+            public class Unknown60 : Region
+            {
+                private protected override RegionType Type => RegionType.Unknown60;
+                private protected override bool HasTypeData => true;
+
+                public Unknown60() : base($"{nameof(Region)}: {nameof(Unknown60)}") { }
+
+                internal Unknown60(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                }
+
+                // Layout
             }
 
             public class Other : Region
