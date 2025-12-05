@@ -994,10 +994,14 @@ public class ParamBank
         {
             // Decrypt the file
             paramBnd = SFUtil.DecryptDS2Regulation(data);
+
             // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
             if (!toFs.FileExists($"{param}.bak"))
             {
-                toFs.WriteFile($"{param}.bak", data);
+                if (CFG.Current.EnableBackupSaves)
+                {
+                    toFs.WriteFile($"{param}.bak", data);
+                }
             }
             toFs.WriteFile(param, paramBnd.Write());
         }
@@ -1025,7 +1029,11 @@ public class ParamBank
                         // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
                         if (!toFs.FileExists($@"{param}.bak"))
                         {
-                            toFs.WriteFile($"{param}.bak", data);
+                            if (CFG.Current.EnableBackupSaves)
+                            {
+                                toFs.WriteFile($"{param}.bak", data);
+                            }
+
                             toFs.WriteFile(param, paramBnd.Write());
                         }
                     }

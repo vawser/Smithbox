@@ -301,6 +301,16 @@ public class TextEditorScreen : EditorScreen
         var fileEntry = Selection.SelectedFileDictionaryEntry;
         var wrapper = Selection.SelectedContainerWrapper;
 
+        if(fileEntry == null)
+        {
+            return;
+        }
+
+        if (wrapper == null)
+        {
+            return;
+        }
+
         try
         {
             if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)

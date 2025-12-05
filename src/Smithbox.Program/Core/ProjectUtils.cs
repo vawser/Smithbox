@@ -311,7 +311,10 @@ public class ProjectUtils
             // Make a backup of the original file if a mod path doesn't exist
             if (toFs != curProject.ProjectFS && !toFs.FileExists($"{assetPath}.bak") && toFs.FileExists(assetPath))
             {
-                toFs.Copy(assetPath, $"{assetPath}.bak");
+                if (CFG.Current.EnableBackupSaves)
+                {
+                    toFs.Copy(assetPath, $"{assetPath}.bak");
+                }
             }
 
             if (gameType == ProjectType.DS3 && item is BND4 bndDS3)
@@ -352,10 +355,14 @@ public class ProjectUtils
                     bxf4.Dispose();
                 }
 
-                if (toFs.FileExists(bhdPath))
+                if (CFG.Current.EnableBackupSaves)
                 {
-                    toFs.Copy(bhdPath, bhdPath + ".prev");
+                    if (toFs.FileExists(bhdPath))
+                    {
+                        toFs.Copy(bhdPath, bhdPath + ".prev");
+                    }
                 }
+
                 toFs.Move(bhdPath + ".temp", bhdPath);
 
                 return;
@@ -371,9 +378,12 @@ public class ProjectUtils
                 d.Dispose();
             }
 
-            if (toFs.FileExists(assetPath))
+            if (CFG.Current.EnableBackupSaves)
             {
-                toFs.Copy(assetPath, assetPath + ".prev");
+                if (toFs.FileExists(assetPath))
+                {
+                    toFs.Copy(assetPath, assetPath + ".prev");
+                }
             }
             toFs.Move(assetPath + ".temp", assetPath);
         }

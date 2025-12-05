@@ -327,7 +327,11 @@ public class ParamUpgrader
 
         // Backup original
         var data = TargetProject.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
-        File.WriteAllBytes(Path.Join(TargetProject.ProjectPath, "regulation.bin.prev"), data);
+
+        if (CFG.Current.EnableBackupSaves)
+        {
+            File.WriteAllBytes(Path.Join(TargetProject.ProjectPath, "regulation.bin.prev"), data);
+        }
 
         NewParams = new();
 

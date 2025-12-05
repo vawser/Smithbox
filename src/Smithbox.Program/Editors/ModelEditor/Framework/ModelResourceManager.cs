@@ -670,7 +670,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         if (LoadedFlverContainer == null)
         {
-            TaskLogs.AddLog("Failed to save FLVER as LoadedFlverContainer is null.", LogLevel.Error);
+            //TaskLogs.AddLog("Failed to save FLVER as LoadedFlverContainer is null.", LogLevel.Error);
             return;
         }
 
@@ -764,7 +764,10 @@ public class ModelResourceManager : IResourceEventListener
         // Backup loose file
         if (File.Exists(path))
         {
-            File.Copy(path, $@"{path}.bak", true);
+            if (CFG.Current.EnableBackupSaves)
+            {
+                File.Copy(path, $@"{path}.bak", true);
+            }
         }
 
         byte[] flverBytes = null;
@@ -798,8 +801,11 @@ public class ModelResourceManager : IResourceEventListener
         }
 
         // Backup container files
-        File.Copy(bhdPath, $@"{bhdPath}.bak", true);
-        File.Copy(bdtPath, $@"{bdtPath}.bak", true);
+        if (CFG.Current.EnableBackupSaves)
+        {
+            File.Copy(bhdPath, $@"{bhdPath}.bak", true);
+            File.Copy(bdtPath, $@"{bdtPath}.bak", true);
+        }
 
         using (IBinder binder = BXF4.Read(bhdPath, bdtPath))
         {
@@ -851,7 +857,10 @@ public class ModelResourceManager : IResourceEventListener
         byte[] fileBytes = null;
 
         // Backup container file
-        File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+        if (CFG.Current.EnableBackupSaves)
+        {
+            File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+        }
 
         using (IBinder binder = BND4.Read(info.ModBinderPath))
         {
@@ -896,7 +905,10 @@ public class ModelResourceManager : IResourceEventListener
         byte[] fileBytes = null;
 
         // Backup container file
-        File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+        if (CFG.Current.EnableBackupSaves)
+        {
+            File.Copy(info.ModBinderPath, $@"{info.ModBinderPath}.bak", true);
+        }
 
         using (IBinder binder = BND3.Read(info.ModBinderPath))
         {

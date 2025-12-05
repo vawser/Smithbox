@@ -773,12 +773,15 @@ public class Universe
         regparam.Write(regparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(regparamadw.AssetPath))
         {
-            if (!File.Exists(regparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(regparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".prev", true);
+                File.Copy(regparamadw.AssetPath, regparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(regparamadw.AssetPath);
         }
 
@@ -792,12 +795,15 @@ public class Universe
         locparam.Write(locparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(locparamadw.AssetPath))
         {
-            if (!File.Exists(locparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(locparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".prev", true);
+                File.Copy(locparamadw.AssetPath, locparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(locparamadw.AssetPath);
         }
 
@@ -811,12 +817,15 @@ public class Universe
         genparam.Write(genparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(genparamadw.AssetPath))
         {
-            if (!File.Exists(genparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(genparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".prev", true);
+                File.Copy(genparamadw.AssetPath, genparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(genparamadw.AssetPath);
         }
 
@@ -831,12 +840,15 @@ public class Universe
         evtparam.Write(evtparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(evtparamadw.AssetPath))
         {
-            if (!File.Exists(evtparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(evtparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".prev", true);
+                File.Copy(evtparamadw.AssetPath, evtparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(evtparamadw.AssetPath);
         }
 
@@ -851,12 +863,15 @@ public class Universe
         evtlparam.Write(evtlparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(evtlparamadw.AssetPath))
         {
-            if (!File.Exists(evtlparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(evtlparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".prev", true);
+                File.Copy(evtlparamadw.AssetPath, evtlparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(evtlparamadw.AssetPath);
         }
 
@@ -871,12 +886,15 @@ public class Universe
         objparam.Write(objparamadw.AssetPath + ".temp", DCX.Type.None);
         if (File.Exists(objparamadw.AssetPath))
         {
-            if (!File.Exists(objparamadw.AssetPath + ".bak"))
+            if (CFG.Current.EnableBackupSaves)
             {
-                File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".bak", true);
-            }
+                if (!File.Exists(objparamadw.AssetPath + ".bak"))
+                {
+                    File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".bak", true);
+                }
 
-            File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".prev", true);
+                File.Copy(objparamadw.AssetPath, objparamadw.AssetPath + ".prev", true);
+            }
             File.Delete(objparamadw.AssetPath);
         }
 

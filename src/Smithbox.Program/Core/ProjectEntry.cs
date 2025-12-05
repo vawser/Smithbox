@@ -190,6 +190,17 @@ public class ProjectEntry
     [JsonIgnore]
     public bool IsSelected = false;
 
+    public int AutomaticSaveInterval = 60;
+
+    [JsonIgnore]
+    public DateTime _nextAutoSaveTime = DateTime.MinValue;
+
+    public void UpdateAutoSaveInterval(int newInterval)
+    {
+        AutomaticSaveInterval = newInterval;
+        _nextAutoSaveTime = DateTime.UtcNow.AddSeconds(AutomaticSaveInterval);
+    }
+
     public ProjectEntry() { }
 
     public ProjectEntry(Smithbox baseEditor, Guid newGuid, string projectName, string projectPath, string dataPath, ProjectType projectType)
@@ -882,6 +893,66 @@ public class ProjectEntry
 
         if (FileBrowserStub != null)
             FileBrowserStub.Display(dt, commands);
+
+        // Auto-Save
+        AutomaticSaveInterval = (int)CFG.Current.AutomaticSaveIntervalTime;
+
+        if (AutomaticSaveInterval > 0 && DateTime.UtcNow >= _nextAutoSaveTime)
+        {
+            PerformAutoSave();
+            _nextAutoSaveTime = DateTime.UtcNow.AddSeconds(AutomaticSaveInterval);
+        }
+    }
+    private void PerformAutoSave()
+    {
+        if (CFG.Current.EnableAutomaticSave)
+        {
+            try
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Auto-save triggered.", LogLevel.Information);
+
+                if (CFG.Current.AutomaticSave_MapEditor)
+                {
+                    if (MapEditor != null)
+                    {
+                        MapEditor.Save();
+                    }
+                }
+
+                if (CFG.Current.AutomaticSave_ParamEditor)
+                {
+                    if (ParamEditor != null)
+                    {
+                        ParamEditor.Save();
+                    }
+                }
+                if (CFG.Current.AutomaticSave_TextEditor)
+                {
+                    if (TextEditor != null)
+                    {
+                        TextEditor.Save();
+                    }
+                }
+                if (CFG.Current.AutomaticSave_GparamEditor)
+                {
+                    if (GparamEditor != null)
+                    {
+                        GparamEditor.Save();
+                    }
+                }
+                if (CFG.Current.AutomaticSave_MaterialEditor)
+                {
+                    if (MaterialEditor != null)
+                    {
+                        MaterialEditor.Save();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Auto-save failed.", LogLevel.Error, Tasks.LogPriority.High, ex);
+            }
+        }
     }
 
     /// <summary>

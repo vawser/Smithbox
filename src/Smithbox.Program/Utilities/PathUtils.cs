@@ -54,13 +54,16 @@ namespace StudioCore.Utilities
                 string newPath = path + extension;
                 if (!File.Exists(newPath) || overwrite)
                 {
-                    if (copy)
+                    if (CFG.Current.EnableBackupSaves)
                     {
-                        File.Copy(path, newPath, true);
-                    }
-                    else
-                    {
-                        File.Move(path, newPath, true);
+                        if (copy)
+                        {
+                            File.Copy(path, newPath, true);
+                        }
+                        else
+                        {
+                            File.Move(path, newPath, true);
+                        }
                     }
                 }
             }

@@ -34,6 +34,8 @@ public class SystemTab
 
     public void Display()
     {
+        var width = ImGui.GetWindowWidth();
+
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Check for new versions of Smithbox during startup",
@@ -63,6 +65,72 @@ public class SystemTab
 
         if (ImGui.CollapsingHeader("Project"))
         {
+            ImGui.Checkbox("Enable Automatic Saves", ref CFG.Current.EnableAutomaticSave);
+            UIHelper.Tooltip("If enabled, all enabled editors will automatically save.");
+
+            ImGui.SliderFloat("Automatic Save Interval", ref CFG.Current.AutomaticSaveIntervalTime, 5f, 3600f);
+            UIHelper.Tooltip("The rate at which the automatic save occurs. In seconds.");
+
+            ImGui.Separator();
+
+            ImGui.Text("Editors to Automatically Save:");
+
+            ImGui.Separator();
+
+            ImGui.Checkbox("Map Editor##autoSave_mapEditor", ref CFG.Current.AutomaticSave_MapEditor);
+            UIHelper.Tooltip("If enabled, the Map Editor is automatically saved.");
+
+            ImGui.Checkbox("Param Editor##autoSave_paramEditor", ref CFG.Current.AutomaticSave_ParamEditor);
+            UIHelper.Tooltip("If enabled, the Param Editor is automatically saved.");
+
+            ImGui.Checkbox("Text Editor##autoSave_textEditor", ref CFG.Current.AutomaticSave_TextEditor);
+            UIHelper.Tooltip("If enabled, the Text Editor is automatically saved.");
+
+            ImGui.Checkbox("Graphics Param Editor##autoSave_gparamEditor", ref CFG.Current.AutomaticSave_GparamEditor);
+            UIHelper.Tooltip("If enabled, the Graphics Param Editor is automatically saved.");
+
+            ImGui.Checkbox("Material Editor##autoSave_materialEditor", ref CFG.Current.AutomaticSave_MaterialEditor);
+            UIHelper.Tooltip("If enabled, the Material Editor is automatically saved.");
+
+            ImGui.Separator();
+
+            ImGui.Checkbox("Enable Backup Saves", ref CFG.Current.EnableBackupSaves);
+            UIHelper.Tooltip("If enabled, the .prev and .bak files will be produced when saving.");
+
+            if(ImGui.Button("Clear Backup Files", DPI.WholeWidthButton(width, 24)))
+            {
+                var root = BaseEditor.ProjectManager.SelectedProject.ProjectPath;
+
+                var filesToDelete = GetBackupFiles(root);
+
+                var fileList = "";
+
+                int i = 0;
+
+                foreach(var entry in filesToDelete)
+                {
+                    fileList = fileList + $"\n{entry}";
+
+                    i++;
+
+                    if (i > 25)
+                    {
+                        fileList = fileList + $"\n....";
+                        break;
+                    }
+                }
+
+                var dialog = PlatformUtils.Instance.MessageBox($"You will delete the following files:\n{fileList}", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+               
+                if(dialog is DialogResult.OK)
+                {
+                    DeleteFiles(filesToDelete);
+                }
+            }
+            UIHelper.Tooltip("This will clear all files with the .prev and .bak extension from your project.");
+
+            ImGui.Separator();
+
             // Project Name Prefix
             ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
             UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
@@ -155,51 +223,6 @@ public class SystemTab
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
         }
 
-        /*
-        if (ImGui.CollapsingHeader("Backup"))
-        {
-            var width = ImGui.GetWindowWidth();
-            
-            if (ImGui.BeginCombo("Backup Type##backupProcessType", CFG.Current.BackupProcessType.GetDisplayName()))
-            {
-                foreach (var entry in Enum.GetValues(typeof(BackupType)))
-                {
-                    var type = (BackupType)entry;
-                    CFG.Current.BackupProcessType = type;
-                }
-                ImGui.EndCombo();
-            }
-            UIHelper.Tooltip("Set the backup process type to use.");
-
-            if(CFG.Current.BackupProcessType is BackupType.None)
-            {
-                UIHelper.WrappedText("No backup file will be created during the saving process.");
-            }
-
-            if (CFG.Current.BackupProcessType is BackupType.Simple)
-            {
-                UIHelper.WrappedText("A single backup file will be created during the saving process next to the existing file, and will be overwritten by subsequent saves.");
-            }
-
-            if (CFG.Current.BackupProcessType is BackupType.Complete)
-            {
-                UIHelper.WrappedText("A versioned backup file will be created during the saving process in the .backup folder. This will create a new file for each save. Note: this increases disk space consumption.");
-            }
-
-            if(ImGui.Button("Delete Simple Backup", DPI.HalfWidthButton(width, 24)))
-            {
-
-            }
-            UIHelper.Tooltip("Delete all of the simple .bak and .prev files within your project.");
-
-            if (ImGui.Button("Delete Versioned Backup", DPI.HalfWidthButton(width, 24)))
-            {
-
-            }
-            UIHelper.Tooltip("Delete the versioned .bak files within the .backup folder within your project.");
-        }
-        */
-
         if (ImGui.CollapsingHeader("Loggers"))
         {
             ImGui.Checkbox("Show Action Logger", ref CFG.Current.System_ShowActionLogger);
@@ -242,15 +265,52 @@ public class SystemTab
             UIHelper.Tooltip("Select the build directory for Smithbox (where the Smithbox.sln is placed).");
         }
     }
+    public static List<string> GetBackupFiles(string rootDirectory)
+    {
+        if (string.IsNullOrWhiteSpace(rootDirectory) || !Directory.Exists(rootDirectory))
+            throw new DirectoryNotFoundException($"Directory not found: {rootDirectory}");
 
+        var results = new List<string>();
+
+        foreach (var file in Directory.EnumerateFiles(rootDirectory, "*.*", SearchOption.AllDirectories))
+        {
+            string ext = Path.GetExtension(file);
+
+            if (ext.Equals(".bak", StringComparison.OrdinalIgnoreCase) ||
+                ext.Equals(".prev", StringComparison.OrdinalIgnoreCase))
+            {
+                results.Add(file);
+            }
+        }
+
+        return results;
+    }
+
+    public static void DeleteFiles(IEnumerable<string> files)
+    {
+        foreach (var file in files)
+        {
+            try
+            {
+                if (File.Exists(file))
+                {
+                    File.Delete(file);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log or handle as needed
+                Console.WriteLine($"Failed to delete {file}: {ex.Message}");
+            }
+        }
+    }
 }
-
 #endregion
 
-//------------------------------------------
-// Map Editor
-//------------------------------------------
-#region Map Editor
+    //------------------------------------------
+    // Map Editor
+    //------------------------------------------
+    #region Map Editor
 public class MapEditorTab
 {
     public Smithbox BaseEditor;

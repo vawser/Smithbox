@@ -36,6 +36,28 @@ public class CFG
     /// Project
     ///------------------------------------------------------------
     /// <summary>
+    /// If enabled, automatic saving occurs.
+    /// </summary>
+    public bool EnableAutomaticSave = true;
+
+    /// <summary>
+    /// The rate at which automatic saving occurs (in seconds)
+    /// </summary>
+    public float AutomaticSaveIntervalTime = 300;
+
+    public bool AutomaticSave_MapEditor = true;
+    public bool AutomaticSave_ParamEditor = true;
+    public bool AutomaticSave_TextEditor = true;
+    public bool AutomaticSave_GparamEditor = false;
+    public bool AutomaticSave_MaterialEditor = false;
+
+
+    /// <summary>
+    /// If enabled, include backup saves.
+    /// </summary>
+    public bool EnableBackupSaves = true;
+
+    /// <summary>
     /// If enabled, the project type is prefixed to the project name.
     /// </summary>
     public bool DisplayProjectPrefix = true;
