@@ -10,7 +10,14 @@
     Refs="AttachEffectParam" />
     
     <chanceWeight
-    AltName="Roll Weight"
+    AltName="Roll Weight: Base"
+    Wiki="The weighting to apply during the roll." />
+    
+    <fh_unknown_01
+    IsBool="" />
+    
+    <chanceWeight_dlc
+    AltName="Roll Weight: DLC"
     Wiki="The weighting to apply during the roll." />
     
   </Field>
