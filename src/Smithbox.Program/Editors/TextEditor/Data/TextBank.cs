@@ -141,6 +141,12 @@ public class TextBank
             }
         }
 
+        // Skip obsolete containers
+        if (TextUtils.IsObsoleteContainer(Project, entry))
+        {
+            return;
+        }
+
         try
         {
             var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);

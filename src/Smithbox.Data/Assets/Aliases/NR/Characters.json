@@ -1415,6 +1415,20 @@
     ]
   },
   {
+    "ID": "c7610",
+    "Name": "Dreglord",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
+    "ID": "c7620",
+    "Name": "Balancers",
+    "Tags": [
+      "creature"
+    ]
+  },
+  {
     "ID": "c7700",
     "Name": "Gaping Dragon",
     "Tags": [

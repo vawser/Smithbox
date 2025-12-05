@@ -31,19 +31,19 @@ public enum Item_MsgBndID_DES
     [Display(Name = "Weapons", ShortName = "Title", Description = "")] 
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")] 
+    [Display(Name = "Armors", ShortName = "Title", Description = "")] 
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")] 
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")] 
+    [Display(Name = "Spells", ShortName = "Title", Description = "")] 
     Title_Magic = 14,
 
-    [Display(Name = "Effect", ShortName = "Title", Description = "")] 
+    [Display(Name = "Effects", ShortName = "Title", Description = "")] 
     Title_Effect = 15,
 
-    [Display(Name = "Effect", ShortName = "Summary", Description = "")] 
+    [Display(Name = "Effects", ShortName = "Summary", Description = "")] 
     Summary_Effect = 16,
 
     [Display(Name = "Effect", ShortName = "Description", Description = "")] 
@@ -61,13 +61,13 @@ public enum Item_MsgBndID_DES
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")] 
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")] 
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")] 
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")] 
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")] 
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")] 
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")] 
@@ -76,13 +76,13 @@ public enum Item_MsgBndID_DES
     [Display(Name = "Weapons", ShortName = "Description", Description = "")] 
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")] 
+    [Display(Name = "Armors", ShortName = "Description", Description = "")] 
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")] 
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")] 
+    [Display(Name = "Spells", ShortName = "Description", Description = "")] 
     Description_Magic = 29
 }
 
@@ -112,7 +112,7 @@ public enum Menu_MsgBndID_DES
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "")]
     Menu_Dialog = 78,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Menu_Key_Guide = 79,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
@@ -145,22 +145,22 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
-    [Display(Name = "Test [1]", ShortName = "Common", Description = "")]
+    [Display(Name = "Test Text: 1", ShortName = "Common", Description = "")]
     Title_Test = 15,
 
-    [Display(Name = "Test [2]", ShortName = "Common", Description = "")]
+    [Display(Name = "Test Text: 2", ShortName = "Common", Description = "")]
     Title_Test_2 = 16,
 
-    [Display(Name = "Test [3]", ShortName = "Common", Description = "")]
+    [Display(Name = "Test Text: 3", ShortName = "Common", Description = "")]
     Title_Test_3 = 17,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -175,13 +175,13 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -190,13 +190,13 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29,
 
     // DLC
@@ -206,13 +206,13 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Title", Description = "DLC 1")]
     Title_Weapons_DLC = 115,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "DLC 1")]
     Title_Armor_DLC = 117,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 1")]
     Title_Accessories_DLC = 113,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 1")]
     Title_Magic_DLC = 118,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 1")]
@@ -227,7 +227,7 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Summary", Description = "DLC 1")]
     Summary_Weapons_DLC = 114,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "DLC 1")]
     Summary_Armor_DLC = 116,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "DLC 1")]
@@ -239,13 +239,13 @@ public enum Item_MsgBndID_DS1
     [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 1")]
     Description_Weapons_DLC = 106,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "DLC 1")]
     Description_Armor_DLC = 108,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "DLC 1")]
     Description_Accessories_DLC = 109,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 1")]
     Description_Magic_DLC = 105
 }
 
@@ -275,13 +275,13 @@ public enum Menu_MsgBndID_DS1
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "")]
     Menu_Dialog = 78,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Menu_Key_Guide = 79,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Menu_Line_Help = 80,
 
-    [Display(Name = "Context", ShortName = "Common", Description = "")]
+    [Display(Name = "Context Text", ShortName = "Common", Description = "")]
     Menu_Context = 81,
 
     [Display(Name = "Tags", ShortName = "Common", Description = "")]
@@ -312,7 +312,7 @@ public enum Menu_MsgBndID_DS1
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "DLC 1")]
     Menu_Dialog_DLC = 102,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "DLC 1")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "DLC 1")]
     Menu_Key_Guide_DLC = 122,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "DLC 1")]
@@ -333,13 +333,13 @@ public enum Item_MsgBndID_BB
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -354,13 +354,13 @@ public enum Item_MsgBndID_BB
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -369,13 +369,13 @@ public enum Item_MsgBndID_BB
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29
 }
 
@@ -423,7 +423,7 @@ public enum Menu_MsgBndID_BB
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "")]
     Menu_Dialog = 78,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Menu_Key_Guide = 79,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
@@ -444,13 +444,13 @@ public enum Menu_MsgBndID_BB
     [Display(Name = "Line Help", ShortName = "Menu", Description = "")]
     Modern_Menu_Line_Help = 201,
 
-    [Display(Name = "Key Guide", ShortName = "Menu", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Menu", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
     [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
-    [Display(Name = "Dialogue", ShortName = "Menu", Description = "")]
+    [Display(Name = "Dialogues", ShortName = "Menu", Description = "")]
     Modern_Menu_Dialogue = 204
 }
 
@@ -465,13 +465,13 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -486,13 +486,13 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -501,13 +501,13 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29,
 
     // DLC1
@@ -517,13 +517,13 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Title", Description = "DLC 1")]
     Title_Weapons_DLC1 = 211,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "DLC 1")]
     Title_Armor_DLC1 = 212,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 1")]
     Title_Accessories_DLC1 = 213,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 1")]
     Title_Magic_DLC1 = 214,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 1")]
@@ -544,16 +544,16 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 1")]
     Description_Weapons_DLC1 = 222,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "DLC 1")]
     Description_Armor_DLC1 = 223,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "DLC 1")]
     Description_Accessories_DLC1 = 224,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "DLC 1")]
     Summary_Magic_DLC1 = 225,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 1")]
     Description_Magic_DLC1 = 226,
 
     // DLC2
@@ -563,13 +563,13 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Title", Description = "DLC 2")]
     Title_Weapons_DLC2 = 251,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "DLC 2")]
     Title_Armor_DLC2 = 252,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 2")]
     Title_Accessories_DLC2 = 253,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 2")]
     Title_Magic_DLC2 = 254,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 2")]
@@ -590,16 +590,16 @@ public enum Item_MsgBndID_DS3
     [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 2")]
     Description_Weapons_DLC2 = 262,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "DLC 2")]
     Description_Armor_DLC2 = 263,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "DLC 2")]
     Description_Accessories_DLC2 = 264,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "DLC 2")]
     Summary_Magic_DLC2 = 265,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 2")]
     Description_Magic_DLC2 = 266
 }
 
@@ -629,13 +629,13 @@ public enum Menu_MsgBndID_DS3
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "")]
     Menu_Dialog = 78,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Menu_Key_Guide = 79,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Menu_Line_Help = 80,
 
-    [Display(Name = "Context", ShortName = "Common", Description = "")]
+    [Display(Name = "Context Text", ShortName = "Common", Description = "")]
     Menu_Context = 81,
 
     [Display(Name = "Tags", ShortName = "Common", Description = "")]
@@ -653,13 +653,13 @@ public enum Menu_MsgBndID_DS3
     [Display(Name = "Line Help", ShortName = "Menu", Description = "")]
     Modern_Menu_Line_Help = 201,
 
-    [Display(Name = "Key Guide", ShortName = "Menu", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Menu", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
     [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
-    [Display(Name = "Dialogue", ShortName = "Menu", Description = "")]
+    [Display(Name = "Dialogues", ShortName = "Menu", Description = "")]
     Modern_Menu_Dialogue = 204,
 
     [Display(Name = "System Messages: PS4", ShortName = "Common", Description = "")]
@@ -684,7 +684,7 @@ public enum Menu_MsgBndID_DS3
     [Display(Name = "System Messages: PC", ShortName = "Common", Description = "DLC 1")]
     Modern_Menu_System_Message_DLC1 = 235,
 
-    [Display(Name = "Dialogue", ShortName = "Menu", Description = "DLC 1")]
+    [Display(Name = "Dialogues", ShortName = "Menu", Description = "DLC 1")]
     Modern_Menu_Dialogue_DLC1 = 236,
 
     [Display(Name = "System Messages: PS4", ShortName = "Common", Description = "DLC 1")]
@@ -712,7 +712,7 @@ public enum Menu_MsgBndID_DS3
     [Display(Name = "System Messages: PC", ShortName = "Common", Description = "DLC 2")]
     Modern_Menu_System_Message_DLC2 = 275,
 
-    [Display(Name = "Dialogue", ShortName = "Menu", Description = "DLC 2")]
+    [Display(Name = "Dialogues", ShortName = "Menu", Description = "DLC 2")]
     Modern_Menu_Dialogue_DLC2 = 276,
 
     [Display(Name = "System Messages: PS4", ShortName = "Common", Description = "DLC 2")]
@@ -742,13 +742,13 @@ public enum Item_MsgBndID_SDT
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -763,13 +763,13 @@ public enum Item_MsgBndID_SDT
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -778,13 +778,13 @@ public enum Item_MsgBndID_SDT
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29,
 
     [Display(Name = "Combat Skills", ShortName = "Common", Description = "")]
@@ -817,7 +817,7 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Dialog Text", ShortName = "Common", Description = "")]
     Menu_Dialog = 78,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Menu_Key_Guide = 79,
 
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
@@ -841,13 +841,13 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Line Help", ShortName = "Menu", Description = "")]
     Modern_Menu_Line_Help = 201,
 
-    [Display(Name = "Key Guide", ShortName = "Menu", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Menu", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
-    [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
+    [Display(Name = "System Messages", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
-    [Display(Name = "Dialogue", ShortName = "Menu", Description = "")]
+    [Display(Name = "Dialogues", ShortName = "Menu", Description = "")]
     Modern_Menu_Dialogue = 204,
 
     [Display(Name = "Loading Menu Text", ShortName = "Common", Description = "")]
@@ -874,13 +874,13 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -895,13 +895,13 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -910,22 +910,22 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29,
 
-    [Display(Name = "Ash of War", ShortName = "Title", Description = "")]
+    [Display(Name = "Ashes of War", ShortName = "Title", Description = "")]
     Title_Ash_of_War = 35,
 
-    [Display(Name = "Ash of War", ShortName = "Summary", Description = "")]
+    [Display(Name = "Ashes of War", ShortName = "Summary", Description = "")]
     Summary_Ash_of_War = 36,
 
-    [Display(Name = "Ash of War", ShortName = "Description", Description = "")]
+    [Display(Name = "Ashes of War", ShortName = "Description", Description = "")]
     Description_Ash_of_War = 37,
 
     [Display(Name = "Goods Dialog", ShortName = "Common", Description = "")]
@@ -940,7 +940,7 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons Effects", ShortName = "Common", Description = "")]
     Effect_Weapons = 44,
 
-    [Display(Name = "Ash of War", ShortName = "Effect", Description = "")]
+    [Display(Name = "Ashes of War", ShortName = "Effect", Description = "")]
     Effect_Ash_of_War = 45,
 
     [Display(Name = "Goods", ShortName = "Effect", Description = "")]
@@ -956,13 +956,13 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 1")]
     Description_Weapons_DLC1 = 312,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "DLC 1")]
     Title_Armor_DLC1 = 313,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "DLC 1")]
     Summary_Armor_DLC1 = 314,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "DLC 1")]
     Description_Armor_DLC1 = 315,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 1")]
@@ -992,13 +992,13 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Ash of War", ShortName = "Description", Description = "DLC 1")]
     Description_Ash_of_War_DLC1 = 324,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 1")]
     Title_Magic_DLC1 = 325,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "DLC 1")]
     Summary_Magic_DLC1 = 326,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 1")]
     Description_Magic_DLC1 = 327,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 1")]
@@ -1019,7 +1019,7 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapon Effects", ShortName = "Common", Description = "DLC 1")]
     Effect_Weapons_DLC1 = 333,
 
-    [Display(Name = "Ash of War", ShortName = "Effect", Description = "DLC 1")]
+    [Display(Name = "Ashes of War", ShortName = "Effect", Description = "DLC 1")]
     Effect_Ash_of_War_DLC1 = 334,
 
     [Display(Name = "Goods", ShortName = "Effect", Description = "DLC 1")]
@@ -1035,13 +1035,13 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 2")]
     Description_Weapons_DLC2 = 412,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "DLC 2")]
     Title_Armor_DLC2 = 413,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "DLC 2")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "DLC 2")]
     Summary_Armor_DLC2 = 414,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "DLC 2")]
     Description_Armor_DLC2 = 415,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 2")]
@@ -1062,22 +1062,22 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Goods", ShortName = "Description", Description = "DLC 2")]
     Description_Goods_DLC2 = 421,
 
-    [Display(Name = "Ash of War", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Ashes of War", ShortName = "Title", Description = "DLC 2")]
     Title_Ash_of_War_DLC2 = 422,
 
-    [Display(Name = "Ash of War", ShortName = "Summary", Description = "DLC 2")]
+    [Display(Name = "Ashes of War", ShortName = "Summary", Description = "DLC 2")]
     Summary_Ash_of_War_DLC2 = 423,
 
-    [Display(Name = "Ash of War", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Ashes of War", ShortName = "Description", Description = "DLC 2")]
     Description_Ash_of_War_DLC2 = 424,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 2")]
     Title_Magic_DLC2 = 425,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "DLC 2")]
     Summary_Magic_DLC2 = 426,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 2")]
     Description_Magic_DLC2 = 427,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "DLC 2")]
@@ -1098,7 +1098,7 @@ public enum Item_MsgBndID_ER
     [Display(Name = "Weapon Effects", ShortName = "Common", Description = "DLC 2")]
     Effect_Weapons_DLC2 = 433,
 
-    [Display(Name = "Ash of War", ShortName = "Effect", Description = "DLC 2")]
+    [Display(Name = "Ashes of War", ShortName = "Effect", Description = "DLC 2")]
     Effect_Ash_of_War_DLC2 = 434,
 
     [Display(Name = "Goods", ShortName = "Effect", Description = "DLC 2")]
@@ -1137,25 +1137,25 @@ public enum Menu_MsgBndID_ER
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Modern_Menu_Line_Help = 201,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
-    [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
+    [Display(Name = "System Messages", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
-    [Display(Name = "Dialogue", ShortName = "Common", Description = "")]
+    [Display(Name = "Dialogues", ShortName = "Common", Description = "")]
     Modern_Menu_Dialogue = 204,
 
-    [Display(Name = "Loading Screen", ShortName = "Title", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Title", Description = "")]
     Loading_Title = 205,
 
-    [Display(Name = "Loading Screen", ShortName = "Description", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Description", Description = "")]
     Loading_Text = 206,
 
-    [Display(Name = "Tutorial", ShortName = "Title", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "")]
     Tutorial_Title = 207,
 
-    [Display(Name = "Tutorial", ShortName = "Description", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "")]
     Tutorial_Text = 208,
 
     [Display(Name = "Text Embed Image Name", ShortName = "Common", Description = "")]
@@ -1195,22 +1195,22 @@ public enum Menu_MsgBndID_ER
     [Display(Name = "Line Help", ShortName = "Common", Description = "DLC 1")]
     Modern_Menu_Line_Help_DLC1 = 369,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "DLC 1")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "DLC 1")]
     Modern_Menu_Key_Guide_DLC1 = 370,
 
-    [Display(Name = "System Message: PC", ShortName = "Common", Description = "DLC 1")]
+    [Display(Name = "System Messages", ShortName = "Common", Description = "DLC 1")]
     Modern_Menu_System_Message_DLC1 = 371,
 
-    [Display(Name = "Dialogue", ShortName = "Common", Description = "DLC 1")]
+    [Display(Name = "Dialogues", ShortName = "Common", Description = "DLC 1")]
     Modern_Menu_Dialogue_DLC1 = 372,
 
-    [Display(Name = "Loading Screen", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Loading Text", ShortName = "Title", Description = "DLC 1")]
     Loading_Title_DLC1 = 373,
 
-    [Display(Name = "Loading Screen", ShortName = "Description", Description = "DLC 1")]
+    [Display(Name = "Loading Text", ShortName = "Description", Description = "DLC 1")]
     Loading_Text_DLC1 = 374,
 
-    [Display(Name = "Tutorial", ShortName = "Title", Description = "DLC 1")]
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "DLC 1")]
     Tutorial_Title_DLC1 = 375,
 
     [Display(Name = "Tutorial Text", ShortName = "Description", Description = "DLC 1")]
@@ -1247,25 +1247,25 @@ public enum Menu_MsgBndID_ER
     [Display(Name = "Line Help", ShortName = "Common", Description = "DLC 2")]
     Modern_Menu_Line_Help_DLC2 = 469,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "DLC 2")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "DLC 2")]
     Modern_Menu_Key_Guide_DLC2 = 470,
 
-    [Display(Name = "System Message: PC", ShortName = "Common", Description = "DLC 2")]
+    [Display(Name = "System Message", ShortName = "Common", Description = "DLC 2")]
     Modern_Menu_System_Message_DLC2 = 471,
 
-    [Display(Name = "Dialogue", ShortName = "Common", Description = "DLC 2")]
+    [Display(Name = "Dialogues", ShortName = "Common", Description = "DLC 2")]
     Modern_Menu_Dialogue_DLC2 = 472,
 
-    [Display(Name = "Loading Screen", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Loading Text", ShortName = "Title", Description = "DLC 2")]
     Loading_Title_DLC2 = 473,
 
-    [Display(Name = "Loading Screen", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Loading Text", ShortName = "Description", Description = "DLC 2")]
     Loading_Text_DLC2 = 474,
 
-    [Display(Name = "Tutorial", ShortName = "Title", Description = "DLC 2")]
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "DLC 2")]
     Tutorial_Title_DLC2 = 475,
 
-    [Display(Name = "Tutorial", ShortName = "Description", Description = "DLC 2")]
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "DLC 2")]
     Tutorial_Text_DLC2 = 476,
 }
 
@@ -1292,7 +1292,7 @@ public enum Item_MsgBndID_AC6
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -1301,19 +1301,19 @@ public enum Item_MsgBndID_AC6
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 22,
 
-    [Display(Name = "Generator", ShortName = "Title", Description = "")]
+    [Display(Name = "Generators", ShortName = "Title", Description = "")]
     Title_Generator = 35,
 
-    [Display(Name = "Generator", ShortName = "Description", Description = "")]
+    [Display(Name = "Generators", ShortName = "Description", Description = "")]
     Description_Generator = 36,
 
-    [Display(Name = "Booster", ShortName = "Title", Description = "")]
+    [Display(Name = "Boosters", ShortName = "Title", Description = "")]
     Title_Booster = 38,
 
-    [Display(Name = "Booster", ShortName = "Description", Description = "")]
+    [Display(Name = "Boosters", ShortName = "Description", Description = "")]
     Description_Booster = 39,
 
     [Display(Name = "FCS", ShortName = "Title", Description = "")]
@@ -1335,31 +1335,31 @@ public enum Menu_MsgBndID_AC6
     [Display(Name = "Event Text", ShortName = "Common", Description = "")]
     Event_Text = 30,
 
-    [Display(Name = "Ranker Profile", ShortName = "Common", Description = "")]
+    [Display(Name = "Ranker Profile Text", ShortName = "Common", Description = "")]
     Ranker_Profile = 50,
 
-    [Display(Name = "Mission Name", ShortName = "Title", Description = "")]
+    [Display(Name = "Mission Text", ShortName = "Title", Description = "")]
     Mission_Name = 60,
 
-    [Display(Name = "Mission Overview", ShortName = "Description", Description = "")]
+    [Display(Name = "Mission Text", ShortName = "Description", Description = "")]
     Mission_Overview = 61,
 
-    [Display(Name = "Mission Objective", ShortName = "Summary", Description = "")]
+    [Display(Name = "Mission Text", ShortName = "Summary", Description = "")]
     Mission_Objective = 62,
 
-    [Display(Name = "Mission Location Name", ShortName = "Common", Description = "")]
+    [Display(Name = "Mission Locations", ShortName = "Common", Description = "")]
     Mission_Location_Name = 63,
 
-    [Display(Name = "Archive", ShortName = "Title", Description = "")]
+    [Display(Name = "Archive Text", ShortName = "Title", Description = "")]
     Archive_Name = 65,
 
-    [Display(Name = "Archive", ShortName = "Description", Description = "")]
+    [Display(Name = "Archive Text", ShortName = "Description", Description = "")]
     Archive_Content = 66,
 
-    [Display(Name = "Tutorial", ShortName = "Title", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "")]
     Tutorial_Title = 73,
 
-    [Display(Name = "Tutorial", ShortName = "Description", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "")]
     Tutorial_Text = 74,
 
     [Display(Name = "Menu Text", ShortName = "Common", Description = "")]
@@ -1368,25 +1368,25 @@ public enum Menu_MsgBndID_AC6
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Modern_Menu_Line_Help = 201,
 
-    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    [Display(Name = "Key Guides", ShortName = "Common", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
-    [Display(Name = "System Message: PC", ShortName = "Common", Description = "")]
+    [Display(Name = "System Message", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
-    [Display(Name = "Dialogue", ShortName = "Common", Description = "")]
+    [Display(Name = "Dialogues", ShortName = "Common", Description = "")]
     Modern_Menu_Dialogue = 204,
 
-    [Display(Name = "Item Help", ShortName = "Common", Description = "")]
+    [Display(Name = "Item Help Text", ShortName = "Common", Description = "")]
     Item_Help = 205,
 
-    [Display(Name = "Loading Screen", ShortName = "Title", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Title", Description = "")]
     Loading_Title = 207,
 
-    [Display(Name = "Loading Screen", ShortName = "Description", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Description", Description = "")]
     Loading_Text = 208,
 
-    [Display(Name = "Text Embed Image Name", ShortName = "Common", Description = "")]
+    [Display(Name = "Text Embed Image Names", ShortName = "Common", Description = "")]
     Text_Embed_Image_Name_PC = 210
 
 }
@@ -1400,43 +1400,43 @@ public enum NgWord_MsgBndID_AC6
 // DS2 doesn't use msgbnds, so FMGs are matched via name.
 public enum CommonFmgName_DS2
 {
-    [Display(Name = "Blood Message Conjunction", ShortName = "Common", Description = "")]
+    [Display(Name = "Blood Message Conjunctions", ShortName = "Common", Description = "")]
     bloodmessageconjunction,
 
-    [Display(Name = "Blood Message Sentence", ShortName = "Common", Description = "")]
+    [Display(Name = "Blood Message Sentences", ShortName = "Common", Description = "")]
     bloodmessagesentence,
 
-    [Display(Name = "Blood Message Word", ShortName = "Common", Description = "")]
+    [Display(Name = "Blood Message Words", ShortName = "Common", Description = "")]
     bloodmessageword,
 
-    [Display(Name = "Blood Message Word Category", ShortName = "Common", Description = "")]
+    [Display(Name = "Blood Message Word Categories", ShortName = "Common", Description = "")]
     bloodmessagewordcategory,
 
-    [Display(Name = "Bonfire", ShortName = "Common", Description = "")]
+    [Display(Name = "Bonfire Text", ShortName = "Common", Description = "")]
     bofire,
 
-    [Display(Name = "Bonfire Name", ShortName = "Common", Description = "")]
+    [Display(Name = "Bonfire Names", ShortName = "Common", Description = "")]
     bonfirename,
 
-    [Display(Name = "Character Maker", ShortName = "Common", Description = "")]
+    [Display(Name = "Character Maker Text", ShortName = "Common", Description = "")]
     charamaking,
 
-    [Display(Name = "Common", ShortName = "Common", Description = "")]
+    [Display(Name = "Common Text", ShortName = "Common", Description = "")]
     common,
 
-    [Display(Name = "Multiplayer", ShortName = "Common", Description = "")]
+    [Display(Name = "Multiplayer Text", ShortName = "Common", Description = "")]
     dconlymessage,
 
     [Display(Name = "Item Descriptions", ShortName = "Common", Description = "")]
     detailedexplanation,
 
-    [Display(Name = "Icon Help", ShortName = "Common", Description = "")]
+    [Display(Name = "Icon Help Text", ShortName = "Common", Description = "")]
     iconhelp,
 
-    [Display(Name = "In-game Menu", ShortName = "Common", Description = "")]
+    [Display(Name = "In-game Menu Text", ShortName = "Common", Description = "")]
     ingamemenu,
 
-    [Display(Name = "In-game System", ShortName = "Common", Description = "")]
+    [Display(Name = "In-game System Text", ShortName = "Common", Description = "")]
     ingamesystem,
 
     [Display(Name = "Item Names", ShortName = "Common", Description = "")]
@@ -1451,16 +1451,16 @@ public enum CommonFmgName_DS2
     [Display(Name = "Map Name", ShortName = "Common", Description = "")]
     mapname,
 
-    [Display(Name = "NPC Menu", ShortName = "Common", Description = "")]
+    [Display(Name = "NPC Menu Text", ShortName = "Common", Description = "")]
     npcmenu,
 
-    [Display(Name = "Plural Select", ShortName = "Common", Description = "")]
+    [Display(Name = "Plural Select Text", ShortName = "Common", Description = "")]
     pluralselect,
 
-    [Display(Name = "Prologue", ShortName = "Common", Description = "")]
+    [Display(Name = "Prologue Text", ShortName = "Common", Description = "")]
     prologue,
 
-    [Display(Name = "Shop", ShortName = "Common", Description = "")]
+    [Display(Name = "Shop Text", ShortName = "Common", Description = "")]
     shop,
 
     [Display(Name = "Item Summaries", ShortName = "Common", Description = "")]
@@ -1469,16 +1469,16 @@ public enum CommonFmgName_DS2
     [Display(Name = "Staff Roll", ShortName = "Common", Description = "")]
     staffroll,
 
-    [Display(Name = "Title Flow", ShortName = "Common", Description = "")]
+    [Display(Name = "Title Flow Text", ShortName = "Common", Description = "")]
     titleflow,
 
-    [Display(Name = "Title Menu", ShortName = "Common", Description = "")]
+    [Display(Name = "Title Menu Text", ShortName = "Common", Description = "")]
     titlemenu,
 
-    [Display(Name = "Weapon Type", ShortName = "Common", Description = "")]
+    [Display(Name = "Weapon Types", ShortName = "Common", Description = "")]
     weapontype,
 
-    [Display(Name = "Messages: PC", ShortName = "Common", Description = "")]
+    [Display(Name = "Messages", ShortName = "Common", Description = "")]
     win32onlymessage,
 }
 
@@ -1621,7 +1621,7 @@ public enum ContainerSubCategory
 {
     [Display(Name = "None")] None, // Used by all non-DS2 files
     [Display(Name = "Common")] common,
-    [Display(Name = "Blood Message")] bloodmes,
+    [Display(Name = "Blood Messages")] bloodmes,
     [Display(Name = "Talk")] talk,
 }
 
@@ -1636,13 +1636,13 @@ public enum Item_MsgBndID_NR
     [Display(Name = "Weapons", ShortName = "Title", Description = "")]
     Title_Weapons = 11,
 
-    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    [Display(Name = "Armors", ShortName = "Title", Description = "")]
     Title_Armor = 12,
 
     [Display(Name = "Accessories", ShortName = "Title", Description = "")]
     Title_Accessories = 13,
 
-    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    [Display(Name = "Spells", ShortName = "Title", Description = "")]
     Title_Magic = 14,
 
     [Display(Name = "Characters", ShortName = "Common", Description = "")]
@@ -1657,13 +1657,13 @@ public enum Item_MsgBndID_NR
     [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
     Summary_Weapons = 21,
 
-    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    [Display(Name = "Armors", ShortName = "Summary", Description = "")]
     Summary_Armor = 22,
 
     [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
     Summary_Accessories = 23,
 
-    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    [Display(Name = "Spells", ShortName = "Summary", Description = "")]
     Summary_Magic = 28,
 
     [Display(Name = "Goods", ShortName = "Description", Description = "")]
@@ -1672,13 +1672,13 @@ public enum Item_MsgBndID_NR
     [Display(Name = "Weapons", ShortName = "Description", Description = "")]
     Description_Weapons = 25,
 
-    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    [Display(Name = "Armors", ShortName = "Description", Description = "")]
     Description_Armor = 26,
 
     [Display(Name = "Accessories", ShortName = "Description", Description = "")]
     Description_Accessories = 27,
 
-    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    [Display(Name = "Spells", ShortName = "Description", Description = "")]
     Description_Magic = 29,
 
     [Display(Name = "Goods Dialog", ShortName = "Common", Description = "")]
@@ -1690,35 +1690,115 @@ public enum Item_MsgBndID_NR
     [Display(Name = "Skills", ShortName = "Description", Description = "")]
     Description_Skill = 43,
 
-    [Display(Name = "Attach Effects", ShortName = "Title", Description = "")]
+    [Display(Name = "Attached Effects", ShortName = "Title", Description = "")]
     Title_AttachEffect = 44,
 
     [Display(Name = "Skills", ShortName = "Effect", Description = "")]
-    Effect_Skill = 45,
+    Summary_Skill = 45,
 
     [Display(Name = "Goods", ShortName = "Effect", Description = "")]
     Effect_Goods = 46,
 
-    [Display(Name = "Antique", ShortName = "Title", Description = "")]
+    [Display(Name = "Relics", ShortName = "Title", Description = "")]
     Title_Antique = 47,
 
-    [Display(Name = "Antique", ShortName = "Summary", Description = "")]
+    [Display(Name = "Relics", ShortName = "Summary", Description = "")]
     Summary_Antique = 48,
 
-    [Display(Name = "Antique", ShortName = "Description", Description = "")]
+    [Display(Name = "Relics", ShortName = "Description", Description = "")]
     Description_Antique = 49,
 
-    [Display(Name = "Attach Effects", ShortName = "Summary", Description = "")]
+    [Display(Name = "Attached Effects", ShortName = "Summary", Description = "")]
     Summary_AttachEffect = 50,
 
-    [Display(Name = "Permanent Buff", ShortName = "Title", Description = "")]
+    [Display(Name = "Permanent Buffs", ShortName = "Title", Description = "")]
     Title_PermanentBuff = 51,
 
-    [Display(Name = "Permanent Buff", ShortName = "Summary", Description = "")]
+    [Display(Name = "Permanent Buffs", ShortName = "Summary", Description = "")]
     Summary_PermanentBuff = 52,
 
-    [Display(Name = "Permanent Buff", ShortName = "Descriptio", Description = "")]
+    [Display(Name = "Permanent Buffs", ShortName = "Descriptio", Description = "")]
     Description_PermanentBuff = 53,
+
+    // DLC1
+    [Display(Name = "Accessories", ShortName = "Title", Description = "DLC 1")]
+    Title_Accessories_DLC1 = 400,
+
+    [Display(Name = "Accessories", ShortName = "Summary", Description = "DLC 1")]
+    Summary_Accessories_DLC1 = 401,
+
+    [Display(Name = "Accessories", ShortName = "Description", Description = "DLC 1")]
+    Description_Accessories_DLC1 = 402,
+
+    [Display(Name = "Relics", ShortName = "Title", Description = "DLC 1")]
+    Title_Antique_DLC1 = 403,
+
+    [Display(Name = "Relics", ShortName = "Summary", Description = "DLC 1")]
+    Summary_Antique_DLC1 = 404,
+
+    [Display(Name = "Relics", ShortName = "Description", Description = "DLC 1")]
+    Description_Antique_DLC1 = 405,
+
+    [Display(Name = "Skills", ShortName = "Title", Description = "DLC 1")]
+    Title_Skill_DLC1 = 406,
+
+    [Display(Name = "Skills", ShortName = "Description", Description = "DLC 1")]
+    Summary_Skill_DLC1 = 407,
+
+    [Display(Name = "Skills", ShortName = "Description", Description = "DLC 1")]
+    Description_Skill_DLC1 = 408,
+
+    [Display(Name = "Attached Effects", ShortName = "Title", Description = "DLC 1")]
+    Title_AttachEffect_DLC1 = 409,
+
+    [Display(Name = "Attached Effects", ShortName = "Summary", Description = "DLC 1")]
+    Summary_AttachEffect_DLC1 = 410,
+
+    [Display(Name = "Goods", ShortName = "Title", Description = "DLC 1")]
+    Title_Goods_DLC1 = 411,
+
+    [Display(Name = "Goods", ShortName = "Summary", Description = "DLC 1")]
+    Summary_Goods_DLC1 = 412,
+
+    [Display(Name = "Goods", ShortName = "Effect", Description = "DLC 1")]
+    Effect_Goods_DLC1 = 413,
+
+    [Display(Name = "Goods", ShortName = "Description", Description = "DLC 1")]
+    Description_Goods_DLC1 = 414,
+
+    [Display(Name = "Spells", ShortName = "Title", Description = "DLC 1")]
+    Title_Magic_DLC1 = 415,
+
+    [Display(Name = "Spells", ShortName = "Summary", Description = "DLC 1")]
+    Summary_Magic_DLC1 = 416,
+
+    [Display(Name = "Spells", ShortName = "Description", Description = "DLC 1")]
+    Description_Magic_DLC1 = 417,
+
+    [Display(Name = "Characters", ShortName = "Common", Description = "DLC 1")]
+    Title_Characters_DLC1 = 418,
+
+    [Display(Name = "Permanent Buffs", ShortName = "Title", Description = "DLC 1")]
+    Title_PermanentBuff_DLC1 = 419,
+
+    [Display(Name = "Permanent Buffs", ShortName = "Summary", Description = "DLC 1")]
+    Summary_PermanentBuff_DLC1 = 420,
+
+    [Display(Name = "Permanent Buffs", ShortName = "Descriptio", Description = "DLC 1")]
+    Description_PermanentBuff_DLC1 = 421,
+
+    [Display(Name = "Locations", ShortName = "Common", Description = "DLC 1")]
+    Title_Locations_DLC1 = 422,
+
+    [Display(Name = "Weapons", ShortName = "Title", Description = "DLC 1")]
+    Title_Weapons_DLC1 = 426,
+
+    [Display(Name = "Weapons", ShortName = "Summary", Description = "DLC 1")]
+    Summary_Weapons_DLC1 = 427,
+
+    [Display(Name = "Weapons", ShortName = "Description", Description = "DLC 1")]
+    Description_Weapons_DLC1 = 428,
+
 }
 
 public enum Menu_MsgBndID_NR
@@ -1732,7 +1812,7 @@ public enum Menu_MsgBndID_NR
     [Display(Name = "Movie Subtitles", ShortName = "Common", Description = "")]
     Movie_Subtitles = 3,
 
-    [Display(Name = "Talk Messages FemalePC", ShortName = "Common", Description = "")]
+    [Display(Name = "Talk Messages (Female)", ShortName = "Common", Description = "")]
     Talk_Messages_FemalePC = 4,
 
     [Display(Name = "Network Messages", ShortName = "Common", Description = "")]
@@ -1756,22 +1836,22 @@ public enum Menu_MsgBndID_NR
     [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
     Modern_Menu_Key_Guide = 202,
 
-    [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
+    [Display(Name = "System Messages", ShortName = "Common", Description = "")]
     Modern_Menu_System_Message = 203,
 
     [Display(Name = "Dialogue", ShortName = "Common", Description = "")]
     Modern_Menu_Dialogue = 204,
 
-    [Display(Name = "Loading Screen", ShortName = "Title", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Title", Description = "")]
     Loading_Title = 205,
 
-    [Display(Name = "Loading Screen", ShortName = "Description", Description = "")]
+    [Display(Name = "Loading Text", ShortName = "Description", Description = "")]
     Loading_Text = 206,
 
-    [Display(Name = "Tutorial", ShortName = "Title", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "")]
     Tutorial_Title = 207,
 
-    [Display(Name = "Tutorial", ShortName = "Description", Description = "")]
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "")]
     Tutorial_Text = 208,
 
     [Display(Name = "Text Embed Image Name", ShortName = "Common", Description = "")]
@@ -1780,23 +1860,75 @@ public enum Menu_MsgBndID_NR
     [Display(Name = "Terms of Service", ShortName = "Common", Description = "")]
     Terms_of_Service = 210,
 
-    [Display(Name = "Personal Scenario Objective", ShortName = "Common", Description = "")]
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "")]
     Personal_Scenario_Objective = 211,
 
-    [Display(Name = "Personal Scenario Title", ShortName = "Common", Description = "")]
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "")]
     Personal_Scenario_Title = 212,
 
-    [Display(Name = "Personal Scenario Body", ShortName = "Common", Description = "")]
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "")]
     Personal_Scenario_Body = 213,
 
-    [Display(Name = "SpEffect Name", ShortName = "Title", Description = "")]
+    [Display(Name = "SpEffect", ShortName = "Title", Description = "")]
     SpEffect_Name = 214,
 
-    [Display(Name = "SpEffect Info", ShortName = "Summary", Description = "")]
+    [Display(Name = "SpEffect", ShortName = "Summary", Description = "")]
     SpEffect_Info = 215,
 
-    [Display(Name = "SpEffect Caption", ShortName = "Description", Description = "")]
-    SpEffect_Caption = 216
+    [Display(Name = "SpEffect", ShortName = "Description", Description = "")]
+    SpEffect_Caption = 216,
+
+    // DLC1
+    [Display(Name = "Action Button Text", ShortName = "Common", Description = "DLC 1")]
+    Action_Button_Text_DLC1 = 500,
+
+    [Display(Name = "Dialogue", ShortName = "Common", Description = "DLC 1")]
+    Modern_Menu_Dialogue_DLC1 = 501,
+
+    [Display(Name = "Key Guide", ShortName = "Common", Description = "DLC 1")]
+    Modern_Menu_Key_Guide_DLC1 = 502,
+
+    [Display(Name = "Line Help", ShortName = "Common", Description = "DLC 1")]
+    Modern_Menu_Line_Help_DLC1 = 503,
+
+    [Display(Name = "Menu Text", ShortName = "Common", Description = "DLC 1")]
+    Modern_Menu_Text_DLC1 = 504,
+
+    [Display(Name = "System Messages", ShortName = "Common", Description = "DLC 1")]
+    Modern_Menu_System_Message_DLC1 = 505,
+
+    [Display(Name = "Event Text for Map", ShortName = "Common", Description = "DLC 1")]
+    Event_Text_for_Map_DLC1 = 506,
+
+    [Display(Name = "Event Text for Talk", ShortName = "Common", Description = "DLC 1")]
+    Event_Text_for_Talk_DLC1 = 507,
+
+    [Display(Name = "Network Messages", ShortName = "Common", Description = "DLC 1")]
+    Network_Messages_DLC1 = 508,
+
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "DLC 1")]
+    Personal_Scenario_Objective_DLC1 = 509,
+
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "DLC 1")]
+    Personal_Scenario_Title_DLC1 = 510,
+
+    [Display(Name = "Personal Scenario", ShortName = "Common", Description = "DLC 1")]
+    Personal_Scenario_Body_DLC1 = 511,
+
+    [Display(Name = "SpEffect", ShortName = "Title", Description = "DLC 1")]
+    SpEffect_Name_DLC1 = 512,
+
+    [Display(Name = "SpEffect", ShortName = "Summary", Description = "DLC 1")]
+    SpEffect_Info_DLC1 = 513,
+
+    [Display(Name = "Talk Messages", ShortName = "Common", Description = "DLC 1")]
+    Talk_Messages_DLC1 = 515,
+
+    [Display(Name = "Tutorial Text", ShortName = "Title", Description = "DLC 1")]
+    Tutorial_Title_DLC1 = 516,
+
+    [Display(Name = "Tutorial Text", ShortName = "Description", Description = "DLC 1")]
+    Tutorial_Text_DLC1 = 517,
 }
 
 public enum NgWord_MsgBndID_NR

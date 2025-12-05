@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -44,6 +45,14 @@ public class TextFmgEntryView
             Selection.SwitchWindowContext(TextEditorContext.FmgEntry);
 
             Filters.DisplayFmgEntryFilterSearch();
+
+            ImGui.SameLine();
+
+            if(ImGui.Button($"{Icons.Eye}##fmgFocusSelection", DPI.IconButtonSize))
+            {
+                Selection.FocusFmgEntrySelection = true;
+            }
+            UIHelper.Tooltip($"Focus the currently selected entry.\nShortcut: {KeyBindings.Current.TEXT_FocusSelectedEntry.HintText}");
 
             ImGui.BeginChild("FmgEntriesList");
             Selection.SwitchWindowContext(TextEditorContext.FmgEntry);

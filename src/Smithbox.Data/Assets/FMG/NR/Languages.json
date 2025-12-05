@@ -1,0 +1,82 @@
+[
+  {
+    "Language": "Common",
+    "DisplayName": "Common",
+    "Path": "common"
+  },
+  {
+    "Language": "English",
+    "DisplayName": "English",
+    "Path": "engus"
+  },
+  {
+    "Language": "French",
+    "DisplayName": "French",
+    "Path": "deude"
+  },
+  {
+    "Language": "German",
+    "DisplayName": "German",
+    "Path": "deude"
+  },
+  {
+    "Language": "Italian",
+    "DisplayName": "Italian",
+    "Path": "itait"
+  },
+  {
+    "Language": "Japanese",
+    "DisplayName": "Japanese",
+    "Path": "jpnjp"
+  },
+  {
+    "Language": "Korean",
+    "DisplayName": "Korean",
+    "Path": "korkr"
+  },
+  {
+    "Language": "Polish",
+    "DisplayName": "Polish",
+    "Path": "polpl"
+  },
+  {
+    "Language": "Russian",
+    "DisplayName": "Russian",
+    "Path": "rusru"
+  },
+  {
+    "Language": "Spanish",
+    "DisplayName": "Spanish",
+    "Path": "spaes"
+  },
+  {
+    "Language": "SpanishLatin",
+    "DisplayName": "Spanish - Latin America",
+    "Path": "spaar"
+  },
+  {
+    "Language": "TraditionalChinese",
+    "DisplayName": "Traditional Chinese",
+    "Path": "zhotw"
+  },
+  {
+    "Language": "SimplifiedChinese",
+    "DisplayName": "Simplified Chinese",
+    "Path": "zhocn"
+  },
+  {
+    "Language": "Thai",
+    "DisplayName": "Thai",
+    "Path": "thath"
+  },
+  {
+    "Language": "Arabic",
+    "DisplayName": "Arabic",
+    "Path": "araae"
+  },
+  {
+    "Language": "PortugueseLatin",
+    "DisplayName": "Portuguese - Latin America",
+    "Path": "porbr"
+  }
+]

@@ -1195,6 +1195,7 @@ public class CFG
     public string TextEditor_LanguageSync_Prefix = "TRANSLATE: ";
 
     public bool TextEditor_EnableAutomaticDifferenceCheck = false;
+    public bool TextEditor_EnableObsoleteContainerLoad = false;
 
     // OLD
     public string FMG_SearchAndReplace_SearchText = "";

@@ -665,9 +665,9 @@ public class TextEntryGroupManager
 
                 groupings.Add(new EntryGroupAssociation(
                     Item_MsgBndID_NR.Title_Skill,
-                    null,
+                    Item_MsgBndID_NR.Summary_Skill,
                     Item_MsgBndID_NR.Description_Skill,
-                    Item_MsgBndID_NR.Effect_Skill));
+                    null));
 
                 groupings.Add(new EntryGroupAssociation(
                     Item_MsgBndID_NR.Title_Antique,
@@ -694,6 +694,12 @@ public class TextEntryGroupManager
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_NR.Personal_Scenario_Title,
+                    null,
+                    Menu_MsgBndID_NR.Personal_Scenario_Body,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
                     Menu_MsgBndID_NR.Tutorial_Title,
                     null,
                     Menu_MsgBndID_NR.Tutorial_Text,
@@ -702,6 +708,73 @@ public class TextEntryGroupManager
                 groupings.Add(new EntryGroupAssociation(
                     Menu_MsgBndID_NR.SpEffect_Name,
                     Menu_MsgBndID_NR.SpEffect_Info,
+                    Menu_MsgBndID_NR.SpEffect_Caption,
+                    null));
+
+                // DLC1
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Goods_DLC1,
+                    Item_MsgBndID_NR.Summary_Goods_DLC1,
+                    Item_MsgBndID_NR.Description_Goods_DLC1,
+                    Item_MsgBndID_NR.Effect_Goods_DLC1));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Weapons_DLC1,
+                    Item_MsgBndID_NR.Summary_Weapons_DLC1,
+                    Item_MsgBndID_NR.Description_Weapons_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Accessories_DLC1,
+                    Item_MsgBndID_NR.Summary_Accessories_DLC1,
+                    Item_MsgBndID_NR.Description_Accessories_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Magic_DLC1,
+                    Item_MsgBndID_NR.Summary_Magic_DLC1,
+                    Item_MsgBndID_NR.Description_Magic_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Skill_DLC1,
+                    Item_MsgBndID_NR.Summary_Skill_DLC1,
+                    Item_MsgBndID_NR.Description_Skill_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_Antique_DLC1,
+                    Item_MsgBndID_NR.Summary_Antique_DLC1,
+                    Item_MsgBndID_NR.Description_Antique_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_PermanentBuff_DLC1,
+                    Item_MsgBndID_NR.Summary_PermanentBuff_DLC1,
+                    Item_MsgBndID_NR.Description_PermanentBuff_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Item_MsgBndID_NR.Title_AttachEffect_DLC1,
+                    Item_MsgBndID_NR.Summary_AttachEffect_DLC1,
+                    null,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_NR.Personal_Scenario_Title_DLC1,
+                    null,
+                    Menu_MsgBndID_NR.Personal_Scenario_Body_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_NR.Tutorial_Title_DLC1,
+                    null,
+                    Menu_MsgBndID_NR.Tutorial_Text_DLC1,
+                    null));
+
+                groupings.Add(new EntryGroupAssociation(
+                    Menu_MsgBndID_NR.SpEffect_Name_DLC1,
+                    Menu_MsgBndID_NR.SpEffect_Info_DLC1,
                     Menu_MsgBndID_NR.SpEffect_Caption,
                     null));
                 break;

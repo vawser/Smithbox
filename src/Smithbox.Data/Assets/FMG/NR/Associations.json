@@ -1,0 +1,554 @@
+[
+  {
+    "Name": "Vanilla - Goods",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "GoodsName.fmg",
+        "Type": "Title",
+        "ID": 10,
+        "Priority": 0
+      },
+      {
+        "Filename": "GoodsInfo.fmg",
+        "Type": "Summary",
+        "ID": 20,
+        "Priority": 1
+      },
+      {
+        "Filename": "GoodsCaption.fmg",
+        "Type": "Description",
+        "ID": 24,
+        "Priority": 2
+      },
+      {
+        "Filename": "GoodsInfo2.fmg",
+        "Type": "Effect",
+        "ID": 46,
+        "Priority": 3
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Goods",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "GoodsName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 411,
+        "Priority": 0
+      },
+      {
+        "Filename": "GoodsInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 412,
+        "Priority": 1
+      },
+      {
+        "Filename": "GoodsCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 414,
+        "Priority": 2
+      },
+      {
+        "Filename": "GoodsInfo2_dlc01.fmg",
+        "Type": "Effect",
+        "ID": 413,
+        "Priority": 3
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Weapons",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "WeaponName.fmg",
+        "Type": "Title",
+        "ID": 11,
+        "Priority": 0
+      },
+      {
+        "Filename": "WeaponInfo.fmg",
+        "Type": "Summary",
+        "ID": 21,
+        "Priority": 1
+      },
+      {
+        "Filename": "WeaponCaption.fmg",
+        "Type": "Description",
+        "ID": 25,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Weapons",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "WeaponName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 426,
+        "Priority": 0
+      },
+      {
+        "Filename": "WeaponInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 427,
+        "Priority": 1
+      },
+      {
+        "Filename": "WeaponCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 428,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Armors",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "ProtectorName.fmg",
+        "Type": "Title",
+        "ID": 12,
+        "Priority": 0
+      },
+      {
+        "Filename": "ProtectorInfo.fmg",
+        "Type": "Summary",
+        "ID": 22,
+        "Priority": 1
+      },
+      {
+        "Filename": "ProtectorCaption.fmg",
+        "Type": "Description",
+        "ID": 26,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Accessories",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "AccessoryName.fmg",
+        "Type": "Title",
+        "ID": 13,
+        "Priority": 0
+      },
+      {
+        "Filename": "AccessoryInfo.fmg",
+        "Type": "Summary",
+        "ID": 23,
+        "Priority": 1
+      },
+      {
+        "Filename": "AccessoryCaption.fmg",
+        "Type": "Description",
+        "ID": 27,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Accessories",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "AccessoryName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 400,
+        "Priority": 0
+      },
+      {
+        "Filename": "AccessoryInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 401,
+        "Priority": 1
+      },
+      {
+        "Filename": "AccessoryCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 402,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Spells",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "MagicName.fmg",
+        "Type": "Title",
+        "ID": 14,
+        "Priority": 0
+      },
+      {
+        "Filename": "MagicInfo.fmg",
+        "Type": "Summary",
+        "ID": 28,
+        "Priority": 1
+      },
+      {
+        "Filename": "MagicCaption.fmg",
+        "Type": "Description",
+        "ID": 29,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Spells",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "MagicName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 415,
+        "Priority": 0
+      },
+      {
+        "Filename": "MagicInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 416,
+        "Priority": 1
+      },
+      {
+        "Filename": "MagicCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 417,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Skills",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "ArtsName.fmg",
+        "Type": "Title",
+        "ID": 42,
+        "Priority": 0
+      },
+      {
+        "Filename": "ArtsInfo.fmg",
+        "Type": "Summary",
+        "ID": 45,
+        "Priority": 1
+      },
+      {
+        "Filename": "ArtsCaption.fmg",
+        "Type": "Description",
+        "ID": 43,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Skills",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "ArtsName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 406,
+        "Priority": 0
+      },
+      {
+        "Filename": "ArtsInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 407,
+        "Priority": 1
+      },
+      {
+        "Filename": "ArtsCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 408,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Attached Effects",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "AttachEffectName.fmg",
+        "Type": "Title",
+        "ID": 44,
+        "Priority": 0
+      },
+      {
+        "Filename": "AttachEffectInfo.fmg",
+        "Type": "Summary",
+        "ID": 50,
+        "Priority": 1
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Attached Effects",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "AttachEffectName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 400,
+        "Priority": 0
+      },
+      {
+        "Filename": "AttachEffectInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 410,
+        "Priority": 1
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Permanent Buffs",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "PermanentBuffName.fmg",
+        "Type": "Title",
+        "ID": 51,
+        "Priority": 0
+      },
+      {
+        "Filename": "PermanentBuffInfo.fmg",
+        "Type": "Summary",
+        "ID": 52,
+        "Priority": 1
+      },
+      {
+        "Filename": "PermanentBuffCaption.fmg",
+        "Type": "Description",
+        "ID": 53,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Permanent Buffs",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "PermanentBuffName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 419,
+        "Priority": 0
+      },
+      {
+        "Filename": "PermanentBuffInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 420,
+        "Priority": 1
+      },
+      {
+        "Filename": "PermanentBuffCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 421,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Relics",
+    "Filename": "item",
+    "Associations": [
+      {
+        "Filename": "AntiqueName.fmg",
+        "Type": "Title",
+        "ID": 47,
+        "Priority": 0
+      },
+      {
+        "Filename": "AntiqueInfo.fmg",
+        "Type": "Summary",
+        "ID": 48,
+        "Priority": 1
+      },
+      {
+        "Filename": "AntiqueCaption.fmg",
+        "Type": "Description",
+        "ID": 49,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Relics",
+    "Filename": "item_dlc01",
+    "Associations": [
+      {
+        "Filename": "AntiqueName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 403,
+        "Priority": 0
+      },
+      {
+        "Filename": "AntiqueInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 404,
+        "Priority": 1
+      },
+      {
+        "Filename": "AntiqueCaption_dlc01.fmg",
+        "Type": "Description",
+        "ID": 405,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Loading Text",
+    "Filename": "menu",
+    "Associations": [
+      {
+        "Filename": "LoadingTitle.fmg",
+        "Type": "Title",
+        "ID": 205,
+        "Priority": 0
+      },
+      {
+        "Filename": "LoadingText.fmg",
+        "Type": "Description",
+        "ID": 206,
+        "Priority": 1
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Tutorial Text",
+    "Filename": "menu",
+    "Associations": [
+      {
+        "Filename": "TutorialTitle.fmg",
+        "Type": "Title",
+        "ID": 207,
+        "Priority": 0
+      },
+      {
+        "Filename": "TutorialBody.fmg",
+        "Type": "Description",
+        "ID": 208,
+        "Priority": 1
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Tutorial Text",
+    "Filename": "menu_dlc01",
+    "Associations": [
+      {
+        "Filename": "TutorialTitle_dlc01.fmg",
+        "Type": "Title",
+        "ID": 516,
+        "Priority": 0
+      },
+      {
+        "Filename": "TutorialBody_dlc01.fmg",
+        "Type": "Description",
+        "ID": 517,
+        "Priority": 1
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - Personal Scenarios",
+    "Filename": "menu",
+    "Associations": [
+      {
+        "Filename": "PersonalScenarioTitle.fmg",
+        "Type": "Title",
+        "ID": 212,
+        "Priority": 0
+      },
+      {
+        "Filename": "PersonalScenarioObjective.fmg",
+        "Type": "Summary",
+        "ID": 211,
+        "Priority": 1
+      },
+      {
+        "Filename": "PersonalScenarioBody.fmg",
+        "Type": "Description",
+        "ID": 213,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - Personal Scenarios",
+    "Filename": "menu_dlc01",
+    "Associations": [
+      {
+        "Filename": "PersonalScenarioTitle_dlc01.fmg",
+        "Type": "Title",
+        "ID": 510,
+        "Priority": 0
+      },
+      {
+        "Filename": "PersonalScenarioObjective_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 509,
+        "Priority": 1
+      },
+      {
+        "Filename": "PersonalScenarioBody_dlc01.fmg",
+        "Type": "Description",
+        "ID": 511,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "Vanilla - SpEffects",
+    "Filename": "menu",
+    "Associations": [
+      {
+        "Filename": "SpEffectName.fmg",
+        "Type": "Title",
+        "ID": 214,
+        "Priority": 0
+      },
+      {
+        "Filename": "SpEffectInfo.fmg",
+        "Type": "Summary",
+        "ID": 215,
+        "Priority": 1
+      },
+      {
+        "Filename": "SpEffectCaption.fmg",
+        "Type": "Description",
+        "ID": 216,
+        "Priority": 2
+      }
+    ]
+  },
+  {
+    "Name": "DLC1 - SpEffects",
+    "Filename": "menu_dlc01",
+    "Associations": [
+      {
+        "Filename": "SpEffectName_dlc01.fmg",
+        "Type": "Title",
+        "ID": 512,
+        "Priority": 0
+      },
+      {
+        "Filename": "SpEffectInfo_dlc01.fmg",
+        "Type": "Summary",
+        "ID": 513,
+        "Priority": 1
+      }
+    ]
+  }
+]

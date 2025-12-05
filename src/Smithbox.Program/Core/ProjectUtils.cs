@@ -402,6 +402,16 @@ public class ProjectUtils
         return true;
     }
 
+    public static bool SupportsFmgEditor(ProjectType curType)
+    {
+        if (curType is ProjectType.NR)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public static bool SupportsParamEditor(ProjectType curType)
     {
         return true;

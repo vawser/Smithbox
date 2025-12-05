@@ -188,6 +188,16 @@ public class TextFilters
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
         UIHelper.WideTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 
+        // Focus after clearing
+        if (ImGui.IsItemEdited())
+        {
+            if (FmgEntryFilterInput == "")
+            {
+                Editor.Selection.FocusFmgEntrySelection = true;
+            }
+        }
+
+        // Focus after clicking off
         if (ImGui.IsItemDeactivated())
         {
             Editor.Selection.FocusFmgEntrySelection = true;

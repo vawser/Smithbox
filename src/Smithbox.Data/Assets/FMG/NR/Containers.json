@@ -1,0 +1,949 @@
+[
+  {
+    "Filename": "item",
+    "DisplayName": "Item: Vanilla",
+    "Obsolete": true,
+    "Files": [
+      {
+        "Filename": "AccessoryCaption.fmg",
+        "ID": 27,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Descriptions"
+      },
+      {
+        "Filename": "AccessoryInfo.fmg",
+        "ID": 23,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Summaries"
+      },
+      {
+        "Filename": "AccessoryName.fmg",
+        "ID": 13,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Titles"
+      },
+      {
+        "Filename": "AntiqueCaption.fmg",
+        "ID": 49,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Descriptions"
+      },
+      {
+        "Filename": "AntiqueInfo.fmg",
+        "ID": 48,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Summaries"
+      },
+      {
+        "Filename": "AntiqueName.fmg",
+        "ID": 47,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Titles"
+      },
+      {
+        "Filename": "ArtsCaption.fmg",
+        "ID": 43,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Description"
+      },
+      {
+        "Filename": "ArtsInfo.fmg",
+        "ID": 45,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Summaries"
+      },
+      {
+        "Filename": "ArtsName.fmg",
+        "ID": 42,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Titles"
+      },
+      {
+        "Filename": "AttachEffectInfo.fmg",
+        "ID": 50,
+        "SimpleName": "Attached Effects",
+        "FullName": "Attached Effects: Summaries"
+      },
+      {
+        "Filename": "AttachEffectName.fmg",
+        "ID": 44,
+        "SimpleName": "Attached Effects",
+        "FullName": "Attached Effects: Titles"
+      },
+      {
+        "Filename": "GoodsCaption.fmg",
+        "ID": 24,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Descriptions"
+      },
+      {
+        "Filename": "GoodsDialog.fmg",
+        "ID": 41,
+        "SimpleName": "Item Dialogs",
+        "FullName": "Item Dialogs"
+      },
+      {
+        "Filename": "GoodsInfo.fmg",
+        "ID": 20,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Summaries"
+      },
+      {
+        "Filename": "GoodsInfo2.fmg",
+        "ID": 46,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Effect Summaries"
+      },
+      {
+        "Filename": "GoodsName.fmg",
+        "ID": 10,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Titles"
+      },
+      {
+        "Filename": "MagicCaption.fmg",
+        "ID": 29,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Descriptions"
+      },
+      {
+        "Filename": "MagicInfo.fmg",
+        "ID": 28,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Summaries"
+      },
+      {
+        "Filename": "MagicName.fmg",
+        "ID": 14,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Titles"
+      },
+      {
+        "Filename": "NpcName.fmg",
+        "ID": 18,
+        "SimpleName": "Character Names",
+        "FullName": "Character Names"
+      },
+      {
+        "Filename": "PermanentBuffCaption.fmg",
+        "ID": 53,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Descriptions"
+      },
+      {
+        "Filename": "PermanentBuffInfo.fmg",
+        "ID": 52,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Summaries"
+      },
+      {
+        "Filename": "PermanentBuffName.fmg",
+        "ID": 51,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Titles"
+      },
+      {
+        "Filename": "PlaceName.fmg",
+        "ID": 19,
+        "SimpleName": "Location Names",
+        "FullName": "Location Names"
+      },
+      {
+        "Filename": "ProtectorCaption.fmg",
+        "ID": 26,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Descriptions"
+      },
+      {
+        "Filename": "ProtectorInfo.fmg",
+        "ID": 22,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Summaries"
+      },
+      {
+        "Filename": "ProtectorName.fmg",
+        "ID": 12,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Titles"
+      },
+      {
+        "Filename": "WeaponCaption.fmg",
+        "ID": 25,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Descriptions"
+      },
+      {
+        "Filename": "WeaponInfo.fmg",
+        "ID": 21,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Summaries"
+      },
+      {
+        "Filename": "WeaponName.fmg",
+        "ID": 11,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Titles"
+      }
+    ]
+  },
+  {
+    "Filename": "menu",
+    "DisplayName": "Menu: Vanilla",
+    "Obsolete": true,
+    "Files": [
+      {
+        "Filename": "TalkMsg.fmg",
+        "ID": 1,
+        "SimpleName": "Talk Messages",
+        "FullName": "Talk Messages"
+      },
+      {
+        "Filename": "BloodMsg.fmg",
+        "ID": 2,
+        "SimpleName": "Blood Messages",
+        "FullName": "Blood Messages"
+      },
+      {
+        "Filename": "MovieSubtitle.fmg",
+        "ID": 3,
+        "SimpleName": "Movie Subtitles",
+        "FullName": "Movie Subtitles"
+      },
+      {
+        "Filename": "NetworkMessage.fmg",
+        "ID": 31,
+        "SimpleName": "Network Messages",
+        "FullName": "Network Messages"
+      },
+      {
+        "Filename": "ActionButtonText.fmg",
+        "ID": 32,
+        "SimpleName": "Action Button Text",
+        "FullName": "Action Button Text"
+      },
+      {
+        "Filename": "EventTextForTalk.fmg",
+        "ID": 33,
+        "SimpleName": "Event Text for Talk",
+        "FullName": "Event Text for Talk"
+      },
+      {
+        "Filename": "EventTextForMap.fmg",
+        "ID": 34,
+        "SimpleName": "Event Text for Map",
+        "FullName": "Event Text for Map"
+      },
+      {
+        "Filename": "CL_MenuText.fmg",
+        "ID": 200,
+        "SimpleName": "Menu Text",
+        "FullName": "Menu Text"
+      },
+      {
+        "Filename": "CL_LineHelp.fmg",
+        "ID": 201,
+        "SimpleName": "Line Help",
+        "FullName": "Line Help"
+      },
+      {
+        "Filename": "CL_KeyGuide.fmg",
+        "ID": 202,
+        "SimpleName": "Key Guide",
+        "FullName": "Key Guide"
+      },
+      {
+        "Filename": "CL_System_Message_win64.fmg",
+        "ID": 203,
+        "SimpleName": "System Messages",
+        "FullName": "System Messages"
+      },
+      {
+        "Filename": "CL_Dialogues.fmg",
+        "ID": 204,
+        "SimpleName": "Dialogues",
+        "FullName": "Dialogues"
+      },
+      {
+        "Filename": "LoadingTitle.fmg",
+        "ID": 205,
+        "SimpleName": "Loading Text",
+        "FullName": "Loading Text: Titles"
+      },
+      {
+        "Filename": "LoadingText.fmg",
+        "ID": 206,
+        "SimpleName": "Loading Text",
+        "FullName": "Loading Text: Descriptions"
+      },
+      {
+        "Filename": "TutorialTitle.fmg",
+        "ID": 207,
+        "SimpleName": "Tutorial Text",
+        "FullName": "Tutorial Text: Titles"
+      },
+      {
+        "Filename": "TutorialBody.fmg",
+        "ID": 208,
+        "SimpleName": "Tutorial Text",
+        "FullName": "Tutorial Text: Descriptions"
+      },
+      {
+        "Filename": "TextEmbedImageName_win64.fmg",
+        "ID": 209,
+        "SimpleName": "Text Embed Image Names",
+        "FullName": "Text Embed Image Names"
+      },
+      {
+        "Filename": "ToS_win64.fmg",
+        "ID": 210,
+        "SimpleName": "Terms of Service",
+        "FullName": "Terms of Service"
+      },
+      {
+        "Filename": "PersonalScenarioObjective.fmg",
+        "ID": 211,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Objectives"
+      },
+      {
+        "Filename": "PersonalScenarioTitle.fmg",
+        "ID": 212,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Titles"
+      },
+      {
+        "Filename": "PersonalScenarioBody.fmg",
+        "ID": 213,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Descriptions"
+      },
+      {
+        "Filename": "SpEffectName.fmg",
+        "ID": 214,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Titles"
+      },
+      {
+        "Filename": "SpEffectInfo.fmg",
+        "ID": 215,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Summaries"
+      },
+      {
+        "Filename": "SpEffectCaption.fmg",
+        "ID": 216,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Descriptions"
+      }
+    ]
+  },
+  {
+    "Filename": "ngword",
+    "DisplayName": "NG Word",
+    "Obsolete": false,
+    "Files": [
+      {
+        "Filename": "CL_NGWord.fmg",
+        "ID": 1,
+        "SimpleName": "Blocked Words",
+        "FullName": "Blocked Words"
+      }
+    ]
+  },
+  {
+    "Filename": "item_dlc01",
+    "DisplayName": "Item: DLC 1",
+    "Obsolete": false,
+    "Files": [
+      {
+        "Filename": "AccessoryCaption.fmg",
+        "ID": 27,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Descriptions"
+      },
+      {
+        "Filename": "AccessoryInfo.fmg",
+        "ID": 23,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Summaries"
+      },
+      {
+        "Filename": "AccessoryName.fmg",
+        "ID": 13,
+        "SimpleName": "Accessories",
+        "FullName": "Accessories: Titles"
+      },
+      {
+        "Filename": "AntiqueCaption.fmg",
+        "ID": 49,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Descriptions"
+      },
+      {
+        "Filename": "AntiqueInfo.fmg",
+        "ID": 48,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Summaries"
+      },
+      {
+        "Filename": "AntiqueName.fmg",
+        "ID": 47,
+        "SimpleName": "Relics",
+        "FullName": "Relics: Titles"
+      },
+      {
+        "Filename": "ArtsCaption.fmg",
+        "ID": 43,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Description"
+      },
+      {
+        "Filename": "ArtsInfo.fmg",
+        "ID": 45,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Summaries"
+      },
+      {
+        "Filename": "ArtsName.fmg",
+        "ID": 42,
+        "SimpleName": "Skills",
+        "FullName": "Skills: Titles"
+      },
+      {
+        "Filename": "AttachEffectInfo.fmg",
+        "ID": 50,
+        "SimpleName": "Attached Effects",
+        "FullName": "Attached Effects: Summaries"
+      },
+      {
+        "Filename": "AttachEffectName.fmg",
+        "ID": 44,
+        "SimpleName": "Attached Effects",
+        "FullName": "Attached Effects: Titles"
+      },
+      {
+        "Filename": "GoodsCaption.fmg",
+        "ID": 24,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Descriptions"
+      },
+      {
+        "Filename": "GoodsDialog.fmg",
+        "ID": 41,
+        "SimpleName": "Item Dialogs",
+        "FullName": "Item Dialogs"
+      },
+      {
+        "Filename": "GoodsInfo.fmg",
+        "ID": 20,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Summaries"
+      },
+      {
+        "Filename": "GoodsInfo2.fmg",
+        "ID": 46,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Effect Summaries"
+      },
+      {
+        "Filename": "GoodsName.fmg",
+        "ID": 10,
+        "SimpleName": "Goods",
+        "FullName": "Goods: Titles"
+      },
+      {
+        "Filename": "MagicCaption.fmg",
+        "ID": 29,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Descriptions"
+      },
+      {
+        "Filename": "MagicInfo.fmg",
+        "ID": 28,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Summaries"
+      },
+      {
+        "Filename": "MagicName.fmg",
+        "ID": 14,
+        "SimpleName": "Spells",
+        "FullName": "Spells: Titles"
+      },
+      {
+        "Filename": "NpcName.fmg",
+        "ID": 18,
+        "SimpleName": "Character Names",
+        "FullName": "Character Names"
+      },
+      {
+        "Filename": "PermanentBuffCaption.fmg",
+        "ID": 53,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Descriptions"
+      },
+      {
+        "Filename": "PermanentBuffInfo.fmg",
+        "ID": 52,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Summaries"
+      },
+      {
+        "Filename": "PermanentBuffName.fmg",
+        "ID": 51,
+        "SimpleName": "Permanent Buffs",
+        "FullName": "Permanent Buffs: Titles"
+      },
+      {
+        "Filename": "PlaceName.fmg",
+        "ID": 19,
+        "SimpleName": "Location Names",
+        "FullName": "Location Names"
+      },
+      {
+        "Filename": "ProtectorCaption.fmg",
+        "ID": 26,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Descriptions"
+      },
+      {
+        "Filename": "ProtectorInfo.fmg",
+        "ID": 22,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Summaries"
+      },
+      {
+        "Filename": "ProtectorName.fmg",
+        "ID": 12,
+        "SimpleName": "Armors",
+        "FullName": "Armors: Titles"
+      },
+      {
+        "Filename": "WeaponCaption.fmg",
+        "ID": 25,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Descriptions"
+      },
+      {
+        "Filename": "WeaponInfo.fmg",
+        "ID": 21,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Summaries"
+      },
+      {
+        "Filename": "WeaponName.fmg",
+        "ID": 11,
+        "SimpleName": "Weapons",
+        "FullName": "Weapons: Titles"
+      },
+      {
+        "Filename": "AccessoryCaption_dlc01.fmg",
+        "ID": 402,
+        "SimpleName": "[DLC1] Accessories",
+        "FullName": "[DLC1] Accessories: Descriptions"
+      },
+      {
+        "Filename": "AccessoryInfo_dlc01.fmg",
+        "ID": 401,
+        "SimpleName": "[DLC1] Accessories",
+        "FullName": "[DLC1] Accessories: Summaries"
+      },
+      {
+        "Filename": "AccessoryName_dlc01.fmg",
+        "ID": 400,
+        "SimpleName": "[DLC1] Accessories",
+        "FullName": "[DLC1] Accessories: Titles"
+      },
+      {
+        "Filename": "AntiqueCaption_dlc01.fmg",
+        "ID": 405,
+        "SimpleName": "[DLC1] Relics",
+        "FullName": "[DLC1] Relics: Descriptions"
+      },
+      {
+        "Filename": "AntiqueInfo_dlc01.fmg",
+        "ID": 404,
+        "SimpleName": "[DLC1] Relics",
+        "FullName": "[DLC1] Relics: Summaries"
+      },
+      {
+        "Filename": "AntiqueName_dlc01.fmg",
+        "ID": 403,
+        "SimpleName": "[DLC1] Relics",
+        "FullName": "[DLC1] Relics: Titles"
+      },
+      {
+        "Filename": "ArtsCaption_dlc01.fmg",
+        "ID": 408,
+        "SimpleName": "[DLC1] Skills",
+        "FullName": "[DLC1] Skills: Descriptions"
+      },
+      {
+        "Filename": "ArtsInfo_dlc01.fmg",
+        "ID": 407,
+        "SimpleName": "[DLC1] Skills",
+        "FullName": "[DLC1] Skills: Summaries"
+      },
+      {
+        "Filename": "ArtsName_dlc01.fmg",
+        "ID": 406,
+        "SimpleName": "[DLC1] Skills",
+        "FullName": "[DLC1] Skills: Titles"
+      },
+      {
+        "Filename": "AttachEffectInfo_dlc01.fmg",
+        "ID": 410,
+        "SimpleName": "[DLC1] Attached Effects",
+        "FullName": "[DLC1] Attached Effects: Summaries"
+      },
+      {
+        "Filename": "AttachEffectName_dlc01.fmg",
+        "ID": 409,
+        "SimpleName": "[DLC1] Attached Effects",
+        "FullName": "[DLC1] Attached Effects: Titles"
+      },
+      {
+        "Filename": "GoodsCaption_dlc01.fmg",
+        "ID": 414,
+        "SimpleName": "[DLC1] Goods",
+        "FullName": "[DLC1] Goods: Descriptions"
+      },
+      {
+        "Filename": "GoodsInfo_dlc01.fmg",
+        "ID": 412,
+        "SimpleName": "[DLC1] Goods",
+        "FullName": "[DLC1] Goods: Summaries"
+      },
+      {
+        "Filename": "GoodsInfo2_dlc01.fmg",
+        "ID": 413,
+        "SimpleName": "[DLC1] Goods",
+        "FullName": "[DLC1] Goods: Effect Summaries"
+      },
+      {
+        "Filename": "GoodsName_dlc01.fmg",
+        "ID": 411,
+        "SimpleName": "[DLC1] Goods",
+        "FullName": "[DLC1] Goods: Titles"
+      },
+      {
+        "Filename": "MagicCaption_dlc01.fmg",
+        "ID": 417,
+        "SimpleName": "[DLC1] Spells",
+        "FullName": "[DLC1] Spells: Descriptions"
+      },
+      {
+        "Filename": "MagicInfo_dlc01.fmg",
+        "ID": 416,
+        "SimpleName": "[DLC1] Spells",
+        "FullName": "[DLC1] Spells: Summaries"
+      },
+      {
+        "Filename": "MagicName_dlc01.fmg",
+        "ID": 415,
+        "SimpleName": "[DLC1] Spells",
+        "FullName": "[DLC1] Spells: Titles"
+      },
+      {
+        "Filename": "NpcName_dlc01.fmg",
+        "ID": 418,
+        "SimpleName": "[DLC1] Character Names",
+        "FullName": "[DLC1] Character Names"
+      },
+      {
+        "Filename": "PermanentBuffCaption_dlc01.fmg",
+        "ID": 421,
+        "SimpleName": "[DLC1] Permanent Buffs",
+        "FullName": "[DLC1] Permanent Buffs: Descriptions"
+      },
+      {
+        "Filename": "PermanentBuffInfo_dlc01.fmg",
+        "ID": 420,
+        "SimpleName": "[DLC1] Permanent Buffs",
+        "FullName": "[DLC1] Permanent Buffs: Summaries"
+      },
+      {
+        "Filename": "PermanentBuffName_dlc01.fmg",
+        "ID": 419,
+        "SimpleName": "[DLC1] Permanent Buffs",
+        "FullName": "[DLC1] Permanent Buffs: Titles"
+      },
+      {
+        "Filename": "PlaceName_dlc01.fmg",
+        "ID": 422,
+        "SimpleName": "[DLC1] Location Names",
+        "FullName": "[DLC1] Location Names"
+      },
+      {
+        "Filename": "WeaponCaption_dlc01.fmg",
+        "ID": 428,
+        "SimpleName": "[DLC1] Weapons",
+        "FullName": "[DLC1] Weapons: Descriptions"
+      },
+      {
+        "Filename": "WeaponInfo_dlc01.fmg",
+        "ID": 427,
+        "SimpleName": "[DLC1] Weapons",
+        "FullName": "[DLC1] Weapons: Summaries"
+      },
+      {
+        "Filename": "WeaponName_dlc01.fmg",
+        "ID": 426,
+        "SimpleName": "[DLC1] Weapons",
+        "FullName": "[DLC1] Weapons: Titles"
+      }
+    ]
+  },
+  {
+    "Filename": "menu_dlc01",
+    "DisplayName": "Menu: DLC 1",
+    "Obsolete": false,
+    "Files": [
+      {
+        "Filename": "TalkMsg.fmg",
+        "ID": 1,
+        "SimpleName": "Talk Messages",
+        "FullName": "Talk Messages"
+      },
+      {
+        "Filename": "BloodMsg.fmg",
+        "ID": 2,
+        "SimpleName": "Blood Messages",
+        "FullName": "Blood Messages"
+      },
+      {
+        "Filename": "MovieSubtitle.fmg",
+        "ID": 3,
+        "SimpleName": "Movie Subtitles",
+        "FullName": "Movie Subtitles"
+      },
+      {
+        "Filename": "NetworkMessage.fmg",
+        "ID": 31,
+        "SimpleName": "Network Messages",
+        "FullName": "Network Messages"
+      },
+      {
+        "Filename": "ActionButtonText.fmg",
+        "ID": 32,
+        "SimpleName": "Action Button Text",
+        "FullName": "Action Button Text"
+      },
+      {
+        "Filename": "EventTextForTalk.fmg",
+        "ID": 33,
+        "SimpleName": "Event Text for Talk",
+        "FullName": "Event Text for Talk"
+      },
+      {
+        "Filename": "EventTextForMap.fmg",
+        "ID": 34,
+        "SimpleName": "Event Text for Map",
+        "FullName": "Event Text for Map"
+      },
+      {
+        "Filename": "CL_MenuText.fmg",
+        "ID": 200,
+        "SimpleName": "Menu Text",
+        "FullName": "Menu Text"
+      },
+      {
+        "Filename": "CL_LineHelp.fmg",
+        "ID": 201,
+        "SimpleName": "Line Help",
+        "FullName": "Line Help"
+      },
+      {
+        "Filename": "CL_KeyGuide.fmg",
+        "ID": 202,
+        "SimpleName": "Key Guide",
+        "FullName": "Key Guide"
+      },
+      {
+        "Filename": "CL_System_Message_win64.fmg",
+        "ID": 203,
+        "SimpleName": "System Messages",
+        "FullName": "System Messages"
+      },
+      {
+        "Filename": "CL_Dialogues.fmg",
+        "ID": 204,
+        "SimpleName": "Dialogues",
+        "FullName": "Dialogues"
+      },
+      {
+        "Filename": "LoadingTitle.fmg",
+        "ID": 205,
+        "SimpleName": "Loading Text",
+        "FullName": "Loading Text: Titles"
+      },
+      {
+        "Filename": "LoadingText.fmg",
+        "ID": 206,
+        "SimpleName": "Loading Text",
+        "FullName": "Loading Text: Descriptions"
+      },
+      {
+        "Filename": "TutorialTitle.fmg",
+        "ID": 207,
+        "SimpleName": "Tutorial Text",
+        "FullName": "Tutorial Text: Titles"
+      },
+      {
+        "Filename": "TutorialBody.fmg",
+        "ID": 208,
+        "SimpleName": "Tutorial Text",
+        "FullName": "Tutorial Text: Descriptions"
+      },
+      {
+        "Filename": "TextEmbedImageName_win64.fmg",
+        "ID": 209,
+        "SimpleName": "Text Embed Image Names",
+        "FullName": "Text Embed Image Names"
+      },
+      {
+        "Filename": "ToS_win64.fmg",
+        "ID": 210,
+        "SimpleName": "Terms of Service",
+        "FullName": "Terms of Service"
+      },
+      {
+        "Filename": "PersonalScenarioObjective.fmg",
+        "ID": 211,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Objectives"
+      },
+      {
+        "Filename": "PersonalScenarioTitle.fmg",
+        "ID": 212,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Titles"
+      },
+      {
+        "Filename": "PersonalScenarioBody.fmg",
+        "ID": 213,
+        "SimpleName": "Personal Scenarios",
+        "FullName": "Personal Scenarios: Descriptions"
+      },
+      {
+        "Filename": "SpEffectName.fmg",
+        "ID": 214,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Titles"
+      },
+      {
+        "Filename": "SpEffectInfo.fmg",
+        "ID": 215,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Summaries"
+      },
+      {
+        "Filename": "SpEffectCaption.fmg",
+        "ID": 216,
+        "SimpleName": "SpEffects",
+        "FullName": "SpEffects: Descriptions"
+      },
+      {
+        "Filename": "ActionButtonText_dlc01.fmg",
+        "ID": 500,
+        "SimpleName": "[DLC1] Action Button Text",
+        "FullName": "[DLC1] Action Button Text"
+      },
+      {
+        "Filename": "CL_Dialogues_dlc01.fmg",
+        "ID": 501,
+        "SimpleName": "[DLC1] Dialogues",
+        "FullName": "[DLC1] Dialogues"
+      },
+      {
+        "Filename": "CL_KeyGuide_dlc01.fmg",
+        "ID": 503,
+        "SimpleName": "[DLC1] Key Guides",
+        "FullName": "[DLC1] Key Guides"
+      },
+      {
+        "Filename": "CL_LineHelp_dlc01.fmg",
+        "ID": 503,
+        "SimpleName": "[DLC1] Line Help",
+        "FullName": "[DLC1] Line Help"
+      },
+      {
+        "Filename": "CL_MenuText_dlc01.fmg",
+        "ID": 504,
+        "SimpleName": "[DLC1] Menu Text",
+        "FullName": "[DLC1] Menu Text"
+      },
+      {
+        "Filename": "CL_System_Message_win64_dlc01.fmg",
+        "ID": 505,
+        "SimpleName": "[DLC1] System Messages",
+        "FullName": "[DLC1] System Messages"
+      },
+      {
+        "Filename": "EventTextForMap_dlc01.fmg",
+        "ID": 506,
+        "SimpleName": "[DLC1] Event Text for Map",
+        "FullName": "[DLC1] Event Text for Map"
+      },
+      {
+        "Filename": "EventTextForTalk_dlc01.fmg",
+        "ID": 507,
+        "SimpleName": "[DLC1] Event Text for Talk",
+        "FullName": "[DLC1] Event Text for Talk"
+      },
+      {
+        "Filename": "NetworkMessage_dlc01.fmg",
+        "ID": 508,
+        "SimpleName": "[DLC1] Network Messages",
+        "FullName": "[DLC1] Network Messages"
+      },
+      {
+        "Filename": "PersonalScenarioObjective_dlc01.fmg",
+        "ID": 509,
+        "SimpleName": "[DLC1] Personal Scenarios",
+        "FullName": "[DLC1] Personal Scenarios: Objectives"
+      },
+      {
+        "Filename": "PersonalScenarioTitle_dlc01.fmg",
+        "ID": 510,
+        "SimpleName": "[DLC1] Personal Scenarios",
+        "FullName": "[DLC1] Personal Scenarios: Titles"
+      },
+      {
+        "Filename": "PersonalScenarioBody_dlc01.fmg",
+        "ID": 511,
+        "SimpleName": "[DLC1] Personal Scenarios",
+        "FullName": "[DLC1] Personal Scenarios: Descriptions"
+      },
+      {
+        "Filename": "SpEffectName_dlc01.fmg",
+        "ID": 512,
+        "SimpleName": "[DLC1] SpEffects",
+        "FullName": "[DLC1] SpEffects: Titles"
+      },
+      {
+        "Filename": "SpEffectInfo_dlc01.fmg",
+        "ID": 513,
+        "SimpleName": "[DLC1] SpEffects",
+        "FullName": "[DLC1] SpEffects: Summaries"
+      },
+      {
+        "Filename": "TalkMsg_dlc01.fmg",
+        "ID": 515,
+        "SimpleName": "[DLC1] Talk Messages",
+        "FullName": "[DLC1] Talk Messages"
+      },
+      {
+        "Filename": "TutorialTitle_dlc01.fmg",
+        "ID": 516,
+        "SimpleName": "[DLC1] Tutorial Text",
+        "FullName": "[DLC1] Tutorial Text: Titles"
+      },
+      {
+        "Filename": "TutorialBody_dlc01.fmg",
+        "ID": 517,
+        "SimpleName": "[DLC1] Tutorial Text",
+        "FullName": "[DLC1] Tutorial Text: Descriptions"
+      }
+    ]
+  }
+]

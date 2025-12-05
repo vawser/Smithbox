@@ -525,6 +525,9 @@ public class TextEditorTab
 
             ImGui.Checkbox("Enable Background Difference Update", ref CFG.Current.TextEditor_EnableAutomaticDifferenceCheck);
             UIHelper.Tooltip("If enabled, the difference cache will be updated in the background every 5 minutes.");
+
+            ImGui.Checkbox("Enable Obsolete Container Loading", ref CFG.Current.TextEditor_EnableObsoleteContainerLoad);
+            UIHelper.Tooltip("If enabled, obsolete containers will be loaded. Otherwise, they are ignored.");
         }
 
         // Primary Category

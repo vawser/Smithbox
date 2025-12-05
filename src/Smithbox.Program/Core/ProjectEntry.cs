@@ -15,6 +15,7 @@ using StudioCore.Formats;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsParamEditorNS;
 using StudioCore.MaterialEditorNS;
+using StudioCore.Program.Editors.FmgEditor;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
@@ -685,7 +686,6 @@ public class ProjectEntry
 
         TextEditor = new TextEditorScreen(BaseEditor, this);
     }
-
     private async Task InitializeModelEditor(bool silent)
     {
         // FLVER Information

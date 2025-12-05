@@ -4,6 +4,7 @@ using Octokit;
 using Silk.NET.OpenGL;
 using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -1857,5 +1858,22 @@ public static class TextUtils
         }
 
         return ContainerSubCategory.common;
+    }
+
+    public static bool IsObsoleteContainer(ProjectEntry project, FileDictionaryEntry entry)
+    {
+        if (!CFG.Current.TextEditor_EnableObsoleteContainerLoad)
+        {
+            switch (project.ProjectType)
+            {
+                // NR DLC update means these containers are no longer present
+                case ProjectType.NR:
+                    if (entry.Filename == "item" || entry.Filename == "menu")
+                        return true;
+                break;
+            }
+        }
+
+        return false;
     }
 }

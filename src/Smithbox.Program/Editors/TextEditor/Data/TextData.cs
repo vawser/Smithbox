@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
+using StudioCore.Program.Editors.FmgEditor;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor.Data;
@@ -18,6 +22,10 @@ public class TextData
 
     public FileDictionary FmgFiles = new();
 
+    public LanguageDef LanguageDef;
+    public ContainerDef ContainerDef;
+    public AssociationDef AssociationDef;
+
     public TextData(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -28,31 +36,12 @@ public class TextData
     {
         await Task.Yield();
 
-        var msgbndDictionary = new FileDictionary();
-        msgbndDictionary.Entries = Project.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Folder.StartsWith("/msg"))
-            .Where(e => e.Extension == "msgbnd")
-            .ToList();
+        // TODO: for transitioning from the hardcoded stuff into JSON
+        //LanguageDef = SetupLanguageDef();
+        //ContainerDef = SetupContainerDef();
+        //AssociationDef = SetupAssociationDef();
 
-
-        if (Project.ProjectType == ProjectType.ER)
-        {
-            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
-        }
-
-        var fmgDictionary = new FileDictionary();
-        fmgDictionary.Entries = new List<FileDictionaryEntry>();
-
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fmgDictionary.Entries = Project.FileDictionary.Entries
-                .Where(e => e.Archive != "sd")
-                .Where(e => e.Folder.StartsWith("/menu/text"))
-                .Where(e => e.Extension == "fmg").ToList();
-        }
-
-        FmgFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
+        FmgFiles = SetupFmgFilelist();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
         VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
@@ -117,5 +106,131 @@ public class TextData
         TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Aux FMG Bank.");
 
         return true;
+    }
+    public FileDictionary SetupFmgFilelist()
+    {
+        var msgbndDictionary = new FileDictionary();
+        msgbndDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/msg"))
+            .Where(e => e.Extension == "msgbnd")
+            .ToList();
+
+
+        if (Project.ProjectType == ProjectType.ER)
+        {
+            msgbndDictionary.Entries = msgbndDictionary.Entries.OrderBy(e => e.Folder).ThenBy(e => e.Filename.Contains("dlc02")).ThenBy(e => e.Filename.Contains("dlc01")).ThenBy(e => e.Filename).ToList();
+        }
+
+        var fmgDictionary = new FileDictionary();
+        fmgDictionary.Entries = new List<FileDictionaryEntry>();
+
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            fmgDictionary.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Folder.StartsWith("/menu/text"))
+                .Where(e => e.Extension == "fmg").ToList();
+        }
+
+        return ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
+    }
+
+
+    public LanguageDef SetupLanguageDef()
+    {
+        LanguageDef def = null;
+
+        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var file = Path.Combine(folder, "Languages.json");
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.LanguageDef);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Language Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Language Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        return def;
+    }
+
+    public ContainerDef SetupContainerDef()
+    {
+        ContainerDef def = null;
+
+        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var file = Path.Combine(folder, "Containers.json");
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.ContainerDef);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Container Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Container Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        return def;
+    }
+
+    public AssociationDef SetupAssociationDef()
+    {
+        AssociationDef def = null;
+
+        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "FMG", ProjectUtils.GetGameDirectory(Project.ProjectType));
+        var file = Path.Combine(folder, "Associations.json");
+
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    def = JsonSerializer.Deserialize(filestring, FmgJsonSerializerContext.Default.AssociationDef);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FMG Association Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FMG Association Def: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        return def;
     }
 }

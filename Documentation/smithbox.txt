@@ -23,7 +23,7 @@
 
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
 - Fix the text entry quick-link (from Text Search)
-- Fix the focus text entry action when quick-linked or from search bar (currently it doesn't scroll to position)
+- Fix the focus text entry action when quick-linked (currently it doesn't scroll to position)
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
@@ -37,4 +37,3 @@
  - Fix the ME3 mod launch action
  
 - Update NR MSB format
-- Update NR FMG handling as they've introduced DLC stuff (copy ER)
