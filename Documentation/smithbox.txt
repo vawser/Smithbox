@@ -30,8 +30,5 @@
 
 # TODO NOW
 
-- Project:
- - Fix the ME3 mod launch action
- 
 - Update NR MSB format
  - Event.Teamfight -> Likely MSB version issue where the currenty mismatches are an older version (as I've updated the Teamfight def for the latest version)

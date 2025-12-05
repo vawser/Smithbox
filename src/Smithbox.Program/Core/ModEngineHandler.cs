@@ -84,9 +84,11 @@ public static class ModEngineHandler
 
         var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
 
-        var readPath = Path.Combine(CFG.Current.ModEngine3ProfileDirectory, $"{projectName}.me3");
+        var readPath = CFG.Current.ModEngine3ProfileDirectory;
 
-        if (File.Exists(readPath))
+        var targetFile = Path.Combine(readPath, $"{projectName}.me3");
+
+        if (File.Exists(targetFile))
         {
             var startInfo = new ProcessStartInfo
             {
@@ -170,7 +172,7 @@ enabled = false";
 
         if(File.Exists(modTomlPath))
         {
-            var tomlPath = $@"{modEngineInstallFolderPath}\smithbox_launch_config.toml";
+            var tomlPath = Path.Combine(modEngineInstallFolderPath, "smithbox_launch_config.toml");
             var projectType = $"{curProject.ProjectType}".ToLower();
 
             var inputStr = $"'-t' '{projectType}' '-c' '{tomlPath}'".Replace("'", "\"");
