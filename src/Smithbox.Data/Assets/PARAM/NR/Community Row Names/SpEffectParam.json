@@ -57602,6 +57602,24 @@
       ]
     },
     {
+      "ID": 7006500,
+      "Entries": [
+        "[Relic Effect] Continuous FP Recovery"
+      ]
+    },
+    {
+      "ID": 7006600,
+      "Entries": [
+        "[Weapon Effect] Improved Melee Attack Power"
+      ]
+    },
+    {
+      "ID": 7006700,
+      "Entries": [
+        "[Weapon Effect] Improved Skill Attack Power"
+      ]
+    },
+    {
       "ID": 7010001,
       "Entries": [
         "[Relic Effect] Improved Physical Damage Negation"
@@ -58727,6 +58745,114 @@
       "ID": 7036102,
       "Entries": [
         "[Relic Effect] HP Recovery From Successful Guarding"
+      ]
+    },
+    {
+      "ID": 7036200,
+      "Entries": [
+        "[Relic Effect] Scholar: Prevent slowing of Character Skill progress"
+      ]
+    },
+    {
+      "ID": 7036300,
+      "Entries": [
+        "[Relic Effect] Scholar: Allies targeted by Character Skill gain boosted attack"
+      ]
+    },
+    {
+      "ID": 7036301,
+      "Entries": [
+        "[Relic Effect] Scholar: Allies targeted by Character Skill gain boosted attack"
+      ]
+    },
+    {
+      "ID": 7036400,
+      "Entries": [
+        "[Relic Effect] Scholar: Continuous damage inflicted on targets threaded by Ultimate Art"
+      ]
+    },
+    {
+      "ID": 7036401,
+      "Entries": [
+        "[Relic Effect] Scholar: Continuous damage inflicted on targets threaded by Ultimate Art"
+      ]
+    },
+    {
+      "ID": 7036500,
+      "Entries": [
+        "[Relic Effect] Scholar: Earn runes for each additional specimen acquired with Character Skill"
+      ]
+    },
+    {
+      "ID": 7036501,
+      "Entries": [
+        "[Relic Effect] Scholar: Earn runes for each additional specimen acquired with Character Skill"
+      ]
+    },
+    {
+      "ID": 7036800,
+      "Entries": [
+        "[Relic Effect] Undertaker: Activating Ultimate Art increases attack power"
+      ]
+    },
+    {
+      "ID": 7036801,
+      "Entries": [
+        "[Relic Effect] Undertaker: Activating Ultimate Art increases attack power"
+      ]
+    },
+    {
+      "ID": 7036900,
+      "Entries": [
+        "[Relic Effect] Undertaker: Attack power increased by landing the final blow of a chain attack"
+      ]
+    },
+    {
+      "ID": 7036901,
+      "Entries": [
+        "[Relic Effect] Undertaker: Attack power increased by landing the final blow of a chain attack"
+      ]
+    },
+    {
+      "ID": 7037000,
+      "Entries": [
+        "[Relic Effect] Undertaker: Physical attacks boosted while assist effect from incantation is active for self"
+      ]
+    },
+    {
+      "ID": 7037001,
+      "Entries": [
+        "[Relic Effect] Undertaker: Physical attacks boosted while assist effect from incantation is active for self"
+      ]
+    },
+    {
+      "ID": 7037300,
+      "Entries": [
+        "[Relic Effect] Undertaker: Contact with allies restores their HP while Ultimate Art is activated"
+      ]
+    },
+    {
+      "ID": 7037301,
+      "Entries": [
+        "[Relic Effect] Undertaker: Contact with allies restores their HP while Ultimate Art is activated"
+      ]
+    },
+    {
+      "ID": 7037700,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power"
+      ]
+    },
+    {
+      "ID": 7037701,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power"
+      ]
+    },
+    {
+      "ID": 7037800,
+      "Entries": [
+        "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered"
       ]
     },
     {
@@ -60014,6 +60140,18 @@
       ]
     },
     {
+      "ID": 7170100,
+      "Entries": [
+        "[Relic Effect] Attacks Inflict Rot when Damage is Taken"
+      ]
+    },
+    {
+      "ID": 7170101,
+      "Entries": [
+        "[Relic Effect] Attacks Inflict Rot when Damage is Taken"
+      ]
+    },
+    {
       "ID": 7220000,
       "Entries": [
         "[Relic Effect] Revenant: Power up while fighting alongside family - HP Restore"
@@ -60242,6 +60380,18 @@
       ]
     },
     {
+      "ID": 7260900,
+      "Entries": [
+        "[Relic Effect] Rot in Vicinity Causes Continuous HP Recovery"
+      ]
+    },
+    {
+      "ID": 7260901,
+      "Entries": [
+        "[Relic Effect] Rot in Vicinity Causes Continuous HP Recovery"
+      ]
+    },
+    {
       "ID": 7270100,
       "Entries": [
         "[Relic Effect] Ironeye: +1 additional Character Skill use"
@@ -60293,6 +60443,108 @@
       "ID": 7310003,
       "Entries": [
         "[Relic Effect] Raider: Duration of Ultimate Art extended - Totem Stela Aura Buff"
+      ]
+    },
+    {
+      "ID": 7360600,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Magic Glintblade at start of expedition"
+      ]
+    },
+    {
+      "ID": 7360900,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Carian Greatsword at start of expedition"
+      ]
+    },
+    {
+      "ID": 7361200,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Night Shard at start of expedition"
+      ]
+    },
+    {
+      "ID": 7361500,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Glintstone Icecrag at start of expedition"
+      ]
+    },
+    {
+      "ID": 7361800,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Gravity Well at start of expedition"
+      ]
+    },
+    {
+      "ID": 7361300,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Magma Shot at start of expedition"
+      ]
+    },
+    {
+      "ID": 7362100,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's sorcery to Briars of Punishment at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370000,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Blessing's Boon at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370000,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Aspects of the Crucible: Horns at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370300,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Wrath of Gold at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370400,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Lightning Spear at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370500,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Lightning Strike at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370600,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to O, Flame! at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370800,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Black Flame at start of expedition"
+      ]
+    },
+    {
+      "ID": 7370900,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Beast Claw at start of expedition"
+      ]
+    },
+    {
+      "ID": 7371200,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Swarm of Flies at start of expedition"
+      ]
+    },
+    {
+      "ID": 7371500,
+      "Entries": [
+        "[Relic Effect] Changes compatible armament's incantation to Dragonfire at start of expedition"
       ]
     },
     {
@@ -62705,6 +62957,24 @@
       "ID": 8320421,
       "Entries": [
         "[Weapon Effect] Dmg Negation Up upon Landing Charge Attacks - Damage Negation Buff - Potency 3"
+      ]
+    },
+    {
+      "ID": 8320500,
+      "Entries": [
+        "[Weapon Effect] Improved Melee Attack Power"
+      ]
+    },
+    {
+      "ID": 8320600,
+      "Entries": [
+        "[Weapon Effect] Improved Dash Attacks"
+      ]
+    },
+    {
+      "ID": 8320700,
+      "Entries": [
+        "[Weapon Effect] Improved Rolling Attacks"
       ]
     },
     {
