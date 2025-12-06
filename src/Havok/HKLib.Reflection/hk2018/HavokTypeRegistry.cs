@@ -23,8 +23,7 @@ public class HavokTypeRegistry
 
     private static HavokTypeRegistry LoadDefault() 
     {
-        string basePath = AppDomain.CurrentDomain.BaseDirectory;
-        string typeRegPath = Path.Join(basePath, "Res", "HavokTypeRegistry20180100.xml");
+        string typeRegPath = Path.Join(Common.FileLocations.Res, "HavokTypeRegistry20180100.xml");
         return Load(typeRegPath);
     }
 
