@@ -69,7 +69,7 @@ namespace SoulsFormats
             RespawnOverride = 57,
             UserEdgeRemovalInner = 58,
             UserEdgeRemovalOuter = 59,
-            Unknown60 = 60,
+            BigJumpSealable = 60,
             Other = 0xFFFFFFFF,
         }
 
@@ -127,7 +127,7 @@ namespace SoulsFormats
             public List<Region.RespawnOverride> RespawnOverrides { get; set; }
             public List<Region.UserEdgeRemovalInner> UserEdgeRemovalInners { get; set; }
             public List<Region.UserEdgeRemovalOuter> UserEdgeRemovalOuters { get; set; }
-            public List<Region.Unknown60> Unknown60s { get; set; }
+            public List<Region.BigJumpSealable> BigJumpSealables { get; set; }
             public List<Region.Other> Others { get; set; }
 
             public PointParam() : base(78, "POINT_PARAM_ST")
@@ -175,7 +175,7 @@ namespace SoulsFormats
                 RespawnOverrides = new List<Region.RespawnOverride>();
                 UserEdgeRemovalInners = new List<Region.UserEdgeRemovalInner>();
                 UserEdgeRemovalOuters = new List<Region.UserEdgeRemovalOuter>();
-                Unknown60s = new List<Region.Unknown60>();
+                BigJumpSealables = new List<Region.BigJumpSealable>();
 
                 Others = new List<Region.Other>();
             }
@@ -230,7 +230,7 @@ namespace SoulsFormats
                     case Region.RespawnOverride r: RespawnOverrides.Add(r); break;
                     case Region.UserEdgeRemovalInner r: UserEdgeRemovalInners.Add(r); break;
                     case Region.UserEdgeRemovalOuter r: UserEdgeRemovalOuters.Add(r); break;
-                    case Region.Unknown60 r: Unknown60s.Add(r); break;
+                    case Region.BigJumpSealable r: BigJumpSealables.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -256,7 +256,7 @@ namespace SoulsFormats
                     BigJumps, SoundDummys, FallPreventionOverrides, NavmeshCuttings, MapNameOverrides,
                     BigJumpExits, MountOverrides, SmallBaseAttachs, BirdRoutes,
                      ClearInfos, RespawnOverrides, UserEdgeRemovalInners, UserEdgeRemovalOuters,
-                     Unknown60s,
+                     BigJumpSealables,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -395,8 +395,8 @@ namespace SoulsFormats
                     case RegionType.UserEdgeRemovalOuter:
                         return UserEdgeRemovalOuters.EchoAdd(new Region.UserEdgeRemovalOuter(br));
 
-                    case RegionType.Unknown60:
-                        return Unknown60s.EchoAdd(new Region.Unknown60(br));
+                    case RegionType.BigJumpSealable:
+                        return BigJumpSealables.EchoAdd(new Region.BigJumpSealable(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -2269,18 +2269,18 @@ namespace SoulsFormats
                 public int Unk04 { get; set; } = 0;
             }
 
-            public class Unknown60 : Region
+            public class BigJumpSealable : Region
             {
-                private protected override RegionType Type => RegionType.Unknown60;
+                private protected override RegionType Type => RegionType.BigJumpSealable;
                 private protected override bool HasTypeData => true;
 
-                public Unknown60() : base($"{nameof(Region)}: {nameof(Unknown60)}") { }
+                public BigJumpSealable() : base($"{nameof(Region)}: {nameof(BigJumpSealable)}") { }
 
-                internal Unknown60(BinaryReaderEx br) : base(br) { }
+                internal BigJumpSealable(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    Unk00 = br.ReadInt32();
+                    Unk00 = br.ReadSingle();
                     Unk04 = br.ReadInt32();
                     Unk08 = br.ReadInt32();
                     Unk0C = br.ReadInt32();
@@ -2290,7 +2290,7 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(Unk00);
+                    bw.WriteSingle(Unk00);
                     bw.WriteInt32(Unk04);
                     bw.WriteInt32(Unk08);
                     bw.WriteInt32(Unk0C);
@@ -2299,7 +2299,7 @@ namespace SoulsFormats
                 }
 
                 // Layout
-                public int Unk00 { get; set; } = 0;
+                public float Unk00 { get; set; } = 0;
                 public int Unk04 { get; set; } = 0;
                 public int Unk08 { get; set; } = 0;
                 public int Unk0C { get; set; } = 0;
