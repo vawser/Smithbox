@@ -10,6 +10,7 @@ using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -47,7 +48,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             // Map List
-            if (ImGui.Begin($@"Map List##mapIdList"))
+            if (ImGui.Begin($@"Map List##mapIdList", ImGuiWindowFlags.MenuBar))
             {
                 Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
@@ -67,19 +68,97 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                     }
                 }
 
+                if (ImGui.BeginMenuBar())
+                {
+                    if (ImGui.BeginMenu("Maps"))
+                    {
+                        if (ImGui.MenuItem("Unload Current"))
+                        {
+                            DialogResult result = PlatformUtils.Instance.MessageBox("Unload current?", "Confirm",
+                                        MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                foreach (var entry in Editor.MapListView.ContentViews)
+                                {
+                                    if (entry.Value.MapID == Editor.Selection.SelectedMapID)
+                                    {
+                                        if (entry.Value.ContentLoadState == MapContentLoadState.Loaded)
+                                            entry.Value.Unload();
+                                    }
+                                }
+                            }
+                        }
+
+                        if (ImGui.MenuItem("Unload All"))
+                        {
+                            DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
+                                        MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                foreach (var entry in Editor.MapListView.ContentViews)
+                                {
+                                    if (entry.Value.ContentLoadState == MapContentLoadState.Loaded)
+                                        entry.Value.Unload();
+                                }
+
+                                Editor.Universe.UnloadAllMaps();
+                                GC.Collect();
+                                GC.WaitForPendingFinalizers();
+                                GC.Collect();
+                            }
+                        }
+
+                        ImGui.EndMenu();
+                    }
+
+                    if (ImGui.BeginMenu("Filters"))
+                    {
+                        if (ImGui.BeginMenu("Select"))
+                        {
+                            Editor.MapListFilterTool.SelectionMenu();
+                            ImGui.EndMenu();
+                        }
+
+                        if (ImGui.MenuItem("Clear"))
+                        {
+                            Editor.MapListFilterTool.Clear();
+                        }
+                        UIHelper.Tooltip("Clear the current filter.");
+
+
+                        if (ImGui.BeginMenu("Create"))
+                        {
+                            Editor.MapListFilterTool.CreationMenu();
+                            ImGui.EndMenu();
+                        }
+
+                        if (ImGui.BeginMenu("Edit"))
+                        {
+                            Editor.MapListFilterTool.EditMenu();
+                            ImGui.EndMenu();
+                        }
+
+                        if (ImGui.BeginMenu("Delete"))
+                        {
+                            Editor.MapListFilterTool.DeleteMenu();
+                            ImGui.EndMenu();
+                        }
+
+                        ImGui.EndMenu();
+                    }
+
+                    ImGui.EndMenuBar();
+                }
+
                 DisplaySearchbar();
-
-                ImGui.SameLine();
-
-                DisplayUnloadAllButton();
 
                 if (Editor.Project.ProjectType is ProjectType.BB)
                 {
                     ImGui.SameLine();
                     DisplayChaliceToggleButton();
                 }
-
-                ImGui.Separator();
 
                 // Display List of Maps
                 if (SetupContentViews)
@@ -115,7 +194,10 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             ImGui.PopStyleColor(1);
         }
 
+        Editor.MapListFilterTool.Update();
+
         Editor.ViewportSelection.ClearGotoTarget();
+
     }
 
     private string _lastSearchText = "";
@@ -182,33 +264,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     }
 
     /// <summary>
-    /// Handles the unload all button
-    /// </summary>
-    private void DisplayUnloadAllButton()
-    {
-        if (ImGui.Button($"{Icons.MinusSquareO}", DPI.IconButtonSize))
-        {
-            DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
-                        MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
-            {
-                foreach (var entry in Editor.MapListView.ContentViews)
-                {
-                    if(entry.Value.ContentLoadState == MapContentLoadState.Loaded)
-                        entry.Value.Unload();
-                }
-
-                Editor.Universe.UnloadAllMaps();
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
-                GC.Collect();
-            }
-        }
-        UIHelper.Tooltip("Unload all currently loaded maps.");
-    }
-
-    /// <summary>
     /// Handles the chalice MSB toggle button
     /// </summary>
     private void DisplayChaliceToggleButton()
@@ -239,9 +294,58 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 continue;
             }
 
-            if (entry.Value.ContentLoadState == loadType)
+            if (Editor.MapListFilterTool.CurrentFilter != null)
             {
-                filteredEntries.Add(entry.Value);
+                var matchType = Editor.MapListFilterTool.CurrentFilter.Type;
+
+                var appliedFilters = Editor.MapListFilterTool.CurrentFilter.Entries;
+
+                var curMapName = entry.Value.MapID;
+
+                var add = true;
+
+                if (matchType == FilterType.AND)
+                {
+                    foreach (var filter in appliedFilters)
+                    {
+                        var match = Regex.Match(curMapName, filter);
+                        if (!match.Success)
+                        {
+                            add = false;
+                        }
+                    }
+                }
+                else if(matchType == FilterType.OR)
+                {
+                    add = false;
+
+                    foreach (var filter in appliedFilters)
+                    {
+                        if (filter == "")
+                            continue;
+
+                        var match = Regex.Match(curMapName, filter);
+                        if (match.Success)
+                        {
+                            add = true;
+                        }
+                    }
+                }
+
+                if (add)
+                {
+                    if (entry.Value.ContentLoadState == loadType)
+                    {
+                        filteredEntries.Add(entry.Value);
+                    }
+                }
+            }
+            else
+            {
+                if (entry.Value.ContentLoadState == loadType)
+                {
+                    filteredEntries.Add(entry.Value);
+                }
             }
         }
 

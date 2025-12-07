@@ -114,6 +114,7 @@ public class MapEditorScreen : EditorScreen
     public EntityIdentifierTool EntityIdentifierTool;
     public MapGridTool MapGridTool;
     public WorldMapLayoutTool WorldMapLayoutTool;
+    public MapListFilterTool MapListFilterTool;
 
     // Special Tools
     public AutomaticPreviewTool AutomaticPreviewTool;
@@ -193,6 +194,7 @@ public class MapEditorScreen : EditorScreen
         MapGridTool = new MapGridTool(this, project);
         WorldMapTool = new WorldMapTool(this, project);
         WorldMapLayoutTool = new WorldMapLayoutTool(this, project);
+        MapListFilterTool = new MapListFilterTool(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
@@ -298,7 +300,6 @@ public class MapEditorScreen : EditorScreen
         SelectionGroupTool.OnGui();
         LocalSearchView.OnGui();
         WorldMapTool.DisplayWorldMap();
-
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
