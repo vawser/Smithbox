@@ -1,19 +1,14 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.Reflection;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Interfaces;
@@ -2097,7 +2092,7 @@ public class MsbEntity : Entity
                 }
 
                 // For now, the map relationship type is not given here (dictionary values), just all related maps.
-                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(curEditor, Name))
+                foreach (var mapRef in MapConnections_ER.GetRelatedMaps(curEditor, Name))
                 {
                     References[mapRef.Key] = new[] { new ObjectContainerReference(mapRef.Key) };
                 }

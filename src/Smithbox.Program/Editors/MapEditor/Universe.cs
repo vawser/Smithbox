@@ -5,11 +5,10 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Data;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Formats.JSON;
+using StudioCore.Program.Editors.MapEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
@@ -155,9 +154,22 @@ public class Universe
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    if (Editor.Project.ProjectType == ProjectType.ER)
+                    // Handle the map offsets for games that use a tile system
+                    // This is what adjusts the map position/rotation so they are presented in the same way they appear in-game.
+                    // By default, maps assume 0,0,0 as their origin, which means without this they overlap.
+
+                    if (Editor.Project.ProjectType is ProjectType.ER)
                     {
-                        if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid) is Transform
+                        if (MapConnections_ER.GetMapTransform(Editor, mapid) is Transform
+                            loadTransform)
+                        {
+                            map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                        }
+                    }
+
+                    if (Editor.Project.ProjectType is ProjectType.NR)
+                    {
+                        if (MapConnections_NR.GetMapTransform(Editor, mapid) is Transform
                             loadTransform)
                         {
                             map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
@@ -622,10 +634,10 @@ public class Universe
 
     public void LoadRelatedMapsER(string mapid)
     {
-        IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(Editor, mapid);
+        IReadOnlyDictionary<string, RelationType> relatedMaps =
+            MapConnections_ER.GetRelatedMaps(Editor, mapid);
 
-        foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
+        foreach (KeyValuePair<string, RelationType> map in relatedMaps)
         {
             Editor.MapListView.TriggerMapLoad(map.Key);
         }

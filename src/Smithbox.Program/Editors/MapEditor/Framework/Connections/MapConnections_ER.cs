@@ -1,50 +1,41 @@
 ﻿using Andre.Formats;
+using DotNext.Collections.Generic;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Program.Editors.MapEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Editors.MapEditor.Tools.MapConnections;
+namespace StudioCore.Editors.MapEditor;
 
 /// <summary>
-///     Business logic for cross-map connections in a game.
+/// Business logic for cross-map connections in ER.
 /// </summary>
-internal class SpecialMapConnections
+internal class MapConnections_ER
 {
-    public enum RelationType
-    {
-        Unknown,
-        Ancestor,
-        Parent,
-        Child,
-        Descendant,
-        Connection
-    }
+    private static Dictionary<string, TileDefinition> eldenRingOffsets;
 
-    private static Dictionary<string, DungeonOffset> eldenRingOffsets;
-
-    public static Transform? GetEldenMapTransform(
+    public static Transform? GetMapTransform(
         MapEditorScreen editor,
         string mapid)
     {
-        if (!TryInitializeEldenOffsets(editor))
+        if (!TryInitializeOffsets(editor))
         {
             return null;
         }
 
-        if (!TryParseMap(mapid, out var target) ||
-            !ToEldenGlobalCoords(target, Vector3.Zero, 0, 0, out Vector3 targetGlobal))
+        if (!MapConnectionsUtil.TryParseMap(mapid, out var target) ||
+            !ToGlobalCoords(target, Vector3.Zero, 0, 0, out Vector3 targetGlobal))
         {
             return null;
         }
 
-        (var originX, var originZ) = GetClosestTile(targetGlobal, 0, 0);
+        (var originX, var originZ) = MapConnectionsUtil.GetClosestTile(targetGlobal, 0, 0);
         // Recenter target in terms of closest tile center, for maximum precision
-        if (!ToEldenGlobalCoords(target, Vector3.Zero, originX, originZ, out targetGlobal))
+        if (!ToGlobalCoords(target, Vector3.Zero, originX, originZ, out targetGlobal))
         {
             return null;
         }
@@ -67,8 +58,8 @@ internal class SpecialMapConnections
                 continue;
 
             if (!container.RootObject.HasTransform
-                || !TryParseMap(mapID, out var origin)
-                || !ToEldenGlobalCoords(origin, Vector3.Zero, originX, originZ, out Vector3 originGlobal))
+                || !MapConnectionsUtil.TryParseMap(mapID, out var origin)
+                || !ToGlobalCoords(origin, Vector3.Zero, originX, originZ, out Vector3 originGlobal))
             {
                 continue;
             }
@@ -100,7 +91,7 @@ internal class SpecialMapConnections
 
         connectColMaps ??= new List<byte[]>();
         SortedDictionary<string, RelationType> relations = new();
-        if (!TryParseMap(mapid, out var parts))
+        if (!MapConnectionsUtil.TryParseMap(mapid, out var parts))
         {
             return relations;
         }
@@ -119,7 +110,7 @@ internal class SpecialMapConnections
 
                 var parent = "";
 
-                parent = FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 1) });
+                parent = MapConnectionsUtil.FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 1) });
 
                 if (allMapIds.Contains(parent))
                 {
@@ -128,7 +119,7 @@ internal class SpecialMapConnections
                     {
                         tileX /= 2;
                         tileZ /= 2;
-                        var ancestor = FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 2) });
+                        var ancestor = MapConnectionsUtil.FormatMap(new byte[] { topIndex, tileX, tileZ, (byte)(parts[3] + 2) });
                         if (allMapIds.Contains(ancestor))
                         {
                             relations[ancestor] = RelationType.Ancestor;
@@ -148,7 +139,7 @@ internal class SpecialMapConnections
                     {
                         var childX = (byte)(tileX * 2 + x);
                         var childZ = (byte)(tileZ * 2 + z);
-                        var child = FormatMap(new byte[] { topIndex, childX, childZ, (byte)(parts[3] - 1) });
+                        var child = MapConnectionsUtil.FormatMap(new byte[] { topIndex, childX, childZ, (byte)(parts[3] - 1) });
                         if (allMapIds.Contains(child))
                         {
                             relations[child] = RelationType.Child;
@@ -163,7 +154,7 @@ internal class SpecialMapConnections
                                 {
                                     var descX = (byte)(childX * 2 + cx);
                                     var descZ = (byte)(childZ * 2 + cz);
-                                    var desc = FormatMap(new byte[] { topIndex, descX, descZ, (byte)(parts[3] - 2) });
+                                    var desc = MapConnectionsUtil.FormatMap(new byte[] { topIndex, descX, descZ, (byte)(parts[3] - 2) });
                                     if (allMapIds.Contains(desc))
                                     {
                                         relations[desc] = RelationType.Descendant;
@@ -179,7 +170,7 @@ internal class SpecialMapConnections
         Dictionary<string, string> colPatterns = new();
         foreach (var connectParts in connectColMaps)
         {
-            var connectMapId = FormatMap(connectParts);
+            var connectMapId = MapConnectionsUtil.FormatMap(connectParts);
             if (connectParts.Length != 4 || colPatterns.ContainsKey(connectMapId))
             {
                 continue;
@@ -256,7 +247,7 @@ internal class SpecialMapConnections
         return relations;
     }
 
-    private static bool TryInitializeEldenOffsets(MapEditorScreen editor)
+    private static bool TryInitializeOffsets(MapEditorScreen editor)
     {
         if (eldenRingOffsets != null)
         {
@@ -285,7 +276,7 @@ internal class SpecialMapConnections
             // Haligtree from Ordina
             ["m15_00_00_00"] = "m60_48_57_00"
         };
-        Dictionary<string, DungeonOffset> dungeonOffsets = new();
+        Dictionary<string, TileDefinition> dungeonOffsets = new();
         foreach (Param.Row row in convParam.Rows)
         {
             // Dungeon -> World conversions
@@ -295,23 +286,23 @@ internal class SpecialMapConnections
                 continue;
             }
 
-            var dstParts = GetRowMapParts(row, dstPartFields).ToArray();
+            var dstParts = MapConnectionsUtil.GetRowMapParts(row, dstPartFields).ToArray();
             if (dstParts[0] != 60 && dstParts[0] != 61)
             {
                 continue;
             }
 
-            var srcId = FormatMap(GetRowMapParts(row, srcPartFields));
-            var dstId = FormatMap(dstParts);
+            var srcId = MapConnectionsUtil.FormatMap(MapConnectionsUtil.GetRowMapParts(row, srcPartFields));
+            var dstId = MapConnectionsUtil.FormatMap(dstParts);
             if (dungeonOffsets.ContainsKey(srcId)
                 || correctConnects.TryGetValue(srcId, out var trueConnect) && dstId != trueConnect)
             {
                 continue;
             }
 
-            Vector3 srcPos = GetRowPosition(row, "srcPos");
-            Vector3 dstPos = GetRowPosition(row, "dstPos");
-            dungeonOffsets[srcId] = new DungeonOffset
+            Vector3 srcPos = MapConnectionsUtil.GetRowPosition(row, "srcPos");
+            Vector3 dstPos = MapConnectionsUtil.GetRowPosition(row, "dstPos");
+            dungeonOffsets[srcId] = new TileDefinition
             {
                 TileX = dstParts[1],
                 TileZ = dstParts[2],
@@ -324,19 +315,19 @@ internal class SpecialMapConnections
             // Dungeon -> Dungeon
             // Calculating destination (legacy) in terms of source (already legacy)
             // Only one iteration of this appears to be needed.
-            var dstParts = GetRowMapParts(row, dstPartFields).ToArray();
+            var dstParts = MapConnectionsUtil.GetRowMapParts(row, dstPartFields).ToArray();
             if (dstParts[0] == 60 || dstParts[0] == 61)
             {
                 continue;
             }
 
-            var srcId = FormatMap(GetRowMapParts(row, srcPartFields));
-            var dstId = FormatMap(dstParts);
-            if (!dungeonOffsets.ContainsKey(dstId) && dungeonOffsets.TryGetValue(srcId, out DungeonOffset val))
+            var srcId = MapConnectionsUtil.FormatMap(MapConnectionsUtil.GetRowMapParts(row, srcPartFields));
+            var dstId = MapConnectionsUtil.FormatMap(dstParts);
+            if (!dungeonOffsets.ContainsKey(dstId) && dungeonOffsets.TryGetValue(srcId, out TileDefinition val))
             {
-                Vector3 srcPos = GetRowPosition(row, "srcPos");
-                Vector3 dstPos = GetRowPosition(row, "dstPos");
-                dungeonOffsets[dstId] = new DungeonOffset
+                Vector3 srcPos = MapConnectionsUtil.GetRowPosition(row, "srcPos");
+                Vector3 dstPos = MapConnectionsUtil.GetRowPosition(row, "dstPos");
+                dungeonOffsets[dstId] = new TileDefinition
                 {
                     TileX = val.TileX,
                     TileZ = val.TileZ,
@@ -353,7 +344,7 @@ internal class SpecialMapConnections
         }
 
         // m60_00_00_99's origin matches m60_10_08_02
-        dungeonOffsets["m60_00_00_00"] = new DungeonOffset
+        dungeonOffsets["m60_00_00_00"] = new TileDefinition
         {
             TileX = 40,
             TileZ = 32,
@@ -363,8 +354,8 @@ internal class SpecialMapConnections
         // Colosseums are not connected to any maps, but their in-game map position in emevd matches the overworld colosseums
         if (dungeonOffsets.ContainsKey("m11_00_00_00"))
         {
-            DungeonOffset leyndell = dungeonOffsets["m11_00_00_00"];
-            dungeonOffsets["m45_00_00_00"] = new DungeonOffset
+            TileDefinition leyndell = dungeonOffsets["m11_00_00_00"];
+            dungeonOffsets["m45_00_00_00"] = new TileDefinition
             {
                 TileX = leyndell.TileX,
                 TileZ = leyndell.TileZ,
@@ -372,13 +363,13 @@ internal class SpecialMapConnections
             };
         }
 
-        dungeonOffsets["m45_01_00_00"] = new DungeonOffset
+        dungeonOffsets["m45_01_00_00"] = new TileDefinition
         {
             TileX = 47,
             TileZ = 42,
             TileOffset = new Vector3(-2.34f, 150.4f, -43.36f)
         };
-        dungeonOffsets["m45_02_00_00"] = new DungeonOffset
+        dungeonOffsets["m45_02_00_00"] = new TileDefinition
         {
             TileX = 42,
             TileZ = 40,
@@ -389,7 +380,7 @@ internal class SpecialMapConnections
         return true;
     }
 
-    private static bool ToEldenGlobalCoords(IList<byte> mapId, Vector3 local, int originTileX, int originTileZ,
+    private static bool ToGlobalCoords(IList<byte> mapId, Vector3 local, int originTileX, int originTileZ,
         out Vector3 global)
     {
         int tileX, tileZ;
@@ -420,8 +411,8 @@ internal class SpecialMapConnections
         }
         else
         {
-            var mapIdStr = FormatMap(mapId);
-            if (!eldenRingOffsets.TryGetValue(mapIdStr, out DungeonOffset offset))
+            var mapIdStr = MapConnectionsUtil.FormatMap(mapId);
+            if (!eldenRingOffsets.TryGetValue(mapIdStr, out TileDefinition offset))
             {
                 global = default;
                 return false;
@@ -434,58 +425,5 @@ internal class SpecialMapConnections
 
         global = local + new Vector3((tileX - originTileX) * 256, 0, (tileZ - originTileZ) * 256);
         return true;
-    }
-
-    private static (int, int) GetClosestTile(Vector3 global, int originTileX, int originTileZ)
-    {
-        return ((int)Math.Round(global.X / 256) + originTileX, (int)Math.Round(global.Z / 256) + originTileZ);
-    }
-
-    private static bool TryParseMap(string map, out byte[] parts)
-    {
-        try
-        {
-            parts = map.TrimStart('m').Split('_').Select(p => byte.Parse(p)).ToArray();
-            if (parts.Length == 4)
-            {
-                return true;
-            }
-        }
-        catch (Exception ex) when (ex is FormatException || ex is OverflowException)
-        {
-        }
-
-        parts = null;
-        return false;
-    }
-
-    private static string FormatMap(IEnumerable<byte> parts)
-    {
-        return "m" + string.Join("_", parts.Select(p => p == 0xFF ? "XX" : $"{p:d2}"));
-    }
-
-    private static List<byte> GetRowMapParts(Param.Row row, List<string> fields)
-    {
-        List<byte> bytes = fields.Select(f => (byte)row.GetCellHandleOrThrow(f).Value).ToList();
-        while (bytes.Count < 4)
-        {
-            bytes.Add(0);
-        }
-
-        return bytes;
-    }
-
-    private static Vector3 GetRowPosition(Param.Row row, string type)
-    {
-        return new Vector3((float)row.GetCellHandleOrThrow($"{type}X").Value,
-            (float)row.GetCellHandleOrThrow($"{type}Y").Value,
-            (float)row.GetCellHandleOrThrow($"{type}Z").Value);
-    }
-
-    private class DungeonOffset
-    {
-        public int TileX { get; set; }
-        public int TileZ { get; set; }
-        public Vector3 TileOffset { get; set; }
     }
 }
