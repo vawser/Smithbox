@@ -105,10 +105,9 @@ public class DuplicateToMapAction
     /// </summary>
     public void DisplayMenu()
     {
-        var windowWidth = ImGui.GetWindowWidth();
-        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+        var windowSize = new Vector2(800f, 500f);
         var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
-        var sectionHeight = windowSize.Y * 0.1f;
+        var sectionHeight = windowSize.Y * 0.25f;
         var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
 
         UIHelper.SimpleHeader("Target Map", "Target Map", "The target map to duplicate the current selection to.", UI.Current.ImGui_Default_Text_Color);
@@ -166,7 +165,7 @@ public class DuplicateToMapAction
                 }
             }
 
-            if (ImGui.Button("Duplicate##dupeToMapAction", DPI.WholeWidthButton(windowWidth, 24)))
+            if (ImGui.Button("Duplicate##dupeToMapAction", DPI.WholeWidthButton(sectionWidth, 24)))
             {
                 DuplicateToMap(sel, targetMap, TargetBTL.Item2);
             }
