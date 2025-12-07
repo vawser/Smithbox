@@ -1,5 +1,4 @@
-﻿using Octokit;
-using StudioCore.Configuration;
+﻿using StudioCore.Configuration;
 using StudioCore.Core;
 using System.Text.Json.Serialization;
 

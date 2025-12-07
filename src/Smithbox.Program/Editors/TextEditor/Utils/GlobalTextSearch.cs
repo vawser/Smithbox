@@ -1,9 +1,12 @@
 ﻿using Hexa.NET.ImGui;
 using Org.BouncyCastle.Crypto;
+using Silk.NET.OpenGL;
 using Silk.NET.SDL;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
+using StudioCore.Platform;
+using StudioCore.Program.Editors.TextEditor;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
@@ -11,6 +14,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor.Utils;
@@ -28,7 +33,11 @@ public static class GlobalTextSearch
 
     public static void Display(TextEditorScreen editor)
     {
-        var windowWidth = ImGui.GetWindowWidth();
+        var windowSize = DPI.GetWindowSize(editor.BaseEditor._context);
+        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
+
+        var resultSectionSize = new Vector2(sectionWidth * DPI.UIScale(), windowSize.Y * 0.6f * DPI.UIScale());
+        var exportSectionSize = new Vector2(sectionWidth * DPI.UIScale(), windowSize.Y * 0.2f * DPI.UIScale());
 
         if (ImGui.BeginTable($"globalSearchTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -111,19 +120,21 @@ public static class GlobalTextSearch
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", DPI.HalfWidthButton(windowWidth, 24)))
+        if (ImGui.Button("Search##executeSearch", DPI.HalfWidthButton(sectionWidth, 24)))
         {
             HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", DPI.HalfWidthButton(windowWidth, 24)))
+        if (ImGui.Button("Clear##clearSearchResults", DPI.HalfWidthButton(sectionWidth, 24)))
         {
             HasSearched = false;
             SearchResults.Clear();
         }
 
         ImGui.Separator();
+
+        ImGui.BeginChild("resultsSection", resultSectionSize, ImGuiChildFlags.Borders);
 
         if (SearchResults.Count > 0)
         {
@@ -180,5 +191,43 @@ public static class GlobalTextSearch
         {
             UIHelper.WrappedText("No text entries found matching the filter.");
         }
+
+        ImGui.EndChild();
+
+
+        ImGui.BeginChild("exportSection", exportSectionSize, ImGuiChildFlags.Borders);
+
+        if (SearchResults.Count > 0)
+        {
+            if (ImGui.Button("Copy to Clipboard##copyToClipboardAction", DPI.HalfWidthButton(sectionWidth, 24)))
+            {
+                var list = new TextExportList();
+                list.Entries = new();
+
+                foreach (var result in SearchResults)
+                {
+                    var textExportEntry = new TextExportEntry();
+                    textExportEntry.ContainerName = result.ContainerName;
+                    textExportEntry.FmgName = result.FmgName;
+                    textExportEntry.EntryID = result.Entry.ID;
+                    textExportEntry.EntryText = result.Entry.Text;
+
+                    list.Entries.Add(textExportEntry);
+                }
+
+                var options = new JsonSerializerOptions
+                {
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true,
+                    IncludeFields = true
+                };
+
+                var jsonText = JsonSerializer.Serialize(list, typeof(TextExportList), options);
+
+                PlatformUtils.Instance.SetClipboardText(jsonText);
+            }
+        }
+
+        ImGui.EndChild();
     }
 }

@@ -26,5 +26,4 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Fix the text entry quick-link (from Text Search)
 - Fix the focus text entry action when quick-linked (currently it doesn't scroll to position)
