@@ -865,7 +865,7 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.PatrolRoute;
                 private protected override bool HasTypeData => true;
 
-                public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolInfo)}") { }
+                public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolRoute)}") { }
                 internal PatrolRoute(BinaryReaderEx br, int version) : base(br, version) { }
 
                 private protected override void DeepCopyTo(Event evnt)
