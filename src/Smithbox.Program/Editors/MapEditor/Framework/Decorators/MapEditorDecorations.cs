@@ -1,6 +1,9 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
+using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Editors.ParamEditor.Decorators;
@@ -13,6 +16,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using Veldrid.Utilities;
+using static StudioCore.Configuration.Settings.MapEditorTab;
 
 namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
@@ -295,21 +300,93 @@ public static class MapEditorDecorations
 
         var map = maps.First();
         var entity = map.GetObjectByName((string)val);
+
         if (entity == null)
         {
             ImGui.TextColored(UI.Current.ImGui_Invalid_Text_Color, "No object by that name");
         }
         else
         {
+            // View Reference in Viewport
+            if (ImGui.Button(Icons.Binoculars + "##focusRef" + entity.Name,
+                DPI.IconButtonSize))
+            {
+                BoundingBox box = new();
+
+                if (entity.RenderSceneMesh != null)
+                {
+                    box = entity.RenderSceneMesh.GetBounds();
+                }
+                else if (entity.Container.RootObject == entity)
+                {
+                    // Selection is transform node
+                    Vector3 nodeOffset = new(10.0f, 10.0f, 10.0f);
+                    Vector3 pos = entity.GetLocalTransform().Position;
+                    BoundingBox nodeBox = new(pos - nodeOffset, pos + nodeOffset);
+                    box = nodeBox;
+                }
+
+                editor.FrameAction.ApplyViewportFrameWithBox(box);
+            }
+
+            ImGui.SameLine();
+
+            // Name
             var alias = AliasUtils.GetEntityAliasName(editor.Project, entity);
-            if (alias is null or "")
+
+            var displayText = $"";
+
+            if(CFG.Current.MsbReference_DisplayName)
             {
-                ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{entity.PrettyName}");
+                displayText = $"{entity.PrettyName}";
             }
-            else
+
+            if (CFG.Current.MsbReference_DisplayEntityID)
             {
-                ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{entity.PrettyName} - {alias}");
+                var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
+
+                if (entId != null)
+                {
+                    var newText = $"{entId}";
+
+                    if (CFG.Current.MsbReference_DisplayName)
+                    {
+                        displayText = $"{displayText} - {newText}";
+                    }
+                    else
+                    {
+                        displayText = $"{newText}";
+                    }
+                }
             }
+
+            if (CFG.Current.MsbReference_DisplayAlias)
+            {
+                if (!CFG.Current.MsbReference_DisplayName && !CFG.Current.MsbReference_DisplayEntityID)
+                {
+                    if (alias is null or "")
+                    {
+                        displayText = $"";
+                    }
+                    else
+                    {
+                        displayText = $"{alias}";
+                    }
+                }
+                else
+                {
+                    if (alias is null or "")
+                    {
+                        displayText = $"{displayText}";
+                    }
+                    else
+                    {
+                        displayText = $"{displayText} - {alias}";
+                    }
+                }
+            }
+
+            ImGui.TextColored(UI.Current.ImGui_ParamRef_Text, $"{displayText}");
         }
 
         if (ImGui.BeginPopupContextItem($"{msbRef.ReferenceType.Name}RefContextMenu"))
@@ -323,6 +400,7 @@ public static class MapEditorDecorations
     }
 
     static string autocomplete = "";
+
     public static bool PropertyRowMsbRefContextItems(
         MapEditorScreen editor,
         MapEntityPropertyFieldMeta meta,
@@ -332,17 +410,33 @@ public static class MapEditorDecorations
         ObjectContainer container
     )
     {
-        if (oldval is not string name) return false;
+        if (oldval is not string name) 
+            return false;
+
 
         var entity = container.GetObjectByName(name);
 
         if (entity != null)
         {
-            if (ImGui.Selectable($@"Select {name}"))
+            if (ImGui.Selectable($@"Select"))
             {
                 EditorCommandQueue.AddCommand($@"map/select/{container.Name}/{name}");
             }
+
+            ImGui.Separator();
+
+            ImGui.Text($"Name: {name}");
+
+            var entId = PropFinderUtil.FindPropertyValue("EntityID", entity.WrappedObject);
+
+            if (entId != null)
+            {
+                ImGui.Text($"Entity ID: {entId}");
+            }
+
         }
+
+        /*
         ImGui.InputTextWithHint("##value", "Search...", ref autocomplete, 128);
         if (autocomplete != "")
         {
@@ -359,6 +453,7 @@ public static class MapEditorDecorations
                 }
             }
         }
+        */
 
         return false;
     }

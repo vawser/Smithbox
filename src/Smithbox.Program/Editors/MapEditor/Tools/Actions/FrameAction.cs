@@ -131,4 +131,9 @@ public class FrameAction
             PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
+
+    public void ApplyViewportFrameWithBox(BoundingBox box)
+    {
+        Editor.MapViewportView.Viewport.FrameBox(box);
+    }
 }

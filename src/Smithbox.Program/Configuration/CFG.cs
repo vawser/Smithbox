@@ -13,6 +13,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static MsbUtils;
+using static StudioCore.Configuration.Settings.MapEditorTab;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
@@ -328,6 +329,10 @@ public class CFG
     public bool GlobalMapSearch_CopyResults_IncludePropertyName = true;
     public bool GlobalMapSearch_CopyResults_IncludePropertyValue = true;
     public string GlobalMapSearch_CopyResults_Delimiter = ",";
+
+    public bool MsbReference_DisplayName = true;
+    public bool MsbReference_DisplayEntityID = true;
+    public bool MsbReference_DisplayAlias = true;
 
     ///------------------------------------------------------------
     /// Model Editor

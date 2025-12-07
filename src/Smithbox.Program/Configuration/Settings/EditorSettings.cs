@@ -307,10 +307,10 @@ public class SystemTab
 }
 #endregion
 
-    //------------------------------------------
-    // Map Editor
-    //------------------------------------------
-    #region Map Editor
+//------------------------------------------
+// Map Editor
+//------------------------------------------
+#region Map Editor
 public class MapEditorTab
 {
     public Smithbox BaseEditor;
@@ -468,6 +468,19 @@ public class MapEditorTab
 
             ImGui.Checkbox("Display quick-links to params used by the Map Object", ref CFG.Current.MapEditor_Enable_Param_Quick_Links);
             UIHelper.Tooltip("The MSB property view will display quick-links to related params pointed to within the properties for the selected map object.");
+        }
+
+        // References
+        if (ImGui.CollapsingHeader("References", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Display Name", ref CFG.Current.MsbReference_DisplayName);
+            UIHelper.Tooltip("If enabled, map object references will display the name of the reference.");
+
+            ImGui.Checkbox("Display Entity ID", ref CFG.Current.MsbReference_DisplayEntityID);
+            UIHelper.Tooltip("If enabled, map object references will display the entity of the reference.");
+
+            ImGui.Checkbox("Display Alias", ref CFG.Current.MsbReference_DisplayAlias);
+            UIHelper.Tooltip("If enabled, map object references will display the alias of the reference.");
         }
 
         // Substitutions

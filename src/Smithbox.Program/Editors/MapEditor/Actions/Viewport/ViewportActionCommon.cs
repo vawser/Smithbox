@@ -30,11 +30,11 @@ public static class ViewportActionCommon
         if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (editor.Project.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType is ProjectType.AC6)
         {
             SetUniqueEntityID_AC6(editor, sel, map);
         }
-        else if (editor.Project.ProjectType == ProjectType.ER)
+        else if (editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             SetUniqueEntityID_ER(editor, sel, map);
         }
