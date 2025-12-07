@@ -31,6 +31,8 @@ public class TextCommandQueue
 
                 var fileIndex = 0;
 
+                TextFmgWrapper targetFmg = null;
+
                 foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     bool found = false;
@@ -48,8 +50,8 @@ public class TextCommandQueue
                         {
                             if (fmg.Name == fmgName)
                             {
-                                Editor.Selection.FocusFmgSelection = true;
-                                Editor.Selection.SelectFmg(fmg);
+                                targetFmg = fmg;
+
                                 entry = fmg.File.Entries.FirstOrDefault(e => e.ID.ToString() == fmgEntryId);
                                 if (entry != null)
                                 {
@@ -64,9 +66,13 @@ public class TextCommandQueue
                     if (found)
                     {
                         Editor.Selection.SelectFileContainer(fileEntry, info, fileIndex);
+                        Editor.Selection.FocusFileSelection = true;
+
+                        Editor.Selection.SelectFmg(targetFmg);
+                        Editor.Selection.FocusFmgSelection = true;
+
                         Editor.Selection.SelectFmgEntry(index, entry);
                         Editor.Selection.FocusFmgEntrySelection = true;
-                        Editor.Selection.FocusFileSelection = true;
                         break;
                     }
                     fileIndex++;
