@@ -188,13 +188,13 @@ namespace SoulsFormats
                 foreach (long offset in entryOffsets)
                 {
                     br.Position = offset;
-                    entries.Add(ReadEntry(br));
+                    entries.Add(ReadEntry(br, Version));
                 }
                 br.Position = nextParamOffset;
                 return entries;
             }
 
-            internal abstract T ReadEntry(BinaryReaderEx br);
+            internal abstract T ReadEntry(BinaryReaderEx br, int version);
 
             internal virtual void Write(BinaryWriterEx bw, List<T> entries)
             {
@@ -264,7 +264,7 @@ namespace SoulsFormats
             /// </summary>
             public EmptyParam(int version, string name) : base(version, name) { }
 
-            internal override Entry ReadEntry(BinaryReaderEx br)
+            internal override Entry ReadEntry(BinaryReaderEx br, int version)
             {
                 throw new InvalidDataException($"Expected param \"{Name}\" to be empty, but it wasn't.");
             }

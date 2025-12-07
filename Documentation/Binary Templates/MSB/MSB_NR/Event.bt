@@ -292,4 +292,10 @@ typedef struct {
     if (eventParam.header.version >= 78) {
         int unk10; // -1
     }
+    if (eventParam.header.version >= 80) {
+        int unk14; // 0
+        int unk18; // -1
+        int unk1C; // 0
+        int unk20; // -1
+    }
 } EventTeamFight;

@@ -131,55 +131,55 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbEvent> IMsbParam<IMsbEvent>.GetEntries() => GetEntries();
 
-            internal override Event ReadEntry(BinaryReaderEx br)
+            internal override Event ReadEntry(BinaryReaderEx br, int version)
             {
                 EventType type = br.GetEnum32<EventType>(br.Position + 0xC);
                 switch (type)
                 {
                     case EventType.Treasure:
-                        return Treasures.EchoAdd(new Event.Treasure(br));
+                        return Treasures.EchoAdd(new Event.Treasure(br, version));
 
                     case EventType.Generator:
-                        return Generators.EchoAdd(new Event.Generator(br));
+                        return Generators.EchoAdd(new Event.Generator(br, version));
 
                     case EventType.ObjAct:
-                        return ObjActs.EchoAdd(new Event.ObjAct(br));
+                        return ObjActs.EchoAdd(new Event.ObjAct(br, version));
 
                     case EventType.MapOffset:
-                        return MapOffsets.EchoAdd(new Event.MapOffset(br));
+                        return MapOffsets.EchoAdd(new Event.MapOffset(br, version));
 
                     case EventType.PseudoMultiplayer:
-                        return PseudoMultiplayers.EchoAdd(new Event.PseudoMultiplayer(br));
+                        return PseudoMultiplayers.EchoAdd(new Event.PseudoMultiplayer(br, version));
 
                     case EventType.PatrolInfo:
-                        return PatrolInfos.EchoAdd(new Event.PatrolInfo(br));
+                        return PatrolInfos.EchoAdd(new Event.PatrolInfo(br, version));
 
                     case EventType.PlatoonInfo:
-                        return PlatoonInfos.EchoAdd(new Event.PlatoonInfo(br));
+                        return PlatoonInfos.EchoAdd(new Event.PlatoonInfo(br, version));
 
                     case EventType.PatrolRoute:
-                        return PatrolRoutes.EchoAdd(new Event.PatrolRoute(br));
+                        return PatrolRoutes.EchoAdd(new Event.PatrolRoute(br, version));
 
                     case EventType.Riding:
-                        return Ridings.EchoAdd(new Event.Riding(br));
+                        return Ridings.EchoAdd(new Event.Riding(br, version));
 
                     case EventType.SignPuddle:
-                        return SignPuddles.EchoAdd(new Event.SignPuddle(br));
+                        return SignPuddles.EchoAdd(new Event.SignPuddle(br, version));
 
                     case EventType.RetryPoint:
-                        return RetryPoints.EchoAdd(new Event.RetryPoint(br));
+                        return RetryPoints.EchoAdd(new Event.RetryPoint(br, version));
 
                     case EventType.BirdRoute:
-                        return BirdRoutes.EchoAdd(new Event.BirdRoute(br));
+                        return BirdRoutes.EchoAdd(new Event.BirdRoute(br, version));
 
                     case EventType.TalkInfo:
-                        return TalkInfos.EchoAdd(new Event.TalkInfo(br));
+                        return TalkInfos.EchoAdd(new Event.TalkInfo(br, version));
 
                     case EventType.TeamFight:
-                        return TeamFights.EchoAdd(new Event.TeamFight(br));
+                        return TeamFights.EchoAdd(new Event.TeamFight(br, version));
 
                     case EventType.Other:
-                        return Others.EchoAdd(new Event.Other(br));
+                        return Others.EchoAdd(new Event.Other(br, version));
 
                     default:
                         throw new NotImplementedException($"Unimplemented event type: {type}");
@@ -194,7 +194,7 @@ namespace SoulsFormats
         {
             private protected abstract EventType Type { get; }
             private protected abstract bool HasTypeData { get; }
-            private protected virtual void ReadTypeData(BinaryReaderEx br)
+            private protected virtual void ReadTypeData(BinaryReaderEx br, int version)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
 
             private protected virtual void WriteTypeData(BinaryWriterEx bw)
@@ -232,7 +232,7 @@ namespace SoulsFormats
                 return $"{Type} {Name}";
             }
 
-            private protected Event(BinaryReaderEx br)
+            private protected Event(BinaryReaderEx br, int version)
             {
                 long start = br.Position;
 
@@ -277,7 +277,7 @@ namespace SoulsFormats
                 if (HasTypeData)
                 {
                     br.Position = start + TypeOffset;
-                    ReadTypeData(br);
+                    ReadTypeData(br, version);
                 }
 
                 // Unk 28
@@ -412,7 +412,7 @@ namespace SoulsFormats
 
                 public Treasure() : base($"{nameof(Event)}: {nameof(Treasure)}") { }
 
-                internal Treasure(BinaryReaderEx br) : base(br) { }
+                internal Treasure(BinaryReaderEx br, int version) : base(br, version) { }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -426,7 +426,7 @@ namespace SoulsFormats
                     TreasurePartIndex = MSB.FindIndex(this, entries.Parts, TreasurePartName);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     Unk00 = br.ReadInt32();
                     Unk04 = br.ReadInt32();
@@ -522,7 +522,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public Generator() : base($"{nameof(Event)}: {nameof(Generator)}") { }
-                internal Generator(BinaryReaderEx br) : base(br) { }
+                internal Generator(BinaryReaderEx br, int version) : base(br, version) { }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -545,7 +545,7 @@ namespace SoulsFormats
                     SpawnPartIndices = MSB.FindIndices(this, entries.Parts, SpawnPartNames);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     MaxNum = br.ReadByte();
                     GenType = br.ReadSByte();
@@ -665,7 +665,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public ObjAct() : base($"{nameof(Event)}: {nameof(ObjAct)}") { }
-                internal ObjAct(BinaryReaderEx br) : base(br) { }
+                internal ObjAct(BinaryReaderEx br, int version) : base(br, version) { }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -679,7 +679,7 @@ namespace SoulsFormats
                     ObjActPartIndex = MSB.FindIndex(this, entries.Parts, ObjActPartName);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     ObjActEntityId = br.ReadUInt32();
                     ObjActPartIndex = br.ReadInt32();
@@ -736,8 +736,8 @@ namespace SoulsFormats
 
                 public MapOffset() : base($"{nameof(Event)}: {nameof(MapOffset)}") { }
 
-                internal MapOffset(BinaryReaderEx br) : base(br) { }
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                internal MapOffset(BinaryReaderEx br, int version) : base(br, version) { }
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -758,9 +758,9 @@ namespace SoulsFormats
 
                 public PseudoMultiplayer() : base($"{nameof(Event)}: {nameof(PseudoMultiplayer)}") { }
 
-                internal PseudoMultiplayer(BinaryReaderEx br) : base(br) { }
+                internal PseudoMultiplayer(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -781,9 +781,9 @@ namespace SoulsFormats
 
                 public PatrolInfo() : base($"{nameof(Event)}: {nameof(PatrolInfo)}") { }
 
-                internal PatrolInfo(BinaryReaderEx br) : base(br) { }
+                internal PatrolInfo(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -803,7 +803,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public PlatoonInfo() : base($"{nameof(Event)}: {nameof(PlatoonInfo)}") { }
-                internal PlatoonInfo(BinaryReaderEx br) : base(br) { }
+                internal PlatoonInfo(BinaryReaderEx br, int version) : base(br, version) { }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -820,7 +820,7 @@ namespace SoulsFormats
                     base.GetIndices(msb, entries);
                     GroupPartsIndices = MSB.FindIndices(this, entries.Parts, GroupPartsNames);
                 }
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     PlatoonScriptId = br.ReadInt32();
                     Unk04 = br.ReadByte();
@@ -866,7 +866,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public PatrolRoute() : base($"{nameof(Event)}: {nameof(PatrolInfo)}") { }
-                internal PatrolRoute(BinaryReaderEx br) : base(br) { }
+                internal PatrolRoute(BinaryReaderEx br, int version) : base(br, version) { }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -886,7 +886,7 @@ namespace SoulsFormats
                     RegionIndices = MSB.FindShortIndices(entries.Regions, RegionNames);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     PatrolType = br.ReadByte();
                     Unk01 = br.ReadByte();
@@ -935,7 +935,7 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public Riding() : base($"{nameof(Event)}: {nameof(Riding)}") { }
-                internal Riding(BinaryReaderEx br) : base(br) { }
+                internal Riding(BinaryReaderEx br, int version) : base(br, version) { }
 
                 internal override void GetNames(MSB_NR msb, Entries entries)
                 {
@@ -951,7 +951,7 @@ namespace SoulsFormats
                     MountPartIndex = MSB.FindIndex(this, entries.Parts, MountPartName);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     RiderPartIndex = br.ReadInt32();
                     MountPartIndex = br.ReadInt32();
@@ -986,8 +986,8 @@ namespace SoulsFormats
 
                 public AutoDrawGroup() : base($"{nameof(Event)}: {nameof(AutoDrawGroup)}") { }
 
-                internal AutoDrawGroup(BinaryReaderEx br) : base(br) { }
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                internal AutoDrawGroup(BinaryReaderEx br, int version) : base(br, version) { }
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -1007,9 +1007,9 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public SignPuddle() : base($"{nameof(Event)}: {nameof(SignPuddle)}") { }
-                internal SignPuddle(BinaryReaderEx br) : base(br) { }
+                internal SignPuddle(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -1029,9 +1029,9 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 public RetryPoint() : base($"{nameof(Event)}: {nameof(RetryPoint)}") { }
-                internal RetryPoint(BinaryReaderEx br) : base(br) { }
+                internal RetryPoint(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                 }
 
@@ -1052,7 +1052,7 @@ namespace SoulsFormats
 
                 public BirdRoute() : base($"{nameof(Event)}: {nameof(BirdRoute)}") { }
 
-                internal BirdRoute(BinaryReaderEx br) : base(br) { }
+                internal BirdRoute(BinaryReaderEx br, int version) : base(br, version) { }
 
                 private protected override void DeepCopyTo(Event evnt)
                 {
@@ -1072,7 +1072,7 @@ namespace SoulsFormats
                     RegionIndices = MSB.FindShortIndices(entries.Regions, RegionNames);
                 }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     Unk00 = br.ReadInt32();
                     Unk04 = br.ReadInt32();
@@ -1113,9 +1113,9 @@ namespace SoulsFormats
 
                 public TalkInfo() : base($"{nameof(Event)}: {nameof(TalkInfo)}") { }
 
-                internal TalkInfo(BinaryReaderEx br) : base(br) { }
+                internal TalkInfo(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
                     EnemyPartIndices = br.ReadInt32s(4);
                     Unk10 = br.ReadInt32();
@@ -1237,21 +1237,33 @@ namespace SoulsFormats
                 private protected override EventType Type => EventType.TeamFight;
                 private protected override bool HasTypeData => true;
 
+                private int Version = -1;
+
                 public TeamFight() : base($"{nameof(Event)}: {nameof(TeamFight)}") { }
 
-                internal TeamFight(BinaryReaderEx br) : base(br) { }
+                internal TeamFight(BinaryReaderEx br, int version) : base(br, version) { }
 
-                private protected override void ReadTypeData(BinaryReaderEx br)
+                private protected override void ReadTypeData(BinaryReaderEx br, int version)
                 {
+                    Version = version;
+
                     TargetEntityGroupID = br.ReadInt32();
                     FirstItemLot = br.ReadInt32();
                     SecondItemLot = br.ReadInt32();
                     LeaderEntityID = br.ReadInt32();
-                    UnkItemLot = br.ReadInt32();
-                    Unk00 = br.ReadInt32();
-                    Unk01 = br.ReadInt32();
-                    Unk02 = br.ReadInt32();
-                    Unk03 = br.ReadInt32();
+
+                    if (Version >= 78)
+                    {
+                        UnkItemLot = br.ReadInt32();
+                    }
+                    
+                    if (Version >= 80)
+                    {
+                        Unk14 = br.ReadInt32();
+                        Unk18 = br.ReadInt32();
+                        Unk1C = br.ReadInt32();
+                        Unk20 = br.ReadInt32();
+                    }
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -1260,11 +1272,16 @@ namespace SoulsFormats
                     bw.WriteInt32(FirstItemLot);
                     bw.WriteInt32(SecondItemLot);
                     bw.WriteInt32(LeaderEntityID);
+
                     bw.WriteInt32(UnkItemLot);
-                    bw.WriteInt32(Unk00);
-                    bw.WriteInt32(Unk01);
-                    bw.WriteInt32(Unk02);
-                    bw.WriteInt32(Unk03);
+
+                    if (Version >= 80)
+                    {
+                        bw.WriteInt32(Unk14);
+                        bw.WriteInt32(Unk18);
+                        bw.WriteInt32(Unk1C);
+                        bw.WriteInt32(Unk20);
+                    }
                 }
 
                 // Layout
@@ -1274,10 +1291,11 @@ namespace SoulsFormats
                 public int SecondItemLot { get; set; } = -1;
                 public int LeaderEntityID { get; set; }
                 public int UnkItemLot { get; set; } = -1;
-                public int Unk00 { get; set; } = -1;
-                public int Unk01 { get; set; } = -1;
-                public int Unk02 { get; set; } = -1;
-                public int Unk03 { get; set; } = -1;
+
+                public int Unk14 { get; set; } = 0;
+                public int Unk18 { get; set; } = -1;
+                public int Unk1C { get; set; } = 0;
+                public int Unk20 { get; set; } = -1;
             }
 
             /// <summary>
@@ -1290,7 +1308,7 @@ namespace SoulsFormats
 
                 public Other() : base($"{nameof(Event)}: {nameof(Other)}") { }
 
-                internal Other(BinaryReaderEx br) : base(br) { }
+                internal Other(BinaryReaderEx br, int version) : base(br, version) { }
             }
         }
     }

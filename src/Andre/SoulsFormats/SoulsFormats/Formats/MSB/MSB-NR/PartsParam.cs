@@ -116,7 +116,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbPart> IMsbParam<IMsbPart>.GetEntries() => GetEntries();
 
-            internal override Part ReadEntry(BinaryReaderEx br)
+            internal override Part ReadEntry(BinaryReaderEx br, int version)
             {
                 PartType type = br.GetEnum32<PartType>(br.Position + 12);
                 switch (type)

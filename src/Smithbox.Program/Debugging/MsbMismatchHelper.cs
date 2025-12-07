@@ -1,71 +1,22 @@
-﻿using Hexa.NET.ImGui;
+﻿using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
-using static SoulsFormats.MSB_NR;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.DebugNS;
-public static class Test_MSB_NR
+namespace StudioCore.Program.Debugging;
+
+public static class MsbMismatchHelper
 {
-    public static List<MismatchData> mismatches = new List<MismatchData>();
-
-    public static List<RegionType> regionTypes = new List<RegionType>();
-
-    public static bool IncludeDisambiguation = false;
-
-    public static bool RunOnce = false;
-
-    public static class BytePerfectHashHelpers
+    public static List<MismatchData> GetMsbMismatches(ProjectEntry curProject)
     {
-        public static byte[] Md5(ReadOnlySpan<byte> data) => MD5.HashData(data);
-
-        public static bool Md5Equal(ReadOnlySpan<byte> a, ReadOnlySpan<byte> b)
-            => CryptographicOperations.FixedTimeEquals(MD5.HashData(a), MD5.HashData(b));
-
-        public static string Md5Hex(ReadOnlySpan<byte> data) => Convert.ToHexString(MD5.HashData(data));
-    }
-
-
-    public static void Display(Smithbox baseEditor, ProjectEntry project)
-    {
-        if (ImGui.Button("Check all Maps for Byte-Perfect Match", DPI.StandardButtonSize))
-        {
-            Run(baseEditor);
-        }
-
-        ImGui.Separator();
-
-        if (mismatches.Count > 0)
-        {
-            ImGui.Text("Mismatches:");
-
-            foreach (var entry in mismatches)
-            {
-                ImGui.Text($" {entry.MSB} - {entry.OriginalBytes} - {entry.WrittenBytes}");
-            }
-        }
-        else
-        {
-            if (RunOnce)
-            {
-                ImGui.Text("No mismatches!");
-            }
-        }
-    }
-
-    public static List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
-
-    public static bool Run(Smithbox baseEditor)
-    {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
-
-        mismatches = new List<MismatchData>();
-        regionTypes = new List<RegionType>();
+        var mismatches = new List<MismatchData>();
+        var resMaps = new List<ResourceDescriptor>();
 
         var mapDir = $"{curProject.DataPath}/map/mapstudio/";
 
@@ -113,7 +64,7 @@ public static class Test_MSB_NR
 
             var isMismatch = false;
 
-            if (!BytePerfectHashHelpers.Md5Equal(decompressed.Span, written))
+            if (!BytePerfectHelper.Md5Equal(decompressed.Span, written))
             {
                 isMismatch = true;
             }
@@ -125,9 +76,24 @@ public static class Test_MSB_NR
             }
         }
 
-        RunOnce = true;
-
-        return true;
+        return mismatches;
     }
 }
 
+public class MismatchData
+{
+    public string Name { get; set; }
+
+    public long SrcBytes { get; set; } = 0;
+    public long WriteBytes { get; set; } = 0;
+    public long ByteDiff { get; set; } = 0;
+
+    public MismatchData(string msb, long srcBytes, long writeBytes)
+    {
+        Name = msb;
+        SrcBytes = srcBytes;
+        WriteBytes = writeBytes;
+
+        ByteDiff = srcBytes - writeBytes;
+    }
+}

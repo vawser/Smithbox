@@ -261,7 +261,7 @@ namespace SoulsFormats
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
 
-            internal override Region ReadEntry(BinaryReaderEx br)
+            internal override Region ReadEntry(BinaryReaderEx br, int version)
             {
                 RegionType type = br.GetEnum32<RegionType>(br.Position + 8);
                 switch (type)
@@ -2280,13 +2280,31 @@ namespace SoulsFormats
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteInt32(Unk14);
                 }
 
                 // Layout
+                public int Unk00 { get; set; } = 0;
+                public int Unk04 { get; set; } = 0;
+                public int Unk08 { get; set; } = 0;
+                public int Unk0C { get; set; } = 0;
+                public int Unk10 { get; set; } = 0;
+                public int Unk14 { get; set; } = 0;
             }
 
             public class Other : Region

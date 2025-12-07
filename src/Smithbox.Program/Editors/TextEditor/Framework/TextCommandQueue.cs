@@ -38,11 +38,11 @@ public class TextCommandQueue
                     int index = -1;
 
                     if (info.ContainerDisplayCategory.ToString() == category &&
-                        (
-                            info.FileEntry.Filename == $"{containerName}_dlc02" ||
-                         info.FileEntry.Filename == $"{containerName}_dlc01" ||
-                         info.FileEntry.Filename == containerName)
-                        )
+                    (
+                        info.FileEntry.Filename == $"{containerName}_dlc02" ||
+                        info.FileEntry.Filename == $"{containerName}_dlc01" ||
+                        info.FileEntry.Filename == containerName)
+                    )
                     {
                         foreach (var fmg in info.FmgWrappers)
                         {
@@ -63,10 +63,10 @@ public class TextCommandQueue
 
                     if (found)
                     {
-                        Editor.Selection.FocusFileSelection = true;
                         Editor.Selection.SelectFileContainer(fileEntry, info, fileIndex);
-                        Editor.Selection.FocusFmgEntrySelection = true;
                         Editor.Selection.SelectFmgEntry(index, entry);
+                        Editor.Selection.FocusFmgEntrySelection = true;
+                        Editor.Selection.FocusFileSelection = true;
                         break;
                     }
                     fileIndex++;

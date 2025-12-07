@@ -22,8 +22,6 @@
 - Gparam Editor: properly find out the new NR field type structures, so they can be edited.
 
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
-- Fix the text entry quick-link (from Text Search)
-- Fix the focus text entry action when quick-linked (currently it doesn't scroll to position)
 
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
@@ -32,3 +30,6 @@
 
 - Update NR MSB format
  - Event.Teamfight -> Likely MSB version issue where the currenty mismatches are an older version (as I've updated the Teamfight def for the latest version)
+ 
+- Fix the text entry quick-link (from Text Search)
+- Fix the focus text entry action when quick-linked (currently it doesn't scroll to position)

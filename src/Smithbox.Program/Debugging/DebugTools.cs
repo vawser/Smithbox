@@ -25,7 +25,7 @@ public class DebugTools
     public bool ShowTest_BHV;
     public bool ShowTest_BTL;
     public bool ShowTest_FLVER2;
-    public bool ShowTest_MSB_AC6;
+    public bool ShowTest_MSB_BP;
     public bool ShowTest_MSB_ACFA;
     public bool ShowTest_MSB_ACV;
     public bool ShowTest_MSB_ACVD;
@@ -119,30 +119,11 @@ public class DebugTools
                 {
                     ShowTest_FLVER2 = !ShowTest_FLVER2;
                 }
-                if (ImGui.MenuItem($"MSB_AC6"))
+                if (ImGui.MenuItem($"Byte-Perfect MSB"))
                 {
-                    ShowTest_MSB_AC6 = !ShowTest_MSB_AC6;
+                    ShowTest_MSB_BP = !ShowTest_MSB_BP;
                 }
-                if (ImGui.MenuItem($"MSB_ACFA"))
-                {
-                    ShowTest_MSB_ACFA = !ShowTest_MSB_ACFA;
-                }
-                if (ImGui.MenuItem($"MSB_ACV"))
-                {
-                    ShowTest_MSB_ACV = !ShowTest_MSB_ACV;
-                }
-                if (ImGui.MenuItem($"MSB_ACVD"))
-                {
-                    ShowTest_MSB_ACVD = !ShowTest_MSB_ACVD;
-                }
-                if (ImGui.MenuItem($"MSB_ER"))
-                {
-                    ShowTest_MSB_ER = !ShowTest_MSB_ER;
-                }
-                if (ImGui.MenuItem($"MSB_NR"))
-                {
-                    ShowTest_MSB_NR = !ShowTest_MSB_NR;
-                }
+
                 ImGui.EndMenu();
             }
             ImGui.EndMenu();
@@ -153,7 +134,7 @@ public class DebugTools
     {
         if (ShowTaskWindow)
         {
-            if (ImGui.Begin("Task Viewer", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Task Viewer", ImGuiWindowFlags.None))
             {
                 TaskViewer.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -165,7 +146,7 @@ public class DebugTools
         }
         if (ShowParamValidator)
         {
-            if (ImGui.Begin("Param Validation", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Param Validation", ImGuiWindowFlags.None))
             {
                 ParamValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -173,7 +154,7 @@ public class DebugTools
         }
         if (ShowMapValidator)
         {
-            if (ImGui.Begin("Map Validation", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Map Validation", ImGuiWindowFlags.None))
             {
                 MapValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -181,7 +162,7 @@ public class DebugTools
         }
         if (ShowFlverMaterialLayoutDumper)
         {
-            if (ImGui.Begin("FLVER Material Layout Dumper", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("FLVER Material Layout Dumper", ImGuiWindowFlags.None))
             {
                 FlverMaterialLayoutDumper.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -189,7 +170,7 @@ public class DebugTools
         }
         if (ShowDokuWikiGenerator)
         {
-            if (ImGui.Begin("DokuWiki Generator", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("DokuWiki Generator", ImGuiWindowFlags.None))
             {
                 DokuWikiGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -197,7 +178,7 @@ public class DebugTools
         }
         if (ShowFileDictionaryGenerator)
         {
-            if (ImGui.Begin("File Dictionary Generator", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("File Dictionary Generator", ImGuiWindowFlags.None))
             {
                 FileDictionaryGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -205,7 +186,7 @@ public class DebugTools
         }
         if (ShowWorldMapLayoutGenerator)
         {
-            if (ImGui.Begin("World Map Layout Generator", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("World Map Layout Generator", ImGuiWindowFlags.None))
             {
                 WorldMapLayoutGenerator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -213,7 +194,7 @@ public class DebugTools
         }
         if (ShowTest_UniqueParamInsertion)
         {
-            if (ImGui.Begin("Unique Param Insertion", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Unique Param Insertion", ImGuiWindowFlags.None))
             {
                 ParamUniqueInserter.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -221,7 +202,7 @@ public class DebugTools
         }
         if (ShowTest_BHV)
         {
-            if (ImGui.Begin("BHV", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("BHV", ImGuiWindowFlags.None))
             {
                 Test_BHV.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -229,7 +210,7 @@ public class DebugTools
         }
         if (ShowTest_BTL)
         {
-            if (ImGui.Begin("BTL", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("BTL", ImGuiWindowFlags.None))
             {
                 Test_BTL.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
@@ -237,57 +218,18 @@ public class DebugTools
         }
         if (ShowTest_FLVER2)
         {
-            if (ImGui.Begin("FLVER2", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("FLVER2", ImGuiWindowFlags.None))
             {
                 Test_FLVER2.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
-        if (ShowTest_MSB_AC6)
+
+        if (ShowTest_MSB_BP)
         {
-            if (ImGui.Begin("MSB_AC6", ImGuiWindowFlags.AlwaysAutoResize))
+            if (ImGui.Begin("Byte-Perfect MSB", ImGuiWindowFlags.None))
             {
-                Test_MSB_AC6.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowTest_MSB_ACFA)
-        {
-            if (ImGui.Begin("MSB_ACFA", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                Test_MSB_ACFA.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowTest_MSB_ACV)
-        {
-            if (ImGui.Begin("MSB_ACV", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                Test_MSB_ACV.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowTest_MSB_ACVD)
-        {
-            if (ImGui.Begin("MSB_ACVD", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                Test_MSB_ACVD.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowTest_MSB_ER)
-        {
-            if (ImGui.Begin("MSB_ER", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                Test_MSB_ER.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowTest_MSB_NR)
-        {
-            if (ImGui.Begin("MSB_NR", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                Test_MSB_NR.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_MSB_BP.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }

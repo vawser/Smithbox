@@ -388,7 +388,7 @@ typedef struct {
     byte unk00;
     byte unk01 <hidden=true>; Assert(unk01 == -1);
     byte unk02; // -1
-    byte unk03 <hidden=true>; Assert(!unk03);
+    byte unk03;
     float unk04; // 0
     int unk08 <hidden=true>; Assert(!unk08);
     int unk0c <hidden=true>; Assert(!unk0c);
