@@ -7,6 +7,9 @@
 - Map Editor: add Object Mass Edit that allows for addition/deletion of map objects programmatically
 - Map Editor: Selection Outline: mesh creation currently creates an issue when selecting too many entities. Ideally we can switch to an opacity or tint on the actual model: however this requires a overhaul of the rendering pipeline, currently the rendering side is instanced and detacted from the map editor state, making it difficult to apply conditional visuals.
 - Map Editor: Add Vector3 support to MSB Mass Edit
+- Map Editor: implement AutoInvadePoint support for ER
+- Map Editor: implement Edge support for SDT
+- Map Editor: add favourite lists to the map list as a side-panel option: lets you define a list of maps to be a favourited list, plus lets you quickly select a favourited list to view only those maps
 
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
@@ -26,4 +29,5 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-- Fix the focus text entry action when quick-linked (currently it doesn't scroll to position)
+
+

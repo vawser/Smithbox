@@ -33,6 +33,9 @@ public class MsbUtils
     /// <returns></returns>
     public static IEnumerable<(string?, Type, Action<string?>)> GetMsbReferences(IMsbEntry entry)
     {
+        if(entry == null) 
+            yield break;
+
         foreach (var property in entry.GetType().GetProperties())
         {
             if (property.GetCustomAttribute<MSBReference>() is not MSBReference msbReference) 

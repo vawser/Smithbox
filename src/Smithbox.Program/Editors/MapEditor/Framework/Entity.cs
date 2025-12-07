@@ -174,8 +174,12 @@ public class Entity : ISelectable, IDisposable
             }
             else
             {
-                WrappedObject.GetType().GetProperty("Name").SetValue(WrappedObject, value);
-                CachedName = value;
+                var name = WrappedObject.GetType().GetProperty("Name");
+                if (name != null)
+                {
+                    WrappedObject.GetType().GetProperty("Name").SetValue(WrappedObject, value);
+                    CachedName = value;
+                }
             }
         }
     }
@@ -903,6 +907,11 @@ public class Entity : ISelectable, IDisposable
                         1f, 1f, 1f, 1f
                     ));
                 }
+            }
+            // AIP for ER
+            else if(rx == null && rx == null)
+            {
+                t.EulerRotation = new Vector3(0, Utils.DegToRadians((float)ry), 0);
             }
             else
             {
@@ -1964,6 +1973,15 @@ public class MsbEntity : Entity
 
                 _renderSceneMesh = DrawableHelper.GetLightDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
             }
+            else if (Type == MsbEntityType.AutoInvadePoint && _renderSceneMesh == null)
+            {
+                if (_renderSceneMesh != null)
+                {
+                    _renderSceneMesh.Dispose();
+                }
+
+                _renderSceneMesh = DrawableHelper.GetAutoInvadeDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
+            }
             else
             {
                 PropertyInfo modelProp = GetProperty("ModelName");
@@ -2161,6 +2179,11 @@ public class MsbEntity : Entity
                     t.Scale = new Vector3(rad);
                 }
             }
+        }
+        else if (Type == MsbEntityType.AutoInvadePoint)
+        {
+            // t.Position = (Vector3)GetPropertyValue("Position");
+            // TODO: rotation
         }
         // DS2 event regions
         else if (Type == MsbEntityType.DS2EventLocation)

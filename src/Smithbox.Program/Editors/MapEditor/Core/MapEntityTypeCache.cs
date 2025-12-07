@@ -59,6 +59,7 @@ public class MapEntityTypeCache
         // Build the groupings from each top type
         Dictionary<MsbEntityType, Dictionary<Type, List<MsbEntity>>> mapcache = new();
 
+        // Internal Types
         mapcache.Add(MsbEntityType.Part, new Dictionary<Type, List<MsbEntity>>());
 
         mapcache.Add(MsbEntityType.Region, new Dictionary<Type, List<MsbEntity>>());
@@ -87,15 +88,24 @@ public class MapEntityTypeCache
         }
         */
 
+        // External: BTL
         if (Editor.Project.ProjectType is ProjectType.BB
             or ProjectType.DS3
             or ProjectType.SDT
             or ProjectType.ER
+            or ProjectType.NR
             or ProjectType.AC6)
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }
 
+        // External: AIP
+        if (Editor.Project.ProjectType is ProjectType.ER)
+        {
+            mapcache.Add(MsbEntityType.AutoInvadePoint, new Dictionary<Type, List<MsbEntity>>());
+        }
+
+        // External: DS2 PARAM
         else if (Editor.Project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2)
         {

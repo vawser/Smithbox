@@ -151,6 +151,7 @@ public class Universe
                 }
 
                 LoadLights(map);
+                Editor.AutoInvadeManager.LoadAIP(map);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -314,6 +315,7 @@ public class Universe
     public void SaveMap(MapContainer map)
     {
         SaveBTL(Editor, map);
+        Editor.AutoInvadeManager.SaveAIP(Editor, map);
 
         try
         {
@@ -1052,6 +1054,7 @@ public class Universe
                 continue;
 
             Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
+            Editor.AutoInvadeManager.OnUnloadMap(entry.Key.Filename);
 
             if (entry.Value != null && entry.Value.MapContainer != null)
             {

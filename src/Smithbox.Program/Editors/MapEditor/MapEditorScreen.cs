@@ -59,6 +59,7 @@ public class MapEditorScreen : EditorScreen
     public MapShortcuts Shortcuts;
 
     public HavokCollisionManager CollisionManager;
+    public AutoInvadeManager AutoInvadeManager;
 
     // Core
     public MapViewportView MapViewportView;
@@ -146,6 +147,7 @@ public class MapEditorScreen : EditorScreen
         Shortcuts = new MapShortcuts(this);
 
         CollisionManager = new HavokCollisionManager(this, project);
+        AutoInvadeManager = new AutoInvadeManager(this, project);
 
         // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);

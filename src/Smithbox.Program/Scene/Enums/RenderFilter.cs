@@ -15,5 +15,6 @@ public enum RenderFilter
     Region = 128,
     Light = 256,
     SpeedTree = 512,
+    AutoInvade = 1024,
     All = 0xFFFFFFF
 }

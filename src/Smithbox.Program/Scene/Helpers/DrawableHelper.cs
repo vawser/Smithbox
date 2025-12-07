@@ -381,6 +381,33 @@ public static class DrawableHelper
     }
 
     /// <summary>
+    /// The drawable proxies for a AutoInvade map object
+    /// </summary>
+    public static RenderableProxy GetAutoInvadeDrawable(RenderScene scene, MapContainer map, Entity obj, RenderModelType renderType)
+    {
+        var aip = (AIP.AutoInvadePointInstance)obj.WrappedObject;
+
+        DebugPrimitiveRenderableProxy mesh = null;
+
+        // SOLID
+        if (renderType is RenderModelType.Solid)
+        {
+            mesh = RenderableHelper.GetAutoInvadeSolidSphereProxy(scene);
+        }
+        // WIREFRAME
+        else if (renderType is RenderModelType.Wireframe)
+        {
+            mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
+        }
+
+        mesh.World = obj.GetWorldMatrix();
+        mesh.SetSelectable(obj);
+        mesh.DrawFilter = RenderFilter.AutoInvade;
+
+        return mesh;
+    }
+
+    /// <summary>
     /// The drawable proxies for a DS2 EventLocation map object
     /// </summary>
     public static RenderableProxy GetDS2EventLocationDrawable(RenderScene scene, MapContainer map, Entity obj)

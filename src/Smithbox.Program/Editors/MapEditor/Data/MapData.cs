@@ -36,6 +36,8 @@ public class MapData
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary CollisionFiles = new();
 
+    public FileDictionary AutoInvadeBinders = new();
+
     public Dictionary<string, MapObjectNameMapEntry> MapObjectNameLists = new();
 
     public MapData(Smithbox baseEditor, ProjectEntry project)
@@ -138,6 +140,12 @@ public class MapData
         CollisionFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map"))
             .Where(e => e.Extension == "hkxbhd")
+            .ToList();
+
+        // AutoInvade
+        AutoInvadeBinders.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Folder.StartsWith("/other"))
+            .Where(e => e.Extension == "aipbnd")
             .ToList();
     }
 

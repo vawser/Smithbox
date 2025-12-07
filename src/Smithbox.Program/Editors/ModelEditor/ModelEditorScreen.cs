@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Core;

@@ -47,6 +47,8 @@ public static class RenderableHelper
     private static DbgPrimTree _modelMarkerTree;
     private static DbgPrimTree _modelMarkerBush;
 
+    private static DbgPrimWireSphere _autoInvadeSphere;
+
     public static DbgPrimSolidSphere _placementOrb;
 
     public static readonly HashSet<string> SpeedTree_Bushes = new()
@@ -234,6 +236,11 @@ public static class RenderableHelper
             2,
             false,
             true);
+
+        _autoInvadeSphere = new DbgPrimWireSphere(
+            Transform.Default,
+            1.0f,
+            Color.Red);
 
         // PLACEMENT
         _placementOrb = new DbgPrimSolidSphere(
@@ -602,6 +609,38 @@ public static class RenderableHelper
 
 
         DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _placementOrb);
+
+        r.RenderOverlay = true;
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
+    // SPHERE REGION
+    public static DebugPrimitiveRenderableProxy GetAutoInvadeSphereProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.GFX_Renderable_AutoInvadeSphere_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_AutoInvadeSphere_HighlightColor;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
+
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+
+    public static DebugPrimitiveRenderableProxy GetAutoInvadeSolidSphereProxy(RenderScene scene)
+    {
+        var baseColor = CFG.Current.GFX_Renderable_Sphere_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_Sphere_HighlightColor;
+        var transparency = CFG.Current.GFX_Renderable_Sphere_Alpha;
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere);
 
         r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);

@@ -13,6 +13,7 @@ using HKLib.Reflection.hk2018;
 using StudioCore.Core;
 using Microsoft.Extensions.Logging;
 using Octokit;
+using StudioCore.Editors.MapEditor;
 
 namespace StudioCore.Resource.Types;
 

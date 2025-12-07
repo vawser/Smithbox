@@ -74,6 +74,12 @@ public class MapContentView
     /// </summary>
     public void OnGui()
     {
+        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
+        var sectionSize = ImGui.GetContentRegionAvail();
+        var sectionWidth = sectionSize.X * 0.98f;
+
+        var contentTreeSize = new Vector2(sectionWidth * DPI.UIScale(), sectionSize.Y * 0.95f * DPI.UIScale());
+
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
@@ -84,7 +90,11 @@ public class MapContentView
         // Reset this every frame, otherwise the map object selectables won't work correctly
         treeImGuiId = 0;
 
+        ImGui.BeginChild($"mapContentsTree_{ImguiID}", contentTreeSize, ImGuiChildFlags.Borders);
+
         DisplayContentTree();
+
+        ImGui.EndChild();
     }
 
     /// <summary>
@@ -153,8 +163,6 @@ public class MapContentView
     /// </summary>
     public void DisplayContentTree()
     {
-        ImGui.BeginChild($"mapContentsTree_{ImguiID}");
-
         var targetContainer = Editor.GetMapContainerFromMapID(MapID);
 
         Entity mapRoot = targetContainer?.RootObject;
@@ -218,8 +226,6 @@ public class MapContentView
             ImGui.PopStyleVar();
             ImGui.TreePop();
         }
-
-        ImGui.EndChild();
     }
 
     /// <summary>
@@ -455,14 +461,17 @@ public class MapContentView
                             }
                             else if (ImGui.TreeNodeEx(typ.Key.Name, treeflags))
                             {
+                                int index = 0;
                                 foreach (MsbEntity obj in typ.Value)
                                 {
                                     AliasUtils.UpdateEntityAliasName(Editor.Project, obj);
 
                                     if (Editor.MapContentFilter.ContentFilter(this, obj))
                                     {
-                                        MapObjectSelectable(obj, true);
+                                        MapObjectSelectable(obj, true, index);
                                     }
+
+                                    index++;
                                 }
 
                                 ImGui.TreePop();
@@ -487,18 +496,25 @@ public class MapContentView
     /// <summary>
     /// Handles the basic selectable entry
     /// </summary>
-    private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
+    private unsafe void MapObjectSelectable(Entity e, bool visicon, int index = -1, bool hierarchial = false)
     {
         var scale = DPI.UIScale();
+
+        var key = $"Entry {index}";
+
+        if(e.Name != null && e.Name != "null")
+        {
+            key = e.Name;
+        }
 
         // Main selectable
         if (e is MsbEntity me)
         {
-            ImGui.PushID(me.Type + e.Name);
+            ImGui.PushID(me.Type + key);
         }
         else
         {
-            ImGui.PushID(e.Name);
+            ImGui.PushID(key);
         }
 
         var doSelect = false;
@@ -524,7 +540,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.ButtonHovered, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
             ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
-            if (ImGui.Button($"{icon}##mapObject{e.Name}", DPI.InlineIconButtonSize))
+            if (ImGui.Button($"{icon}##mapObject{key}", DPI.InlineIconButtonSize))
             {
                 if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
                 {
@@ -580,25 +596,28 @@ public class MapContentView
             treeImGuiId++;
             var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap;
 
-            var displayName = "";
+            var displayName = key;
 
-            if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Internal or NameDisplayType.Internal_FMG or NameDisplayType.Internal_Community)
+            if (e.PrettyName != null && e.PrettyName != "null")
             {
-                displayName = e.PrettyName;
-            }
-            else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Community or NameDisplayType.Community_FMG)
-            {
-                displayName = e.PrettyName;
-
-                var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
-
-                if (nameListEntry.Value != null)
+                if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Internal or NameDisplayType.Internal_FMG or NameDisplayType.Internal_Community)
                 {
-                    var match = nameListEntry.Value.Entries.FirstOrDefault(entry => entry.ID == e.Name);
+                    displayName = e.PrettyName;
+                }
+                else if (CFG.Current.MapEditor_MapContentList_EntryNameDisplayType is NameDisplayType.Community or NameDisplayType.Community_FMG)
+                {
+                    displayName = e.PrettyName;
 
-                    if (match != null)
+                    var nameListEntry = Project.MapData.MapObjectNameLists.FirstOrDefault(entry => entry.Key == Editor.Selection.SelectedMapID);
+
+                    if (nameListEntry.Value != null)
                     {
-                        displayName = match.Name;
+                        var match = nameListEntry.Value.Entries.FirstOrDefault(entry => entry.ID == e.Name);
+
+                        if (match != null)
+                        {
+                            displayName = match.Name;
+                        }
                     }
                 }
             }
@@ -716,7 +735,7 @@ public class MapContentView
         {
             if (obj is Entity e)
             {
-                MapObjectSelectable(e, true, true);
+                MapObjectSelectable(e, true, -1, true);
             }
         }
     }

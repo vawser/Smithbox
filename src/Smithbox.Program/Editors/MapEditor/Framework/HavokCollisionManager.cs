@@ -9,6 +9,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Resource;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ using System.Linq;
 using System.Numerics;
 using static StudioCore.Resource.Types.HavokCollisionResource;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Editors.MapEditor;
 
 public enum HavokCollisionType
 {

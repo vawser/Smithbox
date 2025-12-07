@@ -24,5 +24,6 @@ public enum MsbEntityType
     DS2GeneratorRegist,
     DS2Event,
     DS2EventLocation,
-    DS2ObjectInstance
+    DS2ObjectInstance,
+    AutoInvadePoint
 }

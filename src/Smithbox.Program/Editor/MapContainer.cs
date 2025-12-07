@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Enums;
@@ -27,7 +28,11 @@ public class MapContainer : ObjectContainer
     /// <summary>
     ///     Parent entities used to organize lights per-BTL file.
     /// </summary>
-    [XmlIgnore] public List<Entity> BTLParents = new();
+    [XmlIgnore] 
+    public List<Entity> BTLParents = new();
+
+    [XmlIgnore]
+    public Entity AutoInvadeParent = null;
 
     [XmlIgnore]
     private MapEditorScreen Editor;
@@ -191,6 +196,22 @@ public class MapContainer : ObjectContainer
         }
 
         BTLParents.Add(btlParent);
+    }
+
+    public void LoadAIP(string mapName, AIP aip)
+    {
+        var autoInvadeParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(autoInvadeParent);
+
+        foreach (var point in aip.Points)
+        {
+            var newEntity = new MsbEntity(Editor, this, point, MsbEntityType.AutoInvadePoint);
+            Objects.Add(newEntity);
+            autoInvadeParent.AddChild(newEntity);
+        }
+
+        AutoInvadeParent = autoInvadeParent;
     }
 
     public IMsbModel GetModel(string name) {

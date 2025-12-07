@@ -97,5 +97,13 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
         UIHelper.ShowActiveStatus(ticked);
+
+        // AutoInvade
+        if (ImGui.MenuItem("Invasion Points"))
+        {
+            RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+        }
+        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
+        UIHelper.ShowActiveStatus(ticked);
     }
 }
