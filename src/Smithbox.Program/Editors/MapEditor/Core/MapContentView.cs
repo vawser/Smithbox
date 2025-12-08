@@ -74,12 +74,6 @@ public class MapContentView
     /// </summary>
     public void OnGui()
     {
-        var windowSize = DPI.GetWindowSize(Editor.BaseEditor._context);
-        var sectionSize = ImGui.GetContentRegionAvail();
-        var sectionWidth = sectionSize.X * 0.98f;
-
-        var contentTreeSize = new Vector2(sectionWidth * DPI.UIScale(), sectionSize.Y * 0.95f * DPI.UIScale());
-
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
@@ -90,11 +84,7 @@ public class MapContentView
         // Reset this every frame, otherwise the map object selectables won't work correctly
         treeImGuiId = 0;
 
-        ImGui.BeginChild($"mapContentsTree_{ImguiID}", contentTreeSize, ImGuiChildFlags.Borders);
-
         DisplayContentTree();
-
-        ImGui.EndChild();
     }
 
     /// <summary>
@@ -163,6 +153,8 @@ public class MapContentView
     /// </summary>
     public void DisplayContentTree()
     {
+        ImGui.BeginChild($"mapContentsTree_{ImguiID}");
+
         var targetContainer = Editor.GetMapContainerFromMapID(MapID);
 
         Entity mapRoot = targetContainer?.RootObject;
@@ -226,6 +218,8 @@ public class MapContentView
             ImGui.PopStyleVar();
             ImGui.TreePop();
         }
+
+        ImGui.EndChild();
     }
 
     /// <summary>

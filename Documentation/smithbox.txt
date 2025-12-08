@@ -1,5 +1,4 @@
 # TODO LIST
-- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Viewport: add ability to change viewport background color
 
 - Map Editor: implement orthographic view
@@ -9,8 +8,6 @@
 - Map Editor: Add Vector3 support to MSB Mass Edit
 - Map Editor: implement Edge support for SDT
 
-- Model Editor: implement VFS + data bank overhaul
-- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 - Model Editor: add simple JSON export/import for elements of FLVER
 - Model Editor: order dummy polygon list by parent bone (as option?)
 
@@ -27,5 +24,7 @@
 - Texture Editor: add individual icon export based on subtexture
 
 # TODO NOW
-
+- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
+- Model Editor: implement VFS + data bank overhaul
+- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 
