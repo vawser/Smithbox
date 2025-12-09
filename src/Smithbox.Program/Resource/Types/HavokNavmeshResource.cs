@@ -332,8 +332,11 @@ public class HavokNavmeshResource : IResource, IDisposable
             {
             }
 
-            GeomBuffer.Dispose();
-            CostGraphGeomBuffer.Dispose();
+            if(GeomBuffer != null)
+                GeomBuffer.Dispose();
+
+            if (CostGraphGeomBuffer != null)
+                CostGraphGeomBuffer.Dispose();
 
             disposedValue = true;
         }

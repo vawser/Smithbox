@@ -8,6 +8,8 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Formats.JSON;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.Scene.Enums;
+using StudioCore.Scene.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +35,9 @@ public class MapContainer : ObjectContainer
 
     [XmlIgnore]
     public Entity AutoInvadeParent = null;
+
+    [XmlIgnore]
+    public Entity NavmeshParent = null;
 
     [XmlIgnore]
     private MapEditorScreen Editor;
@@ -212,6 +217,39 @@ public class MapContainer : ObjectContainer
         }
 
         AutoInvadeParent = autoInvadeParent;
+    }
+
+    public void LoadHavokNVA(string mapName, NVA nva)
+    {
+        var nvaParent = new MsbEntity(Editor, this, mapName, MsbEntityType.Editor);
+
+        MapOffsetNode.AddChild(nvaParent);
+
+        foreach (var curNavmesh in nva.Navmeshes)
+        {
+            var newEntity = new MsbEntity(Editor, this, curNavmesh, MsbEntityType.Navmesh);
+
+            var navid = $@"n{curNavmesh.ModelID:D6}";
+            var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, mapName, navid).Substring(1);
+
+            newEntity.Name = navname;
+            newEntity.CachedName = navname;
+
+            ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(Editor.Project, mapName, navname);
+
+            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                Editor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        NavmeshParent = nvaParent;
     }
 
     public IMsbModel GetModel(string name) {

@@ -60,6 +60,7 @@ public class MapEditorScreen : EditorScreen
 
     public HavokCollisionManager CollisionManager;
     public AutoInvadeManager AutoInvadeManager;
+    public HavokNavmeshManager HavokNavmeshManager;
 
     // Core
     public MapViewportView MapViewportView;
@@ -149,6 +150,7 @@ public class MapEditorScreen : EditorScreen
 
         CollisionManager = new HavokCollisionManager(this, project);
         AutoInvadeManager = new AutoInvadeManager(this, project);
+        HavokNavmeshManager = new HavokNavmeshManager(this, project);
 
         // Tools
         ToolWindow = new ToolWindow(this, ActionHandler);

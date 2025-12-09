@@ -25,5 +25,6 @@ public enum MsbEntityType
     DS2Event,
     DS2EventLocation,
     DS2ObjectInstance,
-    AutoInvadePoint
+    AutoInvadePoint,
+    Navmesh
 }

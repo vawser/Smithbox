@@ -35,9 +35,17 @@ public class AutoInvadeManager
         Setup();
     }
 
+    public bool CanUse()
+    {
+        if (Project.ProjectType is ProjectType.ER)
+            return true;
+
+        return false;
+    }
+
     public void Setup()
     {
-        if (Project.ProjectType != ProjectType.ER)
+        if (!CanUse())
             return;
 
         foreach (var entry in Project.MapData.AutoInvadeBinders.Entries)
@@ -78,7 +86,7 @@ public class AutoInvadeManager
 
     public void LoadAIP(MapContainer map)
     {
-        if (Project.ProjectType != ProjectType.ER)
+        if (!CanUse())
             return;
 
         foreach (var entry in Files)
@@ -96,7 +104,7 @@ public class AutoInvadeManager
     }
     public void SaveAIP(MapEditorScreen editor, MapContainer map)
     {
-        if (Project.ProjectType != ProjectType.ER)
+        if (!CanUse())
             return;
 
         foreach (var entry in Project.MapData.AutoInvadeBinders.Entries)

@@ -100,9 +100,15 @@ public class MapEntityTypeCache
         }
 
         // External: AIP
-        if (Editor.Project.ProjectType is ProjectType.ER)
+        if (Editor.AutoInvadeManager.CanUse())
         {
             mapcache.Add(MsbEntityType.AutoInvadePoint, new Dictionary<Type, List<MsbEntity>>());
+        }
+
+        // External: NVA
+        if (Editor.HavokNavmeshManager.CanUse())
+        {
+            mapcache.Add(MsbEntityType.Navmesh, new Dictionary<Type, List<MsbEntity>>());
         }
 
         // External: DS2 PARAM
