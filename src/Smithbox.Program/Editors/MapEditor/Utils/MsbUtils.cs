@@ -1,6 +1,7 @@
 using HKLib.hk2018.hkAtomic;
 using Org.BouncyCastle.Asn1.X509;
 using SoulsFormats;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -88,4 +89,23 @@ public class MsbUtils
         }
     }
 
+    /// <summary>
+    /// Gets the full list of maps in the game. 
+    /// Basically if there's an msb for it, it will be in this list.
+    /// </summary>
+    /// <returns></returns>
+    public static List<string> GetFullMapList(ProjectEntry project)
+    {
+        List<string> mapList = new();
+
+        if (project.MapEditor != null)
+        {
+            foreach (var entry in project.MapData.MapFiles.Entries)
+            {
+                mapList.Add(entry.Filename);
+            }
+        }
+
+        return mapList;
+    }
 }

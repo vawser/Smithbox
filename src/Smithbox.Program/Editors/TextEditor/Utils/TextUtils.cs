@@ -1876,4 +1876,26 @@ public static class TextUtils
 
         return false;
     }
+
+    public static string GetStoredTextDirectory(ProjectEntry project)
+    {
+        return Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Exported Text");
+    }
+
+    public static List<string> GetStoredContainerWrappers(ProjectEntry project)
+    {
+        List<string> results = new();
+
+        var wrapperDir = GetStoredTextDirectory(project);
+
+        if (Directory.Exists(wrapperDir))
+        {
+            foreach (var entry in Directory.GetFiles(wrapperDir))
+            {
+                results.Add(entry);
+            }
+        }
+
+        return results;
+    }
 }

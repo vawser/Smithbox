@@ -479,25 +479,63 @@ public class MapResourceHandler
         // DS3 Navmeshes
         if (Editor.Project.ProjectType == ProjectType.DS3)
         {
-            ResourceDescriptor nvaasset = MapLocator.GetMapNVA(Editor.Project, AdjustedMapID);
-            if (nvaasset.AssetPath != null)
+            var navmeshFile = Editor.Project.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "nva" && e.Filename == map.Name);
+
+            var navmeshHkxContainer = Editor.Project.FileDictionary.Entries.FirstOrDefault(e => e.Extension == "nvmhktbnd" && e.Filename == map.Name);
+
+            if (navmeshFile != null && navmeshHkxContainer != null)
             {
-                var nva = NVA.Read(nvaasset.AssetPath);
-                foreach (NVA.Navmesh currentNav in nva.Navmeshes)
+                var nvaData = Editor.Project.FS.ReadFile(navmeshFile.Path);
+                var nvaHkxContainerData = Editor.Project.FS.ReadFile(navmeshHkxContainer.Path);
+
+                var nvaHkxFileDict = new Dictionary<string, Memory<byte>>();
+
+                if(nvaHkxContainerData != null)
                 {
-                    MsbEntity n = new(Editor, map, currentNav, MsbEntityType.Editor);
-                    map.AddObject(n);
-                    var navid = $@"n{currentNav.ModelID:D6}";
-                    var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, navid).Substring(1);
+                    var binder = new BND4Reader(nvaHkxContainerData.Value);
 
-                    ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(Editor.Project, AdjustedMapID, navname);
+                    foreach(var entry in binder.Files)
+                    {
+                        var filename = entry.Name;
+                        var fileData = binder.ReadFile(entry);
 
-                    var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                        Editor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
-                    mesh.World = n.GetWorldMatrix();
-                    mesh.SetSelectable(n);
-                    mesh.DrawFilter = RenderFilter.Navmesh;
-                    n.RenderSceneMesh = mesh;
+                        if(!nvaHkxFileDict.ContainsKey(filename))
+                        {
+                            nvaHkxFileDict.Add(filename, fileData);
+                        }
+                    }
+
+                    binder.Dispose();
+                }
+
+                if (nvaData != null)
+                {
+                    var nva = NVA.Read(nvaData.Value);
+
+                    if (nva != null)
+                    {
+                        foreach (NVA.Navmesh currentNav in nva.Navmeshes)
+                        {
+                            MsbEntity n = new(Editor, map, currentNav, MsbEntityType.Editor);
+                            map.AddObject(n);
+                            var navid = $@"n{currentNav.ModelID:D6}";
+                            var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, navid).Substring(1);
+
+                            Memory<byte> hkxData = new Memory<byte>();
+                            if(nvaHkxFileDict.ContainsKey(navname))
+                            {
+                                hkxData = nvaHkxFileDict[navname];
+                            }
+
+                            var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
+                                Editor.Universe.RenderScene, navname, hkxData, ModelMarkerType.Other);
+
+                            mesh.World = n.GetWorldMatrix();
+                            mesh.SetSelectable(n);
+                            mesh.DrawFilter = RenderFilter.Navmesh;
+                            n.RenderSceneMesh = mesh;
+                        }
+                    }
                 }
             }
         }

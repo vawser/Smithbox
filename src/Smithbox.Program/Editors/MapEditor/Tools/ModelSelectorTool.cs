@@ -183,7 +183,7 @@ public class ModelSelectorTool
 
     private void DisplayMapPieceList()
     {
-        var maps = MapLocator.GetFullMapList(Editor.Project);
+        var maps = MsbUtils.GetFullMapList(Editor.Project);
 
         // TODO: this needs to draw from a scanned list of map pieces, not the alias list
         if (Editor.Project.Aliases.TryGetValue(AliasType.MapPieces, out List<AliasEntry> mapPieceAliases))

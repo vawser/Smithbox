@@ -43,7 +43,7 @@ public class WorldMapLayout
         int xMediumOffset = -1, int yMediumOffset = -1, 
         int xSmallOffset = -1, int ySmallOffset = -1)
     {
-        var mapList = MapLocator.GetFullMapList(Editor.Project);
+        var mapList = MsbUtils.GetFullMapList(Editor.Project);
 
         float CurX = XOffset;
         float CurY = YOffset;

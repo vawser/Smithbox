@@ -35,109 +35,170 @@ public class GlobalModelSearch
         Editor = screen;
     }
 
-    public void OnProjectChanged()
-    {
-        SetupSearch = true;
-        MapList = new Dictionary<string, IMsb>();
-    }
-
     public void SearchMaps()
     {
         if (SetupSearch)
         {
             SetupSearch = false;
 
-            resMaps = new List<ResourceDescriptor>();
-            void FindLooseMaps(string dir, string wildcard)
-            {
-                foreach (var entry in Directory.EnumerateFiles(dir, wildcard, SearchOption.AllDirectories))
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                    ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
-                    if (ad.AssetPath != null)
-                    {
-                        resMaps.Add(ad);
-                    }
-                }
-            }
-
-            void AddMaps(Func<string, IMsb> read)
-            {
-                foreach (var res in resMaps)
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(res.AssetPath));
-                    var msb = read(res.AssetPath);
-
-                    if (!MapList.ContainsKey(name))
-                        MapList.Add(name, msb);
-                }
-            }
-
-            if (Editor.Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-            {
-                string modelMapDir;
-                string sysMapDir;
-                if (_targetProjectFiles)
-                {
-                    modelMapDir = $"{Editor.Project.ProjectPath}/model/map/";
-                    sysMapDir = $"{Editor.Project.ProjectPath}/model/system/";
-                }
-                else
-                {
-                    modelMapDir = $"{Editor.Project.DataPath}/model/map/";
-                    sysMapDir = $"{Editor.Project.DataPath}/model/system/";
-                }
-
-                FindLooseMaps(modelMapDir, "*.msb");
-                FindLooseMaps(sysMapDir, "*.msb");
-            }
-            else
-            {
-                string mapDir;
-                if (_targetProjectFiles)
-                    mapDir = $"{Editor.Project.ProjectPath}/map/mapstudio/";
-                else
-                    mapDir = $"{Editor.Project.DataPath}/map/mapstudio/";
-
-                FindLooseMaps(mapDir, "*.msb.dcx");
-            }
+            var maps = Editor.Project.MapData.MapFiles;
 
             switch (Editor.Project.ProjectType)
             {
                 case ProjectType.DES:
-                    AddMaps(MSBD.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSBD.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch(Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.DS1:
                 case ProjectType.DS1R:
-                    AddMaps(MSB1.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSB1.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.DS2:
                 case ProjectType.DS2S:
-                    AddMaps(MSB2.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSB2.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.DS3:
-                    AddMaps(MSB3.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSB3.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.BB:
-                    AddMaps(MSBB.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSBB.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.SDT:
-                    AddMaps(MSBS.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSBS.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.ER:
-                    AddMaps(MSBE.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSBE.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
                 case ProjectType.AC6:
-                    AddMaps(MSB_AC6.Read);
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSB_AC6.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
-                case ProjectType.ACFA:
-                    AddMaps(MSBFA.Read);
-                    break;
-                case ProjectType.ACV:
-                    AddMaps(MSBV.Read);
-                    break;
-                case ProjectType.ACVD:
-                    AddMaps(MSBVD.Read);
+                case ProjectType.NR:
+                    foreach (var entry in maps.Entries)
+                    {
+                        try
+                        {
+                            var msbData = Editor.Project.FS.ReadFile(entry.Path);
+                            var msb = MSB_NR.Read(msbData.Value);
+
+                            if (!MapList.ContainsKey(entry.Filename))
+                                MapList.Add(entry.Filename, msb);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to read MSB: {entry.Path}");
+                        }
+                    }
                     break;
             }
         }

@@ -15,6 +15,9 @@
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
+- Param Editor: add a special-case mass edit search command "item:" which searches all of the itemlot item fields for a match
+ - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
+ - Only works with the itemlot params (obviously)
 
 - Gparam Editor: properly find out the new NR field type structures, so they can be edited.
 
