@@ -10,6 +10,7 @@ using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
+using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -228,6 +229,7 @@ public class MapContainer : ObjectContainer
 
         MapOffsetNode.AddChild(nvaParent);
 
+        // Navmesh Info
         foreach (var curNavmesh in nva.NavmeshInfoEntries)
         {
             var newEntity = new MsbEntity(Editor, this, curNavmesh, MsbEntityType.Navmesh);
@@ -249,6 +251,126 @@ public class MapContainer : ObjectContainer
 
             Objects.Add(newEntity);
             nvaParent.AddChild(newEntity);
+        }
+
+        // Face Data
+        foreach (var curEntry in nva.FaceDataEntries)
+        {
+            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Node Bank Data
+        foreach (var curEntry in nva.NodeBankEntries)
+        {
+            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Section 3 - Always empty
+        //foreach (var curEntry in nva.Section3Entries)
+        //{
+        //    var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+        //    newEntity.SupportsName = false;
+
+        //    Objects.Add(newEntity);
+        //    nvaParent.AddChild(newEntity);
+        //}
+
+        // Connectors
+        foreach (var curEntry in nva.ConnectorEntries)
+        {
+            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        // Level Connectors
+        foreach (var curEntry in nva.LevelConnectorEntries)
+        {
+            var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+            newEntity.SupportsName = false;
+
+            var mesh = RenderableHelper.GetLevelConnectorSphereProxy(Editor.MapViewportView.RenderScene);
+
+            mesh.World = newEntity.GetWorldMatrix();
+            mesh.SetSelectable(newEntity);
+            mesh.DrawFilter = RenderFilter.Navmesh;
+            newEntity.RenderSceneMesh = mesh;
+
+            Objects.Add(newEntity);
+            nvaParent.AddChild(newEntity);
+        }
+
+        if (nva.Version == NVA.NVAVersion.EldenRing)
+        {
+            // Section 9 - Always empty
+            //foreach (var curEntry in nva.Section9Entries)
+            //{
+            //    var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+            //    newEntity.SupportsName = false;
+
+            //    Objects.Add(newEntity);
+            //    nvaParent.AddChild(newEntity);
+            //}
+
+            // Section 10
+            foreach (var curEntry in nva.Section10Entries)
+            {
+                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+
+            // Section 11
+            foreach (var curEntry in nva.Section11Entries)
+            {
+                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+
+            // Section 12
+            foreach (var curEntry in nva.Section12Entries)
+            {
+                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
+
+            // Section 13
+            foreach (var curEntry in nva.Section13Entries)
+            {
+                var newEntity = new MsbEntity(Editor, this, curEntry, MsbEntityType.Navmesh);
+
+                newEntity.SupportsName = false;
+
+                Objects.Add(newEntity);
+                nvaParent.AddChild(newEntity);
+            }
         }
 
         NavmeshParent = nvaParent;

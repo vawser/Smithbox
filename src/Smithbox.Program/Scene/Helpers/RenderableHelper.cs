@@ -618,7 +618,7 @@ public static class RenderableHelper
         return r;
     }
 
-    // SPHERE REGION
+    // AUTO INVADE SPHERE REGION
     public static DebugPrimitiveRenderableProxy GetAutoInvadeSphereProxy(RenderScene scene)
     {
         var baseColor = CFG.Current.GFX_Renderable_AutoInvadeSphere_BaseColor;
@@ -634,15 +634,15 @@ public static class RenderableHelper
         return r;
     }
 
-    public static DebugPrimitiveRenderableProxy GetAutoInvadeSolidSphereProxy(RenderScene scene)
+    // LEVEL CONNECTOR SPHERE REGION
+    public static DebugPrimitiveRenderableProxy GetLevelConnectorSphereProxy(RenderScene scene)
     {
-        var baseColor = CFG.Current.GFX_Renderable_Sphere_BaseColor;
-        var highlightColor = CFG.Current.GFX_Renderable_Sphere_HighlightColor;
-        var transparency = CFG.Current.GFX_Renderable_Sphere_Alpha;
+        var baseColor = CFG.Current.GFX_Renderable_LevelConnectorSphere_BaseColor;
+        var highlightColor = CFG.Current.GFX_Renderable_LevelConnectorSphere_HighlightColor;
+        var transparency = CFG.Current.GFX_Renderable_Default_Wireframe_Alpha;
 
-        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSolidSphere);
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _regionSphere);
 
-        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);

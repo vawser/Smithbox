@@ -389,16 +389,7 @@ public static class DrawableHelper
 
         DebugPrimitiveRenderableProxy mesh = null;
 
-        // SOLID
-        if (renderType is RenderModelType.Solid)
-        {
-            mesh = RenderableHelper.GetAutoInvadeSolidSphereProxy(scene);
-        }
-        // WIREFRAME
-        else if (renderType is RenderModelType.Wireframe)
-        {
-            mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
-        }
+        mesh = RenderableHelper.GetAutoInvadeSphereProxy(scene);
 
         mesh.World = obj.GetWorldMatrix();
         mesh.SetSelectable(obj);

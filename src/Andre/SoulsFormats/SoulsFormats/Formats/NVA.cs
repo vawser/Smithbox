@@ -66,22 +66,22 @@ namespace SoulsFormats
         /// <summary>
         /// Connections between different navmeshes.
         /// </summary>
-        public ConnectorSection Connectors { get; set; }
+        public ConnectorSection ConnectorEntries { get; set; }
 
         /// <summary>
         /// Unknown.
         /// </summary>
         public LevelConnectorSection LevelConnectorEntries { get; set; }
 
-        public Section9Entries Section9Entries { get; set; }
+        public Section9 Section9Entries { get; set; }
 
-        public Section10Entries Section10Entries { get; set; }
+        public Section10 Section10Entries { get; set; }
 
-        public Section11Entries Section11Entries { get; set; }
+        public Section11 Section11Entries { get; set; }
 
-        public Section12Entries Section12Entries { get; set; }
+        public Section12 Section12Entries { get; set; }
 
-        public Section13Entries Section13Entries { get; set; }
+        public Section13 Section13Entries { get; set; }
 
         /// <summary>
         /// Creates an empty NVA formatted for DS3.
@@ -93,7 +93,7 @@ namespace SoulsFormats
             FaceDataEntries = new FaceDataSection();
             NodeBankEntries = new NodeBankSection();
             Section3Entries = new Section3();
-            Connectors = new ConnectorSection();
+            ConnectorEntries = new ConnectorSection();
             LevelConnectorEntries = new LevelConnectorSection();
         }
 
@@ -122,14 +122,14 @@ namespace SoulsFormats
 
             if (Version is NVAVersion.EldenRing)
             {
-                Section11Entries = new Section11Entries(br);
+                Section11Entries = new Section11(br);
             }
 
             NavmeshInfoEntries = new NavmeshInfoSection(br);
             FaceDataEntries = new FaceDataSection(br);
             NodeBankEntries = new NodeBankSection(br);
             Section3Entries = new Section3(br);
-            Connectors = new ConnectorSection(br);
+            ConnectorEntries = new ConnectorSection(br);
 
             var navmeshConnections = new NavmeshConnectionSection(br);
             var graphConnections = new GraphConnectionSection(br);
@@ -145,15 +145,15 @@ namespace SoulsFormats
             foreach (NavmeshInfo navmesh in NavmeshInfoEntries)
                 navmesh.TakeGateNodes(gateNodes);
 
-            foreach (Connector connector in Connectors)
+            foreach (Connector connector in ConnectorEntries)
                 connector.TakePointsAndConds(navmeshConnections, graphConnections);
 
             if(Version is NVAVersion.EldenRing)
             {
-                Section9Entries = new Section9Entries(br);
-                Section10Entries = new Section10Entries(br);
-                Section12Entries = new Section12Entries(br);
-                Section13Entries = new Section13Entries(br);
+                Section9Entries = new Section9(br);
+                Section10Entries = new Section10(br);
+                Section12Entries = new Section12(br);
+                Section13Entries = new Section13(br);
             }
         }
 
@@ -165,7 +165,7 @@ namespace SoulsFormats
             var navmeshConnections = new NavmeshConnectionSection();
             var graphConnections = new GraphConnectionSection();
 
-            foreach (Connector connector in Connectors)
+            foreach (Connector connector in ConnectorEntries)
                 connector.GivePointsAndConds(navmeshConnections, graphConnections);
 
             var mapNodes = new GateNodeSection(Version == NVAVersion.Sekiro ? 2 : 1);
@@ -187,7 +187,7 @@ namespace SoulsFormats
             FaceDataEntries.Write(bw, 1);
             NodeBankEntries.Write(bw, 2);
             Section3Entries.Write(bw, 3);
-            Connectors.Write(bw, 4);
+            ConnectorEntries.Write(bw, 4);
 
             navmeshConnections.Write(bw, 5);
             graphConnections.Write(bw, 6);
@@ -360,7 +360,7 @@ namespace SoulsFormats
             public NavmeshInfo()
             {
                 Scale = Vector3.One;
-                ConnectedNavmeshIDs = new List<int>();
+                //ConnectedNavmeshIDs = new List<int>();
                 GateNodes = new List<GateNode>();
             }
 
@@ -1067,7 +1067,8 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public Vector4 Position { get; set; }
+            public Vector3 Position { get; set; }
+            public float PositionW { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -1086,7 +1087,8 @@ namespace SoulsFormats
 
             internal LevelConnector(BinaryReaderEx br)
             {
-                Position = br.ReadVector4();
+                Position = br.ReadVector3();
+                PositionW = br.ReadSingle();
                 NameID = br.ReadInt32();
                 br.AssertInt32(0);
                 Unk18 = br.ReadInt32();
@@ -1095,7 +1097,8 @@ namespace SoulsFormats
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteVector4(Position);
+                bw.WriteVector3(Position);
+                bw.WriteSingle(PositionW);
                 bw.WriteInt32(NameID);
                 bw.WriteInt32(0);
                 bw.WriteInt32(Unk18);
@@ -1246,22 +1249,22 @@ namespace SoulsFormats
         }
     }
 
-    public class Section9Entries : Section<Entry9>
+    public class Section9 : Section<Entry9>
     {
-        public Section9Entries(int version) : base(version) { }
+        public Section9() : base(1) { }
 
-        internal Section9Entries(BinaryReaderEx br) : base(br, 9, 1) { }
+        internal Section9(BinaryReaderEx br) : base(br, 9, 1) { }
 
         internal override void ReadEntries(BinaryReaderEx br, int count)
         {
             for (int i = 0; i < count; i++)
-                Add(new Entry9(br, Version));
+                Add(new Entry9(br));
         }
 
         internal override void WriteEntries(BinaryWriterEx bw)
         {
             for (int i = 0; i < Count; i++)
-                this[i].Write(bw, Version, i);
+                this[i].Write(bw, i);
         }
     }
 
@@ -1271,7 +1274,7 @@ namespace SoulsFormats
         {
         }
 
-        internal Entry9(BinaryReaderEx br, int version)
+        internal Entry9(BinaryReaderEx br)
         {
             br.AssertInt32(0);
             br.AssertInt32(0);
@@ -1279,7 +1282,7 @@ namespace SoulsFormats
             br.AssertInt32(0);
         }
 
-        internal void Write(BinaryWriterEx bw, int version, int index)
+        internal void Write(BinaryWriterEx bw, int index)
         {
             bw.WriteInt32(0);
             bw.WriteInt32(0);
@@ -1288,22 +1291,22 @@ namespace SoulsFormats
         }
     }
 
-    public class Section10Entries : Section<Entry10>
+    public class Section10 : Section<Entry10>
     {
-        public Section10Entries(int version) : base(version) { }
+        public Section10() : base(1) { }
 
-        internal Section10Entries(BinaryReaderEx br) : base(br, 10, 1) { }
+        internal Section10(BinaryReaderEx br) : base(br, 10, 1) { }
 
         internal override void ReadEntries(BinaryReaderEx br, int count)
         {
             for (int i = 0; i < count; i++)
-                Add(new Entry10(br, Version));
+                Add(new Entry10(br));
         }
 
         internal override void WriteEntries(BinaryWriterEx bw)
         {
             for (int i = 0; i < Count; i++)
-                this[i].Write(bw, Version, i);
+                this[i].Write(bw, i);
         }
     }
 
@@ -1319,7 +1322,7 @@ namespace SoulsFormats
         {
         }
 
-        internal Entry10(BinaryReaderEx br, int version)
+        internal Entry10(BinaryReaderEx br)
         {
             Unk00 = br.ReadVector4();
             Unk04 = br.ReadInt32();
@@ -1328,7 +1331,7 @@ namespace SoulsFormats
             Unk10 = br.ReadInt32();
         }
 
-        internal void Write(BinaryWriterEx bw, int version, int index)
+        internal void Write(BinaryWriterEx bw, int index)
         {
             bw.WriteVector4(Unk00);
             bw.WriteInt32(Unk04);
@@ -1338,22 +1341,22 @@ namespace SoulsFormats
         }
     }
 
-    public class Section11Entries : Section<Entry11>
+    public class Section11 : Section<Entry11>
     {
-        public Section11Entries(int version) : base(version) { }
+        public Section11() : base(1) { }
 
-        internal Section11Entries(BinaryReaderEx br) : base(br, 11, 1) { }
+        internal Section11(BinaryReaderEx br) : base(br, 11, 1) { }
 
         internal override void ReadEntries(BinaryReaderEx br, int count)
         {
             for (int i = 0; i < count; i++)
-                Add(new Entry11(br, Version));
+                Add(new Entry11(br));
         }
 
         internal override void WriteEntries(BinaryWriterEx bw)
         {
             for (int i = 0; i < Count; i++)
-                this[i].Write(bw, Version, i);
+                this[i].Write(bw, i);
         }
     }
 
@@ -1365,7 +1368,7 @@ namespace SoulsFormats
         {
         }
 
-        internal Entry11(BinaryReaderEx br, int version)
+        internal Entry11(BinaryReaderEx br)
         {
             Unk00 = br.ReadInt32();
             br.AssertInt32(0);
@@ -1373,7 +1376,7 @@ namespace SoulsFormats
             br.AssertInt32(0);
         }
 
-        internal void Write(BinaryWriterEx bw, int version, int index)
+        internal void Write(BinaryWriterEx bw, int index)
         {
             bw.WriteInt32(Unk00);
             bw.WriteInt32(0);
@@ -1382,22 +1385,22 @@ namespace SoulsFormats
         }
     }
 
-    public class Section12Entries : Section<Entry12>
+    public class Section12 : Section<Entry12>
     {
-        public Section12Entries(int version) : base(version) { }
+        public Section12() : base(1) { }
 
-        internal Section12Entries(BinaryReaderEx br) : base(br, 12, 1) { }
+        internal Section12(BinaryReaderEx br) : base(br, 12, 1) { }
 
         internal override void ReadEntries(BinaryReaderEx br, int count = 0)
         {
             for (int i = 0; i < count; i++)
-                Add(new Entry12(br, Version));
+                Add(new Entry12(br));
         }
 
         internal override void WriteEntries(BinaryWriterEx bw)
         {
             for (int i = 0; i < Count; i++)
-                this[i].Write(bw, Version, i);
+                this[i].Write(bw, i);
         }
     }
 
@@ -1407,31 +1410,31 @@ namespace SoulsFormats
         {
         }
 
-        internal Entry12(BinaryReaderEx br, int version)
+        internal Entry12(BinaryReaderEx br)
         {
         }
 
-        internal void Write(BinaryWriterEx bw, int version, int index)
+        internal void Write(BinaryWriterEx bw, int index)
         {
         }
     }
 
-    public class Section13Entries : Section<Entry13>
+    public class Section13 : Section<Entry13>
     {
-        public Section13Entries(int version) : base(version) { }
+        public Section13() : base(1) { }
 
-        internal Section13Entries(BinaryReaderEx br) : base(br, 13, 1) { }
+        internal Section13(BinaryReaderEx br) : base(br, 13, 1) { }
 
         internal override void ReadEntries(BinaryReaderEx br, int count)
         {
             for (int i = 0; i < count; i++)
-                Add(new Entry13(br, Version));
+                Add(new Entry13(br));
         }
 
         internal override void WriteEntries(BinaryWriterEx bw)
         {
             for (int i = 0; i < Count; i++)
-                this[i].Write(bw, Version, i);
+                this[i].Write(bw, i);
         }
     }
 
@@ -1456,7 +1459,7 @@ namespace SoulsFormats
         {
         }
 
-        internal Entry13(BinaryReaderEx br, int version)
+        internal Entry13(BinaryReaderEx br)
         {
             Unk00 = br.ReadVector4();
             Unk04 = br.ReadVector4();
@@ -1474,7 +1477,7 @@ namespace SoulsFormats
             Unk34 = br.ReadInt32();
         }
 
-        internal void Write(BinaryWriterEx bw, int version, int index)
+        internal void Write(BinaryWriterEx bw, int index)
         {
             bw.WriteVector4(Unk00);
             bw.WriteVector4(Unk04);

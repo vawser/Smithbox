@@ -185,23 +185,25 @@ public class HavokNavmeshManager
                 if (map.Name == mapID)
                 {
                     var fileData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
-                    var existingNVA = NVA.Read(fileData);
+                    var nva = NVA.Read(fileData);
 
-                    var version = existingNVA.NavmeshInfoEntries.Version;
+                    WriteNavmeshInfo(map, nva);
+                    WriteFaceData(map, nva);
+                    WriteNodeBank(map, nva);
+                    WriteSection3(map, nva);
+                    WriteConnectors(map, nva);
+                    WriteLevelConnectors(map, nva);
 
-                    // Re-make the navmesh entries from the entities
-                    var newNavmeshes = new NavmeshInfoSection((int)version);
-
-                    foreach (var entNavmesh in map.NavmeshParent.Children)
+                    if (nva.Version is NVAVersion.EldenRing)
                     {
-                        var navmesh = (NavmeshInfo)entNavmesh.WrappedObject;
-
-                        newNavmeshes.Add(navmesh);
+                        WriteSection9(map, nva);
+                        WriteSection10(map, nva);
+                        WriteSection11(map, nva);
+                        WriteSection12(map, nva);
+                        WriteSection13(map, nva);
                     }
 
-                    existingNVA.NavmeshInfoEntries = newNavmeshes;
-
-                    var newFileData = existingNVA.Write();
+                    var newFileData = nva.Write();
                     Project.ProjectFS.WriteFile(entry.Path, newFileData);
                 }
             }
@@ -210,5 +212,214 @@ public class HavokNavmeshManager
                 TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to write {entry.Path} as NVA", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
+    }
+
+    public void WriteNavmeshInfo(MapContainer map, NVA nva)
+    {
+        var version = nva.NavmeshInfoEntries.Version;
+
+        var newSection = new NavmeshInfoSection((int)version);
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(NavmeshInfo))
+            {
+                var navmesh = (NavmeshInfo)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.NavmeshInfoEntries = newSection;
+    }
+
+    public void WriteFaceData(MapContainer map, NVA nva)
+    {
+        var version = nva.FaceDataEntries.Version;
+
+        var newSection = new FaceDataSection();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(FaceData))
+            {
+                var navmesh = (FaceData)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.FaceDataEntries = newSection;
+    }
+
+    public void WriteNodeBank(MapContainer map, NVA nva)
+    {
+        var version = nva.NodeBankEntries.Version;
+
+        var newSection = new NodeBankSection();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(NodeBank))
+            {
+                var navmesh = (NodeBank)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.NodeBankEntries = newSection;
+    }
+
+    public void WriteSection3(MapContainer map, NVA nva)
+    {
+        var version = nva.Section3Entries.Version;
+
+        var newSection = new Section3();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry3))
+            {
+                var navmesh = (Entry3)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section3Entries = newSection;
+    }
+
+    public void WriteConnectors(MapContainer map, NVA nva)
+    {
+        var version = nva.ConnectorEntries.Version;
+
+        var newSection = new ConnectorSection();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Connector))
+            {
+                var navmesh = (Connector)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.ConnectorEntries = newSection;
+    }
+
+    public void WriteLevelConnectors(MapContainer map, NVA nva)
+    {
+        var version = nva.LevelConnectorEntries.Version;
+
+        var newSection = new LevelConnectorSection();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(LevelConnector))
+            {
+                var navmesh = (LevelConnector)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.LevelConnectorEntries = newSection;
+    }
+
+    public void WriteSection9(MapContainer map, NVA nva)
+    {
+        var version = nva.Section9Entries.Version;
+
+        var newSection = new Section9();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry9))
+            {
+                var navmesh = (Entry9)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section9Entries = newSection;
+    }
+
+    public void WriteSection10(MapContainer map, NVA nva)
+    {
+        var version = nva.Section10Entries.Version;
+
+        var newSection = new Section10();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry10))
+            {
+                var navmesh = (Entry10)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section10Entries = newSection;
+    }
+
+    public void WriteSection11(MapContainer map, NVA nva)
+    {
+        var version = nva.Section11Entries.Version;
+
+        var newSection = new Section11();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry11))
+            {
+                var navmesh = (Entry11)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section11Entries = newSection;
+    }
+
+    public void WriteSection12(MapContainer map, NVA nva)
+    {
+        var version = nva.Section12Entries.Version;
+
+        var newSection = new Section12();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry12))
+            {
+                var navmesh = (Entry12)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section12Entries = newSection;
+    }
+
+    public void WriteSection13(MapContainer map, NVA nva)
+    {
+        var version = nva.Section13Entries.Version;
+
+        var newSection = new Section13();
+
+        foreach (var curEnt in map.NavmeshParent.Children)
+        {
+            if (curEnt.WrappedObject.GetType() == typeof(Entry13))
+            {
+                var navmesh = (Entry13)curEnt.WrappedObject;
+
+                newSection.Add(navmesh);
+            }
+        }
+
+        nva.Section13Entries = newSection;
     }
 }

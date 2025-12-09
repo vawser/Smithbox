@@ -1864,7 +1864,9 @@ public class ViewportTab
 
             ImGui.ColorEdit3("Auto Invade Sphere - base color", ref CFG.Current.GFX_Renderable_AutoInvadeSphere_BaseColor);
             ImGui.ColorEdit3("Auto Invade Sphere - highlight color", ref CFG.Current.GFX_Renderable_AutoInvadeSphere_HighlightColor);
-            ImGui.DragFloat("Auto Invade Sphere - transparency when solid", ref CFG.Current.GFX_Renderable_AutoInvadeSphere_Alpha, 1.0f, 1.0f, 100.0f);
+
+            ImGui.ColorEdit3("Level Connector Sphere - base color", ref CFG.Current.GFX_Renderable_LevelConnectorSphere_BaseColor);
+            ImGui.ColorEdit3("Level Connector - highlight color", ref CFG.Current.GFX_Renderable_LevelConnectorSphere_HighlightColor);
 
 
             ImGui.ColorEdit3("Gizmo: X Axis - base color", ref CFG.Current.GFX_Gizmo_X_BaseColor);
@@ -2029,8 +2031,9 @@ public class ViewportTab
 
         CFG.Current.GFX_Renderable_AutoInvadeSphere_BaseColor = CFG.Default.GFX_Renderable_AutoInvadeSphere_BaseColor;
         CFG.Current.GFX_Renderable_AutoInvadeSphere_HighlightColor = CFG.Default.GFX_Renderable_AutoInvadeSphere_HighlightColor;
-        CFG.Current.GFX_Renderable_AutoInvadeSphere_Alpha = CFG.Default.GFX_Renderable_AutoInvadeSphere_Alpha;
 
+        CFG.Current.GFX_Renderable_LevelConnectorSphere_BaseColor = CFG.Default.GFX_Renderable_LevelConnectorSphere_BaseColor;
+        CFG.Current.GFX_Renderable_LevelConnectorSphere_HighlightColor = CFG.Default.GFX_Renderable_LevelConnectorSphere_HighlightColor;
 
         CFG.Current.GFX_Gizmo_X_BaseColor = CFG.Default.GFX_Gizmo_X_BaseColor;
         CFG.Current.GFX_Gizmo_X_HighlightColor = CFG.Default.GFX_Gizmo_X_HighlightColor;
