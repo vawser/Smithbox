@@ -53,27 +53,33 @@ public static class LocatorUtils
         return success;
     }
 
-    public static bool IsHavokNavmesh(string path)
+    public static bool IsHavokNavmesh(string virtPath, string path)
     {
         string upperPath = path.ToUpper();
         bool success = false;
 
-        if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
+        if (virtPath.Contains(@"/nav"))
         {
-            success = true;
+            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
+            {
+                success = true;
+            }
         }
 
         return success;
     }
 
-    public static bool IsHavokCollision(string path)
+    public static bool IsHavokCollision(string virtPath, string path)
     {
         string upperPath = path.ToUpper();
         bool success = false;
 
-        if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
+        if (virtPath.Contains(@"/hit"))
         {
-            success = true;
+            if (upperPath.EndsWith(".HKX") || upperPath.EndsWith(".HKX.DCX"))
+            {
+                success = true;
+            }
         }
 
         return success;

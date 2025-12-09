@@ -1,4 +1,6 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
+using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
@@ -13,12 +15,12 @@ namespace StudioCore.Editors.MapEditor.Framework;
 
 public class BasicFilters
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private RenderScene RenderScene;
 
     public BasicFilters(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         RenderScene = screen.MapViewportView.RenderScene;
     }
 
@@ -27,23 +29,20 @@ public class BasicFilters
         bool ticked;
 
         // Map Piece
-        if (ImGui.MenuItem("Map Piece"))
+        if (ImGui.MenuItem("Map Pieces"))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.MapPiece);
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
         UIHelper.ShowActiveStatus(ticked);
 
-        // Collision
-        if (ImGui.MenuItem("Collision"))
+        var name = "Objects";
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Collision);
+            name = "Assets";
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
-        UIHelper.ShowActiveStatus(ticked);
-
         // Object
-        if (ImGui.MenuItem("Object"))
+        if (ImGui.MenuItem(name))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.Object);
         }
@@ -51,23 +50,15 @@ public class BasicFilters
         UIHelper.ShowActiveStatus(ticked);
 
         // Character
-        if (ImGui.MenuItem("Character"))
+        if (ImGui.MenuItem("Characters"))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.Character);
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
         UIHelper.ShowActiveStatus(ticked);
 
-        // Navmesh
-        if (ImGui.MenuItem("Navmesh"))
-        {
-            RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
-        }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
-        UIHelper.ShowActiveStatus(ticked);
-
         // Region
-        if (ImGui.MenuItem("Region"))
+        if (ImGui.MenuItem("Regions"))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.Region);
         }
@@ -75,23 +66,31 @@ public class BasicFilters
         UIHelper.ShowActiveStatus(ticked);
 
         // Light
-        if (ImGui.MenuItem("Light"))
+        if (ImGui.MenuItem("Lights"))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.Light);
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
         UIHelper.ShowActiveStatus(ticked);
 
-        // Debug
-        if (ImGui.MenuItem("Debug"))
+        // Collision
+        if (ImGui.MenuItem("Collisions"))
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.Debug);
+            RenderScene.ToggleDrawFilter(RenderFilter.Collision);
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
+        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
         UIHelper.ShowActiveStatus(ticked);
 
-        // Speed Tree
-        if (ImGui.MenuItem("Speed Tree"))
+        // Navmesh
+        if (ImGui.MenuItem("Navmeshes"))
+        {
+            RenderScene.ToggleDrawFilter(RenderFilter.Navmesh);
+        }
+        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
+        UIHelper.ShowActiveStatus(ticked);
+
+        // Speed Trees
+        if (ImGui.MenuItem("Speed Trees"))
         {
             RenderScene.ToggleDrawFilter(RenderFilter.SpeedTree);
         }
@@ -105,5 +104,14 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
         UIHelper.ShowActiveStatus(ticked);
+
+        // Debug
+        //if (ImGui.MenuItem("Debug"))
+        //{
+        //    RenderScene.ToggleDrawFilter(RenderFilter.Debug);
+        //}
+        //ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Debug);
+        //UIHelper.ShowActiveStatus(ticked);
+
     }
 }

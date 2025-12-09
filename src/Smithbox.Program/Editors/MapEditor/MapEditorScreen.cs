@@ -519,12 +519,12 @@ public class MapEditorScreen : EditorScreen
         var validViewportState = MapViewportView.RenderScene != null &&
             MapViewportView.Viewport != null;
 
-        // Filters
-        if (ImGui.BeginMenu("Filters", validViewportState))
+        // General Filters
+        if (ImGui.BeginMenu("General Filters", validViewportState))
         {
             BasicFilters.Display();
 
-            RegionFilters.DisplayOptions();
+            ImGui.Separator();
 
             if (ImGui.BeginMenu("Filter Presets"))
             {
@@ -561,29 +561,38 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (Project.ProjectType is ProjectType.ER)
+            ImGui.EndMenu();
+        }
+
+        // Region Filters
+        if (ImGui.BeginMenu("Region Filters", validViewportState))
+        {
+            RegionFilters.DisplayOptions();
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void CollisionMenu()
+    {
+        var validViewportState = MapViewportView.RenderScene != null &&
+            MapViewportView.Viewport != null;
+
+        if (ImGui.BeginMenu("Collision Type", validViewportState))
+        {
+            if (ImGui.MenuItem("Low"))
             {
-                if (ImGui.BeginMenu("Collision Type"))
-                {
-                    if (ImGui.MenuItem("Low"))
-                    {
-                        CollisionManager.VisibleCollisionType = HavokCollisionType.Low;
-                    }
-                    UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.Low);
-
-                    if (ImGui.MenuItem("High"))
-                    {
-                        CollisionManager.VisibleCollisionType = HavokCollisionType.High;
-                    }
-                    UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.High);
-
-                    ImGui.EndMenu();
-                }
+                CollisionManager.VisibleCollisionType = HavokCollisionType.Low;
             }
+            UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
+            UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.Low);
 
-            CFG.Current.LastSceneFilter = MapViewportView.RenderScene.DrawFilter;
+            if (ImGui.MenuItem("High"))
+            {
+                CollisionManager.VisibleCollisionType = HavokCollisionType.High;
+            }
+            UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
+            UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.High);
 
             ImGui.EndMenu();
         }

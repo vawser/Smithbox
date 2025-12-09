@@ -1,10 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
+using StudioCore.Scene.Enums;
 using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
@@ -40,6 +42,11 @@ public class ViewportMenu
         if (Parent.ViewportType is ViewportType.MapEditor)
         {
             Parent.MapEditor.FilterMenu();
+
+            if(Parent.MapEditor.Project.ProjectType is Core.ProjectType.ER or Core.ProjectType.NR)
+            {
+                Parent.MapEditor.CollisionMenu();
+            }
         }
 
         // Model Editor
@@ -334,6 +341,11 @@ public class ViewportMenu
             {
                 ImGui.Separator();
 
+                ModelLoadMenu();
+                TextureLoadMenu();
+
+                ImGui.Separator();
+
                 if (ImGui.BeginMenu("Quick View"))
                 {
                     Parent.MapEditor.AutomaticPreviewTool.HandleQuickViewProperties();
@@ -352,5 +364,95 @@ public class ViewportMenu
 
             ImGui.EndMenu();
         }
+    }
+
+    public void ModelLoadMenu()
+    {
+        bool ticked;
+
+        if (ImGui.BeginMenu("Model Load"))
+        {
+            if (ImGui.MenuItem("Map Pieces"))
+            {
+                CFG.Current.MapEditor_ModelLoad_MapPieces = !CFG.Current.MapEditor_ModelLoad_MapPieces;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
+
+            var name = "Objects";
+            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = "Assets";
+            }
+
+            if (ImGui.MenuItem(name))
+            {
+                CFG.Current.MapEditor_ModelLoad_Objects = !CFG.Current.MapEditor_ModelLoad_Objects;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_MapPieces);
+
+
+            if (ImGui.MenuItem("Characters"))
+            {
+                CFG.Current.MapEditor_ModelLoad_Characters = !CFG.Current.MapEditor_ModelLoad_Characters;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Characters);
+
+            if (ImGui.MenuItem("Collisions"))
+            {
+                CFG.Current.MapEditor_ModelLoad_Collisions = !CFG.Current.MapEditor_ModelLoad_Collisions;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Collisions);
+
+            if (ImGui.MenuItem("Navmeshes"))
+            {
+                CFG.Current.MapEditor_ModelLoad_Navmeshes = !CFG.Current.MapEditor_ModelLoad_Navmeshes;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_ModelLoad_Navmeshes);
+
+
+            ImGui.EndMenu();
+        }
+        UIHelper.Tooltip("Toggle which models are loaded during a map load.");
+    }
+
+    public void TextureLoadMenu()
+    {
+        bool ticked;
+
+        if (ImGui.BeginMenu("Texture Load"))
+        {
+            if (ImGui.MenuItem("Map Pieces"))
+            {
+                CFG.Current.MapEditor_TextureLoad_MapPieces = !CFG.Current.MapEditor_TextureLoad_MapPieces;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_MapPieces);
+
+            var name = "Objects";
+            if (Parent.MapEditor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            {
+                name = "Assets";
+            }
+
+            if (ImGui.MenuItem(name))
+            {
+                CFG.Current.MapEditor_TextureLoad_Objects = !CFG.Current.MapEditor_TextureLoad_Objects;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Objects);
+
+            if (ImGui.MenuItem("Characters"))
+            {
+                CFG.Current.MapEditor_TextureLoad_Characters = !CFG.Current.MapEditor_TextureLoad_Characters;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Characters);
+
+            if (ImGui.MenuItem("Miscellaneous"))
+            {
+                CFG.Current.MapEditor_TextureLoad_Misc = !CFG.Current.MapEditor_TextureLoad_Misc;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.MapEditor_TextureLoad_Misc);
+
+            ImGui.EndMenu();
+        }
+        UIHelper.Tooltip("Toggle which textures are loaded during a map load.");
     }
 }

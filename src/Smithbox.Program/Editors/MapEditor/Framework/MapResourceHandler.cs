@@ -69,16 +69,19 @@ public class MapResourceHandler
 
     public void SetupHumanEnemySubstitute()
     {
-        var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
+        if (CFG.Current.MapEditor_ModelLoad_Characters)
+        {
+            var chrId = CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID;
 
-        var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
-        var textureAsset = TextureLocator.GetChrTextures(Editor.Project, chrId);
+            var modelAsset = ModelLocator.GetChrModel(Editor.Project, chrId, chrId);
+            var textureAsset = TextureLocator.GetChrTextures(Editor.Project, chrId);
 
-        if (modelAsset.IsValid())
-            LoadList_Character_Model.Add(modelAsset);
+            if (modelAsset.IsValid())
+                LoadList_Character_Model.Add(modelAsset);
 
-        if (textureAsset.IsValid())
-            LoadList_Character_Texture.Add(textureAsset);
+            if (textureAsset.IsValid())
+                LoadList_Character_Texture.Add(textureAsset);
+        }
     }
 
     public void SetupModelLoadLists()
@@ -248,99 +251,111 @@ public class MapResourceHandler
             return tasks;
 
         // Map
-        var texJob = ResourceManager.CreateNewJob($@"{AdjustedMapID} Textures");
-
-        foreach (ResourceDescriptor asset in LoadList_Map_Texture)
+        if (CFG.Current.MapEditor_TextureLoad_MapPieces)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var texJob = ResourceManager.CreateNewJob($@"{AdjustedMapID} Textures");
 
-        task = texJob.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Map_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
 
         // Character
-        texJob = ResourceManager.CreateNewJob($@"Character Textures");
-
-        foreach (ResourceDescriptor asset in LoadList_Character_Texture)
+        if (CFG.Current.MapEditor_TextureLoad_Characters)
         {
-            if (asset.AssetArchiveVirtualPath != null)
+            var texJob = ResourceManager.CreateNewJob($@"Character Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Character_Texture)
             {
-                texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false, ResourceManager.ResourceType.Flver);
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
             }
-            else if (asset.AssetVirtualPath != null)
+
+            task = texJob.Complete();
+            tasks.Add(task);
+
+            // Enemy
+            texJob = ResourceManager.CreateNewJob($@"Enemy Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Enemy_Texture)
             {
-                texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
             }
+
+            task = texJob.Complete();
+            tasks.Add(task);
         }
-
-        task = texJob.Complete();
-        tasks.Add(task);
-
-        // Enemy
-        texJob = ResourceManager.CreateNewJob($@"Enemy Textures");
-
-        foreach (ResourceDescriptor asset in LoadList_Enemy_Texture)
-        {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false, ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
-
-        task = texJob.Complete();
-        tasks.Add(task);
 
         // Asset
-        texJob = ResourceManager.CreateNewJob($@"Asset Textures");
-
-        foreach (ResourceDescriptor asset in LoadList_Asset_Texture)
+        if (CFG.Current.MapEditor_TextureLoad_Objects)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false, ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var texJob = ResourceManager.CreateNewJob($@"Asset Textures");
 
-        task = texJob.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Asset_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
 
         // Other Textures
-        texJob = ResourceManager.CreateNewJob($@"Other Textures");
-
-        foreach (ResourceDescriptor asset in LoadList_Other_Texture)
+        if (CFG.Current.MapEditor_TextureLoad_Misc)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false, ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var texJob = ResourceManager.CreateNewJob($@"Other Textures");
 
-        task = texJob.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Other_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
 
         return tasks;
     }
@@ -348,126 +363,141 @@ public class MapResourceHandler
     public List<Task> LoadModels(List<Task> tasks, MapContainer map)
     {
         // MapPieces
-        var job = ResourceManager.CreateNewJob($@"MapPieces");
-
-        foreach (ResourceDescriptor asset in LoadList_MapPiece_Model)
+        if (CFG.Current.MapEditor_ModelLoad_MapPieces)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var job = ResourceManager.CreateNewJob($@"MapPieces");
 
-        task = job.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_MapPiece_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
 
         // Characters
-        job = ResourceManager.CreateNewJob($@"Characters");
-
-        foreach (ResourceDescriptor asset in LoadList_Character_Model)
+        if (CFG.Current.MapEditor_ModelLoad_Characters)
         {
-            if (asset.AssetArchiveVirtualPath != null)
+            var job = ResourceManager.CreateNewJob($@"Characters");
+
+            foreach (ResourceDescriptor asset in LoadList_Character_Model)
             {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
             }
-            else if (asset.AssetVirtualPath != null)
+
+            task = job.Complete();
+            tasks.Add(task);
+
+            // Enemies
+            job = ResourceManager.CreateNewJob($@"Enemies");
+
+            foreach (ResourceDescriptor asset in LoadList_Enemy_Model)
             {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
             }
+
+            task = job.Complete();
+            tasks.Add(task);
         }
-
-        task = job.Complete();
-        tasks.Add(task);
-
-        // Enemies
-        job = ResourceManager.CreateNewJob($@"Enemies");
-
-        foreach (ResourceDescriptor asset in LoadList_Enemy_Model)
-        {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
-
-        task = job.Complete();
-        tasks.Add(task);
 
         // Objects
-        job = ResourceManager.CreateNewJob($@"Assets");
-
-        foreach (ResourceDescriptor asset in LoadList_Asset_Model)
+        if (CFG.Current.MapEditor_ModelLoad_Objects)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var job = ResourceManager.CreateNewJob($@"Assets");
 
-        task = job.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Asset_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceManager.ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
 
         // Collisions
-        job = ResourceManager.CreateNewJob($@"Collisions");
-
-        string archive = null;
-        HashSet<string> collisionAssets = new();
-
-        foreach (ResourceDescriptor asset in LoadList_Collision)
+        if (CFG.Current.MapEditor_ModelLoad_Collisions)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                archive = asset.AssetArchiveVirtualPath;
-                collisionAssets.Add(asset.AssetVirtualPath);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var job = ResourceManager.CreateNewJob($@"Collisions");
 
-        if (archive != null)
-        {
-            job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, collisionAssets);
-        }
+            string archive = null;
+            HashSet<string> collisionAssets = new();
 
-        task = job.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Collision)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    archive = asset.AssetArchiveVirtualPath;
+                    collisionAssets.Add(asset.AssetVirtualPath);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            if (archive != null)
+            {
+                job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, collisionAssets);
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
 
         // Navmesh
-        job = ResourceManager.CreateNewJob($@"Navmesh");
-
-        foreach (ResourceDescriptor asset in LoadList_Navmesh)
+        if (CFG.Current.MapEditor_ModelLoad_Navmeshes)
         {
-            if (asset.AssetArchiveVirtualPath != null)
-            {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                    false, ResourceType.NavmeshHKX);
-            }
-            else if (asset.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-            }
-        }
+            var job = ResourceManager.CreateNewJob($@"Navmesh");
 
-        task = job.Complete();
-        tasks.Add(task);
+            foreach (ResourceDescriptor asset in LoadList_Navmesh)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceType.NavmeshHKX);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
 
         return tasks;
     }

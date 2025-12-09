@@ -41,7 +41,7 @@ public class HavokCollisionManager
 
     public void OnLoadMap(string mapId)
     {
-        if (!CFG.Current.MapEditor_LoadCollisions_ER)
+        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
@@ -53,7 +53,7 @@ public class HavokCollisionManager
 
     public void OnUnloadMap(string mapId)
     {
-        if (!CFG.Current.MapEditor_LoadCollisions_ER)
+        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
@@ -155,7 +155,7 @@ public class HavokCollisionManager
 
     public void OnLoadModel(string modelName, FlverContainerType modelType)
     {
-        if (!CFG.Current.MapEditor_LoadCollisions_ER)
+        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
@@ -167,7 +167,7 @@ public class HavokCollisionManager
 
     public void OnUnloadModel(string modelName)
     {
-        if (!CFG.Current.MapEditor_LoadCollisions_ER)
+        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
             return;
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.NR)

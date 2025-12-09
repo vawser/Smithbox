@@ -1012,6 +1012,17 @@ public class CFG
 
     public bool MapEditor_MapContentList_DisplayVisibilityIcon = true;
 
+    public bool MapEditor_ModelLoad_MapPieces = true;
+    public bool MapEditor_ModelLoad_Objects = true;
+    public bool MapEditor_ModelLoad_Characters = true;
+    public bool MapEditor_ModelLoad_Collisions = true;
+    public bool MapEditor_ModelLoad_Navmeshes = true;
+
+    public bool MapEditor_TextureLoad_MapPieces = true;
+    public bool MapEditor_TextureLoad_Objects = true;
+    public bool MapEditor_TextureLoad_Characters = true;
+    public bool MapEditor_TextureLoad_Misc = true;
+
     //****************************
     // Settings: Model Editor
     //****************************

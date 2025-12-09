@@ -680,7 +680,7 @@ public static class ResourceManager
                     // HAVOK NAVMESH
                     if (ResourceMask.HasFlag(ResourceType.NavmeshHKX))
                     {
-                        if (LocatorUtils.IsHavokNavmesh(curFileBinderPath))
+                        if (LocatorUtils.IsHavokNavmesh(BinderVirtualPath, curFileBinderPath))
                         {
                             pipeline = _job.HavokNavmeshLoadPipeline;
                             ResourceLog.AddLog($"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
@@ -690,7 +690,7 @@ public static class ResourceManager
                     // HAVOK COLLISION
                     if (ResourceMask.HasFlag(ResourceType.CollisionHKX))
                     {
-                        if (LocatorUtils.IsHavokCollision(curFileBinderPath))
+                        if (LocatorUtils.IsHavokCollision(BinderVirtualPath, curFileBinderPath))
                         {
                             pipeline = _job.HavokCollisionLoadPipeline;
                             ResourceLog.AddLog($"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
