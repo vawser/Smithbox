@@ -57,12 +57,6 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            if (ImGui.MenuItem("World Map", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
-            {
-                Editor.WorldMapTool.DisplayMenuOption();
-            }
-            UIHelper.Tooltip($"Open the world map for Elden Ring.\nAllows you to easily select open-world tiles.");
-
             ///--------------------
             /// Color Picker
             ///--------------------
@@ -74,26 +68,6 @@ public class ToolSubMenu
             ImGui.Separator();
 
             Editor.EditorVisibilityAction.OnToolMenu();
-
-            ///--------------------
-            /// Patrol Route Visualisation
-            ///--------------------
-            if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
-            {
-                if (ImGui.BeginMenu("Patrol Route Visualisation"))
-                {
-                    if (ImGui.MenuItem("Display"))
-                    {
-                        PatrolDrawManager.Generate(Editor);
-                    }
-                    if (ImGui.MenuItem("Clear"))
-                    {
-                        PatrolDrawManager.Clear();
-                    }
-
-                    ImGui.EndMenu();
-                }
-            }
 
             ///--------------------
             /// Generate Navigation Data

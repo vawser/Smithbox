@@ -60,8 +60,6 @@ public class MapListFilterTool
 
     public void SelectionMenu()
     {
-        UIHelper.SimpleHeader("##selectionChoose", "Entries", "The entries to select from.", UI.Current.ImGui_AliasName_Text);
-
         int index = 0;
         foreach (var entry in QuickFilterCollection.Entries)
         {
@@ -89,8 +87,6 @@ public class MapListFilterTool
 
     public void DeleteMenu()
     {
-        UIHelper.SimpleHeader("##selectionDelete", "Entries", "The entries to delete.", UI.Current.ImGui_AliasName_Text);
-
         int index = 0;
         foreach (var entry in QuickFilterCollection.Entries)
         {
@@ -117,8 +113,6 @@ public class MapListFilterTool
 
     public void EditMenu()
     {
-        UIHelper.SimpleHeader("##selectionEdit", "Entries", "The entries to edit.", UI.Current.ImGui_AliasName_Text);
-
         int index = 0;
         foreach (var entry in QuickFilterCollection.Entries)
         {

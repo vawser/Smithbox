@@ -287,7 +287,16 @@ public static class VirtualPathLocator
                     if (curProject.MapEditor != null && curProject.MapEditor.HavokNavmeshManager.CanUse())
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath(curProject, Path.Join("map", mapid, $"{mapid}.nvmhktbnd.dcx"));
+
+                        var assetPath = LocatorUtils.GetAssetPath(curProject, Path.Join("map", mapid, $"{mapid}.nvmhktbnd.dcx"));
+
+                        if(curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+                        {
+                            var id = mapid.Substring(0, 3);
+                            assetPath = LocatorUtils.GetAssetPath(curProject, Path.Join("map", id, mapid, $"{mapid}.nvmhktbnd.dcx"));
+                        }
+
+                        return assetPath;
                     }
 
                     bndpath = "";

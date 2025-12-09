@@ -2,6 +2,7 @@
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Scene;
@@ -47,6 +48,26 @@ public class ViewportMenu
             {
                 Parent.MapEditor.CollisionMenu();
             }
+
+            if (Parent.MapEditor.Project.ProjectType != ProjectType.DS2S && Parent.MapEditor.Project.ProjectType != ProjectType.DS2)
+            {
+                if (ImGui.BeginMenu("Patrol Routes"))
+                {
+                    if (ImGui.MenuItem("Display"))
+                    {
+                        PatrolDrawManager.Generate(Parent.MapEditor);
+                    }
+                    UIHelper.Tooltip("Display the connections between patrol route nodes.");
+
+                    if (ImGui.MenuItem("Clear"))
+                    {
+                        PatrolDrawManager.Clear();
+                    }
+                    UIHelper.Tooltip("Clear the display of connections between patrol route nodes.");
+
+                    ImGui.EndMenu();
+                }
+            }
         }
 
         // Model Editor
@@ -77,12 +98,14 @@ public class ViewportMenu
                 CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
+            UIHelper.Tooltip($"Toggle the display of the Control instructions in the top-left corner.");
 
             if (ImGui.MenuItem("Profiling"))
             {
                 CFG.Current.Viewport_Profiling = !CFG.Current.Viewport_Profiling;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_Profiling);
+            UIHelper.Tooltip($"Toggle the display of the Profiling information in the top-left corner.");
 
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
@@ -91,24 +114,28 @@ public class ViewportMenu
                     CFG.Current.Viewport_DisplayMovementIncrement = !CFG.Current.Viewport_DisplayMovementIncrement;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayMovementIncrement);
+                UIHelper.Tooltip($"Toggle the display of the current Movement Increment in the top-left corner.");
 
                 if (ImGui.MenuItem("Rotation Increment"))
                 {
                     CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
+                UIHelper.Tooltip($"Toggle the display of the current Rotation Increment in the top-left corner.");
 
                 if (ImGui.MenuItem("Quick View Tooltip"))
                 {
                     CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
+                UIHelper.Tooltip($"Toggle the display of the Quick View tooltip on hover.");
 
                 if (ImGui.MenuItem("Placement Orb"))
                 {
                     CFG.Current.DisplayPlacementOrb = !CFG.Current.DisplayPlacementOrb;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
+                UIHelper.Tooltip($"Toggle the display of the placement orb within the viewport.");
             }
 
             ImGui.EndMenu();

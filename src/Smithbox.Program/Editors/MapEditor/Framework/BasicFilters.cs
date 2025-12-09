@@ -35,6 +35,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.MapPiece);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip("Toggle the display of map objects classified as 'Map pieces'.");
 
         var name = "Objects";
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
@@ -48,6 +49,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Object);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as '{name}'.");
 
         // Character
         if (ImGui.MenuItem("Characters"))
@@ -56,6 +58,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Character);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Characters'.");
 
         // Region
         if (ImGui.MenuItem("Regions"))
@@ -64,6 +67,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Region);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Regions'.");
 
         // Light
         if (ImGui.MenuItem("Lights"))
@@ -72,6 +76,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Light);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Lights'.");
 
         // Collision
         if (ImGui.MenuItem("Collisions"))
@@ -80,6 +85,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Collision);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Collisions'.");
 
         // Navmesh
         if (ImGui.MenuItem("Navmeshes"))
@@ -88,6 +94,7 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.Navmesh);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Navmeshes'.");
 
         // Speed Trees
         if (ImGui.MenuItem("Speed Trees"))
@@ -96,14 +103,19 @@ public class BasicFilters
         }
         ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.SpeedTree);
         UIHelper.ShowActiveStatus(ticked);
+        UIHelper.Tooltip($"Toggle the display of map objects classified as 'Speed Trees'.");
 
         // AutoInvade
-        if (ImGui.MenuItem("Invasion Points"))
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
-            RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+            if (ImGui.MenuItem("Invasion Points"))
+            {
+                RenderScene.ToggleDrawFilter(RenderFilter.AutoInvade);
+            }
+            ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
+            UIHelper.ShowActiveStatus(ticked);
+            UIHelper.Tooltip($"Toggle the display of map objects classified as 'Invasion Points'.");
         }
-        ticked = RenderScene.DrawFilter.HasFlag(RenderFilter.AutoInvade);
-        UIHelper.ShowActiveStatus(ticked);
 
         // Debug
         //if (ImGui.MenuItem("Debug"))

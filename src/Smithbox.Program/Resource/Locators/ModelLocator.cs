@@ -193,6 +193,13 @@ public static class ModelLocator
     {
         ResourceDescriptor ret = new();
         ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"{mapid}.nvmhktbnd.dcx"));
+
+        if(project.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            var id = mapid.Substring(0, 3);
+            ret.AssetPath = LocatorUtils.GetAssetPath(project, Path.Join("map", id, mapid, $"{mapid}.nvmhktbnd.dcx"));
+        }
+
         ret.AssetName = mapid;
         ret.AssetArchiveVirtualPath = $@"map/{mapid}/nav";
         return ret;
