@@ -403,22 +403,6 @@ public class MapContentView
                                     if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
                                     {
-                                        ImGui.SetNextItemAllowOverlap();
-                                        var visible = parent.EditorVisible;
-                                        ImGui.SameLine();
-                                        ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
-                                                            18.0f * DPI.UIScale());
-                                        ImGui.PushStyleColor(ImGuiCol.Text, visible
-                                            ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                                            : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-                                        ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
-                                        ImGui.PopStyleColor();
-                                        if (ImGui.IsItemClicked(0))
-                                        {
-                                            // Hide/Unhide all lights within this BTL.
-                                            parent.EditorVisible = !parent.EditorVisible;
-                                        }
-
                                         for (int i = 0; i < parent.Children.Count; i++)
                                         {
                                             var curObj = parent.Children[i];
@@ -432,24 +416,6 @@ public class MapContentView
                                         }
 
                                         ImGui.TreePop();
-                                    }
-                                    else
-                                    {
-                                        ImGui.SetNextItemAllowOverlap();
-                                        var visible = parent.EditorVisible;
-                                        ImGui.SameLine();
-                                        ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
-                                                            18.0f * DPI.UIScale());
-                                        ImGui.PushStyleColor(ImGuiCol.Text, visible
-                                            ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                                            : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-                                        ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
-                                        ImGui.PopStyleColor();
-                                        if (ImGui.IsItemClicked(0))
-                                        {
-                                            // Hide/Unhide all lights within this BTL.
-                                            parent.EditorVisible = !parent.EditorVisible;
-                                        }
                                     }
                                 }
                             }
@@ -496,9 +462,12 @@ public class MapContentView
 
         var key = $"Entry {index}";
 
-        if(e.Name != null && e.Name != "null")
+        if (e.SupportsName)
         {
-            key = e.Name;
+            if (e.Name != null && e.Name != "null")
+            {
+                key = e.Name;
+            }
         }
 
         // Main selectable

@@ -212,6 +212,9 @@ public class MapContainer : ObjectContainer
         foreach (var point in aip.Points)
         {
             var newEntity = new MsbEntity(Editor, this, point, MsbEntityType.AutoInvadePoint);
+
+            newEntity.SupportsName = false;
+
             Objects.Add(newEntity);
             autoInvadeParent.AddChild(newEntity);
         }
@@ -229,11 +232,10 @@ public class MapContainer : ObjectContainer
         {
             var newEntity = new MsbEntity(Editor, this, curNavmesh, MsbEntityType.Navmesh);
 
+            newEntity.SupportsName = false;
+
             var navid = $@"n{curNavmesh.ModelID:D6}";
             var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, mapName, navid).Substring(1);
-
-            newEntity.Name = navname;
-            newEntity.CachedName = navname;
 
             ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(Editor.Project, mapName, navname);
 

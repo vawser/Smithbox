@@ -346,7 +346,13 @@ namespace SoulsFormats
             private short GateNodeIndex;
             private short SubNodesCount;
 
+            public int Unk3C { get; set; }
+
+
             private int UnkOffset;
+            public float ER_Unk04 { get; set; }
+            public float ER_Unk08 { get; set; }
+            public int ER_Unk0C { get; set; }
 
             /// <summary>
             /// Creates a Navmesh with default values.
@@ -370,7 +376,7 @@ namespace SoulsFormats
                 NameID = br.ReadInt32();
                 ModelID = br.ReadInt32();
                 FaceDataIndex = br.ReadInt32();
-                br.AssertInt32(0); // unk3c
+                Unk3C = br.ReadInt32();
                 FaceCount = br.ReadInt32();
                 int connectedNavmeshesCount = br.ReadInt32();
                 GateNodeIndex = br.ReadInt16();
@@ -390,9 +396,9 @@ namespace SoulsFormats
                 else if(version == 4)
                 {
                     UnkOffset = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
-                    br.AssertInt32(0);
+                    ER_Unk04 = br.ReadSingle();
+                    ER_Unk08 = br.ReadSingle();
+                    ER_Unk0C = br.ReadInt32();
 
                     if (UnkOffset == 0xFF01)
                     {
@@ -437,7 +443,7 @@ namespace SoulsFormats
                 bw.WriteInt32(NameID);
                 bw.WriteInt32(ModelID);
                 bw.WriteInt32(FaceDataIndex);
-                bw.WriteInt32(0);
+                bw.WriteInt32(Unk3C);
                 bw.WriteInt32(FaceCount);
                 bw.WriteInt32(ConnectedNavmeshIDs.Count);
                 bw.WriteInt16(GateNodeIndex);
@@ -457,9 +463,9 @@ namespace SoulsFormats
                 else
                 {
                     bw.ReserveInt32($"NameRefOffset{index}");
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(0);
+                    bw.WriteSingle(ER_Unk04);
+                    bw.WriteSingle(ER_Unk08);
+                    bw.WriteInt32(ER_Unk0C);
 
                     if (UnkOffset == 0xFF01)
                     {

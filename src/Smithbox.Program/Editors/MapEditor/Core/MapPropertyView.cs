@@ -742,14 +742,17 @@ public class MapPropertyView
 
         ImGui.NextColumn();
 
-        // Name
-        if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+        if (first.SupportsName)
         {
-            PropEditorNameWithRef(entities);
-        }
-        else
-        {
-            PropEditorNameDirect(entities);
+            // Name
+            if (CFG.Current.MapEditor_Enable_Referenced_Rename)
+            {
+                PropEditorNameWithRef(entities);
+            }
+            else
+            {
+                PropEditorNameDirect(entities);
+            }
         }
 
         if (types.Count() > 1)

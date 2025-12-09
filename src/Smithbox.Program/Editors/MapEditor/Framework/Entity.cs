@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms.Mapping;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -183,6 +184,11 @@ public class Entity : ISelectable, IDisposable
             }
         }
     }
+
+    /// <summary>
+    /// Determines if the name is supported by the Wrapped Object
+    /// </summary>
+    public bool SupportsName = true;
 
     /// <summary>
     /// The 'pretty' name of this entity.
