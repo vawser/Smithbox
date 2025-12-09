@@ -12,8 +12,6 @@ public class DebugTools
     public bool ShowImGuiDemo;
 
     public bool ShowParamValidator;
-    public bool ShowMapValidator;
-    public bool ShowTimeActValidator;
 
     public bool ShowFlverMaterialLayoutDumper;
 
@@ -25,12 +23,7 @@ public class DebugTools
     public bool ShowTest_BHV;
     public bool ShowTest_BTL;
     public bool ShowTest_FLVER2;
-    public bool ShowTest_MSB_BP;
-    public bool ShowTest_MSB_ACFA;
-    public bool ShowTest_MSB_ACV;
-    public bool ShowTest_MSB_ACVD;
-    public bool ShowTest_MSB_ER;
-    public bool ShowTest_MSB_NR;
+    public bool ShowTest_MSB;
 
     public DebugTools(Smithbox baseEditor)
     {
@@ -65,14 +58,6 @@ public class DebugTools
                     {
                         ShowParamValidator = !ShowParamValidator;
                     }
-                    if (ImGui.MenuItem($"Map"))
-                    {
-                        ShowMapValidator = !ShowMapValidator;
-                    }
-                    if (ImGui.MenuItem($"Time Act"))
-                    {
-                        ShowTimeActValidator = !ShowTimeActValidator;
-                    }
                     ImGui.EndMenu();
                 }
                 if (ImGui.BeginMenu("Generators"))
@@ -103,6 +88,17 @@ public class DebugTools
             }
             if (ImGui.BeginMenu("Tests"))
             {
+                if (ImGui.MenuItem($"MSB"))
+                {
+                    ShowTest_MSB = !ShowTest_MSB;
+                }
+                if (ImGui.MenuItem($"BTL"))
+                {
+                    ShowTest_BTL = !ShowTest_BTL;
+                }
+
+                ImGui.Separator();
+
                 if (ImGui.MenuItem($"Unique Param Insertion"))
                 {
                     ShowTest_UniqueParamInsertion = !ShowTest_UniqueParamInsertion;
@@ -111,17 +107,9 @@ public class DebugTools
                 {
                     ShowTest_BHV = !ShowTest_BHV;
                 }
-                if (ImGui.MenuItem($"BTL"))
-                {
-                    ShowTest_BTL = !ShowTest_BTL;
-                }
                 if (ImGui.MenuItem($"FLVER2"))
                 {
                     ShowTest_FLVER2 = !ShowTest_FLVER2;
-                }
-                if (ImGui.MenuItem($"Byte-Perfect MSB"))
-                {
-                    ShowTest_MSB_BP = !ShowTest_MSB_BP;
                 }
 
                 ImGui.EndMenu();
@@ -149,14 +137,6 @@ public class DebugTools
             if (ImGui.Begin("Param Validation", ImGuiWindowFlags.None))
             {
                 ParamValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-        if (ShowMapValidator)
-        {
-            if (ImGui.Begin("Map Validation", ImGuiWindowFlags.None))
-            {
-                MapValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -225,11 +205,11 @@ public class DebugTools
             }
         }
 
-        if (ShowTest_MSB_BP)
+        if (ShowTest_MSB)
         {
-            if (ImGui.Begin("Byte-Perfect MSB", ImGuiWindowFlags.None))
+            if (ImGui.Begin("MSB", ImGuiWindowFlags.None))
             {
-                Test_MSB_BP.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_MSB.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }

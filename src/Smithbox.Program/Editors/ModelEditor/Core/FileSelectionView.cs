@@ -362,7 +362,7 @@ public class FileSelectionView
 
     private void DisplayMapPieceList()
     {
-        var maps = MapLocator.GetFullMapList(Editor.Project);
+        var maps = MsbUtils.GetFullMapList(Editor.Project);
 
         if (ImGui.CollapsingHeader("Map Pieces"))
         {

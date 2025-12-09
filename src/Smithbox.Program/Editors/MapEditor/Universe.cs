@@ -152,6 +152,7 @@ public class Universe
 
                 LoadLights(map);
                 Editor.AutoInvadeManager.LoadAIP(map);
+                Editor.HavokNavmeshManager.LoadHavokNVA(map);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -200,8 +201,6 @@ public class Universe
                     await Task.WhenAll(Tasks);
                     Tasks = resourceHandler.LoadModels(Tasks, map);
                     await Task.WhenAll(Tasks);
-
-                    resourceHandler.SetupNavmesh(map);
 
                     ScheduleTextureRefresh();
                 }
@@ -316,6 +315,7 @@ public class Universe
     {
         SaveBTL(Editor, map);
         Editor.AutoInvadeManager.SaveAIP(Editor, map);
+        Editor.HavokNavmeshManager.SaveHavokNVA(Editor, map);
 
         try
         {

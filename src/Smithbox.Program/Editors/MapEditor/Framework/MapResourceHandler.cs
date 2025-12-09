@@ -446,7 +446,12 @@ public class MapResourceHandler
         // Navmesh
         job = ResourceManager.CreateNewJob($@"Navmesh");
 
-        if (Editor.Project.ProjectType != ProjectType.DS3)
+        if(Editor.HavokNavmeshManager.CanUse())
+        {
+            ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
+            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.NavmeshHKX);
+        }
+        else
         {
             foreach (ResourceDescriptor asset in LoadList_Navmesh)
             {
@@ -461,45 +466,10 @@ public class MapResourceHandler
                 }
             }
         }
-        else
-        {
-            ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
-            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                ResourceManager.ResourceType.NavmeshHKX);
-        }
 
         task = job.Complete();
         tasks.Add(task);
 
         return tasks;
-    }
-
-    public void SetupNavmesh(MapContainer map)
-    {
-        // DS3 Navmeshes
-        if (Editor.Project.ProjectType == ProjectType.DS3)
-        {
-            ResourceDescriptor nvaasset = MapLocator.GetMapNVA(Editor.Project, AdjustedMapID);
-            if (nvaasset.AssetPath != null)
-            {
-                var nva = NVA.Read(nvaasset.AssetPath);
-                foreach (NVA.Navmesh currentNav in nva.Navmeshes)
-                {
-                    MsbEntity n = new(Editor, map, currentNav, MsbEntityType.Editor);
-                    map.AddObject(n);
-                    var navid = $@"n{currentNav.ModelID:D6}";
-                    var navname = "n" + ModelLocator.MapModelNameToAssetName(Editor.Project, AdjustedMapID, navid).Substring(1);
-
-                    ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(Editor.Project, AdjustedMapID, navname);
-
-                    var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                        Editor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
-                    mesh.World = n.GetWorldMatrix();
-                    mesh.SetSelectable(n);
-                    mesh.DrawFilter = RenderFilter.Navmesh;
-                    n.RenderSceneMesh = mesh;
-                }
-            }
-        }
     }
 }

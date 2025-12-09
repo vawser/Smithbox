@@ -96,7 +96,7 @@ public static class ParamMetaReferences
                 rowMapId = $"m{sAA}_{sBB}_00_00";
             }
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -166,7 +166,7 @@ public static class ParamMetaReferences
 
             rowMapId = $"m{sAA}_{sBB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -269,7 +269,7 @@ public static class ParamMetaReferences
                 }
             }
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -500,7 +500,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -670,6 +670,7 @@ public static class ParamMetaReferences
     public static MSBS CurrentPeekMap_SDT;
     public static MSBE CurrentPeekMap_ER;
     public static MSB_AC6 CurrentPeekMap_AC6;
+    public static MSB_NR CurrentPeekMap_NR;
 
     // Supports: DS1, DS3, SDT, ER, AC6
     public static void ItemLotParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
@@ -697,6 +698,10 @@ public static class ParamMetaReferences
         if (editor.Project.ProjectType is ProjectType.AC6)
         {
             ItemLotParam_AC6(editor, activeParam, row, currentField);
+        }
+        if (editor.Project.ProjectType is ProjectType.NR)
+        {
+            ItemLotParam_NR(editor, activeParam, row, currentField);
         }
     }
 
@@ -729,6 +734,9 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
+        if (editor.Project.MapEditor == null)
+            return;
+
         if (activeParam == "ItemLotParam")
         {
             bool show = false;
@@ -754,7 +762,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -767,8 +775,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_DS1 = MSB1.Read(mapPath.AssetPath);
+
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_DS1 = MSB1.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_DS1 == null)
@@ -802,6 +814,9 @@ public static class ParamMetaReferences
             return;
 
         if (currentField == null)
+            return;
+
+        if (editor.Project.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam")
@@ -838,7 +853,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -851,8 +866,11 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_BB = MSBB.Read(mapPath.AssetPath);
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_BB = MSBB.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_BB == null)
@@ -895,6 +913,9 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
+        if (editor.Project.MapEditor == null)
+            return;
+
         if (activeParam == "ItemLotParam")
         {
             bool show = false;
@@ -929,7 +950,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -942,10 +963,11 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-
-                    if(mapPath.AssetPath != null)
-                        CurrentPeekMap_DS3 = MSB3.Read(mapPath.AssetPath);
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_DS3 = MSB3.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_DS3 == null)
@@ -988,6 +1010,9 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
+        if (editor.Project.MapEditor == null)
+            return;
+
         if (activeParam == "ItemLotParam")
         {
             bool show = false;
@@ -1013,7 +1038,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1026,8 +1051,11 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_SDT = MSBS.Read(mapPath.AssetPath);
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_SDT = MSBS.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_SDT == null)
@@ -1061,6 +1089,9 @@ public static class ParamMetaReferences
             return;
 
         if (currentField == null)
+            return;
+
+        if (editor.Project.MapEditor == null)
             return;
 
         if (activeParam == "ItemLotParam_map")
@@ -1100,7 +1131,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1113,8 +1144,11 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_ER = MSBE.Read(mapPath.AssetPath);
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_ER = MSBE.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_ER == null)
@@ -1150,6 +1184,9 @@ public static class ParamMetaReferences
         if (currentField == null)
             return;
 
+        if (editor.Project.MapEditor == null)
+            return;
+
         if (activeParam == "ItemLotParam")
         {
             bool show = false;
@@ -1173,7 +1210,7 @@ public static class ParamMetaReferences
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList(editor.Project);
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1186,8 +1223,11 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
-                    CurrentPeekMap_AC6 = MSB_AC6.Read(mapPath.AssetPath);
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_AC6 = MSB_AC6.Read(mapFileEntry.Path);
+                    }
                 }
 
                 if (CurrentPeekMap_AC6 == null)
@@ -1196,6 +1236,100 @@ public static class ParamMetaReferences
                 string AssetName = null;
 
                 foreach (var entry in CurrentPeekMap_AC6.Events.Treasures)
+                {
+                    if (entry.ItemLotID == row.ID)
+                    {
+                        AssetName = entry.TreasurePartName;
+                        break;
+                    }
+                }
+
+                if (AssetName == null)
+                    return;
+
+                ItemLotParam_Button(mapId, AssetName);
+            }
+        }
+    }
+
+
+    public static void ItemLotParam_NR(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
+    {
+        if (activeParam == null)
+            return;
+
+        if (row == null)
+            return;
+
+        if (currentField == null)
+            return;
+
+        if (editor.Project.MapEditor == null)
+            return;
+
+        if (activeParam == "ItemLotParam_map")
+        {
+            bool show = false;
+            var mapId = "";
+
+            string rowID = row.ID.ToString();
+
+            string AA = "";
+            string BB = "";
+            string CC = "";
+
+            // Legacy Dungeon
+            if (rowID.Length == 8)
+            {
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 1)}0";
+            }
+            // Open-world Tile
+            else if (rowID.Length >= 8)
+            {
+                AA = $"{rowID.Substring(0, 2)}";
+                BB = $"{rowID.Substring(2, 2)}";
+                CC = $"{rowID.Substring(4, 2)}";
+            }
+
+            if (AA == "" || BB == "" || CC == "")
+                return;
+
+            if (AA == "10")
+                AA = "60";
+
+            if (AA == "20")
+                AA = "61";
+
+            var rowMapId = $"m{AA}_{BB}_{CC}_00";
+
+            var mapList = MsbUtils.GetFullMapList(editor.Project);
+
+            if (mapList.Contains(rowMapId))
+            {
+                show = true;
+                mapId = rowMapId;
+            }
+
+            if (show)
+            {
+                if (CurrentMapID != rowMapId)
+                {
+                    CurrentMapID = rowMapId;
+                    var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
+                    if (mapFileEntry != null)
+                    {
+                        CurrentPeekMap_NR = MSB_NR.Read(mapFileEntry.Path);
+                    }
+                }
+
+                if (CurrentPeekMap_NR == null)
+                    return;
+
+                string AssetName = null;
+
+                foreach (var entry in CurrentPeekMap_NR.Events.Treasures)
                 {
                     if (entry.ItemLotID == row.ID)
                     {

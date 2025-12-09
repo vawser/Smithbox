@@ -2,92 +2,90 @@
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Interface;
+using StudioCore.Program.Debugging;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 
 namespace StudioCore.DebugNS;
 
 public static class Test_BTL
 {
+    public static List<MismatchData> MismatchedBtls = new List<MismatchData>();
+
+    public static int SelectedMap = -1;
+
+    public static bool DisplaySizeDiffsOnly = false;
+
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        if (ImGui.Button("Run Test", DPI.StandardButtonSize))
+        var windowSize = DPI.GetWindowSize(baseEditor._context);
+        var sectionWidth = ImGui.GetWindowWidth() * 0.95f;
+        var sectionHeight = windowSize.Y * 0.3f;
+        var sectionSize = new Vector2(sectionWidth * DPI.UIScale(), sectionHeight * DPI.UIScale());
+
+        if (ImGui.Button("Check all BTLs for Byte-Perfect Match", DPI.StandardButtonSize))
         {
-            Run(baseEditor, project);
+            Run(baseEditor);
         }
+
+        ImGui.SameLine();
+
+        ImGui.Checkbox("Display Size Diffs Only", ref DisplaySizeDiffsOnly);
+
+        ImGui.Separator();
+
+        ImGui.Columns(2);
+
+        int index = 0;
+
+        ImGui.BeginChild("mapSection", sectionSize, ImGuiChildFlags.Borders);
+
+        foreach (var entry in MismatchedBtls)
+        {
+            if (DisplaySizeDiffsOnly)
+            {
+                if (entry.ByteDiff == 0)
+                {
+                    index++;
+                    continue;
+                }
+            }
+
+            if (ImGui.Selectable($"{entry.Name}##curMap{index}"))
+            {
+                SelectedMap = index;
+            }
+
+            index++;
+        }
+
+        ImGui.EndChild();
+
+        ImGui.NextColumn();
+
+        ImGui.BeginChild("dataSection", sectionSize, ImGuiChildFlags.Borders);
+
+        if (SelectedMap != -1)
+        {
+            var curMap = MismatchedBtls[SelectedMap];
+
+            ImGui.Text($"Source Bytes: {curMap.SrcBytes}");
+            ImGui.Text($"Write Bytes: {curMap.WriteBytes}");
+            ImGui.Text($"Byte Difference: {curMap.ByteDiff}");
+        }
+
+        ImGui.EndChild();
     }
 
-    public static bool Run(Smithbox baseEditor, ProjectEntry project)
+    public static bool Run(Smithbox baseEditor)
     {
         var curProject = baseEditor.ProjectManager.SelectedProject;
 
-        List<string> msbs = MapLocator.GetFullMapList(curProject);
-        List<string> floats = new();
-        List<string> noWrite = new();
-        List<string> ver = new();
-        foreach (var msb in msbs)
-        {
-            List<ResourceDescriptor> btls = MapLocator.GetMapBTLs(curProject, msb);
-
-            foreach (ResourceDescriptor file in btls)
-            {
-                BTL btl;
-                /*
-                if (locator.Type == GameType.DarkSoulsIISOTFS)
-                {
-                    var bdt = BXF4.Read(file.AssetPath, file.AssetPath[..^3] + "bdt");
-                    var bdtFile = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-                    if (bdtFile == null)
-                    {
-                        continue;
-                    }
-                    btl = BTL.Read(bdtFile.Bytes);
-                }
-                else
-                {
-                    btl = BTL.Read(file.AssetPath);
-                }
-
-                foreach (var l in btl.Lights)
-                {
-                    floats.Add(l.Rotation.Z.ToString());
-                }
-                ver.Add(btl.Version.ToString());
-                */
-
-                var bytes = File.ReadAllBytes(file.AssetPath);
-                Memory<byte> decompressed = DCX.Decompress(bytes);
-
-                btl = BTL.Read(decompressed);
-
-                var written = btl.Write(DCX.Type.None);
-                if (!decompressed.Span.SequenceEqual(written))
-                {
-                    noWrite.Add(file.AssetName);
-
-                    var basepath = "Tests";
-                    if (!Directory.Exists(Path.Join(basepath, "mismatches")))
-                    {
-                        Directory.CreateDirectory(Path.Join(basepath, "mismatches"));
-                    }
-
-                    TaskLogs.AddLog($"Mismatch: {file.AssetName}");
-                    File.WriteAllBytes(Path.Join("Tests", "mismatches", Path.GetFileNameWithoutExtension(file.AssetName)),
-                        written);
-                }
-            }
-        }
-
-        IEnumerable<string> floatsD = floats.Distinct();
-        IEnumerable<string> noWriteD = noWrite.Distinct();
-        IEnumerable<string> verD = ver.Distinct();
-
-        File.WriteAllLines("Tests\\BTL Zrot.txt", floatsD);
-        File.WriteAllLines("Tests\\BTL Write Failure.txt", noWriteD);
-        File.WriteAllLines("Tests\\BTL versions.txt", verD);
+        MismatchedBtls = Test_MSB_Util.GetBtlMismatches(curProject);
 
         return true;
     }

@@ -124,7 +124,7 @@ public class FmgExporter
 
                 if (result == DialogResult.Yes)
                 {
-                    var wrapperPathList = TextLocator.GetStoredContainerWrappers(Editor.Project);
+                    var wrapperPathList = TextUtils.GetStoredContainerWrappers(Editor.Project);
 
                     foreach (var path in wrapperPathList)
                     {
@@ -433,7 +433,7 @@ public class FmgExporter
 
     public void WriteWrapper(StoredFmgContainer wrapper)
     {
-        var writeDir = TextLocator.GetStoredTextDirectory(Editor.Project);
+        var writeDir = TextUtils.GetStoredTextDirectory(Editor.Project);
         var writePath = Path.Join(writeDir, $"{wrapper.Name}.json");
 
         if(!Directory.Exists(writeDir))

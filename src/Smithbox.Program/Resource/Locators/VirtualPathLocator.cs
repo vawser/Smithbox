@@ -284,13 +284,7 @@ public static class VirtualPathLocator
                         return LocatorUtils.GetAssetPath(curProject, Path.Join("map", mapid, $"{mapid}.nvmbnd"));
                     }
 
-                    if (curProject.ProjectType == ProjectType.DS3)
-                    {
-                        bndpath = "";
-                        return LocatorUtils.GetAssetPath(curProject, Path.Join("map", mapid, $"{mapid}.nvmhktbnd.dcx"));
-                    }
-
-                    if (curProject.ProjectType == ProjectType.SDT)
+                    if (curProject.MapEditor != null && curProject.MapEditor.HavokNavmeshManager.CanUse())
                     {
                         bndpath = "";
                         return LocatorUtils.GetAssetPath(curProject, Path.Join("map", mapid, $"{mapid}.nvmhktbnd.dcx"));

@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace StudioCore.DebugNS;
 
-public static class Test_MSB_BP
+public static class Test_MSB
 {
     public static List<MismatchData> MismatchedMaps = new List<MismatchData>();
 
@@ -80,7 +80,7 @@ public static class Test_MSB_BP
     {
         var curProject = baseEditor.ProjectManager.SelectedProject;
 
-        MismatchedMaps = MsbMismatchHelper.GetMsbMismatches(curProject);
+        MismatchedMaps = Test_MSB_Util.GetMsbMismatches(curProject);
 
         return true;
     }
