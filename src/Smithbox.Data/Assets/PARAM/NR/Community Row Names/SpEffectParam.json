@@ -56596,7 +56596,7 @@
     {
       "ID": 6820000,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Poison Buildup"
       ]
     },
     {
@@ -56614,7 +56614,7 @@
     {
       "ID": 6820100,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Rot Buildup"
       ]
     },
     {
@@ -56632,7 +56632,7 @@
     {
       "ID": 6820200,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Frost Buildup"
       ]
     },
     {
@@ -56650,7 +56650,7 @@
     {
       "ID": 6820300,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Blood Loss Buildup"
       ]
     },
     {
@@ -56668,7 +56668,7 @@
     {
       "ID": 6820400,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Madness Buildup"
       ]
     },
     {
@@ -56686,7 +56686,7 @@
     {
       "ID": 6820500,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Sleep Buildup"
       ]
     },
     {
@@ -56704,7 +56704,7 @@
     {
       "ID": 6820600,
       "Entries": [
-        ""
+        "[Relic Effect] Taking Damage Causes Death Buildup"
       ]
     },
     {
@@ -56722,49 +56722,49 @@
     {
       "ID": 6830000,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Strength and Intelligence"
       ]
     },
     {
       "ID": 6830100,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Dexterity and Faith"
       ]
     },
     {
       "ID": 6830200,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Intelligence and Dexterity"
       ]
     },
     {
       "ID": 6830300,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Faith and Strength"
       ]
     },
     {
       "ID": 6830400,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Vigor and Arcane"
       ]
     },
     {
       "ID": 6840000,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Rune Acquisition"
       ]
     },
     {
       "ID": 6840100,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Flask HP Restoration"
       ]
     },
     {
       "ID": 6840200,
       "Entries": [
-        ""
+        "[Relic Effect] Ultimate Art Charging Impaired"
       ]
     },
     {
@@ -56782,25 +56782,25 @@
     {
       "ID": 6850200,
       "Entries": [
-        ""
+        "[Relic Effect] All Resistances Down"
       ]
     },
     {
       "ID": 6850500,
       "Entries": [
-        ""
+        "[Relic Effect] Continuous HP Loss"
       ]
     },
     {
       "ID": 6850700,
       "Entries": [
-        ""
+        "[Relic Effect] More Damage Taken After Evasion"
       ]
     },
     {
       "ID": 6850800,
       "Entries": [
-        ""
+        "[Weapon Effect] Repeated Evasions Lower Damage Negation"
       ]
     },
     {
@@ -56818,19 +56818,19 @@
     {
       "ID": 6850900,
       "Entries": [
-        ""
+        "[Relic Effect] Reduced Damage Negation for Flask Usages"
       ]
     },
     {
       "ID": 6851200,
       "Entries": [
-        ""
+        "[Relic Effect] Lower Attack When Below Max HP"
       ]
     },
     {
       "ID": 6851300,
       "Entries": [
-        ""
+        "[Relic Effect] Poison Buildup When Below Max HP"
       ]
     },
     {
@@ -56842,7 +56842,7 @@
     {
       "ID": 6851400,
       "Entries": [
-        ""
+        "[Relic Effect] Rot Buildup When Below Max HP"
       ]
     },
     {
@@ -56854,7 +56854,7 @@
     {
       "ID": 6851700,
       "Entries": [
-        ""
+        "[Relic Effect] Near Death Reduces Max HP"
       ]
     },
     {
@@ -57238,13 +57238,13 @@
     {
       "ID": 7001403,
       "Entries": [
-        ""
+        "[Relic Effect] Physical Attack Up +3"
       ]
     },
     {
       "ID": 7001404,
       "Entries": [
-        ""
+        "[Relic Effect] Physical Attack Up +4"
       ]
     },
     {
@@ -57268,13 +57268,13 @@
     {
       "ID": 7001503,
       "Entries": [
-        ""
+        "[Relic Effect] Magic Attack Power Up +3"
       ]
     },
     {
       "ID": 7001504,
       "Entries": [
-        ""
+        "[Relic Effect] Magic Attack Power Up +4"
       ]
     },
     {
@@ -57298,13 +57298,13 @@
     {
       "ID": 7001603,
       "Entries": [
-        ""
+        "[Relic Effect] Fire Attack Power Up +3"
       ]
     },
     {
       "ID": 7001604,
       "Entries": [
-        ""
+        "[Relic Effect] Fire Attack Power Up +4"
       ]
     },
     {
@@ -57328,13 +57328,13 @@
     {
       "ID": 7001703,
       "Entries": [
-        ""
+        "[Relic Effect] Lightning Attack Power Up +3"
       ]
     },
     {
       "ID": 7001704,
       "Entries": [
-        ""
+        "[Relic Effect] Lightning Attack Power Up +4"
       ]
     },
     {
@@ -57358,13 +57358,13 @@
     {
       "ID": 7001803,
       "Entries": [
-        ""
+        "[Relic Effect] Holy Attack Power Up +3"
       ]
     },
     {
       "ID": 7001804,
       "Entries": [
-        ""
+        "[Relic Effect] Holy Attack Power Up +4"
       ]
     },
     {
@@ -57376,13 +57376,13 @@
     {
       "ID": 7002601,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Magic Damage Negation +1"
       ]
     },
     {
       "ID": 7002602,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Magic Damage Negation +2"
       ]
     },
     {
@@ -57394,13 +57394,13 @@
     {
       "ID": 7002701,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Fire Damage Negation +1"
       ]
     },
     {
       "ID": 7002702,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Fire Damage Negation +2"
       ]
     },
     {
@@ -57412,13 +57412,13 @@
     {
       "ID": 7002801,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Lightning Damage Negation +1"
       ]
     },
     {
       "ID": 7002802,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Lightning Damage Negation +2"
       ]
     },
     {
@@ -57430,13 +57430,13 @@
     {
       "ID": 7002901,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Holy Damage Negation +1"
       ]
     },
     {
       "ID": 7002902,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Holy Damage Negation +2"
       ]
     },
     {
@@ -57448,13 +57448,13 @@
     {
       "ID": 7003001,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Poison Resistance +1"
       ]
     },
     {
       "ID": 7003002,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Poison Resistance +2"
       ]
     },
     {
@@ -57466,13 +57466,13 @@
     {
       "ID": 7003101,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Blood Loss Resistance +1"
       ]
     },
     {
       "ID": 7003102,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Blood Loss Resistance +2"
       ]
     },
     {
@@ -57484,13 +57484,13 @@
     {
       "ID": 7003201,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Sleep Resistance +1"
       ]
     },
     {
       "ID": 7003202,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Sleep Resistance +2"
       ]
     },
     {
@@ -57502,13 +57502,13 @@
     {
       "ID": 7003301,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Death Blight Resistance +1"
       ]
     },
     {
       "ID": 7003302,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Death Blight Resistance +2"
       ]
     },
     {
@@ -57520,13 +57520,13 @@
     {
       "ID": 7003401,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Rot Resistance +1"
       ]
     },
     {
       "ID": 7003402,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Rot Resistance +2"
       ]
     },
     {
@@ -57538,13 +57538,13 @@
     {
       "ID": 7003501,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Frost Resistance +1"
       ]
     },
     {
       "ID": 7003502,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Frost Resistance +2"
       ]
     },
     {
@@ -57556,13 +57556,13 @@
     {
       "ID": 7003601,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Madness Resistance +1"
       ]
     },
     {
       "ID": 7003602,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Madness Resistance +2"
       ]
     },
     {
@@ -57574,13 +57574,13 @@
     {
       "ID": 7005601,
       "Entries": [
-        ""
+        "[Relic Effect] Partial HP Restoration upon Post-Damage Attacks +1"
       ]
     },
     {
       "ID": 7005602,
       "Entries": [
-        ""
+        "[Relic Effect] Partial HP Restoration upon Post-Damage Attacks +2"
       ]
     },
     {
@@ -57592,13 +57592,25 @@
     {
       "ID": 7006201,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Physical Damage Negation - Potency 1"
       ]
     },
     {
       "ID": 7006202,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Physical Damage Negation - Potency 2"
+      ]
+    },
+    {
+      "ID": 7006300,
+      "Entries": [
+        "[Relic Effect] Improved Affinity Damage Negation"
+      ]
+    },
+    {
+      "ID": 7006400,
+      "Entries": [
+        "[Relic Effect] Extends spell effect duration"
       ]
     },
     {
@@ -57922,7 +57934,7 @@
     {
       "ID": 7030210,
       "Entries": [
-        ""
+        "[Relic Effect] HP restored when using medicinal boluses, etc. +1"
       ]
     },
     {
@@ -57958,7 +57970,7 @@
     {
       "ID": 7030610,
       "Entries": [
-        ""
+        "[Relic Effect] Art gauge charged from successful guarding +1"
       ]
     },
     {
@@ -58012,7 +58024,7 @@
     {
       "ID": 7030810,
       "Entries": [
-        ""
+        "[Relic Effect] Art gauge fills moderately upon critical hit +1"
       ]
     },
     {
@@ -58048,7 +58060,7 @@
     {
       "ID": 7030910,
       "Entries": [
-        ""
+        "[Relic Effect] Physical attack power increases after using grease items +1"
       ]
     },
     {
@@ -58066,7 +58078,7 @@
     {
       "ID": 7030920,
       "Entries": [
-        ""
+        "[Relic Effect] Physical attack power increases after using grease items +2"
       ]
     },
     {
@@ -58456,7 +58468,7 @@
     {
       "ID": 7035110,
       "Entries": [
-        ""
+        "[Relic Effect] Critical Hit Boosts Stamina Recovery Speed +1"
       ]
     },
     {
@@ -58838,6 +58850,24 @@
       ]
     },
     {
+      "ID": 7037600,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
+      "ID": 7037601,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
+      "ID": 7037602,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
       "ID": 7037700,
       "Entries": [
         "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power"
@@ -58870,13 +58900,13 @@
     {
       "ID": 7040101,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Guard Counters +1"
       ]
     },
     {
       "ID": 7040102,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Guard Counters +2"
       ]
     },
     {
@@ -58900,7 +58930,7 @@
     {
       "ID": 7040301,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Throwing Pot Damage +1"
       ]
     },
     {
@@ -58918,7 +58948,7 @@
     {
       "ID": 7040401,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Throwing Knife Damage +1"
       ]
     },
     {
@@ -58936,7 +58966,7 @@
     {
       "ID": 7040501,
       "Entries": [
-        ""
+        "[Relic Effect] Improved Glintstone and Gravity Stone Damage +1"
       ]
     },
     {
@@ -59266,7 +59296,7 @@
     {
       "ID": 7060300,
       "Entries": [
-        ""
+        "[Relic Effect] Max HP increased for each great enemy defeated at a Great Church."
       ]
     },
     {
@@ -59278,7 +59308,7 @@
     {
       "ID": 7060400,
       "Entries": [
-        ""
+        "[Relic Effect] Runes and Item Discovery increased for each great enemy defeated at a Fort"
       ]
     },
     {
@@ -59296,7 +59326,7 @@
     {
       "ID": 7060500,
       "Entries": [
-        ""
+        "[Relic Effect] Arcane increased for each great enemy defeated at a Ruin"
       ]
     },
     {
@@ -59308,7 +59338,7 @@
     {
       "ID": 7060600,
       "Entries": [
-        ""
+        "[Relic Effect] Max stamina increased for each great enemy defeated at a Great Encampment"
       ]
     },
     {
@@ -61034,6 +61064,18 @@
       ]
     },
     {
+      "ID": 7500800,
+      "Entries": [
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self"
+      ]
+    },
+    {
+      "ID": 7500900,
+      "Entries": [
+        "[Relic Effect] Undertaker: Executing Art readies Character Skill"
+      ]
+    },
+    {
       "ID": 7600000,
       "Entries": [
         "[Relic Effect] Sleep in Vicinity Improves Attack Power"
@@ -61325,6 +61367,12 @@
       "ID": 7623100,
       "Entries": [
         "[Relic Effect] Holy-Shrouding Cracked Tear in possession at start of expedition"
+      ]
+    },
+    {
+      "ID": 7623200,
+      "Entries": [
+        "[Relic Effect] Greenspill Crystal Tear in possession at start of expedition"
       ]
     },
     {
@@ -61655,6 +61703,30 @@
       "ID": 7647100,
       "Entries": [
         "[Relic Effect] Executor: Improved Dexterity and Arcane, Reduced Vigor - Apply Hero Status Change"
+      ]
+    },
+    {
+      "ID": 7647200,
+      "Entries": [
+        "[Relic Effect] Scholar: Improved Mind, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 7647300,
+      "Entries": [
+        "[Relic Effect] Scholar: Improved Endurance and Dexterity, Reduced Intelligence and Arcane"
+      ]
+    },
+    {
+      "ID": 7647400,
+      "Entries": [
+        "[Relic Effect] Undertaker: Improved Dexterity, Reduced Vigor and Faith"
+      ]
+    },
+    {
+      "ID": 7647500,
+      "Entries": [
+        "[Relic Effect] Undertaker: Improved Mind and Faith, Reduced Strength"
       ]
     },
     {
@@ -62962,19 +63034,55 @@
     {
       "ID": 8320500,
       "Entries": [
-        "[Weapon Effect] Improved Melee Attack Power"
+        "[Weapon Effect] Improved Melee Attack Power - Potency 1"
+      ]
+    },
+    {
+      "ID": 8320510,
+      "Entries": [
+        "[Weapon Effect] Improved Melee Attack Power - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320520,
+      "Entries": [
+        "[Weapon Effect] Improved Melee Attack Power - Potency 3"
       ]
     },
     {
       "ID": 8320600,
       "Entries": [
-        "[Weapon Effect] Improved Dash Attacks"
+        "[Weapon Effect] Improved Dash Attacks - Potency 1"
+      ]
+    },
+    {
+      "ID": 8320610,
+      "Entries": [
+        "[Weapon Effect] Improved Dash Attacks - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320620,
+      "Entries": [
+        "[Weapon Effect] Improved Dash Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320700,
       "Entries": [
-        "[Weapon Effect] Improved Rolling Attacks"
+        "[Weapon Effect] Improved Rolling Attacks - Potency 1"
+      ]
+    },
+    {
+      "ID": 8320710,
+      "Entries": [
+        "[Weapon Effect] Improved Rolling Attacks - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320720,
+      "Entries": [
+        "[Weapon Effect] Improved Rolling Attacks - Potency 3"
       ]
     },
     {
@@ -68063,6 +68171,42 @@
       "ID": 8990802,
       "Entries": [
         "[Weapon Effect] The Executor's Grief - Potency 3"
+      ]
+    },
+    {
+      "ID": 8990900,
+      "Entries": [
+        "[Weapon Effect] The Scholar's Grief - Potency 1"
+      ]
+    },
+    {
+      "ID": 8990901,
+      "Entries": [
+        "[Weapon Effect] The Scholar's Grief - Potency 2"
+      ]
+    },
+    {
+      "ID": 8990902,
+      "Entries": [
+        "[Weapon Effect] The Scholar's Grief - Potency 3"
+      ]
+    },
+    {
+      "ID": 8991000,
+      "Entries": [
+        "[Weapon Effect] The Undertaker's Grief - Potency 1"
+      ]
+    },
+    {
+      "ID": 8991001,
+      "Entries": [
+        "[Weapon Effect] The Undertaker's Grief - Potency 2"
+      ]
+    },
+    {
+      "ID": 8991002,
+      "Entries": [
+        "[Weapon Effect] The Undertaker's Grief - Potency 3"
       ]
     },
     {

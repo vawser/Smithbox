@@ -176,6 +176,12 @@
       ]
     },
     {
+      "ID": 19001,
+      "Entries": [
+        "Character Relic: Scholar: Allies targeted by Character Skill gain boosted attack"
+      ]
+    },
+    {
       "ID": 100000,
       "Entries": [
         "???: Taking attacks improves attack power"
@@ -1046,6 +1052,18 @@
       ]
     },
     {
+      "ID": 6500800,
+      "Entries": [
+        "Relic: [Scholar] Reduced FP consumption when using Character Skill on self"
+      ]
+    },
+    {
+      "ID": 6500900,
+      "Entries": [
+        "Relic: [Undertaker] Executing Art readies Character Skill"
+      ]
+    },
+    {
       "ID": 6600000,
       "Entries": [
         "Relic: Sleep in Vicinity Improves Attack Power"
@@ -1313,6 +1331,12 @@
       "ID": 6623100,
       "Entries": [
         "Relic: Holy-Shrouding Cracked Tear in possession at start of expedition"
+      ]
+    },
+    {
+      "ID": 6623200,
+      "Entries": [
+        "Relic: Greenspill Crystal Tear in possession at start of expedition"
       ]
     },
     {
@@ -1643,6 +1667,30 @@
       "ID": 6647100,
       "Entries": [
         "Relic: [Executor] Improved Dexterity and Arcane, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6647200,
+      "Entries": [
+        "Relic: [Scholar]  Improved Mind, Reduced Vigor"
+      ]
+    },
+    {
+      "ID": 6647300,
+      "Entries": [
+        "Relic: [Scholar] Improved Endurance and Dexterity, Reduced Intelligence and Arcane"
+      ]
+    },
+    {
+      "ID": 6647400,
+      "Entries": [
+        "Relic: [Undertaker] Improved Dexterity, Reduced Vigor and Faith"
+      ]
+    },
+    {
+      "ID": 6647500,
+      "Entries": [
+        "Relic: [Undertaker] Improved Mind and Faith, Reduced Strength"
       ]
     },
     {
@@ -2204,6 +2252,18 @@
       ]
     },
     {
+      "ID": 7006300,
+      "Entries": [
+        "Relic: Improved Affinity Damage Negation"
+      ]
+    },
+    {
+      "ID": 7006400,
+      "Entries": [
+        "Relic: Extends spell effect duration"
+      ]
+    },
+    {
       "ID": 7006500,
       "Entries": [
         "Relic: Continuous FP Recovery"
@@ -2573,6 +2633,12 @@
       "ID": 7037301,
       "Entries": [
         "Relic: Undertaker: Contact with allies restores their HP while Ultimate Art is activated"
+      ]
+    },
+    {
+      "ID": 7037600,
+      "Entries": [
+        "Relic: Successive Attacks Boost Attack Power"
       ]
     },
     {
@@ -3027,6 +3093,12 @@
     },
     {
       "ID": 7121000,
+      "Entries": [
+        "Relic: Small Pouch in possession at start of expedition"
+      ]
+    },
+    {
+      "ID": 7121001,
       "Entries": [
         "Relic: Small Pouch in possession at start of expedition"
       ]
@@ -4048,13 +4120,13 @@
     {
       "ID": 8100500,
       "Entries": [
-        ""
+        "Weapon Effect: Improved Affinity Attack Power - Potency 1"
       ]
     },
     {
       "ID": 8100501,
       "Entries": [
-        ""
+        "Weapon Effect: Improved Affinity Attack Power - Potency 2"
       ]
     },
     {
@@ -4606,13 +4678,13 @@
     {
       "ID": 8210700,
       "Entries": [
-        ""
+        "Weapon Effect: All Resistances Up - Potency 1"
       ]
     },
     {
       "ID": 8210701,
       "Entries": [
-        ""
+        "Weapon Effect: All Resistances Up - Potency 2"
       ]
     },
     {
@@ -4760,15 +4832,51 @@
       ]
     },
     {
+      "ID": 8320510,
+      "Entries": [
+        "Weapon Effect: Improved Melee Attack Power - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320520,
+      "Entries": [
+        "Weapon Effect: Improved Melee Attack Power - Potency 3"
+      ]
+    },
+    {
       "ID": 8320600,
       "Entries": [
-        "Weapon Effect: Improved Dash Attacks"
+        "Weapon Effect: Improved Dash Attacks - Potency 1"
+      ]
+    },
+    {
+      "ID": 8320610,
+      "Entries": [
+        "Weapon Effect: Improved Dash Attacks - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320620,
+      "Entries": [
+        "Weapon Effect: Improved Dash Attacks - Potency 3"
       ]
     },
     {
       "ID": 8320700,
       "Entries": [
-        "Weapon Effect: Improved Rolling Attacks"
+        "Weapon Effect: Improved Rolling Attacks - Potency 1"
+      ]
+    },
+    {
+      "ID": 8320710,
+      "Entries": [
+        "Weapon Effect: Improved Rolling Attacks - Potency 2"
+      ]
+    },
+    {
+      "ID": 8320720,
+      "Entries": [
+        "Weapon Effect: Improved Rolling Attacks - Potency 3"
       ]
     },
     {
@@ -4810,13 +4918,13 @@
     {
       "ID": 8330103,
       "Entries": [
-        ""
+        "Weapon Effect: Improved Sorceries and Incantations - Potency 1"
       ]
     },
     {
       "ID": 8330104,
       "Entries": [
-        ""
+        "Weapon Effect: Improved Sorceries and Incantations - Potency 2"
       ]
     },
     {
@@ -5122,19 +5230,19 @@
     {
       "ID": 8500100,
       "Entries": [
-        ""
+        "Weapon Effect: Rune of the Strong - Potency 1"
       ]
     },
     {
       "ID": 8500101,
       "Entries": [
-        ""
+        "Weapon Effect: Rune of the Strong - Potency 2"
       ]
     },
     {
       "ID": 8500102,
       "Entries": [
-        ""
+        "Weapon Effect: Rune of the Strong - Potency 3"
       ]
     },
     {
@@ -11243,6 +11351,1206 @@
       "ID": 9990899,
       "Entries": [
         "Weapon Power: The Executor's Grief"
+      ]
+    },
+    {
+      "ID": 9990900,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990901,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990902,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990903,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990904,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990905,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990906,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990907,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990908,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990909,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990910,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990911,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990912,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990913,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990914,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990915,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990916,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990917,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990918,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990919,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990920,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990921,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990922,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990923,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990924,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990925,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990926,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990927,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990928,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990929,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990930,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990931,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990932,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990933,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990934,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990935,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990936,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990937,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990938,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990939,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990940,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990941,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990942,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990943,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990944,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990945,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990946,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990947,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990948,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990949,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990950,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990951,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990952,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990953,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990954,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990955,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990956,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990957,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990958,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990959,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990960,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990961,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990962,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990963,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990964,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990965,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990966,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990967,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990968,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990969,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990970,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990971,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990972,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990973,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990974,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990975,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990976,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990977,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990978,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990979,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990980,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990981,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990982,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990983,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990984,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990985,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990986,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990987,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990988,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990989,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990990,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990991,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990992,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990993,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990994,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990995,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990996,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990997,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990998,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9990999,
+      "Entries": [
+        "Weapon Power: The Scholar's Grief"
+      ]
+    },
+    {
+      "ID": 9991000,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991001,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991002,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991003,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991004,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991005,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991006,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991007,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991008,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991009,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991010,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991011,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991012,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991013,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991014,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991015,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991016,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991017,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991018,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991019,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991020,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991021,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991022,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991023,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991024,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991025,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991026,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991027,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991028,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991029,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991030,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991031,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991032,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991033,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991034,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991035,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991036,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991037,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991038,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991039,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991040,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991041,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991042,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991043,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991044,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991045,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991046,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991047,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991048,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991049,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991050,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991051,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991052,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991053,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991054,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991055,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991056,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991057,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991058,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991059,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991060,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991061,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991062,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991063,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991064,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991065,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991066,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991067,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991068,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991069,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991070,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991071,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991072,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991073,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991074,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991075,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991076,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991077,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991078,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991079,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991080,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991081,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991082,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991083,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991084,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991085,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991086,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991087,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991088,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991089,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991090,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991091,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991092,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991093,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991094,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991095,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991096,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991097,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991098,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
+      ]
+    },
+    {
+      "ID": 9991099,
+      "Entries": [
+        "Weapon Power: The Undertaker's Grief"
       ]
     },
     {
