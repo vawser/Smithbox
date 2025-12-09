@@ -331,7 +331,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int[] ConnectedNavmeshIDs { get; set; }
+            public List<int> ConnectedNavmeshIDs { get; set; }
 
             /// <summary>
             /// Adjacent nodes in an inter-navmesh graph.
@@ -354,7 +354,7 @@ namespace SoulsFormats
             public NavmeshInfo()
             {
                 Scale = Vector3.One;
-                ConnectedNavmeshIDs = new int[0];
+                ConnectedNavmeshIDs = new List<int>();
                 GateNodes = new List<GateNode>();
             }
 
@@ -382,7 +382,7 @@ namespace SoulsFormats
                     if (connectedNavmeshesCount > 16)
                         throw new InvalidDataException("Name reference count should not exceed 16 in DS3/BB.");
 
-                    ConnectedNavmeshIDs = br.ReadInt32s(connectedNavmeshesCount);
+                    ConnectedNavmeshIDs = br.ReadInt32s(connectedNavmeshesCount).ToList();
 
                     for (int i = 0; i < 16 - connectedNavmeshesCount; i++)
                         br.AssertInt32(-1);
@@ -396,14 +396,14 @@ namespace SoulsFormats
 
                     if (UnkOffset == 0xFF01)
                     {
-                        ConnectedNavmeshIDs = br.ReadInt32s(12);
+                        ConnectedNavmeshIDs = br.ReadInt32s(12).ToList();
                     }
                     else if (connectedNavmeshesCount > 0)
                     {
                         long start = br.Position;
                         br.Position = start + UnkOffset;
 
-                        ConnectedNavmeshIDs = br.GetInt32s(UnkOffset, connectedNavmeshesCount);
+                        ConnectedNavmeshIDs = br.GetInt32s(UnkOffset, connectedNavmeshesCount).ToList();
 
                         br.Position = start;
                     }
@@ -439,19 +439,19 @@ namespace SoulsFormats
                 bw.WriteInt32(FaceDataIndex);
                 bw.WriteInt32(0);
                 bw.WriteInt32(FaceCount);
-                bw.WriteInt32(ConnectedNavmeshIDs.Length);
+                bw.WriteInt32(ConnectedNavmeshIDs.Count);
                 bw.WriteInt16(GateNodeIndex);
                 bw.WriteInt16((short)GateNodes.Count);
                 bw.WriteInt32(Unk4C ? 1 : 0);
 
                 if (version == 2 || version == 3)
                 {
-                    if (ConnectedNavmeshIDs.Length > 16)
+                    if (ConnectedNavmeshIDs.Count > 16)
                         throw new InvalidDataException("Name reference count should not exceed 16 in DS3/BB.");
 
                     bw.WriteInt32s(ConnectedNavmeshIDs);
 
-                    for (int i = 0; i < 16 - ConnectedNavmeshIDs.Length; i++)
+                    for (int i = 0; i < 16 - ConnectedNavmeshIDs.Count; i++)
                         bw.WriteInt32(-1);
                 }
                 else
@@ -465,12 +465,12 @@ namespace SoulsFormats
                     {
                         bw.WriteInt32s(new int[12]);
                     }
-                    else if (ConnectedNavmeshIDs.Length > 0)
+                    else if (ConnectedNavmeshIDs.Count > 0)
                     {
                         long start = bw.Position;
                         bw.Position = start + UnkOffset;
 
-                        for (int i = 0; i < ConnectedNavmeshIDs.Length; i++)
+                        for (int i = 0; i < ConnectedNavmeshIDs.Count; i++)
                         {
                             bw.WriteInt32(ConnectedNavmeshIDs[i]);
                         }
@@ -502,7 +502,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{NameID} {Position} {Rotation} [{ConnectedNavmeshIDs.Length} References] [{GateNodes.Count} MapNodes]";
+                return $"{NameID} {Position} {Rotation} [{ConnectedNavmeshIDs.Count} References] [{GateNodes.Count} MapNodes]";
             }
         }
 

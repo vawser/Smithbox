@@ -1,7 +1,15 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HKLib.hk2018;
+using HKLib.Serialization.hk2018.Binary;
+using HKLib.Serialization.hk2018.Xml;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Resource;
+using StudioCore.Resource.Locators;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +24,8 @@ public class HavokNavmeshManager
     public ProjectEntry Project;
 
     public Dictionary<string, NVA> Files = new();
+
+    public Dictionary<string, hkRootLevelContainer> HKX3_Containers = new Dictionary<string, hkRootLevelContainer>();
 
     public HavokNavmeshManager(MapEditorScreen editor, ProjectEntry project)
     {
@@ -32,8 +42,91 @@ public class HavokNavmeshManager
 
         return false;
     }
+    public void OnLoadMap(string mapId)
+    {
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            LoadNavmeshModels(mapId);
+        }
+    }
 
-    public void LoadHavokNVA(MapContainer map)
+    public void OnUnloadMap(string mapId)
+    {
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
+            {
+                if (item.Key.Contains("nav"))
+                {
+                    item.Value.Release(true);
+                }
+            }
+        }
+    }
+
+    private void LoadNavmeshModels(string mapId)
+    {
+        var binderEntry = Project.FileDictionary.Entries.FirstOrDefault(
+            e => e.Filename == mapId &&
+            e.Extension == "nvmhktbnd");
+
+        if (binderEntry == null)
+            return;
+
+        try
+        {
+            var binderData = Project.FS.ReadFile(binderEntry.Path);
+
+            if (binderData == null)
+                return;
+
+            var binder = new BND4Reader(binderData.Value);
+
+            HavokBinarySerializer serializer = new HavokBinarySerializer();
+            HavokXmlSerializer? xmlSerializer = null;
+
+            foreach (var file in binder.Files)
+            {
+                var name = Path.GetFileNameWithoutExtension(file.Name);
+
+                var FileBytes = binder.ReadFile(file).ToArray();
+
+                try
+                {
+                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                    {
+                        hkRootLevelContainer fileHkx;
+                        try
+                        {
+                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
+                        }
+                        catch (InvalidDataException e)
+                        {
+                            if (xmlSerializer == null)
+                                xmlSerializer = new HavokXmlSerializer();
+                            memoryStream.Position = 0;
+                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
+                        }
+
+                        if (!HKX3_Containers.ContainsKey(name))
+                        {
+                            HKX3_Containers.Add(name, fileHkx);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load navmesh models: {binderEntry.Path}", LogLevel.Error, LogPriority.High, e);
+        }
+    }
+
+    public void LoadHavokNVA(MapContainer map, MapResourceHandler handler)
     {
         if (!CanUse())
             return;
@@ -63,6 +156,7 @@ public class HavokNavmeshManager
                         Files.Add(Path.GetFileNameWithoutExtension(entry.Filename), nva);
 
                         map.LoadHavokNVA(map.Name, nva);
+
                     }
                     catch (Exception e)
                     {

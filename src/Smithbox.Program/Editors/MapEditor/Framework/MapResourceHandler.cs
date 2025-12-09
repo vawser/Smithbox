@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Resource.ResourceManager;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -131,7 +132,7 @@ public class MapResourceHandler
             }
 
             // Navmesh
-            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.DS1 or ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
                 if (model.Name.StartsWith('n'))
                 {
@@ -140,6 +141,12 @@ public class MapResourceHandler
                     if (modelAsset.IsValid())
                         LoadList_Navmesh.Add(modelAsset);
                 }
+            }
+            else if (Editor.HavokNavmeshManager.CanUse())
+            {
+                ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
+
+                LoadList_Navmesh.Add(nav);
             }
         }
     }
@@ -446,24 +453,16 @@ public class MapResourceHandler
         // Navmesh
         job = ResourceManager.CreateNewJob($@"Navmesh");
 
-        if(Editor.HavokNavmeshManager.CanUse())
+        foreach (ResourceDescriptor asset in LoadList_Navmesh)
         {
-            ResourceDescriptor nav = ModelLocator.GetHavokNavmeshes(Editor.Project, AdjustedMapID);
-            job.AddLoadArchiveTask(nav.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.NavmeshHKX);
-        }
-        else
-        {
-            foreach (ResourceDescriptor asset in LoadList_Navmesh)
+            if (asset.AssetArchiveVirtualPath != null)
             {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
+                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                    false, ResourceType.NavmeshHKX);
+            }
+            else if (asset.AssetVirtualPath != null)
+            {
+                job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using DotNext.IO.MemoryMappedFiles;
 using HKX2;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ public class HavokNavmeshResource : IResource, IDisposable
 {
     public int GraphIndexCount;
 
-    public hkRootLevelContainer HkxRoot;
     public int IndexCount;
     public int[] PickingIndices;
 
@@ -34,26 +34,110 @@ public class HavokNavmeshResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
+    public HKX Root_HKX1;
+    public hkRootLevelContainer Root_HKX2;
+    public HKLib.hk2018.hkRootLevelContainer Root_HKX3;
+
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         BinaryReaderEx br = new(false, bytes);
-        var des = new PackFileDeserializer();
-        HkxRoot = (hkRootLevelContainer)des.Deserialize(br);
+
+        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        {
+            var des = new PackFileDeserializer();
+            Root_HKX2 = (hkRootLevelContainer)des.Deserialize(br);
+        }
+
+        if (curProject.ProjectType is ProjectType.ER)
+        {
+            if (curProject.MapEditor != null)
+            {
+                var pathElements = virtPath.Split('/');
+                var filename = pathElements[4];
+
+                if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
+                {
+                    Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         return LoadInternal(al);
     }
 
     public bool _Load(string path, AccessLevel al, string virtPath)
     {
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         using var file =
             MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
         using IMappedMemoryOwner accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
-        var des = new PackFileDeserializer();
-        HkxRoot = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, accessor.Memory));
+
+        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        {
+            var des = new PackFileDeserializer();
+            Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, accessor.Memory));
+        }
+
+        if (curProject.ProjectType is ProjectType.ER)
+        {
+            if (curProject.MapEditor != null)
+            {
+                var pathElements = virtPath.Split('/');
+                var filename = pathElements[4];
+
+                if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
+                {
+                    Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
         return LoadInternal(al);
     }
+    private bool LoadInternal(AccessLevel al)
+    {
+        if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
+        {
+            Bounds = new BoundingBox();
 
-    private unsafe void ProcessMesh(hkaiNavMesh mesh)
+            if (Root_HKX2 != null)
+            {
+                var mesh = Root_HKX2.FindVariant<hkaiNavMesh>();
+                if (mesh != null)
+                {
+                    ProcessMesh_HKX2(mesh);
+                }
+
+                var graph = Root_HKX2.FindVariant<hkaiDirectedGraphExplicitCost>();
+                if (graph != null)
+                {
+                    ProcessGraph_HKX2(graph);
+                }
+            }
+        }
+
+        if (al == AccessLevel.AccessGPUOptimizedOnly)
+        {
+            Root_HKX1 = null;
+            Root_HKX2 = null;
+            Root_HKX3 = null;
+        }
+
+        return true;
+    }
+
+    private unsafe void ProcessMesh_HKX2(hkaiNavMesh mesh)
     {
         List<Vector4> verts = mesh.m_vertices;
         var indexCount = 0;
@@ -176,7 +260,7 @@ public class HavokNavmeshResource : IResource, IDisposable
         }
     }
 
-    private unsafe void ProcessGraph(hkaiDirectedGraphExplicitCost graph)
+    private unsafe void ProcessGraph_HKX2(hkaiDirectedGraphExplicitCost graph)
     {
         List<Vector4> verts = graph.m_positions;
         var indexCount = 0;
@@ -252,72 +336,18 @@ public class HavokNavmeshResource : IResource, IDisposable
         }
     }
 
-    private bool LoadInternal(AccessLevel al)
-    {
-        if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
-        {
-            Bounds = new BoundingBox();
-            var mesh = HkxRoot.FindVariant<hkaiNavMesh>();
-            if (mesh != null)
-            {
-                ProcessMesh(mesh);
-            }
 
-            var graph = HkxRoot.FindVariant<hkaiDirectedGraphExplicitCost>();
-            if (graph != null)
-            {
-                ProcessGraph(graph);
-            }
-        }
-
-        if (al == AccessLevel.AccessGPUOptimizedOnly)
-        {
-            HkxRoot = null;
-        }
-
-        return true;
-    }
-
+    /// <summary>
+    /// Navmesh Builder
+    /// </summary>
+    /// <param name="root"></param>
+    /// <returns></returns>
     public static HavokNavmeshResource ResourceFromNavmeshRoot(hkRootLevelContainer root)
     {
         var ret = new HavokNavmeshResource();
-        ret.HkxRoot = root;
+        ret.Root_HKX2 = root;
         ret.LoadInternal(AccessLevel.AccessFull);
         return ret;
-    }
-
-    public bool RayCast(Ray ray, Matrix4x4 transform, out float dist)
-    {
-        var hit = false;
-        var mindist = float.MaxValue;
-        Matrix4x4 invw = transform.Inverse();
-        Vector3 newo = Vector3.Transform(ray.Origin, invw);
-        Vector3 newd = Vector3.TransformNormal(ray.Direction, invw);
-        var tray = new Ray(newo, newd);
-        if (!tray.Intersects(Bounds))
-        {
-            dist = float.MaxValue;
-            return false;
-        }
-
-        for (var index = 0; index < PickingIndices.Count(); index += 3)
-        {
-            float locdist;
-            if (tray.Intersects(ref PickingVertices[PickingIndices[index]],
-                    ref PickingVertices[PickingIndices[index + 1]],
-                    ref PickingVertices[PickingIndices[index + 2]],
-                    out locdist))
-            {
-                hit = true;
-                if (locdist < mindist)
-                {
-                    mindist = locdist;
-                }
-            }
-        }
-
-        dist = mindist;
-        return hit;
     }
 
     #region IDisposable Support

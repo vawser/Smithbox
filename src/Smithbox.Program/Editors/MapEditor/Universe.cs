@@ -119,6 +119,7 @@ public class Universe
         if (!fastLoad)
         {
             Editor.CollisionManager.OnLoadMap(mapid);
+            Editor.HavokNavmeshManager.OnLoadMap(mapid);
         }
 
         try
@@ -152,7 +153,7 @@ public class Universe
 
                 LoadLights(map);
                 Editor.AutoInvadeManager.LoadAIP(map);
-                Editor.HavokNavmeshManager.LoadHavokNVA(map);
+                Editor.HavokNavmeshManager.LoadHavokNVA(map, resourceHandler);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -1055,6 +1056,7 @@ public class Universe
 
             Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
             Editor.AutoInvadeManager.OnUnloadMap(entry.Key.Filename);
+            Editor.HavokNavmeshManager.OnUnloadMap(entry.Key.Filename);
 
             if (entry.Value != null && entry.Value.MapContainer != null)
             {
