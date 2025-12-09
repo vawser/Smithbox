@@ -895,34 +895,37 @@ public class MapPropertyView
             else if (typ.IsGenericType && typ.GetGenericTypeDefinition() == typeof(List<>))
             {
                 var l = prop.GetValue(obj);
-                PropertyInfo itemprop = l.GetType().GetProperty("Item");
-                var count = (int)l.GetType().GetProperty("Count").GetValue(l);
-                for (var i = 0; i < count; i++)
+                if (l != null)
                 {
-                    ImGui.PushID(i);
-
-                    Type arrtyp = typ.GetGenericArguments()[0];
-                    if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
+                    PropertyInfo itemprop = l.GetType().GetProperty("Item");
+                    var count = (int)l.GetType().GetProperty("Count").GetValue(l);
+                    for (var i = 0; i < count; i++)
                     {
-                        var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
-                        ShowFieldHint(obj, prop, fieldDescription);
-                        ImGui.NextColumn();
-                        ImGui.SetNextItemWidth(-1);
-                        var o = itemprop.GetValue(l, new object[] { i });
-                        ImGui.Text(o.GetType().Name);
-                        ImGui.NextColumn();
-                        if (open)
+                        ImGui.PushID(i);
+
+                        Type arrtyp = typ.GetGenericArguments()[0];
+                        if (arrtyp.IsClass && arrtyp != typeof(string) && !arrtyp.IsArray)
                         {
-                            PropEditorGeneric(selection, entSelection, o);
-                            ImGui.TreePop();
-                        }
+                            var open = ImGui.TreeNodeEx($@"{fieldName}: {i}", ImGuiTreeNodeFlags.DefaultOpen);
+                            ShowFieldHint(obj, prop, fieldDescription);
+                            ImGui.NextColumn();
+                            ImGui.SetNextItemWidth(-1);
+                            var o = itemprop.GetValue(l, new object[] { i });
+                            ImGui.Text(o.GetType().Name);
+                            ImGui.NextColumn();
+                            if (open)
+                            {
+                                PropEditorGeneric(selection, entSelection, o);
+                                ImGui.TreePop();
+                            }
 
-                        ImGui.PopID();
-                    }
-                    else
-                    {
-                        PropGenericFieldRow(selection, entSelection, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
-                        ImGui.PopID();
+                            ImGui.PopID();
+                        }
+                        else
+                        {
+                            PropGenericFieldRow(selection, entSelection, prop, arrtyp, itemprop.GetValue(l, [i]), $@"{fieldName}[{i}]", i, classIndex);
+                            ImGui.PopID();
+                        }
                     }
                 }
 

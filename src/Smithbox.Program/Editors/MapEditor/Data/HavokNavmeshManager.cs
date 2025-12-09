@@ -25,7 +25,7 @@ public class HavokNavmeshManager
 
     public bool CanUse()
     {
-        if (Project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+        if (Project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
             return true;
 
         // NOTE: SDT doesn't render the meshes as it doesn't have HKX support yet
@@ -93,7 +93,7 @@ public class HavokNavmeshManager
                     var fileData = Project.MapData.PrimaryBank.TargetFS.ReadFileOrThrow(entry.Path);
                     var existingNVA = NVA.Read(fileData);
 
-                    var version = existingNVA.Navmeshes.Version;
+                    var version = existingNVA.NavmeshInfoEntries.Version;
 
                     // Re-make the navmesh entries from the entities
                     var newNavmeshes = new NavmeshInfoSection((int)version);
@@ -105,7 +105,7 @@ public class HavokNavmeshManager
                         newNavmeshes.Add(navmesh);
                     }
 
-                    existingNVA.Navmeshes = newNavmeshes;
+                    existingNVA.NavmeshInfoEntries = newNavmeshes;
 
                     var newFileData = existingNVA.Write();
                     Project.ProjectFS.WriteFile(entry.Path, newFileData);

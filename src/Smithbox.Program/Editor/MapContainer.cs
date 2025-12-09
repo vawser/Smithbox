@@ -225,7 +225,7 @@ public class MapContainer : ObjectContainer
 
         MapOffsetNode.AddChild(nvaParent);
 
-        foreach (var curNavmesh in nva.Navmeshes)
+        foreach (var curNavmesh in nva.NavmeshInfoEntries)
         {
             var newEntity = new MsbEntity(Editor, this, curNavmesh, MsbEntityType.Navmesh);
 
