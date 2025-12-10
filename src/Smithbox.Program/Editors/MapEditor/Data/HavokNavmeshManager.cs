@@ -178,6 +178,9 @@ public class HavokNavmeshManager
 
         foreach (var entry in Project.MapData.NavmeshFiles.Entries)
         {
+            if (entry.Filename != map.Name)
+                continue;
+
             try
             {
                 var mapID = Path.GetFileNameWithoutExtension(map.Name);
