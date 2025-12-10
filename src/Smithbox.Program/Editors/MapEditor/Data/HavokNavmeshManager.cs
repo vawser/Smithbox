@@ -176,6 +176,12 @@ public class HavokNavmeshManager
         if (!CanUse())
             return;
 
+        // Not yet BP for ER, so ignore save for public users
+#if !DEBUG
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
+            return;
+#endif
+
         foreach (var entry in Project.MapData.NavmeshFiles.Entries)
         {
             if (entry.Filename != map.Name)

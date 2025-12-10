@@ -20,10 +20,12 @@ public class DebugTools
     public bool ShowWorldMapLayoutGenerator;
 
     public bool ShowTest_UniqueParamInsertion;
+
     public bool ShowTest_BHV;
     public bool ShowTest_BTL;
     public bool ShowTest_FLVER2;
     public bool ShowTest_MSB;
+    public bool ShowTest_NVA;
 
     public DebugTools(Smithbox baseEditor)
     {
@@ -95,6 +97,10 @@ public class DebugTools
                 if (ImGui.MenuItem($"BTL"))
                 {
                     ShowTest_BTL = !ShowTest_BTL;
+                }
+                if (ImGui.MenuItem($"NVA"))
+                {
+                    ShowTest_NVA = !ShowTest_NVA;
                 }
 
                 ImGui.Separator();
@@ -180,11 +186,12 @@ public class DebugTools
                 ImGui.End();
             }
         }
-        if (ShowTest_BHV)
+
+        if (ShowTest_MSB)
         {
-            if (ImGui.Begin("BHV", ImGuiWindowFlags.None))
+            if (ImGui.Begin("MSB", ImGuiWindowFlags.None))
             {
-                Test_BHV.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                Test_MSB.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }
@@ -196,20 +203,28 @@ public class DebugTools
                 ImGui.End();
             }
         }
+        if (ShowTest_NVA)
+        {
+            if (ImGui.Begin("NVA", ImGuiWindowFlags.None))
+            {
+                Test_NVA.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                ImGui.End();
+            }
+        }
+
+        if (ShowTest_BHV)
+        {
+            if (ImGui.Begin("BHV", ImGuiWindowFlags.None))
+            {
+                Test_BHV.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                ImGui.End();
+            }
+        }
         if (ShowTest_FLVER2)
         {
             if (ImGui.Begin("FLVER2", ImGuiWindowFlags.None))
             {
                 Test_FLVER2.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
-
-        if (ShowTest_MSB)
-        {
-            if (ImGui.Begin("MSB", ImGuiWindowFlags.None))
-            {
-                Test_MSB.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using Org.BouncyCastle.Crypto.Prng;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Resource.Locators;
@@ -19,9 +20,9 @@ public static class Test_MSB_Util
 
         var maps = curProject.MapData.MapFiles.Entries;
 
-        var ouputDir = Path.Combine(curProject.ProjectPath, "_msbMismatches");
+        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "msb-mismatches");
 
-        if(!Directory.Exists(ouputDir))
+        if (!Directory.Exists(ouputDir))
         {
             Directory.CreateDirectory(ouputDir);
         }
@@ -106,13 +107,14 @@ public static class Test_MSB_Util
 
         return mismatches;
     }
+
     public static List<MismatchData> GetBtlMismatches(ProjectEntry curProject)
     {
         var mismatches = new List<MismatchData>();
 
         var lights = curProject.MapData.LightFiles.Entries;
 
-        var ouputDir = Path.Combine(curProject.ProjectPath, "_btlMismatches");
+        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "btl-mismatches");
 
         if (!Directory.Exists(ouputDir))
         {
@@ -139,6 +141,82 @@ public static class Test_MSB_Util
 
             BTL btl = BTL.Read(decompressed);
             written = btl.Write(DCX.Type.None);
+
+            if (!Directory.Exists(Path.Join(ouputDir, "mismatches")))
+            {
+                Directory.CreateDirectory(Path.Join(ouputDir, "mismatches"));
+            }
+
+            File.WriteAllBytes(Path.Join(ouputDir, "mismatches", Path.GetFileNameWithoutExtension(entry.Path)),
+                written);
+
+            var isMismatch = false;
+
+            if (!BytePerfectHelper.Md5Equal(decompressed.Span, written))
+            {
+                isMismatch = true;
+            }
+
+            if (isMismatch)
+            {
+                var mismatch = new MismatchData(entry.Filename, decompressed.Length, written.Length);
+                mismatches.Add(mismatch);
+            }
+        }
+
+        return mismatches;
+    }
+
+
+    public static List<MismatchData> GetNvaMismatches(ProjectEntry curProject)
+    {
+        var mismatches = new List<MismatchData>();
+
+        var nvaFiles = curProject.MapData.NavmeshFiles.Entries;
+
+        var ouputDir = Path.Combine(curProject.ProjectPath, ".tests", "nva-mismatches");
+
+        if (!Directory.Exists(ouputDir))
+        {
+            Directory.CreateDirectory(ouputDir);
+        }
+
+        foreach (var entry in nvaFiles)
+        {
+            // Read the root version of the MSB
+            var bytes = curProject.VanillaFS.ReadFile(entry.Path);
+
+            if (bytes == null)
+                continue;
+
+            var byteArray = bytes.Value.ToArray();
+            var decompressed = DCX.Decompress(byteArray);
+
+            // Write vanilla version
+            if (!Directory.Exists(Path.Join(ouputDir, "decompressed")))
+            {
+                Directory.CreateDirectory(Path.Join(ouputDir, "decompressed"));
+            }
+            File.WriteAllBytes(
+                Path.Join(ouputDir, "decompressed", Path.GetFileNameWithoutExtension(entry.Path)),
+                decompressed.ToArray());
+
+            byte[] written = new byte[0];
+            NVA nva = null;
+
+            try
+            {
+                nva = NVA.Read(decompressed);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] NVA Mismatch: {entry.Filename} {e}");
+            }
+
+            if (nva == null)
+                continue;
+
+            written = nva.Write(DCX.Type.None);
 
             if (!Directory.Exists(Path.Join(ouputDir, "mismatches")))
             {
