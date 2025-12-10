@@ -197,7 +197,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
 
             // Map Contents
-            if (ImGui.Begin($@"Map Contents##mapContentsPanel"))
+            if (ImGui.Begin($@"Map Contents##mapContentsPanel", ImGuiWindowFlags.MenuBar))
             {
                 Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
 

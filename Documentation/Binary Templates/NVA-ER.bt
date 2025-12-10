@@ -24,15 +24,7 @@ typedef struct (int version) {
     Vector4 position; // Usually 0,0,0
     Vector4 rotation;
     Vector4 scaling;
-    //float unk0C; Assert(unk0C == 1);
-    //int unk10; // These are not floats
-    //int unk14;
-    //int unk18;
-    //int unk1C; Assert(unk1C == 0);
-    //float unk20; Assert(unk20 == 1);
-    //float unk24; // The only file where these two aren't 1 is m50_00,
-    //float unk28; // where a couple entries have 1.000001 or 1.000002 like lel
-    //int unk2C; Assert(unk2C == 0);
+    
     int nvaNameID; // i.e. 350000110 in int form
     int navimeshModelID;
     int faceDataIdx;

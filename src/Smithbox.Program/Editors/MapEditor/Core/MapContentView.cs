@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
+using static Google.Protobuf.Reflection.FieldOptions.Types;
 using static MsbUtils;
 
 namespace StudioCore.Editors.MapEditor.Core;
@@ -77,6 +78,73 @@ public class MapContentView
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
+        if (ImGui.BeginMenuBar())
+        {
+            if (ImGui.BeginMenu("Content Display"))
+            {
+                if (ImGui.MenuItem("Tree"))
+                {
+                    ContentViewType = MapContentViewType.ObjectType;
+                }
+                UIHelper.Tooltip("Display the content in the object type tree form.");
+                UIHelper.ShowActiveStatus(ContentViewType == MapContentViewType.ObjectType);
+
+                if (ImGui.MenuItem("Flat"))
+                {
+                    ContentViewType = MapContentViewType.Flat;
+                }
+                UIHelper.Tooltip("Display the content in the flat form.");
+                UIHelper.ShowActiveStatus(ContentViewType == MapContentViewType.Flat);
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("Name Display"))
+            {
+                var curType = CFG.Current.MapEditor_MapContentList_EntryNameDisplayType;
+
+                if (ImGui.MenuItem("Internal"))
+                {
+                    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal;
+                }
+                UIHelper.Tooltip("Display the internal map object name only.");
+                UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal);
+
+                // Display these once the community naming aspect has been worked on more
+                //if (ImGui.MenuItem("Community"))
+                //{
+                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Community;
+                //}
+                //UIHelper.Tooltip("Display the community map object name only.");
+                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Community);
+
+                //if (ImGui.MenuItem("Internal + Community"))
+                //{
+                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_Community;
+                //}
+                //UIHelper.Tooltip("Display the internal map object name with the community name as the alias.");
+                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal_Community);
+
+                if (ImGui.MenuItem("Internal + Text"))
+                {
+                    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_FMG;
+                }
+                UIHelper.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
+                UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal_FMG);
+
+                //if (ImGui.MenuItem("Community + Text"))
+                //{
+                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Community_FMG;
+                //}
+                //UIHelper.Tooltip("Display the community map object name with the associated FMG name as the alias.");
+                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Community_FMG);
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenuBar();
+        }
+
         Editor.MapContentFilter.DisplaySearch(this);
 
         DisplayQuickActionButtons();
@@ -95,20 +163,6 @@ public class MapContentView
         ImGui.SameLine();
 
         var targetContainer = Editor.GetMapContainerFromMapID(MapID);
-
-        // Cycle Name Display Type
-        ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}", DPI.IconButtonSize))
-        {
-            var curType = (int)CFG.Current.MapEditor_MapContentList_EntryNameDisplayType;
-            curType++;
-
-            if (curType > 4)
-                curType = 0;
-
-            CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = (NameDisplayType)curType;
-        }
-        UIHelper.Tooltip($"Cycle through the name display types.\nCurrent Type: {CFG.Current.MapEditor_MapContentList_EntryNameDisplayType.GetDisplayName()}");
 
         // Show All
         ImGui.SameLine();
@@ -131,21 +185,6 @@ public class MapContentView
             }
         }
         UIHelper.Tooltip("Force all map objects within this map to be hidden.");
-
-        // Switch View Type
-        ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Sort}", DPI.IconButtonSize))
-        {
-            if (ContentViewType is MapContentViewType.ObjectType)
-            {
-                ContentViewType = MapContentViewType.Flat;
-            }
-            else if (ContentViewType is MapContentViewType.Flat)
-            {
-                ContentViewType = MapContentViewType.ObjectType;
-            }
-        }
-        UIHelper.Tooltip("Switch the map content list style.");
     }
 
     /// <summary>
