@@ -1,0 +1,8 @@
+<Project>
+    <PropertyGroup>
+        <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="$(SolutionDir)/src/Common/FileLocations.cs" Visible="false" />
+    </ItemGroup>
+</Project>
