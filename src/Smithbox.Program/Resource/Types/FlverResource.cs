@@ -216,7 +216,7 @@ public class FlverResource : IResource, IDisposable
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.");
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.", Microsoft.Extensions.Logging.LogLevel.Error);
         }
 
         return false;
@@ -239,8 +239,6 @@ public class FlverResource : IResource, IDisposable
         var bank = curProject.MaterialData.PrimaryBank;
 
         var path = mpath;
-
-        TaskLogs.AddLog("");
 
         if (mpath == "")
         {
@@ -362,7 +360,7 @@ public class FlverResource : IResource, IDisposable
         }
         else
         {
-            ResourceLog.AddLog($"[Smithbox] {VirtPath}: NO LISTENER for {textureVirtPath}");
+            // ResourceLog.AddLog($"[Smithbox:DEBUG] {VirtPath}: NO LISTENER for {textureVirtPath}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
     }
 

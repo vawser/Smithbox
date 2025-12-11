@@ -7,6 +7,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Resource.Types;
 using StudioCore.Scene.Framework;
+using StudioCore.Scene.Meshes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,9 +51,9 @@ public static class ResourceListWindow
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem("Model Textures"))
+        if (ImGui.BeginTabItem("Model Information"))
         {
-            DisplayModelTextures(editor);
+            DisplayModelInformation(editor);
             ImGui.EndTabItem();
         }
 
@@ -186,30 +187,19 @@ public static class ResourceListWindow
         }
     }
 
-    public static void DisplayModelTextures(EditorScreen editor)
+    public static void DisplayModelInformation(EditorScreen editor)
     {
         if(editor is MapEditorScreen)
         {
             var mapEditor = (MapEditorScreen)editor;
 
             var curEntity = mapEditor.ViewportSelection.GetSelection().FirstOrDefault();
-            if(curEntity != null)
-            {
-                if(curEntity is MsbEntity msbEntity)
-                {
-                    if(msbEntity.RenderSceneMesh is MeshRenderableProxy meshProxy)
-                    {
-                        if(meshProxy._meshProvider.ResourceHandle is ResourceHandle<FlverResource> handle)
-                        {
-                            var resource = handle.Get();
+            if (curEntity == null)
+                return;
 
-                            if(resource != null)
-                            {
-                                ImGui.Text(resource.VirtPath);
-                            }
-                        }
-                    }
-                }
+            if(curEntity is MsbEntity msbEntity)
+            {
+
             }
         }
     }

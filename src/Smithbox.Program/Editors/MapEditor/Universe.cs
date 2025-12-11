@@ -1101,6 +1101,10 @@ public class Universe
         ResourceManager.SchedulePostTextureRefresh();
     }
 
+    public void ScheduleWorldMapRefresh()
+    {
+        ResourceManager.ScheduleWorldMapRefresh();
+    }
 }
 
 [JsonSourceGenerationOptions(WriteIndented = true,

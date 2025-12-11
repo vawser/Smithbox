@@ -1,209 +1,324 @@
 //------------------------------------------------
-//--- 010 Editor v7.0.2 Binary Template
+//--- 010 Editor v14.0 Binary Template
 //
 //      File: GPARAM.bt
 //   Authors: TKGP
 //   Version: 
-//   Purpose: BB/DS3 drawparams
-//  Category: Dark Souls
-// File Mask: *.gparam
-//  ID Bytes: 66 00 69 00 6C 00 74 00 03 00 00 00 00 00 00 00
+//   Purpose: 
+//  Category: Coremats
+// File Mask: *.fltparam,*.gparam
+//  ID Bytes: 
 //   History: 
 //------------------------------------------------
 
-#include "Util.bt"
+#include "../Common.bt"
+
+struct Field;
+struct Value;
+struct ValueId;
+struct ParamExtra;
 
 typedef struct {
     float x;
     float y;
-    int unk08; Assert(unk08 == 0);
-    int unk0C; Assert(unk0C == 0);
-} PaddedVector2 <optimize=false>;
+    quad pad <hidden=true>; Assert(pad == 0);
+} PaddedVector2 <read=Str("<%f, %f>", x, y), optimize=false>;
 
 typedef struct {
     float x;
     float y;
     float z;
-    int unk0C; Assert(unk0C == 0);
-} PaddedVector3 <optimize=false>;
+    int pad <hidden=true>; Assert(pad == 0);
+} PaddedVector3 <read=Str("<%f, %f, %f>", x, y, z), optimize=false>;
 
+LittleEndian();
+
+local int GP_WIDE_STRINGS = 1;
+if (ReadString(0, 4) == "filt") {
+    GP_WIDE_STRINGS = 0;
+}
 
 typedef struct {
-    wchar_t magic[4]; Assert(magic == "filt");
-    int version; Assert(version == 3 || version == 5);
-    int unk0C;
-    int groupCount;
-    int unk14;
-    int headerSize <format=hex>; Assert(headerSize == (version == 3 ? 0x50 : 0x54));
-    int groupHeadersOffset <format=hex>;
-    int paramHeaderOffsetsOffset <format=hex>;
-    int paramHeadersOffset <format=hex>;
+    if (GP_WIDE_STRINGS) {
+        wstring str;
+    } else {
+        string str;
+    }
+} GpString <read=ReadGpString>;
+
+wstring ReadGpString(GpString &gs) {
+    if (GP_WIDE_STRINGS) {
+        return gs.str;
+    } else {
+        return StringToWString(gs.str, CHARSET_JAPANESE);
+    }    
+}
+
+//------------------------------------------------
+
+typedef struct {
+    if (GP_WIDE_STRINGS) {
+        wchar_t magic[4];
+    } else {
+        char magic[4];
+    } Assert(magic == "filt");
+    int version; Assert(version == 2 || version == 3 || version == 5 || version == 6);
+    byte unk0c; Assert(unk0c == 0);
+    byte unk0d; Assert(unk0d == 0 || unk0d == 1);
+    short unk0e <hidden=true>; Assert(unk0e == 0);
+    int paramCount;
+    int count14;
+    int paramOffsetsOffset <format=hex>;
+    int paramsOffset <format=hex>;
+    int fieldOffsetsOffset <format=hex>;
+    int fieldsOffset <format=hex>;
     int valuesOffset <format=hex>;
-    int unkOffset1 <format=hex>;
-    int unkOffset2 <format=hex>;
-    int unk3Count;
-    int unkOffset3 <format=hex>;
-    int unkOffset4 <format=hex>;
+    int valueIdsOffset <format=hex>;
+    int offset30 <format=hex>;
+    int paramExtraCount;
+    int paramExtrasOffset <format=hex>;
+    int paramExtraIdsOffset <format=hex>;
     float unk40;
+    if (version < 3) return;
     int commentOffsetsOffsetsOffset <format=hex>;
     int commentOffsetsOffset <format=hex>;
     int commentsOffset <format=hex>;
-
-    if (version == 5) {
-        float unk50;
-    }
+    if (version < 5) return;
+    float unk50;
 } Header <bgcolor=cLtRed>;
 
 
-typedef struct (Header& header) {
-    int paramHeaderOffset <format=hex>;
-    local quad pos <hidden=true> = FTell();
-    FSeek(header.paramHeadersOffset + paramHeaderOffset);
+typedef struct {
+    int fieldCount;
+    int fieldOffsetsOffset <format=hex>;
+    GpString key;
+    if (header.version >= 3) {
+        GpString name;
+    }
     
-    int valuesOffset <format=hex>;
-    int unkOffset1 <format=hex>;
-    byte type;
-    byte valueCount;
-    short unk0A <hidden=true>; Assert(unk0A == 0);
-    wstring name1;
-    wstring name2;
+    if (fieldCount == 0) return;
     
-    if (valueCount > 0) {
-        local int color <hidden=true> = GetBackColor();
-        SetBackColor(cLtBlue);
-        FSeek(header.valuesOffset + valuesOffset);
-        switch (type) {
-            case 0x1:
-                byte values[valueCount];
-                break;
-            
-            case 0x2:
-                short values[valueCount];
-                break;
+    FSeek(header.fieldOffsetsOffset + fieldOffsetsOffset);
+    int fieldOffsets[fieldCount] <format=hex, bgcolor=cDkGreen>;
     
-            case 0x3:
-                int values[valueCount];
-                break;
-    
-            case 0x5:
-                byte values[valueCount];
-                break;
-    
-            case 0x7:
-                int values[valueCount];
-                break;
-    
-            case 0x9:
-                float values[valueCount];
-                break;
-    
-            case 0xB:
-                byte values[valueCount];
-                break;
-    
-            case 0xC:
-                struct {
-                    PaddedVector2 values[valueCount];
-                } values;
-                break;
-            
-            case 0xD:
-                struct {
-                    PaddedVector3 values[valueCount];
-                } values;
-                break;
-    
-            case 0xE:
-                Vector4 values[valueCount];
-                break;
-    
-            case 0xF:
-                int values[valueCount];
-                break;
-            
-            default:
-                Assert(false);
+    struct {
+        local int i <hidden=true>;
+        for (i = 0; i < fieldCount; i++) {
+            FSeek(header.fieldsOffset + fieldOffsets[i]);
+            Field fields;
         }
-        SetBackColor(color);
-        
-        FSeek(header.unkOffset1 + unkOffset1);
-        if (header.version == 3)
-            int ids[valueCount] <bgcolor=cRed>;
-        else if (header.version == 5)
-            quad ids[valueCount] <bgcolor=cRed>;
-    }
-    
-    FSeek(pos);
-} Param <read=ReadParam, bgcolor=cAqua, optimize=false>;
+    } fields;
+} Param <read=ReadParam, bgcolor=cGreen, optimize=false>;
 
-wstring ReadParam(Param& param) {
-    string str;
-    SPrintf(str, "%X ", param.type);
-    return str + param.name1 + " | " + param.name2;
+wstring ReadParam(Param &param) {
+    wstring str = Str("[%2d] ", param.fieldCount) + ReadGpString(param.key);
+    if (exists(param.name)) {
+        str += " // " + ReadGpString(param.name);
+    }
+    return str;
 }
 
 
-typedef struct (Header& header, int index) {
-    int groupHeaderOffset <format=hex>;
-    local quad pos <hidden=true> = FTell();
-    FSeek(header.groupHeadersOffset + groupHeaderOffset);
-    
-    int paramCount;
-    int paramHeaderOffsetsOffset <format=hex>;
-    wstring name1;
-    wstring name2;
-    
-    if (paramCount > 0) {
-        FSeek(header.paramHeaderOffsetsOffset + paramHeaderOffsetsOffset);
-        struct {
-            Param params(header)[paramCount];
-        } params;
-        
-        /*
-        FSeek(header.commentOffsetsOffsetsOffset + index * 4);
-        int commentOffsetsOffset;
-        FSeek(header.commentOffsetsOffset + commentOffsetsOffset);
-        struct {
-            int commentOffset;
-            local quad pos2 <hidden=true> = FTell();
-            FSeek(header.commentsOffset + commentOffset);
-            wstring comment;
-            FSeek(pos2);
-        } comments[params.params[0].valueCount] <bgcolor=cLtYellow, optimize=false>;
-        */
-    }
-    FSeek(pos);
-} Group <read=ReadGroup, bgcolor=cLtGreen, optimize=false>;
+// Commented types are supported in the binary but not found in any real files (that I know of)
+enum <byte> GP_TYPE {
+    GP_SBYTE = 1,
+    GP_SSHORT = 2,
+    GP_SINT = 3,
+    //GP_SLONG = 4,
+    GP_UBYTE = 5,
+    //GP_USHORT = 6,
+    GP_UINT = 7,
+    //GP_ULONG = 8,
+    GP_FLOAT = 9,
+    //GP_DOUBLE = 10,
+    GP_BOOL = 11,
+    GP_VEC2 = 12,
+    GP_VEC3 = 13,
+    GP_VEC4 = 14,
+    GP_COLOR = 15,
+    //GP_STRING = 16,
+};
 
-wstring ReadGroup(Group& group) {
-    return group.name1 + " | " + group.name2;
+typedef struct {
+    int valuesOffset <format=hex>;
+    int valueIdsOffset <format=hex>;
+    if (header.version >= 6) {
+        short valueCount;
+        GP_TYPE valueType;
+        byte unk0b <hidden=true>; Assert(!unk0b);
+    } else {
+        GP_TYPE valueType;
+        ubyte valueCount;
+        short unk0a <hidden=true>; Assert(!unk0a);
+    }
+    GpString key;
+    if (header.version >= 3) {
+        GpString name;
+    }
+    
+    if (valueCount == 0) return;
+    
+    FSeek(header.valuesOffset + valuesOffset);
+    switch (valueType) {
+        case GP_SBYTE: byte values[valueCount]; break;
+        case GP_SSHORT: short values[valueCount]; break;
+        case GP_SINT: int values[valueCount]; break;
+        case GP_UBYTE: ubyte values[valueCount]; break;
+        case GP_UINT: int values[valueCount]; break;
+        case GP_FLOAT: float values[valueCount]; break;
+        case GP_BOOL: byte values[valueCount]; break;
+        case GP_VEC2: PaddedVector2 values[valueCount]; break;
+        case GP_VEC3: PaddedVector3 values[valueCount]; break;
+        case GP_VEC4: Vector4 values[valueCount]; break;
+        case GP_COLOR: RGBA values[valueCount]; break; // Order not confirmed
+        
+        default: Assert(false, Str("Unknown value type: %d", valueType));
+    }
+    
+    FSeek(header.valueIdsOffset + valueIdsOffset);
+    ValueId valueIds[valueCount];
+} Field <read=ReadField, bgcolor=cLtYellow, optimize=false>;
+
+wstring ReadField(Field &field) {
+    wstring str = Str("%2d[%2d] ", field.valueType, field.valueCount) + ReadGpString(field.key);
+    if (exists(field.name)) {
+        str += " // " + ReadGpString(field.name);
+    }
+    return str;
 }
 
 
-typedef struct (Header& header) {
+typedef struct {
     int id;
-    int count;
-    int unkOffset4 <format=hex>;
-    if (header.version == 5) {
-        int unk0C;
+    if (header.version >= 5) {
+        float unk04;
+    }
+} ValueId <read=ReadValueId, bgcolor=cDkYellow, optimize=true>;
+
+string ReadValueId(ValueId &valueId) {
+    if (exists(valueId.unk04)) {
+        return Str("%4d (%4.1f)", valueId.id, valueId.unk04);
+    } else {
+        return Str("%4d", valueId.id);
+    }
+}
+
+
+// This is all shitcode until further notice
+typedef struct {
+    local int datumCount = (header.paramExtrasOffset - header.offset30) / 4;
+    int data[datumCount];
+    /*Assert(data[0] == 0
+        //&& data[1] == 0
+        //&& data[2] == 4
+        && data[3] == 0
+        //&& data[4] == 100
+        && data[5] == 0
+        && data[6] == 0x10
+        && data[7] == 0x14
+        && data[8] == 0x18
+        && data[9] == 0x1c
+        && data[10] == 0x20
+        && data[11] == 0
+        && data[12] == 0
+        && data[13] == 0
+        && data[14] == 0x24
+        && data[15] == 0
+        && data[16] == 0
+        && data[17] == 0
+        && data[18] == 0
+        && data[19] == 0
+        && data[20] == 0
+        && data[21] == 0
+        && data[22] == 0
+        && data[23] == 0
+        && data[24] == 0
+        && data[25] == 0);
+    
+    local int i;
+    for (i = 26; i < datumCount; i++)
+        Assert(data[i] == 0);*/
+} UnkStruct30 <read=Str("[%d]", datumCount), bgcolor=cBlack, fgcolor=cWhite>;
+
+
+typedef struct {
+    int unk00; // Index?
+    int idCount;
+    int idsOffset <format=hex>;
+    if (header.version >= 5) {
+        int unk0c; Assert(unk0c == 0 || unk0c == 1);
     }
     
-    if (count > 0) {
-        local quad pos <hidden=true> = FTell();
-        FSeek(header.unkOffset4 + unkOffset4);
-        int data[count] <bgcolor=cLtGray>;
-        FSeek(pos);
-    }
-} Unk3 <bgcolor=cGray, optimize=false>;
+    if (idCount == 0) return;
+    
+    local quad pos <hidden=true> = FTell();
+    FSeek(header.paramExtraIdsOffset + idsOffset);
+    int ids[idCount];
+    FSeek(pos);
+} ParamExtra <bgcolor=cAqua, optimize=false>;
 
+
+typedef struct (int commentCount) {
+    local int commentCount <hidden=true> = commentCount;
+    
+    if (commentCount == 0) return;
+    
+    int commentOffsets[commentCount];
+    
+    local int i <hidden=true>;
+    for (i = 0; i < commentCount; i++) {
+        FSeek(header.commentsOffset + commentOffsets[i]);
+        struct { wstring comment; } comment <read=comment, bgcolor=cDkPurple>;
+    }
+} ParamComments <read=Str("[%3d]", commentCount), bgcolor=cPurple>;
+
+//------------------------------------------------
 
 Header header;
+
+FSeek(header.paramOffsetsOffset);
+int paramOffsets[header.paramCount] <format=hex, bgcolor=cLtGreen>;
+
 struct {
     local int i <hidden=true>;
-    for (i = 0; i < header.groupCount; i++)
-        Group groups(header, i);
-} groups;
-FSeek(header.unkOffset3);
+    for (i = 0; i < header.paramCount; i++) {
+        FSeek(header.paramsOffset + paramOffsets[i]);
+        Param params;
+    }
+} params;
+
+if (header.count14) {
+    FSeek(header.offset30);
+    UnkStruct30 unkStruct30;
+}
+
+FSeek(header.paramExtrasOffset);
+ParamExtra paramExtras[header.paramExtraCount];
+
+if (header.version < 3) return;
+
+FSeek(header.commentOffsetsOffsetsOffset);
+int commentOffsetsOffsets[header.paramCount] <bgcolor=cLtPurple>;
+
+// This is cringe, but there is no other reliable way to determine
+// the number of comments that are actually present. It is /usually/
+// equal to the max number of entries per field in the param, but
+// sometimes there are more, presumably due to deleted entries.
+int getCommentCount(int index) {
+    local int thisOffset = header.commentOffsetsOffset + commentOffsetsOffsets[index];
+    local int nextOffset;
+    if (index < header.paramCount - 1) {
+        nextOffset = header.commentOffsetsOffset + commentOffsetsOffsets[index + 1];
+    } else {
+        nextOffset = header.commentsOffset;
+    }
+    return (nextOffset - thisOffset) / 4;
+}
+
 struct {
-    Unk3 unk3s(header)[header.unk3Count];
-} unk3s;
+    local int i <hidden=true>;
+    for (i = 0; i < header.paramCount; i++) {
+        FSeek(header.commentOffsetsOffset + commentOffsetsOffsets[i]);
+        ParamComments paramComments(getCommentCount(i));
+    }
+} paramComments;

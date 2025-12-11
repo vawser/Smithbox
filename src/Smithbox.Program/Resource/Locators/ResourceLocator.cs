@@ -580,11 +580,41 @@ public class ResourceLocator
 #if DEBUG
         if (relPath != "" && !project.FS.FileExists(relPath))
         {
-            TaskLogs.AddLog($"[Smithbox] Failed to find file: {relPath}");
+            TaskLogs.AddLog($"[Smithbox:DEBUG] Failed to find file in VFS: {relPath}", Microsoft.Extensions.Logging.LogLevel.Error);
         }
 #endif
 
         return relPath;
+    }
+
+    /// <summary>
+    /// Used to the external assets Smithbox loads in (i.e. the world map TPFs)
+    /// </summary>
+    /// <param name="project"></param>
+    /// <param name="virtPath"></param>
+    /// <returns></returns>
+    public static string GetAbsolutePath(ProjectEntry project, string virtPath)
+    {
+        var absPath = "";
+
+        var p = virtPath.Split('/');
+        var i = 0;
+
+        // --- SMITHBOX ---
+        // Used for designed TPF elements that are tend rendered as images within Smithbox
+        // i.e. the world maps
+        if (p[i].Equals("smithbox"))
+        {
+            i++;
+
+            var containerName = p[i];
+
+            absPath = Path.Combine(
+                AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(project.ProjectType),
+                "Maps", $"{containerName}.tpf.dcx");
+        }
+
+        return absPath;
     }
 
     public static string SanitiseRelativePath(string relativePath)

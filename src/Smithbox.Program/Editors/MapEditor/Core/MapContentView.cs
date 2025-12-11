@@ -7,6 +7,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Resource;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
@@ -49,6 +50,9 @@ public class MapContentView
     {
         ContentLoadState = MapContentLoadState.Loaded;
 
+        // Clear unused resources when loading a map to tidy up
+        ResourceManager.ClearUnusedResources();
+
         Editor.ViewportSelection.ClearSelection(Editor);
 
         Editor.Universe.LoadMap(MapID, selected);
@@ -57,6 +61,9 @@ public class MapContentView
     public void Unload()
     {
         ContentLoadState = MapContentLoadState.Unloaded;
+
+        // Clear unused resources when unloading a map to tidy up
+        ResourceManager.ClearUnusedResources();
 
         Editor.EntityTypeCache.RemoveMapFromCache(this);
 

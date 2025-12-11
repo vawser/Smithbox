@@ -64,6 +64,7 @@ public static class ResourceManager
     //private static bool AddingResource = false;
 
     private static bool _schedulePostTextureLoad;
+    private static bool _scheduleWorldMapLoad;
 
     public static Dictionary<string, IResourceHandle> GetResourceDatabase()
     {
@@ -85,18 +86,40 @@ public static class ResourceManager
         // If tpf is null this is a loose file load.
         if (action._tpf == null)
         {
-            if (project.FS.FileExists(action._filePath))
+            // External
+            if (action._virtpathbase.Contains("smithbox"))
             {
-                try
+                if (File.Exists(action._filePath))
                 {
-                    var fileData = project.FS.ReadFile(action._filePath);
-                    action._tpf = TPF.Read(fileData.Value);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                    try
+                    {
+                        var fileData = File.ReadAllBytes(action._filePath);
+                        action._tpf = TPF.Read(fileData);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
-                    return new LoadTPFTextureResourceRequest[] { };
+                        return new LoadTPFTextureResourceRequest[] { };
+                    }
+                }
+            }
+            // VFS
+            else
+            {
+                if (project.FS.FileExists(action._filePath))
+                {
+                    try
+                    {
+                        var fileData = project.FS.ReadFile(action._filePath);
+                        action._tpf = TPF.Read(fileData.Value);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+
+                        return new LoadTPFTextureResourceRequest[] { };
+                    }
                 }
             }
         }
@@ -334,6 +357,11 @@ public static class ResourceManager
         _schedulePostTextureLoad = true;
     }
 
+    public static void ScheduleWorldMapRefresh()
+    {
+        _scheduleWorldMapLoad = true;
+    }
+
     public static void UpdateTasks()
     {
         // Process any resource notification requests
@@ -413,15 +441,31 @@ public static class ResourceManager
                 job.Complete();
                 _schedulePostTextureLoad = false;
             }
+
+            if (_scheduleWorldMapLoad)
+            {
+                ResourceJobBuilder job = CreateNewJob(@"Loading world map textures");
+                job.AddWorldMapLoadTask();
+                job.Complete();
+                _scheduleWorldMapLoad = false;
+            }
         }
 
         // If there were active jobs last frame but none this frame, clear out unused resources
-        if (_prevCount > 0 && ActiveJobProgress.Count == 0)
+        //if (_prevCount > 0 && ActiveJobProgress.Count == 0)
+        //{
+        //    UnloadUnusedResources();
+        //}
+
+        _prevCount = ActiveJobProgress.Count;
+    }
+
+    public static void ClearUnusedResources()
+    {
+        if (ActiveJobProgress.Count == 0)
         {
             UnloadUnusedResources();
         }
-
-        _prevCount = ActiveJobProgress.Count;
     }
 
     public static void Shutdown()
@@ -557,7 +601,7 @@ public static class ResourceManager
                             catch (Exception e)
                             {
                                 load = false;
-                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                                ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
                             }
 
                             break;
@@ -575,7 +619,7 @@ public static class ResourceManager
                             catch (Exception e)
                             {
                                 load = false;
-                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                                ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
                             }
 
                             break;
@@ -608,7 +652,7 @@ public static class ResourceManager
                             catch (Exception e)
                             {
                                 load = false;
-                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                                ResourceLog.AddLog($"[Smithbox:DEBUG] Failed to read {entry.Path} during resource load.", LogLevel.Error);
                             }
 
                             break;
@@ -625,11 +669,22 @@ public static class ResourceManager
                         }
                         else
                         {
-                            Binder = new(new BND4Reader(binder));
+                            try
+                            {
+                                Binder = new(new BND4Reader(binder));
+                            }
+                            catch (Exception e)
+                            {
+                                load = false;
+                                ResourceLog.AddLog($"[Smithbox:DEBUG] Bad data sent to BND4Reader: {targetPath} {e}", LogLevel.Error);
+                            }
                         }
                     }
                 }
             }
+
+            if (Binder == null)
+                return;
 
             var b = Binder.Value;
 
@@ -683,7 +738,8 @@ public static class ResourceManager
                     }
 
                     PendingTPFs.Add((bndvirt, (RefCount<BinderFileHeader>)f, PersistentTPF).ToTuple());
-                    ResourceLog.AddLog($"ProcessBinder - PendingTPFs: {curFileBinderPath}");
+                    
+                    //ResourceLog.AddLog($"ProcessBinder - PendingTPFs: {curFileBinderPath}");
                 }
                 else
                 {
@@ -694,7 +750,8 @@ public static class ResourceManager
                         {
                             //handle = new ResourceHandle<FlverResource>();
                             pipeline = _job.FlverLoadPipeline;
-                            ResourceLog.AddLog($"ProcessBinder - FlverLoadPipeline: {curFileBinderPath}");
+                            
+                            //ResourceLog.AddLog($"ProcessBinder - FlverLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -704,7 +761,8 @@ public static class ResourceManager
                         if (LocatorUtils.IsNavmesh(curFileBinderPath))
                         {
                             pipeline = _job.NVMNavmeshLoadPipeline;
-                            ResourceLog.AddLog($"ProcessBinder - NVMNavmeshLoadPipeline: {curFileBinderPath}");
+                            
+                            //ResourceLog.AddLog($"ProcessBinder - NVMNavmeshLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -714,7 +772,8 @@ public static class ResourceManager
                         if (LocatorUtils.IsHavokNavmesh(BinderVirtualPath, curFileBinderPath))
                         {
                             pipeline = _job.HavokNavmeshLoadPipeline;
-                            ResourceLog.AddLog($"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
+                            
+                            //ResourceLog.AddLog($"ProcessBinder - HavokNavmeshLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -724,7 +783,8 @@ public static class ResourceManager
                         if (LocatorUtils.IsHavokCollision(BinderVirtualPath, curFileBinderPath))
                         {
                             pipeline = _job.HavokCollisionLoadPipeline;
-                            ResourceLog.AddLog($"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
+                            
+                            //ResourceLog.AddLog($"ProcessBinder - HavokCollisionLoadPipeline: {curFileBinderPath}");
                         }
                     }
 
@@ -733,7 +793,8 @@ public static class ResourceManager
                     {
 
                         PendingResources.Add((pipeline, curFileBinderPath, (RefCount<BinderFileHeader>)f).ToTuple());
-                        ResourceLog.AddLog($"ProcessBinder - PendingResources: {curFileBinderPath}");
+                        
+                        //ResourceLog.AddLog($"ProcessBinder - PendingResources: {curFileBinderPath}");
                     }
                 }
             }
@@ -818,7 +879,7 @@ public static class ResourceManager
         // PIPELINE: fill Binder Resources ActionBlock with the passed Load Binder Resources action
         internal void AddLoadBinderResources(LoadBinderResourcesAction action, bool isPersistent = false)
         {
-            ResourceLog.AddLog($"AddLoadBinderResources: {action._job.Name}");
+            //ResourceLog.AddLog($"AddLoadBinderResources: {action._job.Name}");
 
             IsPersistent = isPersistent;
             _courseSize++;
@@ -1025,6 +1086,52 @@ public static class ResourceManager
             pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, relativePath, al));
         }
 
+
+        /// <summary>
+        /// Loads a loose external file
+        /// </summary>
+        public void AddExternalFileTask(string virtualPath, AccessLevel al, bool isPersistent = false)
+        {
+            // PIPELINE: resource is not already being loaded
+            if (InFlightFiles.Contains(virtualPath))
+            {
+                return;
+            }
+
+            InFlightFiles.Add(virtualPath);
+
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+            var absPath = ResourceLocator.GetAbsolutePath(curProject, virtualPath);
+
+            IResourceLoadPipeline pipeline;
+
+            // PIPELINE: resource path is not invalid
+            if (absPath == null || virtualPath == "null")
+            {
+                return;
+            }
+
+            // If file doesn't exist, return so we don't hang the resource loader.
+            if (!File.Exists(absPath))
+            {
+                return;
+            }
+
+            if (absPath.EndsWith(".tpf") || absPath.EndsWith(".tpf.dcx"))
+            {
+                var virt = virtualPath;
+
+                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, absPath, al), true);
+                return;
+            }
+            else
+            {
+                pipeline = _job.FlverLoadPipeline;
+            }
+
+            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, absPath, al));
+        }
+
         /// <summary>
         /// Attempts to load unloaded resources (with active references) via UDSFM textures
         /// </summary>
@@ -1040,41 +1147,82 @@ public static class ResourceManager
 
                     string path = null;
 
-                    if (curProject.ProjectType is ProjectType.DS1)
+                    // DS1 
+                    if (CFG.Current.MapEditor_TextureLoad_MapPieces)
                     {
-                        if (virtPath.StartsWith("map/tex"))
+                        if (curProject.ProjectType is ProjectType.DS1)
                         {
-                            if (curProject != null)
+                            if (virtPath.StartsWith("map/tex"))
                             {
-                                path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(virtPath)}.tpf");
+                                if (curProject != null)
+                                {
+                                    path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(virtPath)}.tpf");
+                                }
                             }
-                        }
 
-                        if (path != null && File.Exists(path))
-                        {
-                            _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                                Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
-                                path, AccessLevel.AccessGPUOptimizedOnly));
+                            if (path != null && File.Exists(path))
+                            {
+                                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
+                                    Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
+                                    path, AccessLevel.AccessGPUOptimizedOnly));
+                            }
                         }
                     }
 
-                    // AET loading after the flvers have been processed
-                    // This is required since lots of the AET listeners refer to AET ids
-                    // that aren't included in the default AEG texture load lists,
-                    // as some models make use of textures from others.
-                    if(curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    if (CFG.Current.MapEditor_TextureLoad_Objects)
                     {
-                        if(virtPath.Contains("aet"))
+                        // AET loading after the flvers have been processed
+                        // This is required since lots of the AET listeners refer to AET ids
+                        // that aren't included in the default AEG texture load lists,
+                        // as some models make use of textures from others.
+                        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                         {
-                            var parts = virtPath.Split('/');
-                            var id = parts[1];
+                            if (virtPath.Contains("aet"))
+                            {
+                                var parts = virtPath.Split('/');
+                                var id = parts[1];
 
-                            AddLoadFileTask($"aet/{id}/tex", AccessLevel.AccessGPUOptimizedOnly);
+                                AddLoadFileTask($"aet/{id}/tex", AccessLevel.AccessGPUOptimizedOnly);
+                            }
+                        }
+                    }
+
+                    // Smithbox
+                    // For loading the world map TPFs
+                    if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+                    {
+                        if (virtPath.Contains("smithbox"))
+                        {
+                            AddExternalFileTask($"smithbox/world_map", AccessLevel.AccessGPUOptimizedOnly);
                         }
                     }
                 }
             }
         }
+
+        public void AddWorldMapLoadTask()
+        {
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+            foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
+            {
+                if (!r.Value.IsLoaded())
+                {
+                    var virtPath = r.Key;
+
+                    // Smithbox
+                    // For loading the world map TPFs
+                    if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+                    {
+                        if (virtPath.Contains("smithbox"))
+                        {
+                            AddExternalFileTask($"smithbox/world_map", AccessLevel.AccessGPUOptimizedOnly);
+                        }
+                    }
+                }
+            }
+        }
+        
 
         public Task Complete()
         {
@@ -1119,6 +1267,12 @@ public static class ResourceLog
     {
 #if DEBUG
         TaskLogs.AddLog(text);
+#endif
+    }
+    public static void AddLog(string text, Microsoft.Extensions.Logging.LogLevel level)
+    {
+#if DEBUG
+        TaskLogs.AddLog(text, level);
 #endif
     }
 }

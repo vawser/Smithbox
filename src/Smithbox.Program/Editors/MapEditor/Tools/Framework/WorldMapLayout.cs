@@ -115,7 +115,7 @@ public class WorldMapLayout
 
                 if (tileIdVariants == null)
                 {
-                    TaskLogs.AddLog($"{type}: {id}");
+                    //TaskLogs.AddLog($"{type}: {id}");
 
                     // Only include if the map id is an actual map
                     if (mapList.Contains(id))

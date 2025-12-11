@@ -57,8 +57,6 @@ public class WorldMapTool : IResourceEventListener
     private bool _isDraggingMap = false;
     private Vector2 _lastMousePos = Vector2.Zero;
 
-    private bool IsMapTextureLoaded = false;
-
     public WorldMapTool(MapEditorScreen screen, ProjectEntry project)
     {
         Editor = screen;
@@ -76,14 +74,14 @@ public class WorldMapTool : IResourceEventListener
         {
             CurrentMapSource = MapSource.LandsBetween;
 
-            LoadWorldMapTexture();
+            RegisterWorldMapListeners();
         }
 
         if (Editor.Project.ProjectType is ProjectType.NR)
         {
             CurrentMapSource = MapSource.Limveld;
 
-            LoadWorldMapTexture();
+            RegisterWorldMapListeners();
         }
     }
 
@@ -92,7 +90,7 @@ public class WorldMapTool : IResourceEventListener
     /// </summary>
     public void DisplayMenuOption()
     {
-        LoadWorldMapTexture();
+        RegisterWorldMapListeners();
 
         GenerateWorldMapLayout_Vanilla();
         GenerateWorldMapLayout_SOTE();
@@ -306,31 +304,31 @@ public class WorldMapTool : IResourceEventListener
         switch(CurrentMapSource)
         {
             case MapSource.LandsBetween:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_vanilla");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_vanilla");
                 break;
 
             case MapSource.ShadowOfTheErdtree:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_sote");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_sote");
                 break;
 
             case MapSource.Limveld:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld");
                 break;
 
             case MapSource.Limveld_Mountaintops:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld_mountaintops");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_mountaintops");
                 break;
 
             case MapSource.Limveld_Crater:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld_crater");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_crater");
                 break;
 
             case MapSource.Limveld_Rotted_Woods:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld_rotted_woods");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_rotted_woods");
                 break;
 
             case MapSource.Limveld_Noklateo:
-                resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld_noklateo");
+                resHandle = GetImageTextureHandle("smithbox/world_map/world_map_limveld_noklateo");
                 break;
         }
 
@@ -464,29 +462,35 @@ public class WorldMapTool : IResourceEventListener
         }
     }
 
-    private void LoadWorldMapTexture()
+    private bool RegisteredListeners = false;
+
+    private void RegisterWorldMapListeners()
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
             return;
 
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading World Map textures");
-        ResourceDescriptor ad = new ResourceDescriptor();
-        ad.AssetVirtualPath = "smithbox/worldmap";
-
-        if (!ResourceManager.IsResourceLoaded(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        if (Project.ProjectType is ProjectType.ER)
         {
-            if (ad.AssetVirtualPath != null)
-            {
-                job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly, true);
-            }
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_vanilla", this, AccessLevel.AccessGPUOptimizedOnly);
 
-            _loadingTask = job.Complete();
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_sote", this, AccessLevel.AccessGPUOptimizedOnly);
         }
 
-        ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
+        if (Project.ProjectType is ProjectType.NR)
+        {
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld", this, AccessLevel.AccessGPUOptimizedOnly);
 
-        IsMapTextureLoaded = true;
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_mountaintops", this, AccessLevel.AccessGPUOptimizedOnly);
+
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_crater", this, AccessLevel.AccessGPUOptimizedOnly);
+
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_rotted_woods", this, AccessLevel.AccessGPUOptimizedOnly);
+
+            ResourceManager.AddResourceListener<TextureResource>("smithbox/world_map/world_map_limveld_noklateo", this, AccessLevel.AccessGPUOptimizedOnly);
+        }
+
+        Editor.Universe.ScheduleWorldMapRefresh();
     }
 
     private void GenerateWorldMapLayout_Vanilla()
