@@ -222,8 +222,8 @@ public class FlverResource : IResource, IDisposable
         return false;
     }
 
-    public Dictionary<string, MTD> MTDs { get; set; }
-    public Dictionary<string, MATBIN> MATBINs { get; set; }
+    public Dictionary<string, MTD> MTDs { get; set; } = new();
+    public Dictionary<string, MATBIN> MATBINs { get; set; } = new();
 
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
