@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>WEATHER_LOT_PARAM_ST</ParamType>
+  <Index>173</Index>
   <DataVersion>5</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
