@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>LEGACY_DISTANT_VIEW_PARTS_REPLACE_PARAM</ParamType>
+  <Index>178</Index>
   <DataVersion>4</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>

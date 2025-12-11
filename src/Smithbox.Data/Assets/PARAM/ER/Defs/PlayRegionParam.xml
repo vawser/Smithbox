@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>PLAY_REGION_PARAM_ST</ParamType>
+  <Index>132</Index>
   <DataVersion>9</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
