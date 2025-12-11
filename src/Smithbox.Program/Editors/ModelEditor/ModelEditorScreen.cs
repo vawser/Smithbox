@@ -173,7 +173,7 @@ public class ModelEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_ModelEditor_ResourceList)
         {
-            ResourceListWindow.DisplayWindow("modelResourceList");
+            ResourceListWindow.DisplayWindow("modelResourceList", this);
         }
 
         FocusManager.OnFocus();

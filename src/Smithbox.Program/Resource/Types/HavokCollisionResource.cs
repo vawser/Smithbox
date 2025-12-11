@@ -105,7 +105,7 @@ public class HavokCollisionResource : IResource, IDisposable
         return LoadInternal_HKX(al);
     }
 
-    public bool _Load(string file, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
             return false;
@@ -151,21 +151,48 @@ public class HavokCollisionResource : IResource, IDisposable
         // HKX2 - DS3
         else if (curProject.ProjectType is ProjectType.DS3)
         {
-            DCX.Type t;
-            Memory<byte> decomp = DCX.Decompress(file, out t);
-            var br = new BinaryReaderEx(false, decomp);
-            var des = new PackFileDeserializer();
-            Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            try
+            {
+                var fileData = curProject.FS.ReadFile(relativePath);
+
+                DCX.Type t;
+                Memory<byte> decomp = DCX.Decompress(fileData.Value, out t);
+                var br = new BinaryReaderEx(false, decomp);
+                var des = new PackFileDeserializer();
+                Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
+            }
+            catch(Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.");
+            }
         }
         // HKX - BB
         else if (curProject.ProjectType is ProjectType.BB)
         {
-            Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
+            try
+            {
+                var fileData = curProject.FS.ReadFile(relativePath);
+
+                Hkx = HKX.Read(fileData.Value, HKX.HKXVariation.HKXBloodBorne);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.");
+            }
         }
         // HKX - DS2 / DS1
         else
         {
-            Hkx = HKX.Read(file);
+            try
+            {
+                var fileData = curProject.FS.ReadFile(relativePath);
+
+                Hkx = HKX.Read(fileData.Value);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.");
+            }
         }
 
         if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)

@@ -360,7 +360,7 @@ namespace SoulsFormats
             public NavmeshInfo()
             {
                 Scale = Vector3.One;
-                //ConnectedNavmeshIDs = new List<int>();
+                ConnectedNavmeshIDs = new List<int>();
                 GateNodes = new List<GateNode>();
             }
 
@@ -382,6 +382,9 @@ namespace SoulsFormats
                 GateNodeIndex = br.ReadInt16();
                 SubNodesCount = br.ReadInt16();
                 Unk4C = br.AssertInt32([0, 1]) == 1;
+
+                // Fallback
+                ConnectedNavmeshIDs = new List<int>();
 
                 if (version == 2 || version == 3)
                 {

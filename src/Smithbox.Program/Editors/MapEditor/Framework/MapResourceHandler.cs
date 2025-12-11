@@ -31,7 +31,6 @@ public class MapResourceHandler
 
     private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
-    private HashSet<ResourceDescriptor> LoadList_Enemy_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Collision = new();
     private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
@@ -107,15 +106,6 @@ public class MapResourceHandler
                     LoadList_Character_Model.Add(modelAsset);
             }
 
-            // Enemy
-            if (model.Name.StartsWith('e'))
-            {
-                var modelAsset = ModelLocator.GetEneModel(Editor.Project, model.Name);
-
-                if (modelAsset.IsValid())
-                    LoadList_Enemy_Model.Add(modelAsset);
-            }
-
             // Object / Asset
             if (model.Name.StartsWith('o') || model.Name.StartsWith("AEG"))
             {
@@ -156,72 +146,67 @@ public class MapResourceHandler
 
     public void SetupTexturelLoadLists()
     {
+        // MAP
+        foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, AdjustedMapID))
+        {
+            if (asset.IsValid())
+                LoadList_Map_Texture.Add(asset);
+        }
+
         // Models
         foreach (IMsbModel model in Msb.Models.GetEntries())
         {
             // Character
             if (model.Name.StartsWith('c'))
             {
-                var textureAsset = TextureLocator.GetChrTextures(Editor.Project, model.Name);
+                // TPF
+                var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, false);
+
+                if (textureAsset.IsValid())
+                    LoadList_Character_Texture.Add(textureAsset);
+    
+                // BND
+                textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, model.Name, true);
 
                 if (textureAsset.IsValid())
                     LoadList_Character_Texture.Add(textureAsset);
             }
 
-            // Enemy
-            if (model.Name.StartsWith('e'))
-            {
-                var textureAsset = TextureLocator.GetEneTextureContainer(Editor.Project, model.Name);
-
-                if (textureAsset.IsValid())
-                    LoadList_Enemy_Texture.Add(textureAsset);
-            }
-
             // Object
             if (model.Name.StartsWith('o'))
             {
-                var textureAsset = TextureLocator.GetObjTextureContainer(Editor.Project, model.Name);
+                var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, model.Name);
+
+                if (textureAsset.IsValid())
+                    LoadList_Asset_Texture.Add(textureAsset);
+            }
+
+            // Assets
+            if (model.Name.StartsWith("AEG"))
+            {
+                var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, model.Name);
 
                 if (textureAsset.IsValid())
                     LoadList_Asset_Texture.Add(textureAsset);
             }
         }
 
-        // AET
-        /*
-        if(Smithbox.ProjectType is ProjectType.ER)
-        {
-            var erMap = (MSBE)Msb;
-
-            foreach(var entry in erMap.Parts.Assets)
-            {
-                var name = entry.ModelName.ToLower().Replace("aeg", "aet");
-                var asset = ResourceTextureLocator.GetAetTexture(name);
-                LoadList_Other_Texture.Add(asset);
-            }
-        }
-        if (Smithbox.ProjectType is ProjectType.AC6)
-        {
-            var acMap = (MSB_AC6)Msb;
-
-            foreach (var entry in acMap.Parts.Assets)
-            {
-                var name = entry.ModelName.ToLower().Replace("aeg", "aet");
-                var asset = ResourceTextureLocator.GetAetTexture(name);
-                LoadList_Other_Texture.Add(asset);
-            }
-        }
-        */
-
         // AAT
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        {
+            var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
 
         // SYSTEX
-
-        // Map
-        foreach (ResourceDescriptor asset in TextureLocator.GetMapTextures(Editor.Project, AdjustedMapID))
+        if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            if (asset.IsValid())
-                LoadList_Map_Texture.Add(asset);
+            var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
         }
     }
 
@@ -278,25 +263,6 @@ public class MapResourceHandler
             var texJob = ResourceManager.CreateNewJob($@"Character Textures");
 
             foreach (ResourceDescriptor asset in LoadList_Character_Texture)
-            {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceManager.ResourceType.Flver);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = texJob.Complete();
-            tasks.Add(task);
-
-            // Enemy
-            texJob = ResourceManager.CreateNewJob($@"Enemy Textures");
-
-            foreach (ResourceDescriptor asset in LoadList_Enemy_Texture)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
@@ -390,25 +356,6 @@ public class MapResourceHandler
             var job = ResourceManager.CreateNewJob($@"Characters");
 
             foreach (ResourceDescriptor asset in LoadList_Character_Model)
-            {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
-
-            // Enemies
-            job = ResourceManager.CreateNewJob($@"Enemies");
-
-            foreach (ResourceDescriptor asset in LoadList_Enemy_Model)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {

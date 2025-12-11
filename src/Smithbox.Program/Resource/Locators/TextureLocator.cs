@@ -390,11 +390,8 @@ public static class TextureLocator
             throw new NotSupportedException();
         }
 
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"aet/{aetid}/tex";
-        }
+        ad.AssetPath = path;
+        ad.AssetVirtualPath = $@"aet/{aetid}/tex";
 
         return ad;
     }
@@ -407,20 +404,20 @@ public static class TextureLocator
         string path;
 
         if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", "common_body.tpf.dcx"));
+            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{aatname}.tpf.dcx"));
         else
             throw new NotSupportedException();
 
         if (path != null)
         {
             ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"aat/tex";
+            ad.AssetVirtualPath = $@"aat/{aatname}/tex";
         }
 
         return ad;
     }
 
-    public static ResourceDescriptor GetSystexTexture(ProjectEntry project, string aatname)
+    public static ResourceDescriptor GetSystexTexture(ProjectEntry project, string systexname)
     {
         ResourceDescriptor ad = new();
         ad.AssetPath = null;
@@ -429,7 +426,7 @@ public static class TextureLocator
 
         if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
         {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("other", "systex.tpf.dcx"));
+            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("other", $"{systexname}.tpf.dcx"));
         }
         else
         {
@@ -439,7 +436,7 @@ public static class TextureLocator
         if (path != null)
         {
             ad.AssetPath = path;
-            ad.AssetArchiveVirtualPath = $@"systex/tex";
+            ad.AssetVirtualPath = $@"systex/{systexname}/tex";
         }
 
         return ad;
@@ -633,33 +630,6 @@ public static class TextureLocator
                 ad.AssetPath = path;
                 ad.AssetVirtualPath = $@"parts/{partsId}/tex/tpf";
             }
-        }
-
-        return ad;
-    }
-
-    public static ResourceDescriptor GetAssetTextureContainer(ProjectEntry project, string resourceName)
-    {
-        ResourceDescriptor ad = new();
-
-        ad.AssetPath = null;
-        ad.AssetVirtualPath = null;
-
-        string path = null;
-
-        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "aet", resourceName.Substring(0, 6), $"{resourceName}.tpf.dcx"));
-        }
-        else if (project.ProjectType is ProjectType.AC6)
-        {
-            path = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "environment", "texture", $"{resourceName}.tpf.dcx"));
-        }
-
-        if (path != null)
-        {
-            ad.AssetPath = path;
-            ad.AssetVirtualPath = $@"aet/{resourceName}/tex";
         }
 
         return ad;

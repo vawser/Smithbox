@@ -71,36 +71,40 @@ public class HavokNavmeshResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
-    public bool _Load(string path, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
-        using var file =
-            MemoryMappedFile.CreateFromFile(path, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
-        using IMappedMemoryOwner accessor = file.CreateMemoryAccessor(0, 0, MemoryMappedFileAccess.Read);
-
-        if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        try
         {
-            var des = new PackFileDeserializer();
-            Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, accessor.Memory));
-        }
+            var fileData = curProject.FS.ReadFile(relativePath);
 
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            if (curProject.MapEditor != null)
+            if (curProject.ProjectType is ProjectType.DS3 or ProjectType.BB)
             {
-                var pathElements = virtPath.Split('/');
-                var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
+                var des = new PackFileDeserializer();
+                Root_HKX2 = (hkRootLevelContainer)des.Deserialize(new BinaryReaderEx(false, fileData.Value));
+            }
+            else if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
+            {
+                if (curProject.MapEditor != null)
+                {
+                    var pathElements = virtPath.Split('/');
+                    var filename = Path.GetFileNameWithoutExtension(pathElements[3]);
 
-                if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
-                {
-                    Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
-                }
-                else
-                {
-                    return false;
+                    if (curProject.MapEditor.HavokNavmeshManager.HKX3_Containers.ContainsKey(filename))
+                    {
+                        Root_HKX3 = curProject.MapEditor.HavokNavmeshManager.HKX3_Containers[filename];
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during HavokCollisionResource load.");
         }
 
         return LoadInternal(al);

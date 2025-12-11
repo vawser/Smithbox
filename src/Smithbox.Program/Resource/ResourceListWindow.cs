@@ -1,14 +1,18 @@
-﻿using HKLib.hk2018.hk;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hk;
+using StudioCore.Configuration;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Resource.Types;
+using StudioCore.Scene.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using StudioCore.Configuration;
 
 namespace StudioCore.Resource;
 
@@ -17,8 +21,10 @@ public static class ResourceListWindow
     public static string SelectedResource = "";
     public static IResourceHandle SelectedResourceHandle = null;
     public static string ResourceFilter = "";
-    
-    public static void DisplayWindow(string menuId)
+
+    public static bool DisplayFilled = true;
+
+    public static void DisplayWindow(string menuId, EditorScreen editor)
     {
         if (!ImGui.Begin($"Resource List##{menuId}"))
         {
@@ -28,12 +34,35 @@ public static class ResourceListWindow
 
         var windowWidth = ImGui.GetWindowWidth();
 
-        DPI.ApplyInputWidth(windowWidth);
+        DPI.ApplyInputWidth(windowWidth * 0.5f);
         ImGui.InputText("##resourceTableFilter", ref ResourceFilter, 255);
 
-        // Table
-        //ImGui.BeginChild("resourceTableSection", tableSize);
+        ImGui.SameLine();
 
+        ImGui.Checkbox("Display Filled", ref DisplayFilled);
+        UIHelper.Tooltip("Display filled listeners.");
+
+        ImGui.BeginTabBar("##resourceTabs");
+
+        if (ImGui.BeginTabItem("Listeners"))
+        {
+            DisplayResourceListenerTable();
+            ImGui.EndTabItem();
+        }
+
+        if (ImGui.BeginTabItem("Model Textures"))
+        {
+            DisplayModelTextures(editor);
+            ImGui.EndTabItem();
+        }
+
+        ImGui.EndTabBar();
+
+        ImGui.End();
+    }
+
+    public static void DisplayResourceListenerTable()
+    {
         var resDatabase = ResourceManager.GetResourceDatabase();
 
         var tableFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
@@ -84,6 +113,14 @@ public static class ResourceListWindow
             {
                 var resName = item.Key;
                 var resHandle = item.Value;
+
+                if(!DisplayFilled)
+                {
+                    if(resHandle.IsLoaded())
+                    {
+                        continue;
+                    }
+                }
 
                 if(ResourceFilter != "" && !resName.Contains(ResourceFilter))
                 {
@@ -147,64 +184,33 @@ public static class ResourceListWindow
 
             ImGui.EndTable();
         }
+    }
 
-        //ImGui.EndChild();
-
-        /*
-        ImGui.BeginChild("resourceDetailsSection");
-
-        if(SelectedResource == "")
+    public static void DisplayModelTextures(EditorScreen editor)
+    {
+        if(editor is MapEditorScreen)
         {
-            ImGui.Text($"No resource selected.");
-        }
-        else if(SelectedResourceHandle != null)
-        {
-            var resHandle = SelectedResourceHandle;
+            var mapEditor = (MapEditorScreen)editor;
 
-            // FLVER
-            if(resHandle is ResourceHandle<FlverResource>)
+            var curEntity = mapEditor.ViewportSelection.GetSelection().FirstOrDefault();
+            if(curEntity != null)
             {
-                var resource = (ResourceHandle<FlverResource>)resHandle;
-                var res = resource.Get();
+                if(curEntity is MsbEntity msbEntity)
+                {
+                    if(msbEntity.RenderSceneMesh is MeshRenderableProxy meshProxy)
+                    {
+                        if(meshProxy._meshProvider.ResourceHandle is ResourceHandle<FlverResource> handle)
+                        {
+                            var resource = handle.Get();
 
-            }
-
-            // Havok Collision
-            if (resHandle is ResourceHandle<HavokCollisionResource>)
-            {
-                var resource = (ResourceHandle<HavokCollisionResource>)resHandle;
-                var res = resource.Get();
-
-            }
-
-            // Havok Navmesh
-            if (resHandle is ResourceHandle<HavokNavmeshResource>)
-            {
-                var resource = (ResourceHandle<HavokNavmeshResource>)resHandle;
-                var res = resource.Get();
-
-            }
-
-            // NVM Navmesh
-            if (resHandle is ResourceHandle<NVMNavmeshResource>)
-            {
-                var resource = (ResourceHandle<NVMNavmeshResource>)resHandle;
-                var res = resource.Get();
-
-            }
-
-            // Texture
-            if (resHandle is ResourceHandle<TextureResource>)
-            {
-                var resource = (ResourceHandle<TextureResource>)resHandle;
-                var res = resource.Get();
-
+                            if(resource != null)
+                            {
+                                ImGui.Text(resource.VirtPath);
+                            }
+                        }
+                    }
+                }
             }
         }
-
-        ImGui.EndChild();
-        */
-
-        ImGui.End();
     }
 }

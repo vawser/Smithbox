@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Veldrid;
@@ -79,11 +80,14 @@ public class FlverResource : IResource, IDisposable
 
     public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
+    public string VirtPath { get; set; }
+
     /// <summary>
     /// Bytes
     /// </summary>
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        VirtPath = virtPath;
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
         {
             var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
@@ -115,7 +119,8 @@ public class FlverResource : IResource, IDisposable
 
 
                     Flver = FLVER2.Read(bytes);
-                    ret = LoadInternal(al);
+
+                    ret = LoadInternal(al, virtPath);
 
                     //br = SFUtil.GetDecompressedBR(br, out ctype);
                     //ret = LoadInternalFast(br);
@@ -123,6 +128,7 @@ public class FlverResource : IResource, IDisposable
                 else
                 {
                     Flver = FLVER2.Read(bytes);
+
                     ret = LoadInternal(al);
                 }
             }
@@ -150,13 +156,18 @@ public class FlverResource : IResource, IDisposable
     /// <summary>
     /// Path
     /// </summary>
-    public bool _Load(string path, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
-        {
-            var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+        VirtPath = virtPath;
 
-            byte[] fileBytes = Array.Empty<byte>();
+        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+            return false;
+
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
+        try
+        {
+            var fileData = curProject.FS.ReadFile(relativePath);
 
             // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
             if (virtPath.Contains("direct/flver"))
@@ -168,22 +179,18 @@ public class FlverResource : IResource, IDisposable
                     if (curFlver != null)
                     {
                         var data = curFlver.Clone();
-                        fileBytes = data.Write();
+                        fileData = data.Write();
                     }
                 }
-            }
-            else
-            {
-                fileBytes = File.ReadAllBytes(path);
             }
 
             bool ret = false;
 
-            if (fileBytes.Length > 1)
+            if (fileData != null && fileData.Value.Length > 1)
             {
                 if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
                 {
-                    FlverDeS = FLVER0.Read(fileBytes);
+                    FlverDeS = FLVER0.Read(fileData.Value);
                     ret = LoadInternalDeS(al);
                 }
                 else
@@ -192,14 +199,14 @@ public class FlverResource : IResource, IDisposable
                         curProject.ProjectType != ProjectType.DS1R &&
                         curProject.ProjectType != ProjectType.DS1)
                     {
-                        BinaryReaderEx br = new(false, fileBytes);
+                        BinaryReaderEx br = new(false, fileData.Value);
                         DCX.Type ctype;
                         br = SFUtil.GetDecompressedBR(br, out ctype);
                         ret = LoadInternalFast(br);
                     }
                     else
                     {
-                        Flver = FLVER2.Read(fileBytes);
+                        Flver = FLVER2.Read(fileData.Value);
                         ret = LoadInternal(al);
                     }
                 }
@@ -207,9 +214,16 @@ public class FlverResource : IResource, IDisposable
 
             return ret;
         }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during FlverResource load.");
+        }
 
         return false;
     }
+
+    public Dictionary<string, MTD> MTDs { get; set; }
+    public Dictionary<string, MATBIN> MATBINs { get; set; }
 
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
@@ -225,34 +239,47 @@ public class FlverResource : IResource, IDisposable
         var bank = curProject.MaterialData.PrimaryBank;
 
         var path = mpath;
+
+        TaskLogs.AddLog("");
+
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
 
+            // MTD
             var material = bank.GetMaterial(mtdstring);
+
+            if(!MTDs.ContainsKey(mtdstring))
+            {
+                MTDs.Add(mtdstring, material);
+            }
 
             if (material != null)
             {
-                MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
+                MTD.Texture? tex = AssociatedMTD.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
-                    //TaskLogs.AddLog($"Failed to find MTD string: {mtdstring} - {type}");
+                    //ResourceLog.AddLog($"[Smithbox] {VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
                     return;
                 }
 
                 path = tex.Path;
-                //TaskLogs.AddLog($"MTD: {path}");
+                //ResourceLog.AddLog($"[Smithbox] {VirtPath}: MTD: {path}");
             }
 
+            // MATBIN
             if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 var matbin = bank.GetMatbin(mtdstring);
 
+                if (!MATBINs.ContainsKey(mtdstring))
+                {
+                    MATBINs.Add(mtdstring, matbin);
+                }
+
                 if (matbin != null)
                 {
                     MATBIN.Sampler? tex = null;
-
-                    //MATBIN.Sampler? tex = Smithbox.BankHandler.MaterialBank.Matbins[mtdstring].Matbin.Samplers.Find(x => x.Type == type);
 
                     bool match = false;
 
@@ -314,25 +341,28 @@ public class FlverResource : IResource, IDisposable
 
                     if (tex == null || tex.Path == "")
                     {
-                        //TaskLogs.AddLog($"Failed to find MATBIN string: {mtdstring} - {type}");
+                        //ResourceLog.AddLog($"[Smithbox] {VirtPath}: Failed to find MATBIN string: {mtdstring} - {type}");
                         return;
                     }
 
                     path = tex.Path;
-                    //TaskLogs.AddLog($"MATBIN: {path}");
+                    //ResourceLog.AddLog($"[Smithbox] {VirtPath}: MATBIN: {path}");
                 }
             }
         }
 
+        string textureVirtPath = ResourceLocator.GetTextureVP(path.ToLower());
+
         if (!dest.TextureResourceFilled[(int)textureType])
         {
-            string virtualPath = VirtualPathLocator.TexturePathToVirtual(path.ToLower());
+            //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
 
-            // Correct path if it is malformed (as game itself ignores this)
-            //virtualPath = Smithbox.BankHandler.CorrectedTextureInfo.CorrectTexturePath(virtualPath);
-
-            ResourceManager.AddResourceListener<TextureResource>(virtualPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
+            ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;
+        }
+        else
+        {
+            ResourceLog.AddLog($"[Smithbox] {VirtPath}: NO LISTENER for {textureVirtPath}");
         }
     }
 
@@ -2034,7 +2064,7 @@ public class FlverResource : IResource, IDisposable
         return true;
     }
 
-    private bool LoadInternal(AccessLevel al)
+    private bool LoadInternal(AccessLevel al, string virtPath = "")
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -2789,7 +2819,8 @@ public class FlverResource : IResource, IDisposable
             {
                 foreach (FlverMaterial m in GPUMaterials)
                 {
-                    m.Dispose();
+                    if(m != null)
+                        m.Dispose();
                 }
             }
 

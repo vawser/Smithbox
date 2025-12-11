@@ -1,8 +1,16 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.FileBrowserNS;
+using StudioCore.Interface;
+using StudioCore.Resource.Locators;
+using StudioCore.Resource.Types;
 using StudioCore.Scene;
+using StudioCore.Settings;
 using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -13,12 +21,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.Interface;
-using StudioCore.Resource.Types;
-using StudioCore.Resource.Locators;
-using StudioCore.Settings;
-using StudioCore.Core;
 
 namespace StudioCore.Resource;
 
@@ -61,8 +63,7 @@ public static class ResourceManager
     //private static object AddResourceLock = new();
     //private static bool AddingResource = false;
 
-    private static bool _scheduleUDSFMLoad;
-    private static bool _scheduleUnloadedTexturesLoad;
+    private static bool _schedulePostTextureLoad;
 
     public static Dictionary<string, IResourceHandle> GetResourceDatabase()
     {
@@ -74,36 +75,29 @@ public static class ResourceManager
         return ActiveJobProgress;
     }
 
-    private static IResourceHandle InstantiateResource(ResourceType type, string path)
-    {
-        switch (type)
-        {
-            case ResourceType.Flver:
-                return new ResourceHandle<FlverResource>(path);
-                //case ResourceType.Texture:
-                //    return new ResourceHandle<TextureResource>(path);
-        }
-
-        return null;
-    }
-
     private static LoadTPFTextureResourceRequest[] LoadTPFResources(LoadTPFResourcesAction action)
     {
+        var project = BaseEditor.ProjectManager.SelectedProject;
+
         Tracy.___tracy_c_zone_context ctx =
             Tracy.TracyCZoneN(1, $@"LoadTPFResourcesTask::Run {action._virtpathbase}");
 
         // If tpf is null this is a loose file load.
         if (action._tpf == null)
         {
-            try
+            if (project.FS.FileExists(action._filePath))
             {
-                action._tpf = TPF.Read(action._filePath);
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                try
+                {
+                    var fileData = project.FS.ReadFile(action._filePath);
+                    action._tpf = TPF.Read(fileData.Value);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
-                return new LoadTPFTextureResourceRequest[] { };
+                    return new LoadTPFTextureResourceRequest[] { };
+                }
             }
         }
 
@@ -111,23 +105,14 @@ public static class ResourceManager
         
         action._job.IncrementEstimateTaskSize(tpf.Textures.Count);
         var ret = new LoadTPFTextureResourceRequest[tpf.Textures.Count];
+
         for (var i = 0; i < tpf.Textures.Count; i++)
         {
             TPF.Texture tex = tpf.Textures[i];
 
-            var curProject = BaseEditor.ProjectManager.SelectedProject;
-
-            if (curProject != null)
+            if (project != null)
             {
-                // HACK: Only include texture name and not full virtual path for these projects
-                if (curProject.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-                {
-                    ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i, action._accessLevel);
-                }
-                else
-                {
-                    ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i, action._accessLevel);
-                }
+                ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i, action._accessLevel);
             }
         }
 
@@ -193,7 +178,7 @@ public static class ResourceManager
                         
                         TaskLogs.AddLog("" +
                             $"Failed to load TPF:\nName: {tpfName}" +
-                            $"\nBinder Path: {action.BinderAbsolutePath}" +
+                            $"\nBinder Path: {action.BinderRelativePath}" +
                             $"\nBinder Virtual Path: {action.BinderVirtualPath}" +
                             $"\nAccess Level: {action.AccessLevel}" +
                             $"\n{e}", 
@@ -284,31 +269,6 @@ public static class ResourceManager
         return src == target;
     }
 
-    public static BinderReader InstantiateBinderReaderForFile(string filePath, ProjectType type)
-    {
-        if (filePath == null || !File.Exists(filePath))
-        {
-            return null;
-        }
-
-        if (type == ProjectType.DES || type == ProjectType.DS1 || type == ProjectType.DS1R || type == ProjectType.ACFA || type == ProjectType.ACV || type == ProjectType.ACVD)
-        {
-            if (filePath.ToUpper().EndsWith("BHD"))
-            {
-                return new BXF3Reader(filePath, filePath.Substring(0, filePath.Length - 3) + "bdt");
-            }
-
-            return new BND3Reader(filePath);
-        }
-
-        if (filePath.ToUpper().EndsWith("BHD"))
-        {
-            return new BXF4Reader(filePath, filePath.Substring(0, filePath.Length - 3) + "bdt");
-        }
-
-        return new BND4Reader(filePath);
-    }
-
     public static void UnloadUnusedResources()
     {
         foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
@@ -369,14 +329,9 @@ public static class ResourceManager
         _unloadRequests.Post(new UnloadResourceRequest(resource, unloadOnlyIfUnused));
     }
 
-    public static void ScheduleUDSMFRefresh()
+    public static void SchedulePostTextureRefresh()
     {
-        _scheduleUDSFMLoad = true;
-    }
-
-    public static void ScheduleUnloadedTexturesRefresh()
-    {
-        _scheduleUnloadedTexturesLoad = true;
+        _schedulePostTextureLoad = true;
     }
 
     public static void UpdateTasks()
@@ -451,20 +406,12 @@ public static class ResourceManager
                 Tracy.TracyCZoneEnd(ctx);
             }
 
-            if (_scheduleUDSFMLoad)
+            if (_schedulePostTextureLoad)
             {
-                ResourceJobBuilder job = CreateNewJob(@"Loading UDSFM textures");
-                job.AddLoadUDSFMTexturesTask();
+                ResourceJobBuilder job = CreateNewJob(@"Loading additional textures");
+                job.AddPostTextureLoadTask();
                 job.Complete();
-                _scheduleUDSFMLoad = false;
-            }
-
-            if (_scheduleUnloadedTexturesLoad)
-            {
-                ResourceJobBuilder job = CreateNewJob(@"Loading other textures");
-                job.AddLoadUnloadedTextures();
-                job.Complete();
-                _scheduleUnloadedTexturesLoad = false;
+                _schedulePostTextureLoad = false;
             }
         }
 
@@ -551,7 +498,7 @@ public static class ResourceManager
         public RefCount<BinderReader> Binder;
         public HashSet<int> BinderLoadMask = null;
         public string BinderVirtualPath;
-        public string BinderAbsolutePath;
+        public string BinderRelativePath;
         public List<Task> LoadingTasks = new();
 
         public List<Tuple<IResourceLoadPipeline, string, RefCount<BinderFileHeader>>> PendingResources = new();
@@ -577,26 +524,110 @@ public static class ResourceManager
 
         public void ProcessBinder()
         {
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
             // Read binder
             if (Binder == null)
             {
-                BinderAbsolutePath = VirtualPathLocator.VirtualToRealPath(BinderVirtualPath, out string bndout);
+                BinderRelativePath = ResourceLocator.GetRelativePath(curProject, BinderVirtualPath);
 
-                if(!File.Exists(BinderAbsolutePath))
-                {
+                var load = true;
+
+                var targetPath = BinderRelativePath;
+
+                if (targetPath == null || targetPath == "")
                     return;
-                }
 
-                var curProject = BaseEditor.ProjectManager.SelectedProject;
-
-                if (curProject != null)
+                if (targetPath.EndsWith("bhd"))
                 {
-                    Binder = new(InstantiateBinderReaderForFile(BinderAbsolutePath, curProject.ProjectType));
-                }
+                    Memory<byte> bhd = new Memory<byte>();
+                    Memory<byte> bdt = new Memory<byte>();
 
-                if (Binder == null)
+                    var targetBhdPath = targetPath;
+                    var targetBdtPath = targetPath.Replace("bhd", "bdt");
+
+                    foreach (var entry in curProject.FileDictionary.Entries)
+                    {
+                        if (entry.Path == targetBhdPath)
+                        {
+                            try
+                            {
+                                bhd = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            }
+                            catch (Exception e)
+                            {
+                                load = false;
+                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                            }
+
+                            break;
+                        }
+                    }
+
+                    foreach (var entry in curProject.FileDictionary.Entries)
+                    {
+                        if (entry.Path == targetBdtPath)
+                        {
+                            try
+                            {
+                                bdt = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            }
+                            catch (Exception e)
+                            {
+                                load = false;
+                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                            }
+
+                            break;
+                        }
+                    }
+
+                    if (curProject.ProjectType is ProjectType.DES 
+                        or ProjectType.DS1 
+                        or ProjectType.DS1R)
+                    {
+                        Binder = new(new BXF3Reader(bhd, bdt));
+                    }
+                    else
+                    {
+                        Binder = new(new BXF4Reader(bhd, bdt));
+                    }
+                }
+                else
                 {
-                    return;
+                    Memory<byte> binder = new Memory<byte>();
+
+                    foreach (var entry in curProject.FileDictionary.Entries)
+                    {
+                        if (entry.Path == targetPath)
+                        {
+                            try
+                            {
+                                binder = (Memory<byte>)curProject.FS.ReadFile(entry.Path);
+                            }
+                            catch (Exception e)
+                            {
+                                load = false;
+                                TaskLogs.AddLog($"[Smithbox] Failed to read {entry.Path} during resource load.");
+                            }
+
+                            break;
+                        }
+                    }
+
+                    if (load)
+                    {
+                        if (curProject.ProjectType is ProjectType.DES
+                            or ProjectType.DS1
+                            or ProjectType.DS1R)
+                        {
+                            Binder = new(new BND3Reader(binder));
+                        }
+                        else
+                        {
+                            Binder = new(new BND4Reader(binder));
+                        }
+                    }
                 }
             }
 
@@ -891,7 +922,6 @@ public static class ResourceManager
 
             InFlightFiles.Add(virtualPath);
 
-
             // PIPELINE: resource path is not invalid
             if (virtualPath == "null")
             {
@@ -943,21 +973,21 @@ public static class ResourceManager
             }
 
             InFlightFiles.Add(virtualPath);
-
-            // PIPELINE: convert resource path to absolute path
-            var path = VirtualPathLocator.VirtualToRealPath(virtualPath, out string bndout);
+            
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+            var relativePath = ResourceLocator.GetRelativePath(curProject, virtualPath);
 
             IResourceLoadPipeline pipeline;
 
             // PIPELINE: resource path is not invalid
-            if (path == null || virtualPath == "null")
+            if (relativePath == null || virtualPath == "null")
             {
                 return;
             }
 
             // If file doesn't exist, return so we don't hang the resource loader.
             // Ignore if we are loading direct data
-            if (!File.Exists(path) && !virtualPath.Contains("direct"))
+            if (!curProject.FS.FileExists(relativePath) && !virtualPath.Contains("direct"))
             {
                 return;
             }
@@ -966,7 +996,7 @@ public static class ResourceManager
             {
                 pipeline = _job.HavokCollisionLoadPipeline;
             }
-            else if (path.ToUpper().EndsWith(".TPF") || path.ToUpper().EndsWith(".TPF.DCX"))
+            else if (relativePath.EndsWith(".tpf") || relativePath.EndsWith(".tpf.dcx"))
             {
                 var virt = virtualPath;
                 if (virt.StartsWith(@"map/tex"))
@@ -983,7 +1013,7 @@ public static class ResourceManager
                 }
 
                 // PIPELINE: add Load TPF Resources job to Resource Job
-                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, path, al), true);
+                _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, relativePath, al), true);
                 return;
             }
             else
@@ -992,123 +1022,54 @@ public static class ResourceManager
             }
 
             // PIPELINE: add Load File Resource request to target pipeline
-            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, path, al));
+            pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, relativePath, al));
         }
 
         /// <summary>
-        ///     Attempts to load unloaded resources (with active references) via UDSFM textures
+        /// Attempts to load unloaded resources (with active references) via UDSFM textures
         /// </summary>
-        public void AddLoadUDSFMTexturesTask()
+        public void AddPostTextureLoadTask()
         {
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
             foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
             {
                 if (!r.Value.IsLoaded())
                 {
-                    var texpath = r.Key;
-
-                    string path = null;
-                    if (texpath.StartsWith("map/tex"))
-                    {
-                        var curProject = BaseEditor.ProjectManager.SelectedProject;
-
-                        if (curProject != null)
-                        {
-                            path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(texpath)}.tpf");
-                        }
-                    }
-
-                    if (path != null && File.Exists(path))
-                    {
-                        _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                            Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
-                            path, AccessLevel.AccessGPUOptimizedOnly));
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        ///     Looks for unloaded textures and queues them up for loading. References to parts and Elden Ring AETs depend on this
-        /// </summary>
-        public void AddLoadUnloadedTextures()
-        {
-            HashSet<string> assetTpfs = new();
-            foreach (KeyValuePair<string, IResourceHandle> r in ResourceDatabase)
-            {
-                if (!r.Value.IsLoaded())
-                {
-                    var texpath = r.Key;
+                    var virtPath = r.Key;
 
                     string path = null;
 
-                    var curProject = BaseEditor.ProjectManager.SelectedProject;
-
-                    if (curProject != null)
+                    if (curProject.ProjectType is ProjectType.DS1)
                     {
-                        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                        if (virtPath.StartsWith("map/tex"))
                         {
-                            if (texpath.StartsWith("aet/"))
+                            if (curProject != null)
                             {
-                                var splits = texpath.Split('/');
-                                var aetid = splits[1];
-                                var aetname = splits[2];
-
-                                var fullaetid = aetid;
-
-                                if (aetname.Length >= 10)
-                                {
-                                    fullaetid = aetname.Substring(0, 10);
-                                }
-
-                                if (assetTpfs.Contains(fullaetid))
-                                {
-                                    continue;
-                                }
-
-                                path = TextureLocator.GetAetTexture(curProject, fullaetid).AssetPath;
-
-                                assetTpfs.Add(fullaetid);
-                            }
-
-                            // Common Body
-                            if (texpath.StartsWith("aat"))
-                            {
-                                var aatname = Path.GetFileName(texpath);
-
-                                if (assetTpfs.Contains(aatname))
-                                {
-                                    continue;
-                                }
-
-                                path = TextureLocator.GetAatTexture(curProject, aatname).AssetPath;
-
-                                assetTpfs.Add(aatname);
-                            }
-                        }
-
-                        if (curProject.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
-                        {
-                            // Systex
-                            if (texpath.Contains("systex"))
-                            {
-                                var systexname = Path.GetFileName(texpath);
-
-                                if (assetTpfs.Contains(systexname))
-                                {
-                                    continue;
-                                }
-
-                                path = TextureLocator.GetSystexTexture(curProject, systexname).AssetPath;
-
-                                assetTpfs.Add(systexname);
+                                path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(virtPath)}.tpf");
                             }
                         }
 
                         if (path != null && File.Exists(path))
                         {
                             _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                                Path.GetDirectoryName(texpath.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'), path,
-                                AccessLevel.AccessGPUOptimizedOnly));
+                                Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
+                                path, AccessLevel.AccessGPUOptimizedOnly));
+                        }
+                    }
+
+                    // AET loading after the flvers have been processed
+                    // This is required since lots of the AET listeners refer to AET ids
+                    // that aren't included in the default AEG texture load lists,
+                    // as some models make use of textures from others.
+                    if(curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+                    {
+                        if(virtPath.Contains("aet"))
+                        {
+                            var parts = virtPath.Split('/');
+                            var id = parts[1];
+
+                            AddLoadFileTask($"aet/{id}/tex", AccessLevel.AccessGPUOptimizedOnly);
                         }
                     }
                 }

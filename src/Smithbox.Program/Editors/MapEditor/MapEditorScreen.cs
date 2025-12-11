@@ -305,7 +305,7 @@ public class MapEditorScreen : EditorScreen
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
         if (CFG.Current.Interface_MapEditor_ResourceList)
         {
-            ResourceListWindow.DisplayWindow("mapResourceList");
+            ResourceListWindow.DisplayWindow("mapResourceList", this);
         }
 
         if (CFG.Current.Interface_MapEditor_ToolWindow)

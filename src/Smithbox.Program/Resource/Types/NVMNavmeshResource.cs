@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using HKX2;
+using SoulsFormats;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,26 @@ public class NVMNavmeshResource : IResource, IDisposable
         return LoadInternal(al);
     }
 
-    public bool _Load(string file, AccessLevel al, string virtPath)
+    public bool _Load(string relativePath, AccessLevel al, string virtPath)
     {
-        Nvm = NVM.Read(file);
-        return LoadInternal(al);
+        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+            return false;
+
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
+        try
+        {
+            var fileData = curProject.FS.ReadFile(relativePath);
+
+            Nvm = NVM.Read(fileData.Value);
+            return LoadInternal(al);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[Smithbox] Failed to load {relativePath} during NVMNavmeshResource load.");
+        }
+
+        return false;
     }
 
     private unsafe void ProcessMesh(NVM mesh)

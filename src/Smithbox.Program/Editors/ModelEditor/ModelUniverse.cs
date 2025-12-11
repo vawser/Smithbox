@@ -52,11 +52,6 @@ public class ModelUniverse
 
     public void ScheduleTextureRefresh()
     {
-        if (Editor.Project.ProjectType == ProjectType.DS1)
-        {
-            ResourceManager.ScheduleUDSMFRefresh();
-        }
-
-        ResourceManager.ScheduleUnloadedTexturesRefresh();
+        ResourceManager.SchedulePostTextureRefresh();
     }
 }
