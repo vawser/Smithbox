@@ -4,217 +4,217 @@
     {
       "ID": 0,
       "Entries": [
-        "Move -- 動かない"
+        "Not Moving"
       ]
     },
     {
       "ID": 1,
       "Entries": [
-        "Havok Default Value -- Havokのデフォルト値"
+        "Havok Default Value"
       ]
     },
     {
       "ID": 100,
       "Entries": [
-        "ムカデの頭部"
+        "DeS Centipede's Head"
       ]
     },
     {
       "ID": 101,
       "Entries": [
-        "ムカデの尻尾"
+        "DeS Centipede's Tail"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "血ダニの本体"
+        "DeS Giant Tick's Body"
       ]
     },
     {
       "ID": 201,
       "Entries": [
-        "血ダニのふくろ"
+        "DeS Giant Tick's Sack"
       ]
     },
     {
       "ID": 1000,
       "Entries": [
-        "Segunda: The Evil Spirits -- グンダ：邪霊"
+        "Test Dragon's Body"
       ]
     },
     {
       "ID": 1010,
       "Entries": [
-        "テスト飛竜の尻尾"
+        "Test Dragon's Tail"
       ]
     },
     {
       "ID": 1020,
       "Entries": [
-        "テスト飛竜の右翼"
+        "Test Dragon's Right Wing"
       ]
     },
     {
       "ID": 1050,
       "Entries": [
-        "騎士の頭部"
+        "Knight's Head"
       ]
     },
     {
       "ID": 1100,
       "Entries": [
-        "Snake Spirit: Right arm -- 蛇霊：右腕"
+        "Snake Spirit's Right arm"
       ]
     },
     {
       "ID": 1110,
       "Entries": [
-        "ムカデボスの尻尾"
+        "Centipede Demon's Tail"
       ]
     },
     {
       "ID": 1120,
       "Entries": [
-        "ムカデボスの右腕"
+        "Centipede Demon's Right Arm"
       ]
     },
     {
       "ID": 1200,
       "Entries": [
-        "墓王の本体"
+        "Gravelord Nito's Body"
       ]
     },
     {
       "ID": 1201,
       "Entries": [
-        "King of the Dead: Crown -- 死霊の王：王冠"
+        "Gravelord Nito's Crown"
       ]
     },
     {
       "ID": 1202,
       "Entries": [
-        "King of the Dead: torso -- 死霊の王：胴体"
+        "Gravelord Nito's Torso"
       ]
     },
     {
       "ID": 1203,
       "Entries": [
-        "King of the dead: right arm -- 死霊の王：右腕"
+        "Gravelord Nito's Right Arm"
       ]
     },
     {
       "ID": 1210,
       "Entries": [
-        "墓王のマント"
+        "Gravelord Nito's Mantle"
       ]
     },
     {
       "ID": 1301,
       "Entries": [
-        "Mad Warrior Hallec: Head -- 狂戦士ハレック：頭"
+        "Gaping Dragon's Tail"
       ]
     },
     {
       "ID": 1400,
       "Entries": [
-        "湖獣の首①"
+        "Hydra's Head 1"
       ]
     },
     {
       "ID": 1401,
       "Entries": [
-        "Dead Slug (dumpling): Dead dumpling -- 蝕のナメクジ（亡者団子）：亡者団子"
+        "Hydra's Head 2"
       ]
     },
     {
       "ID": 1402,
       "Entries": [
-        "湖獣の首③"
+        "Hydra's Head 3"
       ]
     },
     {
       "ID": 1403,
       "Entries": [
-        "湖獣の首④"
+        "Hydra's Head 4"
       ]
     },
     {
       "ID": 1404,
       "Entries": [
-        "湖獣の首⑤"
+        "Hydra's Head 5"
       ]
     },
     {
       "ID": 1405,
       "Entries": [
-        "湖獣の首⑥"
+        "Hydra's Head 6"
       ]
     },
     {
       "ID": 1406,
       "Entries": [
-        "湖獣の首⑦"
+        "Hydra's Head 7"
       ]
     },
     {
       "ID": 1501,
       "Entries": [
-        "Hell Kite: Before your left ankle -- ヘルカイト：左足の足首より先"
+        "Seath the Scaleless's Crystal Armor"
       ]
     },
     {
       "ID": 1601,
       "Entries": [
-        "ヒロインの尻尾"
+        "Crossbreed Priscilla's Tail"
       ]
     },
     {
       "ID": 1701,
       "Entries": [
-        "ヘルカイトの尻尾"
+        "Hellkite Drake's Tail"
       ]
     },
     {
       "ID": 1801,
       "Entries": [
-        "座禅ドラゴンの尻尾"
+        "Stone Dragon's Tail"
       ]
     },
     {
       "ID": 1901,
       "Entries": [
-        "ガーゴイルの尻尾"
+        "Bell Gargoyle's Tail"
       ]
     },
     {
       "ID": 1902,
       "Entries": [
-        "ガーゴイル2体目破損部位"
+        "2nd Bell Gargoyle's Damaged Part"
       ]
     },
     {
       "ID": 2001,
       "Entries": [
-        "ガーゴイル（色違い）の尻尾"
+        "Lightning Gargoyle's Tail"
       ]
     },
     {
       "ID": 2101,
       "Entries": [
-        "白竜シースの尻尾"
+        "Seath the Scaleless' Tail"
       ]
     },
     {
       "ID": 2201,
       "Entries": [
-        "金キメラの尻尾"
+        "Sanctuary Guardian's Tail"
       ]
     },
     {
       "ID": 2301,
       "Entries": [
-        "黒竜の尻尾"
+        "Black Dragon Kalameet's Tail"
       ]
     }
   ]
