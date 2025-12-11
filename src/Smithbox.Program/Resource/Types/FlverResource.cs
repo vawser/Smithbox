@@ -256,7 +256,7 @@ public class FlverResource : IResource, IDisposable
 
             if (material != null)
             {
-                MTD.Texture? tex = AssociatedMTD.Textures.Find(x => x.Type == type);
+                MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
                     //ResourceLog.AddLog($"[Smithbox] {VirtPath}: Failed to find MTD string: {mtdstring} - {type}");
