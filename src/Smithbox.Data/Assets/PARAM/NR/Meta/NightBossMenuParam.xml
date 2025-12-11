@@ -46,7 +46,7 @@
     <expeditionBackgroundId
     AltName="Background ID"
     Wiki="The background to display for this night boss in the Expedition menu." 
-    IconConfig="Menu"/>>
+    IconConfig="Menu"/>
     
     <largeBossIconId
     AltName="Large Boss Icon ID"
