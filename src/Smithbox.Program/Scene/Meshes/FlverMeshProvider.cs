@@ -21,7 +21,9 @@ public class FlverMeshProvider : MeshProvider, IResourceEventListener
     private ResourceHandle<FlverResource> _resource;
 
     public List<int> ModelMasks = new();
-    List<FlverSubmeshProvider> _allSubmeshes = new();
+
+    public List<FlverSubmeshProvider> _allSubmeshes = new();
+
     private List<FlverSubmeshProvider> _activeSubmeshes = new();
 
     public FlverMeshProvider(string resource)

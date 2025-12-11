@@ -20,7 +20,7 @@
  - Makes it a lot more feasible to filter to ALL instances of X item within the itemlots without a 8 term search filter
  - Only works with the itemlot params (obviously)
 
-- Gparam Editor: properly find out the new NR field type structures, so they can be edited.
+- Gparam Editor: update GPARAM implementation with TKGP's new version, should allow NR gparam editing
 
 - Text Editor: FMG Export should include the associated-types (e.g. export for Title should include Desc and Summary) when in the default display mode
 
@@ -32,7 +32,9 @@
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 
 - TODO: fix model editor loading process to account for VFS changes in ResourceManager
-
+ 
 - TODO: fix the long-standing missing textures
+
 - TODO: fix DS1R collision hack so it works with VFS
 - TODO: check model/texturing loading in all project types
+ - DES: models not loading

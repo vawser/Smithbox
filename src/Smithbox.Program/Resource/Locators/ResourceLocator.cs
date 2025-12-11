@@ -139,8 +139,18 @@ public class ResourceLocator
                     {
                         relPath = Path.Combine("model", "map", $"h{mapid.Substring(1)}.hkxbhd");
                     }
-                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or
-                        ProjectType.ER or ProjectType.NR or ProjectType.AC6)
+                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT)
+                    {
+                        if (hittype == "lo")
+                        {
+                            relPath = Path.Combine("map", mapid, $"l{mapid.Substring(1)}.hkxbhd");
+                        }
+                        else
+                        {
+                            relPath = Path.Combine("map", mapid, $"h{mapid.Substring(1)}.hkxbhd");
+                        }
+                    }
+                    else if (project.ProjectType is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
                     {
                         if (hittype == "lo")
                         {
@@ -188,7 +198,11 @@ public class ResourceLocator
             // Models
             if (p[i].Equals("model"))
             {
-                if (project.ProjectType is ProjectType.DS1)
+                if (project.ProjectType is ProjectType.DES)
+                {
+                    relPath = Path.Combine("chr", chrid, $"{chrid}.chrbnd");
+                }
+                else if (project.ProjectType is ProjectType.DS1)
                 {
                     relPath = Path.Combine("chr", $"{chrid}.chrbnd");
                 }

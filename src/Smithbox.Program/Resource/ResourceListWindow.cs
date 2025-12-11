@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Assimp;
+using Hexa.NET.ImGui;
 using HKLib.hk2018.hk;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -199,7 +200,25 @@ public static class ResourceListWindow
 
             if(curEntity is MsbEntity msbEntity)
             {
+                if(msbEntity._renderSceneMesh is MeshRenderableProxy meshProxy)
+                {
+                    if(meshProxy._meshProvider is FlverMeshProvider flverMeshProvider)
+                    {
+                        foreach(var mesh in flverMeshProvider._allSubmeshes)
+                        {
+                            ImGui.Text($"{mesh.MeshName}");
 
+                            if (mesh.ResourceHandle is ResourceHandle<FlverResource> handle)
+                            {
+                                var meshRes = handle.Get();
+
+                                if(meshRes != null)
+                                {
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

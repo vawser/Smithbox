@@ -229,7 +229,9 @@ public static class ModelLocator
 
         // Direct paths
         if (project.ProjectType is ProjectType.DS1)
+        {
             ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}.chrbnd"));
+        }
         else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "chr", $"{chrId}.bnd"));
         else if (project.ProjectType is ProjectType.DES)

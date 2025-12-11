@@ -626,15 +626,18 @@ public static class ResourceManager
                         }
                     }
 
-                    if (curProject.ProjectType is ProjectType.DES 
-                        or ProjectType.DS1 
-                        or ProjectType.DS1R)
+                    if (bhd.Length != 0 && bdt.Length != 0)
                     {
-                        Binder = new(new BXF3Reader(bhd, bdt));
-                    }
-                    else
-                    {
-                        Binder = new(new BXF4Reader(bhd, bdt));
+                        if (curProject.ProjectType is ProjectType.DES
+                            or ProjectType.DS1
+                            or ProjectType.DS1R)
+                        {
+                            Binder = new(new BXF3Reader(bhd, bdt));
+                        }
+                        else
+                        {
+                            Binder = new(new BXF4Reader(bhd, bdt));
+                        }
                     }
                 }
                 else
@@ -659,7 +662,7 @@ public static class ResourceManager
                         }
                     }
 
-                    if (load)
+                    if (load && binder.Length != 0)
                     {
                         if (curProject.ProjectType is ProjectType.DES
                             or ProjectType.DS1
@@ -669,15 +672,7 @@ public static class ResourceManager
                         }
                         else
                         {
-                            try
-                            {
-                                Binder = new(new BND4Reader(binder));
-                            }
-                            catch (Exception e)
-                            {
-                                load = false;
-                                ResourceLog.AddLog($"[Smithbox:DEBUG] Bad data sent to BND4Reader: {targetPath} {e}", LogLevel.Error);
-                            }
+                            Binder = new(new BND4Reader(binder));
                         }
                     }
                 }
@@ -1187,15 +1182,7 @@ public static class ResourceManager
                         }
                     }
 
-                    // Smithbox
-                    // For loading the world map TPFs
-                    if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
-                    {
-                        if (virtPath.Contains("smithbox"))
-                        {
-                            AddExternalFileTask($"smithbox/world_map", AccessLevel.AccessGPUOptimizedOnly);
-                        }
-                    }
+                    // TODO: add post-texture load for pre-ER projects for their unloaded chr listeners
                 }
             }
         }
