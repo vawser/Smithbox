@@ -63,7 +63,10 @@
                 { "ID": "124", "Name": "Two-handed Attack", "Description": "" },
                 { "ID": "125", "Name": "Dual Wield Attack", "Description": "" },
 				{ "ID": "126", "Name": "Prevent Sudden Death", "Description": "" },
-                { "ID": "130", "Name": "Heolstor's Sword Attack", "Description": "" }
+				{ "ID": "127", "Name": "Dash Attack", "Description": "" },
+				{ "ID": "128", "Name": "Rolling Attack", "Description": "" },
+				{ "ID": "129", "Name": "Back Step Attack", "Description": "" },
+                { "ID": "130", "Name": "Melee Attack", "Description": "" }
             ]
         },
         {

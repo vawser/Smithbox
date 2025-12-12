@@ -47827,6 +47827,30 @@
         "[Interactable Effect] Rimed Rowa - Restore HP"
       ]
     },
+	{
+      "ID": 99610,
+      "Entries": [
+        "[Interactable Effect] Redflesh Mushroom - Restore HP"
+      ]
+    },
+	{
+      "ID": 99615,
+      "Entries": [
+        "[Interactable Effect] Little Crystal - Create Arch of Magic Glintblades"
+      ]
+    },
+	{
+      "ID": 99620,
+      "Entries": [
+        "[Interactable Effect] Aeonian Butterfly - Improved Physical Attack Power & Strengthen Scarlet Rot Effect"
+      ]
+    },
+	{
+      "ID": 99625,
+      "Entries": [
+        "[Interactable Effect] Nectarblood Burgeon - Continuous FP Recovery & Strengthen Sleep Effect"
+      ]
+    },
     {
       "ID": 99665,
       "Entries": [
@@ -58867,6 +58891,24 @@
         "[Relic Effect] Successive Attacks Boost Attack Power"
       ]
     },
+	{
+      "ID": 7037604,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
+      "ID": 7037605,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
+    {
+      "ID": 7037606,
+      "Entries": [
+        "[Relic Effect] Successive Attacks Boost Attack Power"
+      ]
+    },
     {
       "ID": 7037700,
       "Entries": [
@@ -58883,6 +58925,78 @@
       "ID": 7037800,
       "Entries": [
         "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered"
+      ]
+    },
+	{
+      "ID": 7037805,
+      "Entries": [
+        "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered"
+      ]
+    },
+	{
+      "ID": 7037806,
+      "Entries": [
+        "[Relic Effect] Occasionally Nullify Attacks When Damage Negation is Lowered"
+      ]
+    },
+	{
+      "ID": 7039900,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 1"
+      ]
+    },
+	{
+      "ID": 7039901,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 2"
+      ]
+    },
+	{
+      "ID": 7039902,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 3"
+      ]
+    },
+	{
+      "ID": 7039903,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 4"
+      ]
+    },
+	{
+      "ID": 7039904,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 5"
+      ]
+    },
+	{
+      "ID": 7039905,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 6"
+      ]
+    },
+	{
+      "ID": 7039906,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 7"
+      ]
+    },
+	{
+      "ID": 7039907,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 8"
+      ]
+    },
+	{
+      "ID": 7039908,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 9"
+      ]
+    },
+	{
+      "ID": 7039909,
+      "Entries": [
+        "[Relic Effect] Status Ailment Gauges Slowly Increase Attack Power - lvl 10"
       ]
     },
     {
@@ -61067,6 +61181,24 @@
       "ID": 7500800,
       "Entries": [
         "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self"
+      ]
+    },
+	{
+      "ID": 7500801,
+      "Entries": [
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 1"
+      ]
+    },
+	{
+      "ID": 7500802,
+      "Entries": [
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 2"
+      ]
+    },
+	{
+      "ID": 7500803,
+      "Entries": [
+        "[Relic Effect] Scholar: Reduced FP consumption when using Character Skill on self - stack 3"
       ]
     },
     {

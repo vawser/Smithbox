@@ -248,10 +248,10 @@
     Wiki="Add / subtract the time set for the effect duration only for magic that has the effect duration set to 0.1 seconds or more." 
     DefaultValue="0" />
     
-    <insideDurability 
-    AltName="Current Durability +" 
-    Wiki="Add or subtract the numerical value to the internal wear degree" 
-    DefaultValue="0" />
+    <diseaseAtkDamageRate 
+    AltName="Aux Atk Damage Correction %: Scarlet Rot" 
+    Wiki="Scarlet rot aux attack damage ratio: Correct the calculated damage dealt by XX times. 1 is normal." 
+    DefaultValue="1" />
     
     <maxDurability 
     AltName="Max Durability" 
@@ -2191,6 +2191,23 @@
     AltName="Apply Hero Status Change"
     Wiki="Apply a Hero status change for a specific character." 
     Refs="HeroStatusParam" 
+    DefaultValue="-1" />
+	
+	<startMagicId
+    AltName="Starting Magic ID"
+    Wiki="The sorcery/incantation to apply to the player's primary staff/seal upon expedition start." 
+    Refs="Magic" 
+    DefaultValue="-1" />
+	
+	<sleepAtkDamageRate
+    AltName="Aux Atk Damage Correction %: Sleep"
+    Wiki="Sleep aux attack damage ratio: Correct the calculated damage dealt by XX times. 1 is normal."
+    DefaultValue="1" />
+	
+	<applyIdOnKillSp
+    AltName="Kill SpEffect ID Special"
+    Wiki="In certain special cases, the original Kill SpEffect ID is disabled and this one is activated instead." 
+    Refs="SpEffectParam" 
     DefaultValue="-1" />
     
   </Field>

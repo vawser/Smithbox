@@ -55,7 +55,7 @@
     <Field Def="s32 changeStaminaPoint"/>
     <Field Def="s32 staminaRecoverChangeSpeed"/>
     <Field Def="f32 magicEffectTimeChange"/>
-    <Field Def="s32 insideDurability"/>
+    <Field Def="f32 diseaseAtkDamageRate"/>
     <Field Def="s32 maxDurability"/>
     <Field Def="f32 staminaAttackRate"/>
     <Field Def="s32 poizonAttackPower"/>
@@ -433,11 +433,11 @@
     <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
+    <Field Def="s32 startMagicId" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_04" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_05" FirstVersion="10310025"/>
+    <Field Def="f32 sleepAtkDamageRate" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_06" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_07" FirstVersion="10310025"/>
+    <Field Def="s32 applyIdOnKillSp" FirstVersion="10310025"/>
     
     
   </Fields>
