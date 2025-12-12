@@ -60,7 +60,7 @@ public class EntityRenameAction
     {
         if (ImGui.BeginMenu("Rename Map Objects"))
         {
-            if (Editor.IsAnyMapLoaded())
+            if (Editor.Selection.IsAnyMapLoaded())
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
@@ -126,7 +126,7 @@ public class EntityRenameAction
     /// </summary>
     public void ApplyMapObjectNames(bool useJapaneseNames)
     {
-        if (!Editor.IsAnyMapLoaded())
+        if (!Editor.Selection.IsAnyMapLoaded())
             return;
 
         if (TargetMap != (null, null))

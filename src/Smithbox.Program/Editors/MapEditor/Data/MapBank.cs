@@ -100,12 +100,6 @@ public class MapWrapper
     /// </summary>
     public IMsb MSB { get; set; }
 
-    // TODO:
-    // Include BTL
-    // Include HKX (read only)
-    // Include NVA (read only)
-
-
     /// <summary>
     /// This is deseralized from the MSB, and seralized back on save
     /// </summary>

@@ -1,25 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using PropertiesChangedAction = StudioCore.Editors.MapEditor.Actions.Viewport.PropertiesChangedAction;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
@@ -460,19 +453,16 @@ public class MassEditTool
         {
             foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (entry.Value.MapContainer != null)
+                var wrapper = entry.Value;
+
+                if (wrapper.MapContainer != null)
                 {
                     if (availableList.Contains(entry.Key.Filename))
                     {
-                        if (listView.ContentViews.ContainsKey(entry.Key.Filename))
-                        {
-                            var curView = listView.ContentViews[entry.Key.Filename];
+                        var actionList = ProcessSelectionCriteria(wrapper.MapContainer);
 
-                            var actionList = ProcessSelectionCriteria(curView);
-
-                            if (actionList.Count > 0)
-                                actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
-                        }
+                        if (actionList.Count > 0)
+                            actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
                     }
                 }
             }
@@ -505,23 +495,20 @@ public class MassEditTool
             // Load all maps
             foreach (var entry in availableList)
             {
-                Editor.MapListView.TriggerMapLoad(entry);
+                Editor.Universe.LoadMap(entry);
             }
 
             // Process each map
             foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (entry.Value.MapContainer != null)
+                var wrapper = entry.Value;
+
+                if (wrapper.MapContainer != null)
                 {
-                    if (listView.ContentViews.ContainsKey(entry.Key.Filename))
-                    {
-                        var curView = listView.ContentViews[entry.Key.Filename];
+                    var actionList = ProcessSelectionCriteria(wrapper.MapContainer);
 
-                        var actionList = ProcessSelectionCriteria(curView);
-
-                        if (actionList.Count > 0)
-                            actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
-                    }
+                    if (actionList.Count > 0)
+                        actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
                 }
             }
 
@@ -541,7 +528,7 @@ public class MassEditTool
             //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                Editor.MapListView.TriggerMapUnload(entry);
+                Editor.Universe.UnloadMap(entry);
             }
 
             if(restoreRendering)
@@ -617,21 +604,20 @@ public class MassEditTool
     /// <summary>
     /// Handles the selection criteria process
     /// </summary>
-    private List<ViewportAction> ProcessSelectionCriteria(MapContentView curView)
+    private List<ViewportAction> ProcessSelectionCriteria(MapContainer map)
     {
         List<ViewportAction> actions = new List<ViewportAction>();
 
-        var container = Editor.GetMapContainerFromMapID(curView.MapID);
-
-        if (container != null)
+        if (map != null)
         {
-            foreach (var entry in container.Objects)
+            foreach (var entry in map.Objects)
             {
                 if (entry is MsbEntity mEnt)
                 {
-                    if (IsValidMapObject(curView, mEnt))
+                    if (IsValidMapObject(map, mEnt))
                     {
-                        var actionList = ProcessEditCommands(curView, mEnt);
+                        var actionList = ProcessEditCommands(map, mEnt);
+
                         foreach (var actionEntry in actionList)
                         {
                             actions.Add(actionEntry);
@@ -647,7 +633,7 @@ public class MassEditTool
     /// <summary>
     /// Handles the selection filtering for map objects
     /// </summary>
-    private bool IsValidMapObject(MapContentView curView, MsbEntity mEnt)
+    private bool IsValidMapObject(MapContainer map, MsbEntity mEnt)
     {
         var invertTruth = false;
         var isValid = true;
@@ -671,14 +657,14 @@ public class MassEditTool
 
             if (cmd.Contains("prop:"))
             {
-                partTruth[i] = PropertyValueFilter(curView, mEnt, cmd);
+                partTruth[i] = PropertyValueFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
             // Default to name filter if no explicit command is used
             else
             {
-                partTruth[i] = PropertyNameFilter(curView, mEnt, cmd);
+                partTruth[i] = PropertyNameFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
@@ -704,7 +690,7 @@ public class MassEditTool
     /// <summary>
     /// Handles the selection filtering for map objects based on name
     /// </summary>
-    public bool PropertyNameFilter(MapContentView view, Entity curEnt, string cmd)
+    public bool PropertyNameFilter(MapContainer map, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -740,7 +726,7 @@ public class MassEditTool
     /// <summary>
     /// Handles the selection filtering for map objects based on property value
     /// </summary>
-    public bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
+    public bool PropertyValueFilter(MapContainer map, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -1040,7 +1026,7 @@ public class MassEditTool
     /// <summary>
     /// Handles the edit command process
     /// </summary>
-    private List<ViewportAction> ProcessEditCommands(MapContentView curView, MsbEntity mEnt)
+    private List<ViewportAction> ProcessEditCommands(MapContainer map, MsbEntity mEnt)
     {
         var editCommands = EditInputs;
 
@@ -1057,7 +1043,7 @@ public class MassEditTool
             // Default to <prop> <operation> <value>
             else
             {
-                var action = PropertyValueOperation(curView, mEnt, cmd);
+                var action = PropertyValueOperation(map, mEnt, cmd);
                 if (action != null)
                     actions.Add(action);
             }
@@ -1070,7 +1056,7 @@ public class MassEditTool
     /// Handles the property value operation edits
     /// TODO: adjust how this is done so we don't need to duplicate the operation logic so much
     /// </summary>
-    private ViewportAction PropertyValueOperation(MapContentView curView, MsbEntity curEnt, string cmd)
+    private ViewportAction PropertyValueOperation(MapContainer map, MsbEntity curEnt, string cmd)
     {
         var input = cmd.Replace("prop:", "");
 

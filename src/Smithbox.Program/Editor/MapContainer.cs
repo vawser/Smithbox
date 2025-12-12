@@ -87,6 +87,17 @@ public class MapContainer : ObjectContainer
         }
     }
 
+    public void Unload()
+    {
+        foreach (Entity obj in Objects)
+        {
+            if (obj != null)
+            {
+                obj.Dispose();
+            }
+        }
+    }
+
     public void LoadMSB(IMsb msb)
     {
         foreach (IMsbModel m in msb.Models.GetEntries())

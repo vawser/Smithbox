@@ -28,15 +28,13 @@ public class MapEntityTypeCache
         _cachedTypeView = null;
     }
 
-    public void RemoveMapFromCache(MapContentView curView)
+    public void RemoveMapFromCache(MapContainer container)
     {
-        var container = Editor.GetMapContainerFromMapID(curView.MapID);
-
         if (_cachedTypeView != null &&
             container == null && 
-            _cachedTypeView.ContainsKey(curView.MapID))
+            _cachedTypeView.ContainsKey(container.Name))
         {
-            _cachedTypeView.Remove(curView.MapID);
+            _cachedTypeView.Remove(container.Name);
         }
     }
 

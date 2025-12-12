@@ -66,6 +66,7 @@ public class MapEditorScreen : EditorScreen
     // Core
     public MapViewportView MapViewportView;
     public MapListView MapListView;
+    public MapContentView MapContentView;
     public MapPropertyView MapPropertyView;
 
     // Menubar
@@ -137,6 +138,7 @@ public class MapEditorScreen : EditorScreen
 
         // Core Views
         MapListView = new MapListView(this, project);
+        MapContentView = new MapContentView(this, project);
         MapPropertyView = new MapPropertyView(this);
 
         // Optional Views
@@ -286,6 +288,7 @@ public class MapEditorScreen : EditorScreen
 
         MapViewportView.OnGui();
         MapListView.OnGui();
+        MapContentView.OnGui();
 
         if (Smithbox.FirstFrame)
         {
@@ -651,15 +654,6 @@ public class MapEditorScreen : EditorScreen
         BaseEditor.SaveConfiguration();
     }
 
-    public void OnEntityContextMenu(Entity ent)
-    {
-        /*
-        if (ImGui.Selectable("Create prefab"))
-        {
-            _activeModal = new CreatePrefabModal(Universe, ent);
-        }
-        */
-    }
 
     public void ReloadUniverse()
     {
@@ -687,7 +681,7 @@ public class MapEditorScreen : EditorScreen
             {
                 foreach (var entry in Project.MapData.MapFiles.Entries)
                 {
-                    var currentContainer = GetMapContainerFromMapID(entry.Filename);
+                    var currentContainer = Selection.GetMapContainerFromMapID(entry.Filename);
 
                     if (currentContainer != null)
                     {
@@ -713,50 +707,5 @@ public class MapEditorScreen : EditorScreen
             TaskLogs.AddLog(e.Message,
                 LogLevel.Error, LogPriority.High, e.Wrapped);
         }
-    }
-
-    public MapContainer GetMapContainerFromMapID(string mapID)
-    {
-        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
-
-        if (targetMap.Value != null && targetMap.Value.MapContainer != null)
-        {
-            return targetMap.Value.MapContainer;
-        }
-
-        return null;
-    }
-
-    public bool IsAnyMapLoaded()
-    {
-        var check = false;
-
-        foreach(var entry in Project.MapData.PrimaryBank.Maps)
-        {
-            if(entry.Value.MapContainer != null)
-            {
-                check = true;
-            }
-        }
-
-        return check;
-    }
-
-    public MapContainer GetCurrentMapContainer()
-    {
-        MapContainer current = null;
-
-        foreach (var entry in MapListView.ContentViews)
-        {
-            if (entry.Value.MapID == Selection.SelectedMapID)
-            {
-                if (entry.Value.ContentLoadState == MapContentLoadState.Loaded)
-                {
-                    return GetMapContainerFromMapID(entry.Value.MapID);
-                }
-            }
-        }
-
-        return current;
     }
 }

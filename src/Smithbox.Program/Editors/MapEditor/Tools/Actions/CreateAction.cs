@@ -240,7 +240,7 @@ public class CreateAction
     /// </summary>
     public void ApplyObjectCreation()
     {
-        if (!Editor.IsAnyMapLoaded())
+        if (!Editor.Selection.IsAnyMapLoaded())
             return;
 
         if (TargetMap != (null, null))

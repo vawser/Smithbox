@@ -34,4 +34,3 @@
 - TODO: fix model editor loading process to account for VFS changes in ResourceManager
  
 - TODO: improve texturing rendering (some textures still missing)
-- TODO: DES - models not loading

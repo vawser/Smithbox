@@ -25,7 +25,7 @@ public static class ModelDataHelper
     {
         if(!Entries.ContainsKey(mapId))
         {
-            var curMap = editor.GetMapContainerFromMapID(mapId);
+            var curMap = editor.Selection.GetMapContainerFromMapID(mapId);
             Entries.Add(mapId, new ModelDataEntry(mapId, curMap));
         }
     }

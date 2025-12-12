@@ -58,7 +58,7 @@ public class EntityIdCheckAction
     {
         if (ImGui.BeginMenu("Entity ID Check"))
         {
-            if (Editor.IsAnyMapLoaded())
+            if (Editor.Selection.IsAnyMapLoaded())
             {
                 if (ImGui.BeginCombo("##Targeted Map", TargetMap.Item1))
                 {
@@ -102,7 +102,7 @@ public class EntityIdCheckAction
     /// </summary>
     public void ApplyEntityChecker()
     {
-        if (!Editor.IsAnyMapLoaded())
+        if (!Editor.Selection.IsAnyMapLoaded())
             return;
 
         HashSet<uint> vals = new();

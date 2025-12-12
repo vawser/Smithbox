@@ -36,15 +36,15 @@ public class MapContentFilters
     /// <summary>
     /// Display the event filter UI
     /// </summary>
-    public void DisplaySearch(MapContentView view)
+    public void DisplaySearch(MapContainer map)
     {
         var windowWidth = ImGui.GetWindowWidth();
 
-        var mapId = view.MapID;
-        var mapName = AliasUtils.GetMapNameAlias(Editor.Project, view.MapID);
+        var mapId = map.Name;
+        var mapName = AliasUtils.GetMapNameAlias(Editor.Project, map.Name);
 
         DPI.ApplyInputWidth(windowWidth * 0.6f);
-        ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
+        ImGui.InputText($"##contentFilterSearch_{map.Name}", ref SearchInput, 255);
         UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
@@ -217,7 +217,7 @@ public class MapContentFilters
     /// <summary>
     /// Search filter for the content tree. 
     /// </summary>
-    public bool ContentFilter(MapContentView view, Entity curEnt)
+    public bool ContentFilter(MapContainer map, Entity curEnt)
     {
         bool isValid = true;
 
@@ -234,12 +234,12 @@ public class MapContentFilters
 
                 if (cmd.Contains("prop:"))
                 {
-                    partTruth[i] = PropertyValueFilter(view, curEnt, cmd);
+                    partTruth[i] = PropertyValueFilter(map, curEnt, cmd);
                 }
                 // Default to name filter if no explicit command is used
                 else
                 {
-                    partTruth[i] = NameFilter(view, curEnt, cmd);
+                    partTruth[i] = NameFilter(map, curEnt, cmd);
                 }
             }
 
@@ -258,7 +258,7 @@ public class MapContentFilters
     /// <summary>
     /// Filtering based on object name
     /// </summary>
-    private bool NameFilter(MapContentView view, Entity curEnt, string cmd)
+    private bool NameFilter(MapContainer map, Entity curEnt, string cmd)
     {
         bool isValid = false;
 
@@ -294,7 +294,7 @@ public class MapContentFilters
     /// <summary>
     /// Filtering based on object property value
     /// </summary>
-    private bool PropertyValueFilter(MapContentView view, Entity curEnt, string cmd)
+    private bool PropertyValueFilter(MapContainer map, Entity curEnt, string cmd)
     {
         bool isValid = false;
 

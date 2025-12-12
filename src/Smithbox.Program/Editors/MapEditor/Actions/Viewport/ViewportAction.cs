@@ -501,11 +501,11 @@ public class CloneMapObjectsAction : ViewportAction
             MapContainer m;
             if (TargetMap != null)
             {
-                m = Editor.GetMapContainerFromMapID(TargetMap.Name);
+                m = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
             }
             else
             {
-                m = Editor.GetMapContainerFromMapID(Clonables[i].MapID);
+                m = Editor.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
             }
 
             if (m != null)
@@ -728,12 +728,12 @@ public class MoveMapObjectsAction : ViewportAction
                 continue;
             }
 
-            MapContainer sourceMap = Editor.GetMapContainerFromMapID(Moveables[i].MapID);
+            MapContainer sourceMap = Editor.Selection.GetMapContainerFromMapID(Moveables[i].MapID);
             MapContainer targetMap;
             
             if (TargetMap != null)
             {
-                targetMap = Editor.GetMapContainerFromMapID(TargetMap.Name);
+                targetMap = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
             }
             else
             {
@@ -963,7 +963,7 @@ public class AddMapObjectsAction : ViewportAction
 
                 if (TargetMap != null)
                 {
-                    m = Editor.GetMapContainerFromMapID(TargetMap.Name);
+                    m = Editor.Selection.GetMapContainerFromMapID(TargetMap.Name);
 
                     // Prefab-specific
                     if (CFG.Current.Prefab_ApplyUniqueInstanceID)
@@ -1136,7 +1136,7 @@ public class DeleteMapObjectsAction : ViewportAction
 
         foreach (MsbEntity obj in Deletables)
         {
-            MapContainer m = Editor.GetMapContainerFromMapID(obj.MapID);
+            MapContainer m = Editor.Selection.GetMapContainerFromMapID(obj.MapID);
             if (m != null)
             {
                 RemoveMaps.Add(m);
@@ -1558,7 +1558,7 @@ public class ChangeMapObjectType : ViewportAction
                 Type currentType = ent.WrappedObject.GetType();
                 if (currentType == sourceType)
                 {
-                    MapContainer map = Editor.GetMapContainerFromMapID(ent.MapID);
+                    MapContainer map = Editor.Selection.GetMapContainerFromMapID(ent.MapID);
                     map.HasUnsavedChanges = true;
 
                     var sourceObj = ent.WrappedObject;
@@ -1864,7 +1864,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                 }
 
                 MapContainer m;
-                m = Editor.GetMapContainerFromMapID(Clonables[i].MapID);
+                m = Editor.Selection.GetMapContainerFromMapID(Clonables[i].MapID);
 
                 if (m != null)
                 {
@@ -2274,7 +2274,7 @@ public class OrderMapObjectsAction : ViewportAction
                 if (ent.WrappedObject is BTL.Light)
                     return ActionEvent.NoEvent;
 
-                MapContainer mapRoot = Editor.GetMapContainerFromMapID(curSel.MapID);
+                MapContainer mapRoot = Editor.Selection.GetMapContainerFromMapID(curSel.MapID);
 
                 // Ignore usage if the selection is the map root itself
                 if (mapRoot == null)
@@ -2441,7 +2441,7 @@ public class OrderMapObjectsAction : ViewportAction
         {
             var curSel = selection.First();
 
-            MapContainer mapRoot = Editor.GetMapContainerFromMapID(curSel.MapID);
+            MapContainer mapRoot = Editor.Selection.GetMapContainerFromMapID(curSel.MapID);
             mapRoot.Objects = storedObjectOrder;
         }
 

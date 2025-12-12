@@ -25,6 +25,8 @@ using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Veldrid;
+using Veldrid.MetalBindings;
 
 namespace StudioCore.MsbEditor;
 
@@ -92,6 +94,10 @@ public class Universe
             }
         }
 
+        ResourceManager.ClearUnusedResources();
+
+        Editor.ViewportSelection.ClearSelection(Editor);
+
         LoadMapAsync(mapid, selectOnLoad, fastLoad);
 
         return true;
@@ -102,7 +108,7 @@ public class Universe
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        var map = Editor.GetMapContainerFromMapID(mapid);
+        var map = Editor.Selection.GetMapContainerFromMapID(mapid);
 
         if (map != null)
         {
@@ -112,9 +118,14 @@ public class Universe
         }
 
         var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
-        targetMap.Value.MapContainer = new MapContainer(Editor, mapid);
+        var wrapper = targetMap.Value;
 
-        map = targetMap.Value.MapContainer;
+        if (wrapper.MapContainer == null)
+        {
+            wrapper.MapContainer = new MapContainer(Editor, mapid);
+        }
+
+        map = wrapper.MapContainer;
 
         if (!fastLoad)
         {
@@ -224,6 +235,14 @@ public class Universe
 
                 // Set the map transform to the saved position, rotation and scale.
                 //map.LoadMapTransform();
+
+                if (selectOnLoad)
+                {
+                    Editor.Selection.SelectedMapID = mapid;
+                    Editor.Selection.SelectedMapContainer = map;
+                }
+
+                ModelDataHelper.AddEntry(Editor, mapid);
             }
         }
         catch (Exception e)
@@ -641,7 +660,7 @@ public class Universe
 
         foreach (KeyValuePair<string, RelationType> map in relatedMaps)
         {
-            Editor.MapListView.TriggerMapLoad(map.Key);
+            Editor.Universe.LoadMap(map.Key);
         }
     }
 
@@ -1046,29 +1065,36 @@ public class Universe
         }
     }
 
-    public void UnloadMapContainer(string mapID, bool clearFromList = false)
+    public void UnloadMap(string mapID, bool clearFromList = false)
     {
+        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.EditorActionManager.Clear();
+
         foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (entry.Key.Filename != mapID)
-                continue;
+            var curMapID = entry.Key.Filename;
 
-            Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
-            Editor.AutoInvadeManager.OnUnloadMap(entry.Key.Filename);
-            Editor.HavokNavmeshManager.OnUnloadMap(entry.Key.Filename);
-
-            if (entry.Value != null && entry.Value.MapContainer != null)
+            if (curMapID == mapID)
             {
-                foreach (Entity obj in entry.Value.MapContainer.Objects)
+                var wrapper = entry.Value;
+
+                ResourceManager.ClearUnusedResources();
+                ModelDataHelper.ClearEntry(Editor, mapID);
+
+                Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+
+                Editor.CollisionManager.OnUnloadMap(curMapID);
+                Editor.AutoInvadeManager.OnUnloadMap(curMapID);
+                Editor.HavokNavmeshManager.OnUnloadMap(curMapID);
+
+                if(Editor.Selection.SelectedMapContainer == wrapper.MapContainer)
                 {
-                    if (obj != null)
-                    {
-                        obj.Dispose();
-                    }
+                    Editor.Selection.SelectedMapID = "";
+                    Editor.Selection.SelectedMapContainer = null;
                 }
 
-                entry.Value.MapContainer.Clear();
-                entry.Value.MapContainer = null;
+                wrapper.MapContainer.Unload();
+                wrapper.MapContainer = null;
             }
         }
     }
@@ -1079,7 +1105,7 @@ public class Universe
         {
             if (entry.Value.MapContainer != null)
             {
-                UnloadMapContainer(entry.Key.Filename);
+                UnloadMap(entry.Key.Filename);
             }
         }
     }
@@ -1090,7 +1116,7 @@ public class Universe
         {
             if (entry.Value.MapContainer != null)
             {
-                UnloadMapContainer(entry.Key.Filename);
+                UnloadMap(entry.Key.Filename);
             }
         }
     }

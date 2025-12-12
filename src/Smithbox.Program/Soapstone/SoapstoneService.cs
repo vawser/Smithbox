@@ -91,7 +91,7 @@ public class SoapstoneService : SoapstoneServiceV1
 
                 if (curProject.MapEditor != null)
                 {
-                    if (curProject.MapEditor.IsAnyMapLoaded())
+                    if (curProject.MapEditor.Selection.IsAnyMapLoaded())
                     {
                         foreach(var entry in curProject.MapData.PrimaryBank.Maps)
                         {
@@ -388,12 +388,12 @@ public class SoapstoneService : SoapstoneServiceV1
                 foreach (SoulsKey getKey in keys)
                 {
                     if (getKey.File is not SoulsKey.MsbKey fileKey ||
-                        curProject.MapEditor.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
+                        curProject.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
                     {
                         continue;
                     }
 
-                    var targetContainer = curProject.MapEditor.GetMapContainerFromMapID(fileKey.Map);
+                    var targetContainer = curProject.MapEditor.Selection.GetMapContainerFromMapID(fileKey.Map);
 
                     if (getKey is SoulsKey.MsbKey msbKey)
                     {

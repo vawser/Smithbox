@@ -30,7 +30,7 @@ public class ObjectContainerReference : ISelectable
     {
         var universe = editor.Universe;
 
-        var container = editor.GetMapContainerFromMapID(Name);
+        var container = editor.Selection.GetMapContainerFromMapID(Name);
 
         if (universe != null && container != null && container?.RootObject != null)
         {

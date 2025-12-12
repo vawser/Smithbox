@@ -160,16 +160,15 @@ public class SelectAllAction
     {
         Editor.ViewportSelection.ClearSelection(Editor);
 
-        var curView = Editor.Selection.SelectedMapView;
-        var container = Editor.GetMapContainerFromMapID(Editor.Selection.SelectedMapID);
+        var curMap = Editor.Selection.SelectedMapContainer;
 
-        if (container != null)
+        if (curMap != null)
         {
-            foreach (var entry in container.Objects)
+            foreach (var entry in curMap.Objects)
             {
                 if (entry is MsbEntity mEnt)
                 {
-                    if (IsValidMapObject(curView, mEnt))
+                    if (IsValidMapObject(curMap, mEnt))
                     {
                         Editor.ViewportSelection.AddSelection(Editor, mEnt);
                     }
@@ -202,24 +201,7 @@ public class SelectAllAction
                 }
             }
 
-            var curMap = Editor.Selection.SelectedMapView.MapID;
-            MapContainer curMapContainer = null;
-
-            foreach (var entry in Project.MapData.PrimaryBank.Maps)
-            {
-                var mapID = entry.Key.Filename;
-                var map = entry.Value.MapContainer;
-
-                if (map != null)
-                {
-                    if (curMap == mapID)
-                    {
-                        curMapContainer = (MapContainer)map;
-                    }
-                }
-            }
-
-            if (curMapContainer == null)
+            if (Editor.Selection.SelectedMapContainer == null)
             {
                 PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
                 return;
@@ -227,7 +209,7 @@ public class SelectAllAction
 
             Editor.ViewportSelection.ClearSelection(Editor);
 
-            foreach (var ent in curMapContainer.Objects)
+            foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
             {
                 var curName = "";
                 var result = ent.GetPropertyValue("ModelName");
@@ -266,24 +248,7 @@ public class SelectAllAction
                 }
             }
 
-            var curMap = Editor.Selection.SelectedMapView.MapID;
-            MapContainer curMapContainer = null;
-
-            foreach (var entry in Project.MapData.PrimaryBank.Maps)
-            {
-                var mapID = entry.Key.Filename;
-                var map = entry.Value.MapContainer;
-
-                if (map != null)
-                {
-                    if (curMap == mapID)
-                    {
-                        curMapContainer = (MapContainer)map;
-                    }
-                }
-            }
-
-            if (curMapContainer == null)
+            if (Editor.Selection.SelectedMapContainer == null)
             {
                 PlatformUtils.Instance.MessageBox("Failed to select map container.", "Smithbox", MessageBoxButtons.OK);
                 return;
@@ -291,7 +256,7 @@ public class SelectAllAction
 
             Editor.ViewportSelection.ClearSelection(Editor);
 
-            foreach (var ent in curMapContainer.Objects)
+            foreach (var ent in Editor.Selection.SelectedMapContainer.Objects)
             {
                 var curType = ent.WrappedObject.GetType();
 
@@ -553,7 +518,7 @@ public class SelectAllAction
             UIHelper.Tooltip("The selection command to process.");
         }
     }
-    private bool IsValidMapObject(MapContentView curView, MsbEntity mEnt)
+    private bool IsValidMapObject(MapContainer map, MsbEntity mEnt)
     {
         var invertTruth = false;
         var isValid = true;
@@ -577,14 +542,14 @@ public class SelectAllAction
 
             if (cmd.Contains("prop:"))
             {
-                partTruth[i] = Editor.MassEditTool.PropertyValueFilter(curView, mEnt, cmd);
+                partTruth[i] = Editor.MassEditTool.PropertyValueFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }
             // Default to name filter if no explicit command is used
             else
             {
-                partTruth[i] = Editor.MassEditTool.PropertyNameFilter(curView, mEnt, cmd);
+                partTruth[i] = Editor.MassEditTool.PropertyNameFilter(map, mEnt, cmd);
                 if (invertTruth)
                     partTruth[i] = !partTruth[i];
             }

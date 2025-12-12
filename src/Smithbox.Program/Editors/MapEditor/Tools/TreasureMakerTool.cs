@@ -73,7 +73,7 @@ public class TreasureMakerTool
 
         UIHelper.WrappedText("Target Map:");
 
-        if(!Editor.IsAnyMapLoaded())
+        if(!Editor.Selection.IsAnyMapLoaded())
         {
             UIHelper.WrappedText("No maps loaded yet.");
         }

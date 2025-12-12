@@ -551,7 +551,7 @@ public class ModelSelectorTool
     private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)
     {
         MapContainer m;
-        m = Editor.GetMapContainerFromMapID(ent.MapID);
+        m = Editor.Selection.GetMapContainerFromMapID(ent.MapID);
 
         Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats.KF4;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -26,9 +27,7 @@ public class MapContentView
     public MapEditorScreen Editor;
     public ProjectEntry Project;
 
-    public string MapID;
-
-    public string ImguiID = "";
+    public string ImguiID = "MapContentView";
     private int treeImGuiId = 0;
 
     public MapContentViewType ContentViewType = MapContentViewType.ObjectType;
@@ -38,53 +37,10 @@ public class MapContentView
     private ISelectable _pendingClick;
     private HashSet<Entity> _treeOpenEntities = new();
 
-    public MapContentView(MapEditorScreen editor, ProjectEntry project, FileDictionaryEntry fileEntry)
+    public MapContentView(MapEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
-
-        ImguiID = fileEntry.Filename;
-        MapID = fileEntry.Filename;
-    }
-
-    public void Load(bool selected)
-    {
-        ContentLoadState = MapContentLoadState.Loaded;
-
-        // Clear unused resources when loading a map to tidy up
-        ResourceManager.ClearUnusedResources();
-
-        Editor.ViewportSelection.ClearSelection(Editor);
-
-        Editor.Universe.LoadMap(MapID, selected);
-
-        if (selected)
-        {
-            Editor.Selection.SelectedMapID = MapID;
-            Editor.Selection.SelectedMapView = this;
-        }
-
-        ModelDataHelper.AddEntry(Editor, MapID);
-    }
-
-    public void Unload()
-    {
-        ContentLoadState = MapContentLoadState.Unloaded;
-
-        // Clear unused resources when unloading a map to tidy up
-        ResourceManager.ClearUnusedResources();
-        ModelDataHelper.ClearEntry(Editor, MapID);
-
-        Editor.EntityTypeCache.RemoveMapFromCache(this);
-
-        Editor.ViewportSelection.ClearSelection(Editor);
-        Editor.EditorActionManager.Clear();
-
-        Editor.Universe.UnloadMapContainer(MapID, true);
-
-        GC.Collect();
-        GC.WaitForPendingFinalizers();
-        GC.Collect();
     }
 
     /// <summary>
@@ -92,9 +48,45 @@ public class MapContentView
     /// </summary>
     public void OnGui()
     {
-        if (ContentLoadState is MapContentLoadState.Unloaded)
+        var scale = DPI.UIScale();
+
+        if (!CFG.Current.Interface_MapEditor_MapContents)
             return;
 
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        // Map Contents
+        if (ImGui.Begin($@"Map Contents##mapContentsPanel", ImGuiWindowFlags.MenuBar))
+        {
+            Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+
+            DisplayMenubar();
+
+
+            if (Editor.Selection.SelectedMapContainer != null)
+            {
+                var map = Editor.Selection.SelectedMapContainer;
+
+                Editor.MapContentFilter.DisplaySearch(map);
+
+                DisplayQuickActionButtons(map);
+
+                // Reset this every frame, otherwise the map object selectables won't work correctly
+                treeImGuiId = 0;
+
+                DisplayContentTree(map);
+            }
+        }
+
+        ImGui.End();
+        ImGui.PopStyleColor(1);
+
+        Editor.ViewportSelection.ClearGotoTarget();
+    }
+
+    public void DisplayMenubar()
+    {
         if (ImGui.BeginMenuBar())
         {
             if (ImGui.BeginMenu("Content Display"))
@@ -127,21 +119,6 @@ public class MapContentView
                 UIHelper.Tooltip("Display the internal map object name only.");
                 UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal);
 
-                // Display these once the community naming aspect has been worked on more
-                //if (ImGui.MenuItem("Community"))
-                //{
-                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Community;
-                //}
-                //UIHelper.Tooltip("Display the community map object name only.");
-                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Community);
-
-                //if (ImGui.MenuItem("Internal + Community"))
-                //{
-                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_Community;
-                //}
-                //UIHelper.Tooltip("Display the internal map object name with the community name as the alias.");
-                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal_Community);
-
                 if (ImGui.MenuItem("Internal + Text"))
                 {
                     CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Internal_FMG;
@@ -149,43 +126,25 @@ public class MapContentView
                 UIHelper.Tooltip("Display the internal map object name with the associated FMG name as the alias.");
                 UIHelper.ShowActiveStatus(curType == NameDisplayType.Internal_FMG);
 
-                //if (ImGui.MenuItem("Community + Text"))
-                //{
-                //    CFG.Current.MapEditor_MapContentList_EntryNameDisplayType = NameDisplayType.Community_FMG;
-                //}
-                //UIHelper.Tooltip("Display the community map object name with the associated FMG name as the alias.");
-                //UIHelper.ShowActiveStatus(curType == NameDisplayType.Community_FMG);
-
                 ImGui.EndMenu();
             }
 
             ImGui.EndMenuBar();
         }
-
-        Editor.MapContentFilter.DisplaySearch(this);
-
-        DisplayQuickActionButtons();
-
-        // Reset this every frame, otherwise the map object selectables won't work correctly
-        treeImGuiId = 0;
-
-        DisplayContentTree();
     }
 
     /// <summary>
     /// Handles the show all button
     /// </summary>
-    private void DisplayQuickActionButtons()
+    private void DisplayQuickActionButtons(MapContainer map)
     {
         ImGui.SameLine();
-
-        var targetContainer = Editor.GetMapContainerFromMapID(MapID);
 
         // Show All
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
-            foreach (var entry in targetContainer.Objects)
+            foreach (var entry in map.Objects)
             {
                 entry.EditorVisible = true;
             }
@@ -196,7 +155,7 @@ public class MapContentView
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.EyeSlash}", DPI.IconButtonSize))
         {
-            foreach (var entry in targetContainer.Objects)
+            foreach (var entry in map.Objects)
             {
                 entry.EditorVisible = false;
             }
@@ -207,14 +166,14 @@ public class MapContentView
     /// <summary>
     /// Handles the display of the MSB contents
     /// </summary>
-    public void DisplayContentTree()
+    public void DisplayContentTree(MapContainer map)
     {
         ImGui.BeginChild($"mapContentsTree_{ImguiID}");
 
-        var targetContainer = Editor.GetMapContainerFromMapID(MapID);
+        Entity mapRoot = map?.RootObject;
 
-        Entity mapRoot = targetContainer?.RootObject;
-        ObjectContainerReference mapRef = new(MapID);
+        ObjectContainerReference mapRef = new(map.Name);
+
         ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
@@ -226,18 +185,18 @@ public class MapContentView
         }
 
         var nodeopen = false;
-        var unsaved = targetContainer != null && targetContainer.HasUnsavedChanges ? "*" : "";
+        var unsaved = map != null && map.HasUnsavedChanges ? "*" : "";
 
         ImGui.BeginGroup();
 
-        string treeNodeName = $@"{Icons.Cube} {MapID}";
-        string treeNodeNameFormat = $@"{Icons.Cube} {MapID}{unsaved}";
+        string treeNodeName = $@"{Icons.Cube} {map.Name}";
+        string treeNodeNameFormat = $@"{Icons.Cube} {map.Name}{unsaved}";
 
-        if (targetContainer != null && ContentLoadState is MapContentLoadState.Loaded)
+        if (map != null)
         {
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
-            var mapName = AliasUtils.GetMapNameAlias(Editor.Project, MapID);
+            var mapName = AliasUtils.GetMapNameAlias(Editor.Project, map.Name);
             UIHelper.DisplayAlias(mapName);
         }
 
@@ -254,7 +213,7 @@ public class MapContentView
             ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
         }
 
-        DisplayRootContextMenu(selected);
+        DisplayRootContextMenu(map, selected);
         HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
 
         if (nodeopen)
@@ -264,11 +223,11 @@ public class MapContentView
 
             if (ContentViewType is MapContentViewType.ObjectType)
             {
-                TypeView(targetContainer);
+                TypeView(map);
             }
             else if (ContentViewType is MapContentViewType.Flat)
             {
-                FlatView(targetContainer);
+                FlatView(map);
             }
 
             ImGui.PopStyleVar();
@@ -340,24 +299,24 @@ public class MapContentView
     /// <summary>
     /// Handles the right-click context menu for map root
     /// </summary>
-    private void DisplayRootContextMenu(bool selected)
+    private void DisplayRootContextMenu(MapContainer map, bool selected)
     {
-        if (ImGui.BeginPopupContextItem($@"mapcontext_{MapID}"))
+        if (ImGui.BeginPopupContextItem($@"mapcontext_{map.Name}"))
         {
             if (ImGui.Selectable("Copy Map ID"))
             {
-                PlatformUtils.Instance.SetClipboardText(MapID);
+                PlatformUtils.Instance.SetClipboardText(map.Name);
             }
             if (ImGui.Selectable("Copy Map Name"))
             {
-                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, MapID);
+                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, map.Name);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
             if (Editor.GlobalSearchTool.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Editor.GlobalSearchTool.AddMapFilterInput(MapID);
+                    Editor.GlobalSearchTool.AddMapFilterInput(map.Name);
                 }
             }
 
@@ -369,9 +328,9 @@ public class MapContentView
     /// <summary>
     /// Handles the right-click context menu for map object
     /// </summary>
-    private void DisplayMapObjectContextMenu(Entity ent, int imguiID)
+    private void DisplayMapObjectContextMenu(MapContainer map, Entity ent, int imguiID)
     {
-        if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{MapID}_{imguiID}"))
+        if (ImGui.BeginPopupContextItem($@"mapobjectcontext_{map.Name}_{imguiID}"))
         {
             Editor.ReorderAction.OnContext(ent);
 
@@ -444,9 +403,9 @@ public class MapContentView
                                 {
                                     AliasUtils.UpdateEntityAliasName(Editor.Project, obj);
 
-                                    if (Editor.MapContentFilter.ContentFilter(this, obj))
+                                    if (Editor.MapContentFilter.ContentFilter(map, obj))
                                     {
-                                        MapObjectSelectable(obj, true);
+                                        MapObjectSelectable(map, obj, true);
                                     }
                                 }
                             }
@@ -465,9 +424,9 @@ public class MapContentView
 
                                             AliasUtils.UpdateEntityAliasName(Editor.Project, curObj);
 
-                                            if (Editor.MapContentFilter.ContentFilter(this, curObj))
+                                            if (Editor.MapContentFilter.ContentFilter(map, curObj))
                                             {
-                                                MapObjectSelectable(curObj, true);
+                                                MapObjectSelectable(map, curObj, true);
                                             }
                                         }
 
@@ -482,9 +441,9 @@ public class MapContentView
                                 {
                                     AliasUtils.UpdateEntityAliasName(Editor.Project, obj);
 
-                                    if (Editor.MapContentFilter.ContentFilter(this, obj))
+                                    if (Editor.MapContentFilter.ContentFilter(map, obj))
                                     {
-                                        MapObjectSelectable(obj, true, index);
+                                        MapObjectSelectable(map, obj, true, index);
                                     }
 
                                     index++;
@@ -512,7 +471,7 @@ public class MapContentView
     /// <summary>
     /// Handles the basic selectable entry
     /// </summary>
-    private unsafe void MapObjectSelectable(Entity e, bool visicon, int index = -1, bool hierarchial = false)
+    private unsafe void MapObjectSelectable(MapContainer map, Entity e, bool visicon, int index = -1, bool hierarchial = false)
     {
         var scale = DPI.UIScale();
 
@@ -563,7 +522,7 @@ public class MapContentView
             {
                 if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
                 {
-                    var targetContainer = Editor.GetMapContainerFromMapID(MapID);
+                    var targetContainer = Editor.Selection.GetMapContainerFromMapID(map.Name);
 
                     var mapRoot = targetContainer.RootObject;
                     foreach(var entry in mapRoot.Children)
@@ -687,7 +646,7 @@ public class MapContentView
 
             }
 
-            DisplayMapObjectContextMenu(e, treeImGuiId);
+            DisplayMapObjectContextMenu(map, e, treeImGuiId);
 
         }
 
@@ -738,7 +697,7 @@ public class MapContentView
         // If there's children then draw them
         if (nodeopen)
         {
-            HierarchyView(e);
+            HierarchyView(map, e);
             ImGui.TreePop();
         }
 
@@ -748,13 +707,13 @@ public class MapContentView
     /// <summary>
     /// Handles the setup for the heiarchical content selectables
     /// </summary>
-    private void HierarchyView(Entity entity)
+    private void HierarchyView(MapContainer map, Entity entity)
     {
         foreach (Entity obj in entity.Children)
         {
             if (obj is Entity e)
             {
-                MapObjectSelectable(e, true, -1, true);
+                MapObjectSelectable(map, e, true, -1, true);
             }
         }
     }
@@ -765,9 +724,9 @@ public class MapContentView
         {
             if (obj is MsbEntity e)
             {
-                if (Editor.MapContentFilter.ContentFilter(this, obj))
+                if (Editor.MapContentFilter.ContentFilter(map, obj))
                 {
-                    MapObjectSelectable(e, true);
+                    MapObjectSelectable(map, e, true);
                 }
             }
         }

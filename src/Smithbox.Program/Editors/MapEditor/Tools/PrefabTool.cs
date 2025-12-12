@@ -270,7 +270,7 @@ public class PrefabTool
 
         UIHelper.SimpleHeader("Target Map", "Target Map", "The map to spawn the selected prefab in.", UI.Current.ImGui_Default_Text_Color);
 
-        var container = Editor.GetMapContainerFromMapID(comboMap.name);
+        var container = Editor.Selection.GetMapContainerFromMapID(comboMap.name);
 
         if (comboMap.name != null && container == null)
             comboMap = (null, null);

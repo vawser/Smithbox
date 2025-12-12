@@ -41,7 +41,7 @@ public class MapCommandQueue
             {
                 var mapid = initcmd[1];
 
-                var container = Editor.GetMapContainerFromMapID(mapid);
+                var container = Editor.Selection.GetMapContainerFromMapID(mapid);
 
                 if (container != null)
                 {
@@ -49,7 +49,7 @@ public class MapCommandQueue
                 }
                 else
                 {
-                    Editor.MapListView.TriggerMapLoad(mapid);
+                    Editor.Universe.LoadMap(mapid);
                 }
             }
 
@@ -58,7 +58,7 @@ public class MapCommandQueue
                 var mapid = initcmd[1];
                 if (initcmd.Length > 2)
                 {
-                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
+                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
                         if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
@@ -87,7 +87,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 3)
                 {
-                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
+                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         if (type == "enemy")
                         {
@@ -112,7 +112,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 2)
                 {
-                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
+                    if (Editor.Selection.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         if (target == null)
                             target = m.GetEnemyByID(entityID, true);
