@@ -777,9 +777,10 @@ public static class ParamMetaReferences
                     CurrentMapID = rowMapId;
 
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_DS1 = MSB1.Read(mapFileEntry.Path);
+                        CurrentPeekMap_DS1 = MSB1.Read(mapData.Value);
                     }
                 }
 
@@ -866,10 +867,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_BB = MSBB.Read(mapFileEntry.Path);
+                        CurrentPeekMap_BB = MSBB.Read(mapData.Value);
                     }
                 }
 
@@ -963,10 +966,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_DS3 = MSB3.Read(mapFileEntry.Path);
+                        CurrentPeekMap_DS3 = MSB3.Read(mapData.Value);
                     }
                 }
 
@@ -1051,10 +1056,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_SDT = MSBS.Read(mapFileEntry.Path);
+                        CurrentPeekMap_SDT = MSBS.Read(mapData.Value);
                     }
                 }
 
@@ -1144,10 +1151,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_ER = MSBE.Read(mapFileEntry.Path);
+                        CurrentPeekMap_ER = MSBE.Read(mapData.Value);
                     }
                 }
 
@@ -1223,10 +1232,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_AC6 = MSB_AC6.Read(mapFileEntry.Path);
+                        CurrentPeekMap_AC6 = MSB_AC6.Read(mapData.Value);
                     }
                 }
 
@@ -1317,10 +1328,12 @@ public static class ParamMetaReferences
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
+
                     var mapFileEntry = editor.Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == CurrentMapID);
-                    if (mapFileEntry != null)
+                    var mapData = editor.Project.FS.ReadFile(mapFileEntry.Path);
+                    if (mapData != null)
                     {
-                        CurrentPeekMap_NR = MSB_NR.Read(mapFileEntry.Path);
+                        CurrentPeekMap_NR = MSB_NR.Read(mapData.Value);
                     }
                 }
 

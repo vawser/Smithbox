@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
+using Veldrid.MetalBindings;
 using static Google.Protobuf.Reflection.FieldOptions.Types;
 using static MsbUtils;
 
@@ -56,6 +57,12 @@ public class MapContentView
         Editor.ViewportSelection.ClearSelection(Editor);
 
         Editor.Universe.LoadMap(MapID, selected);
+
+        if (selected)
+        {
+            Editor.Selection.SelectedMapID = MapID;
+            Editor.Selection.SelectedMapView = this;
+        }
 
         ModelDataHelper.AddEntry(Editor, MapID);
     }

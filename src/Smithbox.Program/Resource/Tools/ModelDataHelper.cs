@@ -45,6 +45,9 @@ public static class ModelDataHelper
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
         var textureName = Path.GetFileName(texVirtPath);
 
+        if (project.MapEditor.Selection.SelectedMapID == null)
+            return;
+
         if (Entries.ContainsKey(project.MapEditor.Selection.SelectedMapID))
         {
             var entry = Entries[project.MapEditor.Selection.SelectedMapID];
