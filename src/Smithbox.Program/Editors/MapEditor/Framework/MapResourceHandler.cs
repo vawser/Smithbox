@@ -1,25 +1,12 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Microsoft.Extensions.Logging;
-using Octokit;
-using SoulsFormats;
-using SoulsFormats.KF4;
+﻿using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Formats.JSON;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
-using StudioCore.Scene.Enums;
-using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
-using StudioCore.Tasks;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Resource.ResourceManager;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -36,7 +23,6 @@ public class MapResourceHandler
     private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
 
     private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
-    private HashSet<ResourceDescriptor> LoadList_Enemy_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Other_Texture = new();
@@ -267,7 +253,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceManager.ResourceType.Flver);
+                        false, ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
@@ -289,7 +275,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceManager.ResourceType.Flver);
+                        false, ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
@@ -311,7 +297,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceManager.ResourceType.Flver);
+                        false, ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
@@ -338,7 +324,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
+                        ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
@@ -360,7 +346,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
+                        ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {
@@ -382,7 +368,7 @@ public class MapResourceHandler
                 if (asset.AssetArchiveVirtualPath != null)
                 {
                     job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                        ResourceManager.ResourceType.Flver);
+                        ResourceType.Flver);
                 }
                 else if (asset.AssetVirtualPath != null)
                 {

@@ -33,8 +33,6 @@
 
 - TODO: fix model editor loading process to account for VFS changes in ResourceManager
  
-- TODO: fix the long-standing missing textures
-
+- TODO: improve texturing rendering (some textures still missing)
+- TODO: DES - models not loading
 - TODO: fix DS1R collision hack so it works with VFS
-- TODO: check model/texturing loading in all project types
- - DES: models not loading

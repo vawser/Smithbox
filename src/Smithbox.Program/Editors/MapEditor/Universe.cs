@@ -618,13 +618,12 @@ public class Universe
             map.AddObject(obj);
         }
 
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading chrs");
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading chrs");
         foreach (ResourceDescriptor chr in chrsToLoad)
         {
             if (chr.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
+                job.AddLoadArchiveTask(chr.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceType.Flver);
             }
             else if (chr.AssetVirtualPath != null)
             {

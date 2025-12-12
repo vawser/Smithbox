@@ -490,7 +490,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     private void LoadModelInternal(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
         var modelAsset = new ResourceDescriptor();
         modelAsset.AssetVirtualPath = $"direct/flver/{modelid}";
@@ -503,7 +503,7 @@ public class ModelResourceManager : IResourceEventListener
 
             if (modelAsset.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceManager.ResourceType.Flver);
+                job.AddLoadArchiveTask(modelAsset.AssetArchiveVirtualPath, AccessLevel.AccessFull, false, ResourceType.Flver);
             }
             else if (modelAsset.AssetVirtualPath != null)
             {
@@ -521,7 +521,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     private void LoadTexturesInternal(string modelid, FlverContainerType modelType, string mapid = null)
     {
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading textures");
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading textures");
 
         List<ResourceDescriptor> textureAssets = GetTextureAssetDescriptorList(modelid, modelType, mapid);
 
@@ -541,7 +541,7 @@ public class ModelResourceManager : IResourceEventListener
                     {
                         if (!ResourceManager.IsResourceLoaded(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                         {
-                            job.AddLoadArchiveTask(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture);
+                            job.AddLoadArchiveTask(entry.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceType.Texture);
                         }
                     }
                     else if (entry.AssetVirtualPath != null)
@@ -563,7 +563,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     private void LoadCollisionInternal(string modelid, string postfix)
     {
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading collision");
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading collision");
 
         ResourceDescriptor colAsset = AssetLocator.GetAssetGeomHKXBinder(Editor.Project, modelid, postfix);
 
@@ -582,7 +582,7 @@ public class ModelResourceManager : IResourceEventListener
             {
                 if (!ResourceManager.IsResourceLoaded(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
                 {
-                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.CollisionHKX);
+                    job.AddLoadArchiveTask(colAsset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceType.CollisionHKX);
                 }
             }
             else if (colAsset.AssetVirtualPath != null)

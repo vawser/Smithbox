@@ -52,7 +52,7 @@ public static class DrawableHelper
 
         var amapid = MapLocator.GetAssetMapID(curProject, map.Name);
 
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
@@ -203,8 +203,7 @@ public static class DrawableHelper
         {
             if (asset.AssetArchiveVirtualPath != null)
             {
-                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
-                    ResourceManager.ResourceType.Flver);
+                job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceType.Flver);
             }
             else if (asset.AssetVirtualPath != null)
             {
