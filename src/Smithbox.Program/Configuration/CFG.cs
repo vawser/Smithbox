@@ -4,6 +4,7 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Formats.JSON;
+using StudioCore.Resource;
 using StudioCore.Scene.Enums;
 using System;
 using System.Collections.Generic;
@@ -1022,6 +1023,10 @@ public class CFG
     public bool MapEditor_TextureLoad_Objects = true;
     public bool MapEditor_TextureLoad_Characters = true;
     public bool MapEditor_TextureLoad_Misc = true;
+
+    public bool MapEditor_ModelDataExtraction_IncludeFolder = true;
+    public ExtractionType MapEditor_ModelDataExtraction_Type = ExtractionType.Loose;
+    public string MapEditor_ModelDataExtraction_DefaultOutputFolder = ".output";
 
     //****************************
     // Settings: Model Editor

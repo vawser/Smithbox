@@ -222,9 +222,6 @@ public class FlverResource : IResource, IDisposable
         return false;
     }
 
-    public Dictionary<string, MTD> MTDs { get; set; } = new();
-    public Dictionary<string, MATBIN> MATBINs { get; set; } = new();
-
     private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
     {
@@ -240,17 +237,15 @@ public class FlverResource : IResource, IDisposable
 
         var path = mpath;
 
+        MTD material = null;
+        MATBIN matbin = null;
+
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
 
             // MTD
-            var material = bank.GetMaterial(mtdstring);
-
-            if(!MTDs.ContainsKey(mtdstring))
-            {
-                MTDs.Add(mtdstring, material);
-            }
+            material = bank.GetMaterial(mtdstring);
 
             if (material != null)
             {
@@ -268,12 +263,7 @@ public class FlverResource : IResource, IDisposable
             // MATBIN
             if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                var matbin = bank.GetMatbin(mtdstring);
-
-                if (!MATBINs.ContainsKey(mtdstring))
-                {
-                    MATBINs.Add(mtdstring, matbin);
-                }
+                matbin = bank.GetMatbin(mtdstring);
 
                 if (matbin != null)
                 {
@@ -354,6 +344,9 @@ public class FlverResource : IResource, IDisposable
         if (!dest.TextureResourceFilled[(int)textureType])
         {
             //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
+
+            // Used to allow for association of models and textures
+            ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
 
             ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;

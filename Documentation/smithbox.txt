@@ -35,4 +35,3 @@
  
 - TODO: improve texturing rendering (some textures still missing)
 - TODO: DES - models not loading
-- TODO: fix DS1R collision hack so it works with VFS

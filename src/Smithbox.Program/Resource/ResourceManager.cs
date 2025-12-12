@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
@@ -271,6 +272,4 @@ public static class ResourceManager
         JobScheduler.Dispose();
         JobScheduler = null;
     }
-
 }
-

@@ -6,6 +6,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.Editors.MapEditor.PropertyEditor;
@@ -739,5 +740,23 @@ public class MapEditorScreen : EditorScreen
         }
 
         return check;
+    }
+
+    public MapContainer GetCurrentMapContainer()
+    {
+        MapContainer current = null;
+
+        foreach (var entry in MapListView.ContentViews)
+        {
+            if (entry.Value.MapID == Selection.SelectedMapID)
+            {
+                if (entry.Value.ContentLoadState == MapContentLoadState.Loaded)
+                {
+                    return GetMapContainerFromMapID(entry.Value.MapID);
+                }
+            }
+        }
+
+        return current;
     }
 }

@@ -125,8 +125,6 @@ public class ResourceLocator
                     }
                     else if (project.ProjectType == ProjectType.DS1R)
                     {
-                        // TODO: need a solution to do this via VFS,
-                        // perhaps add a special one for DS1R projects that is setup for DS1
                         if (CFG.Current.PTDE_Collision_Root != "")
                         {
                             if (Directory.Exists(CFG.Current.PTDE_Collision_Root))

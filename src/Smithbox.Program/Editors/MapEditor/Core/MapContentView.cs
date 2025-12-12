@@ -56,6 +56,8 @@ public class MapContentView
         Editor.ViewportSelection.ClearSelection(Editor);
 
         Editor.Universe.LoadMap(MapID, selected);
+
+        ModelDataHelper.AddEntry(Editor, MapID);
     }
 
     public void Unload()
@@ -64,6 +66,7 @@ public class MapContentView
 
         // Clear unused resources when unloading a map to tidy up
         ResourceManager.ClearUnusedResources();
+        ModelDataHelper.ClearEntry(Editor, MapID);
 
         Editor.EntityTypeCache.RemoveMapFromCache(this);
 
