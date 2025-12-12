@@ -1,6 +1,7 @@
 ﻿using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,6 +46,18 @@ public class MapSelection
         if (targetMap.Value != null && targetMap.Value.MapContainer != null)
         {
             return targetMap.Value.MapContainer;
+        }
+
+        return null;
+    }
+
+    public FileDictionaryEntry GetFileEntryFromMapID(string mapID)
+    {
+        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+
+        if (targetMap.Value != null)
+        {
+            return targetMap.Key;
         }
 
         return null;

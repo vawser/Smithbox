@@ -469,15 +469,16 @@ public class CloneMapObjectsAction : ViewportAction
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
+    private readonly bool Silent = false;
 
-    public CloneMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, bool setSelection,
-        MapContainer targetMap = null, Entity targetBTL = null)
+    public CloneMapObjectsAction(MapEditorScreen editor, List<MsbEntity> objects, bool setSelection, MapContainer targetMap = null, Entity targetBTL = null, bool silent = false)
     {
         Editor = editor;
         Clonables.AddRange(objects);
         SetSelection = setSelection;
         TargetMap = targetMap;
         TargetBTL = targetBTL;
+        Silent = silent;
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -493,8 +494,11 @@ public class CloneMapObjectsAction : ViewportAction
         {
             if (Clonables[i].MapID == null)
             {
-                TaskLogs.AddLog($"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
-                    LogLevel.Warning);
+                if (!Silent)
+                {
+                    TaskLogs.AddLog($"Failed to dupe {Clonables[i].Name}, as it had no defined MapID",
+                        LogLevel.Warning);
+                }
                 continue;
             }
 

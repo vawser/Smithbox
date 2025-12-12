@@ -50,8 +50,7 @@ public class ResourceJobBuilder
         {
             archivesToLoad.Add(virtualPath);
             _job.AddLoadBinderResources(
-                new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets, isPersistent)
-                , isPersistent);
+                new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, ResourceType.All, assets));
         }
     }
 
@@ -82,8 +81,7 @@ public class ResourceJobBuilder
         {
             archivesToLoad.Add(virtualPath);
             _job.AddLoadBinderResources(
-                new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets, isPersistent)
-                , isPersistent);
+                new LoadBinderResourcesAction(_job, virtualPath, al, populateOnly, filter, assets));
         }
     }
 
@@ -137,7 +135,8 @@ public class ResourceJobBuilder
                 }
             }
 
-            _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, relativePath, al), true);
+            _job.AddLoadTPFResources(new LoadTPFResourcesAction(
+                _job, virt, relativePath, al));
 
             return;
         }
@@ -146,7 +145,8 @@ public class ResourceJobBuilder
             pipeline = _job.FlverLoadPipeline;
         }
 
-        pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(virtualPath, relativePath, al));
+        pipeline.LoadFileResourceRequest.Post(new LoadFileResourceRequest(
+            virtualPath, relativePath, al));
     }
 
     /// <summary>
@@ -186,7 +186,9 @@ public class ResourceJobBuilder
         {
             var virt = virtualPath;
 
-            _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job, virt, absPath, al), true);
+            _job.AddLoadTPFResources(new LoadTPFResourcesAction(
+                _job, virt, absPath, al));
+
             return;
         }
         else

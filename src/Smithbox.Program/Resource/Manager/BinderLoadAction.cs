@@ -16,26 +16,30 @@ namespace StudioCore.Resource;
 public class LoadBinderResourcesAction
 {
     public readonly object ProgressLock = new();
+
     public ResourceJob _job;
-    public AccessLevel AccessLevel = AccessLevel.AccessGPUOptimizedOnly;
+    public BinderReader Binder;
     public HashSet<string> AssetWhitelist;
-    public RefCount<BinderReader> Binder;
     public HashSet<int> BinderLoadMask = null;
-    public string BinderVirtualPath;
-    public string BinderRelativePath;
     public List<Task> LoadingTasks = new();
 
-    public List<Tuple<IResourceLoadPipeline, string, RefCount<BinderFileHeader>>> PendingResources = new();
-    public List<Tuple<string, RefCount<BinderFileHeader>, bool>> PendingTPFs = new();
-    public bool PopulateResourcesOnly;
-    public ResourceType ResourceMask = ResourceType.All;
+    public List<Tuple<IResourceLoadPipeline, string, BinderFileHeader>> PendingResources = new();
+
+    public List<Tuple<string, BinderFileHeader>> PendingTPFs = new();
+
     public List<int> TaskProgress = new();
     public List<int> TaskSizes = new();
+
+    public AccessLevel AccessLevel = AccessLevel.AccessGPUOptimizedOnly;
+    public ResourceType ResourceMask = ResourceType.All;
+
+    public bool PopulateResourcesOnly;
     public int TotalSize = 0;
 
-    public bool PersistentTPF = false;
+    public string BinderVirtualPath;
+    public string BinderRelativePath;
 
-    public LoadBinderResourcesAction(ResourceJob job, string virtpath, AccessLevel accessLevel, bool populateOnly, ResourceType mask, HashSet<string> whitelist, bool isPersistentTPF = false)
+    public LoadBinderResourcesAction(ResourceJob job, string virtpath, AccessLevel accessLevel, bool populateOnly, ResourceType mask, HashSet<string> whitelist)
     {
         _job = job;
         BinderVirtualPath = virtpath;
@@ -43,7 +47,6 @@ public class LoadBinderResourcesAction
         ResourceMask = mask;
         AssetWhitelist = whitelist;
         AccessLevel = accessLevel;
-        PersistentTPF = isPersistentTPF;
     }
 
     public void ProcessBinder()
@@ -112,11 +115,11 @@ public class LoadBinderResourcesAction
                         or ProjectType.DS1
                         or ProjectType.DS1R)
                     {
-                        Binder = new(new BXF3Reader(bhd, bdt));
+                        Binder = new BXF3Reader(bhd, bdt);
                     }
                     else
                     {
-                        Binder = new(new BXF4Reader(bhd, bdt));
+                        Binder = new BXF4Reader(bhd, bdt);
                     }
                 }
             }
@@ -148,11 +151,11 @@ public class LoadBinderResourcesAction
                         or ProjectType.DS1
                         or ProjectType.DS1R)
                     {
-                        Binder = new(new BND3Reader(binder));
+                        Binder = new BND3Reader(binder);
                     }
                     else
                     {
-                        Binder = new(new BND4Reader(binder));
+                        Binder = new BND4Reader(binder);
                     }
                 }
             }
@@ -161,15 +164,13 @@ public class LoadBinderResourcesAction
         if (Binder == null)
             return;
 
-        var b = Binder.Value;
-
-        if (b == null)
+        if (Binder == null)
             return;
 
         // Iterate through each file in the binder
-        for (var i = 0; i < b.Files.Count(); i++)
+        for (var i = 0; i < Binder.Files.Count(); i++)
         {
-            var f = new ChildResource<BinderReader, BinderFileHeader>(Binder.Ref(), b.Files[i]);
+            BinderFileHeader header = Binder.Files[i];
 
             // Skip entry if entry ID is not in binder load mask (if defined)
             if (BinderLoadMask != null && !BinderLoadMask.Contains(i))
@@ -179,7 +180,8 @@ public class LoadBinderResourcesAction
 
             // Append internal filename to the BinderVirtualPath
             var curFileBinderPath = BinderVirtualPath;
-            var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Value.Name.Replace('\\', Path.DirectorySeparatorChar)}.blah");
+            var curBinderFilename = Path.GetFileNameWithoutExtension(
+                $@"{header.Name.Replace('\\', Path.DirectorySeparatorChar)}.blah");
 
             if (curBinderFilename.Length > 0)
                 curFileBinderPath = $@"{BinderVirtualPath}/{curBinderFilename}";
@@ -212,7 +214,7 @@ public class LoadBinderResourcesAction
                     }
                 }
 
-                PendingTPFs.Add((bndvirt, (RefCount<BinderFileHeader>)f, PersistentTPF).ToTuple());
+                PendingTPFs.Add((bndvirt, header).ToTuple());
 
                 //ResourceLog.AddLog($"ProcessBinder - PendingTPFs: {curFileBinderPath}");
             }
@@ -267,7 +269,7 @@ public class LoadBinderResourcesAction
                 if (pipeline != null)
                 {
 
-                    PendingResources.Add((pipeline, curFileBinderPath, (RefCount<BinderFileHeader>)f).ToTuple());
+                    PendingResources.Add((pipeline, curFileBinderPath, header).ToTuple());
 
                     //ResourceLog.AddLog($"ProcessBinder - PendingResources: {curFileBinderPath}");
                 }

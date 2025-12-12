@@ -61,10 +61,6 @@ public interface IResourceHandle
 
     public bool IsLoaded();
 
-    public bool IsPersistent();
-
-    public void UnloadPersistent();
-
 
 }
 
@@ -83,10 +79,6 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     protected int ReferenceCount;
 
-    /// <summary>
-    /// Mark resources that shouldn't be unloaded automatically
-    /// </summary>
-    public bool Persistent { get; protected set; }
     public bool IsLoaded { get; protected set; }
     public AccessLevel AccessLevel { get; protected set; } = AccessLevel.AccessUnloaded;
 
@@ -97,10 +89,9 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     protected T Resource;
 
-    public ResourceHandle(string virtualPath, bool isPersistent = false)
+    public ResourceHandle(string virtualPath)
     {
         AssetVirtualPath = virtualPath;
-        Persistent = isPersistent;
     }
 
     /// <summary>
@@ -180,7 +171,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
 
     public void UnloadIfUnused()
     {
-        if (ReferenceCount <= 0 && !Persistent)
+        if (ReferenceCount <= 0)
         {
             ResourceManager.UnloadResource(this, true);
         }
@@ -189,19 +180,6 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     bool IResourceHandle.IsLoaded()
     {
         return IsLoaded;
-    }
-
-    bool IResourceHandle.IsPersistent()
-    {
-        return Persistent;
-    }
-
-    public void UnloadPersistent()
-    {
-        if (Persistent)
-        {
-            ResourceManager.UnloadResource(this, true);
-        }
     }
 
     public int GetReferenceCounts()
@@ -223,46 +201,20 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     public void Release(bool force = false)
     {
         var unload = false;
-
-        // Original
-        /*
         ReferenceCount--;
-        if (ReferenceCount < 0)
-        {
-            throw new Exception($@"Resource {AssetVirtualPath} reference count already 0");
-        }
-        */
-
-        // New section
-        if (ReferenceCount < 0 && !Persistent)
-        {
-            ResourceManager.UnloadResource(this, true);
-            return;
-            //throw new Exception($@"Resource {AssetVirtualPath} reference count already 0");
-        }
-        else
-        {
-            if(ReferenceCount >= 0)
-                ReferenceCount--;
-        }
-
-        // Original
         if (ReferenceCount == 0 && IsLoaded)
         {
             unload = true;
         }
 
+        if (ReferenceCount < 0)
+        {
+            //TaskLogs.AddLog($@"Resource {AssetVirtualPath} reference count already 0", Microsoft.Extensions.Logging.LogLevel.Error);
+        }
+
         if (unload)
         {
             ResourceManager.UnloadResource(this, true);
-        }
-
-        if(force)
-        {
-            ResourceManager.UnloadResource(this, true);
-
-            if (ReferenceCount >= 0)
-                ReferenceCount--;
         }
     }
 
@@ -280,7 +232,7 @@ public class ResourceHandle<T> : IResourceHandle where T : class, IResource, IDi
     /// <returns></returns>
     public static ResourceHandle<T> TempHandleFromResource(T res)
     {
-        var ret = new ResourceHandle<T>("temp", false);
+        var ret = new ResourceHandle<T>("temp");
         ret.AccessLevel = AccessLevel.AccessFull;
         ret.IsLoaded = true;
         ret.Resource = res;

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Org.BouncyCastle.Crypto;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -295,14 +296,16 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 {
                     if (loadType is MapContentLoadState.Loaded)
                     {
-                        if (wrapper.MapContainer != null)
+                        if (wrapper.MapContainer != null && 
+                            wrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
                         {
                             filteredEntries.Add(entry.Value);
                         }
                     }
                     else if (loadType is MapContentLoadState.Unloaded)
                     {
-                        if (wrapper.MapContainer == null)
+                        if (wrapper.MapContainer == null || 
+                            wrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
                         {
                             filteredEntries.Add(entry.Value);
                         }
@@ -313,14 +316,16 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             {
                 if (loadType is MapContentLoadState.Loaded)
                 {
-                    if (wrapper.MapContainer != null)
+                    if (wrapper.MapContainer != null &&
+                        wrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
                     {
                         filteredEntries.Add(entry.Value);
                     }
                 }
                 else if (loadType is MapContentLoadState.Unloaded)
                 {
-                    if (wrapper.MapContainer == null)
+                    if (wrapper.MapContainer == null ||
+                        wrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
                     {
                         filteredEntries.Add(entry.Value);
                     }
@@ -396,7 +401,8 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         if (ImGui.BeginPopupContextItem($@"mapListEntryContext_{mapWrapper.Name}"))
         {
             // Unloaded Map
-            if (mapWrapper.MapContainer == null)
+            if (mapWrapper.MapContainer == null ||
+                mapWrapper.MapContainer.LoadState is MapContentLoadState.Unloaded)
             {
                 // Load Map
                 if (ImGui.Selectable("Load Map"))
@@ -406,7 +412,8 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
 
             // Loaded Map
-            if (mapWrapper.MapContainer != null)
+            if (mapWrapper.MapContainer != null &&
+                mapWrapper.MapContainer.LoadState is MapContentLoadState.Loaded)
             {
                 // Save Map
                 if (ImGui.Selectable("Save Map"))

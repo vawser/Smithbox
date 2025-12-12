@@ -18,7 +18,7 @@ public struct LoadTPFResourcesAction
     /// <summary>
     /// Virtual resource path used for this TPF
     /// </summary>
-    public string _virtpathbase = null;
+    public string _virtualPath = null;
 
     /// <summary>
     /// TPF container
@@ -35,18 +35,18 @@ public struct LoadTPFResourcesAction
     /// </summary>
     public AccessLevel _accessLevel = AccessLevel.AccessGPUOptimizedOnly;
 
-    public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, TPF tpf, AccessLevel al)
+    public LoadTPFResourcesAction(ResourceJob job, string virtualPath, TPF tpf, AccessLevel al)
     {
         _job = job;
-        _virtpathbase = virtpathbase;
+        _virtualPath = virtualPath;
         _tpf = tpf;
         _accessLevel = al;
     }
 
-    public LoadTPFResourcesAction(ResourceJob job, string virtpathbase, string filePath, AccessLevel al)
+    public LoadTPFResourcesAction(ResourceJob job, string virtualPath, string filePath, AccessLevel al)
     {
         _job = job;
-        _virtpathbase = virtpathbase;
+        _virtualPath = virtualPath;
         _filePath = filePath;
         _accessLevel = al;
     }

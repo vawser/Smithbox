@@ -19,7 +19,6 @@ namespace StudioCore.Resource;
 /// </summary>
 public class ResourceJob
 {
-    // PIPELINE: holds all the Load Binder Resources actions for processing.
     private readonly ActionBlock<LoadBinderResourcesAction> _loadBinderResources;
 
     private readonly TransformManyBlock<LoadTPFResourcesAction, LoadTPFTextureResourceRequest>
@@ -32,9 +31,9 @@ public class ResourceJob
     public ResourceJob(string name)
     {
         Name = name;
-        IsPersistent = false;
 
-        ExecutionDataflowBlockOptions options = new() { MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
+        ExecutionDataflowBlockOptions options = new() { 
+            MaxDegreeOfParallelism = DataflowBlockOptions.Unbounded };
 
         _loadTPFResources = new TransformManyBlock<LoadTPFResourcesAction, LoadTPFTextureResourceRequest>(LoadTPFResources, options);
 
@@ -47,15 +46,16 @@ public class ResourceJob
         HavokCollisionLoadPipeline = new ResourceLoadPipeline<HavokCollisionResource>(_processedResources);
 
         HavokNavmeshLoadPipeline = new ResourceLoadPipeline<HavokNavmeshResource>(_processedResources);
+
         NVMNavmeshLoadPipeline = new ResourceLoadPipeline<NVMNavmeshResource>(_processedResources);
+
         TPFTextureLoadPipeline = new TextureLoadPipeline(_processedResources);
+
         _loadTPFResources.LinkTo(TPFTextureLoadPipeline.LoadTPFTextureResourceRequest);
     }
 
     public string Name { get; }
     public int Progress { get; private set; }
-
-    public bool IsPersistent { get; private set; }
 
     // Asset load pipelines
     internal IResourceLoadPipeline FlverLoadPipeline { get; }
@@ -82,9 +82,8 @@ public class ResourceJob
     }
 
     #region TPF Resource
-    internal void AddLoadTPFResources(LoadTPFResourcesAction action, bool isPersistent = false)
+    internal void AddLoadTPFResources(LoadTPFResourcesAction action)
     {
-        IsPersistent = isPersistent;
         _loadTPFResources.Post(action);
     }
 
@@ -96,7 +95,7 @@ public class ResourceJob
         if (action._tpf == null)
         {
             // External
-            if (action._virtpathbase.Contains("smithbox"))
+            if (action._virtualPath.Contains("smithbox"))
             {
                 if (File.Exists(action._filePath))
                 {
@@ -107,7 +106,7 @@ public class ResourceJob
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
                         return new LoadTPFTextureResourceRequest[] { };
                     }
@@ -125,7 +124,7 @@ public class ResourceJob
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtpathbase}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
+                        TaskLogs.AddLog($"Failed to load TPF:\nFile path: {action._filePath}\nVirtual path: {action._virtualPath}\nAccess Level: {action._accessLevel}\n{e}", LogLevel.Warning, LogPriority.Normal);
 
                         return new LoadTPFTextureResourceRequest[] { };
                     }
@@ -142,12 +141,9 @@ public class ResourceJob
         {
             TPF.Texture tex = tpf.Textures[i];
 
-            if (project != null)
-            {
-                ret[i] = new LoadTPFTextureResourceRequest(
-                    $@"{action._virtpathbase}/{tex.Name}", 
-                    tpf, i, action._accessLevel);
-            }
+            ret[i] = new LoadTPFTextureResourceRequest(
+                $@"{action._virtualPath}/{tex.Name}",
+                tpf, i, action._accessLevel);
         }
 
         action._tpf = null;
@@ -157,9 +153,8 @@ public class ResourceJob
     #endregion
 
     #region Binder Resource
-    internal void AddLoadBinderResources(LoadBinderResourcesAction action, bool isPersistent = false)
+    internal void AddLoadBinderResources(LoadBinderResourcesAction action)
     {
-        IsPersistent = isPersistent;
         _courseSize++;
         _loadBinderResources.Post(action);
     }
@@ -169,7 +164,7 @@ public class ResourceJob
         try
         {
             action.ProcessBinder();
-            var b = action.Binder;
+
             if (!action.PopulateResourcesOnly)
             {
                 var doasync = action.PendingResources.Count() + action.PendingTPFs.Count() > 1;
@@ -184,12 +179,10 @@ public class ResourceJob
 
                     i++;
 
-                    Memory<byte> binderData = action.Binder.Value.ReadFile(binder.Value);
-
-                    var child = new ChildResource<BinderReader, Memory<byte>>(action.Binder.Ref(), binderData);
+                    Memory<byte> binderData = action.Binder.ReadFile(binder);
 
                     // PIPELINE: create request to load resource from bytes
-                    var request = new LoadByteResourceRequest(virtualPath, child, action.AccessLevel);
+                    var request = new LoadByteResourceRequest(virtualPath, binderData, action.AccessLevel);
 
                     // PIPELINE: add request to pipeline action block
                     pipeline.LoadByteResourceBlock.Post(request);
@@ -204,16 +197,15 @@ public class ResourceJob
                 {
                     var tpfName = t.Item1;
                     var binder = t.Item2;
-                    var isPersistent = t.Item3;
                     i++;
 
                     try
                     {
-                        TPF tpf = TPF.Read(action.Binder.Value.ReadFile(binder.Value));
+                        TPF tpf = TPF.Read(action.Binder.ReadFile(binder));
 
                         var request = new LoadTPFResourcesAction(action._job, tpfName, tpf, action.AccessLevel);
 
-                        action._job.AddLoadTPFResources(request, isPersistent);
+                        action._job.AddLoadTPFResources(request);
                     }
                     catch (Exception e)
                     {
@@ -241,25 +233,6 @@ public class ResourceJob
                             LogLevel.Warning, LogPriority.Normal);
         }
 
-        if (action.Binder != null)
-        {
-            // We always want to dispose when using the Model Editor (so we can save the container), so we ignore the refcount logic
-
-            var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
-
-            if (curProject != null)
-            {
-                if (curProject.FocusedEditor is ModelEditorScreen)
-                {
-                    action.Binder.Dispose(true);
-                }
-                else
-                {
-                    action.Binder.Dispose();
-                }
-            }
-        }
-
         action.PendingResources.Clear();
         action.Binder = null;
     }
@@ -281,8 +254,7 @@ public class ResourceJob
                         lPath,
                         ResourceManager.ConstructHandle(
                             p.Resource.GetType(),
-                            p.VirtualPath,
-                            IsPersistent)
+                            p.VirtualPath)
                         );
                 }
 
@@ -296,9 +268,6 @@ public class ResourceJob
     {
         return ResourceManager.JobTaskFactory.StartNew(() =>
         {
-            // HINT:
-            // Add timeout duration to Wait() if hang issues occur to allow exception to filter up
-
             // PIPELINE: complete all Load Binder Resources actions within the ActionBlock
             _loadBinderResources.Complete();
 

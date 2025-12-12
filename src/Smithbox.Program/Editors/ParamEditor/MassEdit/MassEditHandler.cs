@@ -404,7 +404,9 @@ public class MassEditHandler
 
             UIHelper.WrappedText("Script:");
             UIHelper.Tooltip("The mass edit script.");
+
             ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
+
             UIHelper.WrappedText("");
 
             if (ImGui.Button("Save", DPI.HalfWidthButton(windowWidth, 24)))

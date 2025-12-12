@@ -9,7 +9,7 @@ namespace StudioCore.Resource;
 
 public readonly record struct LoadByteResourceRequest(
     string VirtualPath,
-    RefCount<Memory<byte>> Data,
+    Memory<byte> Data,
     AccessLevel AccessLevel);
 
 public readonly record struct LoadFileResourceRequest(
@@ -35,11 +35,6 @@ public interface IResourceLoadPipeline
     public ITargetBlock<LoadTPFTextureResourceRequest> LoadTPFTextureResourceRequest { get; }
 }
 
-// PIPELINE: resolve processed resources for:
-// - FlverResource
-// - HavokCollisionResource
-// - HavokNavmeshResource
-// - NVMNavmeshResource
 public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IResource, new()
 {
     private readonly ActionBlock<LoadByteResourceRequest> _loadByteResourcesTransform;
@@ -53,17 +48,15 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
         options.MaxDegreeOfParallelism = 6;
         _loadedResources = target;
 
-        // PIPELINE: Byte Requests
+        // Byte Requests
         _loadByteResourcesTransform = new ActionBlock<LoadByteResourceRequest>(r =>
         {
             try
             {
                 var res = new T();
 
-                // PIPELINE: Load the byte resource (as the <T> type)
-                var success = res._Load(r.Data.Value, r.AccessLevel, r.VirtualPath);
+                var success = res._Load(r.Data, r.AccessLevel, r.VirtualPath);
 
-                // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
                 if (success)
                 {
                     var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
@@ -73,22 +66,20 @@ public class ResourceLoadPipeline<T> : IResourceLoadPipeline where T : class, IR
             }
             catch(Exception ex)
             {
-                TaskLogs.AddLog($"Resource pipeline load error:\nFile path request\nValue: {r.Data.Value}\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{ex}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
+                TaskLogs.AddLog($"Resource pipeline load error:\nFile path request\nValue: {r.Data}\nAccess Level: {r.AccessLevel}\nVirtual Path: {r.VirtualPath}\n{ex}", Microsoft.Extensions.Logging.LogLevel.Warning, LogPriority.Low);
             }
-            r.Data.Dispose();
+
         }, options);
 
-        // PIPELINE: File Requests
+        // File Requests
         _loadFileResourcesTransform = new ActionBlock<LoadFileResourceRequest>(r =>
         {
             try
             {
                 var res = new T();
 
-                // PIPELINE: Load the byte resource (as the <T> type)
                 var success = res._Load(r.File, r.AccessLevel, r.VirtualPath);
 
-                // PIPELINE: If resource is loaded successful, add reply to Loaded Resource block
                 if (success)
                 {
                     var request = new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res);
@@ -131,13 +122,15 @@ public class TextureLoadPipeline : IResourceLoadPipeline
         var options = new ExecutionDataflowBlockOptions();
         options.MaxDegreeOfParallelism = 6;
         _loadedResources = target;
+
         _loadTPFResourcesTransform = new ActionBlock<LoadTPFTextureResourceRequest>(r =>
         {
             var res = new TextureResource(r.Tpf, r.Index);
             var success = res._LoadTexture(r.AccessLevel);
             if (success)
             {
-                _loadedResources.Post(new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
+                _loadedResources.Post(
+                    new ResourceLoadedReply(r.VirtualPath, r.AccessLevel, res));
             }
         }, options);
     }

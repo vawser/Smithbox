@@ -21,11 +21,6 @@ public class TextureResource : IResource, IDisposable
     }
 
     /// <summary>
-    /// Denotes whether this resource can be re-assigned (for Icon Preview)
-    /// </summary>
-    public bool Locked { get; set; }
-
-    /// <summary>
     /// Denotes the sub-texture this resource uses (for Icon Preview)
     /// </summary>
     public SubTexture SubTexture { get; set; }

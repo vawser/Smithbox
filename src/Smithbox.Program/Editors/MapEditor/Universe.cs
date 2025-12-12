@@ -1,10 +1,12 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
+using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Formats.JSON;
@@ -103,29 +105,62 @@ public class Universe
         return true;
     }
 
+    public void UnloadMap(string mapID, bool clearFromList = false)
+    {
+        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.EditorActionManager.Clear();
+
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
+        {
+            var curMapID = entry.Key.Filename;
+
+            if (curMapID == mapID)
+            {
+                var wrapper = entry.Value;
+
+                ResourceManager.ClearUnusedResources();
+                ModelDataHelper.ClearEntry(Editor, wrapper.MapContainer);
+
+                Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
+
+                Editor.CollisionManager.OnUnloadMap(curMapID);
+                Editor.AutoInvadeManager.OnUnloadMap(curMapID);
+                Editor.HavokNavmeshManager.OnUnloadMap(curMapID);
+
+                if (Editor.Selection.SelectedMapContainer == wrapper.MapContainer)
+                {
+                    Editor.Selection.SelectedMapID = "";
+                    Editor.Selection.SelectedMapContainer = null;
+                }
+
+                wrapper.MapContainer.LoadState = MapContentLoadState.Unloaded;
+                wrapper.MapContainer.Unload();
+                wrapper.MapContainer.Clear();
+                wrapper.MapContainer = null;
+            }
+        }
+
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        GC.Collect();
+    }
+
+    public string ModelDataMapID { get; set; }
+
     /// <summary>
     /// Load a map asynchronously based on the passed map ID
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        var map = Editor.Selection.GetMapContainerFromMapID(mapid);
+        var fileEntry = Editor.Selection.GetFileEntryFromMapID(mapid);
+        var existingMap = Editor.Selection.GetMapContainerFromMapID(mapid);
 
-        if (map != null)
+        if (existingMap != null && existingMap.LoadState is MapContentLoadState.Loaded)
         {
             TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
             return;
         }
-
-        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
-        var wrapper = targetMap.Value;
-
-        if (wrapper.MapContainer == null)
-        {
-            wrapper.MapContainer = new MapContainer(Editor, mapid);
-        }
-
-        map = wrapper.MapContainer;
 
         if (!fastLoad)
         {
@@ -137,17 +172,20 @@ public class Universe
         {
             HasProcessedMapLoad = false;
 
+            var newMap = new MapContainer(Editor, mapid);
+
+            ModelDataMapID = newMap.Name;
+            ModelDataHelper.AddEntry(Editor, newMap);
+
             Editor.DisplayGroupTool.SetupDrawgroupCount();
 
             MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
 
-            // Read the MSB
             await resourceHandler.ReadMap(mapid);
 
             if (resourceHandler.Msb != null)
             {
-                // Load the map into the MapContainer
-                map.LoadMSB(resourceHandler.Msb);
+                newMap.LoadMSB(resourceHandler.Msb);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -159,12 +197,12 @@ public class Universe
 
                     resourceHandler.SetupModelLoadLists();
                     resourceHandler.SetupTexturelLoadLists();
-                    resourceHandler.SetupModelMasks(map);
+                    resourceHandler.SetupModelMasks(newMap);
                 }
 
-                LoadLights(map);
-                Editor.AutoInvadeManager.LoadAIP(map);
-                Editor.HavokNavmeshManager.LoadHavokNVA(map, resourceHandler);
+                LoadLights(newMap);
+                Editor.AutoInvadeManager.LoadAIP(newMap);
+                Editor.HavokNavmeshManager.LoadHavokNVA(newMap, resourceHandler);
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -177,7 +215,7 @@ public class Universe
                         if (MapConnections_ER.GetMapTransform(Editor, mapid) is Transform
                             loadTransform)
                         {
-                            map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                            newMap.RootObject.GetUpdateTransformAction(loadTransform).Execute();
                         }
                     }
 
@@ -186,10 +224,13 @@ public class Universe
                         if (MapConnections_NR.GetMapTransform(Editor, mapid) is Transform
                             loadTransform)
                         {
-                            map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                            newMap.RootObject.GetUpdateTransformAction(loadTransform).Execute();
                         }
                     }
                 }
+
+                Project.MapData.PrimaryBank.Maps[fileEntry].MapContainer = newMap;
+                newMap.LoadState = MapContentLoadState.Loaded;
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
@@ -198,20 +239,20 @@ public class Universe
                     if (selectOnLoad)
                     {
                         Selection.ClearSelection(Editor);
-                        Selection.AddSelection(Editor, map.RootObject);
+                        Selection.AddSelection(Editor, newMap.RootObject);
                     }
                 }
 
                 if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
                 {
-                    LoadDS2Generators(resourceHandler.AdjustedMapID, map);
+                    LoadDS2Generators(resourceHandler.AdjustedMapID, newMap);
                 }
 
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    Tasks = resourceHandler.LoadTextures(Tasks, map);
+                    Tasks = resourceHandler.LoadTextures(Tasks, newMap);
                     await Task.WhenAll(Tasks);
-                    Tasks = resourceHandler.LoadModels(Tasks, map);
+                    Tasks = resourceHandler.LoadModels(Tasks, newMap);
                     await Task.WhenAll(Tasks);
 
                     ScheduleTextureRefresh();
@@ -224,25 +265,31 @@ public class Universe
                 if (CFG.Current.Viewport_Enable_Rendering)
                 {
                     // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
-                    foreach (Entity obj in map.Objects)
+                    foreach (Entity obj in newMap.Objects)
                     {
                         obj.UpdateRenderModel(Editor);
                     }
                 }
 
                 // Check for duplicate EntityIDs
-                CheckDupeEntityIDs(map);
+                CheckDupeEntityIDs(newMap);
 
                 // Set the map transform to the saved position, rotation and scale.
                 //map.LoadMapTransform();
 
+                // HACK: this fixes the weird ghost state between the viewport and content list
+                CloneMapObjectsAction action = new(
+                    Editor, 
+                    new List<MsbEntity>(){ (MsbEntity)newMap.RootObject }, false,
+                    null, null, true);
+
+                Editor.EditorActionManager.ExecuteAction(action);
+
                 if (selectOnLoad)
                 {
                     Editor.Selection.SelectedMapID = mapid;
-                    Editor.Selection.SelectedMapContainer = map;
+                    Editor.Selection.SelectedMapContainer = newMap;
                 }
-
-                ModelDataHelper.AddEntry(Editor, mapid);
             }
         }
         catch (Exception e)
@@ -1061,40 +1108,6 @@ public class Universe
             if (entry.Value.MapContainer != null)
             {
                 SaveMap(entry.Value.MapContainer);
-            }
-        }
-    }
-
-    public void UnloadMap(string mapID, bool clearFromList = false)
-    {
-        Editor.ViewportSelection.ClearSelection(Editor);
-        Editor.EditorActionManager.Clear();
-
-        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
-        {
-            var curMapID = entry.Key.Filename;
-
-            if (curMapID == mapID)
-            {
-                var wrapper = entry.Value;
-
-                ResourceManager.ClearUnusedResources();
-                ModelDataHelper.ClearEntry(Editor, mapID);
-
-                Editor.EntityTypeCache.RemoveMapFromCache(wrapper.MapContainer);
-
-                Editor.CollisionManager.OnUnloadMap(curMapID);
-                Editor.AutoInvadeManager.OnUnloadMap(curMapID);
-                Editor.HavokNavmeshManager.OnUnloadMap(curMapID);
-
-                if(Editor.Selection.SelectedMapContainer == wrapper.MapContainer)
-                {
-                    Editor.Selection.SelectedMapID = "";
-                    Editor.Selection.SelectedMapContainer = null;
-                }
-
-                wrapper.MapContainer.Unload();
-                wrapper.MapContainer = null;
             }
         }
     }

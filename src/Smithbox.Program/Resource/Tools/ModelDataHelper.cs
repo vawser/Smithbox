@@ -21,20 +21,19 @@ public static class ModelDataHelper
     public static ModelDataEntry SelectedDataEntry { get; set; }
     public static FlverDataEntry SelectedFlverEntry { get; set; }
 
-    public static void AddEntry(MapEditorScreen editor, string mapId)
+    public static void AddEntry(MapEditorScreen editor, MapContainer map)
     {
-        if(!Entries.ContainsKey(mapId))
+        if(!Entries.ContainsKey(map.Name))
         {
-            var curMap = editor.Selection.GetMapContainerFromMapID(mapId);
-            Entries.Add(mapId, new ModelDataEntry(mapId, curMap));
+            Entries.Add(map.Name, new ModelDataEntry(map.Name, map));
         }
     }
 
-    public static void ClearEntry(MapEditorScreen editor, string mapId)
+    public static void ClearEntry(MapEditorScreen editor, MapContainer map)
     {
-        if (Entries.ContainsKey(mapId))
+        if (Entries.ContainsKey(map.Name))
         {
-            Entries.Remove(mapId);
+            Entries.Remove(map.Name);
         }
     }
 
@@ -45,12 +44,12 @@ public static class ModelDataHelper
         var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
         var textureName = Path.GetFileName(texVirtPath);
 
-        if (project.MapEditor.Selection.SelectedMapID == null)
+        if (project.MapEditor.Universe.ModelDataMapID == null)
             return;
 
-        if (Entries.ContainsKey(project.MapEditor.Selection.SelectedMapID))
+        if (Entries.ContainsKey(project.MapEditor.Universe.ModelDataMapID))
         {
-            var entry = Entries[project.MapEditor.Selection.SelectedMapID];
+            var entry = Entries[project.MapEditor.Universe.ModelDataMapID];
 
             if(!entry.Models.Any(e => e.Name == flverName))
             {

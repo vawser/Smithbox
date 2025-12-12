@@ -55,7 +55,7 @@ public static class ResourceManager
         return ActiveJobProgress;
     }
 
-    public static IResourceHandle ConstructHandle(Type t, string virtualpath, bool isPersistent = false)
+    public static IResourceHandle ConstructHandle(Type t, string virtualpath)
     {
         if (t == typeof(FlverResource))
         {
@@ -79,7 +79,7 @@ public static class ResourceManager
 
         if (t == typeof(TextureResource))
         {
-            return new ResourceHandle<TextureResource>(virtualpath, isPersistent);
+            return new ResourceHandle<TextureResource>(virtualpath);
         }
 
         throw new Exception("Unhandled resource type");
@@ -138,14 +138,6 @@ public static class ResourceManager
                CheckAccessLevel(al, ResourceDatabase[lResourceName].AccessLevel);
     }
 
-    public static void RemoveResource(string resourceName)
-    {
-        if(ResourceDatabase.ContainsKey(resourceName))
-        {
-            ResourceDatabase[resourceName].Release(true);
-        }
-    }
-
     public static void UnloadResource(IResourceHandle resource, bool unloadOnlyIfUnused)
     {
         _unloadRequests.Post(new UnloadResourceRequest(resource, unloadOnlyIfUnused));
@@ -165,11 +157,13 @@ public static class ResourceManager
     {
         // Process any resource notification requests
         var res = _notificationRequests.TryReceiveAll(out IList<AddResourceLoadNotificationRequest> requests);
+
         if (res)
         {
             foreach (AddResourceLoadNotificationRequest r in requests)
             {
                 var lResourceName = r.ResourceVirtualPath.ToLower();
+
                 if (!ResourceDatabase.ContainsKey(lResourceName))
                 {
                     ResourceDatabase.Add(lResourceName, ConstructHandle(r.Type, r.ResourceVirtualPath));
@@ -228,9 +222,7 @@ public static class ResourceManager
             if (Renderer.GeometryBufferAllocator != null &&
                 Renderer.GeometryBufferAllocator.HasStagingOrPending())
             {
-                Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Flush Staging buffer");
                 Renderer.GeometryBufferAllocator.FlushStaging(true);
-                Tracy.TracyCZoneEnd(ctx);
             }
 
             if (_schedulePostTextureLoad)
