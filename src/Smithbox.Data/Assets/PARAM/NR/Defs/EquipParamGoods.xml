@@ -785,11 +785,8 @@
       <Maximum>999</Maximum>
       <SortID>1605</SortID>
     </Field>
-    <Field Def="dummy8 reserve5[2]">
-      <DisplayName>予約領域</DisplayName>
-      <Description>予約領域</Description>
-      <SortID>100006</SortID>
-    </Field>
+    <Field Def="s8 bagcraftMaxNum" />
+	<Field Def="u8 bagcraftCategory" />
     <Field Def="u32 itemGetTutorialFlagId">
       <DisplayName>アイテム入手チュートリアル判定フラグID</DisplayName>
       <Description>初めてアイテム入手した時のチュートリアル用のイベントフラグID。アイテム入手時にフラグON。</Description>
@@ -799,7 +796,7 @@
     </Field>
     
     <Field Def="s32 characterInitId" />
-    <Field Def="s32 bulletId" />
+    <Field Def="s32 itemConferBulletId" />
     
     <Field Def="s32 unknown_3" />
     
@@ -809,20 +806,20 @@
       <SortID>100007</SortID>
     </Field>
     
-    <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_01" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_02" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_03" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_04" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_05_bulletId" FirstVersion="10310025"/>
+    <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10310025"/>
+    <Field Def="s32 level2RefId" FirstVersion="10310025"/>
+    <Field Def="s32 level2RefId_1" FirstVersion="10310025"/>
+    <Field Def="s32 level3RefId" FirstVersion="10310025"/>
+    <Field Def="s32 level3RefId_1" FirstVersion="10310025"/>
+    <Field Def="s32 level2_itemConferBulletId" FirstVersion="10310025"/>
     
     <Field Def="s32 fh_unknown_06" FirstVersion="10310025"/>
     
-    <Field Def="s32 fh_unknown_07_bulletId" FirstVersion="10310025"/>
+    <Field Def="s32 level3_itemConferBulletId" FirstVersion="10310025"/>
     
     <Field Def="s32 fh_unknown_08" FirstVersion="10310025"/>
     
-    <Field Def="u16 fh_unknown_09a" FirstVersion="10310025"/>
+    <Field Def="u16 bagcraftCategoryXp" FirstVersion="10310025"/>
     <Field Def="u16 fh_unknown_09c" FirstVersion="10310025"/>
     
     <Field Def="dummy8 fh_unknown_10[4]" FirstVersion="10310025"/>

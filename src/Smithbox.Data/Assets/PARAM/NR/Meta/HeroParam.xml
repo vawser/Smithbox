@@ -77,9 +77,9 @@
     Wiki=""
     Refs="HeroStatusParam" />
     
-    <heroUltimateCooldown
-    AltName="Ultimate Art Cooldown"
-    Wiki="In seconds." />
+    <ultimateArtCharge
+    AltName="Ultimate Art Charge"
+    Wiki="Amount of ultimate charge required to perform ultimate art" />
     
     <characterAbilityCooldown
     AltName="Character Ability Cooldown"

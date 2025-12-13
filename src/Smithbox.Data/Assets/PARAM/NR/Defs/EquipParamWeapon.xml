@@ -394,12 +394,9 @@
       <Maximum>999</Maximum>
       <SortID>3200</SortID>
     </Field>
-    <Field Def="u16 durabilityMax = 100">
-      <DisplayName>耐久度最大値</DisplayName>
-      <Description>新品耐久度.</Description>
-      <Maximum>999</Maximum>
-      <SortID>3300</SortID>
-    </Field>
+    <Field Def="u8 ultCharge"/>
+	<Field Def="u8 ultCharge2:1"/>
+    <Field Def="dummy8 unknown_ult:7" />
     <Field Def="u16 attackThrowEscape">
       <DisplayName>投げ抜け攻撃力基本値</DisplayName>
       <Description>投げ抜け攻撃力の基本値</Description>
@@ -1880,13 +1877,18 @@
     <Field Def="s32 equippedSpell_R1" />
     <Field Def="s32 equippedSpell_R2" />
     <Field Def="f32 unknown_3" />
-    <Field Def="s32 unknown_4" />
+    <Field Def="s8 unknown_4" />
+    <Field Def="s8 spAttributeVariationValue" />
+    <Field Def="s16 unknown_5" />
     
-    <Field Def="dummy8 midPadding[8]" />
+    <Field Def="s32 swordArtsTableId" />
+    <Field Def="s32 sparringGroundsEventFlagId" />
     
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="f32 criticalMultiplier"/>
+    <Field Def="s16 heroMovesetOverrideID"/>
+    <Field Def="s8 heroID"/>
+    <Field Def="s8 spAttributeMixcraft"/>
+    <Field Def="s32 heroBehaviorVariationID"/>
+    <Field Def="f32 criticalAtkRate"/>
     <Field Def="s32 attachEffectId"/>
     <Field Def="f32 reviveDamage"/>
     <Field Def="s32 unknown_11"/>

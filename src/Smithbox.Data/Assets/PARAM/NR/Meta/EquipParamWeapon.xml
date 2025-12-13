@@ -571,11 +571,42 @@
     AltName="Equipped Spell: Secondary"
     Wiki="The spell cast with this weapon on R2 usage." 
     Refs="Magic" />
+	
+	<spAttributeVariationValue
+	AltName="Special Attribute Variation"
+	Wiki="Changes hit fx (ex. red lightning)" />
     
     <midPadding
     Padding="" />
+	
+	<swordArtsTableId
+	AltName="Skill Table ID"
+	Wiki="Skill table presumably used when rerolling skills"
+	Refs="SwordArtsTableParam" />
+	
+	<sparringGroundsEventFlagId
+	AltName="Appearance Event Flag ID"
+	Wiki="Event flag that determines if weapon will appear in Sparring Grounds/Visual Codex" />
+	
+	<heroMovesetOverrideID
+	AltName="Hero Moveset Override ID"
+	Wiki="TAE ID for weapon moveset override when used by specific hero" />
+	
+	<heroID
+	AltName="Hero ID"
+	Wiki="Determines what hero has a special moveset for this weapon"
+	Refs="HeroParam" />
+	
+	<spAttributeMixcraft
+	AltName="Special Attribute for Magic Cocktail"
+	Wiki="Override for purposes of Magic Cocktail affinity residue"
+	ProjectEnum="ATKPARAM_SPATTR_TYPE" />
     
-    <criticalMultiplier
+	<heroBehaviorVariationID
+	AltName="Hero Behavior Variation ID"
+	Wiki="Behavior variation ID used when wielded by specified hero" />
+	
+    <criticalAtkRate
     AltName="Critical Hit Multiplier"
     Wiki="The damage multiplier to apply to critical hit damage (backstabs and ripostes)." />
     

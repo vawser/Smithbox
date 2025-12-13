@@ -12,6 +12,10 @@
     <defaultNumberOfItemSlots
     AltName="Base Item Slot Count"
     Wiki="The default number of item slots a player has." />
+	
+	<maxNumberOfItemSlots
+    AltName="Max Item Slot Count"
+    Wiki="The max number of item slots a player can have." />
     
     <reserved02 AltName="" Padding=""/>
     <animeID_DropItemPick AltName="Item Pick-up - Animation ID" Wiki="Animation ID when picking up a drop item" />
@@ -117,6 +121,78 @@
     
     <unk_00
     Refs="SpEffectParam" />
+	
+	<bagcraftXp_Level2_Dart
+	AltName="Item Category XP: Level 2 Darts"
+	Wiki="Amount of xp required for level 2 category darts" />
+	
+	<bagcraftXp_Level3_Dart
+	AltName="Item Category XP: Level 3 Darts"
+	Wiki="Amount of xp required for level 3 category darts" />
+	
+	<bagcraftXp_Level2_Pot
+	AltName="Item Category XP: Level 2 Pots"
+	Wiki="Amount of xp required for level 2 category pots" />
+	
+	<bagcraftXp_Level3_Pot
+	AltName="Item Category XP: Level 3 Pots"
+	Wiki="Amount of xp required for level 3 category pots" />
+	
+	<bagcraftXp_Level2_Bolus
+	AltName="Item Category XP: Level 2 Boluses"
+	Wiki="Amount of xp required for level 2 category boluses" />
+	
+	<bagcraftXp_Level3_Bolus
+	AltName="Item Category XP: Level 3 Boluses"
+	Wiki="Amount of xp required for level 3 category boluses" />
+	
+	<bagcraftXp_Level2_Stone
+	AltName="Item Category XP: Level 2 Stones"
+	Wiki="Amount of xp required for level 2 category stones" />
+	
+	<bagcraftXp_Level3_Stone
+	AltName="Item Category XP: Level 3 Stones"
+	Wiki="Amount of xp required for level 3 category stones" />
+	
+	<bagcraftXp_Level2_Tear
+	AltName="Item Category XP: Level 2 Tears"
+	Wiki="Amount of xp required for level 2 category crystal tears" />
+	
+	<bagcraftXp_Level3_Tear
+	AltName="Item Category XP: Level 3 Tears"
+	Wiki="Amount of xp required for level 3 category crystal tears" />
+	
+	<bagcraftXp_Level2_Perfume
+	AltName="Item Category XP: Level 2 Perfumes"
+	Wiki="Amount of xp required for level 2 category perfuming arts" />
+	
+	<bagcraftXp_Level3_Perfume
+	AltName="Item Category XP: Level 3 Perfumes"
+	Wiki="Amount of xp required for level 3 category perfuming arts" />
+	
+	<bagcraftXp_Level2_Grease
+	AltName="Item Category XP: Level 2 Greases"
+	Wiki="Amount of xp required for level 2 category greases" />
+	
+	<bagcraftXp_Level3_Grease
+	AltName="Item Category XP: Level 3 Greases"
+	Wiki="Amount of xp required for level 3 category greases" />
+	
+	<bagcraftXp_Level2_Food
+	AltName="Item Category XP: Level 2 Food"
+	Wiki="Amount of xp required for level 2 category food" />
+	
+	<bagcraftXp_Level3_Food
+	AltName="Item Category XP: Level 3 Food"
+	Wiki="Amount of xp required for level 3 category food" />
+	
+	<bagcraftXp_Level2_Tool
+	AltName="Item Category XP: Level 2 Tools"
+	Wiki="Amount of xp required for level 2 category special tools" />
+	
+	<bagcraftXp_Level3_Tool
+	AltName="Item Category XP: Level 3 Tools"
+	Wiki="Amount of xp required for level 3 category special tools" />
     
     <fh_unknown_67
     Refs="PermanentBuffParam" />

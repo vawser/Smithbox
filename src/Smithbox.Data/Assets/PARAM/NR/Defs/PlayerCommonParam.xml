@@ -47,7 +47,7 @@
     </Field>
     
     <Field Def="u8 defaultNumberOfItemSlots" />
-    <Field Def="u8 unknownByte_2" />
+    <Field Def="u8 maxNumberOfItemSlots" />
     
     <Field Def="s32 animeID_DropItemPick">
       <DisplayName>ドロップアイテム取得アニメーションID</DisplayName>
@@ -557,16 +557,26 @@
     <Field Def="s32 fh_unknown_31" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_32" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_33" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_34" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_35" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_36" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_37" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_38" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_39" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_40" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_41" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_42" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_43" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Dart" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Dart" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Pot" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Pot" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Bolus" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level3_Bolus" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Stone" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Stone" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Tear" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Tear" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Perfume" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level3_Perfume" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Grease" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Grease" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Food" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level3_Food" FirstVersion="10310025"/>
+    <Field Def="s16 bagcraftXp_Level2_Tool" FirstVersion="10310025"/>
+	<Field Def="s16 bagcraftXp_Level3_Tool" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_43a" FirstVersion="10310025"/>
+    <Field Def="s16 fh_unknown_43b" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_44" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_45" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_46" FirstVersion="10310025"/>

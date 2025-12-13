@@ -73,7 +73,16 @@
     <Field Def="s32 sparringGroundsWeaponId" />
     
     <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10200000"/>
-    <Field Def="dummy8 endPadding[12]" FirstVersion="10200000"/>
+	
+	<Field Def="u8 unknown_4a:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4b:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4c:1" FirstVersion="10200000"/>
+	<Field Def="u8 isStartSkill_Scholar:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4e:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4f:1" FirstVersion="10200000"/>
+	<Field Def="u8 unknown_4g:1" FirstVersion="10200000"/>
+	<Field Def="u8 isStartSkill_Undertaker:1" FirstVersion="10200000"/>
+	<Field Def="dummy8 endPadding[11]" FirstVersion="10200000"/>
    
   </Fields>
 </PARAMDEF>
