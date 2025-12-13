@@ -103,6 +103,16 @@
     AltName="Is for Executor"
     Wiki="If enabled, this attach effect is usable with Executor."
     IsBool="" />
+	
+	<allowScholar
+    AltName="Is for Scholar"
+    Wiki="If enabled, this attach effect is usable with Scholar."
+    IsBool="" />
+	
+	<allowUndertaker
+    AltName="Is for Undertaker"
+    Wiki="If enabled, this attach effect is usable with Undertaker."
+    IsBool="" />
     
     <unknown_9c3
     Padding="" />

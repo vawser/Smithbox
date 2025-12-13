@@ -33,8 +33,8 @@
     <Field Def="u8 allowRevenant:1"/>
     <Field Def="u8 allowRecluse:1"/>
     <Field Def="u8 allowExecutor:1"/>
-    <Field Def="u8 unknown_9c1:1"/>
-    <Field Def="u8 unknown_9c2:1"/>
+    <Field Def="u8 allowScholar:1"/>
+    <Field Def="u8 allowUndertaker:1"/>
     <Field Def="dummy8 unknown_9c3:6"/>
     <Field Def="dummy8 unknown_9d[1]"/>
     <Field Def="s32 statusIconId"/>
