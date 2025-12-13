@@ -247,9 +247,12 @@ public class ResourceJobBuilder
                         if (virtPath.Contains("aet"))
                         {
                             var parts = virtPath.Split('/');
-                            var id = parts[1];
+                            if (parts.Length > 1)
+                            {
+                                var id = parts[1];
 
-                            AddLoadFileTask($"aet/{id}/tex", AccessLevel.AccessGPUOptimizedOnly);
+                                AddLoadFileTask($"aet/{id}/tex", AccessLevel.AccessGPUOptimizedOnly);
+                            }
                         }
                     }
                 }
@@ -261,9 +264,12 @@ public class ResourceJobBuilder
                     if (virtPath.Contains("chr"))
                     {
                         var parts = virtPath.Split('/');
-                        var id = parts[1];
+                        if (parts.Length > 1)
+                        {
+                            var id = parts[1];
 
-                        AddLoadArchiveTask($"chr/{id}/tex", AccessLevel.AccessGPUOptimizedOnly, false);
+                            AddLoadArchiveTask($"chr/{id}/tex", AccessLevel.AccessGPUOptimizedOnly, false);
+                        }
                     }
                 }
             }
