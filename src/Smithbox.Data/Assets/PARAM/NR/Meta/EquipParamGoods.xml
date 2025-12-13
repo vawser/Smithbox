@@ -30,6 +30,8 @@
       <Option Value="23" Name="Executor - Garb" />
       <Option Value="24" Name="Gestures" />
       <Option Value="25" Name="Urns" />
+	  <Option Value="26" Name="Scholar - Garb" />
+	  <Option Value="27" Name="Undertaker - Garb" />
     </Enum>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
       <Option Value="0" Name="None" />
@@ -136,6 +138,18 @@
       <Option Value="110" Name="Group 110" />
       <Option Value="120" Name="Group 120" />
       <Option Value="255" Name="None" />
+    </Enum>
+	<Enum Name="BAGCRAFT_CATEGORY" type="u8">
+        <Option Value="0" Name="None" />
+		<Option Value="1" Name="Darts" />
+		<Option Value="2" Name="Pots" />
+		<Option Value="3" Name="Boluses" />
+		<Option Value="4" Name="Stones" />
+		<Option Value="5" Name="Crystal Tears" />
+		<Option Value="6" Name="Perfuming Arts" />
+		<Option Value="7" Name="Greases" />
+		<Option Value="8" Name="Food" />
+		<Option Value="9" Name="Special Tools" />
     </Enum>
   </Enums>
   <Field>
@@ -278,22 +292,63 @@
     <reserve5 AltName="" Padding=""/>
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
+	
+	<bagcraftMaxNum
+	AltName="Scholar Max Amount"
+	Wiki="Max number carried when playing as Scholar" />
+	
+	<bagcraftCategory
+	AltName="Bagcraft Item Category"
+	Wiki="Item category leveled up when item is used"
+	Enum="BAGCRAFT_CATEGORY" />
     
     <characterInitId
     AltName="Skin: Character ID"
     Wiki="Determines the character setup to use for this skin item."
     Refs="CharaInitParam" />
     
-    <bulletId
-    AltName="Usage: Bullet ID"
-    Wiki="Bullet to emit on usage."
+    <itemConferBulletId
+    AltName="Item Confer Bullet ID"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect."
+    Refs="Bullet" />
+	
+	<sparringGroundsEventFlagId
+	AltName="Appearance Event Flag ID"
+	Wiki="Event flag that determines if goods will appear in Sparring Grounds/Visual Codex" />
+	
+	<level2RefId
+	AltName="Reference ID: Level 2"
+	Wiki="Reference ID when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level2RefId_1
+	AltName="Reference ID Left: Level 2"
+	Wiki="Reference ID for left hand when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level3RefId
+	AltName="Reference ID: Level 3"
+	Wiki="Reference ID when item category is level 3"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+	
+	<level3RefId_1
+	AltName="Reference ID Left: Level 3"
+	Wiki="Reference ID for left hand when item category is level 2"
+	Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
+    
+    <level2_itemConferBulletId
+	AltName="Item Confer Bullet ID: Level 2"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 2."
     Refs="Bullet" />
     
-    <fh_unknown_05_bulletId
+    <level3_itemConferBulletId
+	AltName="Item Confer Bullet ID: Level 3"
+    Wiki="Bullet to emit with 'Items confer effects to allies' effect and category is level 3."
     Refs="Bullet" />
-    
-    <fh_unknown_07_bulletId
-    Refs="Bullet" />
+	
+	<bagcraftCategoryXp
+	AltName="Bagcraft Item Category XP"
+	Wiki="Amount of XP that item grants to item category when successfully used" />
     
   </Field>
 </PARAMMETA>
