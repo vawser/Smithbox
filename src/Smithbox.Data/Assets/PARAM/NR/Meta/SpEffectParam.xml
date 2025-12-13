@@ -187,10 +187,10 @@
     Wiki="Replaces the damage calculation of the sweet spot with the specified value (key point damage correction) -Invalid at 1.0" 
     DefaultValue="1" />
     
-    <normalSpotChangeRate 
-    AltName="Normal Hit Change %" 
-    Wiki="Replaces normal hit damage calculation with the specified number -Invalid at 1.0" 
-    DefaultValue="-1" />
+    <poisonInflictRate 
+    AltName="Inflict %: Poison" 
+    Wiki="Adjusts outgoing poison inflict."
+    DefaultValue="1" />
     
     <lookAtTargetPosOffset 
     AltName="Look-At Target Position Offset" 
@@ -248,9 +248,9 @@
     Wiki="Add / subtract the time set for the effect duration only for magic that has the effect duration set to 0.1 seconds or more." 
     DefaultValue="0" />
     
-    <diseaseAtkDamageRate 
-    AltName="Aux Atk Damage Correction %: Scarlet Rot" 
-    Wiki="Scarlet rot aux attack damage ratio: Correct the calculated damage dealt by XX times. 1 is normal." 
+    <diseaseInflictRate 
+    AltName="Inflict %: Scarlet Rot" 
+    Wiki="Adjusts outgoing scarlet rot inflict."
     DefaultValue="1" />
     
     <maxDurability 
@@ -1232,15 +1232,15 @@
     Wiki="Add or subtract the value set for the dark attack power" 
     DefaultValue="0" />
     
-    <antiDarkSightRadius 
-    AltName="Full View in Darkness - Radius" 
-    Wiki="Radius of full view of darkness [m]. If you are within this distance, you will be able to see at normal distance even in the dark." 
-    DefaultValue="0" />
-    
-    <antiDarkSightDmypolyId 
-    AltName="Full View in Darkness - Dummy Poly ID" 
-    Wiki="Damipoli ID (-1: Master) with full view of darkness. Create a full view area around this Damipoli" 
-    DefaultValue="-1" />
+    <bloodInflictRate 
+    AltName="Inflict %: Blood Loss" 
+    Wiki="Adjusts outgoing blood loss inflict."
+    DefaultValue="1" />
+	
+	<curseInflictRate 
+    AltName="Inflict %: Death Blight" 
+    Wiki="Adjusts outgoing death blight inflict."
+    DefaultValue="1" />
     
     <conditionHpRate 
     AltName="Trigger on HP Above %" 
@@ -1621,20 +1621,23 @@
     Wiki="The amount of extra temporary poise damage an attack deals if it is of this type against this enemy." 
     DefaultValue="1" />
 	
-    <spEffectTextId_1
-    AltName="Slot 1: SpEffect Text ID"
-    Wiki="The SpEffect text ID to use." 
-    FmgRef="SpEffect_Name" />
-    
     <spEffectTextId_2
     AltName="Slot 2: SpEffect Text ID"
     Wiki="The SpEffect text ID to use." 
-    FmgRef="SpEffect_Name" />
+    FmgRef="SpEffect_Name"
+	DefaultValue="-1" />
     
     <spEffectTextId_3
     AltName="Slot 3: SpEffect Text ID"
     Wiki="The SpEffect text ID to use." 
-    FmgRef="SpEffect_Name" />
+    FmgRef="SpEffect_Name"
+	DefaultValue="-1" />
+    
+    <spEffectTextId_4
+    AltName="Slot 4: SpEffect Text ID"
+    Wiki="The SpEffect text ID to use." 
+    FmgRef="SpEffect_Name"
+	DefaultValue="-1" />
     
     <registFreezeChangeRate 
     AltName="Aux Resist %: Frostbite" 
@@ -2064,9 +2067,9 @@
     Wiki="The amount of duration increase to apply to the character's ultimate art." 
     DefaultValue="0"/>
     
-    <auxAttribute
-    AltName="Status Attribute"
-    Wiki="Related to the inflicted status from the SpEffect." 
+    <arrowBehaviorOffset
+    AltName="Arrow Behavior Offset"
+    Wiki="Offset applied to arrow behaviors." 
     ProjectEnum="ATKPARAM_SPATTR_TYPE" 
     DefaultValue="0" />
     
@@ -2075,16 +2078,16 @@
     Wiki="Related to the player hand: 0 is both?, 1 is right, 2 is left." 
     Enum="PLAYER_HAND" 
     DefaultValue="3" />
+	
+	<spEffectTextId_1
+    AltName="Slot 1: SpEffect Text ID"
+    Wiki="The SpEffect text ID to use." 
+    FmgRef="SpEffect_Name,Title_PermanentBuff"
+	DefaultValue="-1" />
     
-    <permanentBuffTextId
-    AltName="Permanent Buff Text ID"
-    Wiki="The text to display on the status screen whilst this permanent buff is active." 
-    FmgRef="Title_PermanentBuff" 
-    DefaultValue="-1"/>
-    
-    <guardCounterAttackRate
-    AltName="Guard Counter Attack %"
-    Wiki="The multiplier to attack during a guard counter." 
+    <currentHealthAttackRate
+    AltName="Current Health Attack %"
+    Wiki="The scalar to attack depending on current health." 
     DefaultValue="0"/>
     
     <triggerOnWepType
@@ -2092,6 +2095,11 @@
     Wiki="Trigger this SpEffect only if the specified held weapon type is present." 
     Enum="WEP_TYPE" 
     DefaultValue="0"/>
+	
+	<triggerAttachedWeapon
+	AltName="Trigger for Attached Weapon"
+	Wiki="Trigger this speffect for only the weapon it is attached to.\n1 for attacking, 2 for guarding"
+	DefaultValue="0"/>
     
     <additionalCharacterSkillUse
     AltName="Additional Character Skill Use"
@@ -2116,9 +2124,9 @@
     AltName="Modify Player Level"
     Wiki="Increases/decreases the player's level by the set value." />
     
-    <characterSkillAttackRate
-    AltName="Character Skill Attack %"
-    Wiki="Increases the character skill attack power." 
+    <restageAttackRate
+    AltName="Restage Attack %"
+    Wiki="Determines amount of damage inflicted by received Restage. Default rate is 0.5" 
     DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_1
@@ -2150,9 +2158,9 @@
     Wiki="The random chance value to use when in conjunction with state info 2121." 
     DefaultValue="0" />
     
-    <abilityActivationSpEffectId
-    AltName="Ability Activation SpEffect ID"
-    Wiki="The SpEffect to apply upon Ability activation."
+    <necromancyActivationSpEffectId
+    AltName="Necromancy Activation SpEffect ID"
+    Wiki="The SpEffect to apply upon activating Revenant's ability, Necromancy."
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
@@ -2187,21 +2195,51 @@
     Enum="WEP_TYPE" 
     DefaultValue="-1" />
     
-    <applyHeroStatusChange
-    AltName="Apply Hero Status Change"
-    Wiki="Apply a Hero status change for a specific character." 
+    <heroStatusModifier
+    AltName="Hero Status Modifier"
+    Wiki="Apply a Hero status modifier for a specific character." 
     Refs="HeroStatusParam" 
     DefaultValue="-1" />
 	
+	<analyzeAcquire_effectId
+	AltName="Analyze Acquire Additional Effect"
+	Wiki="Additional effect applied when acquiring targets with Analyze"
+	Refs="SpEffectParam" />
+	
+	<analyzeSelfLevel1_effectId
+	AltName="Analyze Self Level 1 Additional Effect"
+	Wiki="Additional effect applied when targeting self at level 1"
+	Refs="SpEffectParam" />
+	
+	<analyzeSelfLevel2_effectId
+	AltName="Analyze Self Level 2 Additional Effect"
+	Wiki="Additional effect applied when targeting self at level 2"
+	Refs="SpEffectParam" />
+	
+	<analyzeSelfLevel3_effectId
+	AltName="Analyze Self Level 3 Additional Effect"
+	Wiki="Additional effect applied when targeting self at level 3"
+	Refs="SpEffectParam" />
+	
 	<startMagicId
     AltName="Starting Magic ID"
-    Wiki="The sorcery/incantation to apply to the player's primary staff/seal upon expedition start." 
+    Wiki="The sorcery/incantation to apply to the player's staff/seal primary slot upon expedition start." 
     Refs="Magic" 
     DefaultValue="-1" />
 	
-	<sleepAtkDamageRate
-    AltName="Aux Atk Damage Correction %: Sleep"
-    Wiki="Sleep aux attack damage ratio: Correct the calculated damage dealt by XX times. 1 is normal."
+	<frostInflictRate 
+    AltName="Inflict %: Frostbite" 
+    Wiki="Adjusts outgoing frostbite inflict."
+    DefaultValue="1" />
+	
+	<sleepInflictRate 
+    AltName="Inflict %: Sleep" 
+    Wiki="Adjusts outgoing Sleep inflict."
+    DefaultValue="1" />
+	
+	<madnessInflictRate 
+    AltName="Inflict %: Madness" 
+    Wiki="Adjusts outgoing Madness inflict."
     DefaultValue="1" />
 	
 	<applyIdOnKillSp
@@ -2213,7 +2251,7 @@
   </Field>
   <Enums>
     <Enum Name="PLAYER_HAND" type="u8">
-        <Option Value="0" Name="Both" />
+        <Option Value="0" Name="Innate" />
         <Option Value="1" Name="Right" />
         <Option Value="2" Name="Left" />
         <Option Value="3" Name="None" />
