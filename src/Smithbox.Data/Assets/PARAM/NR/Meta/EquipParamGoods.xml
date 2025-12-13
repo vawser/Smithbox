@@ -6,7 +6,7 @@
     <Enum Name="GOODS_TYPE" type="u8">
       <Option Value="0" Name="Normal Item" />
       <Option Value="1" Name="Key Item" />
-      <Option Value="2" Name="Crafting Material" />
+      <Option Value="2" Name="Non-usable Item" />
       <Option Value="3" Name="Remembrance" />
       <Option Value="4" Name="None" />
       <Option Value="5" Name="Sorcery" />
@@ -15,23 +15,23 @@
       <Option Value="8" Name="Spirit Summon - Greater" />
       <Option Value="9" Name="Wondrous Physick" />
       <Option Value="10" Name="Wondrous Physick Tear" />
-      <Option Value="11" Name="Regenerative Material" />
+      <Option Value="11" Name="Permanent Buff" />
       <Option Value="12" Name="Info Item" />
       <Option Value="13" Name="None" />
       <Option Value="14" Name="Reinforcement Material" />
       <Option Value="15" Name="Great Rune" />
-      <Option Value="16" Name="Wylder - Garb" />
-      <Option Value="17" Name="Guardian - Garb" />
-      <Option Value="18" Name="Ironeye - Garb" />
-      <Option Value="19" Name="Duchess - Garb" />
-      <Option Value="20" Name="Raider - Garb" />
-      <Option Value="21" Name="Revenant - Garb" />
-      <Option Value="22" Name="Recluse - Garb" />
-      <Option Value="23" Name="Executor - Garb" />
+      <Option Value="16" Name="Garb - Wylder" />
+      <Option Value="17" Name="Garb - Guardian" />
+      <Option Value="18" Name="Garb - Ironeye" />
+      <Option Value="19" Name="Garb - Duchess" />
+      <Option Value="20" Name="Garb - Raider" />
+      <Option Value="21" Name="Garb - Revenant" />
+      <Option Value="22" Name="Garb - Recluse" />
+      <Option Value="23" Name="Garb - Executor" />
       <Option Value="24" Name="Gestures" />
-      <Option Value="25" Name="Urns" />
-	  <Option Value="26" Name="Scholar - Garb" />
-	  <Option Value="27" Name="Undertaker - Garb" />
+      <Option Value="25" Name="Relic Vessel" />
+	  <Option Value="26" Name="Garb - Scholar" />
+	  <Option Value="27" Name="Garb - Undertaker" />
     </Enum>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
       <Option Value="0" Name="None" />
