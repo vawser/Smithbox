@@ -225,21 +225,6 @@ public class ModelEditorScreen : EditorScreen
                 Save();
             }
 
-            if (ImGui.BeginMenu("Export"))
-            {
-                if (ImGui.MenuItem($"Model"))
-                {
-                    ExportModel();
-                }
-
-                if (ImGui.MenuItem($"Textures"))
-                {
-                    ExportTextures();
-                }
-
-                ImGui.EndMenu();
-            }
-
             ImGui.EndMenu();
         }
     }
@@ -356,25 +341,12 @@ public class ModelEditorScreen : EditorScreen
             return;
         }
 
-        SaveModel();
+        if(Selection.SelectedModelWrapper != null)
+        {
+            Selection.SelectedModelWrapper.Save();
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
-    }
-
-    public void SaveModel()
-    {
-        // Save the current FLVER, we should create a new FLVER2 clone from the wrapper source,
-        // and then edit it with the model objects from the model container so it reflects the changes
-    }
-
-    public void ExportModel()
-    {
-        // Use the ModelDataTool stuff
-    }
-
-    public void ExportTextures()
-    {
-        // Use the ModelDataTool stuff
     }
 }

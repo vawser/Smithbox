@@ -60,16 +60,22 @@ public class ModelEntityTypeCache
 
         // Internal Types
         modelcache.Add(ModelEntityType.Dummy, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.Material, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.GxList, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.Node, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.Mesh, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.BufferLayout, new Dictionary<Type, List<ModelEntity>>());
+
         modelcache.Add(ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>());
 
         modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
         
-        // Fill the map cache
+        // Fill the cache
         foreach (Entity obj in container.Objects)
         {
             if (obj is ModelEntity e && modelcache.ContainsKey(e.Type))
@@ -84,7 +90,7 @@ public class ModelEntityTypeCache
             }
         }
 
-        // Fill the type cache for this map
+        // Fill the type cache
         if (!_cachedTypeView.ContainsKey(container.Name))
         {
             _cachedTypeView.Add(container.Name, modelcache);

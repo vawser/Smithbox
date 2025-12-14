@@ -184,7 +184,7 @@ public class ModelContainer : ObjectContainer
 
         if (modelName.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
-            var name = ModelLocator.MapModelNameToAssetName(Project, mapID, modelName);
+            var name = ModelLocator.GetMapModelName(Project, mapID, modelName);
             resource = ModelLocator.GetMapModel(Project, mapID, name, name);
         }
         else if (modelName.StartsWith("c", StringComparison.CurrentCultureIgnoreCase))
@@ -205,7 +205,7 @@ public class ModelContainer : ObjectContainer
             loadCol = true;
 
             resource = ModelLocator.GetMapCollisionModel(Project, mapID,
-                ModelLocator.MapModelNameToAssetName(Project, mapID, modelName), false);
+                ModelLocator.GetMapModelName(Project, mapID, modelName), false);
 
             if (resource == null || resource.AssetPath == null)
                 loadCol = false;

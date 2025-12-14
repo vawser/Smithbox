@@ -1,6 +1,7 @@
 ﻿using Andre.IO.VFS;
 using DotNext.Collections.Generic;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -444,5 +445,185 @@ public class ModelWrapper
     public void Unload()
     {
         Parent.Project.ModelEditor.Universe.UnloadModel(this);
+    }
+
+    public void Save()
+    {
+        var containerPath = Parent.Path;
+        var project = Parent.Project;
+        var fs = Parent.TargetFS;
+
+        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
+
+        var flverData = FLVER.Write();
+
+        if (binderType is ResourceContainerType.None)
+        {
+            try
+            {
+                project.ProjectFS.WriteFile(containerPath, flverData);
+                TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        if (binderType is ResourceContainerType.BND)
+        {
+            if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            {
+                try
+                {
+                    var binderData = fs.ReadFile(containerPath);
+                    if (binderData != null)
+                    {
+                        var binder = BND3.Read(binderData.Value);
+                        foreach (var file in binder.Files)
+                        {
+                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filepath = file.Name.ToLower();
+
+                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                            {
+                                if (filename == Name)
+                                {
+                                    file.Bytes = flverData;
+                                }
+                            }
+                        }
+
+                        var outBinderData = binder.Write();
+                        project.ProjectFS.WriteFile(containerPath, outBinderData);
+                        TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            else
+            {
+                try
+                {
+                    var binderData = fs.ReadFile(containerPath);
+                    if (binderData != null)
+                    {
+                        var binder = BND4.Read(binderData.Value);
+                        foreach (var file in binder.Files)
+                        {
+                            var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filepath = file.Name.ToLower();
+
+                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                            {
+                                if (filename == Name)
+                                {
+                                    file.Bytes = flverData;
+                                }
+                            }
+                        }
+
+                        var outBinderData = binder.Write();
+                        project.ProjectFS.WriteFile(containerPath, outBinderData);
+                        TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {containerPath} during model save.", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+        }
+
+        if (binderType is ResourceContainerType.BXF)
+        {
+            Memory<byte> bhd = new Memory<byte>();
+            Memory<byte> bdt = new Memory<byte>();
+
+            var targetBhdPath = containerPath;
+            var targetBdtPath = containerPath.Replace("bhd", "bdt");
+
+            var writePathBhd = Path.Combine(project.ProjectPath, targetBhdPath);
+            var writePathBdt = Path.Combine(project.ProjectPath, targetBdtPath);
+
+            try
+            {
+                bhd = (Memory<byte>)fs.ReadFile(targetBhdPath);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {targetBhdPath} during model save.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+
+            try
+            {
+                bdt = (Memory<byte>)fs.ReadFile(targetBdtPath);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox:Model Editor] Failed to write {targetBdtPath} during model save.", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+
+            if (bhd.Length != 0 && bdt.Length != 0)
+            {
+                if (project.ProjectType is ProjectType.DES
+                    or ProjectType.DS1
+                    or ProjectType.DS1R)
+                {
+                    var binder = BXF3.Read(bhd, bdt);
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                        {
+                            if (filename == Name)
+                            {
+                                file.Bytes = flverData;
+                            }
+                        }
+                    }
+
+                    byte[] bhdData;
+                    byte[] bdtData;
+
+                    binder.Write(out bhdData, out bdtData);
+
+                    project.ProjectFS.WriteFile(writePathBhd, bhdData);
+                    project.ProjectFS.WriteFile(writePathBhd, bdtData);
+                    TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                }
+                else
+                {
+                    var binder = BXF4.Read(bhd, bdt);
+                    foreach (var file in binder.Files)
+                    {
+                        var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filepath = file.Name.ToLower();
+
+                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
+                        {
+                            if (filename == Name)
+                            {
+                                file.Bytes = flverData;
+                            }
+                        }
+                    }
+
+                    byte[] bhdData;
+                    byte[] bdtData;
+
+                    binder.Write(out bhdData, out bdtData);
+
+                    project.ProjectFS.WriteFile(writePathBhd, bhdData);
+                    project.ProjectFS.WriteFile(writePathBhd, bdtData);
+                    TaskLogs.AddLog($"[Smithbox:Model Editor] Saved {containerPath}.");
+                }
+            }
+        }
     }
 }

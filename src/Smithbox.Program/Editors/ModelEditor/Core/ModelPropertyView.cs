@@ -137,6 +137,17 @@ public class ModelPropertyView
 
         var type = types.First();
 
+        var objType = first.WrappedObject.GetType();
+
+        // Disallow editing of these for now
+        // GX List require additional scaffolding to expose the actual data properly
+        // Buffer Layout 
+        if (objType == typeof(FLVER2.GXList) || objType == typeof(FLVER2.BufferLayout))
+        {
+            ImGui.Text("Editing not allowed for this property.");
+            return;
+        }
+
         // var meta = Editor.Project.ModelData.Meta.GetMeta(type, false);
 
         ImGui.Columns(2);

@@ -128,7 +128,7 @@ public class ModelUniverse
 
                 if (mapID != null)
                 {
-                    var name = ModelLocator.MapModelNameToAssetName(Editor.Project, mapID, modelName);
+                    var name = ModelLocator.GetMapModelName(Editor.Project, mapID, modelName);
                     var modelAsset = ModelLocator.GetMapModel(Editor.Project, mapID, name, name);
 
                     if (modelAsset.IsValid())
@@ -165,7 +165,7 @@ public class ModelUniverse
                 if (mapID != null)
                 {
                     var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
-                    ModelLocator.MapModelNameToAssetName(Editor.Project, mapID, modelName), false);
+                    ModelLocator.GetMapModelName(Editor.Project, mapID, modelName), false);
 
                     if (modelAsset.IsValid())
                         LoadList_Collision.Add(modelAsset);
@@ -469,13 +469,17 @@ public class ModelUniverse
         Editor.EditorActionManager.Clear();
 
         ResourceManager.ClearUnusedResources();
-        Editor.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
 
-        ModelInsightHelper.ClearEntry(modelWrapper.Container);
+        if (modelWrapper.Container != null)
+        {
+            Editor.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
 
-        modelWrapper.Container.Unload();
-        modelWrapper.Container.Clear();
-        modelWrapper.Container = null;
+            ModelInsightHelper.ClearEntry(modelWrapper.Container);
+
+            modelWrapper.Container.Unload();
+            modelWrapper.Container.Clear();
+            modelWrapper.Container = null;
+        }
 
         GC.Collect();
         GC.WaitForPendingFinalizers();

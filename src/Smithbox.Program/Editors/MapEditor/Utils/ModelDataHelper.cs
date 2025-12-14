@@ -3,15 +3,11 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.FileBrowserNS;
 using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
-using static SoulsFormats.NVA;
 
 namespace StudioCore.Resource;
 

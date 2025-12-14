@@ -196,7 +196,7 @@ public class ModelSourceView
                 var alias = ModelEditorUtils.GetAliasForSourceListEntry(Project,
                     displayedName, modelListType);
 
-                if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{displayedName}", selected, ImGuiSelectableFlags.AllowDoubleClick))
+                if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{modelListType.ToString()}{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                     {

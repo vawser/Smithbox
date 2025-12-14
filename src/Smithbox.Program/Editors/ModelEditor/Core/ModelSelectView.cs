@@ -85,6 +85,7 @@ public class ModelSelectView
 
         var container = Editor.Selection.SelectedModelContainerWrapper;
 
+        int i = 0;
         foreach(var wrapper in container.Models)
         {
             bool selected = false;
@@ -98,7 +99,7 @@ public class ModelSelectView
 
             var displayedName = $"{wrapper.Name}";
 
-            if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{displayedName}", selected, ImGuiSelectableFlags.AllowDoubleClick))
+            if (ImGui.Selectable($"{displayedName}##modelSelectListEntry{i}", selected, ImGuiSelectableFlags.AllowDoubleClick))
             {
                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
@@ -114,6 +115,8 @@ public class ModelSelectView
 
             // Context Menu
             DisplayContextMenu(wrapper);
+
+            i++;
         }
 
         if(ApplyAutoSelectPass)

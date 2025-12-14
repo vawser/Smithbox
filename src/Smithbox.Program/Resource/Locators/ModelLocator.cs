@@ -37,6 +37,21 @@ public static class ModelLocator
         return $@"{mapid}_{modelname.Substring(1)}";
     }
 
+    // For Model Editor
+    public static string GetMapModelName(ProjectEntry project, string mapid, string modelname)
+    {
+        if (project.ProjectType == ProjectType.DS1 || project.ProjectType == ProjectType.DS1R)
+            return $@"{modelname}A{mapid.Substring(1, 2)}";
+
+        if (project.ProjectType == ProjectType.DES)
+            return $@"{modelname}";
+
+        if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2 || project.ProjectType == ProjectType.ACFA || project.ProjectType == ProjectType.ACV || project.ProjectType == ProjectType.ACVD)
+            return modelname;
+
+        return $@"m{modelname.Substring(1)}";
+    }
+
     public static ResourceDescriptor GetMapModel(ProjectEntry project, string mapid, string mapContainerId, string modelId)
     {
         ResourceDescriptor ret = new();
