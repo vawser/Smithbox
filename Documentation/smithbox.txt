@@ -26,9 +26,10 @@
 
 # TODO NOW
 - Model Editor: 
- - Add save functionality back
  - Sort out the property view (give it a table layout, fix some of the property handling)
  - Add proper transform action for the dummy and node entities
  - Restore some of the tools from the old version
  - add simple JSON export/import for elements of FLVER
  - order dummy polygon list by parent bone (as option?)
+
+ - Parts not appearing (virt path issues likely)

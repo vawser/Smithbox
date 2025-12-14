@@ -70,6 +70,7 @@ public class ModelData
         MapFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Folder.StartsWith("/map") && !e.Folder.Contains("autoroute"))
             .Where(e => e.Extension == "msb")
+            .Where(e => !e.Archive.Contains("sd"))
             .ToList();
 
         // Characters
@@ -84,6 +85,7 @@ public class ModelData
         {
             ChrFiles.Entries = Project.FileDictionary.Entries
                     .Where(e => e.Extension == "chrbnd")
+                    .Where(e => !e.Archive.Contains("sd"))
                     .ToList();
         }
 
@@ -114,6 +116,7 @@ public class ModelData
             AssetFiles.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder.StartsWith($"/asset"))
                 .Where(e => e.Extension == "geombnd")
+                .Where(e => !e.Archive.Contains("sd"))
                 .ToList();
         }
 
@@ -144,6 +147,7 @@ public class ModelData
             PartFiles.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder.StartsWith($"/parts"))
                 .Where(e => e.Extension == "partsbnd")
+                .Where(e => !e.Archive.Contains("sd"))
                 .ToList();
         }
 
@@ -187,6 +191,7 @@ public class ModelData
                 entries = Project.FileDictionary.Entries
                     .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
                     .Where(e => e.Extension == "hkxbhd")
+                    .Where(e => !e.Archive.Contains("sd"))
                     .ToList();
             }
 
@@ -238,6 +243,7 @@ public class ModelData
                 entries = Project.FileDictionary.Entries
                     .Where(e => e.Folder.StartsWith($"/map/{mapid.Substring(0, 3)}/{mapid}"))
                     .Where(e => e.Extension == "mapbnd")
+                    .Where(e => !e.Archive.Contains("sd"))
                     .ToList();
             }
             else

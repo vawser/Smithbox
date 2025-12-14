@@ -53,40 +53,59 @@ public class ModelBank
             var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
             newEntry.DeriveMapID();
 
-            MapPieces.Add(entry, newEntry);
-            Models.Add(entry, newEntry);
+            if(!MapPieces.ContainsKey(entry))
+                MapPieces.Add(entry, newEntry);
+
+            if (!Models.ContainsKey(entry))
+                Models.Add(entry, newEntry);
         }
 
         // Characters
         foreach (var entry in Project.ModelData.ChrFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
-            Characters.Add(entry, newEntry);
-            Models.Add(entry, newEntry);
+
+            if (!Characters.ContainsKey(entry))
+                Characters.Add(entry, newEntry);
+
+            if (!Models.ContainsKey(entry))
+                Models.Add(entry, newEntry);
         }
 
         // Assets
         foreach (var entry in Project.ModelData.AssetFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
-            Assets.Add(entry, newEntry);
-            Models.Add(entry, newEntry);
+
+            if (!Assets.ContainsKey(entry))
+                Assets.Add(entry, newEntry);
+
+            if (!Models.ContainsKey(entry))
+                Models.Add(entry, newEntry);
         }
 
         // Parts
         foreach (var entry in Project.ModelData.PartFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
-            Parts.Add(entry, newEntry);
-            Models.Add(entry, newEntry);
+
+            if (!Parts.ContainsKey(entry))
+                Parts.Add(entry, newEntry);
+
+            if (!Models.ContainsKey(entry))
+                Models.Add(entry, newEntry);
         }
 
         // Collisions
         foreach (var entry in Project.ModelData.CollisionFiles.Entries)
         {
             var newEntry = new ModelContainerWrapper(BaseEditor, Project, entry, TargetFS);
-            Collisions.Add(entry, newEntry);
-            Models.Add(entry, newEntry);
+
+            if (!Collisions.ContainsKey(entry))
+                Collisions.Add(entry, newEntry);
+
+            if (!Models.ContainsKey(entry))
+                Models.Add(entry, newEntry);
         }
 
         return true;

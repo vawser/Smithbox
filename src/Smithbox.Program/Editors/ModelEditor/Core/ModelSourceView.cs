@@ -88,10 +88,10 @@ public class ModelSourceView
                     DisplayModelSourceList(ModelListType.MapPiece, Project.ModelData.MapPieceFiles);
                 }
 
-                if (ImGui.CollapsingHeader("Collisions"))
-                {
-                    DisplayModelSourceList(ModelListType.Collision, Project.ModelData.CollisionFiles);
-                }
+                //if (ImGui.CollapsingHeader("Collisions"))
+                //{
+                //    DisplayModelSourceList(ModelListType.Collision, Project.ModelData.CollisionFiles);
+                //}
 
                 ImGui.EndChild();
             }

@@ -73,20 +73,23 @@ public class ModelEntityTypeCache
 
         modelcache.Add(ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>());
 
-        modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
+        // modelcache.Add(ModelEntityType.Collision, new Dictionary<Type, List<ModelEntity>>());
         
         // Fill the cache
         foreach (Entity obj in container.Objects)
         {
             if (obj is ModelEntity e && modelcache.ContainsKey(e.Type))
             {
-                Type typ = e.WrappedObject.GetType();
-                if (!modelcache[e.Type].ContainsKey(typ))
+                if (e.WrappedObject != null)
                 {
-                    modelcache[e.Type].Add(typ, new List<ModelEntity>());
-                }
+                    Type typ = e.WrappedObject.GetType();
+                    if (!modelcache[e.Type].ContainsKey(typ))
+                    {
+                        modelcache[e.Type].Add(typ, new List<ModelEntity>());
+                    }
 
-                modelcache[e.Type][typ].Add(e);
+                    modelcache[e.Type][typ].Add(e);
+                }
             }
         }
 
