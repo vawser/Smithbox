@@ -679,55 +679,58 @@ public class Entity : ISelectable, IDisposable
         }
         References.Clear();
 
-        // Is not a param, e.g. DS2 enemy
-        if (!(WrappedObject is Param.Row) && !(WrappedObject is MergedParamRow))
+        if (WrappedObject != null)
         {
-            // Get the entity type, e.g. Part
-            Type type = WrappedObject.GetType();
-
-            // Get the propeties for this type
-            PropertyInfo[] props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
-
-            // Iterate through each property
-            foreach (PropertyInfo p in props)
+            // Is not a param, e.g. DS2 enemy
+            if (!(WrappedObject is Param.Row) && !(WrappedObject is MergedParamRow))
             {
-                // [MSBReference] attribute in the MSB formats
-                var att = p.GetCustomAttribute<MSBReference>();
+                // Get the entity type, e.g. Part
+                Type type = WrappedObject.GetType();
 
-                // If this property has the [MSBReference] attribute
-                if (att != null)
+                // Get the propeties for this type
+                PropertyInfo[] props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public);
+
+                // Iterate through each property
+                foreach (PropertyInfo p in props)
                 {
-                    string[] array;
-                    var value = p.GetValue(WrappedObject);
-                    if (p.PropertyType.IsArray)
-                    {
-                        array = (string[])value;
-                    }
-                    else if (value is IEnumerable<string> list)
-                    {
-                        array = list.ToArray();
-                    }
-                    else
-                    {
-                        array = [(string)value];
-                    }
+                    // [MSBReference] attribute in the MSB formats
+                    var att = p.GetCustomAttribute<MSBReference>();
 
-                    foreach (string sref in array)
+                    // If this property has the [MSBReference] attribute
+                    if (att != null)
                     {
-                        // Name is not null or empty.
-                        if (sref != null && sref != "")
+                        string[] array;
+                        var value = p.GetValue(WrappedObject);
+                        if (p.PropertyType.IsArray)
                         {
-                            // Get the entity that has this name.
-                            Entity obj = Container.GetObjectByName(sref);
-                            if (obj != null && obj != this)
+                            array = (string[])value;
+                        }
+                        else if (value is IEnumerable<string> list)
+                        {
+                            array = list.ToArray();
+                        }
+                        else
+                        {
+                            array = [(string)value];
+                        }
+
+                        foreach (string sref in array)
+                        {
+                            // Name is not null or empty.
+                            if (sref != null && sref != "")
                             {
-                                // Add the entity to the reference map
-                                if (!References.ContainsKey(sref))
+                                // Get the entity that has this name.
+                                Entity obj = Container.GetObjectByName(sref);
+                                if (obj != null && obj != this)
                                 {
-                                    References.Add(sref, new[] { obj });
+                                    // Add the entity to the reference map
+                                    if (!References.ContainsKey(sref))
+                                    {
+                                        References.Add(sref, new[] { obj });
+                                    }
+                                    // Invalidate the referenced object's referencing objects
+                                    obj.ReferencingObjects = null;
                                 }
-                                // Invalidate the referenced object's referencing objects
-                                obj.ReferencingObjects = null;
                             }
                         }
                     }

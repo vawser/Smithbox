@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Veldrid.MetalBindings;
 
@@ -20,6 +21,8 @@ public class ModelSelectView
 {
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
+
+    public bool ApplyAutoSelectPass = false;
 
     public ModelSelectView(ModelEditorScreen editor, ProjectEntry project)
     {
@@ -58,6 +61,17 @@ public class ModelSelectView
     {
         if (ImGui.BeginMenuBar())
         {
+            if (ImGui.BeginMenu("Options"))
+            {
+                if (ImGui.MenuItem("Auto-Select Single Entries"))
+                {
+                    CFG.Current.ModelEditor_AutoLoadSingles = !CFG.Current.ModelEditor_AutoLoadSingles;
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_AutoLoadSingles);
+                UIHelper.Tooltip($"If enabled, when the selection list is only one entry, it will be automatically selected and loaded.");
+
+                ImGui.EndMenu();
+            }
 
 
             ImGui.EndMenuBar();
@@ -100,6 +114,25 @@ public class ModelSelectView
 
             // Context Menu
             DisplayContextMenu(wrapper);
+        }
+
+        if(ApplyAutoSelectPass)
+        {
+            ApplyAutoSelectPass = false;
+
+            if (container.Models.Count == 1)
+            {
+                foreach (var wrapper in container.Models)
+                {
+                    if (Editor.Selection.SelectedModelWrapper != null)
+                    {
+                        Editor.Selection.SelectedModelWrapper.Unload();
+                    }
+
+                    Editor.Selection.SelectedModelWrapper = wrapper;
+                    wrapper.Load();
+                }
+            }
         }
     }
 

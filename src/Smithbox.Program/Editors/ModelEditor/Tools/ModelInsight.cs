@@ -62,49 +62,6 @@ public class ModelInsight
         {
             var entry = ModelInsightHelper.SelectedFlverEntry;
 
-            UIHelper.SimpleHeader("flverHeader", "FLVER", "", UI.Current.ImGui_AliasName_Text);
-
-            ImGui.Text($"Name: {entry.Name}");
-            ImGui.Text($"Virtual Path: {entry.VirtualPath}");
-
-            if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
-            {
-                var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
-
-                if (listener.IsLoaded())
-                {
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
-                }
-                else
-                {
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
-                }
-            }
-
-            UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
-
-            foreach (var tex in entry.Entries)
-            {
-                ImGui.Text($"Name: {tex.Name}");
-                ImGui.Text($"Virtual Path: {tex.VirtualPath}");
-
-                if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
-                {
-                    var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
-
-                    if (listener.IsLoaded())
-                    {
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
-                    }
-                    else
-                    {
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
-                    }
-                }
-
-                ImGui.Separator();
-            }
-
             UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
 
             var outputDirectory = Path.Combine(Project.ProjectPath, CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
@@ -174,6 +131,49 @@ public class ModelInsight
                 ExtractMaterial(Project, entry, outputDirectory);
             }
             UIHelper.Tooltip("Extract the MTD or MATBIN that the textures are linked to for this current selection.");
+
+            UIHelper.SimpleHeader("flverHeader", "FLVER", "", UI.Current.ImGui_AliasName_Text);
+
+            ImGui.Text($"Name: {entry.Name}");
+            ImGui.Text($"Virtual Path: {entry.VirtualPath}");
+
+            if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
+            {
+                var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
+
+                if (listener.IsLoaded())
+                {
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                }
+                else
+                {
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
+                }
+            }
+
+            UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
+
+            foreach (var tex in entry.Entries)
+            {
+                ImGui.Text($"Name: {tex.Name}");
+                ImGui.Text($"Virtual Path: {tex.VirtualPath}");
+
+                if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
+                {
+                    var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
+
+                    if (listener.IsLoaded())
+                    {
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                    }
+                    else
+                    {
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
+                    }
+                }
+
+                ImGui.Separator();
+            }
         }
     }
 

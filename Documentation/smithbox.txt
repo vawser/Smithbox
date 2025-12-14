@@ -32,4 +32,7 @@
 - File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
 
 # TODO NOW
-- Model Editor: rewrite to follow map editor principles: focus on model view + dummy editing + basic FLVER property edits
+- Model Editor: 
+ - Sort out the property view (give it a table layout, fix some of the property handling)
+ - Add proper transform action for the dummy and node entities
+ - Restore some of the tools from the old version

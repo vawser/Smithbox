@@ -12,6 +12,33 @@ namespace StudioCore.Editors.ModelEditor;
 
 public static class ModelEditorUtils
 {
+    public static string GetAliasForSourceListEntry(ProjectEntry project, string filename, ModelListType type)
+    {
+        var alias = "";
+
+        if (type is ModelListType.MapPiece)
+        {
+            alias = AliasUtils.GetMapNameAlias(project, filename);
+        }
+
+        if (type is ModelListType.Asset)
+        {
+            alias = AliasUtils.GetAssetAlias(project, filename);
+        }
+
+        if (type is ModelListType.Character)
+        {
+            alias = AliasUtils.GetCharacterAlias(project, filename);
+        }
+
+        if (type is ModelListType.Part)
+        {
+            alias = AliasUtils.GetPartAlias(project, filename);
+        }
+
+        return alias;
+    }
+
     public static ResourceContainerType GetContainerTypeFromRelativePath(ProjectEntry project, string relativePath)
     {
         var containerType = ResourceContainerType.None;

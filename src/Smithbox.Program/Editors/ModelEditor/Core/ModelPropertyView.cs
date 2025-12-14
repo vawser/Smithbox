@@ -150,6 +150,7 @@ public class ModelPropertyView
         //}
 
         ImGui.NextColumn();
+        ImGui.NextColumn();
 
         if (types.Count() > 1)
         {

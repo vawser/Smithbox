@@ -193,9 +193,12 @@ public class ModelSourceView
 
                 var displayedName = $"{fileEntry.Filename}";
 
+                var alias = ModelEditorUtils.GetAliasForSourceListEntry(Project,
+                    displayedName, modelListType);
+
                 if (ImGui.Selectable($"{displayedName}##modelSourceListEntry{displayedName}", selected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    if (ImGui.IsMouseClicked(ImGuiMouseButton.Left))
                     {
                         var entry = Project.ModelData.PrimaryBank.Models.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
                         if(entry.Value != null)
@@ -204,8 +207,15 @@ public class ModelSourceView
 
                             // Populates the Files list so we can display the list in select view
                             entry.Value.PopulateModelList();
+
+                            Editor.ModelSelectView.ApplyAutoSelectPass = true;
                         }
                     }
+                }
+
+                if(alias != "")
+                {
+                    UIHelper.DisplayAlias(alias);
                 }
 
                 // Context Menu
@@ -229,6 +239,8 @@ public class ModelSourceView
 
                     // Populates the Files list so we can display the list in select view
                     entry.Value.PopulateModelList();
+
+                    Editor.ModelSelectView.ApplyAutoSelectPass = true;
                 }
             }
 
