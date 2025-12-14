@@ -253,7 +253,7 @@ public class WorldMapTool : IResourceEventListener
             ImGui.EndMenuBar();
         }
 
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMap);
+        Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.WorldMap);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();

@@ -1,14 +1,9 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
-using SoulsFormats;
-using SoulsFormats.Util;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.PropertyEditor;
-using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

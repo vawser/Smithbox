@@ -70,12 +70,6 @@ public class ViewportMenu
             }
         }
 
-        // Model Editor
-        if (Parent.ViewportType is ViewportType.ModelEditor)
-        {
-            Parent.ModelEditor.FilterMenu();
-        }
-
         SettingsMenu();
 
         ImGui.EndMenuBar();

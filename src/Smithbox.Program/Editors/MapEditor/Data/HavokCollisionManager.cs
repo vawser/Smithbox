@@ -6,13 +6,11 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
 using static StudioCore.Resource.Types.HavokCollisionResource;
 
@@ -150,97 +148,6 @@ public class HavokCollisionManager
         catch (Exception e)
         {
             TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load map collision: {bdtPath}", LogLevel.Error, LogPriority.High, e);
-        }
-    }
-
-    public void OnLoadModel(string modelName, FlverContainerType modelType)
-    {
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
-            return;
-
-        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            LoadModelCollision(modelName, "h", modelType);
-            LoadModelCollision(modelName, "l", modelType);
-        }
-    }
-
-    public void OnUnloadModel(string modelName)
-    {
-        if (!CFG.Current.MapEditor_ModelLoad_Collisions)
-            return;
-
-        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
-        {
-            //UnloadModelCollision(mapId, "h");
-            //UnloadModelCollision(mapId, "l");
-        }
-    }
-
-    private void LoadModelCollision(string modelName, string colType, FlverContainerType modelType)
-    {
-        var checkedName = $"{modelName}_{colType}".ToLower();
-
-        var fileEntry = Project.FileDictionary.Entries.FirstOrDefault(e => e.Filename == modelName);
-
-        if (fileEntry == null)
-            return;
-
-        if (HavokContainers.ContainsKey(checkedName))
-        {
-            return;
-        }
-
-        try
-        {
-            var bndData = Project.FS.ReadFile(fileEntry.Path);
-            var binder = BND4.Read((Memory<byte>)bndData);
-            HavokBinarySerializer serializer = new HavokBinarySerializer();
-            HavokXmlSerializer? xmlSerializer = null;
-
-            // Read collisions
-            foreach (var file in binder.Files)
-            {
-                var name = Path.GetFileName(file.Name).ToLower();
-
-                if (!name.Contains(".hkx"))
-                    continue;
-
-                var storedName = Path.GetFileNameWithoutExtension(file.Name).ToLower();
-
-                var FileBytes = file.Bytes.ToArray();
-
-                try
-                {
-                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
-                    {
-                        hkRootLevelContainer fileHkx;
-                        try
-                        {
-                            fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-                        }
-                        catch (InvalidDataException e)
-                        {
-                            if (xmlSerializer == null)
-                                xmlSerializer = new HavokXmlSerializer();
-                            fileHkx = (hkRootLevelContainer)xmlSerializer.Read(memoryStream);
-                        }
-
-                        if (!HavokContainers.ContainsKey(storedName))
-                        {
-                            HavokContainers.Add(storedName, fileHkx);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    TaskLogs.AddLog($"Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load model collision: {fileEntry.Path}", LogLevel.Error, LogPriority.High, e);
         }
     }
 

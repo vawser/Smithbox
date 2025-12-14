@@ -31,7 +31,6 @@ public class MapContentView
     private int treeImGuiId = 0;
 
     public MapContentViewType ContentViewType = MapContentViewType.ObjectType;
-    public MapContentLoadState ContentLoadState = MapContentLoadState.Unloaded;
 
     private bool _setNextFocus;
     private ISelectable _pendingClick;
@@ -59,7 +58,7 @@ public class MapContentView
         // Map Contents
         if (ImGui.Begin($@"Map Contents##mapContentsPanel", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapContents);
 
             DisplayMenubar();
 
@@ -213,7 +212,7 @@ public class MapContentView
             ImGui.Indent(); //TreeNodeEx fails to indent as it is inside a group / indentation is reset
         }
 
-        DisplayRootContextMenu(map, selected);
+        DisplayTopContextMenu(map, selected);
         HandleSelectionClick(selectTarget, mapRoot, mapRef, nodeopen);
 
         if (nodeopen)
@@ -299,7 +298,7 @@ public class MapContentView
     /// <summary>
     /// Handles the right-click context menu for map root
     /// </summary>
-    private void DisplayRootContextMenu(MapContainer map, bool selected)
+    private void DisplayTopContextMenu(MapContainer map, bool selected)
     {
         if (ImGui.BeginPopupContextItem($@"mapcontext_{map.Name}"))
         {

@@ -29,6 +29,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.MetalBindings;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.MsbEditor;
 
@@ -279,11 +280,18 @@ public class Universe
 
                 // HACK: this fixes the weird ghost state between the viewport and content list
                 CloneMapObjectsAction action = new(
-                    Editor, 
-                    new List<MsbEntity>(){ (MsbEntity)newMap.RootObject }, false,
+                    Editor,
+                    new List<MsbEntity>() { (MsbEntity)newMap.RootObject }, false,
                     null, null, true);
 
                 Editor.EditorActionManager.ExecuteAction(action);
+
+                // Might be this, test:
+                //foreach (Entity obj in newContainer.Objects)
+                //{
+                //      obj.RenderSceneMesh.AutoRegister = true;
+                //      obj.RenderSceneMesh.Register();
+                //}
 
                 if (selectOnLoad)
                 {

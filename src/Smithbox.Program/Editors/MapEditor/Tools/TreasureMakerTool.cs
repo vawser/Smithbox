@@ -1,23 +1,14 @@
-﻿using CsvHelper.Configuration.Attributes;
-using Hexa.NET.ImGui;
-using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Configuration;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Defaults;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 

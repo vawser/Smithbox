@@ -71,7 +71,7 @@ public class MapPropertyView
         ImGui.SetNextWindowSize(new Vector2(350, h - 80) * scale, ImGuiCond.FirstUseEver);
         ImGui.SetNextWindowPos(new Vector2(w - 370, 20) * scale, ImGuiCond.FirstUseEver);
         ImGui.Begin($@"Properties##{id}");
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapObjectProperties);
+        Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
 
         // Header
         ImGui.AlignTextToFramePadding();
@@ -110,7 +110,7 @@ public class MapPropertyView
 
         // Properties
         ImGui.BeginChild("propedit");
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapObjectProperties);
+        Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
 
         if (Editor.Universe.HasProcessedMapLoad && entSelection.Count > 1)
         {
@@ -129,7 +129,7 @@ public class MapPropertyView
             ImGui.Separator();
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_MultipleInput_Background);
             ImGui.BeginChild("MSB_EditingMultipleObjsChild");
-            Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapObjectProperties);
+            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapObjectProperties);
             PropEditorSelectedEntities(selection);
             ImGui.PopStyleColor();
             ImGui.EndChild();

@@ -39,7 +39,7 @@ public class ToolWindow
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor", ImGuiWindowFlags.MenuBar))
         {
-            Editor.FocusManager.SwitchWindowContext(MapEditorContext.ToolWindow);
+            Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.ToolWindow);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();

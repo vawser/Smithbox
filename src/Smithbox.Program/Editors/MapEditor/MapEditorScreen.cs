@@ -6,7 +6,6 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.Editors.MapEditor.PropertyEditor;
@@ -22,14 +21,11 @@ using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Program.Editors.MapEditor.Tools;
 using StudioCore.Resource;
-using StudioCore.Settings;
 using StudioCore.Tasks;
 using System;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor;
 

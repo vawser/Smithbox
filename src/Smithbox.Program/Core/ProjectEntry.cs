@@ -1,7 +1,5 @@
 ﻿using Andre.IO.VFS;
-using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
-using Silk.NET.SDL;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
@@ -15,7 +13,6 @@ using StudioCore.Formats;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsParamEditorNS;
 using StudioCore.MaterialEditorNS;
-using StudioCore.Program.Editors.FmgEditor;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
@@ -23,8 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Numerics;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -126,6 +121,8 @@ public class ProjectEntry
     [JsonIgnore]
     public MapData MapData;
     [JsonIgnore]
+    public ModelData ModelData;
+    [JsonIgnore]
     public ParamData ParamData;
     [JsonIgnore]
     public MaterialData MaterialData;
@@ -135,8 +132,6 @@ public class ProjectEntry
     public TextData TextData;
     [JsonIgnore]
     public TextureData TextureData;
-    [JsonIgnore]
-    public VisualData VisualData;
 
     /// <summary>
     /// Action manager for project-level changes (e.g. aliases)
@@ -330,24 +325,6 @@ public class ProjectEntry
             }
         }
 
-        // Visual Data
-        VisualData = new VisualData(BaseEditor, this);
-
-        Task<bool> visualDataTask = VisualData.Setup();
-        bool visualDataTaskResult = await visualDataTask;
-
-        if (!silent)
-        {
-            if (visualDataTaskResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}] Setup Visual Data.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Visual Data.");
-            }
-        }
-
         ClearEditors();
         InitializeEditors(initType, silent);
 
@@ -383,6 +360,7 @@ public class ProjectEntry
         FileBrowser = null;
 
         MapData = null;
+        ModelData = null;
         ParamData = null;
         MaterialData = null;
         GparamData = null;
@@ -715,6 +693,24 @@ public class ProjectEntry
             }
         }
 
+        ModelData = new(BaseEditor, this);
+
+        // Model Data
+        Task<bool> modelDataTask = ModelData.Setup();
+        bool modelDataTaskResult = await modelDataTask;
+
+        if (!silent)
+        {
+            if (modelDataTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup Model Data Banks.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup Model Data Banks.");
+            }
+        }
+
         // Only do this once, as 3 editors may invoke this.
         if (MaterialData == null && EnableExternalMaterialData)
         {
@@ -822,8 +818,6 @@ public class ProjectEntry
     {
         Initialized = false;
 
-        VisualData = null;
-
         MapEditor = null;
         ModelEditor = null;
         TextEditor = null;
@@ -835,6 +829,7 @@ public class ProjectEntry
         FileBrowser = null;
 
         MapData = null;
+        ModelData = null;
         ParamData = null;
         MaterialData = null;
         GparamData = null;

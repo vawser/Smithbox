@@ -88,21 +88,13 @@ public class FlverResource : IResource, IDisposable
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
         VirtPath = virtPath;
+
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
         {
             var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
-            // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
-            if (virtPath.Contains("direct/flver"))
-            {
-                if (curProject.ModelEditor != null)
-                {
-                    var data = curProject.ModelEditor.ResManager.GetCurrentFLVER().Clone();
-                    bytes = data.Write();
-                }
-            }
-
             bool ret;
+
             if (curProject.ProjectType is ProjectType.DES or ProjectType.ACFA)
             {
                 FlverDeS = FLVER0.Read(bytes);
@@ -168,21 +160,6 @@ public class FlverResource : IResource, IDisposable
         try
         {
             var fileData = curProject.FS.ReadFile(relativePath);
-
-            // HACK: circumvent resource manager, grab updated FLVER data directly for representing the model
-            if (virtPath.Contains("direct/flver"))
-            {
-                if (curProject.ModelEditor != null)
-                {
-                    var curFlver = curProject.ModelEditor.ResManager.GetCurrentFLVER();
-
-                    if (curFlver != null)
-                    {
-                        var data = curFlver.Clone();
-                        fileData = data.Write();
-                    }
-                }
-            }
 
             bool ret = false;
 

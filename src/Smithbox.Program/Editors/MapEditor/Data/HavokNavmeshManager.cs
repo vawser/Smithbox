@@ -42,6 +42,7 @@ public class HavokNavmeshManager
 
         return false;
     }
+
     public void OnLoadMap(string mapId)
     {
         if (Project.ProjectType is ProjectType.ER or ProjectType.NR)

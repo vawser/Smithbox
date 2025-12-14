@@ -4,7 +4,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
@@ -15,7 +14,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
 
@@ -37,11 +35,6 @@ public static class DrawableHelper
             var curEditor = editor as MapEditorScreen;
             curProject = curEditor.Project;
             curUniverse = curEditor.Universe;
-        }
-        if (editor is ModelEditorScreen)
-        {
-            var curEditor = editor as ModelEditorScreen;
-            curProject = curEditor.Project;
         }
 
         ResourceDescriptor asset;

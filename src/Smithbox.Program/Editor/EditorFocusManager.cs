@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.ModelEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,9 @@ public class EditorFocusManager
 
     public bool IsFirstFrame;
 
-    // Special-case for the Map Editor
-    public MapEditorContext CurrentWindowContext = MapEditorContext.None;
+    public MapEditorContext MapEditorContext = MapEditorContext.None;
+
+    public ModelEditorContext ModelEditorContext = ModelEditorContext.None;
 
     public EditorFocusManager(EditorScreen screen)
     {
@@ -57,16 +59,19 @@ public class EditorFocusManager
         }
     }
 
-    /// <summary>
-    /// Switches the focus context to the passed value.
-    /// Use this on all windows (e.g. both Begin and BeginChild)
-    /// </summary>
-    public void SwitchWindowContext(MapEditorContext newContext)
+    public void SwitchMapEditorContext(MapEditorContext newContext)
     {
         if (ImGui.IsWindowHovered())
         {
-            CurrentWindowContext = newContext;
-            //TaskLogs.AddLog($"Context: {newContext.GetDisplayName()}");
+            MapEditorContext = newContext;
+        }
+    }
+
+    public void SwitchModelEditorContext(ModelEditorContext newContext)
+    {
+        if (ImGui.IsWindowHovered())
+        {
+            ModelEditorContext = newContext;
         }
     }
 }

@@ -94,7 +94,7 @@ public class DisplayGroupTool
         {
             if (ImGui.CollapsingHeader("Render Groups"))
             {
-                Editor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
+                Editor.FocusManager.SwitchMapEditorContext(MapEditorContext.RenderGroups);
 
                 DisplayGroupsGUI(sdrawgroups, sdispgroups, sels);
             }

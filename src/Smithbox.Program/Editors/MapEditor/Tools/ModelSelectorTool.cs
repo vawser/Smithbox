@@ -1,17 +1,13 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

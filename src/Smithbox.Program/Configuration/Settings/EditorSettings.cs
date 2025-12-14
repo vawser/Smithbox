@@ -545,19 +545,6 @@ public class ModelEditorTab
             UIHelper.Tooltip("The FLVER property fields will be given crowd-sourced descriptions.");
 
         }
-
-        // Asset Browser
-        if (ImGui.CollapsingHeader("Asset Browser", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display aliases in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowAliases);
-            UIHelper.Tooltip("Show the aliases for each entry within the browser list as part of their displayed name.");
-
-            ImGui.Checkbox("Display tags in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowTags);
-            UIHelper.Tooltip("Show the tags for each entry within the browser list as part of their displayed name.");
-
-            ImGui.Checkbox("Display low detail Parts in list", ref CFG.Current.ModelEditor_AssetBrowser_ShowLowDetailParts);
-            UIHelper.Tooltip("Show the _l (low-detail) part entries in the Model Editor instance of the Asset Browser.");
-        }
     }
 }
 

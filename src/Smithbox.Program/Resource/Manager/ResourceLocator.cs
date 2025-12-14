@@ -1,14 +1,9 @@
-﻿using StudioCore;
-using StudioCore.Core;
-using StudioCore.Editors.ModelEditor.Utils;
-using StudioCore.Resource.Locators;
+﻿using StudioCore.Core;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Resource.Locators;
 
@@ -173,7 +168,7 @@ public class ResourceLocator
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmbnd.dcx");
                     }
-                    else if (project.MapEditor != null && project.MapEditor.HavokNavmeshManager.CanUse())
+                    else if (project.ProjectType is ProjectType.DS3 or ProjectType.BB or ProjectType.SDT or ProjectType.ER)
                     {
                         relPath = Path.Combine("map", mapid, $"{mapid}.nvmhktbnd.dcx");
 

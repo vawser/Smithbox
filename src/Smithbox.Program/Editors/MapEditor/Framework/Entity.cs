@@ -20,6 +20,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
+using static SoulsFormats.TAE3.Event;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -257,12 +258,6 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = true;
         }
-
-        if(editor is ModelEditorScreen)
-        {
-            var modelEditor = (ModelEditorScreen)editor;
-            modelEditor.ViewportManager.OnRepresentativeEntitySelected(this);
-        }
     }
 
     /// <summary>
@@ -277,12 +272,6 @@ public class Entity : ISelectable, IDisposable
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = false;
-        }
-
-        if (editor is ModelEditorScreen)
-        {
-            var modelEditor = (ModelEditorScreen)editor;
-            modelEditor.ViewportManager.OnRepresentativeEntityDeselected(this);
         }
     }
 
@@ -1260,13 +1249,6 @@ public class Entity : ISelectable, IDisposable
                 }
             }
         }
-
-        if (editor is ModelEditorScreen)
-        {
-            var curEditor = (ModelEditorScreen)editor;
-
-            curEditor.ViewportManager.OnRepresentativeEntityUpdate(this);
-        }
     }
 
     /// <summary>
@@ -1941,8 +1923,6 @@ public class MsbEntity : Entity
             return;
         }
 
-        
-
         // Map Editor
         if (editor is MapEditorScreen)
         {
@@ -2036,12 +2016,6 @@ public class MsbEntity : Entity
                     }
                 }
             }
-        }
-
-        // Model Editor
-        if (editor is ModelEditorScreen)
-        {
-            var curEditor = (ModelEditorScreen)editor;
         }
 
         base.UpdateRenderModel(editor);
@@ -2333,5 +2307,78 @@ public class PlacementEntity : Entity
         Transform t = base.GetLocalTransform();
 
         return t;
+    }
+}
+
+/// <summary>
+/// Entity used within the Model Editor.
+/// </summary>
+public class ModelEntity : Entity
+{
+    protected EditorScreen Editor;
+
+    public ModelEntity(EditorScreen editor) : base(editor)
+    {
+        Editor = editor;
+    }
+
+    public ModelEntity(EditorScreen editor, ObjectContainer container, object internalObject) : base(editor, container, internalObject)
+    {
+        Editor = editor;
+        Container = (ModelContainer)container;
+        WrappedObject = internalObject;
+    }
+
+    public ModelEntity(EditorScreen editor, ObjectContainer container, object internalObject, ModelEntityType entityType) : base(editor, container, internalObject)
+    {
+        Editor = editor;
+        Container = (ModelContainer)container;
+        WrappedObject = internalObject;
+        Type = entityType;
+    }
+
+    public ModelEntityType Type { get; set; }
+
+    public ModelContainer ModelContainer
+    {
+        get => ModelContainer;
+        set => ModelContainer = value;
+    }
+
+    public override bool HasTransform => Type == ModelEntityType.Dummy;
+
+    public override void UpdateRenderModel(EditorScreen editor)
+    {
+        if (!CFG.Current.Viewport_Enable_Rendering)
+        {
+            return;
+        }
+
+        base.UpdateRenderModel(editor);
+    }
+
+    public override Transform GetLocalTransform()
+    {
+        Transform t = base.GetLocalTransform();
+
+        // Prevent zero scale since it won't render
+        if (t.Scale == Vector3.Zero)
+        {
+            t.Scale = new Vector3(0.1f);
+        }
+
+        return t;
+    }
+
+    internal override Entity DuplicateEntity(object clone)
+    {
+        return new ModelEntity(Editor, Container, clone);
+    }
+
+    public override Entity Clone()
+    {
+        var c = (ModelEntity)base.Clone();
+        c.Type = Type;
+        return c;
     }
 }

@@ -1,161 +1,296 @@
-﻿using SoulsFormats;
+﻿using DotNext.Collections.Generic;
+using Octokit;
+using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor;
+using StudioCore.Resource;
+using StudioCore.Resource.Locators;
+using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
+using StudioCore.Scene.Structs;
+using System;
+using System.Collections.Generic;
 using System.Numerics;
+using System.Threading.Tasks;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
+using static SoulsFormats.MQB;
 
 namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
     public ModelEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public ModelUniverse Universe { get; set; }
+    public Entity ModelOffsetNode { get; set; }
 
-    public Entity Mesh_RootNode { get; set; }
-    public Entity Bone_RootNode { get; set; }
-    public Entity DummyPoly_RootNode { get; set; }
+    public List<Entity> Dummies { get; set; }
+    public List<Entity> Materials { get; set; }
+    public List<Entity> GxLists { get; set; }
+    public List<Entity> Nodes { get; set; }
+    public List<Entity> Meshes { get; set; }
+    public List<Entity> BufferLayouts { get; set; }
+    public List<Entity> Skeletons { get; set; }
 
-    public ModelContainer(ModelEditorScreen editor, ModelUniverse u, FLVER2 flver, MeshRenderableProxy flverProxy)
+    public List<Entity> Collisions { get; set; }
+    public List<Entity> Navmeshes { get; set; }
+
+
+    public ModelContainer(ModelEditorScreen editor, ProjectEntry project, string modelName)
     {
-        Universe = u;
+        Editor = editor;
+        Project = project;
+        Name = modelName;
 
-        RootObject = new Entity(Editor, this, new ModelRootNode("Root"));
-        Mesh_RootNode = new Entity(Editor, this, new ModelRootNode("Meshes"));
-        Bone_RootNode = new Entity(Editor, this, new ModelRootNode("Bones"));
-        DummyPoly_RootNode = new Entity(Editor, this, new ModelRootNode("Dummy Polygons"));
+        Dummies = new();
+        Materials = new();
+        GxLists = new();
+        Nodes = new();
+        Meshes = new();
+        BufferLayouts = new();
+        Skeletons = new();
 
-        RootObject.AddChild(Mesh_RootNode);
-        RootObject.AddChild(Bone_RootNode);
-        RootObject.AddChild(DummyPoly_RootNode);
+        Collisions = new();
+        Navmeshes = new();
 
-        if (!CFG.Current.Viewport_Enable_Rendering)
-            return;
+        var rootTransformNode = new ModelTransformNode(modelName);
+        var modelTransformNode = new ModelTransformNode(modelName);
+
+        RootObject = new ModelEntity(Editor, this, rootTransformNode, ModelEntityType.ModelRoot);
+        ModelOffsetNode = new ModelEntity(Editor, this, modelTransformNode);
+
+        RootObject.AddChild(ModelOffsetNode);
+    }
+
+    public Transform ModelOffset
+    {
+        get => ModelOffsetNode.GetLocalTransform();
+        set
+        {
+            var node = (ModelTransformNode)ModelOffsetNode.WrappedObject;
+            node.Position = value.Position;
+            var x = Utils.RadiansToDeg(value.EulerRotation.X);
+            var y = Utils.RadiansToDeg(value.EulerRotation.Y);
+            var z = Utils.RadiansToDeg(value.EulerRotation.Z);
+            node.Rotation = new Vector3(x, y, z);
+        }
+    }
+
+    public void Load(FLVER2 flver, ModelWrapper wrapper)
+    {
+        // Dummies
+        foreach (var entry in flver.Dummies)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Dummy);
+            AssignDummyDrawable(newObject, wrapper);
+
+            Dummies.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // Materials
+        foreach (var entry in flver.Materials)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Material);
+            Materials.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // GX Lists
+        foreach (var entry in flver.GXLists)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.GxList);
+            GxLists.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
+
+        // Nodes
+        foreach (var entry in flver.Nodes)
+        {
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Node);
+            AssignNodeDrawable(newObject, wrapper);
+
+            Nodes.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
+        }
 
         // Meshes
-        for (var i = 0; i < flver.Meshes.Count; i++)
+        foreach (var entry in flver.Meshes)
         {
-            var meshNode = new NamedEntity(Editor, this, flver.Meshes[i], $@"Mesh {i}", i);
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                if (flverProxy.Submeshes.Count > 0 && i < flverProxy.Submeshes.Count)
-                {
-                    meshNode.RenderSceneMesh = flverProxy.Submeshes[i];
-                    flverProxy.Submeshes[i].SetSelectable(meshNode);
-                }
-            }
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.Mesh);
+            AssignMeshDrawable(newObject, wrapper);
 
-            if (CFG.Current.ModelEditor_ViewMeshes)
-            {
-                meshNode.EditorVisible = true;
-            }
-            else
-            {
-                meshNode.EditorVisible = false;
-            }
-
-            Objects.Add(meshNode);
-            Mesh_RootNode.AddChild(meshNode);
+            Meshes.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
         }
 
-        // Bones
-        for (var i = 0; i < flver.Nodes.Count; i++)
+        // Buffer Layouts
+        foreach (var entry in flver.BufferLayouts)
         {
-            var boneNode = new TransformableNamedEntity(Editor, this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
-
-            boneNode.RenderSceneMesh = DrawableHelper.GetBoneDrawable(Universe.RenderScene, this, boneNode);
-            if(CFG.Current.ModelEditor_ViewDummyPolys)
-            {
-                boneNode.EditorVisible = true;
-            }
-            else
-            {
-                boneNode.EditorVisible = false;
-            }
-
-            Objects.Add(boneNode);
-            Bone_RootNode.AddChild(boneNode);
+            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.BufferLayout);
+            BufferLayouts.Add(newObject);
+            Objects.Add(newObject);
+            RootObject.AddChild(newObject);
         }
 
-        // Dummy Polygons
-        for (var i = 0; i < flver.Dummies.Count; i++)
+        // Skeletons
+        var skeletonSet = new ModelEntity(Editor, this, flver.Skeletons, ModelEntityType.Skeleton);
+        Skeletons.Add(skeletonSet);
+        Objects.Add(skeletonSet);
+        RootObject.AddChild(skeletonSet);
+
+        foreach (Entity m in Objects)
         {
-            var dummyPolyNode = new TransformableNamedEntity(Editor, this, flver.Dummies[i], $@"Dummy {i}", i);
+            m.BuildReferenceMap();
+        }
 
-            dummyPolyNode.RenderSceneMesh = DrawableHelper.GetDummyPolyDrawable(Universe.RenderScene, this, dummyPolyNode);
+        // Add references after all others
+        RootObject.BuildReferenceMap();
+    }
 
-            if (CFG.Current.ModelEditor_ViewDummyPolys)
+    public void Unload()
+    {
+        foreach (Entity obj in Objects)
+        {
+            if (obj != null)
             {
-                dummyPolyNode.EditorVisible = true;
+                obj.Dispose();
             }
-            else
-            {
-                dummyPolyNode.EditorVisible = false;
-            }
-
-            Objects.Add(dummyPolyNode);
-            DummyPoly_RootNode.AddChild(dummyPolyNode);
-
-            //ApplyDummyOffsetting(dummyPolyNode, flver.Dummies[i], flver, i);
         }
     }
 
-    public void ApplyDummyOffsetting(TransformableNamedEntity ent, FLVER.Dummy dummy, FLVER2 flver, int index)
+    public void AssignMeshDrawable(Entity ent, ModelWrapper wrapper)
     {
-        var pos = new Vector3(dummy.Position.X, dummy.Position.Y, dummy.Position.Z);
+        ResourceDescriptor resource;
 
-        Vector3 OffsetPos(Vector3 pos, FLVER2 flver, FLVER.Dummy dummy)
+        var modelName = wrapper.Name;
+        var mapID = "";
+
+        var loadCol = false;
+
+        if(wrapper.Parent != null)
         {
-            if (dummy.ParentBoneIndex >= 0)
-                return RecursiveBoneOffset(pos, flver.Nodes[dummy.ParentBoneIndex], flver);
-
-            return pos;
+            mapID = wrapper.Parent.MapID;
         }
-    // Offset a vector position by the rotation and translation of a bone it is attached to
 
-        pos = OffsetPos(pos, flver, dummy);
-        dummy.Position = pos;
+        ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
 
-        //Smithbox.EditorHandler.ModelEditor.ViewportHandler.UpdateRepresentativeDummy(index, pos);
+        if (modelName.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
+        {
+            var name = ModelLocator.MapModelNameToAssetName(Project, mapID, modelName);
+            resource = ModelLocator.GetMapModel(Project, mapID, name, name);
+        }
+        else if (modelName.StartsWith("c", StringComparison.CurrentCultureIgnoreCase))
+        {
+            resource = ModelLocator.GetChrModel(Project, modelName, modelName);
+        }
+        else if (modelName.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
+        {
+            resource = ModelLocator.GetEneModel(Project, modelName);
+        }
+        else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
+            modelName.StartsWith("AEG"))
+        {
+            resource = ModelLocator.GetObjModel(Project, modelName, modelName);
+        }
+        else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
+        {
+            loadCol = true;
+
+            resource = ModelLocator.GetMapCollisionModel(Project, mapID,
+                ModelLocator.MapModelNameToAssetName(Project, mapID, modelName), false);
+
+            if (resource == null || resource.AssetPath == null)
+                loadCol = false;
+        }
+        else
+        {
+            resource = ModelLocator.GetNullAsset();
+        }
+
+        if(loadCol)
+        {
+            LoadCollision(job, ent, resource);
+        }
+        else
+        {
+            LoadMesh(job, ent, resource);
+        }
     }
 
-    public Vector3 RecursiveBoneOffset(Vector3 translation, FLVER.Node bone, FLVER2 flver)
+    public void AssignDummyDrawable(Entity ent, ModelWrapper wrapper)
     {
-        translation = RotateVector(translation, bone.Rotation) + bone.Translation;
-        if (bone.ParentIndex >= 0)
-            return RecursiveBoneOffset(translation, flver.Nodes[bone.ParentIndex], flver);
-        return translation;
+        var mesh = RenderableHelper.GetDummyPolyRegionProxy(Editor.ModelViewportView.RenderScene);
+
+        mesh.DrawFilter = RenderFilter.Dummies;
+        mesh.World = ent.GetWorldMatrix();
+        mesh.SetSelectable(ent);
+
+        ent.RenderSceneMesh = mesh;
     }
 
-    // Rotation logic taken from cannon.js:
-    // https://github.com/schteppe/cannon.js/blob/master/src/math/Quaternion.js#L249
-    public Vector3 RotateVector(Vector3 v, Vector3 r)
+    public void AssignNodeDrawable(Entity ent, ModelWrapper wrapper)
     {
-        var quat = Quaternion.CreateFromYawPitchRoll(r.X, r.Y, r.Z);
+        var mesh = RenderableHelper.GetBonePointProxy(Editor.ModelViewportView.RenderScene);
 
-        var target = new Vector3();
+        mesh.DrawFilter = RenderFilter.Dummies;
+        mesh.World = ent.GetWorldMatrix();
+        mesh.SetSelectable(ent);
 
-        var x = v.X;
-        var y = v.Y;
-        var z = v.Z;
+        ent.RenderSceneMesh = mesh;
+    }
 
-        var qx = quat.X;
-        var qy = quat.Y;
-        var qz = quat.Z;
-        var qw = quat.W;
+    public void LoadMesh(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    {
+        MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromFlverResource(
+                Editor.ModelViewportView.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None, null);
 
-        // q*v
-        var ix = qw * x + qy * z - qz * y;
-        var iy = qw * y + qz * x - qx * z;
-        var iz = qw * z + qx * y - qy * x;
-        var iw = -qx * x - qy * y - qz * z;
+        mesh.DrawFilter = RenderFilter.Meshes;
+        mesh.World = ent.GetWorldMatrix();
+        mesh.SetSelectable(ent);
 
-        target.X = ix * qw + iw * -qx + iy * -qz - iz * -qy;
-        target.Y = iy * qw + iw * -qy + iz * -qx - ix * -qz;
-        target.Z = iz * qw + iw * -qz + ix * -qy - iy * -qx;
+        ent.RenderSceneMesh = mesh;
 
-        return target;
+        LoadResource(job, ent, resource);
+    }
+
+    public void LoadCollision(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    {
+        MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
+                Editor.ModelViewportView.RenderScene, resource.AssetVirtualPath, ModelMarkerType.None);
+
+        mesh.DrawFilter = RenderFilter.Collision;
+        mesh.World = ent.GetWorldMatrix();
+        mesh.SetSelectable(ent);
+
+        ent.RenderSceneMesh = mesh;
+
+        LoadResource(job, ent, resource);
+    }
+
+    public void LoadResource(ResourceJobBuilder job, Entity ent, ResourceDescriptor resource)
+    {
+        if (!ResourceManager.IsResourceLoaded(resource.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
+        {
+            if (resource.AssetArchiveVirtualPath != null)
+            {
+                job.AddLoadArchiveTask(resource.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false);
+            }
+            else if (resource.AssetVirtualPath != null)
+            {
+                job.AddLoadFileTask(resource.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+            }
+
+            Task task = job.Complete();
+            task.Wait();
+        }
     }
 }
 

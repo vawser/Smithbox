@@ -7,7 +7,9 @@
 - Map Editor: Selection Outline: mesh creation currently creates an issue when selecting too many entities. Ideally we can switch to an opacity or tint on the actual model: however this requires a overhaul of the rendering pipeline, currently the rendering side is instanced and detacted from the map editor state, making it difficult to apply conditional visuals.
 - Map Editor: Add Vector3 support to MSB Mass Edit
 - Map Editor: implement Edge support for SDT
+- Map Editor: add toggle for the increment tool shortcut behavior (per-frame, per press) + cooldown between frame applications
 - Map Editor: Fix up ER NVA (reads ok, but isn't accurate)
+- Map Editor: improve texturing rendering (some textures still missing)
 
 - Model Editor: add simple JSON export/import for elements of FLVER
 - Model Editor: order dummy polygon list by parent bone (as option?)
@@ -27,10 +29,7 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 
-# TODO NOW
-- Model Editor: implement VFS + data bank overhaul
-- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
+- File Browser: add category that represents the project's file dictionary in filesystem form, to allow for natural browsing and then direct extraction from the VFS. Mainly so the game doesn't ever need to be unpacked personally
 
-- TODO: fix model editor loading process to account for VFS changes in ResourceManager
- 
-- TODO: improve texturing rendering (some textures still missing)
+# TODO NOW
+- Model Editor: rewrite to follow map editor principles: focus on model view + dummy editing + basic FLVER property edits

@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Formats.JSON;
 using StudioCore.Resource;
@@ -14,7 +13,6 @@ using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static MsbUtils;
-using static StudioCore.Configuration.Settings.MapEditorTab;
 using static StudioCore.Editors.ParamEditor.ParamUtils;
 
 namespace StudioCore;
@@ -344,9 +342,19 @@ public class CFG
     public bool Interface_ModelEditor_Viewport_Grid = true;
 
     /// <summary>
-    /// If true, the model hierarchy window is visible in the Model Editor.
+    /// If true, the model list window is visible in the Model Editor.
     /// </summary>
-    public bool Interface_ModelEditor_ModelHierarchy = true;
+    public bool Interface_ModelEditor_ModelSourceList = true;
+
+    /// <summary>
+    /// If true, the model select list window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_ModelSelectList = true;
+
+    /// <summary>
+    /// If true, the model content window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_ModelContents = true;
 
     /// <summary>
     /// If true, the properties window is visible in the Model Editor.
@@ -354,44 +362,10 @@ public class CFG
     public bool Interface_ModelEditor_Properties = true;
 
     /// <summary>
-    /// If true, the asset browser window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_AssetBrowser = true;
-
-    /// <summary>
-    /// If true, the tool window is visible in the Model Editor.
-    /// </summary>
-    public bool Interface_ModelEditor_ToolWindow = true;
-
-    /// <summary>
     /// If true, the resource list window is visible in the Model Editor.
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
-    /// <summary>
-    /// If true, the Export Model tool collapsible is visible in the Model Editor Tool window.
-    /// </summary>
-    public bool Interface_ModelEditor_Tool_ExportModel = true;
-
-    /// <summary>
-    /// If true, the FLVER tool collapsibles are visible in the Model Editor Tool window.
-    /// </summary>
-    public bool Interface_ModelEditor_Tool_FlverTools = true;
-
-    /// <summary>
-    /// If true, the FLVER Group tool collapsibles are visible in the Model Editor Tool window.
-    /// </summary>
-    public bool Interface_ModelEditor_Tool_FlverGroups = true;
-
-    /// <summary>
-    /// If true, the Global Model Search tool collapsible is visible in the Model Editor Tool window.
-    /// </summary>
-    public bool Interface_ModelEditor_Tool_GlobalModelSearch = true;
-
-    /// <summary>
-    /// If true, the Model Mask Toggler tool collapsible is visible in the Model Editor Tool window.
-    /// </summary>
-    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
 
     ///------------------------------------------------------------
     /// Text Editor
@@ -1031,10 +1005,6 @@ public class CFG
     //****************************
     // Settings: Model Editor
     //****************************
-    public bool ModelEditor_AssetBrowser_ShowAliases = true;
-    public bool ModelEditor_AssetBrowser_ShowTags = false;
-    public bool ModelEditor_AssetBrowser_ShowLowDetailParts = false;
-
     public bool ModelEditor_ViewMeshes = true;
     public bool ModelEditor_ViewDummyPolys = true;
     public bool ModelEditor_ViewBones = true;
@@ -1049,15 +1019,17 @@ public class CFG
     public bool ModelEditor_DisplayDmyPolyReferenceID = true;
     public bool ModelEditor_DisplayMatNameOnMesh = true;
 
-    public string ModelEditor_Toolbar_DuplicateFile_NewName = "";
 
-    public int ModelEditor_Toolbar_DuplicateProperty_Amount = 1;
+    public bool ModelEditor_ModelLoad_MapPieces = true;
+    public bool ModelEditor_ModelLoad_Objects = true;
+    public bool ModelEditor_ModelLoad_Characters = true;
+    public bool ModelEditor_ModelLoad_Collisions = true;
+    public bool ModelEditor_ModelLoad_Navmeshes = true;
 
-    public bool ModelEditor_Toolbar_DeleteProperty_FaceSetsOnly = true;
-
-    public ModelExportType ModelEditor_ExportType = ModelExportType.OBJ;
-
-    public bool ModelEditor_DisplayVisibilityIcon = true;
+    public bool ModelEditor_TextureLoad_MapPieces = true;
+    public bool ModelEditor_TextureLoad_Objects = true;
+    public bool ModelEditor_TextureLoad_Characters = true;
+    public bool ModelEditor_TextureLoad_Misc = true;
 
     //****************************
     // Settings: Param Editor

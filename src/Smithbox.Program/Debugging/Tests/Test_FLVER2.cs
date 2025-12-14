@@ -36,36 +36,6 @@ public static class Test_FLVER2
 
     public static void Run(Smithbox baseEditor)
     {
-        var curProject = baseEditor.ProjectManager.SelectedProject;
 
-        Output = new List<string>();
-
-        var currentFlver = curProject.ModelEditor.ResManager.GetCurrentInternalFile();
-
-        if(currentFlver == null)
-        {
-            Output.Add("No FLVER loaded");
-            return;
-        }
-
-        var name = currentFlver.Name;
-        var newBytes = currentFlver.CurrentFLVER.Write();
-        var oldBytes = currentFlver.InitialFlverBytes;
-
-        Output.Add($"Old Bytes: {oldBytes.Length}");
-        Output.Add($"New Bytes: {newBytes.Length}");
-
-        var outputDir = Path.Join(curProject.ProjectPath, "_flverTest");
-
-        // Cleanup old files
-        if(Directory.Exists(outputDir))
-        {
-            Directory.Delete(outputDir, true);
-        }
-
-        Directory.CreateDirectory(outputDir);
-
-        File.WriteAllBytes(Path.Join(outputDir, $"Original_{name}.flver"), oldBytes);
-        File.WriteAllBytes(Path.Join(outputDir, $"Saved_{name}.flver"), newBytes);
     }
 }

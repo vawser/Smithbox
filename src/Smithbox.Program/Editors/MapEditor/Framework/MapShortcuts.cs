@@ -11,48 +11,40 @@ namespace StudioCore.Editors.MapEditor.Framework;
 public class MapShortcuts
 {
     public MapEditorScreen Editor;
-    private ViewportActionManager EditorActionManager;
-    private MapViewportView ViewportView;
-    private ViewportSelection Selection;
-    private MapActionHandler ActionHandler;
 
     public MapShortcuts(MapEditorScreen screen)
     {
         Editor = screen;
-        ViewportView = screen.MapViewportView;
-        EditorActionManager = screen.EditorActionManager;
-        Selection = screen.ViewportSelection;
-        ActionHandler = screen.ActionHandler;
     }
 
     public void Monitor()
     {
         // Keyboard shortcuts
-        if (!ViewportView.ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
+        if (!Editor.MapViewportView.ViewportUsingKeyboard && !ImGui.IsAnyItemActive())
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
             {
                 Editor.Save();
             }
 
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+            if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
             {
-                EditorActionManager.UndoAction();
+                Editor.EditorActionManager.UndoAction();
             }
 
-            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+            if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
             {
-                EditorActionManager.UndoAction();
+                Editor.EditorActionManager.UndoAction();
             }
 
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+            if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
             {
-                EditorActionManager.RedoAction();
+                Editor.EditorActionManager.RedoAction();
             }
 
-            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+            if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
             {
-                EditorActionManager.RedoAction();
+                Editor.EditorActionManager.RedoAction();
             }
 
             // Actions
@@ -82,6 +74,7 @@ public class MapShortcuts
             Editor.SelectionGroupTool.OnShortcut();
             Editor.SelectionGroupTool.OnShortcut();
             Editor.RotationCycleConfigTool.OnShortcut();
+            Editor.MovementCycleConfigTool.OnShortcut();
 
             // Gizmos
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
@@ -119,44 +112,44 @@ public class MapShortcuts
             }
 
             // Render settings
-            if (ViewportView.RenderScene != null)
+            if (Editor.MapViewportView.RenderScene != null)
             {
                 if (InputTracker.GetControlShortcut(Key.Number1))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
                                              RenderFilter.Character | RenderFilter.Region;
                 }
                 else if (InputTracker.GetControlShortcut(Key.Number2))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
                                              RenderFilter.Character | RenderFilter.Region;
                 }
                 else if (InputTracker.GetControlShortcut(Key.Number3))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
                                              RenderFilter.Object | RenderFilter.Character |
                                              RenderFilter.Region;
                 }
                 else if (InputTracker.GetControlShortcut(Key.Number4))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object |
                                              RenderFilter.Character | RenderFilter.Light;
                 }
                 else if (InputTracker.GetControlShortcut(Key.Number5))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object |
                                              RenderFilter.Character | RenderFilter.Light;
                 }
                 else if (InputTracker.GetControlShortcut(Key.Number6))
                 {
-                    ViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
+                    Editor.MapViewportView.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh |
                                              RenderFilter.MapPiece | RenderFilter.Collision |
                                              RenderFilter.Navmesh | RenderFilter.Object |
                                              RenderFilter.Character | RenderFilter.Region |
                                              RenderFilter.Light;
                 }
 
-                CFG.Current.LastSceneFilter = ViewportView.RenderScene.DrawFilter;
+                CFG.Current.LastSceneFilter = Editor.MapViewportView.RenderScene.DrawFilter;
             }
         }
     }

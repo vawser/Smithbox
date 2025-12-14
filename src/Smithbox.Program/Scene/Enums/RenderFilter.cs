@@ -16,5 +16,10 @@ public enum RenderFilter
     Light = 256,
     SpeedTree = 512,
     AutoInvade = 1024,
+
+    Meshes = 2048,
+    Dummies = 4096,
+    Nodes = 8192,
+
     All = 0xFFFFFFF
 }

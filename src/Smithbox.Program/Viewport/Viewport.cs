@@ -159,8 +159,8 @@ public class Viewport : IViewport
 
         if (viewportType is ViewportType.ModelEditor)
         {
-            RenderScene = modelEditor.RenderScene;
-            ViewportSelection = modelEditor._selection;
+            RenderScene = modelEditor.ModelViewportView.RenderScene;
+            ViewportSelection = modelEditor.ViewportSelection;
             ActionManager = modelEditor.EditorActionManager;
         }
 
@@ -257,12 +257,12 @@ public class Viewport : IViewport
 
                 if (ViewportType is ViewportType.MapEditor)
                 {
-                    MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
+                    MapEditor.FocusManager.SwitchMapEditorContext(MapEditorContext.MapViewport);
                 }
 
                 if (ViewportType is ViewportType.ModelEditor)
                 {
-                    ModelEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
+                    ModelEditor.FocusManager.SwitchModelEditorContext(ModelEditorContext.MapViewport);
                 }
 
                 Vector2 p = ImGui.GetWindowPos();

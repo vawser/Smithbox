@@ -299,7 +299,7 @@ public class ArrayPropertyCopyAction : ViewportAction
 
 public class MultipleEntityPropertyChangeAction : ViewportAction
 {
-    private MapEditorScreen Editor;
+    private EditorScreen Editor;
 
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
@@ -307,7 +307,7 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
     public bool UpdateRenderModel = false;
     public bool ClearName { get; set; }
 
-    public MultipleEntityPropertyChangeAction(MapEditorScreen editor, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
+    public MultipleEntityPropertyChangeAction(EditorScreen editor, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
         int index = -1, int classIndex = -1, bool clearName = true)
     {
         Editor = editor;

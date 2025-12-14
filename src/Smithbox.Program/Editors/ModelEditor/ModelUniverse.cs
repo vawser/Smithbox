@@ -1,12 +1,18 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using Octokit;
+using Org.BouncyCastle.Crypto;
+using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource;
+using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ComponentModel;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -14,40 +20,462 @@ namespace StudioCore.Editors.ModelEditor;
 public class ModelUniverse
 {
     public ModelEditorScreen Editor;
+    public ProjectEntry Project;
 
     public RenderScene RenderScene;
 
-    public ModelContainer LoadedModelContainer { get; set; }
+    public bool HasProcessedModelLoad;
 
     public ViewportSelection Selection { get; }
 
-    public ModelUniverse(ModelEditorScreen editor, RenderScene scene, ViewportSelection sel)
+    private Task task;
+    private List<Task> Tasks = new();
+
+    private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
+    private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
+    private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
+    private HashSet<ResourceDescriptor> LoadList_Collision = new();
+    private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
+
+    private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
+    private HashSet<ResourceDescriptor> LoadList_Asset_Texture = new();
+    private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
+    private HashSet<ResourceDescriptor> LoadList_Other_Texture = new();
+
+    public ModelUniverse(ModelEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
-        RenderScene = scene;
-        Selection = sel;
+        Project = project;
+
+        RenderScene = editor.ModelViewportView.RenderScene;
+        Selection = editor.ViewportSelection;
 
         if (RenderScene == null)
         {
             CFG.Current.Viewport_Enable_Rendering = false;
         }
+        else
+        {
+            CFG.Current.Viewport_Enable_Rendering = true;
+        }
     }
 
-    public void UnloadTransformableEntities()
+    /// <summary>
+    /// Load the actual model file from the source file
+    /// </summary>
+    /// <param name="fileEntry"></param>
+    /// <param name="modelName"></param>
+    public async void LoadModel(ModelWrapper modelWrapper)
     {
-        if (LoadedModelContainer != null)
+        if (modelWrapper.Container != null)
         {
-            foreach (Entity obj in LoadedModelContainer.Objects)
+            TaskLogs.AddLog($"Model \"{modelWrapper.Name}\" is already loaded",
+                LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
+            return;
+        }
+
+        ResourceManager.ClearUnusedResources();
+        Editor.ViewportSelection.ClearSelection(Editor);
+
+        var newContainer = new ModelContainer(Editor, Project, modelWrapper.Name);
+
+        newContainer.Load(modelWrapper.FLVER, modelWrapper);
+
+        SetupModelLoadList(modelWrapper.Name, modelWrapper.Parent);
+        SetupTextureLoadList(modelWrapper.Name, modelWrapper.Parent);
+
+        modelWrapper.Container = newContainer;
+
+        if (CFG.Current.Viewport_Enable_Rendering)
+        {
+            Selection.ClearSelection(Editor);
+            Selection.AddSelection(Editor, newContainer.RootObject);
+        }
+
+        if (CFG.Current.Viewport_Enable_Rendering)
+        {
+            Tasks = LoadTextures(Tasks, newContainer);
+            await Task.WhenAll(Tasks);
+            Tasks = LoadModels(Tasks, newContainer);
+            await Task.WhenAll(Tasks);
+
+            ScheduleTextureRefresh();
+        }
+
+        await Task.WhenAll(Tasks);
+
+        if (CFG.Current.Viewport_Enable_Rendering)
+        {
+            foreach (Entity obj in newContainer.Objects)
             {
-                if (obj is TransformableNamedEntity)
+                obj.UpdateRenderModel(Editor);
+            }
+        }
+    }
+
+    public void SetupModelLoadList(string modelName, ModelContainerWrapper parent)
+    {
+        var loadList = new List<ResourceDescriptor>();
+
+        // MapPiece
+        if (modelName.StartsWith('m'))
+        {
+            if (parent != null)
+            {
+                var mapID = parent.MapID;
+
+                if (mapID != null)
                 {
-                    if (obj != null)
-                    {
-                        obj.Dispose();
-                    }
+                    var name = ModelLocator.MapModelNameToAssetName(Editor.Project, mapID, modelName);
+                    var modelAsset = ModelLocator.GetMapModel(Editor.Project, mapID, name, name);
+
+                    if (modelAsset.IsValid())
+                        LoadList_MapPiece_Model.Add(modelAsset);
                 }
             }
         }
+
+        // Character
+        if (modelName.StartsWith('c'))
+        {
+            var modelAsset = ModelLocator.GetChrModel(Editor.Project, modelName, modelName);
+
+            if (modelAsset.IsValid())
+                LoadList_Character_Model.Add(modelAsset);
+        }
+
+        // Object / Asset
+        if (modelName.StartsWith('o') || modelName.StartsWith("AEG"))
+        {
+            var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
+
+            if (modelAsset.IsValid())
+                LoadList_Asset_Model.Add(modelAsset);
+        }
+
+        // Collision
+        if (modelName.StartsWith('h'))
+        {
+            if (parent != null)
+            {
+                var mapID = parent.MapID;
+
+                if (mapID != null)
+                {
+                    var modelAsset = ModelLocator.GetMapCollisionModel(Editor.Project, mapID,
+                    ModelLocator.MapModelNameToAssetName(Editor.Project, mapID, modelName), false);
+
+                    if (modelAsset.IsValid())
+                        LoadList_Collision.Add(modelAsset);
+                }
+            }
+        }
+    }
+
+    public void SetupTextureLoadList(string modelName, ModelContainerWrapper parent)
+    {
+        // MAP
+        if (parent != null)
+        {
+            var mapID = parent.MapID;
+
+            if (mapID != null)
+            {
+                foreach (ResourceDescriptor asset in ResourceLocator.GetMapTextureVPs(Editor.Project, mapID))
+                {
+                    if (asset.IsValid())
+                        LoadList_Map_Texture.Add(asset);
+                }
+            }
+        }
+
+        // Character
+        if (modelName.StartsWith('c'))
+        {
+            // TPF
+            var textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, false);
+
+            if (textureAsset.IsValid())
+                LoadList_Character_Texture.Add(textureAsset);
+
+            // BND
+            textureAsset = ResourceLocator.GetCharacterTextureVP(Editor.Project, modelName, true);
+
+            if (textureAsset.IsValid())
+                LoadList_Character_Texture.Add(textureAsset);
+        }
+
+        // Object
+        if (modelName.StartsWith('o'))
+        {
+            var textureAsset = ResourceLocator.GetObjectTextureVP(Editor.Project, modelName);
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
+
+        // Assets
+        if (modelName.StartsWith("AEG"))
+        {
+            var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, modelName);
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
+
+        // AAT
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+        {
+            var textureAsset = ResourceLocator.GetCommonCharacterTextureVP(Editor.Project, "common_body");
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
+
+        // SYSTEX
+        if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
+        {
+            var textureAsset = ResourceLocator.GetSystemTextureVP(Editor.Project, "systex");
+
+            if (textureAsset.IsValid())
+                LoadList_Asset_Texture.Add(textureAsset);
+        }
+    }
+
+    public List<Task> LoadTextures(List<Task> tasks, ModelContainer container)
+    {
+        if (!CFG.Current.Viewport_Enable_Texturing)
+            return tasks;
+
+        // Map Pieces
+        if (CFG.Current.ModelEditor_TextureLoad_MapPieces)
+        {
+            var texJob = ResourceManager.CreateNewJob($@"Map Piece Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Map_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
+
+        // Character
+        if (CFG.Current.ModelEditor_TextureLoad_Characters)
+        {
+            var texJob = ResourceManager.CreateNewJob($@"Character Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Character_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
+
+        // Asset
+        if (CFG.Current.ModelEditor_TextureLoad_Objects)
+        {
+            var texJob = ResourceManager.CreateNewJob($@"Asset Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Asset_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
+
+        // Other Textures
+        if (CFG.Current.ModelEditor_TextureLoad_Misc)
+        {
+            var texJob = ResourceManager.CreateNewJob($@"Other Textures");
+
+            foreach (ResourceDescriptor asset in LoadList_Other_Texture)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    texJob.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    texJob.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = texJob.Complete();
+            tasks.Add(task);
+        }
+
+        return tasks;
+    }
+
+    public List<Task> LoadModels(List<Task> tasks, ModelContainer container)
+    {
+        // MapPieces
+        if (CFG.Current.ModelEditor_ModelLoad_MapPieces)
+        {
+            var job = ResourceManager.CreateNewJob($@"Map Pieces");
+
+            foreach (ResourceDescriptor asset in LoadList_MapPiece_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        // Characters
+        if (CFG.Current.ModelEditor_ModelLoad_Characters)
+        {
+            var job = ResourceManager.CreateNewJob($@"Characters");
+
+            foreach (ResourceDescriptor asset in LoadList_Character_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        // Objects
+        if (CFG.Current.ModelEditor_ModelLoad_Objects)
+        {
+            var job = ResourceManager.CreateNewJob($@"Assets");
+
+            foreach (ResourceDescriptor asset in LoadList_Asset_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        // Collisions
+        if (CFG.Current.ModelEditor_ModelLoad_Collisions)
+        {
+            var job = ResourceManager.CreateNewJob($@"Collisions");
+
+            string archive = null;
+            HashSet<string> collisionAssets = new();
+
+            foreach (ResourceDescriptor asset in LoadList_Collision)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    archive = asset.AssetArchiveVirtualPath;
+                    collisionAssets.Add(asset.AssetVirtualPath);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            if (archive != null)
+            {
+                job.AddLoadArchiveTask(archive, AccessLevel.AccessGPUOptimizedOnly, false, collisionAssets);
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        // Navmesh
+        if (CFG.Current.ModelEditor_ModelLoad_Navmeshes)
+        {
+            var job = ResourceManager.CreateNewJob($@"Navmesh");
+
+            foreach (ResourceDescriptor asset in LoadList_Navmesh)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
+                        false, ResourceType.NavmeshHKX);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        return tasks;
+    }
+
+    public void UnloadModel(ModelWrapper modelWrapper)
+    {
+        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.EditorActionManager.Clear();
+
+        ResourceManager.ClearUnusedResources();
+        Editor.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
+
+        modelWrapper.Container.Unload();
+        modelWrapper.Container.Clear();
+        modelWrapper.Container = null;
+
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        GC.Collect();
     }
 
     public void ScheduleTextureRefresh()
