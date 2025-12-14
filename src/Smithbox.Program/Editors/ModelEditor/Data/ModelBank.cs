@@ -316,11 +316,15 @@ public class ModelWrapper
                         foreach (var file in binder.Files)
                         {
                             var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filepath = file.Name.ToLower();
 
-                            if (filename == Name)
+                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
                             {
-                                var flverData = binder.ReadFile(file);
-                                FLVER = FLVER2.Read(flverData);
+                                if (filename == Name)
+                                {
+                                    var flverData = binder.ReadFile(file);
+                                    FLVER = FLVER2.Read(flverData);
+                                }
                             }
                         }
                     }
@@ -341,11 +345,15 @@ public class ModelWrapper
                         foreach (var file in binder.Files)
                         {
                             var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                            var filepath = file.Name.ToLower();
 
-                            if (filename == Name)
+                            if (filepath.Contains(".flver") || filepath.Contains(".flv"))
                             {
-                                var flverData = binder.ReadFile(file);
-                                FLVER = FLVER2.Read(flverData);
+                                if (filename == Name)
+                                {
+                                    var flverData = binder.ReadFile(file);
+                                    FLVER = FLVER2.Read(flverData);
+                                }
                             }
                         }
                     }
@@ -393,11 +401,15 @@ public class ModelWrapper
                     foreach (var file in binder.Files)
                     {
                         var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filepath = file.Name.ToLower();
 
-                        if (filename == Name)
+                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
                         {
-                            var flverData = binder.ReadFile(file);
-                            FLVER = FLVER2.Read(flverData);
+                            if (filename == Name)
+                            {
+                                var flverData = binder.ReadFile(file);
+                                FLVER = FLVER2.Read(flverData);
+                            }
                         }
                     }
                 }
@@ -407,11 +419,15 @@ public class ModelWrapper
                     foreach (var file in binder.Files)
                     {
                         var filename = System.IO.Path.GetFileNameWithoutExtension(file.Name);
+                        var filepath = file.Name.ToLower();
 
-                        if (filename == Name)
+                        if (filepath.Contains(".flver") || filepath.Contains(".flv"))
                         {
-                            var flverData = binder.ReadFile(file);
-                            FLVER = FLVER2.Read(flverData);
+                            if (filename == Name)
+                            {
+                                var flverData = binder.ReadFile(file);
+                                FLVER = FLVER2.Read(flverData);
+                            }
                         }
                     }
                 }
@@ -427,9 +443,6 @@ public class ModelWrapper
 
     public void Unload()
     {
-        if (FLVER != null)
-        {
-            Parent.Project.ModelEditor.Universe.UnloadModel(this);
-        }
+        Parent.Project.ModelEditor.Universe.UnloadModel(this);
     }
 }

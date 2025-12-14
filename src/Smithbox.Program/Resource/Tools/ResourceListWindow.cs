@@ -59,11 +59,14 @@ public static class ResourceListWindow
             ImGui.EndTabItem();
         }
 
-        if (ImGui.BeginTabItem("Model Data"))
+        if (editor is MapEditorScreen)
         {
-            SetupModelDataTab(editor);
-            DisplayModelDataTab(editor);
-            ImGui.EndTabItem();
+            if (ImGui.BeginTabItem("Model Data"))
+            {
+                SetupModelDataTab(editor);
+                DisplayModelDataTab(editor);
+                ImGui.EndTabItem();
+            }
         }
 
         ImGui.EndTabBar();

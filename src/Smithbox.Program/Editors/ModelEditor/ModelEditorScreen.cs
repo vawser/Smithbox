@@ -45,6 +45,9 @@ public class ModelEditorScreen : EditorScreen
 
     public ModelViewportFilters ViewportFilters;
 
+    public ModelGridConfiguration ModelGridTool;
+    public ModelInsight ModelInsightTool;
+
     public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -71,6 +74,11 @@ public class ModelEditorScreen : EditorScreen
         ActionHandler = new ModelActionHandler(this, project);
         CommandQueue = new ModelCommandQueue(this, project);
         Shortcuts = new ModelShortcuts(this, project);
+
+        ModelGridTool = new ModelGridConfiguration(this, Project);
+        ModelInsightTool = new ModelInsight(this, Project);
+
+        ModelInsightHelper.Setup(this, Project);
 
         FocusManager.SetDefaultFocusElement("Properties##modeleditprop");
     }
@@ -165,14 +173,14 @@ public class ModelEditorScreen : EditorScreen
             ImGui.SetNextWindowFocus();
         }
 
-        //ModelPropertyView.OnGui();
+        ModelPropertyView.OnGui();
 
-        //ResourceLoadWindow.DisplayWindow(ModelViewportView.Viewport.Width, ModelViewportView.Viewport.Height);
+        ResourceLoadWindow.DisplayWindow(ModelViewportView.Viewport.Width, ModelViewportView.Viewport.Height);
 
-        //if (CFG.Current.Interface_MapEditor_ResourceList)
-        //{
-        //    ResourceListWindow.DisplayWindow("modelResourceList", this);
-        //}
+        if (CFG.Current.Interface_MapEditor_ResourceList)
+        {
+            ResourceListWindow.DisplayWindow("modelResourceList", this);
+        }
 
         ImGui.PopStyleColor(1);
 

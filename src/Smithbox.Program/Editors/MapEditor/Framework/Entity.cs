@@ -1232,6 +1232,12 @@ public class Entity : ISelectable, IDisposable
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.Visible = _EditorVisible;
+
+            if (editor is ModelEditorScreen)
+            {
+                RenderSceneMesh.AutoRegister = true;
+                RenderSceneMesh.Register();
+            }
         }
 
         if(editor is MapEditorScreen)

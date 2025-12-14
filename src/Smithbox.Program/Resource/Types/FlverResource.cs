@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.ModelEditor;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using StudioCore.Scene.Structs;
@@ -324,6 +325,7 @@ public class FlverResource : IResource, IDisposable
 
             // Used to allow for association of models and textures
             ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+            ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
 
             ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;

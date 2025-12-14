@@ -1,93 +1,183 @@
-﻿using SoulsFormats;
+﻿using Hexa.NET.ImGui;
+using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ModelEditor;
-using StudioCore.FileBrowserNS;
+using StudioCore.Interface;
+using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using static SoulsFormats.NVA;
 
-namespace StudioCore.Resource;
+namespace StudioCore.Editors.ModelEditor;
 
-public static class ModelDataHelper
+public class ModelInsight
 {
-    public static Dictionary<string, ModelDataEntry> Entries { get; set; } = new Dictionary<string, ModelDataEntry>();
+    public ModelEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public static ModelDataEntry SelectedDataEntry { get; set; }
-    public static FlverDataEntry SelectedFlverEntry { get; set; }
-
-    public static void AddEntry(MapEditorScreen editor, MapContainer map)
+    public ModelInsight(ModelEditorScreen editor, ProjectEntry project)
     {
-        if(!Entries.ContainsKey(map.Name))
-        {
-            Entries.Add(map.Name, new ModelDataEntry(map.Name, map));
-        }
+        Editor = editor;
+        Project = project;
     }
-
-    public static void ClearEntry(MapEditorScreen editor, MapContainer map)
+    public void OnToolWindow()
     {
-        if (Entries.ContainsKey(map.Name))
+        if (ImGui.CollapsingHeader("Model Insight"))
         {
-            Entries.Remove(map.Name);
-        }
-    }
+            if (Editor.Selection.SelectedModelWrapper == null)
+                return;
 
-    public static void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
-    {
-        var project = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+            var curModelData = ModelInsightHelper.Entries.FirstOrDefault(e => e.Key == Editor.Selection.SelectedModelWrapper.Name);
 
-        if (project.MapEditor == null)
-            return;
-
-        var flverName = Path.GetFileNameWithoutExtension(flverVirtPath);
-        var textureName = Path.GetFileName(texVirtPath);
-
-        if (project.MapEditor.Universe.ModelDataMapID == null)
-            return;
-
-        if (Entries.ContainsKey(project.MapEditor.Universe.ModelDataMapID))
-        {
-            var entry = Entries[project.MapEditor.Universe.ModelDataMapID];
-
-            if(!entry.Models.Any(e => e.Name == flverName))
+            if (curModelData.Value != null && curModelData.Value != ModelInsightHelper.SelectedDataEntry)
             {
-                var newModel = new FlverDataEntry();
-                newModel.Name = flverName;
-                newModel.VirtualPath = flverVirtPath.ToLower();
-                newModel.FLVER2 = (FLVER2)flver;
-
-                entry.Models.Add(newModel);
+                ModelInsightHelper.SelectedDataEntry = curModelData.Value;
             }
 
-            if (entry.Models.Any(e => e.Name == flverName))
+            if (ModelInsightHelper.SelectedDataEntry == null)
+                return;
+
+
+            var flverEntry = ModelInsightHelper.SelectedDataEntry.Models.FirstOrDefault(
+            e => e.Name == Editor.Selection.SelectedModelWrapper.Name);
+
+            if (flverEntry != null && flverEntry != ModelInsightHelper.SelectedFlverEntry)
             {
-                var modelEntry = entry.Models.FirstOrDefault(e => e.Name == flverName);
+                ModelInsightHelper.SelectedFlverEntry = flverEntry;
+            }
 
-                if(modelEntry != null)
+            Display();
+        }
+    }
+
+    public void Display()
+    {
+        var windowWidth = ImGui.GetWindowWidth();
+
+        if (ModelInsightHelper.SelectedFlverEntry != null)
+        {
+            var entry = ModelInsightHelper.SelectedFlverEntry;
+
+            UIHelper.SimpleHeader("flverHeader", "FLVER", "", UI.Current.ImGui_AliasName_Text);
+
+            ImGui.Text($"Name: {entry.Name}");
+            ImGui.Text($"Virtual Path: {entry.VirtualPath}");
+
+            if (ResourceManager.ResourceDatabase.ContainsKey(entry.VirtualPath))
+            {
+                var listener = ResourceManager.ResourceDatabase[entry.VirtualPath];
+
+                if (listener.IsLoaded())
                 {
-                    if(!modelEntry.Entries.Any(e => e.Name == textureName))
-                    {
-                        var newTexture = new TextureDataEntry();
-                        newTexture.Name = textureName;
-                        newTexture.VirtualPath = texVirtPath.ToLower();
-                        newTexture.MTD = mtd;
-                        newTexture.MATBIN = matbin;
-                        newTexture.MaterialString = materialStr;
-
-                        modelEntry.Entries.Add(newTexture);
-                    }
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                }
+                else
+                {
+                    UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
                 }
             }
+
+            UIHelper.SimpleHeader("texHeader", "Textures", "", UI.Current.ImGui_AliasName_Text);
+
+            foreach (var tex in entry.Entries)
+            {
+                ImGui.Text($"Name: {tex.Name}");
+                ImGui.Text($"Virtual Path: {tex.VirtualPath}");
+
+                if (ResourceManager.ResourceDatabase.ContainsKey(tex.VirtualPath))
+                {
+                    var listener = ResourceManager.ResourceDatabase[tex.VirtualPath];
+
+                    if (listener.IsLoaded())
+                    {
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "LOADED");
+                    }
+                    else
+                    {
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_Invalid_Text_Color, "UNLOADED");
+                    }
+                }
+
+                ImGui.Separator();
+            }
+
+            UIHelper.SimpleHeader("actHeader", "Actions", "", UI.Current.ImGui_AliasName_Text);
+
+            var outputDirectory = Path.Combine(Project.ProjectPath, CFG.Current.MapEditor_ModelDataExtraction_DefaultOutputFolder);
+
+            if (!Directory.Exists(outputDirectory))
+            {
+                Directory.CreateDirectory(outputDirectory);
+            }
+
+            if (ImGui.Button($"{Icons.EnvelopeOpen}##openOutputDir", DPI.IconButtonSize))
+            {
+                Process.Start("explorer.exe", outputDirectory);
+            }
+
+            ImGui.SameLine();
+
+            ImGui.Text($"Output Directory: {outputDirectory}");
+
+            ImGui.Separator();
+
+            if (ImGui.BeginCombo("Extraction Type##extractTypeSelect", CFG.Current.MapEditor_ModelDataExtraction_Type.GetDisplayName()))
+            {
+                foreach (var typ in Enum.GetValues(typeof(ExtractionType)))
+                {
+                    var curEntry = (ExtractionType)typ;
+
+                    if (ImGui.Selectable(curEntry.GetDisplayName()))
+                    {
+                        CFG.Current.MapEditor_ModelDataExtraction_Type = (ExtractionType)typ;
+                    }
+                }
+
+                ImGui.EndCombo();
+            }
+            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Loose)
+            {
+                UIHelper.Tooltip("Files when extracted will be extracted loose and outside of the container files they normally reside in.");
+            }
+            if (CFG.Current.MapEditor_ModelDataExtraction_Type is ExtractionType.Contained)
+            {
+                UIHelper.Tooltip("Files when extracted will be contained with the container files they belong to.");
+            }
+
+            ImGui.Checkbox("Include Folder", ref CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder);
+            UIHelper.Tooltip("If enabled, a folder will be created to contain the files, titled with the name of the FLVER model.");
+
+            ImGui.Separator();
+
+            if (ImGui.Button("Extract FLVER", DPI.ThirdWidthButton(windowWidth, 24)))
+            {
+                ExtractFLVER(Project, entry, outputDirectory);
+            }
+            UIHelper.Tooltip("Extract the FLVER model for the current selection.");
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Extract DDS", DPI.ThirdWidthButton(windowWidth, 24)))
+            {
+                ExtractDDS(Project, entry, outputDirectory);
+            }
+            UIHelper.Tooltip("Extract the DDS texture files for the current selection.");
+
+            ImGui.SameLine();
+
+            if (ImGui.Button("Extract Materials", DPI.ThirdWidthButton(windowWidth, 24)))
+            {
+                ExtractMaterial(Project, entry, outputDirectory);
+            }
+            UIHelper.Tooltip("Extract the MTD or MATBIN that the textures are linked to for this current selection.");
         }
     }
 
-    public static void ExtractFLVER(ProjectEntry project, FlverDataEntry entry, string outputDirectory)
+    public void ExtractFLVER(ProjectEntry project, FlverInsightEntry entry, string outputDirectory)
     {
         var successful = false;
 
@@ -98,11 +188,11 @@ public static class ModelDataHelper
 
         var writeDir = outputDirectory;
 
-        if(CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder)
+        if (CFG.Current.MapEditor_ModelDataExtraction_IncludeFolder)
         {
             writeDir = Path.Combine(outputDirectory, entry.Name);
 
-            if(!Directory.Exists(writeDir))
+            if (!Directory.Exists(writeDir))
             {
                 Directory.CreateDirectory(writeDir);
             }
@@ -118,7 +208,7 @@ public static class ModelDataHelper
         {
             var containerType = ModelEditorUtils.GetContainerTypeFromVirtualPath(project, entry.VirtualPath);
 
-            if(containerType is ResourceContainerType.None)
+            if (containerType is ResourceContainerType.None)
             {
                 var writePath = Path.Combine(writeDir, fileName);
                 File.WriteAllBytes(writePath, fileData.Value.ToArray());
@@ -126,12 +216,12 @@ public static class ModelDataHelper
 
             if (containerType is ResourceContainerType.BND)
             {
-                if(project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                if (project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                 {
                     var reader = new BND3Reader(fileData.Value);
-                    foreach(var file in reader.Files)
+                    foreach (var file in reader.Files)
                     {
-                        if(file.Name.Contains(entry.Name))
+                        if (file.Name.Contains(entry.Name))
                         {
                             fileData = reader.ReadFile(file);
 
@@ -175,7 +265,7 @@ public static class ModelDataHelper
         }
     }
 
-    public static void ExtractMaterial(ProjectEntry project, FlverDataEntry entry, string outputDirectory)
+    public void ExtractMaterial(ProjectEntry project, FlverInsightEntry entry, string outputDirectory)
     {
         var successful = false;
 
@@ -198,7 +288,7 @@ public static class ModelDataHelper
                 }
             }
 
-            if(project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
+            if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 if (matbin != null)
                 {
@@ -232,7 +322,7 @@ public static class ModelDataHelper
         }
     }
 
-    public static void ExtractDDS(ProjectEntry project, FlverDataEntry entry, string outputDirectory)
+    public void ExtractDDS(ProjectEntry project, FlverInsightEntry entry, string outputDirectory)
     {
         var successful = false;
 
@@ -313,9 +403,9 @@ public static class ModelDataHelper
 
                                 TPF tpf = TPF.Read(fileData.Value);
 
-                                foreach(var tpfTex in tpf.Textures)
+                                foreach (var tpfTex in tpf.Textures)
                                 {
-                                    if(tpfTex.Name.ToLower() == tex.Name)
+                                    if (tpfTex.Name.ToLower() == tex.Name)
                                     {
                                         var data = tpfTex.Bytes;
 
@@ -375,57 +465,4 @@ public static class ModelDataHelper
             TaskLogs.AddLog("Could not complete texture extraction.");
         }
     }
-
-}
-
-public class ModelDataEntry
-{
-    public string MapID { get; set; }
-    public MapContainer Map { get; set; }
-
-    public List<FlverDataEntry> Models { get; set; } = new();
-
-    public ModelDataEntry(string mapID, MapContainer map)
-    {
-        MapID = mapID;
-        Map = map;
-    }
-}
-
-public class FlverDataEntry
-{
-    public string Name { get; set; }
-
-    public string VirtualPath { get; set; }
-
-    public FLVER2 FLVER2 { get; set; }
-
-    public List<TextureDataEntry> Entries { get; set; } = new();
-}
-
-public class TextureDataEntry
-{
-    public string Name { get; set; }
-
-    public string VirtualPath { get; set; }
-
-    public string MaterialString { get; set; }
-
-    public MTD MTD { get; set; }
-    public MATBIN MATBIN { get; set; }
-}
-
-public enum ExtractionType
-{
-    [Display(Name = "Loose")]
-    Loose,
-    [Display(Name = "Contained")]
-    Contained
-}
-
-public enum ResourceContainerType
-{
-    None,
-    BND,
-    BXF
 }

@@ -366,6 +366,8 @@ public class CFG
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
+    public bool Interface_ModelEditor_Tool_ModelGridConfiguration = true;
+    public bool Interface_ModelEditor_Tool_ModelInsight = true;
 
     ///------------------------------------------------------------
     /// Text Editor

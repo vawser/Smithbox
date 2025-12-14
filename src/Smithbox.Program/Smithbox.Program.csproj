@@ -80,9 +80,5 @@
     <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Editors\ModelEditor\Tools\" />
-  </ItemGroup>
   
 </Project>

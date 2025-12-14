@@ -79,6 +79,8 @@ public class ModelUniverse
 
         var newContainer = new ModelContainer(Editor, Project, modelWrapper.Name);
 
+        ModelInsightHelper.AddEntry(newContainer);
+
         newContainer.Load(modelWrapper.FLVER, modelWrapper);
 
         SetupModelLoadList(modelWrapper.Name, modelWrapper.Parent);
@@ -468,6 +470,8 @@ public class ModelUniverse
 
         ResourceManager.ClearUnusedResources();
         Editor.EntityTypeCache.RemoveModelFromCache(modelWrapper.Container);
+
+        ModelInsightHelper.ClearEntry(modelWrapper.Container);
 
         modelWrapper.Container.Unload();
         modelWrapper.Container.Clear();

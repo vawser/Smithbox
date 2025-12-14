@@ -43,10 +43,15 @@ public class ModelToolWindow
                 ImGui.EndMenuBar();
             }
 
-            //if (CFG.Current.Interface_ModelEditor_Tool_Create)
-            //{
-            //    Editor.CreateAction.OnToolWindow();
-            //}
+            if (CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration)
+            {
+                Editor.ModelGridTool.OnToolWindow();
+            }
+
+            if (CFG.Current.Interface_ModelEditor_Tool_ModelInsight)
+            {
+                Editor.ModelInsightTool.OnToolWindow();
+            }
         }
 
         ImGui.End();
@@ -57,11 +62,17 @@ public class ModelToolWindow
     {
         if (ImGui.BeginMenu("View"))
         {
-            //if (ImGui.MenuItem("Create"))
-            //{
-            //    CFG.Current.Interface_ModelEditor_Tool_Create = !CFG.Current.Interface_ModelEditor_Tool_Create;
-            //}
-            //UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_Create);
+            if (ImGui.MenuItem("Model Grid Configuration"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration = !CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelGridConfiguration);
+
+            if (ImGui.MenuItem("Model Insight"))
+            {
+                CFG.Current.Interface_ModelEditor_Tool_ModelInsight = !CFG.Current.Interface_ModelEditor_Tool_ModelInsight;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Tool_ModelInsight);
 
             ImGui.EndMenu();
         }

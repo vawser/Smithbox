@@ -70,6 +70,12 @@ public class ViewportMenu
             }
         }
 
+        // Model Editor
+        if (Parent.ViewportType is ViewportType.ModelEditor)
+        {
+            Parent.ModelEditor.ViewportFilters.Display();
+        }
+
         SettingsMenu();
 
         ImGui.EndMenuBar();
@@ -244,18 +250,6 @@ public class ViewportMenu
 
                     ImGui.EndMenu();
                 }
-            }
-
-            if (Parent.ViewportType is ViewportType.ModelEditor)
-            {
-                if (ImGui.MenuItem("Viewport Grid"))
-                {
-                    CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
-                    CFG.Current.ModelEditor_RegeneratePrimaryGrid = true;
-                    CFG.Current.ModelEditor_RegenerateSecondaryGrid = true;
-                    CFG.Current.ModelEditor_RegenerateTertiaryGrid = true;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
             }
 
             if (ImGui.BeginMenu("Scene Lighting"))

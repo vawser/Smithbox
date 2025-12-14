@@ -262,7 +262,7 @@ public class Viewport : IViewport
 
                 if (ViewportType is ViewportType.ModelEditor)
                 {
-                    ModelEditor.FocusManager.SwitchModelEditorContext(ModelEditorContext.MapViewport);
+                    ModelEditor.FocusManager.SwitchModelEditorContext(ModelEditorContext.ModelViewport);
                 }
 
                 Vector2 p = ImGui.GetWindowPos();

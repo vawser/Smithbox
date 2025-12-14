@@ -88,8 +88,12 @@ public class ModelSelectView
             {
                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
-                    Editor.Selection.SelectedModelWrapper = wrapper;
+                    if(Editor.Selection.SelectedModelWrapper != null)
+                    {
+                        Editor.Selection.SelectedModelWrapper.Unload();
+                    }
 
+                    Editor.Selection.SelectedModelWrapper = wrapper;
                     wrapper.Load();
                 }
             }
@@ -105,8 +109,12 @@ public class ModelSelectView
         {
             if (ImGui.Selectable("Load"))
             {
-                Editor.Selection.SelectedModelWrapper = wrapper;
+                if (Editor.Selection.SelectedModelWrapper != null)
+                {
+                    Editor.Selection.SelectedModelWrapper.Unload();
+                }
 
+                Editor.Selection.SelectedModelWrapper = wrapper;
                 wrapper.Load();
             }
 

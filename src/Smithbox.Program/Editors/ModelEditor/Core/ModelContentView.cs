@@ -478,6 +478,7 @@ public class ModelContentView
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
 
+            ImGui.EndPopup();
         }
     }
 
