@@ -45,7 +45,7 @@ public class Smithbox
     public SettingsWindow Settings;
     public HelpWindow Help;
     public KeybindWindow Keybinds;
-    public DebugTools DebugTools;
+    public DeveloperTools DebugTools;
 
     public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
     {

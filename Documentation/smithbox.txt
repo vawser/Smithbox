@@ -29,9 +29,9 @@
 # TODO NOW
 - Model Editor: 
  - Sort out property view niggles
- - Implement delete/duplicate/frame/goto/pull to camera/reorder/rotate/select all actions
- - Restore 'Global Model Search' tool
- - Restore 'Model Mask Toggler'
  - Add simple JSON export/import for elements of FLVER
  - Fix part texture lookup (doesn't seem to apply them)
  
+ - Implement delete/duplicate/frame/goto/pull to camera/reorder/rotate/select all actions
+ - Restore 'Global Model Search' tool
+ - Restore 'Model Mask Toggler'
