@@ -43,7 +43,7 @@ namespace SoulsFormats
             /// </summary>
             public Material()
             {
-                Name = "Untitled";
+                Name = "";
                 MTD = "";
                 Textures = new List<Texture>();
                 GXIndex = -1;
@@ -70,7 +70,7 @@ namespace SoulsFormats
                 numStringBytes += MTD.Length + 1;
                 foreach (Texture texture in Textures)
                 {
-                    numStringBytes += texture.Type.Length + 1;
+                    numStringBytes += texture.ParamName.Length + 1;
                     numStringBytes += texture.Path.Length + 1;
                 }
                 
@@ -186,10 +186,6 @@ namespace SoulsFormats
             public override string ToString()
             {
                 return $"{Name} | {MTD}";
-            }
-            public Material Clone()
-            {
-                return (Material)MemberwiseClone();
             }
         }
     }

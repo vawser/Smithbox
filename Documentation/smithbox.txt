@@ -19,8 +19,6 @@
  - Only works with the itemlot params (obviously)
 - Param Editor: add param port tool: select base row in existing project + target project -> bring up selection window that displays the target project's params (of the currently selected param), allow user to select which to port over. Use the selected base row as the base for the ported rows, and then copy values over based on field name matching (perhaps add some heuristics too for minor deviations)
 
-- Gparam Editor: update GPARAM implementation with TKGP's new version, should allow NR gparam editing
-
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 

@@ -1,5 +1,6 @@
 ﻿#nullable enable
 using SoulsFormats;
+using SoulsFormats.Utilities;
 using StudioCore.Application;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
@@ -463,9 +464,9 @@ public class FlverResource : IResource, IDisposable
                     switch (layoutType.Semantic)
                     {
                         case FLVER.LayoutSemantic.Normal:
-                            if (layoutType.Type == FLVER.LayoutType.Byte4B ||
+                            if (layoutType.Type == FLVER.LayoutType.UByte4 ||
                                 layoutType.Type == FLVER.LayoutType.Byte4E ||
-                                layoutType.Type == FLVER.LayoutType.Short2toFloat2)
+                                layoutType.Type == FLVER.LayoutType.Byte4)
                             {
                                 dest.SetNormalWBoneTransform();
                             }
@@ -505,7 +506,7 @@ public class FlverResource : IResource, IDisposable
 
         foreach (IFlverTexture? matparam in mat.Textures)
         {
-            ProcessMaterialTexture(dest, matparam.Type, matparam.Path, mat.MTD, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
+            ProcessMaterialTexture(dest, matparam.ParamName, matparam.Path, mat.MTD, out blend, out hasNormal2, out hasSpec2, out hasShininess2, out blendMask);
         }
 
         if (blendMask)
@@ -668,35 +669,34 @@ public class FlverResource : IResource, IDisposable
                 throw new InvalidDataException($"Float4 Normal W was not a whole number: {w}");
             }
         }
-        else if (type == FLVER.LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Color)
         {
             *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == FLVER.LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.UByte4)
         {
             *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == FLVER.LayoutType.Short2toFloat2)
+        else if (type == FLVER.LayoutType.Byte4)
         {
             nw = br.ReadByte();
             *n = FLVER.Vertex.ReadSByteNormZYX(br);
         }
-        else if (type == FLVER.LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.UByte4Norm)
         {
             *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == FLVER.LayoutType.Short4toFloat4A)
+        else if (type == FLVER.LayoutType.Short4Norm)
         {
             *n = FLVER.Vertex.ReadShortNormXYZ(br);
             nw = br.ReadInt16();
         }
-        else if (type == FLVER.LayoutType.Short4toFloat4B)
+        else if (type == FLVER.LayoutType.Half4)
         {
-            //Normal = ReadUShortNormXYZ(br);
-            *n = FLVER.Vertex.ReadFloat16NormXYZ(br);
+            *n = FLVER.Vertex.ReadUShortNormXYZ(br);
             nw = br.ReadInt16();
         }
         else if (type == FLVER.LayoutType.Byte4E)
@@ -704,9 +704,9 @@ public class FlverResource : IResource, IDisposable
             *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == FLVER.LayoutType.ShortBoneIndices)
+        else if (type == FLVER.LayoutType.UShort4)
         {
-            *n = FLVER.Vertex.ReadShortNormXYZ(br);
+            *n = FLVER.Vertex.ReadShortNormXYZAC6(br);
             nw = br.ReadInt16();
         }
         else
@@ -755,37 +755,41 @@ public class FlverResource : IResource, IDisposable
             v2 = new Vector3(br.ReadVector2(), 0);
             hasv2 = allowv2;
         }
-        else if (type == FLVER.LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Color)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == FLVER.LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.UByte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == FLVER.LayoutType.Short2toFloat2)
+        else if (type == FLVER.LayoutType.Byte4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == FLVER.LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.UByte4Norm)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == FLVER.LayoutType.UV)
+        else if (type == FLVER.LayoutType.Short2)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == FLVER.LayoutType.UVPair)
+        else if (type == FLVER.LayoutType.Half2)
+        {
+            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+        }
+        else if (type == FLVER.LayoutType.Short4)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             hasv2 = allowv2;
         }
-        else if (type == FLVER.LayoutType.Short4toFloat4B)
+        else if (type == FLVER.LayoutType.Half4)
         {
-            //AddUV(new Vector3(br.ReadInt16(), br.ReadInt16(), br.ReadInt16()) / uvFactor);
-            v = FLVER.Vertex.ReadFloat16NormXYZ(br);
-            br.AssertInt16(0);
+            v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
+            hasv2 = allowv2;
         }
         else
         {
@@ -843,21 +847,25 @@ public class FlverResource : IResource, IDisposable
         {
             tan = br.ReadVector4();
         }
-        else if (type == FLVER.LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Color)
         {
             tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == FLVER.LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.UByte4)
         {
             tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == FLVER.LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.UByte4Norm)
         {
             tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == FLVER.LayoutType.Short4toFloat4A)
+        else if (type == FLVER.LayoutType.Byte4Norm)
         {
-            tan = FLVER.Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadSByteNormWZYX(br);
+        }
+        else if (type == FLVER.LayoutType.Short4Norm)
+        {
+            tan = FLVER.Vertex.ReadShortNormXYZW(br);
         }
         else if (type == FLVER.LayoutType.Byte4E)
         {
@@ -903,21 +911,28 @@ public class FlverResource : IResource, IDisposable
     {
         switch (type)
         {
-            case FLVER.LayoutType.Byte4A:
-            case FLVER.LayoutType.Byte4B:
-            case FLVER.LayoutType.Short2toFloat2:
-            case FLVER.LayoutType.Byte4C:
-            case FLVER.LayoutType.UV:
+            case FLVER.LayoutType.EdgeCompressed:
+                br.ReadByte();
+                break;
+
+            case FLVER.LayoutType.Float1:
+            case FLVER.LayoutType.Color:
+            case FLVER.LayoutType.UByte4:
+            case FLVER.LayoutType.Byte4:
+            case FLVER.LayoutType.UByte4Norm:
+            case FLVER.LayoutType.Byte4Norm:
+            case FLVER.LayoutType.Short2:
+            case FLVER.LayoutType.UShort2:
             case FLVER.LayoutType.Byte4E:
-            case FLVER.LayoutType.Short2ToFloat2B:
+            case FLVER.LayoutType.Half2:
                 br.ReadUInt32();
                 break;
 
             case FLVER.LayoutType.Float2:
-            case FLVER.LayoutType.UVPair:
-            case FLVER.LayoutType.ShortBoneIndices:
-            case FLVER.LayoutType.Short4toFloat4A:
-            case FLVER.LayoutType.Short4toFloat4B:
+            case FLVER.LayoutType.Short4:
+            case FLVER.LayoutType.UShort4:
+            case FLVER.LayoutType.Short4Norm:
+            case FLVER.LayoutType.Half4:
                 br.ReadUInt64();
                 break;
 
@@ -1329,7 +1344,7 @@ public class FlverResource : IResource, IDisposable
         Span<ushort> fs16 = null;
         Span<int> fs32 = null;
 
-        var indices = mesh.Triangulate(FlverDeS.Header.Version).ToArray();
+        var indices = mesh.Triangulate(FlverDeS.Header.Version, false, false).ToArray();
         var indicesTotal = indices.Length;
 
         dest.GeomBuffer = SceneRenderer.GeometryBufferAllocator.Allocate(vbuffersize,
@@ -1350,7 +1365,7 @@ public class FlverResource : IResource, IDisposable
             FillVerticesStandard(mesh, pvhandle, meshVertices);
         }
 
-        if (mesh.VertexIndices.Count != 0)
+        if (mesh.Indices.Count != 0)
         {
             if (is32bit)
             {
@@ -1602,7 +1617,7 @@ public class FlverResource : IResource, IDisposable
 
             dest.UseNormalWBoneTransform = elements.Any(e =>
                 e.Semantic == FLVER.LayoutSemantic.Normal &&
-                (e.Type == FLVER.LayoutType.Byte4B || e.Type == FLVER.LayoutType.Byte4E));
+                (e.Type == FLVER.LayoutType.UByte4 || e.Type == FLVER.LayoutType.Byte4E));
 
             if (dest.UseNormalWBoneTransform)
             {
@@ -1715,8 +1730,8 @@ public class FlverResource : IResource, IDisposable
             {
                 layoutmembers[i] = new FlverBufferLayoutMember(br);
                 if (layoutmembers[i].semantic == FLVER.LayoutSemantic.Normal &&
-                    (layoutmembers[i].type == FLVER.LayoutType.Byte4A ||
-                     layoutmembers[i].type == FLVER.LayoutType.Byte4B ||
+                    (layoutmembers[i].type == FLVER.LayoutType.Color ||
+                     layoutmembers[i].type == FLVER.LayoutType.UByte4 ||
                      layoutmembers[i].type == FLVER.LayoutType.Byte4E))
                 {
                     dest.UseNormalWBoneTransform = true;
@@ -1921,7 +1936,9 @@ public class FlverResource : IResource, IDisposable
         {
             var edgeMember = edgeMembers[i];
             br.Position = start + edgeMember.edgeIndexesOffset;
-            ushort[] memberIndexes = FLVER2.EdgeMemberInfo.DecompressIndexes(br, edgeMember.spuConfigInfo.numIndexes);
+
+            ushort[] memberIndexes = EdgeGeom.DecompressIndexes(br, edgeMember.spuConfigInfo.numIndexes);
+
             for (int j = 0; j < edgeMember.spuConfigInfo.numIndexes; j++)
             {
                 indexes[indexesOffset + j] = (ushort)(memberIndexes[j] + edgeMember.baseIndex);
@@ -1948,7 +1965,7 @@ public class FlverResource : IResource, IDisposable
         {
             var edgeMember = edgeMembers[i];
             br.Position = start + edgeMember.edgeIndexesOffset;
-            ushort[] memberIndexes = FLVER2.EdgeMemberInfo.DecompressIndexes(br, edgeMember.spuConfigInfo.numIndexes);
+            ushort[] memberIndexes = EdgeGeom.DecompressIndexes(br, edgeMember.spuConfigInfo.numIndexes);
 
             for (int j = 0; j < edgeMember.spuConfigInfo.numIndexes; j++)
             {

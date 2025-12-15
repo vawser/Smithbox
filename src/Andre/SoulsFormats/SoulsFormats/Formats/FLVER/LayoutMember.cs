@@ -10,9 +10,11 @@ namespace SoulsFormats
         public class LayoutMember
         {
             /// <summary>
-            /// Unknown; 0, 1, or 2.
+            /// The index of this member into the current layout.<br/>
+            /// Used to combine members into a single layout.<br/>
+            /// Primarily used in edge-compressed PS3 models due to positions needing to be separate.
             /// </summary>
-            public short Unk00 { get; set; }
+            public int Stream { get; set; }
 
             /// <summary>
             /// Value of -32768 denotes this member isn't stored with the vertex buffer due to Speedtree.
@@ -45,22 +47,23 @@ namespace SoulsFormats
                     {
                         case LayoutType.EdgeCompressed:
                             return 1;
-
-                        case LayoutType.Byte4A:
-                        case LayoutType.Byte4B:
-                        case LayoutType.Short2toFloat2:
-                        case LayoutType.Byte4C:
-                        case LayoutType.UV:
-                        case LayoutType.Byte4E:
-                        case LayoutType.Short2ToFloat2B:
+                        case LayoutType.Float1:
+                        case LayoutType.Color:
+                        case LayoutType.UByte4:
+                        case LayoutType.Byte4:
+                        case LayoutType.UByte4Norm:
+                        case LayoutType.Byte4Norm:
+                        case LayoutType.Short2:
                         case LayoutType.UShort2:
+                        case LayoutType.Byte4E:
+                        case LayoutType.Half2:
                             return 4;
 
                         case LayoutType.Float2:
-                        case LayoutType.UVPair:
-                        case LayoutType.ShortBoneIndices:
-                        case LayoutType.Short4toFloat4A:
-                        case LayoutType.Short4toFloat4B:
+                        case LayoutType.Short4:
+                        case LayoutType.UShort4:
+                        case LayoutType.Short4Norm:
+                        case LayoutType.Half4:
                             return 8;
 
                         case LayoutType.Float3:
@@ -76,51 +79,68 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// Creates a LayoutMember with the specified values.
+            /// Creates a <see cref="LayoutMember"/> with the specified values.
             /// </summary>
-            public LayoutMember(LayoutType type, LayoutSemantic semantic, int index = 0, short unk00 = 0, short specialModifier = 0)
+            public LayoutMember(LayoutType type, LayoutSemantic semantic, int index = 0, int stream = 0, short specialModifier = 0)
             {
-                Unk00 = unk00;
+                Stream = stream;
                 SpecialModifier = specialModifier;
                 Type = type;
                 Semantic = semantic;
                 Index = index;
             }
 
-            public LayoutMember()
+            /// <summary>
+            /// Clone an existing <see cref="LayoutMember"/>.
+            /// </summary>
+            public LayoutMember(LayoutMember layoutMember)
             {
-                Unk00 = 0;
-                Type = LayoutType.UV;
-                Semantic = LayoutSemantic.UV;
-                Index = 0;
+                Stream = layoutMember.Stream;
+                Type = layoutMember.Type;
+                Semantic = layoutMember.Semantic;
+                Index = layoutMember.Index;
             }
 
-            internal LayoutMember(BinaryReaderEx br, int structOffset)
+            internal LayoutMember(BinaryReaderEx br, int structOffset, bool isSpeedTree)
             {
-                Unk00 = br.ReadInt16();
-                SpecialModifier = br.ReadInt16();
-                br.ReadInt32();
+                if (isSpeedTree)
+                {
+                    Stream = br.ReadInt16();
+                    SpecialModifier = br.ReadInt16();
+                    //Not always struct offset in speedtree...
+                    var localStructOffset = br.ReadInt32();
+                }
+                else
+                {
+                    Stream = br.ReadInt32();
+                    br.AssertInt32(structOffset);
+                }
+
                 Type = br.ReadEnum32<LayoutType>();
                 Semantic = br.ReadEnum32<LayoutSemantic>();
                 Index = br.ReadInt32();
             }
 
-            internal void Write(BinaryWriterEx bw, int structOffset)
+            internal void Write(BinaryWriterEx bw, int structOffset, bool isSpeedTree)
             {
-                bw.WriteInt16(Unk00);
-                bw.WriteInt16(SpecialModifier);
+                if (isSpeedTree)
+                {
+                    bw.WriteInt16((short)Stream);
+                    bw.WriteInt16(SpecialModifier);
+                }
+                else
+                {
+                    bw.WriteInt32(Stream);
+                }
+
                 bw.WriteInt32(structOffset);
                 bw.WriteUInt32((uint)Type);
                 bw.WriteUInt32((uint)Semantic);
                 bw.WriteInt32(Index);
             }
-            public LayoutMember Clone()
-            {
-                return (LayoutMember)MemberwiseClone();
-            }
 
             /// <summary>
-            /// Returns the value type and semantic of this member.
+            /// Returns the value type and semantic of this <see cref="LayoutMember"/>.
             /// </summary>
             public override string ToString()
             {
@@ -134,84 +154,94 @@ namespace SoulsFormats
         public enum LayoutType : uint
         {
             /// <summary>
+            /// One single-precision float.
+            /// </summary>
+            Float1 = 0,
+
+            /// <summary>
             /// Two single-precision floats.
             /// </summary>
-            Float2 = 0x01,
+            Float2 = 1,
 
             /// <summary>
             /// Three single-precision floats.
             /// </summary>
-            Float3 = 0x02,
+            Float3 = 2,
 
             /// <summary>
             /// Four single-precision floats.
             /// </summary>
-            Float4 = 0x03,
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            Byte4A = 0x10,
+            Float4 = 3,
 
             /// <summary>
             /// Four bytes.
             /// </summary>
-            Byte4B = 0x11,
+            Color = 16,
 
             /// <summary>
-            /// Two shorts?
+            /// Four unsigned bytes.
             /// </summary>
-            Short2toFloat2 = 0x12,
+            UByte4 = 17,
 
             /// <summary>
-            /// Four bytes.
+            /// Four signed bytes.
             /// </summary>
-            Byte4C = 0x13,
+            Byte4 = 18,
 
             /// <summary>
-            /// Two shorts.
+            /// Four unsigned and normalized bytes.
             /// </summary>
-            UV = 0x15,
+            UByte4Norm = 19,
 
             /// <summary>
-            /// Two shorts and two shorts.
+            /// Four signed and normalized bytes.
             /// </summary>
-            UVPair = 0x16,
+            Byte4Norm = 20,
+
+            /// <summary>
+            /// Two signed shorts.
+            /// </summary>
+            Short2 = 21,
+
+            /// <summary>
+            /// Four signed shorts.
+            /// </summary>
+            Short4 = 22,
 
             /// <summary>
             /// Two unsigned shorts.
             /// </summary>
-            UShort2 = 0x17,
+            UShort2 = 23,
 
             /// <summary>
-            /// Four shorts, maybe unsigned?
+            /// Four unsigned shorts.
             /// </summary>
-            ShortBoneIndices = 0x18,
+            UShort4 = 24,
 
             /// <summary>
-            /// Four shorts.
+            /// Four signed and normalized shorts.
             /// </summary>
-            Short4toFloat4A = 0x1A,
+            Short4Norm = 26,
+
+            /// <summary>
+            /// Two half-precision values.
+            /// </summary>
+            Half2 = 45,
+
+            /// <summary>
+            /// Four half-precision values.
+            /// </summary>
+            Half4 = 46,
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            Short2ToFloat2B = 0x2D,
+            Byte4E = 47,
 
             /// <summary>
-            /// Unknown.
+            /// Edge compression specified by edge members in face sets.
             /// </summary>
-            Short4toFloat4B = 0x2E,
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
-            Byte4E = 0x2F,
-
-            /// <summary>
-            /// Unknown but appears to be another form of edge compression; not actually supported.
-            /// </summary>
-            EdgeCompressed = 0xF0,
+            EdgeCompressed = 240,
         }
 
         /// <summary>

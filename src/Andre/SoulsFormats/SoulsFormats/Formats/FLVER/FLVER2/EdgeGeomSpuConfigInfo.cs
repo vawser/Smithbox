@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using SoulsFormats.Utilities;
+using System.IO;
 
 namespace SoulsFormats
 {
@@ -18,14 +19,14 @@ namespace SoulsFormats
                 /// The SPU job will not modify input geometry.<br/>
                 /// This allows some functions in Edge to skip performing unnecessary work.
                 /// </summary>
-                FLAG_STATIC_GEOMETRY_FAST_PATH = 1, // 0x10 in the combine flags and uniform table count byte.
+                StaticGeomFastPath = 1, // 0x10 in the combine flags and uniform table count byte.
 
                 /// <summary>
                 /// If a segment is using either culling or custom blend shape flavors, this flag is required.<br/>
                 /// Both of culling and custom blend shape flavors require another uniform table to store temporary data.<br/>
                 /// The size of the temporary uniform table has to be accounted for in the Edge partitioner when a segment is made.
                 /// </summary>
-                FLAG_INCLUDES_EXTRA_UNIFORM_TABLE = 8 // 0x80 in the combine flags and uniform table count byte.
+                ExtraUniformTable = 8 // 0x80 in the combine flags and uniform table count byte.
             }
 
             /// <summary>
@@ -36,22 +37,22 @@ namespace SoulsFormats
                 /// <summary>
                 /// Indexes are in a triangle list with triangles wound clockwise, each index being an unsigned 16-bit integer.
                 /// </summary>
-                INDEXES_U16_TRIANGLE_LIST_CW = 0,
+                TriangleListUShortCW = 0,
 
                 /// <summary>
                 /// Indexes are in a triangle list with triangles wound counter-clockwise, each index being an unsigned 16-bit integer.
                 /// </summary>
-                INDEXES_U16_TRIANGLE_LIST_CCW = 1,
+                TriangleListUShortCCW = 1,
 
                 /// <summary>
                 /// Indexes are in a compressed triangle list with triangles wound clockwise.
                 /// </summary>
-                INDEXES_COMPRESSED_TRIANGLE_LIST_CW = 2,
+                TriangleListCompressedCW = 2,
 
                 /// <summary>
                 /// Indexes are in a compressed triangle list with triangles wound counter-clockwise.
                 /// </summary>
-                INDEXES_COMPRESSED_TRIANGLE_LIST_CCW = 3
+                TriangleListCompressedCCW = 3
             }
 
             /// <summary>
@@ -62,37 +63,37 @@ namespace SoulsFormats
                 /// <summary>
                 /// No skinning.
                 /// </summary>
-                SKIN_NONE = 0,
+                None = 0,
 
                 /// <summary>
                 /// Do skinning by unit matrix.
                 /// </summary>
-                SKIN_NO_SCALING = 1,
+                NoScaling = 1,
 
                 /// <summary>
                 /// Do skinning.
                 /// </summary>
-                SKIN_UNIFORM_SCALING = 2,
+                UniformScaling = 2,
 
                 /// <summary>
                 /// Do skinning and compute cofactor matrices for transforming normals.
                 /// </summary>
-                SKIN_NON_UNIFORM_SCALING = 3,
+                NonUniformScaling = 3,
 
                 /// <summary>
                 /// Do skinning by a single bone unit matrix.
                 /// </summary>
-                SKIN_SINGLE_BONE_NO_SCALING = 4,
+                SingleBoneNoScaling = 4,
 
                 /// <summary>
                 /// Do skinning by a single bone.
                 /// </summary>
-                SKIN_SINGLE_BONE_UNIFORM_SCALING = 5,
+                SingleBoneUniformScaling = 5,
 
                 /// <summary>
                 /// Do skinning by a single bone and compute cofactor matrices for transforming normals.
                 /// </summary>
-                SKIN_SINGLE_BONE_NON_UNIFORM_SCALING = 6
+                SingleBoneNonUniformScaling = 6
             }
 
             /// <summary>
@@ -105,17 +106,17 @@ namespace SoulsFormats
                 /// It has the top three rows of a 4x4 matrix that is “DirectX-style”.<br/>
                 /// The fourth row is not needed explicitly as it is always [0,0,0,1].
                 /// </summary>
-                MATRIX_3x4_ROW_MAJOR = 0,
+                RowMajor3x4 = 0,
 
                 /// <summary>
                 /// This matrix type is a “DirectX-style” row-major 4x4 matrix. 
                 /// </summary>
-                MATRIX_4x4_ROW_MAJOR = 1,
+                RowMajor4x4 = 1,
 
                 /// <summary>
                 /// This matrix type is a "OpenGL-style" column-major 4x4 matrix.
                 /// </summary>
-                MATRIX_4x4_COLUMN_MAJOR = 2
+                ColumnMajor4x4 = 2
             }
 
             /// <summary>
@@ -126,21 +127,21 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position in 3 floats.
                 /// </summary>
-                SPU_F32c3 = 0,
+                Float3 = 0,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
                 /// Normal with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// Tangent with X in 11 bits, Y in 11 bits, and Z in 10 bits.
                 /// </summary>
-                SPU_F32c3_X11Y11Z10N_X11Y11Z10N = 1,
+                Float3PackedNorm2 = 1,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
                 /// Normal with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// Tangent with XYZW in a normalized to range [-1.0 - 1.0], signed 16-bit integer.
                 /// </summary>
-                SPU_F32c3_X11Y11Z10N_I16Nc4 = 2,
+                Float3PackedNormShortNorm4 = 2,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
@@ -148,14 +149,14 @@ namespace SoulsFormats
                 /// Tangent with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// BiNormal with X in 11 bits, Y in 11 bits, and Z in 10 bits.
                 /// </summary>
-                SPU_F32c3_X11Y11Z10N_X11Y11Z10N_X11Y11Z10N = 3,
+                Float3PackedNorm3 = 3,
 
                 /// <summary>
                 /// Position as an edge fixed point.<br/>
                 /// Normal as an edge unit vector.<br/>
                 /// Tangent as an edge unit vector.
                 /// </summary>
-                SPU_FIXED_UNITVECTOR_UNITVECTOR = 4,
+                EdgeFixedUnit2 = 4,
 
                 /// <summary>
                 /// Position as an edge fixed point.<br/>
@@ -163,18 +164,18 @@ namespace SoulsFormats
                 /// Tangent as an edge unit vector.<br/>
                 /// BiNormal as an edge unit vector.
                 /// </summary>
-                SPU_FIXED_UNITVECTOR_UNITVECTOR_UNITVECTOR = 5,
+                EdgeFixedUnit3 = 5,
 
                 /// <summary>
                 /// Position as an edge fixed point.<br/>
                 /// Found in FromSoftware models in Armored Core Verdict Day.
                 /// </summary>
-                SPU_FIXEDc3 = 254,
+                EdgeFixed = 254,
 
                 /// <summary>
                 /// A user defined format.
                 /// </summary>
-                SPU_CUSTOM = 255
+                Custom = 255
             }
 
             /// <summary>
@@ -185,21 +186,21 @@ namespace SoulsFormats
                 /// <summary>
                 /// Position in 3 floats.
                 /// </summary>
-                RSX_F32c3 = 0,
+                Float3 = 0,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
                 /// Normal with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// Tangent with X in 11 bits, Y in 11 bits, and Z in 10 bits.
                 /// </summary>
-                RSX_F32c3_X11Y11Z10N_X11Y11Z10N = 1,
+                Float3PackedNorm2 = 1,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
                 /// Normal with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// Tangent with XYZW in a normalized to range [-1.0 - 1.0], signed 16-bit integer.
                 /// </summary>
-                RSX_F32c3_X11Y11Z10N_I16Nc4 = 2,
+                Float3PackedNormShortNorm4 = 2,
 
                 /// <summary>
                 /// Position in 3 floats.<br/>
@@ -207,12 +208,12 @@ namespace SoulsFormats
                 /// Tangent with X in 11 bits, Y in 11 bits, and Z in 10 bits.<br/>
                 /// BiNormal with X in 11 bits, Y in 11 bits, and Z in 10 bits.
                 /// </summary>
-                RSX_F32c3_X11Y11Z10N_X11Y11Z10N_X11Y11Z10N = 3,
+                Float3PackedNorm3 = 3,
 
                 /// <summary>
                 /// A user defined format.
                 /// </summary>
-                RSX_CUSTOM = 255
+                Custom = 255
             }
 
             /// <summary>
@@ -253,12 +254,12 @@ namespace SoulsFormats
             /// <summary>
             /// How indexes for vertices are stored.
             /// </summary>
-            public EdgeGeomIndexes IndexesFlavor;
+            public EdgeGeomIndexes IndexMode;
 
             /// <summary>
             /// The type of calculation for matrix palette skinning.
             /// </summary>
-            public EdgeGeomSkin SkinningFlavor;
+            public EdgeGeomSkin SkinningMode;
 
             /// <summary>
             /// The format ID for skinning matrices.<br/>
@@ -301,17 +302,17 @@ namespace SoulsFormats
                                          byte secondaryInputVertexFormatId, byte outputVertexFormatId, byte vertexDeltaFormatId,
                                          byte indexesFlavorAndSkinningFlavor, byte skinningMatrixFormat, ushort numVertexes, ushort numIndexes, int indexesOffset)
             {
-                byte[] flagsAndUniformTableCountValues = SFUtil.To4Bit(flagsAndUniformTableCount);
-                Flags = (GeomConfigFlags)flagsAndUniformTableCountValues[0];
-                UniformTableCount = (byte)(flagsAndUniformTableCountValues[1] + 1);
+                byte flagsAndUniformTableCountValues = flagsAndUniformTableCount;
+                Flags = (GeomConfigFlags)(flagsAndUniformTableCountValues >> 4);
+                UniformTableCount = (byte)((flagsAndUniformTableCountValues & 0b0000_1111) + 1);
                 CommandBufferHoleSize = commandBufferHoleSize;
                 InputVertexFormatId = (SpuVertexFormat)inputVertexFormatId;
                 SecondaryInputVertexFormatId = (SpuVertexFormat)secondaryInputVertexFormatId;
                 OutputVertexFormatId = (RsxVertexFormat)outputVertexFormatId;
                 VertexDeltaFormatId = vertexDeltaFormatId;
-                byte[] indexesFlavorAndSkinningFlavorValues = SFUtil.To4Bit(indexesFlavorAndSkinningFlavor);
-                IndexesFlavor = (EdgeGeomIndexes)indexesFlavorAndSkinningFlavorValues[0];
-                SkinningFlavor = (EdgeGeomSkin)indexesFlavorAndSkinningFlavorValues[1];
+                byte indexesFlavorAndSkinningFlavorValues = indexesFlavorAndSkinningFlavor;
+                IndexMode = (EdgeGeomIndexes)(indexesFlavorAndSkinningFlavorValues >> 4);
+                SkinningMode = (EdgeGeomSkin)(indexesFlavorAndSkinningFlavorValues & 0b0000_1111);
                 SkinningMatrixFormat = (EdgeGeomSkinningMatrixFormat)skinningMatrixFormat;
                 NumVertexes = numVertexes;
                 NumIndexes = numIndexes;
@@ -330,17 +331,17 @@ namespace SoulsFormats
                     throw new InvalidDataException($"{nameof(EdgeGeomSpuConfigInfo)} must be 16 bytes in total.");
                 }
 
-                byte[] flagsAndUniformTableCountValues = SFUtil.To4Bit(edgeGeomSpuConfigInfoBytes[0]);
-                Flags = (GeomConfigFlags)flagsAndUniformTableCountValues[0];
-                UniformTableCount = (byte)(flagsAndUniformTableCountValues[1] + 1);
+                byte flagsAndUniformTableCountValues = edgeGeomSpuConfigInfoBytes[0];
+                Flags = (GeomConfigFlags)(flagsAndUniformTableCountValues >> 4);
+                UniformTableCount = (byte)((flagsAndUniformTableCountValues & 0b0000_1111) + 1);
                 CommandBufferHoleSize = edgeGeomSpuConfigInfoBytes[1];
                 InputVertexFormatId = (SpuVertexFormat)edgeGeomSpuConfigInfoBytes[2];
                 SecondaryInputVertexFormatId = (SpuVertexFormat)edgeGeomSpuConfigInfoBytes[3];
                 OutputVertexFormatId = (RsxVertexFormat)edgeGeomSpuConfigInfoBytes[4];
                 VertexDeltaFormatId = edgeGeomSpuConfigInfoBytes[5];
-                byte[] indexesFlavorAndSkinningFlavorValues = SFUtil.To4Bit(edgeGeomSpuConfigInfoBytes[6]);
-                IndexesFlavor = (EdgeGeomIndexes)indexesFlavorAndSkinningFlavorValues[0];
-                SkinningFlavor = (EdgeGeomSkin)indexesFlavorAndSkinningFlavorValues[1];
+                byte indexesFlavorAndSkinningFlavorValues = edgeGeomSpuConfigInfoBytes[6];
+                IndexMode = (EdgeGeomIndexes)(indexesFlavorAndSkinningFlavorValues >> 4);
+                SkinningMode = (EdgeGeomSkin)(indexesFlavorAndSkinningFlavorValues & 0b0000_1111);
                 SkinningMatrixFormat = (EdgeGeomSkinningMatrixFormat)edgeGeomSpuConfigInfoBytes[7];
                 NumVertexes = BitConverterHelper.ToUInt16BigEndian(edgeGeomSpuConfigInfoBytes, 8);
                 NumIndexes = BitConverterHelper.ToUInt16BigEndian(edgeGeomSpuConfigInfoBytes, 10);
@@ -353,17 +354,17 @@ namespace SoulsFormats
             /// <param name="br">A <see cref="BinaryReaderEx"/>.</param>
             internal EdgeGeomSpuConfigInfo(BinaryReaderEx br)
             {
-                byte[] flagsAndUniformTableCountValues = SFUtil.To4Bit(br.ReadByte());
-                Flags = (GeomConfigFlags)flagsAndUniformTableCountValues[0];
-                UniformTableCount = (byte)(flagsAndUniformTableCountValues[1] + 1);
+                byte flagsAndUniformTableCountValues = br.ReadByte();
+                Flags = (GeomConfigFlags)(flagsAndUniformTableCountValues >> 4);
+                UniformTableCount = (byte)((flagsAndUniformTableCountValues & 0b0000_1111) + 1);
                 CommandBufferHoleSize = br.ReadByte();
                 InputVertexFormatId = (SpuVertexFormat)br.ReadByte();
                 SecondaryInputVertexFormatId = (SpuVertexFormat)br.ReadByte();
                 OutputVertexFormatId = (RsxVertexFormat)br.ReadByte();
                 VertexDeltaFormatId = br.ReadByte();
-                byte[] indexesFlavorAndSkinningFlavorValues = SFUtil.To4Bit(br.ReadByte());
-                IndexesFlavor = (EdgeGeomIndexes)indexesFlavorAndSkinningFlavorValues[0];
-                SkinningFlavor = (EdgeGeomSkin)indexesFlavorAndSkinningFlavorValues[1];
+                byte indexesFlavorAndSkinningFlavorValues = br.ReadByte();
+                IndexMode = (EdgeGeomIndexes)(indexesFlavorAndSkinningFlavorValues >> 4);
+                SkinningMode = (EdgeGeomSkin)(indexesFlavorAndSkinningFlavorValues & 0b0000_1111);
                 SkinningMatrixFormat = (EdgeGeomSkinningMatrixFormat)br.ReadByte();
                 NumVertexes = br.ReadUInt16();
                 NumIndexes = br.ReadUInt16();

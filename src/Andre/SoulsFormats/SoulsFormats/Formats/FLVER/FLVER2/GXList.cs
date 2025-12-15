@@ -69,11 +69,6 @@ namespace SoulsFormats
                     bw.WritePattern(TerminatorLength, 0x00);
                 }
             }
-
-            public GXList Clone()
-            {
-                return (GXList)MemberwiseClone();
-            }
         }
 
         /// <summary>
@@ -147,10 +142,6 @@ namespace SoulsFormats
                 bw.WriteInt32(Unk04);
                 bw.WriteInt32(Data.Length + 0xC);
                 bw.WriteBytes(Data);
-            }
-            public GXItem Clone()
-            {
-                return (GXItem)MemberwiseClone();
             }
         }
     }

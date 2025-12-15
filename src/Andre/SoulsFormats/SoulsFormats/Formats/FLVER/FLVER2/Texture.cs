@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace SoulsFormats
 {
@@ -9,10 +10,20 @@ namespace SoulsFormats
         /// </summary>
         public class Texture : IFlverTexture
         {
+            public enum TilingType : byte
+            {
+                None = 0,
+                Repeat = 1,
+                MirrorRepeat = 2,
+                Clamp = 3,
+                Border = 4,
+                MirrorOnce = 5
+            }
+            
             /// <summary>
-            /// The type of texture this is, corresponding to the entries in the MTD.
+            /// Indicates the param name of this texture map which much match to one inside the material file.
             /// </summary>
-            public string Type { get; set; }
+            public string ParamName { get; set; }
 
             /// <summary>
             /// Network path to the texture file to use.
@@ -20,19 +31,19 @@ namespace SoulsFormats
             public string Path { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// Scale of the texture when a tiling type is used.
             /// </summary>
-            public Vector2 Scale { get; set; }
+            public Vector2 TilingScale { get; set; }
 
             /// <summary>
-            /// Unknown; observed values 0, 1, 2.
+            /// The tiling type for the U component of the texture coordinates.
             /// </summary>
-            public byte Unk10 { get; set; }
+            public TilingType TilingTypeU { get; set; }
 
             /// <summary>
-            /// Unknown.
+            /// The tiling type for the V component of the texture coordinates.
             /// </summary>
-            public bool Unk11 { get; set; }
+            public TilingType TilingTypeV { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -54,21 +65,21 @@ namespace SoulsFormats
             /// </summary>
             public Texture()
             {
-                Type = "";
+                ParamName = "";
                 Path = "";
-                Scale = Vector2.One;
+                TilingScale = Vector2.One;
             }
 
             /// <summary>
             /// Creates a new Texture with the specified values.
             /// </summary>
-            public Texture(string type, string path, Vector2 scale, byte unk10, bool unk11, float unk14, float unk18, float unk1C)
+            public Texture(string paramName, string path, Vector2 tilingScale, TilingType tilingTypeU, TilingType tilingTypeV, float unk14, float unk18, float unk1C)
             {
-                Type = type;
+                ParamName = paramName;
                 Path = path;
-                Scale = scale;
-                Unk10 = unk10;
-                Unk11 = unk11;
+                TilingScale = tilingScale;
+                TilingTypeU = tilingTypeU;
+                TilingTypeV = tilingTypeV;
                 Unk14 = unk14;
                 Unk18 = unk18;
                 Unk1C = unk1C;
@@ -78,10 +89,10 @@ namespace SoulsFormats
             {
                 int pathOffset = br.ReadInt32();
                 int typeOffset = br.ReadInt32();
-                Scale = br.ReadVector2();
+                TilingScale = br.ReadVector2();
 
-                Unk10 = br.AssertByte([0, 1, 2]);
-                Unk11 = br.ReadBoolean();
+                TilingTypeU = br.ReadEnum8<TilingType>();
+                TilingTypeV = br.ReadEnum8<TilingType>();
                 br.AssertByte(0);
                 br.AssertByte(0);
 
@@ -91,12 +102,12 @@ namespace SoulsFormats
 
                 if (header.Unicode)
                 {
-                    Type = br.GetUTF16(typeOffset);
+                    ParamName = br.GetUTF16(typeOffset);
                     Path = br.GetUTF16(pathOffset);
                 }
                 else
                 {
-                    Type = br.GetShiftJIS(typeOffset);
+                    ParamName = br.GetShiftJIS(typeOffset);
                     Path = br.GetShiftJIS(pathOffset);
                 }
             }
@@ -105,10 +116,10 @@ namespace SoulsFormats
             {
                 bw.ReserveInt32($"TexturePath{index}");
                 bw.ReserveInt32($"TextureType{index}");
-                bw.WriteVector2(Scale);
-
-                bw.WriteByte(Unk10);
-                bw.WriteBoolean(Unk11);
+                bw.WriteVector2(TilingScale);
+                
+                bw.WriteByte((byte)TilingTypeU);
+                bw.WriteByte((byte)TilingTypeV);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
 
@@ -127,9 +138,9 @@ namespace SoulsFormats
 
                 bw.FillInt32($"TextureType{index}", (int)bw.Position);
                 if (header.Unicode)
-                    bw.WriteUTF16(Type, true);
+                    bw.WriteUTF16(ParamName, true);
                 else
-                    bw.WriteShiftJIS(Type, true);
+                    bw.WriteShiftJIS(ParamName, true);
             }
 
             /// <summary>
@@ -137,11 +148,7 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"{Type} = {Path}";
-            }
-            public Texture Clone()
-            {
-                return (Texture)MemberwiseClone();
+                return $"{ParamName} = {Path}";
             }
         }
     }

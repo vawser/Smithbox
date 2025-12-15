@@ -105,6 +105,23 @@ namespace SoulsFormats
             }
 
             /// <summary>
+            /// Clone an existing <see cref="Node"/>.
+            /// </summary>
+            public Node(Node node)
+            {
+                Name = node.Name;
+                ParentIndex = node.ParentIndex;
+                FirstChildIndex = node.FirstChildIndex;
+                NextSiblingIndex = node.NextSiblingIndex;
+                PreviousSiblingIndex = node.PreviousSiblingIndex;
+                Translation = node.Translation;
+                Rotation = node.Rotation;
+                Scale = node.Scale;
+                BoundingBoxMin = node.BoundingBoxMin;
+                BoundingBoxMax = node.BoundingBoxMax;
+            }
+
+            /// <summary>
             /// Creates a transformation matrix from the scale, rotation, and translation of the bone.
             /// </summary>
             public Matrix4x4 ComputeLocalTransform()
@@ -165,11 +182,6 @@ namespace SoulsFormats
                     bw.WriteUTF16(Name, true);
                 else
                     bw.WriteShiftJIS(Name, true);
-            }
-
-            public Node Clone()
-            {
-                return (Node)MemberwiseClone();
             }
         }
     }

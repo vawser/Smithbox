@@ -10,6 +10,9 @@ namespace SoulsFormats
         /// </summary>
         public class VertexBuffer
         {
+            /// <summary>
+            /// Whether or not the buffer is edge compressed.
+            /// </summary>
             public bool EdgeCompressed { get; set; }
 
             /// <summary>
@@ -24,7 +27,6 @@ namespace SoulsFormats
             public int LayoutIndex { get; set; }
 
             internal int VertexSize;
-
             internal int VertexCount;
             internal int BufferOffset;
 
@@ -39,17 +41,11 @@ namespace SoulsFormats
             internal VertexBuffer(BinaryReaderEx br)
             {
                 BufferIndex = br.ReadInt32();
-
-                // TODO EDGE
                 int final = BufferIndex & ~0x60000000;
                 if (final != BufferIndex)
                 {
-                    EdgeCompressed = true;
                     BufferIndex = final;
-                }
-                else
-                {
-                    EdgeCompressed = false;
+                    EdgeCompressed = true;
                 }
 
                 LayoutIndex = br.ReadInt32();
@@ -61,13 +57,13 @@ namespace SoulsFormats
                 BufferOffset = br.ReadInt32();
             }
 
-            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, int dataOffset, FLVERHeader header)
+            internal void ReadBuffer(BinaryReaderEx br, List<BufferLayout> layouts, List<FLVER.Vertex> vertices, List<EdgeIndexGroup> edgeIndexBufferGroups, int dataOffset, int version, bool posfilled)
             {
                 BufferLayout layout = layouts[LayoutIndex];
                 if (VertexSize != layout.Size)
                 {
                     //Only try this for DS1
-                    if (header.Version == 0x2000B || header.Version == 0x2000C || header.Version == 0x2000D)
+                    if (version == 0x2000B || version == 0x2000C || version == 0x2000D)
                     {
                         if (!layout.DarkSoulsRemasteredFix())
                         {
@@ -76,22 +72,50 @@ namespace SoulsFormats
                     }
                     else
                     {
-                        throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes: {VertexSize} != {layout.Size}");
+                        throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes.");
                     }
                 }
 
                 br.StepIn(dataOffset + BufferOffset);
                 {
-                    float uvFactor = 1024;
-                    if (header.Version >= 0x2000F)
-                        uvFactor = 2048;
+                    if (EdgeCompressed)
+                    {
+                        // TODO: EdgeGeom
+                        // Only decompress the edge vertexes if we need a fallback
+                        // It seems edge compressed FLVER models may always have an uncompressed copy of positions
+                        // But this is here just in case
+                        if (!posfilled)
+                        {
+                            int vertexIndex = 0;
 
-                    for (int i = 0; i < vertices.Count; i++)
-                        vertices[i].Read(br, layout, uvFactor);
+                            long start = br.Position;
+                            foreach (var group in edgeIndexBufferGroups)
+                            {
+                                var edgeVertexBuffers = group.ReadEdgeVertexBuffers(br, start);
+                                foreach (EdgeVertexBuffer vertexBuffer in edgeVertexBuffers)
+                                {
+                                    foreach (var position in vertexBuffer.Vertices)
+                                    {
+                                        vertices[vertexIndex].Position = position.Decompress(vertexBuffer.Multiplier, vertexBuffer.Offset);
+                                        vertexIndex++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        float uvFactor = 1024;
+                        if (version >= 0x2000E)
+                            uvFactor = 2048;
+
+                        for (int i = 0; i < vertices.Count; i++)
+                            vertices[i].Read(br, layout, uvFactor);
+                    }
                 }
                 br.StepOut();
 
-                // TODO ACVD
+                // Removed for shared meshes support
                 //VertexSize = -1;
                 //BufferIndex = -1;
                 //VertexCount = -1;
@@ -102,8 +126,8 @@ namespace SoulsFormats
             {
                 BufferLayout layout = layouts[LayoutIndex];
 
-                // TODO Edge I wonder if this is just a byte for flags at the start
-                bw.WriteInt32(EdgeCompressed ? (bufferIndex | 0x60000000) : bufferIndex);
+                // TODO: EdgeGeom
+                bw.WriteInt32(/* EdgeCompressed ? bufferIndex | 0x60000000 : */ bufferIndex);
                 bw.WriteInt32(LayoutIndex);
                 bw.WriteInt32(layout.Size);
                 bw.WriteInt32(vertexCount);
@@ -119,16 +143,13 @@ namespace SoulsFormats
                 bw.FillInt32($"VertexBufferOffset{index}", (int)bw.Position - dataStart);
 
                 float uvFactor = 1024;
-                if (header.Version >= 0x2000F)
+                if (header.Version >= 0x2000E)
                     uvFactor = 2048;
+
+                // TODO: EdgeGeom vertices
 
                 foreach (FLVER.Vertex vertex in Vertices)
                     vertex.Write(bw, layout, uvFactor);
-            }
-
-            public VertexBuffer Clone()
-            {
-                return (VertexBuffer)MemberwiseClone();
             }
         }
     }

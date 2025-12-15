@@ -110,16 +110,16 @@ public class FlverFsEntry : SoulsFileFsEntry
                     });
                     foreach (var (j, texture) in material.Textures.Select((t, j) => (j, t)))
                     {
-                        if (ImGui.CollapsingHeader($"Texture {j} ({texture.Type}: \"{texture.Path}\")##Material_{i} "))
+                        if (ImGui.CollapsingHeader($"Texture {j} ({texture.ParamName}: \"{texture.Path}\")##Material_{i} "))
                         {
                             ImGui.TreePush($"Material {i} Texture {j} ({texture.Path})##TreePush");
                             PropertyTable($"Material {i} Texture {j} Table", (row) =>
                             {
-                                row("Type", texture.Type);
+                                row("ParamName", texture.ParamName);
                                 row("Path", texture.Path);
-                                row("Scale", texture.Scale.ToString());
-                                row("Unk10", texture.Unk10.ToString());
-                                row("Unk11", texture.Unk11.ToString());
+                                row("TilingScale", texture.TilingScale.ToString());
+                                row("TilingTypeU", texture.TilingTypeU.ToString());
+                                row("TilingTypeV", texture.TilingTypeV.ToString());
                                 row("Unk14", texture.Unk14.ToString());
                                 row("Unk18", texture.Unk18.ToString());
                                 row("Unk1C", texture.Unk1C.ToString());

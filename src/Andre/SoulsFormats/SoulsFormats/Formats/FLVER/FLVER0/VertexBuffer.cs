@@ -1,31 +1,88 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Buffers.Binary;
+using System.Collections.Generic;
 
 namespace SoulsFormats
 {
     public partial class FLVER0
     {
+        /// <summary>
+        /// A header for vertex buffers containing basic information.
+        /// </summary>
         private class VertexBuffer
         {
-            public int LayoutIndex;
+            /// <summary>
+            /// The index of the BufferLayout used by this buffer.
+            /// </summary>
+            internal int LayoutIndex;
 
-            public int BufferLength;
+            /// <summary>
+            /// The length in bytes of this buffer.
+            /// </summary>
+            internal int BufferLength;
 
-            public int BufferOffset;
+            /// <summary>
+            /// The offset of this buffer.
+            /// </summary>
+            internal int BufferOffset;
 
-            public VertexBuffer() { }
+            /// <summary>
+            /// Create a new vertex buffer header.
+            /// </summary>
+            internal VertexBuffer() { }
 
-            internal VertexBuffer(BinaryReaderEx br, int version)
+            /// <summary>
+            /// Create a new vertex buffer header with the specified values.
+            /// </summary>
+            internal VertexBuffer(int layoutIndex, int bufferLength, int bufferOffset)
+            {
+                LayoutIndex = layoutIndex;
+                BufferLength = bufferLength;
+                BufferOffset = bufferOffset;
+            }
+
+            /// <summary>
+            /// Clone an existing vertex buffer header.
+            /// </summary>
+            internal VertexBuffer(VertexBuffer vertexBuffer)
+            {
+                LayoutIndex = vertexBuffer.LayoutIndex;
+                BufferLength = vertexBuffer.BufferLength;
+                BufferOffset = vertexBuffer.BufferOffset;
+            }
+
+            /// <summary>
+            /// Read a vertex buffer header from a stream.
+            /// </summary>
+            internal VertexBuffer(BinaryReaderEx br)
             {
                 LayoutIndex = br.ReadInt32();
-                BufferLength = ReadVarEndianInt32(br, version);
-                BufferOffset = ReadVarEndianInt32(br, version);
+                BufferLength = br.ReadInt32();
+                BufferOffset = br.ReadInt32();
+                if ((BufferLength < 0 || BufferLength > br.Length) ||
+                    (BufferOffset < 0 || BufferOffset > br.Length))
+                {
+                    BufferLength = BinaryPrimitives.ReverseEndianness(BufferLength);
+                    BufferOffset = BinaryPrimitives.ReverseEndianness(BufferOffset);
+                }
+
                 br.AssertInt32(0);
             }
 
-            internal static List<VertexBuffer> ReadVertexBuffers(BinaryReaderEx br, int version)
+            /// <summary>
+            /// Read a collection of vertex buffer headers from a stream.
+            /// </summary>
+            internal static List<VertexBuffer> ReadVertexBuffers(BinaryReaderEx br)
             {
-                int bufferCount = ReadVarEndianInt32(br, version);
-                int buffersOffset = ReadVarEndianInt32(br, version);
+                int bufferCount = br.ReadInt32();
+                int buffersOffset = br.ReadInt32();
+                if ((bufferCount < 0 || bufferCount > br.Length) ||
+                    (buffersOffset < 0 || buffersOffset > br.Length))
+                {
+                    bufferCount = BinaryPrimitives.ReverseEndianness(bufferCount);
+                    buffersOffset = BinaryPrimitives.ReverseEndianness(buffersOffset);
+                }
+
                 br.AssertInt32(0);
                 br.AssertInt32(0);
 
@@ -33,7 +90,7 @@ namespace SoulsFormats
                 br.StepIn(buffersOffset);
                 {
                     for (int i = 0; i < bufferCount; i++)
-                        buffers.Add(new VertexBuffer(br, version));
+                        buffers.Add(new VertexBuffer(br));
                 }
                 br.StepOut();
                 return buffers;
