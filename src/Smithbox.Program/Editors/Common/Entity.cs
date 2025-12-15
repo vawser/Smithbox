@@ -1269,11 +1269,11 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.Visible = _EditorVisible;
 
-            if (editor is ModelEditorScreen)
-            {
-                RenderSceneMesh.AutoRegister = true;
-                RenderSceneMesh.Register();
-            }
+            //if (editor is ModelEditorScreen)
+            //{
+            //    RenderSceneMesh.AutoRegister = true;
+            //    RenderSceneMesh.Register();
+            //}
 
             if (editor is MapEditorScreen)
             {
@@ -2383,7 +2383,7 @@ public class ModelEntity : Entity
         set => ModelContainer = value;
     }
 
-    public override bool HasTransform => Type == ModelEntityType.Dummy;
+    public override bool HasTransform => Type is ModelEntityType.Dummy or ModelEntityType.Node;
 
     public override void UpdateRenderModel(EditorScreen editor)
     {

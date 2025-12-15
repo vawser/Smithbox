@@ -459,20 +459,13 @@ public class ModelWrapper
 
     public void Unload()
     {
+        Parent.Project.ModelEditor.EntityTypeCache.InvalidateCache();
+
         Parent.Project.ModelEditor.Universe.UnloadModel(this);
     }
 
-    public void Save()
+    public void UpdateFLVER()
     {
-        var containerPath = Parent.Path;
-        var project = Parent.Project;
-        var fs = Parent.TargetFS;
-
-        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
-
-        // Place the container data in the FLVER
-        // Only replaces these elements currently 
-
         // Dummies
         FLVER.Dummies.Clear();
         foreach (var entry in Container.Dummies)
@@ -508,6 +501,18 @@ public class ModelWrapper
         // SkeletonSet
         var newSkeletonSet = Container.Skeletons.First();
         FLVER.Skeletons = (FLVER2.SkeletonSet)newSkeletonSet.WrappedObject;
+
+    }
+
+    public void Save()
+    {
+        var containerPath = Parent.Path;
+        var project = Parent.Project;
+        var fs = Parent.TargetFS;
+
+        var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
+
+        UpdateFLVER();
 
         var flverData = FLVER.Write();
 

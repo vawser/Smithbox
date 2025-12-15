@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using StudioCore.Application;
 using StudioCore.Editors.Common;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.Viewport;
 using StudioCore.Renderer;
 using StudioCore.Utilities;
@@ -84,6 +85,8 @@ public class ModelEditorScreen : EditorScreen
         ModelInsightHelper.Setup(this, Project);
 
         FocusManager.SetDefaultFocusElement("Properties##modeleditprop");
+
+        EditorActionManager.AddEventHandler(ModelContentView);
     }
     private bool PauseUpdate
     {
