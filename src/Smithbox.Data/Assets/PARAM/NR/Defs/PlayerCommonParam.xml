@@ -508,20 +508,20 @@
     <Field Def="s32 unknown_46" />
     <Field Def="f32 unknown_47" />
     
-    <Field Def="s32 unknown_48" />
+    <Field Def="s32 tenacityEffectId" />
     <Field Def="s32 unknown_49" />
     <Field Def="s32 unknown_50" />
     <Field Def="f32 unknown_51" />
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 tenacityRelicAddEffectId" FirstVersion="10200000"/>
     <Field Def="s32 unk_01" FirstVersion="10200000"/>
     <Field Def="s32 unk_02" FirstVersion="10200000"/>
     <Field Def="s32 unk_03" FirstVersion="10200000"/>
     <Field Def="s32 unk_04" FirstVersion="10200000"/>
-    <Field Def="s32 unk_05" FirstVersion="10200000"/>
-    <Field Def="s32 unk_06" FirstVersion="10200000"/>
-    <Field Def="s32 unk_07" FirstVersion="10200000"/>
-    <Field Def="s32 unk_08" FirstVersion="10200000"/>
+    <Field Def="s32 analyseTarget_Level1EffectId" FirstVersion="10200000"/>
+    <Field Def="s32 analyseTarget_Level2EffectId" FirstVersion="10200000"/>
+    <Field Def="s32 analyseTarget_Level3EffectId" FirstVersion="10200000"/>
+    <Field Def="s32 analyseTarget_AllyEffectId" FirstVersion="10200000"/>
     
     <Field Def="s32 fh_unknown_00" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_01" FirstVersion="10310025"/>
@@ -537,23 +537,23 @@
     <Field Def="s32 fh_unknown_11" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_12" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_13" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_14" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_15" FirstVersion="10310025"/>
+    <Field Def="f32 tranceDuration" FirstVersion="10310025"/>
+    <Field Def="f32 tranceEnhanceDuration" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_16" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_17" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_18" FirstVersion="10310025"/>
+    <Field Def="s32 tranceEffectId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceRemoveEffectId" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_19" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_20" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_21" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_22" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_23" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_24" FirstVersion="10310025"/>
-    <Field Def="f32 fh_unknown_25" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_26" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_27" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_28" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_29" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_30" FirstVersion="10310025"/>
+    <Field Def="f32 tranceSuccessiveThreshold" FirstVersion="10310025"/>
+    <Field Def="f32 tranceSuccessiveThreshold_unk" FirstVersion="10310025"/>
+    <Field Def="s32 tranceEnhanceEffectId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceEnhanceRemoveEffectId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceBuffEffectId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceRemoveBuffEffectId" FirstVersion="10310025"/>
+    <Field Def="s32 tranceSuccessiveEffectId" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_31" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_32" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_33" FirstVersion="10310025"/>
@@ -582,9 +582,9 @@
     <Field Def="f32 fh_unknown_46" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_47" FirstVersion="10310025"/>
     <Field Def="s32 fh_unknown_48" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_49" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_50" FirstVersion="10310025"/>
-    <Field Def="s32 fh_unknown_51" FirstVersion="10310025"/>
+    <Field Def="s32 analyseSelf_Level1EffectId" FirstVersion="10310025"/>
+    <Field Def="s32 analyseSelf_Level2EffectId" FirstVersion="10310025"/>
+    <Field Def="s32 analyseSelf_Level3EffectId" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_52" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_53" FirstVersion="10310025"/>
     <Field Def="f32 fh_unknown_54" FirstVersion="10310025"/>
