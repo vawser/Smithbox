@@ -13,6 +13,7 @@
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
     <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
+    <RootNamespace>StudioCore</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">

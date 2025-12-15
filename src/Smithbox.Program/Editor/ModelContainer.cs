@@ -28,13 +28,13 @@ public class ModelContainer : ObjectContainer
 
     public List<Entity> Dummies { get; set; }
     public List<Entity> Materials { get; set; }
-    public List<Entity> GxLists { get; set; }
+    //public List<Entity> GxLists { get; set; }
     public List<Entity> Nodes { get; set; }
     public List<Entity> Meshes { get; set; }
-    public List<Entity> BufferLayouts { get; set; }
+    //public List<Entity> BufferLayouts { get; set; }
     public List<Entity> Skeletons { get; set; }
 
-    public List<Entity> Collisions { get; set; }
+    //public List<Entity> Collisions { get; set; }
 
 
     public ModelContainer(ModelEditorScreen editor, ProjectEntry project, string modelName)
@@ -45,13 +45,13 @@ public class ModelContainer : ObjectContainer
 
         Dummies = new();
         Materials = new();
-        GxLists = new();
+        //GxLists = new();
         Nodes = new();
         Meshes = new();
-        BufferLayouts = new();
+        //BufferLayouts = new();
         Skeletons = new();
 
-        Collisions = new();
+        //Collisions = new();
 
         var rootTransformNode = new ModelTransformNode(modelName);
         var modelTransformNode = new ModelTransformNode(modelName);
@@ -99,13 +99,13 @@ public class ModelContainer : ObjectContainer
         }
 
         // GX Lists
-        foreach (var entry in flver.GXLists)
-        {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.GxList);
-            GxLists.Add(newObject);
-            Objects.Add(newObject);
-            RootObject.AddChild(newObject);
-        }
+        //foreach (var entry in flver.GXLists)
+        //{
+        //    var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.GxList);
+        //    GxLists.Add(newObject);
+        //    Objects.Add(newObject);
+        //    RootObject.AddChild(newObject);
+        //}
 
         // Nodes
         foreach (var entry in flver.Nodes)
@@ -130,13 +130,13 @@ public class ModelContainer : ObjectContainer
         }
 
         // Buffer Layouts
-        foreach (var entry in flver.BufferLayouts)
-        {
-            var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.BufferLayout);
-            BufferLayouts.Add(newObject);
-            Objects.Add(newObject);
-            RootObject.AddChild(newObject);
-        }
+        //foreach (var entry in flver.BufferLayouts)
+        //{
+        //    var newObject = new ModelEntity(Editor, this, entry, ModelEntityType.BufferLayout);
+        //    BufferLayouts.Add(newObject);
+        //    Objects.Add(newObject);
+        //    RootObject.AddChild(newObject);
+        //}
 
         // Skeletons
         var skeletonSet = new ModelEntity(Editor, this, flver.Skeletons, ModelEntityType.Skeleton);
@@ -242,7 +242,7 @@ public class ModelContainer : ObjectContainer
     {
         var mesh = RenderableHelper.GetBonePointProxy(Editor.ModelViewportView.RenderScene);
 
-        mesh.DrawFilter = RenderFilter.Dummies;
+        mesh.DrawFilter = RenderFilter.Nodes;
         mesh.World = ent.GetWorldMatrix();
         mesh.SetSelectable(ent);
 

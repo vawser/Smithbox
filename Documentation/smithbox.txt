@@ -26,11 +26,11 @@
 
 # TODO NOW
 - Model Editor: 
- - Sort out the property view (give it a table layout, fix some of the property handling)
- - Add proper transform action for the dummy and node entities
- - Restore some of the tools from the old version
- 
- - add simple JSON export/import for elements of FLVER
- - order dummy polygon list by parent bone (as option?)
+ - Sort out property view niggles
+ - Add proper transform action for node entities
+ - Implement delete/duplicate/frame/goto/pull to camera/reorder/rotate/select all actions
+ - Restore 'Global Model Search' tool
+ - Restore 'Model Mask Toggler'
+ - Add simple JSON export/import for elements of FLVER
  - Fix part texture lookup (doesn't seem to apply them)
  

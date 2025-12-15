@@ -1,14 +1,11 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats.KF4;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Resource;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
@@ -16,8 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Veldrid;
-using Veldrid.MetalBindings;
-using static Google.Protobuf.Reflection.FieldOptions.Types;
 using static MsbUtils;
 
 namespace StudioCore.Editors.MapEditor.Core;

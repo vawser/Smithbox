@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -14,7 +15,7 @@ using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor;
 
-public class ModelContentView
+public class ModelContentView : IActionEventHandler
 {
     public ModelEditorScreen Editor;
     public ProjectEntry Project;
@@ -317,6 +318,7 @@ public class ModelContentView
             }
         }
     }
+
     private void HierarchyView(ModelContainer container, Entity entity)
     {
         foreach (Entity obj in entity.Children)
@@ -339,6 +341,34 @@ public class ModelContentView
             if (e.Name != null && e.Name != "null")
             {
                 key = e.Name;
+            }
+        }
+
+        // Dummy: Ref ID
+        if(e.WrappedObject is FLVER.Dummy)
+        {
+            var dummy = (FLVER.Dummy)e.WrappedObject;
+
+            var parentBone = dummy.ParentBoneIndex;
+
+            if (parentBone != -1)
+            {
+                for (int i = 0; i < container.Nodes.Count; i++)
+                {
+                    var curNode = container.Nodes[i];
+
+                    if (i == parentBone)
+                    {
+                        var node = (FLVER.Node)curNode.WrappedObject;
+
+                        key = $"{node.Name} [{dummy.ReferenceID}]";
+                    }
+                }
+
+            }
+            else
+            {
+                key = $"{key} [{dummy.ReferenceID}]";
             }
         }
 
@@ -365,7 +395,7 @@ public class ModelContentView
 
         var arrowKeySelect = false;
 
-        DisplayVisibilityButton(e, container, key);
+        DisplayVisibilityButton(e, container, key, index);
 
         if (hierarchial && e.Children.Count > 0)
         {
@@ -477,12 +507,13 @@ public class ModelContentView
     {
         if (ImGui.BeginPopupContextItem($@"modelObjectContext_{container.Name}_{imguiID}"))
         {
+            Editor.DeleteAction.OnContext();
 
             ImGui.EndPopup();
         }
     }
 
-    public void DisplayVisibilityButton(Entity entity, ModelContainer container, string key)
+    public void DisplayVisibilityButton(Entity entity, ModelContainer container, string key, int index)
     {
         // Visibility icon
         var icon = entity.EditorVisible ? Icons.Eye : Icons.EyeSlash;
@@ -493,7 +524,7 @@ public class ModelContentView
         ImGui.PushStyleColor(ImGuiCol.ButtonActive, Vector4.Zero);
         ImGui.PushStyleColor(ImGuiCol.Border, Vector4.Zero);
 
-        if (ImGui.Button($"{icon}##modelObjectVisibility{key}", DPI.InlineIconButtonSize))
+        if (ImGui.Button($"{icon}##modelObjectVisibility{key}{index}", DPI.InlineIconButtonSize))
         {
             if (InputTracker.GetKey(KeyBindings.Current.MAP_ToggleMapObjectGroupVisibility))
             {
@@ -619,6 +650,15 @@ public class ModelContentView
                 Editor.ViewportSelection.ClearSelection(Editor);
                 Editor.ViewportSelection.AddSelection(Editor, entity);
             }
+        }
+    }
+
+    // This updates the model content tree when actions occur
+    public void OnActionEvent(ActionEvent evt)
+    {
+        if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
+        {
+            Editor.EntityTypeCache.InvalidateCache();
         }
     }
 }

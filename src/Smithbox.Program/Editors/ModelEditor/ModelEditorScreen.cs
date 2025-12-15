@@ -48,6 +48,8 @@ public class ModelEditorScreen : EditorScreen
     public ModelGridConfiguration ModelGridTool;
     public ModelInsight ModelInsightTool;
 
+    public DeleteAction DeleteAction;
+
     public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -77,6 +79,8 @@ public class ModelEditorScreen : EditorScreen
 
         ModelGridTool = new ModelGridConfiguration(this, Project);
         ModelInsightTool = new ModelInsight(this, Project);
+
+        DeleteAction = new DeleteAction(this, Project);
 
         ModelInsightHelper.Setup(this, Project);
 
@@ -263,6 +267,7 @@ public class ModelEditorScreen : EditorScreen
             ImGui.Separator();
 
             // TODO: actions
+            DeleteAction.OnMenu();
 
             ImGui.EndMenu();
         }
