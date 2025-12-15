@@ -35,7 +35,6 @@ public class ModelContainer : ObjectContainer
     public List<Entity> Skeletons { get; set; }
 
     public List<Entity> Collisions { get; set; }
-    public List<Entity> Navmeshes { get; set; }
 
 
     public ModelContainer(ModelEditorScreen editor, ProjectEntry project, string modelName)
@@ -53,7 +52,6 @@ public class ModelContainer : ObjectContainer
         Skeletons = new();
 
         Collisions = new();
-        Navmeshes = new();
 
         var rootTransformNode = new ModelTransformNode(modelName);
         var modelTransformNode = new ModelTransformNode(modelName);
@@ -170,7 +168,7 @@ public class ModelContainer : ObjectContainer
     {
         ResourceDescriptor resource;
 
-        var modelName = wrapper.Name;
+        var modelName = wrapper.Name.ToLower();
         var mapID = "";
 
         var loadCol = false;
@@ -196,9 +194,13 @@ public class ModelContainer : ObjectContainer
             resource = ModelLocator.GetEneModel(Project, modelName);
         }
         else if (modelName.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || 
-            modelName.StartsWith("AEG"))
+            modelName.StartsWith("aeg"))
         {
             resource = ModelLocator.GetObjModel(Project, modelName, modelName);
+        }
+        else if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        {
+            resource = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
         }
         else if (modelName.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
         {

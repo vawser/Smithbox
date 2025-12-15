@@ -474,6 +474,45 @@ public class ModelWrapper
 
         var binderType = ModelEditorUtils.GetContainerTypeFromRelativePath(project, containerPath);
 
+        // Place the container data in the FLVER
+        // Only replaces these elements currently 
+
+        // Dummies
+        FLVER.Dummies.Clear();
+        foreach (var entry in Container.Dummies)
+        {
+            var obj = (FLVER.Dummy)entry.WrappedObject;
+            FLVER.Dummies.Add(obj);
+        }
+
+        // Nodes
+        FLVER.Nodes.Clear();
+        foreach (var entry in Container.Nodes)
+        {
+            var obj = (FLVER.Node)entry.WrappedObject;
+            FLVER.Nodes.Add(obj);
+        }
+
+        // Materials
+        FLVER.Materials.Clear();
+        foreach (var entry in Container.Materials)
+        {
+            var obj = (FLVER2.Material)entry.WrappedObject;
+            FLVER.Materials.Add(obj);
+        }
+
+        // Meshes
+        FLVER.Meshes.Clear();
+        foreach (var entry in Container.Meshes)
+        {
+            var obj = (FLVER2.Mesh)entry.WrappedObject;
+            FLVER.Meshes.Add(obj);
+        }
+
+        // SkeletonSet
+        var newSkeletonSet = Container.Skeletons.First();
+        FLVER.Skeletons = (FLVER2.SkeletonSet)newSkeletonSet.WrappedObject;
+
         var flverData = FLVER.Write();
 
         if (binderType is ResourceContainerType.None)

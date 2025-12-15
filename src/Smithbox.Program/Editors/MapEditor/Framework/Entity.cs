@@ -1,5 +1,4 @@
 ﻿using Andre.Formats;
-using Microsoft.AspNetCore.Components.Forms.Mapping;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -20,7 +19,6 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
-using static SoulsFormats.TAE3.Event;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
@@ -823,122 +821,162 @@ public class Entity : ISelectable, IDisposable
     {
         var t = Transform.Default;
 
-        var pos = GetPropertyValue("Position");
-        if (pos != null)
+        if (WrappedObject is FLVER.Dummy)
         {
-            t.Position = (Vector3)pos;
+            var pos = GetPropertyValue("Position");
+            if (pos != null)
+            {
+                t.Position = (Vector3)pos;
+            }
+
+            var forward = GetPropertyValue("Forward");
+            var upward = GetPropertyValue("Upward");
+            if (forward != null && upward != null)
+            {
+                t.Rotation = MathUtils.LookRotation((Vector3)forward, (Vector3)upward);
+            }
+        }
+        else if (WrappedObject is FLVER.Node)
+        {
+            var pos = GetPropertyValue("Translation");
+            if (pos != null)
+            {
+                t.Position = (Vector3)pos;
+            }
+
+            var rot = GetPropertyValue("Rotation");
+            if (rot != null)
+            {
+                var r = (Vector3)rot;
+
+                t.EulerRotationXZY = new Vector3(r.X, r.Y, r.Z);
+            }
+
+            var scale = GetPropertyValue("Scale");
+            if (scale != null)
+            {
+                t.Scale = (Vector3)scale;
+            }
         }
         else
         {
-            var px = GetPropertyValue("PositionX");
-            var py = GetPropertyValue("PositionY");
-            var pz = GetPropertyValue("PositionZ");
-            if (px != null)
+            var pos = GetPropertyValue("Position");
+            if (pos != null)
             {
-                t.Position.X = (float)px;
+                t.Position = (Vector3)pos;
             }
-
-            if (py != null)
+            else
             {
-                t.Position.Y = (float)py;
-            }
-
-            if (pz != null)
-            {
-                t.Position.Z = (float)pz;
-            }
-        }
-
-        var rot = GetPropertyValue("Rotation");
-        if (rot != null)
-        {
-            var r = (Vector3)rot;
-
-            if (IsRotationPropertyRadians("Rotation"))
-            {
-                if (IsRotationXZY("Rotation"))
+                var px = GetPropertyValue("PositionX");
+                var py = GetPropertyValue("PositionY");
+                var pz = GetPropertyValue("PositionZ");
+                if (px != null)
                 {
-                    t.EulerRotationXZY = new Vector3(r.X, r.Y, r.Z);
+                    t.Position.X = (float)px;
+                }
+
+                if (py != null)
+                {
+                    t.Position.Y = (float)py;
+                }
+
+                if (pz != null)
+                {
+                    t.Position.Z = (float)pz;
+                }
+            }
+
+            var rot = GetPropertyValue("Rotation");
+            if (rot != null)
+            {
+                var r = (Vector3)rot;
+
+                if (IsRotationPropertyRadians("Rotation"))
+                {
+                    if (IsRotationXZY("Rotation"))
+                    {
+                        t.EulerRotationXZY = new Vector3(r.X, r.Y, r.Z);
+                    }
+                    else
+                    {
+                        t.EulerRotation = new Vector3(r.X, r.Y, r.Z);
+                    }
                 }
                 else
                 {
-                    t.EulerRotation = new Vector3(r.X, r.Y, r.Z);
+                    if (IsRotationXZY("Rotation"))
+                    {
+                        t.EulerRotationXZY = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
+                            Utils.DegToRadians(r.Z));
+                    }
+                    else
+                    {
+                        t.EulerRotation = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
+                            Utils.DegToRadians(r.Z));
+                    }
                 }
             }
             else
             {
-                if (IsRotationXZY("Rotation"))
+                var rx = GetPropertyValue("RotationX");
+                var ry = GetPropertyValue("RotationY");
+                var rz = GetPropertyValue("RotationZ");
+                if (rx == null && ry == null && rz == null)
                 {
-                    t.EulerRotationXZY = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
-                        Utils.DegToRadians(r.Z));
+                    var forwardN = (Vector3?)GetPropertyValue("Forward");
+                    var upwardN = (Vector3?)GetPropertyValue("Upward");
+                    if (forwardN == null)
+                    {
+                        t.EulerRotation = Vector3.Zero;
+                    }
+                    else
+                    {
+                        var look = Vector3.Normalize(forwardN.Value);
+                        var up = Vector3.Normalize(upwardN ?? Vector3.UnitZ);
+                        var right = Vector3.Normalize(Vector3.Cross(look, up));
+
+                        t.EulerRotationXZY = EulerUtils.MatrixToEulerXZY(new(
+                            look.X, look.Y, look.Z, 1f,
+                            up.X, up.Y, up.Z, 1f,
+                            right.X, right.Y, right.Z, 1f,
+                            1f, 1f, 1f, 1f
+                        ));
+                    }
+                }
+                // AIP for ER
+                else if (rx == null && rx == null)
+                {
+                    t.EulerRotation = new Vector3(0, Utils.DegToRadians((float)ry), 0);
                 }
                 else
                 {
+                    Vector3 r = Vector3.Zero;
+                    if (rx != null)
+                    {
+                        r.X = (float)rx;
+                    }
+
+                    if (ry != null)
+                    {
+                        r.Y = (float)ry +
+                              180.0f; // According to Vawser, DS2 enemies are flipped 180 relative to map rotations
+                    }
+
+                    if (rz != null)
+                    {
+                        r.Z = (float)rz;
+                    }
+
                     t.EulerRotation = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
                         Utils.DegToRadians(r.Z));
                 }
             }
-        }
-        else
-        {
-            var rx = GetPropertyValue("RotationX");
-            var ry = GetPropertyValue("RotationY");
-            var rz = GetPropertyValue("RotationZ");
-            if (rx == null && ry == null && rz == null)
+
+            var scale = GetPropertyValue("Scale");
+            if (scale != null)
             {
-                var forwardN = (Vector3?)GetPropertyValue("Forward");
-                var upwardN = (Vector3?)GetPropertyValue("Upward");
-                if (forwardN == null)
-                {
-                    t.EulerRotation = Vector3.Zero;
-                }
-                else
-                {
-                    var look = Vector3.Normalize(forwardN.Value);
-                    var up = Vector3.Normalize(upwardN ?? Vector3.UnitZ);
-                    var right = Vector3.Normalize(Vector3.Cross(look, up));
-
-                    t.EulerRotationXZY = EulerUtils.MatrixToEulerXZY(new(
-                        look.X, look.Y, look.Z, 1f,
-                        up.X, up.Y, up.Z, 1f,
-                        right.X, right.Y, right.Z, 1f,
-                        1f, 1f, 1f, 1f
-                    ));
-                }
+                t.Scale = (Vector3)scale;
             }
-            // AIP for ER
-            else if(rx == null && rx == null)
-            {
-                t.EulerRotation = new Vector3(0, Utils.DegToRadians((float)ry), 0);
-            }
-            else
-            {
-                Vector3 r = Vector3.Zero;
-                if (rx != null)
-                {
-                    r.X = (float)rx;
-                }
-
-                if (ry != null)
-                {
-                    r.Y = (float)ry +
-                          180.0f; // According to Vawser, DS2 enemies are flipped 180 relative to map rotations
-                }
-
-                if (rz != null)
-                {
-                    r.Z = (float)rz;
-                }
-
-                t.EulerRotation = new Vector3(Utils.DegToRadians(r.X), Utils.DegToRadians(r.Y),
-                    Utils.DegToRadians(r.Z));
-            }
-        }
-
-        var scale = GetPropertyValue("Scale");
-        if (scale != null)
-        {
-            t.Scale = (Vector3)scale;
         }
 
         return t;

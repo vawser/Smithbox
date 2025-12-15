@@ -72,6 +72,7 @@ namespace SoulsFormats
             /// <summary>
             /// Indices to vertices in a mesh.
             /// </summary>
+            [IgnoreInModelEditor]
             public List<int> Indices { get; set; }
 
             /// <summary>

@@ -33,11 +33,13 @@ namespace SoulsFormats
             /// <summary>
             /// Index of a bone that the dummy point is initially transformed to before binding to the attach bone.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short ParentBoneIndex { get; set; }
 
             /// <summary>
             /// Index of the bone that the dummy point follows physically.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short AttachBoneIndex { get; set; }
 
             /// <summary>

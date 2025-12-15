@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
@@ -14,6 +15,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using PropertiesChangedAction = StudioCore.Editors.MapEditor.Actions.Viewport.PropertiesChangedAction;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -126,7 +128,6 @@ public class ModelPropertyView
         ImGui.PopStyleColor(2);
     }
 
-
     private void ModelPropertyOrchestrator(ViewportSelection selection, int classIndex = -1)
     {
         var entities = selection.GetFilteredSelection<ModelEntity>();
@@ -138,15 +139,6 @@ public class ModelPropertyView
         var type = types.First();
 
         var objType = first.WrappedObject.GetType();
-
-        // Disallow editing of these for now
-        // GX List require additional scaffolding to expose the actual data properly
-        // Buffer Layout 
-        if (objType == typeof(FLVER2.GXList) || objType == typeof(FLVER2.BufferLayout))
-        {
-            ImGui.Text("Editing not allowed for this property.");
-            return;
-        }
 
         // var meta = Editor.Project.ModelData.Meta.GetMeta(type, false);
 
@@ -221,6 +213,12 @@ public class ModelPropertyView
                 }
             }
 
+            var ignoreProp = prop.GetCustomAttribute<IgnoreInModelEditor>();
+            if(ignoreProp != null)
+            {
+                continue;
+            }
+
             //if (!meta.IsEmpty && PropertySearch != "")
             //{
             //    if (!meta.AltName.ToLower().Contains(filterTerm))
@@ -233,10 +231,6 @@ public class ModelPropertyView
             {
                 continue;
             }
-
-            // Index Properties are hidden by default
-            //if (meta != null && meta.IndexProperty)
-            //    continue;
 
             ImGui.PushID(id);
             ImGui.AlignTextToFramePadding();
@@ -476,6 +470,7 @@ public class ModelPropertyView
 
         // Property Editor UI
         (bool, bool) propEditResults = HandlePropertyInput(type, oldval, out newval, prop, entSelection);
+
         var changed = propEditResults.Item1;
         var committed = propEditResults.Item2;
 
@@ -486,7 +481,104 @@ public class ModelPropertyView
             ImGui.SetItemDefaultFocus();
         }
 
-        // TODO: references here
+        // Dummy References
+        var dummyRef = prop.GetCustomAttribute<DummyReference>();
+        if(dummyRef != null)
+        {
+            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var value = int.Parse(oldval.ToString());
+
+            ImGui.NextColumn();
+
+            ImGui.Text("");
+
+            ImGui.NextColumn();
+
+            for(int i = 0; i < container.Dummies.Count; i++)
+            {
+                var curDummy = container.Dummies[i];
+
+                if(i == value)
+                {
+                    var dummy = (FLVER.Dummy)curDummy.WrappedObject;
+
+                    if (ImGui.Button($"{Icons.Binoculars}##dummySelect{i}"))
+                    {
+                        EditorCommandQueue.AddCommand($"model/select/dummy/{i}");
+                    }
+
+                    ImGui.SameLine();
+
+                    ImGui.Text($"Dummy {i}: {dummy.ReferenceID}");
+                }
+            }
+        }
+
+        // Node References
+        var nodeRef = prop.GetCustomAttribute<NodeReference>();
+        if (nodeRef != null)
+        {
+            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var value = int.Parse(oldval.ToString());
+
+            ImGui.NextColumn();
+
+            ImGui.Text("");
+
+            ImGui.NextColumn();
+
+            for (int i = 0; i < container.Nodes.Count; i++)
+            {
+                var curNode = container.Nodes[i];
+
+                if (i == value)
+                {
+                    var node = (FLVER.Node)curNode.WrappedObject;
+
+                    if (ImGui.Button($"{Icons.Binoculars}##nodeSelect{i}"))
+                    {
+                        EditorCommandQueue.AddCommand($"model/select/node/{i}");
+                    }
+
+                    ImGui.SameLine();
+
+                    ImGui.Text($"{node.Name}");
+                }
+            }
+        }
+
+        // Material References
+        var matRef = prop.GetCustomAttribute<MaterialReference>();
+        if (matRef != null)
+        {
+            var container = Editor.Selection.SelectedModelWrapper.Container;
+            var value = int.Parse(oldval.ToString());
+
+            ImGui.NextColumn();
+
+            ImGui.Text("");
+
+            ImGui.NextColumn();
+
+            for (int i = 0; i < container.Materials.Count; i++)
+            {
+                var curMaterial = container.Materials[i];
+
+                if (i == value)
+                {
+                    var material = (FLVER2.Material)curMaterial.WrappedObject;
+
+                    if (ImGui.Button($"{Icons.Binoculars}##matSelect{i}"))
+                    {
+                        EditorCommandQueue.AddCommand($"model/select/material/{i}");
+                    }
+
+                    ImGui.SameLine();
+
+                    ImGui.Text($"{material.Name}");
+                }
+            }
+        }
 
         UpdateProperty(prop, entSelection, oldval, newval, changed, committed, arrayIndex, classIndex);
 

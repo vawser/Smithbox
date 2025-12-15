@@ -1,6 +1,11 @@
-﻿using StudioCore.Core;
+﻿using HKLib.hk2018.hkHashMapDetail;
+using Org.BouncyCastle.Crypto;
+using SoulsFormats;
+using StudioCore.Core;
+using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +30,108 @@ public class ModelCommandQueue
         {
             // TODO:
 
-            // load
+            ISelectable target = null;
 
-            // select
+            if (initcmd[0] == "load")
+            {
+                var filename = initcmd[1];
+
+                var entry = Project.ModelData.PrimaryBank.Models
+                    .FirstOrDefault(e => e.Key.Filename == filename);
+
+                if (entry.Value != null)
+                {
+                    Editor.Selection.SelectedModelContainerWrapper = entry.Value;
+                    entry.Value.PopulateModelList();
+                }
+
+                var firstEntry = Editor.Selection.SelectedModelContainerWrapper.Models.FirstOrDefault();
+
+                if (firstEntry != null)
+                {
+                    if (Editor.Selection.SelectedModelWrapper != null)
+                    {
+                        Editor.Selection.SelectedModelWrapper.Unload();
+                    }
+
+                    Editor.Selection.SelectedModelWrapper = firstEntry;
+                    firstEntry.Load();
+                }
+            }
+
+            // Assumes we are working in the Model Editor with the target model already loaded
+            if (initcmd[0] == "select" && initcmd.Length > 2)
+            {
+                var type = initcmd[1];
+                var value = initcmd[2];
+
+                if (Editor.Selection.SelectedModelWrapper != null)
+                {
+                    var container = Editor.Selection.SelectedModelWrapper.Container;
+
+                    if (container != null)
+                    {
+                        if (type == "dummy")
+                        {
+                            var index = int.Parse(value);
+
+                            for (int i = 0; i < container.Dummies.Count; i++)
+                            {
+                                if (index == i)
+                                {
+                                    target = container.Dummies[i];
+                                }
+                            }
+                        }
+
+                        if (type == "node")
+                        {
+                            var index = int.Parse(value);
+
+                            for (int i = 0; i < container.Nodes.Count; i++)
+                            {
+                                if (index == i)
+                                {
+                                    target = container.Nodes[i];
+                                }
+                            }
+                        }
+
+                        if (type == "mesh")
+                        {
+                            var index = int.Parse(value);
+
+                            for (int i = 0; i < container.Meshes.Count; i++)
+                            {
+                                if (index == i)
+                                {
+                                    target = container.Meshes[i];
+                                }
+                            }
+                        }
+
+                        if (type == "material")
+                        {
+                            var index = int.Parse(value);
+
+                            for (int i = 0; i < container.Materials.Count; i++)
+                            {
+                                if (index == i)
+                                {
+                                    target = container.Materials[i];
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (target != null)
+                {
+                    Editor.Universe.Selection.ClearSelection(Editor);
+                    Editor.Universe.Selection.AddSelection(Editor, target);
+                    Editor.Universe.Selection.GotoTreeTarget = target;
+                }
+            }
         }
     }
 }

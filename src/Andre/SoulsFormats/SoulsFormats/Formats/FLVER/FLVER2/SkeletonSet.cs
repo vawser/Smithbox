@@ -91,26 +91,31 @@ namespace SoulsFormats
                 /// <summary>
                 /// Index of the parent bone, or -1 for none.
                 /// </summary>
+                [NodeReference(ReferenceType = typeof(FLVER.Node))]
                 public short ParentIndex { get; set; }
-                
+
                 /// <summary>
                 /// Index of the bone's first child, or -1 for none.
                 /// </summary>
+                [NodeReference(ReferenceType = typeof(FLVER.Node))]
                 public short FirstChildIndex { get; set; }
-                
+
                 /// <summary>
                 /// Index of the bone's next sibling, or -1 for none.
                 /// </summary>
+                [NodeReference(ReferenceType = typeof(FLVER.Node))]
                 public short NextSiblingIndex { get; set; }
-                
+
                 /// <summary>
                 /// Index of the bone's sibling, or -1 for none.
                 /// </summary>
+                [NodeReference(ReferenceType = typeof(FLVER.Node))]
                 public short PreviousSiblingIndex { get; set; }
-                
+
                 /// <summary>
                 /// Index of the node in the <see cref="FLVER2.Nodes"/> list
                 /// </summary>
+                [NodeReference(ReferenceType = typeof(FLVER.Node))]
                 public int NodeIndex { get; set; }
 
                 /// <summary>

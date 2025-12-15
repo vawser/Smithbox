@@ -42,21 +42,25 @@ namespace SoulsFormats
             /// <summary>
             /// Index of this node's parent, or -1 for none.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short ParentIndex { get; set; }
 
             /// <summary>
             /// Index of this node's first child, or -1 for none.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short FirstChildIndex { get; set; }
 
             /// <summary>
             /// Index of the next child of this node's parent, or -1 for none.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short NextSiblingIndex { get; set; }
 
             /// <summary>
             /// Index of the previous child of this node's parent, or -1 for none.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public short PreviousSiblingIndex { get; set; }
 
             /// <summary>

@@ -402,6 +402,10 @@ public class ResourceLocator
                             relPath = Path.Combine("parts", $"{partsId}_l.partsbnd.dcx");
                         }
                     }
+                    else
+                    {
+                        relPath = Path.Combine("parts", $"{partsId}.partsbnd.dcx");
+                    }
 
                     if (partsId == "common_body")
                     {
@@ -758,6 +762,19 @@ public class ResourceLocator
         ad.AssetArchiveVirtualPath = null;
 
         ad.AssetArchiveVirtualPath = $@"obj/{id}/tex";
+
+        return ad;
+    }
+
+    public static ResourceDescriptor GetPartTextureVP(ProjectEntry project, string id, bool binder = false, bool lowDetail = false)
+    {
+        ResourceDescriptor ad = new();
+
+        ad.AssetPath = null;
+        ad.AssetVirtualPath = null;
+        ad.AssetArchiveVirtualPath = null;
+
+        ad.AssetArchiveVirtualPath = $@"parts/{id}/tex";
 
         return ad;
     }

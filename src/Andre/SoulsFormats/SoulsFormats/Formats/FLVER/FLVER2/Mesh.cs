@@ -25,16 +25,19 @@ namespace SoulsFormats
             /// <summary>
             /// Index of the material used by all triangles in this mesh.
             /// </summary>
+            [MaterialReference(ReferenceType = typeof(FLVER2.Material))]
             public int MaterialIndex { get; set; }
 
             /// <summary>
             /// Index of the node representing this mesh in the <see cref="FLVER2.Nodes"/> list.
             /// </summary>
+            [NodeReference(ReferenceType = typeof(FLVER.Node))]
             public int NodeIndex { get; set; }
 
             /// <summary>
             /// Indexes of bones in the bone collection which may be used by vertices in this mesh.
             /// </summary>
+            [IgnoreInModelEditor]
             public List<int> BoneIndices { get; set; }
 
             /// <summary>
@@ -45,11 +48,14 @@ namespace SoulsFormats
             /// <summary>
             /// Vertex buffers in this mesh.
             /// </summary>
+            /// 
+            [IgnoreInModelEditor]
             public List<VertexBuffer> VertexBuffers { get; set; }
 
             /// <summary>
             /// Vertices in this mesh.
             /// </summary>
+            [IgnoreInModelEditor]
             public List<FLVER.Vertex> Vertices { get; set; }
             IReadOnlyList<FLVER.Vertex> IFlverMesh.Vertices => Vertices;
 

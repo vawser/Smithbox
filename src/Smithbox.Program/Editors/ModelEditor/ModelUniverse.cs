@@ -34,13 +34,13 @@ public class ModelUniverse
     private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Character_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Model = new();
+    private HashSet<ResourceDescriptor> LoadList_Part_Model = new();
     private HashSet<ResourceDescriptor> LoadList_Collision = new();
-    private HashSet<ResourceDescriptor> LoadList_Navmesh = new();
 
     private HashSet<ResourceDescriptor> LoadList_Character_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Asset_Texture = new();
+    private HashSet<ResourceDescriptor> LoadList_Part_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
-    private HashSet<ResourceDescriptor> LoadList_Other_Texture = new();
 
     public ModelUniverse(ModelEditorScreen editor, ProjectEntry project)
     {
@@ -83,8 +83,8 @@ public class ModelUniverse
 
         newContainer.Load(modelWrapper.FLVER, modelWrapper);
 
-        SetupModelLoadList(modelWrapper.Name, modelWrapper.Parent);
-        SetupTextureLoadList(modelWrapper.Name, modelWrapper.Parent);
+        SetupModelLoadList(modelWrapper.Name.ToLower(), modelWrapper.Parent);
+        SetupTextureLoadList(modelWrapper.Name.ToLower(), modelWrapper.Parent);
 
         modelWrapper.Container = newContainer;
 
@@ -117,6 +117,12 @@ public class ModelUniverse
 
     public void SetupModelLoadList(string modelName, ModelContainerWrapper parent)
     {
+        LoadList_MapPiece_Model.Clear();
+        LoadList_Character_Model.Clear();
+        LoadList_Asset_Model.Clear();
+        LoadList_Part_Model.Clear();
+        LoadList_Collision.Clear();
+
         var loadList = new List<ResourceDescriptor>();
 
         // MapPiece
@@ -147,12 +153,21 @@ public class ModelUniverse
         }
 
         // Object / Asset
-        if (modelName.StartsWith('o') || modelName.StartsWith("AEG"))
+        if (modelName.StartsWith('o') || modelName.StartsWith("aeg"))
         {
             var modelAsset = ModelLocator.GetObjModel(Editor.Project, modelName, modelName);
 
             if (modelAsset.IsValid())
                 LoadList_Asset_Model.Add(modelAsset);
+        }
+
+        // Part
+        if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        {
+            var modelAsset = ModelLocator.GetPartsModel(Editor.Project, modelName, modelName);
+
+            if (modelAsset.IsValid())
+                LoadList_Part_Model.Add(modelAsset);
         }
 
         // Collision
@@ -176,6 +191,11 @@ public class ModelUniverse
 
     public void SetupTextureLoadList(string modelName, ModelContainerWrapper parent)
     {
+        LoadList_Character_Texture.Clear();
+        LoadList_Asset_Texture.Clear();
+        LoadList_Part_Texture.Clear();
+        LoadList_Map_Texture.Clear();
+
         // MAP
         if (parent != null)
         {
@@ -217,12 +237,21 @@ public class ModelUniverse
         }
 
         // Assets
-        if (modelName.StartsWith("AEG"))
+        if (modelName.StartsWith("aeg"))
         {
             var textureAsset = ResourceLocator.GetAssetTextureVP(Editor.Project, modelName);
 
             if (textureAsset.IsValid())
                 LoadList_Asset_Texture.Add(textureAsset);
+        }
+
+        // Part
+        if (modelName.StartsWith("am") || modelName.StartsWith("lg") || modelName.StartsWith("bd") || modelName.StartsWith("hd") || modelName.StartsWith("wp"))
+        {
+            var textureAsset = ResourceLocator.GetPartTextureVP(Editor.Project, modelName);
+
+            if (textureAsset.IsValid())
+                LoadList_Part_Texture.Add(textureAsset);
         }
 
         // AAT
@@ -315,12 +344,12 @@ public class ModelUniverse
             tasks.Add(task);
         }
 
-        // Other Textures
-        if (CFG.Current.ModelEditor_TextureLoad_Misc)
+        // Part
+        if (CFG.Current.ModelEditor_TextureLoad_Parts)
         {
-            var texJob = ResourceManager.CreateNewJob($@"Other Textures");
+            var texJob = ResourceManager.CreateNewJob($@"Part Textures");
 
-            foreach (ResourceDescriptor asset in LoadList_Other_Texture)
+            foreach (ResourceDescriptor asset in LoadList_Part_Texture)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
@@ -386,12 +415,34 @@ public class ModelUniverse
             tasks.Add(task);
         }
 
-        // Objects
+        // Assets
         if (CFG.Current.ModelEditor_ModelLoad_Objects)
         {
             var job = ResourceManager.CreateNewJob($@"Assets");
 
             foreach (ResourceDescriptor asset in LoadList_Asset_Model)
+            {
+                if (asset.AssetArchiveVirtualPath != null)
+                {
+                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false,
+                        ResourceType.Flver);
+                }
+                else if (asset.AssetVirtualPath != null)
+                {
+                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
+                }
+            }
+
+            task = job.Complete();
+            tasks.Add(task);
+        }
+
+        // Parts
+        if (CFG.Current.ModelEditor_ModelLoad_Parts)
+        {
+            var job = ResourceManager.CreateNewJob($@"Parts");
+
+            foreach (ResourceDescriptor asset in LoadList_Part_Model)
             {
                 if (asset.AssetArchiveVirtualPath != null)
                 {
@@ -438,27 +489,6 @@ public class ModelUniverse
             tasks.Add(task);
         }
 
-        // Navmesh
-        if (CFG.Current.ModelEditor_ModelLoad_Navmeshes)
-        {
-            var job = ResourceManager.CreateNewJob($@"Navmesh");
-
-            foreach (ResourceDescriptor asset in LoadList_Navmesh)
-            {
-                if (asset.AssetArchiveVirtualPath != null)
-                {
-                    job.AddLoadArchiveTask(asset.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly,
-                        false, ResourceType.NavmeshHKX);
-                }
-                else if (asset.AssetVirtualPath != null)
-                {
-                    job.AddLoadFileTask(asset.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly);
-                }
-            }
-
-            task = job.Complete();
-            tasks.Add(task);
-        }
 
         return tasks;
     }

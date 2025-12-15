@@ -1026,12 +1026,14 @@ public class CFG
 
     public bool ModelEditor_ModelLoad_MapPieces = true;
     public bool ModelEditor_ModelLoad_Objects = true;
+    public bool ModelEditor_ModelLoad_Parts = true;
     public bool ModelEditor_ModelLoad_Characters = true;
     public bool ModelEditor_ModelLoad_Collisions = true;
     public bool ModelEditor_ModelLoad_Navmeshes = true;
 
     public bool ModelEditor_TextureLoad_MapPieces = true;
     public bool ModelEditor_TextureLoad_Objects = true;
+    public bool ModelEditor_TextureLoad_Parts = true;
     public bool ModelEditor_TextureLoad_Characters = true;
     public bool ModelEditor_TextureLoad_Misc = true;
 

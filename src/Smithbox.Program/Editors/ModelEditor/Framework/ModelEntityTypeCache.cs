@@ -63,13 +63,13 @@ public class ModelEntityTypeCache
 
         modelcache.Add(ModelEntityType.Material, new Dictionary<Type, List<ModelEntity>>());
 
-        modelcache.Add(ModelEntityType.GxList, new Dictionary<Type, List<ModelEntity>>());
+        //modelcache.Add(ModelEntityType.GxList, new Dictionary<Type, List<ModelEntity>>());
 
         modelcache.Add(ModelEntityType.Node, new Dictionary<Type, List<ModelEntity>>());
 
         modelcache.Add(ModelEntityType.Mesh, new Dictionary<Type, List<ModelEntity>>());
 
-        modelcache.Add(ModelEntityType.BufferLayout, new Dictionary<Type, List<ModelEntity>>());
+        //modelcache.Add(ModelEntityType.BufferLayout, new Dictionary<Type, List<ModelEntity>>());
 
         modelcache.Add(ModelEntityType.Skeleton, new Dictionary<Type, List<ModelEntity>>());
 
