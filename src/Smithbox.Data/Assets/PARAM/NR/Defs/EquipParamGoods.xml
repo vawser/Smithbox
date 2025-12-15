@@ -304,13 +304,7 @@
       <Maximum>1</Maximum>
       <SortID>2900</SortID>
     </Field>
-    <Field Def="u8 isDiscard:1">
-      <DisplayName>捨てれるか</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>アイテムを捨てれるか？TRUE=捨てれる</Description>
-      <Maximum>1</Maximum>
-      <SortID>3100</SortID>
-    </Field>
+    <Field Def="u8 enableSparringGrounds:1" />
     <Field Def="u8 isDeposit:1">
       <DisplayName>預けれるか</DisplayName>
       <Enum>EQUIP_BOOL</Enum>
@@ -360,13 +354,7 @@
       <Maximum>1</Maximum>
       <SortID>3250</SortID>
     </Field>
-    <Field Def="u8 disableMultiDropShare:1">
-      <DisplayName>マルチドロップ共有禁止か</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>マルチドロップ共有禁止か</Description>
-      <Maximum>1</Maximum>
-      <SortID>3155</SortID>
-    </Field>
+    <Field Def="u8 enableVisualCodex:1" />
     <Field Def="u8 disableUseAtColiseum:1">
       <DisplayName>闘技場で使用禁止か</DisplayName>
       <Enum>EQUIP_BOOL</Enum>

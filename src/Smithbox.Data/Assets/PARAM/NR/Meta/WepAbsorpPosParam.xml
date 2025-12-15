@@ -78,6 +78,10 @@
     <dispPosType_rightHang_3 AltName="Display Position - Right Sheath - Model [3]" Wiki="Model 3_Right-handed sword display position (used to specify the non-display position from TAE)" Enum="WEP_DISP_POS_TYPE" />
     <dispPosType_leftHang_3 AltName="Display Position - Left Sheath - Model [3]" Wiki="Model 3_ Left hand sword display position (used to specify the non-display position from TAE)" Enum="WEP_DISP_POS_TYPE" />
     <reserve AltName="" Padding=""/>
+	
+	<abilityDummyPolyId
+	AltName="Ability - Dummy Poly"
+	Wiki="Dummy poly that ability model attaches to" />
   </Field>
   <Self Wiki="" />
 </PARAMMETA>

@@ -928,13 +928,7 @@
       <Maximum>2</Maximum>
       <SortID>24900</SortID>
     </Field>
-    <Field Def="u8 disableGemAttr:1">
-      <DisplayName>魔石属性変更禁止か</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>魔石属性変更禁止か</Description>
-      <Maximum>1</Maximum>
-      <SortID>30100</SortID>
-    </Field>
+    <Field Def="u8 enableSparringGrounds:1" />
     <Field Def="u16 defSfxMaterial1">
       <DisplayName>防御SFX材質1</DisplayName>
       <Enum>WEP_MATERIAL_DEF_SFX</Enum>

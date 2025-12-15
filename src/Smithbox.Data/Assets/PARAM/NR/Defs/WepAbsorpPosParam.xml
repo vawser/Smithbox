@@ -38,10 +38,7 @@
       <Maximum>1</Maximum>
       <SortID>1500</SortID>
     </Field>
-    <Field Def="dummy8 pad0[2]">
-      <DisplayName>パディング</DisplayName>
-      <SortID>1503</SortID>
-    </Field>
+    <Field Def="s16 abilityDummyPolyId" />
     <Field Def="s16 right_0">
       <DisplayName>モデル0_右手時吸着ダミポリ</DisplayName>
       <Description>武器を右手に片手で持っているときのモデル0の吸着ダミポリ。</Description>
