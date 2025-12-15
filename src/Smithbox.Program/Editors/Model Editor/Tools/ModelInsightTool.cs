@@ -41,6 +41,9 @@ public static class ModelInsightHelper
 
     public static void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
     {
+        if (Project == null)
+            return;
+
         if (Project.ModelEditor == null)
             return;
 

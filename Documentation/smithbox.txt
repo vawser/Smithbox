@@ -9,6 +9,8 @@
 - Map Editor: improve ER NVA so saves are BP correct (currently the Write side is quite off)
 - Map Editor: improve texture lookup
 
+- Model Editor: apply proper transform inheritance for dummies/nodes
+
 - Param Editor: Param Merge doesn't seem to merge in modified VALUES
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: Table Group column should have difference highlighting if any of the internal rows are highlighted as different
@@ -27,7 +29,6 @@
 # TODO NOW
 - Model Editor: 
  - Sort out property view niggles
- - Add proper transform action for node entities
  - Implement delete/duplicate/frame/goto/pull to camera/reorder/rotate/select all actions
  - Restore 'Global Model Search' tool
  - Restore 'Model Mask Toggler'

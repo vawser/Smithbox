@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Octokit;
+using SoulsFormats;
 using StudioCore.Application;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Renderer;
@@ -36,6 +37,9 @@ public static class ModelDataHelper
     public static void UpdateEntry(string flverVirtPath, string texVirtPath, IFlver flver, MTD mtd, MATBIN matbin, string materialStr)
     {
         var project = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
+        if (project == null)
+            return;
 
         if (project.MapEditor == null)
             return;

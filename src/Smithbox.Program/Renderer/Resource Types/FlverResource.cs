@@ -322,8 +322,15 @@ public class FlverResource : IResource, IDisposable
             //TaskLogs.AddLog($"[Smithbox] LISTENER for {virtualPath}");
 
             // Used to allow for association of models and textures
-            ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
-            ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is MapEditorScreen)
+            {
+                ModelDataHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+            }
+
+            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject.FocusedEditor is ModelEditorScreen)
+            {
+                ModelInsightHelper.UpdateEntry(VirtPath, textureVirtPath, Flver, material, matbin, mtd);
+            }
 
             ResourceManager.AddResourceListener<TextureResource>(textureVirtPath, dest, AccessLevel.AccessGPUOptimizedOnly, (int)textureType);
             dest.TextureResourceFilled[(int)textureType] = true;

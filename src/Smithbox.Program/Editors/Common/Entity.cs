@@ -1274,16 +1274,11 @@ public class Entity : ISelectable, IDisposable
                 RenderSceneMesh.AutoRegister = true;
                 RenderSceneMesh.Register();
             }
-        }
 
-        if(editor is MapEditorScreen)
-        {
-            var curEditor = (MapEditorScreen)editor;
-
-            // Render Group management
-            if (HasRenderGroups != false)
+            if (editor is MapEditorScreen)
             {
-                if (RenderSceneMesh != null)
+                // Render Group management
+                if (HasRenderGroups != false)
                 {
                     UpdateDispDrawGroups(Editor);
                     RenderSceneMesh.DrawGroups.AlwaysVisible = false;
@@ -1291,6 +1286,7 @@ public class Entity : ISelectable, IDisposable
                 }
             }
         }
+
     }
 
     /// <summary>
