@@ -10,49 +10,61 @@
     {
       "ID": 100,
       "Entries": [
-        "Night Assassin"
+        "Night Assassin (Wylder)"
       ]
     },
     {
       "ID": 200,
       "Entries": [
-        "Night Fallen"
+        "Night Fallen (Guardian)"
       ]
     },
     {
       "ID": 300,
       "Entries": [
-        "Night Hunter"
+        "Night Hunter (Hunter)"
       ]
     },
     {
       "ID": 400,
       "Entries": [
-        "Night Thief"
+        "Night Thief (Duchess)"
       ]
     },
     {
       "ID": 500,
       "Entries": [
-        "Night Raider"
+        "Night Raider (Raider)"
       ]
     },
     {
       "ID": 600,
       "Entries": [
-        "Night Idol"
+        "Night Idol (Revenant)"
       ]
     },
     {
       "ID": 700,
       "Entries": [
-        "Night Witch"
+        "Night Witch (Recluse)"
       ]
     },
     {
       "ID": 800,
       "Entries": [
-        "Night Executor"
+        "Night Executor (Executor)"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "Night Deceiver (Scholar)"
+      ]
+    },
+    {
+      "ID": 1100,
+      "Entries": [
+        "Night Profaner (Undertaker)"
       ]
     }
   ]

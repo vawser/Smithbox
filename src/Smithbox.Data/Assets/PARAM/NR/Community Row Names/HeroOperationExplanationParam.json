@@ -144,6 +144,42 @@
       "Entries": [
         "[Executor] Ultimate Art"
       ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Scholar] Passive Ability"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[Scholar] Character Skill"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "[Scholar] Ultimate Art"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Undertaker] Passive Ability"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Undertaker] Character Skill"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Undertaker] Ultimate Art"
+      ]
     }
   ]
 }
