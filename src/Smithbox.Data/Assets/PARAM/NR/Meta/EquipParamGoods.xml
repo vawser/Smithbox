@@ -293,6 +293,16 @@
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
 	
+	<carrySpEffectId
+	AltName="Carry SpEffect ID"
+	Wiki="SpEffect applied when carrying at least 1 of this item.\nNote that it is not automatically removed when lacking the item."
+	Refs="SpEffectParam" />
+	
+	<emptySpEffectId
+	AltName="Empty SpEffect ID"
+	Wiki="SpEffect applied upon dropping the final instance of this item.\nTypically used to remove the carry SpEffect."
+	Refs="SpEffectParam" />
+	
 	<enableSparringGrounds
 	AltName="Enable Sparring Grounds"
 	Wiki="Allows goods to appear in Sparring Grounds"

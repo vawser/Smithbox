@@ -48,22 +48,8 @@
       <Maximum>999999999</Maximum>
       <SortID>200</SortID>
     </Field>
-    <Field Def="s32 npcParamId_ridden = -1">
-      <DisplayName>騎乗（乗られる側）：NPCパラメータID</DisplayName>
-      <Description>騎乗状態で召喚したいバディの場合、「乗られる側」のNPCパラメータIDを設定します </Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>300</SortID>
-    </Field>
-    <Field Def="s32 npcThinkParamId_ridden = -1">
-      <DisplayName>騎乗（乗られる側）：思考パラメータID</DisplayName>
-      <Description>騎乗状態で召喚したいバディの場合、「乗られる側」のNPC思考パラメータIDを設定します</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>400</SortID>
-    </Field>
+    <Field Def="s32 activeSpEffectId = -1" />
+    <Field Def="s32 inactiveSpEffectId = -1" />>
     <Field Def="f32 x_offset">
       <DisplayName>X：配置座標オフセット[m]</DisplayName>
       <Description>バディを召喚ポイントから、X座標にオフセットする距離をメートル単位で設定します</Description>
@@ -225,9 +211,9 @@
     
     <Field Def="s32 usageShortcutTextId"/>
     <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 iconId"/>
     
-    <Field Def="s32 summonBehaviorId"/>
+    <Field Def="s32 baseDopingSpEffectId"/>
     
     <Field Def="dummy8 padding[4]"  />
     
