@@ -6,6 +6,7 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Veldrid;
@@ -396,7 +397,7 @@ public class TexturePool
             if (platform != TPF.TPFPlatform.PC)
             {
                 bytes = tex.Headerize();
-                dds = new DDS(bytes);
+                dds = new DDS(bytes.ToArray());
             }
             else
             {
@@ -837,8 +838,11 @@ public class TexturePool
                     //fixed (void* data = &tex.Bytes[copyOffset])
                     //{
                     //Unsafe.CopyBlock(map.Data.ToPointer(), data, (uint)paddedSize);
+
+                    var texBytes = (Memory<byte>)tex.Bytes;
+
                     DeswizzleDDSBytesPS4((int)currentWidth, (int)currentHeight, tex.Format, (int)blockSize,
-                        (int)paddedWidth, tex.Bytes.Span.Slice((int)copyOffset, (int)paddedSize),
+                        (int)paddedWidth, texBytes.Span.Slice((int)copyOffset, (int)paddedSize),
                         new Span<byte>(map.Data.ToPointer(), mipInfo));
                     //}
                     copyOffset += paddedSize;

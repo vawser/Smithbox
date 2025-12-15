@@ -115,7 +115,6 @@ public class TextureFsEntry : FsEntry
             row("Name", texture.Name);
             row("Format", texture.Format.ToString());
             row("Type", texture.Type.ToString());
-            row("CachedName", texture.CachedName ?? "");
             row("Flags1", texture.Flags1.ToString());
             row("Mipmaps", texture.Mipmaps.ToString());
             if (texture.Header == null)
