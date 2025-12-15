@@ -2,6 +2,12 @@
   "Name": "EquipParamProtector",
   "Entries": [
     {
+      "ID": 100,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 1000,
       "Entries": [
         ""
@@ -584,6 +590,54 @@
       ]
     },
     {
+      "ID": 5008000,
+      "Entries": [
+        "[Scholar] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5008100,
+      "Entries": [
+        "[Scholar] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5008200,
+      "Entries": [
+        "[Scholar] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5008300,
+      "Entries": [
+        "[Scholar] Default (Legs)"
+      ]
+    },
+    {
+      "ID": 5009000,
+      "Entries": [
+        "[Undertaker] Default (Head)"
+      ]
+    },
+    {
+      "ID": 5009100,
+      "Entries": [
+        "[Undertaker] Default (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5009200,
+      "Entries": [
+        "[Undertaker] Default (Arms)"
+      ]
+    },
+    {
+      "ID": 5009300,
+      "Entries": [
+        "[Undertaker] Default (Legs)"
+      ]
+    },
+    {
       "ID": 5010000,
       "Entries": [
         "[Wylder] Dawn (Head)"
@@ -776,6 +830,54 @@
       ]
     },
     {
+      "ID": 5018000,
+      "Entries": [
+        "[Scholar] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5018100,
+      "Entries": [
+        "[Scholar] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5018200,
+      "Entries": [
+        "[Scholar] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5018300,
+      "Entries": [
+        "[Scholar] Dawn (Legs)"
+      ]
+    },
+    {
+      "ID": 5019000,
+      "Entries": [
+        "[Undertaker] Dawn (Head)"
+      ]
+    },
+    {
+      "ID": 5019100,
+      "Entries": [
+        "[Undertaker] Dawn (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5019200,
+      "Entries": [
+        "[Undertaker] Dawn (Arms)"
+      ]
+    },
+    {
+      "ID": 5019300,
+      "Entries": [
+        "[Undertaker] Dawn (Legs)"
+      ]
+    },
+    {
       "ID": 5020000,
       "Entries": [
         "[Wylder] Darkness (Head)"
@@ -965,6 +1067,54 @@
       "ID": 5027300,
       "Entries": [
         "[Executor] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5028000,
+      "Entries": [
+        "[Scholar] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5028100,
+      "Entries": [
+        "[Scholar] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5028200,
+      "Entries": [
+        "[Scholar] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5028300,
+      "Entries": [
+        "[Scholar] Darkness (Legs)"
+      ]
+    },
+    {
+      "ID": 5029000,
+      "Entries": [
+        "[Undertaker] Darkness (Head)"
+      ]
+    },
+    {
+      "ID": 5029100,
+      "Entries": [
+        "[Undertaker] Darkness (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5029200,
+      "Entries": [
+        "[Undertaker] Darkness (Arms)"
+      ]
+    },
+    {
+      "ID": 5029300,
+      "Entries": [
+        "[Undertaker] Darkness (Legs)"
       ]
     },
     {
@@ -1163,6 +1313,54 @@
       "ID": 5037300,
       "Entries": [
         "[Executor] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5038000,
+      "Entries": [
+        "[Scholar] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5038100,
+      "Entries": [
+        "[Scholar] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5038200,
+      "Entries": [
+        "[Scholar] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5038300,
+      "Entries": [
+        "[Scholar] Remembrance (Legs)"
+      ]
+    },
+    {
+      "ID": 5039000,
+      "Entries": [
+        "[Undertaker] Remembrance (Head)"
+      ]
+    },
+    {
+      "ID": 5039100,
+      "Entries": [
+        "[Undertaker] Remembrance (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5039200,
+      "Entries": [
+        "[Undertaker] Remembrance (Arms)"
+      ]
+    },
+    {
+      "ID": 5039300,
+      "Entries": [
+        "[Undertaker] Remembrance (Legs)"
       ]
     },
     {
@@ -1547,6 +1745,102 @@
       "ID": 5067300,
       "Entries": [
         "[Executor] Sable Church (Legs)"
+      ]
+    },
+    {
+      "ID": 5068000,
+      "Entries": [
+        "[Scholar] Pardoner (Head)"
+      ]
+    },
+    {
+      "ID": 5068100,
+      "Entries": [
+        "[Scholar] Pardoner (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5068200,
+      "Entries": [
+        "[Scholar] Pardoner (Arms)"
+      ]
+    },
+    {
+      "ID": 5068300,
+      "Entries": [
+        "[Scholar] Pardoner (Legs)"
+      ]
+    },
+    {
+      "ID": 5069000,
+      "Entries": [
+        "[Undertaker] Brass (Head)"
+      ]
+    },
+    {
+      "ID": 5069100,
+      "Entries": [
+        "[Undertaker] Brass (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5069200,
+      "Entries": [
+        "[Undertaker] Brass (Arms)"
+      ]
+    },
+    {
+      "ID": 5069300,
+      "Entries": [
+        "[Undertaker] Brass (Legs)"
+      ]
+    },
+    {
+      "ID": 5078000,
+      "Entries": [
+        "[Scholar] Xanthous (Head)"
+      ]
+    },
+    {
+      "ID": 5078100,
+      "Entries": [
+        "[Scholar] Xanthous (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5078200,
+      "Entries": [
+        "[Scholar] Xanthous (Arms)"
+      ]
+    },
+    {
+      "ID": 5078300,
+      "Entries": [
+        "[Scholar] Xanthous (Legs)"
+      ]
+    },
+    {
+      "ID": 5079000,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Head)"
+      ]
+    },
+    {
+      "ID": 5079100,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Body) [Model]"
+      ]
+    },
+    {
+      "ID": 5079200,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Arms)"
+      ]
+    },
+    {
+      "ID": 5079300,
+      "Entries": [
+        "[Undertaker] Lord's Blade (Legs)"
       ]
     }
   ]

@@ -92,6 +92,12 @@
       ]
     },
     {
+      "ID": 200,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 4100,
       "Entries": [
         ""
@@ -6548,6 +6554,12 @@
       ]
     },
     {
+      "ID": 8581,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 8582,
       "Entries": [
         ""
@@ -6746,6 +6758,18 @@
       ]
     },
     {
+      "ID": 25020,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 25030,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 29997,
       "Entries": [
         ""
@@ -6839,6 +6863,18 @@
       "ID": 30701,
       "Entries": [
         "[Executor] Executor's Cry (Remembrance)"
+      ]
+    },
+    {
+      "ID": 30800,
+      "Entries": [
+        "[Scholar] Night Deceiver"
+      ]
+    },
+    {
+      "ID": 30900,
+      "Entries": [
+        "[Undertaker] Night Profaner"
       ]
     },
     {
@@ -7724,6 +7760,228 @@
       ]
     },
     {
+      "ID": 35800,
+      "Entries": [
+        "[Libra Scholar 1] Default"
+      ]
+    },
+    {
+      "ID": 35801,
+      "Entries": [
+        "[Libra Scholar 1] Dawn"
+      ]
+    },
+    {
+      "ID": 35802,
+      "Entries": [
+        "[Libra Scholar 1] Darkness"
+      ]
+    },
+    {
+      "ID": 35803,
+      "Entries": [
+        "[Libra Scholar 1] Remembrance"
+      ]
+    },
+    {
+      "ID": 35804,
+      "Entries": [
+        "[Libra Scholar 1] Pardoner"
+      ]
+    },
+    {
+      "ID": 35805,
+      "Entries": [
+        "[Libra Scholar 1] Xanthous"
+      ]
+    },
+    {
+      "ID": 35810,
+      "Entries": [
+        "[Libra Scholar 2] Default"
+      ]
+    },
+    {
+      "ID": 35811,
+      "Entries": [
+        "[Libra Scholar 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35812,
+      "Entries": [
+        "[Libra Scholar 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35813,
+      "Entries": [
+        "[Libra Scholar 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35814,
+      "Entries": [
+        "[Libra Scholar 2] Pardoner"
+      ]
+    },
+    {
+      "ID": 35815,
+      "Entries": [
+        "[Libra Scholar 2] Xanthous"
+      ]
+    },
+    {
+      "ID": 35820,
+      "Entries": [
+        "[Libra Scholar 3] Default"
+      ]
+    },
+    {
+      "ID": 35821,
+      "Entries": [
+        "[Libra Scholar 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35822,
+      "Entries": [
+        "[Libra Scholar 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35823,
+      "Entries": [
+        "[Libra Scholar 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35824,
+      "Entries": [
+        "[Libra Scholar 3] Pardoner"
+      ]
+    },
+    {
+      "ID": 35825,
+      "Entries": [
+        "[Libra Scholar 3] Xanthous"
+      ]
+    },
+    {
+      "ID": 35900,
+      "Entries": [
+        "[Libra Undertaker 1] Default"
+      ]
+    },
+    {
+      "ID": 35901,
+      "Entries": [
+        "[Libra Undertaker 1] Dawn"
+      ]
+    },
+    {
+      "ID": 35902,
+      "Entries": [
+        "[Libra Undertaker 1] Darkness"
+      ]
+    },
+    {
+      "ID": 35903,
+      "Entries": [
+        "[Libra Undertaker 1] Remembrance"
+      ]
+    },
+    {
+      "ID": 35904,
+      "Entries": [
+        "[Libra Undertaker 1] Brass"
+      ]
+    },
+    {
+      "ID": 35905,
+      "Entries": [
+        "[Libra Undertaker 1] Lord's Blade"
+      ]
+    },
+    {
+      "ID": 35910,
+      "Entries": [
+        "[Libra Undertaker 2] Default"
+      ]
+    },
+    {
+      "ID": 35911,
+      "Entries": [
+        "[Libra Undertaker 2] Dawn"
+      ]
+    },
+    {
+      "ID": 35912,
+      "Entries": [
+        "[Libra Undertaker 2] Darkness"
+      ]
+    },
+    {
+      "ID": 35913,
+      "Entries": [
+        "[Libra Undertaker 2] Remembrance"
+      ]
+    },
+    {
+      "ID": 35914,
+      "Entries": [
+        "[Libra Undertaker 2] Brass"
+      ]
+    },
+    {
+      "ID": 35915,
+      "Entries": [
+        "[Libra Undertaker 2] Lord's Blade"
+      ]
+    },
+    {
+      "ID": 35920,
+      "Entries": [
+        "[Libra Undertaker 3] Default"
+      ]
+    },
+    {
+      "ID": 35921,
+      "Entries": [
+        "[Libra Undertaker 3] Dawn"
+      ]
+    },
+    {
+      "ID": 35922,
+      "Entries": [
+        "[Libra Undertaker 3] Darkness"
+      ]
+    },
+    {
+      "ID": 35923,
+      "Entries": [
+        "[Libra Undertaker 3] Remembrance"
+      ]
+    },
+    {
+      "ID": 35924,
+      "Entries": [
+        "[Libra Undertaker 3] Brass"
+      ]
+    },
+    {
+      "ID": 35925,
+      "Entries": [
+        "[Libra Undertaker 3] Lord's Blade"
+      ]
+    },
+    {
+      "ID": 38000,
+      "Entries": [
+        "[Scholar]"
+      ]
+    },
+    {
       "ID": 39997,
       "Entries": [
         ""
@@ -8195,6 +8453,78 @@
       "ID": 50760,
       "Entries": [
         "[Player - Executor] Sable Church"
+      ]
+    },
+    {
+      "ID": 50800,
+      "Entries": [
+        "[Player - Scholar] Default"
+      ]
+    },
+    {
+      "ID": 50810,
+      "Entries": [
+        "[Player - Scholar] Dawn"
+      ]
+    },
+    {
+      "ID": 50820,
+      "Entries": [
+        "[Player - Scholar] Darkness"
+      ]
+    },
+    {
+      "ID": 50830,
+      "Entries": [
+        "[Player - Scholar] Remembrance"
+      ]
+    },
+    {
+      "ID": 50850,
+      "Entries": [
+        "[Player - Scholar] Pardoner"
+      ]
+    },
+    {
+      "ID": 50860,
+      "Entries": [
+        "[Player - Scholar] Xanthous"
+      ]
+    },
+    {
+      "ID": 50900,
+      "Entries": [
+        "[Player - Undertaker] Default"
+      ]
+    },
+    {
+      "ID": 50910,
+      "Entries": [
+        "[Player - Undertaker] Dawn"
+      ]
+    },
+    {
+      "ID": 50920,
+      "Entries": [
+        "[Player - Undertaker] Darkness"
+      ]
+    },
+    {
+      "ID": 50930,
+      "Entries": [
+        "[Player - Undertaker] Remembrance"
+      ]
+    },
+    {
+      "ID": 50950,
+      "Entries": [
+        "[Player - Undertaker] Brass"
+      ]
+    },
+    {
+      "ID": 50960,
+      "Entries": [
+        "[Player - Undertaker] Lord's Blade"
       ]
     },
     {
@@ -8913,6 +9243,174 @@
     },
     {
       "ID": 60709,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60903,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60906,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60907,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60908,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60909,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60950,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60951,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60952,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60953,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60954,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60955,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60956,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 60957,
       "Entries": [
         ""
       ]
@@ -9638,6 +10136,186 @@
       ]
     },
     {
+      "ID": 61800,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61801,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61802,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61803,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61804,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61805,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61806,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61807,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61808,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61809,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61810,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61811,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61812,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61813,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61814,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61900,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61901,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61902,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61903,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61904,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61905,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61906,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61907,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61908,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61909,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61910,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61911,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61912,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61913,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 61914,
+      "Entries": [
+        ""
+      ]
+    },
+    {
       "ID": 61999,
       "Entries": [
         ""
@@ -9743,6 +10421,18 @@
       "ID": 90007,
       "Entries": [
         "[Executor]"
+      ]
+    },
+    {
+      "ID": 90008,
+      "Entries": [
+        ""
+      ]
+    },
+    {
+      "ID": 90009,
+      "Entries": [
+        ""
       ]
     },
     {

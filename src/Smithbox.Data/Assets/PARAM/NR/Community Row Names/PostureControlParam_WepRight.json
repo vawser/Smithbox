@@ -182,6 +182,18 @@
       ]
     },
     {
+      "ID": 210,
+      "Entries": [
+        "[Guardian] Small Shield"
+      ]
+    },
+    {
+      "ID": 211,
+      "Entries": [
+        "[Guardian] Medium Shield"
+      ]
+    },
+    {
       "ID": 300,
       "Entries": [
         "[Ironeye] Default"
@@ -239,6 +251,18 @@
       "ID": 309,
       "Entries": [
         "[Ironeye] Twinblade"
+      ]
+    },
+    {
+      "ID": 310,
+      "Entries": [
+        "[Ironeye] Small Shield"
+      ]
+    },
+    {
+      "ID": 311,
+      "Entries": [
+        "[Ironeye] Medium Shield"
       ]
     },
     {
@@ -302,6 +326,18 @@
       ]
     },
     {
+      "ID": 410,
+      "Entries": [
+        "[Duchess] Small Shield"
+      ]
+    },
+    {
+      "ID": 411,
+      "Entries": [
+        "[Duchess] Medium Shield"
+      ]
+    },
+    {
       "ID": 500,
       "Entries": [
         "[Raider] Default"
@@ -359,6 +395,18 @@
       "ID": 509,
       "Entries": [
         "[Raider] Twinblade"
+      ]
+    },
+    {
+      "ID": 510,
+      "Entries": [
+        "[Raider] Small Shield"
+      ]
+    },
+    {
+      "ID": 511,
+      "Entries": [
+        "[Raider] Medium Shield"
       ]
     },
     {
@@ -422,6 +470,18 @@
       ]
     },
     {
+      "ID": 610,
+      "Entries": [
+        "[Revenant] Small Shield"
+      ]
+    },
+    {
+      "ID": 611,
+      "Entries": [
+        "[Revenant] Medium Shield"
+      ]
+    },
+    {
       "ID": 700,
       "Entries": [
         "[Recluse] Default"
@@ -482,6 +542,18 @@
       ]
     },
     {
+      "ID": 710,
+      "Entries": [
+        "[Recluse] Small Shield"
+      ]
+    },
+    {
+      "ID": 711,
+      "Entries": [
+        "[Recluse] Medium Shield"
+      ]
+    },
+    {
       "ID": 800,
       "Entries": [
         "[Executor] Default"
@@ -539,6 +611,162 @@
       "ID": 809,
       "Entries": [
         "[Executor] Twinblade"
+      ]
+    },
+    {
+      "ID": 810,
+      "Entries": [
+        "[Executor] Small Shield"
+      ]
+    },
+    {
+      "ID": 811,
+      "Entries": [
+        "[Executor] Medium Shield"
+      ]
+    },
+    {
+      "ID": 900,
+      "Entries": [
+        "[Scholar] Default"
+      ]
+    },
+    {
+      "ID": 901,
+      "Entries": [
+        "[Scholar] Scythe"
+      ]
+    },
+    {
+      "ID": 902,
+      "Entries": [
+        "[Scholar] Staff"
+      ]
+    },
+    {
+      "ID": 903,
+      "Entries": [
+        "[Scholar] Greatshield"
+      ]
+    },
+    {
+      "ID": 904,
+      "Entries": [
+        "[Scholar] Torch"
+      ]
+    },
+    {
+      "ID": 905,
+      "Entries": [
+        "[Scholar] Sword"
+      ]
+    },
+    {
+      "ID": 906,
+      "Entries": [
+        "[Scholar] Fist"
+      ]
+    },
+    {
+      "ID": 907,
+      "Entries": [
+        "[Scholar] Large Weapon"
+      ]
+    },
+    {
+      "ID": 908,
+      "Entries": [
+        "[Scholar] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 909,
+      "Entries": [
+        "[Scholar] Twinblade"
+      ]
+    },
+    {
+      "ID": 910,
+      "Entries": [
+        "[Scholar] Small Shield"
+      ]
+    },
+    {
+      "ID": 911,
+      "Entries": [
+        "[Scholar] Medium Shield"
+      ]
+    },
+    {
+      "ID": 1000,
+      "Entries": [
+        "[Undertaker] Default"
+      ]
+    },
+    {
+      "ID": 1001,
+      "Entries": [
+        "[Undertaker] Scythe"
+      ]
+    },
+    {
+      "ID": 1002,
+      "Entries": [
+        "[Undertaker] Staff"
+      ]
+    },
+    {
+      "ID": 1003,
+      "Entries": [
+        "[Undertaker] Greatshield"
+      ]
+    },
+    {
+      "ID": 1004,
+      "Entries": [
+        "[Undertaker] Torch"
+      ]
+    },
+    {
+      "ID": 1005,
+      "Entries": [
+        "[Undertaker] Sword"
+      ]
+    },
+    {
+      "ID": 1006,
+      "Entries": [
+        "[Undertaker] Fist"
+      ]
+    },
+    {
+      "ID": 1007,
+      "Entries": [
+        "[Undertaker] Large Weapon"
+      ]
+    },
+    {
+      "ID": 1008,
+      "Entries": [
+        "[Undertaker] Hammer/Axe"
+      ]
+    },
+    {
+      "ID": 1009,
+      "Entries": [
+        "[Undertaker] Twinblade"
+      ]
+    },
+    {
+      "ID": 1010,
+      "Entries": [
+        "[Undertaker] Small Shield"
+      ]
+    },
+    {
+      "ID": 1011,
+      "Entries": [
+        "[Undertaker] Medium Shield"
       ]
     }
   ]

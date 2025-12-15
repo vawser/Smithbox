@@ -194,6 +194,54 @@
       ]
     },
     {
+      "ID": 90000,
+      "Entries": [
+        "[Scholar] Level 1"
+      ]
+    },
+    {
+      "ID": 90001,
+      "Entries": [
+        "[Scholar] Level 2"
+      ]
+    },
+    {
+      "ID": 90002,
+      "Entries": [
+        "[Scholar] Level 12"
+      ]
+    },
+    {
+      "ID": 90003,
+      "Entries": [
+        "[Scholar] Level 15"
+      ]
+    },
+    {
+      "ID": 100000,
+      "Entries": [
+        "[Undertaker] Level 1"
+      ]
+    },
+    {
+      "ID": 100001,
+      "Entries": [
+        "[Undertaker] Level 2"
+      ]
+    },
+    {
+      "ID": 100002,
+      "Entries": [
+        "[Undertaker] Level 12"
+      ]
+    },
+    {
+      "ID": 100003,
+      "Entries": [
+        "[Undertaker] Level 15"
+      ]
+    },
+    {
       "ID": 210000,
       "Entries": [
         "[Libra - Strength] Level 1"
@@ -503,6 +551,54 @@
       "ID": 307101,
       "Entries": [
         "[Executor - +Dex/+Arc/-Vig] Level 12"
+      ]
+    },
+    {
+      "ID": 308000,
+      "Entries": [
+        "[Scholar - +Mnd/-Vig] Level 1"
+      ]
+    },
+    {
+      "ID": 308001,
+      "Entries": [
+        "[Scholar - +Mnd/-Vig] Level 12"
+      ]
+    },
+    {
+      "ID": 308100,
+      "Entries": [
+        "[Scholar - +End/+Dex/-Int/-Arc] Level 1"
+      ]
+    },
+    {
+      "ID": 308101,
+      "Entries": [
+        "[Scholar - +End/+Dex/-Int/-Arc] Level 12"
+      ]
+    },
+    {
+      "ID": 309000,
+      "Entries": [
+        "[Undertaker - +Dex/-Vig/-Fth] Level 1"
+      ]
+    },
+    {
+      "ID": 309001,
+      "Entries": [
+        "[Undertaker - +Dex/-Vig/-Fth] Level 12"
+      ]
+    },
+    {
+      "ID": 309100,
+      "Entries": [
+        "[Undertaker - +Mnd/+Fth/-Str] Level 1"
+      ]
+    },
+    {
+      "ID": 309101,
+      "Entries": [
+        "[Undertaker - +Mnd/+Fth/-Str] Level 12"
       ]
     }
   ]

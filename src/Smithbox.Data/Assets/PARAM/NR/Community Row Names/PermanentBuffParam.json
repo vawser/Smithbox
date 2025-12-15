@@ -50,6 +50,18 @@
       ]
     },
     {
+      "ID": 13,
+      "Entries": [
+        "[Great Hollow] Favor of the Great Hollow"
+      ]
+    },
+    {
+      "ID": 14,
+      "Entries": [
+        "[Rotted Woods vs Dreglord] Decayed Favor of the Rotted Woods"
+      ]
+    },
+    {
       "ID": 100,
       "Entries": [
         "[Key Item] Slate Whetstone"
@@ -266,9 +278,69 @@
       ]
     },
     {
+      "ID": 150,
+      "Entries": [
+        "[Key Item] Leather Monocle Case"
+      ]
+    },
+    {
+      "ID": 151,
+      "Entries": [
+        "[Key Item] Scholar's Primal Core"
+      ]
+    },
+    {
+      "ID": 152,
+      "Entries": [
+        "[Key Item] Night-Hued Glass"
+      ]
+    },
+    {
+      "ID": 153,
+      "Entries": [
+        "[Key Item] Vassal's Journal"
+      ]
+    },
+    {
+      "ID": 154,
+      "Entries": [
+        "[Key Item] Cleansing Tear"
+      ]
+    },
+    {
+      "ID": 155,
+      "Entries": [
+        "[Key Item] Returned Leather Case"
+      ]
+    },
+    {
+      "ID": 156,
+      "Entries": [
+        "[Key Item] Headband of the Golden Ones"
+      ]
+    },
+    {
+      "ID": 157,
+      "Entries": [
+        "[Key Item] Bundled Paper"
+      ]
+    },
+    {
+      "ID": 160,
+      "Entries": [
+        "[Key Item] Dismembered Finger"
+      ]
+    },
+    {
       "ID": 201,
       "Entries": [
         "[Key Item] Primordial Nightlord's Rune"
+      ]
+    },
+    {
+      "ID": 500,
+      "Entries": [
+        "[Great Hollow] False vision of a Great Rune"
       ]
     },
     {
@@ -647,6 +719,24 @@
       "ID": 8970030,
       "Entries": [
         "[Boss Raid] Demon's Plating"
+      ]
+    },
+    {
+      "ID": 8970040,
+      "Entries": [
+        "[Boss Raid] Cold Mirage"
+      ]
+    },
+    {
+      "ID": 8970050,
+      "Entries": [
+        "[Boss Raid] Beast's Hunt"
+      ]
+    },
+    {
+      "ID": 8970060,
+      "Entries": [
+        "[Boss Raid] Power to Balance the World"
       ]
     }
   ]

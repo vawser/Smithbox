@@ -561,6 +561,11 @@
     <originEquipWep23 AltName="Origin Weapon +23" Wiki="This weapon's enhancement source weapon ID 23" Refs="EquipParamWeapon"/>
     <originEquipWep24 AltName="Origin Weapon +24" Wiki="This weapon's enhancement source weapon ID 24" Refs="EquipParamWeapon"/>
     <originEquipWep25 AltName="Origin Weapon +25" Wiki="This weapon's enhancement source weapon ID 25" Refs="EquipParamWeapon"/>
+	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds/Visual Codex"
+	Wiki="Allows weapon to appear in Sparring Grounds/Visual Codex"
+	IsBool="" />
     
     <equippedSpell_R1
     AltName="Equipped Spell: Primary"

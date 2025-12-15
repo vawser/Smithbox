@@ -14,6 +14,7 @@
       <SortID>1</SortID>
       <UnkC8>a000</UnkC8>
     </Field>
+	<Field Def="s16 a000_leftArmIO" />
     <Field Def="s16 a000_leftWristFB">
       <DisplayName>左手首_前後</DisplayName>
       <Description>左手首_前後</Description>
@@ -46,6 +47,7 @@
       <SortID>5</SortID>
       <UnkC8>a002</UnkC8>
     </Field>
+	<Field Def="s16 a002_leftArmIO" />
     <Field Def="s16 a002_leftWristFB">
       <DisplayName>左手首_内外</DisplayName>
       <Description>左手首_内外</Description>
@@ -79,12 +81,11 @@
       <UnkC8>a003</UnkC8>
     </Field>
     
-    <Field Def="s16 unknown_1" />
-    <Field Def="s16 unknown_2" />
-    <Field Def="s16 unknown_3" />
-    <Field Def="s16 unknown_4" />
-    <Field Def="s16 unknown_5" />
+    <Field Def="s16 a003_leftArmIO" />
+    <Field Def="s16 a003_leftWristFB" />
+    <Field Def="s16 a003_leftWristIO" />
+	<Field Def="s16 a003_leftWeaponRotation" />
     
-    <Field Def="dummy8 pad_old[4]" />
+    <Field Def="dummy8 pad_old[2]" />
   </Fields>
 </PARAMDEF>

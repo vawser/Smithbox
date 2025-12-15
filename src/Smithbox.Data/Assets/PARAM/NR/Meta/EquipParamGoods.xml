@@ -293,6 +293,16 @@
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
 	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds"
+	Wiki="Allows goods to appear in Sparring Grounds"
+	IsBool="" />
+	
+	<enableVisualCodex
+	AltName="Enable Visual Codex"
+	Wiki="Allows goods to appear in Visual Codex"
+	IsBool="" />
+	
 	<bagcraftMaxNum
 	AltName="Scholar Max Amount"
 	Wiki="Max number carried when playing as Scholar" />
