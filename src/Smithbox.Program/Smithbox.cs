@@ -1,16 +1,8 @@
-﻿using DotNext;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoapstoneLib;
 using SoulsFormats;
-using StudioCore.Configuration;
-using StudioCore.Configuration.Windows;
-using StudioCore.Core;
-using StudioCore.DebugNS;
-using StudioCore.Editor;
-using StudioCore.Graphics;
-using StudioCore.Interface;
-using StudioCore.Platform;
-using StudioCore.Resource;
+using StudioCore.Application;
+using StudioCore.Renderer;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -20,11 +12,10 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Configuration.Windows.HelpWindow;
-using static StudioCore.Configuration.Windows.KeybindWindow;
-using static StudioCore.Configuration.Windows.SettingsWindow;
+using static StudioCore.Application.HelpWindow;
+using static StudioCore.Application.KeybindWindow;
+using static StudioCore.Application.SettingsWindow;
 using Thread = System.Threading.Thread;
-using Version = System.Version;
 
 namespace StudioCore;
 

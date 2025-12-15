@@ -1,19 +1,13 @@
-//using Microsoft.Xna.Framework;
-
 using DotNext;
 using Hexa.NET.ImGui;
 using Microsoft.Win32;
 using SoulsFormats;
-using StudioCore.Configuration;
-using StudioCore.Core;
-using StudioCore.Editors;
+using StudioCore.Application;
+using StudioCore.Editors.Common;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
+using StudioCore.Editors.Viewport;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -23,7 +17,7 @@ using System.Text;
 using Veldrid;
 using Veldrid.Utilities;
 
-namespace StudioCore;
+namespace StudioCore.Utilities;
 
 public static class Utils
 {

@@ -1,12 +1,7 @@
-﻿using Microsoft.Extensions.FileSystemGlobbing.Internal;
-using SoulsFormats;
+﻿using SoulsFormats;
+using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Memory;
 
@@ -34,7 +29,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Failed to initialize AOBReader", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
+            TaskLogs.AddLog($"Failed to initialize AOBReader", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
         }
     }
 
@@ -53,7 +48,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Scan failed", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
+            TaskLogs.AddLog($"Scan failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return new IntPtr(-1);
         }
     }
@@ -102,7 +97,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Read failed", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
+            TaskLogs.AddLog($"Read failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return null;
         }
     }
@@ -148,7 +143,7 @@ public class AOBReader
         }
         catch (Exception ex)
         {
-            TaskLogs.AddLog($"Write failed", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
+            TaskLogs.AddLog($"Write failed", Microsoft.Extensions.Logging.LogLevel.Error, LogPriority.High, ex);
             return false;
         }
     }

@@ -1,6 +1,6 @@
 ﻿using StudioCore;
-using StudioCore.Graphics;
-using StudioCore.Platform;
+using StudioCore.Renderer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
