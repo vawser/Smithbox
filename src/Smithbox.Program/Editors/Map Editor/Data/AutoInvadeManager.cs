@@ -115,7 +115,6 @@ public class AutoInvadeManager
 
                         if (map.Name == mapID)
                         {
-                            applyEdit = true;
                             var existingAIP = AIP.Read(file.Bytes);
 
                             existingAIP.Points = new();
@@ -127,7 +126,16 @@ public class AutoInvadeManager
                                 existingAIP.Points.Add(existingPointInstance);
                             }
 
-                            file.Bytes = existingAIP.Write();
+                            var newBytes = existingAIP.Write();
+
+                            // Only apply edit if the AIP data has changed
+                            // So we don't add the autoinvadepoint.aipbnd.dcx file
+                            // pointlessly to a user's mod if they haven't edited anything
+                            if (!BytePerfectHelper.Md5Equal(file.Bytes.Span, newBytes))
+                            {
+                                applyEdit = true;
+                                file.Bytes = newBytes;
+                            }
                         }
                     }
 
