@@ -214,10 +214,6 @@ namespace SoulsFormats
         /// </summary>
         public class Face
         {
-            /// <summary>
-            /// Unknown; affects direction/rotation somehow, components range from -1 to 1.
-            /// </summary>
-            public Vector3 Unk00 { get; set; }
 
             /// <summary>
             /// Index of the first vertex in the triangle.
@@ -235,13 +231,18 @@ namespace SoulsFormats
             public int VertexIndexC { get; set; }
 
             /// <summary>
+            /// Normal of the triangle.
+            /// </summary>
+            public Vector3 Normal { get; set; }
+
+            /// <summary>
             /// Creates a Face with default values.
             /// </summary>
             public Face() { }
 
             internal Face(BinaryReaderEx br)
             {
-                Unk00 = br.ReadVector3();
+                Normal = br.ReadVector3();
                 VertexIndexA = br.ReadInt32();
                 VertexIndexB = br.ReadInt32();
                 VertexIndexC = br.ReadInt32();
@@ -249,7 +250,7 @@ namespace SoulsFormats
 
             internal void Write(BinaryWriterEx bw)
             {
-                bw.WriteVector3(Unk00);
+                bw.WriteVector3(Normal);
                 bw.WriteInt32(VertexIndexA);
                 bw.WriteInt32(VertexIndexB);
                 bw.WriteInt32(VertexIndexC);
