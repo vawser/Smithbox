@@ -1,12 +1,10 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static SoulsFormats.TAE;
 
 namespace SoulsFormats
 {
-    public partial class TAE : SoulsFile<TAE>
+    public partial class TAE
     {
         /// <summary>
         /// An action or effect triggered at a certain time during an animation.
@@ -18,26 +16,26 @@ namespace SoulsFormats
             /// </summary>
             public class ParameterContainer
             {
-                public Dictionary<string, object> ParameterValues;
+                private Dictionary<string, object> parameterValues;
 
                 /// <summary>
                 /// The template of the event for which these are the parameters.
                 /// </summary>
-                public Template.EventTemplate Template { get; private set; }
+                public TAE.Template.EventTemplate Template { get; private set; }
 
                 /// <summary>
                 /// Returns all parameters.
                 /// </summary>
-                public Dictionary<string, object> Values
-                    => ParameterValues;
+                public IReadOnlyDictionary<string, object> Values
+                    => parameterValues;
 
                 /// <summary>
                 /// Value of the specified parameter.
                 /// </summary>
                 public object this[string paramName]
                 {
-                    get => ParameterValues[paramName];
-                    set => ParameterValues[paramName] = value;
+                    get => parameterValues[paramName];
+                    set => parameterValues[paramName] = value;
                 }
 
                 /// <summary>
@@ -51,7 +49,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gets the value type of a parameter.
                 /// </summary>
-                public Template.ParamType GetParamValueType(string paramName)
+                public TAE.Template.ParamType GetParamValueType(string paramName)
                 {
                     return Template[paramName].Type;
                 }
@@ -59,15 +57,15 @@ namespace SoulsFormats
                 /// <summary>
                 /// Gets the whole template of a parameter.
                 /// </summary>
-                public Template.ParameterTemplate GetParamTemplate(string paramName)
+                public TAE.Template.ParameterTemplate GetParamTemplate(string paramName)
                 {
                     return Template[paramName];
                 }
 
                 internal ParameterContainer(long animID, int eventIndex,
-                    bool bigEndian, byte[] paramData, Template.EventTemplate template, bool suppressAssert = false)
+                    bool bigEndian, byte[] paramData, TAE.Template.EventTemplate template, bool suppressAssert = false)
                 {
-                    ParameterValues = new Dictionary<string, object>();
+                    parameterValues = new Dictionary<string, object>();
                     Template = template;
                     using (var memStream = new System.IO.MemoryStream(paramData))
                     {
@@ -104,7 +102,7 @@ namespace SoulsFormats
 
                                 try
                                 {
-                                    ParameterValues.Add(p.GetKeyString(), p.ReadValue(br));
+                                    parameterValues.Add(p.GetKeyString(), p.ReadValue(br));
                                 }
                                 catch (Exception ex)
                                 {
@@ -120,9 +118,9 @@ namespace SoulsFormats
                     }
                 }
 
-                internal ParameterContainer(bool bigEndian, byte[] paramData, Template.EventTemplate template, bool suppressAssert = false)
+                internal ParameterContainer(bool bigEndian, byte[] paramData, TAE.Template.EventTemplate template, bool suppressAssert = false)
                 {
-                    ParameterValues = new Dictionary<string, object>();
+                    parameterValues = new Dictionary<string, object>();
                     Template = template;
                     using (var memStream = new System.IO.MemoryStream(paramData))
                     {
@@ -157,7 +155,7 @@ namespace SoulsFormats
                             {
                                 try
                                 {
-                                    ParameterValues.Add(p.GetKeyString(), p.ReadValue(br));
+                                    parameterValues.Add(p.GetKeyString(), p.ReadValue(br));
                                 }
                                 catch (Exception ex)
                                 {
@@ -208,6 +206,7 @@ namespace SoulsFormats
                 Type = newType;
             }
 
+
             /// <summary>
             /// TAE Event Group which contains this event.
             /// </summary>
@@ -255,8 +254,8 @@ namespace SoulsFormats
             /// </summary>
             public void SetParameterBytes(bool bigEndian, byte[] parameterBytes, bool lenientOnAssert = false)
             {
-                if (parameterBytes.Length != ParameterBytes.Length)
-                    throw new ArgumentException("Not the same amount of bytes as was originally here.");
+                //if (parameterBytes.Length != ParameterBytes.Length)
+                //    throw new ArgumentException("Not the same amount of bytes as was originally here.");
 
                 ParameterBytes = parameterBytes;
 
@@ -295,7 +294,7 @@ namespace SoulsFormats
             /// <summary>
             /// The EventTemplate applied to this event, if any.
             /// </summary>
-            public Template.EventTemplate Template
+            public TAE.Template.EventTemplate Template
                 => Parameters?.Template ?? null;
 
             /// <summary>
@@ -308,38 +307,55 @@ namespace SoulsFormats
             /// <summary>
             /// Applies a template to allow editing of the parameters.
             /// </summary>
-            internal void ApplyTemplate(TAE containingTae, Template template,
+            internal void ApplyTemplate(TAE containingTae, TAE.Template template,
                 long animID, int eventIndex, int eventType)
             {
-
-                if (template.Events.ContainsKey(eventType))
+                long? containingBank = null;
+                if (ValidateEventBank)
+                {
+                    containingBank = containingTae.EventBank;
+                }
+                else
+                {
+                    var potentialBanks = template.Where(t => t.Value.ContainsKey(eventType)).ToList();
+                    if (potentialBanks.Any())
+                    {
+                        containingBank = potentialBanks.First().Key;
+                    }
+                }
+                if (containingBank != null && template.ContainsKey(containingBank.Value) && template[containingBank.Value].ContainsKey(eventType))
                 {
                     if (Parameters != null)
                     {
                         CopyParametersToBytes(containingTae.BigEndian);
                     }
                     Type = eventType;
-                    Array.Resize(ref ParameterBytes, template.Events[Type].GetAllParametersByteCount());
+                    Array.Resize(ref ParameterBytes, template[containingBank.Value][Type].GetAllParametersByteCount());
                     Parameters = new ParameterContainer(animID, eventIndex,
-                        containingTae.BigEndian, ParameterBytes, template.Events[Type]);
-
+                        containingTae.BigEndian, ParameterBytes, template[containingBank.Value][Type]);
+                }
+                else
+                {
+                    if (ValidateEventBank)
+                        throw new InvalidOperationException($"Event bank {containingTae.EventBank} does not contains event type {eventType} in the TAE template.");
+                    throw new InvalidOperationException($"No event bank found in the TAE template which contains event type {eventType}.");
                 }
             }
 
-            internal void ChangeTemplateAfterLoading(TAE containingTae, Template template,
+            internal void ChangeTemplateAfterLoading(TAE containingTae, TAE.Template template,
                 long animID, int eventIndex, int eventType)
             {
-                if (template.Events.ContainsKey(eventType))
+                if (template[containingTae.EventBank].ContainsKey(eventType))
                 {
                     Type = eventType;
-                    Array.Resize(ref ParameterBytes, template.Events[Type].GetAllParametersByteCount());
+                    Array.Resize(ref ParameterBytes, template[containingTae.EventBank][Type].GetAllParametersByteCount());
 
                     var newParameters = new ParameterContainer(animID, eventIndex,
-                        containingTae.BigEndian, ParameterBytes, template.Events[Type],
+                        containingTae.BigEndian, ParameterBytes, template[containingTae.EventBank][Type],
                         suppressAssert: true);
                     if (Parameters != null)
                     {
-                        foreach (var field in template.Events[Type])
+                        foreach (var field in template[containingTae.EventBank][Type])
                         {
                             if (field.Value.ValueToAssert != null)
                                 continue;
@@ -347,14 +363,14 @@ namespace SoulsFormats
                                 newParameters[field.Key] = Parameters[field.Key];
                         }
                     }
-
+                    
                 }
             }
 
             /// <summary>
             /// Applies a template to allow editing of the parameters.
             /// </summary>
-            public void ApplyTemplate(bool isBigEndian, Template.EventTemplate template, bool lenientOnAssert = false)
+            public void ApplyTemplate(bool isBigEndian, TAE.Template.EventTemplate template, bool lenientOnAssert = false)
             {
                 if (template.ID != Type)
                 {
@@ -378,7 +394,7 @@ namespace SoulsFormats
             /// Applies a template to this TAE for editing and also wipes all
             /// values and replaces them with default values.
             /// </summary>
-            public void ApplyTemplateWithDefaultValues(bool isBigEndian, Template.EventTemplate template)
+            public void ApplyTemplateWithDefaultValues(bool isBigEndian, TAE.Template.EventTemplate template)
             {
                 Type = template.ID;
                 ParameterBytes = template.GetDefaultBytes(isBigEndian);
@@ -389,7 +405,7 @@ namespace SoulsFormats
             /// Creates a new event with the specified start time, end time, type, and unknown then
             /// applies default values from the provided template.
             /// </summary>
-            public Event(float startTime, float endTime, int type, int unk04, bool isBigEndian, Template.EventTemplate template)
+            public Event(float startTime, float endTime, int type, int unk04, bool isBigEndian, TAE.Template.EventTemplate template)
             {
                 StartTime = startTime;
                 EndTime = endTime;
@@ -420,33 +436,33 @@ namespace SoulsFormats
                 EndTime = endTime;
             }
 
-            internal void WriteHeader(BinaryWriterEx bw, int animIndex, int eventIndex, Dictionary<float, long> timeOffsets, TAEFormat format)
+            internal void WriteHeader(BinaryWriterEx bw, int animIndex, int eventIndex, Dictionary<float, long> timeOffsets, TAE.TAEFormat format)
             {
                 bw.WriteVarint(timeOffsets[StartTime]);
                 bw.WriteVarint(timeOffsets[MemeEndTime]);
                 bw.ReserveVarint($"EventDataOffset{animIndex}:{eventIndex}");
-                if (format is TAEFormat.DES or TAEFormat.DESR) // Not sure if in DESR
+                if (format == TAE.TAEFormat.DES || format == TAE.TAEFormat.DESR) // Not sure if in DESR
                     bw.Pad(0x10);
             }
 
-            internal void WriteData(BinaryWriterEx bw, int animIndex, int eventIndex, TAEFormat format)
+            internal void WriteData(BinaryWriterEx bw, int animIndex, int eventIndex, TAE.TAEFormat format)
             {
                 CopyParametersToBytes(bw.BigEndian);
 
                 bw.FillVarint($"EventDataOffset{animIndex}:{eventIndex}", bw.Position);
                 bw.WriteInt32(Type);
 
-                if (format is not TAEFormat.DS1)
+                if (format != TAE.TAEFormat.DS1)
                     bw.WriteInt32(Unk04);
 
-                bool isWeirdEventWithNoParamOffset = format == TAEFormat.SDT && Type == 943;
+                bool isWeirdEventWithNoParamOffset = format == TAE.TAEFormat.SDT && Type == 943;
 
                 if (isWeirdEventWithNoParamOffset)
                     bw.WriteVarint(0);
                 else
                     bw.ReserveVarint($"EventDataParametersOffset{animIndex}:{eventIndex}");
 
-                if (format is TAEFormat.DES) // Not in DESR
+                if (format is TAE.TAEFormat.DES) // Not in DESR
                 {
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
@@ -458,7 +474,7 @@ namespace SoulsFormats
 
                 bw.WriteBytes(ParameterBytes);
 
-                if (bw.VarintLong || format is TAEFormat.DES)
+                if (bw.VarintLong || format is TAE.TAEFormat.DES)
                     bw.Pad(0x10);
             }
 
@@ -472,16 +488,16 @@ namespace SoulsFormats
             /// </summary>
             public override string ToString()
             {
-                return $"Start Frame: {(int)Math.Round(StartTime * 30):D3} - End Frame: {(int)Math.Round(EndTime * 30):D3} Event Type: {Type}";
+                return $"{(int)Math.Round(StartTime * 30):D3} - {(int)Math.Round(EndTime * 30):D3} {Type}";
             }
 
-            internal static Event Read(BinaryReaderEx br, out long parametersOffset, TAEFormat format)
+            internal static Event Read(BinaryReaderEx br, out long parametersOffset, TAE.TAEFormat format)
             {
                 long startTimeOffset = br.ReadVarint();
                 long endTimeOffset = br.ReadVarint();
                 long eventDataOffset = br.ReadVarint();
 
-                if (format is TAEFormat.DES or TAEFormat.DESR)
+                if (format == TAE.TAEFormat.DES || format == TAE.TAEFormat.DESR)
                     br.Pad(0x10);
 
                 float startTime = br.GetSingle(startTimeOffset);
@@ -510,7 +526,7 @@ namespace SoulsFormats
                     //}
 
                     // Parameters will ALWAYS be right here otherwise it crashes iirc.
-                    parametersOffset = br.GetNextPaddedOffsetAfterCurrentField(br.VarintSize, format is TAEFormat.DES ? 0x10 : 0);
+                    parametersOffset = br.GetNextPaddedOffsetAfterCurrentField(br.VarintSize, format is TAE.TAEFormat.DES ? 0x10 : 0);
                     br.AssertVarint(parametersOffset, 0);
                     br.Position = parametersOffset;
                 }

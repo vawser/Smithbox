@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace SoulsFormats
 {
@@ -23,7 +24,64 @@ namespace SoulsFormats
         public int dwReserved2;
         public HEADER_DXT10 header10;
 
+        public static byte[] DX10DXGI = { 29, 72, 75, 78, 86, 91, 93, 94, 95, 96, 97, 98, 99, };
+
         public int DataOffset => ddspf.dwFourCC == "DX10" ? 0x94 : 0x80;
+
+        public DXGI_FORMAT GetDXGIFormat()
+        {
+            if (header10 != null)
+            {
+                return header10.dxgiFormat;
+            }
+            else
+            {
+                //https://learn.microsoft.com/en-us/windows/uwp/gaming/complete-code-for-ddstextureloader
+                switch (ddspf.dwFourCC)
+                {
+                    case "DXT1":
+                    case "DXT2":
+                        return DXGI_FORMAT.BC1_UNORM;
+                    case "DXT3":
+                        return DXGI_FORMAT.BC2_UNORM;
+                    case "DXT4":
+                    case "DXT5":
+                        return DXGI_FORMAT.BC3_UNORM;
+                    case "ATI1":
+                        return DXGI_FORMAT.BC4_UNORM;
+                    case "BC4S":
+                        return DXGI_FORMAT.BC4_SNORM;
+                    case "ATI2":
+                    case "BC5U":
+                        return DXGI_FORMAT.BC5_UNORM;
+                    case "BC5S":
+                        return DXGI_FORMAT.BC5_SNORM;
+                    case "RGBG":
+                        return DXGI_FORMAT.R8G8_B8G8_UNORM;
+                    case "GRGB":
+                        return DXGI_FORMAT.G8R8_G8B8_UNORM;
+                    case "$\0\0\0": //36
+                        return DXGI_FORMAT.R16G16B16A16_UNORM;
+                    case "n\0\0\0": //110
+                        return DXGI_FORMAT.R16G16B16A16_SNORM;
+                    case "o\0\0\0": //111
+                        return DXGI_FORMAT.R16_FLOAT;
+                    case "p\0\0\0": //112
+                        return DXGI_FORMAT.R16G16_FLOAT;
+                    case "q\0\0\0": //113
+                        return DXGI_FORMAT.R16G16B16A16_FLOAT;
+                    case "r\0\0\0": //114
+                        return DXGI_FORMAT.R32_FLOAT;
+                    case "s\0\0\0": //115
+                        return DXGI_FORMAT.R32G32_FLOAT;
+                    case "t\0\0\0": //116
+                        return DXGI_FORMAT.R32G32B32A32_FLOAT;
+                    default:
+                        Debug.WriteLine("Unrecognized FourCC, defaulting to R8G8B8A8");
+                        return DXGI_FORMAT.R8G8B8A8_UNORM;
+                }
+            }
+        }
 
         /// <summary>
         /// Create a new DDS header with default values and no DX10 header.

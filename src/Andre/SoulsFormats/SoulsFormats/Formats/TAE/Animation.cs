@@ -1,20 +1,16 @@
-﻿using SoulsFormats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using static SoulsFormats.TAE;
 
 namespace SoulsFormats
 {
-    public partial class TAE : SoulsFile<TAE>
+    public partial class TAE
     {
+
         /// <summary>
         /// Controls an individual animation.
         /// </summary>
-        public class Animation : IComparable<Animation>
+        public class Animation
         {
             public enum MiniHeaderType : uint
             {
@@ -29,52 +25,69 @@ namespace SoulsFormats
                 ImportOtherAnim = 1
             }
 
-            public class AnimMiniHeader
+            public abstract class AnimMiniHeader
             {
                 /// <summary>
                 /// Type of AnimMiniHeader that this is.
                 /// </summary>
-                public MiniHeaderType Type { get; set; }
-
-                /// Standard
-
-                /// <summary>
-                /// Makes the animation loop by default. Only relevant for animations not controlled by
-                /// ESD or HKS such as ObjAct animations.
-                /// </summary>
-                public bool IsLoopByDefault { get; set; } = false;
+                public abstract MiniHeaderType Type { get; }
+                internal abstract void ReadInner(BinaryReaderEx br, TAEFormat format);
+                internal abstract void WriteInner(BinaryWriterEx bw, TAEFormat format);
 
                 /// <summary>
-                /// Whether to import the HKX (actual motion data) of the animation with the ID of <see cref="ImportHKXSourceAnimID"/>.
+                /// Gets a clone of this not tied by reference.
                 /// </summary>
-                public bool ImportsHKX { get; set; } = false;
+                public abstract AnimMiniHeader GetClone();
 
                 /// <summary>
-                /// Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.
+                /// Standard MiniHeader with three flags, 2 of which can reference specific parts of another animation.
                 /// </summary>
-                public bool AllowDelayLoad { get; set; } = false;
-
-                /// <summary>
-                /// Anim ID to import HKX from. Only functional if
-                /// <see cref="ImportsHKX"/> is enabled.
-                /// </summary>
-                public int ImportHKXSourceAnimID { get; set; } = 0;
-
-                /// Import
-
-                /// <summary>
-                /// ID of animation from which to import motion dat and all events.
-                /// </summary>
-                public int ImportFromAnimID { get; set; } = 0;
-
-                /// <summary>
-                /// Unknown usage.
-                /// </summary>
-                public int Unknown { get; set; } = -1;
-
-                public void ReadInner(BinaryReaderEx br, TAEFormat format)
+                public sealed class Standard : AnimMiniHeader
                 {
-                    if (Type == MiniHeaderType.Standard)
+                    /// <summary>
+                    /// Type of AnimMiniHeader that this is.
+                    /// </summary>
+                    public override MiniHeaderType Type => MiniHeaderType.Standard;
+
+                    /// <summary>
+                    /// Gets a clone of this not tied by reference.
+                    /// </summary>
+                    public override AnimMiniHeader GetClone()
+                    {
+                        var newClone = new Standard();
+
+                        newClone.IsLoopByDefault = IsLoopByDefault;
+                        newClone.AllowDelayLoad = AllowDelayLoad;
+                        newClone.ImportsHKX = ImportsHKX;
+
+                        newClone.ImportHKXSourceAnimID = ImportHKXSourceAnimID;
+
+                        return newClone;
+                    }
+
+                    /// <summary>
+                    /// Makes the animation loop by default. Only relevant for animations not controlled by
+                    /// ESD or HKS such as ObjAct animations.
+                    /// </summary>
+                    public bool IsLoopByDefault { get; set; } = false;
+
+                    /// <summary>
+                    /// Whether to import the HKX (actual motion data) of the animation with the ID of <see cref="ImportHKXSourceAnimID"/>.
+                    /// </summary>
+                    public bool ImportsHKX { get; set; } = false;
+
+                    /// <summary>
+                    /// Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.
+                    /// </summary>
+                    public bool AllowDelayLoad { get; set; } = false;
+
+                    /// <summary>
+                    /// Anim ID to import HKX from. Only functional if
+                    /// <see cref="ImportsHKX"/> is enabled.
+                    /// </summary>
+                    public int ImportHKXSourceAnimID { get; set; } = 0;
+
+                    internal override void ReadInner(BinaryReaderEx br, TAEFormat format)
                     {
                         if (format == TAEFormat.DESR)
                         {
@@ -86,7 +99,7 @@ namespace SoulsFormats
                             AllowDelayLoad = false;
                             br.ReadByte();
 
-
+                            
                         }
                         else
                         {
@@ -101,29 +114,10 @@ namespace SoulsFormats
 
                             ImportHKXSourceAnimID = br.ReadInt32();
                         }
+                        
                     }
-                    if (Type == MiniHeaderType.ImportOtherAnim)
-                    {
-                        if (format is TAEFormat.DESR)
-                        {
-                            Unknown = br.ReadInt32();
-                            ImportFromAnimID = br.ReadInt32();
-                        }
-                        else
-                        {
-                            ImportFromAnimID = br.ReadInt32();
-                            Unknown = br.ReadInt32();
-                        }
 
-
-                        if (format == TAEFormat.DES)
-                            br.Pad(0x10);
-                    }
-                }
-
-                public void WriteInner(BinaryWriterEx bw, TAEFormat format)
-                {
-                    if (Type == MiniHeaderType.Standard)
+                    internal override void WriteInner(BinaryWriterEx bw, TAEFormat format)
                     {
                         if (format is TAEFormat.DESR)
                         {
@@ -142,8 +136,62 @@ namespace SoulsFormats
 
                             bw.WriteInt32(ImportHKXSourceAnimID);
                         }
+                        
                     }
-                    if (Type == MiniHeaderType.ImportOtherAnim)
+                }
+
+                /// <summary>
+                /// AnimMiniHeader that signifies that the animation fully imports the motion data and all events from another animation.
+                /// </summary>
+                public sealed class ImportOtherAnim : AnimMiniHeader
+                {
+                    /// <summary>
+                    /// Type of AnimMiniHeader that this is.
+                    /// </summary>
+                    public override MiniHeaderType Type => MiniHeaderType.ImportOtherAnim;
+
+                    /// <summary>
+                    /// Gets a clone of this not tied by reference.
+                    /// </summary>
+                    public override AnimMiniHeader GetClone()
+                    {
+                        var newClone = new ImportOtherAnim();
+
+                        newClone.ImportFromAnimID = ImportFromAnimID;
+                        newClone.Unknown = Unknown;
+
+                        return newClone;
+                    }
+
+                    /// <summary>
+                    /// ID of animation from which to import motion dat and all events.
+                    /// </summary>
+                    public int ImportFromAnimID { get; set; } = 0;
+
+                    /// <summary>
+                    /// Unknown usage.
+                    /// </summary>
+                    public int Unknown { get; set; } = -1;
+
+                    internal override void ReadInner(BinaryReaderEx br, TAEFormat format)
+                    {
+                        if (format is TAEFormat.DESR)
+                        {
+                            Unknown = br.ReadInt32();
+                            ImportFromAnimID = br.ReadInt32();
+                        }
+                        else
+                        {
+                            ImportFromAnimID = br.ReadInt32();
+                            Unknown = br.ReadInt32();
+                        }
+                        
+
+                        if (format == TAEFormat.DES)
+                            br.Pad(0x10);
+                    }
+
+                    internal override void WriteInner(BinaryWriterEx bw, TAEFormat format)
                     {
                         if (format == TAEFormat.DESR)
                         {
@@ -155,22 +203,14 @@ namespace SoulsFormats
                             bw.WriteInt32(ImportFromAnimID);
                             bw.WriteInt32(Unknown);
                         }
-
+                        
 
                         if (format == TAEFormat.DES)
                             bw.Pad(0x10);
                     }
                 }
-
-                /// <summary>
-                /// Gets a clone of this not tied by reference.
-                /// </summary>
-                public AnimMiniHeader GetClone()
-                {
-                    return (AnimMiniHeader)MemberwiseClone();
-                }
             }
-                
+
             /// <summary>
             /// ID number of this animation.
             /// </summary>
@@ -356,15 +396,32 @@ namespace SoulsFormats
                         if (br.VarintLong)
                             br.ReadInt32();
 
+                        //if (AnimFileReference)
+                        //{
+                        //    ReferenceID = br.ReadInt32();
+
+                        //    UnkReferenceFlag1 = br.ReadBoolean();
+                        //    ReferenceIsTAEOnly = br.ReadBoolean();
+                        //    ReferenceIsHKXOnly = br.ReadBoolean();
+                        //    LoopByDefault = br.ReadBoolean();
+                        //}
+                        //else
+                        //{
+                        //    UnkReferenceFlag1 = br.ReadBoolean();
+                        //    ReferenceIsTAEOnly = br.ReadBoolean();
+                        //    ReferenceIsHKXOnly = br.ReadBoolean();
+                        //    LoopByDefault = br.ReadBoolean();
+
+                        //    ReferenceID = br.ReadInt32();
+                        //}
+
                         if (miniHeaderType == MiniHeaderType.Standard)
                         {
-                            MiniHeader = new AnimMiniHeader();
-                            MiniHeader.Type = MiniHeaderType.Standard;
+                            MiniHeader = new AnimMiniHeader.Standard();
                         }
                         else if (miniHeaderType == MiniHeaderType.ImportOtherAnim)
                         {
-                            MiniHeader = new AnimMiniHeader();
-                            MiniHeader.Type = MiniHeaderType.ImportOtherAnim;
+                            MiniHeader = new AnimMiniHeader.ImportOtherAnim();
                         }
                         else
                         {
@@ -375,10 +432,8 @@ namespace SoulsFormats
 
                         if (!(format == TAEFormat.DES || format == TAEFormat.DS1 || format == TAEFormat.DESR))
                         {
-                            //br.AssertVarint(0);
-                            //br.AssertVarint(0);
-                            UnkVarInt00 = br.ReadVarint();
-                            UnkVarInt01 = br.ReadVarint();
+                            br.AssertVarint(0);
+                            br.AssertVarint(0);
                         }
                         else
                         {
@@ -401,7 +456,7 @@ namespace SoulsFormats
                                         br.AssertVarint(0);
                                 }
                             }
-
+                            
                         }
 
                         if (animFileNameOffset < br.Length && animFileNameOffset != timesOffset)
@@ -418,14 +473,22 @@ namespace SoulsFormats
 
                         AnimFileName = AnimFileName ?? "";
 
+                        // When Reference is false, there's always a filename.
+                        // When true, there's usually not, but sometimes there is, and I cannot figure out why.
+                        // Thus, this stupid hack to achieve byte-perfection.
+                        //var animNameCheck = AnimFileName.ToLower();
+                        //if (!(animNameCheck.EndsWith(".hkt") 
+                        //    || (format == TAEFormat.SDT && animNameCheck.EndsWith("hkt")) 
+                        //    || animNameCheck.EndsWith(".hkx") 
+                        //    || animNameCheck.EndsWith(".sib") 
+                        //    || animNameCheck.EndsWith(".hkxwin")))
+                        //    AnimFileName = "";
+
                     }
                     br.StepOut();
                 }
                 br.StepOut();
             }
-
-            private long UnkVarInt00;
-            private long UnkVarInt01;
 
             internal void WriteHeader(BinaryWriterEx bw, int i, TAEFormat format)
             {
@@ -439,14 +502,15 @@ namespace SoulsFormats
             {
                 bw.FillVarint($"AnimationOffset{i}", bw.Position);
 
-                EventGroups.Clear();
+                // redoing the event groups causes unnecessary diffing
+                /*EventGroups.Clear();
                 foreach (var ev in Events)
                 {
                     if (ev.Group != null && !EventGroups.Contains(ev.Group))
                         EventGroups.Add(ev.Group);
-                }
+                }*/
 
-                if (format is TAEFormat.DS1 or TAEFormat.DES)
+                if (format == TAEFormat.DS1 || format == TAEFormat.DES)
                 {
                     bw.WriteInt32(Events.Count);
                     bw.ReserveVarint($"EventHeadersOffset{i}");
@@ -497,14 +561,31 @@ namespace SoulsFormats
 
                 bw.ReserveVarint("AnimFileNameOffset");
 
+                //if (AnimFileReference)
+                //{
+                //    bw.WriteInt32(ReferenceID);
+
+                //    bw.WriteBoolean(UnkReferenceFlag1);
+                //    bw.WriteBoolean(ReferenceIsTAEOnly);
+                //    bw.WriteBoolean(ReferenceIsHKXOnly);
+                //    bw.WriteBoolean(LoopByDefault);
+                //}
+                //else
+                //{
+                //    bw.WriteBoolean(UnkReferenceFlag1);
+                //    bw.WriteBoolean(ReferenceIsTAEOnly);
+                //    bw.WriteBoolean(ReferenceIsHKXOnly);
+                //    bw.WriteBoolean(LoopByDefault);
+
+                //    bw.WriteInt32(ReferenceID);
+                //}
+
                 MiniHeader.WriteInner(bw, format);
 
-                if (!(format is TAEFormat.DES or TAEFormat.DS1 or TAEFormat.DESR))
+                if (!(format == TAEFormat.DES || format == TAEFormat.DS1 || format == TAEFormat.DESR))
                 {
-                    //bw.WriteVarint(0);
-                    //bw.WriteVarint(0);
-                    bw.WriteVarint(UnkVarInt00);
-                    bw.WriteVarint(UnkVarInt01);
+                    bw.WriteVarint(0);
+                    bw.WriteVarint(0);
                 }
                 else
                 {
@@ -529,7 +610,7 @@ namespace SoulsFormats
                 {
                     bw.WriteUTF16(AnimFileName, true);
 
-                    if (format is not TAEFormat.DS1)
+                    if (format != TAEFormat.DS1)
                         bw.Pad(0x10);
                 }
             }
@@ -558,7 +639,7 @@ namespace SoulsFormats
                     bw.WriteSingle(time);
                 }
 
-                if (format is not TAEFormat.DS1)
+                if (format != TAEFormat.DS1)
                     bw.Pad(0x10);
 
                 return timeOffsets;
@@ -610,20 +691,6 @@ namespace SoulsFormats
             {
                 for (int j = 0; j < EventGroups.Count; j++)
                     EventGroups[j].WriteData(bw, i, j, eventHeaderOffsets, format);
-            }
-
-            public int CompareTo(Animation other)
-            {
-                if(this.ID > other.ID) 
-                    return 1;
-
-                if (other.ID > this.ID)
-                    return -1;
-
-                if(this.ID == other.ID) 
-                    return 0;
-
-                return 0;
             }
         }
 

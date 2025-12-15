@@ -13,14 +13,14 @@ namespace SoulsFormats
 
             public int Unk48 { get; set; }
 
-            public List<CustomData> CustomData { get; set; }
+            public List<Parameter> Parameters { get; set; }
 
             public string Path { get; set; }
 
             public Resource()
             {
                 Name = "";
-                CustomData = new List<CustomData>();
+                Parameters = new List<Parameter>();
             }
 
             internal Resource(BinaryReaderEx br, int resourceIndex)
@@ -29,23 +29,23 @@ namespace SoulsFormats
                 ParentIndex = br.ReadInt32();
                 br.AssertInt32(resourceIndex);
                 Unk48 = br.ReadInt32();
-                int customDataCount = br.ReadInt32();
+                int parameterCount = br.ReadInt32();
 
-                CustomData = new List<CustomData>(customDataCount);
-                for (int i = 0; i < customDataCount; i++)
-                    CustomData.Add(new CustomData(br));
+                Parameters = new List<Parameter>(parameterCount);
+                for (int i = 0; i < parameterCount; i++)
+                    Parameters.Add(new Parameter(br));
             }
 
-            internal void Write(BinaryWriterEx bw, int resourceIndex, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void Write(BinaryWriterEx bw, int resourceIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
                 bw.WriteFixStrW(Name, 0x40, 0x00);
                 bw.WriteInt32(ParentIndex);
                 bw.WriteInt32(resourceIndex);
                 bw.WriteInt32(Unk48);
-                bw.WriteInt32(CustomData.Count);
+                bw.WriteInt32(Parameters.Count);
 
-                foreach (CustomData customData in CustomData)
-                    customData.Write(bw, allCustomData, customDataValueOffsets);
+                foreach (Parameter parameter in Parameters)
+                    parameter.Write(bw, allParameters, parameterValueOffsets);
             }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

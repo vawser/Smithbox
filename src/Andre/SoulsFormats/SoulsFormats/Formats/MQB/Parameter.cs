@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Numerics;
-using SoulsFormats;
 
 namespace SoulsFormats
 {
     public partial class MQB
     {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public class CustomData
+        public class Parameter
         {
             /// <summary>
             /// The different supported data types.
@@ -87,12 +86,12 @@ namespace SoulsFormats
             }
 
             /// <summary>
-            /// The name of this <see cref="CustomData"/> entry.
+            /// The name of this <see cref="Parameter"/> entry.
             /// </summary>
             public string Name { get; set; }
 
             /// <summary>
-            /// The type of the data contained within this <see cref="CustomData"/>.
+            /// The type of the data contained within this <see cref="Parameter"/>.
             /// </summary>
             public DataType Type { get; set; }
 
@@ -113,7 +112,7 @@ namespace SoulsFormats
 
             public List<Sequence> Sequences { get; set; }
 
-            public CustomData()
+            public Parameter()
             {
                 Name = "";
                 Type = DataType.Int;
@@ -121,7 +120,7 @@ namespace SoulsFormats
                 Sequences = new List<Sequence>();
             }
 
-            internal CustomData(BinaryReaderEx br)
+            internal Parameter(BinaryReaderEx br)
             {
                 Name = br.ReadFixStrW(0x40);
                 Type = br.ReadEnum32<DataType>();
@@ -247,7 +246,7 @@ namespace SoulsFormats
                 }
             }
 
-            internal void Write(BinaryWriterEx bw, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void Write(BinaryWriterEx bw, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
                 bw.WriteFixStrW(Name, 0x40, 0x00);
                 bw.WriteUInt32((uint)Type);
@@ -264,7 +263,7 @@ namespace SoulsFormats
                 {
                     length = ((byte[])Value).Length;
                     if (length % 4 != 0)
-                        throw new InvalidDataException($"Unexpected custom data custom length: {length}");
+                        throw new InvalidDataException($"Unexpected parameter custom length: {length}");
                 }
                 else if (Type == DataType.Color)
                 {
@@ -309,7 +308,7 @@ namespace SoulsFormats
 
                 // This is probably wrong for the 64-bit format
                 bw.WriteInt32(0);
-                bw.ReserveInt32($"SequencesOffset[{allCustomData.Count}]");
+                bw.ReserveInt32($"SequencesOffset[{allParameters.Count}]");
                 bw.WriteInt32(Sequences.Count);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
@@ -374,28 +373,28 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                allCustomData.Add(this);
-                customDataValueOffsets.Add(valueOffset);
+                allParameters.Add(this);
+                parameterValueOffsets.Add(valueOffset);
             }
 
-            internal void WriteSequences(BinaryWriterEx bw, int customDataIndex, long valueOffset)
+            internal void WriteSequences(BinaryWriterEx bw, int parameterIndex, long valueOffset)
             {
                 if (Sequences.Count == 0)
                 {
-                    bw.FillInt32($"SequencesOffset[{customDataIndex}]", 0);
+                    bw.FillInt32($"SequencesOffset[{parameterIndex}]", 0);
                 }
                 else
                 {
-                    bw.FillInt32($"SequencesOffset[{customDataIndex}]", (int)bw.Position);
+                    bw.FillInt32($"SequencesOffset[{parameterIndex}]", (int)bw.Position);
                     for (int i = 0; i < Sequences.Count; i++)
-                        Sequences[i].Write(bw, customDataIndex, i, valueOffset);
+                        Sequences[i].Write(bw, parameterIndex, i, valueOffset);
                 }
             }
 
-            internal void WriteSequencePoints(BinaryWriterEx bw, int customDataIndex)
+            internal void WriteSequencePoints(BinaryWriterEx bw, int parameterIndex)
             {
                 for (int i = 0; i < Sequences.Count; i++)
-                    Sequences[i].WritePoints(bw, customDataIndex, i);
+                    Sequences[i].WritePoints(bw, parameterIndex, i);
             }
 
             public class Sequence
@@ -422,7 +421,7 @@ namespace SoulsFormats
                     ValueType = br.ReadEnum32<DataType>();
                     // PointType 0 is only ever used once in ER s35_00_0000.mqb, but otherwise seems identical to PointType 1
                     PointType = br.AssertInt32([0, 1, 2]);
-                    br.AssertInt32((PointType == 0 || PointType == 1) ? 0x10 : 0x18); // Point size
+                    br.AssertInt32([(PointType == 0 || PointType == 1) ? 0x10 : 0x18]); // Point size
                     int pointsOffset = br.ReadInt32();
                     int valueOffset = br.ReadInt32();
 
@@ -446,21 +445,21 @@ namespace SoulsFormats
                     br.StepOut();
                 }
 
-                internal void Write(BinaryWriterEx bw, int customDataIndex, int sequenceIndex, long parentValueOffset)
+                internal void Write(BinaryWriterEx bw, int parameterIndex, int sequenceIndex, long parentValueOffset)
                 {
                     bw.WriteInt32(0x1C);
                     bw.WriteInt32(Points.Count);
                     bw.WriteUInt32((uint)ValueType);
                     bw.WriteInt32(PointType);
                     bw.WriteInt32((PointType == 0 || PointType == 1) ? 0x10 : 0x18);
-                    bw.ReserveInt32($"PointsOffset[{customDataIndex}:{sequenceIndex}]");
+                    bw.ReserveInt32($"PointsOffset[{parameterIndex}:{sequenceIndex}]");
                     if (ValueType == DataType.Byte || ValueType == DataType.Float || ValueType == DataType.UInt)
                         bw.WriteInt32((int)parentValueOffset + ValueIndex);
                 }
 
-                internal void WritePoints(BinaryWriterEx bw, int customDataIndex, int sequenceIndex)
+                internal void WritePoints(BinaryWriterEx bw, int parameterIndex, int sequenceIndex)
                 {
-                    bw.FillInt32($"PointsOffset[{customDataIndex}:{sequenceIndex}]", (int)bw.Position);
+                    bw.FillInt32($"PointsOffset[{parameterIndex}:{sequenceIndex}]", (int)bw.Position);
                     foreach (Point point in Points)
                         point.Write(bw, ValueType, PointType);
                 }

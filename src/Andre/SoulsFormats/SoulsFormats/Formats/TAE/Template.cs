@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace SoulsFormats
@@ -12,51 +10,51 @@ namespace SoulsFormats
         /// <summary>
         /// Template for the parameters in an event.
         /// </summary>
-        public class Template 
+        public class Template : Dictionary<long, Template.BankTemplate>
         {
             /// <summary>
             /// The game(s) this template is for.
             /// </summary>
             public TAEFormat Game;
 
-            public Dictionary<int, EventTemplate> Events = new Dictionary<int, EventTemplate>();
-
             /// <summary>
             /// Creates new empty template.
             /// </summary>
-            public Template() : base() { }
+            public Template()
+                : base()
+            {
 
-            private Template(XmlDocument xml) : base()
+            }
+
+            private Template(XmlDocument xml)
+                : base()
             {
                 XmlNode templateNode = xml.SelectSingleNode("event_template");
                 Game = (TAEFormat)Enum.Parse(typeof(TAEFormat), templateNode.Attributes["game"].InnerText);
 
-                EventTemplate lastGoodEventTemplate = null;
+                Dictionary<BankTemplate, long> basedOnMap = new Dictionary<BankTemplate, long>();
 
-                foreach (XmlNode eventNode in templateNode.SelectNodes("event"))
+                foreach (XmlNode bankNode in templateNode.SelectNodes("bank"))
                 {
-                    var ID = long.Parse(eventNode.Attributes["id"].InnerText);
-
-                    try
+                    var newBank = new BankTemplate(bankNode, out long basedOn);
+                    basedOnMap.Add(newBank, basedOn);
+                    if (ContainsKey(newBank.ID))
                     {
-                        var newEvent = new EventTemplate(ID, eventNode);
-                        if (Events.ContainsKey(newEvent.ID))
-                        {
-                            throw new Exception($"TAE Bank Template has more than one event with ID {newEvent.ID}.");
-                        }
-                        Events.Add(newEvent.ID, newEvent);
-
-                        lastGoodEventTemplate = newEvent;
+                        throw new Exception($"TAE Template has more than one bank with ID {newBank.ID}.");
                     }
-                    catch (Exception e)
+                    Add(newBank.ID, newBank);
+                }
+
+                foreach (var kvp in basedOnMap)
+                {
+                    if (kvp.Value != -1)
                     {
-                        if (lastGoodEventTemplate == null)
+                        foreach (var importFromKvp in this[kvp.Value])
                         {
-                            throw new Exception($"First event template in bank template {ID} failed to read:\n\n{e}");
-                        }
-                        else
-                        {
-                            throw new Exception($"Event template in bank template {ID} failed to read.\n\nLast valid event ID read: {lastGoodEventTemplate.ID}\n\nMessage:\n{e}");
+                            if (!kvp.Key.ContainsKey(importFromKvp.Key))
+                            {
+                                kvp.Key.Add(importFromKvp.Key, importFromKvp.Value);
+                            }
                         }
                     }
                 }
@@ -88,6 +86,60 @@ namespace SoulsFormats
             public static Template ReadXMLDoc(XmlDocument xml)
             {
                 return new Template(xml);
+            }
+
+            /// <summary>
+            /// A template for a bank of events.
+            /// </summary>
+            public class BankTemplate : Dictionary<int, EventTemplate>
+            {
+                /// <summary>
+                /// ID of this bank template.
+                /// </summary>
+                public long ID;
+
+                /// <summary>
+                /// Name of this bank template.
+                /// </summary>
+                public string Name;
+
+                internal BankTemplate(XmlNode bankNode, out long basedOn)
+                    : base()
+                {
+                    ID = long.Parse(bankNode.Attributes["id"].InnerText);
+                    Name = bankNode.Attributes["name"].InnerText;
+
+                    basedOn = long.Parse(bankNode.Attributes["basedon"]?.InnerText ?? "-1");
+
+                    EventTemplate lastGoodEventTemplate = null;
+
+                    foreach (XmlNode eventNode in bankNode.SelectNodes("event"))
+                    {
+                        try
+                        {
+                            var newEvent = new EventTemplate(ID, eventNode);
+                            if (ContainsKey(newEvent.ID))
+                            {
+                                throw new Exception($"TAE Bank Template has more than one event with ID {newEvent.ID}.");
+                            }
+                            Add(newEvent.ID, newEvent);
+
+                            lastGoodEventTemplate = newEvent;
+                        }
+                        catch (Exception e)
+                        {
+                            if (lastGoodEventTemplate == null)
+                            {
+                                throw new Exception($"First event template in bank template {ID} failed to read:\n\n{e}");
+                            }
+                            else
+                            {
+                                throw new Exception($"Event template in bank template {ID} failed to read.\n\nLast valid event ID read: {lastGoodEventTemplate.ID}\n\nMessage:\n{e}");
+                            }
+                        }
+                        
+                    }
+                }
             }
 
             /// <summary>
@@ -227,7 +279,7 @@ namespace SoulsFormats
                     {
                         if (EnumEntries.Values.Contains(val))
                         {
-                            return EnumEntries.First(x => x.Key.Equals(val)).Value;
+                            return EnumEntries.First(x => x.Value.Equals(val)).Key;
                         }
                     }
 
@@ -244,7 +296,7 @@ namespace SoulsFormats
                     }
                 }
 
-                internal void WriteValue(BinaryWriterEx bw, object value)
+                public void WriteValue(BinaryWriterEx bw, object value)
                 {
                     switch (Type)
                     {
@@ -426,7 +478,7 @@ namespace SoulsFormats
                             default: throw new Exception($"Invalid ParamTemplate ParamType: {Type.ToString()}");
                         }
                     }
-
+                    
                 }
 
                 /// <summary>
@@ -440,21 +492,6 @@ namespace SoulsFormats
                 public string Name;
 
                 /// <summary>
-                /// The name of the param this event parameter references.
-                /// </summary>
-                public string ParamRef;
-
-                /// <summary>
-                /// The name of the alias this event parameter references.
-                /// </summary>
-                public string AliasEnum;
-
-                /// <summary>
-                /// The name of the project enum this event parameter references.
-                /// </summary>
-                public string ProjectEnum;
-
-                /// <summary>
                 /// The name of the group this parameter is in.
                 /// Leave null to place outside of any groups.
                 /// </summary>
@@ -464,7 +501,7 @@ namespace SoulsFormats
                 {
                     if (NameGroup != null)
                         return $"{NameGroup}::{Name}";
-                    else
+                    else 
                         return Name;
                 }
 
@@ -488,17 +525,15 @@ namespace SoulsFormats
                 /// <summary>
                 /// Possible values if this is an enum, otherwise it's null.
                 /// </summary>
-                public Dictionary<object, string> EnumEntries { get; private set; } = null;
+                public Dictionary<string, object> EnumEntries { get; private set; } = null;
 
                 public void EnsureEnumEntry(object entryValue)
                 {
                     if (EnumEntries == null)
-                        EnumEntries = new Dictionary<object, string>();
-
+                        EnumEntries = new Dictionary<string, object>();
                     var v = Convert.ToInt32(entryValue);
-
                     if (!EnumEntries.Any(a => Convert.ToInt32(a.Value) == v))
-                        EnumEntries.Add(v, $"{v}: <Unmapped Value>");
+                        EnumEntries.Add($"{v}: <Unmapped Value>", v);
                 }
 
                 /// <summary>
@@ -516,22 +551,17 @@ namespace SoulsFormats
 
                     NameGroup = paramNode.Attributes["group"]?.InnerText;
                     Name = paramNode.Attributes["name"]?.InnerText ?? $"Unk{offset:X2}";
-
-                    ParamRef = paramNode.Attributes["ref"]?.InnerText;
-                    AliasEnum = paramNode.Attributes["aliasEnum"]?.InnerText;
-                    ProjectEnum = paramNode.Attributes["projectEnum"]?.InnerText;
-
+                    
                     // Load enum entries before doing default value so you can make the default value an enum entry.
                     var enumNodes = paramNode.SelectNodes("entry");
                     if (enumNodes.Count > 0)
                     {
-                        EnumEntries = new Dictionary<object, string>();
-
+                        EnumEntries = new Dictionary<string, object>();
                         foreach (XmlNode entryNode in paramNode.SelectNodes("entry"))
                         {
                             var entryName = entryNode.Attributes["name"].InnerText;
                             var entryValue = StringToValue(entryNode.Attributes["value"].InnerText);
-                            EnumEntries.Add(entryValue, entryName);
+                            EnumEntries.Add(entryName, entryValue);
                         }
                     }
 
@@ -559,7 +589,7 @@ namespace SoulsFormats
                     {
                         throw new Exception($"Bank {bankId} -> Event {eventId} -> Parameter {(Name != null ? $"'{Name}'" : $"{paramIndex}")}\n    Failed to read 'assert' attribute of parameter.\n\n\n{ex}");
                     }
-
+                    
                     try
                     {
                         if (DefaultValue == null)
@@ -604,7 +634,7 @@ namespace SoulsFormats
                                 $"attribute was set to {AobLength}.");
                         }
                     }
-
+                    
                 }
             }
 
@@ -764,8 +794,6 @@ namespace SoulsFormats
                 /// Array of bytes.
                 /// </summary>
                 aob,
-
-                str
             }
 
         }

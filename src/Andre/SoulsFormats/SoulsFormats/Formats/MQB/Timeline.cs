@@ -7,9 +7,9 @@ namespace SoulsFormats
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public class Timeline
         {
-            public List<Disposition> Dispositions { get; set; }
+            public List<Event> Events { get; set; }
 
-            public List<CustomData> CustomData { get; set; }
+            public List<Parameter> Parameters { get; set; }
 
             /// <summary>
             /// Unknown; possibly a timeline index.
@@ -18,69 +18,69 @@ namespace SoulsFormats
 
             public Timeline()
             {
-                Dispositions = new List<Disposition>();
-                CustomData = new List<CustomData>();
+                Events = new List<Event>();
+                Parameters = new List<Parameter>();
             }
 
-            internal Timeline(BinaryReaderEx br, MQBVersion version, Dictionary<long, Disposition> disposesByOffset)
+            internal Timeline(BinaryReaderEx br, MQBVersion version, Dictionary<long, Event> eventsByOffset)
             {
-                long disposOffsetsOffset = br.ReadVarint();
-                int disposCount = br.ReadInt32();
+                long eventOffsetsOffset = br.ReadVarint();
+                int eventCount = br.ReadInt32();
                 if (version == MQBVersion.DarkSouls2Scholar)
                     br.AssertInt32(0);
-                long customDataOffset = br.ReadVarint();
-                int customDataCount = br.ReadInt32();
+                long parameterOffset = br.ReadVarint();
+                int parameterCount = br.ReadInt32();
                 Unk10 = br.ReadInt32();
 
-                Dispositions = new List<Disposition>(disposCount);
-                long[] disposOffsets = br.GetVarints(disposOffsetsOffset, disposCount);
-                foreach (long disposOffset in disposOffsets)
+                Events = new List<Event>(eventCount);
+                long[] eventOffsets = br.GetVarints(eventOffsetsOffset, eventCount);
+                foreach (long eventOffset in eventOffsets)
                 {
-                    Dispositions.Add(disposesByOffset[disposOffset]);
-                    disposesByOffset.Remove(disposOffset);
+                    Events.Add(eventsByOffset[eventOffset]);
+                    eventsByOffset.Remove(eventOffset);
                 }
 
-                br.StepIn(customDataOffset);
+                br.StepIn(parameterOffset);
                 {
-                    CustomData = new List<CustomData>(customDataCount);
-                    for (int i = 0; i < customDataCount; i++)
-                        CustomData.Add(new MQB.CustomData(br));
+                    Parameters = new List<Parameter>(parameterCount);
+                    for (int i = 0; i < parameterCount; i++)
+                        Parameters.Add(new Parameter(br));
                 }
                 br.StepOut();
             }
 
-            internal void WriteDispositions(BinaryWriterEx bw, Dictionary<Disposition, long> offsetsByDispos, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void WriteEvents(BinaryWriterEx bw, Dictionary<Event, long> offsetsByEvent, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
-                foreach (Disposition dispos in Dispositions)
+                foreach (Event ev in Events)
                 {
-                    offsetsByDispos[dispos] = bw.Position;
-                    dispos.Write(bw, allCustomData, customDataValueOffsets);
+                    offsetsByEvent[ev] = bw.Position;
+                    ev.Write(bw, allParameters, parameterValueOffsets);
                 }
             }
 
             internal void Write(BinaryWriterEx bw, MQBVersion version, int cutIndex, int timelineIndex)
             {
-                bw.ReserveVarint($"DisposOffsetsOffset[{cutIndex}:{timelineIndex}]");
-                bw.WriteInt32(Dispositions.Count);
+                bw.ReserveVarint($"EventOffsetsOffset[{cutIndex}:{timelineIndex}]");
+                bw.WriteInt32(Events.Count);
                 if (version == MQBVersion.DarkSouls2Scholar)
                     bw.WriteInt32(0);
-                bw.ReserveVarint($"TimelineCustomDataOffset[{cutIndex}:{timelineIndex}]");
-                bw.WriteInt32(CustomData.Count);
+                bw.ReserveVarint($"TimelineParametersOffset[{cutIndex}:{timelineIndex}]");
+                bw.WriteInt32(Parameters.Count);
                 bw.WriteInt32(Unk10);
             }
 
-            internal void WriteCustomData(BinaryWriterEx bw, int cutIndex, int timelineIndex, List<CustomData> allCustomData, List<long> customDataValueOffsets)
+            internal void WriteParameters(BinaryWriterEx bw, int cutIndex, int timelineIndex, List<Parameter> allParameters, List<long> parameterValueOffsets)
             {
-                bw.FillVarint($"TimelineCustomDataOffset[{cutIndex}:{timelineIndex}]", bw.Position);
-                foreach (CustomData customData in CustomData)
-                    customData.Write(bw, allCustomData, customDataValueOffsets);
+                bw.FillVarint($"TimelineParametersOffset[{cutIndex}:{timelineIndex}]", bw.Position);
+                foreach (Parameter parameter in Parameters)
+                    parameter.Write(bw, allParameters, parameterValueOffsets);
             }
 
-            internal void WriteDisposOffsets(BinaryWriterEx bw, Dictionary<Disposition, long> offsetsByDispos, int cutIndex, int timelineIndex)
+            internal void WriteEventOffsets(BinaryWriterEx bw, Dictionary<Event, long> offsetsByEvent, int cutIndex, int timelineIndex)
             {
-                bw.FillVarint($"DisposOffsetsOffset[{cutIndex}:{timelineIndex}]", bw.Position);
-                foreach (Disposition dispos in Dispositions)
-                    bw.WriteVarint(offsetsByDispos[dispos]);
+                bw.FillVarint($"EventOffsetsOffset[{cutIndex}:{timelineIndex}]", bw.Position);
+                foreach (Event ev in Events)
+                    bw.WriteVarint(offsetsByEvent[ev]);
             }
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

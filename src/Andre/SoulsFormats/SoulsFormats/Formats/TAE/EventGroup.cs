@@ -1,15 +1,10 @@
-﻿using SoulsFormats;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.TAE;
 
 namespace SoulsFormats
 {
-    public partial class TAE : SoulsFile<TAE>
+    public partial class TAE
     {
 
         /// <summary>
@@ -72,14 +67,12 @@ namespace SoulsFormats
                 indices = new List<int>();
             }
 
-            public long heldVarInt;
-
             internal EventGroup(BinaryReaderEx br, List<long> eventHeaderOffsets, TAEFormat format)
             {
                 long entryCount = br.ReadVarint();
                 long valuesOffset = br.ReadVarint();
                 long typeOffset = br.ReadVarint();
-                if (format is not TAEFormat.DS1 && format is not TAEFormat.DESR)
+                if (format != TAEFormat.DS1 && format != TAEFormat.DESR)
                     br.AssertVarint(0);
 
                 br.StepIn(typeOffset);
@@ -91,9 +84,9 @@ namespace SoulsFormats
                         br.AssertVarint(0);
                         br.AssertVarint(0);
                     }
-                    else if (format is TAEFormat.DS3 or TAEFormat.SDT)
+                    else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                     {
-                        heldVarInt = br.ReadVarint();
+                        br.AssertVarint(0);
                     }
                     else
                     {
@@ -137,7 +130,7 @@ namespace SoulsFormats
                 bw.WriteVarint(indices.Count);
                 bw.ReserveVarint($"EventGroupValuesOffset{i}:{j}");
                 bw.ReserveVarint($"EventGroupTypeOffset{i}:{j}");
-                if (format is not TAEFormat.DS1 && format is not TAEFormat.DESR)
+                if (format != TAEFormat.DS1 && format != TAEFormat.DESR)
                     bw.WriteVarint(0);
             }
 
@@ -154,13 +147,13 @@ namespace SoulsFormats
                 }
                 else if (format == TAEFormat.DS3 || format == TAEFormat.SDT)
                 {
-                    bw.WriteVarint(heldVarInt);
+                    bw.WriteVarint(0);
                 }
                 else
                 {
                     bw.ReserveVarint("EventGroupDataOffset");
                     long dataStartPos = bw.Position;
-
+                    
                     if (GroupData.DataType == EventGroupDataType.ApplyToSpecificCutsceneEntity)
                     {
                         bw.WriteUInt16((ushort)(GroupData.CutsceneEntityType));
