@@ -907,13 +907,7 @@
       <Maximum>1</Maximum>
       <SortID>1956</SortID>
     </Field>
-    <Field Def="u8 showLogCondType:1 = 1">
-      <DisplayName>取得ログ表示条件</DisplayName>
-      <Enum>EQUIP_BOOL</Enum>
-      <Description>アイテム取得時にアイテム取得ログに表示するか（未入力: ○）</Description>
-      <Maximum>1</Maximum>
-      <SortID>25000</SortID>
-    </Field>
+    <Field Def="u8 affectedByCharacterScale:1 = 1" />
     <Field Def="u8 enableThrow:1">
       <DisplayName>投げ可能</DisplayName>
       <Enum>EQUIP_BOOL</Enum>

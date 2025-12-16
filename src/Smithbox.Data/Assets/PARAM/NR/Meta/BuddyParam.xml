@@ -32,16 +32,31 @@
     <npcPlayerInitParamId AltName="Character Init ID" Wiki="CharaInitParam ID this c0000 summon will use." Refs="CharaInitParam" />
     <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
     <Reserve2 AltName="" Padding=""/>
+	
+	<activeSpEffectId
+	AltName="Active SpEffect ID"
+	Wiki="SpEffect applied when buddy is actively summoned"
+	Refs="SpEffectParam" />
+	
+	<inactiveSpEffectId
+	AltName="Inactive SpEffect ID"
+	Wiki="SpEffect applied when buddy is not actively summoned"
+	Refs="SpEffectParam" />
     
     <usageShortcutTextId
     AltName="Shortcut Text ID"
     Wiki="The shortcut key text for this summon."
     FmgRef="Modern_Menu_Text" />
+	
+	<iconId
+	AltName="Icon ID"
+	Wiki="Icon used for buddy in UI"
+    IconConfig="Menu" />
     
-    <summonBehaviorId
-    AltName="Summon Behavior ID"
-    Wiki="The behavior to execute when this summon is spawned."
-    Refs="BehaviorParam" />
+    <baseDopingSpEffectId
+    AltName="Base Leveling SpEffect ID"
+    Wiki="Base SpEffect ID used for leveling with character (see HeroStatusParam)."
+    Refs="SpEffectParam" />
   </Field>
   <Enums>
     <Enum Name="BUDDY_PC_FOLLOW_TYPE" type="u8">

@@ -562,6 +562,11 @@
     <originEquipWep24 AltName="Origin Weapon +24" Wiki="This weapon's enhancement source weapon ID 24" Refs="EquipParamWeapon"/>
     <originEquipWep25 AltName="Origin Weapon +25" Wiki="This weapon's enhancement source weapon ID 25" Refs="EquipParamWeapon"/>
 	
+	<affectedByCharacterScale
+	AltName="Affected By Character Scale"
+	Wiki="Determines if weapon changes size with character"
+	IsBool="" />
+	
 	<enableSparringGrounds
 	AltName="Enable Sparring Grounds/Visual Codex"
 	Wiki="Allows weapon to appear in Sparring Grounds/Visual Codex"
